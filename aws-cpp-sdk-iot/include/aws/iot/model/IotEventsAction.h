@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -89,52 +79,137 @@ namespace Model
 
 
     /**
-     * <p>[Optional] Use this to ensure that only one input (message) with a given
-     * messageId will be processed by an AWS IoT Events detector.</p>
+     * <p>The ID of the message. The default <code>messageId</code> is a new UUID
+     * value.</p> <p>When <code>batchMode</code> is <code>true</code>, you can't
+     * specify a <code>messageId</code>--a new UUID value will be assigned.</p>
+     * <p>Assign a value to this property to ensure that only one input (message) with
+     * a given <code>messageId</code> will be processed by an AWS IoT Events
+     * detector.</p>
      */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
 
     /**
-     * <p>[Optional] Use this to ensure that only one input (message) with a given
-     * messageId will be processed by an AWS IoT Events detector.</p>
+     * <p>The ID of the message. The default <code>messageId</code> is a new UUID
+     * value.</p> <p>When <code>batchMode</code> is <code>true</code>, you can't
+     * specify a <code>messageId</code>--a new UUID value will be assigned.</p>
+     * <p>Assign a value to this property to ensure that only one input (message) with
+     * a given <code>messageId</code> will be processed by an AWS IoT Events
+     * detector.</p>
      */
     inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
 
     /**
-     * <p>[Optional] Use this to ensure that only one input (message) with a given
-     * messageId will be processed by an AWS IoT Events detector.</p>
+     * <p>The ID of the message. The default <code>messageId</code> is a new UUID
+     * value.</p> <p>When <code>batchMode</code> is <code>true</code>, you can't
+     * specify a <code>messageId</code>--a new UUID value will be assigned.</p>
+     * <p>Assign a value to this property to ensure that only one input (message) with
+     * a given <code>messageId</code> will be processed by an AWS IoT Events
+     * detector.</p>
      */
     inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
 
     /**
-     * <p>[Optional] Use this to ensure that only one input (message) with a given
-     * messageId will be processed by an AWS IoT Events detector.</p>
+     * <p>The ID of the message. The default <code>messageId</code> is a new UUID
+     * value.</p> <p>When <code>batchMode</code> is <code>true</code>, you can't
+     * specify a <code>messageId</code>--a new UUID value will be assigned.</p>
+     * <p>Assign a value to this property to ensure that only one input (message) with
+     * a given <code>messageId</code> will be processed by an AWS IoT Events
+     * detector.</p>
      */
     inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
 
     /**
-     * <p>[Optional] Use this to ensure that only one input (message) with a given
-     * messageId will be processed by an AWS IoT Events detector.</p>
+     * <p>The ID of the message. The default <code>messageId</code> is a new UUID
+     * value.</p> <p>When <code>batchMode</code> is <code>true</code>, you can't
+     * specify a <code>messageId</code>--a new UUID value will be assigned.</p>
+     * <p>Assign a value to this property to ensure that only one input (message) with
+     * a given <code>messageId</code> will be processed by an AWS IoT Events
+     * detector.</p>
      */
     inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
 
     /**
-     * <p>[Optional] Use this to ensure that only one input (message) with a given
-     * messageId will be processed by an AWS IoT Events detector.</p>
+     * <p>The ID of the message. The default <code>messageId</code> is a new UUID
+     * value.</p> <p>When <code>batchMode</code> is <code>true</code>, you can't
+     * specify a <code>messageId</code>--a new UUID value will be assigned.</p>
+     * <p>Assign a value to this property to ensure that only one input (message) with
+     * a given <code>messageId</code> will be processed by an AWS IoT Events
+     * detector.</p>
      */
     inline IotEventsAction& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
 
     /**
-     * <p>[Optional] Use this to ensure that only one input (message) with a given
-     * messageId will be processed by an AWS IoT Events detector.</p>
+     * <p>The ID of the message. The default <code>messageId</code> is a new UUID
+     * value.</p> <p>When <code>batchMode</code> is <code>true</code>, you can't
+     * specify a <code>messageId</code>--a new UUID value will be assigned.</p>
+     * <p>Assign a value to this property to ensure that only one input (message) with
+     * a given <code>messageId</code> will be processed by an AWS IoT Events
+     * detector.</p>
      */
     inline IotEventsAction& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
 
     /**
-     * <p>[Optional] Use this to ensure that only one input (message) with a given
-     * messageId will be processed by an AWS IoT Events detector.</p>
+     * <p>The ID of the message. The default <code>messageId</code> is a new UUID
+     * value.</p> <p>When <code>batchMode</code> is <code>true</code>, you can't
+     * specify a <code>messageId</code>--a new UUID value will be assigned.</p>
+     * <p>Assign a value to this property to ensure that only one input (message) with
+     * a given <code>messageId</code> will be processed by an AWS IoT Events
+     * detector.</p>
      */
     inline IotEventsAction& WithMessageId(const char* value) { SetMessageId(value); return *this;}
+
+
+    /**
+     * <p>Whether to process the event actions as a batch. The default value is
+     * <code>false</code>.</p> <p>When <code>batchMode</code> is <code>true</code>, you
+     * can't specify a <code>messageId</code>. </p> <p>When <code>batchMode</code> is
+     * <code>true</code> and the rule SQL statement evaluates to an Array, each Array
+     * element is treated as a separate message when it's sent to AWS IoT Events by
+     * calling <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html">
+     * <code>BatchPutMessage</code> </a>. The resulting array can't have more than 10
+     * messages.</p>
+     */
+    inline bool GetBatchMode() const{ return m_batchMode; }
+
+    /**
+     * <p>Whether to process the event actions as a batch. The default value is
+     * <code>false</code>.</p> <p>When <code>batchMode</code> is <code>true</code>, you
+     * can't specify a <code>messageId</code>. </p> <p>When <code>batchMode</code> is
+     * <code>true</code> and the rule SQL statement evaluates to an Array, each Array
+     * element is treated as a separate message when it's sent to AWS IoT Events by
+     * calling <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html">
+     * <code>BatchPutMessage</code> </a>. The resulting array can't have more than 10
+     * messages.</p>
+     */
+    inline bool BatchModeHasBeenSet() const { return m_batchModeHasBeenSet; }
+
+    /**
+     * <p>Whether to process the event actions as a batch. The default value is
+     * <code>false</code>.</p> <p>When <code>batchMode</code> is <code>true</code>, you
+     * can't specify a <code>messageId</code>. </p> <p>When <code>batchMode</code> is
+     * <code>true</code> and the rule SQL statement evaluates to an Array, each Array
+     * element is treated as a separate message when it's sent to AWS IoT Events by
+     * calling <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html">
+     * <code>BatchPutMessage</code> </a>. The resulting array can't have more than 10
+     * messages.</p>
+     */
+    inline void SetBatchMode(bool value) { m_batchModeHasBeenSet = true; m_batchMode = value; }
+
+    /**
+     * <p>Whether to process the event actions as a batch. The default value is
+     * <code>false</code>.</p> <p>When <code>batchMode</code> is <code>true</code>, you
+     * can't specify a <code>messageId</code>. </p> <p>When <code>batchMode</code> is
+     * <code>true</code> and the rule SQL statement evaluates to an Array, each Array
+     * element is treated as a separate message when it's sent to AWS IoT Events by
+     * calling <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html">
+     * <code>BatchPutMessage</code> </a>. The resulting array can't have more than 10
+     * messages.</p>
+     */
+    inline IotEventsAction& WithBatchMode(bool value) { SetBatchMode(value); return *this;}
 
 
     /**
@@ -192,6 +267,9 @@ namespace Model
 
     Aws::String m_messageId;
     bool m_messageIdHasBeenSet;
+
+    bool m_batchMode;
+    bool m_batchModeHasBeenSet;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;

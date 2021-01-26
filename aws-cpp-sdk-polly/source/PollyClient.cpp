@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -55,7 +45,7 @@ static const char* ALLOCATION_TAG = "PollyClient";
 PollyClient::PollyClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<PollyErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -65,7 +55,7 @@ PollyClient::PollyClient(const Client::ClientConfiguration& clientConfiguration)
 PollyClient::PollyClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<PollyErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -76,7 +66,7 @@ PollyClient::PollyClient(const std::shared_ptr<AWSCredentialsProvider>& credenti
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<PollyErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -89,6 +79,7 @@ PollyClient::~PollyClient()
 
 void PollyClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Polly");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -124,15 +115,7 @@ DeleteLexiconOutcome PollyClient::DeleteLexicon(const DeleteLexiconRequest& requ
   ss << "/v1/lexicons/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteLexiconOutcome(DeleteLexiconResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteLexiconOutcome(outcome.GetError());
-  }
+  return DeleteLexiconOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteLexiconOutcomeCallable PollyClient::DeleteLexiconCallable(const DeleteLexiconRequest& request) const
@@ -159,15 +142,7 @@ DescribeVoicesOutcome PollyClient::DescribeVoices(const DescribeVoicesRequest& r
   Aws::StringStream ss;
   ss << "/v1/voices";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeVoicesOutcome(DescribeVoicesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeVoicesOutcome(outcome.GetError());
-  }
+  return DescribeVoicesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeVoicesOutcomeCallable PollyClient::DescribeVoicesCallable(const DescribeVoicesRequest& request) const
@@ -200,15 +175,7 @@ GetLexiconOutcome PollyClient::GetLexicon(const GetLexiconRequest& request) cons
   ss << "/v1/lexicons/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetLexiconOutcome(GetLexiconResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetLexiconOutcome(outcome.GetError());
-  }
+  return GetLexiconOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetLexiconOutcomeCallable PollyClient::GetLexiconCallable(const GetLexiconRequest& request) const
@@ -241,15 +208,7 @@ GetSpeechSynthesisTaskOutcome PollyClient::GetSpeechSynthesisTask(const GetSpeec
   ss << "/v1/synthesisTasks/";
   ss << request.GetTaskId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetSpeechSynthesisTaskOutcome(GetSpeechSynthesisTaskResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetSpeechSynthesisTaskOutcome(outcome.GetError());
-  }
+  return GetSpeechSynthesisTaskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSpeechSynthesisTaskOutcomeCallable PollyClient::GetSpeechSynthesisTaskCallable(const GetSpeechSynthesisTaskRequest& request) const
@@ -276,15 +235,7 @@ ListLexiconsOutcome PollyClient::ListLexicons(const ListLexiconsRequest& request
   Aws::StringStream ss;
   ss << "/v1/lexicons";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListLexiconsOutcome(ListLexiconsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListLexiconsOutcome(outcome.GetError());
-  }
+  return ListLexiconsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListLexiconsOutcomeCallable PollyClient::ListLexiconsCallable(const ListLexiconsRequest& request) const
@@ -311,15 +262,7 @@ ListSpeechSynthesisTasksOutcome PollyClient::ListSpeechSynthesisTasks(const List
   Aws::StringStream ss;
   ss << "/v1/synthesisTasks";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListSpeechSynthesisTasksOutcome(ListSpeechSynthesisTasksResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListSpeechSynthesisTasksOutcome(outcome.GetError());
-  }
+  return ListSpeechSynthesisTasksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListSpeechSynthesisTasksOutcomeCallable PollyClient::ListSpeechSynthesisTasksCallable(const ListSpeechSynthesisTasksRequest& request) const
@@ -352,15 +295,7 @@ PutLexiconOutcome PollyClient::PutLexicon(const PutLexiconRequest& request) cons
   ss << "/v1/lexicons/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutLexiconOutcome(PutLexiconResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutLexiconOutcome(outcome.GetError());
-  }
+  return PutLexiconOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutLexiconOutcomeCallable PollyClient::PutLexiconCallable(const PutLexiconRequest& request) const
@@ -387,15 +322,7 @@ StartSpeechSynthesisTaskOutcome PollyClient::StartSpeechSynthesisTask(const Star
   Aws::StringStream ss;
   ss << "/v1/synthesisTasks";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartSpeechSynthesisTaskOutcome(StartSpeechSynthesisTaskResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartSpeechSynthesisTaskOutcome(outcome.GetError());
-  }
+  return StartSpeechSynthesisTaskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartSpeechSynthesisTaskOutcomeCallable PollyClient::StartSpeechSynthesisTaskCallable(const StartSpeechSynthesisTaskRequest& request) const
@@ -422,15 +349,7 @@ SynthesizeSpeechOutcome PollyClient::SynthesizeSpeech(const SynthesizeSpeechRequ
   Aws::StringStream ss;
   ss << "/v1/speech";
   uri.SetPath(uri.GetPath() + ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return SynthesizeSpeechOutcome(SynthesizeSpeechResult(outcome.GetResultWithOwnership()));
-  }
-  else
-  {
-    return SynthesizeSpeechOutcome(outcome.GetError());
-  }
+  return SynthesizeSpeechOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 SynthesizeSpeechOutcomeCallable PollyClient::SynthesizeSpeechCallable(const SynthesizeSpeechRequest& request) const

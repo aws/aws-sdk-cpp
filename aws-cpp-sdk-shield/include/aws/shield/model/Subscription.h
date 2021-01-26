@@ -1,23 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/shield/Shield_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/shield/model/AutoRenew.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/shield/model/ProactiveEngagementStatus.h>
+#include <aws/shield/model/SubscriptionLimits.h>
 #include <aws/shield/model/Limit.h>
 #include <utility>
 
@@ -257,6 +249,104 @@ namespace Model
      */
     inline Subscription& AddLimits(Limit&& value) { m_limitsHasBeenSet = true; m_limits.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and
+     * phone to notify contacts about escalations to the DRT and to initiate proactive
+     * customer support.</p> <p>If <code>PENDING</code>, you have requested proactive
+     * engagement and the request is pending. The status changes to
+     * <code>ENABLED</code> when your request is fully processed.</p> <p>If
+     * <code>DISABLED</code>, the DRT will not proactively notify contacts about
+     * escalations or to initiate proactive customer support. </p>
+     */
+    inline const ProactiveEngagementStatus& GetProactiveEngagementStatus() const{ return m_proactiveEngagementStatus; }
+
+    /**
+     * <p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and
+     * phone to notify contacts about escalations to the DRT and to initiate proactive
+     * customer support.</p> <p>If <code>PENDING</code>, you have requested proactive
+     * engagement and the request is pending. The status changes to
+     * <code>ENABLED</code> when your request is fully processed.</p> <p>If
+     * <code>DISABLED</code>, the DRT will not proactively notify contacts about
+     * escalations or to initiate proactive customer support. </p>
+     */
+    inline bool ProactiveEngagementStatusHasBeenSet() const { return m_proactiveEngagementStatusHasBeenSet; }
+
+    /**
+     * <p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and
+     * phone to notify contacts about escalations to the DRT and to initiate proactive
+     * customer support.</p> <p>If <code>PENDING</code>, you have requested proactive
+     * engagement and the request is pending. The status changes to
+     * <code>ENABLED</code> when your request is fully processed.</p> <p>If
+     * <code>DISABLED</code>, the DRT will not proactively notify contacts about
+     * escalations or to initiate proactive customer support. </p>
+     */
+    inline void SetProactiveEngagementStatus(const ProactiveEngagementStatus& value) { m_proactiveEngagementStatusHasBeenSet = true; m_proactiveEngagementStatus = value; }
+
+    /**
+     * <p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and
+     * phone to notify contacts about escalations to the DRT and to initiate proactive
+     * customer support.</p> <p>If <code>PENDING</code>, you have requested proactive
+     * engagement and the request is pending. The status changes to
+     * <code>ENABLED</code> when your request is fully processed.</p> <p>If
+     * <code>DISABLED</code>, the DRT will not proactively notify contacts about
+     * escalations or to initiate proactive customer support. </p>
+     */
+    inline void SetProactiveEngagementStatus(ProactiveEngagementStatus&& value) { m_proactiveEngagementStatusHasBeenSet = true; m_proactiveEngagementStatus = std::move(value); }
+
+    /**
+     * <p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and
+     * phone to notify contacts about escalations to the DRT and to initiate proactive
+     * customer support.</p> <p>If <code>PENDING</code>, you have requested proactive
+     * engagement and the request is pending. The status changes to
+     * <code>ENABLED</code> when your request is fully processed.</p> <p>If
+     * <code>DISABLED</code>, the DRT will not proactively notify contacts about
+     * escalations or to initiate proactive customer support. </p>
+     */
+    inline Subscription& WithProactiveEngagementStatus(const ProactiveEngagementStatus& value) { SetProactiveEngagementStatus(value); return *this;}
+
+    /**
+     * <p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and
+     * phone to notify contacts about escalations to the DRT and to initiate proactive
+     * customer support.</p> <p>If <code>PENDING</code>, you have requested proactive
+     * engagement and the request is pending. The status changes to
+     * <code>ENABLED</code> when your request is fully processed.</p> <p>If
+     * <code>DISABLED</code>, the DRT will not proactively notify contacts about
+     * escalations or to initiate proactive customer support. </p>
+     */
+    inline Subscription& WithProactiveEngagementStatus(ProactiveEngagementStatus&& value) { SetProactiveEngagementStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Limits settings for your subscription. </p>
+     */
+    inline const SubscriptionLimits& GetSubscriptionLimits() const{ return m_subscriptionLimits; }
+
+    /**
+     * <p>Limits settings for your subscription. </p>
+     */
+    inline bool SubscriptionLimitsHasBeenSet() const { return m_subscriptionLimitsHasBeenSet; }
+
+    /**
+     * <p>Limits settings for your subscription. </p>
+     */
+    inline void SetSubscriptionLimits(const SubscriptionLimits& value) { m_subscriptionLimitsHasBeenSet = true; m_subscriptionLimits = value; }
+
+    /**
+     * <p>Limits settings for your subscription. </p>
+     */
+    inline void SetSubscriptionLimits(SubscriptionLimits&& value) { m_subscriptionLimitsHasBeenSet = true; m_subscriptionLimits = std::move(value); }
+
+    /**
+     * <p>Limits settings for your subscription. </p>
+     */
+    inline Subscription& WithSubscriptionLimits(const SubscriptionLimits& value) { SetSubscriptionLimits(value); return *this;}
+
+    /**
+     * <p>Limits settings for your subscription. </p>
+     */
+    inline Subscription& WithSubscriptionLimits(SubscriptionLimits&& value) { SetSubscriptionLimits(std::move(value)); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_startTime;
@@ -273,6 +363,12 @@ namespace Model
 
     Aws::Vector<Limit> m_limits;
     bool m_limitsHasBeenSet;
+
+    ProactiveEngagementStatus m_proactiveEngagementStatus;
+    bool m_proactiveEngagementStatusHasBeenSet;
+
+    SubscriptionLimits m_subscriptionLimits;
+    bool m_subscriptionLimitsHasBeenSet;
   };
 
 } // namespace Model

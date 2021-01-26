@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
@@ -51,9 +41,9 @@ namespace Model
    * <code>ecs-init</code>. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
    * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
-   * Guide</i>.</p> <note> <p>For tasks using the Fargate launch type, this parameter
+   * Guide</i>.</p>  <p>For tasks using the Fargate launch type, this parameter
    * requires that the task or service uses platform version 1.3.0 or later.</p>
-   * </note><p><h3>See Also:</h3>   <a
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ContainerDependency">AWS
    * API Reference</a></p>
    */
@@ -115,13 +105,14 @@ namespace Model
      * </li> <li> <p> <code>COMPLETE</code> - This condition validates that a dependent
      * container runs to completion (exits) before permitting other containers to
      * start. This can be useful for nonessential containers that run a script and then
-     * exit.</p> </li> <li> <p> <code>SUCCESS</code> - This condition is the same as
-     * <code>COMPLETE</code>, but it also requires that the container exits with a
-     * <code>zero</code> status.</p> </li> <li> <p> <code>HEALTHY</code> - This
-     * condition validates that the dependent container passes its Docker health check
-     * before permitting other containers to start. This requires that the dependent
-     * container has health checks configured. This condition is confirmed only at task
-     * startup.</p> </li> </ul>
+     * exit. This condition cannot be set on an essential container.</p> </li> <li> <p>
+     * <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but
+     * it also requires that the container exits with a <code>zero</code> status. This
+     * condition cannot be set on an essential container.</p> </li> <li> <p>
+     * <code>HEALTHY</code> - This condition validates that the dependent container
+     * passes its Docker health check before permitting other containers to start. This
+     * requires that the dependent container has health checks configured. This
+     * condition is confirmed only at task startup.</p> </li> </ul>
      */
     inline const ContainerCondition& GetCondition() const{ return m_condition; }
 
@@ -133,13 +124,14 @@ namespace Model
      * </li> <li> <p> <code>COMPLETE</code> - This condition validates that a dependent
      * container runs to completion (exits) before permitting other containers to
      * start. This can be useful for nonessential containers that run a script and then
-     * exit.</p> </li> <li> <p> <code>SUCCESS</code> - This condition is the same as
-     * <code>COMPLETE</code>, but it also requires that the container exits with a
-     * <code>zero</code> status.</p> </li> <li> <p> <code>HEALTHY</code> - This
-     * condition validates that the dependent container passes its Docker health check
-     * before permitting other containers to start. This requires that the dependent
-     * container has health checks configured. This condition is confirmed only at task
-     * startup.</p> </li> </ul>
+     * exit. This condition cannot be set on an essential container.</p> </li> <li> <p>
+     * <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but
+     * it also requires that the container exits with a <code>zero</code> status. This
+     * condition cannot be set on an essential container.</p> </li> <li> <p>
+     * <code>HEALTHY</code> - This condition validates that the dependent container
+     * passes its Docker health check before permitting other containers to start. This
+     * requires that the dependent container has health checks configured. This
+     * condition is confirmed only at task startup.</p> </li> </ul>
      */
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
 
@@ -151,13 +143,14 @@ namespace Model
      * </li> <li> <p> <code>COMPLETE</code> - This condition validates that a dependent
      * container runs to completion (exits) before permitting other containers to
      * start. This can be useful for nonessential containers that run a script and then
-     * exit.</p> </li> <li> <p> <code>SUCCESS</code> - This condition is the same as
-     * <code>COMPLETE</code>, but it also requires that the container exits with a
-     * <code>zero</code> status.</p> </li> <li> <p> <code>HEALTHY</code> - This
-     * condition validates that the dependent container passes its Docker health check
-     * before permitting other containers to start. This requires that the dependent
-     * container has health checks configured. This condition is confirmed only at task
-     * startup.</p> </li> </ul>
+     * exit. This condition cannot be set on an essential container.</p> </li> <li> <p>
+     * <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but
+     * it also requires that the container exits with a <code>zero</code> status. This
+     * condition cannot be set on an essential container.</p> </li> <li> <p>
+     * <code>HEALTHY</code> - This condition validates that the dependent container
+     * passes its Docker health check before permitting other containers to start. This
+     * requires that the dependent container has health checks configured. This
+     * condition is confirmed only at task startup.</p> </li> </ul>
      */
     inline void SetCondition(const ContainerCondition& value) { m_conditionHasBeenSet = true; m_condition = value; }
 
@@ -169,13 +162,14 @@ namespace Model
      * </li> <li> <p> <code>COMPLETE</code> - This condition validates that a dependent
      * container runs to completion (exits) before permitting other containers to
      * start. This can be useful for nonessential containers that run a script and then
-     * exit.</p> </li> <li> <p> <code>SUCCESS</code> - This condition is the same as
-     * <code>COMPLETE</code>, but it also requires that the container exits with a
-     * <code>zero</code> status.</p> </li> <li> <p> <code>HEALTHY</code> - This
-     * condition validates that the dependent container passes its Docker health check
-     * before permitting other containers to start. This requires that the dependent
-     * container has health checks configured. This condition is confirmed only at task
-     * startup.</p> </li> </ul>
+     * exit. This condition cannot be set on an essential container.</p> </li> <li> <p>
+     * <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but
+     * it also requires that the container exits with a <code>zero</code> status. This
+     * condition cannot be set on an essential container.</p> </li> <li> <p>
+     * <code>HEALTHY</code> - This condition validates that the dependent container
+     * passes its Docker health check before permitting other containers to start. This
+     * requires that the dependent container has health checks configured. This
+     * condition is confirmed only at task startup.</p> </li> </ul>
      */
     inline void SetCondition(ContainerCondition&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
 
@@ -187,13 +181,14 @@ namespace Model
      * </li> <li> <p> <code>COMPLETE</code> - This condition validates that a dependent
      * container runs to completion (exits) before permitting other containers to
      * start. This can be useful for nonessential containers that run a script and then
-     * exit.</p> </li> <li> <p> <code>SUCCESS</code> - This condition is the same as
-     * <code>COMPLETE</code>, but it also requires that the container exits with a
-     * <code>zero</code> status.</p> </li> <li> <p> <code>HEALTHY</code> - This
-     * condition validates that the dependent container passes its Docker health check
-     * before permitting other containers to start. This requires that the dependent
-     * container has health checks configured. This condition is confirmed only at task
-     * startup.</p> </li> </ul>
+     * exit. This condition cannot be set on an essential container.</p> </li> <li> <p>
+     * <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but
+     * it also requires that the container exits with a <code>zero</code> status. This
+     * condition cannot be set on an essential container.</p> </li> <li> <p>
+     * <code>HEALTHY</code> - This condition validates that the dependent container
+     * passes its Docker health check before permitting other containers to start. This
+     * requires that the dependent container has health checks configured. This
+     * condition is confirmed only at task startup.</p> </li> </ul>
      */
     inline ContainerDependency& WithCondition(const ContainerCondition& value) { SetCondition(value); return *this;}
 
@@ -205,13 +200,14 @@ namespace Model
      * </li> <li> <p> <code>COMPLETE</code> - This condition validates that a dependent
      * container runs to completion (exits) before permitting other containers to
      * start. This can be useful for nonessential containers that run a script and then
-     * exit.</p> </li> <li> <p> <code>SUCCESS</code> - This condition is the same as
-     * <code>COMPLETE</code>, but it also requires that the container exits with a
-     * <code>zero</code> status.</p> </li> <li> <p> <code>HEALTHY</code> - This
-     * condition validates that the dependent container passes its Docker health check
-     * before permitting other containers to start. This requires that the dependent
-     * container has health checks configured. This condition is confirmed only at task
-     * startup.</p> </li> </ul>
+     * exit. This condition cannot be set on an essential container.</p> </li> <li> <p>
+     * <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but
+     * it also requires that the container exits with a <code>zero</code> status. This
+     * condition cannot be set on an essential container.</p> </li> <li> <p>
+     * <code>HEALTHY</code> - This condition validates that the dependent container
+     * passes its Docker health check before permitting other containers to start. This
+     * requires that the dependent container has health checks configured. This
+     * condition is confirmed only at task startup.</p> </li> </ul>
      */
     inline ContainerDependency& WithCondition(ContainerCondition&& value) { SetCondition(std::move(value)); return *this;}
 

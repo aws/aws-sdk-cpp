@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ecs/model/DeploymentConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,6 +19,7 @@ namespace Model
 {
 
 DeploymentConfiguration::DeploymentConfiguration() : 
+    m_deploymentCircuitBreakerHasBeenSet(false),
     m_maximumPercent(0),
     m_maximumPercentHasBeenSet(false),
     m_minimumHealthyPercent(0),
@@ -37,6 +28,7 @@ DeploymentConfiguration::DeploymentConfiguration() :
 }
 
 DeploymentConfiguration::DeploymentConfiguration(JsonView jsonValue) : 
+    m_deploymentCircuitBreakerHasBeenSet(false),
     m_maximumPercent(0),
     m_maximumPercentHasBeenSet(false),
     m_minimumHealthyPercent(0),
@@ -47,6 +39,13 @@ DeploymentConfiguration::DeploymentConfiguration(JsonView jsonValue) :
 
 DeploymentConfiguration& DeploymentConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("deploymentCircuitBreaker"))
+  {
+    m_deploymentCircuitBreaker = jsonValue.GetObject("deploymentCircuitBreaker");
+
+    m_deploymentCircuitBreakerHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("maximumPercent"))
   {
     m_maximumPercent = jsonValue.GetInteger("maximumPercent");
@@ -67,6 +66,12 @@ DeploymentConfiguration& DeploymentConfiguration::operator =(JsonView jsonValue)
 JsonValue DeploymentConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_deploymentCircuitBreakerHasBeenSet)
+  {
+   payload.WithObject("deploymentCircuitBreaker", m_deploymentCircuitBreaker.Jsonize());
+
+  }
 
   if(m_maximumPercentHasBeenSet)
   {

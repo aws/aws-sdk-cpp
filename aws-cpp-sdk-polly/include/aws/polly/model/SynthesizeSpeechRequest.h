@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/polly/Polly_EXPORTS.h>
@@ -55,43 +45,109 @@ namespace Model
 
     /**
      * <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for
-     * Amazon Polly to use when processing input text for speech synthesis. Using a
-     * voice that is not supported for the engine selected will result in an error.</p>
+     * Amazon Polly to use when processing input text for speech synthesis. For
+     * information on Amazon Polly voices and which voices are available in
+     * standard-only, NTTS-only, and both standard and NTTS formats, see <a
+     * href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available
+     * Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices
+     * such as Kevin (en-US), this parameter is required and must be set to
+     * <code>neural</code>. If the engine is not specified, or is set to
+     * <code>standard</code>, this will result in an error. </p> <p>Type: String</p>
+     * <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required:
+     * Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not
+     * required; the engine parameter defaults to <code>standard</code>. If the engine
+     * is not specified, or is set to <code>standard</code> and an NTTS-only voice is
+     * selected, this will result in an error. </p>
      */
     inline const Engine& GetEngine() const{ return m_engine; }
 
     /**
      * <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for
-     * Amazon Polly to use when processing input text for speech synthesis. Using a
-     * voice that is not supported for the engine selected will result in an error.</p>
+     * Amazon Polly to use when processing input text for speech synthesis. For
+     * information on Amazon Polly voices and which voices are available in
+     * standard-only, NTTS-only, and both standard and NTTS formats, see <a
+     * href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available
+     * Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices
+     * such as Kevin (en-US), this parameter is required and must be set to
+     * <code>neural</code>. If the engine is not specified, or is set to
+     * <code>standard</code>, this will result in an error. </p> <p>Type: String</p>
+     * <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required:
+     * Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not
+     * required; the engine parameter defaults to <code>standard</code>. If the engine
+     * is not specified, or is set to <code>standard</code> and an NTTS-only voice is
+     * selected, this will result in an error. </p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
      * <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for
-     * Amazon Polly to use when processing input text for speech synthesis. Using a
-     * voice that is not supported for the engine selected will result in an error.</p>
+     * Amazon Polly to use when processing input text for speech synthesis. For
+     * information on Amazon Polly voices and which voices are available in
+     * standard-only, NTTS-only, and both standard and NTTS formats, see <a
+     * href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available
+     * Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices
+     * such as Kevin (en-US), this parameter is required and must be set to
+     * <code>neural</code>. If the engine is not specified, or is set to
+     * <code>standard</code>, this will result in an error. </p> <p>Type: String</p>
+     * <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required:
+     * Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not
+     * required; the engine parameter defaults to <code>standard</code>. If the engine
+     * is not specified, or is set to <code>standard</code> and an NTTS-only voice is
+     * selected, this will result in an error. </p>
      */
     inline void SetEngine(const Engine& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
      * <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for
-     * Amazon Polly to use when processing input text for speech synthesis. Using a
-     * voice that is not supported for the engine selected will result in an error.</p>
+     * Amazon Polly to use when processing input text for speech synthesis. For
+     * information on Amazon Polly voices and which voices are available in
+     * standard-only, NTTS-only, and both standard and NTTS formats, see <a
+     * href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available
+     * Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices
+     * such as Kevin (en-US), this parameter is required and must be set to
+     * <code>neural</code>. If the engine is not specified, or is set to
+     * <code>standard</code>, this will result in an error. </p> <p>Type: String</p>
+     * <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required:
+     * Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not
+     * required; the engine parameter defaults to <code>standard</code>. If the engine
+     * is not specified, or is set to <code>standard</code> and an NTTS-only voice is
+     * selected, this will result in an error. </p>
      */
     inline void SetEngine(Engine&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for
-     * Amazon Polly to use when processing input text for speech synthesis. Using a
-     * voice that is not supported for the engine selected will result in an error.</p>
+     * Amazon Polly to use when processing input text for speech synthesis. For
+     * information on Amazon Polly voices and which voices are available in
+     * standard-only, NTTS-only, and both standard and NTTS formats, see <a
+     * href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available
+     * Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices
+     * such as Kevin (en-US), this parameter is required and must be set to
+     * <code>neural</code>. If the engine is not specified, or is set to
+     * <code>standard</code>, this will result in an error. </p> <p>Type: String</p>
+     * <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required:
+     * Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not
+     * required; the engine parameter defaults to <code>standard</code>. If the engine
+     * is not specified, or is set to <code>standard</code> and an NTTS-only voice is
+     * selected, this will result in an error. </p>
      */
     inline SynthesizeSpeechRequest& WithEngine(const Engine& value) { SetEngine(value); return *this;}
 
     /**
      * <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for
-     * Amazon Polly to use when processing input text for speech synthesis. Using a
-     * voice that is not supported for the engine selected will result in an error.</p>
+     * Amazon Polly to use when processing input text for speech synthesis. For
+     * information on Amazon Polly voices and which voices are available in
+     * standard-only, NTTS-only, and both standard and NTTS formats, see <a
+     * href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available
+     * Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices
+     * such as Kevin (en-US), this parameter is required and must be set to
+     * <code>neural</code>. If the engine is not specified, or is set to
+     * <code>standard</code>, this will result in an error. </p> <p>Type: String</p>
+     * <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required:
+     * Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not
+     * required; the engine parameter defaults to <code>standard</code>. If the engine
+     * is not specified, or is set to <code>standard</code> and an NTTS-only voice is
+     * selected, this will result in an error. </p>
      */
     inline SynthesizeSpeechRequest& WithEngine(Engine&& value) { SetEngine(std::move(value)); return *this;}
 

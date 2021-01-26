@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/savingsplans/SavingsPlans_EXPORTS.h>
 #include <aws/savingsplans/SavingsPlansRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -192,6 +183,43 @@ namespace Model
 
 
     /**
+     * <p>The time at which to purchase the Savings Plan, in UTC format
+     * (YYYY-MM-DDTHH:MM:SSZ).</p>
+     */
+    inline const Aws::Utils::DateTime& GetPurchaseTime() const{ return m_purchaseTime; }
+
+    /**
+     * <p>The time at which to purchase the Savings Plan, in UTC format
+     * (YYYY-MM-DDTHH:MM:SSZ).</p>
+     */
+    inline bool PurchaseTimeHasBeenSet() const { return m_purchaseTimeHasBeenSet; }
+
+    /**
+     * <p>The time at which to purchase the Savings Plan, in UTC format
+     * (YYYY-MM-DDTHH:MM:SSZ).</p>
+     */
+    inline void SetPurchaseTime(const Aws::Utils::DateTime& value) { m_purchaseTimeHasBeenSet = true; m_purchaseTime = value; }
+
+    /**
+     * <p>The time at which to purchase the Savings Plan, in UTC format
+     * (YYYY-MM-DDTHH:MM:SSZ).</p>
+     */
+    inline void SetPurchaseTime(Aws::Utils::DateTime&& value) { m_purchaseTimeHasBeenSet = true; m_purchaseTime = std::move(value); }
+
+    /**
+     * <p>The time at which to purchase the Savings Plan, in UTC format
+     * (YYYY-MM-DDTHH:MM:SSZ).</p>
+     */
+    inline CreateSavingsPlanRequest& WithPurchaseTime(const Aws::Utils::DateTime& value) { SetPurchaseTime(value); return *this;}
+
+    /**
+     * <p>The time at which to purchase the Savings Plan, in UTC format
+     * (YYYY-MM-DDTHH:MM:SSZ).</p>
+     */
+    inline CreateSavingsPlanRequest& WithPurchaseTime(Aws::Utils::DateTime&& value) { SetPurchaseTime(std::move(value)); return *this;}
+
+
+    /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request.</p>
      */
@@ -315,6 +343,9 @@ namespace Model
 
     Aws::String m_upfrontPaymentAmount;
     bool m_upfrontPaymentAmountHasBeenSet;
+
+    Aws::Utils::DateTime m_purchaseTime;
+    bool m_purchaseTimeHasBeenSet;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/appmesh/model/VirtualServiceStatusCode.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -31,8 +21,8 @@ namespace Aws
       {
 
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
         static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
+        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
 
 
         VirtualServiceStatusCode GetVirtualServiceStatusCodeForName(const Aws::String& name)
@@ -42,13 +32,13 @@ namespace Aws
           {
             return VirtualServiceStatusCode::ACTIVE;
           }
-          else if (hashCode == DELETED_HASH)
-          {
-            return VirtualServiceStatusCode::DELETED;
-          }
           else if (hashCode == INACTIVE_HASH)
           {
             return VirtualServiceStatusCode::INACTIVE;
+          }
+          else if (hashCode == DELETED_HASH)
+          {
+            return VirtualServiceStatusCode::DELETED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -66,10 +56,10 @@ namespace Aws
           {
           case VirtualServiceStatusCode::ACTIVE:
             return "ACTIVE";
-          case VirtualServiceStatusCode::DELETED:
-            return "DELETED";
           case VirtualServiceStatusCode::INACTIVE:
             return "INACTIVE";
+          case VirtualServiceStatusCode::DELETED:
+            return "DELETED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

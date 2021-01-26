@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -327,106 +317,178 @@ namespace Model
 
 
     /**
-     * <p>The S3 URL of the file that defines the categories used to label the data
-     * objects.</p> <p>The file is a JSON structure in the following format:</p> <p>
-     * <code>{</code> </p> <p> <code> "document-version": "2018-11-28"</code> </p> <p>
-     * <code> "labels": [</code> </p> <p> <code> {</code> </p> <p> <code> "label":
-     * "<i>label 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p>
-     * <p> <code> "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p>
-     * <code> ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
-     * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
-     * <code>}</code> </p>
+     * <p>The S3 URI of the file that defines the categories used to label the data
+     * objects.</p> <p>For 3D point cloud task types, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create
+     * a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.
+     * </p> <p>For all other <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+     * task types</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates.html">custom
+     * tasks</a>, your label category configuration file must be a JSON file in the
+     * following format. Identify the labels you want to use by replacing
+     * <code>label_1</code>, <code>label_2</code>,<code>...</code>,<code>label_n</code>
+     * with your label categories.</p> <p> <code>{</code> </p> <p> <code>
+     * "document-version": "2018-11-28"</code> </p> <p> <code> "labels": [</code> </p>
+     * <p> <code> {</code> </p> <p> <code> "label": "<i>label_1</i>"</code> </p> <p>
+     * <code> },</code> </p> <p> <code> {</code> </p> <p> <code> "label":
+     * "<i>label_2</i>"</code> </p> <p> <code> },</code> </p> <p> <code> ...</code>
+     * </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label_n</i>"</code> </p>
+     * <p> <code> }</code> </p> <p> <code> ]</code> </p> <p> <code>}</code> </p>
      */
     inline const Aws::String& GetLabelCategoryConfigS3Uri() const{ return m_labelCategoryConfigS3Uri; }
 
     /**
-     * <p>The S3 URL of the file that defines the categories used to label the data
-     * objects.</p> <p>The file is a JSON structure in the following format:</p> <p>
-     * <code>{</code> </p> <p> <code> "document-version": "2018-11-28"</code> </p> <p>
-     * <code> "labels": [</code> </p> <p> <code> {</code> </p> <p> <code> "label":
-     * "<i>label 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p>
-     * <p> <code> "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p>
-     * <code> ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
-     * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
-     * <code>}</code> </p>
+     * <p>The S3 URI of the file that defines the categories used to label the data
+     * objects.</p> <p>For 3D point cloud task types, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create
+     * a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.
+     * </p> <p>For all other <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+     * task types</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates.html">custom
+     * tasks</a>, your label category configuration file must be a JSON file in the
+     * following format. Identify the labels you want to use by replacing
+     * <code>label_1</code>, <code>label_2</code>,<code>...</code>,<code>label_n</code>
+     * with your label categories.</p> <p> <code>{</code> </p> <p> <code>
+     * "document-version": "2018-11-28"</code> </p> <p> <code> "labels": [</code> </p>
+     * <p> <code> {</code> </p> <p> <code> "label": "<i>label_1</i>"</code> </p> <p>
+     * <code> },</code> </p> <p> <code> {</code> </p> <p> <code> "label":
+     * "<i>label_2</i>"</code> </p> <p> <code> },</code> </p> <p> <code> ...</code>
+     * </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label_n</i>"</code> </p>
+     * <p> <code> }</code> </p> <p> <code> ]</code> </p> <p> <code>}</code> </p>
      */
     inline bool LabelCategoryConfigS3UriHasBeenSet() const { return m_labelCategoryConfigS3UriHasBeenSet; }
 
     /**
-     * <p>The S3 URL of the file that defines the categories used to label the data
-     * objects.</p> <p>The file is a JSON structure in the following format:</p> <p>
-     * <code>{</code> </p> <p> <code> "document-version": "2018-11-28"</code> </p> <p>
-     * <code> "labels": [</code> </p> <p> <code> {</code> </p> <p> <code> "label":
-     * "<i>label 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p>
-     * <p> <code> "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p>
-     * <code> ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
-     * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
-     * <code>}</code> </p>
+     * <p>The S3 URI of the file that defines the categories used to label the data
+     * objects.</p> <p>For 3D point cloud task types, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create
+     * a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.
+     * </p> <p>For all other <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+     * task types</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates.html">custom
+     * tasks</a>, your label category configuration file must be a JSON file in the
+     * following format. Identify the labels you want to use by replacing
+     * <code>label_1</code>, <code>label_2</code>,<code>...</code>,<code>label_n</code>
+     * with your label categories.</p> <p> <code>{</code> </p> <p> <code>
+     * "document-version": "2018-11-28"</code> </p> <p> <code> "labels": [</code> </p>
+     * <p> <code> {</code> </p> <p> <code> "label": "<i>label_1</i>"</code> </p> <p>
+     * <code> },</code> </p> <p> <code> {</code> </p> <p> <code> "label":
+     * "<i>label_2</i>"</code> </p> <p> <code> },</code> </p> <p> <code> ...</code>
+     * </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label_n</i>"</code> </p>
+     * <p> <code> }</code> </p> <p> <code> ]</code> </p> <p> <code>}</code> </p>
      */
     inline void SetLabelCategoryConfigS3Uri(const Aws::String& value) { m_labelCategoryConfigS3UriHasBeenSet = true; m_labelCategoryConfigS3Uri = value; }
 
     /**
-     * <p>The S3 URL of the file that defines the categories used to label the data
-     * objects.</p> <p>The file is a JSON structure in the following format:</p> <p>
-     * <code>{</code> </p> <p> <code> "document-version": "2018-11-28"</code> </p> <p>
-     * <code> "labels": [</code> </p> <p> <code> {</code> </p> <p> <code> "label":
-     * "<i>label 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p>
-     * <p> <code> "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p>
-     * <code> ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
-     * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
-     * <code>}</code> </p>
+     * <p>The S3 URI of the file that defines the categories used to label the data
+     * objects.</p> <p>For 3D point cloud task types, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create
+     * a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.
+     * </p> <p>For all other <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+     * task types</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates.html">custom
+     * tasks</a>, your label category configuration file must be a JSON file in the
+     * following format. Identify the labels you want to use by replacing
+     * <code>label_1</code>, <code>label_2</code>,<code>...</code>,<code>label_n</code>
+     * with your label categories.</p> <p> <code>{</code> </p> <p> <code>
+     * "document-version": "2018-11-28"</code> </p> <p> <code> "labels": [</code> </p>
+     * <p> <code> {</code> </p> <p> <code> "label": "<i>label_1</i>"</code> </p> <p>
+     * <code> },</code> </p> <p> <code> {</code> </p> <p> <code> "label":
+     * "<i>label_2</i>"</code> </p> <p> <code> },</code> </p> <p> <code> ...</code>
+     * </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label_n</i>"</code> </p>
+     * <p> <code> }</code> </p> <p> <code> ]</code> </p> <p> <code>}</code> </p>
      */
     inline void SetLabelCategoryConfigS3Uri(Aws::String&& value) { m_labelCategoryConfigS3UriHasBeenSet = true; m_labelCategoryConfigS3Uri = std::move(value); }
 
     /**
-     * <p>The S3 URL of the file that defines the categories used to label the data
-     * objects.</p> <p>The file is a JSON structure in the following format:</p> <p>
-     * <code>{</code> </p> <p> <code> "document-version": "2018-11-28"</code> </p> <p>
-     * <code> "labels": [</code> </p> <p> <code> {</code> </p> <p> <code> "label":
-     * "<i>label 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p>
-     * <p> <code> "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p>
-     * <code> ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
-     * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
-     * <code>}</code> </p>
+     * <p>The S3 URI of the file that defines the categories used to label the data
+     * objects.</p> <p>For 3D point cloud task types, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create
+     * a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.
+     * </p> <p>For all other <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+     * task types</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates.html">custom
+     * tasks</a>, your label category configuration file must be a JSON file in the
+     * following format. Identify the labels you want to use by replacing
+     * <code>label_1</code>, <code>label_2</code>,<code>...</code>,<code>label_n</code>
+     * with your label categories.</p> <p> <code>{</code> </p> <p> <code>
+     * "document-version": "2018-11-28"</code> </p> <p> <code> "labels": [</code> </p>
+     * <p> <code> {</code> </p> <p> <code> "label": "<i>label_1</i>"</code> </p> <p>
+     * <code> },</code> </p> <p> <code> {</code> </p> <p> <code> "label":
+     * "<i>label_2</i>"</code> </p> <p> <code> },</code> </p> <p> <code> ...</code>
+     * </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label_n</i>"</code> </p>
+     * <p> <code> }</code> </p> <p> <code> ]</code> </p> <p> <code>}</code> </p>
      */
     inline void SetLabelCategoryConfigS3Uri(const char* value) { m_labelCategoryConfigS3UriHasBeenSet = true; m_labelCategoryConfigS3Uri.assign(value); }
 
     /**
-     * <p>The S3 URL of the file that defines the categories used to label the data
-     * objects.</p> <p>The file is a JSON structure in the following format:</p> <p>
-     * <code>{</code> </p> <p> <code> "document-version": "2018-11-28"</code> </p> <p>
-     * <code> "labels": [</code> </p> <p> <code> {</code> </p> <p> <code> "label":
-     * "<i>label 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p>
-     * <p> <code> "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p>
-     * <code> ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
-     * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
-     * <code>}</code> </p>
+     * <p>The S3 URI of the file that defines the categories used to label the data
+     * objects.</p> <p>For 3D point cloud task types, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create
+     * a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.
+     * </p> <p>For all other <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+     * task types</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates.html">custom
+     * tasks</a>, your label category configuration file must be a JSON file in the
+     * following format. Identify the labels you want to use by replacing
+     * <code>label_1</code>, <code>label_2</code>,<code>...</code>,<code>label_n</code>
+     * with your label categories.</p> <p> <code>{</code> </p> <p> <code>
+     * "document-version": "2018-11-28"</code> </p> <p> <code> "labels": [</code> </p>
+     * <p> <code> {</code> </p> <p> <code> "label": "<i>label_1</i>"</code> </p> <p>
+     * <code> },</code> </p> <p> <code> {</code> </p> <p> <code> "label":
+     * "<i>label_2</i>"</code> </p> <p> <code> },</code> </p> <p> <code> ...</code>
+     * </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label_n</i>"</code> </p>
+     * <p> <code> }</code> </p> <p> <code> ]</code> </p> <p> <code>}</code> </p>
      */
     inline CreateLabelingJobRequest& WithLabelCategoryConfigS3Uri(const Aws::String& value) { SetLabelCategoryConfigS3Uri(value); return *this;}
 
     /**
-     * <p>The S3 URL of the file that defines the categories used to label the data
-     * objects.</p> <p>The file is a JSON structure in the following format:</p> <p>
-     * <code>{</code> </p> <p> <code> "document-version": "2018-11-28"</code> </p> <p>
-     * <code> "labels": [</code> </p> <p> <code> {</code> </p> <p> <code> "label":
-     * "<i>label 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p>
-     * <p> <code> "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p>
-     * <code> ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
-     * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
-     * <code>}</code> </p>
+     * <p>The S3 URI of the file that defines the categories used to label the data
+     * objects.</p> <p>For 3D point cloud task types, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create
+     * a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.
+     * </p> <p>For all other <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+     * task types</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates.html">custom
+     * tasks</a>, your label category configuration file must be a JSON file in the
+     * following format. Identify the labels you want to use by replacing
+     * <code>label_1</code>, <code>label_2</code>,<code>...</code>,<code>label_n</code>
+     * with your label categories.</p> <p> <code>{</code> </p> <p> <code>
+     * "document-version": "2018-11-28"</code> </p> <p> <code> "labels": [</code> </p>
+     * <p> <code> {</code> </p> <p> <code> "label": "<i>label_1</i>"</code> </p> <p>
+     * <code> },</code> </p> <p> <code> {</code> </p> <p> <code> "label":
+     * "<i>label_2</i>"</code> </p> <p> <code> },</code> </p> <p> <code> ...</code>
+     * </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label_n</i>"</code> </p>
+     * <p> <code> }</code> </p> <p> <code> ]</code> </p> <p> <code>}</code> </p>
      */
     inline CreateLabelingJobRequest& WithLabelCategoryConfigS3Uri(Aws::String&& value) { SetLabelCategoryConfigS3Uri(std::move(value)); return *this;}
 
     /**
-     * <p>The S3 URL of the file that defines the categories used to label the data
-     * objects.</p> <p>The file is a JSON structure in the following format:</p> <p>
-     * <code>{</code> </p> <p> <code> "document-version": "2018-11-28"</code> </p> <p>
-     * <code> "labels": [</code> </p> <p> <code> {</code> </p> <p> <code> "label":
-     * "<i>label 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p>
-     * <p> <code> "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p>
-     * <code> ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
-     * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
-     * <code>}</code> </p>
+     * <p>The S3 URI of the file that defines the categories used to label the data
+     * objects.</p> <p>For 3D point cloud task types, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create
+     * a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.
+     * </p> <p>For all other <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+     * task types</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates.html">custom
+     * tasks</a>, your label category configuration file must be a JSON file in the
+     * following format. Identify the labels you want to use by replacing
+     * <code>label_1</code>, <code>label_2</code>,<code>...</code>,<code>label_n</code>
+     * with your label categories.</p> <p> <code>{</code> </p> <p> <code>
+     * "document-version": "2018-11-28"</code> </p> <p> <code> "labels": [</code> </p>
+     * <p> <code> {</code> </p> <p> <code> "label": "<i>label_1</i>"</code> </p> <p>
+     * <code> },</code> </p> <p> <code> {</code> </p> <p> <code> "label":
+     * "<i>label_2</i>"</code> </p> <p> <code> },</code> </p> <p> <code> ...</code>
+     * </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label_n</i>"</code> </p>
+     * <p> <code> }</code> </p> <p> <code> ]</code> </p> <p> <code>}</code> </p>
      */
     inline CreateLabelingJobRequest& WithLabelCategoryConfigS3Uri(const char* value) { SetLabelCategoryConfigS3Uri(value); return *this;}
 

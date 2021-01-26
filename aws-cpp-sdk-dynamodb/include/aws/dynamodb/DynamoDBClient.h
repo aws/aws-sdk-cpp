@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
@@ -21,6 +11,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dynamodb/model/BatchExecuteStatementResult.h>
 #include <aws/dynamodb/model/BatchGetItemResult.h>
 #include <aws/dynamodb/model/BatchWriteItemResult.h>
 #include <aws/dynamodb/model/CreateBackupResult.h>
@@ -33,15 +24,23 @@
 #include <aws/dynamodb/model/DescribeContinuousBackupsResult.h>
 #include <aws/dynamodb/model/DescribeContributorInsightsResult.h>
 #include <aws/dynamodb/model/DescribeEndpointsResult.h>
+#include <aws/dynamodb/model/DescribeExportResult.h>
 #include <aws/dynamodb/model/DescribeGlobalTableResult.h>
 #include <aws/dynamodb/model/DescribeGlobalTableSettingsResult.h>
+#include <aws/dynamodb/model/DescribeKinesisStreamingDestinationResult.h>
 #include <aws/dynamodb/model/DescribeLimitsResult.h>
 #include <aws/dynamodb/model/DescribeTableResult.h>
 #include <aws/dynamodb/model/DescribeTableReplicaAutoScalingResult.h>
 #include <aws/dynamodb/model/DescribeTimeToLiveResult.h>
+#include <aws/dynamodb/model/DisableKinesisStreamingDestinationResult.h>
+#include <aws/dynamodb/model/EnableKinesisStreamingDestinationResult.h>
+#include <aws/dynamodb/model/ExecuteStatementResult.h>
+#include <aws/dynamodb/model/ExecuteTransactionResult.h>
+#include <aws/dynamodb/model/ExportTableToPointInTimeResult.h>
 #include <aws/dynamodb/model/GetItemResult.h>
 #include <aws/dynamodb/model/ListBackupsResult.h>
 #include <aws/dynamodb/model/ListContributorInsightsResult.h>
+#include <aws/dynamodb/model/ListExportsResult.h>
 #include <aws/dynamodb/model/ListGlobalTablesResult.h>
 #include <aws/dynamodb/model/ListTablesResult.h>
 #include <aws/dynamodb/model/ListTagsOfResourceResult.h>
@@ -101,6 +100,7 @@ namespace DynamoDB
 
 namespace Model
 {
+        class BatchExecuteStatementRequest;
         class BatchGetItemRequest;
         class BatchWriteItemRequest;
         class CreateBackupRequest;
@@ -113,15 +113,23 @@ namespace Model
         class DescribeContinuousBackupsRequest;
         class DescribeContributorInsightsRequest;
         class DescribeEndpointsRequest;
+        class DescribeExportRequest;
         class DescribeGlobalTableRequest;
         class DescribeGlobalTableSettingsRequest;
+        class DescribeKinesisStreamingDestinationRequest;
         class DescribeLimitsRequest;
         class DescribeTableRequest;
         class DescribeTableReplicaAutoScalingRequest;
         class DescribeTimeToLiveRequest;
+        class DisableKinesisStreamingDestinationRequest;
+        class EnableKinesisStreamingDestinationRequest;
+        class ExecuteStatementRequest;
+        class ExecuteTransactionRequest;
+        class ExportTableToPointInTimeRequest;
         class GetItemRequest;
         class ListBackupsRequest;
         class ListContributorInsightsRequest;
+        class ListExportsRequest;
         class ListGlobalTablesRequest;
         class ListTablesRequest;
         class ListTagsOfResourceRequest;
@@ -143,48 +151,58 @@ namespace Model
         class UpdateTableReplicaAutoScalingRequest;
         class UpdateTimeToLiveRequest;
 
-        typedef Aws::Utils::Outcome<BatchGetItemResult, Aws::Client::AWSError<DynamoDBErrors>> BatchGetItemOutcome;
-        typedef Aws::Utils::Outcome<BatchWriteItemResult, Aws::Client::AWSError<DynamoDBErrors>> BatchWriteItemOutcome;
-        typedef Aws::Utils::Outcome<CreateBackupResult, Aws::Client::AWSError<DynamoDBErrors>> CreateBackupOutcome;
-        typedef Aws::Utils::Outcome<CreateGlobalTableResult, Aws::Client::AWSError<DynamoDBErrors>> CreateGlobalTableOutcome;
-        typedef Aws::Utils::Outcome<CreateTableResult, Aws::Client::AWSError<DynamoDBErrors>> CreateTableOutcome;
-        typedef Aws::Utils::Outcome<DeleteBackupResult, Aws::Client::AWSError<DynamoDBErrors>> DeleteBackupOutcome;
-        typedef Aws::Utils::Outcome<DeleteItemResult, Aws::Client::AWSError<DynamoDBErrors>> DeleteItemOutcome;
-        typedef Aws::Utils::Outcome<DeleteTableResult, Aws::Client::AWSError<DynamoDBErrors>> DeleteTableOutcome;
-        typedef Aws::Utils::Outcome<DescribeBackupResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeBackupOutcome;
-        typedef Aws::Utils::Outcome<DescribeContinuousBackupsResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeContinuousBackupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeContributorInsightsResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeContributorInsightsOutcome;
-        typedef Aws::Utils::Outcome<DescribeEndpointsResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeEndpointsOutcome;
-        typedef Aws::Utils::Outcome<DescribeGlobalTableResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeGlobalTableOutcome;
-        typedef Aws::Utils::Outcome<DescribeGlobalTableSettingsResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeGlobalTableSettingsOutcome;
-        typedef Aws::Utils::Outcome<DescribeLimitsResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeLimitsOutcome;
-        typedef Aws::Utils::Outcome<DescribeTableResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeTableOutcome;
-        typedef Aws::Utils::Outcome<DescribeTableReplicaAutoScalingResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeTableReplicaAutoScalingOutcome;
-        typedef Aws::Utils::Outcome<DescribeTimeToLiveResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeTimeToLiveOutcome;
-        typedef Aws::Utils::Outcome<GetItemResult, Aws::Client::AWSError<DynamoDBErrors>> GetItemOutcome;
-        typedef Aws::Utils::Outcome<ListBackupsResult, Aws::Client::AWSError<DynamoDBErrors>> ListBackupsOutcome;
-        typedef Aws::Utils::Outcome<ListContributorInsightsResult, Aws::Client::AWSError<DynamoDBErrors>> ListContributorInsightsOutcome;
-        typedef Aws::Utils::Outcome<ListGlobalTablesResult, Aws::Client::AWSError<DynamoDBErrors>> ListGlobalTablesOutcome;
-        typedef Aws::Utils::Outcome<ListTablesResult, Aws::Client::AWSError<DynamoDBErrors>> ListTablesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsOfResourceResult, Aws::Client::AWSError<DynamoDBErrors>> ListTagsOfResourceOutcome;
-        typedef Aws::Utils::Outcome<PutItemResult, Aws::Client::AWSError<DynamoDBErrors>> PutItemOutcome;
-        typedef Aws::Utils::Outcome<QueryResult, Aws::Client::AWSError<DynamoDBErrors>> QueryOutcome;
-        typedef Aws::Utils::Outcome<RestoreTableFromBackupResult, Aws::Client::AWSError<DynamoDBErrors>> RestoreTableFromBackupOutcome;
-        typedef Aws::Utils::Outcome<RestoreTableToPointInTimeResult, Aws::Client::AWSError<DynamoDBErrors>> RestoreTableToPointInTimeOutcome;
-        typedef Aws::Utils::Outcome<ScanResult, Aws::Client::AWSError<DynamoDBErrors>> ScanOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DynamoDBErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<TransactGetItemsResult, Aws::Client::AWSError<DynamoDBErrors>> TransactGetItemsOutcome;
-        typedef Aws::Utils::Outcome<TransactWriteItemsResult, Aws::Client::AWSError<DynamoDBErrors>> TransactWriteItemsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DynamoDBErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateContinuousBackupsResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateContinuousBackupsOutcome;
-        typedef Aws::Utils::Outcome<UpdateContributorInsightsResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateContributorInsightsOutcome;
-        typedef Aws::Utils::Outcome<UpdateGlobalTableResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateGlobalTableOutcome;
-        typedef Aws::Utils::Outcome<UpdateGlobalTableSettingsResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateGlobalTableSettingsOutcome;
-        typedef Aws::Utils::Outcome<UpdateItemResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateItemOutcome;
-        typedef Aws::Utils::Outcome<UpdateTableResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateTableOutcome;
-        typedef Aws::Utils::Outcome<UpdateTableReplicaAutoScalingResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateTableReplicaAutoScalingOutcome;
-        typedef Aws::Utils::Outcome<UpdateTimeToLiveResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateTimeToLiveOutcome;
+        typedef Aws::Utils::Outcome<BatchExecuteStatementResult, DynamoDBError> BatchExecuteStatementOutcome;
+        typedef Aws::Utils::Outcome<BatchGetItemResult, DynamoDBError> BatchGetItemOutcome;
+        typedef Aws::Utils::Outcome<BatchWriteItemResult, DynamoDBError> BatchWriteItemOutcome;
+        typedef Aws::Utils::Outcome<CreateBackupResult, DynamoDBError> CreateBackupOutcome;
+        typedef Aws::Utils::Outcome<CreateGlobalTableResult, DynamoDBError> CreateGlobalTableOutcome;
+        typedef Aws::Utils::Outcome<CreateTableResult, DynamoDBError> CreateTableOutcome;
+        typedef Aws::Utils::Outcome<DeleteBackupResult, DynamoDBError> DeleteBackupOutcome;
+        typedef Aws::Utils::Outcome<DeleteItemResult, DynamoDBError> DeleteItemOutcome;
+        typedef Aws::Utils::Outcome<DeleteTableResult, DynamoDBError> DeleteTableOutcome;
+        typedef Aws::Utils::Outcome<DescribeBackupResult, DynamoDBError> DescribeBackupOutcome;
+        typedef Aws::Utils::Outcome<DescribeContinuousBackupsResult, DynamoDBError> DescribeContinuousBackupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeContributorInsightsResult, DynamoDBError> DescribeContributorInsightsOutcome;
+        typedef Aws::Utils::Outcome<DescribeEndpointsResult, DynamoDBError> DescribeEndpointsOutcome;
+        typedef Aws::Utils::Outcome<DescribeExportResult, DynamoDBError> DescribeExportOutcome;
+        typedef Aws::Utils::Outcome<DescribeGlobalTableResult, DynamoDBError> DescribeGlobalTableOutcome;
+        typedef Aws::Utils::Outcome<DescribeGlobalTableSettingsResult, DynamoDBError> DescribeGlobalTableSettingsOutcome;
+        typedef Aws::Utils::Outcome<DescribeKinesisStreamingDestinationResult, DynamoDBError> DescribeKinesisStreamingDestinationOutcome;
+        typedef Aws::Utils::Outcome<DescribeLimitsResult, DynamoDBError> DescribeLimitsOutcome;
+        typedef Aws::Utils::Outcome<DescribeTableResult, DynamoDBError> DescribeTableOutcome;
+        typedef Aws::Utils::Outcome<DescribeTableReplicaAutoScalingResult, DynamoDBError> DescribeTableReplicaAutoScalingOutcome;
+        typedef Aws::Utils::Outcome<DescribeTimeToLiveResult, DynamoDBError> DescribeTimeToLiveOutcome;
+        typedef Aws::Utils::Outcome<DisableKinesisStreamingDestinationResult, DynamoDBError> DisableKinesisStreamingDestinationOutcome;
+        typedef Aws::Utils::Outcome<EnableKinesisStreamingDestinationResult, DynamoDBError> EnableKinesisStreamingDestinationOutcome;
+        typedef Aws::Utils::Outcome<ExecuteStatementResult, DynamoDBError> ExecuteStatementOutcome;
+        typedef Aws::Utils::Outcome<ExecuteTransactionResult, DynamoDBError> ExecuteTransactionOutcome;
+        typedef Aws::Utils::Outcome<ExportTableToPointInTimeResult, DynamoDBError> ExportTableToPointInTimeOutcome;
+        typedef Aws::Utils::Outcome<GetItemResult, DynamoDBError> GetItemOutcome;
+        typedef Aws::Utils::Outcome<ListBackupsResult, DynamoDBError> ListBackupsOutcome;
+        typedef Aws::Utils::Outcome<ListContributorInsightsResult, DynamoDBError> ListContributorInsightsOutcome;
+        typedef Aws::Utils::Outcome<ListExportsResult, DynamoDBError> ListExportsOutcome;
+        typedef Aws::Utils::Outcome<ListGlobalTablesResult, DynamoDBError> ListGlobalTablesOutcome;
+        typedef Aws::Utils::Outcome<ListTablesResult, DynamoDBError> ListTablesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsOfResourceResult, DynamoDBError> ListTagsOfResourceOutcome;
+        typedef Aws::Utils::Outcome<PutItemResult, DynamoDBError> PutItemOutcome;
+        typedef Aws::Utils::Outcome<QueryResult, DynamoDBError> QueryOutcome;
+        typedef Aws::Utils::Outcome<RestoreTableFromBackupResult, DynamoDBError> RestoreTableFromBackupOutcome;
+        typedef Aws::Utils::Outcome<RestoreTableToPointInTimeResult, DynamoDBError> RestoreTableToPointInTimeOutcome;
+        typedef Aws::Utils::Outcome<ScanResult, DynamoDBError> ScanOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, DynamoDBError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<TransactGetItemsResult, DynamoDBError> TransactGetItemsOutcome;
+        typedef Aws::Utils::Outcome<TransactWriteItemsResult, DynamoDBError> TransactWriteItemsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, DynamoDBError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateContinuousBackupsResult, DynamoDBError> UpdateContinuousBackupsOutcome;
+        typedef Aws::Utils::Outcome<UpdateContributorInsightsResult, DynamoDBError> UpdateContributorInsightsOutcome;
+        typedef Aws::Utils::Outcome<UpdateGlobalTableResult, DynamoDBError> UpdateGlobalTableOutcome;
+        typedef Aws::Utils::Outcome<UpdateGlobalTableSettingsResult, DynamoDBError> UpdateGlobalTableSettingsOutcome;
+        typedef Aws::Utils::Outcome<UpdateItemResult, DynamoDBError> UpdateItemOutcome;
+        typedef Aws::Utils::Outcome<UpdateTableResult, DynamoDBError> UpdateTableOutcome;
+        typedef Aws::Utils::Outcome<UpdateTableReplicaAutoScalingResult, DynamoDBError> UpdateTableReplicaAutoScalingOutcome;
+        typedef Aws::Utils::Outcome<UpdateTimeToLiveResult, DynamoDBError> UpdateTimeToLiveOutcome;
 
+        typedef std::future<BatchExecuteStatementOutcome> BatchExecuteStatementOutcomeCallable;
         typedef std::future<BatchGetItemOutcome> BatchGetItemOutcomeCallable;
         typedef std::future<BatchWriteItemOutcome> BatchWriteItemOutcomeCallable;
         typedef std::future<CreateBackupOutcome> CreateBackupOutcomeCallable;
@@ -197,15 +215,23 @@ namespace Model
         typedef std::future<DescribeContinuousBackupsOutcome> DescribeContinuousBackupsOutcomeCallable;
         typedef std::future<DescribeContributorInsightsOutcome> DescribeContributorInsightsOutcomeCallable;
         typedef std::future<DescribeEndpointsOutcome> DescribeEndpointsOutcomeCallable;
+        typedef std::future<DescribeExportOutcome> DescribeExportOutcomeCallable;
         typedef std::future<DescribeGlobalTableOutcome> DescribeGlobalTableOutcomeCallable;
         typedef std::future<DescribeGlobalTableSettingsOutcome> DescribeGlobalTableSettingsOutcomeCallable;
+        typedef std::future<DescribeKinesisStreamingDestinationOutcome> DescribeKinesisStreamingDestinationOutcomeCallable;
         typedef std::future<DescribeLimitsOutcome> DescribeLimitsOutcomeCallable;
         typedef std::future<DescribeTableOutcome> DescribeTableOutcomeCallable;
         typedef std::future<DescribeTableReplicaAutoScalingOutcome> DescribeTableReplicaAutoScalingOutcomeCallable;
         typedef std::future<DescribeTimeToLiveOutcome> DescribeTimeToLiveOutcomeCallable;
+        typedef std::future<DisableKinesisStreamingDestinationOutcome> DisableKinesisStreamingDestinationOutcomeCallable;
+        typedef std::future<EnableKinesisStreamingDestinationOutcome> EnableKinesisStreamingDestinationOutcomeCallable;
+        typedef std::future<ExecuteStatementOutcome> ExecuteStatementOutcomeCallable;
+        typedef std::future<ExecuteTransactionOutcome> ExecuteTransactionOutcomeCallable;
+        typedef std::future<ExportTableToPointInTimeOutcome> ExportTableToPointInTimeOutcomeCallable;
         typedef std::future<GetItemOutcome> GetItemOutcomeCallable;
         typedef std::future<ListBackupsOutcome> ListBackupsOutcomeCallable;
         typedef std::future<ListContributorInsightsOutcome> ListContributorInsightsOutcomeCallable;
+        typedef std::future<ListExportsOutcome> ListExportsOutcomeCallable;
         typedef std::future<ListGlobalTablesOutcome> ListGlobalTablesOutcomeCallable;
         typedef std::future<ListTablesOutcome> ListTablesOutcomeCallable;
         typedef std::future<ListTagsOfResourceOutcome> ListTagsOfResourceOutcomeCallable;
@@ -230,6 +256,7 @@ namespace Model
 
   class DynamoDBClient;
 
+    typedef std::function<void(const DynamoDBClient*, const Model::BatchExecuteStatementRequest&, const Model::BatchExecuteStatementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchExecuteStatementResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::BatchGetItemRequest&, const Model::BatchGetItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetItemResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::BatchWriteItemRequest&, const Model::BatchWriteItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchWriteItemResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::CreateBackupRequest&, const Model::CreateBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBackupResponseReceivedHandler;
@@ -242,15 +269,23 @@ namespace Model
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeContinuousBackupsRequest&, const Model::DescribeContinuousBackupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContinuousBackupsResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeContributorInsightsRequest&, const Model::DescribeContributorInsightsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContributorInsightsResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeEndpointsRequest&, const Model::DescribeEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointsResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::DescribeExportRequest&, const Model::DescribeExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExportResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeGlobalTableRequest&, const Model::DescribeGlobalTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGlobalTableResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeGlobalTableSettingsRequest&, const Model::DescribeGlobalTableSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGlobalTableSettingsResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::DescribeKinesisStreamingDestinationRequest&, const Model::DescribeKinesisStreamingDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeKinesisStreamingDestinationResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeLimitsRequest&, const Model::DescribeLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLimitsResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeTableRequest&, const Model::DescribeTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTableResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeTableReplicaAutoScalingRequest&, const Model::DescribeTableReplicaAutoScalingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTableReplicaAutoScalingResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeTimeToLiveRequest&, const Model::DescribeTimeToLiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTimeToLiveResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::DisableKinesisStreamingDestinationRequest&, const Model::DisableKinesisStreamingDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableKinesisStreamingDestinationResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::EnableKinesisStreamingDestinationRequest&, const Model::EnableKinesisStreamingDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableKinesisStreamingDestinationResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::ExecuteStatementRequest&, const Model::ExecuteStatementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExecuteStatementResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::ExecuteTransactionRequest&, const Model::ExecuteTransactionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExecuteTransactionResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::ExportTableToPointInTimeRequest&, const Model::ExportTableToPointInTimeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportTableToPointInTimeResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::GetItemRequest&, const Model::GetItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetItemResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::ListBackupsRequest&, const Model::ListBackupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBackupsResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::ListContributorInsightsRequest&, const Model::ListContributorInsightsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContributorInsightsResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::ListExportsRequest&, const Model::ListExportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExportsResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::ListGlobalTablesRequest&, const Model::ListGlobalTablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGlobalTablesResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::ListTablesRequest&, const Model::ListTablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTablesResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::ListTagsOfResourceRequest&, const Model::ListTagsOfResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsOfResourceResponseReceivedHandler;
@@ -316,8 +351,34 @@ namespace Model
 
         virtual ~DynamoDBClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "DynamoDB"; }
 
+        /**
+         * <p> This operation allows you to perform batch reads and writes on data stored
+         * in DynamoDB, using PartiQL. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchExecuteStatement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchExecuteStatementOutcome BatchExecuteStatement(const Model::BatchExecuteStatementRequest& request) const;
+
+        /**
+         * <p> This operation allows you to perform batch reads and writes on data stored
+         * in DynamoDB, using PartiQL. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchExecuteStatement">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchExecuteStatementOutcomeCallable BatchExecuteStatementCallable(const Model::BatchExecuteStatementRequest& request) const;
+
+        /**
+         * <p> This operation allows you to perform batch reads and writes on data stored
+         * in DynamoDB, using PartiQL. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchExecuteStatement">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchExecuteStatementAsync(const Model::BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The <code>BatchGetItem</code> operation returns the attributes of one or more
@@ -327,10 +388,10 @@ namespace Model
          * response size limit is exceeded, the table's provisioned throughput is exceeded,
          * or an internal processing failure occurs. If a partial result is returned, the
          * operation returns a value for <code>UnprocessedKeys</code>. You can use this
-         * value to retry the operation starting with the next item to get.</p> <important>
+         * value to retry the operation starting with the next item to get.</p> 
          * <p>If you request more than 100 items, <code>BatchGetItem</code> returns a
          * <code>ValidationException</code> with the message "Too many items requested for
-         * the BatchGetItem call."</p> </important> <p>For example, if you ask to retrieve
+         * the BatchGetItem call."</p>  <p>For example, if you ask to retrieve
          * 100 items, but each individual item is 300 KB in size, the system returns 52
          * items (so as not to exceed the 16 MB limit). It also returns an appropriate
          * <code>UnprocessedKeys</code> value so you can get the next page of results. If
@@ -341,7 +402,7 @@ namespace Model
          * <code>ProvisionedThroughputExceededException</code>. If <i>at least one</i> of
          * the items is successfully processed, then <code>BatchGetItem</code> completes
          * successfully, while returning the keys of the unread items in
-         * <code>UnprocessedKeys</code>.</p> <important> <p>If DynamoDB returns any
+         * <code>UnprocessedKeys</code>.</p>  <p>If DynamoDB returns any
          * unprocessed items, you should retry the batch operation on those items. However,
          * <i>we strongly recommend that you use an exponential backoff algorithm</i>. If
          * you retry the batch operation immediately, the underlying read or write requests
@@ -350,7 +411,7 @@ namespace Model
          * are much more likely to succeed.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#BatchOperations">Batch
          * Operations and Error Handling</a> in the <i>Amazon DynamoDB Developer
-         * Guide</i>.</p> </important> <p>By default, <code>BatchGetItem</code> performs
+         * Guide</i>.</p>  <p>By default, <code>BatchGetItem</code> performs
          * eventually consistent reads on every table in the request. If you want strongly
          * consistent reads instead, you can set <code>ConsistentRead</code> to
          * <code>true</code> for any or all tables.</p> <p>In order to minimize response
@@ -378,10 +439,10 @@ namespace Model
          * response size limit is exceeded, the table's provisioned throughput is exceeded,
          * or an internal processing failure occurs. If a partial result is returned, the
          * operation returns a value for <code>UnprocessedKeys</code>. You can use this
-         * value to retry the operation starting with the next item to get.</p> <important>
+         * value to retry the operation starting with the next item to get.</p> 
          * <p>If you request more than 100 items, <code>BatchGetItem</code> returns a
          * <code>ValidationException</code> with the message "Too many items requested for
-         * the BatchGetItem call."</p> </important> <p>For example, if you ask to retrieve
+         * the BatchGetItem call."</p>  <p>For example, if you ask to retrieve
          * 100 items, but each individual item is 300 KB in size, the system returns 52
          * items (so as not to exceed the 16 MB limit). It also returns an appropriate
          * <code>UnprocessedKeys</code> value so you can get the next page of results. If
@@ -392,7 +453,7 @@ namespace Model
          * <code>ProvisionedThroughputExceededException</code>. If <i>at least one</i> of
          * the items is successfully processed, then <code>BatchGetItem</code> completes
          * successfully, while returning the keys of the unread items in
-         * <code>UnprocessedKeys</code>.</p> <important> <p>If DynamoDB returns any
+         * <code>UnprocessedKeys</code>.</p>  <p>If DynamoDB returns any
          * unprocessed items, you should retry the batch operation on those items. However,
          * <i>we strongly recommend that you use an exponential backoff algorithm</i>. If
          * you retry the batch operation immediately, the underlying read or write requests
@@ -401,7 +462,7 @@ namespace Model
          * are much more likely to succeed.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#BatchOperations">Batch
          * Operations and Error Handling</a> in the <i>Amazon DynamoDB Developer
-         * Guide</i>.</p> </important> <p>By default, <code>BatchGetItem</code> performs
+         * Guide</i>.</p>  <p>By default, <code>BatchGetItem</code> performs
          * eventually consistent reads on every table in the request. If you want strongly
          * consistent reads instead, you can set <code>ConsistentRead</code> to
          * <code>true</code> for any or all tables.</p> <p>In order to minimize response
@@ -431,10 +492,10 @@ namespace Model
          * response size limit is exceeded, the table's provisioned throughput is exceeded,
          * or an internal processing failure occurs. If a partial result is returned, the
          * operation returns a value for <code>UnprocessedKeys</code>. You can use this
-         * value to retry the operation starting with the next item to get.</p> <important>
+         * value to retry the operation starting with the next item to get.</p> 
          * <p>If you request more than 100 items, <code>BatchGetItem</code> returns a
          * <code>ValidationException</code> with the message "Too many items requested for
-         * the BatchGetItem call."</p> </important> <p>For example, if you ask to retrieve
+         * the BatchGetItem call."</p>  <p>For example, if you ask to retrieve
          * 100 items, but each individual item is 300 KB in size, the system returns 52
          * items (so as not to exceed the 16 MB limit). It also returns an appropriate
          * <code>UnprocessedKeys</code> value so you can get the next page of results. If
@@ -445,7 +506,7 @@ namespace Model
          * <code>ProvisionedThroughputExceededException</code>. If <i>at least one</i> of
          * the items is successfully processed, then <code>BatchGetItem</code> completes
          * successfully, while returning the keys of the unread items in
-         * <code>UnprocessedKeys</code>.</p> <important> <p>If DynamoDB returns any
+         * <code>UnprocessedKeys</code>.</p>  <p>If DynamoDB returns any
          * unprocessed items, you should retry the batch operation on those items. However,
          * <i>we strongly recommend that you use an exponential backoff algorithm</i>. If
          * you retry the batch operation immediately, the underlying read or write requests
@@ -454,7 +515,7 @@ namespace Model
          * are much more likely to succeed.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#BatchOperations">Batch
          * Operations and Error Handling</a> in the <i>Amazon DynamoDB Developer
-         * Guide</i>.</p> </important> <p>By default, <code>BatchGetItem</code> performs
+         * Guide</i>.</p>  <p>By default, <code>BatchGetItem</code> performs
          * eventually consistent reads on every table in the request. If you want strongly
          * consistent reads instead, you can set <code>ConsistentRead</code> to
          * <code>true</code> for any or all tables.</p> <p>In order to minimize response
@@ -480,9 +541,9 @@ namespace Model
          * <p>The <code>BatchWriteItem</code> operation puts or deletes multiple items in
          * one or more tables. A single call to <code>BatchWriteItem</code> can write up to
          * 16 MB of data, which can comprise as many as 25 put or delete requests.
-         * Individual items to be written can be as large as 400 KB.</p> <note> <p>
+         * Individual items to be written can be as large as 400 KB.</p>  <p>
          * <code>BatchWriteItem</code> cannot update items. To update items, use the
-         * <code>UpdateItem</code> action.</p> </note> <p>The individual
+         * <code>UpdateItem</code> action.</p>  <p>The individual
          * <code>PutItem</code> and <code>DeleteItem</code> operations specified in
          * <code>BatchWriteItem</code> are atomic; however <code>BatchWriteItem</code> as a
          * whole is not. If any requested operations fail because the table's provisioned
@@ -494,7 +555,7 @@ namespace Model
          * those unprocessed items until all items have been processed.</p> <p>If
          * <i>none</i> of the items can be processed due to insufficient provisioned
          * throughput on all of the tables in the request, then <code>BatchWriteItem</code>
-         * returns a <code>ProvisionedThroughputExceededException</code>.</p> <important>
+         * returns a <code>ProvisionedThroughputExceededException</code>.</p> 
          * <p>If DynamoDB returns any unprocessed items, you should retry the batch
          * operation on those items. However, <i>we strongly recommend that you use an
          * exponential backoff algorithm</i>. If you retry the batch operation immediately,
@@ -504,7 +565,7 @@ namespace Model
          * more information, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#Programming.Errors.BatchOperations">Batch
          * Operations and Error Handling</a> in the <i>Amazon DynamoDB Developer
-         * Guide</i>.</p> </important> <p>With <code>BatchWriteItem</code>, you can
+         * Guide</i>.</p>  <p>With <code>BatchWriteItem</code>, you can
          * efficiently write or delete large amounts of data, such as from Amazon EMR, or
          * copy data from another database into DynamoDB. In order to improve performance
          * with these large-scale operations, <code>BatchWriteItem</code> does not behave
@@ -543,9 +604,9 @@ namespace Model
          * <p>The <code>BatchWriteItem</code> operation puts or deletes multiple items in
          * one or more tables. A single call to <code>BatchWriteItem</code> can write up to
          * 16 MB of data, which can comprise as many as 25 put or delete requests.
-         * Individual items to be written can be as large as 400 KB.</p> <note> <p>
+         * Individual items to be written can be as large as 400 KB.</p>  <p>
          * <code>BatchWriteItem</code> cannot update items. To update items, use the
-         * <code>UpdateItem</code> action.</p> </note> <p>The individual
+         * <code>UpdateItem</code> action.</p>  <p>The individual
          * <code>PutItem</code> and <code>DeleteItem</code> operations specified in
          * <code>BatchWriteItem</code> are atomic; however <code>BatchWriteItem</code> as a
          * whole is not. If any requested operations fail because the table's provisioned
@@ -557,7 +618,7 @@ namespace Model
          * those unprocessed items until all items have been processed.</p> <p>If
          * <i>none</i> of the items can be processed due to insufficient provisioned
          * throughput on all of the tables in the request, then <code>BatchWriteItem</code>
-         * returns a <code>ProvisionedThroughputExceededException</code>.</p> <important>
+         * returns a <code>ProvisionedThroughputExceededException</code>.</p> 
          * <p>If DynamoDB returns any unprocessed items, you should retry the batch
          * operation on those items. However, <i>we strongly recommend that you use an
          * exponential backoff algorithm</i>. If you retry the batch operation immediately,
@@ -567,7 +628,7 @@ namespace Model
          * more information, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#Programming.Errors.BatchOperations">Batch
          * Operations and Error Handling</a> in the <i>Amazon DynamoDB Developer
-         * Guide</i>.</p> </important> <p>With <code>BatchWriteItem</code>, you can
+         * Guide</i>.</p>  <p>With <code>BatchWriteItem</code>, you can
          * efficiently write or delete large amounts of data, such as from Amazon EMR, or
          * copy data from another database into DynamoDB. In order to improve performance
          * with these large-scale operations, <code>BatchWriteItem</code> does not behave
@@ -608,9 +669,9 @@ namespace Model
          * <p>The <code>BatchWriteItem</code> operation puts or deletes multiple items in
          * one or more tables. A single call to <code>BatchWriteItem</code> can write up to
          * 16 MB of data, which can comprise as many as 25 put or delete requests.
-         * Individual items to be written can be as large as 400 KB.</p> <note> <p>
+         * Individual items to be written can be as large as 400 KB.</p>  <p>
          * <code>BatchWriteItem</code> cannot update items. To update items, use the
-         * <code>UpdateItem</code> action.</p> </note> <p>The individual
+         * <code>UpdateItem</code> action.</p>  <p>The individual
          * <code>PutItem</code> and <code>DeleteItem</code> operations specified in
          * <code>BatchWriteItem</code> are atomic; however <code>BatchWriteItem</code> as a
          * whole is not. If any requested operations fail because the table's provisioned
@@ -622,7 +683,7 @@ namespace Model
          * those unprocessed items until all items have been processed.</p> <p>If
          * <i>none</i> of the items can be processed due to insufficient provisioned
          * throughput on all of the tables in the request, then <code>BatchWriteItem</code>
-         * returns a <code>ProvisionedThroughputExceededException</code>.</p> <important>
+         * returns a <code>ProvisionedThroughputExceededException</code>.</p> 
          * <p>If DynamoDB returns any unprocessed items, you should retry the batch
          * operation on those items. However, <i>we strongly recommend that you use an
          * exponential backoff algorithm</i>. If you retry the batch operation immediately,
@@ -632,7 +693,7 @@ namespace Model
          * more information, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#Programming.Errors.BatchOperations">Batch
          * Operations and Error Handling</a> in the <i>Amazon DynamoDB Developer
-         * Guide</i>.</p> </important> <p>With <code>BatchWriteItem</code>, you can
+         * Guide</i>.</p>  <p>With <code>BatchWriteItem</code>, you can
          * efficiently write or delete large amounts of data, such as from Amazon EMR, or
          * copy data from another database into DynamoDB. In order to improve performance
          * with these large-scale operations, <code>BatchWriteItem</code> does not behave
@@ -748,9 +809,9 @@ namespace Model
         /**
          * <p>Creates a global table from an existing table. A global table creates a
          * replication relationship between two or more DynamoDB tables with the same table
-         * name in the provided Regions. </p> <note> <p>This method only applies to <a
+         * name in the provided Regions. </p>  <p>This operation only applies to <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-         * 2017.11.29</a> of global tables.</p> </note> <p>If you want to add a new replica
+         * 2017.11.29</a> of global tables.</p>  <p>If you want to add a new replica
          * table to a global table, each of the following conditions must be true:</p> <ul>
          * <li> <p>The table must have the same primary key as all of the other
          * replicas.</p> </li> <li> <p>The table must have the same name as all of the
@@ -761,14 +822,17 @@ namespace Model
          * following conditions must also be met: </p> <ul> <li> <p> The global secondary
          * indexes must have the same name. </p> </li> <li> <p> The global secondary
          * indexes must have the same hash key and sort key (if present). </p> </li> </ul>
-         * <important> <p> Write capacity settings should be set consistently across your
-         * replica tables and secondary indexes. DynamoDB strongly recommends enabling auto
-         * scaling to manage the write capacity settings for all of your global tables
-         * replicas and indexes. </p> <p> If you prefer to manage write capacity settings
-         * manually, you should provision equal replicated write capacity units to your
-         * replica tables. You should also provision equal replicated write capacity units
-         * to matching secondary indexes across your global table. </p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p> If local secondary indexes are specified, then the following conditions must
+         * also be met: </p> <ul> <li> <p> The local secondary indexes must have the same
+         * name. </p> </li> <li> <p> The local secondary indexes must have the same hash
+         * key and sort key (if present). </p> </li> </ul>  <p> Write capacity
+         * settings should be set consistently across your replica tables and secondary
+         * indexes. DynamoDB strongly recommends enabling auto scaling to manage the write
+         * capacity settings for all of your global tables replicas and indexes. </p> <p>
+         * If you prefer to manage write capacity settings manually, you should provision
+         * equal replicated write capacity units to your replica tables. You should also
+         * provision equal replicated write capacity units to matching secondary indexes
+         * across your global table. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable">AWS
          * API Reference</a></p>
          */
@@ -777,9 +841,9 @@ namespace Model
         /**
          * <p>Creates a global table from an existing table. A global table creates a
          * replication relationship between two or more DynamoDB tables with the same table
-         * name in the provided Regions. </p> <note> <p>This method only applies to <a
+         * name in the provided Regions. </p>  <p>This operation only applies to <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-         * 2017.11.29</a> of global tables.</p> </note> <p>If you want to add a new replica
+         * 2017.11.29</a> of global tables.</p>  <p>If you want to add a new replica
          * table to a global table, each of the following conditions must be true:</p> <ul>
          * <li> <p>The table must have the same primary key as all of the other
          * replicas.</p> </li> <li> <p>The table must have the same name as all of the
@@ -790,14 +854,17 @@ namespace Model
          * following conditions must also be met: </p> <ul> <li> <p> The global secondary
          * indexes must have the same name. </p> </li> <li> <p> The global secondary
          * indexes must have the same hash key and sort key (if present). </p> </li> </ul>
-         * <important> <p> Write capacity settings should be set consistently across your
-         * replica tables and secondary indexes. DynamoDB strongly recommends enabling auto
-         * scaling to manage the write capacity settings for all of your global tables
-         * replicas and indexes. </p> <p> If you prefer to manage write capacity settings
-         * manually, you should provision equal replicated write capacity units to your
-         * replica tables. You should also provision equal replicated write capacity units
-         * to matching secondary indexes across your global table. </p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p> If local secondary indexes are specified, then the following conditions must
+         * also be met: </p> <ul> <li> <p> The local secondary indexes must have the same
+         * name. </p> </li> <li> <p> The local secondary indexes must have the same hash
+         * key and sort key (if present). </p> </li> </ul>  <p> Write capacity
+         * settings should be set consistently across your replica tables and secondary
+         * indexes. DynamoDB strongly recommends enabling auto scaling to manage the write
+         * capacity settings for all of your global tables replicas and indexes. </p> <p>
+         * If you prefer to manage write capacity settings manually, you should provision
+         * equal replicated write capacity units to your replica tables. You should also
+         * provision equal replicated write capacity units to matching secondary indexes
+         * across your global table. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable">AWS
          * API Reference</a></p>
          *
@@ -808,9 +875,9 @@ namespace Model
         /**
          * <p>Creates a global table from an existing table. A global table creates a
          * replication relationship between two or more DynamoDB tables with the same table
-         * name in the provided Regions. </p> <note> <p>This method only applies to <a
+         * name in the provided Regions. </p>  <p>This operation only applies to <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-         * 2017.11.29</a> of global tables.</p> </note> <p>If you want to add a new replica
+         * 2017.11.29</a> of global tables.</p>  <p>If you want to add a new replica
          * table to a global table, each of the following conditions must be true:</p> <ul>
          * <li> <p>The table must have the same primary key as all of the other
          * replicas.</p> </li> <li> <p>The table must have the same name as all of the
@@ -821,14 +888,17 @@ namespace Model
          * following conditions must also be met: </p> <ul> <li> <p> The global secondary
          * indexes must have the same name. </p> </li> <li> <p> The global secondary
          * indexes must have the same hash key and sort key (if present). </p> </li> </ul>
-         * <important> <p> Write capacity settings should be set consistently across your
-         * replica tables and secondary indexes. DynamoDB strongly recommends enabling auto
-         * scaling to manage the write capacity settings for all of your global tables
-         * replicas and indexes. </p> <p> If you prefer to manage write capacity settings
-         * manually, you should provision equal replicated write capacity units to your
-         * replica tables. You should also provision equal replicated write capacity units
-         * to matching secondary indexes across your global table. </p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p> If local secondary indexes are specified, then the following conditions must
+         * also be met: </p> <ul> <li> <p> The local secondary indexes must have the same
+         * name. </p> </li> <li> <p> The local secondary indexes must have the same hash
+         * key and sort key (if present). </p> </li> </ul>  <p> Write capacity
+         * settings should be set consistently across your replica tables and secondary
+         * indexes. DynamoDB strongly recommends enabling auto scaling to manage the write
+         * capacity settings for all of your global tables replicas and indexes. </p> <p>
+         * If you prefer to manage write capacity settings manually, you should provision
+         * equal replicated write capacity units to your replica tables. You should also
+         * provision equal replicated write capacity units to matching secondary indexes
+         * across your global table. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable">AWS
          * API Reference</a></p>
          *
@@ -994,10 +1064,10 @@ namespace Model
          * <code>CREATING</code> or <code>UPDATING</code> states, then DynamoDB returns a
          * <code>ResourceInUseException</code>. If the specified table does not exist,
          * DynamoDB returns a <code>ResourceNotFoundException</code>. If table is already
-         * in the <code>DELETING</code> state, no error is returned. </p> <note>
+         * in the <code>DELETING</code> state, no error is returned. </p> 
          * <p>DynamoDB might continue to accept data read and write operations, such as
          * <code>GetItem</code> and <code>PutItem</code>, on a table in the
-         * <code>DELETING</code> state until the table deletion is complete.</p> </note>
+         * <code>DELETING</code> state until the table deletion is complete.</p> 
          * <p>When you delete a table, any indexes on that table are also deleted.</p>
          * <p>If you have DynamoDB Streams enabled on the table, then the corresponding
          * stream on that table goes into the <code>DISABLED</code> state, and the stream
@@ -1017,10 +1087,10 @@ namespace Model
          * <code>CREATING</code> or <code>UPDATING</code> states, then DynamoDB returns a
          * <code>ResourceInUseException</code>. If the specified table does not exist,
          * DynamoDB returns a <code>ResourceNotFoundException</code>. If table is already
-         * in the <code>DELETING</code> state, no error is returned. </p> <note>
+         * in the <code>DELETING</code> state, no error is returned. </p> 
          * <p>DynamoDB might continue to accept data read and write operations, such as
          * <code>GetItem</code> and <code>PutItem</code>, on a table in the
-         * <code>DELETING</code> state until the table deletion is complete.</p> </note>
+         * <code>DELETING</code> state until the table deletion is complete.</p> 
          * <p>When you delete a table, any indexes on that table are also deleted.</p>
          * <p>If you have DynamoDB Streams enabled on the table, then the corresponding
          * stream on that table goes into the <code>DISABLED</code> state, and the stream
@@ -1042,10 +1112,10 @@ namespace Model
          * <code>CREATING</code> or <code>UPDATING</code> states, then DynamoDB returns a
          * <code>ResourceInUseException</code>. If the specified table does not exist,
          * DynamoDB returns a <code>ResourceNotFoundException</code>. If table is already
-         * in the <code>DELETING</code> state, no error is returned. </p> <note>
+         * in the <code>DELETING</code> state, no error is returned. </p> 
          * <p>DynamoDB might continue to accept data read and write operations, such as
          * <code>GetItem</code> and <code>PutItem</code>, on a table in the
-         * <code>DELETING</code> state until the table deletion is complete.</p> </note>
+         * <code>DELETING</code> state until the table deletion is complete.</p> 
          * <p>When you delete a table, any indexes on that table are also deleted.</p>
          * <p>If you have DynamoDB Streams enabled on the table, then the corresponding
          * stream on that table goes into the <code>DISABLED</code> state, and the stream
@@ -1199,20 +1269,53 @@ namespace Model
         virtual void DescribeEndpointsAsync(const Model::DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about the specified global table.</p> <note> <p>This
-         * method only applies to <a
+         * <p>Describes an existing table export.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeExport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeExportOutcome DescribeExport(const Model::DescribeExportRequest& request) const;
+
+        /**
+         * <p>Describes an existing table export.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeExport">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeExportOutcomeCallable DescribeExportCallable(const Model::DescribeExportRequest& request) const;
+
+        /**
+         * <p>Describes an existing table export.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeExport">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeExportAsync(const Model::DescribeExportRequest& request, const DescribeExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about the specified global table.</p>  <p>This
+         * operation only applies to <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-         * 2017.11.29</a> of global tables.</p> </note><p><h3>See Also:</h3>   <a
+         * 2017.11.29</a> of global tables. If you are using global tables <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+         * 2019.11.21</a> you can use <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTable.html">DescribeTable</a>
+         * instead.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTable">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeGlobalTableOutcome DescribeGlobalTable(const Model::DescribeGlobalTableRequest& request) const;
 
         /**
-         * <p>Returns information about the specified global table.</p> <note> <p>This
-         * method only applies to <a
+         * <p>Returns information about the specified global table.</p>  <p>This
+         * operation only applies to <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-         * 2017.11.29</a> of global tables.</p> </note><p><h3>See Also:</h3>   <a
+         * 2017.11.29</a> of global tables. If you are using global tables <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+         * 2019.11.21</a> you can use <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTable.html">DescribeTable</a>
+         * instead.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTable">AWS
          * API Reference</a></p>
          *
@@ -1221,10 +1324,14 @@ namespace Model
         virtual Model::DescribeGlobalTableOutcomeCallable DescribeGlobalTableCallable(const Model::DescribeGlobalTableRequest& request) const;
 
         /**
-         * <p>Returns information about the specified global table.</p> <note> <p>This
-         * method only applies to <a
+         * <p>Returns information about the specified global table.</p>  <p>This
+         * operation only applies to <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-         * 2017.11.29</a> of global tables.</p> </note><p><h3>See Also:</h3>   <a
+         * 2017.11.29</a> of global tables. If you are using global tables <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+         * 2019.11.21</a> you can use <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTable.html">DescribeTable</a>
+         * instead.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTable">AWS
          * API Reference</a></p>
          *
@@ -1233,20 +1340,20 @@ namespace Model
         virtual void DescribeGlobalTableAsync(const Model::DescribeGlobalTableRequest& request, const DescribeGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes Region-specific settings for a global table.</p> <note> <p>This
-         * method only applies to <a
+         * <p>Describes Region-specific settings for a global table.</p>  <p>This
+         * operation only applies to <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-         * 2017.11.29</a> of global tables.</p> </note><p><h3>See Also:</h3>   <a
+         * 2017.11.29</a> of global tables.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTableSettings">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeGlobalTableSettingsOutcome DescribeGlobalTableSettings(const Model::DescribeGlobalTableSettingsRequest& request) const;
 
         /**
-         * <p>Describes Region-specific settings for a global table.</p> <note> <p>This
-         * method only applies to <a
+         * <p>Describes Region-specific settings for a global table.</p>  <p>This
+         * operation only applies to <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-         * 2017.11.29</a> of global tables.</p> </note><p><h3>See Also:</h3>   <a
+         * 2017.11.29</a> of global tables.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTableSettings">AWS
          * API Reference</a></p>
          *
@@ -1255,10 +1362,10 @@ namespace Model
         virtual Model::DescribeGlobalTableSettingsOutcomeCallable DescribeGlobalTableSettingsCallable(const Model::DescribeGlobalTableSettingsRequest& request) const;
 
         /**
-         * <p>Describes Region-specific settings for a global table.</p> <note> <p>This
-         * method only applies to <a
+         * <p>Describes Region-specific settings for a global table.</p>  <p>This
+         * operation only applies to <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-         * 2017.11.29</a> of global tables.</p> </note><p><h3>See Also:</h3>   <a
+         * 2017.11.29</a> of global tables.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTableSettings">AWS
          * API Reference</a></p>
          *
@@ -1267,23 +1374,51 @@ namespace Model
         virtual void DescribeGlobalTableSettingsAsync(const Model::DescribeGlobalTableSettingsRequest& request, const DescribeGlobalTableSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the current provisioned-capacity limits for your AWS account in a
+         * <p>Returns information about the status of Kinesis streaming.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeKinesisStreamingDestination">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeKinesisStreamingDestinationOutcome DescribeKinesisStreamingDestination(const Model::DescribeKinesisStreamingDestinationRequest& request) const;
+
+        /**
+         * <p>Returns information about the status of Kinesis streaming.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeKinesisStreamingDestination">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeKinesisStreamingDestinationOutcomeCallable DescribeKinesisStreamingDestinationCallable(const Model::DescribeKinesisStreamingDestinationRequest& request) const;
+
+        /**
+         * <p>Returns information about the status of Kinesis streaming.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeKinesisStreamingDestination">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeKinesisStreamingDestinationAsync(const Model::DescribeKinesisStreamingDestinationRequest& request, const DescribeKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the current provisioned-capacity quotas for your AWS account in a
          * Region, both for the Region as a whole and for any one DynamoDB table that you
          * create there.</p> <p>When you establish an AWS account, the account has initial
-         * limits on the maximum read capacity units and write capacity units that you can
+         * quotas on the maximum read capacity units and write capacity units that you can
          * provision across all of your DynamoDB tables in a given Region. Also, there are
-         * per-table limits that apply when you create a table there. For more information,
+         * per-table quotas that apply when you create a table there. For more information,
          * see <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-         * page in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Although you can
-         * increase these limits by filing a case at <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+         * Account, and Table Quotas</a> page in the <i>Amazon DynamoDB Developer
+         * Guide</i>.</p> <p>Although you can increase these quotas by filing a case at <a
          * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>,
          * obtaining the increase is not instantaneous. The <code>DescribeLimits</code>
          * action lets you write code to compare the capacity you are currently using to
-         * those limits imposed by your account so that you have enough time to apply for
-         * an increase before you hit a limit.</p> <p>For example, you could use one of the
+         * those quotas imposed by your account so that you have enough time to apply for
+         * an increase before you hit a quota.</p> <p>For example, you could use one of the
          * AWS SDKs to do the following:</p> <ol> <li> <p>Call <code>DescribeLimits</code>
-         * for a particular Region to obtain your current account limits on provisioned
+         * for a particular Region to obtain your current account quotas on provisioned
          * capacity there.</p> </li> <li> <p>Create a variable to hold the aggregate read
          * capacity units provisioned for all your tables in that Region, and one to hold
          * the aggregate write capacity units. Zero them both.</p> </li> <li> <p>Call
@@ -1295,18 +1430,18 @@ namespace Model
          * itself to your variables.</p> </li> <li> <p>If the table has one or more global
          * secondary indexes (GSIs), loop over these GSIs and add their provisioned
          * capacity values to your variables as well.</p> </li> </ul> </li> <li> <p>Report
-         * the account limits for that Region returned by <code>DescribeLimits</code>,
+         * the account quotas for that Region returned by <code>DescribeLimits</code>,
          * along with the total current provisioned capacity levels you have
          * calculated.</p> </li> </ol> <p>This will let you see whether you are getting
-         * close to your account-level limits.</p> <p>The per-table limits apply only when
+         * close to your account-level quotas.</p> <p>The per-table quotas apply only when
          * you are creating a new table. They restrict the sum of the provisioned capacity
          * of the new table itself and all its global secondary indexes.</p> <p>For
          * existing tables and their GSIs, DynamoDB doesn't let you increase provisioned
-         * capacity extremely rapidly. But the only upper limit that applies is that the
+         * capacity extremely rapidly, but the only quota that applies is that the
          * aggregate provisioned capacity over all your tables and GSIs cannot exceed
-         * either of the per-account limits.</p> <note> <p> <code>DescribeLimits</code>
+         * either of the per-account quotas.</p>  <p> <code>DescribeLimits</code>
          * should only be called periodically. You can expect throttling errors if you call
-         * it more than once in a minute.</p> </note> <p>The <code>DescribeLimits</code>
+         * it more than once in a minute.</p>  <p>The <code>DescribeLimits</code>
          * Request element has no content.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeLimits">AWS
          * API Reference</a></p>
@@ -1314,23 +1449,23 @@ namespace Model
         virtual Model::DescribeLimitsOutcome DescribeLimits(const Model::DescribeLimitsRequest& request) const;
 
         /**
-         * <p>Returns the current provisioned-capacity limits for your AWS account in a
+         * <p>Returns the current provisioned-capacity quotas for your AWS account in a
          * Region, both for the Region as a whole and for any one DynamoDB table that you
          * create there.</p> <p>When you establish an AWS account, the account has initial
-         * limits on the maximum read capacity units and write capacity units that you can
+         * quotas on the maximum read capacity units and write capacity units that you can
          * provision across all of your DynamoDB tables in a given Region. Also, there are
-         * per-table limits that apply when you create a table there. For more information,
+         * per-table quotas that apply when you create a table there. For more information,
          * see <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-         * page in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Although you can
-         * increase these limits by filing a case at <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+         * Account, and Table Quotas</a> page in the <i>Amazon DynamoDB Developer
+         * Guide</i>.</p> <p>Although you can increase these quotas by filing a case at <a
          * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>,
          * obtaining the increase is not instantaneous. The <code>DescribeLimits</code>
          * action lets you write code to compare the capacity you are currently using to
-         * those limits imposed by your account so that you have enough time to apply for
-         * an increase before you hit a limit.</p> <p>For example, you could use one of the
+         * those quotas imposed by your account so that you have enough time to apply for
+         * an increase before you hit a quota.</p> <p>For example, you could use one of the
          * AWS SDKs to do the following:</p> <ol> <li> <p>Call <code>DescribeLimits</code>
-         * for a particular Region to obtain your current account limits on provisioned
+         * for a particular Region to obtain your current account quotas on provisioned
          * capacity there.</p> </li> <li> <p>Create a variable to hold the aggregate read
          * capacity units provisioned for all your tables in that Region, and one to hold
          * the aggregate write capacity units. Zero them both.</p> </li> <li> <p>Call
@@ -1342,18 +1477,18 @@ namespace Model
          * itself to your variables.</p> </li> <li> <p>If the table has one or more global
          * secondary indexes (GSIs), loop over these GSIs and add their provisioned
          * capacity values to your variables as well.</p> </li> </ul> </li> <li> <p>Report
-         * the account limits for that Region returned by <code>DescribeLimits</code>,
+         * the account quotas for that Region returned by <code>DescribeLimits</code>,
          * along with the total current provisioned capacity levels you have
          * calculated.</p> </li> </ol> <p>This will let you see whether you are getting
-         * close to your account-level limits.</p> <p>The per-table limits apply only when
+         * close to your account-level quotas.</p> <p>The per-table quotas apply only when
          * you are creating a new table. They restrict the sum of the provisioned capacity
          * of the new table itself and all its global secondary indexes.</p> <p>For
          * existing tables and their GSIs, DynamoDB doesn't let you increase provisioned
-         * capacity extremely rapidly. But the only upper limit that applies is that the
+         * capacity extremely rapidly, but the only quota that applies is that the
          * aggregate provisioned capacity over all your tables and GSIs cannot exceed
-         * either of the per-account limits.</p> <note> <p> <code>DescribeLimits</code>
+         * either of the per-account quotas.</p>  <p> <code>DescribeLimits</code>
          * should only be called periodically. You can expect throttling errors if you call
-         * it more than once in a minute.</p> </note> <p>The <code>DescribeLimits</code>
+         * it more than once in a minute.</p>  <p>The <code>DescribeLimits</code>
          * Request element has no content.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeLimits">AWS
          * API Reference</a></p>
@@ -1363,23 +1498,23 @@ namespace Model
         virtual Model::DescribeLimitsOutcomeCallable DescribeLimitsCallable(const Model::DescribeLimitsRequest& request) const;
 
         /**
-         * <p>Returns the current provisioned-capacity limits for your AWS account in a
+         * <p>Returns the current provisioned-capacity quotas for your AWS account in a
          * Region, both for the Region as a whole and for any one DynamoDB table that you
          * create there.</p> <p>When you establish an AWS account, the account has initial
-         * limits on the maximum read capacity units and write capacity units that you can
+         * quotas on the maximum read capacity units and write capacity units that you can
          * provision across all of your DynamoDB tables in a given Region. Also, there are
-         * per-table limits that apply when you create a table there. For more information,
+         * per-table quotas that apply when you create a table there. For more information,
          * see <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-         * page in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Although you can
-         * increase these limits by filing a case at <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+         * Account, and Table Quotas</a> page in the <i>Amazon DynamoDB Developer
+         * Guide</i>.</p> <p>Although you can increase these quotas by filing a case at <a
          * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>,
          * obtaining the increase is not instantaneous. The <code>DescribeLimits</code>
          * action lets you write code to compare the capacity you are currently using to
-         * those limits imposed by your account so that you have enough time to apply for
-         * an increase before you hit a limit.</p> <p>For example, you could use one of the
+         * those quotas imposed by your account so that you have enough time to apply for
+         * an increase before you hit a quota.</p> <p>For example, you could use one of the
          * AWS SDKs to do the following:</p> <ol> <li> <p>Call <code>DescribeLimits</code>
-         * for a particular Region to obtain your current account limits on provisioned
+         * for a particular Region to obtain your current account quotas on provisioned
          * capacity there.</p> </li> <li> <p>Create a variable to hold the aggregate read
          * capacity units provisioned for all your tables in that Region, and one to hold
          * the aggregate write capacity units. Zero them both.</p> </li> <li> <p>Call
@@ -1391,18 +1526,18 @@ namespace Model
          * itself to your variables.</p> </li> <li> <p>If the table has one or more global
          * secondary indexes (GSIs), loop over these GSIs and add their provisioned
          * capacity values to your variables as well.</p> </li> </ul> </li> <li> <p>Report
-         * the account limits for that Region returned by <code>DescribeLimits</code>,
+         * the account quotas for that Region returned by <code>DescribeLimits</code>,
          * along with the total current provisioned capacity levels you have
          * calculated.</p> </li> </ol> <p>This will let you see whether you are getting
-         * close to your account-level limits.</p> <p>The per-table limits apply only when
+         * close to your account-level quotas.</p> <p>The per-table quotas apply only when
          * you are creating a new table. They restrict the sum of the provisioned capacity
          * of the new table itself and all its global secondary indexes.</p> <p>For
          * existing tables and their GSIs, DynamoDB doesn't let you increase provisioned
-         * capacity extremely rapidly. But the only upper limit that applies is that the
+         * capacity extremely rapidly, but the only quota that applies is that the
          * aggregate provisioned capacity over all your tables and GSIs cannot exceed
-         * either of the per-account limits.</p> <note> <p> <code>DescribeLimits</code>
+         * either of the per-account quotas.</p>  <p> <code>DescribeLimits</code>
          * should only be called periodically. You can expect throttling errors if you call
-         * it more than once in a minute.</p> </note> <p>The <code>DescribeLimits</code>
+         * it more than once in a minute.</p>  <p>The <code>DescribeLimits</code>
          * Request element has no content.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeLimits">AWS
          * API Reference</a></p>
@@ -1414,12 +1549,12 @@ namespace Model
         /**
          * <p>Returns information about the table, including the current status of the
          * table, when it was created, the primary key schema, and any indexes on the
-         * table.</p> <note> <p>If you issue a <code>DescribeTable</code> request
+         * table.</p>  <p>If you issue a <code>DescribeTable</code> request
          * immediately after a <code>CreateTable</code> request, DynamoDB might return a
          * <code>ResourceNotFoundException</code>. This is because
          * <code>DescribeTable</code> uses an eventually consistent query, and the metadata
          * for your table might not be available at that moment. Wait for a few seconds,
-         * and then try the <code>DescribeTable</code> request again.</p> </note><p><h3>See
+         * and then try the <code>DescribeTable</code> request again.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTable">AWS
          * API Reference</a></p>
@@ -1429,12 +1564,12 @@ namespace Model
         /**
          * <p>Returns information about the table, including the current status of the
          * table, when it was created, the primary key schema, and any indexes on the
-         * table.</p> <note> <p>If you issue a <code>DescribeTable</code> request
+         * table.</p>  <p>If you issue a <code>DescribeTable</code> request
          * immediately after a <code>CreateTable</code> request, DynamoDB might return a
          * <code>ResourceNotFoundException</code>. This is because
          * <code>DescribeTable</code> uses an eventually consistent query, and the metadata
          * for your table might not be available at that moment. Wait for a few seconds,
-         * and then try the <code>DescribeTable</code> request again.</p> </note><p><h3>See
+         * and then try the <code>DescribeTable</code> request again.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTable">AWS
          * API Reference</a></p>
@@ -1446,12 +1581,12 @@ namespace Model
         /**
          * <p>Returns information about the table, including the current status of the
          * table, when it was created, the primary key schema, and any indexes on the
-         * table.</p> <note> <p>If you issue a <code>DescribeTable</code> request
+         * table.</p>  <p>If you issue a <code>DescribeTable</code> request
          * immediately after a <code>CreateTable</code> request, DynamoDB might return a
          * <code>ResourceNotFoundException</code>. This is because
          * <code>DescribeTable</code> uses an eventually consistent query, and the metadata
          * for your table might not be available at that moment. Wait for a few seconds,
-         * and then try the <code>DescribeTable</code> request again.</p> </note><p><h3>See
+         * and then try the <code>DescribeTable</code> request again.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTable">AWS
          * API Reference</a></p>
@@ -1462,9 +1597,9 @@ namespace Model
 
         /**
          * <p>Describes auto scaling settings across replicas of the global table at
-         * once.</p> <note> <p>This method only applies to <a
+         * once.</p>  <p>This operation only applies to <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21</a> of global tables.</p> </note><p><h3>See Also:</h3>   <a
+         * 2019.11.21</a> of global tables.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTableReplicaAutoScaling">AWS
          * API Reference</a></p>
          */
@@ -1472,9 +1607,9 @@ namespace Model
 
         /**
          * <p>Describes auto scaling settings across replicas of the global table at
-         * once.</p> <note> <p>This method only applies to <a
+         * once.</p>  <p>This operation only applies to <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21</a> of global tables.</p> </note><p><h3>See Also:</h3>   <a
+         * 2019.11.21</a> of global tables.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTableReplicaAutoScaling">AWS
          * API Reference</a></p>
          *
@@ -1484,9 +1619,9 @@ namespace Model
 
         /**
          * <p>Describes auto scaling settings across replicas of the global table at
-         * once.</p> <note> <p>This method only applies to <a
+         * once.</p>  <p>This operation only applies to <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21</a> of global tables.</p> </note><p><h3>See Also:</h3>   <a
+         * 2019.11.21</a> of global tables.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTableReplicaAutoScaling">AWS
          * API Reference</a></p>
          *
@@ -1521,6 +1656,155 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeTimeToLiveAsync(const Model::DescribeTimeToLiveRequest& request, const DescribeTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Stops replication from the DynamoDB table to the Kinesis data stream. This is
+         * done without deleting either of the resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DisableKinesisStreamingDestination">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableKinesisStreamingDestinationOutcome DisableKinesisStreamingDestination(const Model::DisableKinesisStreamingDestinationRequest& request) const;
+
+        /**
+         * <p>Stops replication from the DynamoDB table to the Kinesis data stream. This is
+         * done without deleting either of the resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DisableKinesisStreamingDestination">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisableKinesisStreamingDestinationOutcomeCallable DisableKinesisStreamingDestinationCallable(const Model::DisableKinesisStreamingDestinationRequest& request) const;
+
+        /**
+         * <p>Stops replication from the DynamoDB table to the Kinesis data stream. This is
+         * done without deleting either of the resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DisableKinesisStreamingDestination">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisableKinesisStreamingDestinationAsync(const Model::DisableKinesisStreamingDestinationRequest& request, const DisableKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Starts table data replication to the specified Kinesis data stream at a
+         * timestamp chosen during the enable workflow. If this operation doesn't return
+         * results immediately, use DescribeKinesisStreamingDestination to check if
+         * streaming to the Kinesis data stream is ACTIVE.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/EnableKinesisStreamingDestination">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableKinesisStreamingDestinationOutcome EnableKinesisStreamingDestination(const Model::EnableKinesisStreamingDestinationRequest& request) const;
+
+        /**
+         * <p>Starts table data replication to the specified Kinesis data stream at a
+         * timestamp chosen during the enable workflow. If this operation doesn't return
+         * results immediately, use DescribeKinesisStreamingDestination to check if
+         * streaming to the Kinesis data stream is ACTIVE.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/EnableKinesisStreamingDestination">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::EnableKinesisStreamingDestinationOutcomeCallable EnableKinesisStreamingDestinationCallable(const Model::EnableKinesisStreamingDestinationRequest& request) const;
+
+        /**
+         * <p>Starts table data replication to the specified Kinesis data stream at a
+         * timestamp chosen during the enable workflow. If this operation doesn't return
+         * results immediately, use DescribeKinesisStreamingDestination to check if
+         * streaming to the Kinesis data stream is ACTIVE.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/EnableKinesisStreamingDestination">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void EnableKinesisStreamingDestinationAsync(const Model::EnableKinesisStreamingDestinationRequest& request, const EnableKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> This operation allows you to perform reads and singleton writes on data
+         * stored in DynamoDB, using PartiQL. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteStatement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExecuteStatementOutcome ExecuteStatement(const Model::ExecuteStatementRequest& request) const;
+
+        /**
+         * <p> This operation allows you to perform reads and singleton writes on data
+         * stored in DynamoDB, using PartiQL. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteStatement">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ExecuteStatementOutcomeCallable ExecuteStatementCallable(const Model::ExecuteStatementRequest& request) const;
+
+        /**
+         * <p> This operation allows you to perform reads and singleton writes on data
+         * stored in DynamoDB, using PartiQL. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteStatement">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ExecuteStatementAsync(const Model::ExecuteStatementRequest& request, const ExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> This operation allows you to perform transactional reads or writes on data
+         * stored in DynamoDB, using PartiQL. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteTransaction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExecuteTransactionOutcome ExecuteTransaction(const Model::ExecuteTransactionRequest& request) const;
+
+        /**
+         * <p> This operation allows you to perform transactional reads or writes on data
+         * stored in DynamoDB, using PartiQL. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteTransaction">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ExecuteTransactionOutcomeCallable ExecuteTransactionCallable(const Model::ExecuteTransactionRequest& request) const;
+
+        /**
+         * <p> This operation allows you to perform transactional reads or writes on data
+         * stored in DynamoDB, using PartiQL. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteTransaction">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ExecuteTransactionAsync(const Model::ExecuteTransactionRequest& request, const ExecuteTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Exports table data to an S3 bucket. The table must have point in time
+         * recovery enabled, and you can export data from any time within the point in time
+         * recovery window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExportTableToPointInTime">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExportTableToPointInTimeOutcome ExportTableToPointInTime(const Model::ExportTableToPointInTimeRequest& request) const;
+
+        /**
+         * <p>Exports table data to an S3 bucket. The table must have point in time
+         * recovery enabled, and you can export data from any time within the point in time
+         * recovery window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExportTableToPointInTime">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ExportTableToPointInTimeOutcomeCallable ExportTableToPointInTimeCallable(const Model::ExportTableToPointInTimeRequest& request) const;
+
+        /**
+         * <p>Exports table data to an S3 bucket. The table must have point in time
+         * recovery enabled, and you can export data from any time within the point in time
+         * recovery window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExportTableToPointInTime">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ExportTableToPointInTimeAsync(const Model::ExportTableToPointInTimeRequest& request, const ExportTableToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The <code>GetItem</code> operation returns a set of attributes for the item
@@ -1572,11 +1856,11 @@ namespace Model
          * <p>List backups associated with an AWS account. To list backups for a given
          * table, specify <code>TableName</code>. <code>ListBackups</code> returns a
          * paginated list of results with at most 1 MB worth of items in a page. You can
-         * also specify a limit for the maximum number of entries to be returned in a page.
-         * </p> <p>In the request, start time is inclusive, but end time is exclusive. Note
-         * that these limits are for the time at which the original backup was
-         * requested.</p> <p>You can call <code>ListBackups</code> a maximum of five times
-         * per second.</p><p><h3>See Also:</h3>   <a
+         * also specify a maximum number of entries to be returned in a page. </p> <p>In
+         * the request, start time is inclusive, but end time is exclusive. Note that these
+         * boundaries are for the time at which the original backup was requested.</p>
+         * <p>You can call <code>ListBackups</code> a maximum of five times per
+         * second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBackups">AWS
          * API Reference</a></p>
          */
@@ -1586,11 +1870,11 @@ namespace Model
          * <p>List backups associated with an AWS account. To list backups for a given
          * table, specify <code>TableName</code>. <code>ListBackups</code> returns a
          * paginated list of results with at most 1 MB worth of items in a page. You can
-         * also specify a limit for the maximum number of entries to be returned in a page.
-         * </p> <p>In the request, start time is inclusive, but end time is exclusive. Note
-         * that these limits are for the time at which the original backup was
-         * requested.</p> <p>You can call <code>ListBackups</code> a maximum of five times
-         * per second.</p><p><h3>See Also:</h3>   <a
+         * also specify a maximum number of entries to be returned in a page. </p> <p>In
+         * the request, start time is inclusive, but end time is exclusive. Note that these
+         * boundaries are for the time at which the original backup was requested.</p>
+         * <p>You can call <code>ListBackups</code> a maximum of five times per
+         * second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBackups">AWS
          * API Reference</a></p>
          *
@@ -1602,11 +1886,11 @@ namespace Model
          * <p>List backups associated with an AWS account. To list backups for a given
          * table, specify <code>TableName</code>. <code>ListBackups</code> returns a
          * paginated list of results with at most 1 MB worth of items in a page. You can
-         * also specify a limit for the maximum number of entries to be returned in a page.
-         * </p> <p>In the request, start time is inclusive, but end time is exclusive. Note
-         * that these limits are for the time at which the original backup was
-         * requested.</p> <p>You can call <code>ListBackups</code> a maximum of five times
-         * per second.</p><p><h3>See Also:</h3>   <a
+         * also specify a maximum number of entries to be returned in a page. </p> <p>In
+         * the request, start time is inclusive, but end time is exclusive. Note that these
+         * boundaries are for the time at which the original backup was requested.</p>
+         * <p>You can call <code>ListBackups</code> a maximum of five times per
+         * second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBackups">AWS
          * API Reference</a></p>
          *
@@ -1643,10 +1927,38 @@ namespace Model
         virtual void ListContributorInsightsAsync(const Model::ListContributorInsightsRequest& request, const ListContributorInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists completed exports within the past 90 days.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListExports">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListExportsOutcome ListExports(const Model::ListExportsRequest& request) const;
+
+        /**
+         * <p>Lists completed exports within the past 90 days.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListExports">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListExportsOutcomeCallable ListExportsCallable(const Model::ListExportsRequest& request) const;
+
+        /**
+         * <p>Lists completed exports within the past 90 days.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListExports">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListExportsAsync(const Model::ListExportsRequest& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists all global tables that have a replica in the specified Region.</p>
-         * <note> <p>This method only applies to <a
+         *  <p>This operation only applies to <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-         * 2017.11.29</a> of global tables.</p> </note><p><h3>See Also:</h3>   <a
+         * 2017.11.29</a> of global tables.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListGlobalTables">AWS
          * API Reference</a></p>
          */
@@ -1654,9 +1966,9 @@ namespace Model
 
         /**
          * <p>Lists all global tables that have a replica in the specified Region.</p>
-         * <note> <p>This method only applies to <a
+         *  <p>This operation only applies to <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-         * 2017.11.29</a> of global tables.</p> </note><p><h3>See Also:</h3>   <a
+         * 2017.11.29</a> of global tables.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListGlobalTables">AWS
          * API Reference</a></p>
          *
@@ -1666,9 +1978,9 @@ namespace Model
 
         /**
          * <p>Lists all global tables that have a replica in the specified Region.</p>
-         * <note> <p>This method only applies to <a
+         *  <p>This operation only applies to <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-         * 2017.11.29</a> of global tables.</p> </note><p><h3>See Also:</h3>   <a
+         * 2017.11.29</a> of global tables.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListGlobalTables">AWS
          * API Reference</a></p>
          *
@@ -1754,7 +2066,7 @@ namespace Model
          * conditional put operation (add a new item if one with the specified primary key
          * doesn't exist), or replace an existing item if it has certain attribute values.
          * You can return the item's attribute values in the same operation, using the
-         * <code>ReturnValues</code> parameter.</p> <important> <p>This topic provides
+         * <code>ReturnValues</code> parameter.</p>  <p>This topic provides
          * general information about the <code>PutItem</code> API.</p> <p>For information
          * on how to call the <code>PutItem</code> API using the AWS SDK in specific
          * languages, see the following:</p> <ul> <li> <p> <a
@@ -1775,17 +2087,19 @@ namespace Model
          * href="http://docs.aws.amazon.com/goto/boto3/dynamodb-2012-08-10/PutItem">
          * PutItem in the AWS SDK for Python</a> </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/goto/SdkForRubyV2/dynamodb-2012-08-10/PutItem">
-         * PutItem in the AWS SDK for Ruby V2</a> </p> </li> </ul> </important> <p>When you
+         * PutItem in the AWS SDK for Ruby V2</a> </p> </li> </ul>  <p>When you
          * add an item, the primary key attributes are the only required attributes.
-         * Attribute values cannot be null. String and Binary type attributes must have
-         * lengths greater than zero. Set type attributes cannot be empty. Requests with
-         * empty values will be rejected with a <code>ValidationException</code>
-         * exception.</p> <note> <p>To prevent a new item from replacing an existing item,
-         * use a conditional expression that contains the <code>attribute_not_exists</code>
+         * Attribute values cannot be null.</p> <p>Empty String and Binary attribute values
+         * are allowed. Attribute values of type String and Binary must have a length
+         * greater than zero if the attribute is used as a key attribute for a table or
+         * index. Set type attributes cannot be empty. </p> <p>Invalid Requests with empty
+         * values will be rejected with a <code>ValidationException</code> exception.</p>
+         *  <p>To prevent a new item from replacing an existing item, use a
+         * conditional expression that contains the <code>attribute_not_exists</code>
          * function with the name of the attribute being used as the partition key for the
          * table. Since every record must contain that attribute, the
          * <code>attribute_not_exists</code> function will only succeed if no matching item
-         * exists.</p> </note> <p>For more information about <code>PutItem</code>, see <a
+         * exists.</p>  <p>For more information about <code>PutItem</code>, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
          * with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1801,7 +2115,7 @@ namespace Model
          * conditional put operation (add a new item if one with the specified primary key
          * doesn't exist), or replace an existing item if it has certain attribute values.
          * You can return the item's attribute values in the same operation, using the
-         * <code>ReturnValues</code> parameter.</p> <important> <p>This topic provides
+         * <code>ReturnValues</code> parameter.</p>  <p>This topic provides
          * general information about the <code>PutItem</code> API.</p> <p>For information
          * on how to call the <code>PutItem</code> API using the AWS SDK in specific
          * languages, see the following:</p> <ul> <li> <p> <a
@@ -1822,17 +2136,19 @@ namespace Model
          * href="http://docs.aws.amazon.com/goto/boto3/dynamodb-2012-08-10/PutItem">
          * PutItem in the AWS SDK for Python</a> </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/goto/SdkForRubyV2/dynamodb-2012-08-10/PutItem">
-         * PutItem in the AWS SDK for Ruby V2</a> </p> </li> </ul> </important> <p>When you
+         * PutItem in the AWS SDK for Ruby V2</a> </p> </li> </ul>  <p>When you
          * add an item, the primary key attributes are the only required attributes.
-         * Attribute values cannot be null. String and Binary type attributes must have
-         * lengths greater than zero. Set type attributes cannot be empty. Requests with
-         * empty values will be rejected with a <code>ValidationException</code>
-         * exception.</p> <note> <p>To prevent a new item from replacing an existing item,
-         * use a conditional expression that contains the <code>attribute_not_exists</code>
+         * Attribute values cannot be null.</p> <p>Empty String and Binary attribute values
+         * are allowed. Attribute values of type String and Binary must have a length
+         * greater than zero if the attribute is used as a key attribute for a table or
+         * index. Set type attributes cannot be empty. </p> <p>Invalid Requests with empty
+         * values will be rejected with a <code>ValidationException</code> exception.</p>
+         *  <p>To prevent a new item from replacing an existing item, use a
+         * conditional expression that contains the <code>attribute_not_exists</code>
          * function with the name of the attribute being used as the partition key for the
          * table. Since every record must contain that attribute, the
          * <code>attribute_not_exists</code> function will only succeed if no matching item
-         * exists.</p> </note> <p>For more information about <code>PutItem</code>, see <a
+         * exists.</p>  <p>For more information about <code>PutItem</code>, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
          * with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1850,7 +2166,7 @@ namespace Model
          * conditional put operation (add a new item if one with the specified primary key
          * doesn't exist), or replace an existing item if it has certain attribute values.
          * You can return the item's attribute values in the same operation, using the
-         * <code>ReturnValues</code> parameter.</p> <important> <p>This topic provides
+         * <code>ReturnValues</code> parameter.</p>  <p>This topic provides
          * general information about the <code>PutItem</code> API.</p> <p>For information
          * on how to call the <code>PutItem</code> API using the AWS SDK in specific
          * languages, see the following:</p> <ul> <li> <p> <a
@@ -1871,17 +2187,19 @@ namespace Model
          * href="http://docs.aws.amazon.com/goto/boto3/dynamodb-2012-08-10/PutItem">
          * PutItem in the AWS SDK for Python</a> </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/goto/SdkForRubyV2/dynamodb-2012-08-10/PutItem">
-         * PutItem in the AWS SDK for Ruby V2</a> </p> </li> </ul> </important> <p>When you
+         * PutItem in the AWS SDK for Ruby V2</a> </p> </li> </ul>  <p>When you
          * add an item, the primary key attributes are the only required attributes.
-         * Attribute values cannot be null. String and Binary type attributes must have
-         * lengths greater than zero. Set type attributes cannot be empty. Requests with
-         * empty values will be rejected with a <code>ValidationException</code>
-         * exception.</p> <note> <p>To prevent a new item from replacing an existing item,
-         * use a conditional expression that contains the <code>attribute_not_exists</code>
+         * Attribute values cannot be null.</p> <p>Empty String and Binary attribute values
+         * are allowed. Attribute values of type String and Binary must have a length
+         * greater than zero if the attribute is used as a key attribute for a table or
+         * index. Set type attributes cannot be empty. </p> <p>Invalid Requests with empty
+         * values will be rejected with a <code>ValidationException</code> exception.</p>
+         *  <p>To prevent a new item from replacing an existing item, use a
+         * conditional expression that contains the <code>attribute_not_exists</code>
          * function with the name of the attribute being used as the partition key for the
          * table. Since every record must contain that attribute, the
          * <code>attribute_not_exists</code> function will only succeed if no matching item
-         * exists.</p> </note> <p>For more information about <code>PutItem</code>, see <a
+         * exists.</p>  <p>For more information about <code>PutItem</code>, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
          * with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1907,12 +2225,12 @@ namespace Model
          * discarded. </p> <p> A <code>Query</code> operation always returns a result set.
          * If no matching items are found, the result set will be empty. Queries that do
          * not return results consume the minimum number of read capacity units for that
-         * type of read operation. </p> <note> <p> DynamoDB calculates the number of read
+         * type of read operation. </p>  <p> DynamoDB calculates the number of read
          * capacity units consumed based on item size, not on the amount of data that is
          * returned to an application. The number of capacity units consumed will be the
          * same whether you request all of the attributes (the default behavior) or just
          * some of them (using a projection expression). The number will also be the same
-         * whether or not you use a <code>FilterExpression</code>. </p> </note> <p>
+         * whether or not you use a <code>FilterExpression</code>. </p>  <p>
          * <code>Query</code> results are always sorted by the sort key value. If the data
          * type of the sort key is Number, the results are returned in numeric order;
          * otherwise, the results are returned in order of UTF-8 bytes. By default, the
@@ -1928,10 +2246,10 @@ namespace Model
          * <code>FilterExpression</code> is applied after a <code>Query</code> finishes,
          * but before the results are returned. A <code>FilterExpression</code> cannot
          * contain partition key or sort key attributes. You need to specify those
-         * attributes in the <code>KeyConditionExpression</code>. </p> <note> <p> A
+         * attributes in the <code>KeyConditionExpression</code>. </p>  <p> A
          * <code>Query</code> operation can return an empty result set and a
          * <code>LastEvaluatedKey</code> if all the items read for the page of results are
-         * filtered out. </p> </note> <p>You can query a table, a local secondary index, or
+         * filtered out. </p>  <p>You can query a table, a local secondary index, or
          * a global secondary index. For a query on a table or on a local secondary index,
          * you can set the <code>ConsistentRead</code> parameter to <code>true</code> and
          * obtain a strongly consistent result. Global secondary indexes support eventually
@@ -1957,12 +2275,12 @@ namespace Model
          * discarded. </p> <p> A <code>Query</code> operation always returns a result set.
          * If no matching items are found, the result set will be empty. Queries that do
          * not return results consume the minimum number of read capacity units for that
-         * type of read operation. </p> <note> <p> DynamoDB calculates the number of read
+         * type of read operation. </p>  <p> DynamoDB calculates the number of read
          * capacity units consumed based on item size, not on the amount of data that is
          * returned to an application. The number of capacity units consumed will be the
          * same whether you request all of the attributes (the default behavior) or just
          * some of them (using a projection expression). The number will also be the same
-         * whether or not you use a <code>FilterExpression</code>. </p> </note> <p>
+         * whether or not you use a <code>FilterExpression</code>. </p>  <p>
          * <code>Query</code> results are always sorted by the sort key value. If the data
          * type of the sort key is Number, the results are returned in numeric order;
          * otherwise, the results are returned in order of UTF-8 bytes. By default, the
@@ -1978,10 +2296,10 @@ namespace Model
          * <code>FilterExpression</code> is applied after a <code>Query</code> finishes,
          * but before the results are returned. A <code>FilterExpression</code> cannot
          * contain partition key or sort key attributes. You need to specify those
-         * attributes in the <code>KeyConditionExpression</code>. </p> <note> <p> A
+         * attributes in the <code>KeyConditionExpression</code>. </p>  <p> A
          * <code>Query</code> operation can return an empty result set and a
          * <code>LastEvaluatedKey</code> if all the items read for the page of results are
-         * filtered out. </p> </note> <p>You can query a table, a local secondary index, or
+         * filtered out. </p>  <p>You can query a table, a local secondary index, or
          * a global secondary index. For a query on a table or on a local secondary index,
          * you can set the <code>ConsistentRead</code> parameter to <code>true</code> and
          * obtain a strongly consistent result. Global secondary indexes support eventually
@@ -2009,12 +2327,12 @@ namespace Model
          * discarded. </p> <p> A <code>Query</code> operation always returns a result set.
          * If no matching items are found, the result set will be empty. Queries that do
          * not return results consume the minimum number of read capacity units for that
-         * type of read operation. </p> <note> <p> DynamoDB calculates the number of read
+         * type of read operation. </p>  <p> DynamoDB calculates the number of read
          * capacity units consumed based on item size, not on the amount of data that is
          * returned to an application. The number of capacity units consumed will be the
          * same whether you request all of the attributes (the default behavior) or just
          * some of them (using a projection expression). The number will also be the same
-         * whether or not you use a <code>FilterExpression</code>. </p> </note> <p>
+         * whether or not you use a <code>FilterExpression</code>. </p>  <p>
          * <code>Query</code> results are always sorted by the sort key value. If the data
          * type of the sort key is Number, the results are returned in numeric order;
          * otherwise, the results are returned in order of UTF-8 bytes. By default, the
@@ -2030,10 +2348,10 @@ namespace Model
          * <code>FilterExpression</code> is applied after a <code>Query</code> finishes,
          * but before the results are returned. A <code>FilterExpression</code> cannot
          * contain partition key or sort key attributes. You need to specify those
-         * attributes in the <code>KeyConditionExpression</code>. </p> <note> <p> A
+         * attributes in the <code>KeyConditionExpression</code>. </p>  <p> A
          * <code>Query</code> operation can return an empty result set and a
          * <code>LastEvaluatedKey</code> if all the items read for the page of results are
-         * filtered out. </p> </note> <p>You can query a table, a local secondary index, or
+         * filtered out. </p>  <p>You can query a table, a local secondary index, or
          * a global secondary index. For a query on a table or on a local secondary index,
          * you can set the <code>ConsistentRead</code> parameter to <code>true</code> and
          * obtain a strongly consistent result. Global secondary indexes support eventually
@@ -2104,8 +2422,8 @@ namespace Model
          * restored table using point in time recovery: </p> <ul> <li> <p>Global secondary
          * indexes (GSIs)</p> </li> <li> <p>Local secondary indexes (LSIs)</p> </li> <li>
          * <p>Provisioned read and write capacity</p> </li> <li> <p>Encryption settings</p>
-         * <important> <p> All these settings come from the current settings of the source
-         * table at the time of restore. </p> </important> </li> </ul> <p>You must manually
+         *  <p> All these settings come from the current settings of the source
+         * table at the time of restore. </p>  </li> </ul> <p>You must manually
          * set up the following on the restored table:</p> <ul> <li> <p>Auto scaling
          * policies</p> </li> <li> <p>IAM policies</p> </li> <li> <p>Amazon CloudWatch
          * metrics and alarms</p> </li> <li> <p>Tags</p> </li> <li> <p>Stream settings</p>
@@ -2128,8 +2446,8 @@ namespace Model
          * restored table using point in time recovery: </p> <ul> <li> <p>Global secondary
          * indexes (GSIs)</p> </li> <li> <p>Local secondary indexes (LSIs)</p> </li> <li>
          * <p>Provisioned read and write capacity</p> </li> <li> <p>Encryption settings</p>
-         * <important> <p> All these settings come from the current settings of the source
-         * table at the time of restore. </p> </important> </li> </ul> <p>You must manually
+         *  <p> All these settings come from the current settings of the source
+         * table at the time of restore. </p>  </li> </ul> <p>You must manually
          * set up the following on the restored table:</p> <ul> <li> <p>Auto scaling
          * policies</p> </li> <li> <p>IAM policies</p> </li> <li> <p>Amazon CloudWatch
          * metrics and alarms</p> </li> <li> <p>Tags</p> </li> <li> <p>Stream settings</p>
@@ -2154,8 +2472,8 @@ namespace Model
          * restored table using point in time recovery: </p> <ul> <li> <p>Global secondary
          * indexes (GSIs)</p> </li> <li> <p>Local secondary indexes (LSIs)</p> </li> <li>
          * <p>Provisioned read and write capacity</p> </li> <li> <p>Encryption settings</p>
-         * <important> <p> All these settings come from the current settings of the source
-         * table at the time of restore. </p> </important> </li> </ul> <p>You must manually
+         *  <p> All these settings come from the current settings of the source
+         * table at the time of restore. </p>  </li> </ul> <p>You must manually
          * set up the following on the restored table:</p> <ul> <li> <p>Auto scaling
          * policies</p> </li> <li> <p>IAM policies</p> </li> <li> <p>Amazon CloudWatch
          * metrics and alarms</p> </li> <li> <p>Tags</p> </li> <li> <p>Stream settings</p>
@@ -2657,10 +2975,10 @@ namespace Model
          * already exist to be able to use this operation. Any replica to be added must be
          * empty, have the same name as the global table, have the same key schema, have
          * DynamoDB Streams enabled, and have the same provisioned and maximum write
-         * capacity units.</p> <note> <p>Although you can use
+         * capacity units.</p>  <p>Although you can use
          * <code>UpdateGlobalTable</code> to add replicas and remove replicas in a single
          * request, for simplicity we recommend that you issue separate requests for adding
-         * or removing replicas.</p> </note> <p> If global secondary indexes are specified,
+         * or removing replicas.</p>  <p> If global secondary indexes are specified,
          * then the following conditions must also be met: </p> <ul> <li> <p> The global
          * secondary indexes must have the same name. </p> </li> <li> <p> The global
          * secondary indexes must have the same hash key and sort key (if present). </p>
@@ -2676,10 +2994,10 @@ namespace Model
          * already exist to be able to use this operation. Any replica to be added must be
          * empty, have the same name as the global table, have the same key schema, have
          * DynamoDB Streams enabled, and have the same provisioned and maximum write
-         * capacity units.</p> <note> <p>Although you can use
+         * capacity units.</p>  <p>Although you can use
          * <code>UpdateGlobalTable</code> to add replicas and remove replicas in a single
          * request, for simplicity we recommend that you issue separate requests for adding
-         * or removing replicas.</p> </note> <p> If global secondary indexes are specified,
+         * or removing replicas.</p>  <p> If global secondary indexes are specified,
          * then the following conditions must also be met: </p> <ul> <li> <p> The global
          * secondary indexes must have the same name. </p> </li> <li> <p> The global
          * secondary indexes must have the same hash key and sort key (if present). </p>
@@ -2697,10 +3015,10 @@ namespace Model
          * already exist to be able to use this operation. Any replica to be added must be
          * empty, have the same name as the global table, have the same key schema, have
          * DynamoDB Streams enabled, and have the same provisioned and maximum write
-         * capacity units.</p> <note> <p>Although you can use
+         * capacity units.</p>  <p>Although you can use
          * <code>UpdateGlobalTable</code> to add replicas and remove replicas in a single
          * request, for simplicity we recommend that you issue separate requests for adding
-         * or removing replicas.</p> </note> <p> If global secondary indexes are specified,
+         * or removing replicas.</p>  <p> If global secondary indexes are specified,
          * then the following conditions must also be met: </p> <ul> <li> <p> The global
          * secondary indexes must have the same name. </p> </li> <li> <p> The global
          * secondary indexes must have the same hash key and sort key (if present). </p>
@@ -2843,20 +3161,20 @@ namespace Model
         virtual void UpdateTableAsync(const Model::UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates auto scaling settings on your global tables at once.</p> <note>
-         * <p>This method only applies to <a
+         * <p>Updates auto scaling settings on your global tables at once.</p> 
+         * <p>This operation only applies to <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21</a> of global tables.</p> </note><p><h3>See Also:</h3>   <a
+         * 2019.11.21</a> of global tables.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTableReplicaAutoScaling">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateTableReplicaAutoScalingOutcome UpdateTableReplicaAutoScaling(const Model::UpdateTableReplicaAutoScalingRequest& request) const;
 
         /**
-         * <p>Updates auto scaling settings on your global tables at once.</p> <note>
-         * <p>This method only applies to <a
+         * <p>Updates auto scaling settings on your global tables at once.</p> 
+         * <p>This operation only applies to <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21</a> of global tables.</p> </note><p><h3>See Also:</h3>   <a
+         * 2019.11.21</a> of global tables.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTableReplicaAutoScaling">AWS
          * API Reference</a></p>
          *
@@ -2865,10 +3183,10 @@ namespace Model
         virtual Model::UpdateTableReplicaAutoScalingOutcomeCallable UpdateTableReplicaAutoScalingCallable(const Model::UpdateTableReplicaAutoScalingRequest& request) const;
 
         /**
-         * <p>Updates auto scaling settings on your global tables at once.</p> <note>
-         * <p>This method only applies to <a
+         * <p>Updates auto scaling settings on your global tables at once.</p> 
+         * <p>This operation only applies to <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21</a> of global tables.</p> </note><p><h3>See Also:</h3>   <a
+         * 2019.11.21</a> of global tables.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTableReplicaAutoScaling">AWS
          * API Reference</a></p>
          *
@@ -2885,14 +3203,14 @@ namespace Model
          * duration result in a <code>ValidationException</code>. </p> <p>TTL compares the
          * current time in epoch time format to the time stored in the TTL attribute of an
          * item. If the epoch time value stored in the attribute is less than the current
-         * time, the item is marked as expired and subsequently deleted.</p> <note> <p> The
+         * time, the item is marked as expired and subsequently deleted.</p>  <p> The
          * epoch time format is the number of seconds elapsed since 12:00:00 AM January 1,
-         * 1970 UTC. </p> </note> <p>DynamoDB deletes expired items on a best-effort basis
-         * to ensure availability of throughput for other data operations. </p> <important>
+         * 1970 UTC. </p>  <p>DynamoDB deletes expired items on a best-effort basis
+         * to ensure availability of throughput for other data operations. </p> 
          * <p>DynamoDB typically deletes expired items within two days of expiration. The
          * exact duration within which an item gets deleted after expiration is specific to
          * the nature of the workload. Items that have expired and not been deleted will
-         * still show up in reads, queries, and scans.</p> </important> <p>As items are
+         * still show up in reads, queries, and scans.</p>  <p>As items are
          * deleted, they are removed from any local secondary index and global secondary
          * index immediately in the same eventually consistent way as a standard delete
          * operation.</p> <p>For more information, see <a
@@ -2913,14 +3231,14 @@ namespace Model
          * duration result in a <code>ValidationException</code>. </p> <p>TTL compares the
          * current time in epoch time format to the time stored in the TTL attribute of an
          * item. If the epoch time value stored in the attribute is less than the current
-         * time, the item is marked as expired and subsequently deleted.</p> <note> <p> The
+         * time, the item is marked as expired and subsequently deleted.</p>  <p> The
          * epoch time format is the number of seconds elapsed since 12:00:00 AM January 1,
-         * 1970 UTC. </p> </note> <p>DynamoDB deletes expired items on a best-effort basis
-         * to ensure availability of throughput for other data operations. </p> <important>
+         * 1970 UTC. </p>  <p>DynamoDB deletes expired items on a best-effort basis
+         * to ensure availability of throughput for other data operations. </p> 
          * <p>DynamoDB typically deletes expired items within two days of expiration. The
          * exact duration within which an item gets deleted after expiration is specific to
          * the nature of the workload. Items that have expired and not been deleted will
-         * still show up in reads, queries, and scans.</p> </important> <p>As items are
+         * still show up in reads, queries, and scans.</p>  <p>As items are
          * deleted, they are removed from any local secondary index and global secondary
          * index immediately in the same eventually consistent way as a standard delete
          * operation.</p> <p>For more information, see <a
@@ -2943,14 +3261,14 @@ namespace Model
          * duration result in a <code>ValidationException</code>. </p> <p>TTL compares the
          * current time in epoch time format to the time stored in the TTL attribute of an
          * item. If the epoch time value stored in the attribute is less than the current
-         * time, the item is marked as expired and subsequently deleted.</p> <note> <p> The
+         * time, the item is marked as expired and subsequently deleted.</p>  <p> The
          * epoch time format is the number of seconds elapsed since 12:00:00 AM January 1,
-         * 1970 UTC. </p> </note> <p>DynamoDB deletes expired items on a best-effort basis
-         * to ensure availability of throughput for other data operations. </p> <important>
+         * 1970 UTC. </p>  <p>DynamoDB deletes expired items on a best-effort basis
+         * to ensure availability of throughput for other data operations. </p> 
          * <p>DynamoDB typically deletes expired items within two days of expiration. The
          * exact duration within which an item gets deleted after expiration is specific to
          * the nature of the workload. Items that have expired and not been deleted will
-         * still show up in reads, queries, and scans.</p> </important> <p>As items are
+         * still show up in reads, queries, and scans.</p>  <p>As items are
          * deleted, they are removed from any local secondary index and global secondary
          * index immediately in the same eventually consistent way as a standard delete
          * operation.</p> <p>For more information, see <a
@@ -2968,6 +3286,7 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void BatchExecuteStatementAsyncHelper(const Model::BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetItemAsyncHelper(const Model::BatchGetItemRequest& request, const BatchGetItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchWriteItemAsyncHelper(const Model::BatchWriteItemRequest& request, const BatchWriteItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateBackupAsyncHelper(const Model::CreateBackupRequest& request, const CreateBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2980,15 +3299,23 @@ namespace Model
         void DescribeContinuousBackupsAsyncHelper(const Model::DescribeContinuousBackupsRequest& request, const DescribeContinuousBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeContributorInsightsAsyncHelper(const Model::DescribeContributorInsightsRequest& request, const DescribeContributorInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEndpointsAsyncHelper(const Model::DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeExportAsyncHelper(const Model::DescribeExportRequest& request, const DescribeExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeGlobalTableAsyncHelper(const Model::DescribeGlobalTableRequest& request, const DescribeGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeGlobalTableSettingsAsyncHelper(const Model::DescribeGlobalTableSettingsRequest& request, const DescribeGlobalTableSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeKinesisStreamingDestinationAsyncHelper(const Model::DescribeKinesisStreamingDestinationRequest& request, const DescribeKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLimitsAsyncHelper(const Model::DescribeLimitsRequest& request, const DescribeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTableAsyncHelper(const Model::DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTableReplicaAutoScalingAsyncHelper(const Model::DescribeTableReplicaAutoScalingRequest& request, const DescribeTableReplicaAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTimeToLiveAsyncHelper(const Model::DescribeTimeToLiveRequest& request, const DescribeTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisableKinesisStreamingDestinationAsyncHelper(const Model::DisableKinesisStreamingDestinationRequest& request, const DisableKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void EnableKinesisStreamingDestinationAsyncHelper(const Model::EnableKinesisStreamingDestinationRequest& request, const EnableKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ExecuteStatementAsyncHelper(const Model::ExecuteStatementRequest& request, const ExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ExecuteTransactionAsyncHelper(const Model::ExecuteTransactionRequest& request, const ExecuteTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ExportTableToPointInTimeAsyncHelper(const Model::ExportTableToPointInTimeRequest& request, const ExportTableToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetItemAsyncHelper(const Model::GetItemRequest& request, const GetItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBackupsAsyncHelper(const Model::ListBackupsRequest& request, const ListBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListContributorInsightsAsyncHelper(const Model::ListContributorInsightsRequest& request, const ListContributorInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListExportsAsyncHelper(const Model::ListExportsRequest& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListGlobalTablesAsyncHelper(const Model::ListGlobalTablesRequest& request, const ListGlobalTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTablesAsyncHelper(const Model::ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsOfResourceAsyncHelper(const Model::ListTagsOfResourceRequest& request, const ListTagsOfResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

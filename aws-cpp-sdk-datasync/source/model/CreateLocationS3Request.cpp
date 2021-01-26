@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/datasync/model/CreateLocationS3Request.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -28,6 +18,7 @@ CreateLocationS3Request::CreateLocationS3Request() :
     m_s3StorageClass(S3StorageClass::NOT_SET),
     m_s3StorageClassHasBeenSet(false),
     m_s3ConfigHasBeenSet(false),
+    m_agentArnsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -56,6 +47,17 @@ Aws::String CreateLocationS3Request::SerializePayload() const
   if(m_s3ConfigHasBeenSet)
   {
    payload.WithObject("S3Config", m_s3Config.Jsonize());
+
+  }
+
+  if(m_agentArnsHasBeenSet)
+  {
+   Array<JsonValue> agentArnsJsonList(m_agentArns.size());
+   for(unsigned agentArnsIndex = 0; agentArnsIndex < agentArnsJsonList.GetLength(); ++agentArnsIndex)
+   {
+     agentArnsJsonList[agentArnsIndex].AsString(m_agentArns[agentArnsIndex]);
+   }
+   payload.WithArray("AgentArns", std::move(agentArnsJsonList));
 
   }
 

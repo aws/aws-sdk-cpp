@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -52,28 +42,27 @@ namespace Model
      * <p>The filters.</p> <ul> <li> <p> <code>description</code> - A description of
      * the snapshot.</p> </li> <li> <p> <code>encrypted</code> - Indicates whether the
      * snapshot is encrypted (<code>true</code> | <code>false</code>)</p> </li> <li>
-     * <p> <code>owner-alias</code> - Value from an Amazon-maintained list
-     * (<code>amazon</code> | <code>self</code> | <code>all</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
-     * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM console.</p> </li> <li> <p> <code>owner-id</code> - The ID of the AWS
-     * account that owns the snapshot.</p> </li> <li> <p> <code>progress</code> - The
-     * progress of the snapshot, as a percentage (for example, 80%).</p> </li> <li> <p>
-     * <code>snapshot-id</code> - The snapshot ID.</p> </li> <li> <p>
-     * <code>start-time</code> - The time stamp when the snapshot was initiated.</p>
-     * </li> <li> <p> <code>status</code> - The status of the snapshot
-     * (<code>pending</code> | <code>completed</code> | <code>error</code>).</p> </li>
-     * <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
-     * assigned to the resource. Use the tag key in the filter name and the tag value
-     * as the filter value. For example, to find all resources that have a tag with the
-     * key <code>Owner</code> and the value <code>TeamA</code>, specify
-     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
-     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
-     * the resource. Use this filter to find all resources assigned a tag with a
-     * specific key, regardless of the tag value.</p> </li> <li> <p>
-     * <code>volume-id</code> - The ID of the volume the snapshot is for.</p> </li>
-     * <li> <p> <code>volume-size</code> - The size of the volume, in GiB.</p> </li>
-     * </ul>
+     * <p> <code>owner-alias</code> - The owner alias, from an Amazon-maintained list
+     * (<code>amazon</code>). This is not the user-configured AWS account alias set
+     * using the IAM console. We recommend that you use the related parameter instead
+     * of this filter.</p> </li> <li> <p> <code>owner-id</code> - The AWS account ID of
+     * the owner. We recommend that you use the related parameter instead of this
+     * filter.</p> </li> <li> <p> <code>progress</code> - The progress of the snapshot,
+     * as a percentage (for example, 80%).</p> </li> <li> <p> <code>snapshot-id</code>
+     * - The snapshot ID.</p> </li> <li> <p> <code>start-time</code> - The time stamp
+     * when the snapshot was initiated.</p> </li> <li> <p> <code>status</code> - The
+     * status of the snapshot (<code>pending</code> | <code>completed</code> |
+     * <code>error</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * key/value combination of a tag assigned to the resource. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> <li> <p> <code>volume-id</code> - The ID of the volume the snapshot is
+     * for.</p> </li> <li> <p> <code>volume-size</code> - The size of the volume, in
+     * GiB.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -81,28 +70,27 @@ namespace Model
      * <p>The filters.</p> <ul> <li> <p> <code>description</code> - A description of
      * the snapshot.</p> </li> <li> <p> <code>encrypted</code> - Indicates whether the
      * snapshot is encrypted (<code>true</code> | <code>false</code>)</p> </li> <li>
-     * <p> <code>owner-alias</code> - Value from an Amazon-maintained list
-     * (<code>amazon</code> | <code>self</code> | <code>all</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
-     * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM console.</p> </li> <li> <p> <code>owner-id</code> - The ID of the AWS
-     * account that owns the snapshot.</p> </li> <li> <p> <code>progress</code> - The
-     * progress of the snapshot, as a percentage (for example, 80%).</p> </li> <li> <p>
-     * <code>snapshot-id</code> - The snapshot ID.</p> </li> <li> <p>
-     * <code>start-time</code> - The time stamp when the snapshot was initiated.</p>
-     * </li> <li> <p> <code>status</code> - The status of the snapshot
-     * (<code>pending</code> | <code>completed</code> | <code>error</code>).</p> </li>
-     * <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
-     * assigned to the resource. Use the tag key in the filter name and the tag value
-     * as the filter value. For example, to find all resources that have a tag with the
-     * key <code>Owner</code> and the value <code>TeamA</code>, specify
-     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
-     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
-     * the resource. Use this filter to find all resources assigned a tag with a
-     * specific key, regardless of the tag value.</p> </li> <li> <p>
-     * <code>volume-id</code> - The ID of the volume the snapshot is for.</p> </li>
-     * <li> <p> <code>volume-size</code> - The size of the volume, in GiB.</p> </li>
-     * </ul>
+     * <p> <code>owner-alias</code> - The owner alias, from an Amazon-maintained list
+     * (<code>amazon</code>). This is not the user-configured AWS account alias set
+     * using the IAM console. We recommend that you use the related parameter instead
+     * of this filter.</p> </li> <li> <p> <code>owner-id</code> - The AWS account ID of
+     * the owner. We recommend that you use the related parameter instead of this
+     * filter.</p> </li> <li> <p> <code>progress</code> - The progress of the snapshot,
+     * as a percentage (for example, 80%).</p> </li> <li> <p> <code>snapshot-id</code>
+     * - The snapshot ID.</p> </li> <li> <p> <code>start-time</code> - The time stamp
+     * when the snapshot was initiated.</p> </li> <li> <p> <code>status</code> - The
+     * status of the snapshot (<code>pending</code> | <code>completed</code> |
+     * <code>error</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * key/value combination of a tag assigned to the resource. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> <li> <p> <code>volume-id</code> - The ID of the volume the snapshot is
+     * for.</p> </li> <li> <p> <code>volume-size</code> - The size of the volume, in
+     * GiB.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -110,28 +98,27 @@ namespace Model
      * <p>The filters.</p> <ul> <li> <p> <code>description</code> - A description of
      * the snapshot.</p> </li> <li> <p> <code>encrypted</code> - Indicates whether the
      * snapshot is encrypted (<code>true</code> | <code>false</code>)</p> </li> <li>
-     * <p> <code>owner-alias</code> - Value from an Amazon-maintained list
-     * (<code>amazon</code> | <code>self</code> | <code>all</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
-     * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM console.</p> </li> <li> <p> <code>owner-id</code> - The ID of the AWS
-     * account that owns the snapshot.</p> </li> <li> <p> <code>progress</code> - The
-     * progress of the snapshot, as a percentage (for example, 80%).</p> </li> <li> <p>
-     * <code>snapshot-id</code> - The snapshot ID.</p> </li> <li> <p>
-     * <code>start-time</code> - The time stamp when the snapshot was initiated.</p>
-     * </li> <li> <p> <code>status</code> - The status of the snapshot
-     * (<code>pending</code> | <code>completed</code> | <code>error</code>).</p> </li>
-     * <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
-     * assigned to the resource. Use the tag key in the filter name and the tag value
-     * as the filter value. For example, to find all resources that have a tag with the
-     * key <code>Owner</code> and the value <code>TeamA</code>, specify
-     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
-     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
-     * the resource. Use this filter to find all resources assigned a tag with a
-     * specific key, regardless of the tag value.</p> </li> <li> <p>
-     * <code>volume-id</code> - The ID of the volume the snapshot is for.</p> </li>
-     * <li> <p> <code>volume-size</code> - The size of the volume, in GiB.</p> </li>
-     * </ul>
+     * <p> <code>owner-alias</code> - The owner alias, from an Amazon-maintained list
+     * (<code>amazon</code>). This is not the user-configured AWS account alias set
+     * using the IAM console. We recommend that you use the related parameter instead
+     * of this filter.</p> </li> <li> <p> <code>owner-id</code> - The AWS account ID of
+     * the owner. We recommend that you use the related parameter instead of this
+     * filter.</p> </li> <li> <p> <code>progress</code> - The progress of the snapshot,
+     * as a percentage (for example, 80%).</p> </li> <li> <p> <code>snapshot-id</code>
+     * - The snapshot ID.</p> </li> <li> <p> <code>start-time</code> - The time stamp
+     * when the snapshot was initiated.</p> </li> <li> <p> <code>status</code> - The
+     * status of the snapshot (<code>pending</code> | <code>completed</code> |
+     * <code>error</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * key/value combination of a tag assigned to the resource. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> <li> <p> <code>volume-id</code> - The ID of the volume the snapshot is
+     * for.</p> </li> <li> <p> <code>volume-size</code> - The size of the volume, in
+     * GiB.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -139,28 +126,27 @@ namespace Model
      * <p>The filters.</p> <ul> <li> <p> <code>description</code> - A description of
      * the snapshot.</p> </li> <li> <p> <code>encrypted</code> - Indicates whether the
      * snapshot is encrypted (<code>true</code> | <code>false</code>)</p> </li> <li>
-     * <p> <code>owner-alias</code> - Value from an Amazon-maintained list
-     * (<code>amazon</code> | <code>self</code> | <code>all</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
-     * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM console.</p> </li> <li> <p> <code>owner-id</code> - The ID of the AWS
-     * account that owns the snapshot.</p> </li> <li> <p> <code>progress</code> - The
-     * progress of the snapshot, as a percentage (for example, 80%).</p> </li> <li> <p>
-     * <code>snapshot-id</code> - The snapshot ID.</p> </li> <li> <p>
-     * <code>start-time</code> - The time stamp when the snapshot was initiated.</p>
-     * </li> <li> <p> <code>status</code> - The status of the snapshot
-     * (<code>pending</code> | <code>completed</code> | <code>error</code>).</p> </li>
-     * <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
-     * assigned to the resource. Use the tag key in the filter name and the tag value
-     * as the filter value. For example, to find all resources that have a tag with the
-     * key <code>Owner</code> and the value <code>TeamA</code>, specify
-     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
-     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
-     * the resource. Use this filter to find all resources assigned a tag with a
-     * specific key, regardless of the tag value.</p> </li> <li> <p>
-     * <code>volume-id</code> - The ID of the volume the snapshot is for.</p> </li>
-     * <li> <p> <code>volume-size</code> - The size of the volume, in GiB.</p> </li>
-     * </ul>
+     * <p> <code>owner-alias</code> - The owner alias, from an Amazon-maintained list
+     * (<code>amazon</code>). This is not the user-configured AWS account alias set
+     * using the IAM console. We recommend that you use the related parameter instead
+     * of this filter.</p> </li> <li> <p> <code>owner-id</code> - The AWS account ID of
+     * the owner. We recommend that you use the related parameter instead of this
+     * filter.</p> </li> <li> <p> <code>progress</code> - The progress of the snapshot,
+     * as a percentage (for example, 80%).</p> </li> <li> <p> <code>snapshot-id</code>
+     * - The snapshot ID.</p> </li> <li> <p> <code>start-time</code> - The time stamp
+     * when the snapshot was initiated.</p> </li> <li> <p> <code>status</code> - The
+     * status of the snapshot (<code>pending</code> | <code>completed</code> |
+     * <code>error</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * key/value combination of a tag assigned to the resource. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> <li> <p> <code>volume-id</code> - The ID of the volume the snapshot is
+     * for.</p> </li> <li> <p> <code>volume-size</code> - The size of the volume, in
+     * GiB.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -168,28 +154,27 @@ namespace Model
      * <p>The filters.</p> <ul> <li> <p> <code>description</code> - A description of
      * the snapshot.</p> </li> <li> <p> <code>encrypted</code> - Indicates whether the
      * snapshot is encrypted (<code>true</code> | <code>false</code>)</p> </li> <li>
-     * <p> <code>owner-alias</code> - Value from an Amazon-maintained list
-     * (<code>amazon</code> | <code>self</code> | <code>all</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
-     * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM console.</p> </li> <li> <p> <code>owner-id</code> - The ID of the AWS
-     * account that owns the snapshot.</p> </li> <li> <p> <code>progress</code> - The
-     * progress of the snapshot, as a percentage (for example, 80%).</p> </li> <li> <p>
-     * <code>snapshot-id</code> - The snapshot ID.</p> </li> <li> <p>
-     * <code>start-time</code> - The time stamp when the snapshot was initiated.</p>
-     * </li> <li> <p> <code>status</code> - The status of the snapshot
-     * (<code>pending</code> | <code>completed</code> | <code>error</code>).</p> </li>
-     * <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
-     * assigned to the resource. Use the tag key in the filter name and the tag value
-     * as the filter value. For example, to find all resources that have a tag with the
-     * key <code>Owner</code> and the value <code>TeamA</code>, specify
-     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
-     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
-     * the resource. Use this filter to find all resources assigned a tag with a
-     * specific key, regardless of the tag value.</p> </li> <li> <p>
-     * <code>volume-id</code> - The ID of the volume the snapshot is for.</p> </li>
-     * <li> <p> <code>volume-size</code> - The size of the volume, in GiB.</p> </li>
-     * </ul>
+     * <p> <code>owner-alias</code> - The owner alias, from an Amazon-maintained list
+     * (<code>amazon</code>). This is not the user-configured AWS account alias set
+     * using the IAM console. We recommend that you use the related parameter instead
+     * of this filter.</p> </li> <li> <p> <code>owner-id</code> - The AWS account ID of
+     * the owner. We recommend that you use the related parameter instead of this
+     * filter.</p> </li> <li> <p> <code>progress</code> - The progress of the snapshot,
+     * as a percentage (for example, 80%).</p> </li> <li> <p> <code>snapshot-id</code>
+     * - The snapshot ID.</p> </li> <li> <p> <code>start-time</code> - The time stamp
+     * when the snapshot was initiated.</p> </li> <li> <p> <code>status</code> - The
+     * status of the snapshot (<code>pending</code> | <code>completed</code> |
+     * <code>error</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * key/value combination of a tag assigned to the resource. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> <li> <p> <code>volume-id</code> - The ID of the volume the snapshot is
+     * for.</p> </li> <li> <p> <code>volume-size</code> - The size of the volume, in
+     * GiB.</p> </li> </ul>
      */
     inline DescribeSnapshotsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -197,28 +182,27 @@ namespace Model
      * <p>The filters.</p> <ul> <li> <p> <code>description</code> - A description of
      * the snapshot.</p> </li> <li> <p> <code>encrypted</code> - Indicates whether the
      * snapshot is encrypted (<code>true</code> | <code>false</code>)</p> </li> <li>
-     * <p> <code>owner-alias</code> - Value from an Amazon-maintained list
-     * (<code>amazon</code> | <code>self</code> | <code>all</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
-     * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM console.</p> </li> <li> <p> <code>owner-id</code> - The ID of the AWS
-     * account that owns the snapshot.</p> </li> <li> <p> <code>progress</code> - The
-     * progress of the snapshot, as a percentage (for example, 80%).</p> </li> <li> <p>
-     * <code>snapshot-id</code> - The snapshot ID.</p> </li> <li> <p>
-     * <code>start-time</code> - The time stamp when the snapshot was initiated.</p>
-     * </li> <li> <p> <code>status</code> - The status of the snapshot
-     * (<code>pending</code> | <code>completed</code> | <code>error</code>).</p> </li>
-     * <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
-     * assigned to the resource. Use the tag key in the filter name and the tag value
-     * as the filter value. For example, to find all resources that have a tag with the
-     * key <code>Owner</code> and the value <code>TeamA</code>, specify
-     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
-     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
-     * the resource. Use this filter to find all resources assigned a tag with a
-     * specific key, regardless of the tag value.</p> </li> <li> <p>
-     * <code>volume-id</code> - The ID of the volume the snapshot is for.</p> </li>
-     * <li> <p> <code>volume-size</code> - The size of the volume, in GiB.</p> </li>
-     * </ul>
+     * <p> <code>owner-alias</code> - The owner alias, from an Amazon-maintained list
+     * (<code>amazon</code>). This is not the user-configured AWS account alias set
+     * using the IAM console. We recommend that you use the related parameter instead
+     * of this filter.</p> </li> <li> <p> <code>owner-id</code> - The AWS account ID of
+     * the owner. We recommend that you use the related parameter instead of this
+     * filter.</p> </li> <li> <p> <code>progress</code> - The progress of the snapshot,
+     * as a percentage (for example, 80%).</p> </li> <li> <p> <code>snapshot-id</code>
+     * - The snapshot ID.</p> </li> <li> <p> <code>start-time</code> - The time stamp
+     * when the snapshot was initiated.</p> </li> <li> <p> <code>status</code> - The
+     * status of the snapshot (<code>pending</code> | <code>completed</code> |
+     * <code>error</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * key/value combination of a tag assigned to the resource. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> <li> <p> <code>volume-id</code> - The ID of the volume the snapshot is
+     * for.</p> </li> <li> <p> <code>volume-size</code> - The size of the volume, in
+     * GiB.</p> </li> </ul>
      */
     inline DescribeSnapshotsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -226,28 +210,27 @@ namespace Model
      * <p>The filters.</p> <ul> <li> <p> <code>description</code> - A description of
      * the snapshot.</p> </li> <li> <p> <code>encrypted</code> - Indicates whether the
      * snapshot is encrypted (<code>true</code> | <code>false</code>)</p> </li> <li>
-     * <p> <code>owner-alias</code> - Value from an Amazon-maintained list
-     * (<code>amazon</code> | <code>self</code> | <code>all</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
-     * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM console.</p> </li> <li> <p> <code>owner-id</code> - The ID of the AWS
-     * account that owns the snapshot.</p> </li> <li> <p> <code>progress</code> - The
-     * progress of the snapshot, as a percentage (for example, 80%).</p> </li> <li> <p>
-     * <code>snapshot-id</code> - The snapshot ID.</p> </li> <li> <p>
-     * <code>start-time</code> - The time stamp when the snapshot was initiated.</p>
-     * </li> <li> <p> <code>status</code> - The status of the snapshot
-     * (<code>pending</code> | <code>completed</code> | <code>error</code>).</p> </li>
-     * <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
-     * assigned to the resource. Use the tag key in the filter name and the tag value
-     * as the filter value. For example, to find all resources that have a tag with the
-     * key <code>Owner</code> and the value <code>TeamA</code>, specify
-     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
-     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
-     * the resource. Use this filter to find all resources assigned a tag with a
-     * specific key, regardless of the tag value.</p> </li> <li> <p>
-     * <code>volume-id</code> - The ID of the volume the snapshot is for.</p> </li>
-     * <li> <p> <code>volume-size</code> - The size of the volume, in GiB.</p> </li>
-     * </ul>
+     * <p> <code>owner-alias</code> - The owner alias, from an Amazon-maintained list
+     * (<code>amazon</code>). This is not the user-configured AWS account alias set
+     * using the IAM console. We recommend that you use the related parameter instead
+     * of this filter.</p> </li> <li> <p> <code>owner-id</code> - The AWS account ID of
+     * the owner. We recommend that you use the related parameter instead of this
+     * filter.</p> </li> <li> <p> <code>progress</code> - The progress of the snapshot,
+     * as a percentage (for example, 80%).</p> </li> <li> <p> <code>snapshot-id</code>
+     * - The snapshot ID.</p> </li> <li> <p> <code>start-time</code> - The time stamp
+     * when the snapshot was initiated.</p> </li> <li> <p> <code>status</code> - The
+     * status of the snapshot (<code>pending</code> | <code>completed</code> |
+     * <code>error</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * key/value combination of a tag assigned to the resource. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> <li> <p> <code>volume-id</code> - The ID of the volume the snapshot is
+     * for.</p> </li> <li> <p> <code>volume-size</code> - The size of the volume, in
+     * GiB.</p> </li> </ul>
      */
     inline DescribeSnapshotsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -255,28 +238,27 @@ namespace Model
      * <p>The filters.</p> <ul> <li> <p> <code>description</code> - A description of
      * the snapshot.</p> </li> <li> <p> <code>encrypted</code> - Indicates whether the
      * snapshot is encrypted (<code>true</code> | <code>false</code>)</p> </li> <li>
-     * <p> <code>owner-alias</code> - Value from an Amazon-maintained list
-     * (<code>amazon</code> | <code>self</code> | <code>all</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
-     * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM console.</p> </li> <li> <p> <code>owner-id</code> - The ID of the AWS
-     * account that owns the snapshot.</p> </li> <li> <p> <code>progress</code> - The
-     * progress of the snapshot, as a percentage (for example, 80%).</p> </li> <li> <p>
-     * <code>snapshot-id</code> - The snapshot ID.</p> </li> <li> <p>
-     * <code>start-time</code> - The time stamp when the snapshot was initiated.</p>
-     * </li> <li> <p> <code>status</code> - The status of the snapshot
-     * (<code>pending</code> | <code>completed</code> | <code>error</code>).</p> </li>
-     * <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
-     * assigned to the resource. Use the tag key in the filter name and the tag value
-     * as the filter value. For example, to find all resources that have a tag with the
-     * key <code>Owner</code> and the value <code>TeamA</code>, specify
-     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
-     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
-     * the resource. Use this filter to find all resources assigned a tag with a
-     * specific key, regardless of the tag value.</p> </li> <li> <p>
-     * <code>volume-id</code> - The ID of the volume the snapshot is for.</p> </li>
-     * <li> <p> <code>volume-size</code> - The size of the volume, in GiB.</p> </li>
-     * </ul>
+     * <p> <code>owner-alias</code> - The owner alias, from an Amazon-maintained list
+     * (<code>amazon</code>). This is not the user-configured AWS account alias set
+     * using the IAM console. We recommend that you use the related parameter instead
+     * of this filter.</p> </li> <li> <p> <code>owner-id</code> - The AWS account ID of
+     * the owner. We recommend that you use the related parameter instead of this
+     * filter.</p> </li> <li> <p> <code>progress</code> - The progress of the snapshot,
+     * as a percentage (for example, 80%).</p> </li> <li> <p> <code>snapshot-id</code>
+     * - The snapshot ID.</p> </li> <li> <p> <code>start-time</code> - The time stamp
+     * when the snapshot was initiated.</p> </li> <li> <p> <code>status</code> - The
+     * status of the snapshot (<code>pending</code> | <code>completed</code> |
+     * <code>error</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * key/value combination of a tag assigned to the resource. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> <li> <p> <code>volume-id</code> - The ID of the volume the snapshot is
+     * for.</p> </li> <li> <p> <code>volume-size</code> - The size of the volume, in
+     * GiB.</p> </li> </ul>
      */
     inline DescribeSnapshotsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
@@ -288,10 +270,11 @@ namespace Model
      * single page along with a <code>NextToken</code> response element. The remaining
      * results of the initial request can be seen by sending another
      * <code>DescribeSnapshots</code> request with the returned <code>NextToken</code>
-     * value. This value can be between 5 and 1000; if <code>MaxResults</code> is given
-     * a value larger than 1000, only 1000 results are returned. If this parameter is
-     * not used, then <code>DescribeSnapshots</code> returns all results. You cannot
-     * specify this parameter and the snapshot IDs parameter in the same request.</p>
+     * value. This value can be between 5 and 1,000; if <code>MaxResults</code> is
+     * given a value larger than 1,000, only 1,000 results are returned. If this
+     * parameter is not used, then <code>DescribeSnapshots</code> returns all results.
+     * You cannot specify this parameter and the snapshot IDs parameter in the same
+     * request.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
@@ -302,10 +285,11 @@ namespace Model
      * single page along with a <code>NextToken</code> response element. The remaining
      * results of the initial request can be seen by sending another
      * <code>DescribeSnapshots</code> request with the returned <code>NextToken</code>
-     * value. This value can be between 5 and 1000; if <code>MaxResults</code> is given
-     * a value larger than 1000, only 1000 results are returned. If this parameter is
-     * not used, then <code>DescribeSnapshots</code> returns all results. You cannot
-     * specify this parameter and the snapshot IDs parameter in the same request.</p>
+     * value. This value can be between 5 and 1,000; if <code>MaxResults</code> is
+     * given a value larger than 1,000, only 1,000 results are returned. If this
+     * parameter is not used, then <code>DescribeSnapshots</code> returns all results.
+     * You cannot specify this parameter and the snapshot IDs parameter in the same
+     * request.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
@@ -316,10 +300,11 @@ namespace Model
      * single page along with a <code>NextToken</code> response element. The remaining
      * results of the initial request can be seen by sending another
      * <code>DescribeSnapshots</code> request with the returned <code>NextToken</code>
-     * value. This value can be between 5 and 1000; if <code>MaxResults</code> is given
-     * a value larger than 1000, only 1000 results are returned. If this parameter is
-     * not used, then <code>DescribeSnapshots</code> returns all results. You cannot
-     * specify this parameter and the snapshot IDs parameter in the same request.</p>
+     * value. This value can be between 5 and 1,000; if <code>MaxResults</code> is
+     * given a value larger than 1,000, only 1,000 results are returned. If this
+     * parameter is not used, then <code>DescribeSnapshots</code> returns all results.
+     * You cannot specify this parameter and the snapshot IDs parameter in the same
+     * request.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
@@ -330,10 +315,11 @@ namespace Model
      * single page along with a <code>NextToken</code> response element. The remaining
      * results of the initial request can be seen by sending another
      * <code>DescribeSnapshots</code> request with the returned <code>NextToken</code>
-     * value. This value can be between 5 and 1000; if <code>MaxResults</code> is given
-     * a value larger than 1000, only 1000 results are returned. If this parameter is
-     * not used, then <code>DescribeSnapshots</code> returns all results. You cannot
-     * specify this parameter and the snapshot IDs parameter in the same request.</p>
+     * value. This value can be between 5 and 1,000; if <code>MaxResults</code> is
+     * given a value larger than 1,000, only 1,000 results are returned. If this
+     * parameter is not used, then <code>DescribeSnapshots</code> returns all results.
+     * You cannot specify this parameter and the snapshot IDs parameter in the same
+     * request.</p>
      */
     inline DescribeSnapshotsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -412,47 +398,56 @@ namespace Model
 
 
     /**
-     * <p>Describes the snapshots owned by these owners.</p>
+     * <p>Scopes the results to snapshots with the specified owners. You can specify a
+     * combination of AWS account IDs, <code>self</code>, and <code>amazon</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOwnerIds() const{ return m_ownerIds; }
 
     /**
-     * <p>Describes the snapshots owned by these owners.</p>
+     * <p>Scopes the results to snapshots with the specified owners. You can specify a
+     * combination of AWS account IDs, <code>self</code>, and <code>amazon</code>.</p>
      */
     inline bool OwnerIdsHasBeenSet() const { return m_ownerIdsHasBeenSet; }
 
     /**
-     * <p>Describes the snapshots owned by these owners.</p>
+     * <p>Scopes the results to snapshots with the specified owners. You can specify a
+     * combination of AWS account IDs, <code>self</code>, and <code>amazon</code>.</p>
      */
     inline void SetOwnerIds(const Aws::Vector<Aws::String>& value) { m_ownerIdsHasBeenSet = true; m_ownerIds = value; }
 
     /**
-     * <p>Describes the snapshots owned by these owners.</p>
+     * <p>Scopes the results to snapshots with the specified owners. You can specify a
+     * combination of AWS account IDs, <code>self</code>, and <code>amazon</code>.</p>
      */
     inline void SetOwnerIds(Aws::Vector<Aws::String>&& value) { m_ownerIdsHasBeenSet = true; m_ownerIds = std::move(value); }
 
     /**
-     * <p>Describes the snapshots owned by these owners.</p>
+     * <p>Scopes the results to snapshots with the specified owners. You can specify a
+     * combination of AWS account IDs, <code>self</code>, and <code>amazon</code>.</p>
      */
     inline DescribeSnapshotsRequest& WithOwnerIds(const Aws::Vector<Aws::String>& value) { SetOwnerIds(value); return *this;}
 
     /**
-     * <p>Describes the snapshots owned by these owners.</p>
+     * <p>Scopes the results to snapshots with the specified owners. You can specify a
+     * combination of AWS account IDs, <code>self</code>, and <code>amazon</code>.</p>
      */
     inline DescribeSnapshotsRequest& WithOwnerIds(Aws::Vector<Aws::String>&& value) { SetOwnerIds(std::move(value)); return *this;}
 
     /**
-     * <p>Describes the snapshots owned by these owners.</p>
+     * <p>Scopes the results to snapshots with the specified owners. You can specify a
+     * combination of AWS account IDs, <code>self</code>, and <code>amazon</code>.</p>
      */
     inline DescribeSnapshotsRequest& AddOwnerIds(const Aws::String& value) { m_ownerIdsHasBeenSet = true; m_ownerIds.push_back(value); return *this; }
 
     /**
-     * <p>Describes the snapshots owned by these owners.</p>
+     * <p>Scopes the results to snapshots with the specified owners. You can specify a
+     * combination of AWS account IDs, <code>self</code>, and <code>amazon</code>.</p>
      */
     inline DescribeSnapshotsRequest& AddOwnerIds(Aws::String&& value) { m_ownerIdsHasBeenSet = true; m_ownerIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Describes the snapshots owned by these owners.</p>
+     * <p>Scopes the results to snapshots with the specified owners. You can specify a
+     * combination of AWS account IDs, <code>self</code>, and <code>amazon</code>.</p>
      */
     inline DescribeSnapshotsRequest& AddOwnerIds(const char* value) { m_ownerIdsHasBeenSet = true; m_ownerIds.push_back(value); return *this; }
 

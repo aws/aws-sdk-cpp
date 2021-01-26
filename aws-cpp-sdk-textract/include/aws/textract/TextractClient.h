@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/textract/Textract_EXPORTS.h>
@@ -73,12 +63,12 @@ namespace Model
         class StartDocumentAnalysisRequest;
         class StartDocumentTextDetectionRequest;
 
-        typedef Aws::Utils::Outcome<AnalyzeDocumentResult, Aws::Client::AWSError<TextractErrors>> AnalyzeDocumentOutcome;
-        typedef Aws::Utils::Outcome<DetectDocumentTextResult, Aws::Client::AWSError<TextractErrors>> DetectDocumentTextOutcome;
-        typedef Aws::Utils::Outcome<GetDocumentAnalysisResult, Aws::Client::AWSError<TextractErrors>> GetDocumentAnalysisOutcome;
-        typedef Aws::Utils::Outcome<GetDocumentTextDetectionResult, Aws::Client::AWSError<TextractErrors>> GetDocumentTextDetectionOutcome;
-        typedef Aws::Utils::Outcome<StartDocumentAnalysisResult, Aws::Client::AWSError<TextractErrors>> StartDocumentAnalysisOutcome;
-        typedef Aws::Utils::Outcome<StartDocumentTextDetectionResult, Aws::Client::AWSError<TextractErrors>> StartDocumentTextDetectionOutcome;
+        typedef Aws::Utils::Outcome<AnalyzeDocumentResult, TextractError> AnalyzeDocumentOutcome;
+        typedef Aws::Utils::Outcome<DetectDocumentTextResult, TextractError> DetectDocumentTextOutcome;
+        typedef Aws::Utils::Outcome<GetDocumentAnalysisResult, TextractError> GetDocumentAnalysisOutcome;
+        typedef Aws::Utils::Outcome<GetDocumentTextDetectionResult, TextractError> GetDocumentTextDetectionOutcome;
+        typedef Aws::Utils::Outcome<StartDocumentAnalysisResult, TextractError> StartDocumentAnalysisOutcome;
+        typedef Aws::Utils::Outcome<StartDocumentTextDetectionResult, TextractError> StartDocumentTextDetectionOutcome;
 
         typedef std::future<AnalyzeDocumentOutcome> AnalyzeDocumentOutcomeCallable;
         typedef std::future<DetectDocumentTextOutcome> DetectDocumentTextOutcomeCallable;
@@ -127,8 +117,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~TextractClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "Textract"; }
 
 
         /**

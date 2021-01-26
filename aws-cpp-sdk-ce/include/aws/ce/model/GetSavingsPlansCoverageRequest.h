@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
@@ -21,6 +11,7 @@
 #include <aws/ce/model/Granularity.h>
 #include <aws/ce/model/Expression.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ce/model/SortDefinition.h>
 #include <aws/ce/model/GroupDefinition.h>
 #include <utility>
 
@@ -411,6 +402,85 @@ namespace Model
      */
     inline GetSavingsPlansCoverageRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * supported for <code>Key</code>:</p> <ul> <li> <p>
+     * <code>SpendCoveredBySavingsPlan</code> </p> </li> <li> <p>
+     * <code>OnDemandCost</code> </p> </li> <li> <p> <code>CoveragePercentage</code>
+     * </p> </li> <li> <p> <code>TotalCost</code> </p> </li> <li> <p>
+     * <code>InstanceFamily</code> </p> </li> <li> <p> <code>Region</code> </p> </li>
+     * <li> <p> <code>Service</code> </p> </li> </ul> <p>Supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <code>DESCENDING</code>.</p>
+     */
+    inline const SortDefinition& GetSortBy() const{ return m_sortBy; }
+
+    /**
+     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * supported for <code>Key</code>:</p> <ul> <li> <p>
+     * <code>SpendCoveredBySavingsPlan</code> </p> </li> <li> <p>
+     * <code>OnDemandCost</code> </p> </li> <li> <p> <code>CoveragePercentage</code>
+     * </p> </li> <li> <p> <code>TotalCost</code> </p> </li> <li> <p>
+     * <code>InstanceFamily</code> </p> </li> <li> <p> <code>Region</code> </p> </li>
+     * <li> <p> <code>Service</code> </p> </li> </ul> <p>Supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <code>DESCENDING</code>.</p>
+     */
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
+
+    /**
+     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * supported for <code>Key</code>:</p> <ul> <li> <p>
+     * <code>SpendCoveredBySavingsPlan</code> </p> </li> <li> <p>
+     * <code>OnDemandCost</code> </p> </li> <li> <p> <code>CoveragePercentage</code>
+     * </p> </li> <li> <p> <code>TotalCost</code> </p> </li> <li> <p>
+     * <code>InstanceFamily</code> </p> </li> <li> <p> <code>Region</code> </p> </li>
+     * <li> <p> <code>Service</code> </p> </li> </ul> <p>Supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <code>DESCENDING</code>.</p>
+     */
+    inline void SetSortBy(const SortDefinition& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+
+    /**
+     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * supported for <code>Key</code>:</p> <ul> <li> <p>
+     * <code>SpendCoveredBySavingsPlan</code> </p> </li> <li> <p>
+     * <code>OnDemandCost</code> </p> </li> <li> <p> <code>CoveragePercentage</code>
+     * </p> </li> <li> <p> <code>TotalCost</code> </p> </li> <li> <p>
+     * <code>InstanceFamily</code> </p> </li> <li> <p> <code>Region</code> </p> </li>
+     * <li> <p> <code>Service</code> </p> </li> </ul> <p>Supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <code>DESCENDING</code>.</p>
+     */
+    inline void SetSortBy(SortDefinition&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
+
+    /**
+     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * supported for <code>Key</code>:</p> <ul> <li> <p>
+     * <code>SpendCoveredBySavingsPlan</code> </p> </li> <li> <p>
+     * <code>OnDemandCost</code> </p> </li> <li> <p> <code>CoveragePercentage</code>
+     * </p> </li> <li> <p> <code>TotalCost</code> </p> </li> <li> <p>
+     * <code>InstanceFamily</code> </p> </li> <li> <p> <code>Region</code> </p> </li>
+     * <li> <p> <code>Service</code> </p> </li> </ul> <p>Supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <code>DESCENDING</code>.</p>
+     */
+    inline GetSavingsPlansCoverageRequest& WithSortBy(const SortDefinition& value) { SetSortBy(value); return *this;}
+
+    /**
+     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * supported for <code>Key</code>:</p> <ul> <li> <p>
+     * <code>SpendCoveredBySavingsPlan</code> </p> </li> <li> <p>
+     * <code>OnDemandCost</code> </p> </li> <li> <p> <code>CoveragePercentage</code>
+     * </p> </li> <li> <p> <code>TotalCost</code> </p> </li> <li> <p>
+     * <code>InstanceFamily</code> </p> </li> <li> <p> <code>Region</code> </p> </li>
+     * <li> <p> <code>Service</code> </p> </li> </ul> <p>Supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <code>DESCENDING</code>.</p>
+     */
+    inline GetSavingsPlansCoverageRequest& WithSortBy(SortDefinition&& value) { SetSortBy(std::move(value)); return *this;}
+
   private:
 
     DateInterval m_timePeriod;
@@ -433,6 +503,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
+    SortDefinition m_sortBy;
+    bool m_sortByHasBeenSet;
   };
 
 } // namespace Model

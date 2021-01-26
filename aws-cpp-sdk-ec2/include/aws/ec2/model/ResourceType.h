@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -30,18 +20,27 @@ namespace Model
     customer_gateway,
     dedicated_host,
     dhcp_options,
+    egress_only_internet_gateway,
     elastic_ip,
+    elastic_gpu,
+    export_image_task,
+    export_instance_task,
     fleet,
     fpga_image,
     host_reservation,
     image,
+    import_image_task,
+    import_snapshot_task,
     instance,
     internet_gateway,
     key_pair,
     launch_template,
+    local_gateway_route_table_vpc_association,
     natgateway,
     network_acl,
     network_interface,
+    network_insights_analysis,
+    network_insights_path,
     placement_group,
     reserved_instances,
     route_table,
@@ -55,6 +54,7 @@ namespace Model
     traffic_mirror_target,
     transit_gateway,
     transit_gateway_attachment,
+    transit_gateway_connect_peer,
     transit_gateway_multicast_domain,
     transit_gateway_route_table,
     volume,

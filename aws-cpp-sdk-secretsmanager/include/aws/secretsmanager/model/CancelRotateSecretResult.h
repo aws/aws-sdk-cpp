@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/secretsmanager/SecretsManager_EXPORTS.h>
@@ -115,8 +105,8 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of the version of the secret that was created during
-     * the rotation. This version might not be complete, and should be evaluated for
+     * <p>The unique identifier of the version of the secret created during the
+     * rotation. This version might not be complete, and should be evaluated for
      * possible deletion. At the very least, you should remove the
      * <code>VersionStage</code> value <code>AWSPENDING</code> to enable this version
      * to be deleted. Failing to clean up a cancelled rotation can block you from
@@ -125,8 +115,8 @@ namespace Model
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
     /**
-     * <p>The unique identifier of the version of the secret that was created during
-     * the rotation. This version might not be complete, and should be evaluated for
+     * <p>The unique identifier of the version of the secret created during the
+     * rotation. This version might not be complete, and should be evaluated for
      * possible deletion. At the very least, you should remove the
      * <code>VersionStage</code> value <code>AWSPENDING</code> to enable this version
      * to be deleted. Failing to clean up a cancelled rotation can block you from
@@ -135,8 +125,8 @@ namespace Model
     inline void SetVersionId(const Aws::String& value) { m_versionId = value; }
 
     /**
-     * <p>The unique identifier of the version of the secret that was created during
-     * the rotation. This version might not be complete, and should be evaluated for
+     * <p>The unique identifier of the version of the secret created during the
+     * rotation. This version might not be complete, and should be evaluated for
      * possible deletion. At the very least, you should remove the
      * <code>VersionStage</code> value <code>AWSPENDING</code> to enable this version
      * to be deleted. Failing to clean up a cancelled rotation can block you from
@@ -145,8 +135,8 @@ namespace Model
     inline void SetVersionId(Aws::String&& value) { m_versionId = std::move(value); }
 
     /**
-     * <p>The unique identifier of the version of the secret that was created during
-     * the rotation. This version might not be complete, and should be evaluated for
+     * <p>The unique identifier of the version of the secret created during the
+     * rotation. This version might not be complete, and should be evaluated for
      * possible deletion. At the very least, you should remove the
      * <code>VersionStage</code> value <code>AWSPENDING</code> to enable this version
      * to be deleted. Failing to clean up a cancelled rotation can block you from
@@ -155,8 +145,8 @@ namespace Model
     inline void SetVersionId(const char* value) { m_versionId.assign(value); }
 
     /**
-     * <p>The unique identifier of the version of the secret that was created during
-     * the rotation. This version might not be complete, and should be evaluated for
+     * <p>The unique identifier of the version of the secret created during the
+     * rotation. This version might not be complete, and should be evaluated for
      * possible deletion. At the very least, you should remove the
      * <code>VersionStage</code> value <code>AWSPENDING</code> to enable this version
      * to be deleted. Failing to clean up a cancelled rotation can block you from
@@ -165,8 +155,8 @@ namespace Model
     inline CancelRotateSecretResult& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the version of the secret that was created during
-     * the rotation. This version might not be complete, and should be evaluated for
+     * <p>The unique identifier of the version of the secret created during the
+     * rotation. This version might not be complete, and should be evaluated for
      * possible deletion. At the very least, you should remove the
      * <code>VersionStage</code> value <code>AWSPENDING</code> to enable this version
      * to be deleted. Failing to clean up a cancelled rotation can block you from
@@ -175,8 +165,8 @@ namespace Model
     inline CancelRotateSecretResult& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the version of the secret that was created during
-     * the rotation. This version might not be complete, and should be evaluated for
+     * <p>The unique identifier of the version of the secret created during the
+     * rotation. This version might not be complete, and should be evaluated for
      * possible deletion. At the very least, you should remove the
      * <code>VersionStage</code> value <code>AWSPENDING</code> to enable this version
      * to be deleted. Failing to clean up a cancelled rotation can block you from

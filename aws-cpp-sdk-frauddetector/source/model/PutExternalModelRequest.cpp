@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/frauddetector/model/PutExternalModelRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -26,11 +16,12 @@ PutExternalModelRequest::PutExternalModelRequest() :
     m_modelEndpointHasBeenSet(false),
     m_modelSource(ModelSource::NOT_SET),
     m_modelSourceHasBeenSet(false),
-    m_roleHasBeenSet(false),
+    m_invokeModelEndpointRoleArnHasBeenSet(false),
     m_inputConfigurationHasBeenSet(false),
     m_outputConfigurationHasBeenSet(false),
     m_modelEndpointStatus(ModelEndpointStatus::NOT_SET),
-    m_modelEndpointStatusHasBeenSet(false)
+    m_modelEndpointStatusHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -49,9 +40,9 @@ Aws::String PutExternalModelRequest::SerializePayload() const
    payload.WithString("modelSource", ModelSourceMapper::GetNameForModelSource(m_modelSource));
   }
 
-  if(m_roleHasBeenSet)
+  if(m_invokeModelEndpointRoleArnHasBeenSet)
   {
-   payload.WithObject("role", m_role.Jsonize());
+   payload.WithString("invokeModelEndpointRoleArn", m_invokeModelEndpointRoleArn);
 
   }
 
@@ -70,6 +61,17 @@ Aws::String PutExternalModelRequest::SerializePayload() const
   if(m_modelEndpointStatusHasBeenSet)
   {
    payload.WithString("modelEndpointStatus", ModelEndpointStatusMapper::GetNameForModelEndpointStatus(m_modelEndpointStatus));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
+
   }
 
   return payload.View().WriteReadable();

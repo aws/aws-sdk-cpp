@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/states/SFN_EXPORTS.h>
@@ -172,42 +162,58 @@ namespace Model
 
 
     /**
-     * <p>The JSON data passed to the resource referenced in a task state.</p>
+     * <p>The JSON data passed to the resource referenced in a task state. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline const Aws::String& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>The JSON data passed to the resource referenced in a task state.</p>
+     * <p>The JSON data passed to the resource referenced in a task state. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
-     * <p>The JSON data passed to the resource referenced in a task state.</p>
+     * <p>The JSON data passed to the resource referenced in a task state. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline void SetParameters(const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>The JSON data passed to the resource referenced in a task state.</p>
+     * <p>The JSON data passed to the resource referenced in a task state. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline void SetParameters(Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>The JSON data passed to the resource referenced in a task state.</p>
+     * <p>The JSON data passed to the resource referenced in a task state. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline void SetParameters(const char* value) { m_parametersHasBeenSet = true; m_parameters.assign(value); }
 
     /**
-     * <p>The JSON data passed to the resource referenced in a task state.</p>
+     * <p>The JSON data passed to the resource referenced in a task state. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline TaskScheduledEventDetails& WithParameters(const Aws::String& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>The JSON data passed to the resource referenced in a task state.</p>
+     * <p>The JSON data passed to the resource referenced in a task state. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline TaskScheduledEventDetails& WithParameters(Aws::String&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The JSON data passed to the resource referenced in a task state.</p>
+     * <p>The JSON data passed to the resource referenced in a task state. Length
+     * constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.</p>
      */
     inline TaskScheduledEventDetails& WithParameters(const char* value) { SetParameters(value); return *this;}
 
@@ -232,6 +238,27 @@ namespace Model
      */
     inline TaskScheduledEventDetails& WithTimeoutInSeconds(long long value) { SetTimeoutInSeconds(value); return *this;}
 
+
+    /**
+     * <p>The maximum allowed duration between two heartbeats for the task.</p>
+     */
+    inline long long GetHeartbeatInSeconds() const{ return m_heartbeatInSeconds; }
+
+    /**
+     * <p>The maximum allowed duration between two heartbeats for the task.</p>
+     */
+    inline bool HeartbeatInSecondsHasBeenSet() const { return m_heartbeatInSecondsHasBeenSet; }
+
+    /**
+     * <p>The maximum allowed duration between two heartbeats for the task.</p>
+     */
+    inline void SetHeartbeatInSeconds(long long value) { m_heartbeatInSecondsHasBeenSet = true; m_heartbeatInSeconds = value; }
+
+    /**
+     * <p>The maximum allowed duration between two heartbeats for the task.</p>
+     */
+    inline TaskScheduledEventDetails& WithHeartbeatInSeconds(long long value) { SetHeartbeatInSeconds(value); return *this;}
+
   private:
 
     Aws::String m_resourceType;
@@ -248,6 +275,9 @@ namespace Model
 
     long long m_timeoutInSeconds;
     bool m_timeoutInSecondsHasBeenSet;
+
+    long long m_heartbeatInSeconds;
+    bool m_heartbeatInSecondsHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  *
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  *
-  *  http://aws.amazon.com/apache2.0
-  *
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/core/internal/AWSHttpResourceClient.h>
@@ -445,6 +435,12 @@ namespace Aws
             return iter->second;
         }
 
+        Aws::Map<Aws::String, Aws::Config::Profile> ConfigAndCredentialsCacheManager::GetCredentialsProfiles() const
+        {
+            Aws::Utils::Threading::ReaderLockGuard guard(m_credentialsLock);
+            return m_credentialsFileLoader.GetProfiles();
+        }
+
         Aws::Auth::AWSCredentials ConfigAndCredentialsCacheManager::GetCredentials(const Aws::String& profileName) const
         {
             Aws::Utils::Threading::ReaderLockGuard guard(m_credentialsLock);
@@ -527,6 +523,12 @@ namespace Aws
         {
             assert(s_configManager);
             return s_configManager->GetCredentialsProfile(profileName);
+        }
+
+        Aws::Map<Aws::String, Aws::Config::Profile> GetCachedCredentialsProfiles()
+        {
+            assert(s_configManager);
+            return s_configManager->GetCredentialsProfiles();
         }
 
         Aws::Auth::AWSCredentials GetCachedCredentials(const Aws::String &profileName)

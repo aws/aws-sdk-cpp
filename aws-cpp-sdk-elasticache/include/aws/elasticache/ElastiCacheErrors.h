@@ -1,20 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 
@@ -52,7 +43,7 @@ enum class ElastiCacheErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -73,6 +64,9 @@ enum class ElastiCacheErrors
   CACHE_SUBNET_GROUP_QUOTA_EXCEEDED_FAULT,
   CACHE_SUBNET_QUOTA_EXCEEDED_FAULT,
   CLUSTER_QUOTA_FOR_CUSTOMER_EXCEEDED_FAULT,
+  DEFAULT_USER_ASSOCIATED_TO_USER_GROUP_FAULT,
+  DEFAULT_USER_REQUIRED,
+  DUPLICATE_USER_NAME_FAULT,
   GLOBAL_REPLICATION_GROUP_ALREADY_EXISTS_FAULT,
   GLOBAL_REPLICATION_GROUP_NOT_FOUND_FAULT,
   INSUFFICIENT_CACHE_CLUSTER_CAPACITY_FAULT,
@@ -85,6 +79,8 @@ enum class ElastiCacheErrors
   INVALID_REPLICATION_GROUP_STATE_FAULT,
   INVALID_SNAPSHOT_STATE_FAULT,
   INVALID_SUBNET,
+  INVALID_USER_GROUP_STATE_FAULT,
+  INVALID_USER_STATE_FAULT,
   INVALID_V_P_C_NETWORK_STATE_FAULT,
   NODE_GROUPS_PER_REPLICATION_GROUP_QUOTA_EXCEEDED_FAULT,
   NODE_GROUP_NOT_FOUND_FAULT,
@@ -106,10 +102,31 @@ enum class ElastiCacheErrors
   SNAPSHOT_NOT_FOUND_FAULT,
   SNAPSHOT_QUOTA_EXCEEDED_FAULT,
   SUBNET_IN_USE,
+  SUBNET_NOT_ALLOWED_FAULT,
   TAG_NOT_FOUND_FAULT,
   TAG_QUOTA_PER_RESOURCE_EXCEEDED,
-  TEST_FAILOVER_NOT_AVAILABLE_FAULT
+  TEST_FAILOVER_NOT_AVAILABLE_FAULT,
+  USER_ALREADY_EXISTS_FAULT,
+  USER_GROUP_ALREADY_EXISTS_FAULT,
+  USER_GROUP_NOT_FOUND_FAULT,
+  USER_GROUP_QUOTA_EXCEEDED_FAULT,
+  USER_NOT_FOUND_FAULT,
+  USER_QUOTA_EXCEEDED_FAULT
 };
+
+class AWS_ELASTICACHE_API ElastiCacheError : public Aws::Client::AWSError<ElastiCacheErrors>
+{
+public:
+  ElastiCacheError() {}
+  ElastiCacheError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ElastiCacheErrors>(rhs) {}
+  ElastiCacheError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ElastiCacheErrors>(rhs) {}
+  ElastiCacheError(const Aws::Client::AWSError<ElastiCacheErrors>& rhs) : Aws::Client::AWSError<ElastiCacheErrors>(rhs) {}
+  ElastiCacheError(Aws::Client::AWSError<ElastiCacheErrors>&& rhs) : Aws::Client::AWSError<ElastiCacheErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ElastiCacheErrorMapper
 {
   AWS_ELASTICACHE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

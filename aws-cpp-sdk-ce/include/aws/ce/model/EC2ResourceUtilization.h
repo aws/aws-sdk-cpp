@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ce/model/EBSResourceUtilization.h>
 #include <utility>
 
 namespace Aws
@@ -177,6 +168,43 @@ namespace Model
      */
     inline EC2ResourceUtilization& WithMaxStorageUtilizationPercentage(const char* value) { SetMaxStorageUtilizationPercentage(value); return *this;}
 
+
+    /**
+     * <p> The EBS field that contains a list of EBS metrics associated with the
+     * current instance. </p>
+     */
+    inline const EBSResourceUtilization& GetEBSResourceUtilization() const{ return m_eBSResourceUtilization; }
+
+    /**
+     * <p> The EBS field that contains a list of EBS metrics associated with the
+     * current instance. </p>
+     */
+    inline bool EBSResourceUtilizationHasBeenSet() const { return m_eBSResourceUtilizationHasBeenSet; }
+
+    /**
+     * <p> The EBS field that contains a list of EBS metrics associated with the
+     * current instance. </p>
+     */
+    inline void SetEBSResourceUtilization(const EBSResourceUtilization& value) { m_eBSResourceUtilizationHasBeenSet = true; m_eBSResourceUtilization = value; }
+
+    /**
+     * <p> The EBS field that contains a list of EBS metrics associated with the
+     * current instance. </p>
+     */
+    inline void SetEBSResourceUtilization(EBSResourceUtilization&& value) { m_eBSResourceUtilizationHasBeenSet = true; m_eBSResourceUtilization = std::move(value); }
+
+    /**
+     * <p> The EBS field that contains a list of EBS metrics associated with the
+     * current instance. </p>
+     */
+    inline EC2ResourceUtilization& WithEBSResourceUtilization(const EBSResourceUtilization& value) { SetEBSResourceUtilization(value); return *this;}
+
+    /**
+     * <p> The EBS field that contains a list of EBS metrics associated with the
+     * current instance. </p>
+     */
+    inline EC2ResourceUtilization& WithEBSResourceUtilization(EBSResourceUtilization&& value) { SetEBSResourceUtilization(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_maxCpuUtilizationPercentage;
@@ -187,6 +215,9 @@ namespace Model
 
     Aws::String m_maxStorageUtilizationPercentage;
     bool m_maxStorageUtilizationPercentageHasBeenSet;
+
+    EBSResourceUtilization m_eBSResourceUtilization;
+    bool m_eBSResourceUtilizationHasBeenSet;
   };
 
 } // namespace Model

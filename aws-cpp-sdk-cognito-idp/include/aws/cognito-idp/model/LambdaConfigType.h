@@ -1,21 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cognito-idp/model/CustomSMSLambdaVersionConfigType.h>
+#include <aws/cognito-idp/model/CustomEmailLambdaVersionConfigType.h>
 #include <utility>
 
 namespace Aws
@@ -457,6 +449,133 @@ namespace Model
      */
     inline LambdaConfigType& WithUserMigration(const char* value) { SetUserMigration(value); return *this;}
 
+
+    /**
+     * <p>A custom SMS sender AWS Lambda trigger.</p>
+     */
+    inline const CustomSMSLambdaVersionConfigType& GetCustomSMSSender() const{ return m_customSMSSender; }
+
+    /**
+     * <p>A custom SMS sender AWS Lambda trigger.</p>
+     */
+    inline bool CustomSMSSenderHasBeenSet() const { return m_customSMSSenderHasBeenSet; }
+
+    /**
+     * <p>A custom SMS sender AWS Lambda trigger.</p>
+     */
+    inline void SetCustomSMSSender(const CustomSMSLambdaVersionConfigType& value) { m_customSMSSenderHasBeenSet = true; m_customSMSSender = value; }
+
+    /**
+     * <p>A custom SMS sender AWS Lambda trigger.</p>
+     */
+    inline void SetCustomSMSSender(CustomSMSLambdaVersionConfigType&& value) { m_customSMSSenderHasBeenSet = true; m_customSMSSender = std::move(value); }
+
+    /**
+     * <p>A custom SMS sender AWS Lambda trigger.</p>
+     */
+    inline LambdaConfigType& WithCustomSMSSender(const CustomSMSLambdaVersionConfigType& value) { SetCustomSMSSender(value); return *this;}
+
+    /**
+     * <p>A custom SMS sender AWS Lambda trigger.</p>
+     */
+    inline LambdaConfigType& WithCustomSMSSender(CustomSMSLambdaVersionConfigType&& value) { SetCustomSMSSender(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A custom email sender AWS Lambda trigger.</p>
+     */
+    inline const CustomEmailLambdaVersionConfigType& GetCustomEmailSender() const{ return m_customEmailSender; }
+
+    /**
+     * <p>A custom email sender AWS Lambda trigger.</p>
+     */
+    inline bool CustomEmailSenderHasBeenSet() const { return m_customEmailSenderHasBeenSet; }
+
+    /**
+     * <p>A custom email sender AWS Lambda trigger.</p>
+     */
+    inline void SetCustomEmailSender(const CustomEmailLambdaVersionConfigType& value) { m_customEmailSenderHasBeenSet = true; m_customEmailSender = value; }
+
+    /**
+     * <p>A custom email sender AWS Lambda trigger.</p>
+     */
+    inline void SetCustomEmailSender(CustomEmailLambdaVersionConfigType&& value) { m_customEmailSenderHasBeenSet = true; m_customEmailSender = std::move(value); }
+
+    /**
+     * <p>A custom email sender AWS Lambda trigger.</p>
+     */
+    inline LambdaConfigType& WithCustomEmailSender(const CustomEmailLambdaVersionConfigType& value) { SetCustomEmailSender(value); return *this;}
+
+    /**
+     * <p>A custom email sender AWS Lambda trigger.</p>
+     */
+    inline LambdaConfigType& WithCustomEmailSender(CustomEmailLambdaVersionConfigType&& value) { SetCustomEmailSender(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name of Key Management Service <a
+     * href="/kms/latest/developerguide/concepts.html#master_keys">Customer master
+     * keys</a> . Amazon Cognito uses the key to encrypt codes and temporary passwords
+     * sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
+     */
+    inline const Aws::String& GetKMSKeyID() const{ return m_kMSKeyID; }
+
+    /**
+     * <p>The Amazon Resource Name of Key Management Service <a
+     * href="/kms/latest/developerguide/concepts.html#master_keys">Customer master
+     * keys</a> . Amazon Cognito uses the key to encrypt codes and temporary passwords
+     * sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
+     */
+    inline bool KMSKeyIDHasBeenSet() const { return m_kMSKeyIDHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name of Key Management Service <a
+     * href="/kms/latest/developerguide/concepts.html#master_keys">Customer master
+     * keys</a> . Amazon Cognito uses the key to encrypt codes and temporary passwords
+     * sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
+     */
+    inline void SetKMSKeyID(const Aws::String& value) { m_kMSKeyIDHasBeenSet = true; m_kMSKeyID = value; }
+
+    /**
+     * <p>The Amazon Resource Name of Key Management Service <a
+     * href="/kms/latest/developerguide/concepts.html#master_keys">Customer master
+     * keys</a> . Amazon Cognito uses the key to encrypt codes and temporary passwords
+     * sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
+     */
+    inline void SetKMSKeyID(Aws::String&& value) { m_kMSKeyIDHasBeenSet = true; m_kMSKeyID = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name of Key Management Service <a
+     * href="/kms/latest/developerguide/concepts.html#master_keys">Customer master
+     * keys</a> . Amazon Cognito uses the key to encrypt codes and temporary passwords
+     * sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
+     */
+    inline void SetKMSKeyID(const char* value) { m_kMSKeyIDHasBeenSet = true; m_kMSKeyID.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name of Key Management Service <a
+     * href="/kms/latest/developerguide/concepts.html#master_keys">Customer master
+     * keys</a> . Amazon Cognito uses the key to encrypt codes and temporary passwords
+     * sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
+     */
+    inline LambdaConfigType& WithKMSKeyID(const Aws::String& value) { SetKMSKeyID(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name of Key Management Service <a
+     * href="/kms/latest/developerguide/concepts.html#master_keys">Customer master
+     * keys</a> . Amazon Cognito uses the key to encrypt codes and temporary passwords
+     * sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
+     */
+    inline LambdaConfigType& WithKMSKeyID(Aws::String&& value) { SetKMSKeyID(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name of Key Management Service <a
+     * href="/kms/latest/developerguide/concepts.html#master_keys">Customer master
+     * keys</a> . Amazon Cognito uses the key to encrypt codes and temporary passwords
+     * sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
+     */
+    inline LambdaConfigType& WithKMSKeyID(const char* value) { SetKMSKeyID(value); return *this;}
+
   private:
 
     Aws::String m_preSignUp;
@@ -488,6 +607,15 @@ namespace Model
 
     Aws::String m_userMigration;
     bool m_userMigrationHasBeenSet;
+
+    CustomSMSLambdaVersionConfigType m_customSMSSender;
+    bool m_customSMSSenderHasBeenSet;
+
+    CustomEmailLambdaVersionConfigType m_customEmailSender;
+    bool m_customEmailSenderHasBeenSet;
+
+    Aws::String m_kMSKeyID;
+    bool m_kMSKeyIDHasBeenSet;
   };
 
 } // namespace Model

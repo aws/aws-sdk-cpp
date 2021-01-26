@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds-data/RDSDataService_EXPORTS.h>
@@ -71,11 +61,11 @@ namespace Model
         class ExecuteStatementRequest;
         class RollbackTransactionRequest;
 
-        typedef Aws::Utils::Outcome<BatchExecuteStatementResult, Aws::Client::AWSError<RDSDataServiceErrors>> BatchExecuteStatementOutcome;
-        typedef Aws::Utils::Outcome<BeginTransactionResult, Aws::Client::AWSError<RDSDataServiceErrors>> BeginTransactionOutcome;
-        typedef Aws::Utils::Outcome<CommitTransactionResult, Aws::Client::AWSError<RDSDataServiceErrors>> CommitTransactionOutcome;
-        typedef Aws::Utils::Outcome<ExecuteStatementResult, Aws::Client::AWSError<RDSDataServiceErrors>> ExecuteStatementOutcome;
-        typedef Aws::Utils::Outcome<RollbackTransactionResult, Aws::Client::AWSError<RDSDataServiceErrors>> RollbackTransactionOutcome;
+        typedef Aws::Utils::Outcome<BatchExecuteStatementResult, RDSDataServiceError> BatchExecuteStatementOutcome;
+        typedef Aws::Utils::Outcome<BeginTransactionResult, RDSDataServiceError> BeginTransactionOutcome;
+        typedef Aws::Utils::Outcome<CommitTransactionResult, RDSDataServiceError> CommitTransactionOutcome;
+        typedef Aws::Utils::Outcome<ExecuteStatementResult, RDSDataServiceError> ExecuteStatementOutcome;
+        typedef Aws::Utils::Outcome<RollbackTransactionResult, RDSDataServiceError> RollbackTransactionOutcome;
 
         typedef std::future<BatchExecuteStatementOutcome> BatchExecuteStatementOutcomeCallable;
         typedef std::future<BeginTransactionOutcome> BeginTransactionOutcomeCallable;
@@ -99,10 +89,10 @@ namespace Model
    * information about the Data Service API, see <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
    * the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User
-   * Guide</i>.</p> <note> <p>If you have questions or comments related to the Data
+   * Guide</i>.</p>  <p>If you have questions or comments related to the Data
    * API, send email to <a
    * href="mailto:Rds-data-api-feedback@amazon.com">Rds-data-api-feedback@amazon.com</a>.</p>
-   * </note></p>
+   * </p>
    */
   class AWS_RDSDATASERVICE_API RDSDataServiceClient : public Aws::Client::AWSJsonClient
   {
@@ -130,17 +120,15 @@ namespace Model
 
         virtual ~RDSDataServiceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "RDS Data"; }
-
 
         /**
          * <p>Runs a batch SQL statement over an array of data.</p> <p>You can run bulk
          * update and insert operations for multiple records using a DML statement with
          * different parameter sets. Bulk operations can provide a significant performance
-         * improvement over individual insert and update operations.</p> <important> <p>If
+         * improvement over individual insert and update operations.</p>  <p>If
          * a call isn't part of a transaction because it doesn't include the
          * <code>transactionID</code> parameter, changes that result from the call are
-         * committed automatically.</p> </important><p><h3>See Also:</h3>   <a
+         * committed automatically.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/BatchExecuteStatement">AWS
          * API Reference</a></p>
          */
@@ -150,10 +138,10 @@ namespace Model
          * <p>Runs a batch SQL statement over an array of data.</p> <p>You can run bulk
          * update and insert operations for multiple records using a DML statement with
          * different parameter sets. Bulk operations can provide a significant performance
-         * improvement over individual insert and update operations.</p> <important> <p>If
+         * improvement over individual insert and update operations.</p>  <p>If
          * a call isn't part of a transaction because it doesn't include the
          * <code>transactionID</code> parameter, changes that result from the call are
-         * committed automatically.</p> </important><p><h3>See Also:</h3>   <a
+         * committed automatically.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/BatchExecuteStatement">AWS
          * API Reference</a></p>
          *
@@ -165,10 +153,10 @@ namespace Model
          * <p>Runs a batch SQL statement over an array of data.</p> <p>You can run bulk
          * update and insert operations for multiple records using a DML statement with
          * different parameter sets. Bulk operations can provide a significant performance
-         * improvement over individual insert and update operations.</p> <important> <p>If
+         * improvement over individual insert and update operations.</p>  <p>If
          * a call isn't part of a transaction because it doesn't include the
          * <code>transactionID</code> parameter, changes that result from the call are
-         * committed automatically.</p> </important><p><h3>See Also:</h3>   <a
+         * committed automatically.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/BatchExecuteStatement">AWS
          * API Reference</a></p>
          *
@@ -257,10 +245,10 @@ namespace Model
         virtual void CommitTransactionAsync(const Model::CommitTransactionRequest& request, const CommitTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Runs a SQL statement against a database.</p> <important> <p>If a call isn't
+         * <p>Runs a SQL statement against a database.</p>  <p>If a call isn't
          * part of a transaction because it doesn't include the <code>transactionID</code>
          * parameter, changes that result from the call are committed automatically.</p>
-         * </important> <p>The response size limit is 1 MB. If the call returns more than 1
+         *  <p>The response size limit is 1 MB. If the call returns more than 1
          * MB of response data, the call is terminated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ExecuteStatement">AWS
          * API Reference</a></p>
@@ -268,10 +256,10 @@ namespace Model
         virtual Model::ExecuteStatementOutcome ExecuteStatement(const Model::ExecuteStatementRequest& request) const;
 
         /**
-         * <p>Runs a SQL statement against a database.</p> <important> <p>If a call isn't
+         * <p>Runs a SQL statement against a database.</p>  <p>If a call isn't
          * part of a transaction because it doesn't include the <code>transactionID</code>
          * parameter, changes that result from the call are committed automatically.</p>
-         * </important> <p>The response size limit is 1 MB. If the call returns more than 1
+         *  <p>The response size limit is 1 MB. If the call returns more than 1
          * MB of response data, the call is terminated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ExecuteStatement">AWS
          * API Reference</a></p>
@@ -281,10 +269,10 @@ namespace Model
         virtual Model::ExecuteStatementOutcomeCallable ExecuteStatementCallable(const Model::ExecuteStatementRequest& request) const;
 
         /**
-         * <p>Runs a SQL statement against a database.</p> <important> <p>If a call isn't
+         * <p>Runs a SQL statement against a database.</p>  <p>If a call isn't
          * part of a transaction because it doesn't include the <code>transactionID</code>
          * parameter, changes that result from the call are committed automatically.</p>
-         * </important> <p>The response size limit is 1 MB. If the call returns more than 1
+         *  <p>The response size limit is 1 MB. If the call returns more than 1
          * MB of response data, the call is terminated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ExecuteStatement">AWS
          * API Reference</a></p>

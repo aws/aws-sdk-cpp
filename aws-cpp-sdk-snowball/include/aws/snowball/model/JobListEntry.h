@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/snowball/Snowball_EXPORTS.h>
@@ -134,42 +124,42 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates that this job is a master job. A master job represents
-     * a successful request to create an export job. Master jobs aren't associated with
-     * any Snowballs. Instead, each master job will have at least one job part, and
-     * each job part is associated with a Snowball. It might take some time before the
-     * job parts associated with a particular master job are listed, because they are
-     * created after the master job is created.</p>
+     * <p>A value that indicates that this job is a main job. A main job represents a
+     * successful request to create an export job. Main jobs aren't associated with any
+     * Snowballs. Instead, each main job will have at least one job part, and each job
+     * part is associated with a Snowball. It might take some time before the job parts
+     * associated with a particular main job are listed, because they are created after
+     * the main job is created.</p>
      */
     inline bool GetIsMaster() const{ return m_isMaster; }
 
     /**
-     * <p>A value that indicates that this job is a master job. A master job represents
-     * a successful request to create an export job. Master jobs aren't associated with
-     * any Snowballs. Instead, each master job will have at least one job part, and
-     * each job part is associated with a Snowball. It might take some time before the
-     * job parts associated with a particular master job are listed, because they are
-     * created after the master job is created.</p>
+     * <p>A value that indicates that this job is a main job. A main job represents a
+     * successful request to create an export job. Main jobs aren't associated with any
+     * Snowballs. Instead, each main job will have at least one job part, and each job
+     * part is associated with a Snowball. It might take some time before the job parts
+     * associated with a particular main job are listed, because they are created after
+     * the main job is created.</p>
      */
     inline bool IsMasterHasBeenSet() const { return m_isMasterHasBeenSet; }
 
     /**
-     * <p>A value that indicates that this job is a master job. A master job represents
-     * a successful request to create an export job. Master jobs aren't associated with
-     * any Snowballs. Instead, each master job will have at least one job part, and
-     * each job part is associated with a Snowball. It might take some time before the
-     * job parts associated with a particular master job are listed, because they are
-     * created after the master job is created.</p>
+     * <p>A value that indicates that this job is a main job. A main job represents a
+     * successful request to create an export job. Main jobs aren't associated with any
+     * Snowballs. Instead, each main job will have at least one job part, and each job
+     * part is associated with a Snowball. It might take some time before the job parts
+     * associated with a particular main job are listed, because they are created after
+     * the main job is created.</p>
      */
     inline void SetIsMaster(bool value) { m_isMasterHasBeenSet = true; m_isMaster = value; }
 
     /**
-     * <p>A value that indicates that this job is a master job. A master job represents
-     * a successful request to create an export job. Master jobs aren't associated with
-     * any Snowballs. Instead, each master job will have at least one job part, and
-     * each job part is associated with a Snowball. It might take some time before the
-     * job parts associated with a particular master job are listed, because they are
-     * created after the master job is created.</p>
+     * <p>A value that indicates that this job is a main job. A main job represents a
+     * successful request to create an export job. Main jobs aren't associated with any
+     * Snowballs. Instead, each main job will have at least one job part, and each job
+     * part is associated with a Snowball. It might take some time before the job parts
+     * associated with a particular main job are listed, because they are created after
+     * the main job is created.</p>
      */
     inline JobListEntry& WithIsMaster(bool value) { SetIsMaster(value); return *this;}
 

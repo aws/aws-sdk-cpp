@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
@@ -287,38 +277,68 @@ namespace Model
 
 
     /**
-     * When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS
-     * manifest
+     * Choose Include (INCLUDE) to have MediaConvert generate a child manifest that
+     * lists only the I-frames for this rendition, in addition to your regular manifest
+     * for this rendition. You might use this manifest as part of a workflow that
+     * creates preview functions for your video. MediaConvert adds both the I-frame
+     * only child manifest and the regular child manifest to the parent manifest. When
+     * you don't need the I-frame only child manifest, keep the default value Exclude
+     * (EXCLUDE).
      */
     inline const HlsIFrameOnlyManifest& GetIFrameOnlyManifest() const{ return m_iFrameOnlyManifest; }
 
     /**
-     * When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS
-     * manifest
+     * Choose Include (INCLUDE) to have MediaConvert generate a child manifest that
+     * lists only the I-frames for this rendition, in addition to your regular manifest
+     * for this rendition. You might use this manifest as part of a workflow that
+     * creates preview functions for your video. MediaConvert adds both the I-frame
+     * only child manifest and the regular child manifest to the parent manifest. When
+     * you don't need the I-frame only child manifest, keep the default value Exclude
+     * (EXCLUDE).
      */
     inline bool IFrameOnlyManifestHasBeenSet() const { return m_iFrameOnlyManifestHasBeenSet; }
 
     /**
-     * When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS
-     * manifest
+     * Choose Include (INCLUDE) to have MediaConvert generate a child manifest that
+     * lists only the I-frames for this rendition, in addition to your regular manifest
+     * for this rendition. You might use this manifest as part of a workflow that
+     * creates preview functions for your video. MediaConvert adds both the I-frame
+     * only child manifest and the regular child manifest to the parent manifest. When
+     * you don't need the I-frame only child manifest, keep the default value Exclude
+     * (EXCLUDE).
      */
     inline void SetIFrameOnlyManifest(const HlsIFrameOnlyManifest& value) { m_iFrameOnlyManifestHasBeenSet = true; m_iFrameOnlyManifest = value; }
 
     /**
-     * When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS
-     * manifest
+     * Choose Include (INCLUDE) to have MediaConvert generate a child manifest that
+     * lists only the I-frames for this rendition, in addition to your regular manifest
+     * for this rendition. You might use this manifest as part of a workflow that
+     * creates preview functions for your video. MediaConvert adds both the I-frame
+     * only child manifest and the regular child manifest to the parent manifest. When
+     * you don't need the I-frame only child manifest, keep the default value Exclude
+     * (EXCLUDE).
      */
     inline void SetIFrameOnlyManifest(HlsIFrameOnlyManifest&& value) { m_iFrameOnlyManifestHasBeenSet = true; m_iFrameOnlyManifest = std::move(value); }
 
     /**
-     * When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS
-     * manifest
+     * Choose Include (INCLUDE) to have MediaConvert generate a child manifest that
+     * lists only the I-frames for this rendition, in addition to your regular manifest
+     * for this rendition. You might use this manifest as part of a workflow that
+     * creates preview functions for your video. MediaConvert adds both the I-frame
+     * only child manifest and the regular child manifest to the parent manifest. When
+     * you don't need the I-frame only child manifest, keep the default value Exclude
+     * (EXCLUDE).
      */
     inline HlsSettings& WithIFrameOnlyManifest(const HlsIFrameOnlyManifest& value) { SetIFrameOnlyManifest(value); return *this;}
 
     /**
-     * When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS
-     * manifest
+     * Choose Include (INCLUDE) to have MediaConvert generate a child manifest that
+     * lists only the I-frames for this rendition, in addition to your regular manifest
+     * for this rendition. You might use this manifest as part of a workflow that
+     * creates preview functions for your video. MediaConvert adds both the I-frame
+     * only child manifest and the regular child manifest to the parent manifest. When
+     * you don't need the I-frame only child manifest, keep the default value Exclude
+     * (EXCLUDE).
      */
     inline HlsSettings& WithIFrameOnlyManifest(HlsIFrameOnlyManifest&& value) { SetIFrameOnlyManifest(std::move(value)); return *this;}
 

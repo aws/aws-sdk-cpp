@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/elasticache/model/Subnet.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -32,13 +22,15 @@ namespace Model
 
 Subnet::Subnet() : 
     m_subnetIdentifierHasBeenSet(false),
-    m_subnetAvailabilityZoneHasBeenSet(false)
+    m_subnetAvailabilityZoneHasBeenSet(false),
+    m_subnetOutpostHasBeenSet(false)
 {
 }
 
 Subnet::Subnet(const XmlNode& xmlNode) : 
     m_subnetIdentifierHasBeenSet(false),
-    m_subnetAvailabilityZoneHasBeenSet(false)
+    m_subnetAvailabilityZoneHasBeenSet(false),
+    m_subnetOutpostHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -61,6 +53,12 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
       m_subnetAvailabilityZone = subnetAvailabilityZoneNode;
       m_subnetAvailabilityZoneHasBeenSet = true;
     }
+    XmlNode subnetOutpostNode = resultNode.FirstChild("SubnetOutpost");
+    if(!subnetOutpostNode.IsNull())
+    {
+      m_subnetOutpost = subnetOutpostNode;
+      m_subnetOutpostHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -80,6 +78,13 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       m_subnetAvailabilityZone.OutputToStream(oStream, subnetAvailabilityZoneLocationAndMemberSs.str().c_str());
   }
 
+  if(m_subnetOutpostHasBeenSet)
+  {
+      Aws::StringStream subnetOutpostLocationAndMemberSs;
+      subnetOutpostLocationAndMemberSs << location << index << locationValue << ".SubnetOutpost";
+      m_subnetOutpost.OutputToStream(oStream, subnetOutpostLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -93,6 +98,12 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
       Aws::String subnetAvailabilityZoneLocationAndMember(location);
       subnetAvailabilityZoneLocationAndMember += ".SubnetAvailabilityZone";
       m_subnetAvailabilityZone.OutputToStream(oStream, subnetAvailabilityZoneLocationAndMember.c_str());
+  }
+  if(m_subnetOutpostHasBeenSet)
+  {
+      Aws::String subnetOutpostLocationAndMember(location);
+      subnetOutpostLocationAndMember += ".SubnetOutpost";
+      m_subnetOutpost.OutputToStream(oStream, subnetOutpostLocationAndMember.c_str());
   }
 }
 

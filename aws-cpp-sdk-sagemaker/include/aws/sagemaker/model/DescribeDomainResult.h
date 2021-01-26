@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/AuthMode.h>
 #include <aws/sagemaker/model/UserSettings.h>
+#include <aws/sagemaker/model/AppNetworkAccessType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
@@ -368,109 +359,124 @@ namespace Model
 
 
     /**
-     * <p>Settings which are applied to all UserProfile in this domain, if settings are
-     * not explicitly specified in a given UserProfile. </p>
+     * <p>Settings which are applied to all UserProfiles in this domain, if settings
+     * are not explicitly specified in a given UserProfile. </p>
      */
     inline const UserSettings& GetDefaultUserSettings() const{ return m_defaultUserSettings; }
 
     /**
-     * <p>Settings which are applied to all UserProfile in this domain, if settings are
-     * not explicitly specified in a given UserProfile. </p>
+     * <p>Settings which are applied to all UserProfiles in this domain, if settings
+     * are not explicitly specified in a given UserProfile. </p>
      */
     inline void SetDefaultUserSettings(const UserSettings& value) { m_defaultUserSettings = value; }
 
     /**
-     * <p>Settings which are applied to all UserProfile in this domain, if settings are
-     * not explicitly specified in a given UserProfile. </p>
+     * <p>Settings which are applied to all UserProfiles in this domain, if settings
+     * are not explicitly specified in a given UserProfile. </p>
      */
     inline void SetDefaultUserSettings(UserSettings&& value) { m_defaultUserSettings = std::move(value); }
 
     /**
-     * <p>Settings which are applied to all UserProfile in this domain, if settings are
-     * not explicitly specified in a given UserProfile. </p>
+     * <p>Settings which are applied to all UserProfiles in this domain, if settings
+     * are not explicitly specified in a given UserProfile. </p>
      */
     inline DescribeDomainResult& WithDefaultUserSettings(const UserSettings& value) { SetDefaultUserSettings(value); return *this;}
 
     /**
-     * <p>Settings which are applied to all UserProfile in this domain, if settings are
-     * not explicitly specified in a given UserProfile. </p>
+     * <p>Settings which are applied to all UserProfiles in this domain, if settings
+     * are not explicitly specified in a given UserProfile. </p>
      */
     inline DescribeDomainResult& WithDefaultUserSettings(UserSettings&& value) { SetDefaultUserSettings(std::move(value)); return *this;}
 
 
     /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
+     * <p>Specifies the VPC used for non-EFS traffic. The default value is
+     * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
+     * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
+     * subnets</p> </li> </ul>
      */
-    inline const Aws::String& GetHomeEfsFileSystemKmsKeyId() const{ return m_homeEfsFileSystemKmsKeyId; }
+    inline const AppNetworkAccessType& GetAppNetworkAccessType() const{ return m_appNetworkAccessType; }
 
     /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
+     * <p>Specifies the VPC used for non-EFS traffic. The default value is
+     * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
+     * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
+     * subnets</p> </li> </ul>
      */
-    inline void SetHomeEfsFileSystemKmsKeyId(const Aws::String& value) { m_homeEfsFileSystemKmsKeyId = value; }
+    inline void SetAppNetworkAccessType(const AppNetworkAccessType& value) { m_appNetworkAccessType = value; }
 
     /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
+     * <p>Specifies the VPC used for non-EFS traffic. The default value is
+     * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
+     * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
+     * subnets</p> </li> </ul>
      */
-    inline void SetHomeEfsFileSystemKmsKeyId(Aws::String&& value) { m_homeEfsFileSystemKmsKeyId = std::move(value); }
+    inline void SetAppNetworkAccessType(AppNetworkAccessType&& value) { m_appNetworkAccessType = std::move(value); }
 
     /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
+     * <p>Specifies the VPC used for non-EFS traffic. The default value is
+     * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
+     * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
+     * subnets</p> </li> </ul>
      */
-    inline void SetHomeEfsFileSystemKmsKeyId(const char* value) { m_homeEfsFileSystemKmsKeyId.assign(value); }
+    inline DescribeDomainResult& WithAppNetworkAccessType(const AppNetworkAccessType& value) { SetAppNetworkAccessType(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
+     * <p>Specifies the VPC used for non-EFS traffic. The default value is
+     * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
+     * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
+     * subnets</p> </li> </ul>
      */
-    inline DescribeDomainResult& WithHomeEfsFileSystemKmsKeyId(const Aws::String& value) { SetHomeEfsFileSystemKmsKeyId(value); return *this;}
-
-    /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
-     */
-    inline DescribeDomainResult& WithHomeEfsFileSystemKmsKeyId(Aws::String&& value) { SetHomeEfsFileSystemKmsKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
-     */
-    inline DescribeDomainResult& WithHomeEfsFileSystemKmsKeyId(const char* value) { SetHomeEfsFileSystemKmsKeyId(value); return *this;}
+    inline DescribeDomainResult& WithAppNetworkAccessType(AppNetworkAccessType&& value) { SetAppNetworkAccessType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets that Studio uses for communication.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets that Studio uses for communication.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIds = value; }
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets that Studio uses for communication.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIds = std::move(value); }
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets that Studio uses for communication.</p>
      */
     inline DescribeDomainResult& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets that Studio uses for communication.</p>
      */
     inline DescribeDomainResult& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets that Studio uses for communication.</p>
      */
     inline DescribeDomainResult& AddSubnetIds(const Aws::String& value) { m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets that Studio uses for communication.</p>
      */
     inline DescribeDomainResult& AddSubnetIds(Aws::String&& value) { m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets that Studio uses for communication.</p>
      */
     inline DescribeDomainResult& AddSubnetIds(const char* value) { m_subnetIds.push_back(value); return *this; }
 
@@ -512,39 +518,89 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Amazon Virtual Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * communication.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p>The ID of the Amazon Virtual Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * communication.</p>
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcId = value; }
 
     /**
-     * <p>The ID of the Amazon Virtual Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * communication.</p>
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcId = std::move(value); }
 
     /**
-     * <p>The ID of the Amazon Virtual Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * communication.</p>
      */
     inline void SetVpcId(const char* value) { m_vpcId.assign(value); }
 
     /**
-     * <p>The ID of the Amazon Virtual Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * communication.</p>
      */
     inline DescribeDomainResult& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Virtual Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * communication.</p>
      */
     inline DescribeDomainResult& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Amazon Virtual Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * communication.</p>
      */
     inline DescribeDomainResult& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+
+
+    /**
+     * <p>The AWS KMS customer managed CMK used to encrypt the EFS volume attached to
+     * the domain.</p>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The AWS KMS customer managed CMK used to encrypt the EFS volume attached to
+     * the domain.</p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
+
+    /**
+     * <p>The AWS KMS customer managed CMK used to encrypt the EFS volume attached to
+     * the domain.</p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p>The AWS KMS customer managed CMK used to encrypt the EFS volume attached to
+     * the domain.</p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
+
+    /**
+     * <p>The AWS KMS customer managed CMK used to encrypt the EFS volume attached to
+     * the domain.</p>
+     */
+    inline DescribeDomainResult& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The AWS KMS customer managed CMK used to encrypt the EFS volume attached to
+     * the domain.</p>
+     */
+    inline DescribeDomainResult& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS KMS customer managed CMK used to encrypt the EFS volume attached to
+     * the domain.</p>
+     */
+    inline DescribeDomainResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
   private:
 
@@ -570,13 +626,15 @@ namespace Model
 
     UserSettings m_defaultUserSettings;
 
-    Aws::String m_homeEfsFileSystemKmsKeyId;
+    AppNetworkAccessType m_appNetworkAccessType;
 
     Aws::Vector<Aws::String> m_subnetIds;
 
     Aws::String m_url;
 
     Aws::String m_vpcId;
+
+    Aws::String m_kmsKeyId;
   };
 
 } // namespace Model

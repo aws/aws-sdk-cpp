@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/batch/model/ComputeResourceUpdate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,7 +24,9 @@ ComputeResourceUpdate::ComputeResourceUpdate() :
     m_maxvCpus(0),
     m_maxvCpusHasBeenSet(false),
     m_desiredvCpus(0),
-    m_desiredvCpusHasBeenSet(false)
+    m_desiredvCpusHasBeenSet(false),
+    m_subnetsHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false)
 {
 }
 
@@ -44,7 +36,9 @@ ComputeResourceUpdate::ComputeResourceUpdate(JsonView jsonValue) :
     m_maxvCpus(0),
     m_maxvCpusHasBeenSet(false),
     m_desiredvCpus(0),
-    m_desiredvCpusHasBeenSet(false)
+    m_desiredvCpusHasBeenSet(false),
+    m_subnetsHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -72,6 +66,26 @@ ComputeResourceUpdate& ComputeResourceUpdate::operator =(JsonView jsonValue)
     m_desiredvCpusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("subnets"))
+  {
+    Array<JsonView> subnetsJsonList = jsonValue.GetArray("subnets");
+    for(unsigned subnetsIndex = 0; subnetsIndex < subnetsJsonList.GetLength(); ++subnetsIndex)
+    {
+      m_subnets.push_back(subnetsJsonList[subnetsIndex].AsString());
+    }
+    m_subnetsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("securityGroupIds"))
+  {
+    Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
+    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
+    {
+      m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
+    }
+    m_securityGroupIdsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -94,6 +108,28 @@ JsonValue ComputeResourceUpdate::Jsonize() const
   if(m_desiredvCpusHasBeenSet)
   {
    payload.WithInteger("desiredvCpus", m_desiredvCpus);
+
+  }
+
+  if(m_subnetsHasBeenSet)
+  {
+   Array<JsonValue> subnetsJsonList(m_subnets.size());
+   for(unsigned subnetsIndex = 0; subnetsIndex < subnetsJsonList.GetLength(); ++subnetsIndex)
+   {
+     subnetsJsonList[subnetsIndex].AsString(m_subnets[subnetsIndex]);
+   }
+   payload.WithArray("subnets", std::move(subnetsJsonList));
+
+  }
+
+  if(m_securityGroupIdsHasBeenSet)
+  {
+   Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
+   for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
+   {
+     securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
+   }
+   payload.WithArray("securityGroupIds", std::move(securityGroupIdsJsonList));
 
   }
 

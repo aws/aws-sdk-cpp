@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticfilesystem/EFS_EXPORTS.h>
@@ -39,10 +29,10 @@ namespace Model
    * point's <code>RootDirectory</code> &gt; <code>Path</code>. If the access point
    * root directory does not exist, EFS creates it with these settings when a client
    * connects to the access point. When specifying <code>CreationInfo</code>, you
-   * must include values for all properties. </p> <important> <p>If you do not
+   * must include values for all properties. </p>  <p>If you do not
    * provide <code>CreationInfo</code> and the specified <code>RootDirectory</code>
    * does not exist, attempts to mount the file system using the access point will
-   * fail.</p> </important><p><h3>See Also:</h3>   <a
+   * fail.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreationInfo">AWS
    * API Reference</a></p>
    */

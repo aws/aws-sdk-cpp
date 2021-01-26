@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/model/CdiInputSpecification.h>
 #include <aws/medialive/model/ChannelClass.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/medialive/model/EncoderSettings.h>
@@ -97,6 +88,37 @@ namespace Model
      * The unique arn of the channel.
      */
     inline Channel& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * Specification of CDI inputs for this channel
+     */
+    inline const CdiInputSpecification& GetCdiInputSpecification() const{ return m_cdiInputSpecification; }
+
+    /**
+     * Specification of CDI inputs for this channel
+     */
+    inline bool CdiInputSpecificationHasBeenSet() const { return m_cdiInputSpecificationHasBeenSet; }
+
+    /**
+     * Specification of CDI inputs for this channel
+     */
+    inline void SetCdiInputSpecification(const CdiInputSpecification& value) { m_cdiInputSpecificationHasBeenSet = true; m_cdiInputSpecification = value; }
+
+    /**
+     * Specification of CDI inputs for this channel
+     */
+    inline void SetCdiInputSpecification(CdiInputSpecification&& value) { m_cdiInputSpecificationHasBeenSet = true; m_cdiInputSpecification = std::move(value); }
+
+    /**
+     * Specification of CDI inputs for this channel
+     */
+    inline Channel& WithCdiInputSpecification(const CdiInputSpecification& value) { SetCdiInputSpecification(value); return *this;}
+
+    /**
+     * Specification of CDI inputs for this channel
+     */
+    inline Channel& WithCdiInputSpecification(CdiInputSpecification&& value) { SetCdiInputSpecification(std::move(value)); return *this;}
 
 
     /**
@@ -359,22 +381,34 @@ one destination per
     inline Channel& AddInputAttachments(InputAttachment&& value) { m_inputAttachmentsHasBeenSet = true; m_inputAttachments.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * Specification of network and file inputs for this channel
+     */
     inline const InputSpecification& GetInputSpecification() const{ return m_inputSpecification; }
 
-    
+    /**
+     * Specification of network and file inputs for this channel
+     */
     inline bool InputSpecificationHasBeenSet() const { return m_inputSpecificationHasBeenSet; }
 
-    
+    /**
+     * Specification of network and file inputs for this channel
+     */
     inline void SetInputSpecification(const InputSpecification& value) { m_inputSpecificationHasBeenSet = true; m_inputSpecification = value; }
 
-    
+    /**
+     * Specification of network and file inputs for this channel
+     */
     inline void SetInputSpecification(InputSpecification&& value) { m_inputSpecificationHasBeenSet = true; m_inputSpecification = std::move(value); }
 
-    
+    /**
+     * Specification of network and file inputs for this channel
+     */
     inline Channel& WithInputSpecification(const InputSpecification& value) { SetInputSpecification(value); return *this;}
 
-    
+    /**
+     * Specification of network and file inputs for this channel
+     */
     inline Channel& WithInputSpecification(InputSpecification&& value) { SetInputSpecification(std::move(value)); return *this;}
 
 
@@ -641,6 +675,9 @@ one destination per
 
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
+    CdiInputSpecification m_cdiInputSpecification;
+    bool m_cdiInputSpecificationHasBeenSet;
 
     ChannelClass m_channelClass;
     bool m_channelClassHasBeenSet;

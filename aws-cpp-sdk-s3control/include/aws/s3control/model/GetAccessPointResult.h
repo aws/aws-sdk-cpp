@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3control/S3Control_EXPORTS.h>
@@ -119,82 +109,87 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether this access point allows access from the public Internet.
+     * <p>Indicates whether this access point allows access from the public internet.
      * If <code>VpcConfiguration</code> is specified for this access point, then
      * <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't
-     * allow access from the public Internet. Otherwise, <code>NetworkOrigin</code> is
+     * allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is
      * <code>Internet</code>, and the access point allows access from the public
-     * Internet, subject to the access point and bucket access policies.</p>
+     * internet, subject to the access point and bucket access policies.</p> <p>This
+     * will always be true for an Amazon S3 on Outposts access point</p>
      */
     inline const NetworkOrigin& GetNetworkOrigin() const{ return m_networkOrigin; }
 
     /**
-     * <p>Indicates whether this access point allows access from the public Internet.
+     * <p>Indicates whether this access point allows access from the public internet.
      * If <code>VpcConfiguration</code> is specified for this access point, then
      * <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't
-     * allow access from the public Internet. Otherwise, <code>NetworkOrigin</code> is
+     * allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is
      * <code>Internet</code>, and the access point allows access from the public
-     * Internet, subject to the access point and bucket access policies.</p>
+     * internet, subject to the access point and bucket access policies.</p> <p>This
+     * will always be true for an Amazon S3 on Outposts access point</p>
      */
     inline void SetNetworkOrigin(const NetworkOrigin& value) { m_networkOrigin = value; }
 
     /**
-     * <p>Indicates whether this access point allows access from the public Internet.
+     * <p>Indicates whether this access point allows access from the public internet.
      * If <code>VpcConfiguration</code> is specified for this access point, then
      * <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't
-     * allow access from the public Internet. Otherwise, <code>NetworkOrigin</code> is
+     * allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is
      * <code>Internet</code>, and the access point allows access from the public
-     * Internet, subject to the access point and bucket access policies.</p>
+     * internet, subject to the access point and bucket access policies.</p> <p>This
+     * will always be true for an Amazon S3 on Outposts access point</p>
      */
     inline void SetNetworkOrigin(NetworkOrigin&& value) { m_networkOrigin = std::move(value); }
 
     /**
-     * <p>Indicates whether this access point allows access from the public Internet.
+     * <p>Indicates whether this access point allows access from the public internet.
      * If <code>VpcConfiguration</code> is specified for this access point, then
      * <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't
-     * allow access from the public Internet. Otherwise, <code>NetworkOrigin</code> is
+     * allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is
      * <code>Internet</code>, and the access point allows access from the public
-     * Internet, subject to the access point and bucket access policies.</p>
+     * internet, subject to the access point and bucket access policies.</p> <p>This
+     * will always be true for an Amazon S3 on Outposts access point</p>
      */
     inline GetAccessPointResult& WithNetworkOrigin(const NetworkOrigin& value) { SetNetworkOrigin(value); return *this;}
 
     /**
-     * <p>Indicates whether this access point allows access from the public Internet.
+     * <p>Indicates whether this access point allows access from the public internet.
      * If <code>VpcConfiguration</code> is specified for this access point, then
      * <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't
-     * allow access from the public Internet. Otherwise, <code>NetworkOrigin</code> is
+     * allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is
      * <code>Internet</code>, and the access point allows access from the public
-     * Internet, subject to the access point and bucket access policies.</p>
+     * internet, subject to the access point and bucket access policies.</p> <p>This
+     * will always be true for an Amazon S3 on Outposts access point</p>
      */
     inline GetAccessPointResult& WithNetworkOrigin(NetworkOrigin&& value) { SetNetworkOrigin(std::move(value)); return *this;}
 
 
     /**
-     * <p>Contains the Virtual Private Cloud (VPC) configuration for the specified
+     * <p>Contains the virtual private cloud (VPC) configuration for the specified
      * access point.</p>
      */
     inline const VpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
 
     /**
-     * <p>Contains the Virtual Private Cloud (VPC) configuration for the specified
+     * <p>Contains the virtual private cloud (VPC) configuration for the specified
      * access point.</p>
      */
     inline void SetVpcConfiguration(const VpcConfiguration& value) { m_vpcConfiguration = value; }
 
     /**
-     * <p>Contains the Virtual Private Cloud (VPC) configuration for the specified
+     * <p>Contains the virtual private cloud (VPC) configuration for the specified
      * access point.</p>
      */
     inline void SetVpcConfiguration(VpcConfiguration&& value) { m_vpcConfiguration = std::move(value); }
 
     /**
-     * <p>Contains the Virtual Private Cloud (VPC) configuration for the specified
+     * <p>Contains the virtual private cloud (VPC) configuration for the specified
      * access point.</p>
      */
     inline GetAccessPointResult& WithVpcConfiguration(const VpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
 
     /**
-     * <p>Contains the Virtual Private Cloud (VPC) configuration for the specified
+     * <p>Contains the virtual private cloud (VPC) configuration for the specified
      * access point.</p>
      */
     inline GetAccessPointResult& WithVpcConfiguration(VpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}

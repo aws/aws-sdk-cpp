@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -31,11 +21,15 @@
 #include <aws/sagemaker/model/DebugHookConfig.h>
 #include <aws/sagemaker/model/ExperimentConfig.h>
 #include <aws/sagemaker/model/TensorBoardOutputConfig.h>
+#include <aws/sagemaker/model/ProfilerConfig.h>
+#include <aws/sagemaker/model/ProfilingStatus.h>
 #include <aws/sagemaker/model/Channel.h>
 #include <aws/sagemaker/model/SecondaryStatusTransition.h>
 #include <aws/sagemaker/model/MetricData.h>
 #include <aws/sagemaker/model/DebugRuleConfiguration.h>
 #include <aws/sagemaker/model/DebugRuleEvaluationStatus.h>
+#include <aws/sagemaker/model/ProfilerRuleConfiguration.h>
+#include <aws/sagemaker/model/ProfilerRuleEvaluationStatus.h>
 #include <utility>
 
 namespace Aws
@@ -221,37 +215,37 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of an AutoML job.</p>
      */
     inline const Aws::String& GetAutoMLJobArn() const{ return m_autoMLJobArn; }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of an AutoML job.</p>
      */
     inline void SetAutoMLJobArn(const Aws::String& value) { m_autoMLJobArn = value; }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of an AutoML job.</p>
      */
     inline void SetAutoMLJobArn(Aws::String&& value) { m_autoMLJobArn = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of an AutoML job.</p>
      */
     inline void SetAutoMLJobArn(const char* value) { m_autoMLJobArn.assign(value); }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of an AutoML job.</p>
      */
     inline DescribeTrainingJobResult& WithAutoMLJobArn(const Aws::String& value) { SetAutoMLJobArn(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of an AutoML job.</p>
      */
     inline DescribeTrainingJobResult& WithAutoMLJobArn(Aws::String&& value) { SetAutoMLJobArn(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of an AutoML job.</p>
      */
     inline DescribeTrainingJobResult& WithAutoMLJobArn(const char* value) { SetAutoMLJobArn(value); return *this;}
 
@@ -378,12 +372,12 @@ namespace Model
      * field of <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd>
      * <dt>Stopped</dt> <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job
      * stopped because it exceeded the maximum allowed runtime.</p> </li> <li> <p>
-     * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the
+     * <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the
      * maximum allowed wait time.</p> </li> <li> <p> <code>Stopped</code> - The
      * training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul> <li>
      * <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul> </dd>
-     * </dl> <important> <p>Valid values for <code>SecondaryStatus</code> are subject
-     * to change. </p> </important> <p>We no longer support the following secondary
+     * </dl>  <p>Valid values for <code>SecondaryStatus</code> are subject
+     * to change. </p>  <p>We no longer support the following secondary
      * statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p> </li> <li>
      * <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
@@ -410,12 +404,12 @@ namespace Model
      * field of <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd>
      * <dt>Stopped</dt> <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job
      * stopped because it exceeded the maximum allowed runtime.</p> </li> <li> <p>
-     * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the
+     * <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the
      * maximum allowed wait time.</p> </li> <li> <p> <code>Stopped</code> - The
      * training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul> <li>
      * <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul> </dd>
-     * </dl> <important> <p>Valid values for <code>SecondaryStatus</code> are subject
-     * to change. </p> </important> <p>We no longer support the following secondary
+     * </dl>  <p>Valid values for <code>SecondaryStatus</code> are subject
+     * to change. </p>  <p>We no longer support the following secondary
      * statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p> </li> <li>
      * <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
@@ -442,12 +436,12 @@ namespace Model
      * field of <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd>
      * <dt>Stopped</dt> <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job
      * stopped because it exceeded the maximum allowed runtime.</p> </li> <li> <p>
-     * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the
+     * <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the
      * maximum allowed wait time.</p> </li> <li> <p> <code>Stopped</code> - The
      * training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul> <li>
      * <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul> </dd>
-     * </dl> <important> <p>Valid values for <code>SecondaryStatus</code> are subject
-     * to change. </p> </important> <p>We no longer support the following secondary
+     * </dl>  <p>Valid values for <code>SecondaryStatus</code> are subject
+     * to change. </p>  <p>We no longer support the following secondary
      * statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p> </li> <li>
      * <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
@@ -474,12 +468,12 @@ namespace Model
      * field of <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd>
      * <dt>Stopped</dt> <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job
      * stopped because it exceeded the maximum allowed runtime.</p> </li> <li> <p>
-     * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the
+     * <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the
      * maximum allowed wait time.</p> </li> <li> <p> <code>Stopped</code> - The
      * training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul> <li>
      * <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul> </dd>
-     * </dl> <important> <p>Valid values for <code>SecondaryStatus</code> are subject
-     * to change. </p> </important> <p>We no longer support the following secondary
+     * </dl>  <p>Valid values for <code>SecondaryStatus</code> are subject
+     * to change. </p>  <p>We no longer support the following secondary
      * statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p> </li> <li>
      * <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
@@ -506,12 +500,12 @@ namespace Model
      * field of <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd>
      * <dt>Stopped</dt> <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job
      * stopped because it exceeded the maximum allowed runtime.</p> </li> <li> <p>
-     * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the
+     * <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the
      * maximum allowed wait time.</p> </li> <li> <p> <code>Stopped</code> - The
      * training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul> <li>
      * <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul> </dd>
-     * </dl> <important> <p>Valid values for <code>SecondaryStatus</code> are subject
-     * to change. </p> </important> <p>We no longer support the following secondary
+     * </dl>  <p>Valid values for <code>SecondaryStatus</code> are subject
+     * to change. </p>  <p>We no longer support the following secondary
      * statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p> </li> <li>
      * <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
@@ -1305,37 +1299,44 @@ namespace Model
 
 
     /**
-     * <p>Configuration information for debugging rules.</p>
+     * <p>Configuration information for Debugger rules for debugging output
+     * tensors.</p>
      */
     inline const Aws::Vector<DebugRuleConfiguration>& GetDebugRuleConfigurations() const{ return m_debugRuleConfigurations; }
 
     /**
-     * <p>Configuration information for debugging rules.</p>
+     * <p>Configuration information for Debugger rules for debugging output
+     * tensors.</p>
      */
     inline void SetDebugRuleConfigurations(const Aws::Vector<DebugRuleConfiguration>& value) { m_debugRuleConfigurations = value; }
 
     /**
-     * <p>Configuration information for debugging rules.</p>
+     * <p>Configuration information for Debugger rules for debugging output
+     * tensors.</p>
      */
     inline void SetDebugRuleConfigurations(Aws::Vector<DebugRuleConfiguration>&& value) { m_debugRuleConfigurations = std::move(value); }
 
     /**
-     * <p>Configuration information for debugging rules.</p>
+     * <p>Configuration information for Debugger rules for debugging output
+     * tensors.</p>
      */
     inline DescribeTrainingJobResult& WithDebugRuleConfigurations(const Aws::Vector<DebugRuleConfiguration>& value) { SetDebugRuleConfigurations(value); return *this;}
 
     /**
-     * <p>Configuration information for debugging rules.</p>
+     * <p>Configuration information for Debugger rules for debugging output
+     * tensors.</p>
      */
     inline DescribeTrainingJobResult& WithDebugRuleConfigurations(Aws::Vector<DebugRuleConfiguration>&& value) { SetDebugRuleConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>Configuration information for debugging rules.</p>
+     * <p>Configuration information for Debugger rules for debugging output
+     * tensors.</p>
      */
     inline DescribeTrainingJobResult& AddDebugRuleConfigurations(const DebugRuleConfiguration& value) { m_debugRuleConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>Configuration information for debugging rules.</p>
+     * <p>Configuration information for Debugger rules for debugging output
+     * tensors.</p>
      */
     inline DescribeTrainingJobResult& AddDebugRuleConfigurations(DebugRuleConfiguration&& value) { m_debugRuleConfigurations.push_back(std::move(value)); return *this; }
 
@@ -1357,39 +1358,160 @@ namespace Model
 
 
     /**
-     * <p>Status about the debug rule evaluation.</p>
+     * <p>Evaluation status of Debugger rules for debugging on a training job.</p>
      */
     inline const Aws::Vector<DebugRuleEvaluationStatus>& GetDebugRuleEvaluationStatuses() const{ return m_debugRuleEvaluationStatuses; }
 
     /**
-     * <p>Status about the debug rule evaluation.</p>
+     * <p>Evaluation status of Debugger rules for debugging on a training job.</p>
      */
     inline void SetDebugRuleEvaluationStatuses(const Aws::Vector<DebugRuleEvaluationStatus>& value) { m_debugRuleEvaluationStatuses = value; }
 
     /**
-     * <p>Status about the debug rule evaluation.</p>
+     * <p>Evaluation status of Debugger rules for debugging on a training job.</p>
      */
     inline void SetDebugRuleEvaluationStatuses(Aws::Vector<DebugRuleEvaluationStatus>&& value) { m_debugRuleEvaluationStatuses = std::move(value); }
 
     /**
-     * <p>Status about the debug rule evaluation.</p>
+     * <p>Evaluation status of Debugger rules for debugging on a training job.</p>
      */
     inline DescribeTrainingJobResult& WithDebugRuleEvaluationStatuses(const Aws::Vector<DebugRuleEvaluationStatus>& value) { SetDebugRuleEvaluationStatuses(value); return *this;}
 
     /**
-     * <p>Status about the debug rule evaluation.</p>
+     * <p>Evaluation status of Debugger rules for debugging on a training job.</p>
      */
     inline DescribeTrainingJobResult& WithDebugRuleEvaluationStatuses(Aws::Vector<DebugRuleEvaluationStatus>&& value) { SetDebugRuleEvaluationStatuses(std::move(value)); return *this;}
 
     /**
-     * <p>Status about the debug rule evaluation.</p>
+     * <p>Evaluation status of Debugger rules for debugging on a training job.</p>
      */
     inline DescribeTrainingJobResult& AddDebugRuleEvaluationStatuses(const DebugRuleEvaluationStatus& value) { m_debugRuleEvaluationStatuses.push_back(value); return *this; }
 
     /**
-     * <p>Status about the debug rule evaluation.</p>
+     * <p>Evaluation status of Debugger rules for debugging on a training job.</p>
      */
     inline DescribeTrainingJobResult& AddDebugRuleEvaluationStatuses(DebugRuleEvaluationStatus&& value) { m_debugRuleEvaluationStatuses.push_back(std::move(value)); return *this; }
+
+
+    
+    inline const ProfilerConfig& GetProfilerConfig() const{ return m_profilerConfig; }
+
+    
+    inline void SetProfilerConfig(const ProfilerConfig& value) { m_profilerConfig = value; }
+
+    
+    inline void SetProfilerConfig(ProfilerConfig&& value) { m_profilerConfig = std::move(value); }
+
+    
+    inline DescribeTrainingJobResult& WithProfilerConfig(const ProfilerConfig& value) { SetProfilerConfig(value); return *this;}
+
+    
+    inline DescribeTrainingJobResult& WithProfilerConfig(ProfilerConfig&& value) { SetProfilerConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Configuration information for Debugger rules for profiling system and
+     * framework metrics.</p>
+     */
+    inline const Aws::Vector<ProfilerRuleConfiguration>& GetProfilerRuleConfigurations() const{ return m_profilerRuleConfigurations; }
+
+    /**
+     * <p>Configuration information for Debugger rules for profiling system and
+     * framework metrics.</p>
+     */
+    inline void SetProfilerRuleConfigurations(const Aws::Vector<ProfilerRuleConfiguration>& value) { m_profilerRuleConfigurations = value; }
+
+    /**
+     * <p>Configuration information for Debugger rules for profiling system and
+     * framework metrics.</p>
+     */
+    inline void SetProfilerRuleConfigurations(Aws::Vector<ProfilerRuleConfiguration>&& value) { m_profilerRuleConfigurations = std::move(value); }
+
+    /**
+     * <p>Configuration information for Debugger rules for profiling system and
+     * framework metrics.</p>
+     */
+    inline DescribeTrainingJobResult& WithProfilerRuleConfigurations(const Aws::Vector<ProfilerRuleConfiguration>& value) { SetProfilerRuleConfigurations(value); return *this;}
+
+    /**
+     * <p>Configuration information for Debugger rules for profiling system and
+     * framework metrics.</p>
+     */
+    inline DescribeTrainingJobResult& WithProfilerRuleConfigurations(Aws::Vector<ProfilerRuleConfiguration>&& value) { SetProfilerRuleConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>Configuration information for Debugger rules for profiling system and
+     * framework metrics.</p>
+     */
+    inline DescribeTrainingJobResult& AddProfilerRuleConfigurations(const ProfilerRuleConfiguration& value) { m_profilerRuleConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>Configuration information for Debugger rules for profiling system and
+     * framework metrics.</p>
+     */
+    inline DescribeTrainingJobResult& AddProfilerRuleConfigurations(ProfilerRuleConfiguration&& value) { m_profilerRuleConfigurations.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Evaluation status of Debugger rules for profiling on a training job.</p>
+     */
+    inline const Aws::Vector<ProfilerRuleEvaluationStatus>& GetProfilerRuleEvaluationStatuses() const{ return m_profilerRuleEvaluationStatuses; }
+
+    /**
+     * <p>Evaluation status of Debugger rules for profiling on a training job.</p>
+     */
+    inline void SetProfilerRuleEvaluationStatuses(const Aws::Vector<ProfilerRuleEvaluationStatus>& value) { m_profilerRuleEvaluationStatuses = value; }
+
+    /**
+     * <p>Evaluation status of Debugger rules for profiling on a training job.</p>
+     */
+    inline void SetProfilerRuleEvaluationStatuses(Aws::Vector<ProfilerRuleEvaluationStatus>&& value) { m_profilerRuleEvaluationStatuses = std::move(value); }
+
+    /**
+     * <p>Evaluation status of Debugger rules for profiling on a training job.</p>
+     */
+    inline DescribeTrainingJobResult& WithProfilerRuleEvaluationStatuses(const Aws::Vector<ProfilerRuleEvaluationStatus>& value) { SetProfilerRuleEvaluationStatuses(value); return *this;}
+
+    /**
+     * <p>Evaluation status of Debugger rules for profiling on a training job.</p>
+     */
+    inline DescribeTrainingJobResult& WithProfilerRuleEvaluationStatuses(Aws::Vector<ProfilerRuleEvaluationStatus>&& value) { SetProfilerRuleEvaluationStatuses(std::move(value)); return *this;}
+
+    /**
+     * <p>Evaluation status of Debugger rules for profiling on a training job.</p>
+     */
+    inline DescribeTrainingJobResult& AddProfilerRuleEvaluationStatuses(const ProfilerRuleEvaluationStatus& value) { m_profilerRuleEvaluationStatuses.push_back(value); return *this; }
+
+    /**
+     * <p>Evaluation status of Debugger rules for profiling on a training job.</p>
+     */
+    inline DescribeTrainingJobResult& AddProfilerRuleEvaluationStatuses(ProfilerRuleEvaluationStatus&& value) { m_profilerRuleEvaluationStatuses.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Profiling status of a training job.</p>
+     */
+    inline const ProfilingStatus& GetProfilingStatus() const{ return m_profilingStatus; }
+
+    /**
+     * <p>Profiling status of a training job.</p>
+     */
+    inline void SetProfilingStatus(const ProfilingStatus& value) { m_profilingStatus = value; }
+
+    /**
+     * <p>Profiling status of a training job.</p>
+     */
+    inline void SetProfilingStatus(ProfilingStatus&& value) { m_profilingStatus = std::move(value); }
+
+    /**
+     * <p>Profiling status of a training job.</p>
+     */
+    inline DescribeTrainingJobResult& WithProfilingStatus(const ProfilingStatus& value) { SetProfilingStatus(value); return *this;}
+
+    /**
+     * <p>Profiling status of a training job.</p>
+     */
+    inline DescribeTrainingJobResult& WithProfilingStatus(ProfilingStatus&& value) { SetProfilingStatus(std::move(value)); return *this;}
 
   private:
 
@@ -1460,6 +1582,14 @@ namespace Model
     TensorBoardOutputConfig m_tensorBoardOutputConfig;
 
     Aws::Vector<DebugRuleEvaluationStatus> m_debugRuleEvaluationStatuses;
+
+    ProfilerConfig m_profilerConfig;
+
+    Aws::Vector<ProfilerRuleConfiguration> m_profilerRuleConfigurations;
+
+    Aws::Vector<ProfilerRuleEvaluationStatus> m_profilerRuleEvaluationStatuses;
+
+    ProfilingStatus m_profilingStatus;
   };
 
 } // namespace Model

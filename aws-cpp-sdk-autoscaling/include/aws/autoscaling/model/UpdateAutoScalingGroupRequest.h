@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
@@ -151,9 +141,6 @@ namespace Model
      * <p>The launch template and version to use to specify the updates. If you specify
      * <code>LaunchTemplate</code> in your update request, you can't specify
      * <code>LaunchConfigurationName</code> or <code>MixedInstancesPolicy</code>.</p>
-     * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_LaunchTemplateSpecification.html">LaunchTemplateSpecification</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
      */
     inline const LaunchTemplateSpecification& GetLaunchTemplate() const{ return m_launchTemplate; }
 
@@ -161,9 +148,6 @@ namespace Model
      * <p>The launch template and version to use to specify the updates. If you specify
      * <code>LaunchTemplate</code> in your update request, you can't specify
      * <code>LaunchConfigurationName</code> or <code>MixedInstancesPolicy</code>.</p>
-     * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_LaunchTemplateSpecification.html">LaunchTemplateSpecification</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
      */
     inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
 
@@ -171,9 +155,6 @@ namespace Model
      * <p>The launch template and version to use to specify the updates. If you specify
      * <code>LaunchTemplate</code> in your update request, you can't specify
      * <code>LaunchConfigurationName</code> or <code>MixedInstancesPolicy</code>.</p>
-     * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_LaunchTemplateSpecification.html">LaunchTemplateSpecification</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
      */
     inline void SetLaunchTemplate(const LaunchTemplateSpecification& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
 
@@ -181,9 +162,6 @@ namespace Model
      * <p>The launch template and version to use to specify the updates. If you specify
      * <code>LaunchTemplate</code> in your update request, you can't specify
      * <code>LaunchConfigurationName</code> or <code>MixedInstancesPolicy</code>.</p>
-     * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_LaunchTemplateSpecification.html">LaunchTemplateSpecification</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
      */
     inline void SetLaunchTemplate(LaunchTemplateSpecification&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
 
@@ -191,9 +169,6 @@ namespace Model
      * <p>The launch template and version to use to specify the updates. If you specify
      * <code>LaunchTemplate</code> in your update request, you can't specify
      * <code>LaunchConfigurationName</code> or <code>MixedInstancesPolicy</code>.</p>
-     * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_LaunchTemplateSpecification.html">LaunchTemplateSpecification</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithLaunchTemplate(const LaunchTemplateSpecification& value) { SetLaunchTemplate(value); return *this;}
 
@@ -201,87 +176,66 @@ namespace Model
      * <p>The launch template and version to use to specify the updates. If you specify
      * <code>LaunchTemplate</code> in your update request, you can't specify
      * <code>LaunchConfigurationName</code> or <code>MixedInstancesPolicy</code>.</p>
-     * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_LaunchTemplateSpecification.html">LaunchTemplateSpecification</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithLaunchTemplate(LaunchTemplateSpecification&& value) { SetLaunchTemplate(std::move(value)); return *this;}
 
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy.</p> <p>In your
-     * call to <code>UpdateAutoScalingGroup</code>, you can make changes to the policy
-     * that is specified. All optional parameters are left unchanged if not
-     * specified.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_MixedInstancesPolicy.html">MixedInstancesPolicy</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i> and <a
+     * <p>An embedded object that specifies a mixed instances policy. When you make
+     * changes to an existing policy, all optional parameters are left unchanged if not
+     * specified. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
-     * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
+     * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline const MixedInstancesPolicy& GetMixedInstancesPolicy() const{ return m_mixedInstancesPolicy; }
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy.</p> <p>In your
-     * call to <code>UpdateAutoScalingGroup</code>, you can make changes to the policy
-     * that is specified. All optional parameters are left unchanged if not
-     * specified.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_MixedInstancesPolicy.html">MixedInstancesPolicy</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i> and <a
+     * <p>An embedded object that specifies a mixed instances policy. When you make
+     * changes to an existing policy, all optional parameters are left unchanged if not
+     * specified. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
-     * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
+     * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline bool MixedInstancesPolicyHasBeenSet() const { return m_mixedInstancesPolicyHasBeenSet; }
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy.</p> <p>In your
-     * call to <code>UpdateAutoScalingGroup</code>, you can make changes to the policy
-     * that is specified. All optional parameters are left unchanged if not
-     * specified.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_MixedInstancesPolicy.html">MixedInstancesPolicy</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i> and <a
+     * <p>An embedded object that specifies a mixed instances policy. When you make
+     * changes to an existing policy, all optional parameters are left unchanged if not
+     * specified. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
-     * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
+     * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetMixedInstancesPolicy(const MixedInstancesPolicy& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = value; }
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy.</p> <p>In your
-     * call to <code>UpdateAutoScalingGroup</code>, you can make changes to the policy
-     * that is specified. All optional parameters are left unchanged if not
-     * specified.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_MixedInstancesPolicy.html">MixedInstancesPolicy</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i> and <a
+     * <p>An embedded object that specifies a mixed instances policy. When you make
+     * changes to an existing policy, all optional parameters are left unchanged if not
+     * specified. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
-     * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
+     * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetMixedInstancesPolicy(MixedInstancesPolicy&& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = std::move(value); }
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy.</p> <p>In your
-     * call to <code>UpdateAutoScalingGroup</code>, you can make changes to the policy
-     * that is specified. All optional parameters are left unchanged if not
-     * specified.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_MixedInstancesPolicy.html">MixedInstancesPolicy</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i> and <a
+     * <p>An embedded object that specifies a mixed instances policy. When you make
+     * changes to an existing policy, all optional parameters are left unchanged if not
+     * specified. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
-     * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
+     * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithMixedInstancesPolicy(const MixedInstancesPolicy& value) { SetMixedInstancesPolicy(value); return *this;}
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy.</p> <p>In your
-     * call to <code>UpdateAutoScalingGroup</code>, you can make changes to the policy
-     * that is specified. All optional parameters are left unchanged if not
-     * specified.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_MixedInstancesPolicy.html">MixedInstancesPolicy</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i> and <a
+     * <p>An embedded object that specifies a mixed instances policy. When you make
+     * changes to an existing policy, all optional parameters are left unchanged if not
+     * specified. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
-     * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
+     * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithMixedInstancesPolicy(MixedInstancesPolicy&& value) { SetMixedInstancesPolicy(std::move(value)); return *this;}
@@ -309,51 +263,75 @@ namespace Model
 
 
     /**
-     * <p>The maximum size of the Auto Scaling group.</p>
+     * <p>The maximum size of the Auto Scaling group.</p>  <p>With a mixed
+     * instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need
+     * to go above <code>MaxSize</code> to meet your capacity requirements. In this
+     * event, Amazon EC2 Auto Scaling will never go above <code>MaxSize</code> by more
+     * than your largest instance weight (weights that define how many units each
+     * instance contributes to the desired capacity of the group).</p> 
      */
     inline int GetMaxSize() const{ return m_maxSize; }
 
     /**
-     * <p>The maximum size of the Auto Scaling group.</p>
+     * <p>The maximum size of the Auto Scaling group.</p>  <p>With a mixed
+     * instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need
+     * to go above <code>MaxSize</code> to meet your capacity requirements. In this
+     * event, Amazon EC2 Auto Scaling will never go above <code>MaxSize</code> by more
+     * than your largest instance weight (weights that define how many units each
+     * instance contributes to the desired capacity of the group).</p> 
      */
     inline bool MaxSizeHasBeenSet() const { return m_maxSizeHasBeenSet; }
 
     /**
-     * <p>The maximum size of the Auto Scaling group.</p>
+     * <p>The maximum size of the Auto Scaling group.</p>  <p>With a mixed
+     * instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need
+     * to go above <code>MaxSize</code> to meet your capacity requirements. In this
+     * event, Amazon EC2 Auto Scaling will never go above <code>MaxSize</code> by more
+     * than your largest instance weight (weights that define how many units each
+     * instance contributes to the desired capacity of the group).</p> 
      */
     inline void SetMaxSize(int value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
 
     /**
-     * <p>The maximum size of the Auto Scaling group.</p>
+     * <p>The maximum size of the Auto Scaling group.</p>  <p>With a mixed
+     * instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need
+     * to go above <code>MaxSize</code> to meet your capacity requirements. In this
+     * event, Amazon EC2 Auto Scaling will never go above <code>MaxSize</code> by more
+     * than your largest instance weight (weights that define how many units each
+     * instance contributes to the desired capacity of the group).</p> 
      */
     inline UpdateAutoScalingGroupRequest& WithMaxSize(int value) { SetMaxSize(value); return *this;}
 
 
     /**
-     * <p>The number of EC2 instances that should be running in the Auto Scaling group.
-     * This number must be greater than or equal to the minimum size of the group and
-     * less than or equal to the maximum size of the group.</p>
+     * <p>The desired capacity is the initial capacity of the Auto Scaling group after
+     * this operation completes and the capacity it attempts to maintain. This number
+     * must be greater than or equal to the minimum size of the group and less than or
+     * equal to the maximum size of the group.</p>
      */
     inline int GetDesiredCapacity() const{ return m_desiredCapacity; }
 
     /**
-     * <p>The number of EC2 instances that should be running in the Auto Scaling group.
-     * This number must be greater than or equal to the minimum size of the group and
-     * less than or equal to the maximum size of the group.</p>
+     * <p>The desired capacity is the initial capacity of the Auto Scaling group after
+     * this operation completes and the capacity it attempts to maintain. This number
+     * must be greater than or equal to the minimum size of the group and less than or
+     * equal to the maximum size of the group.</p>
      */
     inline bool DesiredCapacityHasBeenSet() const { return m_desiredCapacityHasBeenSet; }
 
     /**
-     * <p>The number of EC2 instances that should be running in the Auto Scaling group.
-     * This number must be greater than or equal to the minimum size of the group and
-     * less than or equal to the maximum size of the group.</p>
+     * <p>The desired capacity is the initial capacity of the Auto Scaling group after
+     * this operation completes and the capacity it attempts to maintain. This number
+     * must be greater than or equal to the minimum size of the group and less than or
+     * equal to the maximum size of the group.</p>
      */
     inline void SetDesiredCapacity(int value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
 
     /**
-     * <p>The number of EC2 instances that should be running in the Auto Scaling group.
-     * This number must be greater than or equal to the minimum size of the group and
-     * less than or equal to the maximum size of the group.</p>
+     * <p>The desired capacity is the initial capacity of the Auto Scaling group after
+     * this operation completes and the capacity it attempts to maintain. This number
+     * must be greater than or equal to the minimum size of the group and less than or
+     * equal to the maximum size of the group.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithDesiredCapacity(int value) { SetDesiredCapacity(value); return *this;}
 
@@ -361,44 +339,44 @@ namespace Model
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes before
      * another scaling activity can start. The default value is <code>300</code>. This
-     * cooldown period is not used when a scaling-specific cooldown is specified.</p>
-     * <p>Cooldown periods are not supported for target tracking scaling policies, step
-     * scaling policies, or scheduled scaling. For more information, see <a
+     * setting applies when using simple scaling policies, but not when using other
+     * scaling policies or scheduled scaling. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-     * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline int GetDefaultCooldown() const{ return m_defaultCooldown; }
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes before
      * another scaling activity can start. The default value is <code>300</code>. This
-     * cooldown period is not used when a scaling-specific cooldown is specified.</p>
-     * <p>Cooldown periods are not supported for target tracking scaling policies, step
-     * scaling policies, or scheduled scaling. For more information, see <a
+     * setting applies when using simple scaling policies, but not when using other
+     * scaling policies or scheduled scaling. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-     * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline bool DefaultCooldownHasBeenSet() const { return m_defaultCooldownHasBeenSet; }
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes before
      * another scaling activity can start. The default value is <code>300</code>. This
-     * cooldown period is not used when a scaling-specific cooldown is specified.</p>
-     * <p>Cooldown periods are not supported for target tracking scaling policies, step
-     * scaling policies, or scheduled scaling. For more information, see <a
+     * setting applies when using simple scaling policies, but not when using other
+     * scaling policies or scheduled scaling. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-     * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline void SetDefaultCooldown(int value) { m_defaultCooldownHasBeenSet = true; m_defaultCooldown = value; }
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes before
      * another scaling activity can start. The default value is <code>300</code>. This
-     * cooldown period is not used when a scaling-specific cooldown is specified.</p>
-     * <p>Cooldown periods are not supported for target tracking scaling policies, step
-     * scaling policies, or scheduled scaling. For more information, see <a
+     * setting applies when using simple scaling policies, but not when using other
+     * scaling policies or scheduled scaling. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-     * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithDefaultCooldown(int value) { SetDefaultCooldown(value); return *this;}
 
@@ -517,51 +495,47 @@ namespace Model
     /**
      * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
      * checking the health status of an EC2 instance that has come into service. The
-     * default value is <code>0</code>.</p> <p>For more information, see <a
+     * default value is <code>0</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * Check Grace Period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Conditional: This parameter is required if you are adding an <code>ELB</code>
-     * health check.</p>
+     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
      */
     inline int GetHealthCheckGracePeriod() const{ return m_healthCheckGracePeriod; }
 
     /**
      * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
      * checking the health status of an EC2 instance that has come into service. The
-     * default value is <code>0</code>.</p> <p>For more information, see <a
+     * default value is <code>0</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * Check Grace Period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Conditional: This parameter is required if you are adding an <code>ELB</code>
-     * health check.</p>
+     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
      */
     inline bool HealthCheckGracePeriodHasBeenSet() const { return m_healthCheckGracePeriodHasBeenSet; }
 
     /**
      * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
      * checking the health status of an EC2 instance that has come into service. The
-     * default value is <code>0</code>.</p> <p>For more information, see <a
+     * default value is <code>0</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * Check Grace Period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Conditional: This parameter is required if you are adding an <code>ELB</code>
-     * health check.</p>
+     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
      */
     inline void SetHealthCheckGracePeriod(int value) { m_healthCheckGracePeriodHasBeenSet = true; m_healthCheckGracePeriod = value; }
 
     /**
      * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
      * checking the health status of an EC2 instance that has come into service. The
-     * default value is <code>0</code>.</p> <p>For more information, see <a
+     * default value is <code>0</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * Check Grace Period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Conditional: This parameter is required if you are adding an <code>ELB</code>
-     * health check.</p>
+     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithHealthCheckGracePeriod(int value) { SetHealthCheckGracePeriod(value); return *this;}
 
 
     /**
-     * <p>The name of the placement group into which to launch your instances, if any.
-     * A placement group is a logical grouping of instances within a single
+     * <p>The name of an existing placement group into which to launch your instances,
+     * if any. A placement group is a logical grouping of instances within a single
      * Availability Zone. You cannot specify multiple Availability Zones and a
      * placement group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
@@ -570,8 +544,8 @@ namespace Model
     inline const Aws::String& GetPlacementGroup() const{ return m_placementGroup; }
 
     /**
-     * <p>The name of the placement group into which to launch your instances, if any.
-     * A placement group is a logical grouping of instances within a single
+     * <p>The name of an existing placement group into which to launch your instances,
+     * if any. A placement group is a logical grouping of instances within a single
      * Availability Zone. You cannot specify multiple Availability Zones and a
      * placement group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
@@ -580,8 +554,8 @@ namespace Model
     inline bool PlacementGroupHasBeenSet() const { return m_placementGroupHasBeenSet; }
 
     /**
-     * <p>The name of the placement group into which to launch your instances, if any.
-     * A placement group is a logical grouping of instances within a single
+     * <p>The name of an existing placement group into which to launch your instances,
+     * if any. A placement group is a logical grouping of instances within a single
      * Availability Zone. You cannot specify multiple Availability Zones and a
      * placement group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
@@ -590,8 +564,8 @@ namespace Model
     inline void SetPlacementGroup(const Aws::String& value) { m_placementGroupHasBeenSet = true; m_placementGroup = value; }
 
     /**
-     * <p>The name of the placement group into which to launch your instances, if any.
-     * A placement group is a logical grouping of instances within a single
+     * <p>The name of an existing placement group into which to launch your instances,
+     * if any. A placement group is a logical grouping of instances within a single
      * Availability Zone. You cannot specify multiple Availability Zones and a
      * placement group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
@@ -600,8 +574,8 @@ namespace Model
     inline void SetPlacementGroup(Aws::String&& value) { m_placementGroupHasBeenSet = true; m_placementGroup = std::move(value); }
 
     /**
-     * <p>The name of the placement group into which to launch your instances, if any.
-     * A placement group is a logical grouping of instances within a single
+     * <p>The name of an existing placement group into which to launch your instances,
+     * if any. A placement group is a logical grouping of instances within a single
      * Availability Zone. You cannot specify multiple Availability Zones and a
      * placement group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
@@ -610,8 +584,8 @@ namespace Model
     inline void SetPlacementGroup(const char* value) { m_placementGroupHasBeenSet = true; m_placementGroup.assign(value); }
 
     /**
-     * <p>The name of the placement group into which to launch your instances, if any.
-     * A placement group is a logical grouping of instances within a single
+     * <p>The name of an existing placement group into which to launch your instances,
+     * if any. A placement group is a logical grouping of instances within a single
      * Availability Zone. You cannot specify multiple Availability Zones and a
      * placement group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
@@ -620,8 +594,8 @@ namespace Model
     inline UpdateAutoScalingGroupRequest& WithPlacementGroup(const Aws::String& value) { SetPlacementGroup(value); return *this;}
 
     /**
-     * <p>The name of the placement group into which to launch your instances, if any.
-     * A placement group is a logical grouping of instances within a single
+     * <p>The name of an existing placement group into which to launch your instances,
+     * if any. A placement group is a logical grouping of instances within a single
      * Availability Zone. You cannot specify multiple Availability Zones and a
      * placement group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
@@ -630,8 +604,8 @@ namespace Model
     inline UpdateAutoScalingGroupRequest& WithPlacementGroup(Aws::String&& value) { SetPlacementGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the placement group into which to launch your instances, if any.
-     * A placement group is a logical grouping of instances within a single
+     * <p>The name of an existing placement group into which to launch your instances,
+     * if any. A placement group is a logical grouping of instances within a single
      * Availability Zone. You cannot specify multiple Availability Zones and a
      * placement group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
@@ -641,156 +615,156 @@ namespace Model
 
 
     /**
-     * <p>A comma-separated list of subnet IDs for virtual private cloud (VPC).</p>
-     * <p>If you specify <code>VPCZoneIdentifier</code> with
-     * <code>AvailabilityZones</code>, the subnets that you specify for this parameter
-     * must reside in those Availability Zones.</p>
+     * <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC). If
+     * you specify <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>,
+     * the subnets that you specify for this parameter must reside in those
+     * Availability Zones.</p>
      */
     inline const Aws::String& GetVPCZoneIdentifier() const{ return m_vPCZoneIdentifier; }
 
     /**
-     * <p>A comma-separated list of subnet IDs for virtual private cloud (VPC).</p>
-     * <p>If you specify <code>VPCZoneIdentifier</code> with
-     * <code>AvailabilityZones</code>, the subnets that you specify for this parameter
-     * must reside in those Availability Zones.</p>
+     * <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC). If
+     * you specify <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>,
+     * the subnets that you specify for this parameter must reside in those
+     * Availability Zones.</p>
      */
     inline bool VPCZoneIdentifierHasBeenSet() const { return m_vPCZoneIdentifierHasBeenSet; }
 
     /**
-     * <p>A comma-separated list of subnet IDs for virtual private cloud (VPC).</p>
-     * <p>If you specify <code>VPCZoneIdentifier</code> with
-     * <code>AvailabilityZones</code>, the subnets that you specify for this parameter
-     * must reside in those Availability Zones.</p>
+     * <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC). If
+     * you specify <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>,
+     * the subnets that you specify for this parameter must reside in those
+     * Availability Zones.</p>
      */
     inline void SetVPCZoneIdentifier(const Aws::String& value) { m_vPCZoneIdentifierHasBeenSet = true; m_vPCZoneIdentifier = value; }
 
     /**
-     * <p>A comma-separated list of subnet IDs for virtual private cloud (VPC).</p>
-     * <p>If you specify <code>VPCZoneIdentifier</code> with
-     * <code>AvailabilityZones</code>, the subnets that you specify for this parameter
-     * must reside in those Availability Zones.</p>
+     * <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC). If
+     * you specify <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>,
+     * the subnets that you specify for this parameter must reside in those
+     * Availability Zones.</p>
      */
     inline void SetVPCZoneIdentifier(Aws::String&& value) { m_vPCZoneIdentifierHasBeenSet = true; m_vPCZoneIdentifier = std::move(value); }
 
     /**
-     * <p>A comma-separated list of subnet IDs for virtual private cloud (VPC).</p>
-     * <p>If you specify <code>VPCZoneIdentifier</code> with
-     * <code>AvailabilityZones</code>, the subnets that you specify for this parameter
-     * must reside in those Availability Zones.</p>
+     * <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC). If
+     * you specify <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>,
+     * the subnets that you specify for this parameter must reside in those
+     * Availability Zones.</p>
      */
     inline void SetVPCZoneIdentifier(const char* value) { m_vPCZoneIdentifierHasBeenSet = true; m_vPCZoneIdentifier.assign(value); }
 
     /**
-     * <p>A comma-separated list of subnet IDs for virtual private cloud (VPC).</p>
-     * <p>If you specify <code>VPCZoneIdentifier</code> with
-     * <code>AvailabilityZones</code>, the subnets that you specify for this parameter
-     * must reside in those Availability Zones.</p>
+     * <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC). If
+     * you specify <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>,
+     * the subnets that you specify for this parameter must reside in those
+     * Availability Zones.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithVPCZoneIdentifier(const Aws::String& value) { SetVPCZoneIdentifier(value); return *this;}
 
     /**
-     * <p>A comma-separated list of subnet IDs for virtual private cloud (VPC).</p>
-     * <p>If you specify <code>VPCZoneIdentifier</code> with
-     * <code>AvailabilityZones</code>, the subnets that you specify for this parameter
-     * must reside in those Availability Zones.</p>
+     * <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC). If
+     * you specify <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>,
+     * the subnets that you specify for this parameter must reside in those
+     * Availability Zones.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithVPCZoneIdentifier(Aws::String&& value) { SetVPCZoneIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>A comma-separated list of subnet IDs for virtual private cloud (VPC).</p>
-     * <p>If you specify <code>VPCZoneIdentifier</code> with
-     * <code>AvailabilityZones</code>, the subnets that you specify for this parameter
-     * must reside in those Availability Zones.</p>
+     * <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC). If
+     * you specify <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>,
+     * the subnets that you specify for this parameter must reside in those
+     * Availability Zones.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithVPCZoneIdentifier(const char* value) { SetVPCZoneIdentifier(value); return *this;}
 
 
     /**
-     * <p>A standalone termination policy or a list of termination policies used to
-     * select the instance to terminate. The policies are executed in the order that
-     * they are listed.</p> <p>For more information, see <a
+     * <p>A policy or a list of policies that are used to select the instances to
+     * terminate. The policies are executed in the order that you list them. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTerminationPolicies() const{ return m_terminationPolicies; }
 
     /**
-     * <p>A standalone termination policy or a list of termination policies used to
-     * select the instance to terminate. The policies are executed in the order that
-     * they are listed.</p> <p>For more information, see <a
+     * <p>A policy or a list of policies that are used to select the instances to
+     * terminate. The policies are executed in the order that you list them. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
      */
     inline bool TerminationPoliciesHasBeenSet() const { return m_terminationPoliciesHasBeenSet; }
 
     /**
-     * <p>A standalone termination policy or a list of termination policies used to
-     * select the instance to terminate. The policies are executed in the order that
-     * they are listed.</p> <p>For more information, see <a
+     * <p>A policy or a list of policies that are used to select the instances to
+     * terminate. The policies are executed in the order that you list them. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
      */
     inline void SetTerminationPolicies(const Aws::Vector<Aws::String>& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies = value; }
 
     /**
-     * <p>A standalone termination policy or a list of termination policies used to
-     * select the instance to terminate. The policies are executed in the order that
-     * they are listed.</p> <p>For more information, see <a
+     * <p>A policy or a list of policies that are used to select the instances to
+     * terminate. The policies are executed in the order that you list them. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
      */
     inline void SetTerminationPolicies(Aws::Vector<Aws::String>&& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies = std::move(value); }
 
     /**
-     * <p>A standalone termination policy or a list of termination policies used to
-     * select the instance to terminate. The policies are executed in the order that
-     * they are listed.</p> <p>For more information, see <a
+     * <p>A policy or a list of policies that are used to select the instances to
+     * terminate. The policies are executed in the order that you list them. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithTerminationPolicies(const Aws::Vector<Aws::String>& value) { SetTerminationPolicies(value); return *this;}
 
     /**
-     * <p>A standalone termination policy or a list of termination policies used to
-     * select the instance to terminate. The policies are executed in the order that
-     * they are listed.</p> <p>For more information, see <a
+     * <p>A policy or a list of policies that are used to select the instances to
+     * terminate. The policies are executed in the order that you list them. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithTerminationPolicies(Aws::Vector<Aws::String>&& value) { SetTerminationPolicies(std::move(value)); return *this;}
 
     /**
-     * <p>A standalone termination policy or a list of termination policies used to
-     * select the instance to terminate. The policies are executed in the order that
-     * they are listed.</p> <p>For more information, see <a
+     * <p>A policy or a list of policies that are used to select the instances to
+     * terminate. The policies are executed in the order that you list them. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& AddTerminationPolicies(const Aws::String& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies.push_back(value); return *this; }
 
     /**
-     * <p>A standalone termination policy or a list of termination policies used to
-     * select the instance to terminate. The policies are executed in the order that
-     * they are listed.</p> <p>For more information, see <a
+     * <p>A policy or a list of policies that are used to select the instances to
+     * terminate. The policies are executed in the order that you list them. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& AddTerminationPolicies(Aws::String&& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A standalone termination policy or a list of termination policies used to
-     * select the instance to terminate. The policies are executed in the order that
-     * they are listed.</p> <p>For more information, see <a
+     * <p>A policy or a list of policies that are used to select the instances to
+     * terminate. The policies are executed in the order that you list them. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& AddTerminationPolicies(const char* value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies.push_back(value); return *this; }
@@ -798,37 +772,37 @@ namespace Model
 
     /**
      * <p>Indicates whether newly launched instances are protected from termination by
-     * Amazon EC2 Auto Scaling when scaling in.</p> <p>For more information about
-     * preventing instances from terminating on scale in, see <a
+     * Amazon EC2 Auto Scaling when scaling in. For more information about preventing
+     * instances from terminating on scale in, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-     * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline bool GetNewInstancesProtectedFromScaleIn() const{ return m_newInstancesProtectedFromScaleIn; }
 
     /**
      * <p>Indicates whether newly launched instances are protected from termination by
-     * Amazon EC2 Auto Scaling when scaling in.</p> <p>For more information about
-     * preventing instances from terminating on scale in, see <a
+     * Amazon EC2 Auto Scaling when scaling in. For more information about preventing
+     * instances from terminating on scale in, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-     * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline bool NewInstancesProtectedFromScaleInHasBeenSet() const { return m_newInstancesProtectedFromScaleInHasBeenSet; }
 
     /**
      * <p>Indicates whether newly launched instances are protected from termination by
-     * Amazon EC2 Auto Scaling when scaling in.</p> <p>For more information about
-     * preventing instances from terminating on scale in, see <a
+     * Amazon EC2 Auto Scaling when scaling in. For more information about preventing
+     * instances from terminating on scale in, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-     * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetNewInstancesProtectedFromScaleIn(bool value) { m_newInstancesProtectedFromScaleInHasBeenSet = true; m_newInstancesProtectedFromScaleIn = value; }
 
     /**
      * <p>Indicates whether newly launched instances are protected from termination by
-     * Amazon EC2 Auto Scaling when scaling in.</p> <p>For more information about
-     * preventing instances from terminating on scale in, see <a
+     * Amazon EC2 Auto Scaling when scaling in. For more information about preventing
+     * instances from terminating on scale in, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-     * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithNewInstancesProtectedFromScaleIn(bool value) { SetNewInstancesProtectedFromScaleIn(value); return *this;}
 
@@ -837,8 +811,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
      * Scaling group uses to call other AWS services on your behalf. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-Linked
-     * Roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
+     * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline const Aws::String& GetServiceLinkedRoleARN() const{ return m_serviceLinkedRoleARN; }
 
@@ -846,8 +820,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
      * Scaling group uses to call other AWS services on your behalf. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-Linked
-     * Roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
+     * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline bool ServiceLinkedRoleARNHasBeenSet() const { return m_serviceLinkedRoleARNHasBeenSet; }
 
@@ -855,8 +829,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
      * Scaling group uses to call other AWS services on your behalf. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-Linked
-     * Roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
+     * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetServiceLinkedRoleARN(const Aws::String& value) { m_serviceLinkedRoleARNHasBeenSet = true; m_serviceLinkedRoleARN = value; }
 
@@ -864,8 +838,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
      * Scaling group uses to call other AWS services on your behalf. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-Linked
-     * Roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
+     * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetServiceLinkedRoleARN(Aws::String&& value) { m_serviceLinkedRoleARNHasBeenSet = true; m_serviceLinkedRoleARN = std::move(value); }
 
@@ -873,8 +847,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
      * Scaling group uses to call other AWS services on your behalf. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-Linked
-     * Roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
+     * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetServiceLinkedRoleARN(const char* value) { m_serviceLinkedRoleARNHasBeenSet = true; m_serviceLinkedRoleARN.assign(value); }
 
@@ -882,8 +856,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
      * Scaling group uses to call other AWS services on your behalf. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-Linked
-     * Roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
+     * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithServiceLinkedRoleARN(const Aws::String& value) { SetServiceLinkedRoleARN(value); return *this;}
 
@@ -891,8 +865,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
      * Scaling group uses to call other AWS services on your behalf. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-Linked
-     * Roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
+     * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithServiceLinkedRoleARN(Aws::String&& value) { SetServiceLinkedRoleARN(std::move(value)); return *this;}
 
@@ -900,51 +874,88 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
      * Scaling group uses to call other AWS services on your behalf. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-Linked
-     * Roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
+     * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithServiceLinkedRoleARN(const char* value) { SetServiceLinkedRoleARN(value); return *this;}
 
 
     /**
-     * <p>The maximum amount of time, in seconds, that an instance can be in
-     * service.</p> <p>For more information, see <a
+     * <p>The maximum amount of time, in seconds, that an instance can be in service.
+     * The default is null. If specified, the value must be either 0 or a number equal
+     * to or greater than 86,400 seconds (1 day). To clear a previously set value,
+     * specify a new value of 0. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing
-     * Auto Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon
-     * EC2 Auto Scaling User Guide</i>.</p> <p>Valid Range: Minimum value of
-     * 604800.</p>
+     * Auto Scaling instances based on maximum instance lifetime</a> in the <i>Amazon
+     * EC2 Auto Scaling User Guide</i>.</p>
      */
     inline int GetMaxInstanceLifetime() const{ return m_maxInstanceLifetime; }
 
     /**
-     * <p>The maximum amount of time, in seconds, that an instance can be in
-     * service.</p> <p>For more information, see <a
+     * <p>The maximum amount of time, in seconds, that an instance can be in service.
+     * The default is null. If specified, the value must be either 0 or a number equal
+     * to or greater than 86,400 seconds (1 day). To clear a previously set value,
+     * specify a new value of 0. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing
-     * Auto Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon
-     * EC2 Auto Scaling User Guide</i>.</p> <p>Valid Range: Minimum value of
-     * 604800.</p>
+     * Auto Scaling instances based on maximum instance lifetime</a> in the <i>Amazon
+     * EC2 Auto Scaling User Guide</i>.</p>
      */
     inline bool MaxInstanceLifetimeHasBeenSet() const { return m_maxInstanceLifetimeHasBeenSet; }
 
     /**
-     * <p>The maximum amount of time, in seconds, that an instance can be in
-     * service.</p> <p>For more information, see <a
+     * <p>The maximum amount of time, in seconds, that an instance can be in service.
+     * The default is null. If specified, the value must be either 0 or a number equal
+     * to or greater than 86,400 seconds (1 day). To clear a previously set value,
+     * specify a new value of 0. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing
-     * Auto Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon
-     * EC2 Auto Scaling User Guide</i>.</p> <p>Valid Range: Minimum value of
-     * 604800.</p>
+     * Auto Scaling instances based on maximum instance lifetime</a> in the <i>Amazon
+     * EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetMaxInstanceLifetime(int value) { m_maxInstanceLifetimeHasBeenSet = true; m_maxInstanceLifetime = value; }
 
     /**
-     * <p>The maximum amount of time, in seconds, that an instance can be in
-     * service.</p> <p>For more information, see <a
+     * <p>The maximum amount of time, in seconds, that an instance can be in service.
+     * The default is null. If specified, the value must be either 0 or a number equal
+     * to or greater than 86,400 seconds (1 day). To clear a previously set value,
+     * specify a new value of 0. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing
-     * Auto Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon
-     * EC2 Auto Scaling User Guide</i>.</p> <p>Valid Range: Minimum value of
-     * 604800.</p>
+     * Auto Scaling instances based on maximum instance lifetime</a> in the <i>Amazon
+     * EC2 Auto Scaling User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithMaxInstanceLifetime(int value) { SetMaxInstanceLifetime(value); return *this;}
+
+
+    /**
+     * <p>Enables or disables Capacity Rebalancing. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon
+     * EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline bool GetCapacityRebalance() const{ return m_capacityRebalance; }
+
+    /**
+     * <p>Enables or disables Capacity Rebalancing. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon
+     * EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline bool CapacityRebalanceHasBeenSet() const { return m_capacityRebalanceHasBeenSet; }
+
+    /**
+     * <p>Enables or disables Capacity Rebalancing. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon
+     * EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline void SetCapacityRebalance(bool value) { m_capacityRebalanceHasBeenSet = true; m_capacityRebalance = value; }
+
+    /**
+     * <p>Enables or disables Capacity Rebalancing. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon
+     * EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline UpdateAutoScalingGroupRequest& WithCapacityRebalance(bool value) { SetCapacityRebalance(value); return *this;}
 
   private:
 
@@ -998,6 +1009,9 @@ namespace Model
 
     int m_maxInstanceLifetime;
     bool m_maxInstanceLifetimeHasBeenSet;
+
+    bool m_capacityRebalance;
+    bool m_capacityRebalanceHasBeenSet;
   };
 
 } // namespace Model

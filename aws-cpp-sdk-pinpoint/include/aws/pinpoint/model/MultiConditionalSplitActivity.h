@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
@@ -40,7 +30,13 @@ namespace Model
    * <p>Specifies the settings for a multivariate split activity in a journey. This
    * type of activity sends participants down one of as many as five paths (including
    * a default <i>Else</i> path) in a journey, based on conditions that you
-   * specify.</p><p><h3>See Also:</h3>   <a
+   * specify.</p> <p>To create multivariate split activities that send
+   * participants down different paths based on push notification events (such as
+   * Open or Received events), your mobile app has to specify the User ID and
+   * Endpoint ID values. For more information, see <a
+   * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/integrate.html">Integrating
+   * Amazon Pinpoint with your application</a> in the <i>Amazon Pinpoint Developer
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/MultiConditionalSplitActivity">AWS
    * API Reference</a></p>
    */

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -82,42 +72,40 @@ namespace Model
      * The ID of the instance to which the network interface is attached.</p> </li>
      * <li> <p> <code>attachment.instance-owner-id</code> - The owner ID of the
      * instance to which the network interface is attached.</p> </li> <li> <p>
-     * <code>attachment.nat-gateway-id</code> - The ID of the NAT gateway to which the
-     * network interface is attached.</p> </li> <li> <p> <code>attachment.status</code>
-     * - The status of the attachment (<code>attaching</code> | <code>attached</code> |
-     * <code>detaching</code> | <code>detached</code>).</p> </li> <li> <p>
-     * <code>availability-zone</code> - The Availability Zone of the network
-     * interface.</p> </li> <li> <p> <code>description</code> - The description of the
-     * network interface.</p> </li> <li> <p> <code>group-id</code> - The ID of a
+     * <code>attachment.status</code> - The status of the attachment
+     * (<code>attaching</code> | <code>attached</code> | <code>detaching</code> |
+     * <code>detached</code>).</p> </li> <li> <p> <code>availability-zone</code> - The
+     * Availability Zone of the network interface.</p> </li> <li> <p>
+     * <code>description</code> - The description of the network interface.</p> </li>
+     * <li> <p> <code>group-id</code> - The ID of a security group associated with the
+     * network interface.</p> </li> <li> <p> <code>group-name</code> - The name of a
      * security group associated with the network interface.</p> </li> <li> <p>
-     * <code>group-name</code> - The name of a security group associated with the
-     * network interface.</p> </li> <li> <p> <code>ipv6-addresses.ipv6-address</code> -
-     * An IPv6 address associated with the network interface.</p> </li> <li> <p>
-     * <code>mac-address</code> - The MAC address of the network interface.</p> </li>
-     * <li> <p> <code>network-interface-id</code> - The ID of the network
-     * interface.</p> </li> <li> <p> <code>owner-id</code> - The AWS account ID of the
-     * network interface owner.</p> </li> <li> <p> <code>private-ip-address</code> -
-     * The private IPv4 address or addresses of the network interface.</p> </li> <li>
-     * <p> <code>private-dns-name</code> - The private DNS name of the network
-     * interface (IPv4).</p> </li> <li> <p> <code>requester-id</code> - The ID of the
-     * entity that launched the instance on your behalf (for example, AWS Management
+     * <code>ipv6-addresses.ipv6-address</code> - An IPv6 address associated with the
+     * network interface.</p> </li> <li> <p> <code>mac-address</code> - The MAC address
+     * of the network interface.</p> </li> <li> <p> <code>network-interface-id</code> -
+     * The ID of the network interface.</p> </li> <li> <p> <code>owner-id</code> - The
+     * AWS account ID of the network interface owner.</p> </li> <li> <p>
+     * <code>private-ip-address</code> - The private IPv4 address or addresses of the
+     * network interface.</p> </li> <li> <p> <code>private-dns-name</code> - The
+     * private DNS name of the network interface (IPv4).</p> </li> <li> <p>
+     * <code>requester-id</code> - The ID of the entity that launched the instance on
+     * your behalf (for example, AWS Management Console, Auto Scaling, and so on).</p>
+     * </li> <li> <p> <code>requester-managed</code> - Indicates whether the network
+     * interface is being managed by an AWS service (for example, AWS Management
      * Console, Auto Scaling, and so on).</p> </li> <li> <p>
-     * <code>requester-managed</code> - Indicates whether the network interface is
-     * being managed by an AWS service (for example, AWS Management Console, Auto
-     * Scaling, and so on).</p> </li> <li> <p> <code>source-dest-check</code> -
-     * Indicates whether the network interface performs source/destination checking. A
-     * value of <code>true</code> means checking is enabled, and <code>false</code>
-     * means checking is disabled. The value must be <code>false</code> for the network
-     * interface to perform network address translation (NAT) in your VPC. </p> </li>
-     * <li> <p> <code>status</code> - The status of the network interface. If the
-     * network interface is not attached to an instance, the status is
-     * <code>available</code>; if a network interface is attached to an instance the
-     * status is <code>in-use</code>.</p> </li> <li> <p> <code>subnet-id</code> - The
-     * ID of the subnet for the network interface.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
-     * the resource. Use the tag key in the filter name and the tag value as the filter
-     * value. For example, to find all resources that have a tag with the key
-     * <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>source-dest-check</code> - Indicates whether the network interface
+     * performs source/destination checking. A value of <code>true</code> means
+     * checking is enabled, and <code>false</code> means checking is disabled. The
+     * value must be <code>false</code> for the network interface to perform network
+     * address translation (NAT) in your VPC. </p> </li> <li> <p> <code>status</code> -
+     * The status of the network interface. If the network interface is not attached to
+     * an instance, the status is <code>available</code>; if a network interface is
+     * attached to an instance the status is <code>in-use</code>.</p> </li> <li> <p>
+     * <code>subnet-id</code> - The ID of the subnet for the network interface.</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
@@ -157,42 +145,40 @@ namespace Model
      * The ID of the instance to which the network interface is attached.</p> </li>
      * <li> <p> <code>attachment.instance-owner-id</code> - The owner ID of the
      * instance to which the network interface is attached.</p> </li> <li> <p>
-     * <code>attachment.nat-gateway-id</code> - The ID of the NAT gateway to which the
-     * network interface is attached.</p> </li> <li> <p> <code>attachment.status</code>
-     * - The status of the attachment (<code>attaching</code> | <code>attached</code> |
-     * <code>detaching</code> | <code>detached</code>).</p> </li> <li> <p>
-     * <code>availability-zone</code> - The Availability Zone of the network
-     * interface.</p> </li> <li> <p> <code>description</code> - The description of the
-     * network interface.</p> </li> <li> <p> <code>group-id</code> - The ID of a
+     * <code>attachment.status</code> - The status of the attachment
+     * (<code>attaching</code> | <code>attached</code> | <code>detaching</code> |
+     * <code>detached</code>).</p> </li> <li> <p> <code>availability-zone</code> - The
+     * Availability Zone of the network interface.</p> </li> <li> <p>
+     * <code>description</code> - The description of the network interface.</p> </li>
+     * <li> <p> <code>group-id</code> - The ID of a security group associated with the
+     * network interface.</p> </li> <li> <p> <code>group-name</code> - The name of a
      * security group associated with the network interface.</p> </li> <li> <p>
-     * <code>group-name</code> - The name of a security group associated with the
-     * network interface.</p> </li> <li> <p> <code>ipv6-addresses.ipv6-address</code> -
-     * An IPv6 address associated with the network interface.</p> </li> <li> <p>
-     * <code>mac-address</code> - The MAC address of the network interface.</p> </li>
-     * <li> <p> <code>network-interface-id</code> - The ID of the network
-     * interface.</p> </li> <li> <p> <code>owner-id</code> - The AWS account ID of the
-     * network interface owner.</p> </li> <li> <p> <code>private-ip-address</code> -
-     * The private IPv4 address or addresses of the network interface.</p> </li> <li>
-     * <p> <code>private-dns-name</code> - The private DNS name of the network
-     * interface (IPv4).</p> </li> <li> <p> <code>requester-id</code> - The ID of the
-     * entity that launched the instance on your behalf (for example, AWS Management
+     * <code>ipv6-addresses.ipv6-address</code> - An IPv6 address associated with the
+     * network interface.</p> </li> <li> <p> <code>mac-address</code> - The MAC address
+     * of the network interface.</p> </li> <li> <p> <code>network-interface-id</code> -
+     * The ID of the network interface.</p> </li> <li> <p> <code>owner-id</code> - The
+     * AWS account ID of the network interface owner.</p> </li> <li> <p>
+     * <code>private-ip-address</code> - The private IPv4 address or addresses of the
+     * network interface.</p> </li> <li> <p> <code>private-dns-name</code> - The
+     * private DNS name of the network interface (IPv4).</p> </li> <li> <p>
+     * <code>requester-id</code> - The ID of the entity that launched the instance on
+     * your behalf (for example, AWS Management Console, Auto Scaling, and so on).</p>
+     * </li> <li> <p> <code>requester-managed</code> - Indicates whether the network
+     * interface is being managed by an AWS service (for example, AWS Management
      * Console, Auto Scaling, and so on).</p> </li> <li> <p>
-     * <code>requester-managed</code> - Indicates whether the network interface is
-     * being managed by an AWS service (for example, AWS Management Console, Auto
-     * Scaling, and so on).</p> </li> <li> <p> <code>source-dest-check</code> -
-     * Indicates whether the network interface performs source/destination checking. A
-     * value of <code>true</code> means checking is enabled, and <code>false</code>
-     * means checking is disabled. The value must be <code>false</code> for the network
-     * interface to perform network address translation (NAT) in your VPC. </p> </li>
-     * <li> <p> <code>status</code> - The status of the network interface. If the
-     * network interface is not attached to an instance, the status is
-     * <code>available</code>; if a network interface is attached to an instance the
-     * status is <code>in-use</code>.</p> </li> <li> <p> <code>subnet-id</code> - The
-     * ID of the subnet for the network interface.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
-     * the resource. Use the tag key in the filter name and the tag value as the filter
-     * value. For example, to find all resources that have a tag with the key
-     * <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>source-dest-check</code> - Indicates whether the network interface
+     * performs source/destination checking. A value of <code>true</code> means
+     * checking is enabled, and <code>false</code> means checking is disabled. The
+     * value must be <code>false</code> for the network interface to perform network
+     * address translation (NAT) in your VPC. </p> </li> <li> <p> <code>status</code> -
+     * The status of the network interface. If the network interface is not attached to
+     * an instance, the status is <code>available</code>; if a network interface is
+     * attached to an instance the status is <code>in-use</code>.</p> </li> <li> <p>
+     * <code>subnet-id</code> - The ID of the subnet for the network interface.</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
@@ -232,42 +218,40 @@ namespace Model
      * The ID of the instance to which the network interface is attached.</p> </li>
      * <li> <p> <code>attachment.instance-owner-id</code> - The owner ID of the
      * instance to which the network interface is attached.</p> </li> <li> <p>
-     * <code>attachment.nat-gateway-id</code> - The ID of the NAT gateway to which the
-     * network interface is attached.</p> </li> <li> <p> <code>attachment.status</code>
-     * - The status of the attachment (<code>attaching</code> | <code>attached</code> |
-     * <code>detaching</code> | <code>detached</code>).</p> </li> <li> <p>
-     * <code>availability-zone</code> - The Availability Zone of the network
-     * interface.</p> </li> <li> <p> <code>description</code> - The description of the
-     * network interface.</p> </li> <li> <p> <code>group-id</code> - The ID of a
+     * <code>attachment.status</code> - The status of the attachment
+     * (<code>attaching</code> | <code>attached</code> | <code>detaching</code> |
+     * <code>detached</code>).</p> </li> <li> <p> <code>availability-zone</code> - The
+     * Availability Zone of the network interface.</p> </li> <li> <p>
+     * <code>description</code> - The description of the network interface.</p> </li>
+     * <li> <p> <code>group-id</code> - The ID of a security group associated with the
+     * network interface.</p> </li> <li> <p> <code>group-name</code> - The name of a
      * security group associated with the network interface.</p> </li> <li> <p>
-     * <code>group-name</code> - The name of a security group associated with the
-     * network interface.</p> </li> <li> <p> <code>ipv6-addresses.ipv6-address</code> -
-     * An IPv6 address associated with the network interface.</p> </li> <li> <p>
-     * <code>mac-address</code> - The MAC address of the network interface.</p> </li>
-     * <li> <p> <code>network-interface-id</code> - The ID of the network
-     * interface.</p> </li> <li> <p> <code>owner-id</code> - The AWS account ID of the
-     * network interface owner.</p> </li> <li> <p> <code>private-ip-address</code> -
-     * The private IPv4 address or addresses of the network interface.</p> </li> <li>
-     * <p> <code>private-dns-name</code> - The private DNS name of the network
-     * interface (IPv4).</p> </li> <li> <p> <code>requester-id</code> - The ID of the
-     * entity that launched the instance on your behalf (for example, AWS Management
+     * <code>ipv6-addresses.ipv6-address</code> - An IPv6 address associated with the
+     * network interface.</p> </li> <li> <p> <code>mac-address</code> - The MAC address
+     * of the network interface.</p> </li> <li> <p> <code>network-interface-id</code> -
+     * The ID of the network interface.</p> </li> <li> <p> <code>owner-id</code> - The
+     * AWS account ID of the network interface owner.</p> </li> <li> <p>
+     * <code>private-ip-address</code> - The private IPv4 address or addresses of the
+     * network interface.</p> </li> <li> <p> <code>private-dns-name</code> - The
+     * private DNS name of the network interface (IPv4).</p> </li> <li> <p>
+     * <code>requester-id</code> - The ID of the entity that launched the instance on
+     * your behalf (for example, AWS Management Console, Auto Scaling, and so on).</p>
+     * </li> <li> <p> <code>requester-managed</code> - Indicates whether the network
+     * interface is being managed by an AWS service (for example, AWS Management
      * Console, Auto Scaling, and so on).</p> </li> <li> <p>
-     * <code>requester-managed</code> - Indicates whether the network interface is
-     * being managed by an AWS service (for example, AWS Management Console, Auto
-     * Scaling, and so on).</p> </li> <li> <p> <code>source-dest-check</code> -
-     * Indicates whether the network interface performs source/destination checking. A
-     * value of <code>true</code> means checking is enabled, and <code>false</code>
-     * means checking is disabled. The value must be <code>false</code> for the network
-     * interface to perform network address translation (NAT) in your VPC. </p> </li>
-     * <li> <p> <code>status</code> - The status of the network interface. If the
-     * network interface is not attached to an instance, the status is
-     * <code>available</code>; if a network interface is attached to an instance the
-     * status is <code>in-use</code>.</p> </li> <li> <p> <code>subnet-id</code> - The
-     * ID of the subnet for the network interface.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
-     * the resource. Use the tag key in the filter name and the tag value as the filter
-     * value. For example, to find all resources that have a tag with the key
-     * <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>source-dest-check</code> - Indicates whether the network interface
+     * performs source/destination checking. A value of <code>true</code> means
+     * checking is enabled, and <code>false</code> means checking is disabled. The
+     * value must be <code>false</code> for the network interface to perform network
+     * address translation (NAT) in your VPC. </p> </li> <li> <p> <code>status</code> -
+     * The status of the network interface. If the network interface is not attached to
+     * an instance, the status is <code>available</code>; if a network interface is
+     * attached to an instance the status is <code>in-use</code>.</p> </li> <li> <p>
+     * <code>subnet-id</code> - The ID of the subnet for the network interface.</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
@@ -307,42 +291,40 @@ namespace Model
      * The ID of the instance to which the network interface is attached.</p> </li>
      * <li> <p> <code>attachment.instance-owner-id</code> - The owner ID of the
      * instance to which the network interface is attached.</p> </li> <li> <p>
-     * <code>attachment.nat-gateway-id</code> - The ID of the NAT gateway to which the
-     * network interface is attached.</p> </li> <li> <p> <code>attachment.status</code>
-     * - The status of the attachment (<code>attaching</code> | <code>attached</code> |
-     * <code>detaching</code> | <code>detached</code>).</p> </li> <li> <p>
-     * <code>availability-zone</code> - The Availability Zone of the network
-     * interface.</p> </li> <li> <p> <code>description</code> - The description of the
-     * network interface.</p> </li> <li> <p> <code>group-id</code> - The ID of a
+     * <code>attachment.status</code> - The status of the attachment
+     * (<code>attaching</code> | <code>attached</code> | <code>detaching</code> |
+     * <code>detached</code>).</p> </li> <li> <p> <code>availability-zone</code> - The
+     * Availability Zone of the network interface.</p> </li> <li> <p>
+     * <code>description</code> - The description of the network interface.</p> </li>
+     * <li> <p> <code>group-id</code> - The ID of a security group associated with the
+     * network interface.</p> </li> <li> <p> <code>group-name</code> - The name of a
      * security group associated with the network interface.</p> </li> <li> <p>
-     * <code>group-name</code> - The name of a security group associated with the
-     * network interface.</p> </li> <li> <p> <code>ipv6-addresses.ipv6-address</code> -
-     * An IPv6 address associated with the network interface.</p> </li> <li> <p>
-     * <code>mac-address</code> - The MAC address of the network interface.</p> </li>
-     * <li> <p> <code>network-interface-id</code> - The ID of the network
-     * interface.</p> </li> <li> <p> <code>owner-id</code> - The AWS account ID of the
-     * network interface owner.</p> </li> <li> <p> <code>private-ip-address</code> -
-     * The private IPv4 address or addresses of the network interface.</p> </li> <li>
-     * <p> <code>private-dns-name</code> - The private DNS name of the network
-     * interface (IPv4).</p> </li> <li> <p> <code>requester-id</code> - The ID of the
-     * entity that launched the instance on your behalf (for example, AWS Management
+     * <code>ipv6-addresses.ipv6-address</code> - An IPv6 address associated with the
+     * network interface.</p> </li> <li> <p> <code>mac-address</code> - The MAC address
+     * of the network interface.</p> </li> <li> <p> <code>network-interface-id</code> -
+     * The ID of the network interface.</p> </li> <li> <p> <code>owner-id</code> - The
+     * AWS account ID of the network interface owner.</p> </li> <li> <p>
+     * <code>private-ip-address</code> - The private IPv4 address or addresses of the
+     * network interface.</p> </li> <li> <p> <code>private-dns-name</code> - The
+     * private DNS name of the network interface (IPv4).</p> </li> <li> <p>
+     * <code>requester-id</code> - The ID of the entity that launched the instance on
+     * your behalf (for example, AWS Management Console, Auto Scaling, and so on).</p>
+     * </li> <li> <p> <code>requester-managed</code> - Indicates whether the network
+     * interface is being managed by an AWS service (for example, AWS Management
      * Console, Auto Scaling, and so on).</p> </li> <li> <p>
-     * <code>requester-managed</code> - Indicates whether the network interface is
-     * being managed by an AWS service (for example, AWS Management Console, Auto
-     * Scaling, and so on).</p> </li> <li> <p> <code>source-dest-check</code> -
-     * Indicates whether the network interface performs source/destination checking. A
-     * value of <code>true</code> means checking is enabled, and <code>false</code>
-     * means checking is disabled. The value must be <code>false</code> for the network
-     * interface to perform network address translation (NAT) in your VPC. </p> </li>
-     * <li> <p> <code>status</code> - The status of the network interface. If the
-     * network interface is not attached to an instance, the status is
-     * <code>available</code>; if a network interface is attached to an instance the
-     * status is <code>in-use</code>.</p> </li> <li> <p> <code>subnet-id</code> - The
-     * ID of the subnet for the network interface.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
-     * the resource. Use the tag key in the filter name and the tag value as the filter
-     * value. For example, to find all resources that have a tag with the key
-     * <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>source-dest-check</code> - Indicates whether the network interface
+     * performs source/destination checking. A value of <code>true</code> means
+     * checking is enabled, and <code>false</code> means checking is disabled. The
+     * value must be <code>false</code> for the network interface to perform network
+     * address translation (NAT) in your VPC. </p> </li> <li> <p> <code>status</code> -
+     * The status of the network interface. If the network interface is not attached to
+     * an instance, the status is <code>available</code>; if a network interface is
+     * attached to an instance the status is <code>in-use</code>.</p> </li> <li> <p>
+     * <code>subnet-id</code> - The ID of the subnet for the network interface.</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
@@ -382,42 +364,40 @@ namespace Model
      * The ID of the instance to which the network interface is attached.</p> </li>
      * <li> <p> <code>attachment.instance-owner-id</code> - The owner ID of the
      * instance to which the network interface is attached.</p> </li> <li> <p>
-     * <code>attachment.nat-gateway-id</code> - The ID of the NAT gateway to which the
-     * network interface is attached.</p> </li> <li> <p> <code>attachment.status</code>
-     * - The status of the attachment (<code>attaching</code> | <code>attached</code> |
-     * <code>detaching</code> | <code>detached</code>).</p> </li> <li> <p>
-     * <code>availability-zone</code> - The Availability Zone of the network
-     * interface.</p> </li> <li> <p> <code>description</code> - The description of the
-     * network interface.</p> </li> <li> <p> <code>group-id</code> - The ID of a
+     * <code>attachment.status</code> - The status of the attachment
+     * (<code>attaching</code> | <code>attached</code> | <code>detaching</code> |
+     * <code>detached</code>).</p> </li> <li> <p> <code>availability-zone</code> - The
+     * Availability Zone of the network interface.</p> </li> <li> <p>
+     * <code>description</code> - The description of the network interface.</p> </li>
+     * <li> <p> <code>group-id</code> - The ID of a security group associated with the
+     * network interface.</p> </li> <li> <p> <code>group-name</code> - The name of a
      * security group associated with the network interface.</p> </li> <li> <p>
-     * <code>group-name</code> - The name of a security group associated with the
-     * network interface.</p> </li> <li> <p> <code>ipv6-addresses.ipv6-address</code> -
-     * An IPv6 address associated with the network interface.</p> </li> <li> <p>
-     * <code>mac-address</code> - The MAC address of the network interface.</p> </li>
-     * <li> <p> <code>network-interface-id</code> - The ID of the network
-     * interface.</p> </li> <li> <p> <code>owner-id</code> - The AWS account ID of the
-     * network interface owner.</p> </li> <li> <p> <code>private-ip-address</code> -
-     * The private IPv4 address or addresses of the network interface.</p> </li> <li>
-     * <p> <code>private-dns-name</code> - The private DNS name of the network
-     * interface (IPv4).</p> </li> <li> <p> <code>requester-id</code> - The ID of the
-     * entity that launched the instance on your behalf (for example, AWS Management
+     * <code>ipv6-addresses.ipv6-address</code> - An IPv6 address associated with the
+     * network interface.</p> </li> <li> <p> <code>mac-address</code> - The MAC address
+     * of the network interface.</p> </li> <li> <p> <code>network-interface-id</code> -
+     * The ID of the network interface.</p> </li> <li> <p> <code>owner-id</code> - The
+     * AWS account ID of the network interface owner.</p> </li> <li> <p>
+     * <code>private-ip-address</code> - The private IPv4 address or addresses of the
+     * network interface.</p> </li> <li> <p> <code>private-dns-name</code> - The
+     * private DNS name of the network interface (IPv4).</p> </li> <li> <p>
+     * <code>requester-id</code> - The ID of the entity that launched the instance on
+     * your behalf (for example, AWS Management Console, Auto Scaling, and so on).</p>
+     * </li> <li> <p> <code>requester-managed</code> - Indicates whether the network
+     * interface is being managed by an AWS service (for example, AWS Management
      * Console, Auto Scaling, and so on).</p> </li> <li> <p>
-     * <code>requester-managed</code> - Indicates whether the network interface is
-     * being managed by an AWS service (for example, AWS Management Console, Auto
-     * Scaling, and so on).</p> </li> <li> <p> <code>source-dest-check</code> -
-     * Indicates whether the network interface performs source/destination checking. A
-     * value of <code>true</code> means checking is enabled, and <code>false</code>
-     * means checking is disabled. The value must be <code>false</code> for the network
-     * interface to perform network address translation (NAT) in your VPC. </p> </li>
-     * <li> <p> <code>status</code> - The status of the network interface. If the
-     * network interface is not attached to an instance, the status is
-     * <code>available</code>; if a network interface is attached to an instance the
-     * status is <code>in-use</code>.</p> </li> <li> <p> <code>subnet-id</code> - The
-     * ID of the subnet for the network interface.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
-     * the resource. Use the tag key in the filter name and the tag value as the filter
-     * value. For example, to find all resources that have a tag with the key
-     * <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>source-dest-check</code> - Indicates whether the network interface
+     * performs source/destination checking. A value of <code>true</code> means
+     * checking is enabled, and <code>false</code> means checking is disabled. The
+     * value must be <code>false</code> for the network interface to perform network
+     * address translation (NAT) in your VPC. </p> </li> <li> <p> <code>status</code> -
+     * The status of the network interface. If the network interface is not attached to
+     * an instance, the status is <code>available</code>; if a network interface is
+     * attached to an instance the status is <code>in-use</code>.</p> </li> <li> <p>
+     * <code>subnet-id</code> - The ID of the subnet for the network interface.</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
@@ -457,42 +437,40 @@ namespace Model
      * The ID of the instance to which the network interface is attached.</p> </li>
      * <li> <p> <code>attachment.instance-owner-id</code> - The owner ID of the
      * instance to which the network interface is attached.</p> </li> <li> <p>
-     * <code>attachment.nat-gateway-id</code> - The ID of the NAT gateway to which the
-     * network interface is attached.</p> </li> <li> <p> <code>attachment.status</code>
-     * - The status of the attachment (<code>attaching</code> | <code>attached</code> |
-     * <code>detaching</code> | <code>detached</code>).</p> </li> <li> <p>
-     * <code>availability-zone</code> - The Availability Zone of the network
-     * interface.</p> </li> <li> <p> <code>description</code> - The description of the
-     * network interface.</p> </li> <li> <p> <code>group-id</code> - The ID of a
+     * <code>attachment.status</code> - The status of the attachment
+     * (<code>attaching</code> | <code>attached</code> | <code>detaching</code> |
+     * <code>detached</code>).</p> </li> <li> <p> <code>availability-zone</code> - The
+     * Availability Zone of the network interface.</p> </li> <li> <p>
+     * <code>description</code> - The description of the network interface.</p> </li>
+     * <li> <p> <code>group-id</code> - The ID of a security group associated with the
+     * network interface.</p> </li> <li> <p> <code>group-name</code> - The name of a
      * security group associated with the network interface.</p> </li> <li> <p>
-     * <code>group-name</code> - The name of a security group associated with the
-     * network interface.</p> </li> <li> <p> <code>ipv6-addresses.ipv6-address</code> -
-     * An IPv6 address associated with the network interface.</p> </li> <li> <p>
-     * <code>mac-address</code> - The MAC address of the network interface.</p> </li>
-     * <li> <p> <code>network-interface-id</code> - The ID of the network
-     * interface.</p> </li> <li> <p> <code>owner-id</code> - The AWS account ID of the
-     * network interface owner.</p> </li> <li> <p> <code>private-ip-address</code> -
-     * The private IPv4 address or addresses of the network interface.</p> </li> <li>
-     * <p> <code>private-dns-name</code> - The private DNS name of the network
-     * interface (IPv4).</p> </li> <li> <p> <code>requester-id</code> - The ID of the
-     * entity that launched the instance on your behalf (for example, AWS Management
+     * <code>ipv6-addresses.ipv6-address</code> - An IPv6 address associated with the
+     * network interface.</p> </li> <li> <p> <code>mac-address</code> - The MAC address
+     * of the network interface.</p> </li> <li> <p> <code>network-interface-id</code> -
+     * The ID of the network interface.</p> </li> <li> <p> <code>owner-id</code> - The
+     * AWS account ID of the network interface owner.</p> </li> <li> <p>
+     * <code>private-ip-address</code> - The private IPv4 address or addresses of the
+     * network interface.</p> </li> <li> <p> <code>private-dns-name</code> - The
+     * private DNS name of the network interface (IPv4).</p> </li> <li> <p>
+     * <code>requester-id</code> - The ID of the entity that launched the instance on
+     * your behalf (for example, AWS Management Console, Auto Scaling, and so on).</p>
+     * </li> <li> <p> <code>requester-managed</code> - Indicates whether the network
+     * interface is being managed by an AWS service (for example, AWS Management
      * Console, Auto Scaling, and so on).</p> </li> <li> <p>
-     * <code>requester-managed</code> - Indicates whether the network interface is
-     * being managed by an AWS service (for example, AWS Management Console, Auto
-     * Scaling, and so on).</p> </li> <li> <p> <code>source-dest-check</code> -
-     * Indicates whether the network interface performs source/destination checking. A
-     * value of <code>true</code> means checking is enabled, and <code>false</code>
-     * means checking is disabled. The value must be <code>false</code> for the network
-     * interface to perform network address translation (NAT) in your VPC. </p> </li>
-     * <li> <p> <code>status</code> - The status of the network interface. If the
-     * network interface is not attached to an instance, the status is
-     * <code>available</code>; if a network interface is attached to an instance the
-     * status is <code>in-use</code>.</p> </li> <li> <p> <code>subnet-id</code> - The
-     * ID of the subnet for the network interface.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
-     * the resource. Use the tag key in the filter name and the tag value as the filter
-     * value. For example, to find all resources that have a tag with the key
-     * <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>source-dest-check</code> - Indicates whether the network interface
+     * performs source/destination checking. A value of <code>true</code> means
+     * checking is enabled, and <code>false</code> means checking is disabled. The
+     * value must be <code>false</code> for the network interface to perform network
+     * address translation (NAT) in your VPC. </p> </li> <li> <p> <code>status</code> -
+     * The status of the network interface. If the network interface is not attached to
+     * an instance, the status is <code>available</code>; if a network interface is
+     * attached to an instance the status is <code>in-use</code>.</p> </li> <li> <p>
+     * <code>subnet-id</code> - The ID of the subnet for the network interface.</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
@@ -532,42 +510,40 @@ namespace Model
      * The ID of the instance to which the network interface is attached.</p> </li>
      * <li> <p> <code>attachment.instance-owner-id</code> - The owner ID of the
      * instance to which the network interface is attached.</p> </li> <li> <p>
-     * <code>attachment.nat-gateway-id</code> - The ID of the NAT gateway to which the
-     * network interface is attached.</p> </li> <li> <p> <code>attachment.status</code>
-     * - The status of the attachment (<code>attaching</code> | <code>attached</code> |
-     * <code>detaching</code> | <code>detached</code>).</p> </li> <li> <p>
-     * <code>availability-zone</code> - The Availability Zone of the network
-     * interface.</p> </li> <li> <p> <code>description</code> - The description of the
-     * network interface.</p> </li> <li> <p> <code>group-id</code> - The ID of a
+     * <code>attachment.status</code> - The status of the attachment
+     * (<code>attaching</code> | <code>attached</code> | <code>detaching</code> |
+     * <code>detached</code>).</p> </li> <li> <p> <code>availability-zone</code> - The
+     * Availability Zone of the network interface.</p> </li> <li> <p>
+     * <code>description</code> - The description of the network interface.</p> </li>
+     * <li> <p> <code>group-id</code> - The ID of a security group associated with the
+     * network interface.</p> </li> <li> <p> <code>group-name</code> - The name of a
      * security group associated with the network interface.</p> </li> <li> <p>
-     * <code>group-name</code> - The name of a security group associated with the
-     * network interface.</p> </li> <li> <p> <code>ipv6-addresses.ipv6-address</code> -
-     * An IPv6 address associated with the network interface.</p> </li> <li> <p>
-     * <code>mac-address</code> - The MAC address of the network interface.</p> </li>
-     * <li> <p> <code>network-interface-id</code> - The ID of the network
-     * interface.</p> </li> <li> <p> <code>owner-id</code> - The AWS account ID of the
-     * network interface owner.</p> </li> <li> <p> <code>private-ip-address</code> -
-     * The private IPv4 address or addresses of the network interface.</p> </li> <li>
-     * <p> <code>private-dns-name</code> - The private DNS name of the network
-     * interface (IPv4).</p> </li> <li> <p> <code>requester-id</code> - The ID of the
-     * entity that launched the instance on your behalf (for example, AWS Management
+     * <code>ipv6-addresses.ipv6-address</code> - An IPv6 address associated with the
+     * network interface.</p> </li> <li> <p> <code>mac-address</code> - The MAC address
+     * of the network interface.</p> </li> <li> <p> <code>network-interface-id</code> -
+     * The ID of the network interface.</p> </li> <li> <p> <code>owner-id</code> - The
+     * AWS account ID of the network interface owner.</p> </li> <li> <p>
+     * <code>private-ip-address</code> - The private IPv4 address or addresses of the
+     * network interface.</p> </li> <li> <p> <code>private-dns-name</code> - The
+     * private DNS name of the network interface (IPv4).</p> </li> <li> <p>
+     * <code>requester-id</code> - The ID of the entity that launched the instance on
+     * your behalf (for example, AWS Management Console, Auto Scaling, and so on).</p>
+     * </li> <li> <p> <code>requester-managed</code> - Indicates whether the network
+     * interface is being managed by an AWS service (for example, AWS Management
      * Console, Auto Scaling, and so on).</p> </li> <li> <p>
-     * <code>requester-managed</code> - Indicates whether the network interface is
-     * being managed by an AWS service (for example, AWS Management Console, Auto
-     * Scaling, and so on).</p> </li> <li> <p> <code>source-dest-check</code> -
-     * Indicates whether the network interface performs source/destination checking. A
-     * value of <code>true</code> means checking is enabled, and <code>false</code>
-     * means checking is disabled. The value must be <code>false</code> for the network
-     * interface to perform network address translation (NAT) in your VPC. </p> </li>
-     * <li> <p> <code>status</code> - The status of the network interface. If the
-     * network interface is not attached to an instance, the status is
-     * <code>available</code>; if a network interface is attached to an instance the
-     * status is <code>in-use</code>.</p> </li> <li> <p> <code>subnet-id</code> - The
-     * ID of the subnet for the network interface.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
-     * the resource. Use the tag key in the filter name and the tag value as the filter
-     * value. For example, to find all resources that have a tag with the key
-     * <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>source-dest-check</code> - Indicates whether the network interface
+     * performs source/destination checking. A value of <code>true</code> means
+     * checking is enabled, and <code>false</code> means checking is disabled. The
+     * value must be <code>false</code> for the network interface to perform network
+     * address translation (NAT) in your VPC. </p> </li> <li> <p> <code>status</code> -
+     * The status of the network interface. If the network interface is not attached to
+     * an instance, the status is <code>available</code>; if a network interface is
+     * attached to an instance the status is <code>in-use</code>.</p> </li> <li> <p>
+     * <code>subnet-id</code> - The ID of the subnet for the network interface.</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
@@ -607,42 +583,40 @@ namespace Model
      * The ID of the instance to which the network interface is attached.</p> </li>
      * <li> <p> <code>attachment.instance-owner-id</code> - The owner ID of the
      * instance to which the network interface is attached.</p> </li> <li> <p>
-     * <code>attachment.nat-gateway-id</code> - The ID of the NAT gateway to which the
-     * network interface is attached.</p> </li> <li> <p> <code>attachment.status</code>
-     * - The status of the attachment (<code>attaching</code> | <code>attached</code> |
-     * <code>detaching</code> | <code>detached</code>).</p> </li> <li> <p>
-     * <code>availability-zone</code> - The Availability Zone of the network
-     * interface.</p> </li> <li> <p> <code>description</code> - The description of the
-     * network interface.</p> </li> <li> <p> <code>group-id</code> - The ID of a
+     * <code>attachment.status</code> - The status of the attachment
+     * (<code>attaching</code> | <code>attached</code> | <code>detaching</code> |
+     * <code>detached</code>).</p> </li> <li> <p> <code>availability-zone</code> - The
+     * Availability Zone of the network interface.</p> </li> <li> <p>
+     * <code>description</code> - The description of the network interface.</p> </li>
+     * <li> <p> <code>group-id</code> - The ID of a security group associated with the
+     * network interface.</p> </li> <li> <p> <code>group-name</code> - The name of a
      * security group associated with the network interface.</p> </li> <li> <p>
-     * <code>group-name</code> - The name of a security group associated with the
-     * network interface.</p> </li> <li> <p> <code>ipv6-addresses.ipv6-address</code> -
-     * An IPv6 address associated with the network interface.</p> </li> <li> <p>
-     * <code>mac-address</code> - The MAC address of the network interface.</p> </li>
-     * <li> <p> <code>network-interface-id</code> - The ID of the network
-     * interface.</p> </li> <li> <p> <code>owner-id</code> - The AWS account ID of the
-     * network interface owner.</p> </li> <li> <p> <code>private-ip-address</code> -
-     * The private IPv4 address or addresses of the network interface.</p> </li> <li>
-     * <p> <code>private-dns-name</code> - The private DNS name of the network
-     * interface (IPv4).</p> </li> <li> <p> <code>requester-id</code> - The ID of the
-     * entity that launched the instance on your behalf (for example, AWS Management
+     * <code>ipv6-addresses.ipv6-address</code> - An IPv6 address associated with the
+     * network interface.</p> </li> <li> <p> <code>mac-address</code> - The MAC address
+     * of the network interface.</p> </li> <li> <p> <code>network-interface-id</code> -
+     * The ID of the network interface.</p> </li> <li> <p> <code>owner-id</code> - The
+     * AWS account ID of the network interface owner.</p> </li> <li> <p>
+     * <code>private-ip-address</code> - The private IPv4 address or addresses of the
+     * network interface.</p> </li> <li> <p> <code>private-dns-name</code> - The
+     * private DNS name of the network interface (IPv4).</p> </li> <li> <p>
+     * <code>requester-id</code> - The ID of the entity that launched the instance on
+     * your behalf (for example, AWS Management Console, Auto Scaling, and so on).</p>
+     * </li> <li> <p> <code>requester-managed</code> - Indicates whether the network
+     * interface is being managed by an AWS service (for example, AWS Management
      * Console, Auto Scaling, and so on).</p> </li> <li> <p>
-     * <code>requester-managed</code> - Indicates whether the network interface is
-     * being managed by an AWS service (for example, AWS Management Console, Auto
-     * Scaling, and so on).</p> </li> <li> <p> <code>source-dest-check</code> -
-     * Indicates whether the network interface performs source/destination checking. A
-     * value of <code>true</code> means checking is enabled, and <code>false</code>
-     * means checking is disabled. The value must be <code>false</code> for the network
-     * interface to perform network address translation (NAT) in your VPC. </p> </li>
-     * <li> <p> <code>status</code> - The status of the network interface. If the
-     * network interface is not attached to an instance, the status is
-     * <code>available</code>; if a network interface is attached to an instance the
-     * status is <code>in-use</code>.</p> </li> <li> <p> <code>subnet-id</code> - The
-     * ID of the subnet for the network interface.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
-     * the resource. Use the tag key in the filter name and the tag value as the filter
-     * value. For example, to find all resources that have a tag with the key
-     * <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>source-dest-check</code> - Indicates whether the network interface
+     * performs source/destination checking. A value of <code>true</code> means
+     * checking is enabled, and <code>false</code> means checking is disabled. The
+     * value must be <code>false</code> for the network interface to perform network
+     * address translation (NAT) in your VPC. </p> </li> <li> <p> <code>status</code> -
+     * The status of the network interface. If the network interface is not attached to
+     * an instance, the status is <code>available</code>; if a network interface is
+     * attached to an instance the status is <code>in-use</code>.</p> </li> <li> <p>
+     * <code>subnet-id</code> - The ID of the subnet for the network interface.</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a

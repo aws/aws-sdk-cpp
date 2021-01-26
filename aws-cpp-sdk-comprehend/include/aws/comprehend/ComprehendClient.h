@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/comprehend/Comprehend_EXPORTS.h>
@@ -39,12 +29,15 @@
 #include <aws/comprehend/model/DescribeEndpointResult.h>
 #include <aws/comprehend/model/DescribeEntitiesDetectionJobResult.h>
 #include <aws/comprehend/model/DescribeEntityRecognizerResult.h>
+#include <aws/comprehend/model/DescribeEventsDetectionJobResult.h>
 #include <aws/comprehend/model/DescribeKeyPhrasesDetectionJobResult.h>
+#include <aws/comprehend/model/DescribePiiEntitiesDetectionJobResult.h>
 #include <aws/comprehend/model/DescribeSentimentDetectionJobResult.h>
 #include <aws/comprehend/model/DescribeTopicsDetectionJobResult.h>
 #include <aws/comprehend/model/DetectDominantLanguageResult.h>
 #include <aws/comprehend/model/DetectEntitiesResult.h>
 #include <aws/comprehend/model/DetectKeyPhrasesResult.h>
+#include <aws/comprehend/model/DetectPiiEntitiesResult.h>
 #include <aws/comprehend/model/DetectSentimentResult.h>
 #include <aws/comprehend/model/DetectSyntaxResult.h>
 #include <aws/comprehend/model/ListDocumentClassificationJobsResult.h>
@@ -53,19 +46,25 @@
 #include <aws/comprehend/model/ListEndpointsResult.h>
 #include <aws/comprehend/model/ListEntitiesDetectionJobsResult.h>
 #include <aws/comprehend/model/ListEntityRecognizersResult.h>
+#include <aws/comprehend/model/ListEventsDetectionJobsResult.h>
 #include <aws/comprehend/model/ListKeyPhrasesDetectionJobsResult.h>
+#include <aws/comprehend/model/ListPiiEntitiesDetectionJobsResult.h>
 #include <aws/comprehend/model/ListSentimentDetectionJobsResult.h>
 #include <aws/comprehend/model/ListTagsForResourceResult.h>
 #include <aws/comprehend/model/ListTopicsDetectionJobsResult.h>
 #include <aws/comprehend/model/StartDocumentClassificationJobResult.h>
 #include <aws/comprehend/model/StartDominantLanguageDetectionJobResult.h>
 #include <aws/comprehend/model/StartEntitiesDetectionJobResult.h>
+#include <aws/comprehend/model/StartEventsDetectionJobResult.h>
 #include <aws/comprehend/model/StartKeyPhrasesDetectionJobResult.h>
+#include <aws/comprehend/model/StartPiiEntitiesDetectionJobResult.h>
 #include <aws/comprehend/model/StartSentimentDetectionJobResult.h>
 #include <aws/comprehend/model/StartTopicsDetectionJobResult.h>
 #include <aws/comprehend/model/StopDominantLanguageDetectionJobResult.h>
 #include <aws/comprehend/model/StopEntitiesDetectionJobResult.h>
+#include <aws/comprehend/model/StopEventsDetectionJobResult.h>
 #include <aws/comprehend/model/StopKeyPhrasesDetectionJobResult.h>
+#include <aws/comprehend/model/StopPiiEntitiesDetectionJobResult.h>
 #include <aws/comprehend/model/StopSentimentDetectionJobResult.h>
 #include <aws/comprehend/model/StopTrainingDocumentClassifierResult.h>
 #include <aws/comprehend/model/StopTrainingEntityRecognizerResult.h>
@@ -129,12 +128,15 @@ namespace Model
         class DescribeEndpointRequest;
         class DescribeEntitiesDetectionJobRequest;
         class DescribeEntityRecognizerRequest;
+        class DescribeEventsDetectionJobRequest;
         class DescribeKeyPhrasesDetectionJobRequest;
+        class DescribePiiEntitiesDetectionJobRequest;
         class DescribeSentimentDetectionJobRequest;
         class DescribeTopicsDetectionJobRequest;
         class DetectDominantLanguageRequest;
         class DetectEntitiesRequest;
         class DetectKeyPhrasesRequest;
+        class DetectPiiEntitiesRequest;
         class DetectSentimentRequest;
         class DetectSyntaxRequest;
         class ListDocumentClassificationJobsRequest;
@@ -143,19 +145,25 @@ namespace Model
         class ListEndpointsRequest;
         class ListEntitiesDetectionJobsRequest;
         class ListEntityRecognizersRequest;
+        class ListEventsDetectionJobsRequest;
         class ListKeyPhrasesDetectionJobsRequest;
+        class ListPiiEntitiesDetectionJobsRequest;
         class ListSentimentDetectionJobsRequest;
         class ListTagsForResourceRequest;
         class ListTopicsDetectionJobsRequest;
         class StartDocumentClassificationJobRequest;
         class StartDominantLanguageDetectionJobRequest;
         class StartEntitiesDetectionJobRequest;
+        class StartEventsDetectionJobRequest;
         class StartKeyPhrasesDetectionJobRequest;
+        class StartPiiEntitiesDetectionJobRequest;
         class StartSentimentDetectionJobRequest;
         class StartTopicsDetectionJobRequest;
         class StopDominantLanguageDetectionJobRequest;
         class StopEntitiesDetectionJobRequest;
+        class StopEventsDetectionJobRequest;
         class StopKeyPhrasesDetectionJobRequest;
+        class StopPiiEntitiesDetectionJobRequest;
         class StopSentimentDetectionJobRequest;
         class StopTrainingDocumentClassifierRequest;
         class StopTrainingEntityRecognizerRequest;
@@ -163,57 +171,66 @@ namespace Model
         class UntagResourceRequest;
         class UpdateEndpointRequest;
 
-        typedef Aws::Utils::Outcome<BatchDetectDominantLanguageResult, Aws::Client::AWSError<ComprehendErrors>> BatchDetectDominantLanguageOutcome;
-        typedef Aws::Utils::Outcome<BatchDetectEntitiesResult, Aws::Client::AWSError<ComprehendErrors>> BatchDetectEntitiesOutcome;
-        typedef Aws::Utils::Outcome<BatchDetectKeyPhrasesResult, Aws::Client::AWSError<ComprehendErrors>> BatchDetectKeyPhrasesOutcome;
-        typedef Aws::Utils::Outcome<BatchDetectSentimentResult, Aws::Client::AWSError<ComprehendErrors>> BatchDetectSentimentOutcome;
-        typedef Aws::Utils::Outcome<BatchDetectSyntaxResult, Aws::Client::AWSError<ComprehendErrors>> BatchDetectSyntaxOutcome;
-        typedef Aws::Utils::Outcome<ClassifyDocumentResult, Aws::Client::AWSError<ComprehendErrors>> ClassifyDocumentOutcome;
-        typedef Aws::Utils::Outcome<CreateDocumentClassifierResult, Aws::Client::AWSError<ComprehendErrors>> CreateDocumentClassifierOutcome;
-        typedef Aws::Utils::Outcome<CreateEndpointResult, Aws::Client::AWSError<ComprehendErrors>> CreateEndpointOutcome;
-        typedef Aws::Utils::Outcome<CreateEntityRecognizerResult, Aws::Client::AWSError<ComprehendErrors>> CreateEntityRecognizerOutcome;
-        typedef Aws::Utils::Outcome<DeleteDocumentClassifierResult, Aws::Client::AWSError<ComprehendErrors>> DeleteDocumentClassifierOutcome;
-        typedef Aws::Utils::Outcome<DeleteEndpointResult, Aws::Client::AWSError<ComprehendErrors>> DeleteEndpointOutcome;
-        typedef Aws::Utils::Outcome<DeleteEntityRecognizerResult, Aws::Client::AWSError<ComprehendErrors>> DeleteEntityRecognizerOutcome;
-        typedef Aws::Utils::Outcome<DescribeDocumentClassificationJobResult, Aws::Client::AWSError<ComprehendErrors>> DescribeDocumentClassificationJobOutcome;
-        typedef Aws::Utils::Outcome<DescribeDocumentClassifierResult, Aws::Client::AWSError<ComprehendErrors>> DescribeDocumentClassifierOutcome;
-        typedef Aws::Utils::Outcome<DescribeDominantLanguageDetectionJobResult, Aws::Client::AWSError<ComprehendErrors>> DescribeDominantLanguageDetectionJobOutcome;
-        typedef Aws::Utils::Outcome<DescribeEndpointResult, Aws::Client::AWSError<ComprehendErrors>> DescribeEndpointOutcome;
-        typedef Aws::Utils::Outcome<DescribeEntitiesDetectionJobResult, Aws::Client::AWSError<ComprehendErrors>> DescribeEntitiesDetectionJobOutcome;
-        typedef Aws::Utils::Outcome<DescribeEntityRecognizerResult, Aws::Client::AWSError<ComprehendErrors>> DescribeEntityRecognizerOutcome;
-        typedef Aws::Utils::Outcome<DescribeKeyPhrasesDetectionJobResult, Aws::Client::AWSError<ComprehendErrors>> DescribeKeyPhrasesDetectionJobOutcome;
-        typedef Aws::Utils::Outcome<DescribeSentimentDetectionJobResult, Aws::Client::AWSError<ComprehendErrors>> DescribeSentimentDetectionJobOutcome;
-        typedef Aws::Utils::Outcome<DescribeTopicsDetectionJobResult, Aws::Client::AWSError<ComprehendErrors>> DescribeTopicsDetectionJobOutcome;
-        typedef Aws::Utils::Outcome<DetectDominantLanguageResult, Aws::Client::AWSError<ComprehendErrors>> DetectDominantLanguageOutcome;
-        typedef Aws::Utils::Outcome<DetectEntitiesResult, Aws::Client::AWSError<ComprehendErrors>> DetectEntitiesOutcome;
-        typedef Aws::Utils::Outcome<DetectKeyPhrasesResult, Aws::Client::AWSError<ComprehendErrors>> DetectKeyPhrasesOutcome;
-        typedef Aws::Utils::Outcome<DetectSentimentResult, Aws::Client::AWSError<ComprehendErrors>> DetectSentimentOutcome;
-        typedef Aws::Utils::Outcome<DetectSyntaxResult, Aws::Client::AWSError<ComprehendErrors>> DetectSyntaxOutcome;
-        typedef Aws::Utils::Outcome<ListDocumentClassificationJobsResult, Aws::Client::AWSError<ComprehendErrors>> ListDocumentClassificationJobsOutcome;
-        typedef Aws::Utils::Outcome<ListDocumentClassifiersResult, Aws::Client::AWSError<ComprehendErrors>> ListDocumentClassifiersOutcome;
-        typedef Aws::Utils::Outcome<ListDominantLanguageDetectionJobsResult, Aws::Client::AWSError<ComprehendErrors>> ListDominantLanguageDetectionJobsOutcome;
-        typedef Aws::Utils::Outcome<ListEndpointsResult, Aws::Client::AWSError<ComprehendErrors>> ListEndpointsOutcome;
-        typedef Aws::Utils::Outcome<ListEntitiesDetectionJobsResult, Aws::Client::AWSError<ComprehendErrors>> ListEntitiesDetectionJobsOutcome;
-        typedef Aws::Utils::Outcome<ListEntityRecognizersResult, Aws::Client::AWSError<ComprehendErrors>> ListEntityRecognizersOutcome;
-        typedef Aws::Utils::Outcome<ListKeyPhrasesDetectionJobsResult, Aws::Client::AWSError<ComprehendErrors>> ListKeyPhrasesDetectionJobsOutcome;
-        typedef Aws::Utils::Outcome<ListSentimentDetectionJobsResult, Aws::Client::AWSError<ComprehendErrors>> ListSentimentDetectionJobsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<ComprehendErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListTopicsDetectionJobsResult, Aws::Client::AWSError<ComprehendErrors>> ListTopicsDetectionJobsOutcome;
-        typedef Aws::Utils::Outcome<StartDocumentClassificationJobResult, Aws::Client::AWSError<ComprehendErrors>> StartDocumentClassificationJobOutcome;
-        typedef Aws::Utils::Outcome<StartDominantLanguageDetectionJobResult, Aws::Client::AWSError<ComprehendErrors>> StartDominantLanguageDetectionJobOutcome;
-        typedef Aws::Utils::Outcome<StartEntitiesDetectionJobResult, Aws::Client::AWSError<ComprehendErrors>> StartEntitiesDetectionJobOutcome;
-        typedef Aws::Utils::Outcome<StartKeyPhrasesDetectionJobResult, Aws::Client::AWSError<ComprehendErrors>> StartKeyPhrasesDetectionJobOutcome;
-        typedef Aws::Utils::Outcome<StartSentimentDetectionJobResult, Aws::Client::AWSError<ComprehendErrors>> StartSentimentDetectionJobOutcome;
-        typedef Aws::Utils::Outcome<StartTopicsDetectionJobResult, Aws::Client::AWSError<ComprehendErrors>> StartTopicsDetectionJobOutcome;
-        typedef Aws::Utils::Outcome<StopDominantLanguageDetectionJobResult, Aws::Client::AWSError<ComprehendErrors>> StopDominantLanguageDetectionJobOutcome;
-        typedef Aws::Utils::Outcome<StopEntitiesDetectionJobResult, Aws::Client::AWSError<ComprehendErrors>> StopEntitiesDetectionJobOutcome;
-        typedef Aws::Utils::Outcome<StopKeyPhrasesDetectionJobResult, Aws::Client::AWSError<ComprehendErrors>> StopKeyPhrasesDetectionJobOutcome;
-        typedef Aws::Utils::Outcome<StopSentimentDetectionJobResult, Aws::Client::AWSError<ComprehendErrors>> StopSentimentDetectionJobOutcome;
-        typedef Aws::Utils::Outcome<StopTrainingDocumentClassifierResult, Aws::Client::AWSError<ComprehendErrors>> StopTrainingDocumentClassifierOutcome;
-        typedef Aws::Utils::Outcome<StopTrainingEntityRecognizerResult, Aws::Client::AWSError<ComprehendErrors>> StopTrainingEntityRecognizerOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<ComprehendErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<ComprehendErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateEndpointResult, Aws::Client::AWSError<ComprehendErrors>> UpdateEndpointOutcome;
+        typedef Aws::Utils::Outcome<BatchDetectDominantLanguageResult, ComprehendError> BatchDetectDominantLanguageOutcome;
+        typedef Aws::Utils::Outcome<BatchDetectEntitiesResult, ComprehendError> BatchDetectEntitiesOutcome;
+        typedef Aws::Utils::Outcome<BatchDetectKeyPhrasesResult, ComprehendError> BatchDetectKeyPhrasesOutcome;
+        typedef Aws::Utils::Outcome<BatchDetectSentimentResult, ComprehendError> BatchDetectSentimentOutcome;
+        typedef Aws::Utils::Outcome<BatchDetectSyntaxResult, ComprehendError> BatchDetectSyntaxOutcome;
+        typedef Aws::Utils::Outcome<ClassifyDocumentResult, ComprehendError> ClassifyDocumentOutcome;
+        typedef Aws::Utils::Outcome<CreateDocumentClassifierResult, ComprehendError> CreateDocumentClassifierOutcome;
+        typedef Aws::Utils::Outcome<CreateEndpointResult, ComprehendError> CreateEndpointOutcome;
+        typedef Aws::Utils::Outcome<CreateEntityRecognizerResult, ComprehendError> CreateEntityRecognizerOutcome;
+        typedef Aws::Utils::Outcome<DeleteDocumentClassifierResult, ComprehendError> DeleteDocumentClassifierOutcome;
+        typedef Aws::Utils::Outcome<DeleteEndpointResult, ComprehendError> DeleteEndpointOutcome;
+        typedef Aws::Utils::Outcome<DeleteEntityRecognizerResult, ComprehendError> DeleteEntityRecognizerOutcome;
+        typedef Aws::Utils::Outcome<DescribeDocumentClassificationJobResult, ComprehendError> DescribeDocumentClassificationJobOutcome;
+        typedef Aws::Utils::Outcome<DescribeDocumentClassifierResult, ComprehendError> DescribeDocumentClassifierOutcome;
+        typedef Aws::Utils::Outcome<DescribeDominantLanguageDetectionJobResult, ComprehendError> DescribeDominantLanguageDetectionJobOutcome;
+        typedef Aws::Utils::Outcome<DescribeEndpointResult, ComprehendError> DescribeEndpointOutcome;
+        typedef Aws::Utils::Outcome<DescribeEntitiesDetectionJobResult, ComprehendError> DescribeEntitiesDetectionJobOutcome;
+        typedef Aws::Utils::Outcome<DescribeEntityRecognizerResult, ComprehendError> DescribeEntityRecognizerOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventsDetectionJobResult, ComprehendError> DescribeEventsDetectionJobOutcome;
+        typedef Aws::Utils::Outcome<DescribeKeyPhrasesDetectionJobResult, ComprehendError> DescribeKeyPhrasesDetectionJobOutcome;
+        typedef Aws::Utils::Outcome<DescribePiiEntitiesDetectionJobResult, ComprehendError> DescribePiiEntitiesDetectionJobOutcome;
+        typedef Aws::Utils::Outcome<DescribeSentimentDetectionJobResult, ComprehendError> DescribeSentimentDetectionJobOutcome;
+        typedef Aws::Utils::Outcome<DescribeTopicsDetectionJobResult, ComprehendError> DescribeTopicsDetectionJobOutcome;
+        typedef Aws::Utils::Outcome<DetectDominantLanguageResult, ComprehendError> DetectDominantLanguageOutcome;
+        typedef Aws::Utils::Outcome<DetectEntitiesResult, ComprehendError> DetectEntitiesOutcome;
+        typedef Aws::Utils::Outcome<DetectKeyPhrasesResult, ComprehendError> DetectKeyPhrasesOutcome;
+        typedef Aws::Utils::Outcome<DetectPiiEntitiesResult, ComprehendError> DetectPiiEntitiesOutcome;
+        typedef Aws::Utils::Outcome<DetectSentimentResult, ComprehendError> DetectSentimentOutcome;
+        typedef Aws::Utils::Outcome<DetectSyntaxResult, ComprehendError> DetectSyntaxOutcome;
+        typedef Aws::Utils::Outcome<ListDocumentClassificationJobsResult, ComprehendError> ListDocumentClassificationJobsOutcome;
+        typedef Aws::Utils::Outcome<ListDocumentClassifiersResult, ComprehendError> ListDocumentClassifiersOutcome;
+        typedef Aws::Utils::Outcome<ListDominantLanguageDetectionJobsResult, ComprehendError> ListDominantLanguageDetectionJobsOutcome;
+        typedef Aws::Utils::Outcome<ListEndpointsResult, ComprehendError> ListEndpointsOutcome;
+        typedef Aws::Utils::Outcome<ListEntitiesDetectionJobsResult, ComprehendError> ListEntitiesDetectionJobsOutcome;
+        typedef Aws::Utils::Outcome<ListEntityRecognizersResult, ComprehendError> ListEntityRecognizersOutcome;
+        typedef Aws::Utils::Outcome<ListEventsDetectionJobsResult, ComprehendError> ListEventsDetectionJobsOutcome;
+        typedef Aws::Utils::Outcome<ListKeyPhrasesDetectionJobsResult, ComprehendError> ListKeyPhrasesDetectionJobsOutcome;
+        typedef Aws::Utils::Outcome<ListPiiEntitiesDetectionJobsResult, ComprehendError> ListPiiEntitiesDetectionJobsOutcome;
+        typedef Aws::Utils::Outcome<ListSentimentDetectionJobsResult, ComprehendError> ListSentimentDetectionJobsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, ComprehendError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListTopicsDetectionJobsResult, ComprehendError> ListTopicsDetectionJobsOutcome;
+        typedef Aws::Utils::Outcome<StartDocumentClassificationJobResult, ComprehendError> StartDocumentClassificationJobOutcome;
+        typedef Aws::Utils::Outcome<StartDominantLanguageDetectionJobResult, ComprehendError> StartDominantLanguageDetectionJobOutcome;
+        typedef Aws::Utils::Outcome<StartEntitiesDetectionJobResult, ComprehendError> StartEntitiesDetectionJobOutcome;
+        typedef Aws::Utils::Outcome<StartEventsDetectionJobResult, ComprehendError> StartEventsDetectionJobOutcome;
+        typedef Aws::Utils::Outcome<StartKeyPhrasesDetectionJobResult, ComprehendError> StartKeyPhrasesDetectionJobOutcome;
+        typedef Aws::Utils::Outcome<StartPiiEntitiesDetectionJobResult, ComprehendError> StartPiiEntitiesDetectionJobOutcome;
+        typedef Aws::Utils::Outcome<StartSentimentDetectionJobResult, ComprehendError> StartSentimentDetectionJobOutcome;
+        typedef Aws::Utils::Outcome<StartTopicsDetectionJobResult, ComprehendError> StartTopicsDetectionJobOutcome;
+        typedef Aws::Utils::Outcome<StopDominantLanguageDetectionJobResult, ComprehendError> StopDominantLanguageDetectionJobOutcome;
+        typedef Aws::Utils::Outcome<StopEntitiesDetectionJobResult, ComprehendError> StopEntitiesDetectionJobOutcome;
+        typedef Aws::Utils::Outcome<StopEventsDetectionJobResult, ComprehendError> StopEventsDetectionJobOutcome;
+        typedef Aws::Utils::Outcome<StopKeyPhrasesDetectionJobResult, ComprehendError> StopKeyPhrasesDetectionJobOutcome;
+        typedef Aws::Utils::Outcome<StopPiiEntitiesDetectionJobResult, ComprehendError> StopPiiEntitiesDetectionJobOutcome;
+        typedef Aws::Utils::Outcome<StopSentimentDetectionJobResult, ComprehendError> StopSentimentDetectionJobOutcome;
+        typedef Aws::Utils::Outcome<StopTrainingDocumentClassifierResult, ComprehendError> StopTrainingDocumentClassifierOutcome;
+        typedef Aws::Utils::Outcome<StopTrainingEntityRecognizerResult, ComprehendError> StopTrainingEntityRecognizerOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, ComprehendError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, ComprehendError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateEndpointResult, ComprehendError> UpdateEndpointOutcome;
 
         typedef std::future<BatchDetectDominantLanguageOutcome> BatchDetectDominantLanguageOutcomeCallable;
         typedef std::future<BatchDetectEntitiesOutcome> BatchDetectEntitiesOutcomeCallable;
@@ -233,12 +250,15 @@ namespace Model
         typedef std::future<DescribeEndpointOutcome> DescribeEndpointOutcomeCallable;
         typedef std::future<DescribeEntitiesDetectionJobOutcome> DescribeEntitiesDetectionJobOutcomeCallable;
         typedef std::future<DescribeEntityRecognizerOutcome> DescribeEntityRecognizerOutcomeCallable;
+        typedef std::future<DescribeEventsDetectionJobOutcome> DescribeEventsDetectionJobOutcomeCallable;
         typedef std::future<DescribeKeyPhrasesDetectionJobOutcome> DescribeKeyPhrasesDetectionJobOutcomeCallable;
+        typedef std::future<DescribePiiEntitiesDetectionJobOutcome> DescribePiiEntitiesDetectionJobOutcomeCallable;
         typedef std::future<DescribeSentimentDetectionJobOutcome> DescribeSentimentDetectionJobOutcomeCallable;
         typedef std::future<DescribeTopicsDetectionJobOutcome> DescribeTopicsDetectionJobOutcomeCallable;
         typedef std::future<DetectDominantLanguageOutcome> DetectDominantLanguageOutcomeCallable;
         typedef std::future<DetectEntitiesOutcome> DetectEntitiesOutcomeCallable;
         typedef std::future<DetectKeyPhrasesOutcome> DetectKeyPhrasesOutcomeCallable;
+        typedef std::future<DetectPiiEntitiesOutcome> DetectPiiEntitiesOutcomeCallable;
         typedef std::future<DetectSentimentOutcome> DetectSentimentOutcomeCallable;
         typedef std::future<DetectSyntaxOutcome> DetectSyntaxOutcomeCallable;
         typedef std::future<ListDocumentClassificationJobsOutcome> ListDocumentClassificationJobsOutcomeCallable;
@@ -247,19 +267,25 @@ namespace Model
         typedef std::future<ListEndpointsOutcome> ListEndpointsOutcomeCallable;
         typedef std::future<ListEntitiesDetectionJobsOutcome> ListEntitiesDetectionJobsOutcomeCallable;
         typedef std::future<ListEntityRecognizersOutcome> ListEntityRecognizersOutcomeCallable;
+        typedef std::future<ListEventsDetectionJobsOutcome> ListEventsDetectionJobsOutcomeCallable;
         typedef std::future<ListKeyPhrasesDetectionJobsOutcome> ListKeyPhrasesDetectionJobsOutcomeCallable;
+        typedef std::future<ListPiiEntitiesDetectionJobsOutcome> ListPiiEntitiesDetectionJobsOutcomeCallable;
         typedef std::future<ListSentimentDetectionJobsOutcome> ListSentimentDetectionJobsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListTopicsDetectionJobsOutcome> ListTopicsDetectionJobsOutcomeCallable;
         typedef std::future<StartDocumentClassificationJobOutcome> StartDocumentClassificationJobOutcomeCallable;
         typedef std::future<StartDominantLanguageDetectionJobOutcome> StartDominantLanguageDetectionJobOutcomeCallable;
         typedef std::future<StartEntitiesDetectionJobOutcome> StartEntitiesDetectionJobOutcomeCallable;
+        typedef std::future<StartEventsDetectionJobOutcome> StartEventsDetectionJobOutcomeCallable;
         typedef std::future<StartKeyPhrasesDetectionJobOutcome> StartKeyPhrasesDetectionJobOutcomeCallable;
+        typedef std::future<StartPiiEntitiesDetectionJobOutcome> StartPiiEntitiesDetectionJobOutcomeCallable;
         typedef std::future<StartSentimentDetectionJobOutcome> StartSentimentDetectionJobOutcomeCallable;
         typedef std::future<StartTopicsDetectionJobOutcome> StartTopicsDetectionJobOutcomeCallable;
         typedef std::future<StopDominantLanguageDetectionJobOutcome> StopDominantLanguageDetectionJobOutcomeCallable;
         typedef std::future<StopEntitiesDetectionJobOutcome> StopEntitiesDetectionJobOutcomeCallable;
+        typedef std::future<StopEventsDetectionJobOutcome> StopEventsDetectionJobOutcomeCallable;
         typedef std::future<StopKeyPhrasesDetectionJobOutcome> StopKeyPhrasesDetectionJobOutcomeCallable;
+        typedef std::future<StopPiiEntitiesDetectionJobOutcome> StopPiiEntitiesDetectionJobOutcomeCallable;
         typedef std::future<StopSentimentDetectionJobOutcome> StopSentimentDetectionJobOutcomeCallable;
         typedef std::future<StopTrainingDocumentClassifierOutcome> StopTrainingDocumentClassifierOutcomeCallable;
         typedef std::future<StopTrainingEntityRecognizerOutcome> StopTrainingEntityRecognizerOutcomeCallable;
@@ -288,12 +314,15 @@ namespace Model
     typedef std::function<void(const ComprehendClient*, const Model::DescribeEndpointRequest&, const Model::DescribeEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::DescribeEntitiesDetectionJobRequest&, const Model::DescribeEntitiesDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEntitiesDetectionJobResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::DescribeEntityRecognizerRequest&, const Model::DescribeEntityRecognizerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEntityRecognizerResponseReceivedHandler;
+    typedef std::function<void(const ComprehendClient*, const Model::DescribeEventsDetectionJobRequest&, const Model::DescribeEventsDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventsDetectionJobResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::DescribeKeyPhrasesDetectionJobRequest&, const Model::DescribeKeyPhrasesDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeKeyPhrasesDetectionJobResponseReceivedHandler;
+    typedef std::function<void(const ComprehendClient*, const Model::DescribePiiEntitiesDetectionJobRequest&, const Model::DescribePiiEntitiesDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePiiEntitiesDetectionJobResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::DescribeSentimentDetectionJobRequest&, const Model::DescribeSentimentDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSentimentDetectionJobResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::DescribeTopicsDetectionJobRequest&, const Model::DescribeTopicsDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTopicsDetectionJobResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::DetectDominantLanguageRequest&, const Model::DetectDominantLanguageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectDominantLanguageResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::DetectEntitiesRequest&, const Model::DetectEntitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectEntitiesResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::DetectKeyPhrasesRequest&, const Model::DetectKeyPhrasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectKeyPhrasesResponseReceivedHandler;
+    typedef std::function<void(const ComprehendClient*, const Model::DetectPiiEntitiesRequest&, const Model::DetectPiiEntitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectPiiEntitiesResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::DetectSentimentRequest&, const Model::DetectSentimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectSentimentResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::DetectSyntaxRequest&, const Model::DetectSyntaxOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectSyntaxResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::ListDocumentClassificationJobsRequest&, const Model::ListDocumentClassificationJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDocumentClassificationJobsResponseReceivedHandler;
@@ -302,19 +331,25 @@ namespace Model
     typedef std::function<void(const ComprehendClient*, const Model::ListEndpointsRequest&, const Model::ListEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEndpointsResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::ListEntitiesDetectionJobsRequest&, const Model::ListEntitiesDetectionJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEntitiesDetectionJobsResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::ListEntityRecognizersRequest&, const Model::ListEntityRecognizersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEntityRecognizersResponseReceivedHandler;
+    typedef std::function<void(const ComprehendClient*, const Model::ListEventsDetectionJobsRequest&, const Model::ListEventsDetectionJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventsDetectionJobsResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::ListKeyPhrasesDetectionJobsRequest&, const Model::ListKeyPhrasesDetectionJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListKeyPhrasesDetectionJobsResponseReceivedHandler;
+    typedef std::function<void(const ComprehendClient*, const Model::ListPiiEntitiesDetectionJobsRequest&, const Model::ListPiiEntitiesDetectionJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPiiEntitiesDetectionJobsResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::ListSentimentDetectionJobsRequest&, const Model::ListSentimentDetectionJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSentimentDetectionJobsResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::ListTopicsDetectionJobsRequest&, const Model::ListTopicsDetectionJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTopicsDetectionJobsResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::StartDocumentClassificationJobRequest&, const Model::StartDocumentClassificationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDocumentClassificationJobResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::StartDominantLanguageDetectionJobRequest&, const Model::StartDominantLanguageDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDominantLanguageDetectionJobResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::StartEntitiesDetectionJobRequest&, const Model::StartEntitiesDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartEntitiesDetectionJobResponseReceivedHandler;
+    typedef std::function<void(const ComprehendClient*, const Model::StartEventsDetectionJobRequest&, const Model::StartEventsDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartEventsDetectionJobResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::StartKeyPhrasesDetectionJobRequest&, const Model::StartKeyPhrasesDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartKeyPhrasesDetectionJobResponseReceivedHandler;
+    typedef std::function<void(const ComprehendClient*, const Model::StartPiiEntitiesDetectionJobRequest&, const Model::StartPiiEntitiesDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartPiiEntitiesDetectionJobResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::StartSentimentDetectionJobRequest&, const Model::StartSentimentDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSentimentDetectionJobResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::StartTopicsDetectionJobRequest&, const Model::StartTopicsDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartTopicsDetectionJobResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::StopDominantLanguageDetectionJobRequest&, const Model::StopDominantLanguageDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDominantLanguageDetectionJobResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::StopEntitiesDetectionJobRequest&, const Model::StopEntitiesDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopEntitiesDetectionJobResponseReceivedHandler;
+    typedef std::function<void(const ComprehendClient*, const Model::StopEventsDetectionJobRequest&, const Model::StopEventsDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopEventsDetectionJobResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::StopKeyPhrasesDetectionJobRequest&, const Model::StopKeyPhrasesDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopKeyPhrasesDetectionJobResponseReceivedHandler;
+    typedef std::function<void(const ComprehendClient*, const Model::StopPiiEntitiesDetectionJobRequest&, const Model::StopPiiEntitiesDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopPiiEntitiesDetectionJobResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::StopSentimentDetectionJobRequest&, const Model::StopSentimentDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopSentimentDetectionJobResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::StopTrainingDocumentClassifierRequest&, const Model::StopTrainingDocumentClassifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopTrainingDocumentClassifierResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::StopTrainingEntityRecognizerRequest&, const Model::StopTrainingEntityRecognizerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopTrainingEntityRecognizerResponseReceivedHandler;
@@ -353,8 +388,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~ComprehendClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "Comprehend"; }
 
 
         /**
@@ -545,11 +578,11 @@ namespace Model
 
         /**
          * <p>Creates a new document classifier that you can use to categorize documents.
-         * To create a classifier you provide a set of training documents that labeled with
-         * the categories that you want to use. After the classifier is trained you can use
-         * it to categorize a set of labeled documents into the categories. For more
-         * information, see <a>how-document-classification</a>.</p><p><h3>See Also:</h3>  
-         * <a
+         * To create a classifier, you provide a set of training documents that labeled
+         * with the categories that you want to use. After the classifier is trained you
+         * can use it to categorize a set of labeled documents into the categories. For
+         * more information, see <a>how-document-classification</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDocumentClassifier">AWS
          * API Reference</a></p>
          */
@@ -557,11 +590,11 @@ namespace Model
 
         /**
          * <p>Creates a new document classifier that you can use to categorize documents.
-         * To create a classifier you provide a set of training documents that labeled with
-         * the categories that you want to use. After the classifier is trained you can use
-         * it to categorize a set of labeled documents into the categories. For more
-         * information, see <a>how-document-classification</a>.</p><p><h3>See Also:</h3>  
-         * <a
+         * To create a classifier, you provide a set of training documents that labeled
+         * with the categories that you want to use. After the classifier is trained you
+         * can use it to categorize a set of labeled documents into the categories. For
+         * more information, see <a>how-document-classification</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDocumentClassifier">AWS
          * API Reference</a></p>
          *
@@ -571,11 +604,11 @@ namespace Model
 
         /**
          * <p>Creates a new document classifier that you can use to categorize documents.
-         * To create a classifier you provide a set of training documents that labeled with
-         * the categories that you want to use. After the classifier is trained you can use
-         * it to categorize a set of labeled documents into the categories. For more
-         * information, see <a>how-document-classification</a>.</p><p><h3>See Also:</h3>  
-         * <a
+         * To create a classifier, you provide a set of training documents that labeled
+         * with the categories that you want to use. After the classifier is trained you
+         * can use it to categorize a set of labeled documents into the categories. For
+         * more information, see <a>how-document-classification</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDocumentClassifier">AWS
          * API Reference</a></p>
          *
@@ -937,6 +970,34 @@ namespace Model
         virtual void DescribeEntityRecognizerAsync(const Model::DescribeEntityRecognizerRequest& request, const DescribeEntityRecognizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets the status and details of an events detection job.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEventsDetectionJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeEventsDetectionJobOutcome DescribeEventsDetectionJob(const Model::DescribeEventsDetectionJobRequest& request) const;
+
+        /**
+         * <p>Gets the status and details of an events detection job.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEventsDetectionJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeEventsDetectionJobOutcomeCallable DescribeEventsDetectionJobCallable(const Model::DescribeEventsDetectionJobRequest& request) const;
+
+        /**
+         * <p>Gets the status and details of an events detection job.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEventsDetectionJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeEventsDetectionJobAsync(const Model::DescribeEventsDetectionJobRequest& request, const DescribeEventsDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets the properties associated with a key phrases detection job. Use this
          * operation to get the status of a detection job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeKeyPhrasesDetectionJob">AWS
@@ -963,6 +1024,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeKeyPhrasesDetectionJobAsync(const Model::DescribeKeyPhrasesDetectionJobRequest& request, const DescribeKeyPhrasesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the properties associated with a PII entities detection job. For
+         * example, you can use this operation to get the job status.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribePiiEntitiesDetectionJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribePiiEntitiesDetectionJobOutcome DescribePiiEntitiesDetectionJob(const Model::DescribePiiEntitiesDetectionJobRequest& request) const;
+
+        /**
+         * <p>Gets the properties associated with a PII entities detection job. For
+         * example, you can use this operation to get the job status.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribePiiEntitiesDetectionJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribePiiEntitiesDetectionJobOutcomeCallable DescribePiiEntitiesDetectionJobCallable(const Model::DescribePiiEntitiesDetectionJobRequest& request) const;
+
+        /**
+         * <p>Gets the properties associated with a PII entities detection job. For
+         * example, you can use this operation to get the job status.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribePiiEntitiesDetectionJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribePiiEntitiesDetectionJobAsync(const Model::DescribePiiEntitiesDetectionJobRequest& request, const DescribePiiEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the properties associated with a sentiment detection job. Use this
@@ -1112,6 +1204,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DetectKeyPhrasesAsync(const Model::DetectKeyPhrasesRequest& request, const DetectKeyPhrasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Inspects the input text for entities that contain personally identifiable
+         * information (PII) and returns information about them.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectPiiEntities">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DetectPiiEntitiesOutcome DetectPiiEntities(const Model::DetectPiiEntitiesRequest& request) const;
+
+        /**
+         * <p>Inspects the input text for entities that contain personally identifiable
+         * information (PII) and returns information about them.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectPiiEntities">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DetectPiiEntitiesOutcomeCallable DetectPiiEntitiesCallable(const Model::DetectPiiEntitiesRequest& request) const;
+
+        /**
+         * <p>Inspects the input text for entities that contain personally identifiable
+         * information (PII) and returns information about them.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectPiiEntities">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DetectPiiEntitiesAsync(const Model::DetectPiiEntitiesRequest& request, const DetectPiiEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Inspects text and returns an inference of the prevailing sentiment
@@ -1356,6 +1479,34 @@ namespace Model
         virtual void ListEntityRecognizersAsync(const Model::ListEntityRecognizersRequest& request, const ListEntityRecognizersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets a list of the events detection jobs that you have
+         * submitted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEventsDetectionJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListEventsDetectionJobsOutcome ListEventsDetectionJobs(const Model::ListEventsDetectionJobsRequest& request) const;
+
+        /**
+         * <p>Gets a list of the events detection jobs that you have
+         * submitted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEventsDetectionJobs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListEventsDetectionJobsOutcomeCallable ListEventsDetectionJobsCallable(const Model::ListEventsDetectionJobsRequest& request) const;
+
+        /**
+         * <p>Gets a list of the events detection jobs that you have
+         * submitted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEventsDetectionJobs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListEventsDetectionJobsAsync(const Model::ListEventsDetectionJobsRequest& request, const ListEventsDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Get a list of key phrase detection jobs that you have
          * submitted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListKeyPhrasesDetectionJobs">AWS
@@ -1382,6 +1533,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListKeyPhrasesDetectionJobsAsync(const Model::ListKeyPhrasesDetectionJobsRequest& request, const ListKeyPhrasesDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets a list of the PII entity detection jobs that you have
+         * submitted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListPiiEntitiesDetectionJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListPiiEntitiesDetectionJobsOutcome ListPiiEntitiesDetectionJobs(const Model::ListPiiEntitiesDetectionJobsRequest& request) const;
+
+        /**
+         * <p>Gets a list of the PII entity detection jobs that you have
+         * submitted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListPiiEntitiesDetectionJobs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListPiiEntitiesDetectionJobsOutcomeCallable ListPiiEntitiesDetectionJobsCallable(const Model::ListPiiEntitiesDetectionJobsRequest& request) const;
+
+        /**
+         * <p>Gets a list of the PII entity detection jobs that you have
+         * submitted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListPiiEntitiesDetectionJobs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListPiiEntitiesDetectionJobsAsync(const Model::ListPiiEntitiesDetectionJobsRequest& request, const ListPiiEntitiesDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of sentiment detection jobs that you have
@@ -1567,6 +1746,34 @@ namespace Model
         virtual void StartEntitiesDetectionJobAsync(const Model::StartEntitiesDetectionJobRequest& request, const StartEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Starts an asynchronous event detection job for a collection of
+         * documents.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartEventsDetectionJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartEventsDetectionJobOutcome StartEventsDetectionJob(const Model::StartEventsDetectionJobRequest& request) const;
+
+        /**
+         * <p>Starts an asynchronous event detection job for a collection of
+         * documents.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartEventsDetectionJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartEventsDetectionJobOutcomeCallable StartEventsDetectionJobCallable(const Model::StartEventsDetectionJobRequest& request) const;
+
+        /**
+         * <p>Starts an asynchronous event detection job for a collection of
+         * documents.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartEventsDetectionJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartEventsDetectionJobAsync(const Model::StartEventsDetectionJobRequest& request, const StartEventsDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Starts an asynchronous key phrase detection job for a collection of
          * documents. Use the operation to track the status of a job.</p><p><h3>See
          * Also:</h3>   <a
@@ -1596,6 +1803,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartKeyPhrasesDetectionJobAsync(const Model::StartKeyPhrasesDetectionJobRequest& request, const StartKeyPhrasesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Starts an asynchronous PII entity detection job for a collection of
+         * documents.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartPiiEntitiesDetectionJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartPiiEntitiesDetectionJobOutcome StartPiiEntitiesDetectionJob(const Model::StartPiiEntitiesDetectionJobRequest& request) const;
+
+        /**
+         * <p>Starts an asynchronous PII entity detection job for a collection of
+         * documents.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartPiiEntitiesDetectionJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartPiiEntitiesDetectionJobOutcomeCallable StartPiiEntitiesDetectionJobCallable(const Model::StartPiiEntitiesDetectionJobRequest& request) const;
+
+        /**
+         * <p>Starts an asynchronous PII entity detection job for a collection of
+         * documents.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartPiiEntitiesDetectionJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartPiiEntitiesDetectionJobAsync(const Model::StartPiiEntitiesDetectionJobRequest& request, const StartPiiEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts an asynchronous sentiment detection job for a collection of documents.
@@ -1761,6 +1996,31 @@ namespace Model
         virtual void StopEntitiesDetectionJobAsync(const Model::StopEntitiesDetectionJobRequest& request, const StopEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Stops an events detection job in progress.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopEventsDetectionJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopEventsDetectionJobOutcome StopEventsDetectionJob(const Model::StopEventsDetectionJobRequest& request) const;
+
+        /**
+         * <p>Stops an events detection job in progress.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopEventsDetectionJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopEventsDetectionJobOutcomeCallable StopEventsDetectionJobCallable(const Model::StopEventsDetectionJobRequest& request) const;
+
+        /**
+         * <p>Stops an events detection job in progress.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopEventsDetectionJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopEventsDetectionJobAsync(const Model::StopEventsDetectionJobRequest& request, const StopEventsDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Stops a key phrases detection job in progress.</p> <p>If the job state is
          * <code>IN_PROGRESS</code> the job is marked for termination and put into the
          * <code>STOP_REQUESTED</code> state. If the job completes before it can be
@@ -1811,6 +2071,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StopKeyPhrasesDetectionJobAsync(const Model::StopKeyPhrasesDetectionJobRequest& request, const StopKeyPhrasesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Stops a PII entities detection job in progress.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopPiiEntitiesDetectionJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopPiiEntitiesDetectionJobOutcome StopPiiEntitiesDetectionJob(const Model::StopPiiEntitiesDetectionJobRequest& request) const;
+
+        /**
+         * <p>Stops a PII entities detection job in progress.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopPiiEntitiesDetectionJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopPiiEntitiesDetectionJobOutcomeCallable StopPiiEntitiesDetectionJobCallable(const Model::StopPiiEntitiesDetectionJobRequest& request) const;
+
+        /**
+         * <p>Stops a PII entities detection job in progress.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopPiiEntitiesDetectionJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopPiiEntitiesDetectionJobAsync(const Model::StopPiiEntitiesDetectionJobRequest& request, const StopPiiEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a sentiment detection job in progress.</p> <p>If the job state is
@@ -2062,12 +2347,15 @@ namespace Model
         void DescribeEndpointAsyncHelper(const Model::DescribeEndpointRequest& request, const DescribeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEntitiesDetectionJobAsyncHelper(const Model::DescribeEntitiesDetectionJobRequest& request, const DescribeEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEntityRecognizerAsyncHelper(const Model::DescribeEntityRecognizerRequest& request, const DescribeEntityRecognizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeEventsDetectionJobAsyncHelper(const Model::DescribeEventsDetectionJobRequest& request, const DescribeEventsDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeKeyPhrasesDetectionJobAsyncHelper(const Model::DescribeKeyPhrasesDetectionJobRequest& request, const DescribeKeyPhrasesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribePiiEntitiesDetectionJobAsyncHelper(const Model::DescribePiiEntitiesDetectionJobRequest& request, const DescribePiiEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSentimentDetectionJobAsyncHelper(const Model::DescribeSentimentDetectionJobRequest& request, const DescribeSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTopicsDetectionJobAsyncHelper(const Model::DescribeTopicsDetectionJobRequest& request, const DescribeTopicsDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetectDominantLanguageAsyncHelper(const Model::DetectDominantLanguageRequest& request, const DetectDominantLanguageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetectEntitiesAsyncHelper(const Model::DetectEntitiesRequest& request, const DetectEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetectKeyPhrasesAsyncHelper(const Model::DetectKeyPhrasesRequest& request, const DetectKeyPhrasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DetectPiiEntitiesAsyncHelper(const Model::DetectPiiEntitiesRequest& request, const DetectPiiEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetectSentimentAsyncHelper(const Model::DetectSentimentRequest& request, const DetectSentimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetectSyntaxAsyncHelper(const Model::DetectSyntaxRequest& request, const DetectSyntaxResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDocumentClassificationJobsAsyncHelper(const Model::ListDocumentClassificationJobsRequest& request, const ListDocumentClassificationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2076,19 +2364,25 @@ namespace Model
         void ListEndpointsAsyncHelper(const Model::ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEntitiesDetectionJobsAsyncHelper(const Model::ListEntitiesDetectionJobsRequest& request, const ListEntitiesDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEntityRecognizersAsyncHelper(const Model::ListEntityRecognizersRequest& request, const ListEntityRecognizersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListEventsDetectionJobsAsyncHelper(const Model::ListEventsDetectionJobsRequest& request, const ListEventsDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListKeyPhrasesDetectionJobsAsyncHelper(const Model::ListKeyPhrasesDetectionJobsRequest& request, const ListKeyPhrasesDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListPiiEntitiesDetectionJobsAsyncHelper(const Model::ListPiiEntitiesDetectionJobsRequest& request, const ListPiiEntitiesDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSentimentDetectionJobsAsyncHelper(const Model::ListSentimentDetectionJobsRequest& request, const ListSentimentDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTopicsDetectionJobsAsyncHelper(const Model::ListTopicsDetectionJobsRequest& request, const ListTopicsDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartDocumentClassificationJobAsyncHelper(const Model::StartDocumentClassificationJobRequest& request, const StartDocumentClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartDominantLanguageDetectionJobAsyncHelper(const Model::StartDominantLanguageDetectionJobRequest& request, const StartDominantLanguageDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartEntitiesDetectionJobAsyncHelper(const Model::StartEntitiesDetectionJobRequest& request, const StartEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartEventsDetectionJobAsyncHelper(const Model::StartEventsDetectionJobRequest& request, const StartEventsDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartKeyPhrasesDetectionJobAsyncHelper(const Model::StartKeyPhrasesDetectionJobRequest& request, const StartKeyPhrasesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartPiiEntitiesDetectionJobAsyncHelper(const Model::StartPiiEntitiesDetectionJobRequest& request, const StartPiiEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartSentimentDetectionJobAsyncHelper(const Model::StartSentimentDetectionJobRequest& request, const StartSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartTopicsDetectionJobAsyncHelper(const Model::StartTopicsDetectionJobRequest& request, const StartTopicsDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopDominantLanguageDetectionJobAsyncHelper(const Model::StopDominantLanguageDetectionJobRequest& request, const StopDominantLanguageDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopEntitiesDetectionJobAsyncHelper(const Model::StopEntitiesDetectionJobRequest& request, const StopEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopEventsDetectionJobAsyncHelper(const Model::StopEventsDetectionJobRequest& request, const StopEventsDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopKeyPhrasesDetectionJobAsyncHelper(const Model::StopKeyPhrasesDetectionJobRequest& request, const StopKeyPhrasesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopPiiEntitiesDetectionJobAsyncHelper(const Model::StopPiiEntitiesDetectionJobRequest& request, const StopPiiEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopSentimentDetectionJobAsyncHelper(const Model::StopSentimentDetectionJobRequest& request, const StopSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopTrainingDocumentClassifierAsyncHelper(const Model::StopTrainingDocumentClassifierRequest& request, const StopTrainingDocumentClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopTrainingEntityRecognizerAsyncHelper(const Model::StopTrainingEntityRecognizerRequest& request, const StopTrainingEntityRecognizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

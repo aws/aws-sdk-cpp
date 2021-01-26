@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/securityhub/model/NetworkDirection.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/securityhub/model/PortRange.h>
 #include <utility>
 
 namespace Aws
@@ -119,6 +110,37 @@ namespace Model
      * <p>The protocol of network-related information about a finding.</p>
      */
     inline Network& WithProtocol(const char* value) { SetProtocol(value); return *this;}
+
+
+    /**
+     * <p>The range of open ports that is present on the network.</p>
+     */
+    inline const PortRange& GetOpenPortRange() const{ return m_openPortRange; }
+
+    /**
+     * <p>The range of open ports that is present on the network.</p>
+     */
+    inline bool OpenPortRangeHasBeenSet() const { return m_openPortRangeHasBeenSet; }
+
+    /**
+     * <p>The range of open ports that is present on the network.</p>
+     */
+    inline void SetOpenPortRange(const PortRange& value) { m_openPortRangeHasBeenSet = true; m_openPortRange = value; }
+
+    /**
+     * <p>The range of open ports that is present on the network.</p>
+     */
+    inline void SetOpenPortRange(PortRange&& value) { m_openPortRangeHasBeenSet = true; m_openPortRange = std::move(value); }
+
+    /**
+     * <p>The range of open ports that is present on the network.</p>
+     */
+    inline Network& WithOpenPortRange(const PortRange& value) { SetOpenPortRange(value); return *this;}
+
+    /**
+     * <p>The range of open ports that is present on the network.</p>
+     */
+    inline Network& WithOpenPortRange(PortRange&& value) { SetOpenPortRange(std::move(value)); return *this;}
 
 
     /**
@@ -480,6 +502,9 @@ namespace Model
 
     Aws::String m_protocol;
     bool m_protocolHasBeenSet;
+
+    PortRange m_openPortRange;
+    bool m_openPortRangeHasBeenSet;
 
     Aws::String m_sourceIpV4;
     bool m_sourceIpV4HasBeenSet;

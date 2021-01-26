@@ -22,7 +22,7 @@ namespace ${metadata.classNamePrefix}Endpoint
    * @param useDualStack Using dual-stack endpoint if true
    * @param USEast1UseRegionalEndpoint Using global endpoint for us-east-1 if the value is LEGACY, or using regional endpoint if it's REGIONAL
    */
-  AWS_S3_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false, bool USEast1UseRegionalEndpoint = false);
+  ${exportValue} Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false, bool USEast1UseRegionalEndpoint = false);
 
   /**
    * Compute endpoint based on Access Point ARN.
@@ -30,7 +30,14 @@ namespace ${metadata.classNamePrefix}Endpoint
    * @param regionNameOverride Override region name in ARN if it's not empty
    * @param useDualStack Using dual-stack endpoint if true
    */
-  AWS_S3_API Aws::String ForAccessPointArn(const ${metadata.classNamePrefix}ARN& arn, const Aws::String& regionNameOverride = "", bool useDualStack = false);
+  ${exportValue} Aws::String ForAccessPointArn(const ${metadata.classNamePrefix}ARN& arn, const Aws::String& regionNameOverride = "", bool useDualStack = false);
+
+  /**
+   * Compute endpoint based on Outposts ARN.
+   * @param arn The S3 Outposts ARN
+   * @param regionNameOverride Override region name in ARN if it's not empty
+   */
+  ${exportValue} Aws::String ForOutpostsArn(const ${metadata.classNamePrefix}ARN& arn, const Aws::String& regionNameOverride = "");
 } // namespace ${metadata.classNamePrefix}Endpoint
 } // namespace ${serviceNamespace}
 } // namespace ${rootNamespace}

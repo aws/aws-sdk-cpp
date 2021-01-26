@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/application-insights/model/Tier.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -30,17 +20,28 @@ namespace Aws
       namespace TierMapper
       {
 
+        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
         static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
         static const int DOT_NET_CORE_HASH = HashingUtils::HashString("DOT_NET_CORE");
         static const int DOT_NET_WORKER_HASH = HashingUtils::HashString("DOT_NET_WORKER");
+        static const int DOT_NET_WEB_TIER_HASH = HashingUtils::HashString("DOT_NET_WEB_TIER");
         static const int DOT_NET_WEB_HASH = HashingUtils::HashString("DOT_NET_WEB");
         static const int SQL_SERVER_HASH = HashingUtils::HashString("SQL_SERVER");
+        static const int SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP_HASH = HashingUtils::HashString("SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP");
+        static const int MYSQL_HASH = HashingUtils::HashString("MYSQL");
+        static const int POSTGRESQL_HASH = HashingUtils::HashString("POSTGRESQL");
+        static const int JAVA_JMX_HASH = HashingUtils::HashString("JAVA_JMX");
+        static const int ORACLE_HASH = HashingUtils::HashString("ORACLE");
 
 
         Tier GetTierForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == DEFAULT_HASH)
+          if (hashCode == CUSTOM_HASH)
+          {
+            return Tier::CUSTOM;
+          }
+          else if (hashCode == DEFAULT_HASH)
           {
             return Tier::DEFAULT;
           }
@@ -52,6 +53,10 @@ namespace Aws
           {
             return Tier::DOT_NET_WORKER;
           }
+          else if (hashCode == DOT_NET_WEB_TIER_HASH)
+          {
+            return Tier::DOT_NET_WEB_TIER;
+          }
           else if (hashCode == DOT_NET_WEB_HASH)
           {
             return Tier::DOT_NET_WEB;
@@ -59,6 +64,26 @@ namespace Aws
           else if (hashCode == SQL_SERVER_HASH)
           {
             return Tier::SQL_SERVER;
+          }
+          else if (hashCode == SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP_HASH)
+          {
+            return Tier::SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP;
+          }
+          else if (hashCode == MYSQL_HASH)
+          {
+            return Tier::MYSQL;
+          }
+          else if (hashCode == POSTGRESQL_HASH)
+          {
+            return Tier::POSTGRESQL;
+          }
+          else if (hashCode == JAVA_JMX_HASH)
+          {
+            return Tier::JAVA_JMX;
+          }
+          else if (hashCode == ORACLE_HASH)
+          {
+            return Tier::ORACLE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -74,16 +99,30 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Tier::CUSTOM:
+            return "CUSTOM";
           case Tier::DEFAULT:
             return "DEFAULT";
           case Tier::DOT_NET_CORE:
             return "DOT_NET_CORE";
           case Tier::DOT_NET_WORKER:
             return "DOT_NET_WORKER";
+          case Tier::DOT_NET_WEB_TIER:
+            return "DOT_NET_WEB_TIER";
           case Tier::DOT_NET_WEB:
             return "DOT_NET_WEB";
           case Tier::SQL_SERVER:
             return "SQL_SERVER";
+          case Tier::SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP:
+            return "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP";
+          case Tier::MYSQL:
+            return "MYSQL";
+          case Tier::POSTGRESQL:
+            return "POSTGRESQL";
+          case Tier::JAVA_JMX:
+            return "JAVA_JMX";
+          case Tier::ORACLE:
+            return "ORACLE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

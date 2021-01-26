@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/NetworkInterfaceAttachment.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -37,6 +27,8 @@ NetworkInterfaceAttachment::NetworkInterfaceAttachment() :
     m_deleteOnTerminationHasBeenSet(false),
     m_deviceIndex(0),
     m_deviceIndexHasBeenSet(false),
+    m_networkCardIndex(0),
+    m_networkCardIndexHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_instanceOwnerIdHasBeenSet(false),
     m_status(AttachmentStatus::NOT_SET),
@@ -51,6 +43,8 @@ NetworkInterfaceAttachment::NetworkInterfaceAttachment(const XmlNode& xmlNode) :
     m_deleteOnTerminationHasBeenSet(false),
     m_deviceIndex(0),
     m_deviceIndexHasBeenSet(false),
+    m_networkCardIndex(0),
+    m_networkCardIndexHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_instanceOwnerIdHasBeenSet(false),
     m_status(AttachmentStatus::NOT_SET),
@@ -88,6 +82,12 @@ NetworkInterfaceAttachment& NetworkInterfaceAttachment::operator =(const XmlNode
     {
       m_deviceIndex = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deviceIndexNode.GetText()).c_str()).c_str());
       m_deviceIndexHasBeenSet = true;
+    }
+    XmlNode networkCardIndexNode = resultNode.FirstChild("networkCardIndex");
+    if(!networkCardIndexNode.IsNull())
+    {
+      m_networkCardIndex = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkCardIndexNode.GetText()).c_str()).c_str());
+      m_networkCardIndexHasBeenSet = true;
     }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
@@ -134,6 +134,11 @@ void NetworkInterfaceAttachment::OutputToStream(Aws::OStream& oStream, const cha
       oStream << location << index << locationValue << ".DeviceIndex=" << m_deviceIndex << "&";
   }
 
+  if(m_networkCardIndexHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NetworkCardIndex=" << m_networkCardIndex << "&";
+  }
+
   if(m_instanceIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
@@ -168,6 +173,10 @@ void NetworkInterfaceAttachment::OutputToStream(Aws::OStream& oStream, const cha
   if(m_deviceIndexHasBeenSet)
   {
       oStream << location << ".DeviceIndex=" << m_deviceIndex << "&";
+  }
+  if(m_networkCardIndexHasBeenSet)
+  {
+      oStream << location << ".NetworkCardIndex=" << m_networkCardIndex << "&";
   }
   if(m_instanceIdHasBeenSet)
   {

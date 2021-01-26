@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
@@ -447,44 +437,56 @@ namespace Model
 
 
     /**
-     * If set to multiplex, use multiplex buffer model for accurate interleaving. 
-     * Setting to bufferModel to none can lead to lower latency, but low-memory devices
-     * may not be able to play back the stream without interruptions.
+     * Controls the timing accuracy for output network traffic. Leave as MULTIPLEX to
+     * ensure accurate network packet timing. Or set to NONE, which might result in
+     * lower latency but will result in more variability in output network packet
+     * timing. This variability might cause interruptions, jitter, or bursty behavior
+     * in your playback or receiving devices.
      */
     inline const M2tsBufferModel& GetBufferModel() const{ return m_bufferModel; }
 
     /**
-     * If set to multiplex, use multiplex buffer model for accurate interleaving. 
-     * Setting to bufferModel to none can lead to lower latency, but low-memory devices
-     * may not be able to play back the stream without interruptions.
+     * Controls the timing accuracy for output network traffic. Leave as MULTIPLEX to
+     * ensure accurate network packet timing. Or set to NONE, which might result in
+     * lower latency but will result in more variability in output network packet
+     * timing. This variability might cause interruptions, jitter, or bursty behavior
+     * in your playback or receiving devices.
      */
     inline bool BufferModelHasBeenSet() const { return m_bufferModelHasBeenSet; }
 
     /**
-     * If set to multiplex, use multiplex buffer model for accurate interleaving. 
-     * Setting to bufferModel to none can lead to lower latency, but low-memory devices
-     * may not be able to play back the stream without interruptions.
+     * Controls the timing accuracy for output network traffic. Leave as MULTIPLEX to
+     * ensure accurate network packet timing. Or set to NONE, which might result in
+     * lower latency but will result in more variability in output network packet
+     * timing. This variability might cause interruptions, jitter, or bursty behavior
+     * in your playback or receiving devices.
      */
     inline void SetBufferModel(const M2tsBufferModel& value) { m_bufferModelHasBeenSet = true; m_bufferModel = value; }
 
     /**
-     * If set to multiplex, use multiplex buffer model for accurate interleaving. 
-     * Setting to bufferModel to none can lead to lower latency, but low-memory devices
-     * may not be able to play back the stream without interruptions.
+     * Controls the timing accuracy for output network traffic. Leave as MULTIPLEX to
+     * ensure accurate network packet timing. Or set to NONE, which might result in
+     * lower latency but will result in more variability in output network packet
+     * timing. This variability might cause interruptions, jitter, or bursty behavior
+     * in your playback or receiving devices.
      */
     inline void SetBufferModel(M2tsBufferModel&& value) { m_bufferModelHasBeenSet = true; m_bufferModel = std::move(value); }
 
     /**
-     * If set to multiplex, use multiplex buffer model for accurate interleaving. 
-     * Setting to bufferModel to none can lead to lower latency, but low-memory devices
-     * may not be able to play back the stream without interruptions.
+     * Controls the timing accuracy for output network traffic. Leave as MULTIPLEX to
+     * ensure accurate network packet timing. Or set to NONE, which might result in
+     * lower latency but will result in more variability in output network packet
+     * timing. This variability might cause interruptions, jitter, or bursty behavior
+     * in your playback or receiving devices.
      */
     inline M2tsSettings& WithBufferModel(const M2tsBufferModel& value) { SetBufferModel(value); return *this;}
 
     /**
-     * If set to multiplex, use multiplex buffer model for accurate interleaving. 
-     * Setting to bufferModel to none can lead to lower latency, but low-memory devices
-     * may not be able to play back the stream without interruptions.
+     * Controls the timing accuracy for output network traffic. Leave as MULTIPLEX to
+     * ensure accurate network packet timing. Or set to NONE, which might result in
+     * lower latency but will result in more variability in output network packet
+     * timing. This variability might cause interruptions, jitter, or bursty behavior
+     * in your playback or receiving devices.
      */
     inline M2tsSettings& WithBufferModel(M2tsBufferModel&& value) { SetBufferModel(std::move(value)); return *this;}
 
@@ -1938,22 +1940,22 @@ When
 
 
     /**
-     * The length in seconds of each segment. Required unless markers is set to None_.
+     * The length in seconds of each segment. Required unless markers is set to _none_.
      */
     inline double GetSegmentationTime() const{ return m_segmentationTime; }
 
     /**
-     * The length in seconds of each segment. Required unless markers is set to None_.
+     * The length in seconds of each segment. Required unless markers is set to _none_.
      */
     inline bool SegmentationTimeHasBeenSet() const { return m_segmentationTimeHasBeenSet; }
 
     /**
-     * The length in seconds of each segment. Required unless markers is set to None_.
+     * The length in seconds of each segment. Required unless markers is set to _none_.
      */
     inline void SetSegmentationTime(double value) { m_segmentationTimeHasBeenSet = true; m_segmentationTime = value; }
 
     /**
-     * The length in seconds of each segment. Required unless markers is set to None_.
+     * The length in seconds of each segment. Required unless markers is set to _none_.
      */
     inline M2tsSettings& WithSegmentationTime(double value) { SetSegmentationTime(value); return *this;}
 

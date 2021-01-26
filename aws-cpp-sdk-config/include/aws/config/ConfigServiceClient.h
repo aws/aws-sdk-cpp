@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
@@ -26,6 +16,7 @@
 #include <aws/config/model/DeleteEvaluationResultsResult.h>
 #include <aws/config/model/DeleteRemediationConfigurationResult.h>
 #include <aws/config/model/DeleteRemediationExceptionsResult.h>
+#include <aws/config/model/DeleteStoredQueryResult.h>
 #include <aws/config/model/DeliverConfigSnapshotResult.h>
 #include <aws/config/model/DescribeAggregateComplianceByConfigRulesResult.h>
 #include <aws/config/model/DescribeAggregationAuthorizationsResult.h>
@@ -65,18 +56,22 @@
 #include <aws/config/model/GetOrganizationConfigRuleDetailedStatusResult.h>
 #include <aws/config/model/GetOrganizationConformancePackDetailedStatusResult.h>
 #include <aws/config/model/GetResourceConfigHistoryResult.h>
+#include <aws/config/model/GetStoredQueryResult.h>
 #include <aws/config/model/ListAggregateDiscoveredResourcesResult.h>
 #include <aws/config/model/ListDiscoveredResourcesResult.h>
+#include <aws/config/model/ListStoredQueriesResult.h>
 #include <aws/config/model/ListTagsForResourceResult.h>
 #include <aws/config/model/PutAggregationAuthorizationResult.h>
 #include <aws/config/model/PutConfigurationAggregatorResult.h>
 #include <aws/config/model/PutConformancePackResult.h>
 #include <aws/config/model/PutEvaluationsResult.h>
+#include <aws/config/model/PutExternalEvaluationResult.h>
 #include <aws/config/model/PutOrganizationConfigRuleResult.h>
 #include <aws/config/model/PutOrganizationConformancePackResult.h>
 #include <aws/config/model/PutRemediationConfigurationsResult.h>
 #include <aws/config/model/PutRemediationExceptionsResult.h>
 #include <aws/config/model/PutRetentionConfigurationResult.h>
+#include <aws/config/model/PutStoredQueryResult.h>
 #include <aws/config/model/SelectAggregateResourceConfigResult.h>
 #include <aws/config/model/SelectResourceConfigResult.h>
 #include <aws/config/model/StartConfigRulesEvaluationResult.h>
@@ -137,6 +132,7 @@ namespace Model
         class DeleteRemediationExceptionsRequest;
         class DeleteResourceConfigRequest;
         class DeleteRetentionConfigurationRequest;
+        class DeleteStoredQueryRequest;
         class DeliverConfigSnapshotRequest;
         class DescribeAggregateComplianceByConfigRulesRequest;
         class DescribeAggregationAuthorizationsRequest;
@@ -175,8 +171,10 @@ namespace Model
         class GetOrganizationConfigRuleDetailedStatusRequest;
         class GetOrganizationConformancePackDetailedStatusRequest;
         class GetResourceConfigHistoryRequest;
+        class GetStoredQueryRequest;
         class ListAggregateDiscoveredResourcesRequest;
         class ListDiscoveredResourcesRequest;
+        class ListStoredQueriesRequest;
         class ListTagsForResourceRequest;
         class PutAggregationAuthorizationRequest;
         class PutConfigRuleRequest;
@@ -185,12 +183,14 @@ namespace Model
         class PutConformancePackRequest;
         class PutDeliveryChannelRequest;
         class PutEvaluationsRequest;
+        class PutExternalEvaluationRequest;
         class PutOrganizationConfigRuleRequest;
         class PutOrganizationConformancePackRequest;
         class PutRemediationConfigurationsRequest;
         class PutRemediationExceptionsRequest;
         class PutResourceConfigRequest;
         class PutRetentionConfigurationRequest;
+        class PutStoredQueryRequest;
         class SelectAggregateResourceConfigRequest;
         class SelectResourceConfigRequest;
         class StartConfigRulesEvaluationRequest;
@@ -200,85 +200,90 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
 
-        typedef Aws::Utils::Outcome<BatchGetAggregateResourceConfigResult, Aws::Client::AWSError<ConfigServiceErrors>> BatchGetAggregateResourceConfigOutcome;
-        typedef Aws::Utils::Outcome<BatchGetResourceConfigResult, Aws::Client::AWSError<ConfigServiceErrors>> BatchGetResourceConfigOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteAggregationAuthorizationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteConfigRuleOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteConfigurationAggregatorOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteConfigurationRecorderOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteConformancePackOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteDeliveryChannelOutcome;
-        typedef Aws::Utils::Outcome<DeleteEvaluationResultsResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteEvaluationResultsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteOrganizationConfigRuleOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteOrganizationConformancePackOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeletePendingAggregationRequestOutcome;
-        typedef Aws::Utils::Outcome<DeleteRemediationConfigurationResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteRemediationConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DeleteRemediationExceptionsResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteRemediationExceptionsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteResourceConfigOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteRetentionConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DeliverConfigSnapshotResult, Aws::Client::AWSError<ConfigServiceErrors>> DeliverConfigSnapshotOutcome;
-        typedef Aws::Utils::Outcome<DescribeAggregateComplianceByConfigRulesResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeAggregateComplianceByConfigRulesOutcome;
-        typedef Aws::Utils::Outcome<DescribeAggregationAuthorizationsResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeAggregationAuthorizationsOutcome;
-        typedef Aws::Utils::Outcome<DescribeComplianceByConfigRuleResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeComplianceByConfigRuleOutcome;
-        typedef Aws::Utils::Outcome<DescribeComplianceByResourceResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeComplianceByResourceOutcome;
-        typedef Aws::Utils::Outcome<DescribeConfigRuleEvaluationStatusResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeConfigRuleEvaluationStatusOutcome;
-        typedef Aws::Utils::Outcome<DescribeConfigRulesResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeConfigRulesOutcome;
-        typedef Aws::Utils::Outcome<DescribeConfigurationAggregatorSourcesStatusResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeConfigurationAggregatorSourcesStatusOutcome;
-        typedef Aws::Utils::Outcome<DescribeConfigurationAggregatorsResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeConfigurationAggregatorsOutcome;
-        typedef Aws::Utils::Outcome<DescribeConfigurationRecorderStatusResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeConfigurationRecorderStatusOutcome;
-        typedef Aws::Utils::Outcome<DescribeConfigurationRecordersResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeConfigurationRecordersOutcome;
-        typedef Aws::Utils::Outcome<DescribeConformancePackComplianceResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeConformancePackComplianceOutcome;
-        typedef Aws::Utils::Outcome<DescribeConformancePackStatusResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeConformancePackStatusOutcome;
-        typedef Aws::Utils::Outcome<DescribeConformancePacksResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeConformancePacksOutcome;
-        typedef Aws::Utils::Outcome<DescribeDeliveryChannelStatusResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeDeliveryChannelStatusOutcome;
-        typedef Aws::Utils::Outcome<DescribeDeliveryChannelsResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeDeliveryChannelsOutcome;
-        typedef Aws::Utils::Outcome<DescribeOrganizationConfigRuleStatusesResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeOrganizationConfigRuleStatusesOutcome;
-        typedef Aws::Utils::Outcome<DescribeOrganizationConfigRulesResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeOrganizationConfigRulesOutcome;
-        typedef Aws::Utils::Outcome<DescribeOrganizationConformancePackStatusesResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeOrganizationConformancePackStatusesOutcome;
-        typedef Aws::Utils::Outcome<DescribeOrganizationConformancePacksResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeOrganizationConformancePacksOutcome;
-        typedef Aws::Utils::Outcome<DescribePendingAggregationRequestsResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribePendingAggregationRequestsOutcome;
-        typedef Aws::Utils::Outcome<DescribeRemediationConfigurationsResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeRemediationConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<DescribeRemediationExceptionsResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeRemediationExceptionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeRemediationExecutionStatusResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeRemediationExecutionStatusOutcome;
-        typedef Aws::Utils::Outcome<DescribeRetentionConfigurationsResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeRetentionConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<GetAggregateComplianceDetailsByConfigRuleResult, Aws::Client::AWSError<ConfigServiceErrors>> GetAggregateComplianceDetailsByConfigRuleOutcome;
-        typedef Aws::Utils::Outcome<GetAggregateConfigRuleComplianceSummaryResult, Aws::Client::AWSError<ConfigServiceErrors>> GetAggregateConfigRuleComplianceSummaryOutcome;
-        typedef Aws::Utils::Outcome<GetAggregateDiscoveredResourceCountsResult, Aws::Client::AWSError<ConfigServiceErrors>> GetAggregateDiscoveredResourceCountsOutcome;
-        typedef Aws::Utils::Outcome<GetAggregateResourceConfigResult, Aws::Client::AWSError<ConfigServiceErrors>> GetAggregateResourceConfigOutcome;
-        typedef Aws::Utils::Outcome<GetComplianceDetailsByConfigRuleResult, Aws::Client::AWSError<ConfigServiceErrors>> GetComplianceDetailsByConfigRuleOutcome;
-        typedef Aws::Utils::Outcome<GetComplianceDetailsByResourceResult, Aws::Client::AWSError<ConfigServiceErrors>> GetComplianceDetailsByResourceOutcome;
-        typedef Aws::Utils::Outcome<GetComplianceSummaryByConfigRuleResult, Aws::Client::AWSError<ConfigServiceErrors>> GetComplianceSummaryByConfigRuleOutcome;
-        typedef Aws::Utils::Outcome<GetComplianceSummaryByResourceTypeResult, Aws::Client::AWSError<ConfigServiceErrors>> GetComplianceSummaryByResourceTypeOutcome;
-        typedef Aws::Utils::Outcome<GetConformancePackComplianceDetailsResult, Aws::Client::AWSError<ConfigServiceErrors>> GetConformancePackComplianceDetailsOutcome;
-        typedef Aws::Utils::Outcome<GetConformancePackComplianceSummaryResult, Aws::Client::AWSError<ConfigServiceErrors>> GetConformancePackComplianceSummaryOutcome;
-        typedef Aws::Utils::Outcome<GetDiscoveredResourceCountsResult, Aws::Client::AWSError<ConfigServiceErrors>> GetDiscoveredResourceCountsOutcome;
-        typedef Aws::Utils::Outcome<GetOrganizationConfigRuleDetailedStatusResult, Aws::Client::AWSError<ConfigServiceErrors>> GetOrganizationConfigRuleDetailedStatusOutcome;
-        typedef Aws::Utils::Outcome<GetOrganizationConformancePackDetailedStatusResult, Aws::Client::AWSError<ConfigServiceErrors>> GetOrganizationConformancePackDetailedStatusOutcome;
-        typedef Aws::Utils::Outcome<GetResourceConfigHistoryResult, Aws::Client::AWSError<ConfigServiceErrors>> GetResourceConfigHistoryOutcome;
-        typedef Aws::Utils::Outcome<ListAggregateDiscoveredResourcesResult, Aws::Client::AWSError<ConfigServiceErrors>> ListAggregateDiscoveredResourcesOutcome;
-        typedef Aws::Utils::Outcome<ListDiscoveredResourcesResult, Aws::Client::AWSError<ConfigServiceErrors>> ListDiscoveredResourcesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<ConfigServiceErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PutAggregationAuthorizationResult, Aws::Client::AWSError<ConfigServiceErrors>> PutAggregationAuthorizationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> PutConfigRuleOutcome;
-        typedef Aws::Utils::Outcome<PutConfigurationAggregatorResult, Aws::Client::AWSError<ConfigServiceErrors>> PutConfigurationAggregatorOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> PutConfigurationRecorderOutcome;
-        typedef Aws::Utils::Outcome<PutConformancePackResult, Aws::Client::AWSError<ConfigServiceErrors>> PutConformancePackOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> PutDeliveryChannelOutcome;
-        typedef Aws::Utils::Outcome<PutEvaluationsResult, Aws::Client::AWSError<ConfigServiceErrors>> PutEvaluationsOutcome;
-        typedef Aws::Utils::Outcome<PutOrganizationConfigRuleResult, Aws::Client::AWSError<ConfigServiceErrors>> PutOrganizationConfigRuleOutcome;
-        typedef Aws::Utils::Outcome<PutOrganizationConformancePackResult, Aws::Client::AWSError<ConfigServiceErrors>> PutOrganizationConformancePackOutcome;
-        typedef Aws::Utils::Outcome<PutRemediationConfigurationsResult, Aws::Client::AWSError<ConfigServiceErrors>> PutRemediationConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<PutRemediationExceptionsResult, Aws::Client::AWSError<ConfigServiceErrors>> PutRemediationExceptionsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> PutResourceConfigOutcome;
-        typedef Aws::Utils::Outcome<PutRetentionConfigurationResult, Aws::Client::AWSError<ConfigServiceErrors>> PutRetentionConfigurationOutcome;
-        typedef Aws::Utils::Outcome<SelectAggregateResourceConfigResult, Aws::Client::AWSError<ConfigServiceErrors>> SelectAggregateResourceConfigOutcome;
-        typedef Aws::Utils::Outcome<SelectResourceConfigResult, Aws::Client::AWSError<ConfigServiceErrors>> SelectResourceConfigOutcome;
-        typedef Aws::Utils::Outcome<StartConfigRulesEvaluationResult, Aws::Client::AWSError<ConfigServiceErrors>> StartConfigRulesEvaluationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> StartConfigurationRecorderOutcome;
-        typedef Aws::Utils::Outcome<StartRemediationExecutionResult, Aws::Client::AWSError<ConfigServiceErrors>> StartRemediationExecutionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> StopConfigurationRecorderOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<BatchGetAggregateResourceConfigResult, ConfigServiceError> BatchGetAggregateResourceConfigOutcome;
+        typedef Aws::Utils::Outcome<BatchGetResourceConfigResult, ConfigServiceError> BatchGetResourceConfigOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeleteAggregationAuthorizationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeleteConfigRuleOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeleteConfigurationAggregatorOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeleteConfigurationRecorderOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeleteConformancePackOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeleteDeliveryChannelOutcome;
+        typedef Aws::Utils::Outcome<DeleteEvaluationResultsResult, ConfigServiceError> DeleteEvaluationResultsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeleteOrganizationConfigRuleOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeleteOrganizationConformancePackOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeletePendingAggregationRequestOutcome;
+        typedef Aws::Utils::Outcome<DeleteRemediationConfigurationResult, ConfigServiceError> DeleteRemediationConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DeleteRemediationExceptionsResult, ConfigServiceError> DeleteRemediationExceptionsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeleteResourceConfigOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeleteRetentionConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DeleteStoredQueryResult, ConfigServiceError> DeleteStoredQueryOutcome;
+        typedef Aws::Utils::Outcome<DeliverConfigSnapshotResult, ConfigServiceError> DeliverConfigSnapshotOutcome;
+        typedef Aws::Utils::Outcome<DescribeAggregateComplianceByConfigRulesResult, ConfigServiceError> DescribeAggregateComplianceByConfigRulesOutcome;
+        typedef Aws::Utils::Outcome<DescribeAggregationAuthorizationsResult, ConfigServiceError> DescribeAggregationAuthorizationsOutcome;
+        typedef Aws::Utils::Outcome<DescribeComplianceByConfigRuleResult, ConfigServiceError> DescribeComplianceByConfigRuleOutcome;
+        typedef Aws::Utils::Outcome<DescribeComplianceByResourceResult, ConfigServiceError> DescribeComplianceByResourceOutcome;
+        typedef Aws::Utils::Outcome<DescribeConfigRuleEvaluationStatusResult, ConfigServiceError> DescribeConfigRuleEvaluationStatusOutcome;
+        typedef Aws::Utils::Outcome<DescribeConfigRulesResult, ConfigServiceError> DescribeConfigRulesOutcome;
+        typedef Aws::Utils::Outcome<DescribeConfigurationAggregatorSourcesStatusResult, ConfigServiceError> DescribeConfigurationAggregatorSourcesStatusOutcome;
+        typedef Aws::Utils::Outcome<DescribeConfigurationAggregatorsResult, ConfigServiceError> DescribeConfigurationAggregatorsOutcome;
+        typedef Aws::Utils::Outcome<DescribeConfigurationRecorderStatusResult, ConfigServiceError> DescribeConfigurationRecorderStatusOutcome;
+        typedef Aws::Utils::Outcome<DescribeConfigurationRecordersResult, ConfigServiceError> DescribeConfigurationRecordersOutcome;
+        typedef Aws::Utils::Outcome<DescribeConformancePackComplianceResult, ConfigServiceError> DescribeConformancePackComplianceOutcome;
+        typedef Aws::Utils::Outcome<DescribeConformancePackStatusResult, ConfigServiceError> DescribeConformancePackStatusOutcome;
+        typedef Aws::Utils::Outcome<DescribeConformancePacksResult, ConfigServiceError> DescribeConformancePacksOutcome;
+        typedef Aws::Utils::Outcome<DescribeDeliveryChannelStatusResult, ConfigServiceError> DescribeDeliveryChannelStatusOutcome;
+        typedef Aws::Utils::Outcome<DescribeDeliveryChannelsResult, ConfigServiceError> DescribeDeliveryChannelsOutcome;
+        typedef Aws::Utils::Outcome<DescribeOrganizationConfigRuleStatusesResult, ConfigServiceError> DescribeOrganizationConfigRuleStatusesOutcome;
+        typedef Aws::Utils::Outcome<DescribeOrganizationConfigRulesResult, ConfigServiceError> DescribeOrganizationConfigRulesOutcome;
+        typedef Aws::Utils::Outcome<DescribeOrganizationConformancePackStatusesResult, ConfigServiceError> DescribeOrganizationConformancePackStatusesOutcome;
+        typedef Aws::Utils::Outcome<DescribeOrganizationConformancePacksResult, ConfigServiceError> DescribeOrganizationConformancePacksOutcome;
+        typedef Aws::Utils::Outcome<DescribePendingAggregationRequestsResult, ConfigServiceError> DescribePendingAggregationRequestsOutcome;
+        typedef Aws::Utils::Outcome<DescribeRemediationConfigurationsResult, ConfigServiceError> DescribeRemediationConfigurationsOutcome;
+        typedef Aws::Utils::Outcome<DescribeRemediationExceptionsResult, ConfigServiceError> DescribeRemediationExceptionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeRemediationExecutionStatusResult, ConfigServiceError> DescribeRemediationExecutionStatusOutcome;
+        typedef Aws::Utils::Outcome<DescribeRetentionConfigurationsResult, ConfigServiceError> DescribeRetentionConfigurationsOutcome;
+        typedef Aws::Utils::Outcome<GetAggregateComplianceDetailsByConfigRuleResult, ConfigServiceError> GetAggregateComplianceDetailsByConfigRuleOutcome;
+        typedef Aws::Utils::Outcome<GetAggregateConfigRuleComplianceSummaryResult, ConfigServiceError> GetAggregateConfigRuleComplianceSummaryOutcome;
+        typedef Aws::Utils::Outcome<GetAggregateDiscoveredResourceCountsResult, ConfigServiceError> GetAggregateDiscoveredResourceCountsOutcome;
+        typedef Aws::Utils::Outcome<GetAggregateResourceConfigResult, ConfigServiceError> GetAggregateResourceConfigOutcome;
+        typedef Aws::Utils::Outcome<GetComplianceDetailsByConfigRuleResult, ConfigServiceError> GetComplianceDetailsByConfigRuleOutcome;
+        typedef Aws::Utils::Outcome<GetComplianceDetailsByResourceResult, ConfigServiceError> GetComplianceDetailsByResourceOutcome;
+        typedef Aws::Utils::Outcome<GetComplianceSummaryByConfigRuleResult, ConfigServiceError> GetComplianceSummaryByConfigRuleOutcome;
+        typedef Aws::Utils::Outcome<GetComplianceSummaryByResourceTypeResult, ConfigServiceError> GetComplianceSummaryByResourceTypeOutcome;
+        typedef Aws::Utils::Outcome<GetConformancePackComplianceDetailsResult, ConfigServiceError> GetConformancePackComplianceDetailsOutcome;
+        typedef Aws::Utils::Outcome<GetConformancePackComplianceSummaryResult, ConfigServiceError> GetConformancePackComplianceSummaryOutcome;
+        typedef Aws::Utils::Outcome<GetDiscoveredResourceCountsResult, ConfigServiceError> GetDiscoveredResourceCountsOutcome;
+        typedef Aws::Utils::Outcome<GetOrganizationConfigRuleDetailedStatusResult, ConfigServiceError> GetOrganizationConfigRuleDetailedStatusOutcome;
+        typedef Aws::Utils::Outcome<GetOrganizationConformancePackDetailedStatusResult, ConfigServiceError> GetOrganizationConformancePackDetailedStatusOutcome;
+        typedef Aws::Utils::Outcome<GetResourceConfigHistoryResult, ConfigServiceError> GetResourceConfigHistoryOutcome;
+        typedef Aws::Utils::Outcome<GetStoredQueryResult, ConfigServiceError> GetStoredQueryOutcome;
+        typedef Aws::Utils::Outcome<ListAggregateDiscoveredResourcesResult, ConfigServiceError> ListAggregateDiscoveredResourcesOutcome;
+        typedef Aws::Utils::Outcome<ListDiscoveredResourcesResult, ConfigServiceError> ListDiscoveredResourcesOutcome;
+        typedef Aws::Utils::Outcome<ListStoredQueriesResult, ConfigServiceError> ListStoredQueriesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, ConfigServiceError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<PutAggregationAuthorizationResult, ConfigServiceError> PutAggregationAuthorizationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> PutConfigRuleOutcome;
+        typedef Aws::Utils::Outcome<PutConfigurationAggregatorResult, ConfigServiceError> PutConfigurationAggregatorOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> PutConfigurationRecorderOutcome;
+        typedef Aws::Utils::Outcome<PutConformancePackResult, ConfigServiceError> PutConformancePackOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> PutDeliveryChannelOutcome;
+        typedef Aws::Utils::Outcome<PutEvaluationsResult, ConfigServiceError> PutEvaluationsOutcome;
+        typedef Aws::Utils::Outcome<PutExternalEvaluationResult, ConfigServiceError> PutExternalEvaluationOutcome;
+        typedef Aws::Utils::Outcome<PutOrganizationConfigRuleResult, ConfigServiceError> PutOrganizationConfigRuleOutcome;
+        typedef Aws::Utils::Outcome<PutOrganizationConformancePackResult, ConfigServiceError> PutOrganizationConformancePackOutcome;
+        typedef Aws::Utils::Outcome<PutRemediationConfigurationsResult, ConfigServiceError> PutRemediationConfigurationsOutcome;
+        typedef Aws::Utils::Outcome<PutRemediationExceptionsResult, ConfigServiceError> PutRemediationExceptionsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> PutResourceConfigOutcome;
+        typedef Aws::Utils::Outcome<PutRetentionConfigurationResult, ConfigServiceError> PutRetentionConfigurationOutcome;
+        typedef Aws::Utils::Outcome<PutStoredQueryResult, ConfigServiceError> PutStoredQueryOutcome;
+        typedef Aws::Utils::Outcome<SelectAggregateResourceConfigResult, ConfigServiceError> SelectAggregateResourceConfigOutcome;
+        typedef Aws::Utils::Outcome<SelectResourceConfigResult, ConfigServiceError> SelectResourceConfigOutcome;
+        typedef Aws::Utils::Outcome<StartConfigRulesEvaluationResult, ConfigServiceError> StartConfigRulesEvaluationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> StartConfigurationRecorderOutcome;
+        typedef Aws::Utils::Outcome<StartRemediationExecutionResult, ConfigServiceError> StartRemediationExecutionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> StopConfigurationRecorderOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> UntagResourceOutcome;
 
         typedef std::future<BatchGetAggregateResourceConfigOutcome> BatchGetAggregateResourceConfigOutcomeCallable;
         typedef std::future<BatchGetResourceConfigOutcome> BatchGetResourceConfigOutcomeCallable;
@@ -296,6 +301,7 @@ namespace Model
         typedef std::future<DeleteRemediationExceptionsOutcome> DeleteRemediationExceptionsOutcomeCallable;
         typedef std::future<DeleteResourceConfigOutcome> DeleteResourceConfigOutcomeCallable;
         typedef std::future<DeleteRetentionConfigurationOutcome> DeleteRetentionConfigurationOutcomeCallable;
+        typedef std::future<DeleteStoredQueryOutcome> DeleteStoredQueryOutcomeCallable;
         typedef std::future<DeliverConfigSnapshotOutcome> DeliverConfigSnapshotOutcomeCallable;
         typedef std::future<DescribeAggregateComplianceByConfigRulesOutcome> DescribeAggregateComplianceByConfigRulesOutcomeCallable;
         typedef std::future<DescribeAggregationAuthorizationsOutcome> DescribeAggregationAuthorizationsOutcomeCallable;
@@ -335,8 +341,10 @@ namespace Model
         typedef std::future<GetOrganizationConfigRuleDetailedStatusOutcome> GetOrganizationConfigRuleDetailedStatusOutcomeCallable;
         typedef std::future<GetOrganizationConformancePackDetailedStatusOutcome> GetOrganizationConformancePackDetailedStatusOutcomeCallable;
         typedef std::future<GetResourceConfigHistoryOutcome> GetResourceConfigHistoryOutcomeCallable;
+        typedef std::future<GetStoredQueryOutcome> GetStoredQueryOutcomeCallable;
         typedef std::future<ListAggregateDiscoveredResourcesOutcome> ListAggregateDiscoveredResourcesOutcomeCallable;
         typedef std::future<ListDiscoveredResourcesOutcome> ListDiscoveredResourcesOutcomeCallable;
+        typedef std::future<ListStoredQueriesOutcome> ListStoredQueriesOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutAggregationAuthorizationOutcome> PutAggregationAuthorizationOutcomeCallable;
         typedef std::future<PutConfigRuleOutcome> PutConfigRuleOutcomeCallable;
@@ -345,12 +353,14 @@ namespace Model
         typedef std::future<PutConformancePackOutcome> PutConformancePackOutcomeCallable;
         typedef std::future<PutDeliveryChannelOutcome> PutDeliveryChannelOutcomeCallable;
         typedef std::future<PutEvaluationsOutcome> PutEvaluationsOutcomeCallable;
+        typedef std::future<PutExternalEvaluationOutcome> PutExternalEvaluationOutcomeCallable;
         typedef std::future<PutOrganizationConfigRuleOutcome> PutOrganizationConfigRuleOutcomeCallable;
         typedef std::future<PutOrganizationConformancePackOutcome> PutOrganizationConformancePackOutcomeCallable;
         typedef std::future<PutRemediationConfigurationsOutcome> PutRemediationConfigurationsOutcomeCallable;
         typedef std::future<PutRemediationExceptionsOutcome> PutRemediationExceptionsOutcomeCallable;
         typedef std::future<PutResourceConfigOutcome> PutResourceConfigOutcomeCallable;
         typedef std::future<PutRetentionConfigurationOutcome> PutRetentionConfigurationOutcomeCallable;
+        typedef std::future<PutStoredQueryOutcome> PutStoredQueryOutcomeCallable;
         typedef std::future<SelectAggregateResourceConfigOutcome> SelectAggregateResourceConfigOutcomeCallable;
         typedef std::future<SelectResourceConfigOutcome> SelectResourceConfigOutcomeCallable;
         typedef std::future<StartConfigRulesEvaluationOutcome> StartConfigRulesEvaluationOutcomeCallable;
@@ -379,6 +389,7 @@ namespace Model
     typedef std::function<void(const ConfigServiceClient*, const Model::DeleteRemediationExceptionsRequest&, const Model::DeleteRemediationExceptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRemediationExceptionsResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeleteResourceConfigRequest&, const Model::DeleteResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourceConfigResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeleteRetentionConfigurationRequest&, const Model::DeleteRetentionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRetentionConfigurationResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::DeleteStoredQueryRequest&, const Model::DeleteStoredQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStoredQueryResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeliverConfigSnapshotRequest&, const Model::DeliverConfigSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeliverConfigSnapshotResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DescribeAggregateComplianceByConfigRulesRequest&, const Model::DescribeAggregateComplianceByConfigRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAggregateComplianceByConfigRulesResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DescribeAggregationAuthorizationsRequest&, const Model::DescribeAggregationAuthorizationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAggregationAuthorizationsResponseReceivedHandler;
@@ -418,8 +429,10 @@ namespace Model
     typedef std::function<void(const ConfigServiceClient*, const Model::GetOrganizationConfigRuleDetailedStatusRequest&, const Model::GetOrganizationConfigRuleDetailedStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOrganizationConfigRuleDetailedStatusResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetOrganizationConformancePackDetailedStatusRequest&, const Model::GetOrganizationConformancePackDetailedStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOrganizationConformancePackDetailedStatusResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetResourceConfigHistoryRequest&, const Model::GetResourceConfigHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceConfigHistoryResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::GetStoredQueryRequest&, const Model::GetStoredQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStoredQueryResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::ListAggregateDiscoveredResourcesRequest&, const Model::ListAggregateDiscoveredResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAggregateDiscoveredResourcesResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::ListDiscoveredResourcesRequest&, const Model::ListDiscoveredResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDiscoveredResourcesResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::ListStoredQueriesRequest&, const Model::ListStoredQueriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStoredQueriesResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutAggregationAuthorizationRequest&, const Model::PutAggregationAuthorizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAggregationAuthorizationResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutConfigRuleRequest&, const Model::PutConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfigRuleResponseReceivedHandler;
@@ -428,12 +441,14 @@ namespace Model
     typedef std::function<void(const ConfigServiceClient*, const Model::PutConformancePackRequest&, const Model::PutConformancePackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConformancePackResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutDeliveryChannelRequest&, const Model::PutDeliveryChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDeliveryChannelResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutEvaluationsRequest&, const Model::PutEvaluationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEvaluationsResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::PutExternalEvaluationRequest&, const Model::PutExternalEvaluationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutExternalEvaluationResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutOrganizationConfigRuleRequest&, const Model::PutOrganizationConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutOrganizationConfigRuleResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutOrganizationConformancePackRequest&, const Model::PutOrganizationConformancePackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutOrganizationConformancePackResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutRemediationConfigurationsRequest&, const Model::PutRemediationConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRemediationConfigurationsResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutRemediationExceptionsRequest&, const Model::PutRemediationExceptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRemediationExceptionsResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutResourceConfigRequest&, const Model::PutResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourceConfigResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutRetentionConfigurationRequest&, const Model::PutRetentionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRetentionConfigurationResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::PutStoredQueryRequest&, const Model::PutStoredQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutStoredQueryResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::SelectAggregateResourceConfigRequest&, const Model::SelectAggregateResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SelectAggregateResourceConfigResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::SelectResourceConfigRequest&, const Model::SelectResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SelectResourceConfigResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::StartConfigRulesEvaluationRequest&, const Model::StartConfigRulesEvaluationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartConfigRulesEvaluationResponseReceivedHandler;
@@ -493,17 +508,15 @@ namespace Model
 
         virtual ~ConfigServiceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Config Service"; }
-
 
         /**
          * <p>Returns the current configuration items for resources that are present in
          * your AWS Config aggregator. The operation also returns a list of resources that
          * are not processed in the current request. If there are no unprocessed resources,
          * the operation returns an empty <code>unprocessedResourceIdentifiers</code> list.
-         * </p> <note> <ul> <li> <p>The API does not return results for deleted
+         * </p>  <ul> <li> <p>The API does not return results for deleted
          * resources.</p> </li> <li> <p> The API does not return tags and
-         * relationships.</p> </li> </ul> </note><p><h3>See Also:</h3>   <a
+         * relationships.</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetAggregateResourceConfig">AWS
          * API Reference</a></p>
          */
@@ -514,9 +527,9 @@ namespace Model
          * your AWS Config aggregator. The operation also returns a list of resources that
          * are not processed in the current request. If there are no unprocessed resources,
          * the operation returns an empty <code>unprocessedResourceIdentifiers</code> list.
-         * </p> <note> <ul> <li> <p>The API does not return results for deleted
+         * </p>  <ul> <li> <p>The API does not return results for deleted
          * resources.</p> </li> <li> <p> The API does not return tags and
-         * relationships.</p> </li> </ul> </note><p><h3>See Also:</h3>   <a
+         * relationships.</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetAggregateResourceConfig">AWS
          * API Reference</a></p>
          *
@@ -529,9 +542,9 @@ namespace Model
          * your AWS Config aggregator. The operation also returns a list of resources that
          * are not processed in the current request. If there are no unprocessed resources,
          * the operation returns an empty <code>unprocessedResourceIdentifiers</code> list.
-         * </p> <note> <ul> <li> <p>The API does not return results for deleted
+         * </p>  <ul> <li> <p>The API does not return results for deleted
          * resources.</p> </li> <li> <p> The API does not return tags and
-         * relationships.</p> </li> </ul> </note><p><h3>See Also:</h3>   <a
+         * relationships.</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetAggregateResourceConfig">AWS
          * API Reference</a></p>
          *
@@ -543,11 +556,11 @@ namespace Model
          * <p>Returns the current configuration for one or more requested resources. The
          * operation also returns a list of resources that are not processed in the current
          * request. If there are no unprocessed resources, the operation returns an empty
-         * unprocessedResourceKeys list. </p> <note> <ul> <li> <p>The API does not return
+         * unprocessedResourceKeys list. </p>  <ul> <li> <p>The API does not return
          * results for deleted resources.</p> </li> <li> <p> The API does not return any
          * tags for the requested resources. This information is filtered out of the
          * supplementaryConfiguration section of the API response.</p> </li> </ul>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetResourceConfig">AWS
          * API Reference</a></p>
          */
@@ -557,11 +570,11 @@ namespace Model
          * <p>Returns the current configuration for one or more requested resources. The
          * operation also returns a list of resources that are not processed in the current
          * request. If there are no unprocessed resources, the operation returns an empty
-         * unprocessedResourceKeys list. </p> <note> <ul> <li> <p>The API does not return
+         * unprocessedResourceKeys list. </p>  <ul> <li> <p>The API does not return
          * results for deleted resources.</p> </li> <li> <p> The API does not return any
          * tags for the requested resources. This information is filtered out of the
          * supplementaryConfiguration section of the API response.</p> </li> </ul>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetResourceConfig">AWS
          * API Reference</a></p>
          *
@@ -573,11 +586,11 @@ namespace Model
          * <p>Returns the current configuration for one or more requested resources. The
          * operation also returns a list of resources that are not processed in the current
          * request. If there are no unprocessed resources, the operation returns an empty
-         * unprocessedResourceKeys list. </p> <note> <ul> <li> <p>The API does not return
+         * unprocessedResourceKeys list. </p>  <ul> <li> <p>The API does not return
          * results for deleted resources.</p> </li> <li> <p> The API does not return any
          * tags for the requested resources. This information is filtered out of the
          * supplementaryConfiguration section of the API response.</p> </li> </ul>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetResourceConfig">AWS
          * API Reference</a></p>
          *
@@ -837,10 +850,13 @@ namespace Model
 
         /**
          * <p>Deletes the specified organization config rule and all of its evaluation
-         * results from all member accounts in that organization. Only a master account can
-         * delete an organization config rule.</p> <p>AWS Config sets the state of a rule
-         * to DELETE_IN_PROGRESS until the deletion is complete. You cannot update a rule
-         * while it is in this state.</p><p><h3>See Also:</h3>   <a
+         * results from all member accounts in that organization. </p> <p>Only a master
+         * account and a delegated administrator account can delete an organization config
+         * rule. When calling this API with a delegated administrator, you must ensure AWS
+         * Organizations <code>ListDelegatedAdministrator</code> permissions are added.</p>
+         * <p>AWS Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion
+         * is complete. You cannot update a rule while it is in this state.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteOrganizationConfigRule">AWS
          * API Reference</a></p>
          */
@@ -848,10 +864,13 @@ namespace Model
 
         /**
          * <p>Deletes the specified organization config rule and all of its evaluation
-         * results from all member accounts in that organization. Only a master account can
-         * delete an organization config rule.</p> <p>AWS Config sets the state of a rule
-         * to DELETE_IN_PROGRESS until the deletion is complete. You cannot update a rule
-         * while it is in this state.</p><p><h3>See Also:</h3>   <a
+         * results from all member accounts in that organization. </p> <p>Only a master
+         * account and a delegated administrator account can delete an organization config
+         * rule. When calling this API with a delegated administrator, you must ensure AWS
+         * Organizations <code>ListDelegatedAdministrator</code> permissions are added.</p>
+         * <p>AWS Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion
+         * is complete. You cannot update a rule while it is in this state.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteOrganizationConfigRule">AWS
          * API Reference</a></p>
          *
@@ -861,10 +880,13 @@ namespace Model
 
         /**
          * <p>Deletes the specified organization config rule and all of its evaluation
-         * results from all member accounts in that organization. Only a master account can
-         * delete an organization config rule.</p> <p>AWS Config sets the state of a rule
-         * to DELETE_IN_PROGRESS until the deletion is complete. You cannot update a rule
-         * while it is in this state.</p><p><h3>See Also:</h3>   <a
+         * results from all member accounts in that organization. </p> <p>Only a master
+         * account and a delegated administrator account can delete an organization config
+         * rule. When calling this API with a delegated administrator, you must ensure AWS
+         * Organizations <code>ListDelegatedAdministrator</code> permissions are added.</p>
+         * <p>AWS Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion
+         * is complete. You cannot update a rule while it is in this state.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteOrganizationConfigRule">AWS
          * API Reference</a></p>
          *
@@ -875,10 +897,13 @@ namespace Model
         /**
          * <p>Deletes the specified organization conformance pack and all of the config
          * rules and remediation actions from all member accounts in that organization.
-         * Only a master account can delete an organization conformance pack.</p> <p>AWS
-         * Config sets the state of a conformance pack to DELETE_IN_PROGRESS until the
-         * deletion is complete. You cannot update a conformance pack while it is in this
-         * state. </p><p><h3>See Also:</h3>   <a
+         * </p> <p> Only a master account or a delegated administrator account can delete
+         * an organization conformance pack. When calling this API with a delegated
+         * administrator, you must ensure AWS Organizations
+         * <code>ListDelegatedAdministrator</code> permissions are added.</p> <p>AWS Config
+         * sets the state of a conformance pack to DELETE_IN_PROGRESS until the deletion is
+         * complete. You cannot update a conformance pack while it is in this state.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteOrganizationConformancePack">AWS
          * API Reference</a></p>
          */
@@ -887,10 +912,13 @@ namespace Model
         /**
          * <p>Deletes the specified organization conformance pack and all of the config
          * rules and remediation actions from all member accounts in that organization.
-         * Only a master account can delete an organization conformance pack.</p> <p>AWS
-         * Config sets the state of a conformance pack to DELETE_IN_PROGRESS until the
-         * deletion is complete. You cannot update a conformance pack while it is in this
-         * state. </p><p><h3>See Also:</h3>   <a
+         * </p> <p> Only a master account or a delegated administrator account can delete
+         * an organization conformance pack. When calling this API with a delegated
+         * administrator, you must ensure AWS Organizations
+         * <code>ListDelegatedAdministrator</code> permissions are added.</p> <p>AWS Config
+         * sets the state of a conformance pack to DELETE_IN_PROGRESS until the deletion is
+         * complete. You cannot update a conformance pack while it is in this state.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteOrganizationConformancePack">AWS
          * API Reference</a></p>
          *
@@ -901,10 +929,13 @@ namespace Model
         /**
          * <p>Deletes the specified organization conformance pack and all of the config
          * rules and remediation actions from all member accounts in that organization.
-         * Only a master account can delete an organization conformance pack.</p> <p>AWS
-         * Config sets the state of a conformance pack to DELETE_IN_PROGRESS until the
-         * deletion is complete. You cannot update a conformance pack while it is in this
-         * state. </p><p><h3>See Also:</h3>   <a
+         * </p> <p> Only a master account or a delegated administrator account can delete
+         * an organization conformance pack. When calling this API with a delegated
+         * administrator, you must ensure AWS Organizations
+         * <code>ListDelegatedAdministrator</code> permissions are added.</p> <p>AWS Config
+         * sets the state of a conformance pack to DELETE_IN_PROGRESS until the deletion is
+         * complete. You cannot update a conformance pack while it is in this state.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteOrganizationConformancePack">AWS
          * API Reference</a></p>
          *
@@ -967,7 +998,10 @@ namespace Model
 
         /**
          * <p>Deletes one or more remediation exceptions mentioned in the resource
-         * keys.</p><p><h3>See Also:</h3>   <a
+         * keys.</p>  <p>AWS Config generates a remediation exception when a problem
+         * occurs executing a remediation action to a specific resource. Remediation
+         * exceptions blocks auto-remediation until the exception is cleared.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRemediationExceptions">AWS
          * API Reference</a></p>
          */
@@ -975,7 +1009,10 @@ namespace Model
 
         /**
          * <p>Deletes one or more remediation exceptions mentioned in the resource
-         * keys.</p><p><h3>See Also:</h3>   <a
+         * keys.</p>  <p>AWS Config generates a remediation exception when a problem
+         * occurs executing a remediation action to a specific resource. Remediation
+         * exceptions blocks auto-remediation until the exception is cleared.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRemediationExceptions">AWS
          * API Reference</a></p>
          *
@@ -985,7 +1022,10 @@ namespace Model
 
         /**
          * <p>Deletes one or more remediation exceptions mentioned in the resource
-         * keys.</p><p><h3>See Also:</h3>   <a
+         * keys.</p>  <p>AWS Config generates a remediation exception when a problem
+         * occurs executing a remediation action to a specific resource. Remediation
+         * exceptions blocks auto-remediation until the exception is cleared.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRemediationExceptions">AWS
          * API Reference</a></p>
          *
@@ -1053,6 +1093,34 @@ namespace Model
         virtual void DeleteRetentionConfigurationAsync(const Model::DeleteRetentionConfigurationRequest& request, const DeleteRetentionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes the stored query for an AWS account in an AWS Region. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteStoredQuery">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteStoredQueryOutcome DeleteStoredQuery(const Model::DeleteStoredQueryRequest& request) const;
+
+        /**
+         * <p>Deletes the stored query for an AWS account in an AWS Region. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteStoredQuery">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteStoredQueryOutcomeCallable DeleteStoredQueryCallable(const Model::DeleteStoredQueryRequest& request) const;
+
+        /**
+         * <p>Deletes the stored query for an AWS account in an AWS Region. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteStoredQuery">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteStoredQueryAsync(const Model::DeleteStoredQueryRequest& request, const DeleteStoredQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the
          * specified delivery channel. After the delivery has started, AWS Config sends the
          * following notifications using an Amazon SNS topic that you have specified.</p>
@@ -1097,9 +1165,9 @@ namespace Model
 
         /**
          * <p>Returns a list of compliant and noncompliant rules with the number of
-         * resources for compliant and noncompliant rules. </p> <note> <p>The results can
+         * resources for compliant and noncompliant rules. </p>  <p>The results can
          * return an empty result page, but if you have a <code>nextToken</code>, the
-         * results are displayed on the next page.</p> </note><p><h3>See Also:</h3>   <a
+         * results are displayed on the next page.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConfigRules">AWS
          * API Reference</a></p>
          */
@@ -1107,9 +1175,9 @@ namespace Model
 
         /**
          * <p>Returns a list of compliant and noncompliant rules with the number of
-         * resources for compliant and noncompliant rules. </p> <note> <p>The results can
+         * resources for compliant and noncompliant rules. </p>  <p>The results can
          * return an empty result page, but if you have a <code>nextToken</code>, the
-         * results are displayed on the next page.</p> </note><p><h3>See Also:</h3>   <a
+         * results are displayed on the next page.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConfigRules">AWS
          * API Reference</a></p>
          *
@@ -1119,9 +1187,9 @@ namespace Model
 
         /**
          * <p>Returns a list of compliant and noncompliant rules with the number of
-         * resources for compliant and noncompliant rules. </p> <note> <p>The results can
+         * resources for compliant and noncompliant rules. </p>  <p>The results can
          * return an empty result page, but if you have a <code>nextToken</code>, the
-         * results are displayed on the next page.</p> </note><p><h3>See Also:</h3>   <a
+         * results are displayed on the next page.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConfigRules">AWS
          * API Reference</a></p>
          *
@@ -1451,9 +1519,9 @@ namespace Model
         /**
          * <p>Returns the current status of the specified configuration recorder. If a
          * configuration recorder is not specified, this action returns the status of all
-         * configuration recorders associated with the account.</p> <note> <p>Currently,
+         * configuration recorders associated with the account.</p>  <p>Currently,
          * you can specify only one configuration recorder per region in your account.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus">AWS
          * API Reference</a></p>
          */
@@ -1462,9 +1530,9 @@ namespace Model
         /**
          * <p>Returns the current status of the specified configuration recorder. If a
          * configuration recorder is not specified, this action returns the status of all
-         * configuration recorders associated with the account.</p> <note> <p>Currently,
+         * configuration recorders associated with the account.</p>  <p>Currently,
          * you can specify only one configuration recorder per region in your account.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus">AWS
          * API Reference</a></p>
          *
@@ -1475,9 +1543,9 @@ namespace Model
         /**
          * <p>Returns the current status of the specified configuration recorder. If a
          * configuration recorder is not specified, this action returns the status of all
-         * configuration recorders associated with the account.</p> <note> <p>Currently,
+         * configuration recorders associated with the account.</p>  <p>Currently,
          * you can specify only one configuration recorder per region in your account.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus">AWS
          * API Reference</a></p>
          *
@@ -1488,9 +1556,9 @@ namespace Model
         /**
          * <p>Returns the details for the specified configuration recorders. If the
          * configuration recorder is not specified, this action returns the details for all
-         * configuration recorders associated with the account.</p> <note> <p>Currently,
+         * configuration recorders associated with the account.</p>  <p>Currently,
          * you can specify only one configuration recorder per region in your account.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders">AWS
          * API Reference</a></p>
          */
@@ -1499,9 +1567,9 @@ namespace Model
         /**
          * <p>Returns the details for the specified configuration recorders. If the
          * configuration recorder is not specified, this action returns the details for all
-         * configuration recorders associated with the account.</p> <note> <p>Currently,
+         * configuration recorders associated with the account.</p>  <p>Currently,
          * you can specify only one configuration recorder per region in your account.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders">AWS
          * API Reference</a></p>
          *
@@ -1512,9 +1580,9 @@ namespace Model
         /**
          * <p>Returns the details for the specified configuration recorders. If the
          * configuration recorder is not specified, this action returns the details for all
-         * configuration recorders associated with the account.</p> <note> <p>Currently,
+         * configuration recorders associated with the account.</p>  <p>Currently,
          * you can specify only one configuration recorder per region in your account.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders">AWS
          * API Reference</a></p>
          *
@@ -1523,16 +1591,16 @@ namespace Model
         virtual void DescribeConfigurationRecordersAsync(const Model::DescribeConfigurationRecordersRequest& request, const DescribeConfigurationRecordersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns compliance details for each rule in that conformance pack.</p> <note>
-         * <p>You must provide exact rule names.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Returns compliance details for each rule in that conformance pack.</p> 
+         * <p>You must provide exact rule names.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePackCompliance">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeConformancePackComplianceOutcome DescribeConformancePackCompliance(const Model::DescribeConformancePackComplianceRequest& request) const;
 
         /**
-         * <p>Returns compliance details for each rule in that conformance pack.</p> <note>
-         * <p>You must provide exact rule names.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Returns compliance details for each rule in that conformance pack.</p> 
+         * <p>You must provide exact rule names.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePackCompliance">AWS
          * API Reference</a></p>
          *
@@ -1541,8 +1609,8 @@ namespace Model
         virtual Model::DescribeConformancePackComplianceOutcomeCallable DescribeConformancePackComplianceCallable(const Model::DescribeConformancePackComplianceRequest& request) const;
 
         /**
-         * <p>Returns compliance details for each rule in that conformance pack.</p> <note>
-         * <p>You must provide exact rule names.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Returns compliance details for each rule in that conformance pack.</p> 
+         * <p>You must provide exact rule names.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePackCompliance">AWS
          * API Reference</a></p>
          *
@@ -1551,18 +1619,18 @@ namespace Model
         virtual void DescribeConformancePackComplianceAsync(const Model::DescribeConformancePackComplianceRequest& request, const DescribeConformancePackComplianceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides one or more conformance packs deployment status.</p> <note> <p>If
+         * <p>Provides one or more conformance packs deployment status.</p>  <p>If
          * there are no conformance packs then you will see an empty result.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePackStatus">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeConformancePackStatusOutcome DescribeConformancePackStatus(const Model::DescribeConformancePackStatusRequest& request) const;
 
         /**
-         * <p>Provides one or more conformance packs deployment status.</p> <note> <p>If
+         * <p>Provides one or more conformance packs deployment status.</p>  <p>If
          * there are no conformance packs then you will see an empty result.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePackStatus">AWS
          * API Reference</a></p>
          *
@@ -1571,9 +1639,9 @@ namespace Model
         virtual Model::DescribeConformancePackStatusOutcomeCallable DescribeConformancePackStatusCallable(const Model::DescribeConformancePackStatusRequest& request) const;
 
         /**
-         * <p>Provides one or more conformance packs deployment status.</p> <note> <p>If
+         * <p>Provides one or more conformance packs deployment status.</p>  <p>If
          * there are no conformance packs then you will see an empty result.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePackStatus">AWS
          * API Reference</a></p>
          *
@@ -1612,8 +1680,8 @@ namespace Model
         /**
          * <p>Returns the current status of the specified delivery channel. If a delivery
          * channel is not specified, this action returns the current status of all delivery
-         * channels associated with the account.</p> <note> <p>Currently, you can specify
-         * only one delivery channel per region in your account.</p> </note><p><h3>See
+         * channels associated with the account.</p>  <p>Currently, you can specify
+         * only one delivery channel per region in your account.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus">AWS
          * API Reference</a></p>
@@ -1623,8 +1691,8 @@ namespace Model
         /**
          * <p>Returns the current status of the specified delivery channel. If a delivery
          * channel is not specified, this action returns the current status of all delivery
-         * channels associated with the account.</p> <note> <p>Currently, you can specify
-         * only one delivery channel per region in your account.</p> </note><p><h3>See
+         * channels associated with the account.</p>  <p>Currently, you can specify
+         * only one delivery channel per region in your account.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus">AWS
          * API Reference</a></p>
@@ -1636,8 +1704,8 @@ namespace Model
         /**
          * <p>Returns the current status of the specified delivery channel. If a delivery
          * channel is not specified, this action returns the current status of all delivery
-         * channels associated with the account.</p> <note> <p>Currently, you can specify
-         * only one delivery channel per region in your account.</p> </note><p><h3>See
+         * channels associated with the account.</p>  <p>Currently, you can specify
+         * only one delivery channel per region in your account.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus">AWS
          * API Reference</a></p>
@@ -1649,8 +1717,8 @@ namespace Model
         /**
          * <p>Returns details about the specified delivery channel. If a delivery channel
          * is not specified, this action returns the details of all delivery channels
-         * associated with the account.</p> <note> <p>Currently, you can specify only one
-         * delivery channel per region in your account.</p> </note><p><h3>See Also:</h3>  
+         * associated with the account.</p>  <p>Currently, you can specify only one
+         * delivery channel per region in your account.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannels">AWS
          * API Reference</a></p>
@@ -1660,8 +1728,8 @@ namespace Model
         /**
          * <p>Returns details about the specified delivery channel. If a delivery channel
          * is not specified, this action returns the details of all delivery channels
-         * associated with the account.</p> <note> <p>Currently, you can specify only one
-         * delivery channel per region in your account.</p> </note><p><h3>See Also:</h3>  
+         * associated with the account.</p>  <p>Currently, you can specify only one
+         * delivery channel per region in your account.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannels">AWS
          * API Reference</a></p>
@@ -1673,8 +1741,8 @@ namespace Model
         /**
          * <p>Returns details about the specified delivery channel. If a delivery channel
          * is not specified, this action returns the details of all delivery channels
-         * associated with the account.</p> <note> <p>Currently, you can specify only one
-         * delivery channel per region in your account.</p> </note><p><h3>See Also:</h3>  
+         * associated with the account.</p>  <p>Currently, you can specify only one
+         * delivery channel per region in your account.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannels">AWS
          * API Reference</a></p>
@@ -1685,13 +1753,12 @@ namespace Model
 
         /**
          * <p>Provides organization config rule deployment status for an organization.</p>
-         * <note> <p>The status is not considered successful until organization config rule
+         *  <p>The status is not considered successful until organization config rule
          * is successfully deployed in all the member accounts with an exception of
          * excluded accounts.</p> <p>When you specify the limit and the next token, you
          * receive a paginated response. Limit and next token are not applicable if you
          * specify organization config rule names. It is only applicable, when you request
-         * all the organization config rules.</p> <p>Only a master account can call this
-         * API.</p> </note><p><h3>See Also:</h3>   <a
+         * all the organization config rules.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRuleStatuses">AWS
          * API Reference</a></p>
          */
@@ -1699,13 +1766,12 @@ namespace Model
 
         /**
          * <p>Provides organization config rule deployment status for an organization.</p>
-         * <note> <p>The status is not considered successful until organization config rule
+         *  <p>The status is not considered successful until organization config rule
          * is successfully deployed in all the member accounts with an exception of
          * excluded accounts.</p> <p>When you specify the limit and the next token, you
          * receive a paginated response. Limit and next token are not applicable if you
          * specify organization config rule names. It is only applicable, when you request
-         * all the organization config rules.</p> <p>Only a master account can call this
-         * API.</p> </note><p><h3>See Also:</h3>   <a
+         * all the organization config rules.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRuleStatuses">AWS
          * API Reference</a></p>
          *
@@ -1715,13 +1781,12 @@ namespace Model
 
         /**
          * <p>Provides organization config rule deployment status for an organization.</p>
-         * <note> <p>The status is not considered successful until organization config rule
+         *  <p>The status is not considered successful until organization config rule
          * is successfully deployed in all the member accounts with an exception of
          * excluded accounts.</p> <p>When you specify the limit and the next token, you
          * receive a paginated response. Limit and next token are not applicable if you
          * specify organization config rule names. It is only applicable, when you request
-         * all the organization config rules.</p> <p>Only a master account can call this
-         * API.</p> </note><p><h3>See Also:</h3>   <a
+         * all the organization config rules.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRuleStatuses">AWS
          * API Reference</a></p>
          *
@@ -1730,22 +1795,22 @@ namespace Model
         virtual void DescribeOrganizationConfigRuleStatusesAsync(const Model::DescribeOrganizationConfigRuleStatusesRequest& request, const DescribeOrganizationConfigRuleStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of organization config rules.</p> <note> <p>When you specify
+         * <p>Returns a list of organization config rules. </p>  <p>When you specify
          * the limit and the next token, you receive a paginated response. Limit and next
          * token are not applicable if you specify organization config rule names. It is
-         * only applicable, when you request all the organization config rules.</p> <p>Only
-         * a master account can call this API.</p> </note><p><h3>See Also:</h3>   <a
+         * only applicable, when you request all the organization config rules.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeOrganizationConfigRulesOutcome DescribeOrganizationConfigRules(const Model::DescribeOrganizationConfigRulesRequest& request) const;
 
         /**
-         * <p>Returns a list of organization config rules.</p> <note> <p>When you specify
+         * <p>Returns a list of organization config rules. </p>  <p>When you specify
          * the limit and the next token, you receive a paginated response. Limit and next
          * token are not applicable if you specify organization config rule names. It is
-         * only applicable, when you request all the organization config rules.</p> <p>Only
-         * a master account can call this API.</p> </note><p><h3>See Also:</h3>   <a
+         * only applicable, when you request all the organization config rules.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules">AWS
          * API Reference</a></p>
          *
@@ -1754,11 +1819,11 @@ namespace Model
         virtual Model::DescribeOrganizationConfigRulesOutcomeCallable DescribeOrganizationConfigRulesCallable(const Model::DescribeOrganizationConfigRulesRequest& request) const;
 
         /**
-         * <p>Returns a list of organization config rules.</p> <note> <p>When you specify
+         * <p>Returns a list of organization config rules. </p>  <p>When you specify
          * the limit and the next token, you receive a paginated response. Limit and next
          * token are not applicable if you specify organization config rule names. It is
-         * only applicable, when you request all the organization config rules.</p> <p>Only
-         * a master account can call this API.</p> </note><p><h3>See Also:</h3>   <a
+         * only applicable, when you request all the organization config rules.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules">AWS
          * API Reference</a></p>
          *
@@ -1767,30 +1832,28 @@ namespace Model
         virtual void DescribeOrganizationConfigRulesAsync(const Model::DescribeOrganizationConfigRulesRequest& request, const DescribeOrganizationConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides organization conformance pack deployment status for an
-         * organization.</p> <note> <p>The status is not considered successful until
-         * organization conformance pack is successfully deployed in all the member
-         * accounts with an exception of excluded accounts.</p> <p>When you specify the
-         * limit and the next token, you receive a paginated response. Limit and next token
-         * are not applicable if you specify organization conformance pack names. They are
-         * only applicable, when you request all the organization conformance packs.</p>
-         * <p>Only a master account can call this API.</p> </note><p><h3>See Also:</h3>  
-         * <a
+         * <p>Provides organization conformance pack deployment status for an organization.
+         * </p>  <p>The status is not considered successful until organization
+         * conformance pack is successfully deployed in all the member accounts with an
+         * exception of excluded accounts.</p> <p>When you specify the limit and the next
+         * token, you receive a paginated response. Limit and next token are not applicable
+         * if you specify organization conformance pack names. They are only applicable,
+         * when you request all the organization conformance packs.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePackStatuses">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeOrganizationConformancePackStatusesOutcome DescribeOrganizationConformancePackStatuses(const Model::DescribeOrganizationConformancePackStatusesRequest& request) const;
 
         /**
-         * <p>Provides organization conformance pack deployment status for an
-         * organization.</p> <note> <p>The status is not considered successful until
-         * organization conformance pack is successfully deployed in all the member
-         * accounts with an exception of excluded accounts.</p> <p>When you specify the
-         * limit and the next token, you receive a paginated response. Limit and next token
-         * are not applicable if you specify organization conformance pack names. They are
-         * only applicable, when you request all the organization conformance packs.</p>
-         * <p>Only a master account can call this API.</p> </note><p><h3>See Also:</h3>  
-         * <a
+         * <p>Provides organization conformance pack deployment status for an organization.
+         * </p>  <p>The status is not considered successful until organization
+         * conformance pack is successfully deployed in all the member accounts with an
+         * exception of excluded accounts.</p> <p>When you specify the limit and the next
+         * token, you receive a paginated response. Limit and next token are not applicable
+         * if you specify organization conformance pack names. They are only applicable,
+         * when you request all the organization conformance packs.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePackStatuses">AWS
          * API Reference</a></p>
          *
@@ -1799,15 +1862,14 @@ namespace Model
         virtual Model::DescribeOrganizationConformancePackStatusesOutcomeCallable DescribeOrganizationConformancePackStatusesCallable(const Model::DescribeOrganizationConformancePackStatusesRequest& request) const;
 
         /**
-         * <p>Provides organization conformance pack deployment status for an
-         * organization.</p> <note> <p>The status is not considered successful until
-         * organization conformance pack is successfully deployed in all the member
-         * accounts with an exception of excluded accounts.</p> <p>When you specify the
-         * limit and the next token, you receive a paginated response. Limit and next token
-         * are not applicable if you specify organization conformance pack names. They are
-         * only applicable, when you request all the organization conformance packs.</p>
-         * <p>Only a master account can call this API.</p> </note><p><h3>See Also:</h3>  
-         * <a
+         * <p>Provides organization conformance pack deployment status for an organization.
+         * </p>  <p>The status is not considered successful until organization
+         * conformance pack is successfully deployed in all the member accounts with an
+         * exception of excluded accounts.</p> <p>When you specify the limit and the next
+         * token, you receive a paginated response. Limit and next token are not applicable
+         * if you specify organization conformance pack names. They are only applicable,
+         * when you request all the organization conformance packs.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePackStatuses">AWS
          * API Reference</a></p>
          *
@@ -1816,24 +1878,22 @@ namespace Model
         virtual void DescribeOrganizationConformancePackStatusesAsync(const Model::DescribeOrganizationConformancePackStatusesRequest& request, const DescribeOrganizationConformancePackStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of organization conformance packs.</p> <note> <p>When you
+         * <p>Returns a list of organization conformance packs. </p>  <p>When you
          * specify the limit and the next token, you receive a paginated response. </p>
          * <p>Limit and next token are not applicable if you specify organization
          * conformance packs names. They are only applicable, when you request all the
-         * organization conformance packs. </p> <p>Only a master account can call this
-         * API.</p> </note><p><h3>See Also:</h3>   <a
+         * organization conformance packs. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePacks">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeOrganizationConformancePacksOutcome DescribeOrganizationConformancePacks(const Model::DescribeOrganizationConformancePacksRequest& request) const;
 
         /**
-         * <p>Returns a list of organization conformance packs.</p> <note> <p>When you
+         * <p>Returns a list of organization conformance packs. </p>  <p>When you
          * specify the limit and the next token, you receive a paginated response. </p>
          * <p>Limit and next token are not applicable if you specify organization
          * conformance packs names. They are only applicable, when you request all the
-         * organization conformance packs. </p> <p>Only a master account can call this
-         * API.</p> </note><p><h3>See Also:</h3>   <a
+         * organization conformance packs. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePacks">AWS
          * API Reference</a></p>
          *
@@ -1842,12 +1902,11 @@ namespace Model
         virtual Model::DescribeOrganizationConformancePacksOutcomeCallable DescribeOrganizationConformancePacksCallable(const Model::DescribeOrganizationConformancePacksRequest& request) const;
 
         /**
-         * <p>Returns a list of organization conformance packs.</p> <note> <p>When you
+         * <p>Returns a list of organization conformance packs. </p>  <p>When you
          * specify the limit and the next token, you receive a paginated response. </p>
          * <p>Limit and next token are not applicable if you specify organization
          * conformance packs names. They are only applicable, when you request all the
-         * organization conformance packs. </p> <p>Only a master account can call this
-         * API.</p> </note><p><h3>See Also:</h3>   <a
+         * organization conformance packs. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePacks">AWS
          * API Reference</a></p>
          *
@@ -1915,11 +1974,14 @@ namespace Model
          * <p>Returns the details of one or more remediation exceptions. A detailed view of
          * a remediation exception for a set of resources that includes an explanation of
          * an exception and the time when the exception will be deleted. When you specify
-         * the limit and the next token, you receive a paginated response. </p> <note>
-         * <p>When you specify the limit and the next token, you receive a paginated
-         * response. </p> <p>Limit and next token are not applicable if you request
-         * resources in batch. It is only applicable, when you request all resources.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * the limit and the next token, you receive a paginated response. </p> 
+         * <p>AWS Config generates a remediation exception when a problem occurs executing
+         * a remediation action to a specific resource. Remediation exceptions blocks
+         * auto-remediation until the exception is cleared.</p> <p>When you specify the
+         * limit and the next token, you receive a paginated response. </p> <p>Limit and
+         * next token are not applicable if you request resources in batch. It is only
+         * applicable, when you request all resources.</p> <p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRemediationExceptions">AWS
          * API Reference</a></p>
          */
@@ -1929,11 +1991,14 @@ namespace Model
          * <p>Returns the details of one or more remediation exceptions. A detailed view of
          * a remediation exception for a set of resources that includes an explanation of
          * an exception and the time when the exception will be deleted. When you specify
-         * the limit and the next token, you receive a paginated response. </p> <note>
-         * <p>When you specify the limit and the next token, you receive a paginated
-         * response. </p> <p>Limit and next token are not applicable if you request
-         * resources in batch. It is only applicable, when you request all resources.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * the limit and the next token, you receive a paginated response. </p> 
+         * <p>AWS Config generates a remediation exception when a problem occurs executing
+         * a remediation action to a specific resource. Remediation exceptions blocks
+         * auto-remediation until the exception is cleared.</p> <p>When you specify the
+         * limit and the next token, you receive a paginated response. </p> <p>Limit and
+         * next token are not applicable if you request resources in batch. It is only
+         * applicable, when you request all resources.</p> <p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRemediationExceptions">AWS
          * API Reference</a></p>
          *
@@ -1945,11 +2010,14 @@ namespace Model
          * <p>Returns the details of one or more remediation exceptions. A detailed view of
          * a remediation exception for a set of resources that includes an explanation of
          * an exception and the time when the exception will be deleted. When you specify
-         * the limit and the next token, you receive a paginated response. </p> <note>
-         * <p>When you specify the limit and the next token, you receive a paginated
-         * response. </p> <p>Limit and next token are not applicable if you request
-         * resources in batch. It is only applicable, when you request all resources.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * the limit and the next token, you receive a paginated response. </p> 
+         * <p>AWS Config generates a remediation exception when a problem occurs executing
+         * a remediation action to a specific resource. Remediation exceptions blocks
+         * auto-remediation until the exception is cleared.</p> <p>When you specify the
+         * limit and the next token, you receive a paginated response. </p> <p>Limit and
+         * next token are not applicable if you request resources in batch. It is only
+         * applicable, when you request all resources.</p> <p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRemediationExceptions">AWS
          * API Reference</a></p>
          *
@@ -1997,9 +2065,9 @@ namespace Model
         /**
          * <p>Returns the details of one or more retention configurations. If the retention
          * configuration name is not specified, this action returns the details for all the
-         * retention configurations for that account.</p> <note> <p>Currently, AWS Config
+         * retention configurations for that account.</p>  <p>Currently, AWS Config
          * supports only one retention configuration per region in your account.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRetentionConfigurations">AWS
          * API Reference</a></p>
          */
@@ -2008,9 +2076,9 @@ namespace Model
         /**
          * <p>Returns the details of one or more retention configurations. If the retention
          * configuration name is not specified, this action returns the details for all the
-         * retention configurations for that account.</p> <note> <p>Currently, AWS Config
+         * retention configurations for that account.</p>  <p>Currently, AWS Config
          * supports only one retention configuration per region in your account.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRetentionConfigurations">AWS
          * API Reference</a></p>
          *
@@ -2021,9 +2089,9 @@ namespace Model
         /**
          * <p>Returns the details of one or more retention configurations. If the retention
          * configuration name is not specified, this action returns the details for all the
-         * retention configurations for that account.</p> <note> <p>Currently, AWS Config
+         * retention configurations for that account.</p>  <p>Currently, AWS Config
          * supports only one retention configuration per region in your account.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRetentionConfigurations">AWS
          * API Reference</a></p>
          *
@@ -2035,9 +2103,9 @@ namespace Model
          * <p>Returns the evaluation results for the specified AWS Config rule for a
          * specific resource in a rule. The results indicate which AWS resources were
          * evaluated by the rule, when each resource was last evaluated, and whether each
-         * resource complies with the rule. </p> <note> <p>The results can return an empty
+         * resource complies with the rule. </p>  <p>The results can return an empty
          * result page. But if you have a <code>nextToken</code>, the results are displayed
-         * on the next page.</p> </note><p><h3>See Also:</h3>   <a
+         * on the next page.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateComplianceDetailsByConfigRule">AWS
          * API Reference</a></p>
          */
@@ -2047,9 +2115,9 @@ namespace Model
          * <p>Returns the evaluation results for the specified AWS Config rule for a
          * specific resource in a rule. The results indicate which AWS resources were
          * evaluated by the rule, when each resource was last evaluated, and whether each
-         * resource complies with the rule. </p> <note> <p>The results can return an empty
+         * resource complies with the rule. </p>  <p>The results can return an empty
          * result page. But if you have a <code>nextToken</code>, the results are displayed
-         * on the next page.</p> </note><p><h3>See Also:</h3>   <a
+         * on the next page.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateComplianceDetailsByConfigRule">AWS
          * API Reference</a></p>
          *
@@ -2061,9 +2129,9 @@ namespace Model
          * <p>Returns the evaluation results for the specified AWS Config rule for a
          * specific resource in a rule. The results indicate which AWS resources were
          * evaluated by the rule, when each resource was last evaluated, and whether each
-         * resource complies with the rule. </p> <note> <p>The results can return an empty
+         * resource complies with the rule. </p>  <p>The results can return an empty
          * result page. But if you have a <code>nextToken</code>, the results are displayed
-         * on the next page.</p> </note><p><h3>See Also:</h3>   <a
+         * on the next page.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateComplianceDetailsByConfigRule">AWS
          * API Reference</a></p>
          *
@@ -2073,9 +2141,9 @@ namespace Model
 
         /**
          * <p>Returns the number of compliant and noncompliant rules for one or more
-         * accounts and regions in an aggregator.</p> <note> <p>The results can return an
+         * accounts and regions in an aggregator.</p>  <p>The results can return an
          * empty result page, but if you have a nextToken, the results are displayed on the
-         * next page.</p> </note><p><h3>See Also:</h3>   <a
+         * next page.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConfigRuleComplianceSummary">AWS
          * API Reference</a></p>
          */
@@ -2083,9 +2151,9 @@ namespace Model
 
         /**
          * <p>Returns the number of compliant and noncompliant rules for one or more
-         * accounts and regions in an aggregator.</p> <note> <p>The results can return an
+         * accounts and regions in an aggregator.</p>  <p>The results can return an
          * empty result page, but if you have a nextToken, the results are displayed on the
-         * next page.</p> </note><p><h3>See Also:</h3>   <a
+         * next page.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConfigRuleComplianceSummary">AWS
          * API Reference</a></p>
          *
@@ -2095,9 +2163,9 @@ namespace Model
 
         /**
          * <p>Returns the number of compliant and noncompliant rules for one or more
-         * accounts and regions in an aggregator.</p> <note> <p>The results can return an
+         * accounts and regions in an aggregator.</p>  <p>The results can return an
          * empty result page, but if you have a nextToken, the results are displayed on the
-         * next page.</p> </note><p><h3>See Also:</h3>   <a
+         * next page.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConfigRuleComplianceSummary">AWS
          * API Reference</a></p>
          *
@@ -2379,13 +2447,13 @@ namespace Model
          * <a>ResourceCount</a> objects on each page. You can customize this number with
          * the <code>limit</code> parameter. The response includes a <code>nextToken</code>
          * string. To get the next page of results, run the request again and specify the
-         * string for the <code>nextToken</code> parameter.</p> <note> <p>If you make a
+         * string for the <code>nextToken</code> parameter.</p>  <p>If you make a
          * call to the <a>GetDiscoveredResourceCounts</a> action, you might not immediately
          * receive resource counts in the following situations:</p> <ul> <li> <p>You are a
          * new AWS Config customer.</p> </li> <li> <p>You just enabled resource
          * recording.</p> </li> </ul> <p>It might take a few minutes for AWS Config to
          * record and count your resources. Wait a few minutes and then retry the
-         * <a>GetDiscoveredResourceCounts</a> action. </p> </note><p><h3>See Also:</h3>  
+         * <a>GetDiscoveredResourceCounts</a> action. </p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetDiscoveredResourceCounts">AWS
          * API Reference</a></p>
@@ -2407,13 +2475,13 @@ namespace Model
          * <a>ResourceCount</a> objects on each page. You can customize this number with
          * the <code>limit</code> parameter. The response includes a <code>nextToken</code>
          * string. To get the next page of results, run the request again and specify the
-         * string for the <code>nextToken</code> parameter.</p> <note> <p>If you make a
+         * string for the <code>nextToken</code> parameter.</p>  <p>If you make a
          * call to the <a>GetDiscoveredResourceCounts</a> action, you might not immediately
          * receive resource counts in the following situations:</p> <ul> <li> <p>You are a
          * new AWS Config customer.</p> </li> <li> <p>You just enabled resource
          * recording.</p> </li> </ul> <p>It might take a few minutes for AWS Config to
          * record and count your resources. Wait a few minutes and then retry the
-         * <a>GetDiscoveredResourceCounts</a> action. </p> </note><p><h3>See Also:</h3>  
+         * <a>GetDiscoveredResourceCounts</a> action. </p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetDiscoveredResourceCounts">AWS
          * API Reference</a></p>
@@ -2437,13 +2505,13 @@ namespace Model
          * <a>ResourceCount</a> objects on each page. You can customize this number with
          * the <code>limit</code> parameter. The response includes a <code>nextToken</code>
          * string. To get the next page of results, run the request again and specify the
-         * string for the <code>nextToken</code> parameter.</p> <note> <p>If you make a
+         * string for the <code>nextToken</code> parameter.</p>  <p>If you make a
          * call to the <a>GetDiscoveredResourceCounts</a> action, you might not immediately
          * receive resource counts in the following situations:</p> <ul> <li> <p>You are a
          * new AWS Config customer.</p> </li> <li> <p>You just enabled resource
          * recording.</p> </li> </ul> <p>It might take a few minutes for AWS Config to
          * record and count your resources. Wait a few minutes and then retry the
-         * <a>GetDiscoveredResourceCounts</a> action. </p> </note><p><h3>See Also:</h3>  
+         * <a>GetDiscoveredResourceCounts</a> action. </p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetDiscoveredResourceCounts">AWS
          * API Reference</a></p>
@@ -2454,8 +2522,7 @@ namespace Model
 
         /**
          * <p>Returns detailed status for each member account within an organization for a
-         * given organization config rule.</p> <note> <p>Only a master account can call
-         * this API.</p> </note><p><h3>See Also:</h3>   <a
+         * given organization config rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus">AWS
          * API Reference</a></p>
          */
@@ -2463,8 +2530,7 @@ namespace Model
 
         /**
          * <p>Returns detailed status for each member account within an organization for a
-         * given organization config rule.</p> <note> <p>Only a master account can call
-         * this API.</p> </note><p><h3>See Also:</h3>   <a
+         * given organization config rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus">AWS
          * API Reference</a></p>
          *
@@ -2474,8 +2540,7 @@ namespace Model
 
         /**
          * <p>Returns detailed status for each member account within an organization for a
-         * given organization config rule.</p> <note> <p>Only a master account can call
-         * this API.</p> </note><p><h3>See Also:</h3>   <a
+         * given organization config rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus">AWS
          * API Reference</a></p>
          *
@@ -2485,8 +2550,7 @@ namespace Model
 
         /**
          * <p>Returns detailed status for each member account within an organization for a
-         * given organization conformance pack.</p> <p>Only a master account can call this
-         * API.</p><p><h3>See Also:</h3>   <a
+         * given organization conformance pack.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConformancePackDetailedStatus">AWS
          * API Reference</a></p>
          */
@@ -2494,8 +2558,7 @@ namespace Model
 
         /**
          * <p>Returns detailed status for each member account within an organization for a
-         * given organization conformance pack.</p> <p>Only a master account can call this
-         * API.</p><p><h3>See Also:</h3>   <a
+         * given organization conformance pack.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConformancePackDetailedStatus">AWS
          * API Reference</a></p>
          *
@@ -2505,8 +2568,7 @@ namespace Model
 
         /**
          * <p>Returns detailed status for each member account within an organization for a
-         * given organization conformance pack.</p> <p>Only a master account can call this
-         * API.</p><p><h3>See Also:</h3>   <a
+         * given organization conformance pack.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConformancePackDetailedStatus">AWS
          * API Reference</a></p>
          *
@@ -2525,10 +2587,10 @@ namespace Model
          * this number with the <code>limit</code> parameter. The response includes a
          * <code>nextToken</code> string. To get the next page of results, run the request
          * again and specify the string for the <code>nextToken</code> parameter.</p>
-         * <note> <p>Each call to the API is limited to span a duration of seven days. It
+         *  <p>Each call to the API is limited to span a duration of seven days. It
          * is likely that the number of records returned is smaller than the specified
          * <code>limit</code>. In such cases, you can make another call, using the
-         * <code>nextToken</code>.</p> </note><p><h3>See Also:</h3>   <a
+         * <code>nextToken</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory">AWS
          * API Reference</a></p>
          */
@@ -2545,10 +2607,10 @@ namespace Model
          * this number with the <code>limit</code> parameter. The response includes a
          * <code>nextToken</code> string. To get the next page of results, run the request
          * again and specify the string for the <code>nextToken</code> parameter.</p>
-         * <note> <p>Each call to the API is limited to span a duration of seven days. It
+         *  <p>Each call to the API is limited to span a duration of seven days. It
          * is likely that the number of records returned is smaller than the specified
          * <code>limit</code>. In such cases, you can make another call, using the
-         * <code>nextToken</code>.</p> </note><p><h3>See Also:</h3>   <a
+         * <code>nextToken</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory">AWS
          * API Reference</a></p>
          *
@@ -2567,16 +2629,41 @@ namespace Model
          * this number with the <code>limit</code> parameter. The response includes a
          * <code>nextToken</code> string. To get the next page of results, run the request
          * again and specify the string for the <code>nextToken</code> parameter.</p>
-         * <note> <p>Each call to the API is limited to span a duration of seven days. It
+         *  <p>Each call to the API is limited to span a duration of seven days. It
          * is likely that the number of records returned is smaller than the specified
          * <code>limit</code>. In such cases, you can make another call, using the
-         * <code>nextToken</code>.</p> </note><p><h3>See Also:</h3>   <a
+         * <code>nextToken</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetResourceConfigHistoryAsync(const Model::GetResourceConfigHistoryRequest& request, const GetResourceConfigHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the details of a specific stored query.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetStoredQuery">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetStoredQueryOutcome GetStoredQuery(const Model::GetStoredQueryRequest& request) const;
+
+        /**
+         * <p>Returns the details of a specific stored query.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetStoredQuery">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetStoredQueryOutcomeCallable GetStoredQueryCallable(const Model::GetStoredQueryRequest& request) const;
+
+        /**
+         * <p>Returns the details of a specific stored query.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetStoredQuery">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetStoredQueryAsync(const Model::GetStoredQueryRequest& request, const GetStoredQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Accepts a resource type and returns a list of resource identifiers that are
@@ -2636,8 +2723,8 @@ namespace Model
          * and (if available) the custom resource name. The results consist of resources
          * that AWS Config has discovered, including those that AWS Config is not currently
          * recording. You can narrow the results to include only resources that have
-         * specific resource IDs or a resource name.</p> <note> <p>You can specify either
-         * resource IDs or a resource name, but not both, in the same request.</p> </note>
+         * specific resource IDs or a resource name.</p>  <p>You can specify either
+         * resource IDs or a resource name, but not both, in the same request.</p> 
          * <p>The response is paginated. By default, AWS Config lists 100 resource
          * identifiers on each page. You can customize this number with the
          * <code>limit</code> parameter. The response includes a <code>nextToken</code>
@@ -2654,8 +2741,8 @@ namespace Model
          * and (if available) the custom resource name. The results consist of resources
          * that AWS Config has discovered, including those that AWS Config is not currently
          * recording. You can narrow the results to include only resources that have
-         * specific resource IDs or a resource name.</p> <note> <p>You can specify either
-         * resource IDs or a resource name, but not both, in the same request.</p> </note>
+         * specific resource IDs or a resource name.</p>  <p>You can specify either
+         * resource IDs or a resource name, but not both, in the same request.</p> 
          * <p>The response is paginated. By default, AWS Config lists 100 resource
          * identifiers on each page. You can customize this number with the
          * <code>limit</code> parameter. The response includes a <code>nextToken</code>
@@ -2674,8 +2761,8 @@ namespace Model
          * and (if available) the custom resource name. The results consist of resources
          * that AWS Config has discovered, including those that AWS Config is not currently
          * recording. You can narrow the results to include only resources that have
-         * specific resource IDs or a resource name.</p> <note> <p>You can specify either
-         * resource IDs or a resource name, but not both, in the same request.</p> </note>
+         * specific resource IDs or a resource name.</p>  <p>You can specify either
+         * resource IDs or a resource name, but not both, in the same request.</p> 
          * <p>The response is paginated. By default, AWS Config lists 100 resource
          * identifiers on each page. You can customize this number with the
          * <code>limit</code> parameter. The response includes a <code>nextToken</code>
@@ -2687,6 +2774,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDiscoveredResourcesAsync(const Model::ListDiscoveredResourcesRequest& request, const ListDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>List the stored queries for an AWS account in an AWS Region. The default is
+         * 100. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListStoredQueries">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListStoredQueriesOutcome ListStoredQueries(const Model::ListStoredQueriesRequest& request) const;
+
+        /**
+         * <p>List the stored queries for an AWS account in an AWS Region. The default is
+         * 100. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListStoredQueries">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListStoredQueriesOutcomeCallable ListStoredQueriesCallable(const Model::ListStoredQueriesRequest& request) const;
+
+        /**
+         * <p>List the stored queries for an AWS account in an AWS Region. The default is
+         * 100. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListStoredQueries">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListStoredQueriesAsync(const Model::ListStoredQueriesRequest& request, const ListStoredQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the tags for AWS Config resource.</p><p><h3>See Also:</h3>   <a
@@ -2856,12 +2971,12 @@ namespace Model
         /**
          * <p>Creates and updates the configuration aggregator with the selected source
          * accounts and regions. The source account can be individual account(s) or an
-         * organization.</p> <note> <p>AWS Config should be enabled in source accounts and
+         * organization.</p>  <p>AWS Config should be enabled in source accounts and
          * regions you want to aggregate.</p> <p>If your source type is an organization,
          * you must be signed in to the master account and all features must be enabled in
          * your organization. AWS Config calls <code>EnableAwsServiceAccess</code> API to
          * enable integration between AWS Config and AWS Organizations. </p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationAggregator">AWS
          * API Reference</a></p>
          */
@@ -2870,12 +2985,12 @@ namespace Model
         /**
          * <p>Creates and updates the configuration aggregator with the selected source
          * accounts and regions. The source account can be individual account(s) or an
-         * organization.</p> <note> <p>AWS Config should be enabled in source accounts and
+         * organization.</p>  <p>AWS Config should be enabled in source accounts and
          * regions you want to aggregate.</p> <p>If your source type is an organization,
          * you must be signed in to the master account and all features must be enabled in
          * your organization. AWS Config calls <code>EnableAwsServiceAccess</code> API to
          * enable integration between AWS Config and AWS Organizations. </p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationAggregator">AWS
          * API Reference</a></p>
          *
@@ -2886,12 +3001,12 @@ namespace Model
         /**
          * <p>Creates and updates the configuration aggregator with the selected source
          * accounts and regions. The source account can be individual account(s) or an
-         * organization.</p> <note> <p>AWS Config should be enabled in source accounts and
+         * organization.</p>  <p>AWS Config should be enabled in source accounts and
          * regions you want to aggregate.</p> <p>If your source type is an organization,
          * you must be signed in to the master account and all features must be enabled in
          * your organization. AWS Config calls <code>EnableAwsServiceAccess</code> API to
          * enable integration between AWS Config and AWS Organizations. </p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationAggregator">AWS
          * API Reference</a></p>
          *
@@ -2904,11 +3019,11 @@ namespace Model
          * configurations.</p> <p>You can use this action to change the role
          * <code>roleARN</code> or the <code>recordingGroup</code> of an existing recorder.
          * To change the role, call the action on the existing configuration recorder and
-         * specify a role.</p> <note> <p>Currently, you can specify only one configuration
+         * specify a role.</p>  <p>Currently, you can specify only one configuration
          * recorder per region in your account.</p> <p>If
          * <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b>
          * parameter specified, the default is to record all supported resource types.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder">AWS
          * API Reference</a></p>
          */
@@ -2919,11 +3034,11 @@ namespace Model
          * configurations.</p> <p>You can use this action to change the role
          * <code>roleARN</code> or the <code>recordingGroup</code> of an existing recorder.
          * To change the role, call the action on the existing configuration recorder and
-         * specify a role.</p> <note> <p>Currently, you can specify only one configuration
+         * specify a role.</p>  <p>Currently, you can specify only one configuration
          * recorder per region in your account.</p> <p>If
          * <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b>
          * parameter specified, the default is to record all supported resource types.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder">AWS
          * API Reference</a></p>
          *
@@ -2936,11 +3051,11 @@ namespace Model
          * configurations.</p> <p>You can use this action to change the role
          * <code>roleARN</code> or the <code>recordingGroup</code> of an existing recorder.
          * To change the role, call the action on the existing configuration recorder and
-         * specify a role.</p> <note> <p>Currently, you can specify only one configuration
+         * specify a role.</p>  <p>Currently, you can specify only one configuration
          * recorder per region in your account.</p> <p>If
          * <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b>
          * parameter specified, the default is to record all supported resource types.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder">AWS
          * API Reference</a></p>
          *
@@ -2953,12 +3068,11 @@ namespace Model
          * AWS Config rules that can be easily deployed in an account and a region and
          * across AWS Organization.</p> <p>This API creates a service linked role
          * <code>AWSServiceRoleForConfigConforms</code> in your account. The service linked
-         * role is created only when the role does not exist in your account. AWS Config
-         * verifies the existence of role with <code>GetRole</code> action.</p> <note>
+         * role is created only when the role does not exist in your account. </p> 
          * <p>You must specify either the <code>TemplateS3Uri</code> or the
          * <code>TemplateBody</code> parameter, but not both. If you provide both AWS
          * Config uses the <code>TemplateS3Uri</code> parameter and ignores the
-         * <code>TemplateBody</code> parameter.</p> </note><p><h3>See Also:</h3>   <a
+         * <code>TemplateBody</code> parameter.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConformancePack">AWS
          * API Reference</a></p>
          */
@@ -2969,12 +3083,11 @@ namespace Model
          * AWS Config rules that can be easily deployed in an account and a region and
          * across AWS Organization.</p> <p>This API creates a service linked role
          * <code>AWSServiceRoleForConfigConforms</code> in your account. The service linked
-         * role is created only when the role does not exist in your account. AWS Config
-         * verifies the existence of role with <code>GetRole</code> action.</p> <note>
+         * role is created only when the role does not exist in your account. </p> 
          * <p>You must specify either the <code>TemplateS3Uri</code> or the
          * <code>TemplateBody</code> parameter, but not both. If you provide both AWS
          * Config uses the <code>TemplateS3Uri</code> parameter and ignores the
-         * <code>TemplateBody</code> parameter.</p> </note><p><h3>See Also:</h3>   <a
+         * <code>TemplateBody</code> parameter.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConformancePack">AWS
          * API Reference</a></p>
          *
@@ -2987,12 +3100,11 @@ namespace Model
          * AWS Config rules that can be easily deployed in an account and a region and
          * across AWS Organization.</p> <p>This API creates a service linked role
          * <code>AWSServiceRoleForConfigConforms</code> in your account. The service linked
-         * role is created only when the role does not exist in your account. AWS Config
-         * verifies the existence of role with <code>GetRole</code> action.</p> <note>
+         * role is created only when the role does not exist in your account. </p> 
          * <p>You must specify either the <code>TemplateS3Uri</code> or the
          * <code>TemplateBody</code> parameter, but not both. If you provide both AWS
          * Config uses the <code>TemplateS3Uri</code> parameter and ignores the
-         * <code>TemplateBody</code> parameter.</p> </note><p><h3>See Also:</h3>   <a
+         * <code>TemplateBody</code> parameter.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConformancePack">AWS
          * API Reference</a></p>
          *
@@ -3009,8 +3121,8 @@ namespace Model
          * this action and specify the changed values for the S3 bucket and the SNS topic.
          * If you specify a different value for either the S3 bucket or the SNS topic, this
          * action will keep the existing value for the parameter that is not changed.</p>
-         * <note> <p>You can have only one delivery channel per region in your account.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         *  <p>You can have only one delivery channel per region in your account.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutDeliveryChannel">AWS
          * API Reference</a></p>
          */
@@ -3025,8 +3137,8 @@ namespace Model
          * this action and specify the changed values for the S3 bucket and the SNS topic.
          * If you specify a different value for either the S3 bucket or the SNS topic, this
          * action will keep the existing value for the parameter that is not changed.</p>
-         * <note> <p>You can have only one delivery channel per region in your account.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         *  <p>You can have only one delivery channel per region in your account.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutDeliveryChannel">AWS
          * API Reference</a></p>
          *
@@ -3043,8 +3155,8 @@ namespace Model
          * this action and specify the changed values for the S3 bucket and the SNS topic.
          * If you specify a different value for either the S3 bucket or the SNS topic, this
          * action will keep the existing value for the parameter that is not changed.</p>
-         * <note> <p>You can have only one delivery channel per region in your account.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         *  <p>You can have only one delivery channel per region in your account.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutDeliveryChannel">AWS
          * API Reference</a></p>
          *
@@ -3084,26 +3196,54 @@ namespace Model
         virtual void PutEvaluationsAsync(const Model::PutEvaluationsRequest& request, const PutEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * 
+         */
+        virtual Model::PutExternalEvaluationOutcome PutExternalEvaluation(const Model::PutExternalEvaluationRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutExternalEvaluationOutcomeCallable PutExternalEvaluationCallable(const Model::PutExternalEvaluationRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutExternalEvaluationAsync(const Model::PutExternalEvaluationRequest& request, const PutExternalEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Adds or updates organization config rule for your entire organization
-         * evaluating whether your AWS resources comply with your desired configurations.
-         * Only a master account can create or update an organization config rule.</p>
-         * <p>This API enables organization service access through the
+         * evaluating whether your AWS resources comply with your desired
+         * configurations.</p> <p> Only a master account and a delegated administrator can
+         * create or update an organization config rule. When calling this API with a
+         * delegated administrator, you must ensure AWS Organizations
+         * <code>ListDelegatedAdministrator</code> permissions are added. </p> <p>This API
+         * enables organization service access through the
          * <code>EnableAWSServiceAccess</code> action and creates a service linked role
-         * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master account of
-         * your organization. The service linked role is created only when the role does
-         * not exist in the master account. AWS Config verifies the existence of role with
-         * <code>GetRole</code> action.</p> <p>You can use this action to create both
-         * custom AWS Config rules and AWS managed Config rules. If you are adding a new
-         * custom AWS Config rule, you must first create AWS Lambda function in the master
-         * account that the rule invokes to evaluate your resources. When you use the
+         * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated
+         * administrator account of your organization. The service linked role is created
+         * only when the role does not exist in the caller account. AWS Config verifies the
+         * existence of role with <code>GetRole</code> action.</p> <p>To use this API with
+         * delegated administrator, register a delegated administrator by calling AWS
+         * Organization <code>register-delegated-administrator</code> for
+         * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p>You can use this
+         * action to create both custom AWS Config rules and AWS managed Config rules. If
+         * you are adding a new custom AWS Config rule, you must first create AWS Lambda
+         * function in the master account or a delegated administrator that the rule
+         * invokes to evaluate your resources. When you use the
          * <code>PutOrganizationConfigRule</code> action to add the rule to AWS Config, you
          * must specify the Amazon Resource Name (ARN) that AWS Lambda assigns to the
          * function. If you are adding an AWS managed Config rule, specify the rule's
          * identifier for the <code>RuleIdentifier</code> key.</p> <p>The maximum number of
-         * organization config rules that AWS Config supports is 150.</p> <note> <p>Specify
-         * either <code>OrganizationCustomRuleMetadata</code> or
-         * <code>OrganizationManagedRuleMetadata</code>.</p> </note><p><h3>See Also:</h3>  
-         * <a
+         * organization config rules that AWS Config supports is 150 and 3 delegated
+         * administrator per organization. </p>  <p>Prerequisite: Ensure you call
+         * <code>EnableAllFeatures</code> API to enable all features in an
+         * organization.</p> <p>Specify either <code>OrganizationCustomRuleMetadata</code>
+         * or <code>OrganizationManagedRuleMetadata</code>.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConfigRule">AWS
          * API Reference</a></p>
          */
@@ -3111,25 +3251,34 @@ namespace Model
 
         /**
          * <p>Adds or updates organization config rule for your entire organization
-         * evaluating whether your AWS resources comply with your desired configurations.
-         * Only a master account can create or update an organization config rule.</p>
-         * <p>This API enables organization service access through the
+         * evaluating whether your AWS resources comply with your desired
+         * configurations.</p> <p> Only a master account and a delegated administrator can
+         * create or update an organization config rule. When calling this API with a
+         * delegated administrator, you must ensure AWS Organizations
+         * <code>ListDelegatedAdministrator</code> permissions are added. </p> <p>This API
+         * enables organization service access through the
          * <code>EnableAWSServiceAccess</code> action and creates a service linked role
-         * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master account of
-         * your organization. The service linked role is created only when the role does
-         * not exist in the master account. AWS Config verifies the existence of role with
-         * <code>GetRole</code> action.</p> <p>You can use this action to create both
-         * custom AWS Config rules and AWS managed Config rules. If you are adding a new
-         * custom AWS Config rule, you must first create AWS Lambda function in the master
-         * account that the rule invokes to evaluate your resources. When you use the
+         * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated
+         * administrator account of your organization. The service linked role is created
+         * only when the role does not exist in the caller account. AWS Config verifies the
+         * existence of role with <code>GetRole</code> action.</p> <p>To use this API with
+         * delegated administrator, register a delegated administrator by calling AWS
+         * Organization <code>register-delegated-administrator</code> for
+         * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p>You can use this
+         * action to create both custom AWS Config rules and AWS managed Config rules. If
+         * you are adding a new custom AWS Config rule, you must first create AWS Lambda
+         * function in the master account or a delegated administrator that the rule
+         * invokes to evaluate your resources. When you use the
          * <code>PutOrganizationConfigRule</code> action to add the rule to AWS Config, you
          * must specify the Amazon Resource Name (ARN) that AWS Lambda assigns to the
          * function. If you are adding an AWS managed Config rule, specify the rule's
          * identifier for the <code>RuleIdentifier</code> key.</p> <p>The maximum number of
-         * organization config rules that AWS Config supports is 150.</p> <note> <p>Specify
-         * either <code>OrganizationCustomRuleMetadata</code> or
-         * <code>OrganizationManagedRuleMetadata</code>.</p> </note><p><h3>See Also:</h3>  
-         * <a
+         * organization config rules that AWS Config supports is 150 and 3 delegated
+         * administrator per organization. </p>  <p>Prerequisite: Ensure you call
+         * <code>EnableAllFeatures</code> API to enable all features in an
+         * organization.</p> <p>Specify either <code>OrganizationCustomRuleMetadata</code>
+         * or <code>OrganizationManagedRuleMetadata</code>.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConfigRule">AWS
          * API Reference</a></p>
          *
@@ -3139,25 +3288,34 @@ namespace Model
 
         /**
          * <p>Adds or updates organization config rule for your entire organization
-         * evaluating whether your AWS resources comply with your desired configurations.
-         * Only a master account can create or update an organization config rule.</p>
-         * <p>This API enables organization service access through the
+         * evaluating whether your AWS resources comply with your desired
+         * configurations.</p> <p> Only a master account and a delegated administrator can
+         * create or update an organization config rule. When calling this API with a
+         * delegated administrator, you must ensure AWS Organizations
+         * <code>ListDelegatedAdministrator</code> permissions are added. </p> <p>This API
+         * enables organization service access through the
          * <code>EnableAWSServiceAccess</code> action and creates a service linked role
-         * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master account of
-         * your organization. The service linked role is created only when the role does
-         * not exist in the master account. AWS Config verifies the existence of role with
-         * <code>GetRole</code> action.</p> <p>You can use this action to create both
-         * custom AWS Config rules and AWS managed Config rules. If you are adding a new
-         * custom AWS Config rule, you must first create AWS Lambda function in the master
-         * account that the rule invokes to evaluate your resources. When you use the
+         * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated
+         * administrator account of your organization. The service linked role is created
+         * only when the role does not exist in the caller account. AWS Config verifies the
+         * existence of role with <code>GetRole</code> action.</p> <p>To use this API with
+         * delegated administrator, register a delegated administrator by calling AWS
+         * Organization <code>register-delegated-administrator</code> for
+         * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p>You can use this
+         * action to create both custom AWS Config rules and AWS managed Config rules. If
+         * you are adding a new custom AWS Config rule, you must first create AWS Lambda
+         * function in the master account or a delegated administrator that the rule
+         * invokes to evaluate your resources. When you use the
          * <code>PutOrganizationConfigRule</code> action to add the rule to AWS Config, you
          * must specify the Amazon Resource Name (ARN) that AWS Lambda assigns to the
          * function. If you are adding an AWS managed Config rule, specify the rule's
          * identifier for the <code>RuleIdentifier</code> key.</p> <p>The maximum number of
-         * organization config rules that AWS Config supports is 150.</p> <note> <p>Specify
-         * either <code>OrganizationCustomRuleMetadata</code> or
-         * <code>OrganizationManagedRuleMetadata</code>.</p> </note><p><h3>See Also:</h3>  
-         * <a
+         * organization config rules that AWS Config supports is 150 and 3 delegated
+         * administrator per organization. </p>  <p>Prerequisite: Ensure you call
+         * <code>EnableAllFeatures</code> API to enable all features in an
+         * organization.</p> <p>Specify either <code>OrganizationCustomRuleMetadata</code>
+         * or <code>OrganizationManagedRuleMetadata</code>.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConfigRule">AWS
          * API Reference</a></p>
          *
@@ -3167,21 +3325,28 @@ namespace Model
 
         /**
          * <p>Deploys conformance packs across member accounts in an AWS Organization.</p>
+         * <p>Only a master account and a delegated administrator can call this API. When
+         * calling this API with a delegated administrator, you must ensure AWS
+         * Organizations <code>ListDelegatedAdministrator</code> permissions are added.</p>
          * <p>This API enables organization service access for
          * <code>config-multiaccountsetup.amazonaws.com</code> through the
          * <code>EnableAWSServiceAccess</code> action and creates a service linked role
-         * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master account of
-         * your organization. The service linked role is created only when the role does
-         * not exist in the master account. AWS Config verifies the existence of role with
-         * GetRole action.</p> <note> <p>You must specify either the
-         * <code>TemplateS3Uri</code> or the <code>TemplateBody</code> parameter, but not
-         * both. If you provide both AWS Config uses the <code>TemplateS3Uri</code>
-         * parameter and ignores the <code>TemplateBody</code> parameter.</p> <p>AWS Config
-         * sets the state of a conformance pack to CREATE_IN_PROGRESS and
-         * UPDATE_IN_PROGRESS until the confomance pack is created or updated. You cannot
-         * update a conformance pack while it is in this state.</p> <p>You can create 6
-         * conformance packs with 25 AWS Config rules in each pack.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated
+         * administrator account of your organization. The service linked role is created
+         * only when the role does not exist in the caller account. To use this API with
+         * delegated administrator, register a delegated administrator by calling AWS
+         * Organization <code>register-delegate-admin</code> for
+         * <code>config-multiaccountsetup.amazonaws.com</code>.</p>  <p>Prerequisite:
+         * Ensure you call <code>EnableAllFeatures</code> API to enable all features in an
+         * organization.</p> <p>You must specify either the <code>TemplateS3Uri</code> or
+         * the <code>TemplateBody</code> parameter, but not both. If you provide both AWS
+         * Config uses the <code>TemplateS3Uri</code> parameter and ignores the
+         * <code>TemplateBody</code> parameter.</p> <p>AWS Config sets the state of a
+         * conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS until the
+         * conformance pack is created or updated. You cannot update a conformance pack
+         * while it is in this state.</p> <p>You can create 6 conformance packs with 25 AWS
+         * Config rules in each pack and 3 delegated administrator per organization. </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConformancePack">AWS
          * API Reference</a></p>
          */
@@ -3189,21 +3354,28 @@ namespace Model
 
         /**
          * <p>Deploys conformance packs across member accounts in an AWS Organization.</p>
+         * <p>Only a master account and a delegated administrator can call this API. When
+         * calling this API with a delegated administrator, you must ensure AWS
+         * Organizations <code>ListDelegatedAdministrator</code> permissions are added.</p>
          * <p>This API enables organization service access for
          * <code>config-multiaccountsetup.amazonaws.com</code> through the
          * <code>EnableAWSServiceAccess</code> action and creates a service linked role
-         * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master account of
-         * your organization. The service linked role is created only when the role does
-         * not exist in the master account. AWS Config verifies the existence of role with
-         * GetRole action.</p> <note> <p>You must specify either the
-         * <code>TemplateS3Uri</code> or the <code>TemplateBody</code> parameter, but not
-         * both. If you provide both AWS Config uses the <code>TemplateS3Uri</code>
-         * parameter and ignores the <code>TemplateBody</code> parameter.</p> <p>AWS Config
-         * sets the state of a conformance pack to CREATE_IN_PROGRESS and
-         * UPDATE_IN_PROGRESS until the confomance pack is created or updated. You cannot
-         * update a conformance pack while it is in this state.</p> <p>You can create 6
-         * conformance packs with 25 AWS Config rules in each pack.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated
+         * administrator account of your organization. The service linked role is created
+         * only when the role does not exist in the caller account. To use this API with
+         * delegated administrator, register a delegated administrator by calling AWS
+         * Organization <code>register-delegate-admin</code> for
+         * <code>config-multiaccountsetup.amazonaws.com</code>.</p>  <p>Prerequisite:
+         * Ensure you call <code>EnableAllFeatures</code> API to enable all features in an
+         * organization.</p> <p>You must specify either the <code>TemplateS3Uri</code> or
+         * the <code>TemplateBody</code> parameter, but not both. If you provide both AWS
+         * Config uses the <code>TemplateS3Uri</code> parameter and ignores the
+         * <code>TemplateBody</code> parameter.</p> <p>AWS Config sets the state of a
+         * conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS until the
+         * conformance pack is created or updated. You cannot update a conformance pack
+         * while it is in this state.</p> <p>You can create 6 conformance packs with 25 AWS
+         * Config rules in each pack and 3 delegated administrator per organization. </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConformancePack">AWS
          * API Reference</a></p>
          *
@@ -3213,21 +3385,28 @@ namespace Model
 
         /**
          * <p>Deploys conformance packs across member accounts in an AWS Organization.</p>
+         * <p>Only a master account and a delegated administrator can call this API. When
+         * calling this API with a delegated administrator, you must ensure AWS
+         * Organizations <code>ListDelegatedAdministrator</code> permissions are added.</p>
          * <p>This API enables organization service access for
          * <code>config-multiaccountsetup.amazonaws.com</code> through the
          * <code>EnableAWSServiceAccess</code> action and creates a service linked role
-         * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master account of
-         * your organization. The service linked role is created only when the role does
-         * not exist in the master account. AWS Config verifies the existence of role with
-         * GetRole action.</p> <note> <p>You must specify either the
-         * <code>TemplateS3Uri</code> or the <code>TemplateBody</code> parameter, but not
-         * both. If you provide both AWS Config uses the <code>TemplateS3Uri</code>
-         * parameter and ignores the <code>TemplateBody</code> parameter.</p> <p>AWS Config
-         * sets the state of a conformance pack to CREATE_IN_PROGRESS and
-         * UPDATE_IN_PROGRESS until the confomance pack is created or updated. You cannot
-         * update a conformance pack while it is in this state.</p> <p>You can create 6
-         * conformance packs with 25 AWS Config rules in each pack.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated
+         * administrator account of your organization. The service linked role is created
+         * only when the role does not exist in the caller account. To use this API with
+         * delegated administrator, register a delegated administrator by calling AWS
+         * Organization <code>register-delegate-admin</code> for
+         * <code>config-multiaccountsetup.amazonaws.com</code>.</p>  <p>Prerequisite:
+         * Ensure you call <code>EnableAllFeatures</code> API to enable all features in an
+         * organization.</p> <p>You must specify either the <code>TemplateS3Uri</code> or
+         * the <code>TemplateBody</code> parameter, but not both. If you provide both AWS
+         * Config uses the <code>TemplateS3Uri</code> parameter and ignores the
+         * <code>TemplateBody</code> parameter.</p> <p>AWS Config sets the state of a
+         * conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS until the
+         * conformance pack is created or updated. You cannot update a conformance pack
+         * while it is in this state.</p> <p>You can create 6 conformance packs with 25 AWS
+         * Config rules in each pack and 3 delegated administrator per organization. </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConformancePack">AWS
          * API Reference</a></p>
          *
@@ -3240,8 +3419,13 @@ namespace Model
          * with the selected target or action. The API creates the
          * <code>RemediationConfiguration</code> object for the AWS Config rule. The AWS
          * Config rule must already exist for you to add a remediation configuration. The
-         * target (SSM document) must exist and have permissions to use the target.
-         * </p><p><h3>See Also:</h3>   <a
+         * target (SSM document) must exist and have permissions to use the target. </p>
+         *  <p>If you make backward incompatible changes to the SSM document, you
+         * must call this again to ensure the remediations can run.</p> <p>This API does
+         * not support adding remediation configurations for service-linked AWS Config
+         * Rules such as Organization Config rules, the rules deployed by conformance
+         * packs, and rules deployed by AWS Security Hub.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationConfigurations">AWS
          * API Reference</a></p>
          */
@@ -3252,8 +3436,13 @@ namespace Model
          * with the selected target or action. The API creates the
          * <code>RemediationConfiguration</code> object for the AWS Config rule. The AWS
          * Config rule must already exist for you to add a remediation configuration. The
-         * target (SSM document) must exist and have permissions to use the target.
-         * </p><p><h3>See Also:</h3>   <a
+         * target (SSM document) must exist and have permissions to use the target. </p>
+         *  <p>If you make backward incompatible changes to the SSM document, you
+         * must call this again to ensure the remediations can run.</p> <p>This API does
+         * not support adding remediation configurations for service-linked AWS Config
+         * Rules such as Organization Config rules, the rules deployed by conformance
+         * packs, and rules deployed by AWS Security Hub.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationConfigurations">AWS
          * API Reference</a></p>
          *
@@ -3266,8 +3455,13 @@ namespace Model
          * with the selected target or action. The API creates the
          * <code>RemediationConfiguration</code> object for the AWS Config rule. The AWS
          * Config rule must already exist for you to add a remediation configuration. The
-         * target (SSM document) must exist and have permissions to use the target.
-         * </p><p><h3>See Also:</h3>   <a
+         * target (SSM document) must exist and have permissions to use the target. </p>
+         *  <p>If you make backward incompatible changes to the SSM document, you
+         * must call this again to ensure the remediations can run.</p> <p>This API does
+         * not support adding remediation configurations for service-linked AWS Config
+         * Rules such as Organization Config rules, the rules deployed by conformance
+         * packs, and rules deployed by AWS Security Hub.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationConfigurations">AWS
          * API Reference</a></p>
          *
@@ -3278,8 +3472,11 @@ namespace Model
         /**
          * <p>A remediation exception is when a specific resource is no longer considered
          * for auto-remediation. This API adds a new exception or updates an exisiting
-         * exception for a specific resource with a specific AWS Config rule.
-         * </p><p><h3>See Also:</h3>   <a
+         * exception for a specific resource with a specific AWS Config rule. </p> 
+         * <p>AWS Config generates a remediation exception when a problem occurs executing
+         * a remediation action to a specific resource. Remediation exceptions blocks
+         * auto-remediation until the exception is cleared.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationExceptions">AWS
          * API Reference</a></p>
          */
@@ -3288,8 +3485,11 @@ namespace Model
         /**
          * <p>A remediation exception is when a specific resource is no longer considered
          * for auto-remediation. This API adds a new exception or updates an exisiting
-         * exception for a specific resource with a specific AWS Config rule.
-         * </p><p><h3>See Also:</h3>   <a
+         * exception for a specific resource with a specific AWS Config rule. </p> 
+         * <p>AWS Config generates a remediation exception when a problem occurs executing
+         * a remediation action to a specific resource. Remediation exceptions blocks
+         * auto-remediation until the exception is cleared.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationExceptions">AWS
          * API Reference</a></p>
          *
@@ -3300,8 +3500,11 @@ namespace Model
         /**
          * <p>A remediation exception is when a specific resource is no longer considered
          * for auto-remediation. This API adds a new exception or updates an exisiting
-         * exception for a specific resource with a specific AWS Config rule.
-         * </p><p><h3>See Also:</h3>   <a
+         * exception for a specific resource with a specific AWS Config rule. </p> 
+         * <p>AWS Config generates a remediation exception when a problem occurs executing
+         * a remediation action to a specific resource. Remediation exceptions blocks
+         * auto-remediation until the exception is cleared.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationExceptions">AWS
          * API Reference</a></p>
          *
@@ -3314,12 +3517,13 @@ namespace Model
          * configuration state of a resource is represented in AWS Config as Configuration
          * Items. Once this API records the configuration item, you can retrieve the list
          * of configuration items for the custom resource type using existing AWS Config
-         * APIs. </p> <note> <p>The custom resource type must be registered with AWS
+         * APIs. </p>  <p>The custom resource type must be registered with AWS
          * CloudFormation. This API accepts the configuration item registered with AWS
          * CloudFormation.</p> <p>When you call this API, AWS Config only stores
          * configuration state of the resource provided in the request. This API does not
-         * change or remediate the configuration of the resource. </p> </note><p><h3>See
-         * Also:</h3>   <a
+         * change or remediate the configuration of the resource. </p> <p>Write-only schema
+         * properites are not recorded as part of the published configuration item.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutResourceConfig">AWS
          * API Reference</a></p>
          */
@@ -3330,12 +3534,13 @@ namespace Model
          * configuration state of a resource is represented in AWS Config as Configuration
          * Items. Once this API records the configuration item, you can retrieve the list
          * of configuration items for the custom resource type using existing AWS Config
-         * APIs. </p> <note> <p>The custom resource type must be registered with AWS
+         * APIs. </p>  <p>The custom resource type must be registered with AWS
          * CloudFormation. This API accepts the configuration item registered with AWS
          * CloudFormation.</p> <p>When you call this API, AWS Config only stores
          * configuration state of the resource provided in the request. This API does not
-         * change or remediate the configuration of the resource. </p> </note><p><h3>See
-         * Also:</h3>   <a
+         * change or remediate the configuration of the resource. </p> <p>Write-only schema
+         * properites are not recorded as part of the published configuration item.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutResourceConfig">AWS
          * API Reference</a></p>
          *
@@ -3348,12 +3553,13 @@ namespace Model
          * configuration state of a resource is represented in AWS Config as Configuration
          * Items. Once this API records the configuration item, you can retrieve the list
          * of configuration items for the custom resource type using existing AWS Config
-         * APIs. </p> <note> <p>The custom resource type must be registered with AWS
+         * APIs. </p>  <p>The custom resource type must be registered with AWS
          * CloudFormation. This API accepts the configuration item registered with AWS
          * CloudFormation.</p> <p>When you call this API, AWS Config only stores
          * configuration state of the resource provided in the request. This API does not
-         * change or remediate the configuration of the resource. </p> </note><p><h3>See
-         * Also:</h3>   <a
+         * change or remediate the configuration of the resource. </p> <p>Write-only schema
+         * properites are not recorded as part of the published configuration item.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutResourceConfig">AWS
          * API Reference</a></p>
          *
@@ -3366,9 +3572,9 @@ namespace Model
          * period (number of days) that AWS Config stores your historical information. The
          * API creates the <code>RetentionConfiguration</code> object and names the object
          * as <b>default</b>. When you have a <code>RetentionConfiguration</code> object
-         * named <b>default</b>, calling the API modifies the default object. </p> <note>
+         * named <b>default</b>, calling the API modifies the default object. </p> 
          * <p>Currently, AWS Config supports only one retention configuration per region in
-         * your account.</p> </note><p><h3>See Also:</h3>   <a
+         * your account.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRetentionConfiguration">AWS
          * API Reference</a></p>
          */
@@ -3379,9 +3585,9 @@ namespace Model
          * period (number of days) that AWS Config stores your historical information. The
          * API creates the <code>RetentionConfiguration</code> object and names the object
          * as <b>default</b>. When you have a <code>RetentionConfiguration</code> object
-         * named <b>default</b>, calling the API modifies the default object. </p> <note>
+         * named <b>default</b>, calling the API modifies the default object. </p> 
          * <p>Currently, AWS Config supports only one retention configuration per region in
-         * your account.</p> </note><p><h3>See Also:</h3>   <a
+         * your account.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRetentionConfiguration">AWS
          * API Reference</a></p>
          *
@@ -3394,15 +3600,49 @@ namespace Model
          * period (number of days) that AWS Config stores your historical information. The
          * API creates the <code>RetentionConfiguration</code> object and names the object
          * as <b>default</b>. When you have a <code>RetentionConfiguration</code> object
-         * named <b>default</b>, calling the API modifies the default object. </p> <note>
+         * named <b>default</b>, calling the API modifies the default object. </p> 
          * <p>Currently, AWS Config supports only one retention configuration per region in
-         * your account.</p> </note><p><h3>See Also:</h3>   <a
+         * your account.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRetentionConfiguration">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutRetentionConfigurationAsync(const Model::PutRetentionConfigurationRequest& request, const PutRetentionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Saves a new query or updates an existing saved query. The
+         * <code>QueryName</code> must be unique for an AWS account in an AWS Region. You
+         * can create upto 300 queries in an AWS account in an AWS Region.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutStoredQuery">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutStoredQueryOutcome PutStoredQuery(const Model::PutStoredQueryRequest& request) const;
+
+        /**
+         * <p>Saves a new query or updates an existing saved query. The
+         * <code>QueryName</code> must be unique for an AWS account in an AWS Region. You
+         * can create upto 300 queries in an AWS account in an AWS Region.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutStoredQuery">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutStoredQueryOutcomeCallable PutStoredQueryCallable(const Model::PutStoredQueryRequest& request) const;
+
+        /**
+         * <p>Saves a new query or updates an existing saved query. The
+         * <code>QueryName</code> must be unique for an AWS account in an AWS Region. You
+         * can create upto 300 queries in an AWS account in an AWS Region.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutStoredQuery">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutStoredQueryAsync(const Model::PutStoredQueryRequest& request, const PutStoredQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Accepts a structured query language (SQL) SELECT command and an aggregator to
@@ -3499,10 +3739,10 @@ namespace Model
          * complete before you can call the API again. If you chose to have AWS Config
          * stream to an Amazon SNS topic, you will receive a
          * <code>ConfigRuleEvaluationStarted</code> notification when the evaluation
-         * starts.</p> <note> <p>You don't need to call the
+         * starts.</p>  <p>You don't need to call the
          * <code>StartConfigRulesEvaluation</code> API to run an evaluation for a new rule.
          * When you create a rule, AWS Config evaluates your resources against the rule
-         * automatically. </p> </note> <p>The <code>StartConfigRulesEvaluation</code> API
+         * automatically. </p>  <p>The <code>StartConfigRulesEvaluation</code> API
          * is useful if you want to run on-demand evaluations, such as the following
          * example:</p> <ol> <li> <p>You have a custom rule that evaluates your IAM
          * resources every 24 hours.</p> </li> <li> <p>You update your Lambda function to
@@ -3529,10 +3769,10 @@ namespace Model
          * complete before you can call the API again. If you chose to have AWS Config
          * stream to an Amazon SNS topic, you will receive a
          * <code>ConfigRuleEvaluationStarted</code> notification when the evaluation
-         * starts.</p> <note> <p>You don't need to call the
+         * starts.</p>  <p>You don't need to call the
          * <code>StartConfigRulesEvaluation</code> API to run an evaluation for a new rule.
          * When you create a rule, AWS Config evaluates your resources against the rule
-         * automatically. </p> </note> <p>The <code>StartConfigRulesEvaluation</code> API
+         * automatically. </p>  <p>The <code>StartConfigRulesEvaluation</code> API
          * is useful if you want to run on-demand evaluations, such as the following
          * example:</p> <ol> <li> <p>You have a custom rule that evaluates your IAM
          * resources every 24 hours.</p> </li> <li> <p>You update your Lambda function to
@@ -3561,10 +3801,10 @@ namespace Model
          * complete before you can call the API again. If you chose to have AWS Config
          * stream to an Amazon SNS topic, you will receive a
          * <code>ConfigRuleEvaluationStarted</code> notification when the evaluation
-         * starts.</p> <note> <p>You don't need to call the
+         * starts.</p>  <p>You don't need to call the
          * <code>StartConfigRulesEvaluation</code> API to run an evaluation for a new rule.
          * When you create a rule, AWS Config evaluates your resources against the rule
-         * automatically. </p> </note> <p>The <code>StartConfigRulesEvaluation</code> API
+         * automatically. </p>  <p>The <code>StartConfigRulesEvaluation</code> API
          * is useful if you want to run on-demand evaluations, such as the following
          * example:</p> <ol> <li> <p>You have a custom rule that evaluates your IAM
          * resources every 24 hours.</p> </li> <li> <p>You update your Lambda function to
@@ -3762,6 +4002,7 @@ namespace Model
         void DeleteRemediationExceptionsAsyncHelper(const Model::DeleteRemediationExceptionsRequest& request, const DeleteRemediationExceptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteResourceConfigAsyncHelper(const Model::DeleteResourceConfigRequest& request, const DeleteResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRetentionConfigurationAsyncHelper(const Model::DeleteRetentionConfigurationRequest& request, const DeleteRetentionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteStoredQueryAsyncHelper(const Model::DeleteStoredQueryRequest& request, const DeleteStoredQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeliverConfigSnapshotAsyncHelper(const Model::DeliverConfigSnapshotRequest& request, const DeliverConfigSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAggregateComplianceByConfigRulesAsyncHelper(const Model::DescribeAggregateComplianceByConfigRulesRequest& request, const DescribeAggregateComplianceByConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAggregationAuthorizationsAsyncHelper(const Model::DescribeAggregationAuthorizationsRequest& request, const DescribeAggregationAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3801,8 +4042,10 @@ namespace Model
         void GetOrganizationConfigRuleDetailedStatusAsyncHelper(const Model::GetOrganizationConfigRuleDetailedStatusRequest& request, const GetOrganizationConfigRuleDetailedStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetOrganizationConformancePackDetailedStatusAsyncHelper(const Model::GetOrganizationConformancePackDetailedStatusRequest& request, const GetOrganizationConformancePackDetailedStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetResourceConfigHistoryAsyncHelper(const Model::GetResourceConfigHistoryRequest& request, const GetResourceConfigHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetStoredQueryAsyncHelper(const Model::GetStoredQueryRequest& request, const GetStoredQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAggregateDiscoveredResourcesAsyncHelper(const Model::ListAggregateDiscoveredResourcesRequest& request, const ListAggregateDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDiscoveredResourcesAsyncHelper(const Model::ListDiscoveredResourcesRequest& request, const ListDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListStoredQueriesAsyncHelper(const Model::ListStoredQueriesRequest& request, const ListStoredQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutAggregationAuthorizationAsyncHelper(const Model::PutAggregationAuthorizationRequest& request, const PutAggregationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutConfigRuleAsyncHelper(const Model::PutConfigRuleRequest& request, const PutConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3811,12 +4054,14 @@ namespace Model
         void PutConformancePackAsyncHelper(const Model::PutConformancePackRequest& request, const PutConformancePackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutDeliveryChannelAsyncHelper(const Model::PutDeliveryChannelRequest& request, const PutDeliveryChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutEvaluationsAsyncHelper(const Model::PutEvaluationsRequest& request, const PutEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutExternalEvaluationAsyncHelper(const Model::PutExternalEvaluationRequest& request, const PutExternalEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutOrganizationConfigRuleAsyncHelper(const Model::PutOrganizationConfigRuleRequest& request, const PutOrganizationConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutOrganizationConformancePackAsyncHelper(const Model::PutOrganizationConformancePackRequest& request, const PutOrganizationConformancePackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRemediationConfigurationsAsyncHelper(const Model::PutRemediationConfigurationsRequest& request, const PutRemediationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRemediationExceptionsAsyncHelper(const Model::PutRemediationExceptionsRequest& request, const PutRemediationExceptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutResourceConfigAsyncHelper(const Model::PutResourceConfigRequest& request, const PutResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRetentionConfigurationAsyncHelper(const Model::PutRetentionConfigurationRequest& request, const PutRetentionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutStoredQueryAsyncHelper(const Model::PutStoredQueryRequest& request, const PutStoredQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SelectAggregateResourceConfigAsyncHelper(const Model::SelectAggregateResourceConfigRequest& request, const SelectAggregateResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SelectResourceConfigAsyncHelper(const Model::SelectResourceConfigRequest& request, const SelectResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartConfigRulesEvaluationAsyncHelper(const Model::StartConfigRulesEvaluationRequest& request, const StartConfigRulesEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

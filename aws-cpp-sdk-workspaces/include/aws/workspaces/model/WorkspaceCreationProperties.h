@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
@@ -51,6 +41,79 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.</p> 
+     * <p>If WorkDocs is already enabled for a WorkSpaces directory and you disable it,
+     * new WorkSpaces launched in the directory will not have WorkDocs enabled.
+     * However, WorkDocs remains enabled for any existing WorkSpaces, unless you either
+     * disable users' access to WorkDocs or you delete the WorkDocs site. To disable
+     * users' access to WorkDocs, see <a
+     * href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling
+     * Users</a> in the <i>Amazon WorkDocs Administration Guide</i>. To delete a
+     * WorkDocs site, see <a
+     * href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting
+     * a Site</a> in the <i>Amazon WorkDocs Administration Guide</i>.</p> <p>If you
+     * enable WorkDocs on a directory that already has existing WorkSpaces, the
+     * existing WorkSpaces and any new WorkSpaces that are launched in the directory
+     * will have WorkDocs enabled.</p> 
+     */
+    inline bool GetEnableWorkDocs() const{ return m_enableWorkDocs; }
+
+    /**
+     * <p>Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.</p> 
+     * <p>If WorkDocs is already enabled for a WorkSpaces directory and you disable it,
+     * new WorkSpaces launched in the directory will not have WorkDocs enabled.
+     * However, WorkDocs remains enabled for any existing WorkSpaces, unless you either
+     * disable users' access to WorkDocs or you delete the WorkDocs site. To disable
+     * users' access to WorkDocs, see <a
+     * href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling
+     * Users</a> in the <i>Amazon WorkDocs Administration Guide</i>. To delete a
+     * WorkDocs site, see <a
+     * href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting
+     * a Site</a> in the <i>Amazon WorkDocs Administration Guide</i>.</p> <p>If you
+     * enable WorkDocs on a directory that already has existing WorkSpaces, the
+     * existing WorkSpaces and any new WorkSpaces that are launched in the directory
+     * will have WorkDocs enabled.</p> 
+     */
+    inline bool EnableWorkDocsHasBeenSet() const { return m_enableWorkDocsHasBeenSet; }
+
+    /**
+     * <p>Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.</p> 
+     * <p>If WorkDocs is already enabled for a WorkSpaces directory and you disable it,
+     * new WorkSpaces launched in the directory will not have WorkDocs enabled.
+     * However, WorkDocs remains enabled for any existing WorkSpaces, unless you either
+     * disable users' access to WorkDocs or you delete the WorkDocs site. To disable
+     * users' access to WorkDocs, see <a
+     * href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling
+     * Users</a> in the <i>Amazon WorkDocs Administration Guide</i>. To delete a
+     * WorkDocs site, see <a
+     * href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting
+     * a Site</a> in the <i>Amazon WorkDocs Administration Guide</i>.</p> <p>If you
+     * enable WorkDocs on a directory that already has existing WorkSpaces, the
+     * existing WorkSpaces and any new WorkSpaces that are launched in the directory
+     * will have WorkDocs enabled.</p> 
+     */
+    inline void SetEnableWorkDocs(bool value) { m_enableWorkDocsHasBeenSet = true; m_enableWorkDocs = value; }
+
+    /**
+     * <p>Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.</p> 
+     * <p>If WorkDocs is already enabled for a WorkSpaces directory and you disable it,
+     * new WorkSpaces launched in the directory will not have WorkDocs enabled.
+     * However, WorkDocs remains enabled for any existing WorkSpaces, unless you either
+     * disable users' access to WorkDocs or you delete the WorkDocs site. To disable
+     * users' access to WorkDocs, see <a
+     * href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling
+     * Users</a> in the <i>Amazon WorkDocs Administration Guide</i>. To delete a
+     * WorkDocs site, see <a
+     * href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting
+     * a Site</a> in the <i>Amazon WorkDocs Administration Guide</i>.</p> <p>If you
+     * enable WorkDocs on a directory that already has existing WorkSpaces, the
+     * existing WorkSpaces and any new WorkSpaces that are launched in the directory
+     * will have WorkDocs enabled.</p> 
+     */
+    inline WorkspaceCreationProperties& WithEnableWorkDocs(bool value) { SetEnableWorkDocs(value); return *this;}
+
+
+    /**
      * <p>Indicates whether internet access is enabled for your WorkSpaces.</p>
      */
     inline bool GetEnableInternetAccess() const{ return m_enableInternetAccess; }
@@ -72,42 +135,130 @@ namespace Model
 
 
     /**
-     * <p>The default organizational unit (OU) for your WorkSpace directories.</p>
+     * <p>The default organizational unit (OU) for your WorkSpaces directories. This
+     * string must be the full Lightweight Directory Access Protocol (LDAP)
+     * distinguished name for the target domain and OU. It must be in the form
+     * <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where
+     * <i>value</i> is any string of characters, and the number of domain components
+     * (DCs) is two or more. For example,
+     * <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p>
+     *  <ul> <li> <p>To avoid errors, certain characters in the
+     * distinguished name must be escaped. For more information, see <a
+     * href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names">
+     * Distinguished Names</a> in the Microsoft documentation.</p> </li> <li> <p>The
+     * API doesn't validate whether the OU exists.</p> </li> </ul> 
      */
     inline const Aws::String& GetDefaultOu() const{ return m_defaultOu; }
 
     /**
-     * <p>The default organizational unit (OU) for your WorkSpace directories.</p>
+     * <p>The default organizational unit (OU) for your WorkSpaces directories. This
+     * string must be the full Lightweight Directory Access Protocol (LDAP)
+     * distinguished name for the target domain and OU. It must be in the form
+     * <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where
+     * <i>value</i> is any string of characters, and the number of domain components
+     * (DCs) is two or more. For example,
+     * <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p>
+     *  <ul> <li> <p>To avoid errors, certain characters in the
+     * distinguished name must be escaped. For more information, see <a
+     * href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names">
+     * Distinguished Names</a> in the Microsoft documentation.</p> </li> <li> <p>The
+     * API doesn't validate whether the OU exists.</p> </li> </ul> 
      */
     inline bool DefaultOuHasBeenSet() const { return m_defaultOuHasBeenSet; }
 
     /**
-     * <p>The default organizational unit (OU) for your WorkSpace directories.</p>
+     * <p>The default organizational unit (OU) for your WorkSpaces directories. This
+     * string must be the full Lightweight Directory Access Protocol (LDAP)
+     * distinguished name for the target domain and OU. It must be in the form
+     * <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where
+     * <i>value</i> is any string of characters, and the number of domain components
+     * (DCs) is two or more. For example,
+     * <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p>
+     *  <ul> <li> <p>To avoid errors, certain characters in the
+     * distinguished name must be escaped. For more information, see <a
+     * href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names">
+     * Distinguished Names</a> in the Microsoft documentation.</p> </li> <li> <p>The
+     * API doesn't validate whether the OU exists.</p> </li> </ul> 
      */
     inline void SetDefaultOu(const Aws::String& value) { m_defaultOuHasBeenSet = true; m_defaultOu = value; }
 
     /**
-     * <p>The default organizational unit (OU) for your WorkSpace directories.</p>
+     * <p>The default organizational unit (OU) for your WorkSpaces directories. This
+     * string must be the full Lightweight Directory Access Protocol (LDAP)
+     * distinguished name for the target domain and OU. It must be in the form
+     * <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where
+     * <i>value</i> is any string of characters, and the number of domain components
+     * (DCs) is two or more. For example,
+     * <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p>
+     *  <ul> <li> <p>To avoid errors, certain characters in the
+     * distinguished name must be escaped. For more information, see <a
+     * href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names">
+     * Distinguished Names</a> in the Microsoft documentation.</p> </li> <li> <p>The
+     * API doesn't validate whether the OU exists.</p> </li> </ul> 
      */
     inline void SetDefaultOu(Aws::String&& value) { m_defaultOuHasBeenSet = true; m_defaultOu = std::move(value); }
 
     /**
-     * <p>The default organizational unit (OU) for your WorkSpace directories.</p>
+     * <p>The default organizational unit (OU) for your WorkSpaces directories. This
+     * string must be the full Lightweight Directory Access Protocol (LDAP)
+     * distinguished name for the target domain and OU. It must be in the form
+     * <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where
+     * <i>value</i> is any string of characters, and the number of domain components
+     * (DCs) is two or more. For example,
+     * <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p>
+     *  <ul> <li> <p>To avoid errors, certain characters in the
+     * distinguished name must be escaped. For more information, see <a
+     * href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names">
+     * Distinguished Names</a> in the Microsoft documentation.</p> </li> <li> <p>The
+     * API doesn't validate whether the OU exists.</p> </li> </ul> 
      */
     inline void SetDefaultOu(const char* value) { m_defaultOuHasBeenSet = true; m_defaultOu.assign(value); }
 
     /**
-     * <p>The default organizational unit (OU) for your WorkSpace directories.</p>
+     * <p>The default organizational unit (OU) for your WorkSpaces directories. This
+     * string must be the full Lightweight Directory Access Protocol (LDAP)
+     * distinguished name for the target domain and OU. It must be in the form
+     * <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where
+     * <i>value</i> is any string of characters, and the number of domain components
+     * (DCs) is two or more. For example,
+     * <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p>
+     *  <ul> <li> <p>To avoid errors, certain characters in the
+     * distinguished name must be escaped. For more information, see <a
+     * href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names">
+     * Distinguished Names</a> in the Microsoft documentation.</p> </li> <li> <p>The
+     * API doesn't validate whether the OU exists.</p> </li> </ul> 
      */
     inline WorkspaceCreationProperties& WithDefaultOu(const Aws::String& value) { SetDefaultOu(value); return *this;}
 
     /**
-     * <p>The default organizational unit (OU) for your WorkSpace directories.</p>
+     * <p>The default organizational unit (OU) for your WorkSpaces directories. This
+     * string must be the full Lightweight Directory Access Protocol (LDAP)
+     * distinguished name for the target domain and OU. It must be in the form
+     * <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where
+     * <i>value</i> is any string of characters, and the number of domain components
+     * (DCs) is two or more. For example,
+     * <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p>
+     *  <ul> <li> <p>To avoid errors, certain characters in the
+     * distinguished name must be escaped. For more information, see <a
+     * href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names">
+     * Distinguished Names</a> in the Microsoft documentation.</p> </li> <li> <p>The
+     * API doesn't validate whether the OU exists.</p> </li> </ul> 
      */
     inline WorkspaceCreationProperties& WithDefaultOu(Aws::String&& value) { SetDefaultOu(std::move(value)); return *this;}
 
     /**
-     * <p>The default organizational unit (OU) for your WorkSpace directories.</p>
+     * <p>The default organizational unit (OU) for your WorkSpaces directories. This
+     * string must be the full Lightweight Directory Access Protocol (LDAP)
+     * distinguished name for the target domain and OU. It must be in the form
+     * <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where
+     * <i>value</i> is any string of characters, and the number of domain components
+     * (DCs) is two or more. For example,
+     * <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p>
+     *  <ul> <li> <p>To avoid errors, certain characters in the
+     * distinguished name must be escaped. For more information, see <a
+     * href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names">
+     * Distinguished Names</a> in the Microsoft documentation.</p> </li> <li> <p>The
+     * API doesn't validate whether the OU exists.</p> </li> </ul> 
      */
     inline WorkspaceCreationProperties& WithDefaultOu(const char* value) { SetDefaultOu(value); return *this;}
 
@@ -207,6 +358,9 @@ namespace Model
     inline WorkspaceCreationProperties& WithEnableMaintenanceMode(bool value) { SetEnableMaintenanceMode(value); return *this;}
 
   private:
+
+    bool m_enableWorkDocs;
+    bool m_enableWorkDocsHasBeenSet;
 
     bool m_enableInternetAccess;
     bool m_enableInternetAccessHasBeenSet;

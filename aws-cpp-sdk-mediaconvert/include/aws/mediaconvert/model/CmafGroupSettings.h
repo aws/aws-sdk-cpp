@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
@@ -202,38 +192,44 @@ namespace Model
 
 
     /**
-     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from
-     * saving media segments for later replay.
+     * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no
+     * tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in
+     * your video distribution set up. For example, use the Cache-Control http header.
      */
     inline const CmafClientCache& GetClientCache() const{ return m_clientCache; }
 
     /**
-     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from
-     * saving media segments for later replay.
+     * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no
+     * tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in
+     * your video distribution set up. For example, use the Cache-Control http header.
      */
     inline bool ClientCacheHasBeenSet() const { return m_clientCacheHasBeenSet; }
 
     /**
-     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from
-     * saving media segments for later replay.
+     * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no
+     * tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in
+     * your video distribution set up. For example, use the Cache-Control http header.
      */
     inline void SetClientCache(const CmafClientCache& value) { m_clientCacheHasBeenSet = true; m_clientCache = value; }
 
     /**
-     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from
-     * saving media segments for later replay.
+     * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no
+     * tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in
+     * your video distribution set up. For example, use the Cache-Control http header.
      */
     inline void SetClientCache(CmafClientCache&& value) { m_clientCacheHasBeenSet = true; m_clientCache = std::move(value); }
 
     /**
-     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from
-     * saving media segments for later replay.
+     * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no
+     * tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in
+     * your video distribution set up. For example, use the Cache-Control http header.
      */
     inline CmafGroupSettings& WithClientCache(const CmafClientCache& value) { SetClientCache(value); return *this;}
 
     /**
-     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from
-     * saving media segments for later replay.
+     * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no
+     * tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in
+     * your video distribution set up. For example, use the Cache-Control http header.
      */
     inline CmafGroupSettings& WithClientCache(CmafClientCache&& value) { SetClientCache(std::move(value)); return *this;}
 

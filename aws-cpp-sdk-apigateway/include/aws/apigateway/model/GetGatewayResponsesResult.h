@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
@@ -53,7 +43,7 @@ namespace Model
    * SignedHeaders=content-type;host;x-amz-date,
    * Signature=59b42fe54a76a5de8adf2c67baa6d39206f8e9ad49a1d77ccc6a5da3103a398a
    * Cache-Control: no-cache Postman-Token: 5637af27-dc29-fc5c-9dfe-0645d52cb515
-   * </code></pre> <p></p> <h5>Response</h5> <p>The successful operation returns the
+   * </code></pre> <p/> <h5>Response</h5> <p>The successful operation returns the
    * <code>200 OK</code> status code and a payload similar to the following:</p>
    * <pre><code>{ "_links": { "curies": { "href":
    * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-gatewayresponse-{rel}.html",
@@ -241,7 +231,7 @@ namespace Model
    * "defaultResponse": true, "responseParameters": {}, "responseTemplates": {
    * "application/json": "{\"message\":$context.error.messageString}" },
    * "responseType": "AUTHORIZER_FAILURE", "statusCode": "500" } ] } }</code></pre>
-   * <p></p> </div> </div> <div class="seeAlso"> <a
+   * <p/> </div> </div> <div class="seeAlso"> <a
    * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/customize-gateway-responses.html">Customize
    * Gateway Responses</a> </div><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GatewayResponses">AWS

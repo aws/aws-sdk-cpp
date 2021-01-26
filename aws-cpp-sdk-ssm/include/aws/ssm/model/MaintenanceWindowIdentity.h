@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -336,6 +326,31 @@ namespace Model
 
 
     /**
+     * <p>The number of days to wait to run a maintenance window after the scheduled
+     * CRON expression date and time.</p>
+     */
+    inline int GetScheduleOffset() const{ return m_scheduleOffset; }
+
+    /**
+     * <p>The number of days to wait to run a maintenance window after the scheduled
+     * CRON expression date and time.</p>
+     */
+    inline bool ScheduleOffsetHasBeenSet() const { return m_scheduleOffsetHasBeenSet; }
+
+    /**
+     * <p>The number of days to wait to run a maintenance window after the scheduled
+     * CRON expression date and time.</p>
+     */
+    inline void SetScheduleOffset(int value) { m_scheduleOffsetHasBeenSet = true; m_scheduleOffset = value; }
+
+    /**
+     * <p>The number of days to wait to run a maintenance window after the scheduled
+     * CRON expression date and time.</p>
+     */
+    inline MaintenanceWindowIdentity& WithScheduleOffset(int value) { SetScheduleOffset(value); return *this;}
+
+
+    /**
      * <p>The date and time, in ISO-8601 Extended format, for when the maintenance
      * window is scheduled to become inactive.</p>
      */
@@ -506,6 +521,9 @@ namespace Model
 
     Aws::String m_scheduleTimezone;
     bool m_scheduleTimezoneHasBeenSet;
+
+    int m_scheduleOffset;
+    bool m_scheduleOffsetHasBeenSet;
 
     Aws::String m_endDate;
     bool m_endDateHasBeenSet;

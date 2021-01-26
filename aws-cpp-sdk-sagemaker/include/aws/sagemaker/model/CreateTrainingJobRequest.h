@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -28,9 +18,11 @@
 #include <aws/sagemaker/model/DebugHookConfig.h>
 #include <aws/sagemaker/model/TensorBoardOutputConfig.h>
 #include <aws/sagemaker/model/ExperimentConfig.h>
+#include <aws/sagemaker/model/ProfilerConfig.h>
 #include <aws/sagemaker/model/Channel.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <aws/sagemaker/model/DebugRuleConfiguration.h>
+#include <aws/sagemaker/model/ProfilerRuleConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -327,9 +319,9 @@ namespace Model
      * You grant permissions for all of these tasks to an IAM role. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
@@ -342,9 +334,9 @@ namespace Model
      * You grant permissions for all of these tasks to an IAM role. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
@@ -357,9 +349,9 @@ namespace Model
      * You grant permissions for all of these tasks to an IAM role. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
@@ -372,9 +364,9 @@ namespace Model
      * You grant permissions for all of these tasks to an IAM role. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
@@ -387,9 +379,9 @@ namespace Model
      * You grant permissions for all of these tasks to an IAM role. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
@@ -402,9 +394,9 @@ namespace Model
      * You grant permissions for all of these tasks to an IAM role. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline CreateTrainingJobRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
@@ -417,9 +409,9 @@ namespace Model
      * You grant permissions for all of these tasks to an IAM role. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline CreateTrainingJobRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
@@ -432,9 +424,9 @@ namespace Model
      * You grant permissions for all of these tasks to an IAM role. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline CreateTrainingJobRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -797,66 +789,74 @@ namespace Model
 
 
     /**
-     * <p>An array of key-value pairs. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>. </p>
+     * <p>An array of key-value pairs. You can use tags to categorize your AWS
+     * resources in different ways, for example, by purpose, owner, or environment. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>An array of key-value pairs. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>. </p>
+     * <p>An array of key-value pairs. You can use tags to categorize your AWS
+     * resources in different ways, for example, by purpose, owner, or environment. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>An array of key-value pairs. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>. </p>
+     * <p>An array of key-value pairs. You can use tags to categorize your AWS
+     * resources in different ways, for example, by purpose, owner, or environment. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>An array of key-value pairs. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>. </p>
+     * <p>An array of key-value pairs. You can use tags to categorize your AWS
+     * resources in different ways, for example, by purpose, owner, or environment. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>An array of key-value pairs. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>. </p>
+     * <p>An array of key-value pairs. You can use tags to categorize your AWS
+     * resources in different ways, for example, by purpose, owner, or environment. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p>
      */
     inline CreateTrainingJobRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>An array of key-value pairs. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>. </p>
+     * <p>An array of key-value pairs. You can use tags to categorize your AWS
+     * resources in different ways, for example, by purpose, owner, or environment. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p>
      */
     inline CreateTrainingJobRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>An array of key-value pairs. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>. </p>
+     * <p>An array of key-value pairs. You can use tags to categorize your AWS
+     * resources in different ways, for example, by purpose, owner, or environment. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p>
      */
     inline CreateTrainingJobRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>An array of key-value pairs. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>. </p>
+     * <p>An array of key-value pairs. You can use tags to categorize your AWS
+     * resources in different ways, for example, by purpose, owner, or environment. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p>
      */
     inline CreateTrainingJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
@@ -1061,42 +1061,50 @@ namespace Model
 
 
     /**
-     * <p>Configuration information for debugging rules.</p>
+     * <p>Configuration information for Debugger rules for debugging output
+     * tensors.</p>
      */
     inline const Aws::Vector<DebugRuleConfiguration>& GetDebugRuleConfigurations() const{ return m_debugRuleConfigurations; }
 
     /**
-     * <p>Configuration information for debugging rules.</p>
+     * <p>Configuration information for Debugger rules for debugging output
+     * tensors.</p>
      */
     inline bool DebugRuleConfigurationsHasBeenSet() const { return m_debugRuleConfigurationsHasBeenSet; }
 
     /**
-     * <p>Configuration information for debugging rules.</p>
+     * <p>Configuration information for Debugger rules for debugging output
+     * tensors.</p>
      */
     inline void SetDebugRuleConfigurations(const Aws::Vector<DebugRuleConfiguration>& value) { m_debugRuleConfigurationsHasBeenSet = true; m_debugRuleConfigurations = value; }
 
     /**
-     * <p>Configuration information for debugging rules.</p>
+     * <p>Configuration information for Debugger rules for debugging output
+     * tensors.</p>
      */
     inline void SetDebugRuleConfigurations(Aws::Vector<DebugRuleConfiguration>&& value) { m_debugRuleConfigurationsHasBeenSet = true; m_debugRuleConfigurations = std::move(value); }
 
     /**
-     * <p>Configuration information for debugging rules.</p>
+     * <p>Configuration information for Debugger rules for debugging output
+     * tensors.</p>
      */
     inline CreateTrainingJobRequest& WithDebugRuleConfigurations(const Aws::Vector<DebugRuleConfiguration>& value) { SetDebugRuleConfigurations(value); return *this;}
 
     /**
-     * <p>Configuration information for debugging rules.</p>
+     * <p>Configuration information for Debugger rules for debugging output
+     * tensors.</p>
      */
     inline CreateTrainingJobRequest& WithDebugRuleConfigurations(Aws::Vector<DebugRuleConfiguration>&& value) { SetDebugRuleConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>Configuration information for debugging rules.</p>
+     * <p>Configuration information for Debugger rules for debugging output
+     * tensors.</p>
      */
     inline CreateTrainingJobRequest& AddDebugRuleConfigurations(const DebugRuleConfiguration& value) { m_debugRuleConfigurationsHasBeenSet = true; m_debugRuleConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>Configuration information for debugging rules.</p>
+     * <p>Configuration information for Debugger rules for debugging output
+     * tensors.</p>
      */
     inline CreateTrainingJobRequest& AddDebugRuleConfigurations(DebugRuleConfiguration&& value) { m_debugRuleConfigurationsHasBeenSet = true; m_debugRuleConfigurations.push_back(std::move(value)); return *this; }
 
@@ -1137,6 +1145,74 @@ namespace Model
 
     
     inline CreateTrainingJobRequest& WithExperimentConfig(ExperimentConfig&& value) { SetExperimentConfig(std::move(value)); return *this;}
+
+
+    
+    inline const ProfilerConfig& GetProfilerConfig() const{ return m_profilerConfig; }
+
+    
+    inline bool ProfilerConfigHasBeenSet() const { return m_profilerConfigHasBeenSet; }
+
+    
+    inline void SetProfilerConfig(const ProfilerConfig& value) { m_profilerConfigHasBeenSet = true; m_profilerConfig = value; }
+
+    
+    inline void SetProfilerConfig(ProfilerConfig&& value) { m_profilerConfigHasBeenSet = true; m_profilerConfig = std::move(value); }
+
+    
+    inline CreateTrainingJobRequest& WithProfilerConfig(const ProfilerConfig& value) { SetProfilerConfig(value); return *this;}
+
+    
+    inline CreateTrainingJobRequest& WithProfilerConfig(ProfilerConfig&& value) { SetProfilerConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Configuration information for Debugger rules for profiling system and
+     * framework metrics.</p>
+     */
+    inline const Aws::Vector<ProfilerRuleConfiguration>& GetProfilerRuleConfigurations() const{ return m_profilerRuleConfigurations; }
+
+    /**
+     * <p>Configuration information for Debugger rules for profiling system and
+     * framework metrics.</p>
+     */
+    inline bool ProfilerRuleConfigurationsHasBeenSet() const { return m_profilerRuleConfigurationsHasBeenSet; }
+
+    /**
+     * <p>Configuration information for Debugger rules for profiling system and
+     * framework metrics.</p>
+     */
+    inline void SetProfilerRuleConfigurations(const Aws::Vector<ProfilerRuleConfiguration>& value) { m_profilerRuleConfigurationsHasBeenSet = true; m_profilerRuleConfigurations = value; }
+
+    /**
+     * <p>Configuration information for Debugger rules for profiling system and
+     * framework metrics.</p>
+     */
+    inline void SetProfilerRuleConfigurations(Aws::Vector<ProfilerRuleConfiguration>&& value) { m_profilerRuleConfigurationsHasBeenSet = true; m_profilerRuleConfigurations = std::move(value); }
+
+    /**
+     * <p>Configuration information for Debugger rules for profiling system and
+     * framework metrics.</p>
+     */
+    inline CreateTrainingJobRequest& WithProfilerRuleConfigurations(const Aws::Vector<ProfilerRuleConfiguration>& value) { SetProfilerRuleConfigurations(value); return *this;}
+
+    /**
+     * <p>Configuration information for Debugger rules for profiling system and
+     * framework metrics.</p>
+     */
+    inline CreateTrainingJobRequest& WithProfilerRuleConfigurations(Aws::Vector<ProfilerRuleConfiguration>&& value) { SetProfilerRuleConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>Configuration information for Debugger rules for profiling system and
+     * framework metrics.</p>
+     */
+    inline CreateTrainingJobRequest& AddProfilerRuleConfigurations(const ProfilerRuleConfiguration& value) { m_profilerRuleConfigurationsHasBeenSet = true; m_profilerRuleConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>Configuration information for Debugger rules for profiling system and
+     * framework metrics.</p>
+     */
+    inline CreateTrainingJobRequest& AddProfilerRuleConfigurations(ProfilerRuleConfiguration&& value) { m_profilerRuleConfigurationsHasBeenSet = true; m_profilerRuleConfigurations.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -1193,6 +1269,12 @@ namespace Model
 
     ExperimentConfig m_experimentConfig;
     bool m_experimentConfigHasBeenSet;
+
+    ProfilerConfig m_profilerConfig;
+    bool m_profilerConfigHasBeenSet;
+
+    Aws::Vector<ProfilerRuleConfiguration> m_profilerRuleConfigurations;
+    bool m_profilerRuleConfigurationsHasBeenSet;
   };
 
 } // namespace Model

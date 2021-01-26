@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/AribDestinationSettings.h>
 #include <aws/medialive/model/BurnInDestinationSettings.h>
 #include <aws/medialive/model/DvbSubDestinationSettings.h>
+#include <aws/medialive/model/EbuTtDDestinationSettings.h>
 #include <aws/medialive/model/EmbeddedDestinationSettings.h>
 #include <aws/medialive/model/EmbeddedPlusScte20DestinationSettings.h>
 #include <aws/medialive/model/RtmpCaptionInfoDestinationSettings.h>
@@ -113,6 +104,25 @@ namespace Model
 
     
     inline CaptionDestinationSettings& WithDvbSubDestinationSettings(DvbSubDestinationSettings&& value) { SetDvbSubDestinationSettings(std::move(value)); return *this;}
+
+
+    
+    inline const EbuTtDDestinationSettings& GetEbuTtDDestinationSettings() const{ return m_ebuTtDDestinationSettings; }
+
+    
+    inline bool EbuTtDDestinationSettingsHasBeenSet() const { return m_ebuTtDDestinationSettingsHasBeenSet; }
+
+    
+    inline void SetEbuTtDDestinationSettings(const EbuTtDDestinationSettings& value) { m_ebuTtDDestinationSettingsHasBeenSet = true; m_ebuTtDDestinationSettings = value; }
+
+    
+    inline void SetEbuTtDDestinationSettings(EbuTtDDestinationSettings&& value) { m_ebuTtDDestinationSettingsHasBeenSet = true; m_ebuTtDDestinationSettings = std::move(value); }
+
+    
+    inline CaptionDestinationSettings& WithEbuTtDDestinationSettings(const EbuTtDDestinationSettings& value) { SetEbuTtDDestinationSettings(value); return *this;}
+
+    
+    inline CaptionDestinationSettings& WithEbuTtDDestinationSettings(EbuTtDDestinationSettings&& value) { SetEbuTtDDestinationSettings(std::move(value)); return *this;}
 
 
     
@@ -295,6 +305,9 @@ namespace Model
 
     DvbSubDestinationSettings m_dvbSubDestinationSettings;
     bool m_dvbSubDestinationSettingsHasBeenSet;
+
+    EbuTtDDestinationSettings m_ebuTtDDestinationSettings;
+    bool m_ebuTtDDestinationSettingsHasBeenSet;
 
     EmbeddedDestinationSettings m_embeddedDestinationSettings;
     bool m_embeddedDestinationSettingsHasBeenSet;

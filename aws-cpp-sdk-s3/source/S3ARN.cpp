@@ -1,19 +1,10 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <cassert>
+#include <aws/core/Region.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/StringUtils.h>
@@ -31,9 +22,17 @@ namespace Aws
         S3ARNOutcome S3ARN::Validate(const char* clientRegion) const
         {
             // Take pseudo region into consideration here.
-            if (this->GetRegion() != clientRegion && "fips-" + this->GetRegion() != clientRegion && this->GetRegion() + "-fips" != clientRegion)
+            Aws::String region = clientRegion ? clientRegion : "";
+            Aws::StringStream ss;
+            if (this->GetResourceType() == ARNResourceType::OUTPOST && region.find("fips") != Aws::String::npos)
             {
-                Aws::StringStream ss;
+                ss.str("");
+                ss << "Outposts ARN do not support fips regions right now.";
+                return S3ARNOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::VALIDATION, "VALIDATION", ss.str(), false));
+            }
+            else if (this->GetRegion() != Aws::Region::ComputeSignerRegion(clientRegion))
+            {
+                ss.str("");
                 ss << "Region mismatch between \"" << this->GetRegion() << "\" defined in ARN and \""
                     << clientRegion << "\" defined in client configuration. "
                     << "You can specify AWS_S3_USE_ARN_REGION to ignore region defined in client configuration.";
@@ -62,10 +61,10 @@ namespace Aws
                 ss << "Invalid partition in ARN: " << this->GetPartition() << ". Valid options: aws, aws-cn, and etc.";
             }
             // Validation on service.
-            else if (this->GetService() != "s3")
+            else if (this->GetService() != "s3"  && this->GetService() != "s3-outposts")
             {
                 ss.str("");
-                ss << "Invalid service in ARN: " << this->GetService() << ". Valid options: s3";
+                ss << "Invalid service in ARN: " << this->GetService() << ". Valid options: s3, s3-outposts";
                 errorMessage = ss.str();
             }
             // Validation on region.
@@ -87,30 +86,70 @@ namespace Aws
                 ss << "Invalid account ID in ARN: " << this->GetAccountId() << ". Account ID should be a RFC 3986 Host label.";
                 errorMessage = ss.str();
             }
-            // Validation on resource.
-            else if (this->GetResourceType() != ARNResourceType::ACCESSPOINT)
+            // Validation on Access Point ARN:
+            else if (this->GetResourceType() == ARNResourceType::ACCESSPOINT)
             {
-                ss.str("");
-                ss << "Invalid resource type in ARN: " << this->GetResourceType() << ". Valid options: " << ARNResourceType::ACCESSPOINT;
-                errorMessage = ss.str();
+                if (!Utils::IsValidDnsLabel(this->GetResourceId()))
+                {
+                    ss.str("");
+                    ss << "Invalid resource ID in accesspoint ARN: " << this->GetResourceId() << ". Resource ID should be a RFC 3986 Host label.";
+                    errorMessage = ss.str();
+                }
+                else if (!this->GetResourceQualifier().empty())
+                {
+                    ss.str("");
+                    ss << "Invalid accesspoint ARN with non empty resource qualifier: " << this->GetResourceQualifier();
+                    errorMessage = ss.str();
+                }
+                else if (!this->GetSubResourceType().empty() || !this->GetSubResourceId().empty())
+                {
+                    ss.str("");
+                    ss << "Invalid accesspoint ARN with non empty sub resource type: " << this->GetSubResourceType() << ", sub resource ID: " << this->GetSubResourceId();
+                    errorMessage = ss.str();
+                }
+                else
+                {
+                    success = true;
+                }
             }
-            else if (this->GetResourceId().empty())
+            // Validation on Outposts ARN:
+            else if (this->GetResourceType() == ARNResourceType::OUTPOST)
             {
-                errorMessage = "Invalid Access Point ARN with empty resource ID.";
+                if (this->GetRegion().find("fips") != Aws::String::npos)
+                {
+                    ss.str("");
+                    ss << "Outposts ARN do not support fips regions right now.";
+                    errorMessage = ss.str();
+                }
+                else if (!Utils::IsValidDnsLabel(this->GetResourceId()))
+                {
+                    ss.str("");
+                    ss << "Invalid outpost ID in Outposts ARN: " << this->GetResourceId() << ". Outpost ID should be a RFC 3986 Host label.";
+                    errorMessage = ss.str();
+                }
+                else if (this->GetSubResourceType() != ARNResourceType::ACCESSPOINT)
+                {
+                    ss.str("");
+                    ss << "Invalid sub resource type in Outposts ARN: " << this->GetSubResourceType() << ". Valid options: " << ARNResourceType::ACCESSPOINT;
+                    errorMessage = ss.str();
+                }
+                else if (!Utils::IsValidDnsLabel(this->GetSubResourceId()))
+                {
+                    ss.str("");
+                    ss << "Invalid accesspoint name in Outposts ARN: " << this->GetSubResourceId() << ", accesspoint name should be a RFC 3986 Host label.";
+                    errorMessage = ss.str();
+                }
+                else
+                {
+                    success = true;
+                }
             }
-            else if (!Utils::IsValidDnsLabel(this->GetResourceId()))
-            {
-                ss.str("");
-                ss << "Invalid resource ID in Access Point ARN: " << this->GetResourceId() << ". Resource ID should be a RFC 3986 Host label.";
-                errorMessage = ss.str();
-            }
-            else if (!this->GetResourceQualifier().empty())
-            {
-                errorMessage = "Invalid Access Point ARN with non empty resource qualifier.";
-            }
+            // Neither Access Point ARN nor Outposts ARN.
             else
             {
-                success = true;
+                ss.str("");
+                ss << "Invalid resource type in ARN: " << this->GetResourceType() << ". Valid options: " << ARNResourceType::ACCESSPOINT << ", " << ARNResourceType::OUTPOST;
+                errorMessage = ss.str();
             }
 
             if (success)
@@ -131,11 +170,11 @@ namespace Aws
             Aws::Vector<Aws::String> resourceSegments;
             if (resource.find(':') != std::string::npos)
             {
-                resourceSegments = Utils::StringUtils::Split(resource, ':', 3, Utils::StringUtils::SplitOptions::INCLUDE_EMPTY_ENTRIES);
+                resourceSegments = Utils::StringUtils::Split(resource, ':', 4, Utils::StringUtils::SplitOptions::INCLUDE_EMPTY_ENTRIES);
             }
             else if (resource.find('/') != std::string::npos)
             {
-                resourceSegments = Utils::StringUtils::Split(resource, '/', 3, Utils::StringUtils::SplitOptions::INCLUDE_EMPTY_ENTRIES);
+                resourceSegments = Utils::StringUtils::Split(resource, '/', 4, Utils::StringUtils::SplitOptions::INCLUDE_EMPTY_ENTRIES);
             }
             else
             {
@@ -155,6 +194,12 @@ namespace Aws
                 m_resourceType = resourceSegments[0];
                 m_resourceId = resourceSegments[1];
                 m_resourceQualifier = resourceSegments[2];
+                break;
+            case 4:
+                m_resourceType = resourceSegments[0];
+                m_resourceId = resourceSegments[1];
+                m_subResourceType = resourceSegments[2];
+                m_subResourceId = resourceSegments[3];
                 break;
             default:
                 assert(false);

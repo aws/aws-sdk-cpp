@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lambda/Lambda_EXPORTS.h>
@@ -26,7 +16,10 @@
 #include <aws/lambda/model/StateReasonCode.h>
 #include <aws/lambda/model/LastUpdateStatus.h>
 #include <aws/lambda/model/LastUpdateStatusReasonCode.h>
+#include <aws/lambda/model/PackageType.h>
+#include <aws/lambda/model/ImageConfigResponse.h>
 #include <aws/lambda/model/Layer.h>
+#include <aws/lambda/model/FileSystemConfig.h>
 #include <utility>
 
 namespace Aws
@@ -281,36 +274,36 @@ namespace Model
 
 
     /**
-     * <p>The amount of time that Lambda allows a function to run before stopping
-     * it.</p>
+     * <p>The amount of time in seconds that Lambda allows a function to run before
+     * stopping it.</p>
      */
     inline int GetTimeout() const{ return m_timeout; }
 
     /**
-     * <p>The amount of time that Lambda allows a function to run before stopping
-     * it.</p>
+     * <p>The amount of time in seconds that Lambda allows a function to run before
+     * stopping it.</p>
      */
     inline void SetTimeout(int value) { m_timeout = value; }
 
     /**
-     * <p>The amount of time that Lambda allows a function to run before stopping
-     * it.</p>
+     * <p>The amount of time in seconds that Lambda allows a function to run before
+     * stopping it.</p>
      */
     inline PublishVersionResult& WithTimeout(int value) { SetTimeout(value); return *this;}
 
 
     /**
-     * <p>The memory that's allocated to the function.</p>
+     * <p>The amount of memory available to the function at runtime. </p>
      */
     inline int GetMemorySize() const{ return m_memorySize; }
 
     /**
-     * <p>The memory that's allocated to the function.</p>
+     * <p>The amount of memory available to the function at runtime. </p>
      */
     inline void SetMemorySize(int value) { m_memorySize = value; }
 
     /**
-     * <p>The memory that's allocated to the function.</p>
+     * <p>The amount of memory available to the function at runtime. </p>
      */
     inline PublishVersionResult& WithMemorySize(int value) { SetMemorySize(value); return *this;}
 
@@ -896,6 +889,171 @@ namespace Model
      */
     inline PublishVersionResult& WithLastUpdateStatusReasonCode(LastUpdateStatusReasonCode&& value) { SetLastUpdateStatusReasonCode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline const Aws::Vector<FileSystemConfig>& GetFileSystemConfigs() const{ return m_fileSystemConfigs; }
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline void SetFileSystemConfigs(const Aws::Vector<FileSystemConfig>& value) { m_fileSystemConfigs = value; }
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline void SetFileSystemConfigs(Aws::Vector<FileSystemConfig>&& value) { m_fileSystemConfigs = std::move(value); }
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline PublishVersionResult& WithFileSystemConfigs(const Aws::Vector<FileSystemConfig>& value) { SetFileSystemConfigs(value); return *this;}
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline PublishVersionResult& WithFileSystemConfigs(Aws::Vector<FileSystemConfig>&& value) { SetFileSystemConfigs(std::move(value)); return *this;}
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline PublishVersionResult& AddFileSystemConfigs(const FileSystemConfig& value) { m_fileSystemConfigs.push_back(value); return *this; }
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline PublishVersionResult& AddFileSystemConfigs(FileSystemConfig&& value) { m_fileSystemConfigs.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for .zip file archive.</p>
+     */
+    inline const PackageType& GetPackageType() const{ return m_packageType; }
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for .zip file archive.</p>
+     */
+    inline void SetPackageType(const PackageType& value) { m_packageType = value; }
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for .zip file archive.</p>
+     */
+    inline void SetPackageType(PackageType&& value) { m_packageType = std::move(value); }
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for .zip file archive.</p>
+     */
+    inline PublishVersionResult& WithPackageType(const PackageType& value) { SetPackageType(value); return *this;}
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for .zip file archive.</p>
+     */
+    inline PublishVersionResult& WithPackageType(PackageType&& value) { SetPackageType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The function's image configuration values.</p>
+     */
+    inline const ImageConfigResponse& GetImageConfigResponse() const{ return m_imageConfigResponse; }
+
+    /**
+     * <p>The function's image configuration values.</p>
+     */
+    inline void SetImageConfigResponse(const ImageConfigResponse& value) { m_imageConfigResponse = value; }
+
+    /**
+     * <p>The function's image configuration values.</p>
+     */
+    inline void SetImageConfigResponse(ImageConfigResponse&& value) { m_imageConfigResponse = std::move(value); }
+
+    /**
+     * <p>The function's image configuration values.</p>
+     */
+    inline PublishVersionResult& WithImageConfigResponse(const ImageConfigResponse& value) { SetImageConfigResponse(value); return *this;}
+
+    /**
+     * <p>The function's image configuration values.</p>
+     */
+    inline PublishVersionResult& WithImageConfigResponse(ImageConfigResponse&& value) { SetImageConfigResponse(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The ARN of the signing profile version.</p>
+     */
+    inline const Aws::String& GetSigningProfileVersionArn() const{ return m_signingProfileVersionArn; }
+
+    /**
+     * <p>The ARN of the signing profile version.</p>
+     */
+    inline void SetSigningProfileVersionArn(const Aws::String& value) { m_signingProfileVersionArn = value; }
+
+    /**
+     * <p>The ARN of the signing profile version.</p>
+     */
+    inline void SetSigningProfileVersionArn(Aws::String&& value) { m_signingProfileVersionArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the signing profile version.</p>
+     */
+    inline void SetSigningProfileVersionArn(const char* value) { m_signingProfileVersionArn.assign(value); }
+
+    /**
+     * <p>The ARN of the signing profile version.</p>
+     */
+    inline PublishVersionResult& WithSigningProfileVersionArn(const Aws::String& value) { SetSigningProfileVersionArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the signing profile version.</p>
+     */
+    inline PublishVersionResult& WithSigningProfileVersionArn(Aws::String&& value) { SetSigningProfileVersionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the signing profile version.</p>
+     */
+    inline PublishVersionResult& WithSigningProfileVersionArn(const char* value) { SetSigningProfileVersionArn(value); return *this;}
+
+
+    /**
+     * <p>The ARN of the signing job.</p>
+     */
+    inline const Aws::String& GetSigningJobArn() const{ return m_signingJobArn; }
+
+    /**
+     * <p>The ARN of the signing job.</p>
+     */
+    inline void SetSigningJobArn(const Aws::String& value) { m_signingJobArn = value; }
+
+    /**
+     * <p>The ARN of the signing job.</p>
+     */
+    inline void SetSigningJobArn(Aws::String&& value) { m_signingJobArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the signing job.</p>
+     */
+    inline void SetSigningJobArn(const char* value) { m_signingJobArn.assign(value); }
+
+    /**
+     * <p>The ARN of the signing job.</p>
+     */
+    inline PublishVersionResult& WithSigningJobArn(const Aws::String& value) { SetSigningJobArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the signing job.</p>
+     */
+    inline PublishVersionResult& WithSigningJobArn(Aws::String&& value) { SetSigningJobArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the signing job.</p>
+     */
+    inline PublishVersionResult& WithSigningJobArn(const char* value) { SetSigningJobArn(value); return *this;}
+
   private:
 
     Aws::String m_functionName;
@@ -949,6 +1107,16 @@ namespace Model
     Aws::String m_lastUpdateStatusReason;
 
     LastUpdateStatusReasonCode m_lastUpdateStatusReasonCode;
+
+    Aws::Vector<FileSystemConfig> m_fileSystemConfigs;
+
+    PackageType m_packageType;
+
+    ImageConfigResponse m_imageConfigResponse;
+
+    Aws::String m_signingProfileVersionArn;
+
+    Aws::String m_signingJobArn;
   };
 
 } // namespace Model

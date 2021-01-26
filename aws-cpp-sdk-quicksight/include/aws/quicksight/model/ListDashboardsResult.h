@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
@@ -45,43 +35,43 @@ namespace Model
 
 
     /**
-     * <p>A structure that contains all of the dashboards shared with the user. This
+     * <p>A structure that contains all of the dashboards in your AWS account. This
      * structure provides basic information about the dashboards.</p>
      */
     inline const Aws::Vector<DashboardSummary>& GetDashboardSummaryList() const{ return m_dashboardSummaryList; }
 
     /**
-     * <p>A structure that contains all of the dashboards shared with the user. This
+     * <p>A structure that contains all of the dashboards in your AWS account. This
      * structure provides basic information about the dashboards.</p>
      */
     inline void SetDashboardSummaryList(const Aws::Vector<DashboardSummary>& value) { m_dashboardSummaryList = value; }
 
     /**
-     * <p>A structure that contains all of the dashboards shared with the user. This
+     * <p>A structure that contains all of the dashboards in your AWS account. This
      * structure provides basic information about the dashboards.</p>
      */
     inline void SetDashboardSummaryList(Aws::Vector<DashboardSummary>&& value) { m_dashboardSummaryList = std::move(value); }
 
     /**
-     * <p>A structure that contains all of the dashboards shared with the user. This
+     * <p>A structure that contains all of the dashboards in your AWS account. This
      * structure provides basic information about the dashboards.</p>
      */
     inline ListDashboardsResult& WithDashboardSummaryList(const Aws::Vector<DashboardSummary>& value) { SetDashboardSummaryList(value); return *this;}
 
     /**
-     * <p>A structure that contains all of the dashboards shared with the user. This
+     * <p>A structure that contains all of the dashboards in your AWS account. This
      * structure provides basic information about the dashboards.</p>
      */
     inline ListDashboardsResult& WithDashboardSummaryList(Aws::Vector<DashboardSummary>&& value) { SetDashboardSummaryList(std::move(value)); return *this;}
 
     /**
-     * <p>A structure that contains all of the dashboards shared with the user. This
+     * <p>A structure that contains all of the dashboards in your AWS account. This
      * structure provides basic information about the dashboards.</p>
      */
     inline ListDashboardsResult& AddDashboardSummaryList(const DashboardSummary& value) { m_dashboardSummaryList.push_back(value); return *this; }
 
     /**
-     * <p>A structure that contains all of the dashboards shared with the user. This
+     * <p>A structure that contains all of the dashboards in your AWS account. This
      * structure provides basic information about the dashboards.</p>
      */
     inline ListDashboardsResult& AddDashboardSummaryList(DashboardSummary&& value) { m_dashboardSummaryList.push_back(std::move(value)); return *this; }

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
@@ -285,50 +275,66 @@ namespace Model
 
 
     /**
-     * <p>Fully qualified domain name (FQDN) associated with the certificate
-     * subject.</p>
+     * <p>For CA and end-entity certificates in a private PKI, the common name (CN) can
+     * be any string within the length limit. </p> <p>Note: In publicly trusted
+     * certificates, the common name must be a fully qualified domain name (FQDN)
+     * associated with the certificate subject.</p>
      */
     inline const Aws::String& GetCommonName() const{ return m_commonName; }
 
     /**
-     * <p>Fully qualified domain name (FQDN) associated with the certificate
-     * subject.</p>
+     * <p>For CA and end-entity certificates in a private PKI, the common name (CN) can
+     * be any string within the length limit. </p> <p>Note: In publicly trusted
+     * certificates, the common name must be a fully qualified domain name (FQDN)
+     * associated with the certificate subject.</p>
      */
     inline bool CommonNameHasBeenSet() const { return m_commonNameHasBeenSet; }
 
     /**
-     * <p>Fully qualified domain name (FQDN) associated with the certificate
-     * subject.</p>
+     * <p>For CA and end-entity certificates in a private PKI, the common name (CN) can
+     * be any string within the length limit. </p> <p>Note: In publicly trusted
+     * certificates, the common name must be a fully qualified domain name (FQDN)
+     * associated with the certificate subject.</p>
      */
     inline void SetCommonName(const Aws::String& value) { m_commonNameHasBeenSet = true; m_commonName = value; }
 
     /**
-     * <p>Fully qualified domain name (FQDN) associated with the certificate
-     * subject.</p>
+     * <p>For CA and end-entity certificates in a private PKI, the common name (CN) can
+     * be any string within the length limit. </p> <p>Note: In publicly trusted
+     * certificates, the common name must be a fully qualified domain name (FQDN)
+     * associated with the certificate subject.</p>
      */
     inline void SetCommonName(Aws::String&& value) { m_commonNameHasBeenSet = true; m_commonName = std::move(value); }
 
     /**
-     * <p>Fully qualified domain name (FQDN) associated with the certificate
-     * subject.</p>
+     * <p>For CA and end-entity certificates in a private PKI, the common name (CN) can
+     * be any string within the length limit. </p> <p>Note: In publicly trusted
+     * certificates, the common name must be a fully qualified domain name (FQDN)
+     * associated with the certificate subject.</p>
      */
     inline void SetCommonName(const char* value) { m_commonNameHasBeenSet = true; m_commonName.assign(value); }
 
     /**
-     * <p>Fully qualified domain name (FQDN) associated with the certificate
-     * subject.</p>
+     * <p>For CA and end-entity certificates in a private PKI, the common name (CN) can
+     * be any string within the length limit. </p> <p>Note: In publicly trusted
+     * certificates, the common name must be a fully qualified domain name (FQDN)
+     * associated with the certificate subject.</p>
      */
     inline ASN1Subject& WithCommonName(const Aws::String& value) { SetCommonName(value); return *this;}
 
     /**
-     * <p>Fully qualified domain name (FQDN) associated with the certificate
-     * subject.</p>
+     * <p>For CA and end-entity certificates in a private PKI, the common name (CN) can
+     * be any string within the length limit. </p> <p>Note: In publicly trusted
+     * certificates, the common name must be a fully qualified domain name (FQDN)
+     * associated with the certificate subject.</p>
      */
     inline ASN1Subject& WithCommonName(Aws::String&& value) { SetCommonName(std::move(value)); return *this;}
 
     /**
-     * <p>Fully qualified domain name (FQDN) associated with the certificate
-     * subject.</p>
+     * <p>For CA and end-entity certificates in a private PKI, the common name (CN) can
+     * be any string within the length limit. </p> <p>Note: In publicly trusted
+     * certificates, the common name must be a fully qualified domain name (FQDN)
+     * associated with the certificate subject.</p>
      */
     inline ASN1Subject& WithCommonName(const char* value) { SetCommonName(value); return *this;}
 

@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kinesis/model/Record.h>
+#include <aws/kinesis/model/ChildShard.h>
 #include <utility>
 
 namespace Aws
@@ -159,6 +150,28 @@ namespace Model
      */
     inline GetRecordsResult& WithMillisBehindLatest(long long value) { SetMillisBehindLatest(value); return *this;}
 
+
+    
+    inline const Aws::Vector<ChildShard>& GetChildShards() const{ return m_childShards; }
+
+    
+    inline void SetChildShards(const Aws::Vector<ChildShard>& value) { m_childShards = value; }
+
+    
+    inline void SetChildShards(Aws::Vector<ChildShard>&& value) { m_childShards = std::move(value); }
+
+    
+    inline GetRecordsResult& WithChildShards(const Aws::Vector<ChildShard>& value) { SetChildShards(value); return *this;}
+
+    
+    inline GetRecordsResult& WithChildShards(Aws::Vector<ChildShard>&& value) { SetChildShards(std::move(value)); return *this;}
+
+    
+    inline GetRecordsResult& AddChildShards(const ChildShard& value) { m_childShards.push_back(value); return *this; }
+
+    
+    inline GetRecordsResult& AddChildShards(ChildShard&& value) { m_childShards.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<Record> m_records;
@@ -166,6 +179,8 @@ namespace Model
     Aws::String m_nextShardIterator;
 
     long long m_millisBehindLatest;
+
+    Aws::Vector<ChildShard> m_childShards;
   };
 
 } // namespace Model

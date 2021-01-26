@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -51,7 +41,7 @@ static const char* ALLOCATION_TAG = "RDSDataServiceClient";
 RDSDataServiceClient::RDSDataServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<RDSDataServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -61,7 +51,7 @@ RDSDataServiceClient::RDSDataServiceClient(const Client::ClientConfiguration& cl
 RDSDataServiceClient::RDSDataServiceClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<RDSDataServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -72,7 +62,7 @@ RDSDataServiceClient::RDSDataServiceClient(const std::shared_ptr<AWSCredentialsP
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<RDSDataServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -85,6 +75,7 @@ RDSDataServiceClient::~RDSDataServiceClient()
 
 void RDSDataServiceClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("RDS Data");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -114,15 +105,7 @@ BatchExecuteStatementOutcome RDSDataServiceClient::BatchExecuteStatement(const B
   Aws::StringStream ss;
   ss << "/BatchExecute";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return BatchExecuteStatementOutcome(BatchExecuteStatementResult(outcome.GetResult()));
-  }
-  else
-  {
-    return BatchExecuteStatementOutcome(outcome.GetError());
-  }
+  return BatchExecuteStatementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchExecuteStatementOutcomeCallable RDSDataServiceClient::BatchExecuteStatementCallable(const BatchExecuteStatementRequest& request) const
@@ -149,15 +132,7 @@ BeginTransactionOutcome RDSDataServiceClient::BeginTransaction(const BeginTransa
   Aws::StringStream ss;
   ss << "/BeginTransaction";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return BeginTransactionOutcome(BeginTransactionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return BeginTransactionOutcome(outcome.GetError());
-  }
+  return BeginTransactionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BeginTransactionOutcomeCallable RDSDataServiceClient::BeginTransactionCallable(const BeginTransactionRequest& request) const
@@ -184,15 +159,7 @@ CommitTransactionOutcome RDSDataServiceClient::CommitTransaction(const CommitTra
   Aws::StringStream ss;
   ss << "/CommitTransaction";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CommitTransactionOutcome(CommitTransactionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CommitTransactionOutcome(outcome.GetError());
-  }
+  return CommitTransactionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CommitTransactionOutcomeCallable RDSDataServiceClient::CommitTransactionCallable(const CommitTransactionRequest& request) const
@@ -219,15 +186,7 @@ ExecuteStatementOutcome RDSDataServiceClient::ExecuteStatement(const ExecuteStat
   Aws::StringStream ss;
   ss << "/Execute";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ExecuteStatementOutcome(ExecuteStatementResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ExecuteStatementOutcome(outcome.GetError());
-  }
+  return ExecuteStatementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ExecuteStatementOutcomeCallable RDSDataServiceClient::ExecuteStatementCallable(const ExecuteStatementRequest& request) const
@@ -254,15 +213,7 @@ RollbackTransactionOutcome RDSDataServiceClient::RollbackTransaction(const Rollb
   Aws::StringStream ss;
   ss << "/RollbackTransaction";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RollbackTransactionOutcome(RollbackTransactionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RollbackTransactionOutcome(outcome.GetError());
-  }
+  return RollbackTransactionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RollbackTransactionOutcomeCallable RDSDataServiceClient::RollbackTransactionCallable(const RollbackTransactionRequest& request) const

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/personalize/Personalize_EXPORTS.h>
@@ -100,11 +90,11 @@ namespace Model
      * the input solution's training data, while the <code>UPDATE</code> option
      * processes only the data that has changed in comparison to the input solution.
      * Choose <code>UPDATE</code> when you want to incrementally update your solution
-     * version instead of creating an entirely new one.</p> <important> <p>The
+     * version instead of creating an entirely new one.</p>  <p>The
      * <code>UPDATE</code> option can only be used when you already have an active
      * solution version created from the input solution using the <code>FULL</code>
      * option and the input solution was trained with the
-     * <a>native-recipe-hrnn-coldstart</a> recipe.</p> </important>
+     * <a>native-recipe-hrnn-coldstart</a> recipe.</p> 
      */
     inline const TrainingMode& GetTrainingMode() const{ return m_trainingMode; }
 
@@ -114,11 +104,11 @@ namespace Model
      * the input solution's training data, while the <code>UPDATE</code> option
      * processes only the data that has changed in comparison to the input solution.
      * Choose <code>UPDATE</code> when you want to incrementally update your solution
-     * version instead of creating an entirely new one.</p> <important> <p>The
+     * version instead of creating an entirely new one.</p>  <p>The
      * <code>UPDATE</code> option can only be used when you already have an active
      * solution version created from the input solution using the <code>FULL</code>
      * option and the input solution was trained with the
-     * <a>native-recipe-hrnn-coldstart</a> recipe.</p> </important>
+     * <a>native-recipe-hrnn-coldstart</a> recipe.</p> 
      */
     inline bool TrainingModeHasBeenSet() const { return m_trainingModeHasBeenSet; }
 
@@ -128,11 +118,11 @@ namespace Model
      * the input solution's training data, while the <code>UPDATE</code> option
      * processes only the data that has changed in comparison to the input solution.
      * Choose <code>UPDATE</code> when you want to incrementally update your solution
-     * version instead of creating an entirely new one.</p> <important> <p>The
+     * version instead of creating an entirely new one.</p>  <p>The
      * <code>UPDATE</code> option can only be used when you already have an active
      * solution version created from the input solution using the <code>FULL</code>
      * option and the input solution was trained with the
-     * <a>native-recipe-hrnn-coldstart</a> recipe.</p> </important>
+     * <a>native-recipe-hrnn-coldstart</a> recipe.</p> 
      */
     inline void SetTrainingMode(const TrainingMode& value) { m_trainingModeHasBeenSet = true; m_trainingMode = value; }
 
@@ -142,11 +132,11 @@ namespace Model
      * the input solution's training data, while the <code>UPDATE</code> option
      * processes only the data that has changed in comparison to the input solution.
      * Choose <code>UPDATE</code> when you want to incrementally update your solution
-     * version instead of creating an entirely new one.</p> <important> <p>The
+     * version instead of creating an entirely new one.</p>  <p>The
      * <code>UPDATE</code> option can only be used when you already have an active
      * solution version created from the input solution using the <code>FULL</code>
      * option and the input solution was trained with the
-     * <a>native-recipe-hrnn-coldstart</a> recipe.</p> </important>
+     * <a>native-recipe-hrnn-coldstart</a> recipe.</p> 
      */
     inline void SetTrainingMode(TrainingMode&& value) { m_trainingModeHasBeenSet = true; m_trainingMode = std::move(value); }
 
@@ -156,11 +146,11 @@ namespace Model
      * the input solution's training data, while the <code>UPDATE</code> option
      * processes only the data that has changed in comparison to the input solution.
      * Choose <code>UPDATE</code> when you want to incrementally update your solution
-     * version instead of creating an entirely new one.</p> <important> <p>The
+     * version instead of creating an entirely new one.</p>  <p>The
      * <code>UPDATE</code> option can only be used when you already have an active
      * solution version created from the input solution using the <code>FULL</code>
      * option and the input solution was trained with the
-     * <a>native-recipe-hrnn-coldstart</a> recipe.</p> </important>
+     * <a>native-recipe-hrnn-coldstart</a> recipe.</p> 
      */
     inline CreateSolutionVersionRequest& WithTrainingMode(const TrainingMode& value) { SetTrainingMode(value); return *this;}
 
@@ -170,11 +160,11 @@ namespace Model
      * the input solution's training data, while the <code>UPDATE</code> option
      * processes only the data that has changed in comparison to the input solution.
      * Choose <code>UPDATE</code> when you want to incrementally update your solution
-     * version instead of creating an entirely new one.</p> <important> <p>The
+     * version instead of creating an entirely new one.</p>  <p>The
      * <code>UPDATE</code> option can only be used when you already have an active
      * solution version created from the input solution using the <code>FULL</code>
      * option and the input solution was trained with the
-     * <a>native-recipe-hrnn-coldstart</a> recipe.</p> </important>
+     * <a>native-recipe-hrnn-coldstart</a> recipe.</p> 
      */
     inline CreateSolutionVersionRequest& WithTrainingMode(TrainingMode&& value) { SetTrainingMode(std::move(value)); return *this;}
 

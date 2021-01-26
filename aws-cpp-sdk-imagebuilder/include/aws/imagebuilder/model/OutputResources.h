@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/imagebuilder/model/Ami.h>
+#include <aws/imagebuilder/model/Container.h>
 #include <utility>
 
 namespace Aws
@@ -88,10 +79,62 @@ namespace Model
      */
     inline OutputResources& AddAmis(Ami&& value) { m_amisHasBeenSet = true; m_amis.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Container images that the pipeline has generated and stored in the output
+     * repository.</p>
+     */
+    inline const Aws::Vector<Container>& GetContainers() const{ return m_containers; }
+
+    /**
+     * <p>Container images that the pipeline has generated and stored in the output
+     * repository.</p>
+     */
+    inline bool ContainersHasBeenSet() const { return m_containersHasBeenSet; }
+
+    /**
+     * <p>Container images that the pipeline has generated and stored in the output
+     * repository.</p>
+     */
+    inline void SetContainers(const Aws::Vector<Container>& value) { m_containersHasBeenSet = true; m_containers = value; }
+
+    /**
+     * <p>Container images that the pipeline has generated and stored in the output
+     * repository.</p>
+     */
+    inline void SetContainers(Aws::Vector<Container>&& value) { m_containersHasBeenSet = true; m_containers = std::move(value); }
+
+    /**
+     * <p>Container images that the pipeline has generated and stored in the output
+     * repository.</p>
+     */
+    inline OutputResources& WithContainers(const Aws::Vector<Container>& value) { SetContainers(value); return *this;}
+
+    /**
+     * <p>Container images that the pipeline has generated and stored in the output
+     * repository.</p>
+     */
+    inline OutputResources& WithContainers(Aws::Vector<Container>&& value) { SetContainers(std::move(value)); return *this;}
+
+    /**
+     * <p>Container images that the pipeline has generated and stored in the output
+     * repository.</p>
+     */
+    inline OutputResources& AddContainers(const Container& value) { m_containersHasBeenSet = true; m_containers.push_back(value); return *this; }
+
+    /**
+     * <p>Container images that the pipeline has generated and stored in the output
+     * repository.</p>
+     */
+    inline OutputResources& AddContainers(Container&& value) { m_containersHasBeenSet = true; m_containers.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<Ami> m_amis;
     bool m_amisHasBeenSet;
+
+    Aws::Vector<Container> m_containers;
+    bool m_containersHasBeenSet;
   };
 
 } // namespace Model

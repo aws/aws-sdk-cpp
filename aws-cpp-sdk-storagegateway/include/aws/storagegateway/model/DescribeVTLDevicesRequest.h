@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
@@ -75,73 +65,73 @@ namespace Model
 
     /**
      * <p>An array of strings, where each string represents the Amazon Resource Name
-     * (ARN) of a VTL device.</p> <note> <p>All of the specified VTL devices must be
+     * (ARN) of a VTL device.</p>  <p>All of the specified VTL devices must be
      * from the same gateway. If no VTL devices are specified, the result will contain
-     * all devices on the specified gateway.</p> </note>
+     * all devices on the specified gateway.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetVTLDeviceARNs() const{ return m_vTLDeviceARNs; }
 
     /**
      * <p>An array of strings, where each string represents the Amazon Resource Name
-     * (ARN) of a VTL device.</p> <note> <p>All of the specified VTL devices must be
+     * (ARN) of a VTL device.</p>  <p>All of the specified VTL devices must be
      * from the same gateway. If no VTL devices are specified, the result will contain
-     * all devices on the specified gateway.</p> </note>
+     * all devices on the specified gateway.</p> 
      */
     inline bool VTLDeviceARNsHasBeenSet() const { return m_vTLDeviceARNsHasBeenSet; }
 
     /**
      * <p>An array of strings, where each string represents the Amazon Resource Name
-     * (ARN) of a VTL device.</p> <note> <p>All of the specified VTL devices must be
+     * (ARN) of a VTL device.</p>  <p>All of the specified VTL devices must be
      * from the same gateway. If no VTL devices are specified, the result will contain
-     * all devices on the specified gateway.</p> </note>
+     * all devices on the specified gateway.</p> 
      */
     inline void SetVTLDeviceARNs(const Aws::Vector<Aws::String>& value) { m_vTLDeviceARNsHasBeenSet = true; m_vTLDeviceARNs = value; }
 
     /**
      * <p>An array of strings, where each string represents the Amazon Resource Name
-     * (ARN) of a VTL device.</p> <note> <p>All of the specified VTL devices must be
+     * (ARN) of a VTL device.</p>  <p>All of the specified VTL devices must be
      * from the same gateway. If no VTL devices are specified, the result will contain
-     * all devices on the specified gateway.</p> </note>
+     * all devices on the specified gateway.</p> 
      */
     inline void SetVTLDeviceARNs(Aws::Vector<Aws::String>&& value) { m_vTLDeviceARNsHasBeenSet = true; m_vTLDeviceARNs = std::move(value); }
 
     /**
      * <p>An array of strings, where each string represents the Amazon Resource Name
-     * (ARN) of a VTL device.</p> <note> <p>All of the specified VTL devices must be
+     * (ARN) of a VTL device.</p>  <p>All of the specified VTL devices must be
      * from the same gateway. If no VTL devices are specified, the result will contain
-     * all devices on the specified gateway.</p> </note>
+     * all devices on the specified gateway.</p> 
      */
     inline DescribeVTLDevicesRequest& WithVTLDeviceARNs(const Aws::Vector<Aws::String>& value) { SetVTLDeviceARNs(value); return *this;}
 
     /**
      * <p>An array of strings, where each string represents the Amazon Resource Name
-     * (ARN) of a VTL device.</p> <note> <p>All of the specified VTL devices must be
+     * (ARN) of a VTL device.</p>  <p>All of the specified VTL devices must be
      * from the same gateway. If no VTL devices are specified, the result will contain
-     * all devices on the specified gateway.</p> </note>
+     * all devices on the specified gateway.</p> 
      */
     inline DescribeVTLDevicesRequest& WithVTLDeviceARNs(Aws::Vector<Aws::String>&& value) { SetVTLDeviceARNs(std::move(value)); return *this;}
 
     /**
      * <p>An array of strings, where each string represents the Amazon Resource Name
-     * (ARN) of a VTL device.</p> <note> <p>All of the specified VTL devices must be
+     * (ARN) of a VTL device.</p>  <p>All of the specified VTL devices must be
      * from the same gateway. If no VTL devices are specified, the result will contain
-     * all devices on the specified gateway.</p> </note>
+     * all devices on the specified gateway.</p> 
      */
     inline DescribeVTLDevicesRequest& AddVTLDeviceARNs(const Aws::String& value) { m_vTLDeviceARNsHasBeenSet = true; m_vTLDeviceARNs.push_back(value); return *this; }
 
     /**
      * <p>An array of strings, where each string represents the Amazon Resource Name
-     * (ARN) of a VTL device.</p> <note> <p>All of the specified VTL devices must be
+     * (ARN) of a VTL device.</p>  <p>All of the specified VTL devices must be
      * from the same gateway. If no VTL devices are specified, the result will contain
-     * all devices on the specified gateway.</p> </note>
+     * all devices on the specified gateway.</p> 
      */
     inline DescribeVTLDevicesRequest& AddVTLDeviceARNs(Aws::String&& value) { m_vTLDeviceARNsHasBeenSet = true; m_vTLDeviceARNs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of strings, where each string represents the Amazon Resource Name
-     * (ARN) of a VTL device.</p> <note> <p>All of the specified VTL devices must be
+     * (ARN) of a VTL device.</p>  <p>All of the specified VTL devices must be
      * from the same gateway. If no VTL devices are specified, the result will contain
-     * all devices on the specified gateway.</p> </note>
+     * all devices on the specified gateway.</p> 
      */
     inline DescribeVTLDevicesRequest& AddVTLDeviceARNs(const char* value) { m_vTLDeviceARNsHasBeenSet = true; m_vTLDeviceARNs.push_back(value); return *this; }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -181,49 +171,137 @@ namespace Model
 
     /**
      * <p>The status of the relationship between the member account and its master
-     * account. </p>
+     * account. </p> <p>The status can have one of the following values:</p> <ul> <li>
+     * <p> <code>CREATED</code> - Indicates that the master account added the member
+     * account, but has not yet invited the member account.</p> </li> <li> <p>
+     * <code>INVITED</code> - Indicates that the master account invited the member
+     * account. The member account has not yet responded to the invitation.</p> </li>
+     * <li> <p> <code>ENABLED</code> - Indicates that the member account is currently
+     * active. For manually invited member accounts, indicates that the member account
+     * accepted the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates
+     * that the master account disassociated the member account.</p> </li> <li> <p>
+     * <code>RESIGNED</code> - Indicates that the member account disassociated
+     * themselves from the master account.</p> </li> <li> <p> <code>DELETED</code> -
+     * Indicates that the master account deleted the member account.</p> </li> </ul>
      */
     inline const Aws::String& GetMemberStatus() const{ return m_memberStatus; }
 
     /**
      * <p>The status of the relationship between the member account and its master
-     * account. </p>
+     * account. </p> <p>The status can have one of the following values:</p> <ul> <li>
+     * <p> <code>CREATED</code> - Indicates that the master account added the member
+     * account, but has not yet invited the member account.</p> </li> <li> <p>
+     * <code>INVITED</code> - Indicates that the master account invited the member
+     * account. The member account has not yet responded to the invitation.</p> </li>
+     * <li> <p> <code>ENABLED</code> - Indicates that the member account is currently
+     * active. For manually invited member accounts, indicates that the member account
+     * accepted the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates
+     * that the master account disassociated the member account.</p> </li> <li> <p>
+     * <code>RESIGNED</code> - Indicates that the member account disassociated
+     * themselves from the master account.</p> </li> <li> <p> <code>DELETED</code> -
+     * Indicates that the master account deleted the member account.</p> </li> </ul>
      */
     inline bool MemberStatusHasBeenSet() const { return m_memberStatusHasBeenSet; }
 
     /**
      * <p>The status of the relationship between the member account and its master
-     * account. </p>
+     * account. </p> <p>The status can have one of the following values:</p> <ul> <li>
+     * <p> <code>CREATED</code> - Indicates that the master account added the member
+     * account, but has not yet invited the member account.</p> </li> <li> <p>
+     * <code>INVITED</code> - Indicates that the master account invited the member
+     * account. The member account has not yet responded to the invitation.</p> </li>
+     * <li> <p> <code>ENABLED</code> - Indicates that the member account is currently
+     * active. For manually invited member accounts, indicates that the member account
+     * accepted the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates
+     * that the master account disassociated the member account.</p> </li> <li> <p>
+     * <code>RESIGNED</code> - Indicates that the member account disassociated
+     * themselves from the master account.</p> </li> <li> <p> <code>DELETED</code> -
+     * Indicates that the master account deleted the member account.</p> </li> </ul>
      */
     inline void SetMemberStatus(const Aws::String& value) { m_memberStatusHasBeenSet = true; m_memberStatus = value; }
 
     /**
      * <p>The status of the relationship between the member account and its master
-     * account. </p>
+     * account. </p> <p>The status can have one of the following values:</p> <ul> <li>
+     * <p> <code>CREATED</code> - Indicates that the master account added the member
+     * account, but has not yet invited the member account.</p> </li> <li> <p>
+     * <code>INVITED</code> - Indicates that the master account invited the member
+     * account. The member account has not yet responded to the invitation.</p> </li>
+     * <li> <p> <code>ENABLED</code> - Indicates that the member account is currently
+     * active. For manually invited member accounts, indicates that the member account
+     * accepted the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates
+     * that the master account disassociated the member account.</p> </li> <li> <p>
+     * <code>RESIGNED</code> - Indicates that the member account disassociated
+     * themselves from the master account.</p> </li> <li> <p> <code>DELETED</code> -
+     * Indicates that the master account deleted the member account.</p> </li> </ul>
      */
     inline void SetMemberStatus(Aws::String&& value) { m_memberStatusHasBeenSet = true; m_memberStatus = std::move(value); }
 
     /**
      * <p>The status of the relationship between the member account and its master
-     * account. </p>
+     * account. </p> <p>The status can have one of the following values:</p> <ul> <li>
+     * <p> <code>CREATED</code> - Indicates that the master account added the member
+     * account, but has not yet invited the member account.</p> </li> <li> <p>
+     * <code>INVITED</code> - Indicates that the master account invited the member
+     * account. The member account has not yet responded to the invitation.</p> </li>
+     * <li> <p> <code>ENABLED</code> - Indicates that the member account is currently
+     * active. For manually invited member accounts, indicates that the member account
+     * accepted the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates
+     * that the master account disassociated the member account.</p> </li> <li> <p>
+     * <code>RESIGNED</code> - Indicates that the member account disassociated
+     * themselves from the master account.</p> </li> <li> <p> <code>DELETED</code> -
+     * Indicates that the master account deleted the member account.</p> </li> </ul>
      */
     inline void SetMemberStatus(const char* value) { m_memberStatusHasBeenSet = true; m_memberStatus.assign(value); }
 
     /**
      * <p>The status of the relationship between the member account and its master
-     * account. </p>
+     * account. </p> <p>The status can have one of the following values:</p> <ul> <li>
+     * <p> <code>CREATED</code> - Indicates that the master account added the member
+     * account, but has not yet invited the member account.</p> </li> <li> <p>
+     * <code>INVITED</code> - Indicates that the master account invited the member
+     * account. The member account has not yet responded to the invitation.</p> </li>
+     * <li> <p> <code>ENABLED</code> - Indicates that the member account is currently
+     * active. For manually invited member accounts, indicates that the member account
+     * accepted the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates
+     * that the master account disassociated the member account.</p> </li> <li> <p>
+     * <code>RESIGNED</code> - Indicates that the member account disassociated
+     * themselves from the master account.</p> </li> <li> <p> <code>DELETED</code> -
+     * Indicates that the master account deleted the member account.</p> </li> </ul>
      */
     inline Member& WithMemberStatus(const Aws::String& value) { SetMemberStatus(value); return *this;}
 
     /**
      * <p>The status of the relationship between the member account and its master
-     * account. </p>
+     * account. </p> <p>The status can have one of the following values:</p> <ul> <li>
+     * <p> <code>CREATED</code> - Indicates that the master account added the member
+     * account, but has not yet invited the member account.</p> </li> <li> <p>
+     * <code>INVITED</code> - Indicates that the master account invited the member
+     * account. The member account has not yet responded to the invitation.</p> </li>
+     * <li> <p> <code>ENABLED</code> - Indicates that the member account is currently
+     * active. For manually invited member accounts, indicates that the member account
+     * accepted the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates
+     * that the master account disassociated the member account.</p> </li> <li> <p>
+     * <code>RESIGNED</code> - Indicates that the member account disassociated
+     * themselves from the master account.</p> </li> <li> <p> <code>DELETED</code> -
+     * Indicates that the master account deleted the member account.</p> </li> </ul>
      */
     inline Member& WithMemberStatus(Aws::String&& value) { SetMemberStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the relationship between the member account and its master
-     * account. </p>
+     * account. </p> <p>The status can have one of the following values:</p> <ul> <li>
+     * <p> <code>CREATED</code> - Indicates that the master account added the member
+     * account, but has not yet invited the member account.</p> </li> <li> <p>
+     * <code>INVITED</code> - Indicates that the master account invited the member
+     * account. The member account has not yet responded to the invitation.</p> </li>
+     * <li> <p> <code>ENABLED</code> - Indicates that the member account is currently
+     * active. For manually invited member accounts, indicates that the member account
+     * accepted the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates
+     * that the master account disassociated the member account.</p> </li> <li> <p>
+     * <code>RESIGNED</code> - Indicates that the member account disassociated
+     * themselves from the master account.</p> </li> <li> <p> <code>DELETED</code> -
+     * Indicates that the master account deleted the member account.</p> </li> </ul>
      */
     inline Member& WithMemberStatus(const char* value) { SetMemberStatus(value); return *this;}
 

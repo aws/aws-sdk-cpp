@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
@@ -118,44 +108,44 @@ namespace Model
 
 
     /**
-     * <p>Represents information about a pipeline to a job worker.</p> <note>
+     * <p>Represents information about a pipeline to a job worker.</p> 
      * <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for
-     * custom jobs.</p> </note>
+     * custom jobs.</p> 
      */
     inline const PipelineContext& GetPipelineContext() const{ return m_pipelineContext; }
 
     /**
-     * <p>Represents information about a pipeline to a job worker.</p> <note>
+     * <p>Represents information about a pipeline to a job worker.</p> 
      * <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for
-     * custom jobs.</p> </note>
+     * custom jobs.</p> 
      */
     inline bool PipelineContextHasBeenSet() const { return m_pipelineContextHasBeenSet; }
 
     /**
-     * <p>Represents information about a pipeline to a job worker.</p> <note>
+     * <p>Represents information about a pipeline to a job worker.</p> 
      * <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for
-     * custom jobs.</p> </note>
+     * custom jobs.</p> 
      */
     inline void SetPipelineContext(const PipelineContext& value) { m_pipelineContextHasBeenSet = true; m_pipelineContext = value; }
 
     /**
-     * <p>Represents information about a pipeline to a job worker.</p> <note>
+     * <p>Represents information about a pipeline to a job worker.</p> 
      * <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for
-     * custom jobs.</p> </note>
+     * custom jobs.</p> 
      */
     inline void SetPipelineContext(PipelineContext&& value) { m_pipelineContextHasBeenSet = true; m_pipelineContext = std::move(value); }
 
     /**
-     * <p>Represents information about a pipeline to a job worker.</p> <note>
+     * <p>Represents information about a pipeline to a job worker.</p> 
      * <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for
-     * custom jobs.</p> </note>
+     * custom jobs.</p> 
      */
     inline JobData& WithPipelineContext(const PipelineContext& value) { SetPipelineContext(value); return *this;}
 
     /**
-     * <p>Represents information about a pipeline to a job worker.</p> <note>
+     * <p>Represents information about a pipeline to a job worker.</p> 
      * <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for
-     * custom jobs.</p> </note>
+     * custom jobs.</p> 
      */
     inline JobData& WithPipelineContext(PipelineContext&& value) { SetPipelineContext(std::move(value)); return *this;}
 

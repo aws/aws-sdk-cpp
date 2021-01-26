@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codeguru-reviewer/CodeGuruReviewer_EXPORTS.h>
@@ -45,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p> Recommendation feedback summaries corresponding to the code reivew ARN. </p>
+     * <p> Recommendation feedback summaries corresponding to the code review ARN. </p>
      */
     inline const Aws::Vector<RecommendationFeedbackSummary>& GetRecommendationFeedbackSummaries() const{ return m_recommendationFeedbackSummaries; }
 
     /**
-     * <p> Recommendation feedback summaries corresponding to the code reivew ARN. </p>
+     * <p> Recommendation feedback summaries corresponding to the code review ARN. </p>
      */
     inline void SetRecommendationFeedbackSummaries(const Aws::Vector<RecommendationFeedbackSummary>& value) { m_recommendationFeedbackSummaries = value; }
 
     /**
-     * <p> Recommendation feedback summaries corresponding to the code reivew ARN. </p>
+     * <p> Recommendation feedback summaries corresponding to the code review ARN. </p>
      */
     inline void SetRecommendationFeedbackSummaries(Aws::Vector<RecommendationFeedbackSummary>&& value) { m_recommendationFeedbackSummaries = std::move(value); }
 
     /**
-     * <p> Recommendation feedback summaries corresponding to the code reivew ARN. </p>
+     * <p> Recommendation feedback summaries corresponding to the code review ARN. </p>
      */
     inline ListRecommendationFeedbackResult& WithRecommendationFeedbackSummaries(const Aws::Vector<RecommendationFeedbackSummary>& value) { SetRecommendationFeedbackSummaries(value); return *this;}
 
     /**
-     * <p> Recommendation feedback summaries corresponding to the code reivew ARN. </p>
+     * <p> Recommendation feedback summaries corresponding to the code review ARN. </p>
      */
     inline ListRecommendationFeedbackResult& WithRecommendationFeedbackSummaries(Aws::Vector<RecommendationFeedbackSummary>&& value) { SetRecommendationFeedbackSummaries(std::move(value)); return *this;}
 
     /**
-     * <p> Recommendation feedback summaries corresponding to the code reivew ARN. </p>
+     * <p> Recommendation feedback summaries corresponding to the code review ARN. </p>
      */
     inline ListRecommendationFeedbackResult& AddRecommendationFeedbackSummaries(const RecommendationFeedbackSummary& value) { m_recommendationFeedbackSummaries.push_back(value); return *this; }
 
     /**
-     * <p> Recommendation feedback summaries corresponding to the code reivew ARN. </p>
+     * <p> Recommendation feedback summaries corresponding to the code review ARN. </p>
      */
     inline ListRecommendationFeedbackResult& AddRecommendationFeedbackSummaries(RecommendationFeedbackSummary&& value) { m_recommendationFeedbackSummaries.push_back(std::move(value)); return *this; }
 

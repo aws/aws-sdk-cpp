@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dataexchange/DataExchange_EXPORTS.h>
@@ -100,28 +90,28 @@ namespace Model
         class UpdateDataSetRequest;
         class UpdateRevisionRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DataExchangeErrors>> CancelJobOutcome;
-        typedef Aws::Utils::Outcome<CreateDataSetResult, Aws::Client::AWSError<DataExchangeErrors>> CreateDataSetOutcome;
-        typedef Aws::Utils::Outcome<CreateJobResult, Aws::Client::AWSError<DataExchangeErrors>> CreateJobOutcome;
-        typedef Aws::Utils::Outcome<CreateRevisionResult, Aws::Client::AWSError<DataExchangeErrors>> CreateRevisionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DataExchangeErrors>> DeleteAssetOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DataExchangeErrors>> DeleteDataSetOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DataExchangeErrors>> DeleteRevisionOutcome;
-        typedef Aws::Utils::Outcome<GetAssetResult, Aws::Client::AWSError<DataExchangeErrors>> GetAssetOutcome;
-        typedef Aws::Utils::Outcome<GetDataSetResult, Aws::Client::AWSError<DataExchangeErrors>> GetDataSetOutcome;
-        typedef Aws::Utils::Outcome<GetJobResult, Aws::Client::AWSError<DataExchangeErrors>> GetJobOutcome;
-        typedef Aws::Utils::Outcome<GetRevisionResult, Aws::Client::AWSError<DataExchangeErrors>> GetRevisionOutcome;
-        typedef Aws::Utils::Outcome<ListDataSetRevisionsResult, Aws::Client::AWSError<DataExchangeErrors>> ListDataSetRevisionsOutcome;
-        typedef Aws::Utils::Outcome<ListDataSetsResult, Aws::Client::AWSError<DataExchangeErrors>> ListDataSetsOutcome;
-        typedef Aws::Utils::Outcome<ListJobsResult, Aws::Client::AWSError<DataExchangeErrors>> ListJobsOutcome;
-        typedef Aws::Utils::Outcome<ListRevisionAssetsResult, Aws::Client::AWSError<DataExchangeErrors>> ListRevisionAssetsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<DataExchangeErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<StartJobResult, Aws::Client::AWSError<DataExchangeErrors>> StartJobOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DataExchangeErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DataExchangeErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateAssetResult, Aws::Client::AWSError<DataExchangeErrors>> UpdateAssetOutcome;
-        typedef Aws::Utils::Outcome<UpdateDataSetResult, Aws::Client::AWSError<DataExchangeErrors>> UpdateDataSetOutcome;
-        typedef Aws::Utils::Outcome<UpdateRevisionResult, Aws::Client::AWSError<DataExchangeErrors>> UpdateRevisionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, DataExchangeError> CancelJobOutcome;
+        typedef Aws::Utils::Outcome<CreateDataSetResult, DataExchangeError> CreateDataSetOutcome;
+        typedef Aws::Utils::Outcome<CreateJobResult, DataExchangeError> CreateJobOutcome;
+        typedef Aws::Utils::Outcome<CreateRevisionResult, DataExchangeError> CreateRevisionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, DataExchangeError> DeleteAssetOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, DataExchangeError> DeleteDataSetOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, DataExchangeError> DeleteRevisionOutcome;
+        typedef Aws::Utils::Outcome<GetAssetResult, DataExchangeError> GetAssetOutcome;
+        typedef Aws::Utils::Outcome<GetDataSetResult, DataExchangeError> GetDataSetOutcome;
+        typedef Aws::Utils::Outcome<GetJobResult, DataExchangeError> GetJobOutcome;
+        typedef Aws::Utils::Outcome<GetRevisionResult, DataExchangeError> GetRevisionOutcome;
+        typedef Aws::Utils::Outcome<ListDataSetRevisionsResult, DataExchangeError> ListDataSetRevisionsOutcome;
+        typedef Aws::Utils::Outcome<ListDataSetsResult, DataExchangeError> ListDataSetsOutcome;
+        typedef Aws::Utils::Outcome<ListJobsResult, DataExchangeError> ListJobsOutcome;
+        typedef Aws::Utils::Outcome<ListRevisionAssetsResult, DataExchangeError> ListRevisionAssetsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, DataExchangeError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<StartJobResult, DataExchangeError> StartJobOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, DataExchangeError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, DataExchangeError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateAssetResult, DataExchangeError> UpdateAssetOutcome;
+        typedef Aws::Utils::Outcome<UpdateDataSetResult, DataExchangeError> UpdateDataSetOutcome;
+        typedef Aws::Utils::Outcome<UpdateRevisionResult, DataExchangeError> UpdateRevisionOutcome;
 
         typedef std::future<CancelJobOutcome> CancelJobOutcomeCallable;
         typedef std::future<CreateDataSetOutcome> CreateDataSetOutcomeCallable;
@@ -216,8 +206,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~DataExchangeClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "DataExchange"; }
 
 
         /**

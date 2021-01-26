@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediapackage/MediaPackage_EXPORTS.h>
@@ -61,6 +51,12 @@ markers (comments) taken directly from the input HTTP Live Streaming (HLS)
 "SCTE35_ENHANCED" generates ad markers and blackout tags based on
      * SCTE-35
 messages in the input source.
+"DATERANGE" inserts EXT-X-DATERANGE tags
+     * to signal ad and program transition events 
+in HLS and CMAF manifests. For this
+     * option, you must set a programDateTimeIntervalSeconds value 
+that is greater
+     * than 0.
 
      */
     inline const AdMarkers& GetAdMarkers() const{ return m_adMarkers; }
@@ -77,6 +73,12 @@ markers (comments) taken directly from the input HTTP Live Streaming (HLS)
 "SCTE35_ENHANCED" generates ad markers and blackout tags based on
      * SCTE-35
 messages in the input source.
+"DATERANGE" inserts EXT-X-DATERANGE tags
+     * to signal ad and program transition events 
+in HLS and CMAF manifests. For this
+     * option, you must set a programDateTimeIntervalSeconds value 
+that is greater
+     * than 0.
 
      */
     inline bool AdMarkersHasBeenSet() const { return m_adMarkersHasBeenSet; }
@@ -93,6 +95,12 @@ markers (comments) taken directly from the input HTTP Live Streaming (HLS)
 "SCTE35_ENHANCED" generates ad markers and blackout tags based on
      * SCTE-35
 messages in the input source.
+"DATERANGE" inserts EXT-X-DATERANGE tags
+     * to signal ad and program transition events 
+in HLS and CMAF manifests. For this
+     * option, you must set a programDateTimeIntervalSeconds value 
+that is greater
+     * than 0.
 
      */
     inline void SetAdMarkers(const AdMarkers& value) { m_adMarkersHasBeenSet = true; m_adMarkers = value; }
@@ -109,6 +117,12 @@ markers (comments) taken directly from the input HTTP Live Streaming (HLS)
 "SCTE35_ENHANCED" generates ad markers and blackout tags based on
      * SCTE-35
 messages in the input source.
+"DATERANGE" inserts EXT-X-DATERANGE tags
+     * to signal ad and program transition events 
+in HLS and CMAF manifests. For this
+     * option, you must set a programDateTimeIntervalSeconds value 
+that is greater
+     * than 0.
 
      */
     inline void SetAdMarkers(AdMarkers&& value) { m_adMarkersHasBeenSet = true; m_adMarkers = std::move(value); }
@@ -125,6 +139,12 @@ markers (comments) taken directly from the input HTTP Live Streaming (HLS)
 "SCTE35_ENHANCED" generates ad markers and blackout tags based on
      * SCTE-35
 messages in the input source.
+"DATERANGE" inserts EXT-X-DATERANGE tags
+     * to signal ad and program transition events 
+in HLS and CMAF manifests. For this
+     * option, you must set a programDateTimeIntervalSeconds value 
+that is greater
+     * than 0.
 
      */
     inline HlsManifest& WithAdMarkers(const AdMarkers& value) { SetAdMarkers(value); return *this;}
@@ -141,6 +161,12 @@ markers (comments) taken directly from the input HTTP Live Streaming (HLS)
 "SCTE35_ENHANCED" generates ad markers and blackout tags based on
      * SCTE-35
 messages in the input source.
+"DATERANGE" inserts EXT-X-DATERANGE tags
+     * to signal ad and program transition events 
+in HLS and CMAF manifests. For this
+     * option, you must set a programDateTimeIntervalSeconds value 
+that is greater
+     * than 0.
 
      */
     inline HlsManifest& WithAdMarkers(AdMarkers&& value) { SetAdMarkers(std::move(value)); return *this;}

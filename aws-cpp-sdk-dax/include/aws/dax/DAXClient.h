@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dax/DAX_EXPORTS.h>
@@ -103,27 +93,27 @@ namespace Model
         class UpdateParameterGroupRequest;
         class UpdateSubnetGroupRequest;
 
-        typedef Aws::Utils::Outcome<CreateClusterResult, Aws::Client::AWSError<DAXErrors>> CreateClusterOutcome;
-        typedef Aws::Utils::Outcome<CreateParameterGroupResult, Aws::Client::AWSError<DAXErrors>> CreateParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<CreateSubnetGroupResult, Aws::Client::AWSError<DAXErrors>> CreateSubnetGroupOutcome;
-        typedef Aws::Utils::Outcome<DecreaseReplicationFactorResult, Aws::Client::AWSError<DAXErrors>> DecreaseReplicationFactorOutcome;
-        typedef Aws::Utils::Outcome<DeleteClusterResult, Aws::Client::AWSError<DAXErrors>> DeleteClusterOutcome;
-        typedef Aws::Utils::Outcome<DeleteParameterGroupResult, Aws::Client::AWSError<DAXErrors>> DeleteParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<DeleteSubnetGroupResult, Aws::Client::AWSError<DAXErrors>> DeleteSubnetGroupOutcome;
-        typedef Aws::Utils::Outcome<DescribeClustersResult, Aws::Client::AWSError<DAXErrors>> DescribeClustersOutcome;
-        typedef Aws::Utils::Outcome<DescribeDefaultParametersResult, Aws::Client::AWSError<DAXErrors>> DescribeDefaultParametersOutcome;
-        typedef Aws::Utils::Outcome<DescribeEventsResult, Aws::Client::AWSError<DAXErrors>> DescribeEventsOutcome;
-        typedef Aws::Utils::Outcome<DescribeParameterGroupsResult, Aws::Client::AWSError<DAXErrors>> DescribeParameterGroupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeParametersResult, Aws::Client::AWSError<DAXErrors>> DescribeParametersOutcome;
-        typedef Aws::Utils::Outcome<DescribeSubnetGroupsResult, Aws::Client::AWSError<DAXErrors>> DescribeSubnetGroupsOutcome;
-        typedef Aws::Utils::Outcome<IncreaseReplicationFactorResult, Aws::Client::AWSError<DAXErrors>> IncreaseReplicationFactorOutcome;
-        typedef Aws::Utils::Outcome<ListTagsResult, Aws::Client::AWSError<DAXErrors>> ListTagsOutcome;
-        typedef Aws::Utils::Outcome<RebootNodeResult, Aws::Client::AWSError<DAXErrors>> RebootNodeOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<DAXErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<DAXErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateClusterResult, Aws::Client::AWSError<DAXErrors>> UpdateClusterOutcome;
-        typedef Aws::Utils::Outcome<UpdateParameterGroupResult, Aws::Client::AWSError<DAXErrors>> UpdateParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<UpdateSubnetGroupResult, Aws::Client::AWSError<DAXErrors>> UpdateSubnetGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateClusterResult, DAXError> CreateClusterOutcome;
+        typedef Aws::Utils::Outcome<CreateParameterGroupResult, DAXError> CreateParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateSubnetGroupResult, DAXError> CreateSubnetGroupOutcome;
+        typedef Aws::Utils::Outcome<DecreaseReplicationFactorResult, DAXError> DecreaseReplicationFactorOutcome;
+        typedef Aws::Utils::Outcome<DeleteClusterResult, DAXError> DeleteClusterOutcome;
+        typedef Aws::Utils::Outcome<DeleteParameterGroupResult, DAXError> DeleteParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<DeleteSubnetGroupResult, DAXError> DeleteSubnetGroupOutcome;
+        typedef Aws::Utils::Outcome<DescribeClustersResult, DAXError> DescribeClustersOutcome;
+        typedef Aws::Utils::Outcome<DescribeDefaultParametersResult, DAXError> DescribeDefaultParametersOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventsResult, DAXError> DescribeEventsOutcome;
+        typedef Aws::Utils::Outcome<DescribeParameterGroupsResult, DAXError> DescribeParameterGroupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeParametersResult, DAXError> DescribeParametersOutcome;
+        typedef Aws::Utils::Outcome<DescribeSubnetGroupsResult, DAXError> DescribeSubnetGroupsOutcome;
+        typedef Aws::Utils::Outcome<IncreaseReplicationFactorResult, DAXError> IncreaseReplicationFactorOutcome;
+        typedef Aws::Utils::Outcome<ListTagsResult, DAXError> ListTagsOutcome;
+        typedef Aws::Utils::Outcome<RebootNodeResult, DAXError> RebootNodeOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, DAXError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, DAXError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateClusterResult, DAXError> UpdateClusterOutcome;
+        typedef Aws::Utils::Outcome<UpdateParameterGroupResult, DAXError> UpdateParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<UpdateSubnetGroupResult, DAXError> UpdateSubnetGroupOutcome;
 
         typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
         typedef std::future<CreateParameterGroupOutcome> CreateParameterGroupOutcomeCallable;
@@ -205,8 +195,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~DAXClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "DAX"; }
 
 
         /**
@@ -294,20 +282,20 @@ namespace Model
         virtual void CreateSubnetGroupAsync(const Model::CreateSubnetGroupRequest& request, const CreateSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes one or more nodes from a DAX cluster.</p> <note> <p>You cannot use
+         * <p>Removes one or more nodes from a DAX cluster.</p>  <p>You cannot use
          * <code>DecreaseReplicationFactor</code> to remove the last node in a DAX cluster.
          * If you need to do this, use <code>DeleteCluster</code> instead.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DecreaseReplicationFactor">AWS
          * API Reference</a></p>
          */
         virtual Model::DecreaseReplicationFactorOutcome DecreaseReplicationFactor(const Model::DecreaseReplicationFactorRequest& request) const;
 
         /**
-         * <p>Removes one or more nodes from a DAX cluster.</p> <note> <p>You cannot use
+         * <p>Removes one or more nodes from a DAX cluster.</p>  <p>You cannot use
          * <code>DecreaseReplicationFactor</code> to remove the last node in a DAX cluster.
          * If you need to do this, use <code>DeleteCluster</code> instead.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DecreaseReplicationFactor">AWS
          * API Reference</a></p>
          *
@@ -316,10 +304,10 @@ namespace Model
         virtual Model::DecreaseReplicationFactorOutcomeCallable DecreaseReplicationFactorCallable(const Model::DecreaseReplicationFactorRequest& request) const;
 
         /**
-         * <p>Removes one or more nodes from a DAX cluster.</p> <note> <p>You cannot use
+         * <p>Removes one or more nodes from a DAX cluster.</p>  <p>You cannot use
          * <code>DecreaseReplicationFactor</code> to remove the last node in a DAX cluster.
          * If you need to do this, use <code>DeleteCluster</code> instead.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DecreaseReplicationFactor">AWS
          * API Reference</a></p>
          *
@@ -393,16 +381,16 @@ namespace Model
         virtual void DeleteParameterGroupAsync(const Model::DeleteParameterGroupRequest& request, const DeleteParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a subnet group.</p> <note> <p>You cannot delete a subnet group if it
-         * is associated with any DAX clusters.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Deletes a subnet group.</p>  <p>You cannot delete a subnet group if it
+         * is associated with any DAX clusters.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteSubnetGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteSubnetGroupOutcome DeleteSubnetGroup(const Model::DeleteSubnetGroupRequest& request) const;
 
         /**
-         * <p>Deletes a subnet group.</p> <note> <p>You cannot delete a subnet group if it
-         * is associated with any DAX clusters.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Deletes a subnet group.</p>  <p>You cannot delete a subnet group if it
+         * is associated with any DAX clusters.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteSubnetGroup">AWS
          * API Reference</a></p>
          *
@@ -411,8 +399,8 @@ namespace Model
         virtual Model::DeleteSubnetGroupOutcomeCallable DeleteSubnetGroupCallable(const Model::DeleteSubnetGroupRequest& request) const;
 
         /**
-         * <p>Deletes a subnet group.</p> <note> <p>You cannot delete a subnet group if it
-         * is associated with any DAX clusters.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Deletes a subnet group.</p>  <p>You cannot delete a subnet group if it
+         * is associated with any DAX clusters.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteSubnetGroup">AWS
          * API Reference</a></p>
          *
@@ -685,9 +673,9 @@ namespace Model
 
         /**
          * <p>Reboots a single node of a DAX cluster. The reboot action takes place as soon
-         * as possible. During the reboot, the node status is set to REBOOTING.</p> <note>
+         * as possible. During the reboot, the node status is set to REBOOTING.</p> 
          * <p> <code>RebootNode</code> restarts the DAX engine process and does not remove
-         * the contents of the cache. </p> </note><p><h3>See Also:</h3>   <a
+         * the contents of the cache. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/RebootNode">AWS API
          * Reference</a></p>
          */
@@ -695,9 +683,9 @@ namespace Model
 
         /**
          * <p>Reboots a single node of a DAX cluster. The reboot action takes place as soon
-         * as possible. During the reboot, the node status is set to REBOOTING.</p> <note>
+         * as possible. During the reboot, the node status is set to REBOOTING.</p> 
          * <p> <code>RebootNode</code> restarts the DAX engine process and does not remove
-         * the contents of the cache. </p> </note><p><h3>See Also:</h3>   <a
+         * the contents of the cache. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/RebootNode">AWS API
          * Reference</a></p>
          *
@@ -707,9 +695,9 @@ namespace Model
 
         /**
          * <p>Reboots a single node of a DAX cluster. The reboot action takes place as soon
-         * as possible. During the reboot, the node status is set to REBOOTING.</p> <note>
+         * as possible. During the reboot, the node status is set to REBOOTING.</p> 
          * <p> <code>RebootNode</code> restarts the DAX engine process and does not remove
-         * the contents of the cache. </p> </note><p><h3>See Also:</h3>   <a
+         * the contents of the cache. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/RebootNode">AWS API
          * Reference</a></p>
          *

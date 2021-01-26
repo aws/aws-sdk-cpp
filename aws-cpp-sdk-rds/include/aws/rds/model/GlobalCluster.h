@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -103,57 +93,57 @@ namespace Model
 
     /**
      * <p> The AWS Region-unique, immutable identifier for the global database cluster.
-     * This identifier is found in AWS CloudTrail log entries whenever the AWS KMS key
-     * for the DB cluster is accessed. </p>
+     * This identifier is found in AWS CloudTrail log entries whenever the AWS KMS
+     * customer master key (CMK) for the DB cluster is accessed. </p>
      */
     inline const Aws::String& GetGlobalClusterResourceId() const{ return m_globalClusterResourceId; }
 
     /**
      * <p> The AWS Region-unique, immutable identifier for the global database cluster.
-     * This identifier is found in AWS CloudTrail log entries whenever the AWS KMS key
-     * for the DB cluster is accessed. </p>
+     * This identifier is found in AWS CloudTrail log entries whenever the AWS KMS
+     * customer master key (CMK) for the DB cluster is accessed. </p>
      */
     inline bool GlobalClusterResourceIdHasBeenSet() const { return m_globalClusterResourceIdHasBeenSet; }
 
     /**
      * <p> The AWS Region-unique, immutable identifier for the global database cluster.
-     * This identifier is found in AWS CloudTrail log entries whenever the AWS KMS key
-     * for the DB cluster is accessed. </p>
+     * This identifier is found in AWS CloudTrail log entries whenever the AWS KMS
+     * customer master key (CMK) for the DB cluster is accessed. </p>
      */
     inline void SetGlobalClusterResourceId(const Aws::String& value) { m_globalClusterResourceIdHasBeenSet = true; m_globalClusterResourceId = value; }
 
     /**
      * <p> The AWS Region-unique, immutable identifier for the global database cluster.
-     * This identifier is found in AWS CloudTrail log entries whenever the AWS KMS key
-     * for the DB cluster is accessed. </p>
+     * This identifier is found in AWS CloudTrail log entries whenever the AWS KMS
+     * customer master key (CMK) for the DB cluster is accessed. </p>
      */
     inline void SetGlobalClusterResourceId(Aws::String&& value) { m_globalClusterResourceIdHasBeenSet = true; m_globalClusterResourceId = std::move(value); }
 
     /**
      * <p> The AWS Region-unique, immutable identifier for the global database cluster.
-     * This identifier is found in AWS CloudTrail log entries whenever the AWS KMS key
-     * for the DB cluster is accessed. </p>
+     * This identifier is found in AWS CloudTrail log entries whenever the AWS KMS
+     * customer master key (CMK) for the DB cluster is accessed. </p>
      */
     inline void SetGlobalClusterResourceId(const char* value) { m_globalClusterResourceIdHasBeenSet = true; m_globalClusterResourceId.assign(value); }
 
     /**
      * <p> The AWS Region-unique, immutable identifier for the global database cluster.
-     * This identifier is found in AWS CloudTrail log entries whenever the AWS KMS key
-     * for the DB cluster is accessed. </p>
+     * This identifier is found in AWS CloudTrail log entries whenever the AWS KMS
+     * customer master key (CMK) for the DB cluster is accessed. </p>
      */
     inline GlobalCluster& WithGlobalClusterResourceId(const Aws::String& value) { SetGlobalClusterResourceId(value); return *this;}
 
     /**
      * <p> The AWS Region-unique, immutable identifier for the global database cluster.
-     * This identifier is found in AWS CloudTrail log entries whenever the AWS KMS key
-     * for the DB cluster is accessed. </p>
+     * This identifier is found in AWS CloudTrail log entries whenever the AWS KMS
+     * customer master key (CMK) for the DB cluster is accessed. </p>
      */
     inline GlobalCluster& WithGlobalClusterResourceId(Aws::String&& value) { SetGlobalClusterResourceId(std::move(value)); return *this;}
 
     /**
      * <p> The AWS Region-unique, immutable identifier for the global database cluster.
-     * This identifier is found in AWS CloudTrail log entries whenever the AWS KMS key
-     * for the DB cluster is accessed. </p>
+     * This identifier is found in AWS CloudTrail log entries whenever the AWS KMS
+     * customer master key (CMK) for the DB cluster is accessed. </p>
      */
     inline GlobalCluster& WithGlobalClusterResourceId(const char* value) { SetGlobalClusterResourceId(value); return *this;}
 

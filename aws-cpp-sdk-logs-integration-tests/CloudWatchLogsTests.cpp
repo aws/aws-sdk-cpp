@@ -1,16 +1,6 @@
-/*
- * Copyright 2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
  */
 
 #include <aws/external/gtest.h>
@@ -100,7 +90,8 @@ namespace
         InputLogEvent e1;
         e1.WithTimestamp(Aws::Utils::DateTime::Now().Millis()).WithMessage("Test Message 1");
         InputLogEvent e2;
-        e2.WithTimestamp(Aws::Utils::DateTime::Now().Millis()).WithMessage("Test Message 2");
+        // Make sure the timestamp of e2 is greater than that of e1.
+        e2.WithTimestamp(Aws::Utils::DateTime::Now().Millis()+1).WithMessage("Test Message 2");
 
         putRequest.AddLogEvents(e1).AddLogEvents(e2);
         auto putOutcome = m_client->PutLogEvents(putRequest);
@@ -110,7 +101,8 @@ namespace
         InputLogEvent e3;
         e3.WithTimestamp(Aws::Utils::DateTime::Now().Millis()).WithMessage("Test Message 3");
         InputLogEvent e4;
-        e4.WithTimestamp(Aws::Utils::DateTime::Now().Millis()).WithMessage("Test Message 4");
+        // Make sure the timestamp of e4 is greater than that of e3.
+        e4.WithTimestamp(Aws::Utils::DateTime::Now().Millis()+1).WithMessage("Test Message 4");
         putRequest.AddLogEvents(e3).AddLogEvents(e4);
         putRequest.WithSequenceToken(nextSeqToken);
         putOutcome = m_client->PutLogEvents(putRequest);
@@ -131,7 +123,7 @@ namespace
             eventsCount = outputEvents.size();
             if (eventsCount == 6)
             {
-                Aws::Vector<Aws::String> msgs = {"Test Message 1", "Test Message 2", "Test Message 1",
+                Aws::Vector<Aws::String> msgs = {"Test Message 1", "Test Message 1", "Test Message 2",
                 "Test Message 2","Test Message 3","Test Message 4",};
                 for (int i = 0; i < 6; i++)
                 {

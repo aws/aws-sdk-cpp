@@ -1,20 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kafka/Kafka_EXPORTS.h>
+#include <aws/kafka/model/Sasl.h>
 #include <aws/kafka/model/Tls.h>
 #include <utility>
 
@@ -48,6 +39,49 @@ namespace Model
     ClientAuthentication(Aws::Utils::Json::JsonView jsonValue);
     ClientAuthentication& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * 
+            <p>Details for ClientAuthentication using SASL.</p>
+         
+     */
+    inline const Sasl& GetSasl() const{ return m_sasl; }
+
+    /**
+     * 
+            <p>Details for ClientAuthentication using SASL.</p>
+         
+     */
+    inline bool SaslHasBeenSet() const { return m_saslHasBeenSet; }
+
+    /**
+     * 
+            <p>Details for ClientAuthentication using SASL.</p>
+         
+     */
+    inline void SetSasl(const Sasl& value) { m_saslHasBeenSet = true; m_sasl = value; }
+
+    /**
+     * 
+            <p>Details for ClientAuthentication using SASL.</p>
+         
+     */
+    inline void SetSasl(Sasl&& value) { m_saslHasBeenSet = true; m_sasl = std::move(value); }
+
+    /**
+     * 
+            <p>Details for ClientAuthentication using SASL.</p>
+         
+     */
+    inline ClientAuthentication& WithSasl(const Sasl& value) { SetSasl(value); return *this;}
+
+    /**
+     * 
+            <p>Details for ClientAuthentication using SASL.</p>
+         
+     */
+    inline ClientAuthentication& WithSasl(Sasl&& value) { SetSasl(std::move(value)); return *this;}
 
 
     /**
@@ -93,6 +127,9 @@ namespace Model
     inline ClientAuthentication& WithTls(Tls&& value) { SetTls(std::move(value)); return *this;}
 
   private:
+
+    Sasl m_sasl;
+    bool m_saslHasBeenSet;
 
     Tls m_tls;
     bool m_tlsHasBeenSet;

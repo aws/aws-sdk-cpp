@@ -1,17 +1,7 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  * 
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  * 
-  *  http://aws.amazon.com/apache2.0
-  * 
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 
 #include <aws/core/utils/crypto/Factories.h>
@@ -39,17 +29,59 @@ using namespace Aws::Utils::Crypto;
 
 static const char *s_allocationTag = "CryptoFactory";
 
-static std::shared_ptr<HashFactory> s_MD5Factory(nullptr);
-static std::shared_ptr<HashFactory> s_Sha256Factory(nullptr);
-static std::shared_ptr<HMACFactory> s_Sha256HMACFactory(nullptr);
+static std::shared_ptr<HashFactory>& GetMD5Factory()
+{
+    static std::shared_ptr<HashFactory> s_MD5Factory(nullptr);
+    return s_MD5Factory;
+}
 
-static std::shared_ptr<SymmetricCipherFactory> s_AES_CBCFactory(nullptr);
-static std::shared_ptr<SymmetricCipherFactory> s_AES_CTRFactory(nullptr);
-static std::shared_ptr<SymmetricCipherFactory> s_AES_GCMFactory(nullptr);
-static std::shared_ptr<SymmetricCipherFactory> s_AES_KeyWrapFactory(nullptr);
+static std::shared_ptr<HashFactory>& GetSha256Factory()
+{
+    static std::shared_ptr<HashFactory> s_Sha256Factory(nullptr);
+    return s_Sha256Factory;
+}
 
-static std::shared_ptr<SecureRandomFactory> s_SecureRandomFactory(nullptr);
-static std::shared_ptr<SecureRandomBytes> s_SecureRandom(nullptr);
+static std::shared_ptr<HMACFactory>& GetSha256HMACFactory()
+{
+    static std::shared_ptr<HMACFactory> s_Sha256HMACFactory(nullptr);
+    return s_Sha256HMACFactory;
+}
+
+static std::shared_ptr<SymmetricCipherFactory>& GetAES_CBCFactory()
+{
+    static std::shared_ptr<SymmetricCipherFactory> s_AES_CBCFactory(nullptr);
+    return s_AES_CBCFactory;
+}
+
+static std::shared_ptr<SymmetricCipherFactory>& GetAES_CTRFactory()
+{
+    static std::shared_ptr<SymmetricCipherFactory> s_AES_CTRFactory(nullptr);
+    return s_AES_CTRFactory;
+}
+
+static std::shared_ptr<SymmetricCipherFactory>& GetAES_GCMFactory()
+{
+    static std::shared_ptr<SymmetricCipherFactory> s_AES_GCMFactory(nullptr);
+    return s_AES_GCMFactory;
+}
+
+static std::shared_ptr<SymmetricCipherFactory>& GetAES_KeyWrapFactory()
+{
+    static std::shared_ptr<SymmetricCipherFactory> s_AES_KeyWrapFactory(nullptr);
+    return s_AES_KeyWrapFactory;
+}
+
+static std::shared_ptr<SecureRandomFactory>& GetSecureRandomFactory()
+{
+    static std::shared_ptr<SecureRandomFactory> s_SecureRandomFactory(nullptr);
+    return s_SecureRandomFactory;
+}
+
+static std::shared_ptr<SecureRandomBytes>& GetSecureRandom()
+{
+    static std::shared_ptr<SecureRandomBytes> s_SecureRandom(nullptr);
+    return s_SecureRandom;
+}
 
 static bool s_InitCleanupOpenSSLFlag(false);
 
@@ -208,7 +240,7 @@ public:
     /**
      * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
      */
-    std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer&) const override
+    std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer&, const CryptoBuffer&) const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
         return Aws::MakeShared<AES_CBC_Cipher_BCrypt>(s_allocationTag, key, iv);
@@ -226,7 +258,7 @@ public:
     /**
      * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
      */
-    std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&&) const override
+    std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&&, CryptoBuffer&&) const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
         return Aws::MakeShared<AES_CBC_Cipher_BCrypt>(s_allocationTag, key, iv);
@@ -290,7 +322,7 @@ public:
     /**
      * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
      */
-    std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer&) const override
+    std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer&, const CryptoBuffer&) const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
         return Aws::MakeShared<AES_CTR_Cipher_BCrypt>(s_allocationTag, key, iv);
@@ -308,7 +340,7 @@ public:
     /**
      * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
      */
-    std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&&) const override
+    std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&&, CryptoBuffer&&) const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
         return Aws::MakeShared<AES_CTR_Cipher_BCrypt>(s_allocationTag, key, iv);
@@ -363,59 +395,64 @@ public:
 #elif ENABLE_OPENSSL_ENCRYPTION
         return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, key);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
-        AWS_UNREFERENCED_PARAM(key);
-        AWS_LOGSTREAM_ERROR(s_allocationTag, "AES GCM is not implemented on this platform, returning null.");
-        assert(0);
-        return nullptr;
+        return Aws::MakeShared<AES_GCM_Cipher_CommonCrypto>(s_allocationTag, key);
 #else
         AWS_UNREFERENCED_PARAM(key);
 
         return nullptr;
 #endif
     }
+
+    std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key, const CryptoBuffer* aad) const override
+    {
+#if ENABLE_BCRYPT_ENCRYPTION
+        return Aws::MakeShared<AES_GCM_Cipher_BCrypt>(s_allocationTag, key, aad);
+#elif ENABLE_OPENSSL_ENCRYPTION
+        return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, key, aad);
+#elif ENABLE_COMMONCRYPTO_ENCRYPTION
+        return Aws::MakeShared<AES_GCM_Cipher_CommonCrypto>(s_allocationTag, key, aad);
+#else
+        AWS_UNREFERENCED_PARAM(key);
+        AWS_UNREFERENCED_PARAM(aad);
+        return nullptr;
+#endif
+    }
+
     /**
      * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
      */
-    std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer& tag) const override
+    std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer& tag, const CryptoBuffer& aad) const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
-        return Aws::MakeShared<AES_GCM_Cipher_BCrypt>(s_allocationTag, key, iv, tag);
+        return Aws::MakeShared<AES_GCM_Cipher_BCrypt>(s_allocationTag, key, iv, tag, aad);
 #elif ENABLE_OPENSSL_ENCRYPTION
-        return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, key, iv, tag);
+        return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, key, iv, tag, aad);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
-        AWS_UNREFERENCED_PARAM(key);
-        AWS_UNREFERENCED_PARAM(iv);
-        AWS_UNREFERENCED_PARAM(tag);
-        AWS_LOGSTREAM_ERROR(s_allocationTag, "AES GCM is not implemented on this platform, returning null.");
-        assert(0);
-        return nullptr;
+        return Aws::MakeShared<AES_GCM_Cipher_CommonCrypto>(s_allocationTag, key, iv, tag, aad);
 #else
         AWS_UNREFERENCED_PARAM(key);
         AWS_UNREFERENCED_PARAM(iv);
         AWS_UNREFERENCED_PARAM(tag);
+        AWS_UNREFERENCED_PARAM(aad);
         return nullptr;
 #endif
     }
     /**
      * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
      */
-    std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&& tag) const override
+    std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&& tag, CryptoBuffer&& aad) const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
-        return Aws::MakeShared<AES_GCM_Cipher_BCrypt>(s_allocationTag, std::move(key), std::move(iv), std::move(tag));
+        return Aws::MakeShared<AES_GCM_Cipher_BCrypt>(s_allocationTag, std::move(key), std::move(iv), std::move(tag), std::move(aad));
 #elif ENABLE_OPENSSL_ENCRYPTION
-        return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, std::move(key), std::move(iv), std::move(tag));
+        return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, std::move(key), std::move(iv), std::move(tag), std::move(aad));
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
-        AWS_UNREFERENCED_PARAM(key);
-        AWS_UNREFERENCED_PARAM(iv);
-        AWS_UNREFERENCED_PARAM(tag);
-        AWS_LOGSTREAM_ERROR(s_allocationTag, "AES GCM is not implemented on this platform, returning null.");
-        assert(0);
-        return nullptr;
+        return Aws::MakeShared<AES_GCM_Cipher_CommonCrypto>(s_allocationTag, std::move(key), std::move(iv), std::move(tag), std::move(aad));
 #else
         AWS_UNREFERENCED_PARAM(key);
         AWS_UNREFERENCED_PARAM(iv);
         AWS_UNREFERENCED_PARAM(tag);
+        AWS_UNREFERENCED_PARAM(aad);
         return nullptr;
 #endif
     }
@@ -468,7 +505,7 @@ public:
     /**
     * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
     */
-    std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer& tag) const override
+    std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer& tag, const CryptoBuffer&) const override
     {
         AWS_UNREFERENCED_PARAM(key);
         AWS_UNREFERENCED_PARAM(iv);
@@ -478,7 +515,7 @@ public:
     /**
     * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
     */
-    std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&& tag) const override
+    std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&& tag, CryptoBuffer&&) const override
     {
         AWS_UNREFERENCED_PARAM(key);
         AWS_UNREFERENCED_PARAM(iv);
@@ -569,190 +606,190 @@ void Aws::Utils::Crypto::SetInitCleanupOpenSSLFlag(bool initCleanupFlag)
 
 void Aws::Utils::Crypto::InitCrypto()
 {
-    if(s_MD5Factory)
+    if(GetMD5Factory())
     {
-        s_MD5Factory->InitStaticState();
+        GetMD5Factory()->InitStaticState();
     }
     else
     {
-        s_MD5Factory = Aws::MakeShared<DefaultMD5Factory>(s_allocationTag);
-        s_MD5Factory->InitStaticState();
+        GetMD5Factory() = Aws::MakeShared<DefaultMD5Factory>(s_allocationTag);
+        GetMD5Factory()->InitStaticState();
     }
 
-    if(s_Sha256Factory)
+    if(GetSha256Factory())
     {
-        s_Sha256Factory->InitStaticState();
+        GetSha256Factory()->InitStaticState();
     }
     else
     {
-        s_Sha256Factory = Aws::MakeShared<DefaultSHA256Factory>(s_allocationTag);
-        s_Sha256Factory->InitStaticState();
+        GetSha256Factory() = Aws::MakeShared<DefaultSHA256Factory>(s_allocationTag);
+        GetSha256Factory()->InitStaticState();
     }
 
-    if(s_Sha256HMACFactory)
+    if(GetSha256HMACFactory())
     {
-        s_Sha256HMACFactory->InitStaticState();
+        GetSha256HMACFactory()->InitStaticState();
     }
     else
     {
-        s_Sha256HMACFactory = Aws::MakeShared<DefaultSHA256HmacFactory>(s_allocationTag);
-        s_Sha256HMACFactory->InitStaticState();
+        GetSha256HMACFactory() = Aws::MakeShared<DefaultSHA256HmacFactory>(s_allocationTag);
+        GetSha256HMACFactory()->InitStaticState();
     }
 
-    if(s_AES_CBCFactory)
+    if(GetAES_CBCFactory())
     {
-        s_AES_CBCFactory->InitStaticState();
+        GetAES_CBCFactory()->InitStaticState();
     }
     else
     {
-        s_AES_CBCFactory = Aws::MakeShared<DefaultAES_CBCFactory>(s_allocationTag);
-        s_AES_CBCFactory->InitStaticState();
+        GetAES_CBCFactory() = Aws::MakeShared<DefaultAES_CBCFactory>(s_allocationTag);
+        GetAES_CBCFactory()->InitStaticState();
     }
 
-    if(s_AES_CTRFactory)
+    if(GetAES_CTRFactory())
     {
-        s_AES_CTRFactory->InitStaticState();
+        GetAES_CTRFactory()->InitStaticState();
     }
     else
     {
-        s_AES_CTRFactory = Aws::MakeShared<DefaultAES_CTRFactory>(s_allocationTag);
-        s_AES_CTRFactory->InitStaticState();
+        GetAES_CTRFactory() = Aws::MakeShared<DefaultAES_CTRFactory>(s_allocationTag);
+        GetAES_CTRFactory()->InitStaticState();
     }
 
-    if(s_AES_GCMFactory)
+    if(GetAES_GCMFactory())
     {
-        s_AES_GCMFactory->InitStaticState();
+        GetAES_GCMFactory()->InitStaticState();
     }
     else
     {
-        s_AES_GCMFactory = Aws::MakeShared<DefaultAES_GCMFactory>(s_allocationTag);
-        s_AES_GCMFactory->InitStaticState();
+        GetAES_GCMFactory() = Aws::MakeShared<DefaultAES_GCMFactory>(s_allocationTag);
+        GetAES_GCMFactory()->InitStaticState();
     }
 
-    if (!s_AES_KeyWrapFactory)
+    if (!GetAES_KeyWrapFactory())
     {
-        s_AES_KeyWrapFactory = Aws::MakeShared<DefaultAES_KeyWrapFactory>(s_allocationTag);
+        GetAES_KeyWrapFactory() = Aws::MakeShared<DefaultAES_KeyWrapFactory>(s_allocationTag);
     }
-    s_AES_KeyWrapFactory->InitStaticState();
+    GetAES_KeyWrapFactory()->InitStaticState();
 
-    if(s_SecureRandomFactory)
+    if(GetSecureRandomFactory())
     {
-        s_SecureRandomFactory->InitStaticState();       
+        GetSecureRandomFactory()->InitStaticState();
     }
     else
     {
-        s_SecureRandomFactory = Aws::MakeShared<DefaultSecureRandFactory>(s_allocationTag);
-        s_SecureRandomFactory->InitStaticState();
-    }  
-    
-    s_SecureRandom = s_SecureRandomFactory->CreateImplementation();
+        GetSecureRandomFactory() = Aws::MakeShared<DefaultSecureRandFactory>(s_allocationTag);
+        GetSecureRandomFactory()->InitStaticState();
+    }
+
+    GetSecureRandom() = GetSecureRandomFactory()->CreateImplementation();
 }
 
 void Aws::Utils::Crypto::CleanupCrypto()
 {
-    if(s_MD5Factory)
+    if(GetMD5Factory())
     {
-        s_MD5Factory->CleanupStaticState();
-        s_MD5Factory = nullptr;
+        GetMD5Factory()->CleanupStaticState();
+        GetMD5Factory() = nullptr;
     }
 
-    if(s_Sha256Factory)
+    if(GetSha256Factory())
     {
-        s_Sha256Factory->CleanupStaticState();
-        s_Sha256Factory = nullptr;
+        GetSha256Factory()->CleanupStaticState();
+        GetSha256Factory() = nullptr;
     }
 
-    if(s_Sha256HMACFactory)
+    if(GetSha256HMACFactory())
     {
-        s_Sha256HMACFactory->CleanupStaticState();
-        s_Sha256HMACFactory =  nullptr;
+        GetSha256HMACFactory()->CleanupStaticState();
+        GetSha256HMACFactory() =  nullptr;
     }
 
-    if(s_AES_CBCFactory)
+    if(GetAES_CBCFactory())
     {
-        s_AES_CBCFactory->CleanupStaticState();
-        s_AES_CBCFactory = nullptr;
+        GetAES_CBCFactory()->CleanupStaticState();
+        GetAES_CBCFactory() = nullptr;
     }
 
-    if(s_AES_CTRFactory)
+    if(GetAES_CTRFactory())
     {
-        s_AES_CTRFactory->CleanupStaticState();
-        s_AES_CTRFactory = nullptr;
+        GetAES_CTRFactory()->CleanupStaticState();
+        GetAES_CTRFactory() = nullptr;
     }
 
-    if(s_AES_GCMFactory)
+    if(GetAES_GCMFactory())
     {
-        s_AES_GCMFactory->CleanupStaticState();
-        s_AES_GCMFactory = nullptr;
+        GetAES_GCMFactory()->CleanupStaticState();
+        GetAES_GCMFactory() = nullptr;
     }
 
-    if(s_AES_KeyWrapFactory)
+    if(GetAES_KeyWrapFactory())
     {
-        s_AES_KeyWrapFactory->CleanupStaticState();
-        s_AES_KeyWrapFactory = nullptr;
+        GetAES_KeyWrapFactory()->CleanupStaticState();
+        GetAES_KeyWrapFactory() = nullptr;
     }
 
-    if(s_SecureRandomFactory)
+    if(GetSecureRandomFactory())
     {
-        s_SecureRandom = nullptr;
-        s_SecureRandomFactory->CleanupStaticState();
-        s_SecureRandomFactory = nullptr;
-    }   
+        GetSecureRandom() = nullptr;
+        GetSecureRandomFactory()->CleanupStaticState();
+        GetSecureRandomFactory() = nullptr;
+    }
 }
 
 void Aws::Utils::Crypto::SetMD5Factory(const std::shared_ptr<HashFactory>& factory)
 {
-    s_MD5Factory = factory;
+    GetMD5Factory() = factory;
 }
 
 void Aws::Utils::Crypto::SetSha256Factory(const std::shared_ptr<HashFactory>& factory)
 {
-    s_Sha256Factory = factory;
+    GetSha256Factory() = factory;
 }
 
 void Aws::Utils::Crypto::SetSha256HMACFactory(const std::shared_ptr<HMACFactory>& factory)
 {
-    s_Sha256HMACFactory = factory;
+    GetSha256HMACFactory() = factory;
 }
 
 void Aws::Utils::Crypto::SetAES_CBCFactory(const std::shared_ptr<SymmetricCipherFactory>& factory)
 {
-    s_AES_CBCFactory = factory;
+    GetAES_CBCFactory() = factory;
 }
 
 void Aws::Utils::Crypto::SetAES_CTRFactory(const std::shared_ptr<SymmetricCipherFactory>& factory)
 {
-    s_AES_CTRFactory = factory;
+    GetAES_CTRFactory() = factory;
 }
 
 void Aws::Utils::Crypto::SetAES_GCMFactory(const std::shared_ptr<SymmetricCipherFactory>& factory)
 {
-    s_AES_GCMFactory = factory;
+    GetAES_GCMFactory() = factory;
 }
 
 void Aws::Utils::Crypto::SetAES_KeyWrapFactory(const std::shared_ptr<SymmetricCipherFactory>& factory)
 {
-    s_AES_KeyWrapFactory = factory;
+    GetAES_KeyWrapFactory() = factory;
 }
 
 void Aws::Utils::Crypto::SetSecureRandomFactory(const std::shared_ptr<SecureRandomFactory>& factory)
 {
-    s_SecureRandomFactory = factory;
+    GetSecureRandomFactory() = factory;
 }
 
 std::shared_ptr<Hash> Aws::Utils::Crypto::CreateMD5Implementation()
 {
-    return s_MD5Factory->CreateImplementation();
+    return GetMD5Factory()->CreateImplementation();
 }
 
 std::shared_ptr<Hash> Aws::Utils::Crypto::CreateSha256Implementation()
 {
-    return s_Sha256Factory->CreateImplementation();
+    return GetSha256Factory()->CreateImplementation();
 }
 
 std::shared_ptr<Aws::Utils::Crypto::HMAC> Aws::Utils::Crypto::CreateSha256HMACImplementation()
 {
-    return s_Sha256HMACFactory->CreateImplementation();
+    return GetSha256HMACFactory()->CreateImplementation();
 }
 
 #ifdef _WIN32
@@ -765,7 +802,7 @@ std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CBCImplementation
 #ifdef NO_SYMMETRIC_ENCRYPTION
     return nullptr;
 #endif
-    return s_AES_CBCFactory->CreateImplementation(key);
+    return GetAES_CBCFactory()->CreateImplementation(key);
 }
 
 std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CBCImplementation(const CryptoBuffer& key, const CryptoBuffer& iv)
@@ -773,7 +810,7 @@ std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CBCImplementation
 #ifdef NO_SYMMETRIC_ENCRYPTION
     return nullptr;
 #endif
-    return s_AES_CBCFactory->CreateImplementation(key, iv);
+    return GetAES_CBCFactory()->CreateImplementation(key, iv);
 }
 
 std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CBCImplementation(CryptoBuffer&& key, CryptoBuffer&& iv)
@@ -781,7 +818,7 @@ std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CBCImplementation
 #ifdef NO_SYMMETRIC_ENCRYPTION
     return nullptr;
 #endif
-    return s_AES_CBCFactory->CreateImplementation(std::move(key), std::move(iv));
+    return GetAES_CBCFactory()->CreateImplementation(std::move(key), std::move(iv));
 }
 
 std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CTRImplementation(const CryptoBuffer& key)
@@ -789,7 +826,7 @@ std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CTRImplementation
 #ifdef NO_SYMMETRIC_ENCRYPTION
     return nullptr;
 #endif
-    return s_AES_CTRFactory->CreateImplementation(key);
+    return GetAES_CTRFactory()->CreateImplementation(key);
 }
 
 std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CTRImplementation(const CryptoBuffer& key, const CryptoBuffer& iv)
@@ -797,7 +834,7 @@ std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CTRImplementation
 #ifdef NO_SYMMETRIC_ENCRYPTION
     return nullptr;
 #endif
-    return s_AES_CTRFactory->CreateImplementation(key, iv);
+    return GetAES_CTRFactory()->CreateImplementation(key, iv);
 }
 
 std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CTRImplementation(CryptoBuffer&& key, CryptoBuffer&& iv)
@@ -805,7 +842,7 @@ std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CTRImplementation
 #ifdef NO_SYMMETRIC_ENCRYPTION
     return nullptr;
 #endif
-    return s_AES_CTRFactory->CreateImplementation(std::move(key), std::move(iv));
+    return GetAES_CTRFactory()->CreateImplementation(std::move(key), std::move(iv));
 }
 
 std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_GCMImplementation(const CryptoBuffer& key)
@@ -813,23 +850,31 @@ std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_GCMImplementation
 #ifdef NO_SYMMETRIC_ENCRYPTION
     return nullptr;
 #endif
-    return s_AES_GCMFactory->CreateImplementation(key);
+    return GetAES_GCMFactory()->CreateImplementation(key);
 }
 
-std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_GCMImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer& tag)
+std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_GCMImplementation(const CryptoBuffer& key, const CryptoBuffer* aad)
 {
 #ifdef NO_SYMMETRIC_ENCRYPTION
     return nullptr;
 #endif
-    return s_AES_GCMFactory->CreateImplementation(key, iv, tag);
+    return GetAES_GCMFactory()->CreateImplementation(key, aad);
 }
 
-std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_GCMImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&& tag)
+std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_GCMImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer& tag, const CryptoBuffer& aad)
 {
 #ifdef NO_SYMMETRIC_ENCRYPTION
     return nullptr;
 #endif
-    return s_AES_GCMFactory->CreateImplementation(std::move(key), std::move(iv), std::move(tag));
+    return GetAES_GCMFactory()->CreateImplementation(key, iv, tag, aad);
+}
+
+std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_GCMImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&& tag, CryptoBuffer&& aad)
+{
+#ifdef NO_SYMMETRIC_ENCRYPTION
+    return nullptr;
+#endif
+    return GetAES_GCMFactory()->CreateImplementation(std::move(key), std::move(iv), std::move(tag), std::move(aad));
 }
 
 std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_KeyWrapImplementation(const CryptoBuffer& key)
@@ -837,7 +882,7 @@ std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_KeyWrapImplementa
 #ifdef NO_SYMMETRIC_ENCRYPTION
     return nullptr;
 #endif
-    return s_AES_KeyWrapFactory->CreateImplementation(key);
+    return GetAES_KeyWrapFactory()->CreateImplementation(key);
 }
 
 #ifdef _WIN32
@@ -846,5 +891,5 @@ std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_KeyWrapImplementa
 
 std::shared_ptr<SecureRandomBytes> Aws::Utils::Crypto::CreateSecureRandomBytesImplementation()
 {
-    return s_SecureRandom;
+    return GetSecureRandom();
 }

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
@@ -201,53 +191,53 @@ namespace Model
 
     /**
      * <p>The maximum number of accounts in which to perform this operation at one
-     * time. This is dependent on the value of
-     * <code>FailureToleranceCount</code>—<code>MaxConcurrentCount</code> is at most
-     * one more than the <code>FailureToleranceCount</code> .</p> <p>Note that this
-     * setting lets you specify the <i>maximum</i> for operations. For large
-     * deployments, under certain circumstances the actual number of accounts acted
-     * upon concurrently may be lower due to service throttling.</p> <p>Conditional:
-     * You must specify either <code>MaxConcurrentCount</code> or
-     * <code>MaxConcurrentPercentage</code>, but not both.</p>
+     * time. This is dependent on the value of <code>FailureToleranceCount</code>.
+     * <code>MaxConcurrentCount</code> is at most one more than the
+     * <code>FailureToleranceCount</code>.</p> <p>Note that this setting lets you
+     * specify the <i>maximum</i> for operations. For large deployments, under certain
+     * circumstances the actual number of accounts acted upon concurrently may be lower
+     * due to service throttling.</p> <p>Conditional: You must specify either
+     * <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not
+     * both.</p>
      */
     inline int GetMaxConcurrentCount() const{ return m_maxConcurrentCount; }
 
     /**
      * <p>The maximum number of accounts in which to perform this operation at one
-     * time. This is dependent on the value of
-     * <code>FailureToleranceCount</code>—<code>MaxConcurrentCount</code> is at most
-     * one more than the <code>FailureToleranceCount</code> .</p> <p>Note that this
-     * setting lets you specify the <i>maximum</i> for operations. For large
-     * deployments, under certain circumstances the actual number of accounts acted
-     * upon concurrently may be lower due to service throttling.</p> <p>Conditional:
-     * You must specify either <code>MaxConcurrentCount</code> or
-     * <code>MaxConcurrentPercentage</code>, but not both.</p>
+     * time. This is dependent on the value of <code>FailureToleranceCount</code>.
+     * <code>MaxConcurrentCount</code> is at most one more than the
+     * <code>FailureToleranceCount</code>.</p> <p>Note that this setting lets you
+     * specify the <i>maximum</i> for operations. For large deployments, under certain
+     * circumstances the actual number of accounts acted upon concurrently may be lower
+     * due to service throttling.</p> <p>Conditional: You must specify either
+     * <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not
+     * both.</p>
      */
     inline bool MaxConcurrentCountHasBeenSet() const { return m_maxConcurrentCountHasBeenSet; }
 
     /**
      * <p>The maximum number of accounts in which to perform this operation at one
-     * time. This is dependent on the value of
-     * <code>FailureToleranceCount</code>—<code>MaxConcurrentCount</code> is at most
-     * one more than the <code>FailureToleranceCount</code> .</p> <p>Note that this
-     * setting lets you specify the <i>maximum</i> for operations. For large
-     * deployments, under certain circumstances the actual number of accounts acted
-     * upon concurrently may be lower due to service throttling.</p> <p>Conditional:
-     * You must specify either <code>MaxConcurrentCount</code> or
-     * <code>MaxConcurrentPercentage</code>, but not both.</p>
+     * time. This is dependent on the value of <code>FailureToleranceCount</code>.
+     * <code>MaxConcurrentCount</code> is at most one more than the
+     * <code>FailureToleranceCount</code>.</p> <p>Note that this setting lets you
+     * specify the <i>maximum</i> for operations. For large deployments, under certain
+     * circumstances the actual number of accounts acted upon concurrently may be lower
+     * due to service throttling.</p> <p>Conditional: You must specify either
+     * <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not
+     * both.</p>
      */
     inline void SetMaxConcurrentCount(int value) { m_maxConcurrentCountHasBeenSet = true; m_maxConcurrentCount = value; }
 
     /**
      * <p>The maximum number of accounts in which to perform this operation at one
-     * time. This is dependent on the value of
-     * <code>FailureToleranceCount</code>—<code>MaxConcurrentCount</code> is at most
-     * one more than the <code>FailureToleranceCount</code> .</p> <p>Note that this
-     * setting lets you specify the <i>maximum</i> for operations. For large
-     * deployments, under certain circumstances the actual number of accounts acted
-     * upon concurrently may be lower due to service throttling.</p> <p>Conditional:
-     * You must specify either <code>MaxConcurrentCount</code> or
-     * <code>MaxConcurrentPercentage</code>, but not both.</p>
+     * time. This is dependent on the value of <code>FailureToleranceCount</code>.
+     * <code>MaxConcurrentCount</code> is at most one more than the
+     * <code>FailureToleranceCount</code>.</p> <p>Note that this setting lets you
+     * specify the <i>maximum</i> for operations. For large deployments, under certain
+     * circumstances the actual number of accounts acted upon concurrently may be lower
+     * due to service throttling.</p> <p>Conditional: You must specify either
+     * <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not
+     * both.</p>
      */
     inline StackSetOperationPreferences& WithMaxConcurrentCount(int value) { SetMaxConcurrentCount(value); return *this;}
 

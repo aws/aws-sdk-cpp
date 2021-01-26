@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
@@ -131,44 +121,50 @@ namespace Model
 
 
     /**
-     * <p>The condition state. Currently, the values supported are
-     * <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>TIMEOUT</code>, and
-     * <code>FAILED</code>.</p>
+     * <p>The condition state. Currently, the only job states that a trigger can listen
+     * for are <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>FAILED</code>, and
+     * <code>TIMEOUT</code>. The only crawler states that a trigger can listen for are
+     * <code>SUCCEEDED</code>, <code>FAILED</code>, and <code>CANCELLED</code>.</p>
      */
     inline const JobRunState& GetState() const{ return m_state; }
 
     /**
-     * <p>The condition state. Currently, the values supported are
-     * <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>TIMEOUT</code>, and
-     * <code>FAILED</code>.</p>
+     * <p>The condition state. Currently, the only job states that a trigger can listen
+     * for are <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>FAILED</code>, and
+     * <code>TIMEOUT</code>. The only crawler states that a trigger can listen for are
+     * <code>SUCCEEDED</code>, <code>FAILED</code>, and <code>CANCELLED</code>.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The condition state. Currently, the values supported are
-     * <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>TIMEOUT</code>, and
-     * <code>FAILED</code>.</p>
+     * <p>The condition state. Currently, the only job states that a trigger can listen
+     * for are <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>FAILED</code>, and
+     * <code>TIMEOUT</code>. The only crawler states that a trigger can listen for are
+     * <code>SUCCEEDED</code>, <code>FAILED</code>, and <code>CANCELLED</code>.</p>
      */
     inline void SetState(const JobRunState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The condition state. Currently, the values supported are
-     * <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>TIMEOUT</code>, and
-     * <code>FAILED</code>.</p>
+     * <p>The condition state. Currently, the only job states that a trigger can listen
+     * for are <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>FAILED</code>, and
+     * <code>TIMEOUT</code>. The only crawler states that a trigger can listen for are
+     * <code>SUCCEEDED</code>, <code>FAILED</code>, and <code>CANCELLED</code>.</p>
      */
     inline void SetState(JobRunState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The condition state. Currently, the values supported are
-     * <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>TIMEOUT</code>, and
-     * <code>FAILED</code>.</p>
+     * <p>The condition state. Currently, the only job states that a trigger can listen
+     * for are <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>FAILED</code>, and
+     * <code>TIMEOUT</code>. The only crawler states that a trigger can listen for are
+     * <code>SUCCEEDED</code>, <code>FAILED</code>, and <code>CANCELLED</code>.</p>
      */
     inline Condition& WithState(const JobRunState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The condition state. Currently, the values supported are
-     * <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>TIMEOUT</code>, and
-     * <code>FAILED</code>.</p>
+     * <p>The condition state. Currently, the only job states that a trigger can listen
+     * for are <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>FAILED</code>, and
+     * <code>TIMEOUT</code>. The only crawler states that a trigger can listen for are
+     * <code>SUCCEEDED</code>, <code>FAILED</code>, and <code>CANCELLED</code>.</p>
      */
     inline Condition& WithState(JobRunState&& value) { SetState(std::move(value)); return *this;}
 

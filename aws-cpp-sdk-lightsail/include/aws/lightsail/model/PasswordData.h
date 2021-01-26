@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
@@ -51,104 +41,104 @@ namespace Model
     /**
      * <p>The encrypted password. Ciphertext will be an empty string if access to your
      * new instance is not ready yet. When you create an instance, it can take up to 15
-     * minutes for the instance to be ready.</p> <note> <p>If you use the default key
+     * minutes for the instance to be ready.</p>  <p>If you use the default key
      * pair (<code>LightsailDefaultKeyPair</code>), the decrypted password will be
      * available in the password field.</p> <p>If you are using a custom key pair, you
      * need to use your own means of decryption.</p> <p>If you change the Administrator
      * password on the instance, Lightsail will continue to return the original
      * ciphertext value. When accessing the instance using RDP, you need to manually
-     * enter the Administrator password after changing it from the default.</p> </note>
+     * enter the Administrator password after changing it from the default.</p> 
      */
     inline const Aws::String& GetCiphertext() const{ return m_ciphertext; }
 
     /**
      * <p>The encrypted password. Ciphertext will be an empty string if access to your
      * new instance is not ready yet. When you create an instance, it can take up to 15
-     * minutes for the instance to be ready.</p> <note> <p>If you use the default key
+     * minutes for the instance to be ready.</p>  <p>If you use the default key
      * pair (<code>LightsailDefaultKeyPair</code>), the decrypted password will be
      * available in the password field.</p> <p>If you are using a custom key pair, you
      * need to use your own means of decryption.</p> <p>If you change the Administrator
      * password on the instance, Lightsail will continue to return the original
      * ciphertext value. When accessing the instance using RDP, you need to manually
-     * enter the Administrator password after changing it from the default.</p> </note>
+     * enter the Administrator password after changing it from the default.</p> 
      */
     inline bool CiphertextHasBeenSet() const { return m_ciphertextHasBeenSet; }
 
     /**
      * <p>The encrypted password. Ciphertext will be an empty string if access to your
      * new instance is not ready yet. When you create an instance, it can take up to 15
-     * minutes for the instance to be ready.</p> <note> <p>If you use the default key
+     * minutes for the instance to be ready.</p>  <p>If you use the default key
      * pair (<code>LightsailDefaultKeyPair</code>), the decrypted password will be
      * available in the password field.</p> <p>If you are using a custom key pair, you
      * need to use your own means of decryption.</p> <p>If you change the Administrator
      * password on the instance, Lightsail will continue to return the original
      * ciphertext value. When accessing the instance using RDP, you need to manually
-     * enter the Administrator password after changing it from the default.</p> </note>
+     * enter the Administrator password after changing it from the default.</p> 
      */
     inline void SetCiphertext(const Aws::String& value) { m_ciphertextHasBeenSet = true; m_ciphertext = value; }
 
     /**
      * <p>The encrypted password. Ciphertext will be an empty string if access to your
      * new instance is not ready yet. When you create an instance, it can take up to 15
-     * minutes for the instance to be ready.</p> <note> <p>If you use the default key
+     * minutes for the instance to be ready.</p>  <p>If you use the default key
      * pair (<code>LightsailDefaultKeyPair</code>), the decrypted password will be
      * available in the password field.</p> <p>If you are using a custom key pair, you
      * need to use your own means of decryption.</p> <p>If you change the Administrator
      * password on the instance, Lightsail will continue to return the original
      * ciphertext value. When accessing the instance using RDP, you need to manually
-     * enter the Administrator password after changing it from the default.</p> </note>
+     * enter the Administrator password after changing it from the default.</p> 
      */
     inline void SetCiphertext(Aws::String&& value) { m_ciphertextHasBeenSet = true; m_ciphertext = std::move(value); }
 
     /**
      * <p>The encrypted password. Ciphertext will be an empty string if access to your
      * new instance is not ready yet. When you create an instance, it can take up to 15
-     * minutes for the instance to be ready.</p> <note> <p>If you use the default key
+     * minutes for the instance to be ready.</p>  <p>If you use the default key
      * pair (<code>LightsailDefaultKeyPair</code>), the decrypted password will be
      * available in the password field.</p> <p>If you are using a custom key pair, you
      * need to use your own means of decryption.</p> <p>If you change the Administrator
      * password on the instance, Lightsail will continue to return the original
      * ciphertext value. When accessing the instance using RDP, you need to manually
-     * enter the Administrator password after changing it from the default.</p> </note>
+     * enter the Administrator password after changing it from the default.</p> 
      */
     inline void SetCiphertext(const char* value) { m_ciphertextHasBeenSet = true; m_ciphertext.assign(value); }
 
     /**
      * <p>The encrypted password. Ciphertext will be an empty string if access to your
      * new instance is not ready yet. When you create an instance, it can take up to 15
-     * minutes for the instance to be ready.</p> <note> <p>If you use the default key
+     * minutes for the instance to be ready.</p>  <p>If you use the default key
      * pair (<code>LightsailDefaultKeyPair</code>), the decrypted password will be
      * available in the password field.</p> <p>If you are using a custom key pair, you
      * need to use your own means of decryption.</p> <p>If you change the Administrator
      * password on the instance, Lightsail will continue to return the original
      * ciphertext value. When accessing the instance using RDP, you need to manually
-     * enter the Administrator password after changing it from the default.</p> </note>
+     * enter the Administrator password after changing it from the default.</p> 
      */
     inline PasswordData& WithCiphertext(const Aws::String& value) { SetCiphertext(value); return *this;}
 
     /**
      * <p>The encrypted password. Ciphertext will be an empty string if access to your
      * new instance is not ready yet. When you create an instance, it can take up to 15
-     * minutes for the instance to be ready.</p> <note> <p>If you use the default key
+     * minutes for the instance to be ready.</p>  <p>If you use the default key
      * pair (<code>LightsailDefaultKeyPair</code>), the decrypted password will be
      * available in the password field.</p> <p>If you are using a custom key pair, you
      * need to use your own means of decryption.</p> <p>If you change the Administrator
      * password on the instance, Lightsail will continue to return the original
      * ciphertext value. When accessing the instance using RDP, you need to manually
-     * enter the Administrator password after changing it from the default.</p> </note>
+     * enter the Administrator password after changing it from the default.</p> 
      */
     inline PasswordData& WithCiphertext(Aws::String&& value) { SetCiphertext(std::move(value)); return *this;}
 
     /**
      * <p>The encrypted password. Ciphertext will be an empty string if access to your
      * new instance is not ready yet. When you create an instance, it can take up to 15
-     * minutes for the instance to be ready.</p> <note> <p>If you use the default key
+     * minutes for the instance to be ready.</p>  <p>If you use the default key
      * pair (<code>LightsailDefaultKeyPair</code>), the decrypted password will be
      * available in the password field.</p> <p>If you are using a custom key pair, you
      * need to use your own means of decryption.</p> <p>If you change the Administrator
      * password on the instance, Lightsail will continue to return the original
      * ciphertext value. When accessing the instance using RDP, you need to manually
-     * enter the Administrator password after changing it from the default.</p> </note>
+     * enter the Administrator password after changing it from the default.</p> 
      */
     inline PasswordData& WithCiphertext(const char* value) { SetCiphertext(value); return *this;}
 

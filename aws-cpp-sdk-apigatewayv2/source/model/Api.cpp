@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/apigatewayv2/model/Api.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,6 +20,8 @@ namespace Model
 
 Api::Api() : 
     m_apiEndpointHasBeenSet(false),
+    m_apiGatewayManaged(false),
+    m_apiGatewayManagedHasBeenSet(false),
     m_apiIdHasBeenSet(false),
     m_apiKeySelectionExpressionHasBeenSet(false),
     m_corsConfigurationHasBeenSet(false),
@@ -37,6 +29,8 @@ Api::Api() :
     m_descriptionHasBeenSet(false),
     m_disableSchemaValidation(false),
     m_disableSchemaValidationHasBeenSet(false),
+    m_disableExecuteApiEndpoint(false),
+    m_disableExecuteApiEndpointHasBeenSet(false),
     m_importInfoHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_protocolType(ProtocolType::NOT_SET),
@@ -50,6 +44,8 @@ Api::Api() :
 
 Api::Api(JsonView jsonValue) : 
     m_apiEndpointHasBeenSet(false),
+    m_apiGatewayManaged(false),
+    m_apiGatewayManagedHasBeenSet(false),
     m_apiIdHasBeenSet(false),
     m_apiKeySelectionExpressionHasBeenSet(false),
     m_corsConfigurationHasBeenSet(false),
@@ -57,6 +53,8 @@ Api::Api(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_disableSchemaValidation(false),
     m_disableSchemaValidationHasBeenSet(false),
+    m_disableExecuteApiEndpoint(false),
+    m_disableExecuteApiEndpointHasBeenSet(false),
     m_importInfoHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_protocolType(ProtocolType::NOT_SET),
@@ -76,6 +74,13 @@ Api& Api::operator =(JsonView jsonValue)
     m_apiEndpoint = jsonValue.GetString("apiEndpoint");
 
     m_apiEndpointHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("apiGatewayManaged"))
+  {
+    m_apiGatewayManaged = jsonValue.GetBool("apiGatewayManaged");
+
+    m_apiGatewayManagedHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("apiId"))
@@ -118,6 +123,13 @@ Api& Api::operator =(JsonView jsonValue)
     m_disableSchemaValidation = jsonValue.GetBool("disableSchemaValidation");
 
     m_disableSchemaValidationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("disableExecuteApiEndpoint"))
+  {
+    m_disableExecuteApiEndpoint = jsonValue.GetBool("disableExecuteApiEndpoint");
+
+    m_disableExecuteApiEndpointHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("importInfo"))
@@ -191,6 +203,12 @@ JsonValue Api::Jsonize() const
 
   }
 
+  if(m_apiGatewayManagedHasBeenSet)
+  {
+   payload.WithBool("apiGatewayManaged", m_apiGatewayManaged);
+
+  }
+
   if(m_apiIdHasBeenSet)
   {
    payload.WithString("apiId", m_apiId);
@@ -223,6 +241,12 @@ JsonValue Api::Jsonize() const
   if(m_disableSchemaValidationHasBeenSet)
   {
    payload.WithBool("disableSchemaValidation", m_disableSchemaValidation);
+
+  }
+
+  if(m_disableExecuteApiEndpointHasBeenSet)
+  {
+   payload.WithBool("disableExecuteApiEndpoint", m_disableExecuteApiEndpoint);
 
   }
 

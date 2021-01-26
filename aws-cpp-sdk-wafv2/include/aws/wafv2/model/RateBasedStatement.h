@@ -1,24 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/wafv2/WAFV2_EXPORTS.h>
 #include <aws/wafv2/model/RateBasedStatementAggregateKeyType.h>
-#include <aws/wafv2/model/Statement.h>
+#include <aws/wafv2/model/ForwardedIPConfig.h>
 #include <utility>
-#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <memory>
 
 namespace Aws
 {
@@ -37,11 +27,11 @@ namespace Model
   class Statement;
 
   /**
-   * <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
+   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
    * released in November, 2019. For information, including how to migrate your AWS
    * WAF resources from the prior release, see the <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p> </note> <p>A rate-based rule tracks the rate of
+   * WAF Developer Guide</a>. </p>  <p>A rate-based rule tracks the rate of
    * requests for each originating IP address, and triggers the rule action when the
    * rate exceeds a limit that you specify on the number of requests in any 5-minute
    * time span. You can use this to put a temporary block on requests from an IP
@@ -77,72 +67,90 @@ namespace Model
 
     /**
      * <p>The limit on requests per 5-minute period for a single originating IP
-     * address. If the statement includes a <code>ScopDownStatement</code>, this limit
+     * address. If the statement includes a <code>ScopeDownStatement</code>, this limit
      * is applied only to the requests that match the statement.</p>
      */
     inline long long GetLimit() const{ return m_limit; }
 
     /**
      * <p>The limit on requests per 5-minute period for a single originating IP
-     * address. If the statement includes a <code>ScopDownStatement</code>, this limit
+     * address. If the statement includes a <code>ScopeDownStatement</code>, this limit
      * is applied only to the requests that match the statement.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The limit on requests per 5-minute period for a single originating IP
-     * address. If the statement includes a <code>ScopDownStatement</code>, this limit
+     * address. If the statement includes a <code>ScopeDownStatement</code>, this limit
      * is applied only to the requests that match the statement.</p>
      */
     inline void SetLimit(long long value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The limit on requests per 5-minute period for a single originating IP
-     * address. If the statement includes a <code>ScopDownStatement</code>, this limit
+     * address. If the statement includes a <code>ScopeDownStatement</code>, this limit
      * is applied only to the requests that match the statement.</p>
      */
     inline RateBasedStatement& WithLimit(long long value) { SetLimit(value); return *this;}
 
 
     /**
-     * <p>Setting that indicates how to aggregate the request counts. Currently, you
-     * must set this to <code>IP</code>. The request counts are aggregated on IP
-     * addresses. </p>
+     * <p>Setting that indicates how to aggregate the request counts. The options are
+     * the following:</p> <ul> <li> <p>IP - Aggregate the request counts on the IP
+     * address from the web request origin.</p> </li> <li> <p>FORWARDED_IP - Aggregate
+     * the request counts on the first IP address in an HTTP header. If you use this,
+     * configure the <code>ForwardedIPConfig</code>, to specify the header to use. </p>
+     * </li> </ul>
      */
     inline const RateBasedStatementAggregateKeyType& GetAggregateKeyType() const{ return m_aggregateKeyType; }
 
     /**
-     * <p>Setting that indicates how to aggregate the request counts. Currently, you
-     * must set this to <code>IP</code>. The request counts are aggregated on IP
-     * addresses. </p>
+     * <p>Setting that indicates how to aggregate the request counts. The options are
+     * the following:</p> <ul> <li> <p>IP - Aggregate the request counts on the IP
+     * address from the web request origin.</p> </li> <li> <p>FORWARDED_IP - Aggregate
+     * the request counts on the first IP address in an HTTP header. If you use this,
+     * configure the <code>ForwardedIPConfig</code>, to specify the header to use. </p>
+     * </li> </ul>
      */
     inline bool AggregateKeyTypeHasBeenSet() const { return m_aggregateKeyTypeHasBeenSet; }
 
     /**
-     * <p>Setting that indicates how to aggregate the request counts. Currently, you
-     * must set this to <code>IP</code>. The request counts are aggregated on IP
-     * addresses. </p>
+     * <p>Setting that indicates how to aggregate the request counts. The options are
+     * the following:</p> <ul> <li> <p>IP - Aggregate the request counts on the IP
+     * address from the web request origin.</p> </li> <li> <p>FORWARDED_IP - Aggregate
+     * the request counts on the first IP address in an HTTP header. If you use this,
+     * configure the <code>ForwardedIPConfig</code>, to specify the header to use. </p>
+     * </li> </ul>
      */
     inline void SetAggregateKeyType(const RateBasedStatementAggregateKeyType& value) { m_aggregateKeyTypeHasBeenSet = true; m_aggregateKeyType = value; }
 
     /**
-     * <p>Setting that indicates how to aggregate the request counts. Currently, you
-     * must set this to <code>IP</code>. The request counts are aggregated on IP
-     * addresses. </p>
+     * <p>Setting that indicates how to aggregate the request counts. The options are
+     * the following:</p> <ul> <li> <p>IP - Aggregate the request counts on the IP
+     * address from the web request origin.</p> </li> <li> <p>FORWARDED_IP - Aggregate
+     * the request counts on the first IP address in an HTTP header. If you use this,
+     * configure the <code>ForwardedIPConfig</code>, to specify the header to use. </p>
+     * </li> </ul>
      */
     inline void SetAggregateKeyType(RateBasedStatementAggregateKeyType&& value) { m_aggregateKeyTypeHasBeenSet = true; m_aggregateKeyType = std::move(value); }
 
     /**
-     * <p>Setting that indicates how to aggregate the request counts. Currently, you
-     * must set this to <code>IP</code>. The request counts are aggregated on IP
-     * addresses. </p>
+     * <p>Setting that indicates how to aggregate the request counts. The options are
+     * the following:</p> <ul> <li> <p>IP - Aggregate the request counts on the IP
+     * address from the web request origin.</p> </li> <li> <p>FORWARDED_IP - Aggregate
+     * the request counts on the first IP address in an HTTP header. If you use this,
+     * configure the <code>ForwardedIPConfig</code>, to specify the header to use. </p>
+     * </li> </ul>
      */
     inline RateBasedStatement& WithAggregateKeyType(const RateBasedStatementAggregateKeyType& value) { SetAggregateKeyType(value); return *this;}
 
     /**
-     * <p>Setting that indicates how to aggregate the request counts. Currently, you
-     * must set this to <code>IP</code>. The request counts are aggregated on IP
-     * addresses. </p>
+     * <p>Setting that indicates how to aggregate the request counts. The options are
+     * the following:</p> <ul> <li> <p>IP - Aggregate the request counts on the IP
+     * address from the web request origin.</p> </li> <li> <p>FORWARDED_IP - Aggregate
+     * the request counts on the first IP address in an HTTP header. If you use this,
+     * configure the <code>ForwardedIPConfig</code>, to specify the header to use. </p>
+     * </li> </ul>
      */
     inline RateBasedStatement& WithAggregateKeyType(RateBasedStatementAggregateKeyType&& value) { SetAggregateKeyType(std::move(value)); return *this;}
 
@@ -189,6 +197,73 @@ namespace Model
      */
     RateBasedStatement& WithScopeDownStatement(Statement&& value);
 
+
+    /**
+     * <p>The configuration for inspecting IP addresses in an HTTP header that you
+     * specify, instead of using the IP address that's reported by the web request
+     * origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify
+     * any header name. </p>  <p>If the specified header isn't present in the
+     * request, AWS WAF doesn't apply the rule to the web request at all.</p> 
+     * <p>This is required if <code>AggregateKeyType</code> is set to
+     * <code>FORWARDED_IP</code>.</p>
+     */
+    inline const ForwardedIPConfig& GetForwardedIPConfig() const{ return m_forwardedIPConfig; }
+
+    /**
+     * <p>The configuration for inspecting IP addresses in an HTTP header that you
+     * specify, instead of using the IP address that's reported by the web request
+     * origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify
+     * any header name. </p>  <p>If the specified header isn't present in the
+     * request, AWS WAF doesn't apply the rule to the web request at all.</p> 
+     * <p>This is required if <code>AggregateKeyType</code> is set to
+     * <code>FORWARDED_IP</code>.</p>
+     */
+    inline bool ForwardedIPConfigHasBeenSet() const { return m_forwardedIPConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration for inspecting IP addresses in an HTTP header that you
+     * specify, instead of using the IP address that's reported by the web request
+     * origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify
+     * any header name. </p>  <p>If the specified header isn't present in the
+     * request, AWS WAF doesn't apply the rule to the web request at all.</p> 
+     * <p>This is required if <code>AggregateKeyType</code> is set to
+     * <code>FORWARDED_IP</code>.</p>
+     */
+    inline void SetForwardedIPConfig(const ForwardedIPConfig& value) { m_forwardedIPConfigHasBeenSet = true; m_forwardedIPConfig = value; }
+
+    /**
+     * <p>The configuration for inspecting IP addresses in an HTTP header that you
+     * specify, instead of using the IP address that's reported by the web request
+     * origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify
+     * any header name. </p>  <p>If the specified header isn't present in the
+     * request, AWS WAF doesn't apply the rule to the web request at all.</p> 
+     * <p>This is required if <code>AggregateKeyType</code> is set to
+     * <code>FORWARDED_IP</code>.</p>
+     */
+    inline void SetForwardedIPConfig(ForwardedIPConfig&& value) { m_forwardedIPConfigHasBeenSet = true; m_forwardedIPConfig = std::move(value); }
+
+    /**
+     * <p>The configuration for inspecting IP addresses in an HTTP header that you
+     * specify, instead of using the IP address that's reported by the web request
+     * origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify
+     * any header name. </p>  <p>If the specified header isn't present in the
+     * request, AWS WAF doesn't apply the rule to the web request at all.</p> 
+     * <p>This is required if <code>AggregateKeyType</code> is set to
+     * <code>FORWARDED_IP</code>.</p>
+     */
+    inline RateBasedStatement& WithForwardedIPConfig(const ForwardedIPConfig& value) { SetForwardedIPConfig(value); return *this;}
+
+    /**
+     * <p>The configuration for inspecting IP addresses in an HTTP header that you
+     * specify, instead of using the IP address that's reported by the web request
+     * origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify
+     * any header name. </p>  <p>If the specified header isn't present in the
+     * request, AWS WAF doesn't apply the rule to the web request at all.</p> 
+     * <p>This is required if <code>AggregateKeyType</code> is set to
+     * <code>FORWARDED_IP</code>.</p>
+     */
+    inline RateBasedStatement& WithForwardedIPConfig(ForwardedIPConfig&& value) { SetForwardedIPConfig(std::move(value)); return *this;}
+
   private:
 
     long long m_limit;
@@ -197,8 +272,11 @@ namespace Model
     RateBasedStatementAggregateKeyType m_aggregateKeyType;
     bool m_aggregateKeyTypeHasBeenSet;
 
-    Aws::Vector<Statement> m_scopeDownStatement;
+    std::shared_ptr<Statement> m_scopeDownStatement;
     bool m_scopeDownStatementHasBeenSet;
+
+    ForwardedIPConfig m_forwardedIPConfig;
+    bool m_forwardedIPConfigHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kendra/Kendra_EXPORTS.h>
@@ -161,50 +151,82 @@ namespace Model
 
 
     /**
-     * <p>One or more documents to add to the index. </p> <p>Each document is limited
-     * to 5 Mb, the total size of the list is limited to 50 Mb.</p>
+     * <p>One or more documents to add to the index. </p> <p>Documents have the
+     * following file size limits.</p> <ul> <li> <p>5 MB total size for inline
+     * documents</p> </li> <li> <p>50 MB total size for files from an S3 bucket</p>
+     * </li> <li> <p>5 MB extracted text for any file</p> </li> </ul> <p>For more
+     * information about file size and transaction per second quotas, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline const Aws::Vector<Document>& GetDocuments() const{ return m_documents; }
 
     /**
-     * <p>One or more documents to add to the index. </p> <p>Each document is limited
-     * to 5 Mb, the total size of the list is limited to 50 Mb.</p>
+     * <p>One or more documents to add to the index. </p> <p>Documents have the
+     * following file size limits.</p> <ul> <li> <p>5 MB total size for inline
+     * documents</p> </li> <li> <p>50 MB total size for files from an S3 bucket</p>
+     * </li> <li> <p>5 MB extracted text for any file</p> </li> </ul> <p>For more
+     * information about file size and transaction per second quotas, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline bool DocumentsHasBeenSet() const { return m_documentsHasBeenSet; }
 
     /**
-     * <p>One or more documents to add to the index. </p> <p>Each document is limited
-     * to 5 Mb, the total size of the list is limited to 50 Mb.</p>
+     * <p>One or more documents to add to the index. </p> <p>Documents have the
+     * following file size limits.</p> <ul> <li> <p>5 MB total size for inline
+     * documents</p> </li> <li> <p>50 MB total size for files from an S3 bucket</p>
+     * </li> <li> <p>5 MB extracted text for any file</p> </li> </ul> <p>For more
+     * information about file size and transaction per second quotas, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline void SetDocuments(const Aws::Vector<Document>& value) { m_documentsHasBeenSet = true; m_documents = value; }
 
     /**
-     * <p>One or more documents to add to the index. </p> <p>Each document is limited
-     * to 5 Mb, the total size of the list is limited to 50 Mb.</p>
+     * <p>One or more documents to add to the index. </p> <p>Documents have the
+     * following file size limits.</p> <ul> <li> <p>5 MB total size for inline
+     * documents</p> </li> <li> <p>50 MB total size for files from an S3 bucket</p>
+     * </li> <li> <p>5 MB extracted text for any file</p> </li> </ul> <p>For more
+     * information about file size and transaction per second quotas, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline void SetDocuments(Aws::Vector<Document>&& value) { m_documentsHasBeenSet = true; m_documents = std::move(value); }
 
     /**
-     * <p>One or more documents to add to the index. </p> <p>Each document is limited
-     * to 5 Mb, the total size of the list is limited to 50 Mb.</p>
+     * <p>One or more documents to add to the index. </p> <p>Documents have the
+     * following file size limits.</p> <ul> <li> <p>5 MB total size for inline
+     * documents</p> </li> <li> <p>50 MB total size for files from an S3 bucket</p>
+     * </li> <li> <p>5 MB extracted text for any file</p> </li> </ul> <p>For more
+     * information about file size and transaction per second quotas, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline BatchPutDocumentRequest& WithDocuments(const Aws::Vector<Document>& value) { SetDocuments(value); return *this;}
 
     /**
-     * <p>One or more documents to add to the index. </p> <p>Each document is limited
-     * to 5 Mb, the total size of the list is limited to 50 Mb.</p>
+     * <p>One or more documents to add to the index. </p> <p>Documents have the
+     * following file size limits.</p> <ul> <li> <p>5 MB total size for inline
+     * documents</p> </li> <li> <p>50 MB total size for files from an S3 bucket</p>
+     * </li> <li> <p>5 MB extracted text for any file</p> </li> </ul> <p>For more
+     * information about file size and transaction per second quotas, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline BatchPutDocumentRequest& WithDocuments(Aws::Vector<Document>&& value) { SetDocuments(std::move(value)); return *this;}
 
     /**
-     * <p>One or more documents to add to the index. </p> <p>Each document is limited
-     * to 5 Mb, the total size of the list is limited to 50 Mb.</p>
+     * <p>One or more documents to add to the index. </p> <p>Documents have the
+     * following file size limits.</p> <ul> <li> <p>5 MB total size for inline
+     * documents</p> </li> <li> <p>50 MB total size for files from an S3 bucket</p>
+     * </li> <li> <p>5 MB extracted text for any file</p> </li> </ul> <p>For more
+     * information about file size and transaction per second quotas, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline BatchPutDocumentRequest& AddDocuments(const Document& value) { m_documentsHasBeenSet = true; m_documents.push_back(value); return *this; }
 
     /**
-     * <p>One or more documents to add to the index. </p> <p>Each document is limited
-     * to 5 Mb, the total size of the list is limited to 50 Mb.</p>
+     * <p>One or more documents to add to the index. </p> <p>Documents have the
+     * following file size limits.</p> <ul> <li> <p>5 MB total size for inline
+     * documents</p> </li> <li> <p>50 MB total size for files from an S3 bucket</p>
+     * </li> <li> <p>5 MB extracted text for any file</p> </li> </ul> <p>For more
+     * information about file size and transaction per second quotas, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline BatchPutDocumentRequest& AddDocuments(Document&& value) { m_documentsHasBeenSet = true; m_documents.push_back(std::move(value)); return *this; }
 

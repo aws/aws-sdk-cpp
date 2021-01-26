@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
@@ -230,9 +220,9 @@ namespace Model
      * request indicating that more results are available to fulfill the request and
      * further calls will be needed. If <code>maxResults</code> was provided, it is
      * possible the number of results to be fewer than <code>maxResults</code>.</p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
+     *  <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -241,9 +231,9 @@ namespace Model
      * request indicating that more results are available to fulfill the request and
      * further calls will be needed. If <code>maxResults</code> was provided, it is
      * possible the number of results to be fewer than <code>maxResults</code>.</p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
+     *  <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
@@ -252,9 +242,9 @@ namespace Model
      * request indicating that more results are available to fulfill the request and
      * further calls will be needed. If <code>maxResults</code> was provided, it is
      * possible the number of results to be fewer than <code>maxResults</code>.</p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
+     *  <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -263,9 +253,9 @@ namespace Model
      * request indicating that more results are available to fulfill the request and
      * further calls will be needed. If <code>maxResults</code> was provided, it is
      * possible the number of results to be fewer than <code>maxResults</code>.</p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
+     *  <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
@@ -274,9 +264,9 @@ namespace Model
      * request indicating that more results are available to fulfill the request and
      * further calls will be needed. If <code>maxResults</code> was provided, it is
      * possible the number of results to be fewer than <code>maxResults</code>.</p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
+     *  <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
@@ -285,9 +275,9 @@ namespace Model
      * request indicating that more results are available to fulfill the request and
      * further calls will be needed. If <code>maxResults</code> was provided, it is
      * possible the number of results to be fewer than <code>maxResults</code>.</p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
+     *  <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline ListTasksRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -296,9 +286,9 @@ namespace Model
      * request indicating that more results are available to fulfill the request and
      * further calls will be needed. If <code>maxResults</code> was provided, it is
      * possible the number of results to be fewer than <code>maxResults</code>.</p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
+     *  <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline ListTasksRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -307,9 +297,9 @@ namespace Model
      * request indicating that more results are available to fulfill the request and
      * further calls will be needed. If <code>maxResults</code> was provided, it is
      * possible the number of results to be fewer than <code>maxResults</code>.</p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
+     *  <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline ListTasksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
@@ -484,11 +474,11 @@ namespace Model
      * <code>STOPPED</code>. This can be useful for debugging tasks that are not
      * starting properly or have died or finished. The default status filter is
      * <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired
-     * status to <code>RUNNING</code>.</p> <note> <p>Although you can filter results
+     * status to <code>RUNNING</code>.</p>  <p>Although you can filter results
      * based on a desired status of <code>PENDING</code>, this does not return any
      * results. Amazon ECS never sets the desired status of a task to that value (only
      * a task's <code>lastStatus</code> may have a value of <code>PENDING</code>).</p>
-     * </note>
+     * 
      */
     inline const DesiredStatus& GetDesiredStatus() const{ return m_desiredStatus; }
 
@@ -499,11 +489,11 @@ namespace Model
      * <code>STOPPED</code>. This can be useful for debugging tasks that are not
      * starting properly or have died or finished. The default status filter is
      * <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired
-     * status to <code>RUNNING</code>.</p> <note> <p>Although you can filter results
+     * status to <code>RUNNING</code>.</p>  <p>Although you can filter results
      * based on a desired status of <code>PENDING</code>, this does not return any
      * results. Amazon ECS never sets the desired status of a task to that value (only
      * a task's <code>lastStatus</code> may have a value of <code>PENDING</code>).</p>
-     * </note>
+     * 
      */
     inline bool DesiredStatusHasBeenSet() const { return m_desiredStatusHasBeenSet; }
 
@@ -514,11 +504,11 @@ namespace Model
      * <code>STOPPED</code>. This can be useful for debugging tasks that are not
      * starting properly or have died or finished. The default status filter is
      * <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired
-     * status to <code>RUNNING</code>.</p> <note> <p>Although you can filter results
+     * status to <code>RUNNING</code>.</p>  <p>Although you can filter results
      * based on a desired status of <code>PENDING</code>, this does not return any
      * results. Amazon ECS never sets the desired status of a task to that value (only
      * a task's <code>lastStatus</code> may have a value of <code>PENDING</code>).</p>
-     * </note>
+     * 
      */
     inline void SetDesiredStatus(const DesiredStatus& value) { m_desiredStatusHasBeenSet = true; m_desiredStatus = value; }
 
@@ -529,11 +519,11 @@ namespace Model
      * <code>STOPPED</code>. This can be useful for debugging tasks that are not
      * starting properly or have died or finished. The default status filter is
      * <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired
-     * status to <code>RUNNING</code>.</p> <note> <p>Although you can filter results
+     * status to <code>RUNNING</code>.</p>  <p>Although you can filter results
      * based on a desired status of <code>PENDING</code>, this does not return any
      * results. Amazon ECS never sets the desired status of a task to that value (only
      * a task's <code>lastStatus</code> may have a value of <code>PENDING</code>).</p>
-     * </note>
+     * 
      */
     inline void SetDesiredStatus(DesiredStatus&& value) { m_desiredStatusHasBeenSet = true; m_desiredStatus = std::move(value); }
 
@@ -544,11 +534,11 @@ namespace Model
      * <code>STOPPED</code>. This can be useful for debugging tasks that are not
      * starting properly or have died or finished. The default status filter is
      * <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired
-     * status to <code>RUNNING</code>.</p> <note> <p>Although you can filter results
+     * status to <code>RUNNING</code>.</p>  <p>Although you can filter results
      * based on a desired status of <code>PENDING</code>, this does not return any
      * results. Amazon ECS never sets the desired status of a task to that value (only
      * a task's <code>lastStatus</code> may have a value of <code>PENDING</code>).</p>
-     * </note>
+     * 
      */
     inline ListTasksRequest& WithDesiredStatus(const DesiredStatus& value) { SetDesiredStatus(value); return *this;}
 
@@ -559,11 +549,11 @@ namespace Model
      * <code>STOPPED</code>. This can be useful for debugging tasks that are not
      * starting properly or have died or finished. The default status filter is
      * <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired
-     * status to <code>RUNNING</code>.</p> <note> <p>Although you can filter results
+     * status to <code>RUNNING</code>.</p>  <p>Although you can filter results
      * based on a desired status of <code>PENDING</code>, this does not return any
      * results. Amazon ECS never sets the desired status of a task to that value (only
      * a task's <code>lastStatus</code> may have a value of <code>PENDING</code>).</p>
-     * </note>
+     * 
      */
     inline ListTasksRequest& WithDesiredStatus(DesiredStatus&& value) { SetDesiredStatus(std::move(value)); return *this;}
 

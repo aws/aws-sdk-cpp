@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-identity/CognitoIdentity_EXPORTS.h>
@@ -309,9 +299,9 @@ namespace Model
      * one hour. The maximum token duration you can set is 24 hours. You should take
      * care in setting the expiration time for a token, as there are significant
      * security implications: an attacker could use a leaked token to access your AWS
-     * resources for the token's duration.</p> <note> <p>Please provide for a small
+     * resources for the token's duration.</p>  <p>Please provide for a small
      * grace period, usually no more than 5 minutes, to account for clock skew.</p>
-     * </note>
+     * 
      */
     inline long long GetTokenDuration() const{ return m_tokenDuration; }
 
@@ -323,9 +313,9 @@ namespace Model
      * one hour. The maximum token duration you can set is 24 hours. You should take
      * care in setting the expiration time for a token, as there are significant
      * security implications: an attacker could use a leaked token to access your AWS
-     * resources for the token's duration.</p> <note> <p>Please provide for a small
+     * resources for the token's duration.</p>  <p>Please provide for a small
      * grace period, usually no more than 5 minutes, to account for clock skew.</p>
-     * </note>
+     * 
      */
     inline bool TokenDurationHasBeenSet() const { return m_tokenDurationHasBeenSet; }
 
@@ -337,9 +327,9 @@ namespace Model
      * one hour. The maximum token duration you can set is 24 hours. You should take
      * care in setting the expiration time for a token, as there are significant
      * security implications: an attacker could use a leaked token to access your AWS
-     * resources for the token's duration.</p> <note> <p>Please provide for a small
+     * resources for the token's duration.</p>  <p>Please provide for a small
      * grace period, usually no more than 5 minutes, to account for clock skew.</p>
-     * </note>
+     * 
      */
     inline void SetTokenDuration(long long value) { m_tokenDurationHasBeenSet = true; m_tokenDuration = value; }
 
@@ -351,9 +341,9 @@ namespace Model
      * one hour. The maximum token duration you can set is 24 hours. You should take
      * care in setting the expiration time for a token, as there are significant
      * security implications: an attacker could use a leaked token to access your AWS
-     * resources for the token's duration.</p> <note> <p>Please provide for a small
+     * resources for the token's duration.</p>  <p>Please provide for a small
      * grace period, usually no more than 5 minutes, to account for clock skew.</p>
-     * </note>
+     * 
      */
     inline GetOpenIdTokenForDeveloperIdentityRequest& WithTokenDuration(long long value) { SetTokenDuration(value); return *this;}
 

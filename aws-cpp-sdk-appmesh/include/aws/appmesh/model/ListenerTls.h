@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
@@ -81,152 +71,50 @@ namespace Model
 
 
     /**
-     * <p>Specify one of the following modes.</p>
-         <ul>
-            <li>
-      
-     * <p>
-                  <b/>STRICT – Listener only accepts connections with TLS
-     * enabled. </p>
-            </li>
-            <li>
-               <p>
-            
-     * <b/>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p>
- 
-     * </li>
-            <li>
-               <p>
-                  <b/>DISABLED – 
-     * Listener only accepts connections without TLS. </p>
-            </li>
-        
-     * </ul>
+     * <p>Specify one of the following modes.</p> <ul> <li> <p> <b/>STRICT – Listener
+     * only accepts connections with TLS enabled. </p> </li> <li> <p> <b/>PERMISSIVE –
+     * Listener accepts connections with or without TLS enabled.</p> </li> <li> <p>
+     * <b/>DISABLED – Listener only accepts connections without TLS. </p> </li> </ul>
      */
     inline const ListenerTlsMode& GetMode() const{ return m_mode; }
 
     /**
-     * <p>Specify one of the following modes.</p>
-         <ul>
-            <li>
-      
-     * <p>
-                  <b/>STRICT – Listener only accepts connections with TLS
-     * enabled. </p>
-            </li>
-            <li>
-               <p>
-            
-     * <b/>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p>
- 
-     * </li>
-            <li>
-               <p>
-                  <b/>DISABLED – 
-     * Listener only accepts connections without TLS. </p>
-            </li>
-        
-     * </ul>
+     * <p>Specify one of the following modes.</p> <ul> <li> <p> <b/>STRICT – Listener
+     * only accepts connections with TLS enabled. </p> </li> <li> <p> <b/>PERMISSIVE –
+     * Listener accepts connections with or without TLS enabled.</p> </li> <li> <p>
+     * <b/>DISABLED – Listener only accepts connections without TLS. </p> </li> </ul>
      */
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
 
     /**
-     * <p>Specify one of the following modes.</p>
-         <ul>
-            <li>
-      
-     * <p>
-                  <b/>STRICT – Listener only accepts connections with TLS
-     * enabled. </p>
-            </li>
-            <li>
-               <p>
-            
-     * <b/>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p>
- 
-     * </li>
-            <li>
-               <p>
-                  <b/>DISABLED – 
-     * Listener only accepts connections without TLS. </p>
-            </li>
-        
-     * </ul>
+     * <p>Specify one of the following modes.</p> <ul> <li> <p> <b/>STRICT – Listener
+     * only accepts connections with TLS enabled. </p> </li> <li> <p> <b/>PERMISSIVE –
+     * Listener accepts connections with or without TLS enabled.</p> </li> <li> <p>
+     * <b/>DISABLED – Listener only accepts connections without TLS. </p> </li> </ul>
      */
     inline void SetMode(const ListenerTlsMode& value) { m_modeHasBeenSet = true; m_mode = value; }
 
     /**
-     * <p>Specify one of the following modes.</p>
-         <ul>
-            <li>
-      
-     * <p>
-                  <b/>STRICT – Listener only accepts connections with TLS
-     * enabled. </p>
-            </li>
-            <li>
-               <p>
-            
-     * <b/>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p>
- 
-     * </li>
-            <li>
-               <p>
-                  <b/>DISABLED – 
-     * Listener only accepts connections without TLS. </p>
-            </li>
-        
-     * </ul>
+     * <p>Specify one of the following modes.</p> <ul> <li> <p> <b/>STRICT – Listener
+     * only accepts connections with TLS enabled. </p> </li> <li> <p> <b/>PERMISSIVE –
+     * Listener accepts connections with or without TLS enabled.</p> </li> <li> <p>
+     * <b/>DISABLED – Listener only accepts connections without TLS. </p> </li> </ul>
      */
     inline void SetMode(ListenerTlsMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
 
     /**
-     * <p>Specify one of the following modes.</p>
-         <ul>
-            <li>
-      
-     * <p>
-                  <b/>STRICT – Listener only accepts connections with TLS
-     * enabled. </p>
-            </li>
-            <li>
-               <p>
-            
-     * <b/>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p>
- 
-     * </li>
-            <li>
-               <p>
-                  <b/>DISABLED – 
-     * Listener only accepts connections without TLS. </p>
-            </li>
-        
-     * </ul>
+     * <p>Specify one of the following modes.</p> <ul> <li> <p> <b/>STRICT – Listener
+     * only accepts connections with TLS enabled. </p> </li> <li> <p> <b/>PERMISSIVE –
+     * Listener accepts connections with or without TLS enabled.</p> </li> <li> <p>
+     * <b/>DISABLED – Listener only accepts connections without TLS. </p> </li> </ul>
      */
     inline ListenerTls& WithMode(const ListenerTlsMode& value) { SetMode(value); return *this;}
 
     /**
-     * <p>Specify one of the following modes.</p>
-         <ul>
-            <li>
-      
-     * <p>
-                  <b/>STRICT – Listener only accepts connections with TLS
-     * enabled. </p>
-            </li>
-            <li>
-               <p>
-            
-     * <b/>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p>
- 
-     * </li>
-            <li>
-               <p>
-                  <b/>DISABLED – 
-     * Listener only accepts connections without TLS. </p>
-            </li>
-        
-     * </ul>
+     * <p>Specify one of the following modes.</p> <ul> <li> <p> <b/>STRICT – Listener
+     * only accepts connections with TLS enabled. </p> </li> <li> <p> <b/>PERMISSIVE –
+     * Listener accepts connections with or without TLS enabled.</p> </li> <li> <p>
+     * <b/>DISABLED – Listener only accepts connections without TLS. </p> </li> </ul>
      */
     inline ListenerTls& WithMode(ListenerTlsMode&& value) { SetMode(std::move(value)); return *this;}
 

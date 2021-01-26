@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -93,8 +83,7 @@ namespace Model
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
      * specific key, regardless of the tag value.</p> </li> <li> <p>
-     * <code>transit-gateway-id</code> - The ID of a transit gateway.</p> </li> <li>
-     * <p> <code>vpc-id</code> - The ID of the VPC for the route table.</p> </li> </ul>
+     * <code>vpc-id</code> - The ID of the VPC for the route table.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -143,8 +132,7 @@ namespace Model
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
      * specific key, regardless of the tag value.</p> </li> <li> <p>
-     * <code>transit-gateway-id</code> - The ID of a transit gateway.</p> </li> <li>
-     * <p> <code>vpc-id</code> - The ID of the VPC for the route table.</p> </li> </ul>
+     * <code>vpc-id</code> - The ID of the VPC for the route table.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -193,8 +181,7 @@ namespace Model
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
      * specific key, regardless of the tag value.</p> </li> <li> <p>
-     * <code>transit-gateway-id</code> - The ID of a transit gateway.</p> </li> <li>
-     * <p> <code>vpc-id</code> - The ID of the VPC for the route table.</p> </li> </ul>
+     * <code>vpc-id</code> - The ID of the VPC for the route table.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -243,8 +230,7 @@ namespace Model
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
      * specific key, regardless of the tag value.</p> </li> <li> <p>
-     * <code>transit-gateway-id</code> - The ID of a transit gateway.</p> </li> <li>
-     * <p> <code>vpc-id</code> - The ID of the VPC for the route table.</p> </li> </ul>
+     * <code>vpc-id</code> - The ID of the VPC for the route table.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -293,8 +279,7 @@ namespace Model
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
      * specific key, regardless of the tag value.</p> </li> <li> <p>
-     * <code>transit-gateway-id</code> - The ID of a transit gateway.</p> </li> <li>
-     * <p> <code>vpc-id</code> - The ID of the VPC for the route table.</p> </li> </ul>
+     * <code>vpc-id</code> - The ID of the VPC for the route table.</p> </li> </ul>
      */
     inline DescribeRouteTablesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -343,8 +328,7 @@ namespace Model
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
      * specific key, regardless of the tag value.</p> </li> <li> <p>
-     * <code>transit-gateway-id</code> - The ID of a transit gateway.</p> </li> <li>
-     * <p> <code>vpc-id</code> - The ID of the VPC for the route table.</p> </li> </ul>
+     * <code>vpc-id</code> - The ID of the VPC for the route table.</p> </li> </ul>
      */
     inline DescribeRouteTablesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -393,8 +377,7 @@ namespace Model
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
      * specific key, regardless of the tag value.</p> </li> <li> <p>
-     * <code>transit-gateway-id</code> - The ID of a transit gateway.</p> </li> <li>
-     * <p> <code>vpc-id</code> - The ID of the VPC for the route table.</p> </li> </ul>
+     * <code>vpc-id</code> - The ID of the VPC for the route table.</p> </li> </ul>
      */
     inline DescribeRouteTablesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -443,8 +426,7 @@ namespace Model
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
      * specific key, regardless of the tag value.</p> </li> <li> <p>
-     * <code>transit-gateway-id</code> - The ID of a transit gateway.</p> </li> <li>
-     * <p> <code>vpc-id</code> - The ID of the VPC for the route table.</p> </li> </ul>
+     * <code>vpc-id</code> - The ID of the VPC for the route table.</p> </li> </ul>
      */
     inline DescribeRouteTablesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

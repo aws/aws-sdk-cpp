@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/signer/Signer_EXPORTS.h>
 #include <aws/signer/SignerRequest.h>
 #include <aws/signer/model/SigningStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -271,6 +262,150 @@ namespace Model
      */
     inline ListSigningJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>Filters results to return only signing jobs with revoked signatures.</p>
+     */
+    inline bool GetIsRevoked() const{ return m_isRevoked; }
+
+    /**
+     * <p>Filters results to return only signing jobs with revoked signatures.</p>
+     */
+    inline bool IsRevokedHasBeenSet() const { return m_isRevokedHasBeenSet; }
+
+    /**
+     * <p>Filters results to return only signing jobs with revoked signatures.</p>
+     */
+    inline void SetIsRevoked(bool value) { m_isRevokedHasBeenSet = true; m_isRevoked = value; }
+
+    /**
+     * <p>Filters results to return only signing jobs with revoked signatures.</p>
+     */
+    inline ListSigningJobsRequest& WithIsRevoked(bool value) { SetIsRevoked(value); return *this;}
+
+
+    /**
+     * <p>Filters results to return only signing jobs with signatures expiring before a
+     * specified timestamp.</p>
+     */
+    inline const Aws::Utils::DateTime& GetSignatureExpiresBefore() const{ return m_signatureExpiresBefore; }
+
+    /**
+     * <p>Filters results to return only signing jobs with signatures expiring before a
+     * specified timestamp.</p>
+     */
+    inline bool SignatureExpiresBeforeHasBeenSet() const { return m_signatureExpiresBeforeHasBeenSet; }
+
+    /**
+     * <p>Filters results to return only signing jobs with signatures expiring before a
+     * specified timestamp.</p>
+     */
+    inline void SetSignatureExpiresBefore(const Aws::Utils::DateTime& value) { m_signatureExpiresBeforeHasBeenSet = true; m_signatureExpiresBefore = value; }
+
+    /**
+     * <p>Filters results to return only signing jobs with signatures expiring before a
+     * specified timestamp.</p>
+     */
+    inline void SetSignatureExpiresBefore(Aws::Utils::DateTime&& value) { m_signatureExpiresBeforeHasBeenSet = true; m_signatureExpiresBefore = std::move(value); }
+
+    /**
+     * <p>Filters results to return only signing jobs with signatures expiring before a
+     * specified timestamp.</p>
+     */
+    inline ListSigningJobsRequest& WithSignatureExpiresBefore(const Aws::Utils::DateTime& value) { SetSignatureExpiresBefore(value); return *this;}
+
+    /**
+     * <p>Filters results to return only signing jobs with signatures expiring before a
+     * specified timestamp.</p>
+     */
+    inline ListSigningJobsRequest& WithSignatureExpiresBefore(Aws::Utils::DateTime&& value) { SetSignatureExpiresBefore(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Filters results to return only signing jobs with signatures expiring after a
+     * specified timestamp.</p>
+     */
+    inline const Aws::Utils::DateTime& GetSignatureExpiresAfter() const{ return m_signatureExpiresAfter; }
+
+    /**
+     * <p>Filters results to return only signing jobs with signatures expiring after a
+     * specified timestamp.</p>
+     */
+    inline bool SignatureExpiresAfterHasBeenSet() const { return m_signatureExpiresAfterHasBeenSet; }
+
+    /**
+     * <p>Filters results to return only signing jobs with signatures expiring after a
+     * specified timestamp.</p>
+     */
+    inline void SetSignatureExpiresAfter(const Aws::Utils::DateTime& value) { m_signatureExpiresAfterHasBeenSet = true; m_signatureExpiresAfter = value; }
+
+    /**
+     * <p>Filters results to return only signing jobs with signatures expiring after a
+     * specified timestamp.</p>
+     */
+    inline void SetSignatureExpiresAfter(Aws::Utils::DateTime&& value) { m_signatureExpiresAfterHasBeenSet = true; m_signatureExpiresAfter = std::move(value); }
+
+    /**
+     * <p>Filters results to return only signing jobs with signatures expiring after a
+     * specified timestamp.</p>
+     */
+    inline ListSigningJobsRequest& WithSignatureExpiresAfter(const Aws::Utils::DateTime& value) { SetSignatureExpiresAfter(value); return *this;}
+
+    /**
+     * <p>Filters results to return only signing jobs with signatures expiring after a
+     * specified timestamp.</p>
+     */
+    inline ListSigningJobsRequest& WithSignatureExpiresAfter(Aws::Utils::DateTime&& value) { SetSignatureExpiresAfter(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Filters results to return only signing jobs initiated by a specified IAM
+     * entity.</p>
+     */
+    inline const Aws::String& GetJobInvoker() const{ return m_jobInvoker; }
+
+    /**
+     * <p>Filters results to return only signing jobs initiated by a specified IAM
+     * entity.</p>
+     */
+    inline bool JobInvokerHasBeenSet() const { return m_jobInvokerHasBeenSet; }
+
+    /**
+     * <p>Filters results to return only signing jobs initiated by a specified IAM
+     * entity.</p>
+     */
+    inline void SetJobInvoker(const Aws::String& value) { m_jobInvokerHasBeenSet = true; m_jobInvoker = value; }
+
+    /**
+     * <p>Filters results to return only signing jobs initiated by a specified IAM
+     * entity.</p>
+     */
+    inline void SetJobInvoker(Aws::String&& value) { m_jobInvokerHasBeenSet = true; m_jobInvoker = std::move(value); }
+
+    /**
+     * <p>Filters results to return only signing jobs initiated by a specified IAM
+     * entity.</p>
+     */
+    inline void SetJobInvoker(const char* value) { m_jobInvokerHasBeenSet = true; m_jobInvoker.assign(value); }
+
+    /**
+     * <p>Filters results to return only signing jobs initiated by a specified IAM
+     * entity.</p>
+     */
+    inline ListSigningJobsRequest& WithJobInvoker(const Aws::String& value) { SetJobInvoker(value); return *this;}
+
+    /**
+     * <p>Filters results to return only signing jobs initiated by a specified IAM
+     * entity.</p>
+     */
+    inline ListSigningJobsRequest& WithJobInvoker(Aws::String&& value) { SetJobInvoker(std::move(value)); return *this;}
+
+    /**
+     * <p>Filters results to return only signing jobs initiated by a specified IAM
+     * entity.</p>
+     */
+    inline ListSigningJobsRequest& WithJobInvoker(const char* value) { SetJobInvoker(value); return *this;}
+
   private:
 
     SigningStatus m_status;
@@ -287,6 +422,18 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
+    bool m_isRevoked;
+    bool m_isRevokedHasBeenSet;
+
+    Aws::Utils::DateTime m_signatureExpiresBefore;
+    bool m_signatureExpiresBeforeHasBeenSet;
+
+    Aws::Utils::DateTime m_signatureExpiresAfter;
+    bool m_signatureExpiresAfterHasBeenSet;
+
+    Aws::String m_jobInvoker;
+    bool m_jobInvokerHasBeenSet;
   };
 
 } // namespace Model

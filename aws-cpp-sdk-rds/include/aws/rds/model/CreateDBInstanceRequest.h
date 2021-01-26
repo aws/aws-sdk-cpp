@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -57,29 +47,32 @@ namespace Model
      * use.</p> <p> <b>MySQL</b> </p> <p>The name of the database to create when the DB
      * instance is created. If this parameter isn't specified, no database is created
      * in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
-     * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
-     * database engine</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>The name of the
-     * database to create when the DB instance is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter isn't specified, the default "postgres"
-     * database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must
-     * begin with a letter or an underscore. Subsequent characters can be letters,
-     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
-     * specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle
-     * System ID (SID) of the created DB instance. If you specify <code>null</code>,
-     * the default value <code>ORCL</code> is used. You can't specify the string NULL,
-     * or any other reserved word, for <code>DBName</code>. </p> <p>Default:
-     * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
-     * characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be
-     * null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the database to create
-     * when the primary instance of the DB cluster is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul>
+     * letters or numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent
+     * characters can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't
+     * be a word reserved by the specified database engine</p> </li> </ul> <p>
+     * <b>MariaDB</b> </p> <p>The name of the database to create when the DB instance
+     * is created. If this parameter isn't specified, no database is created in the DB
+     * instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or
+     * numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent characters can
+     * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
+     * </p> <p>The name of the database to create when the DB instance is created. If
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
+     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
+     * <p>The Oracle System ID (SID) of the created DB instance. If you specify
+     * <code>null</code>, the default value <code>ORCL</code> is used. You can't
+     * specify the string NULL, or any other reserved word, for <code>DBName</code>.
+     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
+     * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
+     * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
+     * database to create when the primary instance of the DB cluster is created. If
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetDBName() const{ return m_dBName; }
 
@@ -88,29 +81,32 @@ namespace Model
      * use.</p> <p> <b>MySQL</b> </p> <p>The name of the database to create when the DB
      * instance is created. If this parameter isn't specified, no database is created
      * in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
-     * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
-     * database engine</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>The name of the
-     * database to create when the DB instance is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter isn't specified, the default "postgres"
-     * database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must
-     * begin with a letter or an underscore. Subsequent characters can be letters,
-     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
-     * specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle
-     * System ID (SID) of the created DB instance. If you specify <code>null</code>,
-     * the default value <code>ORCL</code> is used. You can't specify the string NULL,
-     * or any other reserved word, for <code>DBName</code>. </p> <p>Default:
-     * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
-     * characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be
-     * null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the database to create
-     * when the primary instance of the DB cluster is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul>
+     * letters or numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent
+     * characters can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't
+     * be a word reserved by the specified database engine</p> </li> </ul> <p>
+     * <b>MariaDB</b> </p> <p>The name of the database to create when the DB instance
+     * is created. If this parameter isn't specified, no database is created in the DB
+     * instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or
+     * numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent characters can
+     * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
+     * </p> <p>The name of the database to create when the DB instance is created. If
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
+     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
+     * <p>The Oracle System ID (SID) of the created DB instance. If you specify
+     * <code>null</code>, the default value <code>ORCL</code> is used. You can't
+     * specify the string NULL, or any other reserved word, for <code>DBName</code>.
+     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
+     * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
+     * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
+     * database to create when the primary instance of the DB cluster is created. If
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
+     * </li> </ul>
      */
     inline bool DBNameHasBeenSet() const { return m_dBNameHasBeenSet; }
 
@@ -119,29 +115,32 @@ namespace Model
      * use.</p> <p> <b>MySQL</b> </p> <p>The name of the database to create when the DB
      * instance is created. If this parameter isn't specified, no database is created
      * in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
-     * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
-     * database engine</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>The name of the
-     * database to create when the DB instance is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter isn't specified, the default "postgres"
-     * database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must
-     * begin with a letter or an underscore. Subsequent characters can be letters,
-     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
-     * specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle
-     * System ID (SID) of the created DB instance. If you specify <code>null</code>,
-     * the default value <code>ORCL</code> is used. You can't specify the string NULL,
-     * or any other reserved word, for <code>DBName</code>. </p> <p>Default:
-     * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
-     * characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be
-     * null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the database to create
-     * when the primary instance of the DB cluster is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul>
+     * letters or numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent
+     * characters can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't
+     * be a word reserved by the specified database engine</p> </li> </ul> <p>
+     * <b>MariaDB</b> </p> <p>The name of the database to create when the DB instance
+     * is created. If this parameter isn't specified, no database is created in the DB
+     * instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or
+     * numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent characters can
+     * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
+     * </p> <p>The name of the database to create when the DB instance is created. If
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
+     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
+     * <p>The Oracle System ID (SID) of the created DB instance. If you specify
+     * <code>null</code>, the default value <code>ORCL</code> is used. You can't
+     * specify the string NULL, or any other reserved word, for <code>DBName</code>.
+     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
+     * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
+     * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
+     * database to create when the primary instance of the DB cluster is created. If
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
+     * </li> </ul>
      */
     inline void SetDBName(const Aws::String& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
 
@@ -150,29 +149,32 @@ namespace Model
      * use.</p> <p> <b>MySQL</b> </p> <p>The name of the database to create when the DB
      * instance is created. If this parameter isn't specified, no database is created
      * in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
-     * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
-     * database engine</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>The name of the
-     * database to create when the DB instance is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter isn't specified, the default "postgres"
-     * database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must
-     * begin with a letter or an underscore. Subsequent characters can be letters,
-     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
-     * specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle
-     * System ID (SID) of the created DB instance. If you specify <code>null</code>,
-     * the default value <code>ORCL</code> is used. You can't specify the string NULL,
-     * or any other reserved word, for <code>DBName</code>. </p> <p>Default:
-     * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
-     * characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be
-     * null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the database to create
-     * when the primary instance of the DB cluster is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul>
+     * letters or numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent
+     * characters can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't
+     * be a word reserved by the specified database engine</p> </li> </ul> <p>
+     * <b>MariaDB</b> </p> <p>The name of the database to create when the DB instance
+     * is created. If this parameter isn't specified, no database is created in the DB
+     * instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or
+     * numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent characters can
+     * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
+     * </p> <p>The name of the database to create when the DB instance is created. If
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
+     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
+     * <p>The Oracle System ID (SID) of the created DB instance. If you specify
+     * <code>null</code>, the default value <code>ORCL</code> is used. You can't
+     * specify the string NULL, or any other reserved word, for <code>DBName</code>.
+     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
+     * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
+     * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
+     * database to create when the primary instance of the DB cluster is created. If
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
+     * </li> </ul>
      */
     inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = std::move(value); }
 
@@ -181,29 +183,32 @@ namespace Model
      * use.</p> <p> <b>MySQL</b> </p> <p>The name of the database to create when the DB
      * instance is created. If this parameter isn't specified, no database is created
      * in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
-     * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
-     * database engine</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>The name of the
-     * database to create when the DB instance is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter isn't specified, the default "postgres"
-     * database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must
-     * begin with a letter or an underscore. Subsequent characters can be letters,
-     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
-     * specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle
-     * System ID (SID) of the created DB instance. If you specify <code>null</code>,
-     * the default value <code>ORCL</code> is used. You can't specify the string NULL,
-     * or any other reserved word, for <code>DBName</code>. </p> <p>Default:
-     * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
-     * characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be
-     * null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the database to create
-     * when the primary instance of the DB cluster is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul>
+     * letters or numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent
+     * characters can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't
+     * be a word reserved by the specified database engine</p> </li> </ul> <p>
+     * <b>MariaDB</b> </p> <p>The name of the database to create when the DB instance
+     * is created. If this parameter isn't specified, no database is created in the DB
+     * instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or
+     * numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent characters can
+     * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
+     * </p> <p>The name of the database to create when the DB instance is created. If
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
+     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
+     * <p>The Oracle System ID (SID) of the created DB instance. If you specify
+     * <code>null</code>, the default value <code>ORCL</code> is used. You can't
+     * specify the string NULL, or any other reserved word, for <code>DBName</code>.
+     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
+     * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
+     * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
+     * database to create when the primary instance of the DB cluster is created. If
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
+     * </li> </ul>
      */
     inline void SetDBName(const char* value) { m_dBNameHasBeenSet = true; m_dBName.assign(value); }
 
@@ -212,29 +217,32 @@ namespace Model
      * use.</p> <p> <b>MySQL</b> </p> <p>The name of the database to create when the DB
      * instance is created. If this parameter isn't specified, no database is created
      * in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
-     * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
-     * database engine</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>The name of the
-     * database to create when the DB instance is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter isn't specified, the default "postgres"
-     * database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must
-     * begin with a letter or an underscore. Subsequent characters can be letters,
-     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
-     * specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle
-     * System ID (SID) of the created DB instance. If you specify <code>null</code>,
-     * the default value <code>ORCL</code> is used. You can't specify the string NULL,
-     * or any other reserved word, for <code>DBName</code>. </p> <p>Default:
-     * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
-     * characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be
-     * null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the database to create
-     * when the primary instance of the DB cluster is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul>
+     * letters or numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent
+     * characters can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't
+     * be a word reserved by the specified database engine</p> </li> </ul> <p>
+     * <b>MariaDB</b> </p> <p>The name of the database to create when the DB instance
+     * is created. If this parameter isn't specified, no database is created in the DB
+     * instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or
+     * numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent characters can
+     * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
+     * </p> <p>The name of the database to create when the DB instance is created. If
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
+     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
+     * <p>The Oracle System ID (SID) of the created DB instance. If you specify
+     * <code>null</code>, the default value <code>ORCL</code> is used. You can't
+     * specify the string NULL, or any other reserved word, for <code>DBName</code>.
+     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
+     * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
+     * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
+     * database to create when the primary instance of the DB cluster is created. If
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
+     * </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBName(const Aws::String& value) { SetDBName(value); return *this;}
 
@@ -243,29 +251,32 @@ namespace Model
      * use.</p> <p> <b>MySQL</b> </p> <p>The name of the database to create when the DB
      * instance is created. If this parameter isn't specified, no database is created
      * in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
-     * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
-     * database engine</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>The name of the
-     * database to create when the DB instance is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter isn't specified, the default "postgres"
-     * database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must
-     * begin with a letter or an underscore. Subsequent characters can be letters,
-     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
-     * specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle
-     * System ID (SID) of the created DB instance. If you specify <code>null</code>,
-     * the default value <code>ORCL</code> is used. You can't specify the string NULL,
-     * or any other reserved word, for <code>DBName</code>. </p> <p>Default:
-     * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
-     * characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be
-     * null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the database to create
-     * when the primary instance of the DB cluster is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul>
+     * letters or numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent
+     * characters can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't
+     * be a word reserved by the specified database engine</p> </li> </ul> <p>
+     * <b>MariaDB</b> </p> <p>The name of the database to create when the DB instance
+     * is created. If this parameter isn't specified, no database is created in the DB
+     * instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or
+     * numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent characters can
+     * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
+     * </p> <p>The name of the database to create when the DB instance is created. If
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
+     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
+     * <p>The Oracle System ID (SID) of the created DB instance. If you specify
+     * <code>null</code>, the default value <code>ORCL</code> is used. You can't
+     * specify the string NULL, or any other reserved word, for <code>DBName</code>.
+     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
+     * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
+     * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
+     * database to create when the primary instance of the DB cluster is created. If
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
+     * </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBName(Aws::String&& value) { SetDBName(std::move(value)); return *this;}
 
@@ -274,29 +285,32 @@ namespace Model
      * use.</p> <p> <b>MySQL</b> </p> <p>The name of the database to create when the DB
      * instance is created. If this parameter isn't specified, no database is created
      * in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
-     * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
-     * database engine</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>The name of the
-     * database to create when the DB instance is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter isn't specified, the default "postgres"
-     * database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must
-     * begin with a letter or an underscore. Subsequent characters can be letters,
-     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
-     * specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle
-     * System ID (SID) of the created DB instance. If you specify <code>null</code>,
-     * the default value <code>ORCL</code> is used. You can't specify the string NULL,
-     * or any other reserved word, for <code>DBName</code>. </p> <p>Default:
-     * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
-     * characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be
-     * null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the database to create
-     * when the primary instance of the DB cluster is created. If this parameter isn't
-     * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
-     * a word reserved by the specified database engine</p> </li> </ul>
+     * letters or numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent
+     * characters can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't
+     * be a word reserved by the specified database engine</p> </li> </ul> <p>
+     * <b>MariaDB</b> </p> <p>The name of the database to create when the DB instance
+     * is created. If this parameter isn't specified, no database is created in the DB
+     * instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or
+     * numbers.</p> </li> <li> <p>Must begin with a letter. Subsequent characters can
+     * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
+     * </p> <p>The name of the database to create when the DB instance is created. If
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
+     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
+     * <p>The Oracle System ID (SID) of the created DB instance. If you specify
+     * <code>null</code>, the default value <code>ORCL</code> is used. You can't
+     * specify the string NULL, or any other reserved word, for <code>DBName</code>.
+     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
+     * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
+     * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
+     * database to create when the primary instance of the DB cluster is created. If
+     * this parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
+     * </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBName(const char* value) { SetDBName(value); return *this;}
 
@@ -1176,11 +1190,11 @@ namespace Model
      * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
      * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
      * specified Availability Zone must be in the same AWS Region as the current
-     * endpoint. </p> <note> <p>If you're creating a DB instance in an RDS on VMware
+     * endpoint. </p>  <p>If you're creating a DB instance in an RDS on VMware
      * environment, specify the identifier of the custom Availability Zone to create
      * the DB instance in.</p> <p>For more information about RDS on VMware, see the <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-     * <i>RDS on VMware User Guide.</i> </a> </p> </note>
+     * RDS on VMware User Guide.</a> </p> 
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
@@ -1193,11 +1207,11 @@ namespace Model
      * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
      * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
      * specified Availability Zone must be in the same AWS Region as the current
-     * endpoint. </p> <note> <p>If you're creating a DB instance in an RDS on VMware
+     * endpoint. </p>  <p>If you're creating a DB instance in an RDS on VMware
      * environment, specify the identifier of the custom Availability Zone to create
      * the DB instance in.</p> <p>For more information about RDS on VMware, see the <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-     * <i>RDS on VMware User Guide.</i> </a> </p> </note>
+     * RDS on VMware User Guide.</a> </p> 
      */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
@@ -1210,11 +1224,11 @@ namespace Model
      * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
      * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
      * specified Availability Zone must be in the same AWS Region as the current
-     * endpoint. </p> <note> <p>If you're creating a DB instance in an RDS on VMware
+     * endpoint. </p>  <p>If you're creating a DB instance in an RDS on VMware
      * environment, specify the identifier of the custom Availability Zone to create
      * the DB instance in.</p> <p>For more information about RDS on VMware, see the <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-     * <i>RDS on VMware User Guide.</i> </a> </p> </note>
+     * RDS on VMware User Guide.</a> </p> 
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
@@ -1227,11 +1241,11 @@ namespace Model
      * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
      * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
      * specified Availability Zone must be in the same AWS Region as the current
-     * endpoint. </p> <note> <p>If you're creating a DB instance in an RDS on VMware
+     * endpoint. </p>  <p>If you're creating a DB instance in an RDS on VMware
      * environment, specify the identifier of the custom Availability Zone to create
      * the DB instance in.</p> <p>For more information about RDS on VMware, see the <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-     * <i>RDS on VMware User Guide.</i> </a> </p> </note>
+     * RDS on VMware User Guide.</a> </p> 
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
@@ -1244,11 +1258,11 @@ namespace Model
      * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
      * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
      * specified Availability Zone must be in the same AWS Region as the current
-     * endpoint. </p> <note> <p>If you're creating a DB instance in an RDS on VMware
+     * endpoint. </p>  <p>If you're creating a DB instance in an RDS on VMware
      * environment, specify the identifier of the custom Availability Zone to create
      * the DB instance in.</p> <p>For more information about RDS on VMware, see the <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-     * <i>RDS on VMware User Guide.</i> </a> </p> </note>
+     * RDS on VMware User Guide.</a> </p> 
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
@@ -1261,11 +1275,11 @@ namespace Model
      * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
      * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
      * specified Availability Zone must be in the same AWS Region as the current
-     * endpoint. </p> <note> <p>If you're creating a DB instance in an RDS on VMware
+     * endpoint. </p>  <p>If you're creating a DB instance in an RDS on VMware
      * environment, specify the identifier of the custom Availability Zone to create
      * the DB instance in.</p> <p>For more information about RDS on VMware, see the <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-     * <i>RDS on VMware User Guide.</i> </a> </p> </note>
+     * RDS on VMware User Guide.</a> </p> 
      */
     inline CreateDBInstanceRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
@@ -1278,11 +1292,11 @@ namespace Model
      * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
      * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
      * specified Availability Zone must be in the same AWS Region as the current
-     * endpoint. </p> <note> <p>If you're creating a DB instance in an RDS on VMware
+     * endpoint. </p>  <p>If you're creating a DB instance in an RDS on VMware
      * environment, specify the identifier of the custom Availability Zone to create
      * the DB instance in.</p> <p>For more information about RDS on VMware, see the <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-     * <i>RDS on VMware User Guide.</i> </a> </p> </note>
+     * RDS on VMware User Guide.</a> </p> 
      */
     inline CreateDBInstanceRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
@@ -1295,11 +1309,11 @@ namespace Model
      * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
      * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
      * specified Availability Zone must be in the same AWS Region as the current
-     * endpoint. </p> <note> <p>If you're creating a DB instance in an RDS on VMware
+     * endpoint. </p>  <p>If you're creating a DB instance in an RDS on VMware
      * environment, specify the identifier of the custom Availability Zone to create
      * the DB instance in.</p> <p>For more information about RDS on VMware, see the <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-     * <i>RDS on VMware User Guide.</i> </a> </p> </note>
+     * RDS on VMware User Guide.</a> </p> 
      */
     inline CreateDBInstanceRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
@@ -1838,8 +1852,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
-     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
+     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p> <b>MySQL</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
@@ -1863,8 +1877,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
-     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
+     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p> <b>MySQL</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
@@ -1888,8 +1902,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
-     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
+     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p> <b>MySQL</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
@@ -1913,8 +1927,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
-     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
+     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p> <b>MySQL</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
@@ -1938,8 +1952,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
-     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
+     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p> <b>MySQL</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
@@ -1963,8 +1977,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
-     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
+     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p> <b>MySQL</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
@@ -1988,8 +2002,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
-     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
+     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p> <b>MySQL</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
@@ -2013,8 +2027,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
-     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
+     * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p> <b>MySQL</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
@@ -2298,13 +2312,57 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible. When
-     * the DB instance is publicly accessible, it is an Internet-facing instance with a
-     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance isn't publicly accessible, it is an internal instance with a DNS name
-     * that resolves to a private IP address.</p> <p>Default: The default behavior
-     * varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
-     * <p>If <code>DBSubnetGroupName</code> isn't specified, and
+     * <p>The name of the NCHAR character set for the Oracle DB instance.</p>
+     */
+    inline const Aws::String& GetNcharCharacterSetName() const{ return m_ncharCharacterSetName; }
+
+    /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance.</p>
+     */
+    inline bool NcharCharacterSetNameHasBeenSet() const { return m_ncharCharacterSetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance.</p>
+     */
+    inline void SetNcharCharacterSetName(const Aws::String& value) { m_ncharCharacterSetNameHasBeenSet = true; m_ncharCharacterSetName = value; }
+
+    /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance.</p>
+     */
+    inline void SetNcharCharacterSetName(Aws::String&& value) { m_ncharCharacterSetNameHasBeenSet = true; m_ncharCharacterSetName = std::move(value); }
+
+    /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance.</p>
+     */
+    inline void SetNcharCharacterSetName(const char* value) { m_ncharCharacterSetNameHasBeenSet = true; m_ncharCharacterSetName.assign(value); }
+
+    /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance.</p>
+     */
+    inline CreateDBInstanceRequest& WithNcharCharacterSetName(const Aws::String& value) { SetNcharCharacterSetName(value); return *this;}
+
+    /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance.</p>
+     */
+    inline CreateDBInstanceRequest& WithNcharCharacterSetName(Aws::String&& value) { SetNcharCharacterSetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance.</p>
+     */
+    inline CreateDBInstanceRequest& WithNcharCharacterSetName(const char* value) { SetNcharCharacterSetName(value); return *this;}
+
+
+    /**
+     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
+     * <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the
+     * private IP address from within the DB instance's VPC, and to the public IP
+     * address from outside of the DB instance's VPC. Access to the DB instance is
+     * ultimately controlled by the security group it uses, and that public access is
+     * not permitted if the security group assigned to the DB instance doesn't permit
+     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
+     * instance with a DNS name that resolves to a private IP address.</p> <p>Default:
+     * The default behavior varies depending on whether <code>DBSubnetGroupName</code>
+     * is specified.</p> <p>If <code>DBSubnetGroupName</code> isn't specified, and
      * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
      * <li> <p>If the default VPC in the target region doesn’t have an Internet gateway
      * attached to it, the DB instance is private.</p> </li> <li> <p>If the default VPC
@@ -2319,13 +2377,16 @@ namespace Model
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible. When
-     * the DB instance is publicly accessible, it is an Internet-facing instance with a
-     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance isn't publicly accessible, it is an internal instance with a DNS name
-     * that resolves to a private IP address.</p> <p>Default: The default behavior
-     * varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
-     * <p>If <code>DBSubnetGroupName</code> isn't specified, and
+     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
+     * <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the
+     * private IP address from within the DB instance's VPC, and to the public IP
+     * address from outside of the DB instance's VPC. Access to the DB instance is
+     * ultimately controlled by the security group it uses, and that public access is
+     * not permitted if the security group assigned to the DB instance doesn't permit
+     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
+     * instance with a DNS name that resolves to a private IP address.</p> <p>Default:
+     * The default behavior varies depending on whether <code>DBSubnetGroupName</code>
+     * is specified.</p> <p>If <code>DBSubnetGroupName</code> isn't specified, and
      * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
      * <li> <p>If the default VPC in the target region doesn’t have an Internet gateway
      * attached to it, the DB instance is private.</p> </li> <li> <p>If the default VPC
@@ -2340,13 +2401,16 @@ namespace Model
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible. When
-     * the DB instance is publicly accessible, it is an Internet-facing instance with a
-     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance isn't publicly accessible, it is an internal instance with a DNS name
-     * that resolves to a private IP address.</p> <p>Default: The default behavior
-     * varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
-     * <p>If <code>DBSubnetGroupName</code> isn't specified, and
+     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
+     * <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the
+     * private IP address from within the DB instance's VPC, and to the public IP
+     * address from outside of the DB instance's VPC. Access to the DB instance is
+     * ultimately controlled by the security group it uses, and that public access is
+     * not permitted if the security group assigned to the DB instance doesn't permit
+     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
+     * instance with a DNS name that resolves to a private IP address.</p> <p>Default:
+     * The default behavior varies depending on whether <code>DBSubnetGroupName</code>
+     * is specified.</p> <p>If <code>DBSubnetGroupName</code> isn't specified, and
      * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
      * <li> <p>If the default VPC in the target region doesn’t have an Internet gateway
      * attached to it, the DB instance is private.</p> </li> <li> <p>If the default VPC
@@ -2361,13 +2425,16 @@ namespace Model
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible. When
-     * the DB instance is publicly accessible, it is an Internet-facing instance with a
-     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance isn't publicly accessible, it is an internal instance with a DNS name
-     * that resolves to a private IP address.</p> <p>Default: The default behavior
-     * varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
-     * <p>If <code>DBSubnetGroupName</code> isn't specified, and
+     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
+     * <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the
+     * private IP address from within the DB instance's VPC, and to the public IP
+     * address from outside of the DB instance's VPC. Access to the DB instance is
+     * ultimately controlled by the security group it uses, and that public access is
+     * not permitted if the security group assigned to the DB instance doesn't permit
+     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
+     * instance with a DNS name that resolves to a private IP address.</p> <p>Default:
+     * The default behavior varies depending on whether <code>DBSubnetGroupName</code>
+     * is specified.</p> <p>If <code>DBSubnetGroupName</code> isn't specified, and
      * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
      * <li> <p>If the default VPC in the target region doesn’t have an Internet gateway
      * attached to it, the DB instance is private.</p> </li> <li> <p>If the default VPC
@@ -2665,259 +2732,179 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
-     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB instance with the same AWS account that owns the KMS
-     * encryption key used to encrypt the new DB instance, then you can use the KMS key
-     * alias instead of the ARN for the KM encryption key.</p> <p> <b>Amazon Aurora</b>
-     * </p> <p>Not applicable. The KMS key identifier is managed by the DB cluster. For
-     * more information, see <code>CreateDBCluster</code>.</p> <p>If
-     * <code>StorageEncrypted</code> is enabled, and you do not specify a value for the
-     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * customer master key (CMK). To use a CMK in a different AWS account, specify the
+     * key ARN or alias ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * AWS KMS key identifier is managed by the DB cluster. For more information, see
+     * <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
+     * enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter,
+     * then Amazon RDS uses your default CMK. There is a default CMK for your AWS
+     * account. Your AWS account has a different default CMK for each AWS Region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
-     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB instance with the same AWS account that owns the KMS
-     * encryption key used to encrypt the new DB instance, then you can use the KMS key
-     * alias instead of the ARN for the KM encryption key.</p> <p> <b>Amazon Aurora</b>
-     * </p> <p>Not applicable. The KMS key identifier is managed by the DB cluster. For
-     * more information, see <code>CreateDBCluster</code>.</p> <p>If
-     * <code>StorageEncrypted</code> is enabled, and you do not specify a value for the
-     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * customer master key (CMK). To use a CMK in a different AWS account, specify the
+     * key ARN or alias ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * AWS KMS key identifier is managed by the DB cluster. For more information, see
+     * <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
+     * enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter,
+     * then Amazon RDS uses your default CMK. There is a default CMK for your AWS
+     * account. Your AWS account has a different default CMK for each AWS Region.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
-     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB instance with the same AWS account that owns the KMS
-     * encryption key used to encrypt the new DB instance, then you can use the KMS key
-     * alias instead of the ARN for the KM encryption key.</p> <p> <b>Amazon Aurora</b>
-     * </p> <p>Not applicable. The KMS key identifier is managed by the DB cluster. For
-     * more information, see <code>CreateDBCluster</code>.</p> <p>If
-     * <code>StorageEncrypted</code> is enabled, and you do not specify a value for the
-     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * customer master key (CMK). To use a CMK in a different AWS account, specify the
+     * key ARN or alias ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * AWS KMS key identifier is managed by the DB cluster. For more information, see
+     * <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
+     * enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter,
+     * then Amazon RDS uses your default CMK. There is a default CMK for your AWS
+     * account. Your AWS account has a different default CMK for each AWS Region.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
-     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB instance with the same AWS account that owns the KMS
-     * encryption key used to encrypt the new DB instance, then you can use the KMS key
-     * alias instead of the ARN for the KM encryption key.</p> <p> <b>Amazon Aurora</b>
-     * </p> <p>Not applicable. The KMS key identifier is managed by the DB cluster. For
-     * more information, see <code>CreateDBCluster</code>.</p> <p>If
-     * <code>StorageEncrypted</code> is enabled, and you do not specify a value for the
-     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * customer master key (CMK). To use a CMK in a different AWS account, specify the
+     * key ARN or alias ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * AWS KMS key identifier is managed by the DB cluster. For more information, see
+     * <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
+     * enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter,
+     * then Amazon RDS uses your default CMK. There is a default CMK for your AWS
+     * account. Your AWS account has a different default CMK for each AWS Region.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
-     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB instance with the same AWS account that owns the KMS
-     * encryption key used to encrypt the new DB instance, then you can use the KMS key
-     * alias instead of the ARN for the KM encryption key.</p> <p> <b>Amazon Aurora</b>
-     * </p> <p>Not applicable. The KMS key identifier is managed by the DB cluster. For
-     * more information, see <code>CreateDBCluster</code>.</p> <p>If
-     * <code>StorageEncrypted</code> is enabled, and you do not specify a value for the
-     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * customer master key (CMK). To use a CMK in a different AWS account, specify the
+     * key ARN or alias ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * AWS KMS key identifier is managed by the DB cluster. For more information, see
+     * <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
+     * enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter,
+     * then Amazon RDS uses your default CMK. There is a default CMK for your AWS
+     * account. Your AWS account has a different default CMK for each AWS Region.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
-     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB instance with the same AWS account that owns the KMS
-     * encryption key used to encrypt the new DB instance, then you can use the KMS key
-     * alias instead of the ARN for the KM encryption key.</p> <p> <b>Amazon Aurora</b>
-     * </p> <p>Not applicable. The KMS key identifier is managed by the DB cluster. For
-     * more information, see <code>CreateDBCluster</code>.</p> <p>If
-     * <code>StorageEncrypted</code> is enabled, and you do not specify a value for the
-     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * customer master key (CMK). To use a CMK in a different AWS account, specify the
+     * key ARN or alias ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * AWS KMS key identifier is managed by the DB cluster. For more information, see
+     * <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
+     * enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter,
+     * then Amazon RDS uses your default CMK. There is a default CMK for your AWS
+     * account. Your AWS account has a different default CMK for each AWS Region.</p>
      */
     inline CreateDBInstanceRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
-     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB instance with the same AWS account that owns the KMS
-     * encryption key used to encrypt the new DB instance, then you can use the KMS key
-     * alias instead of the ARN for the KM encryption key.</p> <p> <b>Amazon Aurora</b>
-     * </p> <p>Not applicable. The KMS key identifier is managed by the DB cluster. For
-     * more information, see <code>CreateDBCluster</code>.</p> <p>If
-     * <code>StorageEncrypted</code> is enabled, and you do not specify a value for the
-     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * customer master key (CMK). To use a CMK in a different AWS account, specify the
+     * key ARN or alias ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * AWS KMS key identifier is managed by the DB cluster. For more information, see
+     * <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
+     * enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter,
+     * then Amazon RDS uses your default CMK. There is a default CMK for your AWS
+     * account. Your AWS account has a different default CMK for each AWS Region.</p>
      */
     inline CreateDBInstanceRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
-     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB instance with the same AWS account that owns the KMS
-     * encryption key used to encrypt the new DB instance, then you can use the KMS key
-     * alias instead of the ARN for the KM encryption key.</p> <p> <b>Amazon Aurora</b>
-     * </p> <p>Not applicable. The KMS key identifier is managed by the DB cluster. For
-     * more information, see <code>CreateDBCluster</code>.</p> <p>If
-     * <code>StorageEncrypted</code> is enabled, and you do not specify a value for the
-     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * customer master key (CMK). To use a CMK in a different AWS account, specify the
+     * key ARN or alias ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * AWS KMS key identifier is managed by the DB cluster. For more information, see
+     * <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
+     * enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter,
+     * then Amazon RDS uses your default CMK. There is a default CMK for your AWS
+     * account. Your AWS account has a different default CMK for each AWS Region.</p>
      */
     inline CreateDBInstanceRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
     /**
      * <p>The Active Directory directory ID to create the DB instance in. Currently,
-     * only Microsoft SQL Server and Oracle DB instances can be created in an Active
-     * Directory Domain.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
-     * use Windows Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
+     * created in an Active Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
      * <p>The Active Directory directory ID to create the DB instance in. Currently,
-     * only Microsoft SQL Server and Oracle DB instances can be created in an Active
-     * Directory Domain.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
-     * use Windows Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
+     * created in an Active Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
      * <p>The Active Directory directory ID to create the DB instance in. Currently,
-     * only Microsoft SQL Server and Oracle DB instances can be created in an Active
-     * Directory Domain.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
-     * use Windows Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
+     * created in an Active Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
      * <p>The Active Directory directory ID to create the DB instance in. Currently,
-     * only Microsoft SQL Server and Oracle DB instances can be created in an Active
-     * Directory Domain.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
-     * use Windows Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
+     * created in an Active Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>The Active Directory directory ID to create the DB instance in. Currently,
-     * only Microsoft SQL Server and Oracle DB instances can be created in an Active
-     * Directory Domain.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
-     * use Windows Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
+     * created in an Active Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
      * <p>The Active Directory directory ID to create the DB instance in. Currently,
-     * only Microsoft SQL Server and Oracle DB instances can be created in an Active
-     * Directory Domain.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
-     * use Windows Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
+     * created in an Active Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline CreateDBInstanceRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
      * <p>The Active Directory directory ID to create the DB instance in. Currently,
-     * only Microsoft SQL Server and Oracle DB instances can be created in an Active
-     * Directory Domain.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
-     * use Windows Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
+     * created in an Active Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline CreateDBInstanceRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>The Active Directory directory ID to create the DB instance in. Currently,
-     * only Microsoft SQL Server and Oracle DB instances can be created in an Active
-     * Directory Domain.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
-     * use Windows Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
-     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
-     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
-     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p>
+     * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
+     * created in an Active Directory Domain.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline CreateDBInstanceRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
@@ -3251,15 +3238,8 @@ namespace Model
     /**
      * <p>A value that indicates whether to enable mapping of AWS Identity and Access
      * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p> <p>You can enable IAM database authentication for the following
-     * database engines:</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Mapping
-     * AWS IAM accounts to database accounts is managed by the DB cluster.</p> <p>
-     * <b>MySQL</b> </p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or higher</p>
-     * </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li> <li>
-     * <p>For MySQL 8.0, minor version 8.0.16 or higher</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <ul> <li> <p>For PostgreSQL 9.5, minor version 9.5.15 or
-     * higher</p> </li> <li> <p>For PostgreSQL 9.6, minor version 9.6.11 or higher</p>
-     * </li> <li> <p>PostgreSQL 10.6, 10.7, and 10.9</p> </li> </ul> <p>For more
+     * disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping AWS IAM
+     * accounts to database accounts is managed by the DB cluster.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
@@ -3270,15 +3250,8 @@ namespace Model
     /**
      * <p>A value that indicates whether to enable mapping of AWS Identity and Access
      * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p> <p>You can enable IAM database authentication for the following
-     * database engines:</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Mapping
-     * AWS IAM accounts to database accounts is managed by the DB cluster.</p> <p>
-     * <b>MySQL</b> </p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or higher</p>
-     * </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li> <li>
-     * <p>For MySQL 8.0, minor version 8.0.16 or higher</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <ul> <li> <p>For PostgreSQL 9.5, minor version 9.5.15 or
-     * higher</p> </li> <li> <p>For PostgreSQL 9.6, minor version 9.6.11 or higher</p>
-     * </li> <li> <p>PostgreSQL 10.6, 10.7, and 10.9</p> </li> </ul> <p>For more
+     * disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping AWS IAM
+     * accounts to database accounts is managed by the DB cluster.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
@@ -3289,15 +3262,8 @@ namespace Model
     /**
      * <p>A value that indicates whether to enable mapping of AWS Identity and Access
      * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p> <p>You can enable IAM database authentication for the following
-     * database engines:</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Mapping
-     * AWS IAM accounts to database accounts is managed by the DB cluster.</p> <p>
-     * <b>MySQL</b> </p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or higher</p>
-     * </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li> <li>
-     * <p>For MySQL 8.0, minor version 8.0.16 or higher</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <ul> <li> <p>For PostgreSQL 9.5, minor version 9.5.15 or
-     * higher</p> </li> <li> <p>For PostgreSQL 9.6, minor version 9.6.11 or higher</p>
-     * </li> <li> <p>PostgreSQL 10.6, 10.7, and 10.9</p> </li> </ul> <p>For more
+     * disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping AWS IAM
+     * accounts to database accounts is managed by the DB cluster.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
@@ -3308,15 +3274,8 @@ namespace Model
     /**
      * <p>A value that indicates whether to enable mapping of AWS Identity and Access
      * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p> <p>You can enable IAM database authentication for the following
-     * database engines:</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Mapping
-     * AWS IAM accounts to database accounts is managed by the DB cluster.</p> <p>
-     * <b>MySQL</b> </p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or higher</p>
-     * </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li> <li>
-     * <p>For MySQL 8.0, minor version 8.0.16 or higher</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <ul> <li> <p>For PostgreSQL 9.5, minor version 9.5.15 or
-     * higher</p> </li> <li> <p>For PostgreSQL 9.6, minor version 9.6.11 or higher</p>
-     * </li> <li> <p>PostgreSQL 10.6, 10.7, and 10.9</p> </li> </ul> <p>For more
+     * disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping AWS IAM
+     * accounts to database accounts is managed by the DB cluster.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
@@ -3363,82 +3322,82 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
+     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a
+     * different default CMK for each AWS Region.</p>
      */
     inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
+     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a
+     * different default CMK for each AWS Region.</p>
      */
     inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
+     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a
+     * different default CMK for each AWS Region.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
+     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a
+     * different default CMK for each AWS Region.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
+     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a
+     * different default CMK for each AWS Region.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
+     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a
+     * different default CMK for each AWS Region.</p>
      */
     inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
+     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a
+     * different default CMK for each AWS Region.</p>
      */
     inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
+     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a
+     * different default CMK for each AWS Region.</p>
      */
     inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
@@ -3474,7 +3433,17 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p>
+     * Database Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. CloudWatch Logs exports are managed by the DB cluster. </p> <p>
+     * <b>MariaDB</b> </p> <p>Possible values are <code>audit</code>,
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>. </p> <p>
+     * <b>Microsoft SQL Server</b> </p> <p>Possible values are <code>agent</code> and
+     * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
+     * <code>alert</code>, <code>audit</code>, <code>listener</code>, and
+     * <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p> <p>Possible values are
+     * <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
 
@@ -3484,7 +3453,17 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p>
+     * Database Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. CloudWatch Logs exports are managed by the DB cluster. </p> <p>
+     * <b>MariaDB</b> </p> <p>Possible values are <code>audit</code>,
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>. </p> <p>
+     * <b>Microsoft SQL Server</b> </p> <p>Possible values are <code>agent</code> and
+     * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
+     * <code>alert</code>, <code>audit</code>, <code>listener</code>, and
+     * <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p> <p>Possible values are
+     * <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline bool EnableCloudwatchLogsExportsHasBeenSet() const { return m_enableCloudwatchLogsExportsHasBeenSet; }
 
@@ -3494,7 +3473,17 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p>
+     * Database Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. CloudWatch Logs exports are managed by the DB cluster. </p> <p>
+     * <b>MariaDB</b> </p> <p>Possible values are <code>audit</code>,
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>. </p> <p>
+     * <b>Microsoft SQL Server</b> </p> <p>Possible values are <code>agent</code> and
+     * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
+     * <code>alert</code>, <code>audit</code>, <code>listener</code>, and
+     * <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p> <p>Possible values are
+     * <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline void SetEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = value; }
 
@@ -3504,7 +3493,17 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p>
+     * Database Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. CloudWatch Logs exports are managed by the DB cluster. </p> <p>
+     * <b>MariaDB</b> </p> <p>Possible values are <code>audit</code>,
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>. </p> <p>
+     * <b>Microsoft SQL Server</b> </p> <p>Possible values are <code>agent</code> and
+     * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
+     * <code>alert</code>, <code>audit</code>, <code>listener</code>, and
+     * <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p> <p>Possible values are
+     * <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline void SetEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = std::move(value); }
 
@@ -3514,7 +3513,17 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p>
+     * Database Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. CloudWatch Logs exports are managed by the DB cluster. </p> <p>
+     * <b>MariaDB</b> </p> <p>Possible values are <code>audit</code>,
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>. </p> <p>
+     * <b>Microsoft SQL Server</b> </p> <p>Possible values are <code>agent</code> and
+     * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
+     * <code>alert</code>, <code>audit</code>, <code>listener</code>, and
+     * <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p> <p>Possible values are
+     * <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline CreateDBInstanceRequest& WithEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnableCloudwatchLogsExports(value); return *this;}
 
@@ -3524,7 +3533,17 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p>
+     * Database Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. CloudWatch Logs exports are managed by the DB cluster. </p> <p>
+     * <b>MariaDB</b> </p> <p>Possible values are <code>audit</code>,
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>. </p> <p>
+     * <b>Microsoft SQL Server</b> </p> <p>Possible values are <code>agent</code> and
+     * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
+     * <code>alert</code>, <code>audit</code>, <code>listener</code>, and
+     * <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p> <p>Possible values are
+     * <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline CreateDBInstanceRequest& WithEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnableCloudwatchLogsExports(std::move(value)); return *this;}
 
@@ -3534,7 +3553,17 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p>
+     * Database Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. CloudWatch Logs exports are managed by the DB cluster. </p> <p>
+     * <b>MariaDB</b> </p> <p>Possible values are <code>audit</code>,
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>. </p> <p>
+     * <b>Microsoft SQL Server</b> </p> <p>Possible values are <code>agent</code> and
+     * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
+     * <code>alert</code>, <code>audit</code>, <code>listener</code>, and
+     * <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p> <p>Possible values are
+     * <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline CreateDBInstanceRequest& AddEnableCloudwatchLogsExports(const Aws::String& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 
@@ -3544,7 +3573,17 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p>
+     * Database Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. CloudWatch Logs exports are managed by the DB cluster. </p> <p>
+     * <b>MariaDB</b> </p> <p>Possible values are <code>audit</code>,
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>. </p> <p>
+     * <b>Microsoft SQL Server</b> </p> <p>Possible values are <code>agent</code> and
+     * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
+     * <code>alert</code>, <code>audit</code>, <code>listener</code>, and
+     * <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p> <p>Possible values are
+     * <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline CreateDBInstanceRequest& AddEnableCloudwatchLogsExports(Aws::String&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(std::move(value)); return *this; }
 
@@ -3554,7 +3593,17 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p>
+     * Database Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. CloudWatch Logs exports are managed by the DB cluster. </p> <p>
+     * <b>MariaDB</b> </p> <p>Possible values are <code>audit</code>,
+     * <code>error</code>, <code>general</code>, and <code>slowquery</code>. </p> <p>
+     * <b>Microsoft SQL Server</b> </p> <p>Possible values are <code>agent</code> and
+     * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
+     * <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
+     * <code>alert</code>, <code>audit</code>, <code>listener</code>, and
+     * <code>trace</code>. </p> <p> <b>PostgreSQL</b> </p> <p>Possible values are
+     * <code>postgresql</code> and <code>upgrade</code>. </p>
      */
     inline CreateDBInstanceRequest& AddEnableCloudwatchLogsExports(const char* value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 
@@ -3685,6 +3734,67 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithMaxAllocatedStorage(int value) { SetMaxAllocatedStorage(value); return *this;}
 
+
+    /**
+     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
+     * for an RDS on Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or
+     * external connectivity to resources in your Outpost subnets through your
+     * on-premises network. For some use cases, a CoIP can provide lower latency for
+     * connections to the DB instance from outside of its virtual private cloud (VPC)
+     * on your local network.</p> <p>For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     */
+    inline bool GetEnableCustomerOwnedIp() const{ return m_enableCustomerOwnedIp; }
+
+    /**
+     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
+     * for an RDS on Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or
+     * external connectivity to resources in your Outpost subnets through your
+     * on-premises network. For some use cases, a CoIP can provide lower latency for
+     * connections to the DB instance from outside of its virtual private cloud (VPC)
+     * on your local network.</p> <p>For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     */
+    inline bool EnableCustomerOwnedIpHasBeenSet() const { return m_enableCustomerOwnedIpHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
+     * for an RDS on Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or
+     * external connectivity to resources in your Outpost subnets through your
+     * on-premises network. For some use cases, a CoIP can provide lower latency for
+     * connections to the DB instance from outside of its virtual private cloud (VPC)
+     * on your local network.</p> <p>For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     */
+    inline void SetEnableCustomerOwnedIp(bool value) { m_enableCustomerOwnedIpHasBeenSet = true; m_enableCustomerOwnedIp = value; }
+
+    /**
+     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
+     * for an RDS on Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or
+     * external connectivity to resources in your Outpost subnets through your
+     * on-premises network. For some use cases, a CoIP can provide lower latency for
+     * connections to the DB instance from outside of its virtual private cloud (VPC)
+     * on your local network.</p> <p>For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     */
+    inline CreateDBInstanceRequest& WithEnableCustomerOwnedIp(bool value) { SetEnableCustomerOwnedIp(value); return *this;}
+
   private:
 
     Aws::String m_dBName;
@@ -3756,6 +3866,9 @@ namespace Model
     Aws::String m_characterSetName;
     bool m_characterSetNameHasBeenSet;
 
+    Aws::String m_ncharCharacterSetName;
+    bool m_ncharCharacterSetNameHasBeenSet;
+
     bool m_publiclyAccessible;
     bool m_publiclyAccessibleHasBeenSet;
 
@@ -3824,6 +3937,9 @@ namespace Model
 
     int m_maxAllocatedStorage;
     bool m_maxAllocatedStorageHasBeenSet;
+
+    bool m_enableCustomerOwnedIp;
+    bool m_enableCustomerOwnedIpHasBeenSet;
   };
 
 } // namespace Model

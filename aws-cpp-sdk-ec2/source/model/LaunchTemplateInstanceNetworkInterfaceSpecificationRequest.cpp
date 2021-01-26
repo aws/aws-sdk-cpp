@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/LaunchTemplateInstanceNetworkInterfaceSpecificationRequest.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -31,6 +21,8 @@ namespace Model
 {
 
 LaunchTemplateInstanceNetworkInterfaceSpecificationRequest::LaunchTemplateInstanceNetworkInterfaceSpecificationRequest() : 
+    m_associateCarrierIpAddress(false),
+    m_associateCarrierIpAddressHasBeenSet(false),
     m_associatePublicIpAddress(false),
     m_associatePublicIpAddressHasBeenSet(false),
     m_deleteOnTermination(false),
@@ -48,11 +40,15 @@ LaunchTemplateInstanceNetworkInterfaceSpecificationRequest::LaunchTemplateInstan
     m_privateIpAddressesHasBeenSet(false),
     m_secondaryPrivateIpAddressCount(0),
     m_secondaryPrivateIpAddressCountHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_networkCardIndex(0),
+    m_networkCardIndexHasBeenSet(false)
 {
 }
 
 LaunchTemplateInstanceNetworkInterfaceSpecificationRequest::LaunchTemplateInstanceNetworkInterfaceSpecificationRequest(const XmlNode& xmlNode) : 
+    m_associateCarrierIpAddress(false),
+    m_associateCarrierIpAddressHasBeenSet(false),
     m_associatePublicIpAddress(false),
     m_associatePublicIpAddressHasBeenSet(false),
     m_deleteOnTermination(false),
@@ -70,7 +66,9 @@ LaunchTemplateInstanceNetworkInterfaceSpecificationRequest::LaunchTemplateInstan
     m_privateIpAddressesHasBeenSet(false),
     m_secondaryPrivateIpAddressCount(0),
     m_secondaryPrivateIpAddressCountHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_networkCardIndex(0),
+    m_networkCardIndexHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -81,6 +79,12 @@ LaunchTemplateInstanceNetworkInterfaceSpecificationRequest& LaunchTemplateInstan
 
   if(!resultNode.IsNull())
   {
+    XmlNode associateCarrierIpAddressNode = resultNode.FirstChild("AssociateCarrierIpAddress");
+    if(!associateCarrierIpAddressNode.IsNull())
+    {
+      m_associateCarrierIpAddress = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(associateCarrierIpAddressNode.GetText()).c_str()).c_str());
+      m_associateCarrierIpAddressHasBeenSet = true;
+    }
     XmlNode associatePublicIpAddressNode = resultNode.FirstChild("AssociatePublicIpAddress");
     if(!associatePublicIpAddressNode.IsNull())
     {
@@ -177,6 +181,12 @@ LaunchTemplateInstanceNetworkInterfaceSpecificationRequest& LaunchTemplateInstan
       m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
     }
+    XmlNode networkCardIndexNode = resultNode.FirstChild("NetworkCardIndex");
+    if(!networkCardIndexNode.IsNull())
+    {
+      m_networkCardIndex = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkCardIndexNode.GetText()).c_str()).c_str());
+      m_networkCardIndexHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -184,6 +194,11 @@ LaunchTemplateInstanceNetworkInterfaceSpecificationRequest& LaunchTemplateInstan
 
 void LaunchTemplateInstanceNetworkInterfaceSpecificationRequest::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_associateCarrierIpAddressHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AssociateCarrierIpAddress=" << std::boolalpha << m_associateCarrierIpAddress << "&";
+  }
+
   if(m_associatePublicIpAddressHasBeenSet)
   {
       oStream << location << index << locationValue << ".AssociatePublicIpAddress=" << std::boolalpha << m_associatePublicIpAddress << "&";
@@ -265,10 +280,19 @@ void LaunchTemplateInstanceNetworkInterfaceSpecificationRequest::OutputToStream(
       oStream << location << index << locationValue << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
 
+  if(m_networkCardIndexHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NetworkCardIndex=" << m_networkCardIndex << "&";
+  }
+
 }
 
 void LaunchTemplateInstanceNetworkInterfaceSpecificationRequest::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_associateCarrierIpAddressHasBeenSet)
+  {
+      oStream << location << ".AssociateCarrierIpAddress=" << std::boolalpha << m_associateCarrierIpAddress << "&";
+  }
   if(m_associatePublicIpAddressHasBeenSet)
   {
       oStream << location << ".AssociatePublicIpAddress=" << std::boolalpha << m_associatePublicIpAddress << "&";
@@ -336,6 +360,10 @@ void LaunchTemplateInstanceNetworkInterfaceSpecificationRequest::OutputToStream(
   if(m_subnetIdHasBeenSet)
   {
       oStream << location << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
+  }
+  if(m_networkCardIndexHasBeenSet)
+  {
+      oStream << location << ".NetworkCardIndex=" << m_networkCardIndex << "&";
   }
 }
 

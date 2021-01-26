@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/snowball/Snowball_EXPORTS.h>
@@ -27,6 +17,7 @@
 #include <aws/snowball/model/DataTransfer.h>
 #include <aws/snowball/model/JobLogs.h>
 #include <aws/snowball/model/TaxDocuments.h>
+#include <aws/snowball/model/DeviceConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -441,42 +432,42 @@ namespace Model
 
 
     /**
-     * <p>The ID for the address that you want the Snowball shipped to.</p>
+     * <p>The ID for the address that you want the Snow device shipped to.</p>
      */
     inline const Aws::String& GetAddressId() const{ return m_addressId; }
 
     /**
-     * <p>The ID for the address that you want the Snowball shipped to.</p>
+     * <p>The ID for the address that you want the Snow device shipped to.</p>
      */
     inline bool AddressIdHasBeenSet() const { return m_addressIdHasBeenSet; }
 
     /**
-     * <p>The ID for the address that you want the Snowball shipped to.</p>
+     * <p>The ID for the address that you want the Snow device shipped to.</p>
      */
     inline void SetAddressId(const Aws::String& value) { m_addressIdHasBeenSet = true; m_addressId = value; }
 
     /**
-     * <p>The ID for the address that you want the Snowball shipped to.</p>
+     * <p>The ID for the address that you want the Snow device shipped to.</p>
      */
     inline void SetAddressId(Aws::String&& value) { m_addressIdHasBeenSet = true; m_addressId = std::move(value); }
 
     /**
-     * <p>The ID for the address that you want the Snowball shipped to.</p>
+     * <p>The ID for the address that you want the Snow device shipped to.</p>
      */
     inline void SetAddressId(const char* value) { m_addressIdHasBeenSet = true; m_addressId.assign(value); }
 
     /**
-     * <p>The ID for the address that you want the Snowball shipped to.</p>
+     * <p>The ID for the address that you want the Snow device shipped to.</p>
      */
     inline JobMetadata& WithAddressId(const Aws::String& value) { SetAddressId(value); return *this;}
 
     /**
-     * <p>The ID for the address that you want the Snowball shipped to.</p>
+     * <p>The ID for the address that you want the Snow device shipped to.</p>
      */
     inline JobMetadata& WithAddressId(Aws::String&& value) { SetAddressId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the address that you want the Snowball shipped to.</p>
+     * <p>The ID for the address that you want the Snow device shipped to.</p>
      */
     inline JobMetadata& WithAddressId(const char* value) { SetAddressId(value); return *this;}
 
@@ -519,44 +510,44 @@ namespace Model
 
 
     /**
-     * <p>The Snowball capacity preference for this job, specified at job creation. In
-     * US regions, you can choose between 50 TB and 80 TB Snowballs. All other regions
-     * use 80 TB capacity Snowballs.</p>
+     * <p>The Snow device capacity preference for this job, specified at job creation.
+     * In US regions, you can choose between 50 TB and 80 TB Snowballs. All other
+     * regions use 80 TB capacity Snowballs.</p>
      */
     inline const SnowballCapacity& GetSnowballCapacityPreference() const{ return m_snowballCapacityPreference; }
 
     /**
-     * <p>The Snowball capacity preference for this job, specified at job creation. In
-     * US regions, you can choose between 50 TB and 80 TB Snowballs. All other regions
-     * use 80 TB capacity Snowballs.</p>
+     * <p>The Snow device capacity preference for this job, specified at job creation.
+     * In US regions, you can choose between 50 TB and 80 TB Snowballs. All other
+     * regions use 80 TB capacity Snowballs.</p>
      */
     inline bool SnowballCapacityPreferenceHasBeenSet() const { return m_snowballCapacityPreferenceHasBeenSet; }
 
     /**
-     * <p>The Snowball capacity preference for this job, specified at job creation. In
-     * US regions, you can choose between 50 TB and 80 TB Snowballs. All other regions
-     * use 80 TB capacity Snowballs.</p>
+     * <p>The Snow device capacity preference for this job, specified at job creation.
+     * In US regions, you can choose between 50 TB and 80 TB Snowballs. All other
+     * regions use 80 TB capacity Snowballs.</p>
      */
     inline void SetSnowballCapacityPreference(const SnowballCapacity& value) { m_snowballCapacityPreferenceHasBeenSet = true; m_snowballCapacityPreference = value; }
 
     /**
-     * <p>The Snowball capacity preference for this job, specified at job creation. In
-     * US regions, you can choose between 50 TB and 80 TB Snowballs. All other regions
-     * use 80 TB capacity Snowballs.</p>
+     * <p>The Snow device capacity preference for this job, specified at job creation.
+     * In US regions, you can choose between 50 TB and 80 TB Snowballs. All other
+     * regions use 80 TB capacity Snowballs.</p>
      */
     inline void SetSnowballCapacityPreference(SnowballCapacity&& value) { m_snowballCapacityPreferenceHasBeenSet = true; m_snowballCapacityPreference = std::move(value); }
 
     /**
-     * <p>The Snowball capacity preference for this job, specified at job creation. In
-     * US regions, you can choose between 50 TB and 80 TB Snowballs. All other regions
-     * use 80 TB capacity Snowballs.</p>
+     * <p>The Snow device capacity preference for this job, specified at job creation.
+     * In US regions, you can choose between 50 TB and 80 TB Snowballs. All other
+     * regions use 80 TB capacity Snowballs.</p>
      */
     inline JobMetadata& WithSnowballCapacityPreference(const SnowballCapacity& value) { SetSnowballCapacityPreference(value); return *this;}
 
     /**
-     * <p>The Snowball capacity preference for this job, specified at job creation. In
-     * US regions, you can choose between 50 TB and 80 TB Snowballs. All other regions
-     * use 80 TB capacity Snowballs.</p>
+     * <p>The Snow device capacity preference for this job, specified at job creation.
+     * In US regions, you can choose between 50 TB and 80 TB Snowballs. All other
+     * regions use 80 TB capacity Snowballs.</p>
      */
     inline JobMetadata& WithSnowballCapacityPreference(SnowballCapacity&& value) { SetSnowballCapacityPreference(std::move(value)); return *this;}
 
@@ -611,48 +602,48 @@ namespace Model
 
 
     /**
-     * <p>A value that defines the real-time status of a Snowball's data transfer while
-     * the device is at AWS. This data is only available while a job has a
+     * <p>A value that defines the real-time status of a Snow device's data transfer
+     * while the device is at AWS. This data is only available while a job has a
      * <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.</p>
      */
     inline const DataTransfer& GetDataTransferProgress() const{ return m_dataTransferProgress; }
 
     /**
-     * <p>A value that defines the real-time status of a Snowball's data transfer while
-     * the device is at AWS. This data is only available while a job has a
+     * <p>A value that defines the real-time status of a Snow device's data transfer
+     * while the device is at AWS. This data is only available while a job has a
      * <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.</p>
      */
     inline bool DataTransferProgressHasBeenSet() const { return m_dataTransferProgressHasBeenSet; }
 
     /**
-     * <p>A value that defines the real-time status of a Snowball's data transfer while
-     * the device is at AWS. This data is only available while a job has a
+     * <p>A value that defines the real-time status of a Snow device's data transfer
+     * while the device is at AWS. This data is only available while a job has a
      * <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.</p>
      */
     inline void SetDataTransferProgress(const DataTransfer& value) { m_dataTransferProgressHasBeenSet = true; m_dataTransferProgress = value; }
 
     /**
-     * <p>A value that defines the real-time status of a Snowball's data transfer while
-     * the device is at AWS. This data is only available while a job has a
+     * <p>A value that defines the real-time status of a Snow device's data transfer
+     * while the device is at AWS. This data is only available while a job has a
      * <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.</p>
      */
     inline void SetDataTransferProgress(DataTransfer&& value) { m_dataTransferProgressHasBeenSet = true; m_dataTransferProgress = std::move(value); }
 
     /**
-     * <p>A value that defines the real-time status of a Snowball's data transfer while
-     * the device is at AWS. This data is only available while a job has a
+     * <p>A value that defines the real-time status of a Snow device's data transfer
+     * while the device is at AWS. This data is only available while a job has a
      * <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.</p>
      */
     inline JobMetadata& WithDataTransferProgress(const DataTransfer& value) { SetDataTransferProgress(value); return *this;}
 
     /**
-     * <p>A value that defines the real-time status of a Snowball's data transfer while
-     * the device is at AWS. This data is only available while a job has a
+     * <p>A value that defines the real-time status of a Snow device's data transfer
+     * while the device is at AWS. This data is only available while a job has a
      * <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.</p>
      */
@@ -662,48 +653,48 @@ namespace Model
     /**
      * <p>Links to Amazon S3 presigned URLs for the job report and logs. For import
      * jobs, the PDF job report becomes available at the end of the import process. For
-     * export jobs, your job report typically becomes available while the Snowball for
-     * your job part is being delivered to you.</p>
+     * export jobs, your job report typically becomes available while the Snow device
+     * for your job part is being delivered to you.</p>
      */
     inline const JobLogs& GetJobLogInfo() const{ return m_jobLogInfo; }
 
     /**
      * <p>Links to Amazon S3 presigned URLs for the job report and logs. For import
      * jobs, the PDF job report becomes available at the end of the import process. For
-     * export jobs, your job report typically becomes available while the Snowball for
-     * your job part is being delivered to you.</p>
+     * export jobs, your job report typically becomes available while the Snow device
+     * for your job part is being delivered to you.</p>
      */
     inline bool JobLogInfoHasBeenSet() const { return m_jobLogInfoHasBeenSet; }
 
     /**
      * <p>Links to Amazon S3 presigned URLs for the job report and logs. For import
      * jobs, the PDF job report becomes available at the end of the import process. For
-     * export jobs, your job report typically becomes available while the Snowball for
-     * your job part is being delivered to you.</p>
+     * export jobs, your job report typically becomes available while the Snow device
+     * for your job part is being delivered to you.</p>
      */
     inline void SetJobLogInfo(const JobLogs& value) { m_jobLogInfoHasBeenSet = true; m_jobLogInfo = value; }
 
     /**
      * <p>Links to Amazon S3 presigned URLs for the job report and logs. For import
      * jobs, the PDF job report becomes available at the end of the import process. For
-     * export jobs, your job report typically becomes available while the Snowball for
-     * your job part is being delivered to you.</p>
+     * export jobs, your job report typically becomes available while the Snow device
+     * for your job part is being delivered to you.</p>
      */
     inline void SetJobLogInfo(JobLogs&& value) { m_jobLogInfoHasBeenSet = true; m_jobLogInfo = std::move(value); }
 
     /**
      * <p>Links to Amazon S3 presigned URLs for the job report and logs. For import
      * jobs, the PDF job report becomes available at the end of the import process. For
-     * export jobs, your job report typically becomes available while the Snowball for
-     * your job part is being delivered to you.</p>
+     * export jobs, your job report typically becomes available while the Snow device
+     * for your job part is being delivered to you.</p>
      */
     inline JobMetadata& WithJobLogInfo(const JobLogs& value) { SetJobLogInfo(value); return *this;}
 
     /**
      * <p>Links to Amazon S3 presigned URLs for the job report and logs. For import
      * jobs, the PDF job report becomes available at the end of the import process. For
-     * export jobs, your job report typically becomes available while the Snowball for
-     * your job part is being delivered to you.</p>
+     * export jobs, your job report typically becomes available while the Snow device
+     * for your job part is being delivered to you.</p>
      */
     inline JobMetadata& WithJobLogInfo(JobLogs&& value) { SetJobLogInfo(std::move(value)); return *this;}
 
@@ -842,6 +833,25 @@ namespace Model
      */
     inline JobMetadata& WithTaxDocuments(TaxDocuments&& value) { SetTaxDocuments(std::move(value)); return *this;}
 
+
+    
+    inline const DeviceConfiguration& GetDeviceConfiguration() const{ return m_deviceConfiguration; }
+
+    
+    inline bool DeviceConfigurationHasBeenSet() const { return m_deviceConfigurationHasBeenSet; }
+
+    
+    inline void SetDeviceConfiguration(const DeviceConfiguration& value) { m_deviceConfigurationHasBeenSet = true; m_deviceConfiguration = value; }
+
+    
+    inline void SetDeviceConfiguration(DeviceConfiguration&& value) { m_deviceConfigurationHasBeenSet = true; m_deviceConfiguration = std::move(value); }
+
+    
+    inline JobMetadata& WithDeviceConfiguration(const DeviceConfiguration& value) { SetDeviceConfiguration(value); return *this;}
+
+    
+    inline JobMetadata& WithDeviceConfiguration(DeviceConfiguration&& value) { SetDeviceConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_jobId;
@@ -897,6 +907,9 @@ namespace Model
 
     TaxDocuments m_taxDocuments;
     bool m_taxDocumentsHasBeenSet;
+
+    DeviceConfiguration m_deviceConfiguration;
+    bool m_deviceConfigurationHasBeenSet;
   };
 
 } // namespace Model

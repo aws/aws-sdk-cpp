@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/translate/Translate_EXPORTS.h>
@@ -21,14 +11,19 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/translate/model/CreateParallelDataResult.h>
+#include <aws/translate/model/DeleteParallelDataResult.h>
 #include <aws/translate/model/DescribeTextTranslationJobResult.h>
+#include <aws/translate/model/GetParallelDataResult.h>
 #include <aws/translate/model/GetTerminologyResult.h>
 #include <aws/translate/model/ImportTerminologyResult.h>
+#include <aws/translate/model/ListParallelDataResult.h>
 #include <aws/translate/model/ListTerminologiesResult.h>
 #include <aws/translate/model/ListTextTranslationJobsResult.h>
 #include <aws/translate/model/StartTextTranslationJobResult.h>
 #include <aws/translate/model/StopTextTranslationJobResult.h>
 #include <aws/translate/model/TranslateTextResult.h>
+#include <aws/translate/model/UpdateParallelDataResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -69,48 +64,68 @@ namespace Translate
 
 namespace Model
 {
+        class CreateParallelDataRequest;
+        class DeleteParallelDataRequest;
         class DeleteTerminologyRequest;
         class DescribeTextTranslationJobRequest;
+        class GetParallelDataRequest;
         class GetTerminologyRequest;
         class ImportTerminologyRequest;
+        class ListParallelDataRequest;
         class ListTerminologiesRequest;
         class ListTextTranslationJobsRequest;
         class StartTextTranslationJobRequest;
         class StopTextTranslationJobRequest;
         class TranslateTextRequest;
+        class UpdateParallelDataRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<TranslateErrors>> DeleteTerminologyOutcome;
-        typedef Aws::Utils::Outcome<DescribeTextTranslationJobResult, Aws::Client::AWSError<TranslateErrors>> DescribeTextTranslationJobOutcome;
-        typedef Aws::Utils::Outcome<GetTerminologyResult, Aws::Client::AWSError<TranslateErrors>> GetTerminologyOutcome;
-        typedef Aws::Utils::Outcome<ImportTerminologyResult, Aws::Client::AWSError<TranslateErrors>> ImportTerminologyOutcome;
-        typedef Aws::Utils::Outcome<ListTerminologiesResult, Aws::Client::AWSError<TranslateErrors>> ListTerminologiesOutcome;
-        typedef Aws::Utils::Outcome<ListTextTranslationJobsResult, Aws::Client::AWSError<TranslateErrors>> ListTextTranslationJobsOutcome;
-        typedef Aws::Utils::Outcome<StartTextTranslationJobResult, Aws::Client::AWSError<TranslateErrors>> StartTextTranslationJobOutcome;
-        typedef Aws::Utils::Outcome<StopTextTranslationJobResult, Aws::Client::AWSError<TranslateErrors>> StopTextTranslationJobOutcome;
-        typedef Aws::Utils::Outcome<TranslateTextResult, Aws::Client::AWSError<TranslateErrors>> TranslateTextOutcome;
+        typedef Aws::Utils::Outcome<CreateParallelDataResult, TranslateError> CreateParallelDataOutcome;
+        typedef Aws::Utils::Outcome<DeleteParallelDataResult, TranslateError> DeleteParallelDataOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, TranslateError> DeleteTerminologyOutcome;
+        typedef Aws::Utils::Outcome<DescribeTextTranslationJobResult, TranslateError> DescribeTextTranslationJobOutcome;
+        typedef Aws::Utils::Outcome<GetParallelDataResult, TranslateError> GetParallelDataOutcome;
+        typedef Aws::Utils::Outcome<GetTerminologyResult, TranslateError> GetTerminologyOutcome;
+        typedef Aws::Utils::Outcome<ImportTerminologyResult, TranslateError> ImportTerminologyOutcome;
+        typedef Aws::Utils::Outcome<ListParallelDataResult, TranslateError> ListParallelDataOutcome;
+        typedef Aws::Utils::Outcome<ListTerminologiesResult, TranslateError> ListTerminologiesOutcome;
+        typedef Aws::Utils::Outcome<ListTextTranslationJobsResult, TranslateError> ListTextTranslationJobsOutcome;
+        typedef Aws::Utils::Outcome<StartTextTranslationJobResult, TranslateError> StartTextTranslationJobOutcome;
+        typedef Aws::Utils::Outcome<StopTextTranslationJobResult, TranslateError> StopTextTranslationJobOutcome;
+        typedef Aws::Utils::Outcome<TranslateTextResult, TranslateError> TranslateTextOutcome;
+        typedef Aws::Utils::Outcome<UpdateParallelDataResult, TranslateError> UpdateParallelDataOutcome;
 
+        typedef std::future<CreateParallelDataOutcome> CreateParallelDataOutcomeCallable;
+        typedef std::future<DeleteParallelDataOutcome> DeleteParallelDataOutcomeCallable;
         typedef std::future<DeleteTerminologyOutcome> DeleteTerminologyOutcomeCallable;
         typedef std::future<DescribeTextTranslationJobOutcome> DescribeTextTranslationJobOutcomeCallable;
+        typedef std::future<GetParallelDataOutcome> GetParallelDataOutcomeCallable;
         typedef std::future<GetTerminologyOutcome> GetTerminologyOutcomeCallable;
         typedef std::future<ImportTerminologyOutcome> ImportTerminologyOutcomeCallable;
+        typedef std::future<ListParallelDataOutcome> ListParallelDataOutcomeCallable;
         typedef std::future<ListTerminologiesOutcome> ListTerminologiesOutcomeCallable;
         typedef std::future<ListTextTranslationJobsOutcome> ListTextTranslationJobsOutcomeCallable;
         typedef std::future<StartTextTranslationJobOutcome> StartTextTranslationJobOutcomeCallable;
         typedef std::future<StopTextTranslationJobOutcome> StopTextTranslationJobOutcomeCallable;
         typedef std::future<TranslateTextOutcome> TranslateTextOutcomeCallable;
+        typedef std::future<UpdateParallelDataOutcome> UpdateParallelDataOutcomeCallable;
 } // namespace Model
 
   class TranslateClient;
 
+    typedef std::function<void(const TranslateClient*, const Model::CreateParallelDataRequest&, const Model::CreateParallelDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateParallelDataResponseReceivedHandler;
+    typedef std::function<void(const TranslateClient*, const Model::DeleteParallelDataRequest&, const Model::DeleteParallelDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteParallelDataResponseReceivedHandler;
     typedef std::function<void(const TranslateClient*, const Model::DeleteTerminologyRequest&, const Model::DeleteTerminologyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTerminologyResponseReceivedHandler;
     typedef std::function<void(const TranslateClient*, const Model::DescribeTextTranslationJobRequest&, const Model::DescribeTextTranslationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTextTranslationJobResponseReceivedHandler;
+    typedef std::function<void(const TranslateClient*, const Model::GetParallelDataRequest&, const Model::GetParallelDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetParallelDataResponseReceivedHandler;
     typedef std::function<void(const TranslateClient*, const Model::GetTerminologyRequest&, const Model::GetTerminologyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTerminologyResponseReceivedHandler;
     typedef std::function<void(const TranslateClient*, const Model::ImportTerminologyRequest&, const Model::ImportTerminologyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportTerminologyResponseReceivedHandler;
+    typedef std::function<void(const TranslateClient*, const Model::ListParallelDataRequest&, const Model::ListParallelDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListParallelDataResponseReceivedHandler;
     typedef std::function<void(const TranslateClient*, const Model::ListTerminologiesRequest&, const Model::ListTerminologiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTerminologiesResponseReceivedHandler;
     typedef std::function<void(const TranslateClient*, const Model::ListTextTranslationJobsRequest&, const Model::ListTextTranslationJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTextTranslationJobsResponseReceivedHandler;
     typedef std::function<void(const TranslateClient*, const Model::StartTextTranslationJobRequest&, const Model::StartTextTranslationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartTextTranslationJobResponseReceivedHandler;
     typedef std::function<void(const TranslateClient*, const Model::StopTextTranslationJobRequest&, const Model::StopTextTranslationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopTextTranslationJobResponseReceivedHandler;
     typedef std::function<void(const TranslateClient*, const Model::TranslateTextRequest&, const Model::TranslateTextOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TranslateTextResponseReceivedHandler;
+    typedef std::function<void(const TranslateClient*, const Model::UpdateParallelDataRequest&, const Model::UpdateParallelDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateParallelDataResponseReceivedHandler;
 
   /**
    * <p>Provides translation between one source language and another of the same set
@@ -142,8 +157,71 @@ namespace Model
 
         virtual ~TranslateClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Translate"; }
 
+        /**
+         * <p>Creates a parallel data resource in Amazon Translate by importing an input
+         * file from Amazon S3. Parallel data files contain examples of source phrases and
+         * their translations from your translation memory. By adding parallel data, you
+         * can influence the style, tone, and word choice in your translation
+         * output.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/CreateParallelData">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateParallelDataOutcome CreateParallelData(const Model::CreateParallelDataRequest& request) const;
+
+        /**
+         * <p>Creates a parallel data resource in Amazon Translate by importing an input
+         * file from Amazon S3. Parallel data files contain examples of source phrases and
+         * their translations from your translation memory. By adding parallel data, you
+         * can influence the style, tone, and word choice in your translation
+         * output.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/CreateParallelData">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateParallelDataOutcomeCallable CreateParallelDataCallable(const Model::CreateParallelDataRequest& request) const;
+
+        /**
+         * <p>Creates a parallel data resource in Amazon Translate by importing an input
+         * file from Amazon S3. Parallel data files contain examples of source phrases and
+         * their translations from your translation memory. By adding parallel data, you
+         * can influence the style, tone, and word choice in your translation
+         * output.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/CreateParallelData">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateParallelDataAsync(const Model::CreateParallelDataRequest& request, const CreateParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a parallel data resource in Amazon Translate.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/DeleteParallelData">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteParallelDataOutcome DeleteParallelData(const Model::DeleteParallelDataRequest& request) const;
+
+        /**
+         * <p>Deletes a parallel data resource in Amazon Translate.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/DeleteParallelData">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteParallelDataOutcomeCallable DeleteParallelDataCallable(const Model::DeleteParallelDataRequest& request) const;
+
+        /**
+         * <p>Deletes a parallel data resource in Amazon Translate.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/DeleteParallelData">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteParallelDataAsync(const Model::DeleteParallelDataRequest& request, const DeleteParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>A synchronous action that deletes a custom terminology.</p><p><h3>See
@@ -203,6 +281,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeTextTranslationJobAsync(const Model::DescribeTextTranslationJobRequest& request, const DescribeTextTranslationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Provides information about a parallel data resource.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/GetParallelData">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetParallelDataOutcome GetParallelData(const Model::GetParallelDataRequest& request) const;
+
+        /**
+         * <p>Provides information about a parallel data resource.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/GetParallelData">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetParallelDataOutcomeCallable GetParallelDataCallable(const Model::GetParallelDataRequest& request) const;
+
+        /**
+         * <p>Provides information about a parallel data resource.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/GetParallelData">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetParallelDataAsync(const Model::GetParallelDataRequest& request, const GetParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a custom terminology.</p><p><h3>See Also:</h3>   <a
@@ -279,6 +385,34 @@ namespace Model
         virtual void ImportTerminologyAsync(const Model::ImportTerminologyRequest& request, const ImportTerminologyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Provides a list of your parallel data resources in Amazon
+         * Translate.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListParallelData">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListParallelDataOutcome ListParallelData(const Model::ListParallelDataRequest& request) const;
+
+        /**
+         * <p>Provides a list of your parallel data resources in Amazon
+         * Translate.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListParallelData">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListParallelDataOutcomeCallable ListParallelDataCallable(const Model::ListParallelDataRequest& request) const;
+
+        /**
+         * <p>Provides a list of your parallel data resources in Amazon
+         * Translate.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListParallelData">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListParallelDataAsync(const Model::ListParallelDataRequest& request, const ListParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Provides a list of custom terminologies associated with your
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListTerminologies">AWS
@@ -340,9 +474,9 @@ namespace Model
          * more information, see <a>async</a>.</p> <p>Batch translation jobs can be
          * described with the <a>DescribeTextTranslationJob</a> operation, listed with the
          * <a>ListTextTranslationJobs</a> operation, and stopped with the
-         * <a>StopTextTranslationJob</a> operation.</p> <note> <p>Amazon Translate does not
+         * <a>StopTextTranslationJob</a> operation.</p>  <p>Amazon Translate does not
          * support batch translation of multiple source languages at once.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/StartTextTranslationJob">AWS
          * API Reference</a></p>
          */
@@ -354,9 +488,9 @@ namespace Model
          * more information, see <a>async</a>.</p> <p>Batch translation jobs can be
          * described with the <a>DescribeTextTranslationJob</a> operation, listed with the
          * <a>ListTextTranslationJobs</a> operation, and stopped with the
-         * <a>StopTextTranslationJob</a> operation.</p> <note> <p>Amazon Translate does not
+         * <a>StopTextTranslationJob</a> operation.</p>  <p>Amazon Translate does not
          * support batch translation of multiple source languages at once.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/StartTextTranslationJob">AWS
          * API Reference</a></p>
          *
@@ -370,9 +504,9 @@ namespace Model
          * more information, see <a>async</a>.</p> <p>Batch translation jobs can be
          * described with the <a>DescribeTextTranslationJob</a> operation, listed with the
          * <a>ListTextTranslationJobs</a> operation, and stopped with the
-         * <a>StopTextTranslationJob</a> operation.</p> <note> <p>Amazon Translate does not
+         * <a>StopTextTranslationJob</a> operation.</p>  <p>Amazon Translate does not
          * support batch translation of multiple source languages at once.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/StartTextTranslationJob">AWS
          * API Reference</a></p>
          *
@@ -463,19 +597,52 @@ namespace Model
          */
         virtual void TranslateTextAsync(const Model::TranslateTextRequest& request, const TranslateTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Updates a previously created parallel data resource by importing a new input
+         * file from Amazon S3.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/UpdateParallelData">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateParallelDataOutcome UpdateParallelData(const Model::UpdateParallelDataRequest& request) const;
+
+        /**
+         * <p>Updates a previously created parallel data resource by importing a new input
+         * file from Amazon S3.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/UpdateParallelData">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateParallelDataOutcomeCallable UpdateParallelDataCallable(const Model::UpdateParallelDataRequest& request) const;
+
+        /**
+         * <p>Updates a previously created parallel data resource by importing a new input
+         * file from Amazon S3.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/UpdateParallelData">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateParallelDataAsync(const Model::UpdateParallelDataRequest& request, const UpdateParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void CreateParallelDataAsyncHelper(const Model::CreateParallelDataRequest& request, const CreateParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteParallelDataAsyncHelper(const Model::DeleteParallelDataRequest& request, const DeleteParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTerminologyAsyncHelper(const Model::DeleteTerminologyRequest& request, const DeleteTerminologyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTextTranslationJobAsyncHelper(const Model::DescribeTextTranslationJobRequest& request, const DescribeTextTranslationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetParallelDataAsyncHelper(const Model::GetParallelDataRequest& request, const GetParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTerminologyAsyncHelper(const Model::GetTerminologyRequest& request, const GetTerminologyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportTerminologyAsyncHelper(const Model::ImportTerminologyRequest& request, const ImportTerminologyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListParallelDataAsyncHelper(const Model::ListParallelDataRequest& request, const ListParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTerminologiesAsyncHelper(const Model::ListTerminologiesRequest& request, const ListTerminologiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTextTranslationJobsAsyncHelper(const Model::ListTextTranslationJobsRequest& request, const ListTextTranslationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartTextTranslationJobAsyncHelper(const Model::StartTextTranslationJobRequest& request, const StartTextTranslationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopTextTranslationJobAsyncHelper(const Model::StopTextTranslationJobRequest& request, const StopTextTranslationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TranslateTextAsyncHelper(const Model::TranslateTextRequest& request, const TranslateTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateParallelDataAsyncHelper(const Model::UpdateParallelDataRequest& request, const UpdateParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

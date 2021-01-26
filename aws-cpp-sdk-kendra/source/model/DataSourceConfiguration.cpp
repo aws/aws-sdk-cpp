@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kendra/model/DataSourceConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,14 +21,24 @@ namespace Model
 DataSourceConfiguration::DataSourceConfiguration() : 
     m_s3ConfigurationHasBeenSet(false),
     m_sharePointConfigurationHasBeenSet(false),
-    m_databaseConfigurationHasBeenSet(false)
+    m_databaseConfigurationHasBeenSet(false),
+    m_salesforceConfigurationHasBeenSet(false),
+    m_oneDriveConfigurationHasBeenSet(false),
+    m_serviceNowConfigurationHasBeenSet(false),
+    m_confluenceConfigurationHasBeenSet(false),
+    m_googleDriveConfigurationHasBeenSet(false)
 {
 }
 
 DataSourceConfiguration::DataSourceConfiguration(JsonView jsonValue) : 
     m_s3ConfigurationHasBeenSet(false),
     m_sharePointConfigurationHasBeenSet(false),
-    m_databaseConfigurationHasBeenSet(false)
+    m_databaseConfigurationHasBeenSet(false),
+    m_salesforceConfigurationHasBeenSet(false),
+    m_oneDriveConfigurationHasBeenSet(false),
+    m_serviceNowConfigurationHasBeenSet(false),
+    m_confluenceConfigurationHasBeenSet(false),
+    m_googleDriveConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -66,6 +66,41 @@ DataSourceConfiguration& DataSourceConfiguration::operator =(JsonView jsonValue)
     m_databaseConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SalesforceConfiguration"))
+  {
+    m_salesforceConfiguration = jsonValue.GetObject("SalesforceConfiguration");
+
+    m_salesforceConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OneDriveConfiguration"))
+  {
+    m_oneDriveConfiguration = jsonValue.GetObject("OneDriveConfiguration");
+
+    m_oneDriveConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ServiceNowConfiguration"))
+  {
+    m_serviceNowConfiguration = jsonValue.GetObject("ServiceNowConfiguration");
+
+    m_serviceNowConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ConfluenceConfiguration"))
+  {
+    m_confluenceConfiguration = jsonValue.GetObject("ConfluenceConfiguration");
+
+    m_confluenceConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("GoogleDriveConfiguration"))
+  {
+    m_googleDriveConfiguration = jsonValue.GetObject("GoogleDriveConfiguration");
+
+    m_googleDriveConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -88,6 +123,36 @@ JsonValue DataSourceConfiguration::Jsonize() const
   if(m_databaseConfigurationHasBeenSet)
   {
    payload.WithObject("DatabaseConfiguration", m_databaseConfiguration.Jsonize());
+
+  }
+
+  if(m_salesforceConfigurationHasBeenSet)
+  {
+   payload.WithObject("SalesforceConfiguration", m_salesforceConfiguration.Jsonize());
+
+  }
+
+  if(m_oneDriveConfigurationHasBeenSet)
+  {
+   payload.WithObject("OneDriveConfiguration", m_oneDriveConfiguration.Jsonize());
+
+  }
+
+  if(m_serviceNowConfigurationHasBeenSet)
+  {
+   payload.WithObject("ServiceNowConfiguration", m_serviceNowConfiguration.Jsonize());
+
+  }
+
+  if(m_confluenceConfigurationHasBeenSet)
+  {
+   payload.WithObject("ConfluenceConfiguration", m_confluenceConfiguration.Jsonize());
+
+  }
+
+  if(m_googleDriveConfigurationHasBeenSet)
+  {
+   payload.WithObject("GoogleDriveConfiguration", m_googleDriveConfiguration.Jsonize());
 
   }
 

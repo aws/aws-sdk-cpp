@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
@@ -28,6 +18,10 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for
+   * <code>DescribeJobDefinitions</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobDefinitionsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_BATCH_API DescribeJobDefinitionsRequest : public BatchRequest
   {
@@ -106,8 +100,8 @@ namespace Model
      * remaining results of the initial request can be seen by sending another
      * <code>DescribeJobDefinitions</code> request with the returned
      * <code>nextToken</code> value. This value can be between 1 and 100. If this
-     * parameter is not used, then <code>DescribeJobDefinitions</code> returns up to
-     * 100 results and a <code>nextToken</code> value if applicable.</p>
+     * parameter isn't used, then <code>DescribeJobDefinitions</code> returns up to 100
+     * results and a <code>nextToken</code> value if applicable.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
@@ -119,8 +113,8 @@ namespace Model
      * remaining results of the initial request can be seen by sending another
      * <code>DescribeJobDefinitions</code> request with the returned
      * <code>nextToken</code> value. This value can be between 1 and 100. If this
-     * parameter is not used, then <code>DescribeJobDefinitions</code> returns up to
-     * 100 results and a <code>nextToken</code> value if applicable.</p>
+     * parameter isn't used, then <code>DescribeJobDefinitions</code> returns up to 100
+     * results and a <code>nextToken</code> value if applicable.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
@@ -132,8 +126,8 @@ namespace Model
      * remaining results of the initial request can be seen by sending another
      * <code>DescribeJobDefinitions</code> request with the returned
      * <code>nextToken</code> value. This value can be between 1 and 100. If this
-     * parameter is not used, then <code>DescribeJobDefinitions</code> returns up to
-     * 100 results and a <code>nextToken</code> value if applicable.</p>
+     * parameter isn't used, then <code>DescribeJobDefinitions</code> returns up to 100
+     * results and a <code>nextToken</code> value if applicable.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
@@ -145,8 +139,8 @@ namespace Model
      * remaining results of the initial request can be seen by sending another
      * <code>DescribeJobDefinitions</code> request with the returned
      * <code>nextToken</code> value. This value can be between 1 and 100. If this
-     * parameter is not used, then <code>DescribeJobDefinitions</code> returns up to
-     * 100 results and a <code>nextToken</code> value if applicable.</p>
+     * parameter isn't used, then <code>DescribeJobDefinitions</code> returns up to 100
+     * results and a <code>nextToken</code> value if applicable.</p>
      */
     inline DescribeJobDefinitionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -193,42 +187,42 @@ namespace Model
 
 
     /**
-     * <p>The status with which to filter job definitions.</p>
+     * <p>The status used to filter job definitions.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status with which to filter job definitions.</p>
+     * <p>The status used to filter job definitions.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status with which to filter job definitions.</p>
+     * <p>The status used to filter job definitions.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status with which to filter job definitions.</p>
+     * <p>The status used to filter job definitions.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status with which to filter job definitions.</p>
+     * <p>The status used to filter job definitions.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The status with which to filter job definitions.</p>
+     * <p>The status used to filter job definitions.</p>
      */
     inline DescribeJobDefinitionsRequest& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status with which to filter job definitions.</p>
+     * <p>The status used to filter job definitions.</p>
      */
     inline DescribeJobDefinitionsRequest& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status with which to filter job definitions.</p>
+     * <p>The status used to filter job definitions.</p>
      */
     inline DescribeJobDefinitionsRequest& WithStatus(const char* value) { SetStatus(value); return *this;}
 
@@ -239,9 +233,9 @@ namespace Model
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
      * value. This value is <code>null</code> when there are no more results to
-     * return.</p> <note> <p>This token should be treated as an opaque identifier that
-     * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * return.</p>  <p>This token should be treated as an opaque identifier
+     * that's only used to retrieve the next items in a list and not for other
+     * programmatic purposes.</p> 
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -251,9 +245,9 @@ namespace Model
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
      * value. This value is <code>null</code> when there are no more results to
-     * return.</p> <note> <p>This token should be treated as an opaque identifier that
-     * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * return.</p>  <p>This token should be treated as an opaque identifier
+     * that's only used to retrieve the next items in a list and not for other
+     * programmatic purposes.</p> 
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
@@ -263,9 +257,9 @@ namespace Model
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
      * value. This value is <code>null</code> when there are no more results to
-     * return.</p> <note> <p>This token should be treated as an opaque identifier that
-     * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * return.</p>  <p>This token should be treated as an opaque identifier
+     * that's only used to retrieve the next items in a list and not for other
+     * programmatic purposes.</p> 
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -275,9 +269,9 @@ namespace Model
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
      * value. This value is <code>null</code> when there are no more results to
-     * return.</p> <note> <p>This token should be treated as an opaque identifier that
-     * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * return.</p>  <p>This token should be treated as an opaque identifier
+     * that's only used to retrieve the next items in a list and not for other
+     * programmatic purposes.</p> 
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
@@ -287,9 +281,9 @@ namespace Model
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
      * value. This value is <code>null</code> when there are no more results to
-     * return.</p> <note> <p>This token should be treated as an opaque identifier that
-     * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * return.</p>  <p>This token should be treated as an opaque identifier
+     * that's only used to retrieve the next items in a list and not for other
+     * programmatic purposes.</p> 
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
@@ -299,9 +293,9 @@ namespace Model
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
      * value. This value is <code>null</code> when there are no more results to
-     * return.</p> <note> <p>This token should be treated as an opaque identifier that
-     * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * return.</p>  <p>This token should be treated as an opaque identifier
+     * that's only used to retrieve the next items in a list and not for other
+     * programmatic purposes.</p> 
      */
     inline DescribeJobDefinitionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -311,9 +305,9 @@ namespace Model
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
      * value. This value is <code>null</code> when there are no more results to
-     * return.</p> <note> <p>This token should be treated as an opaque identifier that
-     * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * return.</p>  <p>This token should be treated as an opaque identifier
+     * that's only used to retrieve the next items in a list and not for other
+     * programmatic purposes.</p> 
      */
     inline DescribeJobDefinitionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -323,9 +317,9 @@ namespace Model
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
      * value. This value is <code>null</code> when there are no more results to
-     * return.</p> <note> <p>This token should be treated as an opaque identifier that
-     * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * return.</p>  <p>This token should be treated as an opaque identifier
+     * that's only used to retrieve the next items in a list and not for other
+     * programmatic purposes.</p> 
      */
     inline DescribeJobDefinitionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

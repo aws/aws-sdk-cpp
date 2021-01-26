@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/health/Health_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/health/model/EventTypeCategory.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/health/model/EventStatusCode.h>
+#include <aws/health/model/EventScopeCode.h>
 #include <utility>
 
 namespace Aws
@@ -37,7 +28,19 @@ namespace Model
 {
 
   /**
-   * <p>Summary information about an AWS Health event.</p><p><h3>See Also:</h3>   <a
+   * <p>Summary information about an AWS Health event.</p> <p>AWS Health events can
+   * be public or account-specific:</p> <ul> <li> <p> <i>Public events</i> might be
+   * service events that are not specific to an AWS account. For example, if there is
+   * an issue with an AWS Region, AWS Health provides information about the event,
+   * even if you don't use services or resources in that Region.</p> </li> <li> <p>
+   * <i>Account-specific</i> events are specific to either your AWS account or an
+   * account in your organization. For example, if there's an issue with Amazon
+   * Elastic Compute Cloud in a Region that you use, AWS Health provides information
+   * about the event and the affected resources in the account.</p> </li> </ul>
+   * <p>You can determine if an event is public or account-specific by using the
+   * <code>eventScopeCode</code> parameter. For more information, see <a
+   * href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html#AWSHealth-Type-Event-eventScopeCode">eventScopeCode</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/Event">AWS API
    * Reference</a></p>
    */
@@ -477,6 +480,97 @@ namespace Model
      */
     inline Event& WithStatusCode(EventStatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>This parameter specifies if the AWS Health event is a public AWS service
+     * event or an account-specific event.</p> <ul> <li> <p>If the
+     * <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
+     * <code>affectedAccounts</code> value is always empty.</p> </li> <li> <p>If the
+     * <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
+     * <code>affectedAccounts</code> value lists the affected AWS accounts in your
+     * organization. For example, if an event affects a service such as Amazon Elastic
+     * Compute Cloud and you have AWS accounts that use that service, those account IDs
+     * appear in the response.</p> </li> <li> <p>If the <code>eventScopeCode</code>
+     * value is <code>NONE</code>, then the <code>eventArn</code> that you specified in
+     * the request is invalid or doesn't exist.</p> </li> </ul>
+     */
+    inline const EventScopeCode& GetEventScopeCode() const{ return m_eventScopeCode; }
+
+    /**
+     * <p>This parameter specifies if the AWS Health event is a public AWS service
+     * event or an account-specific event.</p> <ul> <li> <p>If the
+     * <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
+     * <code>affectedAccounts</code> value is always empty.</p> </li> <li> <p>If the
+     * <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
+     * <code>affectedAccounts</code> value lists the affected AWS accounts in your
+     * organization. For example, if an event affects a service such as Amazon Elastic
+     * Compute Cloud and you have AWS accounts that use that service, those account IDs
+     * appear in the response.</p> </li> <li> <p>If the <code>eventScopeCode</code>
+     * value is <code>NONE</code>, then the <code>eventArn</code> that you specified in
+     * the request is invalid or doesn't exist.</p> </li> </ul>
+     */
+    inline bool EventScopeCodeHasBeenSet() const { return m_eventScopeCodeHasBeenSet; }
+
+    /**
+     * <p>This parameter specifies if the AWS Health event is a public AWS service
+     * event or an account-specific event.</p> <ul> <li> <p>If the
+     * <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
+     * <code>affectedAccounts</code> value is always empty.</p> </li> <li> <p>If the
+     * <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
+     * <code>affectedAccounts</code> value lists the affected AWS accounts in your
+     * organization. For example, if an event affects a service such as Amazon Elastic
+     * Compute Cloud and you have AWS accounts that use that service, those account IDs
+     * appear in the response.</p> </li> <li> <p>If the <code>eventScopeCode</code>
+     * value is <code>NONE</code>, then the <code>eventArn</code> that you specified in
+     * the request is invalid or doesn't exist.</p> </li> </ul>
+     */
+    inline void SetEventScopeCode(const EventScopeCode& value) { m_eventScopeCodeHasBeenSet = true; m_eventScopeCode = value; }
+
+    /**
+     * <p>This parameter specifies if the AWS Health event is a public AWS service
+     * event or an account-specific event.</p> <ul> <li> <p>If the
+     * <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
+     * <code>affectedAccounts</code> value is always empty.</p> </li> <li> <p>If the
+     * <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
+     * <code>affectedAccounts</code> value lists the affected AWS accounts in your
+     * organization. For example, if an event affects a service such as Amazon Elastic
+     * Compute Cloud and you have AWS accounts that use that service, those account IDs
+     * appear in the response.</p> </li> <li> <p>If the <code>eventScopeCode</code>
+     * value is <code>NONE</code>, then the <code>eventArn</code> that you specified in
+     * the request is invalid or doesn't exist.</p> </li> </ul>
+     */
+    inline void SetEventScopeCode(EventScopeCode&& value) { m_eventScopeCodeHasBeenSet = true; m_eventScopeCode = std::move(value); }
+
+    /**
+     * <p>This parameter specifies if the AWS Health event is a public AWS service
+     * event or an account-specific event.</p> <ul> <li> <p>If the
+     * <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
+     * <code>affectedAccounts</code> value is always empty.</p> </li> <li> <p>If the
+     * <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
+     * <code>affectedAccounts</code> value lists the affected AWS accounts in your
+     * organization. For example, if an event affects a service such as Amazon Elastic
+     * Compute Cloud and you have AWS accounts that use that service, those account IDs
+     * appear in the response.</p> </li> <li> <p>If the <code>eventScopeCode</code>
+     * value is <code>NONE</code>, then the <code>eventArn</code> that you specified in
+     * the request is invalid or doesn't exist.</p> </li> </ul>
+     */
+    inline Event& WithEventScopeCode(const EventScopeCode& value) { SetEventScopeCode(value); return *this;}
+
+    /**
+     * <p>This parameter specifies if the AWS Health event is a public AWS service
+     * event or an account-specific event.</p> <ul> <li> <p>If the
+     * <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
+     * <code>affectedAccounts</code> value is always empty.</p> </li> <li> <p>If the
+     * <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
+     * <code>affectedAccounts</code> value lists the affected AWS accounts in your
+     * organization. For example, if an event affects a service such as Amazon Elastic
+     * Compute Cloud and you have AWS accounts that use that service, those account IDs
+     * appear in the response.</p> </li> <li> <p>If the <code>eventScopeCode</code>
+     * value is <code>NONE</code>, then the <code>eventArn</code> that you specified in
+     * the request is invalid or doesn't exist.</p> </li> </ul>
+     */
+    inline Event& WithEventScopeCode(EventScopeCode&& value) { SetEventScopeCode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -508,6 +602,9 @@ namespace Model
 
     EventStatusCode m_statusCode;
     bool m_statusCodeHasBeenSet;
+
+    EventScopeCode m_eventScopeCode;
+    bool m_eventScopeCodeHasBeenSet;
   };
 
 } // namespace Model

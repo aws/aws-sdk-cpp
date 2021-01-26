@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kendra/Kendra_EXPORTS.h>
@@ -38,10 +28,13 @@ namespace Model
   /**
    * <p>Provides filtering the query results based on document attributes.</p>
    * <p>When you use the <code>AndAllFilters</code> or <code>OrAllFilters</code>,
-   * filters you can use a total of 3 layers. For example, you can use:</p> <ol> <li>
-   * <p> <code>&lt;AndAllFilters&gt;</code> </p> </li> <li> <p> <code>
+   * filters you can use 2 layers under the first attribute filter. For example, you
+   * can use:</p> <p> <code>&lt;AndAllFilters&gt;</code> </p> <ol> <li> <p> <code>
    * &lt;OrAllFilters&gt;</code> </p> </li> <li> <p> <code> &lt;EqualTo&gt;</code>
-   * </p> </li> </ol><p><h3>See Also:</h3>   <a
+   * </p> </li> </ol> <p>If you use more than 2 layers, you receive a
+   * <code>ValidationException</code> exception with the message
+   * "<code>AttributeFilter</code> cannot have a depth of more than 2."</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AttributeFilter">AWS
    * API Reference</a></p>
    */
@@ -200,74 +193,86 @@ namespace Model
 
     /**
      * <p>Returns true when a document contains all of the specified document
-     * attributes.</p>
+     * attributes. This filter is only applicable to <code>StringListValue</code>
+     * metadata.</p>
      */
     inline const DocumentAttribute& GetContainsAll() const{ return m_containsAll; }
 
     /**
      * <p>Returns true when a document contains all of the specified document
-     * attributes.</p>
+     * attributes. This filter is only applicable to <code>StringListValue</code>
+     * metadata.</p>
      */
     inline bool ContainsAllHasBeenSet() const { return m_containsAllHasBeenSet; }
 
     /**
      * <p>Returns true when a document contains all of the specified document
-     * attributes.</p>
+     * attributes. This filter is only applicable to <code>StringListValue</code>
+     * metadata.</p>
      */
     inline void SetContainsAll(const DocumentAttribute& value) { m_containsAllHasBeenSet = true; m_containsAll = value; }
 
     /**
      * <p>Returns true when a document contains all of the specified document
-     * attributes.</p>
+     * attributes. This filter is only applicable to <code>StringListValue</code>
+     * metadata.</p>
      */
     inline void SetContainsAll(DocumentAttribute&& value) { m_containsAllHasBeenSet = true; m_containsAll = std::move(value); }
 
     /**
      * <p>Returns true when a document contains all of the specified document
-     * attributes.</p>
+     * attributes. This filter is only applicable to <code>StringListValue</code>
+     * metadata.</p>
      */
     inline AttributeFilter& WithContainsAll(const DocumentAttribute& value) { SetContainsAll(value); return *this;}
 
     /**
      * <p>Returns true when a document contains all of the specified document
-     * attributes.</p>
+     * attributes. This filter is only applicable to <code>StringListValue</code>
+     * metadata.</p>
      */
     inline AttributeFilter& WithContainsAll(DocumentAttribute&& value) { SetContainsAll(std::move(value)); return *this;}
 
 
     /**
      * <p>Returns true when a document contains any of the specified document
-     * attributes.</p>
+     * attributes. This filter is only applicable to <code>StringListValue</code>
+     * metadata.</p>
      */
     inline const DocumentAttribute& GetContainsAny() const{ return m_containsAny; }
 
     /**
      * <p>Returns true when a document contains any of the specified document
-     * attributes.</p>
+     * attributes. This filter is only applicable to <code>StringListValue</code>
+     * metadata.</p>
      */
     inline bool ContainsAnyHasBeenSet() const { return m_containsAnyHasBeenSet; }
 
     /**
      * <p>Returns true when a document contains any of the specified document
-     * attributes.</p>
+     * attributes. This filter is only applicable to <code>StringListValue</code>
+     * metadata.</p>
      */
     inline void SetContainsAny(const DocumentAttribute& value) { m_containsAnyHasBeenSet = true; m_containsAny = value; }
 
     /**
      * <p>Returns true when a document contains any of the specified document
-     * attributes.</p>
+     * attributes. This filter is only applicable to <code>StringListValue</code>
+     * metadata.</p>
      */
     inline void SetContainsAny(DocumentAttribute&& value) { m_containsAnyHasBeenSet = true; m_containsAny = std::move(value); }
 
     /**
      * <p>Returns true when a document contains any of the specified document
-     * attributes.</p>
+     * attributes. This filter is only applicable to <code>StringListValue</code>
+     * metadata.</p>
      */
     inline AttributeFilter& WithContainsAny(const DocumentAttribute& value) { SetContainsAny(value); return *this;}
 
     /**
      * <p>Returns true when a document contains any of the specified document
-     * attributes.</p>
+     * attributes. This filter is only applicable to <code>StringListValue</code>
+     * metadata.</p>
      */
     inline AttributeFilter& WithContainsAny(DocumentAttribute&& value) { SetContainsAny(std::move(value)); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/managedblockchain/ManagedBlockchain_EXPORTS.h>
@@ -36,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Configuration properties of the member.</p><p><h3>See Also:</h3>   <a
+   * <p>Configuration properties of the member.</p> <p>Applies only to Hyperledger
+   * Fabric.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/MemberConfiguration">AWS
    * API Reference</a></p>
    */
@@ -169,32 +160,38 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Configuration properties for logging events associated with a member of a
+     * Managed Blockchain network.</p>
      */
     inline const MemberLogPublishingConfiguration& GetLogPublishingConfiguration() const{ return m_logPublishingConfiguration; }
 
     /**
-     * <p/>
+     * <p>Configuration properties for logging events associated with a member of a
+     * Managed Blockchain network.</p>
      */
     inline bool LogPublishingConfigurationHasBeenSet() const { return m_logPublishingConfigurationHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Configuration properties for logging events associated with a member of a
+     * Managed Blockchain network.</p>
      */
     inline void SetLogPublishingConfiguration(const MemberLogPublishingConfiguration& value) { m_logPublishingConfigurationHasBeenSet = true; m_logPublishingConfiguration = value; }
 
     /**
-     * <p/>
+     * <p>Configuration properties for logging events associated with a member of a
+     * Managed Blockchain network.</p>
      */
     inline void SetLogPublishingConfiguration(MemberLogPublishingConfiguration&& value) { m_logPublishingConfigurationHasBeenSet = true; m_logPublishingConfiguration = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Configuration properties for logging events associated with a member of a
+     * Managed Blockchain network.</p>
      */
     inline MemberConfiguration& WithLogPublishingConfiguration(const MemberLogPublishingConfiguration& value) { SetLogPublishingConfiguration(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Configuration properties for logging events associated with a member of a
+     * Managed Blockchain network.</p>
      */
     inline MemberConfiguration& WithLogPublishingConfiguration(MemberLogPublishingConfiguration&& value) { SetLogPublishingConfiguration(std::move(value)); return *this;}
 

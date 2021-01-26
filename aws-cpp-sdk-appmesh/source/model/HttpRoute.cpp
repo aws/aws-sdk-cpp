@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/appmesh/model/HttpRoute.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,14 +21,16 @@ namespace Model
 HttpRoute::HttpRoute() : 
     m_actionHasBeenSet(false),
     m_matchHasBeenSet(false),
-    m_retryPolicyHasBeenSet(false)
+    m_retryPolicyHasBeenSet(false),
+    m_timeoutHasBeenSet(false)
 {
 }
 
 HttpRoute::HttpRoute(JsonView jsonValue) : 
     m_actionHasBeenSet(false),
     m_matchHasBeenSet(false),
-    m_retryPolicyHasBeenSet(false)
+    m_retryPolicyHasBeenSet(false),
+    m_timeoutHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -66,6 +58,13 @@ HttpRoute& HttpRoute::operator =(JsonView jsonValue)
     m_retryPolicyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("timeout"))
+  {
+    m_timeout = jsonValue.GetObject("timeout");
+
+    m_timeoutHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -88,6 +87,12 @@ JsonValue HttpRoute::Jsonize() const
   if(m_retryPolicyHasBeenSet)
   {
    payload.WithObject("retryPolicy", m_retryPolicy.Jsonize());
+
+  }
+
+  if(m_timeoutHasBeenSet)
+  {
+   payload.WithObject("timeout", m_timeout.Jsonize());
 
   }
 

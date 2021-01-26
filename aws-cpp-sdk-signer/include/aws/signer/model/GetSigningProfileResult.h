@@ -1,22 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/signer/Signer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/signer/model/SigningProfileRevocationRecord.h>
 #include <aws/signer/model/SigningMaterial.h>
+#include <aws/signer/model/SignatureValidityPeriod.h>
 #include <aws/signer/model/SigningPlatformOverrides.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/signer/model/SigningProfileStatus.h>
@@ -80,6 +72,94 @@ namespace Model
      * <p>The name of the target signing profile.</p>
      */
     inline GetSigningProfileResult& WithProfileName(const char* value) { SetProfileName(value); return *this;}
+
+
+    /**
+     * <p>The current version of the signing profile.</p>
+     */
+    inline const Aws::String& GetProfileVersion() const{ return m_profileVersion; }
+
+    /**
+     * <p>The current version of the signing profile.</p>
+     */
+    inline void SetProfileVersion(const Aws::String& value) { m_profileVersion = value; }
+
+    /**
+     * <p>The current version of the signing profile.</p>
+     */
+    inline void SetProfileVersion(Aws::String&& value) { m_profileVersion = std::move(value); }
+
+    /**
+     * <p>The current version of the signing profile.</p>
+     */
+    inline void SetProfileVersion(const char* value) { m_profileVersion.assign(value); }
+
+    /**
+     * <p>The current version of the signing profile.</p>
+     */
+    inline GetSigningProfileResult& WithProfileVersion(const Aws::String& value) { SetProfileVersion(value); return *this;}
+
+    /**
+     * <p>The current version of the signing profile.</p>
+     */
+    inline GetSigningProfileResult& WithProfileVersion(Aws::String&& value) { SetProfileVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The current version of the signing profile.</p>
+     */
+    inline GetSigningProfileResult& WithProfileVersion(const char* value) { SetProfileVersion(value); return *this;}
+
+
+    /**
+     * <p>The signing profile ARN, including the profile version.</p>
+     */
+    inline const Aws::String& GetProfileVersionArn() const{ return m_profileVersionArn; }
+
+    /**
+     * <p>The signing profile ARN, including the profile version.</p>
+     */
+    inline void SetProfileVersionArn(const Aws::String& value) { m_profileVersionArn = value; }
+
+    /**
+     * <p>The signing profile ARN, including the profile version.</p>
+     */
+    inline void SetProfileVersionArn(Aws::String&& value) { m_profileVersionArn = std::move(value); }
+
+    /**
+     * <p>The signing profile ARN, including the profile version.</p>
+     */
+    inline void SetProfileVersionArn(const char* value) { m_profileVersionArn.assign(value); }
+
+    /**
+     * <p>The signing profile ARN, including the profile version.</p>
+     */
+    inline GetSigningProfileResult& WithProfileVersionArn(const Aws::String& value) { SetProfileVersionArn(value); return *this;}
+
+    /**
+     * <p>The signing profile ARN, including the profile version.</p>
+     */
+    inline GetSigningProfileResult& WithProfileVersionArn(Aws::String&& value) { SetProfileVersionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The signing profile ARN, including the profile version.</p>
+     */
+    inline GetSigningProfileResult& WithProfileVersionArn(const char* value) { SetProfileVersionArn(value); return *this;}
+
+
+    
+    inline const SigningProfileRevocationRecord& GetRevocationRecord() const{ return m_revocationRecord; }
+
+    
+    inline void SetRevocationRecord(const SigningProfileRevocationRecord& value) { m_revocationRecord = value; }
+
+    
+    inline void SetRevocationRecord(SigningProfileRevocationRecord&& value) { m_revocationRecord = std::move(value); }
+
+    
+    inline GetSigningProfileResult& WithRevocationRecord(const SigningProfileRevocationRecord& value) { SetRevocationRecord(value); return *this;}
+
+    
+    inline GetSigningProfileResult& WithRevocationRecord(SigningProfileRevocationRecord&& value) { SetRevocationRecord(std::move(value)); return *this;}
 
 
     /**
@@ -147,6 +227,65 @@ namespace Model
      * <p>The ID of the platform that is used by the target signing profile.</p>
      */
     inline GetSigningProfileResult& WithPlatformId(const char* value) { SetPlatformId(value); return *this;}
+
+
+    /**
+     * <p>A human-readable name for the signing platform associated with the signing
+     * profile.</p>
+     */
+    inline const Aws::String& GetPlatformDisplayName() const{ return m_platformDisplayName; }
+
+    /**
+     * <p>A human-readable name for the signing platform associated with the signing
+     * profile.</p>
+     */
+    inline void SetPlatformDisplayName(const Aws::String& value) { m_platformDisplayName = value; }
+
+    /**
+     * <p>A human-readable name for the signing platform associated with the signing
+     * profile.</p>
+     */
+    inline void SetPlatformDisplayName(Aws::String&& value) { m_platformDisplayName = std::move(value); }
+
+    /**
+     * <p>A human-readable name for the signing platform associated with the signing
+     * profile.</p>
+     */
+    inline void SetPlatformDisplayName(const char* value) { m_platformDisplayName.assign(value); }
+
+    /**
+     * <p>A human-readable name for the signing platform associated with the signing
+     * profile.</p>
+     */
+    inline GetSigningProfileResult& WithPlatformDisplayName(const Aws::String& value) { SetPlatformDisplayName(value); return *this;}
+
+    /**
+     * <p>A human-readable name for the signing platform associated with the signing
+     * profile.</p>
+     */
+    inline GetSigningProfileResult& WithPlatformDisplayName(Aws::String&& value) { SetPlatformDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>A human-readable name for the signing platform associated with the signing
+     * profile.</p>
+     */
+    inline GetSigningProfileResult& WithPlatformDisplayName(const char* value) { SetPlatformDisplayName(value); return *this;}
+
+
+    
+    inline const SignatureValidityPeriod& GetSignatureValidityPeriod() const{ return m_signatureValidityPeriod; }
+
+    
+    inline void SetSignatureValidityPeriod(const SignatureValidityPeriod& value) { m_signatureValidityPeriod = value; }
+
+    
+    inline void SetSignatureValidityPeriod(SignatureValidityPeriod&& value) { m_signatureValidityPeriod = std::move(value); }
+
+    
+    inline GetSigningProfileResult& WithSignatureValidityPeriod(const SignatureValidityPeriod& value) { SetSignatureValidityPeriod(value); return *this;}
+
+    
+    inline GetSigningProfileResult& WithSignatureValidityPeriod(SignatureValidityPeriod&& value) { SetSignatureValidityPeriod(std::move(value)); return *this;}
 
 
     /**
@@ -280,6 +419,42 @@ namespace Model
 
 
     /**
+     * <p>Reason for the status of the target signing profile.</p>
+     */
+    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+
+    /**
+     * <p>Reason for the status of the target signing profile.</p>
+     */
+    inline void SetStatusReason(const Aws::String& value) { m_statusReason = value; }
+
+    /**
+     * <p>Reason for the status of the target signing profile.</p>
+     */
+    inline void SetStatusReason(Aws::String&& value) { m_statusReason = std::move(value); }
+
+    /**
+     * <p>Reason for the status of the target signing profile.</p>
+     */
+    inline void SetStatusReason(const char* value) { m_statusReason.assign(value); }
+
+    /**
+     * <p>Reason for the status of the target signing profile.</p>
+     */
+    inline GetSigningProfileResult& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
+
+    /**
+     * <p>Reason for the status of the target signing profile.</p>
+     */
+    inline GetSigningProfileResult& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
+
+    /**
+     * <p>Reason for the status of the target signing profile.</p>
+     */
+    inline GetSigningProfileResult& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) for the signing profile.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
@@ -379,15 +554,27 @@ namespace Model
 
     Aws::String m_profileName;
 
+    Aws::String m_profileVersion;
+
+    Aws::String m_profileVersionArn;
+
+    SigningProfileRevocationRecord m_revocationRecord;
+
     SigningMaterial m_signingMaterial;
 
     Aws::String m_platformId;
+
+    Aws::String m_platformDisplayName;
+
+    SignatureValidityPeriod m_signatureValidityPeriod;
 
     SigningPlatformOverrides m_overrides;
 
     Aws::Map<Aws::String, Aws::String> m_signingParameters;
 
     SigningProfileStatus m_status;
+
+    Aws::String m_statusReason;
 
     Aws::String m_arn;
 

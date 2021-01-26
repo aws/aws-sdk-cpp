@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/model/CapacityProviderStatus.h>
 #include <aws/ecs/model/AutoScalingGroupProvider.h>
+#include <aws/ecs/model/CapacityProviderUpdateStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/Tag.h>
 #include <utility>
@@ -135,37 +126,43 @@ namespace Model
 
     /**
      * <p>The current status of the capacity provider. Only capacity providers in an
-     * <code>ACTIVE</code> state can be used in a cluster.</p>
+     * <code>ACTIVE</code> state can be used in a cluster. When a capacity provider is
+     * successfully deleted, it will have an <code>INACTIVE</code> status.</p>
      */
     inline const CapacityProviderStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The current status of the capacity provider. Only capacity providers in an
-     * <code>ACTIVE</code> state can be used in a cluster.</p>
+     * <code>ACTIVE</code> state can be used in a cluster. When a capacity provider is
+     * successfully deleted, it will have an <code>INACTIVE</code> status.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The current status of the capacity provider. Only capacity providers in an
-     * <code>ACTIVE</code> state can be used in a cluster.</p>
+     * <code>ACTIVE</code> state can be used in a cluster. When a capacity provider is
+     * successfully deleted, it will have an <code>INACTIVE</code> status.</p>
      */
     inline void SetStatus(const CapacityProviderStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The current status of the capacity provider. Only capacity providers in an
-     * <code>ACTIVE</code> state can be used in a cluster.</p>
+     * <code>ACTIVE</code> state can be used in a cluster. When a capacity provider is
+     * successfully deleted, it will have an <code>INACTIVE</code> status.</p>
      */
     inline void SetStatus(CapacityProviderStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The current status of the capacity provider. Only capacity providers in an
-     * <code>ACTIVE</code> state can be used in a cluster.</p>
+     * <code>ACTIVE</code> state can be used in a cluster. When a capacity provider is
+     * successfully deleted, it will have an <code>INACTIVE</code> status.</p>
      */
     inline CapacityProvider& WithStatus(const CapacityProviderStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The current status of the capacity provider. Only capacity providers in an
-     * <code>ACTIVE</code> state can be used in a cluster.</p>
+     * <code>ACTIVE</code> state can be used in a cluster. When a capacity provider is
+     * successfully deleted, it will have an <code>INACTIVE</code> status.</p>
      */
     inline CapacityProvider& WithStatus(CapacityProviderStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -199,6 +196,128 @@ namespace Model
      * <p>The Auto Scaling group settings for the capacity provider.</p>
      */
     inline CapacityProvider& WithAutoScalingGroupProvider(AutoScalingGroupProvider&& value) { SetAutoScalingGroupProvider(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The update status of the capacity provider. The following are the possible
+     * states that will be returned.</p> <dl> <dt>DELETE_IN_PROGRESS</dt> <dd> <p>The
+     * capacity provider is in the process of being deleted.</p> </dd>
+     * <dt>DELETE_COMPLETE</dt> <dd> <p>The capacity provider has been successfully
+     * deleted and will have an <code>INACTIVE</code> status.</p> </dd>
+     * <dt>DELETE_FAILED</dt> <dd> <p>The capacity provider was unable to be deleted.
+     * The update status reason will provide further details about why the delete
+     * failed.</p> </dd> </dl>
+     */
+    inline const CapacityProviderUpdateStatus& GetUpdateStatus() const{ return m_updateStatus; }
+
+    /**
+     * <p>The update status of the capacity provider. The following are the possible
+     * states that will be returned.</p> <dl> <dt>DELETE_IN_PROGRESS</dt> <dd> <p>The
+     * capacity provider is in the process of being deleted.</p> </dd>
+     * <dt>DELETE_COMPLETE</dt> <dd> <p>The capacity provider has been successfully
+     * deleted and will have an <code>INACTIVE</code> status.</p> </dd>
+     * <dt>DELETE_FAILED</dt> <dd> <p>The capacity provider was unable to be deleted.
+     * The update status reason will provide further details about why the delete
+     * failed.</p> </dd> </dl>
+     */
+    inline bool UpdateStatusHasBeenSet() const { return m_updateStatusHasBeenSet; }
+
+    /**
+     * <p>The update status of the capacity provider. The following are the possible
+     * states that will be returned.</p> <dl> <dt>DELETE_IN_PROGRESS</dt> <dd> <p>The
+     * capacity provider is in the process of being deleted.</p> </dd>
+     * <dt>DELETE_COMPLETE</dt> <dd> <p>The capacity provider has been successfully
+     * deleted and will have an <code>INACTIVE</code> status.</p> </dd>
+     * <dt>DELETE_FAILED</dt> <dd> <p>The capacity provider was unable to be deleted.
+     * The update status reason will provide further details about why the delete
+     * failed.</p> </dd> </dl>
+     */
+    inline void SetUpdateStatus(const CapacityProviderUpdateStatus& value) { m_updateStatusHasBeenSet = true; m_updateStatus = value; }
+
+    /**
+     * <p>The update status of the capacity provider. The following are the possible
+     * states that will be returned.</p> <dl> <dt>DELETE_IN_PROGRESS</dt> <dd> <p>The
+     * capacity provider is in the process of being deleted.</p> </dd>
+     * <dt>DELETE_COMPLETE</dt> <dd> <p>The capacity provider has been successfully
+     * deleted and will have an <code>INACTIVE</code> status.</p> </dd>
+     * <dt>DELETE_FAILED</dt> <dd> <p>The capacity provider was unable to be deleted.
+     * The update status reason will provide further details about why the delete
+     * failed.</p> </dd> </dl>
+     */
+    inline void SetUpdateStatus(CapacityProviderUpdateStatus&& value) { m_updateStatusHasBeenSet = true; m_updateStatus = std::move(value); }
+
+    /**
+     * <p>The update status of the capacity provider. The following are the possible
+     * states that will be returned.</p> <dl> <dt>DELETE_IN_PROGRESS</dt> <dd> <p>The
+     * capacity provider is in the process of being deleted.</p> </dd>
+     * <dt>DELETE_COMPLETE</dt> <dd> <p>The capacity provider has been successfully
+     * deleted and will have an <code>INACTIVE</code> status.</p> </dd>
+     * <dt>DELETE_FAILED</dt> <dd> <p>The capacity provider was unable to be deleted.
+     * The update status reason will provide further details about why the delete
+     * failed.</p> </dd> </dl>
+     */
+    inline CapacityProvider& WithUpdateStatus(const CapacityProviderUpdateStatus& value) { SetUpdateStatus(value); return *this;}
+
+    /**
+     * <p>The update status of the capacity provider. The following are the possible
+     * states that will be returned.</p> <dl> <dt>DELETE_IN_PROGRESS</dt> <dd> <p>The
+     * capacity provider is in the process of being deleted.</p> </dd>
+     * <dt>DELETE_COMPLETE</dt> <dd> <p>The capacity provider has been successfully
+     * deleted and will have an <code>INACTIVE</code> status.</p> </dd>
+     * <dt>DELETE_FAILED</dt> <dd> <p>The capacity provider was unable to be deleted.
+     * The update status reason will provide further details about why the delete
+     * failed.</p> </dd> </dl>
+     */
+    inline CapacityProvider& WithUpdateStatus(CapacityProviderUpdateStatus&& value) { SetUpdateStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The update status reason. This provides further details about the update
+     * status for the capacity provider.</p>
+     */
+    inline const Aws::String& GetUpdateStatusReason() const{ return m_updateStatusReason; }
+
+    /**
+     * <p>The update status reason. This provides further details about the update
+     * status for the capacity provider.</p>
+     */
+    inline bool UpdateStatusReasonHasBeenSet() const { return m_updateStatusReasonHasBeenSet; }
+
+    /**
+     * <p>The update status reason. This provides further details about the update
+     * status for the capacity provider.</p>
+     */
+    inline void SetUpdateStatusReason(const Aws::String& value) { m_updateStatusReasonHasBeenSet = true; m_updateStatusReason = value; }
+
+    /**
+     * <p>The update status reason. This provides further details about the update
+     * status for the capacity provider.</p>
+     */
+    inline void SetUpdateStatusReason(Aws::String&& value) { m_updateStatusReasonHasBeenSet = true; m_updateStatusReason = std::move(value); }
+
+    /**
+     * <p>The update status reason. This provides further details about the update
+     * status for the capacity provider.</p>
+     */
+    inline void SetUpdateStatusReason(const char* value) { m_updateStatusReasonHasBeenSet = true; m_updateStatusReason.assign(value); }
+
+    /**
+     * <p>The update status reason. This provides further details about the update
+     * status for the capacity provider.</p>
+     */
+    inline CapacityProvider& WithUpdateStatusReason(const Aws::String& value) { SetUpdateStatusReason(value); return *this;}
+
+    /**
+     * <p>The update status reason. This provides further details about the update
+     * status for the capacity provider.</p>
+     */
+    inline CapacityProvider& WithUpdateStatusReason(Aws::String&& value) { SetUpdateStatusReason(std::move(value)); return *this;}
+
+    /**
+     * <p>The update status reason. This provides further details about the update
+     * status for the capacity provider.</p>
+     */
+    inline CapacityProvider& WithUpdateStatusReason(const char* value) { SetUpdateStatusReason(value); return *this;}
 
 
     /**
@@ -374,6 +493,12 @@ namespace Model
 
     AutoScalingGroupProvider m_autoScalingGroupProvider;
     bool m_autoScalingGroupProviderHasBeenSet;
+
+    CapacityProviderUpdateStatus m_updateStatus;
+    bool m_updateStatusHasBeenSet;
+
+    Aws::String m_updateStatusReason;
+    bool m_updateStatusReasonHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

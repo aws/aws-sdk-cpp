@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
@@ -44,7 +34,7 @@ namespace Model
    * Examples of regional resources are EC2 instances and EBS volumes.</p> <p>You can
    * also have AWS Config record configuration changes for supported types of global
    * resources (for example, IAM resources). Global resources are not tied to an
-   * individual region and can be used in all regions.</p> <important> <p>The
+   * individual region and can be used in all regions.</p>  <p>The
    * configuration details for any global resource are the same in all regions. If
    * you customize AWS Config in multiple regions to record global resources, it will
    * create multiple configuration items each time a global resource changes: one
@@ -52,7 +42,7 @@ namespace Model
    * identical data. To prevent duplicate configuration items, you should consider
    * customizing AWS Config in only one region to record global resources, unless you
    * want the configuration items to be available in multiple regions.</p>
-   * </important> <p>If you don't want AWS Config to record all resources, you can
+   *  <p>If you don't want AWS Config to record all resources, you can
    * specify which types of resources it will record with the
    * <code>resourceTypes</code> parameter.</p> <p>For a list of supported resource
    * types, see <a

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/rds/model/DBEngineVersion.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -38,6 +28,7 @@ DBEngineVersion::DBEngineVersion() :
     m_dBEngineVersionDescriptionHasBeenSet(false),
     m_defaultCharacterSetHasBeenSet(false),
     m_supportedCharacterSetsHasBeenSet(false),
+    m_supportedNcharCharacterSetsHasBeenSet(false),
     m_validUpgradeTargetHasBeenSet(false),
     m_supportedTimezonesHasBeenSet(false),
     m_exportableLogTypesHasBeenSet(false),
@@ -47,7 +38,11 @@ DBEngineVersion::DBEngineVersion() :
     m_supportsReadReplicaHasBeenSet(false),
     m_supportedEngineModesHasBeenSet(false),
     m_supportedFeatureNamesHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_supportsParallelQuery(false),
+    m_supportsParallelQueryHasBeenSet(false),
+    m_supportsGlobalDatabases(false),
+    m_supportsGlobalDatabasesHasBeenSet(false)
 {
 }
 
@@ -59,6 +54,7 @@ DBEngineVersion::DBEngineVersion(const XmlNode& xmlNode) :
     m_dBEngineVersionDescriptionHasBeenSet(false),
     m_defaultCharacterSetHasBeenSet(false),
     m_supportedCharacterSetsHasBeenSet(false),
+    m_supportedNcharCharacterSetsHasBeenSet(false),
     m_validUpgradeTargetHasBeenSet(false),
     m_supportedTimezonesHasBeenSet(false),
     m_exportableLogTypesHasBeenSet(false),
@@ -68,7 +64,11 @@ DBEngineVersion::DBEngineVersion(const XmlNode& xmlNode) :
     m_supportsReadReplicaHasBeenSet(false),
     m_supportedEngineModesHasBeenSet(false),
     m_supportedFeatureNamesHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_supportsParallelQuery(false),
+    m_supportsParallelQueryHasBeenSet(false),
+    m_supportsGlobalDatabases(false),
+    m_supportsGlobalDatabasesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -126,6 +126,18 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
       }
 
       m_supportedCharacterSetsHasBeenSet = true;
+    }
+    XmlNode supportedNcharCharacterSetsNode = resultNode.FirstChild("SupportedNcharCharacterSets");
+    if(!supportedNcharCharacterSetsNode.IsNull())
+    {
+      XmlNode supportedNcharCharacterSetsMember = supportedNcharCharacterSetsNode.FirstChild("CharacterSet");
+      while(!supportedNcharCharacterSetsMember.IsNull())
+      {
+        m_supportedNcharCharacterSets.push_back(supportedNcharCharacterSetsMember);
+        supportedNcharCharacterSetsMember = supportedNcharCharacterSetsMember.NextNode("CharacterSet");
+      }
+
+      m_supportedNcharCharacterSetsHasBeenSet = true;
     }
     XmlNode validUpgradeTargetNode = resultNode.FirstChild("ValidUpgradeTarget");
     if(!validUpgradeTargetNode.IsNull())
@@ -205,6 +217,18 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
     }
+    XmlNode supportsParallelQueryNode = resultNode.FirstChild("SupportsParallelQuery");
+    if(!supportsParallelQueryNode.IsNull())
+    {
+      m_supportsParallelQuery = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsParallelQueryNode.GetText()).c_str()).c_str());
+      m_supportsParallelQueryHasBeenSet = true;
+    }
+    XmlNode supportsGlobalDatabasesNode = resultNode.FirstChild("SupportsGlobalDatabases");
+    if(!supportsGlobalDatabasesNode.IsNull())
+    {
+      m_supportsGlobalDatabases = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsGlobalDatabasesNode.GetText()).c_str()).c_str());
+      m_supportsGlobalDatabasesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -252,6 +276,17 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
         Aws::StringStream supportedCharacterSetsSs;
         supportedCharacterSetsSs << location << index << locationValue << ".CharacterSet." << supportedCharacterSetsIdx++;
         item.OutputToStream(oStream, supportedCharacterSetsSs.str().c_str());
+      }
+  }
+
+  if(m_supportedNcharCharacterSetsHasBeenSet)
+  {
+      unsigned supportedNcharCharacterSetsIdx = 1;
+      for(auto& item : m_supportedNcharCharacterSets)
+      {
+        Aws::StringStream supportedNcharCharacterSetsSs;
+        supportedNcharCharacterSetsSs << location << index << locationValue << ".CharacterSet." << supportedNcharCharacterSetsIdx++;
+        item.OutputToStream(oStream, supportedNcharCharacterSetsSs.str().c_str());
       }
   }
 
@@ -319,6 +354,16 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
 
+  if(m_supportsParallelQueryHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsParallelQuery=" << std::boolalpha << m_supportsParallelQuery << "&";
+  }
+
+  if(m_supportsGlobalDatabasesHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsGlobalDatabases=" << std::boolalpha << m_supportsGlobalDatabases << "&";
+  }
+
 }
 
 void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -357,6 +402,16 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
         Aws::StringStream supportedCharacterSetsSs;
         supportedCharacterSetsSs << location <<  ".CharacterSet." << supportedCharacterSetsIdx++;
         item.OutputToStream(oStream, supportedCharacterSetsSs.str().c_str());
+      }
+  }
+  if(m_supportedNcharCharacterSetsHasBeenSet)
+  {
+      unsigned supportedNcharCharacterSetsIdx = 1;
+      for(auto& item : m_supportedNcharCharacterSets)
+      {
+        Aws::StringStream supportedNcharCharacterSetsSs;
+        supportedNcharCharacterSetsSs << location <<  ".CharacterSet." << supportedNcharCharacterSetsIdx++;
+        item.OutputToStream(oStream, supportedNcharCharacterSetsSs.str().c_str());
       }
   }
   if(m_validUpgradeTargetHasBeenSet)
@@ -414,6 +469,14 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_statusHasBeenSet)
   {
       oStream << location << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
+  }
+  if(m_supportsParallelQueryHasBeenSet)
+  {
+      oStream << location << ".SupportsParallelQuery=" << std::boolalpha << m_supportsParallelQuery << "&";
+  }
+  if(m_supportsGlobalDatabasesHasBeenSet)
+  {
+      oStream << location << ".SupportsGlobalDatabases=" << std::boolalpha << m_supportsGlobalDatabases << "&";
   }
 }
 

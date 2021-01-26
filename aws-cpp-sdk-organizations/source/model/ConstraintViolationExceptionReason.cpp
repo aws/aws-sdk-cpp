@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/organizations/model/ConstraintViolationExceptionReason.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -57,6 +47,7 @@ namespace Aws
         static const int CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR_HASH = HashingUtils::HashString("CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR");
         static const int CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG_HASH = HashingUtils::HashString("CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG");
         static const int DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE_HASH = HashingUtils::HashString("DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE");
+        static const int MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE_HASH = HashingUtils::HashString("MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE");
 
 
         ConstraintViolationExceptionReason GetConstraintViolationExceptionReasonForName(const Aws::String& name)
@@ -170,6 +161,10 @@ namespace Aws
           {
             return ConstraintViolationExceptionReason::DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE;
           }
+          else if (hashCode == MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE_HASH)
+          {
+            return ConstraintViolationExceptionReason::MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -238,6 +233,8 @@ namespace Aws
             return "CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG";
           case ConstraintViolationExceptionReason::DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE:
             return "DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE";
+          case ConstraintViolationExceptionReason::MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE:
+            return "MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

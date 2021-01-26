@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ce/model/GroupDefinition.h>
 #include <aws/ce/model/ResultByTime.h>
+#include <aws/ce/model/DimensionValuesWithAttributes.h>
 #include <utility>
 
 namespace Aws
@@ -173,6 +164,49 @@ namespace Model
      */
     inline GetCostAndUsageResult& AddResultsByTime(ResultByTime&& value) { m_resultsByTime.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The attributes that apply to a specific dimension value. For example, if the
+     * value is a linked account, the attribute is that account name.</p>
+     */
+    inline const Aws::Vector<DimensionValuesWithAttributes>& GetDimensionValueAttributes() const{ return m_dimensionValueAttributes; }
+
+    /**
+     * <p>The attributes that apply to a specific dimension value. For example, if the
+     * value is a linked account, the attribute is that account name.</p>
+     */
+    inline void SetDimensionValueAttributes(const Aws::Vector<DimensionValuesWithAttributes>& value) { m_dimensionValueAttributes = value; }
+
+    /**
+     * <p>The attributes that apply to a specific dimension value. For example, if the
+     * value is a linked account, the attribute is that account name.</p>
+     */
+    inline void SetDimensionValueAttributes(Aws::Vector<DimensionValuesWithAttributes>&& value) { m_dimensionValueAttributes = std::move(value); }
+
+    /**
+     * <p>The attributes that apply to a specific dimension value. For example, if the
+     * value is a linked account, the attribute is that account name.</p>
+     */
+    inline GetCostAndUsageResult& WithDimensionValueAttributes(const Aws::Vector<DimensionValuesWithAttributes>& value) { SetDimensionValueAttributes(value); return *this;}
+
+    /**
+     * <p>The attributes that apply to a specific dimension value. For example, if the
+     * value is a linked account, the attribute is that account name.</p>
+     */
+    inline GetCostAndUsageResult& WithDimensionValueAttributes(Aws::Vector<DimensionValuesWithAttributes>&& value) { SetDimensionValueAttributes(std::move(value)); return *this;}
+
+    /**
+     * <p>The attributes that apply to a specific dimension value. For example, if the
+     * value is a linked account, the attribute is that account name.</p>
+     */
+    inline GetCostAndUsageResult& AddDimensionValueAttributes(const DimensionValuesWithAttributes& value) { m_dimensionValueAttributes.push_back(value); return *this; }
+
+    /**
+     * <p>The attributes that apply to a specific dimension value. For example, if the
+     * value is a linked account, the attribute is that account name.</p>
+     */
+    inline GetCostAndUsageResult& AddDimensionValueAttributes(DimensionValuesWithAttributes&& value) { m_dimensionValueAttributes.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_nextPageToken;
@@ -180,6 +214,8 @@ namespace Model
     Aws::Vector<GroupDefinition> m_groupDefinitions;
 
     Aws::Vector<ResultByTime> m_resultsByTime;
+
+    Aws::Vector<DimensionValuesWithAttributes> m_dimensionValueAttributes;
   };
 
 } // namespace Model

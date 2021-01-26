@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/secretsmanager/SecretsManager_EXPORTS.h>
@@ -50,81 +40,81 @@ namespace Model
 
     /**
      * <p>Specifies the friendly name of the new secret.</p> <p>The secret name must be
-     * ASCII letters, digits, or the following characters : /_+=.@-</p> <note> <p>Don't
-     * end your secret name with a hyphen followed by six characters. If you do so, you
-     * risk confusion and unexpected results when searching for a secret by partial
-     * ARN. This is because Secrets Manager automatically adds a hyphen and six random
-     * characters at the end of the ARN.</p> </note>
+     * ASCII letters, digits, or the following characters : /_+=.@-</p>  <p>Do
+     * not end your secret name with a hyphen followed by six characters. If you do so,
+     * you risk confusion and unexpected results when searching for a secret by partial
+     * ARN. Secrets Manager automatically adds a hyphen and six random characters at
+     * the end of the ARN.</p> 
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>Specifies the friendly name of the new secret.</p> <p>The secret name must be
-     * ASCII letters, digits, or the following characters : /_+=.@-</p> <note> <p>Don't
-     * end your secret name with a hyphen followed by six characters. If you do so, you
-     * risk confusion and unexpected results when searching for a secret by partial
-     * ARN. This is because Secrets Manager automatically adds a hyphen and six random
-     * characters at the end of the ARN.</p> </note>
+     * ASCII letters, digits, or the following characters : /_+=.@-</p>  <p>Do
+     * not end your secret name with a hyphen followed by six characters. If you do so,
+     * you risk confusion and unexpected results when searching for a secret by partial
+     * ARN. Secrets Manager automatically adds a hyphen and six random characters at
+     * the end of the ARN.</p> 
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>Specifies the friendly name of the new secret.</p> <p>The secret name must be
-     * ASCII letters, digits, or the following characters : /_+=.@-</p> <note> <p>Don't
-     * end your secret name with a hyphen followed by six characters. If you do so, you
-     * risk confusion and unexpected results when searching for a secret by partial
-     * ARN. This is because Secrets Manager automatically adds a hyphen and six random
-     * characters at the end of the ARN.</p> </note>
+     * ASCII letters, digits, or the following characters : /_+=.@-</p>  <p>Do
+     * not end your secret name with a hyphen followed by six characters. If you do so,
+     * you risk confusion and unexpected results when searching for a secret by partial
+     * ARN. Secrets Manager automatically adds a hyphen and six random characters at
+     * the end of the ARN.</p> 
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>Specifies the friendly name of the new secret.</p> <p>The secret name must be
-     * ASCII letters, digits, or the following characters : /_+=.@-</p> <note> <p>Don't
-     * end your secret name with a hyphen followed by six characters. If you do so, you
-     * risk confusion and unexpected results when searching for a secret by partial
-     * ARN. This is because Secrets Manager automatically adds a hyphen and six random
-     * characters at the end of the ARN.</p> </note>
+     * ASCII letters, digits, or the following characters : /_+=.@-</p>  <p>Do
+     * not end your secret name with a hyphen followed by six characters. If you do so,
+     * you risk confusion and unexpected results when searching for a secret by partial
+     * ARN. Secrets Manager automatically adds a hyphen and six random characters at
+     * the end of the ARN.</p> 
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Specifies the friendly name of the new secret.</p> <p>The secret name must be
-     * ASCII letters, digits, or the following characters : /_+=.@-</p> <note> <p>Don't
-     * end your secret name with a hyphen followed by six characters. If you do so, you
-     * risk confusion and unexpected results when searching for a secret by partial
-     * ARN. This is because Secrets Manager automatically adds a hyphen and six random
-     * characters at the end of the ARN.</p> </note>
+     * ASCII letters, digits, or the following characters : /_+=.@-</p>  <p>Do
+     * not end your secret name with a hyphen followed by six characters. If you do so,
+     * you risk confusion and unexpected results when searching for a secret by partial
+     * ARN. Secrets Manager automatically adds a hyphen and six random characters at
+     * the end of the ARN.</p> 
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p>Specifies the friendly name of the new secret.</p> <p>The secret name must be
-     * ASCII letters, digits, or the following characters : /_+=.@-</p> <note> <p>Don't
-     * end your secret name with a hyphen followed by six characters. If you do so, you
-     * risk confusion and unexpected results when searching for a secret by partial
-     * ARN. This is because Secrets Manager automatically adds a hyphen and six random
-     * characters at the end of the ARN.</p> </note>
+     * ASCII letters, digits, or the following characters : /_+=.@-</p>  <p>Do
+     * not end your secret name with a hyphen followed by six characters. If you do so,
+     * you risk confusion and unexpected results when searching for a secret by partial
+     * ARN. Secrets Manager automatically adds a hyphen and six random characters at
+     * the end of the ARN.</p> 
      */
     inline CreateSecretRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>Specifies the friendly name of the new secret.</p> <p>The secret name must be
-     * ASCII letters, digits, or the following characters : /_+=.@-</p> <note> <p>Don't
-     * end your secret name with a hyphen followed by six characters. If you do so, you
-     * risk confusion and unexpected results when searching for a secret by partial
-     * ARN. This is because Secrets Manager automatically adds a hyphen and six random
-     * characters at the end of the ARN.</p> </note>
+     * ASCII letters, digits, or the following characters : /_+=.@-</p>  <p>Do
+     * not end your secret name with a hyphen followed by six characters. If you do so,
+     * you risk confusion and unexpected results when searching for a secret by partial
+     * ARN. Secrets Manager automatically adds a hyphen and six random characters at
+     * the end of the ARN.</p> 
      */
     inline CreateSecretRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the friendly name of the new secret.</p> <p>The secret name must be
-     * ASCII letters, digits, or the following characters : /_+=.@-</p> <note> <p>Don't
-     * end your secret name with a hyphen followed by six characters. If you do so, you
-     * risk confusion and unexpected results when searching for a secret by partial
-     * ARN. This is because Secrets Manager automatically adds a hyphen and six random
-     * characters at the end of the ARN.</p> </note>
+     * ASCII letters, digits, or the following characters : /_+=.@-</p>  <p>Do
+     * not end your secret name with a hyphen followed by six characters. If you do so,
+     * you risk confusion and unexpected results when searching for a secret by partial
+     * ARN. Secrets Manager automatically adds a hyphen and six random characters at
+     * the end of the ARN.</p> 
      */
     inline CreateSecretRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -133,13 +123,13 @@ namespace Model
      * <p>(Optional) If you include <code>SecretString</code> or
      * <code>SecretBinary</code>, then an initial version is created as part of the
      * secret, and this parameter specifies a unique identifier for the new version.
-     * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
+     * </p>  <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes it as the value for this parameter in the
      * request. If you don't use the SDK and instead generate a raw HTTP request to the
      * Secrets Manager service endpoint, then you must generate a
-     * <code>ClientRequestToken</code> yourself for the new version and include that
-     * value in the request.</p> </note> <p>This value helps ensure idempotency.
+     * <code>ClientRequestToken</code> yourself for the new version and include the
+     * value in the request.</p>  <p>This value helps ensure idempotency.
      * Secrets Manager uses this value to prevent the accidental creation of duplicate
      * versions if there are failures and retries during a rotation. We recommend that
      * you generate a <a
@@ -147,15 +137,15 @@ namespace Model
      * value to ensure uniqueness of your versions within the specified secret. </p>
      * <ul> <li> <p>If the <code>ClientRequestToken</code> value isn't already
      * associated with a version of the secret then a new version of the secret is
-     * created. </p> </li> <li> <p>If a version with this value already exists and that
-     * version's <code>SecretString</code> and <code>SecretBinary</code> values are the
-     * same as those in the request, then the request is ignored (the operation is
-     * idempotent).</p> </li> <li> <p>If a version with this value already exists and
-     * that version's <code>SecretString</code> and <code>SecretBinary</code> values
-     * are different from those in the request then the request fails because you
-     * cannot modify an existing version. Instead, use <a>PutSecretValue</a> to create
-     * a new version.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
-     * of the new version.</p>
+     * created. </p> </li> <li> <p>If a version with this value already exists and the
+     * version <code>SecretString</code> and <code>SecretBinary</code> values are the
+     * same as those in the request, then the request is ignored.</p> </li> <li> <p>If
+     * a version with this value already exists and that version's
+     * <code>SecretString</code> and <code>SecretBinary</code> values are different
+     * from those in the request then the request fails because you cannot modify an
+     * existing version. Instead, use <a>PutSecretValue</a> to create a new
+     * version.</p> </li> </ul> <p>This value becomes the <code>VersionId</code> of the
+     * new version.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
@@ -163,13 +153,13 @@ namespace Model
      * <p>(Optional) If you include <code>SecretString</code> or
      * <code>SecretBinary</code>, then an initial version is created as part of the
      * secret, and this parameter specifies a unique identifier for the new version.
-     * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
+     * </p>  <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes it as the value for this parameter in the
      * request. If you don't use the SDK and instead generate a raw HTTP request to the
      * Secrets Manager service endpoint, then you must generate a
-     * <code>ClientRequestToken</code> yourself for the new version and include that
-     * value in the request.</p> </note> <p>This value helps ensure idempotency.
+     * <code>ClientRequestToken</code> yourself for the new version and include the
+     * value in the request.</p>  <p>This value helps ensure idempotency.
      * Secrets Manager uses this value to prevent the accidental creation of duplicate
      * versions if there are failures and retries during a rotation. We recommend that
      * you generate a <a
@@ -177,15 +167,15 @@ namespace Model
      * value to ensure uniqueness of your versions within the specified secret. </p>
      * <ul> <li> <p>If the <code>ClientRequestToken</code> value isn't already
      * associated with a version of the secret then a new version of the secret is
-     * created. </p> </li> <li> <p>If a version with this value already exists and that
-     * version's <code>SecretString</code> and <code>SecretBinary</code> values are the
-     * same as those in the request, then the request is ignored (the operation is
-     * idempotent).</p> </li> <li> <p>If a version with this value already exists and
-     * that version's <code>SecretString</code> and <code>SecretBinary</code> values
-     * are different from those in the request then the request fails because you
-     * cannot modify an existing version. Instead, use <a>PutSecretValue</a> to create
-     * a new version.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
-     * of the new version.</p>
+     * created. </p> </li> <li> <p>If a version with this value already exists and the
+     * version <code>SecretString</code> and <code>SecretBinary</code> values are the
+     * same as those in the request, then the request is ignored.</p> </li> <li> <p>If
+     * a version with this value already exists and that version's
+     * <code>SecretString</code> and <code>SecretBinary</code> values are different
+     * from those in the request then the request fails because you cannot modify an
+     * existing version. Instead, use <a>PutSecretValue</a> to create a new
+     * version.</p> </li> </ul> <p>This value becomes the <code>VersionId</code> of the
+     * new version.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
@@ -193,13 +183,13 @@ namespace Model
      * <p>(Optional) If you include <code>SecretString</code> or
      * <code>SecretBinary</code>, then an initial version is created as part of the
      * secret, and this parameter specifies a unique identifier for the new version.
-     * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
+     * </p>  <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes it as the value for this parameter in the
      * request. If you don't use the SDK and instead generate a raw HTTP request to the
      * Secrets Manager service endpoint, then you must generate a
-     * <code>ClientRequestToken</code> yourself for the new version and include that
-     * value in the request.</p> </note> <p>This value helps ensure idempotency.
+     * <code>ClientRequestToken</code> yourself for the new version and include the
+     * value in the request.</p>  <p>This value helps ensure idempotency.
      * Secrets Manager uses this value to prevent the accidental creation of duplicate
      * versions if there are failures and retries during a rotation. We recommend that
      * you generate a <a
@@ -207,15 +197,15 @@ namespace Model
      * value to ensure uniqueness of your versions within the specified secret. </p>
      * <ul> <li> <p>If the <code>ClientRequestToken</code> value isn't already
      * associated with a version of the secret then a new version of the secret is
-     * created. </p> </li> <li> <p>If a version with this value already exists and that
-     * version's <code>SecretString</code> and <code>SecretBinary</code> values are the
-     * same as those in the request, then the request is ignored (the operation is
-     * idempotent).</p> </li> <li> <p>If a version with this value already exists and
-     * that version's <code>SecretString</code> and <code>SecretBinary</code> values
-     * are different from those in the request then the request fails because you
-     * cannot modify an existing version. Instead, use <a>PutSecretValue</a> to create
-     * a new version.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
-     * of the new version.</p>
+     * created. </p> </li> <li> <p>If a version with this value already exists and the
+     * version <code>SecretString</code> and <code>SecretBinary</code> values are the
+     * same as those in the request, then the request is ignored.</p> </li> <li> <p>If
+     * a version with this value already exists and that version's
+     * <code>SecretString</code> and <code>SecretBinary</code> values are different
+     * from those in the request then the request fails because you cannot modify an
+     * existing version. Instead, use <a>PutSecretValue</a> to create a new
+     * version.</p> </li> </ul> <p>This value becomes the <code>VersionId</code> of the
+     * new version.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
@@ -223,13 +213,13 @@ namespace Model
      * <p>(Optional) If you include <code>SecretString</code> or
      * <code>SecretBinary</code>, then an initial version is created as part of the
      * secret, and this parameter specifies a unique identifier for the new version.
-     * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
+     * </p>  <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes it as the value for this parameter in the
      * request. If you don't use the SDK and instead generate a raw HTTP request to the
      * Secrets Manager service endpoint, then you must generate a
-     * <code>ClientRequestToken</code> yourself for the new version and include that
-     * value in the request.</p> </note> <p>This value helps ensure idempotency.
+     * <code>ClientRequestToken</code> yourself for the new version and include the
+     * value in the request.</p>  <p>This value helps ensure idempotency.
      * Secrets Manager uses this value to prevent the accidental creation of duplicate
      * versions if there are failures and retries during a rotation. We recommend that
      * you generate a <a
@@ -237,15 +227,15 @@ namespace Model
      * value to ensure uniqueness of your versions within the specified secret. </p>
      * <ul> <li> <p>If the <code>ClientRequestToken</code> value isn't already
      * associated with a version of the secret then a new version of the secret is
-     * created. </p> </li> <li> <p>If a version with this value already exists and that
-     * version's <code>SecretString</code> and <code>SecretBinary</code> values are the
-     * same as those in the request, then the request is ignored (the operation is
-     * idempotent).</p> </li> <li> <p>If a version with this value already exists and
-     * that version's <code>SecretString</code> and <code>SecretBinary</code> values
-     * are different from those in the request then the request fails because you
-     * cannot modify an existing version. Instead, use <a>PutSecretValue</a> to create
-     * a new version.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
-     * of the new version.</p>
+     * created. </p> </li> <li> <p>If a version with this value already exists and the
+     * version <code>SecretString</code> and <code>SecretBinary</code> values are the
+     * same as those in the request, then the request is ignored.</p> </li> <li> <p>If
+     * a version with this value already exists and that version's
+     * <code>SecretString</code> and <code>SecretBinary</code> values are different
+     * from those in the request then the request fails because you cannot modify an
+     * existing version. Instead, use <a>PutSecretValue</a> to create a new
+     * version.</p> </li> </ul> <p>This value becomes the <code>VersionId</code> of the
+     * new version.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
@@ -253,13 +243,13 @@ namespace Model
      * <p>(Optional) If you include <code>SecretString</code> or
      * <code>SecretBinary</code>, then an initial version is created as part of the
      * secret, and this parameter specifies a unique identifier for the new version.
-     * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
+     * </p>  <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes it as the value for this parameter in the
      * request. If you don't use the SDK and instead generate a raw HTTP request to the
      * Secrets Manager service endpoint, then you must generate a
-     * <code>ClientRequestToken</code> yourself for the new version and include that
-     * value in the request.</p> </note> <p>This value helps ensure idempotency.
+     * <code>ClientRequestToken</code> yourself for the new version and include the
+     * value in the request.</p>  <p>This value helps ensure idempotency.
      * Secrets Manager uses this value to prevent the accidental creation of duplicate
      * versions if there are failures and retries during a rotation. We recommend that
      * you generate a <a
@@ -267,15 +257,15 @@ namespace Model
      * value to ensure uniqueness of your versions within the specified secret. </p>
      * <ul> <li> <p>If the <code>ClientRequestToken</code> value isn't already
      * associated with a version of the secret then a new version of the secret is
-     * created. </p> </li> <li> <p>If a version with this value already exists and that
-     * version's <code>SecretString</code> and <code>SecretBinary</code> values are the
-     * same as those in the request, then the request is ignored (the operation is
-     * idempotent).</p> </li> <li> <p>If a version with this value already exists and
-     * that version's <code>SecretString</code> and <code>SecretBinary</code> values
-     * are different from those in the request then the request fails because you
-     * cannot modify an existing version. Instead, use <a>PutSecretValue</a> to create
-     * a new version.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
-     * of the new version.</p>
+     * created. </p> </li> <li> <p>If a version with this value already exists and the
+     * version <code>SecretString</code> and <code>SecretBinary</code> values are the
+     * same as those in the request, then the request is ignored.</p> </li> <li> <p>If
+     * a version with this value already exists and that version's
+     * <code>SecretString</code> and <code>SecretBinary</code> values are different
+     * from those in the request then the request fails because you cannot modify an
+     * existing version. Instead, use <a>PutSecretValue</a> to create a new
+     * version.</p> </li> </ul> <p>This value becomes the <code>VersionId</code> of the
+     * new version.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
@@ -283,13 +273,13 @@ namespace Model
      * <p>(Optional) If you include <code>SecretString</code> or
      * <code>SecretBinary</code>, then an initial version is created as part of the
      * secret, and this parameter specifies a unique identifier for the new version.
-     * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
+     * </p>  <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes it as the value for this parameter in the
      * request. If you don't use the SDK and instead generate a raw HTTP request to the
      * Secrets Manager service endpoint, then you must generate a
-     * <code>ClientRequestToken</code> yourself for the new version and include that
-     * value in the request.</p> </note> <p>This value helps ensure idempotency.
+     * <code>ClientRequestToken</code> yourself for the new version and include the
+     * value in the request.</p>  <p>This value helps ensure idempotency.
      * Secrets Manager uses this value to prevent the accidental creation of duplicate
      * versions if there are failures and retries during a rotation. We recommend that
      * you generate a <a
@@ -297,15 +287,15 @@ namespace Model
      * value to ensure uniqueness of your versions within the specified secret. </p>
      * <ul> <li> <p>If the <code>ClientRequestToken</code> value isn't already
      * associated with a version of the secret then a new version of the secret is
-     * created. </p> </li> <li> <p>If a version with this value already exists and that
-     * version's <code>SecretString</code> and <code>SecretBinary</code> values are the
-     * same as those in the request, then the request is ignored (the operation is
-     * idempotent).</p> </li> <li> <p>If a version with this value already exists and
-     * that version's <code>SecretString</code> and <code>SecretBinary</code> values
-     * are different from those in the request then the request fails because you
-     * cannot modify an existing version. Instead, use <a>PutSecretValue</a> to create
-     * a new version.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
-     * of the new version.</p>
+     * created. </p> </li> <li> <p>If a version with this value already exists and the
+     * version <code>SecretString</code> and <code>SecretBinary</code> values are the
+     * same as those in the request, then the request is ignored.</p> </li> <li> <p>If
+     * a version with this value already exists and that version's
+     * <code>SecretString</code> and <code>SecretBinary</code> values are different
+     * from those in the request then the request fails because you cannot modify an
+     * existing version. Instead, use <a>PutSecretValue</a> to create a new
+     * version.</p> </li> </ul> <p>This value becomes the <code>VersionId</code> of the
+     * new version.</p>
      */
     inline CreateSecretRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
@@ -313,13 +303,13 @@ namespace Model
      * <p>(Optional) If you include <code>SecretString</code> or
      * <code>SecretBinary</code>, then an initial version is created as part of the
      * secret, and this parameter specifies a unique identifier for the new version.
-     * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
+     * </p>  <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes it as the value for this parameter in the
      * request. If you don't use the SDK and instead generate a raw HTTP request to the
      * Secrets Manager service endpoint, then you must generate a
-     * <code>ClientRequestToken</code> yourself for the new version and include that
-     * value in the request.</p> </note> <p>This value helps ensure idempotency.
+     * <code>ClientRequestToken</code> yourself for the new version and include the
+     * value in the request.</p>  <p>This value helps ensure idempotency.
      * Secrets Manager uses this value to prevent the accidental creation of duplicate
      * versions if there are failures and retries during a rotation. We recommend that
      * you generate a <a
@@ -327,15 +317,15 @@ namespace Model
      * value to ensure uniqueness of your versions within the specified secret. </p>
      * <ul> <li> <p>If the <code>ClientRequestToken</code> value isn't already
      * associated with a version of the secret then a new version of the secret is
-     * created. </p> </li> <li> <p>If a version with this value already exists and that
-     * version's <code>SecretString</code> and <code>SecretBinary</code> values are the
-     * same as those in the request, then the request is ignored (the operation is
-     * idempotent).</p> </li> <li> <p>If a version with this value already exists and
-     * that version's <code>SecretString</code> and <code>SecretBinary</code> values
-     * are different from those in the request then the request fails because you
-     * cannot modify an existing version. Instead, use <a>PutSecretValue</a> to create
-     * a new version.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
-     * of the new version.</p>
+     * created. </p> </li> <li> <p>If a version with this value already exists and the
+     * version <code>SecretString</code> and <code>SecretBinary</code> values are the
+     * same as those in the request, then the request is ignored.</p> </li> <li> <p>If
+     * a version with this value already exists and that version's
+     * <code>SecretString</code> and <code>SecretBinary</code> values are different
+     * from those in the request then the request fails because you cannot modify an
+     * existing version. Instead, use <a>PutSecretValue</a> to create a new
+     * version.</p> </li> </ul> <p>This value becomes the <code>VersionId</code> of the
+     * new version.</p>
      */
     inline CreateSecretRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
@@ -343,13 +333,13 @@ namespace Model
      * <p>(Optional) If you include <code>SecretString</code> or
      * <code>SecretBinary</code>, then an initial version is created as part of the
      * secret, and this parameter specifies a unique identifier for the new version.
-     * </p> <note> <p>If you use the AWS CLI or one of the AWS SDK to call this
+     * </p>  <p>If you use the AWS CLI or one of the AWS SDK to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes it as the value for this parameter in the
      * request. If you don't use the SDK and instead generate a raw HTTP request to the
      * Secrets Manager service endpoint, then you must generate a
-     * <code>ClientRequestToken</code> yourself for the new version and include that
-     * value in the request.</p> </note> <p>This value helps ensure idempotency.
+     * <code>ClientRequestToken</code> yourself for the new version and include the
+     * value in the request.</p>  <p>This value helps ensure idempotency.
      * Secrets Manager uses this value to prevent the accidental creation of duplicate
      * versions if there are failures and retries during a rotation. We recommend that
      * you generate a <a
@@ -357,15 +347,15 @@ namespace Model
      * value to ensure uniqueness of your versions within the specified secret. </p>
      * <ul> <li> <p>If the <code>ClientRequestToken</code> value isn't already
      * associated with a version of the secret then a new version of the secret is
-     * created. </p> </li> <li> <p>If a version with this value already exists and that
-     * version's <code>SecretString</code> and <code>SecretBinary</code> values are the
-     * same as those in the request, then the request is ignored (the operation is
-     * idempotent).</p> </li> <li> <p>If a version with this value already exists and
-     * that version's <code>SecretString</code> and <code>SecretBinary</code> values
-     * are different from those in the request then the request fails because you
-     * cannot modify an existing version. Instead, use <a>PutSecretValue</a> to create
-     * a new version.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
-     * of the new version.</p>
+     * created. </p> </li> <li> <p>If a version with this value already exists and the
+     * version <code>SecretString</code> and <code>SecretBinary</code> values are the
+     * same as those in the request, then the request is ignored.</p> </li> <li> <p>If
+     * a version with this value already exists and that version's
+     * <code>SecretString</code> and <code>SecretBinary</code> values are different
+     * from those in the request then the request fails because you cannot modify an
+     * existing version. Instead, use <a>PutSecretValue</a> to create a new
+     * version.</p> </li> </ul> <p>This value becomes the <code>VersionId</code> of the
+     * new version.</p>
      */
     inline CreateSecretRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
@@ -422,11 +412,11 @@ namespace Model
      * <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't yet
      * exist, then Secrets Manager creates it for you automatically the first time it
      * needs to encrypt a version's <code>SecretString</code> or
-     * <code>SecretBinary</code> fields.</p> <important> <p>You can use the account's
+     * <code>SecretBinary</code> fields.</p>  <p>You can use the account
      * default CMK to encrypt and decrypt only if you call this operation using
-     * credentials from the same account that owns the secret. If the secret is in a
-     * different account, then you must create a custom CMK and specify the ARN in this
-     * field. </p> </important>
+     * credentials from the same account that owns the secret. If the secret resides in
+     * a different account, then you must create a custom CMK and specify the ARN in
+     * this field. </p> 
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
@@ -441,11 +431,11 @@ namespace Model
      * <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't yet
      * exist, then Secrets Manager creates it for you automatically the first time it
      * needs to encrypt a version's <code>SecretString</code> or
-     * <code>SecretBinary</code> fields.</p> <important> <p>You can use the account's
+     * <code>SecretBinary</code> fields.</p>  <p>You can use the account
      * default CMK to encrypt and decrypt only if you call this operation using
-     * credentials from the same account that owns the secret. If the secret is in a
-     * different account, then you must create a custom CMK and specify the ARN in this
-     * field. </p> </important>
+     * credentials from the same account that owns the secret. If the secret resides in
+     * a different account, then you must create a custom CMK and specify the ARN in
+     * this field. </p> 
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
@@ -460,11 +450,11 @@ namespace Model
      * <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't yet
      * exist, then Secrets Manager creates it for you automatically the first time it
      * needs to encrypt a version's <code>SecretString</code> or
-     * <code>SecretBinary</code> fields.</p> <important> <p>You can use the account's
+     * <code>SecretBinary</code> fields.</p>  <p>You can use the account
      * default CMK to encrypt and decrypt only if you call this operation using
-     * credentials from the same account that owns the secret. If the secret is in a
-     * different account, then you must create a custom CMK and specify the ARN in this
-     * field. </p> </important>
+     * credentials from the same account that owns the secret. If the secret resides in
+     * a different account, then you must create a custom CMK and specify the ARN in
+     * this field. </p> 
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
@@ -479,11 +469,11 @@ namespace Model
      * <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't yet
      * exist, then Secrets Manager creates it for you automatically the first time it
      * needs to encrypt a version's <code>SecretString</code> or
-     * <code>SecretBinary</code> fields.</p> <important> <p>You can use the account's
+     * <code>SecretBinary</code> fields.</p>  <p>You can use the account
      * default CMK to encrypt and decrypt only if you call this operation using
-     * credentials from the same account that owns the secret. If the secret is in a
-     * different account, then you must create a custom CMK and specify the ARN in this
-     * field. </p> </important>
+     * credentials from the same account that owns the secret. If the secret resides in
+     * a different account, then you must create a custom CMK and specify the ARN in
+     * this field. </p> 
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
@@ -498,11 +488,11 @@ namespace Model
      * <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't yet
      * exist, then Secrets Manager creates it for you automatically the first time it
      * needs to encrypt a version's <code>SecretString</code> or
-     * <code>SecretBinary</code> fields.</p> <important> <p>You can use the account's
+     * <code>SecretBinary</code> fields.</p>  <p>You can use the account
      * default CMK to encrypt and decrypt only if you call this operation using
-     * credentials from the same account that owns the secret. If the secret is in a
-     * different account, then you must create a custom CMK and specify the ARN in this
-     * field. </p> </important>
+     * credentials from the same account that owns the secret. If the secret resides in
+     * a different account, then you must create a custom CMK and specify the ARN in
+     * this field. </p> 
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
@@ -517,11 +507,11 @@ namespace Model
      * <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't yet
      * exist, then Secrets Manager creates it for you automatically the first time it
      * needs to encrypt a version's <code>SecretString</code> or
-     * <code>SecretBinary</code> fields.</p> <important> <p>You can use the account's
+     * <code>SecretBinary</code> fields.</p>  <p>You can use the account
      * default CMK to encrypt and decrypt only if you call this operation using
-     * credentials from the same account that owns the secret. If the secret is in a
-     * different account, then you must create a custom CMK and specify the ARN in this
-     * field. </p> </important>
+     * credentials from the same account that owns the secret. If the secret resides in
+     * a different account, then you must create a custom CMK and specify the ARN in
+     * this field. </p> 
      */
     inline CreateSecretRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
@@ -536,11 +526,11 @@ namespace Model
      * <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't yet
      * exist, then Secrets Manager creates it for you automatically the first time it
      * needs to encrypt a version's <code>SecretString</code> or
-     * <code>SecretBinary</code> fields.</p> <important> <p>You can use the account's
+     * <code>SecretBinary</code> fields.</p>  <p>You can use the account
      * default CMK to encrypt and decrypt only if you call this operation using
-     * credentials from the same account that owns the secret. If the secret is in a
-     * different account, then you must create a custom CMK and specify the ARN in this
-     * field. </p> </important>
+     * credentials from the same account that owns the secret. If the secret resides in
+     * a different account, then you must create a custom CMK and specify the ARN in
+     * this field. </p> 
      */
     inline CreateSecretRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
@@ -555,11 +545,11 @@ namespace Model
      * <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't yet
      * exist, then Secrets Manager creates it for you automatically the first time it
      * needs to encrypt a version's <code>SecretString</code> or
-     * <code>SecretBinary</code> fields.</p> <important> <p>You can use the account's
+     * <code>SecretBinary</code> fields.</p>  <p>You can use the account
      * default CMK to encrypt and decrypt only if you call this operation using
-     * credentials from the same account that owns the secret. If the secret is in a
-     * different account, then you must create a custom CMK and specify the ARN in this
-     * field. </p> </important>
+     * credentials from the same account that owns the secret. If the secret resides in
+     * a different account, then you must create a custom CMK and specify the ARN in
+     * this field. </p> 
      */
     inline CreateSecretRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -651,7 +641,7 @@ namespace Model
      * environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p> <p>
-     * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If your
+     * <code>{"username":"bob","password":"abc123xyz456"}</code> </p> <p>If your
      * command-line tool or SDK requires quotation marks around the parameter, you
      * should use single quotes to avoid confusion with the double quotes required in
      * the JSON text. </p>
@@ -672,7 +662,7 @@ namespace Model
      * environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p> <p>
-     * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If your
+     * <code>{"username":"bob","password":"abc123xyz456"}</code> </p> <p>If your
      * command-line tool or SDK requires quotation marks around the parameter, you
      * should use single quotes to avoid confusion with the double quotes required in
      * the JSON text. </p>
@@ -693,7 +683,7 @@ namespace Model
      * environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p> <p>
-     * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If your
+     * <code>{"username":"bob","password":"abc123xyz456"}</code> </p> <p>If your
      * command-line tool or SDK requires quotation marks around the parameter, you
      * should use single quotes to avoid confusion with the double quotes required in
      * the JSON text. </p>
@@ -714,7 +704,7 @@ namespace Model
      * environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p> <p>
-     * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If your
+     * <code>{"username":"bob","password":"abc123xyz456"}</code> </p> <p>If your
      * command-line tool or SDK requires quotation marks around the parameter, you
      * should use single quotes to avoid confusion with the double quotes required in
      * the JSON text. </p>
@@ -735,7 +725,7 @@ namespace Model
      * environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p> <p>
-     * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If your
+     * <code>{"username":"bob","password":"abc123xyz456"}</code> </p> <p>If your
      * command-line tool or SDK requires quotation marks around the parameter, you
      * should use single quotes to avoid confusion with the double quotes required in
      * the JSON text. </p>
@@ -756,7 +746,7 @@ namespace Model
      * environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p> <p>
-     * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If your
+     * <code>{"username":"bob","password":"abc123xyz456"}</code> </p> <p>If your
      * command-line tool or SDK requires quotation marks around the parameter, you
      * should use single quotes to avoid confusion with the double quotes required in
      * the JSON text. </p>
@@ -777,7 +767,7 @@ namespace Model
      * environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p> <p>
-     * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If your
+     * <code>{"username":"bob","password":"abc123xyz456"}</code> </p> <p>If your
      * command-line tool or SDK requires quotation marks around the parameter, you
      * should use single quotes to avoid confusion with the double quotes required in
      * the JSON text. </p>
@@ -798,7 +788,7 @@ namespace Model
      * environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p> <p>
-     * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If your
+     * <code>{"username":"bob","password":"abc123xyz456"}</code> </p> <p>If your
      * command-line tool or SDK requires quotation marks around the parameter, you
      * should use single quotes to avoid confusion with the double quotes required in
      * the JSON text. </p>
@@ -810,14 +800,14 @@ namespace Model
      * <p>(Optional) Specifies a list of user-defined tags that are attached to the
      * secret. Each tag is a "Key" and "Value" pair of strings. This operation only
      * appends tags to the existing list of tags. To remove tags, you must use
-     * <a>UntagResource</a>.</p> <important> <ul> <li> <p>Secrets Manager tag key names
+     * <a>UntagResource</a>.</p>  <ul> <li> <p>Secrets Manager tag key names
      * are case sensitive. A tag with the key "ABC" is a different tag from one with
      * key "abc".</p> </li> <li> <p>If you check tags in IAM policy
      * <code>Condition</code> elements as part of your security strategy, then adding
      * or removing a tag can change permissions. If the successful completion of this
      * operation would result in you losing your permissions for this secret, then this
      * operation is blocked and returns an <code>Access Denied</code> error.</p> </li>
-     * </ul> </important> <p>This parameter requires a JSON text string argument. For
+     * </ul>  <p>This parameter requires a JSON text string argument. For
      * information on how to format a JSON parameter for the various command line tool
      * environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
@@ -830,12 +820,12 @@ namespace Model
      * <p>Maximum key length—127 Unicode characters in UTF-8</p> </li> <li> <p>Maximum
      * value length—255 Unicode characters in UTF-8</p> </li> <li> <p>Tag keys and
      * values are case sensitive.</p> </li> <li> <p>Do not use the <code>aws:</code>
-     * prefix in your tag names or values because it is reserved for AWS use. You can't
-     * edit or delete tag names or values with this prefix. Tags with this prefix do
-     * not count against your tags per secret limit.</p> </li> <li> <p>If your tagging
-     * schema will be used across multiple services and resources, remember that other
+     * prefix in your tag names or values because AWS reserves it for AWS use. You
+     * can't edit or delete tag names or values with this prefix. Tags with this prefix
+     * do not count against your tags per secret limit.</p> </li> <li> <p>If you use
+     * your tagging schema across multiple services and resources, remember other
      * services might have restrictions on allowed characters. Generally allowed
-     * characters are: letters, spaces, and numbers representable in UTF-8, plus the
+     * characters: letters, spaces, and numbers representable in UTF-8, plus the
      * following special characters: + - = . _ : / @.</p> </li> </ul>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -844,14 +834,14 @@ namespace Model
      * <p>(Optional) Specifies a list of user-defined tags that are attached to the
      * secret. Each tag is a "Key" and "Value" pair of strings. This operation only
      * appends tags to the existing list of tags. To remove tags, you must use
-     * <a>UntagResource</a>.</p> <important> <ul> <li> <p>Secrets Manager tag key names
+     * <a>UntagResource</a>.</p>  <ul> <li> <p>Secrets Manager tag key names
      * are case sensitive. A tag with the key "ABC" is a different tag from one with
      * key "abc".</p> </li> <li> <p>If you check tags in IAM policy
      * <code>Condition</code> elements as part of your security strategy, then adding
      * or removing a tag can change permissions. If the successful completion of this
      * operation would result in you losing your permissions for this secret, then this
      * operation is blocked and returns an <code>Access Denied</code> error.</p> </li>
-     * </ul> </important> <p>This parameter requires a JSON text string argument. For
+     * </ul>  <p>This parameter requires a JSON text string argument. For
      * information on how to format a JSON parameter for the various command line tool
      * environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
@@ -864,12 +854,12 @@ namespace Model
      * <p>Maximum key length—127 Unicode characters in UTF-8</p> </li> <li> <p>Maximum
      * value length—255 Unicode characters in UTF-8</p> </li> <li> <p>Tag keys and
      * values are case sensitive.</p> </li> <li> <p>Do not use the <code>aws:</code>
-     * prefix in your tag names or values because it is reserved for AWS use. You can't
-     * edit or delete tag names or values with this prefix. Tags with this prefix do
-     * not count against your tags per secret limit.</p> </li> <li> <p>If your tagging
-     * schema will be used across multiple services and resources, remember that other
+     * prefix in your tag names or values because AWS reserves it for AWS use. You
+     * can't edit or delete tag names or values with this prefix. Tags with this prefix
+     * do not count against your tags per secret limit.</p> </li> <li> <p>If you use
+     * your tagging schema across multiple services and resources, remember other
      * services might have restrictions on allowed characters. Generally allowed
-     * characters are: letters, spaces, and numbers representable in UTF-8, plus the
+     * characters: letters, spaces, and numbers representable in UTF-8, plus the
      * following special characters: + - = . _ : / @.</p> </li> </ul>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -878,14 +868,14 @@ namespace Model
      * <p>(Optional) Specifies a list of user-defined tags that are attached to the
      * secret. Each tag is a "Key" and "Value" pair of strings. This operation only
      * appends tags to the existing list of tags. To remove tags, you must use
-     * <a>UntagResource</a>.</p> <important> <ul> <li> <p>Secrets Manager tag key names
+     * <a>UntagResource</a>.</p>  <ul> <li> <p>Secrets Manager tag key names
      * are case sensitive. A tag with the key "ABC" is a different tag from one with
      * key "abc".</p> </li> <li> <p>If you check tags in IAM policy
      * <code>Condition</code> elements as part of your security strategy, then adding
      * or removing a tag can change permissions. If the successful completion of this
      * operation would result in you losing your permissions for this secret, then this
      * operation is blocked and returns an <code>Access Denied</code> error.</p> </li>
-     * </ul> </important> <p>This parameter requires a JSON text string argument. For
+     * </ul>  <p>This parameter requires a JSON text string argument. For
      * information on how to format a JSON parameter for the various command line tool
      * environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
@@ -898,12 +888,12 @@ namespace Model
      * <p>Maximum key length—127 Unicode characters in UTF-8</p> </li> <li> <p>Maximum
      * value length—255 Unicode characters in UTF-8</p> </li> <li> <p>Tag keys and
      * values are case sensitive.</p> </li> <li> <p>Do not use the <code>aws:</code>
-     * prefix in your tag names or values because it is reserved for AWS use. You can't
-     * edit or delete tag names or values with this prefix. Tags with this prefix do
-     * not count against your tags per secret limit.</p> </li> <li> <p>If your tagging
-     * schema will be used across multiple services and resources, remember that other
+     * prefix in your tag names or values because AWS reserves it for AWS use. You
+     * can't edit or delete tag names or values with this prefix. Tags with this prefix
+     * do not count against your tags per secret limit.</p> </li> <li> <p>If you use
+     * your tagging schema across multiple services and resources, remember other
      * services might have restrictions on allowed characters. Generally allowed
-     * characters are: letters, spaces, and numbers representable in UTF-8, plus the
+     * characters: letters, spaces, and numbers representable in UTF-8, plus the
      * following special characters: + - = . _ : / @.</p> </li> </ul>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
@@ -912,14 +902,14 @@ namespace Model
      * <p>(Optional) Specifies a list of user-defined tags that are attached to the
      * secret. Each tag is a "Key" and "Value" pair of strings. This operation only
      * appends tags to the existing list of tags. To remove tags, you must use
-     * <a>UntagResource</a>.</p> <important> <ul> <li> <p>Secrets Manager tag key names
+     * <a>UntagResource</a>.</p>  <ul> <li> <p>Secrets Manager tag key names
      * are case sensitive. A tag with the key "ABC" is a different tag from one with
      * key "abc".</p> </li> <li> <p>If you check tags in IAM policy
      * <code>Condition</code> elements as part of your security strategy, then adding
      * or removing a tag can change permissions. If the successful completion of this
      * operation would result in you losing your permissions for this secret, then this
      * operation is blocked and returns an <code>Access Denied</code> error.</p> </li>
-     * </ul> </important> <p>This parameter requires a JSON text string argument. For
+     * </ul>  <p>This parameter requires a JSON text string argument. For
      * information on how to format a JSON parameter for the various command line tool
      * environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
@@ -932,12 +922,12 @@ namespace Model
      * <p>Maximum key length—127 Unicode characters in UTF-8</p> </li> <li> <p>Maximum
      * value length—255 Unicode characters in UTF-8</p> </li> <li> <p>Tag keys and
      * values are case sensitive.</p> </li> <li> <p>Do not use the <code>aws:</code>
-     * prefix in your tag names or values because it is reserved for AWS use. You can't
-     * edit or delete tag names or values with this prefix. Tags with this prefix do
-     * not count against your tags per secret limit.</p> </li> <li> <p>If your tagging
-     * schema will be used across multiple services and resources, remember that other
+     * prefix in your tag names or values because AWS reserves it for AWS use. You
+     * can't edit or delete tag names or values with this prefix. Tags with this prefix
+     * do not count against your tags per secret limit.</p> </li> <li> <p>If you use
+     * your tagging schema across multiple services and resources, remember other
      * services might have restrictions on allowed characters. Generally allowed
-     * characters are: letters, spaces, and numbers representable in UTF-8, plus the
+     * characters: letters, spaces, and numbers representable in UTF-8, plus the
      * following special characters: + - = . _ : / @.</p> </li> </ul>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
@@ -946,14 +936,14 @@ namespace Model
      * <p>(Optional) Specifies a list of user-defined tags that are attached to the
      * secret. Each tag is a "Key" and "Value" pair of strings. This operation only
      * appends tags to the existing list of tags. To remove tags, you must use
-     * <a>UntagResource</a>.</p> <important> <ul> <li> <p>Secrets Manager tag key names
+     * <a>UntagResource</a>.</p>  <ul> <li> <p>Secrets Manager tag key names
      * are case sensitive. A tag with the key "ABC" is a different tag from one with
      * key "abc".</p> </li> <li> <p>If you check tags in IAM policy
      * <code>Condition</code> elements as part of your security strategy, then adding
      * or removing a tag can change permissions. If the successful completion of this
      * operation would result in you losing your permissions for this secret, then this
      * operation is blocked and returns an <code>Access Denied</code> error.</p> </li>
-     * </ul> </important> <p>This parameter requires a JSON text string argument. For
+     * </ul>  <p>This parameter requires a JSON text string argument. For
      * information on how to format a JSON parameter for the various command line tool
      * environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
@@ -966,12 +956,12 @@ namespace Model
      * <p>Maximum key length—127 Unicode characters in UTF-8</p> </li> <li> <p>Maximum
      * value length—255 Unicode characters in UTF-8</p> </li> <li> <p>Tag keys and
      * values are case sensitive.</p> </li> <li> <p>Do not use the <code>aws:</code>
-     * prefix in your tag names or values because it is reserved for AWS use. You can't
-     * edit or delete tag names or values with this prefix. Tags with this prefix do
-     * not count against your tags per secret limit.</p> </li> <li> <p>If your tagging
-     * schema will be used across multiple services and resources, remember that other
+     * prefix in your tag names or values because AWS reserves it for AWS use. You
+     * can't edit or delete tag names or values with this prefix. Tags with this prefix
+     * do not count against your tags per secret limit.</p> </li> <li> <p>If you use
+     * your tagging schema across multiple services and resources, remember other
      * services might have restrictions on allowed characters. Generally allowed
-     * characters are: letters, spaces, and numbers representable in UTF-8, plus the
+     * characters: letters, spaces, and numbers representable in UTF-8, plus the
      * following special characters: + - = . _ : / @.</p> </li> </ul>
      */
     inline CreateSecretRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
@@ -980,14 +970,14 @@ namespace Model
      * <p>(Optional) Specifies a list of user-defined tags that are attached to the
      * secret. Each tag is a "Key" and "Value" pair of strings. This operation only
      * appends tags to the existing list of tags. To remove tags, you must use
-     * <a>UntagResource</a>.</p> <important> <ul> <li> <p>Secrets Manager tag key names
+     * <a>UntagResource</a>.</p>  <ul> <li> <p>Secrets Manager tag key names
      * are case sensitive. A tag with the key "ABC" is a different tag from one with
      * key "abc".</p> </li> <li> <p>If you check tags in IAM policy
      * <code>Condition</code> elements as part of your security strategy, then adding
      * or removing a tag can change permissions. If the successful completion of this
      * operation would result in you losing your permissions for this secret, then this
      * operation is blocked and returns an <code>Access Denied</code> error.</p> </li>
-     * </ul> </important> <p>This parameter requires a JSON text string argument. For
+     * </ul>  <p>This parameter requires a JSON text string argument. For
      * information on how to format a JSON parameter for the various command line tool
      * environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
@@ -1000,12 +990,12 @@ namespace Model
      * <p>Maximum key length—127 Unicode characters in UTF-8</p> </li> <li> <p>Maximum
      * value length—255 Unicode characters in UTF-8</p> </li> <li> <p>Tag keys and
      * values are case sensitive.</p> </li> <li> <p>Do not use the <code>aws:</code>
-     * prefix in your tag names or values because it is reserved for AWS use. You can't
-     * edit or delete tag names or values with this prefix. Tags with this prefix do
-     * not count against your tags per secret limit.</p> </li> <li> <p>If your tagging
-     * schema will be used across multiple services and resources, remember that other
+     * prefix in your tag names or values because AWS reserves it for AWS use. You
+     * can't edit or delete tag names or values with this prefix. Tags with this prefix
+     * do not count against your tags per secret limit.</p> </li> <li> <p>If you use
+     * your tagging schema across multiple services and resources, remember other
      * services might have restrictions on allowed characters. Generally allowed
-     * characters are: letters, spaces, and numbers representable in UTF-8, plus the
+     * characters: letters, spaces, and numbers representable in UTF-8, plus the
      * following special characters: + - = . _ : / @.</p> </li> </ul>
      */
     inline CreateSecretRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
@@ -1014,14 +1004,14 @@ namespace Model
      * <p>(Optional) Specifies a list of user-defined tags that are attached to the
      * secret. Each tag is a "Key" and "Value" pair of strings. This operation only
      * appends tags to the existing list of tags. To remove tags, you must use
-     * <a>UntagResource</a>.</p> <important> <ul> <li> <p>Secrets Manager tag key names
+     * <a>UntagResource</a>.</p>  <ul> <li> <p>Secrets Manager tag key names
      * are case sensitive. A tag with the key "ABC" is a different tag from one with
      * key "abc".</p> </li> <li> <p>If you check tags in IAM policy
      * <code>Condition</code> elements as part of your security strategy, then adding
      * or removing a tag can change permissions. If the successful completion of this
      * operation would result in you losing your permissions for this secret, then this
      * operation is blocked and returns an <code>Access Denied</code> error.</p> </li>
-     * </ul> </important> <p>This parameter requires a JSON text string argument. For
+     * </ul>  <p>This parameter requires a JSON text string argument. For
      * information on how to format a JSON parameter for the various command line tool
      * environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
@@ -1034,12 +1024,12 @@ namespace Model
      * <p>Maximum key length—127 Unicode characters in UTF-8</p> </li> <li> <p>Maximum
      * value length—255 Unicode characters in UTF-8</p> </li> <li> <p>Tag keys and
      * values are case sensitive.</p> </li> <li> <p>Do not use the <code>aws:</code>
-     * prefix in your tag names or values because it is reserved for AWS use. You can't
-     * edit or delete tag names or values with this prefix. Tags with this prefix do
-     * not count against your tags per secret limit.</p> </li> <li> <p>If your tagging
-     * schema will be used across multiple services and resources, remember that other
+     * prefix in your tag names or values because AWS reserves it for AWS use. You
+     * can't edit or delete tag names or values with this prefix. Tags with this prefix
+     * do not count against your tags per secret limit.</p> </li> <li> <p>If you use
+     * your tagging schema across multiple services and resources, remember other
      * services might have restrictions on allowed characters. Generally allowed
-     * characters are: letters, spaces, and numbers representable in UTF-8, plus the
+     * characters: letters, spaces, and numbers representable in UTF-8, plus the
      * following special characters: + - = . _ : / @.</p> </li> </ul>
      */
     inline CreateSecretRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
@@ -1048,14 +1038,14 @@ namespace Model
      * <p>(Optional) Specifies a list of user-defined tags that are attached to the
      * secret. Each tag is a "Key" and "Value" pair of strings. This operation only
      * appends tags to the existing list of tags. To remove tags, you must use
-     * <a>UntagResource</a>.</p> <important> <ul> <li> <p>Secrets Manager tag key names
+     * <a>UntagResource</a>.</p>  <ul> <li> <p>Secrets Manager tag key names
      * are case sensitive. A tag with the key "ABC" is a different tag from one with
      * key "abc".</p> </li> <li> <p>If you check tags in IAM policy
      * <code>Condition</code> elements as part of your security strategy, then adding
      * or removing a tag can change permissions. If the successful completion of this
      * operation would result in you losing your permissions for this secret, then this
      * operation is blocked and returns an <code>Access Denied</code> error.</p> </li>
-     * </ul> </important> <p>This parameter requires a JSON text string argument. For
+     * </ul>  <p>This parameter requires a JSON text string argument. For
      * information on how to format a JSON parameter for the various command line tool
      * environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
@@ -1068,12 +1058,12 @@ namespace Model
      * <p>Maximum key length—127 Unicode characters in UTF-8</p> </li> <li> <p>Maximum
      * value length—255 Unicode characters in UTF-8</p> </li> <li> <p>Tag keys and
      * values are case sensitive.</p> </li> <li> <p>Do not use the <code>aws:</code>
-     * prefix in your tag names or values because it is reserved for AWS use. You can't
-     * edit or delete tag names or values with this prefix. Tags with this prefix do
-     * not count against your tags per secret limit.</p> </li> <li> <p>If your tagging
-     * schema will be used across multiple services and resources, remember that other
+     * prefix in your tag names or values because AWS reserves it for AWS use. You
+     * can't edit or delete tag names or values with this prefix. Tags with this prefix
+     * do not count against your tags per secret limit.</p> </li> <li> <p>If you use
+     * your tagging schema across multiple services and resources, remember other
      * services might have restrictions on allowed characters. Generally allowed
-     * characters are: letters, spaces, and numbers representable in UTF-8, plus the
+     * characters: letters, spaces, and numbers representable in UTF-8, plus the
      * following special characters: + - = . _ : / @.</p> </li> </ul>
      */
     inline CreateSecretRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }

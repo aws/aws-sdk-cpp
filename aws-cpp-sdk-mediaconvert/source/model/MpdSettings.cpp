@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/MpdSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,6 +19,10 @@ namespace Model
 {
 
 MpdSettings::MpdSettings() : 
+    m_accessibilityCaptionHints(MpdAccessibilityCaptionHints::NOT_SET),
+    m_accessibilityCaptionHintsHasBeenSet(false),
+    m_audioDuration(MpdAudioDuration::NOT_SET),
+    m_audioDurationHasBeenSet(false),
     m_captionContainerType(MpdCaptionContainerType::NOT_SET),
     m_captionContainerTypeHasBeenSet(false),
     m_scte35Esam(MpdScte35Esam::NOT_SET),
@@ -39,6 +33,10 @@ MpdSettings::MpdSettings() :
 }
 
 MpdSettings::MpdSettings(JsonView jsonValue) : 
+    m_accessibilityCaptionHints(MpdAccessibilityCaptionHints::NOT_SET),
+    m_accessibilityCaptionHintsHasBeenSet(false),
+    m_audioDuration(MpdAudioDuration::NOT_SET),
+    m_audioDurationHasBeenSet(false),
     m_captionContainerType(MpdCaptionContainerType::NOT_SET),
     m_captionContainerTypeHasBeenSet(false),
     m_scte35Esam(MpdScte35Esam::NOT_SET),
@@ -51,6 +49,20 @@ MpdSettings::MpdSettings(JsonView jsonValue) :
 
 MpdSettings& MpdSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("accessibilityCaptionHints"))
+  {
+    m_accessibilityCaptionHints = MpdAccessibilityCaptionHintsMapper::GetMpdAccessibilityCaptionHintsForName(jsonValue.GetString("accessibilityCaptionHints"));
+
+    m_accessibilityCaptionHintsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("audioDuration"))
+  {
+    m_audioDuration = MpdAudioDurationMapper::GetMpdAudioDurationForName(jsonValue.GetString("audioDuration"));
+
+    m_audioDurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("captionContainerType"))
   {
     m_captionContainerType = MpdCaptionContainerTypeMapper::GetMpdCaptionContainerTypeForName(jsonValue.GetString("captionContainerType"));
@@ -78,6 +90,16 @@ MpdSettings& MpdSettings::operator =(JsonView jsonValue)
 JsonValue MpdSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_accessibilityCaptionHintsHasBeenSet)
+  {
+   payload.WithString("accessibilityCaptionHints", MpdAccessibilityCaptionHintsMapper::GetNameForMpdAccessibilityCaptionHints(m_accessibilityCaptionHints));
+  }
+
+  if(m_audioDurationHasBeenSet)
+  {
+   payload.WithString("audioDuration", MpdAudioDurationMapper::GetNameForMpdAudioDuration(m_audioDuration));
+  }
 
   if(m_captionContainerTypeHasBeenSet)
   {

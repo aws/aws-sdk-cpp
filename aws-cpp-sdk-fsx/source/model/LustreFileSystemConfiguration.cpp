@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/fsx/model/LustreFileSystemConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -35,7 +25,14 @@ LustreFileSystemConfiguration::LustreFileSystemConfiguration() :
     m_deploymentTypeHasBeenSet(false),
     m_perUnitStorageThroughput(0),
     m_perUnitStorageThroughputHasBeenSet(false),
-    m_mountNameHasBeenSet(false)
+    m_mountNameHasBeenSet(false),
+    m_dailyAutomaticBackupStartTimeHasBeenSet(false),
+    m_automaticBackupRetentionDays(0),
+    m_automaticBackupRetentionDaysHasBeenSet(false),
+    m_copyTagsToBackups(false),
+    m_copyTagsToBackupsHasBeenSet(false),
+    m_driveCacheType(DriveCacheType::NOT_SET),
+    m_driveCacheTypeHasBeenSet(false)
 {
 }
 
@@ -46,7 +43,14 @@ LustreFileSystemConfiguration::LustreFileSystemConfiguration(JsonView jsonValue)
     m_deploymentTypeHasBeenSet(false),
     m_perUnitStorageThroughput(0),
     m_perUnitStorageThroughputHasBeenSet(false),
-    m_mountNameHasBeenSet(false)
+    m_mountNameHasBeenSet(false),
+    m_dailyAutomaticBackupStartTimeHasBeenSet(false),
+    m_automaticBackupRetentionDays(0),
+    m_automaticBackupRetentionDaysHasBeenSet(false),
+    m_copyTagsToBackups(false),
+    m_copyTagsToBackupsHasBeenSet(false),
+    m_driveCacheType(DriveCacheType::NOT_SET),
+    m_driveCacheTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -88,6 +92,34 @@ LustreFileSystemConfiguration& LustreFileSystemConfiguration::operator =(JsonVie
     m_mountNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DailyAutomaticBackupStartTime"))
+  {
+    m_dailyAutomaticBackupStartTime = jsonValue.GetString("DailyAutomaticBackupStartTime");
+
+    m_dailyAutomaticBackupStartTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AutomaticBackupRetentionDays"))
+  {
+    m_automaticBackupRetentionDays = jsonValue.GetInteger("AutomaticBackupRetentionDays");
+
+    m_automaticBackupRetentionDaysHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CopyTagsToBackups"))
+  {
+    m_copyTagsToBackups = jsonValue.GetBool("CopyTagsToBackups");
+
+    m_copyTagsToBackupsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DriveCacheType"))
+  {
+    m_driveCacheType = DriveCacheTypeMapper::GetDriveCacheTypeForName(jsonValue.GetString("DriveCacheType"));
+
+    m_driveCacheTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -122,6 +154,29 @@ JsonValue LustreFileSystemConfiguration::Jsonize() const
   {
    payload.WithString("MountName", m_mountName);
 
+  }
+
+  if(m_dailyAutomaticBackupStartTimeHasBeenSet)
+  {
+   payload.WithString("DailyAutomaticBackupStartTime", m_dailyAutomaticBackupStartTime);
+
+  }
+
+  if(m_automaticBackupRetentionDaysHasBeenSet)
+  {
+   payload.WithInteger("AutomaticBackupRetentionDays", m_automaticBackupRetentionDays);
+
+  }
+
+  if(m_copyTagsToBackupsHasBeenSet)
+  {
+   payload.WithBool("CopyTagsToBackups", m_copyTagsToBackups);
+
+  }
+
+  if(m_driveCacheTypeHasBeenSet)
+  {
+   payload.WithString("DriveCacheType", DriveCacheTypeMapper::GetNameForDriveCacheType(m_driveCacheType));
   }
 
   return payload;

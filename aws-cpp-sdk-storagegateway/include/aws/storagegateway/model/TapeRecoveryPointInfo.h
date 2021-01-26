@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
@@ -91,42 +81,42 @@ namespace Model
 
     /**
      * <p>The time when the point-in-time view of the virtual tape was replicated for
-     * later recovery.</p> <p>The default time stamp format of the tape recovery point
+     * later recovery.</p> <p>The default timestamp format of the tape recovery point
      * time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
      */
     inline const Aws::Utils::DateTime& GetTapeRecoveryPointTime() const{ return m_tapeRecoveryPointTime; }
 
     /**
      * <p>The time when the point-in-time view of the virtual tape was replicated for
-     * later recovery.</p> <p>The default time stamp format of the tape recovery point
+     * later recovery.</p> <p>The default timestamp format of the tape recovery point
      * time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
      */
     inline bool TapeRecoveryPointTimeHasBeenSet() const { return m_tapeRecoveryPointTimeHasBeenSet; }
 
     /**
      * <p>The time when the point-in-time view of the virtual tape was replicated for
-     * later recovery.</p> <p>The default time stamp format of the tape recovery point
+     * later recovery.</p> <p>The default timestamp format of the tape recovery point
      * time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
      */
     inline void SetTapeRecoveryPointTime(const Aws::Utils::DateTime& value) { m_tapeRecoveryPointTimeHasBeenSet = true; m_tapeRecoveryPointTime = value; }
 
     /**
      * <p>The time when the point-in-time view of the virtual tape was replicated for
-     * later recovery.</p> <p>The default time stamp format of the tape recovery point
+     * later recovery.</p> <p>The default timestamp format of the tape recovery point
      * time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
      */
     inline void SetTapeRecoveryPointTime(Aws::Utils::DateTime&& value) { m_tapeRecoveryPointTimeHasBeenSet = true; m_tapeRecoveryPointTime = std::move(value); }
 
     /**
      * <p>The time when the point-in-time view of the virtual tape was replicated for
-     * later recovery.</p> <p>The default time stamp format of the tape recovery point
+     * later recovery.</p> <p>The default timestamp format of the tape recovery point
      * time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
      */
     inline TapeRecoveryPointInfo& WithTapeRecoveryPointTime(const Aws::Utils::DateTime& value) { SetTapeRecoveryPointTime(value); return *this;}
 
     /**
      * <p>The time when the point-in-time view of the virtual tape was replicated for
-     * later recovery.</p> <p>The default time stamp format of the tape recovery point
+     * later recovery.</p> <p>The default timestamp format of the tape recovery point
      * time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
      */
     inline TapeRecoveryPointInfo& WithTapeRecoveryPointTime(Aws::Utils::DateTime&& value) { SetTapeRecoveryPointTime(std::move(value)); return *this;}

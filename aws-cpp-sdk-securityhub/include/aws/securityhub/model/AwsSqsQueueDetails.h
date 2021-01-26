@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -73,49 +63,49 @@ namespace Model
 
 
     /**
-     * <p>The ID of an AWS-managed customer master key (CMK) for Amazon SQS or a custom
+     * <p>The ID of an AWS managed customer master key (CMK) for Amazon SQS or a custom
      * CMK.</p>
      */
     inline const Aws::String& GetKmsMasterKeyId() const{ return m_kmsMasterKeyId; }
 
     /**
-     * <p>The ID of an AWS-managed customer master key (CMK) for Amazon SQS or a custom
+     * <p>The ID of an AWS managed customer master key (CMK) for Amazon SQS or a custom
      * CMK.</p>
      */
     inline bool KmsMasterKeyIdHasBeenSet() const { return m_kmsMasterKeyIdHasBeenSet; }
 
     /**
-     * <p>The ID of an AWS-managed customer master key (CMK) for Amazon SQS or a custom
+     * <p>The ID of an AWS managed customer master key (CMK) for Amazon SQS or a custom
      * CMK.</p>
      */
     inline void SetKmsMasterKeyId(const Aws::String& value) { m_kmsMasterKeyIdHasBeenSet = true; m_kmsMasterKeyId = value; }
 
     /**
-     * <p>The ID of an AWS-managed customer master key (CMK) for Amazon SQS or a custom
+     * <p>The ID of an AWS managed customer master key (CMK) for Amazon SQS or a custom
      * CMK.</p>
      */
     inline void SetKmsMasterKeyId(Aws::String&& value) { m_kmsMasterKeyIdHasBeenSet = true; m_kmsMasterKeyId = std::move(value); }
 
     /**
-     * <p>The ID of an AWS-managed customer master key (CMK) for Amazon SQS or a custom
+     * <p>The ID of an AWS managed customer master key (CMK) for Amazon SQS or a custom
      * CMK.</p>
      */
     inline void SetKmsMasterKeyId(const char* value) { m_kmsMasterKeyIdHasBeenSet = true; m_kmsMasterKeyId.assign(value); }
 
     /**
-     * <p>The ID of an AWS-managed customer master key (CMK) for Amazon SQS or a custom
+     * <p>The ID of an AWS managed customer master key (CMK) for Amazon SQS or a custom
      * CMK.</p>
      */
     inline AwsSqsQueueDetails& WithKmsMasterKeyId(const Aws::String& value) { SetKmsMasterKeyId(value); return *this;}
 
     /**
-     * <p>The ID of an AWS-managed customer master key (CMK) for Amazon SQS or a custom
+     * <p>The ID of an AWS managed customer master key (CMK) for Amazon SQS or a custom
      * CMK.</p>
      */
     inline AwsSqsQueueDetails& WithKmsMasterKeyId(Aws::String&& value) { SetKmsMasterKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of an AWS-managed customer master key (CMK) for Amazon SQS or a custom
+     * <p>The ID of an AWS managed customer master key (CMK) for Amazon SQS or a custom
      * CMK.</p>
      */
     inline AwsSqsQueueDetails& WithKmsMasterKeyId(const char* value) { SetKmsMasterKeyId(value); return *this;}

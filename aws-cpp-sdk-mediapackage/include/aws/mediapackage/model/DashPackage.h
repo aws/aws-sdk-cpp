@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediapackage/MediaPackage_EXPORTS.h>
@@ -22,6 +12,8 @@
 #include <aws/mediapackage/model/Profile.h>
 #include <aws/mediapackage/model/SegmentTemplateFormat.h>
 #include <aws/mediapackage/model/StreamSelection.h>
+#include <aws/mediapackage/model/UtcTiming.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediapackage/model/__AdTriggersElement.h>
 #include <aws/mediapackage/model/__PeriodTriggersElement.h>
 #include <utility>
@@ -514,6 +506,92 @@ rounded to the
      */
     inline DashPackage& WithSuggestedPresentationDelaySeconds(int value) { SetSuggestedPresentationDelaySeconds(value); return *this;}
 
+
+    /**
+     * Determines the type of UTCTiming included in the Media Presentation Description
+     * (MPD)
+     */
+    inline const UtcTiming& GetUtcTiming() const{ return m_utcTiming; }
+
+    /**
+     * Determines the type of UTCTiming included in the Media Presentation Description
+     * (MPD)
+     */
+    inline bool UtcTimingHasBeenSet() const { return m_utcTimingHasBeenSet; }
+
+    /**
+     * Determines the type of UTCTiming included in the Media Presentation Description
+     * (MPD)
+     */
+    inline void SetUtcTiming(const UtcTiming& value) { m_utcTimingHasBeenSet = true; m_utcTiming = value; }
+
+    /**
+     * Determines the type of UTCTiming included in the Media Presentation Description
+     * (MPD)
+     */
+    inline void SetUtcTiming(UtcTiming&& value) { m_utcTimingHasBeenSet = true; m_utcTiming = std::move(value); }
+
+    /**
+     * Determines the type of UTCTiming included in the Media Presentation Description
+     * (MPD)
+     */
+    inline DashPackage& WithUtcTiming(const UtcTiming& value) { SetUtcTiming(value); return *this;}
+
+    /**
+     * Determines the type of UTCTiming included in the Media Presentation Description
+     * (MPD)
+     */
+    inline DashPackage& WithUtcTiming(UtcTiming&& value) { SetUtcTiming(std::move(value)); return *this;}
+
+
+    /**
+     * Specifies the value attribute of the UTCTiming field when utcTiming is set to
+     * HTTP-ISO or HTTP-HEAD
+     */
+    inline const Aws::String& GetUtcTimingUri() const{ return m_utcTimingUri; }
+
+    /**
+     * Specifies the value attribute of the UTCTiming field when utcTiming is set to
+     * HTTP-ISO or HTTP-HEAD
+     */
+    inline bool UtcTimingUriHasBeenSet() const { return m_utcTimingUriHasBeenSet; }
+
+    /**
+     * Specifies the value attribute of the UTCTiming field when utcTiming is set to
+     * HTTP-ISO or HTTP-HEAD
+     */
+    inline void SetUtcTimingUri(const Aws::String& value) { m_utcTimingUriHasBeenSet = true; m_utcTimingUri = value; }
+
+    /**
+     * Specifies the value attribute of the UTCTiming field when utcTiming is set to
+     * HTTP-ISO or HTTP-HEAD
+     */
+    inline void SetUtcTimingUri(Aws::String&& value) { m_utcTimingUriHasBeenSet = true; m_utcTimingUri = std::move(value); }
+
+    /**
+     * Specifies the value attribute of the UTCTiming field when utcTiming is set to
+     * HTTP-ISO or HTTP-HEAD
+     */
+    inline void SetUtcTimingUri(const char* value) { m_utcTimingUriHasBeenSet = true; m_utcTimingUri.assign(value); }
+
+    /**
+     * Specifies the value attribute of the UTCTiming field when utcTiming is set to
+     * HTTP-ISO or HTTP-HEAD
+     */
+    inline DashPackage& WithUtcTimingUri(const Aws::String& value) { SetUtcTimingUri(value); return *this;}
+
+    /**
+     * Specifies the value attribute of the UTCTiming field when utcTiming is set to
+     * HTTP-ISO or HTTP-HEAD
+     */
+    inline DashPackage& WithUtcTimingUri(Aws::String&& value) { SetUtcTimingUri(std::move(value)); return *this;}
+
+    /**
+     * Specifies the value attribute of the UTCTiming field when utcTiming is set to
+     * HTTP-ISO or HTTP-HEAD
+     */
+    inline DashPackage& WithUtcTimingUri(const char* value) { SetUtcTimingUri(value); return *this;}
+
   private:
 
     Aws::Vector<__AdTriggersElement> m_adTriggers;
@@ -554,6 +632,12 @@ rounded to the
 
     int m_suggestedPresentationDelaySeconds;
     bool m_suggestedPresentationDelaySecondsHasBeenSet;
+
+    UtcTiming m_utcTiming;
+    bool m_utcTimingHasBeenSet;
+
+    Aws::String m_utcTimingUri;
+    bool m_utcTimingUriHasBeenSet;
   };
 
 } // namespace Model

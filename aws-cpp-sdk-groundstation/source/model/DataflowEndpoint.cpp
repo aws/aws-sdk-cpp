@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/groundstation/model/DataflowEndpoint.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,6 +20,8 @@ namespace Model
 
 DataflowEndpoint::DataflowEndpoint() : 
     m_addressHasBeenSet(false),
+    m_mtu(0),
+    m_mtuHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_status(EndpointStatus::NOT_SET),
     m_statusHasBeenSet(false)
@@ -38,6 +30,8 @@ DataflowEndpoint::DataflowEndpoint() :
 
 DataflowEndpoint::DataflowEndpoint(JsonView jsonValue) : 
     m_addressHasBeenSet(false),
+    m_mtu(0),
+    m_mtuHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_status(EndpointStatus::NOT_SET),
     m_statusHasBeenSet(false)
@@ -52,6 +46,13 @@ DataflowEndpoint& DataflowEndpoint::operator =(JsonView jsonValue)
     m_address = jsonValue.GetObject("address");
 
     m_addressHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("mtu"))
+  {
+    m_mtu = jsonValue.GetInteger("mtu");
+
+    m_mtuHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -78,6 +79,12 @@ JsonValue DataflowEndpoint::Jsonize() const
   if(m_addressHasBeenSet)
   {
    payload.WithObject("address", m_address.Jsonize());
+
+  }
+
+  if(m_mtuHasBeenSet)
+  {
+   payload.WithInteger("mtu", m_mtu);
 
   }
 

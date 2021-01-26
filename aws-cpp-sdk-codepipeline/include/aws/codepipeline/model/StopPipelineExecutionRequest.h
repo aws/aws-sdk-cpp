@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
@@ -144,29 +134,29 @@ namespace Model
 
     /**
      * <p>Use this option to stop the pipeline execution by abandoning, rather than
-     * finishing, in-progress actions.</p> <note> <p>This option can lead to failed or
-     * out-of-sequence tasks.</p> </note>
+     * finishing, in-progress actions.</p>  <p>This option can lead to failed or
+     * out-of-sequence tasks.</p> 
      */
     inline bool GetAbandon() const{ return m_abandon; }
 
     /**
      * <p>Use this option to stop the pipeline execution by abandoning, rather than
-     * finishing, in-progress actions.</p> <note> <p>This option can lead to failed or
-     * out-of-sequence tasks.</p> </note>
+     * finishing, in-progress actions.</p>  <p>This option can lead to failed or
+     * out-of-sequence tasks.</p> 
      */
     inline bool AbandonHasBeenSet() const { return m_abandonHasBeenSet; }
 
     /**
      * <p>Use this option to stop the pipeline execution by abandoning, rather than
-     * finishing, in-progress actions.</p> <note> <p>This option can lead to failed or
-     * out-of-sequence tasks.</p> </note>
+     * finishing, in-progress actions.</p>  <p>This option can lead to failed or
+     * out-of-sequence tasks.</p> 
      */
     inline void SetAbandon(bool value) { m_abandonHasBeenSet = true; m_abandon = value; }
 
     /**
      * <p>Use this option to stop the pipeline execution by abandoning, rather than
-     * finishing, in-progress actions.</p> <note> <p>This option can lead to failed or
-     * out-of-sequence tasks.</p> </note>
+     * finishing, in-progress actions.</p>  <p>This option can lead to failed or
+     * out-of-sequence tasks.</p> 
      */
     inline StopPipelineExecutionRequest& WithAbandon(bool value) { SetAbandon(value); return *this;}
 

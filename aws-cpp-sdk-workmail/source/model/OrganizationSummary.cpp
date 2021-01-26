@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/workmail/model/OrganizationSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,6 +21,7 @@ namespace Model
 OrganizationSummary::OrganizationSummary() : 
     m_organizationIdHasBeenSet(false),
     m_aliasHasBeenSet(false),
+    m_defaultMailDomainHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
     m_stateHasBeenSet(false)
 {
@@ -39,6 +30,7 @@ OrganizationSummary::OrganizationSummary() :
 OrganizationSummary::OrganizationSummary(JsonView jsonValue) : 
     m_organizationIdHasBeenSet(false),
     m_aliasHasBeenSet(false),
+    m_defaultMailDomainHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
     m_stateHasBeenSet(false)
 {
@@ -59,6 +51,13 @@ OrganizationSummary& OrganizationSummary::operator =(JsonView jsonValue)
     m_alias = jsonValue.GetString("Alias");
 
     m_aliasHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DefaultMailDomain"))
+  {
+    m_defaultMailDomain = jsonValue.GetString("DefaultMailDomain");
+
+    m_defaultMailDomainHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ErrorMessage"))
@@ -91,6 +90,12 @@ JsonValue OrganizationSummary::Jsonize() const
   if(m_aliasHasBeenSet)
   {
    payload.WithString("Alias", m_alias);
+
+  }
+
+  if(m_defaultMailDomainHasBeenSet)
+  {
+   payload.WithString("DefaultMailDomain", m_defaultMailDomain);
 
   }
 

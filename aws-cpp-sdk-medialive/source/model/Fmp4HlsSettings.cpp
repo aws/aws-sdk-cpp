@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/medialive/model/Fmp4HlsSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,12 +19,20 @@ namespace Model
 {
 
 Fmp4HlsSettings::Fmp4HlsSettings() : 
-    m_audioRenditionSetsHasBeenSet(false)
+    m_audioRenditionSetsHasBeenSet(false),
+    m_nielsenId3Behavior(Fmp4NielsenId3Behavior::NOT_SET),
+    m_nielsenId3BehaviorHasBeenSet(false),
+    m_timedMetadataBehavior(Fmp4TimedMetadataBehavior::NOT_SET),
+    m_timedMetadataBehaviorHasBeenSet(false)
 {
 }
 
 Fmp4HlsSettings::Fmp4HlsSettings(JsonView jsonValue) : 
-    m_audioRenditionSetsHasBeenSet(false)
+    m_audioRenditionSetsHasBeenSet(false),
+    m_nielsenId3Behavior(Fmp4NielsenId3Behavior::NOT_SET),
+    m_nielsenId3BehaviorHasBeenSet(false),
+    m_timedMetadataBehavior(Fmp4TimedMetadataBehavior::NOT_SET),
+    m_timedMetadataBehaviorHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +46,20 @@ Fmp4HlsSettings& Fmp4HlsSettings::operator =(JsonView jsonValue)
     m_audioRenditionSetsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("nielsenId3Behavior"))
+  {
+    m_nielsenId3Behavior = Fmp4NielsenId3BehaviorMapper::GetFmp4NielsenId3BehaviorForName(jsonValue.GetString("nielsenId3Behavior"));
+
+    m_nielsenId3BehaviorHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("timedMetadataBehavior"))
+  {
+    m_timedMetadataBehavior = Fmp4TimedMetadataBehaviorMapper::GetFmp4TimedMetadataBehaviorForName(jsonValue.GetString("timedMetadataBehavior"));
+
+    m_timedMetadataBehaviorHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -59,6 +71,16 @@ JsonValue Fmp4HlsSettings::Jsonize() const
   {
    payload.WithString("audioRenditionSets", m_audioRenditionSets);
 
+  }
+
+  if(m_nielsenId3BehaviorHasBeenSet)
+  {
+   payload.WithString("nielsenId3Behavior", Fmp4NielsenId3BehaviorMapper::GetNameForFmp4NielsenId3Behavior(m_nielsenId3Behavior));
+  }
+
+  if(m_timedMetadataBehaviorHasBeenSet)
+  {
+   payload.WithString("timedMetadataBehavior", Fmp4TimedMetadataBehaviorMapper::GetNameForFmp4TimedMetadataBehavior(m_timedMetadataBehavior));
   }
 
   return payload;

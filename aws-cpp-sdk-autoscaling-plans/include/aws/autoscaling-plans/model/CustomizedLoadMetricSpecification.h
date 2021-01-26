@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/autoscaling-plans/AutoScalingPlans_EXPORTS.h>
@@ -40,9 +30,8 @@ namespace Model
    * <p>Represents a CloudWatch metric of your choosing that can be used for
    * predictive scaling. </p> <p>For predictive scaling to work with a customized
    * load metric specification, AWS Auto Scaling needs access to the <code>Sum</code>
-   * and <code>Average</code> statistics that CloudWatch computes from metric data.
-   * Statistics are calculations used to aggregate data over specified time
-   * periods.</p> <p>When you choose a load metric, make sure that the required
+   * and <code>Average</code> statistics that CloudWatch computes from metric
+   * data.</p> <p>When you choose a load metric, make sure that the required
    * <code>Sum</code> and <code>Average</code> statistics for your metric are
    * available in CloudWatch and that they provide relevant data for predictive
    * scaling. The <code>Sum</code> statistic must represent the total load on the
@@ -51,12 +40,20 @@ namespace Model
    * the number of requests processed by your Auto Scaling group. If the
    * <code>Sum</code> statistic represents the total request count processed by the
    * group, then the <code>Average</code> statistic for the specified metric must
-   * represent the average request count processed by each instance of the group.</p>
-   * <p>For information about terminology, available metrics, or how to publish new
-   * metrics, see <a
+   * represent the average request count processed by each instance of the group.
+   * </p> <p>If you publish your own metrics, you can aggregate the data points at a
+   * given interval and then publish the aggregated data points to CloudWatch. Before
+   * AWS Auto Scaling generates the forecast, it sums up all the metric data points
+   * that occurred within each hour to match the granularity period that is used in
+   * the forecast (60 minutes).</p> <p>For information about terminology, available
+   * metrics, or how to publish new metrics, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon
-   * CloudWatch Concepts</a> in the <i>Amazon CloudWatch User Guide</i>.
-   * </p><p><h3>See Also:</h3>   <a
+   * CloudWatch Concepts</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
+   * <p>After creating your scaling plan, you can use the AWS Auto Scaling console to
+   * visualize forecasts for the specified metric. For more information, see <a
+   * href="https://docs.aws.amazon.com/autoscaling/plans/userguide/gs-create-scaling-plan.html#gs-view-resource">View
+   * Scaling Information for a Resource</a> in the <i>AWS Auto Scaling User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/CustomizedLoadMetricSpecification">AWS
    * API Reference</a></p>
    */
@@ -209,38 +206,32 @@ namespace Model
 
 
     /**
-     * <p>The statistic of the metric. Currently, the value must always be
-     * <code>Sum</code>. </p>
+     * <p>The statistic of the metric. The only valid value is <code>Sum</code>.</p>
      */
     inline const MetricStatistic& GetStatistic() const{ return m_statistic; }
 
     /**
-     * <p>The statistic of the metric. Currently, the value must always be
-     * <code>Sum</code>. </p>
+     * <p>The statistic of the metric. The only valid value is <code>Sum</code>.</p>
      */
     inline bool StatisticHasBeenSet() const { return m_statisticHasBeenSet; }
 
     /**
-     * <p>The statistic of the metric. Currently, the value must always be
-     * <code>Sum</code>. </p>
+     * <p>The statistic of the metric. The only valid value is <code>Sum</code>.</p>
      */
     inline void SetStatistic(const MetricStatistic& value) { m_statisticHasBeenSet = true; m_statistic = value; }
 
     /**
-     * <p>The statistic of the metric. Currently, the value must always be
-     * <code>Sum</code>. </p>
+     * <p>The statistic of the metric. The only valid value is <code>Sum</code>.</p>
      */
     inline void SetStatistic(MetricStatistic&& value) { m_statisticHasBeenSet = true; m_statistic = std::move(value); }
 
     /**
-     * <p>The statistic of the metric. Currently, the value must always be
-     * <code>Sum</code>. </p>
+     * <p>The statistic of the metric. The only valid value is <code>Sum</code>.</p>
      */
     inline CustomizedLoadMetricSpecification& WithStatistic(const MetricStatistic& value) { SetStatistic(value); return *this;}
 
     /**
-     * <p>The statistic of the metric. Currently, the value must always be
-     * <code>Sum</code>. </p>
+     * <p>The statistic of the metric. The only valid value is <code>Sum</code>.</p>
      */
     inline CustomizedLoadMetricSpecification& WithStatistic(MetricStatistic&& value) { SetStatistic(std::move(value)); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
@@ -268,175 +258,179 @@ namespace Model
     /**
      * <p>The number of instances that are currently associated with the service.
      * Instances that were previously associated with the service but that have been
-     * deleted are not included in the count.</p>
+     * deleted are not included in the count. The count might not reflect pending
+     * registrations and deregistrations.</p>
      */
     inline int GetInstanceCount() const{ return m_instanceCount; }
 
     /**
      * <p>The number of instances that are currently associated with the service.
      * Instances that were previously associated with the service but that have been
-     * deleted are not included in the count.</p>
+     * deleted are not included in the count. The count might not reflect pending
+     * registrations and deregistrations.</p>
      */
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
 
     /**
      * <p>The number of instances that are currently associated with the service.
      * Instances that were previously associated with the service but that have been
-     * deleted are not included in the count.</p>
+     * deleted are not included in the count. The count might not reflect pending
+     * registrations and deregistrations.</p>
      */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
      * <p>The number of instances that are currently associated with the service.
      * Instances that were previously associated with the service but that have been
-     * deleted are not included in the count.</p>
+     * deleted are not included in the count. The count might not reflect pending
+     * registrations and deregistrations.</p>
      */
     inline Service& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 
 
     /**
-     * <p>A complex type that contains information about the Route 53 DNS records that
+     * <p>A complex type that contains information about the Route 53 DNS records that
      * you want AWS Cloud Map to create when you register an instance.</p>
      */
     inline const DnsConfig& GetDnsConfig() const{ return m_dnsConfig; }
 
     /**
-     * <p>A complex type that contains information about the Route 53 DNS records that
+     * <p>A complex type that contains information about the Route 53 DNS records that
      * you want AWS Cloud Map to create when you register an instance.</p>
      */
     inline bool DnsConfigHasBeenSet() const { return m_dnsConfigHasBeenSet; }
 
     /**
-     * <p>A complex type that contains information about the Route 53 DNS records that
+     * <p>A complex type that contains information about the Route 53 DNS records that
      * you want AWS Cloud Map to create when you register an instance.</p>
      */
     inline void SetDnsConfig(const DnsConfig& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = value; }
 
     /**
-     * <p>A complex type that contains information about the Route 53 DNS records that
+     * <p>A complex type that contains information about the Route 53 DNS records that
      * you want AWS Cloud Map to create when you register an instance.</p>
      */
     inline void SetDnsConfig(DnsConfig&& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = std::move(value); }
 
     /**
-     * <p>A complex type that contains information about the Route 53 DNS records that
+     * <p>A complex type that contains information about the Route 53 DNS records that
      * you want AWS Cloud Map to create when you register an instance.</p>
      */
     inline Service& WithDnsConfig(const DnsConfig& value) { SetDnsConfig(value); return *this;}
 
     /**
-     * <p>A complex type that contains information about the Route 53 DNS records that
+     * <p>A complex type that contains information about the Route 53 DNS records that
      * you want AWS Cloud Map to create when you register an instance.</p>
      */
     inline Service& WithDnsConfig(DnsConfig&& value) { SetDnsConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p> <i>Public DNS namespaces only.</i> A complex type that contains settings for
-     * an optional health check. If you specify settings for a health check, AWS Cloud
-     * Map associates the health check with the records that you specify in
-     * <code>DnsConfig</code>.</p> <p>For information about the charges for health
-     * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
-     * Pricing</a>.</p>
+     * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
+     * settings for an optional health check. If you specify settings for a health
+     * check, AWS Cloud Map associates the health check with the records that you
+     * specify in <code>DnsConfig</code>.</p> <p>For information about the charges for
+     * health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
+     * Route 53 Pricing</a>.</p>
      */
     inline const HealthCheckConfig& GetHealthCheckConfig() const{ return m_healthCheckConfig; }
 
     /**
-     * <p> <i>Public DNS namespaces only.</i> A complex type that contains settings for
-     * an optional health check. If you specify settings for a health check, AWS Cloud
-     * Map associates the health check with the records that you specify in
-     * <code>DnsConfig</code>.</p> <p>For information about the charges for health
-     * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
-     * Pricing</a>.</p>
+     * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
+     * settings for an optional health check. If you specify settings for a health
+     * check, AWS Cloud Map associates the health check with the records that you
+     * specify in <code>DnsConfig</code>.</p> <p>For information about the charges for
+     * health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
+     * Route 53 Pricing</a>.</p>
      */
     inline bool HealthCheckConfigHasBeenSet() const { return m_healthCheckConfigHasBeenSet; }
 
     /**
-     * <p> <i>Public DNS namespaces only.</i> A complex type that contains settings for
-     * an optional health check. If you specify settings for a health check, AWS Cloud
-     * Map associates the health check with the records that you specify in
-     * <code>DnsConfig</code>.</p> <p>For information about the charges for health
-     * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
-     * Pricing</a>.</p>
+     * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
+     * settings for an optional health check. If you specify settings for a health
+     * check, AWS Cloud Map associates the health check with the records that you
+     * specify in <code>DnsConfig</code>.</p> <p>For information about the charges for
+     * health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
+     * Route 53 Pricing</a>.</p>
      */
     inline void SetHealthCheckConfig(const HealthCheckConfig& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = value; }
 
     /**
-     * <p> <i>Public DNS namespaces only.</i> A complex type that contains settings for
-     * an optional health check. If you specify settings for a health check, AWS Cloud
-     * Map associates the health check with the records that you specify in
-     * <code>DnsConfig</code>.</p> <p>For information about the charges for health
-     * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
-     * Pricing</a>.</p>
+     * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
+     * settings for an optional health check. If you specify settings for a health
+     * check, AWS Cloud Map associates the health check with the records that you
+     * specify in <code>DnsConfig</code>.</p> <p>For information about the charges for
+     * health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
+     * Route 53 Pricing</a>.</p>
      */
     inline void SetHealthCheckConfig(HealthCheckConfig&& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = std::move(value); }
 
     /**
-     * <p> <i>Public DNS namespaces only.</i> A complex type that contains settings for
-     * an optional health check. If you specify settings for a health check, AWS Cloud
-     * Map associates the health check with the records that you specify in
-     * <code>DnsConfig</code>.</p> <p>For information about the charges for health
-     * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
-     * Pricing</a>.</p>
+     * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
+     * settings for an optional health check. If you specify settings for a health
+     * check, AWS Cloud Map associates the health check with the records that you
+     * specify in <code>DnsConfig</code>.</p> <p>For information about the charges for
+     * health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
+     * Route 53 Pricing</a>.</p>
      */
     inline Service& WithHealthCheckConfig(const HealthCheckConfig& value) { SetHealthCheckConfig(value); return *this;}
 
     /**
-     * <p> <i>Public DNS namespaces only.</i> A complex type that contains settings for
-     * an optional health check. If you specify settings for a health check, AWS Cloud
-     * Map associates the health check with the records that you specify in
-     * <code>DnsConfig</code>.</p> <p>For information about the charges for health
-     * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
-     * Pricing</a>.</p>
+     * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
+     * settings for an optional health check. If you specify settings for a health
+     * check, AWS Cloud Map associates the health check with the records that you
+     * specify in <code>DnsConfig</code>.</p> <p>For information about the charges for
+     * health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
+     * Route 53 Pricing</a>.</p>
      */
     inline Service& WithHealthCheckConfig(HealthCheckConfig&& value) { SetHealthCheckConfig(std::move(value)); return *this;}
 
 
     /**
      * <p>A complex type that contains information about an optional custom health
-     * check.</p> <important> <p>If you specify a health check configuration, you can
+     * check.</p>  <p>If you specify a health check configuration, you can
      * specify either <code>HealthCheckCustomConfig</code> or
-     * <code>HealthCheckConfig</code> but not both.</p> </important>
+     * <code>HealthCheckConfig</code> but not both.</p> 
      */
     inline const HealthCheckCustomConfig& GetHealthCheckCustomConfig() const{ return m_healthCheckCustomConfig; }
 
     /**
      * <p>A complex type that contains information about an optional custom health
-     * check.</p> <important> <p>If you specify a health check configuration, you can
+     * check.</p>  <p>If you specify a health check configuration, you can
      * specify either <code>HealthCheckCustomConfig</code> or
-     * <code>HealthCheckConfig</code> but not both.</p> </important>
+     * <code>HealthCheckConfig</code> but not both.</p> 
      */
     inline bool HealthCheckCustomConfigHasBeenSet() const { return m_healthCheckCustomConfigHasBeenSet; }
 
     /**
      * <p>A complex type that contains information about an optional custom health
-     * check.</p> <important> <p>If you specify a health check configuration, you can
+     * check.</p>  <p>If you specify a health check configuration, you can
      * specify either <code>HealthCheckCustomConfig</code> or
-     * <code>HealthCheckConfig</code> but not both.</p> </important>
+     * <code>HealthCheckConfig</code> but not both.</p> 
      */
     inline void SetHealthCheckCustomConfig(const HealthCheckCustomConfig& value) { m_healthCheckCustomConfigHasBeenSet = true; m_healthCheckCustomConfig = value; }
 
     /**
      * <p>A complex type that contains information about an optional custom health
-     * check.</p> <important> <p>If you specify a health check configuration, you can
+     * check.</p>  <p>If you specify a health check configuration, you can
      * specify either <code>HealthCheckCustomConfig</code> or
-     * <code>HealthCheckConfig</code> but not both.</p> </important>
+     * <code>HealthCheckConfig</code> but not both.</p> 
      */
     inline void SetHealthCheckCustomConfig(HealthCheckCustomConfig&& value) { m_healthCheckCustomConfigHasBeenSet = true; m_healthCheckCustomConfig = std::move(value); }
 
     /**
      * <p>A complex type that contains information about an optional custom health
-     * check.</p> <important> <p>If you specify a health check configuration, you can
+     * check.</p>  <p>If you specify a health check configuration, you can
      * specify either <code>HealthCheckCustomConfig</code> or
-     * <code>HealthCheckConfig</code> but not both.</p> </important>
+     * <code>HealthCheckConfig</code> but not both.</p> 
      */
     inline Service& WithHealthCheckCustomConfig(const HealthCheckCustomConfig& value) { SetHealthCheckCustomConfig(value); return *this;}
 
     /**
      * <p>A complex type that contains information about an optional custom health
-     * check.</p> <important> <p>If you specify a health check configuration, you can
+     * check.</p>  <p>If you specify a health check configuration, you can
      * specify either <code>HealthCheckCustomConfig</code> or
-     * <code>HealthCheckConfig</code> but not both.</p> </important>
+     * <code>HealthCheckConfig</code> but not both.</p> 
      */
     inline Service& WithHealthCheckCustomConfig(HealthCheckCustomConfig&& value) { SetHealthCheckCustomConfig(std::move(value)); return *this;}
 

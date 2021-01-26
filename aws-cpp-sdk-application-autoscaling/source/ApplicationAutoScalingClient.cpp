@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -56,7 +46,7 @@ static const char* ALLOCATION_TAG = "ApplicationAutoScalingClient";
 ApplicationAutoScalingClient::ApplicationAutoScalingClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ApplicationAutoScalingErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -66,7 +56,7 @@ ApplicationAutoScalingClient::ApplicationAutoScalingClient(const Client::ClientC
 ApplicationAutoScalingClient::ApplicationAutoScalingClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ApplicationAutoScalingErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -77,7 +67,7 @@ ApplicationAutoScalingClient::ApplicationAutoScalingClient(const std::shared_ptr
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ApplicationAutoScalingErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -90,6 +80,7 @@ ApplicationAutoScalingClient::~ApplicationAutoScalingClient()
 
 void ApplicationAutoScalingClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Application Auto Scaling");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -119,15 +110,7 @@ DeleteScalingPolicyOutcome ApplicationAutoScalingClient::DeleteScalingPolicy(con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteScalingPolicyOutcome(DeleteScalingPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteScalingPolicyOutcome(outcome.GetError());
-  }
+  return DeleteScalingPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteScalingPolicyOutcomeCallable ApplicationAutoScalingClient::DeleteScalingPolicyCallable(const DeleteScalingPolicyRequest& request) const
@@ -154,15 +137,7 @@ DeleteScheduledActionOutcome ApplicationAutoScalingClient::DeleteScheduledAction
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteScheduledActionOutcome(DeleteScheduledActionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteScheduledActionOutcome(outcome.GetError());
-  }
+  return DeleteScheduledActionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteScheduledActionOutcomeCallable ApplicationAutoScalingClient::DeleteScheduledActionCallable(const DeleteScheduledActionRequest& request) const
@@ -189,15 +164,7 @@ DeregisterScalableTargetOutcome ApplicationAutoScalingClient::DeregisterScalable
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeregisterScalableTargetOutcome(DeregisterScalableTargetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeregisterScalableTargetOutcome(outcome.GetError());
-  }
+  return DeregisterScalableTargetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeregisterScalableTargetOutcomeCallable ApplicationAutoScalingClient::DeregisterScalableTargetCallable(const DeregisterScalableTargetRequest& request) const
@@ -224,15 +191,7 @@ DescribeScalableTargetsOutcome ApplicationAutoScalingClient::DescribeScalableTar
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeScalableTargetsOutcome(DescribeScalableTargetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeScalableTargetsOutcome(outcome.GetError());
-  }
+  return DescribeScalableTargetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeScalableTargetsOutcomeCallable ApplicationAutoScalingClient::DescribeScalableTargetsCallable(const DescribeScalableTargetsRequest& request) const
@@ -259,15 +218,7 @@ DescribeScalingActivitiesOutcome ApplicationAutoScalingClient::DescribeScalingAc
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeScalingActivitiesOutcome(DescribeScalingActivitiesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeScalingActivitiesOutcome(outcome.GetError());
-  }
+  return DescribeScalingActivitiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeScalingActivitiesOutcomeCallable ApplicationAutoScalingClient::DescribeScalingActivitiesCallable(const DescribeScalingActivitiesRequest& request) const
@@ -294,15 +245,7 @@ DescribeScalingPoliciesOutcome ApplicationAutoScalingClient::DescribeScalingPoli
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeScalingPoliciesOutcome(DescribeScalingPoliciesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeScalingPoliciesOutcome(outcome.GetError());
-  }
+  return DescribeScalingPoliciesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeScalingPoliciesOutcomeCallable ApplicationAutoScalingClient::DescribeScalingPoliciesCallable(const DescribeScalingPoliciesRequest& request) const
@@ -329,15 +272,7 @@ DescribeScheduledActionsOutcome ApplicationAutoScalingClient::DescribeScheduledA
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeScheduledActionsOutcome(DescribeScheduledActionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeScheduledActionsOutcome(outcome.GetError());
-  }
+  return DescribeScheduledActionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeScheduledActionsOutcomeCallable ApplicationAutoScalingClient::DescribeScheduledActionsCallable(const DescribeScheduledActionsRequest& request) const
@@ -364,15 +299,7 @@ PutScalingPolicyOutcome ApplicationAutoScalingClient::PutScalingPolicy(const Put
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutScalingPolicyOutcome(PutScalingPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutScalingPolicyOutcome(outcome.GetError());
-  }
+  return PutScalingPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutScalingPolicyOutcomeCallable ApplicationAutoScalingClient::PutScalingPolicyCallable(const PutScalingPolicyRequest& request) const
@@ -399,15 +326,7 @@ PutScheduledActionOutcome ApplicationAutoScalingClient::PutScheduledAction(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutScheduledActionOutcome(PutScheduledActionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutScheduledActionOutcome(outcome.GetError());
-  }
+  return PutScheduledActionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutScheduledActionOutcomeCallable ApplicationAutoScalingClient::PutScheduledActionCallable(const PutScheduledActionRequest& request) const
@@ -434,15 +353,7 @@ RegisterScalableTargetOutcome ApplicationAutoScalingClient::RegisterScalableTarg
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RegisterScalableTargetOutcome(RegisterScalableTargetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RegisterScalableTargetOutcome(outcome.GetError());
-  }
+  return RegisterScalableTargetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RegisterScalableTargetOutcomeCallable ApplicationAutoScalingClient::RegisterScalableTargetCallable(const RegisterScalableTargetRequest& request) const

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/personalize/Personalize_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/personalize/model/BatchInferenceJobInput.h>
 #include <aws/personalize/model/BatchInferenceJobOutput.h>
+#include <aws/personalize/model/BatchInferenceJobConfig.h>
 #include <utility>
 
 namespace Aws
@@ -134,6 +125,55 @@ namespace Model
      * generate the batch inference recommendations.</p>
      */
     inline CreateBatchInferenceJobRequest& WithSolutionVersionArn(const char* value) { SetSolutionVersionArn(value); return *this;}
+
+
+    /**
+     * <p>The ARN of the filter to apply to the batch inference job. For more
+     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     */
+    inline const Aws::String& GetFilterArn() const{ return m_filterArn; }
+
+    /**
+     * <p>The ARN of the filter to apply to the batch inference job. For more
+     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     */
+    inline bool FilterArnHasBeenSet() const { return m_filterArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the filter to apply to the batch inference job. For more
+     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     */
+    inline void SetFilterArn(const Aws::String& value) { m_filterArnHasBeenSet = true; m_filterArn = value; }
+
+    /**
+     * <p>The ARN of the filter to apply to the batch inference job. For more
+     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     */
+    inline void SetFilterArn(Aws::String&& value) { m_filterArnHasBeenSet = true; m_filterArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the filter to apply to the batch inference job. For more
+     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     */
+    inline void SetFilterArn(const char* value) { m_filterArnHasBeenSet = true; m_filterArn.assign(value); }
+
+    /**
+     * <p>The ARN of the filter to apply to the batch inference job. For more
+     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     */
+    inline CreateBatchInferenceJobRequest& WithFilterArn(const Aws::String& value) { SetFilterArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the filter to apply to the batch inference job. For more
+     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     */
+    inline CreateBatchInferenceJobRequest& WithFilterArn(Aws::String&& value) { SetFilterArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the filter to apply to the batch inference job. For more
+     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     */
+    inline CreateBatchInferenceJobRequest& WithFilterArn(const char* value) { SetFilterArn(value); return *this;}
 
 
     /**
@@ -281,6 +321,37 @@ namespace Model
      */
     inline CreateBatchInferenceJobRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
+    /**
+     * <p>The configuration details of a batch inference job.</p>
+     */
+    inline const BatchInferenceJobConfig& GetBatchInferenceJobConfig() const{ return m_batchInferenceJobConfig; }
+
+    /**
+     * <p>The configuration details of a batch inference job.</p>
+     */
+    inline bool BatchInferenceJobConfigHasBeenSet() const { return m_batchInferenceJobConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration details of a batch inference job.</p>
+     */
+    inline void SetBatchInferenceJobConfig(const BatchInferenceJobConfig& value) { m_batchInferenceJobConfigHasBeenSet = true; m_batchInferenceJobConfig = value; }
+
+    /**
+     * <p>The configuration details of a batch inference job.</p>
+     */
+    inline void SetBatchInferenceJobConfig(BatchInferenceJobConfig&& value) { m_batchInferenceJobConfigHasBeenSet = true; m_batchInferenceJobConfig = std::move(value); }
+
+    /**
+     * <p>The configuration details of a batch inference job.</p>
+     */
+    inline CreateBatchInferenceJobRequest& WithBatchInferenceJobConfig(const BatchInferenceJobConfig& value) { SetBatchInferenceJobConfig(value); return *this;}
+
+    /**
+     * <p>The configuration details of a batch inference job.</p>
+     */
+    inline CreateBatchInferenceJobRequest& WithBatchInferenceJobConfig(BatchInferenceJobConfig&& value) { SetBatchInferenceJobConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_jobName;
@@ -288,6 +359,9 @@ namespace Model
 
     Aws::String m_solutionVersionArn;
     bool m_solutionVersionArnHasBeenSet;
+
+    Aws::String m_filterArn;
+    bool m_filterArnHasBeenSet;
 
     int m_numResults;
     bool m_numResultsHasBeenSet;
@@ -300,6 +374,9 @@ namespace Model
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
+    BatchInferenceJobConfig m_batchInferenceJobConfig;
+    bool m_batchInferenceJobConfigHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kinesis/Kinesis_EXPORTS.h>
@@ -106,34 +96,34 @@ namespace Model
         class SubscribeToShardRequest;
         class UpdateShardCountRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KinesisErrors>> AddTagsToStreamOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KinesisErrors>> CreateStreamOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KinesisErrors>> DecreaseStreamRetentionPeriodOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KinesisErrors>> DeleteStreamOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KinesisErrors>> DeregisterStreamConsumerOutcome;
-        typedef Aws::Utils::Outcome<DescribeLimitsResult, Aws::Client::AWSError<KinesisErrors>> DescribeLimitsOutcome;
-        typedef Aws::Utils::Outcome<DescribeStreamResult, Aws::Client::AWSError<KinesisErrors>> DescribeStreamOutcome;
-        typedef Aws::Utils::Outcome<DescribeStreamConsumerResult, Aws::Client::AWSError<KinesisErrors>> DescribeStreamConsumerOutcome;
-        typedef Aws::Utils::Outcome<DescribeStreamSummaryResult, Aws::Client::AWSError<KinesisErrors>> DescribeStreamSummaryOutcome;
-        typedef Aws::Utils::Outcome<DisableEnhancedMonitoringResult, Aws::Client::AWSError<KinesisErrors>> DisableEnhancedMonitoringOutcome;
-        typedef Aws::Utils::Outcome<EnableEnhancedMonitoringResult, Aws::Client::AWSError<KinesisErrors>> EnableEnhancedMonitoringOutcome;
-        typedef Aws::Utils::Outcome<GetRecordsResult, Aws::Client::AWSError<KinesisErrors>> GetRecordsOutcome;
-        typedef Aws::Utils::Outcome<GetShardIteratorResult, Aws::Client::AWSError<KinesisErrors>> GetShardIteratorOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KinesisErrors>> IncreaseStreamRetentionPeriodOutcome;
-        typedef Aws::Utils::Outcome<ListShardsResult, Aws::Client::AWSError<KinesisErrors>> ListShardsOutcome;
-        typedef Aws::Utils::Outcome<ListStreamConsumersResult, Aws::Client::AWSError<KinesisErrors>> ListStreamConsumersOutcome;
-        typedef Aws::Utils::Outcome<ListStreamsResult, Aws::Client::AWSError<KinesisErrors>> ListStreamsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForStreamResult, Aws::Client::AWSError<KinesisErrors>> ListTagsForStreamOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KinesisErrors>> MergeShardsOutcome;
-        typedef Aws::Utils::Outcome<PutRecordResult, Aws::Client::AWSError<KinesisErrors>> PutRecordOutcome;
-        typedef Aws::Utils::Outcome<PutRecordsResult, Aws::Client::AWSError<KinesisErrors>> PutRecordsOutcome;
-        typedef Aws::Utils::Outcome<RegisterStreamConsumerResult, Aws::Client::AWSError<KinesisErrors>> RegisterStreamConsumerOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KinesisErrors>> RemoveTagsFromStreamOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KinesisErrors>> SplitShardOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KinesisErrors>> StartStreamEncryptionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KinesisErrors>> StopStreamEncryptionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KinesisErrors>> SubscribeToShardOutcome;
-        typedef Aws::Utils::Outcome<UpdateShardCountResult, Aws::Client::AWSError<KinesisErrors>> UpdateShardCountOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> AddTagsToStreamOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> CreateStreamOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> DecreaseStreamRetentionPeriodOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> DeleteStreamOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> DeregisterStreamConsumerOutcome;
+        typedef Aws::Utils::Outcome<DescribeLimitsResult, KinesisError> DescribeLimitsOutcome;
+        typedef Aws::Utils::Outcome<DescribeStreamResult, KinesisError> DescribeStreamOutcome;
+        typedef Aws::Utils::Outcome<DescribeStreamConsumerResult, KinesisError> DescribeStreamConsumerOutcome;
+        typedef Aws::Utils::Outcome<DescribeStreamSummaryResult, KinesisError> DescribeStreamSummaryOutcome;
+        typedef Aws::Utils::Outcome<DisableEnhancedMonitoringResult, KinesisError> DisableEnhancedMonitoringOutcome;
+        typedef Aws::Utils::Outcome<EnableEnhancedMonitoringResult, KinesisError> EnableEnhancedMonitoringOutcome;
+        typedef Aws::Utils::Outcome<GetRecordsResult, KinesisError> GetRecordsOutcome;
+        typedef Aws::Utils::Outcome<GetShardIteratorResult, KinesisError> GetShardIteratorOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> IncreaseStreamRetentionPeriodOutcome;
+        typedef Aws::Utils::Outcome<ListShardsResult, KinesisError> ListShardsOutcome;
+        typedef Aws::Utils::Outcome<ListStreamConsumersResult, KinesisError> ListStreamConsumersOutcome;
+        typedef Aws::Utils::Outcome<ListStreamsResult, KinesisError> ListStreamsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForStreamResult, KinesisError> ListTagsForStreamOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> MergeShardsOutcome;
+        typedef Aws::Utils::Outcome<PutRecordResult, KinesisError> PutRecordOutcome;
+        typedef Aws::Utils::Outcome<PutRecordsResult, KinesisError> PutRecordsOutcome;
+        typedef Aws::Utils::Outcome<RegisterStreamConsumerResult, KinesisError> RegisterStreamConsumerOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> RemoveTagsFromStreamOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> SplitShardOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> StartStreamEncryptionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> StopStreamEncryptionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> SubscribeToShardOutcome;
+        typedef Aws::Utils::Outcome<UpdateShardCountResult, KinesisError> UpdateShardCountOutcome;
 
         typedef std::future<AddTagsToStreamOutcome> AddTagsToStreamOutcomeCallable;
         typedef std::future<CreateStreamOutcome> CreateStreamOutcomeCallable;
@@ -227,8 +217,6 @@ namespace Model
 
         virtual ~KinesisClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Kinesis"; }
-
 
         /**
          * <p>Adds or updates tags for the specified Kinesis data stream. Each time you
@@ -283,8 +271,8 @@ namespace Model
          * uniquely identified groups of data records in a stream.</p> <p>You specify and
          * control the number of shards that a stream is composed of. Each shard can
          * support reads up to five transactions per second, up to a maximum data read
-         * total of 2 MB per second. Each shard can support writes up to 1,000 records per
-         * second, up to a maximum data write total of 1 MB per second. If the amount of
+         * total of 2 MiB per second. Each shard can support writes up to 1,000 records per
+         * second, up to a maximum data write total of 1 MiB per second. If the amount of
          * data input increases or decreases, you can add or remove shards.</p> <p>The
          * stream name identifies the stream. The name is scoped to the AWS account used by
          * the application. It is also scoped by AWS Region. That is, two streams in two
@@ -301,10 +289,10 @@ namespace Model
          * any point in time.</p> </li> <li> <p>Create more shards than are authorized for
          * your account.</p> </li> </ul> <p>For the default shard limit for an AWS account,
          * see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
          * Kinesis Data Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer
          * Guide</i>. To increase this limit, <a
-         * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
          * AWS Support</a>.</p> <p>You can use <code>DescribeStream</code> to check the
          * stream status, which is returned in <code>StreamStatus</code>.</p> <p>
          * <a>CreateStream</a> has a limit of five transactions per second per
@@ -321,8 +309,8 @@ namespace Model
          * uniquely identified groups of data records in a stream.</p> <p>You specify and
          * control the number of shards that a stream is composed of. Each shard can
          * support reads up to five transactions per second, up to a maximum data read
-         * total of 2 MB per second. Each shard can support writes up to 1,000 records per
-         * second, up to a maximum data write total of 1 MB per second. If the amount of
+         * total of 2 MiB per second. Each shard can support writes up to 1,000 records per
+         * second, up to a maximum data write total of 1 MiB per second. If the amount of
          * data input increases or decreases, you can add or remove shards.</p> <p>The
          * stream name identifies the stream. The name is scoped to the AWS account used by
          * the application. It is also scoped by AWS Region. That is, two streams in two
@@ -339,10 +327,10 @@ namespace Model
          * any point in time.</p> </li> <li> <p>Create more shards than are authorized for
          * your account.</p> </li> </ul> <p>For the default shard limit for an AWS account,
          * see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
          * Kinesis Data Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer
          * Guide</i>. To increase this limit, <a
-         * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
          * AWS Support</a>.</p> <p>You can use <code>DescribeStream</code> to check the
          * stream status, which is returned in <code>StreamStatus</code>.</p> <p>
          * <a>CreateStream</a> has a limit of five transactions per second per
@@ -361,8 +349,8 @@ namespace Model
          * uniquely identified groups of data records in a stream.</p> <p>You specify and
          * control the number of shards that a stream is composed of. Each shard can
          * support reads up to five transactions per second, up to a maximum data read
-         * total of 2 MB per second. Each shard can support writes up to 1,000 records per
-         * second, up to a maximum data write total of 1 MB per second. If the amount of
+         * total of 2 MiB per second. Each shard can support writes up to 1,000 records per
+         * second, up to a maximum data write total of 1 MiB per second. If the amount of
          * data input increases or decreases, you can add or remove shards.</p> <p>The
          * stream name identifies the stream. The name is scoped to the AWS account used by
          * the application. It is also scoped by AWS Region. That is, two streams in two
@@ -379,10 +367,10 @@ namespace Model
          * any point in time.</p> </li> <li> <p>Create more shards than are authorized for
          * your account.</p> </li> </ul> <p>For the default shard limit for an AWS account,
          * see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
          * Kinesis Data Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer
          * Guide</i>. To increase this limit, <a
-         * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
          * AWS Support</a>.</p> <p>You can use <code>DescribeStream</code> to check the
          * stream status, which is returned in <code>StreamStatus</code>.</p> <p>
          * <a>CreateStream</a> has a limit of five transactions per second per
@@ -510,7 +498,7 @@ namespace Model
          * list of the descriptions of all the consumers that are currently registered with
          * a given data stream. The description of a consumer contains its name and
          * ARN.</p> <p>This operation has a limit of five transactions per second per
-         * account.</p><p><h3>See Also:</h3>   <a
+         * stream.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeregisterStreamConsumer">AWS
          * API Reference</a></p>
          */
@@ -525,7 +513,7 @@ namespace Model
          * list of the descriptions of all the consumers that are currently registered with
          * a given data stream. The description of a consumer contains its name and
          * ARN.</p> <p>This operation has a limit of five transactions per second per
-         * account.</p><p><h3>See Also:</h3>   <a
+         * stream.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeregisterStreamConsumer">AWS
          * API Reference</a></p>
          *
@@ -542,7 +530,7 @@ namespace Model
          * list of the descriptions of all the consumers that are currently registered with
          * a given data stream. The description of a consumer contains its name and
          * ARN.</p> <p>This operation has a limit of five transactions per second per
-         * account.</p><p><h3>See Also:</h3>   <a
+         * stream.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeregisterStreamConsumer">AWS
          * API Reference</a></p>
          *
@@ -593,7 +581,7 @@ namespace Model
          * the shard. Every record ingested in the stream is identified by a sequence
          * number, which is assigned when the record is put into the stream.</p> <p>You can
          * limit the number of shards returned by each call. For more information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-retrieve-shards.html">Retrieving
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-retrieve-shards.html">Retrieving
          * Shards from a Stream</a> in the <i>Amazon Kinesis Data Streams Developer
          * Guide</i>.</p> <p>There are no guarantees about the chronological order shards
          * returned. To process shards in chronological order, use the ID of the parent
@@ -613,7 +601,7 @@ namespace Model
          * the shard. Every record ingested in the stream is identified by a sequence
          * number, which is assigned when the record is put into the stream.</p> <p>You can
          * limit the number of shards returned by each call. For more information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-retrieve-shards.html">Retrieving
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-retrieve-shards.html">Retrieving
          * Shards from a Stream</a> in the <i>Amazon Kinesis Data Streams Developer
          * Guide</i>.</p> <p>There are no guarantees about the chronological order shards
          * returned. To process shards in chronological order, use the ID of the parent
@@ -635,7 +623,7 @@ namespace Model
          * the shard. Every record ingested in the stream is identified by a sequence
          * number, which is assigned when the record is put into the stream.</p> <p>You can
          * limit the number of shards returned by each call. For more information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-retrieve-shards.html">Retrieving
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-retrieve-shards.html">Retrieving
          * Shards from a Stream</a> in the <i>Amazon Kinesis Data Streams Developer
          * Guide</i>.</p> <p>There are no guarantees about the chronological order shards
          * returned. To process shards in chronological order, use the ID of the parent
@@ -657,7 +645,7 @@ namespace Model
          * <a>ListStreamConsumers</a> operation to get a list of the descriptions of all
          * the consumers that are currently registered with a given data stream.</p>
          * <p>This operation has a limit of 20 transactions per second per
-         * account.</p><p><h3>See Also:</h3>   <a
+         * stream.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStreamConsumer">AWS
          * API Reference</a></p>
          */
@@ -672,7 +660,7 @@ namespace Model
          * <a>ListStreamConsumers</a> operation to get a list of the descriptions of all
          * the consumers that are currently registered with a given data stream.</p>
          * <p>This operation has a limit of 20 transactions per second per
-         * account.</p><p><h3>See Also:</h3>   <a
+         * stream.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStreamConsumer">AWS
          * API Reference</a></p>
          *
@@ -689,7 +677,7 @@ namespace Model
          * <a>ListStreamConsumers</a> operation to get a list of the descriptions of all
          * the consumers that are currently registered with a given data stream.</p>
          * <p>This operation has a limit of 20 transactions per second per
-         * account.</p><p><h3>See Also:</h3>   <a
+         * stream.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStreamConsumer">AWS
          * API Reference</a></p>
          *
@@ -701,8 +689,9 @@ namespace Model
          * <p>Provides a summarized description of the specified Kinesis data stream
          * without the shard list.</p> <p>The information returned includes the stream
          * name, Amazon Resource Name (ARN), status, record retention period, approximate
-         * creation time, monitoring, encryption details, and open shard count.
-         * </p><p><h3>See Also:</h3>   <a
+         * creation time, monitoring, encryption details, and open shard count. </p> <p>
+         * <a>DescribeStreamSummary</a> has a limit of 20 transactions per second per
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStreamSummary">AWS
          * API Reference</a></p>
          */
@@ -712,8 +701,9 @@ namespace Model
          * <p>Provides a summarized description of the specified Kinesis data stream
          * without the shard list.</p> <p>The information returned includes the stream
          * name, Amazon Resource Name (ARN), status, record retention period, approximate
-         * creation time, monitoring, encryption details, and open shard count.
-         * </p><p><h3>See Also:</h3>   <a
+         * creation time, monitoring, encryption details, and open shard count. </p> <p>
+         * <a>DescribeStreamSummary</a> has a limit of 20 transactions per second per
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStreamSummary">AWS
          * API Reference</a></p>
          *
@@ -725,8 +715,9 @@ namespace Model
          * <p>Provides a summarized description of the specified Kinesis data stream
          * without the shard list.</p> <p>The information returned includes the stream
          * name, Amazon Resource Name (ARN), status, record retention period, approximate
-         * creation time, monitoring, encryption details, and open shard count.
-         * </p><p><h3>See Also:</h3>   <a
+         * creation time, monitoring, encryption details, and open shard count. </p> <p>
+         * <a>DescribeStreamSummary</a> has a limit of 20 transactions per second per
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStreamSummary">AWS
          * API Reference</a></p>
          *
@@ -796,7 +787,7 @@ namespace Model
          * might take multiple calls to get to a portion of the shard that contains
          * records.</p> <p>You can scale by provisioning multiple shards per stream while
          * considering service limits (for more information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
          * Kinesis Data Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer
          * Guide</i>). Your application should have one thread per shard, each reading
          * continuously from its stream. To read from a stream continually, call
@@ -828,7 +819,7 @@ namespace Model
          * processing, you can use the <code>MillisBehindLatest</code> response attribute.
          * You can also monitor the stream using CloudWatch metrics and other mechanisms
          * (see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring.html">Monitoring</a>
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring.html">Monitoring</a>
          * in the <i>Amazon Kinesis Data Streams Developer Guide</i>).</p> <p>Each Amazon
          * Kinesis record includes a value, <code>ApproximateArrivalTimestamp</code>, that
          * is set when a stream successfully receives and stores a record. This is commonly
@@ -839,7 +830,7 @@ namespace Model
          * guarantees about the time stamp accuracy, or that the time stamp is always
          * increasing. For example, records in a shard or across a stream might have time
          * stamps that are out of order.</p> <p>This operation has a limit of five
-         * transactions per second per account.</p><p><h3>See Also:</h3>   <a
+         * transactions per second per shard.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetRecords">AWS
          * API Reference</a></p>
          */
@@ -854,7 +845,7 @@ namespace Model
          * might take multiple calls to get to a portion of the shard that contains
          * records.</p> <p>You can scale by provisioning multiple shards per stream while
          * considering service limits (for more information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
          * Kinesis Data Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer
          * Guide</i>). Your application should have one thread per shard, each reading
          * continuously from its stream. To read from a stream continually, call
@@ -886,7 +877,7 @@ namespace Model
          * processing, you can use the <code>MillisBehindLatest</code> response attribute.
          * You can also monitor the stream using CloudWatch metrics and other mechanisms
          * (see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring.html">Monitoring</a>
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring.html">Monitoring</a>
          * in the <i>Amazon Kinesis Data Streams Developer Guide</i>).</p> <p>Each Amazon
          * Kinesis record includes a value, <code>ApproximateArrivalTimestamp</code>, that
          * is set when a stream successfully receives and stores a record. This is commonly
@@ -897,7 +888,7 @@ namespace Model
          * guarantees about the time stamp accuracy, or that the time stamp is always
          * increasing. For example, records in a shard or across a stream might have time
          * stamps that are out of order.</p> <p>This operation has a limit of five
-         * transactions per second per account.</p><p><h3>See Also:</h3>   <a
+         * transactions per second per shard.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetRecords">AWS
          * API Reference</a></p>
          *
@@ -914,7 +905,7 @@ namespace Model
          * might take multiple calls to get to a portion of the shard that contains
          * records.</p> <p>You can scale by provisioning multiple shards per stream while
          * considering service limits (for more information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
          * Kinesis Data Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer
          * Guide</i>). Your application should have one thread per shard, each reading
          * continuously from its stream. To read from a stream continually, call
@@ -946,7 +937,7 @@ namespace Model
          * processing, you can use the <code>MillisBehindLatest</code> response attribute.
          * You can also monitor the stream using CloudWatch metrics and other mechanisms
          * (see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring.html">Monitoring</a>
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring.html">Monitoring</a>
          * in the <i>Amazon Kinesis Data Streams Developer Guide</i>).</p> <p>Each Amazon
          * Kinesis record includes a value, <code>ApproximateArrivalTimestamp</code>, that
          * is set when a stream successfully receives and stores a record. This is commonly
@@ -957,7 +948,7 @@ namespace Model
          * guarantees about the time stamp accuracy, or that the time stamp is always
          * increasing. For example, records in a shard or across a stream might have time
          * stamps that are out of order.</p> <p>This operation has a limit of five
-         * transactions per second per account.</p><p><h3>See Also:</h3>   <a
+         * transactions per second per shard.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetRecords">AWS
          * API Reference</a></p>
          *
@@ -994,7 +985,7 @@ namespace Model
          * <a>GetShardIterator</a> request is made too often, you receive a
          * <code>ProvisionedThroughputExceededException</code>. For more information about
          * throughput limits, see <a>GetRecords</a>, and <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
          * Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p> <p>If
          * the shard is closed, <a>GetShardIterator</a> returns a valid iterator for the
          * last sequence number of the shard. A shard can be closed as a result of using
@@ -1035,7 +1026,7 @@ namespace Model
          * <a>GetShardIterator</a> request is made too often, you receive a
          * <code>ProvisionedThroughputExceededException</code>. For more information about
          * throughput limits, see <a>GetRecords</a>, and <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
          * Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p> <p>If
          * the shard is closed, <a>GetShardIterator</a> returns a valid iterator for the
          * last sequence number of the shard. A shard can be closed as a result of using
@@ -1078,7 +1069,7 @@ namespace Model
          * <a>GetShardIterator</a> request is made too often, you receive a
          * <code>ProvisionedThroughputExceededException</code>. For more information about
          * throughput limits, see <a>GetRecords</a>, and <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
          * Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p> <p>If
          * the shard is closed, <a>GetShardIterator</a> returns a valid iterator for the
          * last sequence number of the shard. A shard can be closed as a result of using
@@ -1147,13 +1138,13 @@ namespace Model
         /**
          * <p>Lists the shards in a stream and provides information about each shard. This
          * operation has a limit of 100 transactions per second per data stream.</p>
-         * <important> <p>This API is a new operation that is used by the Amazon Kinesis
+         *  <p>This API is a new operation that is used by the Amazon Kinesis
          * Client Library (KCL). If you have a fine-grained IAM policy that only allows
          * specific operations, you must update your policy to allow calls to this API. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html">Controlling
          * Access to Amazon Kinesis Data Streams Resources Using IAM</a>.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListShards">AWS
          * API Reference</a></p>
          */
@@ -1162,13 +1153,13 @@ namespace Model
         /**
          * <p>Lists the shards in a stream and provides information about each shard. This
          * operation has a limit of 100 transactions per second per data stream.</p>
-         * <important> <p>This API is a new operation that is used by the Amazon Kinesis
+         *  <p>This API is a new operation that is used by the Amazon Kinesis
          * Client Library (KCL). If you have a fine-grained IAM policy that only allows
          * specific operations, you must update your policy to allow calls to this API. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html">Controlling
          * Access to Amazon Kinesis Data Streams Resources Using IAM</a>.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListShards">AWS
          * API Reference</a></p>
          *
@@ -1179,13 +1170,13 @@ namespace Model
         /**
          * <p>Lists the shards in a stream and provides information about each shard. This
          * operation has a limit of 100 transactions per second per data stream.</p>
-         * <important> <p>This API is a new operation that is used by the Amazon Kinesis
+         *  <p>This API is a new operation that is used by the Amazon Kinesis
          * Client Library (KCL). If you have a fine-grained IAM policy that only allows
          * specific operations, you must update your policy to allow calls to this API. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html">Controlling
          * Access to Amazon Kinesis Data Streams Resources Using IAM</a>.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListShards">AWS
          * API Reference</a></p>
          *
@@ -1196,7 +1187,7 @@ namespace Model
         /**
          * <p>Lists the consumers registered to receive data from a stream using enhanced
          * fan-out, and provides information about each consumer.</p> <p>This operation has
-         * a limit of 10 transactions per second per account.</p><p><h3>See Also:</h3>   <a
+         * a limit of 5 transactions per second per stream.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListStreamConsumers">AWS
          * API Reference</a></p>
          */
@@ -1205,7 +1196,7 @@ namespace Model
         /**
          * <p>Lists the consumers registered to receive data from a stream using enhanced
          * fan-out, and provides information about each consumer.</p> <p>This operation has
-         * a limit of 10 transactions per second per account.</p><p><h3>See Also:</h3>   <a
+         * a limit of 5 transactions per second per stream.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListStreamConsumers">AWS
          * API Reference</a></p>
          *
@@ -1216,7 +1207,7 @@ namespace Model
         /**
          * <p>Lists the consumers registered to receive data from a stream using enhanced
          * fan-out, and provides information about each consumer.</p> <p>This operation has
-         * a limit of 10 transactions per second per account.</p><p><h3>See Also:</h3>   <a
+         * a limit of 5 transactions per second per stream.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListStreamConsumers">AWS
          * API Reference</a></p>
          *
@@ -1329,7 +1320,7 @@ namespace Model
          * capacity of a stream because of excess capacity that is not being used. You must
          * specify the shard to be merged and the adjacent shard for a stream. For more
          * information about merging shards, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-merge.html">Merge
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-merge.html">Merge
          * Two Shards</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
          * <p>If the stream is in the <code>ACTIVE</code> state, you can call
          * <code>MergeShards</code>. If a stream is in the <code>CREATING</code>,
@@ -1369,7 +1360,7 @@ namespace Model
          * capacity of a stream because of excess capacity that is not being used. You must
          * specify the shard to be merged and the adjacent shard for a stream. For more
          * information about merging shards, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-merge.html">Merge
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-merge.html">Merge
          * Two Shards</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
          * <p>If the stream is in the <code>ACTIVE</code> state, you can call
          * <code>MergeShards</code>. If a stream is in the <code>CREATING</code>,
@@ -1411,7 +1402,7 @@ namespace Model
          * capacity of a stream because of excess capacity that is not being used. You must
          * specify the shard to be merged and the adjacent shard for a stream. For more
          * information about merging shards, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-merge.html">Merge
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-merge.html">Merge
          * Two Shards</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
          * <p>If the stream is in the <code>ACTIVE</code> state, you can call
          * <code>MergeShards</code>. If a stream is in the <code>CREATING</code>,
@@ -1444,7 +1435,7 @@ namespace Model
          * <p>Writes a single data record into an Amazon Kinesis data stream. Call
          * <code>PutRecord</code> to send data into the stream for real-time ingestion and
          * subsequent processing, one record at a time. Each shard can support writes up to
-         * 1,000 records per second, up to a maximum data write total of 1 MB per
+         * 1,000 records per second, up to a maximum data write total of 1 MiB per
          * second.</p> <p>You must specify the name of the stream that captures, stores,
          * and transports the data; a partition key; and the data blob itself.</p> <p>The
          * data blob can be any type of data; for example, a segment from a log file,
@@ -1459,7 +1450,7 @@ namespace Model
          * shards. You can override hashing the partition key to determine the shard by
          * explicitly specifying a hash value using the <code>ExplicitHashKey</code>
          * parameter. For more information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
          * Data to a Stream</a> in the <i>Amazon Kinesis Data Streams Developer
          * Guide</i>.</p> <p> <code>PutRecord</code> returns the shard ID of where the data
          * record was placed and the sequence number that was assigned to the data
@@ -1467,11 +1458,13 @@ namespace Model
          * within a stream, not across all shards within a stream. To guarantee strictly
          * increasing ordering, write serially to a shard and use the
          * <code>SequenceNumberForOrdering</code> parameter. For more information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
          * Data to a Stream</a> in the <i>Amazon Kinesis Data Streams Developer
-         * Guide</i>.</p> <p>If a <code>PutRecord</code> request cannot be processed
-         * because of insufficient provisioned throughput on the shard involved in the
-         * request, <code>PutRecord</code> throws
+         * Guide</i>.</p>  <p>After you write a record to a stream, you cannot
+         * modify that record or its order within the stream.</p>  <p>If a
+         * <code>PutRecord</code> request cannot be processed because of insufficient
+         * provisioned throughput on the shard involved in the request,
+         * <code>PutRecord</code> throws
          * <code>ProvisionedThroughputExceededException</code>. </p> <p>By default, data
          * records are accessible for 24 hours from the time that they are added to a
          * stream. You can use <a>IncreaseStreamRetentionPeriod</a> or
@@ -1486,7 +1479,7 @@ namespace Model
          * <p>Writes a single data record into an Amazon Kinesis data stream. Call
          * <code>PutRecord</code> to send data into the stream for real-time ingestion and
          * subsequent processing, one record at a time. Each shard can support writes up to
-         * 1,000 records per second, up to a maximum data write total of 1 MB per
+         * 1,000 records per second, up to a maximum data write total of 1 MiB per
          * second.</p> <p>You must specify the name of the stream that captures, stores,
          * and transports the data; a partition key; and the data blob itself.</p> <p>The
          * data blob can be any type of data; for example, a segment from a log file,
@@ -1501,7 +1494,7 @@ namespace Model
          * shards. You can override hashing the partition key to determine the shard by
          * explicitly specifying a hash value using the <code>ExplicitHashKey</code>
          * parameter. For more information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
          * Data to a Stream</a> in the <i>Amazon Kinesis Data Streams Developer
          * Guide</i>.</p> <p> <code>PutRecord</code> returns the shard ID of where the data
          * record was placed and the sequence number that was assigned to the data
@@ -1509,11 +1502,13 @@ namespace Model
          * within a stream, not across all shards within a stream. To guarantee strictly
          * increasing ordering, write serially to a shard and use the
          * <code>SequenceNumberForOrdering</code> parameter. For more information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
          * Data to a Stream</a> in the <i>Amazon Kinesis Data Streams Developer
-         * Guide</i>.</p> <p>If a <code>PutRecord</code> request cannot be processed
-         * because of insufficient provisioned throughput on the shard involved in the
-         * request, <code>PutRecord</code> throws
+         * Guide</i>.</p>  <p>After you write a record to a stream, you cannot
+         * modify that record or its order within the stream.</p>  <p>If a
+         * <code>PutRecord</code> request cannot be processed because of insufficient
+         * provisioned throughput on the shard involved in the request,
+         * <code>PutRecord</code> throws
          * <code>ProvisionedThroughputExceededException</code>. </p> <p>By default, data
          * records are accessible for 24 hours from the time that they are added to a
          * stream. You can use <a>IncreaseStreamRetentionPeriod</a> or
@@ -1530,7 +1525,7 @@ namespace Model
          * <p>Writes a single data record into an Amazon Kinesis data stream. Call
          * <code>PutRecord</code> to send data into the stream for real-time ingestion and
          * subsequent processing, one record at a time. Each shard can support writes up to
-         * 1,000 records per second, up to a maximum data write total of 1 MB per
+         * 1,000 records per second, up to a maximum data write total of 1 MiB per
          * second.</p> <p>You must specify the name of the stream that captures, stores,
          * and transports the data; a partition key; and the data blob itself.</p> <p>The
          * data blob can be any type of data; for example, a segment from a log file,
@@ -1545,7 +1540,7 @@ namespace Model
          * shards. You can override hashing the partition key to determine the shard by
          * explicitly specifying a hash value using the <code>ExplicitHashKey</code>
          * parameter. For more information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
          * Data to a Stream</a> in the <i>Amazon Kinesis Data Streams Developer
          * Guide</i>.</p> <p> <code>PutRecord</code> returns the shard ID of where the data
          * record was placed and the sequence number that was assigned to the data
@@ -1553,11 +1548,13 @@ namespace Model
          * within a stream, not across all shards within a stream. To guarantee strictly
          * increasing ordering, write serially to a shard and use the
          * <code>SequenceNumberForOrdering</code> parameter. For more information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
          * Data to a Stream</a> in the <i>Amazon Kinesis Data Streams Developer
-         * Guide</i>.</p> <p>If a <code>PutRecord</code> request cannot be processed
-         * because of insufficient provisioned throughput on the shard involved in the
-         * request, <code>PutRecord</code> throws
+         * Guide</i>.</p>  <p>After you write a record to a stream, you cannot
+         * modify that record or its order within the stream.</p>  <p>If a
+         * <code>PutRecord</code> request cannot be processed because of insufficient
+         * provisioned throughput on the shard involved in the request,
+         * <code>PutRecord</code> throws
          * <code>ProvisionedThroughputExceededException</code>. </p> <p>By default, data
          * records are accessible for 24 hours from the time that they are added to a
          * stream. You can use <a>IncreaseStreamRetentionPeriod</a> or
@@ -1575,9 +1572,9 @@ namespace Model
          * (also referred to as a <code>PutRecords</code> request). Use this operation to
          * send data into the stream for data ingestion and processing. </p> <p>Each
          * <code>PutRecords</code> request can support up to 500 records. Each record in
-         * the request can be as large as 1 MB, up to a limit of 5 MB for the entire
+         * the request can be as large as 1 MiB, up to a limit of 5 MiB for the entire
          * request, including partition keys. Each shard can support writes up to 1,000
-         * records per second, up to a maximum data write total of 1 MB per second.</p>
+         * records per second, up to a maximum data write total of 1 MiB per second.</p>
          * <p>You must specify the name of the stream that captures, stores, and transports
          * the data; and an array of request <code>Records</code>, with each record in the
          * array requiring a partition key and data blob. The record size limit applies to
@@ -1590,13 +1587,13 @@ namespace Model
          * shards. As a result of this hashing mechanism, all data records with the same
          * partition key map to the same shard within the stream. For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
          * Data to a Stream</a> in the <i>Amazon Kinesis Data Streams Developer
          * Guide</i>.</p> <p>Each record in the <code>Records</code> array may include an
          * optional parameter, <code>ExplicitHashKey</code>, which overrides the partition
          * key to shard mapping. This parameter allows a data producer to determine
          * explicitly the shard where the record is stored. For more information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-putrecords">Adding
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-putrecords">Adding
          * Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Data Streams
          * Developer Guide</i>.</p> <p>The <code>PutRecords</code> response includes an
          * array of response <code>Records</code>. Each record in the response array
@@ -1606,7 +1603,10 @@ namespace Model
          * request array.</p> <p>The response <code>Records</code> array includes both
          * successfully and unsuccessfully processed records. Kinesis Data Streams attempts
          * to process all records in each <code>PutRecords</code> request. A single record
-         * failure does not stop the processing of subsequent records.</p> <p>A
+         * failure does not stop the processing of subsequent records. As a result,
+         * PutRecords doesn't guarantee the ordering of records. If you need to read
+         * records in the same order they are written to the stream, use <a>PutRecord</a>
+         * instead of <code>PutRecords</code>, and write to the same shard.</p> <p>A
          * successfully processed record includes <code>ShardId</code> and
          * <code>SequenceNumber</code> values. The <code>ShardId</code> parameter
          * identifies the shard in the stream where the record is stored. The
@@ -1619,12 +1619,14 @@ namespace Model
          * information about the <code>ProvisionedThroughputExceededException</code>
          * exception including the account ID, stream name, and shard ID of the record that
          * was throttled. For more information about partially successful responses, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html#kinesis-using-sdk-java-putrecords">Adding
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html#kinesis-using-sdk-java-putrecords">Adding
          * Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Data Streams
-         * Developer Guide</i>.</p> <p>By default, data records are accessible for 24 hours
-         * from the time that they are added to a stream. You can use
-         * <a>IncreaseStreamRetentionPeriod</a> or <a>DecreaseStreamRetentionPeriod</a> to
-         * modify this retention period.</p><p><h3>See Also:</h3>   <a
+         * Developer Guide</i>.</p>  <p>After you write a record to a stream,
+         * you cannot modify that record or its order within the stream.</p> 
+         * <p>By default, data records are accessible for 24 hours from the time that they
+         * are added to a stream. You can use <a>IncreaseStreamRetentionPeriod</a> or
+         * <a>DecreaseStreamRetentionPeriod</a> to modify this retention
+         * period.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecords">AWS
          * API Reference</a></p>
          */
@@ -1635,9 +1637,9 @@ namespace Model
          * (also referred to as a <code>PutRecords</code> request). Use this operation to
          * send data into the stream for data ingestion and processing. </p> <p>Each
          * <code>PutRecords</code> request can support up to 500 records. Each record in
-         * the request can be as large as 1 MB, up to a limit of 5 MB for the entire
+         * the request can be as large as 1 MiB, up to a limit of 5 MiB for the entire
          * request, including partition keys. Each shard can support writes up to 1,000
-         * records per second, up to a maximum data write total of 1 MB per second.</p>
+         * records per second, up to a maximum data write total of 1 MiB per second.</p>
          * <p>You must specify the name of the stream that captures, stores, and transports
          * the data; and an array of request <code>Records</code>, with each record in the
          * array requiring a partition key and data blob. The record size limit applies to
@@ -1650,13 +1652,13 @@ namespace Model
          * shards. As a result of this hashing mechanism, all data records with the same
          * partition key map to the same shard within the stream. For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
          * Data to a Stream</a> in the <i>Amazon Kinesis Data Streams Developer
          * Guide</i>.</p> <p>Each record in the <code>Records</code> array may include an
          * optional parameter, <code>ExplicitHashKey</code>, which overrides the partition
          * key to shard mapping. This parameter allows a data producer to determine
          * explicitly the shard where the record is stored. For more information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-putrecords">Adding
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-putrecords">Adding
          * Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Data Streams
          * Developer Guide</i>.</p> <p>The <code>PutRecords</code> response includes an
          * array of response <code>Records</code>. Each record in the response array
@@ -1666,7 +1668,10 @@ namespace Model
          * request array.</p> <p>The response <code>Records</code> array includes both
          * successfully and unsuccessfully processed records. Kinesis Data Streams attempts
          * to process all records in each <code>PutRecords</code> request. A single record
-         * failure does not stop the processing of subsequent records.</p> <p>A
+         * failure does not stop the processing of subsequent records. As a result,
+         * PutRecords doesn't guarantee the ordering of records. If you need to read
+         * records in the same order they are written to the stream, use <a>PutRecord</a>
+         * instead of <code>PutRecords</code>, and write to the same shard.</p> <p>A
          * successfully processed record includes <code>ShardId</code> and
          * <code>SequenceNumber</code> values. The <code>ShardId</code> parameter
          * identifies the shard in the stream where the record is stored. The
@@ -1679,12 +1684,14 @@ namespace Model
          * information about the <code>ProvisionedThroughputExceededException</code>
          * exception including the account ID, stream name, and shard ID of the record that
          * was throttled. For more information about partially successful responses, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html#kinesis-using-sdk-java-putrecords">Adding
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html#kinesis-using-sdk-java-putrecords">Adding
          * Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Data Streams
-         * Developer Guide</i>.</p> <p>By default, data records are accessible for 24 hours
-         * from the time that they are added to a stream. You can use
-         * <a>IncreaseStreamRetentionPeriod</a> or <a>DecreaseStreamRetentionPeriod</a> to
-         * modify this retention period.</p><p><h3>See Also:</h3>   <a
+         * Developer Guide</i>.</p>  <p>After you write a record to a stream,
+         * you cannot modify that record or its order within the stream.</p> 
+         * <p>By default, data records are accessible for 24 hours from the time that they
+         * are added to a stream. You can use <a>IncreaseStreamRetentionPeriod</a> or
+         * <a>DecreaseStreamRetentionPeriod</a> to modify this retention
+         * period.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecords">AWS
          * API Reference</a></p>
          *
@@ -1697,9 +1704,9 @@ namespace Model
          * (also referred to as a <code>PutRecords</code> request). Use this operation to
          * send data into the stream for data ingestion and processing. </p> <p>Each
          * <code>PutRecords</code> request can support up to 500 records. Each record in
-         * the request can be as large as 1 MB, up to a limit of 5 MB for the entire
+         * the request can be as large as 1 MiB, up to a limit of 5 MiB for the entire
          * request, including partition keys. Each shard can support writes up to 1,000
-         * records per second, up to a maximum data write total of 1 MB per second.</p>
+         * records per second, up to a maximum data write total of 1 MiB per second.</p>
          * <p>You must specify the name of the stream that captures, stores, and transports
          * the data; and an array of request <code>Records</code>, with each record in the
          * array requiring a partition key and data blob. The record size limit applies to
@@ -1712,13 +1719,13 @@ namespace Model
          * shards. As a result of this hashing mechanism, all data records with the same
          * partition key map to the same shard within the stream. For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
          * Data to a Stream</a> in the <i>Amazon Kinesis Data Streams Developer
          * Guide</i>.</p> <p>Each record in the <code>Records</code> array may include an
          * optional parameter, <code>ExplicitHashKey</code>, which overrides the partition
          * key to shard mapping. This parameter allows a data producer to determine
          * explicitly the shard where the record is stored. For more information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-putrecords">Adding
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-putrecords">Adding
          * Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Data Streams
          * Developer Guide</i>.</p> <p>The <code>PutRecords</code> response includes an
          * array of response <code>Records</code>. Each record in the response array
@@ -1728,7 +1735,10 @@ namespace Model
          * request array.</p> <p>The response <code>Records</code> array includes both
          * successfully and unsuccessfully processed records. Kinesis Data Streams attempts
          * to process all records in each <code>PutRecords</code> request. A single record
-         * failure does not stop the processing of subsequent records.</p> <p>A
+         * failure does not stop the processing of subsequent records. As a result,
+         * PutRecords doesn't guarantee the ordering of records. If you need to read
+         * records in the same order they are written to the stream, use <a>PutRecord</a>
+         * instead of <code>PutRecords</code>, and write to the same shard.</p> <p>A
          * successfully processed record includes <code>ShardId</code> and
          * <code>SequenceNumber</code> values. The <code>ShardId</code> parameter
          * identifies the shard in the stream where the record is stored. The
@@ -1741,12 +1751,14 @@ namespace Model
          * information about the <code>ProvisionedThroughputExceededException</code>
          * exception including the account ID, stream name, and shard ID of the record that
          * was throttled. For more information about partially successful responses, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html#kinesis-using-sdk-java-putrecords">Adding
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html#kinesis-using-sdk-java-putrecords">Adding
          * Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Data Streams
-         * Developer Guide</i>.</p> <p>By default, data records are accessible for 24 hours
-         * from the time that they are added to a stream. You can use
-         * <a>IncreaseStreamRetentionPeriod</a> or <a>DecreaseStreamRetentionPeriod</a> to
-         * modify this retention period.</p><p><h3>See Also:</h3>   <a
+         * Developer Guide</i>.</p>  <p>After you write a record to a stream,
+         * you cannot modify that record or its order within the stream.</p> 
+         * <p>By default, data records are accessible for 24 hours from the time that they
+         * are added to a stream. You can use <a>IncreaseStreamRetentionPeriod</a> or
+         * <a>DecreaseStreamRetentionPeriod</a> to modify this retention
+         * period.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecords">AWS
          * API Reference</a></p>
          *
@@ -1756,12 +1768,19 @@ namespace Model
 
         /**
          * <p>Registers a consumer with a Kinesis data stream. When you use this operation,
-         * the consumer you register can read data from the stream at a rate of up to 2 MiB
-         * per second. This rate is unaffected by the total number of consumers that read
-         * from the same stream.</p> <p>You can register up to 5 consumers per stream. A
-         * given consumer can only be registered with one stream.</p> <p>This operation has
-         * a limit of five transactions per second per account.</p><p><h3>See Also:</h3>  
-         * <a
+         * the consumer you register can then call <a>SubscribeToShard</a> to receive data
+         * from the stream using enhanced fan-out, at a rate of up to 2 MiB per second for
+         * every shard you subscribe to. This rate is unaffected by the total number of
+         * consumers that read from the same stream.</p> <p>You can register up to 20
+         * consumers per stream. A given consumer can only be registered with one stream at
+         * a time.</p> <p>For an example of how to use this operations, see <a
+         * href="/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced Fan-Out
+         * Using the Kinesis Data Streams API</a>.</p> <p>The use of this operation has a
+         * limit of five transactions per second per account. Also, only 5 consumers can be
+         * created simultaneously. In other words, you cannot have more than 5 consumers in
+         * a <code>CREATING</code> status at the same time. Registering a 6th consumer
+         * while there are 5 in a <code>CREATING</code> status results in a
+         * <code>LimitExceededException</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/RegisterStreamConsumer">AWS
          * API Reference</a></p>
          */
@@ -1769,12 +1788,19 @@ namespace Model
 
         /**
          * <p>Registers a consumer with a Kinesis data stream. When you use this operation,
-         * the consumer you register can read data from the stream at a rate of up to 2 MiB
-         * per second. This rate is unaffected by the total number of consumers that read
-         * from the same stream.</p> <p>You can register up to 5 consumers per stream. A
-         * given consumer can only be registered with one stream.</p> <p>This operation has
-         * a limit of five transactions per second per account.</p><p><h3>See Also:</h3>  
-         * <a
+         * the consumer you register can then call <a>SubscribeToShard</a> to receive data
+         * from the stream using enhanced fan-out, at a rate of up to 2 MiB per second for
+         * every shard you subscribe to. This rate is unaffected by the total number of
+         * consumers that read from the same stream.</p> <p>You can register up to 20
+         * consumers per stream. A given consumer can only be registered with one stream at
+         * a time.</p> <p>For an example of how to use this operations, see <a
+         * href="/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced Fan-Out
+         * Using the Kinesis Data Streams API</a>.</p> <p>The use of this operation has a
+         * limit of five transactions per second per account. Also, only 5 consumers can be
+         * created simultaneously. In other words, you cannot have more than 5 consumers in
+         * a <code>CREATING</code> status at the same time. Registering a 6th consumer
+         * while there are 5 in a <code>CREATING</code> status results in a
+         * <code>LimitExceededException</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/RegisterStreamConsumer">AWS
          * API Reference</a></p>
          *
@@ -1784,12 +1810,19 @@ namespace Model
 
         /**
          * <p>Registers a consumer with a Kinesis data stream. When you use this operation,
-         * the consumer you register can read data from the stream at a rate of up to 2 MiB
-         * per second. This rate is unaffected by the total number of consumers that read
-         * from the same stream.</p> <p>You can register up to 5 consumers per stream. A
-         * given consumer can only be registered with one stream.</p> <p>This operation has
-         * a limit of five transactions per second per account.</p><p><h3>See Also:</h3>  
-         * <a
+         * the consumer you register can then call <a>SubscribeToShard</a> to receive data
+         * from the stream using enhanced fan-out, at a rate of up to 2 MiB per second for
+         * every shard you subscribe to. This rate is unaffected by the total number of
+         * consumers that read from the same stream.</p> <p>You can register up to 20
+         * consumers per stream. A given consumer can only be registered with one stream at
+         * a time.</p> <p>For an example of how to use this operations, see <a
+         * href="/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced Fan-Out
+         * Using the Kinesis Data Streams API</a>.</p> <p>The use of this operation has a
+         * limit of five transactions per second per account. Also, only 5 consumers can be
+         * created simultaneously. In other words, you cannot have more than 5 consumers in
+         * a <code>CREATING</code> status at the same time. Registering a 6th consumer
+         * while there are 5 in a <code>CREATING</code> status results in a
+         * <code>LimitExceededException</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/RegisterStreamConsumer">AWS
          * API Reference</a></p>
          *
@@ -1849,7 +1882,7 @@ namespace Model
          * split in two. In many cases, the new hash key might be the average of the
          * beginning and ending hash key, but it can be any hash key value in the range
          * being mapped into the shard. For more information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-split.html">Split
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-split.html">Split
          * a Shard</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
          * <p>You can use <a>DescribeStream</a> to determine the shard ID and hash key
          * values for the <code>ShardToSplit</code> and <code>NewStartingHashKey</code>
@@ -1870,10 +1903,10 @@ namespace Model
          * are authorized for your account, you receive a
          * <code>LimitExceededException</code>. </p> <p>For the default shard limit for an
          * AWS account, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Kinesis
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Kinesis
          * Data Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer
          * Guide</i>. To increase this limit, <a
-         * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
          * AWS Support</a>.</p> <p>If you try to operate on too many streams simultaneously
          * using <a>CreateStream</a>, <a>DeleteStream</a>, <a>MergeShards</a>, and/or
          * <a>SplitShard</a>, you receive a <code>LimitExceededException</code>. </p> <p>
@@ -1899,7 +1932,7 @@ namespace Model
          * split in two. In many cases, the new hash key might be the average of the
          * beginning and ending hash key, but it can be any hash key value in the range
          * being mapped into the shard. For more information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-split.html">Split
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-split.html">Split
          * a Shard</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
          * <p>You can use <a>DescribeStream</a> to determine the shard ID and hash key
          * values for the <code>ShardToSplit</code> and <code>NewStartingHashKey</code>
@@ -1920,10 +1953,10 @@ namespace Model
          * are authorized for your account, you receive a
          * <code>LimitExceededException</code>. </p> <p>For the default shard limit for an
          * AWS account, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Kinesis
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Kinesis
          * Data Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer
          * Guide</i>. To increase this limit, <a
-         * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
          * AWS Support</a>.</p> <p>If you try to operate on too many streams simultaneously
          * using <a>CreateStream</a>, <a>DeleteStream</a>, <a>MergeShards</a>, and/or
          * <a>SplitShard</a>, you receive a <code>LimitExceededException</code>. </p> <p>
@@ -1951,7 +1984,7 @@ namespace Model
          * split in two. In many cases, the new hash key might be the average of the
          * beginning and ending hash key, but it can be any hash key value in the range
          * being mapped into the shard. For more information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-split.html">Split
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-split.html">Split
          * a Shard</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
          * <p>You can use <a>DescribeStream</a> to determine the shard ID and hash key
          * values for the <code>ShardToSplit</code> and <code>NewStartingHashKey</code>
@@ -1972,10 +2005,10 @@ namespace Model
          * are authorized for your account, you receive a
          * <code>LimitExceededException</code>. </p> <p>For the default shard limit for an
          * AWS account, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Kinesis
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Kinesis
          * Data Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer
          * Guide</i>. To increase this limit, <a
-         * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
          * AWS Support</a>.</p> <p>If you try to operate on too many streams simultaneously
          * using <a>CreateStream</a>, <a>DeleteStream</a>, <a>MergeShards</a>, and/or
          * <a>SplitShard</a>, you receive a <code>LimitExceededException</code>. </p> <p>
@@ -2123,36 +2156,60 @@ namespace Model
         virtual void StopStreamEncryptionAsync(const Model::StopStreamEncryptionRequest& request, const StopStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Call this operation from your consumer after you call
+         * <p>This operation establishes an HTTP/2 connection between the consumer you
+         * specify in the <code>ConsumerARN</code> parameter and the shard you specify in
+         * the <code>ShardId</code> parameter. After the connection is successfully
+         * established, Kinesis Data Streams pushes records from the shard to the consumer
+         * over this connection. Before you call this operation, call
          * <a>RegisterStreamConsumer</a> to register the consumer with Kinesis Data
-         * Streams. If the call succeeds, your consumer starts receiving events of type
-         * <a>SubscribeToShardEvent</a> for up to 5 minutes, after which time you need to
-         * call <code>SubscribeToShard</code> again to renew the subscription if you want
-         * to continue to receive records.</p> <p>You can make one call to
-         * <code>SubscribeToShard</code> per second per <code>ConsumerARN</code>. If your
-         * call succeeds, and then you call the operation again less than 5 seconds later,
-         * the second call generates a <a>ResourceInUseException</a>. If you call the
-         * operation a second time more than 5 seconds after the first call succeeds, the
-         * second call succeeds and the first connection gets shut down.</p><p><h3>See
-         * Also:</h3>   <a
+         * Streams.</p> <p>When the <code>SubscribeToShard</code> call succeeds, your
+         * consumer starts receiving events of type <a>SubscribeToShardEvent</a> over the
+         * HTTP/2 connection for up to 5 minutes, after which time you need to call
+         * <code>SubscribeToShard</code> again to renew the subscription if you want to
+         * continue to receive records.</p> <p>You can make one call to
+         * <code>SubscribeToShard</code> per second per registered consumer per shard. For
+         * example, if you have a 4000 shard stream and two registered stream consumers,
+         * you can make one <code>SubscribeToShard</code> request per second for each
+         * combination of shard and registered consumer, allowing you to subscribe both
+         * consumers to all 4000 shards in one second. </p> <p>If you call
+         * <code>SubscribeToShard</code> again with the same <code>ConsumerARN</code> and
+         * <code>ShardId</code> within 5 seconds of a successful call, you'll get a
+         * <code>ResourceInUseException</code>. If you call <code>SubscribeToShard</code> 5
+         * seconds or more after a successful call, the first connection will expire and
+         * the second call will take over the subscription.</p> <p>For an example of how to
+         * use this operations, see <a
+         * href="/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced Fan-Out
+         * Using the Kinesis Data Streams API</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SubscribeToShard">AWS
          * API Reference</a></p>
          */
         virtual Model::SubscribeToShardOutcome SubscribeToShard(Model::SubscribeToShardRequest& request) const;
 
         /**
-         * <p>Call this operation from your consumer after you call
+         * <p>This operation establishes an HTTP/2 connection between the consumer you
+         * specify in the <code>ConsumerARN</code> parameter and the shard you specify in
+         * the <code>ShardId</code> parameter. After the connection is successfully
+         * established, Kinesis Data Streams pushes records from the shard to the consumer
+         * over this connection. Before you call this operation, call
          * <a>RegisterStreamConsumer</a> to register the consumer with Kinesis Data
-         * Streams. If the call succeeds, your consumer starts receiving events of type
-         * <a>SubscribeToShardEvent</a> for up to 5 minutes, after which time you need to
-         * call <code>SubscribeToShard</code> again to renew the subscription if you want
-         * to continue to receive records.</p> <p>You can make one call to
-         * <code>SubscribeToShard</code> per second per <code>ConsumerARN</code>. If your
-         * call succeeds, and then you call the operation again less than 5 seconds later,
-         * the second call generates a <a>ResourceInUseException</a>. If you call the
-         * operation a second time more than 5 seconds after the first call succeeds, the
-         * second call succeeds and the first connection gets shut down.</p><p><h3>See
-         * Also:</h3>   <a
+         * Streams.</p> <p>When the <code>SubscribeToShard</code> call succeeds, your
+         * consumer starts receiving events of type <a>SubscribeToShardEvent</a> over the
+         * HTTP/2 connection for up to 5 minutes, after which time you need to call
+         * <code>SubscribeToShard</code> again to renew the subscription if you want to
+         * continue to receive records.</p> <p>You can make one call to
+         * <code>SubscribeToShard</code> per second per registered consumer per shard. For
+         * example, if you have a 4000 shard stream and two registered stream consumers,
+         * you can make one <code>SubscribeToShard</code> request per second for each
+         * combination of shard and registered consumer, allowing you to subscribe both
+         * consumers to all 4000 shards in one second. </p> <p>If you call
+         * <code>SubscribeToShard</code> again with the same <code>ConsumerARN</code> and
+         * <code>ShardId</code> within 5 seconds of a successful call, you'll get a
+         * <code>ResourceInUseException</code>. If you call <code>SubscribeToShard</code> 5
+         * seconds or more after a successful call, the first connection will expire and
+         * the second call will take over the subscription.</p> <p>For an example of how to
+         * use this operations, see <a
+         * href="/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced Fan-Out
+         * Using the Kinesis Data Streams API</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SubscribeToShard">AWS
          * API Reference</a></p>
          *
@@ -2161,18 +2218,30 @@ namespace Model
         virtual Model::SubscribeToShardOutcomeCallable SubscribeToShardCallable(Model::SubscribeToShardRequest& request) const;
 
         /**
-         * <p>Call this operation from your consumer after you call
+         * <p>This operation establishes an HTTP/2 connection between the consumer you
+         * specify in the <code>ConsumerARN</code> parameter and the shard you specify in
+         * the <code>ShardId</code> parameter. After the connection is successfully
+         * established, Kinesis Data Streams pushes records from the shard to the consumer
+         * over this connection. Before you call this operation, call
          * <a>RegisterStreamConsumer</a> to register the consumer with Kinesis Data
-         * Streams. If the call succeeds, your consumer starts receiving events of type
-         * <a>SubscribeToShardEvent</a> for up to 5 minutes, after which time you need to
-         * call <code>SubscribeToShard</code> again to renew the subscription if you want
-         * to continue to receive records.</p> <p>You can make one call to
-         * <code>SubscribeToShard</code> per second per <code>ConsumerARN</code>. If your
-         * call succeeds, and then you call the operation again less than 5 seconds later,
-         * the second call generates a <a>ResourceInUseException</a>. If you call the
-         * operation a second time more than 5 seconds after the first call succeeds, the
-         * second call succeeds and the first connection gets shut down.</p><p><h3>See
-         * Also:</h3>   <a
+         * Streams.</p> <p>When the <code>SubscribeToShard</code> call succeeds, your
+         * consumer starts receiving events of type <a>SubscribeToShardEvent</a> over the
+         * HTTP/2 connection for up to 5 minutes, after which time you need to call
+         * <code>SubscribeToShard</code> again to renew the subscription if you want to
+         * continue to receive records.</p> <p>You can make one call to
+         * <code>SubscribeToShard</code> per second per registered consumer per shard. For
+         * example, if you have a 4000 shard stream and two registered stream consumers,
+         * you can make one <code>SubscribeToShard</code> request per second for each
+         * combination of shard and registered consumer, allowing you to subscribe both
+         * consumers to all 4000 shards in one second. </p> <p>If you call
+         * <code>SubscribeToShard</code> again with the same <code>ConsumerARN</code> and
+         * <code>ShardId</code> within 5 seconds of a successful call, you'll get a
+         * <code>ResourceInUseException</code>. If you call <code>SubscribeToShard</code> 5
+         * seconds or more after a successful call, the first connection will expire and
+         * the second call will take over the subscription.</p> <p>For an example of how to
+         * use this operations, see <a
+         * href="/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced Fan-Out
+         * Using the Kinesis Data Streams API</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SubscribeToShard">AWS
          * API Reference</a></p>
          *
@@ -2190,18 +2259,22 @@ namespace Model
          * to complete. You can continue to read and write data to your stream while its
          * status is <code>UPDATING</code>.</p> <p>To update the shard count, Kinesis Data
          * Streams performs splits or merges on individual shards. This can cause
-         * short-lived shards to be created, in addition to the final shards. We recommend
-         * that you double or halve the shard count, as this results in the fewest number
-         * of splits or merges.</p> <p>This operation has the following default limits. By
-         * default, you cannot do the following:</p> <ul> <li> <p>Scale more than twice per
-         * rolling 24-hour period per stream</p> </li> <li> <p>Scale up to more than double
-         * your current shard count for a stream</p> </li> <li> <p>Scale down below half
-         * your current shard count for a stream</p> </li> <li> <p>Scale up to more than
-         * 500 shards in a stream</p> </li> <li> <p>Scale a stream with more than 500
-         * shards down unless the result is less than 500 shards</p> </li> <li> <p>Scale up
-         * to more than the shard limit for your account</p> </li> </ul> <p>For the default
-         * limits for an AWS account, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
+         * short-lived shards to be created, in addition to the final shards. These
+         * short-lived shards count towards your total shard limit for your account in the
+         * Region.</p> <p>When using this operation, we recommend that you specify a target
+         * shard count that is a multiple of 25% (25%, 50%, 75%, 100%). You can specify any
+         * target value within your shard limit. However, if you specify a target that
+         * isn't a multiple of 25%, the scaling action might take longer to complete. </p>
+         * <p>This operation has the following default limits. By default, you cannot do
+         * the following:</p> <ul> <li> <p>Scale more than ten times per rolling 24-hour
+         * period per stream</p> </li> <li> <p>Scale up to more than double your current
+         * shard count for a stream</p> </li> <li> <p>Scale down below half your current
+         * shard count for a stream</p> </li> <li> <p>Scale up to more than 500 shards in a
+         * stream</p> </li> <li> <p>Scale a stream with more than 500 shards down unless
+         * the result is less than 500 shards</p> </li> <li> <p>Scale up to more than the
+         * shard limit for your account</p> </li> </ul> <p>For the default limits for an
+         * AWS account, see <a
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
          * Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>. To request
          * an increase in the call rate limit, the shard limit for this API, or your
          * overall shard limit, use the <a
@@ -2222,18 +2295,22 @@ namespace Model
          * to complete. You can continue to read and write data to your stream while its
          * status is <code>UPDATING</code>.</p> <p>To update the shard count, Kinesis Data
          * Streams performs splits or merges on individual shards. This can cause
-         * short-lived shards to be created, in addition to the final shards. We recommend
-         * that you double or halve the shard count, as this results in the fewest number
-         * of splits or merges.</p> <p>This operation has the following default limits. By
-         * default, you cannot do the following:</p> <ul> <li> <p>Scale more than twice per
-         * rolling 24-hour period per stream</p> </li> <li> <p>Scale up to more than double
-         * your current shard count for a stream</p> </li> <li> <p>Scale down below half
-         * your current shard count for a stream</p> </li> <li> <p>Scale up to more than
-         * 500 shards in a stream</p> </li> <li> <p>Scale a stream with more than 500
-         * shards down unless the result is less than 500 shards</p> </li> <li> <p>Scale up
-         * to more than the shard limit for your account</p> </li> </ul> <p>For the default
-         * limits for an AWS account, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
+         * short-lived shards to be created, in addition to the final shards. These
+         * short-lived shards count towards your total shard limit for your account in the
+         * Region.</p> <p>When using this operation, we recommend that you specify a target
+         * shard count that is a multiple of 25% (25%, 50%, 75%, 100%). You can specify any
+         * target value within your shard limit. However, if you specify a target that
+         * isn't a multiple of 25%, the scaling action might take longer to complete. </p>
+         * <p>This operation has the following default limits. By default, you cannot do
+         * the following:</p> <ul> <li> <p>Scale more than ten times per rolling 24-hour
+         * period per stream</p> </li> <li> <p>Scale up to more than double your current
+         * shard count for a stream</p> </li> <li> <p>Scale down below half your current
+         * shard count for a stream</p> </li> <li> <p>Scale up to more than 500 shards in a
+         * stream</p> </li> <li> <p>Scale a stream with more than 500 shards down unless
+         * the result is less than 500 shards</p> </li> <li> <p>Scale up to more than the
+         * shard limit for your account</p> </li> </ul> <p>For the default limits for an
+         * AWS account, see <a
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
          * Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>. To request
          * an increase in the call rate limit, the shard limit for this API, or your
          * overall shard limit, use the <a
@@ -2256,18 +2333,22 @@ namespace Model
          * to complete. You can continue to read and write data to your stream while its
          * status is <code>UPDATING</code>.</p> <p>To update the shard count, Kinesis Data
          * Streams performs splits or merges on individual shards. This can cause
-         * short-lived shards to be created, in addition to the final shards. We recommend
-         * that you double or halve the shard count, as this results in the fewest number
-         * of splits or merges.</p> <p>This operation has the following default limits. By
-         * default, you cannot do the following:</p> <ul> <li> <p>Scale more than twice per
-         * rolling 24-hour period per stream</p> </li> <li> <p>Scale up to more than double
-         * your current shard count for a stream</p> </li> <li> <p>Scale down below half
-         * your current shard count for a stream</p> </li> <li> <p>Scale up to more than
-         * 500 shards in a stream</p> </li> <li> <p>Scale a stream with more than 500
-         * shards down unless the result is less than 500 shards</p> </li> <li> <p>Scale up
-         * to more than the shard limit for your account</p> </li> </ul> <p>For the default
-         * limits for an AWS account, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
+         * short-lived shards to be created, in addition to the final shards. These
+         * short-lived shards count towards your total shard limit for your account in the
+         * Region.</p> <p>When using this operation, we recommend that you specify a target
+         * shard count that is a multiple of 25% (25%, 50%, 75%, 100%). You can specify any
+         * target value within your shard limit. However, if you specify a target that
+         * isn't a multiple of 25%, the scaling action might take longer to complete. </p>
+         * <p>This operation has the following default limits. By default, you cannot do
+         * the following:</p> <ul> <li> <p>Scale more than ten times per rolling 24-hour
+         * period per stream</p> </li> <li> <p>Scale up to more than double your current
+         * shard count for a stream</p> </li> <li> <p>Scale down below half your current
+         * shard count for a stream</p> </li> <li> <p>Scale up to more than 500 shards in a
+         * stream</p> </li> <li> <p>Scale a stream with more than 500 shards down unless
+         * the result is less than 500 shards</p> </li> <li> <p>Scale up to more than the
+         * shard limit for your account</p> </li> </ul> <p>For the default limits for an
+         * AWS account, see <a
+         * href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
          * Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>. To request
          * an increase in the call rate limit, the shard limit for this API, or your
          * overall shard limit, use the <a

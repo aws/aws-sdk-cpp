@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
@@ -50,32 +40,38 @@ namespace Model
 
 
     /**
-     * <p>The "From" address to use for the message.</p>
+     * <p>Specifies the sender address for an email message that's sent to participants
+     * in the journey.</p>
      */
     inline const JourneyEmailMessage& GetMessageConfig() const{ return m_messageConfig; }
 
     /**
-     * <p>The "From" address to use for the message.</p>
+     * <p>Specifies the sender address for an email message that's sent to participants
+     * in the journey.</p>
      */
     inline bool MessageConfigHasBeenSet() const { return m_messageConfigHasBeenSet; }
 
     /**
-     * <p>The "From" address to use for the message.</p>
+     * <p>Specifies the sender address for an email message that's sent to participants
+     * in the journey.</p>
      */
     inline void SetMessageConfig(const JourneyEmailMessage& value) { m_messageConfigHasBeenSet = true; m_messageConfig = value; }
 
     /**
-     * <p>The "From" address to use for the message.</p>
+     * <p>Specifies the sender address for an email message that's sent to participants
+     * in the journey.</p>
      */
     inline void SetMessageConfig(JourneyEmailMessage&& value) { m_messageConfigHasBeenSet = true; m_messageConfig = std::move(value); }
 
     /**
-     * <p>The "From" address to use for the message.</p>
+     * <p>Specifies the sender address for an email message that's sent to participants
+     * in the journey.</p>
      */
     inline EmailMessageActivity& WithMessageConfig(const JourneyEmailMessage& value) { SetMessageConfig(value); return *this;}
 
     /**
-     * <p>The "From" address to use for the message.</p>
+     * <p>Specifies the sender address for an email message that's sent to participants
+     * in the journey.</p>
      */
     inline EmailMessageActivity& WithMessageConfig(JourneyEmailMessage&& value) { SetMessageConfig(std::move(value)); return *this;}
 
@@ -130,42 +126,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the email template to use for the message.</p>
+     * <p>The name of the email message template to use for the message. If specified,
+     * this value must match the name of an existing message template.</p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
 
     /**
-     * <p>The name of the email template to use for the message.</p>
+     * <p>The name of the email message template to use for the message. If specified,
+     * this value must match the name of an existing message template.</p>
      */
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
 
     /**
-     * <p>The name of the email template to use for the message.</p>
+     * <p>The name of the email message template to use for the message. If specified,
+     * this value must match the name of an existing message template.</p>
      */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /**
-     * <p>The name of the email template to use for the message.</p>
+     * <p>The name of the email message template to use for the message. If specified,
+     * this value must match the name of an existing message template.</p>
      */
     inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
 
     /**
-     * <p>The name of the email template to use for the message.</p>
+     * <p>The name of the email message template to use for the message. If specified,
+     * this value must match the name of an existing message template.</p>
      */
     inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
 
     /**
-     * <p>The name of the email template to use for the message.</p>
+     * <p>The name of the email message template to use for the message. If specified,
+     * this value must match the name of an existing message template.</p>
      */
     inline EmailMessageActivity& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
 
     /**
-     * <p>The name of the email template to use for the message.</p>
+     * <p>The name of the email message template to use for the message. If specified,
+     * this value must match the name of an existing message template.</p>
      */
     inline EmailMessageActivity& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the email template to use for the message.</p>
+     * <p>The name of the email message template to use for the message. If specified,
+     * this value must match the name of an existing message template.</p>
      */
     inline EmailMessageActivity& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
 

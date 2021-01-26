@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/CapacityReservationTarget.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -31,12 +21,14 @@ namespace Model
 {
 
 CapacityReservationTarget::CapacityReservationTarget() : 
-    m_capacityReservationIdHasBeenSet(false)
+    m_capacityReservationIdHasBeenSet(false),
+    m_capacityReservationResourceGroupArnHasBeenSet(false)
 {
 }
 
 CapacityReservationTarget::CapacityReservationTarget(const XmlNode& xmlNode) : 
-    m_capacityReservationIdHasBeenSet(false)
+    m_capacityReservationIdHasBeenSet(false),
+    m_capacityReservationResourceGroupArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -53,6 +45,12 @@ CapacityReservationTarget& CapacityReservationTarget::operator =(const XmlNode& 
       m_capacityReservationId = Aws::Utils::Xml::DecodeEscapedXmlText(capacityReservationIdNode.GetText());
       m_capacityReservationIdHasBeenSet = true;
     }
+    XmlNode capacityReservationResourceGroupArnNode = resultNode.FirstChild("CapacityReservationResourceGroupArn");
+    if(!capacityReservationResourceGroupArnNode.IsNull())
+    {
+      m_capacityReservationResourceGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(capacityReservationResourceGroupArnNode.GetText());
+      m_capacityReservationResourceGroupArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -65,6 +63,11 @@ void CapacityReservationTarget::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << index << locationValue << ".CapacityReservationId=" << StringUtils::URLEncode(m_capacityReservationId.c_str()) << "&";
   }
 
+  if(m_capacityReservationResourceGroupArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CapacityReservationResourceGroupArn=" << StringUtils::URLEncode(m_capacityReservationResourceGroupArn.c_str()) << "&";
+  }
+
 }
 
 void CapacityReservationTarget::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -72,6 +75,10 @@ void CapacityReservationTarget::OutputToStream(Aws::OStream& oStream, const char
   if(m_capacityReservationIdHasBeenSet)
   {
       oStream << location << ".CapacityReservationId=" << StringUtils::URLEncode(m_capacityReservationId.c_str()) << "&";
+  }
+  if(m_capacityReservationResourceGroupArnHasBeenSet)
+  {
+      oStream << location << ".CapacityReservationResourceGroupArn=" << StringUtils::URLEncode(m_capacityReservationResourceGroupArn.c_str()) << "&";
   }
 }
 

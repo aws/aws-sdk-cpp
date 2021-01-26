@@ -1,23 +1,14 @@
-/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
 #include <aws/transfer/TransferHandle.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/PutObjectRequest.h>
+#include <aws/s3/model/GetObjectRequest.h>
 #include <aws/s3/model/CreateMultipartUploadRequest.h>
 #include <aws/s3/model/UploadPartRequest.h>
 #include <aws/core/utils/threading/Executor.h>
@@ -71,6 +62,11 @@ namespace Aws
              * overriding the body stream, bucket, and key. If object metadata is passed through, we will override that as well.
              */
             Aws::S3::Model::PutObjectRequest putObjectTemplate;
+            /**
+             * If you have special arguments you want passed to our get object calls, put them here. We will copy the template for each put object call
+             * overriding the body stream, bucket, and key. If object metadata is passed through, we will override that as well.
+             */
+            Aws::S3::Model::GetObjectRequest getObjectTemplate;
             /**
              * If you have special arguments you want passed to our create multipart upload calls, put them here. We will copy the template for each call
              * overriding the body stream, bucket, and key. If object metadata is passed through, we will override that as well.
@@ -173,6 +169,18 @@ namespace Aws
              */
             std::shared_ptr<TransferHandle> DownloadFile(const Aws::String& bucketName, 
                                                          const Aws::String& keyName, 
+                                                         CreateDownloadStreamCallback writeToStreamfn, 
+                                                         const DownloadConfiguration& downloadConfig = DownloadConfiguration(),
+                                                         const Aws::String& writeToFile = "",
+                                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr);
+
+            /**
+             * Downloads the contents of bucketName/keyName in S3 and writes it to writeToStream. This will perform a GetObject operation for the given range.
+             */
+            std::shared_ptr<TransferHandle> DownloadFile(const Aws::String& bucketName, 
+                                                         const Aws::String& keyName, 
+                                                         uint64_t fileOffset,
+                                                         uint64_t downloadBytes,
                                                          CreateDownloadStreamCallback writeToStreamfn, 
                                                          const DownloadConfiguration& downloadConfig = DownloadConfiguration(),
                                                          const Aws::String& writeToFile = "",

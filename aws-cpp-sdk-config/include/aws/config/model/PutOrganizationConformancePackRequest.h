@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
@@ -89,57 +79,57 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The uri must point to the
-     * conformance pack template (max size: 300 KB).</p> <note> <p>You must have access
-     * to read Amazon S3 bucket.</p> </note>
+     * conformance pack template (max size: 300 KB).</p>  <p>You must have access
+     * to read Amazon S3 bucket.</p> 
      */
     inline const Aws::String& GetTemplateS3Uri() const{ return m_templateS3Uri; }
 
     /**
      * <p>Location of file containing the template body. The uri must point to the
-     * conformance pack template (max size: 300 KB).</p> <note> <p>You must have access
-     * to read Amazon S3 bucket.</p> </note>
+     * conformance pack template (max size: 300 KB).</p>  <p>You must have access
+     * to read Amazon S3 bucket.</p> 
      */
     inline bool TemplateS3UriHasBeenSet() const { return m_templateS3UriHasBeenSet; }
 
     /**
      * <p>Location of file containing the template body. The uri must point to the
-     * conformance pack template (max size: 300 KB).</p> <note> <p>You must have access
-     * to read Amazon S3 bucket.</p> </note>
+     * conformance pack template (max size: 300 KB).</p>  <p>You must have access
+     * to read Amazon S3 bucket.</p> 
      */
     inline void SetTemplateS3Uri(const Aws::String& value) { m_templateS3UriHasBeenSet = true; m_templateS3Uri = value; }
 
     /**
      * <p>Location of file containing the template body. The uri must point to the
-     * conformance pack template (max size: 300 KB).</p> <note> <p>You must have access
-     * to read Amazon S3 bucket.</p> </note>
+     * conformance pack template (max size: 300 KB).</p>  <p>You must have access
+     * to read Amazon S3 bucket.</p> 
      */
     inline void SetTemplateS3Uri(Aws::String&& value) { m_templateS3UriHasBeenSet = true; m_templateS3Uri = std::move(value); }
 
     /**
      * <p>Location of file containing the template body. The uri must point to the
-     * conformance pack template (max size: 300 KB).</p> <note> <p>You must have access
-     * to read Amazon S3 bucket.</p> </note>
+     * conformance pack template (max size: 300 KB).</p>  <p>You must have access
+     * to read Amazon S3 bucket.</p> 
      */
     inline void SetTemplateS3Uri(const char* value) { m_templateS3UriHasBeenSet = true; m_templateS3Uri.assign(value); }
 
     /**
      * <p>Location of file containing the template body. The uri must point to the
-     * conformance pack template (max size: 300 KB).</p> <note> <p>You must have access
-     * to read Amazon S3 bucket.</p> </note>
+     * conformance pack template (max size: 300 KB).</p>  <p>You must have access
+     * to read Amazon S3 bucket.</p> 
      */
     inline PutOrganizationConformancePackRequest& WithTemplateS3Uri(const Aws::String& value) { SetTemplateS3Uri(value); return *this;}
 
     /**
      * <p>Location of file containing the template body. The uri must point to the
-     * conformance pack template (max size: 300 KB).</p> <note> <p>You must have access
-     * to read Amazon S3 bucket.</p> </note>
+     * conformance pack template (max size: 300 KB).</p>  <p>You must have access
+     * to read Amazon S3 bucket.</p> 
      */
     inline PutOrganizationConformancePackRequest& WithTemplateS3Uri(Aws::String&& value) { SetTemplateS3Uri(std::move(value)); return *this;}
 
     /**
      * <p>Location of file containing the template body. The uri must point to the
-     * conformance pack template (max size: 300 KB).</p> <note> <p>You must have access
-     * to read Amazon S3 bucket.</p> </note>
+     * conformance pack template (max size: 300 KB).</p>  <p>You must have access
+     * to read Amazon S3 bucket.</p> 
      */
     inline PutOrganizationConformancePackRequest& WithTemplateS3Uri(const char* value) { SetTemplateS3Uri(value); return *this;}
 

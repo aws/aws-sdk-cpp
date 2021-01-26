@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
@@ -86,6 +76,43 @@ namespace Model
      */
     inline MultiplexStatmuxVideoSettings& WithMinimumBitrate(int value) { SetMinimumBitrate(value); return *this;}
 
+
+    /**
+     * The purpose of the priority is to use a combination of the\nmultiplex rate
+     * control algorithm and the QVBR capability of the\nencoder to prioritize the
+     * video quality of some channels in a\nmultiplex over others.  Channels that have
+     * a higher priority will\nget higher video quality at the expense of the video
+     * quality of\nother channels in the multiplex with lower priority.
+     */
+    inline int GetPriority() const{ return m_priority; }
+
+    /**
+     * The purpose of the priority is to use a combination of the\nmultiplex rate
+     * control algorithm and the QVBR capability of the\nencoder to prioritize the
+     * video quality of some channels in a\nmultiplex over others.  Channels that have
+     * a higher priority will\nget higher video quality at the expense of the video
+     * quality of\nother channels in the multiplex with lower priority.
+     */
+    inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
+
+    /**
+     * The purpose of the priority is to use a combination of the\nmultiplex rate
+     * control algorithm and the QVBR capability of the\nencoder to prioritize the
+     * video quality of some channels in a\nmultiplex over others.  Channels that have
+     * a higher priority will\nget higher video quality at the expense of the video
+     * quality of\nother channels in the multiplex with lower priority.
+     */
+    inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
+
+    /**
+     * The purpose of the priority is to use a combination of the\nmultiplex rate
+     * control algorithm and the QVBR capability of the\nencoder to prioritize the
+     * video quality of some channels in a\nmultiplex over others.  Channels that have
+     * a higher priority will\nget higher video quality at the expense of the video
+     * quality of\nother channels in the multiplex with lower priority.
+     */
+    inline MultiplexStatmuxVideoSettings& WithPriority(int value) { SetPriority(value); return *this;}
+
   private:
 
     int m_maximumBitrate;
@@ -93,6 +120,9 @@ namespace Model
 
     int m_minimumBitrate;
     bool m_minimumBitrateHasBeenSet;
+
+    int m_priority;
+    bool m_priorityHasBeenSet;
   };
 
 } // namespace Model

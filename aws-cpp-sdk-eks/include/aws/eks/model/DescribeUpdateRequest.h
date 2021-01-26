@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/eks/EKS_EXPORTS.h>
@@ -170,6 +160,63 @@ namespace Model
      */
     inline DescribeUpdateRequest& WithNodegroupName(const char* value) { SetNodegroupName(value); return *this;}
 
+
+    /**
+     * <p>The name of the add-on. The name must match one of the names returned by <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
+     * <code>ListAddons</code> </a>.</p>
+     */
+    inline const Aws::String& GetAddonName() const{ return m_addonName; }
+
+    /**
+     * <p>The name of the add-on. The name must match one of the names returned by <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
+     * <code>ListAddons</code> </a>.</p>
+     */
+    inline bool AddonNameHasBeenSet() const { return m_addonNameHasBeenSet; }
+
+    /**
+     * <p>The name of the add-on. The name must match one of the names returned by <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
+     * <code>ListAddons</code> </a>.</p>
+     */
+    inline void SetAddonName(const Aws::String& value) { m_addonNameHasBeenSet = true; m_addonName = value; }
+
+    /**
+     * <p>The name of the add-on. The name must match one of the names returned by <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
+     * <code>ListAddons</code> </a>.</p>
+     */
+    inline void SetAddonName(Aws::String&& value) { m_addonNameHasBeenSet = true; m_addonName = std::move(value); }
+
+    /**
+     * <p>The name of the add-on. The name must match one of the names returned by <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
+     * <code>ListAddons</code> </a>.</p>
+     */
+    inline void SetAddonName(const char* value) { m_addonNameHasBeenSet = true; m_addonName.assign(value); }
+
+    /**
+     * <p>The name of the add-on. The name must match one of the names returned by <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
+     * <code>ListAddons</code> </a>.</p>
+     */
+    inline DescribeUpdateRequest& WithAddonName(const Aws::String& value) { SetAddonName(value); return *this;}
+
+    /**
+     * <p>The name of the add-on. The name must match one of the names returned by <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
+     * <code>ListAddons</code> </a>.</p>
+     */
+    inline DescribeUpdateRequest& WithAddonName(Aws::String&& value) { SetAddonName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the add-on. The name must match one of the names returned by <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
+     * <code>ListAddons</code> </a>.</p>
+     */
+    inline DescribeUpdateRequest& WithAddonName(const char* value) { SetAddonName(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -180,6 +227,9 @@ namespace Model
 
     Aws::String m_nodegroupName;
     bool m_nodegroupNameHasBeenSet;
+
+    Aws::String m_addonName;
+    bool m_addonNameHasBeenSet;
   };
 
 } // namespace Model

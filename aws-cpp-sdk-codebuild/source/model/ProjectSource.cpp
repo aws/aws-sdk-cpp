@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/codebuild/model/ProjectSource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -39,6 +29,7 @@ ProjectSource::ProjectSource() :
     m_authHasBeenSet(false),
     m_reportBuildStatus(false),
     m_reportBuildStatusHasBeenSet(false),
+    m_buildStatusConfigHasBeenSet(false),
     m_insecureSsl(false),
     m_insecureSslHasBeenSet(false),
     m_sourceIdentifierHasBeenSet(false)
@@ -56,6 +47,7 @@ ProjectSource::ProjectSource(JsonView jsonValue) :
     m_authHasBeenSet(false),
     m_reportBuildStatus(false),
     m_reportBuildStatusHasBeenSet(false),
+    m_buildStatusConfigHasBeenSet(false),
     m_insecureSsl(false),
     m_insecureSslHasBeenSet(false),
     m_sourceIdentifierHasBeenSet(false)
@@ -112,6 +104,13 @@ ProjectSource& ProjectSource::operator =(JsonView jsonValue)
     m_reportBuildStatus = jsonValue.GetBool("reportBuildStatus");
 
     m_reportBuildStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("buildStatusConfig"))
+  {
+    m_buildStatusConfig = jsonValue.GetObject("buildStatusConfig");
+
+    m_buildStatusConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("insecureSsl"))
@@ -173,6 +172,12 @@ JsonValue ProjectSource::Jsonize() const
   if(m_reportBuildStatusHasBeenSet)
   {
    payload.WithBool("reportBuildStatus", m_reportBuildStatus);
+
+  }
+
+  if(m_buildStatusConfigHasBeenSet)
+  {
+   payload.WithObject("buildStatusConfig", m_buildStatusConfig.Jsonize());
 
   }
 

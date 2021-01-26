@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
@@ -54,60 +44,60 @@ namespace Model
     /**
      * <p>The set of attributes that are projected into the index:</p> <ul> <li> <p>
      * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
-     * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
-     * attributes are projected into the index. The list of projected attributes is in
-     * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
-     * table attributes are projected into the index.</p> </li> </ul>
+     * index.</p> </li> <li> <p> <code>INCLUDE</code> - In addition to the attributes
+     * described in <code>KEYS_ONLY</code>, the secondary index will include other
+     * non-key attributes that you specify.</p> </li> <li> <p> <code>ALL</code> - All
+     * of the table attributes are projected into the index.</p> </li> </ul>
      */
     inline const ProjectionType& GetProjectionType() const{ return m_projectionType; }
 
     /**
      * <p>The set of attributes that are projected into the index:</p> <ul> <li> <p>
      * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
-     * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
-     * attributes are projected into the index. The list of projected attributes is in
-     * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
-     * table attributes are projected into the index.</p> </li> </ul>
+     * index.</p> </li> <li> <p> <code>INCLUDE</code> - In addition to the attributes
+     * described in <code>KEYS_ONLY</code>, the secondary index will include other
+     * non-key attributes that you specify.</p> </li> <li> <p> <code>ALL</code> - All
+     * of the table attributes are projected into the index.</p> </li> </ul>
      */
     inline bool ProjectionTypeHasBeenSet() const { return m_projectionTypeHasBeenSet; }
 
     /**
      * <p>The set of attributes that are projected into the index:</p> <ul> <li> <p>
      * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
-     * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
-     * attributes are projected into the index. The list of projected attributes is in
-     * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
-     * table attributes are projected into the index.</p> </li> </ul>
+     * index.</p> </li> <li> <p> <code>INCLUDE</code> - In addition to the attributes
+     * described in <code>KEYS_ONLY</code>, the secondary index will include other
+     * non-key attributes that you specify.</p> </li> <li> <p> <code>ALL</code> - All
+     * of the table attributes are projected into the index.</p> </li> </ul>
      */
     inline void SetProjectionType(const ProjectionType& value) { m_projectionTypeHasBeenSet = true; m_projectionType = value; }
 
     /**
      * <p>The set of attributes that are projected into the index:</p> <ul> <li> <p>
      * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
-     * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
-     * attributes are projected into the index. The list of projected attributes is in
-     * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
-     * table attributes are projected into the index.</p> </li> </ul>
+     * index.</p> </li> <li> <p> <code>INCLUDE</code> - In addition to the attributes
+     * described in <code>KEYS_ONLY</code>, the secondary index will include other
+     * non-key attributes that you specify.</p> </li> <li> <p> <code>ALL</code> - All
+     * of the table attributes are projected into the index.</p> </li> </ul>
      */
     inline void SetProjectionType(ProjectionType&& value) { m_projectionTypeHasBeenSet = true; m_projectionType = std::move(value); }
 
     /**
      * <p>The set of attributes that are projected into the index:</p> <ul> <li> <p>
      * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
-     * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
-     * attributes are projected into the index. The list of projected attributes is in
-     * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
-     * table attributes are projected into the index.</p> </li> </ul>
+     * index.</p> </li> <li> <p> <code>INCLUDE</code> - In addition to the attributes
+     * described in <code>KEYS_ONLY</code>, the secondary index will include other
+     * non-key attributes that you specify.</p> </li> <li> <p> <code>ALL</code> - All
+     * of the table attributes are projected into the index.</p> </li> </ul>
      */
     inline Projection& WithProjectionType(const ProjectionType& value) { SetProjectionType(value); return *this;}
 
     /**
      * <p>The set of attributes that are projected into the index:</p> <ul> <li> <p>
      * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
-     * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
-     * attributes are projected into the index. The list of projected attributes is in
-     * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
-     * table attributes are projected into the index.</p> </li> </ul>
+     * index.</p> </li> <li> <p> <code>INCLUDE</code> - In addition to the attributes
+     * described in <code>KEYS_ONLY</code>, the secondary index will include other
+     * non-key attributes that you specify.</p> </li> <li> <p> <code>ALL</code> - All
+     * of the table attributes are projected into the index.</p> </li> </ul>
      */
     inline Projection& WithProjectionType(ProjectionType&& value) { SetProjectionType(std::move(value)); return *this;}
 

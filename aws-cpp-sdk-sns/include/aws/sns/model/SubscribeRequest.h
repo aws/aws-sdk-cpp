@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sns/SNS_EXPORTS.h>
@@ -214,9 +204,9 @@ namespace Model
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
-     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with <code>http://</code> </p> </li> <li> <p>For the
-     * <code>https</code> protocol, the endpoint is a URL beginning with
+     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the (public)
+     * endpoint is a URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * <code>https</code> protocol, the (public) endpoint is a URL beginning with
      * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
      * the endpoint is an email address</p> </li> <li> <p>For the
      * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
@@ -231,9 +221,9 @@ namespace Model
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
-     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with <code>http://</code> </p> </li> <li> <p>For the
-     * <code>https</code> protocol, the endpoint is a URL beginning with
+     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the (public)
+     * endpoint is a URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * <code>https</code> protocol, the (public) endpoint is a URL beginning with
      * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
      * the endpoint is an email address</p> </li> <li> <p>For the
      * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
@@ -248,9 +238,9 @@ namespace Model
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
-     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with <code>http://</code> </p> </li> <li> <p>For the
-     * <code>https</code> protocol, the endpoint is a URL beginning with
+     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the (public)
+     * endpoint is a URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * <code>https</code> protocol, the (public) endpoint is a URL beginning with
      * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
      * the endpoint is an email address</p> </li> <li> <p>For the
      * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
@@ -265,9 +255,9 @@ namespace Model
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
-     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with <code>http://</code> </p> </li> <li> <p>For the
-     * <code>https</code> protocol, the endpoint is a URL beginning with
+     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the (public)
+     * endpoint is a URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * <code>https</code> protocol, the (public) endpoint is a URL beginning with
      * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
      * the endpoint is an email address</p> </li> <li> <p>For the
      * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
@@ -282,9 +272,9 @@ namespace Model
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
-     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with <code>http://</code> </p> </li> <li> <p>For the
-     * <code>https</code> protocol, the endpoint is a URL beginning with
+     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the (public)
+     * endpoint is a URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * <code>https</code> protocol, the (public) endpoint is a URL beginning with
      * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
      * the endpoint is an email address</p> </li> <li> <p>For the
      * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
@@ -299,9 +289,9 @@ namespace Model
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
-     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with <code>http://</code> </p> </li> <li> <p>For the
-     * <code>https</code> protocol, the endpoint is a URL beginning with
+     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the (public)
+     * endpoint is a URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * <code>https</code> protocol, the (public) endpoint is a URL beginning with
      * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
      * the endpoint is an email address</p> </li> <li> <p>For the
      * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
@@ -316,9 +306,9 @@ namespace Model
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
-     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with <code>http://</code> </p> </li> <li> <p>For the
-     * <code>https</code> protocol, the endpoint is a URL beginning with
+     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the (public)
+     * endpoint is a URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * <code>https</code> protocol, the (public) endpoint is a URL beginning with
      * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
      * the endpoint is an email address</p> </li> <li> <p>For the
      * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
@@ -333,9 +323,9 @@ namespace Model
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
-     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with <code>http://</code> </p> </li> <li> <p>For the
-     * <code>https</code> protocol, the endpoint is a URL beginning with
+     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the (public)
+     * endpoint is a URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * <code>https</code> protocol, the (public) endpoint is a URL beginning with
      * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
      * the endpoint is an email address</p> </li> <li> <p>For the
      * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
@@ -355,7 +345,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -376,7 +366,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -397,7 +387,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -418,7 +408,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -439,7 +429,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -460,7 +450,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -481,7 +471,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -502,7 +492,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -523,7 +513,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -544,7 +534,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -565,7 +555,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -586,7 +576,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -607,7 +597,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -625,61 +615,53 @@ namespace Model
 
     /**
      * <p>Sets whether the response from the <code>Subscribe</code> request includes
-     * the subscription ARN, even if the subscription is not yet confirmed.</p> <ul>
-     * <li> <p>If you have the subscription ARN returned, the response includes the ARN
-     * in all cases, even if the subscription is not yet confirmed.</p> </li> <li>
-     * <p>If you don't have the subscription ARN returned, in addition to the ARN for
-     * confirmed subscriptions, the response also includes the <code>pending
+     * the subscription ARN, even if the subscription is not yet confirmed.</p> <p>If
+     * you set this parameter to <code>true</code>, the response includes the ARN in
+     * all cases, even if the subscription is not yet confirmed. In addition to the ARN
+     * for confirmed subscriptions, the response also includes the <code>pending
      * subscription</code> ARN value for subscriptions that aren't yet confirmed. A
      * subscription becomes confirmed when the subscriber calls the
-     * <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
-     * </ul> <p>If you set this parameter to <code>true</code>, .</p> <p>The default
-     * value is <code>false</code>.</p>
+     * <code>ConfirmSubscription</code> action with a confirmation token.</p> <p/>
+     * <p>The default value is <code>false</code>.</p>
      */
     inline bool GetReturnSubscriptionArn() const{ return m_returnSubscriptionArn; }
 
     /**
      * <p>Sets whether the response from the <code>Subscribe</code> request includes
-     * the subscription ARN, even if the subscription is not yet confirmed.</p> <ul>
-     * <li> <p>If you have the subscription ARN returned, the response includes the ARN
-     * in all cases, even if the subscription is not yet confirmed.</p> </li> <li>
-     * <p>If you don't have the subscription ARN returned, in addition to the ARN for
-     * confirmed subscriptions, the response also includes the <code>pending
+     * the subscription ARN, even if the subscription is not yet confirmed.</p> <p>If
+     * you set this parameter to <code>true</code>, the response includes the ARN in
+     * all cases, even if the subscription is not yet confirmed. In addition to the ARN
+     * for confirmed subscriptions, the response also includes the <code>pending
      * subscription</code> ARN value for subscriptions that aren't yet confirmed. A
      * subscription becomes confirmed when the subscriber calls the
-     * <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
-     * </ul> <p>If you set this parameter to <code>true</code>, .</p> <p>The default
-     * value is <code>false</code>.</p>
+     * <code>ConfirmSubscription</code> action with a confirmation token.</p> <p/>
+     * <p>The default value is <code>false</code>.</p>
      */
     inline bool ReturnSubscriptionArnHasBeenSet() const { return m_returnSubscriptionArnHasBeenSet; }
 
     /**
      * <p>Sets whether the response from the <code>Subscribe</code> request includes
-     * the subscription ARN, even if the subscription is not yet confirmed.</p> <ul>
-     * <li> <p>If you have the subscription ARN returned, the response includes the ARN
-     * in all cases, even if the subscription is not yet confirmed.</p> </li> <li>
-     * <p>If you don't have the subscription ARN returned, in addition to the ARN for
-     * confirmed subscriptions, the response also includes the <code>pending
+     * the subscription ARN, even if the subscription is not yet confirmed.</p> <p>If
+     * you set this parameter to <code>true</code>, the response includes the ARN in
+     * all cases, even if the subscription is not yet confirmed. In addition to the ARN
+     * for confirmed subscriptions, the response also includes the <code>pending
      * subscription</code> ARN value for subscriptions that aren't yet confirmed. A
      * subscription becomes confirmed when the subscriber calls the
-     * <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
-     * </ul> <p>If you set this parameter to <code>true</code>, .</p> <p>The default
-     * value is <code>false</code>.</p>
+     * <code>ConfirmSubscription</code> action with a confirmation token.</p> <p/>
+     * <p>The default value is <code>false</code>.</p>
      */
     inline void SetReturnSubscriptionArn(bool value) { m_returnSubscriptionArnHasBeenSet = true; m_returnSubscriptionArn = value; }
 
     /**
      * <p>Sets whether the response from the <code>Subscribe</code> request includes
-     * the subscription ARN, even if the subscription is not yet confirmed.</p> <ul>
-     * <li> <p>If you have the subscription ARN returned, the response includes the ARN
-     * in all cases, even if the subscription is not yet confirmed.</p> </li> <li>
-     * <p>If you don't have the subscription ARN returned, in addition to the ARN for
-     * confirmed subscriptions, the response also includes the <code>pending
+     * the subscription ARN, even if the subscription is not yet confirmed.</p> <p>If
+     * you set this parameter to <code>true</code>, the response includes the ARN in
+     * all cases, even if the subscription is not yet confirmed. In addition to the ARN
+     * for confirmed subscriptions, the response also includes the <code>pending
      * subscription</code> ARN value for subscriptions that aren't yet confirmed. A
      * subscription becomes confirmed when the subscriber calls the
-     * <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
-     * </ul> <p>If you set this parameter to <code>true</code>, .</p> <p>The default
-     * value is <code>false</code>.</p>
+     * <code>ConfirmSubscription</code> action with a confirmation token.</p> <p/>
+     * <p>The default value is <code>false</code>.</p>
      */
     inline SubscribeRequest& WithReturnSubscriptionArn(bool value) { SetReturnSubscriptionArn(value); return *this;}
 

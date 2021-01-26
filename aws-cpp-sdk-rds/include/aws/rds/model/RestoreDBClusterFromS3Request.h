@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -224,8 +214,8 @@ namespace Model
 
     /**
      * <p>The name of the DB cluster to create from the source data in the Amazon S3
-     * bucket. This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * bucket. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
@@ -234,8 +224,8 @@ namespace Model
 
     /**
      * <p>The name of the DB cluster to create from the source data in the Amazon S3
-     * bucket. This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * bucket. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
@@ -244,8 +234,8 @@ namespace Model
 
     /**
      * <p>The name of the DB cluster to create from the source data in the Amazon S3
-     * bucket. This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * bucket. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
@@ -254,8 +244,8 @@ namespace Model
 
     /**
      * <p>The name of the DB cluster to create from the source data in the Amazon S3
-     * bucket. This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * bucket. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
@@ -264,8 +254,8 @@ namespace Model
 
     /**
      * <p>The name of the DB cluster to create from the source data in the Amazon S3
-     * bucket. This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * bucket. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
@@ -274,8 +264,8 @@ namespace Model
 
     /**
      * <p>The name of the DB cluster to create from the source data in the Amazon S3
-     * bucket. This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * bucket. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
@@ -284,8 +274,8 @@ namespace Model
 
     /**
      * <p>The name of the DB cluster to create from the source data in the Amazon S3
-     * bucket. This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * bucket. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
@@ -294,8 +284,8 @@ namespace Model
 
     /**
      * <p>The name of the DB cluster to create from the source data in the Amazon S3
-     * bucket. This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * bucket. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
@@ -481,50 +471,66 @@ namespace Model
 
 
     /**
-     * <p>The name of the database engine to be used for the restored DB cluster.</p>
-     * <p>Valid Values: <code>aurora</code>, <code>aurora-postgresql</code> </p>
+     * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
+     * <code>aurora-postgresql</code> </p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>The name of the database engine to be used for the restored DB cluster.</p>
-     * <p>Valid Values: <code>aurora</code>, <code>aurora-postgresql</code> </p>
+     * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
+     * <code>aurora-postgresql</code> </p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p>The name of the database engine to be used for the restored DB cluster.</p>
-     * <p>Valid Values: <code>aurora</code>, <code>aurora-postgresql</code> </p>
+     * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
+     * <code>aurora-postgresql</code> </p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>The name of the database engine to be used for the restored DB cluster.</p>
-     * <p>Valid Values: <code>aurora</code>, <code>aurora-postgresql</code> </p>
+     * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
+     * <code>aurora-postgresql</code> </p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>The name of the database engine to be used for the restored DB cluster.</p>
-     * <p>Valid Values: <code>aurora</code>, <code>aurora-postgresql</code> </p>
+     * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
+     * <code>aurora-postgresql</code> </p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p>The name of the database engine to be used for the restored DB cluster.</p>
-     * <p>Valid Values: <code>aurora</code>, <code>aurora-postgresql</code> </p>
+     * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
+     * <code>aurora-postgresql</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>The name of the database engine to be used for the restored DB cluster.</p>
-     * <p>Valid Values: <code>aurora</code>, <code>aurora-postgresql</code> </p>
+     * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
+     * <code>aurora-postgresql</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the database engine to be used for the restored DB cluster.</p>
-     * <p>Valid Values: <code>aurora</code>, <code>aurora-postgresql</code> </p>
+     * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
+     * Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and
+     * <code>aurora-postgresql</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -1159,106 +1165,90 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The KMS key
-     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB cluster with the same AWS account that owns the KMS encryption
-     * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KM encryption key.</p> <p>If the StorageEncrypted
-     * parameter is enabled, and you do not specify a value for the
-     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * customer master key (CMK). To use a CMK in a different AWS account, specify the
+     * key ARN or alias ARN.</p> <p>If the StorageEncrypted parameter is enabled, and
+     * you do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon
+     * RDS will use your default CMK. There is a default CMK for your AWS account. Your
+     * AWS account has a different default CMK for each AWS Region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The KMS key
-     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB cluster with the same AWS account that owns the KMS encryption
-     * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KM encryption key.</p> <p>If the StorageEncrypted
-     * parameter is enabled, and you do not specify a value for the
-     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * customer master key (CMK). To use a CMK in a different AWS account, specify the
+     * key ARN or alias ARN.</p> <p>If the StorageEncrypted parameter is enabled, and
+     * you do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon
+     * RDS will use your default CMK. There is a default CMK for your AWS account. Your
+     * AWS account has a different default CMK for each AWS Region.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The KMS key
-     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB cluster with the same AWS account that owns the KMS encryption
-     * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KM encryption key.</p> <p>If the StorageEncrypted
-     * parameter is enabled, and you do not specify a value for the
-     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * customer master key (CMK). To use a CMK in a different AWS account, specify the
+     * key ARN or alias ARN.</p> <p>If the StorageEncrypted parameter is enabled, and
+     * you do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon
+     * RDS will use your default CMK. There is a default CMK for your AWS account. Your
+     * AWS account has a different default CMK for each AWS Region.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The KMS key
-     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB cluster with the same AWS account that owns the KMS encryption
-     * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KM encryption key.</p> <p>If the StorageEncrypted
-     * parameter is enabled, and you do not specify a value for the
-     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * customer master key (CMK). To use a CMK in a different AWS account, specify the
+     * key ARN or alias ARN.</p> <p>If the StorageEncrypted parameter is enabled, and
+     * you do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon
+     * RDS will use your default CMK. There is a default CMK for your AWS account. Your
+     * AWS account has a different default CMK for each AWS Region.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The KMS key
-     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB cluster with the same AWS account that owns the KMS encryption
-     * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KM encryption key.</p> <p>If the StorageEncrypted
-     * parameter is enabled, and you do not specify a value for the
-     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * customer master key (CMK). To use a CMK in a different AWS account, specify the
+     * key ARN or alias ARN.</p> <p>If the StorageEncrypted parameter is enabled, and
+     * you do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon
+     * RDS will use your default CMK. There is a default CMK for your AWS account. Your
+     * AWS account has a different default CMK for each AWS Region.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The KMS key
-     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB cluster with the same AWS account that owns the KMS encryption
-     * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KM encryption key.</p> <p>If the StorageEncrypted
-     * parameter is enabled, and you do not specify a value for the
-     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * customer master key (CMK). To use a CMK in a different AWS account, specify the
+     * key ARN or alias ARN.</p> <p>If the StorageEncrypted parameter is enabled, and
+     * you do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon
+     * RDS will use your default CMK. There is a default CMK for your AWS account. Your
+     * AWS account has a different default CMK for each AWS Region.</p>
      */
     inline RestoreDBClusterFromS3Request& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The KMS key
-     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB cluster with the same AWS account that owns the KMS encryption
-     * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KM encryption key.</p> <p>If the StorageEncrypted
-     * parameter is enabled, and you do not specify a value for the
-     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * customer master key (CMK). To use a CMK in a different AWS account, specify the
+     * key ARN or alias ARN.</p> <p>If the StorageEncrypted parameter is enabled, and
+     * you do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon
+     * RDS will use your default CMK. There is a default CMK for your AWS account. Your
+     * AWS account has a different default CMK for each AWS Region.</p>
      */
     inline RestoreDBClusterFromS3Request& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The KMS key
-     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB cluster with the same AWS account that owns the KMS encryption
-     * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KM encryption key.</p> <p>If the StorageEncrypted
-     * parameter is enabled, and you do not specify a value for the
-     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
+     * customer master key (CMK). To use a CMK in a different AWS account, specify the
+     * key ARN or alias ARN.</p> <p>If the StorageEncrypted parameter is enabled, and
+     * you do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon
+     * RDS will use your default CMK. There is a default CMK for your AWS account. Your
+     * AWS account has a different default CMK for each AWS Region.</p>
      */
     inline RestoreDBClusterFromS3Request& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -1351,57 +1341,57 @@ namespace Model
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL version 5.5 and 5.6 are supported. </p> <p>Example: <code>5.6.22</code>
-     * </p>
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline const Aws::String& GetSourceEngineVersion() const{ return m_sourceEngineVersion; }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL version 5.5 and 5.6 are supported. </p> <p>Example: <code>5.6.22</code>
-     * </p>
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline bool SourceEngineVersionHasBeenSet() const { return m_sourceEngineVersionHasBeenSet; }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL version 5.5 and 5.6 are supported. </p> <p>Example: <code>5.6.22</code>
-     * </p>
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline void SetSourceEngineVersion(const Aws::String& value) { m_sourceEngineVersionHasBeenSet = true; m_sourceEngineVersion = value; }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL version 5.5 and 5.6 are supported. </p> <p>Example: <code>5.6.22</code>
-     * </p>
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline void SetSourceEngineVersion(Aws::String&& value) { m_sourceEngineVersionHasBeenSet = true; m_sourceEngineVersion = std::move(value); }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL version 5.5 and 5.6 are supported. </p> <p>Example: <code>5.6.22</code>
-     * </p>
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline void SetSourceEngineVersion(const char* value) { m_sourceEngineVersionHasBeenSet = true; m_sourceEngineVersion.assign(value); }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL version 5.5 and 5.6 are supported. </p> <p>Example: <code>5.6.22</code>
-     * </p>
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngineVersion(const Aws::String& value) { SetSourceEngineVersion(value); return *this;}
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL version 5.5 and 5.6 are supported. </p> <p>Example: <code>5.6.22</code>
-     * </p>
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngineVersion(Aws::String&& value) { SetSourceEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL version 5.5 and 5.6 are supported. </p> <p>Example: <code>5.6.22</code>
-     * </p>
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <code>5.6.40</code>, <code>5.7.28</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngineVersion(const char* value) { SetSourceEngineVersion(value); return *this;}
 
@@ -1579,29 +1569,37 @@ namespace Model
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
-     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     * value to 0.</p>  <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p>  <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * <p>If specified, this value must be set to a number from 0 to 259,200 (72
+     * hours).</p> </li> </ul>
      */
     inline long long GetBacktrackWindow() const{ return m_backtrackWindow; }
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
-     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     * value to 0.</p>  <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p>  <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * <p>If specified, this value must be set to a number from 0 to 259,200 (72
+     * hours).</p> </li> </ul>
      */
     inline bool BacktrackWindowHasBeenSet() const { return m_backtrackWindowHasBeenSet; }
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
-     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     * value to 0.</p>  <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p>  <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * <p>If specified, this value must be set to a number from 0 to 259,200 (72
+     * hours).</p> </li> </ul>
      */
     inline void SetBacktrackWindow(long long value) { m_backtrackWindowHasBeenSet = true; m_backtrackWindow = value; }
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
-     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     * value to 0.</p>  <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p>  <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * <p>If specified, this value must be set to a number from 0 to 259,200 (72
+     * hours).</p> </li> </ul>
      */
     inline RestoreDBClusterFromS3Request& WithBacktrackWindow(long long value) { SetBacktrackWindow(value); return *this;}
 

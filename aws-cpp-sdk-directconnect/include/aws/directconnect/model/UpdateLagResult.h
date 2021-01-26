@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
@@ -97,20 +87,20 @@ namespace Model
 
 
     /**
-     * <p>The number of physical connections bundled by the LAG, up to a maximum of
-     * 10.</p>
+     * <p>The number of physical dedicated connections bundled by the LAG, up to a
+     * maximum of 10.</p>
      */
     inline int GetNumberOfConnections() const{ return m_numberOfConnections; }
 
     /**
-     * <p>The number of physical connections bundled by the LAG, up to a maximum of
-     * 10.</p>
+     * <p>The number of physical dedicated connections bundled by the LAG, up to a
+     * maximum of 10.</p>
      */
     inline void SetNumberOfConnections(int value) { m_numberOfConnections = value; }
 
     /**
-     * <p>The number of physical connections bundled by the LAG, up to a maximum of
-     * 10.</p>
+     * <p>The number of physical dedicated connections bundled by the LAG, up to a
+     * maximum of 10.</p>
      */
     inline UpdateLagResult& WithNumberOfConnections(int value) { SetNumberOfConnections(value); return *this;}
 
@@ -367,20 +357,20 @@ namespace Model
 
 
     /**
-     * <p>The minimum number of physical connections that must be operational for the
-     * LAG itself to be operational.</p>
+     * <p>The minimum number of physical dedicated connections that must be operational
+     * for the LAG itself to be operational.</p>
      */
     inline int GetMinimumLinks() const{ return m_minimumLinks; }
 
     /**
-     * <p>The minimum number of physical connections that must be operational for the
-     * LAG itself to be operational.</p>
+     * <p>The minimum number of physical dedicated connections that must be operational
+     * for the LAG itself to be operational.</p>
      */
     inline void SetMinimumLinks(int value) { m_minimumLinks = value; }
 
     /**
-     * <p>The minimum number of physical connections that must be operational for the
-     * LAG itself to be operational.</p>
+     * <p>The minimum number of physical dedicated connections that must be operational
+     * for the LAG itself to be operational.</p>
      */
     inline UpdateLagResult& WithMinimumLinks(int value) { SetMinimumLinks(value); return *this;}
 

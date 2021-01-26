@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/elasticmapreduce/model/SpotProvisioningSpecification.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,7 +24,9 @@ SpotProvisioningSpecification::SpotProvisioningSpecification() :
     m_timeoutAction(SpotProvisioningTimeoutAction::NOT_SET),
     m_timeoutActionHasBeenSet(false),
     m_blockDurationMinutes(0),
-    m_blockDurationMinutesHasBeenSet(false)
+    m_blockDurationMinutesHasBeenSet(false),
+    m_allocationStrategy(SpotProvisioningAllocationStrategy::NOT_SET),
+    m_allocationStrategyHasBeenSet(false)
 {
 }
 
@@ -44,7 +36,9 @@ SpotProvisioningSpecification::SpotProvisioningSpecification(JsonView jsonValue)
     m_timeoutAction(SpotProvisioningTimeoutAction::NOT_SET),
     m_timeoutActionHasBeenSet(false),
     m_blockDurationMinutes(0),
-    m_blockDurationMinutesHasBeenSet(false)
+    m_blockDurationMinutesHasBeenSet(false),
+    m_allocationStrategy(SpotProvisioningAllocationStrategy::NOT_SET),
+    m_allocationStrategyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -72,6 +66,13 @@ SpotProvisioningSpecification& SpotProvisioningSpecification::operator =(JsonVie
     m_blockDurationMinutesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AllocationStrategy"))
+  {
+    m_allocationStrategy = SpotProvisioningAllocationStrategyMapper::GetSpotProvisioningAllocationStrategyForName(jsonValue.GetString("AllocationStrategy"));
+
+    m_allocationStrategyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -94,6 +95,11 @@ JsonValue SpotProvisioningSpecification::Jsonize() const
   {
    payload.WithInteger("BlockDurationMinutes", m_blockDurationMinutes);
 
+  }
+
+  if(m_allocationStrategyHasBeenSet)
+  {
+   payload.WithString("AllocationStrategy", SpotProvisioningAllocationStrategyMapper::GetNameForSpotProvisioningAllocationStrategy(m_allocationStrategy));
   }
 
   return payload;

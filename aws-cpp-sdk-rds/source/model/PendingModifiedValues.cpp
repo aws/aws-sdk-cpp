@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/rds/model/PendingModifiedValues.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -50,7 +40,9 @@ PendingModifiedValues::PendingModifiedValues() :
     m_cACertificateIdentifierHasBeenSet(false),
     m_dBSubnetGroupNameHasBeenSet(false),
     m_pendingCloudwatchLogsExportsHasBeenSet(false),
-    m_processorFeaturesHasBeenSet(false)
+    m_processorFeaturesHasBeenSet(false),
+    m_iAMDatabaseAuthenticationEnabled(false),
+    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false)
 {
 }
 
@@ -74,7 +66,9 @@ PendingModifiedValues::PendingModifiedValues(const XmlNode& xmlNode) :
     m_cACertificateIdentifierHasBeenSet(false),
     m_dBSubnetGroupNameHasBeenSet(false),
     m_pendingCloudwatchLogsExportsHasBeenSet(false),
-    m_processorFeaturesHasBeenSet(false)
+    m_processorFeaturesHasBeenSet(false),
+    m_iAMDatabaseAuthenticationEnabled(false),
+    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -181,6 +175,12 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
 
       m_processorFeaturesHasBeenSet = true;
     }
+    XmlNode iAMDatabaseAuthenticationEnabledNode = resultNode.FirstChild("IAMDatabaseAuthenticationEnabled");
+    if(!iAMDatabaseAuthenticationEnabledNode.IsNull())
+    {
+      m_iAMDatabaseAuthenticationEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iAMDatabaseAuthenticationEnabledNode.GetText()).c_str()).c_str());
+      m_iAMDatabaseAuthenticationEnabledHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -271,6 +271,11 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
       }
   }
 
+  if(m_iAMDatabaseAuthenticationEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
+  }
+
 }
 
 void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -342,6 +347,10 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
         processorFeaturesSs << location <<  ".ProcessorFeature." << processorFeaturesIdx++;
         item.OutputToStream(oStream, processorFeaturesSs.str().c_str());
       }
+  }
+  if(m_iAMDatabaseAuthenticationEnabledHasBeenSet)
+  {
+      oStream << location << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
   }
 }
 

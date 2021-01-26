@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
@@ -88,96 +78,96 @@ namespace Model
     /**
      * <p>The name of the type being registered.</p> <p>We recommend that type names
      * adhere to the following pattern:
-     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> <note> <p>The
+     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p>  <p>The
      * following organization namespaces are reserved and cannot be used in your
      * resource type names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li> <li> <p>
      * <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li> <li> <p>
      * <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li> <li> <p>
-     * <code>Dev</code> </p> </li> </ul> </note>
+     * <code>Dev</code> </p> </li> </ul> 
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
 
     /**
      * <p>The name of the type being registered.</p> <p>We recommend that type names
      * adhere to the following pattern:
-     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> <note> <p>The
+     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p>  <p>The
      * following organization namespaces are reserved and cannot be used in your
      * resource type names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li> <li> <p>
      * <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li> <li> <p>
      * <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li> <li> <p>
-     * <code>Dev</code> </p> </li> </ul> </note>
+     * <code>Dev</code> </p> </li> </ul> 
      */
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
 
     /**
      * <p>The name of the type being registered.</p> <p>We recommend that type names
      * adhere to the following pattern:
-     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> <note> <p>The
+     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p>  <p>The
      * following organization namespaces are reserved and cannot be used in your
      * resource type names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li> <li> <p>
      * <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li> <li> <p>
      * <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li> <li> <p>
-     * <code>Dev</code> </p> </li> </ul> </note>
+     * <code>Dev</code> </p> </li> </ul> 
      */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
 
     /**
      * <p>The name of the type being registered.</p> <p>We recommend that type names
      * adhere to the following pattern:
-     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> <note> <p>The
+     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p>  <p>The
      * following organization namespaces are reserved and cannot be used in your
      * resource type names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li> <li> <p>
      * <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li> <li> <p>
      * <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li> <li> <p>
-     * <code>Dev</code> </p> </li> </ul> </note>
+     * <code>Dev</code> </p> </li> </ul> 
      */
     inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
 
     /**
      * <p>The name of the type being registered.</p> <p>We recommend that type names
      * adhere to the following pattern:
-     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> <note> <p>The
+     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p>  <p>The
      * following organization namespaces are reserved and cannot be used in your
      * resource type names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li> <li> <p>
      * <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li> <li> <p>
      * <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li> <li> <p>
-     * <code>Dev</code> </p> </li> </ul> </note>
+     * <code>Dev</code> </p> </li> </ul> 
      */
     inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
 
     /**
      * <p>The name of the type being registered.</p> <p>We recommend that type names
      * adhere to the following pattern:
-     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> <note> <p>The
+     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p>  <p>The
      * following organization namespaces are reserved and cannot be used in your
      * resource type names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li> <li> <p>
      * <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li> <li> <p>
      * <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li> <li> <p>
-     * <code>Dev</code> </p> </li> </ul> </note>
+     * <code>Dev</code> </p> </li> </ul> 
      */
     inline RegisterTypeRequest& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
 
     /**
      * <p>The name of the type being registered.</p> <p>We recommend that type names
      * adhere to the following pattern:
-     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> <note> <p>The
+     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p>  <p>The
      * following organization namespaces are reserved and cannot be used in your
      * resource type names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li> <li> <p>
      * <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li> <li> <p>
      * <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li> <li> <p>
-     * <code>Dev</code> </p> </li> </ul> </note>
+     * <code>Dev</code> </p> </li> </ul> 
      */
     inline RegisterTypeRequest& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the type being registered.</p> <p>We recommend that type names
      * adhere to the following pattern:
-     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> <note> <p>The
+     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p>  <p>The
      * following organization namespaces are reserved and cannot be used in your
      * resource type names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li> <li> <p>
      * <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li> <li> <p>
      * <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li> <li> <p>
-     * <code>Dev</code> </p> </li> </ul> </note>
+     * <code>Dev</code> </p> </li> </ul> 
      */
     inline RegisterTypeRequest& WithTypeName(const char* value) { SetTypeName(value); return *this;}
 
@@ -188,13 +178,14 @@ namespace Model
      * register.</p> <p>For information on generating a schema handler package for the
      * type you want to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
-     * in the <i>CloudFormation CLI User Guide</i>.</p> <note> <p>As part of
-     * registering a resource provider type, CloudFormation must be able to access the
-     * S3 bucket which contains the schema handler package for that resource provider.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions">IAM
-     * Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation
-     * User Guide</i>.</p> </note>
+     * in the <i>CloudFormation CLI User Guide</i>.</p>  <p>The user registering
+     * the resource provider type must be able to access the the schema handler package
+     * in the S3 bucket. That is, the user needs to have <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+     * permissions for the schema handler package. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions,
+     * Resources, and Condition Keys for Amazon S3</a> in the <i>AWS Identity and
+     * Access Management User Guide</i>.</p> 
      */
     inline const Aws::String& GetSchemaHandlerPackage() const{ return m_schemaHandlerPackage; }
 
@@ -204,13 +195,14 @@ namespace Model
      * register.</p> <p>For information on generating a schema handler package for the
      * type you want to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
-     * in the <i>CloudFormation CLI User Guide</i>.</p> <note> <p>As part of
-     * registering a resource provider type, CloudFormation must be able to access the
-     * S3 bucket which contains the schema handler package for that resource provider.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions">IAM
-     * Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation
-     * User Guide</i>.</p> </note>
+     * in the <i>CloudFormation CLI User Guide</i>.</p>  <p>The user registering
+     * the resource provider type must be able to access the the schema handler package
+     * in the S3 bucket. That is, the user needs to have <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+     * permissions for the schema handler package. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions,
+     * Resources, and Condition Keys for Amazon S3</a> in the <i>AWS Identity and
+     * Access Management User Guide</i>.</p> 
      */
     inline bool SchemaHandlerPackageHasBeenSet() const { return m_schemaHandlerPackageHasBeenSet; }
 
@@ -220,13 +212,14 @@ namespace Model
      * register.</p> <p>For information on generating a schema handler package for the
      * type you want to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
-     * in the <i>CloudFormation CLI User Guide</i>.</p> <note> <p>As part of
-     * registering a resource provider type, CloudFormation must be able to access the
-     * S3 bucket which contains the schema handler package for that resource provider.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions">IAM
-     * Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation
-     * User Guide</i>.</p> </note>
+     * in the <i>CloudFormation CLI User Guide</i>.</p>  <p>The user registering
+     * the resource provider type must be able to access the the schema handler package
+     * in the S3 bucket. That is, the user needs to have <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+     * permissions for the schema handler package. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions,
+     * Resources, and Condition Keys for Amazon S3</a> in the <i>AWS Identity and
+     * Access Management User Guide</i>.</p> 
      */
     inline void SetSchemaHandlerPackage(const Aws::String& value) { m_schemaHandlerPackageHasBeenSet = true; m_schemaHandlerPackage = value; }
 
@@ -236,13 +229,14 @@ namespace Model
      * register.</p> <p>For information on generating a schema handler package for the
      * type you want to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
-     * in the <i>CloudFormation CLI User Guide</i>.</p> <note> <p>As part of
-     * registering a resource provider type, CloudFormation must be able to access the
-     * S3 bucket which contains the schema handler package for that resource provider.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions">IAM
-     * Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation
-     * User Guide</i>.</p> </note>
+     * in the <i>CloudFormation CLI User Guide</i>.</p>  <p>The user registering
+     * the resource provider type must be able to access the the schema handler package
+     * in the S3 bucket. That is, the user needs to have <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+     * permissions for the schema handler package. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions,
+     * Resources, and Condition Keys for Amazon S3</a> in the <i>AWS Identity and
+     * Access Management User Guide</i>.</p> 
      */
     inline void SetSchemaHandlerPackage(Aws::String&& value) { m_schemaHandlerPackageHasBeenSet = true; m_schemaHandlerPackage = std::move(value); }
 
@@ -252,13 +246,14 @@ namespace Model
      * register.</p> <p>For information on generating a schema handler package for the
      * type you want to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
-     * in the <i>CloudFormation CLI User Guide</i>.</p> <note> <p>As part of
-     * registering a resource provider type, CloudFormation must be able to access the
-     * S3 bucket which contains the schema handler package for that resource provider.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions">IAM
-     * Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation
-     * User Guide</i>.</p> </note>
+     * in the <i>CloudFormation CLI User Guide</i>.</p>  <p>The user registering
+     * the resource provider type must be able to access the the schema handler package
+     * in the S3 bucket. That is, the user needs to have <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+     * permissions for the schema handler package. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions,
+     * Resources, and Condition Keys for Amazon S3</a> in the <i>AWS Identity and
+     * Access Management User Guide</i>.</p> 
      */
     inline void SetSchemaHandlerPackage(const char* value) { m_schemaHandlerPackageHasBeenSet = true; m_schemaHandlerPackage.assign(value); }
 
@@ -268,13 +263,14 @@ namespace Model
      * register.</p> <p>For information on generating a schema handler package for the
      * type you want to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
-     * in the <i>CloudFormation CLI User Guide</i>.</p> <note> <p>As part of
-     * registering a resource provider type, CloudFormation must be able to access the
-     * S3 bucket which contains the schema handler package for that resource provider.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions">IAM
-     * Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation
-     * User Guide</i>.</p> </note>
+     * in the <i>CloudFormation CLI User Guide</i>.</p>  <p>The user registering
+     * the resource provider type must be able to access the the schema handler package
+     * in the S3 bucket. That is, the user needs to have <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+     * permissions for the schema handler package. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions,
+     * Resources, and Condition Keys for Amazon S3</a> in the <i>AWS Identity and
+     * Access Management User Guide</i>.</p> 
      */
     inline RegisterTypeRequest& WithSchemaHandlerPackage(const Aws::String& value) { SetSchemaHandlerPackage(value); return *this;}
 
@@ -284,13 +280,14 @@ namespace Model
      * register.</p> <p>For information on generating a schema handler package for the
      * type you want to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
-     * in the <i>CloudFormation CLI User Guide</i>.</p> <note> <p>As part of
-     * registering a resource provider type, CloudFormation must be able to access the
-     * S3 bucket which contains the schema handler package for that resource provider.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions">IAM
-     * Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation
-     * User Guide</i>.</p> </note>
+     * in the <i>CloudFormation CLI User Guide</i>.</p>  <p>The user registering
+     * the resource provider type must be able to access the the schema handler package
+     * in the S3 bucket. That is, the user needs to have <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+     * permissions for the schema handler package. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions,
+     * Resources, and Condition Keys for Amazon S3</a> in the <i>AWS Identity and
+     * Access Management User Guide</i>.</p> 
      */
     inline RegisterTypeRequest& WithSchemaHandlerPackage(Aws::String&& value) { SetSchemaHandlerPackage(std::move(value)); return *this;}
 
@@ -300,13 +297,14 @@ namespace Model
      * register.</p> <p>For information on generating a schema handler package for the
      * type you want to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
-     * in the <i>CloudFormation CLI User Guide</i>.</p> <note> <p>As part of
-     * registering a resource provider type, CloudFormation must be able to access the
-     * S3 bucket which contains the schema handler package for that resource provider.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions">IAM
-     * Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation
-     * User Guide</i>.</p> </note>
+     * in the <i>CloudFormation CLI User Guide</i>.</p>  <p>The user registering
+     * the resource provider type must be able to access the the schema handler package
+     * in the S3 bucket. That is, the user needs to have <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+     * permissions for the schema handler package. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions,
+     * Resources, and Condition Keys for Amazon S3</a> in the <i>AWS Identity and
+     * Access Management User Guide</i>.</p> 
      */
     inline RegisterTypeRequest& WithSchemaHandlerPackage(const char* value) { SetSchemaHandlerPackage(value); return *this;}
 
@@ -343,98 +341,114 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM execution role to use to register
-     * the type. If your resource type calls AWS APIs in any of its handlers, you must
-     * create an <i> <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume
+     * when invoking the resource provider. If your resource type calls AWS APIs in any
+     * of its handlers, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
-     * AWS APIs, and provision that execution role in your account. CloudFormation then
-     * assumes that execution role to provide your resource type with the appropriate
-     * credentials.</p>
+     * AWS APIs, and provision that execution role in your account. When CloudFormation
+     * needs to invoke the resource provider handler, CloudFormation assumes this
+     * execution role to create a temporary session token, which it then passes to the
+     * resource provider handler, thereby supplying your resource provider with the
+     * appropriate credentials.</p>
      */
     inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM execution role to use to register
-     * the type. If your resource type calls AWS APIs in any of its handlers, you must
-     * create an <i> <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume
+     * when invoking the resource provider. If your resource type calls AWS APIs in any
+     * of its handlers, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
-     * AWS APIs, and provision that execution role in your account. CloudFormation then
-     * assumes that execution role to provide your resource type with the appropriate
-     * credentials.</p>
+     * AWS APIs, and provision that execution role in your account. When CloudFormation
+     * needs to invoke the resource provider handler, CloudFormation assumes this
+     * execution role to create a temporary session token, which it then passes to the
+     * resource provider handler, thereby supplying your resource provider with the
+     * appropriate credentials.</p>
      */
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM execution role to use to register
-     * the type. If your resource type calls AWS APIs in any of its handlers, you must
-     * create an <i> <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume
+     * when invoking the resource provider. If your resource type calls AWS APIs in any
+     * of its handlers, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
-     * AWS APIs, and provision that execution role in your account. CloudFormation then
-     * assumes that execution role to provide your resource type with the appropriate
-     * credentials.</p>
+     * AWS APIs, and provision that execution role in your account. When CloudFormation
+     * needs to invoke the resource provider handler, CloudFormation assumes this
+     * execution role to create a temporary session token, which it then passes to the
+     * resource provider handler, thereby supplying your resource provider with the
+     * appropriate credentials.</p>
      */
     inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM execution role to use to register
-     * the type. If your resource type calls AWS APIs in any of its handlers, you must
-     * create an <i> <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume
+     * when invoking the resource provider. If your resource type calls AWS APIs in any
+     * of its handlers, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
-     * AWS APIs, and provision that execution role in your account. CloudFormation then
-     * assumes that execution role to provide your resource type with the appropriate
-     * credentials.</p>
+     * AWS APIs, and provision that execution role in your account. When CloudFormation
+     * needs to invoke the resource provider handler, CloudFormation assumes this
+     * execution role to create a temporary session token, which it then passes to the
+     * resource provider handler, thereby supplying your resource provider with the
+     * appropriate credentials.</p>
      */
     inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM execution role to use to register
-     * the type. If your resource type calls AWS APIs in any of its handlers, you must
-     * create an <i> <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume
+     * when invoking the resource provider. If your resource type calls AWS APIs in any
+     * of its handlers, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
-     * AWS APIs, and provision that execution role in your account. CloudFormation then
-     * assumes that execution role to provide your resource type with the appropriate
-     * credentials.</p>
+     * AWS APIs, and provision that execution role in your account. When CloudFormation
+     * needs to invoke the resource provider handler, CloudFormation assumes this
+     * execution role to create a temporary session token, which it then passes to the
+     * resource provider handler, thereby supplying your resource provider with the
+     * appropriate credentials.</p>
      */
     inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM execution role to use to register
-     * the type. If your resource type calls AWS APIs in any of its handlers, you must
-     * create an <i> <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume
+     * when invoking the resource provider. If your resource type calls AWS APIs in any
+     * of its handlers, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
-     * AWS APIs, and provision that execution role in your account. CloudFormation then
-     * assumes that execution role to provide your resource type with the appropriate
-     * credentials.</p>
+     * AWS APIs, and provision that execution role in your account. When CloudFormation
+     * needs to invoke the resource provider handler, CloudFormation assumes this
+     * execution role to create a temporary session token, which it then passes to the
+     * resource provider handler, thereby supplying your resource provider with the
+     * appropriate credentials.</p>
      */
     inline RegisterTypeRequest& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM execution role to use to register
-     * the type. If your resource type calls AWS APIs in any of its handlers, you must
-     * create an <i> <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume
+     * when invoking the resource provider. If your resource type calls AWS APIs in any
+     * of its handlers, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
-     * AWS APIs, and provision that execution role in your account. CloudFormation then
-     * assumes that execution role to provide your resource type with the appropriate
-     * credentials.</p>
+     * AWS APIs, and provision that execution role in your account. When CloudFormation
+     * needs to invoke the resource provider handler, CloudFormation assumes this
+     * execution role to create a temporary session token, which it then passes to the
+     * resource provider handler, thereby supplying your resource provider with the
+     * appropriate credentials.</p>
      */
     inline RegisterTypeRequest& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM execution role to use to register
-     * the type. If your resource type calls AWS APIs in any of its handlers, you must
-     * create an <i> <a
+     * <p>The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume
+     * when invoking the resource provider. If your resource type calls AWS APIs in any
+     * of its handlers, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
-     * AWS APIs, and provision that execution role in your account. CloudFormation then
-     * assumes that execution role to provide your resource type with the appropriate
-     * credentials.</p>
+     * AWS APIs, and provision that execution role in your account. When CloudFormation
+     * needs to invoke the resource provider handler, CloudFormation assumes this
+     * execution role to create a temporary session token, which it then passes to the
+     * resource provider handler, thereby supplying your resource provider with the
+     * appropriate credentials.</p>
      */
     inline RegisterTypeRequest& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
 

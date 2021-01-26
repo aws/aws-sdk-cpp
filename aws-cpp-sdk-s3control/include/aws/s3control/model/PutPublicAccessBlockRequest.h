@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3control/S3Control_EXPORTS.h>
@@ -47,86 +37,86 @@ namespace Model
 
     /**
      * <p>The <code>PublicAccessBlock</code> configuration that you want to apply to
-     * the specified Amazon Web Services account.</p>
+     * the specified AWS account.</p>
      */
     inline const PublicAccessBlockConfiguration& GetPublicAccessBlockConfiguration() const{ return m_publicAccessBlockConfiguration; }
 
     /**
      * <p>The <code>PublicAccessBlock</code> configuration that you want to apply to
-     * the specified Amazon Web Services account.</p>
+     * the specified AWS account.</p>
      */
     inline bool PublicAccessBlockConfigurationHasBeenSet() const { return m_publicAccessBlockConfigurationHasBeenSet; }
 
     /**
      * <p>The <code>PublicAccessBlock</code> configuration that you want to apply to
-     * the specified Amazon Web Services account.</p>
+     * the specified AWS account.</p>
      */
     inline void SetPublicAccessBlockConfiguration(const PublicAccessBlockConfiguration& value) { m_publicAccessBlockConfigurationHasBeenSet = true; m_publicAccessBlockConfiguration = value; }
 
     /**
      * <p>The <code>PublicAccessBlock</code> configuration that you want to apply to
-     * the specified Amazon Web Services account.</p>
+     * the specified AWS account.</p>
      */
     inline void SetPublicAccessBlockConfiguration(PublicAccessBlockConfiguration&& value) { m_publicAccessBlockConfigurationHasBeenSet = true; m_publicAccessBlockConfiguration = std::move(value); }
 
     /**
      * <p>The <code>PublicAccessBlock</code> configuration that you want to apply to
-     * the specified Amazon Web Services account.</p>
+     * the specified AWS account.</p>
      */
     inline PutPublicAccessBlockRequest& WithPublicAccessBlockConfiguration(const PublicAccessBlockConfiguration& value) { SetPublicAccessBlockConfiguration(value); return *this;}
 
     /**
      * <p>The <code>PublicAccessBlock</code> configuration that you want to apply to
-     * the specified Amazon Web Services account.</p>
+     * the specified AWS account.</p>
      */
     inline PutPublicAccessBlockRequest& WithPublicAccessBlockConfiguration(PublicAccessBlockConfiguration&& value) { SetPublicAccessBlockConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>The account ID for the Amazon Web Services account whose
-     * <code>PublicAccessBlock</code> configuration you want to set.</p>
+     * <p>The account ID for the AWS account whose <code>PublicAccessBlock</code>
+     * configuration you want to set.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The account ID for the Amazon Web Services account whose
-     * <code>PublicAccessBlock</code> configuration you want to set.</p>
+     * <p>The account ID for the AWS account whose <code>PublicAccessBlock</code>
+     * configuration you want to set.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The account ID for the Amazon Web Services account whose
-     * <code>PublicAccessBlock</code> configuration you want to set.</p>
+     * <p>The account ID for the AWS account whose <code>PublicAccessBlock</code>
+     * configuration you want to set.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The account ID for the Amazon Web Services account whose
-     * <code>PublicAccessBlock</code> configuration you want to set.</p>
+     * <p>The account ID for the AWS account whose <code>PublicAccessBlock</code>
+     * configuration you want to set.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The account ID for the Amazon Web Services account whose
-     * <code>PublicAccessBlock</code> configuration you want to set.</p>
+     * <p>The account ID for the AWS account whose <code>PublicAccessBlock</code>
+     * configuration you want to set.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The account ID for the Amazon Web Services account whose
-     * <code>PublicAccessBlock</code> configuration you want to set.</p>
+     * <p>The account ID for the AWS account whose <code>PublicAccessBlock</code>
+     * configuration you want to set.</p>
      */
     inline PutPublicAccessBlockRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The account ID for the Amazon Web Services account whose
-     * <code>PublicAccessBlock</code> configuration you want to set.</p>
+     * <p>The account ID for the AWS account whose <code>PublicAccessBlock</code>
+     * configuration you want to set.</p>
      */
     inline PutPublicAccessBlockRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The account ID for the Amazon Web Services account whose
-     * <code>PublicAccessBlock</code> configuration you want to set.</p>
+     * <p>The account ID for the AWS account whose <code>PublicAccessBlock</code>
+     * configuration you want to set.</p>
      */
     inline PutPublicAccessBlockRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 

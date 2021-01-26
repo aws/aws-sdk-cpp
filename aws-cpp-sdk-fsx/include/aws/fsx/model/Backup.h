@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/fsx/FSx_EXPORTS.h>
@@ -42,10 +32,13 @@ namespace Model
 {
 
   /**
-   * <p>A backup of an Amazon FSx for Windows File Server file system. You can create
-   * a new file system from a backup to protect against data loss.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/Backup">AWS API
+   * <p>A backup of an Amazon FSx file system. For more information see:</p> <ul>
+   * <li> <p> <a
+   * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working
+   * with backups for Windows file systems</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working
+   * with backups for Lustre file systems</a> </p> </li> </ul><p><h3>See Also:</h3>  
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/Backup">AWS API
    * Reference</a></p>
    */
   class AWS_FSX_API Backup
@@ -99,32 +92,80 @@ namespace Model
 
 
     /**
-     * <p>The lifecycle status of the backup.</p>
+     * <p>The lifecycle status of the backup.</p> <ul> <li> <p> <code>AVAILABLE</code>
+     * - The backup is fully available.</p> </li> <li> <p> <code>PENDING</code> - For
+     * user-initiated backups on Lustre file systems only; Amazon FSx has not started
+     * creating the backup.</p> </li> <li> <p> <code>CREATING</code> - Amazon FSx is
+     * creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
+     * user-initiated backups on Lustre file systems only; Amazon FSx is transferring
+     * the backup to S3.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted
+     * the backup and it is no longer available.</p> </li> <li> <p> <code>FAILED</code>
+     * - Amazon FSx could not complete the backup.</p> </li> </ul>
      */
     inline const BackupLifecycle& GetLifecycle() const{ return m_lifecycle; }
 
     /**
-     * <p>The lifecycle status of the backup.</p>
+     * <p>The lifecycle status of the backup.</p> <ul> <li> <p> <code>AVAILABLE</code>
+     * - The backup is fully available.</p> </li> <li> <p> <code>PENDING</code> - For
+     * user-initiated backups on Lustre file systems only; Amazon FSx has not started
+     * creating the backup.</p> </li> <li> <p> <code>CREATING</code> - Amazon FSx is
+     * creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
+     * user-initiated backups on Lustre file systems only; Amazon FSx is transferring
+     * the backup to S3.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted
+     * the backup and it is no longer available.</p> </li> <li> <p> <code>FAILED</code>
+     * - Amazon FSx could not complete the backup.</p> </li> </ul>
      */
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
 
     /**
-     * <p>The lifecycle status of the backup.</p>
+     * <p>The lifecycle status of the backup.</p> <ul> <li> <p> <code>AVAILABLE</code>
+     * - The backup is fully available.</p> </li> <li> <p> <code>PENDING</code> - For
+     * user-initiated backups on Lustre file systems only; Amazon FSx has not started
+     * creating the backup.</p> </li> <li> <p> <code>CREATING</code> - Amazon FSx is
+     * creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
+     * user-initiated backups on Lustre file systems only; Amazon FSx is transferring
+     * the backup to S3.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted
+     * the backup and it is no longer available.</p> </li> <li> <p> <code>FAILED</code>
+     * - Amazon FSx could not complete the backup.</p> </li> </ul>
      */
     inline void SetLifecycle(const BackupLifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
 
     /**
-     * <p>The lifecycle status of the backup.</p>
+     * <p>The lifecycle status of the backup.</p> <ul> <li> <p> <code>AVAILABLE</code>
+     * - The backup is fully available.</p> </li> <li> <p> <code>PENDING</code> - For
+     * user-initiated backups on Lustre file systems only; Amazon FSx has not started
+     * creating the backup.</p> </li> <li> <p> <code>CREATING</code> - Amazon FSx is
+     * creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
+     * user-initiated backups on Lustre file systems only; Amazon FSx is transferring
+     * the backup to S3.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted
+     * the backup and it is no longer available.</p> </li> <li> <p> <code>FAILED</code>
+     * - Amazon FSx could not complete the backup.</p> </li> </ul>
      */
     inline void SetLifecycle(BackupLifecycle&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
 
     /**
-     * <p>The lifecycle status of the backup.</p>
+     * <p>The lifecycle status of the backup.</p> <ul> <li> <p> <code>AVAILABLE</code>
+     * - The backup is fully available.</p> </li> <li> <p> <code>PENDING</code> - For
+     * user-initiated backups on Lustre file systems only; Amazon FSx has not started
+     * creating the backup.</p> </li> <li> <p> <code>CREATING</code> - Amazon FSx is
+     * creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
+     * user-initiated backups on Lustre file systems only; Amazon FSx is transferring
+     * the backup to S3.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted
+     * the backup and it is no longer available.</p> </li> <li> <p> <code>FAILED</code>
+     * - Amazon FSx could not complete the backup.</p> </li> </ul>
      */
     inline Backup& WithLifecycle(const BackupLifecycle& value) { SetLifecycle(value); return *this;}
 
     /**
-     * <p>The lifecycle status of the backup.</p>
+     * <p>The lifecycle status of the backup.</p> <ul> <li> <p> <code>AVAILABLE</code>
+     * - The backup is fully available.</p> </li> <li> <p> <code>PENDING</code> - For
+     * user-initiated backups on Lustre file systems only; Amazon FSx has not started
+     * creating the backup.</p> </li> <li> <p> <code>CREATING</code> - Amazon FSx is
+     * creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
+     * user-initiated backups on Lustre file systems only; Amazon FSx is transferring
+     * the backup to S3.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted
+     * the backup and it is no longer available.</p> </li> <li> <p> <code>FAILED</code>
+     * - Amazon FSx could not complete the backup.</p> </li> </ul>
      */
     inline Backup& WithLifecycle(BackupLifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
 
@@ -161,32 +202,32 @@ namespace Model
 
 
     /**
-     * <p>The type of the backup.</p>
+     * <p>The type of the file system backup.</p>
      */
     inline const BackupType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the backup.</p>
+     * <p>The type of the file system backup.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of the backup.</p>
+     * <p>The type of the file system backup.</p>
      */
     inline void SetType(const BackupType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the backup.</p>
+     * <p>The type of the file system backup.</p>
      */
     inline void SetType(BackupType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the backup.</p>
+     * <p>The type of the file system backup.</p>
      */
     inline Backup& WithType(const BackupType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the backup.</p>
+     * <p>The type of the file system backup.</p>
      */
     inline Backup& WithType(BackupType&& value) { SetType(std::move(value)); return *this;}
 
@@ -236,58 +277,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this
-     * backup of the Amazon FSx for Windows file system's data at rest. Amazon FSx for
-     * Lustre does not support KMS encryption.</p>
+     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
+     * backup of the Amazon FSx file system's data at rest. </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this
-     * backup of the Amazon FSx for Windows file system's data at rest. Amazon FSx for
-     * Lustre does not support KMS encryption.</p>
+     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
+     * backup of the Amazon FSx file system's data at rest. </p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this
-     * backup of the Amazon FSx for Windows file system's data at rest. Amazon FSx for
-     * Lustre does not support KMS encryption.</p>
+     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
+     * backup of the Amazon FSx file system's data at rest. </p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this
-     * backup of the Amazon FSx for Windows file system's data at rest. Amazon FSx for
-     * Lustre does not support KMS encryption.</p>
+     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
+     * backup of the Amazon FSx file system's data at rest. </p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this
-     * backup of the Amazon FSx for Windows file system's data at rest. Amazon FSx for
-     * Lustre does not support KMS encryption.</p>
+     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
+     * backup of the Amazon FSx file system's data at rest. </p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this
-     * backup of the Amazon FSx for Windows file system's data at rest. Amazon FSx for
-     * Lustre does not support KMS encryption.</p>
+     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
+     * backup of the Amazon FSx file system's data at rest. </p>
      */
     inline Backup& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this
-     * backup of the Amazon FSx for Windows file system's data at rest. Amazon FSx for
-     * Lustre does not support KMS encryption.</p>
+     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
+     * backup of the Amazon FSx file system's data at rest. </p>
      */
     inline Backup& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this
-     * backup of the Amazon FSx for Windows file system's data at rest. Amazon FSx for
-     * Lustre does not support KMS encryption.</p>
+     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
+     * backup of the Amazon FSx file system's data at rest. </p>
      */
     inline Backup& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

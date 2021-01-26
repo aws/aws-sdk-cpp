@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/health/Health_EXPORTS.h>
@@ -35,7 +25,9 @@ namespace Model
 
   /**
    * <p>The number of entities that are affected by one or more events. Returned by
-   * the <a>DescribeEntityAggregates</a> operation.</p><p><h3>See Also:</h3>   <a
+   * the <a
+   * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEntityAggregates.html">DescribeEntityAggregates</a>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EntityAggregate">AWS
    * API Reference</a></p>
    */
@@ -122,22 +114,22 @@ namespace Model
 
 
     /**
-     * <p>The number entities that match the criteria for the specified events.</p>
+     * <p>The number of entities that match the criteria for the specified events.</p>
      */
     inline int GetCount() const{ return m_count; }
 
     /**
-     * <p>The number entities that match the criteria for the specified events.</p>
+     * <p>The number of entities that match the criteria for the specified events.</p>
      */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
 
     /**
-     * <p>The number entities that match the criteria for the specified events.</p>
+     * <p>The number of entities that match the criteria for the specified events.</p>
      */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
 
     /**
-     * <p>The number entities that match the criteria for the specified events.</p>
+     * <p>The number of entities that match the criteria for the specified events.</p>
      */
     inline EntityAggregate& WithCount(int value) { SetCount(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
@@ -37,8 +27,8 @@ namespace Model
 
   /**
    * <p>An object that represents the AWS Cloud Map service discovery information for
-   * your virtual
-         node.</p><p><h3>See Also:</h3>   <a
+   * your virtual node.</p>  <p>AWS Cloud Map is not available in the
+   * eu-south-1 Region.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/AwsCloudMapServiceDiscovery">AWS
    * API Reference</a></p>
    */
@@ -53,81 +43,65 @@ namespace Model
 
     /**
      * <p>A string map that contains attributes with values that you can use to filter
-     * instances
-         by any custom attribute that you specified when you
-     * registered the instance. Only instances
-         that match all of the specified
-     * key/value pairs will be returned.</p>
+     * instances by any custom attribute that you specified when you registered the
+     * instance. Only instances that match all of the specified key/value pairs will be
+     * returned.</p>
      */
     inline const Aws::Vector<AwsCloudMapInstanceAttribute>& GetAttributes() const{ return m_attributes; }
 
     /**
      * <p>A string map that contains attributes with values that you can use to filter
-     * instances
-         by any custom attribute that you specified when you
-     * registered the instance. Only instances
-         that match all of the specified
-     * key/value pairs will be returned.</p>
+     * instances by any custom attribute that you specified when you registered the
+     * instance. Only instances that match all of the specified key/value pairs will be
+     * returned.</p>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>A string map that contains attributes with values that you can use to filter
-     * instances
-         by any custom attribute that you specified when you
-     * registered the instance. Only instances
-         that match all of the specified
-     * key/value pairs will be returned.</p>
+     * instances by any custom attribute that you specified when you registered the
+     * instance. Only instances that match all of the specified key/value pairs will be
+     * returned.</p>
      */
     inline void SetAttributes(const Aws::Vector<AwsCloudMapInstanceAttribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
      * <p>A string map that contains attributes with values that you can use to filter
-     * instances
-         by any custom attribute that you specified when you
-     * registered the instance. Only instances
-         that match all of the specified
-     * key/value pairs will be returned.</p>
+     * instances by any custom attribute that you specified when you registered the
+     * instance. Only instances that match all of the specified key/value pairs will be
+     * returned.</p>
      */
     inline void SetAttributes(Aws::Vector<AwsCloudMapInstanceAttribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * <p>A string map that contains attributes with values that you can use to filter
-     * instances
-         by any custom attribute that you specified when you
-     * registered the instance. Only instances
-         that match all of the specified
-     * key/value pairs will be returned.</p>
+     * instances by any custom attribute that you specified when you registered the
+     * instance. Only instances that match all of the specified key/value pairs will be
+     * returned.</p>
      */
     inline AwsCloudMapServiceDiscovery& WithAttributes(const Aws::Vector<AwsCloudMapInstanceAttribute>& value) { SetAttributes(value); return *this;}
 
     /**
      * <p>A string map that contains attributes with values that you can use to filter
-     * instances
-         by any custom attribute that you specified when you
-     * registered the instance. Only instances
-         that match all of the specified
-     * key/value pairs will be returned.</p>
+     * instances by any custom attribute that you specified when you registered the
+     * instance. Only instances that match all of the specified key/value pairs will be
+     * returned.</p>
      */
     inline AwsCloudMapServiceDiscovery& WithAttributes(Aws::Vector<AwsCloudMapInstanceAttribute>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>A string map that contains attributes with values that you can use to filter
-     * instances
-         by any custom attribute that you specified when you
-     * registered the instance. Only instances
-         that match all of the specified
-     * key/value pairs will be returned.</p>
+     * instances by any custom attribute that you specified when you registered the
+     * instance. Only instances that match all of the specified key/value pairs will be
+     * returned.</p>
      */
     inline AwsCloudMapServiceDiscovery& AddAttributes(const AwsCloudMapInstanceAttribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
     /**
      * <p>A string map that contains attributes with values that you can use to filter
-     * instances
-         by any custom attribute that you specified when you
-     * registered the instance. Only instances
-         that match all of the specified
-     * key/value pairs will be returned.</p>
+     * instances by any custom attribute that you specified when you registered the
+     * instance. Only instances that match all of the specified key/value pairs will be
+     * returned.</p>
      */
     inline AwsCloudMapServiceDiscovery& AddAttributes(AwsCloudMapInstanceAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 

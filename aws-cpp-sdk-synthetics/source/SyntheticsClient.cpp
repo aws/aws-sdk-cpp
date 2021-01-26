@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -59,7 +49,7 @@ static const char* ALLOCATION_TAG = "SyntheticsClient";
 SyntheticsClient::SyntheticsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<SyntheticsErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -69,7 +59,7 @@ SyntheticsClient::SyntheticsClient(const Client::ClientConfiguration& clientConf
 SyntheticsClient::SyntheticsClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<SyntheticsErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -80,7 +70,7 @@ SyntheticsClient::SyntheticsClient(const std::shared_ptr<AWSCredentialsProvider>
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<SyntheticsErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -93,6 +83,7 @@ SyntheticsClient::~SyntheticsClient()
 
 void SyntheticsClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("synthetics");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -122,15 +113,7 @@ CreateCanaryOutcome SyntheticsClient::CreateCanary(const CreateCanaryRequest& re
   Aws::StringStream ss;
   ss << "/canary";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateCanaryOutcome(CreateCanaryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateCanaryOutcome(outcome.GetError());
-  }
+  return CreateCanaryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateCanaryOutcomeCallable SyntheticsClient::CreateCanaryCallable(const CreateCanaryRequest& request) const
@@ -163,15 +146,7 @@ DeleteCanaryOutcome SyntheticsClient::DeleteCanary(const DeleteCanaryRequest& re
   ss << "/canary/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteCanaryOutcome(DeleteCanaryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteCanaryOutcome(outcome.GetError());
-  }
+  return DeleteCanaryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteCanaryOutcomeCallable SyntheticsClient::DeleteCanaryCallable(const DeleteCanaryRequest& request) const
@@ -198,15 +173,7 @@ DescribeCanariesOutcome SyntheticsClient::DescribeCanaries(const DescribeCanarie
   Aws::StringStream ss;
   ss << "/canaries";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeCanariesOutcome(DescribeCanariesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeCanariesOutcome(outcome.GetError());
-  }
+  return DescribeCanariesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeCanariesOutcomeCallable SyntheticsClient::DescribeCanariesCallable(const DescribeCanariesRequest& request) const
@@ -233,15 +200,7 @@ DescribeCanariesLastRunOutcome SyntheticsClient::DescribeCanariesLastRun(const D
   Aws::StringStream ss;
   ss << "/canaries/last-run";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeCanariesLastRunOutcome(DescribeCanariesLastRunResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeCanariesLastRunOutcome(outcome.GetError());
-  }
+  return DescribeCanariesLastRunOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeCanariesLastRunOutcomeCallable SyntheticsClient::DescribeCanariesLastRunCallable(const DescribeCanariesLastRunRequest& request) const
@@ -268,15 +227,7 @@ DescribeRuntimeVersionsOutcome SyntheticsClient::DescribeRuntimeVersions(const D
   Aws::StringStream ss;
   ss << "/runtime-versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeRuntimeVersionsOutcome(DescribeRuntimeVersionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeRuntimeVersionsOutcome(outcome.GetError());
-  }
+  return DescribeRuntimeVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeRuntimeVersionsOutcomeCallable SyntheticsClient::DescribeRuntimeVersionsCallable(const DescribeRuntimeVersionsRequest& request) const
@@ -309,15 +260,7 @@ GetCanaryOutcome SyntheticsClient::GetCanary(const GetCanaryRequest& request) co
   ss << "/canary/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetCanaryOutcome(GetCanaryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetCanaryOutcome(outcome.GetError());
-  }
+  return GetCanaryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetCanaryOutcomeCallable SyntheticsClient::GetCanaryCallable(const GetCanaryRequest& request) const
@@ -351,15 +294,7 @@ GetCanaryRunsOutcome SyntheticsClient::GetCanaryRuns(const GetCanaryRunsRequest&
   ss << request.GetName();
   ss << "/runs";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetCanaryRunsOutcome(GetCanaryRunsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetCanaryRunsOutcome(outcome.GetError());
-  }
+  return GetCanaryRunsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetCanaryRunsOutcomeCallable SyntheticsClient::GetCanaryRunsCallable(const GetCanaryRunsRequest& request) const
@@ -392,15 +327,7 @@ ListTagsForResourceOutcome SyntheticsClient::ListTagsForResource(const ListTagsF
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable SyntheticsClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -434,15 +361,7 @@ StartCanaryOutcome SyntheticsClient::StartCanary(const StartCanaryRequest& reque
   ss << request.GetName();
   ss << "/start";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartCanaryOutcome(StartCanaryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartCanaryOutcome(outcome.GetError());
-  }
+  return StartCanaryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartCanaryOutcomeCallable SyntheticsClient::StartCanaryCallable(const StartCanaryRequest& request) const
@@ -476,15 +395,7 @@ StopCanaryOutcome SyntheticsClient::StopCanary(const StopCanaryRequest& request)
   ss << request.GetName();
   ss << "/stop";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StopCanaryOutcome(StopCanaryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StopCanaryOutcome(outcome.GetError());
-  }
+  return StopCanaryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopCanaryOutcomeCallable SyntheticsClient::StopCanaryCallable(const StopCanaryRequest& request) const
@@ -517,15 +428,7 @@ TagResourceOutcome SyntheticsClient::TagResource(const TagResourceRequest& reque
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable SyntheticsClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -563,15 +466,7 @@ UntagResourceOutcome SyntheticsClient::UntagResource(const UntagResourceRequest&
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable SyntheticsClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -604,15 +499,7 @@ UpdateCanaryOutcome SyntheticsClient::UpdateCanary(const UpdateCanaryRequest& re
   ss << "/canary/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateCanaryOutcome(UpdateCanaryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateCanaryOutcome(outcome.GetError());
-  }
+  return UpdateCanaryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateCanaryOutcomeCallable SyntheticsClient::UpdateCanaryCallable(const UpdateCanaryRequest& request) const

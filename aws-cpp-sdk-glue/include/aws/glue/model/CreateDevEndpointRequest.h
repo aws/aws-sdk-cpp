@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
@@ -286,11 +276,11 @@ namespace Model
      * <p>A list of public keys to be used by the development endpoints for
      * authentication. The use of this attribute is preferred over a single public key
      * because the public keys allow you to have a different private key per
-     * client.</p> <note> <p>If you previously created an endpoint with a public key,
+     * client.</p>  <p>If you previously created an endpoint with a public key,
      * you must remove that key to be able to set a list of public keys. Call the
      * <code>UpdateDevEndpoint</code> API with the public key content in the
      * <code>deletePublicKeys</code> attribute, and the list of new keys in the
-     * <code>addPublicKeys</code> attribute.</p> </note>
+     * <code>addPublicKeys</code> attribute.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetPublicKeys() const{ return m_publicKeys; }
 
@@ -298,11 +288,11 @@ namespace Model
      * <p>A list of public keys to be used by the development endpoints for
      * authentication. The use of this attribute is preferred over a single public key
      * because the public keys allow you to have a different private key per
-     * client.</p> <note> <p>If you previously created an endpoint with a public key,
+     * client.</p>  <p>If you previously created an endpoint with a public key,
      * you must remove that key to be able to set a list of public keys. Call the
      * <code>UpdateDevEndpoint</code> API with the public key content in the
      * <code>deletePublicKeys</code> attribute, and the list of new keys in the
-     * <code>addPublicKeys</code> attribute.</p> </note>
+     * <code>addPublicKeys</code> attribute.</p> 
      */
     inline bool PublicKeysHasBeenSet() const { return m_publicKeysHasBeenSet; }
 
@@ -310,11 +300,11 @@ namespace Model
      * <p>A list of public keys to be used by the development endpoints for
      * authentication. The use of this attribute is preferred over a single public key
      * because the public keys allow you to have a different private key per
-     * client.</p> <note> <p>If you previously created an endpoint with a public key,
+     * client.</p>  <p>If you previously created an endpoint with a public key,
      * you must remove that key to be able to set a list of public keys. Call the
      * <code>UpdateDevEndpoint</code> API with the public key content in the
      * <code>deletePublicKeys</code> attribute, and the list of new keys in the
-     * <code>addPublicKeys</code> attribute.</p> </note>
+     * <code>addPublicKeys</code> attribute.</p> 
      */
     inline void SetPublicKeys(const Aws::Vector<Aws::String>& value) { m_publicKeysHasBeenSet = true; m_publicKeys = value; }
 
@@ -322,11 +312,11 @@ namespace Model
      * <p>A list of public keys to be used by the development endpoints for
      * authentication. The use of this attribute is preferred over a single public key
      * because the public keys allow you to have a different private key per
-     * client.</p> <note> <p>If you previously created an endpoint with a public key,
+     * client.</p>  <p>If you previously created an endpoint with a public key,
      * you must remove that key to be able to set a list of public keys. Call the
      * <code>UpdateDevEndpoint</code> API with the public key content in the
      * <code>deletePublicKeys</code> attribute, and the list of new keys in the
-     * <code>addPublicKeys</code> attribute.</p> </note>
+     * <code>addPublicKeys</code> attribute.</p> 
      */
     inline void SetPublicKeys(Aws::Vector<Aws::String>&& value) { m_publicKeysHasBeenSet = true; m_publicKeys = std::move(value); }
 
@@ -334,11 +324,11 @@ namespace Model
      * <p>A list of public keys to be used by the development endpoints for
      * authentication. The use of this attribute is preferred over a single public key
      * because the public keys allow you to have a different private key per
-     * client.</p> <note> <p>If you previously created an endpoint with a public key,
+     * client.</p>  <p>If you previously created an endpoint with a public key,
      * you must remove that key to be able to set a list of public keys. Call the
      * <code>UpdateDevEndpoint</code> API with the public key content in the
      * <code>deletePublicKeys</code> attribute, and the list of new keys in the
-     * <code>addPublicKeys</code> attribute.</p> </note>
+     * <code>addPublicKeys</code> attribute.</p> 
      */
     inline CreateDevEndpointRequest& WithPublicKeys(const Aws::Vector<Aws::String>& value) { SetPublicKeys(value); return *this;}
 
@@ -346,11 +336,11 @@ namespace Model
      * <p>A list of public keys to be used by the development endpoints for
      * authentication. The use of this attribute is preferred over a single public key
      * because the public keys allow you to have a different private key per
-     * client.</p> <note> <p>If you previously created an endpoint with a public key,
+     * client.</p>  <p>If you previously created an endpoint with a public key,
      * you must remove that key to be able to set a list of public keys. Call the
      * <code>UpdateDevEndpoint</code> API with the public key content in the
      * <code>deletePublicKeys</code> attribute, and the list of new keys in the
-     * <code>addPublicKeys</code> attribute.</p> </note>
+     * <code>addPublicKeys</code> attribute.</p> 
      */
     inline CreateDevEndpointRequest& WithPublicKeys(Aws::Vector<Aws::String>&& value) { SetPublicKeys(std::move(value)); return *this;}
 
@@ -358,11 +348,11 @@ namespace Model
      * <p>A list of public keys to be used by the development endpoints for
      * authentication. The use of this attribute is preferred over a single public key
      * because the public keys allow you to have a different private key per
-     * client.</p> <note> <p>If you previously created an endpoint with a public key,
+     * client.</p>  <p>If you previously created an endpoint with a public key,
      * you must remove that key to be able to set a list of public keys. Call the
      * <code>UpdateDevEndpoint</code> API with the public key content in the
      * <code>deletePublicKeys</code> attribute, and the list of new keys in the
-     * <code>addPublicKeys</code> attribute.</p> </note>
+     * <code>addPublicKeys</code> attribute.</p> 
      */
     inline CreateDevEndpointRequest& AddPublicKeys(const Aws::String& value) { m_publicKeysHasBeenSet = true; m_publicKeys.push_back(value); return *this; }
 
@@ -370,11 +360,11 @@ namespace Model
      * <p>A list of public keys to be used by the development endpoints for
      * authentication. The use of this attribute is preferred over a single public key
      * because the public keys allow you to have a different private key per
-     * client.</p> <note> <p>If you previously created an endpoint with a public key,
+     * client.</p>  <p>If you previously created an endpoint with a public key,
      * you must remove that key to be able to set a list of public keys. Call the
      * <code>UpdateDevEndpoint</code> API with the public key content in the
      * <code>deletePublicKeys</code> attribute, and the list of new keys in the
-     * <code>addPublicKeys</code> attribute.</p> </note>
+     * <code>addPublicKeys</code> attribute.</p> 
      */
     inline CreateDevEndpointRequest& AddPublicKeys(Aws::String&& value) { m_publicKeysHasBeenSet = true; m_publicKeys.push_back(std::move(value)); return *this; }
 
@@ -382,11 +372,11 @@ namespace Model
      * <p>A list of public keys to be used by the development endpoints for
      * authentication. The use of this attribute is preferred over a single public key
      * because the public keys allow you to have a different private key per
-     * client.</p> <note> <p>If you previously created an endpoint with a public key,
+     * client.</p>  <p>If you previously created an endpoint with a public key,
      * you must remove that key to be able to set a list of public keys. Call the
      * <code>UpdateDevEndpoint</code> API with the public key content in the
      * <code>deletePublicKeys</code> attribute, and the list of new keys in the
-     * <code>addPublicKeys</code> attribute.</p> </note>
+     * <code>addPublicKeys</code> attribute.</p> 
      */
     inline CreateDevEndpointRequest& AddPublicKeys(const char* value) { m_publicKeysHasBeenSet = true; m_publicKeys.push_back(value); return *this; }
 
@@ -672,80 +662,80 @@ namespace Model
     /**
      * <p>The paths to one or more Python libraries in an Amazon S3 bucket that should
      * be loaded in your <code>DevEndpoint</code>. Multiple values must be complete
-     * paths separated by a comma.</p> <note> <p>You can only use pure Python libraries
+     * paths separated by a comma.</p>  <p>You can only use pure Python libraries
      * with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as
      * the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library,
-     * are not yet supported.</p> </note>
+     * are not yet supported.</p> 
      */
     inline const Aws::String& GetExtraPythonLibsS3Path() const{ return m_extraPythonLibsS3Path; }
 
     /**
      * <p>The paths to one or more Python libraries in an Amazon S3 bucket that should
      * be loaded in your <code>DevEndpoint</code>. Multiple values must be complete
-     * paths separated by a comma.</p> <note> <p>You can only use pure Python libraries
+     * paths separated by a comma.</p>  <p>You can only use pure Python libraries
      * with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as
      * the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library,
-     * are not yet supported.</p> </note>
+     * are not yet supported.</p> 
      */
     inline bool ExtraPythonLibsS3PathHasBeenSet() const { return m_extraPythonLibsS3PathHasBeenSet; }
 
     /**
      * <p>The paths to one or more Python libraries in an Amazon S3 bucket that should
      * be loaded in your <code>DevEndpoint</code>. Multiple values must be complete
-     * paths separated by a comma.</p> <note> <p>You can only use pure Python libraries
+     * paths separated by a comma.</p>  <p>You can only use pure Python libraries
      * with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as
      * the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library,
-     * are not yet supported.</p> </note>
+     * are not yet supported.</p> 
      */
     inline void SetExtraPythonLibsS3Path(const Aws::String& value) { m_extraPythonLibsS3PathHasBeenSet = true; m_extraPythonLibsS3Path = value; }
 
     /**
      * <p>The paths to one or more Python libraries in an Amazon S3 bucket that should
      * be loaded in your <code>DevEndpoint</code>. Multiple values must be complete
-     * paths separated by a comma.</p> <note> <p>You can only use pure Python libraries
+     * paths separated by a comma.</p>  <p>You can only use pure Python libraries
      * with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as
      * the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library,
-     * are not yet supported.</p> </note>
+     * are not yet supported.</p> 
      */
     inline void SetExtraPythonLibsS3Path(Aws::String&& value) { m_extraPythonLibsS3PathHasBeenSet = true; m_extraPythonLibsS3Path = std::move(value); }
 
     /**
      * <p>The paths to one or more Python libraries in an Amazon S3 bucket that should
      * be loaded in your <code>DevEndpoint</code>. Multiple values must be complete
-     * paths separated by a comma.</p> <note> <p>You can only use pure Python libraries
+     * paths separated by a comma.</p>  <p>You can only use pure Python libraries
      * with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as
      * the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library,
-     * are not yet supported.</p> </note>
+     * are not yet supported.</p> 
      */
     inline void SetExtraPythonLibsS3Path(const char* value) { m_extraPythonLibsS3PathHasBeenSet = true; m_extraPythonLibsS3Path.assign(value); }
 
     /**
      * <p>The paths to one or more Python libraries in an Amazon S3 bucket that should
      * be loaded in your <code>DevEndpoint</code>. Multiple values must be complete
-     * paths separated by a comma.</p> <note> <p>You can only use pure Python libraries
+     * paths separated by a comma.</p>  <p>You can only use pure Python libraries
      * with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as
      * the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library,
-     * are not yet supported.</p> </note>
+     * are not yet supported.</p> 
      */
     inline CreateDevEndpointRequest& WithExtraPythonLibsS3Path(const Aws::String& value) { SetExtraPythonLibsS3Path(value); return *this;}
 
     /**
      * <p>The paths to one or more Python libraries in an Amazon S3 bucket that should
      * be loaded in your <code>DevEndpoint</code>. Multiple values must be complete
-     * paths separated by a comma.</p> <note> <p>You can only use pure Python libraries
+     * paths separated by a comma.</p>  <p>You can only use pure Python libraries
      * with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as
      * the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library,
-     * are not yet supported.</p> </note>
+     * are not yet supported.</p> 
      */
     inline CreateDevEndpointRequest& WithExtraPythonLibsS3Path(Aws::String&& value) { SetExtraPythonLibsS3Path(std::move(value)); return *this;}
 
     /**
      * <p>The paths to one or more Python libraries in an Amazon S3 bucket that should
      * be loaded in your <code>DevEndpoint</code>. Multiple values must be complete
-     * paths separated by a comma.</p> <note> <p>You can only use pure Python libraries
+     * paths separated by a comma.</p>  <p>You can only use pure Python libraries
      * with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as
      * the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library,
-     * are not yet supported.</p> </note>
+     * are not yet supported.</p> 
      */
     inline CreateDevEndpointRequest& WithExtraPythonLibsS3Path(const char* value) { SetExtraPythonLibsS3Path(value); return *this;}
 

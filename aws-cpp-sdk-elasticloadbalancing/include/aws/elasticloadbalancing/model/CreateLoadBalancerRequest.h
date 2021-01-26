@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticloadbalancing/ElasticLoadBalancing_EXPORTS.h>
@@ -119,7 +109,7 @@ namespace Model
 
     /**
      * <p>The listeners.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
      * for Your Classic Load Balancer</a> in the <i>Classic Load Balancers
      * Guide</i>.</p>
      */
@@ -127,7 +117,7 @@ namespace Model
 
     /**
      * <p>The listeners.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
      * for Your Classic Load Balancer</a> in the <i>Classic Load Balancers
      * Guide</i>.</p>
      */
@@ -135,7 +125,7 @@ namespace Model
 
     /**
      * <p>The listeners.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
      * for Your Classic Load Balancer</a> in the <i>Classic Load Balancers
      * Guide</i>.</p>
      */
@@ -143,7 +133,7 @@ namespace Model
 
     /**
      * <p>The listeners.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
      * for Your Classic Load Balancer</a> in the <i>Classic Load Balancers
      * Guide</i>.</p>
      */
@@ -151,7 +141,7 @@ namespace Model
 
     /**
      * <p>The listeners.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
      * for Your Classic Load Balancer</a> in the <i>Classic Load Balancers
      * Guide</i>.</p>
      */
@@ -159,7 +149,7 @@ namespace Model
 
     /**
      * <p>The listeners.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
      * for Your Classic Load Balancer</a> in the <i>Classic Load Balancers
      * Guide</i>.</p>
      */
@@ -167,7 +157,7 @@ namespace Model
 
     /**
      * <p>The listeners.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
      * for Your Classic Load Balancer</a> in the <i>Classic Load Balancers
      * Guide</i>.</p>
      */
@@ -175,7 +165,7 @@ namespace Model
 
     /**
      * <p>The listeners.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
      * for Your Classic Load Balancer</a> in the <i>Classic Load Balancers
      * Guide</i>.</p>
      */
@@ -370,7 +360,7 @@ namespace Model
      * <p>By default, Elastic Load Balancing creates an Internet-facing load balancer
      * with a DNS name that resolves to public IP addresses. For more information about
      * Internet-facing and Internal load balancers, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load
      * Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.</p>
      * <p>Specify <code>internal</code> to create a load balancer with a DNS name that
      * resolves to private IP addresses.</p>
@@ -382,7 +372,7 @@ namespace Model
      * <p>By default, Elastic Load Balancing creates an Internet-facing load balancer
      * with a DNS name that resolves to public IP addresses. For more information about
      * Internet-facing and Internal load balancers, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load
      * Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.</p>
      * <p>Specify <code>internal</code> to create a load balancer with a DNS name that
      * resolves to private IP addresses.</p>
@@ -394,7 +384,7 @@ namespace Model
      * <p>By default, Elastic Load Balancing creates an Internet-facing load balancer
      * with a DNS name that resolves to public IP addresses. For more information about
      * Internet-facing and Internal load balancers, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load
      * Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.</p>
      * <p>Specify <code>internal</code> to create a load balancer with a DNS name that
      * resolves to private IP addresses.</p>
@@ -406,7 +396,7 @@ namespace Model
      * <p>By default, Elastic Load Balancing creates an Internet-facing load balancer
      * with a DNS name that resolves to public IP addresses. For more information about
      * Internet-facing and Internal load balancers, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load
      * Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.</p>
      * <p>Specify <code>internal</code> to create a load balancer with a DNS name that
      * resolves to private IP addresses.</p>
@@ -418,7 +408,7 @@ namespace Model
      * <p>By default, Elastic Load Balancing creates an Internet-facing load balancer
      * with a DNS name that resolves to public IP addresses. For more information about
      * Internet-facing and Internal load balancers, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load
      * Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.</p>
      * <p>Specify <code>internal</code> to create a load balancer with a DNS name that
      * resolves to private IP addresses.</p>
@@ -430,7 +420,7 @@ namespace Model
      * <p>By default, Elastic Load Balancing creates an Internet-facing load balancer
      * with a DNS name that resolves to public IP addresses. For more information about
      * Internet-facing and Internal load balancers, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load
      * Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.</p>
      * <p>Specify <code>internal</code> to create a load balancer with a DNS name that
      * resolves to private IP addresses.</p>
@@ -442,7 +432,7 @@ namespace Model
      * <p>By default, Elastic Load Balancing creates an Internet-facing load balancer
      * with a DNS name that resolves to public IP addresses. For more information about
      * Internet-facing and Internal load balancers, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load
      * Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.</p>
      * <p>Specify <code>internal</code> to create a load balancer with a DNS name that
      * resolves to private IP addresses.</p>
@@ -454,7 +444,7 @@ namespace Model
      * <p>By default, Elastic Load Balancing creates an Internet-facing load balancer
      * with a DNS name that resolves to public IP addresses. For more information about
      * Internet-facing and Internal load balancers, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load
      * Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.</p>
      * <p>Specify <code>internal</code> to create a load balancer with a DNS name that
      * resolves to private IP addresses.</p>
@@ -465,7 +455,7 @@ namespace Model
     /**
      * <p>A list of tags to assign to the load balancer.</p> <p>For more information
      * about tagging your load balancer, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
      * Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -473,7 +463,7 @@ namespace Model
     /**
      * <p>A list of tags to assign to the load balancer.</p> <p>For more information
      * about tagging your load balancer, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
      * Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -481,7 +471,7 @@ namespace Model
     /**
      * <p>A list of tags to assign to the load balancer.</p> <p>For more information
      * about tagging your load balancer, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
      * Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
@@ -489,7 +479,7 @@ namespace Model
     /**
      * <p>A list of tags to assign to the load balancer.</p> <p>For more information
      * about tagging your load balancer, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
      * Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
@@ -497,7 +487,7 @@ namespace Model
     /**
      * <p>A list of tags to assign to the load balancer.</p> <p>For more information
      * about tagging your load balancer, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
      * Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline CreateLoadBalancerRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
@@ -505,7 +495,7 @@ namespace Model
     /**
      * <p>A list of tags to assign to the load balancer.</p> <p>For more information
      * about tagging your load balancer, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
      * Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline CreateLoadBalancerRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
@@ -513,7 +503,7 @@ namespace Model
     /**
      * <p>A list of tags to assign to the load balancer.</p> <p>For more information
      * about tagging your load balancer, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
      * Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline CreateLoadBalancerRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
@@ -521,7 +511,7 @@ namespace Model
     /**
      * <p>A list of tags to assign to the load balancer.</p> <p>For more information
      * about tagging your load balancer, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
      * Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline CreateLoadBalancerRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }

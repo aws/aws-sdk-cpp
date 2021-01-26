@@ -1,0 +1,106 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/chime/Chime_EXPORTS.h>
+#include <aws/chime/model/Identity.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace Chime
+{
+namespace Model
+{
+  class AWS_CHIME_API CreateAppInstanceAdminResult
+  {
+  public:
+    CreateAppInstanceAdminResult();
+    CreateAppInstanceAdminResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateAppInstanceAdminResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>The name and ARN of the admin for the app instance.</p>
+     */
+    inline const Identity& GetAppInstanceAdmin() const{ return m_appInstanceAdmin; }
+
+    /**
+     * <p>The name and ARN of the admin for the app instance.</p>
+     */
+    inline void SetAppInstanceAdmin(const Identity& value) { m_appInstanceAdmin = value; }
+
+    /**
+     * <p>The name and ARN of the admin for the app instance.</p>
+     */
+    inline void SetAppInstanceAdmin(Identity&& value) { m_appInstanceAdmin = std::move(value); }
+
+    /**
+     * <p>The name and ARN of the admin for the app instance.</p>
+     */
+    inline CreateAppInstanceAdminResult& WithAppInstanceAdmin(const Identity& value) { SetAppInstanceAdmin(value); return *this;}
+
+    /**
+     * <p>The name and ARN of the admin for the app instance.</p>
+     */
+    inline CreateAppInstanceAdminResult& WithAppInstanceAdmin(Identity&& value) { SetAppInstanceAdmin(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The ARN of the of the admin for the app instance.</p>
+     */
+    inline const Aws::String& GetAppInstanceArn() const{ return m_appInstanceArn; }
+
+    /**
+     * <p>The ARN of the of the admin for the app instance.</p>
+     */
+    inline void SetAppInstanceArn(const Aws::String& value) { m_appInstanceArn = value; }
+
+    /**
+     * <p>The ARN of the of the admin for the app instance.</p>
+     */
+    inline void SetAppInstanceArn(Aws::String&& value) { m_appInstanceArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the of the admin for the app instance.</p>
+     */
+    inline void SetAppInstanceArn(const char* value) { m_appInstanceArn.assign(value); }
+
+    /**
+     * <p>The ARN of the of the admin for the app instance.</p>
+     */
+    inline CreateAppInstanceAdminResult& WithAppInstanceArn(const Aws::String& value) { SetAppInstanceArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the of the admin for the app instance.</p>
+     */
+    inline CreateAppInstanceAdminResult& WithAppInstanceArn(Aws::String&& value) { SetAppInstanceArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the of the admin for the app instance.</p>
+     */
+    inline CreateAppInstanceAdminResult& WithAppInstanceArn(const char* value) { SetAppInstanceArn(value); return *this;}
+
+  private:
+
+    Identity m_appInstanceAdmin;
+
+    Aws::String m_appInstanceArn;
+  };
+
+} // namespace Model
+} // namespace Chime
+} // namespace Aws

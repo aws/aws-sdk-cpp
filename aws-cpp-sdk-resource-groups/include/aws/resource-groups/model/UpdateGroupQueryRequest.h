@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/resource-groups/ResourceGroups_EXPORTS.h>
@@ -44,86 +34,98 @@ namespace Model
 
 
     /**
-     * <p>The name of the resource group for which you want to edit the query.</p>
+     * <p>The name or the ARN of the resource group to query.</p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline const Aws::String& GetGroup() const{ return m_group; }
 
     /**
-     * <p>The name of the resource group for which you want to edit the query.</p>
+     * <p>The name or the ARN of the resource group to query.</p>
      */
-    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+    inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
 
     /**
-     * <p>The name of the resource group for which you want to edit the query.</p>
+     * <p>The name or the ARN of the resource group to query.</p>
      */
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+    inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
 
     /**
-     * <p>The name of the resource group for which you want to edit the query.</p>
+     * <p>The name or the ARN of the resource group to query.</p>
      */
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
+    inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
 
     /**
-     * <p>The name of the resource group for which you want to edit the query.</p>
+     * <p>The name or the ARN of the resource group to query.</p>
      */
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
+    inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
 
     /**
-     * <p>The name of the resource group for which you want to edit the query.</p>
+     * <p>The name or the ARN of the resource group to query.</p>
      */
-    inline UpdateGroupQueryRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+    inline UpdateGroupQueryRequest& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
 
     /**
-     * <p>The name of the resource group for which you want to edit the query.</p>
+     * <p>The name or the ARN of the resource group to query.</p>
      */
-    inline UpdateGroupQueryRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
+    inline UpdateGroupQueryRequest& WithGroup(Aws::String&& value) { SetGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the resource group for which you want to edit the query.</p>
+     * <p>The name or the ARN of the resource group to query.</p>
      */
-    inline UpdateGroupQueryRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    inline UpdateGroupQueryRequest& WithGroup(const char* value) { SetGroup(value); return *this;}
 
 
     /**
-     * <p>The resource query that determines which AWS resources are members of the
-     * resource group.</p>
+     * <p>The resource query to determine which AWS resources are members of this
+     * resource group.</p>  <p>A resource group can contain either a
+     * <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
+     * 
      */
     inline const ResourceQuery& GetResourceQuery() const{ return m_resourceQuery; }
 
     /**
-     * <p>The resource query that determines which AWS resources are members of the
-     * resource group.</p>
+     * <p>The resource query to determine which AWS resources are members of this
+     * resource group.</p>  <p>A resource group can contain either a
+     * <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
+     * 
      */
     inline bool ResourceQueryHasBeenSet() const { return m_resourceQueryHasBeenSet; }
 
     /**
-     * <p>The resource query that determines which AWS resources are members of the
-     * resource group.</p>
+     * <p>The resource query to determine which AWS resources are members of this
+     * resource group.</p>  <p>A resource group can contain either a
+     * <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
+     * 
      */
     inline void SetResourceQuery(const ResourceQuery& value) { m_resourceQueryHasBeenSet = true; m_resourceQuery = value; }
 
     /**
-     * <p>The resource query that determines which AWS resources are members of the
-     * resource group.</p>
+     * <p>The resource query to determine which AWS resources are members of this
+     * resource group.</p>  <p>A resource group can contain either a
+     * <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
+     * 
      */
     inline void SetResourceQuery(ResourceQuery&& value) { m_resourceQueryHasBeenSet = true; m_resourceQuery = std::move(value); }
 
     /**
-     * <p>The resource query that determines which AWS resources are members of the
-     * resource group.</p>
+     * <p>The resource query to determine which AWS resources are members of this
+     * resource group.</p>  <p>A resource group can contain either a
+     * <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
+     * 
      */
     inline UpdateGroupQueryRequest& WithResourceQuery(const ResourceQuery& value) { SetResourceQuery(value); return *this;}
 
     /**
-     * <p>The resource query that determines which AWS resources are members of the
-     * resource group.</p>
+     * <p>The resource query to determine which AWS resources are members of this
+     * resource group.</p>  <p>A resource group can contain either a
+     * <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
+     * 
      */
     inline UpdateGroupQueryRequest& WithResourceQuery(ResourceQuery&& value) { SetResourceQuery(std::move(value)); return *this;}
 
   private:
 
-    Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    Aws::String m_group;
+    bool m_groupHasBeenSet;
 
     ResourceQuery m_resourceQuery;
     bool m_resourceQueryHasBeenSet;

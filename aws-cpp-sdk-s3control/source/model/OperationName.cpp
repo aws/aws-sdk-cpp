@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/s3control/model/OperationName.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -35,6 +25,8 @@ namespace Aws
         static const int S3PutObjectAcl_HASH = HashingUtils::HashString("S3PutObjectAcl");
         static const int S3PutObjectTagging_HASH = HashingUtils::HashString("S3PutObjectTagging");
         static const int S3InitiateRestoreObject_HASH = HashingUtils::HashString("S3InitiateRestoreObject");
+        static const int S3PutObjectLegalHold_HASH = HashingUtils::HashString("S3PutObjectLegalHold");
+        static const int S3PutObjectRetention_HASH = HashingUtils::HashString("S3PutObjectRetention");
 
 
         OperationName GetOperationNameForName(const Aws::String& name)
@@ -60,6 +52,14 @@ namespace Aws
           {
             return OperationName::S3InitiateRestoreObject;
           }
+          else if (hashCode == S3PutObjectLegalHold_HASH)
+          {
+            return OperationName::S3PutObjectLegalHold;
+          }
+          else if (hashCode == S3PutObjectRetention_HASH)
+          {
+            return OperationName::S3PutObjectRetention;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -84,6 +84,10 @@ namespace Aws
             return "S3PutObjectTagging";
           case OperationName::S3InitiateRestoreObject:
             return "S3InitiateRestoreObject";
+          case OperationName::S3PutObjectLegalHold:
+            return "S3PutObjectLegalHold";
+          case OperationName::S3PutObjectRetention:
+            return "S3PutObjectRetention";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

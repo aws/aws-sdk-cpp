@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -225,48 +215,48 @@ namespace Model
     /**
      * <p>The state of the patch on the instance, such as INSTALLED or FAILED.</p>
      * <p>For descriptions of each patch state, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
-     * Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
+     * patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline const PatchComplianceDataState& GetState() const{ return m_state; }
 
     /**
      * <p>The state of the patch on the instance, such as INSTALLED or FAILED.</p>
      * <p>For descriptions of each patch state, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
-     * Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
+     * patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state of the patch on the instance, such as INSTALLED or FAILED.</p>
      * <p>For descriptions of each patch state, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
-     * Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
+     * patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetState(const PatchComplianceDataState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
      * <p>The state of the patch on the instance, such as INSTALLED or FAILED.</p>
      * <p>For descriptions of each patch state, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
-     * Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
+     * patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetState(PatchComplianceDataState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state of the patch on the instance, such as INSTALLED or FAILED.</p>
      * <p>For descriptions of each patch state, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
-     * Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
+     * patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline PatchComplianceData& WithState(const PatchComplianceDataState& value) { SetState(value); return *this;}
 
     /**
      * <p>The state of the patch on the instance, such as INSTALLED or FAILED.</p>
      * <p>For descriptions of each patch state, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
-     * Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
+     * patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline PatchComplianceData& WithState(PatchComplianceDataState&& value) { SetState(std::move(value)); return *this;}
 
@@ -307,6 +297,55 @@ namespace Model
      */
     inline PatchComplianceData& WithInstalledTime(Aws::Utils::DateTime&& value) { SetInstalledTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that
+     * are resolved by the patch.</p>
+     */
+    inline const Aws::String& GetCVEIds() const{ return m_cVEIds; }
+
+    /**
+     * <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that
+     * are resolved by the patch.</p>
+     */
+    inline bool CVEIdsHasBeenSet() const { return m_cVEIdsHasBeenSet; }
+
+    /**
+     * <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that
+     * are resolved by the patch.</p>
+     */
+    inline void SetCVEIds(const Aws::String& value) { m_cVEIdsHasBeenSet = true; m_cVEIds = value; }
+
+    /**
+     * <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that
+     * are resolved by the patch.</p>
+     */
+    inline void SetCVEIds(Aws::String&& value) { m_cVEIdsHasBeenSet = true; m_cVEIds = std::move(value); }
+
+    /**
+     * <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that
+     * are resolved by the patch.</p>
+     */
+    inline void SetCVEIds(const char* value) { m_cVEIdsHasBeenSet = true; m_cVEIds.assign(value); }
+
+    /**
+     * <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that
+     * are resolved by the patch.</p>
+     */
+    inline PatchComplianceData& WithCVEIds(const Aws::String& value) { SetCVEIds(value); return *this;}
+
+    /**
+     * <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that
+     * are resolved by the patch.</p>
+     */
+    inline PatchComplianceData& WithCVEIds(Aws::String&& value) { SetCVEIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that
+     * are resolved by the patch.</p>
+     */
+    inline PatchComplianceData& WithCVEIds(const char* value) { SetCVEIds(value); return *this;}
+
   private:
 
     Aws::String m_title;
@@ -326,6 +365,9 @@ namespace Model
 
     Aws::Utils::DateTime m_installedTime;
     bool m_installedTimeHasBeenSet;
+
+    Aws::String m_cVEIds;
+    bool m_cVEIdsHasBeenSet;
   };
 
 } // namespace Model

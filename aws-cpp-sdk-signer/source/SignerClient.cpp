@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -30,15 +20,20 @@
 #include <aws/signer/SignerClient.h>
 #include <aws/signer/SignerEndpoint.h>
 #include <aws/signer/SignerErrorMarshaller.h>
+#include <aws/signer/model/AddProfilePermissionRequest.h>
 #include <aws/signer/model/CancelSigningProfileRequest.h>
 #include <aws/signer/model/DescribeSigningJobRequest.h>
 #include <aws/signer/model/GetSigningPlatformRequest.h>
 #include <aws/signer/model/GetSigningProfileRequest.h>
+#include <aws/signer/model/ListProfilePermissionsRequest.h>
 #include <aws/signer/model/ListSigningJobsRequest.h>
 #include <aws/signer/model/ListSigningPlatformsRequest.h>
 #include <aws/signer/model/ListSigningProfilesRequest.h>
 #include <aws/signer/model/ListTagsForResourceRequest.h>
 #include <aws/signer/model/PutSigningProfileRequest.h>
+#include <aws/signer/model/RemoveProfilePermissionRequest.h>
+#include <aws/signer/model/RevokeSignatureRequest.h>
+#include <aws/signer/model/RevokeSigningProfileRequest.h>
 #include <aws/signer/model/StartSigningJobRequest.h>
 #include <aws/signer/model/TagResourceRequest.h>
 #include <aws/signer/model/UntagResourceRequest.h>
@@ -58,7 +53,7 @@ static const char* ALLOCATION_TAG = "SignerClient";
 SignerClient::SignerClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<SignerErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -68,7 +63,7 @@ SignerClient::SignerClient(const Client::ClientConfiguration& clientConfiguratio
 SignerClient::SignerClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<SignerErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -79,7 +74,7 @@ SignerClient::SignerClient(const std::shared_ptr<AWSCredentialsProvider>& creden
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<SignerErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -92,6 +87,7 @@ SignerClient::~SignerClient()
 
 void SignerClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("signer");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -115,6 +111,40 @@ void SignerClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
+AddProfilePermissionOutcome SignerClient::AddProfilePermission(const AddProfilePermissionRequest& request) const
+{
+  if (!request.ProfileNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AddProfilePermission", "Required field: ProfileName, is not set");
+    return AddProfilePermissionOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/signing-profiles/";
+  ss << request.GetProfileName();
+  ss << "/permissions";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return AddProfilePermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AddProfilePermissionOutcomeCallable SignerClient::AddProfilePermissionCallable(const AddProfilePermissionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AddProfilePermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddProfilePermission(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SignerClient::AddProfilePermissionAsync(const AddProfilePermissionRequest& request, const AddProfilePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AddProfilePermissionAsyncHelper( request, handler, context ); } );
+}
+
+void SignerClient::AddProfilePermissionAsyncHelper(const AddProfilePermissionRequest& request, const AddProfilePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AddProfilePermission(request), context);
+}
+
 CancelSigningProfileOutcome SignerClient::CancelSigningProfile(const CancelSigningProfileRequest& request) const
 {
   if (!request.ProfileNameHasBeenSet())
@@ -127,15 +157,7 @@ CancelSigningProfileOutcome SignerClient::CancelSigningProfile(const CancelSigni
   ss << "/signing-profiles/";
   ss << request.GetProfileName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CancelSigningProfileOutcome(NoResult());
-  }
-  else
-  {
-    return CancelSigningProfileOutcome(outcome.GetError());
-  }
+  return CancelSigningProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 CancelSigningProfileOutcomeCallable SignerClient::CancelSigningProfileCallable(const CancelSigningProfileRequest& request) const
@@ -168,15 +190,7 @@ DescribeSigningJobOutcome SignerClient::DescribeSigningJob(const DescribeSigning
   ss << "/signing-jobs/";
   ss << request.GetJobId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeSigningJobOutcome(DescribeSigningJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeSigningJobOutcome(outcome.GetError());
-  }
+  return DescribeSigningJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeSigningJobOutcomeCallable SignerClient::DescribeSigningJobCallable(const DescribeSigningJobRequest& request) const
@@ -209,15 +223,7 @@ GetSigningPlatformOutcome SignerClient::GetSigningPlatform(const GetSigningPlatf
   ss << "/signing-platforms/";
   ss << request.GetPlatformId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetSigningPlatformOutcome(GetSigningPlatformResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetSigningPlatformOutcome(outcome.GetError());
-  }
+  return GetSigningPlatformOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSigningPlatformOutcomeCallable SignerClient::GetSigningPlatformCallable(const GetSigningPlatformRequest& request) const
@@ -250,15 +256,7 @@ GetSigningProfileOutcome SignerClient::GetSigningProfile(const GetSigningProfile
   ss << "/signing-profiles/";
   ss << request.GetProfileName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetSigningProfileOutcome(GetSigningProfileResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetSigningProfileOutcome(outcome.GetError());
-  }
+  return GetSigningProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSigningProfileOutcomeCallable SignerClient::GetSigningProfileCallable(const GetSigningProfileRequest& request) const
@@ -279,21 +277,47 @@ void SignerClient::GetSigningProfileAsyncHelper(const GetSigningProfileRequest& 
   handler(this, request, GetSigningProfile(request), context);
 }
 
+ListProfilePermissionsOutcome SignerClient::ListProfilePermissions(const ListProfilePermissionsRequest& request) const
+{
+  if (!request.ProfileNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListProfilePermissions", "Required field: ProfileName, is not set");
+    return ListProfilePermissionsOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/signing-profiles/";
+  ss << request.GetProfileName();
+  ss << "/permissions";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListProfilePermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListProfilePermissionsOutcomeCallable SignerClient::ListProfilePermissionsCallable(const ListProfilePermissionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListProfilePermissionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListProfilePermissions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SignerClient::ListProfilePermissionsAsync(const ListProfilePermissionsRequest& request, const ListProfilePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListProfilePermissionsAsyncHelper( request, handler, context ); } );
+}
+
+void SignerClient::ListProfilePermissionsAsyncHelper(const ListProfilePermissionsRequest& request, const ListProfilePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListProfilePermissions(request), context);
+}
+
 ListSigningJobsOutcome SignerClient::ListSigningJobs(const ListSigningJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/signing-jobs";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListSigningJobsOutcome(ListSigningJobsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListSigningJobsOutcome(outcome.GetError());
-  }
+  return ListSigningJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListSigningJobsOutcomeCallable SignerClient::ListSigningJobsCallable(const ListSigningJobsRequest& request) const
@@ -320,15 +344,7 @@ ListSigningPlatformsOutcome SignerClient::ListSigningPlatforms(const ListSigning
   Aws::StringStream ss;
   ss << "/signing-platforms";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListSigningPlatformsOutcome(ListSigningPlatformsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListSigningPlatformsOutcome(outcome.GetError());
-  }
+  return ListSigningPlatformsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListSigningPlatformsOutcomeCallable SignerClient::ListSigningPlatformsCallable(const ListSigningPlatformsRequest& request) const
@@ -355,15 +371,7 @@ ListSigningProfilesOutcome SignerClient::ListSigningProfiles(const ListSigningPr
   Aws::StringStream ss;
   ss << "/signing-profiles";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListSigningProfilesOutcome(ListSigningProfilesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListSigningProfilesOutcome(outcome.GetError());
-  }
+  return ListSigningProfilesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListSigningProfilesOutcomeCallable SignerClient::ListSigningProfilesCallable(const ListSigningProfilesRequest& request) const
@@ -396,15 +404,7 @@ ListTagsForResourceOutcome SignerClient::ListTagsForResource(const ListTagsForRe
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable SignerClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -437,15 +437,7 @@ PutSigningProfileOutcome SignerClient::PutSigningProfile(const PutSigningProfile
   ss << "/signing-profiles/";
   ss << request.GetProfileName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutSigningProfileOutcome(PutSigningProfileResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutSigningProfileOutcome(outcome.GetError());
-  }
+  return PutSigningProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutSigningProfileOutcomeCallable SignerClient::PutSigningProfileCallable(const PutSigningProfileRequest& request) const
@@ -466,21 +458,126 @@ void SignerClient::PutSigningProfileAsyncHelper(const PutSigningProfileRequest& 
   handler(this, request, PutSigningProfile(request), context);
 }
 
+RemoveProfilePermissionOutcome SignerClient::RemoveProfilePermission(const RemoveProfilePermissionRequest& request) const
+{
+  if (!request.ProfileNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RemoveProfilePermission", "Required field: ProfileName, is not set");
+    return RemoveProfilePermissionOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileName]", false));
+  }
+  if (!request.RevisionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RemoveProfilePermission", "Required field: RevisionId, is not set");
+    return RemoveProfilePermissionOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RevisionId]", false));
+  }
+  if (!request.StatementIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RemoveProfilePermission", "Required field: StatementId, is not set");
+    return RemoveProfilePermissionOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StatementId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/signing-profiles/";
+  ss << request.GetProfileName();
+  ss << "/permissions/";
+  ss << request.GetStatementId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return RemoveProfilePermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+RemoveProfilePermissionOutcomeCallable SignerClient::RemoveProfilePermissionCallable(const RemoveProfilePermissionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RemoveProfilePermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveProfilePermission(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SignerClient::RemoveProfilePermissionAsync(const RemoveProfilePermissionRequest& request, const RemoveProfilePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RemoveProfilePermissionAsyncHelper( request, handler, context ); } );
+}
+
+void SignerClient::RemoveProfilePermissionAsyncHelper(const RemoveProfilePermissionRequest& request, const RemoveProfilePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RemoveProfilePermission(request), context);
+}
+
+RevokeSignatureOutcome SignerClient::RevokeSignature(const RevokeSignatureRequest& request) const
+{
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RevokeSignature", "Required field: JobId, is not set");
+    return RevokeSignatureOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/signing-jobs/";
+  ss << request.GetJobId();
+  ss << "/revoke";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return RevokeSignatureOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+RevokeSignatureOutcomeCallable SignerClient::RevokeSignatureCallable(const RevokeSignatureRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RevokeSignatureOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RevokeSignature(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SignerClient::RevokeSignatureAsync(const RevokeSignatureRequest& request, const RevokeSignatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RevokeSignatureAsyncHelper( request, handler, context ); } );
+}
+
+void SignerClient::RevokeSignatureAsyncHelper(const RevokeSignatureRequest& request, const RevokeSignatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RevokeSignature(request), context);
+}
+
+RevokeSigningProfileOutcome SignerClient::RevokeSigningProfile(const RevokeSigningProfileRequest& request) const
+{
+  if (!request.ProfileNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RevokeSigningProfile", "Required field: ProfileName, is not set");
+    return RevokeSigningProfileOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/signing-profiles/";
+  ss << request.GetProfileName();
+  ss << "/revoke";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return RevokeSigningProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+RevokeSigningProfileOutcomeCallable SignerClient::RevokeSigningProfileCallable(const RevokeSigningProfileRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RevokeSigningProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RevokeSigningProfile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SignerClient::RevokeSigningProfileAsync(const RevokeSigningProfileRequest& request, const RevokeSigningProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RevokeSigningProfileAsyncHelper( request, handler, context ); } );
+}
+
+void SignerClient::RevokeSigningProfileAsyncHelper(const RevokeSigningProfileRequest& request, const RevokeSigningProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RevokeSigningProfile(request), context);
+}
+
 StartSigningJobOutcome SignerClient::StartSigningJob(const StartSigningJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/signing-jobs";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartSigningJobOutcome(StartSigningJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartSigningJobOutcome(outcome.GetError());
-  }
+  return StartSigningJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartSigningJobOutcomeCallable SignerClient::StartSigningJobCallable(const StartSigningJobRequest& request) const
@@ -513,15 +610,7 @@ TagResourceOutcome SignerClient::TagResource(const TagResourceRequest& request) 
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable SignerClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -559,15 +648,7 @@ UntagResourceOutcome SignerClient::UntagResource(const UntagResourceRequest& req
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable SignerClient::UntagResourceCallable(const UntagResourceRequest& request) const

@@ -1,20 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 
@@ -52,11 +43,13 @@ enum class AutoScalingErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ALREADY_EXISTS_FAULT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACTIVE_INSTANCE_REFRESH_NOT_FOUND_FAULT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ALREADY_EXISTS_FAULT,
+  INSTANCE_REFRESH_IN_PROGRESS_FAULT,
   INVALID_NEXT_TOKEN,
   LIMIT_EXCEEDED_FAULT,
   RESOURCE_CONTENTION_FAULT,
@@ -64,6 +57,20 @@ enum class AutoScalingErrors
   SCALING_ACTIVITY_IN_PROGRESS_FAULT,
   SERVICE_LINKED_ROLE_FAILURE
 };
+
+class AWS_AUTOSCALING_API AutoScalingError : public Aws::Client::AWSError<AutoScalingErrors>
+{
+public:
+  AutoScalingError() {}
+  AutoScalingError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<AutoScalingErrors>(rhs) {}
+  AutoScalingError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<AutoScalingErrors>(rhs) {}
+  AutoScalingError(const Aws::Client::AWSError<AutoScalingErrors>& rhs) : Aws::Client::AWSError<AutoScalingErrors>(rhs) {}
+  AutoScalingError(Aws::Client::AWSError<AutoScalingErrors>&& rhs) : Aws::Client::AWSError<AutoScalingErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace AutoScalingErrorMapper
 {
   AWS_AUTOSCALING_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

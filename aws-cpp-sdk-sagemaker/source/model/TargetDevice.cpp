@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/TargetDevice.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -37,6 +27,7 @@ namespace Aws
         static const int ml_c5_HASH = HashingUtils::HashString("ml_c5");
         static const int ml_p2_HASH = HashingUtils::HashString("ml_p2");
         static const int ml_p3_HASH = HashingUtils::HashString("ml_p3");
+        static const int ml_g4dn_HASH = HashingUtils::HashString("ml_g4dn");
         static const int ml_inf1_HASH = HashingUtils::HashString("ml_inf1");
         static const int jetson_tx1_HASH = HashingUtils::HashString("jetson_tx1");
         static const int jetson_tx2_HASH = HashingUtils::HashString("jetson_tx2");
@@ -53,6 +44,10 @@ namespace Aws
         static const int qcs603_HASH = HashingUtils::HashString("qcs603");
         static const int sitara_am57x_HASH = HashingUtils::HashString("sitara_am57x");
         static const int amba_cv22_HASH = HashingUtils::HashString("amba_cv22");
+        static const int x86_win32_HASH = HashingUtils::HashString("x86_win32");
+        static const int x86_win64_HASH = HashingUtils::HashString("x86_win64");
+        static const int coreml_HASH = HashingUtils::HashString("coreml");
+        static const int jacinto_tda4vm_HASH = HashingUtils::HashString("jacinto_tda4vm");
 
 
         TargetDevice GetTargetDeviceForName(const Aws::String& name)
@@ -85,6 +80,10 @@ namespace Aws
           else if (hashCode == ml_p3_HASH)
           {
             return TargetDevice::ml_p3;
+          }
+          else if (hashCode == ml_g4dn_HASH)
+          {
+            return TargetDevice::ml_g4dn;
           }
           else if (hashCode == ml_inf1_HASH)
           {
@@ -150,6 +149,22 @@ namespace Aws
           {
             return TargetDevice::amba_cv22;
           }
+          else if (hashCode == x86_win32_HASH)
+          {
+            return TargetDevice::x86_win32;
+          }
+          else if (hashCode == x86_win64_HASH)
+          {
+            return TargetDevice::x86_win64;
+          }
+          else if (hashCode == coreml_HASH)
+          {
+            return TargetDevice::coreml;
+          }
+          else if (hashCode == jacinto_tda4vm_HASH)
+          {
+            return TargetDevice::jacinto_tda4vm;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -178,6 +193,8 @@ namespace Aws
             return "ml_p2";
           case TargetDevice::ml_p3:
             return "ml_p3";
+          case TargetDevice::ml_g4dn:
+            return "ml_g4dn";
           case TargetDevice::ml_inf1:
             return "ml_inf1";
           case TargetDevice::jetson_tx1:
@@ -210,6 +227,14 @@ namespace Aws
             return "sitara_am57x";
           case TargetDevice::amba_cv22:
             return "amba_cv22";
+          case TargetDevice::x86_win32:
+            return "x86_win32";
+          case TargetDevice::x86_win64:
+            return "x86_win64";
+          case TargetDevice::coreml:
+            return "coreml";
+          case TargetDevice::jacinto_tda4vm:
+            return "jacinto_tda4vm";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

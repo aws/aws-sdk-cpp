@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/polly/model/VoiceId.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -60,6 +50,7 @@ namespace Aws
         static const int Justin_HASH = HashingUtils::HashString("Justin");
         static const int Karl_HASH = HashingUtils::HashString("Karl");
         static const int Kendra_HASH = HashingUtils::HashString("Kendra");
+        static const int Kevin_HASH = HashingUtils::HashString("Kevin");
         static const int Kimberly_HASH = HashingUtils::HashString("Kimberly");
         static const int Lea_HASH = HashingUtils::HashString("Lea");
         static const int Liv_HASH = HashingUtils::HashString("Liv");
@@ -77,6 +68,7 @@ namespace Aws
         static const int Mizuki_HASH = HashingUtils::HashString("Mizuki");
         static const int Naja_HASH = HashingUtils::HashString("Naja");
         static const int Nicole_HASH = HashingUtils::HashString("Nicole");
+        static const int Olivia_HASH = HashingUtils::HashString("Olivia");
         static const int Penelope_HASH = HashingUtils::HashString("Penelope");
         static const int Raveena_HASH = HashingUtils::HashString("Raveena");
         static const int Ricardo_HASH = HashingUtils::HashString("Ricardo");
@@ -215,6 +207,10 @@ namespace Aws
           {
             return VoiceId::Kendra;
           }
+          else if (hashCode == Kevin_HASH)
+          {
+            return VoiceId::Kevin;
+          }
           else if (hashCode == Kimberly_HASH)
           {
             return VoiceId::Kimberly;
@@ -282,6 +278,10 @@ namespace Aws
           else if (hashCode == Nicole_HASH)
           {
             return VoiceId::Nicole;
+          }
+          else if (hashCode == Olivia_HASH)
+          {
+            return VoiceId::Olivia;
           }
           else if (hashCode == Penelope_HASH)
           {
@@ -409,6 +409,8 @@ namespace Aws
             return "Karl";
           case VoiceId::Kendra:
             return "Kendra";
+          case VoiceId::Kevin:
+            return "Kevin";
           case VoiceId::Kimberly:
             return "Kimberly";
           case VoiceId::Lea:
@@ -443,6 +445,8 @@ namespace Aws
             return "Naja";
           case VoiceId::Nicole:
             return "Nicole";
+          case VoiceId::Olivia:
+            return "Olivia";
           case VoiceId::Penelope:
             return "Penelope";
           case VoiceId::Raveena:

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/alexaforbusiness/model/DeviceStatusDetailCode.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -45,6 +35,8 @@ namespace Aws
         static const int NETWORK_PROFILE_NOT_FOUND_HASH = HashingUtils::HashString("NETWORK_PROFILE_NOT_FOUND");
         static const int INVALID_PASSWORD_STATE_HASH = HashingUtils::HashString("INVALID_PASSWORD_STATE");
         static const int PASSWORD_NOT_FOUND_HASH = HashingUtils::HashString("PASSWORD_NOT_FOUND");
+        static const int PASSWORD_MANAGER_ACCESS_DENIED_HASH = HashingUtils::HashString("PASSWORD_MANAGER_ACCESS_DENIED");
+        static const int CERTIFICATE_AUTHORITY_ACCESS_DENIED_HASH = HashingUtils::HashString("CERTIFICATE_AUTHORITY_ACCESS_DENIED");
 
 
         DeviceStatusDetailCode GetDeviceStatusDetailCodeForName(const Aws::String& name)
@@ -110,6 +102,14 @@ namespace Aws
           {
             return DeviceStatusDetailCode::PASSWORD_NOT_FOUND;
           }
+          else if (hashCode == PASSWORD_MANAGER_ACCESS_DENIED_HASH)
+          {
+            return DeviceStatusDetailCode::PASSWORD_MANAGER_ACCESS_DENIED;
+          }
+          else if (hashCode == CERTIFICATE_AUTHORITY_ACCESS_DENIED_HASH)
+          {
+            return DeviceStatusDetailCode::CERTIFICATE_AUTHORITY_ACCESS_DENIED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -154,6 +154,10 @@ namespace Aws
             return "INVALID_PASSWORD_STATE";
           case DeviceStatusDetailCode::PASSWORD_NOT_FOUND:
             return "PASSWORD_NOT_FOUND";
+          case DeviceStatusDetailCode::PASSWORD_MANAGER_ACCESS_DENIED:
+            return "PASSWORD_MANAGER_ACCESS_DENIED";
+          case DeviceStatusDetailCode::CERTIFICATE_AUTHORITY_ACCESS_DENIED:
+            return "CERTIFICATE_AUTHORITY_ACCESS_DENIED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

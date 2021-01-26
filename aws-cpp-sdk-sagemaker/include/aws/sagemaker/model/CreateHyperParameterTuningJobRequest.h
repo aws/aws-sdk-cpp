@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -52,7 +42,7 @@ namespace Model
     /**
      * <p>The name of the tuning job. This name is the prefix for the names of all
      * training jobs that this tuning job launches. The name must be unique within the
-     * same AWS account and AWS Region. The name must have { } to { } characters. Valid
+     * same AWS account and AWS Region. The name must have 1 to 32 characters. Valid
      * characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case
      * sensitive.</p>
      */
@@ -61,7 +51,7 @@ namespace Model
     /**
      * <p>The name of the tuning job. This name is the prefix for the names of all
      * training jobs that this tuning job launches. The name must be unique within the
-     * same AWS account and AWS Region. The name must have { } to { } characters. Valid
+     * same AWS account and AWS Region. The name must have 1 to 32 characters. Valid
      * characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case
      * sensitive.</p>
      */
@@ -70,7 +60,7 @@ namespace Model
     /**
      * <p>The name of the tuning job. This name is the prefix for the names of all
      * training jobs that this tuning job launches. The name must be unique within the
-     * same AWS account and AWS Region. The name must have { } to { } characters. Valid
+     * same AWS account and AWS Region. The name must have 1 to 32 characters. Valid
      * characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case
      * sensitive.</p>
      */
@@ -79,7 +69,7 @@ namespace Model
     /**
      * <p>The name of the tuning job. This name is the prefix for the names of all
      * training jobs that this tuning job launches. The name must be unique within the
-     * same AWS account and AWS Region. The name must have { } to { } characters. Valid
+     * same AWS account and AWS Region. The name must have 1 to 32 characters. Valid
      * characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case
      * sensitive.</p>
      */
@@ -88,7 +78,7 @@ namespace Model
     /**
      * <p>The name of the tuning job. This name is the prefix for the names of all
      * training jobs that this tuning job launches. The name must be unique within the
-     * same AWS account and AWS Region. The name must have { } to { } characters. Valid
+     * same AWS account and AWS Region. The name must have 1 to 32 characters. Valid
      * characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case
      * sensitive.</p>
      */
@@ -97,7 +87,7 @@ namespace Model
     /**
      * <p>The name of the tuning job. This name is the prefix for the names of all
      * training jobs that this tuning job launches. The name must be unique within the
-     * same AWS account and AWS Region. The name must have { } to { } characters. Valid
+     * same AWS account and AWS Region. The name must have 1 to 32 characters. Valid
      * characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case
      * sensitive.</p>
      */
@@ -106,7 +96,7 @@ namespace Model
     /**
      * <p>The name of the tuning job. This name is the prefix for the names of all
      * training jobs that this tuning job launches. The name must be unique within the
-     * same AWS account and AWS Region. The name must have { } to { } characters. Valid
+     * same AWS account and AWS Region. The name must have 1 to 32 characters. Valid
      * characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case
      * sensitive.</p>
      */
@@ -115,7 +105,7 @@ namespace Model
     /**
      * <p>The name of the tuning job. This name is the prefix for the names of all
      * training jobs that this tuning job launches. The name must be unique within the
-     * same AWS account and AWS Region. The name must have { } to { } characters. Valid
+     * same AWS account and AWS Region. The name must have 1 to 32 characters. Valid
      * characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case
      * sensitive.</p>
      */
@@ -233,42 +223,50 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for
+     * this tuning job.</p>
      */
     inline const Aws::Vector<HyperParameterTrainingJobDefinition>& GetTrainingJobDefinitions() const{ return m_trainingJobDefinitions; }
 
     /**
-     * <p/>
+     * <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for
+     * this tuning job.</p>
      */
     inline bool TrainingJobDefinitionsHasBeenSet() const { return m_trainingJobDefinitionsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for
+     * this tuning job.</p>
      */
     inline void SetTrainingJobDefinitions(const Aws::Vector<HyperParameterTrainingJobDefinition>& value) { m_trainingJobDefinitionsHasBeenSet = true; m_trainingJobDefinitions = value; }
 
     /**
-     * <p/>
+     * <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for
+     * this tuning job.</p>
      */
     inline void SetTrainingJobDefinitions(Aws::Vector<HyperParameterTrainingJobDefinition>&& value) { m_trainingJobDefinitionsHasBeenSet = true; m_trainingJobDefinitions = std::move(value); }
 
     /**
-     * <p/>
+     * <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for
+     * this tuning job.</p>
      */
     inline CreateHyperParameterTuningJobRequest& WithTrainingJobDefinitions(const Aws::Vector<HyperParameterTrainingJobDefinition>& value) { SetTrainingJobDefinitions(value); return *this;}
 
     /**
-     * <p/>
+     * <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for
+     * this tuning job.</p>
      */
     inline CreateHyperParameterTuningJobRequest& WithTrainingJobDefinitions(Aws::Vector<HyperParameterTrainingJobDefinition>&& value) { SetTrainingJobDefinitions(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for
+     * this tuning job.</p>
      */
     inline CreateHyperParameterTuningJobRequest& AddTrainingJobDefinitions(const HyperParameterTrainingJobDefinition& value) { m_trainingJobDefinitionsHasBeenSet = true; m_trainingJobDefinitions.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for
+     * this tuning job.</p>
      */
     inline CreateHyperParameterTuningJobRequest& AddTrainingJobDefinitions(HyperParameterTrainingJobDefinition&& value) { m_trainingJobDefinitionsHasBeenSet = true; m_trainingJobDefinitions.push_back(std::move(value)); return *this; }
 
@@ -284,9 +282,9 @@ namespace Model
      * job that performs the best in the new tuning job is compared to the best
      * training jobs from the parent tuning jobs. From these, the training job that
      * performs the best as measured by the objective metric is returned as the overall
-     * best training job.</p> <note> <p>All training jobs launched by parent
+     * best training job.</p>  <p>All training jobs launched by parent
      * hyperparameter tuning jobs and the new hyperparameter tuning jobs count against
-     * the limit of training jobs for the tuning job.</p> </note>
+     * the limit of training jobs for the tuning job.</p> 
      */
     inline const HyperParameterTuningJobWarmStartConfig& GetWarmStartConfig() const{ return m_warmStartConfig; }
 
@@ -301,9 +299,9 @@ namespace Model
      * job that performs the best in the new tuning job is compared to the best
      * training jobs from the parent tuning jobs. From these, the training job that
      * performs the best as measured by the objective metric is returned as the overall
-     * best training job.</p> <note> <p>All training jobs launched by parent
+     * best training job.</p>  <p>All training jobs launched by parent
      * hyperparameter tuning jobs and the new hyperparameter tuning jobs count against
-     * the limit of training jobs for the tuning job.</p> </note>
+     * the limit of training jobs for the tuning job.</p> 
      */
     inline bool WarmStartConfigHasBeenSet() const { return m_warmStartConfigHasBeenSet; }
 
@@ -318,9 +316,9 @@ namespace Model
      * job that performs the best in the new tuning job is compared to the best
      * training jobs from the parent tuning jobs. From these, the training job that
      * performs the best as measured by the objective metric is returned as the overall
-     * best training job.</p> <note> <p>All training jobs launched by parent
+     * best training job.</p>  <p>All training jobs launched by parent
      * hyperparameter tuning jobs and the new hyperparameter tuning jobs count against
-     * the limit of training jobs for the tuning job.</p> </note>
+     * the limit of training jobs for the tuning job.</p> 
      */
     inline void SetWarmStartConfig(const HyperParameterTuningJobWarmStartConfig& value) { m_warmStartConfigHasBeenSet = true; m_warmStartConfig = value; }
 
@@ -335,9 +333,9 @@ namespace Model
      * job that performs the best in the new tuning job is compared to the best
      * training jobs from the parent tuning jobs. From these, the training job that
      * performs the best as measured by the objective metric is returned as the overall
-     * best training job.</p> <note> <p>All training jobs launched by parent
+     * best training job.</p>  <p>All training jobs launched by parent
      * hyperparameter tuning jobs and the new hyperparameter tuning jobs count against
-     * the limit of training jobs for the tuning job.</p> </note>
+     * the limit of training jobs for the tuning job.</p> 
      */
     inline void SetWarmStartConfig(HyperParameterTuningJobWarmStartConfig&& value) { m_warmStartConfigHasBeenSet = true; m_warmStartConfig = std::move(value); }
 
@@ -352,9 +350,9 @@ namespace Model
      * job that performs the best in the new tuning job is compared to the best
      * training jobs from the parent tuning jobs. From these, the training job that
      * performs the best as measured by the objective metric is returned as the overall
-     * best training job.</p> <note> <p>All training jobs launched by parent
+     * best training job.</p>  <p>All training jobs launched by parent
      * hyperparameter tuning jobs and the new hyperparameter tuning jobs count against
-     * the limit of training jobs for the tuning job.</p> </note>
+     * the limit of training jobs for the tuning job.</p> 
      */
     inline CreateHyperParameterTuningJobRequest& WithWarmStartConfig(const HyperParameterTuningJobWarmStartConfig& value) { SetWarmStartConfig(value); return *this;}
 
@@ -369,9 +367,9 @@ namespace Model
      * job that performs the best in the new tuning job is compared to the best
      * training jobs from the parent tuning jobs. From these, the training job that
      * performs the best as measured by the objective metric is returned as the overall
-     * best training job.</p> <note> <p>All training jobs launched by parent
+     * best training job.</p>  <p>All training jobs launched by parent
      * hyperparameter tuning jobs and the new hyperparameter tuning jobs count against
-     * the limit of training jobs for the tuning job.</p> </note>
+     * the limit of training jobs for the tuning job.</p> 
      */
     inline CreateHyperParameterTuningJobRequest& WithWarmStartConfig(HyperParameterTuningJobWarmStartConfig&& value) { SetWarmStartConfig(std::move(value)); return *this;}
 
@@ -380,8 +378,8 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-     * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -390,8 +388,8 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-     * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -400,8 +398,8 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-     * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
@@ -410,8 +408,8 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-     * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
@@ -420,8 +418,8 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-     * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
     inline CreateHyperParameterTuningJobRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
@@ -430,8 +428,8 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-     * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
     inline CreateHyperParameterTuningJobRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
@@ -440,8 +438,8 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-     * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
     inline CreateHyperParameterTuningJobRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
@@ -450,8 +448,8 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-     * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
     inline CreateHyperParameterTuningJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }

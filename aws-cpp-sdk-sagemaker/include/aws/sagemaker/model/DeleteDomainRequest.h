@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -87,43 +77,43 @@ namespace Model
 
 
     /**
-     * <p>The retention policy for this domain, which specifies which resources will be
-     * retained after the Domain is deleted. By default, all resources are retained
+     * <p>The retention policy for this domain, which specifies whether resources will
+     * be retained after the Domain is deleted. By default, all resources are retained
      * (not automatically deleted). </p>
      */
     inline const RetentionPolicy& GetRetentionPolicy() const{ return m_retentionPolicy; }
 
     /**
-     * <p>The retention policy for this domain, which specifies which resources will be
-     * retained after the Domain is deleted. By default, all resources are retained
+     * <p>The retention policy for this domain, which specifies whether resources will
+     * be retained after the Domain is deleted. By default, all resources are retained
      * (not automatically deleted). </p>
      */
     inline bool RetentionPolicyHasBeenSet() const { return m_retentionPolicyHasBeenSet; }
 
     /**
-     * <p>The retention policy for this domain, which specifies which resources will be
-     * retained after the Domain is deleted. By default, all resources are retained
+     * <p>The retention policy for this domain, which specifies whether resources will
+     * be retained after the Domain is deleted. By default, all resources are retained
      * (not automatically deleted). </p>
      */
     inline void SetRetentionPolicy(const RetentionPolicy& value) { m_retentionPolicyHasBeenSet = true; m_retentionPolicy = value; }
 
     /**
-     * <p>The retention policy for this domain, which specifies which resources will be
-     * retained after the Domain is deleted. By default, all resources are retained
+     * <p>The retention policy for this domain, which specifies whether resources will
+     * be retained after the Domain is deleted. By default, all resources are retained
      * (not automatically deleted). </p>
      */
     inline void SetRetentionPolicy(RetentionPolicy&& value) { m_retentionPolicyHasBeenSet = true; m_retentionPolicy = std::move(value); }
 
     /**
-     * <p>The retention policy for this domain, which specifies which resources will be
-     * retained after the Domain is deleted. By default, all resources are retained
+     * <p>The retention policy for this domain, which specifies whether resources will
+     * be retained after the Domain is deleted. By default, all resources are retained
      * (not automatically deleted). </p>
      */
     inline DeleteDomainRequest& WithRetentionPolicy(const RetentionPolicy& value) { SetRetentionPolicy(value); return *this;}
 
     /**
-     * <p>The retention policy for this domain, which specifies which resources will be
-     * retained after the Domain is deleted. By default, all resources are retained
+     * <p>The retention policy for this domain, which specifies whether resources will
+     * be retained after the Domain is deleted. By default, all resources are retained
      * (not automatically deleted). </p>
      */
     inline DeleteDomainRequest& WithRetentionPolicy(RetentionPolicy&& value) { SetRetentionPolicy(std::move(value)); return *this;}

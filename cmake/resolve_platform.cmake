@@ -4,9 +4,9 @@ if(TARGET_ARCH)
     string(TOUPPER ${TARGET_ARCH} __UPPER_TARGET_ARCH)
 endif()
 
-if("${__UPPER_TARGET_ARCH}" STREQUAL "WINDOWS" OR 
-   "${__UPPER_TARGET_ARCH}" STREQUAL "LINUX" OR 
-   "${__UPPER_TARGET_ARCH}" STREQUAL "APPLE" OR 
+if("${__UPPER_TARGET_ARCH}" STREQUAL "WINDOWS" OR
+   "${__UPPER_TARGET_ARCH}" STREQUAL "LINUX" OR
+   "${__UPPER_TARGET_ARCH}" STREQUAL "APPLE" OR
    "${__UPPER_TARGET_ARCH}" STREQUAL "ANDROID")
     set(PLATFORM_${__UPPER_TARGET_ARCH} 1)
 elseif(TARGET_ARCH)
@@ -33,7 +33,7 @@ else()
 endif()
 
 # directory defaults; linux overrides these on SIMPLE_INSTALL builds
-# user sepficied cmake variables (cmake -DVAR=xx) will further overrides these
+# user specified cmake variables (cmake -DVAR=xx) will further overrides these
 set(BINARY_DIRECTORY "bin")
 set(LIBRARY_DIRECTORY "lib")
 set(INCLUDE_DIRECTORY "include")

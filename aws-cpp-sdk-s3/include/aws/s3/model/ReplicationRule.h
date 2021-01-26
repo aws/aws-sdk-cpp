@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
@@ -96,57 +86,49 @@ namespace Model
 
 
     /**
-     * <p>The priority associated with the rule. If you specify multiple rules in a
-     * replication configuration, Amazon S3 prioritizes the rules to prevent conflicts
-     * when filtering. If two or more rules identify the same object based on a
-     * specified filter, the rule with higher priority takes precedence. For
-     * example:</p> <ul> <li> <p>Same object quality prefix-based filter criteria if
-     * prefixes you specified in multiple rules overlap </p> </li> <li> <p>Same object
-     * qualify tag-based filter criteria specified in multiple rules</p> </li> </ul>
-     * <p>For more information, see <a href="
-     * https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a>
+     * <p>The priority indicates which rule has precedence whenever two or more
+     * replication rules conflict. Amazon S3 will attempt to replicate objects
+     * according to all replication rules. However, if there are two or more rules with
+     * the same destination bucket, then objects will be replicated according to the
+     * rule with the highest priority. The higher the number, the higher the priority.
+     * </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a>
      * in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline int GetPriority() const{ return m_priority; }
 
     /**
-     * <p>The priority associated with the rule. If you specify multiple rules in a
-     * replication configuration, Amazon S3 prioritizes the rules to prevent conflicts
-     * when filtering. If two or more rules identify the same object based on a
-     * specified filter, the rule with higher priority takes precedence. For
-     * example:</p> <ul> <li> <p>Same object quality prefix-based filter criteria if
-     * prefixes you specified in multiple rules overlap </p> </li> <li> <p>Same object
-     * qualify tag-based filter criteria specified in multiple rules</p> </li> </ul>
-     * <p>For more information, see <a href="
-     * https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a>
+     * <p>The priority indicates which rule has precedence whenever two or more
+     * replication rules conflict. Amazon S3 will attempt to replicate objects
+     * according to all replication rules. However, if there are two or more rules with
+     * the same destination bucket, then objects will be replicated according to the
+     * rule with the highest priority. The higher the number, the higher the priority.
+     * </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a>
      * in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
 
     /**
-     * <p>The priority associated with the rule. If you specify multiple rules in a
-     * replication configuration, Amazon S3 prioritizes the rules to prevent conflicts
-     * when filtering. If two or more rules identify the same object based on a
-     * specified filter, the rule with higher priority takes precedence. For
-     * example:</p> <ul> <li> <p>Same object quality prefix-based filter criteria if
-     * prefixes you specified in multiple rules overlap </p> </li> <li> <p>Same object
-     * qualify tag-based filter criteria specified in multiple rules</p> </li> </ul>
-     * <p>For more information, see <a href="
-     * https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a>
+     * <p>The priority indicates which rule has precedence whenever two or more
+     * replication rules conflict. Amazon S3 will attempt to replicate objects
+     * according to all replication rules. However, if there are two or more rules with
+     * the same destination bucket, then objects will be replicated according to the
+     * rule with the highest priority. The higher the number, the higher the priority.
+     * </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a>
      * in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
-     * <p>The priority associated with the rule. If you specify multiple rules in a
-     * replication configuration, Amazon S3 prioritizes the rules to prevent conflicts
-     * when filtering. If two or more rules identify the same object based on a
-     * specified filter, the rule with higher priority takes precedence. For
-     * example:</p> <ul> <li> <p>Same object quality prefix-based filter criteria if
-     * prefixes you specified in multiple rules overlap </p> </li> <li> <p>Same object
-     * qualify tag-based filter criteria specified in multiple rules</p> </li> </ul>
-     * <p>For more information, see <a href="
-     * https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a>
+     * <p>The priority indicates which rule has precedence whenever two or more
+     * replication rules conflict. Amazon S3 will attempt to replicate objects
+     * according to all replication rules. However, if there are two or more rules with
+     * the same destination bucket, then objects will be replicated according to the
+     * rule with the highest priority. The higher the number, the higher the priority.
+     * </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a>
      * in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline ReplicationRule& WithPriority(int value) { SetPriority(value); return *this;}

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/codebuild/model/StartBuildRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -42,6 +32,7 @@ StartBuildRequest::StartBuildRequest() :
     m_insecureSslOverrideHasBeenSet(false),
     m_reportBuildStatusOverride(false),
     m_reportBuildStatusOverrideHasBeenSet(false),
+    m_buildStatusConfigOverrideHasBeenSet(false),
     m_environmentTypeOverride(EnvironmentType::NOT_SET),
     m_environmentTypeOverrideHasBeenSet(false),
     m_imageOverrideHasBeenSet(false),
@@ -61,7 +52,9 @@ StartBuildRequest::StartBuildRequest() :
     m_logsConfigOverrideHasBeenSet(false),
     m_registryCredentialOverrideHasBeenSet(false),
     m_imagePullCredentialsTypeOverride(ImagePullCredentialsType::NOT_SET),
-    m_imagePullCredentialsTypeOverrideHasBeenSet(false)
+    m_imagePullCredentialsTypeOverrideHasBeenSet(false),
+    m_debugSessionEnabled(false),
+    m_debugSessionEnabledHasBeenSet(false)
 {
 }
 
@@ -178,6 +171,12 @@ Aws::String StartBuildRequest::SerializePayload() const
 
   }
 
+  if(m_buildStatusConfigOverrideHasBeenSet)
+  {
+   payload.WithObject("buildStatusConfigOverride", m_buildStatusConfigOverride.Jsonize());
+
+  }
+
   if(m_environmentTypeOverrideHasBeenSet)
   {
    payload.WithString("environmentTypeOverride", EnvironmentTypeMapper::GetNameForEnvironmentType(m_environmentTypeOverride));
@@ -257,6 +256,12 @@ Aws::String StartBuildRequest::SerializePayload() const
   if(m_imagePullCredentialsTypeOverrideHasBeenSet)
   {
    payload.WithString("imagePullCredentialsTypeOverride", ImagePullCredentialsTypeMapper::GetNameForImagePullCredentialsType(m_imagePullCredentialsTypeOverride));
+  }
+
+  if(m_debugSessionEnabledHasBeenSet)
+  {
+   payload.WithBool("debugSessionEnabled", m_debugSessionEnabled);
+
   }
 
   return payload.View().WriteReadable();

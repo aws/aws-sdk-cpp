@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
@@ -96,27 +86,27 @@ namespace Model
      * <code>statistics</code> to include in your request, and the published
      * <code>unit</code> value. All relational database metric data is available in
      * 1-minute (60 seconds) granularity.</p> <ul> <li> <p> <b>
-     * <code>CPUUtilization</code> </b> — The percentage of CPU utilization currently
+     * <code>CPUUtilization</code> </b> - The percentage of CPU utilization currently
      * in use on the database.</p> <p> <code>Statistics</code>: The most useful
      * statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>
      * <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li> <li>
-     * <p> <b> <code>DatabaseConnections</code> </b> — The number of database
+     * <p> <b> <code>DatabaseConnections</code> </b> - The number of database
      * connections in use.</p> <p> <code>Statistics</code>: The most useful statistics
      * are <code>Maximum</code> and <code>Sum</code>.</p> <p> <code>Unit</code>: The
      * published unit is <code>Count</code>.</p> </li> <li> <p> <b>
-     * <code>DiskQueueDepth</code> </b> — The number of outstanding IOs (read/write
+     * <code>DiskQueueDepth</code> </b> - The number of outstanding IOs (read/write
      * requests) that are waiting to access the disk.</p> <p> <code>Statistics</code>:
      * The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The
      * published unit is <code>Count</code>.</p> </li> <li> <p> <b>
-     * <code>FreeStorageSpace</code> </b> — The amount of available storage space.</p>
+     * <code>FreeStorageSpace</code> </b> - The amount of available storage space.</p>
      * <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
      * <p> <code>Unit</code>: The published unit is <code>Bytes</code>.</p> </li> <li>
-     * <p> <b> <code>NetworkReceiveThroughput</code> </b> — The incoming (Receive)
+     * <p> <b> <code>NetworkReceiveThroughput</code> </b> - The incoming (Receive)
      * network traffic on the database, including both customer database traffic and
      * AWS traffic used for monitoring and replication.</p> <p>
      * <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
      * <p> <code>Unit</code>: The published unit is <code>Bytes/Second</code>.</p>
-     * </li> <li> <p> <b> <code>NetworkTransmitThroughput</code> </b> — The outgoing
+     * </li> <li> <p> <b> <code>NetworkTransmitThroughput</code> </b> - The outgoing
      * (Transmit) network traffic on the database, including both customer database
      * traffic and AWS traffic used for monitoring and replication.</p> <p>
      * <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
@@ -131,27 +121,27 @@ namespace Model
      * <code>statistics</code> to include in your request, and the published
      * <code>unit</code> value. All relational database metric data is available in
      * 1-minute (60 seconds) granularity.</p> <ul> <li> <p> <b>
-     * <code>CPUUtilization</code> </b> — The percentage of CPU utilization currently
+     * <code>CPUUtilization</code> </b> - The percentage of CPU utilization currently
      * in use on the database.</p> <p> <code>Statistics</code>: The most useful
      * statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>
      * <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li> <li>
-     * <p> <b> <code>DatabaseConnections</code> </b> — The number of database
+     * <p> <b> <code>DatabaseConnections</code> </b> - The number of database
      * connections in use.</p> <p> <code>Statistics</code>: The most useful statistics
      * are <code>Maximum</code> and <code>Sum</code>.</p> <p> <code>Unit</code>: The
      * published unit is <code>Count</code>.</p> </li> <li> <p> <b>
-     * <code>DiskQueueDepth</code> </b> — The number of outstanding IOs (read/write
+     * <code>DiskQueueDepth</code> </b> - The number of outstanding IOs (read/write
      * requests) that are waiting to access the disk.</p> <p> <code>Statistics</code>:
      * The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The
      * published unit is <code>Count</code>.</p> </li> <li> <p> <b>
-     * <code>FreeStorageSpace</code> </b> — The amount of available storage space.</p>
+     * <code>FreeStorageSpace</code> </b> - The amount of available storage space.</p>
      * <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
      * <p> <code>Unit</code>: The published unit is <code>Bytes</code>.</p> </li> <li>
-     * <p> <b> <code>NetworkReceiveThroughput</code> </b> — The incoming (Receive)
+     * <p> <b> <code>NetworkReceiveThroughput</code> </b> - The incoming (Receive)
      * network traffic on the database, including both customer database traffic and
      * AWS traffic used for monitoring and replication.</p> <p>
      * <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
      * <p> <code>Unit</code>: The published unit is <code>Bytes/Second</code>.</p>
-     * </li> <li> <p> <b> <code>NetworkTransmitThroughput</code> </b> — The outgoing
+     * </li> <li> <p> <b> <code>NetworkTransmitThroughput</code> </b> - The outgoing
      * (Transmit) network traffic on the database, including both customer database
      * traffic and AWS traffic used for monitoring and replication.</p> <p>
      * <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
@@ -166,27 +156,27 @@ namespace Model
      * <code>statistics</code> to include in your request, and the published
      * <code>unit</code> value. All relational database metric data is available in
      * 1-minute (60 seconds) granularity.</p> <ul> <li> <p> <b>
-     * <code>CPUUtilization</code> </b> — The percentage of CPU utilization currently
+     * <code>CPUUtilization</code> </b> - The percentage of CPU utilization currently
      * in use on the database.</p> <p> <code>Statistics</code>: The most useful
      * statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>
      * <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li> <li>
-     * <p> <b> <code>DatabaseConnections</code> </b> — The number of database
+     * <p> <b> <code>DatabaseConnections</code> </b> - The number of database
      * connections in use.</p> <p> <code>Statistics</code>: The most useful statistics
      * are <code>Maximum</code> and <code>Sum</code>.</p> <p> <code>Unit</code>: The
      * published unit is <code>Count</code>.</p> </li> <li> <p> <b>
-     * <code>DiskQueueDepth</code> </b> — The number of outstanding IOs (read/write
+     * <code>DiskQueueDepth</code> </b> - The number of outstanding IOs (read/write
      * requests) that are waiting to access the disk.</p> <p> <code>Statistics</code>:
      * The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The
      * published unit is <code>Count</code>.</p> </li> <li> <p> <b>
-     * <code>FreeStorageSpace</code> </b> — The amount of available storage space.</p>
+     * <code>FreeStorageSpace</code> </b> - The amount of available storage space.</p>
      * <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
      * <p> <code>Unit</code>: The published unit is <code>Bytes</code>.</p> </li> <li>
-     * <p> <b> <code>NetworkReceiveThroughput</code> </b> — The incoming (Receive)
+     * <p> <b> <code>NetworkReceiveThroughput</code> </b> - The incoming (Receive)
      * network traffic on the database, including both customer database traffic and
      * AWS traffic used for monitoring and replication.</p> <p>
      * <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
      * <p> <code>Unit</code>: The published unit is <code>Bytes/Second</code>.</p>
-     * </li> <li> <p> <b> <code>NetworkTransmitThroughput</code> </b> — The outgoing
+     * </li> <li> <p> <b> <code>NetworkTransmitThroughput</code> </b> - The outgoing
      * (Transmit) network traffic on the database, including both customer database
      * traffic and AWS traffic used for monitoring and replication.</p> <p>
      * <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
@@ -201,27 +191,27 @@ namespace Model
      * <code>statistics</code> to include in your request, and the published
      * <code>unit</code> value. All relational database metric data is available in
      * 1-minute (60 seconds) granularity.</p> <ul> <li> <p> <b>
-     * <code>CPUUtilization</code> </b> — The percentage of CPU utilization currently
+     * <code>CPUUtilization</code> </b> - The percentage of CPU utilization currently
      * in use on the database.</p> <p> <code>Statistics</code>: The most useful
      * statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>
      * <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li> <li>
-     * <p> <b> <code>DatabaseConnections</code> </b> — The number of database
+     * <p> <b> <code>DatabaseConnections</code> </b> - The number of database
      * connections in use.</p> <p> <code>Statistics</code>: The most useful statistics
      * are <code>Maximum</code> and <code>Sum</code>.</p> <p> <code>Unit</code>: The
      * published unit is <code>Count</code>.</p> </li> <li> <p> <b>
-     * <code>DiskQueueDepth</code> </b> — The number of outstanding IOs (read/write
+     * <code>DiskQueueDepth</code> </b> - The number of outstanding IOs (read/write
      * requests) that are waiting to access the disk.</p> <p> <code>Statistics</code>:
      * The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The
      * published unit is <code>Count</code>.</p> </li> <li> <p> <b>
-     * <code>FreeStorageSpace</code> </b> — The amount of available storage space.</p>
+     * <code>FreeStorageSpace</code> </b> - The amount of available storage space.</p>
      * <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
      * <p> <code>Unit</code>: The published unit is <code>Bytes</code>.</p> </li> <li>
-     * <p> <b> <code>NetworkReceiveThroughput</code> </b> — The incoming (Receive)
+     * <p> <b> <code>NetworkReceiveThroughput</code> </b> - The incoming (Receive)
      * network traffic on the database, including both customer database traffic and
      * AWS traffic used for monitoring and replication.</p> <p>
      * <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
      * <p> <code>Unit</code>: The published unit is <code>Bytes/Second</code>.</p>
-     * </li> <li> <p> <b> <code>NetworkTransmitThroughput</code> </b> — The outgoing
+     * </li> <li> <p> <b> <code>NetworkTransmitThroughput</code> </b> - The outgoing
      * (Transmit) network traffic on the database, including both customer database
      * traffic and AWS traffic used for monitoring and replication.</p> <p>
      * <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
@@ -236,27 +226,27 @@ namespace Model
      * <code>statistics</code> to include in your request, and the published
      * <code>unit</code> value. All relational database metric data is available in
      * 1-minute (60 seconds) granularity.</p> <ul> <li> <p> <b>
-     * <code>CPUUtilization</code> </b> — The percentage of CPU utilization currently
+     * <code>CPUUtilization</code> </b> - The percentage of CPU utilization currently
      * in use on the database.</p> <p> <code>Statistics</code>: The most useful
      * statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>
      * <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li> <li>
-     * <p> <b> <code>DatabaseConnections</code> </b> — The number of database
+     * <p> <b> <code>DatabaseConnections</code> </b> - The number of database
      * connections in use.</p> <p> <code>Statistics</code>: The most useful statistics
      * are <code>Maximum</code> and <code>Sum</code>.</p> <p> <code>Unit</code>: The
      * published unit is <code>Count</code>.</p> </li> <li> <p> <b>
-     * <code>DiskQueueDepth</code> </b> — The number of outstanding IOs (read/write
+     * <code>DiskQueueDepth</code> </b> - The number of outstanding IOs (read/write
      * requests) that are waiting to access the disk.</p> <p> <code>Statistics</code>:
      * The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The
      * published unit is <code>Count</code>.</p> </li> <li> <p> <b>
-     * <code>FreeStorageSpace</code> </b> — The amount of available storage space.</p>
+     * <code>FreeStorageSpace</code> </b> - The amount of available storage space.</p>
      * <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
      * <p> <code>Unit</code>: The published unit is <code>Bytes</code>.</p> </li> <li>
-     * <p> <b> <code>NetworkReceiveThroughput</code> </b> — The incoming (Receive)
+     * <p> <b> <code>NetworkReceiveThroughput</code> </b> - The incoming (Receive)
      * network traffic on the database, including both customer database traffic and
      * AWS traffic used for monitoring and replication.</p> <p>
      * <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
      * <p> <code>Unit</code>: The published unit is <code>Bytes/Second</code>.</p>
-     * </li> <li> <p> <b> <code>NetworkTransmitThroughput</code> </b> — The outgoing
+     * </li> <li> <p> <b> <code>NetworkTransmitThroughput</code> </b> - The outgoing
      * (Transmit) network traffic on the database, including both customer database
      * traffic and AWS traffic used for monitoring and replication.</p> <p>
      * <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
@@ -271,27 +261,27 @@ namespace Model
      * <code>statistics</code> to include in your request, and the published
      * <code>unit</code> value. All relational database metric data is available in
      * 1-minute (60 seconds) granularity.</p> <ul> <li> <p> <b>
-     * <code>CPUUtilization</code> </b> — The percentage of CPU utilization currently
+     * <code>CPUUtilization</code> </b> - The percentage of CPU utilization currently
      * in use on the database.</p> <p> <code>Statistics</code>: The most useful
      * statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>
      * <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li> <li>
-     * <p> <b> <code>DatabaseConnections</code> </b> — The number of database
+     * <p> <b> <code>DatabaseConnections</code> </b> - The number of database
      * connections in use.</p> <p> <code>Statistics</code>: The most useful statistics
      * are <code>Maximum</code> and <code>Sum</code>.</p> <p> <code>Unit</code>: The
      * published unit is <code>Count</code>.</p> </li> <li> <p> <b>
-     * <code>DiskQueueDepth</code> </b> — The number of outstanding IOs (read/write
+     * <code>DiskQueueDepth</code> </b> - The number of outstanding IOs (read/write
      * requests) that are waiting to access the disk.</p> <p> <code>Statistics</code>:
      * The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The
      * published unit is <code>Count</code>.</p> </li> <li> <p> <b>
-     * <code>FreeStorageSpace</code> </b> — The amount of available storage space.</p>
+     * <code>FreeStorageSpace</code> </b> - The amount of available storage space.</p>
      * <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
      * <p> <code>Unit</code>: The published unit is <code>Bytes</code>.</p> </li> <li>
-     * <p> <b> <code>NetworkReceiveThroughput</code> </b> — The incoming (Receive)
+     * <p> <b> <code>NetworkReceiveThroughput</code> </b> - The incoming (Receive)
      * network traffic on the database, including both customer database traffic and
      * AWS traffic used for monitoring and replication.</p> <p>
      * <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
      * <p> <code>Unit</code>: The published unit is <code>Bytes/Second</code>.</p>
-     * </li> <li> <p> <b> <code>NetworkTransmitThroughput</code> </b> — The outgoing
+     * </li> <li> <p> <b> <code>NetworkTransmitThroughput</code> </b> - The outgoing
      * (Transmit) network traffic on the database, including both customer database
      * traffic and AWS traffic used for monitoring and replication.</p> <p>
      * <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
@@ -442,42 +432,42 @@ namespace Model
 
     /**
      * <p>The unit for the metric data request. Valid units depend on the metric data
-     * being required. For the valid units with each available metric, see the
+     * being requested. For the valid units with each available metric, see the
      * <code>metricName</code> parameter.</p>
      */
     inline const MetricUnit& GetUnit() const{ return m_unit; }
 
     /**
      * <p>The unit for the metric data request. Valid units depend on the metric data
-     * being required. For the valid units with each available metric, see the
+     * being requested. For the valid units with each available metric, see the
      * <code>metricName</code> parameter.</p>
      */
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
 
     /**
      * <p>The unit for the metric data request. Valid units depend on the metric data
-     * being required. For the valid units with each available metric, see the
+     * being requested. For the valid units with each available metric, see the
      * <code>metricName</code> parameter.</p>
      */
     inline void SetUnit(const MetricUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
 
     /**
      * <p>The unit for the metric data request. Valid units depend on the metric data
-     * being required. For the valid units with each available metric, see the
+     * being requested. For the valid units with each available metric, see the
      * <code>metricName</code> parameter.</p>
      */
     inline void SetUnit(MetricUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
 
     /**
      * <p>The unit for the metric data request. Valid units depend on the metric data
-     * being required. For the valid units with each available metric, see the
+     * being requested. For the valid units with each available metric, see the
      * <code>metricName</code> parameter.</p>
      */
     inline GetRelationalDatabaseMetricDataRequest& WithUnit(const MetricUnit& value) { SetUnit(value); return *this;}
 
     /**
      * <p>The unit for the metric data request. Valid units depend on the metric data
-     * being required. For the valid units with each available metric, see the
+     * being requested. For the valid units with each available metric, see the
      * <code>metricName</code> parameter.</p>
      */
     inline GetRelationalDatabaseMetricDataRequest& WithUnit(MetricUnit&& value) { SetUnit(std::move(value)); return *this;}
@@ -485,18 +475,18 @@ namespace Model
 
     /**
      * <p>The statistic for the metric.</p> <p>The following statistics are
-     * available:</p> <ul> <li> <p> <code>Minimum</code> — The lowest value observed
+     * available:</p> <ul> <li> <p> <code>Minimum</code> - The lowest value observed
      * during the specified period. Use this value to determine low volumes of activity
-     * for your application.</p> </li> <li> <p> <code>Maximum</code> — The highest
+     * for your application.</p> </li> <li> <p> <code>Maximum</code> - The highest
      * value observed during the specified period. Use this value to determine high
-     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> —
+     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> -
      * All values submitted for the matching metric added together. You can use this
      * statistic to determine the total volume of a metric.</p> </li> <li> <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified
+     * <code>Average</code> - The value of Sum / SampleCount during the specified
      * period. By comparing this statistic with the Minimum and Maximum values, you can
      * determine the full scope of a metric and how close the average use is to the
      * Minimum and Maximum values. This comparison helps you to know when to increase
-     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> — The
+     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> - The
      * count, or number, of data points used for the statistical calculation.</p> </li>
      * </ul>
      */
@@ -504,18 +494,18 @@ namespace Model
 
     /**
      * <p>The statistic for the metric.</p> <p>The following statistics are
-     * available:</p> <ul> <li> <p> <code>Minimum</code> — The lowest value observed
+     * available:</p> <ul> <li> <p> <code>Minimum</code> - The lowest value observed
      * during the specified period. Use this value to determine low volumes of activity
-     * for your application.</p> </li> <li> <p> <code>Maximum</code> — The highest
+     * for your application.</p> </li> <li> <p> <code>Maximum</code> - The highest
      * value observed during the specified period. Use this value to determine high
-     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> —
+     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> -
      * All values submitted for the matching metric added together. You can use this
      * statistic to determine the total volume of a metric.</p> </li> <li> <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified
+     * <code>Average</code> - The value of Sum / SampleCount during the specified
      * period. By comparing this statistic with the Minimum and Maximum values, you can
      * determine the full scope of a metric and how close the average use is to the
      * Minimum and Maximum values. This comparison helps you to know when to increase
-     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> — The
+     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> - The
      * count, or number, of data points used for the statistical calculation.</p> </li>
      * </ul>
      */
@@ -523,18 +513,18 @@ namespace Model
 
     /**
      * <p>The statistic for the metric.</p> <p>The following statistics are
-     * available:</p> <ul> <li> <p> <code>Minimum</code> — The lowest value observed
+     * available:</p> <ul> <li> <p> <code>Minimum</code> - The lowest value observed
      * during the specified period. Use this value to determine low volumes of activity
-     * for your application.</p> </li> <li> <p> <code>Maximum</code> — The highest
+     * for your application.</p> </li> <li> <p> <code>Maximum</code> - The highest
      * value observed during the specified period. Use this value to determine high
-     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> —
+     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> -
      * All values submitted for the matching metric added together. You can use this
      * statistic to determine the total volume of a metric.</p> </li> <li> <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified
+     * <code>Average</code> - The value of Sum / SampleCount during the specified
      * period. By comparing this statistic with the Minimum and Maximum values, you can
      * determine the full scope of a metric and how close the average use is to the
      * Minimum and Maximum values. This comparison helps you to know when to increase
-     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> — The
+     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> - The
      * count, or number, of data points used for the statistical calculation.</p> </li>
      * </ul>
      */
@@ -542,18 +532,18 @@ namespace Model
 
     /**
      * <p>The statistic for the metric.</p> <p>The following statistics are
-     * available:</p> <ul> <li> <p> <code>Minimum</code> — The lowest value observed
+     * available:</p> <ul> <li> <p> <code>Minimum</code> - The lowest value observed
      * during the specified period. Use this value to determine low volumes of activity
-     * for your application.</p> </li> <li> <p> <code>Maximum</code> — The highest
+     * for your application.</p> </li> <li> <p> <code>Maximum</code> - The highest
      * value observed during the specified period. Use this value to determine high
-     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> —
+     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> -
      * All values submitted for the matching metric added together. You can use this
      * statistic to determine the total volume of a metric.</p> </li> <li> <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified
+     * <code>Average</code> - The value of Sum / SampleCount during the specified
      * period. By comparing this statistic with the Minimum and Maximum values, you can
      * determine the full scope of a metric and how close the average use is to the
      * Minimum and Maximum values. This comparison helps you to know when to increase
-     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> — The
+     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> - The
      * count, or number, of data points used for the statistical calculation.</p> </li>
      * </ul>
      */
@@ -561,18 +551,18 @@ namespace Model
 
     /**
      * <p>The statistic for the metric.</p> <p>The following statistics are
-     * available:</p> <ul> <li> <p> <code>Minimum</code> — The lowest value observed
+     * available:</p> <ul> <li> <p> <code>Minimum</code> - The lowest value observed
      * during the specified period. Use this value to determine low volumes of activity
-     * for your application.</p> </li> <li> <p> <code>Maximum</code> — The highest
+     * for your application.</p> </li> <li> <p> <code>Maximum</code> - The highest
      * value observed during the specified period. Use this value to determine high
-     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> —
+     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> -
      * All values submitted for the matching metric added together. You can use this
      * statistic to determine the total volume of a metric.</p> </li> <li> <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified
+     * <code>Average</code> - The value of Sum / SampleCount during the specified
      * period. By comparing this statistic with the Minimum and Maximum values, you can
      * determine the full scope of a metric and how close the average use is to the
      * Minimum and Maximum values. This comparison helps you to know when to increase
-     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> — The
+     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> - The
      * count, or number, of data points used for the statistical calculation.</p> </li>
      * </ul>
      */
@@ -580,18 +570,18 @@ namespace Model
 
     /**
      * <p>The statistic for the metric.</p> <p>The following statistics are
-     * available:</p> <ul> <li> <p> <code>Minimum</code> — The lowest value observed
+     * available:</p> <ul> <li> <p> <code>Minimum</code> - The lowest value observed
      * during the specified period. Use this value to determine low volumes of activity
-     * for your application.</p> </li> <li> <p> <code>Maximum</code> — The highest
+     * for your application.</p> </li> <li> <p> <code>Maximum</code> - The highest
      * value observed during the specified period. Use this value to determine high
-     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> —
+     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> -
      * All values submitted for the matching metric added together. You can use this
      * statistic to determine the total volume of a metric.</p> </li> <li> <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified
+     * <code>Average</code> - The value of Sum / SampleCount during the specified
      * period. By comparing this statistic with the Minimum and Maximum values, you can
      * determine the full scope of a metric and how close the average use is to the
      * Minimum and Maximum values. This comparison helps you to know when to increase
-     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> — The
+     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> - The
      * count, or number, of data points used for the statistical calculation.</p> </li>
      * </ul>
      */
@@ -599,18 +589,18 @@ namespace Model
 
     /**
      * <p>The statistic for the metric.</p> <p>The following statistics are
-     * available:</p> <ul> <li> <p> <code>Minimum</code> — The lowest value observed
+     * available:</p> <ul> <li> <p> <code>Minimum</code> - The lowest value observed
      * during the specified period. Use this value to determine low volumes of activity
-     * for your application.</p> </li> <li> <p> <code>Maximum</code> — The highest
+     * for your application.</p> </li> <li> <p> <code>Maximum</code> - The highest
      * value observed during the specified period. Use this value to determine high
-     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> —
+     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> -
      * All values submitted for the matching metric added together. You can use this
      * statistic to determine the total volume of a metric.</p> </li> <li> <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified
+     * <code>Average</code> - The value of Sum / SampleCount during the specified
      * period. By comparing this statistic with the Minimum and Maximum values, you can
      * determine the full scope of a metric and how close the average use is to the
      * Minimum and Maximum values. This comparison helps you to know when to increase
-     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> — The
+     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> - The
      * count, or number, of data points used for the statistical calculation.</p> </li>
      * </ul>
      */
@@ -618,18 +608,18 @@ namespace Model
 
     /**
      * <p>The statistic for the metric.</p> <p>The following statistics are
-     * available:</p> <ul> <li> <p> <code>Minimum</code> — The lowest value observed
+     * available:</p> <ul> <li> <p> <code>Minimum</code> - The lowest value observed
      * during the specified period. Use this value to determine low volumes of activity
-     * for your application.</p> </li> <li> <p> <code>Maximum</code> — The highest
+     * for your application.</p> </li> <li> <p> <code>Maximum</code> - The highest
      * value observed during the specified period. Use this value to determine high
-     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> —
+     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> -
      * All values submitted for the matching metric added together. You can use this
      * statistic to determine the total volume of a metric.</p> </li> <li> <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified
+     * <code>Average</code> - The value of Sum / SampleCount during the specified
      * period. By comparing this statistic with the Minimum and Maximum values, you can
      * determine the full scope of a metric and how close the average use is to the
      * Minimum and Maximum values. This comparison helps you to know when to increase
-     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> — The
+     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> - The
      * count, or number, of data points used for the statistical calculation.</p> </li>
      * </ul>
      */

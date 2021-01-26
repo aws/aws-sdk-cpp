@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/InstanceTypeInfo.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -39,6 +29,7 @@ InstanceTypeInfo::InstanceTypeInfo() :
     m_freeTierEligibleHasBeenSet(false),
     m_supportedUsageClassesHasBeenSet(false),
     m_supportedRootDeviceTypesHasBeenSet(false),
+    m_supportedVirtualizationTypesHasBeenSet(false),
     m_bareMetal(false),
     m_bareMetalHasBeenSet(false),
     m_hypervisor(InstanceTypeHypervisor::NOT_SET),
@@ -75,6 +66,7 @@ InstanceTypeInfo::InstanceTypeInfo(const XmlNode& xmlNode) :
     m_freeTierEligibleHasBeenSet(false),
     m_supportedUsageClassesHasBeenSet(false),
     m_supportedRootDeviceTypesHasBeenSet(false),
+    m_supportedVirtualizationTypesHasBeenSet(false),
     m_bareMetal(false),
     m_bareMetalHasBeenSet(false),
     m_hypervisor(InstanceTypeHypervisor::NOT_SET),
@@ -150,6 +142,18 @@ InstanceTypeInfo& InstanceTypeInfo::operator =(const XmlNode& xmlNode)
       }
 
       m_supportedRootDeviceTypesHasBeenSet = true;
+    }
+    XmlNode supportedVirtualizationTypesNode = resultNode.FirstChild("supportedVirtualizationTypes");
+    if(!supportedVirtualizationTypesNode.IsNull())
+    {
+      XmlNode supportedVirtualizationTypesMember = supportedVirtualizationTypesNode.FirstChild("item");
+      while(!supportedVirtualizationTypesMember.IsNull())
+      {
+        m_supportedVirtualizationTypes.push_back(VirtualizationTypeMapper::GetVirtualizationTypeForName(StringUtils::Trim(supportedVirtualizationTypesMember.GetText().c_str())));
+        supportedVirtualizationTypesMember = supportedVirtualizationTypesMember.NextNode("item");
+      }
+
+      m_supportedVirtualizationTypesHasBeenSet = true;
     }
     XmlNode bareMetalNode = resultNode.FirstChild("bareMetal");
     if(!bareMetalNode.IsNull())
@@ -293,6 +297,15 @@ void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
       }
   }
 
+  if(m_supportedVirtualizationTypesHasBeenSet)
+  {
+      unsigned supportedVirtualizationTypesIdx = 1;
+      for(auto& item : m_supportedVirtualizationTypes)
+      {
+        oStream << location << index << locationValue << ".SupportedVirtualizationTypes." << supportedVirtualizationTypesIdx++ << "=" << VirtualizationTypeMapper::GetNameForVirtualizationType(item) << "&";
+      }
+  }
+
   if(m_bareMetalHasBeenSet)
   {
       oStream << location << index << locationValue << ".BareMetal=" << std::boolalpha << m_bareMetal << "&";
@@ -428,6 +441,14 @@ void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_supportedRootDeviceTypes)
       {
         oStream << location << ".SupportedRootDeviceTypes." << supportedRootDeviceTypesIdx++ << "=" << RootDeviceTypeMapper::GetNameForRootDeviceType(item) << "&";
+      }
+  }
+  if(m_supportedVirtualizationTypesHasBeenSet)
+  {
+      unsigned supportedVirtualizationTypesIdx = 1;
+      for(auto& item : m_supportedVirtualizationTypes)
+      {
+        oStream << location << ".SupportedVirtualizationTypes." << supportedVirtualizationTypesIdx++ << "=" << VirtualizationTypeMapper::GetNameForVirtualizationType(item) << "&";
       }
   }
   if(m_bareMetalHasBeenSet)

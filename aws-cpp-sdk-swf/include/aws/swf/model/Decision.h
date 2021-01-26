@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
@@ -140,7 +130,7 @@ namespace Model
    * <p>The preceding error events might occur due to an error in the decider logic,
    * which might put the workflow execution in an unstable state The cause field in
    * the event structure for the error event indicates the cause of the error.</p>
-   * <note> <p>A workflow execution may be closed by the decider by returning one of
+   *  <p>A workflow execution may be closed by the decider by returning one of
    * the following decisions when completing a decision task:
    * <code>CompleteWorkflowExecution</code>, <code>FailWorkflowExecution</code>,
    * <code>CancelWorkflowExecution</code> and
@@ -152,7 +142,7 @@ namespace Model
    * system. The right action here is to call <a>RespondDecisionTaskCompleted</a>
    * without any decisions. This would result in another decision task with these new
    * events included in the history. The decider should handle the new events and may
-   * decide to close the workflow execution.</p> </note> <p> <b>How to Code a
+   * decide to close the workflow execution.</p>  <p> <b>How to Code a
    * Decision</b> </p> <p>You code a decision by first setting the decision type
    * field to one of the above decision values, and then set the corresponding
    * attributes field shown below:</p> <ul> <li> <p> <code>

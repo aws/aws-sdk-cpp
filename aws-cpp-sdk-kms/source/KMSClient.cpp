@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -92,7 +82,7 @@ static const char* ALLOCATION_TAG = "KMSClient";
 KMSClient::KMSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<KMSErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -102,7 +92,7 @@ KMSClient::KMSClient(const Client::ClientConfiguration& clientConfiguration) :
 KMSClient::KMSClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<KMSErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -113,7 +103,7 @@ KMSClient::KMSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<KMSErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -126,6 +116,7 @@ KMSClient::~KMSClient()
 
 void KMSClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("KMS");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -155,15 +146,7 @@ CancelKeyDeletionOutcome KMSClient::CancelKeyDeletion(const CancelKeyDeletionReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CancelKeyDeletionOutcome(CancelKeyDeletionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CancelKeyDeletionOutcome(outcome.GetError());
-  }
+  return CancelKeyDeletionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CancelKeyDeletionOutcomeCallable KMSClient::CancelKeyDeletionCallable(const CancelKeyDeletionRequest& request) const
@@ -190,15 +173,7 @@ ConnectCustomKeyStoreOutcome KMSClient::ConnectCustomKeyStore(const ConnectCusto
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ConnectCustomKeyStoreOutcome(ConnectCustomKeyStoreResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ConnectCustomKeyStoreOutcome(outcome.GetError());
-  }
+  return ConnectCustomKeyStoreOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ConnectCustomKeyStoreOutcomeCallable KMSClient::ConnectCustomKeyStoreCallable(const ConnectCustomKeyStoreRequest& request) const
@@ -225,15 +200,7 @@ CreateAliasOutcome KMSClient::CreateAlias(const CreateAliasRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateAliasOutcome(NoResult());
-  }
-  else
-  {
-    return CreateAliasOutcome(outcome.GetError());
-  }
+  return CreateAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateAliasOutcomeCallable KMSClient::CreateAliasCallable(const CreateAliasRequest& request) const
@@ -260,15 +227,7 @@ CreateCustomKeyStoreOutcome KMSClient::CreateCustomKeyStore(const CreateCustomKe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateCustomKeyStoreOutcome(CreateCustomKeyStoreResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateCustomKeyStoreOutcome(outcome.GetError());
-  }
+  return CreateCustomKeyStoreOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateCustomKeyStoreOutcomeCallable KMSClient::CreateCustomKeyStoreCallable(const CreateCustomKeyStoreRequest& request) const
@@ -295,15 +254,7 @@ CreateGrantOutcome KMSClient::CreateGrant(const CreateGrantRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateGrantOutcome(CreateGrantResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateGrantOutcome(outcome.GetError());
-  }
+  return CreateGrantOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateGrantOutcomeCallable KMSClient::CreateGrantCallable(const CreateGrantRequest& request) const
@@ -330,15 +281,7 @@ CreateKeyOutcome KMSClient::CreateKey(const CreateKeyRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateKeyOutcome(CreateKeyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateKeyOutcome(outcome.GetError());
-  }
+  return CreateKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateKeyOutcomeCallable KMSClient::CreateKeyCallable(const CreateKeyRequest& request) const
@@ -365,15 +308,7 @@ DecryptOutcome KMSClient::Decrypt(const DecryptRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DecryptOutcome(DecryptResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DecryptOutcome(outcome.GetError());
-  }
+  return DecryptOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DecryptOutcomeCallable KMSClient::DecryptCallable(const DecryptRequest& request) const
@@ -400,15 +335,7 @@ DeleteAliasOutcome KMSClient::DeleteAlias(const DeleteAliasRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteAliasOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteAliasOutcome(outcome.GetError());
-  }
+  return DeleteAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteAliasOutcomeCallable KMSClient::DeleteAliasCallable(const DeleteAliasRequest& request) const
@@ -435,15 +362,7 @@ DeleteCustomKeyStoreOutcome KMSClient::DeleteCustomKeyStore(const DeleteCustomKe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteCustomKeyStoreOutcome(DeleteCustomKeyStoreResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteCustomKeyStoreOutcome(outcome.GetError());
-  }
+  return DeleteCustomKeyStoreOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteCustomKeyStoreOutcomeCallable KMSClient::DeleteCustomKeyStoreCallable(const DeleteCustomKeyStoreRequest& request) const
@@ -470,15 +389,7 @@ DeleteImportedKeyMaterialOutcome KMSClient::DeleteImportedKeyMaterial(const Dele
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteImportedKeyMaterialOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteImportedKeyMaterialOutcome(outcome.GetError());
-  }
+  return DeleteImportedKeyMaterialOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteImportedKeyMaterialOutcomeCallable KMSClient::DeleteImportedKeyMaterialCallable(const DeleteImportedKeyMaterialRequest& request) const
@@ -505,15 +416,7 @@ DescribeCustomKeyStoresOutcome KMSClient::DescribeCustomKeyStores(const Describe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeCustomKeyStoresOutcome(DescribeCustomKeyStoresResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeCustomKeyStoresOutcome(outcome.GetError());
-  }
+  return DescribeCustomKeyStoresOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeCustomKeyStoresOutcomeCallable KMSClient::DescribeCustomKeyStoresCallable(const DescribeCustomKeyStoresRequest& request) const
@@ -540,15 +443,7 @@ DescribeKeyOutcome KMSClient::DescribeKey(const DescribeKeyRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeKeyOutcome(DescribeKeyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeKeyOutcome(outcome.GetError());
-  }
+  return DescribeKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeKeyOutcomeCallable KMSClient::DescribeKeyCallable(const DescribeKeyRequest& request) const
@@ -575,15 +470,7 @@ DisableKeyOutcome KMSClient::DisableKey(const DisableKeyRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisableKeyOutcome(NoResult());
-  }
-  else
-  {
-    return DisableKeyOutcome(outcome.GetError());
-  }
+  return DisableKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisableKeyOutcomeCallable KMSClient::DisableKeyCallable(const DisableKeyRequest& request) const
@@ -610,15 +497,7 @@ DisableKeyRotationOutcome KMSClient::DisableKeyRotation(const DisableKeyRotation
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisableKeyRotationOutcome(NoResult());
-  }
-  else
-  {
-    return DisableKeyRotationOutcome(outcome.GetError());
-  }
+  return DisableKeyRotationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisableKeyRotationOutcomeCallable KMSClient::DisableKeyRotationCallable(const DisableKeyRotationRequest& request) const
@@ -645,15 +524,7 @@ DisconnectCustomKeyStoreOutcome KMSClient::DisconnectCustomKeyStore(const Discon
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisconnectCustomKeyStoreOutcome(DisconnectCustomKeyStoreResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisconnectCustomKeyStoreOutcome(outcome.GetError());
-  }
+  return DisconnectCustomKeyStoreOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisconnectCustomKeyStoreOutcomeCallable KMSClient::DisconnectCustomKeyStoreCallable(const DisconnectCustomKeyStoreRequest& request) const
@@ -680,15 +551,7 @@ EnableKeyOutcome KMSClient::EnableKey(const EnableKeyRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return EnableKeyOutcome(NoResult());
-  }
-  else
-  {
-    return EnableKeyOutcome(outcome.GetError());
-  }
+  return EnableKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 EnableKeyOutcomeCallable KMSClient::EnableKeyCallable(const EnableKeyRequest& request) const
@@ -715,15 +578,7 @@ EnableKeyRotationOutcome KMSClient::EnableKeyRotation(const EnableKeyRotationReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return EnableKeyRotationOutcome(NoResult());
-  }
-  else
-  {
-    return EnableKeyRotationOutcome(outcome.GetError());
-  }
+  return EnableKeyRotationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 EnableKeyRotationOutcomeCallable KMSClient::EnableKeyRotationCallable(const EnableKeyRotationRequest& request) const
@@ -750,15 +605,7 @@ EncryptOutcome KMSClient::Encrypt(const EncryptRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return EncryptOutcome(EncryptResult(outcome.GetResult()));
-  }
-  else
-  {
-    return EncryptOutcome(outcome.GetError());
-  }
+  return EncryptOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 EncryptOutcomeCallable KMSClient::EncryptCallable(const EncryptRequest& request) const
@@ -785,15 +632,7 @@ GenerateDataKeyOutcome KMSClient::GenerateDataKey(const GenerateDataKeyRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GenerateDataKeyOutcome(GenerateDataKeyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GenerateDataKeyOutcome(outcome.GetError());
-  }
+  return GenerateDataKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GenerateDataKeyOutcomeCallable KMSClient::GenerateDataKeyCallable(const GenerateDataKeyRequest& request) const
@@ -820,15 +659,7 @@ GenerateDataKeyPairOutcome KMSClient::GenerateDataKeyPair(const GenerateDataKeyP
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GenerateDataKeyPairOutcome(GenerateDataKeyPairResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GenerateDataKeyPairOutcome(outcome.GetError());
-  }
+  return GenerateDataKeyPairOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GenerateDataKeyPairOutcomeCallable KMSClient::GenerateDataKeyPairCallable(const GenerateDataKeyPairRequest& request) const
@@ -855,15 +686,7 @@ GenerateDataKeyPairWithoutPlaintextOutcome KMSClient::GenerateDataKeyPairWithout
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GenerateDataKeyPairWithoutPlaintextOutcome(GenerateDataKeyPairWithoutPlaintextResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GenerateDataKeyPairWithoutPlaintextOutcome(outcome.GetError());
-  }
+  return GenerateDataKeyPairWithoutPlaintextOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GenerateDataKeyPairWithoutPlaintextOutcomeCallable KMSClient::GenerateDataKeyPairWithoutPlaintextCallable(const GenerateDataKeyPairWithoutPlaintextRequest& request) const
@@ -890,15 +713,7 @@ GenerateDataKeyWithoutPlaintextOutcome KMSClient::GenerateDataKeyWithoutPlaintex
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GenerateDataKeyWithoutPlaintextOutcome(GenerateDataKeyWithoutPlaintextResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GenerateDataKeyWithoutPlaintextOutcome(outcome.GetError());
-  }
+  return GenerateDataKeyWithoutPlaintextOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GenerateDataKeyWithoutPlaintextOutcomeCallable KMSClient::GenerateDataKeyWithoutPlaintextCallable(const GenerateDataKeyWithoutPlaintextRequest& request) const
@@ -925,15 +740,7 @@ GenerateRandomOutcome KMSClient::GenerateRandom(const GenerateRandomRequest& req
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GenerateRandomOutcome(GenerateRandomResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GenerateRandomOutcome(outcome.GetError());
-  }
+  return GenerateRandomOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GenerateRandomOutcomeCallable KMSClient::GenerateRandomCallable(const GenerateRandomRequest& request) const
@@ -960,15 +767,7 @@ GetKeyPolicyOutcome KMSClient::GetKeyPolicy(const GetKeyPolicyRequest& request) 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetKeyPolicyOutcome(GetKeyPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetKeyPolicyOutcome(outcome.GetError());
-  }
+  return GetKeyPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetKeyPolicyOutcomeCallable KMSClient::GetKeyPolicyCallable(const GetKeyPolicyRequest& request) const
@@ -995,15 +794,7 @@ GetKeyRotationStatusOutcome KMSClient::GetKeyRotationStatus(const GetKeyRotation
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetKeyRotationStatusOutcome(GetKeyRotationStatusResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetKeyRotationStatusOutcome(outcome.GetError());
-  }
+  return GetKeyRotationStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetKeyRotationStatusOutcomeCallable KMSClient::GetKeyRotationStatusCallable(const GetKeyRotationStatusRequest& request) const
@@ -1030,15 +821,7 @@ GetParametersForImportOutcome KMSClient::GetParametersForImport(const GetParamet
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetParametersForImportOutcome(GetParametersForImportResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetParametersForImportOutcome(outcome.GetError());
-  }
+  return GetParametersForImportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetParametersForImportOutcomeCallable KMSClient::GetParametersForImportCallable(const GetParametersForImportRequest& request) const
@@ -1065,15 +848,7 @@ GetPublicKeyOutcome KMSClient::GetPublicKey(const GetPublicKeyRequest& request) 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetPublicKeyOutcome(GetPublicKeyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetPublicKeyOutcome(outcome.GetError());
-  }
+  return GetPublicKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetPublicKeyOutcomeCallable KMSClient::GetPublicKeyCallable(const GetPublicKeyRequest& request) const
@@ -1100,15 +875,7 @@ ImportKeyMaterialOutcome KMSClient::ImportKeyMaterial(const ImportKeyMaterialReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ImportKeyMaterialOutcome(ImportKeyMaterialResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ImportKeyMaterialOutcome(outcome.GetError());
-  }
+  return ImportKeyMaterialOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ImportKeyMaterialOutcomeCallable KMSClient::ImportKeyMaterialCallable(const ImportKeyMaterialRequest& request) const
@@ -1135,15 +902,7 @@ ListAliasesOutcome KMSClient::ListAliases(const ListAliasesRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListAliasesOutcome(ListAliasesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListAliasesOutcome(outcome.GetError());
-  }
+  return ListAliasesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListAliasesOutcomeCallable KMSClient::ListAliasesCallable(const ListAliasesRequest& request) const
@@ -1170,15 +929,7 @@ ListGrantsOutcome KMSClient::ListGrants(const ListGrantsRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListGrantsOutcome(ListGrantsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListGrantsOutcome(outcome.GetError());
-  }
+  return ListGrantsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListGrantsOutcomeCallable KMSClient::ListGrantsCallable(const ListGrantsRequest& request) const
@@ -1205,15 +956,7 @@ ListKeyPoliciesOutcome KMSClient::ListKeyPolicies(const ListKeyPoliciesRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListKeyPoliciesOutcome(ListKeyPoliciesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListKeyPoliciesOutcome(outcome.GetError());
-  }
+  return ListKeyPoliciesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListKeyPoliciesOutcomeCallable KMSClient::ListKeyPoliciesCallable(const ListKeyPoliciesRequest& request) const
@@ -1240,15 +983,7 @@ ListKeysOutcome KMSClient::ListKeys(const ListKeysRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListKeysOutcome(ListKeysResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListKeysOutcome(outcome.GetError());
-  }
+  return ListKeysOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListKeysOutcomeCallable KMSClient::ListKeysCallable(const ListKeysRequest& request) const
@@ -1275,15 +1010,7 @@ ListResourceTagsOutcome KMSClient::ListResourceTags(const ListResourceTagsReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListResourceTagsOutcome(ListResourceTagsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListResourceTagsOutcome(outcome.GetError());
-  }
+  return ListResourceTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListResourceTagsOutcomeCallable KMSClient::ListResourceTagsCallable(const ListResourceTagsRequest& request) const
@@ -1310,15 +1037,7 @@ ListRetirableGrantsOutcome KMSClient::ListRetirableGrants(const ListRetirableGra
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListRetirableGrantsOutcome(ListRetirableGrantsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListRetirableGrantsOutcome(outcome.GetError());
-  }
+  return ListRetirableGrantsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListRetirableGrantsOutcomeCallable KMSClient::ListRetirableGrantsCallable(const ListRetirableGrantsRequest& request) const
@@ -1345,15 +1064,7 @@ PutKeyPolicyOutcome KMSClient::PutKeyPolicy(const PutKeyPolicyRequest& request) 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutKeyPolicyOutcome(NoResult());
-  }
-  else
-  {
-    return PutKeyPolicyOutcome(outcome.GetError());
-  }
+  return PutKeyPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutKeyPolicyOutcomeCallable KMSClient::PutKeyPolicyCallable(const PutKeyPolicyRequest& request) const
@@ -1380,15 +1091,7 @@ ReEncryptOutcome KMSClient::ReEncrypt(const ReEncryptRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ReEncryptOutcome(ReEncryptResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ReEncryptOutcome(outcome.GetError());
-  }
+  return ReEncryptOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ReEncryptOutcomeCallable KMSClient::ReEncryptCallable(const ReEncryptRequest& request) const
@@ -1415,15 +1118,7 @@ RetireGrantOutcome KMSClient::RetireGrant(const RetireGrantRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RetireGrantOutcome(NoResult());
-  }
-  else
-  {
-    return RetireGrantOutcome(outcome.GetError());
-  }
+  return RetireGrantOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RetireGrantOutcomeCallable KMSClient::RetireGrantCallable(const RetireGrantRequest& request) const
@@ -1450,15 +1145,7 @@ RevokeGrantOutcome KMSClient::RevokeGrant(const RevokeGrantRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RevokeGrantOutcome(NoResult());
-  }
-  else
-  {
-    return RevokeGrantOutcome(outcome.GetError());
-  }
+  return RevokeGrantOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RevokeGrantOutcomeCallable KMSClient::RevokeGrantCallable(const RevokeGrantRequest& request) const
@@ -1485,15 +1172,7 @@ ScheduleKeyDeletionOutcome KMSClient::ScheduleKeyDeletion(const ScheduleKeyDelet
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ScheduleKeyDeletionOutcome(ScheduleKeyDeletionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ScheduleKeyDeletionOutcome(outcome.GetError());
-  }
+  return ScheduleKeyDeletionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ScheduleKeyDeletionOutcomeCallable KMSClient::ScheduleKeyDeletionCallable(const ScheduleKeyDeletionRequest& request) const
@@ -1520,15 +1199,7 @@ SignOutcome KMSClient::Sign(const SignRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SignOutcome(SignResult(outcome.GetResult()));
-  }
-  else
-  {
-    return SignOutcome(outcome.GetError());
-  }
+  return SignOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SignOutcomeCallable KMSClient::SignCallable(const SignRequest& request) const
@@ -1555,15 +1226,7 @@ TagResourceOutcome KMSClient::TagResource(const TagResourceRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(NoResult());
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable KMSClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -1590,15 +1253,7 @@ UntagResourceOutcome KMSClient::UntagResource(const UntagResourceRequest& reques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(NoResult());
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable KMSClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -1625,15 +1280,7 @@ UpdateAliasOutcome KMSClient::UpdateAlias(const UpdateAliasRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateAliasOutcome(NoResult());
-  }
-  else
-  {
-    return UpdateAliasOutcome(outcome.GetError());
-  }
+  return UpdateAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateAliasOutcomeCallable KMSClient::UpdateAliasCallable(const UpdateAliasRequest& request) const
@@ -1660,15 +1307,7 @@ UpdateCustomKeyStoreOutcome KMSClient::UpdateCustomKeyStore(const UpdateCustomKe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateCustomKeyStoreOutcome(UpdateCustomKeyStoreResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateCustomKeyStoreOutcome(outcome.GetError());
-  }
+  return UpdateCustomKeyStoreOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateCustomKeyStoreOutcomeCallable KMSClient::UpdateCustomKeyStoreCallable(const UpdateCustomKeyStoreRequest& request) const
@@ -1695,15 +1334,7 @@ UpdateKeyDescriptionOutcome KMSClient::UpdateKeyDescription(const UpdateKeyDescr
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateKeyDescriptionOutcome(NoResult());
-  }
-  else
-  {
-    return UpdateKeyDescriptionOutcome(outcome.GetError());
-  }
+  return UpdateKeyDescriptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateKeyDescriptionOutcomeCallable KMSClient::UpdateKeyDescriptionCallable(const UpdateKeyDescriptionRequest& request) const
@@ -1730,15 +1361,7 @@ VerifyOutcome KMSClient::Verify(const VerifyRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return VerifyOutcome(VerifyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return VerifyOutcome(outcome.GetError());
-  }
+  return VerifyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 VerifyOutcomeCallable KMSClient::VerifyCallable(const VerifyRequest& request) const

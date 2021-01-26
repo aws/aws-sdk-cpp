@@ -1,23 +1,18 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lambda/model/EventSourcePosition.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/lambda/model/DestinationConfig.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lambda/model/SelfManagedEventSource.h>
+#include <aws/lambda/model/SourceAccessConfiguration.h>
+#include <aws/lambda/model/FunctionResponseType.h>
 #include <utility>
 
 namespace Aws
@@ -87,6 +82,73 @@ namespace Model
 
 
     /**
+     * <p>The position in a stream from which to start reading. Required for Amazon
+     * Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources.
+     * <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
+     */
+    inline const EventSourcePosition& GetStartingPosition() const{ return m_startingPosition; }
+
+    /**
+     * <p>The position in a stream from which to start reading. Required for Amazon
+     * Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources.
+     * <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
+     */
+    inline void SetStartingPosition(const EventSourcePosition& value) { m_startingPosition = value; }
+
+    /**
+     * <p>The position in a stream from which to start reading. Required for Amazon
+     * Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources.
+     * <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
+     */
+    inline void SetStartingPosition(EventSourcePosition&& value) { m_startingPosition = std::move(value); }
+
+    /**
+     * <p>The position in a stream from which to start reading. Required for Amazon
+     * Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources.
+     * <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
+     */
+    inline UpdateEventSourceMappingResult& WithStartingPosition(const EventSourcePosition& value) { SetStartingPosition(value); return *this;}
+
+    /**
+     * <p>The position in a stream from which to start reading. Required for Amazon
+     * Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources.
+     * <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
+     */
+    inline UpdateEventSourceMappingResult& WithStartingPosition(EventSourcePosition&& value) { SetStartingPosition(std::move(value)); return *this;}
+
+
+    /**
+     * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time
+     * from which to start reading.</p>
+     */
+    inline const Aws::Utils::DateTime& GetStartingPositionTimestamp() const{ return m_startingPositionTimestamp; }
+
+    /**
+     * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time
+     * from which to start reading.</p>
+     */
+    inline void SetStartingPositionTimestamp(const Aws::Utils::DateTime& value) { m_startingPositionTimestamp = value; }
+
+    /**
+     * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time
+     * from which to start reading.</p>
+     */
+    inline void SetStartingPositionTimestamp(Aws::Utils::DateTime&& value) { m_startingPositionTimestamp = std::move(value); }
+
+    /**
+     * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time
+     * from which to start reading.</p>
+     */
+    inline UpdateEventSourceMappingResult& WithStartingPositionTimestamp(const Aws::Utils::DateTime& value) { SetStartingPositionTimestamp(value); return *this;}
+
+    /**
+     * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time
+     * from which to start reading.</p>
+     */
+    inline UpdateEventSourceMappingResult& WithStartingPositionTimestamp(Aws::Utils::DateTime&& value) { SetStartingPositionTimestamp(std::move(value)); return *this;}
+
+
+    /**
      * <p>The maximum number of items to retrieve in a single batch.</p>
      */
     inline int GetBatchSize() const{ return m_batchSize; }
@@ -103,36 +165,39 @@ namespace Model
 
 
     /**
-     * <p>(Streams) The maximum amount of time to gather records before invoking the
-     * function, in seconds.</p>
+     * <p>(Streams and SQS standard queues) The maximum amount of time to gather
+     * records before invoking the function, in seconds. The default value is zero.</p>
      */
     inline int GetMaximumBatchingWindowInSeconds() const{ return m_maximumBatchingWindowInSeconds; }
 
     /**
-     * <p>(Streams) The maximum amount of time to gather records before invoking the
-     * function, in seconds.</p>
+     * <p>(Streams and SQS standard queues) The maximum amount of time to gather
+     * records before invoking the function, in seconds. The default value is zero.</p>
      */
     inline void SetMaximumBatchingWindowInSeconds(int value) { m_maximumBatchingWindowInSeconds = value; }
 
     /**
-     * <p>(Streams) The maximum amount of time to gather records before invoking the
-     * function, in seconds.</p>
+     * <p>(Streams and SQS standard queues) The maximum amount of time to gather
+     * records before invoking the function, in seconds. The default value is zero.</p>
      */
     inline UpdateEventSourceMappingResult& WithMaximumBatchingWindowInSeconds(int value) { SetMaximumBatchingWindowInSeconds(value); return *this;}
 
 
     /**
-     * <p>(Streams) The number of batches to process from each shard concurrently.</p>
+     * <p>(Streams) The number of batches to process from each shard concurrently. The
+     * default value is 1.</p>
      */
     inline int GetParallelizationFactor() const{ return m_parallelizationFactor; }
 
     /**
-     * <p>(Streams) The number of batches to process from each shard concurrently.</p>
+     * <p>(Streams) The number of batches to process from each shard concurrently. The
+     * default value is 1.</p>
      */
     inline void SetParallelizationFactor(int value) { m_parallelizationFactor = value; }
 
     /**
-     * <p>(Streams) The number of batches to process from each shard concurrently.</p>
+     * <p>(Streams) The number of batches to process from each shard concurrently. The
+     * default value is 1.</p>
      */
     inline UpdateEventSourceMappingResult& WithParallelizationFactor(int value) { SetParallelizationFactor(value); return *this;}
 
@@ -408,64 +473,287 @@ namespace Model
 
 
     /**
-     * <p>(Streams) The maximum age of a record that Lambda sends to a function for
-     * processing.</p>
+     * <p>The name of the Kafka topic.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetTopics() const{ return m_topics; }
+
+    /**
+     * <p>The name of the Kafka topic.</p>
+     */
+    inline void SetTopics(const Aws::Vector<Aws::String>& value) { m_topics = value; }
+
+    /**
+     * <p>The name of the Kafka topic.</p>
+     */
+    inline void SetTopics(Aws::Vector<Aws::String>&& value) { m_topics = std::move(value); }
+
+    /**
+     * <p>The name of the Kafka topic.</p>
+     */
+    inline UpdateEventSourceMappingResult& WithTopics(const Aws::Vector<Aws::String>& value) { SetTopics(value); return *this;}
+
+    /**
+     * <p>The name of the Kafka topic.</p>
+     */
+    inline UpdateEventSourceMappingResult& WithTopics(Aws::Vector<Aws::String>&& value) { SetTopics(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the Kafka topic.</p>
+     */
+    inline UpdateEventSourceMappingResult& AddTopics(const Aws::String& value) { m_topics.push_back(value); return *this; }
+
+    /**
+     * <p>The name of the Kafka topic.</p>
+     */
+    inline UpdateEventSourceMappingResult& AddTopics(Aws::String&& value) { m_topics.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The name of the Kafka topic.</p>
+     */
+    inline UpdateEventSourceMappingResult& AddTopics(const char* value) { m_topics.push_back(value); return *this; }
+
+
+    /**
+     * <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetQueues() const{ return m_queues; }
+
+    /**
+     * <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
+     */
+    inline void SetQueues(const Aws::Vector<Aws::String>& value) { m_queues = value; }
+
+    /**
+     * <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
+     */
+    inline void SetQueues(Aws::Vector<Aws::String>&& value) { m_queues = std::move(value); }
+
+    /**
+     * <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
+     */
+    inline UpdateEventSourceMappingResult& WithQueues(const Aws::Vector<Aws::String>& value) { SetQueues(value); return *this;}
+
+    /**
+     * <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
+     */
+    inline UpdateEventSourceMappingResult& WithQueues(Aws::Vector<Aws::String>&& value) { SetQueues(std::move(value)); return *this;}
+
+    /**
+     * <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
+     */
+    inline UpdateEventSourceMappingResult& AddQueues(const Aws::String& value) { m_queues.push_back(value); return *this; }
+
+    /**
+     * <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
+     */
+    inline UpdateEventSourceMappingResult& AddQueues(Aws::String&& value) { m_queues.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
+     */
+    inline UpdateEventSourceMappingResult& AddQueues(const char* value) { m_queues.push_back(value); return *this; }
+
+
+    /**
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
+     */
+    inline const Aws::Vector<SourceAccessConfiguration>& GetSourceAccessConfigurations() const{ return m_sourceAccessConfigurations; }
+
+    /**
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
+     */
+    inline void SetSourceAccessConfigurations(const Aws::Vector<SourceAccessConfiguration>& value) { m_sourceAccessConfigurations = value; }
+
+    /**
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
+     */
+    inline void SetSourceAccessConfigurations(Aws::Vector<SourceAccessConfiguration>&& value) { m_sourceAccessConfigurations = std::move(value); }
+
+    /**
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
+     */
+    inline UpdateEventSourceMappingResult& WithSourceAccessConfigurations(const Aws::Vector<SourceAccessConfiguration>& value) { SetSourceAccessConfigurations(value); return *this;}
+
+    /**
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
+     */
+    inline UpdateEventSourceMappingResult& WithSourceAccessConfigurations(Aws::Vector<SourceAccessConfiguration>&& value) { SetSourceAccessConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
+     */
+    inline UpdateEventSourceMappingResult& AddSourceAccessConfigurations(const SourceAccessConfiguration& value) { m_sourceAccessConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
+     */
+    inline UpdateEventSourceMappingResult& AddSourceAccessConfigurations(SourceAccessConfiguration&& value) { m_sourceAccessConfigurations.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The Self-Managed Apache Kafka cluster for your event source.</p>
+     */
+    inline const SelfManagedEventSource& GetSelfManagedEventSource() const{ return m_selfManagedEventSource; }
+
+    /**
+     * <p>The Self-Managed Apache Kafka cluster for your event source.</p>
+     */
+    inline void SetSelfManagedEventSource(const SelfManagedEventSource& value) { m_selfManagedEventSource = value; }
+
+    /**
+     * <p>The Self-Managed Apache Kafka cluster for your event source.</p>
+     */
+    inline void SetSelfManagedEventSource(SelfManagedEventSource&& value) { m_selfManagedEventSource = std::move(value); }
+
+    /**
+     * <p>The Self-Managed Apache Kafka cluster for your event source.</p>
+     */
+    inline UpdateEventSourceMappingResult& WithSelfManagedEventSource(const SelfManagedEventSource& value) { SetSelfManagedEventSource(value); return *this;}
+
+    /**
+     * <p>The Self-Managed Apache Kafka cluster for your event source.</p>
+     */
+    inline UpdateEventSourceMappingResult& WithSelfManagedEventSource(SelfManagedEventSource&& value) { SetSelfManagedEventSource(std::move(value)); return *this;}
+
+
+    /**
+     * <p>(Streams) Discard records older than the specified age. The default value is
+     * infinite (-1). When set to infinite (-1), failed records are retried until the
+     * record expires.</p>
      */
     inline int GetMaximumRecordAgeInSeconds() const{ return m_maximumRecordAgeInSeconds; }
 
     /**
-     * <p>(Streams) The maximum age of a record that Lambda sends to a function for
-     * processing.</p>
+     * <p>(Streams) Discard records older than the specified age. The default value is
+     * infinite (-1). When set to infinite (-1), failed records are retried until the
+     * record expires.</p>
      */
     inline void SetMaximumRecordAgeInSeconds(int value) { m_maximumRecordAgeInSeconds = value; }
 
     /**
-     * <p>(Streams) The maximum age of a record that Lambda sends to a function for
-     * processing.</p>
+     * <p>(Streams) Discard records older than the specified age. The default value is
+     * infinite (-1). When set to infinite (-1), failed records are retried until the
+     * record expires.</p>
      */
     inline UpdateEventSourceMappingResult& WithMaximumRecordAgeInSeconds(int value) { SetMaximumRecordAgeInSeconds(value); return *this;}
 
 
     /**
-     * <p>(Streams) If the function returns an error, split the batch in two and
-     * retry.</p>
+     * <p>(Streams) If the function returns an error, split the batch in two and retry.
+     * The default value is false.</p>
      */
     inline bool GetBisectBatchOnFunctionError() const{ return m_bisectBatchOnFunctionError; }
 
     /**
-     * <p>(Streams) If the function returns an error, split the batch in two and
-     * retry.</p>
+     * <p>(Streams) If the function returns an error, split the batch in two and retry.
+     * The default value is false.</p>
      */
     inline void SetBisectBatchOnFunctionError(bool value) { m_bisectBatchOnFunctionError = value; }
 
     /**
-     * <p>(Streams) If the function returns an error, split the batch in two and
-     * retry.</p>
+     * <p>(Streams) If the function returns an error, split the batch in two and retry.
+     * The default value is false.</p>
      */
     inline UpdateEventSourceMappingResult& WithBisectBatchOnFunctionError(bool value) { SetBisectBatchOnFunctionError(value); return *this;}
 
 
     /**
-     * <p>(Streams) The maximum number of times to retry when the function returns an
-     * error.</p>
+     * <p>(Streams) Discard records after the specified number of retries. The default
+     * value is infinite (-1). When set to infinite (-1), failed records are retried
+     * until the record expires.</p>
      */
     inline int GetMaximumRetryAttempts() const{ return m_maximumRetryAttempts; }
 
     /**
-     * <p>(Streams) The maximum number of times to retry when the function returns an
-     * error.</p>
+     * <p>(Streams) Discard records after the specified number of retries. The default
+     * value is infinite (-1). When set to infinite (-1), failed records are retried
+     * until the record expires.</p>
      */
     inline void SetMaximumRetryAttempts(int value) { m_maximumRetryAttempts = value; }
 
     /**
-     * <p>(Streams) The maximum number of times to retry when the function returns an
-     * error.</p>
+     * <p>(Streams) Discard records after the specified number of retries. The default
+     * value is infinite (-1). When set to infinite (-1), failed records are retried
+     * until the record expires.</p>
      */
     inline UpdateEventSourceMappingResult& WithMaximumRetryAttempts(int value) { SetMaximumRetryAttempts(value); return *this;}
+
+
+    /**
+     * <p>(Streams) The duration of a processing window in seconds. The range is
+     * between 1 second up to 15 minutes.</p>
+     */
+    inline int GetTumblingWindowInSeconds() const{ return m_tumblingWindowInSeconds; }
+
+    /**
+     * <p>(Streams) The duration of a processing window in seconds. The range is
+     * between 1 second up to 15 minutes.</p>
+     */
+    inline void SetTumblingWindowInSeconds(int value) { m_tumblingWindowInSeconds = value; }
+
+    /**
+     * <p>(Streams) The duration of a processing window in seconds. The range is
+     * between 1 second up to 15 minutes.</p>
+     */
+    inline UpdateEventSourceMappingResult& WithTumblingWindowInSeconds(int value) { SetTumblingWindowInSeconds(value); return *this;}
+
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline const Aws::Vector<FunctionResponseType>& GetFunctionResponseTypes() const{ return m_functionResponseTypes; }
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline void SetFunctionResponseTypes(const Aws::Vector<FunctionResponseType>& value) { m_functionResponseTypes = value; }
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline void SetFunctionResponseTypes(Aws::Vector<FunctionResponseType>&& value) { m_functionResponseTypes = std::move(value); }
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline UpdateEventSourceMappingResult& WithFunctionResponseTypes(const Aws::Vector<FunctionResponseType>& value) { SetFunctionResponseTypes(value); return *this;}
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline UpdateEventSourceMappingResult& WithFunctionResponseTypes(Aws::Vector<FunctionResponseType>&& value) { SetFunctionResponseTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline UpdateEventSourceMappingResult& AddFunctionResponseTypes(const FunctionResponseType& value) { m_functionResponseTypes.push_back(value); return *this; }
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline UpdateEventSourceMappingResult& AddFunctionResponseTypes(FunctionResponseType&& value) { m_functionResponseTypes.push_back(std::move(value)); return *this; }
 
   private:
 
     Aws::String m_uUID;
+
+    EventSourcePosition m_startingPosition;
+
+    Aws::Utils::DateTime m_startingPositionTimestamp;
 
     int m_batchSize;
 
@@ -487,11 +775,23 @@ namespace Model
 
     DestinationConfig m_destinationConfig;
 
+    Aws::Vector<Aws::String> m_topics;
+
+    Aws::Vector<Aws::String> m_queues;
+
+    Aws::Vector<SourceAccessConfiguration> m_sourceAccessConfigurations;
+
+    SelfManagedEventSource m_selfManagedEventSource;
+
     int m_maximumRecordAgeInSeconds;
 
     bool m_bisectBatchOnFunctionError;
 
     int m_maximumRetryAttempts;
+
+    int m_tumblingWindowInSeconds;
+
+    Aws::Vector<FunctionResponseType> m_functionResponseTypes;
   };
 
 } // namespace Model

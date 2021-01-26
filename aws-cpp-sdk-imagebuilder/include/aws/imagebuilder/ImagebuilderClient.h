@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
@@ -23,12 +13,14 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/imagebuilder/model/CancelImageCreationResult.h>
 #include <aws/imagebuilder/model/CreateComponentResult.h>
+#include <aws/imagebuilder/model/CreateContainerRecipeResult.h>
 #include <aws/imagebuilder/model/CreateDistributionConfigurationResult.h>
 #include <aws/imagebuilder/model/CreateImageResult.h>
 #include <aws/imagebuilder/model/CreateImagePipelineResult.h>
 #include <aws/imagebuilder/model/CreateImageRecipeResult.h>
 #include <aws/imagebuilder/model/CreateInfrastructureConfigurationResult.h>
 #include <aws/imagebuilder/model/DeleteComponentResult.h>
+#include <aws/imagebuilder/model/DeleteContainerRecipeResult.h>
 #include <aws/imagebuilder/model/DeleteDistributionConfigurationResult.h>
 #include <aws/imagebuilder/model/DeleteImageResult.h>
 #include <aws/imagebuilder/model/DeleteImagePipelineResult.h>
@@ -36,6 +28,8 @@
 #include <aws/imagebuilder/model/DeleteInfrastructureConfigurationResult.h>
 #include <aws/imagebuilder/model/GetComponentResult.h>
 #include <aws/imagebuilder/model/GetComponentPolicyResult.h>
+#include <aws/imagebuilder/model/GetContainerRecipeResult.h>
+#include <aws/imagebuilder/model/GetContainerRecipePolicyResult.h>
 #include <aws/imagebuilder/model/GetDistributionConfigurationResult.h>
 #include <aws/imagebuilder/model/GetImageResult.h>
 #include <aws/imagebuilder/model/GetImagePipelineResult.h>
@@ -46,6 +40,7 @@
 #include <aws/imagebuilder/model/ImportComponentResult.h>
 #include <aws/imagebuilder/model/ListComponentBuildVersionsResult.h>
 #include <aws/imagebuilder/model/ListComponentsResult.h>
+#include <aws/imagebuilder/model/ListContainerRecipesResult.h>
 #include <aws/imagebuilder/model/ListDistributionConfigurationsResult.h>
 #include <aws/imagebuilder/model/ListImageBuildVersionsResult.h>
 #include <aws/imagebuilder/model/ListImagePipelineImagesResult.h>
@@ -55,6 +50,7 @@
 #include <aws/imagebuilder/model/ListInfrastructureConfigurationsResult.h>
 #include <aws/imagebuilder/model/ListTagsForResourceResult.h>
 #include <aws/imagebuilder/model/PutComponentPolicyResult.h>
+#include <aws/imagebuilder/model/PutContainerRecipePolicyResult.h>
 #include <aws/imagebuilder/model/PutImagePolicyResult.h>
 #include <aws/imagebuilder/model/PutImageRecipePolicyResult.h>
 #include <aws/imagebuilder/model/StartImagePipelineExecutionResult.h>
@@ -104,12 +100,14 @@ namespace Model
 {
         class CancelImageCreationRequest;
         class CreateComponentRequest;
+        class CreateContainerRecipeRequest;
         class CreateDistributionConfigurationRequest;
         class CreateImageRequest;
         class CreateImagePipelineRequest;
         class CreateImageRecipeRequest;
         class CreateInfrastructureConfigurationRequest;
         class DeleteComponentRequest;
+        class DeleteContainerRecipeRequest;
         class DeleteDistributionConfigurationRequest;
         class DeleteImageRequest;
         class DeleteImagePipelineRequest;
@@ -117,6 +115,8 @@ namespace Model
         class DeleteInfrastructureConfigurationRequest;
         class GetComponentRequest;
         class GetComponentPolicyRequest;
+        class GetContainerRecipeRequest;
+        class GetContainerRecipePolicyRequest;
         class GetDistributionConfigurationRequest;
         class GetImageRequest;
         class GetImagePipelineRequest;
@@ -127,6 +127,7 @@ namespace Model
         class ImportComponentRequest;
         class ListComponentBuildVersionsRequest;
         class ListComponentsRequest;
+        class ListContainerRecipesRequest;
         class ListDistributionConfigurationsRequest;
         class ListImageBuildVersionsRequest;
         class ListImagePipelineImagesRequest;
@@ -136,6 +137,7 @@ namespace Model
         class ListInfrastructureConfigurationsRequest;
         class ListTagsForResourceRequest;
         class PutComponentPolicyRequest;
+        class PutContainerRecipePolicyRequest;
         class PutImagePolicyRequest;
         class PutImageRecipePolicyRequest;
         class StartImagePipelineExecutionRequest;
@@ -145,57 +147,65 @@ namespace Model
         class UpdateImagePipelineRequest;
         class UpdateInfrastructureConfigurationRequest;
 
-        typedef Aws::Utils::Outcome<CancelImageCreationResult, Aws::Client::AWSError<ImagebuilderErrors>> CancelImageCreationOutcome;
-        typedef Aws::Utils::Outcome<CreateComponentResult, Aws::Client::AWSError<ImagebuilderErrors>> CreateComponentOutcome;
-        typedef Aws::Utils::Outcome<CreateDistributionConfigurationResult, Aws::Client::AWSError<ImagebuilderErrors>> CreateDistributionConfigurationOutcome;
-        typedef Aws::Utils::Outcome<CreateImageResult, Aws::Client::AWSError<ImagebuilderErrors>> CreateImageOutcome;
-        typedef Aws::Utils::Outcome<CreateImagePipelineResult, Aws::Client::AWSError<ImagebuilderErrors>> CreateImagePipelineOutcome;
-        typedef Aws::Utils::Outcome<CreateImageRecipeResult, Aws::Client::AWSError<ImagebuilderErrors>> CreateImageRecipeOutcome;
-        typedef Aws::Utils::Outcome<CreateInfrastructureConfigurationResult, Aws::Client::AWSError<ImagebuilderErrors>> CreateInfrastructureConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DeleteComponentResult, Aws::Client::AWSError<ImagebuilderErrors>> DeleteComponentOutcome;
-        typedef Aws::Utils::Outcome<DeleteDistributionConfigurationResult, Aws::Client::AWSError<ImagebuilderErrors>> DeleteDistributionConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DeleteImageResult, Aws::Client::AWSError<ImagebuilderErrors>> DeleteImageOutcome;
-        typedef Aws::Utils::Outcome<DeleteImagePipelineResult, Aws::Client::AWSError<ImagebuilderErrors>> DeleteImagePipelineOutcome;
-        typedef Aws::Utils::Outcome<DeleteImageRecipeResult, Aws::Client::AWSError<ImagebuilderErrors>> DeleteImageRecipeOutcome;
-        typedef Aws::Utils::Outcome<DeleteInfrastructureConfigurationResult, Aws::Client::AWSError<ImagebuilderErrors>> DeleteInfrastructureConfigurationOutcome;
-        typedef Aws::Utils::Outcome<GetComponentResult, Aws::Client::AWSError<ImagebuilderErrors>> GetComponentOutcome;
-        typedef Aws::Utils::Outcome<GetComponentPolicyResult, Aws::Client::AWSError<ImagebuilderErrors>> GetComponentPolicyOutcome;
-        typedef Aws::Utils::Outcome<GetDistributionConfigurationResult, Aws::Client::AWSError<ImagebuilderErrors>> GetDistributionConfigurationOutcome;
-        typedef Aws::Utils::Outcome<GetImageResult, Aws::Client::AWSError<ImagebuilderErrors>> GetImageOutcome;
-        typedef Aws::Utils::Outcome<GetImagePipelineResult, Aws::Client::AWSError<ImagebuilderErrors>> GetImagePipelineOutcome;
-        typedef Aws::Utils::Outcome<GetImagePolicyResult, Aws::Client::AWSError<ImagebuilderErrors>> GetImagePolicyOutcome;
-        typedef Aws::Utils::Outcome<GetImageRecipeResult, Aws::Client::AWSError<ImagebuilderErrors>> GetImageRecipeOutcome;
-        typedef Aws::Utils::Outcome<GetImageRecipePolicyResult, Aws::Client::AWSError<ImagebuilderErrors>> GetImageRecipePolicyOutcome;
-        typedef Aws::Utils::Outcome<GetInfrastructureConfigurationResult, Aws::Client::AWSError<ImagebuilderErrors>> GetInfrastructureConfigurationOutcome;
-        typedef Aws::Utils::Outcome<ImportComponentResult, Aws::Client::AWSError<ImagebuilderErrors>> ImportComponentOutcome;
-        typedef Aws::Utils::Outcome<ListComponentBuildVersionsResult, Aws::Client::AWSError<ImagebuilderErrors>> ListComponentBuildVersionsOutcome;
-        typedef Aws::Utils::Outcome<ListComponentsResult, Aws::Client::AWSError<ImagebuilderErrors>> ListComponentsOutcome;
-        typedef Aws::Utils::Outcome<ListDistributionConfigurationsResult, Aws::Client::AWSError<ImagebuilderErrors>> ListDistributionConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<ListImageBuildVersionsResult, Aws::Client::AWSError<ImagebuilderErrors>> ListImageBuildVersionsOutcome;
-        typedef Aws::Utils::Outcome<ListImagePipelineImagesResult, Aws::Client::AWSError<ImagebuilderErrors>> ListImagePipelineImagesOutcome;
-        typedef Aws::Utils::Outcome<ListImagePipelinesResult, Aws::Client::AWSError<ImagebuilderErrors>> ListImagePipelinesOutcome;
-        typedef Aws::Utils::Outcome<ListImageRecipesResult, Aws::Client::AWSError<ImagebuilderErrors>> ListImageRecipesOutcome;
-        typedef Aws::Utils::Outcome<ListImagesResult, Aws::Client::AWSError<ImagebuilderErrors>> ListImagesOutcome;
-        typedef Aws::Utils::Outcome<ListInfrastructureConfigurationsResult, Aws::Client::AWSError<ImagebuilderErrors>> ListInfrastructureConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<ImagebuilderErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PutComponentPolicyResult, Aws::Client::AWSError<ImagebuilderErrors>> PutComponentPolicyOutcome;
-        typedef Aws::Utils::Outcome<PutImagePolicyResult, Aws::Client::AWSError<ImagebuilderErrors>> PutImagePolicyOutcome;
-        typedef Aws::Utils::Outcome<PutImageRecipePolicyResult, Aws::Client::AWSError<ImagebuilderErrors>> PutImageRecipePolicyOutcome;
-        typedef Aws::Utils::Outcome<StartImagePipelineExecutionResult, Aws::Client::AWSError<ImagebuilderErrors>> StartImagePipelineExecutionOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<ImagebuilderErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<ImagebuilderErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateDistributionConfigurationResult, Aws::Client::AWSError<ImagebuilderErrors>> UpdateDistributionConfigurationOutcome;
-        typedef Aws::Utils::Outcome<UpdateImagePipelineResult, Aws::Client::AWSError<ImagebuilderErrors>> UpdateImagePipelineOutcome;
-        typedef Aws::Utils::Outcome<UpdateInfrastructureConfigurationResult, Aws::Client::AWSError<ImagebuilderErrors>> UpdateInfrastructureConfigurationOutcome;
+        typedef Aws::Utils::Outcome<CancelImageCreationResult, ImagebuilderError> CancelImageCreationOutcome;
+        typedef Aws::Utils::Outcome<CreateComponentResult, ImagebuilderError> CreateComponentOutcome;
+        typedef Aws::Utils::Outcome<CreateContainerRecipeResult, ImagebuilderError> CreateContainerRecipeOutcome;
+        typedef Aws::Utils::Outcome<CreateDistributionConfigurationResult, ImagebuilderError> CreateDistributionConfigurationOutcome;
+        typedef Aws::Utils::Outcome<CreateImageResult, ImagebuilderError> CreateImageOutcome;
+        typedef Aws::Utils::Outcome<CreateImagePipelineResult, ImagebuilderError> CreateImagePipelineOutcome;
+        typedef Aws::Utils::Outcome<CreateImageRecipeResult, ImagebuilderError> CreateImageRecipeOutcome;
+        typedef Aws::Utils::Outcome<CreateInfrastructureConfigurationResult, ImagebuilderError> CreateInfrastructureConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DeleteComponentResult, ImagebuilderError> DeleteComponentOutcome;
+        typedef Aws::Utils::Outcome<DeleteContainerRecipeResult, ImagebuilderError> DeleteContainerRecipeOutcome;
+        typedef Aws::Utils::Outcome<DeleteDistributionConfigurationResult, ImagebuilderError> DeleteDistributionConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DeleteImageResult, ImagebuilderError> DeleteImageOutcome;
+        typedef Aws::Utils::Outcome<DeleteImagePipelineResult, ImagebuilderError> DeleteImagePipelineOutcome;
+        typedef Aws::Utils::Outcome<DeleteImageRecipeResult, ImagebuilderError> DeleteImageRecipeOutcome;
+        typedef Aws::Utils::Outcome<DeleteInfrastructureConfigurationResult, ImagebuilderError> DeleteInfrastructureConfigurationOutcome;
+        typedef Aws::Utils::Outcome<GetComponentResult, ImagebuilderError> GetComponentOutcome;
+        typedef Aws::Utils::Outcome<GetComponentPolicyResult, ImagebuilderError> GetComponentPolicyOutcome;
+        typedef Aws::Utils::Outcome<GetContainerRecipeResult, ImagebuilderError> GetContainerRecipeOutcome;
+        typedef Aws::Utils::Outcome<GetContainerRecipePolicyResult, ImagebuilderError> GetContainerRecipePolicyOutcome;
+        typedef Aws::Utils::Outcome<GetDistributionConfigurationResult, ImagebuilderError> GetDistributionConfigurationOutcome;
+        typedef Aws::Utils::Outcome<GetImageResult, ImagebuilderError> GetImageOutcome;
+        typedef Aws::Utils::Outcome<GetImagePipelineResult, ImagebuilderError> GetImagePipelineOutcome;
+        typedef Aws::Utils::Outcome<GetImagePolicyResult, ImagebuilderError> GetImagePolicyOutcome;
+        typedef Aws::Utils::Outcome<GetImageRecipeResult, ImagebuilderError> GetImageRecipeOutcome;
+        typedef Aws::Utils::Outcome<GetImageRecipePolicyResult, ImagebuilderError> GetImageRecipePolicyOutcome;
+        typedef Aws::Utils::Outcome<GetInfrastructureConfigurationResult, ImagebuilderError> GetInfrastructureConfigurationOutcome;
+        typedef Aws::Utils::Outcome<ImportComponentResult, ImagebuilderError> ImportComponentOutcome;
+        typedef Aws::Utils::Outcome<ListComponentBuildVersionsResult, ImagebuilderError> ListComponentBuildVersionsOutcome;
+        typedef Aws::Utils::Outcome<ListComponentsResult, ImagebuilderError> ListComponentsOutcome;
+        typedef Aws::Utils::Outcome<ListContainerRecipesResult, ImagebuilderError> ListContainerRecipesOutcome;
+        typedef Aws::Utils::Outcome<ListDistributionConfigurationsResult, ImagebuilderError> ListDistributionConfigurationsOutcome;
+        typedef Aws::Utils::Outcome<ListImageBuildVersionsResult, ImagebuilderError> ListImageBuildVersionsOutcome;
+        typedef Aws::Utils::Outcome<ListImagePipelineImagesResult, ImagebuilderError> ListImagePipelineImagesOutcome;
+        typedef Aws::Utils::Outcome<ListImagePipelinesResult, ImagebuilderError> ListImagePipelinesOutcome;
+        typedef Aws::Utils::Outcome<ListImageRecipesResult, ImagebuilderError> ListImageRecipesOutcome;
+        typedef Aws::Utils::Outcome<ListImagesResult, ImagebuilderError> ListImagesOutcome;
+        typedef Aws::Utils::Outcome<ListInfrastructureConfigurationsResult, ImagebuilderError> ListInfrastructureConfigurationsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, ImagebuilderError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<PutComponentPolicyResult, ImagebuilderError> PutComponentPolicyOutcome;
+        typedef Aws::Utils::Outcome<PutContainerRecipePolicyResult, ImagebuilderError> PutContainerRecipePolicyOutcome;
+        typedef Aws::Utils::Outcome<PutImagePolicyResult, ImagebuilderError> PutImagePolicyOutcome;
+        typedef Aws::Utils::Outcome<PutImageRecipePolicyResult, ImagebuilderError> PutImageRecipePolicyOutcome;
+        typedef Aws::Utils::Outcome<StartImagePipelineExecutionResult, ImagebuilderError> StartImagePipelineExecutionOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, ImagebuilderError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, ImagebuilderError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateDistributionConfigurationResult, ImagebuilderError> UpdateDistributionConfigurationOutcome;
+        typedef Aws::Utils::Outcome<UpdateImagePipelineResult, ImagebuilderError> UpdateImagePipelineOutcome;
+        typedef Aws::Utils::Outcome<UpdateInfrastructureConfigurationResult, ImagebuilderError> UpdateInfrastructureConfigurationOutcome;
 
         typedef std::future<CancelImageCreationOutcome> CancelImageCreationOutcomeCallable;
         typedef std::future<CreateComponentOutcome> CreateComponentOutcomeCallable;
+        typedef std::future<CreateContainerRecipeOutcome> CreateContainerRecipeOutcomeCallable;
         typedef std::future<CreateDistributionConfigurationOutcome> CreateDistributionConfigurationOutcomeCallable;
         typedef std::future<CreateImageOutcome> CreateImageOutcomeCallable;
         typedef std::future<CreateImagePipelineOutcome> CreateImagePipelineOutcomeCallable;
         typedef std::future<CreateImageRecipeOutcome> CreateImageRecipeOutcomeCallable;
         typedef std::future<CreateInfrastructureConfigurationOutcome> CreateInfrastructureConfigurationOutcomeCallable;
         typedef std::future<DeleteComponentOutcome> DeleteComponentOutcomeCallable;
+        typedef std::future<DeleteContainerRecipeOutcome> DeleteContainerRecipeOutcomeCallable;
         typedef std::future<DeleteDistributionConfigurationOutcome> DeleteDistributionConfigurationOutcomeCallable;
         typedef std::future<DeleteImageOutcome> DeleteImageOutcomeCallable;
         typedef std::future<DeleteImagePipelineOutcome> DeleteImagePipelineOutcomeCallable;
@@ -203,6 +213,8 @@ namespace Model
         typedef std::future<DeleteInfrastructureConfigurationOutcome> DeleteInfrastructureConfigurationOutcomeCallable;
         typedef std::future<GetComponentOutcome> GetComponentOutcomeCallable;
         typedef std::future<GetComponentPolicyOutcome> GetComponentPolicyOutcomeCallable;
+        typedef std::future<GetContainerRecipeOutcome> GetContainerRecipeOutcomeCallable;
+        typedef std::future<GetContainerRecipePolicyOutcome> GetContainerRecipePolicyOutcomeCallable;
         typedef std::future<GetDistributionConfigurationOutcome> GetDistributionConfigurationOutcomeCallable;
         typedef std::future<GetImageOutcome> GetImageOutcomeCallable;
         typedef std::future<GetImagePipelineOutcome> GetImagePipelineOutcomeCallable;
@@ -213,6 +225,7 @@ namespace Model
         typedef std::future<ImportComponentOutcome> ImportComponentOutcomeCallable;
         typedef std::future<ListComponentBuildVersionsOutcome> ListComponentBuildVersionsOutcomeCallable;
         typedef std::future<ListComponentsOutcome> ListComponentsOutcomeCallable;
+        typedef std::future<ListContainerRecipesOutcome> ListContainerRecipesOutcomeCallable;
         typedef std::future<ListDistributionConfigurationsOutcome> ListDistributionConfigurationsOutcomeCallable;
         typedef std::future<ListImageBuildVersionsOutcome> ListImageBuildVersionsOutcomeCallable;
         typedef std::future<ListImagePipelineImagesOutcome> ListImagePipelineImagesOutcomeCallable;
@@ -222,6 +235,7 @@ namespace Model
         typedef std::future<ListInfrastructureConfigurationsOutcome> ListInfrastructureConfigurationsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutComponentPolicyOutcome> PutComponentPolicyOutcomeCallable;
+        typedef std::future<PutContainerRecipePolicyOutcome> PutContainerRecipePolicyOutcomeCallable;
         typedef std::future<PutImagePolicyOutcome> PutImagePolicyOutcomeCallable;
         typedef std::future<PutImageRecipePolicyOutcome> PutImageRecipePolicyOutcomeCallable;
         typedef std::future<StartImagePipelineExecutionOutcome> StartImagePipelineExecutionOutcomeCallable;
@@ -236,12 +250,14 @@ namespace Model
 
     typedef std::function<void(const ImagebuilderClient*, const Model::CancelImageCreationRequest&, const Model::CancelImageCreationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelImageCreationResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::CreateComponentRequest&, const Model::CreateComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateComponentResponseReceivedHandler;
+    typedef std::function<void(const ImagebuilderClient*, const Model::CreateContainerRecipeRequest&, const Model::CreateContainerRecipeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContainerRecipeResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::CreateDistributionConfigurationRequest&, const Model::CreateDistributionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDistributionConfigurationResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::CreateImageRequest&, const Model::CreateImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImageResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::CreateImagePipelineRequest&, const Model::CreateImagePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImagePipelineResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::CreateImageRecipeRequest&, const Model::CreateImageRecipeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImageRecipeResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::CreateInfrastructureConfigurationRequest&, const Model::CreateInfrastructureConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInfrastructureConfigurationResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::DeleteComponentRequest&, const Model::DeleteComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteComponentResponseReceivedHandler;
+    typedef std::function<void(const ImagebuilderClient*, const Model::DeleteContainerRecipeRequest&, const Model::DeleteContainerRecipeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContainerRecipeResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::DeleteDistributionConfigurationRequest&, const Model::DeleteDistributionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDistributionConfigurationResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::DeleteImageRequest&, const Model::DeleteImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImageResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::DeleteImagePipelineRequest&, const Model::DeleteImagePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImagePipelineResponseReceivedHandler;
@@ -249,6 +265,8 @@ namespace Model
     typedef std::function<void(const ImagebuilderClient*, const Model::DeleteInfrastructureConfigurationRequest&, const Model::DeleteInfrastructureConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInfrastructureConfigurationResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::GetComponentRequest&, const Model::GetComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComponentResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::GetComponentPolicyRequest&, const Model::GetComponentPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComponentPolicyResponseReceivedHandler;
+    typedef std::function<void(const ImagebuilderClient*, const Model::GetContainerRecipeRequest&, const Model::GetContainerRecipeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContainerRecipeResponseReceivedHandler;
+    typedef std::function<void(const ImagebuilderClient*, const Model::GetContainerRecipePolicyRequest&, const Model::GetContainerRecipePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContainerRecipePolicyResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::GetDistributionConfigurationRequest&, const Model::GetDistributionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDistributionConfigurationResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::GetImageRequest&, const Model::GetImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetImageResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::GetImagePipelineRequest&, const Model::GetImagePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetImagePipelineResponseReceivedHandler;
@@ -259,6 +277,7 @@ namespace Model
     typedef std::function<void(const ImagebuilderClient*, const Model::ImportComponentRequest&, const Model::ImportComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportComponentResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::ListComponentBuildVersionsRequest&, const Model::ListComponentBuildVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComponentBuildVersionsResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::ListComponentsRequest&, const Model::ListComponentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComponentsResponseReceivedHandler;
+    typedef std::function<void(const ImagebuilderClient*, const Model::ListContainerRecipesRequest&, const Model::ListContainerRecipesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContainerRecipesResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::ListDistributionConfigurationsRequest&, const Model::ListDistributionConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDistributionConfigurationsResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::ListImageBuildVersionsRequest&, const Model::ListImageBuildVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImageBuildVersionsResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::ListImagePipelineImagesRequest&, const Model::ListImagePipelineImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImagePipelineImagesResponseReceivedHandler;
@@ -268,6 +287,7 @@ namespace Model
     typedef std::function<void(const ImagebuilderClient*, const Model::ListInfrastructureConfigurationsRequest&, const Model::ListInfrastructureConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInfrastructureConfigurationsResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::PutComponentPolicyRequest&, const Model::PutComponentPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutComponentPolicyResponseReceivedHandler;
+    typedef std::function<void(const ImagebuilderClient*, const Model::PutContainerRecipePolicyRequest&, const Model::PutContainerRecipePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutContainerRecipePolicyResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::PutImagePolicyRequest&, const Model::PutImagePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutImagePolicyResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::PutImageRecipePolicyRequest&, const Model::PutImageRecipePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutImageRecipePolicyResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::StartImagePipelineExecutionRequest&, const Model::StartImagePipelineExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartImagePipelineExecutionResponseReceivedHandler;
@@ -280,7 +300,7 @@ namespace Model
   /**
    * <p>EC2 Image Builder is a fully managed AWS service that makes it easier to
    * automate the creation, management, and deployment of customized, secure, and
-   * up-to-date “golden” server images that are pre-installed and pre-configured with
+   * up-to-date "golden" server images that are pre-installed and pre-configured with
    * software and settings to meet specific IT standards.</p>
    */
   class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClient
@@ -308,8 +328,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~ImagebuilderClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "imagebuilder"; }
 
 
         /**
@@ -367,6 +385,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateComponentAsync(const Model::CreateComponentRequest& request, const CreateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new container recipe. Container recipes define how images are
+         * configured, tested, and assessed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateContainerRecipe">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateContainerRecipeOutcome CreateContainerRecipe(const Model::CreateContainerRecipeRequest& request) const;
+
+        /**
+         * <p>Creates a new container recipe. Container recipes define how images are
+         * configured, tested, and assessed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateContainerRecipe">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateContainerRecipeOutcomeCallable CreateContainerRecipeCallable(const Model::CreateContainerRecipeRequest& request) const;
+
+        /**
+         * <p>Creates a new container recipe. Container recipes define how images are
+         * configured, tested, and assessed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateContainerRecipe">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateContainerRecipeAsync(const Model::CreateContainerRecipeRequest& request, const CreateContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new distribution configuration. Distribution configurations define
@@ -538,6 +584,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteComponentAsync(const Model::DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a container recipe.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteContainerRecipe">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteContainerRecipeOutcome DeleteContainerRecipe(const Model::DeleteContainerRecipeRequest& request) const;
+
+        /**
+         * <p>Deletes a container recipe.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteContainerRecipe">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteContainerRecipeOutcomeCallable DeleteContainerRecipeCallable(const Model::DeleteContainerRecipeRequest& request) const;
+
+        /**
+         * <p>Deletes a container recipe.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteContainerRecipe">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteContainerRecipeAsync(const Model::DeleteContainerRecipeRequest& request, const DeleteContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes a distribution configuration. </p><p><h3>See Also:</h3>   <a
@@ -713,6 +784,56 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetComponentPolicyAsync(const Model::GetComponentPolicyRequest& request, const GetComponentPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves a container recipe.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetContainerRecipe">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetContainerRecipeOutcome GetContainerRecipe(const Model::GetContainerRecipeRequest& request) const;
+
+        /**
+         * <p>Retrieves a container recipe.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetContainerRecipe">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetContainerRecipeOutcomeCallable GetContainerRecipeCallable(const Model::GetContainerRecipeRequest& request) const;
+
+        /**
+         * <p>Retrieves a container recipe.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetContainerRecipe">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetContainerRecipeAsync(const Model::GetContainerRecipeRequest& request, const GetContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the policy for a container recipe.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetContainerRecipePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetContainerRecipePolicyOutcome GetContainerRecipePolicy(const Model::GetContainerRecipePolicyRequest& request) const;
+
+        /**
+         * <p>Retrieves the policy for a container recipe.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetContainerRecipePolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetContainerRecipePolicyOutcomeCallable GetContainerRecipePolicyCallable(const Model::GetContainerRecipePolicyRequest& request) const;
+
+        /**
+         * <p>Retrieves the policy for a container recipe.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetContainerRecipePolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetContainerRecipePolicyAsync(const Model::GetContainerRecipePolicyRequest& request, const GetContainerRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Gets a distribution configuration. </p><p><h3>See Also:</h3>   <a
@@ -974,16 +1095,39 @@ namespace Model
         virtual void ListComponentsAsync(const Model::ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns a list of distribution configurations. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Returns a list of container recipes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListContainerRecipes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListContainerRecipesOutcome ListContainerRecipes(const Model::ListContainerRecipesRequest& request) const;
+
+        /**
+         * <p>Returns a list of container recipes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListContainerRecipes">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListContainerRecipesOutcomeCallable ListContainerRecipesCallable(const Model::ListContainerRecipesRequest& request) const;
+
+        /**
+         * <p>Returns a list of container recipes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListContainerRecipes">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListContainerRecipesAsync(const Model::ListContainerRecipesRequest& request, const ListContainerRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of distribution configurations. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListDistributionConfigurations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListDistributionConfigurationsOutcome ListDistributionConfigurations(const Model::ListDistributionConfigurationsRequest& request) const;
 
         /**
-         * <p> Returns a list of distribution configurations. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Returns a list of distribution configurations. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListDistributionConfigurations">AWS
          * API Reference</a></p>
          *
@@ -992,8 +1136,7 @@ namespace Model
         virtual Model::ListDistributionConfigurationsOutcomeCallable ListDistributionConfigurationsCallable(const Model::ListDistributionConfigurationsRequest& request) const;
 
         /**
-         * <p> Returns a list of distribution configurations. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Returns a list of distribution configurations. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListDistributionConfigurations">AWS
          * API Reference</a></p>
          *
@@ -1002,16 +1145,14 @@ namespace Model
         virtual void ListDistributionConfigurationsAsync(const Model::ListDistributionConfigurationsRequest& request, const ListDistributionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns a list of distribution configurations. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p> Returns a list of image build versions. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageBuildVersions">AWS
          * API Reference</a></p>
          */
         virtual Model::ListImageBuildVersionsOutcome ListImageBuildVersions(const Model::ListImageBuildVersionsRequest& request) const;
 
         /**
-         * <p> Returns a list of distribution configurations. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p> Returns a list of image build versions. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageBuildVersions">AWS
          * API Reference</a></p>
          *
@@ -1020,8 +1161,7 @@ namespace Model
         virtual Model::ListImageBuildVersionsOutcomeCallable ListImageBuildVersionsCallable(const Model::ListImageBuildVersionsRequest& request) const;
 
         /**
-         * <p> Returns a list of distribution configurations. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p> Returns a list of image build versions. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageBuildVersions">AWS
          * API Reference</a></p>
          *
@@ -1108,16 +1248,16 @@ namespace Model
         virtual void ListImageRecipesAsync(const Model::ListImageRecipesRequest& request, const ListImageRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns the list of image build versions for the specified semantic version.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Returns the list of images that you have access to. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImages">AWS
          * API Reference</a></p>
          */
         virtual Model::ListImagesOutcome ListImages(const Model::ListImagesRequest& request) const;
 
         /**
-         * <p> Returns the list of image build versions for the specified semantic version.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Returns the list of images that you have access to. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImages">AWS
          * API Reference</a></p>
          *
@@ -1126,8 +1266,8 @@ namespace Model
         virtual Model::ListImagesOutcomeCallable ListImagesCallable(const Model::ListImagesRequest& request) const;
 
         /**
-         * <p> Returns the list of image build versions for the specified semantic version.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Returns the list of images that you have access to. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImages">AWS
          * API Reference</a></p>
          *
@@ -1233,6 +1373,55 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutComponentPolicyAsync(const Model::PutComponentPolicyRequest& request, const PutComponentPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Applies a policy to a container image. We recommend that you call the RAM API
+         * CreateResourceShare
+         * (https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html)
+         * to share resources. If you call the Image Builder API
+         * <code>PutContainerImagePolicy</code>, you must also call the RAM API
+         * PromoteResourceShareCreatedFromPolicy
+         * (https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html)
+         * in order for the resource to be visible to all principals with whom the resource
+         * is shared.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutContainerRecipePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutContainerRecipePolicyOutcome PutContainerRecipePolicy(const Model::PutContainerRecipePolicyRequest& request) const;
+
+        /**
+         * <p>Applies a policy to a container image. We recommend that you call the RAM API
+         * CreateResourceShare
+         * (https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html)
+         * to share resources. If you call the Image Builder API
+         * <code>PutContainerImagePolicy</code>, you must also call the RAM API
+         * PromoteResourceShareCreatedFromPolicy
+         * (https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html)
+         * in order for the resource to be visible to all principals with whom the resource
+         * is shared.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutContainerRecipePolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutContainerRecipePolicyOutcomeCallable PutContainerRecipePolicyCallable(const Model::PutContainerRecipePolicyRequest& request) const;
+
+        /**
+         * <p>Applies a policy to a container image. We recommend that you call the RAM API
+         * CreateResourceShare
+         * (https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html)
+         * to share resources. If you call the Image Builder API
+         * <code>PutContainerImagePolicy</code>, you must also call the RAM API
+         * PromoteResourceShareCreatedFromPolicy
+         * (https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html)
+         * in order for the resource to be visible to all principals with whom the resource
+         * is shared.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutContainerRecipePolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutContainerRecipePolicyAsync(const Model::PutContainerRecipePolicyRequest& request, const PutContainerRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Applies a policy to an image. We recommend that you call the RAM API <a
@@ -1494,12 +1683,14 @@ namespace Model
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void CancelImageCreationAsyncHelper(const Model::CancelImageCreationRequest& request, const CancelImageCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateComponentAsyncHelper(const Model::CreateComponentRequest& request, const CreateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateContainerRecipeAsyncHelper(const Model::CreateContainerRecipeRequest& request, const CreateContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDistributionConfigurationAsyncHelper(const Model::CreateDistributionConfigurationRequest& request, const CreateDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateImageAsyncHelper(const Model::CreateImageRequest& request, const CreateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateImagePipelineAsyncHelper(const Model::CreateImagePipelineRequest& request, const CreateImagePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateImageRecipeAsyncHelper(const Model::CreateImageRecipeRequest& request, const CreateImageRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateInfrastructureConfigurationAsyncHelper(const Model::CreateInfrastructureConfigurationRequest& request, const CreateInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteComponentAsyncHelper(const Model::DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteContainerRecipeAsyncHelper(const Model::DeleteContainerRecipeRequest& request, const DeleteContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDistributionConfigurationAsyncHelper(const Model::DeleteDistributionConfigurationRequest& request, const DeleteDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteImageAsyncHelper(const Model::DeleteImageRequest& request, const DeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteImagePipelineAsyncHelper(const Model::DeleteImagePipelineRequest& request, const DeleteImagePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1507,6 +1698,8 @@ namespace Model
         void DeleteInfrastructureConfigurationAsyncHelper(const Model::DeleteInfrastructureConfigurationRequest& request, const DeleteInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetComponentAsyncHelper(const Model::GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetComponentPolicyAsyncHelper(const Model::GetComponentPolicyRequest& request, const GetComponentPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetContainerRecipeAsyncHelper(const Model::GetContainerRecipeRequest& request, const GetContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetContainerRecipePolicyAsyncHelper(const Model::GetContainerRecipePolicyRequest& request, const GetContainerRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDistributionConfigurationAsyncHelper(const Model::GetDistributionConfigurationRequest& request, const GetDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetImageAsyncHelper(const Model::GetImageRequest& request, const GetImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetImagePipelineAsyncHelper(const Model::GetImagePipelineRequest& request, const GetImagePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1517,6 +1710,7 @@ namespace Model
         void ImportComponentAsyncHelper(const Model::ImportComponentRequest& request, const ImportComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListComponentBuildVersionsAsyncHelper(const Model::ListComponentBuildVersionsRequest& request, const ListComponentBuildVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListComponentsAsyncHelper(const Model::ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListContainerRecipesAsyncHelper(const Model::ListContainerRecipesRequest& request, const ListContainerRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDistributionConfigurationsAsyncHelper(const Model::ListDistributionConfigurationsRequest& request, const ListDistributionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListImageBuildVersionsAsyncHelper(const Model::ListImageBuildVersionsRequest& request, const ListImageBuildVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListImagePipelineImagesAsyncHelper(const Model::ListImagePipelineImagesRequest& request, const ListImagePipelineImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1526,6 +1720,7 @@ namespace Model
         void ListInfrastructureConfigurationsAsyncHelper(const Model::ListInfrastructureConfigurationsRequest& request, const ListInfrastructureConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutComponentPolicyAsyncHelper(const Model::PutComponentPolicyRequest& request, const PutComponentPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutContainerRecipePolicyAsyncHelper(const Model::PutContainerRecipePolicyRequest& request, const PutContainerRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutImagePolicyAsyncHelper(const Model::PutImagePolicyRequest& request, const PutImagePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutImageRecipePolicyAsyncHelper(const Model::PutImageRecipePolicyRequest& request, const PutImageRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartImagePipelineExecutionAsyncHelper(const Model::StartImagePipelineExecutionRequest& request, const StartImagePipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

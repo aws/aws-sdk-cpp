@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
@@ -36,11 +26,11 @@ namespace Model
 {
 
   /**
-   * <p>Represents information about a pipeline to a job worker.</p> <note>
+   * <p>Represents information about a pipeline to a job worker.</p> 
    * <p>PipelineContext contains <code>pipelineArn</code> and
    * <code>pipelineExecutionId</code> for custom action jobs. The
    * <code>pipelineArn</code> and <code>pipelineExecutionId</code> fields are not
-   * populated for ThirdParty action jobs.</p> </note><p><h3>See Also:</h3>   <a
+   * populated for ThirdParty action jobs.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PipelineContext">AWS
    * API Reference</a></p>
    */

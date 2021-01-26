@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/CertificateStatus.h>
+#include <aws/iot/model/CertificateMode.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -177,6 +168,37 @@ namespace Model
 
 
     /**
+     * <p>The mode of the certificate.</p>
+     */
+    inline const CertificateMode& GetCertificateMode() const{ return m_certificateMode; }
+
+    /**
+     * <p>The mode of the certificate.</p>
+     */
+    inline bool CertificateModeHasBeenSet() const { return m_certificateModeHasBeenSet; }
+
+    /**
+     * <p>The mode of the certificate.</p>
+     */
+    inline void SetCertificateMode(const CertificateMode& value) { m_certificateModeHasBeenSet = true; m_certificateMode = value; }
+
+    /**
+     * <p>The mode of the certificate.</p>
+     */
+    inline void SetCertificateMode(CertificateMode&& value) { m_certificateModeHasBeenSet = true; m_certificateMode = std::move(value); }
+
+    /**
+     * <p>The mode of the certificate.</p>
+     */
+    inline Certificate& WithCertificateMode(const CertificateMode& value) { SetCertificateMode(value); return *this;}
+
+    /**
+     * <p>The mode of the certificate.</p>
+     */
+    inline Certificate& WithCertificateMode(CertificateMode&& value) { SetCertificateMode(std::move(value)); return *this;}
+
+
+    /**
      * <p>The date and time the certificate was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
@@ -216,6 +238,9 @@ namespace Model
 
     CertificateStatus m_status;
     bool m_statusHasBeenSet;
+
+    CertificateMode m_certificateMode;
+    bool m_certificateModeHasBeenSet;
 
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;

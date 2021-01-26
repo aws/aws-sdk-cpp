@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
@@ -321,9 +311,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -348,9 +338,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -375,9 +365,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -402,9 +392,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -429,9 +419,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -456,9 +446,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -483,9 +473,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -510,9 +500,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -537,9 +527,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -564,9 +554,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -591,9 +581,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -618,9 +608,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -645,9 +635,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>

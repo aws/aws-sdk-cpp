@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -41,6 +31,7 @@
 #include <aws/waf/model/CreateSizeConstraintSetRequest.h>
 #include <aws/waf/model/CreateSqlInjectionMatchSetRequest.h>
 #include <aws/waf/model/CreateWebACLRequest.h>
+#include <aws/waf/model/CreateWebACLMigrationStackRequest.h>
 #include <aws/waf/model/CreateXssMatchSetRequest.h>
 #include <aws/waf/model/DeleteByteMatchSetRequest.h>
 #include <aws/waf/model/DeleteGeoMatchSetRequest.h>
@@ -122,7 +113,7 @@ static const char* ALLOCATION_TAG = "WAFClient";
 WAFClient::WAFClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<WAFErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -132,7 +123,7 @@ WAFClient::WAFClient(const Client::ClientConfiguration& clientConfiguration) :
 WAFClient::WAFClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<WAFErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -143,7 +134,7 @@ WAFClient::WAFClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<WAFErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -156,6 +147,7 @@ WAFClient::~WAFClient()
 
 void WAFClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("WAF");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -185,15 +177,7 @@ CreateByteMatchSetOutcome WAFClient::CreateByteMatchSet(const CreateByteMatchSet
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateByteMatchSetOutcome(CreateByteMatchSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateByteMatchSetOutcome(outcome.GetError());
-  }
+  return CreateByteMatchSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateByteMatchSetOutcomeCallable WAFClient::CreateByteMatchSetCallable(const CreateByteMatchSetRequest& request) const
@@ -220,15 +204,7 @@ CreateGeoMatchSetOutcome WAFClient::CreateGeoMatchSet(const CreateGeoMatchSetReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateGeoMatchSetOutcome(CreateGeoMatchSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateGeoMatchSetOutcome(outcome.GetError());
-  }
+  return CreateGeoMatchSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateGeoMatchSetOutcomeCallable WAFClient::CreateGeoMatchSetCallable(const CreateGeoMatchSetRequest& request) const
@@ -255,15 +231,7 @@ CreateIPSetOutcome WAFClient::CreateIPSet(const CreateIPSetRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateIPSetOutcome(CreateIPSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateIPSetOutcome(outcome.GetError());
-  }
+  return CreateIPSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateIPSetOutcomeCallable WAFClient::CreateIPSetCallable(const CreateIPSetRequest& request) const
@@ -290,15 +258,7 @@ CreateRateBasedRuleOutcome WAFClient::CreateRateBasedRule(const CreateRateBasedR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateRateBasedRuleOutcome(CreateRateBasedRuleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateRateBasedRuleOutcome(outcome.GetError());
-  }
+  return CreateRateBasedRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateRateBasedRuleOutcomeCallable WAFClient::CreateRateBasedRuleCallable(const CreateRateBasedRuleRequest& request) const
@@ -325,15 +285,7 @@ CreateRegexMatchSetOutcome WAFClient::CreateRegexMatchSet(const CreateRegexMatch
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateRegexMatchSetOutcome(CreateRegexMatchSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateRegexMatchSetOutcome(outcome.GetError());
-  }
+  return CreateRegexMatchSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateRegexMatchSetOutcomeCallable WAFClient::CreateRegexMatchSetCallable(const CreateRegexMatchSetRequest& request) const
@@ -360,15 +312,7 @@ CreateRegexPatternSetOutcome WAFClient::CreateRegexPatternSet(const CreateRegexP
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateRegexPatternSetOutcome(CreateRegexPatternSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateRegexPatternSetOutcome(outcome.GetError());
-  }
+  return CreateRegexPatternSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateRegexPatternSetOutcomeCallable WAFClient::CreateRegexPatternSetCallable(const CreateRegexPatternSetRequest& request) const
@@ -395,15 +339,7 @@ CreateRuleOutcome WAFClient::CreateRule(const CreateRuleRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateRuleOutcome(CreateRuleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateRuleOutcome(outcome.GetError());
-  }
+  return CreateRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateRuleOutcomeCallable WAFClient::CreateRuleCallable(const CreateRuleRequest& request) const
@@ -430,15 +366,7 @@ CreateRuleGroupOutcome WAFClient::CreateRuleGroup(const CreateRuleGroupRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateRuleGroupOutcome(CreateRuleGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateRuleGroupOutcome(outcome.GetError());
-  }
+  return CreateRuleGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateRuleGroupOutcomeCallable WAFClient::CreateRuleGroupCallable(const CreateRuleGroupRequest& request) const
@@ -465,15 +393,7 @@ CreateSizeConstraintSetOutcome WAFClient::CreateSizeConstraintSet(const CreateSi
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateSizeConstraintSetOutcome(CreateSizeConstraintSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateSizeConstraintSetOutcome(outcome.GetError());
-  }
+  return CreateSizeConstraintSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateSizeConstraintSetOutcomeCallable WAFClient::CreateSizeConstraintSetCallable(const CreateSizeConstraintSetRequest& request) const
@@ -500,15 +420,7 @@ CreateSqlInjectionMatchSetOutcome WAFClient::CreateSqlInjectionMatchSet(const Cr
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateSqlInjectionMatchSetOutcome(CreateSqlInjectionMatchSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateSqlInjectionMatchSetOutcome(outcome.GetError());
-  }
+  return CreateSqlInjectionMatchSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateSqlInjectionMatchSetOutcomeCallable WAFClient::CreateSqlInjectionMatchSetCallable(const CreateSqlInjectionMatchSetRequest& request) const
@@ -535,15 +447,7 @@ CreateWebACLOutcome WAFClient::CreateWebACL(const CreateWebACLRequest& request) 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateWebACLOutcome(CreateWebACLResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateWebACLOutcome(outcome.GetError());
-  }
+  return CreateWebACLOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateWebACLOutcomeCallable WAFClient::CreateWebACLCallable(const CreateWebACLRequest& request) const
@@ -564,21 +468,40 @@ void WAFClient::CreateWebACLAsyncHelper(const CreateWebACLRequest& request, cons
   handler(this, request, CreateWebACL(request), context);
 }
 
+CreateWebACLMigrationStackOutcome WAFClient::CreateWebACLMigrationStack(const CreateWebACLMigrationStackRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateWebACLMigrationStackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateWebACLMigrationStackOutcomeCallable WAFClient::CreateWebACLMigrationStackCallable(const CreateWebACLMigrationStackRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateWebACLMigrationStackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWebACLMigrationStack(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFClient::CreateWebACLMigrationStackAsync(const CreateWebACLMigrationStackRequest& request, const CreateWebACLMigrationStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateWebACLMigrationStackAsyncHelper( request, handler, context ); } );
+}
+
+void WAFClient::CreateWebACLMigrationStackAsyncHelper(const CreateWebACLMigrationStackRequest& request, const CreateWebACLMigrationStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateWebACLMigrationStack(request), context);
+}
+
 CreateXssMatchSetOutcome WAFClient::CreateXssMatchSet(const CreateXssMatchSetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateXssMatchSetOutcome(CreateXssMatchSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateXssMatchSetOutcome(outcome.GetError());
-  }
+  return CreateXssMatchSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateXssMatchSetOutcomeCallable WAFClient::CreateXssMatchSetCallable(const CreateXssMatchSetRequest& request) const
@@ -605,15 +528,7 @@ DeleteByteMatchSetOutcome WAFClient::DeleteByteMatchSet(const DeleteByteMatchSet
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteByteMatchSetOutcome(DeleteByteMatchSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteByteMatchSetOutcome(outcome.GetError());
-  }
+  return DeleteByteMatchSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteByteMatchSetOutcomeCallable WAFClient::DeleteByteMatchSetCallable(const DeleteByteMatchSetRequest& request) const
@@ -640,15 +555,7 @@ DeleteGeoMatchSetOutcome WAFClient::DeleteGeoMatchSet(const DeleteGeoMatchSetReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteGeoMatchSetOutcome(DeleteGeoMatchSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteGeoMatchSetOutcome(outcome.GetError());
-  }
+  return DeleteGeoMatchSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteGeoMatchSetOutcomeCallable WAFClient::DeleteGeoMatchSetCallable(const DeleteGeoMatchSetRequest& request) const
@@ -675,15 +582,7 @@ DeleteIPSetOutcome WAFClient::DeleteIPSet(const DeleteIPSetRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteIPSetOutcome(DeleteIPSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteIPSetOutcome(outcome.GetError());
-  }
+  return DeleteIPSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteIPSetOutcomeCallable WAFClient::DeleteIPSetCallable(const DeleteIPSetRequest& request) const
@@ -710,15 +609,7 @@ DeleteLoggingConfigurationOutcome WAFClient::DeleteLoggingConfiguration(const De
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteLoggingConfigurationOutcome(DeleteLoggingConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteLoggingConfigurationOutcome(outcome.GetError());
-  }
+  return DeleteLoggingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteLoggingConfigurationOutcomeCallable WAFClient::DeleteLoggingConfigurationCallable(const DeleteLoggingConfigurationRequest& request) const
@@ -745,15 +636,7 @@ DeletePermissionPolicyOutcome WAFClient::DeletePermissionPolicy(const DeletePerm
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeletePermissionPolicyOutcome(DeletePermissionPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeletePermissionPolicyOutcome(outcome.GetError());
-  }
+  return DeletePermissionPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeletePermissionPolicyOutcomeCallable WAFClient::DeletePermissionPolicyCallable(const DeletePermissionPolicyRequest& request) const
@@ -780,15 +663,7 @@ DeleteRateBasedRuleOutcome WAFClient::DeleteRateBasedRule(const DeleteRateBasedR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteRateBasedRuleOutcome(DeleteRateBasedRuleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteRateBasedRuleOutcome(outcome.GetError());
-  }
+  return DeleteRateBasedRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteRateBasedRuleOutcomeCallable WAFClient::DeleteRateBasedRuleCallable(const DeleteRateBasedRuleRequest& request) const
@@ -815,15 +690,7 @@ DeleteRegexMatchSetOutcome WAFClient::DeleteRegexMatchSet(const DeleteRegexMatch
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteRegexMatchSetOutcome(DeleteRegexMatchSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteRegexMatchSetOutcome(outcome.GetError());
-  }
+  return DeleteRegexMatchSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteRegexMatchSetOutcomeCallable WAFClient::DeleteRegexMatchSetCallable(const DeleteRegexMatchSetRequest& request) const
@@ -850,15 +717,7 @@ DeleteRegexPatternSetOutcome WAFClient::DeleteRegexPatternSet(const DeleteRegexP
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteRegexPatternSetOutcome(DeleteRegexPatternSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteRegexPatternSetOutcome(outcome.GetError());
-  }
+  return DeleteRegexPatternSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteRegexPatternSetOutcomeCallable WAFClient::DeleteRegexPatternSetCallable(const DeleteRegexPatternSetRequest& request) const
@@ -885,15 +744,7 @@ DeleteRuleOutcome WAFClient::DeleteRule(const DeleteRuleRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteRuleOutcome(DeleteRuleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteRuleOutcome(outcome.GetError());
-  }
+  return DeleteRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteRuleOutcomeCallable WAFClient::DeleteRuleCallable(const DeleteRuleRequest& request) const
@@ -920,15 +771,7 @@ DeleteRuleGroupOutcome WAFClient::DeleteRuleGroup(const DeleteRuleGroupRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteRuleGroupOutcome(DeleteRuleGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteRuleGroupOutcome(outcome.GetError());
-  }
+  return DeleteRuleGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteRuleGroupOutcomeCallable WAFClient::DeleteRuleGroupCallable(const DeleteRuleGroupRequest& request) const
@@ -955,15 +798,7 @@ DeleteSizeConstraintSetOutcome WAFClient::DeleteSizeConstraintSet(const DeleteSi
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteSizeConstraintSetOutcome(DeleteSizeConstraintSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteSizeConstraintSetOutcome(outcome.GetError());
-  }
+  return DeleteSizeConstraintSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteSizeConstraintSetOutcomeCallable WAFClient::DeleteSizeConstraintSetCallable(const DeleteSizeConstraintSetRequest& request) const
@@ -990,15 +825,7 @@ DeleteSqlInjectionMatchSetOutcome WAFClient::DeleteSqlInjectionMatchSet(const De
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteSqlInjectionMatchSetOutcome(DeleteSqlInjectionMatchSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteSqlInjectionMatchSetOutcome(outcome.GetError());
-  }
+  return DeleteSqlInjectionMatchSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteSqlInjectionMatchSetOutcomeCallable WAFClient::DeleteSqlInjectionMatchSetCallable(const DeleteSqlInjectionMatchSetRequest& request) const
@@ -1025,15 +852,7 @@ DeleteWebACLOutcome WAFClient::DeleteWebACL(const DeleteWebACLRequest& request) 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteWebACLOutcome(DeleteWebACLResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteWebACLOutcome(outcome.GetError());
-  }
+  return DeleteWebACLOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteWebACLOutcomeCallable WAFClient::DeleteWebACLCallable(const DeleteWebACLRequest& request) const
@@ -1060,15 +879,7 @@ DeleteXssMatchSetOutcome WAFClient::DeleteXssMatchSet(const DeleteXssMatchSetReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteXssMatchSetOutcome(DeleteXssMatchSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteXssMatchSetOutcome(outcome.GetError());
-  }
+  return DeleteXssMatchSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteXssMatchSetOutcomeCallable WAFClient::DeleteXssMatchSetCallable(const DeleteXssMatchSetRequest& request) const
@@ -1095,15 +906,7 @@ GetByteMatchSetOutcome WAFClient::GetByteMatchSet(const GetByteMatchSetRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetByteMatchSetOutcome(GetByteMatchSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetByteMatchSetOutcome(outcome.GetError());
-  }
+  return GetByteMatchSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetByteMatchSetOutcomeCallable WAFClient::GetByteMatchSetCallable(const GetByteMatchSetRequest& request) const
@@ -1130,15 +933,7 @@ GetChangeTokenOutcome WAFClient::GetChangeToken(const GetChangeTokenRequest& req
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetChangeTokenOutcome(GetChangeTokenResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetChangeTokenOutcome(outcome.GetError());
-  }
+  return GetChangeTokenOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetChangeTokenOutcomeCallable WAFClient::GetChangeTokenCallable(const GetChangeTokenRequest& request) const
@@ -1165,15 +960,7 @@ GetChangeTokenStatusOutcome WAFClient::GetChangeTokenStatus(const GetChangeToken
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetChangeTokenStatusOutcome(GetChangeTokenStatusResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetChangeTokenStatusOutcome(outcome.GetError());
-  }
+  return GetChangeTokenStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetChangeTokenStatusOutcomeCallable WAFClient::GetChangeTokenStatusCallable(const GetChangeTokenStatusRequest& request) const
@@ -1200,15 +987,7 @@ GetGeoMatchSetOutcome WAFClient::GetGeoMatchSet(const GetGeoMatchSetRequest& req
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetGeoMatchSetOutcome(GetGeoMatchSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetGeoMatchSetOutcome(outcome.GetError());
-  }
+  return GetGeoMatchSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetGeoMatchSetOutcomeCallable WAFClient::GetGeoMatchSetCallable(const GetGeoMatchSetRequest& request) const
@@ -1235,15 +1014,7 @@ GetIPSetOutcome WAFClient::GetIPSet(const GetIPSetRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetIPSetOutcome(GetIPSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetIPSetOutcome(outcome.GetError());
-  }
+  return GetIPSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetIPSetOutcomeCallable WAFClient::GetIPSetCallable(const GetIPSetRequest& request) const
@@ -1270,15 +1041,7 @@ GetLoggingConfigurationOutcome WAFClient::GetLoggingConfiguration(const GetLoggi
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetLoggingConfigurationOutcome(GetLoggingConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetLoggingConfigurationOutcome(outcome.GetError());
-  }
+  return GetLoggingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetLoggingConfigurationOutcomeCallable WAFClient::GetLoggingConfigurationCallable(const GetLoggingConfigurationRequest& request) const
@@ -1305,15 +1068,7 @@ GetPermissionPolicyOutcome WAFClient::GetPermissionPolicy(const GetPermissionPol
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetPermissionPolicyOutcome(GetPermissionPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetPermissionPolicyOutcome(outcome.GetError());
-  }
+  return GetPermissionPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetPermissionPolicyOutcomeCallable WAFClient::GetPermissionPolicyCallable(const GetPermissionPolicyRequest& request) const
@@ -1340,15 +1095,7 @@ GetRateBasedRuleOutcome WAFClient::GetRateBasedRule(const GetRateBasedRuleReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRateBasedRuleOutcome(GetRateBasedRuleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRateBasedRuleOutcome(outcome.GetError());
-  }
+  return GetRateBasedRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRateBasedRuleOutcomeCallable WAFClient::GetRateBasedRuleCallable(const GetRateBasedRuleRequest& request) const
@@ -1375,15 +1122,7 @@ GetRateBasedRuleManagedKeysOutcome WAFClient::GetRateBasedRuleManagedKeys(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRateBasedRuleManagedKeysOutcome(GetRateBasedRuleManagedKeysResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRateBasedRuleManagedKeysOutcome(outcome.GetError());
-  }
+  return GetRateBasedRuleManagedKeysOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRateBasedRuleManagedKeysOutcomeCallable WAFClient::GetRateBasedRuleManagedKeysCallable(const GetRateBasedRuleManagedKeysRequest& request) const
@@ -1410,15 +1149,7 @@ GetRegexMatchSetOutcome WAFClient::GetRegexMatchSet(const GetRegexMatchSetReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRegexMatchSetOutcome(GetRegexMatchSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRegexMatchSetOutcome(outcome.GetError());
-  }
+  return GetRegexMatchSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRegexMatchSetOutcomeCallable WAFClient::GetRegexMatchSetCallable(const GetRegexMatchSetRequest& request) const
@@ -1445,15 +1176,7 @@ GetRegexPatternSetOutcome WAFClient::GetRegexPatternSet(const GetRegexPatternSet
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRegexPatternSetOutcome(GetRegexPatternSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRegexPatternSetOutcome(outcome.GetError());
-  }
+  return GetRegexPatternSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRegexPatternSetOutcomeCallable WAFClient::GetRegexPatternSetCallable(const GetRegexPatternSetRequest& request) const
@@ -1480,15 +1203,7 @@ GetRuleOutcome WAFClient::GetRule(const GetRuleRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRuleOutcome(GetRuleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRuleOutcome(outcome.GetError());
-  }
+  return GetRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRuleOutcomeCallable WAFClient::GetRuleCallable(const GetRuleRequest& request) const
@@ -1515,15 +1230,7 @@ GetRuleGroupOutcome WAFClient::GetRuleGroup(const GetRuleGroupRequest& request) 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRuleGroupOutcome(GetRuleGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRuleGroupOutcome(outcome.GetError());
-  }
+  return GetRuleGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRuleGroupOutcomeCallable WAFClient::GetRuleGroupCallable(const GetRuleGroupRequest& request) const
@@ -1550,15 +1257,7 @@ GetSampledRequestsOutcome WAFClient::GetSampledRequests(const GetSampledRequests
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetSampledRequestsOutcome(GetSampledRequestsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetSampledRequestsOutcome(outcome.GetError());
-  }
+  return GetSampledRequestsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSampledRequestsOutcomeCallable WAFClient::GetSampledRequestsCallable(const GetSampledRequestsRequest& request) const
@@ -1585,15 +1284,7 @@ GetSizeConstraintSetOutcome WAFClient::GetSizeConstraintSet(const GetSizeConstra
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetSizeConstraintSetOutcome(GetSizeConstraintSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetSizeConstraintSetOutcome(outcome.GetError());
-  }
+  return GetSizeConstraintSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSizeConstraintSetOutcomeCallable WAFClient::GetSizeConstraintSetCallable(const GetSizeConstraintSetRequest& request) const
@@ -1620,15 +1311,7 @@ GetSqlInjectionMatchSetOutcome WAFClient::GetSqlInjectionMatchSet(const GetSqlIn
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetSqlInjectionMatchSetOutcome(GetSqlInjectionMatchSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetSqlInjectionMatchSetOutcome(outcome.GetError());
-  }
+  return GetSqlInjectionMatchSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSqlInjectionMatchSetOutcomeCallable WAFClient::GetSqlInjectionMatchSetCallable(const GetSqlInjectionMatchSetRequest& request) const
@@ -1655,15 +1338,7 @@ GetWebACLOutcome WAFClient::GetWebACL(const GetWebACLRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetWebACLOutcome(GetWebACLResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetWebACLOutcome(outcome.GetError());
-  }
+  return GetWebACLOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetWebACLOutcomeCallable WAFClient::GetWebACLCallable(const GetWebACLRequest& request) const
@@ -1690,15 +1365,7 @@ GetXssMatchSetOutcome WAFClient::GetXssMatchSet(const GetXssMatchSetRequest& req
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetXssMatchSetOutcome(GetXssMatchSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetXssMatchSetOutcome(outcome.GetError());
-  }
+  return GetXssMatchSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetXssMatchSetOutcomeCallable WAFClient::GetXssMatchSetCallable(const GetXssMatchSetRequest& request) const
@@ -1725,15 +1392,7 @@ ListActivatedRulesInRuleGroupOutcome WAFClient::ListActivatedRulesInRuleGroup(co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListActivatedRulesInRuleGroupOutcome(ListActivatedRulesInRuleGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListActivatedRulesInRuleGroupOutcome(outcome.GetError());
-  }
+  return ListActivatedRulesInRuleGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListActivatedRulesInRuleGroupOutcomeCallable WAFClient::ListActivatedRulesInRuleGroupCallable(const ListActivatedRulesInRuleGroupRequest& request) const
@@ -1760,15 +1419,7 @@ ListByteMatchSetsOutcome WAFClient::ListByteMatchSets(const ListByteMatchSetsReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListByteMatchSetsOutcome(ListByteMatchSetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListByteMatchSetsOutcome(outcome.GetError());
-  }
+  return ListByteMatchSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListByteMatchSetsOutcomeCallable WAFClient::ListByteMatchSetsCallable(const ListByteMatchSetsRequest& request) const
@@ -1795,15 +1446,7 @@ ListGeoMatchSetsOutcome WAFClient::ListGeoMatchSets(const ListGeoMatchSetsReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListGeoMatchSetsOutcome(ListGeoMatchSetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListGeoMatchSetsOutcome(outcome.GetError());
-  }
+  return ListGeoMatchSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListGeoMatchSetsOutcomeCallable WAFClient::ListGeoMatchSetsCallable(const ListGeoMatchSetsRequest& request) const
@@ -1830,15 +1473,7 @@ ListIPSetsOutcome WAFClient::ListIPSets(const ListIPSetsRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListIPSetsOutcome(ListIPSetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListIPSetsOutcome(outcome.GetError());
-  }
+  return ListIPSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListIPSetsOutcomeCallable WAFClient::ListIPSetsCallable(const ListIPSetsRequest& request) const
@@ -1865,15 +1500,7 @@ ListLoggingConfigurationsOutcome WAFClient::ListLoggingConfigurations(const List
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListLoggingConfigurationsOutcome(ListLoggingConfigurationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListLoggingConfigurationsOutcome(outcome.GetError());
-  }
+  return ListLoggingConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListLoggingConfigurationsOutcomeCallable WAFClient::ListLoggingConfigurationsCallable(const ListLoggingConfigurationsRequest& request) const
@@ -1900,15 +1527,7 @@ ListRateBasedRulesOutcome WAFClient::ListRateBasedRules(const ListRateBasedRules
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListRateBasedRulesOutcome(ListRateBasedRulesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListRateBasedRulesOutcome(outcome.GetError());
-  }
+  return ListRateBasedRulesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListRateBasedRulesOutcomeCallable WAFClient::ListRateBasedRulesCallable(const ListRateBasedRulesRequest& request) const
@@ -1935,15 +1554,7 @@ ListRegexMatchSetsOutcome WAFClient::ListRegexMatchSets(const ListRegexMatchSets
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListRegexMatchSetsOutcome(ListRegexMatchSetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListRegexMatchSetsOutcome(outcome.GetError());
-  }
+  return ListRegexMatchSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListRegexMatchSetsOutcomeCallable WAFClient::ListRegexMatchSetsCallable(const ListRegexMatchSetsRequest& request) const
@@ -1970,15 +1581,7 @@ ListRegexPatternSetsOutcome WAFClient::ListRegexPatternSets(const ListRegexPatte
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListRegexPatternSetsOutcome(ListRegexPatternSetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListRegexPatternSetsOutcome(outcome.GetError());
-  }
+  return ListRegexPatternSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListRegexPatternSetsOutcomeCallable WAFClient::ListRegexPatternSetsCallable(const ListRegexPatternSetsRequest& request) const
@@ -2005,15 +1608,7 @@ ListRuleGroupsOutcome WAFClient::ListRuleGroups(const ListRuleGroupsRequest& req
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListRuleGroupsOutcome(ListRuleGroupsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListRuleGroupsOutcome(outcome.GetError());
-  }
+  return ListRuleGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListRuleGroupsOutcomeCallable WAFClient::ListRuleGroupsCallable(const ListRuleGroupsRequest& request) const
@@ -2040,15 +1635,7 @@ ListRulesOutcome WAFClient::ListRules(const ListRulesRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListRulesOutcome(ListRulesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListRulesOutcome(outcome.GetError());
-  }
+  return ListRulesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListRulesOutcomeCallable WAFClient::ListRulesCallable(const ListRulesRequest& request) const
@@ -2075,15 +1662,7 @@ ListSizeConstraintSetsOutcome WAFClient::ListSizeConstraintSets(const ListSizeCo
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListSizeConstraintSetsOutcome(ListSizeConstraintSetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListSizeConstraintSetsOutcome(outcome.GetError());
-  }
+  return ListSizeConstraintSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListSizeConstraintSetsOutcomeCallable WAFClient::ListSizeConstraintSetsCallable(const ListSizeConstraintSetsRequest& request) const
@@ -2110,15 +1689,7 @@ ListSqlInjectionMatchSetsOutcome WAFClient::ListSqlInjectionMatchSets(const List
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListSqlInjectionMatchSetsOutcome(ListSqlInjectionMatchSetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListSqlInjectionMatchSetsOutcome(outcome.GetError());
-  }
+  return ListSqlInjectionMatchSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListSqlInjectionMatchSetsOutcomeCallable WAFClient::ListSqlInjectionMatchSetsCallable(const ListSqlInjectionMatchSetsRequest& request) const
@@ -2145,15 +1716,7 @@ ListSubscribedRuleGroupsOutcome WAFClient::ListSubscribedRuleGroups(const ListSu
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListSubscribedRuleGroupsOutcome(ListSubscribedRuleGroupsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListSubscribedRuleGroupsOutcome(outcome.GetError());
-  }
+  return ListSubscribedRuleGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListSubscribedRuleGroupsOutcomeCallable WAFClient::ListSubscribedRuleGroupsCallable(const ListSubscribedRuleGroupsRequest& request) const
@@ -2180,15 +1743,7 @@ ListTagsForResourceOutcome WAFClient::ListTagsForResource(const ListTagsForResou
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable WAFClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -2215,15 +1770,7 @@ ListWebACLsOutcome WAFClient::ListWebACLs(const ListWebACLsRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListWebACLsOutcome(ListWebACLsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListWebACLsOutcome(outcome.GetError());
-  }
+  return ListWebACLsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListWebACLsOutcomeCallable WAFClient::ListWebACLsCallable(const ListWebACLsRequest& request) const
@@ -2250,15 +1797,7 @@ ListXssMatchSetsOutcome WAFClient::ListXssMatchSets(const ListXssMatchSetsReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListXssMatchSetsOutcome(ListXssMatchSetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListXssMatchSetsOutcome(outcome.GetError());
-  }
+  return ListXssMatchSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListXssMatchSetsOutcomeCallable WAFClient::ListXssMatchSetsCallable(const ListXssMatchSetsRequest& request) const
@@ -2285,15 +1824,7 @@ PutLoggingConfigurationOutcome WAFClient::PutLoggingConfiguration(const PutLoggi
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutLoggingConfigurationOutcome(PutLoggingConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutLoggingConfigurationOutcome(outcome.GetError());
-  }
+  return PutLoggingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutLoggingConfigurationOutcomeCallable WAFClient::PutLoggingConfigurationCallable(const PutLoggingConfigurationRequest& request) const
@@ -2320,15 +1851,7 @@ PutPermissionPolicyOutcome WAFClient::PutPermissionPolicy(const PutPermissionPol
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutPermissionPolicyOutcome(PutPermissionPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutPermissionPolicyOutcome(outcome.GetError());
-  }
+  return PutPermissionPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutPermissionPolicyOutcomeCallable WAFClient::PutPermissionPolicyCallable(const PutPermissionPolicyRequest& request) const
@@ -2355,15 +1878,7 @@ TagResourceOutcome WAFClient::TagResource(const TagResourceRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable WAFClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -2390,15 +1905,7 @@ UntagResourceOutcome WAFClient::UntagResource(const UntagResourceRequest& reques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable WAFClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -2425,15 +1932,7 @@ UpdateByteMatchSetOutcome WAFClient::UpdateByteMatchSet(const UpdateByteMatchSet
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateByteMatchSetOutcome(UpdateByteMatchSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateByteMatchSetOutcome(outcome.GetError());
-  }
+  return UpdateByteMatchSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateByteMatchSetOutcomeCallable WAFClient::UpdateByteMatchSetCallable(const UpdateByteMatchSetRequest& request) const
@@ -2460,15 +1959,7 @@ UpdateGeoMatchSetOutcome WAFClient::UpdateGeoMatchSet(const UpdateGeoMatchSetReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateGeoMatchSetOutcome(UpdateGeoMatchSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateGeoMatchSetOutcome(outcome.GetError());
-  }
+  return UpdateGeoMatchSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateGeoMatchSetOutcomeCallable WAFClient::UpdateGeoMatchSetCallable(const UpdateGeoMatchSetRequest& request) const
@@ -2495,15 +1986,7 @@ UpdateIPSetOutcome WAFClient::UpdateIPSet(const UpdateIPSetRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateIPSetOutcome(UpdateIPSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateIPSetOutcome(outcome.GetError());
-  }
+  return UpdateIPSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateIPSetOutcomeCallable WAFClient::UpdateIPSetCallable(const UpdateIPSetRequest& request) const
@@ -2530,15 +2013,7 @@ UpdateRateBasedRuleOutcome WAFClient::UpdateRateBasedRule(const UpdateRateBasedR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateRateBasedRuleOutcome(UpdateRateBasedRuleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateRateBasedRuleOutcome(outcome.GetError());
-  }
+  return UpdateRateBasedRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateRateBasedRuleOutcomeCallable WAFClient::UpdateRateBasedRuleCallable(const UpdateRateBasedRuleRequest& request) const
@@ -2565,15 +2040,7 @@ UpdateRegexMatchSetOutcome WAFClient::UpdateRegexMatchSet(const UpdateRegexMatch
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateRegexMatchSetOutcome(UpdateRegexMatchSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateRegexMatchSetOutcome(outcome.GetError());
-  }
+  return UpdateRegexMatchSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateRegexMatchSetOutcomeCallable WAFClient::UpdateRegexMatchSetCallable(const UpdateRegexMatchSetRequest& request) const
@@ -2600,15 +2067,7 @@ UpdateRegexPatternSetOutcome WAFClient::UpdateRegexPatternSet(const UpdateRegexP
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateRegexPatternSetOutcome(UpdateRegexPatternSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateRegexPatternSetOutcome(outcome.GetError());
-  }
+  return UpdateRegexPatternSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateRegexPatternSetOutcomeCallable WAFClient::UpdateRegexPatternSetCallable(const UpdateRegexPatternSetRequest& request) const
@@ -2635,15 +2094,7 @@ UpdateRuleOutcome WAFClient::UpdateRule(const UpdateRuleRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateRuleOutcome(UpdateRuleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateRuleOutcome(outcome.GetError());
-  }
+  return UpdateRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateRuleOutcomeCallable WAFClient::UpdateRuleCallable(const UpdateRuleRequest& request) const
@@ -2670,15 +2121,7 @@ UpdateRuleGroupOutcome WAFClient::UpdateRuleGroup(const UpdateRuleGroupRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateRuleGroupOutcome(UpdateRuleGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateRuleGroupOutcome(outcome.GetError());
-  }
+  return UpdateRuleGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateRuleGroupOutcomeCallable WAFClient::UpdateRuleGroupCallable(const UpdateRuleGroupRequest& request) const
@@ -2705,15 +2148,7 @@ UpdateSizeConstraintSetOutcome WAFClient::UpdateSizeConstraintSet(const UpdateSi
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateSizeConstraintSetOutcome(UpdateSizeConstraintSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateSizeConstraintSetOutcome(outcome.GetError());
-  }
+  return UpdateSizeConstraintSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateSizeConstraintSetOutcomeCallable WAFClient::UpdateSizeConstraintSetCallable(const UpdateSizeConstraintSetRequest& request) const
@@ -2740,15 +2175,7 @@ UpdateSqlInjectionMatchSetOutcome WAFClient::UpdateSqlInjectionMatchSet(const Up
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateSqlInjectionMatchSetOutcome(UpdateSqlInjectionMatchSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateSqlInjectionMatchSetOutcome(outcome.GetError());
-  }
+  return UpdateSqlInjectionMatchSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateSqlInjectionMatchSetOutcomeCallable WAFClient::UpdateSqlInjectionMatchSetCallable(const UpdateSqlInjectionMatchSetRequest& request) const
@@ -2775,15 +2202,7 @@ UpdateWebACLOutcome WAFClient::UpdateWebACL(const UpdateWebACLRequest& request) 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateWebACLOutcome(UpdateWebACLResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateWebACLOutcome(outcome.GetError());
-  }
+  return UpdateWebACLOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateWebACLOutcomeCallable WAFClient::UpdateWebACLCallable(const UpdateWebACLRequest& request) const
@@ -2810,15 +2229,7 @@ UpdateXssMatchSetOutcome WAFClient::UpdateXssMatchSet(const UpdateXssMatchSetReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateXssMatchSetOutcome(UpdateXssMatchSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateXssMatchSetOutcome(outcome.GetError());
-  }
+  return UpdateXssMatchSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateXssMatchSetOutcomeCallable WAFClient::UpdateXssMatchSetCallable(const UpdateXssMatchSetRequest& request) const

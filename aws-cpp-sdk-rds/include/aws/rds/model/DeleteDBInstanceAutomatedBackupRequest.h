@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -28,7 +18,7 @@ namespace Model
 
   /**
    * <p>Parameter input for the <code>DeleteDBInstanceAutomatedBackup</code>
-   * operation. </p><p><h3>See Also:</h3>   <a
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstanceAutomatedBackupMessage">AWS
    * API Reference</a></p>
    */
@@ -98,10 +88,70 @@ namespace Model
      */
     inline DeleteDBInstanceAutomatedBackupRequest& WithDbiResourceId(const char* value) { SetDbiResourceId(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the automated backups to delete, for
+     * example,
+     * <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     */
+    inline const Aws::String& GetDBInstanceAutomatedBackupsArn() const{ return m_dBInstanceAutomatedBackupsArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the automated backups to delete, for
+     * example,
+     * <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     */
+    inline bool DBInstanceAutomatedBackupsArnHasBeenSet() const { return m_dBInstanceAutomatedBackupsArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the automated backups to delete, for
+     * example,
+     * <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     */
+    inline void SetDBInstanceAutomatedBackupsArn(const Aws::String& value) { m_dBInstanceAutomatedBackupsArnHasBeenSet = true; m_dBInstanceAutomatedBackupsArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the automated backups to delete, for
+     * example,
+     * <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     */
+    inline void SetDBInstanceAutomatedBackupsArn(Aws::String&& value) { m_dBInstanceAutomatedBackupsArnHasBeenSet = true; m_dBInstanceAutomatedBackupsArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the automated backups to delete, for
+     * example,
+     * <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     */
+    inline void SetDBInstanceAutomatedBackupsArn(const char* value) { m_dBInstanceAutomatedBackupsArnHasBeenSet = true; m_dBInstanceAutomatedBackupsArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the automated backups to delete, for
+     * example,
+     * <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     */
+    inline DeleteDBInstanceAutomatedBackupRequest& WithDBInstanceAutomatedBackupsArn(const Aws::String& value) { SetDBInstanceAutomatedBackupsArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the automated backups to delete, for
+     * example,
+     * <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     */
+    inline DeleteDBInstanceAutomatedBackupRequest& WithDBInstanceAutomatedBackupsArn(Aws::String&& value) { SetDBInstanceAutomatedBackupsArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the automated backups to delete, for
+     * example,
+     * <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     */
+    inline DeleteDBInstanceAutomatedBackupRequest& WithDBInstanceAutomatedBackupsArn(const char* value) { SetDBInstanceAutomatedBackupsArn(value); return *this;}
+
   private:
 
     Aws::String m_dbiResourceId;
     bool m_dbiResourceIdHasBeenSet;
+
+    Aws::String m_dBInstanceAutomatedBackupsArn;
+    bool m_dBInstanceAutomatedBackupsArnHasBeenSet;
   };
 
 } // namespace Model

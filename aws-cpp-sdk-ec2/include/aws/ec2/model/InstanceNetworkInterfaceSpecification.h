@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -647,8 +637,45 @@ namespace Model
 
 
     /**
-     * <p>The type of network interface. To create an Elastic Fabric Adapter (EFA),
-     * specify <code>efa</code>. For more information, see <a
+     * <p>Indicates whether to assign a carrier IP address to the network
+     * interface.</p> <p>You can only assign a carrier IP address to a network
+     * interface that is in a subnet in a Wavelength Zone. For more information about
+     * carrier IP addresses, see Carrier IP addresses in the AWS Wavelength Developer
+     * Guide.</p>
+     */
+    inline bool GetAssociateCarrierIpAddress() const{ return m_associateCarrierIpAddress; }
+
+    /**
+     * <p>Indicates whether to assign a carrier IP address to the network
+     * interface.</p> <p>You can only assign a carrier IP address to a network
+     * interface that is in a subnet in a Wavelength Zone. For more information about
+     * carrier IP addresses, see Carrier IP addresses in the AWS Wavelength Developer
+     * Guide.</p>
+     */
+    inline bool AssociateCarrierIpAddressHasBeenSet() const { return m_associateCarrierIpAddressHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to assign a carrier IP address to the network
+     * interface.</p> <p>You can only assign a carrier IP address to a network
+     * interface that is in a subnet in a Wavelength Zone. For more information about
+     * carrier IP addresses, see Carrier IP addresses in the AWS Wavelength Developer
+     * Guide.</p>
+     */
+    inline void SetAssociateCarrierIpAddress(bool value) { m_associateCarrierIpAddressHasBeenSet = true; m_associateCarrierIpAddress = value; }
+
+    /**
+     * <p>Indicates whether to assign a carrier IP address to the network
+     * interface.</p> <p>You can only assign a carrier IP address to a network
+     * interface that is in a subnet in a Wavelength Zone. For more information about
+     * carrier IP addresses, see Carrier IP addresses in the AWS Wavelength Developer
+     * Guide.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithAssociateCarrierIpAddress(bool value) { SetAssociateCarrierIpAddress(value); return *this;}
+
+
+    /**
+     * <p>The type of network interface.</p> <p>To create an Elastic Fabric Adapter
+     * (EFA), specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
@@ -657,8 +684,8 @@ namespace Model
     inline const Aws::String& GetInterfaceType() const{ return m_interfaceType; }
 
     /**
-     * <p>The type of network interface. To create an Elastic Fabric Adapter (EFA),
-     * specify <code>efa</code>. For more information, see <a
+     * <p>The type of network interface.</p> <p>To create an Elastic Fabric Adapter
+     * (EFA), specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
@@ -667,8 +694,8 @@ namespace Model
     inline bool InterfaceTypeHasBeenSet() const { return m_interfaceTypeHasBeenSet; }
 
     /**
-     * <p>The type of network interface. To create an Elastic Fabric Adapter (EFA),
-     * specify <code>efa</code>. For more information, see <a
+     * <p>The type of network interface.</p> <p>To create an Elastic Fabric Adapter
+     * (EFA), specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
@@ -677,8 +704,8 @@ namespace Model
     inline void SetInterfaceType(const Aws::String& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = value; }
 
     /**
-     * <p>The type of network interface. To create an Elastic Fabric Adapter (EFA),
-     * specify <code>efa</code>. For more information, see <a
+     * <p>The type of network interface.</p> <p>To create an Elastic Fabric Adapter
+     * (EFA), specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
@@ -687,8 +714,8 @@ namespace Model
     inline void SetInterfaceType(Aws::String&& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = std::move(value); }
 
     /**
-     * <p>The type of network interface. To create an Elastic Fabric Adapter (EFA),
-     * specify <code>efa</code>. For more information, see <a
+     * <p>The type of network interface.</p> <p>To create an Elastic Fabric Adapter
+     * (EFA), specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
@@ -697,8 +724,8 @@ namespace Model
     inline void SetInterfaceType(const char* value) { m_interfaceTypeHasBeenSet = true; m_interfaceType.assign(value); }
 
     /**
-     * <p>The type of network interface. To create an Elastic Fabric Adapter (EFA),
-     * specify <code>efa</code>. For more information, see <a
+     * <p>The type of network interface.</p> <p>To create an Elastic Fabric Adapter
+     * (EFA), specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
@@ -707,8 +734,8 @@ namespace Model
     inline InstanceNetworkInterfaceSpecification& WithInterfaceType(const Aws::String& value) { SetInterfaceType(value); return *this;}
 
     /**
-     * <p>The type of network interface. To create an Elastic Fabric Adapter (EFA),
-     * specify <code>efa</code>. For more information, see <a
+     * <p>The type of network interface.</p> <p>To create an Elastic Fabric Adapter
+     * (EFA), specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
@@ -717,14 +744,43 @@ namespace Model
     inline InstanceNetworkInterfaceSpecification& WithInterfaceType(Aws::String&& value) { SetInterfaceType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of network interface. To create an Elastic Fabric Adapter (EFA),
-     * specify <code>efa</code>. For more information, see <a
+     * <p>The type of network interface.</p> <p>To create an Elastic Fabric Adapter
+     * (EFA), specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
      * parameter.</p> <p>Valid values: <code>interface</code> | <code>efa</code> </p>
      */
     inline InstanceNetworkInterfaceSpecification& WithInterfaceType(const char* value) { SetInterfaceType(value); return *this;}
+
+
+    /**
+     * <p>The index of the network card. Some instance types support multiple network
+     * cards. The primary network interface must be assigned to network card index 0.
+     * The default is network card index 0.</p>
+     */
+    inline int GetNetworkCardIndex() const{ return m_networkCardIndex; }
+
+    /**
+     * <p>The index of the network card. Some instance types support multiple network
+     * cards. The primary network interface must be assigned to network card index 0.
+     * The default is network card index 0.</p>
+     */
+    inline bool NetworkCardIndexHasBeenSet() const { return m_networkCardIndexHasBeenSet; }
+
+    /**
+     * <p>The index of the network card. Some instance types support multiple network
+     * cards. The primary network interface must be assigned to network card index 0.
+     * The default is network card index 0.</p>
+     */
+    inline void SetNetworkCardIndex(int value) { m_networkCardIndexHasBeenSet = true; m_networkCardIndex = value; }
+
+    /**
+     * <p>The index of the network card. Some instance types support multiple network
+     * cards. The primary network interface must be assigned to network card index 0.
+     * The default is network card index 0.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithNetworkCardIndex(int value) { SetNetworkCardIndex(value); return *this;}
 
   private:
 
@@ -764,8 +820,14 @@ namespace Model
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
 
+    bool m_associateCarrierIpAddress;
+    bool m_associateCarrierIpAddressHasBeenSet;
+
     Aws::String m_interfaceType;
     bool m_interfaceTypeHasBeenSet;
+
+    int m_networkCardIndex;
+    bool m_networkCardIndexHasBeenSet;
   };
 
 } // namespace Model

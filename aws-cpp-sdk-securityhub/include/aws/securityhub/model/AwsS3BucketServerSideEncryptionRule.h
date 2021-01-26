@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -49,42 +39,42 @@ namespace Model
 
     /**
      * <p>Specifies the default server-side encryption to apply to new objects in the
-     * bucket. If a <code>PUT</code> Object request doesn't specify any server-side
+     * bucket. If a <code>PUT</code> object request doesn't specify any server-side
      * encryption, this default encryption is applied.</p>
      */
     inline const AwsS3BucketServerSideEncryptionByDefault& GetApplyServerSideEncryptionByDefault() const{ return m_applyServerSideEncryptionByDefault; }
 
     /**
      * <p>Specifies the default server-side encryption to apply to new objects in the
-     * bucket. If a <code>PUT</code> Object request doesn't specify any server-side
+     * bucket. If a <code>PUT</code> object request doesn't specify any server-side
      * encryption, this default encryption is applied.</p>
      */
     inline bool ApplyServerSideEncryptionByDefaultHasBeenSet() const { return m_applyServerSideEncryptionByDefaultHasBeenSet; }
 
     /**
      * <p>Specifies the default server-side encryption to apply to new objects in the
-     * bucket. If a <code>PUT</code> Object request doesn't specify any server-side
+     * bucket. If a <code>PUT</code> object request doesn't specify any server-side
      * encryption, this default encryption is applied.</p>
      */
     inline void SetApplyServerSideEncryptionByDefault(const AwsS3BucketServerSideEncryptionByDefault& value) { m_applyServerSideEncryptionByDefaultHasBeenSet = true; m_applyServerSideEncryptionByDefault = value; }
 
     /**
      * <p>Specifies the default server-side encryption to apply to new objects in the
-     * bucket. If a <code>PUT</code> Object request doesn't specify any server-side
+     * bucket. If a <code>PUT</code> object request doesn't specify any server-side
      * encryption, this default encryption is applied.</p>
      */
     inline void SetApplyServerSideEncryptionByDefault(AwsS3BucketServerSideEncryptionByDefault&& value) { m_applyServerSideEncryptionByDefaultHasBeenSet = true; m_applyServerSideEncryptionByDefault = std::move(value); }
 
     /**
      * <p>Specifies the default server-side encryption to apply to new objects in the
-     * bucket. If a <code>PUT</code> Object request doesn't specify any server-side
+     * bucket. If a <code>PUT</code> object request doesn't specify any server-side
      * encryption, this default encryption is applied.</p>
      */
     inline AwsS3BucketServerSideEncryptionRule& WithApplyServerSideEncryptionByDefault(const AwsS3BucketServerSideEncryptionByDefault& value) { SetApplyServerSideEncryptionByDefault(value); return *this;}
 
     /**
      * <p>Specifies the default server-side encryption to apply to new objects in the
-     * bucket. If a <code>PUT</code> Object request doesn't specify any server-side
+     * bucket. If a <code>PUT</code> object request doesn't specify any server-side
      * encryption, this default encryption is applied.</p>
      */
     inline AwsS3BucketServerSideEncryptionRule& WithApplyServerSideEncryptionByDefault(AwsS3BucketServerSideEncryptionByDefault&& value) { SetApplyServerSideEncryptionByDefault(std::move(value)); return *this;}

@@ -1,16 +1,5 @@
-#
-# Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-#
-# Licensed under the Apache License, Version 2.0 (the "License").
-# You may not use this file except in compliance with the License.
-# A copy of the License is located at
-#
-#  http://aws.amazon.com/apache2.0
-#
-# or in the "license" file accompanying this file. This file is distributed
-# on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-# express or implied. See the License for the specific language governing
-# permissions and limitations under the License.
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: Apache-2.0.
 #
 
 # When using AWSSDK package, users need to tell the installation root dir
@@ -28,7 +17,7 @@
 #   The archives will all be in <prefix>/lib/<platform_prefix> dir if target is shared,
 #   otherwise will be in <prefix>/bin/<platform_prefix> dir.
 
-# Platfrom_prefix is determined on compile time nbu option SIMPLE_INSTALL
+# Platform_prefix is determined on compile time nbu option SIMPLE_INSTALL
 # such as "<linux/intel64>"
 
 if(AWSSDK_FOUND)
@@ -82,6 +71,7 @@ if (AWSSDK_ROOT_DIR)
             )
 else()
     find_file(AWSSDK_CORE_HEADER_FILE Aws.h
+        "${AWSSDK_DEFAULT_ROOT_DIR}/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
         "/usr/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
         "/usr/local/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
         "C:/Progra~1/AWSSDK/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
@@ -89,7 +79,6 @@ else()
         "C:/Program Files/aws-cpp-sdk-all/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
         "C:/Program Files (x86)/aws-cpp-sdk-all/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
         "C:/AWSSDK/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
-        "${AWSSDK_DEFAULT_ROOT_DIR}/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
     )
 endif()
 
@@ -123,7 +112,7 @@ if (NOT AWSSDK_CORE_LIB_FILE)
             Please make sure header files and binaries are located in INSTALL_ROOT_DIR/INCLUDE_DIR/ and INSTALL_ROOT_DIR/LIB_DIR/[PLATFORM_PREFIX]/[Debug|Config|OtherConfigs]")
 endif()
 
-# based on AWSSDK_CORE_LIB_FILE path, inspects the actual AWSSDK_PLATFROM_PREFIX
+# based on AWSSDK_CORE_LIB_FILE path, inspects the actual AWSSDK_PLATFORM_PREFIX
 get_filename_component(TEMP_PATH "${AWSSDK_CORE_LIB_FILE}" PATH)
 get_filename_component(TEMP_NAME "${TEMP_PATH}" NAME)
 
@@ -216,7 +205,7 @@ macro(AWSSDK_DETERMINE_LIBS_TO_LINK SERVICE_LIST OUTPUT_VAR)
     # This is important for static linked user application.
     # They way of doing this is to keep checking libs after current lib till the end, if current lib is a dependency of checking lib,
     # then move current lib to the end of list, after moving, current index stay and start another round of checking. If no libs after
-    # current lib is a dependency of current lib, move current index to next and start anohter round of checking.
+    # current lib is a dependency of current lib, move current index to next and start another round of checking.
     # Example: "s3;core;transfer"
     #-> s3(cur);core(checking);transfer  s3 is not a dependency of core
     #-> s3(cur);core;transfer(checking)  s3 is a dependency of transfer
@@ -279,7 +268,7 @@ endmacro(AWSSDK_LIB_DEPS)
 
 if (AWSSDK_FIND_COMPONENTS)
     #AWSSDK_LINK_LIBRARIES includes all the libraries (including dependencies) used by SDK and needed by customer application when doing linking.
-    #It only comes with COMPONENTS when doing find_package in customer application. e.g. find_package(AWSSDK REQUIRED COMPONENT s3 ec2)
+    #It only comes with COMPONENTS when doing find_package in customer application. e.g. find_package(AWSSDK REQUIRED COMPONENTS s3 ec2)
     #While SDK will resolve all the dependencies for customer application by doing find_package when COMPONENTS are specified,
     #there is no need to add those dependencies into AWSSDK_LINK_LIBRARIES. Dependencies in AWSSDK_LINK_LIBRARIES will also become a problem when
     #customer specified CMAKE_PREFIX_PATH and set it with non-default CMake search directories for dependencies when building SDK. In this case, when building customer
@@ -289,11 +278,11 @@ if (AWSSDK_FIND_COMPONENTS)
     #Well, you could still solve it by adding an additional target_link_directories call before target_link_libraries, whereas remove those dependencies from
     #AWSSDK_LINK_LIBRARIES will be more convenient and less confusing.
     AWSSDK_DETERMINE_LIBS_TO_LINK(AWSSDK_FIND_COMPONENTS AWSSDK_LINK_LIBRARIES)
-    message(STATUS "Components specified for AWSSDK: ${AWSSDK_FIND_COMPONENTS}, application wll be depending on libs: ${AWSSDK_LINK_LIBRARIES}")
+    message(STATUS "Components specified for AWSSDK: ${AWSSDK_FIND_COMPONENTS}, application will be depending on libs: ${AWSSDK_LINK_LIBRARIES}")
 
     # platform dependencies will be resolved automatically when doing find_package(aws-cpp-sdk-core).
     list(REMOVE_ITEM AWSSDK_LINK_LIBRARIES ${AWSSDK_PLATFORM_DEPS})
-    # third_party dependencies will be resolved automatically when doing fidn_package(aws-cpp-sdk-core) as well.
+    # third_party dependencies will be resolved automatically when doing find_package(aws-cpp-sdk-core) as well.
     list(REMOVE_ITEM AWSSDK_LINK_LIBRARIES ${AWSSDK_THIRD_PARTY_LIBS})
 
     set(AWSSDK_TARGETS ${AWSSDK_LINK_LIBRARIES})

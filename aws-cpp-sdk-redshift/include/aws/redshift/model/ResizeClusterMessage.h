@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/redshift/Redshift_EXPORTS.h>
@@ -33,6 +23,12 @@ namespace Redshift
 namespace Model
 {
 
+  /**
+   * <p>Describes a resize cluster operation. For example, a scheduled action to run
+   * the <code>ResizeCluster</code> API operation. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeClusterMessage">AWS
+   * API Reference</a></p>
+   */
   class AWS_REDSHIFT_API ResizeClusterMessage
   {
   public:
@@ -176,22 +172,26 @@ namespace Model
 
 
     /**
-     * <p>The new number of nodes for the cluster.</p>
+     * <p>The new number of nodes for the cluster. If not specified, the cluster's
+     * current number of nodes is used.</p>
      */
     inline int GetNumberOfNodes() const{ return m_numberOfNodes; }
 
     /**
-     * <p>The new number of nodes for the cluster.</p>
+     * <p>The new number of nodes for the cluster. If not specified, the cluster's
+     * current number of nodes is used.</p>
      */
     inline bool NumberOfNodesHasBeenSet() const { return m_numberOfNodesHasBeenSet; }
 
     /**
-     * <p>The new number of nodes for the cluster.</p>
+     * <p>The new number of nodes for the cluster. If not specified, the cluster's
+     * current number of nodes is used.</p>
      */
     inline void SetNumberOfNodes(int value) { m_numberOfNodesHasBeenSet = true; m_numberOfNodes = value; }
 
     /**
-     * <p>The new number of nodes for the cluster.</p>
+     * <p>The new number of nodes for the cluster. If not specified, the cluster's
+     * current number of nodes is used.</p>
      */
     inline ResizeClusterMessage& WithNumberOfNodes(int value) { SetNumberOfNodes(value); return *this;}
 

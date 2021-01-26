@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
@@ -218,13 +208,13 @@ namespace Model
      * name in <code>ChildrenOfAlarmName</code> is not returned.</p> <p>If you specify
      * <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the
      * request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do
-     * so, you will receive a validation error.</p> <note> <p>Only the <code>Alarm
+     * so, you receive a validation error.</p>  <p>Only the <code>Alarm
      * Name</code>, <code>ARN</code>, <code>StateValue</code>
      * (OK/ALARM/INSUFFICIENT_DATA), and <code>StateUpdatedTimestamp</code> information
      * are returned by this operation when you use this parameter. To get complete
      * information about these alarms, perform another <code>DescribeAlarms</code>
      * operation and specify the parent alarm names in the <code>AlarmNames</code>
-     * parameter.</p> </note>
+     * parameter.</p> 
      */
     inline const Aws::String& GetChildrenOfAlarmName() const{ return m_childrenOfAlarmName; }
 
@@ -237,13 +227,13 @@ namespace Model
      * name in <code>ChildrenOfAlarmName</code> is not returned.</p> <p>If you specify
      * <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the
      * request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do
-     * so, you will receive a validation error.</p> <note> <p>Only the <code>Alarm
+     * so, you receive a validation error.</p>  <p>Only the <code>Alarm
      * Name</code>, <code>ARN</code>, <code>StateValue</code>
      * (OK/ALARM/INSUFFICIENT_DATA), and <code>StateUpdatedTimestamp</code> information
      * are returned by this operation when you use this parameter. To get complete
      * information about these alarms, perform another <code>DescribeAlarms</code>
      * operation and specify the parent alarm names in the <code>AlarmNames</code>
-     * parameter.</p> </note>
+     * parameter.</p> 
      */
     inline bool ChildrenOfAlarmNameHasBeenSet() const { return m_childrenOfAlarmNameHasBeenSet; }
 
@@ -256,13 +246,13 @@ namespace Model
      * name in <code>ChildrenOfAlarmName</code> is not returned.</p> <p>If you specify
      * <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the
      * request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do
-     * so, you will receive a validation error.</p> <note> <p>Only the <code>Alarm
+     * so, you receive a validation error.</p>  <p>Only the <code>Alarm
      * Name</code>, <code>ARN</code>, <code>StateValue</code>
      * (OK/ALARM/INSUFFICIENT_DATA), and <code>StateUpdatedTimestamp</code> information
      * are returned by this operation when you use this parameter. To get complete
      * information about these alarms, perform another <code>DescribeAlarms</code>
      * operation and specify the parent alarm names in the <code>AlarmNames</code>
-     * parameter.</p> </note>
+     * parameter.</p> 
      */
     inline void SetChildrenOfAlarmName(const Aws::String& value) { m_childrenOfAlarmNameHasBeenSet = true; m_childrenOfAlarmName = value; }
 
@@ -275,13 +265,13 @@ namespace Model
      * name in <code>ChildrenOfAlarmName</code> is not returned.</p> <p>If you specify
      * <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the
      * request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do
-     * so, you will receive a validation error.</p> <note> <p>Only the <code>Alarm
+     * so, you receive a validation error.</p>  <p>Only the <code>Alarm
      * Name</code>, <code>ARN</code>, <code>StateValue</code>
      * (OK/ALARM/INSUFFICIENT_DATA), and <code>StateUpdatedTimestamp</code> information
      * are returned by this operation when you use this parameter. To get complete
      * information about these alarms, perform another <code>DescribeAlarms</code>
      * operation and specify the parent alarm names in the <code>AlarmNames</code>
-     * parameter.</p> </note>
+     * parameter.</p> 
      */
     inline void SetChildrenOfAlarmName(Aws::String&& value) { m_childrenOfAlarmNameHasBeenSet = true; m_childrenOfAlarmName = std::move(value); }
 
@@ -294,13 +284,13 @@ namespace Model
      * name in <code>ChildrenOfAlarmName</code> is not returned.</p> <p>If you specify
      * <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the
      * request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do
-     * so, you will receive a validation error.</p> <note> <p>Only the <code>Alarm
+     * so, you receive a validation error.</p>  <p>Only the <code>Alarm
      * Name</code>, <code>ARN</code>, <code>StateValue</code>
      * (OK/ALARM/INSUFFICIENT_DATA), and <code>StateUpdatedTimestamp</code> information
      * are returned by this operation when you use this parameter. To get complete
      * information about these alarms, perform another <code>DescribeAlarms</code>
      * operation and specify the parent alarm names in the <code>AlarmNames</code>
-     * parameter.</p> </note>
+     * parameter.</p> 
      */
     inline void SetChildrenOfAlarmName(const char* value) { m_childrenOfAlarmNameHasBeenSet = true; m_childrenOfAlarmName.assign(value); }
 
@@ -313,13 +303,13 @@ namespace Model
      * name in <code>ChildrenOfAlarmName</code> is not returned.</p> <p>If you specify
      * <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the
      * request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do
-     * so, you will receive a validation error.</p> <note> <p>Only the <code>Alarm
+     * so, you receive a validation error.</p>  <p>Only the <code>Alarm
      * Name</code>, <code>ARN</code>, <code>StateValue</code>
      * (OK/ALARM/INSUFFICIENT_DATA), and <code>StateUpdatedTimestamp</code> information
      * are returned by this operation when you use this parameter. To get complete
      * information about these alarms, perform another <code>DescribeAlarms</code>
      * operation and specify the parent alarm names in the <code>AlarmNames</code>
-     * parameter.</p> </note>
+     * parameter.</p> 
      */
     inline DescribeAlarmsRequest& WithChildrenOfAlarmName(const Aws::String& value) { SetChildrenOfAlarmName(value); return *this;}
 
@@ -332,13 +322,13 @@ namespace Model
      * name in <code>ChildrenOfAlarmName</code> is not returned.</p> <p>If you specify
      * <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the
      * request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do
-     * so, you will receive a validation error.</p> <note> <p>Only the <code>Alarm
+     * so, you receive a validation error.</p>  <p>Only the <code>Alarm
      * Name</code>, <code>ARN</code>, <code>StateValue</code>
      * (OK/ALARM/INSUFFICIENT_DATA), and <code>StateUpdatedTimestamp</code> information
      * are returned by this operation when you use this parameter. To get complete
      * information about these alarms, perform another <code>DescribeAlarms</code>
      * operation and specify the parent alarm names in the <code>AlarmNames</code>
-     * parameter.</p> </note>
+     * parameter.</p> 
      */
     inline DescribeAlarmsRequest& WithChildrenOfAlarmName(Aws::String&& value) { SetChildrenOfAlarmName(std::move(value)); return *this;}
 
@@ -351,13 +341,13 @@ namespace Model
      * name in <code>ChildrenOfAlarmName</code> is not returned.</p> <p>If you specify
      * <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the
      * request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do
-     * so, you will receive a validation error.</p> <note> <p>Only the <code>Alarm
+     * so, you receive a validation error.</p>  <p>Only the <code>Alarm
      * Name</code>, <code>ARN</code>, <code>StateValue</code>
      * (OK/ALARM/INSUFFICIENT_DATA), and <code>StateUpdatedTimestamp</code> information
      * are returned by this operation when you use this parameter. To get complete
      * information about these alarms, perform another <code>DescribeAlarms</code>
      * operation and specify the parent alarm names in the <code>AlarmNames</code>
-     * parameter.</p> </note>
+     * parameter.</p> 
      */
     inline DescribeAlarmsRequest& WithChildrenOfAlarmName(const char* value) { SetChildrenOfAlarmName(value); return *this;}
 
@@ -370,12 +360,11 @@ namespace Model
      * Information about the alarm that you specify in <code>ParentsOfAlarmName</code>
      * is not returned.</p> <p>If you specify <code>ParentsOfAlarmName</code>, you
      * cannot specify any other parameters in the request except for
-     * <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you will
-     * receive a validation error.</p> <note> <p>Only the Alarm Name and ARN are
-     * returned by this operation when you use this parameter. To get complete
-     * information about these alarms, perform another <code>DescribeAlarms</code>
-     * operation and specify the parent alarm names in the <code>AlarmNames</code>
-     * parameter.</p> </note>
+     * <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a
+     * validation error.</p>  <p>Only the Alarm Name and ARN are returned by this
+     * operation when you use this parameter. To get complete information about these
+     * alarms, perform another <code>DescribeAlarms</code> operation and specify the
+     * parent alarm names in the <code>AlarmNames</code> parameter.</p> 
      */
     inline const Aws::String& GetParentsOfAlarmName() const{ return m_parentsOfAlarmName; }
 
@@ -387,12 +376,11 @@ namespace Model
      * Information about the alarm that you specify in <code>ParentsOfAlarmName</code>
      * is not returned.</p> <p>If you specify <code>ParentsOfAlarmName</code>, you
      * cannot specify any other parameters in the request except for
-     * <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you will
-     * receive a validation error.</p> <note> <p>Only the Alarm Name and ARN are
-     * returned by this operation when you use this parameter. To get complete
-     * information about these alarms, perform another <code>DescribeAlarms</code>
-     * operation and specify the parent alarm names in the <code>AlarmNames</code>
-     * parameter.</p> </note>
+     * <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a
+     * validation error.</p>  <p>Only the Alarm Name and ARN are returned by this
+     * operation when you use this parameter. To get complete information about these
+     * alarms, perform another <code>DescribeAlarms</code> operation and specify the
+     * parent alarm names in the <code>AlarmNames</code> parameter.</p> 
      */
     inline bool ParentsOfAlarmNameHasBeenSet() const { return m_parentsOfAlarmNameHasBeenSet; }
 
@@ -404,12 +392,11 @@ namespace Model
      * Information about the alarm that you specify in <code>ParentsOfAlarmName</code>
      * is not returned.</p> <p>If you specify <code>ParentsOfAlarmName</code>, you
      * cannot specify any other parameters in the request except for
-     * <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you will
-     * receive a validation error.</p> <note> <p>Only the Alarm Name and ARN are
-     * returned by this operation when you use this parameter. To get complete
-     * information about these alarms, perform another <code>DescribeAlarms</code>
-     * operation and specify the parent alarm names in the <code>AlarmNames</code>
-     * parameter.</p> </note>
+     * <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a
+     * validation error.</p>  <p>Only the Alarm Name and ARN are returned by this
+     * operation when you use this parameter. To get complete information about these
+     * alarms, perform another <code>DescribeAlarms</code> operation and specify the
+     * parent alarm names in the <code>AlarmNames</code> parameter.</p> 
      */
     inline void SetParentsOfAlarmName(const Aws::String& value) { m_parentsOfAlarmNameHasBeenSet = true; m_parentsOfAlarmName = value; }
 
@@ -421,12 +408,11 @@ namespace Model
      * Information about the alarm that you specify in <code>ParentsOfAlarmName</code>
      * is not returned.</p> <p>If you specify <code>ParentsOfAlarmName</code>, you
      * cannot specify any other parameters in the request except for
-     * <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you will
-     * receive a validation error.</p> <note> <p>Only the Alarm Name and ARN are
-     * returned by this operation when you use this parameter. To get complete
-     * information about these alarms, perform another <code>DescribeAlarms</code>
-     * operation and specify the parent alarm names in the <code>AlarmNames</code>
-     * parameter.</p> </note>
+     * <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a
+     * validation error.</p>  <p>Only the Alarm Name and ARN are returned by this
+     * operation when you use this parameter. To get complete information about these
+     * alarms, perform another <code>DescribeAlarms</code> operation and specify the
+     * parent alarm names in the <code>AlarmNames</code> parameter.</p> 
      */
     inline void SetParentsOfAlarmName(Aws::String&& value) { m_parentsOfAlarmNameHasBeenSet = true; m_parentsOfAlarmName = std::move(value); }
 
@@ -438,12 +424,11 @@ namespace Model
      * Information about the alarm that you specify in <code>ParentsOfAlarmName</code>
      * is not returned.</p> <p>If you specify <code>ParentsOfAlarmName</code>, you
      * cannot specify any other parameters in the request except for
-     * <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you will
-     * receive a validation error.</p> <note> <p>Only the Alarm Name and ARN are
-     * returned by this operation when you use this parameter. To get complete
-     * information about these alarms, perform another <code>DescribeAlarms</code>
-     * operation and specify the parent alarm names in the <code>AlarmNames</code>
-     * parameter.</p> </note>
+     * <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a
+     * validation error.</p>  <p>Only the Alarm Name and ARN are returned by this
+     * operation when you use this parameter. To get complete information about these
+     * alarms, perform another <code>DescribeAlarms</code> operation and specify the
+     * parent alarm names in the <code>AlarmNames</code> parameter.</p> 
      */
     inline void SetParentsOfAlarmName(const char* value) { m_parentsOfAlarmNameHasBeenSet = true; m_parentsOfAlarmName.assign(value); }
 
@@ -455,12 +440,11 @@ namespace Model
      * Information about the alarm that you specify in <code>ParentsOfAlarmName</code>
      * is not returned.</p> <p>If you specify <code>ParentsOfAlarmName</code>, you
      * cannot specify any other parameters in the request except for
-     * <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you will
-     * receive a validation error.</p> <note> <p>Only the Alarm Name and ARN are
-     * returned by this operation when you use this parameter. To get complete
-     * information about these alarms, perform another <code>DescribeAlarms</code>
-     * operation and specify the parent alarm names in the <code>AlarmNames</code>
-     * parameter.</p> </note>
+     * <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a
+     * validation error.</p>  <p>Only the Alarm Name and ARN are returned by this
+     * operation when you use this parameter. To get complete information about these
+     * alarms, perform another <code>DescribeAlarms</code> operation and specify the
+     * parent alarm names in the <code>AlarmNames</code> parameter.</p> 
      */
     inline DescribeAlarmsRequest& WithParentsOfAlarmName(const Aws::String& value) { SetParentsOfAlarmName(value); return *this;}
 
@@ -472,12 +456,11 @@ namespace Model
      * Information about the alarm that you specify in <code>ParentsOfAlarmName</code>
      * is not returned.</p> <p>If you specify <code>ParentsOfAlarmName</code>, you
      * cannot specify any other parameters in the request except for
-     * <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you will
-     * receive a validation error.</p> <note> <p>Only the Alarm Name and ARN are
-     * returned by this operation when you use this parameter. To get complete
-     * information about these alarms, perform another <code>DescribeAlarms</code>
-     * operation and specify the parent alarm names in the <code>AlarmNames</code>
-     * parameter.</p> </note>
+     * <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a
+     * validation error.</p>  <p>Only the Alarm Name and ARN are returned by this
+     * operation when you use this parameter. To get complete information about these
+     * alarms, perform another <code>DescribeAlarms</code> operation and specify the
+     * parent alarm names in the <code>AlarmNames</code> parameter.</p> 
      */
     inline DescribeAlarmsRequest& WithParentsOfAlarmName(Aws::String&& value) { SetParentsOfAlarmName(std::move(value)); return *this;}
 
@@ -489,12 +472,11 @@ namespace Model
      * Information about the alarm that you specify in <code>ParentsOfAlarmName</code>
      * is not returned.</p> <p>If you specify <code>ParentsOfAlarmName</code>, you
      * cannot specify any other parameters in the request except for
-     * <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you will
-     * receive a validation error.</p> <note> <p>Only the Alarm Name and ARN are
-     * returned by this operation when you use this parameter. To get complete
-     * information about these alarms, perform another <code>DescribeAlarms</code>
-     * operation and specify the parent alarm names in the <code>AlarmNames</code>
-     * parameter.</p> </note>
+     * <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a
+     * validation error.</p>  <p>Only the Alarm Name and ARN are returned by this
+     * operation when you use this parameter. To get complete information about these
+     * alarms, perform another <code>DescribeAlarms</code> operation and specify the
+     * parent alarm names in the <code>AlarmNames</code> parameter.</p> 
      */
     inline DescribeAlarmsRequest& WithParentsOfAlarmName(const char* value) { SetParentsOfAlarmName(value); return *this;}
 

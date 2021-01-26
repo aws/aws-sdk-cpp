@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/eks/EKS_EXPORTS.h>
 #include <aws/eks/EKSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/eks/model/VpcConfigRequest.h>
+#include <aws/eks/model/KubernetesNetworkConfigRequest.h>
 #include <aws/eks/model/Logging.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -140,8 +131,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for
-     * Amazon EKS to make calls to other AWS API operations on your behalf. For more
-     * information, see <a
+     * the Kubernetes control plane to make calls to AWS API operations on your behalf.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
      * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
@@ -149,8 +140,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for
-     * Amazon EKS to make calls to other AWS API operations on your behalf. For more
-     * information, see <a
+     * the Kubernetes control plane to make calls to AWS API operations on your behalf.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
      * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
@@ -158,8 +149,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for
-     * Amazon EKS to make calls to other AWS API operations on your behalf. For more
-     * information, see <a
+     * the Kubernetes control plane to make calls to AWS API operations on your behalf.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
      * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
@@ -167,8 +158,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for
-     * Amazon EKS to make calls to other AWS API operations on your behalf. For more
-     * information, see <a
+     * the Kubernetes control plane to make calls to AWS API operations on your behalf.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
      * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
@@ -176,8 +167,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for
-     * Amazon EKS to make calls to other AWS API operations on your behalf. For more
-     * information, see <a
+     * the Kubernetes control plane to make calls to AWS API operations on your behalf.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
      * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
@@ -185,8 +176,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for
-     * Amazon EKS to make calls to other AWS API operations on your behalf. For more
-     * information, see <a
+     * the Kubernetes control plane to make calls to AWS API operations on your behalf.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
      * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
@@ -194,8 +185,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for
-     * Amazon EKS to make calls to other AWS API operations on your behalf. For more
-     * information, see <a
+     * the Kubernetes control plane to make calls to AWS API operations on your behalf.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
      * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
@@ -203,8 +194,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for
-     * Amazon EKS to make calls to other AWS API operations on your behalf. For more
-     * information, see <a
+     * the Kubernetes control plane to make calls to AWS API operations on your behalf.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
      * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
@@ -297,15 +288,46 @@ namespace Model
 
 
     /**
+     * <p>The Kubernetes network configuration for the cluster.</p>
+     */
+    inline const KubernetesNetworkConfigRequest& GetKubernetesNetworkConfig() const{ return m_kubernetesNetworkConfig; }
+
+    /**
+     * <p>The Kubernetes network configuration for the cluster.</p>
+     */
+    inline bool KubernetesNetworkConfigHasBeenSet() const { return m_kubernetesNetworkConfigHasBeenSet; }
+
+    /**
+     * <p>The Kubernetes network configuration for the cluster.</p>
+     */
+    inline void SetKubernetesNetworkConfig(const KubernetesNetworkConfigRequest& value) { m_kubernetesNetworkConfigHasBeenSet = true; m_kubernetesNetworkConfig = value; }
+
+    /**
+     * <p>The Kubernetes network configuration for the cluster.</p>
+     */
+    inline void SetKubernetesNetworkConfig(KubernetesNetworkConfigRequest&& value) { m_kubernetesNetworkConfigHasBeenSet = true; m_kubernetesNetworkConfig = std::move(value); }
+
+    /**
+     * <p>The Kubernetes network configuration for the cluster.</p>
+     */
+    inline CreateClusterRequest& WithKubernetesNetworkConfig(const KubernetesNetworkConfigRequest& value) { SetKubernetesNetworkConfig(value); return *this;}
+
+    /**
+     * <p>The Kubernetes network configuration for the cluster.</p>
+     */
+    inline CreateClusterRequest& WithKubernetesNetworkConfig(KubernetesNetworkConfigRequest&& value) { SetKubernetesNetworkConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>Enable or disable exporting the Kubernetes control plane logs for your
      * cluster to CloudWatch Logs. By default, cluster control plane logs aren't
      * exported to CloudWatch Logs. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
      * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
-     * </i>.</p> <note> <p>CloudWatch Logs ingestion, archive storage, and data
+     * </i>.</p>  <p>CloudWatch Logs ingestion, archive storage, and data
      * scanning rates apply to exported control plane logs. For more information, see
      * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-     * Pricing</a>.</p> </note>
+     * Pricing</a>.</p> 
      */
     inline const Logging& GetLogging() const{ return m_logging; }
 
@@ -315,10 +337,10 @@ namespace Model
      * exported to CloudWatch Logs. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
      * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
-     * </i>.</p> <note> <p>CloudWatch Logs ingestion, archive storage, and data
+     * </i>.</p>  <p>CloudWatch Logs ingestion, archive storage, and data
      * scanning rates apply to exported control plane logs. For more information, see
      * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-     * Pricing</a>.</p> </note>
+     * Pricing</a>.</p> 
      */
     inline bool LoggingHasBeenSet() const { return m_loggingHasBeenSet; }
 
@@ -328,10 +350,10 @@ namespace Model
      * exported to CloudWatch Logs. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
      * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
-     * </i>.</p> <note> <p>CloudWatch Logs ingestion, archive storage, and data
+     * </i>.</p>  <p>CloudWatch Logs ingestion, archive storage, and data
      * scanning rates apply to exported control plane logs. For more information, see
      * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-     * Pricing</a>.</p> </note>
+     * Pricing</a>.</p> 
      */
     inline void SetLogging(const Logging& value) { m_loggingHasBeenSet = true; m_logging = value; }
 
@@ -341,10 +363,10 @@ namespace Model
      * exported to CloudWatch Logs. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
      * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
-     * </i>.</p> <note> <p>CloudWatch Logs ingestion, archive storage, and data
+     * </i>.</p>  <p>CloudWatch Logs ingestion, archive storage, and data
      * scanning rates apply to exported control plane logs. For more information, see
      * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-     * Pricing</a>.</p> </note>
+     * Pricing</a>.</p> 
      */
     inline void SetLogging(Logging&& value) { m_loggingHasBeenSet = true; m_logging = std::move(value); }
 
@@ -354,10 +376,10 @@ namespace Model
      * exported to CloudWatch Logs. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
      * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
-     * </i>.</p> <note> <p>CloudWatch Logs ingestion, archive storage, and data
+     * </i>.</p>  <p>CloudWatch Logs ingestion, archive storage, and data
      * scanning rates apply to exported control plane logs. For more information, see
      * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-     * Pricing</a>.</p> </note>
+     * Pricing</a>.</p> 
      */
     inline CreateClusterRequest& WithLogging(const Logging& value) { SetLogging(value); return *this;}
 
@@ -367,10 +389,10 @@ namespace Model
      * exported to CloudWatch Logs. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
      * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
-     * </i>.</p> <note> <p>CloudWatch Logs ingestion, archive storage, and data
+     * </i>.</p>  <p>CloudWatch Logs ingestion, archive storage, and data
      * scanning rates apply to exported control plane logs. For more information, see
      * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-     * Pricing</a>.</p> </note>
+     * Pricing</a>.</p> 
      */
     inline CreateClusterRequest& WithLogging(Logging&& value) { SetLogging(std::move(value)); return *this;}
 
@@ -569,6 +591,9 @@ namespace Model
 
     VpcConfigRequest m_resourcesVpcConfig;
     bool m_resourcesVpcConfigHasBeenSet;
+
+    KubernetesNetworkConfigRequest m_kubernetesNetworkConfig;
+    bool m_kubernetesNetworkConfigHasBeenSet;
 
     Logging m_logging;
     bool m_loggingHasBeenSet;

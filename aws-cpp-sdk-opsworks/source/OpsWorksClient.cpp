@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -118,7 +108,7 @@ static const char* ALLOCATION_TAG = "OpsWorksClient";
 OpsWorksClient::OpsWorksClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<OpsWorksErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -128,7 +118,7 @@ OpsWorksClient::OpsWorksClient(const Client::ClientConfiguration& clientConfigur
 OpsWorksClient::OpsWorksClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<OpsWorksErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -139,7 +129,7 @@ OpsWorksClient::OpsWorksClient(const std::shared_ptr<AWSCredentialsProvider>& cr
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<OpsWorksErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -152,6 +142,7 @@ OpsWorksClient::~OpsWorksClient()
 
 void OpsWorksClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("OpsWorks");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -181,15 +172,7 @@ AssignInstanceOutcome OpsWorksClient::AssignInstance(const AssignInstanceRequest
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AssignInstanceOutcome(NoResult());
-  }
-  else
-  {
-    return AssignInstanceOutcome(outcome.GetError());
-  }
+  return AssignInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AssignInstanceOutcomeCallable OpsWorksClient::AssignInstanceCallable(const AssignInstanceRequest& request) const
@@ -216,15 +199,7 @@ AssignVolumeOutcome OpsWorksClient::AssignVolume(const AssignVolumeRequest& requ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AssignVolumeOutcome(NoResult());
-  }
-  else
-  {
-    return AssignVolumeOutcome(outcome.GetError());
-  }
+  return AssignVolumeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AssignVolumeOutcomeCallable OpsWorksClient::AssignVolumeCallable(const AssignVolumeRequest& request) const
@@ -251,15 +226,7 @@ AssociateElasticIpOutcome OpsWorksClient::AssociateElasticIp(const AssociateElas
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AssociateElasticIpOutcome(NoResult());
-  }
-  else
-  {
-    return AssociateElasticIpOutcome(outcome.GetError());
-  }
+  return AssociateElasticIpOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AssociateElasticIpOutcomeCallable OpsWorksClient::AssociateElasticIpCallable(const AssociateElasticIpRequest& request) const
@@ -286,15 +253,7 @@ AttachElasticLoadBalancerOutcome OpsWorksClient::AttachElasticLoadBalancer(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AttachElasticLoadBalancerOutcome(NoResult());
-  }
-  else
-  {
-    return AttachElasticLoadBalancerOutcome(outcome.GetError());
-  }
+  return AttachElasticLoadBalancerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AttachElasticLoadBalancerOutcomeCallable OpsWorksClient::AttachElasticLoadBalancerCallable(const AttachElasticLoadBalancerRequest& request) const
@@ -321,15 +280,7 @@ CloneStackOutcome OpsWorksClient::CloneStack(const CloneStackRequest& request) c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CloneStackOutcome(CloneStackResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CloneStackOutcome(outcome.GetError());
-  }
+  return CloneStackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CloneStackOutcomeCallable OpsWorksClient::CloneStackCallable(const CloneStackRequest& request) const
@@ -356,15 +307,7 @@ CreateAppOutcome OpsWorksClient::CreateApp(const CreateAppRequest& request) cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateAppOutcome(CreateAppResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateAppOutcome(outcome.GetError());
-  }
+  return CreateAppOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateAppOutcomeCallable OpsWorksClient::CreateAppCallable(const CreateAppRequest& request) const
@@ -391,15 +334,7 @@ CreateDeploymentOutcome OpsWorksClient::CreateDeployment(const CreateDeploymentR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateDeploymentOutcome(CreateDeploymentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDeploymentOutcome(outcome.GetError());
-  }
+  return CreateDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDeploymentOutcomeCallable OpsWorksClient::CreateDeploymentCallable(const CreateDeploymentRequest& request) const
@@ -426,15 +361,7 @@ CreateInstanceOutcome OpsWorksClient::CreateInstance(const CreateInstanceRequest
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateInstanceOutcome(CreateInstanceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateInstanceOutcome(outcome.GetError());
-  }
+  return CreateInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateInstanceOutcomeCallable OpsWorksClient::CreateInstanceCallable(const CreateInstanceRequest& request) const
@@ -461,15 +388,7 @@ CreateLayerOutcome OpsWorksClient::CreateLayer(const CreateLayerRequest& request
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateLayerOutcome(CreateLayerResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateLayerOutcome(outcome.GetError());
-  }
+  return CreateLayerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateLayerOutcomeCallable OpsWorksClient::CreateLayerCallable(const CreateLayerRequest& request) const
@@ -496,15 +415,7 @@ CreateStackOutcome OpsWorksClient::CreateStack(const CreateStackRequest& request
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateStackOutcome(CreateStackResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateStackOutcome(outcome.GetError());
-  }
+  return CreateStackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateStackOutcomeCallable OpsWorksClient::CreateStackCallable(const CreateStackRequest& request) const
@@ -531,15 +442,7 @@ CreateUserProfileOutcome OpsWorksClient::CreateUserProfile(const CreateUserProfi
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateUserProfileOutcome(CreateUserProfileResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateUserProfileOutcome(outcome.GetError());
-  }
+  return CreateUserProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateUserProfileOutcomeCallable OpsWorksClient::CreateUserProfileCallable(const CreateUserProfileRequest& request) const
@@ -566,15 +469,7 @@ DeleteAppOutcome OpsWorksClient::DeleteApp(const DeleteAppRequest& request) cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteAppOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteAppOutcome(outcome.GetError());
-  }
+  return DeleteAppOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteAppOutcomeCallable OpsWorksClient::DeleteAppCallable(const DeleteAppRequest& request) const
@@ -601,15 +496,7 @@ DeleteInstanceOutcome OpsWorksClient::DeleteInstance(const DeleteInstanceRequest
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteInstanceOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteInstanceOutcome(outcome.GetError());
-  }
+  return DeleteInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteInstanceOutcomeCallable OpsWorksClient::DeleteInstanceCallable(const DeleteInstanceRequest& request) const
@@ -636,15 +523,7 @@ DeleteLayerOutcome OpsWorksClient::DeleteLayer(const DeleteLayerRequest& request
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteLayerOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteLayerOutcome(outcome.GetError());
-  }
+  return DeleteLayerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteLayerOutcomeCallable OpsWorksClient::DeleteLayerCallable(const DeleteLayerRequest& request) const
@@ -671,15 +550,7 @@ DeleteStackOutcome OpsWorksClient::DeleteStack(const DeleteStackRequest& request
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteStackOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteStackOutcome(outcome.GetError());
-  }
+  return DeleteStackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteStackOutcomeCallable OpsWorksClient::DeleteStackCallable(const DeleteStackRequest& request) const
@@ -706,15 +577,7 @@ DeleteUserProfileOutcome OpsWorksClient::DeleteUserProfile(const DeleteUserProfi
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteUserProfileOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteUserProfileOutcome(outcome.GetError());
-  }
+  return DeleteUserProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteUserProfileOutcomeCallable OpsWorksClient::DeleteUserProfileCallable(const DeleteUserProfileRequest& request) const
@@ -741,15 +604,7 @@ DeregisterEcsClusterOutcome OpsWorksClient::DeregisterEcsCluster(const Deregiste
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeregisterEcsClusterOutcome(NoResult());
-  }
-  else
-  {
-    return DeregisterEcsClusterOutcome(outcome.GetError());
-  }
+  return DeregisterEcsClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeregisterEcsClusterOutcomeCallable OpsWorksClient::DeregisterEcsClusterCallable(const DeregisterEcsClusterRequest& request) const
@@ -776,15 +631,7 @@ DeregisterElasticIpOutcome OpsWorksClient::DeregisterElasticIp(const DeregisterE
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeregisterElasticIpOutcome(NoResult());
-  }
-  else
-  {
-    return DeregisterElasticIpOutcome(outcome.GetError());
-  }
+  return DeregisterElasticIpOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeregisterElasticIpOutcomeCallable OpsWorksClient::DeregisterElasticIpCallable(const DeregisterElasticIpRequest& request) const
@@ -811,15 +658,7 @@ DeregisterInstanceOutcome OpsWorksClient::DeregisterInstance(const DeregisterIns
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeregisterInstanceOutcome(NoResult());
-  }
-  else
-  {
-    return DeregisterInstanceOutcome(outcome.GetError());
-  }
+  return DeregisterInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeregisterInstanceOutcomeCallable OpsWorksClient::DeregisterInstanceCallable(const DeregisterInstanceRequest& request) const
@@ -846,15 +685,7 @@ DeregisterRdsDbInstanceOutcome OpsWorksClient::DeregisterRdsDbInstance(const Der
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeregisterRdsDbInstanceOutcome(NoResult());
-  }
-  else
-  {
-    return DeregisterRdsDbInstanceOutcome(outcome.GetError());
-  }
+  return DeregisterRdsDbInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeregisterRdsDbInstanceOutcomeCallable OpsWorksClient::DeregisterRdsDbInstanceCallable(const DeregisterRdsDbInstanceRequest& request) const
@@ -881,15 +712,7 @@ DeregisterVolumeOutcome OpsWorksClient::DeregisterVolume(const DeregisterVolumeR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeregisterVolumeOutcome(NoResult());
-  }
-  else
-  {
-    return DeregisterVolumeOutcome(outcome.GetError());
-  }
+  return DeregisterVolumeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeregisterVolumeOutcomeCallable OpsWorksClient::DeregisterVolumeCallable(const DeregisterVolumeRequest& request) const
@@ -916,15 +739,7 @@ DescribeAgentVersionsOutcome OpsWorksClient::DescribeAgentVersions(const Describ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeAgentVersionsOutcome(DescribeAgentVersionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeAgentVersionsOutcome(outcome.GetError());
-  }
+  return DescribeAgentVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeAgentVersionsOutcomeCallable OpsWorksClient::DescribeAgentVersionsCallable(const DescribeAgentVersionsRequest& request) const
@@ -951,15 +766,7 @@ DescribeAppsOutcome OpsWorksClient::DescribeApps(const DescribeAppsRequest& requ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeAppsOutcome(DescribeAppsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeAppsOutcome(outcome.GetError());
-  }
+  return DescribeAppsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeAppsOutcomeCallable OpsWorksClient::DescribeAppsCallable(const DescribeAppsRequest& request) const
@@ -986,15 +793,7 @@ DescribeCommandsOutcome OpsWorksClient::DescribeCommands(const DescribeCommandsR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeCommandsOutcome(DescribeCommandsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeCommandsOutcome(outcome.GetError());
-  }
+  return DescribeCommandsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeCommandsOutcomeCallable OpsWorksClient::DescribeCommandsCallable(const DescribeCommandsRequest& request) const
@@ -1021,15 +820,7 @@ DescribeDeploymentsOutcome OpsWorksClient::DescribeDeployments(const DescribeDep
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeDeploymentsOutcome(DescribeDeploymentsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeDeploymentsOutcome(outcome.GetError());
-  }
+  return DescribeDeploymentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeDeploymentsOutcomeCallable OpsWorksClient::DescribeDeploymentsCallable(const DescribeDeploymentsRequest& request) const
@@ -1056,15 +847,7 @@ DescribeEcsClustersOutcome OpsWorksClient::DescribeEcsClusters(const DescribeEcs
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeEcsClustersOutcome(DescribeEcsClustersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeEcsClustersOutcome(outcome.GetError());
-  }
+  return DescribeEcsClustersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeEcsClustersOutcomeCallable OpsWorksClient::DescribeEcsClustersCallable(const DescribeEcsClustersRequest& request) const
@@ -1091,15 +874,7 @@ DescribeElasticIpsOutcome OpsWorksClient::DescribeElasticIps(const DescribeElast
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeElasticIpsOutcome(DescribeElasticIpsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeElasticIpsOutcome(outcome.GetError());
-  }
+  return DescribeElasticIpsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeElasticIpsOutcomeCallable OpsWorksClient::DescribeElasticIpsCallable(const DescribeElasticIpsRequest& request) const
@@ -1126,15 +901,7 @@ DescribeElasticLoadBalancersOutcome OpsWorksClient::DescribeElasticLoadBalancers
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeElasticLoadBalancersOutcome(DescribeElasticLoadBalancersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeElasticLoadBalancersOutcome(outcome.GetError());
-  }
+  return DescribeElasticLoadBalancersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeElasticLoadBalancersOutcomeCallable OpsWorksClient::DescribeElasticLoadBalancersCallable(const DescribeElasticLoadBalancersRequest& request) const
@@ -1161,15 +928,7 @@ DescribeInstancesOutcome OpsWorksClient::DescribeInstances(const DescribeInstanc
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeInstancesOutcome(DescribeInstancesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeInstancesOutcome(outcome.GetError());
-  }
+  return DescribeInstancesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeInstancesOutcomeCallable OpsWorksClient::DescribeInstancesCallable(const DescribeInstancesRequest& request) const
@@ -1196,15 +955,7 @@ DescribeLayersOutcome OpsWorksClient::DescribeLayers(const DescribeLayersRequest
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeLayersOutcome(DescribeLayersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeLayersOutcome(outcome.GetError());
-  }
+  return DescribeLayersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeLayersOutcomeCallable OpsWorksClient::DescribeLayersCallable(const DescribeLayersRequest& request) const
@@ -1231,15 +982,7 @@ DescribeLoadBasedAutoScalingOutcome OpsWorksClient::DescribeLoadBasedAutoScaling
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeLoadBasedAutoScalingOutcome(DescribeLoadBasedAutoScalingResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeLoadBasedAutoScalingOutcome(outcome.GetError());
-  }
+  return DescribeLoadBasedAutoScalingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeLoadBasedAutoScalingOutcomeCallable OpsWorksClient::DescribeLoadBasedAutoScalingCallable(const DescribeLoadBasedAutoScalingRequest& request) const
@@ -1264,15 +1007,7 @@ DescribeMyUserProfileOutcome OpsWorksClient::DescribeMyUserProfile() const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-  JsonOutcome outcome = MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "DescribeMyUserProfile");
-  if(outcome.IsSuccess())
-  {
-    return DescribeMyUserProfileOutcome(DescribeMyUserProfileResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeMyUserProfileOutcome(outcome.GetError());
-  }
+  return DescribeMyUserProfileOutcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "DescribeMyUserProfile"));
 }
 
 DescribeMyUserProfileOutcomeCallable OpsWorksClient::DescribeMyUserProfileCallable() const
@@ -1297,15 +1032,7 @@ DescribeOperatingSystemsOutcome OpsWorksClient::DescribeOperatingSystems() const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-  JsonOutcome outcome = MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "DescribeOperatingSystems");
-  if(outcome.IsSuccess())
-  {
-    return DescribeOperatingSystemsOutcome(DescribeOperatingSystemsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeOperatingSystemsOutcome(outcome.GetError());
-  }
+  return DescribeOperatingSystemsOutcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "DescribeOperatingSystems"));
 }
 
 DescribeOperatingSystemsOutcomeCallable OpsWorksClient::DescribeOperatingSystemsCallable() const
@@ -1332,15 +1059,7 @@ DescribePermissionsOutcome OpsWorksClient::DescribePermissions(const DescribePer
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribePermissionsOutcome(DescribePermissionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribePermissionsOutcome(outcome.GetError());
-  }
+  return DescribePermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribePermissionsOutcomeCallable OpsWorksClient::DescribePermissionsCallable(const DescribePermissionsRequest& request) const
@@ -1367,15 +1086,7 @@ DescribeRaidArraysOutcome OpsWorksClient::DescribeRaidArrays(const DescribeRaidA
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeRaidArraysOutcome(DescribeRaidArraysResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeRaidArraysOutcome(outcome.GetError());
-  }
+  return DescribeRaidArraysOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeRaidArraysOutcomeCallable OpsWorksClient::DescribeRaidArraysCallable(const DescribeRaidArraysRequest& request) const
@@ -1402,15 +1113,7 @@ DescribeRdsDbInstancesOutcome OpsWorksClient::DescribeRdsDbInstances(const Descr
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeRdsDbInstancesOutcome(DescribeRdsDbInstancesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeRdsDbInstancesOutcome(outcome.GetError());
-  }
+  return DescribeRdsDbInstancesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeRdsDbInstancesOutcomeCallable OpsWorksClient::DescribeRdsDbInstancesCallable(const DescribeRdsDbInstancesRequest& request) const
@@ -1437,15 +1140,7 @@ DescribeServiceErrorsOutcome OpsWorksClient::DescribeServiceErrors(const Describ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeServiceErrorsOutcome(DescribeServiceErrorsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeServiceErrorsOutcome(outcome.GetError());
-  }
+  return DescribeServiceErrorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeServiceErrorsOutcomeCallable OpsWorksClient::DescribeServiceErrorsCallable(const DescribeServiceErrorsRequest& request) const
@@ -1472,15 +1167,7 @@ DescribeStackProvisioningParametersOutcome OpsWorksClient::DescribeStackProvisio
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeStackProvisioningParametersOutcome(DescribeStackProvisioningParametersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeStackProvisioningParametersOutcome(outcome.GetError());
-  }
+  return DescribeStackProvisioningParametersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeStackProvisioningParametersOutcomeCallable OpsWorksClient::DescribeStackProvisioningParametersCallable(const DescribeStackProvisioningParametersRequest& request) const
@@ -1507,15 +1194,7 @@ DescribeStackSummaryOutcome OpsWorksClient::DescribeStackSummary(const DescribeS
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeStackSummaryOutcome(DescribeStackSummaryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeStackSummaryOutcome(outcome.GetError());
-  }
+  return DescribeStackSummaryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeStackSummaryOutcomeCallable OpsWorksClient::DescribeStackSummaryCallable(const DescribeStackSummaryRequest& request) const
@@ -1542,15 +1221,7 @@ DescribeStacksOutcome OpsWorksClient::DescribeStacks(const DescribeStacksRequest
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeStacksOutcome(DescribeStacksResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeStacksOutcome(outcome.GetError());
-  }
+  return DescribeStacksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeStacksOutcomeCallable OpsWorksClient::DescribeStacksCallable(const DescribeStacksRequest& request) const
@@ -1577,15 +1248,7 @@ DescribeTimeBasedAutoScalingOutcome OpsWorksClient::DescribeTimeBasedAutoScaling
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeTimeBasedAutoScalingOutcome(DescribeTimeBasedAutoScalingResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeTimeBasedAutoScalingOutcome(outcome.GetError());
-  }
+  return DescribeTimeBasedAutoScalingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeTimeBasedAutoScalingOutcomeCallable OpsWorksClient::DescribeTimeBasedAutoScalingCallable(const DescribeTimeBasedAutoScalingRequest& request) const
@@ -1612,15 +1275,7 @@ DescribeUserProfilesOutcome OpsWorksClient::DescribeUserProfiles(const DescribeU
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeUserProfilesOutcome(DescribeUserProfilesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeUserProfilesOutcome(outcome.GetError());
-  }
+  return DescribeUserProfilesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeUserProfilesOutcomeCallable OpsWorksClient::DescribeUserProfilesCallable(const DescribeUserProfilesRequest& request) const
@@ -1647,15 +1302,7 @@ DescribeVolumesOutcome OpsWorksClient::DescribeVolumes(const DescribeVolumesRequ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeVolumesOutcome(DescribeVolumesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeVolumesOutcome(outcome.GetError());
-  }
+  return DescribeVolumesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeVolumesOutcomeCallable OpsWorksClient::DescribeVolumesCallable(const DescribeVolumesRequest& request) const
@@ -1682,15 +1329,7 @@ DetachElasticLoadBalancerOutcome OpsWorksClient::DetachElasticLoadBalancer(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DetachElasticLoadBalancerOutcome(NoResult());
-  }
-  else
-  {
-    return DetachElasticLoadBalancerOutcome(outcome.GetError());
-  }
+  return DetachElasticLoadBalancerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DetachElasticLoadBalancerOutcomeCallable OpsWorksClient::DetachElasticLoadBalancerCallable(const DetachElasticLoadBalancerRequest& request) const
@@ -1717,15 +1356,7 @@ DisassociateElasticIpOutcome OpsWorksClient::DisassociateElasticIp(const Disasso
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisassociateElasticIpOutcome(NoResult());
-  }
-  else
-  {
-    return DisassociateElasticIpOutcome(outcome.GetError());
-  }
+  return DisassociateElasticIpOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisassociateElasticIpOutcomeCallable OpsWorksClient::DisassociateElasticIpCallable(const DisassociateElasticIpRequest& request) const
@@ -1752,15 +1383,7 @@ GetHostnameSuggestionOutcome OpsWorksClient::GetHostnameSuggestion(const GetHost
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetHostnameSuggestionOutcome(GetHostnameSuggestionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetHostnameSuggestionOutcome(outcome.GetError());
-  }
+  return GetHostnameSuggestionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetHostnameSuggestionOutcomeCallable OpsWorksClient::GetHostnameSuggestionCallable(const GetHostnameSuggestionRequest& request) const
@@ -1787,15 +1410,7 @@ GrantAccessOutcome OpsWorksClient::GrantAccess(const GrantAccessRequest& request
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GrantAccessOutcome(GrantAccessResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GrantAccessOutcome(outcome.GetError());
-  }
+  return GrantAccessOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GrantAccessOutcomeCallable OpsWorksClient::GrantAccessCallable(const GrantAccessRequest& request) const
@@ -1822,15 +1437,7 @@ ListTagsOutcome OpsWorksClient::ListTags(const ListTagsRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsOutcome(ListTagsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsOutcome(outcome.GetError());
-  }
+  return ListTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsOutcomeCallable OpsWorksClient::ListTagsCallable(const ListTagsRequest& request) const
@@ -1857,15 +1464,7 @@ RebootInstanceOutcome OpsWorksClient::RebootInstance(const RebootInstanceRequest
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RebootInstanceOutcome(NoResult());
-  }
-  else
-  {
-    return RebootInstanceOutcome(outcome.GetError());
-  }
+  return RebootInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RebootInstanceOutcomeCallable OpsWorksClient::RebootInstanceCallable(const RebootInstanceRequest& request) const
@@ -1892,15 +1491,7 @@ RegisterEcsClusterOutcome OpsWorksClient::RegisterEcsCluster(const RegisterEcsCl
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RegisterEcsClusterOutcome(RegisterEcsClusterResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RegisterEcsClusterOutcome(outcome.GetError());
-  }
+  return RegisterEcsClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RegisterEcsClusterOutcomeCallable OpsWorksClient::RegisterEcsClusterCallable(const RegisterEcsClusterRequest& request) const
@@ -1927,15 +1518,7 @@ RegisterElasticIpOutcome OpsWorksClient::RegisterElasticIp(const RegisterElastic
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RegisterElasticIpOutcome(RegisterElasticIpResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RegisterElasticIpOutcome(outcome.GetError());
-  }
+  return RegisterElasticIpOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RegisterElasticIpOutcomeCallable OpsWorksClient::RegisterElasticIpCallable(const RegisterElasticIpRequest& request) const
@@ -1962,15 +1545,7 @@ RegisterInstanceOutcome OpsWorksClient::RegisterInstance(const RegisterInstanceR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RegisterInstanceOutcome(RegisterInstanceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RegisterInstanceOutcome(outcome.GetError());
-  }
+  return RegisterInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RegisterInstanceOutcomeCallable OpsWorksClient::RegisterInstanceCallable(const RegisterInstanceRequest& request) const
@@ -1997,15 +1572,7 @@ RegisterRdsDbInstanceOutcome OpsWorksClient::RegisterRdsDbInstance(const Registe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RegisterRdsDbInstanceOutcome(NoResult());
-  }
-  else
-  {
-    return RegisterRdsDbInstanceOutcome(outcome.GetError());
-  }
+  return RegisterRdsDbInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RegisterRdsDbInstanceOutcomeCallable OpsWorksClient::RegisterRdsDbInstanceCallable(const RegisterRdsDbInstanceRequest& request) const
@@ -2032,15 +1599,7 @@ RegisterVolumeOutcome OpsWorksClient::RegisterVolume(const RegisterVolumeRequest
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RegisterVolumeOutcome(RegisterVolumeResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RegisterVolumeOutcome(outcome.GetError());
-  }
+  return RegisterVolumeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RegisterVolumeOutcomeCallable OpsWorksClient::RegisterVolumeCallable(const RegisterVolumeRequest& request) const
@@ -2067,15 +1626,7 @@ SetLoadBasedAutoScalingOutcome OpsWorksClient::SetLoadBasedAutoScaling(const Set
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SetLoadBasedAutoScalingOutcome(NoResult());
-  }
-  else
-  {
-    return SetLoadBasedAutoScalingOutcome(outcome.GetError());
-  }
+  return SetLoadBasedAutoScalingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SetLoadBasedAutoScalingOutcomeCallable OpsWorksClient::SetLoadBasedAutoScalingCallable(const SetLoadBasedAutoScalingRequest& request) const
@@ -2102,15 +1653,7 @@ SetPermissionOutcome OpsWorksClient::SetPermission(const SetPermissionRequest& r
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SetPermissionOutcome(NoResult());
-  }
-  else
-  {
-    return SetPermissionOutcome(outcome.GetError());
-  }
+  return SetPermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SetPermissionOutcomeCallable OpsWorksClient::SetPermissionCallable(const SetPermissionRequest& request) const
@@ -2137,15 +1680,7 @@ SetTimeBasedAutoScalingOutcome OpsWorksClient::SetTimeBasedAutoScaling(const Set
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SetTimeBasedAutoScalingOutcome(NoResult());
-  }
-  else
-  {
-    return SetTimeBasedAutoScalingOutcome(outcome.GetError());
-  }
+  return SetTimeBasedAutoScalingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SetTimeBasedAutoScalingOutcomeCallable OpsWorksClient::SetTimeBasedAutoScalingCallable(const SetTimeBasedAutoScalingRequest& request) const
@@ -2172,15 +1707,7 @@ StartInstanceOutcome OpsWorksClient::StartInstance(const StartInstanceRequest& r
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartInstanceOutcome(NoResult());
-  }
-  else
-  {
-    return StartInstanceOutcome(outcome.GetError());
-  }
+  return StartInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartInstanceOutcomeCallable OpsWorksClient::StartInstanceCallable(const StartInstanceRequest& request) const
@@ -2207,15 +1734,7 @@ StartStackOutcome OpsWorksClient::StartStack(const StartStackRequest& request) c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartStackOutcome(NoResult());
-  }
-  else
-  {
-    return StartStackOutcome(outcome.GetError());
-  }
+  return StartStackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartStackOutcomeCallable OpsWorksClient::StartStackCallable(const StartStackRequest& request) const
@@ -2242,15 +1761,7 @@ StopInstanceOutcome OpsWorksClient::StopInstance(const StopInstanceRequest& requ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StopInstanceOutcome(NoResult());
-  }
-  else
-  {
-    return StopInstanceOutcome(outcome.GetError());
-  }
+  return StopInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopInstanceOutcomeCallable OpsWorksClient::StopInstanceCallable(const StopInstanceRequest& request) const
@@ -2277,15 +1788,7 @@ StopStackOutcome OpsWorksClient::StopStack(const StopStackRequest& request) cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StopStackOutcome(NoResult());
-  }
-  else
-  {
-    return StopStackOutcome(outcome.GetError());
-  }
+  return StopStackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopStackOutcomeCallable OpsWorksClient::StopStackCallable(const StopStackRequest& request) const
@@ -2312,15 +1815,7 @@ TagResourceOutcome OpsWorksClient::TagResource(const TagResourceRequest& request
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(NoResult());
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable OpsWorksClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -2347,15 +1842,7 @@ UnassignInstanceOutcome OpsWorksClient::UnassignInstance(const UnassignInstanceR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UnassignInstanceOutcome(NoResult());
-  }
-  else
-  {
-    return UnassignInstanceOutcome(outcome.GetError());
-  }
+  return UnassignInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UnassignInstanceOutcomeCallable OpsWorksClient::UnassignInstanceCallable(const UnassignInstanceRequest& request) const
@@ -2382,15 +1869,7 @@ UnassignVolumeOutcome OpsWorksClient::UnassignVolume(const UnassignVolumeRequest
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UnassignVolumeOutcome(NoResult());
-  }
-  else
-  {
-    return UnassignVolumeOutcome(outcome.GetError());
-  }
+  return UnassignVolumeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UnassignVolumeOutcomeCallable OpsWorksClient::UnassignVolumeCallable(const UnassignVolumeRequest& request) const
@@ -2417,15 +1896,7 @@ UntagResourceOutcome OpsWorksClient::UntagResource(const UntagResourceRequest& r
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(NoResult());
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable OpsWorksClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -2452,15 +1923,7 @@ UpdateAppOutcome OpsWorksClient::UpdateApp(const UpdateAppRequest& request) cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateAppOutcome(NoResult());
-  }
-  else
-  {
-    return UpdateAppOutcome(outcome.GetError());
-  }
+  return UpdateAppOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateAppOutcomeCallable OpsWorksClient::UpdateAppCallable(const UpdateAppRequest& request) const
@@ -2487,15 +1950,7 @@ UpdateElasticIpOutcome OpsWorksClient::UpdateElasticIp(const UpdateElasticIpRequ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateElasticIpOutcome(NoResult());
-  }
-  else
-  {
-    return UpdateElasticIpOutcome(outcome.GetError());
-  }
+  return UpdateElasticIpOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateElasticIpOutcomeCallable OpsWorksClient::UpdateElasticIpCallable(const UpdateElasticIpRequest& request) const
@@ -2522,15 +1977,7 @@ UpdateInstanceOutcome OpsWorksClient::UpdateInstance(const UpdateInstanceRequest
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateInstanceOutcome(NoResult());
-  }
-  else
-  {
-    return UpdateInstanceOutcome(outcome.GetError());
-  }
+  return UpdateInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateInstanceOutcomeCallable OpsWorksClient::UpdateInstanceCallable(const UpdateInstanceRequest& request) const
@@ -2557,15 +2004,7 @@ UpdateLayerOutcome OpsWorksClient::UpdateLayer(const UpdateLayerRequest& request
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateLayerOutcome(NoResult());
-  }
-  else
-  {
-    return UpdateLayerOutcome(outcome.GetError());
-  }
+  return UpdateLayerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateLayerOutcomeCallable OpsWorksClient::UpdateLayerCallable(const UpdateLayerRequest& request) const
@@ -2592,15 +2031,7 @@ UpdateMyUserProfileOutcome OpsWorksClient::UpdateMyUserProfile(const UpdateMyUse
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateMyUserProfileOutcome(NoResult());
-  }
-  else
-  {
-    return UpdateMyUserProfileOutcome(outcome.GetError());
-  }
+  return UpdateMyUserProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateMyUserProfileOutcomeCallable OpsWorksClient::UpdateMyUserProfileCallable(const UpdateMyUserProfileRequest& request) const
@@ -2627,15 +2058,7 @@ UpdateRdsDbInstanceOutcome OpsWorksClient::UpdateRdsDbInstance(const UpdateRdsDb
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateRdsDbInstanceOutcome(NoResult());
-  }
-  else
-  {
-    return UpdateRdsDbInstanceOutcome(outcome.GetError());
-  }
+  return UpdateRdsDbInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateRdsDbInstanceOutcomeCallable OpsWorksClient::UpdateRdsDbInstanceCallable(const UpdateRdsDbInstanceRequest& request) const
@@ -2662,15 +2085,7 @@ UpdateStackOutcome OpsWorksClient::UpdateStack(const UpdateStackRequest& request
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateStackOutcome(NoResult());
-  }
-  else
-  {
-    return UpdateStackOutcome(outcome.GetError());
-  }
+  return UpdateStackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateStackOutcomeCallable OpsWorksClient::UpdateStackCallable(const UpdateStackRequest& request) const
@@ -2697,15 +2112,7 @@ UpdateUserProfileOutcome OpsWorksClient::UpdateUserProfile(const UpdateUserProfi
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateUserProfileOutcome(NoResult());
-  }
-  else
-  {
-    return UpdateUserProfileOutcome(outcome.GetError());
-  }
+  return UpdateUserProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateUserProfileOutcomeCallable OpsWorksClient::UpdateUserProfileCallable(const UpdateUserProfileRequest& request) const
@@ -2732,15 +2139,7 @@ UpdateVolumeOutcome OpsWorksClient::UpdateVolume(const UpdateVolumeRequest& requ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateVolumeOutcome(NoResult());
-  }
-  else
-  {
-    return UpdateVolumeOutcome(outcome.GetError());
-  }
+  return UpdateVolumeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateVolumeOutcomeCallable OpsWorksClient::UpdateVolumeCallable(const UpdateVolumeRequest& request) const

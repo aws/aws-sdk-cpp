@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/opsworkscm/OpsWorksCM_EXPORTS.h>
@@ -99,25 +89,25 @@ namespace Model
         class UpdateServerRequest;
         class UpdateServerEngineAttributesRequest;
 
-        typedef Aws::Utils::Outcome<AssociateNodeResult, Aws::Client::AWSError<OpsWorksCMErrors>> AssociateNodeOutcome;
-        typedef Aws::Utils::Outcome<CreateBackupResult, Aws::Client::AWSError<OpsWorksCMErrors>> CreateBackupOutcome;
-        typedef Aws::Utils::Outcome<CreateServerResult, Aws::Client::AWSError<OpsWorksCMErrors>> CreateServerOutcome;
-        typedef Aws::Utils::Outcome<DeleteBackupResult, Aws::Client::AWSError<OpsWorksCMErrors>> DeleteBackupOutcome;
-        typedef Aws::Utils::Outcome<DeleteServerResult, Aws::Client::AWSError<OpsWorksCMErrors>> DeleteServerOutcome;
-        typedef Aws::Utils::Outcome<DescribeAccountAttributesResult, Aws::Client::AWSError<OpsWorksCMErrors>> DescribeAccountAttributesOutcome;
-        typedef Aws::Utils::Outcome<DescribeBackupsResult, Aws::Client::AWSError<OpsWorksCMErrors>> DescribeBackupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeEventsResult, Aws::Client::AWSError<OpsWorksCMErrors>> DescribeEventsOutcome;
-        typedef Aws::Utils::Outcome<DescribeNodeAssociationStatusResult, Aws::Client::AWSError<OpsWorksCMErrors>> DescribeNodeAssociationStatusOutcome;
-        typedef Aws::Utils::Outcome<DescribeServersResult, Aws::Client::AWSError<OpsWorksCMErrors>> DescribeServersOutcome;
-        typedef Aws::Utils::Outcome<DisassociateNodeResult, Aws::Client::AWSError<OpsWorksCMErrors>> DisassociateNodeOutcome;
-        typedef Aws::Utils::Outcome<ExportServerEngineAttributeResult, Aws::Client::AWSError<OpsWorksCMErrors>> ExportServerEngineAttributeOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<OpsWorksCMErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<RestoreServerResult, Aws::Client::AWSError<OpsWorksCMErrors>> RestoreServerOutcome;
-        typedef Aws::Utils::Outcome<StartMaintenanceResult, Aws::Client::AWSError<OpsWorksCMErrors>> StartMaintenanceOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<OpsWorksCMErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<OpsWorksCMErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateServerResult, Aws::Client::AWSError<OpsWorksCMErrors>> UpdateServerOutcome;
-        typedef Aws::Utils::Outcome<UpdateServerEngineAttributesResult, Aws::Client::AWSError<OpsWorksCMErrors>> UpdateServerEngineAttributesOutcome;
+        typedef Aws::Utils::Outcome<AssociateNodeResult, OpsWorksCMError> AssociateNodeOutcome;
+        typedef Aws::Utils::Outcome<CreateBackupResult, OpsWorksCMError> CreateBackupOutcome;
+        typedef Aws::Utils::Outcome<CreateServerResult, OpsWorksCMError> CreateServerOutcome;
+        typedef Aws::Utils::Outcome<DeleteBackupResult, OpsWorksCMError> DeleteBackupOutcome;
+        typedef Aws::Utils::Outcome<DeleteServerResult, OpsWorksCMError> DeleteServerOutcome;
+        typedef Aws::Utils::Outcome<DescribeAccountAttributesResult, OpsWorksCMError> DescribeAccountAttributesOutcome;
+        typedef Aws::Utils::Outcome<DescribeBackupsResult, OpsWorksCMError> DescribeBackupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventsResult, OpsWorksCMError> DescribeEventsOutcome;
+        typedef Aws::Utils::Outcome<DescribeNodeAssociationStatusResult, OpsWorksCMError> DescribeNodeAssociationStatusOutcome;
+        typedef Aws::Utils::Outcome<DescribeServersResult, OpsWorksCMError> DescribeServersOutcome;
+        typedef Aws::Utils::Outcome<DisassociateNodeResult, OpsWorksCMError> DisassociateNodeOutcome;
+        typedef Aws::Utils::Outcome<ExportServerEngineAttributeResult, OpsWorksCMError> ExportServerEngineAttributeOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, OpsWorksCMError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<RestoreServerResult, OpsWorksCMError> RestoreServerOutcome;
+        typedef Aws::Utils::Outcome<StartMaintenanceResult, OpsWorksCMError> StartMaintenanceOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, OpsWorksCMError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, OpsWorksCMError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateServerResult, OpsWorksCMError> UpdateServerOutcome;
+        typedef Aws::Utils::Outcome<UpdateServerEngineAttributesResult, OpsWorksCMError> UpdateServerEngineAttributesOutcome;
 
         typedef std::future<AssociateNodeOutcome> AssociateNodeOutcomeCallable;
         typedef std::future<CreateBackupOutcome> CreateBackupOutcomeCallable;
@@ -199,9 +189,12 @@ namespace Model
    * <p>opsworks-cm.ap-southeast-1.amazonaws.com</p> </li> <li>
    * <p>opsworks-cm.ap-southeast-2.amazonaws.com</p> </li> <li>
    * <p>opsworks-cm.eu-central-1.amazonaws.com</p> </li> <li>
-   * <p>opsworks-cm.eu-west-1.amazonaws.com</p> </li> </ul> <p> <b>Throttling
-   * limits</b> </p> <p>All API operations allow for five requests per second with a
-   * burst of 10 requests per second.</p>
+   * <p>opsworks-cm.eu-west-1.amazonaws.com</p> </li> </ul> <p>For more information,
+   * see <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/opsworks-service.html">AWS
+   * OpsWorks endpoints and quotas</a> in the AWS General Reference.</p> <p>
+   * <b>Throttling limits</b> </p> <p>All API operations allow for five requests per
+   * second with a burst of 10 requests per second.</p>
    */
   class AWS_OPSWORKSCM_API OpsWorksCMClient : public Aws::Client::AWSJsonClient
   {
@@ -229,8 +222,6 @@ namespace Model
 
         virtual ~OpsWorksCMClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "OpsWorksCM"; }
-
 
         /**
          * <p> Associates a new node with the server. For more information about how to
@@ -241,7 +232,7 @@ namespace Model
          * "Name=<i>CHEF_ORGANIZATION</i>,Value=default"
          * "Name=<i>CHEF_NODE_PUBLIC_KEY</i>,Value=<i>public-key-pem</i>"</code> </p> <p>
          * On a Puppet server, this command is an alternative to the <code>puppet cert
-         * sign</code> command that signs a Puppet node CSR. </p> <p> Example (Chef):
+         * sign</code> command that signs a Puppet node CSR. </p> <p> Example (Puppet):
          * <code>aws opsworks-cm associate-node --server-name <i>MyServer</i> --node-name
          * <i>MyManagedNode</i> --engine-attributes
          * "Name=<i>PUPPET_NODE_CSR</i>,Value=<i>csr-pem</i>"</code> </p> <p> A node can
@@ -266,7 +257,7 @@ namespace Model
          * "Name=<i>CHEF_ORGANIZATION</i>,Value=default"
          * "Name=<i>CHEF_NODE_PUBLIC_KEY</i>,Value=<i>public-key-pem</i>"</code> </p> <p>
          * On a Puppet server, this command is an alternative to the <code>puppet cert
-         * sign</code> command that signs a Puppet node CSR. </p> <p> Example (Chef):
+         * sign</code> command that signs a Puppet node CSR. </p> <p> Example (Puppet):
          * <code>aws opsworks-cm associate-node --server-name <i>MyServer</i> --node-name
          * <i>MyManagedNode</i> --engine-attributes
          * "Name=<i>PUPPET_NODE_CSR</i>,Value=<i>csr-pem</i>"</code> </p> <p> A node can
@@ -293,7 +284,7 @@ namespace Model
          * "Name=<i>CHEF_ORGANIZATION</i>,Value=default"
          * "Name=<i>CHEF_NODE_PUBLIC_KEY</i>,Value=<i>public-key-pem</i>"</code> </p> <p>
          * On a Puppet server, this command is an alternative to the <code>puppet cert
-         * sign</code> command that signs a Puppet node CSR. </p> <p> Example (Chef):
+         * sign</code> command that signs a Puppet node CSR. </p> <p> Example (Puppet):
          * <code>aws opsworks-cm associate-node --server-name <i>MyServer</i> --node-name
          * <i>MyManagedNode</i> --engine-attributes
          * "Name=<i>PUPPET_NODE_CSR</i>,Value=<i>csr-pem</i>"</code> </p> <p> A node can

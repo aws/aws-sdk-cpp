@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -85,7 +75,7 @@ static const char* ALLOCATION_TAG = "LexModelBuildingServiceClient";
 LexModelBuildingServiceClient::LexModelBuildingServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<LexModelBuildingServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -95,7 +85,7 @@ LexModelBuildingServiceClient::LexModelBuildingServiceClient(const Client::Clien
 LexModelBuildingServiceClient::LexModelBuildingServiceClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<LexModelBuildingServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -106,7 +96,7 @@ LexModelBuildingServiceClient::LexModelBuildingServiceClient(const std::shared_p
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<LexModelBuildingServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -119,6 +109,7 @@ LexModelBuildingServiceClient::~LexModelBuildingServiceClient()
 
 void LexModelBuildingServiceClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Lex Model Building Service");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -155,15 +146,7 @@ CreateBotVersionOutcome LexModelBuildingServiceClient::CreateBotVersion(const Cr
   ss << request.GetName();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateBotVersionOutcome(CreateBotVersionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateBotVersionOutcome(outcome.GetError());
-  }
+  return CreateBotVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateBotVersionOutcomeCallable LexModelBuildingServiceClient::CreateBotVersionCallable(const CreateBotVersionRequest& request) const
@@ -197,15 +180,7 @@ CreateIntentVersionOutcome LexModelBuildingServiceClient::CreateIntentVersion(co
   ss << request.GetName();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateIntentVersionOutcome(CreateIntentVersionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateIntentVersionOutcome(outcome.GetError());
-  }
+  return CreateIntentVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateIntentVersionOutcomeCallable LexModelBuildingServiceClient::CreateIntentVersionCallable(const CreateIntentVersionRequest& request) const
@@ -239,15 +214,7 @@ CreateSlotTypeVersionOutcome LexModelBuildingServiceClient::CreateSlotTypeVersio
   ss << request.GetName();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateSlotTypeVersionOutcome(CreateSlotTypeVersionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateSlotTypeVersionOutcome(outcome.GetError());
-  }
+  return CreateSlotTypeVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateSlotTypeVersionOutcomeCallable LexModelBuildingServiceClient::CreateSlotTypeVersionCallable(const CreateSlotTypeVersionRequest& request) const
@@ -280,15 +247,7 @@ DeleteBotOutcome LexModelBuildingServiceClient::DeleteBot(const DeleteBotRequest
   ss << "/bots/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteBotOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteBotOutcome(outcome.GetError());
-  }
+  return DeleteBotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteBotOutcomeCallable LexModelBuildingServiceClient::DeleteBotCallable(const DeleteBotRequest& request) const
@@ -328,15 +287,7 @@ DeleteBotAliasOutcome LexModelBuildingServiceClient::DeleteBotAlias(const Delete
   ss << "/aliases/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteBotAliasOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteBotAliasOutcome(outcome.GetError());
-  }
+  return DeleteBotAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteBotAliasOutcomeCallable LexModelBuildingServiceClient::DeleteBotAliasCallable(const DeleteBotAliasRequest& request) const
@@ -383,15 +334,7 @@ DeleteBotChannelAssociationOutcome LexModelBuildingServiceClient::DeleteBotChann
   ss << "/channels/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteBotChannelAssociationOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteBotChannelAssociationOutcome(outcome.GetError());
-  }
+  return DeleteBotChannelAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteBotChannelAssociationOutcomeCallable LexModelBuildingServiceClient::DeleteBotChannelAssociationCallable(const DeleteBotChannelAssociationRequest& request) const
@@ -431,15 +374,7 @@ DeleteBotVersionOutcome LexModelBuildingServiceClient::DeleteBotVersion(const De
   ss << "/versions/";
   ss << request.GetVersion();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteBotVersionOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteBotVersionOutcome(outcome.GetError());
-  }
+  return DeleteBotVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteBotVersionOutcomeCallable LexModelBuildingServiceClient::DeleteBotVersionCallable(const DeleteBotVersionRequest& request) const
@@ -472,15 +407,7 @@ DeleteIntentOutcome LexModelBuildingServiceClient::DeleteIntent(const DeleteInte
   ss << "/intents/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteIntentOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteIntentOutcome(outcome.GetError());
-  }
+  return DeleteIntentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteIntentOutcomeCallable LexModelBuildingServiceClient::DeleteIntentCallable(const DeleteIntentRequest& request) const
@@ -520,15 +447,7 @@ DeleteIntentVersionOutcome LexModelBuildingServiceClient::DeleteIntentVersion(co
   ss << "/versions/";
   ss << request.GetVersion();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteIntentVersionOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteIntentVersionOutcome(outcome.GetError());
-  }
+  return DeleteIntentVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteIntentVersionOutcomeCallable LexModelBuildingServiceClient::DeleteIntentVersionCallable(const DeleteIntentVersionRequest& request) const
@@ -561,15 +480,7 @@ DeleteSlotTypeOutcome LexModelBuildingServiceClient::DeleteSlotType(const Delete
   ss << "/slottypes/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteSlotTypeOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteSlotTypeOutcome(outcome.GetError());
-  }
+  return DeleteSlotTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteSlotTypeOutcomeCallable LexModelBuildingServiceClient::DeleteSlotTypeCallable(const DeleteSlotTypeRequest& request) const
@@ -609,15 +520,7 @@ DeleteSlotTypeVersionOutcome LexModelBuildingServiceClient::DeleteSlotTypeVersio
   ss << "/version/";
   ss << request.GetVersion();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteSlotTypeVersionOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteSlotTypeVersionOutcome(outcome.GetError());
-  }
+  return DeleteSlotTypeVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteSlotTypeVersionOutcomeCallable LexModelBuildingServiceClient::DeleteSlotTypeVersionCallable(const DeleteSlotTypeVersionRequest& request) const
@@ -657,15 +560,7 @@ DeleteUtterancesOutcome LexModelBuildingServiceClient::DeleteUtterances(const De
   ss << "/utterances/";
   ss << request.GetUserId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteUtterancesOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteUtterancesOutcome(outcome.GetError());
-  }
+  return DeleteUtterancesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteUtterancesOutcomeCallable LexModelBuildingServiceClient::DeleteUtterancesCallable(const DeleteUtterancesRequest& request) const
@@ -705,15 +600,7 @@ GetBotOutcome LexModelBuildingServiceClient::GetBot(const GetBotRequest& request
   ss << "/versions/";
   ss << request.GetVersionOrAlias();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetBotOutcome(GetBotResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetBotOutcome(outcome.GetError());
-  }
+  return GetBotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBotOutcomeCallable LexModelBuildingServiceClient::GetBotCallable(const GetBotRequest& request) const
@@ -753,15 +640,7 @@ GetBotAliasOutcome LexModelBuildingServiceClient::GetBotAlias(const GetBotAliasR
   ss << "/aliases/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetBotAliasOutcome(GetBotAliasResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetBotAliasOutcome(outcome.GetError());
-  }
+  return GetBotAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBotAliasOutcomeCallable LexModelBuildingServiceClient::GetBotAliasCallable(const GetBotAliasRequest& request) const
@@ -795,15 +674,7 @@ GetBotAliasesOutcome LexModelBuildingServiceClient::GetBotAliases(const GetBotAl
   ss << request.GetBotName();
   ss << "/aliases/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetBotAliasesOutcome(GetBotAliasesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetBotAliasesOutcome(outcome.GetError());
-  }
+  return GetBotAliasesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBotAliasesOutcomeCallable LexModelBuildingServiceClient::GetBotAliasesCallable(const GetBotAliasesRequest& request) const
@@ -850,15 +721,7 @@ GetBotChannelAssociationOutcome LexModelBuildingServiceClient::GetBotChannelAsso
   ss << "/channels/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetBotChannelAssociationOutcome(GetBotChannelAssociationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetBotChannelAssociationOutcome(outcome.GetError());
-  }
+  return GetBotChannelAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBotChannelAssociationOutcomeCallable LexModelBuildingServiceClient::GetBotChannelAssociationCallable(const GetBotChannelAssociationRequest& request) const
@@ -899,15 +762,7 @@ GetBotChannelAssociationsOutcome LexModelBuildingServiceClient::GetBotChannelAss
   ss << request.GetBotAlias();
   ss << "/channels/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetBotChannelAssociationsOutcome(GetBotChannelAssociationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetBotChannelAssociationsOutcome(outcome.GetError());
-  }
+  return GetBotChannelAssociationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBotChannelAssociationsOutcomeCallable LexModelBuildingServiceClient::GetBotChannelAssociationsCallable(const GetBotChannelAssociationsRequest& request) const
@@ -941,15 +796,7 @@ GetBotVersionsOutcome LexModelBuildingServiceClient::GetBotVersions(const GetBot
   ss << request.GetName();
   ss << "/versions/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetBotVersionsOutcome(GetBotVersionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetBotVersionsOutcome(outcome.GetError());
-  }
+  return GetBotVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBotVersionsOutcomeCallable LexModelBuildingServiceClient::GetBotVersionsCallable(const GetBotVersionsRequest& request) const
@@ -976,15 +823,7 @@ GetBotsOutcome LexModelBuildingServiceClient::GetBots(const GetBotsRequest& requ
   Aws::StringStream ss;
   ss << "/bots/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetBotsOutcome(GetBotsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetBotsOutcome(outcome.GetError());
-  }
+  return GetBotsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBotsOutcomeCallable LexModelBuildingServiceClient::GetBotsCallable(const GetBotsRequest& request) const
@@ -1017,15 +856,7 @@ GetBuiltinIntentOutcome LexModelBuildingServiceClient::GetBuiltinIntent(const Ge
   ss << "/builtins/intents/";
   ss << request.GetSignature();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetBuiltinIntentOutcome(GetBuiltinIntentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetBuiltinIntentOutcome(outcome.GetError());
-  }
+  return GetBuiltinIntentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBuiltinIntentOutcomeCallable LexModelBuildingServiceClient::GetBuiltinIntentCallable(const GetBuiltinIntentRequest& request) const
@@ -1052,15 +883,7 @@ GetBuiltinIntentsOutcome LexModelBuildingServiceClient::GetBuiltinIntents(const 
   Aws::StringStream ss;
   ss << "/builtins/intents/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetBuiltinIntentsOutcome(GetBuiltinIntentsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetBuiltinIntentsOutcome(outcome.GetError());
-  }
+  return GetBuiltinIntentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBuiltinIntentsOutcomeCallable LexModelBuildingServiceClient::GetBuiltinIntentsCallable(const GetBuiltinIntentsRequest& request) const
@@ -1087,15 +910,7 @@ GetBuiltinSlotTypesOutcome LexModelBuildingServiceClient::GetBuiltinSlotTypes(co
   Aws::StringStream ss;
   ss << "/builtins/slottypes/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetBuiltinSlotTypesOutcome(GetBuiltinSlotTypesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetBuiltinSlotTypesOutcome(outcome.GetError());
-  }
+  return GetBuiltinSlotTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBuiltinSlotTypesOutcomeCallable LexModelBuildingServiceClient::GetBuiltinSlotTypesCallable(const GetBuiltinSlotTypesRequest& request) const
@@ -1142,15 +957,7 @@ GetExportOutcome LexModelBuildingServiceClient::GetExport(const GetExportRequest
   Aws::StringStream ss;
   ss << "/exports/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetExportOutcome(GetExportResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetExportOutcome(outcome.GetError());
-  }
+  return GetExportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetExportOutcomeCallable LexModelBuildingServiceClient::GetExportCallable(const GetExportRequest& request) const
@@ -1183,15 +990,7 @@ GetImportOutcome LexModelBuildingServiceClient::GetImport(const GetImportRequest
   ss << "/imports/";
   ss << request.GetImportId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetImportOutcome(GetImportResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetImportOutcome(outcome.GetError());
-  }
+  return GetImportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetImportOutcomeCallable LexModelBuildingServiceClient::GetImportCallable(const GetImportRequest& request) const
@@ -1231,15 +1030,7 @@ GetIntentOutcome LexModelBuildingServiceClient::GetIntent(const GetIntentRequest
   ss << "/versions/";
   ss << request.GetVersion();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetIntentOutcome(GetIntentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetIntentOutcome(outcome.GetError());
-  }
+  return GetIntentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetIntentOutcomeCallable LexModelBuildingServiceClient::GetIntentCallable(const GetIntentRequest& request) const
@@ -1273,15 +1064,7 @@ GetIntentVersionsOutcome LexModelBuildingServiceClient::GetIntentVersions(const 
   ss << request.GetName();
   ss << "/versions/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetIntentVersionsOutcome(GetIntentVersionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetIntentVersionsOutcome(outcome.GetError());
-  }
+  return GetIntentVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetIntentVersionsOutcomeCallable LexModelBuildingServiceClient::GetIntentVersionsCallable(const GetIntentVersionsRequest& request) const
@@ -1308,15 +1091,7 @@ GetIntentsOutcome LexModelBuildingServiceClient::GetIntents(const GetIntentsRequ
   Aws::StringStream ss;
   ss << "/intents/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetIntentsOutcome(GetIntentsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetIntentsOutcome(outcome.GetError());
-  }
+  return GetIntentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetIntentsOutcomeCallable LexModelBuildingServiceClient::GetIntentsCallable(const GetIntentsRequest& request) const
@@ -1356,15 +1131,7 @@ GetSlotTypeOutcome LexModelBuildingServiceClient::GetSlotType(const GetSlotTypeR
   ss << "/versions/";
   ss << request.GetVersion();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetSlotTypeOutcome(GetSlotTypeResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetSlotTypeOutcome(outcome.GetError());
-  }
+  return GetSlotTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSlotTypeOutcomeCallable LexModelBuildingServiceClient::GetSlotTypeCallable(const GetSlotTypeRequest& request) const
@@ -1398,15 +1165,7 @@ GetSlotTypeVersionsOutcome LexModelBuildingServiceClient::GetSlotTypeVersions(co
   ss << request.GetName();
   ss << "/versions/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetSlotTypeVersionsOutcome(GetSlotTypeVersionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetSlotTypeVersionsOutcome(outcome.GetError());
-  }
+  return GetSlotTypeVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSlotTypeVersionsOutcomeCallable LexModelBuildingServiceClient::GetSlotTypeVersionsCallable(const GetSlotTypeVersionsRequest& request) const
@@ -1433,15 +1192,7 @@ GetSlotTypesOutcome LexModelBuildingServiceClient::GetSlotTypes(const GetSlotTyp
   Aws::StringStream ss;
   ss << "/slottypes/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetSlotTypesOutcome(GetSlotTypesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetSlotTypesOutcome(outcome.GetError());
-  }
+  return GetSlotTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSlotTypesOutcomeCallable LexModelBuildingServiceClient::GetSlotTypesCallable(const GetSlotTypesRequest& request) const
@@ -1487,15 +1238,7 @@ GetUtterancesViewOutcome LexModelBuildingServiceClient::GetUtterancesView(const 
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?view=aggregation");
   uri.SetQueryString(ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetUtterancesViewOutcome(GetUtterancesViewResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetUtterancesViewOutcome(outcome.GetError());
-  }
+  return GetUtterancesViewOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetUtterancesViewOutcomeCallable LexModelBuildingServiceClient::GetUtterancesViewCallable(const GetUtterancesViewRequest& request) const
@@ -1528,15 +1271,7 @@ ListTagsForResourceOutcome LexModelBuildingServiceClient::ListTagsForResource(co
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable LexModelBuildingServiceClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -1570,15 +1305,7 @@ PutBotOutcome LexModelBuildingServiceClient::PutBot(const PutBotRequest& request
   ss << request.GetName();
   ss << "/versions/$LATEST";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutBotOutcome(PutBotResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutBotOutcome(outcome.GetError());
-  }
+  return PutBotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutBotOutcomeCallable LexModelBuildingServiceClient::PutBotCallable(const PutBotRequest& request) const
@@ -1618,15 +1345,7 @@ PutBotAliasOutcome LexModelBuildingServiceClient::PutBotAlias(const PutBotAliasR
   ss << "/aliases/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutBotAliasOutcome(PutBotAliasResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutBotAliasOutcome(outcome.GetError());
-  }
+  return PutBotAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutBotAliasOutcomeCallable LexModelBuildingServiceClient::PutBotAliasCallable(const PutBotAliasRequest& request) const
@@ -1660,15 +1379,7 @@ PutIntentOutcome LexModelBuildingServiceClient::PutIntent(const PutIntentRequest
   ss << request.GetName();
   ss << "/versions/$LATEST";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutIntentOutcome(PutIntentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutIntentOutcome(outcome.GetError());
-  }
+  return PutIntentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutIntentOutcomeCallable LexModelBuildingServiceClient::PutIntentCallable(const PutIntentRequest& request) const
@@ -1702,15 +1413,7 @@ PutSlotTypeOutcome LexModelBuildingServiceClient::PutSlotType(const PutSlotTypeR
   ss << request.GetName();
   ss << "/versions/$LATEST";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutSlotTypeOutcome(PutSlotTypeResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutSlotTypeOutcome(outcome.GetError());
-  }
+  return PutSlotTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutSlotTypeOutcomeCallable LexModelBuildingServiceClient::PutSlotTypeCallable(const PutSlotTypeRequest& request) const
@@ -1737,15 +1440,7 @@ StartImportOutcome LexModelBuildingServiceClient::StartImport(const StartImportR
   Aws::StringStream ss;
   ss << "/imports/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartImportOutcome(StartImportResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartImportOutcome(outcome.GetError());
-  }
+  return StartImportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartImportOutcomeCallable LexModelBuildingServiceClient::StartImportCallable(const StartImportRequest& request) const
@@ -1778,15 +1473,7 @@ TagResourceOutcome LexModelBuildingServiceClient::TagResource(const TagResourceR
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable LexModelBuildingServiceClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -1824,15 +1511,7 @@ UntagResourceOutcome LexModelBuildingServiceClient::UntagResource(const UntagRes
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable LexModelBuildingServiceClient::UntagResourceCallable(const UntagResourceRequest& request) const

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/resource-groups/ResourceGroups_EXPORTS.h>
@@ -43,49 +33,49 @@ namespace Model
 
 
     /**
-     * <p>The name of the resource group.</p>
+     * <p>The name or the ARN of the resource group to query.</p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline const Aws::String& GetGroup() const{ return m_group; }
 
     /**
-     * <p>The name of the resource group.</p>
+     * <p>The name or the ARN of the resource group to query.</p>
      */
-    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+    inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
 
     /**
-     * <p>The name of the resource group.</p>
+     * <p>The name or the ARN of the resource group to query.</p>
      */
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+    inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
 
     /**
-     * <p>The name of the resource group.</p>
+     * <p>The name or the ARN of the resource group to query.</p>
      */
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
+    inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
 
     /**
-     * <p>The name of the resource group.</p>
+     * <p>The name or the ARN of the resource group to query.</p>
      */
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
+    inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
 
     /**
-     * <p>The name of the resource group.</p>
+     * <p>The name or the ARN of the resource group to query.</p>
      */
-    inline GetGroupQueryRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+    inline GetGroupQueryRequest& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
 
     /**
-     * <p>The name of the resource group.</p>
+     * <p>The name or the ARN of the resource group to query.</p>
      */
-    inline GetGroupQueryRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
+    inline GetGroupQueryRequest& WithGroup(Aws::String&& value) { SetGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the resource group.</p>
+     * <p>The name or the ARN of the resource group to query.</p>
      */
-    inline GetGroupQueryRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    inline GetGroupQueryRequest& WithGroup(const char* value) { SetGroup(value); return *this;}
 
   private:
 
-    Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    Aws::String m_group;
+    bool m_groupHasBeenSet;
   };
 
 } // namespace Model

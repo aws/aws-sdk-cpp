@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
@@ -351,7 +341,7 @@ namespace Model
      * Optional. When you create a job, you can specify a queue to send it to. If you
      * don't specify, the job will go to the default queue. For more about queues, see
      * the User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
      */
     inline const Aws::String& GetQueue() const{ return m_queue; }
 
@@ -359,7 +349,7 @@ namespace Model
      * Optional. When you create a job, you can specify a queue to send it to. If you
      * don't specify, the job will go to the default queue. For more about queues, see
      * the User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
      */
     inline bool QueueHasBeenSet() const { return m_queueHasBeenSet; }
 
@@ -367,7 +357,7 @@ namespace Model
      * Optional. When you create a job, you can specify a queue to send it to. If you
      * don't specify, the job will go to the default queue. For more about queues, see
      * the User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
      */
     inline void SetQueue(const Aws::String& value) { m_queueHasBeenSet = true; m_queue = value; }
 
@@ -375,7 +365,7 @@ namespace Model
      * Optional. When you create a job, you can specify a queue to send it to. If you
      * don't specify, the job will go to the default queue. For more about queues, see
      * the User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
      */
     inline void SetQueue(Aws::String&& value) { m_queueHasBeenSet = true; m_queue = std::move(value); }
 
@@ -383,7 +373,7 @@ namespace Model
      * Optional. When you create a job, you can specify a queue to send it to. If you
      * don't specify, the job will go to the default queue. For more about queues, see
      * the User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
      */
     inline void SetQueue(const char* value) { m_queueHasBeenSet = true; m_queue.assign(value); }
 
@@ -391,7 +381,7 @@ namespace Model
      * Optional. When you create a job, you can specify a queue to send it to. If you
      * don't specify, the job will go to the default queue. For more about queues, see
      * the User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
      */
     inline CreateJobRequest& WithQueue(const Aws::String& value) { SetQueue(value); return *this;}
 
@@ -399,7 +389,7 @@ namespace Model
      * Optional. When you create a job, you can specify a queue to send it to. If you
      * don't specify, the job will go to the default queue. For more about queues, see
      * the User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
      */
     inline CreateJobRequest& WithQueue(Aws::String&& value) { SetQueue(std::move(value)); return *this;}
 
@@ -407,7 +397,7 @@ namespace Model
      * Optional. When you create a job, you can specify a queue to send it to. If you
      * don't specify, the job will go to the default queue. For more about queues, see
      * the User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
      */
     inline CreateJobRequest& WithQueue(const char* value) { SetQueue(value); return *this;}
 
@@ -415,56 +405,56 @@ namespace Model
     /**
      * Required. The IAM role you use for creating this job. For details about
      * permissions, see the User Guide topic at the User Guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
      */
     inline const Aws::String& GetRole() const{ return m_role; }
 
     /**
      * Required. The IAM role you use for creating this job. For details about
      * permissions, see the User Guide topic at the User Guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
      */
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
 
     /**
      * Required. The IAM role you use for creating this job. For details about
      * permissions, see the User Guide topic at the User Guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
      */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
      * Required. The IAM role you use for creating this job. For details about
      * permissions, see the User Guide topic at the User Guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
      */
     inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
     /**
      * Required. The IAM role you use for creating this job. For details about
      * permissions, see the User Guide topic at the User Guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
      */
     inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
 
     /**
      * Required. The IAM role you use for creating this job. For details about
      * permissions, see the User Guide topic at the User Guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
      */
     inline CreateJobRequest& WithRole(const Aws::String& value) { SetRole(value); return *this;}
 
     /**
      * Required. The IAM role you use for creating this job. For details about
      * permissions, see the User Guide topic at the User Guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
      */
     inline CreateJobRequest& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
 
     /**
      * Required. The IAM role you use for creating this job. For details about
      * permissions, see the User Guide topic at the User Guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
      */
     inline CreateJobRequest& WithRole(const char* value) { SetRole(value); return *this;}
 
@@ -606,158 +596,210 @@ namespace Model
 
     /**
      * Optional. The tags that you want to add to the resource. You can tag resources
-     * with a key-value pair or with only a key.
+     * with a key-value pair or with only a key.  Use standard AWS tags on your job for
+     * automatic integration with AWS services and for custom integrations and
+     * workflows.
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
      * Optional. The tags that you want to add to the resource. You can tag resources
-     * with a key-value pair or with only a key.
+     * with a key-value pair or with only a key.  Use standard AWS tags on your job for
+     * automatic integration with AWS services and for custom integrations and
+     * workflows.
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * Optional. The tags that you want to add to the resource. You can tag resources
-     * with a key-value pair or with only a key.
+     * with a key-value pair or with only a key.  Use standard AWS tags on your job for
+     * automatic integration with AWS services and for custom integrations and
+     * workflows.
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * Optional. The tags that you want to add to the resource. You can tag resources
-     * with a key-value pair or with only a key.
+     * with a key-value pair or with only a key.  Use standard AWS tags on your job for
+     * automatic integration with AWS services and for custom integrations and
+     * workflows.
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * Optional. The tags that you want to add to the resource. You can tag resources
-     * with a key-value pair or with only a key.
+     * with a key-value pair or with only a key.  Use standard AWS tags on your job for
+     * automatic integration with AWS services and for custom integrations and
+     * workflows.
      */
     inline CreateJobRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
      * Optional. The tags that you want to add to the resource. You can tag resources
-     * with a key-value pair or with only a key.
+     * with a key-value pair or with only a key.  Use standard AWS tags on your job for
+     * automatic integration with AWS services and for custom integrations and
+     * workflows.
      */
     inline CreateJobRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * Optional. The tags that you want to add to the resource. You can tag resources
-     * with a key-value pair or with only a key.
+     * with a key-value pair or with only a key.  Use standard AWS tags on your job for
+     * automatic integration with AWS services and for custom integrations and
+     * workflows.
      */
     inline CreateJobRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
      * Optional. The tags that you want to add to the resource. You can tag resources
-     * with a key-value pair or with only a key.
+     * with a key-value pair or with only a key.  Use standard AWS tags on your job for
+     * automatic integration with AWS services and for custom integrations and
+     * workflows.
      */
     inline CreateJobRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * Optional. The tags that you want to add to the resource. You can tag resources
-     * with a key-value pair or with only a key.
+     * with a key-value pair or with only a key.  Use standard AWS tags on your job for
+     * automatic integration with AWS services and for custom integrations and
+     * workflows.
      */
     inline CreateJobRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * Optional. The tags that you want to add to the resource. You can tag resources
-     * with a key-value pair or with only a key.
+     * with a key-value pair or with only a key.  Use standard AWS tags on your job for
+     * automatic integration with AWS services and for custom integrations and
+     * workflows.
      */
     inline CreateJobRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * Optional. The tags that you want to add to the resource. You can tag resources
-     * with a key-value pair or with only a key.
+     * with a key-value pair or with only a key.  Use standard AWS tags on your job for
+     * automatic integration with AWS services and for custom integrations and
+     * workflows.
      */
     inline CreateJobRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * Optional. The tags that you want to add to the resource. You can tag resources
-     * with a key-value pair or with only a key.
+     * with a key-value pair or with only a key.  Use standard AWS tags on your job for
+     * automatic integration with AWS services and for custom integrations and
+     * workflows.
      */
     inline CreateJobRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * Optional. The tags that you want to add to the resource. You can tag resources
-     * with a key-value pair or with only a key.
+     * with a key-value pair or with only a key.  Use standard AWS tags on your job for
+     * automatic integration with AWS services and for custom integrations and
+     * workflows.
      */
     inline CreateJobRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
 
     /**
      * Optional. User-defined metadata that you want to associate with an MediaConvert
-     * job. You specify metadata in key/value pairs.
+     * job. You specify metadata in key/value pairs.  Use only for existing
+     * integrations or workflows that rely on job metadata tags. Otherwise, we
+     * recommend that you use standard AWS tags.
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetUserMetadata() const{ return m_userMetadata; }
 
     /**
      * Optional. User-defined metadata that you want to associate with an MediaConvert
-     * job. You specify metadata in key/value pairs.
+     * job. You specify metadata in key/value pairs.  Use only for existing
+     * integrations or workflows that rely on job metadata tags. Otherwise, we
+     * recommend that you use standard AWS tags.
      */
     inline bool UserMetadataHasBeenSet() const { return m_userMetadataHasBeenSet; }
 
     /**
      * Optional. User-defined metadata that you want to associate with an MediaConvert
-     * job. You specify metadata in key/value pairs.
+     * job. You specify metadata in key/value pairs.  Use only for existing
+     * integrations or workflows that rely on job metadata tags. Otherwise, we
+     * recommend that you use standard AWS tags.
      */
     inline void SetUserMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_userMetadataHasBeenSet = true; m_userMetadata = value; }
 
     /**
      * Optional. User-defined metadata that you want to associate with an MediaConvert
-     * job. You specify metadata in key/value pairs.
+     * job. You specify metadata in key/value pairs.  Use only for existing
+     * integrations or workflows that rely on job metadata tags. Otherwise, we
+     * recommend that you use standard AWS tags.
      */
     inline void SetUserMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_userMetadataHasBeenSet = true; m_userMetadata = std::move(value); }
 
     /**
      * Optional. User-defined metadata that you want to associate with an MediaConvert
-     * job. You specify metadata in key/value pairs.
+     * job. You specify metadata in key/value pairs.  Use only for existing
+     * integrations or workflows that rely on job metadata tags. Otherwise, we
+     * recommend that you use standard AWS tags.
      */
     inline CreateJobRequest& WithUserMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetUserMetadata(value); return *this;}
 
     /**
      * Optional. User-defined metadata that you want to associate with an MediaConvert
-     * job. You specify metadata in key/value pairs.
+     * job. You specify metadata in key/value pairs.  Use only for existing
+     * integrations or workflows that rely on job metadata tags. Otherwise, we
+     * recommend that you use standard AWS tags.
      */
     inline CreateJobRequest& WithUserMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetUserMetadata(std::move(value)); return *this;}
 
     /**
      * Optional. User-defined metadata that you want to associate with an MediaConvert
-     * job. You specify metadata in key/value pairs.
+     * job. You specify metadata in key/value pairs.  Use only for existing
+     * integrations or workflows that rely on job metadata tags. Otherwise, we
+     * recommend that you use standard AWS tags.
      */
     inline CreateJobRequest& AddUserMetadata(const Aws::String& key, const Aws::String& value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(key, value); return *this; }
 
     /**
      * Optional. User-defined metadata that you want to associate with an MediaConvert
-     * job. You specify metadata in key/value pairs.
+     * job. You specify metadata in key/value pairs.  Use only for existing
+     * integrations or workflows that rely on job metadata tags. Otherwise, we
+     * recommend that you use standard AWS tags.
      */
     inline CreateJobRequest& AddUserMetadata(Aws::String&& key, const Aws::String& value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(std::move(key), value); return *this; }
 
     /**
      * Optional. User-defined metadata that you want to associate with an MediaConvert
-     * job. You specify metadata in key/value pairs.
+     * job. You specify metadata in key/value pairs.  Use only for existing
+     * integrations or workflows that rely on job metadata tags. Otherwise, we
+     * recommend that you use standard AWS tags.
      */
     inline CreateJobRequest& AddUserMetadata(const Aws::String& key, Aws::String&& value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(key, std::move(value)); return *this; }
 
     /**
      * Optional. User-defined metadata that you want to associate with an MediaConvert
-     * job. You specify metadata in key/value pairs.
+     * job. You specify metadata in key/value pairs.  Use only for existing
+     * integrations or workflows that rely on job metadata tags. Otherwise, we
+     * recommend that you use standard AWS tags.
      */
     inline CreateJobRequest& AddUserMetadata(Aws::String&& key, Aws::String&& value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * Optional. User-defined metadata that you want to associate with an MediaConvert
-     * job. You specify metadata in key/value pairs.
+     * job. You specify metadata in key/value pairs.  Use only for existing
+     * integrations or workflows that rely on job metadata tags. Otherwise, we
+     * recommend that you use standard AWS tags.
      */
     inline CreateJobRequest& AddUserMetadata(const char* key, Aws::String&& value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(key, std::move(value)); return *this; }
 
     /**
      * Optional. User-defined metadata that you want to associate with an MediaConvert
-     * job. You specify metadata in key/value pairs.
+     * job. You specify metadata in key/value pairs.  Use only for existing
+     * integrations or workflows that rely on job metadata tags. Otherwise, we
+     * recommend that you use standard AWS tags.
      */
     inline CreateJobRequest& AddUserMetadata(Aws::String&& key, const char* value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(std::move(key), value); return *this; }
 
     /**
      * Optional. User-defined metadata that you want to associate with an MediaConvert
-     * job. You specify metadata in key/value pairs.
+     * job. You specify metadata in key/value pairs.  Use only for existing
+     * integrations or workflows that rely on job metadata tags. Otherwise, we
+     * recommend that you use standard AWS tags.
      */
     inline CreateJobRequest& AddUserMetadata(const char* key, const char* value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(key, value); return *this; }
 

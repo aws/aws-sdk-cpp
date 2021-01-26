@@ -1,17 +1,7 @@
-/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 #pragma once
 
 #include <aws/s3-encryption/s3Encryption_EXPORTS.h>
@@ -57,7 +47,7 @@ namespace Aws
                 /*
                 * Function to put an encrypted object to S3.
                 */
-                S3EncryptionPutObjectOutcome PutObjectSecurely(const Aws::S3::Model::PutObjectRequest& request, const PutObjectFunction& putObjectFunction);
+                S3EncryptionPutObjectOutcome PutObjectSecurely(const Aws::S3::Model::PutObjectRequest& request, const PutObjectFunction& putObjectFunction, const Aws::Map<Aws::String, Aws::String>& contextMap = {});
 
                 /*
                 * Function to get an encrypted object from S3. This function takes a headObjectResult as well to collect metadata.
@@ -103,14 +93,14 @@ namespace Aws
                 virtual void PopulateCryptoContentMaterial() = 0;
 
                 /*
-                * This function is used to get the crypto tag appended to the end of the body. It creates a seperate get request to obtain the tag.
+                * This function is used to get the crypto tag appended to the end of the body. It creates a separate get request to obtain the tag.
                 */
                 virtual Aws::Utils::CryptoBuffer GetTag(const Aws::S3::Model::GetObjectRequest& request, const std::function < Aws::S3::Model::GetObjectOutcome(const Aws::S3::Model::GetObjectRequest&) >& getObjectFunction) = 0;
 
                 /*
                 * This function checks for any prohibitted actions within each module.
                 */
-                virtual void DecryptionConditionCheck(const Aws::String& requestRange) = 0;
+                virtual bool DecryptionConditionCheck(const Aws::String& requestRange) = 0;
 
                 /*
                 * This function adjusts the get object request range to specifically get only the body of the content and not any addition content. It also adjusts the range if the a range-get request was specified according to the range for the cipher block.
@@ -160,7 +150,7 @@ namespace Aws
                 /*
                 * Function to check for any prohibitted actions specific to each module for decryption.
                 */
-                virtual void DecryptionConditionCheck(const Aws::String& requestRange) override;
+                virtual bool DecryptionConditionCheck(const Aws::String& requestRange) override;
 
                 /*
                 * Function to adjust getObjectRequest range to only specify the encrypted body.
@@ -204,7 +194,7 @@ namespace Aws
                 /*
                 * Function to check for any prohibitted actions specific to each module for decryption.
                 */
-                virtual void DecryptionConditionCheck(const Aws::String& requestRange) override;
+                virtual bool DecryptionConditionCheck(const Aws::String& requestRange) override;
 
                 /*
                 * Function adjust getObjectRequest range to only specify the encrypted body.
@@ -248,7 +238,7 @@ namespace Aws
                 /*
                 * Function to check for any prohibitted actions specific to each module for decryption.
                 */
-                virtual void DecryptionConditionCheck(const Aws::String& requestRange) override;
+                virtual bool DecryptionConditionCheck(const Aws::String& requestRange) override;
 
                 /*
                 * Function adjust getObjectRequest range to only specify the encrypted body.

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
@@ -33,6 +23,7 @@ namespace Aws
         namespace ARNResourceType
         {
             static const char ACCESSPOINT[] = "accesspoint";
+            static const char OUTPOST[] = "outpost";
         }
 
         typedef Aws::Utils::Outcome<bool, Aws::Client::AWSError<S3Errors>> S3ARNOutcome;
@@ -44,6 +35,8 @@ namespace Aws
 
             const Aws::String& GetResourceType() const { return m_resourceType; }
             const Aws::String& GetResourceId() const { return m_resourceId; }
+            const Aws::String& GetSubResourceType() const { return m_subResourceType; }
+            const Aws::String& GetSubResourceId() const { return m_subResourceId; }
             const Aws::String& GetResourceQualifier() const { return m_resourceQualifier; }
 
             // Check if S3ARN is valid.
@@ -56,6 +49,8 @@ namespace Aws
 
             Aws::String m_resourceType;
             Aws::String m_resourceId;
+            Aws::String m_subResourceType;
+            Aws::String m_subResourceId;
             Aws::String m_resourceQualifier;
         };
     }

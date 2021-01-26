@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/lightsail/model/OperationType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -85,6 +75,22 @@ namespace Aws
         static const int GetContactMethods_HASH = HashingUtils::HashString("GetContactMethods");
         static const int SendContactMethodVerification_HASH = HashingUtils::HashString("SendContactMethodVerification");
         static const int DeleteContactMethod_HASH = HashingUtils::HashString("DeleteContactMethod");
+        static const int CreateDistribution_HASH = HashingUtils::HashString("CreateDistribution");
+        static const int UpdateDistribution_HASH = HashingUtils::HashString("UpdateDistribution");
+        static const int DeleteDistribution_HASH = HashingUtils::HashString("DeleteDistribution");
+        static const int ResetDistributionCache_HASH = HashingUtils::HashString("ResetDistributionCache");
+        static const int AttachCertificateToDistribution_HASH = HashingUtils::HashString("AttachCertificateToDistribution");
+        static const int DetachCertificateFromDistribution_HASH = HashingUtils::HashString("DetachCertificateFromDistribution");
+        static const int UpdateDistributionBundle_HASH = HashingUtils::HashString("UpdateDistributionBundle");
+        static const int CreateCertificate_HASH = HashingUtils::HashString("CreateCertificate");
+        static const int DeleteCertificate_HASH = HashingUtils::HashString("DeleteCertificate");
+        static const int CreateContainerService_HASH = HashingUtils::HashString("CreateContainerService");
+        static const int UpdateContainerService_HASH = HashingUtils::HashString("UpdateContainerService");
+        static const int DeleteContainerService_HASH = HashingUtils::HashString("DeleteContainerService");
+        static const int CreateContainerServiceDeployment_HASH = HashingUtils::HashString("CreateContainerServiceDeployment");
+        static const int CreateContainerServiceRegistryLogin_HASH = HashingUtils::HashString("CreateContainerServiceRegistryLogin");
+        static const int RegisterContainerImage_HASH = HashingUtils::HashString("RegisterContainerImage");
+        static const int DeleteContainerImage_HASH = HashingUtils::HashString("DeleteContainerImage");
 
 
         OperationType GetOperationTypeForName(const Aws::String& name)
@@ -310,6 +316,70 @@ namespace Aws
           {
             return OperationType::DeleteContactMethod;
           }
+          else if (hashCode == CreateDistribution_HASH)
+          {
+            return OperationType::CreateDistribution;
+          }
+          else if (hashCode == UpdateDistribution_HASH)
+          {
+            return OperationType::UpdateDistribution;
+          }
+          else if (hashCode == DeleteDistribution_HASH)
+          {
+            return OperationType::DeleteDistribution;
+          }
+          else if (hashCode == ResetDistributionCache_HASH)
+          {
+            return OperationType::ResetDistributionCache;
+          }
+          else if (hashCode == AttachCertificateToDistribution_HASH)
+          {
+            return OperationType::AttachCertificateToDistribution;
+          }
+          else if (hashCode == DetachCertificateFromDistribution_HASH)
+          {
+            return OperationType::DetachCertificateFromDistribution;
+          }
+          else if (hashCode == UpdateDistributionBundle_HASH)
+          {
+            return OperationType::UpdateDistributionBundle;
+          }
+          else if (hashCode == CreateCertificate_HASH)
+          {
+            return OperationType::CreateCertificate;
+          }
+          else if (hashCode == DeleteCertificate_HASH)
+          {
+            return OperationType::DeleteCertificate;
+          }
+          else if (hashCode == CreateContainerService_HASH)
+          {
+            return OperationType::CreateContainerService;
+          }
+          else if (hashCode == UpdateContainerService_HASH)
+          {
+            return OperationType::UpdateContainerService;
+          }
+          else if (hashCode == DeleteContainerService_HASH)
+          {
+            return OperationType::DeleteContainerService;
+          }
+          else if (hashCode == CreateContainerServiceDeployment_HASH)
+          {
+            return OperationType::CreateContainerServiceDeployment;
+          }
+          else if (hashCode == CreateContainerServiceRegistryLogin_HASH)
+          {
+            return OperationType::CreateContainerServiceRegistryLogin;
+          }
+          else if (hashCode == RegisterContainerImage_HASH)
+          {
+            return OperationType::RegisterContainerImage;
+          }
+          else if (hashCode == DeleteContainerImage_HASH)
+          {
+            return OperationType::DeleteContainerImage;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -434,6 +504,38 @@ namespace Aws
             return "SendContactMethodVerification";
           case OperationType::DeleteContactMethod:
             return "DeleteContactMethod";
+          case OperationType::CreateDistribution:
+            return "CreateDistribution";
+          case OperationType::UpdateDistribution:
+            return "UpdateDistribution";
+          case OperationType::DeleteDistribution:
+            return "DeleteDistribution";
+          case OperationType::ResetDistributionCache:
+            return "ResetDistributionCache";
+          case OperationType::AttachCertificateToDistribution:
+            return "AttachCertificateToDistribution";
+          case OperationType::DetachCertificateFromDistribution:
+            return "DetachCertificateFromDistribution";
+          case OperationType::UpdateDistributionBundle:
+            return "UpdateDistributionBundle";
+          case OperationType::CreateCertificate:
+            return "CreateCertificate";
+          case OperationType::DeleteCertificate:
+            return "DeleteCertificate";
+          case OperationType::CreateContainerService:
+            return "CreateContainerService";
+          case OperationType::UpdateContainerService:
+            return "UpdateContainerService";
+          case OperationType::DeleteContainerService:
+            return "DeleteContainerService";
+          case OperationType::CreateContainerServiceDeployment:
+            return "CreateContainerServiceDeployment";
+          case OperationType::CreateContainerServiceRegistryLogin:
+            return "CreateContainerServiceRegistryLogin";
+          case OperationType::RegisterContainerImage:
+            return "RegisterContainerImage";
+          case OperationType::DeleteContainerImage:
+            return "DeleteContainerImage";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

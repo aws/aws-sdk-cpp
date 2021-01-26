@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
@@ -88,38 +78,34 @@ namespace Model
 
 
     /**
-     * <p>If true, this parameter causes the modifications in this request and any
-     * pending modifications to be applied, asynchronously and as soon as possible,
-     * regardless of the PreferredMaintenanceWindow setting for the replication group.
-     * If false, changes to the nodes in the replication group are applied on the next
-     * maintenance reboot, or the next failure reboot, whichever occurs first. </p>
+     * <p>This parameter causes the modifications in this request and any pending
+     * modifications to be applied, asynchronously and as soon as possible.
+     * Modifications to Global Replication Groups cannot be requested to be applied in
+     * PreferredMaintenceWindow. </p>
      */
     inline bool GetApplyImmediately() const{ return m_applyImmediately; }
 
     /**
-     * <p>If true, this parameter causes the modifications in this request and any
-     * pending modifications to be applied, asynchronously and as soon as possible,
-     * regardless of the PreferredMaintenanceWindow setting for the replication group.
-     * If false, changes to the nodes in the replication group are applied on the next
-     * maintenance reboot, or the next failure reboot, whichever occurs first. </p>
+     * <p>This parameter causes the modifications in this request and any pending
+     * modifications to be applied, asynchronously and as soon as possible.
+     * Modifications to Global Replication Groups cannot be requested to be applied in
+     * PreferredMaintenceWindow. </p>
      */
     inline bool ApplyImmediatelyHasBeenSet() const { return m_applyImmediatelyHasBeenSet; }
 
     /**
-     * <p>If true, this parameter causes the modifications in this request and any
-     * pending modifications to be applied, asynchronously and as soon as possible,
-     * regardless of the PreferredMaintenanceWindow setting for the replication group.
-     * If false, changes to the nodes in the replication group are applied on the next
-     * maintenance reboot, or the next failure reboot, whichever occurs first. </p>
+     * <p>This parameter causes the modifications in this request and any pending
+     * modifications to be applied, asynchronously and as soon as possible.
+     * Modifications to Global Replication Groups cannot be requested to be applied in
+     * PreferredMaintenceWindow. </p>
      */
     inline void SetApplyImmediately(bool value) { m_applyImmediatelyHasBeenSet = true; m_applyImmediately = value; }
 
     /**
-     * <p>If true, this parameter causes the modifications in this request and any
-     * pending modifications to be applied, asynchronously and as soon as possible,
-     * regardless of the PreferredMaintenanceWindow setting for the replication group.
-     * If false, changes to the nodes in the replication group are applied on the next
-     * maintenance reboot, or the next failure reboot, whichever occurs first. </p>
+     * <p>This parameter causes the modifications in this request and any pending
+     * modifications to be applied, asynchronously and as soon as possible.
+     * Modifications to Global Replication Groups cannot be requested to be applied in
+     * PreferredMaintenceWindow. </p>
      */
     inline ModifyGlobalReplicationGroupRequest& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
 

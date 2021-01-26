@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -138,192 +128,232 @@ namespace Model
     /**
      * <p>Depending on the value specified for the <code>S3DataType</code>, identifies
      * either a key name prefix or a manifest. For example: </p> <ul> <li> <p> A key
-     * name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.
+     * name prefix might look like this: <code>s3://bucketname/exampleprefix</code>
      * </p> </li> <li> <p> A manifest might look like this:
-     * <code>s3://bucketname/example.manifest</code> </p> <p> The manifest is an S3
-     * object which is a JSON file with the following format: </p> <p> The preceding
-     * JSON matches the following <code>s3Uris</code>: </p> <p> <code>[ {"prefix":
-     * "s3://customer_bucket/some/prefix/"},</code> </p> <p>
-     * <code>"relative/path/to/custdata-1",</code> </p> <p>
-     * <code>"relative/path/custdata-2",</code> </p> <p> <code>...</code> </p> <p>
-     * <code>"relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> The
-     * preceding JSON matches the following <code>s3Uris</code>: </p> <p>
+     * <code>s3://bucketname/example.manifest</code> </p> <p> A manifest is an S3
+     * object which is a JSON file consisting of an array of elements. The first
+     * element is a prefix which is followed by one or more suffixes. SageMaker appends
+     * the suffix elements to the prefix to get a full set of <code>S3Uri</code>. Note
+     * that the prefix must be a valid non-empty <code>S3Uri</code> that precludes
+     * users from specifying a manifest whose individual <code>S3Uri</code> is sourced
+     * from different S3 buckets.</p> <p> The following code example shows a valid
+     * manifest format: </p> <p> <code>[ {"prefix":
+     * "s3://customer_bucket/some/prefix/"},</code> </p> <p> <code>
+     * "relative/path/to/custdata-1",</code> </p> <p> <code>
+     * "relative/path/custdata-2",</code> </p> <p> <code> ...</code> </p> <p> <code>
+     * "relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> This JSON is
+     * equivalent to the following <code>S3Uri</code> list:</p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p>
      * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p>
      * <p> <code>...</code> </p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code> </p>
-     * <p>The complete set of <code>s3uris</code> in this manifest is the input data
-     * for the channel for this datasource. The object that each <code>s3uris</code>
-     * points to must be readable by the IAM role that Amazon SageMaker uses to perform
-     * tasks on your behalf. </p> </li> </ul>
+     * <p>The complete set of <code>S3Uri</code> in this manifest is the input data for
+     * the channel for this data source. The object that each <code>S3Uri</code> points
+     * to must be readable by the IAM role that Amazon SageMaker uses to perform tasks
+     * on your behalf. </p> </li> </ul>
      */
     inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
 
     /**
      * <p>Depending on the value specified for the <code>S3DataType</code>, identifies
      * either a key name prefix or a manifest. For example: </p> <ul> <li> <p> A key
-     * name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.
+     * name prefix might look like this: <code>s3://bucketname/exampleprefix</code>
      * </p> </li> <li> <p> A manifest might look like this:
-     * <code>s3://bucketname/example.manifest</code> </p> <p> The manifest is an S3
-     * object which is a JSON file with the following format: </p> <p> The preceding
-     * JSON matches the following <code>s3Uris</code>: </p> <p> <code>[ {"prefix":
-     * "s3://customer_bucket/some/prefix/"},</code> </p> <p>
-     * <code>"relative/path/to/custdata-1",</code> </p> <p>
-     * <code>"relative/path/custdata-2",</code> </p> <p> <code>...</code> </p> <p>
-     * <code>"relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> The
-     * preceding JSON matches the following <code>s3Uris</code>: </p> <p>
+     * <code>s3://bucketname/example.manifest</code> </p> <p> A manifest is an S3
+     * object which is a JSON file consisting of an array of elements. The first
+     * element is a prefix which is followed by one or more suffixes. SageMaker appends
+     * the suffix elements to the prefix to get a full set of <code>S3Uri</code>. Note
+     * that the prefix must be a valid non-empty <code>S3Uri</code> that precludes
+     * users from specifying a manifest whose individual <code>S3Uri</code> is sourced
+     * from different S3 buckets.</p> <p> The following code example shows a valid
+     * manifest format: </p> <p> <code>[ {"prefix":
+     * "s3://customer_bucket/some/prefix/"},</code> </p> <p> <code>
+     * "relative/path/to/custdata-1",</code> </p> <p> <code>
+     * "relative/path/custdata-2",</code> </p> <p> <code> ...</code> </p> <p> <code>
+     * "relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> This JSON is
+     * equivalent to the following <code>S3Uri</code> list:</p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p>
      * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p>
      * <p> <code>...</code> </p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code> </p>
-     * <p>The complete set of <code>s3uris</code> in this manifest is the input data
-     * for the channel for this datasource. The object that each <code>s3uris</code>
-     * points to must be readable by the IAM role that Amazon SageMaker uses to perform
-     * tasks on your behalf. </p> </li> </ul>
+     * <p>The complete set of <code>S3Uri</code> in this manifest is the input data for
+     * the channel for this data source. The object that each <code>S3Uri</code> points
+     * to must be readable by the IAM role that Amazon SageMaker uses to perform tasks
+     * on your behalf. </p> </li> </ul>
      */
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
 
     /**
      * <p>Depending on the value specified for the <code>S3DataType</code>, identifies
      * either a key name prefix or a manifest. For example: </p> <ul> <li> <p> A key
-     * name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.
+     * name prefix might look like this: <code>s3://bucketname/exampleprefix</code>
      * </p> </li> <li> <p> A manifest might look like this:
-     * <code>s3://bucketname/example.manifest</code> </p> <p> The manifest is an S3
-     * object which is a JSON file with the following format: </p> <p> The preceding
-     * JSON matches the following <code>s3Uris</code>: </p> <p> <code>[ {"prefix":
-     * "s3://customer_bucket/some/prefix/"},</code> </p> <p>
-     * <code>"relative/path/to/custdata-1",</code> </p> <p>
-     * <code>"relative/path/custdata-2",</code> </p> <p> <code>...</code> </p> <p>
-     * <code>"relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> The
-     * preceding JSON matches the following <code>s3Uris</code>: </p> <p>
+     * <code>s3://bucketname/example.manifest</code> </p> <p> A manifest is an S3
+     * object which is a JSON file consisting of an array of elements. The first
+     * element is a prefix which is followed by one or more suffixes. SageMaker appends
+     * the suffix elements to the prefix to get a full set of <code>S3Uri</code>. Note
+     * that the prefix must be a valid non-empty <code>S3Uri</code> that precludes
+     * users from specifying a manifest whose individual <code>S3Uri</code> is sourced
+     * from different S3 buckets.</p> <p> The following code example shows a valid
+     * manifest format: </p> <p> <code>[ {"prefix":
+     * "s3://customer_bucket/some/prefix/"},</code> </p> <p> <code>
+     * "relative/path/to/custdata-1",</code> </p> <p> <code>
+     * "relative/path/custdata-2",</code> </p> <p> <code> ...</code> </p> <p> <code>
+     * "relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> This JSON is
+     * equivalent to the following <code>S3Uri</code> list:</p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p>
      * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p>
      * <p> <code>...</code> </p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code> </p>
-     * <p>The complete set of <code>s3uris</code> in this manifest is the input data
-     * for the channel for this datasource. The object that each <code>s3uris</code>
-     * points to must be readable by the IAM role that Amazon SageMaker uses to perform
-     * tasks on your behalf. </p> </li> </ul>
+     * <p>The complete set of <code>S3Uri</code> in this manifest is the input data for
+     * the channel for this data source. The object that each <code>S3Uri</code> points
+     * to must be readable by the IAM role that Amazon SageMaker uses to perform tasks
+     * on your behalf. </p> </li> </ul>
      */
     inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
 
     /**
      * <p>Depending on the value specified for the <code>S3DataType</code>, identifies
      * either a key name prefix or a manifest. For example: </p> <ul> <li> <p> A key
-     * name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.
+     * name prefix might look like this: <code>s3://bucketname/exampleprefix</code>
      * </p> </li> <li> <p> A manifest might look like this:
-     * <code>s3://bucketname/example.manifest</code> </p> <p> The manifest is an S3
-     * object which is a JSON file with the following format: </p> <p> The preceding
-     * JSON matches the following <code>s3Uris</code>: </p> <p> <code>[ {"prefix":
-     * "s3://customer_bucket/some/prefix/"},</code> </p> <p>
-     * <code>"relative/path/to/custdata-1",</code> </p> <p>
-     * <code>"relative/path/custdata-2",</code> </p> <p> <code>...</code> </p> <p>
-     * <code>"relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> The
-     * preceding JSON matches the following <code>s3Uris</code>: </p> <p>
+     * <code>s3://bucketname/example.manifest</code> </p> <p> A manifest is an S3
+     * object which is a JSON file consisting of an array of elements. The first
+     * element is a prefix which is followed by one or more suffixes. SageMaker appends
+     * the suffix elements to the prefix to get a full set of <code>S3Uri</code>. Note
+     * that the prefix must be a valid non-empty <code>S3Uri</code> that precludes
+     * users from specifying a manifest whose individual <code>S3Uri</code> is sourced
+     * from different S3 buckets.</p> <p> The following code example shows a valid
+     * manifest format: </p> <p> <code>[ {"prefix":
+     * "s3://customer_bucket/some/prefix/"},</code> </p> <p> <code>
+     * "relative/path/to/custdata-1",</code> </p> <p> <code>
+     * "relative/path/custdata-2",</code> </p> <p> <code> ...</code> </p> <p> <code>
+     * "relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> This JSON is
+     * equivalent to the following <code>S3Uri</code> list:</p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p>
      * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p>
      * <p> <code>...</code> </p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code> </p>
-     * <p>The complete set of <code>s3uris</code> in this manifest is the input data
-     * for the channel for this datasource. The object that each <code>s3uris</code>
-     * points to must be readable by the IAM role that Amazon SageMaker uses to perform
-     * tasks on your behalf. </p> </li> </ul>
+     * <p>The complete set of <code>S3Uri</code> in this manifest is the input data for
+     * the channel for this data source. The object that each <code>S3Uri</code> points
+     * to must be readable by the IAM role that Amazon SageMaker uses to perform tasks
+     * on your behalf. </p> </li> </ul>
      */
     inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
 
     /**
      * <p>Depending on the value specified for the <code>S3DataType</code>, identifies
      * either a key name prefix or a manifest. For example: </p> <ul> <li> <p> A key
-     * name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.
+     * name prefix might look like this: <code>s3://bucketname/exampleprefix</code>
      * </p> </li> <li> <p> A manifest might look like this:
-     * <code>s3://bucketname/example.manifest</code> </p> <p> The manifest is an S3
-     * object which is a JSON file with the following format: </p> <p> The preceding
-     * JSON matches the following <code>s3Uris</code>: </p> <p> <code>[ {"prefix":
-     * "s3://customer_bucket/some/prefix/"},</code> </p> <p>
-     * <code>"relative/path/to/custdata-1",</code> </p> <p>
-     * <code>"relative/path/custdata-2",</code> </p> <p> <code>...</code> </p> <p>
-     * <code>"relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> The
-     * preceding JSON matches the following <code>s3Uris</code>: </p> <p>
+     * <code>s3://bucketname/example.manifest</code> </p> <p> A manifest is an S3
+     * object which is a JSON file consisting of an array of elements. The first
+     * element is a prefix which is followed by one or more suffixes. SageMaker appends
+     * the suffix elements to the prefix to get a full set of <code>S3Uri</code>. Note
+     * that the prefix must be a valid non-empty <code>S3Uri</code> that precludes
+     * users from specifying a manifest whose individual <code>S3Uri</code> is sourced
+     * from different S3 buckets.</p> <p> The following code example shows a valid
+     * manifest format: </p> <p> <code>[ {"prefix":
+     * "s3://customer_bucket/some/prefix/"},</code> </p> <p> <code>
+     * "relative/path/to/custdata-1",</code> </p> <p> <code>
+     * "relative/path/custdata-2",</code> </p> <p> <code> ...</code> </p> <p> <code>
+     * "relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> This JSON is
+     * equivalent to the following <code>S3Uri</code> list:</p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p>
      * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p>
      * <p> <code>...</code> </p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code> </p>
-     * <p>The complete set of <code>s3uris</code> in this manifest is the input data
-     * for the channel for this datasource. The object that each <code>s3uris</code>
-     * points to must be readable by the IAM role that Amazon SageMaker uses to perform
-     * tasks on your behalf. </p> </li> </ul>
+     * <p>The complete set of <code>S3Uri</code> in this manifest is the input data for
+     * the channel for this data source. The object that each <code>S3Uri</code> points
+     * to must be readable by the IAM role that Amazon SageMaker uses to perform tasks
+     * on your behalf. </p> </li> </ul>
      */
     inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
 
     /**
      * <p>Depending on the value specified for the <code>S3DataType</code>, identifies
      * either a key name prefix or a manifest. For example: </p> <ul> <li> <p> A key
-     * name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.
+     * name prefix might look like this: <code>s3://bucketname/exampleprefix</code>
      * </p> </li> <li> <p> A manifest might look like this:
-     * <code>s3://bucketname/example.manifest</code> </p> <p> The manifest is an S3
-     * object which is a JSON file with the following format: </p> <p> The preceding
-     * JSON matches the following <code>s3Uris</code>: </p> <p> <code>[ {"prefix":
-     * "s3://customer_bucket/some/prefix/"},</code> </p> <p>
-     * <code>"relative/path/to/custdata-1",</code> </p> <p>
-     * <code>"relative/path/custdata-2",</code> </p> <p> <code>...</code> </p> <p>
-     * <code>"relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> The
-     * preceding JSON matches the following <code>s3Uris</code>: </p> <p>
+     * <code>s3://bucketname/example.manifest</code> </p> <p> A manifest is an S3
+     * object which is a JSON file consisting of an array of elements. The first
+     * element is a prefix which is followed by one or more suffixes. SageMaker appends
+     * the suffix elements to the prefix to get a full set of <code>S3Uri</code>. Note
+     * that the prefix must be a valid non-empty <code>S3Uri</code> that precludes
+     * users from specifying a manifest whose individual <code>S3Uri</code> is sourced
+     * from different S3 buckets.</p> <p> The following code example shows a valid
+     * manifest format: </p> <p> <code>[ {"prefix":
+     * "s3://customer_bucket/some/prefix/"},</code> </p> <p> <code>
+     * "relative/path/to/custdata-1",</code> </p> <p> <code>
+     * "relative/path/custdata-2",</code> </p> <p> <code> ...</code> </p> <p> <code>
+     * "relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> This JSON is
+     * equivalent to the following <code>S3Uri</code> list:</p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p>
      * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p>
      * <p> <code>...</code> </p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code> </p>
-     * <p>The complete set of <code>s3uris</code> in this manifest is the input data
-     * for the channel for this datasource. The object that each <code>s3uris</code>
-     * points to must be readable by the IAM role that Amazon SageMaker uses to perform
-     * tasks on your behalf. </p> </li> </ul>
+     * <p>The complete set of <code>S3Uri</code> in this manifest is the input data for
+     * the channel for this data source. The object that each <code>S3Uri</code> points
+     * to must be readable by the IAM role that Amazon SageMaker uses to perform tasks
+     * on your behalf. </p> </li> </ul>
      */
     inline S3DataSource& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
 
     /**
      * <p>Depending on the value specified for the <code>S3DataType</code>, identifies
      * either a key name prefix or a manifest. For example: </p> <ul> <li> <p> A key
-     * name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.
+     * name prefix might look like this: <code>s3://bucketname/exampleprefix</code>
      * </p> </li> <li> <p> A manifest might look like this:
-     * <code>s3://bucketname/example.manifest</code> </p> <p> The manifest is an S3
-     * object which is a JSON file with the following format: </p> <p> The preceding
-     * JSON matches the following <code>s3Uris</code>: </p> <p> <code>[ {"prefix":
-     * "s3://customer_bucket/some/prefix/"},</code> </p> <p>
-     * <code>"relative/path/to/custdata-1",</code> </p> <p>
-     * <code>"relative/path/custdata-2",</code> </p> <p> <code>...</code> </p> <p>
-     * <code>"relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> The
-     * preceding JSON matches the following <code>s3Uris</code>: </p> <p>
+     * <code>s3://bucketname/example.manifest</code> </p> <p> A manifest is an S3
+     * object which is a JSON file consisting of an array of elements. The first
+     * element is a prefix which is followed by one or more suffixes. SageMaker appends
+     * the suffix elements to the prefix to get a full set of <code>S3Uri</code>. Note
+     * that the prefix must be a valid non-empty <code>S3Uri</code> that precludes
+     * users from specifying a manifest whose individual <code>S3Uri</code> is sourced
+     * from different S3 buckets.</p> <p> The following code example shows a valid
+     * manifest format: </p> <p> <code>[ {"prefix":
+     * "s3://customer_bucket/some/prefix/"},</code> </p> <p> <code>
+     * "relative/path/to/custdata-1",</code> </p> <p> <code>
+     * "relative/path/custdata-2",</code> </p> <p> <code> ...</code> </p> <p> <code>
+     * "relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> This JSON is
+     * equivalent to the following <code>S3Uri</code> list:</p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p>
      * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p>
      * <p> <code>...</code> </p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code> </p>
-     * <p>The complete set of <code>s3uris</code> in this manifest is the input data
-     * for the channel for this datasource. The object that each <code>s3uris</code>
-     * points to must be readable by the IAM role that Amazon SageMaker uses to perform
-     * tasks on your behalf. </p> </li> </ul>
+     * <p>The complete set of <code>S3Uri</code> in this manifest is the input data for
+     * the channel for this data source. The object that each <code>S3Uri</code> points
+     * to must be readable by the IAM role that Amazon SageMaker uses to perform tasks
+     * on your behalf. </p> </li> </ul>
      */
     inline S3DataSource& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
 
     /**
      * <p>Depending on the value specified for the <code>S3DataType</code>, identifies
      * either a key name prefix or a manifest. For example: </p> <ul> <li> <p> A key
-     * name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.
+     * name prefix might look like this: <code>s3://bucketname/exampleprefix</code>
      * </p> </li> <li> <p> A manifest might look like this:
-     * <code>s3://bucketname/example.manifest</code> </p> <p> The manifest is an S3
-     * object which is a JSON file with the following format: </p> <p> The preceding
-     * JSON matches the following <code>s3Uris</code>: </p> <p> <code>[ {"prefix":
-     * "s3://customer_bucket/some/prefix/"},</code> </p> <p>
-     * <code>"relative/path/to/custdata-1",</code> </p> <p>
-     * <code>"relative/path/custdata-2",</code> </p> <p> <code>...</code> </p> <p>
-     * <code>"relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> The
-     * preceding JSON matches the following <code>s3Uris</code>: </p> <p>
+     * <code>s3://bucketname/example.manifest</code> </p> <p> A manifest is an S3
+     * object which is a JSON file consisting of an array of elements. The first
+     * element is a prefix which is followed by one or more suffixes. SageMaker appends
+     * the suffix elements to the prefix to get a full set of <code>S3Uri</code>. Note
+     * that the prefix must be a valid non-empty <code>S3Uri</code> that precludes
+     * users from specifying a manifest whose individual <code>S3Uri</code> is sourced
+     * from different S3 buckets.</p> <p> The following code example shows a valid
+     * manifest format: </p> <p> <code>[ {"prefix":
+     * "s3://customer_bucket/some/prefix/"},</code> </p> <p> <code>
+     * "relative/path/to/custdata-1",</code> </p> <p> <code>
+     * "relative/path/custdata-2",</code> </p> <p> <code> ...</code> </p> <p> <code>
+     * "relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> This JSON is
+     * equivalent to the following <code>S3Uri</code> list:</p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p>
      * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p>
      * <p> <code>...</code> </p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code> </p>
-     * <p>The complete set of <code>s3uris</code> in this manifest is the input data
-     * for the channel for this datasource. The object that each <code>s3uris</code>
-     * points to must be readable by the IAM role that Amazon SageMaker uses to perform
-     * tasks on your behalf. </p> </li> </ul>
+     * <p>The complete set of <code>S3Uri</code> in this manifest is the input data for
+     * the channel for this data source. The object that each <code>S3Uri</code> points
+     * to must be readable by the IAM role that Amazon SageMaker uses to perform tasks
+     * on your behalf. </p> </li> </ul>
      */
     inline S3DataSource& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
 

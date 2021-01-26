@@ -126,7 +126,7 @@ elseif(ENABLE_WINDOWS_CLIENT)
         file(GLOB HTTP_WINDOWS_CLIENT_HEADERS "include/aws/core/http/windows/Win*.h")
         file(GLOB HTTP_WINDOWS_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/windows/Win*.cpp")
 
-        # Strating with Windows 10, version 1507, WinINet supports HTTP2.
+        # Starting with Windows 10, version 1507, WinINet supports HTTP2.
         # https://docs.microsoft.com/en-us/windows/desktop/WinInet/option-flags#INTERNET_OPTION_ENABLE_HTTP_PROTOCOL
         # Starting with Windows 10, version 1607, WinHttp supports HTTP2.
         # https://docs.microsoft.com/en-us/windows/desktop/WinHttp/option-flags#WINHTTP_OPTION_ENABLE_HTTP_PROTOCOL

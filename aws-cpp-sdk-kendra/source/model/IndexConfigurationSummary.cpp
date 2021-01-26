@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kendra/model/IndexConfigurationSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,6 +21,8 @@ namespace Model
 IndexConfigurationSummary::IndexConfigurationSummary() : 
     m_nameHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_edition(IndexEdition::NOT_SET),
+    m_editionHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
     m_status(IndexStatus::NOT_SET),
@@ -41,6 +33,8 @@ IndexConfigurationSummary::IndexConfigurationSummary() :
 IndexConfigurationSummary::IndexConfigurationSummary(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_edition(IndexEdition::NOT_SET),
+    m_editionHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
     m_status(IndexStatus::NOT_SET),
@@ -63,6 +57,13 @@ IndexConfigurationSummary& IndexConfigurationSummary::operator =(JsonView jsonVa
     m_id = jsonValue.GetString("Id");
 
     m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Edition"))
+  {
+    m_edition = IndexEditionMapper::GetIndexEditionForName(jsonValue.GetString("Edition"));
+
+    m_editionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CreatedAt"))
@@ -103,6 +104,11 @@ JsonValue IndexConfigurationSummary::Jsonize() const
   {
    payload.WithString("Id", m_id);
 
+  }
+
+  if(m_editionHasBeenSet)
+  {
+   payload.WithString("Edition", IndexEditionMapper::GetNameForIndexEdition(m_edition));
   }
 
   if(m_createdAtHasBeenSet)

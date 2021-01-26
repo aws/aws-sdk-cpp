@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
@@ -341,32 +331,50 @@ namespace Model
 
 
     /**
-     * <p>The current state of the job run.</p>
+     * <p>The current state of the job run. For more information about the statuses of
+     * jobs that have terminated abnormally, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">AWS Glue
+     * Job Run Statuses</a>.</p>
      */
     inline const JobRunState& GetJobRunState() const{ return m_jobRunState; }
 
     /**
-     * <p>The current state of the job run.</p>
+     * <p>The current state of the job run. For more information about the statuses of
+     * jobs that have terminated abnormally, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">AWS Glue
+     * Job Run Statuses</a>.</p>
      */
     inline bool JobRunStateHasBeenSet() const { return m_jobRunStateHasBeenSet; }
 
     /**
-     * <p>The current state of the job run.</p>
+     * <p>The current state of the job run. For more information about the statuses of
+     * jobs that have terminated abnormally, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">AWS Glue
+     * Job Run Statuses</a>.</p>
      */
     inline void SetJobRunState(const JobRunState& value) { m_jobRunStateHasBeenSet = true; m_jobRunState = value; }
 
     /**
-     * <p>The current state of the job run.</p>
+     * <p>The current state of the job run. For more information about the statuses of
+     * jobs that have terminated abnormally, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">AWS Glue
+     * Job Run Statuses</a>.</p>
      */
     inline void SetJobRunState(JobRunState&& value) { m_jobRunStateHasBeenSet = true; m_jobRunState = std::move(value); }
 
     /**
-     * <p>The current state of the job run.</p>
+     * <p>The current state of the job run. For more information about the statuses of
+     * jobs that have terminated abnormally, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">AWS Glue
+     * Job Run Statuses</a>.</p>
      */
     inline JobRun& WithJobRunState(const JobRunState& value) { SetJobRunState(value); return *this;}
 
     /**
-     * <p>The current state of the job run.</p>
+     * <p>The current state of the job run. For more information about the statuses of
+     * jobs that have terminated abnormally, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">AWS Glue
+     * Job Run Statuses</a>.</p>
      */
     inline JobRun& WithJobRunState(JobRunState&& value) { SetJobRunState(std::move(value)); return *this;}
 

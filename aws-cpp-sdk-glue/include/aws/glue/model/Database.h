@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/glue/model/DatabaseIdentifier.h>
 #include <aws/glue/model/PrincipalPermissions.h>
 #include <utility>
 
@@ -320,6 +311,84 @@ namespace Model
      */
     inline Database& AddCreateTableDefaultPermissions(PrincipalPermissions&& value) { m_createTableDefaultPermissionsHasBeenSet = true; m_createTableDefaultPermissions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A <code>DatabaseIdentifier</code> structure that describes a target database
+     * for resource linking.</p>
+     */
+    inline const DatabaseIdentifier& GetTargetDatabase() const{ return m_targetDatabase; }
+
+    /**
+     * <p>A <code>DatabaseIdentifier</code> structure that describes a target database
+     * for resource linking.</p>
+     */
+    inline bool TargetDatabaseHasBeenSet() const { return m_targetDatabaseHasBeenSet; }
+
+    /**
+     * <p>A <code>DatabaseIdentifier</code> structure that describes a target database
+     * for resource linking.</p>
+     */
+    inline void SetTargetDatabase(const DatabaseIdentifier& value) { m_targetDatabaseHasBeenSet = true; m_targetDatabase = value; }
+
+    /**
+     * <p>A <code>DatabaseIdentifier</code> structure that describes a target database
+     * for resource linking.</p>
+     */
+    inline void SetTargetDatabase(DatabaseIdentifier&& value) { m_targetDatabaseHasBeenSet = true; m_targetDatabase = std::move(value); }
+
+    /**
+     * <p>A <code>DatabaseIdentifier</code> structure that describes a target database
+     * for resource linking.</p>
+     */
+    inline Database& WithTargetDatabase(const DatabaseIdentifier& value) { SetTargetDatabase(value); return *this;}
+
+    /**
+     * <p>A <code>DatabaseIdentifier</code> structure that describes a target database
+     * for resource linking.</p>
+     */
+    inline Database& WithTargetDatabase(DatabaseIdentifier&& value) { SetTargetDatabase(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The ID of the Data Catalog in which the database resides.</p>
+     */
+    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+
+    /**
+     * <p>The ID of the Data Catalog in which the database resides.</p>
+     */
+    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Data Catalog in which the database resides.</p>
+     */
+    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
+
+    /**
+     * <p>The ID of the Data Catalog in which the database resides.</p>
+     */
+    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
+
+    /**
+     * <p>The ID of the Data Catalog in which the database resides.</p>
+     */
+    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
+
+    /**
+     * <p>The ID of the Data Catalog in which the database resides.</p>
+     */
+    inline Database& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
+
+    /**
+     * <p>The ID of the Data Catalog in which the database resides.</p>
+     */
+    inline Database& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Data Catalog in which the database resides.</p>
+     */
+    inline Database& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -339,6 +408,12 @@ namespace Model
 
     Aws::Vector<PrincipalPermissions> m_createTableDefaultPermissions;
     bool m_createTableDefaultPermissionsHasBeenSet;
+
+    DatabaseIdentifier m_targetDatabase;
+    bool m_targetDatabaseHasBeenSet;
+
+    Aws::String m_catalogId;
+    bool m_catalogIdHasBeenSet;
   };
 
 } // namespace Model

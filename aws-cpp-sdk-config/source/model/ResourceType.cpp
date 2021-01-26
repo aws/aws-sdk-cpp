@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/config/model/ResourceType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -95,6 +85,9 @@ namespace Aws
         static const int AWS_CloudFront_Distribution_HASH = HashingUtils::HashString("AWS::CloudFront::Distribution");
         static const int AWS_CloudFront_StreamingDistribution_HASH = HashingUtils::HashString("AWS::CloudFront::StreamingDistribution");
         static const int AWS_Lambda_Function_HASH = HashingUtils::HashString("AWS::Lambda::Function");
+        static const int AWS_NetworkFirewall_Firewall_HASH = HashingUtils::HashString("AWS::NetworkFirewall::Firewall");
+        static const int AWS_NetworkFirewall_FirewallPolicy_HASH = HashingUtils::HashString("AWS::NetworkFirewall::FirewallPolicy");
+        static const int AWS_NetworkFirewall_RuleGroup_HASH = HashingUtils::HashString("AWS::NetworkFirewall::RuleGroup");
         static const int AWS_ElasticBeanstalk_Application_HASH = HashingUtils::HashString("AWS::ElasticBeanstalk::Application");
         static const int AWS_ElasticBeanstalk_ApplicationVersion_HASH = HashingUtils::HashString("AWS::ElasticBeanstalk::ApplicationVersion");
         static const int AWS_ElasticBeanstalk_Environment_HASH = HashingUtils::HashString("AWS::ElasticBeanstalk::Environment");
@@ -120,6 +113,9 @@ namespace Aws
         static const int AWS_SQS_Queue_HASH = HashingUtils::HashString("AWS::SQS::Queue");
         static const int AWS_KMS_Key_HASH = HashingUtils::HashString("AWS::KMS::Key");
         static const int AWS_QLDB_Ledger_HASH = HashingUtils::HashString("AWS::QLDB::Ledger");
+        static const int AWS_SecretsManager_Secret_HASH = HashingUtils::HashString("AWS::SecretsManager::Secret");
+        static const int AWS_SNS_Topic_HASH = HashingUtils::HashString("AWS::SNS::Topic");
+        static const int AWS_SSM_FileData_HASH = HashingUtils::HashString("AWS::SSM::FileData");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -385,6 +381,18 @@ namespace Aws
           {
             return ResourceType::AWS_Lambda_Function;
           }
+          else if (hashCode == AWS_NetworkFirewall_Firewall_HASH)
+          {
+            return ResourceType::AWS_NetworkFirewall_Firewall;
+          }
+          else if (hashCode == AWS_NetworkFirewall_FirewallPolicy_HASH)
+          {
+            return ResourceType::AWS_NetworkFirewall_FirewallPolicy;
+          }
+          else if (hashCode == AWS_NetworkFirewall_RuleGroup_HASH)
+          {
+            return ResourceType::AWS_NetworkFirewall_RuleGroup;
+          }
           else if (hashCode == AWS_ElasticBeanstalk_Application_HASH)
           {
             return ResourceType::AWS_ElasticBeanstalk_Application;
@@ -484,6 +492,18 @@ namespace Aws
           else if (hashCode == AWS_QLDB_Ledger_HASH)
           {
             return ResourceType::AWS_QLDB_Ledger;
+          }
+          else if (hashCode == AWS_SecretsManager_Secret_HASH)
+          {
+            return ResourceType::AWS_SecretsManager_Secret;
+          }
+          else if (hashCode == AWS_SNS_Topic_HASH)
+          {
+            return ResourceType::AWS_SNS_Topic;
+          }
+          else if (hashCode == AWS_SSM_FileData_HASH)
+          {
+            return ResourceType::AWS_SSM_FileData;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -629,6 +649,12 @@ namespace Aws
             return "AWS::CloudFront::StreamingDistribution";
           case ResourceType::AWS_Lambda_Function:
             return "AWS::Lambda::Function";
+          case ResourceType::AWS_NetworkFirewall_Firewall:
+            return "AWS::NetworkFirewall::Firewall";
+          case ResourceType::AWS_NetworkFirewall_FirewallPolicy:
+            return "AWS::NetworkFirewall::FirewallPolicy";
+          case ResourceType::AWS_NetworkFirewall_RuleGroup:
+            return "AWS::NetworkFirewall::RuleGroup";
           case ResourceType::AWS_ElasticBeanstalk_Application:
             return "AWS::ElasticBeanstalk::Application";
           case ResourceType::AWS_ElasticBeanstalk_ApplicationVersion:
@@ -679,6 +705,12 @@ namespace Aws
             return "AWS::KMS::Key";
           case ResourceType::AWS_QLDB_Ledger:
             return "AWS::QLDB::Ledger";
+          case ResourceType::AWS_SecretsManager_Secret:
+            return "AWS::SecretsManager::Secret";
+          case ResourceType::AWS_SNS_Topic:
+            return "AWS::SNS::Topic";
+          case ResourceType::AWS_SSM_FileData:
+            return "AWS::SSM::FileData";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

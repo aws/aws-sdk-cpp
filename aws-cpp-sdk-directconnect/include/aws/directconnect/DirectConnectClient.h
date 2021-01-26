@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
@@ -65,6 +55,9 @@
 #include <aws/directconnect/model/DescribeVirtualGatewaysResult.h>
 #include <aws/directconnect/model/DescribeVirtualInterfacesResult.h>
 #include <aws/directconnect/model/DisassociateConnectionFromLagResult.h>
+#include <aws/directconnect/model/ListVirtualInterfaceTestHistoryResult.h>
+#include <aws/directconnect/model/StartBgpFailoverTestResult.h>
+#include <aws/directconnect/model/StopBgpFailoverTestResult.h>
 #include <aws/directconnect/model/TagResourceResult.h>
 #include <aws/directconnect/model/UntagResourceResult.h>
 #include <aws/directconnect/model/UpdateDirectConnectGatewayAssociationResult.h>
@@ -151,61 +144,67 @@ namespace Model
         class DescribeTagsRequest;
         class DescribeVirtualInterfacesRequest;
         class DisassociateConnectionFromLagRequest;
+        class ListVirtualInterfaceTestHistoryRequest;
+        class StartBgpFailoverTestRequest;
+        class StopBgpFailoverTestRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateDirectConnectGatewayAssociationRequest;
         class UpdateLagRequest;
         class UpdateVirtualInterfaceAttributesRequest;
 
-        typedef Aws::Utils::Outcome<AcceptDirectConnectGatewayAssociationProposalResult, Aws::Client::AWSError<DirectConnectErrors>> AcceptDirectConnectGatewayAssociationProposalOutcome;
-        typedef Aws::Utils::Outcome<AllocateHostedConnectionResult, Aws::Client::AWSError<DirectConnectErrors>> AllocateHostedConnectionOutcome;
-        typedef Aws::Utils::Outcome<AllocatePrivateVirtualInterfaceResult, Aws::Client::AWSError<DirectConnectErrors>> AllocatePrivateVirtualInterfaceOutcome;
-        typedef Aws::Utils::Outcome<AllocatePublicVirtualInterfaceResult, Aws::Client::AWSError<DirectConnectErrors>> AllocatePublicVirtualInterfaceOutcome;
-        typedef Aws::Utils::Outcome<AllocateTransitVirtualInterfaceResult, Aws::Client::AWSError<DirectConnectErrors>> AllocateTransitVirtualInterfaceOutcome;
-        typedef Aws::Utils::Outcome<AssociateConnectionWithLagResult, Aws::Client::AWSError<DirectConnectErrors>> AssociateConnectionWithLagOutcome;
-        typedef Aws::Utils::Outcome<AssociateHostedConnectionResult, Aws::Client::AWSError<DirectConnectErrors>> AssociateHostedConnectionOutcome;
-        typedef Aws::Utils::Outcome<AssociateVirtualInterfaceResult, Aws::Client::AWSError<DirectConnectErrors>> AssociateVirtualInterfaceOutcome;
-        typedef Aws::Utils::Outcome<ConfirmConnectionResult, Aws::Client::AWSError<DirectConnectErrors>> ConfirmConnectionOutcome;
-        typedef Aws::Utils::Outcome<ConfirmPrivateVirtualInterfaceResult, Aws::Client::AWSError<DirectConnectErrors>> ConfirmPrivateVirtualInterfaceOutcome;
-        typedef Aws::Utils::Outcome<ConfirmPublicVirtualInterfaceResult, Aws::Client::AWSError<DirectConnectErrors>> ConfirmPublicVirtualInterfaceOutcome;
-        typedef Aws::Utils::Outcome<ConfirmTransitVirtualInterfaceResult, Aws::Client::AWSError<DirectConnectErrors>> ConfirmTransitVirtualInterfaceOutcome;
-        typedef Aws::Utils::Outcome<CreateBGPPeerResult, Aws::Client::AWSError<DirectConnectErrors>> CreateBGPPeerOutcome;
-        typedef Aws::Utils::Outcome<CreateConnectionResult, Aws::Client::AWSError<DirectConnectErrors>> CreateConnectionOutcome;
-        typedef Aws::Utils::Outcome<CreateDirectConnectGatewayResult, Aws::Client::AWSError<DirectConnectErrors>> CreateDirectConnectGatewayOutcome;
-        typedef Aws::Utils::Outcome<CreateDirectConnectGatewayAssociationResult, Aws::Client::AWSError<DirectConnectErrors>> CreateDirectConnectGatewayAssociationOutcome;
-        typedef Aws::Utils::Outcome<CreateDirectConnectGatewayAssociationProposalResult, Aws::Client::AWSError<DirectConnectErrors>> CreateDirectConnectGatewayAssociationProposalOutcome;
-        typedef Aws::Utils::Outcome<CreateInterconnectResult, Aws::Client::AWSError<DirectConnectErrors>> CreateInterconnectOutcome;
-        typedef Aws::Utils::Outcome<CreateLagResult, Aws::Client::AWSError<DirectConnectErrors>> CreateLagOutcome;
-        typedef Aws::Utils::Outcome<CreatePrivateVirtualInterfaceResult, Aws::Client::AWSError<DirectConnectErrors>> CreatePrivateVirtualInterfaceOutcome;
-        typedef Aws::Utils::Outcome<CreatePublicVirtualInterfaceResult, Aws::Client::AWSError<DirectConnectErrors>> CreatePublicVirtualInterfaceOutcome;
-        typedef Aws::Utils::Outcome<CreateTransitVirtualInterfaceResult, Aws::Client::AWSError<DirectConnectErrors>> CreateTransitVirtualInterfaceOutcome;
-        typedef Aws::Utils::Outcome<DeleteBGPPeerResult, Aws::Client::AWSError<DirectConnectErrors>> DeleteBGPPeerOutcome;
-        typedef Aws::Utils::Outcome<DeleteConnectionResult, Aws::Client::AWSError<DirectConnectErrors>> DeleteConnectionOutcome;
-        typedef Aws::Utils::Outcome<DeleteDirectConnectGatewayResult, Aws::Client::AWSError<DirectConnectErrors>> DeleteDirectConnectGatewayOutcome;
-        typedef Aws::Utils::Outcome<DeleteDirectConnectGatewayAssociationResult, Aws::Client::AWSError<DirectConnectErrors>> DeleteDirectConnectGatewayAssociationOutcome;
-        typedef Aws::Utils::Outcome<DeleteDirectConnectGatewayAssociationProposalResult, Aws::Client::AWSError<DirectConnectErrors>> DeleteDirectConnectGatewayAssociationProposalOutcome;
-        typedef Aws::Utils::Outcome<DeleteInterconnectResult, Aws::Client::AWSError<DirectConnectErrors>> DeleteInterconnectOutcome;
-        typedef Aws::Utils::Outcome<DeleteLagResult, Aws::Client::AWSError<DirectConnectErrors>> DeleteLagOutcome;
-        typedef Aws::Utils::Outcome<DeleteVirtualInterfaceResult, Aws::Client::AWSError<DirectConnectErrors>> DeleteVirtualInterfaceOutcome;
-        typedef Aws::Utils::Outcome<DescribeConnectionsResult, Aws::Client::AWSError<DirectConnectErrors>> DescribeConnectionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDirectConnectGatewayAssociationProposalsResult, Aws::Client::AWSError<DirectConnectErrors>> DescribeDirectConnectGatewayAssociationProposalsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDirectConnectGatewayAssociationsResult, Aws::Client::AWSError<DirectConnectErrors>> DescribeDirectConnectGatewayAssociationsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDirectConnectGatewayAttachmentsResult, Aws::Client::AWSError<DirectConnectErrors>> DescribeDirectConnectGatewayAttachmentsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDirectConnectGatewaysResult, Aws::Client::AWSError<DirectConnectErrors>> DescribeDirectConnectGatewaysOutcome;
-        typedef Aws::Utils::Outcome<DescribeHostedConnectionsResult, Aws::Client::AWSError<DirectConnectErrors>> DescribeHostedConnectionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeInterconnectsResult, Aws::Client::AWSError<DirectConnectErrors>> DescribeInterconnectsOutcome;
-        typedef Aws::Utils::Outcome<DescribeLagsResult, Aws::Client::AWSError<DirectConnectErrors>> DescribeLagsOutcome;
-        typedef Aws::Utils::Outcome<DescribeLoaResult, Aws::Client::AWSError<DirectConnectErrors>> DescribeLoaOutcome;
-        typedef Aws::Utils::Outcome<DescribeLocationsResult, Aws::Client::AWSError<DirectConnectErrors>> DescribeLocationsOutcome;
-        typedef Aws::Utils::Outcome<DescribeTagsResult, Aws::Client::AWSError<DirectConnectErrors>> DescribeTagsOutcome;
-        typedef Aws::Utils::Outcome<DescribeVirtualGatewaysResult, Aws::Client::AWSError<DirectConnectErrors>> DescribeVirtualGatewaysOutcome;
-        typedef Aws::Utils::Outcome<DescribeVirtualInterfacesResult, Aws::Client::AWSError<DirectConnectErrors>> DescribeVirtualInterfacesOutcome;
-        typedef Aws::Utils::Outcome<DisassociateConnectionFromLagResult, Aws::Client::AWSError<DirectConnectErrors>> DisassociateConnectionFromLagOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<DirectConnectErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<DirectConnectErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateDirectConnectGatewayAssociationResult, Aws::Client::AWSError<DirectConnectErrors>> UpdateDirectConnectGatewayAssociationOutcome;
-        typedef Aws::Utils::Outcome<UpdateLagResult, Aws::Client::AWSError<DirectConnectErrors>> UpdateLagOutcome;
-        typedef Aws::Utils::Outcome<UpdateVirtualInterfaceAttributesResult, Aws::Client::AWSError<DirectConnectErrors>> UpdateVirtualInterfaceAttributesOutcome;
+        typedef Aws::Utils::Outcome<AcceptDirectConnectGatewayAssociationProposalResult, DirectConnectError> AcceptDirectConnectGatewayAssociationProposalOutcome;
+        typedef Aws::Utils::Outcome<AllocateHostedConnectionResult, DirectConnectError> AllocateHostedConnectionOutcome;
+        typedef Aws::Utils::Outcome<AllocatePrivateVirtualInterfaceResult, DirectConnectError> AllocatePrivateVirtualInterfaceOutcome;
+        typedef Aws::Utils::Outcome<AllocatePublicVirtualInterfaceResult, DirectConnectError> AllocatePublicVirtualInterfaceOutcome;
+        typedef Aws::Utils::Outcome<AllocateTransitVirtualInterfaceResult, DirectConnectError> AllocateTransitVirtualInterfaceOutcome;
+        typedef Aws::Utils::Outcome<AssociateConnectionWithLagResult, DirectConnectError> AssociateConnectionWithLagOutcome;
+        typedef Aws::Utils::Outcome<AssociateHostedConnectionResult, DirectConnectError> AssociateHostedConnectionOutcome;
+        typedef Aws::Utils::Outcome<AssociateVirtualInterfaceResult, DirectConnectError> AssociateVirtualInterfaceOutcome;
+        typedef Aws::Utils::Outcome<ConfirmConnectionResult, DirectConnectError> ConfirmConnectionOutcome;
+        typedef Aws::Utils::Outcome<ConfirmPrivateVirtualInterfaceResult, DirectConnectError> ConfirmPrivateVirtualInterfaceOutcome;
+        typedef Aws::Utils::Outcome<ConfirmPublicVirtualInterfaceResult, DirectConnectError> ConfirmPublicVirtualInterfaceOutcome;
+        typedef Aws::Utils::Outcome<ConfirmTransitVirtualInterfaceResult, DirectConnectError> ConfirmTransitVirtualInterfaceOutcome;
+        typedef Aws::Utils::Outcome<CreateBGPPeerResult, DirectConnectError> CreateBGPPeerOutcome;
+        typedef Aws::Utils::Outcome<CreateConnectionResult, DirectConnectError> CreateConnectionOutcome;
+        typedef Aws::Utils::Outcome<CreateDirectConnectGatewayResult, DirectConnectError> CreateDirectConnectGatewayOutcome;
+        typedef Aws::Utils::Outcome<CreateDirectConnectGatewayAssociationResult, DirectConnectError> CreateDirectConnectGatewayAssociationOutcome;
+        typedef Aws::Utils::Outcome<CreateDirectConnectGatewayAssociationProposalResult, DirectConnectError> CreateDirectConnectGatewayAssociationProposalOutcome;
+        typedef Aws::Utils::Outcome<CreateInterconnectResult, DirectConnectError> CreateInterconnectOutcome;
+        typedef Aws::Utils::Outcome<CreateLagResult, DirectConnectError> CreateLagOutcome;
+        typedef Aws::Utils::Outcome<CreatePrivateVirtualInterfaceResult, DirectConnectError> CreatePrivateVirtualInterfaceOutcome;
+        typedef Aws::Utils::Outcome<CreatePublicVirtualInterfaceResult, DirectConnectError> CreatePublicVirtualInterfaceOutcome;
+        typedef Aws::Utils::Outcome<CreateTransitVirtualInterfaceResult, DirectConnectError> CreateTransitVirtualInterfaceOutcome;
+        typedef Aws::Utils::Outcome<DeleteBGPPeerResult, DirectConnectError> DeleteBGPPeerOutcome;
+        typedef Aws::Utils::Outcome<DeleteConnectionResult, DirectConnectError> DeleteConnectionOutcome;
+        typedef Aws::Utils::Outcome<DeleteDirectConnectGatewayResult, DirectConnectError> DeleteDirectConnectGatewayOutcome;
+        typedef Aws::Utils::Outcome<DeleteDirectConnectGatewayAssociationResult, DirectConnectError> DeleteDirectConnectGatewayAssociationOutcome;
+        typedef Aws::Utils::Outcome<DeleteDirectConnectGatewayAssociationProposalResult, DirectConnectError> DeleteDirectConnectGatewayAssociationProposalOutcome;
+        typedef Aws::Utils::Outcome<DeleteInterconnectResult, DirectConnectError> DeleteInterconnectOutcome;
+        typedef Aws::Utils::Outcome<DeleteLagResult, DirectConnectError> DeleteLagOutcome;
+        typedef Aws::Utils::Outcome<DeleteVirtualInterfaceResult, DirectConnectError> DeleteVirtualInterfaceOutcome;
+        typedef Aws::Utils::Outcome<DescribeConnectionsResult, DirectConnectError> DescribeConnectionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDirectConnectGatewayAssociationProposalsResult, DirectConnectError> DescribeDirectConnectGatewayAssociationProposalsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDirectConnectGatewayAssociationsResult, DirectConnectError> DescribeDirectConnectGatewayAssociationsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDirectConnectGatewayAttachmentsResult, DirectConnectError> DescribeDirectConnectGatewayAttachmentsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDirectConnectGatewaysResult, DirectConnectError> DescribeDirectConnectGatewaysOutcome;
+        typedef Aws::Utils::Outcome<DescribeHostedConnectionsResult, DirectConnectError> DescribeHostedConnectionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeInterconnectsResult, DirectConnectError> DescribeInterconnectsOutcome;
+        typedef Aws::Utils::Outcome<DescribeLagsResult, DirectConnectError> DescribeLagsOutcome;
+        typedef Aws::Utils::Outcome<DescribeLoaResult, DirectConnectError> DescribeLoaOutcome;
+        typedef Aws::Utils::Outcome<DescribeLocationsResult, DirectConnectError> DescribeLocationsOutcome;
+        typedef Aws::Utils::Outcome<DescribeTagsResult, DirectConnectError> DescribeTagsOutcome;
+        typedef Aws::Utils::Outcome<DescribeVirtualGatewaysResult, DirectConnectError> DescribeVirtualGatewaysOutcome;
+        typedef Aws::Utils::Outcome<DescribeVirtualInterfacesResult, DirectConnectError> DescribeVirtualInterfacesOutcome;
+        typedef Aws::Utils::Outcome<DisassociateConnectionFromLagResult, DirectConnectError> DisassociateConnectionFromLagOutcome;
+        typedef Aws::Utils::Outcome<ListVirtualInterfaceTestHistoryResult, DirectConnectError> ListVirtualInterfaceTestHistoryOutcome;
+        typedef Aws::Utils::Outcome<StartBgpFailoverTestResult, DirectConnectError> StartBgpFailoverTestOutcome;
+        typedef Aws::Utils::Outcome<StopBgpFailoverTestResult, DirectConnectError> StopBgpFailoverTestOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, DirectConnectError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, DirectConnectError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateDirectConnectGatewayAssociationResult, DirectConnectError> UpdateDirectConnectGatewayAssociationOutcome;
+        typedef Aws::Utils::Outcome<UpdateLagResult, DirectConnectError> UpdateLagOutcome;
+        typedef Aws::Utils::Outcome<UpdateVirtualInterfaceAttributesResult, DirectConnectError> UpdateVirtualInterfaceAttributesOutcome;
 
         typedef std::future<AcceptDirectConnectGatewayAssociationProposalOutcome> AcceptDirectConnectGatewayAssociationProposalOutcomeCallable;
         typedef std::future<AllocateHostedConnectionOutcome> AllocateHostedConnectionOutcomeCallable;
@@ -251,6 +250,9 @@ namespace Model
         typedef std::future<DescribeVirtualGatewaysOutcome> DescribeVirtualGatewaysOutcomeCallable;
         typedef std::future<DescribeVirtualInterfacesOutcome> DescribeVirtualInterfacesOutcomeCallable;
         typedef std::future<DisassociateConnectionFromLagOutcome> DisassociateConnectionFromLagOutcomeCallable;
+        typedef std::future<ListVirtualInterfaceTestHistoryOutcome> ListVirtualInterfaceTestHistoryOutcomeCallable;
+        typedef std::future<StartBgpFailoverTestOutcome> StartBgpFailoverTestOutcomeCallable;
+        typedef std::future<StopBgpFailoverTestOutcome> StopBgpFailoverTestOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateDirectConnectGatewayAssociationOutcome> UpdateDirectConnectGatewayAssociationOutcomeCallable;
@@ -304,6 +306,9 @@ namespace Model
     typedef std::function<void(const DirectConnectClient*, const Model::DescribeVirtualGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVirtualGatewaysResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::DescribeVirtualInterfacesRequest&, const Model::DescribeVirtualInterfacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVirtualInterfacesResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::DisassociateConnectionFromLagRequest&, const Model::DisassociateConnectionFromLagOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateConnectionFromLagResponseReceivedHandler;
+    typedef std::function<void(const DirectConnectClient*, const Model::ListVirtualInterfaceTestHistoryRequest&, const Model::ListVirtualInterfaceTestHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVirtualInterfaceTestHistoryResponseReceivedHandler;
+    typedef std::function<void(const DirectConnectClient*, const Model::StartBgpFailoverTestRequest&, const Model::StartBgpFailoverTestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartBgpFailoverTestResponseReceivedHandler;
+    typedef std::function<void(const DirectConnectClient*, const Model::StopBgpFailoverTestRequest&, const Model::StopBgpFailoverTestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopBgpFailoverTestResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::UpdateDirectConnectGatewayAssociationRequest&, const Model::UpdateDirectConnectGatewayAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDirectConnectGatewayAssociationResponseReceivedHandler;
@@ -347,8 +352,6 @@ namespace Model
 
         virtual ~DirectConnectClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Direct Connect"; }
-
 
         /**
          * <p>Accepts a proposal request to attach a virtual private gateway or transit
@@ -384,8 +387,8 @@ namespace Model
          * specified amount of capacity (bandwidth) for use by a hosted connection on the
          * specified interconnect or LAG of interconnects. AWS polices the hosted
          * connection for the specified capacity and the AWS Direct Connect Partner must
-         * also police the hosted connection for the specified capacity.</p> <note>
-         * <p>Intended for use by AWS Direct Connect Partners only.</p> </note><p><h3>See
+         * also police the hosted connection for the specified capacity.</p> 
+         * <p>Intended for use by AWS Direct Connect Partners only.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateHostedConnection">AWS
          * API Reference</a></p>
@@ -398,8 +401,8 @@ namespace Model
          * specified amount of capacity (bandwidth) for use by a hosted connection on the
          * specified interconnect or LAG of interconnects. AWS polices the hosted
          * connection for the specified capacity and the AWS Direct Connect Partner must
-         * also police the hosted connection for the specified capacity.</p> <note>
-         * <p>Intended for use by AWS Direct Connect Partners only.</p> </note><p><h3>See
+         * also police the hosted connection for the specified capacity.</p> 
+         * <p>Intended for use by AWS Direct Connect Partners only.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateHostedConnection">AWS
          * API Reference</a></p>
@@ -414,8 +417,8 @@ namespace Model
          * specified amount of capacity (bandwidth) for use by a hosted connection on the
          * specified interconnect or LAG of interconnects. AWS polices the hosted
          * connection for the specified capacity and the AWS Direct Connect Partner must
-         * also police the hosted connection for the specified capacity.</p> <note>
-         * <p>Intended for use by AWS Direct Connect Partners only.</p> </note><p><h3>See
+         * also police the hosted connection for the specified capacity.</p> 
+         * <p>Intended for use by AWS Direct Connect Partners only.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateHostedConnection">AWS
          * API Reference</a></p>
@@ -631,8 +634,8 @@ namespace Model
          * aggregation group (LAG) or interconnect. If the target interconnect or LAG has
          * an existing hosted connection with a conflicting VLAN number or IP address, the
          * operation fails. This action temporarily interrupts the hosted connection's
-         * connectivity to AWS as it is being migrated.</p> <note> <p>Intended for use by
-         * AWS Direct Connect Partners only.</p> </note><p><h3>See Also:</h3>   <a
+         * connectivity to AWS as it is being migrated.</p>  <p>Intended for use by
+         * AWS Direct Connect Partners only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateHostedConnection">AWS
          * API Reference</a></p>
          */
@@ -643,8 +646,8 @@ namespace Model
          * aggregation group (LAG) or interconnect. If the target interconnect or LAG has
          * an existing hosted connection with a conflicting VLAN number or IP address, the
          * operation fails. This action temporarily interrupts the hosted connection's
-         * connectivity to AWS as it is being migrated.</p> <note> <p>Intended for use by
-         * AWS Direct Connect Partners only.</p> </note><p><h3>See Also:</h3>   <a
+         * connectivity to AWS as it is being migrated.</p>  <p>Intended for use by
+         * AWS Direct Connect Partners only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateHostedConnection">AWS
          * API Reference</a></p>
          *
@@ -657,8 +660,8 @@ namespace Model
          * aggregation group (LAG) or interconnect. If the target interconnect or LAG has
          * an existing hosted connection with a conflicting VLAN number or IP address, the
          * operation fails. This action temporarily interrupts the hosted connection's
-         * connectivity to AWS as it is being migrated.</p> <note> <p>Intended for use by
-         * AWS Direct Connect Partners only.</p> </note><p><h3>See Also:</h3>   <a
+         * connectivity to AWS as it is being migrated.</p>  <p>Intended for use by
+         * AWS Direct Connect Partners only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateHostedConnection">AWS
          * API Reference</a></p>
          *
@@ -1046,11 +1049,9 @@ namespace Model
 
         /**
          * <p>Creates a proposal to associate the specified virtual private gateway or
-         * transit gateway with the specified Direct Connect gateway.</p> <p>You can only
+         * transit gateway with the specified Direct Connect gateway.</p> <p>You can
          * associate a Direct Connect gateway and virtual private gateway or transit
-         * gateway when the account that owns the Direct Connect gateway and the account
-         * that owns the virtual private gateway or transit gateway have the same AWS Payer
-         * ID.</p><p><h3>See Also:</h3>   <a
+         * gateway that is owned by any AWS account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGatewayAssociationProposal">AWS
          * API Reference</a></p>
          */
@@ -1058,11 +1059,9 @@ namespace Model
 
         /**
          * <p>Creates a proposal to associate the specified virtual private gateway or
-         * transit gateway with the specified Direct Connect gateway.</p> <p>You can only
+         * transit gateway with the specified Direct Connect gateway.</p> <p>You can
          * associate a Direct Connect gateway and virtual private gateway or transit
-         * gateway when the account that owns the Direct Connect gateway and the account
-         * that owns the virtual private gateway or transit gateway have the same AWS Payer
-         * ID.</p><p><h3>See Also:</h3>   <a
+         * gateway that is owned by any AWS account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGatewayAssociationProposal">AWS
          * API Reference</a></p>
          *
@@ -1072,11 +1071,9 @@ namespace Model
 
         /**
          * <p>Creates a proposal to associate the specified virtual private gateway or
-         * transit gateway with the specified Direct Connect gateway.</p> <p>You can only
+         * transit gateway with the specified Direct Connect gateway.</p> <p>You can
          * associate a Direct Connect gateway and virtual private gateway or transit
-         * gateway when the account that owns the Direct Connect gateway and the account
-         * that owns the virtual private gateway or transit gateway have the same AWS Payer
-         * ID.</p><p><h3>See Also:</h3>   <a
+         * gateway that is owned by any AWS account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGatewayAssociationProposal">AWS
          * API Reference</a></p>
          *
@@ -1101,8 +1098,8 @@ namespace Model
          * a connection on their interconnect by calling <a>AllocateHostedConnection</a>.
          * The end customer can then connect to AWS resources by creating a virtual
          * interface on their connection, using the VLAN assigned to them by the AWS Direct
-         * Connect Partner.</p> <note> <p>Intended for use by AWS Direct Connect Partners
-         * only.</p> </note><p><h3>See Also:</h3>   <a
+         * Connect Partner.</p>  <p>Intended for use by AWS Direct Connect Partners
+         * only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateInterconnect">AWS
          * API Reference</a></p>
          */
@@ -1125,8 +1122,8 @@ namespace Model
          * a connection on their interconnect by calling <a>AllocateHostedConnection</a>.
          * The end customer can then connect to AWS resources by creating a virtual
          * interface on their connection, using the VLAN assigned to them by the AWS Direct
-         * Connect Partner.</p> <note> <p>Intended for use by AWS Direct Connect Partners
-         * only.</p> </note><p><h3>See Also:</h3>   <a
+         * Connect Partner.</p>  <p>Intended for use by AWS Direct Connect Partners
+         * only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateInterconnect">AWS
          * API Reference</a></p>
          *
@@ -1151,8 +1148,8 @@ namespace Model
          * a connection on their interconnect by calling <a>AllocateHostedConnection</a>.
          * The end customer can then connect to AWS resources by creating a virtual
          * interface on their connection, using the VLAN assigned to them by the AWS Direct
-         * Connect Partner.</p> <note> <p>Intended for use by AWS Direct Connect Partners
-         * only.</p> </note><p><h3>See Also:</h3>   <a
+         * Connect Partner.</p>  <p>Intended for use by AWS Direct Connect Partners
+         * only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateInterconnect">AWS
          * API Reference</a></p>
          *
@@ -1162,22 +1159,23 @@ namespace Model
 
         /**
          * <p>Creates a link aggregation group (LAG) with the specified number of bundled
-         * physical connections between the customer network and a specific AWS Direct
-         * Connect location. A LAG is a logical interface that uses the Link Aggregation
-         * Control Protocol (LACP) to aggregate multiple interfaces, enabling you to treat
-         * them as a single interface.</p> <p>All connections in a LAG must use the same
-         * bandwidth and must terminate at the same AWS Direct Connect endpoint.</p> <p>You
-         * can have up to 10 connections per LAG. Regardless of this limit, if you request
-         * more connections for the LAG than AWS Direct Connect can allocate on a single
-         * endpoint, no LAG is created.</p> <p>You can specify an existing physical
-         * connection or interconnect to include in the LAG (which counts towards the total
-         * number of connections). Doing so interrupts the current physical connection or
-         * hosted connections, and re-establishes them as a member of the LAG. The LAG will
-         * be created on the same AWS Direct Connect endpoint to which the connection
-         * terminates. Any virtual interfaces associated with the connection are
-         * automatically disassociated and re-associated with the LAG. The connection ID
-         * does not change.</p> <p>If the AWS account used to create a LAG is a registered
-         * AWS Direct Connect Partner, the LAG is automatically enabled to host
+         * physical dedicated connections between the customer network and a specific AWS
+         * Direct Connect location. A LAG is a logical interface that uses the Link
+         * Aggregation Control Protocol (LACP) to aggregate multiple interfaces, enabling
+         * you to treat them as a single interface.</p> <p>All connections in a LAG must
+         * use the same bandwidth (either 1Gbps or 10Gbps) and must terminate at the same
+         * AWS Direct Connect endpoint.</p> <p>You can have up to 10 dedicated connections
+         * per LAG. Regardless of this limit, if you request more connections for the LAG
+         * than AWS Direct Connect can allocate on a single endpoint, no LAG is
+         * created.</p> <p>You can specify an existing physical dedicated connection or
+         * interconnect to include in the LAG (which counts towards the total number of
+         * connections). Doing so interrupts the current physical dedicated connection, and
+         * re-establishes them as a member of the LAG. The LAG will be created on the same
+         * AWS Direct Connect endpoint to which the dedicated connection terminates. Any
+         * virtual interfaces associated with the dedicated connection are automatically
+         * disassociated and re-associated with the LAG. The connection ID does not
+         * change.</p> <p>If the AWS account used to create a LAG is a registered AWS
+         * Direct Connect Partner, the LAG is automatically enabled to host
          * sub-connections. For a LAG owned by a partner, any associated virtual interfaces
          * cannot be directly configured.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateLag">AWS
@@ -1187,22 +1185,23 @@ namespace Model
 
         /**
          * <p>Creates a link aggregation group (LAG) with the specified number of bundled
-         * physical connections between the customer network and a specific AWS Direct
-         * Connect location. A LAG is a logical interface that uses the Link Aggregation
-         * Control Protocol (LACP) to aggregate multiple interfaces, enabling you to treat
-         * them as a single interface.</p> <p>All connections in a LAG must use the same
-         * bandwidth and must terminate at the same AWS Direct Connect endpoint.</p> <p>You
-         * can have up to 10 connections per LAG. Regardless of this limit, if you request
-         * more connections for the LAG than AWS Direct Connect can allocate on a single
-         * endpoint, no LAG is created.</p> <p>You can specify an existing physical
-         * connection or interconnect to include in the LAG (which counts towards the total
-         * number of connections). Doing so interrupts the current physical connection or
-         * hosted connections, and re-establishes them as a member of the LAG. The LAG will
-         * be created on the same AWS Direct Connect endpoint to which the connection
-         * terminates. Any virtual interfaces associated with the connection are
-         * automatically disassociated and re-associated with the LAG. The connection ID
-         * does not change.</p> <p>If the AWS account used to create a LAG is a registered
-         * AWS Direct Connect Partner, the LAG is automatically enabled to host
+         * physical dedicated connections between the customer network and a specific AWS
+         * Direct Connect location. A LAG is a logical interface that uses the Link
+         * Aggregation Control Protocol (LACP) to aggregate multiple interfaces, enabling
+         * you to treat them as a single interface.</p> <p>All connections in a LAG must
+         * use the same bandwidth (either 1Gbps or 10Gbps) and must terminate at the same
+         * AWS Direct Connect endpoint.</p> <p>You can have up to 10 dedicated connections
+         * per LAG. Regardless of this limit, if you request more connections for the LAG
+         * than AWS Direct Connect can allocate on a single endpoint, no LAG is
+         * created.</p> <p>You can specify an existing physical dedicated connection or
+         * interconnect to include in the LAG (which counts towards the total number of
+         * connections). Doing so interrupts the current physical dedicated connection, and
+         * re-establishes them as a member of the LAG. The LAG will be created on the same
+         * AWS Direct Connect endpoint to which the dedicated connection terminates. Any
+         * virtual interfaces associated with the dedicated connection are automatically
+         * disassociated and re-associated with the LAG. The connection ID does not
+         * change.</p> <p>If the AWS account used to create a LAG is a registered AWS
+         * Direct Connect Partner, the LAG is automatically enabled to host
          * sub-connections. For a LAG owned by a partner, any associated virtual interfaces
          * cannot be directly configured.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateLag">AWS
@@ -1214,22 +1213,23 @@ namespace Model
 
         /**
          * <p>Creates a link aggregation group (LAG) with the specified number of bundled
-         * physical connections between the customer network and a specific AWS Direct
-         * Connect location. A LAG is a logical interface that uses the Link Aggregation
-         * Control Protocol (LACP) to aggregate multiple interfaces, enabling you to treat
-         * them as a single interface.</p> <p>All connections in a LAG must use the same
-         * bandwidth and must terminate at the same AWS Direct Connect endpoint.</p> <p>You
-         * can have up to 10 connections per LAG. Regardless of this limit, if you request
-         * more connections for the LAG than AWS Direct Connect can allocate on a single
-         * endpoint, no LAG is created.</p> <p>You can specify an existing physical
-         * connection or interconnect to include in the LAG (which counts towards the total
-         * number of connections). Doing so interrupts the current physical connection or
-         * hosted connections, and re-establishes them as a member of the LAG. The LAG will
-         * be created on the same AWS Direct Connect endpoint to which the connection
-         * terminates. Any virtual interfaces associated with the connection are
-         * automatically disassociated and re-associated with the LAG. The connection ID
-         * does not change.</p> <p>If the AWS account used to create a LAG is a registered
-         * AWS Direct Connect Partner, the LAG is automatically enabled to host
+         * physical dedicated connections between the customer network and a specific AWS
+         * Direct Connect location. A LAG is a logical interface that uses the Link
+         * Aggregation Control Protocol (LACP) to aggregate multiple interfaces, enabling
+         * you to treat them as a single interface.</p> <p>All connections in a LAG must
+         * use the same bandwidth (either 1Gbps or 10Gbps) and must terminate at the same
+         * AWS Direct Connect endpoint.</p> <p>You can have up to 10 dedicated connections
+         * per LAG. Regardless of this limit, if you request more connections for the LAG
+         * than AWS Direct Connect can allocate on a single endpoint, no LAG is
+         * created.</p> <p>You can specify an existing physical dedicated connection or
+         * interconnect to include in the LAG (which counts towards the total number of
+         * connections). Doing so interrupts the current physical dedicated connection, and
+         * re-establishes them as a member of the LAG. The LAG will be created on the same
+         * AWS Direct Connect endpoint to which the dedicated connection terminates. Any
+         * virtual interfaces associated with the dedicated connection are automatically
+         * disassociated and re-associated with the LAG. The connection ID does not
+         * change.</p> <p>If the AWS account used to create a LAG is a registered AWS
+         * Direct Connect Partner, the LAG is automatically enabled to host
          * sub-connections. For a LAG owned by a partner, any associated virtual interfaces
          * cannot be directly configured.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateLag">AWS
@@ -1246,7 +1246,14 @@ namespace Model
          * Connecting the private virtual interface to a Direct Connect gateway enables the
          * possibility for connecting to multiple VPCs, including VPCs in different AWS
          * Regions. Connecting the private virtual interface to a VGW only provides access
-         * to a single VPC within the same Region.</p><p><h3>See Also:</h3>   <a
+         * to a single VPC within the same Region.</p> <p>Setting the MTU of a virtual
+         * interface to 9001 (jumbo frames) can cause an update to the underlying physical
+         * connection if it wasn't updated to support jumbo frames. Updating the connection
+         * disrupts network connectivity for all virtual interfaces associated with the
+         * connection for up to 30 seconds. To check whether your connection supports jumbo
+         * frames, call <a>DescribeConnections</a>. To check whether your virtual interface
+         * supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePrivateVirtualInterface">AWS
          * API Reference</a></p>
          */
@@ -1259,7 +1266,14 @@ namespace Model
          * Connecting the private virtual interface to a Direct Connect gateway enables the
          * possibility for connecting to multiple VPCs, including VPCs in different AWS
          * Regions. Connecting the private virtual interface to a VGW only provides access
-         * to a single VPC within the same Region.</p><p><h3>See Also:</h3>   <a
+         * to a single VPC within the same Region.</p> <p>Setting the MTU of a virtual
+         * interface to 9001 (jumbo frames) can cause an update to the underlying physical
+         * connection if it wasn't updated to support jumbo frames. Updating the connection
+         * disrupts network connectivity for all virtual interfaces associated with the
+         * connection for up to 30 seconds. To check whether your connection supports jumbo
+         * frames, call <a>DescribeConnections</a>. To check whether your virtual interface
+         * supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePrivateVirtualInterface">AWS
          * API Reference</a></p>
          *
@@ -1274,7 +1288,14 @@ namespace Model
          * Connecting the private virtual interface to a Direct Connect gateway enables the
          * possibility for connecting to multiple VPCs, including VPCs in different AWS
          * Regions. Connecting the private virtual interface to a VGW only provides access
-         * to a single VPC within the same Region.</p><p><h3>See Also:</h3>   <a
+         * to a single VPC within the same Region.</p> <p>Setting the MTU of a virtual
+         * interface to 9001 (jumbo frames) can cause an update to the underlying physical
+         * connection if it wasn't updated to support jumbo frames. Updating the connection
+         * disrupts network connectivity for all virtual interfaces associated with the
+         * connection for up to 30 seconds. To check whether your connection supports jumbo
+         * frames, call <a>DescribeConnections</a>. To check whether your virtual interface
+         * supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePrivateVirtualInterface">AWS
          * API Reference</a></p>
          *
@@ -1329,12 +1350,19 @@ namespace Model
          * <p>Creates a transit virtual interface. A transit virtual interface should be
          * used to access one or more transit gateways associated with Direct Connect
          * gateways. A transit virtual interface enables the connection of multiple VPCs
-         * attached to a transit gateway to a Direct Connect gateway.</p> <important> <p>If
+         * attached to a transit gateway to a Direct Connect gateway.</p>  <p>If
          * you associate your transit gateway with one or more Direct Connect gateways, the
          * Autonomous System Number (ASN) used by the transit gateway and the Direct
          * Connect gateway must be different. For example, if you use the default ASN 64512
          * for both your the transit gateway and Direct Connect gateway, the association
-         * request fails.</p> </important><p><h3>See Also:</h3>   <a
+         * request fails.</p>  <p>Setting the MTU of a virtual interface to
+         * 8500 (jumbo frames) can cause an update to the underlying physical connection if
+         * it wasn't updated to support jumbo frames. Updating the connection disrupts
+         * network connectivity for all virtual interfaces associated with the connection
+         * for up to 30 seconds. To check whether your connection supports jumbo frames,
+         * call <a>DescribeConnections</a>. To check whether your virtual interface
+         * supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateTransitVirtualInterface">AWS
          * API Reference</a></p>
          */
@@ -1344,12 +1372,19 @@ namespace Model
          * <p>Creates a transit virtual interface. A transit virtual interface should be
          * used to access one or more transit gateways associated with Direct Connect
          * gateways. A transit virtual interface enables the connection of multiple VPCs
-         * attached to a transit gateway to a Direct Connect gateway.</p> <important> <p>If
+         * attached to a transit gateway to a Direct Connect gateway.</p>  <p>If
          * you associate your transit gateway with one or more Direct Connect gateways, the
          * Autonomous System Number (ASN) used by the transit gateway and the Direct
          * Connect gateway must be different. For example, if you use the default ASN 64512
          * for both your the transit gateway and Direct Connect gateway, the association
-         * request fails.</p> </important><p><h3>See Also:</h3>   <a
+         * request fails.</p>  <p>Setting the MTU of a virtual interface to
+         * 8500 (jumbo frames) can cause an update to the underlying physical connection if
+         * it wasn't updated to support jumbo frames. Updating the connection disrupts
+         * network connectivity for all virtual interfaces associated with the connection
+         * for up to 30 seconds. To check whether your connection supports jumbo frames,
+         * call <a>DescribeConnections</a>. To check whether your virtual interface
+         * supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateTransitVirtualInterface">AWS
          * API Reference</a></p>
          *
@@ -1361,12 +1396,19 @@ namespace Model
          * <p>Creates a transit virtual interface. A transit virtual interface should be
          * used to access one or more transit gateways associated with Direct Connect
          * gateways. A transit virtual interface enables the connection of multiple VPCs
-         * attached to a transit gateway to a Direct Connect gateway.</p> <important> <p>If
+         * attached to a transit gateway to a Direct Connect gateway.</p>  <p>If
          * you associate your transit gateway with one or more Direct Connect gateways, the
          * Autonomous System Number (ASN) used by the transit gateway and the Direct
          * Connect gateway must be different. For example, if you use the default ASN 64512
          * for both your the transit gateway and Direct Connect gateway, the association
-         * request fails.</p> </important><p><h3>See Also:</h3>   <a
+         * request fails.</p>  <p>Setting the MTU of a virtual interface to
+         * 8500 (jumbo frames) can cause an update to the underlying physical connection if
+         * it wasn't updated to support jumbo frames. Updating the connection disrupts
+         * network connectivity for all virtual interfaces associated with the connection
+         * for up to 30 seconds. To check whether your connection supports jumbo frames,
+         * call <a>DescribeConnections</a>. To check whether your virtual interface
+         * supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateTransitVirtualInterface">AWS
          * API Reference</a></p>
          *
@@ -1545,16 +1587,16 @@ namespace Model
         virtual void DeleteDirectConnectGatewayAssociationProposalAsync(const Model::DeleteDirectConnectGatewayAssociationProposalRequest& request, const DeleteDirectConnectGatewayAssociationProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified interconnect.</p> <note> <p>Intended for use by AWS
-         * Direct Connect Partners only.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified interconnect.</p>  <p>Intended for use by AWS
+         * Direct Connect Partners only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteInterconnect">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteInterconnectOutcome DeleteInterconnect(const Model::DeleteInterconnectRequest& request) const;
 
         /**
-         * <p>Deletes the specified interconnect.</p> <note> <p>Intended for use by AWS
-         * Direct Connect Partners only.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified interconnect.</p>  <p>Intended for use by AWS
+         * Direct Connect Partners only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteInterconnect">AWS
          * API Reference</a></p>
          *
@@ -1563,8 +1605,8 @@ namespace Model
         virtual Model::DeleteInterconnectOutcomeCallable DeleteInterconnectCallable(const Model::DeleteInterconnectRequest& request) const;
 
         /**
-         * <p>Deletes the specified interconnect.</p> <note> <p>Intended for use by AWS
-         * Direct Connect Partners only.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified interconnect.</p>  <p>Intended for use by AWS
+         * Direct Connect Partners only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteInterconnect">AWS
          * API Reference</a></p>
          *
@@ -1812,8 +1854,8 @@ namespace Model
 
         /**
          * <p>Lists the hosted connections that have been provisioned on the specified
-         * interconnect or link aggregation group (LAG).</p> <note> <p>Intended for use by
-         * AWS Direct Connect Partners only.</p> </note><p><h3>See Also:</h3>   <a
+         * interconnect or link aggregation group (LAG).</p>  <p>Intended for use by
+         * AWS Direct Connect Partners only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeHostedConnections">AWS
          * API Reference</a></p>
          */
@@ -1821,8 +1863,8 @@ namespace Model
 
         /**
          * <p>Lists the hosted connections that have been provisioned on the specified
-         * interconnect or link aggregation group (LAG).</p> <note> <p>Intended for use by
-         * AWS Direct Connect Partners only.</p> </note><p><h3>See Also:</h3>   <a
+         * interconnect or link aggregation group (LAG).</p>  <p>Intended for use by
+         * AWS Direct Connect Partners only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeHostedConnections">AWS
          * API Reference</a></p>
          *
@@ -1832,8 +1874,8 @@ namespace Model
 
         /**
          * <p>Lists the hosted connections that have been provisioned on the specified
-         * interconnect or link aggregation group (LAG).</p> <note> <p>Intended for use by
-         * AWS Direct Connect Partners only.</p> </note><p><h3>See Also:</h3>   <a
+         * interconnect or link aggregation group (LAG).</p>  <p>Intended for use by
+         * AWS Direct Connect Partners only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeHostedConnections">AWS
          * API Reference</a></p>
          *
@@ -2127,6 +2169,111 @@ namespace Model
         virtual void DisassociateConnectionFromLagAsync(const Model::DisassociateConnectionFromLagRequest& request, const DisassociateConnectionFromLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the virtual interface failover test history.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ListVirtualInterfaceTestHistory">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListVirtualInterfaceTestHistoryOutcome ListVirtualInterfaceTestHistory(const Model::ListVirtualInterfaceTestHistoryRequest& request) const;
+
+        /**
+         * <p>Lists the virtual interface failover test history.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ListVirtualInterfaceTestHistory">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListVirtualInterfaceTestHistoryOutcomeCallable ListVirtualInterfaceTestHistoryCallable(const Model::ListVirtualInterfaceTestHistoryRequest& request) const;
+
+        /**
+         * <p>Lists the virtual interface failover test history.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ListVirtualInterfaceTestHistory">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListVirtualInterfaceTestHistoryAsync(const Model::ListVirtualInterfaceTestHistoryRequest& request, const ListVirtualInterfaceTestHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Starts the virtual interface failover test that verifies your configuration
+         * meets your resiliency requirements by placing the BGP peering session in the
+         * DOWN state. You can then send traffic to verify that there are no outages.</p>
+         * <p>You can run the test on public, private, transit, and hosted virtual
+         * interfaces.</p> <p>You can use <a
+         * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ListVirtualInterfaceTestHistory.html">ListVirtualInterfaceTestHistory</a>
+         * to view the virtual interface test history.</p> <p>If you need to stop the test
+         * before the test interval completes, use <a
+         * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_StopBgpFailoverTest.html">StopBgpFailoverTest</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StartBgpFailoverTest">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartBgpFailoverTestOutcome StartBgpFailoverTest(const Model::StartBgpFailoverTestRequest& request) const;
+
+        /**
+         * <p>Starts the virtual interface failover test that verifies your configuration
+         * meets your resiliency requirements by placing the BGP peering session in the
+         * DOWN state. You can then send traffic to verify that there are no outages.</p>
+         * <p>You can run the test on public, private, transit, and hosted virtual
+         * interfaces.</p> <p>You can use <a
+         * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ListVirtualInterfaceTestHistory.html">ListVirtualInterfaceTestHistory</a>
+         * to view the virtual interface test history.</p> <p>If you need to stop the test
+         * before the test interval completes, use <a
+         * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_StopBgpFailoverTest.html">StopBgpFailoverTest</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StartBgpFailoverTest">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartBgpFailoverTestOutcomeCallable StartBgpFailoverTestCallable(const Model::StartBgpFailoverTestRequest& request) const;
+
+        /**
+         * <p>Starts the virtual interface failover test that verifies your configuration
+         * meets your resiliency requirements by placing the BGP peering session in the
+         * DOWN state. You can then send traffic to verify that there are no outages.</p>
+         * <p>You can run the test on public, private, transit, and hosted virtual
+         * interfaces.</p> <p>You can use <a
+         * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ListVirtualInterfaceTestHistory.html">ListVirtualInterfaceTestHistory</a>
+         * to view the virtual interface test history.</p> <p>If you need to stop the test
+         * before the test interval completes, use <a
+         * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_StopBgpFailoverTest.html">StopBgpFailoverTest</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StartBgpFailoverTest">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartBgpFailoverTestAsync(const Model::StartBgpFailoverTestRequest& request, const StartBgpFailoverTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Stops the virtual interface failover test.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StopBgpFailoverTest">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopBgpFailoverTestOutcome StopBgpFailoverTest(const Model::StopBgpFailoverTestRequest& request) const;
+
+        /**
+         * <p>Stops the virtual interface failover test.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StopBgpFailoverTest">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopBgpFailoverTestOutcomeCallable StopBgpFailoverTestCallable(const Model::StopBgpFailoverTestRequest& request) const;
+
+        /**
+         * <p>Stops the virtual interface failover test.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StopBgpFailoverTest">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopBgpFailoverTestAsync(const Model::StopBgpFailoverTestRequest& request, const StopBgpFailoverTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Adds the specified tags to the specified AWS Direct Connect resource. Each
          * resource can have a maximum of 50 tags.</p> <p>Each tag consists of a key and an
          * optional value. If a tag with the same key is already associated with the
@@ -2278,7 +2425,7 @@ namespace Model
          * to support jumbo frames. Updating the connection disrupts network connectivity
          * for all virtual interfaces associated with the connection for up to 30 seconds.
          * To check whether your connection supports jumbo frames, call
-         * <a>DescribeConnections</a>. To check whether your virtual interface supports
+         * <a>DescribeConnections</a>. To check whether your virtual q interface supports
          * jumbo frames, call <a>DescribeVirtualInterfaces</a>.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateVirtualInterfaceAttributes">AWS
@@ -2293,7 +2440,7 @@ namespace Model
          * to support jumbo frames. Updating the connection disrupts network connectivity
          * for all virtual interfaces associated with the connection for up to 30 seconds.
          * To check whether your connection supports jumbo frames, call
-         * <a>DescribeConnections</a>. To check whether your virtual interface supports
+         * <a>DescribeConnections</a>. To check whether your virtual q interface supports
          * jumbo frames, call <a>DescribeVirtualInterfaces</a>.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateVirtualInterfaceAttributes">AWS
@@ -2310,7 +2457,7 @@ namespace Model
          * to support jumbo frames. Updating the connection disrupts network connectivity
          * for all virtual interfaces associated with the connection for up to 30 seconds.
          * To check whether your connection supports jumbo frames, call
-         * <a>DescribeConnections</a>. To check whether your virtual interface supports
+         * <a>DescribeConnections</a>. To check whether your virtual q interface supports
          * jumbo frames, call <a>DescribeVirtualInterfaces</a>.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateVirtualInterfaceAttributes">AWS
@@ -2368,6 +2515,9 @@ namespace Model
         void DescribeVirtualGatewaysAsyncHelper(const DescribeVirtualGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeVirtualInterfacesAsyncHelper(const Model::DescribeVirtualInterfacesRequest& request, const DescribeVirtualInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateConnectionFromLagAsyncHelper(const Model::DisassociateConnectionFromLagRequest& request, const DisassociateConnectionFromLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListVirtualInterfaceTestHistoryAsyncHelper(const Model::ListVirtualInterfaceTestHistoryRequest& request, const ListVirtualInterfaceTestHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartBgpFailoverTestAsyncHelper(const Model::StartBgpFailoverTestRequest& request, const StartBgpFailoverTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopBgpFailoverTestAsyncHelper(const Model::StopBgpFailoverTestRequest& request, const StopBgpFailoverTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDirectConnectGatewayAssociationAsyncHelper(const Model::UpdateDirectConnectGatewayAssociationRequest& request, const UpdateDirectConnectGatewayAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

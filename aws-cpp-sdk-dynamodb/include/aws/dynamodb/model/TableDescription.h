@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
@@ -188,14 +178,14 @@ namespace Model
      * consists of:</p> <ul> <li> <p> <code>AttributeName</code> - The name of the
      * attribute.</p> </li> <li> <p> <code>KeyType</code> - The role of the
      * attribute:</p> <ul> <li> <p> <code>HASH</code> - partition key</p> </li> <li>
-     * <p> <code>RANGE</code> - sort key</p> </li> </ul> <note> <p>The partition key of
+     * <p> <code>RANGE</code> - sort key</p> </li> </ul>  <p>The partition key of
      * an item is also known as its <i>hash attribute</i>. The term "hash attribute"
      * derives from DynamoDB's usage of an internal hash function to evenly distribute
      * data items across partitions, based on their partition key values.</p> <p>The
      * sort key of an item is also known as its <i>range attribute</i>. The term "range
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
-     * </note> </li> </ul> <p>For more information about primary keys, see <a
+     *  </li> </ul> <p>For more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -206,14 +196,14 @@ namespace Model
      * consists of:</p> <ul> <li> <p> <code>AttributeName</code> - The name of the
      * attribute.</p> </li> <li> <p> <code>KeyType</code> - The role of the
      * attribute:</p> <ul> <li> <p> <code>HASH</code> - partition key</p> </li> <li>
-     * <p> <code>RANGE</code> - sort key</p> </li> </ul> <note> <p>The partition key of
+     * <p> <code>RANGE</code> - sort key</p> </li> </ul>  <p>The partition key of
      * an item is also known as its <i>hash attribute</i>. The term "hash attribute"
      * derives from DynamoDB's usage of an internal hash function to evenly distribute
      * data items across partitions, based on their partition key values.</p> <p>The
      * sort key of an item is also known as its <i>range attribute</i>. The term "range
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
-     * </note> </li> </ul> <p>For more information about primary keys, see <a
+     *  </li> </ul> <p>For more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -224,14 +214,14 @@ namespace Model
      * consists of:</p> <ul> <li> <p> <code>AttributeName</code> - The name of the
      * attribute.</p> </li> <li> <p> <code>KeyType</code> - The role of the
      * attribute:</p> <ul> <li> <p> <code>HASH</code> - partition key</p> </li> <li>
-     * <p> <code>RANGE</code> - sort key</p> </li> </ul> <note> <p>The partition key of
+     * <p> <code>RANGE</code> - sort key</p> </li> </ul>  <p>The partition key of
      * an item is also known as its <i>hash attribute</i>. The term "hash attribute"
      * derives from DynamoDB's usage of an internal hash function to evenly distribute
      * data items across partitions, based on their partition key values.</p> <p>The
      * sort key of an item is also known as its <i>range attribute</i>. The term "range
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
-     * </note> </li> </ul> <p>For more information about primary keys, see <a
+     *  </li> </ul> <p>For more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -242,14 +232,14 @@ namespace Model
      * consists of:</p> <ul> <li> <p> <code>AttributeName</code> - The name of the
      * attribute.</p> </li> <li> <p> <code>KeyType</code> - The role of the
      * attribute:</p> <ul> <li> <p> <code>HASH</code> - partition key</p> </li> <li>
-     * <p> <code>RANGE</code> - sort key</p> </li> </ul> <note> <p>The partition key of
+     * <p> <code>RANGE</code> - sort key</p> </li> </ul>  <p>The partition key of
      * an item is also known as its <i>hash attribute</i>. The term "hash attribute"
      * derives from DynamoDB's usage of an internal hash function to evenly distribute
      * data items across partitions, based on their partition key values.</p> <p>The
      * sort key of an item is also known as its <i>range attribute</i>. The term "range
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
-     * </note> </li> </ul> <p>For more information about primary keys, see <a
+     *  </li> </ul> <p>For more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -260,14 +250,14 @@ namespace Model
      * consists of:</p> <ul> <li> <p> <code>AttributeName</code> - The name of the
      * attribute.</p> </li> <li> <p> <code>KeyType</code> - The role of the
      * attribute:</p> <ul> <li> <p> <code>HASH</code> - partition key</p> </li> <li>
-     * <p> <code>RANGE</code> - sort key</p> </li> </ul> <note> <p>The partition key of
+     * <p> <code>RANGE</code> - sort key</p> </li> </ul>  <p>The partition key of
      * an item is also known as its <i>hash attribute</i>. The term "hash attribute"
      * derives from DynamoDB's usage of an internal hash function to evenly distribute
      * data items across partitions, based on their partition key values.</p> <p>The
      * sort key of an item is also known as its <i>range attribute</i>. The term "range
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
-     * </note> </li> </ul> <p>For more information about primary keys, see <a
+     *  </li> </ul> <p>For more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -278,14 +268,14 @@ namespace Model
      * consists of:</p> <ul> <li> <p> <code>AttributeName</code> - The name of the
      * attribute.</p> </li> <li> <p> <code>KeyType</code> - The role of the
      * attribute:</p> <ul> <li> <p> <code>HASH</code> - partition key</p> </li> <li>
-     * <p> <code>RANGE</code> - sort key</p> </li> </ul> <note> <p>The partition key of
+     * <p> <code>RANGE</code> - sort key</p> </li> </ul>  <p>The partition key of
      * an item is also known as its <i>hash attribute</i>. The term "hash attribute"
      * derives from DynamoDB's usage of an internal hash function to evenly distribute
      * data items across partitions, based on their partition key values.</p> <p>The
      * sort key of an item is also known as its <i>range attribute</i>. The term "range
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
-     * </note> </li> </ul> <p>For more information about primary keys, see <a
+     *  </li> </ul> <p>For more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -296,14 +286,14 @@ namespace Model
      * consists of:</p> <ul> <li> <p> <code>AttributeName</code> - The name of the
      * attribute.</p> </li> <li> <p> <code>KeyType</code> - The role of the
      * attribute:</p> <ul> <li> <p> <code>HASH</code> - partition key</p> </li> <li>
-     * <p> <code>RANGE</code> - sort key</p> </li> </ul> <note> <p>The partition key of
+     * <p> <code>RANGE</code> - sort key</p> </li> </ul>  <p>The partition key of
      * an item is also known as its <i>hash attribute</i>. The term "hash attribute"
      * derives from DynamoDB's usage of an internal hash function to evenly distribute
      * data items across partitions, based on their partition key values.</p> <p>The
      * sort key of an item is also known as its <i>range attribute</i>. The term "range
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
-     * </note> </li> </ul> <p>For more information about primary keys, see <a
+     *  </li> </ul> <p>For more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -314,14 +304,14 @@ namespace Model
      * consists of:</p> <ul> <li> <p> <code>AttributeName</code> - The name of the
      * attribute.</p> </li> <li> <p> <code>KeyType</code> - The role of the
      * attribute:</p> <ul> <li> <p> <code>HASH</code> - partition key</p> </li> <li>
-     * <p> <code>RANGE</code> - sort key</p> </li> </ul> <note> <p>The partition key of
+     * <p> <code>RANGE</code> - sort key</p> </li> </ul>  <p>The partition key of
      * an item is also known as its <i>hash attribute</i>. The term "hash attribute"
      * derives from DynamoDB's usage of an internal hash function to evenly distribute
      * data items across partitions, based on their partition key values.</p> <p>The
      * sort key of an item is also known as its <i>range attribute</i>. The term "range
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
-     * </note> </li> </ul> <p>For more information about primary keys, see <a
+     *  </li> </ul> <p>For more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -977,9 +967,9 @@ namespace Model
      * attributes, which are automatically projected. Each attribute specification is
      * composed of:</p> <ul> <li> <p> <code>ProjectionType</code> - One of the
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
-     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
-     * Only the specified table attributes are projected into the index. The list of
-     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> - In
+     * addition to the attributes described in <code>KEYS_ONLY</code>, the secondary
+     * index will include other non-key attributes that you specify.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
@@ -1028,9 +1018,9 @@ namespace Model
      * attributes, which are automatically projected. Each attribute specification is
      * composed of:</p> <ul> <li> <p> <code>ProjectionType</code> - One of the
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
-     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
-     * Only the specified table attributes are projected into the index. The list of
-     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> - In
+     * addition to the attributes described in <code>KEYS_ONLY</code>, the secondary
+     * index will include other non-key attributes that you specify.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
@@ -1079,9 +1069,9 @@ namespace Model
      * attributes, which are automatically projected. Each attribute specification is
      * composed of:</p> <ul> <li> <p> <code>ProjectionType</code> - One of the
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
-     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
-     * Only the specified table attributes are projected into the index. The list of
-     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> - In
+     * addition to the attributes described in <code>KEYS_ONLY</code>, the secondary
+     * index will include other non-key attributes that you specify.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
@@ -1130,9 +1120,9 @@ namespace Model
      * attributes, which are automatically projected. Each attribute specification is
      * composed of:</p> <ul> <li> <p> <code>ProjectionType</code> - One of the
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
-     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
-     * Only the specified table attributes are projected into the index. The list of
-     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> - In
+     * addition to the attributes described in <code>KEYS_ONLY</code>, the secondary
+     * index will include other non-key attributes that you specify.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
@@ -1181,9 +1171,9 @@ namespace Model
      * attributes, which are automatically projected. Each attribute specification is
      * composed of:</p> <ul> <li> <p> <code>ProjectionType</code> - One of the
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
-     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
-     * Only the specified table attributes are projected into the index. The list of
-     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> - In
+     * addition to the attributes described in <code>KEYS_ONLY</code>, the secondary
+     * index will include other non-key attributes that you specify.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
@@ -1232,9 +1222,9 @@ namespace Model
      * attributes, which are automatically projected. Each attribute specification is
      * composed of:</p> <ul> <li> <p> <code>ProjectionType</code> - One of the
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
-     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
-     * Only the specified table attributes are projected into the index. The list of
-     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> - In
+     * addition to the attributes described in <code>KEYS_ONLY</code>, the secondary
+     * index will include other non-key attributes that you specify.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
@@ -1283,9 +1273,9 @@ namespace Model
      * attributes, which are automatically projected. Each attribute specification is
      * composed of:</p> <ul> <li> <p> <code>ProjectionType</code> - One of the
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
-     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
-     * Only the specified table attributes are projected into the index. The list of
-     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> - In
+     * addition to the attributes described in <code>KEYS_ONLY</code>, the secondary
+     * index will include other non-key attributes that you specify.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
@@ -1334,9 +1324,9 @@ namespace Model
      * attributes, which are automatically projected. Each attribute specification is
      * composed of:</p> <ul> <li> <p> <code>ProjectionType</code> - One of the
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
-     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
-     * Only the specified table attributes are projected into the index. The list of
-     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> - In
+     * addition to the attributes described in <code>KEYS_ONLY</code>, the secondary
+     * index will include other non-key attributes that you specify.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total

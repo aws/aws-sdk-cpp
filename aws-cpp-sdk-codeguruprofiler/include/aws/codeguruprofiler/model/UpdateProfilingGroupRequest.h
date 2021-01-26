@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codeguruprofiler/CodeGuruProfiler_EXPORTS.h>
@@ -48,32 +38,38 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p> Specifies whether profiling is enabled or disabled for a profiling group.
+     * </p>
      */
     inline const AgentOrchestrationConfig& GetAgentOrchestrationConfig() const{ return m_agentOrchestrationConfig; }
 
     /**
-     * <p/>
+     * <p> Specifies whether profiling is enabled or disabled for a profiling group.
+     * </p>
      */
     inline bool AgentOrchestrationConfigHasBeenSet() const { return m_agentOrchestrationConfigHasBeenSet; }
 
     /**
-     * <p/>
+     * <p> Specifies whether profiling is enabled or disabled for a profiling group.
+     * </p>
      */
     inline void SetAgentOrchestrationConfig(const AgentOrchestrationConfig& value) { m_agentOrchestrationConfigHasBeenSet = true; m_agentOrchestrationConfig = value; }
 
     /**
-     * <p/>
+     * <p> Specifies whether profiling is enabled or disabled for a profiling group.
+     * </p>
      */
     inline void SetAgentOrchestrationConfig(AgentOrchestrationConfig&& value) { m_agentOrchestrationConfigHasBeenSet = true; m_agentOrchestrationConfig = std::move(value); }
 
     /**
-     * <p/>
+     * <p> Specifies whether profiling is enabled or disabled for a profiling group.
+     * </p>
      */
     inline UpdateProfilingGroupRequest& WithAgentOrchestrationConfig(const AgentOrchestrationConfig& value) { SetAgentOrchestrationConfig(value); return *this;}
 
     /**
-     * <p/>
+     * <p> Specifies whether profiling is enabled or disabled for a profiling group.
+     * </p>
      */
     inline UpdateProfilingGroupRequest& WithAgentOrchestrationConfig(AgentOrchestrationConfig&& value) { SetAgentOrchestrationConfig(std::move(value)); return *this;}
 

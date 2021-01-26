@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/networkmanager/NetworkManager_EXPORTS.h>
@@ -23,10 +13,13 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/networkmanager/model/AssociateCustomerGatewayResult.h>
 #include <aws/networkmanager/model/AssociateLinkResult.h>
+#include <aws/networkmanager/model/AssociateTransitGatewayConnectPeerResult.h>
+#include <aws/networkmanager/model/CreateConnectionResult.h>
 #include <aws/networkmanager/model/CreateDeviceResult.h>
 #include <aws/networkmanager/model/CreateGlobalNetworkResult.h>
 #include <aws/networkmanager/model/CreateLinkResult.h>
 #include <aws/networkmanager/model/CreateSiteResult.h>
+#include <aws/networkmanager/model/DeleteConnectionResult.h>
 #include <aws/networkmanager/model/DeleteDeviceResult.h>
 #include <aws/networkmanager/model/DeleteGlobalNetworkResult.h>
 #include <aws/networkmanager/model/DeleteLinkResult.h>
@@ -35,16 +28,20 @@
 #include <aws/networkmanager/model/DescribeGlobalNetworksResult.h>
 #include <aws/networkmanager/model/DisassociateCustomerGatewayResult.h>
 #include <aws/networkmanager/model/DisassociateLinkResult.h>
+#include <aws/networkmanager/model/DisassociateTransitGatewayConnectPeerResult.h>
+#include <aws/networkmanager/model/GetConnectionsResult.h>
 #include <aws/networkmanager/model/GetCustomerGatewayAssociationsResult.h>
 #include <aws/networkmanager/model/GetDevicesResult.h>
 #include <aws/networkmanager/model/GetLinkAssociationsResult.h>
 #include <aws/networkmanager/model/GetLinksResult.h>
 #include <aws/networkmanager/model/GetSitesResult.h>
+#include <aws/networkmanager/model/GetTransitGatewayConnectPeerAssociationsResult.h>
 #include <aws/networkmanager/model/GetTransitGatewayRegistrationsResult.h>
 #include <aws/networkmanager/model/ListTagsForResourceResult.h>
 #include <aws/networkmanager/model/RegisterTransitGatewayResult.h>
 #include <aws/networkmanager/model/TagResourceResult.h>
 #include <aws/networkmanager/model/UntagResourceResult.h>
+#include <aws/networkmanager/model/UpdateConnectionResult.h>
 #include <aws/networkmanager/model/UpdateDeviceResult.h>
 #include <aws/networkmanager/model/UpdateGlobalNetworkResult.h>
 #include <aws/networkmanager/model/UpdateLinkResult.h>
@@ -90,10 +87,13 @@ namespace Model
 {
         class AssociateCustomerGatewayRequest;
         class AssociateLinkRequest;
+        class AssociateTransitGatewayConnectPeerRequest;
+        class CreateConnectionRequest;
         class CreateDeviceRequest;
         class CreateGlobalNetworkRequest;
         class CreateLinkRequest;
         class CreateSiteRequest;
+        class DeleteConnectionRequest;
         class DeleteDeviceRequest;
         class DeleteGlobalNetworkRequest;
         class DeleteLinkRequest;
@@ -102,56 +102,70 @@ namespace Model
         class DescribeGlobalNetworksRequest;
         class DisassociateCustomerGatewayRequest;
         class DisassociateLinkRequest;
+        class DisassociateTransitGatewayConnectPeerRequest;
+        class GetConnectionsRequest;
         class GetCustomerGatewayAssociationsRequest;
         class GetDevicesRequest;
         class GetLinkAssociationsRequest;
         class GetLinksRequest;
         class GetSitesRequest;
+        class GetTransitGatewayConnectPeerAssociationsRequest;
         class GetTransitGatewayRegistrationsRequest;
         class ListTagsForResourceRequest;
         class RegisterTransitGatewayRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
+        class UpdateConnectionRequest;
         class UpdateDeviceRequest;
         class UpdateGlobalNetworkRequest;
         class UpdateLinkRequest;
         class UpdateSiteRequest;
 
-        typedef Aws::Utils::Outcome<AssociateCustomerGatewayResult, Aws::Client::AWSError<NetworkManagerErrors>> AssociateCustomerGatewayOutcome;
-        typedef Aws::Utils::Outcome<AssociateLinkResult, Aws::Client::AWSError<NetworkManagerErrors>> AssociateLinkOutcome;
-        typedef Aws::Utils::Outcome<CreateDeviceResult, Aws::Client::AWSError<NetworkManagerErrors>> CreateDeviceOutcome;
-        typedef Aws::Utils::Outcome<CreateGlobalNetworkResult, Aws::Client::AWSError<NetworkManagerErrors>> CreateGlobalNetworkOutcome;
-        typedef Aws::Utils::Outcome<CreateLinkResult, Aws::Client::AWSError<NetworkManagerErrors>> CreateLinkOutcome;
-        typedef Aws::Utils::Outcome<CreateSiteResult, Aws::Client::AWSError<NetworkManagerErrors>> CreateSiteOutcome;
-        typedef Aws::Utils::Outcome<DeleteDeviceResult, Aws::Client::AWSError<NetworkManagerErrors>> DeleteDeviceOutcome;
-        typedef Aws::Utils::Outcome<DeleteGlobalNetworkResult, Aws::Client::AWSError<NetworkManagerErrors>> DeleteGlobalNetworkOutcome;
-        typedef Aws::Utils::Outcome<DeleteLinkResult, Aws::Client::AWSError<NetworkManagerErrors>> DeleteLinkOutcome;
-        typedef Aws::Utils::Outcome<DeleteSiteResult, Aws::Client::AWSError<NetworkManagerErrors>> DeleteSiteOutcome;
-        typedef Aws::Utils::Outcome<DeregisterTransitGatewayResult, Aws::Client::AWSError<NetworkManagerErrors>> DeregisterTransitGatewayOutcome;
-        typedef Aws::Utils::Outcome<DescribeGlobalNetworksResult, Aws::Client::AWSError<NetworkManagerErrors>> DescribeGlobalNetworksOutcome;
-        typedef Aws::Utils::Outcome<DisassociateCustomerGatewayResult, Aws::Client::AWSError<NetworkManagerErrors>> DisassociateCustomerGatewayOutcome;
-        typedef Aws::Utils::Outcome<DisassociateLinkResult, Aws::Client::AWSError<NetworkManagerErrors>> DisassociateLinkOutcome;
-        typedef Aws::Utils::Outcome<GetCustomerGatewayAssociationsResult, Aws::Client::AWSError<NetworkManagerErrors>> GetCustomerGatewayAssociationsOutcome;
-        typedef Aws::Utils::Outcome<GetDevicesResult, Aws::Client::AWSError<NetworkManagerErrors>> GetDevicesOutcome;
-        typedef Aws::Utils::Outcome<GetLinkAssociationsResult, Aws::Client::AWSError<NetworkManagerErrors>> GetLinkAssociationsOutcome;
-        typedef Aws::Utils::Outcome<GetLinksResult, Aws::Client::AWSError<NetworkManagerErrors>> GetLinksOutcome;
-        typedef Aws::Utils::Outcome<GetSitesResult, Aws::Client::AWSError<NetworkManagerErrors>> GetSitesOutcome;
-        typedef Aws::Utils::Outcome<GetTransitGatewayRegistrationsResult, Aws::Client::AWSError<NetworkManagerErrors>> GetTransitGatewayRegistrationsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<NetworkManagerErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<RegisterTransitGatewayResult, Aws::Client::AWSError<NetworkManagerErrors>> RegisterTransitGatewayOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<NetworkManagerErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<NetworkManagerErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateDeviceResult, Aws::Client::AWSError<NetworkManagerErrors>> UpdateDeviceOutcome;
-        typedef Aws::Utils::Outcome<UpdateGlobalNetworkResult, Aws::Client::AWSError<NetworkManagerErrors>> UpdateGlobalNetworkOutcome;
-        typedef Aws::Utils::Outcome<UpdateLinkResult, Aws::Client::AWSError<NetworkManagerErrors>> UpdateLinkOutcome;
-        typedef Aws::Utils::Outcome<UpdateSiteResult, Aws::Client::AWSError<NetworkManagerErrors>> UpdateSiteOutcome;
+        typedef Aws::Utils::Outcome<AssociateCustomerGatewayResult, NetworkManagerError> AssociateCustomerGatewayOutcome;
+        typedef Aws::Utils::Outcome<AssociateLinkResult, NetworkManagerError> AssociateLinkOutcome;
+        typedef Aws::Utils::Outcome<AssociateTransitGatewayConnectPeerResult, NetworkManagerError> AssociateTransitGatewayConnectPeerOutcome;
+        typedef Aws::Utils::Outcome<CreateConnectionResult, NetworkManagerError> CreateConnectionOutcome;
+        typedef Aws::Utils::Outcome<CreateDeviceResult, NetworkManagerError> CreateDeviceOutcome;
+        typedef Aws::Utils::Outcome<CreateGlobalNetworkResult, NetworkManagerError> CreateGlobalNetworkOutcome;
+        typedef Aws::Utils::Outcome<CreateLinkResult, NetworkManagerError> CreateLinkOutcome;
+        typedef Aws::Utils::Outcome<CreateSiteResult, NetworkManagerError> CreateSiteOutcome;
+        typedef Aws::Utils::Outcome<DeleteConnectionResult, NetworkManagerError> DeleteConnectionOutcome;
+        typedef Aws::Utils::Outcome<DeleteDeviceResult, NetworkManagerError> DeleteDeviceOutcome;
+        typedef Aws::Utils::Outcome<DeleteGlobalNetworkResult, NetworkManagerError> DeleteGlobalNetworkOutcome;
+        typedef Aws::Utils::Outcome<DeleteLinkResult, NetworkManagerError> DeleteLinkOutcome;
+        typedef Aws::Utils::Outcome<DeleteSiteResult, NetworkManagerError> DeleteSiteOutcome;
+        typedef Aws::Utils::Outcome<DeregisterTransitGatewayResult, NetworkManagerError> DeregisterTransitGatewayOutcome;
+        typedef Aws::Utils::Outcome<DescribeGlobalNetworksResult, NetworkManagerError> DescribeGlobalNetworksOutcome;
+        typedef Aws::Utils::Outcome<DisassociateCustomerGatewayResult, NetworkManagerError> DisassociateCustomerGatewayOutcome;
+        typedef Aws::Utils::Outcome<DisassociateLinkResult, NetworkManagerError> DisassociateLinkOutcome;
+        typedef Aws::Utils::Outcome<DisassociateTransitGatewayConnectPeerResult, NetworkManagerError> DisassociateTransitGatewayConnectPeerOutcome;
+        typedef Aws::Utils::Outcome<GetConnectionsResult, NetworkManagerError> GetConnectionsOutcome;
+        typedef Aws::Utils::Outcome<GetCustomerGatewayAssociationsResult, NetworkManagerError> GetCustomerGatewayAssociationsOutcome;
+        typedef Aws::Utils::Outcome<GetDevicesResult, NetworkManagerError> GetDevicesOutcome;
+        typedef Aws::Utils::Outcome<GetLinkAssociationsResult, NetworkManagerError> GetLinkAssociationsOutcome;
+        typedef Aws::Utils::Outcome<GetLinksResult, NetworkManagerError> GetLinksOutcome;
+        typedef Aws::Utils::Outcome<GetSitesResult, NetworkManagerError> GetSitesOutcome;
+        typedef Aws::Utils::Outcome<GetTransitGatewayConnectPeerAssociationsResult, NetworkManagerError> GetTransitGatewayConnectPeerAssociationsOutcome;
+        typedef Aws::Utils::Outcome<GetTransitGatewayRegistrationsResult, NetworkManagerError> GetTransitGatewayRegistrationsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, NetworkManagerError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<RegisterTransitGatewayResult, NetworkManagerError> RegisterTransitGatewayOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, NetworkManagerError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, NetworkManagerError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateConnectionResult, NetworkManagerError> UpdateConnectionOutcome;
+        typedef Aws::Utils::Outcome<UpdateDeviceResult, NetworkManagerError> UpdateDeviceOutcome;
+        typedef Aws::Utils::Outcome<UpdateGlobalNetworkResult, NetworkManagerError> UpdateGlobalNetworkOutcome;
+        typedef Aws::Utils::Outcome<UpdateLinkResult, NetworkManagerError> UpdateLinkOutcome;
+        typedef Aws::Utils::Outcome<UpdateSiteResult, NetworkManagerError> UpdateSiteOutcome;
 
         typedef std::future<AssociateCustomerGatewayOutcome> AssociateCustomerGatewayOutcomeCallable;
         typedef std::future<AssociateLinkOutcome> AssociateLinkOutcomeCallable;
+        typedef std::future<AssociateTransitGatewayConnectPeerOutcome> AssociateTransitGatewayConnectPeerOutcomeCallable;
+        typedef std::future<CreateConnectionOutcome> CreateConnectionOutcomeCallable;
         typedef std::future<CreateDeviceOutcome> CreateDeviceOutcomeCallable;
         typedef std::future<CreateGlobalNetworkOutcome> CreateGlobalNetworkOutcomeCallable;
         typedef std::future<CreateLinkOutcome> CreateLinkOutcomeCallable;
         typedef std::future<CreateSiteOutcome> CreateSiteOutcomeCallable;
+        typedef std::future<DeleteConnectionOutcome> DeleteConnectionOutcomeCallable;
         typedef std::future<DeleteDeviceOutcome> DeleteDeviceOutcomeCallable;
         typedef std::future<DeleteGlobalNetworkOutcome> DeleteGlobalNetworkOutcomeCallable;
         typedef std::future<DeleteLinkOutcome> DeleteLinkOutcomeCallable;
@@ -160,16 +174,20 @@ namespace Model
         typedef std::future<DescribeGlobalNetworksOutcome> DescribeGlobalNetworksOutcomeCallable;
         typedef std::future<DisassociateCustomerGatewayOutcome> DisassociateCustomerGatewayOutcomeCallable;
         typedef std::future<DisassociateLinkOutcome> DisassociateLinkOutcomeCallable;
+        typedef std::future<DisassociateTransitGatewayConnectPeerOutcome> DisassociateTransitGatewayConnectPeerOutcomeCallable;
+        typedef std::future<GetConnectionsOutcome> GetConnectionsOutcomeCallable;
         typedef std::future<GetCustomerGatewayAssociationsOutcome> GetCustomerGatewayAssociationsOutcomeCallable;
         typedef std::future<GetDevicesOutcome> GetDevicesOutcomeCallable;
         typedef std::future<GetLinkAssociationsOutcome> GetLinkAssociationsOutcomeCallable;
         typedef std::future<GetLinksOutcome> GetLinksOutcomeCallable;
         typedef std::future<GetSitesOutcome> GetSitesOutcomeCallable;
+        typedef std::future<GetTransitGatewayConnectPeerAssociationsOutcome> GetTransitGatewayConnectPeerAssociationsOutcomeCallable;
         typedef std::future<GetTransitGatewayRegistrationsOutcome> GetTransitGatewayRegistrationsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<RegisterTransitGatewayOutcome> RegisterTransitGatewayOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+        typedef std::future<UpdateConnectionOutcome> UpdateConnectionOutcomeCallable;
         typedef std::future<UpdateDeviceOutcome> UpdateDeviceOutcomeCallable;
         typedef std::future<UpdateGlobalNetworkOutcome> UpdateGlobalNetworkOutcomeCallable;
         typedef std::future<UpdateLinkOutcome> UpdateLinkOutcomeCallable;
@@ -180,10 +198,13 @@ namespace Model
 
     typedef std::function<void(const NetworkManagerClient*, const Model::AssociateCustomerGatewayRequest&, const Model::AssociateCustomerGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateCustomerGatewayResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::AssociateLinkRequest&, const Model::AssociateLinkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateLinkResponseReceivedHandler;
+    typedef std::function<void(const NetworkManagerClient*, const Model::AssociateTransitGatewayConnectPeerRequest&, const Model::AssociateTransitGatewayConnectPeerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateTransitGatewayConnectPeerResponseReceivedHandler;
+    typedef std::function<void(const NetworkManagerClient*, const Model::CreateConnectionRequest&, const Model::CreateConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConnectionResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::CreateDeviceRequest&, const Model::CreateDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDeviceResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::CreateGlobalNetworkRequest&, const Model::CreateGlobalNetworkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGlobalNetworkResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::CreateLinkRequest&, const Model::CreateLinkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLinkResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::CreateSiteRequest&, const Model::CreateSiteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSiteResponseReceivedHandler;
+    typedef std::function<void(const NetworkManagerClient*, const Model::DeleteConnectionRequest&, const Model::DeleteConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConnectionResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::DeleteDeviceRequest&, const Model::DeleteDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDeviceResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::DeleteGlobalNetworkRequest&, const Model::DeleteGlobalNetworkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGlobalNetworkResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::DeleteLinkRequest&, const Model::DeleteLinkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLinkResponseReceivedHandler;
@@ -192,16 +213,20 @@ namespace Model
     typedef std::function<void(const NetworkManagerClient*, const Model::DescribeGlobalNetworksRequest&, const Model::DescribeGlobalNetworksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGlobalNetworksResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::DisassociateCustomerGatewayRequest&, const Model::DisassociateCustomerGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateCustomerGatewayResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::DisassociateLinkRequest&, const Model::DisassociateLinkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateLinkResponseReceivedHandler;
+    typedef std::function<void(const NetworkManagerClient*, const Model::DisassociateTransitGatewayConnectPeerRequest&, const Model::DisassociateTransitGatewayConnectPeerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateTransitGatewayConnectPeerResponseReceivedHandler;
+    typedef std::function<void(const NetworkManagerClient*, const Model::GetConnectionsRequest&, const Model::GetConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConnectionsResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::GetCustomerGatewayAssociationsRequest&, const Model::GetCustomerGatewayAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCustomerGatewayAssociationsResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::GetDevicesRequest&, const Model::GetDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDevicesResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::GetLinkAssociationsRequest&, const Model::GetLinkAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLinkAssociationsResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::GetLinksRequest&, const Model::GetLinksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLinksResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::GetSitesRequest&, const Model::GetSitesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSitesResponseReceivedHandler;
+    typedef std::function<void(const NetworkManagerClient*, const Model::GetTransitGatewayConnectPeerAssociationsRequest&, const Model::GetTransitGatewayConnectPeerAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransitGatewayConnectPeerAssociationsResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::GetTransitGatewayRegistrationsRequest&, const Model::GetTransitGatewayRegistrationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransitGatewayRegistrationsResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::RegisterTransitGatewayRequest&, const Model::RegisterTransitGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterTransitGatewayResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const NetworkManagerClient*, const Model::UpdateConnectionRequest&, const Model::UpdateConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConnectionResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::UpdateDeviceRequest&, const Model::UpdateDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDeviceResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::UpdateGlobalNetworkRequest&, const Model::UpdateGlobalNetworkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGlobalNetworkResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::UpdateLinkRequest&, const Model::UpdateLinkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLinkResponseReceivedHandler;
@@ -210,7 +235,9 @@ namespace Model
   /**
    * <p>Transit Gateway Network Manager (Network Manager) enables you to create a
    * global network, in which you can monitor your AWS and on-premises networks that
-   * are built around transit gateways.</p>
+   * are built around transit gateways.</p> <p>The Network Manager APIs are supported
+   * in the US West (Oregon) Region only. You must specify the <code>us-west-2</code>
+   * Region in all requests made to Network Manager.</p>
    */
   class AWS_NETWORKMANAGER_API NetworkManagerClient : public Aws::Client::AWSJsonClient
   {
@@ -237,8 +264,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~NetworkManagerClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "NetworkManager"; }
 
 
         /**
@@ -326,6 +351,80 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateLinkAsync(const Model::AssociateLinkRequest& request, const AssociateLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Associates a transit gateway Connect peer with a device, and optionally, with
+         * a link. If you specify a link, it must be associated with the specified device.
+         * </p> <p>You can only associate transit gateway Connect peers that have been
+         * created on a transit gateway that's registered in your global network.</p>
+         * <p>You cannot associate a transit gateway Connect peer with more than one device
+         * and link. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateTransitGatewayConnectPeer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateTransitGatewayConnectPeerOutcome AssociateTransitGatewayConnectPeer(const Model::AssociateTransitGatewayConnectPeerRequest& request) const;
+
+        /**
+         * <p>Associates a transit gateway Connect peer with a device, and optionally, with
+         * a link. If you specify a link, it must be associated with the specified device.
+         * </p> <p>You can only associate transit gateway Connect peers that have been
+         * created on a transit gateway that's registered in your global network.</p>
+         * <p>You cannot associate a transit gateway Connect peer with more than one device
+         * and link. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateTransitGatewayConnectPeer">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateTransitGatewayConnectPeerOutcomeCallable AssociateTransitGatewayConnectPeerCallable(const Model::AssociateTransitGatewayConnectPeerRequest& request) const;
+
+        /**
+         * <p>Associates a transit gateway Connect peer with a device, and optionally, with
+         * a link. If you specify a link, it must be associated with the specified device.
+         * </p> <p>You can only associate transit gateway Connect peers that have been
+         * created on a transit gateway that's registered in your global network.</p>
+         * <p>You cannot associate a transit gateway Connect peer with more than one device
+         * and link. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateTransitGatewayConnectPeer">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateTransitGatewayConnectPeerAsync(const Model::AssociateTransitGatewayConnectPeerRequest& request, const AssociateTransitGatewayConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a connection between two devices. The devices can be a physical or
+         * virtual appliance that connects to a third-party appliance in a VPC, or a
+         * physical appliance that connects to another physical appliance in an on-premises
+         * network.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateConnectionOutcome CreateConnection(const Model::CreateConnectionRequest& request) const;
+
+        /**
+         * <p>Creates a connection between two devices. The devices can be a physical or
+         * virtual appliance that connects to a third-party appliance in a VPC, or a
+         * physical appliance that connects to another physical appliance in an on-premises
+         * network.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnection">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateConnectionOutcomeCallable CreateConnectionCallable(const Model::CreateConnectionRequest& request) const;
+
+        /**
+         * <p>Creates a connection between two devices. The devices can be a physical or
+         * virtual appliance that connects to a third-party appliance in a VPC, or a
+         * physical appliance that connects to another physical appliance in an on-premises
+         * network.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnection">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateConnectionAsync(const Model::CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new device in a global network. If you specify both a site ID and a
@@ -432,6 +531,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateSiteAsync(const Model::CreateSiteRequest& request, const CreateSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified connection in your global network.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteConnectionOutcome DeleteConnection(const Model::DeleteConnectionRequest& request) const;
+
+        /**
+         * <p>Deletes the specified connection in your global network.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteConnection">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteConnectionOutcomeCallable DeleteConnectionCallable(const Model::DeleteConnectionRequest& request) const;
+
+        /**
+         * <p>Deletes the specified connection in your global network.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteConnection">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteConnectionAsync(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing device. You must first disassociate the device from any
@@ -676,6 +803,62 @@ namespace Model
         virtual void DisassociateLinkAsync(const Model::DisassociateLinkRequest& request, const DisassociateLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Disassociates a transit gateway Connect peer from a device and
+         * link.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateTransitGatewayConnectPeer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateTransitGatewayConnectPeerOutcome DisassociateTransitGatewayConnectPeer(const Model::DisassociateTransitGatewayConnectPeerRequest& request) const;
+
+        /**
+         * <p>Disassociates a transit gateway Connect peer from a device and
+         * link.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateTransitGatewayConnectPeer">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateTransitGatewayConnectPeerOutcomeCallable DisassociateTransitGatewayConnectPeerCallable(const Model::DisassociateTransitGatewayConnectPeerRequest& request) const;
+
+        /**
+         * <p>Disassociates a transit gateway Connect peer from a device and
+         * link.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateTransitGatewayConnectPeer">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateTransitGatewayConnectPeerAsync(const Model::DisassociateTransitGatewayConnectPeerRequest& request, const DisassociateTransitGatewayConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets information about one or more of your connections in a global
+         * network.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnections">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetConnectionsOutcome GetConnections(const Model::GetConnectionsRequest& request) const;
+
+        /**
+         * <p>Gets information about one or more of your connections in a global
+         * network.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnections">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetConnectionsOutcomeCallable GetConnectionsCallable(const Model::GetConnectionsRequest& request) const;
+
+        /**
+         * <p>Gets information about one or more of your connections in a global
+         * network.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnections">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetConnectionsAsync(const Model::GetConnectionsRequest& request, const GetConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets the association information for customer gateways that are associated
          * with devices and links in your global network.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCustomerGatewayAssociations">AWS
@@ -822,6 +1005,34 @@ namespace Model
         virtual void GetSitesAsync(const Model::GetSitesRequest& request, const GetSitesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets information about one or more of your transit gateway Connect peer
+         * associations in a global network.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetTransitGatewayConnectPeerAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTransitGatewayConnectPeerAssociationsOutcome GetTransitGatewayConnectPeerAssociations(const Model::GetTransitGatewayConnectPeerAssociationsRequest& request) const;
+
+        /**
+         * <p>Gets information about one or more of your transit gateway Connect peer
+         * associations in a global network.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetTransitGatewayConnectPeerAssociations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetTransitGatewayConnectPeerAssociationsOutcomeCallable GetTransitGatewayConnectPeerAssociationsCallable(const Model::GetTransitGatewayConnectPeerAssociationsRequest& request) const;
+
+        /**
+         * <p>Gets information about one or more of your transit gateway Connect peer
+         * associations in a global network.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetTransitGatewayConnectPeerAssociations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetTransitGatewayConnectPeerAssociationsAsync(const Model::GetTransitGatewayConnectPeerAssociationsRequest& request, const GetTransitGatewayConnectPeerAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets information about the transit gateway registrations in a specified
          * global network.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetTransitGatewayRegistrations">AWS
@@ -959,6 +1170,34 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the information for an existing connection. To remove information for
+         * any of the parameters, specify an empty string.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateConnectionOutcome UpdateConnection(const Model::UpdateConnectionRequest& request) const;
+
+        /**
+         * <p>Updates the information for an existing connection. To remove information for
+         * any of the parameters, specify an empty string.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateConnection">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateConnectionOutcomeCallable UpdateConnectionCallable(const Model::UpdateConnectionRequest& request) const;
+
+        /**
+         * <p>Updates the information for an existing connection. To remove information for
+         * any of the parameters, specify an empty string.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateConnection">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateConnectionAsync(const Model::UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the details for an existing device. To remove information for any of
          * the parameters, specify an empty string.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateDevice">AWS
@@ -1076,10 +1315,13 @@ namespace Model
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AssociateCustomerGatewayAsyncHelper(const Model::AssociateCustomerGatewayRequest& request, const AssociateCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateLinkAsyncHelper(const Model::AssociateLinkRequest& request, const AssociateLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssociateTransitGatewayConnectPeerAsyncHelper(const Model::AssociateTransitGatewayConnectPeerRequest& request, const AssociateTransitGatewayConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateConnectionAsyncHelper(const Model::CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDeviceAsyncHelper(const Model::CreateDeviceRequest& request, const CreateDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateGlobalNetworkAsyncHelper(const Model::CreateGlobalNetworkRequest& request, const CreateGlobalNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLinkAsyncHelper(const Model::CreateLinkRequest& request, const CreateLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSiteAsyncHelper(const Model::CreateSiteRequest& request, const CreateSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteConnectionAsyncHelper(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDeviceAsyncHelper(const Model::DeleteDeviceRequest& request, const DeleteDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteGlobalNetworkAsyncHelper(const Model::DeleteGlobalNetworkRequest& request, const DeleteGlobalNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteLinkAsyncHelper(const Model::DeleteLinkRequest& request, const DeleteLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1088,16 +1330,20 @@ namespace Model
         void DescribeGlobalNetworksAsyncHelper(const Model::DescribeGlobalNetworksRequest& request, const DescribeGlobalNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateCustomerGatewayAsyncHelper(const Model::DisassociateCustomerGatewayRequest& request, const DisassociateCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateLinkAsyncHelper(const Model::DisassociateLinkRequest& request, const DisassociateLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateTransitGatewayConnectPeerAsyncHelper(const Model::DisassociateTransitGatewayConnectPeerRequest& request, const DisassociateTransitGatewayConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetConnectionsAsyncHelper(const Model::GetConnectionsRequest& request, const GetConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCustomerGatewayAssociationsAsyncHelper(const Model::GetCustomerGatewayAssociationsRequest& request, const GetCustomerGatewayAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDevicesAsyncHelper(const Model::GetDevicesRequest& request, const GetDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLinkAssociationsAsyncHelper(const Model::GetLinkAssociationsRequest& request, const GetLinkAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLinksAsyncHelper(const Model::GetLinksRequest& request, const GetLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSitesAsyncHelper(const Model::GetSitesRequest& request, const GetSitesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetTransitGatewayConnectPeerAssociationsAsyncHelper(const Model::GetTransitGatewayConnectPeerAssociationsRequest& request, const GetTransitGatewayConnectPeerAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTransitGatewayRegistrationsAsyncHelper(const Model::GetTransitGatewayRegistrationsRequest& request, const GetTransitGatewayRegistrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterTransitGatewayAsyncHelper(const Model::RegisterTransitGatewayRequest& request, const RegisterTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateConnectionAsyncHelper(const Model::UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDeviceAsyncHelper(const Model::UpdateDeviceRequest& request, const UpdateDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGlobalNetworkAsyncHelper(const Model::UpdateGlobalNetworkRequest& request, const UpdateGlobalNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateLinkAsyncHelper(const Model::UpdateLinkRequest& request, const UpdateLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

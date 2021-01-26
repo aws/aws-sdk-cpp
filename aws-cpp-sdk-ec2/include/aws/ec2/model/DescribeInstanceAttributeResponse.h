@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/AttributeBooleanValue.h>
+#include <aws/ec2/model/EnclaveOptions.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/AttributeValue.h>
 #include <aws/ec2/model/ResponseMetadata.h>
@@ -181,6 +172,37 @@ namespace Model
      * <p>Indicates whether enhanced networking with ENA is enabled.</p>
      */
     inline DescribeInstanceAttributeResponse& WithEnaSupport(AttributeBooleanValue&& value) { SetEnaSupport(std::move(value)); return *this;}
+
+
+    /**
+     * <p>To enable the instance for AWS Nitro Enclaves, set this parameter to
+     * <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     */
+    inline const EnclaveOptions& GetEnclaveOptions() const{ return m_enclaveOptions; }
+
+    /**
+     * <p>To enable the instance for AWS Nitro Enclaves, set this parameter to
+     * <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     */
+    inline void SetEnclaveOptions(const EnclaveOptions& value) { m_enclaveOptions = value; }
+
+    /**
+     * <p>To enable the instance for AWS Nitro Enclaves, set this parameter to
+     * <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     */
+    inline void SetEnclaveOptions(EnclaveOptions&& value) { m_enclaveOptions = std::move(value); }
+
+    /**
+     * <p>To enable the instance for AWS Nitro Enclaves, set this parameter to
+     * <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     */
+    inline DescribeInstanceAttributeResponse& WithEnclaveOptions(const EnclaveOptions& value) { SetEnclaveOptions(value); return *this;}
+
+    /**
+     * <p>To enable the instance for AWS Nitro Enclaves, set this parameter to
+     * <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     */
+    inline DescribeInstanceAttributeResponse& WithEnclaveOptions(EnclaveOptions&& value) { SetEnclaveOptions(std::move(value)); return *this;}
 
 
     /**
@@ -543,6 +565,8 @@ namespace Model
     AttributeBooleanValue m_disableApiTermination;
 
     AttributeBooleanValue m_enaSupport;
+
+    EnclaveOptions m_enclaveOptions;
 
     AttributeBooleanValue m_ebsOptimized;
 

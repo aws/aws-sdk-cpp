@@ -52,7 +52,7 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 
 #if($payloadMember)
   ${CppViewHelper.computeMemberVariableName($shape.payload)}.AddToNode(parentNode);
-  
+
   return payloadDoc.ConvertToString();
 #else
 #set($useRequiredField = true)
@@ -66,7 +66,6 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 
 #if($shape.hasQueryStringMembers())
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/AddQueryStringParametersToRequest.vm")
-
 #end
 
 #if($shape.hasHeaderMembers() || $metadata.targetPrefix)

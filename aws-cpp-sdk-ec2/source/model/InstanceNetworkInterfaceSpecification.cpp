@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/InstanceNetworkInterfaceSpecification.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -48,7 +38,11 @@ InstanceNetworkInterfaceSpecification::InstanceNetworkInterfaceSpecification() :
     m_secondaryPrivateIpAddressCount(0),
     m_secondaryPrivateIpAddressCountHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_interfaceTypeHasBeenSet(false)
+    m_associateCarrierIpAddress(false),
+    m_associateCarrierIpAddressHasBeenSet(false),
+    m_interfaceTypeHasBeenSet(false),
+    m_networkCardIndex(0),
+    m_networkCardIndexHasBeenSet(false)
 {
 }
 
@@ -70,7 +64,11 @@ InstanceNetworkInterfaceSpecification::InstanceNetworkInterfaceSpecification(con
     m_secondaryPrivateIpAddressCount(0),
     m_secondaryPrivateIpAddressCountHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_interfaceTypeHasBeenSet(false)
+    m_associateCarrierIpAddress(false),
+    m_associateCarrierIpAddressHasBeenSet(false),
+    m_interfaceTypeHasBeenSet(false),
+    m_networkCardIndex(0),
+    m_networkCardIndexHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -171,11 +169,23 @@ InstanceNetworkInterfaceSpecification& InstanceNetworkInterfaceSpecification::op
       m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
     }
+    XmlNode associateCarrierIpAddressNode = resultNode.FirstChild("AssociateCarrierIpAddress");
+    if(!associateCarrierIpAddressNode.IsNull())
+    {
+      m_associateCarrierIpAddress = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(associateCarrierIpAddressNode.GetText()).c_str()).c_str());
+      m_associateCarrierIpAddressHasBeenSet = true;
+    }
     XmlNode interfaceTypeNode = resultNode.FirstChild("InterfaceType");
     if(!interfaceTypeNode.IsNull())
     {
       m_interfaceType = Aws::Utils::Xml::DecodeEscapedXmlText(interfaceTypeNode.GetText());
       m_interfaceTypeHasBeenSet = true;
+    }
+    XmlNode networkCardIndexNode = resultNode.FirstChild("NetworkCardIndex");
+    if(!networkCardIndexNode.IsNull())
+    {
+      m_networkCardIndex = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkCardIndexNode.GetText()).c_str()).c_str());
+      m_networkCardIndexHasBeenSet = true;
     }
   }
 
@@ -260,9 +270,19 @@ void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream
       oStream << location << index << locationValue << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
 
+  if(m_associateCarrierIpAddressHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AssociateCarrierIpAddress=" << std::boolalpha << m_associateCarrierIpAddress << "&";
+  }
+
   if(m_interfaceTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".InterfaceType=" << StringUtils::URLEncode(m_interfaceType.c_str()) << "&";
+  }
+
+  if(m_networkCardIndexHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NetworkCardIndex=" << m_networkCardIndex << "&";
   }
 
 }
@@ -333,9 +353,17 @@ void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream
   {
       oStream << location << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
+  if(m_associateCarrierIpAddressHasBeenSet)
+  {
+      oStream << location << ".AssociateCarrierIpAddress=" << std::boolalpha << m_associateCarrierIpAddress << "&";
+  }
   if(m_interfaceTypeHasBeenSet)
   {
       oStream << location << ".InterfaceType=" << StringUtils::URLEncode(m_interfaceType.c_str()) << "&";
+  }
+  if(m_networkCardIndexHasBeenSet)
+  {
+      oStream << location << ".NetworkCardIndex=" << m_networkCardIndex << "&";
   }
 }
 

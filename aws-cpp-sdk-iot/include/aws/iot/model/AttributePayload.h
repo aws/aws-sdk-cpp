@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -131,9 +121,9 @@ namespace Model
      * <p>Specifies whether the list of attributes provided in the
      * <code>AttributePayload</code> is merged with the attributes stored in the
      * registry, instead of overwriting them.</p> <p>To remove an attribute, call
-     * <code>UpdateThing</code> with an empty attribute value.</p> <note> <p>The
+     * <code>UpdateThing</code> with an empty attribute value.</p>  <p>The
      * <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>
-     * or <code>UpdateThingGroup</code>.</p> </note>
+     * or <code>UpdateThingGroup</code>.</p> 
      */
     inline bool GetMerge() const{ return m_merge; }
 
@@ -141,9 +131,9 @@ namespace Model
      * <p>Specifies whether the list of attributes provided in the
      * <code>AttributePayload</code> is merged with the attributes stored in the
      * registry, instead of overwriting them.</p> <p>To remove an attribute, call
-     * <code>UpdateThing</code> with an empty attribute value.</p> <note> <p>The
+     * <code>UpdateThing</code> with an empty attribute value.</p>  <p>The
      * <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>
-     * or <code>UpdateThingGroup</code>.</p> </note>
+     * or <code>UpdateThingGroup</code>.</p> 
      */
     inline bool MergeHasBeenSet() const { return m_mergeHasBeenSet; }
 
@@ -151,9 +141,9 @@ namespace Model
      * <p>Specifies whether the list of attributes provided in the
      * <code>AttributePayload</code> is merged with the attributes stored in the
      * registry, instead of overwriting them.</p> <p>To remove an attribute, call
-     * <code>UpdateThing</code> with an empty attribute value.</p> <note> <p>The
+     * <code>UpdateThing</code> with an empty attribute value.</p>  <p>The
      * <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>
-     * or <code>UpdateThingGroup</code>.</p> </note>
+     * or <code>UpdateThingGroup</code>.</p> 
      */
     inline void SetMerge(bool value) { m_mergeHasBeenSet = true; m_merge = value; }
 
@@ -161,9 +151,9 @@ namespace Model
      * <p>Specifies whether the list of attributes provided in the
      * <code>AttributePayload</code> is merged with the attributes stored in the
      * registry, instead of overwriting them.</p> <p>To remove an attribute, call
-     * <code>UpdateThing</code> with an empty attribute value.</p> <note> <p>The
+     * <code>UpdateThing</code> with an empty attribute value.</p>  <p>The
      * <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>
-     * or <code>UpdateThingGroup</code>.</p> </note>
+     * or <code>UpdateThingGroup</code>.</p> 
      */
     inline AttributePayload& WithMerge(bool value) { SetMerge(value); return *this;}
 

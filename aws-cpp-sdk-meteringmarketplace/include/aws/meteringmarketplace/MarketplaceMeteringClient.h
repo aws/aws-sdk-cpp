@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/meteringmarketplace/MarketplaceMetering_EXPORTS.h>
@@ -69,10 +59,10 @@ namespace Model
         class RegisterUsageRequest;
         class ResolveCustomerRequest;
 
-        typedef Aws::Utils::Outcome<BatchMeterUsageResult, Aws::Client::AWSError<MarketplaceMeteringErrors>> BatchMeterUsageOutcome;
-        typedef Aws::Utils::Outcome<MeterUsageResult, Aws::Client::AWSError<MarketplaceMeteringErrors>> MeterUsageOutcome;
-        typedef Aws::Utils::Outcome<RegisterUsageResult, Aws::Client::AWSError<MarketplaceMeteringErrors>> RegisterUsageOutcome;
-        typedef Aws::Utils::Outcome<ResolveCustomerResult, Aws::Client::AWSError<MarketplaceMeteringErrors>> ResolveCustomerOutcome;
+        typedef Aws::Utils::Outcome<BatchMeterUsageResult, MarketplaceMeteringError> BatchMeterUsageOutcome;
+        typedef Aws::Utils::Outcome<MeterUsageResult, MarketplaceMeteringError> MeterUsageOutcome;
+        typedef Aws::Utils::Outcome<RegisterUsageResult, MarketplaceMeteringError> RegisterUsageOutcome;
+        typedef Aws::Utils::Outcome<ResolveCustomerResult, MarketplaceMeteringError> ResolveCustomerOutcome;
 
         typedef std::future<BatchMeterUsageOutcome> BatchMeterUsageOutcomeCallable;
         typedef std::future<MeterUsageOutcome> MeterUsageOutcomeCallable;
@@ -91,7 +81,11 @@ namespace Model
    * <fullname>AWS Marketplace Metering Service</fullname> <p>This reference provides
    * descriptions of the low-level AWS Marketplace Metering Service API.</p> <p>AWS
    * Marketplace sellers can use this API to submit usage data for custom usage
-   * dimensions.</p> <p> <b>Submitting Metering Records</b> </p> <ul> <li> <p>
+   * dimensions.</p> <p>For information on the permissions you need to use this API,
+   * see <a
+   * href="https://docs.aws.amazon.com/marketplace/latest/userguide/iam-user-policy-for-aws-marketplace-actions.html">AWS
+   * Marketing metering and entitlement API permissions</a> in the <i>AWS Marketplace
+   * Seller Guide.</i> </p> <p> <b>Submitting Metering Records</b> </p> <ul> <li> <p>
    * <i>MeterUsage</i>- Submits the metering record for a Marketplace product.
    * MeterUsage is called from an EC2 instance or a container running on EKS or
    * ECS.</p> </li> <li> <p> <i>BatchMeterUsage</i>- Submits the metering record for
@@ -144,8 +138,6 @@ namespace Model
 
         virtual ~MarketplaceMeteringClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Marketplace Metering"; }
-
 
         /**
          * <p>BatchMeterUsage is called from a SaaS application listed on the AWS
@@ -154,8 +146,11 @@ namespace Model
          * records or a subset of the input records.</p> <p>Every request to
          * BatchMeterUsage is for one product. If you need to meter usage for multiple
          * products, you must make multiple calls to BatchMeterUsage.</p>
-         * <p>BatchMeterUsage can process up to 25 UsageRecords at a time.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>BatchMeterUsage can process up to 25 UsageRecords at a time.</p> <p>A
+         * UsageRecord can optionally include multiple usage allocations, to provide
+         * customers with usagedata split into buckets by tags that you define (or allow
+         * the customer to define).</p> <p>BatchMeterUsage requests must be less than 1MB
+         * in size.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsage">AWS
          * API Reference</a></p>
          */
@@ -168,8 +163,11 @@ namespace Model
          * records or a subset of the input records.</p> <p>Every request to
          * BatchMeterUsage is for one product. If you need to meter usage for multiple
          * products, you must make multiple calls to BatchMeterUsage.</p>
-         * <p>BatchMeterUsage can process up to 25 UsageRecords at a time.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>BatchMeterUsage can process up to 25 UsageRecords at a time.</p> <p>A
+         * UsageRecord can optionally include multiple usage allocations, to provide
+         * customers with usagedata split into buckets by tags that you define (or allow
+         * the customer to define).</p> <p>BatchMeterUsage requests must be less than 1MB
+         * in size.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsage">AWS
          * API Reference</a></p>
          *
@@ -184,8 +182,11 @@ namespace Model
          * records or a subset of the input records.</p> <p>Every request to
          * BatchMeterUsage is for one product. If you need to meter usage for multiple
          * products, you must make multiple calls to BatchMeterUsage.</p>
-         * <p>BatchMeterUsage can process up to 25 UsageRecords at a time.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>BatchMeterUsage can process up to 25 UsageRecords at a time.</p> <p>A
+         * UsageRecord can optionally include multiple usage allocations, to provide
+         * customers with usagedata split into buckets by tags that you define (or allow
+         * the customer to define).</p> <p>BatchMeterUsage requests must be less than 1MB
+         * in size.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsage">AWS
          * API Reference</a></p>
          *
@@ -197,7 +198,9 @@ namespace Model
          * <p>API to emit metering records. For identical requests, the API is idempotent.
          * It simply returns the metering record ID.</p> <p>MeterUsage is authenticated on
          * the buyer's AWS account using credentials from the EC2 instance, ECS task, or
-         * EKS pod.</p><p><h3>See Also:</h3>   <a
+         * EKS pod.</p> <p>MeterUsage can optionally include multiple usage allocations, to
+         * provide customers with usage data split into buckets by tags that you define (or
+         * allow the customer to define).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/MeterUsage">AWS
          * API Reference</a></p>
          */
@@ -207,7 +210,9 @@ namespace Model
          * <p>API to emit metering records. For identical requests, the API is idempotent.
          * It simply returns the metering record ID.</p> <p>MeterUsage is authenticated on
          * the buyer's AWS account using credentials from the EC2 instance, ECS task, or
-         * EKS pod.</p><p><h3>See Also:</h3>   <a
+         * EKS pod.</p> <p>MeterUsage can optionally include multiple usage allocations, to
+         * provide customers with usage data split into buckets by tags that you define (or
+         * allow the customer to define).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/MeterUsage">AWS
          * API Reference</a></p>
          *
@@ -219,7 +224,9 @@ namespace Model
          * <p>API to emit metering records. For identical requests, the API is idempotent.
          * It simply returns the metering record ID.</p> <p>MeterUsage is authenticated on
          * the buyer's AWS account using credentials from the EC2 instance, ECS task, or
-         * EKS pod.</p><p><h3>See Also:</h3>   <a
+         * EKS pod.</p> <p>MeterUsage can optionally include multiple usage allocations, to
+         * provide customers with usage data split into buckets by tags that you define (or
+         * allow the customer to define).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/MeterUsage">AWS
          * API Reference</a></p>
          *

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sqs/SQS_EXPORTS.h>
@@ -92,22 +82,26 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the error happened due to the producer.</p>
+     * <p>Specifies whether the error happened due to the caller of the batch API
+     * action.</p>
      */
     inline bool GetSenderFault() const{ return m_senderFault; }
 
     /**
-     * <p>Specifies whether the error happened due to the producer.</p>
+     * <p>Specifies whether the error happened due to the caller of the batch API
+     * action.</p>
      */
     inline bool SenderFaultHasBeenSet() const { return m_senderFaultHasBeenSet; }
 
     /**
-     * <p>Specifies whether the error happened due to the producer.</p>
+     * <p>Specifies whether the error happened due to the caller of the batch API
+     * action.</p>
      */
     inline void SetSenderFault(bool value) { m_senderFaultHasBeenSet = true; m_senderFault = value; }
 
     /**
-     * <p>Specifies whether the error happened due to the producer.</p>
+     * <p>Specifies whether the error happened due to the caller of the batch API
+     * action.</p>
      */
     inline BatchResultErrorEntry& WithSenderFault(bool value) { SetSenderFault(value); return *this;}
 

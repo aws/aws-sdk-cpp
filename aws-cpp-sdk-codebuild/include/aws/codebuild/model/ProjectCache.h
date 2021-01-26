@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
@@ -170,234 +160,234 @@ namespace Model
 
 
     /**
-     * <p> If you use a <code>LOCAL</code> cache, the local cache mode. You can use one
-     * or more local cache modes at the same time. </p> <ul> <li> <p>
-     * <code>LOCAL_SOURCE_CACHE</code> mode caches Git metadata for primary and
+     * <p>An array of strings that specify the local cache modes. You can use one or
+     * more local cache modes at the same time. This is only used for
+     * <code>LOCAL</code> cache types.</p> <p>Possible values are:</p> <dl>
+     * <dt>LOCAL_SOURCE_CACHE</dt> <dd> <p>Caches Git metadata for primary and
      * secondary sources. After the cache is created, subsequent builds pull only the
      * change between commits. This mode is a good choice for projects with a clean
      * working directory and a source that is a large Git repository. If you choose
      * this option and your project does not use a Git repository (GitHub, GitHub
-     * Enterprise, or Bitbucket), the option is ignored. </p> </li> <li> <p>
-     * <code>LOCAL_DOCKER_LAYER_CACHE</code> mode caches existing Docker layers. This
+     * Enterprise, or Bitbucket), the option is ignored. </p> </dd>
+     * <dt>LOCAL_DOCKER_LAYER_CACHE</dt> <dd> <p>Caches existing Docker layers. This
      * mode is a good choice for projects that build or pull large Docker images. It
      * can prevent the performance issues caused by pulling large Docker images down
-     * from the network. </p> <note> <ul> <li> <p> You can use a Docker layer cache in
-     * the Linux environment only. </p> </li> <li> <p> The <code>privileged</code> flag
+     * from the network. </p>  <ul> <li> <p>You can use a Docker layer cache in
+     * the Linux environment only. </p> </li> <li> <p>The <code>privileged</code> flag
      * must be set so that your project has the required Docker permissions. </p> </li>
-     * <li> <p> You should consider the security implications before you use a Docker
-     * layer cache. </p> </li> </ul> </note> </li> </ul> <ul> <li> <p>
-     * <code>LOCAL_CUSTOM_CACHE</code> mode caches directories you specify in the
-     * buildspec file. This mode is a good choice if your build scenario is not suited
-     * to one of the other three local cache modes. If you use a custom cache: </p>
-     * <ul> <li> <p> Only directories can be specified for caching. You cannot specify
-     * individual files. </p> </li> <li> <p> Symlinks are used to reference cached
-     * directories. </p> </li> <li> <p> Cached directories are linked to your build
-     * before it downloads its project sources. Cached items are overridden if a source
-     * item has the same name. Directories are specified using cache paths in the
-     * buildspec file. </p> </li> </ul> </li> </ul>
+     * <li> <p>You should consider the security implications before you use a Docker
+     * layer cache. </p> </li> </ul>  </dd> <dt>LOCAL_CUSTOM_CACHE</dt> <dd>
+     * <p>Caches directories you specify in the buildspec file. This mode is a good
+     * choice if your build scenario is not suited to one of the other three local
+     * cache modes. If you use a custom cache: </p> <ul> <li> <p>Only directories can
+     * be specified for caching. You cannot specify individual files. </p> </li> <li>
+     * <p>Symlinks are used to reference cached directories. </p> </li> <li> <p>Cached
+     * directories are linked to your build before it downloads its project sources.
+     * Cached items are overridden if a source item has the same name. Directories are
+     * specified using cache paths in the buildspec file. </p> </li> </ul> </dd> </dl>
      */
     inline const Aws::Vector<CacheMode>& GetModes() const{ return m_modes; }
 
     /**
-     * <p> If you use a <code>LOCAL</code> cache, the local cache mode. You can use one
-     * or more local cache modes at the same time. </p> <ul> <li> <p>
-     * <code>LOCAL_SOURCE_CACHE</code> mode caches Git metadata for primary and
+     * <p>An array of strings that specify the local cache modes. You can use one or
+     * more local cache modes at the same time. This is only used for
+     * <code>LOCAL</code> cache types.</p> <p>Possible values are:</p> <dl>
+     * <dt>LOCAL_SOURCE_CACHE</dt> <dd> <p>Caches Git metadata for primary and
      * secondary sources. After the cache is created, subsequent builds pull only the
      * change between commits. This mode is a good choice for projects with a clean
      * working directory and a source that is a large Git repository. If you choose
      * this option and your project does not use a Git repository (GitHub, GitHub
-     * Enterprise, or Bitbucket), the option is ignored. </p> </li> <li> <p>
-     * <code>LOCAL_DOCKER_LAYER_CACHE</code> mode caches existing Docker layers. This
+     * Enterprise, or Bitbucket), the option is ignored. </p> </dd>
+     * <dt>LOCAL_DOCKER_LAYER_CACHE</dt> <dd> <p>Caches existing Docker layers. This
      * mode is a good choice for projects that build or pull large Docker images. It
      * can prevent the performance issues caused by pulling large Docker images down
-     * from the network. </p> <note> <ul> <li> <p> You can use a Docker layer cache in
-     * the Linux environment only. </p> </li> <li> <p> The <code>privileged</code> flag
+     * from the network. </p>  <ul> <li> <p>You can use a Docker layer cache in
+     * the Linux environment only. </p> </li> <li> <p>The <code>privileged</code> flag
      * must be set so that your project has the required Docker permissions. </p> </li>
-     * <li> <p> You should consider the security implications before you use a Docker
-     * layer cache. </p> </li> </ul> </note> </li> </ul> <ul> <li> <p>
-     * <code>LOCAL_CUSTOM_CACHE</code> mode caches directories you specify in the
-     * buildspec file. This mode is a good choice if your build scenario is not suited
-     * to one of the other three local cache modes. If you use a custom cache: </p>
-     * <ul> <li> <p> Only directories can be specified for caching. You cannot specify
-     * individual files. </p> </li> <li> <p> Symlinks are used to reference cached
-     * directories. </p> </li> <li> <p> Cached directories are linked to your build
-     * before it downloads its project sources. Cached items are overridden if a source
-     * item has the same name. Directories are specified using cache paths in the
-     * buildspec file. </p> </li> </ul> </li> </ul>
+     * <li> <p>You should consider the security implications before you use a Docker
+     * layer cache. </p> </li> </ul>  </dd> <dt>LOCAL_CUSTOM_CACHE</dt> <dd>
+     * <p>Caches directories you specify in the buildspec file. This mode is a good
+     * choice if your build scenario is not suited to one of the other three local
+     * cache modes. If you use a custom cache: </p> <ul> <li> <p>Only directories can
+     * be specified for caching. You cannot specify individual files. </p> </li> <li>
+     * <p>Symlinks are used to reference cached directories. </p> </li> <li> <p>Cached
+     * directories are linked to your build before it downloads its project sources.
+     * Cached items are overridden if a source item has the same name. Directories are
+     * specified using cache paths in the buildspec file. </p> </li> </ul> </dd> </dl>
      */
     inline bool ModesHasBeenSet() const { return m_modesHasBeenSet; }
 
     /**
-     * <p> If you use a <code>LOCAL</code> cache, the local cache mode. You can use one
-     * or more local cache modes at the same time. </p> <ul> <li> <p>
-     * <code>LOCAL_SOURCE_CACHE</code> mode caches Git metadata for primary and
+     * <p>An array of strings that specify the local cache modes. You can use one or
+     * more local cache modes at the same time. This is only used for
+     * <code>LOCAL</code> cache types.</p> <p>Possible values are:</p> <dl>
+     * <dt>LOCAL_SOURCE_CACHE</dt> <dd> <p>Caches Git metadata for primary and
      * secondary sources. After the cache is created, subsequent builds pull only the
      * change between commits. This mode is a good choice for projects with a clean
      * working directory and a source that is a large Git repository. If you choose
      * this option and your project does not use a Git repository (GitHub, GitHub
-     * Enterprise, or Bitbucket), the option is ignored. </p> </li> <li> <p>
-     * <code>LOCAL_DOCKER_LAYER_CACHE</code> mode caches existing Docker layers. This
+     * Enterprise, or Bitbucket), the option is ignored. </p> </dd>
+     * <dt>LOCAL_DOCKER_LAYER_CACHE</dt> <dd> <p>Caches existing Docker layers. This
      * mode is a good choice for projects that build or pull large Docker images. It
      * can prevent the performance issues caused by pulling large Docker images down
-     * from the network. </p> <note> <ul> <li> <p> You can use a Docker layer cache in
-     * the Linux environment only. </p> </li> <li> <p> The <code>privileged</code> flag
+     * from the network. </p>  <ul> <li> <p>You can use a Docker layer cache in
+     * the Linux environment only. </p> </li> <li> <p>The <code>privileged</code> flag
      * must be set so that your project has the required Docker permissions. </p> </li>
-     * <li> <p> You should consider the security implications before you use a Docker
-     * layer cache. </p> </li> </ul> </note> </li> </ul> <ul> <li> <p>
-     * <code>LOCAL_CUSTOM_CACHE</code> mode caches directories you specify in the
-     * buildspec file. This mode is a good choice if your build scenario is not suited
-     * to one of the other three local cache modes. If you use a custom cache: </p>
-     * <ul> <li> <p> Only directories can be specified for caching. You cannot specify
-     * individual files. </p> </li> <li> <p> Symlinks are used to reference cached
-     * directories. </p> </li> <li> <p> Cached directories are linked to your build
-     * before it downloads its project sources. Cached items are overridden if a source
-     * item has the same name. Directories are specified using cache paths in the
-     * buildspec file. </p> </li> </ul> </li> </ul>
+     * <li> <p>You should consider the security implications before you use a Docker
+     * layer cache. </p> </li> </ul>  </dd> <dt>LOCAL_CUSTOM_CACHE</dt> <dd>
+     * <p>Caches directories you specify in the buildspec file. This mode is a good
+     * choice if your build scenario is not suited to one of the other three local
+     * cache modes. If you use a custom cache: </p> <ul> <li> <p>Only directories can
+     * be specified for caching. You cannot specify individual files. </p> </li> <li>
+     * <p>Symlinks are used to reference cached directories. </p> </li> <li> <p>Cached
+     * directories are linked to your build before it downloads its project sources.
+     * Cached items are overridden if a source item has the same name. Directories are
+     * specified using cache paths in the buildspec file. </p> </li> </ul> </dd> </dl>
      */
     inline void SetModes(const Aws::Vector<CacheMode>& value) { m_modesHasBeenSet = true; m_modes = value; }
 
     /**
-     * <p> If you use a <code>LOCAL</code> cache, the local cache mode. You can use one
-     * or more local cache modes at the same time. </p> <ul> <li> <p>
-     * <code>LOCAL_SOURCE_CACHE</code> mode caches Git metadata for primary and
+     * <p>An array of strings that specify the local cache modes. You can use one or
+     * more local cache modes at the same time. This is only used for
+     * <code>LOCAL</code> cache types.</p> <p>Possible values are:</p> <dl>
+     * <dt>LOCAL_SOURCE_CACHE</dt> <dd> <p>Caches Git metadata for primary and
      * secondary sources. After the cache is created, subsequent builds pull only the
      * change between commits. This mode is a good choice for projects with a clean
      * working directory and a source that is a large Git repository. If you choose
      * this option and your project does not use a Git repository (GitHub, GitHub
-     * Enterprise, or Bitbucket), the option is ignored. </p> </li> <li> <p>
-     * <code>LOCAL_DOCKER_LAYER_CACHE</code> mode caches existing Docker layers. This
+     * Enterprise, or Bitbucket), the option is ignored. </p> </dd>
+     * <dt>LOCAL_DOCKER_LAYER_CACHE</dt> <dd> <p>Caches existing Docker layers. This
      * mode is a good choice for projects that build or pull large Docker images. It
      * can prevent the performance issues caused by pulling large Docker images down
-     * from the network. </p> <note> <ul> <li> <p> You can use a Docker layer cache in
-     * the Linux environment only. </p> </li> <li> <p> The <code>privileged</code> flag
+     * from the network. </p>  <ul> <li> <p>You can use a Docker layer cache in
+     * the Linux environment only. </p> </li> <li> <p>The <code>privileged</code> flag
      * must be set so that your project has the required Docker permissions. </p> </li>
-     * <li> <p> You should consider the security implications before you use a Docker
-     * layer cache. </p> </li> </ul> </note> </li> </ul> <ul> <li> <p>
-     * <code>LOCAL_CUSTOM_CACHE</code> mode caches directories you specify in the
-     * buildspec file. This mode is a good choice if your build scenario is not suited
-     * to one of the other three local cache modes. If you use a custom cache: </p>
-     * <ul> <li> <p> Only directories can be specified for caching. You cannot specify
-     * individual files. </p> </li> <li> <p> Symlinks are used to reference cached
-     * directories. </p> </li> <li> <p> Cached directories are linked to your build
-     * before it downloads its project sources. Cached items are overridden if a source
-     * item has the same name. Directories are specified using cache paths in the
-     * buildspec file. </p> </li> </ul> </li> </ul>
+     * <li> <p>You should consider the security implications before you use a Docker
+     * layer cache. </p> </li> </ul>  </dd> <dt>LOCAL_CUSTOM_CACHE</dt> <dd>
+     * <p>Caches directories you specify in the buildspec file. This mode is a good
+     * choice if your build scenario is not suited to one of the other three local
+     * cache modes. If you use a custom cache: </p> <ul> <li> <p>Only directories can
+     * be specified for caching. You cannot specify individual files. </p> </li> <li>
+     * <p>Symlinks are used to reference cached directories. </p> </li> <li> <p>Cached
+     * directories are linked to your build before it downloads its project sources.
+     * Cached items are overridden if a source item has the same name. Directories are
+     * specified using cache paths in the buildspec file. </p> </li> </ul> </dd> </dl>
      */
     inline void SetModes(Aws::Vector<CacheMode>&& value) { m_modesHasBeenSet = true; m_modes = std::move(value); }
 
     /**
-     * <p> If you use a <code>LOCAL</code> cache, the local cache mode. You can use one
-     * or more local cache modes at the same time. </p> <ul> <li> <p>
-     * <code>LOCAL_SOURCE_CACHE</code> mode caches Git metadata for primary and
+     * <p>An array of strings that specify the local cache modes. You can use one or
+     * more local cache modes at the same time. This is only used for
+     * <code>LOCAL</code> cache types.</p> <p>Possible values are:</p> <dl>
+     * <dt>LOCAL_SOURCE_CACHE</dt> <dd> <p>Caches Git metadata for primary and
      * secondary sources. After the cache is created, subsequent builds pull only the
      * change between commits. This mode is a good choice for projects with a clean
      * working directory and a source that is a large Git repository. If you choose
      * this option and your project does not use a Git repository (GitHub, GitHub
-     * Enterprise, or Bitbucket), the option is ignored. </p> </li> <li> <p>
-     * <code>LOCAL_DOCKER_LAYER_CACHE</code> mode caches existing Docker layers. This
+     * Enterprise, or Bitbucket), the option is ignored. </p> </dd>
+     * <dt>LOCAL_DOCKER_LAYER_CACHE</dt> <dd> <p>Caches existing Docker layers. This
      * mode is a good choice for projects that build or pull large Docker images. It
      * can prevent the performance issues caused by pulling large Docker images down
-     * from the network. </p> <note> <ul> <li> <p> You can use a Docker layer cache in
-     * the Linux environment only. </p> </li> <li> <p> The <code>privileged</code> flag
+     * from the network. </p>  <ul> <li> <p>You can use a Docker layer cache in
+     * the Linux environment only. </p> </li> <li> <p>The <code>privileged</code> flag
      * must be set so that your project has the required Docker permissions. </p> </li>
-     * <li> <p> You should consider the security implications before you use a Docker
-     * layer cache. </p> </li> </ul> </note> </li> </ul> <ul> <li> <p>
-     * <code>LOCAL_CUSTOM_CACHE</code> mode caches directories you specify in the
-     * buildspec file. This mode is a good choice if your build scenario is not suited
-     * to one of the other three local cache modes. If you use a custom cache: </p>
-     * <ul> <li> <p> Only directories can be specified for caching. You cannot specify
-     * individual files. </p> </li> <li> <p> Symlinks are used to reference cached
-     * directories. </p> </li> <li> <p> Cached directories are linked to your build
-     * before it downloads its project sources. Cached items are overridden if a source
-     * item has the same name. Directories are specified using cache paths in the
-     * buildspec file. </p> </li> </ul> </li> </ul>
+     * <li> <p>You should consider the security implications before you use a Docker
+     * layer cache. </p> </li> </ul>  </dd> <dt>LOCAL_CUSTOM_CACHE</dt> <dd>
+     * <p>Caches directories you specify in the buildspec file. This mode is a good
+     * choice if your build scenario is not suited to one of the other three local
+     * cache modes. If you use a custom cache: </p> <ul> <li> <p>Only directories can
+     * be specified for caching. You cannot specify individual files. </p> </li> <li>
+     * <p>Symlinks are used to reference cached directories. </p> </li> <li> <p>Cached
+     * directories are linked to your build before it downloads its project sources.
+     * Cached items are overridden if a source item has the same name. Directories are
+     * specified using cache paths in the buildspec file. </p> </li> </ul> </dd> </dl>
      */
     inline ProjectCache& WithModes(const Aws::Vector<CacheMode>& value) { SetModes(value); return *this;}
 
     /**
-     * <p> If you use a <code>LOCAL</code> cache, the local cache mode. You can use one
-     * or more local cache modes at the same time. </p> <ul> <li> <p>
-     * <code>LOCAL_SOURCE_CACHE</code> mode caches Git metadata for primary and
+     * <p>An array of strings that specify the local cache modes. You can use one or
+     * more local cache modes at the same time. This is only used for
+     * <code>LOCAL</code> cache types.</p> <p>Possible values are:</p> <dl>
+     * <dt>LOCAL_SOURCE_CACHE</dt> <dd> <p>Caches Git metadata for primary and
      * secondary sources. After the cache is created, subsequent builds pull only the
      * change between commits. This mode is a good choice for projects with a clean
      * working directory and a source that is a large Git repository. If you choose
      * this option and your project does not use a Git repository (GitHub, GitHub
-     * Enterprise, or Bitbucket), the option is ignored. </p> </li> <li> <p>
-     * <code>LOCAL_DOCKER_LAYER_CACHE</code> mode caches existing Docker layers. This
+     * Enterprise, or Bitbucket), the option is ignored. </p> </dd>
+     * <dt>LOCAL_DOCKER_LAYER_CACHE</dt> <dd> <p>Caches existing Docker layers. This
      * mode is a good choice for projects that build or pull large Docker images. It
      * can prevent the performance issues caused by pulling large Docker images down
-     * from the network. </p> <note> <ul> <li> <p> You can use a Docker layer cache in
-     * the Linux environment only. </p> </li> <li> <p> The <code>privileged</code> flag
+     * from the network. </p>  <ul> <li> <p>You can use a Docker layer cache in
+     * the Linux environment only. </p> </li> <li> <p>The <code>privileged</code> flag
      * must be set so that your project has the required Docker permissions. </p> </li>
-     * <li> <p> You should consider the security implications before you use a Docker
-     * layer cache. </p> </li> </ul> </note> </li> </ul> <ul> <li> <p>
-     * <code>LOCAL_CUSTOM_CACHE</code> mode caches directories you specify in the
-     * buildspec file. This mode is a good choice if your build scenario is not suited
-     * to one of the other three local cache modes. If you use a custom cache: </p>
-     * <ul> <li> <p> Only directories can be specified for caching. You cannot specify
-     * individual files. </p> </li> <li> <p> Symlinks are used to reference cached
-     * directories. </p> </li> <li> <p> Cached directories are linked to your build
-     * before it downloads its project sources. Cached items are overridden if a source
-     * item has the same name. Directories are specified using cache paths in the
-     * buildspec file. </p> </li> </ul> </li> </ul>
+     * <li> <p>You should consider the security implications before you use a Docker
+     * layer cache. </p> </li> </ul>  </dd> <dt>LOCAL_CUSTOM_CACHE</dt> <dd>
+     * <p>Caches directories you specify in the buildspec file. This mode is a good
+     * choice if your build scenario is not suited to one of the other three local
+     * cache modes. If you use a custom cache: </p> <ul> <li> <p>Only directories can
+     * be specified for caching. You cannot specify individual files. </p> </li> <li>
+     * <p>Symlinks are used to reference cached directories. </p> </li> <li> <p>Cached
+     * directories are linked to your build before it downloads its project sources.
+     * Cached items are overridden if a source item has the same name. Directories are
+     * specified using cache paths in the buildspec file. </p> </li> </ul> </dd> </dl>
      */
     inline ProjectCache& WithModes(Aws::Vector<CacheMode>&& value) { SetModes(std::move(value)); return *this;}
 
     /**
-     * <p> If you use a <code>LOCAL</code> cache, the local cache mode. You can use one
-     * or more local cache modes at the same time. </p> <ul> <li> <p>
-     * <code>LOCAL_SOURCE_CACHE</code> mode caches Git metadata for primary and
+     * <p>An array of strings that specify the local cache modes. You can use one or
+     * more local cache modes at the same time. This is only used for
+     * <code>LOCAL</code> cache types.</p> <p>Possible values are:</p> <dl>
+     * <dt>LOCAL_SOURCE_CACHE</dt> <dd> <p>Caches Git metadata for primary and
      * secondary sources. After the cache is created, subsequent builds pull only the
      * change between commits. This mode is a good choice for projects with a clean
      * working directory and a source that is a large Git repository. If you choose
      * this option and your project does not use a Git repository (GitHub, GitHub
-     * Enterprise, or Bitbucket), the option is ignored. </p> </li> <li> <p>
-     * <code>LOCAL_DOCKER_LAYER_CACHE</code> mode caches existing Docker layers. This
+     * Enterprise, or Bitbucket), the option is ignored. </p> </dd>
+     * <dt>LOCAL_DOCKER_LAYER_CACHE</dt> <dd> <p>Caches existing Docker layers. This
      * mode is a good choice for projects that build or pull large Docker images. It
      * can prevent the performance issues caused by pulling large Docker images down
-     * from the network. </p> <note> <ul> <li> <p> You can use a Docker layer cache in
-     * the Linux environment only. </p> </li> <li> <p> The <code>privileged</code> flag
+     * from the network. </p>  <ul> <li> <p>You can use a Docker layer cache in
+     * the Linux environment only. </p> </li> <li> <p>The <code>privileged</code> flag
      * must be set so that your project has the required Docker permissions. </p> </li>
-     * <li> <p> You should consider the security implications before you use a Docker
-     * layer cache. </p> </li> </ul> </note> </li> </ul> <ul> <li> <p>
-     * <code>LOCAL_CUSTOM_CACHE</code> mode caches directories you specify in the
-     * buildspec file. This mode is a good choice if your build scenario is not suited
-     * to one of the other three local cache modes. If you use a custom cache: </p>
-     * <ul> <li> <p> Only directories can be specified for caching. You cannot specify
-     * individual files. </p> </li> <li> <p> Symlinks are used to reference cached
-     * directories. </p> </li> <li> <p> Cached directories are linked to your build
-     * before it downloads its project sources. Cached items are overridden if a source
-     * item has the same name. Directories are specified using cache paths in the
-     * buildspec file. </p> </li> </ul> </li> </ul>
+     * <li> <p>You should consider the security implications before you use a Docker
+     * layer cache. </p> </li> </ul>  </dd> <dt>LOCAL_CUSTOM_CACHE</dt> <dd>
+     * <p>Caches directories you specify in the buildspec file. This mode is a good
+     * choice if your build scenario is not suited to one of the other three local
+     * cache modes. If you use a custom cache: </p> <ul> <li> <p>Only directories can
+     * be specified for caching. You cannot specify individual files. </p> </li> <li>
+     * <p>Symlinks are used to reference cached directories. </p> </li> <li> <p>Cached
+     * directories are linked to your build before it downloads its project sources.
+     * Cached items are overridden if a source item has the same name. Directories are
+     * specified using cache paths in the buildspec file. </p> </li> </ul> </dd> </dl>
      */
     inline ProjectCache& AddModes(const CacheMode& value) { m_modesHasBeenSet = true; m_modes.push_back(value); return *this; }
 
     /**
-     * <p> If you use a <code>LOCAL</code> cache, the local cache mode. You can use one
-     * or more local cache modes at the same time. </p> <ul> <li> <p>
-     * <code>LOCAL_SOURCE_CACHE</code> mode caches Git metadata for primary and
+     * <p>An array of strings that specify the local cache modes. You can use one or
+     * more local cache modes at the same time. This is only used for
+     * <code>LOCAL</code> cache types.</p> <p>Possible values are:</p> <dl>
+     * <dt>LOCAL_SOURCE_CACHE</dt> <dd> <p>Caches Git metadata for primary and
      * secondary sources. After the cache is created, subsequent builds pull only the
      * change between commits. This mode is a good choice for projects with a clean
      * working directory and a source that is a large Git repository. If you choose
      * this option and your project does not use a Git repository (GitHub, GitHub
-     * Enterprise, or Bitbucket), the option is ignored. </p> </li> <li> <p>
-     * <code>LOCAL_DOCKER_LAYER_CACHE</code> mode caches existing Docker layers. This
+     * Enterprise, or Bitbucket), the option is ignored. </p> </dd>
+     * <dt>LOCAL_DOCKER_LAYER_CACHE</dt> <dd> <p>Caches existing Docker layers. This
      * mode is a good choice for projects that build or pull large Docker images. It
      * can prevent the performance issues caused by pulling large Docker images down
-     * from the network. </p> <note> <ul> <li> <p> You can use a Docker layer cache in
-     * the Linux environment only. </p> </li> <li> <p> The <code>privileged</code> flag
+     * from the network. </p>  <ul> <li> <p>You can use a Docker layer cache in
+     * the Linux environment only. </p> </li> <li> <p>The <code>privileged</code> flag
      * must be set so that your project has the required Docker permissions. </p> </li>
-     * <li> <p> You should consider the security implications before you use a Docker
-     * layer cache. </p> </li> </ul> </note> </li> </ul> <ul> <li> <p>
-     * <code>LOCAL_CUSTOM_CACHE</code> mode caches directories you specify in the
-     * buildspec file. This mode is a good choice if your build scenario is not suited
-     * to one of the other three local cache modes. If you use a custom cache: </p>
-     * <ul> <li> <p> Only directories can be specified for caching. You cannot specify
-     * individual files. </p> </li> <li> <p> Symlinks are used to reference cached
-     * directories. </p> </li> <li> <p> Cached directories are linked to your build
-     * before it downloads its project sources. Cached items are overridden if a source
-     * item has the same name. Directories are specified using cache paths in the
-     * buildspec file. </p> </li> </ul> </li> </ul>
+     * <li> <p>You should consider the security implications before you use a Docker
+     * layer cache. </p> </li> </ul>  </dd> <dt>LOCAL_CUSTOM_CACHE</dt> <dd>
+     * <p>Caches directories you specify in the buildspec file. This mode is a good
+     * choice if your build scenario is not suited to one of the other three local
+     * cache modes. If you use a custom cache: </p> <ul> <li> <p>Only directories can
+     * be specified for caching. You cannot specify individual files. </p> </li> <li>
+     * <p>Symlinks are used to reference cached directories. </p> </li> <li> <p>Cached
+     * directories are linked to your build before it downloads its project sources.
+     * Cached items are overridden if a source item has the same name. Directories are
+     * specified using cache paths in the buildspec file. </p> </li> </ul> </dd> </dl>
      */
     inline ProjectCache& AddModes(CacheMode&& value) { m_modesHasBeenSet = true; m_modes.push_back(std::move(value)); return *this; }
 

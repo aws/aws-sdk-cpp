@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
@@ -138,99 +128,91 @@ namespace Model
 
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the
-     * savings.</p>
+     * <p> The currency code that AWS used to calculate the savings.</p>
      */
     inline const Aws::String& GetSavingsCurrencyCode() const{ return m_savingsCurrencyCode; }
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the
-     * savings.</p>
+     * <p> The currency code that AWS used to calculate the savings.</p>
      */
     inline bool SavingsCurrencyCodeHasBeenSet() const { return m_savingsCurrencyCodeHasBeenSet; }
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the
-     * savings.</p>
+     * <p> The currency code that AWS used to calculate the savings.</p>
      */
     inline void SetSavingsCurrencyCode(const Aws::String& value) { m_savingsCurrencyCodeHasBeenSet = true; m_savingsCurrencyCode = value; }
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the
-     * savings.</p>
+     * <p> The currency code that AWS used to calculate the savings.</p>
      */
     inline void SetSavingsCurrencyCode(Aws::String&& value) { m_savingsCurrencyCodeHasBeenSet = true; m_savingsCurrencyCode = std::move(value); }
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the
-     * savings.</p>
+     * <p> The currency code that AWS used to calculate the savings.</p>
      */
     inline void SetSavingsCurrencyCode(const char* value) { m_savingsCurrencyCodeHasBeenSet = true; m_savingsCurrencyCode.assign(value); }
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the
-     * savings.</p>
+     * <p> The currency code that AWS used to calculate the savings.</p>
      */
     inline RightsizingRecommendationSummary& WithSavingsCurrencyCode(const Aws::String& value) { SetSavingsCurrencyCode(value); return *this;}
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the
-     * savings.</p>
+     * <p> The currency code that AWS used to calculate the savings.</p>
      */
     inline RightsizingRecommendationSummary& WithSavingsCurrencyCode(Aws::String&& value) { SetSavingsCurrencyCode(std::move(value)); return *this;}
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the
-     * savings.</p>
+     * <p> The currency code that AWS used to calculate the savings.</p>
      */
     inline RightsizingRecommendationSummary& WithSavingsCurrencyCode(const char* value) { SetSavingsCurrencyCode(value); return *this;}
 
 
     /**
      * <p> Savings percentage based on the recommended modifications, relative to the
-     * total On Demand costs associated with these instances.</p>
+     * total On-Demand costs associated with these instances.</p>
      */
     inline const Aws::String& GetSavingsPercentage() const{ return m_savingsPercentage; }
 
     /**
      * <p> Savings percentage based on the recommended modifications, relative to the
-     * total On Demand costs associated with these instances.</p>
+     * total On-Demand costs associated with these instances.</p>
      */
     inline bool SavingsPercentageHasBeenSet() const { return m_savingsPercentageHasBeenSet; }
 
     /**
      * <p> Savings percentage based on the recommended modifications, relative to the
-     * total On Demand costs associated with these instances.</p>
+     * total On-Demand costs associated with these instances.</p>
      */
     inline void SetSavingsPercentage(const Aws::String& value) { m_savingsPercentageHasBeenSet = true; m_savingsPercentage = value; }
 
     /**
      * <p> Savings percentage based on the recommended modifications, relative to the
-     * total On Demand costs associated with these instances.</p>
+     * total On-Demand costs associated with these instances.</p>
      */
     inline void SetSavingsPercentage(Aws::String&& value) { m_savingsPercentageHasBeenSet = true; m_savingsPercentage = std::move(value); }
 
     /**
      * <p> Savings percentage based on the recommended modifications, relative to the
-     * total On Demand costs associated with these instances.</p>
+     * total On-Demand costs associated with these instances.</p>
      */
     inline void SetSavingsPercentage(const char* value) { m_savingsPercentageHasBeenSet = true; m_savingsPercentage.assign(value); }
 
     /**
      * <p> Savings percentage based on the recommended modifications, relative to the
-     * total On Demand costs associated with these instances.</p>
+     * total On-Demand costs associated with these instances.</p>
      */
     inline RightsizingRecommendationSummary& WithSavingsPercentage(const Aws::String& value) { SetSavingsPercentage(value); return *this;}
 
     /**
      * <p> Savings percentage based on the recommended modifications, relative to the
-     * total On Demand costs associated with these instances.</p>
+     * total On-Demand costs associated with these instances.</p>
      */
     inline RightsizingRecommendationSummary& WithSavingsPercentage(Aws::String&& value) { SetSavingsPercentage(std::move(value)); return *this;}
 
     /**
      * <p> Savings percentage based on the recommended modifications, relative to the
-     * total On Demand costs associated with these instances.</p>
+     * total On-Demand costs associated with these instances.</p>
      */
     inline RightsizingRecommendationSummary& WithSavingsPercentage(const char* value) { SetSavingsPercentage(value); return *this;}
 

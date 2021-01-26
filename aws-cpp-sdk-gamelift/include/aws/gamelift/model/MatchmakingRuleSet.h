@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -41,7 +31,7 @@ namespace Model
    * <a>MatchmakingConfiguration</a> objects.</p> <p>A rule set may define the
    * following elements for a match. For detailed information and examples showing
    * how to construct a rule set, see <a
-   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build
+   * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html">Build
    * a FlexMatch Rule Set</a>. </p> <ul> <li> <p>Teams -- Required. A rule set must
    * define one or multiple teams for the match and set minimum and maximum team
    * sizes. For example, a rule set might describe a 4x4 match that requires all

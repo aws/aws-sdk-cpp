@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMedia_EXPORTS.h>
@@ -168,7 +158,7 @@ namespace Model
      * available. We recommend that the media player retrieve a new manifest on a
      * one-second interval. When this type of session is played in a media player, the
      * user interface typically displays a "live" notification, with no scrubber
-     * control for choosing the position in the playback window to display.</p> <note>
+     * control for choosing the position in the playback window to display.</p> 
      * <p>In <code>LIVE</code> mode, the newest available fragments are included in an
      * MPEG-DASH manifest, even if there is a gap between fragments (that is, if a
      * fragment is missing). A gap like this might cause a media player to halt or
@@ -176,7 +166,7 @@ namespace Model
      * manifest if they are older than the newest fragment in the playlist. If the
      * missing fragment becomes available after a subsequent fragment is added to the
      * manifest, the older fragment is not added, and the gap is not filled.</p>
-     * </note> </li> <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this
+     *  </li> <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this
      * type, the MPEG-DASH manifest is updated similarly to how it is updated for
      * <code>LIVE</code> mode except that it starts by including fragments from a given
      * start time. Instead of fragments being added as they are ingested, fragments are
@@ -212,7 +202,7 @@ namespace Model
      * available. We recommend that the media player retrieve a new manifest on a
      * one-second interval. When this type of session is played in a media player, the
      * user interface typically displays a "live" notification, with no scrubber
-     * control for choosing the position in the playback window to display.</p> <note>
+     * control for choosing the position in the playback window to display.</p> 
      * <p>In <code>LIVE</code> mode, the newest available fragments are included in an
      * MPEG-DASH manifest, even if there is a gap between fragments (that is, if a
      * fragment is missing). A gap like this might cause a media player to halt or
@@ -220,7 +210,7 @@ namespace Model
      * manifest if they are older than the newest fragment in the playlist. If the
      * missing fragment becomes available after a subsequent fragment is added to the
      * manifest, the older fragment is not added, and the gap is not filled.</p>
-     * </note> </li> <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this
+     *  </li> <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this
      * type, the MPEG-DASH manifest is updated similarly to how it is updated for
      * <code>LIVE</code> mode except that it starts by including fragments from a given
      * start time. Instead of fragments being added as they are ingested, fragments are
@@ -256,7 +246,7 @@ namespace Model
      * available. We recommend that the media player retrieve a new manifest on a
      * one-second interval. When this type of session is played in a media player, the
      * user interface typically displays a "live" notification, with no scrubber
-     * control for choosing the position in the playback window to display.</p> <note>
+     * control for choosing the position in the playback window to display.</p> 
      * <p>In <code>LIVE</code> mode, the newest available fragments are included in an
      * MPEG-DASH manifest, even if there is a gap between fragments (that is, if a
      * fragment is missing). A gap like this might cause a media player to halt or
@@ -264,7 +254,7 @@ namespace Model
      * manifest if they are older than the newest fragment in the playlist. If the
      * missing fragment becomes available after a subsequent fragment is added to the
      * manifest, the older fragment is not added, and the gap is not filled.</p>
-     * </note> </li> <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this
+     *  </li> <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this
      * type, the MPEG-DASH manifest is updated similarly to how it is updated for
      * <code>LIVE</code> mode except that it starts by including fragments from a given
      * start time. Instead of fragments being added as they are ingested, fragments are
@@ -300,7 +290,7 @@ namespace Model
      * available. We recommend that the media player retrieve a new manifest on a
      * one-second interval. When this type of session is played in a media player, the
      * user interface typically displays a "live" notification, with no scrubber
-     * control for choosing the position in the playback window to display.</p> <note>
+     * control for choosing the position in the playback window to display.</p> 
      * <p>In <code>LIVE</code> mode, the newest available fragments are included in an
      * MPEG-DASH manifest, even if there is a gap between fragments (that is, if a
      * fragment is missing). A gap like this might cause a media player to halt or
@@ -308,7 +298,7 @@ namespace Model
      * manifest if they are older than the newest fragment in the playlist. If the
      * missing fragment becomes available after a subsequent fragment is added to the
      * manifest, the older fragment is not added, and the gap is not filled.</p>
-     * </note> </li> <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this
+     *  </li> <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this
      * type, the MPEG-DASH manifest is updated similarly to how it is updated for
      * <code>LIVE</code> mode except that it starts by including fragments from a given
      * start time. Instead of fragments being added as they are ingested, fragments are
@@ -344,7 +334,7 @@ namespace Model
      * available. We recommend that the media player retrieve a new manifest on a
      * one-second interval. When this type of session is played in a media player, the
      * user interface typically displays a "live" notification, with no scrubber
-     * control for choosing the position in the playback window to display.</p> <note>
+     * control for choosing the position in the playback window to display.</p> 
      * <p>In <code>LIVE</code> mode, the newest available fragments are included in an
      * MPEG-DASH manifest, even if there is a gap between fragments (that is, if a
      * fragment is missing). A gap like this might cause a media player to halt or
@@ -352,7 +342,7 @@ namespace Model
      * manifest if they are older than the newest fragment in the playlist. If the
      * missing fragment becomes available after a subsequent fragment is added to the
      * manifest, the older fragment is not added, and the gap is not filled.</p>
-     * </note> </li> <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this
+     *  </li> <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this
      * type, the MPEG-DASH manifest is updated similarly to how it is updated for
      * <code>LIVE</code> mode except that it starts by including fragments from a given
      * start time. Instead of fragments being added as they are ingested, fragments are
@@ -388,7 +378,7 @@ namespace Model
      * available. We recommend that the media player retrieve a new manifest on a
      * one-second interval. When this type of session is played in a media player, the
      * user interface typically displays a "live" notification, with no scrubber
-     * control for choosing the position in the playback window to display.</p> <note>
+     * control for choosing the position in the playback window to display.</p> 
      * <p>In <code>LIVE</code> mode, the newest available fragments are included in an
      * MPEG-DASH manifest, even if there is a gap between fragments (that is, if a
      * fragment is missing). A gap like this might cause a media player to halt or
@@ -396,7 +386,7 @@ namespace Model
      * manifest if they are older than the newest fragment in the playlist. If the
      * missing fragment becomes available after a subsequent fragment is added to the
      * manifest, the older fragment is not added, and the gap is not filled.</p>
-     * </note> </li> <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this
+     *  </li> <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this
      * type, the MPEG-DASH manifest is updated similarly to how it is updated for
      * <code>LIVE</code> mode except that it starts by including fragments from a given
      * start time. Instead of fragments being added as they are ingested, fragments are

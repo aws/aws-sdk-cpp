@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/snowball/Snowball_EXPORTS.h>
@@ -34,15 +24,15 @@ namespace Model
 {
 
   /**
-   * <p>Contains job logs. Whenever Snowball is used to import data into or export
-   * data out of Amazon S3, you'll have the option of downloading a PDF job report.
-   * Job logs are returned as a part of the response syntax of the
+   * <p>Contains job logs. Whenever a Snow device is used to import data into or
+   * export data out of Amazon S3, you'll have the option of downloading a PDF job
+   * report. Job logs are returned as a part of the response syntax of the
    * <code>DescribeJob</code> action in the <code>JobMetadata</code> data type. The
    * job logs can be accessed for up to 60 minutes after this request has been made.
    * To access any of the job logs after 60 minutes have passed, you'll have to make
    * another call to the <code>DescribeJob</code> action.</p> <p>For import jobs, the
    * PDF job report becomes available at the end of the import process. For export
-   * jobs, your job report typically becomes available while the Snowball for your
+   * jobs, your job report typically becomes available while the Snow device for your
    * job part is being delivered to you.</p> <p>The job report provides you insight
    * into the state of your Amazon S3 data transfer. The report includes details
    * about your job or job part for your records.</p> <p>For deeper visibility into

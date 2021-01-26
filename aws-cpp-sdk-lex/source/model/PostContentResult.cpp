@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/lex/model/PostContentResult.h>
 #include <aws/core/AmazonWebServiceResult.h>
@@ -35,6 +25,8 @@ PostContentResult::PostContentResult() :
 PostContentResult::PostContentResult(PostContentResult&& toMove) : 
     m_contentType(std::move(toMove.m_contentType)),
     m_intentName(std::move(toMove.m_intentName)),
+    m_nluIntentConfidence(std::move(toMove.m_nluIntentConfidence)),
+    m_alternativeIntents(std::move(toMove.m_alternativeIntents)),
     m_slots(std::move(toMove.m_slots)),
     m_sessionAttributes(std::move(toMove.m_sessionAttributes)),
     m_sentimentResponse(std::move(toMove.m_sentimentResponse)),
@@ -44,7 +36,9 @@ PostContentResult::PostContentResult(PostContentResult&& toMove) :
     m_slotToElicit(std::move(toMove.m_slotToElicit)),
     m_inputTranscript(std::move(toMove.m_inputTranscript)),
     m_audioStream(std::move(toMove.m_audioStream)),
-    m_sessionId(std::move(toMove.m_sessionId))
+    m_botVersion(std::move(toMove.m_botVersion)),
+    m_sessionId(std::move(toMove.m_sessionId)),
+    m_activeContexts(std::move(toMove.m_activeContexts))
 {
 }
 
@@ -57,6 +51,8 @@ PostContentResult& PostContentResult::operator=(PostContentResult&& toMove)
 
    m_contentType = std::move(toMove.m_contentType);
    m_intentName = std::move(toMove.m_intentName);
+   m_nluIntentConfidence = std::move(toMove.m_nluIntentConfidence);
+   m_alternativeIntents = std::move(toMove.m_alternativeIntents);
    m_slots = std::move(toMove.m_slots);
    m_sessionAttributes = std::move(toMove.m_sessionAttributes);
    m_sentimentResponse = std::move(toMove.m_sentimentResponse);
@@ -66,7 +62,9 @@ PostContentResult& PostContentResult::operator=(PostContentResult&& toMove)
    m_slotToElicit = std::move(toMove.m_slotToElicit);
    m_inputTranscript = std::move(toMove.m_inputTranscript);
    m_audioStream = std::move(toMove.m_audioStream);
+   m_botVersion = std::move(toMove.m_botVersion);
    m_sessionId = std::move(toMove.m_sessionId);
+   m_activeContexts = std::move(toMove.m_activeContexts);
 
    return *this;
 }
@@ -93,6 +91,18 @@ PostContentResult& PostContentResult::operator =(Aws::AmazonWebServiceResult<Res
   if(intentNameIter != headers.end())
   {
     m_intentName = intentNameIter->second;
+  }
+
+  const auto& nluIntentConfidenceIter = headers.find("x-amz-lex-nlu-intent-confidence");
+  if(nluIntentConfidenceIter != headers.end())
+  {
+    m_nluIntentConfidence = nluIntentConfidenceIter->second;
+  }
+
+  const auto& alternativeIntentsIter = headers.find("x-amz-lex-alternative-intents");
+  if(alternativeIntentsIter != headers.end())
+  {
+    m_alternativeIntents = alternativeIntentsIter->second;
   }
 
   const auto& slotsIter = headers.find("x-amz-lex-slots");
@@ -143,10 +153,22 @@ PostContentResult& PostContentResult::operator =(Aws::AmazonWebServiceResult<Res
     m_inputTranscript = inputTranscriptIter->second;
   }
 
+  const auto& botVersionIter = headers.find("x-amz-lex-bot-version");
+  if(botVersionIter != headers.end())
+  {
+    m_botVersion = botVersionIter->second;
+  }
+
   const auto& sessionIdIter = headers.find("x-amz-lex-session-id");
   if(sessionIdIter != headers.end())
   {
     m_sessionId = sessionIdIter->second;
+  }
+
+  const auto& activeContextsIter = headers.find("x-amz-lex-active-contexts");
+  if(activeContextsIter != headers.end())
+  {
+    m_activeContexts = activeContextsIter->second;
   }
 
    return *this;

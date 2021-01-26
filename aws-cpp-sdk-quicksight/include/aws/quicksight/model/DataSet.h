@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
@@ -25,6 +15,7 @@
 #include <aws/quicksight/model/LogicalTable.h>
 #include <aws/quicksight/model/OutputColumn.h>
 #include <aws/quicksight/model/ColumnGroup.h>
+#include <aws/quicksight/model/ColumnLevelPermissionRule.h>
 #include <utility>
 
 namespace Aws
@@ -437,32 +428,32 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether you want to import the data into SPICE.</p>
+     * <p>A value that indicates whether you want to import the data into SPICE.</p>
      */
     inline const DataSetImportMode& GetImportMode() const{ return m_importMode; }
 
     /**
-     * <p>Indicates whether you want to import the data into SPICE.</p>
+     * <p>A value that indicates whether you want to import the data into SPICE.</p>
      */
     inline bool ImportModeHasBeenSet() const { return m_importModeHasBeenSet; }
 
     /**
-     * <p>Indicates whether you want to import the data into SPICE.</p>
+     * <p>A value that indicates whether you want to import the data into SPICE.</p>
      */
     inline void SetImportMode(const DataSetImportMode& value) { m_importModeHasBeenSet = true; m_importMode = value; }
 
     /**
-     * <p>Indicates whether you want to import the data into SPICE.</p>
+     * <p>A value that indicates whether you want to import the data into SPICE.</p>
      */
     inline void SetImportMode(DataSetImportMode&& value) { m_importModeHasBeenSet = true; m_importMode = std::move(value); }
 
     /**
-     * <p>Indicates whether you want to import the data into SPICE.</p>
+     * <p>A value that indicates whether you want to import the data into SPICE.</p>
      */
     inline DataSet& WithImportMode(const DataSetImportMode& value) { SetImportMode(value); return *this;}
 
     /**
-     * <p>Indicates whether you want to import the data into SPICE.</p>
+     * <p>A value that indicates whether you want to import the data into SPICE.</p>
      */
     inline DataSet& WithImportMode(DataSetImportMode&& value) { SetImportMode(std::move(value)); return *this;}
 
@@ -571,6 +562,55 @@ namespace Model
      */
     inline DataSet& WithRowLevelPermissionDataSet(RowLevelPermissionDataSet&& value) { SetRowLevelPermissionDataSet(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * </code>.</p>
+     */
+    inline const Aws::Vector<ColumnLevelPermissionRule>& GetColumnLevelPermissionRules() const{ return m_columnLevelPermissionRules; }
+
+    /**
+     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * </code>.</p>
+     */
+    inline bool ColumnLevelPermissionRulesHasBeenSet() const { return m_columnLevelPermissionRulesHasBeenSet; }
+
+    /**
+     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * </code>.</p>
+     */
+    inline void SetColumnLevelPermissionRules(const Aws::Vector<ColumnLevelPermissionRule>& value) { m_columnLevelPermissionRulesHasBeenSet = true; m_columnLevelPermissionRules = value; }
+
+    /**
+     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * </code>.</p>
+     */
+    inline void SetColumnLevelPermissionRules(Aws::Vector<ColumnLevelPermissionRule>&& value) { m_columnLevelPermissionRulesHasBeenSet = true; m_columnLevelPermissionRules = std::move(value); }
+
+    /**
+     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * </code>.</p>
+     */
+    inline DataSet& WithColumnLevelPermissionRules(const Aws::Vector<ColumnLevelPermissionRule>& value) { SetColumnLevelPermissionRules(value); return *this;}
+
+    /**
+     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * </code>.</p>
+     */
+    inline DataSet& WithColumnLevelPermissionRules(Aws::Vector<ColumnLevelPermissionRule>&& value) { SetColumnLevelPermissionRules(std::move(value)); return *this;}
+
+    /**
+     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * </code>.</p>
+     */
+    inline DataSet& AddColumnLevelPermissionRules(const ColumnLevelPermissionRule& value) { m_columnLevelPermissionRulesHasBeenSet = true; m_columnLevelPermissionRules.push_back(value); return *this; }
+
+    /**
+     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * </code>.</p>
+     */
+    inline DataSet& AddColumnLevelPermissionRules(ColumnLevelPermissionRule&& value) { m_columnLevelPermissionRulesHasBeenSet = true; m_columnLevelPermissionRules.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_arn;
@@ -608,6 +648,9 @@ namespace Model
 
     RowLevelPermissionDataSet m_rowLevelPermissionDataSet;
     bool m_rowLevelPermissionDataSetHasBeenSet;
+
+    Aws::Vector<ColumnLevelPermissionRule> m_columnLevelPermissionRules;
+    bool m_columnLevelPermissionRulesHasBeenSet;
   };
 
 } // namespace Model

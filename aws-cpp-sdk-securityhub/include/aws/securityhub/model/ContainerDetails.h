@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -171,42 +161,74 @@ namespace Model
 
 
     /**
-     * <p>The date and time when the container started.</p>
+     * <p>Indicates when the container started.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetLaunchedAt() const{ return m_launchedAt; }
 
     /**
-     * <p>The date and time when the container started.</p>
+     * <p>Indicates when the container started.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool LaunchedAtHasBeenSet() const { return m_launchedAtHasBeenSet; }
 
     /**
-     * <p>The date and time when the container started.</p>
+     * <p>Indicates when the container started.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLaunchedAt(const Aws::String& value) { m_launchedAtHasBeenSet = true; m_launchedAt = value; }
 
     /**
-     * <p>The date and time when the container started.</p>
+     * <p>Indicates when the container started.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLaunchedAt(Aws::String&& value) { m_launchedAtHasBeenSet = true; m_launchedAt = std::move(value); }
 
     /**
-     * <p>The date and time when the container started.</p>
+     * <p>Indicates when the container started.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLaunchedAt(const char* value) { m_launchedAtHasBeenSet = true; m_launchedAt.assign(value); }
 
     /**
-     * <p>The date and time when the container started.</p>
+     * <p>Indicates when the container started.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline ContainerDetails& WithLaunchedAt(const Aws::String& value) { SetLaunchedAt(value); return *this;}
 
     /**
-     * <p>The date and time when the container started.</p>
+     * <p>Indicates when the container started.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline ContainerDetails& WithLaunchedAt(Aws::String&& value) { SetLaunchedAt(std::move(value)); return *this;}
 
     /**
-     * <p>The date and time when the container started.</p>
+     * <p>Indicates when the container started.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline ContainerDetails& WithLaunchedAt(const char* value) { SetLaunchedAt(value); return *this;}
 

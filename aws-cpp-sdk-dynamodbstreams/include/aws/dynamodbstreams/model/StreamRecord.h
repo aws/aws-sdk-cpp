@@ -1,20 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dynamodbstreams/DynamoDBStreams_EXPORTS.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodbstreams/model/StreamViewType.h>
@@ -38,7 +29,9 @@ namespace Model
 
   /**
    * <p>A description of a single data modification that was performed on an item in
-   * a DynamoDB table.</p>
+   * a DynamoDB table.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/StreamRecord">AWS
+   * API Reference</a></p>
    */
   class AWS_DYNAMODBSTREAMS_API StreamRecord
   {
@@ -47,6 +40,43 @@ namespace Model
     StreamRecord(Aws::Utils::Json::JsonView jsonValue);
     StreamRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The approximate date and time when the stream record was created, in <a
+     * href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+     */
+    inline const Aws::Utils::DateTime& GetApproximateCreationDateTime() const{ return m_approximateCreationDateTime; }
+
+    /**
+     * <p>The approximate date and time when the stream record was created, in <a
+     * href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+     */
+    inline bool ApproximateCreationDateTimeHasBeenSet() const { return m_approximateCreationDateTimeHasBeenSet; }
+
+    /**
+     * <p>The approximate date and time when the stream record was created, in <a
+     * href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+     */
+    inline void SetApproximateCreationDateTime(const Aws::Utils::DateTime& value) { m_approximateCreationDateTimeHasBeenSet = true; m_approximateCreationDateTime = value; }
+
+    /**
+     * <p>The approximate date and time when the stream record was created, in <a
+     * href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+     */
+    inline void SetApproximateCreationDateTime(Aws::Utils::DateTime&& value) { m_approximateCreationDateTimeHasBeenSet = true; m_approximateCreationDateTime = std::move(value); }
+
+    /**
+     * <p>The approximate date and time when the stream record was created, in <a
+     * href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+     */
+    inline StreamRecord& WithApproximateCreationDateTime(const Aws::Utils::DateTime& value) { SetApproximateCreationDateTime(value); return *this;}
+
+    /**
+     * <p>The approximate date and time when the stream record was created, in <a
+     * href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+     */
+    inline StreamRecord& WithApproximateCreationDateTime(Aws::Utils::DateTime&& value) { SetApproximateCreationDateTime(std::move(value)); return *this;}
 
 
     /**
@@ -296,71 +326,74 @@ namespace Model
 
     /**
      * <p>The type of data from the modified DynamoDB item that was captured in this
-     * stream record:</p> <ul> <li><p><code>KEYS_ONLY</code> - only the key attributes
-     * of the modified item.</p></li> <li><p><code>NEW_IMAGE</code> - the entire item,
-     * as it appears after it was modified.</p></li> <li><p><code>OLD_IMAGE</code> -
-     * the entire item, as it appeared before it was modified.</p></li>
-     * <li><p><code>NEW_AND_OLD_IMAGES</code> — both the new and the old item images of
-     * the item.</p></li> </ul>
+     * stream record:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - only the key
+     * attributes of the modified item.</p> </li> <li> <p> <code>NEW_IMAGE</code> - the
+     * entire item, as it appeared after it was modified.</p> </li> <li> <p>
+     * <code>OLD_IMAGE</code> - the entire item, as it appeared before it was
+     * modified.</p> </li> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and
+     * the old item images of the item.</p> </li> </ul>
      */
     inline const StreamViewType& GetStreamViewType() const{ return m_streamViewType; }
 
     /**
      * <p>The type of data from the modified DynamoDB item that was captured in this
-     * stream record:</p> <ul> <li><p><code>KEYS_ONLY</code> - only the key attributes
-     * of the modified item.</p></li> <li><p><code>NEW_IMAGE</code> - the entire item,
-     * as it appears after it was modified.</p></li> <li><p><code>OLD_IMAGE</code> -
-     * the entire item, as it appeared before it was modified.</p></li>
-     * <li><p><code>NEW_AND_OLD_IMAGES</code> — both the new and the old item images of
-     * the item.</p></li> </ul>
+     * stream record:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - only the key
+     * attributes of the modified item.</p> </li> <li> <p> <code>NEW_IMAGE</code> - the
+     * entire item, as it appeared after it was modified.</p> </li> <li> <p>
+     * <code>OLD_IMAGE</code> - the entire item, as it appeared before it was
+     * modified.</p> </li> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and
+     * the old item images of the item.</p> </li> </ul>
      */
     inline bool StreamViewTypeHasBeenSet() const { return m_streamViewTypeHasBeenSet; }
 
     /**
      * <p>The type of data from the modified DynamoDB item that was captured in this
-     * stream record:</p> <ul> <li><p><code>KEYS_ONLY</code> - only the key attributes
-     * of the modified item.</p></li> <li><p><code>NEW_IMAGE</code> - the entire item,
-     * as it appears after it was modified.</p></li> <li><p><code>OLD_IMAGE</code> -
-     * the entire item, as it appeared before it was modified.</p></li>
-     * <li><p><code>NEW_AND_OLD_IMAGES</code> — both the new and the old item images of
-     * the item.</p></li> </ul>
+     * stream record:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - only the key
+     * attributes of the modified item.</p> </li> <li> <p> <code>NEW_IMAGE</code> - the
+     * entire item, as it appeared after it was modified.</p> </li> <li> <p>
+     * <code>OLD_IMAGE</code> - the entire item, as it appeared before it was
+     * modified.</p> </li> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and
+     * the old item images of the item.</p> </li> </ul>
      */
     inline void SetStreamViewType(const StreamViewType& value) { m_streamViewTypeHasBeenSet = true; m_streamViewType = value; }
 
     /**
      * <p>The type of data from the modified DynamoDB item that was captured in this
-     * stream record:</p> <ul> <li><p><code>KEYS_ONLY</code> - only the key attributes
-     * of the modified item.</p></li> <li><p><code>NEW_IMAGE</code> - the entire item,
-     * as it appears after it was modified.</p></li> <li><p><code>OLD_IMAGE</code> -
-     * the entire item, as it appeared before it was modified.</p></li>
-     * <li><p><code>NEW_AND_OLD_IMAGES</code> — both the new and the old item images of
-     * the item.</p></li> </ul>
+     * stream record:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - only the key
+     * attributes of the modified item.</p> </li> <li> <p> <code>NEW_IMAGE</code> - the
+     * entire item, as it appeared after it was modified.</p> </li> <li> <p>
+     * <code>OLD_IMAGE</code> - the entire item, as it appeared before it was
+     * modified.</p> </li> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and
+     * the old item images of the item.</p> </li> </ul>
      */
     inline void SetStreamViewType(StreamViewType&& value) { m_streamViewTypeHasBeenSet = true; m_streamViewType = std::move(value); }
 
     /**
      * <p>The type of data from the modified DynamoDB item that was captured in this
-     * stream record:</p> <ul> <li><p><code>KEYS_ONLY</code> - only the key attributes
-     * of the modified item.</p></li> <li><p><code>NEW_IMAGE</code> - the entire item,
-     * as it appears after it was modified.</p></li> <li><p><code>OLD_IMAGE</code> -
-     * the entire item, as it appeared before it was modified.</p></li>
-     * <li><p><code>NEW_AND_OLD_IMAGES</code> — both the new and the old item images of
-     * the item.</p></li> </ul>
+     * stream record:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - only the key
+     * attributes of the modified item.</p> </li> <li> <p> <code>NEW_IMAGE</code> - the
+     * entire item, as it appeared after it was modified.</p> </li> <li> <p>
+     * <code>OLD_IMAGE</code> - the entire item, as it appeared before it was
+     * modified.</p> </li> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and
+     * the old item images of the item.</p> </li> </ul>
      */
     inline StreamRecord& WithStreamViewType(const StreamViewType& value) { SetStreamViewType(value); return *this;}
 
     /**
      * <p>The type of data from the modified DynamoDB item that was captured in this
-     * stream record:</p> <ul> <li><p><code>KEYS_ONLY</code> - only the key attributes
-     * of the modified item.</p></li> <li><p><code>NEW_IMAGE</code> - the entire item,
-     * as it appears after it was modified.</p></li> <li><p><code>OLD_IMAGE</code> -
-     * the entire item, as it appeared before it was modified.</p></li>
-     * <li><p><code>NEW_AND_OLD_IMAGES</code> — both the new and the old item images of
-     * the item.</p></li> </ul>
+     * stream record:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - only the key
+     * attributes of the modified item.</p> </li> <li> <p> <code>NEW_IMAGE</code> - the
+     * entire item, as it appeared after it was modified.</p> </li> <li> <p>
+     * <code>OLD_IMAGE</code> - the entire item, as it appeared before it was
+     * modified.</p> </li> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and
+     * the old item images of the item.</p> </li> </ul>
      */
     inline StreamRecord& WithStreamViewType(StreamViewType&& value) { SetStreamViewType(std::move(value)); return *this;}
 
   private:
+
+    Aws::Utils::DateTime m_approximateCreationDateTime;
+    bool m_approximateCreationDateTimeHasBeenSet;
 
     Aws::Map<Aws::String, AttributeValue> m_keys;
     bool m_keysHasBeenSet;

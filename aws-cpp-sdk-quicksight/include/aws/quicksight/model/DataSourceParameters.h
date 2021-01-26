@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
@@ -23,6 +13,7 @@
 #include <aws/quicksight/model/JiraParameters.h>
 #include <aws/quicksight/model/MariaDbParameters.h>
 #include <aws/quicksight/model/MySqlParameters.h>
+#include <aws/quicksight/model/OracleParameters.h>
 #include <aws/quicksight/model/PostgreSqlParameters.h>
 #include <aws/quicksight/model/PrestoParameters.h>
 #include <aws/quicksight/model/RdsParameters.h>
@@ -313,6 +304,37 @@ namespace Model
      * <p>MySQL parameters.</p>
      */
     inline DataSourceParameters& WithMySqlParameters(MySqlParameters&& value) { SetMySqlParameters(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Oracle parameters.</p>
+     */
+    inline const OracleParameters& GetOracleParameters() const{ return m_oracleParameters; }
+
+    /**
+     * <p>Oracle parameters.</p>
+     */
+    inline bool OracleParametersHasBeenSet() const { return m_oracleParametersHasBeenSet; }
+
+    /**
+     * <p>Oracle parameters.</p>
+     */
+    inline void SetOracleParameters(const OracleParameters& value) { m_oracleParametersHasBeenSet = true; m_oracleParameters = value; }
+
+    /**
+     * <p>Oracle parameters.</p>
+     */
+    inline void SetOracleParameters(OracleParameters&& value) { m_oracleParametersHasBeenSet = true; m_oracleParameters = std::move(value); }
+
+    /**
+     * <p>Oracle parameters.</p>
+     */
+    inline DataSourceParameters& WithOracleParameters(const OracleParameters& value) { SetOracleParameters(value); return *this;}
+
+    /**
+     * <p>Oracle parameters.</p>
+     */
+    inline DataSourceParameters& WithOracleParameters(OracleParameters&& value) { SetOracleParameters(std::move(value)); return *this;}
 
 
     /**
@@ -680,6 +702,9 @@ namespace Model
 
     MySqlParameters m_mySqlParameters;
     bool m_mySqlParametersHasBeenSet;
+
+    OracleParameters m_oracleParameters;
+    bool m_oracleParametersHasBeenSet;
 
     PostgreSqlParameters m_postgreSqlParameters;
     bool m_postgreSqlParametersHasBeenSet;

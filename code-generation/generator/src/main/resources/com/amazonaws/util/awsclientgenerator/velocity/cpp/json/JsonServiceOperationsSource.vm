@@ -9,7 +9,7 @@
 #set($constText = "const ")
 #set($refText = "")
 #end
-#if($operation.request)
+#if($operation.request)## if (operation has a request) -----------------------------------
 ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation.request.shape.name}& request) const
 {
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientOperationRequestRequiredMemberValidate.vm")
@@ -20,7 +20,7 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
 #set($partIndex = 1)
 #set($uriPartString = "${uriParts.get(0)}")
 #set($queryStart = false)
-#if($uriPartString.contains("?"))
+#if($uriPartString.contains("?"))## if (request uri contains query) ----------
 #set($queryStart = true)
 #set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
 #if(!$pathAndQuery.get(0).isEmpty())
@@ -30,8 +30,8 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
   ss.str("${pathAndQuery.get(1)}");
 #else
   ss << "$uriPartString";
-#end
-#foreach($var in $uriVars)
+#end## ---------------------------- if (request uri contains query) end ------
+#foreach($var in $uriVars)## for (parameter in request uri parameters) -------
 #set($varIndex = $partIndex - 1)
 #set($partShapeMember = $operation.request.shape.getMemberByLocationName($uriVars.get($varIndex)))
 #if($partShapeMember.shape.enum)
@@ -54,40 +54,22 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
 #end
 #end
 #set($partIndex = $partIndex + 1)
-#end
+#end## --------------------- for (parameter in request uri parameters) end ---
 #if(!$queryStart)
   uri.SetPath(uri.GetPath() + ss.str());
 #else
   uri.SetQueryString(ss.str());
 #end
 #if($operation.result && $operation.result.shape.hasStreamMembers())
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method});
+  return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}));
 #elseif($operation.result && $operation.result.shape.hasEventStreamMembers())
   request.SetResponseStreamFactory(
       [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method});
+  return ${operation.name}Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}));
 #else
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.request.shape.signerName});
+  return ${operation.name}Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.request.shape.signerName}));
 #end
-  if(outcome.IsSuccess())
-  {
-#if(${operation.result})
-#if($operation.result.shape.hasEventStreamMembers())
-    return ${operation.name}Outcome(NoResult());
-#elseif($operation.result.shape.hasStreamMembers())
-    return ${operation.name}Outcome(${operation.result.shape.name}(outcome.GetResultWithOwnership()));
-#else
-    return ${operation.name}Outcome(${operation.result.shape.name}(outcome.GetResult()));
-#end
-#else
-    return ${operation.name}Outcome(NoResult());
-#end
-  }
-  else
-  {
-    return ${operation.name}Outcome(outcome.GetError());
-  }
 }
 
 ${operation.name}OutcomeCallable ${className}::${operation.name}Callable(${constText}${operation.request.shape.name}& request) const
@@ -108,7 +90,7 @@ void ${className}::${operation.name}AsyncHelper(${constText}${operation.request.
   handler(this, request, ${operation.name}(request), context);
 }
 
-#else
+#else## if (operation doesn't have a request) --------------------------------------------
 ${operation.name}Outcome ${className}::${operation.name}() const
 {
   Aws::StringStream ss;
@@ -118,28 +100,12 @@ ${operation.name}Outcome ${className}::${operation.name}() const
   ss << m_uri << "${operation.http.requestUri}";
 #end
 #if($operation.result && $operation.result.shape.hasStreamMembers())
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}");
+  return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}"));
 #elseif($operation.request)
-  JsonOutcome outcome = MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}");
+  return ${operation.name}Outcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}"));
 #else
-  JsonOutcome outcome = MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, Aws::Auth::SIGV4_SIGNER, "${operation.name}");
+  return ${operation.name}Outcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, Aws::Auth::SIGV4_SIGNER, "${operation.name}"));
 #end
-  if(outcome.IsSuccess())
-  {
-#if(${operation.result})
-#if($operation.result.shape.hasStreamMembers())
-    return ${operation.name}Outcome(${operation.result.shape.name}(outcome.GetResultWithOwnership()));
-#else
-    return ${operation.name}Outcome(${operation.result.shape.name}(outcome.GetResult()));
-#end
-#else
-    return ${operation.name}Outcome(NoResult());
-#end
-  }
-  else
-  {
-    return ${operation.name}Outcome(outcome.GetError());
-  }
 }
 
 ${operation.name}OutcomeCallable ${className}::${operation.name}Callable() const
@@ -160,6 +126,6 @@ void ${className}::${operation.name}AsyncHelper(const ${operation.name}ResponseR
   handler(this, ${operation.name}(), context);
 }
 
-#end
+#end## if (operation have a request) end -------------------------------------------------
 #end
 #end

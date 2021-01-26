@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
@@ -80,59 +70,67 @@ namespace Model
 
 
     /**
-     * <p>The x-coordinate from the top left of the landmark expressed as the ratio of
-     * the width of the image. For example, if the image is 700 x 200 and the
-     * x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>
+     * <p>The x-coordinate of the landmark expressed as a ratio of the width of the
+     * image. The x-coordinate is measured from the left-side of the image. For
+     * example, if the image is 700 pixels wide and the x-coordinate of the landmark is
+     * at 350 pixels, this value is 0.5. </p>
      */
     inline double GetX() const{ return m_x; }
 
     /**
-     * <p>The x-coordinate from the top left of the landmark expressed as the ratio of
-     * the width of the image. For example, if the image is 700 x 200 and the
-     * x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>
+     * <p>The x-coordinate of the landmark expressed as a ratio of the width of the
+     * image. The x-coordinate is measured from the left-side of the image. For
+     * example, if the image is 700 pixels wide and the x-coordinate of the landmark is
+     * at 350 pixels, this value is 0.5. </p>
      */
     inline bool XHasBeenSet() const { return m_xHasBeenSet; }
 
     /**
-     * <p>The x-coordinate from the top left of the landmark expressed as the ratio of
-     * the width of the image. For example, if the image is 700 x 200 and the
-     * x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>
+     * <p>The x-coordinate of the landmark expressed as a ratio of the width of the
+     * image. The x-coordinate is measured from the left-side of the image. For
+     * example, if the image is 700 pixels wide and the x-coordinate of the landmark is
+     * at 350 pixels, this value is 0.5. </p>
      */
     inline void SetX(double value) { m_xHasBeenSet = true; m_x = value; }
 
     /**
-     * <p>The x-coordinate from the top left of the landmark expressed as the ratio of
-     * the width of the image. For example, if the image is 700 x 200 and the
-     * x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>
+     * <p>The x-coordinate of the landmark expressed as a ratio of the width of the
+     * image. The x-coordinate is measured from the left-side of the image. For
+     * example, if the image is 700 pixels wide and the x-coordinate of the landmark is
+     * at 350 pixels, this value is 0.5. </p>
      */
     inline Landmark& WithX(double value) { SetX(value); return *this;}
 
 
     /**
-     * <p>The y-coordinate from the top left of the landmark expressed as the ratio of
-     * the height of the image. For example, if the image is 700 x 200 and the
-     * y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>
+     * <p>The y-coordinate of the landmark expressed as a ratio of the height of the
+     * image. The y-coordinate is measured from the top of the image. For example, if
+     * the image height is 200 pixels and the y-coordinate of the landmark is at 50
+     * pixels, this value is 0.25.</p>
      */
     inline double GetY() const{ return m_y; }
 
     /**
-     * <p>The y-coordinate from the top left of the landmark expressed as the ratio of
-     * the height of the image. For example, if the image is 700 x 200 and the
-     * y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>
+     * <p>The y-coordinate of the landmark expressed as a ratio of the height of the
+     * image. The y-coordinate is measured from the top of the image. For example, if
+     * the image height is 200 pixels and the y-coordinate of the landmark is at 50
+     * pixels, this value is 0.25.</p>
      */
     inline bool YHasBeenSet() const { return m_yHasBeenSet; }
 
     /**
-     * <p>The y-coordinate from the top left of the landmark expressed as the ratio of
-     * the height of the image. For example, if the image is 700 x 200 and the
-     * y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>
+     * <p>The y-coordinate of the landmark expressed as a ratio of the height of the
+     * image. The y-coordinate is measured from the top of the image. For example, if
+     * the image height is 200 pixels and the y-coordinate of the landmark is at 50
+     * pixels, this value is 0.25.</p>
      */
     inline void SetY(double value) { m_yHasBeenSet = true; m_y = value; }
 
     /**
-     * <p>The y-coordinate from the top left of the landmark expressed as the ratio of
-     * the height of the image. For example, if the image is 700 x 200 and the
-     * y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>
+     * <p>The y-coordinate of the landmark expressed as a ratio of the height of the
+     * image. The y-coordinate is measured from the top of the image. For example, if
+     * the image height is 200 pixels and the y-coordinate of the landmark is at 50
+     * pixels, this value is 0.25.</p>
      */
     inline Landmark& WithY(double value) { SetY(value); return *this;}
 

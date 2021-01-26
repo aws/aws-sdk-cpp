@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
@@ -153,7 +143,7 @@ namespace Model
      * used only when exporting a snapshot for external access.</p> <p>When using this
      * parameter to export a snapshot, be sure Amazon ElastiCache has the needed
      * permissions to this S3 bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
      * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon
      * ElastiCache User Guide</i>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting
@@ -166,7 +156,7 @@ namespace Model
      * used only when exporting a snapshot for external access.</p> <p>When using this
      * parameter to export a snapshot, be sure Amazon ElastiCache has the needed
      * permissions to this S3 bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
      * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon
      * ElastiCache User Guide</i>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting
@@ -179,7 +169,7 @@ namespace Model
      * used only when exporting a snapshot for external access.</p> <p>When using this
      * parameter to export a snapshot, be sure Amazon ElastiCache has the needed
      * permissions to this S3 bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
      * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon
      * ElastiCache User Guide</i>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting
@@ -192,7 +182,7 @@ namespace Model
      * used only when exporting a snapshot for external access.</p> <p>When using this
      * parameter to export a snapshot, be sure Amazon ElastiCache has the needed
      * permissions to this S3 bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
      * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon
      * ElastiCache User Guide</i>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting
@@ -205,7 +195,7 @@ namespace Model
      * used only when exporting a snapshot for external access.</p> <p>When using this
      * parameter to export a snapshot, be sure Amazon ElastiCache has the needed
      * permissions to this S3 bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
      * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon
      * ElastiCache User Guide</i>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting
@@ -218,7 +208,7 @@ namespace Model
      * used only when exporting a snapshot for external access.</p> <p>When using this
      * parameter to export a snapshot, be sure Amazon ElastiCache has the needed
      * permissions to this S3 bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
      * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon
      * ElastiCache User Guide</i>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting
@@ -231,7 +221,7 @@ namespace Model
      * used only when exporting a snapshot for external access.</p> <p>When using this
      * parameter to export a snapshot, be sure Amazon ElastiCache has the needed
      * permissions to this S3 bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
      * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon
      * ElastiCache User Guide</i>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting
@@ -244,7 +234,7 @@ namespace Model
      * used only when exporting a snapshot for external access.</p> <p>When using this
      * parameter to export a snapshot, be sure Amazon ElastiCache has the needed
      * permissions to this S3 bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
      * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon
      * ElastiCache User Guide</i>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting

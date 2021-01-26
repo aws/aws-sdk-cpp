@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -52,42 +42,42 @@ namespace Model
 
 
     /**
-     * <p>A list of supported placement groups types.</p>
+     * <p>The supported placement group types.</p>
      */
     inline const Aws::Vector<PlacementGroupStrategy>& GetSupportedStrategies() const{ return m_supportedStrategies; }
 
     /**
-     * <p>A list of supported placement groups types.</p>
+     * <p>The supported placement group types.</p>
      */
     inline bool SupportedStrategiesHasBeenSet() const { return m_supportedStrategiesHasBeenSet; }
 
     /**
-     * <p>A list of supported placement groups types.</p>
+     * <p>The supported placement group types.</p>
      */
     inline void SetSupportedStrategies(const Aws::Vector<PlacementGroupStrategy>& value) { m_supportedStrategiesHasBeenSet = true; m_supportedStrategies = value; }
 
     /**
-     * <p>A list of supported placement groups types.</p>
+     * <p>The supported placement group types.</p>
      */
     inline void SetSupportedStrategies(Aws::Vector<PlacementGroupStrategy>&& value) { m_supportedStrategiesHasBeenSet = true; m_supportedStrategies = std::move(value); }
 
     /**
-     * <p>A list of supported placement groups types.</p>
+     * <p>The supported placement group types.</p>
      */
     inline PlacementGroupInfo& WithSupportedStrategies(const Aws::Vector<PlacementGroupStrategy>& value) { SetSupportedStrategies(value); return *this;}
 
     /**
-     * <p>A list of supported placement groups types.</p>
+     * <p>The supported placement group types.</p>
      */
     inline PlacementGroupInfo& WithSupportedStrategies(Aws::Vector<PlacementGroupStrategy>&& value) { SetSupportedStrategies(std::move(value)); return *this;}
 
     /**
-     * <p>A list of supported placement groups types.</p>
+     * <p>The supported placement group types.</p>
      */
     inline PlacementGroupInfo& AddSupportedStrategies(const PlacementGroupStrategy& value) { m_supportedStrategiesHasBeenSet = true; m_supportedStrategies.push_back(value); return *this; }
 
     /**
-     * <p>A list of supported placement groups types.</p>
+     * <p>The supported placement group types.</p>
      */
     inline PlacementGroupInfo& AddSupportedStrategies(PlacementGroupStrategy&& value) { m_supportedStrategiesHasBeenSet = true; m_supportedStrategies.push_back(std::move(value)); return *this; }
 

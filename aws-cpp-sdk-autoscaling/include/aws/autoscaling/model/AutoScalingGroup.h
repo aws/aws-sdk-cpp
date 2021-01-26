@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
@@ -306,26 +296,22 @@ namespace Model
 
 
     /**
-     * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start.</p>
+     * <p>The duration of the default cooldown period, in seconds.</p>
      */
     inline int GetDefaultCooldown() const{ return m_defaultCooldown; }
 
     /**
-     * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start.</p>
+     * <p>The duration of the default cooldown period, in seconds.</p>
      */
     inline bool DefaultCooldownHasBeenSet() const { return m_defaultCooldownHasBeenSet; }
 
     /**
-     * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start.</p>
+     * <p>The duration of the default cooldown period, in seconds.</p>
      */
     inline void SetDefaultCooldown(int value) { m_defaultCooldownHasBeenSet = true; m_defaultCooldown = value; }
 
     /**
-     * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start.</p>
+     * <p>The duration of the default cooldown period, in seconds.</p>
      */
     inline AutoScalingGroup& WithDefaultCooldown(int value) { SetDefaultCooldown(value); return *this;}
 
@@ -812,50 +798,50 @@ namespace Model
 
 
     /**
-     * <p>The current state of the group when <a>DeleteAutoScalingGroup</a> is in
-     * progress.</p>
+     * <p>The current state of the group when the <a>DeleteAutoScalingGroup</a>
+     * operation is in progress.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The current state of the group when <a>DeleteAutoScalingGroup</a> is in
-     * progress.</p>
+     * <p>The current state of the group when the <a>DeleteAutoScalingGroup</a>
+     * operation is in progress.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The current state of the group when <a>DeleteAutoScalingGroup</a> is in
-     * progress.</p>
+     * <p>The current state of the group when the <a>DeleteAutoScalingGroup</a>
+     * operation is in progress.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The current state of the group when <a>DeleteAutoScalingGroup</a> is in
-     * progress.</p>
+     * <p>The current state of the group when the <a>DeleteAutoScalingGroup</a>
+     * operation is in progress.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The current state of the group when <a>DeleteAutoScalingGroup</a> is in
-     * progress.</p>
+     * <p>The current state of the group when the <a>DeleteAutoScalingGroup</a>
+     * operation is in progress.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The current state of the group when <a>DeleteAutoScalingGroup</a> is in
-     * progress.</p>
+     * <p>The current state of the group when the <a>DeleteAutoScalingGroup</a>
+     * operation is in progress.</p>
      */
     inline AutoScalingGroup& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The current state of the group when <a>DeleteAutoScalingGroup</a> is in
-     * progress.</p>
+     * <p>The current state of the group when the <a>DeleteAutoScalingGroup</a>
+     * operation is in progress.</p>
      */
     inline AutoScalingGroup& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The current state of the group when <a>DeleteAutoScalingGroup</a> is in
-     * progress.</p>
+     * <p>The current state of the group when the <a>DeleteAutoScalingGroup</a>
+     * operation is in progress.</p>
      */
     inline AutoScalingGroup& WithStatus(const char* value) { SetStatus(value); return *this;}
 
@@ -1023,27 +1009,48 @@ namespace Model
 
     /**
      * <p>The maximum amount of time, in seconds, that an instance can be in
-     * service.</p> <p>Valid Range: Minimum value of 604800.</p>
+     * service.</p> <p>Valid Range: Minimum value of 0.</p>
      */
     inline int GetMaxInstanceLifetime() const{ return m_maxInstanceLifetime; }
 
     /**
      * <p>The maximum amount of time, in seconds, that an instance can be in
-     * service.</p> <p>Valid Range: Minimum value of 604800.</p>
+     * service.</p> <p>Valid Range: Minimum value of 0.</p>
      */
     inline bool MaxInstanceLifetimeHasBeenSet() const { return m_maxInstanceLifetimeHasBeenSet; }
 
     /**
      * <p>The maximum amount of time, in seconds, that an instance can be in
-     * service.</p> <p>Valid Range: Minimum value of 604800.</p>
+     * service.</p> <p>Valid Range: Minimum value of 0.</p>
      */
     inline void SetMaxInstanceLifetime(int value) { m_maxInstanceLifetimeHasBeenSet = true; m_maxInstanceLifetime = value; }
 
     /**
      * <p>The maximum amount of time, in seconds, that an instance can be in
-     * service.</p> <p>Valid Range: Minimum value of 604800.</p>
+     * service.</p> <p>Valid Range: Minimum value of 0.</p>
      */
     inline AutoScalingGroup& WithMaxInstanceLifetime(int value) { SetMaxInstanceLifetime(value); return *this;}
+
+
+    /**
+     * <p>Indicates whether Capacity Rebalancing is enabled.</p>
+     */
+    inline bool GetCapacityRebalance() const{ return m_capacityRebalance; }
+
+    /**
+     * <p>Indicates whether Capacity Rebalancing is enabled.</p>
+     */
+    inline bool CapacityRebalanceHasBeenSet() const { return m_capacityRebalanceHasBeenSet; }
+
+    /**
+     * <p>Indicates whether Capacity Rebalancing is enabled.</p>
+     */
+    inline void SetCapacityRebalance(bool value) { m_capacityRebalanceHasBeenSet = true; m_capacityRebalance = value; }
+
+    /**
+     * <p>Indicates whether Capacity Rebalancing is enabled.</p>
+     */
+    inline AutoScalingGroup& WithCapacityRebalance(bool value) { SetCapacityRebalance(value); return *this;}
 
   private:
 
@@ -1124,6 +1131,9 @@ namespace Model
 
     int m_maxInstanceLifetime;
     bool m_maxInstanceLifetimeHasBeenSet;
+
+    bool m_capacityRebalance;
+    bool m_capacityRebalanceHasBeenSet;
   };
 
 } // namespace Model

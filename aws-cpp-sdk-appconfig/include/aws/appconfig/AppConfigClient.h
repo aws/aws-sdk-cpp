@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appconfig/AppConfig_EXPORTS.h>
@@ -25,17 +15,20 @@
 #include <aws/appconfig/model/CreateConfigurationProfileResult.h>
 #include <aws/appconfig/model/CreateDeploymentStrategyResult.h>
 #include <aws/appconfig/model/CreateEnvironmentResult.h>
+#include <aws/appconfig/model/CreateHostedConfigurationVersionResult.h>
 #include <aws/appconfig/model/GetApplicationResult.h>
 #include <aws/appconfig/model/GetConfigurationResult.h>
 #include <aws/appconfig/model/GetConfigurationProfileResult.h>
 #include <aws/appconfig/model/GetDeploymentResult.h>
 #include <aws/appconfig/model/GetDeploymentStrategyResult.h>
 #include <aws/appconfig/model/GetEnvironmentResult.h>
+#include <aws/appconfig/model/GetHostedConfigurationVersionResult.h>
 #include <aws/appconfig/model/ListApplicationsResult.h>
 #include <aws/appconfig/model/ListConfigurationProfilesResult.h>
 #include <aws/appconfig/model/ListDeploymentStrategiesResult.h>
 #include <aws/appconfig/model/ListDeploymentsResult.h>
 #include <aws/appconfig/model/ListEnvironmentsResult.h>
+#include <aws/appconfig/model/ListHostedConfigurationVersionsResult.h>
 #include <aws/appconfig/model/ListTagsForResourceResult.h>
 #include <aws/appconfig/model/StartDeploymentResult.h>
 #include <aws/appconfig/model/StopDeploymentResult.h>
@@ -87,21 +80,25 @@ namespace Model
         class CreateConfigurationProfileRequest;
         class CreateDeploymentStrategyRequest;
         class CreateEnvironmentRequest;
+        class CreateHostedConfigurationVersionRequest;
         class DeleteApplicationRequest;
         class DeleteConfigurationProfileRequest;
         class DeleteDeploymentStrategyRequest;
         class DeleteEnvironmentRequest;
+        class DeleteHostedConfigurationVersionRequest;
         class GetApplicationRequest;
         class GetConfigurationRequest;
         class GetConfigurationProfileRequest;
         class GetDeploymentRequest;
         class GetDeploymentStrategyRequest;
         class GetEnvironmentRequest;
+        class GetHostedConfigurationVersionRequest;
         class ListApplicationsRequest;
         class ListConfigurationProfilesRequest;
         class ListDeploymentStrategiesRequest;
         class ListDeploymentsRequest;
         class ListEnvironmentsRequest;
+        class ListHostedConfigurationVersionsRequest;
         class ListTagsForResourceRequest;
         class StartDeploymentRequest;
         class StopDeploymentRequest;
@@ -113,55 +110,63 @@ namespace Model
         class UpdateEnvironmentRequest;
         class ValidateConfigurationRequest;
 
-        typedef Aws::Utils::Outcome<CreateApplicationResult, Aws::Client::AWSError<AppConfigErrors>> CreateApplicationOutcome;
-        typedef Aws::Utils::Outcome<CreateConfigurationProfileResult, Aws::Client::AWSError<AppConfigErrors>> CreateConfigurationProfileOutcome;
-        typedef Aws::Utils::Outcome<CreateDeploymentStrategyResult, Aws::Client::AWSError<AppConfigErrors>> CreateDeploymentStrategyOutcome;
-        typedef Aws::Utils::Outcome<CreateEnvironmentResult, Aws::Client::AWSError<AppConfigErrors>> CreateEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AppConfigErrors>> DeleteApplicationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AppConfigErrors>> DeleteConfigurationProfileOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AppConfigErrors>> DeleteDeploymentStrategyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AppConfigErrors>> DeleteEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<GetApplicationResult, Aws::Client::AWSError<AppConfigErrors>> GetApplicationOutcome;
-        typedef Aws::Utils::Outcome<GetConfigurationResult, Aws::Client::AWSError<AppConfigErrors>> GetConfigurationOutcome;
-        typedef Aws::Utils::Outcome<GetConfigurationProfileResult, Aws::Client::AWSError<AppConfigErrors>> GetConfigurationProfileOutcome;
-        typedef Aws::Utils::Outcome<GetDeploymentResult, Aws::Client::AWSError<AppConfigErrors>> GetDeploymentOutcome;
-        typedef Aws::Utils::Outcome<GetDeploymentStrategyResult, Aws::Client::AWSError<AppConfigErrors>> GetDeploymentStrategyOutcome;
-        typedef Aws::Utils::Outcome<GetEnvironmentResult, Aws::Client::AWSError<AppConfigErrors>> GetEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<ListApplicationsResult, Aws::Client::AWSError<AppConfigErrors>> ListApplicationsOutcome;
-        typedef Aws::Utils::Outcome<ListConfigurationProfilesResult, Aws::Client::AWSError<AppConfigErrors>> ListConfigurationProfilesOutcome;
-        typedef Aws::Utils::Outcome<ListDeploymentStrategiesResult, Aws::Client::AWSError<AppConfigErrors>> ListDeploymentStrategiesOutcome;
-        typedef Aws::Utils::Outcome<ListDeploymentsResult, Aws::Client::AWSError<AppConfigErrors>> ListDeploymentsOutcome;
-        typedef Aws::Utils::Outcome<ListEnvironmentsResult, Aws::Client::AWSError<AppConfigErrors>> ListEnvironmentsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<AppConfigErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<StartDeploymentResult, Aws::Client::AWSError<AppConfigErrors>> StartDeploymentOutcome;
-        typedef Aws::Utils::Outcome<StopDeploymentResult, Aws::Client::AWSError<AppConfigErrors>> StopDeploymentOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AppConfigErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AppConfigErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateApplicationResult, Aws::Client::AWSError<AppConfigErrors>> UpdateApplicationOutcome;
-        typedef Aws::Utils::Outcome<UpdateConfigurationProfileResult, Aws::Client::AWSError<AppConfigErrors>> UpdateConfigurationProfileOutcome;
-        typedef Aws::Utils::Outcome<UpdateDeploymentStrategyResult, Aws::Client::AWSError<AppConfigErrors>> UpdateDeploymentStrategyOutcome;
-        typedef Aws::Utils::Outcome<UpdateEnvironmentResult, Aws::Client::AWSError<AppConfigErrors>> UpdateEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AppConfigErrors>> ValidateConfigurationOutcome;
+        typedef Aws::Utils::Outcome<CreateApplicationResult, AppConfigError> CreateApplicationOutcome;
+        typedef Aws::Utils::Outcome<CreateConfigurationProfileResult, AppConfigError> CreateConfigurationProfileOutcome;
+        typedef Aws::Utils::Outcome<CreateDeploymentStrategyResult, AppConfigError> CreateDeploymentStrategyOutcome;
+        typedef Aws::Utils::Outcome<CreateEnvironmentResult, AppConfigError> CreateEnvironmentOutcome;
+        typedef Aws::Utils::Outcome<CreateHostedConfigurationVersionResult, AppConfigError> CreateHostedConfigurationVersionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, AppConfigError> DeleteApplicationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, AppConfigError> DeleteConfigurationProfileOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, AppConfigError> DeleteDeploymentStrategyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, AppConfigError> DeleteEnvironmentOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, AppConfigError> DeleteHostedConfigurationVersionOutcome;
+        typedef Aws::Utils::Outcome<GetApplicationResult, AppConfigError> GetApplicationOutcome;
+        typedef Aws::Utils::Outcome<GetConfigurationResult, AppConfigError> GetConfigurationOutcome;
+        typedef Aws::Utils::Outcome<GetConfigurationProfileResult, AppConfigError> GetConfigurationProfileOutcome;
+        typedef Aws::Utils::Outcome<GetDeploymentResult, AppConfigError> GetDeploymentOutcome;
+        typedef Aws::Utils::Outcome<GetDeploymentStrategyResult, AppConfigError> GetDeploymentStrategyOutcome;
+        typedef Aws::Utils::Outcome<GetEnvironmentResult, AppConfigError> GetEnvironmentOutcome;
+        typedef Aws::Utils::Outcome<GetHostedConfigurationVersionResult, AppConfigError> GetHostedConfigurationVersionOutcome;
+        typedef Aws::Utils::Outcome<ListApplicationsResult, AppConfigError> ListApplicationsOutcome;
+        typedef Aws::Utils::Outcome<ListConfigurationProfilesResult, AppConfigError> ListConfigurationProfilesOutcome;
+        typedef Aws::Utils::Outcome<ListDeploymentStrategiesResult, AppConfigError> ListDeploymentStrategiesOutcome;
+        typedef Aws::Utils::Outcome<ListDeploymentsResult, AppConfigError> ListDeploymentsOutcome;
+        typedef Aws::Utils::Outcome<ListEnvironmentsResult, AppConfigError> ListEnvironmentsOutcome;
+        typedef Aws::Utils::Outcome<ListHostedConfigurationVersionsResult, AppConfigError> ListHostedConfigurationVersionsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, AppConfigError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<StartDeploymentResult, AppConfigError> StartDeploymentOutcome;
+        typedef Aws::Utils::Outcome<StopDeploymentResult, AppConfigError> StopDeploymentOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, AppConfigError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, AppConfigError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateApplicationResult, AppConfigError> UpdateApplicationOutcome;
+        typedef Aws::Utils::Outcome<UpdateConfigurationProfileResult, AppConfigError> UpdateConfigurationProfileOutcome;
+        typedef Aws::Utils::Outcome<UpdateDeploymentStrategyResult, AppConfigError> UpdateDeploymentStrategyOutcome;
+        typedef Aws::Utils::Outcome<UpdateEnvironmentResult, AppConfigError> UpdateEnvironmentOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, AppConfigError> ValidateConfigurationOutcome;
 
         typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
         typedef std::future<CreateConfigurationProfileOutcome> CreateConfigurationProfileOutcomeCallable;
         typedef std::future<CreateDeploymentStrategyOutcome> CreateDeploymentStrategyOutcomeCallable;
         typedef std::future<CreateEnvironmentOutcome> CreateEnvironmentOutcomeCallable;
+        typedef std::future<CreateHostedConfigurationVersionOutcome> CreateHostedConfigurationVersionOutcomeCallable;
         typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
         typedef std::future<DeleteConfigurationProfileOutcome> DeleteConfigurationProfileOutcomeCallable;
         typedef std::future<DeleteDeploymentStrategyOutcome> DeleteDeploymentStrategyOutcomeCallable;
         typedef std::future<DeleteEnvironmentOutcome> DeleteEnvironmentOutcomeCallable;
+        typedef std::future<DeleteHostedConfigurationVersionOutcome> DeleteHostedConfigurationVersionOutcomeCallable;
         typedef std::future<GetApplicationOutcome> GetApplicationOutcomeCallable;
         typedef std::future<GetConfigurationOutcome> GetConfigurationOutcomeCallable;
         typedef std::future<GetConfigurationProfileOutcome> GetConfigurationProfileOutcomeCallable;
         typedef std::future<GetDeploymentOutcome> GetDeploymentOutcomeCallable;
         typedef std::future<GetDeploymentStrategyOutcome> GetDeploymentStrategyOutcomeCallable;
         typedef std::future<GetEnvironmentOutcome> GetEnvironmentOutcomeCallable;
+        typedef std::future<GetHostedConfigurationVersionOutcome> GetHostedConfigurationVersionOutcomeCallable;
         typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
         typedef std::future<ListConfigurationProfilesOutcome> ListConfigurationProfilesOutcomeCallable;
         typedef std::future<ListDeploymentStrategiesOutcome> ListDeploymentStrategiesOutcomeCallable;
         typedef std::future<ListDeploymentsOutcome> ListDeploymentsOutcomeCallable;
         typedef std::future<ListEnvironmentsOutcome> ListEnvironmentsOutcomeCallable;
+        typedef std::future<ListHostedConfigurationVersionsOutcome> ListHostedConfigurationVersionsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<StartDeploymentOutcome> StartDeploymentOutcomeCallable;
         typedef std::future<StopDeploymentOutcome> StopDeploymentOutcomeCallable;
@@ -180,21 +185,25 @@ namespace Model
     typedef std::function<void(const AppConfigClient*, const Model::CreateConfigurationProfileRequest&, const Model::CreateConfigurationProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConfigurationProfileResponseReceivedHandler;
     typedef std::function<void(const AppConfigClient*, const Model::CreateDeploymentStrategyRequest&, const Model::CreateDeploymentStrategyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDeploymentStrategyResponseReceivedHandler;
     typedef std::function<void(const AppConfigClient*, const Model::CreateEnvironmentRequest&, const Model::CreateEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEnvironmentResponseReceivedHandler;
+    typedef std::function<void(const AppConfigClient*, const Model::CreateHostedConfigurationVersionRequest&, Model::CreateHostedConfigurationVersionOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHostedConfigurationVersionResponseReceivedHandler;
     typedef std::function<void(const AppConfigClient*, const Model::DeleteApplicationRequest&, const Model::DeleteApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationResponseReceivedHandler;
     typedef std::function<void(const AppConfigClient*, const Model::DeleteConfigurationProfileRequest&, const Model::DeleteConfigurationProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConfigurationProfileResponseReceivedHandler;
     typedef std::function<void(const AppConfigClient*, const Model::DeleteDeploymentStrategyRequest&, const Model::DeleteDeploymentStrategyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDeploymentStrategyResponseReceivedHandler;
     typedef std::function<void(const AppConfigClient*, const Model::DeleteEnvironmentRequest&, const Model::DeleteEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEnvironmentResponseReceivedHandler;
+    typedef std::function<void(const AppConfigClient*, const Model::DeleteHostedConfigurationVersionRequest&, const Model::DeleteHostedConfigurationVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHostedConfigurationVersionResponseReceivedHandler;
     typedef std::function<void(const AppConfigClient*, const Model::GetApplicationRequest&, const Model::GetApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationResponseReceivedHandler;
     typedef std::function<void(const AppConfigClient*, const Model::GetConfigurationRequest&, Model::GetConfigurationOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConfigurationResponseReceivedHandler;
     typedef std::function<void(const AppConfigClient*, const Model::GetConfigurationProfileRequest&, const Model::GetConfigurationProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConfigurationProfileResponseReceivedHandler;
     typedef std::function<void(const AppConfigClient*, const Model::GetDeploymentRequest&, const Model::GetDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeploymentResponseReceivedHandler;
     typedef std::function<void(const AppConfigClient*, const Model::GetDeploymentStrategyRequest&, const Model::GetDeploymentStrategyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeploymentStrategyResponseReceivedHandler;
     typedef std::function<void(const AppConfigClient*, const Model::GetEnvironmentRequest&, const Model::GetEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnvironmentResponseReceivedHandler;
+    typedef std::function<void(const AppConfigClient*, const Model::GetHostedConfigurationVersionRequest&, Model::GetHostedConfigurationVersionOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHostedConfigurationVersionResponseReceivedHandler;
     typedef std::function<void(const AppConfigClient*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationsResponseReceivedHandler;
     typedef std::function<void(const AppConfigClient*, const Model::ListConfigurationProfilesRequest&, const Model::ListConfigurationProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConfigurationProfilesResponseReceivedHandler;
     typedef std::function<void(const AppConfigClient*, const Model::ListDeploymentStrategiesRequest&, const Model::ListDeploymentStrategiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeploymentStrategiesResponseReceivedHandler;
     typedef std::function<void(const AppConfigClient*, const Model::ListDeploymentsRequest&, const Model::ListDeploymentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeploymentsResponseReceivedHandler;
     typedef std::function<void(const AppConfigClient*, const Model::ListEnvironmentsRequest&, const Model::ListEnvironmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEnvironmentsResponseReceivedHandler;
+    typedef std::function<void(const AppConfigClient*, const Model::ListHostedConfigurationVersionsRequest&, const Model::ListHostedConfigurationVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHostedConfigurationVersionsResponseReceivedHandler;
     typedef std::function<void(const AppConfigClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const AppConfigClient*, const Model::StartDeploymentRequest&, const Model::StartDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDeploymentResponseReceivedHandler;
     typedef std::function<void(const AppConfigClient*, const Model::StopDeploymentRequest&, const Model::StopDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDeploymentResponseReceivedHandler;
@@ -231,11 +240,11 @@ namespace Model
    * carefully introduce changes to your application that can only be tested with
    * production traffic.</p> </li> <li> <p> <b>Feature toggle</b>: Use AppConfig to
    * turn on new features that require a timely deployment, such as a product launch
-   * or announcement. </p> </li> <li> <p> <b>User membership</b>: Use AppConfig to
-   * allow premium subscribers to access paid content. </p> </li> <li> <p>
-   * <b>Operational issues</b>: Use AppConfig to reduce stress on your application
-   * when a dependency or other external factor impacts the system.</p> </li> </ul>
-   * <p>This reference is intended to be used with the <a
+   * or announcement. </p> </li> <li> <p> <b>Allow list</b>: Use AppConfig to allow
+   * premium subscribers to access paid content. </p> </li> <li> <p> <b>Operational
+   * issues</b>: Use AppConfig to reduce stress on your application when a dependency
+   * or other external factor impacts the system.</p> </li> </ul> <p>This reference
+   * is intended to be used with the <a
    * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig.html">AWS
    * AppConfig User Guide</a>.</p>
    */
@@ -264,8 +273,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~AppConfigClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "AppConfig"; }
 
 
         /**
@@ -444,6 +451,34 @@ namespace Model
         virtual void CreateEnvironmentAsync(const Model::CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Create a new configuration in the AppConfig configuration
+         * store.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateHostedConfigurationVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateHostedConfigurationVersionOutcome CreateHostedConfigurationVersion(const Model::CreateHostedConfigurationVersionRequest& request) const;
+
+        /**
+         * <p>Create a new configuration in the AppConfig configuration
+         * store.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateHostedConfigurationVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateHostedConfigurationVersionOutcomeCallable CreateHostedConfigurationVersionCallable(const Model::CreateHostedConfigurationVersionRequest& request) const;
+
+        /**
+         * <p>Create a new configuration in the AppConfig configuration
+         * store.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateHostedConfigurationVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateHostedConfigurationVersionAsync(const Model::CreateHostedConfigurationVersionRequest& request, const CreateHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Delete an application. Deleting an application does not delete a
          * configuration from a host.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteApplication">AWS
@@ -556,6 +591,34 @@ namespace Model
         virtual void DeleteEnvironmentAsync(const Model::DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Delete a version of a configuration from the AppConfig configuration
+         * store.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteHostedConfigurationVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteHostedConfigurationVersionOutcome DeleteHostedConfigurationVersion(const Model::DeleteHostedConfigurationVersionRequest& request) const;
+
+        /**
+         * <p>Delete a version of a configuration from the AppConfig configuration
+         * store.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteHostedConfigurationVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteHostedConfigurationVersionOutcomeCallable DeleteHostedConfigurationVersionCallable(const Model::DeleteHostedConfigurationVersionRequest& request) const;
+
+        /**
+         * <p>Delete a version of a configuration from the AppConfig configuration
+         * store.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteHostedConfigurationVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteHostedConfigurationVersionAsync(const Model::DeleteHostedConfigurationVersionRequest& request, const DeleteHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieve information about an application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetApplication">AWS
          * API Reference</a></p>
@@ -581,14 +644,36 @@ namespace Model
         virtual void GetApplicationAsync(const Model::GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieve information about a configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Receive information about a configuration.</p>  <p>AWS AppConfig
+         * uses the value of the <code>ClientConfigurationVersion</code> parameter to
+         * identify the configuration version on your clients. If you don’t send
+         * <code>ClientConfigurationVersion</code> with each call to
+         * <code>GetConfiguration</code>, your clients receive the current configuration.
+         * You are charged each time your clients receive a configuration.</p> <p>To avoid
+         * excess charges, we recommend that you include the
+         * <code>ClientConfigurationVersion</code> value with every call to
+         * <code>GetConfiguration</code>. This value must be saved on your client.
+         * Subsequent calls to <code>GetConfiguration</code> must pass this value by using
+         * the <code>ClientConfigurationVersion</code> parameter. </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::GetConfigurationOutcome GetConfiguration(const Model::GetConfigurationRequest& request) const;
 
         /**
-         * <p>Retrieve information about a configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Receive information about a configuration.</p>  <p>AWS AppConfig
+         * uses the value of the <code>ClientConfigurationVersion</code> parameter to
+         * identify the configuration version on your clients. If you don’t send
+         * <code>ClientConfigurationVersion</code> with each call to
+         * <code>GetConfiguration</code>, your clients receive the current configuration.
+         * You are charged each time your clients receive a configuration.</p> <p>To avoid
+         * excess charges, we recommend that you include the
+         * <code>ClientConfigurationVersion</code> value with every call to
+         * <code>GetConfiguration</code>. This value must be saved on your client.
+         * Subsequent calls to <code>GetConfiguration</code> must pass this value by using
+         * the <code>ClientConfigurationVersion</code> parameter. </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetConfiguration">AWS
          * API Reference</a></p>
          *
@@ -597,7 +682,18 @@ namespace Model
         virtual Model::GetConfigurationOutcomeCallable GetConfigurationCallable(const Model::GetConfigurationRequest& request) const;
 
         /**
-         * <p>Retrieve information about a configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Receive information about a configuration.</p>  <p>AWS AppConfig
+         * uses the value of the <code>ClientConfigurationVersion</code> parameter to
+         * identify the configuration version on your clients. If you don’t send
+         * <code>ClientConfigurationVersion</code> with each call to
+         * <code>GetConfiguration</code>, your clients receive the current configuration.
+         * You are charged each time your clients receive a configuration.</p> <p>To avoid
+         * excess charges, we recommend that you include the
+         * <code>ClientConfigurationVersion</code> value with every call to
+         * <code>GetConfiguration</code>. This value must be saved on your client.
+         * Subsequent calls to <code>GetConfiguration</code> must pass this value by using
+         * the <code>ClientConfigurationVersion</code> parameter. </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetConfiguration">AWS
          * API Reference</a></p>
          *
@@ -745,6 +841,34 @@ namespace Model
         virtual void GetEnvironmentAsync(const Model::GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Get information about a specific configuration version.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetHostedConfigurationVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetHostedConfigurationVersionOutcome GetHostedConfigurationVersion(const Model::GetHostedConfigurationVersionRequest& request) const;
+
+        /**
+         * <p>Get information about a specific configuration version.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetHostedConfigurationVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetHostedConfigurationVersionOutcomeCallable GetHostedConfigurationVersionCallable(const Model::GetHostedConfigurationVersionRequest& request) const;
+
+        /**
+         * <p>Get information about a specific configuration version.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetHostedConfigurationVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetHostedConfigurationVersionAsync(const Model::GetHostedConfigurationVersionRequest& request, const GetHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>List all applications in your AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListApplications">AWS
          * API Reference</a></p>
@@ -871,6 +995,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListEnvironmentsAsync(const Model::ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>View a list of configurations stored in the AppConfig configuration store by
+         * version.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListHostedConfigurationVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListHostedConfigurationVersionsOutcome ListHostedConfigurationVersions(const Model::ListHostedConfigurationVersionsRequest& request) const;
+
+        /**
+         * <p>View a list of configurations stored in the AppConfig configuration store by
+         * version.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListHostedConfigurationVersions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListHostedConfigurationVersionsOutcomeCallable ListHostedConfigurationVersionsCallable(const Model::ListHostedConfigurationVersionsRequest& request) const;
+
+        /**
+         * <p>View a list of configurations stored in the AppConfig configuration store by
+         * version.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListHostedConfigurationVersions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListHostedConfigurationVersionsAsync(const Model::ListHostedConfigurationVersionsRequest& request, const ListHostedConfigurationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the list of key-value tags assigned to the resource.</p><p><h3>See
@@ -1154,21 +1306,25 @@ namespace Model
         void CreateConfigurationProfileAsyncHelper(const Model::CreateConfigurationProfileRequest& request, const CreateConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDeploymentStrategyAsyncHelper(const Model::CreateDeploymentStrategyRequest& request, const CreateDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEnvironmentAsyncHelper(const Model::CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateHostedConfigurationVersionAsyncHelper(const Model::CreateHostedConfigurationVersionRequest& request, const CreateHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteApplicationAsyncHelper(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConfigurationProfileAsyncHelper(const Model::DeleteConfigurationProfileRequest& request, const DeleteConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDeploymentStrategyAsyncHelper(const Model::DeleteDeploymentStrategyRequest& request, const DeleteDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEnvironmentAsyncHelper(const Model::DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteHostedConfigurationVersionAsyncHelper(const Model::DeleteHostedConfigurationVersionRequest& request, const DeleteHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetApplicationAsyncHelper(const Model::GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetConfigurationAsyncHelper(const Model::GetConfigurationRequest& request, const GetConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetConfigurationProfileAsyncHelper(const Model::GetConfigurationProfileRequest& request, const GetConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDeploymentAsyncHelper(const Model::GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDeploymentStrategyAsyncHelper(const Model::GetDeploymentStrategyRequest& request, const GetDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEnvironmentAsyncHelper(const Model::GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetHostedConfigurationVersionAsyncHelper(const Model::GetHostedConfigurationVersionRequest& request, const GetHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListApplicationsAsyncHelper(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListConfigurationProfilesAsyncHelper(const Model::ListConfigurationProfilesRequest& request, const ListConfigurationProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDeploymentStrategiesAsyncHelper(const Model::ListDeploymentStrategiesRequest& request, const ListDeploymentStrategiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDeploymentsAsyncHelper(const Model::ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEnvironmentsAsyncHelper(const Model::ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListHostedConfigurationVersionsAsyncHelper(const Model::ListHostedConfigurationVersionsRequest& request, const ListHostedConfigurationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartDeploymentAsyncHelper(const Model::StartDeploymentRequest& request, const StartDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopDeploymentAsyncHelper(const Model::StopDeploymentRequest& request, const StopDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

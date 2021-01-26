@@ -1,26 +1,18 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediatailor/model/AvailSuppression.h>
+#include <aws/mediatailor/model/Bumper.h>
 #include <aws/mediatailor/model/CdnConfiguration.h>
 #include <aws/mediatailor/model/DashConfiguration.h>
 #include <aws/mediatailor/model/HlsConfiguration.h>
 #include <aws/mediatailor/model/LivePreRollConfiguration.h>
+#include <aws/mediatailor/model/ManifestProcessingRules.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -144,6 +136,37 @@ namespace Model
 
 
     /**
+     * <p>The configuration for bumpers. Bumpers are short audio or video clips that
+     * play at the start or before the end of an ad break. </p>
+     */
+    inline const Bumper& GetBumper() const{ return m_bumper; }
+
+    /**
+     * <p>The configuration for bumpers. Bumpers are short audio or video clips that
+     * play at the start or before the end of an ad break. </p>
+     */
+    inline void SetBumper(const Bumper& value) { m_bumper = value; }
+
+    /**
+     * <p>The configuration for bumpers. Bumpers are short audio or video clips that
+     * play at the start or before the end of an ad break. </p>
+     */
+    inline void SetBumper(Bumper&& value) { m_bumper = std::move(value); }
+
+    /**
+     * <p>The configuration for bumpers. Bumpers are short audio or video clips that
+     * play at the start or before the end of an ad break. </p>
+     */
+    inline PutPlaybackConfigurationResult& WithBumper(const Bumper& value) { SetBumper(value); return *this;}
+
+    /**
+     * <p>The configuration for bumpers. Bumpers are short audio or video clips that
+     * play at the start or before the end of an ad break. </p>
+     */
+    inline PutPlaybackConfigurationResult& WithBumper(Bumper&& value) { SetBumper(std::move(value)); return *this;}
+
+
+    /**
      * <p>The configuration for using a content delivery network (CDN), like Amazon
      * CloudFront, for content and ad segment management. </p>
      */
@@ -250,6 +273,37 @@ namespace Model
      * <p>The configuration for pre-roll ad insertion.</p>
      */
     inline PutPlaybackConfigurationResult& WithLivePreRollConfiguration(LivePreRollConfiguration&& value) { SetLivePreRollConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * The configuration for manifest processing rules. Manifest processing rules
+     * enable customization of the personalized manifests created by MediaTailor.
+     */
+    inline const ManifestProcessingRules& GetManifestProcessingRules() const{ return m_manifestProcessingRules; }
+
+    /**
+     * The configuration for manifest processing rules. Manifest processing rules
+     * enable customization of the personalized manifests created by MediaTailor.
+     */
+    inline void SetManifestProcessingRules(const ManifestProcessingRules& value) { m_manifestProcessingRules = value; }
+
+    /**
+     * The configuration for manifest processing rules. Manifest processing rules
+     * enable customization of the personalized manifests created by MediaTailor.
+     */
+    inline void SetManifestProcessingRules(ManifestProcessingRules&& value) { m_manifestProcessingRules = std::move(value); }
+
+    /**
+     * The configuration for manifest processing rules. Manifest processing rules
+     * enable customization of the personalized manifests created by MediaTailor.
+     */
+    inline PutPlaybackConfigurationResult& WithManifestProcessingRules(const ManifestProcessingRules& value) { SetManifestProcessingRules(value); return *this;}
+
+    /**
+     * The configuration for manifest processing rules. Manifest processing rules
+     * enable customization of the personalized manifests created by MediaTailor.
+     */
+    inline PutPlaybackConfigurationResult& WithManifestProcessingRules(ManifestProcessingRules&& value) { SetManifestProcessingRules(std::move(value)); return *this;}
 
 
     /**
@@ -666,6 +720,8 @@ namespace Model
 
     AvailSuppression m_availSuppression;
 
+    Bumper m_bumper;
+
     CdnConfiguration m_cdnConfiguration;
 
     DashConfiguration m_dashConfiguration;
@@ -673,6 +729,8 @@ namespace Model
     HlsConfiguration m_hlsConfiguration;
 
     LivePreRollConfiguration m_livePreRollConfiguration;
+
+    ManifestProcessingRules m_manifestProcessingRules;
 
     Aws::String m_name;
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/dms/model/MongoDbSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -44,7 +34,9 @@ MongoDbSettings::MongoDbSettings() :
     m_extractDocIdHasBeenSet(false),
     m_docsToInvestigateHasBeenSet(false),
     m_authSourceHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_secretsManagerAccessRoleArnHasBeenSet(false),
+    m_secretsManagerSecretIdHasBeenSet(false)
 {
 }
 
@@ -64,7 +56,9 @@ MongoDbSettings::MongoDbSettings(JsonView jsonValue) :
     m_extractDocIdHasBeenSet(false),
     m_docsToInvestigateHasBeenSet(false),
     m_authSourceHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_secretsManagerAccessRoleArnHasBeenSet(false),
+    m_secretsManagerSecretIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -155,6 +149,20 @@ MongoDbSettings& MongoDbSettings::operator =(JsonView jsonValue)
     m_kmsKeyIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecretsManagerAccessRoleArn"))
+  {
+    m_secretsManagerAccessRoleArn = jsonValue.GetString("SecretsManagerAccessRoleArn");
+
+    m_secretsManagerAccessRoleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SecretsManagerSecretId"))
+  {
+    m_secretsManagerSecretId = jsonValue.GetString("SecretsManagerSecretId");
+
+    m_secretsManagerSecretIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -228,6 +236,18 @@ JsonValue MongoDbSettings::Jsonize() const
   if(m_kmsKeyIdHasBeenSet)
   {
    payload.WithString("KmsKeyId", m_kmsKeyId);
+
+  }
+
+  if(m_secretsManagerAccessRoleArnHasBeenSet)
+  {
+   payload.WithString("SecretsManagerAccessRoleArn", m_secretsManagerAccessRoleArn);
+
+  }
+
+  if(m_secretsManagerSecretIdHasBeenSet)
+  {
+   payload.WithString("SecretsManagerSecretId", m_secretsManagerSecretId);
 
   }
 

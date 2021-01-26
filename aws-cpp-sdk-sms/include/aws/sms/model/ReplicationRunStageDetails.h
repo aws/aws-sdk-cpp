@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sms/SMS_EXPORTS.h>
@@ -49,83 +39,83 @@ namespace Model
 
 
     /**
-     * <p>String describing the current stage of a replication run.</p>
+     * <p>The current stage of a replication run.</p>
      */
     inline const Aws::String& GetStage() const{ return m_stage; }
 
     /**
-     * <p>String describing the current stage of a replication run.</p>
+     * <p>The current stage of a replication run.</p>
      */
     inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }
 
     /**
-     * <p>String describing the current stage of a replication run.</p>
+     * <p>The current stage of a replication run.</p>
      */
     inline void SetStage(const Aws::String& value) { m_stageHasBeenSet = true; m_stage = value; }
 
     /**
-     * <p>String describing the current stage of a replication run.</p>
+     * <p>The current stage of a replication run.</p>
      */
     inline void SetStage(Aws::String&& value) { m_stageHasBeenSet = true; m_stage = std::move(value); }
 
     /**
-     * <p>String describing the current stage of a replication run.</p>
+     * <p>The current stage of a replication run.</p>
      */
     inline void SetStage(const char* value) { m_stageHasBeenSet = true; m_stage.assign(value); }
 
     /**
-     * <p>String describing the current stage of a replication run.</p>
+     * <p>The current stage of a replication run.</p>
      */
     inline ReplicationRunStageDetails& WithStage(const Aws::String& value) { SetStage(value); return *this;}
 
     /**
-     * <p>String describing the current stage of a replication run.</p>
+     * <p>The current stage of a replication run.</p>
      */
     inline ReplicationRunStageDetails& WithStage(Aws::String&& value) { SetStage(std::move(value)); return *this;}
 
     /**
-     * <p>String describing the current stage of a replication run.</p>
+     * <p>The current stage of a replication run.</p>
      */
     inline ReplicationRunStageDetails& WithStage(const char* value) { SetStage(value); return *this;}
 
 
     /**
-     * <p>String describing the progress of the current stage of a replication run.</p>
+     * <p>The progress of the current stage of a replication run.</p>
      */
     inline const Aws::String& GetStageProgress() const{ return m_stageProgress; }
 
     /**
-     * <p>String describing the progress of the current stage of a replication run.</p>
+     * <p>The progress of the current stage of a replication run.</p>
      */
     inline bool StageProgressHasBeenSet() const { return m_stageProgressHasBeenSet; }
 
     /**
-     * <p>String describing the progress of the current stage of a replication run.</p>
+     * <p>The progress of the current stage of a replication run.</p>
      */
     inline void SetStageProgress(const Aws::String& value) { m_stageProgressHasBeenSet = true; m_stageProgress = value; }
 
     /**
-     * <p>String describing the progress of the current stage of a replication run.</p>
+     * <p>The progress of the current stage of a replication run.</p>
      */
     inline void SetStageProgress(Aws::String&& value) { m_stageProgressHasBeenSet = true; m_stageProgress = std::move(value); }
 
     /**
-     * <p>String describing the progress of the current stage of a replication run.</p>
+     * <p>The progress of the current stage of a replication run.</p>
      */
     inline void SetStageProgress(const char* value) { m_stageProgressHasBeenSet = true; m_stageProgress.assign(value); }
 
     /**
-     * <p>String describing the progress of the current stage of a replication run.</p>
+     * <p>The progress of the current stage of a replication run.</p>
      */
     inline ReplicationRunStageDetails& WithStageProgress(const Aws::String& value) { SetStageProgress(value); return *this;}
 
     /**
-     * <p>String describing the progress of the current stage of a replication run.</p>
+     * <p>The progress of the current stage of a replication run.</p>
      */
     inline ReplicationRunStageDetails& WithStageProgress(Aws::String&& value) { SetStageProgress(std::move(value)); return *this;}
 
     /**
-     * <p>String describing the progress of the current stage of a replication run.</p>
+     * <p>The progress of the current stage of a replication run.</p>
      */
     inline ReplicationRunStageDetails& WithStageProgress(const char* value) { SetStageProgress(value); return *this;}
 

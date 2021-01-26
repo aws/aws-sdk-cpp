@@ -1,20 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
+#include <aws/ecs/model/DeploymentCircuitBreaker.h>
+#include <utility>
 
 namespace Aws
 {
@@ -45,6 +37,79 @@ namespace Model
     DeploymentConfiguration(Aws::Utils::Json::JsonView jsonValue);
     DeploymentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     *  <p>The deployment circuit breaker can only be used for services using the
+     * rolling update (<code>ECS</code>) deployment type.</p>  <p>The
+     * <b>deployment circuit breaker</b> determines whether a service deployment will
+     * fail if the service can't reach a steady state. If deployment circuit breaker is
+     * enabled, a service deployment will transition to a failed state and stop
+     * launching new tasks. If rollback is enabled, when a service deployment fails,
+     * the service is rolled back to the last deployment that completed
+     * successfully.</p>
+     */
+    inline const DeploymentCircuitBreaker& GetDeploymentCircuitBreaker() const{ return m_deploymentCircuitBreaker; }
+
+    /**
+     *  <p>The deployment circuit breaker can only be used for services using the
+     * rolling update (<code>ECS</code>) deployment type.</p>  <p>The
+     * <b>deployment circuit breaker</b> determines whether a service deployment will
+     * fail if the service can't reach a steady state. If deployment circuit breaker is
+     * enabled, a service deployment will transition to a failed state and stop
+     * launching new tasks. If rollback is enabled, when a service deployment fails,
+     * the service is rolled back to the last deployment that completed
+     * successfully.</p>
+     */
+    inline bool DeploymentCircuitBreakerHasBeenSet() const { return m_deploymentCircuitBreakerHasBeenSet; }
+
+    /**
+     *  <p>The deployment circuit breaker can only be used for services using the
+     * rolling update (<code>ECS</code>) deployment type.</p>  <p>The
+     * <b>deployment circuit breaker</b> determines whether a service deployment will
+     * fail if the service can't reach a steady state. If deployment circuit breaker is
+     * enabled, a service deployment will transition to a failed state and stop
+     * launching new tasks. If rollback is enabled, when a service deployment fails,
+     * the service is rolled back to the last deployment that completed
+     * successfully.</p>
+     */
+    inline void SetDeploymentCircuitBreaker(const DeploymentCircuitBreaker& value) { m_deploymentCircuitBreakerHasBeenSet = true; m_deploymentCircuitBreaker = value; }
+
+    /**
+     *  <p>The deployment circuit breaker can only be used for services using the
+     * rolling update (<code>ECS</code>) deployment type.</p>  <p>The
+     * <b>deployment circuit breaker</b> determines whether a service deployment will
+     * fail if the service can't reach a steady state. If deployment circuit breaker is
+     * enabled, a service deployment will transition to a failed state and stop
+     * launching new tasks. If rollback is enabled, when a service deployment fails,
+     * the service is rolled back to the last deployment that completed
+     * successfully.</p>
+     */
+    inline void SetDeploymentCircuitBreaker(DeploymentCircuitBreaker&& value) { m_deploymentCircuitBreakerHasBeenSet = true; m_deploymentCircuitBreaker = std::move(value); }
+
+    /**
+     *  <p>The deployment circuit breaker can only be used for services using the
+     * rolling update (<code>ECS</code>) deployment type.</p>  <p>The
+     * <b>deployment circuit breaker</b> determines whether a service deployment will
+     * fail if the service can't reach a steady state. If deployment circuit breaker is
+     * enabled, a service deployment will transition to a failed state and stop
+     * launching new tasks. If rollback is enabled, when a service deployment fails,
+     * the service is rolled back to the last deployment that completed
+     * successfully.</p>
+     */
+    inline DeploymentConfiguration& WithDeploymentCircuitBreaker(const DeploymentCircuitBreaker& value) { SetDeploymentCircuitBreaker(value); return *this;}
+
+    /**
+     *  <p>The deployment circuit breaker can only be used for services using the
+     * rolling update (<code>ECS</code>) deployment type.</p>  <p>The
+     * <b>deployment circuit breaker</b> determines whether a service deployment will
+     * fail if the service can't reach a steady state. If deployment circuit breaker is
+     * enabled, a service deployment will transition to a failed state and stop
+     * launching new tasks. If rollback is enabled, when a service deployment fails,
+     * the service is rolled back to the last deployment that completed
+     * successfully.</p>
+     */
+    inline DeploymentConfiguration& WithDeploymentCircuitBreaker(DeploymentCircuitBreaker&& value) { SetDeploymentCircuitBreaker(std::move(value)); return *this;}
 
 
     /**
@@ -245,6 +310,9 @@ namespace Model
     inline DeploymentConfiguration& WithMinimumHealthyPercent(int value) { SetMinimumHealthyPercent(value); return *this;}
 
   private:
+
+    DeploymentCircuitBreaker m_deploymentCircuitBreaker;
+    bool m_deploymentCircuitBreakerHasBeenSet;
 
     int m_maximumPercent;
     bool m_maximumPercentHasBeenSet;

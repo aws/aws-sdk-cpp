@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
@@ -26,6 +16,7 @@
 #include <aws/codebuild/model/LogsLocation.h>
 #include <aws/codebuild/model/VpcConfig.h>
 #include <aws/codebuild/model/NetworkInterface.h>
+#include <aws/codebuild/model/DebugSession.h>
 #include <aws/codebuild/model/BuildPhase.h>
 #include <aws/codebuild/model/ProjectSourceVersion.h>
 #include <aws/codebuild/model/ExportedEnvironmentVariable.h>
@@ -1249,81 +1240,81 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p> You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).</p>
+     * format <code>alias/&lt;alias-name&gt;</code>).</p>
      */
     inline const Aws::String& GetEncryptionKey() const{ return m_encryptionKey; }
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p> You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).</p>
+     * format <code>alias/&lt;alias-name&gt;</code>).</p>
      */
     inline bool EncryptionKeyHasBeenSet() const { return m_encryptionKeyHasBeenSet; }
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p> You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).</p>
+     * format <code>alias/&lt;alias-name&gt;</code>).</p>
      */
     inline void SetEncryptionKey(const Aws::String& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p> You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).</p>
+     * format <code>alias/&lt;alias-name&gt;</code>).</p>
      */
     inline void SetEncryptionKey(Aws::String&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::move(value); }
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p> You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).</p>
+     * format <code>alias/&lt;alias-name&gt;</code>).</p>
      */
     inline void SetEncryptionKey(const char* value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey.assign(value); }
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p> You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).</p>
+     * format <code>alias/&lt;alias-name&gt;</code>).</p>
      */
     inline Build& WithEncryptionKey(const Aws::String& value) { SetEncryptionKey(value); return *this;}
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p> You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).</p>
+     * format <code>alias/&lt;alias-name&gt;</code>).</p>
      */
     inline Build& WithEncryptionKey(Aws::String&& value) { SetEncryptionKey(std::move(value)); return *this;}
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p> You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).</p>
+     * format <code>alias/&lt;alias-name&gt;</code>).</p>
      */
     inline Build& WithEncryptionKey(const char* value) { SetEncryptionKey(value); return *this;}
 
@@ -1487,6 +1478,78 @@ namespace Model
      */
     inline Build& AddFileSystemLocations(ProjectFileSystemLocation&& value) { m_fileSystemLocationsHasBeenSet = true; m_fileSystemLocations.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Contains information about the debug session for this build.</p>
+     */
+    inline const DebugSession& GetDebugSession() const{ return m_debugSession; }
+
+    /**
+     * <p>Contains information about the debug session for this build.</p>
+     */
+    inline bool DebugSessionHasBeenSet() const { return m_debugSessionHasBeenSet; }
+
+    /**
+     * <p>Contains information about the debug session for this build.</p>
+     */
+    inline void SetDebugSession(const DebugSession& value) { m_debugSessionHasBeenSet = true; m_debugSession = value; }
+
+    /**
+     * <p>Contains information about the debug session for this build.</p>
+     */
+    inline void SetDebugSession(DebugSession&& value) { m_debugSessionHasBeenSet = true; m_debugSession = std::move(value); }
+
+    /**
+     * <p>Contains information about the debug session for this build.</p>
+     */
+    inline Build& WithDebugSession(const DebugSession& value) { SetDebugSession(value); return *this;}
+
+    /**
+     * <p>Contains information about the debug session for this build.</p>
+     */
+    inline Build& WithDebugSession(DebugSession&& value) { SetDebugSession(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The ARN of the batch build that this build is a member of, if applicable.</p>
+     */
+    inline const Aws::String& GetBuildBatchArn() const{ return m_buildBatchArn; }
+
+    /**
+     * <p>The ARN of the batch build that this build is a member of, if applicable.</p>
+     */
+    inline bool BuildBatchArnHasBeenSet() const { return m_buildBatchArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the batch build that this build is a member of, if applicable.</p>
+     */
+    inline void SetBuildBatchArn(const Aws::String& value) { m_buildBatchArnHasBeenSet = true; m_buildBatchArn = value; }
+
+    /**
+     * <p>The ARN of the batch build that this build is a member of, if applicable.</p>
+     */
+    inline void SetBuildBatchArn(Aws::String&& value) { m_buildBatchArnHasBeenSet = true; m_buildBatchArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the batch build that this build is a member of, if applicable.</p>
+     */
+    inline void SetBuildBatchArn(const char* value) { m_buildBatchArnHasBeenSet = true; m_buildBatchArn.assign(value); }
+
+    /**
+     * <p>The ARN of the batch build that this build is a member of, if applicable.</p>
+     */
+    inline Build& WithBuildBatchArn(const Aws::String& value) { SetBuildBatchArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the batch build that this build is a member of, if applicable.</p>
+     */
+    inline Build& WithBuildBatchArn(Aws::String&& value) { SetBuildBatchArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the batch build that this build is a member of, if applicable.</p>
+     */
+    inline Build& WithBuildBatchArn(const char* value) { SetBuildBatchArn(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -1578,6 +1641,12 @@ namespace Model
 
     Aws::Vector<ProjectFileSystemLocation> m_fileSystemLocations;
     bool m_fileSystemLocationsHasBeenSet;
+
+    DebugSession m_debugSession;
+    bool m_debugSessionHasBeenSet;
+
+    Aws::String m_buildBatchArn;
+    bool m_buildBatchArnHasBeenSet;
   };
 
 } // namespace Model

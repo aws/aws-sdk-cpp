@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
@@ -22,6 +12,7 @@
 #include <aws/glue/model/TransformParameters.h>
 #include <aws/glue/model/EvaluationMetrics.h>
 #include <aws/glue/model/WorkerType.h>
+#include <aws/glue/model/TransformEncryption.h>
 #include <aws/glue/model/GlueTable.h>
 #include <aws/glue/model/SchemaColumn.h>
 #include <utility>
@@ -669,6 +660,42 @@ namespace Model
      */
     inline GetMLTransformResult& WithMaxRetries(int value) { SetMaxRetries(value); return *this;}
 
+
+    /**
+     * <p>The encryption-at-rest settings of the transform that apply to accessing user
+     * data. Machine learning transforms can access user data encrypted in Amazon S3
+     * using KMS.</p>
+     */
+    inline const TransformEncryption& GetTransformEncryption() const{ return m_transformEncryption; }
+
+    /**
+     * <p>The encryption-at-rest settings of the transform that apply to accessing user
+     * data. Machine learning transforms can access user data encrypted in Amazon S3
+     * using KMS.</p>
+     */
+    inline void SetTransformEncryption(const TransformEncryption& value) { m_transformEncryption = value; }
+
+    /**
+     * <p>The encryption-at-rest settings of the transform that apply to accessing user
+     * data. Machine learning transforms can access user data encrypted in Amazon S3
+     * using KMS.</p>
+     */
+    inline void SetTransformEncryption(TransformEncryption&& value) { m_transformEncryption = std::move(value); }
+
+    /**
+     * <p>The encryption-at-rest settings of the transform that apply to accessing user
+     * data. Machine learning transforms can access user data encrypted in Amazon S3
+     * using KMS.</p>
+     */
+    inline GetMLTransformResult& WithTransformEncryption(const TransformEncryption& value) { SetTransformEncryption(value); return *this;}
+
+    /**
+     * <p>The encryption-at-rest settings of the transform that apply to accessing user
+     * data. Machine learning transforms can access user data encrypted in Amazon S3
+     * using KMS.</p>
+     */
+    inline GetMLTransformResult& WithTransformEncryption(TransformEncryption&& value) { SetTransformEncryption(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_transformId;
@@ -706,6 +733,8 @@ namespace Model
     int m_timeout;
 
     int m_maxRetries;
+
+    TransformEncryption m_transformEncryption;
   };
 
 } // namespace Model

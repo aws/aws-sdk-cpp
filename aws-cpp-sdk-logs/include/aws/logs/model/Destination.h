@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
@@ -90,49 +80,49 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the physical target to where the log events
+     * <p>The Amazon Resource Name (ARN) of the physical target where the log events
      * are delivered (for example, a Kinesis stream).</p>
      */
     inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the physical target to where the log events
+     * <p>The Amazon Resource Name (ARN) of the physical target where the log events
      * are delivered (for example, a Kinesis stream).</p>
      */
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the physical target to where the log events
+     * <p>The Amazon Resource Name (ARN) of the physical target where the log events
      * are delivered (for example, a Kinesis stream).</p>
      */
     inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the physical target to where the log events
+     * <p>The Amazon Resource Name (ARN) of the physical target where the log events
      * are delivered (for example, a Kinesis stream).</p>
      */
     inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the physical target to where the log events
+     * <p>The Amazon Resource Name (ARN) of the physical target where the log events
      * are delivered (for example, a Kinesis stream).</p>
      */
     inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the physical target to where the log events
+     * <p>The Amazon Resource Name (ARN) of the physical target where the log events
      * are delivered (for example, a Kinesis stream).</p>
      */
     inline Destination& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the physical target to where the log events
+     * <p>The Amazon Resource Name (ARN) of the physical target where the log events
      * are delivered (for example, a Kinesis stream).</p>
      */
     inline Destination& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the physical target to where the log events
+     * <p>The Amazon Resource Name (ARN) of the physical target where the log events
      * are delivered (for example, a Kinesis stream).</p>
      */
     inline Destination& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}

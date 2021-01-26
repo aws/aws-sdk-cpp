@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloud9/Cloud9_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloud9/model/EnvironmentType.h>
+#include <aws/cloud9/model/ConnectionType.h>
 #include <aws/cloud9/model/EnvironmentLifecycle.h>
 #include <utility>
 
@@ -223,6 +214,37 @@ namespace Model
 
 
     /**
+     * <p>The connection type used for connecting to an Amazon EC2 environment.</p>
+     */
+    inline const ConnectionType& GetConnectionType() const{ return m_connectionType; }
+
+    /**
+     * <p>The connection type used for connecting to an Amazon EC2 environment.</p>
+     */
+    inline bool ConnectionTypeHasBeenSet() const { return m_connectionTypeHasBeenSet; }
+
+    /**
+     * <p>The connection type used for connecting to an Amazon EC2 environment.</p>
+     */
+    inline void SetConnectionType(const ConnectionType& value) { m_connectionTypeHasBeenSet = true; m_connectionType = value; }
+
+    /**
+     * <p>The connection type used for connecting to an Amazon EC2 environment.</p>
+     */
+    inline void SetConnectionType(ConnectionType&& value) { m_connectionTypeHasBeenSet = true; m_connectionType = std::move(value); }
+
+    /**
+     * <p>The connection type used for connecting to an Amazon EC2 environment.</p>
+     */
+    inline Environment& WithConnectionType(const ConnectionType& value) { SetConnectionType(value); return *this;}
+
+    /**
+     * <p>The connection type used for connecting to an Amazon EC2 environment.</p>
+     */
+    inline Environment& WithConnectionType(ConnectionType&& value) { SetConnectionType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) of the environment.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
@@ -347,6 +369,9 @@ namespace Model
 
     EnvironmentType m_type;
     bool m_typeHasBeenSet;
+
+    ConnectionType m_connectionType;
+    bool m_connectionTypeHasBeenSet;
 
     Aws::String m_arn;
     bool m_arnHasBeenSet;

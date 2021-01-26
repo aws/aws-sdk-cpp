@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/translate/Translate_EXPORTS.h>
@@ -373,90 +363,114 @@ namespace Model
 
 
     /**
-     * <p>The client token of the EC2 instance calling the request. This token is
-     * auto-generated when using the Amazon Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
-     * EC2 operation to retreive an instance's client token. For more information, see
-     * <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.</p>
+     * <p>The names of the parallel data resources to use in the batch translation job.
+     * For a list of available parallel data resources, use the <a>ListParallelData</a>
+     * operation.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetParallelDataNames() const{ return m_parallelDataNames; }
+
+    /**
+     * <p>The names of the parallel data resources to use in the batch translation job.
+     * For a list of available parallel data resources, use the <a>ListParallelData</a>
+     * operation.</p>
+     */
+    inline bool ParallelDataNamesHasBeenSet() const { return m_parallelDataNamesHasBeenSet; }
+
+    /**
+     * <p>The names of the parallel data resources to use in the batch translation job.
+     * For a list of available parallel data resources, use the <a>ListParallelData</a>
+     * operation.</p>
+     */
+    inline void SetParallelDataNames(const Aws::Vector<Aws::String>& value) { m_parallelDataNamesHasBeenSet = true; m_parallelDataNames = value; }
+
+    /**
+     * <p>The names of the parallel data resources to use in the batch translation job.
+     * For a list of available parallel data resources, use the <a>ListParallelData</a>
+     * operation.</p>
+     */
+    inline void SetParallelDataNames(Aws::Vector<Aws::String>&& value) { m_parallelDataNamesHasBeenSet = true; m_parallelDataNames = std::move(value); }
+
+    /**
+     * <p>The names of the parallel data resources to use in the batch translation job.
+     * For a list of available parallel data resources, use the <a>ListParallelData</a>
+     * operation.</p>
+     */
+    inline StartTextTranslationJobRequest& WithParallelDataNames(const Aws::Vector<Aws::String>& value) { SetParallelDataNames(value); return *this;}
+
+    /**
+     * <p>The names of the parallel data resources to use in the batch translation job.
+     * For a list of available parallel data resources, use the <a>ListParallelData</a>
+     * operation.</p>
+     */
+    inline StartTextTranslationJobRequest& WithParallelDataNames(Aws::Vector<Aws::String>&& value) { SetParallelDataNames(std::move(value)); return *this;}
+
+    /**
+     * <p>The names of the parallel data resources to use in the batch translation job.
+     * For a list of available parallel data resources, use the <a>ListParallelData</a>
+     * operation.</p>
+     */
+    inline StartTextTranslationJobRequest& AddParallelDataNames(const Aws::String& value) { m_parallelDataNamesHasBeenSet = true; m_parallelDataNames.push_back(value); return *this; }
+
+    /**
+     * <p>The names of the parallel data resources to use in the batch translation job.
+     * For a list of available parallel data resources, use the <a>ListParallelData</a>
+     * operation.</p>
+     */
+    inline StartTextTranslationJobRequest& AddParallelDataNames(Aws::String&& value) { m_parallelDataNamesHasBeenSet = true; m_parallelDataNames.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The names of the parallel data resources to use in the batch translation job.
+     * For a list of available parallel data resources, use the <a>ListParallelData</a>
+     * operation.</p>
+     */
+    inline StartTextTranslationJobRequest& AddParallelDataNames(const char* value) { m_parallelDataNamesHasBeenSet = true; m_parallelDataNames.push_back(value); return *this; }
+
+
+    /**
+     * <p>A unique identifier for the request. This token is auto-generated when using
+     * the Amazon Translate SDK.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>The client token of the EC2 instance calling the request. This token is
-     * auto-generated when using the Amazon Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
-     * EC2 operation to retreive an instance's client token. For more information, see
-     * <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.</p>
+     * <p>A unique identifier for the request. This token is auto-generated when using
+     * the Amazon Translate SDK.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>The client token of the EC2 instance calling the request. This token is
-     * auto-generated when using the Amazon Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
-     * EC2 operation to retreive an instance's client token. For more information, see
-     * <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.</p>
+     * <p>A unique identifier for the request. This token is auto-generated when using
+     * the Amazon Translate SDK.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>The client token of the EC2 instance calling the request. This token is
-     * auto-generated when using the Amazon Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
-     * EC2 operation to retreive an instance's client token. For more information, see
-     * <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.</p>
+     * <p>A unique identifier for the request. This token is auto-generated when using
+     * the Amazon Translate SDK.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>The client token of the EC2 instance calling the request. This token is
-     * auto-generated when using the Amazon Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
-     * EC2 operation to retreive an instance's client token. For more information, see
-     * <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.</p>
+     * <p>A unique identifier for the request. This token is auto-generated when using
+     * the Amazon Translate SDK.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>The client token of the EC2 instance calling the request. This token is
-     * auto-generated when using the Amazon Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
-     * EC2 operation to retreive an instance's client token. For more information, see
-     * <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.</p>
+     * <p>A unique identifier for the request. This token is auto-generated when using
+     * the Amazon Translate SDK.</p>
      */
     inline StartTextTranslationJobRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>The client token of the EC2 instance calling the request. This token is
-     * auto-generated when using the Amazon Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
-     * EC2 operation to retreive an instance's client token. For more information, see
-     * <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.</p>
+     * <p>A unique identifier for the request. This token is auto-generated when using
+     * the Amazon Translate SDK.</p>
      */
     inline StartTextTranslationJobRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>The client token of the EC2 instance calling the request. This token is
-     * auto-generated when using the Amazon Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
-     * EC2 operation to retreive an instance's client token. For more information, see
-     * <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.</p>
+     * <p>A unique identifier for the request. This token is auto-generated when using
+     * the Amazon Translate SDK.</p>
      */
     inline StartTextTranslationJobRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -482,6 +496,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_terminologyNames;
     bool m_terminologyNamesHasBeenSet;
+
+    Aws::Vector<Aws::String> m_parallelDataNames;
+    bool m_parallelDataNamesHasBeenSet;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;

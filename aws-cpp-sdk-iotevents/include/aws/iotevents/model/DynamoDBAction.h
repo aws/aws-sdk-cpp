@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iotevents/IoTEvents_EXPORTS.h>
@@ -43,19 +33,19 @@ namespace Model
    * One column of the DynamoDB table receives all attribute-value pairs in the
    * payload that you specify.</p> <p>The <code>tableName</code> and
    * <code>hashKeyField</code> values must match the table name and the partition key
-   * of the DynamoDB table. </p> <note> <p>If the DynamoDB table also has a sort key,
+   * of the DynamoDB table. </p>  <p>If the DynamoDB table also has a sort key,
    * you must specify <code>rangeKeyField</code>. The <code>rangeKeyField</code>
-   * value must match the sort key.</p> </note> <p/> <p>The <code>hashKeyValue</code>
+   * value must match the sort key.</p>  <p/> <p>The <code>hashKeyValue</code>
    * and <code>rangeKeyValue</code> use substitution templates. These templates
    * provide data at runtime. The syntax is <code>${sql-expression}</code>.</p>
    * <p>You can use expressions for parameters that are string data type. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a>
-   * in the <i>AWS IoT Events Developer Guide</i>.</p> <note> <p>If the defined
+   * in the <i>AWS IoT Events Developer Guide</i>.</p>  <p>If the defined
    * payload type is a string, <code>DynamoDBAction</code> writes non-JSON data to
    * the DynamoDB table as binary data. The DynamoDB console displays the data as
    * Base64-encoded text. The <code>payloadField</code> is
-   * <code>&lt;payload-field&gt;_raw</code>.</p> </note><p><h3>See Also:</h3>   <a
+   * <code>&lt;payload-field&gt;_raw</code>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DynamoDBAction">AWS
    * API Reference</a></p>
    */

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/medialive/model/Eac3Settings.h>
 #include <aws/medialive/model/Mp2Settings.h>
 #include <aws/medialive/model/PassThroughSettings.h>
+#include <aws/medialive/model/WavSettings.h>
 #include <utility>
 
 namespace Aws
@@ -145,6 +136,25 @@ namespace Model
     
     inline AudioCodecSettings& WithPassThroughSettings(PassThroughSettings&& value) { SetPassThroughSettings(std::move(value)); return *this;}
 
+
+    
+    inline const WavSettings& GetWavSettings() const{ return m_wavSettings; }
+
+    
+    inline bool WavSettingsHasBeenSet() const { return m_wavSettingsHasBeenSet; }
+
+    
+    inline void SetWavSettings(const WavSettings& value) { m_wavSettingsHasBeenSet = true; m_wavSettings = value; }
+
+    
+    inline void SetWavSettings(WavSettings&& value) { m_wavSettingsHasBeenSet = true; m_wavSettings = std::move(value); }
+
+    
+    inline AudioCodecSettings& WithWavSettings(const WavSettings& value) { SetWavSettings(value); return *this;}
+
+    
+    inline AudioCodecSettings& WithWavSettings(WavSettings&& value) { SetWavSettings(std::move(value)); return *this;}
+
   private:
 
     AacSettings m_aacSettings;
@@ -161,6 +171,9 @@ namespace Model
 
     PassThroughSettings m_passThroughSettings;
     bool m_passThroughSettingsHasBeenSet;
+
+    WavSettings m_wavSettings;
+    bool m_wavSettingsHasBeenSet;
   };
 
 } // namespace Model

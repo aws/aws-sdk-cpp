@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/storagegateway/model/NFSFileShareInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -51,7 +41,10 @@ NFSFileShareInfo::NFSFileShareInfo() :
     m_guessMIMETypeEnabledHasBeenSet(false),
     m_requesterPays(false),
     m_requesterPaysHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_fileShareNameHasBeenSet(false),
+    m_cacheAttributesHasBeenSet(false),
+    m_notificationPolicyHasBeenSet(false)
 {
 }
 
@@ -78,7 +71,10 @@ NFSFileShareInfo::NFSFileShareInfo(JsonView jsonValue) :
     m_guessMIMETypeEnabledHasBeenSet(false),
     m_requesterPays(false),
     m_requesterPaysHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_fileShareNameHasBeenSet(false),
+    m_cacheAttributesHasBeenSet(false),
+    m_notificationPolicyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -217,6 +213,27 @@ NFSFileShareInfo& NFSFileShareInfo::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FileShareName"))
+  {
+    m_fileShareName = jsonValue.GetString("FileShareName");
+
+    m_fileShareNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CacheAttributes"))
+  {
+    m_cacheAttributes = jsonValue.GetObject("CacheAttributes");
+
+    m_cacheAttributesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NotificationPolicy"))
+  {
+    m_notificationPolicy = jsonValue.GetString("NotificationPolicy");
+
+    m_notificationPolicyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -338,6 +355,24 @@ JsonValue NFSFileShareInfo::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_fileShareNameHasBeenSet)
+  {
+   payload.WithString("FileShareName", m_fileShareName);
+
+  }
+
+  if(m_cacheAttributesHasBeenSet)
+  {
+   payload.WithObject("CacheAttributes", m_cacheAttributes.Jsonize());
+
+  }
+
+  if(m_notificationPolicyHasBeenSet)
+  {
+   payload.WithString("NotificationPolicy", m_notificationPolicy);
 
   }
 

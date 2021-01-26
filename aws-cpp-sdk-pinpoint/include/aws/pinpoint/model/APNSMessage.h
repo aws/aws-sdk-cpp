@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
@@ -785,7 +775,7 @@ namespace Model
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
      * message. If specified, this value overrides all other content for the
-     * message.</p> <note><p>If you specify the raw content of an APNs push
+     * message.</p> <p>If you specify the raw content of an APNs push
      * notification, the message payload has to include the content-available key. The
      * value of the content-available key has to be an integer, and can only be 0 or 1.
      * If you're sending a standard notification, set the value of content-available to
@@ -795,14 +785,14 @@ namespace Model
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating
      * a Remote Notification</a> and <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing
-     * Background Updates to Your App</a> on the Apple Developer website.</p></note>
+     * Background Updates to Your App</a> on the Apple Developer website.</p>
      */
     inline const Aws::String& GetRawContent() const{ return m_rawContent; }
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
      * message. If specified, this value overrides all other content for the
-     * message.</p> <note><p>If you specify the raw content of an APNs push
+     * message.</p> <p>If you specify the raw content of an APNs push
      * notification, the message payload has to include the content-available key. The
      * value of the content-available key has to be an integer, and can only be 0 or 1.
      * If you're sending a standard notification, set the value of content-available to
@@ -812,14 +802,14 @@ namespace Model
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating
      * a Remote Notification</a> and <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing
-     * Background Updates to Your App</a> on the Apple Developer website.</p></note>
+     * Background Updates to Your App</a> on the Apple Developer website.</p>
      */
     inline bool RawContentHasBeenSet() const { return m_rawContentHasBeenSet; }
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
      * message. If specified, this value overrides all other content for the
-     * message.</p> <note><p>If you specify the raw content of an APNs push
+     * message.</p> <p>If you specify the raw content of an APNs push
      * notification, the message payload has to include the content-available key. The
      * value of the content-available key has to be an integer, and can only be 0 or 1.
      * If you're sending a standard notification, set the value of content-available to
@@ -829,14 +819,14 @@ namespace Model
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating
      * a Remote Notification</a> and <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing
-     * Background Updates to Your App</a> on the Apple Developer website.</p></note>
+     * Background Updates to Your App</a> on the Apple Developer website.</p>
      */
     inline void SetRawContent(const Aws::String& value) { m_rawContentHasBeenSet = true; m_rawContent = value; }
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
      * message. If specified, this value overrides all other content for the
-     * message.</p> <note><p>If you specify the raw content of an APNs push
+     * message.</p> <p>If you specify the raw content of an APNs push
      * notification, the message payload has to include the content-available key. The
      * value of the content-available key has to be an integer, and can only be 0 or 1.
      * If you're sending a standard notification, set the value of content-available to
@@ -846,14 +836,14 @@ namespace Model
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating
      * a Remote Notification</a> and <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing
-     * Background Updates to Your App</a> on the Apple Developer website.</p></note>
+     * Background Updates to Your App</a> on the Apple Developer website.</p>
      */
     inline void SetRawContent(Aws::String&& value) { m_rawContentHasBeenSet = true; m_rawContent = std::move(value); }
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
      * message. If specified, this value overrides all other content for the
-     * message.</p> <note><p>If you specify the raw content of an APNs push
+     * message.</p> <p>If you specify the raw content of an APNs push
      * notification, the message payload has to include the content-available key. The
      * value of the content-available key has to be an integer, and can only be 0 or 1.
      * If you're sending a standard notification, set the value of content-available to
@@ -863,14 +853,14 @@ namespace Model
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating
      * a Remote Notification</a> and <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing
-     * Background Updates to Your App</a> on the Apple Developer website.</p></note>
+     * Background Updates to Your App</a> on the Apple Developer website.</p>
      */
     inline void SetRawContent(const char* value) { m_rawContentHasBeenSet = true; m_rawContent.assign(value); }
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
      * message. If specified, this value overrides all other content for the
-     * message.</p> <note><p>If you specify the raw content of an APNs push
+     * message.</p> <p>If you specify the raw content of an APNs push
      * notification, the message payload has to include the content-available key. The
      * value of the content-available key has to be an integer, and can only be 0 or 1.
      * If you're sending a standard notification, set the value of content-available to
@@ -880,14 +870,14 @@ namespace Model
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating
      * a Remote Notification</a> and <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing
-     * Background Updates to Your App</a> on the Apple Developer website.</p></note>
+     * Background Updates to Your App</a> on the Apple Developer website.</p>
      */
     inline APNSMessage& WithRawContent(const Aws::String& value) { SetRawContent(value); return *this;}
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
      * message. If specified, this value overrides all other content for the
-     * message.</p> <note><p>If you specify the raw content of an APNs push
+     * message.</p> <p>If you specify the raw content of an APNs push
      * notification, the message payload has to include the content-available key. The
      * value of the content-available key has to be an integer, and can only be 0 or 1.
      * If you're sending a standard notification, set the value of content-available to
@@ -897,14 +887,14 @@ namespace Model
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating
      * a Remote Notification</a> and <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing
-     * Background Updates to Your App</a> on the Apple Developer website.</p></note>
+     * Background Updates to Your App</a> on the Apple Developer website.</p>
      */
     inline APNSMessage& WithRawContent(Aws::String&& value) { SetRawContent(std::move(value)); return *this;}
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
      * message. If specified, this value overrides all other content for the
-     * message.</p> <note><p>If you specify the raw content of an APNs push
+     * message.</p> <p>If you specify the raw content of an APNs push
      * notification, the message payload has to include the content-available key. The
      * value of the content-available key has to be an integer, and can only be 0 or 1.
      * If you're sending a standard notification, set the value of content-available to
@@ -914,7 +904,7 @@ namespace Model
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating
      * a Remote Notification</a> and <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing
-     * Background Updates to Your App</a> on the Apple Developer website.</p></note>
+     * Background Updates to Your App</a> on the Apple Developer website.</p>
      */
     inline APNSMessage& WithRawContent(const char* value) { SetRawContent(value); return *this;}
 
@@ -927,7 +917,7 @@ namespace Model
      * property to determine the correct value for the apns-push-type request header
      * when it sends the notification message to APNs. If you specify a value of true
      * for this property, Amazon Pinpoint sets the value for the apns-push-type header
-     * field to background.</p> <note><p>If you specify the raw content of an APNs push
+     * field to background.</p> <p>If you specify the raw content of an APNs push
      * notification, the message payload has to include the content-available key. For
      * silent (background) notifications, set the value of content-available to 1.
      * Additionally, the message payload for a silent notification can't include the
@@ -939,7 +929,7 @@ namespace Model
      * has indicated that they will throttle "excessive" background notifications based
      * on current traffic volumes. To prevent your notifications being throttled, Apple
      * recommends that you send no more than 3 silent push notifications to each
-     * recipient per hour.</p></note>
+     * recipient per hour.</p>
      */
     inline bool GetSilentPush() const{ return m_silentPush; }
 
@@ -951,7 +941,7 @@ namespace Model
      * property to determine the correct value for the apns-push-type request header
      * when it sends the notification message to APNs. If you specify a value of true
      * for this property, Amazon Pinpoint sets the value for the apns-push-type header
-     * field to background.</p> <note><p>If you specify the raw content of an APNs push
+     * field to background.</p> <p>If you specify the raw content of an APNs push
      * notification, the message payload has to include the content-available key. For
      * silent (background) notifications, set the value of content-available to 1.
      * Additionally, the message payload for a silent notification can't include the
@@ -963,7 +953,7 @@ namespace Model
      * has indicated that they will throttle "excessive" background notifications based
      * on current traffic volumes. To prevent your notifications being throttled, Apple
      * recommends that you send no more than 3 silent push notifications to each
-     * recipient per hour.</p></note>
+     * recipient per hour.</p>
      */
     inline bool SilentPushHasBeenSet() const { return m_silentPushHasBeenSet; }
 
@@ -975,7 +965,7 @@ namespace Model
      * property to determine the correct value for the apns-push-type request header
      * when it sends the notification message to APNs. If you specify a value of true
      * for this property, Amazon Pinpoint sets the value for the apns-push-type header
-     * field to background.</p> <note><p>If you specify the raw content of an APNs push
+     * field to background.</p> <p>If you specify the raw content of an APNs push
      * notification, the message payload has to include the content-available key. For
      * silent (background) notifications, set the value of content-available to 1.
      * Additionally, the message payload for a silent notification can't include the
@@ -987,7 +977,7 @@ namespace Model
      * has indicated that they will throttle "excessive" background notifications based
      * on current traffic volumes. To prevent your notifications being throttled, Apple
      * recommends that you send no more than 3 silent push notifications to each
-     * recipient per hour.</p></note>
+     * recipient per hour.</p>
      */
     inline void SetSilentPush(bool value) { m_silentPushHasBeenSet = true; m_silentPush = value; }
 
@@ -999,7 +989,7 @@ namespace Model
      * property to determine the correct value for the apns-push-type request header
      * when it sends the notification message to APNs. If you specify a value of true
      * for this property, Amazon Pinpoint sets the value for the apns-push-type header
-     * field to background.</p> <note><p>If you specify the raw content of an APNs push
+     * field to background.</p> <p>If you specify the raw content of an APNs push
      * notification, the message payload has to include the content-available key. For
      * silent (background) notifications, set the value of content-available to 1.
      * Additionally, the message payload for a silent notification can't include the
@@ -1011,7 +1001,7 @@ namespace Model
      * has indicated that they will throttle "excessive" background notifications based
      * on current traffic volumes. To prevent your notifications being throttled, Apple
      * recommends that you send no more than 3 silent push notifications to each
-     * recipient per hour.</p></note>
+     * recipient per hour.</p>
      */
     inline APNSMessage& WithSilentPush(bool value) { SetSilentPush(value); return *this;}
 

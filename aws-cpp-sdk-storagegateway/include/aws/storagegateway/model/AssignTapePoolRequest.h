@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
@@ -98,7 +88,8 @@ namespace Model
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
+     * <code>DEEP_ARCHIVE</code> </p>
      */
     inline const Aws::String& GetPoolId() const{ return m_poolId; }
 
@@ -107,7 +98,8 @@ namespace Model
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
+     * <code>DEEP_ARCHIVE</code> </p>
      */
     inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }
 
@@ -116,7 +108,8 @@ namespace Model
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
+     * <code>DEEP_ARCHIVE</code> </p>
      */
     inline void SetPoolId(const Aws::String& value) { m_poolIdHasBeenSet = true; m_poolId = value; }
 
@@ -125,7 +118,8 @@ namespace Model
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
+     * <code>DEEP_ARCHIVE</code> </p>
      */
     inline void SetPoolId(Aws::String&& value) { m_poolIdHasBeenSet = true; m_poolId = std::move(value); }
 
@@ -134,7 +128,8 @@ namespace Model
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
+     * <code>DEEP_ARCHIVE</code> </p>
      */
     inline void SetPoolId(const char* value) { m_poolIdHasBeenSet = true; m_poolId.assign(value); }
 
@@ -143,7 +138,8 @@ namespace Model
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
+     * <code>DEEP_ARCHIVE</code> </p>
      */
     inline AssignTapePoolRequest& WithPoolId(const Aws::String& value) { SetPoolId(value); return *this;}
 
@@ -152,7 +148,8 @@ namespace Model
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
+     * <code>DEEP_ARCHIVE</code> </p>
      */
     inline AssignTapePoolRequest& WithPoolId(Aws::String&& value) { SetPoolId(std::move(value)); return *this;}
 
@@ -161,9 +158,55 @@ namespace Model
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
+     * <code>DEEP_ARCHIVE</code> </p>
      */
     inline AssignTapePoolRequest& WithPoolId(const char* value) { SetPoolId(value); return *this;}
+
+
+    /**
+     * <p>Set permissions to bypass governance retention. If the lock type of the
+     * archived tape is <code>Governance</code>, the tape's archived age is not older
+     * than <code>RetentionLockInDays</code>, and the user does not already have
+     * <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to
+     * bypass the retention lock. This parameter is set to true by default for calls
+     * from the console.</p> <p>Valid values: <code>TRUE</code> | <code>FALSE</code>
+     * </p>
+     */
+    inline bool GetBypassGovernanceRetention() const{ return m_bypassGovernanceRetention; }
+
+    /**
+     * <p>Set permissions to bypass governance retention. If the lock type of the
+     * archived tape is <code>Governance</code>, the tape's archived age is not older
+     * than <code>RetentionLockInDays</code>, and the user does not already have
+     * <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to
+     * bypass the retention lock. This parameter is set to true by default for calls
+     * from the console.</p> <p>Valid values: <code>TRUE</code> | <code>FALSE</code>
+     * </p>
+     */
+    inline bool BypassGovernanceRetentionHasBeenSet() const { return m_bypassGovernanceRetentionHasBeenSet; }
+
+    /**
+     * <p>Set permissions to bypass governance retention. If the lock type of the
+     * archived tape is <code>Governance</code>, the tape's archived age is not older
+     * than <code>RetentionLockInDays</code>, and the user does not already have
+     * <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to
+     * bypass the retention lock. This parameter is set to true by default for calls
+     * from the console.</p> <p>Valid values: <code>TRUE</code> | <code>FALSE</code>
+     * </p>
+     */
+    inline void SetBypassGovernanceRetention(bool value) { m_bypassGovernanceRetentionHasBeenSet = true; m_bypassGovernanceRetention = value; }
+
+    /**
+     * <p>Set permissions to bypass governance retention. If the lock type of the
+     * archived tape is <code>Governance</code>, the tape's archived age is not older
+     * than <code>RetentionLockInDays</code>, and the user does not already have
+     * <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to
+     * bypass the retention lock. This parameter is set to true by default for calls
+     * from the console.</p> <p>Valid values: <code>TRUE</code> | <code>FALSE</code>
+     * </p>
+     */
+    inline AssignTapePoolRequest& WithBypassGovernanceRetention(bool value) { SetBypassGovernanceRetention(value); return *this;}
 
   private:
 
@@ -172,6 +215,9 @@ namespace Model
 
     Aws::String m_poolId;
     bool m_poolIdHasBeenSet;
+
+    bool m_bypassGovernanceRetention;
+    bool m_bypassGovernanceRetentionHasBeenSet;
   };
 
 } // namespace Model

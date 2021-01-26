@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/glue/model/CreateTableRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -25,7 +15,8 @@ using namespace Aws::Utils;
 CreateTableRequest::CreateTableRequest() : 
     m_catalogIdHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
-    m_tableInputHasBeenSet(false)
+    m_tableInputHasBeenSet(false),
+    m_partitionIndexesHasBeenSet(false)
 {
 }
 
@@ -48,6 +39,17 @@ Aws::String CreateTableRequest::SerializePayload() const
   if(m_tableInputHasBeenSet)
   {
    payload.WithObject("TableInput", m_tableInput.Jsonize());
+
+  }
+
+  if(m_partitionIndexesHasBeenSet)
+  {
+   Array<JsonValue> partitionIndexesJsonList(m_partitionIndexes.size());
+   for(unsigned partitionIndexesIndex = 0; partitionIndexesIndex < partitionIndexesJsonList.GetLength(); ++partitionIndexesIndex)
+   {
+     partitionIndexesJsonList[partitionIndexesIndex].AsObject(m_partitionIndexes[partitionIndexesIndex].Jsonize());
+   }
+   payload.WithArray("PartitionIndexes", std::move(partitionIndexesJsonList));
 
   }
 

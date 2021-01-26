@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-sync/CognitoSync_EXPORTS.h>
@@ -95,23 +85,23 @@ namespace Model
         class UnsubscribeFromDatasetRequest;
         class UpdateRecordsRequest;
 
-        typedef Aws::Utils::Outcome<BulkPublishResult, Aws::Client::AWSError<CognitoSyncErrors>> BulkPublishOutcome;
-        typedef Aws::Utils::Outcome<DeleteDatasetResult, Aws::Client::AWSError<CognitoSyncErrors>> DeleteDatasetOutcome;
-        typedef Aws::Utils::Outcome<DescribeDatasetResult, Aws::Client::AWSError<CognitoSyncErrors>> DescribeDatasetOutcome;
-        typedef Aws::Utils::Outcome<DescribeIdentityPoolUsageResult, Aws::Client::AWSError<CognitoSyncErrors>> DescribeIdentityPoolUsageOutcome;
-        typedef Aws::Utils::Outcome<DescribeIdentityUsageResult, Aws::Client::AWSError<CognitoSyncErrors>> DescribeIdentityUsageOutcome;
-        typedef Aws::Utils::Outcome<GetBulkPublishDetailsResult, Aws::Client::AWSError<CognitoSyncErrors>> GetBulkPublishDetailsOutcome;
-        typedef Aws::Utils::Outcome<GetCognitoEventsResult, Aws::Client::AWSError<CognitoSyncErrors>> GetCognitoEventsOutcome;
-        typedef Aws::Utils::Outcome<GetIdentityPoolConfigurationResult, Aws::Client::AWSError<CognitoSyncErrors>> GetIdentityPoolConfigurationOutcome;
-        typedef Aws::Utils::Outcome<ListDatasetsResult, Aws::Client::AWSError<CognitoSyncErrors>> ListDatasetsOutcome;
-        typedef Aws::Utils::Outcome<ListIdentityPoolUsageResult, Aws::Client::AWSError<CognitoSyncErrors>> ListIdentityPoolUsageOutcome;
-        typedef Aws::Utils::Outcome<ListRecordsResult, Aws::Client::AWSError<CognitoSyncErrors>> ListRecordsOutcome;
-        typedef Aws::Utils::Outcome<RegisterDeviceResult, Aws::Client::AWSError<CognitoSyncErrors>> RegisterDeviceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoSyncErrors>> SetCognitoEventsOutcome;
-        typedef Aws::Utils::Outcome<SetIdentityPoolConfigurationResult, Aws::Client::AWSError<CognitoSyncErrors>> SetIdentityPoolConfigurationOutcome;
-        typedef Aws::Utils::Outcome<SubscribeToDatasetResult, Aws::Client::AWSError<CognitoSyncErrors>> SubscribeToDatasetOutcome;
-        typedef Aws::Utils::Outcome<UnsubscribeFromDatasetResult, Aws::Client::AWSError<CognitoSyncErrors>> UnsubscribeFromDatasetOutcome;
-        typedef Aws::Utils::Outcome<UpdateRecordsResult, Aws::Client::AWSError<CognitoSyncErrors>> UpdateRecordsOutcome;
+        typedef Aws::Utils::Outcome<BulkPublishResult, CognitoSyncError> BulkPublishOutcome;
+        typedef Aws::Utils::Outcome<DeleteDatasetResult, CognitoSyncError> DeleteDatasetOutcome;
+        typedef Aws::Utils::Outcome<DescribeDatasetResult, CognitoSyncError> DescribeDatasetOutcome;
+        typedef Aws::Utils::Outcome<DescribeIdentityPoolUsageResult, CognitoSyncError> DescribeIdentityPoolUsageOutcome;
+        typedef Aws::Utils::Outcome<DescribeIdentityUsageResult, CognitoSyncError> DescribeIdentityUsageOutcome;
+        typedef Aws::Utils::Outcome<GetBulkPublishDetailsResult, CognitoSyncError> GetBulkPublishDetailsOutcome;
+        typedef Aws::Utils::Outcome<GetCognitoEventsResult, CognitoSyncError> GetCognitoEventsOutcome;
+        typedef Aws::Utils::Outcome<GetIdentityPoolConfigurationResult, CognitoSyncError> GetIdentityPoolConfigurationOutcome;
+        typedef Aws::Utils::Outcome<ListDatasetsResult, CognitoSyncError> ListDatasetsOutcome;
+        typedef Aws::Utils::Outcome<ListIdentityPoolUsageResult, CognitoSyncError> ListIdentityPoolUsageOutcome;
+        typedef Aws::Utils::Outcome<ListRecordsResult, CognitoSyncError> ListRecordsOutcome;
+        typedef Aws::Utils::Outcome<RegisterDeviceResult, CognitoSyncError> RegisterDeviceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CognitoSyncError> SetCognitoEventsOutcome;
+        typedef Aws::Utils::Outcome<SetIdentityPoolConfigurationResult, CognitoSyncError> SetIdentityPoolConfigurationOutcome;
+        typedef Aws::Utils::Outcome<SubscribeToDatasetResult, CognitoSyncError> SubscribeToDatasetOutcome;
+        typedef Aws::Utils::Outcome<UnsubscribeFromDatasetResult, CognitoSyncError> UnsubscribeFromDatasetOutcome;
+        typedef Aws::Utils::Outcome<UpdateRecordsResult, CognitoSyncError> UpdateRecordsOutcome;
 
         typedef std::future<BulkPublishOutcome> BulkPublishOutcomeCallable;
         typedef std::future<DeleteDatasetOutcome> DeleteDatasetOutcomeCallable;
@@ -199,8 +189,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~CognitoSyncClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "cognito-sync"; }
 
 
         /**

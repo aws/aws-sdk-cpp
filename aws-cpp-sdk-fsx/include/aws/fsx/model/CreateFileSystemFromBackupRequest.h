@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/fsx/FSx_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/fsx/model/CreateFileSystemWindowsConfiguration.h>
+#include <aws/fsx/model/CreateFileSystemLustreConfiguration.h>
 #include <aws/fsx/model/StorageType.h>
 #include <aws/fsx/model/Tag.h>
 #include <utility>
@@ -79,58 +70,58 @@ namespace Model
 
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent creation. This string is automatically filled on your behalf when you
+     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent creation. This string is automatically filled on your behalf when you
+     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent creation. This string is automatically filled on your behalf when you
+     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent creation. This string is automatically filled on your behalf when you
+     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent creation. This string is automatically filled on your behalf when you
+     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent creation. This string is automatically filled on your behalf when you
+     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
      */
     inline CreateFileSystemFromBackupRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent creation. This string is automatically filled on your behalf when you
+     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
      */
     inline CreateFileSystemFromBackupRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent creation. This string is automatically filled on your behalf when you
+     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
      */
     inline CreateFileSystemFromBackupRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
@@ -405,6 +396,25 @@ namespace Model
     inline CreateFileSystemFromBackupRequest& WithWindowsConfiguration(CreateFileSystemWindowsConfiguration&& value) { SetWindowsConfiguration(std::move(value)); return *this;}
 
 
+    
+    inline const CreateFileSystemLustreConfiguration& GetLustreConfiguration() const{ return m_lustreConfiguration; }
+
+    
+    inline bool LustreConfigurationHasBeenSet() const { return m_lustreConfigurationHasBeenSet; }
+
+    
+    inline void SetLustreConfiguration(const CreateFileSystemLustreConfiguration& value) { m_lustreConfigurationHasBeenSet = true; m_lustreConfiguration = value; }
+
+    
+    inline void SetLustreConfiguration(CreateFileSystemLustreConfiguration&& value) { m_lustreConfigurationHasBeenSet = true; m_lustreConfiguration = std::move(value); }
+
+    
+    inline CreateFileSystemFromBackupRequest& WithLustreConfiguration(const CreateFileSystemLustreConfiguration& value) { SetLustreConfiguration(value); return *this;}
+
+    
+    inline CreateFileSystemFromBackupRequest& WithLustreConfiguration(CreateFileSystemLustreConfiguration&& value) { SetLustreConfiguration(std::move(value)); return *this;}
+
+
     /**
      * <p>Sets the storage type for the Windows file system you're creating from a
      * backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p> <ul> <li>
@@ -412,12 +422,12 @@ namespace Model
      * Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard
      * disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
      * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
-     * <p> Default value is <code>SSD</code>. </p> <note> <p>HDD and SSD storage types
+     * <p> Default value is <code>SSD</code>. </p>  <p>HDD and SSD storage types
      * have different minimum storage capacity requirements. A restored file system's
      * storage capacity is tied to the file system that was backed up. You can create a
      * file system that uses HDD storage from a backup of a file system that used SSD
      * storage only if the original SSD file system had a storage capacity of at least
-     * 2000 GiB. </p> </note>
+     * 2000 GiB. </p> 
      */
     inline const StorageType& GetStorageType() const{ return m_storageType; }
 
@@ -428,12 +438,12 @@ namespace Model
      * Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard
      * disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
      * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
-     * <p> Default value is <code>SSD</code>. </p> <note> <p>HDD and SSD storage types
+     * <p> Default value is <code>SSD</code>. </p>  <p>HDD and SSD storage types
      * have different minimum storage capacity requirements. A restored file system's
      * storage capacity is tied to the file system that was backed up. You can create a
      * file system that uses HDD storage from a backup of a file system that used SSD
      * storage only if the original SSD file system had a storage capacity of at least
-     * 2000 GiB. </p> </note>
+     * 2000 GiB. </p> 
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
@@ -444,12 +454,12 @@ namespace Model
      * Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard
      * disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
      * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
-     * <p> Default value is <code>SSD</code>. </p> <note> <p>HDD and SSD storage types
+     * <p> Default value is <code>SSD</code>. </p>  <p>HDD and SSD storage types
      * have different minimum storage capacity requirements. A restored file system's
      * storage capacity is tied to the file system that was backed up. You can create a
      * file system that uses HDD storage from a backup of a file system that used SSD
      * storage only if the original SSD file system had a storage capacity of at least
-     * 2000 GiB. </p> </note>
+     * 2000 GiB. </p> 
      */
     inline void SetStorageType(const StorageType& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
@@ -460,12 +470,12 @@ namespace Model
      * Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard
      * disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
      * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
-     * <p> Default value is <code>SSD</code>. </p> <note> <p>HDD and SSD storage types
+     * <p> Default value is <code>SSD</code>. </p>  <p>HDD and SSD storage types
      * have different minimum storage capacity requirements. A restored file system's
      * storage capacity is tied to the file system that was backed up. You can create a
      * file system that uses HDD storage from a backup of a file system that used SSD
      * storage only if the original SSD file system had a storage capacity of at least
-     * 2000 GiB. </p> </note>
+     * 2000 GiB. </p> 
      */
     inline void SetStorageType(StorageType&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
@@ -476,12 +486,12 @@ namespace Model
      * Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard
      * disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
      * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
-     * <p> Default value is <code>SSD</code>. </p> <note> <p>HDD and SSD storage types
+     * <p> Default value is <code>SSD</code>. </p>  <p>HDD and SSD storage types
      * have different minimum storage capacity requirements. A restored file system's
      * storage capacity is tied to the file system that was backed up. You can create a
      * file system that uses HDD storage from a backup of a file system that used SSD
      * storage only if the original SSD file system had a storage capacity of at least
-     * 2000 GiB. </p> </note>
+     * 2000 GiB. </p> 
      */
     inline CreateFileSystemFromBackupRequest& WithStorageType(const StorageType& value) { SetStorageType(value); return *this;}
 
@@ -492,12 +502,12 @@ namespace Model
      * Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard
      * disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
      * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
-     * <p> Default value is <code>SSD</code>. </p> <note> <p>HDD and SSD storage types
+     * <p> Default value is <code>SSD</code>. </p>  <p>HDD and SSD storage types
      * have different minimum storage capacity requirements. A restored file system's
      * storage capacity is tied to the file system that was backed up. You can create a
      * file system that uses HDD storage from a backup of a file system that used SSD
      * storage only if the original SSD file system had a storage capacity of at least
-     * 2000 GiB. </p> </note>
+     * 2000 GiB. </p> 
      */
     inline CreateFileSystemFromBackupRequest& WithStorageType(StorageType&& value) { SetStorageType(std::move(value)); return *this;}
 
@@ -520,6 +530,9 @@ namespace Model
 
     CreateFileSystemWindowsConfiguration m_windowsConfiguration;
     bool m_windowsConfigurationHasBeenSet;
+
+    CreateFileSystemLustreConfiguration m_lustreConfiguration;
+    bool m_lustreConfigurationHasBeenSet;
 
     StorageType m_storageType;
     bool m_storageTypeHasBeenSet;

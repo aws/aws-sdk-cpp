@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -54,7 +44,7 @@ static const char* ALLOCATION_TAG = "PinpointSMSVoiceClient";
 PinpointSMSVoiceClient::PinpointSMSVoiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<PinpointSMSVoiceErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -64,7 +54,7 @@ PinpointSMSVoiceClient::PinpointSMSVoiceClient(const Client::ClientConfiguration
 PinpointSMSVoiceClient::PinpointSMSVoiceClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<PinpointSMSVoiceErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -75,7 +65,7 @@ PinpointSMSVoiceClient::PinpointSMSVoiceClient(const std::shared_ptr<AWSCredenti
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<PinpointSMSVoiceErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -88,6 +78,7 @@ PinpointSMSVoiceClient::~PinpointSMSVoiceClient()
 
 void PinpointSMSVoiceClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Pinpoint SMS Voice");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -117,15 +108,7 @@ CreateConfigurationSetOutcome PinpointSMSVoiceClient::CreateConfigurationSet(con
   Aws::StringStream ss;
   ss << "/v1/sms-voice/configuration-sets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateConfigurationSetOutcome(CreateConfigurationSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateConfigurationSetOutcome(outcome.GetError());
-  }
+  return CreateConfigurationSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateConfigurationSetOutcomeCallable PinpointSMSVoiceClient::CreateConfigurationSetCallable(const CreateConfigurationSetRequest& request) const
@@ -159,15 +142,7 @@ CreateConfigurationSetEventDestinationOutcome PinpointSMSVoiceClient::CreateConf
   ss << request.GetConfigurationSetName();
   ss << "/event-destinations";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateConfigurationSetEventDestinationOutcome(CreateConfigurationSetEventDestinationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateConfigurationSetEventDestinationOutcome(outcome.GetError());
-  }
+  return CreateConfigurationSetEventDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateConfigurationSetEventDestinationOutcomeCallable PinpointSMSVoiceClient::CreateConfigurationSetEventDestinationCallable(const CreateConfigurationSetEventDestinationRequest& request) const
@@ -200,15 +175,7 @@ DeleteConfigurationSetOutcome PinpointSMSVoiceClient::DeleteConfigurationSet(con
   ss << "/v1/sms-voice/configuration-sets/";
   ss << request.GetConfigurationSetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteConfigurationSetOutcome(DeleteConfigurationSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteConfigurationSetOutcome(outcome.GetError());
-  }
+  return DeleteConfigurationSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteConfigurationSetOutcomeCallable PinpointSMSVoiceClient::DeleteConfigurationSetCallable(const DeleteConfigurationSetRequest& request) const
@@ -248,15 +215,7 @@ DeleteConfigurationSetEventDestinationOutcome PinpointSMSVoiceClient::DeleteConf
   ss << "/event-destinations/";
   ss << request.GetEventDestinationName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteConfigurationSetEventDestinationOutcome(DeleteConfigurationSetEventDestinationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteConfigurationSetEventDestinationOutcome(outcome.GetError());
-  }
+  return DeleteConfigurationSetEventDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteConfigurationSetEventDestinationOutcomeCallable PinpointSMSVoiceClient::DeleteConfigurationSetEventDestinationCallable(const DeleteConfigurationSetEventDestinationRequest& request) const
@@ -290,15 +249,7 @@ GetConfigurationSetEventDestinationsOutcome PinpointSMSVoiceClient::GetConfigura
   ss << request.GetConfigurationSetName();
   ss << "/event-destinations";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetConfigurationSetEventDestinationsOutcome(GetConfigurationSetEventDestinationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetConfigurationSetEventDestinationsOutcome(outcome.GetError());
-  }
+  return GetConfigurationSetEventDestinationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetConfigurationSetEventDestinationsOutcomeCallable PinpointSMSVoiceClient::GetConfigurationSetEventDestinationsCallable(const GetConfigurationSetEventDestinationsRequest& request) const
@@ -325,15 +276,7 @@ ListConfigurationSetsOutcome PinpointSMSVoiceClient::ListConfigurationSets(const
   Aws::StringStream ss;
   ss << "/v1/sms-voice/configuration-sets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListConfigurationSetsOutcome(ListConfigurationSetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListConfigurationSetsOutcome(outcome.GetError());
-  }
+  return ListConfigurationSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListConfigurationSetsOutcomeCallable PinpointSMSVoiceClient::ListConfigurationSetsCallable(const ListConfigurationSetsRequest& request) const
@@ -360,15 +303,7 @@ SendVoiceMessageOutcome PinpointSMSVoiceClient::SendVoiceMessage(const SendVoice
   Aws::StringStream ss;
   ss << "/v1/sms-voice/voice/message";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SendVoiceMessageOutcome(SendVoiceMessageResult(outcome.GetResult()));
-  }
-  else
-  {
-    return SendVoiceMessageOutcome(outcome.GetError());
-  }
+  return SendVoiceMessageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SendVoiceMessageOutcomeCallable PinpointSMSVoiceClient::SendVoiceMessageCallable(const SendVoiceMessageRequest& request) const
@@ -408,15 +343,7 @@ UpdateConfigurationSetEventDestinationOutcome PinpointSMSVoiceClient::UpdateConf
   ss << "/event-destinations/";
   ss << request.GetEventDestinationName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateConfigurationSetEventDestinationOutcome(UpdateConfigurationSetEventDestinationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateConfigurationSetEventDestinationOutcome(outcome.GetError());
-  }
+  return UpdateConfigurationSetEventDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateConfigurationSetEventDestinationOutcomeCallable PinpointSMSVoiceClient::UpdateConfigurationSetEventDestinationCallable(const UpdateConfigurationSetEventDestinationRequest& request) const

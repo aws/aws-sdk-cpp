@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lambda/Lambda_EXPORTS.h>
@@ -26,7 +16,10 @@
 #include <aws/lambda/model/StateReasonCode.h>
 #include <aws/lambda/model/LastUpdateStatus.h>
 #include <aws/lambda/model/LastUpdateStatusReasonCode.h>
+#include <aws/lambda/model/PackageType.h>
+#include <aws/lambda/model/ImageConfigResponse.h>
 #include <aws/lambda/model/Layer.h>
+#include <aws/lambda/model/FileSystemConfig.h>
 #include <utility>
 
 namespace Aws
@@ -316,47 +309,47 @@ namespace Model
 
 
     /**
-     * <p>The amount of time that Lambda allows a function to run before stopping
-     * it.</p>
+     * <p>The amount of time in seconds that Lambda allows a function to run before
+     * stopping it.</p>
      */
     inline int GetTimeout() const{ return m_timeout; }
 
     /**
-     * <p>The amount of time that Lambda allows a function to run before stopping
-     * it.</p>
+     * <p>The amount of time in seconds that Lambda allows a function to run before
+     * stopping it.</p>
      */
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
 
     /**
-     * <p>The amount of time that Lambda allows a function to run before stopping
-     * it.</p>
+     * <p>The amount of time in seconds that Lambda allows a function to run before
+     * stopping it.</p>
      */
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
     /**
-     * <p>The amount of time that Lambda allows a function to run before stopping
-     * it.</p>
+     * <p>The amount of time in seconds that Lambda allows a function to run before
+     * stopping it.</p>
      */
     inline FunctionConfiguration& WithTimeout(int value) { SetTimeout(value); return *this;}
 
 
     /**
-     * <p>The memory that's allocated to the function.</p>
+     * <p>The amount of memory available to the function at runtime. </p>
      */
     inline int GetMemorySize() const{ return m_memorySize; }
 
     /**
-     * <p>The memory that's allocated to the function.</p>
+     * <p>The amount of memory available to the function at runtime. </p>
      */
     inline bool MemorySizeHasBeenSet() const { return m_memorySizeHasBeenSet; }
 
     /**
-     * <p>The memory that's allocated to the function.</p>
+     * <p>The amount of memory available to the function at runtime. </p>
      */
     inline void SetMemorySize(int value) { m_memorySizeHasBeenSet = true; m_memorySize = value; }
 
     /**
-     * <p>The memory that's allocated to the function.</p>
+     * <p>The amount of memory available to the function at runtime. </p>
      */
     inline FunctionConfiguration& WithMemorySize(int value) { SetMemorySize(value); return *this;}
 
@@ -1035,6 +1028,197 @@ namespace Model
      */
     inline FunctionConfiguration& WithLastUpdateStatusReasonCode(LastUpdateStatusReasonCode&& value) { SetLastUpdateStatusReasonCode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline const Aws::Vector<FileSystemConfig>& GetFileSystemConfigs() const{ return m_fileSystemConfigs; }
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline bool FileSystemConfigsHasBeenSet() const { return m_fileSystemConfigsHasBeenSet; }
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline void SetFileSystemConfigs(const Aws::Vector<FileSystemConfig>& value) { m_fileSystemConfigsHasBeenSet = true; m_fileSystemConfigs = value; }
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline void SetFileSystemConfigs(Aws::Vector<FileSystemConfig>&& value) { m_fileSystemConfigsHasBeenSet = true; m_fileSystemConfigs = std::move(value); }
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline FunctionConfiguration& WithFileSystemConfigs(const Aws::Vector<FileSystemConfig>& value) { SetFileSystemConfigs(value); return *this;}
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline FunctionConfiguration& WithFileSystemConfigs(Aws::Vector<FileSystemConfig>&& value) { SetFileSystemConfigs(std::move(value)); return *this;}
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline FunctionConfiguration& AddFileSystemConfigs(const FileSystemConfig& value) { m_fileSystemConfigsHasBeenSet = true; m_fileSystemConfigs.push_back(value); return *this; }
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline FunctionConfiguration& AddFileSystemConfigs(FileSystemConfig&& value) { m_fileSystemConfigsHasBeenSet = true; m_fileSystemConfigs.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for .zip file archive.</p>
+     */
+    inline const PackageType& GetPackageType() const{ return m_packageType; }
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for .zip file archive.</p>
+     */
+    inline bool PackageTypeHasBeenSet() const { return m_packageTypeHasBeenSet; }
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for .zip file archive.</p>
+     */
+    inline void SetPackageType(const PackageType& value) { m_packageTypeHasBeenSet = true; m_packageType = value; }
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for .zip file archive.</p>
+     */
+    inline void SetPackageType(PackageType&& value) { m_packageTypeHasBeenSet = true; m_packageType = std::move(value); }
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for .zip file archive.</p>
+     */
+    inline FunctionConfiguration& WithPackageType(const PackageType& value) { SetPackageType(value); return *this;}
+
+    /**
+     * <p>The type of deployment package. Set to <code>Image</code> for container image
+     * and set <code>Zip</code> for .zip file archive.</p>
+     */
+    inline FunctionConfiguration& WithPackageType(PackageType&& value) { SetPackageType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The function's image configuration values.</p>
+     */
+    inline const ImageConfigResponse& GetImageConfigResponse() const{ return m_imageConfigResponse; }
+
+    /**
+     * <p>The function's image configuration values.</p>
+     */
+    inline bool ImageConfigResponseHasBeenSet() const { return m_imageConfigResponseHasBeenSet; }
+
+    /**
+     * <p>The function's image configuration values.</p>
+     */
+    inline void SetImageConfigResponse(const ImageConfigResponse& value) { m_imageConfigResponseHasBeenSet = true; m_imageConfigResponse = value; }
+
+    /**
+     * <p>The function's image configuration values.</p>
+     */
+    inline void SetImageConfigResponse(ImageConfigResponse&& value) { m_imageConfigResponseHasBeenSet = true; m_imageConfigResponse = std::move(value); }
+
+    /**
+     * <p>The function's image configuration values.</p>
+     */
+    inline FunctionConfiguration& WithImageConfigResponse(const ImageConfigResponse& value) { SetImageConfigResponse(value); return *this;}
+
+    /**
+     * <p>The function's image configuration values.</p>
+     */
+    inline FunctionConfiguration& WithImageConfigResponse(ImageConfigResponse&& value) { SetImageConfigResponse(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The ARN of the signing profile version.</p>
+     */
+    inline const Aws::String& GetSigningProfileVersionArn() const{ return m_signingProfileVersionArn; }
+
+    /**
+     * <p>The ARN of the signing profile version.</p>
+     */
+    inline bool SigningProfileVersionArnHasBeenSet() const { return m_signingProfileVersionArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the signing profile version.</p>
+     */
+    inline void SetSigningProfileVersionArn(const Aws::String& value) { m_signingProfileVersionArnHasBeenSet = true; m_signingProfileVersionArn = value; }
+
+    /**
+     * <p>The ARN of the signing profile version.</p>
+     */
+    inline void SetSigningProfileVersionArn(Aws::String&& value) { m_signingProfileVersionArnHasBeenSet = true; m_signingProfileVersionArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the signing profile version.</p>
+     */
+    inline void SetSigningProfileVersionArn(const char* value) { m_signingProfileVersionArnHasBeenSet = true; m_signingProfileVersionArn.assign(value); }
+
+    /**
+     * <p>The ARN of the signing profile version.</p>
+     */
+    inline FunctionConfiguration& WithSigningProfileVersionArn(const Aws::String& value) { SetSigningProfileVersionArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the signing profile version.</p>
+     */
+    inline FunctionConfiguration& WithSigningProfileVersionArn(Aws::String&& value) { SetSigningProfileVersionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the signing profile version.</p>
+     */
+    inline FunctionConfiguration& WithSigningProfileVersionArn(const char* value) { SetSigningProfileVersionArn(value); return *this;}
+
+
+    /**
+     * <p>The ARN of the signing job.</p>
+     */
+    inline const Aws::String& GetSigningJobArn() const{ return m_signingJobArn; }
+
+    /**
+     * <p>The ARN of the signing job.</p>
+     */
+    inline bool SigningJobArnHasBeenSet() const { return m_signingJobArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the signing job.</p>
+     */
+    inline void SetSigningJobArn(const Aws::String& value) { m_signingJobArnHasBeenSet = true; m_signingJobArn = value; }
+
+    /**
+     * <p>The ARN of the signing job.</p>
+     */
+    inline void SetSigningJobArn(Aws::String&& value) { m_signingJobArnHasBeenSet = true; m_signingJobArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the signing job.</p>
+     */
+    inline void SetSigningJobArn(const char* value) { m_signingJobArnHasBeenSet = true; m_signingJobArn.assign(value); }
+
+    /**
+     * <p>The ARN of the signing job.</p>
+     */
+    inline FunctionConfiguration& WithSigningJobArn(const Aws::String& value) { SetSigningJobArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the signing job.</p>
+     */
+    inline FunctionConfiguration& WithSigningJobArn(Aws::String&& value) { SetSigningJobArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the signing job.</p>
+     */
+    inline FunctionConfiguration& WithSigningJobArn(const char* value) { SetSigningJobArn(value); return *this;}
+
   private:
 
     Aws::String m_functionName;
@@ -1114,6 +1298,21 @@ namespace Model
 
     LastUpdateStatusReasonCode m_lastUpdateStatusReasonCode;
     bool m_lastUpdateStatusReasonCodeHasBeenSet;
+
+    Aws::Vector<FileSystemConfig> m_fileSystemConfigs;
+    bool m_fileSystemConfigsHasBeenSet;
+
+    PackageType m_packageType;
+    bool m_packageTypeHasBeenSet;
+
+    ImageConfigResponse m_imageConfigResponse;
+    bool m_imageConfigResponseHasBeenSet;
+
+    Aws::String m_signingProfileVersionArn;
+    bool m_signingProfileVersionArnHasBeenSet;
+
+    Aws::String m_signingJobArn;
+    bool m_signingJobArnHasBeenSet;
   };
 
 } // namespace Model

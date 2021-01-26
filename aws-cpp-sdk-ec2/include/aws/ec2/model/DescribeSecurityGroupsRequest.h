@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -63,9 +53,9 @@ namespace Model
      * has been referenced in an outbound security group rule.</p> </li> <li> <p>
      * <code>egress.ip-permission.ipv6-cidr</code> - An IPv6 CIDR block for an outbound
      * security group rule.</p> </li> <li> <p>
-     * <code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS
-     * service to which a security group rule allows outbound access.</p> </li> <li>
-     * <p> <code>egress.ip-permission.protocol</code> - The IP protocol for an outbound
+     * <code>egress.ip-permission.prefix-list-id</code> - The ID of a prefix list to
+     * which a security group rule allows outbound access.</p> </li> <li> <p>
+     * <code>egress.ip-permission.protocol</code> - The IP protocol for an outbound
      * security group rule (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or
      * a protocol number).</p> </li> <li> <p> <code>egress.ip-permission.to-port</code>
      * - For an outbound rule, the end of port range for the TCP and UDP protocols, or
@@ -83,8 +73,8 @@ namespace Model
      * been referenced in an inbound security group rule.</p> </li> <li> <p>
      * <code>ip-permission.ipv6-cidr</code> - An IPv6 CIDR block for an inbound
      * security group rule.</p> </li> <li> <p>
-     * <code>ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS service
-     * from which a security group rule allows inbound access.</p> </li> <li> <p>
+     * <code>ip-permission.prefix-list-id</code> - The ID of a prefix list from which a
+     * security group rule allows inbound access.</p> </li> <li> <p>
      * <code>ip-permission.protocol</code> - The IP protocol for an inbound security
      * group rule (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a
      * protocol number).</p> </li> <li> <p> <code>ip-permission.to-port</code> - For an
@@ -120,9 +110,9 @@ namespace Model
      * has been referenced in an outbound security group rule.</p> </li> <li> <p>
      * <code>egress.ip-permission.ipv6-cidr</code> - An IPv6 CIDR block for an outbound
      * security group rule.</p> </li> <li> <p>
-     * <code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS
-     * service to which a security group rule allows outbound access.</p> </li> <li>
-     * <p> <code>egress.ip-permission.protocol</code> - The IP protocol for an outbound
+     * <code>egress.ip-permission.prefix-list-id</code> - The ID of a prefix list to
+     * which a security group rule allows outbound access.</p> </li> <li> <p>
+     * <code>egress.ip-permission.protocol</code> - The IP protocol for an outbound
      * security group rule (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or
      * a protocol number).</p> </li> <li> <p> <code>egress.ip-permission.to-port</code>
      * - For an outbound rule, the end of port range for the TCP and UDP protocols, or
@@ -140,8 +130,8 @@ namespace Model
      * been referenced in an inbound security group rule.</p> </li> <li> <p>
      * <code>ip-permission.ipv6-cidr</code> - An IPv6 CIDR block for an inbound
      * security group rule.</p> </li> <li> <p>
-     * <code>ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS service
-     * from which a security group rule allows inbound access.</p> </li> <li> <p>
+     * <code>ip-permission.prefix-list-id</code> - The ID of a prefix list from which a
+     * security group rule allows inbound access.</p> </li> <li> <p>
      * <code>ip-permission.protocol</code> - The IP protocol for an inbound security
      * group rule (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a
      * protocol number).</p> </li> <li> <p> <code>ip-permission.to-port</code> - For an
@@ -177,9 +167,9 @@ namespace Model
      * has been referenced in an outbound security group rule.</p> </li> <li> <p>
      * <code>egress.ip-permission.ipv6-cidr</code> - An IPv6 CIDR block for an outbound
      * security group rule.</p> </li> <li> <p>
-     * <code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS
-     * service to which a security group rule allows outbound access.</p> </li> <li>
-     * <p> <code>egress.ip-permission.protocol</code> - The IP protocol for an outbound
+     * <code>egress.ip-permission.prefix-list-id</code> - The ID of a prefix list to
+     * which a security group rule allows outbound access.</p> </li> <li> <p>
+     * <code>egress.ip-permission.protocol</code> - The IP protocol for an outbound
      * security group rule (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or
      * a protocol number).</p> </li> <li> <p> <code>egress.ip-permission.to-port</code>
      * - For an outbound rule, the end of port range for the TCP and UDP protocols, or
@@ -197,8 +187,8 @@ namespace Model
      * been referenced in an inbound security group rule.</p> </li> <li> <p>
      * <code>ip-permission.ipv6-cidr</code> - An IPv6 CIDR block for an inbound
      * security group rule.</p> </li> <li> <p>
-     * <code>ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS service
-     * from which a security group rule allows inbound access.</p> </li> <li> <p>
+     * <code>ip-permission.prefix-list-id</code> - The ID of a prefix list from which a
+     * security group rule allows inbound access.</p> </li> <li> <p>
      * <code>ip-permission.protocol</code> - The IP protocol for an inbound security
      * group rule (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a
      * protocol number).</p> </li> <li> <p> <code>ip-permission.to-port</code> - For an
@@ -234,9 +224,9 @@ namespace Model
      * has been referenced in an outbound security group rule.</p> </li> <li> <p>
      * <code>egress.ip-permission.ipv6-cidr</code> - An IPv6 CIDR block for an outbound
      * security group rule.</p> </li> <li> <p>
-     * <code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS
-     * service to which a security group rule allows outbound access.</p> </li> <li>
-     * <p> <code>egress.ip-permission.protocol</code> - The IP protocol for an outbound
+     * <code>egress.ip-permission.prefix-list-id</code> - The ID of a prefix list to
+     * which a security group rule allows outbound access.</p> </li> <li> <p>
+     * <code>egress.ip-permission.protocol</code> - The IP protocol for an outbound
      * security group rule (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or
      * a protocol number).</p> </li> <li> <p> <code>egress.ip-permission.to-port</code>
      * - For an outbound rule, the end of port range for the TCP and UDP protocols, or
@@ -254,8 +244,8 @@ namespace Model
      * been referenced in an inbound security group rule.</p> </li> <li> <p>
      * <code>ip-permission.ipv6-cidr</code> - An IPv6 CIDR block for an inbound
      * security group rule.</p> </li> <li> <p>
-     * <code>ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS service
-     * from which a security group rule allows inbound access.</p> </li> <li> <p>
+     * <code>ip-permission.prefix-list-id</code> - The ID of a prefix list from which a
+     * security group rule allows inbound access.</p> </li> <li> <p>
      * <code>ip-permission.protocol</code> - The IP protocol for an inbound security
      * group rule (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a
      * protocol number).</p> </li> <li> <p> <code>ip-permission.to-port</code> - For an
@@ -291,9 +281,9 @@ namespace Model
      * has been referenced in an outbound security group rule.</p> </li> <li> <p>
      * <code>egress.ip-permission.ipv6-cidr</code> - An IPv6 CIDR block for an outbound
      * security group rule.</p> </li> <li> <p>
-     * <code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS
-     * service to which a security group rule allows outbound access.</p> </li> <li>
-     * <p> <code>egress.ip-permission.protocol</code> - The IP protocol for an outbound
+     * <code>egress.ip-permission.prefix-list-id</code> - The ID of a prefix list to
+     * which a security group rule allows outbound access.</p> </li> <li> <p>
+     * <code>egress.ip-permission.protocol</code> - The IP protocol for an outbound
      * security group rule (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or
      * a protocol number).</p> </li> <li> <p> <code>egress.ip-permission.to-port</code>
      * - For an outbound rule, the end of port range for the TCP and UDP protocols, or
@@ -311,8 +301,8 @@ namespace Model
      * been referenced in an inbound security group rule.</p> </li> <li> <p>
      * <code>ip-permission.ipv6-cidr</code> - An IPv6 CIDR block for an inbound
      * security group rule.</p> </li> <li> <p>
-     * <code>ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS service
-     * from which a security group rule allows inbound access.</p> </li> <li> <p>
+     * <code>ip-permission.prefix-list-id</code> - The ID of a prefix list from which a
+     * security group rule allows inbound access.</p> </li> <li> <p>
      * <code>ip-permission.protocol</code> - The IP protocol for an inbound security
      * group rule (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a
      * protocol number).</p> </li> <li> <p> <code>ip-permission.to-port</code> - For an
@@ -348,9 +338,9 @@ namespace Model
      * has been referenced in an outbound security group rule.</p> </li> <li> <p>
      * <code>egress.ip-permission.ipv6-cidr</code> - An IPv6 CIDR block for an outbound
      * security group rule.</p> </li> <li> <p>
-     * <code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS
-     * service to which a security group rule allows outbound access.</p> </li> <li>
-     * <p> <code>egress.ip-permission.protocol</code> - The IP protocol for an outbound
+     * <code>egress.ip-permission.prefix-list-id</code> - The ID of a prefix list to
+     * which a security group rule allows outbound access.</p> </li> <li> <p>
+     * <code>egress.ip-permission.protocol</code> - The IP protocol for an outbound
      * security group rule (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or
      * a protocol number).</p> </li> <li> <p> <code>egress.ip-permission.to-port</code>
      * - For an outbound rule, the end of port range for the TCP and UDP protocols, or
@@ -368,8 +358,8 @@ namespace Model
      * been referenced in an inbound security group rule.</p> </li> <li> <p>
      * <code>ip-permission.ipv6-cidr</code> - An IPv6 CIDR block for an inbound
      * security group rule.</p> </li> <li> <p>
-     * <code>ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS service
-     * from which a security group rule allows inbound access.</p> </li> <li> <p>
+     * <code>ip-permission.prefix-list-id</code> - The ID of a prefix list from which a
+     * security group rule allows inbound access.</p> </li> <li> <p>
      * <code>ip-permission.protocol</code> - The IP protocol for an inbound security
      * group rule (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a
      * protocol number).</p> </li> <li> <p> <code>ip-permission.to-port</code> - For an
@@ -405,9 +395,9 @@ namespace Model
      * has been referenced in an outbound security group rule.</p> </li> <li> <p>
      * <code>egress.ip-permission.ipv6-cidr</code> - An IPv6 CIDR block for an outbound
      * security group rule.</p> </li> <li> <p>
-     * <code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS
-     * service to which a security group rule allows outbound access.</p> </li> <li>
-     * <p> <code>egress.ip-permission.protocol</code> - The IP protocol for an outbound
+     * <code>egress.ip-permission.prefix-list-id</code> - The ID of a prefix list to
+     * which a security group rule allows outbound access.</p> </li> <li> <p>
+     * <code>egress.ip-permission.protocol</code> - The IP protocol for an outbound
      * security group rule (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or
      * a protocol number).</p> </li> <li> <p> <code>egress.ip-permission.to-port</code>
      * - For an outbound rule, the end of port range for the TCP and UDP protocols, or
@@ -425,8 +415,8 @@ namespace Model
      * been referenced in an inbound security group rule.</p> </li> <li> <p>
      * <code>ip-permission.ipv6-cidr</code> - An IPv6 CIDR block for an inbound
      * security group rule.</p> </li> <li> <p>
-     * <code>ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS service
-     * from which a security group rule allows inbound access.</p> </li> <li> <p>
+     * <code>ip-permission.prefix-list-id</code> - The ID of a prefix list from which a
+     * security group rule allows inbound access.</p> </li> <li> <p>
      * <code>ip-permission.protocol</code> - The IP protocol for an inbound security
      * group rule (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a
      * protocol number).</p> </li> <li> <p> <code>ip-permission.to-port</code> - For an
@@ -462,9 +452,9 @@ namespace Model
      * has been referenced in an outbound security group rule.</p> </li> <li> <p>
      * <code>egress.ip-permission.ipv6-cidr</code> - An IPv6 CIDR block for an outbound
      * security group rule.</p> </li> <li> <p>
-     * <code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS
-     * service to which a security group rule allows outbound access.</p> </li> <li>
-     * <p> <code>egress.ip-permission.protocol</code> - The IP protocol for an outbound
+     * <code>egress.ip-permission.prefix-list-id</code> - The ID of a prefix list to
+     * which a security group rule allows outbound access.</p> </li> <li> <p>
+     * <code>egress.ip-permission.protocol</code> - The IP protocol for an outbound
      * security group rule (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or
      * a protocol number).</p> </li> <li> <p> <code>egress.ip-permission.to-port</code>
      * - For an outbound rule, the end of port range for the TCP and UDP protocols, or
@@ -482,8 +472,8 @@ namespace Model
      * been referenced in an inbound security group rule.</p> </li> <li> <p>
      * <code>ip-permission.ipv6-cidr</code> - An IPv6 CIDR block for an inbound
      * security group rule.</p> </li> <li> <p>
-     * <code>ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS service
-     * from which a security group rule allows inbound access.</p> </li> <li> <p>
+     * <code>ip-permission.prefix-list-id</code> - The ID of a prefix list from which a
+     * security group rule allows inbound access.</p> </li> <li> <p>
      * <code>ip-permission.protocol</code> - The IP protocol for an inbound security
      * group rule (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a
      * protocol number).</p> </li> <li> <p> <code>ip-permission.to-port</code> - For an

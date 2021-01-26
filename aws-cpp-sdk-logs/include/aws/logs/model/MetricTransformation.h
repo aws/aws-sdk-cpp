@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
@@ -90,42 +80,58 @@ namespace Model
 
 
     /**
-     * <p>The namespace of the CloudWatch metric.</p>
+     * <p>A custom namespace to contain your metric in CloudWatch. Use namespaces to
+     * group together metrics that are similar. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace">Namespaces</a>.</p>
      */
     inline const Aws::String& GetMetricNamespace() const{ return m_metricNamespace; }
 
     /**
-     * <p>The namespace of the CloudWatch metric.</p>
+     * <p>A custom namespace to contain your metric in CloudWatch. Use namespaces to
+     * group together metrics that are similar. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace">Namespaces</a>.</p>
      */
     inline bool MetricNamespaceHasBeenSet() const { return m_metricNamespaceHasBeenSet; }
 
     /**
-     * <p>The namespace of the CloudWatch metric.</p>
+     * <p>A custom namespace to contain your metric in CloudWatch. Use namespaces to
+     * group together metrics that are similar. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace">Namespaces</a>.</p>
      */
     inline void SetMetricNamespace(const Aws::String& value) { m_metricNamespaceHasBeenSet = true; m_metricNamespace = value; }
 
     /**
-     * <p>The namespace of the CloudWatch metric.</p>
+     * <p>A custom namespace to contain your metric in CloudWatch. Use namespaces to
+     * group together metrics that are similar. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace">Namespaces</a>.</p>
      */
     inline void SetMetricNamespace(Aws::String&& value) { m_metricNamespaceHasBeenSet = true; m_metricNamespace = std::move(value); }
 
     /**
-     * <p>The namespace of the CloudWatch metric.</p>
+     * <p>A custom namespace to contain your metric in CloudWatch. Use namespaces to
+     * group together metrics that are similar. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace">Namespaces</a>.</p>
      */
     inline void SetMetricNamespace(const char* value) { m_metricNamespaceHasBeenSet = true; m_metricNamespace.assign(value); }
 
     /**
-     * <p>The namespace of the CloudWatch metric.</p>
+     * <p>A custom namespace to contain your metric in CloudWatch. Use namespaces to
+     * group together metrics that are similar. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace">Namespaces</a>.</p>
      */
     inline MetricTransformation& WithMetricNamespace(const Aws::String& value) { SetMetricNamespace(value); return *this;}
 
     /**
-     * <p>The namespace of the CloudWatch metric.</p>
+     * <p>A custom namespace to contain your metric in CloudWatch. Use namespaces to
+     * group together metrics that are similar. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace">Namespaces</a>.</p>
      */
     inline MetricTransformation& WithMetricNamespace(Aws::String&& value) { SetMetricNamespace(std::move(value)); return *this;}
 
     /**
-     * <p>The namespace of the CloudWatch metric.</p>
+     * <p>A custom namespace to contain your metric in CloudWatch. Use namespaces to
+     * group together metrics that are similar. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace">Namespaces</a>.</p>
      */
     inline MetricTransformation& WithMetricNamespace(const char* value) { SetMetricNamespace(value); return *this;}
 

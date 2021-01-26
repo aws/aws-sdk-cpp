@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -93,6 +83,47 @@ namespace Model
      * <p>The CIDR block used for destination matches.</p>
      */
     inline TransitGatewayRoute& WithDestinationCidrBlock(const char* value) { SetDestinationCidrBlock(value); return *this;}
+
+
+    /**
+     * <p>The ID of the prefix list used for destination matches.</p>
+     */
+    inline const Aws::String& GetPrefixListId() const{ return m_prefixListId; }
+
+    /**
+     * <p>The ID of the prefix list used for destination matches.</p>
+     */
+    inline bool PrefixListIdHasBeenSet() const { return m_prefixListIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the prefix list used for destination matches.</p>
+     */
+    inline void SetPrefixListId(const Aws::String& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = value; }
+
+    /**
+     * <p>The ID of the prefix list used for destination matches.</p>
+     */
+    inline void SetPrefixListId(Aws::String&& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = std::move(value); }
+
+    /**
+     * <p>The ID of the prefix list used for destination matches.</p>
+     */
+    inline void SetPrefixListId(const char* value) { m_prefixListIdHasBeenSet = true; m_prefixListId.assign(value); }
+
+    /**
+     * <p>The ID of the prefix list used for destination matches.</p>
+     */
+    inline TransitGatewayRoute& WithPrefixListId(const Aws::String& value) { SetPrefixListId(value); return *this;}
+
+    /**
+     * <p>The ID of the prefix list used for destination matches.</p>
+     */
+    inline TransitGatewayRoute& WithPrefixListId(Aws::String&& value) { SetPrefixListId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the prefix list used for destination matches.</p>
+     */
+    inline TransitGatewayRoute& WithPrefixListId(const char* value) { SetPrefixListId(value); return *this;}
 
 
     /**
@@ -201,6 +232,9 @@ namespace Model
 
     Aws::String m_destinationCidrBlock;
     bool m_destinationCidrBlockHasBeenSet;
+
+    Aws::String m_prefixListId;
+    bool m_prefixListIdHasBeenSet;
 
     Aws::Vector<TransitGatewayRouteAttachment> m_transitGatewayAttachments;
     bool m_transitGatewayAttachmentsHasBeenSet;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lakeformation/LakeFormation_EXPORTS.h>
@@ -50,6 +40,55 @@ namespace Model
     TableWithColumnsResource(Aws::Utils::Json::JsonView jsonValue);
     TableWithColumnsResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The identifier for the Data Catalog. By default, it is the account ID of the
+     * caller.</p>
+     */
+    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+
+    /**
+     * <p>The identifier for the Data Catalog. By default, it is the account ID of the
+     * caller.</p>
+     */
+    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+
+    /**
+     * <p>The identifier for the Data Catalog. By default, it is the account ID of the
+     * caller.</p>
+     */
+    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
+
+    /**
+     * <p>The identifier for the Data Catalog. By default, it is the account ID of the
+     * caller.</p>
+     */
+    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
+
+    /**
+     * <p>The identifier for the Data Catalog. By default, it is the account ID of the
+     * caller.</p>
+     */
+    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
+
+    /**
+     * <p>The identifier for the Data Catalog. By default, it is the account ID of the
+     * caller.</p>
+     */
+    inline TableWithColumnsResource& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
+
+    /**
+     * <p>The identifier for the Data Catalog. By default, it is the account ID of the
+     * caller.</p>
+     */
+    inline TableWithColumnsResource& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier for the Data Catalog. By default, it is the account ID of the
+     * caller.</p>
+     */
+    inline TableWithColumnsResource& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 
 
     /**
@@ -266,6 +305,9 @@ namespace Model
     inline TableWithColumnsResource& WithColumnWildcard(ColumnWildcard&& value) { SetColumnWildcard(std::move(value)); return *this;}
 
   private:
+
+    Aws::String m_catalogId;
+    bool m_catalogIdHasBeenSet;
 
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;

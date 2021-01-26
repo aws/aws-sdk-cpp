@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -23,7 +13,9 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/ResolvedTargets.h>
 #include <aws/ssm/model/AutomationType.h>
+#include <aws/ssm/model/AutomationSubtype.h>
 #include <aws/ssm/model/Target.h>
+#include <aws/ssm/model/Runbook.h>
 #include <utility>
 
 namespace Aws
@@ -319,42 +311,42 @@ namespace Model
 
 
     /**
-     * <p>An Amazon S3 bucket where execution information is stored.</p>
+     * <p>An S3 bucket where execution information is stored.</p>
      */
     inline const Aws::String& GetLogFile() const{ return m_logFile; }
 
     /**
-     * <p>An Amazon S3 bucket where execution information is stored.</p>
+     * <p>An S3 bucket where execution information is stored.</p>
      */
     inline bool LogFileHasBeenSet() const { return m_logFileHasBeenSet; }
 
     /**
-     * <p>An Amazon S3 bucket where execution information is stored.</p>
+     * <p>An S3 bucket where execution information is stored.</p>
      */
     inline void SetLogFile(const Aws::String& value) { m_logFileHasBeenSet = true; m_logFile = value; }
 
     /**
-     * <p>An Amazon S3 bucket where execution information is stored.</p>
+     * <p>An S3 bucket where execution information is stored.</p>
      */
     inline void SetLogFile(Aws::String&& value) { m_logFileHasBeenSet = true; m_logFile = std::move(value); }
 
     /**
-     * <p>An Amazon S3 bucket where execution information is stored.</p>
+     * <p>An S3 bucket where execution information is stored.</p>
      */
     inline void SetLogFile(const char* value) { m_logFileHasBeenSet = true; m_logFile.assign(value); }
 
     /**
-     * <p>An Amazon S3 bucket where execution information is stored.</p>
+     * <p>An S3 bucket where execution information is stored.</p>
      */
     inline AutomationExecutionMetadata& WithLogFile(const Aws::String& value) { SetLogFile(value); return *this;}
 
     /**
-     * <p>An Amazon S3 bucket where execution information is stored.</p>
+     * <p>An S3 bucket where execution information is stored.</p>
      */
     inline AutomationExecutionMetadata& WithLogFile(Aws::String&& value) { SetLogFile(std::move(value)); return *this;}
 
     /**
-     * <p>An Amazon S3 bucket where execution information is stored.</p>
+     * <p>An S3 bucket where execution information is stored.</p>
      */
     inline AutomationExecutionMetadata& WithLogFile(const char* value) { SetLogFile(value); return *this;}
 
@@ -912,9 +904,9 @@ namespace Model
      * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either
      * Local or CrossAccount. CrossAccount is an Automation that runs in multiple AWS
      * Regions and accounts. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Executing
-     * Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems
-     * Manager User Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
+     * Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS
+     * Systems Manager User Guide</i>. </p>
      */
     inline const AutomationType& GetAutomationType() const{ return m_automationType; }
 
@@ -922,9 +914,9 @@ namespace Model
      * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either
      * Local or CrossAccount. CrossAccount is an Automation that runs in multiple AWS
      * Regions and accounts. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Executing
-     * Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems
-     * Manager User Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
+     * Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS
+     * Systems Manager User Guide</i>. </p>
      */
     inline bool AutomationTypeHasBeenSet() const { return m_automationTypeHasBeenSet; }
 
@@ -932,9 +924,9 @@ namespace Model
      * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either
      * Local or CrossAccount. CrossAccount is an Automation that runs in multiple AWS
      * Regions and accounts. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Executing
-     * Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems
-     * Manager User Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
+     * Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS
+     * Systems Manager User Guide</i>. </p>
      */
     inline void SetAutomationType(const AutomationType& value) { m_automationTypeHasBeenSet = true; m_automationType = value; }
 
@@ -942,9 +934,9 @@ namespace Model
      * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either
      * Local or CrossAccount. CrossAccount is an Automation that runs in multiple AWS
      * Regions and accounts. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Executing
-     * Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems
-     * Manager User Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
+     * Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS
+     * Systems Manager User Guide</i>. </p>
      */
     inline void SetAutomationType(AutomationType&& value) { m_automationTypeHasBeenSet = true; m_automationType = std::move(value); }
 
@@ -952,9 +944,9 @@ namespace Model
      * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either
      * Local or CrossAccount. CrossAccount is an Automation that runs in multiple AWS
      * Regions and accounts. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Executing
-     * Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems
-     * Manager User Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
+     * Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS
+     * Systems Manager User Guide</i>. </p>
      */
     inline AutomationExecutionMetadata& WithAutomationType(const AutomationType& value) { SetAutomationType(value); return *this;}
 
@@ -962,11 +954,275 @@ namespace Model
      * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either
      * Local or CrossAccount. CrossAccount is an Automation that runs in multiple AWS
      * Regions and accounts. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Executing
-     * Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems
-     * Manager User Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
+     * Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS
+     * Systems Manager User Guide</i>. </p>
      */
     inline AutomationExecutionMetadata& WithAutomationType(AutomationType&& value) { SetAutomationType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The subtype of the Automation operation. Currently, the only supported value
+     * is <code>ChangeRequest</code>.</p>
+     */
+    inline const AutomationSubtype& GetAutomationSubtype() const{ return m_automationSubtype; }
+
+    /**
+     * <p>The subtype of the Automation operation. Currently, the only supported value
+     * is <code>ChangeRequest</code>.</p>
+     */
+    inline bool AutomationSubtypeHasBeenSet() const { return m_automationSubtypeHasBeenSet; }
+
+    /**
+     * <p>The subtype of the Automation operation. Currently, the only supported value
+     * is <code>ChangeRequest</code>.</p>
+     */
+    inline void SetAutomationSubtype(const AutomationSubtype& value) { m_automationSubtypeHasBeenSet = true; m_automationSubtype = value; }
+
+    /**
+     * <p>The subtype of the Automation operation. Currently, the only supported value
+     * is <code>ChangeRequest</code>.</p>
+     */
+    inline void SetAutomationSubtype(AutomationSubtype&& value) { m_automationSubtypeHasBeenSet = true; m_automationSubtype = std::move(value); }
+
+    /**
+     * <p>The subtype of the Automation operation. Currently, the only supported value
+     * is <code>ChangeRequest</code>.</p>
+     */
+    inline AutomationExecutionMetadata& WithAutomationSubtype(const AutomationSubtype& value) { SetAutomationSubtype(value); return *this;}
+
+    /**
+     * <p>The subtype of the Automation operation. Currently, the only supported value
+     * is <code>ChangeRequest</code>.</p>
+     */
+    inline AutomationExecutionMetadata& WithAutomationSubtype(AutomationSubtype&& value) { SetAutomationSubtype(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The date and time the Automation operation is scheduled to start.</p>
+     */
+    inline const Aws::Utils::DateTime& GetScheduledTime() const{ return m_scheduledTime; }
+
+    /**
+     * <p>The date and time the Automation operation is scheduled to start.</p>
+     */
+    inline bool ScheduledTimeHasBeenSet() const { return m_scheduledTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time the Automation operation is scheduled to start.</p>
+     */
+    inline void SetScheduledTime(const Aws::Utils::DateTime& value) { m_scheduledTimeHasBeenSet = true; m_scheduledTime = value; }
+
+    /**
+     * <p>The date and time the Automation operation is scheduled to start.</p>
+     */
+    inline void SetScheduledTime(Aws::Utils::DateTime&& value) { m_scheduledTimeHasBeenSet = true; m_scheduledTime = std::move(value); }
+
+    /**
+     * <p>The date and time the Automation operation is scheduled to start.</p>
+     */
+    inline AutomationExecutionMetadata& WithScheduledTime(const Aws::Utils::DateTime& value) { SetScheduledTime(value); return *this;}
+
+    /**
+     * <p>The date and time the Automation operation is scheduled to start.</p>
+     */
+    inline AutomationExecutionMetadata& WithScheduledTime(Aws::Utils::DateTime&& value) { SetScheduledTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about the Automation runbooks (Automation documents) that are run
+     * during a runbook workflow in Change Manager.</p>  <p>The Automation
+     * runbooks specified for the runbook workflow can't run until all required
+     * approvals for the change request have been received.</p> 
+     */
+    inline const Aws::Vector<Runbook>& GetRunbooks() const{ return m_runbooks; }
+
+    /**
+     * <p>Information about the Automation runbooks (Automation documents) that are run
+     * during a runbook workflow in Change Manager.</p>  <p>The Automation
+     * runbooks specified for the runbook workflow can't run until all required
+     * approvals for the change request have been received.</p> 
+     */
+    inline bool RunbooksHasBeenSet() const { return m_runbooksHasBeenSet; }
+
+    /**
+     * <p>Information about the Automation runbooks (Automation documents) that are run
+     * during a runbook workflow in Change Manager.</p>  <p>The Automation
+     * runbooks specified for the runbook workflow can't run until all required
+     * approvals for the change request have been received.</p> 
+     */
+    inline void SetRunbooks(const Aws::Vector<Runbook>& value) { m_runbooksHasBeenSet = true; m_runbooks = value; }
+
+    /**
+     * <p>Information about the Automation runbooks (Automation documents) that are run
+     * during a runbook workflow in Change Manager.</p>  <p>The Automation
+     * runbooks specified for the runbook workflow can't run until all required
+     * approvals for the change request have been received.</p> 
+     */
+    inline void SetRunbooks(Aws::Vector<Runbook>&& value) { m_runbooksHasBeenSet = true; m_runbooks = std::move(value); }
+
+    /**
+     * <p>Information about the Automation runbooks (Automation documents) that are run
+     * during a runbook workflow in Change Manager.</p>  <p>The Automation
+     * runbooks specified for the runbook workflow can't run until all required
+     * approvals for the change request have been received.</p> 
+     */
+    inline AutomationExecutionMetadata& WithRunbooks(const Aws::Vector<Runbook>& value) { SetRunbooks(value); return *this;}
+
+    /**
+     * <p>Information about the Automation runbooks (Automation documents) that are run
+     * during a runbook workflow in Change Manager.</p>  <p>The Automation
+     * runbooks specified for the runbook workflow can't run until all required
+     * approvals for the change request have been received.</p> 
+     */
+    inline AutomationExecutionMetadata& WithRunbooks(Aws::Vector<Runbook>&& value) { SetRunbooks(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the Automation runbooks (Automation documents) that are run
+     * during a runbook workflow in Change Manager.</p>  <p>The Automation
+     * runbooks specified for the runbook workflow can't run until all required
+     * approvals for the change request have been received.</p> 
+     */
+    inline AutomationExecutionMetadata& AddRunbooks(const Runbook& value) { m_runbooksHasBeenSet = true; m_runbooks.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the Automation runbooks (Automation documents) that are run
+     * during a runbook workflow in Change Manager.</p>  <p>The Automation
+     * runbooks specified for the runbook workflow can't run until all required
+     * approvals for the change request have been received.</p> 
+     */
+    inline AutomationExecutionMetadata& AddRunbooks(Runbook&& value) { m_runbooksHasBeenSet = true; m_runbooks.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The ID of an OpsItem that is created to represent a Change Manager change
+     * request.</p>
+     */
+    inline const Aws::String& GetOpsItemId() const{ return m_opsItemId; }
+
+    /**
+     * <p>The ID of an OpsItem that is created to represent a Change Manager change
+     * request.</p>
+     */
+    inline bool OpsItemIdHasBeenSet() const { return m_opsItemIdHasBeenSet; }
+
+    /**
+     * <p>The ID of an OpsItem that is created to represent a Change Manager change
+     * request.</p>
+     */
+    inline void SetOpsItemId(const Aws::String& value) { m_opsItemIdHasBeenSet = true; m_opsItemId = value; }
+
+    /**
+     * <p>The ID of an OpsItem that is created to represent a Change Manager change
+     * request.</p>
+     */
+    inline void SetOpsItemId(Aws::String&& value) { m_opsItemIdHasBeenSet = true; m_opsItemId = std::move(value); }
+
+    /**
+     * <p>The ID of an OpsItem that is created to represent a Change Manager change
+     * request.</p>
+     */
+    inline void SetOpsItemId(const char* value) { m_opsItemIdHasBeenSet = true; m_opsItemId.assign(value); }
+
+    /**
+     * <p>The ID of an OpsItem that is created to represent a Change Manager change
+     * request.</p>
+     */
+    inline AutomationExecutionMetadata& WithOpsItemId(const Aws::String& value) { SetOpsItemId(value); return *this;}
+
+    /**
+     * <p>The ID of an OpsItem that is created to represent a Change Manager change
+     * request.</p>
+     */
+    inline AutomationExecutionMetadata& WithOpsItemId(Aws::String&& value) { SetOpsItemId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of an OpsItem that is created to represent a Change Manager change
+     * request.</p>
+     */
+    inline AutomationExecutionMetadata& WithOpsItemId(const char* value) { SetOpsItemId(value); return *this;}
+
+
+    /**
+     * <p>The ID of a State Manager association used in the Automation operation.</p>
+     */
+    inline const Aws::String& GetAssociationId() const{ return m_associationId; }
+
+    /**
+     * <p>The ID of a State Manager association used in the Automation operation.</p>
+     */
+    inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
+
+    /**
+     * <p>The ID of a State Manager association used in the Automation operation.</p>
+     */
+    inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
+
+    /**
+     * <p>The ID of a State Manager association used in the Automation operation.</p>
+     */
+    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
+
+    /**
+     * <p>The ID of a State Manager association used in the Automation operation.</p>
+     */
+    inline void SetAssociationId(const char* value) { m_associationIdHasBeenSet = true; m_associationId.assign(value); }
+
+    /**
+     * <p>The ID of a State Manager association used in the Automation operation.</p>
+     */
+    inline AutomationExecutionMetadata& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
+
+    /**
+     * <p>The ID of a State Manager association used in the Automation operation.</p>
+     */
+    inline AutomationExecutionMetadata& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of a State Manager association used in the Automation operation.</p>
+     */
+    inline AutomationExecutionMetadata& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+
+
+    /**
+     * <p>The name of the Change Manager change request.</p>
+     */
+    inline const Aws::String& GetChangeRequestName() const{ return m_changeRequestName; }
+
+    /**
+     * <p>The name of the Change Manager change request.</p>
+     */
+    inline bool ChangeRequestNameHasBeenSet() const { return m_changeRequestNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Change Manager change request.</p>
+     */
+    inline void SetChangeRequestName(const Aws::String& value) { m_changeRequestNameHasBeenSet = true; m_changeRequestName = value; }
+
+    /**
+     * <p>The name of the Change Manager change request.</p>
+     */
+    inline void SetChangeRequestName(Aws::String&& value) { m_changeRequestNameHasBeenSet = true; m_changeRequestName = std::move(value); }
+
+    /**
+     * <p>The name of the Change Manager change request.</p>
+     */
+    inline void SetChangeRequestName(const char* value) { m_changeRequestNameHasBeenSet = true; m_changeRequestName.assign(value); }
+
+    /**
+     * <p>The name of the Change Manager change request.</p>
+     */
+    inline AutomationExecutionMetadata& WithChangeRequestName(const Aws::String& value) { SetChangeRequestName(value); return *this;}
+
+    /**
+     * <p>The name of the Change Manager change request.</p>
+     */
+    inline AutomationExecutionMetadata& WithChangeRequestName(Aws::String&& value) { SetChangeRequestName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the Change Manager change request.</p>
+     */
+    inline AutomationExecutionMetadata& WithChangeRequestName(const char* value) { SetChangeRequestName(value); return *this;}
 
   private:
 
@@ -1035,6 +1291,24 @@ namespace Model
 
     AutomationType m_automationType;
     bool m_automationTypeHasBeenSet;
+
+    AutomationSubtype m_automationSubtype;
+    bool m_automationSubtypeHasBeenSet;
+
+    Aws::Utils::DateTime m_scheduledTime;
+    bool m_scheduledTimeHasBeenSet;
+
+    Aws::Vector<Runbook> m_runbooks;
+    bool m_runbooksHasBeenSet;
+
+    Aws::String m_opsItemId;
+    bool m_opsItemIdHasBeenSet;
+
+    Aws::String m_associationId;
+    bool m_associationIdHasBeenSet;
+
+    Aws::String m_changeRequestName;
+    bool m_changeRequestNameHasBeenSet;
   };
 
 } // namespace Model

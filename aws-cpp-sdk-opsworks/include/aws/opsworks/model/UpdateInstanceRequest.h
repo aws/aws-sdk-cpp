@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
@@ -335,9 +325,9 @@ namespace Model
      * Systems</a>. For more information about how to use custom AMIs with OpsWorks,
      * see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.</p> <note> <p>You can specify a different Linux operating
+     * Custom AMIs</a>.</p>  <p>You can specify a different Linux operating
      * system for the updated stack, but you cannot change from Linux to Windows or
-     * Windows to Linux.</p> </note>
+     * Windows to Linux.</p> 
      */
     inline const Aws::String& GetOs() const{ return m_os; }
 
@@ -367,9 +357,9 @@ namespace Model
      * Systems</a>. For more information about how to use custom AMIs with OpsWorks,
      * see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.</p> <note> <p>You can specify a different Linux operating
+     * Custom AMIs</a>.</p>  <p>You can specify a different Linux operating
      * system for the updated stack, but you cannot change from Linux to Windows or
-     * Windows to Linux.</p> </note>
+     * Windows to Linux.</p> 
      */
     inline bool OsHasBeenSet() const { return m_osHasBeenSet; }
 
@@ -399,9 +389,9 @@ namespace Model
      * Systems</a>. For more information about how to use custom AMIs with OpsWorks,
      * see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.</p> <note> <p>You can specify a different Linux operating
+     * Custom AMIs</a>.</p>  <p>You can specify a different Linux operating
      * system for the updated stack, but you cannot change from Linux to Windows or
-     * Windows to Linux.</p> </note>
+     * Windows to Linux.</p> 
      */
     inline void SetOs(const Aws::String& value) { m_osHasBeenSet = true; m_os = value; }
 
@@ -431,9 +421,9 @@ namespace Model
      * Systems</a>. For more information about how to use custom AMIs with OpsWorks,
      * see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.</p> <note> <p>You can specify a different Linux operating
+     * Custom AMIs</a>.</p>  <p>You can specify a different Linux operating
      * system for the updated stack, but you cannot change from Linux to Windows or
-     * Windows to Linux.</p> </note>
+     * Windows to Linux.</p> 
      */
     inline void SetOs(Aws::String&& value) { m_osHasBeenSet = true; m_os = std::move(value); }
 
@@ -463,9 +453,9 @@ namespace Model
      * Systems</a>. For more information about how to use custom AMIs with OpsWorks,
      * see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.</p> <note> <p>You can specify a different Linux operating
+     * Custom AMIs</a>.</p>  <p>You can specify a different Linux operating
      * system for the updated stack, but you cannot change from Linux to Windows or
-     * Windows to Linux.</p> </note>
+     * Windows to Linux.</p> 
      */
     inline void SetOs(const char* value) { m_osHasBeenSet = true; m_os.assign(value); }
 
@@ -495,9 +485,9 @@ namespace Model
      * Systems</a>. For more information about how to use custom AMIs with OpsWorks,
      * see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.</p> <note> <p>You can specify a different Linux operating
+     * Custom AMIs</a>.</p>  <p>You can specify a different Linux operating
      * system for the updated stack, but you cannot change from Linux to Windows or
-     * Windows to Linux.</p> </note>
+     * Windows to Linux.</p> 
      */
     inline UpdateInstanceRequest& WithOs(const Aws::String& value) { SetOs(value); return *this;}
 
@@ -527,9 +517,9 @@ namespace Model
      * Systems</a>. For more information about how to use custom AMIs with OpsWorks,
      * see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.</p> <note> <p>You can specify a different Linux operating
+     * Custom AMIs</a>.</p>  <p>You can specify a different Linux operating
      * system for the updated stack, but you cannot change from Linux to Windows or
-     * Windows to Linux.</p> </note>
+     * Windows to Linux.</p> 
      */
     inline UpdateInstanceRequest& WithOs(Aws::String&& value) { SetOs(std::move(value)); return *this;}
 
@@ -559,9 +549,9 @@ namespace Model
      * Systems</a>. For more information about how to use custom AMIs with OpsWorks,
      * see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.</p> <note> <p>You can specify a different Linux operating
+     * Custom AMIs</a>.</p>  <p>You can specify a different Linux operating
      * system for the updated stack, but you cannot change from Linux to Windows or
-     * Windows to Linux.</p> </note>
+     * Windows to Linux.</p> 
      */
     inline UpdateInstanceRequest& WithOs(const char* value) { SetOs(value); return *this;}
 
@@ -734,9 +724,9 @@ namespace Model
      * instances manually by using <a>CreateDeployment</a> to run the
      * <code>update_dependencies</code> stack command or by manually running
      * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-     * instances. </p> <note> <p>We strongly recommend using the default value of
+     * instances. </p>  <p>We strongly recommend using the default value of
      * <code>true</code>, to ensure that your instances have the latest security
-     * updates.</p> </note>
+     * updates.</p> 
      */
     inline bool GetInstallUpdatesOnBoot() const{ return m_installUpdatesOnBoot; }
 
@@ -747,9 +737,9 @@ namespace Model
      * instances manually by using <a>CreateDeployment</a> to run the
      * <code>update_dependencies</code> stack command or by manually running
      * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-     * instances. </p> <note> <p>We strongly recommend using the default value of
+     * instances. </p>  <p>We strongly recommend using the default value of
      * <code>true</code>, to ensure that your instances have the latest security
-     * updates.</p> </note>
+     * updates.</p> 
      */
     inline bool InstallUpdatesOnBootHasBeenSet() const { return m_installUpdatesOnBootHasBeenSet; }
 
@@ -760,9 +750,9 @@ namespace Model
      * instances manually by using <a>CreateDeployment</a> to run the
      * <code>update_dependencies</code> stack command or by manually running
      * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-     * instances. </p> <note> <p>We strongly recommend using the default value of
+     * instances. </p>  <p>We strongly recommend using the default value of
      * <code>true</code>, to ensure that your instances have the latest security
-     * updates.</p> </note>
+     * updates.</p> 
      */
     inline void SetInstallUpdatesOnBoot(bool value) { m_installUpdatesOnBootHasBeenSet = true; m_installUpdatesOnBoot = value; }
 
@@ -773,9 +763,9 @@ namespace Model
      * instances manually by using <a>CreateDeployment</a> to run the
      * <code>update_dependencies</code> stack command or by manually running
      * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-     * instances. </p> <note> <p>We strongly recommend using the default value of
+     * instances. </p>  <p>We strongly recommend using the default value of
      * <code>true</code>, to ensure that your instances have the latest security
-     * updates.</p> </note>
+     * updates.</p> 
      */
     inline UpdateInstanceRequest& WithInstallUpdatesOnBoot(bool value) { SetInstallUpdatesOnBoot(value); return *this;}
 

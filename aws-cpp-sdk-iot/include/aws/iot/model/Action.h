@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -33,7 +23,9 @@
 #include <aws/iot/model/IotEventsAction.h>
 #include <aws/iot/model/IotSiteWiseAction.h>
 #include <aws/iot/model/StepFunctionsAction.h>
+#include <aws/iot/model/TimestreamAction.h>
 #include <aws/iot/model/HttpAction.h>
+#include <aws/iot/model/KafkaAction.h>
 #include <utility>
 
 namespace Aws
@@ -642,6 +634,55 @@ namespace Model
 
 
     /**
+     * <p>The Timestream rule action writes attributes (measures) from an MQTT message
+     * into an Amazon Timestream table. For more information, see the <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a>
+     * topic rule action documentation.</p>
+     */
+    inline const TimestreamAction& GetTimestream() const{ return m_timestream; }
+
+    /**
+     * <p>The Timestream rule action writes attributes (measures) from an MQTT message
+     * into an Amazon Timestream table. For more information, see the <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a>
+     * topic rule action documentation.</p>
+     */
+    inline bool TimestreamHasBeenSet() const { return m_timestreamHasBeenSet; }
+
+    /**
+     * <p>The Timestream rule action writes attributes (measures) from an MQTT message
+     * into an Amazon Timestream table. For more information, see the <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a>
+     * topic rule action documentation.</p>
+     */
+    inline void SetTimestream(const TimestreamAction& value) { m_timestreamHasBeenSet = true; m_timestream = value; }
+
+    /**
+     * <p>The Timestream rule action writes attributes (measures) from an MQTT message
+     * into an Amazon Timestream table. For more information, see the <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a>
+     * topic rule action documentation.</p>
+     */
+    inline void SetTimestream(TimestreamAction&& value) { m_timestreamHasBeenSet = true; m_timestream = std::move(value); }
+
+    /**
+     * <p>The Timestream rule action writes attributes (measures) from an MQTT message
+     * into an Amazon Timestream table. For more information, see the <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a>
+     * topic rule action documentation.</p>
+     */
+    inline Action& WithTimestream(const TimestreamAction& value) { SetTimestream(value); return *this;}
+
+    /**
+     * <p>The Timestream rule action writes attributes (measures) from an MQTT message
+     * into an Amazon Timestream table. For more information, see the <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a>
+     * topic rule action documentation.</p>
+     */
+    inline Action& WithTimestream(TimestreamAction&& value) { SetTimestream(std::move(value)); return *this;}
+
+
+    /**
      * <p>Send data to an HTTPS endpoint.</p>
      */
     inline const HttpAction& GetHttp() const{ return m_http; }
@@ -670,6 +711,43 @@ namespace Model
      * <p>Send data to an HTTPS endpoint.</p>
      */
     inline Action& WithHttp(HttpAction&& value) { SetHttp(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or
+     * self-managed Apache Kafka cluster.</p>
+     */
+    inline const KafkaAction& GetKafka() const{ return m_kafka; }
+
+    /**
+     * <p>Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or
+     * self-managed Apache Kafka cluster.</p>
+     */
+    inline bool KafkaHasBeenSet() const { return m_kafkaHasBeenSet; }
+
+    /**
+     * <p>Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or
+     * self-managed Apache Kafka cluster.</p>
+     */
+    inline void SetKafka(const KafkaAction& value) { m_kafkaHasBeenSet = true; m_kafka = value; }
+
+    /**
+     * <p>Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or
+     * self-managed Apache Kafka cluster.</p>
+     */
+    inline void SetKafka(KafkaAction&& value) { m_kafkaHasBeenSet = true; m_kafka = std::move(value); }
+
+    /**
+     * <p>Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or
+     * self-managed Apache Kafka cluster.</p>
+     */
+    inline Action& WithKafka(const KafkaAction& value) { SetKafka(value); return *this;}
+
+    /**
+     * <p>Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or
+     * self-managed Apache Kafka cluster.</p>
+     */
+    inline Action& WithKafka(KafkaAction&& value) { SetKafka(std::move(value)); return *this;}
 
   private:
 
@@ -727,8 +805,14 @@ namespace Model
     StepFunctionsAction m_stepFunctions;
     bool m_stepFunctionsHasBeenSet;
 
+    TimestreamAction m_timestream;
+    bool m_timestreamHasBeenSet;
+
     HttpAction m_http;
     bool m_httpHasBeenSet;
+
+    KafkaAction m_kafka;
+    bool m_kafkaHasBeenSet;
   };
 
 } // namespace Model

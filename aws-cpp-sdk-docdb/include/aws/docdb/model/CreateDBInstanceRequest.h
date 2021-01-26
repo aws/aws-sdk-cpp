@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/docdb/DocDB_EXPORTS.h>
@@ -224,82 +214,58 @@ namespace Model
 
 
     /**
-     * <p> The Amazon EC2 Availability Zone that the instance is created in.</p>
+     * <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
      * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
-     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
-     * <code>AvailabilityZone</code> parameter can't be specified if the
-     * <code>MultiAZ</code> parameter is set to <code>true</code>. The specified
-     * Availability Zone must be in the same AWS Region as the current endpoint. </p>
+     * Region.</p> <p>Example: <code>us-east-1d</code> </p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p> The Amazon EC2 Availability Zone that the instance is created in.</p>
+     * <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
      * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
-     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
-     * <code>AvailabilityZone</code> parameter can't be specified if the
-     * <code>MultiAZ</code> parameter is set to <code>true</code>. The specified
-     * Availability Zone must be in the same AWS Region as the current endpoint. </p>
+     * Region.</p> <p>Example: <code>us-east-1d</code> </p>
      */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
-     * <p> The Amazon EC2 Availability Zone that the instance is created in.</p>
+     * <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
      * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
-     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
-     * <code>AvailabilityZone</code> parameter can't be specified if the
-     * <code>MultiAZ</code> parameter is set to <code>true</code>. The specified
-     * Availability Zone must be in the same AWS Region as the current endpoint. </p>
+     * Region.</p> <p>Example: <code>us-east-1d</code> </p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p> The Amazon EC2 Availability Zone that the instance is created in.</p>
+     * <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
      * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
-     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
-     * <code>AvailabilityZone</code> parameter can't be specified if the
-     * <code>MultiAZ</code> parameter is set to <code>true</code>. The specified
-     * Availability Zone must be in the same AWS Region as the current endpoint. </p>
+     * Region.</p> <p>Example: <code>us-east-1d</code> </p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
-     * <p> The Amazon EC2 Availability Zone that the instance is created in.</p>
+     * <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
      * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
-     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
-     * <code>AvailabilityZone</code> parameter can't be specified if the
-     * <code>MultiAZ</code> parameter is set to <code>true</code>. The specified
-     * Availability Zone must be in the same AWS Region as the current endpoint. </p>
+     * Region.</p> <p>Example: <code>us-east-1d</code> </p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * <p> The Amazon EC2 Availability Zone that the instance is created in.</p>
+     * <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
      * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
-     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
-     * <code>AvailabilityZone</code> parameter can't be specified if the
-     * <code>MultiAZ</code> parameter is set to <code>true</code>. The specified
-     * Availability Zone must be in the same AWS Region as the current endpoint. </p>
+     * Region.</p> <p>Example: <code>us-east-1d</code> </p>
      */
     inline CreateDBInstanceRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p> The Amazon EC2 Availability Zone that the instance is created in.</p>
+     * <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
      * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
-     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
-     * <code>AvailabilityZone</code> parameter can't be specified if the
-     * <code>MultiAZ</code> parameter is set to <code>true</code>. The specified
-     * Availability Zone must be in the same AWS Region as the current endpoint. </p>
+     * Region.</p> <p>Example: <code>us-east-1d</code> </p>
      */
     inline CreateDBInstanceRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon EC2 Availability Zone that the instance is created in.</p>
+     * <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
      * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
-     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
-     * <code>AvailabilityZone</code> parameter can't be specified if the
-     * <code>MultiAZ</code> parameter is set to <code>true</code>. The specified
-     * Availability Zone must be in the same AWS Region as the current endpoint. </p>
+     * Region.</p> <p>Example: <code>us-east-1d</code> </p>
      */
     inline CreateDBInstanceRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 

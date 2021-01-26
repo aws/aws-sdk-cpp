@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iotsecuretunneling/IoTSecureTunneling_EXPORTS.h>
@@ -75,13 +65,13 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
 
-        typedef Aws::Utils::Outcome<CloseTunnelResult, Aws::Client::AWSError<IoTSecureTunnelingErrors>> CloseTunnelOutcome;
-        typedef Aws::Utils::Outcome<DescribeTunnelResult, Aws::Client::AWSError<IoTSecureTunnelingErrors>> DescribeTunnelOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<IoTSecureTunnelingErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListTunnelsResult, Aws::Client::AWSError<IoTSecureTunnelingErrors>> ListTunnelsOutcome;
-        typedef Aws::Utils::Outcome<OpenTunnelResult, Aws::Client::AWSError<IoTSecureTunnelingErrors>> OpenTunnelOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<IoTSecureTunnelingErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<IoTSecureTunnelingErrors>> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<CloseTunnelResult, IoTSecureTunnelingError> CloseTunnelOutcome;
+        typedef Aws::Utils::Outcome<DescribeTunnelResult, IoTSecureTunnelingError> DescribeTunnelOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, IoTSecureTunnelingError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListTunnelsResult, IoTSecureTunnelingError> ListTunnelsOutcome;
+        typedef Aws::Utils::Outcome<OpenTunnelResult, IoTSecureTunnelingError> OpenTunnelOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, IoTSecureTunnelingError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, IoTSecureTunnelingError> UntagResourceOutcome;
 
         typedef std::future<CloseTunnelOutcome> CloseTunnelOutcomeCallable;
         typedef std::future<DescribeTunnelOutcome> DescribeTunnelOutcomeCallable;
@@ -105,9 +95,9 @@ namespace Model
   /**
    * <fullname>AWS IoT Secure Tunneling</fullname> <p>AWS IoT Secure Tunnling enables
    * you to create remote connections to devices deployed in the field.</p> <p>For
-   * more information about how AWS IoT Secure Tunneling works, see the <a
-   * href="https://docs.aws.amazon.com/secure-tunneling/latest/ug/what-is-secure-tunneling.html">User
-   * Guide</a>.</p>
+   * more information about how AWS IoT Secure Tunneling works, see <a
+   * href="https://docs.aws.amazon.com/iot/latest/developerguide/secure-tunneling.html">AWS
+   * IoT Secure Tunneling</a>.</p>
    */
   class AWS_IOTSECURETUNNELING_API IoTSecureTunnelingClient : public Aws::Client::AWSJsonClient
   {
@@ -134,8 +124,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~IoTSecureTunnelingClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "IoTSecureTunneling"; }
 
 
         /**
@@ -258,7 +246,7 @@ namespace Model
 
         /**
          * <p>Creates a new tunnel, and returns two client access tokens for clients to use
-         * to connect to the AWS IoT Secure Tunneling proxy server. .</p><p><h3>See
+         * to connect to the AWS IoT Secure Tunneling proxy server.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/OpenTunnel">AWS
          * API Reference</a></p>
@@ -267,7 +255,7 @@ namespace Model
 
         /**
          * <p>Creates a new tunnel, and returns two client access tokens for clients to use
-         * to connect to the AWS IoT Secure Tunneling proxy server. .</p><p><h3>See
+         * to connect to the AWS IoT Secure Tunneling proxy server.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/OpenTunnel">AWS
          * API Reference</a></p>
@@ -278,7 +266,7 @@ namespace Model
 
         /**
          * <p>Creates a new tunnel, and returns two client access tokens for clients to use
-         * to connect to the AWS IoT Secure Tunneling proxy server. .</p><p><h3>See
+         * to connect to the AWS IoT Secure Tunneling proxy server.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/OpenTunnel">AWS
          * API Reference</a></p>

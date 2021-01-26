@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
@@ -141,7 +131,14 @@ namespace Model
      * Database Connectivity (JDBC).</p> </li> <li> <p> <code>KAFKA</code> - Designates
      * a connection to an Apache Kafka streaming platform.</p> </li> <li> <p>
      * <code>MONGODB</code> - Designates a connection to a MongoDB document
-     * database.</p> </li> </ul> <p>SFTP is not supported.</p>
+     * database.</p> </li> <li> <p> <code>NETWORK</code> - Designates a network
+     * connection to a data source within an Amazon Virtual Private Cloud environment
+     * (Amazon VPC).</p> </li> <li> <p> <code>MARKETPLACE</code> - Uses configuration
+     * settings contained in a connector purchased from AWS Marketplace to read from
+     * and write to data stores that are not natively supported by AWS Glue.</p> </li>
+     * <li> <p> <code>CUSTOM</code> - Uses configuration settings contained in a custom
+     * connector to read from and write to data stores that are not natively supported
+     * by AWS Glue.</p> </li> </ul> <p>SFTP is not supported.</p>
      */
     inline const ConnectionType& GetConnectionType() const{ return m_connectionType; }
 
@@ -151,7 +148,14 @@ namespace Model
      * Database Connectivity (JDBC).</p> </li> <li> <p> <code>KAFKA</code> - Designates
      * a connection to an Apache Kafka streaming platform.</p> </li> <li> <p>
      * <code>MONGODB</code> - Designates a connection to a MongoDB document
-     * database.</p> </li> </ul> <p>SFTP is not supported.</p>
+     * database.</p> </li> <li> <p> <code>NETWORK</code> - Designates a network
+     * connection to a data source within an Amazon Virtual Private Cloud environment
+     * (Amazon VPC).</p> </li> <li> <p> <code>MARKETPLACE</code> - Uses configuration
+     * settings contained in a connector purchased from AWS Marketplace to read from
+     * and write to data stores that are not natively supported by AWS Glue.</p> </li>
+     * <li> <p> <code>CUSTOM</code> - Uses configuration settings contained in a custom
+     * connector to read from and write to data stores that are not natively supported
+     * by AWS Glue.</p> </li> </ul> <p>SFTP is not supported.</p>
      */
     inline bool ConnectionTypeHasBeenSet() const { return m_connectionTypeHasBeenSet; }
 
@@ -161,7 +165,14 @@ namespace Model
      * Database Connectivity (JDBC).</p> </li> <li> <p> <code>KAFKA</code> - Designates
      * a connection to an Apache Kafka streaming platform.</p> </li> <li> <p>
      * <code>MONGODB</code> - Designates a connection to a MongoDB document
-     * database.</p> </li> </ul> <p>SFTP is not supported.</p>
+     * database.</p> </li> <li> <p> <code>NETWORK</code> - Designates a network
+     * connection to a data source within an Amazon Virtual Private Cloud environment
+     * (Amazon VPC).</p> </li> <li> <p> <code>MARKETPLACE</code> - Uses configuration
+     * settings contained in a connector purchased from AWS Marketplace to read from
+     * and write to data stores that are not natively supported by AWS Glue.</p> </li>
+     * <li> <p> <code>CUSTOM</code> - Uses configuration settings contained in a custom
+     * connector to read from and write to data stores that are not natively supported
+     * by AWS Glue.</p> </li> </ul> <p>SFTP is not supported.</p>
      */
     inline void SetConnectionType(const ConnectionType& value) { m_connectionTypeHasBeenSet = true; m_connectionType = value; }
 
@@ -171,7 +182,14 @@ namespace Model
      * Database Connectivity (JDBC).</p> </li> <li> <p> <code>KAFKA</code> - Designates
      * a connection to an Apache Kafka streaming platform.</p> </li> <li> <p>
      * <code>MONGODB</code> - Designates a connection to a MongoDB document
-     * database.</p> </li> </ul> <p>SFTP is not supported.</p>
+     * database.</p> </li> <li> <p> <code>NETWORK</code> - Designates a network
+     * connection to a data source within an Amazon Virtual Private Cloud environment
+     * (Amazon VPC).</p> </li> <li> <p> <code>MARKETPLACE</code> - Uses configuration
+     * settings contained in a connector purchased from AWS Marketplace to read from
+     * and write to data stores that are not natively supported by AWS Glue.</p> </li>
+     * <li> <p> <code>CUSTOM</code> - Uses configuration settings contained in a custom
+     * connector to read from and write to data stores that are not natively supported
+     * by AWS Glue.</p> </li> </ul> <p>SFTP is not supported.</p>
      */
     inline void SetConnectionType(ConnectionType&& value) { m_connectionTypeHasBeenSet = true; m_connectionType = std::move(value); }
 
@@ -181,7 +199,14 @@ namespace Model
      * Database Connectivity (JDBC).</p> </li> <li> <p> <code>KAFKA</code> - Designates
      * a connection to an Apache Kafka streaming platform.</p> </li> <li> <p>
      * <code>MONGODB</code> - Designates a connection to a MongoDB document
-     * database.</p> </li> </ul> <p>SFTP is not supported.</p>
+     * database.</p> </li> <li> <p> <code>NETWORK</code> - Designates a network
+     * connection to a data source within an Amazon Virtual Private Cloud environment
+     * (Amazon VPC).</p> </li> <li> <p> <code>MARKETPLACE</code> - Uses configuration
+     * settings contained in a connector purchased from AWS Marketplace to read from
+     * and write to data stores that are not natively supported by AWS Glue.</p> </li>
+     * <li> <p> <code>CUSTOM</code> - Uses configuration settings contained in a custom
+     * connector to read from and write to data stores that are not natively supported
+     * by AWS Glue.</p> </li> </ul> <p>SFTP is not supported.</p>
      */
     inline ConnectionInput& WithConnectionType(const ConnectionType& value) { SetConnectionType(value); return *this;}
 
@@ -191,7 +216,14 @@ namespace Model
      * Database Connectivity (JDBC).</p> </li> <li> <p> <code>KAFKA</code> - Designates
      * a connection to an Apache Kafka streaming platform.</p> </li> <li> <p>
      * <code>MONGODB</code> - Designates a connection to a MongoDB document
-     * database.</p> </li> </ul> <p>SFTP is not supported.</p>
+     * database.</p> </li> <li> <p> <code>NETWORK</code> - Designates a network
+     * connection to a data source within an Amazon Virtual Private Cloud environment
+     * (Amazon VPC).</p> </li> <li> <p> <code>MARKETPLACE</code> - Uses configuration
+     * settings contained in a connector purchased from AWS Marketplace to read from
+     * and write to data stores that are not natively supported by AWS Glue.</p> </li>
+     * <li> <p> <code>CUSTOM</code> - Uses configuration settings contained in a custom
+     * connector to read from and write to data stores that are not natively supported
+     * by AWS Glue.</p> </li> </ul> <p>SFTP is not supported.</p>
      */
     inline ConnectionInput& WithConnectionType(ConnectionType&& value) { SetConnectionType(std::move(value)); return *this;}
 

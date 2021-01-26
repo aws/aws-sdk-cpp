@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/wafv2/WAFV2_EXPORTS.h>
@@ -39,19 +29,20 @@ namespace Model
 {
 
   /**
-   * <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
+   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
    * released in November, 2019. For information, including how to migrate your AWS
    * WAF resources from the prior release, see the <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p> </note> <p> A Web ACL defines a collection of
+   * WAF Developer Guide</a>. </p>  <p> A Web ACL defines a collection of
    * rules to use to inspect and control web requests. Each rule has an action
    * defined (allow, block, or count) for requests that match the statement of the
    * rule. In the Web ACL, you assign a default action to take (allow, block) for any
    * request that does not match any of the rules. The rules in a Web ACL can be a
    * combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group.
    * You can associate a Web ACL with one or more AWS resources to protect. The
-   * resources can be Amazon CloudFront, an Amazon API Gateway API, or an Application
-   * Load Balancer. </p><p><h3>See Also:</h3>   <a
+   * resources can be Amazon CloudFront, an Amazon API Gateway REST API, an
+   * Application Load Balancer, or an AWS AppSync GraphQL API. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/WebACL">AWS API
    * Reference</a></p>
    */

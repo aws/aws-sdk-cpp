@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
@@ -214,37 +204,37 @@ namespace Model
 
     /**
      * <p>The timestamp when the instance was created (e.g.,
-     * <code>1479734909.17</code>).</p>
+     * <code>1479734909.17</code>) in Unix time format.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
      * <p>The timestamp when the instance was created (e.g.,
-     * <code>1479734909.17</code>).</p>
+     * <code>1479734909.17</code>) in Unix time format.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
      * <p>The timestamp when the instance was created (e.g.,
-     * <code>1479734909.17</code>).</p>
+     * <code>1479734909.17</code>) in Unix time format.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
      * <p>The timestamp when the instance was created (e.g.,
-     * <code>1479734909.17</code>).</p>
+     * <code>1479734909.17</code>) in Unix time format.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
      * <p>The timestamp when the instance was created (e.g.,
-     * <code>1479734909.17</code>).</p>
+     * <code>1479734909.17</code>) in Unix time format.</p>
      */
     inline Instance& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
      * <p>The timestamp when the instance was created (e.g.,
-     * <code>1479734909.17</code>).</p>
+     * <code>1479734909.17</code>) in Unix time format.</p>
      */
     inline Instance& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 

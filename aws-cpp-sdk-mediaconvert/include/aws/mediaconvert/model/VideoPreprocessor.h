@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/mediaconvert/model/DolbyVision.h>
 #include <aws/mediaconvert/model/ImageInserter.h>
 #include <aws/mediaconvert/model/NoiseReducer.h>
+#include <aws/mediaconvert/model/PartnerWatermarking.h>
 #include <aws/mediaconvert/model/TimecodeBurnin.h>
 #include <utility>
 
@@ -252,6 +243,49 @@ namespace Model
 
 
     /**
+     * If you work with a third party video watermarking partner, use the group of
+     * settings that correspond with your watermarking partner to include watermarks in
+     * your output.
+     */
+    inline const PartnerWatermarking& GetPartnerWatermarking() const{ return m_partnerWatermarking; }
+
+    /**
+     * If you work with a third party video watermarking partner, use the group of
+     * settings that correspond with your watermarking partner to include watermarks in
+     * your output.
+     */
+    inline bool PartnerWatermarkingHasBeenSet() const { return m_partnerWatermarkingHasBeenSet; }
+
+    /**
+     * If you work with a third party video watermarking partner, use the group of
+     * settings that correspond with your watermarking partner to include watermarks in
+     * your output.
+     */
+    inline void SetPartnerWatermarking(const PartnerWatermarking& value) { m_partnerWatermarkingHasBeenSet = true; m_partnerWatermarking = value; }
+
+    /**
+     * If you work with a third party video watermarking partner, use the group of
+     * settings that correspond with your watermarking partner to include watermarks in
+     * your output.
+     */
+    inline void SetPartnerWatermarking(PartnerWatermarking&& value) { m_partnerWatermarkingHasBeenSet = true; m_partnerWatermarking = std::move(value); }
+
+    /**
+     * If you work with a third party video watermarking partner, use the group of
+     * settings that correspond with your watermarking partner to include watermarks in
+     * your output.
+     */
+    inline VideoPreprocessor& WithPartnerWatermarking(const PartnerWatermarking& value) { SetPartnerWatermarking(value); return *this;}
+
+    /**
+     * If you work with a third party video watermarking partner, use the group of
+     * settings that correspond with your watermarking partner to include watermarks in
+     * your output.
+     */
+    inline VideoPreprocessor& WithPartnerWatermarking(PartnerWatermarking&& value) { SetPartnerWatermarking(std::move(value)); return *this;}
+
+
+    /**
      * Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified
      * prefix into the output.
      */
@@ -303,6 +337,9 @@ namespace Model
 
     NoiseReducer m_noiseReducer;
     bool m_noiseReducerHasBeenSet;
+
+    PartnerWatermarking m_partnerWatermarking;
+    bool m_partnerWatermarkingHasBeenSet;
 
     TimecodeBurnin m_timecodeBurnin;
     bool m_timecodeBurninHasBeenSet;

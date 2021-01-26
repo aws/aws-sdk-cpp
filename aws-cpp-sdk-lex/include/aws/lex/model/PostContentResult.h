@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lex/LexRuntimeService_EXPORTS.h>
@@ -126,6 +116,120 @@ namespace Model
      * <p>Current user intent that Amazon Lex is aware of.</p>
      */
     inline PostContentResult& WithIntentName(const char* value) { SetIntentName(value); return *this;}
+
+
+    /**
+     * <p>Provides a score that indicates how confident Amazon Lex is that the returned
+     * intent is the one that matches the user's intent. The score is between 0.0 and
+     * 1.0.</p> <p>The score is a relative score, not an absolute score. The score may
+     * change based on improvements to Amazon Lex. </p>
+     */
+    inline const Aws::String& GetNluIntentConfidence() const{ return m_nluIntentConfidence; }
+
+    /**
+     * <p>Provides a score that indicates how confident Amazon Lex is that the returned
+     * intent is the one that matches the user's intent. The score is between 0.0 and
+     * 1.0.</p> <p>The score is a relative score, not an absolute score. The score may
+     * change based on improvements to Amazon Lex. </p>
+     */
+    inline void SetNluIntentConfidence(const Aws::String& value) { m_nluIntentConfidence = value; }
+
+    /**
+     * <p>Provides a score that indicates how confident Amazon Lex is that the returned
+     * intent is the one that matches the user's intent. The score is between 0.0 and
+     * 1.0.</p> <p>The score is a relative score, not an absolute score. The score may
+     * change based on improvements to Amazon Lex. </p>
+     */
+    inline void SetNluIntentConfidence(Aws::String&& value) { m_nluIntentConfidence = std::move(value); }
+
+    /**
+     * <p>Provides a score that indicates how confident Amazon Lex is that the returned
+     * intent is the one that matches the user's intent. The score is between 0.0 and
+     * 1.0.</p> <p>The score is a relative score, not an absolute score. The score may
+     * change based on improvements to Amazon Lex. </p>
+     */
+    inline void SetNluIntentConfidence(const char* value) { m_nluIntentConfidence.assign(value); }
+
+    /**
+     * <p>Provides a score that indicates how confident Amazon Lex is that the returned
+     * intent is the one that matches the user's intent. The score is between 0.0 and
+     * 1.0.</p> <p>The score is a relative score, not an absolute score. The score may
+     * change based on improvements to Amazon Lex. </p>
+     */
+    inline PostContentResult& WithNluIntentConfidence(const Aws::String& value) { SetNluIntentConfidence(value); return *this;}
+
+    /**
+     * <p>Provides a score that indicates how confident Amazon Lex is that the returned
+     * intent is the one that matches the user's intent. The score is between 0.0 and
+     * 1.0.</p> <p>The score is a relative score, not an absolute score. The score may
+     * change based on improvements to Amazon Lex. </p>
+     */
+    inline PostContentResult& WithNluIntentConfidence(Aws::String&& value) { SetNluIntentConfidence(std::move(value)); return *this;}
+
+    /**
+     * <p>Provides a score that indicates how confident Amazon Lex is that the returned
+     * intent is the one that matches the user's intent. The score is between 0.0 and
+     * 1.0.</p> <p>The score is a relative score, not an absolute score. The score may
+     * change based on improvements to Amazon Lex. </p>
+     */
+    inline PostContentResult& WithNluIntentConfidence(const char* value) { SetNluIntentConfidence(value); return *this;}
+
+
+    /**
+     * <p>One to four alternative intents that may be applicable to the user's
+     * intent.</p> <p>Each alternative includes a score that indicates how confident
+     * Amazon Lex is that the intent matches the user's intent. The intents are sorted
+     * by the confidence score.</p>
+     */
+    inline const Aws::String& GetAlternativeIntents() const{ return m_alternativeIntents; }
+
+    /**
+     * <p>One to four alternative intents that may be applicable to the user's
+     * intent.</p> <p>Each alternative includes a score that indicates how confident
+     * Amazon Lex is that the intent matches the user's intent. The intents are sorted
+     * by the confidence score.</p>
+     */
+    inline void SetAlternativeIntents(const Aws::String& value) { m_alternativeIntents = value; }
+
+    /**
+     * <p>One to four alternative intents that may be applicable to the user's
+     * intent.</p> <p>Each alternative includes a score that indicates how confident
+     * Amazon Lex is that the intent matches the user's intent. The intents are sorted
+     * by the confidence score.</p>
+     */
+    inline void SetAlternativeIntents(Aws::String&& value) { m_alternativeIntents = std::move(value); }
+
+    /**
+     * <p>One to four alternative intents that may be applicable to the user's
+     * intent.</p> <p>Each alternative includes a score that indicates how confident
+     * Amazon Lex is that the intent matches the user's intent. The intents are sorted
+     * by the confidence score.</p>
+     */
+    inline void SetAlternativeIntents(const char* value) { m_alternativeIntents.assign(value); }
+
+    /**
+     * <p>One to four alternative intents that may be applicable to the user's
+     * intent.</p> <p>Each alternative includes a score that indicates how confident
+     * Amazon Lex is that the intent matches the user's intent. The intents are sorted
+     * by the confidence score.</p>
+     */
+    inline PostContentResult& WithAlternativeIntents(const Aws::String& value) { SetAlternativeIntents(value); return *this;}
+
+    /**
+     * <p>One to four alternative intents that may be applicable to the user's
+     * intent.</p> <p>Each alternative includes a score that indicates how confident
+     * Amazon Lex is that the intent matches the user's intent. The intents are sorted
+     * by the confidence score.</p>
+     */
+    inline PostContentResult& WithAlternativeIntents(Aws::String&& value) { SetAlternativeIntents(std::move(value)); return *this;}
+
+    /**
+     * <p>One to four alternative intents that may be applicable to the user's
+     * intent.</p> <p>Each alternative includes a score that indicates how confident
+     * Amazon Lex is that the intent matches the user's intent. The intents are sorted
+     * by the confidence score.</p>
+     */
+    inline PostContentResult& WithAlternativeIntents(const char* value) { SetAlternativeIntents(value); return *this;}
 
 
     /**
@@ -285,51 +389,51 @@ namespace Model
 
 
     /**
-     * <p>The sentiment expressed in and utterance.</p> <p>When the bot is configured
-     * to send utterances to Amazon Comprehend for sentiment analysis, this field
-     * contains the result of the analysis.</p>
+     * <p>The sentiment expressed in an utterance.</p> <p>When the bot is configured to
+     * send utterances to Amazon Comprehend for sentiment analysis, this field contains
+     * the result of the analysis.</p>
      */
     inline const Aws::String& GetSentimentResponse() const{ return m_sentimentResponse; }
 
     /**
-     * <p>The sentiment expressed in and utterance.</p> <p>When the bot is configured
-     * to send utterances to Amazon Comprehend for sentiment analysis, this field
-     * contains the result of the analysis.</p>
+     * <p>The sentiment expressed in an utterance.</p> <p>When the bot is configured to
+     * send utterances to Amazon Comprehend for sentiment analysis, this field contains
+     * the result of the analysis.</p>
      */
     inline void SetSentimentResponse(const Aws::String& value) { m_sentimentResponse = value; }
 
     /**
-     * <p>The sentiment expressed in and utterance.</p> <p>When the bot is configured
-     * to send utterances to Amazon Comprehend for sentiment analysis, this field
-     * contains the result of the analysis.</p>
+     * <p>The sentiment expressed in an utterance.</p> <p>When the bot is configured to
+     * send utterances to Amazon Comprehend for sentiment analysis, this field contains
+     * the result of the analysis.</p>
      */
     inline void SetSentimentResponse(Aws::String&& value) { m_sentimentResponse = std::move(value); }
 
     /**
-     * <p>The sentiment expressed in and utterance.</p> <p>When the bot is configured
-     * to send utterances to Amazon Comprehend for sentiment analysis, this field
-     * contains the result of the analysis.</p>
+     * <p>The sentiment expressed in an utterance.</p> <p>When the bot is configured to
+     * send utterances to Amazon Comprehend for sentiment analysis, this field contains
+     * the result of the analysis.</p>
      */
     inline void SetSentimentResponse(const char* value) { m_sentimentResponse.assign(value); }
 
     /**
-     * <p>The sentiment expressed in and utterance.</p> <p>When the bot is configured
-     * to send utterances to Amazon Comprehend for sentiment analysis, this field
-     * contains the result of the analysis.</p>
+     * <p>The sentiment expressed in an utterance.</p> <p>When the bot is configured to
+     * send utterances to Amazon Comprehend for sentiment analysis, this field contains
+     * the result of the analysis.</p>
      */
     inline PostContentResult& WithSentimentResponse(const Aws::String& value) { SetSentimentResponse(value); return *this;}
 
     /**
-     * <p>The sentiment expressed in and utterance.</p> <p>When the bot is configured
-     * to send utterances to Amazon Comprehend for sentiment analysis, this field
-     * contains the result of the analysis.</p>
+     * <p>The sentiment expressed in an utterance.</p> <p>When the bot is configured to
+     * send utterances to Amazon Comprehend for sentiment analysis, this field contains
+     * the result of the analysis.</p>
      */
     inline PostContentResult& WithSentimentResponse(Aws::String&& value) { SetSentimentResponse(std::move(value)); return *this;}
 
     /**
-     * <p>The sentiment expressed in and utterance.</p> <p>When the bot is configured
-     * to send utterances to Amazon Comprehend for sentiment analysis, this field
-     * contains the result of the analysis.</p>
+     * <p>The sentiment expressed in an utterance.</p> <p>When the bot is configured to
+     * send utterances to Amazon Comprehend for sentiment analysis, this field contains
+     * the result of the analysis.</p>
      */
     inline PostContentResult& WithSentimentResponse(const char* value) { SetSentimentResponse(value); return *this;}
 
@@ -807,6 +911,56 @@ namespace Model
 
 
     /**
+     * <p>The version of the bot that responded to the conversation. You can use this
+     * information to help determine if one version of a bot is performing better than
+     * another version.</p>
+     */
+    inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
+
+    /**
+     * <p>The version of the bot that responded to the conversation. You can use this
+     * information to help determine if one version of a bot is performing better than
+     * another version.</p>
+     */
+    inline void SetBotVersion(const Aws::String& value) { m_botVersion = value; }
+
+    /**
+     * <p>The version of the bot that responded to the conversation. You can use this
+     * information to help determine if one version of a bot is performing better than
+     * another version.</p>
+     */
+    inline void SetBotVersion(Aws::String&& value) { m_botVersion = std::move(value); }
+
+    /**
+     * <p>The version of the bot that responded to the conversation. You can use this
+     * information to help determine if one version of a bot is performing better than
+     * another version.</p>
+     */
+    inline void SetBotVersion(const char* value) { m_botVersion.assign(value); }
+
+    /**
+     * <p>The version of the bot that responded to the conversation. You can use this
+     * information to help determine if one version of a bot is performing better than
+     * another version.</p>
+     */
+    inline PostContentResult& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
+
+    /**
+     * <p>The version of the bot that responded to the conversation. You can use this
+     * information to help determine if one version of a bot is performing better than
+     * another version.</p>
+     */
+    inline PostContentResult& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The version of the bot that responded to the conversation. You can use this
+     * information to help determine if one version of a bot is performing better than
+     * another version.</p>
+     */
+    inline PostContentResult& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
+
+
+    /**
      * <p>The unique identifier for the session.</p>
      */
     inline const Aws::String& GetSessionId() const{ return m_sessionId; }
@@ -841,11 +995,79 @@ namespace Model
      */
     inline PostContentResult& WithSessionId(const char* value) { SetSessionId(value); return *this;}
 
+
+    /**
+     * <p>A list of active contexts for the session. A context can be set when an
+     * intent is fulfilled or by calling the <code>PostContent</code>,
+     * <code>PostText</code>, or <code>PutSession</code> operation.</p> <p>You can use
+     * a context to control the intents that can follow up an intent, or to modify the
+     * operation of your application.</p>
+     */
+    inline const Aws::String& GetActiveContexts() const{ return m_activeContexts; }
+
+    /**
+     * <p>A list of active contexts for the session. A context can be set when an
+     * intent is fulfilled or by calling the <code>PostContent</code>,
+     * <code>PostText</code>, or <code>PutSession</code> operation.</p> <p>You can use
+     * a context to control the intents that can follow up an intent, or to modify the
+     * operation of your application.</p>
+     */
+    inline void SetActiveContexts(const Aws::String& value) { m_activeContexts = value; }
+
+    /**
+     * <p>A list of active contexts for the session. A context can be set when an
+     * intent is fulfilled or by calling the <code>PostContent</code>,
+     * <code>PostText</code>, or <code>PutSession</code> operation.</p> <p>You can use
+     * a context to control the intents that can follow up an intent, or to modify the
+     * operation of your application.</p>
+     */
+    inline void SetActiveContexts(Aws::String&& value) { m_activeContexts = std::move(value); }
+
+    /**
+     * <p>A list of active contexts for the session. A context can be set when an
+     * intent is fulfilled or by calling the <code>PostContent</code>,
+     * <code>PostText</code>, or <code>PutSession</code> operation.</p> <p>You can use
+     * a context to control the intents that can follow up an intent, or to modify the
+     * operation of your application.</p>
+     */
+    inline void SetActiveContexts(const char* value) { m_activeContexts.assign(value); }
+
+    /**
+     * <p>A list of active contexts for the session. A context can be set when an
+     * intent is fulfilled or by calling the <code>PostContent</code>,
+     * <code>PostText</code>, or <code>PutSession</code> operation.</p> <p>You can use
+     * a context to control the intents that can follow up an intent, or to modify the
+     * operation of your application.</p>
+     */
+    inline PostContentResult& WithActiveContexts(const Aws::String& value) { SetActiveContexts(value); return *this;}
+
+    /**
+     * <p>A list of active contexts for the session. A context can be set when an
+     * intent is fulfilled or by calling the <code>PostContent</code>,
+     * <code>PostText</code>, or <code>PutSession</code> operation.</p> <p>You can use
+     * a context to control the intents that can follow up an intent, or to modify the
+     * operation of your application.</p>
+     */
+    inline PostContentResult& WithActiveContexts(Aws::String&& value) { SetActiveContexts(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of active contexts for the session. A context can be set when an
+     * intent is fulfilled or by calling the <code>PostContent</code>,
+     * <code>PostText</code>, or <code>PutSession</code> operation.</p> <p>You can use
+     * a context to control the intents that can follow up an intent, or to modify the
+     * operation of your application.</p>
+     */
+    inline PostContentResult& WithActiveContexts(const char* value) { SetActiveContexts(value); return *this;}
+
   private:
 
     Aws::String m_contentType;
 
     Aws::String m_intentName;
+
+    Aws::String m_nluIntentConfidence;
+
+    Aws::String m_alternativeIntents;
 
     Aws::String m_slots;
 
@@ -865,7 +1087,11 @@ namespace Model
 
   Aws::Utils::Stream::ResponseStream m_audioStream;
 
+    Aws::String m_botVersion;
+
     Aws::String m_sessionId;
+
+    Aws::String m_activeContexts;
   };
 
 } // namespace Model

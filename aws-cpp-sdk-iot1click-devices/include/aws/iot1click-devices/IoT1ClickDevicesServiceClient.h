@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot1click-devices/IoT1ClickDevicesService_EXPORTS.h>
@@ -86,19 +76,19 @@ namespace Model
         class UntagResourceRequest;
         class UpdateDeviceStateRequest;
 
-        typedef Aws::Utils::Outcome<ClaimDevicesByClaimCodeResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> ClaimDevicesByClaimCodeOutcome;
-        typedef Aws::Utils::Outcome<DescribeDeviceResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> DescribeDeviceOutcome;
-        typedef Aws::Utils::Outcome<FinalizeDeviceClaimResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> FinalizeDeviceClaimOutcome;
-        typedef Aws::Utils::Outcome<GetDeviceMethodsResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> GetDeviceMethodsOutcome;
-        typedef Aws::Utils::Outcome<InitiateDeviceClaimResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> InitiateDeviceClaimOutcome;
-        typedef Aws::Utils::Outcome<InvokeDeviceMethodResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> InvokeDeviceMethodOutcome;
-        typedef Aws::Utils::Outcome<ListDeviceEventsResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> ListDeviceEventsOutcome;
-        typedef Aws::Utils::Outcome<ListDevicesResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> ListDevicesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UnclaimDeviceResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> UnclaimDeviceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateDeviceStateResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> UpdateDeviceStateOutcome;
+        typedef Aws::Utils::Outcome<ClaimDevicesByClaimCodeResult, IoT1ClickDevicesServiceError> ClaimDevicesByClaimCodeOutcome;
+        typedef Aws::Utils::Outcome<DescribeDeviceResult, IoT1ClickDevicesServiceError> DescribeDeviceOutcome;
+        typedef Aws::Utils::Outcome<FinalizeDeviceClaimResult, IoT1ClickDevicesServiceError> FinalizeDeviceClaimOutcome;
+        typedef Aws::Utils::Outcome<GetDeviceMethodsResult, IoT1ClickDevicesServiceError> GetDeviceMethodsOutcome;
+        typedef Aws::Utils::Outcome<InitiateDeviceClaimResult, IoT1ClickDevicesServiceError> InitiateDeviceClaimOutcome;
+        typedef Aws::Utils::Outcome<InvokeDeviceMethodResult, IoT1ClickDevicesServiceError> InvokeDeviceMethodOutcome;
+        typedef Aws::Utils::Outcome<ListDeviceEventsResult, IoT1ClickDevicesServiceError> ListDeviceEventsOutcome;
+        typedef Aws::Utils::Outcome<ListDevicesResult, IoT1ClickDevicesServiceError> ListDevicesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, IoT1ClickDevicesServiceError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, IoT1ClickDevicesServiceError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UnclaimDeviceResult, IoT1ClickDevicesServiceError> UnclaimDeviceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, IoT1ClickDevicesServiceError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateDeviceStateResult, IoT1ClickDevicesServiceError> UpdateDeviceStateOutcome;
 
         typedef std::future<ClaimDevicesByClaimCodeOutcome> ClaimDevicesByClaimCodeOutcomeCallable;
         typedef std::future<DescribeDeviceOutcome> DescribeDeviceOutcomeCallable;
@@ -163,8 +153,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~IoT1ClickDevicesServiceClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "IoT 1Click Devices Service"; }
 
 
         /**
@@ -231,14 +219,14 @@ namespace Model
 
         /**
          * <p>Given a device ID, finalizes the claim request for the associated
-         * device.</p><note>
+         * device.</p>
  <p>Claiming a device consists of initiating a claim, then
          * publishing a device event,
  and finalizing the claim. For a device of type
          * button, a device event can
  be published by simply clicking the device.</p>
 
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/FinalizeDeviceClaim">AWS
          * API Reference</a></p>
          */
@@ -246,14 +234,14 @@ namespace Model
 
         /**
          * <p>Given a device ID, finalizes the claim request for the associated
-         * device.</p><note>
+         * device.</p>
  <p>Claiming a device consists of initiating a claim, then
          * publishing a device event,
  and finalizing the claim. For a device of type
          * button, a device event can
  be published by simply clicking the device.</p>
 
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/FinalizeDeviceClaim">AWS
          * API Reference</a></p>
          *
@@ -263,14 +251,14 @@ namespace Model
 
         /**
          * <p>Given a device ID, finalizes the claim request for the associated
-         * device.</p><note>
+         * device.</p>
  <p>Claiming a device consists of initiating a claim, then
          * publishing a device event,
  and finalizing the claim. For a device of type
          * button, a device event can
  be published by simply clicking the device.</p>
 
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/FinalizeDeviceClaim">AWS
          * API Reference</a></p>
          *
@@ -308,14 +296,14 @@ namespace Model
 
         /**
          * <p>Given a device ID, initiates a claim request for the associated
-         * device.</p><note>
+         * device.</p>
  <p>Claiming a device consists of initiating a claim, then
          * publishing a device event,
  and finalizing the claim. For a device of type
          * button, a device event can
  be published by simply clicking the device.</p>
 
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/InitiateDeviceClaim">AWS
          * API Reference</a></p>
          */
@@ -323,14 +311,14 @@ namespace Model
 
         /**
          * <p>Given a device ID, initiates a claim request for the associated
-         * device.</p><note>
+         * device.</p>
  <p>Claiming a device consists of initiating a claim, then
          * publishing a device event,
  and finalizing the claim. For a device of type
          * button, a device event can
  be published by simply clicking the device.</p>
 
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/InitiateDeviceClaim">AWS
          * API Reference</a></p>
          *
@@ -340,14 +328,14 @@ namespace Model
 
         /**
          * <p>Given a device ID, initiates a claim request for the associated
-         * device.</p><note>
+         * device.</p>
  <p>Claiming a device consists of initiating a claim, then
          * publishing a device event,
  and finalizing the claim. For a device of type
          * button, a device event can
  be published by simply clicking the device.</p>
 
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/InitiateDeviceClaim">AWS
          * API Reference</a></p>
          *

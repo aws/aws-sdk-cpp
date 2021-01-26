@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/codepipeline/model/StageState.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,6 +20,7 @@ namespace Model
 
 StageState::StageState() : 
     m_stageNameHasBeenSet(false),
+    m_inboundExecutionHasBeenSet(false),
     m_inboundTransitionStateHasBeenSet(false),
     m_actionStatesHasBeenSet(false),
     m_latestExecutionHasBeenSet(false)
@@ -38,6 +29,7 @@ StageState::StageState() :
 
 StageState::StageState(JsonView jsonValue) : 
     m_stageNameHasBeenSet(false),
+    m_inboundExecutionHasBeenSet(false),
     m_inboundTransitionStateHasBeenSet(false),
     m_actionStatesHasBeenSet(false),
     m_latestExecutionHasBeenSet(false)
@@ -52,6 +44,13 @@ StageState& StageState::operator =(JsonView jsonValue)
     m_stageName = jsonValue.GetString("stageName");
 
     m_stageNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("inboundExecution"))
+  {
+    m_inboundExecution = jsonValue.GetObject("inboundExecution");
+
+    m_inboundExecutionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("inboundTransitionState"))
@@ -88,6 +87,12 @@ JsonValue StageState::Jsonize() const
   if(m_stageNameHasBeenSet)
   {
    payload.WithString("stageName", m_stageName);
+
+  }
+
+  if(m_inboundExecutionHasBeenSet)
+  {
+   payload.WithObject("inboundExecution", m_inboundExecution.Jsonize());
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -30,12 +20,15 @@
 #include <aws/workspaces/WorkSpacesClient.h>
 #include <aws/workspaces/WorkSpacesEndpoint.h>
 #include <aws/workspaces/WorkSpacesErrorMarshaller.h>
+#include <aws/workspaces/model/AssociateConnectionAliasRequest.h>
 #include <aws/workspaces/model/AssociateIpGroupsRequest.h>
 #include <aws/workspaces/model/AuthorizeIpRulesRequest.h>
 #include <aws/workspaces/model/CopyWorkspaceImageRequest.h>
+#include <aws/workspaces/model/CreateConnectionAliasRequest.h>
 #include <aws/workspaces/model/CreateIpGroupRequest.h>
 #include <aws/workspaces/model/CreateTagsRequest.h>
 #include <aws/workspaces/model/CreateWorkspacesRequest.h>
+#include <aws/workspaces/model/DeleteConnectionAliasRequest.h>
 #include <aws/workspaces/model/DeleteIpGroupRequest.h>
 #include <aws/workspaces/model/DeleteTagsRequest.h>
 #include <aws/workspaces/model/DeleteWorkspaceImageRequest.h>
@@ -43,14 +36,18 @@
 #include <aws/workspaces/model/DescribeAccountRequest.h>
 #include <aws/workspaces/model/DescribeAccountModificationsRequest.h>
 #include <aws/workspaces/model/DescribeClientPropertiesRequest.h>
+#include <aws/workspaces/model/DescribeConnectionAliasPermissionsRequest.h>
+#include <aws/workspaces/model/DescribeConnectionAliasesRequest.h>
 #include <aws/workspaces/model/DescribeIpGroupsRequest.h>
 #include <aws/workspaces/model/DescribeTagsRequest.h>
 #include <aws/workspaces/model/DescribeWorkspaceBundlesRequest.h>
 #include <aws/workspaces/model/DescribeWorkspaceDirectoriesRequest.h>
+#include <aws/workspaces/model/DescribeWorkspaceImagePermissionsRequest.h>
 #include <aws/workspaces/model/DescribeWorkspaceImagesRequest.h>
 #include <aws/workspaces/model/DescribeWorkspaceSnapshotsRequest.h>
 #include <aws/workspaces/model/DescribeWorkspacesRequest.h>
 #include <aws/workspaces/model/DescribeWorkspacesConnectionStatusRequest.h>
+#include <aws/workspaces/model/DisassociateConnectionAliasRequest.h>
 #include <aws/workspaces/model/DisassociateIpGroupsRequest.h>
 #include <aws/workspaces/model/ImportWorkspaceImageRequest.h>
 #include <aws/workspaces/model/ListAvailableManagementCidrRangesRequest.h>
@@ -70,7 +67,9 @@
 #include <aws/workspaces/model/StartWorkspacesRequest.h>
 #include <aws/workspaces/model/StopWorkspacesRequest.h>
 #include <aws/workspaces/model/TerminateWorkspacesRequest.h>
+#include <aws/workspaces/model/UpdateConnectionAliasPermissionRequest.h>
 #include <aws/workspaces/model/UpdateRulesOfIpGroupRequest.h>
+#include <aws/workspaces/model/UpdateWorkspaceImagePermissionRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -87,7 +86,7 @@ static const char* ALLOCATION_TAG = "WorkSpacesClient";
 WorkSpacesClient::WorkSpacesClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<WorkSpacesErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -97,7 +96,7 @@ WorkSpacesClient::WorkSpacesClient(const Client::ClientConfiguration& clientConf
 WorkSpacesClient::WorkSpacesClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<WorkSpacesErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -108,7 +107,7 @@ WorkSpacesClient::WorkSpacesClient(const std::shared_ptr<AWSCredentialsProvider>
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<WorkSpacesErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -121,6 +120,7 @@ WorkSpacesClient::~WorkSpacesClient()
 
 void WorkSpacesClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("WorkSpaces");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -144,21 +144,40 @@ void WorkSpacesClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
+AssociateConnectionAliasOutcome WorkSpacesClient::AssociateConnectionAlias(const AssociateConnectionAliasRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return AssociateConnectionAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateConnectionAliasOutcomeCallable WorkSpacesClient::AssociateConnectionAliasCallable(const AssociateConnectionAliasRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateConnectionAliasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateConnectionAlias(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::AssociateConnectionAliasAsync(const AssociateConnectionAliasRequest& request, const AssociateConnectionAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateConnectionAliasAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::AssociateConnectionAliasAsyncHelper(const AssociateConnectionAliasRequest& request, const AssociateConnectionAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateConnectionAlias(request), context);
+}
+
 AssociateIpGroupsOutcome WorkSpacesClient::AssociateIpGroups(const AssociateIpGroupsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AssociateIpGroupsOutcome(AssociateIpGroupsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AssociateIpGroupsOutcome(outcome.GetError());
-  }
+  return AssociateIpGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AssociateIpGroupsOutcomeCallable WorkSpacesClient::AssociateIpGroupsCallable(const AssociateIpGroupsRequest& request) const
@@ -185,15 +204,7 @@ AuthorizeIpRulesOutcome WorkSpacesClient::AuthorizeIpRules(const AuthorizeIpRule
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AuthorizeIpRulesOutcome(AuthorizeIpRulesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AuthorizeIpRulesOutcome(outcome.GetError());
-  }
+  return AuthorizeIpRulesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AuthorizeIpRulesOutcomeCallable WorkSpacesClient::AuthorizeIpRulesCallable(const AuthorizeIpRulesRequest& request) const
@@ -220,15 +231,7 @@ CopyWorkspaceImageOutcome WorkSpacesClient::CopyWorkspaceImage(const CopyWorkspa
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CopyWorkspaceImageOutcome(CopyWorkspaceImageResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CopyWorkspaceImageOutcome(outcome.GetError());
-  }
+  return CopyWorkspaceImageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CopyWorkspaceImageOutcomeCallable WorkSpacesClient::CopyWorkspaceImageCallable(const CopyWorkspaceImageRequest& request) const
@@ -249,21 +252,40 @@ void WorkSpacesClient::CopyWorkspaceImageAsyncHelper(const CopyWorkspaceImageReq
   handler(this, request, CopyWorkspaceImage(request), context);
 }
 
+CreateConnectionAliasOutcome WorkSpacesClient::CreateConnectionAlias(const CreateConnectionAliasRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateConnectionAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateConnectionAliasOutcomeCallable WorkSpacesClient::CreateConnectionAliasCallable(const CreateConnectionAliasRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateConnectionAliasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateConnectionAlias(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::CreateConnectionAliasAsync(const CreateConnectionAliasRequest& request, const CreateConnectionAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateConnectionAliasAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::CreateConnectionAliasAsyncHelper(const CreateConnectionAliasRequest& request, const CreateConnectionAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateConnectionAlias(request), context);
+}
+
 CreateIpGroupOutcome WorkSpacesClient::CreateIpGroup(const CreateIpGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateIpGroupOutcome(CreateIpGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateIpGroupOutcome(outcome.GetError());
-  }
+  return CreateIpGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateIpGroupOutcomeCallable WorkSpacesClient::CreateIpGroupCallable(const CreateIpGroupRequest& request) const
@@ -290,15 +312,7 @@ CreateTagsOutcome WorkSpacesClient::CreateTags(const CreateTagsRequest& request)
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateTagsOutcome(CreateTagsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateTagsOutcome(outcome.GetError());
-  }
+  return CreateTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateTagsOutcomeCallable WorkSpacesClient::CreateTagsCallable(const CreateTagsRequest& request) const
@@ -325,15 +339,7 @@ CreateWorkspacesOutcome WorkSpacesClient::CreateWorkspaces(const CreateWorkspace
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateWorkspacesOutcome(CreateWorkspacesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateWorkspacesOutcome(outcome.GetError());
-  }
+  return CreateWorkspacesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateWorkspacesOutcomeCallable WorkSpacesClient::CreateWorkspacesCallable(const CreateWorkspacesRequest& request) const
@@ -354,21 +360,40 @@ void WorkSpacesClient::CreateWorkspacesAsyncHelper(const CreateWorkspacesRequest
   handler(this, request, CreateWorkspaces(request), context);
 }
 
+DeleteConnectionAliasOutcome WorkSpacesClient::DeleteConnectionAlias(const DeleteConnectionAliasRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteConnectionAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteConnectionAliasOutcomeCallable WorkSpacesClient::DeleteConnectionAliasCallable(const DeleteConnectionAliasRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteConnectionAliasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteConnectionAlias(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::DeleteConnectionAliasAsync(const DeleteConnectionAliasRequest& request, const DeleteConnectionAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteConnectionAliasAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::DeleteConnectionAliasAsyncHelper(const DeleteConnectionAliasRequest& request, const DeleteConnectionAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteConnectionAlias(request), context);
+}
+
 DeleteIpGroupOutcome WorkSpacesClient::DeleteIpGroup(const DeleteIpGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteIpGroupOutcome(DeleteIpGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteIpGroupOutcome(outcome.GetError());
-  }
+  return DeleteIpGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteIpGroupOutcomeCallable WorkSpacesClient::DeleteIpGroupCallable(const DeleteIpGroupRequest& request) const
@@ -395,15 +420,7 @@ DeleteTagsOutcome WorkSpacesClient::DeleteTags(const DeleteTagsRequest& request)
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteTagsOutcome(DeleteTagsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteTagsOutcome(outcome.GetError());
-  }
+  return DeleteTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteTagsOutcomeCallable WorkSpacesClient::DeleteTagsCallable(const DeleteTagsRequest& request) const
@@ -430,15 +447,7 @@ DeleteWorkspaceImageOutcome WorkSpacesClient::DeleteWorkspaceImage(const DeleteW
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteWorkspaceImageOutcome(DeleteWorkspaceImageResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteWorkspaceImageOutcome(outcome.GetError());
-  }
+  return DeleteWorkspaceImageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteWorkspaceImageOutcomeCallable WorkSpacesClient::DeleteWorkspaceImageCallable(const DeleteWorkspaceImageRequest& request) const
@@ -465,15 +474,7 @@ DeregisterWorkspaceDirectoryOutcome WorkSpacesClient::DeregisterWorkspaceDirecto
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeregisterWorkspaceDirectoryOutcome(DeregisterWorkspaceDirectoryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeregisterWorkspaceDirectoryOutcome(outcome.GetError());
-  }
+  return DeregisterWorkspaceDirectoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeregisterWorkspaceDirectoryOutcomeCallable WorkSpacesClient::DeregisterWorkspaceDirectoryCallable(const DeregisterWorkspaceDirectoryRequest& request) const
@@ -500,15 +501,7 @@ DescribeAccountOutcome WorkSpacesClient::DescribeAccount(const DescribeAccountRe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeAccountOutcome(DescribeAccountResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeAccountOutcome(outcome.GetError());
-  }
+  return DescribeAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeAccountOutcomeCallable WorkSpacesClient::DescribeAccountCallable(const DescribeAccountRequest& request) const
@@ -535,15 +528,7 @@ DescribeAccountModificationsOutcome WorkSpacesClient::DescribeAccountModificatio
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeAccountModificationsOutcome(DescribeAccountModificationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeAccountModificationsOutcome(outcome.GetError());
-  }
+  return DescribeAccountModificationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeAccountModificationsOutcomeCallable WorkSpacesClient::DescribeAccountModificationsCallable(const DescribeAccountModificationsRequest& request) const
@@ -570,15 +555,7 @@ DescribeClientPropertiesOutcome WorkSpacesClient::DescribeClientProperties(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeClientPropertiesOutcome(DescribeClientPropertiesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeClientPropertiesOutcome(outcome.GetError());
-  }
+  return DescribeClientPropertiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeClientPropertiesOutcomeCallable WorkSpacesClient::DescribeClientPropertiesCallable(const DescribeClientPropertiesRequest& request) const
@@ -599,21 +576,67 @@ void WorkSpacesClient::DescribeClientPropertiesAsyncHelper(const DescribeClientP
   handler(this, request, DescribeClientProperties(request), context);
 }
 
+DescribeConnectionAliasPermissionsOutcome WorkSpacesClient::DescribeConnectionAliasPermissions(const DescribeConnectionAliasPermissionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeConnectionAliasPermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeConnectionAliasPermissionsOutcomeCallable WorkSpacesClient::DescribeConnectionAliasPermissionsCallable(const DescribeConnectionAliasPermissionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeConnectionAliasPermissionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeConnectionAliasPermissions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::DescribeConnectionAliasPermissionsAsync(const DescribeConnectionAliasPermissionsRequest& request, const DescribeConnectionAliasPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeConnectionAliasPermissionsAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::DescribeConnectionAliasPermissionsAsyncHelper(const DescribeConnectionAliasPermissionsRequest& request, const DescribeConnectionAliasPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeConnectionAliasPermissions(request), context);
+}
+
+DescribeConnectionAliasesOutcome WorkSpacesClient::DescribeConnectionAliases(const DescribeConnectionAliasesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeConnectionAliasesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeConnectionAliasesOutcomeCallable WorkSpacesClient::DescribeConnectionAliasesCallable(const DescribeConnectionAliasesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeConnectionAliasesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeConnectionAliases(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::DescribeConnectionAliasesAsync(const DescribeConnectionAliasesRequest& request, const DescribeConnectionAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeConnectionAliasesAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::DescribeConnectionAliasesAsyncHelper(const DescribeConnectionAliasesRequest& request, const DescribeConnectionAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeConnectionAliases(request), context);
+}
+
 DescribeIpGroupsOutcome WorkSpacesClient::DescribeIpGroups(const DescribeIpGroupsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeIpGroupsOutcome(DescribeIpGroupsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeIpGroupsOutcome(outcome.GetError());
-  }
+  return DescribeIpGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeIpGroupsOutcomeCallable WorkSpacesClient::DescribeIpGroupsCallable(const DescribeIpGroupsRequest& request) const
@@ -640,15 +663,7 @@ DescribeTagsOutcome WorkSpacesClient::DescribeTags(const DescribeTagsRequest& re
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeTagsOutcome(DescribeTagsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeTagsOutcome(outcome.GetError());
-  }
+  return DescribeTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeTagsOutcomeCallable WorkSpacesClient::DescribeTagsCallable(const DescribeTagsRequest& request) const
@@ -675,15 +690,7 @@ DescribeWorkspaceBundlesOutcome WorkSpacesClient::DescribeWorkspaceBundles(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeWorkspaceBundlesOutcome(DescribeWorkspaceBundlesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeWorkspaceBundlesOutcome(outcome.GetError());
-  }
+  return DescribeWorkspaceBundlesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeWorkspaceBundlesOutcomeCallable WorkSpacesClient::DescribeWorkspaceBundlesCallable(const DescribeWorkspaceBundlesRequest& request) const
@@ -710,15 +717,7 @@ DescribeWorkspaceDirectoriesOutcome WorkSpacesClient::DescribeWorkspaceDirectori
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeWorkspaceDirectoriesOutcome(DescribeWorkspaceDirectoriesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeWorkspaceDirectoriesOutcome(outcome.GetError());
-  }
+  return DescribeWorkspaceDirectoriesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeWorkspaceDirectoriesOutcomeCallable WorkSpacesClient::DescribeWorkspaceDirectoriesCallable(const DescribeWorkspaceDirectoriesRequest& request) const
@@ -739,21 +738,40 @@ void WorkSpacesClient::DescribeWorkspaceDirectoriesAsyncHelper(const DescribeWor
   handler(this, request, DescribeWorkspaceDirectories(request), context);
 }
 
+DescribeWorkspaceImagePermissionsOutcome WorkSpacesClient::DescribeWorkspaceImagePermissions(const DescribeWorkspaceImagePermissionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeWorkspaceImagePermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeWorkspaceImagePermissionsOutcomeCallable WorkSpacesClient::DescribeWorkspaceImagePermissionsCallable(const DescribeWorkspaceImagePermissionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeWorkspaceImagePermissionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeWorkspaceImagePermissions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::DescribeWorkspaceImagePermissionsAsync(const DescribeWorkspaceImagePermissionsRequest& request, const DescribeWorkspaceImagePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeWorkspaceImagePermissionsAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::DescribeWorkspaceImagePermissionsAsyncHelper(const DescribeWorkspaceImagePermissionsRequest& request, const DescribeWorkspaceImagePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeWorkspaceImagePermissions(request), context);
+}
+
 DescribeWorkspaceImagesOutcome WorkSpacesClient::DescribeWorkspaceImages(const DescribeWorkspaceImagesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeWorkspaceImagesOutcome(DescribeWorkspaceImagesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeWorkspaceImagesOutcome(outcome.GetError());
-  }
+  return DescribeWorkspaceImagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeWorkspaceImagesOutcomeCallable WorkSpacesClient::DescribeWorkspaceImagesCallable(const DescribeWorkspaceImagesRequest& request) const
@@ -780,15 +798,7 @@ DescribeWorkspaceSnapshotsOutcome WorkSpacesClient::DescribeWorkspaceSnapshots(c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeWorkspaceSnapshotsOutcome(DescribeWorkspaceSnapshotsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeWorkspaceSnapshotsOutcome(outcome.GetError());
-  }
+  return DescribeWorkspaceSnapshotsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeWorkspaceSnapshotsOutcomeCallable WorkSpacesClient::DescribeWorkspaceSnapshotsCallable(const DescribeWorkspaceSnapshotsRequest& request) const
@@ -815,15 +825,7 @@ DescribeWorkspacesOutcome WorkSpacesClient::DescribeWorkspaces(const DescribeWor
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeWorkspacesOutcome(DescribeWorkspacesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeWorkspacesOutcome(outcome.GetError());
-  }
+  return DescribeWorkspacesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeWorkspacesOutcomeCallable WorkSpacesClient::DescribeWorkspacesCallable(const DescribeWorkspacesRequest& request) const
@@ -850,15 +852,7 @@ DescribeWorkspacesConnectionStatusOutcome WorkSpacesClient::DescribeWorkspacesCo
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeWorkspacesConnectionStatusOutcome(DescribeWorkspacesConnectionStatusResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeWorkspacesConnectionStatusOutcome(outcome.GetError());
-  }
+  return DescribeWorkspacesConnectionStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeWorkspacesConnectionStatusOutcomeCallable WorkSpacesClient::DescribeWorkspacesConnectionStatusCallable(const DescribeWorkspacesConnectionStatusRequest& request) const
@@ -879,21 +873,40 @@ void WorkSpacesClient::DescribeWorkspacesConnectionStatusAsyncHelper(const Descr
   handler(this, request, DescribeWorkspacesConnectionStatus(request), context);
 }
 
+DisassociateConnectionAliasOutcome WorkSpacesClient::DisassociateConnectionAlias(const DisassociateConnectionAliasRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DisassociateConnectionAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateConnectionAliasOutcomeCallable WorkSpacesClient::DisassociateConnectionAliasCallable(const DisassociateConnectionAliasRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateConnectionAliasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateConnectionAlias(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::DisassociateConnectionAliasAsync(const DisassociateConnectionAliasRequest& request, const DisassociateConnectionAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateConnectionAliasAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::DisassociateConnectionAliasAsyncHelper(const DisassociateConnectionAliasRequest& request, const DisassociateConnectionAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateConnectionAlias(request), context);
+}
+
 DisassociateIpGroupsOutcome WorkSpacesClient::DisassociateIpGroups(const DisassociateIpGroupsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisassociateIpGroupsOutcome(DisassociateIpGroupsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisassociateIpGroupsOutcome(outcome.GetError());
-  }
+  return DisassociateIpGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisassociateIpGroupsOutcomeCallable WorkSpacesClient::DisassociateIpGroupsCallable(const DisassociateIpGroupsRequest& request) const
@@ -920,15 +933,7 @@ ImportWorkspaceImageOutcome WorkSpacesClient::ImportWorkspaceImage(const ImportW
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ImportWorkspaceImageOutcome(ImportWorkspaceImageResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ImportWorkspaceImageOutcome(outcome.GetError());
-  }
+  return ImportWorkspaceImageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ImportWorkspaceImageOutcomeCallable WorkSpacesClient::ImportWorkspaceImageCallable(const ImportWorkspaceImageRequest& request) const
@@ -955,15 +960,7 @@ ListAvailableManagementCidrRangesOutcome WorkSpacesClient::ListAvailableManageme
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListAvailableManagementCidrRangesOutcome(ListAvailableManagementCidrRangesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListAvailableManagementCidrRangesOutcome(outcome.GetError());
-  }
+  return ListAvailableManagementCidrRangesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListAvailableManagementCidrRangesOutcomeCallable WorkSpacesClient::ListAvailableManagementCidrRangesCallable(const ListAvailableManagementCidrRangesRequest& request) const
@@ -990,15 +987,7 @@ MigrateWorkspaceOutcome WorkSpacesClient::MigrateWorkspace(const MigrateWorkspac
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return MigrateWorkspaceOutcome(MigrateWorkspaceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return MigrateWorkspaceOutcome(outcome.GetError());
-  }
+  return MigrateWorkspaceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 MigrateWorkspaceOutcomeCallable WorkSpacesClient::MigrateWorkspaceCallable(const MigrateWorkspaceRequest& request) const
@@ -1025,15 +1014,7 @@ ModifyAccountOutcome WorkSpacesClient::ModifyAccount(const ModifyAccountRequest&
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ModifyAccountOutcome(ModifyAccountResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ModifyAccountOutcome(outcome.GetError());
-  }
+  return ModifyAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ModifyAccountOutcomeCallable WorkSpacesClient::ModifyAccountCallable(const ModifyAccountRequest& request) const
@@ -1060,15 +1041,7 @@ ModifyClientPropertiesOutcome WorkSpacesClient::ModifyClientProperties(const Mod
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ModifyClientPropertiesOutcome(ModifyClientPropertiesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ModifyClientPropertiesOutcome(outcome.GetError());
-  }
+  return ModifyClientPropertiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ModifyClientPropertiesOutcomeCallable WorkSpacesClient::ModifyClientPropertiesCallable(const ModifyClientPropertiesRequest& request) const
@@ -1095,15 +1068,7 @@ ModifySelfservicePermissionsOutcome WorkSpacesClient::ModifySelfservicePermissio
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ModifySelfservicePermissionsOutcome(ModifySelfservicePermissionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ModifySelfservicePermissionsOutcome(outcome.GetError());
-  }
+  return ModifySelfservicePermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ModifySelfservicePermissionsOutcomeCallable WorkSpacesClient::ModifySelfservicePermissionsCallable(const ModifySelfservicePermissionsRequest& request) const
@@ -1130,15 +1095,7 @@ ModifyWorkspaceAccessPropertiesOutcome WorkSpacesClient::ModifyWorkspaceAccessPr
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ModifyWorkspaceAccessPropertiesOutcome(ModifyWorkspaceAccessPropertiesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ModifyWorkspaceAccessPropertiesOutcome(outcome.GetError());
-  }
+  return ModifyWorkspaceAccessPropertiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ModifyWorkspaceAccessPropertiesOutcomeCallable WorkSpacesClient::ModifyWorkspaceAccessPropertiesCallable(const ModifyWorkspaceAccessPropertiesRequest& request) const
@@ -1165,15 +1122,7 @@ ModifyWorkspaceCreationPropertiesOutcome WorkSpacesClient::ModifyWorkspaceCreati
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ModifyWorkspaceCreationPropertiesOutcome(ModifyWorkspaceCreationPropertiesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ModifyWorkspaceCreationPropertiesOutcome(outcome.GetError());
-  }
+  return ModifyWorkspaceCreationPropertiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ModifyWorkspaceCreationPropertiesOutcomeCallable WorkSpacesClient::ModifyWorkspaceCreationPropertiesCallable(const ModifyWorkspaceCreationPropertiesRequest& request) const
@@ -1200,15 +1149,7 @@ ModifyWorkspacePropertiesOutcome WorkSpacesClient::ModifyWorkspaceProperties(con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ModifyWorkspacePropertiesOutcome(ModifyWorkspacePropertiesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ModifyWorkspacePropertiesOutcome(outcome.GetError());
-  }
+  return ModifyWorkspacePropertiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ModifyWorkspacePropertiesOutcomeCallable WorkSpacesClient::ModifyWorkspacePropertiesCallable(const ModifyWorkspacePropertiesRequest& request) const
@@ -1235,15 +1176,7 @@ ModifyWorkspaceStateOutcome WorkSpacesClient::ModifyWorkspaceState(const ModifyW
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ModifyWorkspaceStateOutcome(ModifyWorkspaceStateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ModifyWorkspaceStateOutcome(outcome.GetError());
-  }
+  return ModifyWorkspaceStateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ModifyWorkspaceStateOutcomeCallable WorkSpacesClient::ModifyWorkspaceStateCallable(const ModifyWorkspaceStateRequest& request) const
@@ -1270,15 +1203,7 @@ RebootWorkspacesOutcome WorkSpacesClient::RebootWorkspaces(const RebootWorkspace
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RebootWorkspacesOutcome(RebootWorkspacesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RebootWorkspacesOutcome(outcome.GetError());
-  }
+  return RebootWorkspacesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RebootWorkspacesOutcomeCallable WorkSpacesClient::RebootWorkspacesCallable(const RebootWorkspacesRequest& request) const
@@ -1305,15 +1230,7 @@ RebuildWorkspacesOutcome WorkSpacesClient::RebuildWorkspaces(const RebuildWorksp
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RebuildWorkspacesOutcome(RebuildWorkspacesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RebuildWorkspacesOutcome(outcome.GetError());
-  }
+  return RebuildWorkspacesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RebuildWorkspacesOutcomeCallable WorkSpacesClient::RebuildWorkspacesCallable(const RebuildWorkspacesRequest& request) const
@@ -1340,15 +1257,7 @@ RegisterWorkspaceDirectoryOutcome WorkSpacesClient::RegisterWorkspaceDirectory(c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RegisterWorkspaceDirectoryOutcome(RegisterWorkspaceDirectoryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RegisterWorkspaceDirectoryOutcome(outcome.GetError());
-  }
+  return RegisterWorkspaceDirectoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RegisterWorkspaceDirectoryOutcomeCallable WorkSpacesClient::RegisterWorkspaceDirectoryCallable(const RegisterWorkspaceDirectoryRequest& request) const
@@ -1375,15 +1284,7 @@ RestoreWorkspaceOutcome WorkSpacesClient::RestoreWorkspace(const RestoreWorkspac
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RestoreWorkspaceOutcome(RestoreWorkspaceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RestoreWorkspaceOutcome(outcome.GetError());
-  }
+  return RestoreWorkspaceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RestoreWorkspaceOutcomeCallable WorkSpacesClient::RestoreWorkspaceCallable(const RestoreWorkspaceRequest& request) const
@@ -1410,15 +1311,7 @@ RevokeIpRulesOutcome WorkSpacesClient::RevokeIpRules(const RevokeIpRulesRequest&
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RevokeIpRulesOutcome(RevokeIpRulesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RevokeIpRulesOutcome(outcome.GetError());
-  }
+  return RevokeIpRulesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RevokeIpRulesOutcomeCallable WorkSpacesClient::RevokeIpRulesCallable(const RevokeIpRulesRequest& request) const
@@ -1445,15 +1338,7 @@ StartWorkspacesOutcome WorkSpacesClient::StartWorkspaces(const StartWorkspacesRe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartWorkspacesOutcome(StartWorkspacesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartWorkspacesOutcome(outcome.GetError());
-  }
+  return StartWorkspacesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartWorkspacesOutcomeCallable WorkSpacesClient::StartWorkspacesCallable(const StartWorkspacesRequest& request) const
@@ -1480,15 +1365,7 @@ StopWorkspacesOutcome WorkSpacesClient::StopWorkspaces(const StopWorkspacesReque
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StopWorkspacesOutcome(StopWorkspacesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StopWorkspacesOutcome(outcome.GetError());
-  }
+  return StopWorkspacesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopWorkspacesOutcomeCallable WorkSpacesClient::StopWorkspacesCallable(const StopWorkspacesRequest& request) const
@@ -1515,15 +1392,7 @@ TerminateWorkspacesOutcome WorkSpacesClient::TerminateWorkspaces(const Terminate
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TerminateWorkspacesOutcome(TerminateWorkspacesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TerminateWorkspacesOutcome(outcome.GetError());
-  }
+  return TerminateWorkspacesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TerminateWorkspacesOutcomeCallable WorkSpacesClient::TerminateWorkspacesCallable(const TerminateWorkspacesRequest& request) const
@@ -1544,21 +1413,40 @@ void WorkSpacesClient::TerminateWorkspacesAsyncHelper(const TerminateWorkspacesR
   handler(this, request, TerminateWorkspaces(request), context);
 }
 
+UpdateConnectionAliasPermissionOutcome WorkSpacesClient::UpdateConnectionAliasPermission(const UpdateConnectionAliasPermissionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateConnectionAliasPermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateConnectionAliasPermissionOutcomeCallable WorkSpacesClient::UpdateConnectionAliasPermissionCallable(const UpdateConnectionAliasPermissionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateConnectionAliasPermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateConnectionAliasPermission(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::UpdateConnectionAliasPermissionAsync(const UpdateConnectionAliasPermissionRequest& request, const UpdateConnectionAliasPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateConnectionAliasPermissionAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::UpdateConnectionAliasPermissionAsyncHelper(const UpdateConnectionAliasPermissionRequest& request, const UpdateConnectionAliasPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateConnectionAliasPermission(request), context);
+}
+
 UpdateRulesOfIpGroupOutcome WorkSpacesClient::UpdateRulesOfIpGroup(const UpdateRulesOfIpGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateRulesOfIpGroupOutcome(UpdateRulesOfIpGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateRulesOfIpGroupOutcome(outcome.GetError());
-  }
+  return UpdateRulesOfIpGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateRulesOfIpGroupOutcomeCallable WorkSpacesClient::UpdateRulesOfIpGroupCallable(const UpdateRulesOfIpGroupRequest& request) const
@@ -1577,5 +1465,32 @@ void WorkSpacesClient::UpdateRulesOfIpGroupAsync(const UpdateRulesOfIpGroupReque
 void WorkSpacesClient::UpdateRulesOfIpGroupAsyncHelper(const UpdateRulesOfIpGroupRequest& request, const UpdateRulesOfIpGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateRulesOfIpGroup(request), context);
+}
+
+UpdateWorkspaceImagePermissionOutcome WorkSpacesClient::UpdateWorkspaceImagePermission(const UpdateWorkspaceImagePermissionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateWorkspaceImagePermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateWorkspaceImagePermissionOutcomeCallable WorkSpacesClient::UpdateWorkspaceImagePermissionCallable(const UpdateWorkspaceImagePermissionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateWorkspaceImagePermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateWorkspaceImagePermission(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::UpdateWorkspaceImagePermissionAsync(const UpdateWorkspaceImagePermissionRequest& request, const UpdateWorkspaceImagePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateWorkspaceImagePermissionAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::UpdateWorkspaceImagePermissionAsyncHelper(const UpdateWorkspaceImagePermissionRequest& request, const UpdateWorkspaceImagePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateWorkspaceImagePermission(request), context);
 }
 

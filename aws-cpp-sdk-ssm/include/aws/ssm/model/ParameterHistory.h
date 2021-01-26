@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -476,59 +466,108 @@ namespace Model
 
     /**
      * <p>Information about the policies assigned to a parameter.</p> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Working
-     * with Parameter Policies</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
+     * parameter policies</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline const Aws::Vector<ParameterInlinePolicy>& GetPolicies() const{ return m_policies; }
 
     /**
      * <p>Information about the policies assigned to a parameter.</p> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Working
-     * with Parameter Policies</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
+     * parameter policies</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline bool PoliciesHasBeenSet() const { return m_policiesHasBeenSet; }
 
     /**
      * <p>Information about the policies assigned to a parameter.</p> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Working
-     * with Parameter Policies</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
+     * parameter policies</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetPolicies(const Aws::Vector<ParameterInlinePolicy>& value) { m_policiesHasBeenSet = true; m_policies = value; }
 
     /**
      * <p>Information about the policies assigned to a parameter.</p> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Working
-     * with Parameter Policies</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
+     * parameter policies</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetPolicies(Aws::Vector<ParameterInlinePolicy>&& value) { m_policiesHasBeenSet = true; m_policies = std::move(value); }
 
     /**
      * <p>Information about the policies assigned to a parameter.</p> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Working
-     * with Parameter Policies</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
+     * parameter policies</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline ParameterHistory& WithPolicies(const Aws::Vector<ParameterInlinePolicy>& value) { SetPolicies(value); return *this;}
 
     /**
      * <p>Information about the policies assigned to a parameter.</p> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Working
-     * with Parameter Policies</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
+     * parameter policies</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline ParameterHistory& WithPolicies(Aws::Vector<ParameterInlinePolicy>&& value) { SetPolicies(std::move(value)); return *this;}
 
     /**
      * <p>Information about the policies assigned to a parameter.</p> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Working
-     * with Parameter Policies</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
+     * parameter policies</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline ParameterHistory& AddPolicies(const ParameterInlinePolicy& value) { m_policiesHasBeenSet = true; m_policies.push_back(value); return *this; }
 
     /**
      * <p>Information about the policies assigned to a parameter.</p> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Working
-     * with Parameter Policies</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
+     * parameter policies</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline ParameterHistory& AddPolicies(ParameterInlinePolicy&& value) { m_policiesHasBeenSet = true; m_policies.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline const Aws::String& GetDataType() const{ return m_dataType; }
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline void SetDataType(const Aws::String& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline void SetDataType(Aws::String&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::move(value); }
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline void SetDataType(const char* value) { m_dataTypeHasBeenSet = true; m_dataType.assign(value); }
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline ParameterHistory& WithDataType(const Aws::String& value) { SetDataType(value); return *this;}
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline ParameterHistory& WithDataType(Aws::String&& value) { SetDataType(std::move(value)); return *this;}
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline ParameterHistory& WithDataType(const char* value) { SetDataType(value); return *this;}
 
   private:
 
@@ -567,6 +606,9 @@ namespace Model
 
     Aws::Vector<ParameterInlinePolicy> m_policies;
     bool m_policiesHasBeenSet;
+
+    Aws::String m_dataType;
+    bool m_dataTypeHasBeenSet;
   };
 
 } // namespace Model

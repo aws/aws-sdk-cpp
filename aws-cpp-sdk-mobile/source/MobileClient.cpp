@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -55,7 +45,7 @@ static const char* ALLOCATION_TAG = "MobileClient";
 MobileClient::MobileClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<MobileErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -65,7 +55,7 @@ MobileClient::MobileClient(const Client::ClientConfiguration& clientConfiguratio
 MobileClient::MobileClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<MobileErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -76,7 +66,7 @@ MobileClient::MobileClient(const std::shared_ptr<AWSCredentialsProvider>& creden
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<MobileErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -89,6 +79,7 @@ MobileClient::~MobileClient()
 
 void MobileClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("mobile");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -118,15 +109,7 @@ CreateProjectOutcome MobileClient::CreateProject(const CreateProjectRequest& req
   Aws::StringStream ss;
   ss << "/projects";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateProjectOutcome(CreateProjectResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateProjectOutcome(outcome.GetError());
-  }
+  return CreateProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateProjectOutcomeCallable MobileClient::CreateProjectCallable(const CreateProjectRequest& request) const
@@ -159,15 +142,7 @@ DeleteProjectOutcome MobileClient::DeleteProject(const DeleteProjectRequest& req
   ss << "/projects/";
   ss << request.GetProjectId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteProjectOutcome(DeleteProjectResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteProjectOutcome(outcome.GetError());
-  }
+  return DeleteProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteProjectOutcomeCallable MobileClient::DeleteProjectCallable(const DeleteProjectRequest& request) const
@@ -200,15 +175,7 @@ DescribeBundleOutcome MobileClient::DescribeBundle(const DescribeBundleRequest& 
   ss << "/bundles/";
   ss << request.GetBundleId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeBundleOutcome(DescribeBundleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeBundleOutcome(outcome.GetError());
-  }
+  return DescribeBundleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeBundleOutcomeCallable MobileClient::DescribeBundleCallable(const DescribeBundleRequest& request) const
@@ -240,15 +207,7 @@ DescribeProjectOutcome MobileClient::DescribeProject(const DescribeProjectReques
   Aws::StringStream ss;
   ss << "/project";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeProjectOutcome(DescribeProjectResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeProjectOutcome(outcome.GetError());
-  }
+  return DescribeProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeProjectOutcomeCallable MobileClient::DescribeProjectCallable(const DescribeProjectRequest& request) const
@@ -281,15 +240,7 @@ ExportBundleOutcome MobileClient::ExportBundle(const ExportBundleRequest& reques
   ss << "/bundles/";
   ss << request.GetBundleId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ExportBundleOutcome(ExportBundleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ExportBundleOutcome(outcome.GetError());
-  }
+  return ExportBundleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ExportBundleOutcomeCallable MobileClient::ExportBundleCallable(const ExportBundleRequest& request) const
@@ -322,15 +273,7 @@ ExportProjectOutcome MobileClient::ExportProject(const ExportProjectRequest& req
   ss << "/exports/";
   ss << request.GetProjectId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ExportProjectOutcome(ExportProjectResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ExportProjectOutcome(outcome.GetError());
-  }
+  return ExportProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ExportProjectOutcomeCallable MobileClient::ExportProjectCallable(const ExportProjectRequest& request) const
@@ -357,15 +300,7 @@ ListBundlesOutcome MobileClient::ListBundles(const ListBundlesRequest& request) 
   Aws::StringStream ss;
   ss << "/bundles";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListBundlesOutcome(ListBundlesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListBundlesOutcome(outcome.GetError());
-  }
+  return ListBundlesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListBundlesOutcomeCallable MobileClient::ListBundlesCallable(const ListBundlesRequest& request) const
@@ -392,15 +327,7 @@ ListProjectsOutcome MobileClient::ListProjects(const ListProjectsRequest& reques
   Aws::StringStream ss;
   ss << "/projects";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListProjectsOutcome(ListProjectsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListProjectsOutcome(outcome.GetError());
-  }
+  return ListProjectsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListProjectsOutcomeCallable MobileClient::ListProjectsCallable(const ListProjectsRequest& request) const
@@ -432,15 +359,7 @@ UpdateProjectOutcome MobileClient::UpdateProject(const UpdateProjectRequest& req
   Aws::StringStream ss;
   ss << "/update";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateProjectOutcome(UpdateProjectResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateProjectOutcome(outcome.GetError());
-  }
+  return UpdateProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateProjectOutcomeCallable MobileClient::UpdateProjectCallable(const UpdateProjectRequest& request) const

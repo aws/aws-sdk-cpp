@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediapackage/model/Channel.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,8 +21,10 @@ namespace Model
 Channel::Channel() : 
     m_arnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_egressAccessLogsHasBeenSet(false),
     m_hlsIngestHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_ingressAccessLogsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -40,8 +32,10 @@ Channel::Channel() :
 Channel::Channel(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_egressAccessLogsHasBeenSet(false),
     m_hlsIngestHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_ingressAccessLogsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -63,6 +57,13 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_descriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("egressAccessLogs"))
+  {
+    m_egressAccessLogs = jsonValue.GetObject("egressAccessLogs");
+
+    m_egressAccessLogsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("hlsIngest"))
   {
     m_hlsIngest = jsonValue.GetObject("hlsIngest");
@@ -75,6 +76,13 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_id = jsonValue.GetString("id");
 
     m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ingressAccessLogs"))
+  {
+    m_ingressAccessLogs = jsonValue.GetObject("ingressAccessLogs");
+
+    m_ingressAccessLogsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -106,6 +114,12 @@ JsonValue Channel::Jsonize() const
 
   }
 
+  if(m_egressAccessLogsHasBeenSet)
+  {
+   payload.WithObject("egressAccessLogs", m_egressAccessLogs.Jsonize());
+
+  }
+
   if(m_hlsIngestHasBeenSet)
   {
    payload.WithObject("hlsIngest", m_hlsIngest.Jsonize());
@@ -115,6 +129,12 @@ JsonValue Channel::Jsonize() const
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
+
+  }
+
+  if(m_ingressAccessLogsHasBeenSet)
+  {
+   payload.WithObject("ingressAccessLogs", m_ingressAccessLogs.Jsonize());
 
   }
 

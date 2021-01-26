@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/license-manager/model/LicenseConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -40,6 +30,8 @@ LicenseConfiguration::LicenseConfiguration() :
     m_licenseCountHasBeenSet(false),
     m_licenseCountHardLimit(false),
     m_licenseCountHardLimitHasBeenSet(false),
+    m_disassociateWhenNotFound(false),
+    m_disassociateWhenNotFoundHasBeenSet(false),
     m_consumedLicenses(0),
     m_consumedLicensesHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -63,6 +55,8 @@ LicenseConfiguration::LicenseConfiguration(JsonView jsonValue) :
     m_licenseCountHasBeenSet(false),
     m_licenseCountHardLimit(false),
     m_licenseCountHardLimitHasBeenSet(false),
+    m_disassociateWhenNotFound(false),
+    m_disassociateWhenNotFoundHasBeenSet(false),
     m_consumedLicenses(0),
     m_consumedLicensesHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -134,6 +128,13 @@ LicenseConfiguration& LicenseConfiguration::operator =(JsonView jsonValue)
     m_licenseCountHardLimit = jsonValue.GetBool("LicenseCountHardLimit");
 
     m_licenseCountHardLimitHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DisassociateWhenNotFound"))
+  {
+    m_disassociateWhenNotFound = jsonValue.GetBool("DisassociateWhenNotFound");
+
+    m_disassociateWhenNotFoundHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ConsumedLicenses"))
@@ -250,6 +251,12 @@ JsonValue LicenseConfiguration::Jsonize() const
   if(m_licenseCountHardLimitHasBeenSet)
   {
    payload.WithBool("LicenseCountHardLimit", m_licenseCountHardLimit);
+
+  }
+
+  if(m_disassociateWhenNotFoundHasBeenSet)
+  {
+   payload.WithBool("DisassociateWhenNotFound", m_disassociateWhenNotFound);
 
   }
 

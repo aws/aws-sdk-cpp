@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cur/CostandUsageReportService_EXPORTS.h>
@@ -47,28 +37,52 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /**
+     * <p>The name of the report that you want to delete. The name must be unique, is
+     * case sensitive, and can't include spaces.</p>
+     */
     inline const Aws::String& GetReportName() const{ return m_reportName; }
 
-    
+    /**
+     * <p>The name of the report that you want to delete. The name must be unique, is
+     * case sensitive, and can't include spaces.</p>
+     */
     inline bool ReportNameHasBeenSet() const { return m_reportNameHasBeenSet; }
 
-    
+    /**
+     * <p>The name of the report that you want to delete. The name must be unique, is
+     * case sensitive, and can't include spaces.</p>
+     */
     inline void SetReportName(const Aws::String& value) { m_reportNameHasBeenSet = true; m_reportName = value; }
 
-    
+    /**
+     * <p>The name of the report that you want to delete. The name must be unique, is
+     * case sensitive, and can't include spaces.</p>
+     */
     inline void SetReportName(Aws::String&& value) { m_reportNameHasBeenSet = true; m_reportName = std::move(value); }
 
-    
+    /**
+     * <p>The name of the report that you want to delete. The name must be unique, is
+     * case sensitive, and can't include spaces.</p>
+     */
     inline void SetReportName(const char* value) { m_reportNameHasBeenSet = true; m_reportName.assign(value); }
 
-    
+    /**
+     * <p>The name of the report that you want to delete. The name must be unique, is
+     * case sensitive, and can't include spaces.</p>
+     */
     inline DeleteReportDefinitionRequest& WithReportName(const Aws::String& value) { SetReportName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the report that you want to delete. The name must be unique, is
+     * case sensitive, and can't include spaces.</p>
+     */
     inline DeleteReportDefinitionRequest& WithReportName(Aws::String&& value) { SetReportName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The name of the report that you want to delete. The name must be unique, is
+     * case sensitive, and can't include spaces.</p>
+     */
     inline DeleteReportDefinitionRequest& WithReportName(const char* value) { SetReportName(value); return *this;}
 
   private:

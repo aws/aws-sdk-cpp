@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
@@ -299,90 +289,90 @@ namespace Model
 
     /**
      * <p>An approximation of the cost of the cluster, represented in m1.small/hours.
-     * This value is incremented one time for every hour that an m1.small runs. Larger
-     * instances are weighted more, so an Amazon EC2 instance that is roughly four
-     * times more expensive would result in the normalized instance hours being
-     * incremented by four. This result is only an approximation and does not reflect
-     * the actual billing rate.</p>
+     * This value is increased one time for every hour that an m1.small instance runs.
+     * Larger instances are weighted more heavily, so an Amazon EC2 instance that is
+     * roughly four times more expensive would result in the normalized instance hours
+     * being increased incrementally four times. This result is only an approximation
+     * and does not reflect the actual billing rate.</p>
      */
     inline int GetNormalizedInstanceHours() const{ return m_normalizedInstanceHours; }
 
     /**
      * <p>An approximation of the cost of the cluster, represented in m1.small/hours.
-     * This value is incremented one time for every hour that an m1.small runs. Larger
-     * instances are weighted more, so an Amazon EC2 instance that is roughly four
-     * times more expensive would result in the normalized instance hours being
-     * incremented by four. This result is only an approximation and does not reflect
-     * the actual billing rate.</p>
+     * This value is increased one time for every hour that an m1.small instance runs.
+     * Larger instances are weighted more heavily, so an Amazon EC2 instance that is
+     * roughly four times more expensive would result in the normalized instance hours
+     * being increased incrementally four times. This result is only an approximation
+     * and does not reflect the actual billing rate.</p>
      */
     inline bool NormalizedInstanceHoursHasBeenSet() const { return m_normalizedInstanceHoursHasBeenSet; }
 
     /**
      * <p>An approximation of the cost of the cluster, represented in m1.small/hours.
-     * This value is incremented one time for every hour that an m1.small runs. Larger
-     * instances are weighted more, so an Amazon EC2 instance that is roughly four
-     * times more expensive would result in the normalized instance hours being
-     * incremented by four. This result is only an approximation and does not reflect
-     * the actual billing rate.</p>
+     * This value is increased one time for every hour that an m1.small instance runs.
+     * Larger instances are weighted more heavily, so an Amazon EC2 instance that is
+     * roughly four times more expensive would result in the normalized instance hours
+     * being increased incrementally four times. This result is only an approximation
+     * and does not reflect the actual billing rate.</p>
      */
     inline void SetNormalizedInstanceHours(int value) { m_normalizedInstanceHoursHasBeenSet = true; m_normalizedInstanceHours = value; }
 
     /**
      * <p>An approximation of the cost of the cluster, represented in m1.small/hours.
-     * This value is incremented one time for every hour that an m1.small runs. Larger
-     * instances are weighted more, so an Amazon EC2 instance that is roughly four
-     * times more expensive would result in the normalized instance hours being
-     * incremented by four. This result is only an approximation and does not reflect
-     * the actual billing rate.</p>
+     * This value is increased one time for every hour that an m1.small instance runs.
+     * Larger instances are weighted more heavily, so an Amazon EC2 instance that is
+     * roughly four times more expensive would result in the normalized instance hours
+     * being increased incrementally four times. This result is only an approximation
+     * and does not reflect the actual billing rate.</p>
      */
     inline JobFlowInstancesDetail& WithNormalizedInstanceHours(int value) { SetNormalizedInstanceHours(value); return *this;}
 
 
     /**
-     * <p>The name of an Amazon EC2 key pair that can be used to ssh to the master
-     * node.</p>
+     * <p>The name of an Amazon EC2 key pair that can be used to connect to the master
+     * node using SSH.</p>
      */
     inline const Aws::String& GetEc2KeyName() const{ return m_ec2KeyName; }
 
     /**
-     * <p>The name of an Amazon EC2 key pair that can be used to ssh to the master
-     * node.</p>
+     * <p>The name of an Amazon EC2 key pair that can be used to connect to the master
+     * node using SSH.</p>
      */
     inline bool Ec2KeyNameHasBeenSet() const { return m_ec2KeyNameHasBeenSet; }
 
     /**
-     * <p>The name of an Amazon EC2 key pair that can be used to ssh to the master
-     * node.</p>
+     * <p>The name of an Amazon EC2 key pair that can be used to connect to the master
+     * node using SSH.</p>
      */
     inline void SetEc2KeyName(const Aws::String& value) { m_ec2KeyNameHasBeenSet = true; m_ec2KeyName = value; }
 
     /**
-     * <p>The name of an Amazon EC2 key pair that can be used to ssh to the master
-     * node.</p>
+     * <p>The name of an Amazon EC2 key pair that can be used to connect to the master
+     * node using SSH.</p>
      */
     inline void SetEc2KeyName(Aws::String&& value) { m_ec2KeyNameHasBeenSet = true; m_ec2KeyName = std::move(value); }
 
     /**
-     * <p>The name of an Amazon EC2 key pair that can be used to ssh to the master
-     * node.</p>
+     * <p>The name of an Amazon EC2 key pair that can be used to connect to the master
+     * node using SSH.</p>
      */
     inline void SetEc2KeyName(const char* value) { m_ec2KeyNameHasBeenSet = true; m_ec2KeyName.assign(value); }
 
     /**
-     * <p>The name of an Amazon EC2 key pair that can be used to ssh to the master
-     * node.</p>
+     * <p>The name of an Amazon EC2 key pair that can be used to connect to the master
+     * node using SSH.</p>
      */
     inline JobFlowInstancesDetail& WithEc2KeyName(const Aws::String& value) { SetEc2KeyName(value); return *this;}
 
     /**
-     * <p>The name of an Amazon EC2 key pair that can be used to ssh to the master
-     * node.</p>
+     * <p>The name of an Amazon EC2 key pair that can be used to connect to the master
+     * node using SSH.</p>
      */
     inline JobFlowInstancesDetail& WithEc2KeyName(Aws::String&& value) { SetEc2KeyName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of an Amazon EC2 key pair that can be used to ssh to the master
-     * node.</p>
+     * <p>The name of an Amazon EC2 key pair that can be used to connect to the master
+     * node using SSH.</p>
      */
     inline JobFlowInstancesDetail& WithEc2KeyName(const char* value) { SetEc2KeyName(value); return *this;}
 

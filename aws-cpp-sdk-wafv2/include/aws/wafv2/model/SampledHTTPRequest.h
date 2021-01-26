@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/wafv2/WAFV2_EXPORTS.h>
@@ -36,11 +26,11 @@ namespace Model
 {
 
   /**
-   * <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
+   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
    * released in November, 2019. For information, including how to migrate your AWS
    * WAF resources from the prior release, see the <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p> </note> <p>Represents a single sampled web
+   * WAF Developer Guide</a>. </p>  <p>Represents a single sampled web
    * request. The response from <a>GetSampledRequests</a> includes a
    * <code>SampledHTTPRequests</code> complex type that appears as
    * <code>SampledRequests</code> in the response syntax.
@@ -213,7 +203,7 @@ namespace Model
      * groups, the format for this name is <code>&lt;vendor name&gt;#&lt;managed rule
      * group name&gt;#&lt;rule name&gt;</code>. For your own rule groups, the format
      * for this name is <code>&lt;rule group name&gt;#&lt;rule name&gt;</code>. If the
-     * rule is not in a rule group, the format is <code>&lt;rule name&gt;</code>. </p>
+     * rule is not in a rule group, this field is absent. </p>
      */
     inline const Aws::String& GetRuleNameWithinRuleGroup() const{ return m_ruleNameWithinRuleGroup; }
 
@@ -222,7 +212,7 @@ namespace Model
      * groups, the format for this name is <code>&lt;vendor name&gt;#&lt;managed rule
      * group name&gt;#&lt;rule name&gt;</code>. For your own rule groups, the format
      * for this name is <code>&lt;rule group name&gt;#&lt;rule name&gt;</code>. If the
-     * rule is not in a rule group, the format is <code>&lt;rule name&gt;</code>. </p>
+     * rule is not in a rule group, this field is absent. </p>
      */
     inline bool RuleNameWithinRuleGroupHasBeenSet() const { return m_ruleNameWithinRuleGroupHasBeenSet; }
 
@@ -231,7 +221,7 @@ namespace Model
      * groups, the format for this name is <code>&lt;vendor name&gt;#&lt;managed rule
      * group name&gt;#&lt;rule name&gt;</code>. For your own rule groups, the format
      * for this name is <code>&lt;rule group name&gt;#&lt;rule name&gt;</code>. If the
-     * rule is not in a rule group, the format is <code>&lt;rule name&gt;</code>. </p>
+     * rule is not in a rule group, this field is absent. </p>
      */
     inline void SetRuleNameWithinRuleGroup(const Aws::String& value) { m_ruleNameWithinRuleGroupHasBeenSet = true; m_ruleNameWithinRuleGroup = value; }
 
@@ -240,7 +230,7 @@ namespace Model
      * groups, the format for this name is <code>&lt;vendor name&gt;#&lt;managed rule
      * group name&gt;#&lt;rule name&gt;</code>. For your own rule groups, the format
      * for this name is <code>&lt;rule group name&gt;#&lt;rule name&gt;</code>. If the
-     * rule is not in a rule group, the format is <code>&lt;rule name&gt;</code>. </p>
+     * rule is not in a rule group, this field is absent. </p>
      */
     inline void SetRuleNameWithinRuleGroup(Aws::String&& value) { m_ruleNameWithinRuleGroupHasBeenSet = true; m_ruleNameWithinRuleGroup = std::move(value); }
 
@@ -249,7 +239,7 @@ namespace Model
      * groups, the format for this name is <code>&lt;vendor name&gt;#&lt;managed rule
      * group name&gt;#&lt;rule name&gt;</code>. For your own rule groups, the format
      * for this name is <code>&lt;rule group name&gt;#&lt;rule name&gt;</code>. If the
-     * rule is not in a rule group, the format is <code>&lt;rule name&gt;</code>. </p>
+     * rule is not in a rule group, this field is absent. </p>
      */
     inline void SetRuleNameWithinRuleGroup(const char* value) { m_ruleNameWithinRuleGroupHasBeenSet = true; m_ruleNameWithinRuleGroup.assign(value); }
 
@@ -258,7 +248,7 @@ namespace Model
      * groups, the format for this name is <code>&lt;vendor name&gt;#&lt;managed rule
      * group name&gt;#&lt;rule name&gt;</code>. For your own rule groups, the format
      * for this name is <code>&lt;rule group name&gt;#&lt;rule name&gt;</code>. If the
-     * rule is not in a rule group, the format is <code>&lt;rule name&gt;</code>. </p>
+     * rule is not in a rule group, this field is absent. </p>
      */
     inline SampledHTTPRequest& WithRuleNameWithinRuleGroup(const Aws::String& value) { SetRuleNameWithinRuleGroup(value); return *this;}
 
@@ -267,7 +257,7 @@ namespace Model
      * groups, the format for this name is <code>&lt;vendor name&gt;#&lt;managed rule
      * group name&gt;#&lt;rule name&gt;</code>. For your own rule groups, the format
      * for this name is <code>&lt;rule group name&gt;#&lt;rule name&gt;</code>. If the
-     * rule is not in a rule group, the format is <code>&lt;rule name&gt;</code>. </p>
+     * rule is not in a rule group, this field is absent. </p>
      */
     inline SampledHTTPRequest& WithRuleNameWithinRuleGroup(Aws::String&& value) { SetRuleNameWithinRuleGroup(std::move(value)); return *this;}
 
@@ -276,7 +266,7 @@ namespace Model
      * groups, the format for this name is <code>&lt;vendor name&gt;#&lt;managed rule
      * group name&gt;#&lt;rule name&gt;</code>. For your own rule groups, the format
      * for this name is <code>&lt;rule group name&gt;#&lt;rule name&gt;</code>. If the
-     * rule is not in a rule group, the format is <code>&lt;rule name&gt;</code>. </p>
+     * rule is not in a rule group, this field is absent. </p>
      */
     inline SampledHTTPRequest& WithRuleNameWithinRuleGroup(const char* value) { SetRuleNameWithinRuleGroup(value); return *this;}
 

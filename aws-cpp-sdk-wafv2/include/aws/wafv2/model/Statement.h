@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/wafv2/WAFV2_EXPORTS.h>
@@ -23,13 +13,9 @@
 #include <aws/wafv2/model/RuleGroupReferenceStatement.h>
 #include <aws/wafv2/model/IPSetReferenceStatement.h>
 #include <aws/wafv2/model/RegexPatternSetReferenceStatement.h>
-#include <aws/wafv2/model/RateBasedStatement.h>
-#include <aws/wafv2/model/AndStatement.h>
-#include <aws/wafv2/model/OrStatement.h>
-#include <aws/wafv2/model/NotStatement.h>
 #include <aws/wafv2/model/ManagedRuleGroupStatement.h>
 #include <utility>
-#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <memory>
 
 namespace Aws
 {
@@ -46,14 +32,16 @@ namespace WAFV2
 namespace Model
 {
   class RateBasedStatement;
+  class AndStatement;
+  class OrStatement;
   class NotStatement;
 
   /**
-   * <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
+   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
    * released in November, 2019. For information, including how to migrate your AWS
    * WAF resources from the prior release, see the <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p> </note> <p>The processing guidance for a
+   * WAF Developer Guide</a>. </p>  <p>The processing guidance for a
    * <a>Rule</a>, used by AWS WAF to determine whether a web request matches the
    * rule. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/Statement">AWS API
@@ -760,42 +748,42 @@ namespace Model
      * logic. You provide more than one <a>Statement</a> within the
      * <code>AndStatement</code>. </p>
      */
-    inline const AndStatement& GetAndStatement() const{ return m_andStatement; }
+    const AndStatement& GetAndStatement() const;
 
     /**
      * <p>A logical rule statement used to combine other rule statements with AND
      * logic. You provide more than one <a>Statement</a> within the
      * <code>AndStatement</code>. </p>
      */
-    inline bool AndStatementHasBeenSet() const { return m_andStatementHasBeenSet; }
+    bool AndStatementHasBeenSet() const;
 
     /**
      * <p>A logical rule statement used to combine other rule statements with AND
      * logic. You provide more than one <a>Statement</a> within the
      * <code>AndStatement</code>. </p>
      */
-    inline void SetAndStatement(const AndStatement& value) { m_andStatementHasBeenSet = true; m_andStatement = value; }
+    void SetAndStatement(const AndStatement& value);
 
     /**
      * <p>A logical rule statement used to combine other rule statements with AND
      * logic. You provide more than one <a>Statement</a> within the
      * <code>AndStatement</code>. </p>
      */
-    inline void SetAndStatement(AndStatement&& value) { m_andStatementHasBeenSet = true; m_andStatement = std::move(value); }
+    void SetAndStatement(AndStatement&& value);
 
     /**
      * <p>A logical rule statement used to combine other rule statements with AND
      * logic. You provide more than one <a>Statement</a> within the
      * <code>AndStatement</code>. </p>
      */
-    inline Statement& WithAndStatement(const AndStatement& value) { SetAndStatement(value); return *this;}
+    Statement& WithAndStatement(const AndStatement& value);
 
     /**
      * <p>A logical rule statement used to combine other rule statements with AND
      * logic. You provide more than one <a>Statement</a> within the
      * <code>AndStatement</code>. </p>
      */
-    inline Statement& WithAndStatement(AndStatement&& value) { SetAndStatement(std::move(value)); return *this;}
+    Statement& WithAndStatement(AndStatement&& value);
 
 
     /**
@@ -803,42 +791,42 @@ namespace Model
      * You provide more than one <a>Statement</a> within the <code>OrStatement</code>.
      * </p>
      */
-    inline const OrStatement& GetOrStatement() const{ return m_orStatement; }
+    const OrStatement& GetOrStatement() const;
 
     /**
      * <p>A logical rule statement used to combine other rule statements with OR logic.
      * You provide more than one <a>Statement</a> within the <code>OrStatement</code>.
      * </p>
      */
-    inline bool OrStatementHasBeenSet() const { return m_orStatementHasBeenSet; }
+    bool OrStatementHasBeenSet() const;
 
     /**
      * <p>A logical rule statement used to combine other rule statements with OR logic.
      * You provide more than one <a>Statement</a> within the <code>OrStatement</code>.
      * </p>
      */
-    inline void SetOrStatement(const OrStatement& value) { m_orStatementHasBeenSet = true; m_orStatement = value; }
+    void SetOrStatement(const OrStatement& value);
 
     /**
      * <p>A logical rule statement used to combine other rule statements with OR logic.
      * You provide more than one <a>Statement</a> within the <code>OrStatement</code>.
      * </p>
      */
-    inline void SetOrStatement(OrStatement&& value) { m_orStatementHasBeenSet = true; m_orStatement = std::move(value); }
+    void SetOrStatement(OrStatement&& value);
 
     /**
      * <p>A logical rule statement used to combine other rule statements with OR logic.
      * You provide more than one <a>Statement</a> within the <code>OrStatement</code>.
      * </p>
      */
-    inline Statement& WithOrStatement(const OrStatement& value) { SetOrStatement(value); return *this;}
+    Statement& WithOrStatement(const OrStatement& value);
 
     /**
      * <p>A logical rule statement used to combine other rule statements with OR logic.
      * You provide more than one <a>Statement</a> within the <code>OrStatement</code>.
      * </p>
      */
-    inline Statement& WithOrStatement(OrStatement&& value) { SetOrStatement(std::move(value)); return *this;}
+    Statement& WithOrStatement(OrStatement&& value);
 
 
     /**
@@ -976,16 +964,16 @@ namespace Model
     RegexPatternSetReferenceStatement m_regexPatternSetReferenceStatement;
     bool m_regexPatternSetReferenceStatementHasBeenSet;
 
-    Aws::Vector<RateBasedStatement> m_rateBasedStatement;
+    std::shared_ptr<RateBasedStatement> m_rateBasedStatement;
     bool m_rateBasedStatementHasBeenSet;
 
-    AndStatement m_andStatement;
+    std::shared_ptr<AndStatement> m_andStatement;
     bool m_andStatementHasBeenSet;
 
-    OrStatement m_orStatement;
+    std::shared_ptr<OrStatement> m_orStatement;
     bool m_orStatementHasBeenSet;
 
-    Aws::Vector<NotStatement> m_notStatement;
+    std::shared_ptr<NotStatement> m_notStatement;
     bool m_notStatementHasBeenSet;
 
     ManagedRuleGroupStatement m_managedRuleGroupStatement;

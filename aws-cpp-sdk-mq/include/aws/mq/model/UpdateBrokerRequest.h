@@ -1,23 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mq/MQ_EXPORTS.h>
 #include <aws/mq/MQRequest.h>
+#include <aws/mq/model/AuthenticationStrategy.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mq/model/ConfigurationId.h>
+#include <aws/mq/model/LdapServerMetadataInput.h>
 #include <aws/mq/model/Logs.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
@@ -46,6 +38,37 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "UpdateBroker"; }
 
     Aws::String SerializePayload() const override;
+
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline const AuthenticationStrategy& GetAuthenticationStrategy() const{ return m_authenticationStrategy; }
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline bool AuthenticationStrategyHasBeenSet() const { return m_authenticationStrategyHasBeenSet; }
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline void SetAuthenticationStrategy(const AuthenticationStrategy& value) { m_authenticationStrategyHasBeenSet = true; m_authenticationStrategy = value; }
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline void SetAuthenticationStrategy(AuthenticationStrategy&& value) { m_authenticationStrategyHasBeenSet = true; m_authenticationStrategy = std::move(value); }
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline UpdateBrokerRequest& WithAuthenticationStrategy(const AuthenticationStrategy& value) { SetAuthenticationStrategy(value); return *this;}
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline UpdateBrokerRequest& WithAuthenticationStrategy(AuthenticationStrategy&& value) { SetAuthenticationStrategy(std::move(value)); return *this;}
 
 
     /**
@@ -78,66 +101,42 @@ namespace Model
 
 
     /**
-     * The name of the broker. This value must be unique in your AWS account, 1-50
-     * characters long, must contain only letters, numbers, dashes, and underscores,
-     * and must not contain whitespaces, brackets, wildcard characters, or special
-     * characters.
+     * The unique ID that Amazon MQ generates for the broker.
      */
     inline const Aws::String& GetBrokerId() const{ return m_brokerId; }
 
     /**
-     * The name of the broker. This value must be unique in your AWS account, 1-50
-     * characters long, must contain only letters, numbers, dashes, and underscores,
-     * and must not contain whitespaces, brackets, wildcard characters, or special
-     * characters.
+     * The unique ID that Amazon MQ generates for the broker.
      */
     inline bool BrokerIdHasBeenSet() const { return m_brokerIdHasBeenSet; }
 
     /**
-     * The name of the broker. This value must be unique in your AWS account, 1-50
-     * characters long, must contain only letters, numbers, dashes, and underscores,
-     * and must not contain whitespaces, brackets, wildcard characters, or special
-     * characters.
+     * The unique ID that Amazon MQ generates for the broker.
      */
     inline void SetBrokerId(const Aws::String& value) { m_brokerIdHasBeenSet = true; m_brokerId = value; }
 
     /**
-     * The name of the broker. This value must be unique in your AWS account, 1-50
-     * characters long, must contain only letters, numbers, dashes, and underscores,
-     * and must not contain whitespaces, brackets, wildcard characters, or special
-     * characters.
+     * The unique ID that Amazon MQ generates for the broker.
      */
     inline void SetBrokerId(Aws::String&& value) { m_brokerIdHasBeenSet = true; m_brokerId = std::move(value); }
 
     /**
-     * The name of the broker. This value must be unique in your AWS account, 1-50
-     * characters long, must contain only letters, numbers, dashes, and underscores,
-     * and must not contain whitespaces, brackets, wildcard characters, or special
-     * characters.
+     * The unique ID that Amazon MQ generates for the broker.
      */
     inline void SetBrokerId(const char* value) { m_brokerIdHasBeenSet = true; m_brokerId.assign(value); }
 
     /**
-     * The name of the broker. This value must be unique in your AWS account, 1-50
-     * characters long, must contain only letters, numbers, dashes, and underscores,
-     * and must not contain whitespaces, brackets, wildcard characters, or special
-     * characters.
+     * The unique ID that Amazon MQ generates for the broker.
      */
     inline UpdateBrokerRequest& WithBrokerId(const Aws::String& value) { SetBrokerId(value); return *this;}
 
     /**
-     * The name of the broker. This value must be unique in your AWS account, 1-50
-     * characters long, must contain only letters, numbers, dashes, and underscores,
-     * and must not contain whitespaces, brackets, wildcard characters, or special
-     * characters.
+     * The unique ID that Amazon MQ generates for the broker.
      */
     inline UpdateBrokerRequest& WithBrokerId(Aws::String&& value) { SetBrokerId(std::move(value)); return *this;}
 
     /**
-     * The name of the broker. This value must be unique in your AWS account, 1-50
-     * characters long, must contain only letters, numbers, dashes, and underscores,
-     * and must not contain whitespaces, brackets, wildcard characters, or special
-     * characters.
+     * The unique ID that Amazon MQ generates for the broker.
      */
     inline UpdateBrokerRequest& WithBrokerId(const char* value) { SetBrokerId(value); return *this;}
 
@@ -280,6 +279,43 @@ namespace Model
 
 
     /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline const LdapServerMetadataInput& GetLdapServerMetadata() const{ return m_ldapServerMetadata; }
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline bool LdapServerMetadataHasBeenSet() const { return m_ldapServerMetadataHasBeenSet; }
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline void SetLdapServerMetadata(const LdapServerMetadataInput& value) { m_ldapServerMetadataHasBeenSet = true; m_ldapServerMetadata = value; }
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline void SetLdapServerMetadata(LdapServerMetadataInput&& value) { m_ldapServerMetadataHasBeenSet = true; m_ldapServerMetadata = std::move(value); }
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline UpdateBrokerRequest& WithLdapServerMetadata(const LdapServerMetadataInput& value) { SetLdapServerMetadata(value); return *this;}
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline UpdateBrokerRequest& WithLdapServerMetadata(LdapServerMetadataInput&& value) { SetLdapServerMetadata(std::move(value)); return *this;}
+
+
+    /**
      * Enables Amazon CloudWatch logging for brokers.
      */
     inline const Logs& GetLogs() const{ return m_logs; }
@@ -366,6 +402,9 @@ namespace Model
 
   private:
 
+    AuthenticationStrategy m_authenticationStrategy;
+    bool m_authenticationStrategyHasBeenSet;
+
     bool m_autoMinorVersionUpgrade;
     bool m_autoMinorVersionUpgradeHasBeenSet;
 
@@ -380,6 +419,9 @@ namespace Model
 
     Aws::String m_hostInstanceType;
     bool m_hostInstanceTypeHasBeenSet;
+
+    LdapServerMetadataInput m_ldapServerMetadata;
+    bool m_ldapServerMetadataHasBeenSet;
 
     Logs m_logs;
     bool m_logsHasBeenSet;

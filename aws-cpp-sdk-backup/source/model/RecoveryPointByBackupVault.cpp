@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/backup/model/RecoveryPointByBackupVault.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,6 +22,7 @@ RecoveryPointByBackupVault::RecoveryPointByBackupVault() :
     m_recoveryPointArnHasBeenSet(false),
     m_backupVaultNameHasBeenSet(false),
     m_backupVaultArnHasBeenSet(false),
+    m_sourceBackupVaultArnHasBeenSet(false),
     m_resourceArnHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_createdByHasBeenSet(false),
@@ -55,6 +46,7 @@ RecoveryPointByBackupVault::RecoveryPointByBackupVault(JsonView jsonValue) :
     m_recoveryPointArnHasBeenSet(false),
     m_backupVaultNameHasBeenSet(false),
     m_backupVaultArnHasBeenSet(false),
+    m_sourceBackupVaultArnHasBeenSet(false),
     m_resourceArnHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_createdByHasBeenSet(false),
@@ -96,6 +88,13 @@ RecoveryPointByBackupVault& RecoveryPointByBackupVault::operator =(JsonView json
     m_backupVaultArn = jsonValue.GetString("BackupVaultArn");
 
     m_backupVaultArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SourceBackupVaultArn"))
+  {
+    m_sourceBackupVaultArn = jsonValue.GetString("SourceBackupVaultArn");
+
+    m_sourceBackupVaultArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ResourceArn"))
@@ -211,6 +210,12 @@ JsonValue RecoveryPointByBackupVault::Jsonize() const
   if(m_backupVaultArnHasBeenSet)
   {
    payload.WithString("BackupVaultArn", m_backupVaultArn);
+
+  }
+
+  if(m_sourceBackupVaultArnHasBeenSet)
+  {
+   payload.WithString("SourceBackupVaultArn", m_sourceBackupVaultArn);
 
   }
 

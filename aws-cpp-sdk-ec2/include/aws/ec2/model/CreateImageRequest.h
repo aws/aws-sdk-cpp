@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
+#include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -279,35 +270,156 @@ namespace Model
 
     /**
      * <p>By default, Amazon EC2 attempts to shut down and reboot the instance before
-     * creating the image. If the 'No Reboot' option is set, Amazon EC2 doesn't shut
-     * down the instance before creating the image. When this option is used, file
-     * system integrity on the created image can't be guaranteed.</p>
+     * creating the image. If the <code>No Reboot</code> option is set, Amazon EC2
+     * doesn't shut down the instance before creating the image. When this option is
+     * used, file system integrity on the created image can't be guaranteed.</p>
      */
     inline bool GetNoReboot() const{ return m_noReboot; }
 
     /**
      * <p>By default, Amazon EC2 attempts to shut down and reboot the instance before
-     * creating the image. If the 'No Reboot' option is set, Amazon EC2 doesn't shut
-     * down the instance before creating the image. When this option is used, file
-     * system integrity on the created image can't be guaranteed.</p>
+     * creating the image. If the <code>No Reboot</code> option is set, Amazon EC2
+     * doesn't shut down the instance before creating the image. When this option is
+     * used, file system integrity on the created image can't be guaranteed.</p>
      */
     inline bool NoRebootHasBeenSet() const { return m_noRebootHasBeenSet; }
 
     /**
      * <p>By default, Amazon EC2 attempts to shut down and reboot the instance before
-     * creating the image. If the 'No Reboot' option is set, Amazon EC2 doesn't shut
-     * down the instance before creating the image. When this option is used, file
-     * system integrity on the created image can't be guaranteed.</p>
+     * creating the image. If the <code>No Reboot</code> option is set, Amazon EC2
+     * doesn't shut down the instance before creating the image. When this option is
+     * used, file system integrity on the created image can't be guaranteed.</p>
      */
     inline void SetNoReboot(bool value) { m_noRebootHasBeenSet = true; m_noReboot = value; }
 
     /**
      * <p>By default, Amazon EC2 attempts to shut down and reboot the instance before
-     * creating the image. If the 'No Reboot' option is set, Amazon EC2 doesn't shut
-     * down the instance before creating the image. When this option is used, file
-     * system integrity on the created image can't be guaranteed.</p>
+     * creating the image. If the <code>No Reboot</code> option is set, Amazon EC2
+     * doesn't shut down the instance before creating the image. When this option is
+     * used, file system integrity on the created image can't be guaranteed.</p>
      */
     inline CreateImageRequest& WithNoReboot(bool value) { SetNoReboot(value); return *this;}
+
+
+    /**
+     * <p>The tags to apply to the AMI and snapshots on creation. You can tag the AMI,
+     * the snapshots, or both.</p> <ul> <li> <p>To tag the AMI, the value for
+     * <code>ResourceType</code> must be <code>image</code>.</p> </li> <li> <p>To tag
+     * the snapshots that are created of the root volume and of other EBS volumes that
+     * are attached to the instance, the value for <code>ResourceType</code> must be
+     * <code>snapshot</code>. The same tag is applied to all of the snapshots that are
+     * created.</p> </li> </ul> <p>If you specify other values for
+     * <code>ResourceType</code>, the request fails.</p> <p>To tag an AMI or snapshot
+     * after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     */
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+
+    /**
+     * <p>The tags to apply to the AMI and snapshots on creation. You can tag the AMI,
+     * the snapshots, or both.</p> <ul> <li> <p>To tag the AMI, the value for
+     * <code>ResourceType</code> must be <code>image</code>.</p> </li> <li> <p>To tag
+     * the snapshots that are created of the root volume and of other EBS volumes that
+     * are attached to the instance, the value for <code>ResourceType</code> must be
+     * <code>snapshot</code>. The same tag is applied to all of the snapshots that are
+     * created.</p> </li> </ul> <p>If you specify other values for
+     * <code>ResourceType</code>, the request fails.</p> <p>To tag an AMI or snapshot
+     * after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     */
+    inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
+
+    /**
+     * <p>The tags to apply to the AMI and snapshots on creation. You can tag the AMI,
+     * the snapshots, or both.</p> <ul> <li> <p>To tag the AMI, the value for
+     * <code>ResourceType</code> must be <code>image</code>.</p> </li> <li> <p>To tag
+     * the snapshots that are created of the root volume and of other EBS volumes that
+     * are attached to the instance, the value for <code>ResourceType</code> must be
+     * <code>snapshot</code>. The same tag is applied to all of the snapshots that are
+     * created.</p> </li> </ul> <p>If you specify other values for
+     * <code>ResourceType</code>, the request fails.</p> <p>To tag an AMI or snapshot
+     * after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     */
+    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
+
+    /**
+     * <p>The tags to apply to the AMI and snapshots on creation. You can tag the AMI,
+     * the snapshots, or both.</p> <ul> <li> <p>To tag the AMI, the value for
+     * <code>ResourceType</code> must be <code>image</code>.</p> </li> <li> <p>To tag
+     * the snapshots that are created of the root volume and of other EBS volumes that
+     * are attached to the instance, the value for <code>ResourceType</code> must be
+     * <code>snapshot</code>. The same tag is applied to all of the snapshots that are
+     * created.</p> </li> </ul> <p>If you specify other values for
+     * <code>ResourceType</code>, the request fails.</p> <p>To tag an AMI or snapshot
+     * after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     */
+    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
+
+    /**
+     * <p>The tags to apply to the AMI and snapshots on creation. You can tag the AMI,
+     * the snapshots, or both.</p> <ul> <li> <p>To tag the AMI, the value for
+     * <code>ResourceType</code> must be <code>image</code>.</p> </li> <li> <p>To tag
+     * the snapshots that are created of the root volume and of other EBS volumes that
+     * are attached to the instance, the value for <code>ResourceType</code> must be
+     * <code>snapshot</code>. The same tag is applied to all of the snapshots that are
+     * created.</p> </li> </ul> <p>If you specify other values for
+     * <code>ResourceType</code>, the request fails.</p> <p>To tag an AMI or snapshot
+     * after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     */
+    inline CreateImageRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
+
+    /**
+     * <p>The tags to apply to the AMI and snapshots on creation. You can tag the AMI,
+     * the snapshots, or both.</p> <ul> <li> <p>To tag the AMI, the value for
+     * <code>ResourceType</code> must be <code>image</code>.</p> </li> <li> <p>To tag
+     * the snapshots that are created of the root volume and of other EBS volumes that
+     * are attached to the instance, the value for <code>ResourceType</code> must be
+     * <code>snapshot</code>. The same tag is applied to all of the snapshots that are
+     * created.</p> </li> </ul> <p>If you specify other values for
+     * <code>ResourceType</code>, the request fails.</p> <p>To tag an AMI or snapshot
+     * after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     */
+    inline CreateImageRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags to apply to the AMI and snapshots on creation. You can tag the AMI,
+     * the snapshots, or both.</p> <ul> <li> <p>To tag the AMI, the value for
+     * <code>ResourceType</code> must be <code>image</code>.</p> </li> <li> <p>To tag
+     * the snapshots that are created of the root volume and of other EBS volumes that
+     * are attached to the instance, the value for <code>ResourceType</code> must be
+     * <code>snapshot</code>. The same tag is applied to all of the snapshots that are
+     * created.</p> </li> </ul> <p>If you specify other values for
+     * <code>ResourceType</code>, the request fails.</p> <p>To tag an AMI or snapshot
+     * after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     */
+    inline CreateImageRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
+
+    /**
+     * <p>The tags to apply to the AMI and snapshots on creation. You can tag the AMI,
+     * the snapshots, or both.</p> <ul> <li> <p>To tag the AMI, the value for
+     * <code>ResourceType</code> must be <code>image</code>.</p> </li> <li> <p>To tag
+     * the snapshots that are created of the root volume and of other EBS volumes that
+     * are attached to the instance, the value for <code>ResourceType</code> must be
+     * <code>snapshot</code>. The same tag is applied to all of the snapshots that are
+     * created.</p> </li> </ul> <p>If you specify other values for
+     * <code>ResourceType</code>, the request fails.</p> <p>To tag an AMI or snapshot
+     * after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     */
+    inline CreateImageRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -328,6 +440,9 @@ namespace Model
 
     bool m_noReboot;
     bool m_noRebootHasBeenSet;
+
+    Aws::Vector<TagSpecification> m_tagSpecifications;
+    bool m_tagSpecificationsHasBeenSet;
   };
 
 } // namespace Model

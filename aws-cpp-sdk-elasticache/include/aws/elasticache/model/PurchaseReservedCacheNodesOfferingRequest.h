@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
@@ -100,73 +90,73 @@ namespace Model
 
 
     /**
-     * <p>A customer-specified identifier to track this reservation.</p> <note> <p>The
+     * <p>A customer-specified identifier to track this reservation.</p>  <p>The
      * Reserved Cache Node ID is an unique customer-specified identifier to track this
      * reservation. If this parameter is not specified, ElastiCache automatically
-     * generates an identifier for the reservation.</p> </note> <p>Example:
+     * generates an identifier for the reservation.</p>  <p>Example:
      * myreservationID</p>
      */
     inline const Aws::String& GetReservedCacheNodeId() const{ return m_reservedCacheNodeId; }
 
     /**
-     * <p>A customer-specified identifier to track this reservation.</p> <note> <p>The
+     * <p>A customer-specified identifier to track this reservation.</p>  <p>The
      * Reserved Cache Node ID is an unique customer-specified identifier to track this
      * reservation. If this parameter is not specified, ElastiCache automatically
-     * generates an identifier for the reservation.</p> </note> <p>Example:
+     * generates an identifier for the reservation.</p>  <p>Example:
      * myreservationID</p>
      */
     inline bool ReservedCacheNodeIdHasBeenSet() const { return m_reservedCacheNodeIdHasBeenSet; }
 
     /**
-     * <p>A customer-specified identifier to track this reservation.</p> <note> <p>The
+     * <p>A customer-specified identifier to track this reservation.</p>  <p>The
      * Reserved Cache Node ID is an unique customer-specified identifier to track this
      * reservation. If this parameter is not specified, ElastiCache automatically
-     * generates an identifier for the reservation.</p> </note> <p>Example:
+     * generates an identifier for the reservation.</p>  <p>Example:
      * myreservationID</p>
      */
     inline void SetReservedCacheNodeId(const Aws::String& value) { m_reservedCacheNodeIdHasBeenSet = true; m_reservedCacheNodeId = value; }
 
     /**
-     * <p>A customer-specified identifier to track this reservation.</p> <note> <p>The
+     * <p>A customer-specified identifier to track this reservation.</p>  <p>The
      * Reserved Cache Node ID is an unique customer-specified identifier to track this
      * reservation. If this parameter is not specified, ElastiCache automatically
-     * generates an identifier for the reservation.</p> </note> <p>Example:
+     * generates an identifier for the reservation.</p>  <p>Example:
      * myreservationID</p>
      */
     inline void SetReservedCacheNodeId(Aws::String&& value) { m_reservedCacheNodeIdHasBeenSet = true; m_reservedCacheNodeId = std::move(value); }
 
     /**
-     * <p>A customer-specified identifier to track this reservation.</p> <note> <p>The
+     * <p>A customer-specified identifier to track this reservation.</p>  <p>The
      * Reserved Cache Node ID is an unique customer-specified identifier to track this
      * reservation. If this parameter is not specified, ElastiCache automatically
-     * generates an identifier for the reservation.</p> </note> <p>Example:
+     * generates an identifier for the reservation.</p>  <p>Example:
      * myreservationID</p>
      */
     inline void SetReservedCacheNodeId(const char* value) { m_reservedCacheNodeIdHasBeenSet = true; m_reservedCacheNodeId.assign(value); }
 
     /**
-     * <p>A customer-specified identifier to track this reservation.</p> <note> <p>The
+     * <p>A customer-specified identifier to track this reservation.</p>  <p>The
      * Reserved Cache Node ID is an unique customer-specified identifier to track this
      * reservation. If this parameter is not specified, ElastiCache automatically
-     * generates an identifier for the reservation.</p> </note> <p>Example:
+     * generates an identifier for the reservation.</p>  <p>Example:
      * myreservationID</p>
      */
     inline PurchaseReservedCacheNodesOfferingRequest& WithReservedCacheNodeId(const Aws::String& value) { SetReservedCacheNodeId(value); return *this;}
 
     /**
-     * <p>A customer-specified identifier to track this reservation.</p> <note> <p>The
+     * <p>A customer-specified identifier to track this reservation.</p>  <p>The
      * Reserved Cache Node ID is an unique customer-specified identifier to track this
      * reservation. If this parameter is not specified, ElastiCache automatically
-     * generates an identifier for the reservation.</p> </note> <p>Example:
+     * generates an identifier for the reservation.</p>  <p>Example:
      * myreservationID</p>
      */
     inline PurchaseReservedCacheNodesOfferingRequest& WithReservedCacheNodeId(Aws::String&& value) { SetReservedCacheNodeId(std::move(value)); return *this;}
 
     /**
-     * <p>A customer-specified identifier to track this reservation.</p> <note> <p>The
+     * <p>A customer-specified identifier to track this reservation.</p>  <p>The
      * Reserved Cache Node ID is an unique customer-specified identifier to track this
      * reservation. If this parameter is not specified, ElastiCache automatically
-     * generates an identifier for the reservation.</p> </note> <p>Example:
+     * generates an identifier for the reservation.</p>  <p>Example:
      * myreservationID</p>
      */
     inline PurchaseReservedCacheNodesOfferingRequest& WithReservedCacheNodeId(const char* value) { SetReservedCacheNodeId(value); return *this;}

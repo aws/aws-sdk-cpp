@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/apigatewayv2/model/Integration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -41,6 +31,7 @@ Integration::Integration() :
     m_integrationIdHasBeenSet(false),
     m_integrationMethodHasBeenSet(false),
     m_integrationResponseSelectionExpressionHasBeenSet(false),
+    m_integrationSubtypeHasBeenSet(false),
     m_integrationType(IntegrationType::NOT_SET),
     m_integrationTypeHasBeenSet(false),
     m_integrationUriHasBeenSet(false),
@@ -49,6 +40,7 @@ Integration::Integration() :
     m_payloadFormatVersionHasBeenSet(false),
     m_requestParametersHasBeenSet(false),
     m_requestTemplatesHasBeenSet(false),
+    m_responseParametersHasBeenSet(false),
     m_templateSelectionExpressionHasBeenSet(false),
     m_timeoutInMillis(0),
     m_timeoutInMillisHasBeenSet(false),
@@ -69,6 +61,7 @@ Integration::Integration(JsonView jsonValue) :
     m_integrationIdHasBeenSet(false),
     m_integrationMethodHasBeenSet(false),
     m_integrationResponseSelectionExpressionHasBeenSet(false),
+    m_integrationSubtypeHasBeenSet(false),
     m_integrationType(IntegrationType::NOT_SET),
     m_integrationTypeHasBeenSet(false),
     m_integrationUriHasBeenSet(false),
@@ -77,6 +70,7 @@ Integration::Integration(JsonView jsonValue) :
     m_payloadFormatVersionHasBeenSet(false),
     m_requestParametersHasBeenSet(false),
     m_requestTemplatesHasBeenSet(false),
+    m_responseParametersHasBeenSet(false),
     m_templateSelectionExpressionHasBeenSet(false),
     m_timeoutInMillis(0),
     m_timeoutInMillisHasBeenSet(false),
@@ -150,6 +144,13 @@ Integration& Integration::operator =(JsonView jsonValue)
     m_integrationResponseSelectionExpressionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("integrationSubtype"))
+  {
+    m_integrationSubtype = jsonValue.GetString("integrationSubtype");
+
+    m_integrationSubtypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("integrationType"))
   {
     m_integrationType = IntegrationTypeMapper::GetIntegrationTypeForName(jsonValue.GetString("integrationType"));
@@ -196,6 +197,22 @@ Integration& Integration::operator =(JsonView jsonValue)
       m_requestTemplates[requestTemplatesItem.first] = requestTemplatesItem.second.AsString();
     }
     m_requestTemplatesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("responseParameters"))
+  {
+    Aws::Map<Aws::String, JsonView> responseParametersJsonMap = jsonValue.GetObject("responseParameters").GetAllObjects();
+    for(auto& responseParametersItem : responseParametersJsonMap)
+    {
+      Aws::Map<Aws::String, JsonView> integrationParametersJsonMap = responseParametersItem.second.GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> integrationParametersMap;
+      for(auto& integrationParametersItem : integrationParametersJsonMap)
+      {
+        integrationParametersMap[integrationParametersItem.first] = integrationParametersItem.second.AsString();
+      }
+      m_responseParameters[responseParametersItem.first] = std::move(integrationParametersMap);
+    }
+    m_responseParametersHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("templateSelectionExpression"))
@@ -278,6 +295,12 @@ JsonValue Integration::Jsonize() const
 
   }
 
+  if(m_integrationSubtypeHasBeenSet)
+  {
+   payload.WithString("integrationSubtype", m_integrationSubtype);
+
+  }
+
   if(m_integrationTypeHasBeenSet)
   {
    payload.WithString("integrationType", IntegrationTypeMapper::GetNameForIntegrationType(m_integrationType));
@@ -319,6 +342,22 @@ JsonValue Integration::Jsonize() const
      requestTemplatesJsonMap.WithString(requestTemplatesItem.first, requestTemplatesItem.second);
    }
    payload.WithObject("requestTemplates", std::move(requestTemplatesJsonMap));
+
+  }
+
+  if(m_responseParametersHasBeenSet)
+  {
+   JsonValue responseParametersJsonMap;
+   for(auto& responseParametersItem : m_responseParameters)
+   {
+     JsonValue integrationParametersJsonMap;
+     for(auto& integrationParametersItem : responseParametersItem.second)
+     {
+       integrationParametersJsonMap.WithString(integrationParametersItem.first, integrationParametersItem.second);
+     }
+     responseParametersJsonMap.WithObject(responseParametersItem.first, std::move(integrationParametersJsonMap));
+   }
+   payload.WithObject("responseParameters", std::move(responseParametersJsonMap));
 
   }
 

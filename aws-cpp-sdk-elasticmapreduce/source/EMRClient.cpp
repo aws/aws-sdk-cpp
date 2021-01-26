@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -36,19 +26,29 @@
 #include <aws/elasticmapreduce/model/AddTagsRequest.h>
 #include <aws/elasticmapreduce/model/CancelStepsRequest.h>
 #include <aws/elasticmapreduce/model/CreateSecurityConfigurationRequest.h>
+#include <aws/elasticmapreduce/model/CreateStudioRequest.h>
+#include <aws/elasticmapreduce/model/CreateStudioSessionMappingRequest.h>
 #include <aws/elasticmapreduce/model/DeleteSecurityConfigurationRequest.h>
+#include <aws/elasticmapreduce/model/DeleteStudioRequest.h>
+#include <aws/elasticmapreduce/model/DeleteStudioSessionMappingRequest.h>
 #include <aws/elasticmapreduce/model/DescribeClusterRequest.h>
+#include <aws/elasticmapreduce/model/DescribeNotebookExecutionRequest.h>
 #include <aws/elasticmapreduce/model/DescribeSecurityConfigurationRequest.h>
 #include <aws/elasticmapreduce/model/DescribeStepRequest.h>
+#include <aws/elasticmapreduce/model/DescribeStudioRequest.h>
 #include <aws/elasticmapreduce/model/GetBlockPublicAccessConfigurationRequest.h>
 #include <aws/elasticmapreduce/model/GetManagedScalingPolicyRequest.h>
+#include <aws/elasticmapreduce/model/GetStudioSessionMappingRequest.h>
 #include <aws/elasticmapreduce/model/ListBootstrapActionsRequest.h>
 #include <aws/elasticmapreduce/model/ListClustersRequest.h>
 #include <aws/elasticmapreduce/model/ListInstanceFleetsRequest.h>
 #include <aws/elasticmapreduce/model/ListInstanceGroupsRequest.h>
 #include <aws/elasticmapreduce/model/ListInstancesRequest.h>
+#include <aws/elasticmapreduce/model/ListNotebookExecutionsRequest.h>
 #include <aws/elasticmapreduce/model/ListSecurityConfigurationsRequest.h>
 #include <aws/elasticmapreduce/model/ListStepsRequest.h>
+#include <aws/elasticmapreduce/model/ListStudioSessionMappingsRequest.h>
+#include <aws/elasticmapreduce/model/ListStudiosRequest.h>
 #include <aws/elasticmapreduce/model/ModifyClusterRequest.h>
 #include <aws/elasticmapreduce/model/ModifyInstanceFleetRequest.h>
 #include <aws/elasticmapreduce/model/ModifyInstanceGroupsRequest.h>
@@ -61,7 +61,10 @@
 #include <aws/elasticmapreduce/model/RunJobFlowRequest.h>
 #include <aws/elasticmapreduce/model/SetTerminationProtectionRequest.h>
 #include <aws/elasticmapreduce/model/SetVisibleToAllUsersRequest.h>
+#include <aws/elasticmapreduce/model/StartNotebookExecutionRequest.h>
+#include <aws/elasticmapreduce/model/StopNotebookExecutionRequest.h>
 #include <aws/elasticmapreduce/model/TerminateJobFlowsRequest.h>
+#include <aws/elasticmapreduce/model/UpdateStudioSessionMappingRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -78,7 +81,7 @@ static const char* ALLOCATION_TAG = "EMRClient";
 EMRClient::EMRClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<EMRErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -88,7 +91,7 @@ EMRClient::EMRClient(const Client::ClientConfiguration& clientConfiguration) :
 EMRClient::EMRClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<EMRErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -99,7 +102,7 @@ EMRClient::EMRClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<EMRErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -112,6 +115,7 @@ EMRClient::~EMRClient()
 
 void EMRClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("EMR");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -141,15 +145,7 @@ AddInstanceFleetOutcome EMRClient::AddInstanceFleet(const AddInstanceFleetReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AddInstanceFleetOutcome(AddInstanceFleetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AddInstanceFleetOutcome(outcome.GetError());
-  }
+  return AddInstanceFleetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AddInstanceFleetOutcomeCallable EMRClient::AddInstanceFleetCallable(const AddInstanceFleetRequest& request) const
@@ -176,15 +172,7 @@ AddInstanceGroupsOutcome EMRClient::AddInstanceGroups(const AddInstanceGroupsReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AddInstanceGroupsOutcome(AddInstanceGroupsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AddInstanceGroupsOutcome(outcome.GetError());
-  }
+  return AddInstanceGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AddInstanceGroupsOutcomeCallable EMRClient::AddInstanceGroupsCallable(const AddInstanceGroupsRequest& request) const
@@ -211,15 +199,7 @@ AddJobFlowStepsOutcome EMRClient::AddJobFlowSteps(const AddJobFlowStepsRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AddJobFlowStepsOutcome(AddJobFlowStepsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AddJobFlowStepsOutcome(outcome.GetError());
-  }
+  return AddJobFlowStepsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AddJobFlowStepsOutcomeCallable EMRClient::AddJobFlowStepsCallable(const AddJobFlowStepsRequest& request) const
@@ -246,15 +226,7 @@ AddTagsOutcome EMRClient::AddTags(const AddTagsRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AddTagsOutcome(AddTagsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AddTagsOutcome(outcome.GetError());
-  }
+  return AddTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AddTagsOutcomeCallable EMRClient::AddTagsCallable(const AddTagsRequest& request) const
@@ -281,15 +253,7 @@ CancelStepsOutcome EMRClient::CancelSteps(const CancelStepsRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CancelStepsOutcome(CancelStepsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CancelStepsOutcome(outcome.GetError());
-  }
+  return CancelStepsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CancelStepsOutcomeCallable EMRClient::CancelStepsCallable(const CancelStepsRequest& request) const
@@ -316,15 +280,7 @@ CreateSecurityConfigurationOutcome EMRClient::CreateSecurityConfiguration(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateSecurityConfigurationOutcome(CreateSecurityConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateSecurityConfigurationOutcome(outcome.GetError());
-  }
+  return CreateSecurityConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateSecurityConfigurationOutcomeCallable EMRClient::CreateSecurityConfigurationCallable(const CreateSecurityConfigurationRequest& request) const
@@ -345,21 +301,67 @@ void EMRClient::CreateSecurityConfigurationAsyncHelper(const CreateSecurityConfi
   handler(this, request, CreateSecurityConfiguration(request), context);
 }
 
+CreateStudioOutcome EMRClient::CreateStudio(const CreateStudioRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateStudioOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateStudioOutcomeCallable EMRClient::CreateStudioCallable(const CreateStudioRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateStudioOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateStudio(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRClient::CreateStudioAsync(const CreateStudioRequest& request, const CreateStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateStudioAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::CreateStudioAsyncHelper(const CreateStudioRequest& request, const CreateStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateStudio(request), context);
+}
+
+CreateStudioSessionMappingOutcome EMRClient::CreateStudioSessionMapping(const CreateStudioSessionMappingRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateStudioSessionMappingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateStudioSessionMappingOutcomeCallable EMRClient::CreateStudioSessionMappingCallable(const CreateStudioSessionMappingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateStudioSessionMappingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateStudioSessionMapping(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRClient::CreateStudioSessionMappingAsync(const CreateStudioSessionMappingRequest& request, const CreateStudioSessionMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateStudioSessionMappingAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::CreateStudioSessionMappingAsyncHelper(const CreateStudioSessionMappingRequest& request, const CreateStudioSessionMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateStudioSessionMapping(request), context);
+}
+
 DeleteSecurityConfigurationOutcome EMRClient::DeleteSecurityConfiguration(const DeleteSecurityConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteSecurityConfigurationOutcome(DeleteSecurityConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteSecurityConfigurationOutcome(outcome.GetError());
-  }
+  return DeleteSecurityConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteSecurityConfigurationOutcomeCallable EMRClient::DeleteSecurityConfigurationCallable(const DeleteSecurityConfigurationRequest& request) const
@@ -380,21 +382,67 @@ void EMRClient::DeleteSecurityConfigurationAsyncHelper(const DeleteSecurityConfi
   handler(this, request, DeleteSecurityConfiguration(request), context);
 }
 
+DeleteStudioOutcome EMRClient::DeleteStudio(const DeleteStudioRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteStudioOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteStudioOutcomeCallable EMRClient::DeleteStudioCallable(const DeleteStudioRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteStudioOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteStudio(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRClient::DeleteStudioAsync(const DeleteStudioRequest& request, const DeleteStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteStudioAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::DeleteStudioAsyncHelper(const DeleteStudioRequest& request, const DeleteStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteStudio(request), context);
+}
+
+DeleteStudioSessionMappingOutcome EMRClient::DeleteStudioSessionMapping(const DeleteStudioSessionMappingRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteStudioSessionMappingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteStudioSessionMappingOutcomeCallable EMRClient::DeleteStudioSessionMappingCallable(const DeleteStudioSessionMappingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteStudioSessionMappingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteStudioSessionMapping(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRClient::DeleteStudioSessionMappingAsync(const DeleteStudioSessionMappingRequest& request, const DeleteStudioSessionMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteStudioSessionMappingAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::DeleteStudioSessionMappingAsyncHelper(const DeleteStudioSessionMappingRequest& request, const DeleteStudioSessionMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteStudioSessionMapping(request), context);
+}
+
 DescribeClusterOutcome EMRClient::DescribeCluster(const DescribeClusterRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeClusterOutcome(DescribeClusterResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeClusterOutcome(outcome.GetError());
-  }
+  return DescribeClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeClusterOutcomeCallable EMRClient::DescribeClusterCallable(const DescribeClusterRequest& request) const
@@ -415,21 +463,40 @@ void EMRClient::DescribeClusterAsyncHelper(const DescribeClusterRequest& request
   handler(this, request, DescribeCluster(request), context);
 }
 
+DescribeNotebookExecutionOutcome EMRClient::DescribeNotebookExecution(const DescribeNotebookExecutionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeNotebookExecutionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeNotebookExecutionOutcomeCallable EMRClient::DescribeNotebookExecutionCallable(const DescribeNotebookExecutionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeNotebookExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeNotebookExecution(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRClient::DescribeNotebookExecutionAsync(const DescribeNotebookExecutionRequest& request, const DescribeNotebookExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeNotebookExecutionAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::DescribeNotebookExecutionAsyncHelper(const DescribeNotebookExecutionRequest& request, const DescribeNotebookExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeNotebookExecution(request), context);
+}
+
 DescribeSecurityConfigurationOutcome EMRClient::DescribeSecurityConfiguration(const DescribeSecurityConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeSecurityConfigurationOutcome(DescribeSecurityConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeSecurityConfigurationOutcome(outcome.GetError());
-  }
+  return DescribeSecurityConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeSecurityConfigurationOutcomeCallable EMRClient::DescribeSecurityConfigurationCallable(const DescribeSecurityConfigurationRequest& request) const
@@ -456,15 +523,7 @@ DescribeStepOutcome EMRClient::DescribeStep(const DescribeStepRequest& request) 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeStepOutcome(DescribeStepResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeStepOutcome(outcome.GetError());
-  }
+  return DescribeStepOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeStepOutcomeCallable EMRClient::DescribeStepCallable(const DescribeStepRequest& request) const
@@ -485,21 +544,40 @@ void EMRClient::DescribeStepAsyncHelper(const DescribeStepRequest& request, cons
   handler(this, request, DescribeStep(request), context);
 }
 
+DescribeStudioOutcome EMRClient::DescribeStudio(const DescribeStudioRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeStudioOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeStudioOutcomeCallable EMRClient::DescribeStudioCallable(const DescribeStudioRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeStudioOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeStudio(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRClient::DescribeStudioAsync(const DescribeStudioRequest& request, const DescribeStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeStudioAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::DescribeStudioAsyncHelper(const DescribeStudioRequest& request, const DescribeStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeStudio(request), context);
+}
+
 GetBlockPublicAccessConfigurationOutcome EMRClient::GetBlockPublicAccessConfiguration(const GetBlockPublicAccessConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetBlockPublicAccessConfigurationOutcome(GetBlockPublicAccessConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetBlockPublicAccessConfigurationOutcome(outcome.GetError());
-  }
+  return GetBlockPublicAccessConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBlockPublicAccessConfigurationOutcomeCallable EMRClient::GetBlockPublicAccessConfigurationCallable(const GetBlockPublicAccessConfigurationRequest& request) const
@@ -526,15 +604,7 @@ GetManagedScalingPolicyOutcome EMRClient::GetManagedScalingPolicy(const GetManag
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetManagedScalingPolicyOutcome(GetManagedScalingPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetManagedScalingPolicyOutcome(outcome.GetError());
-  }
+  return GetManagedScalingPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetManagedScalingPolicyOutcomeCallable EMRClient::GetManagedScalingPolicyCallable(const GetManagedScalingPolicyRequest& request) const
@@ -555,21 +625,40 @@ void EMRClient::GetManagedScalingPolicyAsyncHelper(const GetManagedScalingPolicy
   handler(this, request, GetManagedScalingPolicy(request), context);
 }
 
+GetStudioSessionMappingOutcome EMRClient::GetStudioSessionMapping(const GetStudioSessionMappingRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetStudioSessionMappingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetStudioSessionMappingOutcomeCallable EMRClient::GetStudioSessionMappingCallable(const GetStudioSessionMappingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetStudioSessionMappingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStudioSessionMapping(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRClient::GetStudioSessionMappingAsync(const GetStudioSessionMappingRequest& request, const GetStudioSessionMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetStudioSessionMappingAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::GetStudioSessionMappingAsyncHelper(const GetStudioSessionMappingRequest& request, const GetStudioSessionMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetStudioSessionMapping(request), context);
+}
+
 ListBootstrapActionsOutcome EMRClient::ListBootstrapActions(const ListBootstrapActionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListBootstrapActionsOutcome(ListBootstrapActionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListBootstrapActionsOutcome(outcome.GetError());
-  }
+  return ListBootstrapActionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListBootstrapActionsOutcomeCallable EMRClient::ListBootstrapActionsCallable(const ListBootstrapActionsRequest& request) const
@@ -596,15 +685,7 @@ ListClustersOutcome EMRClient::ListClusters(const ListClustersRequest& request) 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListClustersOutcome(ListClustersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListClustersOutcome(outcome.GetError());
-  }
+  return ListClustersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListClustersOutcomeCallable EMRClient::ListClustersCallable(const ListClustersRequest& request) const
@@ -631,15 +712,7 @@ ListInstanceFleetsOutcome EMRClient::ListInstanceFleets(const ListInstanceFleets
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListInstanceFleetsOutcome(ListInstanceFleetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListInstanceFleetsOutcome(outcome.GetError());
-  }
+  return ListInstanceFleetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListInstanceFleetsOutcomeCallable EMRClient::ListInstanceFleetsCallable(const ListInstanceFleetsRequest& request) const
@@ -666,15 +739,7 @@ ListInstanceGroupsOutcome EMRClient::ListInstanceGroups(const ListInstanceGroups
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListInstanceGroupsOutcome(ListInstanceGroupsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListInstanceGroupsOutcome(outcome.GetError());
-  }
+  return ListInstanceGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListInstanceGroupsOutcomeCallable EMRClient::ListInstanceGroupsCallable(const ListInstanceGroupsRequest& request) const
@@ -701,15 +766,7 @@ ListInstancesOutcome EMRClient::ListInstances(const ListInstancesRequest& reques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListInstancesOutcome(ListInstancesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListInstancesOutcome(outcome.GetError());
-  }
+  return ListInstancesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListInstancesOutcomeCallable EMRClient::ListInstancesCallable(const ListInstancesRequest& request) const
@@ -730,21 +787,40 @@ void EMRClient::ListInstancesAsyncHelper(const ListInstancesRequest& request, co
   handler(this, request, ListInstances(request), context);
 }
 
+ListNotebookExecutionsOutcome EMRClient::ListNotebookExecutions(const ListNotebookExecutionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListNotebookExecutionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListNotebookExecutionsOutcomeCallable EMRClient::ListNotebookExecutionsCallable(const ListNotebookExecutionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListNotebookExecutionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListNotebookExecutions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRClient::ListNotebookExecutionsAsync(const ListNotebookExecutionsRequest& request, const ListNotebookExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListNotebookExecutionsAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::ListNotebookExecutionsAsyncHelper(const ListNotebookExecutionsRequest& request, const ListNotebookExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListNotebookExecutions(request), context);
+}
+
 ListSecurityConfigurationsOutcome EMRClient::ListSecurityConfigurations(const ListSecurityConfigurationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListSecurityConfigurationsOutcome(ListSecurityConfigurationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListSecurityConfigurationsOutcome(outcome.GetError());
-  }
+  return ListSecurityConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListSecurityConfigurationsOutcomeCallable EMRClient::ListSecurityConfigurationsCallable(const ListSecurityConfigurationsRequest& request) const
@@ -771,15 +847,7 @@ ListStepsOutcome EMRClient::ListSteps(const ListStepsRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListStepsOutcome(ListStepsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListStepsOutcome(outcome.GetError());
-  }
+  return ListStepsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListStepsOutcomeCallable EMRClient::ListStepsCallable(const ListStepsRequest& request) const
@@ -800,21 +868,67 @@ void EMRClient::ListStepsAsyncHelper(const ListStepsRequest& request, const List
   handler(this, request, ListSteps(request), context);
 }
 
+ListStudioSessionMappingsOutcome EMRClient::ListStudioSessionMappings(const ListStudioSessionMappingsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListStudioSessionMappingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListStudioSessionMappingsOutcomeCallable EMRClient::ListStudioSessionMappingsCallable(const ListStudioSessionMappingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListStudioSessionMappingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStudioSessionMappings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRClient::ListStudioSessionMappingsAsync(const ListStudioSessionMappingsRequest& request, const ListStudioSessionMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListStudioSessionMappingsAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::ListStudioSessionMappingsAsyncHelper(const ListStudioSessionMappingsRequest& request, const ListStudioSessionMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListStudioSessionMappings(request), context);
+}
+
+ListStudiosOutcome EMRClient::ListStudios(const ListStudiosRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListStudiosOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListStudiosOutcomeCallable EMRClient::ListStudiosCallable(const ListStudiosRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListStudiosOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStudios(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRClient::ListStudiosAsync(const ListStudiosRequest& request, const ListStudiosResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListStudiosAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::ListStudiosAsyncHelper(const ListStudiosRequest& request, const ListStudiosResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListStudios(request), context);
+}
+
 ModifyClusterOutcome EMRClient::ModifyCluster(const ModifyClusterRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ModifyClusterOutcome(ModifyClusterResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ModifyClusterOutcome(outcome.GetError());
-  }
+  return ModifyClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ModifyClusterOutcomeCallable EMRClient::ModifyClusterCallable(const ModifyClusterRequest& request) const
@@ -841,15 +955,7 @@ ModifyInstanceFleetOutcome EMRClient::ModifyInstanceFleet(const ModifyInstanceFl
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ModifyInstanceFleetOutcome(NoResult());
-  }
-  else
-  {
-    return ModifyInstanceFleetOutcome(outcome.GetError());
-  }
+  return ModifyInstanceFleetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ModifyInstanceFleetOutcomeCallable EMRClient::ModifyInstanceFleetCallable(const ModifyInstanceFleetRequest& request) const
@@ -876,15 +982,7 @@ ModifyInstanceGroupsOutcome EMRClient::ModifyInstanceGroups(const ModifyInstance
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ModifyInstanceGroupsOutcome(NoResult());
-  }
-  else
-  {
-    return ModifyInstanceGroupsOutcome(outcome.GetError());
-  }
+  return ModifyInstanceGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ModifyInstanceGroupsOutcomeCallable EMRClient::ModifyInstanceGroupsCallable(const ModifyInstanceGroupsRequest& request) const
@@ -911,15 +1009,7 @@ PutAutoScalingPolicyOutcome EMRClient::PutAutoScalingPolicy(const PutAutoScaling
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutAutoScalingPolicyOutcome(PutAutoScalingPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutAutoScalingPolicyOutcome(outcome.GetError());
-  }
+  return PutAutoScalingPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutAutoScalingPolicyOutcomeCallable EMRClient::PutAutoScalingPolicyCallable(const PutAutoScalingPolicyRequest& request) const
@@ -946,15 +1036,7 @@ PutBlockPublicAccessConfigurationOutcome EMRClient::PutBlockPublicAccessConfigur
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutBlockPublicAccessConfigurationOutcome(PutBlockPublicAccessConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutBlockPublicAccessConfigurationOutcome(outcome.GetError());
-  }
+  return PutBlockPublicAccessConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutBlockPublicAccessConfigurationOutcomeCallable EMRClient::PutBlockPublicAccessConfigurationCallable(const PutBlockPublicAccessConfigurationRequest& request) const
@@ -981,15 +1063,7 @@ PutManagedScalingPolicyOutcome EMRClient::PutManagedScalingPolicy(const PutManag
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutManagedScalingPolicyOutcome(PutManagedScalingPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutManagedScalingPolicyOutcome(outcome.GetError());
-  }
+  return PutManagedScalingPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutManagedScalingPolicyOutcomeCallable EMRClient::PutManagedScalingPolicyCallable(const PutManagedScalingPolicyRequest& request) const
@@ -1016,15 +1090,7 @@ RemoveAutoScalingPolicyOutcome EMRClient::RemoveAutoScalingPolicy(const RemoveAu
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RemoveAutoScalingPolicyOutcome(RemoveAutoScalingPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RemoveAutoScalingPolicyOutcome(outcome.GetError());
-  }
+  return RemoveAutoScalingPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RemoveAutoScalingPolicyOutcomeCallable EMRClient::RemoveAutoScalingPolicyCallable(const RemoveAutoScalingPolicyRequest& request) const
@@ -1051,15 +1117,7 @@ RemoveManagedScalingPolicyOutcome EMRClient::RemoveManagedScalingPolicy(const Re
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RemoveManagedScalingPolicyOutcome(RemoveManagedScalingPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RemoveManagedScalingPolicyOutcome(outcome.GetError());
-  }
+  return RemoveManagedScalingPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RemoveManagedScalingPolicyOutcomeCallable EMRClient::RemoveManagedScalingPolicyCallable(const RemoveManagedScalingPolicyRequest& request) const
@@ -1086,15 +1144,7 @@ RemoveTagsOutcome EMRClient::RemoveTags(const RemoveTagsRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RemoveTagsOutcome(RemoveTagsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RemoveTagsOutcome(outcome.GetError());
-  }
+  return RemoveTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RemoveTagsOutcomeCallable EMRClient::RemoveTagsCallable(const RemoveTagsRequest& request) const
@@ -1121,15 +1171,7 @@ RunJobFlowOutcome EMRClient::RunJobFlow(const RunJobFlowRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RunJobFlowOutcome(RunJobFlowResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RunJobFlowOutcome(outcome.GetError());
-  }
+  return RunJobFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RunJobFlowOutcomeCallable EMRClient::RunJobFlowCallable(const RunJobFlowRequest& request) const
@@ -1156,15 +1198,7 @@ SetTerminationProtectionOutcome EMRClient::SetTerminationProtection(const SetTer
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SetTerminationProtectionOutcome(NoResult());
-  }
-  else
-  {
-    return SetTerminationProtectionOutcome(outcome.GetError());
-  }
+  return SetTerminationProtectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SetTerminationProtectionOutcomeCallable EMRClient::SetTerminationProtectionCallable(const SetTerminationProtectionRequest& request) const
@@ -1191,15 +1225,7 @@ SetVisibleToAllUsersOutcome EMRClient::SetVisibleToAllUsers(const SetVisibleToAl
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SetVisibleToAllUsersOutcome(NoResult());
-  }
-  else
-  {
-    return SetVisibleToAllUsersOutcome(outcome.GetError());
-  }
+  return SetVisibleToAllUsersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SetVisibleToAllUsersOutcomeCallable EMRClient::SetVisibleToAllUsersCallable(const SetVisibleToAllUsersRequest& request) const
@@ -1220,21 +1246,67 @@ void EMRClient::SetVisibleToAllUsersAsyncHelper(const SetVisibleToAllUsersReques
   handler(this, request, SetVisibleToAllUsers(request), context);
 }
 
+StartNotebookExecutionOutcome EMRClient::StartNotebookExecution(const StartNotebookExecutionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return StartNotebookExecutionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartNotebookExecutionOutcomeCallable EMRClient::StartNotebookExecutionCallable(const StartNotebookExecutionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartNotebookExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartNotebookExecution(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRClient::StartNotebookExecutionAsync(const StartNotebookExecutionRequest& request, const StartNotebookExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartNotebookExecutionAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::StartNotebookExecutionAsyncHelper(const StartNotebookExecutionRequest& request, const StartNotebookExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartNotebookExecution(request), context);
+}
+
+StopNotebookExecutionOutcome EMRClient::StopNotebookExecution(const StopNotebookExecutionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return StopNotebookExecutionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StopNotebookExecutionOutcomeCallable EMRClient::StopNotebookExecutionCallable(const StopNotebookExecutionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopNotebookExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopNotebookExecution(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRClient::StopNotebookExecutionAsync(const StopNotebookExecutionRequest& request, const StopNotebookExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopNotebookExecutionAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::StopNotebookExecutionAsyncHelper(const StopNotebookExecutionRequest& request, const StopNotebookExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopNotebookExecution(request), context);
+}
+
 TerminateJobFlowsOutcome EMRClient::TerminateJobFlows(const TerminateJobFlowsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TerminateJobFlowsOutcome(NoResult());
-  }
-  else
-  {
-    return TerminateJobFlowsOutcome(outcome.GetError());
-  }
+  return TerminateJobFlowsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TerminateJobFlowsOutcomeCallable EMRClient::TerminateJobFlowsCallable(const TerminateJobFlowsRequest& request) const
@@ -1253,5 +1325,32 @@ void EMRClient::TerminateJobFlowsAsync(const TerminateJobFlowsRequest& request, 
 void EMRClient::TerminateJobFlowsAsyncHelper(const TerminateJobFlowsRequest& request, const TerminateJobFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, TerminateJobFlows(request), context);
+}
+
+UpdateStudioSessionMappingOutcome EMRClient::UpdateStudioSessionMapping(const UpdateStudioSessionMappingRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateStudioSessionMappingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateStudioSessionMappingOutcomeCallable EMRClient::UpdateStudioSessionMappingCallable(const UpdateStudioSessionMappingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateStudioSessionMappingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateStudioSessionMapping(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRClient::UpdateStudioSessionMappingAsync(const UpdateStudioSessionMappingRequest& request, const UpdateStudioSessionMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateStudioSessionMappingAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::UpdateStudioSessionMappingAsyncHelper(const UpdateStudioSessionMappingRequest& request, const UpdateStudioSessionMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateStudioSessionMapping(request), context);
 }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/organizations/Organizations_EXPORTS.h>
@@ -111,32 +101,86 @@ namespace Model
 
 
     /**
-     * <p>The policy type that you want to enable.</p>
+     * <p>The policy type that you want to enable. You can specify one of the following
+     * values:</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+     * </p> </li> </ul>
      */
     inline const PolicyType& GetPolicyType() const{ return m_policyType; }
 
     /**
-     * <p>The policy type that you want to enable.</p>
+     * <p>The policy type that you want to enable. You can specify one of the following
+     * values:</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+     * </p> </li> </ul>
      */
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
 
     /**
-     * <p>The policy type that you want to enable.</p>
+     * <p>The policy type that you want to enable. You can specify one of the following
+     * values:</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+     * </p> </li> </ul>
      */
     inline void SetPolicyType(const PolicyType& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
     /**
-     * <p>The policy type that you want to enable.</p>
+     * <p>The policy type that you want to enable. You can specify one of the following
+     * values:</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+     * </p> </li> </ul>
      */
     inline void SetPolicyType(PolicyType&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
 
     /**
-     * <p>The policy type that you want to enable.</p>
+     * <p>The policy type that you want to enable. You can specify one of the following
+     * values:</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+     * </p> </li> </ul>
      */
     inline EnablePolicyTypeRequest& WithPolicyType(const PolicyType& value) { SetPolicyType(value); return *this;}
 
     /**
-     * <p>The policy type that you want to enable.</p>
+     * <p>The policy type that you want to enable. You can specify one of the following
+     * values:</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+     * </p> </li> </ul>
      */
     inline EnablePolicyTypeRequest& WithPolicyType(PolicyType&& value) { SetPolicyType(std::move(value)); return *this;}
 

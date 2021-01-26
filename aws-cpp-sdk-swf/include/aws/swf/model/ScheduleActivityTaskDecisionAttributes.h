@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
@@ -273,88 +263,88 @@ namespace Model
     /**
      * <p>The maximum duration for this activity task.</p> <p>The duration is specified
      * in seconds, an integer greater than or equal to <code>0</code>. You can use
-     * <code>NONE</code> to specify unlimited duration.</p> <note> <p>A
+     * <code>NONE</code> to specify unlimited duration.</p>  <p>A
      * schedule-to-close timeout for this activity task must be specified either as a
      * default for the activity type or through this field. If neither this field is
      * set nor a default schedule-to-close timeout was specified at registration time
-     * then a fault is returned.</p> </note>
+     * then a fault is returned.</p> 
      */
     inline const Aws::String& GetScheduleToCloseTimeout() const{ return m_scheduleToCloseTimeout; }
 
     /**
      * <p>The maximum duration for this activity task.</p> <p>The duration is specified
      * in seconds, an integer greater than or equal to <code>0</code>. You can use
-     * <code>NONE</code> to specify unlimited duration.</p> <note> <p>A
+     * <code>NONE</code> to specify unlimited duration.</p>  <p>A
      * schedule-to-close timeout for this activity task must be specified either as a
      * default for the activity type or through this field. If neither this field is
      * set nor a default schedule-to-close timeout was specified at registration time
-     * then a fault is returned.</p> </note>
+     * then a fault is returned.</p> 
      */
     inline bool ScheduleToCloseTimeoutHasBeenSet() const { return m_scheduleToCloseTimeoutHasBeenSet; }
 
     /**
      * <p>The maximum duration for this activity task.</p> <p>The duration is specified
      * in seconds, an integer greater than or equal to <code>0</code>. You can use
-     * <code>NONE</code> to specify unlimited duration.</p> <note> <p>A
+     * <code>NONE</code> to specify unlimited duration.</p>  <p>A
      * schedule-to-close timeout for this activity task must be specified either as a
      * default for the activity type or through this field. If neither this field is
      * set nor a default schedule-to-close timeout was specified at registration time
-     * then a fault is returned.</p> </note>
+     * then a fault is returned.</p> 
      */
     inline void SetScheduleToCloseTimeout(const Aws::String& value) { m_scheduleToCloseTimeoutHasBeenSet = true; m_scheduleToCloseTimeout = value; }
 
     /**
      * <p>The maximum duration for this activity task.</p> <p>The duration is specified
      * in seconds, an integer greater than or equal to <code>0</code>. You can use
-     * <code>NONE</code> to specify unlimited duration.</p> <note> <p>A
+     * <code>NONE</code> to specify unlimited duration.</p>  <p>A
      * schedule-to-close timeout for this activity task must be specified either as a
      * default for the activity type or through this field. If neither this field is
      * set nor a default schedule-to-close timeout was specified at registration time
-     * then a fault is returned.</p> </note>
+     * then a fault is returned.</p> 
      */
     inline void SetScheduleToCloseTimeout(Aws::String&& value) { m_scheduleToCloseTimeoutHasBeenSet = true; m_scheduleToCloseTimeout = std::move(value); }
 
     /**
      * <p>The maximum duration for this activity task.</p> <p>The duration is specified
      * in seconds, an integer greater than or equal to <code>0</code>. You can use
-     * <code>NONE</code> to specify unlimited duration.</p> <note> <p>A
+     * <code>NONE</code> to specify unlimited duration.</p>  <p>A
      * schedule-to-close timeout for this activity task must be specified either as a
      * default for the activity type or through this field. If neither this field is
      * set nor a default schedule-to-close timeout was specified at registration time
-     * then a fault is returned.</p> </note>
+     * then a fault is returned.</p> 
      */
     inline void SetScheduleToCloseTimeout(const char* value) { m_scheduleToCloseTimeoutHasBeenSet = true; m_scheduleToCloseTimeout.assign(value); }
 
     /**
      * <p>The maximum duration for this activity task.</p> <p>The duration is specified
      * in seconds, an integer greater than or equal to <code>0</code>. You can use
-     * <code>NONE</code> to specify unlimited duration.</p> <note> <p>A
+     * <code>NONE</code> to specify unlimited duration.</p>  <p>A
      * schedule-to-close timeout for this activity task must be specified either as a
      * default for the activity type or through this field. If neither this field is
      * set nor a default schedule-to-close timeout was specified at registration time
-     * then a fault is returned.</p> </note>
+     * then a fault is returned.</p> 
      */
     inline ScheduleActivityTaskDecisionAttributes& WithScheduleToCloseTimeout(const Aws::String& value) { SetScheduleToCloseTimeout(value); return *this;}
 
     /**
      * <p>The maximum duration for this activity task.</p> <p>The duration is specified
      * in seconds, an integer greater than or equal to <code>0</code>. You can use
-     * <code>NONE</code> to specify unlimited duration.</p> <note> <p>A
+     * <code>NONE</code> to specify unlimited duration.</p>  <p>A
      * schedule-to-close timeout for this activity task must be specified either as a
      * default for the activity type or through this field. If neither this field is
      * set nor a default schedule-to-close timeout was specified at registration time
-     * then a fault is returned.</p> </note>
+     * then a fault is returned.</p> 
      */
     inline ScheduleActivityTaskDecisionAttributes& WithScheduleToCloseTimeout(Aws::String&& value) { SetScheduleToCloseTimeout(std::move(value)); return *this;}
 
     /**
      * <p>The maximum duration for this activity task.</p> <p>The duration is specified
      * in seconds, an integer greater than or equal to <code>0</code>. You can use
-     * <code>NONE</code> to specify unlimited duration.</p> <note> <p>A
+     * <code>NONE</code> to specify unlimited duration.</p>  <p>A
      * schedule-to-close timeout for this activity task must be specified either as a
      * default for the activity type or through this field. If neither this field is
      * set nor a default schedule-to-close timeout was specified at registration time
-     * then a fault is returned.</p> </note>
+     * then a fault is returned.</p> 
      */
     inline ScheduleActivityTaskDecisionAttributes& WithScheduleToCloseTimeout(const char* value) { SetScheduleToCloseTimeout(value); return *this;}
 
@@ -362,10 +352,10 @@ namespace Model
     /**
      * <p>If set, specifies the name of the task list in which to schedule the activity
      * task. If not specified, the <code>defaultTaskList</code> registered with the
-     * activity type is used.</p> <note> <p>A task list for this activity task must be
+     * activity type is used.</p>  <p>A task list for this activity task must be
      * specified either as a default for the activity type or through this field. If
      * neither this field is set nor a default task list was specified at registration
-     * time then a fault is returned.</p> </note> <p>The specified string must not
+     * time then a fault is returned.</p>  <p>The specified string must not
      * start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
@@ -376,10 +366,10 @@ namespace Model
     /**
      * <p>If set, specifies the name of the task list in which to schedule the activity
      * task. If not specified, the <code>defaultTaskList</code> registered with the
-     * activity type is used.</p> <note> <p>A task list for this activity task must be
+     * activity type is used.</p>  <p>A task list for this activity task must be
      * specified either as a default for the activity type or through this field. If
      * neither this field is set nor a default task list was specified at registration
-     * time then a fault is returned.</p> </note> <p>The specified string must not
+     * time then a fault is returned.</p>  <p>The specified string must not
      * start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
@@ -390,10 +380,10 @@ namespace Model
     /**
      * <p>If set, specifies the name of the task list in which to schedule the activity
      * task. If not specified, the <code>defaultTaskList</code> registered with the
-     * activity type is used.</p> <note> <p>A task list for this activity task must be
+     * activity type is used.</p>  <p>A task list for this activity task must be
      * specified either as a default for the activity type or through this field. If
      * neither this field is set nor a default task list was specified at registration
-     * time then a fault is returned.</p> </note> <p>The specified string must not
+     * time then a fault is returned.</p>  <p>The specified string must not
      * start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
@@ -404,10 +394,10 @@ namespace Model
     /**
      * <p>If set, specifies the name of the task list in which to schedule the activity
      * task. If not specified, the <code>defaultTaskList</code> registered with the
-     * activity type is used.</p> <note> <p>A task list for this activity task must be
+     * activity type is used.</p>  <p>A task list for this activity task must be
      * specified either as a default for the activity type or through this field. If
      * neither this field is set nor a default task list was specified at registration
-     * time then a fault is returned.</p> </note> <p>The specified string must not
+     * time then a fault is returned.</p>  <p>The specified string must not
      * start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
@@ -418,10 +408,10 @@ namespace Model
     /**
      * <p>If set, specifies the name of the task list in which to schedule the activity
      * task. If not specified, the <code>defaultTaskList</code> registered with the
-     * activity type is used.</p> <note> <p>A task list for this activity task must be
+     * activity type is used.</p>  <p>A task list for this activity task must be
      * specified either as a default for the activity type or through this field. If
      * neither this field is set nor a default task list was specified at registration
-     * time then a fault is returned.</p> </note> <p>The specified string must not
+     * time then a fault is returned.</p>  <p>The specified string must not
      * start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
@@ -432,10 +422,10 @@ namespace Model
     /**
      * <p>If set, specifies the name of the task list in which to schedule the activity
      * task. If not specified, the <code>defaultTaskList</code> registered with the
-     * activity type is used.</p> <note> <p>A task list for this activity task must be
+     * activity type is used.</p>  <p>A task list for this activity task must be
      * specified either as a default for the activity type or through this field. If
      * neither this field is set nor a default task list was specified at registration
-     * time then a fault is returned.</p> </note> <p>The specified string must not
+     * time then a fault is returned.</p>  <p>The specified string must not
      * start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
@@ -547,11 +537,11 @@ namespace Model
      * specified when registering the activity type using
      * <a>RegisterActivityType</a>.</p> <p>The duration is specified in seconds, an
      * integer greater than or equal to <code>0</code>. You can use <code>NONE</code>
-     * to specify unlimited duration.</p> <note> <p>A schedule-to-start timeout for
+     * to specify unlimited duration.</p>  <p>A schedule-to-start timeout for
      * this activity task must be specified either as a default for the activity type
      * or through this field. If neither this field is set nor a default
      * schedule-to-start timeout was specified at registration time then a fault is
-     * returned.</p> </note>
+     * returned.</p> 
      */
     inline const Aws::String& GetScheduleToStartTimeout() const{ return m_scheduleToStartTimeout; }
 
@@ -561,11 +551,11 @@ namespace Model
      * specified when registering the activity type using
      * <a>RegisterActivityType</a>.</p> <p>The duration is specified in seconds, an
      * integer greater than or equal to <code>0</code>. You can use <code>NONE</code>
-     * to specify unlimited duration.</p> <note> <p>A schedule-to-start timeout for
+     * to specify unlimited duration.</p>  <p>A schedule-to-start timeout for
      * this activity task must be specified either as a default for the activity type
      * or through this field. If neither this field is set nor a default
      * schedule-to-start timeout was specified at registration time then a fault is
-     * returned.</p> </note>
+     * returned.</p> 
      */
     inline bool ScheduleToStartTimeoutHasBeenSet() const { return m_scheduleToStartTimeoutHasBeenSet; }
 
@@ -575,11 +565,11 @@ namespace Model
      * specified when registering the activity type using
      * <a>RegisterActivityType</a>.</p> <p>The duration is specified in seconds, an
      * integer greater than or equal to <code>0</code>. You can use <code>NONE</code>
-     * to specify unlimited duration.</p> <note> <p>A schedule-to-start timeout for
+     * to specify unlimited duration.</p>  <p>A schedule-to-start timeout for
      * this activity task must be specified either as a default for the activity type
      * or through this field. If neither this field is set nor a default
      * schedule-to-start timeout was specified at registration time then a fault is
-     * returned.</p> </note>
+     * returned.</p> 
      */
     inline void SetScheduleToStartTimeout(const Aws::String& value) { m_scheduleToStartTimeoutHasBeenSet = true; m_scheduleToStartTimeout = value; }
 
@@ -589,11 +579,11 @@ namespace Model
      * specified when registering the activity type using
      * <a>RegisterActivityType</a>.</p> <p>The duration is specified in seconds, an
      * integer greater than or equal to <code>0</code>. You can use <code>NONE</code>
-     * to specify unlimited duration.</p> <note> <p>A schedule-to-start timeout for
+     * to specify unlimited duration.</p>  <p>A schedule-to-start timeout for
      * this activity task must be specified either as a default for the activity type
      * or through this field. If neither this field is set nor a default
      * schedule-to-start timeout was specified at registration time then a fault is
-     * returned.</p> </note>
+     * returned.</p> 
      */
     inline void SetScheduleToStartTimeout(Aws::String&& value) { m_scheduleToStartTimeoutHasBeenSet = true; m_scheduleToStartTimeout = std::move(value); }
 
@@ -603,11 +593,11 @@ namespace Model
      * specified when registering the activity type using
      * <a>RegisterActivityType</a>.</p> <p>The duration is specified in seconds, an
      * integer greater than or equal to <code>0</code>. You can use <code>NONE</code>
-     * to specify unlimited duration.</p> <note> <p>A schedule-to-start timeout for
+     * to specify unlimited duration.</p>  <p>A schedule-to-start timeout for
      * this activity task must be specified either as a default for the activity type
      * or through this field. If neither this field is set nor a default
      * schedule-to-start timeout was specified at registration time then a fault is
-     * returned.</p> </note>
+     * returned.</p> 
      */
     inline void SetScheduleToStartTimeout(const char* value) { m_scheduleToStartTimeoutHasBeenSet = true; m_scheduleToStartTimeout.assign(value); }
 
@@ -617,11 +607,11 @@ namespace Model
      * specified when registering the activity type using
      * <a>RegisterActivityType</a>.</p> <p>The duration is specified in seconds, an
      * integer greater than or equal to <code>0</code>. You can use <code>NONE</code>
-     * to specify unlimited duration.</p> <note> <p>A schedule-to-start timeout for
+     * to specify unlimited duration.</p>  <p>A schedule-to-start timeout for
      * this activity task must be specified either as a default for the activity type
      * or through this field. If neither this field is set nor a default
      * schedule-to-start timeout was specified at registration time then a fault is
-     * returned.</p> </note>
+     * returned.</p> 
      */
     inline ScheduleActivityTaskDecisionAttributes& WithScheduleToStartTimeout(const Aws::String& value) { SetScheduleToStartTimeout(value); return *this;}
 
@@ -631,11 +621,11 @@ namespace Model
      * specified when registering the activity type using
      * <a>RegisterActivityType</a>.</p> <p>The duration is specified in seconds, an
      * integer greater than or equal to <code>0</code>. You can use <code>NONE</code>
-     * to specify unlimited duration.</p> <note> <p>A schedule-to-start timeout for
+     * to specify unlimited duration.</p>  <p>A schedule-to-start timeout for
      * this activity task must be specified either as a default for the activity type
      * or through this field. If neither this field is set nor a default
      * schedule-to-start timeout was specified at registration time then a fault is
-     * returned.</p> </note>
+     * returned.</p> 
      */
     inline ScheduleActivityTaskDecisionAttributes& WithScheduleToStartTimeout(Aws::String&& value) { SetScheduleToStartTimeout(std::move(value)); return *this;}
 
@@ -645,11 +635,11 @@ namespace Model
      * specified when registering the activity type using
      * <a>RegisterActivityType</a>.</p> <p>The duration is specified in seconds, an
      * integer greater than or equal to <code>0</code>. You can use <code>NONE</code>
-     * to specify unlimited duration.</p> <note> <p>A schedule-to-start timeout for
+     * to specify unlimited duration.</p>  <p>A schedule-to-start timeout for
      * this activity task must be specified either as a default for the activity type
      * or through this field. If neither this field is set nor a default
      * schedule-to-start timeout was specified at registration time then a fault is
-     * returned.</p> </note>
+     * returned.</p> 
      */
     inline ScheduleActivityTaskDecisionAttributes& WithScheduleToStartTimeout(const char* value) { SetScheduleToStartTimeout(value); return *this;}
 
@@ -660,10 +650,10 @@ namespace Model
      * registering the activity type using <a>RegisterActivityType</a>.</p> <p>The
      * duration is specified in seconds, an integer greater than or equal to
      * <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-     * <note> <p>A start-to-close timeout for this activity task must be specified
+     *  <p>A start-to-close timeout for this activity task must be specified
      * either as a default for the activity type or through this field. If neither this
      * field is set nor a default start-to-close timeout was specified at registration
-     * time then a fault is returned.</p> </note>
+     * time then a fault is returned.</p> 
      */
     inline const Aws::String& GetStartToCloseTimeout() const{ return m_startToCloseTimeout; }
 
@@ -673,10 +663,10 @@ namespace Model
      * registering the activity type using <a>RegisterActivityType</a>.</p> <p>The
      * duration is specified in seconds, an integer greater than or equal to
      * <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-     * <note> <p>A start-to-close timeout for this activity task must be specified
+     *  <p>A start-to-close timeout for this activity task must be specified
      * either as a default for the activity type or through this field. If neither this
      * field is set nor a default start-to-close timeout was specified at registration
-     * time then a fault is returned.</p> </note>
+     * time then a fault is returned.</p> 
      */
     inline bool StartToCloseTimeoutHasBeenSet() const { return m_startToCloseTimeoutHasBeenSet; }
 
@@ -686,10 +676,10 @@ namespace Model
      * registering the activity type using <a>RegisterActivityType</a>.</p> <p>The
      * duration is specified in seconds, an integer greater than or equal to
      * <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-     * <note> <p>A start-to-close timeout for this activity task must be specified
+     *  <p>A start-to-close timeout for this activity task must be specified
      * either as a default for the activity type or through this field. If neither this
      * field is set nor a default start-to-close timeout was specified at registration
-     * time then a fault is returned.</p> </note>
+     * time then a fault is returned.</p> 
      */
     inline void SetStartToCloseTimeout(const Aws::String& value) { m_startToCloseTimeoutHasBeenSet = true; m_startToCloseTimeout = value; }
 
@@ -699,10 +689,10 @@ namespace Model
      * registering the activity type using <a>RegisterActivityType</a>.</p> <p>The
      * duration is specified in seconds, an integer greater than or equal to
      * <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-     * <note> <p>A start-to-close timeout for this activity task must be specified
+     *  <p>A start-to-close timeout for this activity task must be specified
      * either as a default for the activity type or through this field. If neither this
      * field is set nor a default start-to-close timeout was specified at registration
-     * time then a fault is returned.</p> </note>
+     * time then a fault is returned.</p> 
      */
     inline void SetStartToCloseTimeout(Aws::String&& value) { m_startToCloseTimeoutHasBeenSet = true; m_startToCloseTimeout = std::move(value); }
 
@@ -712,10 +702,10 @@ namespace Model
      * registering the activity type using <a>RegisterActivityType</a>.</p> <p>The
      * duration is specified in seconds, an integer greater than or equal to
      * <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-     * <note> <p>A start-to-close timeout for this activity task must be specified
+     *  <p>A start-to-close timeout for this activity task must be specified
      * either as a default for the activity type or through this field. If neither this
      * field is set nor a default start-to-close timeout was specified at registration
-     * time then a fault is returned.</p> </note>
+     * time then a fault is returned.</p> 
      */
     inline void SetStartToCloseTimeout(const char* value) { m_startToCloseTimeoutHasBeenSet = true; m_startToCloseTimeout.assign(value); }
 
@@ -725,10 +715,10 @@ namespace Model
      * registering the activity type using <a>RegisterActivityType</a>.</p> <p>The
      * duration is specified in seconds, an integer greater than or equal to
      * <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-     * <note> <p>A start-to-close timeout for this activity task must be specified
+     *  <p>A start-to-close timeout for this activity task must be specified
      * either as a default for the activity type or through this field. If neither this
      * field is set nor a default start-to-close timeout was specified at registration
-     * time then a fault is returned.</p> </note>
+     * time then a fault is returned.</p> 
      */
     inline ScheduleActivityTaskDecisionAttributes& WithStartToCloseTimeout(const Aws::String& value) { SetStartToCloseTimeout(value); return *this;}
 
@@ -738,10 +728,10 @@ namespace Model
      * registering the activity type using <a>RegisterActivityType</a>.</p> <p>The
      * duration is specified in seconds, an integer greater than or equal to
      * <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-     * <note> <p>A start-to-close timeout for this activity task must be specified
+     *  <p>A start-to-close timeout for this activity task must be specified
      * either as a default for the activity type or through this field. If neither this
      * field is set nor a default start-to-close timeout was specified at registration
-     * time then a fault is returned.</p> </note>
+     * time then a fault is returned.</p> 
      */
     inline ScheduleActivityTaskDecisionAttributes& WithStartToCloseTimeout(Aws::String&& value) { SetStartToCloseTimeout(std::move(value)); return *this;}
 
@@ -751,10 +741,10 @@ namespace Model
      * registering the activity type using <a>RegisterActivityType</a>.</p> <p>The
      * duration is specified in seconds, an integer greater than or equal to
      * <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-     * <note> <p>A start-to-close timeout for this activity task must be specified
+     *  <p>A start-to-close timeout for this activity task must be specified
      * either as a default for the activity type or through this field. If neither this
      * field is set nor a default start-to-close timeout was specified at registration
-     * time then a fault is returned.</p> </note>
+     * time then a fault is returned.</p> 
      */
     inline ScheduleActivityTaskDecisionAttributes& WithStartToCloseTimeout(const char* value) { SetStartToCloseTimeout(value); return *this;}
 

@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
 #include <aws/kinesisanalyticsv2/model/ApplicationRestoreConfiguration.h>
+#include <aws/kinesisanalyticsv2/model/FlinkRunConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -78,10 +69,32 @@ namespace Model
      */
     inline RunConfigurationDescription& WithApplicationRestoreConfigurationDescription(ApplicationRestoreConfiguration&& value) { SetApplicationRestoreConfigurationDescription(std::move(value)); return *this;}
 
+
+    
+    inline const FlinkRunConfiguration& GetFlinkRunConfigurationDescription() const{ return m_flinkRunConfigurationDescription; }
+
+    
+    inline bool FlinkRunConfigurationDescriptionHasBeenSet() const { return m_flinkRunConfigurationDescriptionHasBeenSet; }
+
+    
+    inline void SetFlinkRunConfigurationDescription(const FlinkRunConfiguration& value) { m_flinkRunConfigurationDescriptionHasBeenSet = true; m_flinkRunConfigurationDescription = value; }
+
+    
+    inline void SetFlinkRunConfigurationDescription(FlinkRunConfiguration&& value) { m_flinkRunConfigurationDescriptionHasBeenSet = true; m_flinkRunConfigurationDescription = std::move(value); }
+
+    
+    inline RunConfigurationDescription& WithFlinkRunConfigurationDescription(const FlinkRunConfiguration& value) { SetFlinkRunConfigurationDescription(value); return *this;}
+
+    
+    inline RunConfigurationDescription& WithFlinkRunConfigurationDescription(FlinkRunConfiguration&& value) { SetFlinkRunConfigurationDescription(std::move(value)); return *this;}
+
   private:
 
     ApplicationRestoreConfiguration m_applicationRestoreConfigurationDescription;
     bool m_applicationRestoreConfigurationDescriptionHasBeenSet;
+
+    FlinkRunConfiguration m_flinkRunConfigurationDescription;
+    bool m_flinkRunConfigurationDescriptionHasBeenSet;
   };
 
 } // namespace Model

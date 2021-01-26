@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kendra/model/SharePointConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -41,7 +31,9 @@ SharePointConfiguration::SharePointConfiguration() :
     m_exclusionPatternsHasBeenSet(false),
     m_vpcConfigurationHasBeenSet(false),
     m_fieldMappingsHasBeenSet(false),
-    m_documentTitleFieldNameHasBeenSet(false)
+    m_documentTitleFieldNameHasBeenSet(false),
+    m_disableLocalGroups(false),
+    m_disableLocalGroupsHasBeenSet(false)
 {
 }
 
@@ -58,7 +50,9 @@ SharePointConfiguration::SharePointConfiguration(JsonView jsonValue) :
     m_exclusionPatternsHasBeenSet(false),
     m_vpcConfigurationHasBeenSet(false),
     m_fieldMappingsHasBeenSet(false),
-    m_documentTitleFieldNameHasBeenSet(false)
+    m_documentTitleFieldNameHasBeenSet(false),
+    m_disableLocalGroups(false),
+    m_disableLocalGroupsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -147,6 +141,13 @@ SharePointConfiguration& SharePointConfiguration::operator =(JsonView jsonValue)
     m_documentTitleFieldNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DisableLocalGroups"))
+  {
+    m_disableLocalGroups = jsonValue.GetBool("DisableLocalGroups");
+
+    m_disableLocalGroupsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -230,6 +231,12 @@ JsonValue SharePointConfiguration::Jsonize() const
   if(m_documentTitleFieldNameHasBeenSet)
   {
    payload.WithString("DocumentTitleFieldName", m_documentTitleFieldName);
+
+  }
+
+  if(m_disableLocalGroupsHasBeenSet)
+  {
+   payload.WithBool("DisableLocalGroups", m_disableLocalGroups);
 
   }
 

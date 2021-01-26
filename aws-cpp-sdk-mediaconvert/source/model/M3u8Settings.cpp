@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/M3u8Settings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,6 +19,8 @@ namespace Model
 {
 
 M3u8Settings::M3u8Settings() : 
+    m_audioDuration(M3u8AudioDuration::NOT_SET),
+    m_audioDurationHasBeenSet(false),
     m_audioFramesPerPes(0),
     m_audioFramesPerPesHasBeenSet(false),
     m_audioPidsHasBeenSet(false),
@@ -64,6 +56,8 @@ M3u8Settings::M3u8Settings() :
 }
 
 M3u8Settings::M3u8Settings(JsonView jsonValue) : 
+    m_audioDuration(M3u8AudioDuration::NOT_SET),
+    m_audioDurationHasBeenSet(false),
     m_audioFramesPerPes(0),
     m_audioFramesPerPesHasBeenSet(false),
     m_audioPidsHasBeenSet(false),
@@ -101,6 +95,13 @@ M3u8Settings::M3u8Settings(JsonView jsonValue) :
 
 M3u8Settings& M3u8Settings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("audioDuration"))
+  {
+    m_audioDuration = M3u8AudioDurationMapper::GetM3u8AudioDurationForName(jsonValue.GetString("audioDuration"));
+
+    m_audioDurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("audioFramesPerPes"))
   {
     m_audioFramesPerPes = jsonValue.GetInteger("audioFramesPerPes");
@@ -222,6 +223,11 @@ M3u8Settings& M3u8Settings::operator =(JsonView jsonValue)
 JsonValue M3u8Settings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_audioDurationHasBeenSet)
+  {
+   payload.WithString("audioDuration", M3u8AudioDurationMapper::GetNameForM3u8AudioDuration(m_audioDuration));
+  }
 
   if(m_audioFramesPerPesHasBeenSet)
   {

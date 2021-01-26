@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
@@ -87,37 +77,37 @@ namespace Model
 
     /**
      * <p>When set to <code>True</code>, forces a Lightsail instance that is stuck in a
-     * <code>stopping</code> state to stop.</p> <important> <p>Only use the
+     * <code>stopping</code> state to stop.</p>  <p>Only use the
      * <code>force</code> parameter if your instance is stuck in the
      * <code>stopping</code> state. In any other state, your instance should stop
-     * normally without adding this parameter to your API request.</p> </important>
+     * normally without adding this parameter to your API request.</p> 
      */
     inline bool GetForce() const{ return m_force; }
 
     /**
      * <p>When set to <code>True</code>, forces a Lightsail instance that is stuck in a
-     * <code>stopping</code> state to stop.</p> <important> <p>Only use the
+     * <code>stopping</code> state to stop.</p>  <p>Only use the
      * <code>force</code> parameter if your instance is stuck in the
      * <code>stopping</code> state. In any other state, your instance should stop
-     * normally without adding this parameter to your API request.</p> </important>
+     * normally without adding this parameter to your API request.</p> 
      */
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
 
     /**
      * <p>When set to <code>True</code>, forces a Lightsail instance that is stuck in a
-     * <code>stopping</code> state to stop.</p> <important> <p>Only use the
+     * <code>stopping</code> state to stop.</p>  <p>Only use the
      * <code>force</code> parameter if your instance is stuck in the
      * <code>stopping</code> state. In any other state, your instance should stop
-     * normally without adding this parameter to your API request.</p> </important>
+     * normally without adding this parameter to your API request.</p> 
      */
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
 
     /**
      * <p>When set to <code>True</code>, forces a Lightsail instance that is stuck in a
-     * <code>stopping</code> state to stop.</p> <important> <p>Only use the
+     * <code>stopping</code> state to stop.</p>  <p>Only use the
      * <code>force</code> parameter if your instance is stuck in the
      * <code>stopping</code> state. In any other state, your instance should stop
-     * normally without adding this parameter to your API request.</p> </important>
+     * normally without adding this parameter to your API request.</p> 
      */
     inline StopInstanceRequest& WithForce(bool value) { SetForce(value); return *this;}
 

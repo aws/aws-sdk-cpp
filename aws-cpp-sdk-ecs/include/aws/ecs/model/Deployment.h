@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/LaunchType.h>
 #include <aws/ecs/model/NetworkConfiguration.h>
+#include <aws/ecs/model/DeploymentRolloutState.h>
 #include <aws/ecs/model/CapacityProviderStrategyItem.h>
 #include <utility>
 
@@ -298,6 +289,47 @@ namespace Model
      * status.</p>
      */
     inline Deployment& WithRunningCount(int value) { SetRunningCount(value); return *this;}
+
+
+    /**
+     * <p>The number of consecutively failed tasks in the deployment. A task is
+     * considered a failure if the service scheduler can't launch the task, the task
+     * doesn't transition to a <code>RUNNING</code> state, or if it fails any of its
+     * defined health checks and is stopped.</p>  <p>Once a service deployment
+     * has one or more successfully running tasks, the failed task count resets to zero
+     * and stops being evaluated.</p> 
+     */
+    inline int GetFailedTasks() const{ return m_failedTasks; }
+
+    /**
+     * <p>The number of consecutively failed tasks in the deployment. A task is
+     * considered a failure if the service scheduler can't launch the task, the task
+     * doesn't transition to a <code>RUNNING</code> state, or if it fails any of its
+     * defined health checks and is stopped.</p>  <p>Once a service deployment
+     * has one or more successfully running tasks, the failed task count resets to zero
+     * and stops being evaluated.</p> 
+     */
+    inline bool FailedTasksHasBeenSet() const { return m_failedTasksHasBeenSet; }
+
+    /**
+     * <p>The number of consecutively failed tasks in the deployment. A task is
+     * considered a failure if the service scheduler can't launch the task, the task
+     * doesn't transition to a <code>RUNNING</code> state, or if it fails any of its
+     * defined health checks and is stopped.</p>  <p>Once a service deployment
+     * has one or more successfully running tasks, the failed task count resets to zero
+     * and stops being evaluated.</p> 
+     */
+    inline void SetFailedTasks(int value) { m_failedTasksHasBeenSet = true; m_failedTasks = value; }
+
+    /**
+     * <p>The number of consecutively failed tasks in the deployment. A task is
+     * considered a failure if the service scheduler can't launch the task, the task
+     * doesn't transition to a <code>RUNNING</code> state, or if it fails any of its
+     * defined health checks and is stopped.</p>  <p>Once a service deployment
+     * has one or more successfully running tasks, the failed task count resets to zero
+     * and stops being evaluated.</p> 
+     */
+    inline Deployment& WithFailedTasks(int value) { SetFailedTasks(value); return *this;}
 
 
     /**
@@ -589,6 +621,132 @@ namespace Model
      */
     inline Deployment& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     *  <p>The <code>rolloutState</code> of a service is only returned for
+     * services that use the rolling update (<code>ECS</code>) deployment type that are
+     * not behind a Classic Load Balancer.</p>  <p>The rollout state of the
+     * deployment. When a service deployment is started, it begins in an
+     * <code>IN_PROGRESS</code> state. When the service reaches a steady state, the
+     * deployment will transition to a <code>COMPLETED</code> state. If the service
+     * fails to reach a steady state and circuit breaker is enabled, the deployment
+     * will transition to a <code>FAILED</code> state. A deployment in
+     * <code>FAILED</code> state will launch no new tasks. For more information, see
+     * <a>DeploymentCircuitBreaker</a>.</p>
+     */
+    inline const DeploymentRolloutState& GetRolloutState() const{ return m_rolloutState; }
+
+    /**
+     *  <p>The <code>rolloutState</code> of a service is only returned for
+     * services that use the rolling update (<code>ECS</code>) deployment type that are
+     * not behind a Classic Load Balancer.</p>  <p>The rollout state of the
+     * deployment. When a service deployment is started, it begins in an
+     * <code>IN_PROGRESS</code> state. When the service reaches a steady state, the
+     * deployment will transition to a <code>COMPLETED</code> state. If the service
+     * fails to reach a steady state and circuit breaker is enabled, the deployment
+     * will transition to a <code>FAILED</code> state. A deployment in
+     * <code>FAILED</code> state will launch no new tasks. For more information, see
+     * <a>DeploymentCircuitBreaker</a>.</p>
+     */
+    inline bool RolloutStateHasBeenSet() const { return m_rolloutStateHasBeenSet; }
+
+    /**
+     *  <p>The <code>rolloutState</code> of a service is only returned for
+     * services that use the rolling update (<code>ECS</code>) deployment type that are
+     * not behind a Classic Load Balancer.</p>  <p>The rollout state of the
+     * deployment. When a service deployment is started, it begins in an
+     * <code>IN_PROGRESS</code> state. When the service reaches a steady state, the
+     * deployment will transition to a <code>COMPLETED</code> state. If the service
+     * fails to reach a steady state and circuit breaker is enabled, the deployment
+     * will transition to a <code>FAILED</code> state. A deployment in
+     * <code>FAILED</code> state will launch no new tasks. For more information, see
+     * <a>DeploymentCircuitBreaker</a>.</p>
+     */
+    inline void SetRolloutState(const DeploymentRolloutState& value) { m_rolloutStateHasBeenSet = true; m_rolloutState = value; }
+
+    /**
+     *  <p>The <code>rolloutState</code> of a service is only returned for
+     * services that use the rolling update (<code>ECS</code>) deployment type that are
+     * not behind a Classic Load Balancer.</p>  <p>The rollout state of the
+     * deployment. When a service deployment is started, it begins in an
+     * <code>IN_PROGRESS</code> state. When the service reaches a steady state, the
+     * deployment will transition to a <code>COMPLETED</code> state. If the service
+     * fails to reach a steady state and circuit breaker is enabled, the deployment
+     * will transition to a <code>FAILED</code> state. A deployment in
+     * <code>FAILED</code> state will launch no new tasks. For more information, see
+     * <a>DeploymentCircuitBreaker</a>.</p>
+     */
+    inline void SetRolloutState(DeploymentRolloutState&& value) { m_rolloutStateHasBeenSet = true; m_rolloutState = std::move(value); }
+
+    /**
+     *  <p>The <code>rolloutState</code> of a service is only returned for
+     * services that use the rolling update (<code>ECS</code>) deployment type that are
+     * not behind a Classic Load Balancer.</p>  <p>The rollout state of the
+     * deployment. When a service deployment is started, it begins in an
+     * <code>IN_PROGRESS</code> state. When the service reaches a steady state, the
+     * deployment will transition to a <code>COMPLETED</code> state. If the service
+     * fails to reach a steady state and circuit breaker is enabled, the deployment
+     * will transition to a <code>FAILED</code> state. A deployment in
+     * <code>FAILED</code> state will launch no new tasks. For more information, see
+     * <a>DeploymentCircuitBreaker</a>.</p>
+     */
+    inline Deployment& WithRolloutState(const DeploymentRolloutState& value) { SetRolloutState(value); return *this;}
+
+    /**
+     *  <p>The <code>rolloutState</code> of a service is only returned for
+     * services that use the rolling update (<code>ECS</code>) deployment type that are
+     * not behind a Classic Load Balancer.</p>  <p>The rollout state of the
+     * deployment. When a service deployment is started, it begins in an
+     * <code>IN_PROGRESS</code> state. When the service reaches a steady state, the
+     * deployment will transition to a <code>COMPLETED</code> state. If the service
+     * fails to reach a steady state and circuit breaker is enabled, the deployment
+     * will transition to a <code>FAILED</code> state. A deployment in
+     * <code>FAILED</code> state will launch no new tasks. For more information, see
+     * <a>DeploymentCircuitBreaker</a>.</p>
+     */
+    inline Deployment& WithRolloutState(DeploymentRolloutState&& value) { SetRolloutState(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A description of the rollout state of a deployment.</p>
+     */
+    inline const Aws::String& GetRolloutStateReason() const{ return m_rolloutStateReason; }
+
+    /**
+     * <p>A description of the rollout state of a deployment.</p>
+     */
+    inline bool RolloutStateReasonHasBeenSet() const { return m_rolloutStateReasonHasBeenSet; }
+
+    /**
+     * <p>A description of the rollout state of a deployment.</p>
+     */
+    inline void SetRolloutStateReason(const Aws::String& value) { m_rolloutStateReasonHasBeenSet = true; m_rolloutStateReason = value; }
+
+    /**
+     * <p>A description of the rollout state of a deployment.</p>
+     */
+    inline void SetRolloutStateReason(Aws::String&& value) { m_rolloutStateReasonHasBeenSet = true; m_rolloutStateReason = std::move(value); }
+
+    /**
+     * <p>A description of the rollout state of a deployment.</p>
+     */
+    inline void SetRolloutStateReason(const char* value) { m_rolloutStateReasonHasBeenSet = true; m_rolloutStateReason.assign(value); }
+
+    /**
+     * <p>A description of the rollout state of a deployment.</p>
+     */
+    inline Deployment& WithRolloutStateReason(const Aws::String& value) { SetRolloutStateReason(value); return *this;}
+
+    /**
+     * <p>A description of the rollout state of a deployment.</p>
+     */
+    inline Deployment& WithRolloutStateReason(Aws::String&& value) { SetRolloutStateReason(std::move(value)); return *this;}
+
+    /**
+     * <p>A description of the rollout state of a deployment.</p>
+     */
+    inline Deployment& WithRolloutStateReason(const char* value) { SetRolloutStateReason(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -609,6 +767,9 @@ namespace Model
     int m_runningCount;
     bool m_runningCountHasBeenSet;
 
+    int m_failedTasks;
+    bool m_failedTasksHasBeenSet;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
 
@@ -626,6 +787,12 @@ namespace Model
 
     NetworkConfiguration m_networkConfiguration;
     bool m_networkConfigurationHasBeenSet;
+
+    DeploymentRolloutState m_rolloutState;
+    bool m_rolloutStateHasBeenSet;
+
+    Aws::String m_rolloutStateReason;
+    bool m_rolloutStateReasonHasBeenSet;
   };
 
 } // namespace Model

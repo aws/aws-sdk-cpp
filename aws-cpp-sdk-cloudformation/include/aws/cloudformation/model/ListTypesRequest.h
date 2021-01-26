@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/cloudformation/model/Visibility.h>
 #include <aws/cloudformation/model/ProvisioningType.h>
 #include <aws/cloudformation/model/DeprecatedStatus.h>
+#include <aws/cloudformation/model/RegistryType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -257,6 +248,37 @@ namespace Model
 
 
     /**
+     * <p>The type of extension.</p>
+     */
+    inline const RegistryType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of extension.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of extension.</p>
+     */
+    inline void SetType(const RegistryType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The type of extension.</p>
+     */
+    inline void SetType(RegistryType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The type of extension.</p>
+     */
+    inline ListTypesRequest& WithType(const RegistryType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The type of extension.</p>
+     */
+    inline ListTypesRequest& WithType(RegistryType&& value) { SetType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The maximum number of results to be returned with a single call. If the
      * number of available results exceeds this maximum, the response includes a
      * <code>NextToken</code> value that you can assign to the <code>NextToken</code>
@@ -379,6 +401,9 @@ namespace Model
 
     DeprecatedStatus m_deprecatedStatus;
     bool m_deprecatedStatusHasBeenSet;
+
+    RegistryType m_type;
+    bool m_typeHasBeenSet;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;

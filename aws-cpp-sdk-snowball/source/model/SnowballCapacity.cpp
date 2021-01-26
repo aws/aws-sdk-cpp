@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/snowball/model/SnowballCapacity.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -35,6 +25,7 @@ namespace Aws
         static const int T100_HASH = HashingUtils::HashString("T100");
         static const int T42_HASH = HashingUtils::HashString("T42");
         static const int T98_HASH = HashingUtils::HashString("T98");
+        static const int T8_HASH = HashingUtils::HashString("T8");
         static const int NoPreference_HASH = HashingUtils::HashString("NoPreference");
 
 
@@ -60,6 +51,10 @@ namespace Aws
           else if (hashCode == T98_HASH)
           {
             return SnowballCapacity::T98;
+          }
+          else if (hashCode == T8_HASH)
+          {
+            return SnowballCapacity::T8;
           }
           else if (hashCode == NoPreference_HASH)
           {
@@ -89,6 +84,8 @@ namespace Aws
             return "T42";
           case SnowballCapacity::T98:
             return "T98";
+          case SnowballCapacity::T8:
+            return "T8";
           case SnowballCapacity::NoPreference:
             return "NoPreference";
           default:

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -163,74 +153,92 @@ namespace Model
 
 
     /**
-     * <p>The location of the Amazon S3 bucket where a zipped file containing your
-     * Realtime scripts is stored. The storage location must specify the Amazon S3
-     * bucket name, the zip file name (the "key"), and a role ARN that allows Amazon
-     * GameLift to access the Amazon S3 storage location. The S3 bucket must be in the
-     * same Region where you want to create a new script. By default, Amazon GameLift
-     * uploads the latest version of the zip file; if you have S3 object versioning
-     * turned on, you can use the <code>ObjectVersion</code> parameter to specify an
-     * earlier version. </p>
+     * <p>The Amazon S3 location of your Realtime scripts. The storage location must
+     * specify the S3 bucket name, the zip file name (the "key"), and an IAM role ARN
+     * that allows Amazon GameLift to access the S3 storage location. The S3 bucket
+     * must be in the same Region where you are creating a new script. By default,
+     * Amazon GameLift uploads the latest version of the zip file; if you have S3
+     * object versioning turned on, you can use the <code>ObjectVersion</code>
+     * parameter to specify an earlier version. To call this operation with a storage
+     * location, you must have IAM PassRole permission. For more details on IAM roles
+     * and PassRole permissions, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html">
+     * Set up a role for GameLift access</a>. </p>
      */
     inline const S3Location& GetStorageLocation() const{ return m_storageLocation; }
 
     /**
-     * <p>The location of the Amazon S3 bucket where a zipped file containing your
-     * Realtime scripts is stored. The storage location must specify the Amazon S3
-     * bucket name, the zip file name (the "key"), and a role ARN that allows Amazon
-     * GameLift to access the Amazon S3 storage location. The S3 bucket must be in the
-     * same Region where you want to create a new script. By default, Amazon GameLift
-     * uploads the latest version of the zip file; if you have S3 object versioning
-     * turned on, you can use the <code>ObjectVersion</code> parameter to specify an
-     * earlier version. </p>
+     * <p>The Amazon S3 location of your Realtime scripts. The storage location must
+     * specify the S3 bucket name, the zip file name (the "key"), and an IAM role ARN
+     * that allows Amazon GameLift to access the S3 storage location. The S3 bucket
+     * must be in the same Region where you are creating a new script. By default,
+     * Amazon GameLift uploads the latest version of the zip file; if you have S3
+     * object versioning turned on, you can use the <code>ObjectVersion</code>
+     * parameter to specify an earlier version. To call this operation with a storage
+     * location, you must have IAM PassRole permission. For more details on IAM roles
+     * and PassRole permissions, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html">
+     * Set up a role for GameLift access</a>. </p>
      */
     inline bool StorageLocationHasBeenSet() const { return m_storageLocationHasBeenSet; }
 
     /**
-     * <p>The location of the Amazon S3 bucket where a zipped file containing your
-     * Realtime scripts is stored. The storage location must specify the Amazon S3
-     * bucket name, the zip file name (the "key"), and a role ARN that allows Amazon
-     * GameLift to access the Amazon S3 storage location. The S3 bucket must be in the
-     * same Region where you want to create a new script. By default, Amazon GameLift
-     * uploads the latest version of the zip file; if you have S3 object versioning
-     * turned on, you can use the <code>ObjectVersion</code> parameter to specify an
-     * earlier version. </p>
+     * <p>The Amazon S3 location of your Realtime scripts. The storage location must
+     * specify the S3 bucket name, the zip file name (the "key"), and an IAM role ARN
+     * that allows Amazon GameLift to access the S3 storage location. The S3 bucket
+     * must be in the same Region where you are creating a new script. By default,
+     * Amazon GameLift uploads the latest version of the zip file; if you have S3
+     * object versioning turned on, you can use the <code>ObjectVersion</code>
+     * parameter to specify an earlier version. To call this operation with a storage
+     * location, you must have IAM PassRole permission. For more details on IAM roles
+     * and PassRole permissions, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html">
+     * Set up a role for GameLift access</a>. </p>
      */
     inline void SetStorageLocation(const S3Location& value) { m_storageLocationHasBeenSet = true; m_storageLocation = value; }
 
     /**
-     * <p>The location of the Amazon S3 bucket where a zipped file containing your
-     * Realtime scripts is stored. The storage location must specify the Amazon S3
-     * bucket name, the zip file name (the "key"), and a role ARN that allows Amazon
-     * GameLift to access the Amazon S3 storage location. The S3 bucket must be in the
-     * same Region where you want to create a new script. By default, Amazon GameLift
-     * uploads the latest version of the zip file; if you have S3 object versioning
-     * turned on, you can use the <code>ObjectVersion</code> parameter to specify an
-     * earlier version. </p>
+     * <p>The Amazon S3 location of your Realtime scripts. The storage location must
+     * specify the S3 bucket name, the zip file name (the "key"), and an IAM role ARN
+     * that allows Amazon GameLift to access the S3 storage location. The S3 bucket
+     * must be in the same Region where you are creating a new script. By default,
+     * Amazon GameLift uploads the latest version of the zip file; if you have S3
+     * object versioning turned on, you can use the <code>ObjectVersion</code>
+     * parameter to specify an earlier version. To call this operation with a storage
+     * location, you must have IAM PassRole permission. For more details on IAM roles
+     * and PassRole permissions, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html">
+     * Set up a role for GameLift access</a>. </p>
      */
     inline void SetStorageLocation(S3Location&& value) { m_storageLocationHasBeenSet = true; m_storageLocation = std::move(value); }
 
     /**
-     * <p>The location of the Amazon S3 bucket where a zipped file containing your
-     * Realtime scripts is stored. The storage location must specify the Amazon S3
-     * bucket name, the zip file name (the "key"), and a role ARN that allows Amazon
-     * GameLift to access the Amazon S3 storage location. The S3 bucket must be in the
-     * same Region where you want to create a new script. By default, Amazon GameLift
-     * uploads the latest version of the zip file; if you have S3 object versioning
-     * turned on, you can use the <code>ObjectVersion</code> parameter to specify an
-     * earlier version. </p>
+     * <p>The Amazon S3 location of your Realtime scripts. The storage location must
+     * specify the S3 bucket name, the zip file name (the "key"), and an IAM role ARN
+     * that allows Amazon GameLift to access the S3 storage location. The S3 bucket
+     * must be in the same Region where you are creating a new script. By default,
+     * Amazon GameLift uploads the latest version of the zip file; if you have S3
+     * object versioning turned on, you can use the <code>ObjectVersion</code>
+     * parameter to specify an earlier version. To call this operation with a storage
+     * location, you must have IAM PassRole permission. For more details on IAM roles
+     * and PassRole permissions, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html">
+     * Set up a role for GameLift access</a>. </p>
      */
     inline CreateScriptRequest& WithStorageLocation(const S3Location& value) { SetStorageLocation(value); return *this;}
 
     /**
-     * <p>The location of the Amazon S3 bucket where a zipped file containing your
-     * Realtime scripts is stored. The storage location must specify the Amazon S3
-     * bucket name, the zip file name (the "key"), and a role ARN that allows Amazon
-     * GameLift to access the Amazon S3 storage location. The S3 bucket must be in the
-     * same Region where you want to create a new script. By default, Amazon GameLift
-     * uploads the latest version of the zip file; if you have S3 object versioning
-     * turned on, you can use the <code>ObjectVersion</code> parameter to specify an
-     * earlier version. </p>
+     * <p>The Amazon S3 location of your Realtime scripts. The storage location must
+     * specify the S3 bucket name, the zip file name (the "key"), and an IAM role ARN
+     * that allows Amazon GameLift to access the S3 storage location. The S3 bucket
+     * must be in the same Region where you are creating a new script. By default,
+     * Amazon GameLift uploads the latest version of the zip file; if you have S3
+     * object versioning turned on, you can use the <code>ObjectVersion</code>
+     * parameter to specify an earlier version. To call this operation with a storage
+     * location, you must have IAM PassRole permission. For more details on IAM roles
+     * and PassRole permissions, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html">
+     * Set up a role for GameLift access</a>. </p>
      */
     inline CreateScriptRequest& WithStorageLocation(S3Location&& value) { SetStorageLocation(std::move(value)); return *this;}
 

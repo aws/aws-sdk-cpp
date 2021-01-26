@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -30,22 +20,29 @@
 #include <aws/es/ElasticsearchServiceClient.h>
 #include <aws/es/ElasticsearchServiceEndpoint.h>
 #include <aws/es/ElasticsearchServiceErrorMarshaller.h>
+#include <aws/es/model/AcceptInboundCrossClusterSearchConnectionRequest.h>
 #include <aws/es/model/AddTagsRequest.h>
 #include <aws/es/model/AssociatePackageRequest.h>
 #include <aws/es/model/CancelElasticsearchServiceSoftwareUpdateRequest.h>
 #include <aws/es/model/CreateElasticsearchDomainRequest.h>
+#include <aws/es/model/CreateOutboundCrossClusterSearchConnectionRequest.h>
 #include <aws/es/model/CreatePackageRequest.h>
 #include <aws/es/model/DeleteElasticsearchDomainRequest.h>
+#include <aws/es/model/DeleteInboundCrossClusterSearchConnectionRequest.h>
+#include <aws/es/model/DeleteOutboundCrossClusterSearchConnectionRequest.h>
 #include <aws/es/model/DeletePackageRequest.h>
 #include <aws/es/model/DescribeElasticsearchDomainRequest.h>
 #include <aws/es/model/DescribeElasticsearchDomainConfigRequest.h>
 #include <aws/es/model/DescribeElasticsearchDomainsRequest.h>
 #include <aws/es/model/DescribeElasticsearchInstanceTypeLimitsRequest.h>
+#include <aws/es/model/DescribeInboundCrossClusterSearchConnectionsRequest.h>
+#include <aws/es/model/DescribeOutboundCrossClusterSearchConnectionsRequest.h>
 #include <aws/es/model/DescribePackagesRequest.h>
 #include <aws/es/model/DescribeReservedElasticsearchInstanceOfferingsRequest.h>
 #include <aws/es/model/DescribeReservedElasticsearchInstancesRequest.h>
 #include <aws/es/model/DissociatePackageRequest.h>
 #include <aws/es/model/GetCompatibleElasticsearchVersionsRequest.h>
+#include <aws/es/model/GetPackageVersionHistoryRequest.h>
 #include <aws/es/model/GetUpgradeHistoryRequest.h>
 #include <aws/es/model/GetUpgradeStatusRequest.h>
 #include <aws/es/model/ListDomainsForPackageRequest.h>
@@ -54,9 +51,11 @@
 #include <aws/es/model/ListPackagesForDomainRequest.h>
 #include <aws/es/model/ListTagsRequest.h>
 #include <aws/es/model/PurchaseReservedElasticsearchInstanceOfferingRequest.h>
+#include <aws/es/model/RejectInboundCrossClusterSearchConnectionRequest.h>
 #include <aws/es/model/RemoveTagsRequest.h>
 #include <aws/es/model/StartElasticsearchServiceSoftwareUpdateRequest.h>
 #include <aws/es/model/UpdateElasticsearchDomainConfigRequest.h>
+#include <aws/es/model/UpdatePackageRequest.h>
 #include <aws/es/model/UpgradeElasticsearchDomainRequest.h>
 
 using namespace Aws;
@@ -74,7 +73,7 @@ static const char* ALLOCATION_TAG = "ElasticsearchServiceClient";
 ElasticsearchServiceClient::ElasticsearchServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ElasticsearchServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -84,7 +83,7 @@ ElasticsearchServiceClient::ElasticsearchServiceClient(const Client::ClientConfi
 ElasticsearchServiceClient::ElasticsearchServiceClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ElasticsearchServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -95,7 +94,7 @@ ElasticsearchServiceClient::ElasticsearchServiceClient(const std::shared_ptr<AWS
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ElasticsearchServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -108,6 +107,7 @@ ElasticsearchServiceClient::~ElasticsearchServiceClient()
 
 void ElasticsearchServiceClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Elasticsearch Service");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -131,21 +131,47 @@ void ElasticsearchServiceClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
+AcceptInboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::AcceptInboundCrossClusterSearchConnection(const AcceptInboundCrossClusterSearchConnectionRequest& request) const
+{
+  if (!request.CrossClusterSearchConnectionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AcceptInboundCrossClusterSearchConnection", "Required field: CrossClusterSearchConnectionId, is not set");
+    return AcceptInboundCrossClusterSearchConnectionOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CrossClusterSearchConnectionId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2015-01-01/es/ccs/inboundConnection/";
+  ss << request.GetCrossClusterSearchConnectionId();
+  ss << "/accept";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return AcceptInboundCrossClusterSearchConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+AcceptInboundCrossClusterSearchConnectionOutcomeCallable ElasticsearchServiceClient::AcceptInboundCrossClusterSearchConnectionCallable(const AcceptInboundCrossClusterSearchConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AcceptInboundCrossClusterSearchConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AcceptInboundCrossClusterSearchConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticsearchServiceClient::AcceptInboundCrossClusterSearchConnectionAsync(const AcceptInboundCrossClusterSearchConnectionRequest& request, const AcceptInboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AcceptInboundCrossClusterSearchConnectionAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticsearchServiceClient::AcceptInboundCrossClusterSearchConnectionAsyncHelper(const AcceptInboundCrossClusterSearchConnectionRequest& request, const AcceptInboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AcceptInboundCrossClusterSearchConnection(request), context);
+}
+
 AddTagsOutcome ElasticsearchServiceClient::AddTags(const AddTagsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2015-01-01/tags";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AddTagsOutcome(NoResult());
-  }
-  else
-  {
-    return AddTagsOutcome(outcome.GetError());
-  }
+  return AddTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AddTagsOutcomeCallable ElasticsearchServiceClient::AddTagsCallable(const AddTagsRequest& request) const
@@ -185,15 +211,7 @@ AssociatePackageOutcome ElasticsearchServiceClient::AssociatePackage(const Assoc
   ss << "/";
   ss << request.GetDomainName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AssociatePackageOutcome(AssociatePackageResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AssociatePackageOutcome(outcome.GetError());
-  }
+  return AssociatePackageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AssociatePackageOutcomeCallable ElasticsearchServiceClient::AssociatePackageCallable(const AssociatePackageRequest& request) const
@@ -220,15 +238,7 @@ CancelElasticsearchServiceSoftwareUpdateOutcome ElasticsearchServiceClient::Canc
   Aws::StringStream ss;
   ss << "/2015-01-01/es/serviceSoftwareUpdate/cancel";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CancelElasticsearchServiceSoftwareUpdateOutcome(CancelElasticsearchServiceSoftwareUpdateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CancelElasticsearchServiceSoftwareUpdateOutcome(outcome.GetError());
-  }
+  return CancelElasticsearchServiceSoftwareUpdateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CancelElasticsearchServiceSoftwareUpdateOutcomeCallable ElasticsearchServiceClient::CancelElasticsearchServiceSoftwareUpdateCallable(const CancelElasticsearchServiceSoftwareUpdateRequest& request) const
@@ -255,15 +265,7 @@ CreateElasticsearchDomainOutcome ElasticsearchServiceClient::CreateElasticsearch
   Aws::StringStream ss;
   ss << "/2015-01-01/es/domain";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateElasticsearchDomainOutcome(CreateElasticsearchDomainResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateElasticsearchDomainOutcome(outcome.GetError());
-  }
+  return CreateElasticsearchDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateElasticsearchDomainOutcomeCallable ElasticsearchServiceClient::CreateElasticsearchDomainCallable(const CreateElasticsearchDomainRequest& request) const
@@ -284,21 +286,40 @@ void ElasticsearchServiceClient::CreateElasticsearchDomainAsyncHelper(const Crea
   handler(this, request, CreateElasticsearchDomain(request), context);
 }
 
+CreateOutboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::CreateOutboundCrossClusterSearchConnection(const CreateOutboundCrossClusterSearchConnectionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2015-01-01/es/ccs/outboundConnection";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateOutboundCrossClusterSearchConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateOutboundCrossClusterSearchConnectionOutcomeCallable ElasticsearchServiceClient::CreateOutboundCrossClusterSearchConnectionCallable(const CreateOutboundCrossClusterSearchConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateOutboundCrossClusterSearchConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateOutboundCrossClusterSearchConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticsearchServiceClient::CreateOutboundCrossClusterSearchConnectionAsync(const CreateOutboundCrossClusterSearchConnectionRequest& request, const CreateOutboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateOutboundCrossClusterSearchConnectionAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticsearchServiceClient::CreateOutboundCrossClusterSearchConnectionAsyncHelper(const CreateOutboundCrossClusterSearchConnectionRequest& request, const CreateOutboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateOutboundCrossClusterSearchConnection(request), context);
+}
+
 CreatePackageOutcome ElasticsearchServiceClient::CreatePackage(const CreatePackageRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2015-01-01/packages";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreatePackageOutcome(CreatePackageResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreatePackageOutcome(outcome.GetError());
-  }
+  return CreatePackageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreatePackageOutcomeCallable ElasticsearchServiceClient::CreatePackageCallable(const CreatePackageRequest& request) const
@@ -331,15 +352,7 @@ DeleteElasticsearchDomainOutcome ElasticsearchServiceClient::DeleteElasticsearch
   ss << "/2015-01-01/es/domain/";
   ss << request.GetDomainName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteElasticsearchDomainOutcome(DeleteElasticsearchDomainResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteElasticsearchDomainOutcome(outcome.GetError());
-  }
+  return DeleteElasticsearchDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteElasticsearchDomainOutcomeCallable ElasticsearchServiceClient::DeleteElasticsearchDomainCallable(const DeleteElasticsearchDomainRequest& request) const
@@ -364,15 +377,7 @@ DeleteElasticsearchServiceRoleOutcome ElasticsearchServiceClient::DeleteElastics
 {
   Aws::StringStream ss;
   ss << m_uri << "/2015-01-01/es/role";
-  JsonOutcome outcome = MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, "DeleteElasticsearchServiceRole");
-  if(outcome.IsSuccess())
-  {
-    return DeleteElasticsearchServiceRoleOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteElasticsearchServiceRoleOutcome(outcome.GetError());
-  }
+  return DeleteElasticsearchServiceRoleOutcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, "DeleteElasticsearchServiceRole"));
 }
 
 DeleteElasticsearchServiceRoleOutcomeCallable ElasticsearchServiceClient::DeleteElasticsearchServiceRoleCallable() const
@@ -393,6 +398,72 @@ void ElasticsearchServiceClient::DeleteElasticsearchServiceRoleAsyncHelper(const
   handler(this, DeleteElasticsearchServiceRole(), context);
 }
 
+DeleteInboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::DeleteInboundCrossClusterSearchConnection(const DeleteInboundCrossClusterSearchConnectionRequest& request) const
+{
+  if (!request.CrossClusterSearchConnectionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteInboundCrossClusterSearchConnection", "Required field: CrossClusterSearchConnectionId, is not set");
+    return DeleteInboundCrossClusterSearchConnectionOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CrossClusterSearchConnectionId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2015-01-01/es/ccs/inboundConnection/";
+  ss << request.GetCrossClusterSearchConnectionId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteInboundCrossClusterSearchConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteInboundCrossClusterSearchConnectionOutcomeCallable ElasticsearchServiceClient::DeleteInboundCrossClusterSearchConnectionCallable(const DeleteInboundCrossClusterSearchConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteInboundCrossClusterSearchConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteInboundCrossClusterSearchConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticsearchServiceClient::DeleteInboundCrossClusterSearchConnectionAsync(const DeleteInboundCrossClusterSearchConnectionRequest& request, const DeleteInboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteInboundCrossClusterSearchConnectionAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticsearchServiceClient::DeleteInboundCrossClusterSearchConnectionAsyncHelper(const DeleteInboundCrossClusterSearchConnectionRequest& request, const DeleteInboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteInboundCrossClusterSearchConnection(request), context);
+}
+
+DeleteOutboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::DeleteOutboundCrossClusterSearchConnection(const DeleteOutboundCrossClusterSearchConnectionRequest& request) const
+{
+  if (!request.CrossClusterSearchConnectionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteOutboundCrossClusterSearchConnection", "Required field: CrossClusterSearchConnectionId, is not set");
+    return DeleteOutboundCrossClusterSearchConnectionOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CrossClusterSearchConnectionId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2015-01-01/es/ccs/outboundConnection/";
+  ss << request.GetCrossClusterSearchConnectionId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteOutboundCrossClusterSearchConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteOutboundCrossClusterSearchConnectionOutcomeCallable ElasticsearchServiceClient::DeleteOutboundCrossClusterSearchConnectionCallable(const DeleteOutboundCrossClusterSearchConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteOutboundCrossClusterSearchConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteOutboundCrossClusterSearchConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticsearchServiceClient::DeleteOutboundCrossClusterSearchConnectionAsync(const DeleteOutboundCrossClusterSearchConnectionRequest& request, const DeleteOutboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteOutboundCrossClusterSearchConnectionAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticsearchServiceClient::DeleteOutboundCrossClusterSearchConnectionAsyncHelper(const DeleteOutboundCrossClusterSearchConnectionRequest& request, const DeleteOutboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteOutboundCrossClusterSearchConnection(request), context);
+}
+
 DeletePackageOutcome ElasticsearchServiceClient::DeletePackage(const DeletePackageRequest& request) const
 {
   if (!request.PackageIDHasBeenSet())
@@ -405,15 +476,7 @@ DeletePackageOutcome ElasticsearchServiceClient::DeletePackage(const DeletePacka
   ss << "/2015-01-01/packages/";
   ss << request.GetPackageID();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeletePackageOutcome(DeletePackageResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeletePackageOutcome(outcome.GetError());
-  }
+  return DeletePackageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeletePackageOutcomeCallable ElasticsearchServiceClient::DeletePackageCallable(const DeletePackageRequest& request) const
@@ -446,15 +509,7 @@ DescribeElasticsearchDomainOutcome ElasticsearchServiceClient::DescribeElasticse
   ss << "/2015-01-01/es/domain/";
   ss << request.GetDomainName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeElasticsearchDomainOutcome(DescribeElasticsearchDomainResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeElasticsearchDomainOutcome(outcome.GetError());
-  }
+  return DescribeElasticsearchDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeElasticsearchDomainOutcomeCallable ElasticsearchServiceClient::DescribeElasticsearchDomainCallable(const DescribeElasticsearchDomainRequest& request) const
@@ -488,15 +543,7 @@ DescribeElasticsearchDomainConfigOutcome ElasticsearchServiceClient::DescribeEla
   ss << request.GetDomainName();
   ss << "/config";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeElasticsearchDomainConfigOutcome(DescribeElasticsearchDomainConfigResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeElasticsearchDomainConfigOutcome(outcome.GetError());
-  }
+  return DescribeElasticsearchDomainConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeElasticsearchDomainConfigOutcomeCallable ElasticsearchServiceClient::DescribeElasticsearchDomainConfigCallable(const DescribeElasticsearchDomainConfigRequest& request) const
@@ -523,15 +570,7 @@ DescribeElasticsearchDomainsOutcome ElasticsearchServiceClient::DescribeElastics
   Aws::StringStream ss;
   ss << "/2015-01-01/es/domain-info";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeElasticsearchDomainsOutcome(DescribeElasticsearchDomainsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeElasticsearchDomainsOutcome(outcome.GetError());
-  }
+  return DescribeElasticsearchDomainsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeElasticsearchDomainsOutcomeCallable ElasticsearchServiceClient::DescribeElasticsearchDomainsCallable(const DescribeElasticsearchDomainsRequest& request) const
@@ -571,15 +610,7 @@ DescribeElasticsearchInstanceTypeLimitsOutcome ElasticsearchServiceClient::Descr
   ss << "/";
   ss << ESPartitionInstanceTypeMapper::GetNameForESPartitionInstanceType(request.GetInstanceType());
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeElasticsearchInstanceTypeLimitsOutcome(DescribeElasticsearchInstanceTypeLimitsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeElasticsearchInstanceTypeLimitsOutcome(outcome.GetError());
-  }
+  return DescribeElasticsearchInstanceTypeLimitsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeElasticsearchInstanceTypeLimitsOutcomeCallable ElasticsearchServiceClient::DescribeElasticsearchInstanceTypeLimitsCallable(const DescribeElasticsearchInstanceTypeLimitsRequest& request) const
@@ -600,21 +631,67 @@ void ElasticsearchServiceClient::DescribeElasticsearchInstanceTypeLimitsAsyncHel
   handler(this, request, DescribeElasticsearchInstanceTypeLimits(request), context);
 }
 
+DescribeInboundCrossClusterSearchConnectionsOutcome ElasticsearchServiceClient::DescribeInboundCrossClusterSearchConnections(const DescribeInboundCrossClusterSearchConnectionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2015-01-01/es/ccs/inboundConnection/search";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeInboundCrossClusterSearchConnectionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeInboundCrossClusterSearchConnectionsOutcomeCallable ElasticsearchServiceClient::DescribeInboundCrossClusterSearchConnectionsCallable(const DescribeInboundCrossClusterSearchConnectionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeInboundCrossClusterSearchConnectionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeInboundCrossClusterSearchConnections(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticsearchServiceClient::DescribeInboundCrossClusterSearchConnectionsAsync(const DescribeInboundCrossClusterSearchConnectionsRequest& request, const DescribeInboundCrossClusterSearchConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeInboundCrossClusterSearchConnectionsAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticsearchServiceClient::DescribeInboundCrossClusterSearchConnectionsAsyncHelper(const DescribeInboundCrossClusterSearchConnectionsRequest& request, const DescribeInboundCrossClusterSearchConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeInboundCrossClusterSearchConnections(request), context);
+}
+
+DescribeOutboundCrossClusterSearchConnectionsOutcome ElasticsearchServiceClient::DescribeOutboundCrossClusterSearchConnections(const DescribeOutboundCrossClusterSearchConnectionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2015-01-01/es/ccs/outboundConnection/search";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeOutboundCrossClusterSearchConnectionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeOutboundCrossClusterSearchConnectionsOutcomeCallable ElasticsearchServiceClient::DescribeOutboundCrossClusterSearchConnectionsCallable(const DescribeOutboundCrossClusterSearchConnectionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeOutboundCrossClusterSearchConnectionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeOutboundCrossClusterSearchConnections(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticsearchServiceClient::DescribeOutboundCrossClusterSearchConnectionsAsync(const DescribeOutboundCrossClusterSearchConnectionsRequest& request, const DescribeOutboundCrossClusterSearchConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeOutboundCrossClusterSearchConnectionsAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticsearchServiceClient::DescribeOutboundCrossClusterSearchConnectionsAsyncHelper(const DescribeOutboundCrossClusterSearchConnectionsRequest& request, const DescribeOutboundCrossClusterSearchConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeOutboundCrossClusterSearchConnections(request), context);
+}
+
 DescribePackagesOutcome ElasticsearchServiceClient::DescribePackages(const DescribePackagesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2015-01-01/packages/describe";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribePackagesOutcome(DescribePackagesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribePackagesOutcome(outcome.GetError());
-  }
+  return DescribePackagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribePackagesOutcomeCallable ElasticsearchServiceClient::DescribePackagesCallable(const DescribePackagesRequest& request) const
@@ -641,15 +718,7 @@ DescribeReservedElasticsearchInstanceOfferingsOutcome ElasticsearchServiceClient
   Aws::StringStream ss;
   ss << "/2015-01-01/es/reservedInstanceOfferings";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeReservedElasticsearchInstanceOfferingsOutcome(DescribeReservedElasticsearchInstanceOfferingsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeReservedElasticsearchInstanceOfferingsOutcome(outcome.GetError());
-  }
+  return DescribeReservedElasticsearchInstanceOfferingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeReservedElasticsearchInstanceOfferingsOutcomeCallable ElasticsearchServiceClient::DescribeReservedElasticsearchInstanceOfferingsCallable(const DescribeReservedElasticsearchInstanceOfferingsRequest& request) const
@@ -676,15 +745,7 @@ DescribeReservedElasticsearchInstancesOutcome ElasticsearchServiceClient::Descri
   Aws::StringStream ss;
   ss << "/2015-01-01/es/reservedInstances";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeReservedElasticsearchInstancesOutcome(DescribeReservedElasticsearchInstancesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeReservedElasticsearchInstancesOutcome(outcome.GetError());
-  }
+  return DescribeReservedElasticsearchInstancesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeReservedElasticsearchInstancesOutcomeCallable ElasticsearchServiceClient::DescribeReservedElasticsearchInstancesCallable(const DescribeReservedElasticsearchInstancesRequest& request) const
@@ -724,15 +785,7 @@ DissociatePackageOutcome ElasticsearchServiceClient::DissociatePackage(const Dis
   ss << "/";
   ss << request.GetDomainName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DissociatePackageOutcome(DissociatePackageResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DissociatePackageOutcome(outcome.GetError());
-  }
+  return DissociatePackageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DissociatePackageOutcomeCallable ElasticsearchServiceClient::DissociatePackageCallable(const DissociatePackageRequest& request) const
@@ -759,15 +812,7 @@ GetCompatibleElasticsearchVersionsOutcome ElasticsearchServiceClient::GetCompati
   Aws::StringStream ss;
   ss << "/2015-01-01/es/compatibleVersions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetCompatibleElasticsearchVersionsOutcome(GetCompatibleElasticsearchVersionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetCompatibleElasticsearchVersionsOutcome(outcome.GetError());
-  }
+  return GetCompatibleElasticsearchVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetCompatibleElasticsearchVersionsOutcomeCallable ElasticsearchServiceClient::GetCompatibleElasticsearchVersionsCallable(const GetCompatibleElasticsearchVersionsRequest& request) const
@@ -788,6 +833,40 @@ void ElasticsearchServiceClient::GetCompatibleElasticsearchVersionsAsyncHelper(c
   handler(this, request, GetCompatibleElasticsearchVersions(request), context);
 }
 
+GetPackageVersionHistoryOutcome ElasticsearchServiceClient::GetPackageVersionHistory(const GetPackageVersionHistoryRequest& request) const
+{
+  if (!request.PackageIDHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPackageVersionHistory", "Required field: PackageID, is not set");
+    return GetPackageVersionHistoryOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PackageID]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2015-01-01/packages/";
+  ss << request.GetPackageID();
+  ss << "/history";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetPackageVersionHistoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetPackageVersionHistoryOutcomeCallable ElasticsearchServiceClient::GetPackageVersionHistoryCallable(const GetPackageVersionHistoryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetPackageVersionHistoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPackageVersionHistory(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticsearchServiceClient::GetPackageVersionHistoryAsync(const GetPackageVersionHistoryRequest& request, const GetPackageVersionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetPackageVersionHistoryAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticsearchServiceClient::GetPackageVersionHistoryAsyncHelper(const GetPackageVersionHistoryRequest& request, const GetPackageVersionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetPackageVersionHistory(request), context);
+}
+
 GetUpgradeHistoryOutcome ElasticsearchServiceClient::GetUpgradeHistory(const GetUpgradeHistoryRequest& request) const
 {
   if (!request.DomainNameHasBeenSet())
@@ -801,15 +880,7 @@ GetUpgradeHistoryOutcome ElasticsearchServiceClient::GetUpgradeHistory(const Get
   ss << request.GetDomainName();
   ss << "/history";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetUpgradeHistoryOutcome(GetUpgradeHistoryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetUpgradeHistoryOutcome(outcome.GetError());
-  }
+  return GetUpgradeHistoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetUpgradeHistoryOutcomeCallable ElasticsearchServiceClient::GetUpgradeHistoryCallable(const GetUpgradeHistoryRequest& request) const
@@ -843,15 +914,7 @@ GetUpgradeStatusOutcome ElasticsearchServiceClient::GetUpgradeStatus(const GetUp
   ss << request.GetDomainName();
   ss << "/status";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetUpgradeStatusOutcome(GetUpgradeStatusResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetUpgradeStatusOutcome(outcome.GetError());
-  }
+  return GetUpgradeStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetUpgradeStatusOutcomeCallable ElasticsearchServiceClient::GetUpgradeStatusCallable(const GetUpgradeStatusRequest& request) const
@@ -876,15 +939,7 @@ ListDomainNamesOutcome ElasticsearchServiceClient::ListDomainNames() const
 {
   Aws::StringStream ss;
   ss << m_uri << "/2015-01-01/domain";
-  JsonOutcome outcome = MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, "ListDomainNames");
-  if(outcome.IsSuccess())
-  {
-    return ListDomainNamesOutcome(ListDomainNamesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListDomainNamesOutcome(outcome.GetError());
-  }
+  return ListDomainNamesOutcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, "ListDomainNames"));
 }
 
 ListDomainNamesOutcomeCallable ElasticsearchServiceClient::ListDomainNamesCallable() const
@@ -918,15 +973,7 @@ ListDomainsForPackageOutcome ElasticsearchServiceClient::ListDomainsForPackage(c
   ss << request.GetPackageID();
   ss << "/domains";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListDomainsForPackageOutcome(ListDomainsForPackageResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListDomainsForPackageOutcome(outcome.GetError());
-  }
+  return ListDomainsForPackageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDomainsForPackageOutcomeCallable ElasticsearchServiceClient::ListDomainsForPackageCallable(const ListDomainsForPackageRequest& request) const
@@ -959,15 +1006,7 @@ ListElasticsearchInstanceTypesOutcome ElasticsearchServiceClient::ListElasticsea
   ss << "/2015-01-01/es/instanceTypes/";
   ss << request.GetElasticsearchVersion();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListElasticsearchInstanceTypesOutcome(ListElasticsearchInstanceTypesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListElasticsearchInstanceTypesOutcome(outcome.GetError());
-  }
+  return ListElasticsearchInstanceTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListElasticsearchInstanceTypesOutcomeCallable ElasticsearchServiceClient::ListElasticsearchInstanceTypesCallable(const ListElasticsearchInstanceTypesRequest& request) const
@@ -994,15 +1033,7 @@ ListElasticsearchVersionsOutcome ElasticsearchServiceClient::ListElasticsearchVe
   Aws::StringStream ss;
   ss << "/2015-01-01/es/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListElasticsearchVersionsOutcome(ListElasticsearchVersionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListElasticsearchVersionsOutcome(outcome.GetError());
-  }
+  return ListElasticsearchVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListElasticsearchVersionsOutcomeCallable ElasticsearchServiceClient::ListElasticsearchVersionsCallable(const ListElasticsearchVersionsRequest& request) const
@@ -1036,15 +1067,7 @@ ListPackagesForDomainOutcome ElasticsearchServiceClient::ListPackagesForDomain(c
   ss << request.GetDomainName();
   ss << "/packages";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListPackagesForDomainOutcome(ListPackagesForDomainResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListPackagesForDomainOutcome(outcome.GetError());
-  }
+  return ListPackagesForDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListPackagesForDomainOutcomeCallable ElasticsearchServiceClient::ListPackagesForDomainCallable(const ListPackagesForDomainRequest& request) const
@@ -1076,15 +1099,7 @@ ListTagsOutcome ElasticsearchServiceClient::ListTags(const ListTagsRequest& requ
   Aws::StringStream ss;
   ss << "/2015-01-01/tags/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsOutcome(ListTagsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsOutcome(outcome.GetError());
-  }
+  return ListTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsOutcomeCallable ElasticsearchServiceClient::ListTagsCallable(const ListTagsRequest& request) const
@@ -1111,15 +1126,7 @@ PurchaseReservedElasticsearchInstanceOfferingOutcome ElasticsearchServiceClient:
   Aws::StringStream ss;
   ss << "/2015-01-01/es/purchaseReservedInstanceOffering";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PurchaseReservedElasticsearchInstanceOfferingOutcome(PurchaseReservedElasticsearchInstanceOfferingResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PurchaseReservedElasticsearchInstanceOfferingOutcome(outcome.GetError());
-  }
+  return PurchaseReservedElasticsearchInstanceOfferingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PurchaseReservedElasticsearchInstanceOfferingOutcomeCallable ElasticsearchServiceClient::PurchaseReservedElasticsearchInstanceOfferingCallable(const PurchaseReservedElasticsearchInstanceOfferingRequest& request) const
@@ -1140,21 +1147,47 @@ void ElasticsearchServiceClient::PurchaseReservedElasticsearchInstanceOfferingAs
   handler(this, request, PurchaseReservedElasticsearchInstanceOffering(request), context);
 }
 
+RejectInboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::RejectInboundCrossClusterSearchConnection(const RejectInboundCrossClusterSearchConnectionRequest& request) const
+{
+  if (!request.CrossClusterSearchConnectionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RejectInboundCrossClusterSearchConnection", "Required field: CrossClusterSearchConnectionId, is not set");
+    return RejectInboundCrossClusterSearchConnectionOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CrossClusterSearchConnectionId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2015-01-01/es/ccs/inboundConnection/";
+  ss << request.GetCrossClusterSearchConnectionId();
+  ss << "/reject";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return RejectInboundCrossClusterSearchConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+RejectInboundCrossClusterSearchConnectionOutcomeCallable ElasticsearchServiceClient::RejectInboundCrossClusterSearchConnectionCallable(const RejectInboundCrossClusterSearchConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RejectInboundCrossClusterSearchConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RejectInboundCrossClusterSearchConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticsearchServiceClient::RejectInboundCrossClusterSearchConnectionAsync(const RejectInboundCrossClusterSearchConnectionRequest& request, const RejectInboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RejectInboundCrossClusterSearchConnectionAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticsearchServiceClient::RejectInboundCrossClusterSearchConnectionAsyncHelper(const RejectInboundCrossClusterSearchConnectionRequest& request, const RejectInboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RejectInboundCrossClusterSearchConnection(request), context);
+}
+
 RemoveTagsOutcome ElasticsearchServiceClient::RemoveTags(const RemoveTagsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2015-01-01/tags-removal";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RemoveTagsOutcome(NoResult());
-  }
-  else
-  {
-    return RemoveTagsOutcome(outcome.GetError());
-  }
+  return RemoveTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RemoveTagsOutcomeCallable ElasticsearchServiceClient::RemoveTagsCallable(const RemoveTagsRequest& request) const
@@ -1181,15 +1214,7 @@ StartElasticsearchServiceSoftwareUpdateOutcome ElasticsearchServiceClient::Start
   Aws::StringStream ss;
   ss << "/2015-01-01/es/serviceSoftwareUpdate/start";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartElasticsearchServiceSoftwareUpdateOutcome(StartElasticsearchServiceSoftwareUpdateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartElasticsearchServiceSoftwareUpdateOutcome(outcome.GetError());
-  }
+  return StartElasticsearchServiceSoftwareUpdateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartElasticsearchServiceSoftwareUpdateOutcomeCallable ElasticsearchServiceClient::StartElasticsearchServiceSoftwareUpdateCallable(const StartElasticsearchServiceSoftwareUpdateRequest& request) const
@@ -1223,15 +1248,7 @@ UpdateElasticsearchDomainConfigOutcome ElasticsearchServiceClient::UpdateElastic
   ss << request.GetDomainName();
   ss << "/config";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateElasticsearchDomainConfigOutcome(UpdateElasticsearchDomainConfigResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateElasticsearchDomainConfigOutcome(outcome.GetError());
-  }
+  return UpdateElasticsearchDomainConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateElasticsearchDomainConfigOutcomeCallable ElasticsearchServiceClient::UpdateElasticsearchDomainConfigCallable(const UpdateElasticsearchDomainConfigRequest& request) const
@@ -1252,21 +1269,40 @@ void ElasticsearchServiceClient::UpdateElasticsearchDomainConfigAsyncHelper(cons
   handler(this, request, UpdateElasticsearchDomainConfig(request), context);
 }
 
+UpdatePackageOutcome ElasticsearchServiceClient::UpdatePackage(const UpdatePackageRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2015-01-01/packages/update";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdatePackageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdatePackageOutcomeCallable ElasticsearchServiceClient::UpdatePackageCallable(const UpdatePackageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePackage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticsearchServiceClient::UpdatePackageAsync(const UpdatePackageRequest& request, const UpdatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdatePackageAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticsearchServiceClient::UpdatePackageAsyncHelper(const UpdatePackageRequest& request, const UpdatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdatePackage(request), context);
+}
+
 UpgradeElasticsearchDomainOutcome ElasticsearchServiceClient::UpgradeElasticsearchDomain(const UpgradeElasticsearchDomainRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2015-01-01/es/upgradeDomain";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpgradeElasticsearchDomainOutcome(UpgradeElasticsearchDomainResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpgradeElasticsearchDomainOutcome(outcome.GetError());
-  }
+  return UpgradeElasticsearchDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpgradeElasticsearchDomainOutcomeCallable ElasticsearchServiceClient::UpgradeElasticsearchDomainCallable(const UpgradeElasticsearchDomainRequest& request) const

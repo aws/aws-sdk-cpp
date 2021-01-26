@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/fsx/FSx_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/fsx/model/WindowsDeploymentType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/fsx/model/FileSystemMaintenanceOperation.h>
+#include <aws/fsx/model/Alias.h>
 #include <utility>
 
 namespace Aws
@@ -575,42 +566,58 @@ namespace Model
 
 
     /**
-     * <p>The preferred time to perform weekly maintenance, in the UTC time zone.</p>
+     * <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in
+     * the UTC time zone. d is the weekday number, from 1 through 7, beginning with
+     * Monday and ending with Sunday.</p>
      */
     inline const Aws::String& GetWeeklyMaintenanceStartTime() const{ return m_weeklyMaintenanceStartTime; }
 
     /**
-     * <p>The preferred time to perform weekly maintenance, in the UTC time zone.</p>
+     * <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in
+     * the UTC time zone. d is the weekday number, from 1 through 7, beginning with
+     * Monday and ending with Sunday.</p>
      */
     inline bool WeeklyMaintenanceStartTimeHasBeenSet() const { return m_weeklyMaintenanceStartTimeHasBeenSet; }
 
     /**
-     * <p>The preferred time to perform weekly maintenance, in the UTC time zone.</p>
+     * <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in
+     * the UTC time zone. d is the weekday number, from 1 through 7, beginning with
+     * Monday and ending with Sunday.</p>
      */
     inline void SetWeeklyMaintenanceStartTime(const Aws::String& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = value; }
 
     /**
-     * <p>The preferred time to perform weekly maintenance, in the UTC time zone.</p>
+     * <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in
+     * the UTC time zone. d is the weekday number, from 1 through 7, beginning with
+     * Monday and ending with Sunday.</p>
      */
     inline void SetWeeklyMaintenanceStartTime(Aws::String&& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = std::move(value); }
 
     /**
-     * <p>The preferred time to perform weekly maintenance, in the UTC time zone.</p>
+     * <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in
+     * the UTC time zone. d is the weekday number, from 1 through 7, beginning with
+     * Monday and ending with Sunday.</p>
      */
     inline void SetWeeklyMaintenanceStartTime(const char* value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime.assign(value); }
 
     /**
-     * <p>The preferred time to perform weekly maintenance, in the UTC time zone.</p>
+     * <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in
+     * the UTC time zone. d is the weekday number, from 1 through 7, beginning with
+     * Monday and ending with Sunday.</p>
      */
     inline WindowsFileSystemConfiguration& WithWeeklyMaintenanceStartTime(const Aws::String& value) { SetWeeklyMaintenanceStartTime(value); return *this;}
 
     /**
-     * <p>The preferred time to perform weekly maintenance, in the UTC time zone.</p>
+     * <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in
+     * the UTC time zone. d is the weekday number, from 1 through 7, beginning with
+     * Monday and ending with Sunday.</p>
      */
     inline WindowsFileSystemConfiguration& WithWeeklyMaintenanceStartTime(Aws::String&& value) { SetWeeklyMaintenanceStartTime(std::move(value)); return *this;}
 
     /**
-     * <p>The preferred time to perform weekly maintenance, in the UTC time zone.</p>
+     * <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in
+     * the UTC time zone. d is the weekday number, from 1 through 7, beginning with
+     * Monday and ending with Sunday.</p>
      */
     inline WindowsFileSystemConfiguration& WithWeeklyMaintenanceStartTime(const char* value) { SetWeeklyMaintenanceStartTime(value); return *this;}
 
@@ -658,28 +665,28 @@ namespace Model
 
     /**
      * <p>The number of days to retain automatic backups. Setting this to 0 disables
-     * automatic backups. You can retain automatic backups for a maximum of 35
+     * automatic backups. You can retain automatic backups for a maximum of 90
      * days.</p>
      */
     inline int GetAutomaticBackupRetentionDays() const{ return m_automaticBackupRetentionDays; }
 
     /**
      * <p>The number of days to retain automatic backups. Setting this to 0 disables
-     * automatic backups. You can retain automatic backups for a maximum of 35
+     * automatic backups. You can retain automatic backups for a maximum of 90
      * days.</p>
      */
     inline bool AutomaticBackupRetentionDaysHasBeenSet() const { return m_automaticBackupRetentionDaysHasBeenSet; }
 
     /**
      * <p>The number of days to retain automatic backups. Setting this to 0 disables
-     * automatic backups. You can retain automatic backups for a maximum of 35
+     * automatic backups. You can retain automatic backups for a maximum of 90
      * days.</p>
      */
     inline void SetAutomaticBackupRetentionDays(int value) { m_automaticBackupRetentionDaysHasBeenSet = true; m_automaticBackupRetentionDays = value; }
 
     /**
      * <p>The number of days to retain automatic backups. Setting this to 0 disables
-     * automatic backups. You can retain automatic backups for a maximum of 35
+     * automatic backups. You can retain automatic backups for a maximum of 90
      * days.</p>
      */
     inline WindowsFileSystemConfiguration& WithAutomaticBackupRetentionDays(int value) { SetAutomaticBackupRetentionDays(value); return *this;}
@@ -729,6 +736,31 @@ namespace Model
      */
     inline WindowsFileSystemConfiguration& WithCopyTagsToBackups(bool value) { SetCopyTagsToBackups(value); return *this;}
 
+
+    
+    inline const Aws::Vector<Alias>& GetAliases() const{ return m_aliases; }
+
+    
+    inline bool AliasesHasBeenSet() const { return m_aliasesHasBeenSet; }
+
+    
+    inline void SetAliases(const Aws::Vector<Alias>& value) { m_aliasesHasBeenSet = true; m_aliases = value; }
+
+    
+    inline void SetAliases(Aws::Vector<Alias>&& value) { m_aliasesHasBeenSet = true; m_aliases = std::move(value); }
+
+    
+    inline WindowsFileSystemConfiguration& WithAliases(const Aws::Vector<Alias>& value) { SetAliases(value); return *this;}
+
+    
+    inline WindowsFileSystemConfiguration& WithAliases(Aws::Vector<Alias>&& value) { SetAliases(std::move(value)); return *this;}
+
+    
+    inline WindowsFileSystemConfiguration& AddAliases(const Alias& value) { m_aliasesHasBeenSet = true; m_aliases.push_back(value); return *this; }
+
+    
+    inline WindowsFileSystemConfiguration& AddAliases(Alias&& value) { m_aliasesHasBeenSet = true; m_aliases.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_activeDirectoryId;
@@ -766,6 +798,9 @@ namespace Model
 
     bool m_copyTagsToBackups;
     bool m_copyTagsToBackupsHasBeenSet;
+
+    Aws::Vector<Alias> m_aliases;
+    bool m_aliasesHasBeenSet;
   };
 
 } // namespace Model

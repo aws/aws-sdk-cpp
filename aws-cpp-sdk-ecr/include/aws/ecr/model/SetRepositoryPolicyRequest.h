@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecr/ECR_EXPORTS.h>
@@ -137,72 +127,72 @@ namespace Model
     /**
      * <p>The JSON repository policy text to apply to the repository. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicyExamples.html">Amazon
-     * ECR Repository Policy Examples</a> in the <i>Amazon Elastic Container Registry
-     * User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon
+     * ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetPolicyText() const{ return m_policyText; }
 
     /**
      * <p>The JSON repository policy text to apply to the repository. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicyExamples.html">Amazon
-     * ECR Repository Policy Examples</a> in the <i>Amazon Elastic Container Registry
-     * User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon
+     * ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User
+     * Guide</i>.</p>
      */
     inline bool PolicyTextHasBeenSet() const { return m_policyTextHasBeenSet; }
 
     /**
      * <p>The JSON repository policy text to apply to the repository. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicyExamples.html">Amazon
-     * ECR Repository Policy Examples</a> in the <i>Amazon Elastic Container Registry
-     * User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon
+     * ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User
+     * Guide</i>.</p>
      */
     inline void SetPolicyText(const Aws::String& value) { m_policyTextHasBeenSet = true; m_policyText = value; }
 
     /**
      * <p>The JSON repository policy text to apply to the repository. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicyExamples.html">Amazon
-     * ECR Repository Policy Examples</a> in the <i>Amazon Elastic Container Registry
-     * User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon
+     * ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User
+     * Guide</i>.</p>
      */
     inline void SetPolicyText(Aws::String&& value) { m_policyTextHasBeenSet = true; m_policyText = std::move(value); }
 
     /**
      * <p>The JSON repository policy text to apply to the repository. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicyExamples.html">Amazon
-     * ECR Repository Policy Examples</a> in the <i>Amazon Elastic Container Registry
-     * User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon
+     * ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User
+     * Guide</i>.</p>
      */
     inline void SetPolicyText(const char* value) { m_policyTextHasBeenSet = true; m_policyText.assign(value); }
 
     /**
      * <p>The JSON repository policy text to apply to the repository. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicyExamples.html">Amazon
-     * ECR Repository Policy Examples</a> in the <i>Amazon Elastic Container Registry
-     * User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon
+     * ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User
+     * Guide</i>.</p>
      */
     inline SetRepositoryPolicyRequest& WithPolicyText(const Aws::String& value) { SetPolicyText(value); return *this;}
 
     /**
      * <p>The JSON repository policy text to apply to the repository. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicyExamples.html">Amazon
-     * ECR Repository Policy Examples</a> in the <i>Amazon Elastic Container Registry
-     * User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon
+     * ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User
+     * Guide</i>.</p>
      */
     inline SetRepositoryPolicyRequest& WithPolicyText(Aws::String&& value) { SetPolicyText(std::move(value)); return *this;}
 
     /**
      * <p>The JSON repository policy text to apply to the repository. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicyExamples.html">Amazon
-     * ECR Repository Policy Examples</a> in the <i>Amazon Elastic Container Registry
-     * User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon
+     * ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User
+     * Guide</i>.</p>
      */
     inline SetRepositoryPolicyRequest& WithPolicyText(const char* value) { SetPolicyText(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -62,7 +52,7 @@ static const char* ALLOCATION_TAG = "ElasticTranscoderClient";
 ElasticTranscoderClient::ElasticTranscoderClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ElasticTranscoderErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -72,7 +62,7 @@ ElasticTranscoderClient::ElasticTranscoderClient(const Client::ClientConfigurati
 ElasticTranscoderClient::ElasticTranscoderClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ElasticTranscoderErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -83,7 +73,7 @@ ElasticTranscoderClient::ElasticTranscoderClient(const std::shared_ptr<AWSCreden
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ElasticTranscoderErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -96,6 +86,7 @@ ElasticTranscoderClient::~ElasticTranscoderClient()
 
 void ElasticTranscoderClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Elastic Transcoder");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -131,15 +122,7 @@ CancelJobOutcome ElasticTranscoderClient::CancelJob(const CancelJobRequest& requ
   ss << "/2012-09-25/jobs/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CancelJobOutcome(CancelJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CancelJobOutcome(outcome.GetError());
-  }
+  return CancelJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 CancelJobOutcomeCallable ElasticTranscoderClient::CancelJobCallable(const CancelJobRequest& request) const
@@ -166,15 +149,7 @@ CreateJobOutcome ElasticTranscoderClient::CreateJob(const CreateJobRequest& requ
   Aws::StringStream ss;
   ss << "/2012-09-25/jobs";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateJobOutcome(CreateJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateJobOutcome(outcome.GetError());
-  }
+  return CreateJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateJobOutcomeCallable ElasticTranscoderClient::CreateJobCallable(const CreateJobRequest& request) const
@@ -201,15 +176,7 @@ CreatePipelineOutcome ElasticTranscoderClient::CreatePipeline(const CreatePipeli
   Aws::StringStream ss;
   ss << "/2012-09-25/pipelines";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreatePipelineOutcome(CreatePipelineResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreatePipelineOutcome(outcome.GetError());
-  }
+  return CreatePipelineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreatePipelineOutcomeCallable ElasticTranscoderClient::CreatePipelineCallable(const CreatePipelineRequest& request) const
@@ -236,15 +203,7 @@ CreatePresetOutcome ElasticTranscoderClient::CreatePreset(const CreatePresetRequ
   Aws::StringStream ss;
   ss << "/2012-09-25/presets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreatePresetOutcome(CreatePresetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreatePresetOutcome(outcome.GetError());
-  }
+  return CreatePresetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreatePresetOutcomeCallable ElasticTranscoderClient::CreatePresetCallable(const CreatePresetRequest& request) const
@@ -277,15 +236,7 @@ DeletePipelineOutcome ElasticTranscoderClient::DeletePipeline(const DeletePipeli
   ss << "/2012-09-25/pipelines/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeletePipelineOutcome(DeletePipelineResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeletePipelineOutcome(outcome.GetError());
-  }
+  return DeletePipelineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeletePipelineOutcomeCallable ElasticTranscoderClient::DeletePipelineCallable(const DeletePipelineRequest& request) const
@@ -318,15 +269,7 @@ DeletePresetOutcome ElasticTranscoderClient::DeletePreset(const DeletePresetRequ
   ss << "/2012-09-25/presets/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeletePresetOutcome(DeletePresetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeletePresetOutcome(outcome.GetError());
-  }
+  return DeletePresetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeletePresetOutcomeCallable ElasticTranscoderClient::DeletePresetCallable(const DeletePresetRequest& request) const
@@ -359,15 +302,7 @@ ListJobsByPipelineOutcome ElasticTranscoderClient::ListJobsByPipeline(const List
   ss << "/2012-09-25/jobsByPipeline/";
   ss << request.GetPipelineId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListJobsByPipelineOutcome(ListJobsByPipelineResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListJobsByPipelineOutcome(outcome.GetError());
-  }
+  return ListJobsByPipelineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListJobsByPipelineOutcomeCallable ElasticTranscoderClient::ListJobsByPipelineCallable(const ListJobsByPipelineRequest& request) const
@@ -400,15 +335,7 @@ ListJobsByStatusOutcome ElasticTranscoderClient::ListJobsByStatus(const ListJobs
   ss << "/2012-09-25/jobsByStatus/";
   ss << request.GetStatus();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListJobsByStatusOutcome(ListJobsByStatusResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListJobsByStatusOutcome(outcome.GetError());
-  }
+  return ListJobsByStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListJobsByStatusOutcomeCallable ElasticTranscoderClient::ListJobsByStatusCallable(const ListJobsByStatusRequest& request) const
@@ -435,15 +362,7 @@ ListPipelinesOutcome ElasticTranscoderClient::ListPipelines(const ListPipelinesR
   Aws::StringStream ss;
   ss << "/2012-09-25/pipelines";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListPipelinesOutcome(ListPipelinesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListPipelinesOutcome(outcome.GetError());
-  }
+  return ListPipelinesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListPipelinesOutcomeCallable ElasticTranscoderClient::ListPipelinesCallable(const ListPipelinesRequest& request) const
@@ -470,15 +389,7 @@ ListPresetsOutcome ElasticTranscoderClient::ListPresets(const ListPresetsRequest
   Aws::StringStream ss;
   ss << "/2012-09-25/presets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListPresetsOutcome(ListPresetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListPresetsOutcome(outcome.GetError());
-  }
+  return ListPresetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListPresetsOutcomeCallable ElasticTranscoderClient::ListPresetsCallable(const ListPresetsRequest& request) const
@@ -511,15 +422,7 @@ ReadJobOutcome ElasticTranscoderClient::ReadJob(const ReadJobRequest& request) c
   ss << "/2012-09-25/jobs/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ReadJobOutcome(ReadJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ReadJobOutcome(outcome.GetError());
-  }
+  return ReadJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ReadJobOutcomeCallable ElasticTranscoderClient::ReadJobCallable(const ReadJobRequest& request) const
@@ -552,15 +455,7 @@ ReadPipelineOutcome ElasticTranscoderClient::ReadPipeline(const ReadPipelineRequ
   ss << "/2012-09-25/pipelines/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ReadPipelineOutcome(ReadPipelineResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ReadPipelineOutcome(outcome.GetError());
-  }
+  return ReadPipelineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ReadPipelineOutcomeCallable ElasticTranscoderClient::ReadPipelineCallable(const ReadPipelineRequest& request) const
@@ -593,15 +488,7 @@ ReadPresetOutcome ElasticTranscoderClient::ReadPreset(const ReadPresetRequest& r
   ss << "/2012-09-25/presets/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ReadPresetOutcome(ReadPresetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ReadPresetOutcome(outcome.GetError());
-  }
+  return ReadPresetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ReadPresetOutcomeCallable ElasticTranscoderClient::ReadPresetCallable(const ReadPresetRequest& request) const
@@ -634,15 +521,7 @@ UpdatePipelineOutcome ElasticTranscoderClient::UpdatePipeline(const UpdatePipeli
   ss << "/2012-09-25/pipelines/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdatePipelineOutcome(UpdatePipelineResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdatePipelineOutcome(outcome.GetError());
-  }
+  return UpdatePipelineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdatePipelineOutcomeCallable ElasticTranscoderClient::UpdatePipelineCallable(const UpdatePipelineRequest& request) const
@@ -676,15 +555,7 @@ UpdatePipelineNotificationsOutcome ElasticTranscoderClient::UpdatePipelineNotifi
   ss << request.GetId();
   ss << "/notifications";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdatePipelineNotificationsOutcome(UpdatePipelineNotificationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdatePipelineNotificationsOutcome(outcome.GetError());
-  }
+  return UpdatePipelineNotificationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdatePipelineNotificationsOutcomeCallable ElasticTranscoderClient::UpdatePipelineNotificationsCallable(const UpdatePipelineNotificationsRequest& request) const
@@ -718,15 +589,7 @@ UpdatePipelineStatusOutcome ElasticTranscoderClient::UpdatePipelineStatus(const 
   ss << request.GetId();
   ss << "/status";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdatePipelineStatusOutcome(UpdatePipelineStatusResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdatePipelineStatusOutcome(outcome.GetError());
-  }
+  return UpdatePipelineStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdatePipelineStatusOutcomeCallable ElasticTranscoderClient::UpdatePipelineStatusCallable(const UpdatePipelineStatusRequest& request) const

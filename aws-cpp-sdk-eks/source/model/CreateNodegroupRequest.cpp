@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/eks/model/CreateNodegroupRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -38,6 +28,9 @@ CreateNodegroupRequest::CreateNodegroupRequest() :
     m_tagsHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
+    m_launchTemplateHasBeenSet(false),
+    m_capacityType(CapacityTypes::NOT_SET),
+    m_capacityTypeHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_releaseVersionHasBeenSet(false)
 {
@@ -130,6 +123,17 @@ Aws::String CreateNodegroupRequest::SerializePayload() const
   {
    payload.WithString("clientRequestToken", m_clientRequestToken);
 
+  }
+
+  if(m_launchTemplateHasBeenSet)
+  {
+   payload.WithObject("launchTemplate", m_launchTemplate.Jsonize());
+
+  }
+
+  if(m_capacityTypeHasBeenSet)
+  {
+   payload.WithString("capacityType", CapacityTypesMapper::GetNameForCapacityTypes(m_capacityType));
   }
 
   if(m_versionHasBeenSet)

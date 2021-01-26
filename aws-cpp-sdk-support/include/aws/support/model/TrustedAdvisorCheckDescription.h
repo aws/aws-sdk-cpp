@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/support/Support_EXPORTS.h>
@@ -133,49 +123,49 @@ namespace Model
 
     /**
      * <p>The description of the Trusted Advisor check, which includes the alert
-     * criteria and recommended actions (contains HTML markup).</p>
+     * criteria and recommended operations (contains HTML markup).</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
      * <p>The description of the Trusted Advisor check, which includes the alert
-     * criteria and recommended actions (contains HTML markup).</p>
+     * criteria and recommended operations (contains HTML markup).</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the Trusted Advisor check, which includes the alert
-     * criteria and recommended actions (contains HTML markup).</p>
+     * criteria and recommended operations (contains HTML markup).</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
      * <p>The description of the Trusted Advisor check, which includes the alert
-     * criteria and recommended actions (contains HTML markup).</p>
+     * criteria and recommended operations (contains HTML markup).</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The description of the Trusted Advisor check, which includes the alert
-     * criteria and recommended actions (contains HTML markup).</p>
+     * criteria and recommended operations (contains HTML markup).</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
      * <p>The description of the Trusted Advisor check, which includes the alert
-     * criteria and recommended actions (contains HTML markup).</p>
+     * criteria and recommended operations (contains HTML markup).</p>
      */
     inline TrustedAdvisorCheckDescription& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
      * <p>The description of the Trusted Advisor check, which includes the alert
-     * criteria and recommended actions (contains HTML markup).</p>
+     * criteria and recommended operations (contains HTML markup).</p>
      */
     inline TrustedAdvisorCheckDescription& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of the Trusted Advisor check, which includes the alert
-     * criteria and recommended actions (contains HTML markup).</p>
+     * criteria and recommended operations (contains HTML markup).</p>
      */
     inline TrustedAdvisorCheckDescription& WithDescription(const char* value) { SetDescription(value); return *this;}
 

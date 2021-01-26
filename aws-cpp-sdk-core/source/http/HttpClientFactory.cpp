@@ -1,18 +1,8 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  * 
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  * 
-  *  http://aws.amazon.com/apache2.0
-  * 
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
-#define AWS_DISABLE_DEPRECATION
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
 #include <aws/core/http/HttpClientFactory.h>
 
 #if ENABLE_CURL_CLIENT
@@ -44,7 +34,11 @@ namespace Aws
 {
     namespace Http
     {
-        static std::shared_ptr<HttpClientFactory> s_HttpClientFactory(nullptr);
+        static std::shared_ptr<HttpClientFactory>& GetHttpClientFactory()
+        {
+            static std::shared_ptr<HttpClientFactory> s_HttpClientFactory(nullptr);
+            return s_HttpClientFactory;
+        }
         static bool s_InitCleanupCurlFlag(false);
         static bool s_InstallSigPipeHandler(false);
 
@@ -166,46 +160,44 @@ namespace Aws
 
         void InitHttp()
         {
-            if(!s_HttpClientFactory)
+            if(!GetHttpClientFactory())
             {
-                s_HttpClientFactory = Aws::MakeShared<DefaultHttpClientFactory>(HTTP_CLIENT_FACTORY_ALLOCATION_TAG);
+                GetHttpClientFactory() = Aws::MakeShared<DefaultHttpClientFactory>(HTTP_CLIENT_FACTORY_ALLOCATION_TAG);
             }
-            s_HttpClientFactory->InitStaticState();
+            GetHttpClientFactory()->InitStaticState();
         }
 
         void CleanupHttp()
         {
-            if(s_HttpClientFactory)
+            if(GetHttpClientFactory())
             {
-                s_HttpClientFactory->CleanupStaticState();
-                s_HttpClientFactory = nullptr;
+                GetHttpClientFactory()->CleanupStaticState();
+                GetHttpClientFactory() = nullptr;
             }
         }
 
         void SetHttpClientFactory(const std::shared_ptr<HttpClientFactory>& factory)
         {
             CleanupHttp();
-            s_HttpClientFactory = factory;
+            GetHttpClientFactory() = factory;
         }
 
         std::shared_ptr<HttpClient> CreateHttpClient(const Aws::Client::ClientConfiguration& clientConfiguration)
         {
-            assert(s_HttpClientFactory);
-            return s_HttpClientFactory->CreateHttpClient(clientConfiguration);
+            assert(GetHttpClientFactory());
+            return GetHttpClientFactory()->CreateHttpClient(clientConfiguration);
         }
 
         std::shared_ptr<HttpRequest> CreateHttpRequest(const Aws::String& uri, HttpMethod method, const Aws::IOStreamFactory& streamFactory)
         {
-            assert(s_HttpClientFactory);
-            return s_HttpClientFactory->CreateHttpRequest(uri, method, streamFactory);
+            assert(GetHttpClientFactory());
+            return GetHttpClientFactory()->CreateHttpRequest(uri, method, streamFactory);
         }
 
         std::shared_ptr<HttpRequest> CreateHttpRequest(const URI& uri, HttpMethod method, const Aws::IOStreamFactory& streamFactory)
         {
-            assert(s_HttpClientFactory);
-            return s_HttpClientFactory->CreateHttpRequest(uri, method, streamFactory);
+            assert(GetHttpClientFactory());
+            return GetHttpClientFactory()->CreateHttpRequest(uri, method, streamFactory);
         }
     }
 }
-
-

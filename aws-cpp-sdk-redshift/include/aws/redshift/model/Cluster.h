@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/redshift/Redshift_EXPORTS.h>
@@ -2141,6 +2131,88 @@ namespace Model
      */
     inline Cluster& WithResizeInfo(ResizeInfo&& value) { SetResizeInfo(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Describes the status of the Availability Zone relocation operation.</p>
+     */
+    inline const Aws::String& GetAvailabilityZoneRelocationStatus() const{ return m_availabilityZoneRelocationStatus; }
+
+    /**
+     * <p>Describes the status of the Availability Zone relocation operation.</p>
+     */
+    inline bool AvailabilityZoneRelocationStatusHasBeenSet() const { return m_availabilityZoneRelocationStatusHasBeenSet; }
+
+    /**
+     * <p>Describes the status of the Availability Zone relocation operation.</p>
+     */
+    inline void SetAvailabilityZoneRelocationStatus(const Aws::String& value) { m_availabilityZoneRelocationStatusHasBeenSet = true; m_availabilityZoneRelocationStatus = value; }
+
+    /**
+     * <p>Describes the status of the Availability Zone relocation operation.</p>
+     */
+    inline void SetAvailabilityZoneRelocationStatus(Aws::String&& value) { m_availabilityZoneRelocationStatusHasBeenSet = true; m_availabilityZoneRelocationStatus = std::move(value); }
+
+    /**
+     * <p>Describes the status of the Availability Zone relocation operation.</p>
+     */
+    inline void SetAvailabilityZoneRelocationStatus(const char* value) { m_availabilityZoneRelocationStatusHasBeenSet = true; m_availabilityZoneRelocationStatus.assign(value); }
+
+    /**
+     * <p>Describes the status of the Availability Zone relocation operation.</p>
+     */
+    inline Cluster& WithAvailabilityZoneRelocationStatus(const Aws::String& value) { SetAvailabilityZoneRelocationStatus(value); return *this;}
+
+    /**
+     * <p>Describes the status of the Availability Zone relocation operation.</p>
+     */
+    inline Cluster& WithAvailabilityZoneRelocationStatus(Aws::String&& value) { SetAvailabilityZoneRelocationStatus(std::move(value)); return *this;}
+
+    /**
+     * <p>Describes the status of the Availability Zone relocation operation.</p>
+     */
+    inline Cluster& WithAvailabilityZoneRelocationStatus(const char* value) { SetAvailabilityZoneRelocationStatus(value); return *this;}
+
+
+    /**
+     * <p>The namespace Amazon Resource Name (ARN) of the cluster.</p>
+     */
+    inline const Aws::String& GetClusterNamespaceArn() const{ return m_clusterNamespaceArn; }
+
+    /**
+     * <p>The namespace Amazon Resource Name (ARN) of the cluster.</p>
+     */
+    inline bool ClusterNamespaceArnHasBeenSet() const { return m_clusterNamespaceArnHasBeenSet; }
+
+    /**
+     * <p>The namespace Amazon Resource Name (ARN) of the cluster.</p>
+     */
+    inline void SetClusterNamespaceArn(const Aws::String& value) { m_clusterNamespaceArnHasBeenSet = true; m_clusterNamespaceArn = value; }
+
+    /**
+     * <p>The namespace Amazon Resource Name (ARN) of the cluster.</p>
+     */
+    inline void SetClusterNamespaceArn(Aws::String&& value) { m_clusterNamespaceArnHasBeenSet = true; m_clusterNamespaceArn = std::move(value); }
+
+    /**
+     * <p>The namespace Amazon Resource Name (ARN) of the cluster.</p>
+     */
+    inline void SetClusterNamespaceArn(const char* value) { m_clusterNamespaceArnHasBeenSet = true; m_clusterNamespaceArn.assign(value); }
+
+    /**
+     * <p>The namespace Amazon Resource Name (ARN) of the cluster.</p>
+     */
+    inline Cluster& WithClusterNamespaceArn(const Aws::String& value) { SetClusterNamespaceArn(value); return *this;}
+
+    /**
+     * <p>The namespace Amazon Resource Name (ARN) of the cluster.</p>
+     */
+    inline Cluster& WithClusterNamespaceArn(Aws::String&& value) { SetClusterNamespaceArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The namespace Amazon Resource Name (ARN) of the cluster.</p>
+     */
+    inline Cluster& WithClusterNamespaceArn(const char* value) { SetClusterNamespaceArn(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -2280,6 +2352,12 @@ namespace Model
 
     ResizeInfo m_resizeInfo;
     bool m_resizeInfoHasBeenSet;
+
+    Aws::String m_availabilityZoneRelocationStatus;
+    bool m_availabilityZoneRelocationStatusHasBeenSet;
+
+    Aws::String m_clusterNamespaceArn;
+    bool m_clusterNamespaceArnHasBeenSet;
   };
 
 } // namespace Model

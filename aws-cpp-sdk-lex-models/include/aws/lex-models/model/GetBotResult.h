@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
@@ -162,6 +152,68 @@ namespace Model
      * <a>PutBot</a>.</p>
      */
     inline GetBotResult& AddIntents(Intent&& value) { m_intents.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Indicates whether the bot uses accuracy improvements. <code>true</code>
+     * indicates that the bot is using the improvements, otherwise,
+     * <code>false</code>.</p>
+     */
+    inline bool GetEnableModelImprovements() const{ return m_enableModelImprovements; }
+
+    /**
+     * <p>Indicates whether the bot uses accuracy improvements. <code>true</code>
+     * indicates that the bot is using the improvements, otherwise,
+     * <code>false</code>.</p>
+     */
+    inline void SetEnableModelImprovements(bool value) { m_enableModelImprovements = value; }
+
+    /**
+     * <p>Indicates whether the bot uses accuracy improvements. <code>true</code>
+     * indicates that the bot is using the improvements, otherwise,
+     * <code>false</code>.</p>
+     */
+    inline GetBotResult& WithEnableModelImprovements(bool value) { SetEnableModelImprovements(value); return *this;}
+
+
+    /**
+     * <p>The score that determines where Amazon Lex inserts the
+     * <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or
+     * both when returning alternative intents in a <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
+     * response. <code>AMAZON.FallbackIntent</code> is inserted if the confidence score
+     * for all intents is below this value. <code>AMAZON.KendraSearchIntent</code> is
+     * only inserted if it is configured for the bot.</p>
+     */
+    inline double GetNluIntentConfidenceThreshold() const{ return m_nluIntentConfidenceThreshold; }
+
+    /**
+     * <p>The score that determines where Amazon Lex inserts the
+     * <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or
+     * both when returning alternative intents in a <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
+     * response. <code>AMAZON.FallbackIntent</code> is inserted if the confidence score
+     * for all intents is below this value. <code>AMAZON.KendraSearchIntent</code> is
+     * only inserted if it is configured for the bot.</p>
+     */
+    inline void SetNluIntentConfidenceThreshold(double value) { m_nluIntentConfidenceThreshold = value; }
+
+    /**
+     * <p>The score that determines where Amazon Lex inserts the
+     * <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or
+     * both when returning alternative intents in a <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
+     * response. <code>AMAZON.FallbackIntent</code> is inserted if the confidence score
+     * for all intents is below this value. <code>AMAZON.KendraSearchIntent</code> is
+     * only inserted if it is configured for the bot.</p>
+     */
+    inline GetBotResult& WithNluIntentConfidenceThreshold(double value) { SetNluIntentConfidenceThreshold(value); return *this;}
 
 
     /**
@@ -668,6 +720,10 @@ namespace Model
     Aws::String m_description;
 
     Aws::Vector<Intent> m_intents;
+
+    bool m_enableModelImprovements;
+
+    double m_nluIntentConfidenceThreshold;
 
     Prompt m_clarificationPrompt;
 

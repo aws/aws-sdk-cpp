@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
@@ -236,32 +226,32 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether you want to import the data into SPICE.</p>
+     * <p>A value that indicates whether you want to import the data into SPICE.</p>
      */
     inline const DataSetImportMode& GetImportMode() const{ return m_importMode; }
 
     /**
-     * <p>Indicates whether you want to import the data into SPICE.</p>
+     * <p>A value that indicates whether you want to import the data into SPICE.</p>
      */
     inline bool ImportModeHasBeenSet() const { return m_importModeHasBeenSet; }
 
     /**
-     * <p>Indicates whether you want to import the data into SPICE.</p>
+     * <p>A value that indicates whether you want to import the data into SPICE.</p>
      */
     inline void SetImportMode(const DataSetImportMode& value) { m_importModeHasBeenSet = true; m_importMode = value; }
 
     /**
-     * <p>Indicates whether you want to import the data into SPICE.</p>
+     * <p>A value that indicates whether you want to import the data into SPICE.</p>
      */
     inline void SetImportMode(DataSetImportMode&& value) { m_importModeHasBeenSet = true; m_importMode = std::move(value); }
 
     /**
-     * <p>Indicates whether you want to import the data into SPICE.</p>
+     * <p>A value that indicates whether you want to import the data into SPICE.</p>
      */
     inline DataSetSummary& WithImportMode(const DataSetImportMode& value) { SetImportMode(value); return *this;}
 
     /**
-     * <p>Indicates whether you want to import the data into SPICE.</p>
+     * <p>A value that indicates whether you want to import the data into SPICE.</p>
      */
     inline DataSetSummary& WithImportMode(DataSetImportMode&& value) { SetImportMode(std::move(value)); return *this;}
 
@@ -296,6 +286,31 @@ namespace Model
      */
     inline DataSetSummary& WithRowLevelPermissionDataSet(RowLevelPermissionDataSet&& value) { SetRowLevelPermissionDataSet(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A value that indicates if the dataset has column level permission
+     * configured.</p>
+     */
+    inline bool GetColumnLevelPermissionRulesApplied() const{ return m_columnLevelPermissionRulesApplied; }
+
+    /**
+     * <p>A value that indicates if the dataset has column level permission
+     * configured.</p>
+     */
+    inline bool ColumnLevelPermissionRulesAppliedHasBeenSet() const { return m_columnLevelPermissionRulesAppliedHasBeenSet; }
+
+    /**
+     * <p>A value that indicates if the dataset has column level permission
+     * configured.</p>
+     */
+    inline void SetColumnLevelPermissionRulesApplied(bool value) { m_columnLevelPermissionRulesAppliedHasBeenSet = true; m_columnLevelPermissionRulesApplied = value; }
+
+    /**
+     * <p>A value that indicates if the dataset has column level permission
+     * configured.</p>
+     */
+    inline DataSetSummary& WithColumnLevelPermissionRulesApplied(bool value) { SetColumnLevelPermissionRulesApplied(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -318,6 +333,9 @@ namespace Model
 
     RowLevelPermissionDataSet m_rowLevelPermissionDataSet;
     bool m_rowLevelPermissionDataSetHasBeenSet;
+
+    bool m_columnLevelPermissionRulesApplied;
+    bool m_columnLevelPermissionRulesAppliedHasBeenSet;
   };
 
 } // namespace Model

@@ -1,20 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/wafv2/WAFV2_EXPORTS.h>
 
@@ -52,7 +43,7 @@ enum class WAFV2Errors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -72,6 +63,20 @@ enum class WAFV2Errors
   W_A_F_TAG_OPERATION_INTERNAL_ERROR,
   W_A_F_UNAVAILABLE_ENTITY
 };
+
+class AWS_WAFV2_API WAFV2Error : public Aws::Client::AWSError<WAFV2Errors>
+{
+public:
+  WAFV2Error() {}
+  WAFV2Error(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<WAFV2Errors>(rhs) {}
+  WAFV2Error(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<WAFV2Errors>(rhs) {}
+  WAFV2Error(const Aws::Client::AWSError<WAFV2Errors>& rhs) : Aws::Client::AWSError<WAFV2Errors>(rhs) {}
+  WAFV2Error(Aws::Client::AWSError<WAFV2Errors>&& rhs) : Aws::Client::AWSError<WAFV2Errors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace WAFV2ErrorMapper
 {
   AWS_WAFV2_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

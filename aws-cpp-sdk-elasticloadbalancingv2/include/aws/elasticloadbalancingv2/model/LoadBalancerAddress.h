@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
@@ -188,6 +178,47 @@ namespace Model
      */
     inline LoadBalancerAddress& WithPrivateIPv4Address(const char* value) { SetPrivateIPv4Address(value); return *this;}
 
+
+    /**
+     * <p>[Network Load Balancers] The IPv6 address.</p>
+     */
+    inline const Aws::String& GetIPv6Address() const{ return m_iPv6Address; }
+
+    /**
+     * <p>[Network Load Balancers] The IPv6 address.</p>
+     */
+    inline bool IPv6AddressHasBeenSet() const { return m_iPv6AddressHasBeenSet; }
+
+    /**
+     * <p>[Network Load Balancers] The IPv6 address.</p>
+     */
+    inline void SetIPv6Address(const Aws::String& value) { m_iPv6AddressHasBeenSet = true; m_iPv6Address = value; }
+
+    /**
+     * <p>[Network Load Balancers] The IPv6 address.</p>
+     */
+    inline void SetIPv6Address(Aws::String&& value) { m_iPv6AddressHasBeenSet = true; m_iPv6Address = std::move(value); }
+
+    /**
+     * <p>[Network Load Balancers] The IPv6 address.</p>
+     */
+    inline void SetIPv6Address(const char* value) { m_iPv6AddressHasBeenSet = true; m_iPv6Address.assign(value); }
+
+    /**
+     * <p>[Network Load Balancers] The IPv6 address.</p>
+     */
+    inline LoadBalancerAddress& WithIPv6Address(const Aws::String& value) { SetIPv6Address(value); return *this;}
+
+    /**
+     * <p>[Network Load Balancers] The IPv6 address.</p>
+     */
+    inline LoadBalancerAddress& WithIPv6Address(Aws::String&& value) { SetIPv6Address(std::move(value)); return *this;}
+
+    /**
+     * <p>[Network Load Balancers] The IPv6 address.</p>
+     */
+    inline LoadBalancerAddress& WithIPv6Address(const char* value) { SetIPv6Address(value); return *this;}
+
   private:
 
     Aws::String m_ipAddress;
@@ -198,6 +229,9 @@ namespace Model
 
     Aws::String m_privateIPv4Address;
     bool m_privateIPv4AddressHasBeenSet;
+
+    Aws::String m_iPv6Address;
+    bool m_iPv6AddressHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/redshift/Redshift_EXPORTS.h>
@@ -434,6 +424,55 @@ namespace Model
      * cluster.</p>
      */
     inline Snapshot& WithClusterVersion(const char* value) { SetClusterVersion(value); return *this;}
+
+
+    /**
+     * <p>The cluster version of the cluster used to create the snapshot. For example,
+     * 1.0.15503. </p>
+     */
+    inline const Aws::String& GetEngineFullVersion() const{ return m_engineFullVersion; }
+
+    /**
+     * <p>The cluster version of the cluster used to create the snapshot. For example,
+     * 1.0.15503. </p>
+     */
+    inline bool EngineFullVersionHasBeenSet() const { return m_engineFullVersionHasBeenSet; }
+
+    /**
+     * <p>The cluster version of the cluster used to create the snapshot. For example,
+     * 1.0.15503. </p>
+     */
+    inline void SetEngineFullVersion(const Aws::String& value) { m_engineFullVersionHasBeenSet = true; m_engineFullVersion = value; }
+
+    /**
+     * <p>The cluster version of the cluster used to create the snapshot. For example,
+     * 1.0.15503. </p>
+     */
+    inline void SetEngineFullVersion(Aws::String&& value) { m_engineFullVersionHasBeenSet = true; m_engineFullVersion = std::move(value); }
+
+    /**
+     * <p>The cluster version of the cluster used to create the snapshot. For example,
+     * 1.0.15503. </p>
+     */
+    inline void SetEngineFullVersion(const char* value) { m_engineFullVersionHasBeenSet = true; m_engineFullVersion.assign(value); }
+
+    /**
+     * <p>The cluster version of the cluster used to create the snapshot. For example,
+     * 1.0.15503. </p>
+     */
+    inline Snapshot& WithEngineFullVersion(const Aws::String& value) { SetEngineFullVersion(value); return *this;}
+
+    /**
+     * <p>The cluster version of the cluster used to create the snapshot. For example,
+     * 1.0.15503. </p>
+     */
+    inline Snapshot& WithEngineFullVersion(Aws::String&& value) { SetEngineFullVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The cluster version of the cluster used to create the snapshot. For example,
+     * 1.0.15503. </p>
+     */
+    inline Snapshot& WithEngineFullVersion(const char* value) { SetEngineFullVersion(value); return *this;}
 
 
     /**
@@ -1337,6 +1376,9 @@ namespace Model
 
     Aws::String m_clusterVersion;
     bool m_clusterVersionHasBeenSet;
+
+    Aws::String m_engineFullVersion;
+    bool m_engineFullVersionHasBeenSet;
 
     Aws::String m_snapshotType;
     bool m_snapshotTypeHasBeenSet;

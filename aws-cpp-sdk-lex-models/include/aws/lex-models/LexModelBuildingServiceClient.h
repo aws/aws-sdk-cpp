@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
@@ -131,45 +121,45 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
 
-        typedef Aws::Utils::Outcome<CreateBotVersionResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> CreateBotVersionOutcome;
-        typedef Aws::Utils::Outcome<CreateIntentVersionResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> CreateIntentVersionOutcome;
-        typedef Aws::Utils::Outcome<CreateSlotTypeVersionResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> CreateSlotTypeVersionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteBotOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteBotAliasOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteBotChannelAssociationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteBotVersionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteIntentOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteIntentVersionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteSlotTypeOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteSlotTypeVersionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteUtterancesOutcome;
-        typedef Aws::Utils::Outcome<GetBotResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetBotOutcome;
-        typedef Aws::Utils::Outcome<GetBotAliasResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetBotAliasOutcome;
-        typedef Aws::Utils::Outcome<GetBotAliasesResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetBotAliasesOutcome;
-        typedef Aws::Utils::Outcome<GetBotChannelAssociationResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetBotChannelAssociationOutcome;
-        typedef Aws::Utils::Outcome<GetBotChannelAssociationsResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetBotChannelAssociationsOutcome;
-        typedef Aws::Utils::Outcome<GetBotVersionsResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetBotVersionsOutcome;
-        typedef Aws::Utils::Outcome<GetBotsResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetBotsOutcome;
-        typedef Aws::Utils::Outcome<GetBuiltinIntentResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetBuiltinIntentOutcome;
-        typedef Aws::Utils::Outcome<GetBuiltinIntentsResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetBuiltinIntentsOutcome;
-        typedef Aws::Utils::Outcome<GetBuiltinSlotTypesResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetBuiltinSlotTypesOutcome;
-        typedef Aws::Utils::Outcome<GetExportResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetExportOutcome;
-        typedef Aws::Utils::Outcome<GetImportResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetImportOutcome;
-        typedef Aws::Utils::Outcome<GetIntentResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetIntentOutcome;
-        typedef Aws::Utils::Outcome<GetIntentVersionsResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetIntentVersionsOutcome;
-        typedef Aws::Utils::Outcome<GetIntentsResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetIntentsOutcome;
-        typedef Aws::Utils::Outcome<GetSlotTypeResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetSlotTypeOutcome;
-        typedef Aws::Utils::Outcome<GetSlotTypeVersionsResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetSlotTypeVersionsOutcome;
-        typedef Aws::Utils::Outcome<GetSlotTypesResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetSlotTypesOutcome;
-        typedef Aws::Utils::Outcome<GetUtterancesViewResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetUtterancesViewOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PutBotResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> PutBotOutcome;
-        typedef Aws::Utils::Outcome<PutBotAliasResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> PutBotAliasOutcome;
-        typedef Aws::Utils::Outcome<PutIntentResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> PutIntentOutcome;
-        typedef Aws::Utils::Outcome<PutSlotTypeResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> PutSlotTypeOutcome;
-        typedef Aws::Utils::Outcome<StartImportResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> StartImportOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<CreateBotVersionResult, LexModelBuildingServiceError> CreateBotVersionOutcome;
+        typedef Aws::Utils::Outcome<CreateIntentVersionResult, LexModelBuildingServiceError> CreateIntentVersionOutcome;
+        typedef Aws::Utils::Outcome<CreateSlotTypeVersionResult, LexModelBuildingServiceError> CreateSlotTypeVersionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, LexModelBuildingServiceError> DeleteBotOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, LexModelBuildingServiceError> DeleteBotAliasOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, LexModelBuildingServiceError> DeleteBotChannelAssociationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, LexModelBuildingServiceError> DeleteBotVersionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, LexModelBuildingServiceError> DeleteIntentOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, LexModelBuildingServiceError> DeleteIntentVersionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, LexModelBuildingServiceError> DeleteSlotTypeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, LexModelBuildingServiceError> DeleteSlotTypeVersionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, LexModelBuildingServiceError> DeleteUtterancesOutcome;
+        typedef Aws::Utils::Outcome<GetBotResult, LexModelBuildingServiceError> GetBotOutcome;
+        typedef Aws::Utils::Outcome<GetBotAliasResult, LexModelBuildingServiceError> GetBotAliasOutcome;
+        typedef Aws::Utils::Outcome<GetBotAliasesResult, LexModelBuildingServiceError> GetBotAliasesOutcome;
+        typedef Aws::Utils::Outcome<GetBotChannelAssociationResult, LexModelBuildingServiceError> GetBotChannelAssociationOutcome;
+        typedef Aws::Utils::Outcome<GetBotChannelAssociationsResult, LexModelBuildingServiceError> GetBotChannelAssociationsOutcome;
+        typedef Aws::Utils::Outcome<GetBotVersionsResult, LexModelBuildingServiceError> GetBotVersionsOutcome;
+        typedef Aws::Utils::Outcome<GetBotsResult, LexModelBuildingServiceError> GetBotsOutcome;
+        typedef Aws::Utils::Outcome<GetBuiltinIntentResult, LexModelBuildingServiceError> GetBuiltinIntentOutcome;
+        typedef Aws::Utils::Outcome<GetBuiltinIntentsResult, LexModelBuildingServiceError> GetBuiltinIntentsOutcome;
+        typedef Aws::Utils::Outcome<GetBuiltinSlotTypesResult, LexModelBuildingServiceError> GetBuiltinSlotTypesOutcome;
+        typedef Aws::Utils::Outcome<GetExportResult, LexModelBuildingServiceError> GetExportOutcome;
+        typedef Aws::Utils::Outcome<GetImportResult, LexModelBuildingServiceError> GetImportOutcome;
+        typedef Aws::Utils::Outcome<GetIntentResult, LexModelBuildingServiceError> GetIntentOutcome;
+        typedef Aws::Utils::Outcome<GetIntentVersionsResult, LexModelBuildingServiceError> GetIntentVersionsOutcome;
+        typedef Aws::Utils::Outcome<GetIntentsResult, LexModelBuildingServiceError> GetIntentsOutcome;
+        typedef Aws::Utils::Outcome<GetSlotTypeResult, LexModelBuildingServiceError> GetSlotTypeOutcome;
+        typedef Aws::Utils::Outcome<GetSlotTypeVersionsResult, LexModelBuildingServiceError> GetSlotTypeVersionsOutcome;
+        typedef Aws::Utils::Outcome<GetSlotTypesResult, LexModelBuildingServiceError> GetSlotTypesOutcome;
+        typedef Aws::Utils::Outcome<GetUtterancesViewResult, LexModelBuildingServiceError> GetUtterancesViewOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, LexModelBuildingServiceError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<PutBotResult, LexModelBuildingServiceError> PutBotOutcome;
+        typedef Aws::Utils::Outcome<PutBotAliasResult, LexModelBuildingServiceError> PutBotAliasOutcome;
+        typedef Aws::Utils::Outcome<PutIntentResult, LexModelBuildingServiceError> PutIntentOutcome;
+        typedef Aws::Utils::Outcome<PutSlotTypeResult, LexModelBuildingServiceError> PutSlotTypeOutcome;
+        typedef Aws::Utils::Outcome<StartImportResult, LexModelBuildingServiceError> StartImportOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, LexModelBuildingServiceError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, LexModelBuildingServiceError> UntagResourceOutcome;
 
         typedef std::future<CreateBotVersionOutcome> CreateBotVersionOutcomeCallable;
         typedef std::future<CreateIntentVersionOutcome> CreateIntentVersionOutcomeCallable;
@@ -286,16 +276,14 @@ namespace Model
 
         virtual ~LexModelBuildingServiceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Lex Model Building Service"; }
-
 
         /**
          * <p>Creates a new version of the bot based on the <code>$LATEST</code> version.
          * If the <code>$LATEST</code> version of this resource hasn't changed since you
          * created the last version, Amazon Lex doesn't create a new version. It returns
-         * the last created version.</p> <note> <p>You can update only the
+         * the last created version.</p>  <p>You can update only the
          * <code>$LATEST</code> version of the bot. You can't update the numbered versions
-         * that you create with the <code>CreateBotVersion</code> operation.</p> </note>
+         * that you create with the <code>CreateBotVersion</code> operation.</p> 
          * <p> When you create the first version of a bot, Amazon Lex sets the version to
          * 1. Subsequent versions increment by 1. For more information, see
          * <a>versioning-intro</a>. </p> <p> This operation requires permission for the
@@ -309,9 +297,9 @@ namespace Model
          * <p>Creates a new version of the bot based on the <code>$LATEST</code> version.
          * If the <code>$LATEST</code> version of this resource hasn't changed since you
          * created the last version, Amazon Lex doesn't create a new version. It returns
-         * the last created version.</p> <note> <p>You can update only the
+         * the last created version.</p>  <p>You can update only the
          * <code>$LATEST</code> version of the bot. You can't update the numbered versions
-         * that you create with the <code>CreateBotVersion</code> operation.</p> </note>
+         * that you create with the <code>CreateBotVersion</code> operation.</p> 
          * <p> When you create the first version of a bot, Amazon Lex sets the version to
          * 1. Subsequent versions increment by 1. For more information, see
          * <a>versioning-intro</a>. </p> <p> This operation requires permission for the
@@ -327,9 +315,9 @@ namespace Model
          * <p>Creates a new version of the bot based on the <code>$LATEST</code> version.
          * If the <code>$LATEST</code> version of this resource hasn't changed since you
          * created the last version, Amazon Lex doesn't create a new version. It returns
-         * the last created version.</p> <note> <p>You can update only the
+         * the last created version.</p>  <p>You can update only the
          * <code>$LATEST</code> version of the bot. You can't update the numbered versions
-         * that you create with the <code>CreateBotVersion</code> operation.</p> </note>
+         * that you create with the <code>CreateBotVersion</code> operation.</p> 
          * <p> When you create the first version of a bot, Amazon Lex sets the version to
          * 1. Subsequent versions increment by 1. For more information, see
          * <a>versioning-intro</a>. </p> <p> This operation requires permission for the
@@ -345,10 +333,10 @@ namespace Model
          * <p>Creates a new version of an intent based on the <code>$LATEST</code> version
          * of the intent. If the <code>$LATEST</code> version of this intent hasn't changed
          * since you last updated it, Amazon Lex doesn't create a new version. It returns
-         * the last version you created.</p> <note> <p>You can update only the
+         * the last version you created.</p>  <p>You can update only the
          * <code>$LATEST</code> version of the intent. You can't update the numbered
          * versions that you create with the <code>CreateIntentVersion</code>
-         * operation.</p> </note> <p> When you create a version of an intent, Amazon Lex
+         * operation.</p>  <p> When you create a version of an intent, Amazon Lex
          * sets the version to 1. Subsequent versions increment by 1. For more information,
          * see <a>versioning-intro</a>. </p> <p>This operation requires permissions to
          * perform the <code>lex:CreateIntentVersion</code> action. </p><p><h3>See
@@ -362,10 +350,10 @@ namespace Model
          * <p>Creates a new version of an intent based on the <code>$LATEST</code> version
          * of the intent. If the <code>$LATEST</code> version of this intent hasn't changed
          * since you last updated it, Amazon Lex doesn't create a new version. It returns
-         * the last version you created.</p> <note> <p>You can update only the
+         * the last version you created.</p>  <p>You can update only the
          * <code>$LATEST</code> version of the intent. You can't update the numbered
          * versions that you create with the <code>CreateIntentVersion</code>
-         * operation.</p> </note> <p> When you create a version of an intent, Amazon Lex
+         * operation.</p>  <p> When you create a version of an intent, Amazon Lex
          * sets the version to 1. Subsequent versions increment by 1. For more information,
          * see <a>versioning-intro</a>. </p> <p>This operation requires permissions to
          * perform the <code>lex:CreateIntentVersion</code> action. </p><p><h3>See
@@ -381,10 +369,10 @@ namespace Model
          * <p>Creates a new version of an intent based on the <code>$LATEST</code> version
          * of the intent. If the <code>$LATEST</code> version of this intent hasn't changed
          * since you last updated it, Amazon Lex doesn't create a new version. It returns
-         * the last version you created.</p> <note> <p>You can update only the
+         * the last version you created.</p>  <p>You can update only the
          * <code>$LATEST</code> version of the intent. You can't update the numbered
          * versions that you create with the <code>CreateIntentVersion</code>
-         * operation.</p> </note> <p> When you create a version of an intent, Amazon Lex
+         * operation.</p>  <p> When you create a version of an intent, Amazon Lex
          * sets the version to 1. Subsequent versions increment by 1. For more information,
          * see <a>versioning-intro</a>. </p> <p>This operation requires permissions to
          * perform the <code>lex:CreateIntentVersion</code> action. </p><p><h3>See
@@ -401,9 +389,9 @@ namespace Model
          * version of the specified slot type. If the <code>$LATEST</code> version of this
          * resource has not changed since the last version that you created, Amazon Lex
          * doesn't create a new version. It returns the last version that you created. </p>
-         * <note> <p>You can update only the <code>$LATEST</code> version of a slot type.
+         *  <p>You can update only the <code>$LATEST</code> version of a slot type.
          * You can't update the numbered versions that you create with the
-         * <code>CreateSlotTypeVersion</code> operation.</p> </note> <p>When you create a
+         * <code>CreateSlotTypeVersion</code> operation.</p>  <p>When you create a
          * version of a slot type, Amazon Lex sets the version to 1. Subsequent versions
          * increment by 1. For more information, see <a>versioning-intro</a>. </p> <p>This
          * operation requires permissions for the <code>lex:CreateSlotTypeVersion</code>
@@ -418,9 +406,9 @@ namespace Model
          * version of the specified slot type. If the <code>$LATEST</code> version of this
          * resource has not changed since the last version that you created, Amazon Lex
          * doesn't create a new version. It returns the last version that you created. </p>
-         * <note> <p>You can update only the <code>$LATEST</code> version of a slot type.
+         *  <p>You can update only the <code>$LATEST</code> version of a slot type.
          * You can't update the numbered versions that you create with the
-         * <code>CreateSlotTypeVersion</code> operation.</p> </note> <p>When you create a
+         * <code>CreateSlotTypeVersion</code> operation.</p>  <p>When you create a
          * version of a slot type, Amazon Lex sets the version to 1. Subsequent versions
          * increment by 1. For more information, see <a>versioning-intro</a>. </p> <p>This
          * operation requires permissions for the <code>lex:CreateSlotTypeVersion</code>
@@ -437,9 +425,9 @@ namespace Model
          * version of the specified slot type. If the <code>$LATEST</code> version of this
          * resource has not changed since the last version that you created, Amazon Lex
          * doesn't create a new version. It returns the last version that you created. </p>
-         * <note> <p>You can update only the <code>$LATEST</code> version of a slot type.
+         *  <p>You can update only the <code>$LATEST</code> version of a slot type.
          * You can't update the numbered versions that you create with the
-         * <code>CreateSlotTypeVersion</code> operation.</p> </note> <p>When you create a
+         * <code>CreateSlotTypeVersion</code> operation.</p>  <p>When you create a
          * version of a slot type, Amazon Lex sets the version to 1. Subsequent versions
          * increment by 1. For more information, see <a>versioning-intro</a>. </p> <p>This
          * operation requires permissions for the <code>lex:CreateSlotTypeVersion</code>
@@ -635,12 +623,12 @@ namespace Model
          * <a>DeleteIntentVersion</a> operation.</p> <p> You can delete a version of an
          * intent only if it is not referenced. To delete an intent that is referred to in
          * one or more bots (see <a>how-it-works</a>), you must remove those references
-         * first. </p> <note> <p> If you get the <code>ResourceInUseException</code>
+         * first. </p>  <p> If you get the <code>ResourceInUseException</code>
          * exception, it provides an example reference that shows where the intent is
          * referenced. To remove the reference to the intent, either update the bot or
          * delete it. If you get the same exception when you attempt to delete the intent
          * again, repeat until the intent has no references and the call to
-         * <code>DeleteIntent</code> is successful. </p> </note> <p> This operation
+         * <code>DeleteIntent</code> is successful. </p>  <p> This operation
          * requires permission for the <code>lex:DeleteIntent</code> action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntent">AWS
@@ -654,12 +642,12 @@ namespace Model
          * <a>DeleteIntentVersion</a> operation.</p> <p> You can delete a version of an
          * intent only if it is not referenced. To delete an intent that is referred to in
          * one or more bots (see <a>how-it-works</a>), you must remove those references
-         * first. </p> <note> <p> If you get the <code>ResourceInUseException</code>
+         * first. </p>  <p> If you get the <code>ResourceInUseException</code>
          * exception, it provides an example reference that shows where the intent is
          * referenced. To remove the reference to the intent, either update the bot or
          * delete it. If you get the same exception when you attempt to delete the intent
          * again, repeat until the intent has no references and the call to
-         * <code>DeleteIntent</code> is successful. </p> </note> <p> This operation
+         * <code>DeleteIntent</code> is successful. </p>  <p> This operation
          * requires permission for the <code>lex:DeleteIntent</code> action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntent">AWS
@@ -675,12 +663,12 @@ namespace Model
          * <a>DeleteIntentVersion</a> operation.</p> <p> You can delete a version of an
          * intent only if it is not referenced. To delete an intent that is referred to in
          * one or more bots (see <a>how-it-works</a>), you must remove those references
-         * first. </p> <note> <p> If you get the <code>ResourceInUseException</code>
+         * first. </p>  <p> If you get the <code>ResourceInUseException</code>
          * exception, it provides an example reference that shows where the intent is
          * referenced. To remove the reference to the intent, either update the bot or
          * delete it. If you get the same exception when you attempt to delete the intent
          * again, repeat until the intent has no references and the call to
-         * <code>DeleteIntent</code> is successful. </p> </note> <p> This operation
+         * <code>DeleteIntent</code> is successful. </p>  <p> This operation
          * requires permission for the <code>lex:DeleteIntent</code> action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntent">AWS
@@ -729,13 +717,13 @@ namespace Model
          * version. To delete a specific version of the slot type, use the
          * <a>DeleteSlotTypeVersion</a> operation.</p> <p> You can delete a version of a
          * slot type only if it is not referenced. To delete a slot type that is referred
-         * to in one or more intents, you must remove those references first. </p> <note>
+         * to in one or more intents, you must remove those references first. </p> 
          * <p> If you get the <code>ResourceInUseException</code> exception, the exception
          * provides an example reference that shows the intent where the slot type is
          * referenced. To remove the reference to the slot type, either update the intent
          * or delete it. If you get the same exception when you attempt to delete the slot
          * type again, repeat until the slot type has no references and the
-         * <code>DeleteSlotType</code> call is successful. </p> </note> <p>This operation
+         * <code>DeleteSlotType</code> call is successful. </p>  <p>This operation
          * requires permission for the <code>lex:DeleteSlotType</code>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotType">AWS
@@ -748,13 +736,13 @@ namespace Model
          * version. To delete a specific version of the slot type, use the
          * <a>DeleteSlotTypeVersion</a> operation.</p> <p> You can delete a version of a
          * slot type only if it is not referenced. To delete a slot type that is referred
-         * to in one or more intents, you must remove those references first. </p> <note>
+         * to in one or more intents, you must remove those references first. </p> 
          * <p> If you get the <code>ResourceInUseException</code> exception, the exception
          * provides an example reference that shows the intent where the slot type is
          * referenced. To remove the reference to the slot type, either update the intent
          * or delete it. If you get the same exception when you attempt to delete the slot
          * type again, repeat until the slot type has no references and the
-         * <code>DeleteSlotType</code> call is successful. </p> </note> <p>This operation
+         * <code>DeleteSlotType</code> call is successful. </p>  <p>This operation
          * requires permission for the <code>lex:DeleteSlotType</code>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotType">AWS
@@ -769,13 +757,13 @@ namespace Model
          * version. To delete a specific version of the slot type, use the
          * <a>DeleteSlotTypeVersion</a> operation.</p> <p> You can delete a version of a
          * slot type only if it is not referenced. To delete a slot type that is referred
-         * to in one or more intents, you must remove those references first. </p> <note>
+         * to in one or more intents, you must remove those references first. </p> 
          * <p> If you get the <code>ResourceInUseException</code> exception, the exception
          * provides an example reference that shows the intent where the slot type is
          * referenced. To remove the reference to the slot type, either update the intent
          * or delete it. If you get the same exception when you attempt to delete the slot
          * type again, repeat until the slot type has no references and the
-         * <code>DeleteSlotType</code> call is successful. </p> </note> <p>This operation
+         * <code>DeleteSlotType</code> call is successful. </p>  <p>This operation
          * requires permission for the <code>lex:DeleteSlotType</code>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotType">AWS

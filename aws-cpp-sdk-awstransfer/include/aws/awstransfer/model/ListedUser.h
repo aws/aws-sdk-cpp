@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/awstransfer/Transfer_EXPORTS.h>
@@ -50,50 +40,50 @@ namespace Model
 
 
     /**
-     * <p>The unique Amazon Resource Name (ARN) for the user that you want to learn
-     * about.</p>
+     * <p>Provides the unique Amazon Resource Name (ARN) for the user that you want to
+     * learn about.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The unique Amazon Resource Name (ARN) for the user that you want to learn
-     * about.</p>
+     * <p>Provides the unique Amazon Resource Name (ARN) for the user that you want to
+     * learn about.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The unique Amazon Resource Name (ARN) for the user that you want to learn
-     * about.</p>
+     * <p>Provides the unique Amazon Resource Name (ARN) for the user that you want to
+     * learn about.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The unique Amazon Resource Name (ARN) for the user that you want to learn
-     * about.</p>
+     * <p>Provides the unique Amazon Resource Name (ARN) for the user that you want to
+     * learn about.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The unique Amazon Resource Name (ARN) for the user that you want to learn
-     * about.</p>
+     * <p>Provides the unique Amazon Resource Name (ARN) for the user that you want to
+     * learn about.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The unique Amazon Resource Name (ARN) for the user that you want to learn
-     * about.</p>
+     * <p>Provides the unique Amazon Resource Name (ARN) for the user that you want to
+     * learn about.</p>
      */
     inline ListedUser& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The unique Amazon Resource Name (ARN) for the user that you want to learn
-     * about.</p>
+     * <p>Provides the unique Amazon Resource Name (ARN) for the user that you want to
+     * learn about.</p>
      */
     inline ListedUser& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The unique Amazon Resource Name (ARN) for the user that you want to learn
-     * about.</p>
+     * <p>Provides the unique Amazon Resource Name (ARN) for the user that you want to
+     * learn about.</p>
      */
     inline ListedUser& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -148,60 +138,60 @@ namespace Model
 
 
     /**
-     * <p>The type of landing directory (folder) you mapped for your users' home
-     * directory. If you set it to <code>PATH</code>, the user will see the absolute
-     * Amazon S3 bucket paths as is in their file transfer protocol clients. If you set
-     * it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <p>Specifies the type of landing directory (folder) you mapped for your users'
+     * home directory. If you set it to <code>PATH</code>, the user will see the
+     * absolute Amazon S3 bucket paths as is in their file transfer protocol clients.
+     * If you set it <code>LOGICAL</code>, you will need to provide mappings in the
      * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths
      * visible to your users.</p>
      */
     inline const HomeDirectoryType& GetHomeDirectoryType() const{ return m_homeDirectoryType; }
 
     /**
-     * <p>The type of landing directory (folder) you mapped for your users' home
-     * directory. If you set it to <code>PATH</code>, the user will see the absolute
-     * Amazon S3 bucket paths as is in their file transfer protocol clients. If you set
-     * it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <p>Specifies the type of landing directory (folder) you mapped for your users'
+     * home directory. If you set it to <code>PATH</code>, the user will see the
+     * absolute Amazon S3 bucket paths as is in their file transfer protocol clients.
+     * If you set it <code>LOGICAL</code>, you will need to provide mappings in the
      * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths
      * visible to your users.</p>
      */
     inline bool HomeDirectoryTypeHasBeenSet() const { return m_homeDirectoryTypeHasBeenSet; }
 
     /**
-     * <p>The type of landing directory (folder) you mapped for your users' home
-     * directory. If you set it to <code>PATH</code>, the user will see the absolute
-     * Amazon S3 bucket paths as is in their file transfer protocol clients. If you set
-     * it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <p>Specifies the type of landing directory (folder) you mapped for your users'
+     * home directory. If you set it to <code>PATH</code>, the user will see the
+     * absolute Amazon S3 bucket paths as is in their file transfer protocol clients.
+     * If you set it <code>LOGICAL</code>, you will need to provide mappings in the
      * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths
      * visible to your users.</p>
      */
     inline void SetHomeDirectoryType(const HomeDirectoryType& value) { m_homeDirectoryTypeHasBeenSet = true; m_homeDirectoryType = value; }
 
     /**
-     * <p>The type of landing directory (folder) you mapped for your users' home
-     * directory. If you set it to <code>PATH</code>, the user will see the absolute
-     * Amazon S3 bucket paths as is in their file transfer protocol clients. If you set
-     * it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <p>Specifies the type of landing directory (folder) you mapped for your users'
+     * home directory. If you set it to <code>PATH</code>, the user will see the
+     * absolute Amazon S3 bucket paths as is in their file transfer protocol clients.
+     * If you set it <code>LOGICAL</code>, you will need to provide mappings in the
      * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths
      * visible to your users.</p>
      */
     inline void SetHomeDirectoryType(HomeDirectoryType&& value) { m_homeDirectoryTypeHasBeenSet = true; m_homeDirectoryType = std::move(value); }
 
     /**
-     * <p>The type of landing directory (folder) you mapped for your users' home
-     * directory. If you set it to <code>PATH</code>, the user will see the absolute
-     * Amazon S3 bucket paths as is in their file transfer protocol clients. If you set
-     * it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <p>Specifies the type of landing directory (folder) you mapped for your users'
+     * home directory. If you set it to <code>PATH</code>, the user will see the
+     * absolute Amazon S3 bucket paths as is in their file transfer protocol clients.
+     * If you set it <code>LOGICAL</code>, you will need to provide mappings in the
      * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths
      * visible to your users.</p>
      */
     inline ListedUser& WithHomeDirectoryType(const HomeDirectoryType& value) { SetHomeDirectoryType(value); return *this;}
 
     /**
-     * <p>The type of landing directory (folder) you mapped for your users' home
-     * directory. If you set it to <code>PATH</code>, the user will see the absolute
-     * Amazon S3 bucket paths as is in their file transfer protocol clients. If you set
-     * it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <p>Specifies the type of landing directory (folder) you mapped for your users'
+     * home directory. If you set it to <code>PATH</code>, the user will see the
+     * absolute Amazon S3 bucket paths as is in their file transfer protocol clients.
+     * If you set it <code>LOGICAL</code>, you will need to provide mappings in the
      * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths
      * visible to your users.</p>
      */
@@ -209,144 +199,148 @@ namespace Model
 
 
     /**
-     * <p>The role in use by this user. A <i>role</i> is an AWS Identity and Access
-     * Management (IAM) entity that, in this case, allows a file transfer
-     * protocol-enabled server to act on a user's behalf. It allows the server to
-     * inherit the trust relationship that enables that user to perform file operations
-     * to their Amazon S3 bucket.</p>
+     * <p>Specifies the role that is in use by this user. A <i>role</i> is an AWS
+     * Identity and Access Management (IAM) entity that, in this case, allows a file
+     * transfer protocol-enabled server to act on a user's behalf. It allows the server
+     * to inherit the trust relationship that enables that user to perform file
+     * operations to their Amazon S3 bucket.</p>
      */
     inline const Aws::String& GetRole() const{ return m_role; }
 
     /**
-     * <p>The role in use by this user. A <i>role</i> is an AWS Identity and Access
-     * Management (IAM) entity that, in this case, allows a file transfer
-     * protocol-enabled server to act on a user's behalf. It allows the server to
-     * inherit the trust relationship that enables that user to perform file operations
-     * to their Amazon S3 bucket.</p>
+     * <p>Specifies the role that is in use by this user. A <i>role</i> is an AWS
+     * Identity and Access Management (IAM) entity that, in this case, allows a file
+     * transfer protocol-enabled server to act on a user's behalf. It allows the server
+     * to inherit the trust relationship that enables that user to perform file
+     * operations to their Amazon S3 bucket.</p>
      */
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
 
     /**
-     * <p>The role in use by this user. A <i>role</i> is an AWS Identity and Access
-     * Management (IAM) entity that, in this case, allows a file transfer
-     * protocol-enabled server to act on a user's behalf. It allows the server to
-     * inherit the trust relationship that enables that user to perform file operations
-     * to their Amazon S3 bucket.</p>
+     * <p>Specifies the role that is in use by this user. A <i>role</i> is an AWS
+     * Identity and Access Management (IAM) entity that, in this case, allows a file
+     * transfer protocol-enabled server to act on a user's behalf. It allows the server
+     * to inherit the trust relationship that enables that user to perform file
+     * operations to their Amazon S3 bucket.</p>
      */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
-     * <p>The role in use by this user. A <i>role</i> is an AWS Identity and Access
-     * Management (IAM) entity that, in this case, allows a file transfer
-     * protocol-enabled server to act on a user's behalf. It allows the server to
-     * inherit the trust relationship that enables that user to perform file operations
-     * to their Amazon S3 bucket.</p>
+     * <p>Specifies the role that is in use by this user. A <i>role</i> is an AWS
+     * Identity and Access Management (IAM) entity that, in this case, allows a file
+     * transfer protocol-enabled server to act on a user's behalf. It allows the server
+     * to inherit the trust relationship that enables that user to perform file
+     * operations to their Amazon S3 bucket.</p>
      */
     inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
     /**
-     * <p>The role in use by this user. A <i>role</i> is an AWS Identity and Access
-     * Management (IAM) entity that, in this case, allows a file transfer
-     * protocol-enabled server to act on a user's behalf. It allows the server to
-     * inherit the trust relationship that enables that user to perform file operations
-     * to their Amazon S3 bucket.</p>
+     * <p>Specifies the role that is in use by this user. A <i>role</i> is an AWS
+     * Identity and Access Management (IAM) entity that, in this case, allows a file
+     * transfer protocol-enabled server to act on a user's behalf. It allows the server
+     * to inherit the trust relationship that enables that user to perform file
+     * operations to their Amazon S3 bucket.</p>
      */
     inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
 
     /**
-     * <p>The role in use by this user. A <i>role</i> is an AWS Identity and Access
-     * Management (IAM) entity that, in this case, allows a file transfer
-     * protocol-enabled server to act on a user's behalf. It allows the server to
-     * inherit the trust relationship that enables that user to perform file operations
-     * to their Amazon S3 bucket.</p>
+     * <p>Specifies the role that is in use by this user. A <i>role</i> is an AWS
+     * Identity and Access Management (IAM) entity that, in this case, allows a file
+     * transfer protocol-enabled server to act on a user's behalf. It allows the server
+     * to inherit the trust relationship that enables that user to perform file
+     * operations to their Amazon S3 bucket.</p>
      */
     inline ListedUser& WithRole(const Aws::String& value) { SetRole(value); return *this;}
 
     /**
-     * <p>The role in use by this user. A <i>role</i> is an AWS Identity and Access
-     * Management (IAM) entity that, in this case, allows a file transfer
-     * protocol-enabled server to act on a user's behalf. It allows the server to
-     * inherit the trust relationship that enables that user to perform file operations
-     * to their Amazon S3 bucket.</p>
+     * <p>Specifies the role that is in use by this user. A <i>role</i> is an AWS
+     * Identity and Access Management (IAM) entity that, in this case, allows a file
+     * transfer protocol-enabled server to act on a user's behalf. It allows the server
+     * to inherit the trust relationship that enables that user to perform file
+     * operations to their Amazon S3 bucket.</p>
      */
     inline ListedUser& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
 
     /**
-     * <p>The role in use by this user. A <i>role</i> is an AWS Identity and Access
-     * Management (IAM) entity that, in this case, allows a file transfer
-     * protocol-enabled server to act on a user's behalf. It allows the server to
-     * inherit the trust relationship that enables that user to perform file operations
-     * to their Amazon S3 bucket.</p>
+     * <p>Specifies the role that is in use by this user. A <i>role</i> is an AWS
+     * Identity and Access Management (IAM) entity that, in this case, allows a file
+     * transfer protocol-enabled server to act on a user's behalf. It allows the server
+     * to inherit the trust relationship that enables that user to perform file
+     * operations to their Amazon S3 bucket.</p>
      */
     inline ListedUser& WithRole(const char* value) { SetRole(value); return *this;}
 
 
     /**
-     * <p>The number of SSH public keys stored for the user you specified.</p>
+     * <p>Specifies the number of SSH public keys stored for the user you
+     * specified.</p>
      */
     inline int GetSshPublicKeyCount() const{ return m_sshPublicKeyCount; }
 
     /**
-     * <p>The number of SSH public keys stored for the user you specified.</p>
+     * <p>Specifies the number of SSH public keys stored for the user you
+     * specified.</p>
      */
     inline bool SshPublicKeyCountHasBeenSet() const { return m_sshPublicKeyCountHasBeenSet; }
 
     /**
-     * <p>The number of SSH public keys stored for the user you specified.</p>
+     * <p>Specifies the number of SSH public keys stored for the user you
+     * specified.</p>
      */
     inline void SetSshPublicKeyCount(int value) { m_sshPublicKeyCountHasBeenSet = true; m_sshPublicKeyCount = value; }
 
     /**
-     * <p>The number of SSH public keys stored for the user you specified.</p>
+     * <p>Specifies the number of SSH public keys stored for the user you
+     * specified.</p>
      */
     inline ListedUser& WithSshPublicKeyCount(int value) { SetSshPublicKeyCount(value); return *this;}
 
 
     /**
-     * <p>The name of the user whose ARN was specified. User names are used for
-     * authentication purposes.</p>
+     * <p>Specifies the name of the user whose ARN was specified. User names are used
+     * for authentication purposes.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
-     * <p>The name of the user whose ARN was specified. User names are used for
-     * authentication purposes.</p>
+     * <p>Specifies the name of the user whose ARN was specified. User names are used
+     * for authentication purposes.</p>
      */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
-     * <p>The name of the user whose ARN was specified. User names are used for
-     * authentication purposes.</p>
+     * <p>Specifies the name of the user whose ARN was specified. User names are used
+     * for authentication purposes.</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
-     * <p>The name of the user whose ARN was specified. User names are used for
-     * authentication purposes.</p>
+     * <p>Specifies the name of the user whose ARN was specified. User names are used
+     * for authentication purposes.</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
-     * <p>The name of the user whose ARN was specified. User names are used for
-     * authentication purposes.</p>
+     * <p>Specifies the name of the user whose ARN was specified. User names are used
+     * for authentication purposes.</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
-     * <p>The name of the user whose ARN was specified. User names are used for
-     * authentication purposes.</p>
+     * <p>Specifies the name of the user whose ARN was specified. User names are used
+     * for authentication purposes.</p>
      */
     inline ListedUser& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The name of the user whose ARN was specified. User names are used for
-     * authentication purposes.</p>
+     * <p>Specifies the name of the user whose ARN was specified. User names are used
+     * for authentication purposes.</p>
      */
     inline ListedUser& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the user whose ARN was specified. User names are used for
-     * authentication purposes.</p>
+     * <p>Specifies the name of the user whose ARN was specified. User names are used
+     * for authentication purposes.</p>
      */
     inline ListedUser& WithUserName(const char* value) { SetUserName(value); return *this;}
 

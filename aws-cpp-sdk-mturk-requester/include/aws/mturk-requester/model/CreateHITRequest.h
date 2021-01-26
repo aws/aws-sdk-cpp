@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
@@ -650,10 +640,10 @@ namespace Model
      * the HIT already exists in the system from a previous call using the same
      * UniqueRequestToken, subsequent calls will return a
      * AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId.
-     * </p> <note> <p> Note: It is your responsibility to ensure uniqueness of the
+     * </p>  <p> Note: It is your responsibility to ensure uniqueness of the
      * token. The unique token expires after 24 hours. Subsequent calls using the same
      * UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
-     * </p> </note>
+     * </p> 
      */
     inline const Aws::String& GetUniqueRequestToken() const{ return m_uniqueRequestToken; }
 
@@ -664,10 +654,10 @@ namespace Model
      * the HIT already exists in the system from a previous call using the same
      * UniqueRequestToken, subsequent calls will return a
      * AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId.
-     * </p> <note> <p> Note: It is your responsibility to ensure uniqueness of the
+     * </p>  <p> Note: It is your responsibility to ensure uniqueness of the
      * token. The unique token expires after 24 hours. Subsequent calls using the same
      * UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
-     * </p> </note>
+     * </p> 
      */
     inline bool UniqueRequestTokenHasBeenSet() const { return m_uniqueRequestTokenHasBeenSet; }
 
@@ -678,10 +668,10 @@ namespace Model
      * the HIT already exists in the system from a previous call using the same
      * UniqueRequestToken, subsequent calls will return a
      * AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId.
-     * </p> <note> <p> Note: It is your responsibility to ensure uniqueness of the
+     * </p>  <p> Note: It is your responsibility to ensure uniqueness of the
      * token. The unique token expires after 24 hours. Subsequent calls using the same
      * UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
-     * </p> </note>
+     * </p> 
      */
     inline void SetUniqueRequestToken(const Aws::String& value) { m_uniqueRequestTokenHasBeenSet = true; m_uniqueRequestToken = value; }
 
@@ -692,10 +682,10 @@ namespace Model
      * the HIT already exists in the system from a previous call using the same
      * UniqueRequestToken, subsequent calls will return a
      * AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId.
-     * </p> <note> <p> Note: It is your responsibility to ensure uniqueness of the
+     * </p>  <p> Note: It is your responsibility to ensure uniqueness of the
      * token. The unique token expires after 24 hours. Subsequent calls using the same
      * UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
-     * </p> </note>
+     * </p> 
      */
     inline void SetUniqueRequestToken(Aws::String&& value) { m_uniqueRequestTokenHasBeenSet = true; m_uniqueRequestToken = std::move(value); }
 
@@ -706,10 +696,10 @@ namespace Model
      * the HIT already exists in the system from a previous call using the same
      * UniqueRequestToken, subsequent calls will return a
      * AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId.
-     * </p> <note> <p> Note: It is your responsibility to ensure uniqueness of the
+     * </p>  <p> Note: It is your responsibility to ensure uniqueness of the
      * token. The unique token expires after 24 hours. Subsequent calls using the same
      * UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
-     * </p> </note>
+     * </p> 
      */
     inline void SetUniqueRequestToken(const char* value) { m_uniqueRequestTokenHasBeenSet = true; m_uniqueRequestToken.assign(value); }
 
@@ -720,10 +710,10 @@ namespace Model
      * the HIT already exists in the system from a previous call using the same
      * UniqueRequestToken, subsequent calls will return a
      * AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId.
-     * </p> <note> <p> Note: It is your responsibility to ensure uniqueness of the
+     * </p>  <p> Note: It is your responsibility to ensure uniqueness of the
      * token. The unique token expires after 24 hours. Subsequent calls using the same
      * UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
-     * </p> </note>
+     * </p> 
      */
     inline CreateHITRequest& WithUniqueRequestToken(const Aws::String& value) { SetUniqueRequestToken(value); return *this;}
 
@@ -734,10 +724,10 @@ namespace Model
      * the HIT already exists in the system from a previous call using the same
      * UniqueRequestToken, subsequent calls will return a
      * AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId.
-     * </p> <note> <p> Note: It is your responsibility to ensure uniqueness of the
+     * </p>  <p> Note: It is your responsibility to ensure uniqueness of the
      * token. The unique token expires after 24 hours. Subsequent calls using the same
      * UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
-     * </p> </note>
+     * </p> 
      */
     inline CreateHITRequest& WithUniqueRequestToken(Aws::String&& value) { SetUniqueRequestToken(std::move(value)); return *this;}
 
@@ -748,10 +738,10 @@ namespace Model
      * the HIT already exists in the system from a previous call using the same
      * UniqueRequestToken, subsequent calls will return a
      * AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId.
-     * </p> <note> <p> Note: It is your responsibility to ensure uniqueness of the
+     * </p>  <p> Note: It is your responsibility to ensure uniqueness of the
      * token. The unique token expires after 24 hours. Subsequent calls using the same
      * UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
-     * </p> </note>
+     * </p> 
      */
     inline CreateHITRequest& WithUniqueRequestToken(const char* value) { SetUniqueRequestToken(value); return *this;}
 

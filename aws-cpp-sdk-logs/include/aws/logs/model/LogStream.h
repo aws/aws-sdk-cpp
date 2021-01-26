@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
@@ -144,7 +134,7 @@ namespace Model
      * This number is expressed as the number of milliseconds after Jan 1, 1970
      * 00:00:00 UTC. The <code>lastEventTime</code> value updates on an eventual
      * consistency basis. It typically updates in less than an hour from ingestion, but
-     * may take longer in some rare situations.</p>
+     * in rare situations might take longer.</p>
      */
     inline long long GetLastEventTimestamp() const{ return m_lastEventTimestamp; }
 
@@ -153,7 +143,7 @@ namespace Model
      * This number is expressed as the number of milliseconds after Jan 1, 1970
      * 00:00:00 UTC. The <code>lastEventTime</code> value updates on an eventual
      * consistency basis. It typically updates in less than an hour from ingestion, but
-     * may take longer in some rare situations.</p>
+     * in rare situations might take longer.</p>
      */
     inline bool LastEventTimestampHasBeenSet() const { return m_lastEventTimestampHasBeenSet; }
 
@@ -162,7 +152,7 @@ namespace Model
      * This number is expressed as the number of milliseconds after Jan 1, 1970
      * 00:00:00 UTC. The <code>lastEventTime</code> value updates on an eventual
      * consistency basis. It typically updates in less than an hour from ingestion, but
-     * may take longer in some rare situations.</p>
+     * in rare situations might take longer.</p>
      */
     inline void SetLastEventTimestamp(long long value) { m_lastEventTimestampHasBeenSet = true; m_lastEventTimestamp = value; }
 
@@ -171,7 +161,7 @@ namespace Model
      * This number is expressed as the number of milliseconds after Jan 1, 1970
      * 00:00:00 UTC. The <code>lastEventTime</code> value updates on an eventual
      * consistency basis. It typically updates in less than an hour from ingestion, but
-     * may take longer in some rare situations.</p>
+     * in rare situations might take longer.</p>
      */
     inline LogStream& WithLastEventTimestamp(long long value) { SetLastEventTimestamp(value); return *this;}
 

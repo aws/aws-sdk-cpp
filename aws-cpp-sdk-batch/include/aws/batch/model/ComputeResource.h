@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
@@ -21,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/batch/model/LaunchTemplateSpecification.h>
+#include <aws/batch/model/Ec2Configuration.h>
 #include <utility>
 
 namespace Aws
@@ -39,8 +30,11 @@ namespace Model
 {
 
   /**
-   * <p>An object representing an AWS Batch compute resource.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>An object representing an AWS Batch compute resource. For more information,
+   * see <a
+   * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+   * Environments</a> in the <i>AWS Batch User Guide</i>.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ComputeResource">AWS
    * API Reference</a></p>
    */
@@ -54,443 +48,654 @@ namespace Model
 
 
     /**
-     * <p>The type of compute environment: <code>EC2</code> or <code>SPOT</code>.</p>
+     * <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>,
+     * <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     * Environments</a> in the <i>AWS Batch User Guide</i>.</p> <p> If you choose
+     * <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the
+     * <code>spotIamFleetRole</code> parameter. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon
+     * EC2 Spot Fleet role</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline const CRType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of compute environment: <code>EC2</code> or <code>SPOT</code>.</p>
+     * <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>,
+     * <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     * Environments</a> in the <i>AWS Batch User Guide</i>.</p> <p> If you choose
+     * <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the
+     * <code>spotIamFleetRole</code> parameter. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon
+     * EC2 Spot Fleet role</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of compute environment: <code>EC2</code> or <code>SPOT</code>.</p>
+     * <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>,
+     * <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     * Environments</a> in the <i>AWS Batch User Guide</i>.</p> <p> If you choose
+     * <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the
+     * <code>spotIamFleetRole</code> parameter. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon
+     * EC2 Spot Fleet role</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetType(const CRType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of compute environment: <code>EC2</code> or <code>SPOT</code>.</p>
+     * <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>,
+     * <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     * Environments</a> in the <i>AWS Batch User Guide</i>.</p> <p> If you choose
+     * <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the
+     * <code>spotIamFleetRole</code> parameter. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon
+     * EC2 Spot Fleet role</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetType(CRType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of compute environment: <code>EC2</code> or <code>SPOT</code>.</p>
+     * <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>,
+     * <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     * Environments</a> in the <i>AWS Batch User Guide</i>.</p> <p> If you choose
+     * <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the
+     * <code>spotIamFleetRole</code> parameter. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon
+     * EC2 Spot Fleet role</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline ComputeResource& WithType(const CRType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of compute environment: <code>EC2</code> or <code>SPOT</code>.</p>
+     * <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>,
+     * <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     * Environments</a> in the <i>AWS Batch User Guide</i>.</p> <p> If you choose
+     * <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the
+     * <code>spotIamFleetRole</code> parameter. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon
+     * EC2 Spot Fleet role</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline ComputeResource& WithType(CRType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The allocation strategy to use for the compute resource in case not enough
-     * instances of the best fitting instance type can be allocated. This could be due
-     * to availability of the instance type in the region or <a
+     * <p>The allocation strategy to use for the compute resource if not enough
+     * instances of the best fitting instance type can be allocated. This might be
+     * because of availability of the instance type in the Region or <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
-     * EC2 service limits</a>. If this is not specified, the default is
-     * <code>BEST_FIT</code>, which will use only the best fitting instance type,
-     * waiting for additional capacity if it's not available. This allocation strategy
-     * keeps costs lower but can limit scaling. If you are using Spot Fleets with
-     * <code>BEST_FIT</code> then the Spot Fleet IAM Role must be specified.
-     * <code>BEST_FIT_PROGRESSIVE</code> will select additional instance types that are
-     * large enough to meet the requirements of the jobs in the queue, with a
-     * preference for instance types with a lower cost per vCPU.
-     * <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot Instance compute
-     * resources and will select additional instance types that are large enough to
-     * meet the requirements of the jobs in the queue, with a preference for instance
-     * types that are less likely to be interrupted. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html
-     * ">Allocation Strategies</a> in the <i>AWS Batch User Guide</i>.</p>
+     * EC2 service limits</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation
+     * Strategies</a> in the <i>AWS Batch User Guide</i>.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources, and shouldn't be
+     * specified.</p>  <dl> <dt>BEST_FIT (default)</dt> <dd> <p>AWS Batch
+     * selects an instance type that best fits the needs of the jobs with a preference
+     * for the lowest-cost instance type. If additional instances of the selected
+     * instance type aren't available, AWS Batch will wait for the additional instances
+     * to be available. If there are not enough instances available, or if the user is
+     * hitting <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
+     * EC2 service limits</a> then additional jobs aren't run until currently running
+     * jobs have completed. This allocation strategy keeps costs lower but can limit
+     * scaling. If you are using Spot Fleets with <code>BEST_FIT</code> then the Spot
+     * Fleet IAM Role must be specified.</p> </dd> <dt>BEST_FIT_PROGRESSIVE</dt> <dd>
+     * <p>AWS Batch will select additional instance types that are large enough to meet
+     * the requirements of the jobs in the queue, with a preference for instance types
+     * with a lower cost per unit vCPU. If additional instances of the previously
+     * selected instance types aren't available, AWS Batch will select new instance
+     * types.</p> </dd> <dt>SPOT_CAPACITY_OPTIMIZED</dt> <dd> <p>AWS Batch will select
+     * one or more instance types that are large enough to meet the requirements of the
+     * jobs in the queue, with a preference for instance types that are less likely to
+     * be interrupted. This allocation strategy is only available for Spot Instance
+     * compute resources.</p> </dd> </dl> <p>With both
+     * <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code>
+     * strategies, AWS Batch might need to go above <code>maxvCpus</code> to meet your
+     * capacity requirements. In this event, AWS Batch never exceeds
+     * <code>maxvCpus</code> by more than a single instance.</p>
      */
     inline const CRAllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
 
     /**
-     * <p>The allocation strategy to use for the compute resource in case not enough
-     * instances of the best fitting instance type can be allocated. This could be due
-     * to availability of the instance type in the region or <a
+     * <p>The allocation strategy to use for the compute resource if not enough
+     * instances of the best fitting instance type can be allocated. This might be
+     * because of availability of the instance type in the Region or <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
-     * EC2 service limits</a>. If this is not specified, the default is
-     * <code>BEST_FIT</code>, which will use only the best fitting instance type,
-     * waiting for additional capacity if it's not available. This allocation strategy
-     * keeps costs lower but can limit scaling. If you are using Spot Fleets with
-     * <code>BEST_FIT</code> then the Spot Fleet IAM Role must be specified.
-     * <code>BEST_FIT_PROGRESSIVE</code> will select additional instance types that are
-     * large enough to meet the requirements of the jobs in the queue, with a
-     * preference for instance types with a lower cost per vCPU.
-     * <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot Instance compute
-     * resources and will select additional instance types that are large enough to
-     * meet the requirements of the jobs in the queue, with a preference for instance
-     * types that are less likely to be interrupted. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html
-     * ">Allocation Strategies</a> in the <i>AWS Batch User Guide</i>.</p>
+     * EC2 service limits</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation
+     * Strategies</a> in the <i>AWS Batch User Guide</i>.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources, and shouldn't be
+     * specified.</p>  <dl> <dt>BEST_FIT (default)</dt> <dd> <p>AWS Batch
+     * selects an instance type that best fits the needs of the jobs with a preference
+     * for the lowest-cost instance type. If additional instances of the selected
+     * instance type aren't available, AWS Batch will wait for the additional instances
+     * to be available. If there are not enough instances available, or if the user is
+     * hitting <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
+     * EC2 service limits</a> then additional jobs aren't run until currently running
+     * jobs have completed. This allocation strategy keeps costs lower but can limit
+     * scaling. If you are using Spot Fleets with <code>BEST_FIT</code> then the Spot
+     * Fleet IAM Role must be specified.</p> </dd> <dt>BEST_FIT_PROGRESSIVE</dt> <dd>
+     * <p>AWS Batch will select additional instance types that are large enough to meet
+     * the requirements of the jobs in the queue, with a preference for instance types
+     * with a lower cost per unit vCPU. If additional instances of the previously
+     * selected instance types aren't available, AWS Batch will select new instance
+     * types.</p> </dd> <dt>SPOT_CAPACITY_OPTIMIZED</dt> <dd> <p>AWS Batch will select
+     * one or more instance types that are large enough to meet the requirements of the
+     * jobs in the queue, with a preference for instance types that are less likely to
+     * be interrupted. This allocation strategy is only available for Spot Instance
+     * compute resources.</p> </dd> </dl> <p>With both
+     * <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code>
+     * strategies, AWS Batch might need to go above <code>maxvCpus</code> to meet your
+     * capacity requirements. In this event, AWS Batch never exceeds
+     * <code>maxvCpus</code> by more than a single instance.</p>
      */
     inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
 
     /**
-     * <p>The allocation strategy to use for the compute resource in case not enough
-     * instances of the best fitting instance type can be allocated. This could be due
-     * to availability of the instance type in the region or <a
+     * <p>The allocation strategy to use for the compute resource if not enough
+     * instances of the best fitting instance type can be allocated. This might be
+     * because of availability of the instance type in the Region or <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
-     * EC2 service limits</a>. If this is not specified, the default is
-     * <code>BEST_FIT</code>, which will use only the best fitting instance type,
-     * waiting for additional capacity if it's not available. This allocation strategy
-     * keeps costs lower but can limit scaling. If you are using Spot Fleets with
-     * <code>BEST_FIT</code> then the Spot Fleet IAM Role must be specified.
-     * <code>BEST_FIT_PROGRESSIVE</code> will select additional instance types that are
-     * large enough to meet the requirements of the jobs in the queue, with a
-     * preference for instance types with a lower cost per vCPU.
-     * <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot Instance compute
-     * resources and will select additional instance types that are large enough to
-     * meet the requirements of the jobs in the queue, with a preference for instance
-     * types that are less likely to be interrupted. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html
-     * ">Allocation Strategies</a> in the <i>AWS Batch User Guide</i>.</p>
+     * EC2 service limits</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation
+     * Strategies</a> in the <i>AWS Batch User Guide</i>.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources, and shouldn't be
+     * specified.</p>  <dl> <dt>BEST_FIT (default)</dt> <dd> <p>AWS Batch
+     * selects an instance type that best fits the needs of the jobs with a preference
+     * for the lowest-cost instance type. If additional instances of the selected
+     * instance type aren't available, AWS Batch will wait for the additional instances
+     * to be available. If there are not enough instances available, or if the user is
+     * hitting <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
+     * EC2 service limits</a> then additional jobs aren't run until currently running
+     * jobs have completed. This allocation strategy keeps costs lower but can limit
+     * scaling. If you are using Spot Fleets with <code>BEST_FIT</code> then the Spot
+     * Fleet IAM Role must be specified.</p> </dd> <dt>BEST_FIT_PROGRESSIVE</dt> <dd>
+     * <p>AWS Batch will select additional instance types that are large enough to meet
+     * the requirements of the jobs in the queue, with a preference for instance types
+     * with a lower cost per unit vCPU. If additional instances of the previously
+     * selected instance types aren't available, AWS Batch will select new instance
+     * types.</p> </dd> <dt>SPOT_CAPACITY_OPTIMIZED</dt> <dd> <p>AWS Batch will select
+     * one or more instance types that are large enough to meet the requirements of the
+     * jobs in the queue, with a preference for instance types that are less likely to
+     * be interrupted. This allocation strategy is only available for Spot Instance
+     * compute resources.</p> </dd> </dl> <p>With both
+     * <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code>
+     * strategies, AWS Batch might need to go above <code>maxvCpus</code> to meet your
+     * capacity requirements. In this event, AWS Batch never exceeds
+     * <code>maxvCpus</code> by more than a single instance.</p>
      */
     inline void SetAllocationStrategy(const CRAllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
 
     /**
-     * <p>The allocation strategy to use for the compute resource in case not enough
-     * instances of the best fitting instance type can be allocated. This could be due
-     * to availability of the instance type in the region or <a
+     * <p>The allocation strategy to use for the compute resource if not enough
+     * instances of the best fitting instance type can be allocated. This might be
+     * because of availability of the instance type in the Region or <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
-     * EC2 service limits</a>. If this is not specified, the default is
-     * <code>BEST_FIT</code>, which will use only the best fitting instance type,
-     * waiting for additional capacity if it's not available. This allocation strategy
-     * keeps costs lower but can limit scaling. If you are using Spot Fleets with
-     * <code>BEST_FIT</code> then the Spot Fleet IAM Role must be specified.
-     * <code>BEST_FIT_PROGRESSIVE</code> will select additional instance types that are
-     * large enough to meet the requirements of the jobs in the queue, with a
-     * preference for instance types with a lower cost per vCPU.
-     * <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot Instance compute
-     * resources and will select additional instance types that are large enough to
-     * meet the requirements of the jobs in the queue, with a preference for instance
-     * types that are less likely to be interrupted. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html
-     * ">Allocation Strategies</a> in the <i>AWS Batch User Guide</i>.</p>
+     * EC2 service limits</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation
+     * Strategies</a> in the <i>AWS Batch User Guide</i>.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources, and shouldn't be
+     * specified.</p>  <dl> <dt>BEST_FIT (default)</dt> <dd> <p>AWS Batch
+     * selects an instance type that best fits the needs of the jobs with a preference
+     * for the lowest-cost instance type. If additional instances of the selected
+     * instance type aren't available, AWS Batch will wait for the additional instances
+     * to be available. If there are not enough instances available, or if the user is
+     * hitting <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
+     * EC2 service limits</a> then additional jobs aren't run until currently running
+     * jobs have completed. This allocation strategy keeps costs lower but can limit
+     * scaling. If you are using Spot Fleets with <code>BEST_FIT</code> then the Spot
+     * Fleet IAM Role must be specified.</p> </dd> <dt>BEST_FIT_PROGRESSIVE</dt> <dd>
+     * <p>AWS Batch will select additional instance types that are large enough to meet
+     * the requirements of the jobs in the queue, with a preference for instance types
+     * with a lower cost per unit vCPU. If additional instances of the previously
+     * selected instance types aren't available, AWS Batch will select new instance
+     * types.</p> </dd> <dt>SPOT_CAPACITY_OPTIMIZED</dt> <dd> <p>AWS Batch will select
+     * one or more instance types that are large enough to meet the requirements of the
+     * jobs in the queue, with a preference for instance types that are less likely to
+     * be interrupted. This allocation strategy is only available for Spot Instance
+     * compute resources.</p> </dd> </dl> <p>With both
+     * <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code>
+     * strategies, AWS Batch might need to go above <code>maxvCpus</code> to meet your
+     * capacity requirements. In this event, AWS Batch never exceeds
+     * <code>maxvCpus</code> by more than a single instance.</p>
      */
     inline void SetAllocationStrategy(CRAllocationStrategy&& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = std::move(value); }
 
     /**
-     * <p>The allocation strategy to use for the compute resource in case not enough
-     * instances of the best fitting instance type can be allocated. This could be due
-     * to availability of the instance type in the region or <a
+     * <p>The allocation strategy to use for the compute resource if not enough
+     * instances of the best fitting instance type can be allocated. This might be
+     * because of availability of the instance type in the Region or <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
-     * EC2 service limits</a>. If this is not specified, the default is
-     * <code>BEST_FIT</code>, which will use only the best fitting instance type,
-     * waiting for additional capacity if it's not available. This allocation strategy
-     * keeps costs lower but can limit scaling. If you are using Spot Fleets with
-     * <code>BEST_FIT</code> then the Spot Fleet IAM Role must be specified.
-     * <code>BEST_FIT_PROGRESSIVE</code> will select additional instance types that are
-     * large enough to meet the requirements of the jobs in the queue, with a
-     * preference for instance types with a lower cost per vCPU.
-     * <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot Instance compute
-     * resources and will select additional instance types that are large enough to
-     * meet the requirements of the jobs in the queue, with a preference for instance
-     * types that are less likely to be interrupted. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html
-     * ">Allocation Strategies</a> in the <i>AWS Batch User Guide</i>.</p>
+     * EC2 service limits</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation
+     * Strategies</a> in the <i>AWS Batch User Guide</i>.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources, and shouldn't be
+     * specified.</p>  <dl> <dt>BEST_FIT (default)</dt> <dd> <p>AWS Batch
+     * selects an instance type that best fits the needs of the jobs with a preference
+     * for the lowest-cost instance type. If additional instances of the selected
+     * instance type aren't available, AWS Batch will wait for the additional instances
+     * to be available. If there are not enough instances available, or if the user is
+     * hitting <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
+     * EC2 service limits</a> then additional jobs aren't run until currently running
+     * jobs have completed. This allocation strategy keeps costs lower but can limit
+     * scaling. If you are using Spot Fleets with <code>BEST_FIT</code> then the Spot
+     * Fleet IAM Role must be specified.</p> </dd> <dt>BEST_FIT_PROGRESSIVE</dt> <dd>
+     * <p>AWS Batch will select additional instance types that are large enough to meet
+     * the requirements of the jobs in the queue, with a preference for instance types
+     * with a lower cost per unit vCPU. If additional instances of the previously
+     * selected instance types aren't available, AWS Batch will select new instance
+     * types.</p> </dd> <dt>SPOT_CAPACITY_OPTIMIZED</dt> <dd> <p>AWS Batch will select
+     * one or more instance types that are large enough to meet the requirements of the
+     * jobs in the queue, with a preference for instance types that are less likely to
+     * be interrupted. This allocation strategy is only available for Spot Instance
+     * compute resources.</p> </dd> </dl> <p>With both
+     * <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code>
+     * strategies, AWS Batch might need to go above <code>maxvCpus</code> to meet your
+     * capacity requirements. In this event, AWS Batch never exceeds
+     * <code>maxvCpus</code> by more than a single instance.</p>
      */
     inline ComputeResource& WithAllocationStrategy(const CRAllocationStrategy& value) { SetAllocationStrategy(value); return *this;}
 
     /**
-     * <p>The allocation strategy to use for the compute resource in case not enough
-     * instances of the best fitting instance type can be allocated. This could be due
-     * to availability of the instance type in the region or <a
+     * <p>The allocation strategy to use for the compute resource if not enough
+     * instances of the best fitting instance type can be allocated. This might be
+     * because of availability of the instance type in the Region or <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
-     * EC2 service limits</a>. If this is not specified, the default is
-     * <code>BEST_FIT</code>, which will use only the best fitting instance type,
-     * waiting for additional capacity if it's not available. This allocation strategy
-     * keeps costs lower but can limit scaling. If you are using Spot Fleets with
-     * <code>BEST_FIT</code> then the Spot Fleet IAM Role must be specified.
-     * <code>BEST_FIT_PROGRESSIVE</code> will select additional instance types that are
-     * large enough to meet the requirements of the jobs in the queue, with a
-     * preference for instance types with a lower cost per vCPU.
-     * <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot Instance compute
-     * resources and will select additional instance types that are large enough to
-     * meet the requirements of the jobs in the queue, with a preference for instance
-     * types that are less likely to be interrupted. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html
-     * ">Allocation Strategies</a> in the <i>AWS Batch User Guide</i>.</p>
+     * EC2 service limits</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation
+     * Strategies</a> in the <i>AWS Batch User Guide</i>.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources, and shouldn't be
+     * specified.</p>  <dl> <dt>BEST_FIT (default)</dt> <dd> <p>AWS Batch
+     * selects an instance type that best fits the needs of the jobs with a preference
+     * for the lowest-cost instance type. If additional instances of the selected
+     * instance type aren't available, AWS Batch will wait for the additional instances
+     * to be available. If there are not enough instances available, or if the user is
+     * hitting <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
+     * EC2 service limits</a> then additional jobs aren't run until currently running
+     * jobs have completed. This allocation strategy keeps costs lower but can limit
+     * scaling. If you are using Spot Fleets with <code>BEST_FIT</code> then the Spot
+     * Fleet IAM Role must be specified.</p> </dd> <dt>BEST_FIT_PROGRESSIVE</dt> <dd>
+     * <p>AWS Batch will select additional instance types that are large enough to meet
+     * the requirements of the jobs in the queue, with a preference for instance types
+     * with a lower cost per unit vCPU. If additional instances of the previously
+     * selected instance types aren't available, AWS Batch will select new instance
+     * types.</p> </dd> <dt>SPOT_CAPACITY_OPTIMIZED</dt> <dd> <p>AWS Batch will select
+     * one or more instance types that are large enough to meet the requirements of the
+     * jobs in the queue, with a preference for instance types that are less likely to
+     * be interrupted. This allocation strategy is only available for Spot Instance
+     * compute resources.</p> </dd> </dl> <p>With both
+     * <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code>
+     * strategies, AWS Batch might need to go above <code>maxvCpus</code> to meet your
+     * capacity requirements. In this event, AWS Batch never exceeds
+     * <code>maxvCpus</code> by more than a single instance.</p>
      */
     inline ComputeResource& WithAllocationStrategy(CRAllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
 
 
     /**
      * <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain
-     * (even if the compute environment is <code>DISABLED</code>).</p>
+     * (even if the compute environment is <code>DISABLED</code>).</p>  <p>This
+     * parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+     * be specified.</p> 
      */
     inline int GetMinvCpus() const{ return m_minvCpus; }
 
     /**
      * <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain
-     * (even if the compute environment is <code>DISABLED</code>).</p>
+     * (even if the compute environment is <code>DISABLED</code>).</p>  <p>This
+     * parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+     * be specified.</p> 
      */
     inline bool MinvCpusHasBeenSet() const { return m_minvCpusHasBeenSet; }
 
     /**
      * <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain
-     * (even if the compute environment is <code>DISABLED</code>).</p>
+     * (even if the compute environment is <code>DISABLED</code>).</p>  <p>This
+     * parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+     * be specified.</p> 
      */
     inline void SetMinvCpus(int value) { m_minvCpusHasBeenSet = true; m_minvCpus = value; }
 
     /**
      * <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain
-     * (even if the compute environment is <code>DISABLED</code>).</p>
+     * (even if the compute environment is <code>DISABLED</code>).</p>  <p>This
+     * parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+     * be specified.</p> 
      */
     inline ComputeResource& WithMinvCpus(int value) { SetMinvCpus(value); return *this;}
 
 
     /**
-     * <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p>
+     * <p>The maximum number of Amazon EC2 vCPUs that a compute environment can
+     * reach.</p>  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
+     * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, AWS Batch might need
+     * to go above <code>maxvCpus</code> to meet your capacity requirements. In this
+     * event, AWS Batch will never go above <code>maxvCpus</code> by more than a single
+     * instance (e.g., no more than a single instance from among those specified in
+     * your compute environment).</p> 
      */
     inline int GetMaxvCpus() const{ return m_maxvCpus; }
 
     /**
-     * <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p>
+     * <p>The maximum number of Amazon EC2 vCPUs that a compute environment can
+     * reach.</p>  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
+     * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, AWS Batch might need
+     * to go above <code>maxvCpus</code> to meet your capacity requirements. In this
+     * event, AWS Batch will never go above <code>maxvCpus</code> by more than a single
+     * instance (e.g., no more than a single instance from among those specified in
+     * your compute environment).</p> 
      */
     inline bool MaxvCpusHasBeenSet() const { return m_maxvCpusHasBeenSet; }
 
     /**
-     * <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p>
+     * <p>The maximum number of Amazon EC2 vCPUs that a compute environment can
+     * reach.</p>  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
+     * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, AWS Batch might need
+     * to go above <code>maxvCpus</code> to meet your capacity requirements. In this
+     * event, AWS Batch will never go above <code>maxvCpus</code> by more than a single
+     * instance (e.g., no more than a single instance from among those specified in
+     * your compute environment).</p> 
      */
     inline void SetMaxvCpus(int value) { m_maxvCpusHasBeenSet = true; m_maxvCpus = value; }
 
     /**
-     * <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p>
+     * <p>The maximum number of Amazon EC2 vCPUs that a compute environment can
+     * reach.</p>  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
+     * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, AWS Batch might need
+     * to go above <code>maxvCpus</code> to meet your capacity requirements. In this
+     * event, AWS Batch will never go above <code>maxvCpus</code> by more than a single
+     * instance (e.g., no more than a single instance from among those specified in
+     * your compute environment).</p> 
      */
     inline ComputeResource& WithMaxvCpus(int value) { SetMaxvCpus(value); return *this;}
 
 
     /**
-     * <p>The desired number of Amazon EC2 vCPUS in the compute environment.</p>
+     * <p>The desired number of Amazon EC2 vCPUS in the compute environment. AWS Batch
+     * modifies this value between the minimum and maximum values, based on job queue
+     * demand.</p>  <p>This parameter isn't applicable to jobs running on Fargate
+     * resources, and shouldn't be specified.</p> 
      */
     inline int GetDesiredvCpus() const{ return m_desiredvCpus; }
 
     /**
-     * <p>The desired number of Amazon EC2 vCPUS in the compute environment.</p>
+     * <p>The desired number of Amazon EC2 vCPUS in the compute environment. AWS Batch
+     * modifies this value between the minimum and maximum values, based on job queue
+     * demand.</p>  <p>This parameter isn't applicable to jobs running on Fargate
+     * resources, and shouldn't be specified.</p> 
      */
     inline bool DesiredvCpusHasBeenSet() const { return m_desiredvCpusHasBeenSet; }
 
     /**
-     * <p>The desired number of Amazon EC2 vCPUS in the compute environment.</p>
+     * <p>The desired number of Amazon EC2 vCPUS in the compute environment. AWS Batch
+     * modifies this value between the minimum and maximum values, based on job queue
+     * demand.</p>  <p>This parameter isn't applicable to jobs running on Fargate
+     * resources, and shouldn't be specified.</p> 
      */
     inline void SetDesiredvCpus(int value) { m_desiredvCpusHasBeenSet = true; m_desiredvCpus = value; }
 
     /**
-     * <p>The desired number of Amazon EC2 vCPUS in the compute environment.</p>
+     * <p>The desired number of Amazon EC2 vCPUS in the compute environment. AWS Batch
+     * modifies this value between the minimum and maximum values, based on job queue
+     * demand.</p>  <p>This parameter isn't applicable to jobs running on Fargate
+     * resources, and shouldn't be specified.</p> 
      */
     inline ComputeResource& WithDesiredvCpus(int value) { SetDesiredvCpus(value); return *this;}
 
 
     /**
-     * <p>The instances types that may be launched. You can specify instance families
+     * <p>The instances types that can be launched. You can specify instance families
      * to launch any instance type within those families (for example, <code>c5</code>
      * or <code>p3</code>), or you can specify specific sizes within a family (such as
-     * <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to pick
-     * instance types (from the C, M, and R instance families) on the fly that match
-     * the demand of your job queues.</p>
+     * <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to select
+     * instance types (from the C4, M4, and R4 instance families) on the fly that match
+     * the demand of your job queues.</p>  <p>This parameter isn't applicable to
+     * jobs running on Fargate resources, and shouldn't be specified.</p> 
+     *  <p>When you create a compute environment, the instance types that you
+     * select for the compute environment must share the same architecture. For
+     * example, you can't mix x86 and ARM instances in the same compute
+     * environment.</p>   <p>Currently, <code>optimal</code> uses instance
+     * types from the C4, M4, and R4 instance families. In Regions that don't have
+     * instance types from those instance families, instance types from the C5, M5. and
+     * R5 instance families are used.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetInstanceTypes() const{ return m_instanceTypes; }
 
     /**
-     * <p>The instances types that may be launched. You can specify instance families
+     * <p>The instances types that can be launched. You can specify instance families
      * to launch any instance type within those families (for example, <code>c5</code>
      * or <code>p3</code>), or you can specify specific sizes within a family (such as
-     * <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to pick
-     * instance types (from the C, M, and R instance families) on the fly that match
-     * the demand of your job queues.</p>
+     * <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to select
+     * instance types (from the C4, M4, and R4 instance families) on the fly that match
+     * the demand of your job queues.</p>  <p>This parameter isn't applicable to
+     * jobs running on Fargate resources, and shouldn't be specified.</p> 
+     *  <p>When you create a compute environment, the instance types that you
+     * select for the compute environment must share the same architecture. For
+     * example, you can't mix x86 and ARM instances in the same compute
+     * environment.</p>   <p>Currently, <code>optimal</code> uses instance
+     * types from the C4, M4, and R4 instance families. In Regions that don't have
+     * instance types from those instance families, instance types from the C5, M5. and
+     * R5 instance families are used.</p> 
      */
     inline bool InstanceTypesHasBeenSet() const { return m_instanceTypesHasBeenSet; }
 
     /**
-     * <p>The instances types that may be launched. You can specify instance families
+     * <p>The instances types that can be launched. You can specify instance families
      * to launch any instance type within those families (for example, <code>c5</code>
      * or <code>p3</code>), or you can specify specific sizes within a family (such as
-     * <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to pick
-     * instance types (from the C, M, and R instance families) on the fly that match
-     * the demand of your job queues.</p>
+     * <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to select
+     * instance types (from the C4, M4, and R4 instance families) on the fly that match
+     * the demand of your job queues.</p>  <p>This parameter isn't applicable to
+     * jobs running on Fargate resources, and shouldn't be specified.</p> 
+     *  <p>When you create a compute environment, the instance types that you
+     * select for the compute environment must share the same architecture. For
+     * example, you can't mix x86 and ARM instances in the same compute
+     * environment.</p>   <p>Currently, <code>optimal</code> uses instance
+     * types from the C4, M4, and R4 instance families. In Regions that don't have
+     * instance types from those instance families, instance types from the C5, M5. and
+     * R5 instance families are used.</p> 
      */
     inline void SetInstanceTypes(const Aws::Vector<Aws::String>& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = value; }
 
     /**
-     * <p>The instances types that may be launched. You can specify instance families
+     * <p>The instances types that can be launched. You can specify instance families
      * to launch any instance type within those families (for example, <code>c5</code>
      * or <code>p3</code>), or you can specify specific sizes within a family (such as
-     * <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to pick
-     * instance types (from the C, M, and R instance families) on the fly that match
-     * the demand of your job queues.</p>
+     * <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to select
+     * instance types (from the C4, M4, and R4 instance families) on the fly that match
+     * the demand of your job queues.</p>  <p>This parameter isn't applicable to
+     * jobs running on Fargate resources, and shouldn't be specified.</p> 
+     *  <p>When you create a compute environment, the instance types that you
+     * select for the compute environment must share the same architecture. For
+     * example, you can't mix x86 and ARM instances in the same compute
+     * environment.</p>   <p>Currently, <code>optimal</code> uses instance
+     * types from the C4, M4, and R4 instance families. In Regions that don't have
+     * instance types from those instance families, instance types from the C5, M5. and
+     * R5 instance families are used.</p> 
      */
     inline void SetInstanceTypes(Aws::Vector<Aws::String>&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = std::move(value); }
 
     /**
-     * <p>The instances types that may be launched. You can specify instance families
+     * <p>The instances types that can be launched. You can specify instance families
      * to launch any instance type within those families (for example, <code>c5</code>
      * or <code>p3</code>), or you can specify specific sizes within a family (such as
-     * <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to pick
-     * instance types (from the C, M, and R instance families) on the fly that match
-     * the demand of your job queues.</p>
+     * <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to select
+     * instance types (from the C4, M4, and R4 instance families) on the fly that match
+     * the demand of your job queues.</p>  <p>This parameter isn't applicable to
+     * jobs running on Fargate resources, and shouldn't be specified.</p> 
+     *  <p>When you create a compute environment, the instance types that you
+     * select for the compute environment must share the same architecture. For
+     * example, you can't mix x86 and ARM instances in the same compute
+     * environment.</p>   <p>Currently, <code>optimal</code> uses instance
+     * types from the C4, M4, and R4 instance families. In Regions that don't have
+     * instance types from those instance families, instance types from the C5, M5. and
+     * R5 instance families are used.</p> 
      */
     inline ComputeResource& WithInstanceTypes(const Aws::Vector<Aws::String>& value) { SetInstanceTypes(value); return *this;}
 
     /**
-     * <p>The instances types that may be launched. You can specify instance families
+     * <p>The instances types that can be launched. You can specify instance families
      * to launch any instance type within those families (for example, <code>c5</code>
      * or <code>p3</code>), or you can specify specific sizes within a family (such as
-     * <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to pick
-     * instance types (from the C, M, and R instance families) on the fly that match
-     * the demand of your job queues.</p>
+     * <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to select
+     * instance types (from the C4, M4, and R4 instance families) on the fly that match
+     * the demand of your job queues.</p>  <p>This parameter isn't applicable to
+     * jobs running on Fargate resources, and shouldn't be specified.</p> 
+     *  <p>When you create a compute environment, the instance types that you
+     * select for the compute environment must share the same architecture. For
+     * example, you can't mix x86 and ARM instances in the same compute
+     * environment.</p>   <p>Currently, <code>optimal</code> uses instance
+     * types from the C4, M4, and R4 instance families. In Regions that don't have
+     * instance types from those instance families, instance types from the C5, M5. and
+     * R5 instance families are used.</p> 
      */
     inline ComputeResource& WithInstanceTypes(Aws::Vector<Aws::String>&& value) { SetInstanceTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The instances types that may be launched. You can specify instance families
+     * <p>The instances types that can be launched. You can specify instance families
      * to launch any instance type within those families (for example, <code>c5</code>
      * or <code>p3</code>), or you can specify specific sizes within a family (such as
-     * <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to pick
-     * instance types (from the C, M, and R instance families) on the fly that match
-     * the demand of your job queues.</p>
+     * <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to select
+     * instance types (from the C4, M4, and R4 instance families) on the fly that match
+     * the demand of your job queues.</p>  <p>This parameter isn't applicable to
+     * jobs running on Fargate resources, and shouldn't be specified.</p> 
+     *  <p>When you create a compute environment, the instance types that you
+     * select for the compute environment must share the same architecture. For
+     * example, you can't mix x86 and ARM instances in the same compute
+     * environment.</p>   <p>Currently, <code>optimal</code> uses instance
+     * types from the C4, M4, and R4 instance families. In Regions that don't have
+     * instance types from those instance families, instance types from the C5, M5. and
+     * R5 instance families are used.</p> 
      */
     inline ComputeResource& AddInstanceTypes(const Aws::String& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
 
     /**
-     * <p>The instances types that may be launched. You can specify instance families
+     * <p>The instances types that can be launched. You can specify instance families
      * to launch any instance type within those families (for example, <code>c5</code>
      * or <code>p3</code>), or you can specify specific sizes within a family (such as
-     * <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to pick
-     * instance types (from the C, M, and R instance families) on the fly that match
-     * the demand of your job queues.</p>
+     * <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to select
+     * instance types (from the C4, M4, and R4 instance families) on the fly that match
+     * the demand of your job queues.</p>  <p>This parameter isn't applicable to
+     * jobs running on Fargate resources, and shouldn't be specified.</p> 
+     *  <p>When you create a compute environment, the instance types that you
+     * select for the compute environment must share the same architecture. For
+     * example, you can't mix x86 and ARM instances in the same compute
+     * environment.</p>   <p>Currently, <code>optimal</code> uses instance
+     * types from the C4, M4, and R4 instance families. In Regions that don't have
+     * instance types from those instance families, instance types from the C5, M5. and
+     * R5 instance families are used.</p> 
      */
     inline ComputeResource& AddInstanceTypes(Aws::String&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The instances types that may be launched. You can specify instance families
+     * <p>The instances types that can be launched. You can specify instance families
      * to launch any instance type within those families (for example, <code>c5</code>
      * or <code>p3</code>), or you can specify specific sizes within a family (such as
-     * <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to pick
-     * instance types (from the C, M, and R instance families) on the fly that match
-     * the demand of your job queues.</p>
+     * <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to select
+     * instance types (from the C4, M4, and R4 instance families) on the fly that match
+     * the demand of your job queues.</p>  <p>This parameter isn't applicable to
+     * jobs running on Fargate resources, and shouldn't be specified.</p> 
+     *  <p>When you create a compute environment, the instance types that you
+     * select for the compute environment must share the same architecture. For
+     * example, you can't mix x86 and ARM instances in the same compute
+     * environment.</p>   <p>Currently, <code>optimal</code> uses instance
+     * types from the C4, M4, and R4 instance families. In Regions that don't have
+     * instance types from those instance families, instance types from the C5, M5. and
+     * R5 instance families are used.</p> 
      */
     inline ComputeResource& AddInstanceTypes(const char* value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
 
 
     /**
-     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
-     * environment.</p>
-     */
-    inline const Aws::String& GetImageId() const{ return m_imageId; }
-
-    /**
-     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
-     * environment.</p>
-     */
-    inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
-     * environment.</p>
-     */
-    inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
-
-    /**
-     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
-     * environment.</p>
-     */
-    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
-
-    /**
-     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
-     * environment.</p>
-     */
-    inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
-
-    /**
-     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
-     * environment.</p>
-     */
-    inline ComputeResource& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
-
-    /**
-     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
-     * environment.</p>
-     */
-    inline ComputeResource& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
-     * environment.</p>
-     */
-    inline ComputeResource& WithImageId(const char* value) { SetImageId(value); return *this;}
-
-
-    /**
-     * <p>The VPC subnets into which the compute resources are launched. For more
-     * information, see <a
+     * <p>The VPC subnets into which the compute resources are launched. These subnets
+     * must be within the same VPC. This parameter is required for jobs running on
+     * Fargate resources, where it can contain up to 16 subnets. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
      * and Subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
 
     /**
-     * <p>The VPC subnets into which the compute resources are launched. For more
-     * information, see <a
+     * <p>The VPC subnets into which the compute resources are launched. These subnets
+     * must be within the same VPC. This parameter is required for jobs running on
+     * Fargate resources, where it can contain up to 16 subnets. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
      * and Subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
     inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
 
     /**
-     * <p>The VPC subnets into which the compute resources are launched. For more
-     * information, see <a
+     * <p>The VPC subnets into which the compute resources are launched. These subnets
+     * must be within the same VPC. This parameter is required for jobs running on
+     * Fargate resources, where it can contain up to 16 subnets. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
      * and Subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
     inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
 
     /**
-     * <p>The VPC subnets into which the compute resources are launched. For more
-     * information, see <a
+     * <p>The VPC subnets into which the compute resources are launched. These subnets
+     * must be within the same VPC. This parameter is required for jobs running on
+     * Fargate resources, where it can contain up to 16 subnets. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
      * and Subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
     inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
 
     /**
-     * <p>The VPC subnets into which the compute resources are launched. For more
-     * information, see <a
+     * <p>The VPC subnets into which the compute resources are launched. These subnets
+     * must be within the same VPC. This parameter is required for jobs running on
+     * Fargate resources, where it can contain up to 16 subnets. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
      * and Subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
     inline ComputeResource& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
 
     /**
-     * <p>The VPC subnets into which the compute resources are launched. For more
-     * information, see <a
+     * <p>The VPC subnets into which the compute resources are launched. These subnets
+     * must be within the same VPC. This parameter is required for jobs running on
+     * Fargate resources, where it can contain up to 16 subnets. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
      * and Subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
     inline ComputeResource& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(std::move(value)); return *this;}
 
     /**
-     * <p>The VPC subnets into which the compute resources are launched. For more
-     * information, see <a
+     * <p>The VPC subnets into which the compute resources are launched. These subnets
+     * must be within the same VPC. This parameter is required for jobs running on
+     * Fargate resources, where it can contain up to 16 subnets. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
      * and Subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
     inline ComputeResource& AddSubnets(const Aws::String& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
     /**
-     * <p>The VPC subnets into which the compute resources are launched. For more
-     * information, see <a
+     * <p>The VPC subnets into which the compute resources are launched. These subnets
+     * must be within the same VPC. This parameter is required for jobs running on
+     * Fargate resources, where it can contain up to 16 subnets. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
      * and Subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
     inline ComputeResource& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The VPC subnets into which the compute resources are launched. For more
-     * information, see <a
+     * <p>The VPC subnets into which the compute resources are launched. These subnets
+     * must be within the same VPC. This parameter is required for jobs running on
+     * Fargate resources, where it can contain up to 16 subnets. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
      * and Subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
@@ -501,7 +706,9 @@ namespace Model
      * <p>The Amazon EC2 security groups associated with instances launched in the
      * compute environment. One or more security groups must be specified, either in
      * <code>securityGroupIds</code> or using a launch template referenced in
-     * <code>launchTemplate</code>. If security groups are specified using both
+     * <code>launchTemplate</code>. This parameter is required for jobs running on
+     * Fargate resources and must contain at least one security group. (Fargate does
+     * not support launch templates.) If security groups are specified using both
      * <code>securityGroupIds</code> and <code>launchTemplate</code>, the values in
      * <code>securityGroupIds</code> will be used.</p>
      */
@@ -511,7 +718,9 @@ namespace Model
      * <p>The Amazon EC2 security groups associated with instances launched in the
      * compute environment. One or more security groups must be specified, either in
      * <code>securityGroupIds</code> or using a launch template referenced in
-     * <code>launchTemplate</code>. If security groups are specified using both
+     * <code>launchTemplate</code>. This parameter is required for jobs running on
+     * Fargate resources and must contain at least one security group. (Fargate does
+     * not support launch templates.) If security groups are specified using both
      * <code>securityGroupIds</code> and <code>launchTemplate</code>, the values in
      * <code>securityGroupIds</code> will be used.</p>
      */
@@ -521,7 +730,9 @@ namespace Model
      * <p>The Amazon EC2 security groups associated with instances launched in the
      * compute environment. One or more security groups must be specified, either in
      * <code>securityGroupIds</code> or using a launch template referenced in
-     * <code>launchTemplate</code>. If security groups are specified using both
+     * <code>launchTemplate</code>. This parameter is required for jobs running on
+     * Fargate resources and must contain at least one security group. (Fargate does
+     * not support launch templates.) If security groups are specified using both
      * <code>securityGroupIds</code> and <code>launchTemplate</code>, the values in
      * <code>securityGroupIds</code> will be used.</p>
      */
@@ -531,7 +742,9 @@ namespace Model
      * <p>The Amazon EC2 security groups associated with instances launched in the
      * compute environment. One or more security groups must be specified, either in
      * <code>securityGroupIds</code> or using a launch template referenced in
-     * <code>launchTemplate</code>. If security groups are specified using both
+     * <code>launchTemplate</code>. This parameter is required for jobs running on
+     * Fargate resources and must contain at least one security group. (Fargate does
+     * not support launch templates.) If security groups are specified using both
      * <code>securityGroupIds</code> and <code>launchTemplate</code>, the values in
      * <code>securityGroupIds</code> will be used.</p>
      */
@@ -541,7 +754,9 @@ namespace Model
      * <p>The Amazon EC2 security groups associated with instances launched in the
      * compute environment. One or more security groups must be specified, either in
      * <code>securityGroupIds</code> or using a launch template referenced in
-     * <code>launchTemplate</code>. If security groups are specified using both
+     * <code>launchTemplate</code>. This parameter is required for jobs running on
+     * Fargate resources and must contain at least one security group. (Fargate does
+     * not support launch templates.) If security groups are specified using both
      * <code>securityGroupIds</code> and <code>launchTemplate</code>, the values in
      * <code>securityGroupIds</code> will be used.</p>
      */
@@ -551,7 +766,9 @@ namespace Model
      * <p>The Amazon EC2 security groups associated with instances launched in the
      * compute environment. One or more security groups must be specified, either in
      * <code>securityGroupIds</code> or using a launch template referenced in
-     * <code>launchTemplate</code>. If security groups are specified using both
+     * <code>launchTemplate</code>. This parameter is required for jobs running on
+     * Fargate resources and must contain at least one security group. (Fargate does
+     * not support launch templates.) If security groups are specified using both
      * <code>securityGroupIds</code> and <code>launchTemplate</code>, the values in
      * <code>securityGroupIds</code> will be used.</p>
      */
@@ -561,7 +778,9 @@ namespace Model
      * <p>The Amazon EC2 security groups associated with instances launched in the
      * compute environment. One or more security groups must be specified, either in
      * <code>securityGroupIds</code> or using a launch template referenced in
-     * <code>launchTemplate</code>. If security groups are specified using both
+     * <code>launchTemplate</code>. This parameter is required for jobs running on
+     * Fargate resources and must contain at least one security group. (Fargate does
+     * not support launch templates.) If security groups are specified using both
      * <code>securityGroupIds</code> and <code>launchTemplate</code>, the values in
      * <code>securityGroupIds</code> will be used.</p>
      */
@@ -571,7 +790,9 @@ namespace Model
      * <p>The Amazon EC2 security groups associated with instances launched in the
      * compute environment. One or more security groups must be specified, either in
      * <code>securityGroupIds</code> or using a launch template referenced in
-     * <code>launchTemplate</code>. If security groups are specified using both
+     * <code>launchTemplate</code>. This parameter is required for jobs running on
+     * Fargate resources and must contain at least one security group. (Fargate does
+     * not support launch templates.) If security groups are specified using both
      * <code>securityGroupIds</code> and <code>launchTemplate</code>, the values in
      * <code>securityGroupIds</code> will be used.</p>
      */
@@ -581,7 +802,9 @@ namespace Model
      * <p>The Amazon EC2 security groups associated with instances launched in the
      * compute environment. One or more security groups must be specified, either in
      * <code>securityGroupIds</code> or using a launch template referenced in
-     * <code>launchTemplate</code>. If security groups are specified using both
+     * <code>launchTemplate</code>. This parameter is required for jobs running on
+     * Fargate resources and must contain at least one security group. (Fargate does
+     * not support launch templates.) If security groups are specified using both
      * <code>securityGroupIds</code> and <code>launchTemplate</code>, the values in
      * <code>securityGroupIds</code> will be used.</p>
      */
@@ -589,50 +812,66 @@ namespace Model
 
 
     /**
-     * <p>The Amazon EC2 key pair that is used for instances launched in the compute
-     * environment.</p>
+     * <p>The Amazon EC2 key pair that's used for instances launched in the compute
+     * environment. You can use this key pair to log in to your instances with SSH.</p>
+     *  <p>This parameter isn't applicable to jobs running on Fargate resources,
+     * and shouldn't be specified.</p> 
      */
     inline const Aws::String& GetEc2KeyPair() const{ return m_ec2KeyPair; }
 
     /**
-     * <p>The Amazon EC2 key pair that is used for instances launched in the compute
-     * environment.</p>
+     * <p>The Amazon EC2 key pair that's used for instances launched in the compute
+     * environment. You can use this key pair to log in to your instances with SSH.</p>
+     *  <p>This parameter isn't applicable to jobs running on Fargate resources,
+     * and shouldn't be specified.</p> 
      */
     inline bool Ec2KeyPairHasBeenSet() const { return m_ec2KeyPairHasBeenSet; }
 
     /**
-     * <p>The Amazon EC2 key pair that is used for instances launched in the compute
-     * environment.</p>
+     * <p>The Amazon EC2 key pair that's used for instances launched in the compute
+     * environment. You can use this key pair to log in to your instances with SSH.</p>
+     *  <p>This parameter isn't applicable to jobs running on Fargate resources,
+     * and shouldn't be specified.</p> 
      */
     inline void SetEc2KeyPair(const Aws::String& value) { m_ec2KeyPairHasBeenSet = true; m_ec2KeyPair = value; }
 
     /**
-     * <p>The Amazon EC2 key pair that is used for instances launched in the compute
-     * environment.</p>
+     * <p>The Amazon EC2 key pair that's used for instances launched in the compute
+     * environment. You can use this key pair to log in to your instances with SSH.</p>
+     *  <p>This parameter isn't applicable to jobs running on Fargate resources,
+     * and shouldn't be specified.</p> 
      */
     inline void SetEc2KeyPair(Aws::String&& value) { m_ec2KeyPairHasBeenSet = true; m_ec2KeyPair = std::move(value); }
 
     /**
-     * <p>The Amazon EC2 key pair that is used for instances launched in the compute
-     * environment.</p>
+     * <p>The Amazon EC2 key pair that's used for instances launched in the compute
+     * environment. You can use this key pair to log in to your instances with SSH.</p>
+     *  <p>This parameter isn't applicable to jobs running on Fargate resources,
+     * and shouldn't be specified.</p> 
      */
     inline void SetEc2KeyPair(const char* value) { m_ec2KeyPairHasBeenSet = true; m_ec2KeyPair.assign(value); }
 
     /**
-     * <p>The Amazon EC2 key pair that is used for instances launched in the compute
-     * environment.</p>
+     * <p>The Amazon EC2 key pair that's used for instances launched in the compute
+     * environment. You can use this key pair to log in to your instances with SSH.</p>
+     *  <p>This parameter isn't applicable to jobs running on Fargate resources,
+     * and shouldn't be specified.</p> 
      */
     inline ComputeResource& WithEc2KeyPair(const Aws::String& value) { SetEc2KeyPair(value); return *this;}
 
     /**
-     * <p>The Amazon EC2 key pair that is used for instances launched in the compute
-     * environment.</p>
+     * <p>The Amazon EC2 key pair that's used for instances launched in the compute
+     * environment. You can use this key pair to log in to your instances with SSH.</p>
+     *  <p>This parameter isn't applicable to jobs running on Fargate resources,
+     * and shouldn't be specified.</p> 
      */
     inline ComputeResource& WithEc2KeyPair(Aws::String&& value) { SetEc2KeyPair(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon EC2 key pair that is used for instances launched in the compute
-     * environment.</p>
+     * <p>The Amazon EC2 key pair that's used for instances launched in the compute
+     * environment. You can use this key pair to log in to your instances with SSH.</p>
+     *  <p>This parameter isn't applicable to jobs running on Fargate resources,
+     * and shouldn't be specified.</p> 
      */
     inline ComputeResource& WithEc2KeyPair(const char* value) { SetEc2KeyPair(value); return *this;}
 
@@ -644,7 +883,9 @@ namespace Model
      * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i>
      * </code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon
-     * ECS Instance Role</a> in the <i>AWS Batch User Guide</i>.</p>
+     * ECS Instance Role</a> in the <i>AWS Batch User Guide</i>.</p>  <p>This
+     * parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+     * be specified.</p> 
      */
     inline const Aws::String& GetInstanceRole() const{ return m_instanceRole; }
 
@@ -655,7 +896,9 @@ namespace Model
      * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i>
      * </code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon
-     * ECS Instance Role</a> in the <i>AWS Batch User Guide</i>.</p>
+     * ECS Instance Role</a> in the <i>AWS Batch User Guide</i>.</p>  <p>This
+     * parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+     * be specified.</p> 
      */
     inline bool InstanceRoleHasBeenSet() const { return m_instanceRoleHasBeenSet; }
 
@@ -666,7 +909,9 @@ namespace Model
      * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i>
      * </code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon
-     * ECS Instance Role</a> in the <i>AWS Batch User Guide</i>.</p>
+     * ECS Instance Role</a> in the <i>AWS Batch User Guide</i>.</p>  <p>This
+     * parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+     * be specified.</p> 
      */
     inline void SetInstanceRole(const Aws::String& value) { m_instanceRoleHasBeenSet = true; m_instanceRole = value; }
 
@@ -677,7 +922,9 @@ namespace Model
      * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i>
      * </code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon
-     * ECS Instance Role</a> in the <i>AWS Batch User Guide</i>.</p>
+     * ECS Instance Role</a> in the <i>AWS Batch User Guide</i>.</p>  <p>This
+     * parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+     * be specified.</p> 
      */
     inline void SetInstanceRole(Aws::String&& value) { m_instanceRoleHasBeenSet = true; m_instanceRole = std::move(value); }
 
@@ -688,7 +935,9 @@ namespace Model
      * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i>
      * </code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon
-     * ECS Instance Role</a> in the <i>AWS Batch User Guide</i>.</p>
+     * ECS Instance Role</a> in the <i>AWS Batch User Guide</i>.</p>  <p>This
+     * parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+     * be specified.</p> 
      */
     inline void SetInstanceRole(const char* value) { m_instanceRoleHasBeenSet = true; m_instanceRole.assign(value); }
 
@@ -699,7 +948,9 @@ namespace Model
      * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i>
      * </code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon
-     * ECS Instance Role</a> in the <i>AWS Batch User Guide</i>.</p>
+     * ECS Instance Role</a> in the <i>AWS Batch User Guide</i>.</p>  <p>This
+     * parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+     * be specified.</p> 
      */
     inline ComputeResource& WithInstanceRole(const Aws::String& value) { SetInstanceRole(value); return *this;}
 
@@ -710,7 +961,9 @@ namespace Model
      * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i>
      * </code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon
-     * ECS Instance Role</a> in the <i>AWS Batch User Guide</i>.</p>
+     * ECS Instance Role</a> in the <i>AWS Batch User Guide</i>.</p>  <p>This
+     * parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+     * be specified.</p> 
      */
     inline ComputeResource& WithInstanceRole(Aws::String&& value) { SetInstanceRole(std::move(value)); return *this;}
 
@@ -721,112 +974,205 @@ namespace Model
      * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i>
      * </code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon
-     * ECS Instance Role</a> in the <i>AWS Batch User Guide</i>.</p>
+     * ECS Instance Role</a> in the <i>AWS Batch User Guide</i>.</p>  <p>This
+     * parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+     * be specified.</p> 
      */
     inline ComputeResource& WithInstanceRole(const char* value) { SetInstanceRole(value); return *this;}
 
 
     /**
-     * <p>Key-value pair tags to be applied to resources that are launched in the
+     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
      * compute environment. For AWS Batch, these take the form of "String1": "String2",
-     * where String1 is the tag key and String2 is the tag value—for example, { "Name":
-     * "AWS Batch Instance - C4OnDemand" }.</p>
+     * where String1 is the tag key and String2 is the tag value−for example, { "Name":
+     * "AWS Batch Instance - C4OnDemand" }. This is helpful for recognizing your AWS
+     * Batch instances in the Amazon EC2 console. These tags can't be updated or
+     * removed after the compute environment has been created; any changes require
+     * creating a new compute environment and removing the old compute environment.
+     * These tags are not seen when using the AWS Batch
+     * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources, and shouldn't be
+     * specified.</p> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Key-value pair tags to be applied to resources that are launched in the
+     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
      * compute environment. For AWS Batch, these take the form of "String1": "String2",
-     * where String1 is the tag key and String2 is the tag value—for example, { "Name":
-     * "AWS Batch Instance - C4OnDemand" }.</p>
+     * where String1 is the tag key and String2 is the tag value−for example, { "Name":
+     * "AWS Batch Instance - C4OnDemand" }. This is helpful for recognizing your AWS
+     * Batch instances in the Amazon EC2 console. These tags can't be updated or
+     * removed after the compute environment has been created; any changes require
+     * creating a new compute environment and removing the old compute environment.
+     * These tags are not seen when using the AWS Batch
+     * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources, and shouldn't be
+     * specified.</p> 
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Key-value pair tags to be applied to resources that are launched in the
+     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
      * compute environment. For AWS Batch, these take the form of "String1": "String2",
-     * where String1 is the tag key and String2 is the tag value—for example, { "Name":
-     * "AWS Batch Instance - C4OnDemand" }.</p>
+     * where String1 is the tag key and String2 is the tag value−for example, { "Name":
+     * "AWS Batch Instance - C4OnDemand" }. This is helpful for recognizing your AWS
+     * Batch instances in the Amazon EC2 console. These tags can't be updated or
+     * removed after the compute environment has been created; any changes require
+     * creating a new compute environment and removing the old compute environment.
+     * These tags are not seen when using the AWS Batch
+     * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources, and shouldn't be
+     * specified.</p> 
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Key-value pair tags to be applied to resources that are launched in the
+     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
      * compute environment. For AWS Batch, these take the form of "String1": "String2",
-     * where String1 is the tag key and String2 is the tag value—for example, { "Name":
-     * "AWS Batch Instance - C4OnDemand" }.</p>
+     * where String1 is the tag key and String2 is the tag value−for example, { "Name":
+     * "AWS Batch Instance - C4OnDemand" }. This is helpful for recognizing your AWS
+     * Batch instances in the Amazon EC2 console. These tags can't be updated or
+     * removed after the compute environment has been created; any changes require
+     * creating a new compute environment and removing the old compute environment.
+     * These tags are not seen when using the AWS Batch
+     * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources, and shouldn't be
+     * specified.</p> 
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Key-value pair tags to be applied to resources that are launched in the
+     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
      * compute environment. For AWS Batch, these take the form of "String1": "String2",
-     * where String1 is the tag key and String2 is the tag value—for example, { "Name":
-     * "AWS Batch Instance - C4OnDemand" }.</p>
+     * where String1 is the tag key and String2 is the tag value−for example, { "Name":
+     * "AWS Batch Instance - C4OnDemand" }. This is helpful for recognizing your AWS
+     * Batch instances in the Amazon EC2 console. These tags can't be updated or
+     * removed after the compute environment has been created; any changes require
+     * creating a new compute environment and removing the old compute environment.
+     * These tags are not seen when using the AWS Batch
+     * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources, and shouldn't be
+     * specified.</p> 
      */
     inline ComputeResource& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Key-value pair tags to be applied to resources that are launched in the
+     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
      * compute environment. For AWS Batch, these take the form of "String1": "String2",
-     * where String1 is the tag key and String2 is the tag value—for example, { "Name":
-     * "AWS Batch Instance - C4OnDemand" }.</p>
+     * where String1 is the tag key and String2 is the tag value−for example, { "Name":
+     * "AWS Batch Instance - C4OnDemand" }. This is helpful for recognizing your AWS
+     * Batch instances in the Amazon EC2 console. These tags can't be updated or
+     * removed after the compute environment has been created; any changes require
+     * creating a new compute environment and removing the old compute environment.
+     * These tags are not seen when using the AWS Batch
+     * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources, and shouldn't be
+     * specified.</p> 
      */
     inline ComputeResource& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Key-value pair tags to be applied to resources that are launched in the
+     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
      * compute environment. For AWS Batch, these take the form of "String1": "String2",
-     * where String1 is the tag key and String2 is the tag value—for example, { "Name":
-     * "AWS Batch Instance - C4OnDemand" }.</p>
+     * where String1 is the tag key and String2 is the tag value−for example, { "Name":
+     * "AWS Batch Instance - C4OnDemand" }. This is helpful for recognizing your AWS
+     * Batch instances in the Amazon EC2 console. These tags can't be updated or
+     * removed after the compute environment has been created; any changes require
+     * creating a new compute environment and removing the old compute environment.
+     * These tags are not seen when using the AWS Batch
+     * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources, and shouldn't be
+     * specified.</p> 
      */
     inline ComputeResource& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>Key-value pair tags to be applied to resources that are launched in the
+     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
      * compute environment. For AWS Batch, these take the form of "String1": "String2",
-     * where String1 is the tag key and String2 is the tag value—for example, { "Name":
-     * "AWS Batch Instance - C4OnDemand" }.</p>
+     * where String1 is the tag key and String2 is the tag value−for example, { "Name":
+     * "AWS Batch Instance - C4OnDemand" }. This is helpful for recognizing your AWS
+     * Batch instances in the Amazon EC2 console. These tags can't be updated or
+     * removed after the compute environment has been created; any changes require
+     * creating a new compute environment and removing the old compute environment.
+     * These tags are not seen when using the AWS Batch
+     * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources, and shouldn't be
+     * specified.</p> 
      */
     inline ComputeResource& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Key-value pair tags to be applied to resources that are launched in the
+     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
      * compute environment. For AWS Batch, these take the form of "String1": "String2",
-     * where String1 is the tag key and String2 is the tag value—for example, { "Name":
-     * "AWS Batch Instance - C4OnDemand" }.</p>
+     * where String1 is the tag key and String2 is the tag value−for example, { "Name":
+     * "AWS Batch Instance - C4OnDemand" }. This is helpful for recognizing your AWS
+     * Batch instances in the Amazon EC2 console. These tags can't be updated or
+     * removed after the compute environment has been created; any changes require
+     * creating a new compute environment and removing the old compute environment.
+     * These tags are not seen when using the AWS Batch
+     * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources, and shouldn't be
+     * specified.</p> 
      */
     inline ComputeResource& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Key-value pair tags to be applied to resources that are launched in the
+     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
      * compute environment. For AWS Batch, these take the form of "String1": "String2",
-     * where String1 is the tag key and String2 is the tag value—for example, { "Name":
-     * "AWS Batch Instance - C4OnDemand" }.</p>
+     * where String1 is the tag key and String2 is the tag value−for example, { "Name":
+     * "AWS Batch Instance - C4OnDemand" }. This is helpful for recognizing your AWS
+     * Batch instances in the Amazon EC2 console. These tags can't be updated or
+     * removed after the compute environment has been created; any changes require
+     * creating a new compute environment and removing the old compute environment.
+     * These tags are not seen when using the AWS Batch
+     * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources, and shouldn't be
+     * specified.</p> 
      */
     inline ComputeResource& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Key-value pair tags to be applied to resources that are launched in the
+     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
      * compute environment. For AWS Batch, these take the form of "String1": "String2",
-     * where String1 is the tag key and String2 is the tag value—for example, { "Name":
-     * "AWS Batch Instance - C4OnDemand" }.</p>
+     * where String1 is the tag key and String2 is the tag value−for example, { "Name":
+     * "AWS Batch Instance - C4OnDemand" }. This is helpful for recognizing your AWS
+     * Batch instances in the Amazon EC2 console. These tags can't be updated or
+     * removed after the compute environment has been created; any changes require
+     * creating a new compute environment and removing the old compute environment.
+     * These tags are not seen when using the AWS Batch
+     * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources, and shouldn't be
+     * specified.</p> 
      */
     inline ComputeResource& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Key-value pair tags to be applied to resources that are launched in the
+     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
      * compute environment. For AWS Batch, these take the form of "String1": "String2",
-     * where String1 is the tag key and String2 is the tag value—for example, { "Name":
-     * "AWS Batch Instance - C4OnDemand" }.</p>
+     * where String1 is the tag key and String2 is the tag value−for example, { "Name":
+     * "AWS Batch Instance - C4OnDemand" }. This is helpful for recognizing your AWS
+     * Batch instances in the Amazon EC2 console. These tags can't be updated or
+     * removed after the compute environment has been created; any changes require
+     * creating a new compute environment and removing the old compute environment.
+     * These tags are not seen when using the AWS Batch
+     * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources, and shouldn't be
+     * specified.</p> 
      */
     inline ComputeResource& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Key-value pair tags to be applied to resources that are launched in the
+     * <p>Key-value pair tags to be applied to EC2 resources that are launched in the
      * compute environment. For AWS Batch, these take the form of "String1": "String2",
-     * where String1 is the tag key and String2 is the tag value—for example, { "Name":
-     * "AWS Batch Instance - C4OnDemand" }.</p>
+     * where String1 is the tag key and String2 is the tag value−for example, { "Name":
+     * "AWS Batch Instance - C4OnDemand" }. This is helpful for recognizing your AWS
+     * Batch instances in the Amazon EC2 console. These tags can't be updated or
+     * removed after the compute environment has been created; any changes require
+     * creating a new compute environment and removing the old compute environment.
+     * These tags are not seen when using the AWS Batch
+     * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources, and shouldn't be
+     * specified.</p> 
      */
     inline ComputeResource& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -839,7 +1185,9 @@ namespace Model
      * of instances within a single Availability Zone with high network flow potential.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>This parameter isn't applicable to jobs running on Fargate resources, and
+     * shouldn't be specified.</p> 
      */
     inline const Aws::String& GetPlacementGroup() const{ return m_placementGroup; }
 
@@ -851,7 +1199,9 @@ namespace Model
      * of instances within a single Availability Zone with high network flow potential.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>This parameter isn't applicable to jobs running on Fargate resources, and
+     * shouldn't be specified.</p> 
      */
     inline bool PlacementGroupHasBeenSet() const { return m_placementGroupHasBeenSet; }
 
@@ -863,7 +1213,9 @@ namespace Model
      * of instances within a single Availability Zone with high network flow potential.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>This parameter isn't applicable to jobs running on Fargate resources, and
+     * shouldn't be specified.</p> 
      */
     inline void SetPlacementGroup(const Aws::String& value) { m_placementGroupHasBeenSet = true; m_placementGroup = value; }
 
@@ -875,7 +1227,9 @@ namespace Model
      * of instances within a single Availability Zone with high network flow potential.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>This parameter isn't applicable to jobs running on Fargate resources, and
+     * shouldn't be specified.</p> 
      */
     inline void SetPlacementGroup(Aws::String&& value) { m_placementGroupHasBeenSet = true; m_placementGroup = std::move(value); }
 
@@ -887,7 +1241,9 @@ namespace Model
      * of instances within a single Availability Zone with high network flow potential.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>This parameter isn't applicable to jobs running on Fargate resources, and
+     * shouldn't be specified.</p> 
      */
     inline void SetPlacementGroup(const char* value) { m_placementGroupHasBeenSet = true; m_placementGroup.assign(value); }
 
@@ -899,7 +1255,9 @@ namespace Model
      * of instances within a single Availability Zone with high network flow potential.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>This parameter isn't applicable to jobs running on Fargate resources, and
+     * shouldn't be specified.</p> 
      */
     inline ComputeResource& WithPlacementGroup(const Aws::String& value) { SetPlacementGroup(value); return *this;}
 
@@ -911,7 +1269,9 @@ namespace Model
      * of instances within a single Availability Zone with high network flow potential.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>This parameter isn't applicable to jobs running on Fargate resources, and
+     * shouldn't be specified.</p> 
      */
     inline ComputeResource& WithPlacementGroup(Aws::String&& value) { SetPlacementGroup(std::move(value)); return *this;}
 
@@ -923,7 +1283,9 @@ namespace Model
      * of instances within a single Availability Zone with high network flow potential.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>This parameter isn't applicable to jobs running on Fargate resources, and
+     * shouldn't be specified.</p> 
      */
     inline ComputeResource& WithPlacementGroup(const char* value) { SetPlacementGroup(value); return *this;}
 
@@ -931,40 +1293,48 @@ namespace Model
     /**
      * <p>The maximum percentage that a Spot Instance price can be when compared with
      * the On-Demand price for that instance type before instances are launched. For
-     * example, if your maximum percentage is 20%, then the Spot price must be below
-     * 20% of the current On-Demand price for that Amazon EC2 instance. You always pay
-     * the lowest (market) price and never more than your maximum percentage. If you
-     * leave this field empty, the default value is 100% of the On-Demand price.</p>
+     * example, if your maximum percentage is 20%, then the Spot price must be less
+     * than 20% of the current On-Demand price for that Amazon EC2 instance. You always
+     * pay the lowest (market) price and never more than your maximum percentage. If
+     * you leave this field empty, the default value is 100% of the On-Demand
+     * price.</p>  <p>This parameter isn't applicable to jobs running on Fargate
+     * resources, and shouldn't be specified.</p> 
      */
     inline int GetBidPercentage() const{ return m_bidPercentage; }
 
     /**
      * <p>The maximum percentage that a Spot Instance price can be when compared with
      * the On-Demand price for that instance type before instances are launched. For
-     * example, if your maximum percentage is 20%, then the Spot price must be below
-     * 20% of the current On-Demand price for that Amazon EC2 instance. You always pay
-     * the lowest (market) price and never more than your maximum percentage. If you
-     * leave this field empty, the default value is 100% of the On-Demand price.</p>
+     * example, if your maximum percentage is 20%, then the Spot price must be less
+     * than 20% of the current On-Demand price for that Amazon EC2 instance. You always
+     * pay the lowest (market) price and never more than your maximum percentage. If
+     * you leave this field empty, the default value is 100% of the On-Demand
+     * price.</p>  <p>This parameter isn't applicable to jobs running on Fargate
+     * resources, and shouldn't be specified.</p> 
      */
     inline bool BidPercentageHasBeenSet() const { return m_bidPercentageHasBeenSet; }
 
     /**
      * <p>The maximum percentage that a Spot Instance price can be when compared with
      * the On-Demand price for that instance type before instances are launched. For
-     * example, if your maximum percentage is 20%, then the Spot price must be below
-     * 20% of the current On-Demand price for that Amazon EC2 instance. You always pay
-     * the lowest (market) price and never more than your maximum percentage. If you
-     * leave this field empty, the default value is 100% of the On-Demand price.</p>
+     * example, if your maximum percentage is 20%, then the Spot price must be less
+     * than 20% of the current On-Demand price for that Amazon EC2 instance. You always
+     * pay the lowest (market) price and never more than your maximum percentage. If
+     * you leave this field empty, the default value is 100% of the On-Demand
+     * price.</p>  <p>This parameter isn't applicable to jobs running on Fargate
+     * resources, and shouldn't be specified.</p> 
      */
     inline void SetBidPercentage(int value) { m_bidPercentageHasBeenSet = true; m_bidPercentage = value; }
 
     /**
      * <p>The maximum percentage that a Spot Instance price can be when compared with
      * the On-Demand price for that instance type before instances are launched. For
-     * example, if your maximum percentage is 20%, then the Spot price must be below
-     * 20% of the current On-Demand price for that Amazon EC2 instance. You always pay
-     * the lowest (market) price and never more than your maximum percentage. If you
-     * leave this field empty, the default value is 100% of the On-Demand price.</p>
+     * example, if your maximum percentage is 20%, then the Spot price must be less
+     * than 20% of the current On-Demand price for that Amazon EC2 instance. You always
+     * pay the lowest (market) price and never more than your maximum percentage. If
+     * you leave this field empty, the default value is 100% of the On-Demand
+     * price.</p>  <p>This parameter isn't applicable to jobs running on Fargate
+     * resources, and shouldn't be specified.</p> 
      */
     inline ComputeResource& WithBidPercentage(int value) { SetBidPercentage(value); return *this;}
 
@@ -973,9 +1343,18 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied
      * to a <code>SPOT</code> compute environment. This role is required if the
      * allocation strategy set to <code>BEST_FIT</code> or if the allocation strategy
-     * is not specified. For more information, see <a
+     * isn't specified. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon
-     * EC2 Spot Fleet Role</a> in the <i>AWS Batch User Guide</i>.</p>
+     * EC2 Spot Fleet Role</a> in the <i>AWS Batch User Guide</i>.</p>  <p>This
+     * parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+     * be specified.</p>   <p>To tag your Spot Instances on creation,
+     * the Spot Fleet IAM role specified here must use the newer
+     * <b>AmazonEC2SpotFleetTaggingRole</b> managed policy. The previously recommended
+     * <b>AmazonEC2SpotFleetRole</b> managed policy doesn't have the required
+     * permissions to tag Spot Instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#spot-instance-no-tag">Spot
+     * Instances not tagged on creation</a> in the <i>AWS Batch User Guide</i>.</p>
+     * 
      */
     inline const Aws::String& GetSpotIamFleetRole() const{ return m_spotIamFleetRole; }
 
@@ -983,9 +1362,18 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied
      * to a <code>SPOT</code> compute environment. This role is required if the
      * allocation strategy set to <code>BEST_FIT</code> or if the allocation strategy
-     * is not specified. For more information, see <a
+     * isn't specified. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon
-     * EC2 Spot Fleet Role</a> in the <i>AWS Batch User Guide</i>.</p>
+     * EC2 Spot Fleet Role</a> in the <i>AWS Batch User Guide</i>.</p>  <p>This
+     * parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+     * be specified.</p>   <p>To tag your Spot Instances on creation,
+     * the Spot Fleet IAM role specified here must use the newer
+     * <b>AmazonEC2SpotFleetTaggingRole</b> managed policy. The previously recommended
+     * <b>AmazonEC2SpotFleetRole</b> managed policy doesn't have the required
+     * permissions to tag Spot Instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#spot-instance-no-tag">Spot
+     * Instances not tagged on creation</a> in the <i>AWS Batch User Guide</i>.</p>
+     * 
      */
     inline bool SpotIamFleetRoleHasBeenSet() const { return m_spotIamFleetRoleHasBeenSet; }
 
@@ -993,9 +1381,18 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied
      * to a <code>SPOT</code> compute environment. This role is required if the
      * allocation strategy set to <code>BEST_FIT</code> or if the allocation strategy
-     * is not specified. For more information, see <a
+     * isn't specified. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon
-     * EC2 Spot Fleet Role</a> in the <i>AWS Batch User Guide</i>.</p>
+     * EC2 Spot Fleet Role</a> in the <i>AWS Batch User Guide</i>.</p>  <p>This
+     * parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+     * be specified.</p>   <p>To tag your Spot Instances on creation,
+     * the Spot Fleet IAM role specified here must use the newer
+     * <b>AmazonEC2SpotFleetTaggingRole</b> managed policy. The previously recommended
+     * <b>AmazonEC2SpotFleetRole</b> managed policy doesn't have the required
+     * permissions to tag Spot Instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#spot-instance-no-tag">Spot
+     * Instances not tagged on creation</a> in the <i>AWS Batch User Guide</i>.</p>
+     * 
      */
     inline void SetSpotIamFleetRole(const Aws::String& value) { m_spotIamFleetRoleHasBeenSet = true; m_spotIamFleetRole = value; }
 
@@ -1003,9 +1400,18 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied
      * to a <code>SPOT</code> compute environment. This role is required if the
      * allocation strategy set to <code>BEST_FIT</code> or if the allocation strategy
-     * is not specified. For more information, see <a
+     * isn't specified. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon
-     * EC2 Spot Fleet Role</a> in the <i>AWS Batch User Guide</i>.</p>
+     * EC2 Spot Fleet Role</a> in the <i>AWS Batch User Guide</i>.</p>  <p>This
+     * parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+     * be specified.</p>   <p>To tag your Spot Instances on creation,
+     * the Spot Fleet IAM role specified here must use the newer
+     * <b>AmazonEC2SpotFleetTaggingRole</b> managed policy. The previously recommended
+     * <b>AmazonEC2SpotFleetRole</b> managed policy doesn't have the required
+     * permissions to tag Spot Instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#spot-instance-no-tag">Spot
+     * Instances not tagged on creation</a> in the <i>AWS Batch User Guide</i>.</p>
+     * 
      */
     inline void SetSpotIamFleetRole(Aws::String&& value) { m_spotIamFleetRoleHasBeenSet = true; m_spotIamFleetRole = std::move(value); }
 
@@ -1013,9 +1419,18 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied
      * to a <code>SPOT</code> compute environment. This role is required if the
      * allocation strategy set to <code>BEST_FIT</code> or if the allocation strategy
-     * is not specified. For more information, see <a
+     * isn't specified. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon
-     * EC2 Spot Fleet Role</a> in the <i>AWS Batch User Guide</i>.</p>
+     * EC2 Spot Fleet Role</a> in the <i>AWS Batch User Guide</i>.</p>  <p>This
+     * parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+     * be specified.</p>   <p>To tag your Spot Instances on creation,
+     * the Spot Fleet IAM role specified here must use the newer
+     * <b>AmazonEC2SpotFleetTaggingRole</b> managed policy. The previously recommended
+     * <b>AmazonEC2SpotFleetRole</b> managed policy doesn't have the required
+     * permissions to tag Spot Instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#spot-instance-no-tag">Spot
+     * Instances not tagged on creation</a> in the <i>AWS Batch User Guide</i>.</p>
+     * 
      */
     inline void SetSpotIamFleetRole(const char* value) { m_spotIamFleetRoleHasBeenSet = true; m_spotIamFleetRole.assign(value); }
 
@@ -1023,9 +1438,18 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied
      * to a <code>SPOT</code> compute environment. This role is required if the
      * allocation strategy set to <code>BEST_FIT</code> or if the allocation strategy
-     * is not specified. For more information, see <a
+     * isn't specified. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon
-     * EC2 Spot Fleet Role</a> in the <i>AWS Batch User Guide</i>.</p>
+     * EC2 Spot Fleet Role</a> in the <i>AWS Batch User Guide</i>.</p>  <p>This
+     * parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+     * be specified.</p>   <p>To tag your Spot Instances on creation,
+     * the Spot Fleet IAM role specified here must use the newer
+     * <b>AmazonEC2SpotFleetTaggingRole</b> managed policy. The previously recommended
+     * <b>AmazonEC2SpotFleetRole</b> managed policy doesn't have the required
+     * permissions to tag Spot Instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#spot-instance-no-tag">Spot
+     * Instances not tagged on creation</a> in the <i>AWS Batch User Guide</i>.</p>
+     * 
      */
     inline ComputeResource& WithSpotIamFleetRole(const Aws::String& value) { SetSpotIamFleetRole(value); return *this;}
 
@@ -1033,9 +1457,18 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied
      * to a <code>SPOT</code> compute environment. This role is required if the
      * allocation strategy set to <code>BEST_FIT</code> or if the allocation strategy
-     * is not specified. For more information, see <a
+     * isn't specified. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon
-     * EC2 Spot Fleet Role</a> in the <i>AWS Batch User Guide</i>.</p>
+     * EC2 Spot Fleet Role</a> in the <i>AWS Batch User Guide</i>.</p>  <p>This
+     * parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+     * be specified.</p>   <p>To tag your Spot Instances on creation,
+     * the Spot Fleet IAM role specified here must use the newer
+     * <b>AmazonEC2SpotFleetTaggingRole</b> managed policy. The previously recommended
+     * <b>AmazonEC2SpotFleetRole</b> managed policy doesn't have the required
+     * permissions to tag Spot Instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#spot-instance-no-tag">Spot
+     * Instances not tagged on creation</a> in the <i>AWS Batch User Guide</i>.</p>
+     * 
      */
     inline ComputeResource& WithSpotIamFleetRole(Aws::String&& value) { SetSpotIamFleetRole(std::move(value)); return *this;}
 
@@ -1043,9 +1476,18 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied
      * to a <code>SPOT</code> compute environment. This role is required if the
      * allocation strategy set to <code>BEST_FIT</code> or if the allocation strategy
-     * is not specified. For more information, see <a
+     * isn't specified. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon
-     * EC2 Spot Fleet Role</a> in the <i>AWS Batch User Guide</i>.</p>
+     * EC2 Spot Fleet Role</a> in the <i>AWS Batch User Guide</i>.</p>  <p>This
+     * parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+     * be specified.</p>   <p>To tag your Spot Instances on creation,
+     * the Spot Fleet IAM role specified here must use the newer
+     * <b>AmazonEC2SpotFleetTaggingRole</b> managed policy. The previously recommended
+     * <b>AmazonEC2SpotFleetRole</b> managed policy doesn't have the required
+     * permissions to tag Spot Instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#spot-instance-no-tag">Spot
+     * Instances not tagged on creation</a> in the <i>AWS Batch User Guide</i>.</p>
+     * 
      */
     inline ComputeResource& WithSpotIamFleetRole(const char* value) { SetSpotIamFleetRole(value); return *this;}
 
@@ -1057,7 +1499,9 @@ namespace Model
      * either the launch template ID or launch template name in the request, but not
      * both. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch
-     * Template Support</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Template Support</a> in the <i>AWS Batch User Guide</i>.</p>  <p>This
+     * parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+     * be specified.</p> 
      */
     inline const LaunchTemplateSpecification& GetLaunchTemplate() const{ return m_launchTemplate; }
 
@@ -1068,7 +1512,9 @@ namespace Model
      * either the launch template ID or launch template name in the request, but not
      * both. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch
-     * Template Support</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Template Support</a> in the <i>AWS Batch User Guide</i>.</p>  <p>This
+     * parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+     * be specified.</p> 
      */
     inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
 
@@ -1079,7 +1525,9 @@ namespace Model
      * either the launch template ID or launch template name in the request, but not
      * both. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch
-     * Template Support</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Template Support</a> in the <i>AWS Batch User Guide</i>.</p>  <p>This
+     * parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+     * be specified.</p> 
      */
     inline void SetLaunchTemplate(const LaunchTemplateSpecification& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
 
@@ -1090,7 +1538,9 @@ namespace Model
      * either the launch template ID or launch template name in the request, but not
      * both. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch
-     * Template Support</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Template Support</a> in the <i>AWS Batch User Guide</i>.</p>  <p>This
+     * parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+     * be specified.</p> 
      */
     inline void SetLaunchTemplate(LaunchTemplateSpecification&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
 
@@ -1101,7 +1551,9 @@ namespace Model
      * either the launch template ID or launch template name in the request, but not
      * both. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch
-     * Template Support</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Template Support</a> in the <i>AWS Batch User Guide</i>.</p>  <p>This
+     * parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+     * be specified.</p> 
      */
     inline ComputeResource& WithLaunchTemplate(const LaunchTemplateSpecification& value) { SetLaunchTemplate(value); return *this;}
 
@@ -1112,9 +1564,84 @@ namespace Model
      * either the launch template ID or launch template name in the request, but not
      * both. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch
-     * Template Support</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Template Support</a> in the <i>AWS Batch User Guide</i>.</p>  <p>This
+     * parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+     * be specified.</p> 
      */
     inline ComputeResource& WithLaunchTemplate(LaunchTemplateSpecification&& value) { SetLaunchTemplate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Provides information used to select Amazon Machine Images (AMIs) for EC2
+     * instances in the compute environment. If <code>Ec2Configuration</code> isn't
+     * specified, the default is <code>ECS_AL1</code>.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources, and shouldn't be
+     * specified.</p> 
+     */
+    inline const Aws::Vector<Ec2Configuration>& GetEc2Configuration() const{ return m_ec2Configuration; }
+
+    /**
+     * <p>Provides information used to select Amazon Machine Images (AMIs) for EC2
+     * instances in the compute environment. If <code>Ec2Configuration</code> isn't
+     * specified, the default is <code>ECS_AL1</code>.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources, and shouldn't be
+     * specified.</p> 
+     */
+    inline bool Ec2ConfigurationHasBeenSet() const { return m_ec2ConfigurationHasBeenSet; }
+
+    /**
+     * <p>Provides information used to select Amazon Machine Images (AMIs) for EC2
+     * instances in the compute environment. If <code>Ec2Configuration</code> isn't
+     * specified, the default is <code>ECS_AL1</code>.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources, and shouldn't be
+     * specified.</p> 
+     */
+    inline void SetEc2Configuration(const Aws::Vector<Ec2Configuration>& value) { m_ec2ConfigurationHasBeenSet = true; m_ec2Configuration = value; }
+
+    /**
+     * <p>Provides information used to select Amazon Machine Images (AMIs) for EC2
+     * instances in the compute environment. If <code>Ec2Configuration</code> isn't
+     * specified, the default is <code>ECS_AL1</code>.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources, and shouldn't be
+     * specified.</p> 
+     */
+    inline void SetEc2Configuration(Aws::Vector<Ec2Configuration>&& value) { m_ec2ConfigurationHasBeenSet = true; m_ec2Configuration = std::move(value); }
+
+    /**
+     * <p>Provides information used to select Amazon Machine Images (AMIs) for EC2
+     * instances in the compute environment. If <code>Ec2Configuration</code> isn't
+     * specified, the default is <code>ECS_AL1</code>.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources, and shouldn't be
+     * specified.</p> 
+     */
+    inline ComputeResource& WithEc2Configuration(const Aws::Vector<Ec2Configuration>& value) { SetEc2Configuration(value); return *this;}
+
+    /**
+     * <p>Provides information used to select Amazon Machine Images (AMIs) for EC2
+     * instances in the compute environment. If <code>Ec2Configuration</code> isn't
+     * specified, the default is <code>ECS_AL1</code>.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources, and shouldn't be
+     * specified.</p> 
+     */
+    inline ComputeResource& WithEc2Configuration(Aws::Vector<Ec2Configuration>&& value) { SetEc2Configuration(std::move(value)); return *this;}
+
+    /**
+     * <p>Provides information used to select Amazon Machine Images (AMIs) for EC2
+     * instances in the compute environment. If <code>Ec2Configuration</code> isn't
+     * specified, the default is <code>ECS_AL1</code>.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources, and shouldn't be
+     * specified.</p> 
+     */
+    inline ComputeResource& AddEc2Configuration(const Ec2Configuration& value) { m_ec2ConfigurationHasBeenSet = true; m_ec2Configuration.push_back(value); return *this; }
+
+    /**
+     * <p>Provides information used to select Amazon Machine Images (AMIs) for EC2
+     * instances in the compute environment. If <code>Ec2Configuration</code> isn't
+     * specified, the default is <code>ECS_AL1</code>.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources, and shouldn't be
+     * specified.</p> 
+     */
+    inline ComputeResource& AddEc2Configuration(Ec2Configuration&& value) { m_ec2ConfigurationHasBeenSet = true; m_ec2Configuration.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -1135,9 +1662,6 @@ namespace Model
 
     Aws::Vector<Aws::String> m_instanceTypes;
     bool m_instanceTypesHasBeenSet;
-
-    Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
 
     Aws::Vector<Aws::String> m_subnets;
     bool m_subnetsHasBeenSet;
@@ -1165,6 +1689,9 @@ namespace Model
 
     LaunchTemplateSpecification m_launchTemplate;
     bool m_launchTemplateHasBeenSet;
+
+    Aws::Vector<Ec2Configuration> m_ec2Configuration;
+    bool m_ec2ConfigurationHasBeenSet;
   };
 
 } // namespace Model

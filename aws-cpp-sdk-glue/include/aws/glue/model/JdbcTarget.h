@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
@@ -132,63 +122,72 @@ namespace Model
 
     /**
      * <p>A list of glob patterns used to exclude from the crawl. For more information,
-     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
      * Tables with a Crawler</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExclusions() const{ return m_exclusions; }
 
     /**
      * <p>A list of glob patterns used to exclude from the crawl. For more information,
-     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
      * Tables with a Crawler</a>.</p>
      */
     inline bool ExclusionsHasBeenSet() const { return m_exclusionsHasBeenSet; }
 
     /**
      * <p>A list of glob patterns used to exclude from the crawl. For more information,
-     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
      * Tables with a Crawler</a>.</p>
      */
     inline void SetExclusions(const Aws::Vector<Aws::String>& value) { m_exclusionsHasBeenSet = true; m_exclusions = value; }
 
     /**
      * <p>A list of glob patterns used to exclude from the crawl. For more information,
-     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
      * Tables with a Crawler</a>.</p>
      */
     inline void SetExclusions(Aws::Vector<Aws::String>&& value) { m_exclusionsHasBeenSet = true; m_exclusions = std::move(value); }
 
     /**
      * <p>A list of glob patterns used to exclude from the crawl. For more information,
-     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
      * Tables with a Crawler</a>.</p>
      */
     inline JdbcTarget& WithExclusions(const Aws::Vector<Aws::String>& value) { SetExclusions(value); return *this;}
 
     /**
      * <p>A list of glob patterns used to exclude from the crawl. For more information,
-     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
      * Tables with a Crawler</a>.</p>
      */
     inline JdbcTarget& WithExclusions(Aws::Vector<Aws::String>&& value) { SetExclusions(std::move(value)); return *this;}
 
     /**
      * <p>A list of glob patterns used to exclude from the crawl. For more information,
-     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
      * Tables with a Crawler</a>.</p>
      */
     inline JdbcTarget& AddExclusions(const Aws::String& value) { m_exclusionsHasBeenSet = true; m_exclusions.push_back(value); return *this; }
 
     /**
      * <p>A list of glob patterns used to exclude from the crawl. For more information,
-     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
      * Tables with a Crawler</a>.</p>
      */
     inline JdbcTarget& AddExclusions(Aws::String&& value) { m_exclusionsHasBeenSet = true; m_exclusions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of glob patterns used to exclude from the crawl. For more information,
-     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
      * Tables with a Crawler</a>.</p>
      */
     inline JdbcTarget& AddExclusions(const char* value) { m_exclusionsHasBeenSet = true; m_exclusions.push_back(value); return *this; }

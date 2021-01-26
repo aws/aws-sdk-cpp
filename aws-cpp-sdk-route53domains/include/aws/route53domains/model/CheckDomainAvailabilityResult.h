@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
@@ -49,8 +39,8 @@ namespace Model
 
 
     /**
-     * <p>Whether the domain name is available for registering.</p> <note> <p>You can
-     * register only domains designated as <code>AVAILABLE</code>.</p> </note> <p>Valid
+     * <p>Whether the domain name is available for registering.</p>  <p>You can
+     * register only domains designated as <code>AVAILABLE</code>.</p>  <p>Valid
      * values:</p> <dl> <dt>AVAILABLE</dt> <dd> <p>The domain name is available.</p>
      * </dd> <dt>AVAILABLE_RESERVED</dt> <dd> <p>The domain name is reserved under
      * specific conditions.</p> </dd> <dt>AVAILABLE_PREORDER</dt> <dd> <p>The domain
@@ -70,8 +60,8 @@ namespace Model
     inline const DomainAvailability& GetAvailability() const{ return m_availability; }
 
     /**
-     * <p>Whether the domain name is available for registering.</p> <note> <p>You can
-     * register only domains designated as <code>AVAILABLE</code>.</p> </note> <p>Valid
+     * <p>Whether the domain name is available for registering.</p>  <p>You can
+     * register only domains designated as <code>AVAILABLE</code>.</p>  <p>Valid
      * values:</p> <dl> <dt>AVAILABLE</dt> <dd> <p>The domain name is available.</p>
      * </dd> <dt>AVAILABLE_RESERVED</dt> <dd> <p>The domain name is reserved under
      * specific conditions.</p> </dd> <dt>AVAILABLE_PREORDER</dt> <dd> <p>The domain
@@ -91,8 +81,8 @@ namespace Model
     inline void SetAvailability(const DomainAvailability& value) { m_availability = value; }
 
     /**
-     * <p>Whether the domain name is available for registering.</p> <note> <p>You can
-     * register only domains designated as <code>AVAILABLE</code>.</p> </note> <p>Valid
+     * <p>Whether the domain name is available for registering.</p>  <p>You can
+     * register only domains designated as <code>AVAILABLE</code>.</p>  <p>Valid
      * values:</p> <dl> <dt>AVAILABLE</dt> <dd> <p>The domain name is available.</p>
      * </dd> <dt>AVAILABLE_RESERVED</dt> <dd> <p>The domain name is reserved under
      * specific conditions.</p> </dd> <dt>AVAILABLE_PREORDER</dt> <dd> <p>The domain
@@ -112,8 +102,8 @@ namespace Model
     inline void SetAvailability(DomainAvailability&& value) { m_availability = std::move(value); }
 
     /**
-     * <p>Whether the domain name is available for registering.</p> <note> <p>You can
-     * register only domains designated as <code>AVAILABLE</code>.</p> </note> <p>Valid
+     * <p>Whether the domain name is available for registering.</p>  <p>You can
+     * register only domains designated as <code>AVAILABLE</code>.</p>  <p>Valid
      * values:</p> <dl> <dt>AVAILABLE</dt> <dd> <p>The domain name is available.</p>
      * </dd> <dt>AVAILABLE_RESERVED</dt> <dd> <p>The domain name is reserved under
      * specific conditions.</p> </dd> <dt>AVAILABLE_PREORDER</dt> <dd> <p>The domain
@@ -133,8 +123,8 @@ namespace Model
     inline CheckDomainAvailabilityResult& WithAvailability(const DomainAvailability& value) { SetAvailability(value); return *this;}
 
     /**
-     * <p>Whether the domain name is available for registering.</p> <note> <p>You can
-     * register only domains designated as <code>AVAILABLE</code>.</p> </note> <p>Valid
+     * <p>Whether the domain name is available for registering.</p>  <p>You can
+     * register only domains designated as <code>AVAILABLE</code>.</p>  <p>Valid
      * values:</p> <dl> <dt>AVAILABLE</dt> <dd> <p>The domain name is available.</p>
      * </dd> <dt>AVAILABLE_RESERVED</dt> <dd> <p>The domain name is reserved under
      * specific conditions.</p> </dd> <dt>AVAILABLE_PREORDER</dt> <dd> <p>The domain

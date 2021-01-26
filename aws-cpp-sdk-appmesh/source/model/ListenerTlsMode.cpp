@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/appmesh/model/ListenerTlsMode.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -30,25 +20,25 @@ namespace Aws
       namespace ListenerTlsModeMapper
       {
 
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
-        static const int PERMISSIVE_HASH = HashingUtils::HashString("PERMISSIVE");
         static const int STRICT_HASH = HashingUtils::HashString("STRICT");
+        static const int PERMISSIVE_HASH = HashingUtils::HashString("PERMISSIVE");
+        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
 
 
         ListenerTlsMode GetListenerTlsModeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == DISABLED_HASH)
+          if (hashCode == STRICT_HASH)
           {
-            return ListenerTlsMode::DISABLED;
+            return ListenerTlsMode::STRICT;
           }
           else if (hashCode == PERMISSIVE_HASH)
           {
             return ListenerTlsMode::PERMISSIVE;
           }
-          else if (hashCode == STRICT_HASH)
+          else if (hashCode == DISABLED_HASH)
           {
-            return ListenerTlsMode::STRICT;
+            return ListenerTlsMode::DISABLED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -64,12 +54,12 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case ListenerTlsMode::DISABLED:
-            return "DISABLED";
-          case ListenerTlsMode::PERMISSIVE:
-            return "PERMISSIVE";
           case ListenerTlsMode::STRICT:
             return "STRICT";
+          case ListenerTlsMode::PERMISSIVE:
+            return "PERMISSIVE";
+          case ListenerTlsMode::DISABLED:
+            return "DISABLED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

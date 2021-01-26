@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
@@ -132,75 +122,75 @@ namespace Model
 
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
-     * this instance.</p>
+     * <p> The currency code that AWS used to calculate the costs for this
+     * instance.</p>
      */
     inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
-     * this instance.</p>
+     * <p> The currency code that AWS used to calculate the costs for this
+     * instance.</p>
      */
     inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
-     * this instance.</p>
+     * <p> The currency code that AWS used to calculate the costs for this
+     * instance.</p>
      */
     inline void SetCurrencyCode(const Aws::String& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
-     * this instance.</p>
+     * <p> The currency code that AWS used to calculate the costs for this
+     * instance.</p>
      */
     inline void SetCurrencyCode(Aws::String&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
-     * this instance.</p>
+     * <p> The currency code that AWS used to calculate the costs for this
+     * instance.</p>
      */
     inline void SetCurrencyCode(const char* value) { m_currencyCodeHasBeenSet = true; m_currencyCode.assign(value); }
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
-     * this instance.</p>
+     * <p> The currency code that AWS used to calculate the costs for this
+     * instance.</p>
      */
     inline TargetInstance& WithCurrencyCode(const Aws::String& value) { SetCurrencyCode(value); return *this;}
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
-     * this instance.</p>
+     * <p> The currency code that AWS used to calculate the costs for this
+     * instance.</p>
      */
     inline TargetInstance& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
     /**
-     * <p> The currency code that Amazon Web Services used to calculate the costs for
-     * this instance.</p>
+     * <p> The currency code that AWS used to calculate the costs for this
+     * instance.</p>
      */
     inline TargetInstance& WithCurrencyCode(const char* value) { SetCurrencyCode(value); return *this;}
 
 
     /**
-     * <p> Indicates whether or not this recommendation is the defaulted Amazon Web
-     * Services recommendation.</p>
+     * <p> Indicates whether this recommendation is the defaulted AWS
+     * recommendation.</p>
      */
     inline bool GetDefaultTargetInstance() const{ return m_defaultTargetInstance; }
 
     /**
-     * <p> Indicates whether or not this recommendation is the defaulted Amazon Web
-     * Services recommendation.</p>
+     * <p> Indicates whether this recommendation is the defaulted AWS
+     * recommendation.</p>
      */
     inline bool DefaultTargetInstanceHasBeenSet() const { return m_defaultTargetInstanceHasBeenSet; }
 
     /**
-     * <p> Indicates whether or not this recommendation is the defaulted Amazon Web
-     * Services recommendation.</p>
+     * <p> Indicates whether this recommendation is the defaulted AWS
+     * recommendation.</p>
      */
     inline void SetDefaultTargetInstance(bool value) { m_defaultTargetInstanceHasBeenSet = true; m_defaultTargetInstance = value; }
 
     /**
-     * <p> Indicates whether or not this recommendation is the defaulted Amazon Web
-     * Services recommendation.</p>
+     * <p> Indicates whether this recommendation is the defaulted AWS
+     * recommendation.</p>
      */
     inline TargetInstance& WithDefaultTargetInstance(bool value) { SetDefaultTargetInstance(value); return *this;}
 

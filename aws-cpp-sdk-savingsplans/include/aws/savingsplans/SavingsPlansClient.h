@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/savingsplans/SavingsPlans_EXPORTS.h>
@@ -22,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/savingsplans/model/CreateSavingsPlanResult.h>
+#include <aws/savingsplans/model/DeleteQueuedSavingsPlanResult.h>
 #include <aws/savingsplans/model/DescribeSavingsPlanRatesResult.h>
 #include <aws/savingsplans/model/DescribeSavingsPlansResult.h>
 #include <aws/savingsplans/model/DescribeSavingsPlansOfferingRatesResult.h>
@@ -69,6 +60,7 @@ namespace SavingsPlans
 namespace Model
 {
         class CreateSavingsPlanRequest;
+        class DeleteQueuedSavingsPlanRequest;
         class DescribeSavingsPlanRatesRequest;
         class DescribeSavingsPlansRequest;
         class DescribeSavingsPlansOfferingRatesRequest;
@@ -77,16 +69,18 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
 
-        typedef Aws::Utils::Outcome<CreateSavingsPlanResult, Aws::Client::AWSError<SavingsPlansErrors>> CreateSavingsPlanOutcome;
-        typedef Aws::Utils::Outcome<DescribeSavingsPlanRatesResult, Aws::Client::AWSError<SavingsPlansErrors>> DescribeSavingsPlanRatesOutcome;
-        typedef Aws::Utils::Outcome<DescribeSavingsPlansResult, Aws::Client::AWSError<SavingsPlansErrors>> DescribeSavingsPlansOutcome;
-        typedef Aws::Utils::Outcome<DescribeSavingsPlansOfferingRatesResult, Aws::Client::AWSError<SavingsPlansErrors>> DescribeSavingsPlansOfferingRatesOutcome;
-        typedef Aws::Utils::Outcome<DescribeSavingsPlansOfferingsResult, Aws::Client::AWSError<SavingsPlansErrors>> DescribeSavingsPlansOfferingsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<SavingsPlansErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<SavingsPlansErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<SavingsPlansErrors>> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<CreateSavingsPlanResult, SavingsPlansError> CreateSavingsPlanOutcome;
+        typedef Aws::Utils::Outcome<DeleteQueuedSavingsPlanResult, SavingsPlansError> DeleteQueuedSavingsPlanOutcome;
+        typedef Aws::Utils::Outcome<DescribeSavingsPlanRatesResult, SavingsPlansError> DescribeSavingsPlanRatesOutcome;
+        typedef Aws::Utils::Outcome<DescribeSavingsPlansResult, SavingsPlansError> DescribeSavingsPlansOutcome;
+        typedef Aws::Utils::Outcome<DescribeSavingsPlansOfferingRatesResult, SavingsPlansError> DescribeSavingsPlansOfferingRatesOutcome;
+        typedef Aws::Utils::Outcome<DescribeSavingsPlansOfferingsResult, SavingsPlansError> DescribeSavingsPlansOfferingsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, SavingsPlansError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, SavingsPlansError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, SavingsPlansError> UntagResourceOutcome;
 
         typedef std::future<CreateSavingsPlanOutcome> CreateSavingsPlanOutcomeCallable;
+        typedef std::future<DeleteQueuedSavingsPlanOutcome> DeleteQueuedSavingsPlanOutcomeCallable;
         typedef std::future<DescribeSavingsPlanRatesOutcome> DescribeSavingsPlanRatesOutcomeCallable;
         typedef std::future<DescribeSavingsPlansOutcome> DescribeSavingsPlansOutcomeCallable;
         typedef std::future<DescribeSavingsPlansOfferingRatesOutcome> DescribeSavingsPlansOfferingRatesOutcomeCallable;
@@ -99,6 +93,7 @@ namespace Model
   class SavingsPlansClient;
 
     typedef std::function<void(const SavingsPlansClient*, const Model::CreateSavingsPlanRequest&, const Model::CreateSavingsPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSavingsPlanResponseReceivedHandler;
+    typedef std::function<void(const SavingsPlansClient*, const Model::DeleteQueuedSavingsPlanRequest&, const Model::DeleteQueuedSavingsPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteQueuedSavingsPlanResponseReceivedHandler;
     typedef std::function<void(const SavingsPlansClient*, const Model::DescribeSavingsPlanRatesRequest&, const Model::DescribeSavingsPlanRatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSavingsPlanRatesResponseReceivedHandler;
     typedef std::function<void(const SavingsPlansClient*, const Model::DescribeSavingsPlansRequest&, const Model::DescribeSavingsPlansOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSavingsPlansResponseReceivedHandler;
     typedef std::function<void(const SavingsPlansClient*, const Model::DescribeSavingsPlansOfferingRatesRequest&, const Model::DescribeSavingsPlansOfferingRatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSavingsPlansOfferingRatesResponseReceivedHandler;
@@ -141,8 +136,6 @@ namespace Model
 
         virtual ~SavingsPlansClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "savingsplans"; }
-
 
         /**
          * <p>Creates a Savings Plan.</p><p><h3>See Also:</h3>   <a
@@ -168,6 +161,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateSavingsPlanAsync(const Model::CreateSavingsPlanRequest& request, const CreateSavingsPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the queued purchase for the specified Savings Plan.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/DeleteQueuedSavingsPlan">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteQueuedSavingsPlanOutcome DeleteQueuedSavingsPlan(const Model::DeleteQueuedSavingsPlanRequest& request) const;
+
+        /**
+         * <p>Deletes the queued purchase for the specified Savings Plan.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/DeleteQueuedSavingsPlan">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteQueuedSavingsPlanOutcomeCallable DeleteQueuedSavingsPlanCallable(const Model::DeleteQueuedSavingsPlanRequest& request) const;
+
+        /**
+         * <p>Deletes the queued purchase for the specified Savings Plan.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/DeleteQueuedSavingsPlan">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteQueuedSavingsPlanAsync(const Model::DeleteQueuedSavingsPlanRequest& request, const DeleteQueuedSavingsPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified Savings Plans rates.</p><p><h3>See Also:</h3>   <a
@@ -361,6 +382,7 @@ namespace Model
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void CreateSavingsPlanAsyncHelper(const Model::CreateSavingsPlanRequest& request, const CreateSavingsPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteQueuedSavingsPlanAsyncHelper(const Model::DeleteQueuedSavingsPlanRequest& request, const DeleteQueuedSavingsPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSavingsPlanRatesAsyncHelper(const Model::DescribeSavingsPlanRatesRequest& request, const DescribeSavingsPlanRatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSavingsPlansAsyncHelper(const Model::DescribeSavingsPlansRequest& request, const DescribeSavingsPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSavingsPlansOfferingRatesAsyncHelper(const Model::DescribeSavingsPlansOfferingRatesRequest& request, const DescribeSavingsPlansOfferingRatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

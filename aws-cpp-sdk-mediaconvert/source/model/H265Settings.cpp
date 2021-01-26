@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/H265Settings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -86,6 +76,8 @@ H265Settings::H265Settings() :
     m_rateControlModeHasBeenSet(false),
     m_sampleAdaptiveOffsetFilterMode(H265SampleAdaptiveOffsetFilterMode::NOT_SET),
     m_sampleAdaptiveOffsetFilterModeHasBeenSet(false),
+    m_scanTypeConversionMode(H265ScanTypeConversionMode::NOT_SET),
+    m_scanTypeConversionModeHasBeenSet(false),
     m_sceneChangeDetect(H265SceneChangeDetect::NOT_SET),
     m_sceneChangeDetectHasBeenSet(false),
     m_slices(0),
@@ -167,6 +159,8 @@ H265Settings::H265Settings(JsonView jsonValue) :
     m_rateControlModeHasBeenSet(false),
     m_sampleAdaptiveOffsetFilterMode(H265SampleAdaptiveOffsetFilterMode::NOT_SET),
     m_sampleAdaptiveOffsetFilterModeHasBeenSet(false),
+    m_scanTypeConversionMode(H265ScanTypeConversionMode::NOT_SET),
+    m_scanTypeConversionModeHasBeenSet(false),
     m_sceneChangeDetect(H265SceneChangeDetect::NOT_SET),
     m_sceneChangeDetectHasBeenSet(false),
     m_slices(0),
@@ -394,6 +388,13 @@ H265Settings& H265Settings::operator =(JsonView jsonValue)
     m_sampleAdaptiveOffsetFilterMode = H265SampleAdaptiveOffsetFilterModeMapper::GetH265SampleAdaptiveOffsetFilterModeForName(jsonValue.GetString("sampleAdaptiveOffsetFilterMode"));
 
     m_sampleAdaptiveOffsetFilterModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("scanTypeConversionMode"))
+  {
+    m_scanTypeConversionMode = H265ScanTypeConversionModeMapper::GetH265ScanTypeConversionModeForName(jsonValue.GetString("scanTypeConversionMode"));
+
+    m_scanTypeConversionModeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sceneChangeDetect"))
@@ -630,6 +631,11 @@ JsonValue H265Settings::Jsonize() const
   if(m_sampleAdaptiveOffsetFilterModeHasBeenSet)
   {
    payload.WithString("sampleAdaptiveOffsetFilterMode", H265SampleAdaptiveOffsetFilterModeMapper::GetNameForH265SampleAdaptiveOffsetFilterMode(m_sampleAdaptiveOffsetFilterMode));
+  }
+
+  if(m_scanTypeConversionModeHasBeenSet)
+  {
+   payload.WithString("scanTypeConversionMode", H265ScanTypeConversionModeMapper::GetNameForH265ScanTypeConversionMode(m_scanTypeConversionMode));
   }
 
   if(m_sceneChangeDetectHasBeenSet)

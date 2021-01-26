@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
@@ -22,6 +12,7 @@
 #include <aws/mediaconvert/model/InputFilterEnable.h>
 #include <aws/mediaconvert/model/ImageInserter.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediaconvert/model/InputScanType.h>
 #include <aws/mediaconvert/model/InputPsiControl.h>
 #include <aws/mediaconvert/model/InputTimecodeSource.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -148,170 +139,158 @@ namespace Model
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use mutiple Audio selectors
-     * per input.
+     * the input that you will use in your outputs. You can use multiple Audio
+     * selectors per input.
      */
     inline const Aws::Map<Aws::String, AudioSelector>& GetAudioSelectors() const{ return m_audioSelectors; }
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use mutiple Audio selectors
-     * per input.
+     * the input that you will use in your outputs. You can use multiple Audio
+     * selectors per input.
      */
     inline bool AudioSelectorsHasBeenSet() const { return m_audioSelectorsHasBeenSet; }
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use mutiple Audio selectors
-     * per input.
+     * the input that you will use in your outputs. You can use multiple Audio
+     * selectors per input.
      */
     inline void SetAudioSelectors(const Aws::Map<Aws::String, AudioSelector>& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors = value; }
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use mutiple Audio selectors
-     * per input.
+     * the input that you will use in your outputs. You can use multiple Audio
+     * selectors per input.
      */
     inline void SetAudioSelectors(Aws::Map<Aws::String, AudioSelector>&& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors = std::move(value); }
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use mutiple Audio selectors
-     * per input.
+     * the input that you will use in your outputs. You can use multiple Audio
+     * selectors per input.
      */
     inline InputTemplate& WithAudioSelectors(const Aws::Map<Aws::String, AudioSelector>& value) { SetAudioSelectors(value); return *this;}
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use mutiple Audio selectors
-     * per input.
+     * the input that you will use in your outputs. You can use multiple Audio
+     * selectors per input.
      */
     inline InputTemplate& WithAudioSelectors(Aws::Map<Aws::String, AudioSelector>&& value) { SetAudioSelectors(std::move(value)); return *this;}
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use mutiple Audio selectors
-     * per input.
+     * the input that you will use in your outputs. You can use multiple Audio
+     * selectors per input.
      */
     inline InputTemplate& AddAudioSelectors(const Aws::String& key, const AudioSelector& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors.emplace(key, value); return *this; }
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use mutiple Audio selectors
-     * per input.
+     * the input that you will use in your outputs. You can use multiple Audio
+     * selectors per input.
      */
     inline InputTemplate& AddAudioSelectors(Aws::String&& key, const AudioSelector& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors.emplace(std::move(key), value); return *this; }
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use mutiple Audio selectors
-     * per input.
+     * the input that you will use in your outputs. You can use multiple Audio
+     * selectors per input.
      */
     inline InputTemplate& AddAudioSelectors(const Aws::String& key, AudioSelector&& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors.emplace(key, std::move(value)); return *this; }
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use mutiple Audio selectors
-     * per input.
+     * the input that you will use in your outputs. You can use multiple Audio
+     * selectors per input.
      */
     inline InputTemplate& AddAudioSelectors(Aws::String&& key, AudioSelector&& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use mutiple Audio selectors
-     * per input.
+     * the input that you will use in your outputs. You can use multiple Audio
+     * selectors per input.
      */
     inline InputTemplate& AddAudioSelectors(const char* key, AudioSelector&& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors.emplace(key, std::move(value)); return *this; }
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use mutiple Audio selectors
-     * per input.
+     * the input that you will use in your outputs. You can use multiple Audio
+     * selectors per input.
      */
     inline InputTemplate& AddAudioSelectors(const char* key, const AudioSelector& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors.emplace(key, value); return *this; }
 
 
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use mutiple captions selectors
-     * per input.
+     * Use captions selectors to specify the captions data from your input that you use
+     * in your outputs. You can use up to 20 captions selectors per input.
      */
     inline const Aws::Map<Aws::String, CaptionSelector>& GetCaptionSelectors() const{ return m_captionSelectors; }
 
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use mutiple captions selectors
-     * per input.
+     * Use captions selectors to specify the captions data from your input that you use
+     * in your outputs. You can use up to 20 captions selectors per input.
      */
     inline bool CaptionSelectorsHasBeenSet() const { return m_captionSelectorsHasBeenSet; }
 
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use mutiple captions selectors
-     * per input.
+     * Use captions selectors to specify the captions data from your input that you use
+     * in your outputs. You can use up to 20 captions selectors per input.
      */
     inline void SetCaptionSelectors(const Aws::Map<Aws::String, CaptionSelector>& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors = value; }
 
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use mutiple captions selectors
-     * per input.
+     * Use captions selectors to specify the captions data from your input that you use
+     * in your outputs. You can use up to 20 captions selectors per input.
      */
     inline void SetCaptionSelectors(Aws::Map<Aws::String, CaptionSelector>&& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors = std::move(value); }
 
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use mutiple captions selectors
-     * per input.
+     * Use captions selectors to specify the captions data from your input that you use
+     * in your outputs. You can use up to 20 captions selectors per input.
      */
     inline InputTemplate& WithCaptionSelectors(const Aws::Map<Aws::String, CaptionSelector>& value) { SetCaptionSelectors(value); return *this;}
 
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use mutiple captions selectors
-     * per input.
+     * Use captions selectors to specify the captions data from your input that you use
+     * in your outputs. You can use up to 20 captions selectors per input.
      */
     inline InputTemplate& WithCaptionSelectors(Aws::Map<Aws::String, CaptionSelector>&& value) { SetCaptionSelectors(std::move(value)); return *this;}
 
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use mutiple captions selectors
-     * per input.
+     * Use captions selectors to specify the captions data from your input that you use
+     * in your outputs. You can use up to 20 captions selectors per input.
      */
     inline InputTemplate& AddCaptionSelectors(const Aws::String& key, const CaptionSelector& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors.emplace(key, value); return *this; }
 
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use mutiple captions selectors
-     * per input.
+     * Use captions selectors to specify the captions data from your input that you use
+     * in your outputs. You can use up to 20 captions selectors per input.
      */
     inline InputTemplate& AddCaptionSelectors(Aws::String&& key, const CaptionSelector& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors.emplace(std::move(key), value); return *this; }
 
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use mutiple captions selectors
-     * per input.
+     * Use captions selectors to specify the captions data from your input that you use
+     * in your outputs. You can use up to 20 captions selectors per input.
      */
     inline InputTemplate& AddCaptionSelectors(const Aws::String& key, CaptionSelector&& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use mutiple captions selectors
-     * per input.
+     * Use captions selectors to specify the captions data from your input that you use
+     * in your outputs. You can use up to 20 captions selectors per input.
      */
     inline InputTemplate& AddCaptionSelectors(Aws::String&& key, CaptionSelector&& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use mutiple captions selectors
-     * per input.
+     * Use captions selectors to specify the captions data from your input that you use
+     * in your outputs. You can use up to 20 captions selectors per input.
      */
     inline InputTemplate& AddCaptionSelectors(const char* key, CaptionSelector&& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use mutiple captions selectors
-     * per input.
+     * Use captions selectors to specify the captions data from your input that you use
+     * in your outputs. You can use up to 20 captions selectors per input.
      */
     inline InputTemplate& AddCaptionSelectors(const char* key, const CaptionSelector& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors.emplace(key, value); return *this; }
 
@@ -361,42 +340,42 @@ namespace Model
 
     /**
      * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output.
-     * Default is disabled. Only manaully controllable for MPEG2 and uncompressed video
+     * Default is disabled. Only manually controllable for MPEG2 and uncompressed video
      * inputs.
      */
     inline const InputDeblockFilter& GetDeblockFilter() const{ return m_deblockFilter; }
 
     /**
      * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output.
-     * Default is disabled. Only manaully controllable for MPEG2 and uncompressed video
+     * Default is disabled. Only manually controllable for MPEG2 and uncompressed video
      * inputs.
      */
     inline bool DeblockFilterHasBeenSet() const { return m_deblockFilterHasBeenSet; }
 
     /**
      * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output.
-     * Default is disabled. Only manaully controllable for MPEG2 and uncompressed video
+     * Default is disabled. Only manually controllable for MPEG2 and uncompressed video
      * inputs.
      */
     inline void SetDeblockFilter(const InputDeblockFilter& value) { m_deblockFilterHasBeenSet = true; m_deblockFilter = value; }
 
     /**
      * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output.
-     * Default is disabled. Only manaully controllable for MPEG2 and uncompressed video
+     * Default is disabled. Only manually controllable for MPEG2 and uncompressed video
      * inputs.
      */
     inline void SetDeblockFilter(InputDeblockFilter&& value) { m_deblockFilterHasBeenSet = true; m_deblockFilter = std::move(value); }
 
     /**
      * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output.
-     * Default is disabled. Only manaully controllable for MPEG2 and uncompressed video
+     * Default is disabled. Only manually controllable for MPEG2 and uncompressed video
      * inputs.
      */
     inline InputTemplate& WithDeblockFilter(const InputDeblockFilter& value) { SetDeblockFilter(value); return *this;}
 
     /**
      * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output.
-     * Default is disabled. Only manaully controllable for MPEG2 and uncompressed video
+     * Default is disabled. Only manually controllable for MPEG2 and uncompressed video
      * inputs.
      */
     inline InputTemplate& WithDeblockFilter(InputDeblockFilter&& value) { SetDeblockFilter(std::move(value)); return *this;}
@@ -440,68 +419,68 @@ namespace Model
 
 
     /**
-     * Use Filter enable (InputFilterEnable) to specify how the transcoding service
-     * applies the denoise and deblock filters. You must also enable the filters
-     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter).
-     * * Auto - The transcoding service determines whether to apply filtering,
-     * depending on input type and quality. * Disable - The input is not filtered. This
-     * is true even if you use the API to enable them in (InputDeblockFilter) and
-     * (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     * Specify how the transcoding service applies the denoise and deblock filters. You
+     * must also enable the filters separately, with Denoise (InputDenoiseFilter) and
+     * Deblock (InputDeblockFilter). * Auto - The transcoding service determines
+     * whether to apply filtering, depending on input type and quality. * Disable - The
+     * input is not filtered. This is true even if you use the API to enable them in
+     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The input is filtered
+     * regardless of input type.
      */
     inline const InputFilterEnable& GetFilterEnable() const{ return m_filterEnable; }
 
     /**
-     * Use Filter enable (InputFilterEnable) to specify how the transcoding service
-     * applies the denoise and deblock filters. You must also enable the filters
-     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter).
-     * * Auto - The transcoding service determines whether to apply filtering,
-     * depending on input type and quality. * Disable - The input is not filtered. This
-     * is true even if you use the API to enable them in (InputDeblockFilter) and
-     * (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     * Specify how the transcoding service applies the denoise and deblock filters. You
+     * must also enable the filters separately, with Denoise (InputDenoiseFilter) and
+     * Deblock (InputDeblockFilter). * Auto - The transcoding service determines
+     * whether to apply filtering, depending on input type and quality. * Disable - The
+     * input is not filtered. This is true even if you use the API to enable them in
+     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The input is filtered
+     * regardless of input type.
      */
     inline bool FilterEnableHasBeenSet() const { return m_filterEnableHasBeenSet; }
 
     /**
-     * Use Filter enable (InputFilterEnable) to specify how the transcoding service
-     * applies the denoise and deblock filters. You must also enable the filters
-     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter).
-     * * Auto - The transcoding service determines whether to apply filtering,
-     * depending on input type and quality. * Disable - The input is not filtered. This
-     * is true even if you use the API to enable them in (InputDeblockFilter) and
-     * (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     * Specify how the transcoding service applies the denoise and deblock filters. You
+     * must also enable the filters separately, with Denoise (InputDenoiseFilter) and
+     * Deblock (InputDeblockFilter). * Auto - The transcoding service determines
+     * whether to apply filtering, depending on input type and quality. * Disable - The
+     * input is not filtered. This is true even if you use the API to enable them in
+     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The input is filtered
+     * regardless of input type.
      */
     inline void SetFilterEnable(const InputFilterEnable& value) { m_filterEnableHasBeenSet = true; m_filterEnable = value; }
 
     /**
-     * Use Filter enable (InputFilterEnable) to specify how the transcoding service
-     * applies the denoise and deblock filters. You must also enable the filters
-     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter).
-     * * Auto - The transcoding service determines whether to apply filtering,
-     * depending on input type and quality. * Disable - The input is not filtered. This
-     * is true even if you use the API to enable them in (InputDeblockFilter) and
-     * (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     * Specify how the transcoding service applies the denoise and deblock filters. You
+     * must also enable the filters separately, with Denoise (InputDenoiseFilter) and
+     * Deblock (InputDeblockFilter). * Auto - The transcoding service determines
+     * whether to apply filtering, depending on input type and quality. * Disable - The
+     * input is not filtered. This is true even if you use the API to enable them in
+     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The input is filtered
+     * regardless of input type.
      */
     inline void SetFilterEnable(InputFilterEnable&& value) { m_filterEnableHasBeenSet = true; m_filterEnable = std::move(value); }
 
     /**
-     * Use Filter enable (InputFilterEnable) to specify how the transcoding service
-     * applies the denoise and deblock filters. You must also enable the filters
-     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter).
-     * * Auto - The transcoding service determines whether to apply filtering,
-     * depending on input type and quality. * Disable - The input is not filtered. This
-     * is true even if you use the API to enable them in (InputDeblockFilter) and
-     * (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     * Specify how the transcoding service applies the denoise and deblock filters. You
+     * must also enable the filters separately, with Denoise (InputDenoiseFilter) and
+     * Deblock (InputDeblockFilter). * Auto - The transcoding service determines
+     * whether to apply filtering, depending on input type and quality. * Disable - The
+     * input is not filtered. This is true even if you use the API to enable them in
+     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The input is filtered
+     * regardless of input type.
      */
     inline InputTemplate& WithFilterEnable(const InputFilterEnable& value) { SetFilterEnable(value); return *this;}
 
     /**
-     * Use Filter enable (InputFilterEnable) to specify how the transcoding service
-     * applies the denoise and deblock filters. You must also enable the filters
-     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter).
-     * * Auto - The transcoding service determines whether to apply filtering,
-     * depending on input type and quality. * Disable - The input is not filtered. This
-     * is true even if you use the API to enable them in (InputDeblockFilter) and
-     * (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     * Specify how the transcoding service applies the denoise and deblock filters. You
+     * must also enable the filters separately, with Denoise (InputDenoiseFilter) and
+     * Deblock (InputDeblockFilter). * Auto - The transcoding service determines
+     * whether to apply filtering, depending on input type and quality. * Disable - The
+     * input is not filtered. This is true even if you use the API to enable them in
+     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The input is filtered
+     * regardless of input type.
      */
     inline InputTemplate& WithFilterEnable(InputFilterEnable&& value) { SetFilterEnable(std::move(value)); return *this;}
 
@@ -653,6 +632,73 @@ namespace Model
      * outputs by stringing the clips together in the order you specify them.
      */
     inline InputTemplate& AddInputClippings(InputClipping&& value) { m_inputClippingsHasBeenSet = true; m_inputClippings.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * When you have a progressive segmented frame (PsF) input, use this setting to
+     * flag the input as PsF. MediaConvert doesn't automatically detect PsF. Therefore,
+     * flagging your input as PsF results in better preservation of video quality when
+     * you do deinterlacing and frame rate conversion. If you don't specify, the
+     * default value is Auto (AUTO). Auto is the correct setting for all inputs that
+     * are not PsF. Don't set this value to PsF when your input is interlaced. Doing so
+     * creates horizontal interlacing artifacts.
+     */
+    inline const InputScanType& GetInputScanType() const{ return m_inputScanType; }
+
+    /**
+     * When you have a progressive segmented frame (PsF) input, use this setting to
+     * flag the input as PsF. MediaConvert doesn't automatically detect PsF. Therefore,
+     * flagging your input as PsF results in better preservation of video quality when
+     * you do deinterlacing and frame rate conversion. If you don't specify, the
+     * default value is Auto (AUTO). Auto is the correct setting for all inputs that
+     * are not PsF. Don't set this value to PsF when your input is interlaced. Doing so
+     * creates horizontal interlacing artifacts.
+     */
+    inline bool InputScanTypeHasBeenSet() const { return m_inputScanTypeHasBeenSet; }
+
+    /**
+     * When you have a progressive segmented frame (PsF) input, use this setting to
+     * flag the input as PsF. MediaConvert doesn't automatically detect PsF. Therefore,
+     * flagging your input as PsF results in better preservation of video quality when
+     * you do deinterlacing and frame rate conversion. If you don't specify, the
+     * default value is Auto (AUTO). Auto is the correct setting for all inputs that
+     * are not PsF. Don't set this value to PsF when your input is interlaced. Doing so
+     * creates horizontal interlacing artifacts.
+     */
+    inline void SetInputScanType(const InputScanType& value) { m_inputScanTypeHasBeenSet = true; m_inputScanType = value; }
+
+    /**
+     * When you have a progressive segmented frame (PsF) input, use this setting to
+     * flag the input as PsF. MediaConvert doesn't automatically detect PsF. Therefore,
+     * flagging your input as PsF results in better preservation of video quality when
+     * you do deinterlacing and frame rate conversion. If you don't specify, the
+     * default value is Auto (AUTO). Auto is the correct setting for all inputs that
+     * are not PsF. Don't set this value to PsF when your input is interlaced. Doing so
+     * creates horizontal interlacing artifacts.
+     */
+    inline void SetInputScanType(InputScanType&& value) { m_inputScanTypeHasBeenSet = true; m_inputScanType = std::move(value); }
+
+    /**
+     * When you have a progressive segmented frame (PsF) input, use this setting to
+     * flag the input as PsF. MediaConvert doesn't automatically detect PsF. Therefore,
+     * flagging your input as PsF results in better preservation of video quality when
+     * you do deinterlacing and frame rate conversion. If you don't specify, the
+     * default value is Auto (AUTO). Auto is the correct setting for all inputs that
+     * are not PsF. Don't set this value to PsF when your input is interlaced. Doing so
+     * creates horizontal interlacing artifacts.
+     */
+    inline InputTemplate& WithInputScanType(const InputScanType& value) { SetInputScanType(value); return *this;}
+
+    /**
+     * When you have a progressive segmented frame (PsF) input, use this setting to
+     * flag the input as PsF. MediaConvert doesn't automatically detect PsF. Therefore,
+     * flagging your input as PsF results in better preservation of video quality when
+     * you do deinterlacing and frame rate conversion. If you don't specify, the
+     * default value is Auto (AUTO). Auto is the correct setting for all inputs that
+     * are not PsF. Don't set this value to PsF when your input is interlaced. Doing so
+     * creates horizontal interlacing artifacts.
+     */
+    inline InputTemplate& WithInputScanType(InputScanType&& value) { SetInputScanType(std::move(value)); return *this;}
 
 
     /**
@@ -1029,6 +1075,9 @@ namespace Model
 
     Aws::Vector<InputClipping> m_inputClippings;
     bool m_inputClippingsHasBeenSet;
+
+    InputScanType m_inputScanType;
+    bool m_inputScanTypeHasBeenSet;
 
     Rectangle m_position;
     bool m_positionHasBeenSet;

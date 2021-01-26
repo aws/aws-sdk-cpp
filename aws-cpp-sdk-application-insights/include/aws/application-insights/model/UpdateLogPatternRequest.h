@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/application-insights/ApplicationInsights_EXPORTS.h>
@@ -168,63 +158,111 @@ namespace Model
 
 
     /**
-     * <p>The log pattern.</p>
+     * <p>The log pattern. The pattern must be DFA compatible. Patterns that utilize
+     * forward lookahead or backreference constructions are not supported.</p>
      */
     inline const Aws::String& GetPattern() const{ return m_pattern; }
 
     /**
-     * <p>The log pattern.</p>
+     * <p>The log pattern. The pattern must be DFA compatible. Patterns that utilize
+     * forward lookahead or backreference constructions are not supported.</p>
      */
     inline bool PatternHasBeenSet() const { return m_patternHasBeenSet; }
 
     /**
-     * <p>The log pattern.</p>
+     * <p>The log pattern. The pattern must be DFA compatible. Patterns that utilize
+     * forward lookahead or backreference constructions are not supported.</p>
      */
     inline void SetPattern(const Aws::String& value) { m_patternHasBeenSet = true; m_pattern = value; }
 
     /**
-     * <p>The log pattern.</p>
+     * <p>The log pattern. The pattern must be DFA compatible. Patterns that utilize
+     * forward lookahead or backreference constructions are not supported.</p>
      */
     inline void SetPattern(Aws::String&& value) { m_patternHasBeenSet = true; m_pattern = std::move(value); }
 
     /**
-     * <p>The log pattern.</p>
+     * <p>The log pattern. The pattern must be DFA compatible. Patterns that utilize
+     * forward lookahead or backreference constructions are not supported.</p>
      */
     inline void SetPattern(const char* value) { m_patternHasBeenSet = true; m_pattern.assign(value); }
 
     /**
-     * <p>The log pattern.</p>
+     * <p>The log pattern. The pattern must be DFA compatible. Patterns that utilize
+     * forward lookahead or backreference constructions are not supported.</p>
      */
     inline UpdateLogPatternRequest& WithPattern(const Aws::String& value) { SetPattern(value); return *this;}
 
     /**
-     * <p>The log pattern.</p>
+     * <p>The log pattern. The pattern must be DFA compatible. Patterns that utilize
+     * forward lookahead or backreference constructions are not supported.</p>
      */
     inline UpdateLogPatternRequest& WithPattern(Aws::String&& value) { SetPattern(std::move(value)); return *this;}
 
     /**
-     * <p>The log pattern.</p>
+     * <p>The log pattern. The pattern must be DFA compatible. Patterns that utilize
+     * forward lookahead or backreference constructions are not supported.</p>
      */
     inline UpdateLogPatternRequest& WithPattern(const char* value) { SetPattern(value); return *this;}
 
 
     /**
-     * <p>Rank of the log pattern.</p>
+     * <p>Rank of the log pattern. Must be a value between <code>1</code> and
+     * <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that
+     * you set your highest priority patterns with the lowest rank. A pattern of rank
+     * <code>1</code> will be the first to get matched to a log line. A pattern of rank
+     * <code>1,000,000</code> will be last to get matched. When you configure custom
+     * log patterns from the console, a <code>Low</code> severity pattern translates to
+     * a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates
+     * to a <code>500,000</code> rank. And a <code>High</code> severity pattern
+     * translates to a <code>250,000</code> rank. Rank values less than <code>1</code>
+     * or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
+     * </p>
      */
     inline int GetRank() const{ return m_rank; }
 
     /**
-     * <p>Rank of the log pattern.</p>
+     * <p>Rank of the log pattern. Must be a value between <code>1</code> and
+     * <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that
+     * you set your highest priority patterns with the lowest rank. A pattern of rank
+     * <code>1</code> will be the first to get matched to a log line. A pattern of rank
+     * <code>1,000,000</code> will be last to get matched. When you configure custom
+     * log patterns from the console, a <code>Low</code> severity pattern translates to
+     * a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates
+     * to a <code>500,000</code> rank. And a <code>High</code> severity pattern
+     * translates to a <code>250,000</code> rank. Rank values less than <code>1</code>
+     * or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
+     * </p>
      */
     inline bool RankHasBeenSet() const { return m_rankHasBeenSet; }
 
     /**
-     * <p>Rank of the log pattern.</p>
+     * <p>Rank of the log pattern. Must be a value between <code>1</code> and
+     * <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that
+     * you set your highest priority patterns with the lowest rank. A pattern of rank
+     * <code>1</code> will be the first to get matched to a log line. A pattern of rank
+     * <code>1,000,000</code> will be last to get matched. When you configure custom
+     * log patterns from the console, a <code>Low</code> severity pattern translates to
+     * a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates
+     * to a <code>500,000</code> rank. And a <code>High</code> severity pattern
+     * translates to a <code>250,000</code> rank. Rank values less than <code>1</code>
+     * or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
+     * </p>
      */
     inline void SetRank(int value) { m_rankHasBeenSet = true; m_rank = value; }
 
     /**
-     * <p>Rank of the log pattern.</p>
+     * <p>Rank of the log pattern. Must be a value between <code>1</code> and
+     * <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that
+     * you set your highest priority patterns with the lowest rank. A pattern of rank
+     * <code>1</code> will be the first to get matched to a log line. A pattern of rank
+     * <code>1,000,000</code> will be last to get matched. When you configure custom
+     * log patterns from the console, a <code>Low</code> severity pattern translates to
+     * a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates
+     * to a <code>500,000</code> rank. And a <code>High</code> severity pattern
+     * translates to a <code>250,000</code> rank. Rank values less than <code>1</code>
+     * or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
+     * </p>
      */
     inline UpdateLogPatternRequest& WithRank(int value) { SetRank(value); return *this;}
 

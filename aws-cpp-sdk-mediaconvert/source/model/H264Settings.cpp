@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/H264Settings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -88,6 +78,8 @@ H264Settings::H264Settings() :
     m_rateControlModeHasBeenSet(false),
     m_repeatPps(H264RepeatPps::NOT_SET),
     m_repeatPpsHasBeenSet(false),
+    m_scanTypeConversionMode(H264ScanTypeConversionMode::NOT_SET),
+    m_scanTypeConversionModeHasBeenSet(false),
     m_sceneChangeDetect(H264SceneChangeDetect::NOT_SET),
     m_sceneChangeDetectHasBeenSet(false),
     m_slices(0),
@@ -169,6 +161,8 @@ H264Settings::H264Settings(JsonView jsonValue) :
     m_rateControlModeHasBeenSet(false),
     m_repeatPps(H264RepeatPps::NOT_SET),
     m_repeatPpsHasBeenSet(false),
+    m_scanTypeConversionMode(H264ScanTypeConversionMode::NOT_SET),
+    m_scanTypeConversionModeHasBeenSet(false),
     m_sceneChangeDetect(H264SceneChangeDetect::NOT_SET),
     m_sceneChangeDetectHasBeenSet(false),
     m_slices(0),
@@ -403,6 +397,13 @@ H264Settings& H264Settings::operator =(JsonView jsonValue)
     m_repeatPpsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("scanTypeConversionMode"))
+  {
+    m_scanTypeConversionMode = H264ScanTypeConversionModeMapper::GetH264ScanTypeConversionModeForName(jsonValue.GetString("scanTypeConversionMode"));
+
+    m_scanTypeConversionModeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("sceneChangeDetect"))
   {
     m_sceneChangeDetect = H264SceneChangeDetectMapper::GetH264SceneChangeDetectForName(jsonValue.GetString("sceneChangeDetect"));
@@ -635,6 +636,11 @@ JsonValue H264Settings::Jsonize() const
   if(m_repeatPpsHasBeenSet)
   {
    payload.WithString("repeatPps", H264RepeatPpsMapper::GetNameForH264RepeatPps(m_repeatPps));
+  }
+
+  if(m_scanTypeConversionModeHasBeenSet)
+  {
+   payload.WithString("scanTypeConversionMode", H264ScanTypeConversionModeMapper::GetNameForH264ScanTypeConversionMode(m_scanTypeConversionMode));
   }
 
   if(m_sceneChangeDetectHasBeenSet)

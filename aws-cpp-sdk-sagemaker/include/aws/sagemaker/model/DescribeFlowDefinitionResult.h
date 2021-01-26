@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -335,37 +325,37 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The reason your flow definition failed.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
 
     /**
-     * <p/>
+     * <p>The reason your flow definition failed.</p>
      */
     inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
 
     /**
-     * <p/>
+     * <p>The reason your flow definition failed.</p>
      */
     inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The reason your flow definition failed.</p>
      */
     inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
 
     /**
-     * <p/>
+     * <p>The reason your flow definition failed.</p>
      */
     inline DescribeFlowDefinitionResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The reason your flow definition failed.</p>
      */
     inline DescribeFlowDefinitionResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The reason your flow definition failed.</p>
      */
     inline DescribeFlowDefinitionResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 

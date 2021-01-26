@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/cognito-idp/model/AnalyticsConfigurationType.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,6 +20,7 @@ namespace Model
 
 AnalyticsConfigurationType::AnalyticsConfigurationType() : 
     m_applicationIdHasBeenSet(false),
+    m_applicationArnHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_externalIdHasBeenSet(false),
     m_userDataShared(false),
@@ -39,6 +30,7 @@ AnalyticsConfigurationType::AnalyticsConfigurationType() :
 
 AnalyticsConfigurationType::AnalyticsConfigurationType(JsonView jsonValue) : 
     m_applicationIdHasBeenSet(false),
+    m_applicationArnHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_externalIdHasBeenSet(false),
     m_userDataShared(false),
@@ -54,6 +46,13 @@ AnalyticsConfigurationType& AnalyticsConfigurationType::operator =(JsonView json
     m_applicationId = jsonValue.GetString("ApplicationId");
 
     m_applicationIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ApplicationArn"))
+  {
+    m_applicationArn = jsonValue.GetString("ApplicationArn");
+
+    m_applicationArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("RoleArn"))
@@ -87,6 +86,12 @@ JsonValue AnalyticsConfigurationType::Jsonize() const
   if(m_applicationIdHasBeenSet)
   {
    payload.WithString("ApplicationId", m_applicationId);
+
+  }
+
+  if(m_applicationArnHasBeenSet)
+  {
+   payload.WithString("ApplicationArn", m_applicationArn);
 
   }
 

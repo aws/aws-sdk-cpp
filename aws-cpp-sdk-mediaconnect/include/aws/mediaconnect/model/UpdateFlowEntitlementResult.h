@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
@@ -43,19 +33,29 @@ namespace Model
     UpdateFlowEntitlementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * The new configuration of the entitlement that you updated.
+     */
     inline const Entitlement& GetEntitlement() const{ return m_entitlement; }
 
-    
+    /**
+     * The new configuration of the entitlement that you updated.
+     */
     inline void SetEntitlement(const Entitlement& value) { m_entitlement = value; }
 
-    
+    /**
+     * The new configuration of the entitlement that you updated.
+     */
     inline void SetEntitlement(Entitlement&& value) { m_entitlement = std::move(value); }
 
-    
+    /**
+     * The new configuration of the entitlement that you updated.
+     */
     inline UpdateFlowEntitlementResult& WithEntitlement(const Entitlement& value) { SetEntitlement(value); return *this;}
 
-    
+    /**
+     * The new configuration of the entitlement that you updated.
+     */
     inline UpdateFlowEntitlementResult& WithEntitlement(Entitlement&& value) { SetEntitlement(std::move(value)); return *this;}
 
 

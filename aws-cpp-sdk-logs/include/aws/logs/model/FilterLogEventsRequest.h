@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
@@ -243,28 +233,32 @@ namespace Model
     /**
      * <p>The start of the time range, expressed as the number of milliseconds after
      * Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not
-     * returned.</p>
+     * returned.</p> <p>If you omit <code>startTime</code> and <code>endTime</code> the
+     * most recent log events are retrieved, to up 1 MB or 10,000 log events.</p>
      */
     inline long long GetStartTime() const{ return m_startTime; }
 
     /**
      * <p>The start of the time range, expressed as the number of milliseconds after
      * Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not
-     * returned.</p>
+     * returned.</p> <p>If you omit <code>startTime</code> and <code>endTime</code> the
+     * most recent log events are retrieved, to up 1 MB or 10,000 log events.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
      * <p>The start of the time range, expressed as the number of milliseconds after
      * Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not
-     * returned.</p>
+     * returned.</p> <p>If you omit <code>startTime</code> and <code>endTime</code> the
+     * most recent log events are retrieved, to up 1 MB or 10,000 log events.</p>
      */
     inline void SetStartTime(long long value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>The start of the time range, expressed as the number of milliseconds after
      * Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not
-     * returned.</p>
+     * returned.</p> <p>If you omit <code>startTime</code> and <code>endTime</code> the
+     * most recent log events are retrieved, to up 1 MB or 10,000 log events.</p>
      */
     inline FilterLogEventsRequest& WithStartTime(long long value) { SetStartTime(value); return *this;}
 

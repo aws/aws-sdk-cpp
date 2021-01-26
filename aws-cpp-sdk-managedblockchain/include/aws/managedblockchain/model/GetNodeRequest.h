@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/managedblockchain/ManagedBlockchain_EXPORTS.h>
@@ -21,6 +11,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace ManagedBlockchain
 {
 namespace Model
@@ -41,85 +35,95 @@ namespace Model
 
     Aws::String SerializePayload() const override;
 
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
 
     /**
-     * <p>The unique identifier of the network to which the node belongs.</p>
+     * <p>The unique identifier of the network that the node is on.</p>
      */
     inline const Aws::String& GetNetworkId() const{ return m_networkId; }
 
     /**
-     * <p>The unique identifier of the network to which the node belongs.</p>
+     * <p>The unique identifier of the network that the node is on.</p>
      */
     inline bool NetworkIdHasBeenSet() const { return m_networkIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the network to which the node belongs.</p>
+     * <p>The unique identifier of the network that the node is on.</p>
      */
     inline void SetNetworkId(const Aws::String& value) { m_networkIdHasBeenSet = true; m_networkId = value; }
 
     /**
-     * <p>The unique identifier of the network to which the node belongs.</p>
+     * <p>The unique identifier of the network that the node is on.</p>
      */
     inline void SetNetworkId(Aws::String&& value) { m_networkIdHasBeenSet = true; m_networkId = std::move(value); }
 
     /**
-     * <p>The unique identifier of the network to which the node belongs.</p>
+     * <p>The unique identifier of the network that the node is on.</p>
      */
     inline void SetNetworkId(const char* value) { m_networkIdHasBeenSet = true; m_networkId.assign(value); }
 
     /**
-     * <p>The unique identifier of the network to which the node belongs.</p>
+     * <p>The unique identifier of the network that the node is on.</p>
      */
     inline GetNodeRequest& WithNetworkId(const Aws::String& value) { SetNetworkId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the network to which the node belongs.</p>
+     * <p>The unique identifier of the network that the node is on.</p>
      */
     inline GetNodeRequest& WithNetworkId(Aws::String&& value) { SetNetworkId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the network to which the node belongs.</p>
+     * <p>The unique identifier of the network that the node is on.</p>
      */
     inline GetNodeRequest& WithNetworkId(const char* value) { SetNetworkId(value); return *this;}
 
 
     /**
-     * <p>The unique identifier of the member that owns the node.</p>
+     * <p>The unique identifier of the member that owns the node.</p> <p>Applies only
+     * to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
      */
     inline const Aws::String& GetMemberId() const{ return m_memberId; }
 
     /**
-     * <p>The unique identifier of the member that owns the node.</p>
+     * <p>The unique identifier of the member that owns the node.</p> <p>Applies only
+     * to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
      */
     inline bool MemberIdHasBeenSet() const { return m_memberIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the member that owns the node.</p>
+     * <p>The unique identifier of the member that owns the node.</p> <p>Applies only
+     * to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
      */
     inline void SetMemberId(const Aws::String& value) { m_memberIdHasBeenSet = true; m_memberId = value; }
 
     /**
-     * <p>The unique identifier of the member that owns the node.</p>
+     * <p>The unique identifier of the member that owns the node.</p> <p>Applies only
+     * to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
      */
     inline void SetMemberId(Aws::String&& value) { m_memberIdHasBeenSet = true; m_memberId = std::move(value); }
 
     /**
-     * <p>The unique identifier of the member that owns the node.</p>
+     * <p>The unique identifier of the member that owns the node.</p> <p>Applies only
+     * to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
      */
     inline void SetMemberId(const char* value) { m_memberIdHasBeenSet = true; m_memberId.assign(value); }
 
     /**
-     * <p>The unique identifier of the member that owns the node.</p>
+     * <p>The unique identifier of the member that owns the node.</p> <p>Applies only
+     * to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
      */
     inline GetNodeRequest& WithMemberId(const Aws::String& value) { SetMemberId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the member that owns the node.</p>
+     * <p>The unique identifier of the member that owns the node.</p> <p>Applies only
+     * to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
      */
     inline GetNodeRequest& WithMemberId(Aws::String&& value) { SetMemberId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the member that owns the node.</p>
+     * <p>The unique identifier of the member that owns the node.</p> <p>Applies only
+     * to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
      */
     inline GetNodeRequest& WithMemberId(const char* value) { SetMemberId(value); return *this;}
 

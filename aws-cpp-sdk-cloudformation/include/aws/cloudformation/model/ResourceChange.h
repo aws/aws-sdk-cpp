@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudformation/model/Replacement.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cloudformation/model/ModuleInfo.h>
 #include <aws/cloudformation/model/ResourceAttribute.h>
 #include <aws/cloudformation/model/ResourceChangeDetail.h>
 #include <utility>
@@ -59,42 +50,54 @@ namespace Model
     /**
      * <p>The action that AWS CloudFormation takes on the resource, such as
      * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
-     * resource), or <code>Remove</code> (deletes a resource).</p>
+     * resource), <code>Remove</code> (deletes a resource), <code>Import</code>
+     * (imports a resource), or <code>Dynamic</code> (exact action for the resource
+     * cannot be determined).</p>
      */
     inline const ChangeAction& GetAction() const{ return m_action; }
 
     /**
      * <p>The action that AWS CloudFormation takes on the resource, such as
      * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
-     * resource), or <code>Remove</code> (deletes a resource).</p>
+     * resource), <code>Remove</code> (deletes a resource), <code>Import</code>
+     * (imports a resource), or <code>Dynamic</code> (exact action for the resource
+     * cannot be determined).</p>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
      * <p>The action that AWS CloudFormation takes on the resource, such as
      * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
-     * resource), or <code>Remove</code> (deletes a resource).</p>
+     * resource), <code>Remove</code> (deletes a resource), <code>Import</code>
+     * (imports a resource), or <code>Dynamic</code> (exact action for the resource
+     * cannot be determined).</p>
      */
     inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
      * <p>The action that AWS CloudFormation takes on the resource, such as
      * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
-     * resource), or <code>Remove</code> (deletes a resource).</p>
+     * resource), <code>Remove</code> (deletes a resource), <code>Import</code>
+     * (imports a resource), or <code>Dynamic</code> (exact action for the resource
+     * cannot be determined).</p>
      */
     inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
      * <p>The action that AWS CloudFormation takes on the resource, such as
      * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
-     * resource), or <code>Remove</code> (deletes a resource).</p>
+     * resource), <code>Remove</code> (deletes a resource), <code>Import</code>
+     * (imports a resource), or <code>Dynamic</code> (exact action for the resource
+     * cannot be determined).</p>
      */
     inline ResourceChange& WithAction(const ChangeAction& value) { SetAction(value); return *this;}
 
     /**
      * <p>The action that AWS CloudFormation takes on the resource, such as
      * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
-     * resource), or <code>Remove</code> (deletes a resource).</p>
+     * resource), <code>Remove</code> (deletes a resource), <code>Import</code>
+     * (imports a resource), or <code>Dynamic</code> (exact action for the resource
+     * cannot be determined).</p>
      */
     inline ResourceChange& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
 
@@ -460,6 +463,84 @@ namespace Model
      */
     inline ResourceChange& AddDetails(ResourceChangeDetail&& value) { m_detailsHasBeenSet = true; m_details.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The change set ID of the nested change set.</p>
+     */
+    inline const Aws::String& GetChangeSetId() const{ return m_changeSetId; }
+
+    /**
+     * <p>The change set ID of the nested change set.</p>
+     */
+    inline bool ChangeSetIdHasBeenSet() const { return m_changeSetIdHasBeenSet; }
+
+    /**
+     * <p>The change set ID of the nested change set.</p>
+     */
+    inline void SetChangeSetId(const Aws::String& value) { m_changeSetIdHasBeenSet = true; m_changeSetId = value; }
+
+    /**
+     * <p>The change set ID of the nested change set.</p>
+     */
+    inline void SetChangeSetId(Aws::String&& value) { m_changeSetIdHasBeenSet = true; m_changeSetId = std::move(value); }
+
+    /**
+     * <p>The change set ID of the nested change set.</p>
+     */
+    inline void SetChangeSetId(const char* value) { m_changeSetIdHasBeenSet = true; m_changeSetId.assign(value); }
+
+    /**
+     * <p>The change set ID of the nested change set.</p>
+     */
+    inline ResourceChange& WithChangeSetId(const Aws::String& value) { SetChangeSetId(value); return *this;}
+
+    /**
+     * <p>The change set ID of the nested change set.</p>
+     */
+    inline ResourceChange& WithChangeSetId(Aws::String&& value) { SetChangeSetId(std::move(value)); return *this;}
+
+    /**
+     * <p>The change set ID of the nested change set.</p>
+     */
+    inline ResourceChange& WithChangeSetId(const char* value) { SetChangeSetId(value); return *this;}
+
+
+    /**
+     * <p>Contains information about the module from which the resource was created, if
+     * the resource was created from a module included in the stack template.</p>
+     */
+    inline const ModuleInfo& GetModuleInfo() const{ return m_moduleInfo; }
+
+    /**
+     * <p>Contains information about the module from which the resource was created, if
+     * the resource was created from a module included in the stack template.</p>
+     */
+    inline bool ModuleInfoHasBeenSet() const { return m_moduleInfoHasBeenSet; }
+
+    /**
+     * <p>Contains information about the module from which the resource was created, if
+     * the resource was created from a module included in the stack template.</p>
+     */
+    inline void SetModuleInfo(const ModuleInfo& value) { m_moduleInfoHasBeenSet = true; m_moduleInfo = value; }
+
+    /**
+     * <p>Contains information about the module from which the resource was created, if
+     * the resource was created from a module included in the stack template.</p>
+     */
+    inline void SetModuleInfo(ModuleInfo&& value) { m_moduleInfoHasBeenSet = true; m_moduleInfo = std::move(value); }
+
+    /**
+     * <p>Contains information about the module from which the resource was created, if
+     * the resource was created from a module included in the stack template.</p>
+     */
+    inline ResourceChange& WithModuleInfo(const ModuleInfo& value) { SetModuleInfo(value); return *this;}
+
+    /**
+     * <p>Contains information about the module from which the resource was created, if
+     * the resource was created from a module included in the stack template.</p>
+     */
+    inline ResourceChange& WithModuleInfo(ModuleInfo&& value) { SetModuleInfo(std::move(value)); return *this;}
+
   private:
 
     ChangeAction m_action;
@@ -482,6 +563,12 @@ namespace Model
 
     Aws::Vector<ResourceChangeDetail> m_details;
     bool m_detailsHasBeenSet;
+
+    Aws::String m_changeSetId;
+    bool m_changeSetIdHasBeenSet;
+
+    ModuleInfo m_moduleInfo;
+    bool m_moduleInfoHasBeenSet;
   };
 
 } // namespace Model

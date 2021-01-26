@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -35,12 +25,12 @@ namespace Model
 {
 
   /**
-   * <p> <b>This data type is part of Amazon GameLift FleetIQ with game server
-   * groups, which is in preview release and is subject to change.</b> </p> <p>An
-   * allowed instance type for your game server group. GameLift FleetIQ periodically
-   * evaluates each defined instance type for viability. It then updates the Auto
-   * Scaling group with the list of viable instance types.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p> <b>This data type is used with the Amazon GameLift FleetIQ and game server
+   * groups.</b> </p> <p>An allowed instance type for a <a>GameServerGroup</a>. All
+   * game server groups must have at least two instance types defined for it.
+   * GameLift FleetIQ periodically evaluates each defined instance type for
+   * viability. It then updates the Auto Scaling group with the list of viable
+   * instance types.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/InstanceDefinition">AWS
    * API Reference</a></p>
    */

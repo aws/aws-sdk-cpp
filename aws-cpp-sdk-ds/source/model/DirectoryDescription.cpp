@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ds/model/DirectoryDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -61,7 +51,8 @@ DirectoryDescription::DirectoryDescription() :
     m_ssoEnabledHasBeenSet(false),
     m_desiredNumberOfDomainControllers(0),
     m_desiredNumberOfDomainControllersHasBeenSet(false),
-    m_ownerDirectoryDescriptionHasBeenSet(false)
+    m_ownerDirectoryDescriptionHasBeenSet(false),
+    m_regionsInfoHasBeenSet(false)
 {
 }
 
@@ -98,7 +89,8 @@ DirectoryDescription::DirectoryDescription(JsonView jsonValue) :
     m_ssoEnabledHasBeenSet(false),
     m_desiredNumberOfDomainControllers(0),
     m_desiredNumberOfDomainControllersHasBeenSet(false),
-    m_ownerDirectoryDescriptionHasBeenSet(false)
+    m_ownerDirectoryDescriptionHasBeenSet(false),
+    m_regionsInfoHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -276,6 +268,13 @@ DirectoryDescription& DirectoryDescription::operator =(JsonView jsonValue)
     m_ownerDirectoryDescriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RegionsInfo"))
+  {
+    m_regionsInfo = jsonValue.GetObject("RegionsInfo");
+
+    m_regionsInfoHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -420,6 +419,12 @@ JsonValue DirectoryDescription::Jsonize() const
   if(m_ownerDirectoryDescriptionHasBeenSet)
   {
    payload.WithObject("OwnerDirectoryDescription", m_ownerDirectoryDescription.Jsonize());
+
+  }
+
+  if(m_regionsInfoHasBeenSet)
+  {
+   payload.WithObject("RegionsInfo", m_regionsInfo.Jsonize());
 
   }
 

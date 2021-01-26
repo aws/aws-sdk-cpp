@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/elasticloadbalancingv2/model/LoadBalancer.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -45,7 +35,8 @@ LoadBalancer::LoadBalancer() :
     m_availabilityZonesHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
     m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false)
+    m_ipAddressTypeHasBeenSet(false),
+    m_customerOwnedIpv4PoolHasBeenSet(false)
 {
 }
 
@@ -64,7 +55,8 @@ LoadBalancer::LoadBalancer(const XmlNode& xmlNode) :
     m_availabilityZonesHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
     m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false)
+    m_ipAddressTypeHasBeenSet(false),
+    m_customerOwnedIpv4PoolHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -159,6 +151,12 @@ LoadBalancer& LoadBalancer::operator =(const XmlNode& xmlNode)
       m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()).c_str());
       m_ipAddressTypeHasBeenSet = true;
     }
+    XmlNode customerOwnedIpv4PoolNode = resultNode.FirstChild("CustomerOwnedIpv4Pool");
+    if(!customerOwnedIpv4PoolNode.IsNull())
+    {
+      m_customerOwnedIpv4Pool = Aws::Utils::Xml::DecodeEscapedXmlText(customerOwnedIpv4PoolNode.GetText());
+      m_customerOwnedIpv4PoolHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -238,6 +236,11 @@ void LoadBalancer::OutputToStream(Aws::OStream& oStream, const char* location, u
       oStream << location << index << locationValue << ".IpAddressType=" << IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType) << "&";
   }
 
+  if(m_customerOwnedIpv4PoolHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CustomerOwnedIpv4Pool=" << StringUtils::URLEncode(m_customerOwnedIpv4Pool.c_str()) << "&";
+  }
+
 }
 
 void LoadBalancer::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -301,6 +304,10 @@ void LoadBalancer::OutputToStream(Aws::OStream& oStream, const char* location) c
   if(m_ipAddressTypeHasBeenSet)
   {
       oStream << location << ".IpAddressType=" << IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType) << "&";
+  }
+  if(m_customerOwnedIpv4PoolHasBeenSet)
+  {
+      oStream << location << ".CustomerOwnedIpv4Pool=" << StringUtils::URLEncode(m_customerOwnedIpv4Pool.c_str()) << "&";
   }
 }
 

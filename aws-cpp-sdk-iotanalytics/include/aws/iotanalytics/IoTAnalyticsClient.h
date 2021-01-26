@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
@@ -120,40 +110,40 @@ namespace Model
         class UpdateDatastoreRequest;
         class UpdatePipelineRequest;
 
-        typedef Aws::Utils::Outcome<BatchPutMessageResult, Aws::Client::AWSError<IoTAnalyticsErrors>> BatchPutMessageOutcome;
-        typedef Aws::Utils::Outcome<CancelPipelineReprocessingResult, Aws::Client::AWSError<IoTAnalyticsErrors>> CancelPipelineReprocessingOutcome;
-        typedef Aws::Utils::Outcome<CreateChannelResult, Aws::Client::AWSError<IoTAnalyticsErrors>> CreateChannelOutcome;
-        typedef Aws::Utils::Outcome<CreateDatasetResult, Aws::Client::AWSError<IoTAnalyticsErrors>> CreateDatasetOutcome;
-        typedef Aws::Utils::Outcome<CreateDatasetContentResult, Aws::Client::AWSError<IoTAnalyticsErrors>> CreateDatasetContentOutcome;
-        typedef Aws::Utils::Outcome<CreateDatastoreResult, Aws::Client::AWSError<IoTAnalyticsErrors>> CreateDatastoreOutcome;
-        typedef Aws::Utils::Outcome<CreatePipelineResult, Aws::Client::AWSError<IoTAnalyticsErrors>> CreatePipelineOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTAnalyticsErrors>> DeleteChannelOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTAnalyticsErrors>> DeleteDatasetOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTAnalyticsErrors>> DeleteDatasetContentOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTAnalyticsErrors>> DeleteDatastoreOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTAnalyticsErrors>> DeletePipelineOutcome;
-        typedef Aws::Utils::Outcome<DescribeChannelResult, Aws::Client::AWSError<IoTAnalyticsErrors>> DescribeChannelOutcome;
-        typedef Aws::Utils::Outcome<DescribeDatasetResult, Aws::Client::AWSError<IoTAnalyticsErrors>> DescribeDatasetOutcome;
-        typedef Aws::Utils::Outcome<DescribeDatastoreResult, Aws::Client::AWSError<IoTAnalyticsErrors>> DescribeDatastoreOutcome;
-        typedef Aws::Utils::Outcome<DescribeLoggingOptionsResult, Aws::Client::AWSError<IoTAnalyticsErrors>> DescribeLoggingOptionsOutcome;
-        typedef Aws::Utils::Outcome<DescribePipelineResult, Aws::Client::AWSError<IoTAnalyticsErrors>> DescribePipelineOutcome;
-        typedef Aws::Utils::Outcome<GetDatasetContentResult, Aws::Client::AWSError<IoTAnalyticsErrors>> GetDatasetContentOutcome;
-        typedef Aws::Utils::Outcome<ListChannelsResult, Aws::Client::AWSError<IoTAnalyticsErrors>> ListChannelsOutcome;
-        typedef Aws::Utils::Outcome<ListDatasetContentsResult, Aws::Client::AWSError<IoTAnalyticsErrors>> ListDatasetContentsOutcome;
-        typedef Aws::Utils::Outcome<ListDatasetsResult, Aws::Client::AWSError<IoTAnalyticsErrors>> ListDatasetsOutcome;
-        typedef Aws::Utils::Outcome<ListDatastoresResult, Aws::Client::AWSError<IoTAnalyticsErrors>> ListDatastoresOutcome;
-        typedef Aws::Utils::Outcome<ListPipelinesResult, Aws::Client::AWSError<IoTAnalyticsErrors>> ListPipelinesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<IoTAnalyticsErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTAnalyticsErrors>> PutLoggingOptionsOutcome;
-        typedef Aws::Utils::Outcome<RunPipelineActivityResult, Aws::Client::AWSError<IoTAnalyticsErrors>> RunPipelineActivityOutcome;
-        typedef Aws::Utils::Outcome<SampleChannelDataResult, Aws::Client::AWSError<IoTAnalyticsErrors>> SampleChannelDataOutcome;
-        typedef Aws::Utils::Outcome<StartPipelineReprocessingResult, Aws::Client::AWSError<IoTAnalyticsErrors>> StartPipelineReprocessingOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<IoTAnalyticsErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<IoTAnalyticsErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTAnalyticsErrors>> UpdateChannelOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTAnalyticsErrors>> UpdateDatasetOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTAnalyticsErrors>> UpdateDatastoreOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTAnalyticsErrors>> UpdatePipelineOutcome;
+        typedef Aws::Utils::Outcome<BatchPutMessageResult, IoTAnalyticsError> BatchPutMessageOutcome;
+        typedef Aws::Utils::Outcome<CancelPipelineReprocessingResult, IoTAnalyticsError> CancelPipelineReprocessingOutcome;
+        typedef Aws::Utils::Outcome<CreateChannelResult, IoTAnalyticsError> CreateChannelOutcome;
+        typedef Aws::Utils::Outcome<CreateDatasetResult, IoTAnalyticsError> CreateDatasetOutcome;
+        typedef Aws::Utils::Outcome<CreateDatasetContentResult, IoTAnalyticsError> CreateDatasetContentOutcome;
+        typedef Aws::Utils::Outcome<CreateDatastoreResult, IoTAnalyticsError> CreateDatastoreOutcome;
+        typedef Aws::Utils::Outcome<CreatePipelineResult, IoTAnalyticsError> CreatePipelineOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, IoTAnalyticsError> DeleteChannelOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, IoTAnalyticsError> DeleteDatasetOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, IoTAnalyticsError> DeleteDatasetContentOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, IoTAnalyticsError> DeleteDatastoreOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, IoTAnalyticsError> DeletePipelineOutcome;
+        typedef Aws::Utils::Outcome<DescribeChannelResult, IoTAnalyticsError> DescribeChannelOutcome;
+        typedef Aws::Utils::Outcome<DescribeDatasetResult, IoTAnalyticsError> DescribeDatasetOutcome;
+        typedef Aws::Utils::Outcome<DescribeDatastoreResult, IoTAnalyticsError> DescribeDatastoreOutcome;
+        typedef Aws::Utils::Outcome<DescribeLoggingOptionsResult, IoTAnalyticsError> DescribeLoggingOptionsOutcome;
+        typedef Aws::Utils::Outcome<DescribePipelineResult, IoTAnalyticsError> DescribePipelineOutcome;
+        typedef Aws::Utils::Outcome<GetDatasetContentResult, IoTAnalyticsError> GetDatasetContentOutcome;
+        typedef Aws::Utils::Outcome<ListChannelsResult, IoTAnalyticsError> ListChannelsOutcome;
+        typedef Aws::Utils::Outcome<ListDatasetContentsResult, IoTAnalyticsError> ListDatasetContentsOutcome;
+        typedef Aws::Utils::Outcome<ListDatasetsResult, IoTAnalyticsError> ListDatasetsOutcome;
+        typedef Aws::Utils::Outcome<ListDatastoresResult, IoTAnalyticsError> ListDatastoresOutcome;
+        typedef Aws::Utils::Outcome<ListPipelinesResult, IoTAnalyticsError> ListPipelinesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, IoTAnalyticsError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, IoTAnalyticsError> PutLoggingOptionsOutcome;
+        typedef Aws::Utils::Outcome<RunPipelineActivityResult, IoTAnalyticsError> RunPipelineActivityOutcome;
+        typedef Aws::Utils::Outcome<SampleChannelDataResult, IoTAnalyticsError> SampleChannelDataOutcome;
+        typedef Aws::Utils::Outcome<StartPipelineReprocessingResult, IoTAnalyticsError> StartPipelineReprocessingOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, IoTAnalyticsError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, IoTAnalyticsError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, IoTAnalyticsError> UpdateChannelOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, IoTAnalyticsError> UpdateDatasetOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, IoTAnalyticsError> UpdateDatastoreOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, IoTAnalyticsError> UpdatePipelineOutcome;
 
         typedef std::future<BatchPutMessageOutcome> BatchPutMessageOutcomeCallable;
         typedef std::future<CancelPipelineReprocessingOutcome> CancelPipelineReprocessingOutcomeCallable;
@@ -277,8 +267,6 @@ namespace Model
 
         virtual ~IoTAnalyticsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "IoTAnalytics"; }
-
 
         /**
          * <p>Sends messages to a channel.</p><p><h3>See Also:</h3>   <a
@@ -365,24 +353,24 @@ namespace Model
         virtual void CreateChannelAsync(const Model::CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a data set. A data set stores data retrieved from a data store by
-         * applying a "queryAction" (a SQL query) or a "containerAction" (executing a
-         * containerized application). This operation creates the skeleton of a data set.
-         * The data set can be populated manually by calling "CreateDatasetContent" or
-         * automatically according to a "trigger" you specify.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Creates a dataset. A dataset stores data retrieved from a data store by
+         * applying a <code>queryAction</code> (a SQL query) or a
+         * <code>containerAction</code> (executing a containerized application). This
+         * operation creates the skeleton of a dataset. The dataset can be populated
+         * manually by calling <code>CreateDatasetContent</code> or automatically according
+         * to a trigger you specify.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDataset">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateDatasetOutcome CreateDataset(const Model::CreateDatasetRequest& request) const;
 
         /**
-         * <p>Creates a data set. A data set stores data retrieved from a data store by
-         * applying a "queryAction" (a SQL query) or a "containerAction" (executing a
-         * containerized application). This operation creates the skeleton of a data set.
-         * The data set can be populated manually by calling "CreateDatasetContent" or
-         * automatically according to a "trigger" you specify.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Creates a dataset. A dataset stores data retrieved from a data store by
+         * applying a <code>queryAction</code> (a SQL query) or a
+         * <code>containerAction</code> (executing a containerized application). This
+         * operation creates the skeleton of a dataset. The dataset can be populated
+         * manually by calling <code>CreateDatasetContent</code> or automatically according
+         * to a trigger you specify.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDataset">AWS
          * API Reference</a></p>
          *
@@ -391,12 +379,12 @@ namespace Model
         virtual Model::CreateDatasetOutcomeCallable CreateDatasetCallable(const Model::CreateDatasetRequest& request) const;
 
         /**
-         * <p>Creates a data set. A data set stores data retrieved from a data store by
-         * applying a "queryAction" (a SQL query) or a "containerAction" (executing a
-         * containerized application). This operation creates the skeleton of a data set.
-         * The data set can be populated manually by calling "CreateDatasetContent" or
-         * automatically according to a "trigger" you specify.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Creates a dataset. A dataset stores data retrieved from a data store by
+         * applying a <code>queryAction</code> (a SQL query) or a
+         * <code>containerAction</code> (executing a containerized application). This
+         * operation creates the skeleton of a dataset. The dataset can be populated
+         * manually by calling <code>CreateDatasetContent</code> or automatically according
+         * to a trigger you specify.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDataset">AWS
          * API Reference</a></p>
          *
@@ -405,18 +393,18 @@ namespace Model
         virtual void CreateDatasetAsync(const Model::CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates the content of a data set by applying a "queryAction" (a SQL query)
-         * or a "containerAction" (executing a containerized application).</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates the content of a data set by applying a <code>queryAction</code> (a
+         * SQL query) or a <code>containerAction</code> (executing a containerized
+         * application).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDatasetContent">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateDatasetContentOutcome CreateDatasetContent(const Model::CreateDatasetContentRequest& request) const;
 
         /**
-         * <p>Creates the content of a data set by applying a "queryAction" (a SQL query)
-         * or a "containerAction" (executing a containerized application).</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates the content of a data set by applying a <code>queryAction</code> (a
+         * SQL query) or a <code>containerAction</code> (executing a containerized
+         * application).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDatasetContent">AWS
          * API Reference</a></p>
          *
@@ -425,9 +413,9 @@ namespace Model
         virtual Model::CreateDatasetContentOutcomeCallable CreateDatasetContentCallable(const Model::CreateDatasetContentRequest& request) const;
 
         /**
-         * <p>Creates the content of a data set by applying a "queryAction" (a SQL query)
-         * or a "containerAction" (executing a containerized application).</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates the content of a data set by applying a <code>queryAction</code> (a
+         * SQL query) or a <code>containerAction</code> (executing a containerized
+         * application).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDatasetContent">AWS
          * API Reference</a></p>
          *
@@ -526,16 +514,16 @@ namespace Model
         virtual void DeleteChannelAsync(const Model::DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified data set.</p> <p>You do not have to delete the content
-         * of the data set before you perform this operation.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified dataset.</p> <p>You do not have to delete the content
+         * of the dataset before you perform this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DeleteDataset">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteDatasetOutcome DeleteDataset(const Model::DeleteDatasetRequest& request) const;
 
         /**
-         * <p>Deletes the specified data set.</p> <p>You do not have to delete the content
-         * of the data set before you perform this operation.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified dataset.</p> <p>You do not have to delete the content
+         * of the dataset before you perform this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DeleteDataset">AWS
          * API Reference</a></p>
          *
@@ -544,8 +532,8 @@ namespace Model
         virtual Model::DeleteDatasetOutcomeCallable DeleteDatasetCallable(const Model::DeleteDatasetRequest& request) const;
 
         /**
-         * <p>Deletes the specified data set.</p> <p>You do not have to delete the content
-         * of the data set before you perform this operation.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified dataset.</p> <p>You do not have to delete the content
+         * of the dataset before you perform this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DeleteDataset">AWS
          * API Reference</a></p>
          *
@@ -554,14 +542,14 @@ namespace Model
         virtual void DeleteDatasetAsync(const Model::DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the content of the specified data set.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the content of the specified dataset.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DeleteDatasetContent">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteDatasetContentOutcome DeleteDatasetContent(const Model::DeleteDatasetContentRequest& request) const;
 
         /**
-         * <p>Deletes the content of the specified data set.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the content of the specified dataset.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DeleteDatasetContent">AWS
          * API Reference</a></p>
          *
@@ -570,7 +558,7 @@ namespace Model
         virtual Model::DeleteDatasetContentOutcomeCallable DeleteDatasetContentCallable(const Model::DeleteDatasetContentRequest& request) const;
 
         /**
-         * <p>Deletes the content of the specified data set.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the content of the specified dataset.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DeleteDatasetContent">AWS
          * API Reference</a></p>
          *
@@ -654,14 +642,14 @@ namespace Model
         virtual void DescribeChannelAsync(const Model::DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about a data set.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about a dataset.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DescribeDataset">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeDatasetOutcome DescribeDataset(const Model::DescribeDatasetRequest& request) const;
 
         /**
-         * <p>Retrieves information about a data set.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about a dataset.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DescribeDataset">AWS
          * API Reference</a></p>
          *
@@ -670,7 +658,7 @@ namespace Model
         virtual Model::DescribeDatasetOutcomeCallable DescribeDatasetCallable(const Model::DescribeDatasetRequest& request) const;
 
         /**
-         * <p>Retrieves information about a data set.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about a dataset.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DescribeDataset">AWS
          * API Reference</a></p>
          *
@@ -757,7 +745,7 @@ namespace Model
         virtual void DescribePipelineAsync(const Model::DescribePipelineRequest& request, const DescribePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the contents of a data set as pre-signed URIs.</p><p><h3>See
+         * <p>Retrieves the contents of a data set as presigned URIs.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/GetDatasetContent">AWS
          * API Reference</a></p>
@@ -765,7 +753,7 @@ namespace Model
         virtual Model::GetDatasetContentOutcome GetDatasetContent(const Model::GetDatasetContentRequest& request) const;
 
         /**
-         * <p>Retrieves the contents of a data set as pre-signed URIs.</p><p><h3>See
+         * <p>Retrieves the contents of a data set as presigned URIs.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/GetDatasetContent">AWS
          * API Reference</a></p>
@@ -775,7 +763,7 @@ namespace Model
         virtual Model::GetDatasetContentOutcomeCallable GetDatasetContentCallable(const Model::GetDatasetContentRequest& request) const;
 
         /**
-         * <p>Retrieves the contents of a data set as pre-signed URIs.</p><p><h3>See
+         * <p>Retrieves the contents of a data set as presigned URIs.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/GetDatasetContent">AWS
          * API Reference</a></p>
@@ -913,7 +901,7 @@ namespace Model
         virtual void ListPipelinesAsync(const Model::ListPipelinesRequest& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the tags (metadata) which you have assigned to the
+         * <p>Lists the tags (metadata) that you have assigned to the
          * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -921,7 +909,7 @@ namespace Model
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists the tags (metadata) which you have assigned to the
+         * <p>Lists the tags (metadata) that you have assigned to the
          * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -931,7 +919,7 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists the tags (metadata) which you have assigned to the
+         * <p>Lists the tags (metadata) that you have assigned to the
          * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -941,11 +929,11 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sets or updates the AWS IoT Analytics logging options.</p> <p>Note that if
-         * you update the value of any <code>loggingOptions</code> field, it takes up to
-         * one minute for the change to take effect. Also, if you change the policy
-         * attached to the role you specified in the roleArn field (for example, to correct
-         * an invalid policy) it takes up to 5 minutes for that change to take effect.
+         * <p>Sets or updates the AWS IoT Analytics logging options.</p> <p>If you update
+         * the value of any <code>loggingOptions</code> field, it takes up to one minute
+         * for the change to take effect. Also, if you change the policy attached to the
+         * role you specified in the <code>roleArn</code> field (for example, to correct an
+         * invalid policy), it takes up to five minutes for that change to take effect.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/PutLoggingOptions">AWS
          * API Reference</a></p>
@@ -953,11 +941,11 @@ namespace Model
         virtual Model::PutLoggingOptionsOutcome PutLoggingOptions(const Model::PutLoggingOptionsRequest& request) const;
 
         /**
-         * <p>Sets or updates the AWS IoT Analytics logging options.</p> <p>Note that if
-         * you update the value of any <code>loggingOptions</code> field, it takes up to
-         * one minute for the change to take effect. Also, if you change the policy
-         * attached to the role you specified in the roleArn field (for example, to correct
-         * an invalid policy) it takes up to 5 minutes for that change to take effect.
+         * <p>Sets or updates the AWS IoT Analytics logging options.</p> <p>If you update
+         * the value of any <code>loggingOptions</code> field, it takes up to one minute
+         * for the change to take effect. Also, if you change the policy attached to the
+         * role you specified in the <code>roleArn</code> field (for example, to correct an
+         * invalid policy), it takes up to five minutes for that change to take effect.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/PutLoggingOptions">AWS
          * API Reference</a></p>
@@ -967,11 +955,11 @@ namespace Model
         virtual Model::PutLoggingOptionsOutcomeCallable PutLoggingOptionsCallable(const Model::PutLoggingOptionsRequest& request) const;
 
         /**
-         * <p>Sets or updates the AWS IoT Analytics logging options.</p> <p>Note that if
-         * you update the value of any <code>loggingOptions</code> field, it takes up to
-         * one minute for the change to take effect. Also, if you change the policy
-         * attached to the role you specified in the roleArn field (for example, to correct
-         * an invalid policy) it takes up to 5 minutes for that change to take effect.
+         * <p>Sets or updates the AWS IoT Analytics logging options.</p> <p>If you update
+         * the value of any <code>loggingOptions</code> field, it takes up to one minute
+         * for the change to take effect. Also, if you change the policy attached to the
+         * role you specified in the <code>roleArn</code> field (for example, to correct an
+         * invalid policy), it takes up to five minutes for that change to take effect.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/PutLoggingOptions">AWS
          * API Reference</a></p>
@@ -1068,7 +1056,7 @@ namespace Model
         virtual void StartPipelineReprocessingAsync(const Model::StartPipelineReprocessingRequest& request, const StartPipelineReprocessingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds to or modifies the tags of the given resource. Tags are metadata which
+         * <p>Adds to or modifies the tags of the given resource. Tags are metadata that
          * can be used to manage a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/TagResource">AWS
          * API Reference</a></p>
@@ -1076,7 +1064,7 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds to or modifies the tags of the given resource. Tags are metadata which
+         * <p>Adds to or modifies the tags of the given resource. Tags are metadata that
          * can be used to manage a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/TagResource">AWS
          * API Reference</a></p>
@@ -1086,7 +1074,7 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds to or modifies the tags of the given resource. Tags are metadata which
+         * <p>Adds to or modifies the tags of the given resource. Tags are metadata that
          * can be used to manage a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/TagResource">AWS
          * API Reference</a></p>

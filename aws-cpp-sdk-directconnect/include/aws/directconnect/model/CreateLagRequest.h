@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
@@ -47,26 +37,26 @@ namespace Model
 
 
     /**
-     * <p>The number of physical connections initially provisioned and bundled by the
-     * LAG.</p>
+     * <p>The number of physical dedicated connections initially provisioned and
+     * bundled by the LAG.</p>
      */
     inline int GetNumberOfConnections() const{ return m_numberOfConnections; }
 
     /**
-     * <p>The number of physical connections initially provisioned and bundled by the
-     * LAG.</p>
+     * <p>The number of physical dedicated connections initially provisioned and
+     * bundled by the LAG.</p>
      */
     inline bool NumberOfConnectionsHasBeenSet() const { return m_numberOfConnectionsHasBeenSet; }
 
     /**
-     * <p>The number of physical connections initially provisioned and bundled by the
-     * LAG.</p>
+     * <p>The number of physical dedicated connections initially provisioned and
+     * bundled by the LAG.</p>
      */
     inline void SetNumberOfConnections(int value) { m_numberOfConnectionsHasBeenSet = true; m_numberOfConnections = value; }
 
     /**
-     * <p>The number of physical connections initially provisioned and bundled by the
-     * LAG.</p>
+     * <p>The number of physical dedicated connections initially provisioned and
+     * bundled by the LAG.</p>
      */
     inline CreateLagRequest& WithNumberOfConnections(int value) { SetNumberOfConnections(value); return *this;}
 
@@ -113,58 +103,50 @@ namespace Model
 
 
     /**
-     * <p>The bandwidth of the individual physical connections bundled by the LAG. The
-     * possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps,
-     * 2Gbps, 5Gbps, and 10Gbps. </p>
+     * <p>The bandwidth of the individual physical dedicated connections bundled by the
+     * LAG. The possible values are 1Gbps and 10Gbps. </p>
      */
     inline const Aws::String& GetConnectionsBandwidth() const{ return m_connectionsBandwidth; }
 
     /**
-     * <p>The bandwidth of the individual physical connections bundled by the LAG. The
-     * possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps,
-     * 2Gbps, 5Gbps, and 10Gbps. </p>
+     * <p>The bandwidth of the individual physical dedicated connections bundled by the
+     * LAG. The possible values are 1Gbps and 10Gbps. </p>
      */
     inline bool ConnectionsBandwidthHasBeenSet() const { return m_connectionsBandwidthHasBeenSet; }
 
     /**
-     * <p>The bandwidth of the individual physical connections bundled by the LAG. The
-     * possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps,
-     * 2Gbps, 5Gbps, and 10Gbps. </p>
+     * <p>The bandwidth of the individual physical dedicated connections bundled by the
+     * LAG. The possible values are 1Gbps and 10Gbps. </p>
      */
     inline void SetConnectionsBandwidth(const Aws::String& value) { m_connectionsBandwidthHasBeenSet = true; m_connectionsBandwidth = value; }
 
     /**
-     * <p>The bandwidth of the individual physical connections bundled by the LAG. The
-     * possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps,
-     * 2Gbps, 5Gbps, and 10Gbps. </p>
+     * <p>The bandwidth of the individual physical dedicated connections bundled by the
+     * LAG. The possible values are 1Gbps and 10Gbps. </p>
      */
     inline void SetConnectionsBandwidth(Aws::String&& value) { m_connectionsBandwidthHasBeenSet = true; m_connectionsBandwidth = std::move(value); }
 
     /**
-     * <p>The bandwidth of the individual physical connections bundled by the LAG. The
-     * possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps,
-     * 2Gbps, 5Gbps, and 10Gbps. </p>
+     * <p>The bandwidth of the individual physical dedicated connections bundled by the
+     * LAG. The possible values are 1Gbps and 10Gbps. </p>
      */
     inline void SetConnectionsBandwidth(const char* value) { m_connectionsBandwidthHasBeenSet = true; m_connectionsBandwidth.assign(value); }
 
     /**
-     * <p>The bandwidth of the individual physical connections bundled by the LAG. The
-     * possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps,
-     * 2Gbps, 5Gbps, and 10Gbps. </p>
+     * <p>The bandwidth of the individual physical dedicated connections bundled by the
+     * LAG. The possible values are 1Gbps and 10Gbps. </p>
      */
     inline CreateLagRequest& WithConnectionsBandwidth(const Aws::String& value) { SetConnectionsBandwidth(value); return *this;}
 
     /**
-     * <p>The bandwidth of the individual physical connections bundled by the LAG. The
-     * possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps,
-     * 2Gbps, 5Gbps, and 10Gbps. </p>
+     * <p>The bandwidth of the individual physical dedicated connections bundled by the
+     * LAG. The possible values are 1Gbps and 10Gbps. </p>
      */
     inline CreateLagRequest& WithConnectionsBandwidth(Aws::String&& value) { SetConnectionsBandwidth(std::move(value)); return *this;}
 
     /**
-     * <p>The bandwidth of the individual physical connections bundled by the LAG. The
-     * possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps,
-     * 2Gbps, 5Gbps, and 10Gbps. </p>
+     * <p>The bandwidth of the individual physical dedicated connections bundled by the
+     * LAG. The possible values are 1Gbps and 10Gbps. </p>
      */
     inline CreateLagRequest& WithConnectionsBandwidth(const char* value) { SetConnectionsBandwidth(value); return *this;}
 
@@ -211,42 +193,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of an existing connection to migrate to the LAG.</p>
+     * <p>The ID of an existing dedicated connection to migrate to the LAG.</p>
      */
     inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
 
     /**
-     * <p>The ID of an existing connection to migrate to the LAG.</p>
+     * <p>The ID of an existing dedicated connection to migrate to the LAG.</p>
      */
     inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
 
     /**
-     * <p>The ID of an existing connection to migrate to the LAG.</p>
+     * <p>The ID of an existing dedicated connection to migrate to the LAG.</p>
      */
     inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
 
     /**
-     * <p>The ID of an existing connection to migrate to the LAG.</p>
+     * <p>The ID of an existing dedicated connection to migrate to the LAG.</p>
      */
     inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
 
     /**
-     * <p>The ID of an existing connection to migrate to the LAG.</p>
+     * <p>The ID of an existing dedicated connection to migrate to the LAG.</p>
      */
     inline void SetConnectionId(const char* value) { m_connectionIdHasBeenSet = true; m_connectionId.assign(value); }
 
     /**
-     * <p>The ID of an existing connection to migrate to the LAG.</p>
+     * <p>The ID of an existing dedicated connection to migrate to the LAG.</p>
      */
     inline CreateLagRequest& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
 
     /**
-     * <p>The ID of an existing connection to migrate to the LAG.</p>
+     * <p>The ID of an existing dedicated connection to migrate to the LAG.</p>
      */
     inline CreateLagRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of an existing connection to migrate to the LAG.</p>
+     * <p>The ID of an existing dedicated connection to migrate to the LAG.</p>
      */
     inline CreateLagRequest& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/states/model/TaskScheduledEventDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,7 +24,9 @@ TaskScheduledEventDetails::TaskScheduledEventDetails() :
     m_regionHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false)
+    m_timeoutInSecondsHasBeenSet(false),
+    m_heartbeatInSeconds(0),
+    m_heartbeatInSecondsHasBeenSet(false)
 {
 }
 
@@ -44,7 +36,9 @@ TaskScheduledEventDetails::TaskScheduledEventDetails(JsonView jsonValue) :
     m_regionHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false)
+    m_timeoutInSecondsHasBeenSet(false),
+    m_heartbeatInSeconds(0),
+    m_heartbeatInSecondsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +80,13 @@ TaskScheduledEventDetails& TaskScheduledEventDetails::operator =(JsonView jsonVa
     m_timeoutInSecondsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("heartbeatInSeconds"))
+  {
+    m_heartbeatInSeconds = jsonValue.GetInt64("heartbeatInSeconds");
+
+    m_heartbeatInSecondsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -120,6 +121,12 @@ JsonValue TaskScheduledEventDetails::Jsonize() const
   if(m_timeoutInSecondsHasBeenSet)
   {
    payload.WithInt64("timeoutInSeconds", m_timeoutInSeconds);
+
+  }
+
+  if(m_heartbeatInSecondsHasBeenSet)
+  {
+   payload.WithInt64("heartbeatInSeconds", m_heartbeatInSeconds);
 
   }
 

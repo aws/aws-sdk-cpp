@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -182,8 +172,9 @@ namespace Model
      * the database engines and links to information about the major and minor
      * versions. The list only includes DB engines that require an on-premises customer
      * provided license.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
-     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">
+     * Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide.</i> </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
@@ -193,8 +184,9 @@ namespace Model
      * the database engines and links to information about the major and minor
      * versions. The list only includes DB engines that require an on-premises customer
      * provided license.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
-     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">
+     * Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide.</i> </p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
@@ -204,8 +196,9 @@ namespace Model
      * the database engines and links to information about the major and minor
      * versions. The list only includes DB engines that require an on-premises customer
      * provided license.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
-     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">
+     * Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide.</i> </p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
@@ -215,8 +208,9 @@ namespace Model
      * the database engines and links to information about the major and minor
      * versions. The list only includes DB engines that require an on-premises customer
      * provided license.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
-     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">
+     * Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide.</i> </p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
@@ -226,8 +220,9 @@ namespace Model
      * the database engines and links to information about the major and minor
      * versions. The list only includes DB engines that require an on-premises customer
      * provided license.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
-     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">
+     * Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide.</i> </p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
@@ -237,8 +232,9 @@ namespace Model
      * the database engines and links to information about the major and minor
      * versions. The list only includes DB engines that require an on-premises customer
      * provided license.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
-     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">
+     * Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide.</i> </p>
      */
     inline ImportInstallationMediaRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
@@ -248,8 +244,9 @@ namespace Model
      * the database engines and links to information about the major and minor
      * versions. The list only includes DB engines that require an on-premises customer
      * provided license.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
-     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">
+     * Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide.</i> </p>
      */
     inline ImportInstallationMediaRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
@@ -259,8 +256,9 @@ namespace Model
      * the database engines and links to information about the major and minor
      * versions. The list only includes DB engines that require an on-premises customer
      * provided license.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
-     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">
+     * Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide.</i> </p>
      */
     inline ImportInstallationMediaRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 

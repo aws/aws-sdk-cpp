@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/connectparticipant/ConnectParticipant_EXPORTS.h>
@@ -21,11 +11,14 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/connectparticipant/model/CompleteAttachmentUploadResult.h>
 #include <aws/connectparticipant/model/CreateParticipantConnectionResult.h>
 #include <aws/connectparticipant/model/DisconnectParticipantResult.h>
+#include <aws/connectparticipant/model/GetAttachmentResult.h>
 #include <aws/connectparticipant/model/GetTranscriptResult.h>
 #include <aws/connectparticipant/model/SendEventResult.h>
 #include <aws/connectparticipant/model/SendMessageResult.h>
+#include <aws/connectparticipant/model/StartAttachmentUploadResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -65,32 +58,44 @@ namespace ConnectParticipant
 
 namespace Model
 {
+        class CompleteAttachmentUploadRequest;
         class CreateParticipantConnectionRequest;
         class DisconnectParticipantRequest;
+        class GetAttachmentRequest;
         class GetTranscriptRequest;
         class SendEventRequest;
         class SendMessageRequest;
+        class StartAttachmentUploadRequest;
 
-        typedef Aws::Utils::Outcome<CreateParticipantConnectionResult, Aws::Client::AWSError<ConnectParticipantErrors>> CreateParticipantConnectionOutcome;
-        typedef Aws::Utils::Outcome<DisconnectParticipantResult, Aws::Client::AWSError<ConnectParticipantErrors>> DisconnectParticipantOutcome;
-        typedef Aws::Utils::Outcome<GetTranscriptResult, Aws::Client::AWSError<ConnectParticipantErrors>> GetTranscriptOutcome;
-        typedef Aws::Utils::Outcome<SendEventResult, Aws::Client::AWSError<ConnectParticipantErrors>> SendEventOutcome;
-        typedef Aws::Utils::Outcome<SendMessageResult, Aws::Client::AWSError<ConnectParticipantErrors>> SendMessageOutcome;
+        typedef Aws::Utils::Outcome<CompleteAttachmentUploadResult, ConnectParticipantError> CompleteAttachmentUploadOutcome;
+        typedef Aws::Utils::Outcome<CreateParticipantConnectionResult, ConnectParticipantError> CreateParticipantConnectionOutcome;
+        typedef Aws::Utils::Outcome<DisconnectParticipantResult, ConnectParticipantError> DisconnectParticipantOutcome;
+        typedef Aws::Utils::Outcome<GetAttachmentResult, ConnectParticipantError> GetAttachmentOutcome;
+        typedef Aws::Utils::Outcome<GetTranscriptResult, ConnectParticipantError> GetTranscriptOutcome;
+        typedef Aws::Utils::Outcome<SendEventResult, ConnectParticipantError> SendEventOutcome;
+        typedef Aws::Utils::Outcome<SendMessageResult, ConnectParticipantError> SendMessageOutcome;
+        typedef Aws::Utils::Outcome<StartAttachmentUploadResult, ConnectParticipantError> StartAttachmentUploadOutcome;
 
+        typedef std::future<CompleteAttachmentUploadOutcome> CompleteAttachmentUploadOutcomeCallable;
         typedef std::future<CreateParticipantConnectionOutcome> CreateParticipantConnectionOutcomeCallable;
         typedef std::future<DisconnectParticipantOutcome> DisconnectParticipantOutcomeCallable;
+        typedef std::future<GetAttachmentOutcome> GetAttachmentOutcomeCallable;
         typedef std::future<GetTranscriptOutcome> GetTranscriptOutcomeCallable;
         typedef std::future<SendEventOutcome> SendEventOutcomeCallable;
         typedef std::future<SendMessageOutcome> SendMessageOutcomeCallable;
+        typedef std::future<StartAttachmentUploadOutcome> StartAttachmentUploadOutcomeCallable;
 } // namespace Model
 
   class ConnectParticipantClient;
 
+    typedef std::function<void(const ConnectParticipantClient*, const Model::CompleteAttachmentUploadRequest&, const Model::CompleteAttachmentUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CompleteAttachmentUploadResponseReceivedHandler;
     typedef std::function<void(const ConnectParticipantClient*, const Model::CreateParticipantConnectionRequest&, const Model::CreateParticipantConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateParticipantConnectionResponseReceivedHandler;
     typedef std::function<void(const ConnectParticipantClient*, const Model::DisconnectParticipantRequest&, const Model::DisconnectParticipantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisconnectParticipantResponseReceivedHandler;
+    typedef std::function<void(const ConnectParticipantClient*, const Model::GetAttachmentRequest&, const Model::GetAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAttachmentResponseReceivedHandler;
     typedef std::function<void(const ConnectParticipantClient*, const Model::GetTranscriptRequest&, const Model::GetTranscriptOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTranscriptResponseReceivedHandler;
     typedef std::function<void(const ConnectParticipantClient*, const Model::SendEventRequest&, const Model::SendEventOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendEventResponseReceivedHandler;
     typedef std::function<void(const ConnectParticipantClient*, const Model::SendMessageRequest&, const Model::SendMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendMessageResponseReceivedHandler;
+    typedef std::function<void(const ConnectParticipantClient*, const Model::StartAttachmentUploadRequest&, const Model::StartAttachmentUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartAttachmentUploadResponseReceivedHandler;
 
   /**
    * <p>Amazon Connect is a cloud-based contact center solution that makes it easy to
@@ -125,13 +130,42 @@ namespace Model
 
         virtual ~ConnectParticipantClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "ConnectParticipant"; }
 
+        /**
+         * <p>Allows you to confirm that the attachment has been uploaded using the
+         * pre-signed URL provided in StartAttachmentUpload API. </p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/CompleteAttachmentUpload">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CompleteAttachmentUploadOutcome CompleteAttachmentUpload(const Model::CompleteAttachmentUploadRequest& request) const;
+
+        /**
+         * <p>Allows you to confirm that the attachment has been uploaded using the
+         * pre-signed URL provided in StartAttachmentUpload API. </p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/CompleteAttachmentUpload">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CompleteAttachmentUploadOutcomeCallable CompleteAttachmentUploadCallable(const Model::CompleteAttachmentUploadRequest& request) const;
+
+        /**
+         * <p>Allows you to confirm that the attachment has been uploaded using the
+         * pre-signed URL provided in StartAttachmentUpload API. </p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/CompleteAttachmentUpload">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CompleteAttachmentUploadAsync(const Model::CompleteAttachmentUploadRequest& request, const CompleteAttachmentUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates the participant's connection. Note that ParticipantToken is used for
          * invoking this API instead of ConnectionToken.</p> <p>The participant token is
-         * valid for the lifetime of the participant – until the they are part of a
+         * valid for the lifetime of the participant – until they are part of a
          * contact.</p> <p>The response URL for <code>WEBSOCKET</code> Type has a connect
          * expiry timeout of 100s. Clients must manually connect to the returned websocket
          * URL and subscribe to the desired topic. </p> <p>For chat, you need to publish
@@ -139,7 +173,10 @@ namespace Model
          * <code>{"topic":"aws/subscribe","content":{"topics":["aws/chat"]}}</code> </p>
          * <p>Upon websocket URL expiry, as specified in the response ConnectionExpiry
          * parameter, clients need to call this API again to obtain a new websocket URL and
-         * perform the same steps as before.</p><p><h3>See Also:</h3>   <a
+         * perform the same steps as before.</p>  <p>The Amazon Connect Participant
+         * Service APIs do not use <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+         * Version 4 authentication</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/CreateParticipantConnection">AWS
          * API Reference</a></p>
          */
@@ -148,7 +185,7 @@ namespace Model
         /**
          * <p>Creates the participant's connection. Note that ParticipantToken is used for
          * invoking this API instead of ConnectionToken.</p> <p>The participant token is
-         * valid for the lifetime of the participant – until the they are part of a
+         * valid for the lifetime of the participant – until they are part of a
          * contact.</p> <p>The response URL for <code>WEBSOCKET</code> Type has a connect
          * expiry timeout of 100s. Clients must manually connect to the returned websocket
          * URL and subscribe to the desired topic. </p> <p>For chat, you need to publish
@@ -156,7 +193,10 @@ namespace Model
          * <code>{"topic":"aws/subscribe","content":{"topics":["aws/chat"]}}</code> </p>
          * <p>Upon websocket URL expiry, as specified in the response ConnectionExpiry
          * parameter, clients need to call this API again to obtain a new websocket URL and
-         * perform the same steps as before.</p><p><h3>See Also:</h3>   <a
+         * perform the same steps as before.</p>  <p>The Amazon Connect Participant
+         * Service APIs do not use <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+         * Version 4 authentication</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/CreateParticipantConnection">AWS
          * API Reference</a></p>
          *
@@ -167,7 +207,7 @@ namespace Model
         /**
          * <p>Creates the participant's connection. Note that ParticipantToken is used for
          * invoking this API instead of ConnectionToken.</p> <p>The participant token is
-         * valid for the lifetime of the participant – until the they are part of a
+         * valid for the lifetime of the participant – until they are part of a
          * contact.</p> <p>The response URL for <code>WEBSOCKET</code> Type has a connect
          * expiry timeout of 100s. Clients must manually connect to the returned websocket
          * URL and subscribe to the desired topic. </p> <p>For chat, you need to publish
@@ -175,7 +215,10 @@ namespace Model
          * <code>{"topic":"aws/subscribe","content":{"topics":["aws/chat"]}}</code> </p>
          * <p>Upon websocket URL expiry, as specified in the response ConnectionExpiry
          * parameter, clients need to call this API again to obtain a new websocket URL and
-         * perform the same steps as before.</p><p><h3>See Also:</h3>   <a
+         * perform the same steps as before.</p>  <p>The Amazon Connect Participant
+         * Service APIs do not use <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+         * Version 4 authentication</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/CreateParticipantConnection">AWS
          * API Reference</a></p>
          *
@@ -185,7 +228,10 @@ namespace Model
 
         /**
          * <p>Disconnects a participant. Note that ConnectionToken is used for invoking
-         * this API instead of ParticipantToken.</p><p><h3>See Also:</h3>   <a
+         * this API instead of ParticipantToken.</p> <p>The Amazon Connect Participant
+         * Service APIs do not use <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+         * Version 4 authentication</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/DisconnectParticipant">AWS
          * API Reference</a></p>
          */
@@ -193,7 +239,10 @@ namespace Model
 
         /**
          * <p>Disconnects a participant. Note that ConnectionToken is used for invoking
-         * this API instead of ParticipantToken.</p><p><h3>See Also:</h3>   <a
+         * this API instead of ParticipantToken.</p> <p>The Amazon Connect Participant
+         * Service APIs do not use <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+         * Version 4 authentication</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/DisconnectParticipant">AWS
          * API Reference</a></p>
          *
@@ -203,7 +252,10 @@ namespace Model
 
         /**
          * <p>Disconnects a participant. Note that ConnectionToken is used for invoking
-         * this API instead of ParticipantToken.</p><p><h3>See Also:</h3>   <a
+         * this API instead of ParticipantToken.</p> <p>The Amazon Connect Participant
+         * Service APIs do not use <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+         * Version 4 authentication</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/DisconnectParticipant">AWS
          * API Reference</a></p>
          *
@@ -212,16 +264,52 @@ namespace Model
         virtual void DisconnectParticipantAsync(const Model::DisconnectParticipantRequest& request, const DisconnectParticipantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a transcript of the session. Note that ConnectionToken is used for
-         * invoking this API instead of ParticipantToken.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides a pre-signed URL for download of a completed attachment. This is an
+         * asynchronous API for use with active contacts.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/GetAttachment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAttachmentOutcome GetAttachment(const Model::GetAttachmentRequest& request) const;
+
+        /**
+         * <p>Provides a pre-signed URL for download of a completed attachment. This is an
+         * asynchronous API for use with active contacts.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/GetAttachment">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAttachmentOutcomeCallable GetAttachmentCallable(const Model::GetAttachmentRequest& request) const;
+
+        /**
+         * <p>Provides a pre-signed URL for download of a completed attachment. This is an
+         * asynchronous API for use with active contacts.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/GetAttachment">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAttachmentAsync(const Model::GetAttachmentRequest& request, const GetAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves a transcript of the session, including details about any
+         * attachments. Note that ConnectionToken is used for invoking this API instead of
+         * ParticipantToken.</p> <p>The Amazon Connect Participant Service APIs do not use
+         * <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+         * Version 4 authentication</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/GetTranscript">AWS
          * API Reference</a></p>
          */
         virtual Model::GetTranscriptOutcome GetTranscript(const Model::GetTranscriptRequest& request) const;
 
         /**
-         * <p>Retrieves a transcript of the session. Note that ConnectionToken is used for
-         * invoking this API instead of ParticipantToken.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a transcript of the session, including details about any
+         * attachments. Note that ConnectionToken is used for invoking this API instead of
+         * ParticipantToken.</p> <p>The Amazon Connect Participant Service APIs do not use
+         * <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+         * Version 4 authentication</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/GetTranscript">AWS
          * API Reference</a></p>
          *
@@ -230,8 +318,12 @@ namespace Model
         virtual Model::GetTranscriptOutcomeCallable GetTranscriptCallable(const Model::GetTranscriptRequest& request) const;
 
         /**
-         * <p>Retrieves a transcript of the session. Note that ConnectionToken is used for
-         * invoking this API instead of ParticipantToken.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a transcript of the session, including details about any
+         * attachments. Note that ConnectionToken is used for invoking this API instead of
+         * ParticipantToken.</p> <p>The Amazon Connect Participant Service APIs do not use
+         * <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+         * Version 4 authentication</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/GetTranscript">AWS
          * API Reference</a></p>
          *
@@ -241,7 +333,10 @@ namespace Model
 
         /**
          * <p>Sends an event. Note that ConnectionToken is used for invoking this API
-         * instead of ParticipantToken.</p><p><h3>See Also:</h3>   <a
+         * instead of ParticipantToken.</p> <p>The Amazon Connect Participant Service APIs
+         * do not use <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+         * Version 4 authentication</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/SendEvent">AWS
          * API Reference</a></p>
          */
@@ -249,7 +344,10 @@ namespace Model
 
         /**
          * <p>Sends an event. Note that ConnectionToken is used for invoking this API
-         * instead of ParticipantToken.</p><p><h3>See Also:</h3>   <a
+         * instead of ParticipantToken.</p> <p>The Amazon Connect Participant Service APIs
+         * do not use <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+         * Version 4 authentication</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/SendEvent">AWS
          * API Reference</a></p>
          *
@@ -259,7 +357,10 @@ namespace Model
 
         /**
          * <p>Sends an event. Note that ConnectionToken is used for invoking this API
-         * instead of ParticipantToken.</p><p><h3>See Also:</h3>   <a
+         * instead of ParticipantToken.</p> <p>The Amazon Connect Participant Service APIs
+         * do not use <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+         * Version 4 authentication</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/SendEvent">AWS
          * API Reference</a></p>
          *
@@ -269,7 +370,10 @@ namespace Model
 
         /**
          * <p>Sends a message. Note that ConnectionToken is used for invoking this API
-         * instead of ParticipantToken.</p><p><h3>See Also:</h3>   <a
+         * instead of ParticipantToken.</p>  <p>The Amazon Connect Participant
+         * Service APIs do not use <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+         * Version 4 authentication</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/SendMessage">AWS
          * API Reference</a></p>
          */
@@ -277,7 +381,10 @@ namespace Model
 
         /**
          * <p>Sends a message. Note that ConnectionToken is used for invoking this API
-         * instead of ParticipantToken.</p><p><h3>See Also:</h3>   <a
+         * instead of ParticipantToken.</p>  <p>The Amazon Connect Participant
+         * Service APIs do not use <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+         * Version 4 authentication</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/SendMessage">AWS
          * API Reference</a></p>
          *
@@ -287,7 +394,10 @@ namespace Model
 
         /**
          * <p>Sends a message. Note that ConnectionToken is used for invoking this API
-         * instead of ParticipantToken.</p><p><h3>See Also:</h3>   <a
+         * instead of ParticipantToken.</p>  <p>The Amazon Connect Participant
+         * Service APIs do not use <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+         * Version 4 authentication</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/SendMessage">AWS
          * API Reference</a></p>
          *
@@ -295,15 +405,46 @@ namespace Model
          */
         virtual void SendMessageAsync(const Model::SendMessageRequest& request, const SendMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Provides a pre-signed Amazon S3 URL in response for uploading the file
+         * directly to S3.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/StartAttachmentUpload">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartAttachmentUploadOutcome StartAttachmentUpload(const Model::StartAttachmentUploadRequest& request) const;
+
+        /**
+         * <p>Provides a pre-signed Amazon S3 URL in response for uploading the file
+         * directly to S3.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/StartAttachmentUpload">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartAttachmentUploadOutcomeCallable StartAttachmentUploadCallable(const Model::StartAttachmentUploadRequest& request) const;
+
+        /**
+         * <p>Provides a pre-signed Amazon S3 URL in response for uploading the file
+         * directly to S3.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/StartAttachmentUpload">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartAttachmentUploadAsync(const Model::StartAttachmentUploadRequest& request, const StartAttachmentUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void CompleteAttachmentUploadAsyncHelper(const Model::CompleteAttachmentUploadRequest& request, const CompleteAttachmentUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateParticipantConnectionAsyncHelper(const Model::CreateParticipantConnectionRequest& request, const CreateParticipantConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisconnectParticipantAsyncHelper(const Model::DisconnectParticipantRequest& request, const DisconnectParticipantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAttachmentAsyncHelper(const Model::GetAttachmentRequest& request, const GetAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTranscriptAsyncHelper(const Model::GetTranscriptRequest& request, const GetTranscriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendEventAsyncHelper(const Model::SendEventRequest& request, const SendEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendMessageAsyncHelper(const Model::SendMessageRequest& request, const SendMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartAttachmentUploadAsyncHelper(const Model::StartAttachmentUploadRequest& request, const StartAttachmentUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

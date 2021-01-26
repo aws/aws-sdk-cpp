@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sms/SMS_EXPORTS.h>
@@ -49,69 +39,69 @@ namespace Model
 
 
     /**
-     * <p>Identifier of the server this replication configuration is associated
-     * with.</p>
+     * <p>The ID of the server with which this replication configuration is
+     * associated.</p>
      */
     inline const Server& GetServer() const{ return m_server; }
 
     /**
-     * <p>Identifier of the server this replication configuration is associated
-     * with.</p>
+     * <p>The ID of the server with which this replication configuration is
+     * associated.</p>
      */
     inline bool ServerHasBeenSet() const { return m_serverHasBeenSet; }
 
     /**
-     * <p>Identifier of the server this replication configuration is associated
-     * with.</p>
+     * <p>The ID of the server with which this replication configuration is
+     * associated.</p>
      */
     inline void SetServer(const Server& value) { m_serverHasBeenSet = true; m_server = value; }
 
     /**
-     * <p>Identifier of the server this replication configuration is associated
-     * with.</p>
+     * <p>The ID of the server with which this replication configuration is
+     * associated.</p>
      */
     inline void SetServer(Server&& value) { m_serverHasBeenSet = true; m_server = std::move(value); }
 
     /**
-     * <p>Identifier of the server this replication configuration is associated
-     * with.</p>
+     * <p>The ID of the server with which this replication configuration is
+     * associated.</p>
      */
     inline ServerReplicationConfiguration& WithServer(const Server& value) { SetServer(value); return *this;}
 
     /**
-     * <p>Identifier of the server this replication configuration is associated
-     * with.</p>
+     * <p>The ID of the server with which this replication configuration is
+     * associated.</p>
      */
     inline ServerReplicationConfiguration& WithServer(Server&& value) { SetServer(std::move(value)); return *this;}
 
 
     /**
-     * <p>Parameters for replicating the server.</p>
+     * <p>The parameters for replicating the server.</p>
      */
     inline const ServerReplicationParameters& GetServerReplicationParameters() const{ return m_serverReplicationParameters; }
 
     /**
-     * <p>Parameters for replicating the server.</p>
+     * <p>The parameters for replicating the server.</p>
      */
     inline bool ServerReplicationParametersHasBeenSet() const { return m_serverReplicationParametersHasBeenSet; }
 
     /**
-     * <p>Parameters for replicating the server.</p>
+     * <p>The parameters for replicating the server.</p>
      */
     inline void SetServerReplicationParameters(const ServerReplicationParameters& value) { m_serverReplicationParametersHasBeenSet = true; m_serverReplicationParameters = value; }
 
     /**
-     * <p>Parameters for replicating the server.</p>
+     * <p>The parameters for replicating the server.</p>
      */
     inline void SetServerReplicationParameters(ServerReplicationParameters&& value) { m_serverReplicationParametersHasBeenSet = true; m_serverReplicationParameters = std::move(value); }
 
     /**
-     * <p>Parameters for replicating the server.</p>
+     * <p>The parameters for replicating the server.</p>
      */
     inline ServerReplicationConfiguration& WithServerReplicationParameters(const ServerReplicationParameters& value) { SetServerReplicationParameters(value); return *this;}
 
     /**
-     * <p>Parameters for replicating the server.</p>
+     * <p>The parameters for replicating the server.</p>
      */
     inline ServerReplicationConfiguration& WithServerReplicationParameters(ServerReplicationParameters&& value) { SetServerReplicationParameters(std::move(value)); return *this;}
 

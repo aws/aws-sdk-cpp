@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudsearch/CloudSearch_EXPORTS.h>
@@ -120,32 +110,32 @@ namespace Model
         class UpdateScalingParametersRequest;
         class UpdateServiceAccessPoliciesRequest;
 
-        typedef Aws::Utils::Outcome<BuildSuggestersResult, Aws::Client::AWSError<CloudSearchErrors>> BuildSuggestersOutcome;
-        typedef Aws::Utils::Outcome<CreateDomainResult, Aws::Client::AWSError<CloudSearchErrors>> CreateDomainOutcome;
-        typedef Aws::Utils::Outcome<DefineAnalysisSchemeResult, Aws::Client::AWSError<CloudSearchErrors>> DefineAnalysisSchemeOutcome;
-        typedef Aws::Utils::Outcome<DefineExpressionResult, Aws::Client::AWSError<CloudSearchErrors>> DefineExpressionOutcome;
-        typedef Aws::Utils::Outcome<DefineIndexFieldResult, Aws::Client::AWSError<CloudSearchErrors>> DefineIndexFieldOutcome;
-        typedef Aws::Utils::Outcome<DefineSuggesterResult, Aws::Client::AWSError<CloudSearchErrors>> DefineSuggesterOutcome;
-        typedef Aws::Utils::Outcome<DeleteAnalysisSchemeResult, Aws::Client::AWSError<CloudSearchErrors>> DeleteAnalysisSchemeOutcome;
-        typedef Aws::Utils::Outcome<DeleteDomainResult, Aws::Client::AWSError<CloudSearchErrors>> DeleteDomainOutcome;
-        typedef Aws::Utils::Outcome<DeleteExpressionResult, Aws::Client::AWSError<CloudSearchErrors>> DeleteExpressionOutcome;
-        typedef Aws::Utils::Outcome<DeleteIndexFieldResult, Aws::Client::AWSError<CloudSearchErrors>> DeleteIndexFieldOutcome;
-        typedef Aws::Utils::Outcome<DeleteSuggesterResult, Aws::Client::AWSError<CloudSearchErrors>> DeleteSuggesterOutcome;
-        typedef Aws::Utils::Outcome<DescribeAnalysisSchemesResult, Aws::Client::AWSError<CloudSearchErrors>> DescribeAnalysisSchemesOutcome;
-        typedef Aws::Utils::Outcome<DescribeAvailabilityOptionsResult, Aws::Client::AWSError<CloudSearchErrors>> DescribeAvailabilityOptionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDomainEndpointOptionsResult, Aws::Client::AWSError<CloudSearchErrors>> DescribeDomainEndpointOptionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDomainsResult, Aws::Client::AWSError<CloudSearchErrors>> DescribeDomainsOutcome;
-        typedef Aws::Utils::Outcome<DescribeExpressionsResult, Aws::Client::AWSError<CloudSearchErrors>> DescribeExpressionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeIndexFieldsResult, Aws::Client::AWSError<CloudSearchErrors>> DescribeIndexFieldsOutcome;
-        typedef Aws::Utils::Outcome<DescribeScalingParametersResult, Aws::Client::AWSError<CloudSearchErrors>> DescribeScalingParametersOutcome;
-        typedef Aws::Utils::Outcome<DescribeServiceAccessPoliciesResult, Aws::Client::AWSError<CloudSearchErrors>> DescribeServiceAccessPoliciesOutcome;
-        typedef Aws::Utils::Outcome<DescribeSuggestersResult, Aws::Client::AWSError<CloudSearchErrors>> DescribeSuggestersOutcome;
-        typedef Aws::Utils::Outcome<IndexDocumentsResult, Aws::Client::AWSError<CloudSearchErrors>> IndexDocumentsOutcome;
-        typedef Aws::Utils::Outcome<ListDomainNamesResult, Aws::Client::AWSError<CloudSearchErrors>> ListDomainNamesOutcome;
-        typedef Aws::Utils::Outcome<UpdateAvailabilityOptionsResult, Aws::Client::AWSError<CloudSearchErrors>> UpdateAvailabilityOptionsOutcome;
-        typedef Aws::Utils::Outcome<UpdateDomainEndpointOptionsResult, Aws::Client::AWSError<CloudSearchErrors>> UpdateDomainEndpointOptionsOutcome;
-        typedef Aws::Utils::Outcome<UpdateScalingParametersResult, Aws::Client::AWSError<CloudSearchErrors>> UpdateScalingParametersOutcome;
-        typedef Aws::Utils::Outcome<UpdateServiceAccessPoliciesResult, Aws::Client::AWSError<CloudSearchErrors>> UpdateServiceAccessPoliciesOutcome;
+        typedef Aws::Utils::Outcome<BuildSuggestersResult, CloudSearchError> BuildSuggestersOutcome;
+        typedef Aws::Utils::Outcome<CreateDomainResult, CloudSearchError> CreateDomainOutcome;
+        typedef Aws::Utils::Outcome<DefineAnalysisSchemeResult, CloudSearchError> DefineAnalysisSchemeOutcome;
+        typedef Aws::Utils::Outcome<DefineExpressionResult, CloudSearchError> DefineExpressionOutcome;
+        typedef Aws::Utils::Outcome<DefineIndexFieldResult, CloudSearchError> DefineIndexFieldOutcome;
+        typedef Aws::Utils::Outcome<DefineSuggesterResult, CloudSearchError> DefineSuggesterOutcome;
+        typedef Aws::Utils::Outcome<DeleteAnalysisSchemeResult, CloudSearchError> DeleteAnalysisSchemeOutcome;
+        typedef Aws::Utils::Outcome<DeleteDomainResult, CloudSearchError> DeleteDomainOutcome;
+        typedef Aws::Utils::Outcome<DeleteExpressionResult, CloudSearchError> DeleteExpressionOutcome;
+        typedef Aws::Utils::Outcome<DeleteIndexFieldResult, CloudSearchError> DeleteIndexFieldOutcome;
+        typedef Aws::Utils::Outcome<DeleteSuggesterResult, CloudSearchError> DeleteSuggesterOutcome;
+        typedef Aws::Utils::Outcome<DescribeAnalysisSchemesResult, CloudSearchError> DescribeAnalysisSchemesOutcome;
+        typedef Aws::Utils::Outcome<DescribeAvailabilityOptionsResult, CloudSearchError> DescribeAvailabilityOptionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDomainEndpointOptionsResult, CloudSearchError> DescribeDomainEndpointOptionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDomainsResult, CloudSearchError> DescribeDomainsOutcome;
+        typedef Aws::Utils::Outcome<DescribeExpressionsResult, CloudSearchError> DescribeExpressionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeIndexFieldsResult, CloudSearchError> DescribeIndexFieldsOutcome;
+        typedef Aws::Utils::Outcome<DescribeScalingParametersResult, CloudSearchError> DescribeScalingParametersOutcome;
+        typedef Aws::Utils::Outcome<DescribeServiceAccessPoliciesResult, CloudSearchError> DescribeServiceAccessPoliciesOutcome;
+        typedef Aws::Utils::Outcome<DescribeSuggestersResult, CloudSearchError> DescribeSuggestersOutcome;
+        typedef Aws::Utils::Outcome<IndexDocumentsResult, CloudSearchError> IndexDocumentsOutcome;
+        typedef Aws::Utils::Outcome<ListDomainNamesResult, CloudSearchError> ListDomainNamesOutcome;
+        typedef Aws::Utils::Outcome<UpdateAvailabilityOptionsResult, CloudSearchError> UpdateAvailabilityOptionsOutcome;
+        typedef Aws::Utils::Outcome<UpdateDomainEndpointOptionsResult, CloudSearchError> UpdateDomainEndpointOptionsOutcome;
+        typedef Aws::Utils::Outcome<UpdateScalingParametersResult, CloudSearchError> UpdateScalingParametersOutcome;
+        typedef Aws::Utils::Outcome<UpdateServiceAccessPoliciesResult, CloudSearchError> UpdateServiceAccessPoliciesOutcome;
 
         typedef std::future<BuildSuggestersOutcome> BuildSuggestersOutcomeCallable;
         typedef std::future<CreateDomainOutcome> CreateDomainOutcomeCallable;
@@ -242,8 +232,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~CloudSearchClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "CloudSearch"; }
 
 
        /**
@@ -1310,7 +1298,7 @@ namespace Model
          */
         virtual void UpdateServiceAccessPoliciesAsync(const Model::UpdateServiceAccessPoliciesRequest& request, const UpdateServiceAccessPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-      
+
         void OverrideEndpoint(const Aws::String& endpoint);
   private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);

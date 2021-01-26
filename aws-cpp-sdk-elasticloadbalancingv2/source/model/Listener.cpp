@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/elasticloadbalancingv2/model/Listener.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -39,7 +29,8 @@ Listener::Listener() :
     m_protocolHasBeenSet(false),
     m_certificatesHasBeenSet(false),
     m_sslPolicyHasBeenSet(false),
-    m_defaultActionsHasBeenSet(false)
+    m_defaultActionsHasBeenSet(false),
+    m_alpnPolicyHasBeenSet(false)
 {
 }
 
@@ -52,7 +43,8 @@ Listener::Listener(const XmlNode& xmlNode) :
     m_protocolHasBeenSet(false),
     m_certificatesHasBeenSet(false),
     m_sslPolicyHasBeenSet(false),
-    m_defaultActionsHasBeenSet(false)
+    m_defaultActionsHasBeenSet(false),
+    m_alpnPolicyHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -117,6 +109,18 @@ Listener& Listener::operator =(const XmlNode& xmlNode)
 
       m_defaultActionsHasBeenSet = true;
     }
+    XmlNode alpnPolicyNode = resultNode.FirstChild("AlpnPolicy");
+    if(!alpnPolicyNode.IsNull())
+    {
+      XmlNode alpnPolicyMember = alpnPolicyNode.FirstChild("member");
+      while(!alpnPolicyMember.IsNull())
+      {
+        m_alpnPolicy.push_back(alpnPolicyMember.GetText());
+        alpnPolicyMember = alpnPolicyMember.NextNode("member");
+      }
+
+      m_alpnPolicyHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -171,6 +175,15 @@ void Listener::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       }
   }
 
+  if(m_alpnPolicyHasBeenSet)
+  {
+      unsigned alpnPolicyIdx = 1;
+      for(auto& item : m_alpnPolicy)
+      {
+        oStream << location << index << locationValue << ".AlpnPolicy.member." << alpnPolicyIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
 }
 
 void Listener::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -213,6 +226,14 @@ void Listener::OutputToStream(Aws::OStream& oStream, const char* location) const
         Aws::StringStream defaultActionsSs;
         defaultActionsSs << location <<  ".DefaultActions.member." << defaultActionsIdx++;
         item.OutputToStream(oStream, defaultActionsSs.str().c_str());
+      }
+  }
+  if(m_alpnPolicyHasBeenSet)
+  {
+      unsigned alpnPolicyIdx = 1;
+      for(auto& item : m_alpnPolicy)
+      {
+        oStream << location << ".AlpnPolicy.member." << alpnPolicyIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

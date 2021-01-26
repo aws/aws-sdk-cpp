@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/globalaccelerator/GlobalAccelerator_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/globalaccelerator/model/HealthCheckProtocol.h>
 #include <aws/globalaccelerator/model/EndpointConfiguration.h>
+#include <aws/globalaccelerator/model/PortOverride.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -90,50 +81,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the AWS Region where the endpoint group is located. A listener
-     * can have only one endpoint group in a specific Region.</p>
+     * <p>The AWS Region where the endpoint group is located. A listener can have only
+     * one endpoint group in a specific Region.</p>
      */
     inline const Aws::String& GetEndpointGroupRegion() const{ return m_endpointGroupRegion; }
 
     /**
-     * <p>The name of the AWS Region where the endpoint group is located. A listener
-     * can have only one endpoint group in a specific Region.</p>
+     * <p>The AWS Region where the endpoint group is located. A listener can have only
+     * one endpoint group in a specific Region.</p>
      */
     inline bool EndpointGroupRegionHasBeenSet() const { return m_endpointGroupRegionHasBeenSet; }
 
     /**
-     * <p>The name of the AWS Region where the endpoint group is located. A listener
-     * can have only one endpoint group in a specific Region.</p>
+     * <p>The AWS Region where the endpoint group is located. A listener can have only
+     * one endpoint group in a specific Region.</p>
      */
     inline void SetEndpointGroupRegion(const Aws::String& value) { m_endpointGroupRegionHasBeenSet = true; m_endpointGroupRegion = value; }
 
     /**
-     * <p>The name of the AWS Region where the endpoint group is located. A listener
-     * can have only one endpoint group in a specific Region.</p>
+     * <p>The AWS Region where the endpoint group is located. A listener can have only
+     * one endpoint group in a specific Region.</p>
      */
     inline void SetEndpointGroupRegion(Aws::String&& value) { m_endpointGroupRegionHasBeenSet = true; m_endpointGroupRegion = std::move(value); }
 
     /**
-     * <p>The name of the AWS Region where the endpoint group is located. A listener
-     * can have only one endpoint group in a specific Region.</p>
+     * <p>The AWS Region where the endpoint group is located. A listener can have only
+     * one endpoint group in a specific Region.</p>
      */
     inline void SetEndpointGroupRegion(const char* value) { m_endpointGroupRegionHasBeenSet = true; m_endpointGroupRegion.assign(value); }
 
     /**
-     * <p>The name of the AWS Region where the endpoint group is located. A listener
-     * can have only one endpoint group in a specific Region.</p>
+     * <p>The AWS Region where the endpoint group is located. A listener can have only
+     * one endpoint group in a specific Region.</p>
      */
     inline CreateEndpointGroupRequest& WithEndpointGroupRegion(const Aws::String& value) { SetEndpointGroupRegion(value); return *this;}
 
     /**
-     * <p>The name of the AWS Region where the endpoint group is located. A listener
-     * can have only one endpoint group in a specific Region.</p>
+     * <p>The AWS Region where the endpoint group is located. A listener can have only
+     * one endpoint group in a specific Region.</p>
      */
     inline CreateEndpointGroupRequest& WithEndpointGroupRegion(Aws::String&& value) { SetEndpointGroupRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS Region where the endpoint group is located. A listener
-     * can have only one endpoint group in a specific Region.</p>
+     * <p>The AWS Region where the endpoint group is located. A listener can have only
+     * one endpoint group in a specific Region.</p>
      */
     inline CreateEndpointGroupRequest& WithEndpointGroupRegion(const char* value) { SetEndpointGroupRegion(value); return *this;}
 
@@ -437,6 +428,95 @@ namespace Model
      */
     inline CreateEndpointGroupRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 
+
+    /**
+     * <p>Override specific listener ports used to route traffic to endpoints that are
+     * part of this endpoint group. For example, you can create a port override in
+     * which the listener receives user traffic on ports 80 and 443, but your
+     * accelerator routes that traffic to ports 1080 and 1443, respectively, on the
+     * endpoints.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
+     * Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     */
+    inline const Aws::Vector<PortOverride>& GetPortOverrides() const{ return m_portOverrides; }
+
+    /**
+     * <p>Override specific listener ports used to route traffic to endpoints that are
+     * part of this endpoint group. For example, you can create a port override in
+     * which the listener receives user traffic on ports 80 and 443, but your
+     * accelerator routes that traffic to ports 1080 and 1443, respectively, on the
+     * endpoints.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
+     * Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     */
+    inline bool PortOverridesHasBeenSet() const { return m_portOverridesHasBeenSet; }
+
+    /**
+     * <p>Override specific listener ports used to route traffic to endpoints that are
+     * part of this endpoint group. For example, you can create a port override in
+     * which the listener receives user traffic on ports 80 and 443, but your
+     * accelerator routes that traffic to ports 1080 and 1443, respectively, on the
+     * endpoints.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
+     * Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     */
+    inline void SetPortOverrides(const Aws::Vector<PortOverride>& value) { m_portOverridesHasBeenSet = true; m_portOverrides = value; }
+
+    /**
+     * <p>Override specific listener ports used to route traffic to endpoints that are
+     * part of this endpoint group. For example, you can create a port override in
+     * which the listener receives user traffic on ports 80 and 443, but your
+     * accelerator routes that traffic to ports 1080 and 1443, respectively, on the
+     * endpoints.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
+     * Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     */
+    inline void SetPortOverrides(Aws::Vector<PortOverride>&& value) { m_portOverridesHasBeenSet = true; m_portOverrides = std::move(value); }
+
+    /**
+     * <p>Override specific listener ports used to route traffic to endpoints that are
+     * part of this endpoint group. For example, you can create a port override in
+     * which the listener receives user traffic on ports 80 and 443, but your
+     * accelerator routes that traffic to ports 1080 and 1443, respectively, on the
+     * endpoints.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
+     * Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     */
+    inline CreateEndpointGroupRequest& WithPortOverrides(const Aws::Vector<PortOverride>& value) { SetPortOverrides(value); return *this;}
+
+    /**
+     * <p>Override specific listener ports used to route traffic to endpoints that are
+     * part of this endpoint group. For example, you can create a port override in
+     * which the listener receives user traffic on ports 80 and 443, but your
+     * accelerator routes that traffic to ports 1080 and 1443, respectively, on the
+     * endpoints.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
+     * Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     */
+    inline CreateEndpointGroupRequest& WithPortOverrides(Aws::Vector<PortOverride>&& value) { SetPortOverrides(std::move(value)); return *this;}
+
+    /**
+     * <p>Override specific listener ports used to route traffic to endpoints that are
+     * part of this endpoint group. For example, you can create a port override in
+     * which the listener receives user traffic on ports 80 and 443, but your
+     * accelerator routes that traffic to ports 1080 and 1443, respectively, on the
+     * endpoints.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
+     * Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     */
+    inline CreateEndpointGroupRequest& AddPortOverrides(const PortOverride& value) { m_portOverridesHasBeenSet = true; m_portOverrides.push_back(value); return *this; }
+
+    /**
+     * <p>Override specific listener ports used to route traffic to endpoints that are
+     * part of this endpoint group. For example, you can create a port override in
+     * which the listener receives user traffic on ports 80 and 443, but your
+     * accelerator routes that traffic to ports 1080 and 1443, respectively, on the
+     * endpoints.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
+     * Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     */
+    inline CreateEndpointGroupRequest& AddPortOverrides(PortOverride&& value) { m_portOverridesHasBeenSet = true; m_portOverrides.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_listenerArn;
@@ -468,6 +548,9 @@ namespace Model
 
     Aws::String m_idempotencyToken;
     bool m_idempotencyTokenHasBeenSet;
+
+    Aws::Vector<PortOverride> m_portOverrides;
+    bool m_portOverridesHasBeenSet;
   };
 
 } // namespace Model

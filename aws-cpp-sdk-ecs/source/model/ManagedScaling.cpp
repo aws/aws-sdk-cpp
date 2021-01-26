@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ecs/model/ManagedScaling.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -36,7 +26,9 @@ ManagedScaling::ManagedScaling() :
     m_minimumScalingStepSize(0),
     m_minimumScalingStepSizeHasBeenSet(false),
     m_maximumScalingStepSize(0),
-    m_maximumScalingStepSizeHasBeenSet(false)
+    m_maximumScalingStepSizeHasBeenSet(false),
+    m_instanceWarmupPeriod(0),
+    m_instanceWarmupPeriodHasBeenSet(false)
 {
 }
 
@@ -48,7 +40,9 @@ ManagedScaling::ManagedScaling(JsonView jsonValue) :
     m_minimumScalingStepSize(0),
     m_minimumScalingStepSizeHasBeenSet(false),
     m_maximumScalingStepSize(0),
-    m_maximumScalingStepSizeHasBeenSet(false)
+    m_maximumScalingStepSizeHasBeenSet(false),
+    m_instanceWarmupPeriod(0),
+    m_instanceWarmupPeriodHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,6 +77,13 @@ ManagedScaling& ManagedScaling::operator =(JsonView jsonValue)
     m_maximumScalingStepSizeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("instanceWarmupPeriod"))
+  {
+    m_instanceWarmupPeriod = jsonValue.GetInteger("instanceWarmupPeriod");
+
+    m_instanceWarmupPeriodHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -110,6 +111,12 @@ JsonValue ManagedScaling::Jsonize() const
   if(m_maximumScalingStepSizeHasBeenSet)
   {
    payload.WithInteger("maximumScalingStepSize", m_maximumScalingStepSize);
+
+  }
+
+  if(m_instanceWarmupPeriodHasBeenSet)
+  {
+   payload.WithInteger("instanceWarmupPeriod", m_instanceWarmupPeriod);
 
   }
 

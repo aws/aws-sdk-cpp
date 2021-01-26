@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
@@ -216,32 +206,74 @@ namespace Model
 
 
     /**
-     * <p>The operational state of the WorkSpace.</p>
+     * <p>The operational state of the WorkSpace.</p>  <p>After a WorkSpace is
+     * terminated, the <code>TERMINATED</code> state is returned only briefly before
+     * the WorkSpace directory metadata is cleaned up, so this state is rarely
+     * returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID
+     * by using <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
+     * DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace
+     * has been successfully terminated.</p> 
      */
     inline const WorkspaceState& GetState() const{ return m_state; }
 
     /**
-     * <p>The operational state of the WorkSpace.</p>
+     * <p>The operational state of the WorkSpace.</p>  <p>After a WorkSpace is
+     * terminated, the <code>TERMINATED</code> state is returned only briefly before
+     * the WorkSpace directory metadata is cleaned up, so this state is rarely
+     * returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID
+     * by using <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
+     * DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace
+     * has been successfully terminated.</p> 
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The operational state of the WorkSpace.</p>
+     * <p>The operational state of the WorkSpace.</p>  <p>After a WorkSpace is
+     * terminated, the <code>TERMINATED</code> state is returned only briefly before
+     * the WorkSpace directory metadata is cleaned up, so this state is rarely
+     * returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID
+     * by using <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
+     * DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace
+     * has been successfully terminated.</p> 
      */
     inline void SetState(const WorkspaceState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The operational state of the WorkSpace.</p>
+     * <p>The operational state of the WorkSpace.</p>  <p>After a WorkSpace is
+     * terminated, the <code>TERMINATED</code> state is returned only briefly before
+     * the WorkSpace directory metadata is cleaned up, so this state is rarely
+     * returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID
+     * by using <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
+     * DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace
+     * has been successfully terminated.</p> 
      */
     inline void SetState(WorkspaceState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The operational state of the WorkSpace.</p>
+     * <p>The operational state of the WorkSpace.</p>  <p>After a WorkSpace is
+     * terminated, the <code>TERMINATED</code> state is returned only briefly before
+     * the WorkSpace directory metadata is cleaned up, so this state is rarely
+     * returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID
+     * by using <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
+     * DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace
+     * has been successfully terminated.</p> 
      */
     inline Workspace& WithState(const WorkspaceState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The operational state of the WorkSpace.</p>
+     * <p>The operational state of the WorkSpace.</p>  <p>After a WorkSpace is
+     * terminated, the <code>TERMINATED</code> state is returned only briefly before
+     * the WorkSpace directory metadata is cleaned up, so this state is rarely
+     * returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID
+     * by using <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
+     * DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace
+     * has been successfully terminated.</p> 
      */
     inline Workspace& WithState(WorkspaceState&& value) { SetState(std::move(value)); return *this;}
 
@@ -419,42 +451,66 @@ namespace Model
 
 
     /**
-     * <p>The name of the WorkSpace, as seen by the operating system.</p>
+     * <p>The name of the WorkSpace, as seen by the operating system. The format of
+     * this name varies. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html">
+     * Launch a WorkSpace</a>. </p>
      */
     inline const Aws::String& GetComputerName() const{ return m_computerName; }
 
     /**
-     * <p>The name of the WorkSpace, as seen by the operating system.</p>
+     * <p>The name of the WorkSpace, as seen by the operating system. The format of
+     * this name varies. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html">
+     * Launch a WorkSpace</a>. </p>
      */
     inline bool ComputerNameHasBeenSet() const { return m_computerNameHasBeenSet; }
 
     /**
-     * <p>The name of the WorkSpace, as seen by the operating system.</p>
+     * <p>The name of the WorkSpace, as seen by the operating system. The format of
+     * this name varies. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html">
+     * Launch a WorkSpace</a>. </p>
      */
     inline void SetComputerName(const Aws::String& value) { m_computerNameHasBeenSet = true; m_computerName = value; }
 
     /**
-     * <p>The name of the WorkSpace, as seen by the operating system.</p>
+     * <p>The name of the WorkSpace, as seen by the operating system. The format of
+     * this name varies. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html">
+     * Launch a WorkSpace</a>. </p>
      */
     inline void SetComputerName(Aws::String&& value) { m_computerNameHasBeenSet = true; m_computerName = std::move(value); }
 
     /**
-     * <p>The name of the WorkSpace, as seen by the operating system.</p>
+     * <p>The name of the WorkSpace, as seen by the operating system. The format of
+     * this name varies. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html">
+     * Launch a WorkSpace</a>. </p>
      */
     inline void SetComputerName(const char* value) { m_computerNameHasBeenSet = true; m_computerName.assign(value); }
 
     /**
-     * <p>The name of the WorkSpace, as seen by the operating system.</p>
+     * <p>The name of the WorkSpace, as seen by the operating system. The format of
+     * this name varies. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html">
+     * Launch a WorkSpace</a>. </p>
      */
     inline Workspace& WithComputerName(const Aws::String& value) { SetComputerName(value); return *this;}
 
     /**
-     * <p>The name of the WorkSpace, as seen by the operating system.</p>
+     * <p>The name of the WorkSpace, as seen by the operating system. The format of
+     * this name varies. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html">
+     * Launch a WorkSpace</a>. </p>
      */
     inline Workspace& WithComputerName(Aws::String&& value) { SetComputerName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the WorkSpace, as seen by the operating system.</p>
+     * <p>The name of the WorkSpace, as seen by the operating system. The format of
+     * this name varies. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html">
+     * Launch a WorkSpace</a>. </p>
      */
     inline Workspace& WithComputerName(const char* value) { SetComputerName(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
@@ -92,7 +82,8 @@ namespace Model
      * <p>Set to <code>true</code> to forcibly remove the iSCSI connection of the
      * target volume and detach the volume. The default is <code>false</code>. If this
      * value is set to <code>false</code>, you must manually disconnect the iSCSI
-     * connection from the target volume.</p>
+     * connection from the target volume.</p> <p>Valid Values: <code>true</code> |
+     * <code>false</code> </p>
      */
     inline bool GetForceDetach() const{ return m_forceDetach; }
 
@@ -100,7 +91,8 @@ namespace Model
      * <p>Set to <code>true</code> to forcibly remove the iSCSI connection of the
      * target volume and detach the volume. The default is <code>false</code>. If this
      * value is set to <code>false</code>, you must manually disconnect the iSCSI
-     * connection from the target volume.</p>
+     * connection from the target volume.</p> <p>Valid Values: <code>true</code> |
+     * <code>false</code> </p>
      */
     inline bool ForceDetachHasBeenSet() const { return m_forceDetachHasBeenSet; }
 
@@ -108,7 +100,8 @@ namespace Model
      * <p>Set to <code>true</code> to forcibly remove the iSCSI connection of the
      * target volume and detach the volume. The default is <code>false</code>. If this
      * value is set to <code>false</code>, you must manually disconnect the iSCSI
-     * connection from the target volume.</p>
+     * connection from the target volume.</p> <p>Valid Values: <code>true</code> |
+     * <code>false</code> </p>
      */
     inline void SetForceDetach(bool value) { m_forceDetachHasBeenSet = true; m_forceDetach = value; }
 
@@ -116,7 +109,8 @@ namespace Model
      * <p>Set to <code>true</code> to forcibly remove the iSCSI connection of the
      * target volume and detach the volume. The default is <code>false</code>. If this
      * value is set to <code>false</code>, you must manually disconnect the iSCSI
-     * connection from the target volume.</p>
+     * connection from the target volume.</p> <p>Valid Values: <code>true</code> |
+     * <code>false</code> </p>
      */
     inline DetachVolumeRequest& WithForceDetach(bool value) { SetForceDetach(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/marketplace-catalog/model/ChangeSetSummaryListItem.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -36,7 +26,9 @@ ChangeSetSummaryListItem::ChangeSetSummaryListItem() :
     m_endTimeHasBeenSet(false),
     m_status(ChangeStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_entityIdListHasBeenSet(false)
+    m_entityIdListHasBeenSet(false),
+    m_failureCode(FailureCode::NOT_SET),
+    m_failureCodeHasBeenSet(false)
 {
 }
 
@@ -48,7 +40,9 @@ ChangeSetSummaryListItem::ChangeSetSummaryListItem(JsonView jsonValue) :
     m_endTimeHasBeenSet(false),
     m_status(ChangeStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_entityIdListHasBeenSet(false)
+    m_entityIdListHasBeenSet(false),
+    m_failureCode(FailureCode::NOT_SET),
+    m_failureCodeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -107,6 +101,13 @@ ChangeSetSummaryListItem& ChangeSetSummaryListItem::operator =(JsonView jsonValu
     m_entityIdListHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FailureCode"))
+  {
+    m_failureCode = FailureCodeMapper::GetFailureCodeForName(jsonValue.GetString("FailureCode"));
+
+    m_failureCodeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -158,6 +159,11 @@ JsonValue ChangeSetSummaryListItem::Jsonize() const
    }
    payload.WithArray("EntityIdList", std::move(entityIdListJsonList));
 
+  }
+
+  if(m_failureCodeHasBeenSet)
+  {
+   payload.WithString("FailureCode", FailureCodeMapper::GetNameForFailureCode(m_failureCode));
   }
 
   return payload;

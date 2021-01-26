@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kms/KMS_EXPORTS.h>
@@ -71,8 +61,11 @@ namespace Model
      * policy, AWS KMS attaches a default key policy to the CMK. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
-     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p>
+     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
+     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p> <p>For help
+     * writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+     * JSON Policy Reference</a> in the <i> <i>IAM User Guide</i> </i>.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
@@ -98,8 +91,11 @@ namespace Model
      * policy, AWS KMS attaches a default key policy to the CMK. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
-     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p>
+     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
+     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p> <p>For help
+     * writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+     * JSON Policy Reference</a> in the <i> <i>IAM User Guide</i> </i>.</p>
      */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
@@ -125,8 +121,11 @@ namespace Model
      * policy, AWS KMS attaches a default key policy to the CMK. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
-     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p>
+     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
+     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p> <p>For help
+     * writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+     * JSON Policy Reference</a> in the <i> <i>IAM User Guide</i> </i>.</p>
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
@@ -152,8 +151,11 @@ namespace Model
      * policy, AWS KMS attaches a default key policy to the CMK. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
-     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p>
+     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
+     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p> <p>For help
+     * writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+     * JSON Policy Reference</a> in the <i> <i>IAM User Guide</i> </i>.</p>
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
@@ -179,8 +181,11 @@ namespace Model
      * policy, AWS KMS attaches a default key policy to the CMK. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
-     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p>
+     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
+     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p> <p>For help
+     * writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+     * JSON Policy Reference</a> in the <i> <i>IAM User Guide</i> </i>.</p>
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
@@ -206,8 +211,11 @@ namespace Model
      * policy, AWS KMS attaches a default key policy to the CMK. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
-     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p>
+     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
+     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p> <p>For help
+     * writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+     * JSON Policy Reference</a> in the <i> <i>IAM User Guide</i> </i>.</p>
      */
     inline CreateKeyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
@@ -233,8 +241,11 @@ namespace Model
      * policy, AWS KMS attaches a default key policy to the CMK. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
-     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p>
+     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
+     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p> <p>For help
+     * writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+     * JSON Policy Reference</a> in the <i> <i>IAM User Guide</i> </i>.</p>
      */
     inline CreateKeyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
@@ -260,8 +271,11 @@ namespace Model
      * policy, AWS KMS attaches a default key policy to the CMK. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
-     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p>
+     * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
+     * <p>The key policy size quota is 32 kilobytes (32768 bytes).</p> <p>For help
+     * writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+     * JSON Policy Reference</a> in the <i> <i>IAM User Guide</i> </i>.</p>
      */
     inline CreateKeyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
@@ -316,12 +330,14 @@ namespace Model
 
 
     /**
-     * <p>Determines the cryptographic operations for which you can use the CMK. The
-     * default value is <code>ENCRYPT_DECRYPT</code>. This parameter is required only
-     * for asymmetric CMKs. You can't change the <code>KeyUsage</code> value after the
-     * CMK is created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For
-     * symmetric CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p>
-     * </li> <li> <p>For asymmetric CMKs with RSA key material, specify
+     * <p>Determines the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> for which you can use the CMK. The default value is
+     * <code>ENCRYPT_DECRYPT</code>. This parameter is required only for asymmetric
+     * CMKs. You can't change the <code>KeyUsage</code> value after the CMK is
+     * created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For symmetric
+     * CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p> </li> <li>
+     * <p>For asymmetric CMKs with RSA key material, specify
      * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
      * asymmetric CMKs with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
      * </li> </ul>
@@ -329,12 +345,14 @@ namespace Model
     inline const KeyUsageType& GetKeyUsage() const{ return m_keyUsage; }
 
     /**
-     * <p>Determines the cryptographic operations for which you can use the CMK. The
-     * default value is <code>ENCRYPT_DECRYPT</code>. This parameter is required only
-     * for asymmetric CMKs. You can't change the <code>KeyUsage</code> value after the
-     * CMK is created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For
-     * symmetric CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p>
-     * </li> <li> <p>For asymmetric CMKs with RSA key material, specify
+     * <p>Determines the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> for which you can use the CMK. The default value is
+     * <code>ENCRYPT_DECRYPT</code>. This parameter is required only for asymmetric
+     * CMKs. You can't change the <code>KeyUsage</code> value after the CMK is
+     * created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For symmetric
+     * CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p> </li> <li>
+     * <p>For asymmetric CMKs with RSA key material, specify
      * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
      * asymmetric CMKs with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
      * </li> </ul>
@@ -342,12 +360,14 @@ namespace Model
     inline bool KeyUsageHasBeenSet() const { return m_keyUsageHasBeenSet; }
 
     /**
-     * <p>Determines the cryptographic operations for which you can use the CMK. The
-     * default value is <code>ENCRYPT_DECRYPT</code>. This parameter is required only
-     * for asymmetric CMKs. You can't change the <code>KeyUsage</code> value after the
-     * CMK is created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For
-     * symmetric CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p>
-     * </li> <li> <p>For asymmetric CMKs with RSA key material, specify
+     * <p>Determines the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> for which you can use the CMK. The default value is
+     * <code>ENCRYPT_DECRYPT</code>. This parameter is required only for asymmetric
+     * CMKs. You can't change the <code>KeyUsage</code> value after the CMK is
+     * created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For symmetric
+     * CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p> </li> <li>
+     * <p>For asymmetric CMKs with RSA key material, specify
      * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
      * asymmetric CMKs with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
      * </li> </ul>
@@ -355,12 +375,14 @@ namespace Model
     inline void SetKeyUsage(const KeyUsageType& value) { m_keyUsageHasBeenSet = true; m_keyUsage = value; }
 
     /**
-     * <p>Determines the cryptographic operations for which you can use the CMK. The
-     * default value is <code>ENCRYPT_DECRYPT</code>. This parameter is required only
-     * for asymmetric CMKs. You can't change the <code>KeyUsage</code> value after the
-     * CMK is created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For
-     * symmetric CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p>
-     * </li> <li> <p>For asymmetric CMKs with RSA key material, specify
+     * <p>Determines the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> for which you can use the CMK. The default value is
+     * <code>ENCRYPT_DECRYPT</code>. This parameter is required only for asymmetric
+     * CMKs. You can't change the <code>KeyUsage</code> value after the CMK is
+     * created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For symmetric
+     * CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p> </li> <li>
+     * <p>For asymmetric CMKs with RSA key material, specify
      * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
      * asymmetric CMKs with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
      * </li> </ul>
@@ -368,12 +390,14 @@ namespace Model
     inline void SetKeyUsage(KeyUsageType&& value) { m_keyUsageHasBeenSet = true; m_keyUsage = std::move(value); }
 
     /**
-     * <p>Determines the cryptographic operations for which you can use the CMK. The
-     * default value is <code>ENCRYPT_DECRYPT</code>. This parameter is required only
-     * for asymmetric CMKs. You can't change the <code>KeyUsage</code> value after the
-     * CMK is created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For
-     * symmetric CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p>
-     * </li> <li> <p>For asymmetric CMKs with RSA key material, specify
+     * <p>Determines the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> for which you can use the CMK. The default value is
+     * <code>ENCRYPT_DECRYPT</code>. This parameter is required only for asymmetric
+     * CMKs. You can't change the <code>KeyUsage</code> value after the CMK is
+     * created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For symmetric
+     * CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p> </li> <li>
+     * <p>For asymmetric CMKs with RSA key material, specify
      * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
      * asymmetric CMKs with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
      * </li> </ul>
@@ -381,12 +405,14 @@ namespace Model
     inline CreateKeyRequest& WithKeyUsage(const KeyUsageType& value) { SetKeyUsage(value); return *this;}
 
     /**
-     * <p>Determines the cryptographic operations for which you can use the CMK. The
-     * default value is <code>ENCRYPT_DECRYPT</code>. This parameter is required only
-     * for asymmetric CMKs. You can't change the <code>KeyUsage</code> value after the
-     * CMK is created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For
-     * symmetric CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p>
-     * </li> <li> <p>For asymmetric CMKs with RSA key material, specify
+     * <p>Determines the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> for which you can use the CMK. The default value is
+     * <code>ENCRYPT_DECRYPT</code>. This parameter is required only for asymmetric
+     * CMKs. You can't change the <code>KeyUsage</code> value after the CMK is
+     * created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For symmetric
+     * CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p> </li> <li>
+     * <p>For asymmetric CMKs with RSA key material, specify
      * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
      * asymmetric CMKs with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
      * </li> </ul>
@@ -411,14 +437,14 @@ namespace Model
      * or <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing
      * Algorithm</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <important> <p> <a
+     *  <p> <a
      * href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">AWS services
      * that are integrated with AWS KMS</a> use symmetric CMKs to protect your data.
      * These services do not support asymmetric CMKs. For help determining whether a
      * CMK is symmetric or asymmetric, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/find-symm-asymm.html">Identifying
      * Symmetric and Asymmetric CMKs</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>.</p> </important> <p>AWS KMS supports the following key specs for
+     * Guide</i>.</p>  <p>AWS KMS supports the following key specs for
      * CMKs:</p> <ul> <li> <p>Symmetric key (default)</p> <ul> <li> <p>
      * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li>
      * <p>Asymmetric RSA key pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li>
@@ -450,14 +476,14 @@ namespace Model
      * or <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing
      * Algorithm</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <important> <p> <a
+     *  <p> <a
      * href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">AWS services
      * that are integrated with AWS KMS</a> use symmetric CMKs to protect your data.
      * These services do not support asymmetric CMKs. For help determining whether a
      * CMK is symmetric or asymmetric, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/find-symm-asymm.html">Identifying
      * Symmetric and Asymmetric CMKs</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>.</p> </important> <p>AWS KMS supports the following key specs for
+     * Guide</i>.</p>  <p>AWS KMS supports the following key specs for
      * CMKs:</p> <ul> <li> <p>Symmetric key (default)</p> <ul> <li> <p>
      * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li>
      * <p>Asymmetric RSA key pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li>
@@ -489,14 +515,14 @@ namespace Model
      * or <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing
      * Algorithm</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <important> <p> <a
+     *  <p> <a
      * href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">AWS services
      * that are integrated with AWS KMS</a> use symmetric CMKs to protect your data.
      * These services do not support asymmetric CMKs. For help determining whether a
      * CMK is symmetric or asymmetric, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/find-symm-asymm.html">Identifying
      * Symmetric and Asymmetric CMKs</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>.</p> </important> <p>AWS KMS supports the following key specs for
+     * Guide</i>.</p>  <p>AWS KMS supports the following key specs for
      * CMKs:</p> <ul> <li> <p>Symmetric key (default)</p> <ul> <li> <p>
      * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li>
      * <p>Asymmetric RSA key pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li>
@@ -528,14 +554,14 @@ namespace Model
      * or <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing
      * Algorithm</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <important> <p> <a
+     *  <p> <a
      * href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">AWS services
      * that are integrated with AWS KMS</a> use symmetric CMKs to protect your data.
      * These services do not support asymmetric CMKs. For help determining whether a
      * CMK is symmetric or asymmetric, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/find-symm-asymm.html">Identifying
      * Symmetric and Asymmetric CMKs</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>.</p> </important> <p>AWS KMS supports the following key specs for
+     * Guide</i>.</p>  <p>AWS KMS supports the following key specs for
      * CMKs:</p> <ul> <li> <p>Symmetric key (default)</p> <ul> <li> <p>
      * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li>
      * <p>Asymmetric RSA key pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li>
@@ -567,14 +593,14 @@ namespace Model
      * or <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing
      * Algorithm</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <important> <p> <a
+     *  <p> <a
      * href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">AWS services
      * that are integrated with AWS KMS</a> use symmetric CMKs to protect your data.
      * These services do not support asymmetric CMKs. For help determining whether a
      * CMK is symmetric or asymmetric, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/find-symm-asymm.html">Identifying
      * Symmetric and Asymmetric CMKs</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>.</p> </important> <p>AWS KMS supports the following key specs for
+     * Guide</i>.</p>  <p>AWS KMS supports the following key specs for
      * CMKs:</p> <ul> <li> <p>Symmetric key (default)</p> <ul> <li> <p>
      * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li>
      * <p>Asymmetric RSA key pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li>
@@ -606,14 +632,14 @@ namespace Model
      * or <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing
      * Algorithm</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <important> <p> <a
+     *  <p> <a
      * href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">AWS services
      * that are integrated with AWS KMS</a> use symmetric CMKs to protect your data.
      * These services do not support asymmetric CMKs. For help determining whether a
      * CMK is symmetric or asymmetric, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/find-symm-asymm.html">Identifying
      * Symmetric and Asymmetric CMKs</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>.</p> </important> <p>AWS KMS supports the following key specs for
+     * Guide</i>.</p>  <p>AWS KMS supports the following key specs for
      * CMKs:</p> <ul> <li> <p>Symmetric key (default)</p> <ul> <li> <p>
      * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li>
      * <p>Asymmetric RSA key pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li>
@@ -901,12 +927,12 @@ namespace Model
 
     /**
      * <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
-     * <important> <p>Setting this value to true increases the risk that the CMK
+     *  <p>Setting this value to true increases the risk that the CMK
      * becomes unmanageable. Do not set this value to true indiscriminately.</p> <p>For
      * more information, refer to the scenario in the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section in the <i> <i>AWS Key Management Service Developer
-     * Guide</i> </i>.</p> </important> <p>Use this parameter only when you include a
+     * Guide</i> </i>.</p>  <p>Use this parameter only when you include a
      * policy in the request and you intend to prevent the principal that is making the
      * request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.</p>
      * <p>The default value is false.</p>
@@ -915,12 +941,12 @@ namespace Model
 
     /**
      * <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
-     * <important> <p>Setting this value to true increases the risk that the CMK
+     *  <p>Setting this value to true increases the risk that the CMK
      * becomes unmanageable. Do not set this value to true indiscriminately.</p> <p>For
      * more information, refer to the scenario in the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section in the <i> <i>AWS Key Management Service Developer
-     * Guide</i> </i>.</p> </important> <p>Use this parameter only when you include a
+     * Guide</i> </i>.</p>  <p>Use this parameter only when you include a
      * policy in the request and you intend to prevent the principal that is making the
      * request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.</p>
      * <p>The default value is false.</p>
@@ -929,12 +955,12 @@ namespace Model
 
     /**
      * <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
-     * <important> <p>Setting this value to true increases the risk that the CMK
+     *  <p>Setting this value to true increases the risk that the CMK
      * becomes unmanageable. Do not set this value to true indiscriminately.</p> <p>For
      * more information, refer to the scenario in the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section in the <i> <i>AWS Key Management Service Developer
-     * Guide</i> </i>.</p> </important> <p>Use this parameter only when you include a
+     * Guide</i> </i>.</p>  <p>Use this parameter only when you include a
      * policy in the request and you intend to prevent the principal that is making the
      * request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.</p>
      * <p>The default value is false.</p>
@@ -943,12 +969,12 @@ namespace Model
 
     /**
      * <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
-     * <important> <p>Setting this value to true increases the risk that the CMK
+     *  <p>Setting this value to true increases the risk that the CMK
      * becomes unmanageable. Do not set this value to true indiscriminately.</p> <p>For
      * more information, refer to the scenario in the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section in the <i> <i>AWS Key Management Service Developer
-     * Guide</i> </i>.</p> </important> <p>Use this parameter only when you include a
+     * Guide</i> </i>.</p>  <p>Use this parameter only when you include a
      * policy in the request and you intend to prevent the principal that is making the
      * request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.</p>
      * <p>The default value is false.</p>
@@ -959,96 +985,120 @@ namespace Model
     /**
      * <p>One or more tags. Each tag consists of a tag key and a tag value. Both the
      * tag key and the tag value are required, but the tag value can be an empty (null)
-     * string.</p> <p>When you add tags to an AWS resource, AWS generates a cost
+     * string. </p> <p>When you add tags to an AWS resource, AWS generates a cost
      * allocation report with usage and costs aggregated by tags. For information about
      * adding, changing, deleting and listing tags for CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
      * Keys</a>.</p> <p>Use this parameter to tag the CMK when it is created. To add
-     * tags to an existing CMK, use the <a>TagResource</a> operation.</p>
+     * tags to an existing CMK, use the <a>TagResource</a> operation.</p> <p>To use
+     * this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
+     * permission in an IAM policy.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>One or more tags. Each tag consists of a tag key and a tag value. Both the
      * tag key and the tag value are required, but the tag value can be an empty (null)
-     * string.</p> <p>When you add tags to an AWS resource, AWS generates a cost
+     * string. </p> <p>When you add tags to an AWS resource, AWS generates a cost
      * allocation report with usage and costs aggregated by tags. For information about
      * adding, changing, deleting and listing tags for CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
      * Keys</a>.</p> <p>Use this parameter to tag the CMK when it is created. To add
-     * tags to an existing CMK, use the <a>TagResource</a> operation.</p>
+     * tags to an existing CMK, use the <a>TagResource</a> operation.</p> <p>To use
+     * this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
+     * permission in an IAM policy.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>One or more tags. Each tag consists of a tag key and a tag value. Both the
      * tag key and the tag value are required, but the tag value can be an empty (null)
-     * string.</p> <p>When you add tags to an AWS resource, AWS generates a cost
+     * string. </p> <p>When you add tags to an AWS resource, AWS generates a cost
      * allocation report with usage and costs aggregated by tags. For information about
      * adding, changing, deleting and listing tags for CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
      * Keys</a>.</p> <p>Use this parameter to tag the CMK when it is created. To add
-     * tags to an existing CMK, use the <a>TagResource</a> operation.</p>
+     * tags to an existing CMK, use the <a>TagResource</a> operation.</p> <p>To use
+     * this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
+     * permission in an IAM policy.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>One or more tags. Each tag consists of a tag key and a tag value. Both the
      * tag key and the tag value are required, but the tag value can be an empty (null)
-     * string.</p> <p>When you add tags to an AWS resource, AWS generates a cost
+     * string. </p> <p>When you add tags to an AWS resource, AWS generates a cost
      * allocation report with usage and costs aggregated by tags. For information about
      * adding, changing, deleting and listing tags for CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
      * Keys</a>.</p> <p>Use this parameter to tag the CMK when it is created. To add
-     * tags to an existing CMK, use the <a>TagResource</a> operation.</p>
+     * tags to an existing CMK, use the <a>TagResource</a> operation.</p> <p>To use
+     * this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
+     * permission in an IAM policy.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>One or more tags. Each tag consists of a tag key and a tag value. Both the
      * tag key and the tag value are required, but the tag value can be an empty (null)
-     * string.</p> <p>When you add tags to an AWS resource, AWS generates a cost
+     * string. </p> <p>When you add tags to an AWS resource, AWS generates a cost
      * allocation report with usage and costs aggregated by tags. For information about
      * adding, changing, deleting and listing tags for CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
      * Keys</a>.</p> <p>Use this parameter to tag the CMK when it is created. To add
-     * tags to an existing CMK, use the <a>TagResource</a> operation.</p>
+     * tags to an existing CMK, use the <a>TagResource</a> operation.</p> <p>To use
+     * this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
+     * permission in an IAM policy.</p>
      */
     inline CreateKeyRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>One or more tags. Each tag consists of a tag key and a tag value. Both the
      * tag key and the tag value are required, but the tag value can be an empty (null)
-     * string.</p> <p>When you add tags to an AWS resource, AWS generates a cost
+     * string. </p> <p>When you add tags to an AWS resource, AWS generates a cost
      * allocation report with usage and costs aggregated by tags. For information about
      * adding, changing, deleting and listing tags for CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
      * Keys</a>.</p> <p>Use this parameter to tag the CMK when it is created. To add
-     * tags to an existing CMK, use the <a>TagResource</a> operation.</p>
+     * tags to an existing CMK, use the <a>TagResource</a> operation.</p> <p>To use
+     * this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
+     * permission in an IAM policy.</p>
      */
     inline CreateKeyRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>One or more tags. Each tag consists of a tag key and a tag value. Both the
      * tag key and the tag value are required, but the tag value can be an empty (null)
-     * string.</p> <p>When you add tags to an AWS resource, AWS generates a cost
+     * string. </p> <p>When you add tags to an AWS resource, AWS generates a cost
      * allocation report with usage and costs aggregated by tags. For information about
      * adding, changing, deleting and listing tags for CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
      * Keys</a>.</p> <p>Use this parameter to tag the CMK when it is created. To add
-     * tags to an existing CMK, use the <a>TagResource</a> operation.</p>
+     * tags to an existing CMK, use the <a>TagResource</a> operation.</p> <p>To use
+     * this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
+     * permission in an IAM policy.</p>
      */
     inline CreateKeyRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>One or more tags. Each tag consists of a tag key and a tag value. Both the
      * tag key and the tag value are required, but the tag value can be an empty (null)
-     * string.</p> <p>When you add tags to an AWS resource, AWS generates a cost
+     * string. </p> <p>When you add tags to an AWS resource, AWS generates a cost
      * allocation report with usage and costs aggregated by tags. For information about
      * adding, changing, deleting and listing tags for CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
      * Keys</a>.</p> <p>Use this parameter to tag the CMK when it is created. To add
-     * tags to an existing CMK, use the <a>TagResource</a> operation.</p>
+     * tags to an existing CMK, use the <a>TagResource</a> operation.</p> <p>To use
+     * this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
+     * permission in an IAM policy.</p>
      */
     inline CreateKeyRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/neptune/Neptune_EXPORTS.h>
@@ -521,50 +511,50 @@ namespace Model
 
 
     /**
-     * <p>The version number of the database engine to use. Currently, setting this
-     * parameter has no effect.</p> <p>Example: <code>1.0.1</code> </p>
+     * <p>The version number of the database engine to use for the new DB cluster.</p>
+     * <p>Example: <code>1.0.2.1</code> </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p>The version number of the database engine to use. Currently, setting this
-     * parameter has no effect.</p> <p>Example: <code>1.0.1</code> </p>
+     * <p>The version number of the database engine to use for the new DB cluster.</p>
+     * <p>Example: <code>1.0.2.1</code> </p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
-     * <p>The version number of the database engine to use. Currently, setting this
-     * parameter has no effect.</p> <p>Example: <code>1.0.1</code> </p>
+     * <p>The version number of the database engine to use for the new DB cluster.</p>
+     * <p>Example: <code>1.0.2.1</code> </p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The version number of the database engine to use. Currently, setting this
-     * parameter has no effect.</p> <p>Example: <code>1.0.1</code> </p>
+     * <p>The version number of the database engine to use for the new DB cluster.</p>
+     * <p>Example: <code>1.0.2.1</code> </p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
-     * <p>The version number of the database engine to use. Currently, setting this
-     * parameter has no effect.</p> <p>Example: <code>1.0.1</code> </p>
+     * <p>The version number of the database engine to use for the new DB cluster.</p>
+     * <p>Example: <code>1.0.2.1</code> </p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p>The version number of the database engine to use. Currently, setting this
-     * parameter has no effect.</p> <p>Example: <code>1.0.1</code> </p>
+     * <p>The version number of the database engine to use for the new DB cluster.</p>
+     * <p>Example: <code>1.0.2.1</code> </p>
      */
     inline CreateDBClusterRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The version number of the database engine to use. Currently, setting this
-     * parameter has no effect.</p> <p>Example: <code>1.0.1</code> </p>
+     * <p>The version number of the database engine to use for the new DB cluster.</p>
+     * <p>Example: <code>1.0.2.1</code> </p>
      */
     inline CreateDBClusterRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version number of the database engine to use. Currently, setting this
-     * parameter has no effect.</p> <p>Example: <code>1.0.1</code> </p>
+     * <p>The version number of the database engine to use for the new DB cluster.</p>
+     * <p>Example: <code>1.0.2.1</code> </p>
      */
     inline CreateDBClusterRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
@@ -1297,30 +1287,22 @@ namespace Model
 
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>Not supported by Neptune.</p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>Not supported by Neptune.</p>
      */
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>Not supported by Neptune.</p>
      */
     inline CreateDBClusterRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 

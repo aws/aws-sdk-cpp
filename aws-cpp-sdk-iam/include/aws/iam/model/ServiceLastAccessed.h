@@ -1,23 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iam/model/TrackedActionLastAccessed.h>
 #include <utility>
 
 namespace Aws
@@ -333,6 +325,79 @@ namespace Model
 
 
     /**
+     * <p>The Region from which the authenticated entity (user or role) last attempted
+     * to access the service. AWS does not report unauthenticated requests.</p> <p>This
+     * field is null if no IAM entities attempted to access the service within the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * period</a>.</p>
+     */
+    inline const Aws::String& GetLastAuthenticatedRegion() const{ return m_lastAuthenticatedRegion; }
+
+    /**
+     * <p>The Region from which the authenticated entity (user or role) last attempted
+     * to access the service. AWS does not report unauthenticated requests.</p> <p>This
+     * field is null if no IAM entities attempted to access the service within the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * period</a>.</p>
+     */
+    inline bool LastAuthenticatedRegionHasBeenSet() const { return m_lastAuthenticatedRegionHasBeenSet; }
+
+    /**
+     * <p>The Region from which the authenticated entity (user or role) last attempted
+     * to access the service. AWS does not report unauthenticated requests.</p> <p>This
+     * field is null if no IAM entities attempted to access the service within the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * period</a>.</p>
+     */
+    inline void SetLastAuthenticatedRegion(const Aws::String& value) { m_lastAuthenticatedRegionHasBeenSet = true; m_lastAuthenticatedRegion = value; }
+
+    /**
+     * <p>The Region from which the authenticated entity (user or role) last attempted
+     * to access the service. AWS does not report unauthenticated requests.</p> <p>This
+     * field is null if no IAM entities attempted to access the service within the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * period</a>.</p>
+     */
+    inline void SetLastAuthenticatedRegion(Aws::String&& value) { m_lastAuthenticatedRegionHasBeenSet = true; m_lastAuthenticatedRegion = std::move(value); }
+
+    /**
+     * <p>The Region from which the authenticated entity (user or role) last attempted
+     * to access the service. AWS does not report unauthenticated requests.</p> <p>This
+     * field is null if no IAM entities attempted to access the service within the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * period</a>.</p>
+     */
+    inline void SetLastAuthenticatedRegion(const char* value) { m_lastAuthenticatedRegionHasBeenSet = true; m_lastAuthenticatedRegion.assign(value); }
+
+    /**
+     * <p>The Region from which the authenticated entity (user or role) last attempted
+     * to access the service. AWS does not report unauthenticated requests.</p> <p>This
+     * field is null if no IAM entities attempted to access the service within the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * period</a>.</p>
+     */
+    inline ServiceLastAccessed& WithLastAuthenticatedRegion(const Aws::String& value) { SetLastAuthenticatedRegion(value); return *this;}
+
+    /**
+     * <p>The Region from which the authenticated entity (user or role) last attempted
+     * to access the service. AWS does not report unauthenticated requests.</p> <p>This
+     * field is null if no IAM entities attempted to access the service within the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * period</a>.</p>
+     */
+    inline ServiceLastAccessed& WithLastAuthenticatedRegion(Aws::String&& value) { SetLastAuthenticatedRegion(std::move(value)); return *this;}
+
+    /**
+     * <p>The Region from which the authenticated entity (user or role) last attempted
+     * to access the service. AWS does not report unauthenticated requests.</p> <p>This
+     * field is null if no IAM entities attempted to access the service within the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * period</a>.</p>
+     */
+    inline ServiceLastAccessed& WithLastAuthenticatedRegion(const char* value) { SetLastAuthenticatedRegion(value); return *this;}
+
+
+    /**
      * <p>The total number of authenticated principals (root user, IAM users, or IAM
      * roles) that have attempted to access the service.</p> <p>This field is null if
      * no principals attempted to access the service within the <a
@@ -368,6 +433,95 @@ namespace Model
      */
     inline ServiceLastAccessed& WithTotalAuthenticatedEntities(int value) { SetTotalAuthenticatedEntities(value); return *this;}
 
+
+    /**
+     * <p>An object that contains details about the most recent attempt to access a
+     * tracked action within the service.</p> <p>This field is null if there no tracked
+     * actions or if the principal did not use the tracked actions within the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * period</a>. This field is also null if the report was generated at the service
+     * level and not the action level. For more information, see the
+     * <code>Granularity</code> field in <a>GenerateServiceLastAccessedDetails</a>.</p>
+     */
+    inline const Aws::Vector<TrackedActionLastAccessed>& GetTrackedActionsLastAccessed() const{ return m_trackedActionsLastAccessed; }
+
+    /**
+     * <p>An object that contains details about the most recent attempt to access a
+     * tracked action within the service.</p> <p>This field is null if there no tracked
+     * actions or if the principal did not use the tracked actions within the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * period</a>. This field is also null if the report was generated at the service
+     * level and not the action level. For more information, see the
+     * <code>Granularity</code> field in <a>GenerateServiceLastAccessedDetails</a>.</p>
+     */
+    inline bool TrackedActionsLastAccessedHasBeenSet() const { return m_trackedActionsLastAccessedHasBeenSet; }
+
+    /**
+     * <p>An object that contains details about the most recent attempt to access a
+     * tracked action within the service.</p> <p>This field is null if there no tracked
+     * actions or if the principal did not use the tracked actions within the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * period</a>. This field is also null if the report was generated at the service
+     * level and not the action level. For more information, see the
+     * <code>Granularity</code> field in <a>GenerateServiceLastAccessedDetails</a>.</p>
+     */
+    inline void SetTrackedActionsLastAccessed(const Aws::Vector<TrackedActionLastAccessed>& value) { m_trackedActionsLastAccessedHasBeenSet = true; m_trackedActionsLastAccessed = value; }
+
+    /**
+     * <p>An object that contains details about the most recent attempt to access a
+     * tracked action within the service.</p> <p>This field is null if there no tracked
+     * actions or if the principal did not use the tracked actions within the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * period</a>. This field is also null if the report was generated at the service
+     * level and not the action level. For more information, see the
+     * <code>Granularity</code> field in <a>GenerateServiceLastAccessedDetails</a>.</p>
+     */
+    inline void SetTrackedActionsLastAccessed(Aws::Vector<TrackedActionLastAccessed>&& value) { m_trackedActionsLastAccessedHasBeenSet = true; m_trackedActionsLastAccessed = std::move(value); }
+
+    /**
+     * <p>An object that contains details about the most recent attempt to access a
+     * tracked action within the service.</p> <p>This field is null if there no tracked
+     * actions or if the principal did not use the tracked actions within the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * period</a>. This field is also null if the report was generated at the service
+     * level and not the action level. For more information, see the
+     * <code>Granularity</code> field in <a>GenerateServiceLastAccessedDetails</a>.</p>
+     */
+    inline ServiceLastAccessed& WithTrackedActionsLastAccessed(const Aws::Vector<TrackedActionLastAccessed>& value) { SetTrackedActionsLastAccessed(value); return *this;}
+
+    /**
+     * <p>An object that contains details about the most recent attempt to access a
+     * tracked action within the service.</p> <p>This field is null if there no tracked
+     * actions or if the principal did not use the tracked actions within the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * period</a>. This field is also null if the report was generated at the service
+     * level and not the action level. For more information, see the
+     * <code>Granularity</code> field in <a>GenerateServiceLastAccessedDetails</a>.</p>
+     */
+    inline ServiceLastAccessed& WithTrackedActionsLastAccessed(Aws::Vector<TrackedActionLastAccessed>&& value) { SetTrackedActionsLastAccessed(std::move(value)); return *this;}
+
+    /**
+     * <p>An object that contains details about the most recent attempt to access a
+     * tracked action within the service.</p> <p>This field is null if there no tracked
+     * actions or if the principal did not use the tracked actions within the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * period</a>. This field is also null if the report was generated at the service
+     * level and not the action level. For more information, see the
+     * <code>Granularity</code> field in <a>GenerateServiceLastAccessedDetails</a>.</p>
+     */
+    inline ServiceLastAccessed& AddTrackedActionsLastAccessed(const TrackedActionLastAccessed& value) { m_trackedActionsLastAccessedHasBeenSet = true; m_trackedActionsLastAccessed.push_back(value); return *this; }
+
+    /**
+     * <p>An object that contains details about the most recent attempt to access a
+     * tracked action within the service.</p> <p>This field is null if there no tracked
+     * actions or if the principal did not use the tracked actions within the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * period</a>. This field is also null if the report was generated at the service
+     * level and not the action level. For more information, see the
+     * <code>Granularity</code> field in <a>GenerateServiceLastAccessedDetails</a>.</p>
+     */
+    inline ServiceLastAccessed& AddTrackedActionsLastAccessed(TrackedActionLastAccessed&& value) { m_trackedActionsLastAccessedHasBeenSet = true; m_trackedActionsLastAccessed.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_serviceName;
@@ -382,8 +536,14 @@ namespace Model
     Aws::String m_lastAuthenticatedEntity;
     bool m_lastAuthenticatedEntityHasBeenSet;
 
+    Aws::String m_lastAuthenticatedRegion;
+    bool m_lastAuthenticatedRegionHasBeenSet;
+
     int m_totalAuthenticatedEntities;
     bool m_totalAuthenticatedEntitiesHasBeenSet;
+
+    Aws::Vector<TrackedActionLastAccessed> m_trackedActionsLastAccessed;
+    bool m_trackedActionsLastAccessedHasBeenSet;
   };
 
 } // namespace Model

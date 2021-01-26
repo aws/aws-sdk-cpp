@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
@@ -301,6 +291,93 @@ namespace Model
      */
     inline NodeGroupConfiguration& AddReplicaAvailabilityZones(const char* value) { m_replicaAvailabilityZonesHasBeenSet = true; m_replicaAvailabilityZones.push_back(value); return *this; }
 
+
+    /**
+     * <p>The outpost ARN of the primary node.</p>
+     */
+    inline const Aws::String& GetPrimaryOutpostArn() const{ return m_primaryOutpostArn; }
+
+    /**
+     * <p>The outpost ARN of the primary node.</p>
+     */
+    inline bool PrimaryOutpostArnHasBeenSet() const { return m_primaryOutpostArnHasBeenSet; }
+
+    /**
+     * <p>The outpost ARN of the primary node.</p>
+     */
+    inline void SetPrimaryOutpostArn(const Aws::String& value) { m_primaryOutpostArnHasBeenSet = true; m_primaryOutpostArn = value; }
+
+    /**
+     * <p>The outpost ARN of the primary node.</p>
+     */
+    inline void SetPrimaryOutpostArn(Aws::String&& value) { m_primaryOutpostArnHasBeenSet = true; m_primaryOutpostArn = std::move(value); }
+
+    /**
+     * <p>The outpost ARN of the primary node.</p>
+     */
+    inline void SetPrimaryOutpostArn(const char* value) { m_primaryOutpostArnHasBeenSet = true; m_primaryOutpostArn.assign(value); }
+
+    /**
+     * <p>The outpost ARN of the primary node.</p>
+     */
+    inline NodeGroupConfiguration& WithPrimaryOutpostArn(const Aws::String& value) { SetPrimaryOutpostArn(value); return *this;}
+
+    /**
+     * <p>The outpost ARN of the primary node.</p>
+     */
+    inline NodeGroupConfiguration& WithPrimaryOutpostArn(Aws::String&& value) { SetPrimaryOutpostArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The outpost ARN of the primary node.</p>
+     */
+    inline NodeGroupConfiguration& WithPrimaryOutpostArn(const char* value) { SetPrimaryOutpostArn(value); return *this;}
+
+
+    /**
+     * <p>The outpost ARN of the node replicas.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetReplicaOutpostArns() const{ return m_replicaOutpostArns; }
+
+    /**
+     * <p>The outpost ARN of the node replicas.</p>
+     */
+    inline bool ReplicaOutpostArnsHasBeenSet() const { return m_replicaOutpostArnsHasBeenSet; }
+
+    /**
+     * <p>The outpost ARN of the node replicas.</p>
+     */
+    inline void SetReplicaOutpostArns(const Aws::Vector<Aws::String>& value) { m_replicaOutpostArnsHasBeenSet = true; m_replicaOutpostArns = value; }
+
+    /**
+     * <p>The outpost ARN of the node replicas.</p>
+     */
+    inline void SetReplicaOutpostArns(Aws::Vector<Aws::String>&& value) { m_replicaOutpostArnsHasBeenSet = true; m_replicaOutpostArns = std::move(value); }
+
+    /**
+     * <p>The outpost ARN of the node replicas.</p>
+     */
+    inline NodeGroupConfiguration& WithReplicaOutpostArns(const Aws::Vector<Aws::String>& value) { SetReplicaOutpostArns(value); return *this;}
+
+    /**
+     * <p>The outpost ARN of the node replicas.</p>
+     */
+    inline NodeGroupConfiguration& WithReplicaOutpostArns(Aws::Vector<Aws::String>&& value) { SetReplicaOutpostArns(std::move(value)); return *this;}
+
+    /**
+     * <p>The outpost ARN of the node replicas.</p>
+     */
+    inline NodeGroupConfiguration& AddReplicaOutpostArns(const Aws::String& value) { m_replicaOutpostArnsHasBeenSet = true; m_replicaOutpostArns.push_back(value); return *this; }
+
+    /**
+     * <p>The outpost ARN of the node replicas.</p>
+     */
+    inline NodeGroupConfiguration& AddReplicaOutpostArns(Aws::String&& value) { m_replicaOutpostArnsHasBeenSet = true; m_replicaOutpostArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The outpost ARN of the node replicas.</p>
+     */
+    inline NodeGroupConfiguration& AddReplicaOutpostArns(const char* value) { m_replicaOutpostArnsHasBeenSet = true; m_replicaOutpostArns.push_back(value); return *this; }
+
   private:
 
     Aws::String m_nodeGroupId;
@@ -317,6 +394,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_replicaAvailabilityZones;
     bool m_replicaAvailabilityZonesHasBeenSet;
+
+    Aws::String m_primaryOutpostArn;
+    bool m_primaryOutpostArnHasBeenSet;
+
+    Aws::Vector<Aws::String> m_replicaOutpostArns;
+    bool m_replicaOutpostArnsHasBeenSet;
   };
 
 } // namespace Model

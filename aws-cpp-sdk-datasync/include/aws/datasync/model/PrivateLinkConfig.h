@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/datasync/DataSync_EXPORTS.h>
@@ -35,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The VPC endpoint, subnet and security group that an agent uses to access IP
+   * <p>The VPC endpoint, subnet, and security group that an agent uses to access IP
    * addresses in a VPC (Virtual Private Cloud).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/PrivateLinkConfig">AWS
    * API Reference</a></p>
@@ -52,56 +42,56 @@ namespace Model
     /**
      * <p>The ID of the VPC endpoint that is configured for an agent. An agent that is
      * configured with a VPC endpoint will not be accessible over the public
-     * Internet.</p>
+     * internet.</p>
      */
     inline const Aws::String& GetVpcEndpointId() const{ return m_vpcEndpointId; }
 
     /**
      * <p>The ID of the VPC endpoint that is configured for an agent. An agent that is
      * configured with a VPC endpoint will not be accessible over the public
-     * Internet.</p>
+     * internet.</p>
      */
     inline bool VpcEndpointIdHasBeenSet() const { return m_vpcEndpointIdHasBeenSet; }
 
     /**
      * <p>The ID of the VPC endpoint that is configured for an agent. An agent that is
      * configured with a VPC endpoint will not be accessible over the public
-     * Internet.</p>
+     * internet.</p>
      */
     inline void SetVpcEndpointId(const Aws::String& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = value; }
 
     /**
      * <p>The ID of the VPC endpoint that is configured for an agent. An agent that is
      * configured with a VPC endpoint will not be accessible over the public
-     * Internet.</p>
+     * internet.</p>
      */
     inline void SetVpcEndpointId(Aws::String&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = std::move(value); }
 
     /**
      * <p>The ID of the VPC endpoint that is configured for an agent. An agent that is
      * configured with a VPC endpoint will not be accessible over the public
-     * Internet.</p>
+     * internet.</p>
      */
     inline void SetVpcEndpointId(const char* value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId.assign(value); }
 
     /**
      * <p>The ID of the VPC endpoint that is configured for an agent. An agent that is
      * configured with a VPC endpoint will not be accessible over the public
-     * Internet.</p>
+     * internet.</p>
      */
     inline PrivateLinkConfig& WithVpcEndpointId(const Aws::String& value) { SetVpcEndpointId(value); return *this;}
 
     /**
      * <p>The ID of the VPC endpoint that is configured for an agent. An agent that is
      * configured with a VPC endpoint will not be accessible over the public
-     * Internet.</p>
+     * internet.</p>
      */
     inline PrivateLinkConfig& WithVpcEndpointId(Aws::String&& value) { SetVpcEndpointId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the VPC endpoint that is configured for an agent. An agent that is
      * configured with a VPC endpoint will not be accessible over the public
-     * Internet.</p>
+     * internet.</p>
      */
     inline PrivateLinkConfig& WithVpcEndpointId(const char* value) { SetVpcEndpointId(value); return *this;}
 
@@ -111,7 +101,7 @@ namespace Model
      * addresses in a <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>.
      * An agent that is configured with this endpoint will not be accessible over the
-     * public Internet.</p>
+     * public internet.</p>
      */
     inline const Aws::String& GetPrivateLinkEndpoint() const{ return m_privateLinkEndpoint; }
 
@@ -120,7 +110,7 @@ namespace Model
      * addresses in a <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>.
      * An agent that is configured with this endpoint will not be accessible over the
-     * public Internet.</p>
+     * public internet.</p>
      */
     inline bool PrivateLinkEndpointHasBeenSet() const { return m_privateLinkEndpointHasBeenSet; }
 
@@ -129,7 +119,7 @@ namespace Model
      * addresses in a <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>.
      * An agent that is configured with this endpoint will not be accessible over the
-     * public Internet.</p>
+     * public internet.</p>
      */
     inline void SetPrivateLinkEndpoint(const Aws::String& value) { m_privateLinkEndpointHasBeenSet = true; m_privateLinkEndpoint = value; }
 
@@ -138,7 +128,7 @@ namespace Model
      * addresses in a <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>.
      * An agent that is configured with this endpoint will not be accessible over the
-     * public Internet.</p>
+     * public internet.</p>
      */
     inline void SetPrivateLinkEndpoint(Aws::String&& value) { m_privateLinkEndpointHasBeenSet = true; m_privateLinkEndpoint = std::move(value); }
 
@@ -147,7 +137,7 @@ namespace Model
      * addresses in a <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>.
      * An agent that is configured with this endpoint will not be accessible over the
-     * public Internet.</p>
+     * public internet.</p>
      */
     inline void SetPrivateLinkEndpoint(const char* value) { m_privateLinkEndpointHasBeenSet = true; m_privateLinkEndpoint.assign(value); }
 
@@ -156,7 +146,7 @@ namespace Model
      * addresses in a <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>.
      * An agent that is configured with this endpoint will not be accessible over the
-     * public Internet.</p>
+     * public internet.</p>
      */
     inline PrivateLinkConfig& WithPrivateLinkEndpoint(const Aws::String& value) { SetPrivateLinkEndpoint(value); return *this;}
 
@@ -165,7 +155,7 @@ namespace Model
      * addresses in a <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>.
      * An agent that is configured with this endpoint will not be accessible over the
-     * public Internet.</p>
+     * public internet.</p>
      */
     inline PrivateLinkConfig& WithPrivateLinkEndpoint(Aws::String&& value) { SetPrivateLinkEndpoint(std::move(value)); return *this;}
 
@@ -174,7 +164,7 @@ namespace Model
      * addresses in a <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>.
      * An agent that is configured with this endpoint will not be accessible over the
-     * public Internet.</p>
+     * public internet.</p>
      */
     inline PrivateLinkConfig& WithPrivateLinkEndpoint(const char* value) { SetPrivateLinkEndpoint(value); return *this;}
 

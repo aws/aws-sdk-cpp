@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
@@ -72,62 +62,146 @@ namespace Model
 
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3, in JSON format.</p>
+     * <p>Specify the template source with one of the following options, but not both.
+     * Keys accepted: [ <code>LoadTemplateFromURL</code>,
+     * <code>ImportFromPhysicalId</code> ].</p> <p>The URL of the CloudFormation
+     * template in Amazon S3, in JSON format. </p> <p> <code>LoadTemplateFromURL</code>
+     * </p> <p>Use the URL of the CloudFormation template in Amazon S3 in JSON
+     * format.</p> <p> <code>ImportFromPhysicalId</code> </p> <p>Use the physical id of
+     * the resource that contains the template; currently supports CloudFormation stack
+     * ARN.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetInfo() const{ return m_info; }
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3, in JSON format.</p>
+     * <p>Specify the template source with one of the following options, but not both.
+     * Keys accepted: [ <code>LoadTemplateFromURL</code>,
+     * <code>ImportFromPhysicalId</code> ].</p> <p>The URL of the CloudFormation
+     * template in Amazon S3, in JSON format. </p> <p> <code>LoadTemplateFromURL</code>
+     * </p> <p>Use the URL of the CloudFormation template in Amazon S3 in JSON
+     * format.</p> <p> <code>ImportFromPhysicalId</code> </p> <p>Use the physical id of
+     * the resource that contains the template; currently supports CloudFormation stack
+     * ARN.</p>
      */
     inline void SetInfo(const Aws::Map<Aws::String, Aws::String>& value) { m_info = value; }
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3, in JSON format.</p>
+     * <p>Specify the template source with one of the following options, but not both.
+     * Keys accepted: [ <code>LoadTemplateFromURL</code>,
+     * <code>ImportFromPhysicalId</code> ].</p> <p>The URL of the CloudFormation
+     * template in Amazon S3, in JSON format. </p> <p> <code>LoadTemplateFromURL</code>
+     * </p> <p>Use the URL of the CloudFormation template in Amazon S3 in JSON
+     * format.</p> <p> <code>ImportFromPhysicalId</code> </p> <p>Use the physical id of
+     * the resource that contains the template; currently supports CloudFormation stack
+     * ARN.</p>
      */
     inline void SetInfo(Aws::Map<Aws::String, Aws::String>&& value) { m_info = std::move(value); }
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3, in JSON format.</p>
+     * <p>Specify the template source with one of the following options, but not both.
+     * Keys accepted: [ <code>LoadTemplateFromURL</code>,
+     * <code>ImportFromPhysicalId</code> ].</p> <p>The URL of the CloudFormation
+     * template in Amazon S3, in JSON format. </p> <p> <code>LoadTemplateFromURL</code>
+     * </p> <p>Use the URL of the CloudFormation template in Amazon S3 in JSON
+     * format.</p> <p> <code>ImportFromPhysicalId</code> </p> <p>Use the physical id of
+     * the resource that contains the template; currently supports CloudFormation stack
+     * ARN.</p>
      */
     inline CreateProvisioningArtifactResult& WithInfo(const Aws::Map<Aws::String, Aws::String>& value) { SetInfo(value); return *this;}
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3, in JSON format.</p>
+     * <p>Specify the template source with one of the following options, but not both.
+     * Keys accepted: [ <code>LoadTemplateFromURL</code>,
+     * <code>ImportFromPhysicalId</code> ].</p> <p>The URL of the CloudFormation
+     * template in Amazon S3, in JSON format. </p> <p> <code>LoadTemplateFromURL</code>
+     * </p> <p>Use the URL of the CloudFormation template in Amazon S3 in JSON
+     * format.</p> <p> <code>ImportFromPhysicalId</code> </p> <p>Use the physical id of
+     * the resource that contains the template; currently supports CloudFormation stack
+     * ARN.</p>
      */
     inline CreateProvisioningArtifactResult& WithInfo(Aws::Map<Aws::String, Aws::String>&& value) { SetInfo(std::move(value)); return *this;}
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3, in JSON format.</p>
+     * <p>Specify the template source with one of the following options, but not both.
+     * Keys accepted: [ <code>LoadTemplateFromURL</code>,
+     * <code>ImportFromPhysicalId</code> ].</p> <p>The URL of the CloudFormation
+     * template in Amazon S3, in JSON format. </p> <p> <code>LoadTemplateFromURL</code>
+     * </p> <p>Use the URL of the CloudFormation template in Amazon S3 in JSON
+     * format.</p> <p> <code>ImportFromPhysicalId</code> </p> <p>Use the physical id of
+     * the resource that contains the template; currently supports CloudFormation stack
+     * ARN.</p>
      */
     inline CreateProvisioningArtifactResult& AddInfo(const Aws::String& key, const Aws::String& value) { m_info.emplace(key, value); return *this; }
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3, in JSON format.</p>
+     * <p>Specify the template source with one of the following options, but not both.
+     * Keys accepted: [ <code>LoadTemplateFromURL</code>,
+     * <code>ImportFromPhysicalId</code> ].</p> <p>The URL of the CloudFormation
+     * template in Amazon S3, in JSON format. </p> <p> <code>LoadTemplateFromURL</code>
+     * </p> <p>Use the URL of the CloudFormation template in Amazon S3 in JSON
+     * format.</p> <p> <code>ImportFromPhysicalId</code> </p> <p>Use the physical id of
+     * the resource that contains the template; currently supports CloudFormation stack
+     * ARN.</p>
      */
     inline CreateProvisioningArtifactResult& AddInfo(Aws::String&& key, const Aws::String& value) { m_info.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3, in JSON format.</p>
+     * <p>Specify the template source with one of the following options, but not both.
+     * Keys accepted: [ <code>LoadTemplateFromURL</code>,
+     * <code>ImportFromPhysicalId</code> ].</p> <p>The URL of the CloudFormation
+     * template in Amazon S3, in JSON format. </p> <p> <code>LoadTemplateFromURL</code>
+     * </p> <p>Use the URL of the CloudFormation template in Amazon S3 in JSON
+     * format.</p> <p> <code>ImportFromPhysicalId</code> </p> <p>Use the physical id of
+     * the resource that contains the template; currently supports CloudFormation stack
+     * ARN.</p>
      */
     inline CreateProvisioningArtifactResult& AddInfo(const Aws::String& key, Aws::String&& value) { m_info.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3, in JSON format.</p>
+     * <p>Specify the template source with one of the following options, but not both.
+     * Keys accepted: [ <code>LoadTemplateFromURL</code>,
+     * <code>ImportFromPhysicalId</code> ].</p> <p>The URL of the CloudFormation
+     * template in Amazon S3, in JSON format. </p> <p> <code>LoadTemplateFromURL</code>
+     * </p> <p>Use the URL of the CloudFormation template in Amazon S3 in JSON
+     * format.</p> <p> <code>ImportFromPhysicalId</code> </p> <p>Use the physical id of
+     * the resource that contains the template; currently supports CloudFormation stack
+     * ARN.</p>
      */
     inline CreateProvisioningArtifactResult& AddInfo(Aws::String&& key, Aws::String&& value) { m_info.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3, in JSON format.</p>
+     * <p>Specify the template source with one of the following options, but not both.
+     * Keys accepted: [ <code>LoadTemplateFromURL</code>,
+     * <code>ImportFromPhysicalId</code> ].</p> <p>The URL of the CloudFormation
+     * template in Amazon S3, in JSON format. </p> <p> <code>LoadTemplateFromURL</code>
+     * </p> <p>Use the URL of the CloudFormation template in Amazon S3 in JSON
+     * format.</p> <p> <code>ImportFromPhysicalId</code> </p> <p>Use the physical id of
+     * the resource that contains the template; currently supports CloudFormation stack
+     * ARN.</p>
      */
     inline CreateProvisioningArtifactResult& AddInfo(const char* key, Aws::String&& value) { m_info.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3, in JSON format.</p>
+     * <p>Specify the template source with one of the following options, but not both.
+     * Keys accepted: [ <code>LoadTemplateFromURL</code>,
+     * <code>ImportFromPhysicalId</code> ].</p> <p>The URL of the CloudFormation
+     * template in Amazon S3, in JSON format. </p> <p> <code>LoadTemplateFromURL</code>
+     * </p> <p>Use the URL of the CloudFormation template in Amazon S3 in JSON
+     * format.</p> <p> <code>ImportFromPhysicalId</code> </p> <p>Use the physical id of
+     * the resource that contains the template; currently supports CloudFormation stack
+     * ARN.</p>
      */
     inline CreateProvisioningArtifactResult& AddInfo(Aws::String&& key, const char* value) { m_info.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The URL of the CloudFormation template in Amazon S3, in JSON format.</p>
+     * <p>Specify the template source with one of the following options, but not both.
+     * Keys accepted: [ <code>LoadTemplateFromURL</code>,
+     * <code>ImportFromPhysicalId</code> ].</p> <p>The URL of the CloudFormation
+     * template in Amazon S3, in JSON format. </p> <p> <code>LoadTemplateFromURL</code>
+     * </p> <p>Use the URL of the CloudFormation template in Amazon S3 in JSON
+     * format.</p> <p> <code>ImportFromPhysicalId</code> </p> <p>Use the physical id of
+     * the resource that contains the template; currently supports CloudFormation stack
+     * ARN.</p>
      */
     inline CreateProvisioningArtifactResult& AddInfo(const char* key, const char* value) { m_info.emplace(key, value); return *this; }
 

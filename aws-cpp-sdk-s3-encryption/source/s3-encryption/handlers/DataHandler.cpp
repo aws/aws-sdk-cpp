@@ -1,23 +1,14 @@
-/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 #include <aws/s3-encryption/handlers/DataHandler.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 
+using namespace Aws::Utils;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils::Crypto;
 
@@ -62,13 +53,15 @@ namespace Aws
             ContentCryptoMaterial DataHandler::ReadMetadata(const Aws::Map<Aws::String, Aws::String>& metadata)
             {
                 auto keyIterator = metadata.find(CONTENT_KEY_HEADER);
+                auto deprecatedKeyIterator = metadata.find(DEPRECATED_CONTENT_KEY_HEADER);
                 auto ivIterator = metadata.find(IV_HEADER);
                 auto materialsDescriptionIterator = metadata.find(MATERIALS_DESCRIPTION_HEADER);
                 auto schemeIterator = metadata.find(CONTENT_CRYPTO_SCHEME_HEADER);
                 auto keyWrapIterator = metadata.find(KEY_WRAP_ALGORITHM);
-                auto cryptoTagIterator = metadata.find(CRYPTO_TAG_LENGTH_HEADER);
 
-                if (keyIterator == metadata.end() || ivIterator == metadata.end() ||
+                // C++ SDK never writes x-amz-key but adding this check so as to be capable of reading other language SDK encrypted objects.
+                // This fits into both old and new clients.
+                if ((keyIterator == metadata.end() && deprecatedKeyIterator == metadata.end()) || ivIterator == metadata.end() ||
                     materialsDescriptionIterator == metadata.end() || schemeIterator == metadata.end() ||
                     keyIterator == metadata.end())
                 {
@@ -77,23 +70,54 @@ namespace Aws
                 }
 
                 ContentCryptoMaterial contentCryptoMaterial;
-                contentCryptoMaterial.SetEncryptedContentEncryptionKey(Aws::Utils::HashingUtils::Base64Decode(keyIterator->second));
+                Aws::String keyWrapAlgorithmAsString = keyWrapIterator->second;
+                contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(keyWrapAlgorithmAsString));
+
+                // if the key wrap algorithm is AES_GCM, we need to split 12 bytes IV and 16 bytes tag out of it.
+                CryptoBuffer finalCEK = Aws::Utils::HashingUtils::Base64Decode((keyIterator != metadata.end() ? keyIterator->second : deprecatedKeyIterator->second));
+                contentCryptoMaterial.SetFinalCEK(finalCEK);
+                if (contentCryptoMaterial.GetKeyWrapAlgorithm() == KeyWrapAlgorithm::AES_GCM)
+                {
+                    size_t expectedLength = AES_GCM_IV_BYTES + AES_GCM_KEY_BYTES + AES_GCM_TAG_BYTES;
+                    if (finalCEK.GetLength() != expectedLength)
+                    {
+                        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "S3 Encryption Client get unexpected AES GCM key wrap final CEK length: " << finalCEK.GetLength() << " expected: " << expectedLength);
+                        return ContentCryptoMaterial();
+                    }
+                    contentCryptoMaterial.SetCekIV(CryptoBuffer(finalCEK.GetUnderlyingData(), AES_GCM_IV_BYTES));
+                    contentCryptoMaterial.SetEncryptedContentEncryptionKey(CryptoBuffer(finalCEK.GetUnderlyingData() + AES_GCM_IV_BYTES, AES_GCM_KEY_BYTES));
+                    contentCryptoMaterial.SetCEKGCMTag(CryptoBuffer(finalCEK.GetUnderlyingData() + AES_GCM_IV_BYTES + AES_GCM_KEY_BYTES, AES_GCM_TAG_BYTES));
+                }
+                else
+                {
+                    if (contentCryptoMaterial.GetKeyWrapAlgorithm() == KeyWrapAlgorithm::AES_KEY_WRAP && finalCEK.GetLength() != AES_KEY_WRAP_ENCRYPTED_CEK_BYTES)
+                    {
+                        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "S3 Encryption Client get unexpected AES Key Wrap final CEK length: " << finalCEK.GetLength() << " expected: " << AES_KEY_WRAP_ENCRYPTED_CEK_BYTES);
+                        return ContentCryptoMaterial();
+                    }
+                    contentCryptoMaterial.SetEncryptedContentEncryptionKey(finalCEK);
+                    contentCryptoMaterial.SetCEKGCMTag(CryptoBuffer());
+                }
+
                 contentCryptoMaterial.SetIV(Aws::Utils::HashingUtils::Base64Decode(ivIterator->second));
                 contentCryptoMaterial.SetMaterialsDescription(DeserializeMap(materialsDescriptionIterator->second));
 
                 Aws::String schemeAsString = schemeIterator->second;
                 contentCryptoMaterial.SetContentCryptoScheme(ContentCryptoSchemeMapper::GetContentCryptoSchemeForName(schemeAsString));
 
-                Aws::String keyWrapAlgorithmAsString = keyWrapIterator->second;
-                contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(keyWrapAlgorithmAsString));
-                if (cryptoTagIterator != metadata.end())
+                // value of x-amz-cek-alg is used as AES/GCM AAD info for CEK encryption/decryption
+                contentCryptoMaterial.SetGCMAAD(CryptoBuffer((const unsigned char*)schemeAsString.c_str(), schemeAsString.size()));
+
+                // Ignore CRYPTO_TAG_LENGTH_HEADER for new client, this change is still compatible with old client, which only accept GCM and CBC for data encryption.
+                if (contentCryptoMaterial.GetContentCryptoScheme() == ContentCryptoScheme::GCM)
                 {
-                    contentCryptoMaterial.SetCryptoTagLength(static_cast<size_t>(Aws::Utils::StringUtils::ConvertToInt64(cryptoTagIterator->second.c_str())));
+                    contentCryptoMaterial.SetCryptoTagLength(AES_GCM_TAG_BYTES * 8UL);
                 }
-                else
+                else // all other case (currently CBC only ) should be 0.
                 {
                     contentCryptoMaterial.SetCryptoTagLength(0u);
                 }
+
                 return contentCryptoMaterial;
             }
 

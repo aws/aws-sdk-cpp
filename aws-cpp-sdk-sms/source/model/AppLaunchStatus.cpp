@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sms/model/AppLaunchStatus.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -38,6 +28,7 @@ namespace Aws
         static const int LAUNCH_PENDING_HASH = HashingUtils::HashString("LAUNCH_PENDING");
         static const int LAUNCH_IN_PROGRESS_HASH = HashingUtils::HashString("LAUNCH_IN_PROGRESS");
         static const int LAUNCHED_HASH = HashingUtils::HashString("LAUNCHED");
+        static const int PARTIALLY_LAUNCHED_HASH = HashingUtils::HashString("PARTIALLY_LAUNCHED");
         static const int DELTA_LAUNCH_IN_PROGRESS_HASH = HashingUtils::HashString("DELTA_LAUNCH_IN_PROGRESS");
         static const int DELTA_LAUNCH_FAILED_HASH = HashingUtils::HashString("DELTA_LAUNCH_FAILED");
         static const int LAUNCH_FAILED_HASH = HashingUtils::HashString("LAUNCH_FAILED");
@@ -80,6 +71,10 @@ namespace Aws
           else if (hashCode == LAUNCHED_HASH)
           {
             return AppLaunchStatus::LAUNCHED;
+          }
+          else if (hashCode == PARTIALLY_LAUNCHED_HASH)
+          {
+            return AppLaunchStatus::PARTIALLY_LAUNCHED;
           }
           else if (hashCode == DELTA_LAUNCH_IN_PROGRESS_HASH)
           {
@@ -135,6 +130,8 @@ namespace Aws
             return "LAUNCH_IN_PROGRESS";
           case AppLaunchStatus::LAUNCHED:
             return "LAUNCHED";
+          case AppLaunchStatus::PARTIALLY_LAUNCHED:
+            return "PARTIALLY_LAUNCHED";
           case AppLaunchStatus::DELTA_LAUNCH_IN_PROGRESS:
             return "DELTA_LAUNCH_IN_PROGRESS";
           case AppLaunchStatus::DELTA_LAUNCH_FAILED:

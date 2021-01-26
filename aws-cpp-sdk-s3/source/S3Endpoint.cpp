@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/s3/S3Endpoint.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -35,26 +25,43 @@ namespace S3Endpoint
   static const int US_GOV_WEST_1_HASH = Aws::Utils::HashingUtils::HashString("us-gov-west-1");
   static const int US_GOV_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-gov-east-1");
   static const int US_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-east-1");
+  static const int AWS_GLOBAL_HASH = Aws::Utils::HashingUtils::HashString("aws-global");
 
   Aws::String ForAccessPointArn(const S3ARN& arn, const Aws::String& regionNameOverride, bool useDualStack)
   {
-      const Aws::String& region = regionNameOverride.empty() ? arn.GetRegion() : regionNameOverride;
-      auto hash = Aws::Utils::HashingUtils::HashString(region.c_str());
+    const Aws::String& region = regionNameOverride.empty() ? arn.GetRegion() : regionNameOverride;
+    auto hash = Aws::Utils::HashingUtils::HashString(region.c_str());
 
-      Aws::StringStream ss;
-      ss << arn.GetResourceId() << "-" << arn.GetAccountId() << ".s3-accesspoint.";
-      if (useDualStack)
-      {
-          ss << "dualstack.";
-      }
-      ss << region << "." << "amazonaws.com";
+    Aws::StringStream ss;
+    ss << arn.GetResourceId() << "-" << arn.GetAccountId() << ".s3-accesspoint.";
+    if (useDualStack)
+    {
+      ss << "dualstack.";
+    }
+    ss << region << "." << "amazonaws.com";
 
-      if (hash == CN_NORTH_1_HASH || hash == CN_NORTHWEST_1_HASH)
-      {
-          ss << ".cn";
-      }
+    if (hash == CN_NORTH_1_HASH || hash == CN_NORTHWEST_1_HASH)
+    {
+      ss << ".cn";
+    }
 
-      return ss.str();
+    return ss.str();
+  }
+
+  Aws::String ForOutpostsArn(const S3ARN& arn, const Aws::String& regionNameOverride)
+  {
+    const Aws::String& region = regionNameOverride.empty() ? arn.GetRegion() : regionNameOverride;
+    auto hash = Aws::Utils::HashingUtils::HashString(region.c_str());
+
+    Aws::StringStream ss;
+    ss << arn.GetSubResourceId() << "-" << arn.GetAccountId() << "." << arn.GetResourceId() << ".s3-outposts." << region << "." << "amazonaws.com";
+
+    if (hash == CN_NORTH_1_HASH || hash == CN_NORTHWEST_1_HASH)
+    {
+      ss << ".cn";
+    }
+
+    return ss.str();
   }
 
   Aws::String ForRegion(const Aws::String& regionName, bool useDualStack, bool USEast1UseRegionalEndpoint)
@@ -74,6 +81,10 @@ namespace S3Endpoint
       if(hash == US_GOV_EAST_1_HASH)
       {
         return "s3.us-gov-east-1.amazonaws.com";
+      }
+      if (hash == AWS_GLOBAL_HASH)
+      {
+        return "s3.amazonaws.com";
       }
       if(hash == US_EAST_1_HASH)
       {

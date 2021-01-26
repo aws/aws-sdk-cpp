@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/dms/model/ReplicationTask.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -46,7 +36,9 @@ ReplicationTask::ReplicationTask() :
     m_cdcStopPositionHasBeenSet(false),
     m_recoveryCheckpointHasBeenSet(false),
     m_replicationTaskArnHasBeenSet(false),
-    m_replicationTaskStatsHasBeenSet(false)
+    m_replicationTaskStatsHasBeenSet(false),
+    m_taskDataHasBeenSet(false),
+    m_targetReplicationInstanceArnHasBeenSet(false)
 {
 }
 
@@ -68,7 +60,9 @@ ReplicationTask::ReplicationTask(JsonView jsonValue) :
     m_cdcStopPositionHasBeenSet(false),
     m_recoveryCheckpointHasBeenSet(false),
     m_replicationTaskArnHasBeenSet(false),
-    m_replicationTaskStatsHasBeenSet(false)
+    m_replicationTaskStatsHasBeenSet(false),
+    m_taskDataHasBeenSet(false),
+    m_targetReplicationInstanceArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -194,6 +188,20 @@ ReplicationTask& ReplicationTask::operator =(JsonView jsonValue)
     m_replicationTaskStatsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TaskData"))
+  {
+    m_taskData = jsonValue.GetString("TaskData");
+
+    m_taskDataHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TargetReplicationInstanceArn"))
+  {
+    m_targetReplicationInstanceArn = jsonValue.GetString("TargetReplicationInstanceArn");
+
+    m_targetReplicationInstanceArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -297,6 +305,18 @@ JsonValue ReplicationTask::Jsonize() const
   if(m_replicationTaskStatsHasBeenSet)
   {
    payload.WithObject("ReplicationTaskStats", m_replicationTaskStats.Jsonize());
+
+  }
+
+  if(m_taskDataHasBeenSet)
+  {
+   payload.WithString("TaskData", m_taskData);
+
+  }
+
+  if(m_targetReplicationInstanceArnHasBeenSet)
+  {
+   payload.WithString("TargetReplicationInstanceArn", m_targetReplicationInstanceArn);
 
   }
 

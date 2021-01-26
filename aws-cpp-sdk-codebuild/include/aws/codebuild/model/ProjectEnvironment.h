@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
@@ -61,15 +51,15 @@ namespace Model
      * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p>
      * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> with compute
      * type <code>build.general1.2xlarge</code> is available only in regions US East
-     * (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
-     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
-     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and
-     * China (Ningxia).</p> </li> <li> <p>The environment type
+     * (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland),
+     * EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
+     * Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China
+     * (Ningxia).</p> </li> <li> <p>The environment type
      * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
-     * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
-     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
-     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and
-     * China (Ningxia).</p> </li> </ul>
+     * Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU
+     * (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
+     * Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China
+     * (Ningxia).</p> </li> </ul>
      */
     inline const EnvironmentType& GetType() const{ return m_type; }
 
@@ -80,15 +70,15 @@ namespace Model
      * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p>
      * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> with compute
      * type <code>build.general1.2xlarge</code> is available only in regions US East
-     * (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
-     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
-     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and
-     * China (Ningxia).</p> </li> <li> <p>The environment type
+     * (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland),
+     * EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
+     * Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China
+     * (Ningxia).</p> </li> <li> <p>The environment type
      * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
-     * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
-     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
-     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and
-     * China (Ningxia).</p> </li> </ul>
+     * Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU
+     * (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
+     * Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China
+     * (Ningxia).</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -99,15 +89,15 @@ namespace Model
      * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p>
      * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> with compute
      * type <code>build.general1.2xlarge</code> is available only in regions US East
-     * (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
-     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
-     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and
-     * China (Ningxia).</p> </li> <li> <p>The environment type
+     * (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland),
+     * EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
+     * Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China
+     * (Ningxia).</p> </li> <li> <p>The environment type
      * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
-     * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
-     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
-     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and
-     * China (Ningxia).</p> </li> </ul>
+     * Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU
+     * (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
+     * Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China
+     * (Ningxia).</p> </li> </ul>
      */
     inline void SetType(const EnvironmentType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -118,15 +108,15 @@ namespace Model
      * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p>
      * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> with compute
      * type <code>build.general1.2xlarge</code> is available only in regions US East
-     * (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
-     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
-     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and
-     * China (Ningxia).</p> </li> <li> <p>The environment type
+     * (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland),
+     * EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
+     * Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China
+     * (Ningxia).</p> </li> <li> <p>The environment type
      * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
-     * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
-     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
-     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and
-     * China (Ningxia).</p> </li> </ul>
+     * Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU
+     * (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
+     * Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China
+     * (Ningxia).</p> </li> </ul>
      */
     inline void SetType(EnvironmentType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -137,15 +127,15 @@ namespace Model
      * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p>
      * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> with compute
      * type <code>build.general1.2xlarge</code> is available only in regions US East
-     * (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
-     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
-     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and
-     * China (Ningxia).</p> </li> <li> <p>The environment type
+     * (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland),
+     * EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
+     * Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China
+     * (Ningxia).</p> </li> <li> <p>The environment type
      * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
-     * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
-     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
-     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and
-     * China (Ningxia).</p> </li> </ul>
+     * Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU
+     * (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
+     * Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China
+     * (Ningxia).</p> </li> </ul>
      */
     inline ProjectEnvironment& WithType(const EnvironmentType& value) { SetType(value); return *this;}
 
@@ -156,15 +146,15 @@ namespace Model
      * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p>
      * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> with compute
      * type <code>build.general1.2xlarge</code> is available only in regions US East
-     * (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
-     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
-     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and
-     * China (Ningxia).</p> </li> <li> <p>The environment type
+     * (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland),
+     * EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
+     * Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China
+     * (Ningxia).</p> </li> <li> <p>The environment type
      * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
-     * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
-     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
-     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and
-     * China (Ningxia).</p> </li> </ul>
+     * Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU
+     * (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
+     * Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China
+     * (Ningxia).</p> </li> </ul>
      */
     inline ProjectEnvironment& WithType(EnvironmentType&& value) { SetType(std::move(value)); return *this;}
 
@@ -172,12 +162,13 @@ namespace Model
     /**
      * <p>The image tag or image digest that identifies the Docker image to use for
      * this build project. Use the following formats:</p> <ul> <li> <p>For an image
-     * tag: <code>registry/repository:tag</code>. For example, to specify an image with
-     * the tag "latest," use <code>registry/repository:latest</code>.</p> </li> <li>
-     * <p>For an image digest: <code>registry/repository@digest</code>. For example, to
-     * specify an image with the digest
+     * tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example,
+     * in the Docker repository that CodeBuild uses to manage its Docker images, this
+     * would be <code>aws/codebuild/standard:4.0</code>. </p> </li> <li> <p>For an
+     * image digest: <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>.
+     * For example, to specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
-     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
+     * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
      * </li> </ul>
      */
     inline const Aws::String& GetImage() const{ return m_image; }
@@ -185,12 +176,13 @@ namespace Model
     /**
      * <p>The image tag or image digest that identifies the Docker image to use for
      * this build project. Use the following formats:</p> <ul> <li> <p>For an image
-     * tag: <code>registry/repository:tag</code>. For example, to specify an image with
-     * the tag "latest," use <code>registry/repository:latest</code>.</p> </li> <li>
-     * <p>For an image digest: <code>registry/repository@digest</code>. For example, to
-     * specify an image with the digest
+     * tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example,
+     * in the Docker repository that CodeBuild uses to manage its Docker images, this
+     * would be <code>aws/codebuild/standard:4.0</code>. </p> </li> <li> <p>For an
+     * image digest: <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>.
+     * For example, to specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
-     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
+     * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
      * </li> </ul>
      */
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
@@ -198,12 +190,13 @@ namespace Model
     /**
      * <p>The image tag or image digest that identifies the Docker image to use for
      * this build project. Use the following formats:</p> <ul> <li> <p>For an image
-     * tag: <code>registry/repository:tag</code>. For example, to specify an image with
-     * the tag "latest," use <code>registry/repository:latest</code>.</p> </li> <li>
-     * <p>For an image digest: <code>registry/repository@digest</code>. For example, to
-     * specify an image with the digest
+     * tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example,
+     * in the Docker repository that CodeBuild uses to manage its Docker images, this
+     * would be <code>aws/codebuild/standard:4.0</code>. </p> </li> <li> <p>For an
+     * image digest: <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>.
+     * For example, to specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
-     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
+     * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
      * </li> </ul>
      */
     inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
@@ -211,12 +204,13 @@ namespace Model
     /**
      * <p>The image tag or image digest that identifies the Docker image to use for
      * this build project. Use the following formats:</p> <ul> <li> <p>For an image
-     * tag: <code>registry/repository:tag</code>. For example, to specify an image with
-     * the tag "latest," use <code>registry/repository:latest</code>.</p> </li> <li>
-     * <p>For an image digest: <code>registry/repository@digest</code>. For example, to
-     * specify an image with the digest
+     * tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example,
+     * in the Docker repository that CodeBuild uses to manage its Docker images, this
+     * would be <code>aws/codebuild/standard:4.0</code>. </p> </li> <li> <p>For an
+     * image digest: <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>.
+     * For example, to specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
-     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
+     * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
      * </li> </ul>
      */
     inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
@@ -224,12 +218,13 @@ namespace Model
     /**
      * <p>The image tag or image digest that identifies the Docker image to use for
      * this build project. Use the following formats:</p> <ul> <li> <p>For an image
-     * tag: <code>registry/repository:tag</code>. For example, to specify an image with
-     * the tag "latest," use <code>registry/repository:latest</code>.</p> </li> <li>
-     * <p>For an image digest: <code>registry/repository@digest</code>. For example, to
-     * specify an image with the digest
+     * tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example,
+     * in the Docker repository that CodeBuild uses to manage its Docker images, this
+     * would be <code>aws/codebuild/standard:4.0</code>. </p> </li> <li> <p>For an
+     * image digest: <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>.
+     * For example, to specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
-     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
+     * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
      * </li> </ul>
      */
     inline void SetImage(const char* value) { m_imageHasBeenSet = true; m_image.assign(value); }
@@ -237,12 +232,13 @@ namespace Model
     /**
      * <p>The image tag or image digest that identifies the Docker image to use for
      * this build project. Use the following formats:</p> <ul> <li> <p>For an image
-     * tag: <code>registry/repository:tag</code>. For example, to specify an image with
-     * the tag "latest," use <code>registry/repository:latest</code>.</p> </li> <li>
-     * <p>For an image digest: <code>registry/repository@digest</code>. For example, to
-     * specify an image with the digest
+     * tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example,
+     * in the Docker repository that CodeBuild uses to manage its Docker images, this
+     * would be <code>aws/codebuild/standard:4.0</code>. </p> </li> <li> <p>For an
+     * image digest: <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>.
+     * For example, to specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
-     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
+     * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
      * </li> </ul>
      */
     inline ProjectEnvironment& WithImage(const Aws::String& value) { SetImage(value); return *this;}
@@ -250,12 +246,13 @@ namespace Model
     /**
      * <p>The image tag or image digest that identifies the Docker image to use for
      * this build project. Use the following formats:</p> <ul> <li> <p>For an image
-     * tag: <code>registry/repository:tag</code>. For example, to specify an image with
-     * the tag "latest," use <code>registry/repository:latest</code>.</p> </li> <li>
-     * <p>For an image digest: <code>registry/repository@digest</code>. For example, to
-     * specify an image with the digest
+     * tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example,
+     * in the Docker repository that CodeBuild uses to manage its Docker images, this
+     * would be <code>aws/codebuild/standard:4.0</code>. </p> </li> <li> <p>For an
+     * image digest: <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>.
+     * For example, to specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
-     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
+     * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
      * </li> </ul>
      */
     inline ProjectEnvironment& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
@@ -263,12 +260,13 @@ namespace Model
     /**
      * <p>The image tag or image digest that identifies the Docker image to use for
      * this build project. Use the following formats:</p> <ul> <li> <p>For an image
-     * tag: <code>registry/repository:tag</code>. For example, to specify an image with
-     * the tag "latest," use <code>registry/repository:latest</code>.</p> </li> <li>
-     * <p>For an image digest: <code>registry/repository@digest</code>. For example, to
-     * specify an image with the digest
+     * tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example,
+     * in the Docker repository that CodeBuild uses to manage its Docker images, this
+     * would be <code>aws/codebuild/standard:4.0</code>. </p> </li> <li> <p>For an
+     * image digest: <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>.
+     * For example, to specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
-     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
+     * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
      * </li> </ul>
      */
     inline ProjectEnvironment& WithImage(const char* value) { SetImage(value); return *this;}
@@ -540,42 +538,74 @@ namespace Model
 
 
     /**
-     * <p>The certificate to use with this build project.</p>
+     * <p>The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix,
+     * and object key that contains the PEM-encoded certificate for the build project.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
+     * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline const Aws::String& GetCertificate() const{ return m_certificate; }
 
     /**
-     * <p>The certificate to use with this build project.</p>
+     * <p>The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix,
+     * and object key that contains the PEM-encoded certificate for the build project.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
+     * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline bool CertificateHasBeenSet() const { return m_certificateHasBeenSet; }
 
     /**
-     * <p>The certificate to use with this build project.</p>
+     * <p>The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix,
+     * and object key that contains the PEM-encoded certificate for the build project.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
+     * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline void SetCertificate(const Aws::String& value) { m_certificateHasBeenSet = true; m_certificate = value; }
 
     /**
-     * <p>The certificate to use with this build project.</p>
+     * <p>The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix,
+     * and object key that contains the PEM-encoded certificate for the build project.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
+     * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline void SetCertificate(Aws::String&& value) { m_certificateHasBeenSet = true; m_certificate = std::move(value); }
 
     /**
-     * <p>The certificate to use with this build project.</p>
+     * <p>The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix,
+     * and object key that contains the PEM-encoded certificate for the build project.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
+     * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline void SetCertificate(const char* value) { m_certificateHasBeenSet = true; m_certificate.assign(value); }
 
     /**
-     * <p>The certificate to use with this build project.</p>
+     * <p>The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix,
+     * and object key that contains the PEM-encoded certificate for the build project.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
+     * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline ProjectEnvironment& WithCertificate(const Aws::String& value) { SetCertificate(value); return *this;}
 
     /**
-     * <p>The certificate to use with this build project.</p>
+     * <p>The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix,
+     * and object key that contains the PEM-encoded certificate for the build project.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
+     * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline ProjectEnvironment& WithCertificate(Aws::String&& value) { SetCertificate(std::move(value)); return *this;}
 
     /**
-     * <p>The certificate to use with this build project.</p>
+     * <p>The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix,
+     * and object key that contains the PEM-encoded certificate for the build project.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
+     * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline ProjectEnvironment& WithCertificate(const char* value) { SetCertificate(value); return *this;}
 

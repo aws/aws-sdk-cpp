@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3/model/ArchiveStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/s3/model/ServerSideEncryption.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -165,13 +156,15 @@ namespace Model
     /**
      * <p>If the object is an archived object (an object whose storage class is
      * GLACIER), the response includes this header if either the archive restoration is
-     * in progress (see <a>RestoreObject</a> or an archive copy is already
-     * restored.</p> <p> If an archive copy is already restored, the header value
-     * indicates when Amazon S3 is scheduled to delete the object copy. For
-     * example:</p> <p> <code>x-amz-restore: ongoing-request="false", expiry-date="Fri,
-     * 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object restoration is in
-     * progress, the header returns the value <code>ongoing-request="true"</code>.</p>
-     * <p>For more information about archiving objects, see <a
+     * in progress (see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>
+     * or an archive copy is already restored.</p> <p> If an archive copy is already
+     * restored, the header value indicates when Amazon S3 is scheduled to delete the
+     * object copy. For example:</p> <p> <code>x-amz-restore: ongoing-request="false",
+     * expiry-date="Fri, 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object
+     * restoration is in progress, the header returns the value
+     * <code>ongoing-request="true"</code>.</p> <p>For more information about archiving
+     * objects, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html#lifecycle-transition-general-considerations">Transitioning
      * Objects: General Considerations</a>.</p>
      */
@@ -180,13 +173,15 @@ namespace Model
     /**
      * <p>If the object is an archived object (an object whose storage class is
      * GLACIER), the response includes this header if either the archive restoration is
-     * in progress (see <a>RestoreObject</a> or an archive copy is already
-     * restored.</p> <p> If an archive copy is already restored, the header value
-     * indicates when Amazon S3 is scheduled to delete the object copy. For
-     * example:</p> <p> <code>x-amz-restore: ongoing-request="false", expiry-date="Fri,
-     * 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object restoration is in
-     * progress, the header returns the value <code>ongoing-request="true"</code>.</p>
-     * <p>For more information about archiving objects, see <a
+     * in progress (see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>
+     * or an archive copy is already restored.</p> <p> If an archive copy is already
+     * restored, the header value indicates when Amazon S3 is scheduled to delete the
+     * object copy. For example:</p> <p> <code>x-amz-restore: ongoing-request="false",
+     * expiry-date="Fri, 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object
+     * restoration is in progress, the header returns the value
+     * <code>ongoing-request="true"</code>.</p> <p>For more information about archiving
+     * objects, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html#lifecycle-transition-general-considerations">Transitioning
      * Objects: General Considerations</a>.</p>
      */
@@ -195,13 +190,15 @@ namespace Model
     /**
      * <p>If the object is an archived object (an object whose storage class is
      * GLACIER), the response includes this header if either the archive restoration is
-     * in progress (see <a>RestoreObject</a> or an archive copy is already
-     * restored.</p> <p> If an archive copy is already restored, the header value
-     * indicates when Amazon S3 is scheduled to delete the object copy. For
-     * example:</p> <p> <code>x-amz-restore: ongoing-request="false", expiry-date="Fri,
-     * 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object restoration is in
-     * progress, the header returns the value <code>ongoing-request="true"</code>.</p>
-     * <p>For more information about archiving objects, see <a
+     * in progress (see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>
+     * or an archive copy is already restored.</p> <p> If an archive copy is already
+     * restored, the header value indicates when Amazon S3 is scheduled to delete the
+     * object copy. For example:</p> <p> <code>x-amz-restore: ongoing-request="false",
+     * expiry-date="Fri, 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object
+     * restoration is in progress, the header returns the value
+     * <code>ongoing-request="true"</code>.</p> <p>For more information about archiving
+     * objects, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html#lifecycle-transition-general-considerations">Transitioning
      * Objects: General Considerations</a>.</p>
      */
@@ -210,13 +207,15 @@ namespace Model
     /**
      * <p>If the object is an archived object (an object whose storage class is
      * GLACIER), the response includes this header if either the archive restoration is
-     * in progress (see <a>RestoreObject</a> or an archive copy is already
-     * restored.</p> <p> If an archive copy is already restored, the header value
-     * indicates when Amazon S3 is scheduled to delete the object copy. For
-     * example:</p> <p> <code>x-amz-restore: ongoing-request="false", expiry-date="Fri,
-     * 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object restoration is in
-     * progress, the header returns the value <code>ongoing-request="true"</code>.</p>
-     * <p>For more information about archiving objects, see <a
+     * in progress (see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>
+     * or an archive copy is already restored.</p> <p> If an archive copy is already
+     * restored, the header value indicates when Amazon S3 is scheduled to delete the
+     * object copy. For example:</p> <p> <code>x-amz-restore: ongoing-request="false",
+     * expiry-date="Fri, 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object
+     * restoration is in progress, the header returns the value
+     * <code>ongoing-request="true"</code>.</p> <p>For more information about archiving
+     * objects, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html#lifecycle-transition-general-considerations">Transitioning
      * Objects: General Considerations</a>.</p>
      */
@@ -225,13 +224,15 @@ namespace Model
     /**
      * <p>If the object is an archived object (an object whose storage class is
      * GLACIER), the response includes this header if either the archive restoration is
-     * in progress (see <a>RestoreObject</a> or an archive copy is already
-     * restored.</p> <p> If an archive copy is already restored, the header value
-     * indicates when Amazon S3 is scheduled to delete the object copy. For
-     * example:</p> <p> <code>x-amz-restore: ongoing-request="false", expiry-date="Fri,
-     * 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object restoration is in
-     * progress, the header returns the value <code>ongoing-request="true"</code>.</p>
-     * <p>For more information about archiving objects, see <a
+     * in progress (see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>
+     * or an archive copy is already restored.</p> <p> If an archive copy is already
+     * restored, the header value indicates when Amazon S3 is scheduled to delete the
+     * object copy. For example:</p> <p> <code>x-amz-restore: ongoing-request="false",
+     * expiry-date="Fri, 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object
+     * restoration is in progress, the header returns the value
+     * <code>ongoing-request="true"</code>.</p> <p>For more information about archiving
+     * objects, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html#lifecycle-transition-general-considerations">Transitioning
      * Objects: General Considerations</a>.</p>
      */
@@ -240,13 +241,15 @@ namespace Model
     /**
      * <p>If the object is an archived object (an object whose storage class is
      * GLACIER), the response includes this header if either the archive restoration is
-     * in progress (see <a>RestoreObject</a> or an archive copy is already
-     * restored.</p> <p> If an archive copy is already restored, the header value
-     * indicates when Amazon S3 is scheduled to delete the object copy. For
-     * example:</p> <p> <code>x-amz-restore: ongoing-request="false", expiry-date="Fri,
-     * 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object restoration is in
-     * progress, the header returns the value <code>ongoing-request="true"</code>.</p>
-     * <p>For more information about archiving objects, see <a
+     * in progress (see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>
+     * or an archive copy is already restored.</p> <p> If an archive copy is already
+     * restored, the header value indicates when Amazon S3 is scheduled to delete the
+     * object copy. For example:</p> <p> <code>x-amz-restore: ongoing-request="false",
+     * expiry-date="Fri, 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object
+     * restoration is in progress, the header returns the value
+     * <code>ongoing-request="true"</code>.</p> <p>For more information about archiving
+     * objects, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html#lifecycle-transition-general-considerations">Transitioning
      * Objects: General Considerations</a>.</p>
      */
@@ -255,17 +258,45 @@ namespace Model
     /**
      * <p>If the object is an archived object (an object whose storage class is
      * GLACIER), the response includes this header if either the archive restoration is
-     * in progress (see <a>RestoreObject</a> or an archive copy is already
-     * restored.</p> <p> If an archive copy is already restored, the header value
-     * indicates when Amazon S3 is scheduled to delete the object copy. For
-     * example:</p> <p> <code>x-amz-restore: ongoing-request="false", expiry-date="Fri,
-     * 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object restoration is in
-     * progress, the header returns the value <code>ongoing-request="true"</code>.</p>
-     * <p>For more information about archiving objects, see <a
+     * in progress (see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>
+     * or an archive copy is already restored.</p> <p> If an archive copy is already
+     * restored, the header value indicates when Amazon S3 is scheduled to delete the
+     * object copy. For example:</p> <p> <code>x-amz-restore: ongoing-request="false",
+     * expiry-date="Fri, 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object
+     * restoration is in progress, the header returns the value
+     * <code>ongoing-request="true"</code>.</p> <p>For more information about archiving
+     * objects, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html#lifecycle-transition-general-considerations">Transitioning
      * Objects: General Considerations</a>.</p>
      */
     inline HeadObjectResult& WithRestore(const char* value) { SetRestore(value); return *this;}
+
+
+    /**
+     * <p>The archive state of the head object.</p>
+     */
+    inline const ArchiveStatus& GetArchiveStatus() const{ return m_archiveStatus; }
+
+    /**
+     * <p>The archive state of the head object.</p>
+     */
+    inline void SetArchiveStatus(const ArchiveStatus& value) { m_archiveStatus = value; }
+
+    /**
+     * <p>The archive state of the head object.</p>
+     */
+    inline void SetArchiveStatus(ArchiveStatus&& value) { m_archiveStatus = std::move(value); }
+
+    /**
+     * <p>The archive state of the head object.</p>
+     */
+    inline HeadObjectResult& WithArchiveStatus(const ArchiveStatus& value) { SetArchiveStatus(value); return *this;}
+
+    /**
+     * <p>The archive state of the head object.</p>
+     */
+    inline HeadObjectResult& WithArchiveStatus(ArchiveStatus&& value) { SetArchiveStatus(std::move(value)); return *this;}
 
 
     /**
@@ -940,8 +971,27 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption
+     * with AWS KMS (SSE-KMS).</p>
+     */
+    inline bool GetBucketKeyEnabled() const{ return m_bucketKeyEnabled; }
+
+    /**
+     * <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption
+     * with AWS KMS (SSE-KMS).</p>
+     */
+    inline void SetBucketKeyEnabled(bool value) { m_bucketKeyEnabled = value; }
+
+    /**
+     * <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption
+     * with AWS KMS (SSE-KMS).</p>
+     */
+    inline HeadObjectResult& WithBucketKeyEnabled(bool value) { SetBucketKeyEnabled(value); return *this;}
+
+
+    /**
      * <p>Provides storage class information of the object. Amazon S3 returns this
-     * header for all objects except for Standard storage class objects.</p> <p>For
+     * header for all objects except for S3 Standard storage class objects.</p> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
      * Classes</a>.</p>
@@ -950,7 +1000,7 @@ namespace Model
 
     /**
      * <p>Provides storage class information of the object. Amazon S3 returns this
-     * header for all objects except for Standard storage class objects.</p> <p>For
+     * header for all objects except for S3 Standard storage class objects.</p> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
      * Classes</a>.</p>
@@ -959,7 +1009,7 @@ namespace Model
 
     /**
      * <p>Provides storage class information of the object. Amazon S3 returns this
-     * header for all objects except for Standard storage class objects.</p> <p>For
+     * header for all objects except for S3 Standard storage class objects.</p> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
      * Classes</a>.</p>
@@ -968,7 +1018,7 @@ namespace Model
 
     /**
      * <p>Provides storage class information of the object. Amazon S3 returns this
-     * header for all objects except for Standard storage class objects.</p> <p>For
+     * header for all objects except for S3 Standard storage class objects.</p> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
      * Classes</a>.</p>
@@ -977,7 +1027,7 @@ namespace Model
 
     /**
      * <p>Provides storage class information of the object. Amazon S3 returns this
-     * header for all objects except for Standard storage class objects.</p> <p>For
+     * header for all objects except for S3 Standard storage class objects.</p> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
      * Classes</a>.</p>
@@ -1003,125 +1053,160 @@ namespace Model
 
     /**
      * <p>Amazon S3 can return this header if your request involves a bucket that is
-     * either a source or destination in a replication rule.</p> <p>In replication, you
-     * have a source bucket on which you configure replication and destination bucket
-     * where Amazon S3 stores object replicas. When you request an object
-     * (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these
-     * buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header
-     * in the response as follows:</p> <ul> <li> <p>If requesting an object from the
-     * source bucket — Amazon S3 will return the <code>x-amz-replication-status</code>
-     * header if the object in your request is eligible for replication.</p> <p> For
-     * example, suppose that in your replication configuration, you specify object
-     * prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key
-     * prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix,
-     * for example <code>TaxDocs/document1.pdf</code>, are eligible for replication.
-     * For any object request with this key name prefix, Amazon S3 will return the
+     * either a source or a destination in a replication rule.</p> <p>In replication,
+     * you have a source bucket on which you configure replication and destination
+     * bucket or buckets where Amazon S3 stores object replicas. When you request an
+     * object (<code>GetObject</code>) or object metadata (<code>HeadObject</code>)
+     * from these buckets, Amazon S3 will return the
+     * <code>x-amz-replication-status</code> header in the response as follows:</p>
+     * <ul> <li> <p>If requesting an object from the source bucket — Amazon S3 will
+     * return the <code>x-amz-replication-status</code> header if the object in your
+     * request is eligible for replication.</p> <p> For example, suppose that in your
+     * replication configuration, you specify object prefix <code>TaxDocs</code>
+     * requesting Amazon S3 to replicate objects with key prefix <code>TaxDocs</code>.
+     * Any objects you upload with this key name prefix, for example
+     * <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object
+     * request with this key name prefix, Amazon S3 will return the
      * <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or
      * FAILED indicating object replication status.</p> </li> <li> <p>If requesting an
-     * object from the destination bucket — Amazon S3 will return the
+     * object from a destination bucket — Amazon S3 will return the
      * <code>x-amz-replication-status</code> header with value REPLICA if the object in
-     * your request is a replica that Amazon S3 created.</p> </li> </ul> <p>For more
-     * information, see <a
+     * your request is a replica that Amazon S3 created and there is no replica
+     * modification replication in progress.</p> </li> <li> <p>When replicating objects
+     * to multiple destination buckets the <code>x-amz-replication-status</code> header
+     * acts differently. The header of the source object will only return a value of
+     * COMPLETED when replication is successful to all destinations. The header will
+     * remain at value PENDING until replication has completed for all destinations. If
+     * one or more destinations fails replication the header will return FAILED. </p>
+     * </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Replication</a>.</p>
      */
     inline const ReplicationStatus& GetReplicationStatus() const{ return m_replicationStatus; }
 
     /**
      * <p>Amazon S3 can return this header if your request involves a bucket that is
-     * either a source or destination in a replication rule.</p> <p>In replication, you
-     * have a source bucket on which you configure replication and destination bucket
-     * where Amazon S3 stores object replicas. When you request an object
-     * (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these
-     * buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header
-     * in the response as follows:</p> <ul> <li> <p>If requesting an object from the
-     * source bucket — Amazon S3 will return the <code>x-amz-replication-status</code>
-     * header if the object in your request is eligible for replication.</p> <p> For
-     * example, suppose that in your replication configuration, you specify object
-     * prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key
-     * prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix,
-     * for example <code>TaxDocs/document1.pdf</code>, are eligible for replication.
-     * For any object request with this key name prefix, Amazon S3 will return the
+     * either a source or a destination in a replication rule.</p> <p>In replication,
+     * you have a source bucket on which you configure replication and destination
+     * bucket or buckets where Amazon S3 stores object replicas. When you request an
+     * object (<code>GetObject</code>) or object metadata (<code>HeadObject</code>)
+     * from these buckets, Amazon S3 will return the
+     * <code>x-amz-replication-status</code> header in the response as follows:</p>
+     * <ul> <li> <p>If requesting an object from the source bucket — Amazon S3 will
+     * return the <code>x-amz-replication-status</code> header if the object in your
+     * request is eligible for replication.</p> <p> For example, suppose that in your
+     * replication configuration, you specify object prefix <code>TaxDocs</code>
+     * requesting Amazon S3 to replicate objects with key prefix <code>TaxDocs</code>.
+     * Any objects you upload with this key name prefix, for example
+     * <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object
+     * request with this key name prefix, Amazon S3 will return the
      * <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or
      * FAILED indicating object replication status.</p> </li> <li> <p>If requesting an
-     * object from the destination bucket — Amazon S3 will return the
+     * object from a destination bucket — Amazon S3 will return the
      * <code>x-amz-replication-status</code> header with value REPLICA if the object in
-     * your request is a replica that Amazon S3 created.</p> </li> </ul> <p>For more
-     * information, see <a
+     * your request is a replica that Amazon S3 created and there is no replica
+     * modification replication in progress.</p> </li> <li> <p>When replicating objects
+     * to multiple destination buckets the <code>x-amz-replication-status</code> header
+     * acts differently. The header of the source object will only return a value of
+     * COMPLETED when replication is successful to all destinations. The header will
+     * remain at value PENDING until replication has completed for all destinations. If
+     * one or more destinations fails replication the header will return FAILED. </p>
+     * </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Replication</a>.</p>
      */
     inline void SetReplicationStatus(const ReplicationStatus& value) { m_replicationStatus = value; }
 
     /**
      * <p>Amazon S3 can return this header if your request involves a bucket that is
-     * either a source or destination in a replication rule.</p> <p>In replication, you
-     * have a source bucket on which you configure replication and destination bucket
-     * where Amazon S3 stores object replicas. When you request an object
-     * (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these
-     * buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header
-     * in the response as follows:</p> <ul> <li> <p>If requesting an object from the
-     * source bucket — Amazon S3 will return the <code>x-amz-replication-status</code>
-     * header if the object in your request is eligible for replication.</p> <p> For
-     * example, suppose that in your replication configuration, you specify object
-     * prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key
-     * prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix,
-     * for example <code>TaxDocs/document1.pdf</code>, are eligible for replication.
-     * For any object request with this key name prefix, Amazon S3 will return the
+     * either a source or a destination in a replication rule.</p> <p>In replication,
+     * you have a source bucket on which you configure replication and destination
+     * bucket or buckets where Amazon S3 stores object replicas. When you request an
+     * object (<code>GetObject</code>) or object metadata (<code>HeadObject</code>)
+     * from these buckets, Amazon S3 will return the
+     * <code>x-amz-replication-status</code> header in the response as follows:</p>
+     * <ul> <li> <p>If requesting an object from the source bucket — Amazon S3 will
+     * return the <code>x-amz-replication-status</code> header if the object in your
+     * request is eligible for replication.</p> <p> For example, suppose that in your
+     * replication configuration, you specify object prefix <code>TaxDocs</code>
+     * requesting Amazon S3 to replicate objects with key prefix <code>TaxDocs</code>.
+     * Any objects you upload with this key name prefix, for example
+     * <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object
+     * request with this key name prefix, Amazon S3 will return the
      * <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or
      * FAILED indicating object replication status.</p> </li> <li> <p>If requesting an
-     * object from the destination bucket — Amazon S3 will return the
+     * object from a destination bucket — Amazon S3 will return the
      * <code>x-amz-replication-status</code> header with value REPLICA if the object in
-     * your request is a replica that Amazon S3 created.</p> </li> </ul> <p>For more
-     * information, see <a
+     * your request is a replica that Amazon S3 created and there is no replica
+     * modification replication in progress.</p> </li> <li> <p>When replicating objects
+     * to multiple destination buckets the <code>x-amz-replication-status</code> header
+     * acts differently. The header of the source object will only return a value of
+     * COMPLETED when replication is successful to all destinations. The header will
+     * remain at value PENDING until replication has completed for all destinations. If
+     * one or more destinations fails replication the header will return FAILED. </p>
+     * </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Replication</a>.</p>
      */
     inline void SetReplicationStatus(ReplicationStatus&& value) { m_replicationStatus = std::move(value); }
 
     /**
      * <p>Amazon S3 can return this header if your request involves a bucket that is
-     * either a source or destination in a replication rule.</p> <p>In replication, you
-     * have a source bucket on which you configure replication and destination bucket
-     * where Amazon S3 stores object replicas. When you request an object
-     * (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these
-     * buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header
-     * in the response as follows:</p> <ul> <li> <p>If requesting an object from the
-     * source bucket — Amazon S3 will return the <code>x-amz-replication-status</code>
-     * header if the object in your request is eligible for replication.</p> <p> For
-     * example, suppose that in your replication configuration, you specify object
-     * prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key
-     * prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix,
-     * for example <code>TaxDocs/document1.pdf</code>, are eligible for replication.
-     * For any object request with this key name prefix, Amazon S3 will return the
+     * either a source or a destination in a replication rule.</p> <p>In replication,
+     * you have a source bucket on which you configure replication and destination
+     * bucket or buckets where Amazon S3 stores object replicas. When you request an
+     * object (<code>GetObject</code>) or object metadata (<code>HeadObject</code>)
+     * from these buckets, Amazon S3 will return the
+     * <code>x-amz-replication-status</code> header in the response as follows:</p>
+     * <ul> <li> <p>If requesting an object from the source bucket — Amazon S3 will
+     * return the <code>x-amz-replication-status</code> header if the object in your
+     * request is eligible for replication.</p> <p> For example, suppose that in your
+     * replication configuration, you specify object prefix <code>TaxDocs</code>
+     * requesting Amazon S3 to replicate objects with key prefix <code>TaxDocs</code>.
+     * Any objects you upload with this key name prefix, for example
+     * <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object
+     * request with this key name prefix, Amazon S3 will return the
      * <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or
      * FAILED indicating object replication status.</p> </li> <li> <p>If requesting an
-     * object from the destination bucket — Amazon S3 will return the
+     * object from a destination bucket — Amazon S3 will return the
      * <code>x-amz-replication-status</code> header with value REPLICA if the object in
-     * your request is a replica that Amazon S3 created.</p> </li> </ul> <p>For more
-     * information, see <a
+     * your request is a replica that Amazon S3 created and there is no replica
+     * modification replication in progress.</p> </li> <li> <p>When replicating objects
+     * to multiple destination buckets the <code>x-amz-replication-status</code> header
+     * acts differently. The header of the source object will only return a value of
+     * COMPLETED when replication is successful to all destinations. The header will
+     * remain at value PENDING until replication has completed for all destinations. If
+     * one or more destinations fails replication the header will return FAILED. </p>
+     * </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Replication</a>.</p>
      */
     inline HeadObjectResult& WithReplicationStatus(const ReplicationStatus& value) { SetReplicationStatus(value); return *this;}
 
     /**
      * <p>Amazon S3 can return this header if your request involves a bucket that is
-     * either a source or destination in a replication rule.</p> <p>In replication, you
-     * have a source bucket on which you configure replication and destination bucket
-     * where Amazon S3 stores object replicas. When you request an object
-     * (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these
-     * buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header
-     * in the response as follows:</p> <ul> <li> <p>If requesting an object from the
-     * source bucket — Amazon S3 will return the <code>x-amz-replication-status</code>
-     * header if the object in your request is eligible for replication.</p> <p> For
-     * example, suppose that in your replication configuration, you specify object
-     * prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key
-     * prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix,
-     * for example <code>TaxDocs/document1.pdf</code>, are eligible for replication.
-     * For any object request with this key name prefix, Amazon S3 will return the
+     * either a source or a destination in a replication rule.</p> <p>In replication,
+     * you have a source bucket on which you configure replication and destination
+     * bucket or buckets where Amazon S3 stores object replicas. When you request an
+     * object (<code>GetObject</code>) or object metadata (<code>HeadObject</code>)
+     * from these buckets, Amazon S3 will return the
+     * <code>x-amz-replication-status</code> header in the response as follows:</p>
+     * <ul> <li> <p>If requesting an object from the source bucket — Amazon S3 will
+     * return the <code>x-amz-replication-status</code> header if the object in your
+     * request is eligible for replication.</p> <p> For example, suppose that in your
+     * replication configuration, you specify object prefix <code>TaxDocs</code>
+     * requesting Amazon S3 to replicate objects with key prefix <code>TaxDocs</code>.
+     * Any objects you upload with this key name prefix, for example
+     * <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object
+     * request with this key name prefix, Amazon S3 will return the
      * <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or
      * FAILED indicating object replication status.</p> </li> <li> <p>If requesting an
-     * object from the destination bucket — Amazon S3 will return the
+     * object from a destination bucket — Amazon S3 will return the
      * <code>x-amz-replication-status</code> header with value REPLICA if the object in
-     * your request is a replica that Amazon S3 created.</p> </li> </ul> <p>For more
-     * information, see <a
+     * your request is a replica that Amazon S3 created and there is no replica
+     * modification replication in progress.</p> </li> <li> <p>When replicating objects
+     * to multiple destination buckets the <code>x-amz-replication-status</code> header
+     * acts differently. The header of the source object will only return a value of
+     * COMPLETED when replication is successful to all destinations. The header will
+     * remain at value PENDING until replication has completed for all destinations. If
+     * one or more destinations fails replication the header will return FAILED. </p>
+     * </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Replication</a>.</p>
      */
     inline HeadObjectResult& WithReplicationStatus(ReplicationStatus&& value) { SetReplicationStatus(std::move(value)); return *this;}
@@ -1290,6 +1375,8 @@ namespace Model
 
     Aws::String m_restore;
 
+    ArchiveStatus m_archiveStatus;
+
     Aws::Utils::DateTime m_lastModified;
 
     long long m_contentLength;
@@ -1323,6 +1410,8 @@ namespace Model
     Aws::String m_sSECustomerKeyMD5;
 
     Aws::String m_sSEKMSKeyId;
+
+    bool m_bucketKeyEnabled;
 
     StorageClass m_storageClass;
 

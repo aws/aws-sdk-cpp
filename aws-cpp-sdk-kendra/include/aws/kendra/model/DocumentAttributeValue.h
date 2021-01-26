@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kendra/Kendra_EXPORTS.h>
@@ -159,32 +149,32 @@ namespace Model
 
 
     /**
-     * <p>A date value expressed as seconds from the Unix epoch.</p>
+     * <p>A date expressed as an ISO 8601 string.</p>
      */
     inline const Aws::Utils::DateTime& GetDateValue() const{ return m_dateValue; }
 
     /**
-     * <p>A date value expressed as seconds from the Unix epoch.</p>
+     * <p>A date expressed as an ISO 8601 string.</p>
      */
     inline bool DateValueHasBeenSet() const { return m_dateValueHasBeenSet; }
 
     /**
-     * <p>A date value expressed as seconds from the Unix epoch.</p>
+     * <p>A date expressed as an ISO 8601 string.</p>
      */
     inline void SetDateValue(const Aws::Utils::DateTime& value) { m_dateValueHasBeenSet = true; m_dateValue = value; }
 
     /**
-     * <p>A date value expressed as seconds from the Unix epoch.</p>
+     * <p>A date expressed as an ISO 8601 string.</p>
      */
     inline void SetDateValue(Aws::Utils::DateTime&& value) { m_dateValueHasBeenSet = true; m_dateValue = std::move(value); }
 
     /**
-     * <p>A date value expressed as seconds from the Unix epoch.</p>
+     * <p>A date expressed as an ISO 8601 string.</p>
      */
     inline DocumentAttributeValue& WithDateValue(const Aws::Utils::DateTime& value) { SetDateValue(value); return *this;}
 
     /**
-     * <p>A date value expressed as seconds from the Unix epoch.</p>
+     * <p>A date expressed as an ISO 8601 string.</p>
      */
     inline DocumentAttributeValue& WithDateValue(Aws::Utils::DateTime&& value) { SetDateValue(std::move(value)); return *this;}
 

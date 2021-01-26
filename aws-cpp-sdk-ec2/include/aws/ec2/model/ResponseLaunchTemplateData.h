@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -29,6 +19,7 @@
 #include <aws/ec2/model/LaunchTemplateCapacityReservationSpecificationResponse.h>
 #include <aws/ec2/model/LaunchTemplateHibernationOptions.h>
 #include <aws/ec2/model/LaunchTemplateInstanceMetadataOptions.h>
+#include <aws/ec2/model/LaunchTemplateEnclaveOptions.h>
 #include <aws/ec2/model/LaunchTemplateBlockDeviceMapping.h>
 #include <aws/ec2/model/LaunchTemplateInstanceNetworkInterfaceSpecification.h>
 #include <aws/ec2/model/LaunchTemplateTagSpecification.h>
@@ -1050,6 +1041,37 @@ namespace Model
      */
     inline ResponseLaunchTemplateData& WithMetadataOptions(LaunchTemplateInstanceMetadataOptions&& value) { SetMetadataOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+     */
+    inline const LaunchTemplateEnclaveOptions& GetEnclaveOptions() const{ return m_enclaveOptions; }
+
+    /**
+     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+     */
+    inline bool EnclaveOptionsHasBeenSet() const { return m_enclaveOptionsHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+     */
+    inline void SetEnclaveOptions(const LaunchTemplateEnclaveOptions& value) { m_enclaveOptionsHasBeenSet = true; m_enclaveOptions = value; }
+
+    /**
+     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+     */
+    inline void SetEnclaveOptions(LaunchTemplateEnclaveOptions&& value) { m_enclaveOptionsHasBeenSet = true; m_enclaveOptions = std::move(value); }
+
+    /**
+     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+     */
+    inline ResponseLaunchTemplateData& WithEnclaveOptions(const LaunchTemplateEnclaveOptions& value) { SetEnclaveOptions(value); return *this;}
+
+    /**
+     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+     */
+    inline ResponseLaunchTemplateData& WithEnclaveOptions(LaunchTemplateEnclaveOptions&& value) { SetEnclaveOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_kernelId;
@@ -1129,6 +1151,9 @@ namespace Model
 
     LaunchTemplateInstanceMetadataOptions m_metadataOptions;
     bool m_metadataOptionsHasBeenSet;
+
+    LaunchTemplateEnclaveOptions m_enclaveOptions;
+    bool m_enclaveOptionsHasBeenSet;
   };
 
 } // namespace Model

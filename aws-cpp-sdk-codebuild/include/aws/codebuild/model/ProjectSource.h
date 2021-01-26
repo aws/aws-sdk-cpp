@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codebuild/model/GitSubmodulesConfig.h>
 #include <aws/codebuild/model/SourceAuth.h>
+#include <aws/codebuild/model/BuildStatusConfig.h>
 #include <utility>
 
 namespace Aws
@@ -58,11 +49,12 @@ namespace Model
      * code is in an AWS CodeCommit repository.</p> </li> <li> <p>
      * <code>CODEPIPELINE</code>: The source code settings are specified in the source
      * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p>
-     * <code>GITHUB</code>: The source code is in a GitHub repository.</p> </li> <li>
-     * <p> <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise
-     * repository.</p> </li> <li> <p> <code>NO_SOURCE</code>: The project does not have
-     * input source code.</p> </li> <li> <p> <code>S3</code>: The source code is in an
-     * Amazon Simple Storage Service (Amazon S3) input bucket.</p> </li> </ul>
+     * <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud
+     * repository.</p> </li> <li> <p> <code>GITHUB_ENTERPRISE</code>: The source code
+     * is in a GitHub Enterprise Server repository.</p> </li> <li> <p>
+     * <code>NO_SOURCE</code>: The project does not have input source code.</p> </li>
+     * <li> <p> <code>S3</code>: The source code is in an Amazon Simple Storage Service
+     * (Amazon S3) input bucket.</p> </li> </ul>
      */
     inline const SourceType& GetType() const{ return m_type; }
 
@@ -73,11 +65,12 @@ namespace Model
      * code is in an AWS CodeCommit repository.</p> </li> <li> <p>
      * <code>CODEPIPELINE</code>: The source code settings are specified in the source
      * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p>
-     * <code>GITHUB</code>: The source code is in a GitHub repository.</p> </li> <li>
-     * <p> <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise
-     * repository.</p> </li> <li> <p> <code>NO_SOURCE</code>: The project does not have
-     * input source code.</p> </li> <li> <p> <code>S3</code>: The source code is in an
-     * Amazon Simple Storage Service (Amazon S3) input bucket.</p> </li> </ul>
+     * <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud
+     * repository.</p> </li> <li> <p> <code>GITHUB_ENTERPRISE</code>: The source code
+     * is in a GitHub Enterprise Server repository.</p> </li> <li> <p>
+     * <code>NO_SOURCE</code>: The project does not have input source code.</p> </li>
+     * <li> <p> <code>S3</code>: The source code is in an Amazon Simple Storage Service
+     * (Amazon S3) input bucket.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -88,11 +81,12 @@ namespace Model
      * code is in an AWS CodeCommit repository.</p> </li> <li> <p>
      * <code>CODEPIPELINE</code>: The source code settings are specified in the source
      * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p>
-     * <code>GITHUB</code>: The source code is in a GitHub repository.</p> </li> <li>
-     * <p> <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise
-     * repository.</p> </li> <li> <p> <code>NO_SOURCE</code>: The project does not have
-     * input source code.</p> </li> <li> <p> <code>S3</code>: The source code is in an
-     * Amazon Simple Storage Service (Amazon S3) input bucket.</p> </li> </ul>
+     * <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud
+     * repository.</p> </li> <li> <p> <code>GITHUB_ENTERPRISE</code>: The source code
+     * is in a GitHub Enterprise Server repository.</p> </li> <li> <p>
+     * <code>NO_SOURCE</code>: The project does not have input source code.</p> </li>
+     * <li> <p> <code>S3</code>: The source code is in an Amazon Simple Storage Service
+     * (Amazon S3) input bucket.</p> </li> </ul>
      */
     inline void SetType(const SourceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -103,11 +97,12 @@ namespace Model
      * code is in an AWS CodeCommit repository.</p> </li> <li> <p>
      * <code>CODEPIPELINE</code>: The source code settings are specified in the source
      * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p>
-     * <code>GITHUB</code>: The source code is in a GitHub repository.</p> </li> <li>
-     * <p> <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise
-     * repository.</p> </li> <li> <p> <code>NO_SOURCE</code>: The project does not have
-     * input source code.</p> </li> <li> <p> <code>S3</code>: The source code is in an
-     * Amazon Simple Storage Service (Amazon S3) input bucket.</p> </li> </ul>
+     * <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud
+     * repository.</p> </li> <li> <p> <code>GITHUB_ENTERPRISE</code>: The source code
+     * is in a GitHub Enterprise Server repository.</p> </li> <li> <p>
+     * <code>NO_SOURCE</code>: The project does not have input source code.</p> </li>
+     * <li> <p> <code>S3</code>: The source code is in an Amazon Simple Storage Service
+     * (Amazon S3) input bucket.</p> </li> </ul>
      */
     inline void SetType(SourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -118,11 +113,12 @@ namespace Model
      * code is in an AWS CodeCommit repository.</p> </li> <li> <p>
      * <code>CODEPIPELINE</code>: The source code settings are specified in the source
      * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p>
-     * <code>GITHUB</code>: The source code is in a GitHub repository.</p> </li> <li>
-     * <p> <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise
-     * repository.</p> </li> <li> <p> <code>NO_SOURCE</code>: The project does not have
-     * input source code.</p> </li> <li> <p> <code>S3</code>: The source code is in an
-     * Amazon Simple Storage Service (Amazon S3) input bucket.</p> </li> </ul>
+     * <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud
+     * repository.</p> </li> <li> <p> <code>GITHUB_ENTERPRISE</code>: The source code
+     * is in a GitHub Enterprise Server repository.</p> </li> <li> <p>
+     * <code>NO_SOURCE</code>: The project does not have input source code.</p> </li>
+     * <li> <p> <code>S3</code>: The source code is in an Amazon Simple Storage Service
+     * (Amazon S3) input bucket.</p> </li> </ul>
      */
     inline ProjectSource& WithType(const SourceType& value) { SetType(value); return *this;}
 
@@ -133,11 +129,12 @@ namespace Model
      * code is in an AWS CodeCommit repository.</p> </li> <li> <p>
      * <code>CODEPIPELINE</code>: The source code settings are specified in the source
      * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p>
-     * <code>GITHUB</code>: The source code is in a GitHub repository.</p> </li> <li>
-     * <p> <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise
-     * repository.</p> </li> <li> <p> <code>NO_SOURCE</code>: The project does not have
-     * input source code.</p> </li> <li> <p> <code>S3</code>: The source code is in an
-     * Amazon Simple Storage Service (Amazon S3) input bucket.</p> </li> </ul>
+     * <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud
+     * repository.</p> </li> <li> <p> <code>GITHUB_ENTERPRISE</code>: The source code
+     * is in a GitHub Enterprise Server repository.</p> </li> <li> <p>
+     * <code>NO_SOURCE</code>: The project does not have input source code.</p> </li>
+     * <li> <p> <code>S3</code>: The source code is in an Amazon Simple Storage Service
+     * (Amazon S3) input bucket.</p> </li> </ul>
      */
     inline ProjectSource& WithType(SourceType&& value) { SetType(std::move(value)); return *this;}
 
@@ -151,14 +148,13 @@ namespace Model
      * of this value.</p> </li> <li> <p>For source code in an AWS CodeCommit
      * repository, the HTTPS clone URL to the repository that contains the source code
      * and the buildspec file (for example,
-     * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i>
-     * </code>).</p> </li> <li> <p>For source code in an Amazon Simple Storage Service
-     * (Amazon S3) input bucket, one of the following. </p> <ul> <li> <p> The path to
-     * the ZIP file that contains the source code (for example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>). </p>
-     * </li> <li> <p> The path to the folder that contains the source code (for
-     * example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).</p>
+     * </li> <li> <p>For source code in an Amazon Simple Storage Service (Amazon S3)
+     * input bucket, one of the following. </p> <ul> <li> <p>The path to the ZIP file
+     * that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>). </p>
+     * </li> <li> <p>The path to the folder that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
      * </p> </li> </ul> </li> <li> <p>For source code in a GitHub repository, the HTTPS
      * clone URL to the repository that contains the source and the buildspec file. You
      * must connect your AWS account to your GitHub account. Use the AWS CodeBuild
@@ -193,14 +189,13 @@ namespace Model
      * of this value.</p> </li> <li> <p>For source code in an AWS CodeCommit
      * repository, the HTTPS clone URL to the repository that contains the source code
      * and the buildspec file (for example,
-     * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i>
-     * </code>).</p> </li> <li> <p>For source code in an Amazon Simple Storage Service
-     * (Amazon S3) input bucket, one of the following. </p> <ul> <li> <p> The path to
-     * the ZIP file that contains the source code (for example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>). </p>
-     * </li> <li> <p> The path to the folder that contains the source code (for
-     * example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).</p>
+     * </li> <li> <p>For source code in an Amazon Simple Storage Service (Amazon S3)
+     * input bucket, one of the following. </p> <ul> <li> <p>The path to the ZIP file
+     * that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>). </p>
+     * </li> <li> <p>The path to the folder that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
      * </p> </li> </ul> </li> <li> <p>For source code in a GitHub repository, the HTTPS
      * clone URL to the repository that contains the source and the buildspec file. You
      * must connect your AWS account to your GitHub account. Use the AWS CodeBuild
@@ -235,14 +230,13 @@ namespace Model
      * of this value.</p> </li> <li> <p>For source code in an AWS CodeCommit
      * repository, the HTTPS clone URL to the repository that contains the source code
      * and the buildspec file (for example,
-     * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i>
-     * </code>).</p> </li> <li> <p>For source code in an Amazon Simple Storage Service
-     * (Amazon S3) input bucket, one of the following. </p> <ul> <li> <p> The path to
-     * the ZIP file that contains the source code (for example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>). </p>
-     * </li> <li> <p> The path to the folder that contains the source code (for
-     * example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).</p>
+     * </li> <li> <p>For source code in an Amazon Simple Storage Service (Amazon S3)
+     * input bucket, one of the following. </p> <ul> <li> <p>The path to the ZIP file
+     * that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>). </p>
+     * </li> <li> <p>The path to the folder that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
      * </p> </li> </ul> </li> <li> <p>For source code in a GitHub repository, the HTTPS
      * clone URL to the repository that contains the source and the buildspec file. You
      * must connect your AWS account to your GitHub account. Use the AWS CodeBuild
@@ -277,14 +271,13 @@ namespace Model
      * of this value.</p> </li> <li> <p>For source code in an AWS CodeCommit
      * repository, the HTTPS clone URL to the repository that contains the source code
      * and the buildspec file (for example,
-     * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i>
-     * </code>).</p> </li> <li> <p>For source code in an Amazon Simple Storage Service
-     * (Amazon S3) input bucket, one of the following. </p> <ul> <li> <p> The path to
-     * the ZIP file that contains the source code (for example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>). </p>
-     * </li> <li> <p> The path to the folder that contains the source code (for
-     * example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).</p>
+     * </li> <li> <p>For source code in an Amazon Simple Storage Service (Amazon S3)
+     * input bucket, one of the following. </p> <ul> <li> <p>The path to the ZIP file
+     * that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>). </p>
+     * </li> <li> <p>The path to the folder that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
      * </p> </li> </ul> </li> <li> <p>For source code in a GitHub repository, the HTTPS
      * clone URL to the repository that contains the source and the buildspec file. You
      * must connect your AWS account to your GitHub account. Use the AWS CodeBuild
@@ -319,14 +312,13 @@ namespace Model
      * of this value.</p> </li> <li> <p>For source code in an AWS CodeCommit
      * repository, the HTTPS clone URL to the repository that contains the source code
      * and the buildspec file (for example,
-     * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i>
-     * </code>).</p> </li> <li> <p>For source code in an Amazon Simple Storage Service
-     * (Amazon S3) input bucket, one of the following. </p> <ul> <li> <p> The path to
-     * the ZIP file that contains the source code (for example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>). </p>
-     * </li> <li> <p> The path to the folder that contains the source code (for
-     * example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).</p>
+     * </li> <li> <p>For source code in an Amazon Simple Storage Service (Amazon S3)
+     * input bucket, one of the following. </p> <ul> <li> <p>The path to the ZIP file
+     * that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>). </p>
+     * </li> <li> <p>The path to the folder that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
      * </p> </li> </ul> </li> <li> <p>For source code in a GitHub repository, the HTTPS
      * clone URL to the repository that contains the source and the buildspec file. You
      * must connect your AWS account to your GitHub account. Use the AWS CodeBuild
@@ -361,14 +353,13 @@ namespace Model
      * of this value.</p> </li> <li> <p>For source code in an AWS CodeCommit
      * repository, the HTTPS clone URL to the repository that contains the source code
      * and the buildspec file (for example,
-     * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i>
-     * </code>).</p> </li> <li> <p>For source code in an Amazon Simple Storage Service
-     * (Amazon S3) input bucket, one of the following. </p> <ul> <li> <p> The path to
-     * the ZIP file that contains the source code (for example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>). </p>
-     * </li> <li> <p> The path to the folder that contains the source code (for
-     * example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).</p>
+     * </li> <li> <p>For source code in an Amazon Simple Storage Service (Amazon S3)
+     * input bucket, one of the following. </p> <ul> <li> <p>The path to the ZIP file
+     * that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>). </p>
+     * </li> <li> <p>The path to the folder that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
      * </p> </li> </ul> </li> <li> <p>For source code in a GitHub repository, the HTTPS
      * clone URL to the repository that contains the source and the buildspec file. You
      * must connect your AWS account to your GitHub account. Use the AWS CodeBuild
@@ -403,14 +394,13 @@ namespace Model
      * of this value.</p> </li> <li> <p>For source code in an AWS CodeCommit
      * repository, the HTTPS clone URL to the repository that contains the source code
      * and the buildspec file (for example,
-     * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i>
-     * </code>).</p> </li> <li> <p>For source code in an Amazon Simple Storage Service
-     * (Amazon S3) input bucket, one of the following. </p> <ul> <li> <p> The path to
-     * the ZIP file that contains the source code (for example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>). </p>
-     * </li> <li> <p> The path to the folder that contains the source code (for
-     * example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).</p>
+     * </li> <li> <p>For source code in an Amazon Simple Storage Service (Amazon S3)
+     * input bucket, one of the following. </p> <ul> <li> <p>The path to the ZIP file
+     * that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>). </p>
+     * </li> <li> <p>The path to the folder that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
      * </p> </li> </ul> </li> <li> <p>For source code in a GitHub repository, the HTTPS
      * clone URL to the repository that contains the source and the buildspec file. You
      * must connect your AWS account to your GitHub account. Use the AWS CodeBuild
@@ -445,14 +435,13 @@ namespace Model
      * of this value.</p> </li> <li> <p>For source code in an AWS CodeCommit
      * repository, the HTTPS clone URL to the repository that contains the source code
      * and the buildspec file (for example,
-     * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i>
-     * </code>).</p> </li> <li> <p>For source code in an Amazon Simple Storage Service
-     * (Amazon S3) input bucket, one of the following. </p> <ul> <li> <p> The path to
-     * the ZIP file that contains the source code (for example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>). </p>
-     * </li> <li> <p> The path to the folder that contains the source code (for
-     * example, <code>
-     * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).</p>
+     * </li> <li> <p>For source code in an Amazon Simple Storage Service (Amazon S3)
+     * input bucket, one of the following. </p> <ul> <li> <p>The path to the ZIP file
+     * that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>). </p>
+     * </li> <li> <p>The path to the folder that contains the source code (for example,
+     * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
      * </p> </li> </ul> </li> <li> <p>For source code in a GitHub repository, the HTTPS
      * clone URL to the repository that contains the source and the buildspec file. You
      * must connect your AWS account to your GitHub account. Use the AWS CodeBuild
@@ -711,9 +700,9 @@ namespace Model
      * <p> Set to true to report the status of a build's start and finish to your
      * source provider. This option is valid only when your source provider is GitHub,
      * GitHub Enterprise, or Bitbucket. If this is set and you use a different source
-     * provider, an invalidInputException is thrown. </p> <note> <p> The status of a
+     * provider, an invalidInputException is thrown. </p>  <p> The status of a
      * build triggered by a webhook is always reported to your source provider. </p>
-     * </note>
+     * 
      */
     inline bool GetReportBuildStatus() const{ return m_reportBuildStatus; }
 
@@ -721,9 +710,9 @@ namespace Model
      * <p> Set to true to report the status of a build's start and finish to your
      * source provider. This option is valid only when your source provider is GitHub,
      * GitHub Enterprise, or Bitbucket. If this is set and you use a different source
-     * provider, an invalidInputException is thrown. </p> <note> <p> The status of a
+     * provider, an invalidInputException is thrown. </p>  <p> The status of a
      * build triggered by a webhook is always reported to your source provider. </p>
-     * </note>
+     * 
      */
     inline bool ReportBuildStatusHasBeenSet() const { return m_reportBuildStatusHasBeenSet; }
 
@@ -731,9 +720,9 @@ namespace Model
      * <p> Set to true to report the status of a build's start and finish to your
      * source provider. This option is valid only when your source provider is GitHub,
      * GitHub Enterprise, or Bitbucket. If this is set and you use a different source
-     * provider, an invalidInputException is thrown. </p> <note> <p> The status of a
+     * provider, an invalidInputException is thrown. </p>  <p> The status of a
      * build triggered by a webhook is always reported to your source provider. </p>
-     * </note>
+     * 
      */
     inline void SetReportBuildStatus(bool value) { m_reportBuildStatusHasBeenSet = true; m_reportBuildStatus = value; }
 
@@ -741,11 +730,60 @@ namespace Model
      * <p> Set to true to report the status of a build's start and finish to your
      * source provider. This option is valid only when your source provider is GitHub,
      * GitHub Enterprise, or Bitbucket. If this is set and you use a different source
-     * provider, an invalidInputException is thrown. </p> <note> <p> The status of a
+     * provider, an invalidInputException is thrown. </p>  <p> The status of a
      * build triggered by a webhook is always reported to your source provider. </p>
-     * </note>
+     * 
      */
     inline ProjectSource& WithReportBuildStatus(bool value) { SetReportBuildStatus(value); return *this;}
+
+
+    /**
+     * <p>Contains information that defines how the build project reports the build
+     * status to the source provider. This option is only used when the source provider
+     * is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+     * <code>BITBUCKET</code>.</p>
+     */
+    inline const BuildStatusConfig& GetBuildStatusConfig() const{ return m_buildStatusConfig; }
+
+    /**
+     * <p>Contains information that defines how the build project reports the build
+     * status to the source provider. This option is only used when the source provider
+     * is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+     * <code>BITBUCKET</code>.</p>
+     */
+    inline bool BuildStatusConfigHasBeenSet() const { return m_buildStatusConfigHasBeenSet; }
+
+    /**
+     * <p>Contains information that defines how the build project reports the build
+     * status to the source provider. This option is only used when the source provider
+     * is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+     * <code>BITBUCKET</code>.</p>
+     */
+    inline void SetBuildStatusConfig(const BuildStatusConfig& value) { m_buildStatusConfigHasBeenSet = true; m_buildStatusConfig = value; }
+
+    /**
+     * <p>Contains information that defines how the build project reports the build
+     * status to the source provider. This option is only used when the source provider
+     * is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+     * <code>BITBUCKET</code>.</p>
+     */
+    inline void SetBuildStatusConfig(BuildStatusConfig&& value) { m_buildStatusConfigHasBeenSet = true; m_buildStatusConfig = std::move(value); }
+
+    /**
+     * <p>Contains information that defines how the build project reports the build
+     * status to the source provider. This option is only used when the source provider
+     * is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+     * <code>BITBUCKET</code>.</p>
+     */
+    inline ProjectSource& WithBuildStatusConfig(const BuildStatusConfig& value) { SetBuildStatusConfig(value); return *this;}
+
+    /**
+     * <p>Contains information that defines how the build project reports the build
+     * status to the source provider. This option is only used when the source provider
+     * is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+     * <code>BITBUCKET</code>.</p>
+     */
+    inline ProjectSource& WithBuildStatusConfig(BuildStatusConfig&& value) { SetBuildStatusConfig(std::move(value)); return *this;}
 
 
     /**
@@ -835,6 +873,9 @@ namespace Model
 
     bool m_reportBuildStatus;
     bool m_reportBuildStatusHasBeenSet;
+
+    BuildStatusConfig m_buildStatusConfig;
+    bool m_buildStatusConfigHasBeenSet;
 
     bool m_insecureSsl;
     bool m_insecureSslHasBeenSet;

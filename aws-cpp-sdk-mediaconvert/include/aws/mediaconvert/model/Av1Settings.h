@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
@@ -54,38 +44,44 @@ namespace Model
 
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
-     * quality.
+     * Specify the strength of any adaptive quantization filters that you enable. The
+     * value that you choose here applies to Spatial adaptive quantization
+     * (spatialAdaptiveQuantization).
      */
     inline const Av1AdaptiveQuantization& GetAdaptiveQuantization() const{ return m_adaptiveQuantization; }
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
-     * quality.
+     * Specify the strength of any adaptive quantization filters that you enable. The
+     * value that you choose here applies to Spatial adaptive quantization
+     * (spatialAdaptiveQuantization).
      */
     inline bool AdaptiveQuantizationHasBeenSet() const { return m_adaptiveQuantizationHasBeenSet; }
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
-     * quality.
+     * Specify the strength of any adaptive quantization filters that you enable. The
+     * value that you choose here applies to Spatial adaptive quantization
+     * (spatialAdaptiveQuantization).
      */
     inline void SetAdaptiveQuantization(const Av1AdaptiveQuantization& value) { m_adaptiveQuantizationHasBeenSet = true; m_adaptiveQuantization = value; }
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
-     * quality.
+     * Specify the strength of any adaptive quantization filters that you enable. The
+     * value that you choose here applies to Spatial adaptive quantization
+     * (spatialAdaptiveQuantization).
      */
     inline void SetAdaptiveQuantization(Av1AdaptiveQuantization&& value) { m_adaptiveQuantizationHasBeenSet = true; m_adaptiveQuantization = std::move(value); }
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
-     * quality.
+     * Specify the strength of any adaptive quantization filters that you enable. The
+     * value that you choose here applies to Spatial adaptive quantization
+     * (spatialAdaptiveQuantization).
      */
     inline Av1Settings& WithAdaptiveQuantization(const Av1AdaptiveQuantization& value) { SetAdaptiveQuantization(value); return *this;}
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
-     * quality.
+     * Specify the strength of any adaptive quantization filters that you enable. The
+     * value that you choose here applies to Spatial adaptive quantization
+     * (spatialAdaptiveQuantization).
      */
     inline Av1Settings& WithAdaptiveQuantization(Av1AdaptiveQuantization&& value) { SetAdaptiveQuantization(std::move(value)); return *this;}
 
@@ -182,32 +178,86 @@ namespace Model
 
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Choose the method that you want MediaConvert to use when increasing or
+     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
+     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
+     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
+     * This results in a smooth picture, but might introduce undesirable video
+     * artifacts. For complex frame rate conversions, especially if your source video
+     * has already been converted from its original cadence, use FrameFormer
+     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
+     * best conversion method frame by frame. Note that using FrameFormer increases the
+     * transcoding time and incurs a significant add-on cost.
      */
     inline const Av1FramerateConversionAlgorithm& GetFramerateConversionAlgorithm() const{ return m_framerateConversionAlgorithm; }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Choose the method that you want MediaConvert to use when increasing or
+     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
+     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
+     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
+     * This results in a smooth picture, but might introduce undesirable video
+     * artifacts. For complex frame rate conversions, especially if your source video
+     * has already been converted from its original cadence, use FrameFormer
+     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
+     * best conversion method frame by frame. Note that using FrameFormer increases the
+     * transcoding time and incurs a significant add-on cost.
      */
     inline bool FramerateConversionAlgorithmHasBeenSet() const { return m_framerateConversionAlgorithmHasBeenSet; }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Choose the method that you want MediaConvert to use when increasing or
+     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
+     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
+     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
+     * This results in a smooth picture, but might introduce undesirable video
+     * artifacts. For complex frame rate conversions, especially if your source video
+     * has already been converted from its original cadence, use FrameFormer
+     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
+     * best conversion method frame by frame. Note that using FrameFormer increases the
+     * transcoding time and incurs a significant add-on cost.
      */
     inline void SetFramerateConversionAlgorithm(const Av1FramerateConversionAlgorithm& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Choose the method that you want MediaConvert to use when increasing or
+     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
+     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
+     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
+     * This results in a smooth picture, but might introduce undesirable video
+     * artifacts. For complex frame rate conversions, especially if your source video
+     * has already been converted from its original cadence, use FrameFormer
+     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
+     * best conversion method frame by frame. Note that using FrameFormer increases the
+     * transcoding time and incurs a significant add-on cost.
      */
     inline void SetFramerateConversionAlgorithm(Av1FramerateConversionAlgorithm&& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = std::move(value); }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Choose the method that you want MediaConvert to use when increasing or
+     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
+     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
+     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
+     * This results in a smooth picture, but might introduce undesirable video
+     * artifacts. For complex frame rate conversions, especially if your source video
+     * has already been converted from its original cadence, use FrameFormer
+     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
+     * best conversion method frame by frame. Note that using FrameFormer increases the
+     * transcoding time and incurs a significant add-on cost.
      */
     inline Av1Settings& WithFramerateConversionAlgorithm(const Av1FramerateConversionAlgorithm& value) { SetFramerateConversionAlgorithm(value); return *this;}
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Choose the method that you want MediaConvert to use when increasing or
+     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
+     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
+     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
+     * This results in a smooth picture, but might introduce undesirable video
+     * artifacts. For complex frame rate conversions, especially if your source video
+     * has already been converted from its original cadence, use FrameFormer
+     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
+     * best conversion method frame by frame. Note that using FrameFormer increases the
+     * transcoding time and incurs a significant add-on cost.
      */
     inline Av1Settings& WithFramerateConversionAlgorithm(Av1FramerateConversionAlgorithm&& value) { SetFramerateConversionAlgorithm(std::move(value)); return *this;}
 
@@ -489,38 +539,110 @@ namespace Model
 
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content
-     * complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
+     * frame based on spatial variation of content complexity. When you enable this
+     * feature, the encoder uses fewer bits on areas that can sustain more distortion
+     * with no noticeable visual degradation and uses more bits on areas where any
+     * small distortion will be noticeable. For example, complex textured blocks are
+     * encoded with fewer bits and smooth textured blocks are encoded with more bits.
+     * Enabling this feature will almost always improve your video quality. Note,
+     * though, that this feature doesn't take into account where the viewer's attention
+     * is likely to be. If viewers are likely to be focusing their attention on a part
+     * of the screen with a lot of complex texture, you might choose to disable this
+     * feature. Related setting: When you enable spatial adaptive quantization, set the
+     * value for Adaptive quantization (adaptiveQuantization) depending on your
+     * content. For homogeneous content, such as cartoons and video games, set it to
+     * Low. For content with a wider variety of textures, set it to High or Higher.
      */
     inline const Av1SpatialAdaptiveQuantization& GetSpatialAdaptiveQuantization() const{ return m_spatialAdaptiveQuantization; }
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content
-     * complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
+     * frame based on spatial variation of content complexity. When you enable this
+     * feature, the encoder uses fewer bits on areas that can sustain more distortion
+     * with no noticeable visual degradation and uses more bits on areas where any
+     * small distortion will be noticeable. For example, complex textured blocks are
+     * encoded with fewer bits and smooth textured blocks are encoded with more bits.
+     * Enabling this feature will almost always improve your video quality. Note,
+     * though, that this feature doesn't take into account where the viewer's attention
+     * is likely to be. If viewers are likely to be focusing their attention on a part
+     * of the screen with a lot of complex texture, you might choose to disable this
+     * feature. Related setting: When you enable spatial adaptive quantization, set the
+     * value for Adaptive quantization (adaptiveQuantization) depending on your
+     * content. For homogeneous content, such as cartoons and video games, set it to
+     * Low. For content with a wider variety of textures, set it to High or Higher.
      */
     inline bool SpatialAdaptiveQuantizationHasBeenSet() const { return m_spatialAdaptiveQuantizationHasBeenSet; }
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content
-     * complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
+     * frame based on spatial variation of content complexity. When you enable this
+     * feature, the encoder uses fewer bits on areas that can sustain more distortion
+     * with no noticeable visual degradation and uses more bits on areas where any
+     * small distortion will be noticeable. For example, complex textured blocks are
+     * encoded with fewer bits and smooth textured blocks are encoded with more bits.
+     * Enabling this feature will almost always improve your video quality. Note,
+     * though, that this feature doesn't take into account where the viewer's attention
+     * is likely to be. If viewers are likely to be focusing their attention on a part
+     * of the screen with a lot of complex texture, you might choose to disable this
+     * feature. Related setting: When you enable spatial adaptive quantization, set the
+     * value for Adaptive quantization (adaptiveQuantization) depending on your
+     * content. For homogeneous content, such as cartoons and video games, set it to
+     * Low. For content with a wider variety of textures, set it to High or Higher.
      */
     inline void SetSpatialAdaptiveQuantization(const Av1SpatialAdaptiveQuantization& value) { m_spatialAdaptiveQuantizationHasBeenSet = true; m_spatialAdaptiveQuantization = value; }
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content
-     * complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
+     * frame based on spatial variation of content complexity. When you enable this
+     * feature, the encoder uses fewer bits on areas that can sustain more distortion
+     * with no noticeable visual degradation and uses more bits on areas where any
+     * small distortion will be noticeable. For example, complex textured blocks are
+     * encoded with fewer bits and smooth textured blocks are encoded with more bits.
+     * Enabling this feature will almost always improve your video quality. Note,
+     * though, that this feature doesn't take into account where the viewer's attention
+     * is likely to be. If viewers are likely to be focusing their attention on a part
+     * of the screen with a lot of complex texture, you might choose to disable this
+     * feature. Related setting: When you enable spatial adaptive quantization, set the
+     * value for Adaptive quantization (adaptiveQuantization) depending on your
+     * content. For homogeneous content, such as cartoons and video games, set it to
+     * Low. For content with a wider variety of textures, set it to High or Higher.
      */
     inline void SetSpatialAdaptiveQuantization(Av1SpatialAdaptiveQuantization&& value) { m_spatialAdaptiveQuantizationHasBeenSet = true; m_spatialAdaptiveQuantization = std::move(value); }
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content
-     * complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
+     * frame based on spatial variation of content complexity. When you enable this
+     * feature, the encoder uses fewer bits on areas that can sustain more distortion
+     * with no noticeable visual degradation and uses more bits on areas where any
+     * small distortion will be noticeable. For example, complex textured blocks are
+     * encoded with fewer bits and smooth textured blocks are encoded with more bits.
+     * Enabling this feature will almost always improve your video quality. Note,
+     * though, that this feature doesn't take into account where the viewer's attention
+     * is likely to be. If viewers are likely to be focusing their attention on a part
+     * of the screen with a lot of complex texture, you might choose to disable this
+     * feature. Related setting: When you enable spatial adaptive quantization, set the
+     * value for Adaptive quantization (adaptiveQuantization) depending on your
+     * content. For homogeneous content, such as cartoons and video games, set it to
+     * Low. For content with a wider variety of textures, set it to High or Higher.
      */
     inline Av1Settings& WithSpatialAdaptiveQuantization(const Av1SpatialAdaptiveQuantization& value) { SetSpatialAdaptiveQuantization(value); return *this;}
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content
-     * complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
+     * frame based on spatial variation of content complexity. When you enable this
+     * feature, the encoder uses fewer bits on areas that can sustain more distortion
+     * with no noticeable visual degradation and uses more bits on areas where any
+     * small distortion will be noticeable. For example, complex textured blocks are
+     * encoded with fewer bits and smooth textured blocks are encoded with more bits.
+     * Enabling this feature will almost always improve your video quality. Note,
+     * though, that this feature doesn't take into account where the viewer's attention
+     * is likely to be. If viewers are likely to be focusing their attention on a part
+     * of the screen with a lot of complex texture, you might choose to disable this
+     * feature. Related setting: When you enable spatial adaptive quantization, set the
+     * value for Adaptive quantization (adaptiveQuantization) depending on your
+     * content. For homogeneous content, such as cartoons and video games, set it to
+     * Low. For content with a wider variety of textures, set it to High or Higher.
      */
     inline Av1Settings& WithSpatialAdaptiveQuantization(Av1SpatialAdaptiveQuantization&& value) { SetSpatialAdaptiveQuantization(std::move(value)); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker-runtime/SageMakerRuntime_EXPORTS.h>
@@ -63,7 +53,7 @@ namespace Model
 {
         class InvokeEndpointRequest;
 
-        typedef Aws::Utils::Outcome<InvokeEndpointResult, Aws::Client::AWSError<SageMakerRuntimeErrors>> InvokeEndpointOutcome;
+        typedef Aws::Utils::Outcome<InvokeEndpointResult, SageMakerRuntimeError> InvokeEndpointOutcome;
 
         typedef std::future<InvokeEndpointOutcome> InvokeEndpointOutcomeCallable;
 } // namespace Model
@@ -101,8 +91,6 @@ namespace Model
 
         virtual ~SageMakerRuntimeClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "SageMaker Runtime"; }
-
 
         /**
          * <p>After you deploy a model into production using Amazon SageMaker hosting
@@ -115,16 +103,16 @@ namespace Model
          * not rely on the behavior of headers outside those enumerated in the request
          * syntax. </p> <p>Calls to <code>InvokeEndpoint</code> are authenticated by using
          * AWS Signature Version 4. For information, see <a
-         * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
          * Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API
          * Reference</i>.</p> <p>A customer's model containers must respond to requests
          * within 60 seconds. The model itself can have a maximum processing time of 60
-         * seconds before responding to the /invocations. If your model is going to take
-         * 50-60 seconds of processing time, the SDK socket timeout should be set to be 70
-         * seconds.</p> <note> <p>Endpoints are scoped to an individual account, and are
+         * seconds before responding to invocations. If your model is going to take 50-60
+         * seconds of processing time, the SDK socket timeout should be set to be 70
+         * seconds.</p>  <p>Endpoints are scoped to an individual account, and are
          * not public. The URL does not contain the account ID, but Amazon SageMaker
          * determines the account ID from the authentication token that is supplied by the
-         * caller.</p> </note><p><h3>See Also:</h3>   <a
+         * caller.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpoint">AWS
          * API Reference</a></p>
          */
@@ -141,16 +129,16 @@ namespace Model
          * not rely on the behavior of headers outside those enumerated in the request
          * syntax. </p> <p>Calls to <code>InvokeEndpoint</code> are authenticated by using
          * AWS Signature Version 4. For information, see <a
-         * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
          * Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API
          * Reference</i>.</p> <p>A customer's model containers must respond to requests
          * within 60 seconds. The model itself can have a maximum processing time of 60
-         * seconds before responding to the /invocations. If your model is going to take
-         * 50-60 seconds of processing time, the SDK socket timeout should be set to be 70
-         * seconds.</p> <note> <p>Endpoints are scoped to an individual account, and are
+         * seconds before responding to invocations. If your model is going to take 50-60
+         * seconds of processing time, the SDK socket timeout should be set to be 70
+         * seconds.</p>  <p>Endpoints are scoped to an individual account, and are
          * not public. The URL does not contain the account ID, but Amazon SageMaker
          * determines the account ID from the authentication token that is supplied by the
-         * caller.</p> </note><p><h3>See Also:</h3>   <a
+         * caller.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpoint">AWS
          * API Reference</a></p>
          *
@@ -169,16 +157,16 @@ namespace Model
          * not rely on the behavior of headers outside those enumerated in the request
          * syntax. </p> <p>Calls to <code>InvokeEndpoint</code> are authenticated by using
          * AWS Signature Version 4. For information, see <a
-         * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
          * Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API
          * Reference</i>.</p> <p>A customer's model containers must respond to requests
          * within 60 seconds. The model itself can have a maximum processing time of 60
-         * seconds before responding to the /invocations. If your model is going to take
-         * 50-60 seconds of processing time, the SDK socket timeout should be set to be 70
-         * seconds.</p> <note> <p>Endpoints are scoped to an individual account, and are
+         * seconds before responding to invocations. If your model is going to take 50-60
+         * seconds of processing time, the SDK socket timeout should be set to be 70
+         * seconds.</p>  <p>Endpoints are scoped to an individual account, and are
          * not public. The URL does not contain the account ID, but Amazon SageMaker
          * determines the account ID from the authentication token that is supplied by the
-         * caller.</p> </note><p><h3>See Also:</h3>   <a
+         * caller.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpoint">AWS
          * API Reference</a></p>
          *

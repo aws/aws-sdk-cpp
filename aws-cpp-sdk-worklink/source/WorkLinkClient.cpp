@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -49,11 +39,14 @@
 #include <aws/worklink/model/ListDevicesRequest.h>
 #include <aws/worklink/model/ListDomainsRequest.h>
 #include <aws/worklink/model/ListFleetsRequest.h>
+#include <aws/worklink/model/ListTagsForResourceRequest.h>
 #include <aws/worklink/model/ListWebsiteAuthorizationProvidersRequest.h>
 #include <aws/worklink/model/ListWebsiteCertificateAuthoritiesRequest.h>
 #include <aws/worklink/model/RestoreDomainAccessRequest.h>
 #include <aws/worklink/model/RevokeDomainAccessRequest.h>
 #include <aws/worklink/model/SignOutUserRequest.h>
+#include <aws/worklink/model/TagResourceRequest.h>
+#include <aws/worklink/model/UntagResourceRequest.h>
 #include <aws/worklink/model/UpdateAuditStreamConfigurationRequest.h>
 #include <aws/worklink/model/UpdateCompanyNetworkConfigurationRequest.h>
 #include <aws/worklink/model/UpdateDevicePolicyConfigurationRequest.h>
@@ -76,7 +69,7 @@ static const char* ALLOCATION_TAG = "WorkLinkClient";
 WorkLinkClient::WorkLinkClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<WorkLinkErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -86,7 +79,7 @@ WorkLinkClient::WorkLinkClient(const Client::ClientConfiguration& clientConfigur
 WorkLinkClient::WorkLinkClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<WorkLinkErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -97,7 +90,7 @@ WorkLinkClient::WorkLinkClient(const std::shared_ptr<AWSCredentialsProvider>& cr
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<WorkLinkErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -110,6 +103,7 @@ WorkLinkClient::~WorkLinkClient()
 
 void WorkLinkClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("WorkLink");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -139,15 +133,7 @@ AssociateDomainOutcome WorkLinkClient::AssociateDomain(const AssociateDomainRequ
   Aws::StringStream ss;
   ss << "/associateDomain";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AssociateDomainOutcome(AssociateDomainResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AssociateDomainOutcome(outcome.GetError());
-  }
+  return AssociateDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AssociateDomainOutcomeCallable WorkLinkClient::AssociateDomainCallable(const AssociateDomainRequest& request) const
@@ -174,15 +160,7 @@ AssociateWebsiteAuthorizationProviderOutcome WorkLinkClient::AssociateWebsiteAut
   Aws::StringStream ss;
   ss << "/associateWebsiteAuthorizationProvider";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AssociateWebsiteAuthorizationProviderOutcome(AssociateWebsiteAuthorizationProviderResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AssociateWebsiteAuthorizationProviderOutcome(outcome.GetError());
-  }
+  return AssociateWebsiteAuthorizationProviderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AssociateWebsiteAuthorizationProviderOutcomeCallable WorkLinkClient::AssociateWebsiteAuthorizationProviderCallable(const AssociateWebsiteAuthorizationProviderRequest& request) const
@@ -209,15 +187,7 @@ AssociateWebsiteCertificateAuthorityOutcome WorkLinkClient::AssociateWebsiteCert
   Aws::StringStream ss;
   ss << "/associateWebsiteCertificateAuthority";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AssociateWebsiteCertificateAuthorityOutcome(AssociateWebsiteCertificateAuthorityResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AssociateWebsiteCertificateAuthorityOutcome(outcome.GetError());
-  }
+  return AssociateWebsiteCertificateAuthorityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AssociateWebsiteCertificateAuthorityOutcomeCallable WorkLinkClient::AssociateWebsiteCertificateAuthorityCallable(const AssociateWebsiteCertificateAuthorityRequest& request) const
@@ -244,15 +214,7 @@ CreateFleetOutcome WorkLinkClient::CreateFleet(const CreateFleetRequest& request
   Aws::StringStream ss;
   ss << "/createFleet";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateFleetOutcome(CreateFleetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateFleetOutcome(outcome.GetError());
-  }
+  return CreateFleetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateFleetOutcomeCallable WorkLinkClient::CreateFleetCallable(const CreateFleetRequest& request) const
@@ -279,15 +241,7 @@ DeleteFleetOutcome WorkLinkClient::DeleteFleet(const DeleteFleetRequest& request
   Aws::StringStream ss;
   ss << "/deleteFleet";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteFleetOutcome(DeleteFleetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteFleetOutcome(outcome.GetError());
-  }
+  return DeleteFleetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteFleetOutcomeCallable WorkLinkClient::DeleteFleetCallable(const DeleteFleetRequest& request) const
@@ -314,15 +268,7 @@ DescribeAuditStreamConfigurationOutcome WorkLinkClient::DescribeAuditStreamConfi
   Aws::StringStream ss;
   ss << "/describeAuditStreamConfiguration";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeAuditStreamConfigurationOutcome(DescribeAuditStreamConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeAuditStreamConfigurationOutcome(outcome.GetError());
-  }
+  return DescribeAuditStreamConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeAuditStreamConfigurationOutcomeCallable WorkLinkClient::DescribeAuditStreamConfigurationCallable(const DescribeAuditStreamConfigurationRequest& request) const
@@ -349,15 +295,7 @@ DescribeCompanyNetworkConfigurationOutcome WorkLinkClient::DescribeCompanyNetwor
   Aws::StringStream ss;
   ss << "/describeCompanyNetworkConfiguration";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeCompanyNetworkConfigurationOutcome(DescribeCompanyNetworkConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeCompanyNetworkConfigurationOutcome(outcome.GetError());
-  }
+  return DescribeCompanyNetworkConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeCompanyNetworkConfigurationOutcomeCallable WorkLinkClient::DescribeCompanyNetworkConfigurationCallable(const DescribeCompanyNetworkConfigurationRequest& request) const
@@ -384,15 +322,7 @@ DescribeDeviceOutcome WorkLinkClient::DescribeDevice(const DescribeDeviceRequest
   Aws::StringStream ss;
   ss << "/describeDevice";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeDeviceOutcome(DescribeDeviceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeDeviceOutcome(outcome.GetError());
-  }
+  return DescribeDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeDeviceOutcomeCallable WorkLinkClient::DescribeDeviceCallable(const DescribeDeviceRequest& request) const
@@ -419,15 +349,7 @@ DescribeDevicePolicyConfigurationOutcome WorkLinkClient::DescribeDevicePolicyCon
   Aws::StringStream ss;
   ss << "/describeDevicePolicyConfiguration";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeDevicePolicyConfigurationOutcome(DescribeDevicePolicyConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeDevicePolicyConfigurationOutcome(outcome.GetError());
-  }
+  return DescribeDevicePolicyConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeDevicePolicyConfigurationOutcomeCallable WorkLinkClient::DescribeDevicePolicyConfigurationCallable(const DescribeDevicePolicyConfigurationRequest& request) const
@@ -454,15 +376,7 @@ DescribeDomainOutcome WorkLinkClient::DescribeDomain(const DescribeDomainRequest
   Aws::StringStream ss;
   ss << "/describeDomain";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeDomainOutcome(DescribeDomainResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeDomainOutcome(outcome.GetError());
-  }
+  return DescribeDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeDomainOutcomeCallable WorkLinkClient::DescribeDomainCallable(const DescribeDomainRequest& request) const
@@ -489,15 +403,7 @@ DescribeFleetMetadataOutcome WorkLinkClient::DescribeFleetMetadata(const Describ
   Aws::StringStream ss;
   ss << "/describeFleetMetadata";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeFleetMetadataOutcome(DescribeFleetMetadataResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeFleetMetadataOutcome(outcome.GetError());
-  }
+  return DescribeFleetMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeFleetMetadataOutcomeCallable WorkLinkClient::DescribeFleetMetadataCallable(const DescribeFleetMetadataRequest& request) const
@@ -524,15 +430,7 @@ DescribeIdentityProviderConfigurationOutcome WorkLinkClient::DescribeIdentityPro
   Aws::StringStream ss;
   ss << "/describeIdentityProviderConfiguration";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeIdentityProviderConfigurationOutcome(DescribeIdentityProviderConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeIdentityProviderConfigurationOutcome(outcome.GetError());
-  }
+  return DescribeIdentityProviderConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeIdentityProviderConfigurationOutcomeCallable WorkLinkClient::DescribeIdentityProviderConfigurationCallable(const DescribeIdentityProviderConfigurationRequest& request) const
@@ -559,15 +457,7 @@ DescribeWebsiteCertificateAuthorityOutcome WorkLinkClient::DescribeWebsiteCertif
   Aws::StringStream ss;
   ss << "/describeWebsiteCertificateAuthority";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeWebsiteCertificateAuthorityOutcome(DescribeWebsiteCertificateAuthorityResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeWebsiteCertificateAuthorityOutcome(outcome.GetError());
-  }
+  return DescribeWebsiteCertificateAuthorityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeWebsiteCertificateAuthorityOutcomeCallable WorkLinkClient::DescribeWebsiteCertificateAuthorityCallable(const DescribeWebsiteCertificateAuthorityRequest& request) const
@@ -594,15 +484,7 @@ DisassociateDomainOutcome WorkLinkClient::DisassociateDomain(const DisassociateD
   Aws::StringStream ss;
   ss << "/disassociateDomain";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisassociateDomainOutcome(DisassociateDomainResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisassociateDomainOutcome(outcome.GetError());
-  }
+  return DisassociateDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisassociateDomainOutcomeCallable WorkLinkClient::DisassociateDomainCallable(const DisassociateDomainRequest& request) const
@@ -629,15 +511,7 @@ DisassociateWebsiteAuthorizationProviderOutcome WorkLinkClient::DisassociateWebs
   Aws::StringStream ss;
   ss << "/disassociateWebsiteAuthorizationProvider";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisassociateWebsiteAuthorizationProviderOutcome(DisassociateWebsiteAuthorizationProviderResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisassociateWebsiteAuthorizationProviderOutcome(outcome.GetError());
-  }
+  return DisassociateWebsiteAuthorizationProviderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisassociateWebsiteAuthorizationProviderOutcomeCallable WorkLinkClient::DisassociateWebsiteAuthorizationProviderCallable(const DisassociateWebsiteAuthorizationProviderRequest& request) const
@@ -664,15 +538,7 @@ DisassociateWebsiteCertificateAuthorityOutcome WorkLinkClient::DisassociateWebsi
   Aws::StringStream ss;
   ss << "/disassociateWebsiteCertificateAuthority";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisassociateWebsiteCertificateAuthorityOutcome(DisassociateWebsiteCertificateAuthorityResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisassociateWebsiteCertificateAuthorityOutcome(outcome.GetError());
-  }
+  return DisassociateWebsiteCertificateAuthorityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisassociateWebsiteCertificateAuthorityOutcomeCallable WorkLinkClient::DisassociateWebsiteCertificateAuthorityCallable(const DisassociateWebsiteCertificateAuthorityRequest& request) const
@@ -699,15 +565,7 @@ ListDevicesOutcome WorkLinkClient::ListDevices(const ListDevicesRequest& request
   Aws::StringStream ss;
   ss << "/listDevices";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListDevicesOutcome(ListDevicesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListDevicesOutcome(outcome.GetError());
-  }
+  return ListDevicesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDevicesOutcomeCallable WorkLinkClient::ListDevicesCallable(const ListDevicesRequest& request) const
@@ -734,15 +592,7 @@ ListDomainsOutcome WorkLinkClient::ListDomains(const ListDomainsRequest& request
   Aws::StringStream ss;
   ss << "/listDomains";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListDomainsOutcome(ListDomainsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListDomainsOutcome(outcome.GetError());
-  }
+  return ListDomainsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDomainsOutcomeCallable WorkLinkClient::ListDomainsCallable(const ListDomainsRequest& request) const
@@ -769,15 +619,7 @@ ListFleetsOutcome WorkLinkClient::ListFleets(const ListFleetsRequest& request) c
   Aws::StringStream ss;
   ss << "/listFleets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListFleetsOutcome(ListFleetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListFleetsOutcome(outcome.GetError());
-  }
+  return ListFleetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListFleetsOutcomeCallable WorkLinkClient::ListFleetsCallable(const ListFleetsRequest& request) const
@@ -798,21 +640,46 @@ void WorkLinkClient::ListFleetsAsyncHelper(const ListFleetsRequest& request, con
   handler(this, request, ListFleets(request), context);
 }
 
+ListTagsForResourceOutcome WorkLinkClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
+    return ListTagsForResourceOutcome(Aws::Client::AWSError<WorkLinkErrors>(WorkLinkErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/tags/";
+  ss << request.GetResourceArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListTagsForResourceOutcomeCallable WorkLinkClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkLinkClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+}
+
+void WorkLinkClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTagsForResource(request), context);
+}
+
 ListWebsiteAuthorizationProvidersOutcome WorkLinkClient::ListWebsiteAuthorizationProviders(const ListWebsiteAuthorizationProvidersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/listWebsiteAuthorizationProviders";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListWebsiteAuthorizationProvidersOutcome(ListWebsiteAuthorizationProvidersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListWebsiteAuthorizationProvidersOutcome(outcome.GetError());
-  }
+  return ListWebsiteAuthorizationProvidersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListWebsiteAuthorizationProvidersOutcomeCallable WorkLinkClient::ListWebsiteAuthorizationProvidersCallable(const ListWebsiteAuthorizationProvidersRequest& request) const
@@ -839,15 +706,7 @@ ListWebsiteCertificateAuthoritiesOutcome WorkLinkClient::ListWebsiteCertificateA
   Aws::StringStream ss;
   ss << "/listWebsiteCertificateAuthorities";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListWebsiteCertificateAuthoritiesOutcome(ListWebsiteCertificateAuthoritiesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListWebsiteCertificateAuthoritiesOutcome(outcome.GetError());
-  }
+  return ListWebsiteCertificateAuthoritiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListWebsiteCertificateAuthoritiesOutcomeCallable WorkLinkClient::ListWebsiteCertificateAuthoritiesCallable(const ListWebsiteCertificateAuthoritiesRequest& request) const
@@ -874,15 +733,7 @@ RestoreDomainAccessOutcome WorkLinkClient::RestoreDomainAccess(const RestoreDoma
   Aws::StringStream ss;
   ss << "/restoreDomainAccess";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RestoreDomainAccessOutcome(RestoreDomainAccessResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RestoreDomainAccessOutcome(outcome.GetError());
-  }
+  return RestoreDomainAccessOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RestoreDomainAccessOutcomeCallable WorkLinkClient::RestoreDomainAccessCallable(const RestoreDomainAccessRequest& request) const
@@ -909,15 +760,7 @@ RevokeDomainAccessOutcome WorkLinkClient::RevokeDomainAccess(const RevokeDomainA
   Aws::StringStream ss;
   ss << "/revokeDomainAccess";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RevokeDomainAccessOutcome(RevokeDomainAccessResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RevokeDomainAccessOutcome(outcome.GetError());
-  }
+  return RevokeDomainAccessOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RevokeDomainAccessOutcomeCallable WorkLinkClient::RevokeDomainAccessCallable(const RevokeDomainAccessRequest& request) const
@@ -944,15 +787,7 @@ SignOutUserOutcome WorkLinkClient::SignOutUser(const SignOutUserRequest& request
   Aws::StringStream ss;
   ss << "/signOutUser";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SignOutUserOutcome(SignOutUserResult(outcome.GetResult()));
-  }
-  else
-  {
-    return SignOutUserOutcome(outcome.GetError());
-  }
+  return SignOutUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SignOutUserOutcomeCallable WorkLinkClient::SignOutUserCallable(const SignOutUserRequest& request) const
@@ -973,21 +808,84 @@ void WorkLinkClient::SignOutUserAsyncHelper(const SignOutUserRequest& request, c
   handler(this, request, SignOutUser(request), context);
 }
 
+TagResourceOutcome WorkLinkClient::TagResource(const TagResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("TagResource", "Required field: ResourceArn, is not set");
+    return TagResourceOutcome(Aws::Client::AWSError<WorkLinkErrors>(WorkLinkErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/tags/";
+  ss << request.GetResourceArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+TagResourceOutcomeCallable WorkLinkClient::TagResourceCallable(const TagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkLinkClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void WorkLinkClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TagResource(request), context);
+}
+
+UntagResourceOutcome WorkLinkClient::UntagResource(const UntagResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: ResourceArn, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<WorkLinkErrors>(WorkLinkErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  if (!request.TagKeysHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<WorkLinkErrors>(WorkLinkErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/tags/";
+  ss << request.GetResourceArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+UntagResourceOutcomeCallable WorkLinkClient::UntagResourceCallable(const UntagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkLinkClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void WorkLinkClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UntagResource(request), context);
+}
+
 UpdateAuditStreamConfigurationOutcome WorkLinkClient::UpdateAuditStreamConfiguration(const UpdateAuditStreamConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/updateAuditStreamConfiguration";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateAuditStreamConfigurationOutcome(UpdateAuditStreamConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateAuditStreamConfigurationOutcome(outcome.GetError());
-  }
+  return UpdateAuditStreamConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateAuditStreamConfigurationOutcomeCallable WorkLinkClient::UpdateAuditStreamConfigurationCallable(const UpdateAuditStreamConfigurationRequest& request) const
@@ -1014,15 +912,7 @@ UpdateCompanyNetworkConfigurationOutcome WorkLinkClient::UpdateCompanyNetworkCon
   Aws::StringStream ss;
   ss << "/updateCompanyNetworkConfiguration";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateCompanyNetworkConfigurationOutcome(UpdateCompanyNetworkConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateCompanyNetworkConfigurationOutcome(outcome.GetError());
-  }
+  return UpdateCompanyNetworkConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateCompanyNetworkConfigurationOutcomeCallable WorkLinkClient::UpdateCompanyNetworkConfigurationCallable(const UpdateCompanyNetworkConfigurationRequest& request) const
@@ -1049,15 +939,7 @@ UpdateDevicePolicyConfigurationOutcome WorkLinkClient::UpdateDevicePolicyConfigu
   Aws::StringStream ss;
   ss << "/updateDevicePolicyConfiguration";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDevicePolicyConfigurationOutcome(UpdateDevicePolicyConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateDevicePolicyConfigurationOutcome(outcome.GetError());
-  }
+  return UpdateDevicePolicyConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDevicePolicyConfigurationOutcomeCallable WorkLinkClient::UpdateDevicePolicyConfigurationCallable(const UpdateDevicePolicyConfigurationRequest& request) const
@@ -1084,15 +966,7 @@ UpdateDomainMetadataOutcome WorkLinkClient::UpdateDomainMetadata(const UpdateDom
   Aws::StringStream ss;
   ss << "/updateDomainMetadata";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDomainMetadataOutcome(UpdateDomainMetadataResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateDomainMetadataOutcome(outcome.GetError());
-  }
+  return UpdateDomainMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDomainMetadataOutcomeCallable WorkLinkClient::UpdateDomainMetadataCallable(const UpdateDomainMetadataRequest& request) const
@@ -1119,15 +993,7 @@ UpdateFleetMetadataOutcome WorkLinkClient::UpdateFleetMetadata(const UpdateFleet
   Aws::StringStream ss;
   ss << "/UpdateFleetMetadata";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateFleetMetadataOutcome(UpdateFleetMetadataResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateFleetMetadataOutcome(outcome.GetError());
-  }
+  return UpdateFleetMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateFleetMetadataOutcomeCallable WorkLinkClient::UpdateFleetMetadataCallable(const UpdateFleetMetadataRequest& request) const
@@ -1154,15 +1020,7 @@ UpdateIdentityProviderConfigurationOutcome WorkLinkClient::UpdateIdentityProvide
   Aws::StringStream ss;
   ss << "/updateIdentityProviderConfiguration";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateIdentityProviderConfigurationOutcome(UpdateIdentityProviderConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateIdentityProviderConfigurationOutcome(outcome.GetError());
-  }
+  return UpdateIdentityProviderConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateIdentityProviderConfigurationOutcomeCallable WorkLinkClient::UpdateIdentityProviderConfigurationCallable(const UpdateIdentityProviderConfigurationRequest& request) const

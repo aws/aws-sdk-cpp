@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/elasticache/model/ReplicationGroupPendingModifiedValues.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -36,7 +26,8 @@ ReplicationGroupPendingModifiedValues::ReplicationGroupPendingModifiedValues() :
     m_automaticFailoverStatusHasBeenSet(false),
     m_reshardingHasBeenSet(false),
     m_authTokenStatus(AuthTokenUpdateStatus::NOT_SET),
-    m_authTokenStatusHasBeenSet(false)
+    m_authTokenStatusHasBeenSet(false),
+    m_userGroupsHasBeenSet(false)
 {
 }
 
@@ -46,7 +37,8 @@ ReplicationGroupPendingModifiedValues::ReplicationGroupPendingModifiedValues(con
     m_automaticFailoverStatusHasBeenSet(false),
     m_reshardingHasBeenSet(false),
     m_authTokenStatus(AuthTokenUpdateStatus::NOT_SET),
-    m_authTokenStatusHasBeenSet(false)
+    m_authTokenStatusHasBeenSet(false),
+    m_userGroupsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -81,6 +73,12 @@ ReplicationGroupPendingModifiedValues& ReplicationGroupPendingModifiedValues::op
       m_authTokenStatus = AuthTokenUpdateStatusMapper::GetAuthTokenUpdateStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(authTokenStatusNode.GetText()).c_str()).c_str());
       m_authTokenStatusHasBeenSet = true;
     }
+    XmlNode userGroupsNode = resultNode.FirstChild("UserGroups");
+    if(!userGroupsNode.IsNull())
+    {
+      m_userGroups = userGroupsNode;
+      m_userGroupsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -110,6 +108,13 @@ void ReplicationGroupPendingModifiedValues::OutputToStream(Aws::OStream& oStream
       oStream << location << index << locationValue << ".AuthTokenStatus=" << AuthTokenUpdateStatusMapper::GetNameForAuthTokenUpdateStatus(m_authTokenStatus) << "&";
   }
 
+  if(m_userGroupsHasBeenSet)
+  {
+      Aws::StringStream userGroupsLocationAndMemberSs;
+      userGroupsLocationAndMemberSs << location << index << locationValue << ".UserGroups";
+      m_userGroups.OutputToStream(oStream, userGroupsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void ReplicationGroupPendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -131,6 +136,12 @@ void ReplicationGroupPendingModifiedValues::OutputToStream(Aws::OStream& oStream
   if(m_authTokenStatusHasBeenSet)
   {
       oStream << location << ".AuthTokenStatus=" << AuthTokenUpdateStatusMapper::GetNameForAuthTokenUpdateStatus(m_authTokenStatus) << "&";
+  }
+  if(m_userGroupsHasBeenSet)
+  {
+      Aws::String userGroupsLocationAndMember(location);
+      userGroupsLocationAndMember += ".UserGroups";
+      m_userGroups.OutputToStream(oStream, userGroupsLocationAndMember.c_str());
   }
 }
 

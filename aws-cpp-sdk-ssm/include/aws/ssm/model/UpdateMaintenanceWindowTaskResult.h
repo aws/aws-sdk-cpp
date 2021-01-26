@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -236,112 +226,112 @@ namespace Model
 
 
     /**
-     * <p>The updated parameter values.</p> <note> <p> <code>TaskParameters</code> has
+     * <p>The updated parameter values.</p>  <p> <code>TaskParameters</code> has
      * been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& GetTaskParameters() const{ return m_taskParameters; }
 
     /**
-     * <p>The updated parameter values.</p> <note> <p> <code>TaskParameters</code> has
+     * <p>The updated parameter values.</p>  <p> <code>TaskParameters</code> has
      * been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline void SetTaskParameters(const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& value) { m_taskParameters = value; }
 
     /**
-     * <p>The updated parameter values.</p> <note> <p> <code>TaskParameters</code> has
+     * <p>The updated parameter values.</p>  <p> <code>TaskParameters</code> has
      * been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline void SetTaskParameters(Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>&& value) { m_taskParameters = std::move(value); }
 
     /**
-     * <p>The updated parameter values.</p> <note> <p> <code>TaskParameters</code> has
+     * <p>The updated parameter values.</p>  <p> <code>TaskParameters</code> has
      * been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline UpdateMaintenanceWindowTaskResult& WithTaskParameters(const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& value) { SetTaskParameters(value); return *this;}
 
     /**
-     * <p>The updated parameter values.</p> <note> <p> <code>TaskParameters</code> has
+     * <p>The updated parameter values.</p>  <p> <code>TaskParameters</code> has
      * been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline UpdateMaintenanceWindowTaskResult& WithTaskParameters(Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>&& value) { SetTaskParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The updated parameter values.</p> <note> <p> <code>TaskParameters</code> has
+     * <p>The updated parameter values.</p>  <p> <code>TaskParameters</code> has
      * been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline UpdateMaintenanceWindowTaskResult& AddTaskParameters(const Aws::String& key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParameters.emplace(key, value); return *this; }
 
     /**
-     * <p>The updated parameter values.</p> <note> <p> <code>TaskParameters</code> has
+     * <p>The updated parameter values.</p>  <p> <code>TaskParameters</code> has
      * been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline UpdateMaintenanceWindowTaskResult& AddTaskParameters(Aws::String&& key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The updated parameter values.</p> <note> <p> <code>TaskParameters</code> has
+     * <p>The updated parameter values.</p>  <p> <code>TaskParameters</code> has
      * been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline UpdateMaintenanceWindowTaskResult& AddTaskParameters(const Aws::String& key, MaintenanceWindowTaskParameterValueExpression&& value) { m_taskParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The updated parameter values.</p> <note> <p> <code>TaskParameters</code> has
+     * <p>The updated parameter values.</p>  <p> <code>TaskParameters</code> has
      * been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline UpdateMaintenanceWindowTaskResult& AddTaskParameters(Aws::String&& key, MaintenanceWindowTaskParameterValueExpression&& value) { m_taskParameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The updated parameter values.</p> <note> <p> <code>TaskParameters</code> has
+     * <p>The updated parameter values.</p>  <p> <code>TaskParameters</code> has
      * been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline UpdateMaintenanceWindowTaskResult& AddTaskParameters(const char* key, MaintenanceWindowTaskParameterValueExpression&& value) { m_taskParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The updated parameter values.</p> <note> <p> <code>TaskParameters</code> has
+     * <p>The updated parameter values.</p>  <p> <code>TaskParameters</code> has
      * been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline UpdateMaintenanceWindowTaskResult& AddTaskParameters(const char* key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParameters.emplace(key, value); return *this; }
 
@@ -461,57 +451,57 @@ namespace Model
 
 
     /**
-     * <p>The updated logging information in Amazon S3.</p> <note> <p>
+     * <p>The updated logging information in Amazon S3.</p>  <p>
      * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
      * logs, instead use the <code>OutputS3BucketName</code> and
      * <code>OutputS3KeyPrefix</code> options in the
      * <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline const LoggingInfo& GetLoggingInfo() const{ return m_loggingInfo; }
 
     /**
-     * <p>The updated logging information in Amazon S3.</p> <note> <p>
+     * <p>The updated logging information in Amazon S3.</p>  <p>
      * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
      * logs, instead use the <code>OutputS3BucketName</code> and
      * <code>OutputS3KeyPrefix</code> options in the
      * <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline void SetLoggingInfo(const LoggingInfo& value) { m_loggingInfo = value; }
 
     /**
-     * <p>The updated logging information in Amazon S3.</p> <note> <p>
+     * <p>The updated logging information in Amazon S3.</p>  <p>
      * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
      * logs, instead use the <code>OutputS3BucketName</code> and
      * <code>OutputS3KeyPrefix</code> options in the
      * <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline void SetLoggingInfo(LoggingInfo&& value) { m_loggingInfo = std::move(value); }
 
     /**
-     * <p>The updated logging information in Amazon S3.</p> <note> <p>
+     * <p>The updated logging information in Amazon S3.</p>  <p>
      * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
      * logs, instead use the <code>OutputS3BucketName</code> and
      * <code>OutputS3KeyPrefix</code> options in the
      * <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline UpdateMaintenanceWindowTaskResult& WithLoggingInfo(const LoggingInfo& value) { SetLoggingInfo(value); return *this;}
 
     /**
-     * <p>The updated logging information in Amazon S3.</p> <note> <p>
+     * <p>The updated logging information in Amazon S3.</p>  <p>
      * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
      * logs, instead use the <code>OutputS3BucketName</code> and
      * <code>OutputS3KeyPrefix</code> options in the
      * <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline UpdateMaintenanceWindowTaskResult& WithLoggingInfo(LoggingInfo&& value) { SetLoggingInfo(std::move(value)); return *this;}
 

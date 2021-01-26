@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
@@ -36,10 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>A registered user of Amazon QuickSight. Currently, an Amazon QuickSight
-   * subscription can't contain more than 20 million users.</p><p><h3>See Also:</h3> 
-   * <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/User">AWS
-   * API Reference</a></p>
+   * <p>A registered user of Amazon QuickSight. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/User">AWS API
+   * Reference</a></p>
    */
   class AWS_QUICKSIGHT_API User
   {
@@ -352,6 +341,47 @@ namespace Model
      */
     inline User& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
 
+
+    /**
+     * <p>The custom permissions profile associated with this user.</p>
+     */
+    inline const Aws::String& GetCustomPermissionsName() const{ return m_customPermissionsName; }
+
+    /**
+     * <p>The custom permissions profile associated with this user.</p>
+     */
+    inline bool CustomPermissionsNameHasBeenSet() const { return m_customPermissionsNameHasBeenSet; }
+
+    /**
+     * <p>The custom permissions profile associated with this user.</p>
+     */
+    inline void SetCustomPermissionsName(const Aws::String& value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName = value; }
+
+    /**
+     * <p>The custom permissions profile associated with this user.</p>
+     */
+    inline void SetCustomPermissionsName(Aws::String&& value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName = std::move(value); }
+
+    /**
+     * <p>The custom permissions profile associated with this user.</p>
+     */
+    inline void SetCustomPermissionsName(const char* value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName.assign(value); }
+
+    /**
+     * <p>The custom permissions profile associated with this user.</p>
+     */
+    inline User& WithCustomPermissionsName(const Aws::String& value) { SetCustomPermissionsName(value); return *this;}
+
+    /**
+     * <p>The custom permissions profile associated with this user.</p>
+     */
+    inline User& WithCustomPermissionsName(Aws::String&& value) { SetCustomPermissionsName(std::move(value)); return *this;}
+
+    /**
+     * <p>The custom permissions profile associated with this user.</p>
+     */
+    inline User& WithCustomPermissionsName(const char* value) { SetCustomPermissionsName(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -374,6 +404,9 @@ namespace Model
 
     Aws::String m_principalId;
     bool m_principalIdHasBeenSet;
+
+    Aws::String m_customPermissionsName;
+    bool m_customPermissionsNameHasBeenSet;
   };
 
 } // namespace Model

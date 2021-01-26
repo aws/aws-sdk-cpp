@@ -1,17 +1,7 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  *
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  *
-  *  http://aws.amazon.com/apache2.0
-  *
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
@@ -212,6 +202,12 @@ namespace Aws
             Aws::Config::Profile GetCredentialsProfile(const Aws::String& profileName) const;
 
             /**
+             * Returns cached credentials profiles.
+             * Using copy instead of const reference to avoid reading bad contents due to thread contention.
+             */
+            Aws::Map<Aws::String, Aws::Config::Profile> GetCredentialsProfiles() const;
+
+            /**
              * Returns cached credentials with the specified profile name.
              * Using copy instead of const reference to avoid reading bad contents due to thread contention.
              */
@@ -224,28 +220,31 @@ namespace Aws
             Aws::Config::AWSConfigFileProfileConfigLoader m_configFileLoader;
         };
 
-        void AWS_CORE_API InitConfigAndCredentialsCacheManager();
+        AWS_CORE_API void InitConfigAndCredentialsCacheManager();
 
-        void AWS_CORE_API CleanupConfigAndCredentialsCacheManager();
+        AWS_CORE_API void CleanupConfigAndCredentialsCacheManager();
 
-        void AWS_CORE_API ReloadCachedConfigFile();
+        AWS_CORE_API void ReloadCachedConfigFile();
 
-        void AWS_CORE_API ReloadCachedCredentialsFile();
+        AWS_CORE_API void ReloadCachedCredentialsFile();
 
-        bool AWS_CORE_API HasCachedConfigProfile(const Aws::String& profileName);
+        AWS_CORE_API bool HasCachedConfigProfile(const Aws::String& profileName);
 
-        Aws::Config::Profile AWS_CORE_API GetCachedConfigProfile(const Aws::String& profileName);
+        AWS_CORE_API Aws::Config::Profile GetCachedConfigProfile(const Aws::String& profileName);
 
-        Aws::Map<Aws::String, Aws::Config::Profile> AWS_CORE_API GetCachedConfigProfiles();
+        AWS_CORE_API Aws::Map<Aws::String, Aws::Config::Profile> GetCachedConfigProfiles();
 
-        Aws::String AWS_CORE_API GetCachedConfigValue(const Aws::String& profileName, const Aws::String& key);
+        AWS_CORE_API Aws::String GetCachedConfigValue(const Aws::String& profileName, const Aws::String& key);
 
-        Aws::String AWS_CORE_API GetCachedConfigValue(const Aws::String& key);
+        AWS_CORE_API Aws::String GetCachedConfigValue(const Aws::String& key);
 
-        bool AWS_CORE_API HasCachedCredentialsProfile(const Aws::String &profileName);
+        AWS_CORE_API bool HasCachedCredentialsProfile(const Aws::String &profileName);
 
-        Aws::Config::Profile AWS_CORE_API GetCachedCredentialsProfile(const Aws::String& profileName);
+        AWS_CORE_API Aws::Config::Profile GetCachedCredentialsProfile(const Aws::String& profileName);
 
-        Aws::Auth::AWSCredentials AWS_CORE_API GetCachedCredentials(const Aws::String& profileName);
+        AWS_CORE_API Aws::Auth::AWSCredentials GetCachedCredentials(const Aws::String& profileName);
+
+        AWS_CORE_API Aws::Map<Aws::String, Aws::Config::Profile> GetCachedCredentialsProfiles();
+
     }
 }

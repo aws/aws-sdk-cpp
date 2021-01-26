@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -31,22 +21,29 @@
 #include <aws/eventbridge/EventBridgeEndpoint.h>
 #include <aws/eventbridge/EventBridgeErrorMarshaller.h>
 #include <aws/eventbridge/model/ActivateEventSourceRequest.h>
+#include <aws/eventbridge/model/CancelReplayRequest.h>
+#include <aws/eventbridge/model/CreateArchiveRequest.h>
 #include <aws/eventbridge/model/CreateEventBusRequest.h>
 #include <aws/eventbridge/model/CreatePartnerEventSourceRequest.h>
 #include <aws/eventbridge/model/DeactivateEventSourceRequest.h>
+#include <aws/eventbridge/model/DeleteArchiveRequest.h>
 #include <aws/eventbridge/model/DeleteEventBusRequest.h>
 #include <aws/eventbridge/model/DeletePartnerEventSourceRequest.h>
 #include <aws/eventbridge/model/DeleteRuleRequest.h>
+#include <aws/eventbridge/model/DescribeArchiveRequest.h>
 #include <aws/eventbridge/model/DescribeEventBusRequest.h>
 #include <aws/eventbridge/model/DescribeEventSourceRequest.h>
 #include <aws/eventbridge/model/DescribePartnerEventSourceRequest.h>
+#include <aws/eventbridge/model/DescribeReplayRequest.h>
 #include <aws/eventbridge/model/DescribeRuleRequest.h>
 #include <aws/eventbridge/model/DisableRuleRequest.h>
 #include <aws/eventbridge/model/EnableRuleRequest.h>
+#include <aws/eventbridge/model/ListArchivesRequest.h>
 #include <aws/eventbridge/model/ListEventBusesRequest.h>
 #include <aws/eventbridge/model/ListEventSourcesRequest.h>
 #include <aws/eventbridge/model/ListPartnerEventSourceAccountsRequest.h>
 #include <aws/eventbridge/model/ListPartnerEventSourcesRequest.h>
+#include <aws/eventbridge/model/ListReplaysRequest.h>
 #include <aws/eventbridge/model/ListRuleNamesByTargetRequest.h>
 #include <aws/eventbridge/model/ListRulesRequest.h>
 #include <aws/eventbridge/model/ListTagsForResourceRequest.h>
@@ -58,9 +55,11 @@
 #include <aws/eventbridge/model/PutTargetsRequest.h>
 #include <aws/eventbridge/model/RemovePermissionRequest.h>
 #include <aws/eventbridge/model/RemoveTargetsRequest.h>
+#include <aws/eventbridge/model/StartReplayRequest.h>
 #include <aws/eventbridge/model/TagResourceRequest.h>
 #include <aws/eventbridge/model/TestEventPatternRequest.h>
 #include <aws/eventbridge/model/UntagResourceRequest.h>
+#include <aws/eventbridge/model/UpdateArchiveRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -77,7 +76,7 @@ static const char* ALLOCATION_TAG = "EventBridgeClient";
 EventBridgeClient::EventBridgeClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<EventBridgeErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -87,7 +86,7 @@ EventBridgeClient::EventBridgeClient(const Client::ClientConfiguration& clientCo
 EventBridgeClient::EventBridgeClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<EventBridgeErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -98,7 +97,7 @@ EventBridgeClient::EventBridgeClient(const std::shared_ptr<AWSCredentialsProvide
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<EventBridgeErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -111,6 +110,7 @@ EventBridgeClient::~EventBridgeClient()
 
 void EventBridgeClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("EventBridge");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -140,15 +140,7 @@ ActivateEventSourceOutcome EventBridgeClient::ActivateEventSource(const Activate
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ActivateEventSourceOutcome(NoResult());
-  }
-  else
-  {
-    return ActivateEventSourceOutcome(outcome.GetError());
-  }
+  return ActivateEventSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ActivateEventSourceOutcomeCallable EventBridgeClient::ActivateEventSourceCallable(const ActivateEventSourceRequest& request) const
@@ -169,21 +161,67 @@ void EventBridgeClient::ActivateEventSourceAsyncHelper(const ActivateEventSource
   handler(this, request, ActivateEventSource(request), context);
 }
 
+CancelReplayOutcome EventBridgeClient::CancelReplay(const CancelReplayRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CancelReplayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CancelReplayOutcomeCallable EventBridgeClient::CancelReplayCallable(const CancelReplayRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CancelReplayOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelReplay(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EventBridgeClient::CancelReplayAsync(const CancelReplayRequest& request, const CancelReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CancelReplayAsyncHelper( request, handler, context ); } );
+}
+
+void EventBridgeClient::CancelReplayAsyncHelper(const CancelReplayRequest& request, const CancelReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CancelReplay(request), context);
+}
+
+CreateArchiveOutcome EventBridgeClient::CreateArchive(const CreateArchiveRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateArchiveOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateArchiveOutcomeCallable EventBridgeClient::CreateArchiveCallable(const CreateArchiveRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateArchiveOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateArchive(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EventBridgeClient::CreateArchiveAsync(const CreateArchiveRequest& request, const CreateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateArchiveAsyncHelper( request, handler, context ); } );
+}
+
+void EventBridgeClient::CreateArchiveAsyncHelper(const CreateArchiveRequest& request, const CreateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateArchive(request), context);
+}
+
 CreateEventBusOutcome EventBridgeClient::CreateEventBus(const CreateEventBusRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateEventBusOutcome(CreateEventBusResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateEventBusOutcome(outcome.GetError());
-  }
+  return CreateEventBusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateEventBusOutcomeCallable EventBridgeClient::CreateEventBusCallable(const CreateEventBusRequest& request) const
@@ -210,15 +248,7 @@ CreatePartnerEventSourceOutcome EventBridgeClient::CreatePartnerEventSource(cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreatePartnerEventSourceOutcome(CreatePartnerEventSourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreatePartnerEventSourceOutcome(outcome.GetError());
-  }
+  return CreatePartnerEventSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreatePartnerEventSourceOutcomeCallable EventBridgeClient::CreatePartnerEventSourceCallable(const CreatePartnerEventSourceRequest& request) const
@@ -245,15 +275,7 @@ DeactivateEventSourceOutcome EventBridgeClient::DeactivateEventSource(const Deac
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeactivateEventSourceOutcome(NoResult());
-  }
-  else
-  {
-    return DeactivateEventSourceOutcome(outcome.GetError());
-  }
+  return DeactivateEventSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeactivateEventSourceOutcomeCallable EventBridgeClient::DeactivateEventSourceCallable(const DeactivateEventSourceRequest& request) const
@@ -274,21 +296,40 @@ void EventBridgeClient::DeactivateEventSourceAsyncHelper(const DeactivateEventSo
   handler(this, request, DeactivateEventSource(request), context);
 }
 
+DeleteArchiveOutcome EventBridgeClient::DeleteArchive(const DeleteArchiveRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteArchiveOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteArchiveOutcomeCallable EventBridgeClient::DeleteArchiveCallable(const DeleteArchiveRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteArchiveOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteArchive(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EventBridgeClient::DeleteArchiveAsync(const DeleteArchiveRequest& request, const DeleteArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteArchiveAsyncHelper( request, handler, context ); } );
+}
+
+void EventBridgeClient::DeleteArchiveAsyncHelper(const DeleteArchiveRequest& request, const DeleteArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteArchive(request), context);
+}
+
 DeleteEventBusOutcome EventBridgeClient::DeleteEventBus(const DeleteEventBusRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteEventBusOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteEventBusOutcome(outcome.GetError());
-  }
+  return DeleteEventBusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteEventBusOutcomeCallable EventBridgeClient::DeleteEventBusCallable(const DeleteEventBusRequest& request) const
@@ -315,15 +356,7 @@ DeletePartnerEventSourceOutcome EventBridgeClient::DeletePartnerEventSource(cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeletePartnerEventSourceOutcome(NoResult());
-  }
-  else
-  {
-    return DeletePartnerEventSourceOutcome(outcome.GetError());
-  }
+  return DeletePartnerEventSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeletePartnerEventSourceOutcomeCallable EventBridgeClient::DeletePartnerEventSourceCallable(const DeletePartnerEventSourceRequest& request) const
@@ -350,15 +383,7 @@ DeleteRuleOutcome EventBridgeClient::DeleteRule(const DeleteRuleRequest& request
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteRuleOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteRuleOutcome(outcome.GetError());
-  }
+  return DeleteRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteRuleOutcomeCallable EventBridgeClient::DeleteRuleCallable(const DeleteRuleRequest& request) const
@@ -379,21 +404,40 @@ void EventBridgeClient::DeleteRuleAsyncHelper(const DeleteRuleRequest& request, 
   handler(this, request, DeleteRule(request), context);
 }
 
+DescribeArchiveOutcome EventBridgeClient::DescribeArchive(const DescribeArchiveRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeArchiveOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeArchiveOutcomeCallable EventBridgeClient::DescribeArchiveCallable(const DescribeArchiveRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeArchiveOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeArchive(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EventBridgeClient::DescribeArchiveAsync(const DescribeArchiveRequest& request, const DescribeArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeArchiveAsyncHelper( request, handler, context ); } );
+}
+
+void EventBridgeClient::DescribeArchiveAsyncHelper(const DescribeArchiveRequest& request, const DescribeArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeArchive(request), context);
+}
+
 DescribeEventBusOutcome EventBridgeClient::DescribeEventBus(const DescribeEventBusRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeEventBusOutcome(DescribeEventBusResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeEventBusOutcome(outcome.GetError());
-  }
+  return DescribeEventBusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeEventBusOutcomeCallable EventBridgeClient::DescribeEventBusCallable(const DescribeEventBusRequest& request) const
@@ -420,15 +464,7 @@ DescribeEventSourceOutcome EventBridgeClient::DescribeEventSource(const Describe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeEventSourceOutcome(DescribeEventSourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeEventSourceOutcome(outcome.GetError());
-  }
+  return DescribeEventSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeEventSourceOutcomeCallable EventBridgeClient::DescribeEventSourceCallable(const DescribeEventSourceRequest& request) const
@@ -455,15 +491,7 @@ DescribePartnerEventSourceOutcome EventBridgeClient::DescribePartnerEventSource(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribePartnerEventSourceOutcome(DescribePartnerEventSourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribePartnerEventSourceOutcome(outcome.GetError());
-  }
+  return DescribePartnerEventSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribePartnerEventSourceOutcomeCallable EventBridgeClient::DescribePartnerEventSourceCallable(const DescribePartnerEventSourceRequest& request) const
@@ -484,21 +512,40 @@ void EventBridgeClient::DescribePartnerEventSourceAsyncHelper(const DescribePart
   handler(this, request, DescribePartnerEventSource(request), context);
 }
 
+DescribeReplayOutcome EventBridgeClient::DescribeReplay(const DescribeReplayRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeReplayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeReplayOutcomeCallable EventBridgeClient::DescribeReplayCallable(const DescribeReplayRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeReplayOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeReplay(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EventBridgeClient::DescribeReplayAsync(const DescribeReplayRequest& request, const DescribeReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeReplayAsyncHelper( request, handler, context ); } );
+}
+
+void EventBridgeClient::DescribeReplayAsyncHelper(const DescribeReplayRequest& request, const DescribeReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeReplay(request), context);
+}
+
 DescribeRuleOutcome EventBridgeClient::DescribeRule(const DescribeRuleRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeRuleOutcome(DescribeRuleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeRuleOutcome(outcome.GetError());
-  }
+  return DescribeRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeRuleOutcomeCallable EventBridgeClient::DescribeRuleCallable(const DescribeRuleRequest& request) const
@@ -525,15 +572,7 @@ DisableRuleOutcome EventBridgeClient::DisableRule(const DisableRuleRequest& requ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisableRuleOutcome(NoResult());
-  }
-  else
-  {
-    return DisableRuleOutcome(outcome.GetError());
-  }
+  return DisableRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisableRuleOutcomeCallable EventBridgeClient::DisableRuleCallable(const DisableRuleRequest& request) const
@@ -560,15 +599,7 @@ EnableRuleOutcome EventBridgeClient::EnableRule(const EnableRuleRequest& request
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return EnableRuleOutcome(NoResult());
-  }
-  else
-  {
-    return EnableRuleOutcome(outcome.GetError());
-  }
+  return EnableRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 EnableRuleOutcomeCallable EventBridgeClient::EnableRuleCallable(const EnableRuleRequest& request) const
@@ -589,21 +620,40 @@ void EventBridgeClient::EnableRuleAsyncHelper(const EnableRuleRequest& request, 
   handler(this, request, EnableRule(request), context);
 }
 
+ListArchivesOutcome EventBridgeClient::ListArchives(const ListArchivesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListArchivesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListArchivesOutcomeCallable EventBridgeClient::ListArchivesCallable(const ListArchivesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListArchivesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListArchives(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EventBridgeClient::ListArchivesAsync(const ListArchivesRequest& request, const ListArchivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListArchivesAsyncHelper( request, handler, context ); } );
+}
+
+void EventBridgeClient::ListArchivesAsyncHelper(const ListArchivesRequest& request, const ListArchivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListArchives(request), context);
+}
+
 ListEventBusesOutcome EventBridgeClient::ListEventBuses(const ListEventBusesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListEventBusesOutcome(ListEventBusesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListEventBusesOutcome(outcome.GetError());
-  }
+  return ListEventBusesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListEventBusesOutcomeCallable EventBridgeClient::ListEventBusesCallable(const ListEventBusesRequest& request) const
@@ -630,15 +680,7 @@ ListEventSourcesOutcome EventBridgeClient::ListEventSources(const ListEventSourc
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListEventSourcesOutcome(ListEventSourcesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListEventSourcesOutcome(outcome.GetError());
-  }
+  return ListEventSourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListEventSourcesOutcomeCallable EventBridgeClient::ListEventSourcesCallable(const ListEventSourcesRequest& request) const
@@ -665,15 +707,7 @@ ListPartnerEventSourceAccountsOutcome EventBridgeClient::ListPartnerEventSourceA
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListPartnerEventSourceAccountsOutcome(ListPartnerEventSourceAccountsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListPartnerEventSourceAccountsOutcome(outcome.GetError());
-  }
+  return ListPartnerEventSourceAccountsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListPartnerEventSourceAccountsOutcomeCallable EventBridgeClient::ListPartnerEventSourceAccountsCallable(const ListPartnerEventSourceAccountsRequest& request) const
@@ -700,15 +734,7 @@ ListPartnerEventSourcesOutcome EventBridgeClient::ListPartnerEventSources(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListPartnerEventSourcesOutcome(ListPartnerEventSourcesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListPartnerEventSourcesOutcome(outcome.GetError());
-  }
+  return ListPartnerEventSourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListPartnerEventSourcesOutcomeCallable EventBridgeClient::ListPartnerEventSourcesCallable(const ListPartnerEventSourcesRequest& request) const
@@ -729,21 +755,40 @@ void EventBridgeClient::ListPartnerEventSourcesAsyncHelper(const ListPartnerEven
   handler(this, request, ListPartnerEventSources(request), context);
 }
 
+ListReplaysOutcome EventBridgeClient::ListReplays(const ListReplaysRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListReplaysOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListReplaysOutcomeCallable EventBridgeClient::ListReplaysCallable(const ListReplaysRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListReplaysOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListReplays(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EventBridgeClient::ListReplaysAsync(const ListReplaysRequest& request, const ListReplaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListReplaysAsyncHelper( request, handler, context ); } );
+}
+
+void EventBridgeClient::ListReplaysAsyncHelper(const ListReplaysRequest& request, const ListReplaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListReplays(request), context);
+}
+
 ListRuleNamesByTargetOutcome EventBridgeClient::ListRuleNamesByTarget(const ListRuleNamesByTargetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListRuleNamesByTargetOutcome(ListRuleNamesByTargetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListRuleNamesByTargetOutcome(outcome.GetError());
-  }
+  return ListRuleNamesByTargetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListRuleNamesByTargetOutcomeCallable EventBridgeClient::ListRuleNamesByTargetCallable(const ListRuleNamesByTargetRequest& request) const
@@ -770,15 +815,7 @@ ListRulesOutcome EventBridgeClient::ListRules(const ListRulesRequest& request) c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListRulesOutcome(ListRulesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListRulesOutcome(outcome.GetError());
-  }
+  return ListRulesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListRulesOutcomeCallable EventBridgeClient::ListRulesCallable(const ListRulesRequest& request) const
@@ -805,15 +842,7 @@ ListTagsForResourceOutcome EventBridgeClient::ListTagsForResource(const ListTags
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable EventBridgeClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -840,15 +869,7 @@ ListTargetsByRuleOutcome EventBridgeClient::ListTargetsByRule(const ListTargetsB
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTargetsByRuleOutcome(ListTargetsByRuleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTargetsByRuleOutcome(outcome.GetError());
-  }
+  return ListTargetsByRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTargetsByRuleOutcomeCallable EventBridgeClient::ListTargetsByRuleCallable(const ListTargetsByRuleRequest& request) const
@@ -875,15 +896,7 @@ PutEventsOutcome EventBridgeClient::PutEvents(const PutEventsRequest& request) c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutEventsOutcome(PutEventsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutEventsOutcome(outcome.GetError());
-  }
+  return PutEventsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutEventsOutcomeCallable EventBridgeClient::PutEventsCallable(const PutEventsRequest& request) const
@@ -910,15 +923,7 @@ PutPartnerEventsOutcome EventBridgeClient::PutPartnerEvents(const PutPartnerEven
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutPartnerEventsOutcome(PutPartnerEventsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutPartnerEventsOutcome(outcome.GetError());
-  }
+  return PutPartnerEventsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutPartnerEventsOutcomeCallable EventBridgeClient::PutPartnerEventsCallable(const PutPartnerEventsRequest& request) const
@@ -945,15 +950,7 @@ PutPermissionOutcome EventBridgeClient::PutPermission(const PutPermissionRequest
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutPermissionOutcome(NoResult());
-  }
-  else
-  {
-    return PutPermissionOutcome(outcome.GetError());
-  }
+  return PutPermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutPermissionOutcomeCallable EventBridgeClient::PutPermissionCallable(const PutPermissionRequest& request) const
@@ -980,15 +977,7 @@ PutRuleOutcome EventBridgeClient::PutRule(const PutRuleRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutRuleOutcome(PutRuleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutRuleOutcome(outcome.GetError());
-  }
+  return PutRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutRuleOutcomeCallable EventBridgeClient::PutRuleCallable(const PutRuleRequest& request) const
@@ -1015,15 +1004,7 @@ PutTargetsOutcome EventBridgeClient::PutTargets(const PutTargetsRequest& request
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutTargetsOutcome(PutTargetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutTargetsOutcome(outcome.GetError());
-  }
+  return PutTargetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutTargetsOutcomeCallable EventBridgeClient::PutTargetsCallable(const PutTargetsRequest& request) const
@@ -1050,15 +1031,7 @@ RemovePermissionOutcome EventBridgeClient::RemovePermission(const RemovePermissi
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RemovePermissionOutcome(NoResult());
-  }
-  else
-  {
-    return RemovePermissionOutcome(outcome.GetError());
-  }
+  return RemovePermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RemovePermissionOutcomeCallable EventBridgeClient::RemovePermissionCallable(const RemovePermissionRequest& request) const
@@ -1085,15 +1058,7 @@ RemoveTargetsOutcome EventBridgeClient::RemoveTargets(const RemoveTargetsRequest
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RemoveTargetsOutcome(RemoveTargetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RemoveTargetsOutcome(outcome.GetError());
-  }
+  return RemoveTargetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RemoveTargetsOutcomeCallable EventBridgeClient::RemoveTargetsCallable(const RemoveTargetsRequest& request) const
@@ -1114,21 +1079,40 @@ void EventBridgeClient::RemoveTargetsAsyncHelper(const RemoveTargetsRequest& req
   handler(this, request, RemoveTargets(request), context);
 }
 
+StartReplayOutcome EventBridgeClient::StartReplay(const StartReplayRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return StartReplayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartReplayOutcomeCallable EventBridgeClient::StartReplayCallable(const StartReplayRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartReplayOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartReplay(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EventBridgeClient::StartReplayAsync(const StartReplayRequest& request, const StartReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartReplayAsyncHelper( request, handler, context ); } );
+}
+
+void EventBridgeClient::StartReplayAsyncHelper(const StartReplayRequest& request, const StartReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartReplay(request), context);
+}
+
 TagResourceOutcome EventBridgeClient::TagResource(const TagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable EventBridgeClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -1155,15 +1139,7 @@ TestEventPatternOutcome EventBridgeClient::TestEventPattern(const TestEventPatte
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TestEventPatternOutcome(TestEventPatternResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TestEventPatternOutcome(outcome.GetError());
-  }
+  return TestEventPatternOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TestEventPatternOutcomeCallable EventBridgeClient::TestEventPatternCallable(const TestEventPatternRequest& request) const
@@ -1190,15 +1166,7 @@ UntagResourceOutcome EventBridgeClient::UntagResource(const UntagResourceRequest
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable EventBridgeClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -1217,5 +1185,32 @@ void EventBridgeClient::UntagResourceAsync(const UntagResourceRequest& request, 
 void EventBridgeClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdateArchiveOutcome EventBridgeClient::UpdateArchive(const UpdateArchiveRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateArchiveOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateArchiveOutcomeCallable EventBridgeClient::UpdateArchiveCallable(const UpdateArchiveRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateArchiveOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateArchive(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EventBridgeClient::UpdateArchiveAsync(const UpdateArchiveRequest& request, const UpdateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateArchiveAsyncHelper( request, handler, context ); } );
+}
+
+void EventBridgeClient::UpdateArchiveAsyncHelper(const UpdateArchiveRequest& request, const UpdateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateArchive(request), context);
 }
 

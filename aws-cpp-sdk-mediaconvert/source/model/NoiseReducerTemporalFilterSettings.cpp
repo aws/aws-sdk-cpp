@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/NoiseReducerTemporalFilterSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,6 +21,8 @@ namespace Model
 NoiseReducerTemporalFilterSettings::NoiseReducerTemporalFilterSettings() : 
     m_aggressiveMode(0),
     m_aggressiveModeHasBeenSet(false),
+    m_postTemporalSharpening(NoiseFilterPostTemporalSharpening::NOT_SET),
+    m_postTemporalSharpeningHasBeenSet(false),
     m_speed(0),
     m_speedHasBeenSet(false),
     m_strength(0),
@@ -41,6 +33,8 @@ NoiseReducerTemporalFilterSettings::NoiseReducerTemporalFilterSettings() :
 NoiseReducerTemporalFilterSettings::NoiseReducerTemporalFilterSettings(JsonView jsonValue) : 
     m_aggressiveMode(0),
     m_aggressiveModeHasBeenSet(false),
+    m_postTemporalSharpening(NoiseFilterPostTemporalSharpening::NOT_SET),
+    m_postTemporalSharpeningHasBeenSet(false),
     m_speed(0),
     m_speedHasBeenSet(false),
     m_strength(0),
@@ -56,6 +50,13 @@ NoiseReducerTemporalFilterSettings& NoiseReducerTemporalFilterSettings::operator
     m_aggressiveMode = jsonValue.GetInteger("aggressiveMode");
 
     m_aggressiveModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("postTemporalSharpening"))
+  {
+    m_postTemporalSharpening = NoiseFilterPostTemporalSharpeningMapper::GetNoiseFilterPostTemporalSharpeningForName(jsonValue.GetString("postTemporalSharpening"));
+
+    m_postTemporalSharpeningHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("speed"))
@@ -83,6 +84,11 @@ JsonValue NoiseReducerTemporalFilterSettings::Jsonize() const
   {
    payload.WithInteger("aggressiveMode", m_aggressiveMode);
 
+  }
+
+  if(m_postTemporalSharpeningHasBeenSet)
+  {
+   payload.WithString("postTemporalSharpening", NoiseFilterPostTemporalSharpeningMapper::GetNameForNoiseFilterPostTemporalSharpening(m_postTemporalSharpening));
   }
 
   if(m_speedHasBeenSet)

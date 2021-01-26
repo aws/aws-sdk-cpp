@@ -387,7 +387,8 @@
         {"shape":"InvalidScheduleFault"},
         {"shape":"SnapshotScheduleQuotaExceededFault"},
         {"shape":"TagLimitExceededFault"},
-        {"shape":"ScheduleDefinitionTypeUnsupportedFault"}
+        {"shape":"ScheduleDefinitionTypeUnsupportedFault"},
+        {"shape":"InvalidTagFault"}
       ],
       "documentation":"<p>Create a snapshot schedule that can be associated to a cluster and which overrides the default system backup schedule. </p>"
     },
@@ -401,7 +402,8 @@
       "errors":[
         {"shape":"TagLimitExceededFault"},
         {"shape":"ResourceNotFoundFault"},
-        {"shape":"InvalidTagFault"}
+        {"shape":"InvalidTagFault"},
+        {"shape":"InvalidClusterStateFault"}
       ],
       "documentation":"<p>Adds tags to a cluster.</p> <p>A resource can have up to 50 tags. If you try to create more than 50 tags for a resource, you will receive an error and the attempt will fail.</p> <p>If you specify a key that already exists for the resource, the value for that key will be updated with the new value.</p>"
     },
@@ -1538,7 +1540,7 @@
         {"shape":"UnauthorizedOperation"},
         {"shape":"LimitExceededFault"}
       ],
-      "documentation":"<p>Changes the size of the cluster. You can change the cluster's type, or change the number or type of nodes. The default behavior is to use the elastic resize method. With an elastic resize, your cluster is available for read and write operations more quickly than with the classic resize method. </p> <p>Elastic resize operations have the following restrictions:</p> <ul> <li> <p>You can only resize clusters of the following types:</p> <ul> <li> <p>dc2.large</p> </li> <li> <p>dc2.8xlarge</p> </li> <li> <p>ds2.xlarge</p> </li> <li> <p>ds2.8xlarge</p> </li> <li> <p>ra3.4xlarge</p> </li> <li> <p>ra3.16xlarge</p> </li> </ul> </li> <li> <p>The type of nodes that you add must match the node type for the cluster.</p> </li> </ul>"
+      "documentation":"<p>Changes the size of the cluster. You can change the cluster's type, or change the number or type of nodes. The default behavior is to use the elastic resize method. With an elastic resize, your cluster is available for read and write operations more quickly than with the classic resize method. </p> <p>Elastic resize operations have the following restrictions:</p> <ul> <li> <p>You can only resize clusters of the following types:</p> <ul> <li> <p>dc1.large (if your cluster is in a VPC)</p> </li> <li> <p>dc1.8xlarge (if your cluster is in a VPC)</p> </li> <li> <p>dc2.large</p> </li> <li> <p>dc2.8xlarge</p> </li> <li> <p>ds2.xlarge</p> </li> <li> <p>ds2.8xlarge</p> </li> <li> <p>ra3.xlplus</p> </li> <li> <p>ra3.4xlarge</p> </li> <li> <p>ra3.16xlarge</p> </li> </ul> </li> <li> <p>The type of nodes that you add must match the node type for the cluster.</p> </li> </ul>"
     },
     "RestoreFromClusterSnapshot":{
       "name":"RestoreFromClusterSnapshot",
@@ -1615,7 +1617,8 @@
       },
       "errors":[
         {"shape":"ClusterNotFoundFault"},
-        {"shape":"InvalidClusterStateFault"}
+        {"shape":"InvalidClusterStateFault"},
+        {"shape":"InsufficientClusterCapacityFault"}
       ],
       "documentation":"<p>Resumes a paused cluster.</p>"
     },
@@ -2220,6 +2223,14 @@
         "ResizeInfo":{
           "shape":"ResizeInfo",
           "documentation":"<p>Returns the following:</p> <ul> <li> <p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p> </li> <li> <p>ResizeType: Returns ClassicResize</p> </li> </ul>"
+        },
+        "AvailabilityZoneRelocationStatus":{
+          "shape":"String",
+          "documentation":"<p>Describes the status of the Availability Zone relocation operation.</p>"
+        },
+        "ClusterNamespaceArn":{
+          "shape":"String",
+          "documentation":"<p>The namespace Amazon Resource Name (ARN) of the cluster.</p>"
         }
       },
       "documentation":"<p>Describes a cluster.</p>",
@@ -2935,7 +2946,7 @@
         },
         "NodeType":{
           "shape":"String",
-          "documentation":"<p>The node type to be provisioned for the cluster. For information about node types, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes\"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>"
+          "documentation":"<p>The node type to be provisioned for the cluster. For information about node types, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes\"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>"
         },
         "MasterUsername":{
           "shape":"String",
@@ -3040,6 +3051,10 @@
         "SnapshotScheduleIdentifier":{
           "shape":"String",
           "documentation":"<p>A unique identifier for the snapshot schedule.</p>"
+        },
+        "AvailabilityZoneRelocation":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is created.</p>"
         }
       },
       "documentation":"<p/>"
@@ -4593,6 +4608,10 @@
         "Port":{
           "shape":"Integer",
           "documentation":"<p>The port that the database engine is listening on.</p>"
+        },
+        "VpcEndpoints":{
+          "shape":"SpartaProxyVpcEndpointList",
+          "documentation":"<p>Describes a connection endpoint.</p>"
         }
       },
       "documentation":"<p>Describes a connection endpoint.</p>"
@@ -5610,7 +5629,7 @@
         },
         "NodeType":{
           "shape":"String",
-          "documentation":"<p>The new node type of the cluster. If you specify a new node type, you must also specify the number of nodes parameter.</p> <p> For more information about resizing clusters, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html\">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p> <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>"
+          "documentation":"<p>The new node type of the cluster. If you specify a new node type, you must also specify the number of nodes parameter.</p> <p> For more information about resizing clusters, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html\">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p> <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>"
         },
         "NumberOfNodes":{
           "shape":"IntegerOptional",
@@ -5682,11 +5701,23 @@
         },
         "Encrypted":{
           "shape":"BooleanOptional",
-          "documentation":"<p>Indicates whether the cluster is encrypted. If the value is encrypted (true) and you provide a value for the <code>KmsKeyId</code> parameter, we encrypt the cluster with the provided <code>KmsKeyId</code>. If you don't provide a <code>KmsKeyId</code>, we encrypt with the default key. In the China region we use legacy encryption if you specify that the cluster is encrypted.</p> <p>If the value is not encrypted (false), then the cluster is decrypted. </p>"
+          "documentation":"<p>Indicates whether the cluster is encrypted. If the value is encrypted (true) and you provide a value for the <code>KmsKeyId</code> parameter, we encrypt the cluster with the provided <code>KmsKeyId</code>. If you don't provide a <code>KmsKeyId</code>, we encrypt with the default key. </p> <p>If the value is not encrypted (false), then the cluster is decrypted. </p>"
         },
         "KmsKeyId":{
           "shape":"String",
           "documentation":"<p>The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.</p>"
+        },
+        "AvailabilityZoneRelocation":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster modification is complete.</p>"
+        },
+        "AvailabilityZone":{
+          "shape":"String",
+          "documentation":"<p>The option to initiate relocation for an Amazon Redshift cluster to the target Availability Zone.</p>"
+        },
+        "Port":{
+          "shape":"IntegerOptional",
+          "documentation":"<p>The option to change the port of an Amazon Redshift cluster.</p>"
         }
       },
       "documentation":"<p/>"
@@ -5707,7 +5738,7 @@
           "documentation":"<p>An array of parameters to be modified. A maximum of 20 parameters can be modified in a single request.</p> <p>For each parameter to be modified, you must supply at least the parameter name and parameter value; other name-value pairs of the parameter are optional.</p> <p>For the workload management (WLM) configuration, you must supply all the name-value pairs in the wlm_json_configuration parameter.</p>"
         }
       },
-      "documentation":"<p/>"
+      "documentation":"<p>Describes a modify cluster parameter group operation. </p>"
     },
     "ModifyClusterResult":{
       "type":"structure",
@@ -6155,7 +6186,8 @@
           "shape":"String",
           "documentation":"<p>The identifier of the cluster to be paused.</p>"
         }
-      }
+      },
+      "documentation":"<p>Describes a pause cluster operation. For example, a scheduled action to run the <code>PauseCluster</code> API operation. </p>"
     },
     "PauseClusterResult":{
       "type":"structure",
@@ -6212,7 +6244,7 @@
         },
         "EncryptionType":{
           "shape":"String",
-          "documentation":"<p>The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values are None, and Legacy. </p>"
+          "documentation":"<p>The encryption type for a cluster. Possible values are: KMS and None. </p>"
         }
       },
       "documentation":"<p>Describes cluster attributes that are in a pending state. A change to one or more the attributes was requested and is in progress or will be applied.</p>"
@@ -6524,14 +6556,15 @@
           "documentation":"<p>The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.</p>"
         },
         "NumberOfNodes":{
-          "shape":"Integer",
-          "documentation":"<p>The new number of nodes for the cluster.</p>"
+          "shape":"IntegerOptional",
+          "documentation":"<p>The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.</p>"
         },
         "Classic":{
           "shape":"BooleanOptional",
           "documentation":"<p>A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. </p>"
         }
-      }
+      },
+      "documentation":"<p>Describes a resize cluster operation. For example, a scheduled action to run the <code>ResizeCluster</code> API operation. </p>"
     },
     "ResizeClusterResult":{
       "type":"structure",
@@ -6626,7 +6659,7 @@
         },
         "TargetEncryptionType":{
           "shape":"String",
-          "documentation":"<p>The type of encryption for the cluster after the resize is complete.</p> <p>Possible values are <code>KMS</code> and <code>None</code>. In the China region possible values are: <code>Legacy</code> and <code>None</code>.</p>"
+          "documentation":"<p>The type of encryption for the cluster after the resize is complete.</p> <p>Possible values are <code>KMS</code> and <code>None</code>. </p>"
         },
         "DataTransferProgressPercent":{
           "shape":"DoubleOptional",
@@ -6764,6 +6797,10 @@
         "NumberOfNodes":{
           "shape":"IntegerOptional",
           "documentation":"<p>The number of nodes specified when provisioning the restored cluster.</p>"
+        },
+        "AvailabilityZoneRelocation":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is restored.</p>"
         }
       },
       "documentation":"<p/>"
@@ -6863,7 +6900,8 @@
           "shape":"String",
           "documentation":"<p>The identifier of the cluster to be resumed.</p>"
         }
-      }
+      },
+      "documentation":"<p>Describes a resume cluster operation. For example, a scheduled action to run the <code>ResumeCluster</code> API operation. </p>"
     },
     "ResumeClusterResult":{
       "type":"structure",
@@ -7264,6 +7302,10 @@
         "ClusterVersion":{
           "shape":"String",
           "documentation":"<p>The version ID of the Amazon Redshift engine that is running on the cluster.</p>"
+        },
+        "EngineFullVersion":{
+          "shape":"String",
+          "documentation":"<p>The cluster version of the cluster used to create the snapshot. For example, 1.0.15503. </p>"
         },
         "SnapshotType":{
           "shape":"String",
@@ -7682,7 +7724,27 @@
         "scheduled-action"
       ]
     },
-    "String":{"type":"string"},
+    "SpartaProxyVpcEndpoint":{
+      "type":"structure",
+      "members":{
+        "VpcEndpointId":{
+          "shape":"String",
+          "documentation":"<p>The connection endpoint ID for connecting an Amazon Redshift cluster through the proxy.</p>"
+        }
+      },
+      "documentation":"<p>The connection endpoint for connecting an Amazon Redshift cluster through the proxy.</p>"
+    },
+    "SpartaProxyVpcEndpointList":{
+      "type":"list",
+      "member":{
+        "shape":"SpartaProxyVpcEndpoint",
+        "locationName":"SpartaProxyVpcEndpoint"
+      }
+    },
+    "String":{
+      "type":"string",
+      "max":2147483647
+    },
     "Subnet":{
       "type":"structure",
       "members":{

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
@@ -35,9 +25,11 @@ namespace Model
 
   /**
    * <p>The Amazon Pinpoint analytics configuration for collecting metrics for a user
-   * pool.</p> <note> <p>Cognito User Pools only supports sending events to Amazon
-   * Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of
-   * the region in which the user pool resides.</p> </note><p><h3>See Also:</h3>   <a
+   * pool.</p>  <p>In regions where Pinpoint is not available, Cognito User
+   * Pools only supports sending events to Amazon Pinpoint projects in us-east-1. In
+   * regions where Pinpoint is available, Cognito User Pools will support sending
+   * events to Amazon Pinpoint projects within that same region. </p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AnalyticsConfigurationType">AWS
    * API Reference</a></p>
    */
@@ -89,6 +81,71 @@ namespace Model
      * <p>The application ID for an Amazon Pinpoint application.</p>
      */
     inline AnalyticsConfigurationType& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
+     * Amazon Pinpoint project for Pinpoint integration with the chosen User Pool
+     * Client. Amazon Cognito publishes events to the pinpoint project declared by the
+     * app ARN.</p>
+     */
+    inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
+     * Amazon Pinpoint project for Pinpoint integration with the chosen User Pool
+     * Client. Amazon Cognito publishes events to the pinpoint project declared by the
+     * app ARN.</p>
+     */
+    inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
+     * Amazon Pinpoint project for Pinpoint integration with the chosen User Pool
+     * Client. Amazon Cognito publishes events to the pinpoint project declared by the
+     * app ARN.</p>
+     */
+    inline void SetApplicationArn(const Aws::String& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
+     * Amazon Pinpoint project for Pinpoint integration with the chosen User Pool
+     * Client. Amazon Cognito publishes events to the pinpoint project declared by the
+     * app ARN.</p>
+     */
+    inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
+     * Amazon Pinpoint project for Pinpoint integration with the chosen User Pool
+     * Client. Amazon Cognito publishes events to the pinpoint project declared by the
+     * app ARN.</p>
+     */
+    inline void SetApplicationArn(const char* value) { m_applicationArnHasBeenSet = true; m_applicationArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
+     * Amazon Pinpoint project for Pinpoint integration with the chosen User Pool
+     * Client. Amazon Cognito publishes events to the pinpoint project declared by the
+     * app ARN.</p>
+     */
+    inline AnalyticsConfigurationType& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
+     * Amazon Pinpoint project for Pinpoint integration with the chosen User Pool
+     * Client. Amazon Cognito publishes events to the pinpoint project declared by the
+     * app ARN.</p>
+     */
+    inline AnalyticsConfigurationType& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
+     * Amazon Pinpoint project for Pinpoint integration with the chosen User Pool
+     * Client. Amazon Cognito publishes events to the pinpoint project declared by the
+     * app ARN.</p>
+     */
+    inline AnalyticsConfigurationType& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
 
 
     /**
@@ -209,6 +266,9 @@ namespace Model
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
+    Aws::String m_applicationArn;
+    bool m_applicationArnHasBeenSet;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;

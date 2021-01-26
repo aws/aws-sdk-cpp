@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/snowball/Snowball_EXPORTS.h>
@@ -24,6 +14,7 @@
 #include <aws/snowball/model/Notification.h>
 #include <aws/snowball/model/SnowballType.h>
 #include <aws/snowball/model/TaxDocuments.h>
+#include <aws/snowball/model/DeviceConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -205,42 +196,42 @@ namespace Model
 
 
     /**
-     * <p>The ID for the address that you want the Snowball shipped to.</p>
+     * <p>The ID for the address that you want the Snow device shipped to.</p>
      */
     inline const Aws::String& GetAddressId() const{ return m_addressId; }
 
     /**
-     * <p>The ID for the address that you want the Snowball shipped to.</p>
+     * <p>The ID for the address that you want the Snow device shipped to.</p>
      */
     inline bool AddressIdHasBeenSet() const { return m_addressIdHasBeenSet; }
 
     /**
-     * <p>The ID for the address that you want the Snowball shipped to.</p>
+     * <p>The ID for the address that you want the Snow device shipped to.</p>
      */
     inline void SetAddressId(const Aws::String& value) { m_addressIdHasBeenSet = true; m_addressId = value; }
 
     /**
-     * <p>The ID for the address that you want the Snowball shipped to.</p>
+     * <p>The ID for the address that you want the Snow device shipped to.</p>
      */
     inline void SetAddressId(Aws::String&& value) { m_addressIdHasBeenSet = true; m_addressId = std::move(value); }
 
     /**
-     * <p>The ID for the address that you want the Snowball shipped to.</p>
+     * <p>The ID for the address that you want the Snow device shipped to.</p>
      */
     inline void SetAddressId(const char* value) { m_addressIdHasBeenSet = true; m_addressId.assign(value); }
 
     /**
-     * <p>The ID for the address that you want the Snowball shipped to.</p>
+     * <p>The ID for the address that you want the Snow device shipped to.</p>
      */
     inline CreateJobRequest& WithAddressId(const Aws::String& value) { SetAddressId(value); return *this;}
 
     /**
-     * <p>The ID for the address that you want the Snowball shipped to.</p>
+     * <p>The ID for the address that you want the Snow device shipped to.</p>
      */
     inline CreateJobRequest& WithAddressId(Aws::String&& value) { SetAddressId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the address that you want the Snowball shipped to.</p>
+     * <p>The ID for the address that you want the Snow device shipped to.</p>
      */
     inline CreateJobRequest& WithAddressId(const char* value) { SetAddressId(value); return *this;}
 
@@ -377,42 +368,42 @@ namespace Model
 
     /**
      * <p>If your job is being created in one of the US regions, you have the option of
-     * specifying what size Snowball you'd like for this job. In all other regions,
+     * specifying what size Snow device you'd like for this job. In all other regions,
      * Snowballs come with 80 TB in storage capacity.</p>
      */
     inline const SnowballCapacity& GetSnowballCapacityPreference() const{ return m_snowballCapacityPreference; }
 
     /**
      * <p>If your job is being created in one of the US regions, you have the option of
-     * specifying what size Snowball you'd like for this job. In all other regions,
+     * specifying what size Snow device you'd like for this job. In all other regions,
      * Snowballs come with 80 TB in storage capacity.</p>
      */
     inline bool SnowballCapacityPreferenceHasBeenSet() const { return m_snowballCapacityPreferenceHasBeenSet; }
 
     /**
      * <p>If your job is being created in one of the US regions, you have the option of
-     * specifying what size Snowball you'd like for this job. In all other regions,
+     * specifying what size Snow device you'd like for this job. In all other regions,
      * Snowballs come with 80 TB in storage capacity.</p>
      */
     inline void SetSnowballCapacityPreference(const SnowballCapacity& value) { m_snowballCapacityPreferenceHasBeenSet = true; m_snowballCapacityPreference = value; }
 
     /**
      * <p>If your job is being created in one of the US regions, you have the option of
-     * specifying what size Snowball you'd like for this job. In all other regions,
+     * specifying what size Snow device you'd like for this job. In all other regions,
      * Snowballs come with 80 TB in storage capacity.</p>
      */
     inline void SetSnowballCapacityPreference(SnowballCapacity&& value) { m_snowballCapacityPreferenceHasBeenSet = true; m_snowballCapacityPreference = std::move(value); }
 
     /**
      * <p>If your job is being created in one of the US regions, you have the option of
-     * specifying what size Snowball you'd like for this job. In all other regions,
+     * specifying what size Snow device you'd like for this job. In all other regions,
      * Snowballs come with 80 TB in storage capacity.</p>
      */
     inline CreateJobRequest& WithSnowballCapacityPreference(const SnowballCapacity& value) { SetSnowballCapacityPreference(value); return *this;}
 
     /**
      * <p>If your job is being created in one of the US regions, you have the option of
-     * specifying what size Snowball you'd like for this job. In all other regions,
+     * specifying what size Snow device you'd like for this job. In all other regions,
      * Snowballs come with 80 TB in storage capacity.</p>
      */
     inline CreateJobRequest& WithSnowballCapacityPreference(SnowballCapacity&& value) { SetSnowballCapacityPreference(std::move(value)); return *this;}
@@ -420,91 +411,91 @@ namespace Model
 
     /**
      * <p>The shipping speed for this job. This speed doesn't dictate how soon you'll
-     * get the Snowball, rather it represents how quickly the Snowball moves to its
-     * destination while in transit. Regional shipping speeds are as follows:</p> <ul>
-     * <li> <p>In Australia, you have access to express shipping. Typically, Snowballs
-     * shipped express are delivered in about a day.</p> </li> <li> <p>In the European
-     * Union (EU), you have access to express shipping. Typically, Snowballs shipped
-     * express are delivered in about a day. In addition, most countries in the EU have
-     * access to standard shipping, which typically takes less than a week, one
-     * way.</p> </li> <li> <p>In India, Snowballs are delivered in one to seven
-     * days.</p> </li> <li> <p>In the US, you have access to one-day shipping and
-     * two-day shipping.</p> </li> </ul>
+     * get the Snow device, rather it represents how quickly the Snow device moves to
+     * its destination while in transit. Regional shipping speeds are as follows:</p>
+     * <ul> <li> <p>In Australia, you have access to express shipping. Typically, Snow
+     * devices shipped express are delivered in about a day.</p> </li> <li> <p>In the
+     * European Union (EU), you have access to express shipping. Typically, Snow
+     * devices shipped express are delivered in about a day. In addition, most
+     * countries in the EU have access to standard shipping, which typically takes less
+     * than a week, one way.</p> </li> <li> <p>In India, Snow devices are delivered in
+     * one to seven days.</p> </li> <li> <p>In the US, you have access to one-day
+     * shipping and two-day shipping.</p> </li> </ul>
      */
     inline const ShippingOption& GetShippingOption() const{ return m_shippingOption; }
 
     /**
      * <p>The shipping speed for this job. This speed doesn't dictate how soon you'll
-     * get the Snowball, rather it represents how quickly the Snowball moves to its
-     * destination while in transit. Regional shipping speeds are as follows:</p> <ul>
-     * <li> <p>In Australia, you have access to express shipping. Typically, Snowballs
-     * shipped express are delivered in about a day.</p> </li> <li> <p>In the European
-     * Union (EU), you have access to express shipping. Typically, Snowballs shipped
-     * express are delivered in about a day. In addition, most countries in the EU have
-     * access to standard shipping, which typically takes less than a week, one
-     * way.</p> </li> <li> <p>In India, Snowballs are delivered in one to seven
-     * days.</p> </li> <li> <p>In the US, you have access to one-day shipping and
-     * two-day shipping.</p> </li> </ul>
+     * get the Snow device, rather it represents how quickly the Snow device moves to
+     * its destination while in transit. Regional shipping speeds are as follows:</p>
+     * <ul> <li> <p>In Australia, you have access to express shipping. Typically, Snow
+     * devices shipped express are delivered in about a day.</p> </li> <li> <p>In the
+     * European Union (EU), you have access to express shipping. Typically, Snow
+     * devices shipped express are delivered in about a day. In addition, most
+     * countries in the EU have access to standard shipping, which typically takes less
+     * than a week, one way.</p> </li> <li> <p>In India, Snow devices are delivered in
+     * one to seven days.</p> </li> <li> <p>In the US, you have access to one-day
+     * shipping and two-day shipping.</p> </li> </ul>
      */
     inline bool ShippingOptionHasBeenSet() const { return m_shippingOptionHasBeenSet; }
 
     /**
      * <p>The shipping speed for this job. This speed doesn't dictate how soon you'll
-     * get the Snowball, rather it represents how quickly the Snowball moves to its
-     * destination while in transit. Regional shipping speeds are as follows:</p> <ul>
-     * <li> <p>In Australia, you have access to express shipping. Typically, Snowballs
-     * shipped express are delivered in about a day.</p> </li> <li> <p>In the European
-     * Union (EU), you have access to express shipping. Typically, Snowballs shipped
-     * express are delivered in about a day. In addition, most countries in the EU have
-     * access to standard shipping, which typically takes less than a week, one
-     * way.</p> </li> <li> <p>In India, Snowballs are delivered in one to seven
-     * days.</p> </li> <li> <p>In the US, you have access to one-day shipping and
-     * two-day shipping.</p> </li> </ul>
+     * get the Snow device, rather it represents how quickly the Snow device moves to
+     * its destination while in transit. Regional shipping speeds are as follows:</p>
+     * <ul> <li> <p>In Australia, you have access to express shipping. Typically, Snow
+     * devices shipped express are delivered in about a day.</p> </li> <li> <p>In the
+     * European Union (EU), you have access to express shipping. Typically, Snow
+     * devices shipped express are delivered in about a day. In addition, most
+     * countries in the EU have access to standard shipping, which typically takes less
+     * than a week, one way.</p> </li> <li> <p>In India, Snow devices are delivered in
+     * one to seven days.</p> </li> <li> <p>In the US, you have access to one-day
+     * shipping and two-day shipping.</p> </li> </ul>
      */
     inline void SetShippingOption(const ShippingOption& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = value; }
 
     /**
      * <p>The shipping speed for this job. This speed doesn't dictate how soon you'll
-     * get the Snowball, rather it represents how quickly the Snowball moves to its
-     * destination while in transit. Regional shipping speeds are as follows:</p> <ul>
-     * <li> <p>In Australia, you have access to express shipping. Typically, Snowballs
-     * shipped express are delivered in about a day.</p> </li> <li> <p>In the European
-     * Union (EU), you have access to express shipping. Typically, Snowballs shipped
-     * express are delivered in about a day. In addition, most countries in the EU have
-     * access to standard shipping, which typically takes less than a week, one
-     * way.</p> </li> <li> <p>In India, Snowballs are delivered in one to seven
-     * days.</p> </li> <li> <p>In the US, you have access to one-day shipping and
-     * two-day shipping.</p> </li> </ul>
+     * get the Snow device, rather it represents how quickly the Snow device moves to
+     * its destination while in transit. Regional shipping speeds are as follows:</p>
+     * <ul> <li> <p>In Australia, you have access to express shipping. Typically, Snow
+     * devices shipped express are delivered in about a day.</p> </li> <li> <p>In the
+     * European Union (EU), you have access to express shipping. Typically, Snow
+     * devices shipped express are delivered in about a day. In addition, most
+     * countries in the EU have access to standard shipping, which typically takes less
+     * than a week, one way.</p> </li> <li> <p>In India, Snow devices are delivered in
+     * one to seven days.</p> </li> <li> <p>In the US, you have access to one-day
+     * shipping and two-day shipping.</p> </li> </ul>
      */
     inline void SetShippingOption(ShippingOption&& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = std::move(value); }
 
     /**
      * <p>The shipping speed for this job. This speed doesn't dictate how soon you'll
-     * get the Snowball, rather it represents how quickly the Snowball moves to its
-     * destination while in transit. Regional shipping speeds are as follows:</p> <ul>
-     * <li> <p>In Australia, you have access to express shipping. Typically, Snowballs
-     * shipped express are delivered in about a day.</p> </li> <li> <p>In the European
-     * Union (EU), you have access to express shipping. Typically, Snowballs shipped
-     * express are delivered in about a day. In addition, most countries in the EU have
-     * access to standard shipping, which typically takes less than a week, one
-     * way.</p> </li> <li> <p>In India, Snowballs are delivered in one to seven
-     * days.</p> </li> <li> <p>In the US, you have access to one-day shipping and
-     * two-day shipping.</p> </li> </ul>
+     * get the Snow device, rather it represents how quickly the Snow device moves to
+     * its destination while in transit. Regional shipping speeds are as follows:</p>
+     * <ul> <li> <p>In Australia, you have access to express shipping. Typically, Snow
+     * devices shipped express are delivered in about a day.</p> </li> <li> <p>In the
+     * European Union (EU), you have access to express shipping. Typically, Snow
+     * devices shipped express are delivered in about a day. In addition, most
+     * countries in the EU have access to standard shipping, which typically takes less
+     * than a week, one way.</p> </li> <li> <p>In India, Snow devices are delivered in
+     * one to seven days.</p> </li> <li> <p>In the US, you have access to one-day
+     * shipping and two-day shipping.</p> </li> </ul>
      */
     inline CreateJobRequest& WithShippingOption(const ShippingOption& value) { SetShippingOption(value); return *this;}
 
     /**
      * <p>The shipping speed for this job. This speed doesn't dictate how soon you'll
-     * get the Snowball, rather it represents how quickly the Snowball moves to its
-     * destination while in transit. Regional shipping speeds are as follows:</p> <ul>
-     * <li> <p>In Australia, you have access to express shipping. Typically, Snowballs
-     * shipped express are delivered in about a day.</p> </li> <li> <p>In the European
-     * Union (EU), you have access to express shipping. Typically, Snowballs shipped
-     * express are delivered in about a day. In addition, most countries in the EU have
-     * access to standard shipping, which typically takes less than a week, one
-     * way.</p> </li> <li> <p>In India, Snowballs are delivered in one to seven
-     * days.</p> </li> <li> <p>In the US, you have access to one-day shipping and
-     * two-day shipping.</p> </li> </ul>
+     * get the Snow device, rather it represents how quickly the Snow device moves to
+     * its destination while in transit. Regional shipping speeds are as follows:</p>
+     * <ul> <li> <p>In Australia, you have access to express shipping. Typically, Snow
+     * devices shipped express are delivered in about a day.</p> </li> <li> <p>In the
+     * European Union (EU), you have access to express shipping. Typically, Snow
+     * devices shipped express are delivered in about a day. In addition, most
+     * countries in the EU have access to standard shipping, which typically takes less
+     * than a week, one way.</p> </li> <li> <p>In India, Snow devices are delivered in
+     * one to seven days.</p> </li> <li> <p>In the US, you have access to one-day
+     * shipping and two-day shipping.</p> </li> </ul>
      */
     inline CreateJobRequest& WithShippingOption(ShippingOption&& value) { SetShippingOption(std::move(value)); return *this;}
 
@@ -604,54 +595,66 @@ namespace Model
 
 
     /**
-     * <p>The type of AWS Snowball device to use for this job. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p> <p>For more
-     * information, see <a
+     * <p>The type of AWS Snow Family device to use for this job. </p>  <p>For
+     * cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code>
+     * device type.</p>  <p>The type of AWS Snow device to use for this job.
+     * Currently, the only supported device type for cluster jobs is
+     * <code>EDGE</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
      * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
      */
     inline const SnowballType& GetSnowballType() const{ return m_snowballType; }
 
     /**
-     * <p>The type of AWS Snowball device to use for this job. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p> <p>For more
-     * information, see <a
+     * <p>The type of AWS Snow Family device to use for this job. </p>  <p>For
+     * cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code>
+     * device type.</p>  <p>The type of AWS Snow device to use for this job.
+     * Currently, the only supported device type for cluster jobs is
+     * <code>EDGE</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
      * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
      */
     inline bool SnowballTypeHasBeenSet() const { return m_snowballTypeHasBeenSet; }
 
     /**
-     * <p>The type of AWS Snowball device to use for this job. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p> <p>For more
-     * information, see <a
+     * <p>The type of AWS Snow Family device to use for this job. </p>  <p>For
+     * cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code>
+     * device type.</p>  <p>The type of AWS Snow device to use for this job.
+     * Currently, the only supported device type for cluster jobs is
+     * <code>EDGE</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
      * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
      */
     inline void SetSnowballType(const SnowballType& value) { m_snowballTypeHasBeenSet = true; m_snowballType = value; }
 
     /**
-     * <p>The type of AWS Snowball device to use for this job. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p> <p>For more
-     * information, see <a
+     * <p>The type of AWS Snow Family device to use for this job. </p>  <p>For
+     * cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code>
+     * device type.</p>  <p>The type of AWS Snow device to use for this job.
+     * Currently, the only supported device type for cluster jobs is
+     * <code>EDGE</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
      * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
      */
     inline void SetSnowballType(SnowballType&& value) { m_snowballTypeHasBeenSet = true; m_snowballType = std::move(value); }
 
     /**
-     * <p>The type of AWS Snowball device to use for this job. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p> <p>For more
-     * information, see <a
+     * <p>The type of AWS Snow Family device to use for this job. </p>  <p>For
+     * cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code>
+     * device type.</p>  <p>The type of AWS Snow device to use for this job.
+     * Currently, the only supported device type for cluster jobs is
+     * <code>EDGE</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
      * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
      */
     inline CreateJobRequest& WithSnowballType(const SnowballType& value) { SetSnowballType(value); return *this;}
 
     /**
-     * <p>The type of AWS Snowball device to use for this job. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p> <p>For more
-     * information, see <a
+     * <p>The type of AWS Snow Family device to use for this job. </p>  <p>For
+     * cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code>
+     * device type.</p>  <p>The type of AWS Snow device to use for this job.
+     * Currently, the only supported device type for cluster jobs is
+     * <code>EDGE</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
      * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
      */
@@ -737,6 +740,37 @@ namespace Model
      */
     inline CreateJobRequest& WithTaxDocuments(TaxDocuments&& value) { SetTaxDocuments(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Defines the device configuration for an AWS Snowcone job.</p>
+     */
+    inline const DeviceConfiguration& GetDeviceConfiguration() const{ return m_deviceConfiguration; }
+
+    /**
+     * <p>Defines the device configuration for an AWS Snowcone job.</p>
+     */
+    inline bool DeviceConfigurationHasBeenSet() const { return m_deviceConfigurationHasBeenSet; }
+
+    /**
+     * <p>Defines the device configuration for an AWS Snowcone job.</p>
+     */
+    inline void SetDeviceConfiguration(const DeviceConfiguration& value) { m_deviceConfigurationHasBeenSet = true; m_deviceConfiguration = value; }
+
+    /**
+     * <p>Defines the device configuration for an AWS Snowcone job.</p>
+     */
+    inline void SetDeviceConfiguration(DeviceConfiguration&& value) { m_deviceConfigurationHasBeenSet = true; m_deviceConfiguration = std::move(value); }
+
+    /**
+     * <p>Defines the device configuration for an AWS Snowcone job.</p>
+     */
+    inline CreateJobRequest& WithDeviceConfiguration(const DeviceConfiguration& value) { SetDeviceConfiguration(value); return *this;}
+
+    /**
+     * <p>Defines the device configuration for an AWS Snowcone job.</p>
+     */
+    inline CreateJobRequest& WithDeviceConfiguration(DeviceConfiguration&& value) { SetDeviceConfiguration(std::move(value)); return *this;}
+
   private:
 
     JobType m_jobType;
@@ -777,6 +811,9 @@ namespace Model
 
     TaxDocuments m_taxDocuments;
     bool m_taxDocumentsHasBeenSet;
+
+    DeviceConfiguration m_deviceConfiguration;
+    bool m_deviceConfigurationHasBeenSet;
   };
 
 } // namespace Model

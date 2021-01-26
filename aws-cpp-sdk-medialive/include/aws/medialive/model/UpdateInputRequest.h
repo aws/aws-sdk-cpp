@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medialive/model/InputDestinationRequest.h>
+#include <aws/medialive/model/InputDeviceRequest.h>
 #include <aws/medialive/model/MediaConnectFlowRequest.h>
 #include <aws/medialive/model/InputSourceRequest.h>
 #include <utility>
@@ -88,6 +79,47 @@ namespace Model
      * Destination settings for PUSH type inputs.
      */
     inline UpdateInputRequest& AddDestinations(InputDestinationRequest&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * Settings for the devices.
+     */
+    inline const Aws::Vector<InputDeviceRequest>& GetInputDevices() const{ return m_inputDevices; }
+
+    /**
+     * Settings for the devices.
+     */
+    inline bool InputDevicesHasBeenSet() const { return m_inputDevicesHasBeenSet; }
+
+    /**
+     * Settings for the devices.
+     */
+    inline void SetInputDevices(const Aws::Vector<InputDeviceRequest>& value) { m_inputDevicesHasBeenSet = true; m_inputDevices = value; }
+
+    /**
+     * Settings for the devices.
+     */
+    inline void SetInputDevices(Aws::Vector<InputDeviceRequest>&& value) { m_inputDevicesHasBeenSet = true; m_inputDevices = std::move(value); }
+
+    /**
+     * Settings for the devices.
+     */
+    inline UpdateInputRequest& WithInputDevices(const Aws::Vector<InputDeviceRequest>& value) { SetInputDevices(value); return *this;}
+
+    /**
+     * Settings for the devices.
+     */
+    inline UpdateInputRequest& WithInputDevices(Aws::Vector<InputDeviceRequest>&& value) { SetInputDevices(std::move(value)); return *this;}
+
+    /**
+     * Settings for the devices.
+     */
+    inline UpdateInputRequest& AddInputDevices(const InputDeviceRequest& value) { m_inputDevicesHasBeenSet = true; m_inputDevices.push_back(value); return *this; }
+
+    /**
+     * Settings for the devices.
+     */
+    inline UpdateInputRequest& AddInputDevices(InputDeviceRequest&& value) { m_inputDevicesHasBeenSet = true; m_inputDevices.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -448,6 +480,9 @@ Only specify sources for PULL type Inputs. Leave
 
     Aws::Vector<InputDestinationRequest> m_destinations;
     bool m_destinationsHasBeenSet;
+
+    Aws::Vector<InputDeviceRequest> m_inputDevices;
+    bool m_inputDevicesHasBeenSet;
 
     Aws::String m_inputId;
     bool m_inputIdHasBeenSet;

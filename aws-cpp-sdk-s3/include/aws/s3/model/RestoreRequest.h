@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
@@ -54,62 +44,66 @@ namespace Model
 
     /**
      * <p>Lifetime of the active copy in days. Do not use with restores that specify
-     * <code>OutputLocation</code>.</p>
+     * <code>OutputLocation</code>.</p> <p>The Days element is required for regular
+     * restores, and must not be provided for select requests.</p>
      */
     inline int GetDays() const{ return m_days; }
 
     /**
      * <p>Lifetime of the active copy in days. Do not use with restores that specify
-     * <code>OutputLocation</code>.</p>
+     * <code>OutputLocation</code>.</p> <p>The Days element is required for regular
+     * restores, and must not be provided for select requests.</p>
      */
     inline bool DaysHasBeenSet() const { return m_daysHasBeenSet; }
 
     /**
      * <p>Lifetime of the active copy in days. Do not use with restores that specify
-     * <code>OutputLocation</code>.</p>
+     * <code>OutputLocation</code>.</p> <p>The Days element is required for regular
+     * restores, and must not be provided for select requests.</p>
      */
     inline void SetDays(int value) { m_daysHasBeenSet = true; m_days = value; }
 
     /**
      * <p>Lifetime of the active copy in days. Do not use with restores that specify
-     * <code>OutputLocation</code>.</p>
+     * <code>OutputLocation</code>.</p> <p>The Days element is required for regular
+     * restores, and must not be provided for select requests.</p>
      */
     inline RestoreRequest& WithDays(int value) { SetDays(value); return *this;}
 
 
     /**
-     * <p>Glacier related parameters pertaining to this job. Do not use with restores
-     * that specify <code>OutputLocation</code>.</p>
+     * <p>S3 Glacier related parameters pertaining to this job. Do not use with
+     * restores that specify <code>OutputLocation</code>.</p>
      */
     inline const GlacierJobParameters& GetGlacierJobParameters() const{ return m_glacierJobParameters; }
 
     /**
-     * <p>Glacier related parameters pertaining to this job. Do not use with restores
-     * that specify <code>OutputLocation</code>.</p>
+     * <p>S3 Glacier related parameters pertaining to this job. Do not use with
+     * restores that specify <code>OutputLocation</code>.</p>
      */
     inline bool GlacierJobParametersHasBeenSet() const { return m_glacierJobParametersHasBeenSet; }
 
     /**
-     * <p>Glacier related parameters pertaining to this job. Do not use with restores
-     * that specify <code>OutputLocation</code>.</p>
+     * <p>S3 Glacier related parameters pertaining to this job. Do not use with
+     * restores that specify <code>OutputLocation</code>.</p>
      */
     inline void SetGlacierJobParameters(const GlacierJobParameters& value) { m_glacierJobParametersHasBeenSet = true; m_glacierJobParameters = value; }
 
     /**
-     * <p>Glacier related parameters pertaining to this job. Do not use with restores
-     * that specify <code>OutputLocation</code>.</p>
+     * <p>S3 Glacier related parameters pertaining to this job. Do not use with
+     * restores that specify <code>OutputLocation</code>.</p>
      */
     inline void SetGlacierJobParameters(GlacierJobParameters&& value) { m_glacierJobParametersHasBeenSet = true; m_glacierJobParameters = std::move(value); }
 
     /**
-     * <p>Glacier related parameters pertaining to this job. Do not use with restores
-     * that specify <code>OutputLocation</code>.</p>
+     * <p>S3 Glacier related parameters pertaining to this job. Do not use with
+     * restores that specify <code>OutputLocation</code>.</p>
      */
     inline RestoreRequest& WithGlacierJobParameters(const GlacierJobParameters& value) { SetGlacierJobParameters(value); return *this;}
 
     /**
-     * <p>Glacier related parameters pertaining to this job. Do not use with restores
-     * that specify <code>OutputLocation</code>.</p>
+     * <p>S3 Glacier related parameters pertaining to this job. Do not use with
+     * restores that specify <code>OutputLocation</code>.</p>
      */
     inline RestoreRequest& WithGlacierJobParameters(GlacierJobParameters&& value) { SetGlacierJobParameters(std::move(value)); return *this;}
 
@@ -146,32 +140,32 @@ namespace Model
 
 
     /**
-     * <p>Glacier retrieval tier at which the restore will be processed.</p>
+     * <p>Retrieval tier at which the restore will be processed.</p>
      */
     inline const Tier& GetTier() const{ return m_tier; }
 
     /**
-     * <p>Glacier retrieval tier at which the restore will be processed.</p>
+     * <p>Retrieval tier at which the restore will be processed.</p>
      */
     inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
 
     /**
-     * <p>Glacier retrieval tier at which the restore will be processed.</p>
+     * <p>Retrieval tier at which the restore will be processed.</p>
      */
     inline void SetTier(const Tier& value) { m_tierHasBeenSet = true; m_tier = value; }
 
     /**
-     * <p>Glacier retrieval tier at which the restore will be processed.</p>
+     * <p>Retrieval tier at which the restore will be processed.</p>
      */
     inline void SetTier(Tier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
 
     /**
-     * <p>Glacier retrieval tier at which the restore will be processed.</p>
+     * <p>Retrieval tier at which the restore will be processed.</p>
      */
     inline RestoreRequest& WithTier(const Tier& value) { SetTier(value); return *this;}
 
     /**
-     * <p>Glacier retrieval tier at which the restore will be processed.</p>
+     * <p>Retrieval tier at which the restore will be processed.</p>
      */
     inline RestoreRequest& WithTier(Tier&& value) { SetTier(std::move(value)); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/cloudformation/model/DescribeChangeSetResult.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -29,13 +19,15 @@ using namespace Aws;
 
 DescribeChangeSetResult::DescribeChangeSetResult() : 
     m_executionStatus(ExecutionStatus::NOT_SET),
-    m_status(ChangeSetStatus::NOT_SET)
+    m_status(ChangeSetStatus::NOT_SET),
+    m_includeNestedStacks(false)
 {
 }
 
 DescribeChangeSetResult::DescribeChangeSetResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_executionStatus(ExecutionStatus::NOT_SET),
-    m_status(ChangeSetStatus::NOT_SET)
+    m_status(ChangeSetStatus::NOT_SET),
+    m_includeNestedStacks(false)
 {
   *this = result;
 }
@@ -161,6 +153,21 @@ DescribeChangeSetResult& DescribeChangeSetResult::operator =(const Aws::AmazonWe
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+    }
+    XmlNode includeNestedStacksNode = resultNode.FirstChild("IncludeNestedStacks");
+    if(!includeNestedStacksNode.IsNull())
+    {
+      m_includeNestedStacks = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(includeNestedStacksNode.GetText()).c_str()).c_str());
+    }
+    XmlNode parentChangeSetIdNode = resultNode.FirstChild("ParentChangeSetId");
+    if(!parentChangeSetIdNode.IsNull())
+    {
+      m_parentChangeSetId = Aws::Utils::Xml::DecodeEscapedXmlText(parentChangeSetIdNode.GetText());
+    }
+    XmlNode rootChangeSetIdNode = resultNode.FirstChild("RootChangeSetId");
+    if(!rootChangeSetIdNode.IsNull())
+    {
+      m_rootChangeSetId = Aws::Utils::Xml::DecodeEscapedXmlText(rootChangeSetIdNode.GetText());
     }
   }
 

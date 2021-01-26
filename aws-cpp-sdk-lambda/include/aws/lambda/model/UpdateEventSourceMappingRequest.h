@@ -1,23 +1,16 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lambda/model/DestinationConfig.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lambda/model/SourceAccessConfiguration.h>
+#include <aws/lambda/model/FunctionResponseType.h>
 #include <utility>
 
 namespace Aws
@@ -198,22 +191,26 @@ namespace Model
 
 
     /**
-     * <p>Disables the event source mapping to pause polling and invocation.</p>
+     * <p>If true, the event source mapping is active. Set to false to pause polling
+     * and invocation.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>Disables the event source mapping to pause polling and invocation.</p>
+     * <p>If true, the event source mapping is active. Set to false to pause polling
+     * and invocation.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
-     * <p>Disables the event source mapping to pause polling and invocation.</p>
+     * <p>If true, the event source mapping is active. Set to false to pause polling
+     * and invocation.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p>Disables the event source mapping to pause polling and invocation.</p>
+     * <p>If true, the event source mapping is active. Set to false to pause polling
+     * and invocation.</p>
      */
     inline UpdateEventSourceMappingRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
@@ -222,7 +219,10 @@ namespace Model
      * <p>The maximum number of items to retrieve in a single batch.</p> <ul> <li> <p>
      * <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li> <li> <p> <b>Amazon
      * DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li> <li> <p> <b>Amazon
-     * Simple Queue Service</b> - Default 10. Max 10.</p> </li> </ul>
+     * Simple Queue Service</b> - Default 10. For standard queues the max is 10,000.
+     * For FIFO queues the max is 10.</p> </li> <li> <p> <b>Amazon Managed Streaming
+     * for Apache Kafka</b> - Default 100. Max 10,000.</p> </li> <li> <p>
+     * <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li> </ul>
      */
     inline int GetBatchSize() const{ return m_batchSize; }
 
@@ -230,7 +230,10 @@ namespace Model
      * <p>The maximum number of items to retrieve in a single batch.</p> <ul> <li> <p>
      * <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li> <li> <p> <b>Amazon
      * DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li> <li> <p> <b>Amazon
-     * Simple Queue Service</b> - Default 10. Max 10.</p> </li> </ul>
+     * Simple Queue Service</b> - Default 10. For standard queues the max is 10,000.
+     * For FIFO queues the max is 10.</p> </li> <li> <p> <b>Amazon Managed Streaming
+     * for Apache Kafka</b> - Default 100. Max 10,000.</p> </li> <li> <p>
+     * <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li> </ul>
      */
     inline bool BatchSizeHasBeenSet() const { return m_batchSizeHasBeenSet; }
 
@@ -238,7 +241,10 @@ namespace Model
      * <p>The maximum number of items to retrieve in a single batch.</p> <ul> <li> <p>
      * <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li> <li> <p> <b>Amazon
      * DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li> <li> <p> <b>Amazon
-     * Simple Queue Service</b> - Default 10. Max 10.</p> </li> </ul>
+     * Simple Queue Service</b> - Default 10. For standard queues the max is 10,000.
+     * For FIFO queues the max is 10.</p> </li> <li> <p> <b>Amazon Managed Streaming
+     * for Apache Kafka</b> - Default 100. Max 10,000.</p> </li> <li> <p>
+     * <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li> </ul>
      */
     inline void SetBatchSize(int value) { m_batchSizeHasBeenSet = true; m_batchSize = value; }
 
@@ -246,32 +252,35 @@ namespace Model
      * <p>The maximum number of items to retrieve in a single batch.</p> <ul> <li> <p>
      * <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li> <li> <p> <b>Amazon
      * DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li> <li> <p> <b>Amazon
-     * Simple Queue Service</b> - Default 10. Max 10.</p> </li> </ul>
+     * Simple Queue Service</b> - Default 10. For standard queues the max is 10,000.
+     * For FIFO queues the max is 10.</p> </li> <li> <p> <b>Amazon Managed Streaming
+     * for Apache Kafka</b> - Default 100. Max 10,000.</p> </li> <li> <p>
+     * <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li> </ul>
      */
     inline UpdateEventSourceMappingRequest& WithBatchSize(int value) { SetBatchSize(value); return *this;}
 
 
     /**
-     * <p>(Streams) The maximum amount of time to gather records before invoking the
-     * function, in seconds.</p>
+     * <p>(Streams and SQS standard queues) The maximum amount of time to gather
+     * records before invoking the function, in seconds.</p>
      */
     inline int GetMaximumBatchingWindowInSeconds() const{ return m_maximumBatchingWindowInSeconds; }
 
     /**
-     * <p>(Streams) The maximum amount of time to gather records before invoking the
-     * function, in seconds.</p>
+     * <p>(Streams and SQS standard queues) The maximum amount of time to gather
+     * records before invoking the function, in seconds.</p>
      */
     inline bool MaximumBatchingWindowInSecondsHasBeenSet() const { return m_maximumBatchingWindowInSecondsHasBeenSet; }
 
     /**
-     * <p>(Streams) The maximum amount of time to gather records before invoking the
-     * function, in seconds.</p>
+     * <p>(Streams and SQS standard queues) The maximum amount of time to gather
+     * records before invoking the function, in seconds.</p>
      */
     inline void SetMaximumBatchingWindowInSeconds(int value) { m_maximumBatchingWindowInSecondsHasBeenSet = true; m_maximumBatchingWindowInSeconds = value; }
 
     /**
-     * <p>(Streams) The maximum amount of time to gather records before invoking the
-     * function, in seconds.</p>
+     * <p>(Streams and SQS standard queues) The maximum amount of time to gather
+     * records before invoking the function, in seconds.</p>
      */
     inline UpdateEventSourceMappingRequest& WithMaximumBatchingWindowInSeconds(int value) { SetMaximumBatchingWindowInSeconds(value); return *this;}
 
@@ -314,26 +323,26 @@ namespace Model
 
 
     /**
-     * <p>(Streams) The maximum age of a record that Lambda sends to a function for
-     * processing.</p>
+     * <p>(Streams) Discard records older than the specified age. The default value is
+     * infinite (-1).</p>
      */
     inline int GetMaximumRecordAgeInSeconds() const{ return m_maximumRecordAgeInSeconds; }
 
     /**
-     * <p>(Streams) The maximum age of a record that Lambda sends to a function for
-     * processing.</p>
+     * <p>(Streams) Discard records older than the specified age. The default value is
+     * infinite (-1).</p>
      */
     inline bool MaximumRecordAgeInSecondsHasBeenSet() const { return m_maximumRecordAgeInSecondsHasBeenSet; }
 
     /**
-     * <p>(Streams) The maximum age of a record that Lambda sends to a function for
-     * processing.</p>
+     * <p>(Streams) Discard records older than the specified age. The default value is
+     * infinite (-1).</p>
      */
     inline void SetMaximumRecordAgeInSeconds(int value) { m_maximumRecordAgeInSecondsHasBeenSet = true; m_maximumRecordAgeInSeconds = value; }
 
     /**
-     * <p>(Streams) The maximum age of a record that Lambda sends to a function for
-     * processing.</p>
+     * <p>(Streams) Discard records older than the specified age. The default value is
+     * infinite (-1).</p>
      */
     inline UpdateEventSourceMappingRequest& WithMaximumRecordAgeInSeconds(int value) { SetMaximumRecordAgeInSeconds(value); return *this;}
 
@@ -364,26 +373,30 @@ namespace Model
 
 
     /**
-     * <p>(Streams) The maximum number of times to retry when the function returns an
-     * error.</p>
+     * <p>(Streams) Discard records after the specified number of retries. The default
+     * value is infinite (-1). When set to infinite (-1), failed records will be
+     * retried until the record expires.</p>
      */
     inline int GetMaximumRetryAttempts() const{ return m_maximumRetryAttempts; }
 
     /**
-     * <p>(Streams) The maximum number of times to retry when the function returns an
-     * error.</p>
+     * <p>(Streams) Discard records after the specified number of retries. The default
+     * value is infinite (-1). When set to infinite (-1), failed records will be
+     * retried until the record expires.</p>
      */
     inline bool MaximumRetryAttemptsHasBeenSet() const { return m_maximumRetryAttemptsHasBeenSet; }
 
     /**
-     * <p>(Streams) The maximum number of times to retry when the function returns an
-     * error.</p>
+     * <p>(Streams) Discard records after the specified number of retries. The default
+     * value is infinite (-1). When set to infinite (-1), failed records will be
+     * retried until the record expires.</p>
      */
     inline void SetMaximumRetryAttempts(int value) { m_maximumRetryAttemptsHasBeenSet = true; m_maximumRetryAttempts = value; }
 
     /**
-     * <p>(Streams) The maximum number of times to retry when the function returns an
-     * error.</p>
+     * <p>(Streams) Discard records after the specified number of retries. The default
+     * value is infinite (-1). When set to infinite (-1), failed records will be
+     * retried until the record expires.</p>
      */
     inline UpdateEventSourceMappingRequest& WithMaximumRetryAttempts(int value) { SetMaximumRetryAttempts(value); return *this;}
 
@@ -407,6 +420,129 @@ namespace Model
      * <p>(Streams) The number of batches to process from each shard concurrently.</p>
      */
     inline UpdateEventSourceMappingRequest& WithParallelizationFactor(int value) { SetParallelizationFactor(value); return *this;}
+
+
+    /**
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
+     */
+    inline const Aws::Vector<SourceAccessConfiguration>& GetSourceAccessConfigurations() const{ return m_sourceAccessConfigurations; }
+
+    /**
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
+     */
+    inline bool SourceAccessConfigurationsHasBeenSet() const { return m_sourceAccessConfigurationsHasBeenSet; }
+
+    /**
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
+     */
+    inline void SetSourceAccessConfigurations(const Aws::Vector<SourceAccessConfiguration>& value) { m_sourceAccessConfigurationsHasBeenSet = true; m_sourceAccessConfigurations = value; }
+
+    /**
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
+     */
+    inline void SetSourceAccessConfigurations(Aws::Vector<SourceAccessConfiguration>&& value) { m_sourceAccessConfigurationsHasBeenSet = true; m_sourceAccessConfigurations = std::move(value); }
+
+    /**
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
+     */
+    inline UpdateEventSourceMappingRequest& WithSourceAccessConfigurations(const Aws::Vector<SourceAccessConfiguration>& value) { SetSourceAccessConfigurations(value); return *this;}
+
+    /**
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
+     */
+    inline UpdateEventSourceMappingRequest& WithSourceAccessConfigurations(Aws::Vector<SourceAccessConfiguration>&& value) { SetSourceAccessConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
+     */
+    inline UpdateEventSourceMappingRequest& AddSourceAccessConfigurations(const SourceAccessConfiguration& value) { m_sourceAccessConfigurationsHasBeenSet = true; m_sourceAccessConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>An array of the authentication protocol, or the VPC components to secure your
+     * event source.</p>
+     */
+    inline UpdateEventSourceMappingRequest& AddSourceAccessConfigurations(SourceAccessConfiguration&& value) { m_sourceAccessConfigurationsHasBeenSet = true; m_sourceAccessConfigurations.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>(Streams) The duration of a processing window in seconds. The range is
+     * between 1 second up to 15 minutes.</p>
+     */
+    inline int GetTumblingWindowInSeconds() const{ return m_tumblingWindowInSeconds; }
+
+    /**
+     * <p>(Streams) The duration of a processing window in seconds. The range is
+     * between 1 second up to 15 minutes.</p>
+     */
+    inline bool TumblingWindowInSecondsHasBeenSet() const { return m_tumblingWindowInSecondsHasBeenSet; }
+
+    /**
+     * <p>(Streams) The duration of a processing window in seconds. The range is
+     * between 1 second up to 15 minutes.</p>
+     */
+    inline void SetTumblingWindowInSeconds(int value) { m_tumblingWindowInSecondsHasBeenSet = true; m_tumblingWindowInSeconds = value; }
+
+    /**
+     * <p>(Streams) The duration of a processing window in seconds. The range is
+     * between 1 second up to 15 minutes.</p>
+     */
+    inline UpdateEventSourceMappingRequest& WithTumblingWindowInSeconds(int value) { SetTumblingWindowInSeconds(value); return *this;}
+
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline const Aws::Vector<FunctionResponseType>& GetFunctionResponseTypes() const{ return m_functionResponseTypes; }
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline bool FunctionResponseTypesHasBeenSet() const { return m_functionResponseTypesHasBeenSet; }
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline void SetFunctionResponseTypes(const Aws::Vector<FunctionResponseType>& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes = value; }
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline void SetFunctionResponseTypes(Aws::Vector<FunctionResponseType>&& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes = std::move(value); }
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline UpdateEventSourceMappingRequest& WithFunctionResponseTypes(const Aws::Vector<FunctionResponseType>& value) { SetFunctionResponseTypes(value); return *this;}
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline UpdateEventSourceMappingRequest& WithFunctionResponseTypes(Aws::Vector<FunctionResponseType>&& value) { SetFunctionResponseTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline UpdateEventSourceMappingRequest& AddFunctionResponseTypes(const FunctionResponseType& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes.push_back(value); return *this; }
+
+    /**
+     * <p>(Streams) A list of current response type enums applied to the event source
+     * mapping.</p>
+     */
+    inline UpdateEventSourceMappingRequest& AddFunctionResponseTypes(FunctionResponseType&& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -439,6 +575,15 @@ namespace Model
 
     int m_parallelizationFactor;
     bool m_parallelizationFactorHasBeenSet;
+
+    Aws::Vector<SourceAccessConfiguration> m_sourceAccessConfigurations;
+    bool m_sourceAccessConfigurationsHasBeenSet;
+
+    int m_tumblingWindowInSeconds;
+    bool m_tumblingWindowInSecondsHasBeenSet;
+
+    Aws::Vector<FunctionResponseType> m_functionResponseTypes;
+    bool m_functionResponseTypesHasBeenSet;
   };
 
 } // namespace Model

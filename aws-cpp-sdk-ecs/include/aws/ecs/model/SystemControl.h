@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
@@ -40,18 +30,18 @@ namespace Model
    * a container</a> section of the <a
    * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
    * <code>--sysctl</code> option to <a
-   * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>It
-   * is not recommended that you specify network-related <code>systemControls</code>
-   * parameters for multiple containers in a single task that also uses either the
-   * <code>awsvpc</code> or <code>host</code> network mode for the following
-   * reasons:</p> <ul> <li> <p>For tasks that use the <code>awsvpc</code> network
-   * mode, if you set <code>systemControls</code> for any container, it applies to
-   * all containers in the task. If you set different <code>systemControls</code> for
-   * multiple containers in a single task, the container that is started last
-   * determines which <code>systemControls</code> take effect.</p> </li> <li> <p>For
-   * tasks that use the <code>host</code> network mode, the
-   * <code>systemControls</code> parameter applies to the container instance's kernel
-   * parameter as well as that of all containers of any tasks running on that
+   * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+   * run</a>.</p> <p>It is not recommended that you specify network-related
+   * <code>systemControls</code> parameters for multiple containers in a single task
+   * that also uses either the <code>awsvpc</code> or <code>host</code> network mode
+   * for the following reasons:</p> <ul> <li> <p>For tasks that use the
+   * <code>awsvpc</code> network mode, if you set <code>systemControls</code> for any
+   * container, it applies to all containers in the task. If you set different
+   * <code>systemControls</code> for multiple containers in a single task, the
+   * container that is started last determines which <code>systemControls</code> take
+   * effect.</p> </li> <li> <p>For tasks that use the <code>host</code> network mode,
+   * the <code>systemControls</code> parameter applies to the container instance's
+   * kernel parameter as well as that of all containers of any tasks running on that
    * container instance.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SystemControl">AWS
    * API Reference</a></p>

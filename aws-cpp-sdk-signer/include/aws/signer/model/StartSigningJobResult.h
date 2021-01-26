@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/signer/Signer_EXPORTS.h>
@@ -77,9 +67,47 @@ namespace Model
      */
     inline StartSigningJobResult& WithJobId(const char* value) { SetJobId(value); return *this;}
 
+
+    /**
+     * <p>The AWS account ID of the signing job owner.</p>
+     */
+    inline const Aws::String& GetJobOwner() const{ return m_jobOwner; }
+
+    /**
+     * <p>The AWS account ID of the signing job owner.</p>
+     */
+    inline void SetJobOwner(const Aws::String& value) { m_jobOwner = value; }
+
+    /**
+     * <p>The AWS account ID of the signing job owner.</p>
+     */
+    inline void SetJobOwner(Aws::String&& value) { m_jobOwner = std::move(value); }
+
+    /**
+     * <p>The AWS account ID of the signing job owner.</p>
+     */
+    inline void SetJobOwner(const char* value) { m_jobOwner.assign(value); }
+
+    /**
+     * <p>The AWS account ID of the signing job owner.</p>
+     */
+    inline StartSigningJobResult& WithJobOwner(const Aws::String& value) { SetJobOwner(value); return *this;}
+
+    /**
+     * <p>The AWS account ID of the signing job owner.</p>
+     */
+    inline StartSigningJobResult& WithJobOwner(Aws::String&& value) { SetJobOwner(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS account ID of the signing job owner.</p>
+     */
+    inline StartSigningJobResult& WithJobOwner(const char* value) { SetJobOwner(value); return *this;}
+
   private:
 
     Aws::String m_jobId;
+
+    Aws::String m_jobOwner;
   };
 
 } // namespace Model

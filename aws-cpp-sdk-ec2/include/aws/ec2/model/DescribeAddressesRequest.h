@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -56,17 +46,18 @@ namespace Model
      * Indicates whether the address is for use in EC2-Classic (<code>standard</code>)
      * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
      * The ID of the instance the address is associated with, if any.</p> </li> <li>
-     * <p> <code>network-border-group</code> - The location from where the IP address
-     * is advertised.</p> </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC]
-     * The ID of the network interface that the address is associated with, if any.</p>
-     * </li> <li> <p> <code>network-interface-owner-id</code> - The AWS account ID of
-     * the owner.</p> </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The
+     * <p> <code>network-border-group</code> - A unique set of Availability Zones,
+     * Local Zones, or Wavelength Zones from where AWS advertises IP addresses. </p>
+     * </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The ID of the
+     * network interface that the address is associated with, if any.</p> </li> <li>
+     * <p> <code>network-interface-owner-id</code> - The AWS account ID of the
+     * owner.</p> </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The
      * private IP address associated with the Elastic IP address.</p> </li> <li> <p>
-     * <code>public-ip</code> - The Elastic IP address.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
-     * the resource. Use the tag key in the filter name and the tag value as the filter
-     * value. For example, to find all resources that have a tag with the key
-     * <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
@@ -82,17 +73,18 @@ namespace Model
      * Indicates whether the address is for use in EC2-Classic (<code>standard</code>)
      * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
      * The ID of the instance the address is associated with, if any.</p> </li> <li>
-     * <p> <code>network-border-group</code> - The location from where the IP address
-     * is advertised.</p> </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC]
-     * The ID of the network interface that the address is associated with, if any.</p>
-     * </li> <li> <p> <code>network-interface-owner-id</code> - The AWS account ID of
-     * the owner.</p> </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The
+     * <p> <code>network-border-group</code> - A unique set of Availability Zones,
+     * Local Zones, or Wavelength Zones from where AWS advertises IP addresses. </p>
+     * </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The ID of the
+     * network interface that the address is associated with, if any.</p> </li> <li>
+     * <p> <code>network-interface-owner-id</code> - The AWS account ID of the
+     * owner.</p> </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The
      * private IP address associated with the Elastic IP address.</p> </li> <li> <p>
-     * <code>public-ip</code> - The Elastic IP address.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
-     * the resource. Use the tag key in the filter name and the tag value as the filter
-     * value. For example, to find all resources that have a tag with the key
-     * <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
@@ -108,17 +100,18 @@ namespace Model
      * Indicates whether the address is for use in EC2-Classic (<code>standard</code>)
      * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
      * The ID of the instance the address is associated with, if any.</p> </li> <li>
-     * <p> <code>network-border-group</code> - The location from where the IP address
-     * is advertised.</p> </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC]
-     * The ID of the network interface that the address is associated with, if any.</p>
-     * </li> <li> <p> <code>network-interface-owner-id</code> - The AWS account ID of
-     * the owner.</p> </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The
+     * <p> <code>network-border-group</code> - A unique set of Availability Zones,
+     * Local Zones, or Wavelength Zones from where AWS advertises IP addresses. </p>
+     * </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The ID of the
+     * network interface that the address is associated with, if any.</p> </li> <li>
+     * <p> <code>network-interface-owner-id</code> - The AWS account ID of the
+     * owner.</p> </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The
      * private IP address associated with the Elastic IP address.</p> </li> <li> <p>
-     * <code>public-ip</code> - The Elastic IP address.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
-     * the resource. Use the tag key in the filter name and the tag value as the filter
-     * value. For example, to find all resources that have a tag with the key
-     * <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
@@ -134,17 +127,18 @@ namespace Model
      * Indicates whether the address is for use in EC2-Classic (<code>standard</code>)
      * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
      * The ID of the instance the address is associated with, if any.</p> </li> <li>
-     * <p> <code>network-border-group</code> - The location from where the IP address
-     * is advertised.</p> </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC]
-     * The ID of the network interface that the address is associated with, if any.</p>
-     * </li> <li> <p> <code>network-interface-owner-id</code> - The AWS account ID of
-     * the owner.</p> </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The
+     * <p> <code>network-border-group</code> - A unique set of Availability Zones,
+     * Local Zones, or Wavelength Zones from where AWS advertises IP addresses. </p>
+     * </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The ID of the
+     * network interface that the address is associated with, if any.</p> </li> <li>
+     * <p> <code>network-interface-owner-id</code> - The AWS account ID of the
+     * owner.</p> </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The
      * private IP address associated with the Elastic IP address.</p> </li> <li> <p>
-     * <code>public-ip</code> - The Elastic IP address.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
-     * the resource. Use the tag key in the filter name and the tag value as the filter
-     * value. For example, to find all resources that have a tag with the key
-     * <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
@@ -160,17 +154,18 @@ namespace Model
      * Indicates whether the address is for use in EC2-Classic (<code>standard</code>)
      * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
      * The ID of the instance the address is associated with, if any.</p> </li> <li>
-     * <p> <code>network-border-group</code> - The location from where the IP address
-     * is advertised.</p> </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC]
-     * The ID of the network interface that the address is associated with, if any.</p>
-     * </li> <li> <p> <code>network-interface-owner-id</code> - The AWS account ID of
-     * the owner.</p> </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The
+     * <p> <code>network-border-group</code> - A unique set of Availability Zones,
+     * Local Zones, or Wavelength Zones from where AWS advertises IP addresses. </p>
+     * </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The ID of the
+     * network interface that the address is associated with, if any.</p> </li> <li>
+     * <p> <code>network-interface-owner-id</code> - The AWS account ID of the
+     * owner.</p> </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The
      * private IP address associated with the Elastic IP address.</p> </li> <li> <p>
-     * <code>public-ip</code> - The Elastic IP address.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
-     * the resource. Use the tag key in the filter name and the tag value as the filter
-     * value. For example, to find all resources that have a tag with the key
-     * <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
@@ -186,17 +181,18 @@ namespace Model
      * Indicates whether the address is for use in EC2-Classic (<code>standard</code>)
      * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
      * The ID of the instance the address is associated with, if any.</p> </li> <li>
-     * <p> <code>network-border-group</code> - The location from where the IP address
-     * is advertised.</p> </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC]
-     * The ID of the network interface that the address is associated with, if any.</p>
-     * </li> <li> <p> <code>network-interface-owner-id</code> - The AWS account ID of
-     * the owner.</p> </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The
+     * <p> <code>network-border-group</code> - A unique set of Availability Zones,
+     * Local Zones, or Wavelength Zones from where AWS advertises IP addresses. </p>
+     * </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The ID of the
+     * network interface that the address is associated with, if any.</p> </li> <li>
+     * <p> <code>network-interface-owner-id</code> - The AWS account ID of the
+     * owner.</p> </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The
      * private IP address associated with the Elastic IP address.</p> </li> <li> <p>
-     * <code>public-ip</code> - The Elastic IP address.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
-     * the resource. Use the tag key in the filter name and the tag value as the filter
-     * value. For example, to find all resources that have a tag with the key
-     * <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
@@ -212,17 +208,18 @@ namespace Model
      * Indicates whether the address is for use in EC2-Classic (<code>standard</code>)
      * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
      * The ID of the instance the address is associated with, if any.</p> </li> <li>
-     * <p> <code>network-border-group</code> - The location from where the IP address
-     * is advertised.</p> </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC]
-     * The ID of the network interface that the address is associated with, if any.</p>
-     * </li> <li> <p> <code>network-interface-owner-id</code> - The AWS account ID of
-     * the owner.</p> </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The
+     * <p> <code>network-border-group</code> - A unique set of Availability Zones,
+     * Local Zones, or Wavelength Zones from where AWS advertises IP addresses. </p>
+     * </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The ID of the
+     * network interface that the address is associated with, if any.</p> </li> <li>
+     * <p> <code>network-interface-owner-id</code> - The AWS account ID of the
+     * owner.</p> </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The
      * private IP address associated with the Elastic IP address.</p> </li> <li> <p>
-     * <code>public-ip</code> - The Elastic IP address.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
-     * the resource. Use the tag key in the filter name and the tag value as the filter
-     * value. For example, to find all resources that have a tag with the key
-     * <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
@@ -238,17 +235,18 @@ namespace Model
      * Indicates whether the address is for use in EC2-Classic (<code>standard</code>)
      * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
      * The ID of the instance the address is associated with, if any.</p> </li> <li>
-     * <p> <code>network-border-group</code> - The location from where the IP address
-     * is advertised.</p> </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC]
-     * The ID of the network interface that the address is associated with, if any.</p>
-     * </li> <li> <p> <code>network-interface-owner-id</code> - The AWS account ID of
-     * the owner.</p> </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The
+     * <p> <code>network-border-group</code> - A unique set of Availability Zones,
+     * Local Zones, or Wavelength Zones from where AWS advertises IP addresses. </p>
+     * </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The ID of the
+     * network interface that the address is associated with, if any.</p> </li> <li>
+     * <p> <code>network-interface-owner-id</code> - The AWS account ID of the
+     * owner.</p> </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The
      * private IP address associated with the Elastic IP address.</p> </li> <li> <p>
-     * <code>public-ip</code> - The Elastic IP address.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
-     * the resource. Use the tag key in the filter name and the tag value as the filter
-     * value. For example, to find all resources that have a tag with the key
-     * <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a

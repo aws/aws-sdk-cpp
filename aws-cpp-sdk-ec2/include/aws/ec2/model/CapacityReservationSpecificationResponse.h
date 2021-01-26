@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -41,8 +31,8 @@ namespace Model
    * configured in run in any <code>open</code> Capacity Reservation that has
    * matching attributes (instance type, platform, Availability Zone). The action
    * returns the <code>capacityReservationTarget</code> response element if the
-   * instance explicily targets a specific Capacity Reservation.</p><p><h3>See
-   * Also:</h3>   <a
+   * instance explicily targets a specific Capacity Reservation or Capacity
+   * Reservation group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CapacityReservationSpecificationResponse">AWS
    * API Reference</a></p>
    */
@@ -119,32 +109,38 @@ namespace Model
 
 
     /**
-     * <p>Information about the targeted Capacity Reservation.</p>
+     * <p>Information about the targeted Capacity Reservation or Capacity Reservation
+     * group.</p>
      */
     inline const CapacityReservationTargetResponse& GetCapacityReservationTarget() const{ return m_capacityReservationTarget; }
 
     /**
-     * <p>Information about the targeted Capacity Reservation.</p>
+     * <p>Information about the targeted Capacity Reservation or Capacity Reservation
+     * group.</p>
      */
     inline bool CapacityReservationTargetHasBeenSet() const { return m_capacityReservationTargetHasBeenSet; }
 
     /**
-     * <p>Information about the targeted Capacity Reservation.</p>
+     * <p>Information about the targeted Capacity Reservation or Capacity Reservation
+     * group.</p>
      */
     inline void SetCapacityReservationTarget(const CapacityReservationTargetResponse& value) { m_capacityReservationTargetHasBeenSet = true; m_capacityReservationTarget = value; }
 
     /**
-     * <p>Information about the targeted Capacity Reservation.</p>
+     * <p>Information about the targeted Capacity Reservation or Capacity Reservation
+     * group.</p>
      */
     inline void SetCapacityReservationTarget(CapacityReservationTargetResponse&& value) { m_capacityReservationTargetHasBeenSet = true; m_capacityReservationTarget = std::move(value); }
 
     /**
-     * <p>Information about the targeted Capacity Reservation.</p>
+     * <p>Information about the targeted Capacity Reservation or Capacity Reservation
+     * group.</p>
      */
     inline CapacityReservationSpecificationResponse& WithCapacityReservationTarget(const CapacityReservationTargetResponse& value) { SetCapacityReservationTarget(value); return *this;}
 
     /**
-     * <p>Information about the targeted Capacity Reservation.</p>
+     * <p>Information about the targeted Capacity Reservation or Capacity Reservation
+     * group.</p>
      */
     inline CapacityReservationSpecificationResponse& WithCapacityReservationTarget(CapacityReservationTargetResponse&& value) { SetCapacityReservationTarget(std::move(value)); return *this;}
 

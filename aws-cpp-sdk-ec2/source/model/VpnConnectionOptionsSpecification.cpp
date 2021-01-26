@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/VpnConnectionOptionsSpecification.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -35,7 +25,13 @@ VpnConnectionOptionsSpecification::VpnConnectionOptionsSpecification() :
     m_enableAccelerationHasBeenSet(false),
     m_staticRoutesOnly(false),
     m_staticRoutesOnlyHasBeenSet(false),
-    m_tunnelOptionsHasBeenSet(false)
+    m_tunnelInsideIpVersion(TunnelInsideIpVersion::NOT_SET),
+    m_tunnelInsideIpVersionHasBeenSet(false),
+    m_tunnelOptionsHasBeenSet(false),
+    m_localIpv4NetworkCidrHasBeenSet(false),
+    m_remoteIpv4NetworkCidrHasBeenSet(false),
+    m_localIpv6NetworkCidrHasBeenSet(false),
+    m_remoteIpv6NetworkCidrHasBeenSet(false)
 {
 }
 
@@ -44,7 +40,13 @@ VpnConnectionOptionsSpecification::VpnConnectionOptionsSpecification(const XmlNo
     m_enableAccelerationHasBeenSet(false),
     m_staticRoutesOnly(false),
     m_staticRoutesOnlyHasBeenSet(false),
-    m_tunnelOptionsHasBeenSet(false)
+    m_tunnelInsideIpVersion(TunnelInsideIpVersion::NOT_SET),
+    m_tunnelInsideIpVersionHasBeenSet(false),
+    m_tunnelOptionsHasBeenSet(false),
+    m_localIpv4NetworkCidrHasBeenSet(false),
+    m_remoteIpv4NetworkCidrHasBeenSet(false),
+    m_localIpv6NetworkCidrHasBeenSet(false),
+    m_remoteIpv6NetworkCidrHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -67,6 +69,12 @@ VpnConnectionOptionsSpecification& VpnConnectionOptionsSpecification::operator =
       m_staticRoutesOnly = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(staticRoutesOnlyNode.GetText()).c_str()).c_str());
       m_staticRoutesOnlyHasBeenSet = true;
     }
+    XmlNode tunnelInsideIpVersionNode = resultNode.FirstChild("TunnelInsideIpVersion");
+    if(!tunnelInsideIpVersionNode.IsNull())
+    {
+      m_tunnelInsideIpVersion = TunnelInsideIpVersionMapper::GetTunnelInsideIpVersionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tunnelInsideIpVersionNode.GetText()).c_str()).c_str());
+      m_tunnelInsideIpVersionHasBeenSet = true;
+    }
     XmlNode tunnelOptionsNode = resultNode.FirstChild("TunnelOptions");
     if(!tunnelOptionsNode.IsNull())
     {
@@ -78,6 +86,30 @@ VpnConnectionOptionsSpecification& VpnConnectionOptionsSpecification::operator =
       }
 
       m_tunnelOptionsHasBeenSet = true;
+    }
+    XmlNode localIpv4NetworkCidrNode = resultNode.FirstChild("LocalIpv4NetworkCidr");
+    if(!localIpv4NetworkCidrNode.IsNull())
+    {
+      m_localIpv4NetworkCidr = Aws::Utils::Xml::DecodeEscapedXmlText(localIpv4NetworkCidrNode.GetText());
+      m_localIpv4NetworkCidrHasBeenSet = true;
+    }
+    XmlNode remoteIpv4NetworkCidrNode = resultNode.FirstChild("RemoteIpv4NetworkCidr");
+    if(!remoteIpv4NetworkCidrNode.IsNull())
+    {
+      m_remoteIpv4NetworkCidr = Aws::Utils::Xml::DecodeEscapedXmlText(remoteIpv4NetworkCidrNode.GetText());
+      m_remoteIpv4NetworkCidrHasBeenSet = true;
+    }
+    XmlNode localIpv6NetworkCidrNode = resultNode.FirstChild("LocalIpv6NetworkCidr");
+    if(!localIpv6NetworkCidrNode.IsNull())
+    {
+      m_localIpv6NetworkCidr = Aws::Utils::Xml::DecodeEscapedXmlText(localIpv6NetworkCidrNode.GetText());
+      m_localIpv6NetworkCidrHasBeenSet = true;
+    }
+    XmlNode remoteIpv6NetworkCidrNode = resultNode.FirstChild("RemoteIpv6NetworkCidr");
+    if(!remoteIpv6NetworkCidrNode.IsNull())
+    {
+      m_remoteIpv6NetworkCidr = Aws::Utils::Xml::DecodeEscapedXmlText(remoteIpv6NetworkCidrNode.GetText());
+      m_remoteIpv6NetworkCidrHasBeenSet = true;
     }
   }
 
@@ -96,6 +128,11 @@ void VpnConnectionOptionsSpecification::OutputToStream(Aws::OStream& oStream, co
       oStream << location << index << locationValue << ".StaticRoutesOnly=" << std::boolalpha << m_staticRoutesOnly << "&";
   }
 
+  if(m_tunnelInsideIpVersionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TunnelInsideIpVersion=" << TunnelInsideIpVersionMapper::GetNameForTunnelInsideIpVersion(m_tunnelInsideIpVersion) << "&";
+  }
+
   if(m_tunnelOptionsHasBeenSet)
   {
       unsigned tunnelOptionsIdx = 1;
@@ -105,6 +142,26 @@ void VpnConnectionOptionsSpecification::OutputToStream(Aws::OStream& oStream, co
         tunnelOptionsSs << location << index << locationValue << ".TunnelOptions." << tunnelOptionsIdx++;
         item.OutputToStream(oStream, tunnelOptionsSs.str().c_str());
       }
+  }
+
+  if(m_localIpv4NetworkCidrHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".LocalIpv4NetworkCidr=" << StringUtils::URLEncode(m_localIpv4NetworkCidr.c_str()) << "&";
+  }
+
+  if(m_remoteIpv4NetworkCidrHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".RemoteIpv4NetworkCidr=" << StringUtils::URLEncode(m_remoteIpv4NetworkCidr.c_str()) << "&";
+  }
+
+  if(m_localIpv6NetworkCidrHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".LocalIpv6NetworkCidr=" << StringUtils::URLEncode(m_localIpv6NetworkCidr.c_str()) << "&";
+  }
+
+  if(m_remoteIpv6NetworkCidrHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".RemoteIpv6NetworkCidr=" << StringUtils::URLEncode(m_remoteIpv6NetworkCidr.c_str()) << "&";
   }
 
 }
@@ -119,6 +176,10 @@ void VpnConnectionOptionsSpecification::OutputToStream(Aws::OStream& oStream, co
   {
       oStream << location << ".StaticRoutesOnly=" << std::boolalpha << m_staticRoutesOnly << "&";
   }
+  if(m_tunnelInsideIpVersionHasBeenSet)
+  {
+      oStream << location << ".TunnelInsideIpVersion=" << TunnelInsideIpVersionMapper::GetNameForTunnelInsideIpVersion(m_tunnelInsideIpVersion) << "&";
+  }
   if(m_tunnelOptionsHasBeenSet)
   {
       unsigned tunnelOptionsIdx = 1;
@@ -128,6 +189,22 @@ void VpnConnectionOptionsSpecification::OutputToStream(Aws::OStream& oStream, co
         tunnelOptionsSs << location <<  ".TunnelOptions." << tunnelOptionsIdx++;
         item.OutputToStream(oStream, tunnelOptionsSs.str().c_str());
       }
+  }
+  if(m_localIpv4NetworkCidrHasBeenSet)
+  {
+      oStream << location << ".LocalIpv4NetworkCidr=" << StringUtils::URLEncode(m_localIpv4NetworkCidr.c_str()) << "&";
+  }
+  if(m_remoteIpv4NetworkCidrHasBeenSet)
+  {
+      oStream << location << ".RemoteIpv4NetworkCidr=" << StringUtils::URLEncode(m_remoteIpv4NetworkCidr.c_str()) << "&";
+  }
+  if(m_localIpv6NetworkCidrHasBeenSet)
+  {
+      oStream << location << ".LocalIpv6NetworkCidr=" << StringUtils::URLEncode(m_localIpv6NetworkCidr.c_str()) << "&";
+  }
+  if(m_remoteIpv6NetworkCidrHasBeenSet)
+  {
+      oStream << location << ".RemoteIpv6NetworkCidr=" << StringUtils::URLEncode(m_remoteIpv6NetworkCidr.c_str()) << "&";
   }
 }
 

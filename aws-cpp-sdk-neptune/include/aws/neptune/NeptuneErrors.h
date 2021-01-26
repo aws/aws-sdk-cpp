@@ -1,20 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/neptune/Neptune_EXPORTS.h>
 
@@ -52,7 +43,7 @@ enum class NeptuneErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -60,6 +51,9 @@ enum class NeptuneErrors
   CERTIFICATE_NOT_FOUND_FAULT,
   DOMAIN_NOT_FOUND_FAULT,
   D_B_CLUSTER_ALREADY_EXISTS_FAULT,
+  D_B_CLUSTER_ENDPOINT_ALREADY_EXISTS_FAULT,
+  D_B_CLUSTER_ENDPOINT_NOT_FOUND_FAULT,
+  D_B_CLUSTER_ENDPOINT_QUOTA_EXCEEDED_FAULT,
   D_B_CLUSTER_NOT_FOUND_FAULT,
   D_B_CLUSTER_PARAMETER_GROUP_NOT_FOUND_FAULT,
   D_B_CLUSTER_QUOTA_EXCEEDED_FAULT,
@@ -87,6 +81,7 @@ enum class NeptuneErrors
   INSUFFICIENT_D_B_CLUSTER_CAPACITY_FAULT,
   INSUFFICIENT_D_B_INSTANCE_CAPACITY_FAULT,
   INSUFFICIENT_STORAGE_CLUSTER_CAPACITY_FAULT,
+  INVALID_D_B_CLUSTER_ENDPOINT_STATE_FAULT,
   INVALID_D_B_CLUSTER_SNAPSHOT_STATE_FAULT,
   INVALID_D_B_CLUSTER_STATE_FAULT,
   INVALID_D_B_INSTANCE_STATE_FAULT,
@@ -116,6 +111,20 @@ enum class NeptuneErrors
   S_N_S_NO_AUTHORIZATION_FAULT,
   S_N_S_TOPIC_ARN_NOT_FOUND_FAULT
 };
+
+class AWS_NEPTUNE_API NeptuneError : public Aws::Client::AWSError<NeptuneErrors>
+{
+public:
+  NeptuneError() {}
+  NeptuneError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<NeptuneErrors>(rhs) {}
+  NeptuneError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<NeptuneErrors>(rhs) {}
+  NeptuneError(const Aws::Client::AWSError<NeptuneErrors>& rhs) : Aws::Client::AWSError<NeptuneErrors>(rhs) {}
+  NeptuneError(Aws::Client::AWSError<NeptuneErrors>&& rhs) : Aws::Client::AWSError<NeptuneErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace NeptuneErrorMapper
 {
   AWS_NEPTUNE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

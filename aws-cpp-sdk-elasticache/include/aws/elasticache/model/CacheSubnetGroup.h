@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
@@ -224,6 +214,47 @@ namespace Model
      */
     inline CacheSubnetGroup& AddSubnets(Subnet&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache subnet group.</p>
+     */
+    inline const Aws::String& GetARN() const{ return m_aRN; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache subnet group.</p>
+     */
+    inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache subnet group.</p>
+     */
+    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache subnet group.</p>
+     */
+    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache subnet group.</p>
+     */
+    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache subnet group.</p>
+     */
+    inline CacheSubnetGroup& WithARN(const Aws::String& value) { SetARN(value); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache subnet group.</p>
+     */
+    inline CacheSubnetGroup& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache subnet group.</p>
+     */
+    inline CacheSubnetGroup& WithARN(const char* value) { SetARN(value); return *this;}
+
   private:
 
     Aws::String m_cacheSubnetGroupName;
@@ -237,6 +268,9 @@ namespace Model
 
     Aws::Vector<Subnet> m_subnets;
     bool m_subnetsHasBeenSet;
+
+    Aws::String m_aRN;
+    bool m_aRNHasBeenSet;
   };
 
 } // namespace Model

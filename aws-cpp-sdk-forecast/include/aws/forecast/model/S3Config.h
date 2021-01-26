@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/forecast/ForecastService_EXPORTS.h>
@@ -39,8 +29,7 @@ namespace Model
    * Forecast can assume to access the file(s). Optionally, includes an AWS Key
    * Management Service (KMS) key. This object is part of the <a>DataSource</a>
    * object that is submitted in the <a>CreateDatasetImportJob</a> request, and part
-   * of the <a>DataDestination</a> object that is submitted in the
-   * <a>CreateForecastExportJob</a> request.</p><p><h3>See Also:</h3>   <a
+   * of the <a>DataDestination</a> object.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/S3Config">AWS
    * API Reference</a></p>
    */

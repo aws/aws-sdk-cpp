@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
@@ -51,57 +41,49 @@ namespace Model
 
     /**
      * <p>The listeners that the virtual router is expected to receive inbound traffic
-     * from.
-         You can specify one listener.</p>
+     * from. You can specify one listener.</p>
      */
     inline const Aws::Vector<VirtualRouterListener>& GetListeners() const{ return m_listeners; }
 
     /**
      * <p>The listeners that the virtual router is expected to receive inbound traffic
-     * from.
-         You can specify one listener.</p>
+     * from. You can specify one listener.</p>
      */
     inline bool ListenersHasBeenSet() const { return m_listenersHasBeenSet; }
 
     /**
      * <p>The listeners that the virtual router is expected to receive inbound traffic
-     * from.
-         You can specify one listener.</p>
+     * from. You can specify one listener.</p>
      */
     inline void SetListeners(const Aws::Vector<VirtualRouterListener>& value) { m_listenersHasBeenSet = true; m_listeners = value; }
 
     /**
      * <p>The listeners that the virtual router is expected to receive inbound traffic
-     * from.
-         You can specify one listener.</p>
+     * from. You can specify one listener.</p>
      */
     inline void SetListeners(Aws::Vector<VirtualRouterListener>&& value) { m_listenersHasBeenSet = true; m_listeners = std::move(value); }
 
     /**
      * <p>The listeners that the virtual router is expected to receive inbound traffic
-     * from.
-         You can specify one listener.</p>
+     * from. You can specify one listener.</p>
      */
     inline VirtualRouterSpec& WithListeners(const Aws::Vector<VirtualRouterListener>& value) { SetListeners(value); return *this;}
 
     /**
      * <p>The listeners that the virtual router is expected to receive inbound traffic
-     * from.
-         You can specify one listener.</p>
+     * from. You can specify one listener.</p>
      */
     inline VirtualRouterSpec& WithListeners(Aws::Vector<VirtualRouterListener>&& value) { SetListeners(std::move(value)); return *this;}
 
     /**
      * <p>The listeners that the virtual router is expected to receive inbound traffic
-     * from.
-         You can specify one listener.</p>
+     * from. You can specify one listener.</p>
      */
     inline VirtualRouterSpec& AddListeners(const VirtualRouterListener& value) { m_listenersHasBeenSet = true; m_listeners.push_back(value); return *this; }
 
     /**
      * <p>The listeners that the virtual router is expected to receive inbound traffic
-     * from.
-         You can specify one listener.</p>
+     * from. You can specify one listener.</p>
      */
     inline VirtualRouterSpec& AddListeners(VirtualRouterListener&& value) { m_listenersHasBeenSet = true; m_listeners.push_back(std::move(value)); return *this; }
 

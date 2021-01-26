@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
@@ -174,50 +164,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution IAM role override for
+     * the task.</p>
      */
     inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution IAM role override for
+     * the task.</p>
      */
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution IAM role override for
+     * the task.</p>
      */
     inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution IAM role override for
+     * the task.</p>
      */
     inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution IAM role override for
+     * the task.</p>
      */
     inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution IAM role override for
+     * the task.</p>
      */
     inline TaskOverride& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution IAM role override for
+     * the task.</p>
      */
     inline TaskOverride& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution IAM role override for
+     * the task.</p>
      */
     inline TaskOverride& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
 

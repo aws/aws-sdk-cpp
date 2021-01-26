@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/ssm/model/DocumentFormat.h>
 #include <aws/ssm/model/DocumentStatus.h>
+#include <aws/ssm/model/ReviewStatus.h>
 #include <utility>
 
 namespace Aws
@@ -373,6 +364,43 @@ namespace Model
      */
     inline DocumentVersionInfo& WithStatusInformation(const char* value) { SetStatusInformation(value); return *this;}
 
+
+    /**
+     * <p>The current status of the approval review for the latest version of the
+     * document.</p>
+     */
+    inline const ReviewStatus& GetReviewStatus() const{ return m_reviewStatus; }
+
+    /**
+     * <p>The current status of the approval review for the latest version of the
+     * document.</p>
+     */
+    inline bool ReviewStatusHasBeenSet() const { return m_reviewStatusHasBeenSet; }
+
+    /**
+     * <p>The current status of the approval review for the latest version of the
+     * document.</p>
+     */
+    inline void SetReviewStatus(const ReviewStatus& value) { m_reviewStatusHasBeenSet = true; m_reviewStatus = value; }
+
+    /**
+     * <p>The current status of the approval review for the latest version of the
+     * document.</p>
+     */
+    inline void SetReviewStatus(ReviewStatus&& value) { m_reviewStatusHasBeenSet = true; m_reviewStatus = std::move(value); }
+
+    /**
+     * <p>The current status of the approval review for the latest version of the
+     * document.</p>
+     */
+    inline DocumentVersionInfo& WithReviewStatus(const ReviewStatus& value) { SetReviewStatus(value); return *this;}
+
+    /**
+     * <p>The current status of the approval review for the latest version of the
+     * document.</p>
+     */
+    inline DocumentVersionInfo& WithReviewStatus(ReviewStatus&& value) { SetReviewStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -398,6 +426,9 @@ namespace Model
 
     Aws::String m_statusInformation;
     bool m_statusInformationHasBeenSet;
+
+    ReviewStatus m_reviewStatus;
+    bool m_reviewStatusHasBeenSet;
   };
 
 } // namespace Model

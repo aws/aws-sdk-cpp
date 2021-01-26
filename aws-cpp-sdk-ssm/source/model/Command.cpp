@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ssm/model/Command.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -56,7 +46,9 @@ Command::Command() :
     m_deliveryTimedOutCountHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
     m_notificationConfigHasBeenSet(false),
-    m_cloudWatchOutputConfigHasBeenSet(false)
+    m_cloudWatchOutputConfigHasBeenSet(false),
+    m_timeoutSeconds(0),
+    m_timeoutSecondsHasBeenSet(false)
 {
 }
 
@@ -88,7 +80,9 @@ Command::Command(JsonView jsonValue) :
     m_deliveryTimedOutCountHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
     m_notificationConfigHasBeenSet(false),
-    m_cloudWatchOutputConfigHasBeenSet(false)
+    m_cloudWatchOutputConfigHasBeenSet(false),
+    m_timeoutSeconds(0),
+    m_timeoutSecondsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -272,6 +266,13 @@ Command& Command::operator =(JsonView jsonValue)
     m_cloudWatchOutputConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TimeoutSeconds"))
+  {
+    m_timeoutSeconds = jsonValue.GetInteger("TimeoutSeconds");
+
+    m_timeoutSecondsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -431,6 +432,12 @@ JsonValue Command::Jsonize() const
   if(m_cloudWatchOutputConfigHasBeenSet)
   {
    payload.WithObject("CloudWatchOutputConfig", m_cloudWatchOutputConfig.Jsonize());
+
+  }
+
+  if(m_timeoutSecondsHasBeenSet)
+  {
+   payload.WithInteger("TimeoutSeconds", m_timeoutSeconds);
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -1067,7 +1057,7 @@ namespace Model
      * create the match, and contains data on all players assigned to the match,
      * including player attributes and team assignments. For more details on matchmaker
      * data, see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
      * Data</a>.</p>
      */
     inline const Aws::String& GetMatchmakerData() const{ return m_matchmakerData; }
@@ -1078,7 +1068,7 @@ namespace Model
      * create the match, and contains data on all players assigned to the match,
      * including player attributes and team assignments. For more details on matchmaker
      * data, see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
      * Data</a>.</p>
      */
     inline bool MatchmakerDataHasBeenSet() const { return m_matchmakerDataHasBeenSet; }
@@ -1089,7 +1079,7 @@ namespace Model
      * create the match, and contains data on all players assigned to the match,
      * including player attributes and team assignments. For more details on matchmaker
      * data, see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
      * Data</a>.</p>
      */
     inline void SetMatchmakerData(const Aws::String& value) { m_matchmakerDataHasBeenSet = true; m_matchmakerData = value; }
@@ -1100,7 +1090,7 @@ namespace Model
      * create the match, and contains data on all players assigned to the match,
      * including player attributes and team assignments. For more details on matchmaker
      * data, see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
      * Data</a>.</p>
      */
     inline void SetMatchmakerData(Aws::String&& value) { m_matchmakerDataHasBeenSet = true; m_matchmakerData = std::move(value); }
@@ -1111,7 +1101,7 @@ namespace Model
      * create the match, and contains data on all players assigned to the match,
      * including player attributes and team assignments. For more details on matchmaker
      * data, see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
      * Data</a>.</p>
      */
     inline void SetMatchmakerData(const char* value) { m_matchmakerDataHasBeenSet = true; m_matchmakerData.assign(value); }
@@ -1122,7 +1112,7 @@ namespace Model
      * create the match, and contains data on all players assigned to the match,
      * including player attributes and team assignments. For more details on matchmaker
      * data, see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
      * Data</a>.</p>
      */
     inline GameSessionPlacement& WithMatchmakerData(const Aws::String& value) { SetMatchmakerData(value); return *this;}
@@ -1133,7 +1123,7 @@ namespace Model
      * create the match, and contains data on all players assigned to the match,
      * including player attributes and team assignments. For more details on matchmaker
      * data, see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
      * Data</a>.</p>
      */
     inline GameSessionPlacement& WithMatchmakerData(Aws::String&& value) { SetMatchmakerData(std::move(value)); return *this;}
@@ -1144,7 +1134,7 @@ namespace Model
      * create the match, and contains data on all players assigned to the match,
      * including player attributes and team assignments. For more details on matchmaker
      * data, see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
      * Data</a>.</p>
      */
     inline GameSessionPlacement& WithMatchmakerData(const char* value) { SetMatchmakerData(value); return *this;}

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mq/MQ_EXPORTS.h>
@@ -104,28 +94,28 @@ namespace Model
         class UpdateConfigurationRequest;
         class UpdateUserRequest;
 
-        typedef Aws::Utils::Outcome<CreateBrokerResult, Aws::Client::AWSError<MQErrors>> CreateBrokerOutcome;
-        typedef Aws::Utils::Outcome<CreateConfigurationResult, Aws::Client::AWSError<MQErrors>> CreateConfigurationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<MQErrors>> CreateTagsOutcome;
-        typedef Aws::Utils::Outcome<CreateUserResult, Aws::Client::AWSError<MQErrors>> CreateUserOutcome;
-        typedef Aws::Utils::Outcome<DeleteBrokerResult, Aws::Client::AWSError<MQErrors>> DeleteBrokerOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<MQErrors>> DeleteTagsOutcome;
-        typedef Aws::Utils::Outcome<DeleteUserResult, Aws::Client::AWSError<MQErrors>> DeleteUserOutcome;
-        typedef Aws::Utils::Outcome<DescribeBrokerResult, Aws::Client::AWSError<MQErrors>> DescribeBrokerOutcome;
-        typedef Aws::Utils::Outcome<DescribeBrokerEngineTypesResult, Aws::Client::AWSError<MQErrors>> DescribeBrokerEngineTypesOutcome;
-        typedef Aws::Utils::Outcome<DescribeBrokerInstanceOptionsResult, Aws::Client::AWSError<MQErrors>> DescribeBrokerInstanceOptionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeConfigurationResult, Aws::Client::AWSError<MQErrors>> DescribeConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DescribeConfigurationRevisionResult, Aws::Client::AWSError<MQErrors>> DescribeConfigurationRevisionOutcome;
-        typedef Aws::Utils::Outcome<DescribeUserResult, Aws::Client::AWSError<MQErrors>> DescribeUserOutcome;
-        typedef Aws::Utils::Outcome<ListBrokersResult, Aws::Client::AWSError<MQErrors>> ListBrokersOutcome;
-        typedef Aws::Utils::Outcome<ListConfigurationRevisionsResult, Aws::Client::AWSError<MQErrors>> ListConfigurationRevisionsOutcome;
-        typedef Aws::Utils::Outcome<ListConfigurationsResult, Aws::Client::AWSError<MQErrors>> ListConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsResult, Aws::Client::AWSError<MQErrors>> ListTagsOutcome;
-        typedef Aws::Utils::Outcome<ListUsersResult, Aws::Client::AWSError<MQErrors>> ListUsersOutcome;
-        typedef Aws::Utils::Outcome<RebootBrokerResult, Aws::Client::AWSError<MQErrors>> RebootBrokerOutcome;
-        typedef Aws::Utils::Outcome<UpdateBrokerResult, Aws::Client::AWSError<MQErrors>> UpdateBrokerOutcome;
-        typedef Aws::Utils::Outcome<UpdateConfigurationResult, Aws::Client::AWSError<MQErrors>> UpdateConfigurationOutcome;
-        typedef Aws::Utils::Outcome<UpdateUserResult, Aws::Client::AWSError<MQErrors>> UpdateUserOutcome;
+        typedef Aws::Utils::Outcome<CreateBrokerResult, MQError> CreateBrokerOutcome;
+        typedef Aws::Utils::Outcome<CreateConfigurationResult, MQError> CreateConfigurationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, MQError> CreateTagsOutcome;
+        typedef Aws::Utils::Outcome<CreateUserResult, MQError> CreateUserOutcome;
+        typedef Aws::Utils::Outcome<DeleteBrokerResult, MQError> DeleteBrokerOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, MQError> DeleteTagsOutcome;
+        typedef Aws::Utils::Outcome<DeleteUserResult, MQError> DeleteUserOutcome;
+        typedef Aws::Utils::Outcome<DescribeBrokerResult, MQError> DescribeBrokerOutcome;
+        typedef Aws::Utils::Outcome<DescribeBrokerEngineTypesResult, MQError> DescribeBrokerEngineTypesOutcome;
+        typedef Aws::Utils::Outcome<DescribeBrokerInstanceOptionsResult, MQError> DescribeBrokerInstanceOptionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeConfigurationResult, MQError> DescribeConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DescribeConfigurationRevisionResult, MQError> DescribeConfigurationRevisionOutcome;
+        typedef Aws::Utils::Outcome<DescribeUserResult, MQError> DescribeUserOutcome;
+        typedef Aws::Utils::Outcome<ListBrokersResult, MQError> ListBrokersOutcome;
+        typedef Aws::Utils::Outcome<ListConfigurationRevisionsResult, MQError> ListConfigurationRevisionsOutcome;
+        typedef Aws::Utils::Outcome<ListConfigurationsResult, MQError> ListConfigurationsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsResult, MQError> ListTagsOutcome;
+        typedef Aws::Utils::Outcome<ListUsersResult, MQError> ListUsersOutcome;
+        typedef Aws::Utils::Outcome<RebootBrokerResult, MQError> RebootBrokerOutcome;
+        typedef Aws::Utils::Outcome<UpdateBrokerResult, MQError> UpdateBrokerOutcome;
+        typedef Aws::Utils::Outcome<UpdateConfigurationResult, MQError> UpdateConfigurationOutcome;
+        typedef Aws::Utils::Outcome<UpdateUserResult, MQError> UpdateUserOutcome;
 
         typedef std::future<CreateBrokerOutcome> CreateBrokerOutcomeCallable;
         typedef std::future<CreateConfigurationOutcome> CreateConfigurationOutcomeCallable;
@@ -177,10 +167,10 @@ namespace Model
     typedef std::function<void(const MQClient*, const Model::UpdateUserRequest&, const Model::UpdateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserResponseReceivedHandler;
 
   /**
-   * Amazon MQ is a managed message broker service for Apache ActiveMQ that makes it
-   * easy to set up and operate message brokers in the cloud. A message broker allows
-   * software applications and components to communicate using various programming
-   * languages, operating systems, and formal messaging protocols.
+   * Amazon MQ is a managed message broker service for Apache ActiveMQ and RabbitMQ
+   * that makes it easy to set up and operate message brokers in the cloud. A message
+   * broker allows software applications and components to communicate using various
+   * programming languages, operating systems, and formal messaging protocols.
    */
   class AWS_MQ_API MQClient : public Aws::Client::AWSJsonClient
   {
@@ -207,8 +197,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~MQClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "mq"; }
 
 
         /**

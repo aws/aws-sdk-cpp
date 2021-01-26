@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -22,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/DBSubnetGroup.h>
 #include <aws/rds/model/PendingModifiedValues.h>
+#include <aws/rds/model/ReplicaMode.h>
 #include <aws/rds/model/DBSecurityGroupMembership.h>
 #include <aws/rds/model/VpcSecurityGroupMembership.h>
 #include <aws/rds/model/DBParameterGroupStatus.h>
@@ -30,6 +21,8 @@
 #include <aws/rds/model/DomainMembership.h>
 #include <aws/rds/model/ProcessorFeature.h>
 #include <aws/rds/model/DBInstanceRole.h>
+#include <aws/rds/model/Tag.h>
+#include <aws/rds/model/DBInstanceAutomatedBackupsReplication.h>
 #include <utility>
 
 namespace Aws
@@ -163,42 +156,42 @@ namespace Model
 
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB instance.</p>
+     * <p>The name of the database engine to be used for this DB instance.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB instance.</p>
+     * <p>The name of the database engine to be used for this DB instance.</p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB instance.</p>
+     * <p>The name of the database engine to be used for this DB instance.</p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB instance.</p>
+     * <p>The name of the database engine to be used for this DB instance.</p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB instance.</p>
+     * <p>The name of the database engine to be used for this DB instance.</p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB instance.</p>
+     * <p>The name of the database engine to be used for this DB instance.</p>
      */
     inline DBInstance& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB instance.</p>
+     * <p>The name of the database engine to be used for this DB instance.</p>
      */
     inline DBInstance& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB instance.</p>
+     * <p>The name of the database engine to be used for this DB instance.</p>
      */
     inline DBInstance& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -1125,8 +1118,8 @@ namespace Model
      * instance is replicated as a read replica. For example, when you create an Aurora
      * read replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
      * Aurora read replica is shown. This output does not contain information about
-     * cross region Aurora read replicas.</p> <note> <p>Currently, each RDS DB instance
-     * can have only one Aurora read replica.</p> </note>
+     * cross region Aurora read replicas.</p>  <p>Currently, each RDS DB instance
+     * can have only one Aurora read replica.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetReadReplicaDBClusterIdentifiers() const{ return m_readReplicaDBClusterIdentifiers; }
 
@@ -1135,8 +1128,8 @@ namespace Model
      * instance is replicated as a read replica. For example, when you create an Aurora
      * read replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
      * Aurora read replica is shown. This output does not contain information about
-     * cross region Aurora read replicas.</p> <note> <p>Currently, each RDS DB instance
-     * can have only one Aurora read replica.</p> </note>
+     * cross region Aurora read replicas.</p>  <p>Currently, each RDS DB instance
+     * can have only one Aurora read replica.</p> 
      */
     inline bool ReadReplicaDBClusterIdentifiersHasBeenSet() const { return m_readReplicaDBClusterIdentifiersHasBeenSet; }
 
@@ -1145,8 +1138,8 @@ namespace Model
      * instance is replicated as a read replica. For example, when you create an Aurora
      * read replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
      * Aurora read replica is shown. This output does not contain information about
-     * cross region Aurora read replicas.</p> <note> <p>Currently, each RDS DB instance
-     * can have only one Aurora read replica.</p> </note>
+     * cross region Aurora read replicas.</p>  <p>Currently, each RDS DB instance
+     * can have only one Aurora read replica.</p> 
      */
     inline void SetReadReplicaDBClusterIdentifiers(const Aws::Vector<Aws::String>& value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers = value; }
 
@@ -1155,8 +1148,8 @@ namespace Model
      * instance is replicated as a read replica. For example, when you create an Aurora
      * read replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
      * Aurora read replica is shown. This output does not contain information about
-     * cross region Aurora read replicas.</p> <note> <p>Currently, each RDS DB instance
-     * can have only one Aurora read replica.</p> </note>
+     * cross region Aurora read replicas.</p>  <p>Currently, each RDS DB instance
+     * can have only one Aurora read replica.</p> 
      */
     inline void SetReadReplicaDBClusterIdentifiers(Aws::Vector<Aws::String>&& value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers = std::move(value); }
 
@@ -1165,8 +1158,8 @@ namespace Model
      * instance is replicated as a read replica. For example, when you create an Aurora
      * read replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
      * Aurora read replica is shown. This output does not contain information about
-     * cross region Aurora read replicas.</p> <note> <p>Currently, each RDS DB instance
-     * can have only one Aurora read replica.</p> </note>
+     * cross region Aurora read replicas.</p>  <p>Currently, each RDS DB instance
+     * can have only one Aurora read replica.</p> 
      */
     inline DBInstance& WithReadReplicaDBClusterIdentifiers(const Aws::Vector<Aws::String>& value) { SetReadReplicaDBClusterIdentifiers(value); return *this;}
 
@@ -1175,8 +1168,8 @@ namespace Model
      * instance is replicated as a read replica. For example, when you create an Aurora
      * read replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
      * Aurora read replica is shown. This output does not contain information about
-     * cross region Aurora read replicas.</p> <note> <p>Currently, each RDS DB instance
-     * can have only one Aurora read replica.</p> </note>
+     * cross region Aurora read replicas.</p>  <p>Currently, each RDS DB instance
+     * can have only one Aurora read replica.</p> 
      */
     inline DBInstance& WithReadReplicaDBClusterIdentifiers(Aws::Vector<Aws::String>&& value) { SetReadReplicaDBClusterIdentifiers(std::move(value)); return *this;}
 
@@ -1185,8 +1178,8 @@ namespace Model
      * instance is replicated as a read replica. For example, when you create an Aurora
      * read replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
      * Aurora read replica is shown. This output does not contain information about
-     * cross region Aurora read replicas.</p> <note> <p>Currently, each RDS DB instance
-     * can have only one Aurora read replica.</p> </note>
+     * cross region Aurora read replicas.</p>  <p>Currently, each RDS DB instance
+     * can have only one Aurora read replica.</p> 
      */
     inline DBInstance& AddReadReplicaDBClusterIdentifiers(const Aws::String& value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers.push_back(value); return *this; }
 
@@ -1195,8 +1188,8 @@ namespace Model
      * instance is replicated as a read replica. For example, when you create an Aurora
      * read replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
      * Aurora read replica is shown. This output does not contain information about
-     * cross region Aurora read replicas.</p> <note> <p>Currently, each RDS DB instance
-     * can have only one Aurora read replica.</p> </note>
+     * cross region Aurora read replicas.</p>  <p>Currently, each RDS DB instance
+     * can have only one Aurora read replica.</p> 
      */
     inline DBInstance& AddReadReplicaDBClusterIdentifiers(Aws::String&& value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers.push_back(std::move(value)); return *this; }
 
@@ -1205,10 +1198,71 @@ namespace Model
      * instance is replicated as a read replica. For example, when you create an Aurora
      * read replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
      * Aurora read replica is shown. This output does not contain information about
-     * cross region Aurora read replicas.</p> <note> <p>Currently, each RDS DB instance
-     * can have only one Aurora read replica.</p> </note>
+     * cross region Aurora read replicas.</p>  <p>Currently, each RDS DB instance
+     * can have only one Aurora read replica.</p> 
      */
     inline DBInstance& AddReadReplicaDBClusterIdentifiers(const char* value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers.push_back(value); return *this; }
+
+
+    /**
+     * <p>The open mode of an Oracle read replica. The default is
+     * <code>open-read-only</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+     * with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>  <p>This attribute is only supported in RDS for Oracle.</p>
+     * 
+     */
+    inline const ReplicaMode& GetReplicaMode() const{ return m_replicaMode; }
+
+    /**
+     * <p>The open mode of an Oracle read replica. The default is
+     * <code>open-read-only</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+     * with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>  <p>This attribute is only supported in RDS for Oracle.</p>
+     * 
+     */
+    inline bool ReplicaModeHasBeenSet() const { return m_replicaModeHasBeenSet; }
+
+    /**
+     * <p>The open mode of an Oracle read replica. The default is
+     * <code>open-read-only</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+     * with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>  <p>This attribute is only supported in RDS for Oracle.</p>
+     * 
+     */
+    inline void SetReplicaMode(const ReplicaMode& value) { m_replicaModeHasBeenSet = true; m_replicaMode = value; }
+
+    /**
+     * <p>The open mode of an Oracle read replica. The default is
+     * <code>open-read-only</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+     * with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>  <p>This attribute is only supported in RDS for Oracle.</p>
+     * 
+     */
+    inline void SetReplicaMode(ReplicaMode&& value) { m_replicaModeHasBeenSet = true; m_replicaMode = std::move(value); }
+
+    /**
+     * <p>The open mode of an Oracle read replica. The default is
+     * <code>open-read-only</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+     * with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>  <p>This attribute is only supported in RDS for Oracle.</p>
+     * 
+     */
+    inline DBInstance& WithReplicaMode(const ReplicaMode& value) { SetReplicaMode(value); return *this;}
+
+    /**
+     * <p>The open mode of an Oracle read replica. The default is
+     * <code>open-read-only</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+     * with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>  <p>This attribute is only supported in RDS for Oracle.</p>
+     * 
+     */
+    inline DBInstance& WithReplicaMode(ReplicaMode&& value) { SetReplicaMode(std::move(value)); return *this;}
 
 
     /**
@@ -1364,6 +1418,63 @@ namespace Model
 
 
     /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance. This
+     * character set specifies the Unicode encoding for data stored in table columns of
+     * type NCHAR, NCLOB, or NVARCHAR2. </p>
+     */
+    inline const Aws::String& GetNcharCharacterSetName() const{ return m_ncharCharacterSetName; }
+
+    /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance. This
+     * character set specifies the Unicode encoding for data stored in table columns of
+     * type NCHAR, NCLOB, or NVARCHAR2. </p>
+     */
+    inline bool NcharCharacterSetNameHasBeenSet() const { return m_ncharCharacterSetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance. This
+     * character set specifies the Unicode encoding for data stored in table columns of
+     * type NCHAR, NCLOB, or NVARCHAR2. </p>
+     */
+    inline void SetNcharCharacterSetName(const Aws::String& value) { m_ncharCharacterSetNameHasBeenSet = true; m_ncharCharacterSetName = value; }
+
+    /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance. This
+     * character set specifies the Unicode encoding for data stored in table columns of
+     * type NCHAR, NCLOB, or NVARCHAR2. </p>
+     */
+    inline void SetNcharCharacterSetName(Aws::String&& value) { m_ncharCharacterSetNameHasBeenSet = true; m_ncharCharacterSetName = std::move(value); }
+
+    /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance. This
+     * character set specifies the Unicode encoding for data stored in table columns of
+     * type NCHAR, NCLOB, or NVARCHAR2. </p>
+     */
+    inline void SetNcharCharacterSetName(const char* value) { m_ncharCharacterSetNameHasBeenSet = true; m_ncharCharacterSetName.assign(value); }
+
+    /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance. This
+     * character set specifies the Unicode encoding for data stored in table columns of
+     * type NCHAR, NCLOB, or NVARCHAR2. </p>
+     */
+    inline DBInstance& WithNcharCharacterSetName(const Aws::String& value) { SetNcharCharacterSetName(value); return *this;}
+
+    /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance. This
+     * character set specifies the Unicode encoding for data stored in table columns of
+     * type NCHAR, NCLOB, or NVARCHAR2. </p>
+     */
+    inline DBInstance& WithNcharCharacterSetName(Aws::String&& value) { SetNcharCharacterSetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the NCHAR character set for the Oracle DB instance. This
+     * character set specifies the Unicode encoding for data stored in table columns of
+     * type NCHAR, NCLOB, or NVARCHAR2. </p>
+     */
+    inline DBInstance& WithNcharCharacterSetName(const char* value) { SetNcharCharacterSetName(value); return *this;}
+
+
+    /**
      * <p>If present, specifies the name of the secondary Availability Zone for a DB
      * instance with multi-AZ support.</p>
      */
@@ -1413,34 +1524,54 @@ namespace Model
 
 
     /**
-     * <p>Specifies the accessibility options for the DB instance. A value of true
-     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
-     * resolves to a public IP address. A value of false specifies an internal instance
-     * with a DNS name that resolves to a private IP address.</p>
+     * <p>Specifies the accessibility options for the DB instance.</p> <p>When the DB
+     * instance is publicly accessible, its DNS endpoint resolves to the private IP
+     * address from within the DB instance's VPC, and to the public IP address from
+     * outside of the DB instance's VPC. Access to the DB instance is ultimately
+     * controlled by the security group it uses, and that public access is not
+     * permitted if the security group assigned to the DB instance doesn't permit
+     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
+     * instance with a DNS name that resolves to a private IP address.</p> <p>For more
+     * information, see <a>CreateDBInstance</a>.</p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
     /**
-     * <p>Specifies the accessibility options for the DB instance. A value of true
-     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
-     * resolves to a public IP address. A value of false specifies an internal instance
-     * with a DNS name that resolves to a private IP address.</p>
+     * <p>Specifies the accessibility options for the DB instance.</p> <p>When the DB
+     * instance is publicly accessible, its DNS endpoint resolves to the private IP
+     * address from within the DB instance's VPC, and to the public IP address from
+     * outside of the DB instance's VPC. Access to the DB instance is ultimately
+     * controlled by the security group it uses, and that public access is not
+     * permitted if the security group assigned to the DB instance doesn't permit
+     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
+     * instance with a DNS name that resolves to a private IP address.</p> <p>For more
+     * information, see <a>CreateDBInstance</a>.</p>
      */
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
 
     /**
-     * <p>Specifies the accessibility options for the DB instance. A value of true
-     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
-     * resolves to a public IP address. A value of false specifies an internal instance
-     * with a DNS name that resolves to a private IP address.</p>
+     * <p>Specifies the accessibility options for the DB instance.</p> <p>When the DB
+     * instance is publicly accessible, its DNS endpoint resolves to the private IP
+     * address from within the DB instance's VPC, and to the public IP address from
+     * outside of the DB instance's VPC. Access to the DB instance is ultimately
+     * controlled by the security group it uses, and that public access is not
+     * permitted if the security group assigned to the DB instance doesn't permit
+     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
+     * instance with a DNS name that resolves to a private IP address.</p> <p>For more
+     * information, see <a>CreateDBInstance</a>.</p>
      */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
-     * <p>Specifies the accessibility options for the DB instance. A value of true
-     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
-     * resolves to a public IP address. A value of false specifies an internal instance
-     * with a DNS name that resolves to a private IP address.</p>
+     * <p>Specifies the accessibility options for the DB instance.</p> <p>When the DB
+     * instance is publicly accessible, its DNS endpoint resolves to the private IP
+     * address from within the DB instance's VPC, and to the public IP address from
+     * outside of the DB instance's VPC. Access to the DB instance is ultimately
+     * controlled by the security group it uses, and that public access is not
+     * permitted if the security group assigned to the DB instance doesn't permit
+     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
+     * instance with a DNS name that resolves to a private IP address.</p> <p>For more
+     * information, see <a>CreateDBInstance</a>.</p>
      */
     inline DBInstance& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
@@ -1681,106 +1812,114 @@ namespace Model
 
     /**
      * <p> If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB instance. </p>
+     * encrypted DB instance. </p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
      * <p> If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB instance. </p>
+     * encrypted DB instance. </p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p> If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB instance. </p>
+     * encrypted DB instance. </p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
      * <p> If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB instance. </p>
+     * encrypted DB instance. </p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p> If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB instance. </p>
+     * encrypted DB instance. </p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
      * <p> If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB instance. </p>
+     * encrypted DB instance. </p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline DBInstance& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
      * <p> If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB instance. </p>
+     * encrypted DB instance. </p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline DBInstance& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p> If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB instance. </p>
+     * encrypted DB instance. </p> <p>The AWS KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
      */
     inline DBInstance& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
     /**
      * <p>The AWS Region-unique, immutable identifier for the DB instance. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB instance is accessed.</p>
+     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS customer
+     * master key (CMK) for the DB instance is accessed.</p>
      */
     inline const Aws::String& GetDbiResourceId() const{ return m_dbiResourceId; }
 
     /**
      * <p>The AWS Region-unique, immutable identifier for the DB instance. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB instance is accessed.</p>
+     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS customer
+     * master key (CMK) for the DB instance is accessed.</p>
      */
     inline bool DbiResourceIdHasBeenSet() const { return m_dbiResourceIdHasBeenSet; }
 
     /**
      * <p>The AWS Region-unique, immutable identifier for the DB instance. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB instance is accessed.</p>
+     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS customer
+     * master key (CMK) for the DB instance is accessed.</p>
      */
     inline void SetDbiResourceId(const Aws::String& value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId = value; }
 
     /**
      * <p>The AWS Region-unique, immutable identifier for the DB instance. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB instance is accessed.</p>
+     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS customer
+     * master key (CMK) for the DB instance is accessed.</p>
      */
     inline void SetDbiResourceId(Aws::String&& value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId = std::move(value); }
 
     /**
      * <p>The AWS Region-unique, immutable identifier for the DB instance. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB instance is accessed.</p>
+     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS customer
+     * master key (CMK) for the DB instance is accessed.</p>
      */
     inline void SetDbiResourceId(const char* value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId.assign(value); }
 
     /**
      * <p>The AWS Region-unique, immutable identifier for the DB instance. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB instance is accessed.</p>
+     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS customer
+     * master key (CMK) for the DB instance is accessed.</p>
      */
     inline DBInstance& WithDbiResourceId(const Aws::String& value) { SetDbiResourceId(value); return *this;}
 
     /**
      * <p>The AWS Region-unique, immutable identifier for the DB instance. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB instance is accessed.</p>
+     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS customer
+     * master key (CMK) for the DB instance is accessed.</p>
      */
     inline DBInstance& WithDbiResourceId(Aws::String&& value) { SetDbiResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS Region-unique, immutable identifier for the DB instance. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB instance is accessed.</p>
+     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS customer
+     * master key (CMK) for the DB instance is accessed.</p>
      */
     inline DBInstance& WithDbiResourceId(const char* value) { SetDbiResourceId(value); return *this;}
 
@@ -2245,58 +2384,58 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p>
      */
     inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p>
      */
     inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p>
      */
     inline DBInstance& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p>
      */
     inline DBInstance& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     * for the AWS KMS customer master key (CMK).</p>
      */
     inline DBInstance& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
@@ -2598,6 +2737,133 @@ namespace Model
      */
     inline DBInstance& WithMaxAllocatedStorage(int value) { SetMaxAllocatedStorage(value); return *this;}
 
+
+    
+    inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
+
+    
+    inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
+
+    
+    inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagListHasBeenSet = true; m_tagList = value; }
+
+    
+    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagListHasBeenSet = true; m_tagList = std::move(value); }
+
+    
+    inline DBInstance& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
+
+    
+    inline DBInstance& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
+
+    
+    inline DBInstance& AddTagList(const Tag& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
+
+    
+    inline DBInstance& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The list of replicated automated backups associated with the DB instance.</p>
+     */
+    inline const Aws::Vector<DBInstanceAutomatedBackupsReplication>& GetDBInstanceAutomatedBackupsReplications() const{ return m_dBInstanceAutomatedBackupsReplications; }
+
+    /**
+     * <p>The list of replicated automated backups associated with the DB instance.</p>
+     */
+    inline bool DBInstanceAutomatedBackupsReplicationsHasBeenSet() const { return m_dBInstanceAutomatedBackupsReplicationsHasBeenSet; }
+
+    /**
+     * <p>The list of replicated automated backups associated with the DB instance.</p>
+     */
+    inline void SetDBInstanceAutomatedBackupsReplications(const Aws::Vector<DBInstanceAutomatedBackupsReplication>& value) { m_dBInstanceAutomatedBackupsReplicationsHasBeenSet = true; m_dBInstanceAutomatedBackupsReplications = value; }
+
+    /**
+     * <p>The list of replicated automated backups associated with the DB instance.</p>
+     */
+    inline void SetDBInstanceAutomatedBackupsReplications(Aws::Vector<DBInstanceAutomatedBackupsReplication>&& value) { m_dBInstanceAutomatedBackupsReplicationsHasBeenSet = true; m_dBInstanceAutomatedBackupsReplications = std::move(value); }
+
+    /**
+     * <p>The list of replicated automated backups associated with the DB instance.</p>
+     */
+    inline DBInstance& WithDBInstanceAutomatedBackupsReplications(const Aws::Vector<DBInstanceAutomatedBackupsReplication>& value) { SetDBInstanceAutomatedBackupsReplications(value); return *this;}
+
+    /**
+     * <p>The list of replicated automated backups associated with the DB instance.</p>
+     */
+    inline DBInstance& WithDBInstanceAutomatedBackupsReplications(Aws::Vector<DBInstanceAutomatedBackupsReplication>&& value) { SetDBInstanceAutomatedBackupsReplications(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of replicated automated backups associated with the DB instance.</p>
+     */
+    inline DBInstance& AddDBInstanceAutomatedBackupsReplications(const DBInstanceAutomatedBackupsReplication& value) { m_dBInstanceAutomatedBackupsReplicationsHasBeenSet = true; m_dBInstanceAutomatedBackupsReplications.push_back(value); return *this; }
+
+    /**
+     * <p>The list of replicated automated backups associated with the DB instance.</p>
+     */
+    inline DBInstance& AddDBInstanceAutomatedBackupsReplications(DBInstanceAutomatedBackupsReplication&& value) { m_dBInstanceAutomatedBackupsReplicationsHasBeenSet = true; m_dBInstanceAutomatedBackupsReplications.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on
+     * Outposts DB instance.</p> <p>A <i>CoIP </i>provides local or external
+     * connectivity to resources in your Outpost subnets through your on-premises
+     * network. For some use cases, a CoIP can provide lower latency for connections to
+     * the DB instance from outside of its virtual private cloud (VPC) on your local
+     * network.</p> <p>For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     */
+    inline bool GetCustomerOwnedIpEnabled() const{ return m_customerOwnedIpEnabled; }
+
+    /**
+     * <p>Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on
+     * Outposts DB instance.</p> <p>A <i>CoIP </i>provides local or external
+     * connectivity to resources in your Outpost subnets through your on-premises
+     * network. For some use cases, a CoIP can provide lower latency for connections to
+     * the DB instance from outside of its virtual private cloud (VPC) on your local
+     * network.</p> <p>For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     */
+    inline bool CustomerOwnedIpEnabledHasBeenSet() const { return m_customerOwnedIpEnabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on
+     * Outposts DB instance.</p> <p>A <i>CoIP </i>provides local or external
+     * connectivity to resources in your Outpost subnets through your on-premises
+     * network. For some use cases, a CoIP can provide lower latency for connections to
+     * the DB instance from outside of its virtual private cloud (VPC) on your local
+     * network.</p> <p>For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     */
+    inline void SetCustomerOwnedIpEnabled(bool value) { m_customerOwnedIpEnabledHasBeenSet = true; m_customerOwnedIpEnabled = value; }
+
+    /**
+     * <p>Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on
+     * Outposts DB instance.</p> <p>A <i>CoIP </i>provides local or external
+     * connectivity to resources in your Outpost subnets through your on-premises
+     * network. For some use cases, a CoIP can provide lower latency for connections to
+     * the DB instance from outside of its virtual private cloud (VPC) on your local
+     * network.</p> <p>For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     */
+    inline DBInstance& WithCustomerOwnedIpEnabled(bool value) { SetCustomerOwnedIpEnabled(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -2675,6 +2941,9 @@ namespace Model
     Aws::Vector<Aws::String> m_readReplicaDBClusterIdentifiers;
     bool m_readReplicaDBClusterIdentifiersHasBeenSet;
 
+    ReplicaMode m_replicaMode;
+    bool m_replicaModeHasBeenSet;
+
     Aws::String m_licenseModel;
     bool m_licenseModelHasBeenSet;
 
@@ -2686,6 +2955,9 @@ namespace Model
 
     Aws::String m_characterSetName;
     bool m_characterSetNameHasBeenSet;
+
+    Aws::String m_ncharCharacterSetName;
+    bool m_ncharCharacterSetNameHasBeenSet;
 
     Aws::String m_secondaryAvailabilityZone;
     bool m_secondaryAvailabilityZoneHasBeenSet;
@@ -2773,6 +3045,15 @@ namespace Model
 
     int m_maxAllocatedStorage;
     bool m_maxAllocatedStorageHasBeenSet;
+
+    Aws::Vector<Tag> m_tagList;
+    bool m_tagListHasBeenSet;
+
+    Aws::Vector<DBInstanceAutomatedBackupsReplication> m_dBInstanceAutomatedBackupsReplications;
+    bool m_dBInstanceAutomatedBackupsReplicationsHasBeenSet;
+
+    bool m_customerOwnedIpEnabled;
+    bool m_customerOwnedIpEnabledHasBeenSet;
   };
 
 } // namespace Model

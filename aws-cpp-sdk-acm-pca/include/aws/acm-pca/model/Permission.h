@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
@@ -41,9 +31,13 @@ namespace Model
    * service or entity. In order for ACM to automatically renew private certificates,
    * you must give the ACM service principal all available permissions
    * (<code>IssueCertificate</code>, <code>GetCertificate</code>, and
-   * <code>ListPermissions</code>). Permissions can be assigned with the
-   * <a>CreatePermission</a> action, removed with the <a>DeletePermission</a> action,
-   * and listed with the <a>ListPermissions</a> action.</p><p><h3>See Also:</h3>   <a
+   * <code>ListPermissions</code>). Permissions can be assigned with the <a
+   * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreatePermission.html">CreatePermission</a>
+   * action, removed with the <a
+   * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePermission.html">DeletePermission</a>
+   * action, and listed with the <a
+   * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListPermissions.html">ListPermissions</a>
+   * action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/Permission">AWS
    * API Reference</a></p>
    */

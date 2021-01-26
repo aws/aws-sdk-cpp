@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
@@ -80,59 +70,59 @@ namespace Model
 
 
     /**
-     * <p>The Unix timestamp (in seconds and milliseconds) for when the attempt was
-     * started (when the attempt transitioned from the <code>STARTING</code> state to
-     * the <code>RUNNING</code> state).</p>
+     * <p>The Unix timestamp (in milliseconds) for when the attempt was started (when
+     * the attempt transitioned from the <code>STARTING</code> state to the
+     * <code>RUNNING</code> state).</p>
      */
     inline long long GetStartedAt() const{ return m_startedAt; }
 
     /**
-     * <p>The Unix timestamp (in seconds and milliseconds) for when the attempt was
-     * started (when the attempt transitioned from the <code>STARTING</code> state to
-     * the <code>RUNNING</code> state).</p>
+     * <p>The Unix timestamp (in milliseconds) for when the attempt was started (when
+     * the attempt transitioned from the <code>STARTING</code> state to the
+     * <code>RUNNING</code> state).</p>
      */
     inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
 
     /**
-     * <p>The Unix timestamp (in seconds and milliseconds) for when the attempt was
-     * started (when the attempt transitioned from the <code>STARTING</code> state to
-     * the <code>RUNNING</code> state).</p>
+     * <p>The Unix timestamp (in milliseconds) for when the attempt was started (when
+     * the attempt transitioned from the <code>STARTING</code> state to the
+     * <code>RUNNING</code> state).</p>
      */
     inline void SetStartedAt(long long value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
 
     /**
-     * <p>The Unix timestamp (in seconds and milliseconds) for when the attempt was
-     * started (when the attempt transitioned from the <code>STARTING</code> state to
-     * the <code>RUNNING</code> state).</p>
+     * <p>The Unix timestamp (in milliseconds) for when the attempt was started (when
+     * the attempt transitioned from the <code>STARTING</code> state to the
+     * <code>RUNNING</code> state).</p>
      */
     inline AttemptDetail& WithStartedAt(long long value) { SetStartedAt(value); return *this;}
 
 
     /**
-     * <p>The Unix timestamp (in seconds and milliseconds) for when the attempt was
-     * stopped (when the attempt transitioned from the <code>RUNNING</code> state to a
-     * terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+     * <p>The Unix timestamp (in milliseconds) for when the attempt was stopped (when
+     * the attempt transitioned from the <code>RUNNING</code> state to a terminal
+     * state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */
     inline long long GetStoppedAt() const{ return m_stoppedAt; }
 
     /**
-     * <p>The Unix timestamp (in seconds and milliseconds) for when the attempt was
-     * stopped (when the attempt transitioned from the <code>RUNNING</code> state to a
-     * terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+     * <p>The Unix timestamp (in milliseconds) for when the attempt was stopped (when
+     * the attempt transitioned from the <code>RUNNING</code> state to a terminal
+     * state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */
     inline bool StoppedAtHasBeenSet() const { return m_stoppedAtHasBeenSet; }
 
     /**
-     * <p>The Unix timestamp (in seconds and milliseconds) for when the attempt was
-     * stopped (when the attempt transitioned from the <code>RUNNING</code> state to a
-     * terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+     * <p>The Unix timestamp (in milliseconds) for when the attempt was stopped (when
+     * the attempt transitioned from the <code>RUNNING</code> state to a terminal
+     * state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */
     inline void SetStoppedAt(long long value) { m_stoppedAtHasBeenSet = true; m_stoppedAt = value; }
 
     /**
-     * <p>The Unix timestamp (in seconds and milliseconds) for when the attempt was
-     * stopped (when the attempt transitioned from the <code>RUNNING</code> state to a
-     * terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+     * <p>The Unix timestamp (in milliseconds) for when the attempt was stopped (when
+     * the attempt transitioned from the <code>RUNNING</code> state to a terminal
+     * state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */
     inline AttemptDetail& WithStoppedAt(long long value) { SetStoppedAt(value); return *this;}
 

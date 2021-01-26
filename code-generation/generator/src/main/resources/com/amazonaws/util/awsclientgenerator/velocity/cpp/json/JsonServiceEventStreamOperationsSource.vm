@@ -67,9 +67,10 @@ void ${className}::${operation.name}Async(Model::${operation.request.shape.name}
 #break
 #end
 #end
+#set($streamModelNameWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($streamModelName))
   auto eventEncoderStream = Aws::MakeShared<Model::$streamModelType>(ALLOCATION_TAG);
   eventEncoderStream->SetSigner(GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER));
-  request.Set$streamModelName(eventEncoderStream); // this becomes the body of the request
+  request.Set${streamModelNameWithFirstLetterCapitalized}(eventEncoderStream); // this becomes the body of the request
   auto sem = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
   request.SetRequestSignedHandler([eventEncoderStream, sem](const Aws::Http::HttpRequest& httpRequest) { eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(httpRequest)); sem->ReleaseAll(); });
 
@@ -81,11 +82,11 @@ void ${className}::${operation.name}Async(Model::${operation.request.shape.name}
       }
       else
       {
-        request.Get${streamModelName}()->Close();
+        request.Get${streamModelNameWithFirstLetterCapitalized}()->Close();
         responseHandler(this, request, ${operation.name}Outcome(outcome.GetError()), handlerContext);
       }
       return ${operation.name}Outcome(NoResult());
   });
   sem->WaitOne();
-  streamReadyHandler(*request.Get${streamModelName}());
+  streamReadyHandler(*request.Get${streamModelNameWithFirstLetterCapitalized}());
 }

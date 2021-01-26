@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
@@ -35,6 +25,10 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for <code>SubmitJob</code>.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitJobRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_BATCH_API SubmitJobRequest : public BatchRequest
   {
@@ -473,7 +467,7 @@ namespace Model
     /**
      * <p>A list of container overrides in JSON format that specify the name of a
      * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container (that is specified in the
+     * You can override the default command for a container (that's specified in the
      * job definition or the Docker image) with a <code>command</code> override. You
      * can also override existing environment variables (that are specified in the job
      * definition or Docker image) on a container or add new environment variables to
@@ -484,7 +478,7 @@ namespace Model
     /**
      * <p>A list of container overrides in JSON format that specify the name of a
      * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container (that is specified in the
+     * You can override the default command for a container (that's specified in the
      * job definition or the Docker image) with a <code>command</code> override. You
      * can also override existing environment variables (that are specified in the job
      * definition or Docker image) on a container or add new environment variables to
@@ -495,7 +489,7 @@ namespace Model
     /**
      * <p>A list of container overrides in JSON format that specify the name of a
      * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container (that is specified in the
+     * You can override the default command for a container (that's specified in the
      * job definition or the Docker image) with a <code>command</code> override. You
      * can also override existing environment variables (that are specified in the job
      * definition or Docker image) on a container or add new environment variables to
@@ -506,7 +500,7 @@ namespace Model
     /**
      * <p>A list of container overrides in JSON format that specify the name of a
      * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container (that is specified in the
+     * You can override the default command for a container (that's specified in the
      * job definition or the Docker image) with a <code>command</code> override. You
      * can also override existing environment variables (that are specified in the job
      * definition or Docker image) on a container or add new environment variables to
@@ -517,7 +511,7 @@ namespace Model
     /**
      * <p>A list of container overrides in JSON format that specify the name of a
      * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container (that is specified in the
+     * You can override the default command for a container (that's specified in the
      * job definition or the Docker image) with a <code>command</code> override. You
      * can also override existing environment variables (that are specified in the job
      * definition or Docker image) on a container or add new environment variables to
@@ -528,7 +522,7 @@ namespace Model
     /**
      * <p>A list of container overrides in JSON format that specify the name of a
      * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container (that is specified in the
+     * You can override the default command for a container (that's specified in the
      * job definition or the Docker image) with a <code>command</code> override. You
      * can also override existing environment variables (that are specified in the job
      * definition or Docker image) on a container or add new environment variables to
@@ -539,37 +533,49 @@ namespace Model
 
     /**
      * <p>A list of node overrides in JSON format that specify the node range to target
-     * and the container overrides for that node range.</p>
+     * and the container overrides for that node range.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources; use
+     * <code>containerOverrides</code> instead.</p> 
      */
     inline const NodeOverrides& GetNodeOverrides() const{ return m_nodeOverrides; }
 
     /**
      * <p>A list of node overrides in JSON format that specify the node range to target
-     * and the container overrides for that node range.</p>
+     * and the container overrides for that node range.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources; use
+     * <code>containerOverrides</code> instead.</p> 
      */
     inline bool NodeOverridesHasBeenSet() const { return m_nodeOverridesHasBeenSet; }
 
     /**
      * <p>A list of node overrides in JSON format that specify the node range to target
-     * and the container overrides for that node range.</p>
+     * and the container overrides for that node range.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources; use
+     * <code>containerOverrides</code> instead.</p> 
      */
     inline void SetNodeOverrides(const NodeOverrides& value) { m_nodeOverridesHasBeenSet = true; m_nodeOverrides = value; }
 
     /**
      * <p>A list of node overrides in JSON format that specify the node range to target
-     * and the container overrides for that node range.</p>
+     * and the container overrides for that node range.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources; use
+     * <code>containerOverrides</code> instead.</p> 
      */
     inline void SetNodeOverrides(NodeOverrides&& value) { m_nodeOverridesHasBeenSet = true; m_nodeOverrides = std::move(value); }
 
     /**
      * <p>A list of node overrides in JSON format that specify the node range to target
-     * and the container overrides for that node range.</p>
+     * and the container overrides for that node range.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources; use
+     * <code>containerOverrides</code> instead.</p> 
      */
     inline SubmitJobRequest& WithNodeOverrides(const NodeOverrides& value) { SetNodeOverrides(value); return *this;}
 
     /**
      * <p>A list of node overrides in JSON format that specify the node range to target
-     * and the container overrides for that node range.</p>
+     * and the container overrides for that node range.</p>  <p>This parameter
+     * isn't applicable to jobs running on Fargate resources; use
+     * <code>containerOverrides</code> instead.</p> 
      */
     inline SubmitJobRequest& WithNodeOverrides(NodeOverrides&& value) { SetNodeOverrides(std::move(value)); return *this;}
 
@@ -618,11 +624,56 @@ namespace Model
 
 
     /**
+     * <p>Specifies whether to propagate the tags from the job or job definition to the
+     * corresponding Amazon ECS task. If no value is specified, the tags aren't
+     * propagated. Tags can only be propagated to the tasks during task creation. For
+     * tags with the same name, job tags are given priority over job definitions tags.
+     * If the total number of combined tags from the job and job definition is over 50,
+     * the job is moved to the <code>FAILED</code> state. When specified, this
+     * overrides the tag propagation setting in the job definition.</p>
+     */
+    inline bool GetPropagateTags() const{ return m_propagateTags; }
+
+    /**
+     * <p>Specifies whether to propagate the tags from the job or job definition to the
+     * corresponding Amazon ECS task. If no value is specified, the tags aren't
+     * propagated. Tags can only be propagated to the tasks during task creation. For
+     * tags with the same name, job tags are given priority over job definitions tags.
+     * If the total number of combined tags from the job and job definition is over 50,
+     * the job is moved to the <code>FAILED</code> state. When specified, this
+     * overrides the tag propagation setting in the job definition.</p>
+     */
+    inline bool PropagateTagsHasBeenSet() const { return m_propagateTagsHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to propagate the tags from the job or job definition to the
+     * corresponding Amazon ECS task. If no value is specified, the tags aren't
+     * propagated. Tags can only be propagated to the tasks during task creation. For
+     * tags with the same name, job tags are given priority over job definitions tags.
+     * If the total number of combined tags from the job and job definition is over 50,
+     * the job is moved to the <code>FAILED</code> state. When specified, this
+     * overrides the tag propagation setting in the job definition.</p>
+     */
+    inline void SetPropagateTags(bool value) { m_propagateTagsHasBeenSet = true; m_propagateTags = value; }
+
+    /**
+     * <p>Specifies whether to propagate the tags from the job or job definition to the
+     * corresponding Amazon ECS task. If no value is specified, the tags aren't
+     * propagated. Tags can only be propagated to the tasks during task creation. For
+     * tags with the same name, job tags are given priority over job definitions tags.
+     * If the total number of combined tags from the job and job definition is over 50,
+     * the job is moved to the <code>FAILED</code> state. When specified, this
+     * overrides the tag propagation setting in the job definition.</p>
+     */
+    inline SubmitJobRequest& WithPropagateTags(bool value) { SetPropagateTags(value); return *this;}
+
+
+    /**
      * <p>The timeout configuration for this <a>SubmitJob</a> operation. You can
      * specify a timeout duration after which AWS Batch terminates your jobs if they
-     * have not finished. If a job is terminated due to a timeout, it is not retried.
-     * The minimum value for the timeout is 60 seconds. This configuration overrides
-     * any timeout configuration specified in the job definition. For array jobs, child
+     * haven't finished. If a job is terminated due to a timeout, it isn't retried. The
+     * minimum value for the timeout is 60 seconds. This configuration overrides any
+     * timeout configuration specified in the job definition. For array jobs, child
      * jobs have the same timeout configuration as the parent job. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
@@ -633,9 +684,9 @@ namespace Model
     /**
      * <p>The timeout configuration for this <a>SubmitJob</a> operation. You can
      * specify a timeout duration after which AWS Batch terminates your jobs if they
-     * have not finished. If a job is terminated due to a timeout, it is not retried.
-     * The minimum value for the timeout is 60 seconds. This configuration overrides
-     * any timeout configuration specified in the job definition. For array jobs, child
+     * haven't finished. If a job is terminated due to a timeout, it isn't retried. The
+     * minimum value for the timeout is 60 seconds. This configuration overrides any
+     * timeout configuration specified in the job definition. For array jobs, child
      * jobs have the same timeout configuration as the parent job. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
@@ -646,9 +697,9 @@ namespace Model
     /**
      * <p>The timeout configuration for this <a>SubmitJob</a> operation. You can
      * specify a timeout duration after which AWS Batch terminates your jobs if they
-     * have not finished. If a job is terminated due to a timeout, it is not retried.
-     * The minimum value for the timeout is 60 seconds. This configuration overrides
-     * any timeout configuration specified in the job definition. For array jobs, child
+     * haven't finished. If a job is terminated due to a timeout, it isn't retried. The
+     * minimum value for the timeout is 60 seconds. This configuration overrides any
+     * timeout configuration specified in the job definition. For array jobs, child
      * jobs have the same timeout configuration as the parent job. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
@@ -659,9 +710,9 @@ namespace Model
     /**
      * <p>The timeout configuration for this <a>SubmitJob</a> operation. You can
      * specify a timeout duration after which AWS Batch terminates your jobs if they
-     * have not finished. If a job is terminated due to a timeout, it is not retried.
-     * The minimum value for the timeout is 60 seconds. This configuration overrides
-     * any timeout configuration specified in the job definition. For array jobs, child
+     * haven't finished. If a job is terminated due to a timeout, it isn't retried. The
+     * minimum value for the timeout is 60 seconds. This configuration overrides any
+     * timeout configuration specified in the job definition. For array jobs, child
      * jobs have the same timeout configuration as the parent job. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
@@ -672,9 +723,9 @@ namespace Model
     /**
      * <p>The timeout configuration for this <a>SubmitJob</a> operation. You can
      * specify a timeout duration after which AWS Batch terminates your jobs if they
-     * have not finished. If a job is terminated due to a timeout, it is not retried.
-     * The minimum value for the timeout is 60 seconds. This configuration overrides
-     * any timeout configuration specified in the job definition. For array jobs, child
+     * haven't finished. If a job is terminated due to a timeout, it isn't retried. The
+     * minimum value for the timeout is 60 seconds. This configuration overrides any
+     * timeout configuration specified in the job definition. For array jobs, child
      * jobs have the same timeout configuration as the parent job. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
@@ -685,15 +736,133 @@ namespace Model
     /**
      * <p>The timeout configuration for this <a>SubmitJob</a> operation. You can
      * specify a timeout duration after which AWS Batch terminates your jobs if they
-     * have not finished. If a job is terminated due to a timeout, it is not retried.
-     * The minimum value for the timeout is 60 seconds. This configuration overrides
-     * any timeout configuration specified in the job definition. For array jobs, child
+     * haven't finished. If a job is terminated due to a timeout, it isn't retried. The
+     * minimum value for the timeout is 60 seconds. This configuration overrides any
+     * timeout configuration specified in the job definition. For array jobs, child
      * jobs have the same timeout configuration as the parent job. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
      * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
     inline SubmitJobRequest& WithTimeout(JobTimeout&& value) { SetTimeout(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The tags that you apply to the job request to help you categorize and
+     * organize your resources. Each tag consists of a key and an optional value. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags that you apply to the job request to help you categorize and
+     * organize your resources. Each tag consists of a key and an optional value. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags that you apply to the job request to help you categorize and
+     * organize your resources. Each tag consists of a key and an optional value. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags that you apply to the job request to help you categorize and
+     * organize your resources. Each tag consists of a key and an optional value. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags that you apply to the job request to help you categorize and
+     * organize your resources. Each tag consists of a key and an optional value. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline SubmitJobRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags that you apply to the job request to help you categorize and
+     * organize your resources. Each tag consists of a key and an optional value. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline SubmitJobRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags that you apply to the job request to help you categorize and
+     * organize your resources. Each tag consists of a key and an optional value. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline SubmitJobRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The tags that you apply to the job request to help you categorize and
+     * organize your resources. Each tag consists of a key and an optional value. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline SubmitJobRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags that you apply to the job request to help you categorize and
+     * organize your resources. Each tag consists of a key and an optional value. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline SubmitJobRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags that you apply to the job request to help you categorize and
+     * organize your resources. Each tag consists of a key and an optional value. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline SubmitJobRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The tags that you apply to the job request to help you categorize and
+     * organize your resources. Each tag consists of a key and an optional value. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline SubmitJobRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags that you apply to the job request to help you categorize and
+     * organize your resources. Each tag consists of a key and an optional value. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline SubmitJobRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags that you apply to the job request to help you categorize and
+     * organize your resources. Each tag consists of a key and an optional value. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     */
+    inline SubmitJobRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
 
@@ -724,8 +893,14 @@ namespace Model
     RetryStrategy m_retryStrategy;
     bool m_retryStrategyHasBeenSet;
 
+    bool m_propagateTags;
+    bool m_propagateTagsHasBeenSet;
+
     JobTimeout m_timeout;
     bool m_timeoutHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

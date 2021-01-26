@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
@@ -197,7 +187,7 @@ namespace Model
      * information includes a commit timestamp, a log position, and values for
      * <code>transaction_id</code>, previous <code>transaction_id</code>, and
      * <code>transaction_record_id</code> (the record offset within a transaction). The
-     * default is <code>False</code>.</p>
+     * default is <code>false</code>.</p>
      */
     inline bool GetIncludeTransactionDetails() const{ return m_includeTransactionDetails; }
 
@@ -206,7 +196,7 @@ namespace Model
      * information includes a commit timestamp, a log position, and values for
      * <code>transaction_id</code>, previous <code>transaction_id</code>, and
      * <code>transaction_record_id</code> (the record offset within a transaction). The
-     * default is <code>False</code>.</p>
+     * default is <code>false</code>.</p>
      */
     inline bool IncludeTransactionDetailsHasBeenSet() const { return m_includeTransactionDetailsHasBeenSet; }
 
@@ -215,7 +205,7 @@ namespace Model
      * information includes a commit timestamp, a log position, and values for
      * <code>transaction_id</code>, previous <code>transaction_id</code>, and
      * <code>transaction_record_id</code> (the record offset within a transaction). The
-     * default is <code>False</code>.</p>
+     * default is <code>false</code>.</p>
      */
     inline void SetIncludeTransactionDetails(bool value) { m_includeTransactionDetailsHasBeenSet = true; m_includeTransactionDetails = value; }
 
@@ -224,7 +214,7 @@ namespace Model
      * information includes a commit timestamp, a log position, and values for
      * <code>transaction_id</code>, previous <code>transaction_id</code>, and
      * <code>transaction_record_id</code> (the record offset within a transaction). The
-     * default is <code>False</code>.</p>
+     * default is <code>false</code>.</p>
      */
     inline KinesisSettings& WithIncludeTransactionDetails(bool value) { SetIncludeTransactionDetails(value); return *this;}
 
@@ -232,28 +222,28 @@ namespace Model
     /**
      * <p>Shows the partition value within the Kinesis message output, unless the
      * partition type is <code>schema-table-type</code>. The default is
-     * <code>False</code>.</p>
+     * <code>false</code>.</p>
      */
     inline bool GetIncludePartitionValue() const{ return m_includePartitionValue; }
 
     /**
      * <p>Shows the partition value within the Kinesis message output, unless the
      * partition type is <code>schema-table-type</code>. The default is
-     * <code>False</code>.</p>
+     * <code>false</code>.</p>
      */
     inline bool IncludePartitionValueHasBeenSet() const { return m_includePartitionValueHasBeenSet; }
 
     /**
      * <p>Shows the partition value within the Kinesis message output, unless the
      * partition type is <code>schema-table-type</code>. The default is
-     * <code>False</code>.</p>
+     * <code>false</code>.</p>
      */
     inline void SetIncludePartitionValue(bool value) { m_includePartitionValueHasBeenSet = true; m_includePartitionValue = value; }
 
     /**
      * <p>Shows the partition value within the Kinesis message output, unless the
      * partition type is <code>schema-table-type</code>. The default is
-     * <code>False</code>.</p>
+     * <code>false</code>.</p>
      */
     inline KinesisSettings& WithIncludePartitionValue(bool value) { SetIncludePartitionValue(value); return *this;}
 
@@ -264,7 +254,7 @@ namespace Model
      * Kinesis shards. For example, suppose that a SysBench schema has thousands of
      * tables and each table has only limited range for a primary key. In this case,
      * the same primary key is sent from thousands of tables to the same shard, which
-     * causes throttling. The default is <code>False</code>.</p>
+     * causes throttling. The default is <code>false</code>.</p>
      */
     inline bool GetPartitionIncludeSchemaTable() const{ return m_partitionIncludeSchemaTable; }
 
@@ -274,7 +264,7 @@ namespace Model
      * Kinesis shards. For example, suppose that a SysBench schema has thousands of
      * tables and each table has only limited range for a primary key. In this case,
      * the same primary key is sent from thousands of tables to the same shard, which
-     * causes throttling. The default is <code>False</code>.</p>
+     * causes throttling. The default is <code>false</code>.</p>
      */
     inline bool PartitionIncludeSchemaTableHasBeenSet() const { return m_partitionIncludeSchemaTableHasBeenSet; }
 
@@ -284,7 +274,7 @@ namespace Model
      * Kinesis shards. For example, suppose that a SysBench schema has thousands of
      * tables and each table has only limited range for a primary key. In this case,
      * the same primary key is sent from thousands of tables to the same shard, which
-     * causes throttling. The default is <code>False</code>.</p>
+     * causes throttling. The default is <code>false</code>.</p>
      */
     inline void SetPartitionIncludeSchemaTable(bool value) { m_partitionIncludeSchemaTableHasBeenSet = true; m_partitionIncludeSchemaTable = value; }
 
@@ -294,7 +284,7 @@ namespace Model
      * Kinesis shards. For example, suppose that a SysBench schema has thousands of
      * tables and each table has only limited range for a primary key. In this case,
      * the same primary key is sent from thousands of tables to the same shard, which
-     * causes throttling. The default is <code>False</code>.</p>
+     * causes throttling. The default is <code>false</code>.</p>
      */
     inline KinesisSettings& WithPartitionIncludeSchemaTable(bool value) { SetPartitionIncludeSchemaTable(value); return *this;}
 
@@ -303,7 +293,7 @@ namespace Model
      * <p>Includes any data definition language (DDL) operations that change the table
      * in the control data, such as <code>rename-table</code>, <code>drop-table</code>,
      * <code>add-column</code>, <code>drop-column</code>, and
-     * <code>rename-column</code>. The default is <code>False</code>.</p>
+     * <code>rename-column</code>. The default is <code>false</code>.</p>
      */
     inline bool GetIncludeTableAlterOperations() const{ return m_includeTableAlterOperations; }
 
@@ -311,7 +301,7 @@ namespace Model
      * <p>Includes any data definition language (DDL) operations that change the table
      * in the control data, such as <code>rename-table</code>, <code>drop-table</code>,
      * <code>add-column</code>, <code>drop-column</code>, and
-     * <code>rename-column</code>. The default is <code>False</code>.</p>
+     * <code>rename-column</code>. The default is <code>false</code>.</p>
      */
     inline bool IncludeTableAlterOperationsHasBeenSet() const { return m_includeTableAlterOperationsHasBeenSet; }
 
@@ -319,7 +309,7 @@ namespace Model
      * <p>Includes any data definition language (DDL) operations that change the table
      * in the control data, such as <code>rename-table</code>, <code>drop-table</code>,
      * <code>add-column</code>, <code>drop-column</code>, and
-     * <code>rename-column</code>. The default is <code>False</code>.</p>
+     * <code>rename-column</code>. The default is <code>false</code>.</p>
      */
     inline void SetIncludeTableAlterOperations(bool value) { m_includeTableAlterOperationsHasBeenSet = true; m_includeTableAlterOperations = value; }
 
@@ -327,7 +317,7 @@ namespace Model
      * <p>Includes any data definition language (DDL) operations that change the table
      * in the control data, such as <code>rename-table</code>, <code>drop-table</code>,
      * <code>add-column</code>, <code>drop-column</code>, and
-     * <code>rename-column</code>. The default is <code>False</code>.</p>
+     * <code>rename-column</code>. The default is <code>false</code>.</p>
      */
     inline KinesisSettings& WithIncludeTableAlterOperations(bool value) { SetIncludeTableAlterOperations(value); return *this;}
 
@@ -335,30 +325,55 @@ namespace Model
     /**
      * <p>Shows detailed control information for table definition, column definition,
      * and table and column changes in the Kinesis message output. The default is
-     * <code>False</code>.</p>
+     * <code>false</code>.</p>
      */
     inline bool GetIncludeControlDetails() const{ return m_includeControlDetails; }
 
     /**
      * <p>Shows detailed control information for table definition, column definition,
      * and table and column changes in the Kinesis message output. The default is
-     * <code>False</code>.</p>
+     * <code>false</code>.</p>
      */
     inline bool IncludeControlDetailsHasBeenSet() const { return m_includeControlDetailsHasBeenSet; }
 
     /**
      * <p>Shows detailed control information for table definition, column definition,
      * and table and column changes in the Kinesis message output. The default is
-     * <code>False</code>.</p>
+     * <code>false</code>.</p>
      */
     inline void SetIncludeControlDetails(bool value) { m_includeControlDetailsHasBeenSet = true; m_includeControlDetails = value; }
 
     /**
      * <p>Shows detailed control information for table definition, column definition,
      * and table and column changes in the Kinesis message output. The default is
-     * <code>False</code>.</p>
+     * <code>false</code>.</p>
      */
     inline KinesisSettings& WithIncludeControlDetails(bool value) { SetIncludeControlDetails(value); return *this;}
+
+
+    /**
+     * <p>Include NULL and empty columns for records migrated to the endpoint. The
+     * default is <code>false</code>.</p>
+     */
+    inline bool GetIncludeNullAndEmpty() const{ return m_includeNullAndEmpty; }
+
+    /**
+     * <p>Include NULL and empty columns for records migrated to the endpoint. The
+     * default is <code>false</code>.</p>
+     */
+    inline bool IncludeNullAndEmptyHasBeenSet() const { return m_includeNullAndEmptyHasBeenSet; }
+
+    /**
+     * <p>Include NULL and empty columns for records migrated to the endpoint. The
+     * default is <code>false</code>.</p>
+     */
+    inline void SetIncludeNullAndEmpty(bool value) { m_includeNullAndEmptyHasBeenSet = true; m_includeNullAndEmpty = value; }
+
+    /**
+     * <p>Include NULL and empty columns for records migrated to the endpoint. The
+     * default is <code>false</code>.</p>
+     */
+    inline KinesisSettings& WithIncludeNullAndEmpty(bool value) { SetIncludeNullAndEmpty(value); return *this;}
 
   private:
 
@@ -385,6 +400,9 @@ namespace Model
 
     bool m_includeControlDetails;
     bool m_includeControlDetailsHasBeenSet;
+
+    bool m_includeNullAndEmpty;
+    bool m_includeNullAndEmptyHasBeenSet;
   };
 
 } // namespace Model

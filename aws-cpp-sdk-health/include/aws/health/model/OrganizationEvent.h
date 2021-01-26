@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/health/Health_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/health/model/EventTypeCategory.h>
+#include <aws/health/model/EventScopeCode.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/health/model/EventStatusCode.h>
 #include <utility>
@@ -37,8 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>Summary information about an event, returned by the
-   * <a>DescribeEventsForOrganization</a> operation.</p><p><h3>See Also:</h3>   <a
+   * <p>Summary information about an event, returned by the <a
+   * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventsForOrganization.html">DescribeEventsForOrganization</a>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/OrganizationEvent">AWS
    * API Reference</a></p>
    */
@@ -254,6 +246,97 @@ namespace Model
 
 
     /**
+     * <p>This parameter specifies if the AWS Health event is a public AWS service
+     * event or an account-specific event.</p> <ul> <li> <p>If the
+     * <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
+     * <code>affectedAccounts</code> value is always empty.</p> </li> <li> <p>If the
+     * <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
+     * <code>affectedAccounts</code> value lists the affected AWS accounts in your
+     * organization. For example, if an event affects a service such as Amazon Elastic
+     * Compute Cloud and you have AWS accounts that use that service, those account IDs
+     * appear in the response.</p> </li> <li> <p>If the <code>eventScopeCode</code>
+     * value is <code>NONE</code>, then the <code>eventArn</code> that you specified in
+     * the request is invalid or doesn't exist.</p> </li> </ul>
+     */
+    inline const EventScopeCode& GetEventScopeCode() const{ return m_eventScopeCode; }
+
+    /**
+     * <p>This parameter specifies if the AWS Health event is a public AWS service
+     * event or an account-specific event.</p> <ul> <li> <p>If the
+     * <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
+     * <code>affectedAccounts</code> value is always empty.</p> </li> <li> <p>If the
+     * <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
+     * <code>affectedAccounts</code> value lists the affected AWS accounts in your
+     * organization. For example, if an event affects a service such as Amazon Elastic
+     * Compute Cloud and you have AWS accounts that use that service, those account IDs
+     * appear in the response.</p> </li> <li> <p>If the <code>eventScopeCode</code>
+     * value is <code>NONE</code>, then the <code>eventArn</code> that you specified in
+     * the request is invalid or doesn't exist.</p> </li> </ul>
+     */
+    inline bool EventScopeCodeHasBeenSet() const { return m_eventScopeCodeHasBeenSet; }
+
+    /**
+     * <p>This parameter specifies if the AWS Health event is a public AWS service
+     * event or an account-specific event.</p> <ul> <li> <p>If the
+     * <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
+     * <code>affectedAccounts</code> value is always empty.</p> </li> <li> <p>If the
+     * <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
+     * <code>affectedAccounts</code> value lists the affected AWS accounts in your
+     * organization. For example, if an event affects a service such as Amazon Elastic
+     * Compute Cloud and you have AWS accounts that use that service, those account IDs
+     * appear in the response.</p> </li> <li> <p>If the <code>eventScopeCode</code>
+     * value is <code>NONE</code>, then the <code>eventArn</code> that you specified in
+     * the request is invalid or doesn't exist.</p> </li> </ul>
+     */
+    inline void SetEventScopeCode(const EventScopeCode& value) { m_eventScopeCodeHasBeenSet = true; m_eventScopeCode = value; }
+
+    /**
+     * <p>This parameter specifies if the AWS Health event is a public AWS service
+     * event or an account-specific event.</p> <ul> <li> <p>If the
+     * <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
+     * <code>affectedAccounts</code> value is always empty.</p> </li> <li> <p>If the
+     * <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
+     * <code>affectedAccounts</code> value lists the affected AWS accounts in your
+     * organization. For example, if an event affects a service such as Amazon Elastic
+     * Compute Cloud and you have AWS accounts that use that service, those account IDs
+     * appear in the response.</p> </li> <li> <p>If the <code>eventScopeCode</code>
+     * value is <code>NONE</code>, then the <code>eventArn</code> that you specified in
+     * the request is invalid or doesn't exist.</p> </li> </ul>
+     */
+    inline void SetEventScopeCode(EventScopeCode&& value) { m_eventScopeCodeHasBeenSet = true; m_eventScopeCode = std::move(value); }
+
+    /**
+     * <p>This parameter specifies if the AWS Health event is a public AWS service
+     * event or an account-specific event.</p> <ul> <li> <p>If the
+     * <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
+     * <code>affectedAccounts</code> value is always empty.</p> </li> <li> <p>If the
+     * <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
+     * <code>affectedAccounts</code> value lists the affected AWS accounts in your
+     * organization. For example, if an event affects a service such as Amazon Elastic
+     * Compute Cloud and you have AWS accounts that use that service, those account IDs
+     * appear in the response.</p> </li> <li> <p>If the <code>eventScopeCode</code>
+     * value is <code>NONE</code>, then the <code>eventArn</code> that you specified in
+     * the request is invalid or doesn't exist.</p> </li> </ul>
+     */
+    inline OrganizationEvent& WithEventScopeCode(const EventScopeCode& value) { SetEventScopeCode(value); return *this;}
+
+    /**
+     * <p>This parameter specifies if the AWS Health event is a public AWS service
+     * event or an account-specific event.</p> <ul> <li> <p>If the
+     * <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
+     * <code>affectedAccounts</code> value is always empty.</p> </li> <li> <p>If the
+     * <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
+     * <code>affectedAccounts</code> value lists the affected AWS accounts in your
+     * organization. For example, if an event affects a service such as Amazon Elastic
+     * Compute Cloud and you have AWS accounts that use that service, those account IDs
+     * appear in the response.</p> </li> <li> <p>If the <code>eventScopeCode</code>
+     * value is <code>NONE</code>, then the <code>eventArn</code> that you specified in
+     * the request is invalid or doesn't exist.</p> </li> </ul>
+     */
+    inline OrganizationEvent& WithEventScopeCode(EventScopeCode&& value) { SetEventScopeCode(std::move(value)); return *this;}
+
+
+    /**
      * <p>The AWS Region name of the event.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
@@ -436,6 +519,9 @@ namespace Model
 
     EventTypeCategory m_eventTypeCategory;
     bool m_eventTypeCategoryHasBeenSet;
+
+    EventScopeCode m_eventScopeCode;
+    bool m_eventScopeCodeHasBeenSet;
 
     Aws::String m_region;
     bool m_regionHasBeenSet;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/TrainingInstanceType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -58,6 +48,7 @@ namespace Aws
         static const int ml_p3_8xlarge_HASH = HashingUtils::HashString("ml.p3.8xlarge");
         static const int ml_p3_16xlarge_HASH = HashingUtils::HashString("ml.p3.16xlarge");
         static const int ml_p3dn_24xlarge_HASH = HashingUtils::HashString("ml.p3dn.24xlarge");
+        static const int ml_p4d_24xlarge_HASH = HashingUtils::HashString("ml.p4d.24xlarge");
         static const int ml_c5_xlarge_HASH = HashingUtils::HashString("ml.c5.xlarge");
         static const int ml_c5_2xlarge_HASH = HashingUtils::HashString("ml.c5.2xlarge");
         static const int ml_c5_4xlarge_HASH = HashingUtils::HashString("ml.c5.4xlarge");
@@ -185,6 +176,10 @@ namespace Aws
           {
             return TrainingInstanceType::ml_p3dn_24xlarge;
           }
+          else if (hashCode == ml_p4d_24xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_p4d_24xlarge;
+          }
           else if (hashCode == ml_c5_xlarge_HASH)
           {
             return TrainingInstanceType::ml_c5_xlarge;
@@ -295,6 +290,8 @@ namespace Aws
             return "ml.p3.16xlarge";
           case TrainingInstanceType::ml_p3dn_24xlarge:
             return "ml.p3dn.24xlarge";
+          case TrainingInstanceType::ml_p4d_24xlarge:
+            return "ml.p4d.24xlarge";
           case TrainingInstanceType::ml_c5_xlarge:
             return "ml.c5.xlarge";
           case TrainingInstanceType::ml_c5_2xlarge:

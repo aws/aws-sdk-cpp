@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kendra/Kendra_EXPORTS.h>
@@ -92,32 +82,32 @@ namespace Model
 
 
     /**
-     * <p>The Unix timestamp of the data and time that the result was clicked.</p>
+     * <p>The Unix timestamp of the date and time that the result was clicked.</p>
      */
     inline const Aws::Utils::DateTime& GetClickTime() const{ return m_clickTime; }
 
     /**
-     * <p>The Unix timestamp of the data and time that the result was clicked.</p>
+     * <p>The Unix timestamp of the date and time that the result was clicked.</p>
      */
     inline bool ClickTimeHasBeenSet() const { return m_clickTimeHasBeenSet; }
 
     /**
-     * <p>The Unix timestamp of the data and time that the result was clicked.</p>
+     * <p>The Unix timestamp of the date and time that the result was clicked.</p>
      */
     inline void SetClickTime(const Aws::Utils::DateTime& value) { m_clickTimeHasBeenSet = true; m_clickTime = value; }
 
     /**
-     * <p>The Unix timestamp of the data and time that the result was clicked.</p>
+     * <p>The Unix timestamp of the date and time that the result was clicked.</p>
      */
     inline void SetClickTime(Aws::Utils::DateTime&& value) { m_clickTimeHasBeenSet = true; m_clickTime = std::move(value); }
 
     /**
-     * <p>The Unix timestamp of the data and time that the result was clicked.</p>
+     * <p>The Unix timestamp of the date and time that the result was clicked.</p>
      */
     inline ClickFeedback& WithClickTime(const Aws::Utils::DateTime& value) { SetClickTime(value); return *this;}
 
     /**
-     * <p>The Unix timestamp of the data and time that the result was clicked.</p>
+     * <p>The Unix timestamp of the date and time that the result was clicked.</p>
      */
     inline ClickFeedback& WithClickTime(Aws::Utils::DateTime&& value) { SetClickTime(std::move(value)); return *this;}
 

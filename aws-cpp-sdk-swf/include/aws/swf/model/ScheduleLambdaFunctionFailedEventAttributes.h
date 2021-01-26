@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
@@ -141,73 +131,73 @@ namespace Model
 
     /**
      * <p>The cause of the failure. To help diagnose issues, use this information to
-     * trace back the chain of events leading up to this event.</p> <note> <p>If
+     * trace back the chain of events leading up to this event.</p>  <p>If
      * <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision
      * failed because it lacked sufficient permissions. For details and example IAM
      * policies, see <a
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
-     * Guide</i>.</p> </note>
+     * Guide</i>.</p> 
      */
     inline const ScheduleLambdaFunctionFailedCause& GetCause() const{ return m_cause; }
 
     /**
      * <p>The cause of the failure. To help diagnose issues, use this information to
-     * trace back the chain of events leading up to this event.</p> <note> <p>If
+     * trace back the chain of events leading up to this event.</p>  <p>If
      * <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision
      * failed because it lacked sufficient permissions. For details and example IAM
      * policies, see <a
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
-     * Guide</i>.</p> </note>
+     * Guide</i>.</p> 
      */
     inline bool CauseHasBeenSet() const { return m_causeHasBeenSet; }
 
     /**
      * <p>The cause of the failure. To help diagnose issues, use this information to
-     * trace back the chain of events leading up to this event.</p> <note> <p>If
+     * trace back the chain of events leading up to this event.</p>  <p>If
      * <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision
      * failed because it lacked sufficient permissions. For details and example IAM
      * policies, see <a
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
-     * Guide</i>.</p> </note>
+     * Guide</i>.</p> 
      */
     inline void SetCause(const ScheduleLambdaFunctionFailedCause& value) { m_causeHasBeenSet = true; m_cause = value; }
 
     /**
      * <p>The cause of the failure. To help diagnose issues, use this information to
-     * trace back the chain of events leading up to this event.</p> <note> <p>If
+     * trace back the chain of events leading up to this event.</p>  <p>If
      * <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision
      * failed because it lacked sufficient permissions. For details and example IAM
      * policies, see <a
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
-     * Guide</i>.</p> </note>
+     * Guide</i>.</p> 
      */
     inline void SetCause(ScheduleLambdaFunctionFailedCause&& value) { m_causeHasBeenSet = true; m_cause = std::move(value); }
 
     /**
      * <p>The cause of the failure. To help diagnose issues, use this information to
-     * trace back the chain of events leading up to this event.</p> <note> <p>If
+     * trace back the chain of events leading up to this event.</p>  <p>If
      * <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision
      * failed because it lacked sufficient permissions. For details and example IAM
      * policies, see <a
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
-     * Guide</i>.</p> </note>
+     * Guide</i>.</p> 
      */
     inline ScheduleLambdaFunctionFailedEventAttributes& WithCause(const ScheduleLambdaFunctionFailedCause& value) { SetCause(value); return *this;}
 
     /**
      * <p>The cause of the failure. To help diagnose issues, use this information to
-     * trace back the chain of events leading up to this event.</p> <note> <p>If
+     * trace back the chain of events leading up to this event.</p>  <p>If
      * <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision
      * failed because it lacked sufficient permissions. For details and example IAM
      * policies, see <a
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
-     * Guide</i>.</p> </note>
+     * Guide</i>.</p> 
      */
     inline ScheduleLambdaFunctionFailedEventAttributes& WithCause(ScheduleLambdaFunctionFailedCause&& value) { SetCause(std::move(value)); return *this;}
 

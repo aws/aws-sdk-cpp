@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -89,7 +79,7 @@ static const char* ALLOCATION_TAG = "DocDBClient";
 DocDBClient::DocDBClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<DocDBErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -99,7 +89,7 @@ DocDBClient::DocDBClient(const Client::ClientConfiguration& clientConfiguration)
 DocDBClient::DocDBClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<DocDBErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -110,7 +100,7 @@ DocDBClient::DocDBClient(const std::shared_ptr<AWSCredentialsProvider>& credenti
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<DocDBErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -123,6 +113,7 @@ DocDBClient::~DocDBClient()
 
 void DocDBClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("DocDB");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -162,15 +153,7 @@ AddTagsToResourceOutcome DocDBClient::AddTagsToResource(const AddTagsToResourceR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return AddTagsToResourceOutcome(NoResult());
-  }
-  else
-  {
-    return AddTagsToResourceOutcome(outcome.GetError());
-  }
+  return AddTagsToResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 AddTagsToResourceOutcomeCallable DocDBClient::AddTagsToResourceCallable(const AddTagsToResourceRequest& request) const
@@ -197,15 +180,7 @@ ApplyPendingMaintenanceActionOutcome DocDBClient::ApplyPendingMaintenanceAction(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return ApplyPendingMaintenanceActionOutcome(ApplyPendingMaintenanceActionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ApplyPendingMaintenanceActionOutcome(outcome.GetError());
-  }
+  return ApplyPendingMaintenanceActionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 ApplyPendingMaintenanceActionOutcomeCallable DocDBClient::ApplyPendingMaintenanceActionCallable(const ApplyPendingMaintenanceActionRequest& request) const
@@ -232,15 +207,7 @@ CopyDBClusterParameterGroupOutcome DocDBClient::CopyDBClusterParameterGroup(cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return CopyDBClusterParameterGroupOutcome(CopyDBClusterParameterGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CopyDBClusterParameterGroupOutcome(outcome.GetError());
-  }
+  return CopyDBClusterParameterGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 CopyDBClusterParameterGroupOutcomeCallable DocDBClient::CopyDBClusterParameterGroupCallable(const CopyDBClusterParameterGroupRequest& request) const
@@ -267,15 +234,7 @@ CopyDBClusterSnapshotOutcome DocDBClient::CopyDBClusterSnapshot(const CopyDBClus
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return CopyDBClusterSnapshotOutcome(CopyDBClusterSnapshotResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CopyDBClusterSnapshotOutcome(outcome.GetError());
-  }
+  return CopyDBClusterSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 CopyDBClusterSnapshotOutcomeCallable DocDBClient::CopyDBClusterSnapshotCallable(const CopyDBClusterSnapshotRequest& request) const
@@ -302,15 +261,7 @@ CreateDBClusterOutcome DocDBClient::CreateDBCluster(const CreateDBClusterRequest
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return CreateDBClusterOutcome(CreateDBClusterResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDBClusterOutcome(outcome.GetError());
-  }
+  return CreateDBClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 CreateDBClusterOutcomeCallable DocDBClient::CreateDBClusterCallable(const CreateDBClusterRequest& request) const
@@ -337,15 +288,7 @@ CreateDBClusterParameterGroupOutcome DocDBClient::CreateDBClusterParameterGroup(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return CreateDBClusterParameterGroupOutcome(CreateDBClusterParameterGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDBClusterParameterGroupOutcome(outcome.GetError());
-  }
+  return CreateDBClusterParameterGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 CreateDBClusterParameterGroupOutcomeCallable DocDBClient::CreateDBClusterParameterGroupCallable(const CreateDBClusterParameterGroupRequest& request) const
@@ -372,15 +315,7 @@ CreateDBClusterSnapshotOutcome DocDBClient::CreateDBClusterSnapshot(const Create
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return CreateDBClusterSnapshotOutcome(CreateDBClusterSnapshotResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDBClusterSnapshotOutcome(outcome.GetError());
-  }
+  return CreateDBClusterSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 CreateDBClusterSnapshotOutcomeCallable DocDBClient::CreateDBClusterSnapshotCallable(const CreateDBClusterSnapshotRequest& request) const
@@ -407,15 +342,7 @@ CreateDBInstanceOutcome DocDBClient::CreateDBInstance(const CreateDBInstanceRequ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return CreateDBInstanceOutcome(CreateDBInstanceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDBInstanceOutcome(outcome.GetError());
-  }
+  return CreateDBInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 CreateDBInstanceOutcomeCallable DocDBClient::CreateDBInstanceCallable(const CreateDBInstanceRequest& request) const
@@ -442,15 +369,7 @@ CreateDBSubnetGroupOutcome DocDBClient::CreateDBSubnetGroup(const CreateDBSubnet
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return CreateDBSubnetGroupOutcome(CreateDBSubnetGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDBSubnetGroupOutcome(outcome.GetError());
-  }
+  return CreateDBSubnetGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 CreateDBSubnetGroupOutcomeCallable DocDBClient::CreateDBSubnetGroupCallable(const CreateDBSubnetGroupRequest& request) const
@@ -477,15 +396,7 @@ DeleteDBClusterOutcome DocDBClient::DeleteDBCluster(const DeleteDBClusterRequest
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDBClusterOutcome(DeleteDBClusterResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteDBClusterOutcome(outcome.GetError());
-  }
+  return DeleteDBClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 DeleteDBClusterOutcomeCallable DocDBClient::DeleteDBClusterCallable(const DeleteDBClusterRequest& request) const
@@ -512,15 +423,7 @@ DeleteDBClusterParameterGroupOutcome DocDBClient::DeleteDBClusterParameterGroup(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDBClusterParameterGroupOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteDBClusterParameterGroupOutcome(outcome.GetError());
-  }
+  return DeleteDBClusterParameterGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 DeleteDBClusterParameterGroupOutcomeCallable DocDBClient::DeleteDBClusterParameterGroupCallable(const DeleteDBClusterParameterGroupRequest& request) const
@@ -547,15 +450,7 @@ DeleteDBClusterSnapshotOutcome DocDBClient::DeleteDBClusterSnapshot(const Delete
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDBClusterSnapshotOutcome(DeleteDBClusterSnapshotResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteDBClusterSnapshotOutcome(outcome.GetError());
-  }
+  return DeleteDBClusterSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 DeleteDBClusterSnapshotOutcomeCallable DocDBClient::DeleteDBClusterSnapshotCallable(const DeleteDBClusterSnapshotRequest& request) const
@@ -582,15 +477,7 @@ DeleteDBInstanceOutcome DocDBClient::DeleteDBInstance(const DeleteDBInstanceRequ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDBInstanceOutcome(DeleteDBInstanceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteDBInstanceOutcome(outcome.GetError());
-  }
+  return DeleteDBInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 DeleteDBInstanceOutcomeCallable DocDBClient::DeleteDBInstanceCallable(const DeleteDBInstanceRequest& request) const
@@ -617,15 +504,7 @@ DeleteDBSubnetGroupOutcome DocDBClient::DeleteDBSubnetGroup(const DeleteDBSubnet
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDBSubnetGroupOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteDBSubnetGroupOutcome(outcome.GetError());
-  }
+  return DeleteDBSubnetGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 DeleteDBSubnetGroupOutcomeCallable DocDBClient::DeleteDBSubnetGroupCallable(const DeleteDBSubnetGroupRequest& request) const
@@ -652,15 +531,7 @@ DescribeCertificatesOutcome DocDBClient::DescribeCertificates(const DescribeCert
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return DescribeCertificatesOutcome(DescribeCertificatesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeCertificatesOutcome(outcome.GetError());
-  }
+  return DescribeCertificatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 DescribeCertificatesOutcomeCallable DocDBClient::DescribeCertificatesCallable(const DescribeCertificatesRequest& request) const
@@ -687,15 +558,7 @@ DescribeDBClusterParameterGroupsOutcome DocDBClient::DescribeDBClusterParameterG
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return DescribeDBClusterParameterGroupsOutcome(DescribeDBClusterParameterGroupsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeDBClusterParameterGroupsOutcome(outcome.GetError());
-  }
+  return DescribeDBClusterParameterGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 DescribeDBClusterParameterGroupsOutcomeCallable DocDBClient::DescribeDBClusterParameterGroupsCallable(const DescribeDBClusterParameterGroupsRequest& request) const
@@ -722,15 +585,7 @@ DescribeDBClusterParametersOutcome DocDBClient::DescribeDBClusterParameters(cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return DescribeDBClusterParametersOutcome(DescribeDBClusterParametersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeDBClusterParametersOutcome(outcome.GetError());
-  }
+  return DescribeDBClusterParametersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 DescribeDBClusterParametersOutcomeCallable DocDBClient::DescribeDBClusterParametersCallable(const DescribeDBClusterParametersRequest& request) const
@@ -757,15 +612,7 @@ DescribeDBClusterSnapshotAttributesOutcome DocDBClient::DescribeDBClusterSnapsho
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return DescribeDBClusterSnapshotAttributesOutcome(DescribeDBClusterSnapshotAttributesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeDBClusterSnapshotAttributesOutcome(outcome.GetError());
-  }
+  return DescribeDBClusterSnapshotAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 DescribeDBClusterSnapshotAttributesOutcomeCallable DocDBClient::DescribeDBClusterSnapshotAttributesCallable(const DescribeDBClusterSnapshotAttributesRequest& request) const
@@ -792,15 +639,7 @@ DescribeDBClusterSnapshotsOutcome DocDBClient::DescribeDBClusterSnapshots(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return DescribeDBClusterSnapshotsOutcome(DescribeDBClusterSnapshotsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeDBClusterSnapshotsOutcome(outcome.GetError());
-  }
+  return DescribeDBClusterSnapshotsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 DescribeDBClusterSnapshotsOutcomeCallable DocDBClient::DescribeDBClusterSnapshotsCallable(const DescribeDBClusterSnapshotsRequest& request) const
@@ -827,15 +666,7 @@ DescribeDBClustersOutcome DocDBClient::DescribeDBClusters(const DescribeDBCluste
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return DescribeDBClustersOutcome(DescribeDBClustersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeDBClustersOutcome(outcome.GetError());
-  }
+  return DescribeDBClustersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 DescribeDBClustersOutcomeCallable DocDBClient::DescribeDBClustersCallable(const DescribeDBClustersRequest& request) const
@@ -862,15 +693,7 @@ DescribeDBEngineVersionsOutcome DocDBClient::DescribeDBEngineVersions(const Desc
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return DescribeDBEngineVersionsOutcome(DescribeDBEngineVersionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeDBEngineVersionsOutcome(outcome.GetError());
-  }
+  return DescribeDBEngineVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 DescribeDBEngineVersionsOutcomeCallable DocDBClient::DescribeDBEngineVersionsCallable(const DescribeDBEngineVersionsRequest& request) const
@@ -897,15 +720,7 @@ DescribeDBInstancesOutcome DocDBClient::DescribeDBInstances(const DescribeDBInst
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return DescribeDBInstancesOutcome(DescribeDBInstancesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeDBInstancesOutcome(outcome.GetError());
-  }
+  return DescribeDBInstancesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 DescribeDBInstancesOutcomeCallable DocDBClient::DescribeDBInstancesCallable(const DescribeDBInstancesRequest& request) const
@@ -932,15 +747,7 @@ DescribeDBSubnetGroupsOutcome DocDBClient::DescribeDBSubnetGroups(const Describe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return DescribeDBSubnetGroupsOutcome(DescribeDBSubnetGroupsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeDBSubnetGroupsOutcome(outcome.GetError());
-  }
+  return DescribeDBSubnetGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 DescribeDBSubnetGroupsOutcomeCallable DocDBClient::DescribeDBSubnetGroupsCallable(const DescribeDBSubnetGroupsRequest& request) const
@@ -967,15 +774,7 @@ DescribeEngineDefaultClusterParametersOutcome DocDBClient::DescribeEngineDefault
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return DescribeEngineDefaultClusterParametersOutcome(DescribeEngineDefaultClusterParametersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeEngineDefaultClusterParametersOutcome(outcome.GetError());
-  }
+  return DescribeEngineDefaultClusterParametersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 DescribeEngineDefaultClusterParametersOutcomeCallable DocDBClient::DescribeEngineDefaultClusterParametersCallable(const DescribeEngineDefaultClusterParametersRequest& request) const
@@ -1002,15 +801,7 @@ DescribeEventCategoriesOutcome DocDBClient::DescribeEventCategories(const Descri
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return DescribeEventCategoriesOutcome(DescribeEventCategoriesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeEventCategoriesOutcome(outcome.GetError());
-  }
+  return DescribeEventCategoriesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 DescribeEventCategoriesOutcomeCallable DocDBClient::DescribeEventCategoriesCallable(const DescribeEventCategoriesRequest& request) const
@@ -1037,15 +828,7 @@ DescribeEventsOutcome DocDBClient::DescribeEvents(const DescribeEventsRequest& r
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return DescribeEventsOutcome(DescribeEventsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeEventsOutcome(outcome.GetError());
-  }
+  return DescribeEventsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 DescribeEventsOutcomeCallable DocDBClient::DescribeEventsCallable(const DescribeEventsRequest& request) const
@@ -1072,15 +855,7 @@ DescribeOrderableDBInstanceOptionsOutcome DocDBClient::DescribeOrderableDBInstan
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return DescribeOrderableDBInstanceOptionsOutcome(DescribeOrderableDBInstanceOptionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeOrderableDBInstanceOptionsOutcome(outcome.GetError());
-  }
+  return DescribeOrderableDBInstanceOptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 DescribeOrderableDBInstanceOptionsOutcomeCallable DocDBClient::DescribeOrderableDBInstanceOptionsCallable(const DescribeOrderableDBInstanceOptionsRequest& request) const
@@ -1107,15 +882,7 @@ DescribePendingMaintenanceActionsOutcome DocDBClient::DescribePendingMaintenance
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return DescribePendingMaintenanceActionsOutcome(DescribePendingMaintenanceActionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribePendingMaintenanceActionsOutcome(outcome.GetError());
-  }
+  return DescribePendingMaintenanceActionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 DescribePendingMaintenanceActionsOutcomeCallable DocDBClient::DescribePendingMaintenanceActionsCallable(const DescribePendingMaintenanceActionsRequest& request) const
@@ -1142,15 +909,7 @@ FailoverDBClusterOutcome DocDBClient::FailoverDBCluster(const FailoverDBClusterR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return FailoverDBClusterOutcome(FailoverDBClusterResult(outcome.GetResult()));
-  }
-  else
-  {
-    return FailoverDBClusterOutcome(outcome.GetError());
-  }
+  return FailoverDBClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 FailoverDBClusterOutcomeCallable DocDBClient::FailoverDBClusterCallable(const FailoverDBClusterRequest& request) const
@@ -1177,15 +936,7 @@ ListTagsForResourceOutcome DocDBClient::ListTagsForResource(const ListTagsForRes
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 ListTagsForResourceOutcomeCallable DocDBClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -1212,15 +963,7 @@ ModifyDBClusterOutcome DocDBClient::ModifyDBCluster(const ModifyDBClusterRequest
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return ModifyDBClusterOutcome(ModifyDBClusterResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ModifyDBClusterOutcome(outcome.GetError());
-  }
+  return ModifyDBClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 ModifyDBClusterOutcomeCallable DocDBClient::ModifyDBClusterCallable(const ModifyDBClusterRequest& request) const
@@ -1247,15 +990,7 @@ ModifyDBClusterParameterGroupOutcome DocDBClient::ModifyDBClusterParameterGroup(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return ModifyDBClusterParameterGroupOutcome(ModifyDBClusterParameterGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ModifyDBClusterParameterGroupOutcome(outcome.GetError());
-  }
+  return ModifyDBClusterParameterGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 ModifyDBClusterParameterGroupOutcomeCallable DocDBClient::ModifyDBClusterParameterGroupCallable(const ModifyDBClusterParameterGroupRequest& request) const
@@ -1282,15 +1017,7 @@ ModifyDBClusterSnapshotAttributeOutcome DocDBClient::ModifyDBClusterSnapshotAttr
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return ModifyDBClusterSnapshotAttributeOutcome(ModifyDBClusterSnapshotAttributeResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ModifyDBClusterSnapshotAttributeOutcome(outcome.GetError());
-  }
+  return ModifyDBClusterSnapshotAttributeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 ModifyDBClusterSnapshotAttributeOutcomeCallable DocDBClient::ModifyDBClusterSnapshotAttributeCallable(const ModifyDBClusterSnapshotAttributeRequest& request) const
@@ -1317,15 +1044,7 @@ ModifyDBInstanceOutcome DocDBClient::ModifyDBInstance(const ModifyDBInstanceRequ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return ModifyDBInstanceOutcome(ModifyDBInstanceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ModifyDBInstanceOutcome(outcome.GetError());
-  }
+  return ModifyDBInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 ModifyDBInstanceOutcomeCallable DocDBClient::ModifyDBInstanceCallable(const ModifyDBInstanceRequest& request) const
@@ -1352,15 +1071,7 @@ ModifyDBSubnetGroupOutcome DocDBClient::ModifyDBSubnetGroup(const ModifyDBSubnet
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return ModifyDBSubnetGroupOutcome(ModifyDBSubnetGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ModifyDBSubnetGroupOutcome(outcome.GetError());
-  }
+  return ModifyDBSubnetGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 ModifyDBSubnetGroupOutcomeCallable DocDBClient::ModifyDBSubnetGroupCallable(const ModifyDBSubnetGroupRequest& request) const
@@ -1387,15 +1098,7 @@ RebootDBInstanceOutcome DocDBClient::RebootDBInstance(const RebootDBInstanceRequ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return RebootDBInstanceOutcome(RebootDBInstanceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RebootDBInstanceOutcome(outcome.GetError());
-  }
+  return RebootDBInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 RebootDBInstanceOutcomeCallable DocDBClient::RebootDBInstanceCallable(const RebootDBInstanceRequest& request) const
@@ -1422,15 +1125,7 @@ RemoveTagsFromResourceOutcome DocDBClient::RemoveTagsFromResource(const RemoveTa
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return RemoveTagsFromResourceOutcome(NoResult());
-  }
-  else
-  {
-    return RemoveTagsFromResourceOutcome(outcome.GetError());
-  }
+  return RemoveTagsFromResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 RemoveTagsFromResourceOutcomeCallable DocDBClient::RemoveTagsFromResourceCallable(const RemoveTagsFromResourceRequest& request) const
@@ -1457,15 +1152,7 @@ ResetDBClusterParameterGroupOutcome DocDBClient::ResetDBClusterParameterGroup(co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return ResetDBClusterParameterGroupOutcome(ResetDBClusterParameterGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ResetDBClusterParameterGroupOutcome(outcome.GetError());
-  }
+  return ResetDBClusterParameterGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 ResetDBClusterParameterGroupOutcomeCallable DocDBClient::ResetDBClusterParameterGroupCallable(const ResetDBClusterParameterGroupRequest& request) const
@@ -1492,15 +1179,7 @@ RestoreDBClusterFromSnapshotOutcome DocDBClient::RestoreDBClusterFromSnapshot(co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return RestoreDBClusterFromSnapshotOutcome(RestoreDBClusterFromSnapshotResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RestoreDBClusterFromSnapshotOutcome(outcome.GetError());
-  }
+  return RestoreDBClusterFromSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 RestoreDBClusterFromSnapshotOutcomeCallable DocDBClient::RestoreDBClusterFromSnapshotCallable(const RestoreDBClusterFromSnapshotRequest& request) const
@@ -1527,15 +1206,7 @@ RestoreDBClusterToPointInTimeOutcome DocDBClient::RestoreDBClusterToPointInTime(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return RestoreDBClusterToPointInTimeOutcome(RestoreDBClusterToPointInTimeResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RestoreDBClusterToPointInTimeOutcome(outcome.GetError());
-  }
+  return RestoreDBClusterToPointInTimeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 RestoreDBClusterToPointInTimeOutcomeCallable DocDBClient::RestoreDBClusterToPointInTimeCallable(const RestoreDBClusterToPointInTimeRequest& request) const
@@ -1562,15 +1233,7 @@ StartDBClusterOutcome DocDBClient::StartDBCluster(const StartDBClusterRequest& r
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return StartDBClusterOutcome(StartDBClusterResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartDBClusterOutcome(outcome.GetError());
-  }
+  return StartDBClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 StartDBClusterOutcomeCallable DocDBClient::StartDBClusterCallable(const StartDBClusterRequest& request) const
@@ -1597,15 +1260,7 @@ StopDBClusterOutcome DocDBClient::StopDBCluster(const StopDBClusterRequest& requ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return StopDBClusterOutcome(StopDBClusterResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StopDBClusterOutcome(outcome.GetError());
-  }
+  return StopDBClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 StopDBClusterOutcomeCallable DocDBClient::StopDBClusterCallable(const StopDBClusterRequest& request) const

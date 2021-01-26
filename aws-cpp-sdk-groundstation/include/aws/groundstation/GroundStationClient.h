@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/groundstation/GroundStation_EXPORTS.h>
@@ -111,31 +101,31 @@ namespace Model
         class UpdateConfigRequest;
         class UpdateMissionProfileRequest;
 
-        typedef Aws::Utils::Outcome<CancelContactResult, Aws::Client::AWSError<GroundStationErrors>> CancelContactOutcome;
-        typedef Aws::Utils::Outcome<CreateConfigResult, Aws::Client::AWSError<GroundStationErrors>> CreateConfigOutcome;
-        typedef Aws::Utils::Outcome<CreateDataflowEndpointGroupResult, Aws::Client::AWSError<GroundStationErrors>> CreateDataflowEndpointGroupOutcome;
-        typedef Aws::Utils::Outcome<CreateMissionProfileResult, Aws::Client::AWSError<GroundStationErrors>> CreateMissionProfileOutcome;
-        typedef Aws::Utils::Outcome<DeleteConfigResult, Aws::Client::AWSError<GroundStationErrors>> DeleteConfigOutcome;
-        typedef Aws::Utils::Outcome<DeleteDataflowEndpointGroupResult, Aws::Client::AWSError<GroundStationErrors>> DeleteDataflowEndpointGroupOutcome;
-        typedef Aws::Utils::Outcome<DeleteMissionProfileResult, Aws::Client::AWSError<GroundStationErrors>> DeleteMissionProfileOutcome;
-        typedef Aws::Utils::Outcome<DescribeContactResult, Aws::Client::AWSError<GroundStationErrors>> DescribeContactOutcome;
-        typedef Aws::Utils::Outcome<GetConfigResult, Aws::Client::AWSError<GroundStationErrors>> GetConfigOutcome;
-        typedef Aws::Utils::Outcome<GetDataflowEndpointGroupResult, Aws::Client::AWSError<GroundStationErrors>> GetDataflowEndpointGroupOutcome;
-        typedef Aws::Utils::Outcome<GetMinuteUsageResult, Aws::Client::AWSError<GroundStationErrors>> GetMinuteUsageOutcome;
-        typedef Aws::Utils::Outcome<GetMissionProfileResult, Aws::Client::AWSError<GroundStationErrors>> GetMissionProfileOutcome;
-        typedef Aws::Utils::Outcome<GetSatelliteResult, Aws::Client::AWSError<GroundStationErrors>> GetSatelliteOutcome;
-        typedef Aws::Utils::Outcome<ListConfigsResult, Aws::Client::AWSError<GroundStationErrors>> ListConfigsOutcome;
-        typedef Aws::Utils::Outcome<ListContactsResult, Aws::Client::AWSError<GroundStationErrors>> ListContactsOutcome;
-        typedef Aws::Utils::Outcome<ListDataflowEndpointGroupsResult, Aws::Client::AWSError<GroundStationErrors>> ListDataflowEndpointGroupsOutcome;
-        typedef Aws::Utils::Outcome<ListGroundStationsResult, Aws::Client::AWSError<GroundStationErrors>> ListGroundStationsOutcome;
-        typedef Aws::Utils::Outcome<ListMissionProfilesResult, Aws::Client::AWSError<GroundStationErrors>> ListMissionProfilesOutcome;
-        typedef Aws::Utils::Outcome<ListSatellitesResult, Aws::Client::AWSError<GroundStationErrors>> ListSatellitesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<GroundStationErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ReserveContactResult, Aws::Client::AWSError<GroundStationErrors>> ReserveContactOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<GroundStationErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<GroundStationErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateConfigResult, Aws::Client::AWSError<GroundStationErrors>> UpdateConfigOutcome;
-        typedef Aws::Utils::Outcome<UpdateMissionProfileResult, Aws::Client::AWSError<GroundStationErrors>> UpdateMissionProfileOutcome;
+        typedef Aws::Utils::Outcome<CancelContactResult, GroundStationError> CancelContactOutcome;
+        typedef Aws::Utils::Outcome<CreateConfigResult, GroundStationError> CreateConfigOutcome;
+        typedef Aws::Utils::Outcome<CreateDataflowEndpointGroupResult, GroundStationError> CreateDataflowEndpointGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateMissionProfileResult, GroundStationError> CreateMissionProfileOutcome;
+        typedef Aws::Utils::Outcome<DeleteConfigResult, GroundStationError> DeleteConfigOutcome;
+        typedef Aws::Utils::Outcome<DeleteDataflowEndpointGroupResult, GroundStationError> DeleteDataflowEndpointGroupOutcome;
+        typedef Aws::Utils::Outcome<DeleteMissionProfileResult, GroundStationError> DeleteMissionProfileOutcome;
+        typedef Aws::Utils::Outcome<DescribeContactResult, GroundStationError> DescribeContactOutcome;
+        typedef Aws::Utils::Outcome<GetConfigResult, GroundStationError> GetConfigOutcome;
+        typedef Aws::Utils::Outcome<GetDataflowEndpointGroupResult, GroundStationError> GetDataflowEndpointGroupOutcome;
+        typedef Aws::Utils::Outcome<GetMinuteUsageResult, GroundStationError> GetMinuteUsageOutcome;
+        typedef Aws::Utils::Outcome<GetMissionProfileResult, GroundStationError> GetMissionProfileOutcome;
+        typedef Aws::Utils::Outcome<GetSatelliteResult, GroundStationError> GetSatelliteOutcome;
+        typedef Aws::Utils::Outcome<ListConfigsResult, GroundStationError> ListConfigsOutcome;
+        typedef Aws::Utils::Outcome<ListContactsResult, GroundStationError> ListContactsOutcome;
+        typedef Aws::Utils::Outcome<ListDataflowEndpointGroupsResult, GroundStationError> ListDataflowEndpointGroupsOutcome;
+        typedef Aws::Utils::Outcome<ListGroundStationsResult, GroundStationError> ListGroundStationsOutcome;
+        typedef Aws::Utils::Outcome<ListMissionProfilesResult, GroundStationError> ListMissionProfilesOutcome;
+        typedef Aws::Utils::Outcome<ListSatellitesResult, GroundStationError> ListSatellitesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, GroundStationError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ReserveContactResult, GroundStationError> ReserveContactOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, GroundStationError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, GroundStationError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateConfigResult, GroundStationError> UpdateConfigOutcome;
+        typedef Aws::Utils::Outcome<UpdateMissionProfileResult, GroundStationError> UpdateMissionProfileOutcome;
 
         typedef std::future<CancelContactOutcome> CancelContactOutcomeCallable;
         typedef std::future<CreateConfigOutcome> CreateConfigOutcomeCallable;
@@ -224,8 +214,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~GroundStationClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "GroundStation"; }
 
 
         /**

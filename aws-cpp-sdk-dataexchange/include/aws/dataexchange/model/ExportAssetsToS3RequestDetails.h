@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dataexchange/DataExchange_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dataexchange/model/ExportServerSideEncryption.h>
 #include <aws/dataexchange/model/AssetDestinationEntry.h>
 #include <utility>
 
@@ -133,6 +124,37 @@ namespace Model
 
 
     /**
+     * <p>Encryption configuration for the export job.</p>
+     */
+    inline const ExportServerSideEncryption& GetEncryption() const{ return m_encryption; }
+
+    /**
+     * <p>Encryption configuration for the export job.</p>
+     */
+    inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
+
+    /**
+     * <p>Encryption configuration for the export job.</p>
+     */
+    inline void SetEncryption(const ExportServerSideEncryption& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
+
+    /**
+     * <p>Encryption configuration for the export job.</p>
+     */
+    inline void SetEncryption(ExportServerSideEncryption&& value) { m_encryptionHasBeenSet = true; m_encryption = std::move(value); }
+
+    /**
+     * <p>Encryption configuration for the export job.</p>
+     */
+    inline ExportAssetsToS3RequestDetails& WithEncryption(const ExportServerSideEncryption& value) { SetEncryption(value); return *this;}
+
+    /**
+     * <p>Encryption configuration for the export job.</p>
+     */
+    inline ExportAssetsToS3RequestDetails& WithEncryption(ExportServerSideEncryption&& value) { SetEncryption(std::move(value)); return *this;}
+
+
+    /**
      * <p>The unique identifier for the revision associated with this export
      * request.</p>
      */
@@ -187,6 +209,9 @@ namespace Model
 
     Aws::String m_dataSetId;
     bool m_dataSetIdHasBeenSet;
+
+    ExportServerSideEncryption m_encryption;
+    bool m_encryptionHasBeenSet;
 
     Aws::String m_revisionId;
     bool m_revisionIdHasBeenSet;

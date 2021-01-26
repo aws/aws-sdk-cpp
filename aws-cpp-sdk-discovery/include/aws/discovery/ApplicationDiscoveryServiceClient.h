@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/discovery/ApplicationDiscoveryService_EXPORTS.h>
@@ -107,29 +97,29 @@ namespace Model
         class StopDataCollectionByAgentIdsRequest;
         class UpdateApplicationRequest;
 
-        typedef Aws::Utils::Outcome<AssociateConfigurationItemsToApplicationResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> AssociateConfigurationItemsToApplicationOutcome;
-        typedef Aws::Utils::Outcome<BatchDeleteImportDataResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> BatchDeleteImportDataOutcome;
-        typedef Aws::Utils::Outcome<CreateApplicationResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> CreateApplicationOutcome;
-        typedef Aws::Utils::Outcome<CreateTagsResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> CreateTagsOutcome;
-        typedef Aws::Utils::Outcome<DeleteApplicationsResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> DeleteApplicationsOutcome;
-        typedef Aws::Utils::Outcome<DeleteTagsResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> DeleteTagsOutcome;
-        typedef Aws::Utils::Outcome<DescribeAgentsResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> DescribeAgentsOutcome;
-        typedef Aws::Utils::Outcome<DescribeConfigurationsResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> DescribeConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<DescribeContinuousExportsResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> DescribeContinuousExportsOutcome;
-        typedef Aws::Utils::Outcome<DescribeExportTasksResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> DescribeExportTasksOutcome;
-        typedef Aws::Utils::Outcome<DescribeImportTasksResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> DescribeImportTasksOutcome;
-        typedef Aws::Utils::Outcome<DescribeTagsResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> DescribeTagsOutcome;
-        typedef Aws::Utils::Outcome<DisassociateConfigurationItemsFromApplicationResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> DisassociateConfigurationItemsFromApplicationOutcome;
-        typedef Aws::Utils::Outcome<GetDiscoverySummaryResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> GetDiscoverySummaryOutcome;
-        typedef Aws::Utils::Outcome<ListConfigurationsResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> ListConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<ListServerNeighborsResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> ListServerNeighborsOutcome;
-        typedef Aws::Utils::Outcome<StartContinuousExportResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> StartContinuousExportOutcome;
-        typedef Aws::Utils::Outcome<StartDataCollectionByAgentIdsResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> StartDataCollectionByAgentIdsOutcome;
-        typedef Aws::Utils::Outcome<StartExportTaskResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> StartExportTaskOutcome;
-        typedef Aws::Utils::Outcome<StartImportTaskResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> StartImportTaskOutcome;
-        typedef Aws::Utils::Outcome<StopContinuousExportResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> StopContinuousExportOutcome;
-        typedef Aws::Utils::Outcome<StopDataCollectionByAgentIdsResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> StopDataCollectionByAgentIdsOutcome;
-        typedef Aws::Utils::Outcome<UpdateApplicationResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> UpdateApplicationOutcome;
+        typedef Aws::Utils::Outcome<AssociateConfigurationItemsToApplicationResult, ApplicationDiscoveryServiceError> AssociateConfigurationItemsToApplicationOutcome;
+        typedef Aws::Utils::Outcome<BatchDeleteImportDataResult, ApplicationDiscoveryServiceError> BatchDeleteImportDataOutcome;
+        typedef Aws::Utils::Outcome<CreateApplicationResult, ApplicationDiscoveryServiceError> CreateApplicationOutcome;
+        typedef Aws::Utils::Outcome<CreateTagsResult, ApplicationDiscoveryServiceError> CreateTagsOutcome;
+        typedef Aws::Utils::Outcome<DeleteApplicationsResult, ApplicationDiscoveryServiceError> DeleteApplicationsOutcome;
+        typedef Aws::Utils::Outcome<DeleteTagsResult, ApplicationDiscoveryServiceError> DeleteTagsOutcome;
+        typedef Aws::Utils::Outcome<DescribeAgentsResult, ApplicationDiscoveryServiceError> DescribeAgentsOutcome;
+        typedef Aws::Utils::Outcome<DescribeConfigurationsResult, ApplicationDiscoveryServiceError> DescribeConfigurationsOutcome;
+        typedef Aws::Utils::Outcome<DescribeContinuousExportsResult, ApplicationDiscoveryServiceError> DescribeContinuousExportsOutcome;
+        typedef Aws::Utils::Outcome<DescribeExportTasksResult, ApplicationDiscoveryServiceError> DescribeExportTasksOutcome;
+        typedef Aws::Utils::Outcome<DescribeImportTasksResult, ApplicationDiscoveryServiceError> DescribeImportTasksOutcome;
+        typedef Aws::Utils::Outcome<DescribeTagsResult, ApplicationDiscoveryServiceError> DescribeTagsOutcome;
+        typedef Aws::Utils::Outcome<DisassociateConfigurationItemsFromApplicationResult, ApplicationDiscoveryServiceError> DisassociateConfigurationItemsFromApplicationOutcome;
+        typedef Aws::Utils::Outcome<GetDiscoverySummaryResult, ApplicationDiscoveryServiceError> GetDiscoverySummaryOutcome;
+        typedef Aws::Utils::Outcome<ListConfigurationsResult, ApplicationDiscoveryServiceError> ListConfigurationsOutcome;
+        typedef Aws::Utils::Outcome<ListServerNeighborsResult, ApplicationDiscoveryServiceError> ListServerNeighborsOutcome;
+        typedef Aws::Utils::Outcome<StartContinuousExportResult, ApplicationDiscoveryServiceError> StartContinuousExportOutcome;
+        typedef Aws::Utils::Outcome<StartDataCollectionByAgentIdsResult, ApplicationDiscoveryServiceError> StartDataCollectionByAgentIdsOutcome;
+        typedef Aws::Utils::Outcome<StartExportTaskResult, ApplicationDiscoveryServiceError> StartExportTaskOutcome;
+        typedef Aws::Utils::Outcome<StartImportTaskResult, ApplicationDiscoveryServiceError> StartImportTaskOutcome;
+        typedef Aws::Utils::Outcome<StopContinuousExportResult, ApplicationDiscoveryServiceError> StopContinuousExportOutcome;
+        typedef Aws::Utils::Outcome<StopDataCollectionByAgentIdsResult, ApplicationDiscoveryServiceError> StopDataCollectionByAgentIdsOutcome;
+        typedef Aws::Utils::Outcome<UpdateApplicationResult, ApplicationDiscoveryServiceError> UpdateApplicationOutcome;
 
         typedef std::future<AssociateConfigurationItemsToApplicationOutcome> AssociateConfigurationItemsToApplicationOutcomeCallable;
         typedef std::future<BatchDeleteImportDataOutcome> BatchDeleteImportDataOutcomeCallable;
@@ -224,7 +214,7 @@ namespace Model
    * for each action shows the API request parameters and the response.
    * Alternatively, you can use one of the AWS SDKs to access an API that is tailored
    * to the programming language or platform that you're using. For more information,
-   * see <a href="http://aws.amazon.com/tools/#SDKs">AWS SDKs</a>.</p> <note> <ul>
+   * see <a href="http://aws.amazon.com/tools/#SDKs">AWS SDKs</a>.</p>  <ul>
    * <li> <p>Remember that you must set your Migration Hub home region before you
    * call any of these APIs.</p> </li> <li> <p>You must make API calls for write
    * actions (create, notify, associate, disassociate, import, or put) while in your
@@ -234,13 +224,13 @@ namespace Model
    * unlikely, the Migration Hub home region could change. If you call APIs outside
    * the home region, an <code>InvalidInputException</code> is returned.</p> </li>
    * <li> <p>You must call <code>GetHomeRegion</code> to obtain the latest Migration
-   * Hub home region.</p> </li> </ul> </note> <p>This guide is intended for use with
+   * Hub home region.</p> </li> </ul>  <p>This guide is intended for use with
    * the <a
    * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/">AWS
-   * Application Discovery Service User Guide</a>.</p> <important> <p>All data is
+   * Application Discovery Service User Guide</a>.</p>  <p>All data is
    * handled according to the <a href="http://aws.amazon.com/privacy/">AWS Privacy
    * Policy</a>. You can operate Application Discovery Service offline to inspect
-   * collected data before it is shared with the service.</p> </important>
+   * collected data before it is shared with the service.</p> 
    */
   class AWS_APPLICATIONDISCOVERYSERVICE_API ApplicationDiscoveryServiceClient : public Aws::Client::AWSJsonClient
   {
@@ -267,8 +257,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~ApplicationDiscoveryServiceClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "Application Discovery Service"; }
 
 
         /**
@@ -498,7 +486,7 @@ namespace Model
         virtual void DescribeAgentsAsync(const Model::DescribeAgentsRequest& request, const DescribeAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves attributes for a list of configuration item IDs.</p> <note> <p>All
+         * <p>Retrieves attributes for a list of configuration item IDs.</p>  <p>All
          * of the supplied IDs must be for the same asset type from one of the
          * following:</p> <ul> <li> <p>server</p> </li> <li> <p>application</p> </li> <li>
          * <p>process</p> </li> <li> <p>connection</p> </li> </ul> <p>Output fields are
@@ -508,14 +496,14 @@ namespace Model
          * complete list of outputs for each asset type, see <a
          * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#DescribeConfigurations">Using
          * the DescribeConfigurations Action</a> in the <i>AWS Application Discovery
-         * Service User Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Service User Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeConfigurations">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeConfigurationsOutcome DescribeConfigurations(const Model::DescribeConfigurationsRequest& request) const;
 
         /**
-         * <p>Retrieves attributes for a list of configuration item IDs.</p> <note> <p>All
+         * <p>Retrieves attributes for a list of configuration item IDs.</p>  <p>All
          * of the supplied IDs must be for the same asset type from one of the
          * following:</p> <ul> <li> <p>server</p> </li> <li> <p>application</p> </li> <li>
          * <p>process</p> </li> <li> <p>connection</p> </li> </ul> <p>Output fields are
@@ -525,7 +513,7 @@ namespace Model
          * complete list of outputs for each asset type, see <a
          * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#DescribeConfigurations">Using
          * the DescribeConfigurations Action</a> in the <i>AWS Application Discovery
-         * Service User Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Service User Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeConfigurations">AWS
          * API Reference</a></p>
          *
@@ -534,7 +522,7 @@ namespace Model
         virtual Model::DescribeConfigurationsOutcomeCallable DescribeConfigurationsCallable(const Model::DescribeConfigurationsRequest& request) const;
 
         /**
-         * <p>Retrieves attributes for a list of configuration item IDs.</p> <note> <p>All
+         * <p>Retrieves attributes for a list of configuration item IDs.</p>  <p>All
          * of the supplied IDs must be for the same asset type from one of the
          * following:</p> <ul> <li> <p>server</p> </li> <li> <p>application</p> </li> <li>
          * <p>process</p> </li> <li> <p>connection</p> </li> </ul> <p>Output fields are
@@ -544,7 +532,7 @@ namespace Model
          * complete list of outputs for each asset type, see <a
          * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#DescribeConfigurations">Using
          * the DescribeConfigurations Action</a> in the <i>AWS Application Discovery
-         * Service User Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Service User Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeConfigurations">AWS
          * API Reference</a></p>
          *
@@ -929,11 +917,11 @@ namespace Model
          * <p>For more information, including step-by-step procedures, see <a
          * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-import.html">Migration
          * Hub Import</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
-         * <note> <p>There are limits to the number of import tasks you can create (and
+         *  <p>There are limits to the number of import tasks you can create (and
          * delete) in an AWS account. For more information, see <a
          * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html">AWS
          * Application Discovery Service Limits</a> in the <i>AWS Application Discovery
-         * Service User Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Service User Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartImportTask">AWS
          * API Reference</a></p>
          */
@@ -957,11 +945,11 @@ namespace Model
          * <p>For more information, including step-by-step procedures, see <a
          * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-import.html">Migration
          * Hub Import</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
-         * <note> <p>There are limits to the number of import tasks you can create (and
+         *  <p>There are limits to the number of import tasks you can create (and
          * delete) in an AWS account. For more information, see <a
          * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html">AWS
          * Application Discovery Service Limits</a> in the <i>AWS Application Discovery
-         * Service User Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Service User Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartImportTask">AWS
          * API Reference</a></p>
          *
@@ -987,11 +975,11 @@ namespace Model
          * <p>For more information, including step-by-step procedures, see <a
          * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-import.html">Migration
          * Hub Import</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
-         * <note> <p>There are limits to the number of import tasks you can create (and
+         *  <p>There are limits to the number of import tasks you can create (and
          * delete) in an AWS account. For more information, see <a
          * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html">AWS
          * Application Discovery Service Limits</a> in the <i>AWS Application Discovery
-         * Service User Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Service User Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartImportTask">AWS
          * API Reference</a></p>
          *

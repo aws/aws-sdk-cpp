@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
@@ -235,108 +225,108 @@ namespace Model
     /**
      * <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This
      * parameter takes a list of up to five alarm names, which are case sensitive and
-     * must be in the same region as the stack.</p> <note> <p>To use custom alarms, you
+     * must be in the same region as the stack.</p>  <p>To use custom alarms, you
      * must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
      * You can either have AWS OpsWorks Stacks update the role for you when you first
      * use this feature or you can edit the role manually. For more information, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
-     * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> </note>
+     * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetAlarms() const{ return m_alarms; }
 
     /**
      * <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This
      * parameter takes a list of up to five alarm names, which are case sensitive and
-     * must be in the same region as the stack.</p> <note> <p>To use custom alarms, you
+     * must be in the same region as the stack.</p>  <p>To use custom alarms, you
      * must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
      * You can either have AWS OpsWorks Stacks update the role for you when you first
      * use this feature or you can edit the role manually. For more information, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
-     * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> </note>
+     * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> 
      */
     inline bool AlarmsHasBeenSet() const { return m_alarmsHasBeenSet; }
 
     /**
      * <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This
      * parameter takes a list of up to five alarm names, which are case sensitive and
-     * must be in the same region as the stack.</p> <note> <p>To use custom alarms, you
+     * must be in the same region as the stack.</p>  <p>To use custom alarms, you
      * must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
      * You can either have AWS OpsWorks Stacks update the role for you when you first
      * use this feature or you can edit the role manually. For more information, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
-     * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> </note>
+     * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> 
      */
     inline void SetAlarms(const Aws::Vector<Aws::String>& value) { m_alarmsHasBeenSet = true; m_alarms = value; }
 
     /**
      * <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This
      * parameter takes a list of up to five alarm names, which are case sensitive and
-     * must be in the same region as the stack.</p> <note> <p>To use custom alarms, you
+     * must be in the same region as the stack.</p>  <p>To use custom alarms, you
      * must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
      * You can either have AWS OpsWorks Stacks update the role for you when you first
      * use this feature or you can edit the role manually. For more information, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
-     * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> </note>
+     * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> 
      */
     inline void SetAlarms(Aws::Vector<Aws::String>&& value) { m_alarmsHasBeenSet = true; m_alarms = std::move(value); }
 
     /**
      * <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This
      * parameter takes a list of up to five alarm names, which are case sensitive and
-     * must be in the same region as the stack.</p> <note> <p>To use custom alarms, you
+     * must be in the same region as the stack.</p>  <p>To use custom alarms, you
      * must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
      * You can either have AWS OpsWorks Stacks update the role for you when you first
      * use this feature or you can edit the role manually. For more information, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
-     * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> </note>
+     * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> 
      */
     inline AutoScalingThresholds& WithAlarms(const Aws::Vector<Aws::String>& value) { SetAlarms(value); return *this;}
 
     /**
      * <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This
      * parameter takes a list of up to five alarm names, which are case sensitive and
-     * must be in the same region as the stack.</p> <note> <p>To use custom alarms, you
+     * must be in the same region as the stack.</p>  <p>To use custom alarms, you
      * must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
      * You can either have AWS OpsWorks Stacks update the role for you when you first
      * use this feature or you can edit the role manually. For more information, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
-     * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> </note>
+     * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> 
      */
     inline AutoScalingThresholds& WithAlarms(Aws::Vector<Aws::String>&& value) { SetAlarms(std::move(value)); return *this;}
 
     /**
      * <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This
      * parameter takes a list of up to five alarm names, which are case sensitive and
-     * must be in the same region as the stack.</p> <note> <p>To use custom alarms, you
+     * must be in the same region as the stack.</p>  <p>To use custom alarms, you
      * must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
      * You can either have AWS OpsWorks Stacks update the role for you when you first
      * use this feature or you can edit the role manually. For more information, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
-     * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> </note>
+     * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> 
      */
     inline AutoScalingThresholds& AddAlarms(const Aws::String& value) { m_alarmsHasBeenSet = true; m_alarms.push_back(value); return *this; }
 
     /**
      * <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This
      * parameter takes a list of up to five alarm names, which are case sensitive and
-     * must be in the same region as the stack.</p> <note> <p>To use custom alarms, you
+     * must be in the same region as the stack.</p>  <p>To use custom alarms, you
      * must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
      * You can either have AWS OpsWorks Stacks update the role for you when you first
      * use this feature or you can edit the role manually. For more information, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
-     * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> </note>
+     * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> 
      */
     inline AutoScalingThresholds& AddAlarms(Aws::String&& value) { m_alarmsHasBeenSet = true; m_alarms.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This
      * parameter takes a list of up to five alarm names, which are case sensitive and
-     * must be in the same region as the stack.</p> <note> <p>To use custom alarms, you
+     * must be in the same region as the stack.</p>  <p>To use custom alarms, you
      * must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
      * You can either have AWS OpsWorks Stacks update the role for you when you first
      * use this feature or you can edit the role manually. For more information, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
-     * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> </note>
+     * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> 
      */
     inline AutoScalingThresholds& AddAlarms(const char* value) { m_alarmsHasBeenSet = true; m_alarms.push_back(value); return *this; }
 

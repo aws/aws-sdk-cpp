@@ -1,22 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/qldb-session/QLDBSession_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/Array.h>
+#include <aws/qldb-session/model/TimingInformation.h>
+#include <aws/qldb-session/model/IOUsage.h>
 #include <utility>
 
 namespace Aws
@@ -50,42 +42,42 @@ namespace Model
 
 
     /**
-     * <p>The transaction id of the committed transaction.</p>
+     * <p>The transaction ID of the committed transaction.</p>
      */
     inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
 
     /**
-     * <p>The transaction id of the committed transaction.</p>
+     * <p>The transaction ID of the committed transaction.</p>
      */
     inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
 
     /**
-     * <p>The transaction id of the committed transaction.</p>
+     * <p>The transaction ID of the committed transaction.</p>
      */
     inline void SetTransactionId(const Aws::String& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
 
     /**
-     * <p>The transaction id of the committed transaction.</p>
+     * <p>The transaction ID of the committed transaction.</p>
      */
     inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
 
     /**
-     * <p>The transaction id of the committed transaction.</p>
+     * <p>The transaction ID of the committed transaction.</p>
      */
     inline void SetTransactionId(const char* value) { m_transactionIdHasBeenSet = true; m_transactionId.assign(value); }
 
     /**
-     * <p>The transaction id of the committed transaction.</p>
+     * <p>The transaction ID of the committed transaction.</p>
      */
     inline CommitTransactionResult& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
 
     /**
-     * <p>The transaction id of the committed transaction.</p>
+     * <p>The transaction ID of the committed transaction.</p>
      */
     inline CommitTransactionResult& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
 
     /**
-     * <p>The transaction id of the committed transaction.</p>
+     * <p>The transaction ID of the committed transaction.</p>
      */
     inline CommitTransactionResult& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
 
@@ -120,6 +112,68 @@ namespace Model
      */
     inline CommitTransactionResult& WithCommitDigest(Aws::Utils::ByteBuffer&& value) { SetCommitDigest(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains server-side performance information for the command.</p>
+     */
+    inline const TimingInformation& GetTimingInformation() const{ return m_timingInformation; }
+
+    /**
+     * <p>Contains server-side performance information for the command.</p>
+     */
+    inline bool TimingInformationHasBeenSet() const { return m_timingInformationHasBeenSet; }
+
+    /**
+     * <p>Contains server-side performance information for the command.</p>
+     */
+    inline void SetTimingInformation(const TimingInformation& value) { m_timingInformationHasBeenSet = true; m_timingInformation = value; }
+
+    /**
+     * <p>Contains server-side performance information for the command.</p>
+     */
+    inline void SetTimingInformation(TimingInformation&& value) { m_timingInformationHasBeenSet = true; m_timingInformation = std::move(value); }
+
+    /**
+     * <p>Contains server-side performance information for the command.</p>
+     */
+    inline CommitTransactionResult& WithTimingInformation(const TimingInformation& value) { SetTimingInformation(value); return *this;}
+
+    /**
+     * <p>Contains server-side performance information for the command.</p>
+     */
+    inline CommitTransactionResult& WithTimingInformation(TimingInformation&& value) { SetTimingInformation(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contains metrics about the number of I/O requests that were consumed.</p>
+     */
+    inline const IOUsage& GetConsumedIOs() const{ return m_consumedIOs; }
+
+    /**
+     * <p>Contains metrics about the number of I/O requests that were consumed.</p>
+     */
+    inline bool ConsumedIOsHasBeenSet() const { return m_consumedIOsHasBeenSet; }
+
+    /**
+     * <p>Contains metrics about the number of I/O requests that were consumed.</p>
+     */
+    inline void SetConsumedIOs(const IOUsage& value) { m_consumedIOsHasBeenSet = true; m_consumedIOs = value; }
+
+    /**
+     * <p>Contains metrics about the number of I/O requests that were consumed.</p>
+     */
+    inline void SetConsumedIOs(IOUsage&& value) { m_consumedIOsHasBeenSet = true; m_consumedIOs = std::move(value); }
+
+    /**
+     * <p>Contains metrics about the number of I/O requests that were consumed.</p>
+     */
+    inline CommitTransactionResult& WithConsumedIOs(const IOUsage& value) { SetConsumedIOs(value); return *this;}
+
+    /**
+     * <p>Contains metrics about the number of I/O requests that were consumed.</p>
+     */
+    inline CommitTransactionResult& WithConsumedIOs(IOUsage&& value) { SetConsumedIOs(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_transactionId;
@@ -127,6 +181,12 @@ namespace Model
 
     Aws::Utils::ByteBuffer m_commitDigest;
     bool m_commitDigestHasBeenSet;
+
+    TimingInformation m_timingInformation;
+    bool m_timingInformationHasBeenSet;
+
+    IOUsage m_consumedIOs;
+    bool m_consumedIOsHasBeenSet;
   };
 
 } // namespace Model

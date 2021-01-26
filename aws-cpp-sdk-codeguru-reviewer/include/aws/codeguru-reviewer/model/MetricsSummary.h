@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codeguru-reviewer/CodeGuruReviewer_EXPORTS.h>
@@ -46,22 +36,62 @@ namespace Model
 
 
     /**
-     * <p> Lines of code metered in the code review. </p>
+     * <p> Lines of code metered in the code review. For the initial code review pull
+     * request and all subsequent revisions, this includes all lines of code in the
+     * files added to the pull request. In subsequent revisions, for files that already
+     * existed in the pull request, this includes only the changed lines of code. In
+     * both cases, this does not include non-code lines such as comments and import
+     * statements. For example, if you submit a pull request containing 5 files, each
+     * with 500 lines of code, and in a subsequent revision you added a new file with
+     * 200 lines of code, and also modified a total of 25 lines across the initial 5
+     * files, <code>MeteredLinesOfCodeCount</code> includes the first 5 files (5 * 500
+     * = 2,500 lines), the new file (200 lines) and the 25 changed lines of code for a
+     * total of 2,725 lines of code. </p>
      */
     inline long long GetMeteredLinesOfCodeCount() const{ return m_meteredLinesOfCodeCount; }
 
     /**
-     * <p> Lines of code metered in the code review. </p>
+     * <p> Lines of code metered in the code review. For the initial code review pull
+     * request and all subsequent revisions, this includes all lines of code in the
+     * files added to the pull request. In subsequent revisions, for files that already
+     * existed in the pull request, this includes only the changed lines of code. In
+     * both cases, this does not include non-code lines such as comments and import
+     * statements. For example, if you submit a pull request containing 5 files, each
+     * with 500 lines of code, and in a subsequent revision you added a new file with
+     * 200 lines of code, and also modified a total of 25 lines across the initial 5
+     * files, <code>MeteredLinesOfCodeCount</code> includes the first 5 files (5 * 500
+     * = 2,500 lines), the new file (200 lines) and the 25 changed lines of code for a
+     * total of 2,725 lines of code. </p>
      */
     inline bool MeteredLinesOfCodeCountHasBeenSet() const { return m_meteredLinesOfCodeCountHasBeenSet; }
 
     /**
-     * <p> Lines of code metered in the code review. </p>
+     * <p> Lines of code metered in the code review. For the initial code review pull
+     * request and all subsequent revisions, this includes all lines of code in the
+     * files added to the pull request. In subsequent revisions, for files that already
+     * existed in the pull request, this includes only the changed lines of code. In
+     * both cases, this does not include non-code lines such as comments and import
+     * statements. For example, if you submit a pull request containing 5 files, each
+     * with 500 lines of code, and in a subsequent revision you added a new file with
+     * 200 lines of code, and also modified a total of 25 lines across the initial 5
+     * files, <code>MeteredLinesOfCodeCount</code> includes the first 5 files (5 * 500
+     * = 2,500 lines), the new file (200 lines) and the 25 changed lines of code for a
+     * total of 2,725 lines of code. </p>
      */
     inline void SetMeteredLinesOfCodeCount(long long value) { m_meteredLinesOfCodeCountHasBeenSet = true; m_meteredLinesOfCodeCount = value; }
 
     /**
-     * <p> Lines of code metered in the code review. </p>
+     * <p> Lines of code metered in the code review. For the initial code review pull
+     * request and all subsequent revisions, this includes all lines of code in the
+     * files added to the pull request. In subsequent revisions, for files that already
+     * existed in the pull request, this includes only the changed lines of code. In
+     * both cases, this does not include non-code lines such as comments and import
+     * statements. For example, if you submit a pull request containing 5 files, each
+     * with 500 lines of code, and in a subsequent revision you added a new file with
+     * 200 lines of code, and also modified a total of 25 lines across the initial 5
+     * files, <code>MeteredLinesOfCodeCount</code> includes the first 5 files (5 * 500
+     * = 2,500 lines), the new file (200 lines) and the 25 changed lines of code for a
+     * total of 2,725 lines of code. </p>
      */
     inline MetricsSummary& WithMeteredLinesOfCodeCount(long long value) { SetMeteredLinesOfCodeCount(value); return *this;}
 

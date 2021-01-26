@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/groundstation/GroundStation_EXPORTS.h>
@@ -51,94 +41,154 @@ namespace Model
 
 
     /**
-     * <p>Bandwidth of a spectral <code>Config</code>.</p>
+     * <p>Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has
+     * the following bandwidth limitations:</p> <ul> <li> <p>For
+     * <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz
+     * to 650 MHz.</p> </li> <li> <p>For <code>AntennaDownlinkconfig</code> valid
+     * values are between 10 kHz to 54 MHz.</p> </li> <li> <p>For
+     * <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p>
+     * </li> </ul>
      */
     inline const FrequencyBandwidth& GetBandwidth() const{ return m_bandwidth; }
 
     /**
-     * <p>Bandwidth of a spectral <code>Config</code>.</p>
+     * <p>Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has
+     * the following bandwidth limitations:</p> <ul> <li> <p>For
+     * <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz
+     * to 650 MHz.</p> </li> <li> <p>For <code>AntennaDownlinkconfig</code> valid
+     * values are between 10 kHz to 54 MHz.</p> </li> <li> <p>For
+     * <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p>
+     * </li> </ul>
      */
     inline bool BandwidthHasBeenSet() const { return m_bandwidthHasBeenSet; }
 
     /**
-     * <p>Bandwidth of a spectral <code>Config</code>.</p>
+     * <p>Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has
+     * the following bandwidth limitations:</p> <ul> <li> <p>For
+     * <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz
+     * to 650 MHz.</p> </li> <li> <p>For <code>AntennaDownlinkconfig</code> valid
+     * values are between 10 kHz to 54 MHz.</p> </li> <li> <p>For
+     * <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p>
+     * </li> </ul>
      */
     inline void SetBandwidth(const FrequencyBandwidth& value) { m_bandwidthHasBeenSet = true; m_bandwidth = value; }
 
     /**
-     * <p>Bandwidth of a spectral <code>Config</code>.</p>
+     * <p>Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has
+     * the following bandwidth limitations:</p> <ul> <li> <p>For
+     * <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz
+     * to 650 MHz.</p> </li> <li> <p>For <code>AntennaDownlinkconfig</code> valid
+     * values are between 10 kHz to 54 MHz.</p> </li> <li> <p>For
+     * <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p>
+     * </li> </ul>
      */
     inline void SetBandwidth(FrequencyBandwidth&& value) { m_bandwidthHasBeenSet = true; m_bandwidth = std::move(value); }
 
     /**
-     * <p>Bandwidth of a spectral <code>Config</code>.</p>
+     * <p>Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has
+     * the following bandwidth limitations:</p> <ul> <li> <p>For
+     * <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz
+     * to 650 MHz.</p> </li> <li> <p>For <code>AntennaDownlinkconfig</code> valid
+     * values are between 10 kHz to 54 MHz.</p> </li> <li> <p>For
+     * <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p>
+     * </li> </ul>
      */
     inline SpectrumConfig& WithBandwidth(const FrequencyBandwidth& value) { SetBandwidth(value); return *this;}
 
     /**
-     * <p>Bandwidth of a spectral <code>Config</code>.</p>
+     * <p>Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has
+     * the following bandwidth limitations:</p> <ul> <li> <p>For
+     * <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz
+     * to 650 MHz.</p> </li> <li> <p>For <code>AntennaDownlinkconfig</code> valid
+     * values are between 10 kHz to 54 MHz.</p> </li> <li> <p>For
+     * <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p>
+     * </li> </ul>
      */
     inline SpectrumConfig& WithBandwidth(FrequencyBandwidth&& value) { SetBandwidth(std::move(value)); return *this;}
 
 
     /**
-     * <p>Center frequency of a spectral <code>Config</code>.</p>
+     * <p>Center frequency of a spectral <code>Config</code>. Valid values are between
+     * 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for
+     * uplink.</p>
      */
     inline const Frequency& GetCenterFrequency() const{ return m_centerFrequency; }
 
     /**
-     * <p>Center frequency of a spectral <code>Config</code>.</p>
+     * <p>Center frequency of a spectral <code>Config</code>. Valid values are between
+     * 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for
+     * uplink.</p>
      */
     inline bool CenterFrequencyHasBeenSet() const { return m_centerFrequencyHasBeenSet; }
 
     /**
-     * <p>Center frequency of a spectral <code>Config</code>.</p>
+     * <p>Center frequency of a spectral <code>Config</code>. Valid values are between
+     * 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for
+     * uplink.</p>
      */
     inline void SetCenterFrequency(const Frequency& value) { m_centerFrequencyHasBeenSet = true; m_centerFrequency = value; }
 
     /**
-     * <p>Center frequency of a spectral <code>Config</code>.</p>
+     * <p>Center frequency of a spectral <code>Config</code>. Valid values are between
+     * 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for
+     * uplink.</p>
      */
     inline void SetCenterFrequency(Frequency&& value) { m_centerFrequencyHasBeenSet = true; m_centerFrequency = std::move(value); }
 
     /**
-     * <p>Center frequency of a spectral <code>Config</code>.</p>
+     * <p>Center frequency of a spectral <code>Config</code>. Valid values are between
+     * 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for
+     * uplink.</p>
      */
     inline SpectrumConfig& WithCenterFrequency(const Frequency& value) { SetCenterFrequency(value); return *this;}
 
     /**
-     * <p>Center frequency of a spectral <code>Config</code>.</p>
+     * <p>Center frequency of a spectral <code>Config</code>. Valid values are between
+     * 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for
+     * uplink.</p>
      */
     inline SpectrumConfig& WithCenterFrequency(Frequency&& value) { SetCenterFrequency(std::move(value)); return *this;}
 
 
     /**
-     * <p>Polarization of a spectral <code>Config</code>.</p>
+     * <p>Polarization of a spectral <code>Config</code>. Capturing both
+     * <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two
+     * separate configs.</p>
      */
     inline const Polarization& GetPolarization() const{ return m_polarization; }
 
     /**
-     * <p>Polarization of a spectral <code>Config</code>.</p>
+     * <p>Polarization of a spectral <code>Config</code>. Capturing both
+     * <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two
+     * separate configs.</p>
      */
     inline bool PolarizationHasBeenSet() const { return m_polarizationHasBeenSet; }
 
     /**
-     * <p>Polarization of a spectral <code>Config</code>.</p>
+     * <p>Polarization of a spectral <code>Config</code>. Capturing both
+     * <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two
+     * separate configs.</p>
      */
     inline void SetPolarization(const Polarization& value) { m_polarizationHasBeenSet = true; m_polarization = value; }
 
     /**
-     * <p>Polarization of a spectral <code>Config</code>.</p>
+     * <p>Polarization of a spectral <code>Config</code>. Capturing both
+     * <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two
+     * separate configs.</p>
      */
     inline void SetPolarization(Polarization&& value) { m_polarizationHasBeenSet = true; m_polarization = std::move(value); }
 
     /**
-     * <p>Polarization of a spectral <code>Config</code>.</p>
+     * <p>Polarization of a spectral <code>Config</code>. Capturing both
+     * <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two
+     * separate configs.</p>
      */
     inline SpectrumConfig& WithPolarization(const Polarization& value) { SetPolarization(value); return *this;}
 
     /**
-     * <p>Polarization of a spectral <code>Config</code>.</p>
+     * <p>Polarization of a spectral <code>Config</code>. Capturing both
+     * <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two
+     * separate configs.</p>
      */
     inline SpectrumConfig& WithPolarization(Polarization&& value) { SetPolarization(std::move(value)); return *this;}
 

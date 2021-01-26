@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/sagemaker/model/AuthMode.h>
 #include <aws/sagemaker/model/UserSettings.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/AppNetworkAccessType.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
 
@@ -90,32 +81,32 @@ namespace Model
 
 
     /**
-     * <p>The mode of authentication that member use to access the domain.</p>
+     * <p>The mode of authentication that members use to access the domain.</p>
      */
     inline const AuthMode& GetAuthMode() const{ return m_authMode; }
 
     /**
-     * <p>The mode of authentication that member use to access the domain.</p>
+     * <p>The mode of authentication that members use to access the domain.</p>
      */
     inline bool AuthModeHasBeenSet() const { return m_authModeHasBeenSet; }
 
     /**
-     * <p>The mode of authentication that member use to access the domain.</p>
+     * <p>The mode of authentication that members use to access the domain.</p>
      */
     inline void SetAuthMode(const AuthMode& value) { m_authModeHasBeenSet = true; m_authMode = value; }
 
     /**
-     * <p>The mode of authentication that member use to access the domain.</p>
+     * <p>The mode of authentication that members use to access the domain.</p>
      */
     inline void SetAuthMode(AuthMode&& value) { m_authModeHasBeenSet = true; m_authMode = std::move(value); }
 
     /**
-     * <p>The mode of authentication that member use to access the domain.</p>
+     * <p>The mode of authentication that members use to access the domain.</p>
      */
     inline CreateDomainRequest& WithAuthMode(const AuthMode& value) { SetAuthMode(value); return *this;}
 
     /**
-     * <p>The mode of authentication that member use to access the domain.</p>
+     * <p>The mode of authentication that members use to access the domain.</p>
      */
     inline CreateDomainRequest& WithAuthMode(AuthMode&& value) { SetAuthMode(std::move(value)); return *this;}
 
@@ -152,188 +143,273 @@ namespace Model
 
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets that Studio uses for communication.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets that Studio uses for communication.</p>
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets that Studio uses for communication.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets that Studio uses for communication.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets that Studio uses for communication.</p>
      */
     inline CreateDomainRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets that Studio uses for communication.</p>
      */
     inline CreateDomainRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets that Studio uses for communication.</p>
      */
     inline CreateDomainRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets that Studio uses for communication.</p>
      */
     inline CreateDomainRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets that Studio uses for communication.</p>
      */
     inline CreateDomainRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
 
     /**
-     * <p>Security setting to limit the domain's communication to a Amazon Virtual
-     * Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * communication.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p>Security setting to limit the domain's communication to a Amazon Virtual
-     * Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * communication.</p>
      */
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
-     * <p>Security setting to limit the domain's communication to a Amazon Virtual
-     * Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * communication.</p>
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p>Security setting to limit the domain's communication to a Amazon Virtual
-     * Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * communication.</p>
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
-     * <p>Security setting to limit the domain's communication to a Amazon Virtual
-     * Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * communication.</p>
      */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /**
-     * <p>Security setting to limit the domain's communication to a Amazon Virtual
-     * Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * communication.</p>
      */
     inline CreateDomainRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>Security setting to limit the domain's communication to a Amazon Virtual
-     * Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * communication.</p>
      */
     inline CreateDomainRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
-     * <p>Security setting to limit the domain's communication to a Amazon Virtual
-     * Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * communication.</p>
      */
     inline CreateDomainRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>Tags to associated with the Domain. Each tag consists of a key and an
+     * optional value. Tag keys must be unique per resource. Tags are searchable using
+     * the <a>Search</a> API.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>Tags to associated with the Domain. Each tag consists of a key and an
+     * optional value. Tag keys must be unique per resource. Tags are searchable using
+     * the <a>Search</a> API.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>Tags to associated with the Domain. Each tag consists of a key and an
+     * optional value. Tag keys must be unique per resource. Tags are searchable using
+     * the <a>Search</a> API.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>Tags to associated with the Domain. Each tag consists of a key and an
+     * optional value. Tag keys must be unique per resource. Tags are searchable using
+     * the <a>Search</a> API.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>Tags to associated with the Domain. Each tag consists of a key and an
+     * optional value. Tag keys must be unique per resource. Tags are searchable using
+     * the <a>Search</a> API.</p>
      */
     inline CreateDomainRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>Tags to associated with the Domain. Each tag consists of a key and an
+     * optional value. Tag keys must be unique per resource. Tags are searchable using
+     * the <a>Search</a> API.</p>
      */
     inline CreateDomainRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>Tags to associated with the Domain. Each tag consists of a key and an
+     * optional value. Tag keys must be unique per resource. Tags are searchable using
+     * the <a>Search</a> API.</p>
      */
     inline CreateDomainRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>Tags to associated with the Domain. Each tag consists of a key and an
+     * optional value. Tag keys must be unique per resource. Tags are searchable using
+     * the <a>Search</a> API.</p>
      */
     inline CreateDomainRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
+     * <p>Specifies the VPC used for non-EFS traffic. The default value is
+     * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
+     * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
+     * subnets</p> </li> </ul>
      */
-    inline const Aws::String& GetHomeEfsFileSystemKmsKeyId() const{ return m_homeEfsFileSystemKmsKeyId; }
+    inline const AppNetworkAccessType& GetAppNetworkAccessType() const{ return m_appNetworkAccessType; }
 
     /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
+     * <p>Specifies the VPC used for non-EFS traffic. The default value is
+     * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
+     * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
+     * subnets</p> </li> </ul>
      */
-    inline bool HomeEfsFileSystemKmsKeyIdHasBeenSet() const { return m_homeEfsFileSystemKmsKeyIdHasBeenSet; }
+    inline bool AppNetworkAccessTypeHasBeenSet() const { return m_appNetworkAccessTypeHasBeenSet; }
 
     /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
+     * <p>Specifies the VPC used for non-EFS traffic. The default value is
+     * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
+     * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
+     * subnets</p> </li> </ul>
      */
-    inline void SetHomeEfsFileSystemKmsKeyId(const Aws::String& value) { m_homeEfsFileSystemKmsKeyIdHasBeenSet = true; m_homeEfsFileSystemKmsKeyId = value; }
+    inline void SetAppNetworkAccessType(const AppNetworkAccessType& value) { m_appNetworkAccessTypeHasBeenSet = true; m_appNetworkAccessType = value; }
 
     /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
+     * <p>Specifies the VPC used for non-EFS traffic. The default value is
+     * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
+     * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
+     * subnets</p> </li> </ul>
      */
-    inline void SetHomeEfsFileSystemKmsKeyId(Aws::String&& value) { m_homeEfsFileSystemKmsKeyIdHasBeenSet = true; m_homeEfsFileSystemKmsKeyId = std::move(value); }
+    inline void SetAppNetworkAccessType(AppNetworkAccessType&& value) { m_appNetworkAccessTypeHasBeenSet = true; m_appNetworkAccessType = std::move(value); }
 
     /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
+     * <p>Specifies the VPC used for non-EFS traffic. The default value is
+     * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
+     * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
+     * subnets</p> </li> </ul>
      */
-    inline void SetHomeEfsFileSystemKmsKeyId(const char* value) { m_homeEfsFileSystemKmsKeyIdHasBeenSet = true; m_homeEfsFileSystemKmsKeyId.assign(value); }
+    inline CreateDomainRequest& WithAppNetworkAccessType(const AppNetworkAccessType& value) { SetAppNetworkAccessType(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
+     * <p>Specifies the VPC used for non-EFS traffic. The default value is
+     * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
+     * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
+     * subnets</p> </li> </ul>
      */
-    inline CreateDomainRequest& WithHomeEfsFileSystemKmsKeyId(const Aws::String& value) { SetHomeEfsFileSystemKmsKeyId(value); return *this;}
+    inline CreateDomainRequest& WithAppNetworkAccessType(AppNetworkAccessType&& value) { SetAppNetworkAccessType(std::move(value)); return *this;}
+
 
     /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
+     * <p>SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with
+     * an AWS managed customer master key (CMK) by default. For more control, specify a
+     * customer managed CMK.</p>
      */
-    inline CreateDomainRequest& WithHomeEfsFileSystemKmsKeyId(Aws::String&& value) { SetHomeEfsFileSystemKmsKeyId(std::move(value)); return *this;}
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
+     * <p>SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with
+     * an AWS managed customer master key (CMK) by default. For more control, specify a
+     * customer managed CMK.</p>
      */
-    inline CreateDomainRequest& WithHomeEfsFileSystemKmsKeyId(const char* value) { SetHomeEfsFileSystemKmsKeyId(value); return *this;}
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with
+     * an AWS managed customer master key (CMK) by default. For more control, specify a
+     * customer managed CMK.</p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+
+    /**
+     * <p>SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with
+     * an AWS managed customer master key (CMK) by default. For more control, specify a
+     * customer managed CMK.</p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p>SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with
+     * an AWS managed customer master key (CMK) by default. For more control, specify a
+     * customer managed CMK.</p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
+
+    /**
+     * <p>SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with
+     * an AWS managed customer master key (CMK) by default. For more control, specify a
+     * customer managed CMK.</p>
+     */
+    inline CreateDomainRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p>SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with
+     * an AWS managed customer master key (CMK) by default. For more control, specify a
+     * customer managed CMK.</p>
+     */
+    inline CreateDomainRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with
+     * an AWS managed customer master key (CMK) by default. For more control, specify a
+     * customer managed CMK.</p>
+     */
+    inline CreateDomainRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
   private:
 
@@ -355,8 +431,11 @@ namespace Model
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
 
-    Aws::String m_homeEfsFileSystemKmsKeyId;
-    bool m_homeEfsFileSystemKmsKeyIdHasBeenSet;
+    AppNetworkAccessType m_appNetworkAccessType;
+    bool m_appNetworkAccessTypeHasBeenSet;
+
+    Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet;
   };
 
 } // namespace Model

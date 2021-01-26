@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/signer/model/GetSigningPlatformResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -28,13 +18,15 @@ using namespace Aws;
 
 GetSigningPlatformResult::GetSigningPlatformResult() : 
     m_category(Category::NOT_SET),
-    m_maxSizeInMB(0)
+    m_maxSizeInMB(0),
+    m_revocationSupported(false)
 {
 }
 
 GetSigningPlatformResult::GetSigningPlatformResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_category(Category::NOT_SET),
-    m_maxSizeInMB(0)
+    m_maxSizeInMB(0),
+    m_revocationSupported(false)
 {
   *this = result;
 }
@@ -87,6 +79,12 @@ GetSigningPlatformResult& GetSigningPlatformResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("maxSizeInMB"))
   {
     m_maxSizeInMB = jsonValue.GetInteger("maxSizeInMB");
+
+  }
+
+  if(jsonValue.ValueExists("revocationSupported"))
+  {
+    m_revocationSupported = jsonValue.GetBool("revocationSupported");
 
   }
 

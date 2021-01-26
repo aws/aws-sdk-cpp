@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codeguru-reviewer/CodeGuruReviewer_EXPORTS.h>
 #include <aws/codeguru-reviewer/model/CodeCommitRepository.h>
+#include <aws/codeguru-reviewer/model/ThirdPartySourceRepository.h>
 #include <utility>
 
 namespace Aws
@@ -34,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Information about a repository.</p><p><h3>See Also:</h3>   <a
+   * <p> Information about an associated AWS CodeCommit repository or an associated
+   * repository that is managed by AWS CodeStar Connections (for example, Bitbucket).
+   * This <code>Repository</code> object is not used if your source code is in an
+   * associated GitHub repository. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/Repository">AWS
    * API Reference</a></p>
    */
@@ -77,10 +71,78 @@ namespace Model
      */
     inline Repository& WithCodeCommit(CodeCommitRepository&& value) { SetCodeCommit(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Information about a Bitbucket repository. </p>
+     */
+    inline const ThirdPartySourceRepository& GetBitbucket() const{ return m_bitbucket; }
+
+    /**
+     * <p> Information about a Bitbucket repository. </p>
+     */
+    inline bool BitbucketHasBeenSet() const { return m_bitbucketHasBeenSet; }
+
+    /**
+     * <p> Information about a Bitbucket repository. </p>
+     */
+    inline void SetBitbucket(const ThirdPartySourceRepository& value) { m_bitbucketHasBeenSet = true; m_bitbucket = value; }
+
+    /**
+     * <p> Information about a Bitbucket repository. </p>
+     */
+    inline void SetBitbucket(ThirdPartySourceRepository&& value) { m_bitbucketHasBeenSet = true; m_bitbucket = std::move(value); }
+
+    /**
+     * <p> Information about a Bitbucket repository. </p>
+     */
+    inline Repository& WithBitbucket(const ThirdPartySourceRepository& value) { SetBitbucket(value); return *this;}
+
+    /**
+     * <p> Information about a Bitbucket repository. </p>
+     */
+    inline Repository& WithBitbucket(ThirdPartySourceRepository&& value) { SetBitbucket(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Information about a GitHub Enterprise Server repository. </p>
+     */
+    inline const ThirdPartySourceRepository& GetGitHubEnterpriseServer() const{ return m_gitHubEnterpriseServer; }
+
+    /**
+     * <p> Information about a GitHub Enterprise Server repository. </p>
+     */
+    inline bool GitHubEnterpriseServerHasBeenSet() const { return m_gitHubEnterpriseServerHasBeenSet; }
+
+    /**
+     * <p> Information about a GitHub Enterprise Server repository. </p>
+     */
+    inline void SetGitHubEnterpriseServer(const ThirdPartySourceRepository& value) { m_gitHubEnterpriseServerHasBeenSet = true; m_gitHubEnterpriseServer = value; }
+
+    /**
+     * <p> Information about a GitHub Enterprise Server repository. </p>
+     */
+    inline void SetGitHubEnterpriseServer(ThirdPartySourceRepository&& value) { m_gitHubEnterpriseServerHasBeenSet = true; m_gitHubEnterpriseServer = std::move(value); }
+
+    /**
+     * <p> Information about a GitHub Enterprise Server repository. </p>
+     */
+    inline Repository& WithGitHubEnterpriseServer(const ThirdPartySourceRepository& value) { SetGitHubEnterpriseServer(value); return *this;}
+
+    /**
+     * <p> Information about a GitHub Enterprise Server repository. </p>
+     */
+    inline Repository& WithGitHubEnterpriseServer(ThirdPartySourceRepository&& value) { SetGitHubEnterpriseServer(std::move(value)); return *this;}
+
   private:
 
     CodeCommitRepository m_codeCommit;
     bool m_codeCommitHasBeenSet;
+
+    ThirdPartySourceRepository m_bitbucket;
+    bool m_bitbucketHasBeenSet;
+
+    ThirdPartySourceRepository m_gitHubEnterpriseServer;
+    bool m_gitHubEnterpriseServerHasBeenSet;
   };
 
 } // namespace Model

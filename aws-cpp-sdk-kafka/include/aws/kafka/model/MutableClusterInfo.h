@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kafka/Kafka_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/kafka/model/ConfigurationInfo.h>
 #include <aws/kafka/model/EnhancedMonitoring.h>
 #include <aws/kafka/model/OpenMonitoring.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kafka/model/LoggingInfo.h>
 #include <aws/kafka/model/BrokerEBSVolumeInfo.h>
 #include <utility>
@@ -290,6 +281,63 @@ namespace Model
     inline MutableClusterInfo& WithOpenMonitoring(OpenMonitoring&& value) { SetOpenMonitoring(std::move(value)); return *this;}
 
 
+    /**
+     * 
+            <p>The Kafka version.</p>
+            
+     */
+    inline const Aws::String& GetKafkaVersion() const{ return m_kafkaVersion; }
+
+    /**
+     * 
+            <p>The Kafka version.</p>
+            
+     */
+    inline bool KafkaVersionHasBeenSet() const { return m_kafkaVersionHasBeenSet; }
+
+    /**
+     * 
+            <p>The Kafka version.</p>
+            
+     */
+    inline void SetKafkaVersion(const Aws::String& value) { m_kafkaVersionHasBeenSet = true; m_kafkaVersion = value; }
+
+    /**
+     * 
+            <p>The Kafka version.</p>
+            
+     */
+    inline void SetKafkaVersion(Aws::String&& value) { m_kafkaVersionHasBeenSet = true; m_kafkaVersion = std::move(value); }
+
+    /**
+     * 
+            <p>The Kafka version.</p>
+            
+     */
+    inline void SetKafkaVersion(const char* value) { m_kafkaVersionHasBeenSet = true; m_kafkaVersion.assign(value); }
+
+    /**
+     * 
+            <p>The Kafka version.</p>
+            
+     */
+    inline MutableClusterInfo& WithKafkaVersion(const Aws::String& value) { SetKafkaVersion(value); return *this;}
+
+    /**
+     * 
+            <p>The Kafka version.</p>
+            
+     */
+    inline MutableClusterInfo& WithKafkaVersion(Aws::String&& value) { SetKafkaVersion(std::move(value)); return *this;}
+
+    /**
+     * 
+            <p>The Kafka version.</p>
+            
+     */
+    inline MutableClusterInfo& WithKafkaVersion(const char* value) { SetKafkaVersion(value); return *this;}
+
+
     
     inline const LoggingInfo& GetLoggingInfo() const{ return m_loggingInfo; }
 
@@ -324,6 +372,9 @@ namespace Model
 
     OpenMonitoring m_openMonitoring;
     bool m_openMonitoringHasBeenSet;
+
+    Aws::String m_kafkaVersion;
+    bool m_kafkaVersionHasBeenSet;
 
     LoggingInfo m_loggingInfo;
     bool m_loggingInfoHasBeenSet;

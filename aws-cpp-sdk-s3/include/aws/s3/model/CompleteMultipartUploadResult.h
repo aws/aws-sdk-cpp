@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
@@ -81,37 +71,163 @@ namespace Model
 
 
     /**
-     * <p>The name of the bucket that contains the newly created object.</p>
+     * <p>The name of the bucket that contains the newly created object.</p> <p>When
+     * using this API with an access point, you must direct requests to the access
+     * point hostname. The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
+     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+     * takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * the Outposts bucket ARN in place of the bucket name. For more information about
+     * S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>The name of the bucket that contains the newly created object.</p>
+     * <p>The name of the bucket that contains the newly created object.</p> <p>When
+     * using this API with an access point, you must direct requests to the access
+     * point hostname. The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
+     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+     * takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * the Outposts bucket ARN in place of the bucket name. For more information about
+     * S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucket = value; }
 
     /**
-     * <p>The name of the bucket that contains the newly created object.</p>
+     * <p>The name of the bucket that contains the newly created object.</p> <p>When
+     * using this API with an access point, you must direct requests to the access
+     * point hostname. The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
+     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+     * takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * the Outposts bucket ARN in place of the bucket name. For more information about
+     * S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucket = std::move(value); }
 
     /**
-     * <p>The name of the bucket that contains the newly created object.</p>
+     * <p>The name of the bucket that contains the newly created object.</p> <p>When
+     * using this API with an access point, you must direct requests to the access
+     * point hostname. The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
+     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+     * takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * the Outposts bucket ARN in place of the bucket name. For more information about
+     * S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline void SetBucket(const char* value) { m_bucket.assign(value); }
 
     /**
-     * <p>The name of the bucket that contains the newly created object.</p>
+     * <p>The name of the bucket that contains the newly created object.</p> <p>When
+     * using this API with an access point, you must direct requests to the access
+     * point hostname. The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
+     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+     * takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * the Outposts bucket ARN in place of the bucket name. For more information about
+     * S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline CompleteMultipartUploadResult& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>The name of the bucket that contains the newly created object.</p>
+     * <p>The name of the bucket that contains the newly created object.</p> <p>When
+     * using this API with an access point, you must direct requests to the access
+     * point hostname. The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
+     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+     * takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * the Outposts bucket ARN in place of the bucket name. For more information about
+     * S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline CompleteMultipartUploadResult& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the bucket that contains the newly created object.</p>
+     * <p>The name of the bucket that contains the newly created object.</p> <p>When
+     * using this API with an access point, you must direct requests to the access
+     * point hostname. The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation with an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about
+     * access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
+     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+     * takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
+     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * the Outposts bucket ARN in place of the bucket name. For more information about
+     * S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline CompleteMultipartUploadResult& WithBucket(const char* value) { SetBucket(value); return *this;}
 
@@ -400,6 +516,25 @@ namespace Model
     inline CompleteMultipartUploadResult& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 
 
+    /**
+     * <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side
+     * encryption with AWS KMS (SSE-KMS).</p>
+     */
+    inline bool GetBucketKeyEnabled() const{ return m_bucketKeyEnabled; }
+
+    /**
+     * <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side
+     * encryption with AWS KMS (SSE-KMS).</p>
+     */
+    inline void SetBucketKeyEnabled(bool value) { m_bucketKeyEnabled = value; }
+
+    /**
+     * <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side
+     * encryption with AWS KMS (SSE-KMS).</p>
+     */
+    inline CompleteMultipartUploadResult& WithBucketKeyEnabled(bool value) { SetBucketKeyEnabled(value); return *this;}
+
+
     
     inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
 
@@ -432,6 +567,8 @@ namespace Model
     Aws::String m_versionId;
 
     Aws::String m_sSEKMSKeyId;
+
+    bool m_bucketKeyEnabled;
 
     RequestCharged m_requestCharged;
   };

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/redshift/Redshift_EXPORTS.h>
@@ -1526,6 +1516,31 @@ namespace Model
      */
     inline RestoreFromClusterSnapshotRequest& WithNumberOfNodes(int value) { SetNumberOfNodes(value); return *this;}
 
+
+    /**
+     * <p>The option to enable relocation for an Amazon Redshift cluster between
+     * Availability Zones after the cluster is restored.</p>
+     */
+    inline bool GetAvailabilityZoneRelocation() const{ return m_availabilityZoneRelocation; }
+
+    /**
+     * <p>The option to enable relocation for an Amazon Redshift cluster between
+     * Availability Zones after the cluster is restored.</p>
+     */
+    inline bool AvailabilityZoneRelocationHasBeenSet() const { return m_availabilityZoneRelocationHasBeenSet; }
+
+    /**
+     * <p>The option to enable relocation for an Amazon Redshift cluster between
+     * Availability Zones after the cluster is restored.</p>
+     */
+    inline void SetAvailabilityZoneRelocation(bool value) { m_availabilityZoneRelocationHasBeenSet = true; m_availabilityZoneRelocation = value; }
+
+    /**
+     * <p>The option to enable relocation for an Amazon Redshift cluster between
+     * Availability Zones after the cluster is restored.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithAvailabilityZoneRelocation(bool value) { SetAvailabilityZoneRelocation(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -1605,6 +1620,9 @@ namespace Model
 
     int m_numberOfNodes;
     bool m_numberOfNodesHasBeenSet;
+
+    bool m_availabilityZoneRelocation;
+    bool m_availabilityZoneRelocationHasBeenSet;
   };
 
 } // namespace Model

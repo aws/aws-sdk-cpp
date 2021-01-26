@@ -1,22 +1,13 @@
-/*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- * 
- *  http://aws.amazon.com/apache2.0
- * 
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
  */
 
 
 #include <aws/testing/TestingEnvironment.h>
 
 #include <aws/core/platform/FileSystem.h>
+#include <aws/core/platform/Environment.h>
 #include <aws/testing/platform/PlatformTesting.h>
 
 #include <sstream>
@@ -28,7 +19,7 @@ namespace Testing
 
 void RedirectHomeToTempIfAppropriate()
 {
-    #if !defined(DISABLE_HOME_DIR_REDIRECT) 
+    #if !defined(DISABLE_HOME_DIR_REDIRECT)
         //Set $HOME to tmp on unix systems
         std::stringstream tempDir; //( P_tmpdir );
         tempDir << P_tmpdir;
@@ -72,6 +63,28 @@ void ParseArgs(int argc, char** argv)
         {
             arg = arg.substr(resourcePrefixOption.length()); // get whatever value after the '='
             Aws::Testing::SetAwsResourcePrefix(arg.c_str());
+        }
+    }
+}
+
+static std::vector<std::pair<const char*, std::string>> s_environments;
+
+void SaveEnvironmentVariable(const char* variableName)
+{
+    s_environments.emplace_back(variableName, Aws::Environment::GetEnv(variableName).c_str());
+}
+
+void RestoreEnvironmentVariables()
+{
+    for(const auto& iter : s_environments)
+    {
+        if(iter.second.empty())
+        {
+            Aws::Environment::UnSetEnv(iter.first);
+        }
+        else
+        {
+            Aws::Environment::SetEnv(iter.first, iter.second.c_str(), 1/*override*/);
         }
     }
 }

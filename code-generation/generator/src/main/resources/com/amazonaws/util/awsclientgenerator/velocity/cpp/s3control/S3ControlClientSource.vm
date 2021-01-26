@@ -1,25 +1,100 @@
-#set($accountIdInHostnameSupported = true)
+#set($arnEndpointSupported = true)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/rest/RestXmlServiceClientSource.vm")
-\#include<aws/core/utils/HashingUtils.h>
+\#include<aws/core/platform/Environment.h>
 
-Aws::String ${className}::ComputeEndpointString(const Aws::String& accountId) const
+static const char S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE[] = "AWS_S3_USE_ARN_REGION";
+static const char S3_USE_ARN_REGION_CONFIG_FILE_OPTION[] = "s3_use_arn_region";
+
+void ${className}::Load${metadata.classNamePrefix}SpecificConfig(const Aws::String& profile)
+{
+  Aws::String s3UseArnRegion = Aws::Environment::GetEnv(S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE);
+  if (s3UseArnRegion.empty())
+  {
+    s3UseArnRegion = Aws::Config::GetCachedConfigValue(profile, S3_USE_ARN_REGION_CONFIG_FILE_OPTION);
+  }
+
+  if (s3UseArnRegion == "true")
+  {
+    m_useArnRegion = true;
+  }
+  else
+  {
+    if (!s3UseArnRegion.empty() && s3UseArnRegion != "false")
+    {
+      AWS_LOGSTREAM_WARN("${className}", "AWS_S3_USE_ARN_REGION in environment variables or s3_use_arn_region in config file"
+                                  << "should either be true of false if specified, otherwise turn off this flag by default.");
+    }
+    m_useArnRegion = false;
+  }
+}
+
+ComputeEndpointOutcome ${className}::ComputeEndpointString(bool hasOutpostId) const
 {
     Aws::StringStream ss;
-    // The account ID have to follow RFC 1123 2.1(https://tools.ietf.org/html/rfc1123#section-2.1).
-    if(Aws::Utils::IsValidDnsLabel(accountId))
+    ss << m_scheme << "://";
+    if (hasOutpostId)
     {
-        ss << m_scheme << "://" << accountId << "." << m_baseUri;
-        return ss.str();
+        if (m_useDualStack)
+        {
+            return ComputeEndpointOutcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::VALIDATION, "VALIDATION",
+                "S3 Outposts endpoints do not support dualstack right now.", false));
+        }
+        else
+        {
+            ss << ${metadata.classNamePrefix}Endpoint::ForRegion(m_region, m_useDualStack, hasOutpostId);
+            return ComputeEndpointOutcome(ComputeEndpointResult(ss.str(), Aws::Region::ComputeSignerRegion(m_region), "s3-outposts"));
+        }
     }
     else
     {
-        return {};
+        ss << m_baseUri;
+        return ComputeEndpointOutcome(ComputeEndpointResult(ss.str(), Aws::Region::ComputeSignerRegion(m_region), SERVICE_NAME));
     }
 }
 
-Aws::String ${className}::ComputeEndpointString() const
+ComputeEndpointOutcome ${className}::ComputeEndpointString(const Aws::String& name, bool hasOutpostId, const Aws::String& uriPathPrefix) const
 {
     Aws::StringStream ss;
-    ss << m_scheme << "://" << m_baseUri;
-    return ss.str();
+    ss << m_scheme << "://";
+    Aws::String signerRegion = Aws::Region::ComputeSignerRegion(m_region);
+    ${metadata.classNamePrefix}ARN arn(name);
+
+    if (arn)
+    {
+        if (m_useCustomEndpoint)
+        {
+            return ComputeEndpointOutcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::VALIDATION, "VALIDATION",
+                "Custom endpoint is not compatible with ARNs as request parameters.", false));
+        }
+
+        ${metadata.classNamePrefix}ARNOutcome ${metadata.classNamePrefix}ArnOutcome = m_useArnRegion ? arn.Validate() : arn.Validate(m_region.c_str());
+        if (!${metadata.classNamePrefix}ArnOutcome.IsSuccess())
+        {
+            return ComputeEndpointOutcome(${metadata.classNamePrefix}ArnOutcome.GetError());
+        }
+        signerRegion = m_useArnRegion ? arn.GetRegion() : signerRegion;
+        if (arn.GetResourceType() == ARNResourceType::OUTPOST)
+        {
+            if (m_useDualStack)
+            {
+                return ComputeEndpointOutcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::VALIDATION, "VALIDATION",
+                    "Outposts Access Points do not support dualstack right now.", false));
+            }
+            ss << ${metadata.classNamePrefix}Endpoint::ForOutpostsArn(arn, m_useArnRegion ? "" : m_region);
+            if (!uriPathPrefix.empty())
+            {
+                ss << uriPathPrefix << arn.GetSubResourceId();
+            }
+            return ComputeEndpointOutcome(ComputeEndpointResult(ss.str(), signerRegion, "s3-outposts"));
+        }
+    }
+
+    ss << m_baseUri;
+    if (!uriPathPrefix.empty())
+    {
+        ss << uriPathPrefix << name;
+    }
+
+    Aws::String signerServiceName = hasOutpostId ? "s3-outposts" : SERVICE_NAME;
+    return ComputeEndpointOutcome(ComputeEndpointResult(ss.str(), signerRegion, signerServiceName));
 }

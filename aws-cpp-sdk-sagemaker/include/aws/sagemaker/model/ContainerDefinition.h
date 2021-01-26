@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/model/ImageConfig.h>
 #include <aws/sagemaker/model/ContainerMode.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -188,10 +179,11 @@ namespace Model
 
 
     /**
-     * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
-     * stored. If you are using your own custom algorithm instead of an algorithm
-     * provided by Amazon SageMaker, the inference code must meet Amazon SageMaker
-     * requirements. Amazon SageMaker supports both
+     * <p>The path where inference code is stored. This can be either in Amazon EC2
+     * Container Registry or in a Docker registry that is accessible from the same VPC
+     * that you configure for your endpoint. If you are using your own custom algorithm
+     * instead of an algorithm provided by Amazon SageMaker, the inference code must
+     * meet Amazon SageMaker requirements. Amazon SageMaker supports both
      * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
@@ -201,10 +193,11 @@ namespace Model
     inline const Aws::String& GetImage() const{ return m_image; }
 
     /**
-     * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
-     * stored. If you are using your own custom algorithm instead of an algorithm
-     * provided by Amazon SageMaker, the inference code must meet Amazon SageMaker
-     * requirements. Amazon SageMaker supports both
+     * <p>The path where inference code is stored. This can be either in Amazon EC2
+     * Container Registry or in a Docker registry that is accessible from the same VPC
+     * that you configure for your endpoint. If you are using your own custom algorithm
+     * instead of an algorithm provided by Amazon SageMaker, the inference code must
+     * meet Amazon SageMaker requirements. Amazon SageMaker supports both
      * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
@@ -214,10 +207,11 @@ namespace Model
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
 
     /**
-     * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
-     * stored. If you are using your own custom algorithm instead of an algorithm
-     * provided by Amazon SageMaker, the inference code must meet Amazon SageMaker
-     * requirements. Amazon SageMaker supports both
+     * <p>The path where inference code is stored. This can be either in Amazon EC2
+     * Container Registry or in a Docker registry that is accessible from the same VPC
+     * that you configure for your endpoint. If you are using your own custom algorithm
+     * instead of an algorithm provided by Amazon SageMaker, the inference code must
+     * meet Amazon SageMaker requirements. Amazon SageMaker supports both
      * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
@@ -227,10 +221,11 @@ namespace Model
     inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
 
     /**
-     * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
-     * stored. If you are using your own custom algorithm instead of an algorithm
-     * provided by Amazon SageMaker, the inference code must meet Amazon SageMaker
-     * requirements. Amazon SageMaker supports both
+     * <p>The path where inference code is stored. This can be either in Amazon EC2
+     * Container Registry or in a Docker registry that is accessible from the same VPC
+     * that you configure for your endpoint. If you are using your own custom algorithm
+     * instead of an algorithm provided by Amazon SageMaker, the inference code must
+     * meet Amazon SageMaker requirements. Amazon SageMaker supports both
      * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
@@ -240,10 +235,11 @@ namespace Model
     inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
 
     /**
-     * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
-     * stored. If you are using your own custom algorithm instead of an algorithm
-     * provided by Amazon SageMaker, the inference code must meet Amazon SageMaker
-     * requirements. Amazon SageMaker supports both
+     * <p>The path where inference code is stored. This can be either in Amazon EC2
+     * Container Registry or in a Docker registry that is accessible from the same VPC
+     * that you configure for your endpoint. If you are using your own custom algorithm
+     * instead of an algorithm provided by Amazon SageMaker, the inference code must
+     * meet Amazon SageMaker requirements. Amazon SageMaker supports both
      * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
@@ -253,10 +249,11 @@ namespace Model
     inline void SetImage(const char* value) { m_imageHasBeenSet = true; m_image.assign(value); }
 
     /**
-     * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
-     * stored. If you are using your own custom algorithm instead of an algorithm
-     * provided by Amazon SageMaker, the inference code must meet Amazon SageMaker
-     * requirements. Amazon SageMaker supports both
+     * <p>The path where inference code is stored. This can be either in Amazon EC2
+     * Container Registry or in a Docker registry that is accessible from the same VPC
+     * that you configure for your endpoint. If you are using your own custom algorithm
+     * instead of an algorithm provided by Amazon SageMaker, the inference code must
+     * meet Amazon SageMaker requirements. Amazon SageMaker supports both
      * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
@@ -266,10 +263,11 @@ namespace Model
     inline ContainerDefinition& WithImage(const Aws::String& value) { SetImage(value); return *this;}
 
     /**
-     * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
-     * stored. If you are using your own custom algorithm instead of an algorithm
-     * provided by Amazon SageMaker, the inference code must meet Amazon SageMaker
-     * requirements. Amazon SageMaker supports both
+     * <p>The path where inference code is stored. This can be either in Amazon EC2
+     * Container Registry or in a Docker registry that is accessible from the same VPC
+     * that you configure for your endpoint. If you are using your own custom algorithm
+     * instead of an algorithm provided by Amazon SageMaker, the inference code must
+     * meet Amazon SageMaker requirements. Amazon SageMaker supports both
      * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
@@ -279,10 +277,11 @@ namespace Model
     inline ContainerDefinition& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
-     * stored. If you are using your own custom algorithm instead of an algorithm
-     * provided by Amazon SageMaker, the inference code must meet Amazon SageMaker
-     * requirements. Amazon SageMaker supports both
+     * <p>The path where inference code is stored. This can be either in Amazon EC2
+     * Container Registry or in a Docker registry that is accessible from the same VPC
+     * that you configure for your endpoint. If you are using your own custom algorithm
+     * instead of an algorithm provided by Amazon SageMaker, the inference code must
+     * meet Amazon SageMaker requirements. Amazon SageMaker supports both
      * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
@@ -290,6 +289,61 @@ namespace Model
      * Your Own Algorithms with Amazon SageMaker</a> </p>
      */
     inline ContainerDefinition& WithImage(const char* value) { SetImage(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether the model container is in Amazon ECR or a private Docker
+     * registry accessible from your Amazon Virtual Private Cloud (VPC). For
+     * information about storing containers in a private Docker registry, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
+     * a Private Docker Registry for Real-Time Inference Containers</a> </p>
+     */
+    inline const ImageConfig& GetImageConfig() const{ return m_imageConfig; }
+
+    /**
+     * <p>Specifies whether the model container is in Amazon ECR or a private Docker
+     * registry accessible from your Amazon Virtual Private Cloud (VPC). For
+     * information about storing containers in a private Docker registry, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
+     * a Private Docker Registry for Real-Time Inference Containers</a> </p>
+     */
+    inline bool ImageConfigHasBeenSet() const { return m_imageConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the model container is in Amazon ECR or a private Docker
+     * registry accessible from your Amazon Virtual Private Cloud (VPC). For
+     * information about storing containers in a private Docker registry, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
+     * a Private Docker Registry for Real-Time Inference Containers</a> </p>
+     */
+    inline void SetImageConfig(const ImageConfig& value) { m_imageConfigHasBeenSet = true; m_imageConfig = value; }
+
+    /**
+     * <p>Specifies whether the model container is in Amazon ECR or a private Docker
+     * registry accessible from your Amazon Virtual Private Cloud (VPC). For
+     * information about storing containers in a private Docker registry, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
+     * a Private Docker Registry for Real-Time Inference Containers</a> </p>
+     */
+    inline void SetImageConfig(ImageConfig&& value) { m_imageConfigHasBeenSet = true; m_imageConfig = std::move(value); }
+
+    /**
+     * <p>Specifies whether the model container is in Amazon ECR or a private Docker
+     * registry accessible from your Amazon Virtual Private Cloud (VPC). For
+     * information about storing containers in a private Docker registry, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
+     * a Private Docker Registry for Real-Time Inference Containers</a> </p>
+     */
+    inline ContainerDefinition& WithImageConfig(const ImageConfig& value) { SetImageConfig(value); return *this;}
+
+    /**
+     * <p>Specifies whether the model container is in Amazon ECR or a private Docker
+     * registry accessible from your Amazon Virtual Private Cloud (VPC). For
+     * information about storing containers in a private Docker registry, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
+     * a Private Docker Registry for Real-Time Inference Containers</a> </p>
+     */
+    inline ContainerDefinition& WithImageConfig(ImageConfig&& value) { SetImageConfig(std::move(value)); return *this;}
 
 
     /**
@@ -330,16 +384,18 @@ namespace Model
      * not if you use your own algorithms. For more information on built-in algorithms,
      * see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
-     * Parameters</a>. </p> <p>If you provide a value for this parameter, Amazon
-     * SageMaker uses AWS Security Token Service to download model artifacts from the
-     * S3 path you provide. AWS STS is activated in your IAM user account by default.
-     * If you previously deactivated AWS STS for a region, you need to reactivate AWS
-     * STS for that region. For more information, see <a
+     * Parameters</a>. </p>  <p>The model artifacts must be in an S3 bucket that
+     * is in the same region as the model or endpoint you are creating.</p> 
+     * <p>If you provide a value for this parameter, Amazon SageMaker uses AWS Security
+     * Token Service to download model artifacts from the S3 path you provide. AWS STS
+     * is activated in your IAM user account by default. If you previously deactivated
+     * AWS STS for a region, you need to reactivate AWS STS for that region. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
      * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
-     * Management User Guide</i>.</p> <important> <p>If you use a built-in algorithm to
+     * Management User Guide</i>.</p>  <p>If you use a built-in algorithm to
      * create a model, Amazon SageMaker requires that you provide a S3 path to the
-     * model artifacts in <code>ModelDataUrl</code>.</p> </important>
+     * model artifacts in <code>ModelDataUrl</code>.</p> 
      */
     inline const Aws::String& GetModelDataUrl() const{ return m_modelDataUrl; }
 
@@ -350,16 +406,18 @@ namespace Model
      * not if you use your own algorithms. For more information on built-in algorithms,
      * see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
-     * Parameters</a>. </p> <p>If you provide a value for this parameter, Amazon
-     * SageMaker uses AWS Security Token Service to download model artifacts from the
-     * S3 path you provide. AWS STS is activated in your IAM user account by default.
-     * If you previously deactivated AWS STS for a region, you need to reactivate AWS
-     * STS for that region. For more information, see <a
+     * Parameters</a>. </p>  <p>The model artifacts must be in an S3 bucket that
+     * is in the same region as the model or endpoint you are creating.</p> 
+     * <p>If you provide a value for this parameter, Amazon SageMaker uses AWS Security
+     * Token Service to download model artifacts from the S3 path you provide. AWS STS
+     * is activated in your IAM user account by default. If you previously deactivated
+     * AWS STS for a region, you need to reactivate AWS STS for that region. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
      * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
-     * Management User Guide</i>.</p> <important> <p>If you use a built-in algorithm to
+     * Management User Guide</i>.</p>  <p>If you use a built-in algorithm to
      * create a model, Amazon SageMaker requires that you provide a S3 path to the
-     * model artifacts in <code>ModelDataUrl</code>.</p> </important>
+     * model artifacts in <code>ModelDataUrl</code>.</p> 
      */
     inline bool ModelDataUrlHasBeenSet() const { return m_modelDataUrlHasBeenSet; }
 
@@ -370,16 +428,18 @@ namespace Model
      * not if you use your own algorithms. For more information on built-in algorithms,
      * see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
-     * Parameters</a>. </p> <p>If you provide a value for this parameter, Amazon
-     * SageMaker uses AWS Security Token Service to download model artifacts from the
-     * S3 path you provide. AWS STS is activated in your IAM user account by default.
-     * If you previously deactivated AWS STS for a region, you need to reactivate AWS
-     * STS for that region. For more information, see <a
+     * Parameters</a>. </p>  <p>The model artifacts must be in an S3 bucket that
+     * is in the same region as the model or endpoint you are creating.</p> 
+     * <p>If you provide a value for this parameter, Amazon SageMaker uses AWS Security
+     * Token Service to download model artifacts from the S3 path you provide. AWS STS
+     * is activated in your IAM user account by default. If you previously deactivated
+     * AWS STS for a region, you need to reactivate AWS STS for that region. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
      * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
-     * Management User Guide</i>.</p> <important> <p>If you use a built-in algorithm to
+     * Management User Guide</i>.</p>  <p>If you use a built-in algorithm to
      * create a model, Amazon SageMaker requires that you provide a S3 path to the
-     * model artifacts in <code>ModelDataUrl</code>.</p> </important>
+     * model artifacts in <code>ModelDataUrl</code>.</p> 
      */
     inline void SetModelDataUrl(const Aws::String& value) { m_modelDataUrlHasBeenSet = true; m_modelDataUrl = value; }
 
@@ -390,16 +450,18 @@ namespace Model
      * not if you use your own algorithms. For more information on built-in algorithms,
      * see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
-     * Parameters</a>. </p> <p>If you provide a value for this parameter, Amazon
-     * SageMaker uses AWS Security Token Service to download model artifacts from the
-     * S3 path you provide. AWS STS is activated in your IAM user account by default.
-     * If you previously deactivated AWS STS for a region, you need to reactivate AWS
-     * STS for that region. For more information, see <a
+     * Parameters</a>. </p>  <p>The model artifacts must be in an S3 bucket that
+     * is in the same region as the model or endpoint you are creating.</p> 
+     * <p>If you provide a value for this parameter, Amazon SageMaker uses AWS Security
+     * Token Service to download model artifacts from the S3 path you provide. AWS STS
+     * is activated in your IAM user account by default. If you previously deactivated
+     * AWS STS for a region, you need to reactivate AWS STS for that region. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
      * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
-     * Management User Guide</i>.</p> <important> <p>If you use a built-in algorithm to
+     * Management User Guide</i>.</p>  <p>If you use a built-in algorithm to
      * create a model, Amazon SageMaker requires that you provide a S3 path to the
-     * model artifacts in <code>ModelDataUrl</code>.</p> </important>
+     * model artifacts in <code>ModelDataUrl</code>.</p> 
      */
     inline void SetModelDataUrl(Aws::String&& value) { m_modelDataUrlHasBeenSet = true; m_modelDataUrl = std::move(value); }
 
@@ -410,16 +472,18 @@ namespace Model
      * not if you use your own algorithms. For more information on built-in algorithms,
      * see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
-     * Parameters</a>. </p> <p>If you provide a value for this parameter, Amazon
-     * SageMaker uses AWS Security Token Service to download model artifacts from the
-     * S3 path you provide. AWS STS is activated in your IAM user account by default.
-     * If you previously deactivated AWS STS for a region, you need to reactivate AWS
-     * STS for that region. For more information, see <a
+     * Parameters</a>. </p>  <p>The model artifacts must be in an S3 bucket that
+     * is in the same region as the model or endpoint you are creating.</p> 
+     * <p>If you provide a value for this parameter, Amazon SageMaker uses AWS Security
+     * Token Service to download model artifacts from the S3 path you provide. AWS STS
+     * is activated in your IAM user account by default. If you previously deactivated
+     * AWS STS for a region, you need to reactivate AWS STS for that region. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
      * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
-     * Management User Guide</i>.</p> <important> <p>If you use a built-in algorithm to
+     * Management User Guide</i>.</p>  <p>If you use a built-in algorithm to
      * create a model, Amazon SageMaker requires that you provide a S3 path to the
-     * model artifacts in <code>ModelDataUrl</code>.</p> </important>
+     * model artifacts in <code>ModelDataUrl</code>.</p> 
      */
     inline void SetModelDataUrl(const char* value) { m_modelDataUrlHasBeenSet = true; m_modelDataUrl.assign(value); }
 
@@ -430,16 +494,18 @@ namespace Model
      * not if you use your own algorithms. For more information on built-in algorithms,
      * see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
-     * Parameters</a>. </p> <p>If you provide a value for this parameter, Amazon
-     * SageMaker uses AWS Security Token Service to download model artifacts from the
-     * S3 path you provide. AWS STS is activated in your IAM user account by default.
-     * If you previously deactivated AWS STS for a region, you need to reactivate AWS
-     * STS for that region. For more information, see <a
+     * Parameters</a>. </p>  <p>The model artifacts must be in an S3 bucket that
+     * is in the same region as the model or endpoint you are creating.</p> 
+     * <p>If you provide a value for this parameter, Amazon SageMaker uses AWS Security
+     * Token Service to download model artifacts from the S3 path you provide. AWS STS
+     * is activated in your IAM user account by default. If you previously deactivated
+     * AWS STS for a region, you need to reactivate AWS STS for that region. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
      * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
-     * Management User Guide</i>.</p> <important> <p>If you use a built-in algorithm to
+     * Management User Guide</i>.</p>  <p>If you use a built-in algorithm to
      * create a model, Amazon SageMaker requires that you provide a S3 path to the
-     * model artifacts in <code>ModelDataUrl</code>.</p> </important>
+     * model artifacts in <code>ModelDataUrl</code>.</p> 
      */
     inline ContainerDefinition& WithModelDataUrl(const Aws::String& value) { SetModelDataUrl(value); return *this;}
 
@@ -450,16 +516,18 @@ namespace Model
      * not if you use your own algorithms. For more information on built-in algorithms,
      * see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
-     * Parameters</a>. </p> <p>If you provide a value for this parameter, Amazon
-     * SageMaker uses AWS Security Token Service to download model artifacts from the
-     * S3 path you provide. AWS STS is activated in your IAM user account by default.
-     * If you previously deactivated AWS STS for a region, you need to reactivate AWS
-     * STS for that region. For more information, see <a
+     * Parameters</a>. </p>  <p>The model artifacts must be in an S3 bucket that
+     * is in the same region as the model or endpoint you are creating.</p> 
+     * <p>If you provide a value for this parameter, Amazon SageMaker uses AWS Security
+     * Token Service to download model artifacts from the S3 path you provide. AWS STS
+     * is activated in your IAM user account by default. If you previously deactivated
+     * AWS STS for a region, you need to reactivate AWS STS for that region. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
      * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
-     * Management User Guide</i>.</p> <important> <p>If you use a built-in algorithm to
+     * Management User Guide</i>.</p>  <p>If you use a built-in algorithm to
      * create a model, Amazon SageMaker requires that you provide a S3 path to the
-     * model artifacts in <code>ModelDataUrl</code>.</p> </important>
+     * model artifacts in <code>ModelDataUrl</code>.</p> 
      */
     inline ContainerDefinition& WithModelDataUrl(Aws::String&& value) { SetModelDataUrl(std::move(value)); return *this;}
 
@@ -470,16 +538,18 @@ namespace Model
      * not if you use your own algorithms. For more information on built-in algorithms,
      * see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
-     * Parameters</a>. </p> <p>If you provide a value for this parameter, Amazon
-     * SageMaker uses AWS Security Token Service to download model artifacts from the
-     * S3 path you provide. AWS STS is activated in your IAM user account by default.
-     * If you previously deactivated AWS STS for a region, you need to reactivate AWS
-     * STS for that region. For more information, see <a
+     * Parameters</a>. </p>  <p>The model artifacts must be in an S3 bucket that
+     * is in the same region as the model or endpoint you are creating.</p> 
+     * <p>If you provide a value for this parameter, Amazon SageMaker uses AWS Security
+     * Token Service to download model artifacts from the S3 path you provide. AWS STS
+     * is activated in your IAM user account by default. If you previously deactivated
+     * AWS STS for a region, you need to reactivate AWS STS for that region. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
      * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
-     * Management User Guide</i>.</p> <important> <p>If you use a built-in algorithm to
+     * Management User Guide</i>.</p>  <p>If you use a built-in algorithm to
      * create a model, Amazon SageMaker requires that you provide a S3 path to the
-     * model artifacts in <code>ModelDataUrl</code>.</p> </important>
+     * model artifacts in <code>ModelDataUrl</code>.</p> 
      */
     inline ContainerDefinition& WithModelDataUrl(const char* value) { SetModelDataUrl(value); return *this;}
 
@@ -631,6 +701,9 @@ namespace Model
 
     Aws::String m_image;
     bool m_imageHasBeenSet;
+
+    ImageConfig m_imageConfig;
+    bool m_imageConfigHasBeenSet;
 
     ContainerMode m_mode;
     bool m_modeHasBeenSet;

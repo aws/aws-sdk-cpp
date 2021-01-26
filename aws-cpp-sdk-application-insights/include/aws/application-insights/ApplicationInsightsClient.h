@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/application-insights/ApplicationInsights_EXPORTS.h>
@@ -115,33 +105,33 @@ namespace Model
         class UpdateComponentConfigurationRequest;
         class UpdateLogPatternRequest;
 
-        typedef Aws::Utils::Outcome<CreateApplicationResult, Aws::Client::AWSError<ApplicationInsightsErrors>> CreateApplicationOutcome;
-        typedef Aws::Utils::Outcome<CreateComponentResult, Aws::Client::AWSError<ApplicationInsightsErrors>> CreateComponentOutcome;
-        typedef Aws::Utils::Outcome<CreateLogPatternResult, Aws::Client::AWSError<ApplicationInsightsErrors>> CreateLogPatternOutcome;
-        typedef Aws::Utils::Outcome<DeleteApplicationResult, Aws::Client::AWSError<ApplicationInsightsErrors>> DeleteApplicationOutcome;
-        typedef Aws::Utils::Outcome<DeleteComponentResult, Aws::Client::AWSError<ApplicationInsightsErrors>> DeleteComponentOutcome;
-        typedef Aws::Utils::Outcome<DeleteLogPatternResult, Aws::Client::AWSError<ApplicationInsightsErrors>> DeleteLogPatternOutcome;
-        typedef Aws::Utils::Outcome<DescribeApplicationResult, Aws::Client::AWSError<ApplicationInsightsErrors>> DescribeApplicationOutcome;
-        typedef Aws::Utils::Outcome<DescribeComponentResult, Aws::Client::AWSError<ApplicationInsightsErrors>> DescribeComponentOutcome;
-        typedef Aws::Utils::Outcome<DescribeComponentConfigurationResult, Aws::Client::AWSError<ApplicationInsightsErrors>> DescribeComponentConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DescribeComponentConfigurationRecommendationResult, Aws::Client::AWSError<ApplicationInsightsErrors>> DescribeComponentConfigurationRecommendationOutcome;
-        typedef Aws::Utils::Outcome<DescribeLogPatternResult, Aws::Client::AWSError<ApplicationInsightsErrors>> DescribeLogPatternOutcome;
-        typedef Aws::Utils::Outcome<DescribeObservationResult, Aws::Client::AWSError<ApplicationInsightsErrors>> DescribeObservationOutcome;
-        typedef Aws::Utils::Outcome<DescribeProblemResult, Aws::Client::AWSError<ApplicationInsightsErrors>> DescribeProblemOutcome;
-        typedef Aws::Utils::Outcome<DescribeProblemObservationsResult, Aws::Client::AWSError<ApplicationInsightsErrors>> DescribeProblemObservationsOutcome;
-        typedef Aws::Utils::Outcome<ListApplicationsResult, Aws::Client::AWSError<ApplicationInsightsErrors>> ListApplicationsOutcome;
-        typedef Aws::Utils::Outcome<ListComponentsResult, Aws::Client::AWSError<ApplicationInsightsErrors>> ListComponentsOutcome;
-        typedef Aws::Utils::Outcome<ListConfigurationHistoryResult, Aws::Client::AWSError<ApplicationInsightsErrors>> ListConfigurationHistoryOutcome;
-        typedef Aws::Utils::Outcome<ListLogPatternSetsResult, Aws::Client::AWSError<ApplicationInsightsErrors>> ListLogPatternSetsOutcome;
-        typedef Aws::Utils::Outcome<ListLogPatternsResult, Aws::Client::AWSError<ApplicationInsightsErrors>> ListLogPatternsOutcome;
-        typedef Aws::Utils::Outcome<ListProblemsResult, Aws::Client::AWSError<ApplicationInsightsErrors>> ListProblemsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<ApplicationInsightsErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<ApplicationInsightsErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<ApplicationInsightsErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateApplicationResult, Aws::Client::AWSError<ApplicationInsightsErrors>> UpdateApplicationOutcome;
-        typedef Aws::Utils::Outcome<UpdateComponentResult, Aws::Client::AWSError<ApplicationInsightsErrors>> UpdateComponentOutcome;
-        typedef Aws::Utils::Outcome<UpdateComponentConfigurationResult, Aws::Client::AWSError<ApplicationInsightsErrors>> UpdateComponentConfigurationOutcome;
-        typedef Aws::Utils::Outcome<UpdateLogPatternResult, Aws::Client::AWSError<ApplicationInsightsErrors>> UpdateLogPatternOutcome;
+        typedef Aws::Utils::Outcome<CreateApplicationResult, ApplicationInsightsError> CreateApplicationOutcome;
+        typedef Aws::Utils::Outcome<CreateComponentResult, ApplicationInsightsError> CreateComponentOutcome;
+        typedef Aws::Utils::Outcome<CreateLogPatternResult, ApplicationInsightsError> CreateLogPatternOutcome;
+        typedef Aws::Utils::Outcome<DeleteApplicationResult, ApplicationInsightsError> DeleteApplicationOutcome;
+        typedef Aws::Utils::Outcome<DeleteComponentResult, ApplicationInsightsError> DeleteComponentOutcome;
+        typedef Aws::Utils::Outcome<DeleteLogPatternResult, ApplicationInsightsError> DeleteLogPatternOutcome;
+        typedef Aws::Utils::Outcome<DescribeApplicationResult, ApplicationInsightsError> DescribeApplicationOutcome;
+        typedef Aws::Utils::Outcome<DescribeComponentResult, ApplicationInsightsError> DescribeComponentOutcome;
+        typedef Aws::Utils::Outcome<DescribeComponentConfigurationResult, ApplicationInsightsError> DescribeComponentConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DescribeComponentConfigurationRecommendationResult, ApplicationInsightsError> DescribeComponentConfigurationRecommendationOutcome;
+        typedef Aws::Utils::Outcome<DescribeLogPatternResult, ApplicationInsightsError> DescribeLogPatternOutcome;
+        typedef Aws::Utils::Outcome<DescribeObservationResult, ApplicationInsightsError> DescribeObservationOutcome;
+        typedef Aws::Utils::Outcome<DescribeProblemResult, ApplicationInsightsError> DescribeProblemOutcome;
+        typedef Aws::Utils::Outcome<DescribeProblemObservationsResult, ApplicationInsightsError> DescribeProblemObservationsOutcome;
+        typedef Aws::Utils::Outcome<ListApplicationsResult, ApplicationInsightsError> ListApplicationsOutcome;
+        typedef Aws::Utils::Outcome<ListComponentsResult, ApplicationInsightsError> ListComponentsOutcome;
+        typedef Aws::Utils::Outcome<ListConfigurationHistoryResult, ApplicationInsightsError> ListConfigurationHistoryOutcome;
+        typedef Aws::Utils::Outcome<ListLogPatternSetsResult, ApplicationInsightsError> ListLogPatternSetsOutcome;
+        typedef Aws::Utils::Outcome<ListLogPatternsResult, ApplicationInsightsError> ListLogPatternsOutcome;
+        typedef Aws::Utils::Outcome<ListProblemsResult, ApplicationInsightsError> ListProblemsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, ApplicationInsightsError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, ApplicationInsightsError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, ApplicationInsightsError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateApplicationResult, ApplicationInsightsError> UpdateApplicationOutcome;
+        typedef Aws::Utils::Outcome<UpdateComponentResult, ApplicationInsightsError> UpdateComponentOutcome;
+        typedef Aws::Utils::Outcome<UpdateComponentConfigurationResult, ApplicationInsightsError> UpdateComponentConfigurationOutcome;
+        typedef Aws::Utils::Outcome<UpdateLogPatternResult, ApplicationInsightsError> UpdateLogPatternOutcome;
 
         typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
         typedef std::future<CreateComponentOutcome> CreateComponentOutcomeCallable;
@@ -203,20 +193,19 @@ namespace Model
     typedef std::function<void(const ApplicationInsightsClient*, const Model::UpdateLogPatternRequest&, const Model::UpdateLogPatternOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLogPatternResponseReceivedHandler;
 
   /**
-   * <fullname>Amazon CloudWatch Application Insights for .NET and SQL
-   * Server</fullname> <p> Amazon CloudWatch Application Insights for .NET and SQL
-   * Server is a service that helps you detect common problems with your .NET and SQL
-   * Server-based applications. It enables you to pinpoint the source of issues in
-   * your applications (built with technologies such as Microsoft IIS, .NET, and
+   * <fullname>Amazon CloudWatch Application Insights</fullname> <p> Amazon
+   * CloudWatch Application Insights is a service that helps you detect common
+   * problems with your applications. It enables you to pinpoint the source of issues
+   * in your applications (built with technologies such as Microsoft IIS, .NET, and
    * Microsoft SQL Server), by providing key insights into detected problems.</p>
-   * <p>After you onboard your application, CloudWatch Application Insights for .NET
-   * and SQL Server identifies, recommends, and sets up metrics and logs. It
-   * continuously analyzes and correlates your metrics and logs for unusual behavior
-   * to surface actionable problems with your application. For example, if your
-   * application is slow and unresponsive and leading to HTTP 500 errors in your
-   * Application Load Balancer (ALB), Application Insights informs you that a memory
-   * pressure problem with your SQL Server database is occurring. It bases this
-   * analysis on impactful metrics and log errors. </p>
+   * <p>After you onboard your application, CloudWatch Application Insights
+   * identifies, recommends, and sets up metrics and logs. It continuously analyzes
+   * and correlates your metrics and logs for unusual behavior to surface actionable
+   * problems with your application. For example, if your application is slow and
+   * unresponsive and leading to HTTP 500 errors in your Application Load Balancer
+   * (ALB), Application Insights informs you that a memory pressure problem with your
+   * SQL Server database is occurring. It bases this analysis on impactful metrics
+   * and log errors. </p>
    */
   class AWS_APPLICATIONINSIGHTS_API ApplicationInsightsClient : public Aws::Client::AWSJsonClient
   {
@@ -243,8 +232,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~ApplicationInsightsClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "Application Insights"; }
 
 
         /**

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/groundstation/GroundStation_EXPORTS.h>
@@ -34,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Object that describes the frequency bandwidth.</p><p><h3>See Also:</h3>   <a
+   * <p>Object that describes the frequency bandwidth. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/FrequencyBandwidth">AWS
    * API Reference</a></p>
    */
@@ -79,22 +69,46 @@ namespace Model
 
 
     /**
-     * <p>Frequency bandwidth value.</p>
+     * <p>Frequency bandwidth value. AWS Ground Station currently has the following
+     * bandwidth limitations:</p> <ul> <li> <p>For
+     * <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz
+     * to 650 MHz.</p> </li> <li> <p>For <code>AntennaDownlinkconfig</code>, valid
+     * values are between 10 kHz to 54 MHz.</p> </li> <li> <p>For
+     * <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p>
+     * </li> </ul>
      */
     inline double GetValue() const{ return m_value; }
 
     /**
-     * <p>Frequency bandwidth value.</p>
+     * <p>Frequency bandwidth value. AWS Ground Station currently has the following
+     * bandwidth limitations:</p> <ul> <li> <p>For
+     * <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz
+     * to 650 MHz.</p> </li> <li> <p>For <code>AntennaDownlinkconfig</code>, valid
+     * values are between 10 kHz to 54 MHz.</p> </li> <li> <p>For
+     * <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p>
+     * </li> </ul>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>Frequency bandwidth value.</p>
+     * <p>Frequency bandwidth value. AWS Ground Station currently has the following
+     * bandwidth limitations:</p> <ul> <li> <p>For
+     * <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz
+     * to 650 MHz.</p> </li> <li> <p>For <code>AntennaDownlinkconfig</code>, valid
+     * values are between 10 kHz to 54 MHz.</p> </li> <li> <p>For
+     * <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p>
+     * </li> </ul>
      */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>Frequency bandwidth value.</p>
+     * <p>Frequency bandwidth value. AWS Ground Station currently has the following
+     * bandwidth limitations:</p> <ul> <li> <p>For
+     * <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz
+     * to 650 MHz.</p> </li> <li> <p>For <code>AntennaDownlinkconfig</code>, valid
+     * values are between 10 kHz to 54 MHz.</p> </li> <li> <p>For
+     * <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p>
+     * </li> </ul>
      */
     inline FrequencyBandwidth& WithValue(double value) { SetValue(value); return *this;}
 

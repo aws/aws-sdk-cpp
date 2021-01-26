@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
@@ -45,6 +35,7 @@
 #include <aws/codecommit/model/GetBlobResult.h>
 #include <aws/codecommit/model/GetBranchResult.h>
 #include <aws/codecommit/model/GetCommentResult.h>
+#include <aws/codecommit/model/GetCommentReactionsResult.h>
 #include <aws/codecommit/model/GetCommentsForComparedCommitResult.h>
 #include <aws/codecommit/model/GetCommentsForPullRequestResult.h>
 #include <aws/codecommit/model/GetCommitResult.h>
@@ -153,6 +144,7 @@ namespace Model
         class GetBlobRequest;
         class GetBranchRequest;
         class GetCommentRequest;
+        class GetCommentReactionsRequest;
         class GetCommentsForComparedCommitRequest;
         class GetCommentsForPullRequestRequest;
         class GetCommitRequest;
@@ -184,6 +176,7 @@ namespace Model
         class PostCommentForComparedCommitRequest;
         class PostCommentForPullRequestRequest;
         class PostCommentReplyRequest;
+        class PutCommentReactionRequest;
         class PutFileRequest;
         class PutRepositoryTriggersRequest;
         class TagResourceRequest;
@@ -202,81 +195,83 @@ namespace Model
         class UpdateRepositoryDescriptionRequest;
         class UpdateRepositoryNameRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeCommitErrors>> AssociateApprovalRuleTemplateWithRepositoryOutcome;
-        typedef Aws::Utils::Outcome<BatchAssociateApprovalRuleTemplateWithRepositoriesResult, Aws::Client::AWSError<CodeCommitErrors>> BatchAssociateApprovalRuleTemplateWithRepositoriesOutcome;
-        typedef Aws::Utils::Outcome<BatchDescribeMergeConflictsResult, Aws::Client::AWSError<CodeCommitErrors>> BatchDescribeMergeConflictsOutcome;
-        typedef Aws::Utils::Outcome<BatchDisassociateApprovalRuleTemplateFromRepositoriesResult, Aws::Client::AWSError<CodeCommitErrors>> BatchDisassociateApprovalRuleTemplateFromRepositoriesOutcome;
-        typedef Aws::Utils::Outcome<BatchGetCommitsResult, Aws::Client::AWSError<CodeCommitErrors>> BatchGetCommitsOutcome;
-        typedef Aws::Utils::Outcome<BatchGetRepositoriesResult, Aws::Client::AWSError<CodeCommitErrors>> BatchGetRepositoriesOutcome;
-        typedef Aws::Utils::Outcome<CreateApprovalRuleTemplateResult, Aws::Client::AWSError<CodeCommitErrors>> CreateApprovalRuleTemplateOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeCommitErrors>> CreateBranchOutcome;
-        typedef Aws::Utils::Outcome<CreateCommitResult, Aws::Client::AWSError<CodeCommitErrors>> CreateCommitOutcome;
-        typedef Aws::Utils::Outcome<CreatePullRequestResult, Aws::Client::AWSError<CodeCommitErrors>> CreatePullRequestOutcome;
-        typedef Aws::Utils::Outcome<CreatePullRequestApprovalRuleResult, Aws::Client::AWSError<CodeCommitErrors>> CreatePullRequestApprovalRuleOutcome;
-        typedef Aws::Utils::Outcome<CreateRepositoryResult, Aws::Client::AWSError<CodeCommitErrors>> CreateRepositoryOutcome;
-        typedef Aws::Utils::Outcome<CreateUnreferencedMergeCommitResult, Aws::Client::AWSError<CodeCommitErrors>> CreateUnreferencedMergeCommitOutcome;
-        typedef Aws::Utils::Outcome<DeleteApprovalRuleTemplateResult, Aws::Client::AWSError<CodeCommitErrors>> DeleteApprovalRuleTemplateOutcome;
-        typedef Aws::Utils::Outcome<DeleteBranchResult, Aws::Client::AWSError<CodeCommitErrors>> DeleteBranchOutcome;
-        typedef Aws::Utils::Outcome<DeleteCommentContentResult, Aws::Client::AWSError<CodeCommitErrors>> DeleteCommentContentOutcome;
-        typedef Aws::Utils::Outcome<DeleteFileResult, Aws::Client::AWSError<CodeCommitErrors>> DeleteFileOutcome;
-        typedef Aws::Utils::Outcome<DeletePullRequestApprovalRuleResult, Aws::Client::AWSError<CodeCommitErrors>> DeletePullRequestApprovalRuleOutcome;
-        typedef Aws::Utils::Outcome<DeleteRepositoryResult, Aws::Client::AWSError<CodeCommitErrors>> DeleteRepositoryOutcome;
-        typedef Aws::Utils::Outcome<DescribeMergeConflictsResult, Aws::Client::AWSError<CodeCommitErrors>> DescribeMergeConflictsOutcome;
-        typedef Aws::Utils::Outcome<DescribePullRequestEventsResult, Aws::Client::AWSError<CodeCommitErrors>> DescribePullRequestEventsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeCommitErrors>> DisassociateApprovalRuleTemplateFromRepositoryOutcome;
-        typedef Aws::Utils::Outcome<EvaluatePullRequestApprovalRulesResult, Aws::Client::AWSError<CodeCommitErrors>> EvaluatePullRequestApprovalRulesOutcome;
-        typedef Aws::Utils::Outcome<GetApprovalRuleTemplateResult, Aws::Client::AWSError<CodeCommitErrors>> GetApprovalRuleTemplateOutcome;
-        typedef Aws::Utils::Outcome<GetBlobResult, Aws::Client::AWSError<CodeCommitErrors>> GetBlobOutcome;
-        typedef Aws::Utils::Outcome<GetBranchResult, Aws::Client::AWSError<CodeCommitErrors>> GetBranchOutcome;
-        typedef Aws::Utils::Outcome<GetCommentResult, Aws::Client::AWSError<CodeCommitErrors>> GetCommentOutcome;
-        typedef Aws::Utils::Outcome<GetCommentsForComparedCommitResult, Aws::Client::AWSError<CodeCommitErrors>> GetCommentsForComparedCommitOutcome;
-        typedef Aws::Utils::Outcome<GetCommentsForPullRequestResult, Aws::Client::AWSError<CodeCommitErrors>> GetCommentsForPullRequestOutcome;
-        typedef Aws::Utils::Outcome<GetCommitResult, Aws::Client::AWSError<CodeCommitErrors>> GetCommitOutcome;
-        typedef Aws::Utils::Outcome<GetDifferencesResult, Aws::Client::AWSError<CodeCommitErrors>> GetDifferencesOutcome;
-        typedef Aws::Utils::Outcome<GetFileResult, Aws::Client::AWSError<CodeCommitErrors>> GetFileOutcome;
-        typedef Aws::Utils::Outcome<GetFolderResult, Aws::Client::AWSError<CodeCommitErrors>> GetFolderOutcome;
-        typedef Aws::Utils::Outcome<GetMergeCommitResult, Aws::Client::AWSError<CodeCommitErrors>> GetMergeCommitOutcome;
-        typedef Aws::Utils::Outcome<GetMergeConflictsResult, Aws::Client::AWSError<CodeCommitErrors>> GetMergeConflictsOutcome;
-        typedef Aws::Utils::Outcome<GetMergeOptionsResult, Aws::Client::AWSError<CodeCommitErrors>> GetMergeOptionsOutcome;
-        typedef Aws::Utils::Outcome<GetPullRequestResult, Aws::Client::AWSError<CodeCommitErrors>> GetPullRequestOutcome;
-        typedef Aws::Utils::Outcome<GetPullRequestApprovalStatesResult, Aws::Client::AWSError<CodeCommitErrors>> GetPullRequestApprovalStatesOutcome;
-        typedef Aws::Utils::Outcome<GetPullRequestOverrideStateResult, Aws::Client::AWSError<CodeCommitErrors>> GetPullRequestOverrideStateOutcome;
-        typedef Aws::Utils::Outcome<GetRepositoryResult, Aws::Client::AWSError<CodeCommitErrors>> GetRepositoryOutcome;
-        typedef Aws::Utils::Outcome<GetRepositoryTriggersResult, Aws::Client::AWSError<CodeCommitErrors>> GetRepositoryTriggersOutcome;
-        typedef Aws::Utils::Outcome<ListApprovalRuleTemplatesResult, Aws::Client::AWSError<CodeCommitErrors>> ListApprovalRuleTemplatesOutcome;
-        typedef Aws::Utils::Outcome<ListAssociatedApprovalRuleTemplatesForRepositoryResult, Aws::Client::AWSError<CodeCommitErrors>> ListAssociatedApprovalRuleTemplatesForRepositoryOutcome;
-        typedef Aws::Utils::Outcome<ListBranchesResult, Aws::Client::AWSError<CodeCommitErrors>> ListBranchesOutcome;
-        typedef Aws::Utils::Outcome<ListPullRequestsResult, Aws::Client::AWSError<CodeCommitErrors>> ListPullRequestsOutcome;
-        typedef Aws::Utils::Outcome<ListRepositoriesResult, Aws::Client::AWSError<CodeCommitErrors>> ListRepositoriesOutcome;
-        typedef Aws::Utils::Outcome<ListRepositoriesForApprovalRuleTemplateResult, Aws::Client::AWSError<CodeCommitErrors>> ListRepositoriesForApprovalRuleTemplateOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<CodeCommitErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<MergeBranchesByFastForwardResult, Aws::Client::AWSError<CodeCommitErrors>> MergeBranchesByFastForwardOutcome;
-        typedef Aws::Utils::Outcome<MergeBranchesBySquashResult, Aws::Client::AWSError<CodeCommitErrors>> MergeBranchesBySquashOutcome;
-        typedef Aws::Utils::Outcome<MergeBranchesByThreeWayResult, Aws::Client::AWSError<CodeCommitErrors>> MergeBranchesByThreeWayOutcome;
-        typedef Aws::Utils::Outcome<MergePullRequestByFastForwardResult, Aws::Client::AWSError<CodeCommitErrors>> MergePullRequestByFastForwardOutcome;
-        typedef Aws::Utils::Outcome<MergePullRequestBySquashResult, Aws::Client::AWSError<CodeCommitErrors>> MergePullRequestBySquashOutcome;
-        typedef Aws::Utils::Outcome<MergePullRequestByThreeWayResult, Aws::Client::AWSError<CodeCommitErrors>> MergePullRequestByThreeWayOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeCommitErrors>> OverridePullRequestApprovalRulesOutcome;
-        typedef Aws::Utils::Outcome<PostCommentForComparedCommitResult, Aws::Client::AWSError<CodeCommitErrors>> PostCommentForComparedCommitOutcome;
-        typedef Aws::Utils::Outcome<PostCommentForPullRequestResult, Aws::Client::AWSError<CodeCommitErrors>> PostCommentForPullRequestOutcome;
-        typedef Aws::Utils::Outcome<PostCommentReplyResult, Aws::Client::AWSError<CodeCommitErrors>> PostCommentReplyOutcome;
-        typedef Aws::Utils::Outcome<PutFileResult, Aws::Client::AWSError<CodeCommitErrors>> PutFileOutcome;
-        typedef Aws::Utils::Outcome<PutRepositoryTriggersResult, Aws::Client::AWSError<CodeCommitErrors>> PutRepositoryTriggersOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeCommitErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<TestRepositoryTriggersResult, Aws::Client::AWSError<CodeCommitErrors>> TestRepositoryTriggersOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeCommitErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateApprovalRuleTemplateContentResult, Aws::Client::AWSError<CodeCommitErrors>> UpdateApprovalRuleTemplateContentOutcome;
-        typedef Aws::Utils::Outcome<UpdateApprovalRuleTemplateDescriptionResult, Aws::Client::AWSError<CodeCommitErrors>> UpdateApprovalRuleTemplateDescriptionOutcome;
-        typedef Aws::Utils::Outcome<UpdateApprovalRuleTemplateNameResult, Aws::Client::AWSError<CodeCommitErrors>> UpdateApprovalRuleTemplateNameOutcome;
-        typedef Aws::Utils::Outcome<UpdateCommentResult, Aws::Client::AWSError<CodeCommitErrors>> UpdateCommentOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeCommitErrors>> UpdateDefaultBranchOutcome;
-        typedef Aws::Utils::Outcome<UpdatePullRequestApprovalRuleContentResult, Aws::Client::AWSError<CodeCommitErrors>> UpdatePullRequestApprovalRuleContentOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeCommitErrors>> UpdatePullRequestApprovalStateOutcome;
-        typedef Aws::Utils::Outcome<UpdatePullRequestDescriptionResult, Aws::Client::AWSError<CodeCommitErrors>> UpdatePullRequestDescriptionOutcome;
-        typedef Aws::Utils::Outcome<UpdatePullRequestStatusResult, Aws::Client::AWSError<CodeCommitErrors>> UpdatePullRequestStatusOutcome;
-        typedef Aws::Utils::Outcome<UpdatePullRequestTitleResult, Aws::Client::AWSError<CodeCommitErrors>> UpdatePullRequestTitleOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeCommitErrors>> UpdateRepositoryDescriptionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeCommitErrors>> UpdateRepositoryNameOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CodeCommitError> AssociateApprovalRuleTemplateWithRepositoryOutcome;
+        typedef Aws::Utils::Outcome<BatchAssociateApprovalRuleTemplateWithRepositoriesResult, CodeCommitError> BatchAssociateApprovalRuleTemplateWithRepositoriesOutcome;
+        typedef Aws::Utils::Outcome<BatchDescribeMergeConflictsResult, CodeCommitError> BatchDescribeMergeConflictsOutcome;
+        typedef Aws::Utils::Outcome<BatchDisassociateApprovalRuleTemplateFromRepositoriesResult, CodeCommitError> BatchDisassociateApprovalRuleTemplateFromRepositoriesOutcome;
+        typedef Aws::Utils::Outcome<BatchGetCommitsResult, CodeCommitError> BatchGetCommitsOutcome;
+        typedef Aws::Utils::Outcome<BatchGetRepositoriesResult, CodeCommitError> BatchGetRepositoriesOutcome;
+        typedef Aws::Utils::Outcome<CreateApprovalRuleTemplateResult, CodeCommitError> CreateApprovalRuleTemplateOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CodeCommitError> CreateBranchOutcome;
+        typedef Aws::Utils::Outcome<CreateCommitResult, CodeCommitError> CreateCommitOutcome;
+        typedef Aws::Utils::Outcome<CreatePullRequestResult, CodeCommitError> CreatePullRequestOutcome;
+        typedef Aws::Utils::Outcome<CreatePullRequestApprovalRuleResult, CodeCommitError> CreatePullRequestApprovalRuleOutcome;
+        typedef Aws::Utils::Outcome<CreateRepositoryResult, CodeCommitError> CreateRepositoryOutcome;
+        typedef Aws::Utils::Outcome<CreateUnreferencedMergeCommitResult, CodeCommitError> CreateUnreferencedMergeCommitOutcome;
+        typedef Aws::Utils::Outcome<DeleteApprovalRuleTemplateResult, CodeCommitError> DeleteApprovalRuleTemplateOutcome;
+        typedef Aws::Utils::Outcome<DeleteBranchResult, CodeCommitError> DeleteBranchOutcome;
+        typedef Aws::Utils::Outcome<DeleteCommentContentResult, CodeCommitError> DeleteCommentContentOutcome;
+        typedef Aws::Utils::Outcome<DeleteFileResult, CodeCommitError> DeleteFileOutcome;
+        typedef Aws::Utils::Outcome<DeletePullRequestApprovalRuleResult, CodeCommitError> DeletePullRequestApprovalRuleOutcome;
+        typedef Aws::Utils::Outcome<DeleteRepositoryResult, CodeCommitError> DeleteRepositoryOutcome;
+        typedef Aws::Utils::Outcome<DescribeMergeConflictsResult, CodeCommitError> DescribeMergeConflictsOutcome;
+        typedef Aws::Utils::Outcome<DescribePullRequestEventsResult, CodeCommitError> DescribePullRequestEventsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CodeCommitError> DisassociateApprovalRuleTemplateFromRepositoryOutcome;
+        typedef Aws::Utils::Outcome<EvaluatePullRequestApprovalRulesResult, CodeCommitError> EvaluatePullRequestApprovalRulesOutcome;
+        typedef Aws::Utils::Outcome<GetApprovalRuleTemplateResult, CodeCommitError> GetApprovalRuleTemplateOutcome;
+        typedef Aws::Utils::Outcome<GetBlobResult, CodeCommitError> GetBlobOutcome;
+        typedef Aws::Utils::Outcome<GetBranchResult, CodeCommitError> GetBranchOutcome;
+        typedef Aws::Utils::Outcome<GetCommentResult, CodeCommitError> GetCommentOutcome;
+        typedef Aws::Utils::Outcome<GetCommentReactionsResult, CodeCommitError> GetCommentReactionsOutcome;
+        typedef Aws::Utils::Outcome<GetCommentsForComparedCommitResult, CodeCommitError> GetCommentsForComparedCommitOutcome;
+        typedef Aws::Utils::Outcome<GetCommentsForPullRequestResult, CodeCommitError> GetCommentsForPullRequestOutcome;
+        typedef Aws::Utils::Outcome<GetCommitResult, CodeCommitError> GetCommitOutcome;
+        typedef Aws::Utils::Outcome<GetDifferencesResult, CodeCommitError> GetDifferencesOutcome;
+        typedef Aws::Utils::Outcome<GetFileResult, CodeCommitError> GetFileOutcome;
+        typedef Aws::Utils::Outcome<GetFolderResult, CodeCommitError> GetFolderOutcome;
+        typedef Aws::Utils::Outcome<GetMergeCommitResult, CodeCommitError> GetMergeCommitOutcome;
+        typedef Aws::Utils::Outcome<GetMergeConflictsResult, CodeCommitError> GetMergeConflictsOutcome;
+        typedef Aws::Utils::Outcome<GetMergeOptionsResult, CodeCommitError> GetMergeOptionsOutcome;
+        typedef Aws::Utils::Outcome<GetPullRequestResult, CodeCommitError> GetPullRequestOutcome;
+        typedef Aws::Utils::Outcome<GetPullRequestApprovalStatesResult, CodeCommitError> GetPullRequestApprovalStatesOutcome;
+        typedef Aws::Utils::Outcome<GetPullRequestOverrideStateResult, CodeCommitError> GetPullRequestOverrideStateOutcome;
+        typedef Aws::Utils::Outcome<GetRepositoryResult, CodeCommitError> GetRepositoryOutcome;
+        typedef Aws::Utils::Outcome<GetRepositoryTriggersResult, CodeCommitError> GetRepositoryTriggersOutcome;
+        typedef Aws::Utils::Outcome<ListApprovalRuleTemplatesResult, CodeCommitError> ListApprovalRuleTemplatesOutcome;
+        typedef Aws::Utils::Outcome<ListAssociatedApprovalRuleTemplatesForRepositoryResult, CodeCommitError> ListAssociatedApprovalRuleTemplatesForRepositoryOutcome;
+        typedef Aws::Utils::Outcome<ListBranchesResult, CodeCommitError> ListBranchesOutcome;
+        typedef Aws::Utils::Outcome<ListPullRequestsResult, CodeCommitError> ListPullRequestsOutcome;
+        typedef Aws::Utils::Outcome<ListRepositoriesResult, CodeCommitError> ListRepositoriesOutcome;
+        typedef Aws::Utils::Outcome<ListRepositoriesForApprovalRuleTemplateResult, CodeCommitError> ListRepositoriesForApprovalRuleTemplateOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, CodeCommitError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<MergeBranchesByFastForwardResult, CodeCommitError> MergeBranchesByFastForwardOutcome;
+        typedef Aws::Utils::Outcome<MergeBranchesBySquashResult, CodeCommitError> MergeBranchesBySquashOutcome;
+        typedef Aws::Utils::Outcome<MergeBranchesByThreeWayResult, CodeCommitError> MergeBranchesByThreeWayOutcome;
+        typedef Aws::Utils::Outcome<MergePullRequestByFastForwardResult, CodeCommitError> MergePullRequestByFastForwardOutcome;
+        typedef Aws::Utils::Outcome<MergePullRequestBySquashResult, CodeCommitError> MergePullRequestBySquashOutcome;
+        typedef Aws::Utils::Outcome<MergePullRequestByThreeWayResult, CodeCommitError> MergePullRequestByThreeWayOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CodeCommitError> OverridePullRequestApprovalRulesOutcome;
+        typedef Aws::Utils::Outcome<PostCommentForComparedCommitResult, CodeCommitError> PostCommentForComparedCommitOutcome;
+        typedef Aws::Utils::Outcome<PostCommentForPullRequestResult, CodeCommitError> PostCommentForPullRequestOutcome;
+        typedef Aws::Utils::Outcome<PostCommentReplyResult, CodeCommitError> PostCommentReplyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CodeCommitError> PutCommentReactionOutcome;
+        typedef Aws::Utils::Outcome<PutFileResult, CodeCommitError> PutFileOutcome;
+        typedef Aws::Utils::Outcome<PutRepositoryTriggersResult, CodeCommitError> PutRepositoryTriggersOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CodeCommitError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<TestRepositoryTriggersResult, CodeCommitError> TestRepositoryTriggersOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CodeCommitError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateApprovalRuleTemplateContentResult, CodeCommitError> UpdateApprovalRuleTemplateContentOutcome;
+        typedef Aws::Utils::Outcome<UpdateApprovalRuleTemplateDescriptionResult, CodeCommitError> UpdateApprovalRuleTemplateDescriptionOutcome;
+        typedef Aws::Utils::Outcome<UpdateApprovalRuleTemplateNameResult, CodeCommitError> UpdateApprovalRuleTemplateNameOutcome;
+        typedef Aws::Utils::Outcome<UpdateCommentResult, CodeCommitError> UpdateCommentOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CodeCommitError> UpdateDefaultBranchOutcome;
+        typedef Aws::Utils::Outcome<UpdatePullRequestApprovalRuleContentResult, CodeCommitError> UpdatePullRequestApprovalRuleContentOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CodeCommitError> UpdatePullRequestApprovalStateOutcome;
+        typedef Aws::Utils::Outcome<UpdatePullRequestDescriptionResult, CodeCommitError> UpdatePullRequestDescriptionOutcome;
+        typedef Aws::Utils::Outcome<UpdatePullRequestStatusResult, CodeCommitError> UpdatePullRequestStatusOutcome;
+        typedef Aws::Utils::Outcome<UpdatePullRequestTitleResult, CodeCommitError> UpdatePullRequestTitleOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CodeCommitError> UpdateRepositoryDescriptionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CodeCommitError> UpdateRepositoryNameOutcome;
 
         typedef std::future<AssociateApprovalRuleTemplateWithRepositoryOutcome> AssociateApprovalRuleTemplateWithRepositoryOutcomeCallable;
         typedef std::future<BatchAssociateApprovalRuleTemplateWithRepositoriesOutcome> BatchAssociateApprovalRuleTemplateWithRepositoriesOutcomeCallable;
@@ -305,6 +300,7 @@ namespace Model
         typedef std::future<GetBlobOutcome> GetBlobOutcomeCallable;
         typedef std::future<GetBranchOutcome> GetBranchOutcomeCallable;
         typedef std::future<GetCommentOutcome> GetCommentOutcomeCallable;
+        typedef std::future<GetCommentReactionsOutcome> GetCommentReactionsOutcomeCallable;
         typedef std::future<GetCommentsForComparedCommitOutcome> GetCommentsForComparedCommitOutcomeCallable;
         typedef std::future<GetCommentsForPullRequestOutcome> GetCommentsForPullRequestOutcomeCallable;
         typedef std::future<GetCommitOutcome> GetCommitOutcomeCallable;
@@ -336,6 +332,7 @@ namespace Model
         typedef std::future<PostCommentForComparedCommitOutcome> PostCommentForComparedCommitOutcomeCallable;
         typedef std::future<PostCommentForPullRequestOutcome> PostCommentForPullRequestOutcomeCallable;
         typedef std::future<PostCommentReplyOutcome> PostCommentReplyOutcomeCallable;
+        typedef std::future<PutCommentReactionOutcome> PutCommentReactionOutcomeCallable;
         typedef std::future<PutFileOutcome> PutFileOutcomeCallable;
         typedef std::future<PutRepositoryTriggersOutcome> PutRepositoryTriggersOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -384,6 +381,7 @@ namespace Model
     typedef std::function<void(const CodeCommitClient*, const Model::GetBlobRequest&, const Model::GetBlobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBlobResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::GetBranchRequest&, const Model::GetBranchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBranchResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::GetCommentRequest&, const Model::GetCommentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCommentResponseReceivedHandler;
+    typedef std::function<void(const CodeCommitClient*, const Model::GetCommentReactionsRequest&, const Model::GetCommentReactionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCommentReactionsResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::GetCommentsForComparedCommitRequest&, const Model::GetCommentsForComparedCommitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCommentsForComparedCommitResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::GetCommentsForPullRequestRequest&, const Model::GetCommentsForPullRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCommentsForPullRequestResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::GetCommitRequest&, const Model::GetCommitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCommitResponseReceivedHandler;
@@ -415,6 +413,7 @@ namespace Model
     typedef std::function<void(const CodeCommitClient*, const Model::PostCommentForComparedCommitRequest&, const Model::PostCommentForComparedCommitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PostCommentForComparedCommitResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::PostCommentForPullRequestRequest&, const Model::PostCommentForPullRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PostCommentForPullRequestResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::PostCommentReplyRequest&, const Model::PostCommentReplyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PostCommentReplyResponseReceivedHandler;
+    typedef std::function<void(const CodeCommitClient*, const Model::PutCommentReactionRequest&, const Model::PutCommentReactionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutCommentReactionResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::PutFileRequest&, const Model::PutFileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutFileResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::PutRepositoryTriggersRequest&, const Model::PutRepositoryTriggersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRepositoryTriggersResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
@@ -567,16 +566,18 @@ namespace Model
    * <p>Comments in a repository, by calling the following:</p> <ul> <li> <p>
    * <a>DeleteCommentContent</a>, which deletes the content of a comment on a commit
    * in a repository.</p> </li> <li> <p> <a>GetComment</a>, which returns information
-   * about a comment on a commit.</p> </li> <li> <p>
+   * about a comment on a commit.</p> </li> <li> <p> <a>GetCommentReactions</a>,
+   * which returns information about emoji reactions to comments.</p> </li> <li> <p>
    * <a>GetCommentsForComparedCommit</a>, which returns information about comments on
    * the comparison between two commit specifiers in a repository.</p> </li> <li> <p>
    * <a>PostCommentForComparedCommit</a>, which creates a comment on the comparison
    * between two commit specifiers in a repository.</p> </li> <li> <p>
    * <a>PostCommentReply</a>, which creates a reply to a comment.</p> </li> <li> <p>
-   * <a>UpdateComment</a>, which updates the content of a comment on a commit in a
-   * repository.</p> </li> </ul> <p>Tags used to tag resources in AWS CodeCommit (not
-   * Git tags), by calling the following:</p> <ul> <li> <p>
-   * <a>ListTagsForResource</a>, which gets information about AWS tags for a
+   * <a>PutCommentReaction</a>, which creates or updates an emoji reaction to a
+   * comment.</p> </li> <li> <p> <a>UpdateComment</a>, which updates the content of a
+   * comment on a commit in a repository.</p> </li> </ul> <p>Tags used to tag
+   * resources in AWS CodeCommit (not Git tags), by calling the following:</p> <ul>
+   * <li> <p> <a>ListTagsForResource</a>, which gets information about AWS tags for a
    * specified Amazon Resource Name (ARN) in AWS CodeCommit.</p> </li> <li> <p>
    * <a>TagResource</a>, which adds or updates tags for a resource in AWS
    * CodeCommit.</p> </li> <li> <p> <a>UntagResource</a>, which removes tags for a
@@ -616,8 +617,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~CodeCommitClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "CodeCommit"; }
 
 
         /**
@@ -782,26 +781,26 @@ namespace Model
         virtual void BatchGetCommitsAsync(const Model::BatchGetCommitsRequest& request, const BatchGetCommitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about one or more repositories.</p> <note> <p>The
+         * <p>Returns information about one or more repositories.</p>  <p>The
          * description field for a repository accepts all HTML characters and all valid
          * Unicode characters. Applications that do not HTML-encode the description and
          * display it in a webpage can expose users to potentially malicious code. Make
          * sure that you HTML-encode the description field in any application that uses
          * this API to display the repository description on a webpage.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetRepositories">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchGetRepositoriesOutcome BatchGetRepositories(const Model::BatchGetRepositoriesRequest& request) const;
 
         /**
-         * <p>Returns information about one or more repositories.</p> <note> <p>The
+         * <p>Returns information about one or more repositories.</p>  <p>The
          * description field for a repository accepts all HTML characters and all valid
          * Unicode characters. Applications that do not HTML-encode the description and
          * display it in a webpage can expose users to potentially malicious code. Make
          * sure that you HTML-encode the description field in any application that uses
          * this API to display the repository description on a webpage.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetRepositories">AWS
          * API Reference</a></p>
          *
@@ -810,13 +809,13 @@ namespace Model
         virtual Model::BatchGetRepositoriesOutcomeCallable BatchGetRepositoriesCallable(const Model::BatchGetRepositoriesRequest& request) const;
 
         /**
-         * <p>Returns information about one or more repositories.</p> <note> <p>The
+         * <p>Returns information about one or more repositories.</p>  <p>The
          * description field for a repository accepts all HTML characters and all valid
          * Unicode characters. Applications that do not HTML-encode the description and
          * display it in a webpage can expose users to potentially malicious code. Make
          * sure that you HTML-encode the description field in any application that uses
          * this API to display the repository description on a webpage.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetRepositories">AWS
          * API Reference</a></p>
          *
@@ -869,9 +868,9 @@ namespace Model
 
         /**
          * <p>Creates a branch in a repository and points the branch to a commit.</p>
-         * <note> <p>Calling the create branch operation does not set a repository's
+         *  <p>Calling the create branch operation does not set a repository's
          * default branch. To do this, call the update default branch operation.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateBranch">AWS
          * API Reference</a></p>
          */
@@ -879,9 +878,9 @@ namespace Model
 
         /**
          * <p>Creates a branch in a repository and points the branch to a commit.</p>
-         * <note> <p>Calling the create branch operation does not set a repository's
+         *  <p>Calling the create branch operation does not set a repository's
          * default branch. To do this, call the update default branch operation.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateBranch">AWS
          * API Reference</a></p>
          *
@@ -891,9 +890,9 @@ namespace Model
 
         /**
          * <p>Creates a branch in a repository and points the branch to a commit.</p>
-         * <note> <p>Calling the create branch operation does not set a repository's
+         *  <p>Calling the create branch operation does not set a repository's
          * default branch. To do this, call the update default branch operation.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateBranch">AWS
          * API Reference</a></p>
          *
@@ -1011,10 +1010,10 @@ namespace Model
          * <p>Creates an unreferenced commit that represents the result of merging two
          * branches using a specified merge strategy. This can help you determine the
          * outcome of a potential merge. This API cannot be used with the fast-forward
-         * merge strategy because that strategy does not create a merge commit.</p> <note>
+         * merge strategy because that strategy does not create a merge commit.</p> 
          * <p>This unreferenced merge commit can only be accessed using the GetCommit API
          * or through git commands such as git fetch. To retrieve this commit, you must
-         * specify its commit ID or otherwise reference it.</p> </note><p><h3>See
+         * specify its commit ID or otherwise reference it.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateUnreferencedMergeCommit">AWS
          * API Reference</a></p>
@@ -1025,10 +1024,10 @@ namespace Model
          * <p>Creates an unreferenced commit that represents the result of merging two
          * branches using a specified merge strategy. This can help you determine the
          * outcome of a potential merge. This API cannot be used with the fast-forward
-         * merge strategy because that strategy does not create a merge commit.</p> <note>
+         * merge strategy because that strategy does not create a merge commit.</p> 
          * <p>This unreferenced merge commit can only be accessed using the GetCommit API
          * or through git commands such as git fetch. To retrieve this commit, you must
-         * specify its commit ID or otherwise reference it.</p> </note><p><h3>See
+         * specify its commit ID or otherwise reference it.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateUnreferencedMergeCommit">AWS
          * API Reference</a></p>
@@ -1041,10 +1040,10 @@ namespace Model
          * <p>Creates an unreferenced commit that represents the result of merging two
          * branches using a specified merge strategy. This can help you determine the
          * outcome of a potential merge. This API cannot be used with the fast-forward
-         * merge strategy because that strategy does not create a merge commit.</p> <note>
+         * merge strategy because that strategy does not create a merge commit.</p> 
          * <p>This unreferenced merge commit can only be accessed using the GetCommit API
          * or through git commands such as git fetch. To retrieve this commit, you must
-         * specify its commit ID or otherwise reference it.</p> </note><p><h3>See
+         * specify its commit ID or otherwise reference it.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateUnreferencedMergeCommit">AWS
          * API Reference</a></p>
@@ -1213,9 +1212,9 @@ namespace Model
 
         /**
          * <p>Deletes a repository. If a specified repository was already deleted, a null
-         * repository ID is returned.</p> <important> <p>Deleting a repository also deletes
+         * repository ID is returned.</p>  <p>Deleting a repository also deletes
          * all associated objects and metadata. After a repository is deleted, all future
-         * push calls to the deleted repository fail.</p> </important><p><h3>See Also:</h3>
+         * push calls to the deleted repository fail.</p> <p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteRepository">AWS
          * API Reference</a></p>
@@ -1224,9 +1223,9 @@ namespace Model
 
         /**
          * <p>Deletes a repository. If a specified repository was already deleted, a null
-         * repository ID is returned.</p> <important> <p>Deleting a repository also deletes
+         * repository ID is returned.</p>  <p>Deleting a repository also deletes
          * all associated objects and metadata. After a repository is deleted, all future
-         * push calls to the deleted repository fail.</p> </important><p><h3>See Also:</h3>
+         * push calls to the deleted repository fail.</p> <p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteRepository">AWS
          * API Reference</a></p>
@@ -1237,9 +1236,9 @@ namespace Model
 
         /**
          * <p>Deletes a repository. If a specified repository was already deleted, a null
-         * repository ID is returned.</p> <important> <p>Deleting a repository also deletes
+         * repository ID is returned.</p>  <p>Deleting a repository also deletes
          * all associated objects and metadata. After a repository is deleted, all future
-         * push calls to the deleted repository fail.</p> </important><p><h3>See Also:</h3>
+         * push calls to the deleted repository fail.</p> <p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteRepository">AWS
          * API Reference</a></p>
@@ -1461,7 +1460,10 @@ namespace Model
 
         /**
          * <p>Returns the content of a comment made on a change, file, or commit in a
-         * repository.</p><p><h3>See Also:</h3>   <a
+         * repository. </p>  <p>Reaction counts might include numbers from user
+         * identities who were deleted after the reaction was made. For a count of
+         * reactions from active identities, use GetCommentReactions.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetComment">AWS
          * API Reference</a></p>
          */
@@ -1469,7 +1471,10 @@ namespace Model
 
         /**
          * <p>Returns the content of a comment made on a change, file, or commit in a
-         * repository.</p><p><h3>See Also:</h3>   <a
+         * repository. </p>  <p>Reaction counts might include numbers from user
+         * identities who were deleted after the reaction was made. For a count of
+         * reactions from active identities, use GetCommentReactions.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetComment">AWS
          * API Reference</a></p>
          *
@@ -1479,7 +1484,10 @@ namespace Model
 
         /**
          * <p>Returns the content of a comment made on a change, file, or commit in a
-         * repository.</p><p><h3>See Also:</h3>   <a
+         * repository. </p>  <p>Reaction counts might include numbers from user
+         * identities who were deleted after the reaction was made. For a count of
+         * reactions from active identities, use GetCommentReactions.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetComment">AWS
          * API Reference</a></p>
          *
@@ -1488,8 +1496,42 @@ namespace Model
         virtual void GetCommentAsync(const Model::GetCommentRequest& request, const GetCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns information about reactions to a specified comment ID. Reactions from
+         * users who have been deleted will not be included in the count.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentReactions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCommentReactionsOutcome GetCommentReactions(const Model::GetCommentReactionsRequest& request) const;
+
+        /**
+         * <p>Returns information about reactions to a specified comment ID. Reactions from
+         * users who have been deleted will not be included in the count.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentReactions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetCommentReactionsOutcomeCallable GetCommentReactionsCallable(const Model::GetCommentReactionsRequest& request) const;
+
+        /**
+         * <p>Returns information about reactions to a specified comment ID. Reactions from
+         * users who have been deleted will not be included in the count.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentReactions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetCommentReactionsAsync(const Model::GetCommentReactionsRequest& request, const GetCommentReactionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns information about comments made on the comparison between two
-         * commits.</p><p><h3>See Also:</h3>   <a
+         * commits.</p>  <p>Reaction counts might include numbers from user
+         * identities who were deleted after the reaction was made. For a count of
+         * reactions from active identities, use GetCommentReactions.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentsForComparedCommit">AWS
          * API Reference</a></p>
          */
@@ -1497,7 +1539,10 @@ namespace Model
 
         /**
          * <p>Returns information about comments made on the comparison between two
-         * commits.</p><p><h3>See Also:</h3>   <a
+         * commits.</p>  <p>Reaction counts might include numbers from user
+         * identities who were deleted after the reaction was made. For a count of
+         * reactions from active identities, use GetCommentReactions.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentsForComparedCommit">AWS
          * API Reference</a></p>
          *
@@ -1507,7 +1552,10 @@ namespace Model
 
         /**
          * <p>Returns information about comments made on the comparison between two
-         * commits.</p><p><h3>See Also:</h3>   <a
+         * commits.</p>  <p>Reaction counts might include numbers from user
+         * identities who were deleted after the reaction was made. For a count of
+         * reactions from active identities, use GetCommentReactions.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentsForComparedCommit">AWS
          * API Reference</a></p>
          *
@@ -1516,14 +1564,20 @@ namespace Model
         virtual void GetCommentsForComparedCommitAsync(const Model::GetCommentsForComparedCommitRequest& request, const GetCommentsForComparedCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns comments made on a pull request.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns comments made on a pull request.</p>  <p>Reaction counts might
+         * include numbers from user identities who were deleted after the reaction was
+         * made. For a count of reactions from active identities, use
+         * GetCommentReactions.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentsForPullRequest">AWS
          * API Reference</a></p>
          */
         virtual Model::GetCommentsForPullRequestOutcome GetCommentsForPullRequest(const Model::GetCommentsForPullRequestRequest& request) const;
 
         /**
-         * <p>Returns comments made on a pull request.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns comments made on a pull request.</p>  <p>Reaction counts might
+         * include numbers from user identities who were deleted after the reaction was
+         * made. For a count of reactions from active identities, use
+         * GetCommentReactions.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentsForPullRequest">AWS
          * API Reference</a></p>
          *
@@ -1532,7 +1586,10 @@ namespace Model
         virtual Model::GetCommentsForPullRequestOutcomeCallable GetCommentsForPullRequestCallable(const Model::GetCommentsForPullRequestRequest& request) const;
 
         /**
-         * <p>Returns comments made on a pull request.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns comments made on a pull request.</p>  <p>Reaction counts might
+         * include numbers from user identities who were deleted after the reaction was
+         * made. For a count of reactions from active identities, use
+         * GetCommentReactions.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentsForPullRequest">AWS
          * API Reference</a></p>
          *
@@ -1836,24 +1893,24 @@ namespace Model
         virtual void GetPullRequestOverrideStateAsync(const Model::GetPullRequestOverrideStateRequest& request, const GetPullRequestOverrideStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about a repository.</p> <note> <p>The description field
+         * <p>Returns information about a repository.</p>  <p>The description field
          * for a repository accepts all HTML characters and all valid Unicode characters.
          * Applications that do not HTML-encode the description and display it in a webpage
          * can expose users to potentially malicious code. Make sure that you HTML-encode
          * the description field in any application that uses this API to display the
-         * repository description on a webpage.</p> </note><p><h3>See Also:</h3>   <a
+         * repository description on a webpage.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepository">AWS
          * API Reference</a></p>
          */
         virtual Model::GetRepositoryOutcome GetRepository(const Model::GetRepositoryRequest& request) const;
 
         /**
-         * <p>Returns information about a repository.</p> <note> <p>The description field
+         * <p>Returns information about a repository.</p>  <p>The description field
          * for a repository accepts all HTML characters and all valid Unicode characters.
          * Applications that do not HTML-encode the description and display it in a webpage
          * can expose users to potentially malicious code. Make sure that you HTML-encode
          * the description field in any application that uses this API to display the
-         * repository description on a webpage.</p> </note><p><h3>See Also:</h3>   <a
+         * repository description on a webpage.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepository">AWS
          * API Reference</a></p>
          *
@@ -1862,12 +1919,12 @@ namespace Model
         virtual Model::GetRepositoryOutcomeCallable GetRepositoryCallable(const Model::GetRepositoryRequest& request) const;
 
         /**
-         * <p>Returns information about a repository.</p> <note> <p>The description field
+         * <p>Returns information about a repository.</p>  <p>The description field
          * for a repository accepts all HTML characters and all valid Unicode characters.
          * Applications that do not HTML-encode the description and display it in a webpage
          * can expose users to potentially malicious code. Make sure that you HTML-encode
          * the description field in any application that uses this API to display the
-         * repository description on a webpage.</p> </note><p><h3>See Also:</h3>   <a
+         * repository description on a webpage.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepository">AWS
          * API Reference</a></p>
          *
@@ -2410,6 +2467,40 @@ namespace Model
         virtual void PostCommentReplyAsync(const Model::PostCommentReplyRequest& request, const PostCommentReplyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Adds or updates a reaction to a specified comment for the user whose identity
+         * is used to make the request. You can only add or update a reaction for yourself.
+         * You cannot add, modify, or delete a reaction for another user.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutCommentReaction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutCommentReactionOutcome PutCommentReaction(const Model::PutCommentReactionRequest& request) const;
+
+        /**
+         * <p>Adds or updates a reaction to a specified comment for the user whose identity
+         * is used to make the request. You can only add or update a reaction for yourself.
+         * You cannot add, modify, or delete a reaction for another user.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutCommentReaction">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutCommentReactionOutcomeCallable PutCommentReactionCallable(const Model::PutCommentReactionRequest& request) const;
+
+        /**
+         * <p>Adds or updates a reaction to a specified comment for the user whose identity
+         * is used to make the request. You can only add or update a reaction for yourself.
+         * You cannot add, modify, or delete a reaction for another user.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutCommentReaction">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutCommentReactionAsync(const Model::PutCommentReactionRequest& request, const PutCommentReactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Adds or updates a file in a branch in an AWS CodeCommit repository, and
          * generates a commit for the addition in the specified branch.</p><p><h3>See
          * Also:</h3>   <a
@@ -2690,9 +2781,9 @@ namespace Model
 
         /**
          * <p>Sets or changes the default branch name for the specified repository.</p>
-         * <note> <p>If you use this operation to change the default branch name to the
+         *  <p>If you use this operation to change the default branch name to the
          * current default branch name, a success message is returned even though the
-         * default branch did not change.</p> </note><p><h3>See Also:</h3>   <a
+         * default branch did not change.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateDefaultBranch">AWS
          * API Reference</a></p>
          */
@@ -2700,9 +2791,9 @@ namespace Model
 
         /**
          * <p>Sets or changes the default branch name for the specified repository.</p>
-         * <note> <p>If you use this operation to change the default branch name to the
+         *  <p>If you use this operation to change the default branch name to the
          * current default branch name, a success message is returned even though the
-         * default branch did not change.</p> </note><p><h3>See Also:</h3>   <a
+         * default branch did not change.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateDefaultBranch">AWS
          * API Reference</a></p>
          *
@@ -2712,9 +2803,9 @@ namespace Model
 
         /**
          * <p>Sets or changes the default branch name for the specified repository.</p>
-         * <note> <p>If you use this operation to change the default branch name to the
+         *  <p>If you use this operation to change the default branch name to the
          * current default branch name, a success message is returned even though the
-         * default branch did not change.</p> </note><p><h3>See Also:</h3>   <a
+         * default branch did not change.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateDefaultBranch">AWS
          * API Reference</a></p>
          *
@@ -2863,26 +2954,26 @@ namespace Model
         virtual void UpdatePullRequestTitleAsync(const Model::UpdatePullRequestTitleRequest& request, const UpdatePullRequestTitleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sets or changes the comment or description for a repository.</p> <note>
+         * <p>Sets or changes the comment or description for a repository.</p> 
          * <p>The description field for a repository accepts all HTML characters and all
          * valid Unicode characters. Applications that do not HTML-encode the description
          * and display it in a webpage can expose users to potentially malicious code. Make
          * sure that you HTML-encode the description field in any application that uses
          * this API to display the repository description on a webpage.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryDescription">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateRepositoryDescriptionOutcome UpdateRepositoryDescription(const Model::UpdateRepositoryDescriptionRequest& request) const;
 
         /**
-         * <p>Sets or changes the comment or description for a repository.</p> <note>
+         * <p>Sets or changes the comment or description for a repository.</p> 
          * <p>The description field for a repository accepts all HTML characters and all
          * valid Unicode characters. Applications that do not HTML-encode the description
          * and display it in a webpage can expose users to potentially malicious code. Make
          * sure that you HTML-encode the description field in any application that uses
          * this API to display the repository description on a webpage.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryDescription">AWS
          * API Reference</a></p>
          *
@@ -2891,13 +2982,13 @@ namespace Model
         virtual Model::UpdateRepositoryDescriptionOutcomeCallable UpdateRepositoryDescriptionCallable(const Model::UpdateRepositoryDescriptionRequest& request) const;
 
         /**
-         * <p>Sets or changes the comment or description for a repository.</p> <note>
+         * <p>Sets or changes the comment or description for a repository.</p> 
          * <p>The description field for a repository accepts all HTML characters and all
          * valid Unicode characters. Applications that do not HTML-encode the description
          * and display it in a webpage can expose users to potentially malicious code. Make
          * sure that you HTML-encode the description field in any application that uses
          * this API to display the repository description on a webpage.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryDescription">AWS
          * API Reference</a></p>
          *
@@ -2976,6 +3067,7 @@ namespace Model
         void GetBlobAsyncHelper(const Model::GetBlobRequest& request, const GetBlobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBranchAsyncHelper(const Model::GetBranchRequest& request, const GetBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCommentAsyncHelper(const Model::GetCommentRequest& request, const GetCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetCommentReactionsAsyncHelper(const Model::GetCommentReactionsRequest& request, const GetCommentReactionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCommentsForComparedCommitAsyncHelper(const Model::GetCommentsForComparedCommitRequest& request, const GetCommentsForComparedCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCommentsForPullRequestAsyncHelper(const Model::GetCommentsForPullRequestRequest& request, const GetCommentsForPullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCommitAsyncHelper(const Model::GetCommitRequest& request, const GetCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3007,6 +3099,7 @@ namespace Model
         void PostCommentForComparedCommitAsyncHelper(const Model::PostCommentForComparedCommitRequest& request, const PostCommentForComparedCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PostCommentForPullRequestAsyncHelper(const Model::PostCommentForPullRequestRequest& request, const PostCommentForPullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PostCommentReplyAsyncHelper(const Model::PostCommentReplyRequest& request, const PostCommentReplyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutCommentReactionAsyncHelper(const Model::PutCommentReactionRequest& request, const PutCommentReactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutFileAsyncHelper(const Model::PutFileRequest& request, const PutFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRepositoryTriggersAsyncHelper(const Model::PutRepositoryTriggersRequest& request, const PutRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

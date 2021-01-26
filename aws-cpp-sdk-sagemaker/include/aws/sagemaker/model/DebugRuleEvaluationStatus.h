@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -51,42 +41,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the rule configuration</p>
+     * <p>The name of the rule configuration.</p>
      */
     inline const Aws::String& GetRuleConfigurationName() const{ return m_ruleConfigurationName; }
 
     /**
-     * <p>The name of the rule configuration</p>
+     * <p>The name of the rule configuration.</p>
      */
     inline bool RuleConfigurationNameHasBeenSet() const { return m_ruleConfigurationNameHasBeenSet; }
 
     /**
-     * <p>The name of the rule configuration</p>
+     * <p>The name of the rule configuration.</p>
      */
     inline void SetRuleConfigurationName(const Aws::String& value) { m_ruleConfigurationNameHasBeenSet = true; m_ruleConfigurationName = value; }
 
     /**
-     * <p>The name of the rule configuration</p>
+     * <p>The name of the rule configuration.</p>
      */
     inline void SetRuleConfigurationName(Aws::String&& value) { m_ruleConfigurationNameHasBeenSet = true; m_ruleConfigurationName = std::move(value); }
 
     /**
-     * <p>The name of the rule configuration</p>
+     * <p>The name of the rule configuration.</p>
      */
     inline void SetRuleConfigurationName(const char* value) { m_ruleConfigurationNameHasBeenSet = true; m_ruleConfigurationName.assign(value); }
 
     /**
-     * <p>The name of the rule configuration</p>
+     * <p>The name of the rule configuration.</p>
      */
     inline DebugRuleEvaluationStatus& WithRuleConfigurationName(const Aws::String& value) { SetRuleConfigurationName(value); return *this;}
 
     /**
-     * <p>The name of the rule configuration</p>
+     * <p>The name of the rule configuration.</p>
      */
     inline DebugRuleEvaluationStatus& WithRuleConfigurationName(Aws::String&& value) { SetRuleConfigurationName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the rule configuration</p>
+     * <p>The name of the rule configuration.</p>
      */
     inline DebugRuleEvaluationStatus& WithRuleConfigurationName(const char* value) { SetRuleConfigurationName(value); return *this;}
 

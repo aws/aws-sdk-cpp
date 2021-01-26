@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/redshift/Redshift_EXPORTS.h>
@@ -365,8 +355,8 @@ namespace Model
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
      */
     inline const Aws::String& GetNodeType() const{ return m_nodeType; }
 
@@ -377,8 +367,8 @@ namespace Model
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
      */
     inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
 
@@ -389,8 +379,8 @@ namespace Model
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
      */
     inline void SetNodeType(const Aws::String& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
 
@@ -401,8 +391,8 @@ namespace Model
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
      */
     inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::move(value); }
 
@@ -413,8 +403,8 @@ namespace Model
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
      */
     inline void SetNodeType(const char* value) { m_nodeTypeHasBeenSet = true; m_nodeType.assign(value); }
 
@@ -425,8 +415,8 @@ namespace Model
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
      */
     inline CreateClusterRequest& WithNodeType(const Aws::String& value) { SetNodeType(value); return *this;}
 
@@ -437,8 +427,8 @@ namespace Model
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
      */
     inline CreateClusterRequest& WithNodeType(Aws::String&& value) { SetNodeType(std::move(value)); return *this;}
 
@@ -449,8 +439,8 @@ namespace Model
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
      */
     inline CreateClusterRequest& WithNodeType(const char* value) { SetNodeType(value); return *this;}
 
@@ -1954,6 +1944,31 @@ namespace Model
      */
     inline CreateClusterRequest& WithSnapshotScheduleIdentifier(const char* value) { SetSnapshotScheduleIdentifier(value); return *this;}
 
+
+    /**
+     * <p>The option to enable relocation for an Amazon Redshift cluster between
+     * Availability Zones after the cluster is created.</p>
+     */
+    inline bool GetAvailabilityZoneRelocation() const{ return m_availabilityZoneRelocation; }
+
+    /**
+     * <p>The option to enable relocation for an Amazon Redshift cluster between
+     * Availability Zones after the cluster is created.</p>
+     */
+    inline bool AvailabilityZoneRelocationHasBeenSet() const { return m_availabilityZoneRelocationHasBeenSet; }
+
+    /**
+     * <p>The option to enable relocation for an Amazon Redshift cluster between
+     * Availability Zones after the cluster is created.</p>
+     */
+    inline void SetAvailabilityZoneRelocation(bool value) { m_availabilityZoneRelocationHasBeenSet = true; m_availabilityZoneRelocation = value; }
+
+    /**
+     * <p>The option to enable relocation for an Amazon Redshift cluster between
+     * Availability Zones after the cluster is created.</p>
+     */
+    inline CreateClusterRequest& WithAvailabilityZoneRelocation(bool value) { SetAvailabilityZoneRelocation(value); return *this;}
+
   private:
 
     Aws::String m_dBName;
@@ -2045,6 +2060,9 @@ namespace Model
 
     Aws::String m_snapshotScheduleIdentifier;
     bool m_snapshotScheduleIdentifierHasBeenSet;
+
+    bool m_availabilityZoneRelocation;
+    bool m_availabilityZoneRelocationHasBeenSet;
   };
 
 } // namespace Model

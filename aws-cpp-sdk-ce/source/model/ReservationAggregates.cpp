@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ce/model/ReservationAggregates.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -42,7 +32,10 @@ ReservationAggregates::ReservationAggregates() :
     m_totalPotentialRISavingsHasBeenSet(false),
     m_amortizedUpfrontFeeHasBeenSet(false),
     m_amortizedRecurringFeeHasBeenSet(false),
-    m_totalAmortizedFeeHasBeenSet(false)
+    m_totalAmortizedFeeHasBeenSet(false),
+    m_rICostForUnusedHoursHasBeenSet(false),
+    m_realizedSavingsHasBeenSet(false),
+    m_unrealizedSavingsHasBeenSet(false)
 {
 }
 
@@ -60,7 +53,10 @@ ReservationAggregates::ReservationAggregates(JsonView jsonValue) :
     m_totalPotentialRISavingsHasBeenSet(false),
     m_amortizedUpfrontFeeHasBeenSet(false),
     m_amortizedRecurringFeeHasBeenSet(false),
-    m_totalAmortizedFeeHasBeenSet(false)
+    m_totalAmortizedFeeHasBeenSet(false),
+    m_rICostForUnusedHoursHasBeenSet(false),
+    m_realizedSavingsHasBeenSet(false),
+    m_unrealizedSavingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -165,6 +161,27 @@ ReservationAggregates& ReservationAggregates::operator =(JsonView jsonValue)
     m_totalAmortizedFeeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RICostForUnusedHours"))
+  {
+    m_rICostForUnusedHours = jsonValue.GetString("RICostForUnusedHours");
+
+    m_rICostForUnusedHoursHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RealizedSavings"))
+  {
+    m_realizedSavings = jsonValue.GetString("RealizedSavings");
+
+    m_realizedSavingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UnrealizedSavings"))
+  {
+    m_unrealizedSavings = jsonValue.GetString("UnrealizedSavings");
+
+    m_unrealizedSavingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -253,6 +270,24 @@ JsonValue ReservationAggregates::Jsonize() const
   if(m_totalAmortizedFeeHasBeenSet)
   {
    payload.WithString("TotalAmortizedFee", m_totalAmortizedFee);
+
+  }
+
+  if(m_rICostForUnusedHoursHasBeenSet)
+  {
+   payload.WithString("RICostForUnusedHours", m_rICostForUnusedHours);
+
+  }
+
+  if(m_realizedSavingsHasBeenSet)
+  {
+   payload.WithString("RealizedSavings", m_realizedSavings);
+
+  }
+
+  if(m_unrealizedSavingsHasBeenSet)
+  {
+   payload.WithString("UnrealizedSavings", m_unrealizedSavings);
 
   }
 

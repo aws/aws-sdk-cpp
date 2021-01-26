@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/model/TestingData.h>
+#include <aws/rekognition/model/ValidationData.h>
 #include <utility>
 
 namespace Aws
@@ -34,8 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>A Sagemaker Groundtruth format manifest file representing the dataset used
-   * for testing.</p><p><h3>See Also:</h3>   <a
+   * <p>Sagemaker Groundtruth format manifest files for the input, output and
+   * validation datasets that are used and created during testing.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/TestingDataResult">AWS
    * API Reference</a></p>
    */
@@ -115,6 +107,43 @@ namespace Model
      */
     inline TestingDataResult& WithOutput(TestingData&& value) { SetOutput(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The location of the data validation manifest. The data validation manifest is
+     * created for the test dataset during model training.</p>
+     */
+    inline const ValidationData& GetValidation() const{ return m_validation; }
+
+    /**
+     * <p>The location of the data validation manifest. The data validation manifest is
+     * created for the test dataset during model training.</p>
+     */
+    inline bool ValidationHasBeenSet() const { return m_validationHasBeenSet; }
+
+    /**
+     * <p>The location of the data validation manifest. The data validation manifest is
+     * created for the test dataset during model training.</p>
+     */
+    inline void SetValidation(const ValidationData& value) { m_validationHasBeenSet = true; m_validation = value; }
+
+    /**
+     * <p>The location of the data validation manifest. The data validation manifest is
+     * created for the test dataset during model training.</p>
+     */
+    inline void SetValidation(ValidationData&& value) { m_validationHasBeenSet = true; m_validation = std::move(value); }
+
+    /**
+     * <p>The location of the data validation manifest. The data validation manifest is
+     * created for the test dataset during model training.</p>
+     */
+    inline TestingDataResult& WithValidation(const ValidationData& value) { SetValidation(value); return *this;}
+
+    /**
+     * <p>The location of the data validation manifest. The data validation manifest is
+     * created for the test dataset during model training.</p>
+     */
+    inline TestingDataResult& WithValidation(ValidationData&& value) { SetValidation(std::move(value)); return *this;}
+
   private:
 
     TestingData m_input;
@@ -122,6 +151,9 @@ namespace Model
 
     TestingData m_output;
     bool m_outputHasBeenSet;
+
+    ValidationData m_validation;
+    bool m_validationHasBeenSet;
   };
 
 } // namespace Model

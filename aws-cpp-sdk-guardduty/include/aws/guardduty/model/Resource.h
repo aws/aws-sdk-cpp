@@ -1,23 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/model/AccessKeyDetails.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/guardduty/model/InstanceDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/guardduty/model/S3BucketDetail.h>
 #include <utility>
 
 namespace Aws
@@ -85,6 +77,47 @@ namespace Model
      * the activity that prompted GuardDuty to generate a finding.</p>
      */
     inline Resource& WithAccessKeyDetails(AccessKeyDetails&& value) { SetAccessKeyDetails(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contains information on the S3 bucket.</p>
+     */
+    inline const Aws::Vector<S3BucketDetail>& GetS3BucketDetails() const{ return m_s3BucketDetails; }
+
+    /**
+     * <p>Contains information on the S3 bucket.</p>
+     */
+    inline bool S3BucketDetailsHasBeenSet() const { return m_s3BucketDetailsHasBeenSet; }
+
+    /**
+     * <p>Contains information on the S3 bucket.</p>
+     */
+    inline void SetS3BucketDetails(const Aws::Vector<S3BucketDetail>& value) { m_s3BucketDetailsHasBeenSet = true; m_s3BucketDetails = value; }
+
+    /**
+     * <p>Contains information on the S3 bucket.</p>
+     */
+    inline void SetS3BucketDetails(Aws::Vector<S3BucketDetail>&& value) { m_s3BucketDetailsHasBeenSet = true; m_s3BucketDetails = std::move(value); }
+
+    /**
+     * <p>Contains information on the S3 bucket.</p>
+     */
+    inline Resource& WithS3BucketDetails(const Aws::Vector<S3BucketDetail>& value) { SetS3BucketDetails(value); return *this;}
+
+    /**
+     * <p>Contains information on the S3 bucket.</p>
+     */
+    inline Resource& WithS3BucketDetails(Aws::Vector<S3BucketDetail>&& value) { SetS3BucketDetails(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains information on the S3 bucket.</p>
+     */
+    inline Resource& AddS3BucketDetails(const S3BucketDetail& value) { m_s3BucketDetailsHasBeenSet = true; m_s3BucketDetails.push_back(value); return *this; }
+
+    /**
+     * <p>Contains information on the S3 bucket.</p>
+     */
+    inline Resource& AddS3BucketDetails(S3BucketDetail&& value) { m_s3BucketDetailsHasBeenSet = true; m_s3BucketDetails.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -168,6 +201,9 @@ namespace Model
 
     AccessKeyDetails m_accessKeyDetails;
     bool m_accessKeyDetailsHasBeenSet;
+
+    Aws::Vector<S3BucketDetail> m_s3BucketDetails;
+    bool m_s3BucketDetailsHasBeenSet;
 
     InstanceDetails m_instanceDetails;
     bool m_instanceDetailsHasBeenSet;

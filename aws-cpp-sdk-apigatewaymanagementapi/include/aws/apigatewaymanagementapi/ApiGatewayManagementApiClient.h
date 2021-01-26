@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApi_EXPORTS.h>
@@ -66,9 +56,9 @@ namespace Model
         class GetConnectionRequest;
         class PostToConnectionRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ApiGatewayManagementApiErrors>> DeleteConnectionOutcome;
-        typedef Aws::Utils::Outcome<GetConnectionResult, Aws::Client::AWSError<ApiGatewayManagementApiErrors>> GetConnectionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ApiGatewayManagementApiErrors>> PostToConnectionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayManagementApiError> DeleteConnectionOutcome;
+        typedef Aws::Utils::Outcome<GetConnectionResult, ApiGatewayManagementApiError> GetConnectionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayManagementApiError> PostToConnectionOutcome;
 
         typedef std::future<DeleteConnectionOutcome> DeleteConnectionOutcomeCallable;
         typedef std::future<GetConnectionOutcome> GetConnectionOutcomeCallable;
@@ -114,8 +104,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~ApiGatewayManagementApiClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "ApiGatewayManagementApi"; }
 
 
         /**

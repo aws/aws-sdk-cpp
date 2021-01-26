@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/synthetics/Synthetics_EXPORTS.h>
@@ -32,7 +22,7 @@ namespace Model
 {
 
   /**
-   * <p>A structure that contains information for a canary run.</p><p><h3>See
+   * <p>A structure that contains information about a canary run.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/CanaryRunConfigOutput">AWS
    * API Reference</a></p>
@@ -66,10 +56,62 @@ namespace Model
      */
     inline CanaryRunConfigOutput& WithTimeoutInSeconds(int value) { SetTimeoutInSeconds(value); return *this;}
 
+
+    /**
+     * <p>The maximum amount of memory available to the canary while it is running, in
+     * MB. This value must be a multiple of 64.</p>
+     */
+    inline int GetMemoryInMB() const{ return m_memoryInMB; }
+
+    /**
+     * <p>The maximum amount of memory available to the canary while it is running, in
+     * MB. This value must be a multiple of 64.</p>
+     */
+    inline bool MemoryInMBHasBeenSet() const { return m_memoryInMBHasBeenSet; }
+
+    /**
+     * <p>The maximum amount of memory available to the canary while it is running, in
+     * MB. This value must be a multiple of 64.</p>
+     */
+    inline void SetMemoryInMB(int value) { m_memoryInMBHasBeenSet = true; m_memoryInMB = value; }
+
+    /**
+     * <p>The maximum amount of memory available to the canary while it is running, in
+     * MB. This value must be a multiple of 64.</p>
+     */
+    inline CanaryRunConfigOutput& WithMemoryInMB(int value) { SetMemoryInMB(value); return *this;}
+
+
+    /**
+     * <p>Displays whether this canary run used active AWS X-Ray tracing. </p>
+     */
+    inline bool GetActiveTracing() const{ return m_activeTracing; }
+
+    /**
+     * <p>Displays whether this canary run used active AWS X-Ray tracing. </p>
+     */
+    inline bool ActiveTracingHasBeenSet() const { return m_activeTracingHasBeenSet; }
+
+    /**
+     * <p>Displays whether this canary run used active AWS X-Ray tracing. </p>
+     */
+    inline void SetActiveTracing(bool value) { m_activeTracingHasBeenSet = true; m_activeTracing = value; }
+
+    /**
+     * <p>Displays whether this canary run used active AWS X-Ray tracing. </p>
+     */
+    inline CanaryRunConfigOutput& WithActiveTracing(bool value) { SetActiveTracing(value); return *this;}
+
   private:
 
     int m_timeoutInSeconds;
     bool m_timeoutInSecondsHasBeenSet;
+
+    int m_memoryInMB;
+    bool m_memoryInMBHasBeenSet;
+
+    bool m_activeTracing;
+    bool m_activeTracingHasBeenSet;
   };
 
 } // namespace Model

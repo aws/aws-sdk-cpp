@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -98,42 +88,42 @@ namespace Model
     /**
      * <p>Specifies the audit findings to which the mitigation actions are applied. You
      * can apply them to a type of audit check, to all findings from an audit, or to a
-     * speecific set of findings.</p>
+     * specific set of findings.</p>
      */
     inline const AuditMitigationActionsTaskTarget& GetTarget() const{ return m_target; }
 
     /**
      * <p>Specifies the audit findings to which the mitigation actions are applied. You
      * can apply them to a type of audit check, to all findings from an audit, or to a
-     * speecific set of findings.</p>
+     * specific set of findings.</p>
      */
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
 
     /**
      * <p>Specifies the audit findings to which the mitigation actions are applied. You
      * can apply them to a type of audit check, to all findings from an audit, or to a
-     * speecific set of findings.</p>
+     * specific set of findings.</p>
      */
     inline void SetTarget(const AuditMitigationActionsTaskTarget& value) { m_targetHasBeenSet = true; m_target = value; }
 
     /**
      * <p>Specifies the audit findings to which the mitigation actions are applied. You
      * can apply them to a type of audit check, to all findings from an audit, or to a
-     * speecific set of findings.</p>
+     * specific set of findings.</p>
      */
     inline void SetTarget(AuditMitigationActionsTaskTarget&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
 
     /**
      * <p>Specifies the audit findings to which the mitigation actions are applied. You
      * can apply them to a type of audit check, to all findings from an audit, or to a
-     * speecific set of findings.</p>
+     * specific set of findings.</p>
      */
     inline StartAuditMitigationActionsTaskRequest& WithTarget(const AuditMitigationActionsTaskTarget& value) { SetTarget(value); return *this;}
 
     /**
      * <p>Specifies the audit findings to which the mitigation actions are applied. You
      * can apply them to a type of audit check, to all findings from an audit, or to a
-     * speecific set of findings.</p>
+     * specific set of findings.</p>
      */
     inline StartAuditMitigationActionsTaskRequest& WithTarget(AuditMitigationActionsTaskTarget&& value) { SetTarget(std::move(value)); return *this;}
 

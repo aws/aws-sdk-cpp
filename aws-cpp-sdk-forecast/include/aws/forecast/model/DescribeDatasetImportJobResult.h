@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/forecast/ForecastService_EXPORTS.h>
@@ -230,6 +220,104 @@ namespace Model
      * and optionally, for: Y, M, W, and D</p> </li> </ul>
      */
     inline DescribeDatasetImportJobResult& WithTimestampFormat(const char* value) { SetTimestampFormat(value); return *this;}
+
+
+    /**
+     * <p>The single time zone applied to every item in the dataset</p>
+     */
+    inline const Aws::String& GetTimeZone() const{ return m_timeZone; }
+
+    /**
+     * <p>The single time zone applied to every item in the dataset</p>
+     */
+    inline void SetTimeZone(const Aws::String& value) { m_timeZone = value; }
+
+    /**
+     * <p>The single time zone applied to every item in the dataset</p>
+     */
+    inline void SetTimeZone(Aws::String&& value) { m_timeZone = std::move(value); }
+
+    /**
+     * <p>The single time zone applied to every item in the dataset</p>
+     */
+    inline void SetTimeZone(const char* value) { m_timeZone.assign(value); }
+
+    /**
+     * <p>The single time zone applied to every item in the dataset</p>
+     */
+    inline DescribeDatasetImportJobResult& WithTimeZone(const Aws::String& value) { SetTimeZone(value); return *this;}
+
+    /**
+     * <p>The single time zone applied to every item in the dataset</p>
+     */
+    inline DescribeDatasetImportJobResult& WithTimeZone(Aws::String&& value) { SetTimeZone(std::move(value)); return *this;}
+
+    /**
+     * <p>The single time zone applied to every item in the dataset</p>
+     */
+    inline DescribeDatasetImportJobResult& WithTimeZone(const char* value) { SetTimeZone(value); return *this;}
+
+
+    /**
+     * <p>Whether <code>TimeZone</code> is automatically derived from the geolocation
+     * attribute.</p>
+     */
+    inline bool GetUseGeolocationForTimeZone() const{ return m_useGeolocationForTimeZone; }
+
+    /**
+     * <p>Whether <code>TimeZone</code> is automatically derived from the geolocation
+     * attribute.</p>
+     */
+    inline void SetUseGeolocationForTimeZone(bool value) { m_useGeolocationForTimeZone = value; }
+
+    /**
+     * <p>Whether <code>TimeZone</code> is automatically derived from the geolocation
+     * attribute.</p>
+     */
+    inline DescribeDatasetImportJobResult& WithUseGeolocationForTimeZone(bool value) { SetUseGeolocationForTimeZone(value); return *this;}
+
+
+    /**
+     * <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code>
+     * and <code>"CC_POSTALCODE"</code>.</p>
+     */
+    inline const Aws::String& GetGeolocationFormat() const{ return m_geolocationFormat; }
+
+    /**
+     * <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code>
+     * and <code>"CC_POSTALCODE"</code>.</p>
+     */
+    inline void SetGeolocationFormat(const Aws::String& value) { m_geolocationFormat = value; }
+
+    /**
+     * <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code>
+     * and <code>"CC_POSTALCODE"</code>.</p>
+     */
+    inline void SetGeolocationFormat(Aws::String&& value) { m_geolocationFormat = std::move(value); }
+
+    /**
+     * <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code>
+     * and <code>"CC_POSTALCODE"</code>.</p>
+     */
+    inline void SetGeolocationFormat(const char* value) { m_geolocationFormat.assign(value); }
+
+    /**
+     * <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code>
+     * and <code>"CC_POSTALCODE"</code>.</p>
+     */
+    inline DescribeDatasetImportJobResult& WithGeolocationFormat(const Aws::String& value) { SetGeolocationFormat(value); return *this;}
+
+    /**
+     * <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code>
+     * and <code>"CC_POSTALCODE"</code>.</p>
+     */
+    inline DescribeDatasetImportJobResult& WithGeolocationFormat(Aws::String&& value) { SetGeolocationFormat(std::move(value)); return *this;}
+
+    /**
+     * <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code>
+     * and <code>"CC_POSTALCODE"</code>.</p>
+     */
+    inline DescribeDatasetImportJobResult& WithGeolocationFormat(const char* value) { SetGeolocationFormat(value); return *this;}
 
 
     /**
@@ -554,6 +642,12 @@ namespace Model
     Aws::String m_datasetArn;
 
     Aws::String m_timestampFormat;
+
+    Aws::String m_timeZone;
+
+    bool m_useGeolocationForTimeZone;
+
+    Aws::String m_geolocationFormat;
 
     DataSource m_dataSource;
 

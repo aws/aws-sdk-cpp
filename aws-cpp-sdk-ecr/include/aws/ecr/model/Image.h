@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecr/ECR_EXPORTS.h>
@@ -207,6 +197,47 @@ namespace Model
      */
     inline Image& WithImageManifest(const char* value) { SetImageManifest(value); return *this;}
 
+
+    /**
+     * <p>The manifest media type of the image.</p>
+     */
+    inline const Aws::String& GetImageManifestMediaType() const{ return m_imageManifestMediaType; }
+
+    /**
+     * <p>The manifest media type of the image.</p>
+     */
+    inline bool ImageManifestMediaTypeHasBeenSet() const { return m_imageManifestMediaTypeHasBeenSet; }
+
+    /**
+     * <p>The manifest media type of the image.</p>
+     */
+    inline void SetImageManifestMediaType(const Aws::String& value) { m_imageManifestMediaTypeHasBeenSet = true; m_imageManifestMediaType = value; }
+
+    /**
+     * <p>The manifest media type of the image.</p>
+     */
+    inline void SetImageManifestMediaType(Aws::String&& value) { m_imageManifestMediaTypeHasBeenSet = true; m_imageManifestMediaType = std::move(value); }
+
+    /**
+     * <p>The manifest media type of the image.</p>
+     */
+    inline void SetImageManifestMediaType(const char* value) { m_imageManifestMediaTypeHasBeenSet = true; m_imageManifestMediaType.assign(value); }
+
+    /**
+     * <p>The manifest media type of the image.</p>
+     */
+    inline Image& WithImageManifestMediaType(const Aws::String& value) { SetImageManifestMediaType(value); return *this;}
+
+    /**
+     * <p>The manifest media type of the image.</p>
+     */
+    inline Image& WithImageManifestMediaType(Aws::String&& value) { SetImageManifestMediaType(std::move(value)); return *this;}
+
+    /**
+     * <p>The manifest media type of the image.</p>
+     */
+    inline Image& WithImageManifestMediaType(const char* value) { SetImageManifestMediaType(value); return *this;}
+
   private:
 
     Aws::String m_registryId;
@@ -220,6 +251,9 @@ namespace Model
 
     Aws::String m_imageManifest;
     bool m_imageManifestHasBeenSet;
+
+    Aws::String m_imageManifestMediaType;
+    bool m_imageManifestMediaTypeHasBeenSet;
   };
 
 } // namespace Model

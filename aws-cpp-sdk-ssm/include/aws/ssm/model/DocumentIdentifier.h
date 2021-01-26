@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/DocumentType.h>
 #include <aws/ssm/model/DocumentFormat.h>
+#include <aws/ssm/model/ReviewStatus.h>
 #include <aws/ssm/model/PlatformType.h>
 #include <aws/ssm/model/Tag.h>
 #include <aws/ssm/model/DocumentRequires.h>
@@ -382,7 +373,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline const Aws::String& GetTargetType() const{ return m_targetType; }
 
@@ -390,7 +382,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
 
@@ -398,7 +391,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline void SetTargetType(const Aws::String& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
 
@@ -406,7 +400,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline void SetTargetType(Aws::String&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
 
@@ -414,7 +409,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline void SetTargetType(const char* value) { m_targetTypeHasBeenSet = true; m_targetType.assign(value); }
 
@@ -422,7 +418,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline DocumentIdentifier& WithTargetType(const Aws::String& value) { SetTargetType(value); return *this;}
 
@@ -430,7 +427,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline DocumentIdentifier& WithTargetType(Aws::String&& value) { SetTargetType(std::move(value)); return *this;}
 
@@ -438,7 +436,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline DocumentIdentifier& WithTargetType(const char* value) { SetTargetType(value); return *this;}
 
@@ -540,6 +539,78 @@ namespace Model
      */
     inline DocumentIdentifier& AddRequires(DocumentRequires&& value) { m_requiresHasBeenSet = true; m_requires.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The current status of a document review.</p>
+     */
+    inline const ReviewStatus& GetReviewStatus() const{ return m_reviewStatus; }
+
+    /**
+     * <p>The current status of a document review.</p>
+     */
+    inline bool ReviewStatusHasBeenSet() const { return m_reviewStatusHasBeenSet; }
+
+    /**
+     * <p>The current status of a document review.</p>
+     */
+    inline void SetReviewStatus(const ReviewStatus& value) { m_reviewStatusHasBeenSet = true; m_reviewStatus = value; }
+
+    /**
+     * <p>The current status of a document review.</p>
+     */
+    inline void SetReviewStatus(ReviewStatus&& value) { m_reviewStatusHasBeenSet = true; m_reviewStatus = std::move(value); }
+
+    /**
+     * <p>The current status of a document review.</p>
+     */
+    inline DocumentIdentifier& WithReviewStatus(const ReviewStatus& value) { SetReviewStatus(value); return *this;}
+
+    /**
+     * <p>The current status of a document review.</p>
+     */
+    inline DocumentIdentifier& WithReviewStatus(ReviewStatus&& value) { SetReviewStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline const Aws::String& GetAuthor() const{ return m_author; }
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline bool AuthorHasBeenSet() const { return m_authorHasBeenSet; }
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline void SetAuthor(const Aws::String& value) { m_authorHasBeenSet = true; m_author = value; }
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline void SetAuthor(Aws::String&& value) { m_authorHasBeenSet = true; m_author = std::move(value); }
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline void SetAuthor(const char* value) { m_authorHasBeenSet = true; m_author.assign(value); }
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline DocumentIdentifier& WithAuthor(const Aws::String& value) { SetAuthor(value); return *this;}
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline DocumentIdentifier& WithAuthor(Aws::String&& value) { SetAuthor(std::move(value)); return *this;}
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline DocumentIdentifier& WithAuthor(const char* value) { SetAuthor(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -574,6 +645,12 @@ namespace Model
 
     Aws::Vector<DocumentRequires> m_requires;
     bool m_requiresHasBeenSet;
+
+    ReviewStatus m_reviewStatus;
+    bool m_reviewStatusHasBeenSet;
+
+    Aws::String m_author;
+    bool m_authorHasBeenSet;
   };
 
 } // namespace Model

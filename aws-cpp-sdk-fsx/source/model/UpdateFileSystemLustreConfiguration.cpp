@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/fsx/model/UpdateFileSystemLustreConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,12 +19,22 @@ namespace Model
 {
 
 UpdateFileSystemLustreConfiguration::UpdateFileSystemLustreConfiguration() : 
-    m_weeklyMaintenanceStartTimeHasBeenSet(false)
+    m_weeklyMaintenanceStartTimeHasBeenSet(false),
+    m_dailyAutomaticBackupStartTimeHasBeenSet(false),
+    m_automaticBackupRetentionDays(0),
+    m_automaticBackupRetentionDaysHasBeenSet(false),
+    m_autoImportPolicy(AutoImportPolicyType::NOT_SET),
+    m_autoImportPolicyHasBeenSet(false)
 {
 }
 
 UpdateFileSystemLustreConfiguration::UpdateFileSystemLustreConfiguration(JsonView jsonValue) : 
-    m_weeklyMaintenanceStartTimeHasBeenSet(false)
+    m_weeklyMaintenanceStartTimeHasBeenSet(false),
+    m_dailyAutomaticBackupStartTimeHasBeenSet(false),
+    m_automaticBackupRetentionDays(0),
+    m_automaticBackupRetentionDaysHasBeenSet(false),
+    m_autoImportPolicy(AutoImportPolicyType::NOT_SET),
+    m_autoImportPolicyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +48,27 @@ UpdateFileSystemLustreConfiguration& UpdateFileSystemLustreConfiguration::operat
     m_weeklyMaintenanceStartTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DailyAutomaticBackupStartTime"))
+  {
+    m_dailyAutomaticBackupStartTime = jsonValue.GetString("DailyAutomaticBackupStartTime");
+
+    m_dailyAutomaticBackupStartTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AutomaticBackupRetentionDays"))
+  {
+    m_automaticBackupRetentionDays = jsonValue.GetInteger("AutomaticBackupRetentionDays");
+
+    m_automaticBackupRetentionDaysHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AutoImportPolicy"))
+  {
+    m_autoImportPolicy = AutoImportPolicyTypeMapper::GetAutoImportPolicyTypeForName(jsonValue.GetString("AutoImportPolicy"));
+
+    m_autoImportPolicyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -59,6 +80,23 @@ JsonValue UpdateFileSystemLustreConfiguration::Jsonize() const
   {
    payload.WithString("WeeklyMaintenanceStartTime", m_weeklyMaintenanceStartTime);
 
+  }
+
+  if(m_dailyAutomaticBackupStartTimeHasBeenSet)
+  {
+   payload.WithString("DailyAutomaticBackupStartTime", m_dailyAutomaticBackupStartTime);
+
+  }
+
+  if(m_automaticBackupRetentionDaysHasBeenSet)
+  {
+   payload.WithInteger("AutomaticBackupRetentionDays", m_automaticBackupRetentionDays);
+
+  }
+
+  if(m_autoImportPolicyHasBeenSet)
+  {
+   payload.WithString("AutoImportPolicy", AutoImportPolicyTypeMapper::GetNameForAutoImportPolicyType(m_autoImportPolicy));
   }
 
   return payload;

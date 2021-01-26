@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -154,50 +144,74 @@ namespace Model
 
 
     /**
-     * <p>The date and time when the most recent instance of a threat intelligence
-     * indicator was observed.</p>
+     * <p>Indicates when the most recent instance of a threat intelligence indicator
+     * was observed.</p> <p>Uses the <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetLastObservedAt() const{ return m_lastObservedAt; }
 
     /**
-     * <p>The date and time when the most recent instance of a threat intelligence
-     * indicator was observed.</p>
+     * <p>Indicates when the most recent instance of a threat intelligence indicator
+     * was observed.</p> <p>Uses the <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool LastObservedAtHasBeenSet() const { return m_lastObservedAtHasBeenSet; }
 
     /**
-     * <p>The date and time when the most recent instance of a threat intelligence
-     * indicator was observed.</p>
+     * <p>Indicates when the most recent instance of a threat intelligence indicator
+     * was observed.</p> <p>Uses the <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLastObservedAt(const Aws::String& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt = value; }
 
     /**
-     * <p>The date and time when the most recent instance of a threat intelligence
-     * indicator was observed.</p>
+     * <p>Indicates when the most recent instance of a threat intelligence indicator
+     * was observed.</p> <p>Uses the <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLastObservedAt(Aws::String&& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt = std::move(value); }
 
     /**
-     * <p>The date and time when the most recent instance of a threat intelligence
-     * indicator was observed.</p>
+     * <p>Indicates when the most recent instance of a threat intelligence indicator
+     * was observed.</p> <p>Uses the <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLastObservedAt(const char* value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt.assign(value); }
 
     /**
-     * <p>The date and time when the most recent instance of a threat intelligence
-     * indicator was observed.</p>
+     * <p>Indicates when the most recent instance of a threat intelligence indicator
+     * was observed.</p> <p>Uses the <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline ThreatIntelIndicator& WithLastObservedAt(const Aws::String& value) { SetLastObservedAt(value); return *this;}
 
     /**
-     * <p>The date and time when the most recent instance of a threat intelligence
-     * indicator was observed.</p>
+     * <p>Indicates when the most recent instance of a threat intelligence indicator
+     * was observed.</p> <p>Uses the <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline ThreatIntelIndicator& WithLastObservedAt(Aws::String&& value) { SetLastObservedAt(std::move(value)); return *this;}
 
     /**
-     * <p>The date and time when the most recent instance of a threat intelligence
-     * indicator was observed.</p>
+     * <p>Indicates when the most recent instance of a threat intelligence indicator
+     * was observed.</p> <p>Uses the <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline ThreatIntelIndicator& WithLastObservedAt(const char* value) { SetLastObservedAt(value); return *this;}
 

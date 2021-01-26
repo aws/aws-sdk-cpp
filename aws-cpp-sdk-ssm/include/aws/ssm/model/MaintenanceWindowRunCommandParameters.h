@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -42,7 +32,7 @@ namespace Model
    * <p>The parameters for a RUN_COMMAND task type.</p> <p>For information about
    * specifying and updating task parameters, see
    * <a>RegisterTaskWithMaintenanceWindow</a> and
-   * <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has
+   * <a>UpdateMaintenanceWindowTask</a>.</p>  <p> <code>LoggingInfo</code> has
    * been deprecated. To specify an S3 bucket to contain logs, instead use the
    * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
    * the <code>TaskInvocationParameters</code> structure. For information about how
@@ -55,7 +45,7 @@ namespace Model
    * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For Run
    * Command tasks, Systems Manager uses specified values for
    * <code>TaskParameters</code> and <code>LoggingInfo</code> only if no values are
-   * specified for <code>TaskInvocationParameters</code>. </p> </note><p><h3>See
+   * specified for <code>TaskInvocationParameters</code>. </p> <p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowRunCommandParameters">AWS
    * API Reference</a></p>
@@ -328,83 +318,83 @@ namespace Model
 
 
     /**
-     * <p>The name of the Amazon S3 bucket.</p>
+     * <p>The name of the S3 bucket.</p>
      */
     inline const Aws::String& GetOutputS3BucketName() const{ return m_outputS3BucketName; }
 
     /**
-     * <p>The name of the Amazon S3 bucket.</p>
+     * <p>The name of the S3 bucket.</p>
      */
     inline bool OutputS3BucketNameHasBeenSet() const { return m_outputS3BucketNameHasBeenSet; }
 
     /**
-     * <p>The name of the Amazon S3 bucket.</p>
+     * <p>The name of the S3 bucket.</p>
      */
     inline void SetOutputS3BucketName(const Aws::String& value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName = value; }
 
     /**
-     * <p>The name of the Amazon S3 bucket.</p>
+     * <p>The name of the S3 bucket.</p>
      */
     inline void SetOutputS3BucketName(Aws::String&& value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName = std::move(value); }
 
     /**
-     * <p>The name of the Amazon S3 bucket.</p>
+     * <p>The name of the S3 bucket.</p>
      */
     inline void SetOutputS3BucketName(const char* value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName.assign(value); }
 
     /**
-     * <p>The name of the Amazon S3 bucket.</p>
+     * <p>The name of the S3 bucket.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithOutputS3BucketName(const Aws::String& value) { SetOutputS3BucketName(value); return *this;}
 
     /**
-     * <p>The name of the Amazon S3 bucket.</p>
+     * <p>The name of the S3 bucket.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithOutputS3BucketName(Aws::String&& value) { SetOutputS3BucketName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Amazon S3 bucket.</p>
+     * <p>The name of the S3 bucket.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithOutputS3BucketName(const char* value) { SetOutputS3BucketName(value); return *this;}
 
 
     /**
-     * <p>The Amazon S3 bucket subfolder.</p>
+     * <p>The S3 bucket subfolder.</p>
      */
     inline const Aws::String& GetOutputS3KeyPrefix() const{ return m_outputS3KeyPrefix; }
 
     /**
-     * <p>The Amazon S3 bucket subfolder.</p>
+     * <p>The S3 bucket subfolder.</p>
      */
     inline bool OutputS3KeyPrefixHasBeenSet() const { return m_outputS3KeyPrefixHasBeenSet; }
 
     /**
-     * <p>The Amazon S3 bucket subfolder.</p>
+     * <p>The S3 bucket subfolder.</p>
      */
     inline void SetOutputS3KeyPrefix(const Aws::String& value) { m_outputS3KeyPrefixHasBeenSet = true; m_outputS3KeyPrefix = value; }
 
     /**
-     * <p>The Amazon S3 bucket subfolder.</p>
+     * <p>The S3 bucket subfolder.</p>
      */
     inline void SetOutputS3KeyPrefix(Aws::String&& value) { m_outputS3KeyPrefixHasBeenSet = true; m_outputS3KeyPrefix = std::move(value); }
 
     /**
-     * <p>The Amazon S3 bucket subfolder.</p>
+     * <p>The S3 bucket subfolder.</p>
      */
     inline void SetOutputS3KeyPrefix(const char* value) { m_outputS3KeyPrefixHasBeenSet = true; m_outputS3KeyPrefix.assign(value); }
 
     /**
-     * <p>The Amazon S3 bucket subfolder.</p>
+     * <p>The S3 bucket subfolder.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithOutputS3KeyPrefix(const Aws::String& value) { SetOutputS3KeyPrefix(value); return *this;}
 
     /**
-     * <p>The Amazon S3 bucket subfolder.</p>
+     * <p>The S3 bucket subfolder.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithOutputS3KeyPrefix(Aws::String&& value) { SetOutputS3KeyPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon S3 bucket subfolder.</p>
+     * <p>The S3 bucket subfolder.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithOutputS3KeyPrefix(const char* value) { SetOutputS3KeyPrefix(value); return *this;}
 

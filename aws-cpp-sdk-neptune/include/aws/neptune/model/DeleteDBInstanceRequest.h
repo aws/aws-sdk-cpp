@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/neptune/Neptune_EXPORTS.h>
@@ -110,9 +100,9 @@ namespace Model
      * is deleted.</p> <p>Note that when a DB instance is in a failure state and has a
      * status of 'failed', 'incompatible-restore', or 'incompatible-network', it can
      * only be deleted when the SkipFinalSnapshot parameter is set to "true".</p>
-     * <p>Specify <code>true</code> when deleting a Read Replica.</p> <note> <p>The
+     * <p>Specify <code>true</code> when deleting a Read Replica.</p>  <p>The
      * FinalDBSnapshotIdentifier parameter must be specified if SkipFinalSnapshot is
-     * <code>false</code>.</p> </note> <p>Default: <code>false</code> </p>
+     * <code>false</code>.</p>  <p>Default: <code>false</code> </p>
      */
     inline bool GetSkipFinalSnapshot() const{ return m_skipFinalSnapshot; }
 
@@ -123,9 +113,9 @@ namespace Model
      * is deleted.</p> <p>Note that when a DB instance is in a failure state and has a
      * status of 'failed', 'incompatible-restore', or 'incompatible-network', it can
      * only be deleted when the SkipFinalSnapshot parameter is set to "true".</p>
-     * <p>Specify <code>true</code> when deleting a Read Replica.</p> <note> <p>The
+     * <p>Specify <code>true</code> when deleting a Read Replica.</p>  <p>The
      * FinalDBSnapshotIdentifier parameter must be specified if SkipFinalSnapshot is
-     * <code>false</code>.</p> </note> <p>Default: <code>false</code> </p>
+     * <code>false</code>.</p>  <p>Default: <code>false</code> </p>
      */
     inline bool SkipFinalSnapshotHasBeenSet() const { return m_skipFinalSnapshotHasBeenSet; }
 
@@ -136,9 +126,9 @@ namespace Model
      * is deleted.</p> <p>Note that when a DB instance is in a failure state and has a
      * status of 'failed', 'incompatible-restore', or 'incompatible-network', it can
      * only be deleted when the SkipFinalSnapshot parameter is set to "true".</p>
-     * <p>Specify <code>true</code> when deleting a Read Replica.</p> <note> <p>The
+     * <p>Specify <code>true</code> when deleting a Read Replica.</p>  <p>The
      * FinalDBSnapshotIdentifier parameter must be specified if SkipFinalSnapshot is
-     * <code>false</code>.</p> </note> <p>Default: <code>false</code> </p>
+     * <code>false</code>.</p>  <p>Default: <code>false</code> </p>
      */
     inline void SetSkipFinalSnapshot(bool value) { m_skipFinalSnapshotHasBeenSet = true; m_skipFinalSnapshot = value; }
 
@@ -149,18 +139,18 @@ namespace Model
      * is deleted.</p> <p>Note that when a DB instance is in a failure state and has a
      * status of 'failed', 'incompatible-restore', or 'incompatible-network', it can
      * only be deleted when the SkipFinalSnapshot parameter is set to "true".</p>
-     * <p>Specify <code>true</code> when deleting a Read Replica.</p> <note> <p>The
+     * <p>Specify <code>true</code> when deleting a Read Replica.</p>  <p>The
      * FinalDBSnapshotIdentifier parameter must be specified if SkipFinalSnapshot is
-     * <code>false</code>.</p> </note> <p>Default: <code>false</code> </p>
+     * <code>false</code>.</p>  <p>Default: <code>false</code> </p>
      */
     inline DeleteDBInstanceRequest& WithSkipFinalSnapshot(bool value) { SetSkipFinalSnapshot(value); return *this;}
 
 
     /**
      * <p> The DBSnapshotIdentifier of the new DBSnapshot created when
-     * SkipFinalSnapshot is set to <code>false</code>.</p> <note> <p>Specifying this
+     * SkipFinalSnapshot is set to <code>false</code>.</p>  <p>Specifying this
      * parameter and also setting the SkipFinalShapshot parameter to true results in an
-     * error.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
+     * error.</p>  <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
      * numbers.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> <li>
      * <p>Cannot be specified when deleting a Read Replica.</p> </li> </ul>
@@ -169,9 +159,9 @@ namespace Model
 
     /**
      * <p> The DBSnapshotIdentifier of the new DBSnapshot created when
-     * SkipFinalSnapshot is set to <code>false</code>.</p> <note> <p>Specifying this
+     * SkipFinalSnapshot is set to <code>false</code>.</p>  <p>Specifying this
      * parameter and also setting the SkipFinalShapshot parameter to true results in an
-     * error.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
+     * error.</p>  <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
      * numbers.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> <li>
      * <p>Cannot be specified when deleting a Read Replica.</p> </li> </ul>
@@ -180,9 +170,9 @@ namespace Model
 
     /**
      * <p> The DBSnapshotIdentifier of the new DBSnapshot created when
-     * SkipFinalSnapshot is set to <code>false</code>.</p> <note> <p>Specifying this
+     * SkipFinalSnapshot is set to <code>false</code>.</p>  <p>Specifying this
      * parameter and also setting the SkipFinalShapshot parameter to true results in an
-     * error.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
+     * error.</p>  <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
      * numbers.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> <li>
      * <p>Cannot be specified when deleting a Read Replica.</p> </li> </ul>
@@ -191,9 +181,9 @@ namespace Model
 
     /**
      * <p> The DBSnapshotIdentifier of the new DBSnapshot created when
-     * SkipFinalSnapshot is set to <code>false</code>.</p> <note> <p>Specifying this
+     * SkipFinalSnapshot is set to <code>false</code>.</p>  <p>Specifying this
      * parameter and also setting the SkipFinalShapshot parameter to true results in an
-     * error.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
+     * error.</p>  <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
      * numbers.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> <li>
      * <p>Cannot be specified when deleting a Read Replica.</p> </li> </ul>
@@ -202,9 +192,9 @@ namespace Model
 
     /**
      * <p> The DBSnapshotIdentifier of the new DBSnapshot created when
-     * SkipFinalSnapshot is set to <code>false</code>.</p> <note> <p>Specifying this
+     * SkipFinalSnapshot is set to <code>false</code>.</p>  <p>Specifying this
      * parameter and also setting the SkipFinalShapshot parameter to true results in an
-     * error.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
+     * error.</p>  <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
      * numbers.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> <li>
      * <p>Cannot be specified when deleting a Read Replica.</p> </li> </ul>
@@ -213,9 +203,9 @@ namespace Model
 
     /**
      * <p> The DBSnapshotIdentifier of the new DBSnapshot created when
-     * SkipFinalSnapshot is set to <code>false</code>.</p> <note> <p>Specifying this
+     * SkipFinalSnapshot is set to <code>false</code>.</p>  <p>Specifying this
      * parameter and also setting the SkipFinalShapshot parameter to true results in an
-     * error.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
+     * error.</p>  <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
      * numbers.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> <li>
      * <p>Cannot be specified when deleting a Read Replica.</p> </li> </ul>
@@ -224,9 +214,9 @@ namespace Model
 
     /**
      * <p> The DBSnapshotIdentifier of the new DBSnapshot created when
-     * SkipFinalSnapshot is set to <code>false</code>.</p> <note> <p>Specifying this
+     * SkipFinalSnapshot is set to <code>false</code>.</p>  <p>Specifying this
      * parameter and also setting the SkipFinalShapshot parameter to true results in an
-     * error.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
+     * error.</p>  <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
      * numbers.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> <li>
      * <p>Cannot be specified when deleting a Read Replica.</p> </li> </ul>
@@ -235,9 +225,9 @@ namespace Model
 
     /**
      * <p> The DBSnapshotIdentifier of the new DBSnapshot created when
-     * SkipFinalSnapshot is set to <code>false</code>.</p> <note> <p>Specifying this
+     * SkipFinalSnapshot is set to <code>false</code>.</p>  <p>Specifying this
      * parameter and also setting the SkipFinalShapshot parameter to true results in an
-     * error.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
+     * error.</p>  <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
      * numbers.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> <li>
      * <p>Cannot be specified when deleting a Read Replica.</p> </li> </ul>

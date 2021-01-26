@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ecs/model/ContainerOverride.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,6 +22,7 @@ ContainerOverride::ContainerOverride() :
     m_nameHasBeenSet(false),
     m_commandHasBeenSet(false),
     m_environmentHasBeenSet(false),
+    m_environmentFilesHasBeenSet(false),
     m_cpu(0),
     m_cpuHasBeenSet(false),
     m_memory(0),
@@ -46,6 +37,7 @@ ContainerOverride::ContainerOverride(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_commandHasBeenSet(false),
     m_environmentHasBeenSet(false),
+    m_environmentFilesHasBeenSet(false),
     m_cpu(0),
     m_cpuHasBeenSet(false),
     m_memory(0),
@@ -84,6 +76,16 @@ ContainerOverride& ContainerOverride::operator =(JsonView jsonValue)
       m_environment.push_back(environmentJsonList[environmentIndex].AsObject());
     }
     m_environmentHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("environmentFiles"))
+  {
+    Array<JsonView> environmentFilesJsonList = jsonValue.GetArray("environmentFiles");
+    for(unsigned environmentFilesIndex = 0; environmentFilesIndex < environmentFilesJsonList.GetLength(); ++environmentFilesIndex)
+    {
+      m_environmentFiles.push_back(environmentFilesJsonList[environmentFilesIndex].AsObject());
+    }
+    m_environmentFilesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("cpu"))
@@ -149,6 +151,17 @@ JsonValue ContainerOverride::Jsonize() const
      environmentJsonList[environmentIndex].AsObject(m_environment[environmentIndex].Jsonize());
    }
    payload.WithArray("environment", std::move(environmentJsonList));
+
+  }
+
+  if(m_environmentFilesHasBeenSet)
+  {
+   Array<JsonValue> environmentFilesJsonList(m_environmentFiles.size());
+   for(unsigned environmentFilesIndex = 0; environmentFilesIndex < environmentFilesJsonList.GetLength(); ++environmentFilesIndex)
+   {
+     environmentFilesJsonList[environmentFilesIndex].AsObject(m_environmentFiles[environmentFilesIndex].Jsonize());
+   }
+   payload.WithArray("environmentFiles", std::move(environmentFilesJsonList));
 
   }
 

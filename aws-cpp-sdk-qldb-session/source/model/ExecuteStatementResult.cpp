@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/qldb-session/model/ExecuteStatementResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,12 +19,16 @@ namespace Model
 {
 
 ExecuteStatementResult::ExecuteStatementResult() : 
-    m_firstPageHasBeenSet(false)
+    m_firstPageHasBeenSet(false),
+    m_timingInformationHasBeenSet(false),
+    m_consumedIOsHasBeenSet(false)
 {
 }
 
 ExecuteStatementResult::ExecuteStatementResult(JsonView jsonValue) : 
-    m_firstPageHasBeenSet(false)
+    m_firstPageHasBeenSet(false),
+    m_timingInformationHasBeenSet(false),
+    m_consumedIOsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +42,20 @@ ExecuteStatementResult& ExecuteStatementResult::operator =(JsonView jsonValue)
     m_firstPageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TimingInformation"))
+  {
+    m_timingInformation = jsonValue.GetObject("TimingInformation");
+
+    m_timingInformationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ConsumedIOs"))
+  {
+    m_consumedIOs = jsonValue.GetObject("ConsumedIOs");
+
+    m_consumedIOsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +66,18 @@ JsonValue ExecuteStatementResult::Jsonize() const
   if(m_firstPageHasBeenSet)
   {
    payload.WithObject("FirstPage", m_firstPage.Jsonize());
+
+  }
+
+  if(m_timingInformationHasBeenSet)
+  {
+   payload.WithObject("TimingInformation", m_timingInformation.Jsonize());
+
+  }
+
+  if(m_consumedIOsHasBeenSet)
+  {
+   payload.WithObject("ConsumedIOs", m_consumedIOs.Jsonize());
 
   }
 

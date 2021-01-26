@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/elasticache/model/CacheCluster.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -41,6 +31,7 @@ CacheCluster::CacheCluster() :
     m_numCacheNodes(0),
     m_numCacheNodesHasBeenSet(false),
     m_preferredAvailabilityZoneHasBeenSet(false),
+    m_preferredOutpostArnHasBeenSet(false),
     m_cacheClusterCreateTimeHasBeenSet(false),
     m_preferredMaintenanceWindowHasBeenSet(false),
     m_pendingModifiedValuesHasBeenSet(false),
@@ -62,7 +53,8 @@ CacheCluster::CacheCluster() :
     m_transitEncryptionEnabled(false),
     m_transitEncryptionEnabledHasBeenSet(false),
     m_atRestEncryptionEnabled(false),
-    m_atRestEncryptionEnabledHasBeenSet(false)
+    m_atRestEncryptionEnabledHasBeenSet(false),
+    m_aRNHasBeenSet(false)
 {
 }
 
@@ -77,6 +69,7 @@ CacheCluster::CacheCluster(const XmlNode& xmlNode) :
     m_numCacheNodes(0),
     m_numCacheNodesHasBeenSet(false),
     m_preferredAvailabilityZoneHasBeenSet(false),
+    m_preferredOutpostArnHasBeenSet(false),
     m_cacheClusterCreateTimeHasBeenSet(false),
     m_preferredMaintenanceWindowHasBeenSet(false),
     m_pendingModifiedValuesHasBeenSet(false),
@@ -98,7 +91,8 @@ CacheCluster::CacheCluster(const XmlNode& xmlNode) :
     m_transitEncryptionEnabled(false),
     m_transitEncryptionEnabledHasBeenSet(false),
     m_atRestEncryptionEnabled(false),
-    m_atRestEncryptionEnabledHasBeenSet(false)
+    m_atRestEncryptionEnabledHasBeenSet(false),
+    m_aRNHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -162,6 +156,12 @@ CacheCluster& CacheCluster::operator =(const XmlNode& xmlNode)
     {
       m_preferredAvailabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(preferredAvailabilityZoneNode.GetText());
       m_preferredAvailabilityZoneHasBeenSet = true;
+    }
+    XmlNode preferredOutpostArnNode = resultNode.FirstChild("PreferredOutpostArn");
+    if(!preferredOutpostArnNode.IsNull())
+    {
+      m_preferredOutpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(preferredOutpostArnNode.GetText());
+      m_preferredOutpostArnHasBeenSet = true;
     }
     XmlNode cacheClusterCreateTimeNode = resultNode.FirstChild("CacheClusterCreateTime");
     if(!cacheClusterCreateTimeNode.IsNull())
@@ -283,6 +283,12 @@ CacheCluster& CacheCluster::operator =(const XmlNode& xmlNode)
       m_atRestEncryptionEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(atRestEncryptionEnabledNode.GetText()).c_str()).c_str());
       m_atRestEncryptionEnabledHasBeenSet = true;
     }
+    XmlNode aRNNode = resultNode.FirstChild("ARN");
+    if(!aRNNode.IsNull())
+    {
+      m_aRN = Aws::Utils::Xml::DecodeEscapedXmlText(aRNNode.GetText());
+      m_aRNHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -335,6 +341,11 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location, u
   if(m_preferredAvailabilityZoneHasBeenSet)
   {
       oStream << location << index << locationValue << ".PreferredAvailabilityZone=" << StringUtils::URLEncode(m_preferredAvailabilityZone.c_str()) << "&";
+  }
+
+  if(m_preferredOutpostArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PreferredOutpostArn=" << StringUtils::URLEncode(m_preferredOutpostArn.c_str()) << "&";
   }
 
   if(m_cacheClusterCreateTimeHasBeenSet)
@@ -446,6 +457,11 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location, u
       oStream << location << index << locationValue << ".AtRestEncryptionEnabled=" << std::boolalpha << m_atRestEncryptionEnabled << "&";
   }
 
+  if(m_aRNHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ARN=" << StringUtils::URLEncode(m_aRN.c_str()) << "&";
+  }
+
 }
 
 void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -487,6 +503,10 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location) c
   if(m_preferredAvailabilityZoneHasBeenSet)
   {
       oStream << location << ".PreferredAvailabilityZone=" << StringUtils::URLEncode(m_preferredAvailabilityZone.c_str()) << "&";
+  }
+  if(m_preferredOutpostArnHasBeenSet)
+  {
+      oStream << location << ".PreferredOutpostArn=" << StringUtils::URLEncode(m_preferredOutpostArn.c_str()) << "&";
   }
   if(m_cacheClusterCreateTimeHasBeenSet)
   {
@@ -579,6 +599,10 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location) c
   if(m_atRestEncryptionEnabledHasBeenSet)
   {
       oStream << location << ".AtRestEncryptionEnabled=" << std::boolalpha << m_atRestEncryptionEnabled << "&";
+  }
+  if(m_aRNHasBeenSet)
+  {
+      oStream << location << ".ARN=" << StringUtils::URLEncode(m_aRN.c_str()) << "&";
   }
 }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/application-autoscaling/model/ScalableDimension.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -42,9 +32,11 @@ namespace Aws
         static const int sagemaker_variant_DesiredInstanceCount_HASH = HashingUtils::HashString("sagemaker:variant:DesiredInstanceCount");
         static const int custom_resource_ResourceType_Property_HASH = HashingUtils::HashString("custom-resource:ResourceType:Property");
         static const int comprehend_document_classifier_endpoint_DesiredInferenceUnits_HASH = HashingUtils::HashString("comprehend:document-classifier-endpoint:DesiredInferenceUnits");
+        static const int comprehend_entity_recognizer_endpoint_DesiredInferenceUnits_HASH = HashingUtils::HashString("comprehend:entity-recognizer-endpoint:DesiredInferenceUnits");
         static const int lambda_function_ProvisionedConcurrency_HASH = HashingUtils::HashString("lambda:function:ProvisionedConcurrency");
         static const int cassandra_table_ReadCapacityUnits_HASH = HashingUtils::HashString("cassandra:table:ReadCapacityUnits");
         static const int cassandra_table_WriteCapacityUnits_HASH = HashingUtils::HashString("cassandra:table:WriteCapacityUnits");
+        static const int kafka_broker_storage_VolumeSize_HASH = HashingUtils::HashString("kafka:broker-storage:VolumeSize");
 
 
         ScalableDimension GetScalableDimensionForName(const Aws::String& name)
@@ -98,6 +90,10 @@ namespace Aws
           {
             return ScalableDimension::comprehend_document_classifier_endpoint_DesiredInferenceUnits;
           }
+          else if (hashCode == comprehend_entity_recognizer_endpoint_DesiredInferenceUnits_HASH)
+          {
+            return ScalableDimension::comprehend_entity_recognizer_endpoint_DesiredInferenceUnits;
+          }
           else if (hashCode == lambda_function_ProvisionedConcurrency_HASH)
           {
             return ScalableDimension::lambda_function_ProvisionedConcurrency;
@@ -109,6 +105,10 @@ namespace Aws
           else if (hashCode == cassandra_table_WriteCapacityUnits_HASH)
           {
             return ScalableDimension::cassandra_table_WriteCapacityUnits;
+          }
+          else if (hashCode == kafka_broker_storage_VolumeSize_HASH)
+          {
+            return ScalableDimension::kafka_broker_storage_VolumeSize;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -148,12 +148,16 @@ namespace Aws
             return "custom-resource:ResourceType:Property";
           case ScalableDimension::comprehend_document_classifier_endpoint_DesiredInferenceUnits:
             return "comprehend:document-classifier-endpoint:DesiredInferenceUnits";
+          case ScalableDimension::comprehend_entity_recognizer_endpoint_DesiredInferenceUnits:
+            return "comprehend:entity-recognizer-endpoint:DesiredInferenceUnits";
           case ScalableDimension::lambda_function_ProvisionedConcurrency:
             return "lambda:function:ProvisionedConcurrency";
           case ScalableDimension::cassandra_table_ReadCapacityUnits:
             return "cassandra:table:ReadCapacityUnits";
           case ScalableDimension::cassandra_table_WriteCapacityUnits:
             return "cassandra:table:WriteCapacityUnits";
+          case ScalableDimension::kafka_broker_storage_VolumeSize:
+            return "kafka:broker-storage:VolumeSize";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

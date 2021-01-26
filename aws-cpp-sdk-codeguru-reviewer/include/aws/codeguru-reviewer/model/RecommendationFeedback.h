@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codeguru-reviewer/CodeGuruReviewer_EXPORTS.h>
@@ -52,42 +42,58 @@ namespace Model
 
 
     /**
-     * <p> The Amazon Resource Name (ARN) that identifies the code review. </p>
+     * <p>The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+     * <code>CodeReview</code> </a> object. </p>
      */
     inline const Aws::String& GetCodeReviewArn() const{ return m_codeReviewArn; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) that identifies the code review. </p>
+     * <p>The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+     * <code>CodeReview</code> </a> object. </p>
      */
     inline bool CodeReviewArnHasBeenSet() const { return m_codeReviewArnHasBeenSet; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) that identifies the code review. </p>
+     * <p>The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+     * <code>CodeReview</code> </a> object. </p>
      */
     inline void SetCodeReviewArn(const Aws::String& value) { m_codeReviewArnHasBeenSet = true; m_codeReviewArn = value; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) that identifies the code review. </p>
+     * <p>The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+     * <code>CodeReview</code> </a> object. </p>
      */
     inline void SetCodeReviewArn(Aws::String&& value) { m_codeReviewArnHasBeenSet = true; m_codeReviewArn = std::move(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) that identifies the code review. </p>
+     * <p>The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+     * <code>CodeReview</code> </a> object. </p>
      */
     inline void SetCodeReviewArn(const char* value) { m_codeReviewArnHasBeenSet = true; m_codeReviewArn.assign(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) that identifies the code review. </p>
+     * <p>The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+     * <code>CodeReview</code> </a> object. </p>
      */
     inline RecommendationFeedback& WithCodeReviewArn(const Aws::String& value) { SetCodeReviewArn(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) that identifies the code review. </p>
+     * <p>The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+     * <code>CodeReview</code> </a> object. </p>
      */
     inline RecommendationFeedback& WithCodeReviewArn(Aws::String&& value) { SetCodeReviewArn(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) that identifies the code review. </p>
+     * <p>The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+     * <code>CodeReview</code> </a> object. </p>
      */
     inline RecommendationFeedback& WithCodeReviewArn(const char* value) { SetCodeReviewArn(value); return *this;}
 
@@ -191,42 +197,82 @@ namespace Model
 
 
     /**
-     * <p> The user principal that made the API call. </p>
+     * <p> The ID of the user that made the API call. </p> <p> The <code>UserId</code>
+     * is an IAM principal that can be specified as an AWS account ID or an Amazon
+     * Resource Name (ARN). For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
+     * Specifying a Principal</a> in the <i>AWS Identity and Access Management User
+     * Guide</i>. </p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
 
     /**
-     * <p> The user principal that made the API call. </p>
+     * <p> The ID of the user that made the API call. </p> <p> The <code>UserId</code>
+     * is an IAM principal that can be specified as an AWS account ID or an Amazon
+     * Resource Name (ARN). For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
+     * Specifying a Principal</a> in the <i>AWS Identity and Access Management User
+     * Guide</i>. </p>
      */
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
 
     /**
-     * <p> The user principal that made the API call. </p>
+     * <p> The ID of the user that made the API call. </p> <p> The <code>UserId</code>
+     * is an IAM principal that can be specified as an AWS account ID or an Amazon
+     * Resource Name (ARN). For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
+     * Specifying a Principal</a> in the <i>AWS Identity and Access Management User
+     * Guide</i>. </p>
      */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
     /**
-     * <p> The user principal that made the API call. </p>
+     * <p> The ID of the user that made the API call. </p> <p> The <code>UserId</code>
+     * is an IAM principal that can be specified as an AWS account ID or an Amazon
+     * Resource Name (ARN). For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
+     * Specifying a Principal</a> in the <i>AWS Identity and Access Management User
+     * Guide</i>. </p>
      */
     inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
 
     /**
-     * <p> The user principal that made the API call. </p>
+     * <p> The ID of the user that made the API call. </p> <p> The <code>UserId</code>
+     * is an IAM principal that can be specified as an AWS account ID or an Amazon
+     * Resource Name (ARN). For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
+     * Specifying a Principal</a> in the <i>AWS Identity and Access Management User
+     * Guide</i>. </p>
      */
     inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
 
     /**
-     * <p> The user principal that made the API call. </p>
+     * <p> The ID of the user that made the API call. </p> <p> The <code>UserId</code>
+     * is an IAM principal that can be specified as an AWS account ID or an Amazon
+     * Resource Name (ARN). For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
+     * Specifying a Principal</a> in the <i>AWS Identity and Access Management User
+     * Guide</i>. </p>
      */
     inline RecommendationFeedback& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
 
     /**
-     * <p> The user principal that made the API call. </p>
+     * <p> The ID of the user that made the API call. </p> <p> The <code>UserId</code>
+     * is an IAM principal that can be specified as an AWS account ID or an Amazon
+     * Resource Name (ARN). For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
+     * Specifying a Principal</a> in the <i>AWS Identity and Access Management User
+     * Guide</i>. </p>
      */
     inline RecommendationFeedback& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
     /**
-     * <p> The user principal that made the API call. </p>
+     * <p> The ID of the user that made the API call. </p> <p> The <code>UserId</code>
+     * is an IAM principal that can be specified as an AWS account ID or an Amazon
+     * Resource Name (ARN). For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
+     * Specifying a Principal</a> in the <i>AWS Identity and Access Management User
+     * Guide</i>. </p>
      */
     inline RecommendationFeedback& WithUserId(const char* value) { SetUserId(value); return *this;}
 

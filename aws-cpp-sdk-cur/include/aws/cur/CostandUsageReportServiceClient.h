@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cur/CostandUsageReportService_EXPORTS.h>
@@ -69,10 +59,10 @@ namespace Model
         class ModifyReportDefinitionRequest;
         class PutReportDefinitionRequest;
 
-        typedef Aws::Utils::Outcome<DeleteReportDefinitionResult, Aws::Client::AWSError<CostandUsageReportServiceErrors>> DeleteReportDefinitionOutcome;
-        typedef Aws::Utils::Outcome<DescribeReportDefinitionsResult, Aws::Client::AWSError<CostandUsageReportServiceErrors>> DescribeReportDefinitionsOutcome;
-        typedef Aws::Utils::Outcome<ModifyReportDefinitionResult, Aws::Client::AWSError<CostandUsageReportServiceErrors>> ModifyReportDefinitionOutcome;
-        typedef Aws::Utils::Outcome<PutReportDefinitionResult, Aws::Client::AWSError<CostandUsageReportServiceErrors>> PutReportDefinitionOutcome;
+        typedef Aws::Utils::Outcome<DeleteReportDefinitionResult, CostandUsageReportServiceError> DeleteReportDefinitionOutcome;
+        typedef Aws::Utils::Outcome<DescribeReportDefinitionsResult, CostandUsageReportServiceError> DescribeReportDefinitionsOutcome;
+        typedef Aws::Utils::Outcome<ModifyReportDefinitionResult, CostandUsageReportServiceError> ModifyReportDefinitionOutcome;
+        typedef Aws::Utils::Outcome<PutReportDefinitionResult, CostandUsageReportServiceError> PutReportDefinitionOutcome;
 
         typedef std::future<DeleteReportDefinitionOutcome> DeleteReportDefinitionOutcomeCallable;
         typedef std::future<DescribeReportDefinitionsOutcome> DescribeReportDefinitionsOutcomeCallable;
@@ -123,8 +113,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~CostandUsageReportServiceClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "Cost and Usage Report Service"; }
 
 
         /**

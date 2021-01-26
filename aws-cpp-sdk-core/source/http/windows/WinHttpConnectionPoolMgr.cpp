@@ -1,17 +1,7 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  * 
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  * 
-  *  http://aws.amazon.com/apache2.0
-  * 
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/http/windows/WinHttpConnectionPoolMgr.h>
 
@@ -48,11 +38,14 @@ void WinHttpConnectionPoolMgr::DoCloseHandle(void* handle) const
 
 void* WinHttpConnectionPoolMgr::CreateNewConnection(const Aws::String& host, HostConnectionContainer& connectionContainer) const
 {
+    // WinHttpConnect uses a session handle (here we name it as open handle) to create a connection handle
     HINTERNET newConnection = WinHttpConnect(GetOpenHandle(), StringUtils::ToWString(host.c_str()).c_str(), connectionContainer.port, 0);
 
     DWORD timeoutMs = GetConnectTimeout();
     DWORD requestMs = GetRequestTimeout();
 
+    // timeout options are inheritable from connection handle to request handle
+    // https://docs.microsoft.com/en-us/windows/win32/winhttp/hinternet-handles-in-winhttp
     WinHttpSetOption(newConnection, WINHTTP_OPTION_CONNECT_TIMEOUT, &timeoutMs, sizeof(timeoutMs));
     WinHttpSetOption(newConnection, WINHTTP_OPTION_RECEIVE_TIMEOUT, &requestMs, sizeof(requestMs));
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/quicksight/model/GetDashboardEmbedUrlRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -28,7 +18,7 @@ using namespace Aws::Http;
 GetDashboardEmbedUrlRequest::GetDashboardEmbedUrlRequest() : 
     m_awsAccountIdHasBeenSet(false),
     m_dashboardIdHasBeenSet(false),
-    m_identityType(IdentityType::NOT_SET),
+    m_identityType(EmbeddingIdentityType::NOT_SET),
     m_identityTypeHasBeenSet(false),
     m_sessionLifetimeInMinutes(0),
     m_sessionLifetimeInMinutesHasBeenSet(false),
@@ -36,7 +26,11 @@ GetDashboardEmbedUrlRequest::GetDashboardEmbedUrlRequest() :
     m_undoRedoDisabledHasBeenSet(false),
     m_resetDisabled(false),
     m_resetDisabledHasBeenSet(false),
-    m_userArnHasBeenSet(false)
+    m_statePersistenceEnabled(false),
+    m_statePersistenceEnabledHasBeenSet(false),
+    m_userArnHasBeenSet(false),
+    m_namespaceHasBeenSet(false),
+    m_additionalDashboardIdsHasBeenSet(false)
 {
 }
 
@@ -50,7 +44,7 @@ void GetDashboardEmbedUrlRequest::AddQueryStringParameters(URI& uri) const
     Aws::StringStream ss;
     if(m_identityTypeHasBeenSet)
     {
-      ss << IdentityTypeMapper::GetNameForIdentityType(m_identityType);
+      ss << EmbeddingIdentityTypeMapper::GetNameForEmbeddingIdentityType(m_identityType);
       uri.AddQueryStringParameter("creds-type", ss.str());
       ss.str("");
     }
@@ -76,11 +70,35 @@ void GetDashboardEmbedUrlRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
+    if(m_statePersistenceEnabledHasBeenSet)
+    {
+      ss << m_statePersistenceEnabled;
+      uri.AddQueryStringParameter("state-persistence-enabled", ss.str());
+      ss.str("");
+    }
+
     if(m_userArnHasBeenSet)
     {
       ss << m_userArn;
       uri.AddQueryStringParameter("user-arn", ss.str());
       ss.str("");
+    }
+
+    if(m_namespaceHasBeenSet)
+    {
+      ss << m_namespace;
+      uri.AddQueryStringParameter("namespace", ss.str());
+      ss.str("");
+    }
+
+    if(m_additionalDashboardIdsHasBeenSet)
+    {
+      for(const auto& item : m_additionalDashboardIds)
+      {
+        ss << item;
+        uri.AddQueryStringParameter("additional-dashboard-ids", ss.str());
+        ss.str("");
+      }
     }
 
 }

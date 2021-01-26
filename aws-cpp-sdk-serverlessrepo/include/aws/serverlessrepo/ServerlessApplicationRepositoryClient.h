@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/serverlessrepo/ServerlessApplicationRepository_EXPORTS.h>
@@ -88,20 +78,20 @@ namespace Model
         class UnshareApplicationRequest;
         class UpdateApplicationRequest;
 
-        typedef Aws::Utils::Outcome<CreateApplicationResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> CreateApplicationOutcome;
-        typedef Aws::Utils::Outcome<CreateApplicationVersionResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> CreateApplicationVersionOutcome;
-        typedef Aws::Utils::Outcome<CreateCloudFormationChangeSetResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> CreateCloudFormationChangeSetOutcome;
-        typedef Aws::Utils::Outcome<CreateCloudFormationTemplateResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> CreateCloudFormationTemplateOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> DeleteApplicationOutcome;
-        typedef Aws::Utils::Outcome<GetApplicationResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> GetApplicationOutcome;
-        typedef Aws::Utils::Outcome<GetApplicationPolicyResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> GetApplicationPolicyOutcome;
-        typedef Aws::Utils::Outcome<GetCloudFormationTemplateResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> GetCloudFormationTemplateOutcome;
-        typedef Aws::Utils::Outcome<ListApplicationDependenciesResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> ListApplicationDependenciesOutcome;
-        typedef Aws::Utils::Outcome<ListApplicationVersionsResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> ListApplicationVersionsOutcome;
-        typedef Aws::Utils::Outcome<ListApplicationsResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> ListApplicationsOutcome;
-        typedef Aws::Utils::Outcome<PutApplicationPolicyResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> PutApplicationPolicyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> UnshareApplicationOutcome;
-        typedef Aws::Utils::Outcome<UpdateApplicationResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> UpdateApplicationOutcome;
+        typedef Aws::Utils::Outcome<CreateApplicationResult, ServerlessApplicationRepositoryError> CreateApplicationOutcome;
+        typedef Aws::Utils::Outcome<CreateApplicationVersionResult, ServerlessApplicationRepositoryError> CreateApplicationVersionOutcome;
+        typedef Aws::Utils::Outcome<CreateCloudFormationChangeSetResult, ServerlessApplicationRepositoryError> CreateCloudFormationChangeSetOutcome;
+        typedef Aws::Utils::Outcome<CreateCloudFormationTemplateResult, ServerlessApplicationRepositoryError> CreateCloudFormationTemplateOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ServerlessApplicationRepositoryError> DeleteApplicationOutcome;
+        typedef Aws::Utils::Outcome<GetApplicationResult, ServerlessApplicationRepositoryError> GetApplicationOutcome;
+        typedef Aws::Utils::Outcome<GetApplicationPolicyResult, ServerlessApplicationRepositoryError> GetApplicationPolicyOutcome;
+        typedef Aws::Utils::Outcome<GetCloudFormationTemplateResult, ServerlessApplicationRepositoryError> GetCloudFormationTemplateOutcome;
+        typedef Aws::Utils::Outcome<ListApplicationDependenciesResult, ServerlessApplicationRepositoryError> ListApplicationDependenciesOutcome;
+        typedef Aws::Utils::Outcome<ListApplicationVersionsResult, ServerlessApplicationRepositoryError> ListApplicationVersionsOutcome;
+        typedef Aws::Utils::Outcome<ListApplicationsResult, ServerlessApplicationRepositoryError> ListApplicationsOutcome;
+        typedef Aws::Utils::Outcome<PutApplicationPolicyResult, ServerlessApplicationRepositoryError> PutApplicationPolicyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ServerlessApplicationRepositoryError> UnshareApplicationOutcome;
+        typedef Aws::Utils::Outcome<UpdateApplicationResult, ServerlessApplicationRepositoryError> UpdateApplicationOutcome;
 
         typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
         typedef std::future<CreateApplicationVersionOutcome> CreateApplicationVersionOutcomeCallable;
@@ -208,8 +198,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~ServerlessApplicationRepositoryClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "ServerlessApplicationRepository"; }
 
 
         /**

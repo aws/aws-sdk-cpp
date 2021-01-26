@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/codedeploy/model/ErrorCode.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -63,6 +53,7 @@ namespace Aws
         static const int REVISION_MISSING_HASH = HashingUtils::HashString("REVISION_MISSING");
         static const int THROTTLED_HASH = HashingUtils::HashString("THROTTLED");
         static const int TIMEOUT_HASH = HashingUtils::HashString("TIMEOUT");
+        static const int CLOUDFORMATION_STACK_FAILURE_HASH = HashingUtils::HashString("CLOUDFORMATION_STACK_FAILURE");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)
@@ -200,6 +191,10 @@ namespace Aws
           {
             return ErrorCode::TIMEOUT;
           }
+          else if (hashCode == CLOUDFORMATION_STACK_FAILURE_HASH)
+          {
+            return ErrorCode::CLOUDFORMATION_STACK_FAILURE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -280,6 +275,8 @@ namespace Aws
             return "THROTTLED";
           case ErrorCode::TIMEOUT:
             return "TIMEOUT";
+          case ErrorCode::CLOUDFORMATION_STACK_FAILURE:
+            return "CLOUDFORMATION_STACK_FAILURE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

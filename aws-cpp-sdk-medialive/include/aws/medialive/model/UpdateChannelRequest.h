@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/MediaLiveRequest.h>
+#include <aws/medialive/model/CdiInputSpecification.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/medialive/model/EncoderSettings.h>
@@ -49,6 +40,37 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "UpdateChannel"; }
 
     Aws::String SerializePayload() const override;
+
+
+    /**
+     * Specification of CDI inputs for this channel
+     */
+    inline const CdiInputSpecification& GetCdiInputSpecification() const{ return m_cdiInputSpecification; }
+
+    /**
+     * Specification of CDI inputs for this channel
+     */
+    inline bool CdiInputSpecificationHasBeenSet() const { return m_cdiInputSpecificationHasBeenSet; }
+
+    /**
+     * Specification of CDI inputs for this channel
+     */
+    inline void SetCdiInputSpecification(const CdiInputSpecification& value) { m_cdiInputSpecificationHasBeenSet = true; m_cdiInputSpecification = value; }
+
+    /**
+     * Specification of CDI inputs for this channel
+     */
+    inline void SetCdiInputSpecification(CdiInputSpecification&& value) { m_cdiInputSpecificationHasBeenSet = true; m_cdiInputSpecification = std::move(value); }
+
+    /**
+     * Specification of CDI inputs for this channel
+     */
+    inline UpdateChannelRequest& WithCdiInputSpecification(const CdiInputSpecification& value) { SetCdiInputSpecification(value); return *this;}
+
+    /**
+     * Specification of CDI inputs for this channel
+     */
+    inline UpdateChannelRequest& WithCdiInputSpecification(CdiInputSpecification&& value) { SetCdiInputSpecification(std::move(value)); return *this;}
 
 
     /**
@@ -190,32 +212,32 @@ namespace Model
 
 
     /**
-     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     * Specification of network and file inputs for this channel
      */
     inline const InputSpecification& GetInputSpecification() const{ return m_inputSpecification; }
 
     /**
-     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     * Specification of network and file inputs for this channel
      */
     inline bool InputSpecificationHasBeenSet() const { return m_inputSpecificationHasBeenSet; }
 
     /**
-     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     * Specification of network and file inputs for this channel
      */
     inline void SetInputSpecification(const InputSpecification& value) { m_inputSpecificationHasBeenSet = true; m_inputSpecification = value; }
 
     /**
-     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     * Specification of network and file inputs for this channel
      */
     inline void SetInputSpecification(InputSpecification&& value) { m_inputSpecificationHasBeenSet = true; m_inputSpecification = std::move(value); }
 
     /**
-     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     * Specification of network and file inputs for this channel
      */
     inline UpdateChannelRequest& WithInputSpecification(const InputSpecification& value) { SetInputSpecification(value); return *this;}
 
     /**
-     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     * Specification of network and file inputs for this channel
      */
     inline UpdateChannelRequest& WithInputSpecification(InputSpecification&& value) { SetInputSpecification(std::move(value)); return *this;}
 
@@ -349,6 +371,9 @@ namespace Model
     inline UpdateChannelRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
   private:
+
+    CdiInputSpecification m_cdiInputSpecification;
+    bool m_cdiInputSpecificationHasBeenSet;
 
     Aws::String m_channelId;
     bool m_channelIdHasBeenSet;

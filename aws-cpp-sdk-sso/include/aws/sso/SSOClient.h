@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sso/SSO_EXPORTS.h>
@@ -69,10 +59,10 @@ namespace Model
         class ListAccountsRequest;
         class LogoutRequest;
 
-        typedef Aws::Utils::Outcome<GetRoleCredentialsResult, Aws::Client::AWSError<SSOErrors>> GetRoleCredentialsOutcome;
-        typedef Aws::Utils::Outcome<ListAccountRolesResult, Aws::Client::AWSError<SSOErrors>> ListAccountRolesOutcome;
-        typedef Aws::Utils::Outcome<ListAccountsResult, Aws::Client::AWSError<SSOErrors>> ListAccountsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SSOErrors>> LogoutOutcome;
+        typedef Aws::Utils::Outcome<GetRoleCredentialsResult, SSOError> GetRoleCredentialsOutcome;
+        typedef Aws::Utils::Outcome<ListAccountRolesResult, SSOError> ListAccountRolesOutcome;
+        typedef Aws::Utils::Outcome<ListAccountsResult, SSOError> ListAccountsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SSOError> LogoutOutcome;
 
         typedef std::future<GetRoleCredentialsOutcome> GetRoleCredentialsOutcomeCallable;
         typedef std::future<ListAccountRolesOutcome> ListAccountRolesOutcomeCallable;
@@ -96,13 +86,13 @@ namespace Model
    * is AWS Single Sign-On?</a> in the <i>AWS SSO User Guide</i>.</p> <p>This API
    * reference guide describes the AWS SSO Portal operations that you can call
    * programatically and includes detailed information on data types and errors.</p>
-   * <note> <p>AWS provides SDKs that consist of libraries and sample code for
+   *  <p>AWS provides SDKs that consist of libraries and sample code for
    * various programming languages and platforms, such as Java, Ruby, .Net, iOS, or
    * Android. The SDKs provide a convenient way to create programmatic access to AWS
    * SSO and other AWS services. For more information about the AWS SDKs, including
    * how to download and install them, see <a
    * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.</p>
-   * </note>
+   * 
    */
   class AWS_SSO_API SSOClient : public Aws::Client::AWSJsonClient
   {
@@ -129,8 +119,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~SSOClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "SSO"; }
 
 
         /**

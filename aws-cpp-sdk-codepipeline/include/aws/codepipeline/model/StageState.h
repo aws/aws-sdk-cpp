@@ -1,24 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/codepipeline/model/StageExecution.h>
 #include <aws/codepipeline/model/TransitionState.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/codepipeline/model/StageExecution.h>
 #include <aws/codepipeline/model/ActionState.h>
 #include <utility>
 
@@ -91,6 +81,25 @@ namespace Model
      * <p>The name of the stage.</p>
      */
     inline StageState& WithStageName(const char* value) { SetStageName(value); return *this;}
+
+
+    
+    inline const StageExecution& GetInboundExecution() const{ return m_inboundExecution; }
+
+    
+    inline bool InboundExecutionHasBeenSet() const { return m_inboundExecutionHasBeenSet; }
+
+    
+    inline void SetInboundExecution(const StageExecution& value) { m_inboundExecutionHasBeenSet = true; m_inboundExecution = value; }
+
+    
+    inline void SetInboundExecution(StageExecution&& value) { m_inboundExecutionHasBeenSet = true; m_inboundExecution = std::move(value); }
+
+    
+    inline StageState& WithInboundExecution(const StageExecution& value) { SetInboundExecution(value); return *this;}
+
+    
+    inline StageState& WithInboundExecution(StageExecution&& value) { SetInboundExecution(std::move(value)); return *this;}
 
 
     /**
@@ -205,6 +214,9 @@ namespace Model
 
     Aws::String m_stageName;
     bool m_stageNameHasBeenSet;
+
+    StageExecution m_inboundExecution;
+    bool m_inboundExecutionHasBeenSet;
 
     TransitionState m_inboundTransitionState;
     bool m_inboundTransitionStateHasBeenSet;

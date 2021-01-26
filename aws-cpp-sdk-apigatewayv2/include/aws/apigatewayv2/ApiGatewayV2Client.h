@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
@@ -145,6 +135,7 @@ namespace Model
         class DeleteStageRequest;
         class DeleteVpcLinkRequest;
         class ExportApiRequest;
+        class ResetAuthorizersCacheRequest;
         class GetApiRequest;
         class GetApiMappingRequest;
         class GetApiMappingsRequest;
@@ -188,77 +179,78 @@ namespace Model
         class UpdateStageRequest;
         class UpdateVpcLinkRequest;
 
-        typedef Aws::Utils::Outcome<CreateApiResult, Aws::Client::AWSError<ApiGatewayV2Errors>> CreateApiOutcome;
-        typedef Aws::Utils::Outcome<CreateApiMappingResult, Aws::Client::AWSError<ApiGatewayV2Errors>> CreateApiMappingOutcome;
-        typedef Aws::Utils::Outcome<CreateAuthorizerResult, Aws::Client::AWSError<ApiGatewayV2Errors>> CreateAuthorizerOutcome;
-        typedef Aws::Utils::Outcome<CreateDeploymentResult, Aws::Client::AWSError<ApiGatewayV2Errors>> CreateDeploymentOutcome;
-        typedef Aws::Utils::Outcome<CreateDomainNameResult, Aws::Client::AWSError<ApiGatewayV2Errors>> CreateDomainNameOutcome;
-        typedef Aws::Utils::Outcome<CreateIntegrationResult, Aws::Client::AWSError<ApiGatewayV2Errors>> CreateIntegrationOutcome;
-        typedef Aws::Utils::Outcome<CreateIntegrationResponseResult, Aws::Client::AWSError<ApiGatewayV2Errors>> CreateIntegrationResponseOutcome;
-        typedef Aws::Utils::Outcome<CreateModelResult, Aws::Client::AWSError<ApiGatewayV2Errors>> CreateModelOutcome;
-        typedef Aws::Utils::Outcome<CreateRouteResult, Aws::Client::AWSError<ApiGatewayV2Errors>> CreateRouteOutcome;
-        typedef Aws::Utils::Outcome<CreateRouteResponseResult, Aws::Client::AWSError<ApiGatewayV2Errors>> CreateRouteResponseOutcome;
-        typedef Aws::Utils::Outcome<CreateStageResult, Aws::Client::AWSError<ApiGatewayV2Errors>> CreateStageOutcome;
-        typedef Aws::Utils::Outcome<CreateVpcLinkResult, Aws::Client::AWSError<ApiGatewayV2Errors>> CreateVpcLinkOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ApiGatewayV2Errors>> DeleteAccessLogSettingsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ApiGatewayV2Errors>> DeleteApiOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ApiGatewayV2Errors>> DeleteApiMappingOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ApiGatewayV2Errors>> DeleteAuthorizerOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ApiGatewayV2Errors>> DeleteCorsConfigurationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ApiGatewayV2Errors>> DeleteDeploymentOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ApiGatewayV2Errors>> DeleteDomainNameOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ApiGatewayV2Errors>> DeleteIntegrationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ApiGatewayV2Errors>> DeleteIntegrationResponseOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ApiGatewayV2Errors>> DeleteModelOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ApiGatewayV2Errors>> DeleteRouteOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ApiGatewayV2Errors>> DeleteRouteRequestParameterOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ApiGatewayV2Errors>> DeleteRouteResponseOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ApiGatewayV2Errors>> DeleteRouteSettingsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ApiGatewayV2Errors>> DeleteStageOutcome;
-        typedef Aws::Utils::Outcome<DeleteVpcLinkResult, Aws::Client::AWSError<ApiGatewayV2Errors>> DeleteVpcLinkOutcome;
-        typedef Aws::Utils::Outcome<ExportApiResult, Aws::Client::AWSError<ApiGatewayV2Errors>> ExportApiOutcome;
-        typedef Aws::Utils::Outcome<GetApiResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetApiOutcome;
-        typedef Aws::Utils::Outcome<GetApiMappingResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetApiMappingOutcome;
-        typedef Aws::Utils::Outcome<GetApiMappingsResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetApiMappingsOutcome;
-        typedef Aws::Utils::Outcome<GetApisResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetApisOutcome;
-        typedef Aws::Utils::Outcome<GetAuthorizerResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetAuthorizerOutcome;
-        typedef Aws::Utils::Outcome<GetAuthorizersResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetAuthorizersOutcome;
-        typedef Aws::Utils::Outcome<GetDeploymentResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetDeploymentOutcome;
-        typedef Aws::Utils::Outcome<GetDeploymentsResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetDeploymentsOutcome;
-        typedef Aws::Utils::Outcome<GetDomainNameResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetDomainNameOutcome;
-        typedef Aws::Utils::Outcome<GetDomainNamesResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetDomainNamesOutcome;
-        typedef Aws::Utils::Outcome<GetIntegrationResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetIntegrationOutcome;
-        typedef Aws::Utils::Outcome<GetIntegrationResponseResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetIntegrationResponseOutcome;
-        typedef Aws::Utils::Outcome<GetIntegrationResponsesResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetIntegrationResponsesOutcome;
-        typedef Aws::Utils::Outcome<GetIntegrationsResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetIntegrationsOutcome;
-        typedef Aws::Utils::Outcome<GetModelResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetModelOutcome;
-        typedef Aws::Utils::Outcome<GetModelTemplateResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetModelTemplateOutcome;
-        typedef Aws::Utils::Outcome<GetModelsResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetModelsOutcome;
-        typedef Aws::Utils::Outcome<GetRouteResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetRouteOutcome;
-        typedef Aws::Utils::Outcome<GetRouteResponseResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetRouteResponseOutcome;
-        typedef Aws::Utils::Outcome<GetRouteResponsesResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetRouteResponsesOutcome;
-        typedef Aws::Utils::Outcome<GetRoutesResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetRoutesOutcome;
-        typedef Aws::Utils::Outcome<GetStageResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetStageOutcome;
-        typedef Aws::Utils::Outcome<GetStagesResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetStagesOutcome;
-        typedef Aws::Utils::Outcome<GetTagsResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetTagsOutcome;
-        typedef Aws::Utils::Outcome<GetVpcLinkResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetVpcLinkOutcome;
-        typedef Aws::Utils::Outcome<GetVpcLinksResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetVpcLinksOutcome;
-        typedef Aws::Utils::Outcome<ImportApiResult, Aws::Client::AWSError<ApiGatewayV2Errors>> ImportApiOutcome;
-        typedef Aws::Utils::Outcome<ReimportApiResult, Aws::Client::AWSError<ApiGatewayV2Errors>> ReimportApiOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<ApiGatewayV2Errors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ApiGatewayV2Errors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateApiResult, Aws::Client::AWSError<ApiGatewayV2Errors>> UpdateApiOutcome;
-        typedef Aws::Utils::Outcome<UpdateApiMappingResult, Aws::Client::AWSError<ApiGatewayV2Errors>> UpdateApiMappingOutcome;
-        typedef Aws::Utils::Outcome<UpdateAuthorizerResult, Aws::Client::AWSError<ApiGatewayV2Errors>> UpdateAuthorizerOutcome;
-        typedef Aws::Utils::Outcome<UpdateDeploymentResult, Aws::Client::AWSError<ApiGatewayV2Errors>> UpdateDeploymentOutcome;
-        typedef Aws::Utils::Outcome<UpdateDomainNameResult, Aws::Client::AWSError<ApiGatewayV2Errors>> UpdateDomainNameOutcome;
-        typedef Aws::Utils::Outcome<UpdateIntegrationResult, Aws::Client::AWSError<ApiGatewayV2Errors>> UpdateIntegrationOutcome;
-        typedef Aws::Utils::Outcome<UpdateIntegrationResponseResult, Aws::Client::AWSError<ApiGatewayV2Errors>> UpdateIntegrationResponseOutcome;
-        typedef Aws::Utils::Outcome<UpdateModelResult, Aws::Client::AWSError<ApiGatewayV2Errors>> UpdateModelOutcome;
-        typedef Aws::Utils::Outcome<UpdateRouteResult, Aws::Client::AWSError<ApiGatewayV2Errors>> UpdateRouteOutcome;
-        typedef Aws::Utils::Outcome<UpdateRouteResponseResult, Aws::Client::AWSError<ApiGatewayV2Errors>> UpdateRouteResponseOutcome;
-        typedef Aws::Utils::Outcome<UpdateStageResult, Aws::Client::AWSError<ApiGatewayV2Errors>> UpdateStageOutcome;
-        typedef Aws::Utils::Outcome<UpdateVpcLinkResult, Aws::Client::AWSError<ApiGatewayV2Errors>> UpdateVpcLinkOutcome;
+        typedef Aws::Utils::Outcome<CreateApiResult, ApiGatewayV2Error> CreateApiOutcome;
+        typedef Aws::Utils::Outcome<CreateApiMappingResult, ApiGatewayV2Error> CreateApiMappingOutcome;
+        typedef Aws::Utils::Outcome<CreateAuthorizerResult, ApiGatewayV2Error> CreateAuthorizerOutcome;
+        typedef Aws::Utils::Outcome<CreateDeploymentResult, ApiGatewayV2Error> CreateDeploymentOutcome;
+        typedef Aws::Utils::Outcome<CreateDomainNameResult, ApiGatewayV2Error> CreateDomainNameOutcome;
+        typedef Aws::Utils::Outcome<CreateIntegrationResult, ApiGatewayV2Error> CreateIntegrationOutcome;
+        typedef Aws::Utils::Outcome<CreateIntegrationResponseResult, ApiGatewayV2Error> CreateIntegrationResponseOutcome;
+        typedef Aws::Utils::Outcome<CreateModelResult, ApiGatewayV2Error> CreateModelOutcome;
+        typedef Aws::Utils::Outcome<CreateRouteResult, ApiGatewayV2Error> CreateRouteOutcome;
+        typedef Aws::Utils::Outcome<CreateRouteResponseResult, ApiGatewayV2Error> CreateRouteResponseOutcome;
+        typedef Aws::Utils::Outcome<CreateStageResult, ApiGatewayV2Error> CreateStageOutcome;
+        typedef Aws::Utils::Outcome<CreateVpcLinkResult, ApiGatewayV2Error> CreateVpcLinkOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeleteAccessLogSettingsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeleteApiOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeleteApiMappingOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeleteAuthorizerOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeleteCorsConfigurationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeleteDeploymentOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeleteDomainNameOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeleteIntegrationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeleteIntegrationResponseOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeleteModelOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeleteRouteOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeleteRouteRequestParameterOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeleteRouteResponseOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeleteRouteSettingsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeleteStageOutcome;
+        typedef Aws::Utils::Outcome<DeleteVpcLinkResult, ApiGatewayV2Error> DeleteVpcLinkOutcome;
+        typedef Aws::Utils::Outcome<ExportApiResult, ApiGatewayV2Error> ExportApiOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> ResetAuthorizersCacheOutcome;
+        typedef Aws::Utils::Outcome<GetApiResult, ApiGatewayV2Error> GetApiOutcome;
+        typedef Aws::Utils::Outcome<GetApiMappingResult, ApiGatewayV2Error> GetApiMappingOutcome;
+        typedef Aws::Utils::Outcome<GetApiMappingsResult, ApiGatewayV2Error> GetApiMappingsOutcome;
+        typedef Aws::Utils::Outcome<GetApisResult, ApiGatewayV2Error> GetApisOutcome;
+        typedef Aws::Utils::Outcome<GetAuthorizerResult, ApiGatewayV2Error> GetAuthorizerOutcome;
+        typedef Aws::Utils::Outcome<GetAuthorizersResult, ApiGatewayV2Error> GetAuthorizersOutcome;
+        typedef Aws::Utils::Outcome<GetDeploymentResult, ApiGatewayV2Error> GetDeploymentOutcome;
+        typedef Aws::Utils::Outcome<GetDeploymentsResult, ApiGatewayV2Error> GetDeploymentsOutcome;
+        typedef Aws::Utils::Outcome<GetDomainNameResult, ApiGatewayV2Error> GetDomainNameOutcome;
+        typedef Aws::Utils::Outcome<GetDomainNamesResult, ApiGatewayV2Error> GetDomainNamesOutcome;
+        typedef Aws::Utils::Outcome<GetIntegrationResult, ApiGatewayV2Error> GetIntegrationOutcome;
+        typedef Aws::Utils::Outcome<GetIntegrationResponseResult, ApiGatewayV2Error> GetIntegrationResponseOutcome;
+        typedef Aws::Utils::Outcome<GetIntegrationResponsesResult, ApiGatewayV2Error> GetIntegrationResponsesOutcome;
+        typedef Aws::Utils::Outcome<GetIntegrationsResult, ApiGatewayV2Error> GetIntegrationsOutcome;
+        typedef Aws::Utils::Outcome<GetModelResult, ApiGatewayV2Error> GetModelOutcome;
+        typedef Aws::Utils::Outcome<GetModelTemplateResult, ApiGatewayV2Error> GetModelTemplateOutcome;
+        typedef Aws::Utils::Outcome<GetModelsResult, ApiGatewayV2Error> GetModelsOutcome;
+        typedef Aws::Utils::Outcome<GetRouteResult, ApiGatewayV2Error> GetRouteOutcome;
+        typedef Aws::Utils::Outcome<GetRouteResponseResult, ApiGatewayV2Error> GetRouteResponseOutcome;
+        typedef Aws::Utils::Outcome<GetRouteResponsesResult, ApiGatewayV2Error> GetRouteResponsesOutcome;
+        typedef Aws::Utils::Outcome<GetRoutesResult, ApiGatewayV2Error> GetRoutesOutcome;
+        typedef Aws::Utils::Outcome<GetStageResult, ApiGatewayV2Error> GetStageOutcome;
+        typedef Aws::Utils::Outcome<GetStagesResult, ApiGatewayV2Error> GetStagesOutcome;
+        typedef Aws::Utils::Outcome<GetTagsResult, ApiGatewayV2Error> GetTagsOutcome;
+        typedef Aws::Utils::Outcome<GetVpcLinkResult, ApiGatewayV2Error> GetVpcLinkOutcome;
+        typedef Aws::Utils::Outcome<GetVpcLinksResult, ApiGatewayV2Error> GetVpcLinksOutcome;
+        typedef Aws::Utils::Outcome<ImportApiResult, ApiGatewayV2Error> ImportApiOutcome;
+        typedef Aws::Utils::Outcome<ReimportApiResult, ApiGatewayV2Error> ReimportApiOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, ApiGatewayV2Error> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateApiResult, ApiGatewayV2Error> UpdateApiOutcome;
+        typedef Aws::Utils::Outcome<UpdateApiMappingResult, ApiGatewayV2Error> UpdateApiMappingOutcome;
+        typedef Aws::Utils::Outcome<UpdateAuthorizerResult, ApiGatewayV2Error> UpdateAuthorizerOutcome;
+        typedef Aws::Utils::Outcome<UpdateDeploymentResult, ApiGatewayV2Error> UpdateDeploymentOutcome;
+        typedef Aws::Utils::Outcome<UpdateDomainNameResult, ApiGatewayV2Error> UpdateDomainNameOutcome;
+        typedef Aws::Utils::Outcome<UpdateIntegrationResult, ApiGatewayV2Error> UpdateIntegrationOutcome;
+        typedef Aws::Utils::Outcome<UpdateIntegrationResponseResult, ApiGatewayV2Error> UpdateIntegrationResponseOutcome;
+        typedef Aws::Utils::Outcome<UpdateModelResult, ApiGatewayV2Error> UpdateModelOutcome;
+        typedef Aws::Utils::Outcome<UpdateRouteResult, ApiGatewayV2Error> UpdateRouteOutcome;
+        typedef Aws::Utils::Outcome<UpdateRouteResponseResult, ApiGatewayV2Error> UpdateRouteResponseOutcome;
+        typedef Aws::Utils::Outcome<UpdateStageResult, ApiGatewayV2Error> UpdateStageOutcome;
+        typedef Aws::Utils::Outcome<UpdateVpcLinkResult, ApiGatewayV2Error> UpdateVpcLinkOutcome;
 
         typedef std::future<CreateApiOutcome> CreateApiOutcomeCallable;
         typedef std::future<CreateApiMappingOutcome> CreateApiMappingOutcomeCallable;
@@ -289,6 +281,7 @@ namespace Model
         typedef std::future<DeleteStageOutcome> DeleteStageOutcomeCallable;
         typedef std::future<DeleteVpcLinkOutcome> DeleteVpcLinkOutcomeCallable;
         typedef std::future<ExportApiOutcome> ExportApiOutcomeCallable;
+        typedef std::future<ResetAuthorizersCacheOutcome> ResetAuthorizersCacheOutcomeCallable;
         typedef std::future<GetApiOutcome> GetApiOutcomeCallable;
         typedef std::future<GetApiMappingOutcome> GetApiMappingOutcomeCallable;
         typedef std::future<GetApiMappingsOutcome> GetApiMappingsOutcomeCallable;
@@ -364,6 +357,7 @@ namespace Model
     typedef std::function<void(const ApiGatewayV2Client*, const Model::DeleteStageRequest&, const Model::DeleteStageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStageResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayV2Client*, const Model::DeleteVpcLinkRequest&, const Model::DeleteVpcLinkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVpcLinkResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayV2Client*, const Model::ExportApiRequest&, Model::ExportApiOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportApiResponseReceivedHandler;
+    typedef std::function<void(const ApiGatewayV2Client*, const Model::ResetAuthorizersCacheRequest&, const Model::ResetAuthorizersCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetAuthorizersCacheResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayV2Client*, const Model::GetApiRequest&, const Model::GetApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApiResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayV2Client*, const Model::GetApiMappingRequest&, const Model::GetApiMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApiMappingResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayV2Client*, const Model::GetApiMappingsRequest&, const Model::GetApiMappingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApiMappingsResponseReceivedHandler;
@@ -435,8 +429,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~ApiGatewayV2Client();
-
-        inline virtual const char* GetServiceClientName() const override { return "ApiGatewayV2"; }
 
 
         /**
@@ -1160,6 +1152,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ExportApiAsync(const Model::ExportApiRequest& request, const ExportApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Resets all authorizer cache entries on a stage. Supported only for HTTP
+         * APIs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ResetAuthorizersCache">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ResetAuthorizersCacheOutcome ResetAuthorizersCache(const Model::ResetAuthorizersCacheRequest& request) const;
+
+        /**
+         * <p>Resets all authorizer cache entries on a stage. Supported only for HTTP
+         * APIs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ResetAuthorizersCache">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ResetAuthorizersCacheOutcomeCallable ResetAuthorizersCacheCallable(const Model::ResetAuthorizersCacheRequest& request) const;
+
+        /**
+         * <p>Resets all authorizer cache entries on a stage. Supported only for HTTP
+         * APIs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ResetAuthorizersCache">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ResetAuthorizersCacheAsync(const Model::ResetAuthorizersCacheRequest& request, const ResetAuthorizersCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets an Api resource.</p><p><h3>See Also:</h3>   <a
@@ -2247,6 +2267,7 @@ namespace Model
         void DeleteStageAsyncHelper(const Model::DeleteStageRequest& request, const DeleteStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVpcLinkAsyncHelper(const Model::DeleteVpcLinkRequest& request, const DeleteVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ExportApiAsyncHelper(const Model::ExportApiRequest& request, const ExportApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ResetAuthorizersCacheAsyncHelper(const Model::ResetAuthorizersCacheRequest& request, const ResetAuthorizersCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetApiAsyncHelper(const Model::GetApiRequest& request, const GetApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetApiMappingAsyncHelper(const Model::GetApiMappingRequest& request, const GetApiMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetApiMappingsAsyncHelper(const Model::GetApiMappingsRequest& request, const GetApiMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

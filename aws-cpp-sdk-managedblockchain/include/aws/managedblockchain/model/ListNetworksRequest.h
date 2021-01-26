@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/managedblockchain/ManagedBlockchain_EXPORTS.h>
@@ -130,37 +120,37 @@ namespace Model
 
     /**
      * <p>An optional status specifier. If provided, only networks currently in this
-     * status are listed.</p>
+     * status are listed.</p> <p>Applies only to Hyperledger Fabric.</p>
      */
     inline const NetworkStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>An optional status specifier. If provided, only networks currently in this
-     * status are listed.</p>
+     * status are listed.</p> <p>Applies only to Hyperledger Fabric.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>An optional status specifier. If provided, only networks currently in this
-     * status are listed.</p>
+     * status are listed.</p> <p>Applies only to Hyperledger Fabric.</p>
      */
     inline void SetStatus(const NetworkStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>An optional status specifier. If provided, only networks currently in this
-     * status are listed.</p>
+     * status are listed.</p> <p>Applies only to Hyperledger Fabric.</p>
      */
     inline void SetStatus(NetworkStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>An optional status specifier. If provided, only networks currently in this
-     * status are listed.</p>
+     * status are listed.</p> <p>Applies only to Hyperledger Fabric.</p>
      */
     inline ListNetworksRequest& WithStatus(const NetworkStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>An optional status specifier. If provided, only networks currently in this
-     * status are listed.</p>
+     * status are listed.</p> <p>Applies only to Hyperledger Fabric.</p>
      */
     inline ListNetworksRequest& WithStatus(NetworkStatus&& value) { SetStatus(std::move(value)); return *this;}
 

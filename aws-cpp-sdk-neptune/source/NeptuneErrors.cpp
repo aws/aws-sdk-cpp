@@ -1,25 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/neptune/NeptuneErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::Neptune;
 using namespace Aws::Utils;
+using namespace Aws::Neptune;
 
 namespace Aws
 {
@@ -30,6 +20,7 @@ namespace NeptuneErrorMapper
 
 static const int D_B_CLUSTER_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBClusterNotFoundFault");
 static const int SUBSCRIPTION_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SubscriptionNotFound");
+static const int D_B_CLUSTER_ENDPOINT_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("DBClusterEndpointQuotaExceededFault");
 static const int OPTION_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("OptionGroupNotFoundFault");
 static const int SUBSCRIPTION_CATEGORY_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SubscriptionCategoryNotFound");
 static const int INVALID_D_B_SUBNET_GROUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBSubnetGroupStateFault");
@@ -50,7 +41,9 @@ static const int D_B_SUBNET_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashStrin
 static const int D_B_SNAPSHOT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBSnapshotAlreadyExists");
 static const int SNAPSHOT_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("SnapshotQuotaExceeded");
 static const int SUBNET_ALREADY_IN_USE_HASH = HashingUtils::HashString("SubnetAlreadyInUse");
+static const int D_B_CLUSTER_ENDPOINT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBClusterEndpointAlreadyExistsFault");
 static const int D_B_SUBNET_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBSubnetGroupAlreadyExists");
+static const int D_B_CLUSTER_ENDPOINT_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBClusterEndpointNotFoundFault");
 static const int EVENT_SUBSCRIPTION_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("EventSubscriptionQuotaExceeded");
 static const int D_B_INSTANCE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBInstanceAlreadyExists");
 static const int INVALID_D_B_PARAMETER_GROUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBParameterGroupState");
@@ -76,6 +69,7 @@ static const int K_M_S_KEY_NOT_ACCESSIBLE_FAULT_HASH = HashingUtils::HashString(
 static const int CERTIFICATE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("CertificateNotFound");
 static const int D_B_PARAMETER_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBParameterGroupAlreadyExists");
 static const int S_N_S_NO_AUTHORIZATION_FAULT_HASH = HashingUtils::HashString("SNSNoAuthorization");
+static const int INVALID_D_B_CLUSTER_ENDPOINT_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBClusterEndpointStateFault");
 static const int INVALID_RESTORE_FAULT_HASH = HashingUtils::HashString("InvalidRestoreFault");
 static const int STORAGE_TYPE_NOT_SUPPORTED_FAULT_HASH = HashingUtils::HashString("StorageTypeNotSupported");
 static const int S_N_S_TOPIC_ARN_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SNSTopicArnNotFound");
@@ -100,6 +94,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == SUBSCRIPTION_NOT_FOUND_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::SUBSCRIPTION_NOT_FOUND_FAULT), false);
+  }
+  else if (hashCode == D_B_CLUSTER_ENDPOINT_QUOTA_EXCEEDED_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_CLUSTER_ENDPOINT_QUOTA_EXCEEDED_FAULT), false);
   }
   else if (hashCode == OPTION_GROUP_NOT_FOUND_FAULT_HASH)
   {
@@ -181,9 +179,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::SUBNET_ALREADY_IN_USE), false);
   }
+  else if (hashCode == D_B_CLUSTER_ENDPOINT_ALREADY_EXISTS_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_CLUSTER_ENDPOINT_ALREADY_EXISTS_FAULT), false);
+  }
   else if (hashCode == D_B_SUBNET_GROUP_ALREADY_EXISTS_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_SUBNET_GROUP_ALREADY_EXISTS_FAULT), false);
+  }
+  else if (hashCode == D_B_CLUSTER_ENDPOINT_NOT_FOUND_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::D_B_CLUSTER_ENDPOINT_NOT_FOUND_FAULT), false);
   }
   else if (hashCode == EVENT_SUBSCRIPTION_QUOTA_EXCEEDED_FAULT_HASH)
   {
@@ -284,6 +290,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == S_N_S_NO_AUTHORIZATION_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::S_N_S_NO_AUTHORIZATION_FAULT), false);
+  }
+  else if (hashCode == INVALID_D_B_CLUSTER_ENDPOINT_STATE_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptuneErrors::INVALID_D_B_CLUSTER_ENDPOINT_STATE_FAULT), false);
   }
   else if (hashCode == INVALID_RESTORE_FAULT_HASH)
   {

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
@@ -27,7 +17,15 @@
 #include <aws/dms/model/KinesisSettings.h>
 #include <aws/dms/model/KafkaSettings.h>
 #include <aws/dms/model/ElasticsearchSettings.h>
+#include <aws/dms/model/NeptuneSettings.h>
 #include <aws/dms/model/RedshiftSettings.h>
+#include <aws/dms/model/PostgreSQLSettings.h>
+#include <aws/dms/model/MySQLSettings.h>
+#include <aws/dms/model/OracleSettings.h>
+#include <aws/dms/model/SybaseSettings.h>
+#include <aws/dms/model/MicrosoftSQLServerSettings.h>
+#include <aws/dms/model/IBMDb2Settings.h>
+#include <aws/dms/model/DocDbSettings.h>
 #include <aws/dms/model/Tag.h>
 #include <utility>
 
@@ -62,56 +60,56 @@ namespace Model
     /**
      * <p>The database endpoint identifier. Identifiers must begin with a letter and
      * must contain only ASCII letters, digits, and hyphens. They can't end with a
-     * hyphen or contain two consecutive hyphens.</p>
+     * hyphen, or contain two consecutive hyphens.</p>
      */
     inline const Aws::String& GetEndpointIdentifier() const{ return m_endpointIdentifier; }
 
     /**
      * <p>The database endpoint identifier. Identifiers must begin with a letter and
      * must contain only ASCII letters, digits, and hyphens. They can't end with a
-     * hyphen or contain two consecutive hyphens.</p>
+     * hyphen, or contain two consecutive hyphens.</p>
      */
     inline bool EndpointIdentifierHasBeenSet() const { return m_endpointIdentifierHasBeenSet; }
 
     /**
      * <p>The database endpoint identifier. Identifiers must begin with a letter and
      * must contain only ASCII letters, digits, and hyphens. They can't end with a
-     * hyphen or contain two consecutive hyphens.</p>
+     * hyphen, or contain two consecutive hyphens.</p>
      */
     inline void SetEndpointIdentifier(const Aws::String& value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier = value; }
 
     /**
      * <p>The database endpoint identifier. Identifiers must begin with a letter and
      * must contain only ASCII letters, digits, and hyphens. They can't end with a
-     * hyphen or contain two consecutive hyphens.</p>
+     * hyphen, or contain two consecutive hyphens.</p>
      */
     inline void SetEndpointIdentifier(Aws::String&& value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier = std::move(value); }
 
     /**
      * <p>The database endpoint identifier. Identifiers must begin with a letter and
      * must contain only ASCII letters, digits, and hyphens. They can't end with a
-     * hyphen or contain two consecutive hyphens.</p>
+     * hyphen, or contain two consecutive hyphens.</p>
      */
     inline void SetEndpointIdentifier(const char* value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier.assign(value); }
 
     /**
      * <p>The database endpoint identifier. Identifiers must begin with a letter and
      * must contain only ASCII letters, digits, and hyphens. They can't end with a
-     * hyphen or contain two consecutive hyphens.</p>
+     * hyphen, or contain two consecutive hyphens.</p>
      */
     inline CreateEndpointRequest& WithEndpointIdentifier(const Aws::String& value) { SetEndpointIdentifier(value); return *this;}
 
     /**
      * <p>The database endpoint identifier. Identifiers must begin with a letter and
      * must contain only ASCII letters, digits, and hyphens. They can't end with a
-     * hyphen or contain two consecutive hyphens.</p>
+     * hyphen, or contain two consecutive hyphens.</p>
      */
     inline CreateEndpointRequest& WithEndpointIdentifier(Aws::String&& value) { SetEndpointIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The database endpoint identifier. Identifiers must begin with a letter and
      * must contain only ASCII letters, digits, and hyphens. They can't end with a
-     * hyphen or contain two consecutive hyphens.</p>
+     * hyphen, or contain two consecutive hyphens.</p>
      */
     inline CreateEndpointRequest& WithEndpointIdentifier(const char* value) { SetEndpointIdentifier(value); return *this;}
 
@@ -161,8 +159,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>,
+     * and <code>"neptune"</code>.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
@@ -174,8 +172,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>,
+     * and <code>"neptune"</code>.</p>
      */
     inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
 
@@ -187,8 +185,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>,
+     * and <code>"neptune"</code>.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
@@ -200,8 +198,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>,
+     * and <code>"neptune"</code>.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
 
@@ -213,8 +211,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>,
+     * and <code>"neptune"</code>.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
@@ -226,8 +224,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>,
+     * and <code>"neptune"</code>.</p>
      */
     inline CreateEndpointRequest& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
@@ -239,8 +237,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>,
+     * and <code>"neptune"</code>.</p>
      */
     inline CreateEndpointRequest& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
 
@@ -252,8 +250,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>,
+     * and <code>"neptune"</code>.</p>
      */
     inline CreateEndpointRequest& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 
@@ -1037,8 +1035,8 @@ namespace Model
 
     /**
      * <p>Settings in JSON format for the source MongoDB endpoint. For more information
-     * about the available settings, see the configuration properties section in <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">Using
+     * about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Using
      * MongoDB as a Target for AWS Database Migration Service</a> in the <i>AWS
      * Database Migration Service User Guide.</i> </p>
      */
@@ -1046,8 +1044,8 @@ namespace Model
 
     /**
      * <p>Settings in JSON format for the source MongoDB endpoint. For more information
-     * about the available settings, see the configuration properties section in <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">Using
+     * about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Using
      * MongoDB as a Target for AWS Database Migration Service</a> in the <i>AWS
      * Database Migration Service User Guide.</i> </p>
      */
@@ -1055,8 +1053,8 @@ namespace Model
 
     /**
      * <p>Settings in JSON format for the source MongoDB endpoint. For more information
-     * about the available settings, see the configuration properties section in <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">Using
+     * about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Using
      * MongoDB as a Target for AWS Database Migration Service</a> in the <i>AWS
      * Database Migration Service User Guide.</i> </p>
      */
@@ -1064,8 +1062,8 @@ namespace Model
 
     /**
      * <p>Settings in JSON format for the source MongoDB endpoint. For more information
-     * about the available settings, see the configuration properties section in <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">Using
+     * about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Using
      * MongoDB as a Target for AWS Database Migration Service</a> in the <i>AWS
      * Database Migration Service User Guide.</i> </p>
      */
@@ -1073,8 +1071,8 @@ namespace Model
 
     /**
      * <p>Settings in JSON format for the source MongoDB endpoint. For more information
-     * about the available settings, see the configuration properties section in <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">Using
+     * about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Using
      * MongoDB as a Target for AWS Database Migration Service</a> in the <i>AWS
      * Database Migration Service User Guide.</i> </p>
      */
@@ -1082,8 +1080,8 @@ namespace Model
 
     /**
      * <p>Settings in JSON format for the source MongoDB endpoint. For more information
-     * about the available settings, see the configuration properties section in <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">Using
+     * about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Using
      * MongoDB as a Target for AWS Database Migration Service</a> in the <i>AWS
      * Database Migration Service User Guide.</i> </p>
      */
@@ -1092,110 +1090,110 @@ namespace Model
 
     /**
      * <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data
-     * Streams. For information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
-     * Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
-     * Database Migration User Guide.</i> </p>
+     * Streams. For more information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html">Using
+     * Amazon Kinesis Data Streams as a Target for AWS Database Migration Service</a>
+     * in the <i>AWS Database Migration Service User Guide.</i> </p>
      */
     inline const KinesisSettings& GetKinesisSettings() const{ return m_kinesisSettings; }
 
     /**
      * <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data
-     * Streams. For information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
-     * Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
-     * Database Migration User Guide.</i> </p>
+     * Streams. For more information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html">Using
+     * Amazon Kinesis Data Streams as a Target for AWS Database Migration Service</a>
+     * in the <i>AWS Database Migration Service User Guide.</i> </p>
      */
     inline bool KinesisSettingsHasBeenSet() const { return m_kinesisSettingsHasBeenSet; }
 
     /**
      * <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data
-     * Streams. For information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
-     * Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
-     * Database Migration User Guide.</i> </p>
+     * Streams. For more information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html">Using
+     * Amazon Kinesis Data Streams as a Target for AWS Database Migration Service</a>
+     * in the <i>AWS Database Migration Service User Guide.</i> </p>
      */
     inline void SetKinesisSettings(const KinesisSettings& value) { m_kinesisSettingsHasBeenSet = true; m_kinesisSettings = value; }
 
     /**
      * <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data
-     * Streams. For information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
-     * Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
-     * Database Migration User Guide.</i> </p>
+     * Streams. For more information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html">Using
+     * Amazon Kinesis Data Streams as a Target for AWS Database Migration Service</a>
+     * in the <i>AWS Database Migration Service User Guide.</i> </p>
      */
     inline void SetKinesisSettings(KinesisSettings&& value) { m_kinesisSettingsHasBeenSet = true; m_kinesisSettings = std::move(value); }
 
     /**
      * <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data
-     * Streams. For information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
-     * Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
-     * Database Migration User Guide.</i> </p>
+     * Streams. For more information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html">Using
+     * Amazon Kinesis Data Streams as a Target for AWS Database Migration Service</a>
+     * in the <i>AWS Database Migration Service User Guide.</i> </p>
      */
     inline CreateEndpointRequest& WithKinesisSettings(const KinesisSettings& value) { SetKinesisSettings(value); return *this;}
 
     /**
      * <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data
-     * Streams. For information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
-     * Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
-     * Database Migration User Guide.</i> </p>
+     * Streams. For more information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html">Using
+     * Amazon Kinesis Data Streams as a Target for AWS Database Migration Service</a>
+     * in the <i>AWS Database Migration Service User Guide.</i> </p>
      */
     inline CreateEndpointRequest& WithKinesisSettings(KinesisSettings&& value) { SetKinesisSettings(std::move(value)); return *this;}
 
 
     /**
-     * <p>Settings in JSON format for the target Apache Kafka endpoint. For information
-     * about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using
-     * Object Mapping to Migrate Data to Apache Kafka</a> in the <i>AWS Database
-     * Migration User Guide.</i> </p>
+     * <p>Settings in JSON format for the target Apache Kafka endpoint. For more
+     * information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
+     * Apache Kafka as a Target for AWS Database Migration Service</a> in the <i>AWS
+     * Database Migration Service User Guide.</i> </p>
      */
     inline const KafkaSettings& GetKafkaSettings() const{ return m_kafkaSettings; }
 
     /**
-     * <p>Settings in JSON format for the target Apache Kafka endpoint. For information
-     * about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using
-     * Object Mapping to Migrate Data to Apache Kafka</a> in the <i>AWS Database
-     * Migration User Guide.</i> </p>
+     * <p>Settings in JSON format for the target Apache Kafka endpoint. For more
+     * information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
+     * Apache Kafka as a Target for AWS Database Migration Service</a> in the <i>AWS
+     * Database Migration Service User Guide.</i> </p>
      */
     inline bool KafkaSettingsHasBeenSet() const { return m_kafkaSettingsHasBeenSet; }
 
     /**
-     * <p>Settings in JSON format for the target Apache Kafka endpoint. For information
-     * about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using
-     * Object Mapping to Migrate Data to Apache Kafka</a> in the <i>AWS Database
-     * Migration User Guide.</i> </p>
+     * <p>Settings in JSON format for the target Apache Kafka endpoint. For more
+     * information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
+     * Apache Kafka as a Target for AWS Database Migration Service</a> in the <i>AWS
+     * Database Migration Service User Guide.</i> </p>
      */
     inline void SetKafkaSettings(const KafkaSettings& value) { m_kafkaSettingsHasBeenSet = true; m_kafkaSettings = value; }
 
     /**
-     * <p>Settings in JSON format for the target Apache Kafka endpoint. For information
-     * about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using
-     * Object Mapping to Migrate Data to Apache Kafka</a> in the <i>AWS Database
-     * Migration User Guide.</i> </p>
+     * <p>Settings in JSON format for the target Apache Kafka endpoint. For more
+     * information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
+     * Apache Kafka as a Target for AWS Database Migration Service</a> in the <i>AWS
+     * Database Migration Service User Guide.</i> </p>
      */
     inline void SetKafkaSettings(KafkaSettings&& value) { m_kafkaSettingsHasBeenSet = true; m_kafkaSettings = std::move(value); }
 
     /**
-     * <p>Settings in JSON format for the target Apache Kafka endpoint. For information
-     * about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using
-     * Object Mapping to Migrate Data to Apache Kafka</a> in the <i>AWS Database
-     * Migration User Guide.</i> </p>
+     * <p>Settings in JSON format for the target Apache Kafka endpoint. For more
+     * information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
+     * Apache Kafka as a Target for AWS Database Migration Service</a> in the <i>AWS
+     * Database Migration Service User Guide.</i> </p>
      */
     inline CreateEndpointRequest& WithKafkaSettings(const KafkaSettings& value) { SetKafkaSettings(value); return *this;}
 
     /**
-     * <p>Settings in JSON format for the target Apache Kafka endpoint. For information
-     * about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using
-     * Object Mapping to Migrate Data to Apache Kafka</a> in the <i>AWS Database
-     * Migration User Guide.</i> </p>
+     * <p>Settings in JSON format for the target Apache Kafka endpoint. For more
+     * information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
+     * Apache Kafka as a Target for AWS Database Migration Service</a> in the <i>AWS
+     * Database Migration Service User Guide.</i> </p>
      */
     inline CreateEndpointRequest& WithKafkaSettings(KafkaSettings&& value) { SetKafkaSettings(std::move(value)); return *this;}
 
@@ -1205,7 +1203,7 @@ namespace Model
      * information about the available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
      * Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in
-     * the <i>AWS Database Migration User Guide.</i> </p>
+     * the <i>AWS Database Migration Service User Guide</i>.</p>
      */
     inline const ElasticsearchSettings& GetElasticsearchSettings() const{ return m_elasticsearchSettings; }
 
@@ -1214,7 +1212,7 @@ namespace Model
      * information about the available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
      * Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in
-     * the <i>AWS Database Migration User Guide.</i> </p>
+     * the <i>AWS Database Migration Service User Guide</i>.</p>
      */
     inline bool ElasticsearchSettingsHasBeenSet() const { return m_elasticsearchSettingsHasBeenSet; }
 
@@ -1223,7 +1221,7 @@ namespace Model
      * information about the available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
      * Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in
-     * the <i>AWS Database Migration User Guide.</i> </p>
+     * the <i>AWS Database Migration Service User Guide</i>.</p>
      */
     inline void SetElasticsearchSettings(const ElasticsearchSettings& value) { m_elasticsearchSettingsHasBeenSet = true; m_elasticsearchSettings = value; }
 
@@ -1232,7 +1230,7 @@ namespace Model
      * information about the available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
      * Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in
-     * the <i>AWS Database Migration User Guide.</i> </p>
+     * the <i>AWS Database Migration Service User Guide</i>.</p>
      */
     inline void SetElasticsearchSettings(ElasticsearchSettings&& value) { m_elasticsearchSettingsHasBeenSet = true; m_elasticsearchSettings = std::move(value); }
 
@@ -1241,7 +1239,7 @@ namespace Model
      * information about the available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
      * Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in
-     * the <i>AWS Database Migration User Guide.</i> </p>
+     * the <i>AWS Database Migration Service User Guide</i>.</p>
      */
     inline CreateEndpointRequest& WithElasticsearchSettings(const ElasticsearchSettings& value) { SetElasticsearchSettings(value); return *this;}
 
@@ -1250,9 +1248,64 @@ namespace Model
      * information about the available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
      * Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in
-     * the <i>AWS Database Migration User Guide.</i> </p>
+     * the <i>AWS Database Migration Service User Guide</i>.</p>
      */
     inline CreateEndpointRequest& WithElasticsearchSettings(ElasticsearchSettings&& value) { SetElasticsearchSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Settings in JSON format for the target Amazon Neptune endpoint. For more
+     * information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying
+     * Endpoint Settings for Amazon Neptune as a Target</a> in the <i>AWS Database
+     * Migration Service User Guide.</i> </p>
+     */
+    inline const NeptuneSettings& GetNeptuneSettings() const{ return m_neptuneSettings; }
+
+    /**
+     * <p>Settings in JSON format for the target Amazon Neptune endpoint. For more
+     * information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying
+     * Endpoint Settings for Amazon Neptune as a Target</a> in the <i>AWS Database
+     * Migration Service User Guide.</i> </p>
+     */
+    inline bool NeptuneSettingsHasBeenSet() const { return m_neptuneSettingsHasBeenSet; }
+
+    /**
+     * <p>Settings in JSON format for the target Amazon Neptune endpoint. For more
+     * information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying
+     * Endpoint Settings for Amazon Neptune as a Target</a> in the <i>AWS Database
+     * Migration Service User Guide.</i> </p>
+     */
+    inline void SetNeptuneSettings(const NeptuneSettings& value) { m_neptuneSettingsHasBeenSet = true; m_neptuneSettings = value; }
+
+    /**
+     * <p>Settings in JSON format for the target Amazon Neptune endpoint. For more
+     * information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying
+     * Endpoint Settings for Amazon Neptune as a Target</a> in the <i>AWS Database
+     * Migration Service User Guide.</i> </p>
+     */
+    inline void SetNeptuneSettings(NeptuneSettings&& value) { m_neptuneSettingsHasBeenSet = true; m_neptuneSettings = std::move(value); }
+
+    /**
+     * <p>Settings in JSON format for the target Amazon Neptune endpoint. For more
+     * information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying
+     * Endpoint Settings for Amazon Neptune as a Target</a> in the <i>AWS Database
+     * Migration Service User Guide.</i> </p>
+     */
+    inline CreateEndpointRequest& WithNeptuneSettings(const NeptuneSettings& value) { SetNeptuneSettings(value); return *this;}
+
+    /**
+     * <p>Settings in JSON format for the target Amazon Neptune endpoint. For more
+     * information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying
+     * Endpoint Settings for Amazon Neptune as a Target</a> in the <i>AWS Database
+     * Migration Service User Guide.</i> </p>
+     */
+    inline CreateEndpointRequest& WithNeptuneSettings(NeptuneSettings&& value) { SetNeptuneSettings(std::move(value)); return *this;}
 
 
     
@@ -1272,6 +1325,528 @@ namespace Model
 
     
     inline CreateEndpointRequest& WithRedshiftSettings(RedshiftSettings&& value) { SetRedshiftSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Settings in JSON format for the source and target PostgreSQL endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html">Extra
+     * connection attributes when using PostgreSQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html">
+     * Extra connection attributes when using PostgreSQL as a target for AWS DMS</a> in
+     * the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline const PostgreSQLSettings& GetPostgreSQLSettings() const{ return m_postgreSQLSettings; }
+
+    /**
+     * <p>Settings in JSON format for the source and target PostgreSQL endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html">Extra
+     * connection attributes when using PostgreSQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html">
+     * Extra connection attributes when using PostgreSQL as a target for AWS DMS</a> in
+     * the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline bool PostgreSQLSettingsHasBeenSet() const { return m_postgreSQLSettingsHasBeenSet; }
+
+    /**
+     * <p>Settings in JSON format for the source and target PostgreSQL endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html">Extra
+     * connection attributes when using PostgreSQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html">
+     * Extra connection attributes when using PostgreSQL as a target for AWS DMS</a> in
+     * the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline void SetPostgreSQLSettings(const PostgreSQLSettings& value) { m_postgreSQLSettingsHasBeenSet = true; m_postgreSQLSettings = value; }
+
+    /**
+     * <p>Settings in JSON format for the source and target PostgreSQL endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html">Extra
+     * connection attributes when using PostgreSQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html">
+     * Extra connection attributes when using PostgreSQL as a target for AWS DMS</a> in
+     * the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline void SetPostgreSQLSettings(PostgreSQLSettings&& value) { m_postgreSQLSettingsHasBeenSet = true; m_postgreSQLSettings = std::move(value); }
+
+    /**
+     * <p>Settings in JSON format for the source and target PostgreSQL endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html">Extra
+     * connection attributes when using PostgreSQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html">
+     * Extra connection attributes when using PostgreSQL as a target for AWS DMS</a> in
+     * the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline CreateEndpointRequest& WithPostgreSQLSettings(const PostgreSQLSettings& value) { SetPostgreSQLSettings(value); return *this;}
+
+    /**
+     * <p>Settings in JSON format for the source and target PostgreSQL endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html">Extra
+     * connection attributes when using PostgreSQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html">
+     * Extra connection attributes when using PostgreSQL as a target for AWS DMS</a> in
+     * the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline CreateEndpointRequest& WithPostgreSQLSettings(PostgreSQLSettings&& value) { SetPostgreSQLSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Settings in JSON format for the source and target MySQL endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html">Extra
+     * connection attributes when using MySQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html">Extra
+     * connection attributes when using a MySQL-compatible database as a target for AWS
+     * DMS</a> in the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline const MySQLSettings& GetMySQLSettings() const{ return m_mySQLSettings; }
+
+    /**
+     * <p>Settings in JSON format for the source and target MySQL endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html">Extra
+     * connection attributes when using MySQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html">Extra
+     * connection attributes when using a MySQL-compatible database as a target for AWS
+     * DMS</a> in the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline bool MySQLSettingsHasBeenSet() const { return m_mySQLSettingsHasBeenSet; }
+
+    /**
+     * <p>Settings in JSON format for the source and target MySQL endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html">Extra
+     * connection attributes when using MySQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html">Extra
+     * connection attributes when using a MySQL-compatible database as a target for AWS
+     * DMS</a> in the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline void SetMySQLSettings(const MySQLSettings& value) { m_mySQLSettingsHasBeenSet = true; m_mySQLSettings = value; }
+
+    /**
+     * <p>Settings in JSON format for the source and target MySQL endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html">Extra
+     * connection attributes when using MySQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html">Extra
+     * connection attributes when using a MySQL-compatible database as a target for AWS
+     * DMS</a> in the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline void SetMySQLSettings(MySQLSettings&& value) { m_mySQLSettingsHasBeenSet = true; m_mySQLSettings = std::move(value); }
+
+    /**
+     * <p>Settings in JSON format for the source and target MySQL endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html">Extra
+     * connection attributes when using MySQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html">Extra
+     * connection attributes when using a MySQL-compatible database as a target for AWS
+     * DMS</a> in the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline CreateEndpointRequest& WithMySQLSettings(const MySQLSettings& value) { SetMySQLSettings(value); return *this;}
+
+    /**
+     * <p>Settings in JSON format for the source and target MySQL endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html">Extra
+     * connection attributes when using MySQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html">Extra
+     * connection attributes when using a MySQL-compatible database as a target for AWS
+     * DMS</a> in the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline CreateEndpointRequest& WithMySQLSettings(MySQLSettings&& value) { SetMySQLSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Settings in JSON format for the source and target Oracle endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html">Extra
+     * connection attributes when using Oracle as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html">
+     * Extra connection attributes when using Oracle as a target for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline const OracleSettings& GetOracleSettings() const{ return m_oracleSettings; }
+
+    /**
+     * <p>Settings in JSON format for the source and target Oracle endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html">Extra
+     * connection attributes when using Oracle as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html">
+     * Extra connection attributes when using Oracle as a target for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline bool OracleSettingsHasBeenSet() const { return m_oracleSettingsHasBeenSet; }
+
+    /**
+     * <p>Settings in JSON format for the source and target Oracle endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html">Extra
+     * connection attributes when using Oracle as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html">
+     * Extra connection attributes when using Oracle as a target for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline void SetOracleSettings(const OracleSettings& value) { m_oracleSettingsHasBeenSet = true; m_oracleSettings = value; }
+
+    /**
+     * <p>Settings in JSON format for the source and target Oracle endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html">Extra
+     * connection attributes when using Oracle as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html">
+     * Extra connection attributes when using Oracle as a target for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline void SetOracleSettings(OracleSettings&& value) { m_oracleSettingsHasBeenSet = true; m_oracleSettings = std::move(value); }
+
+    /**
+     * <p>Settings in JSON format for the source and target Oracle endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html">Extra
+     * connection attributes when using Oracle as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html">
+     * Extra connection attributes when using Oracle as a target for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline CreateEndpointRequest& WithOracleSettings(const OracleSettings& value) { SetOracleSettings(value); return *this;}
+
+    /**
+     * <p>Settings in JSON format for the source and target Oracle endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html">Extra
+     * connection attributes when using Oracle as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html">
+     * Extra connection attributes when using Oracle as a target for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline CreateEndpointRequest& WithOracleSettings(OracleSettings&& value) { SetOracleSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Settings in JSON format for the source and target SAP ASE endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html">Extra
+     * connection attributes when using SAP ASE as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html">Extra
+     * connection attributes when using SAP ASE as a target for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline const SybaseSettings& GetSybaseSettings() const{ return m_sybaseSettings; }
+
+    /**
+     * <p>Settings in JSON format for the source and target SAP ASE endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html">Extra
+     * connection attributes when using SAP ASE as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html">Extra
+     * connection attributes when using SAP ASE as a target for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline bool SybaseSettingsHasBeenSet() const { return m_sybaseSettingsHasBeenSet; }
+
+    /**
+     * <p>Settings in JSON format for the source and target SAP ASE endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html">Extra
+     * connection attributes when using SAP ASE as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html">Extra
+     * connection attributes when using SAP ASE as a target for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline void SetSybaseSettings(const SybaseSettings& value) { m_sybaseSettingsHasBeenSet = true; m_sybaseSettings = value; }
+
+    /**
+     * <p>Settings in JSON format for the source and target SAP ASE endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html">Extra
+     * connection attributes when using SAP ASE as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html">Extra
+     * connection attributes when using SAP ASE as a target for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline void SetSybaseSettings(SybaseSettings&& value) { m_sybaseSettingsHasBeenSet = true; m_sybaseSettings = std::move(value); }
+
+    /**
+     * <p>Settings in JSON format for the source and target SAP ASE endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html">Extra
+     * connection attributes when using SAP ASE as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html">Extra
+     * connection attributes when using SAP ASE as a target for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline CreateEndpointRequest& WithSybaseSettings(const SybaseSettings& value) { SetSybaseSettings(value); return *this;}
+
+    /**
+     * <p>Settings in JSON format for the source and target SAP ASE endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html">Extra
+     * connection attributes when using SAP ASE as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html">Extra
+     * connection attributes when using SAP ASE as a target for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline CreateEndpointRequest& WithSybaseSettings(SybaseSettings&& value) { SetSybaseSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Settings in JSON format for the source and target Microsoft SQL Server
+     * endpoint. For information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html">Extra
+     * connection attributes when using SQL Server as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html">
+     * Extra connection attributes when using SQL Server as a target for AWS DMS</a> in
+     * the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline const MicrosoftSQLServerSettings& GetMicrosoftSQLServerSettings() const{ return m_microsoftSQLServerSettings; }
+
+    /**
+     * <p>Settings in JSON format for the source and target Microsoft SQL Server
+     * endpoint. For information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html">Extra
+     * connection attributes when using SQL Server as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html">
+     * Extra connection attributes when using SQL Server as a target for AWS DMS</a> in
+     * the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline bool MicrosoftSQLServerSettingsHasBeenSet() const { return m_microsoftSQLServerSettingsHasBeenSet; }
+
+    /**
+     * <p>Settings in JSON format for the source and target Microsoft SQL Server
+     * endpoint. For information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html">Extra
+     * connection attributes when using SQL Server as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html">
+     * Extra connection attributes when using SQL Server as a target for AWS DMS</a> in
+     * the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline void SetMicrosoftSQLServerSettings(const MicrosoftSQLServerSettings& value) { m_microsoftSQLServerSettingsHasBeenSet = true; m_microsoftSQLServerSettings = value; }
+
+    /**
+     * <p>Settings in JSON format for the source and target Microsoft SQL Server
+     * endpoint. For information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html">Extra
+     * connection attributes when using SQL Server as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html">
+     * Extra connection attributes when using SQL Server as a target for AWS DMS</a> in
+     * the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline void SetMicrosoftSQLServerSettings(MicrosoftSQLServerSettings&& value) { m_microsoftSQLServerSettingsHasBeenSet = true; m_microsoftSQLServerSettings = std::move(value); }
+
+    /**
+     * <p>Settings in JSON format for the source and target Microsoft SQL Server
+     * endpoint. For information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html">Extra
+     * connection attributes when using SQL Server as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html">
+     * Extra connection attributes when using SQL Server as a target for AWS DMS</a> in
+     * the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline CreateEndpointRequest& WithMicrosoftSQLServerSettings(const MicrosoftSQLServerSettings& value) { SetMicrosoftSQLServerSettings(value); return *this;}
+
+    /**
+     * <p>Settings in JSON format for the source and target Microsoft SQL Server
+     * endpoint. For information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html">Extra
+     * connection attributes when using SQL Server as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html">
+     * Extra connection attributes when using SQL Server as a target for AWS DMS</a> in
+     * the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline CreateEndpointRequest& WithMicrosoftSQLServerSettings(MicrosoftSQLServerSettings&& value) { SetMicrosoftSQLServerSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information
+     * about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html">Extra
+     * connection attributes when using Db2 LUW as a source for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline const IBMDb2Settings& GetIBMDb2Settings() const{ return m_iBMDb2Settings; }
+
+    /**
+     * <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information
+     * about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html">Extra
+     * connection attributes when using Db2 LUW as a source for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline bool IBMDb2SettingsHasBeenSet() const { return m_iBMDb2SettingsHasBeenSet; }
+
+    /**
+     * <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information
+     * about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html">Extra
+     * connection attributes when using Db2 LUW as a source for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline void SetIBMDb2Settings(const IBMDb2Settings& value) { m_iBMDb2SettingsHasBeenSet = true; m_iBMDb2Settings = value; }
+
+    /**
+     * <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information
+     * about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html">Extra
+     * connection attributes when using Db2 LUW as a source for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline void SetIBMDb2Settings(IBMDb2Settings&& value) { m_iBMDb2SettingsHasBeenSet = true; m_iBMDb2Settings = std::move(value); }
+
+    /**
+     * <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information
+     * about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html">Extra
+     * connection attributes when using Db2 LUW as a source for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline CreateEndpointRequest& WithIBMDb2Settings(const IBMDb2Settings& value) { SetIBMDb2Settings(value); return *this;}
+
+    /**
+     * <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information
+     * about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html">Extra
+     * connection attributes when using Db2 LUW as a source for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline CreateEndpointRequest& WithIBMDb2Settings(IBMDb2Settings&& value) { SetIBMDb2Settings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
+     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
+     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
+     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
+     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline void SetResourceIdentifier(Aws::String&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
+     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline void SetResourceIdentifier(const char* value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.assign(value); }
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
+     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline CreateEndpointRequest& WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
+     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline CreateEndpointRequest& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
+     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline CreateEndpointRequest& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
+
+
+    
+    inline const DocDbSettings& GetDocDbSettings() const{ return m_docDbSettings; }
+
+    
+    inline bool DocDbSettingsHasBeenSet() const { return m_docDbSettingsHasBeenSet; }
+
+    
+    inline void SetDocDbSettings(const DocDbSettings& value) { m_docDbSettingsHasBeenSet = true; m_docDbSettings = value; }
+
+    
+    inline void SetDocDbSettings(DocDbSettings&& value) { m_docDbSettingsHasBeenSet = true; m_docDbSettings = std::move(value); }
+
+    
+    inline CreateEndpointRequest& WithDocDbSettings(const DocDbSettings& value) { SetDocDbSettings(value); return *this;}
+
+    
+    inline CreateEndpointRequest& WithDocDbSettings(DocDbSettings&& value) { SetDocDbSettings(std::move(value)); return *this;}
 
   private:
 
@@ -1341,8 +1916,35 @@ namespace Model
     ElasticsearchSettings m_elasticsearchSettings;
     bool m_elasticsearchSettingsHasBeenSet;
 
+    NeptuneSettings m_neptuneSettings;
+    bool m_neptuneSettingsHasBeenSet;
+
     RedshiftSettings m_redshiftSettings;
     bool m_redshiftSettingsHasBeenSet;
+
+    PostgreSQLSettings m_postgreSQLSettings;
+    bool m_postgreSQLSettingsHasBeenSet;
+
+    MySQLSettings m_mySQLSettings;
+    bool m_mySQLSettingsHasBeenSet;
+
+    OracleSettings m_oracleSettings;
+    bool m_oracleSettingsHasBeenSet;
+
+    SybaseSettings m_sybaseSettings;
+    bool m_sybaseSettingsHasBeenSet;
+
+    MicrosoftSQLServerSettings m_microsoftSQLServerSettings;
+    bool m_microsoftSQLServerSettingsHasBeenSet;
+
+    IBMDb2Settings m_iBMDb2Settings;
+    bool m_iBMDb2SettingsHasBeenSet;
+
+    Aws::String m_resourceIdentifier;
+    bool m_resourceIdentifierHasBeenSet;
+
+    DocDbSettings m_docDbSettings;
+    bool m_docDbSettingsHasBeenSet;
   };
 
 } // namespace Model

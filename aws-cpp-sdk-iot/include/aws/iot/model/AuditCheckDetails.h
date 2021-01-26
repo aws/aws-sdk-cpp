@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -155,6 +145,31 @@ namespace Model
 
 
     /**
+     * <p> Describes how many of the non-compliant resources created during the
+     * evaluation of an audit check were marked as suppressed. </p>
+     */
+    inline long long GetSuppressedNonCompliantResourcesCount() const{ return m_suppressedNonCompliantResourcesCount; }
+
+    /**
+     * <p> Describes how many of the non-compliant resources created during the
+     * evaluation of an audit check were marked as suppressed. </p>
+     */
+    inline bool SuppressedNonCompliantResourcesCountHasBeenSet() const { return m_suppressedNonCompliantResourcesCountHasBeenSet; }
+
+    /**
+     * <p> Describes how many of the non-compliant resources created during the
+     * evaluation of an audit check were marked as suppressed. </p>
+     */
+    inline void SetSuppressedNonCompliantResourcesCount(long long value) { m_suppressedNonCompliantResourcesCountHasBeenSet = true; m_suppressedNonCompliantResourcesCount = value; }
+
+    /**
+     * <p> Describes how many of the non-compliant resources created during the
+     * evaluation of an audit check were marked as suppressed. </p>
+     */
+    inline AuditCheckDetails& WithSuppressedNonCompliantResourcesCount(long long value) { SetSuppressedNonCompliantResourcesCount(value); return *this;}
+
+
+    /**
      * <p>The code of any error encountered when this check is performed during this
      * audit. One of "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".</p>
      */
@@ -264,6 +279,9 @@ namespace Model
 
     long long m_nonCompliantResourcesCount;
     bool m_nonCompliantResourcesCountHasBeenSet;
+
+    long long m_suppressedNonCompliantResourcesCount;
+    bool m_suppressedNonCompliantResourcesCountHasBeenSet;
 
     Aws::String m_errorCode;
     bool m_errorCodeHasBeenSet;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
@@ -36,9 +26,16 @@ namespace Model
 
   /**
    * Channel mapping (ChannelMapping) contains the group of fields that hold the
-   * remixing value for each channel. Units are in dB. Acceptable values are within
-   * the range from -60 (mute) through 6. A setting of 0 passes the input channel
-   * unchanged to the output channel (no attenuation or amplification).<p><h3>See
+   * remixing value for each channel, in dB. Specify remix values to indicate how
+   * much of the content from your input audio channel you want in your output audio
+   * channels. Each instance of the InputChannels or InputChannelsFineTune array
+   * specifies these values for one output channel. Use one instance of this array
+   * for each output channel. In the console, each array corresponds to a column in
+   * the graphical depiction of the mapping matrix. The rows of the graphical matrix
+   * correspond to input channels. Valid values are within the range from -60 (mute)
+   * through 6. A setting of 0 passes the input channel unchanged to the output
+   * channel (no attenuation or amplification). Use InputChannels or
+   * InputChannelsFineTune to specify your remix values. Don't use both.<p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ChannelMapping">AWS
    * API Reference</a></p>
@@ -53,42 +50,58 @@ namespace Model
 
 
     /**
-     * List of output channels
+     * In your JSON job specification, include one child of OutputChannels for each
+     * audio channel that you want in your output. Each child should contain one
+     * instance of InputChannels or InputChannelsFineTune.
      */
     inline const Aws::Vector<OutputChannelMapping>& GetOutputChannels() const{ return m_outputChannels; }
 
     /**
-     * List of output channels
+     * In your JSON job specification, include one child of OutputChannels for each
+     * audio channel that you want in your output. Each child should contain one
+     * instance of InputChannels or InputChannelsFineTune.
      */
     inline bool OutputChannelsHasBeenSet() const { return m_outputChannelsHasBeenSet; }
 
     /**
-     * List of output channels
+     * In your JSON job specification, include one child of OutputChannels for each
+     * audio channel that you want in your output. Each child should contain one
+     * instance of InputChannels or InputChannelsFineTune.
      */
     inline void SetOutputChannels(const Aws::Vector<OutputChannelMapping>& value) { m_outputChannelsHasBeenSet = true; m_outputChannels = value; }
 
     /**
-     * List of output channels
+     * In your JSON job specification, include one child of OutputChannels for each
+     * audio channel that you want in your output. Each child should contain one
+     * instance of InputChannels or InputChannelsFineTune.
      */
     inline void SetOutputChannels(Aws::Vector<OutputChannelMapping>&& value) { m_outputChannelsHasBeenSet = true; m_outputChannels = std::move(value); }
 
     /**
-     * List of output channels
+     * In your JSON job specification, include one child of OutputChannels for each
+     * audio channel that you want in your output. Each child should contain one
+     * instance of InputChannels or InputChannelsFineTune.
      */
     inline ChannelMapping& WithOutputChannels(const Aws::Vector<OutputChannelMapping>& value) { SetOutputChannels(value); return *this;}
 
     /**
-     * List of output channels
+     * In your JSON job specification, include one child of OutputChannels for each
+     * audio channel that you want in your output. Each child should contain one
+     * instance of InputChannels or InputChannelsFineTune.
      */
     inline ChannelMapping& WithOutputChannels(Aws::Vector<OutputChannelMapping>&& value) { SetOutputChannels(std::move(value)); return *this;}
 
     /**
-     * List of output channels
+     * In your JSON job specification, include one child of OutputChannels for each
+     * audio channel that you want in your output. Each child should contain one
+     * instance of InputChannels or InputChannelsFineTune.
      */
     inline ChannelMapping& AddOutputChannels(const OutputChannelMapping& value) { m_outputChannelsHasBeenSet = true; m_outputChannels.push_back(value); return *this; }
 
     /**
-     * List of output channels
+     * In your JSON job specification, include one child of OutputChannels for each
+     * audio channel that you want in your output. Each child should contain one
+     * instance of InputChannels or InputChannelsFineTune.
      */
     inline ChannelMapping& AddOutputChannels(OutputChannelMapping&& value) { m_outputChannelsHasBeenSet = true; m_outputChannels.push_back(std::move(value)); return *this; }
 

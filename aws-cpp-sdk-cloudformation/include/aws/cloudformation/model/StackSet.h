@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
@@ -814,47 +804,65 @@ namespace Model
 
 
     /**
-     * <p>Reserved for internal use. No data returned.</p>
+     * <p>[<code>Service-managed</code> permissions] The organization root ID or
+     * organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOrganizationalUnitIds() const{ return m_organizationalUnitIds; }
 
     /**
-     * <p>Reserved for internal use. No data returned.</p>
+     * <p>[<code>Service-managed</code> permissions] The organization root ID or
+     * organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline bool OrganizationalUnitIdsHasBeenSet() const { return m_organizationalUnitIdsHasBeenSet; }
 
     /**
-     * <p>Reserved for internal use. No data returned.</p>
+     * <p>[<code>Service-managed</code> permissions] The organization root ID or
+     * organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline void SetOrganizationalUnitIds(const Aws::Vector<Aws::String>& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds = value; }
 
     /**
-     * <p>Reserved for internal use. No data returned.</p>
+     * <p>[<code>Service-managed</code> permissions] The organization root ID or
+     * organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline void SetOrganizationalUnitIds(Aws::Vector<Aws::String>&& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds = std::move(value); }
 
     /**
-     * <p>Reserved for internal use. No data returned.</p>
+     * <p>[<code>Service-managed</code> permissions] The organization root ID or
+     * organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline StackSet& WithOrganizationalUnitIds(const Aws::Vector<Aws::String>& value) { SetOrganizationalUnitIds(value); return *this;}
 
     /**
-     * <p>Reserved for internal use. No data returned.</p>
+     * <p>[<code>Service-managed</code> permissions] The organization root ID or
+     * organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline StackSet& WithOrganizationalUnitIds(Aws::Vector<Aws::String>&& value) { SetOrganizationalUnitIds(std::move(value)); return *this;}
 
     /**
-     * <p>Reserved for internal use. No data returned.</p>
+     * <p>[<code>Service-managed</code> permissions] The organization root ID or
+     * organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline StackSet& AddOrganizationalUnitIds(const Aws::String& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.push_back(value); return *this; }
 
     /**
-     * <p>Reserved for internal use. No data returned.</p>
+     * <p>[<code>Service-managed</code> permissions] The organization root ID or
+     * organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline StackSet& AddOrganizationalUnitIds(Aws::String&& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Reserved for internal use. No data returned.</p>
+     * <p>[<code>Service-managed</code> permissions] The organization root ID or
+     * organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline StackSet& AddOrganizationalUnitIds(const char* value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.push_back(value); return *this; }
 

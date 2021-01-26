@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/glue/model/MLTransform.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -53,7 +43,8 @@ MLTransform::MLTransform() :
     m_timeout(0),
     m_timeoutHasBeenSet(false),
     m_maxRetries(0),
-    m_maxRetriesHasBeenSet(false)
+    m_maxRetriesHasBeenSet(false),
+    m_transformEncryptionHasBeenSet(false)
 {
 }
 
@@ -82,7 +73,8 @@ MLTransform::MLTransform(JsonView jsonValue) :
     m_timeout(0),
     m_timeoutHasBeenSet(false),
     m_maxRetries(0),
-    m_maxRetriesHasBeenSet(false)
+    m_maxRetriesHasBeenSet(false),
+    m_transformEncryptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -221,6 +213,13 @@ MLTransform& MLTransform::operator =(JsonView jsonValue)
     m_maxRetriesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TransformEncryption"))
+  {
+    m_transformEncryption = jsonValue.GetObject("TransformEncryption");
+
+    m_transformEncryptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -339,6 +338,12 @@ JsonValue MLTransform::Jsonize() const
   if(m_maxRetriesHasBeenSet)
   {
    payload.WithInteger("MaxRetries", m_maxRetries);
+
+  }
+
+  if(m_transformEncryptionHasBeenSet)
+  {
+   payload.WithObject("TransformEncryption", m_transformEncryption.Jsonize());
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/awstransfer/model/CreateServerRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -24,6 +14,8 @@ using namespace Aws::Utils;
 
 CreateServerRequest::CreateServerRequest() : 
     m_certificateHasBeenSet(false),
+    m_domain(Domain::NOT_SET),
+    m_domainHasBeenSet(false),
     m_endpointDetailsHasBeenSet(false),
     m_endpointType(EndpointType::NOT_SET),
     m_endpointTypeHasBeenSet(false),
@@ -33,6 +25,7 @@ CreateServerRequest::CreateServerRequest() :
     m_identityProviderTypeHasBeenSet(false),
     m_loggingRoleHasBeenSet(false),
     m_protocolsHasBeenSet(false),
+    m_securityPolicyNameHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -45,6 +38,11 @@ Aws::String CreateServerRequest::SerializePayload() const
   {
    payload.WithString("Certificate", m_certificate);
 
+  }
+
+  if(m_domainHasBeenSet)
+  {
+   payload.WithString("Domain", DomainMapper::GetNameForDomain(m_domain));
   }
 
   if(m_endpointDetailsHasBeenSet)
@@ -89,6 +87,12 @@ Aws::String CreateServerRequest::SerializePayload() const
      protocolsJsonList[protocolsIndex].AsString(ProtocolMapper::GetNameForProtocol(m_protocols[protocolsIndex]));
    }
    payload.WithArray("Protocols", std::move(protocolsJsonList));
+
+  }
+
+  if(m_securityPolicyNameHasBeenSet)
+  {
+   payload.WithString("SecurityPolicyName", m_securityPolicyName);
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconvert/model/MotionImageInserter.h>
 #include <aws/mediaconvert/model/NielsenConfiguration.h>
+#include <aws/mediaconvert/model/NielsenNonLinearWatermarkSettings.h>
 #include <aws/mediaconvert/model/TimecodeConfig.h>
 #include <aws/mediaconvert/model/TimedMetadataInsertion.h>
 #include <aws/mediaconvert/model/InputTemplate.h>
@@ -311,6 +302,73 @@ namespace Model
 
 
     /**
+     * Ignore these settings unless you are using Nielsen non-linear watermarking.
+     * Specify the values that  MediaConvert uses to generate and place Nielsen
+     * watermarks in your output audio. In addition to  specifying these values, you
+     * also need to set up your cloud TIC server. These settings apply to  every output
+     * in your job. The MediaConvert implementation is currently with the following
+     * Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark
+     * Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
+     */
+    inline const NielsenNonLinearWatermarkSettings& GetNielsenNonLinearWatermark() const{ return m_nielsenNonLinearWatermark; }
+
+    /**
+     * Ignore these settings unless you are using Nielsen non-linear watermarking.
+     * Specify the values that  MediaConvert uses to generate and place Nielsen
+     * watermarks in your output audio. In addition to  specifying these values, you
+     * also need to set up your cloud TIC server. These settings apply to  every output
+     * in your job. The MediaConvert implementation is currently with the following
+     * Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark
+     * Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
+     */
+    inline bool NielsenNonLinearWatermarkHasBeenSet() const { return m_nielsenNonLinearWatermarkHasBeenSet; }
+
+    /**
+     * Ignore these settings unless you are using Nielsen non-linear watermarking.
+     * Specify the values that  MediaConvert uses to generate and place Nielsen
+     * watermarks in your output audio. In addition to  specifying these values, you
+     * also need to set up your cloud TIC server. These settings apply to  every output
+     * in your job. The MediaConvert implementation is currently with the following
+     * Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark
+     * Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
+     */
+    inline void SetNielsenNonLinearWatermark(const NielsenNonLinearWatermarkSettings& value) { m_nielsenNonLinearWatermarkHasBeenSet = true; m_nielsenNonLinearWatermark = value; }
+
+    /**
+     * Ignore these settings unless you are using Nielsen non-linear watermarking.
+     * Specify the values that  MediaConvert uses to generate and place Nielsen
+     * watermarks in your output audio. In addition to  specifying these values, you
+     * also need to set up your cloud TIC server. These settings apply to  every output
+     * in your job. The MediaConvert implementation is currently with the following
+     * Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark
+     * Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
+     */
+    inline void SetNielsenNonLinearWatermark(NielsenNonLinearWatermarkSettings&& value) { m_nielsenNonLinearWatermarkHasBeenSet = true; m_nielsenNonLinearWatermark = std::move(value); }
+
+    /**
+     * Ignore these settings unless you are using Nielsen non-linear watermarking.
+     * Specify the values that  MediaConvert uses to generate and place Nielsen
+     * watermarks in your output audio. In addition to  specifying these values, you
+     * also need to set up your cloud TIC server. These settings apply to  every output
+     * in your job. The MediaConvert implementation is currently with the following
+     * Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark
+     * Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
+     */
+    inline JobTemplateSettings& WithNielsenNonLinearWatermark(const NielsenNonLinearWatermarkSettings& value) { SetNielsenNonLinearWatermark(value); return *this;}
+
+    /**
+     * Ignore these settings unless you are using Nielsen non-linear watermarking.
+     * Specify the values that  MediaConvert uses to generate and place Nielsen
+     * watermarks in your output audio. In addition to  specifying these values, you
+     * also need to set up your cloud TIC server. These settings apply to  every output
+     * in your job. The MediaConvert implementation is currently with the following
+     * Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark
+     * Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
+     */
+    inline JobTemplateSettings& WithNielsenNonLinearWatermark(NielsenNonLinearWatermarkSettings&& value) { SetNielsenNonLinearWatermark(std::move(value)); return *this;}
+
+
+    /**
      * (OutputGroups) contains one group of settings for each set of outputs that share
      * a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF,
      * and no container) are grouped in a single output group as well. Required in
@@ -456,49 +514,49 @@ namespace Model
 
     /**
      * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in
-     * your job. To include timed metadata, you must enable it here, enable it in each
-     * output container, and specify tags and timecodes in ID3 insertion (Id3Insertion)
-     * objects.
+     * any HLS outputs. To include timed metadata, you must enable it here, enable it
+     * in each output container, and specify tags and timecodes in ID3 insertion
+     * (Id3Insertion) objects.
      */
     inline const TimedMetadataInsertion& GetTimedMetadataInsertion() const{ return m_timedMetadataInsertion; }
 
     /**
      * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in
-     * your job. To include timed metadata, you must enable it here, enable it in each
-     * output container, and specify tags and timecodes in ID3 insertion (Id3Insertion)
-     * objects.
+     * any HLS outputs. To include timed metadata, you must enable it here, enable it
+     * in each output container, and specify tags and timecodes in ID3 insertion
+     * (Id3Insertion) objects.
      */
     inline bool TimedMetadataInsertionHasBeenSet() const { return m_timedMetadataInsertionHasBeenSet; }
 
     /**
      * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in
-     * your job. To include timed metadata, you must enable it here, enable it in each
-     * output container, and specify tags and timecodes in ID3 insertion (Id3Insertion)
-     * objects.
+     * any HLS outputs. To include timed metadata, you must enable it here, enable it
+     * in each output container, and specify tags and timecodes in ID3 insertion
+     * (Id3Insertion) objects.
      */
     inline void SetTimedMetadataInsertion(const TimedMetadataInsertion& value) { m_timedMetadataInsertionHasBeenSet = true; m_timedMetadataInsertion = value; }
 
     /**
      * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in
-     * your job. To include timed metadata, you must enable it here, enable it in each
-     * output container, and specify tags and timecodes in ID3 insertion (Id3Insertion)
-     * objects.
+     * any HLS outputs. To include timed metadata, you must enable it here, enable it
+     * in each output container, and specify tags and timecodes in ID3 insertion
+     * (Id3Insertion) objects.
      */
     inline void SetTimedMetadataInsertion(TimedMetadataInsertion&& value) { m_timedMetadataInsertionHasBeenSet = true; m_timedMetadataInsertion = std::move(value); }
 
     /**
      * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in
-     * your job. To include timed metadata, you must enable it here, enable it in each
-     * output container, and specify tags and timecodes in ID3 insertion (Id3Insertion)
-     * objects.
+     * any HLS outputs. To include timed metadata, you must enable it here, enable it
+     * in each output container, and specify tags and timecodes in ID3 insertion
+     * (Id3Insertion) objects.
      */
     inline JobTemplateSettings& WithTimedMetadataInsertion(const TimedMetadataInsertion& value) { SetTimedMetadataInsertion(value); return *this;}
 
     /**
      * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in
-     * your job. To include timed metadata, you must enable it here, enable it in each
-     * output container, and specify tags and timecodes in ID3 insertion (Id3Insertion)
-     * objects.
+     * any HLS outputs. To include timed metadata, you must enable it here, enable it
+     * in each output container, and specify tags and timecodes in ID3 insertion
+     * (Id3Insertion) objects.
      */
     inline JobTemplateSettings& WithTimedMetadataInsertion(TimedMetadataInsertion&& value) { SetTimedMetadataInsertion(std::move(value)); return *this;}
 
@@ -521,6 +579,9 @@ namespace Model
 
     NielsenConfiguration m_nielsenConfiguration;
     bool m_nielsenConfigurationHasBeenSet;
+
+    NielsenNonLinearWatermarkSettings m_nielsenNonLinearWatermark;
+    bool m_nielsenNonLinearWatermarkHasBeenSet;
 
     Aws::Vector<OutputGroup> m_outputGroups;
     bool m_outputGroupsHasBeenSet;

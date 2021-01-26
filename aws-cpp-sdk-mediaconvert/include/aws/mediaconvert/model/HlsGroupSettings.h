@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediaconvert/model/HlsAudioOnlyHeader.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/HlsCaptionLanguageSetting.h>
 #include <aws/mediaconvert/model/HlsClientCache.h>
@@ -185,6 +176,55 @@ namespace Model
      * of the outputs in the output group, specify a list of them here.
      */
     inline HlsGroupSettings& AddAdditionalManifests(HlsAdditionalManifest&& value) { m_additionalManifestsHasBeenSet = true; m_additionalManifests.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you
+     * encounter playback issues. Keep the default value, Include (INCLUDE), to output
+     * audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only headers
+     * from your audio segments.
+     */
+    inline const HlsAudioOnlyHeader& GetAudioOnlyHeader() const{ return m_audioOnlyHeader; }
+
+    /**
+     * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you
+     * encounter playback issues. Keep the default value, Include (INCLUDE), to output
+     * audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only headers
+     * from your audio segments.
+     */
+    inline bool AudioOnlyHeaderHasBeenSet() const { return m_audioOnlyHeaderHasBeenSet; }
+
+    /**
+     * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you
+     * encounter playback issues. Keep the default value, Include (INCLUDE), to output
+     * audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only headers
+     * from your audio segments.
+     */
+    inline void SetAudioOnlyHeader(const HlsAudioOnlyHeader& value) { m_audioOnlyHeaderHasBeenSet = true; m_audioOnlyHeader = value; }
+
+    /**
+     * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you
+     * encounter playback issues. Keep the default value, Include (INCLUDE), to output
+     * audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only headers
+     * from your audio segments.
+     */
+    inline void SetAudioOnlyHeader(HlsAudioOnlyHeader&& value) { m_audioOnlyHeaderHasBeenSet = true; m_audioOnlyHeader = std::move(value); }
+
+    /**
+     * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you
+     * encounter playback issues. Keep the default value, Include (INCLUDE), to output
+     * audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only headers
+     * from your audio segments.
+     */
+    inline HlsGroupSettings& WithAudioOnlyHeader(const HlsAudioOnlyHeader& value) { SetAudioOnlyHeader(value); return *this;}
+
+    /**
+     * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you
+     * encounter playback issues. Keep the default value, Include (INCLUDE), to output
+     * audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only headers
+     * from your audio segments.
+     */
+    inline HlsGroupSettings& WithAudioOnlyHeader(HlsAudioOnlyHeader&& value) { SetAudioOnlyHeader(std::move(value)); return *this;}
 
 
     /**
@@ -365,38 +405,44 @@ namespace Model
 
 
     /**
-     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from
-     * saving media segments for later replay.
+     * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no
+     * tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in
+     * your video distribution set up. For example, use the Cache-Control http header.
      */
     inline const HlsClientCache& GetClientCache() const{ return m_clientCache; }
 
     /**
-     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from
-     * saving media segments for later replay.
+     * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no
+     * tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in
+     * your video distribution set up. For example, use the Cache-Control http header.
      */
     inline bool ClientCacheHasBeenSet() const { return m_clientCacheHasBeenSet; }
 
     /**
-     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from
-     * saving media segments for later replay.
+     * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no
+     * tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in
+     * your video distribution set up. For example, use the Cache-Control http header.
      */
     inline void SetClientCache(const HlsClientCache& value) { m_clientCacheHasBeenSet = true; m_clientCache = value; }
 
     /**
-     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from
-     * saving media segments for later replay.
+     * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no
+     * tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in
+     * your video distribution set up. For example, use the Cache-Control http header.
      */
     inline void SetClientCache(HlsClientCache&& value) { m_clientCacheHasBeenSet = true; m_clientCache = std::move(value); }
 
     /**
-     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from
-     * saving media segments for later replay.
+     * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no
+     * tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in
+     * your video distribution set up. For example, use the Cache-Control http header.
      */
     inline HlsGroupSettings& WithClientCache(const HlsClientCache& value) { SetClientCache(value); return *this;}
 
     /**
-     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from
-     * saving media segments for later replay.
+     * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no
+     * tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in
+     * your video distribution set up. For example, use the Cache-Control http header.
      */
     inline HlsGroupSettings& WithClientCache(HlsClientCache&& value) { SetClientCache(std::move(value)); return *this;}
 
@@ -1078,6 +1124,9 @@ namespace Model
 
     Aws::Vector<HlsAdditionalManifest> m_additionalManifests;
     bool m_additionalManifestsHasBeenSet;
+
+    HlsAudioOnlyHeader m_audioOnlyHeader;
+    bool m_audioOnlyHeaderHasBeenSet;
 
     Aws::String m_baseUrl;
     bool m_baseUrlHasBeenSet;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/xray/model/TimeSeriesServiceStatistics.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,6 +22,7 @@ TimeSeriesServiceStatistics::TimeSeriesServiceStatistics() :
     m_timestampHasBeenSet(false),
     m_edgeSummaryStatisticsHasBeenSet(false),
     m_serviceSummaryStatisticsHasBeenSet(false),
+    m_serviceForecastStatisticsHasBeenSet(false),
     m_responseTimeHistogramHasBeenSet(false)
 {
 }
@@ -40,6 +31,7 @@ TimeSeriesServiceStatistics::TimeSeriesServiceStatistics(JsonView jsonValue) :
     m_timestampHasBeenSet(false),
     m_edgeSummaryStatisticsHasBeenSet(false),
     m_serviceSummaryStatisticsHasBeenSet(false),
+    m_serviceForecastStatisticsHasBeenSet(false),
     m_responseTimeHistogramHasBeenSet(false)
 {
   *this = jsonValue;
@@ -66,6 +58,13 @@ TimeSeriesServiceStatistics& TimeSeriesServiceStatistics::operator =(JsonView js
     m_serviceSummaryStatistics = jsonValue.GetObject("ServiceSummaryStatistics");
 
     m_serviceSummaryStatisticsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ServiceForecastStatistics"))
+  {
+    m_serviceForecastStatistics = jsonValue.GetObject("ServiceForecastStatistics");
+
+    m_serviceForecastStatisticsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ResponseTimeHistogram"))
@@ -99,6 +98,12 @@ JsonValue TimeSeriesServiceStatistics::Jsonize() const
   if(m_serviceSummaryStatisticsHasBeenSet)
   {
    payload.WithObject("ServiceSummaryStatistics", m_serviceSummaryStatistics.Jsonize());
+
+  }
+
+  if(m_serviceForecastStatisticsHasBeenSet)
+  {
+   payload.WithObject("ServiceForecastStatistics", m_serviceForecastStatistics.Jsonize());
 
   }
 

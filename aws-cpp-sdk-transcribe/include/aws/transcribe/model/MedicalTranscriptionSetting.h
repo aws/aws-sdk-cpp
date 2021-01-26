@@ -1,20 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +40,7 @@ namespace Model
 
     /**
      * <p>Determines whether the transcription job uses speaker recognition to identify
-     * different speakers in the input audio. Speaker recongition labels individual
+     * different speakers in the input audio. Speaker recognition labels individual
      * speakers in the audio file. If you set the <code>ShowSpeakerLabels</code> field
      * to true, you must also set the maximum number of speaker labels in the
      * <code>MaxSpeakerLabels</code> field.</p> <p>You can't set both
@@ -60,7 +52,7 @@ namespace Model
 
     /**
      * <p>Determines whether the transcription job uses speaker recognition to identify
-     * different speakers in the input audio. Speaker recongition labels individual
+     * different speakers in the input audio. Speaker recognition labels individual
      * speakers in the audio file. If you set the <code>ShowSpeakerLabels</code> field
      * to true, you must also set the maximum number of speaker labels in the
      * <code>MaxSpeakerLabels</code> field.</p> <p>You can't set both
@@ -72,7 +64,7 @@ namespace Model
 
     /**
      * <p>Determines whether the transcription job uses speaker recognition to identify
-     * different speakers in the input audio. Speaker recongition labels individual
+     * different speakers in the input audio. Speaker recognition labels individual
      * speakers in the audio file. If you set the <code>ShowSpeakerLabels</code> field
      * to true, you must also set the maximum number of speaker labels in the
      * <code>MaxSpeakerLabels</code> field.</p> <p>You can't set both
@@ -84,7 +76,7 @@ namespace Model
 
     /**
      * <p>Determines whether the transcription job uses speaker recognition to identify
-     * different speakers in the input audio. Speaker recongition labels individual
+     * different speakers in the input audio. Speaker recognition labels individual
      * speakers in the audio file. If you set the <code>ShowSpeakerLabels</code> field
      * to true, you must also set the maximum number of speaker labels in the
      * <code>MaxSpeakerLabels</code> field.</p> <p>You can't set both
@@ -242,6 +234,55 @@ namespace Model
      */
     inline MedicalTranscriptionSetting& WithMaxAlternatives(int value) { SetMaxAlternatives(value); return *this;}
 
+
+    /**
+     * <p>The name of the vocabulary to use when processing a medical transcription
+     * job.</p>
+     */
+    inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
+
+    /**
+     * <p>The name of the vocabulary to use when processing a medical transcription
+     * job.</p>
+     */
+    inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
+
+    /**
+     * <p>The name of the vocabulary to use when processing a medical transcription
+     * job.</p>
+     */
+    inline void SetVocabularyName(const Aws::String& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = value; }
+
+    /**
+     * <p>The name of the vocabulary to use when processing a medical transcription
+     * job.</p>
+     */
+    inline void SetVocabularyName(Aws::String&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::move(value); }
+
+    /**
+     * <p>The name of the vocabulary to use when processing a medical transcription
+     * job.</p>
+     */
+    inline void SetVocabularyName(const char* value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName.assign(value); }
+
+    /**
+     * <p>The name of the vocabulary to use when processing a medical transcription
+     * job.</p>
+     */
+    inline MedicalTranscriptionSetting& WithVocabularyName(const Aws::String& value) { SetVocabularyName(value); return *this;}
+
+    /**
+     * <p>The name of the vocabulary to use when processing a medical transcription
+     * job.</p>
+     */
+    inline MedicalTranscriptionSetting& WithVocabularyName(Aws::String&& value) { SetVocabularyName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the vocabulary to use when processing a medical transcription
+     * job.</p>
+     */
+    inline MedicalTranscriptionSetting& WithVocabularyName(const char* value) { SetVocabularyName(value); return *this;}
+
   private:
 
     bool m_showSpeakerLabels;
@@ -258,6 +299,9 @@ namespace Model
 
     int m_maxAlternatives;
     bool m_maxAlternativesHasBeenSet;
+
+    Aws::String m_vocabularyName;
+    bool m_vocabularyNameHasBeenSet;
   };
 
 } // namespace Model

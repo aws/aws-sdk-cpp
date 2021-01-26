@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codestar-notifications/CodeStarNotifications_EXPORTS.h>
@@ -87,19 +77,19 @@ namespace Model
         class UntagResourceRequest;
         class UpdateNotificationRuleRequest;
 
-        typedef Aws::Utils::Outcome<CreateNotificationRuleResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> CreateNotificationRuleOutcome;
-        typedef Aws::Utils::Outcome<DeleteNotificationRuleResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> DeleteNotificationRuleOutcome;
-        typedef Aws::Utils::Outcome<DeleteTargetResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> DeleteTargetOutcome;
-        typedef Aws::Utils::Outcome<DescribeNotificationRuleResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> DescribeNotificationRuleOutcome;
-        typedef Aws::Utils::Outcome<ListEventTypesResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> ListEventTypesOutcome;
-        typedef Aws::Utils::Outcome<ListNotificationRulesResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> ListNotificationRulesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListTargetsResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> ListTargetsOutcome;
-        typedef Aws::Utils::Outcome<SubscribeResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> SubscribeOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UnsubscribeResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> UnsubscribeOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateNotificationRuleResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> UpdateNotificationRuleOutcome;
+        typedef Aws::Utils::Outcome<CreateNotificationRuleResult, CodeStarNotificationsError> CreateNotificationRuleOutcome;
+        typedef Aws::Utils::Outcome<DeleteNotificationRuleResult, CodeStarNotificationsError> DeleteNotificationRuleOutcome;
+        typedef Aws::Utils::Outcome<DeleteTargetResult, CodeStarNotificationsError> DeleteTargetOutcome;
+        typedef Aws::Utils::Outcome<DescribeNotificationRuleResult, CodeStarNotificationsError> DescribeNotificationRuleOutcome;
+        typedef Aws::Utils::Outcome<ListEventTypesResult, CodeStarNotificationsError> ListEventTypesOutcome;
+        typedef Aws::Utils::Outcome<ListNotificationRulesResult, CodeStarNotificationsError> ListNotificationRulesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, CodeStarNotificationsError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListTargetsResult, CodeStarNotificationsError> ListTargetsOutcome;
+        typedef Aws::Utils::Outcome<SubscribeResult, CodeStarNotificationsError> SubscribeOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, CodeStarNotificationsError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UnsubscribeResult, CodeStarNotificationsError> UnsubscribeOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, CodeStarNotificationsError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateNotificationRuleResult, CodeStarNotificationsError> UpdateNotificationRuleOutcome;
 
         typedef std::future<CreateNotificationRuleOutcome> CreateNotificationRuleOutcomeCallable;
         typedef std::future<DeleteNotificationRuleOutcome> DeleteNotificationRuleOutcomeCallable;
@@ -186,8 +176,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~CodeStarNotificationsClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "codestar notifications"; }
 
 
         /**
@@ -532,9 +520,9 @@ namespace Model
         /**
          * <p>Updates a notification rule for a resource. You can change the events that
          * trigger the notification rule, the status of the rule, and the targets that
-         * receive the notifications.</p> <note> <p>To add or remove tags for a
+         * receive the notifications.</p>  <p>To add or remove tags for a
          * notification rule, you must use <a>TagResource</a> and <a>UntagResource</a>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/UpdateNotificationRule">AWS
          * API Reference</a></p>
          */
@@ -543,9 +531,9 @@ namespace Model
         /**
          * <p>Updates a notification rule for a resource. You can change the events that
          * trigger the notification rule, the status of the rule, and the targets that
-         * receive the notifications.</p> <note> <p>To add or remove tags for a
+         * receive the notifications.</p>  <p>To add or remove tags for a
          * notification rule, you must use <a>TagResource</a> and <a>UntagResource</a>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/UpdateNotificationRule">AWS
          * API Reference</a></p>
          *
@@ -556,9 +544,9 @@ namespace Model
         /**
          * <p>Updates a notification rule for a resource. You can change the events that
          * trigger the notification rule, the status of the rule, and the targets that
-         * receive the notifications.</p> <note> <p>To add or remove tags for a
+         * receive the notifications.</p>  <p>To add or remove tags for a
          * notification rule, you must use <a>TagResource</a> and <a>UntagResource</a>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/UpdateNotificationRule">AWS
          * API Reference</a></p>
          *

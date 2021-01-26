@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticfilesystem/EFS_EXPORTS.h>
@@ -167,6 +157,70 @@ namespace Model
      * <p>The ID of the file system, assigned by Amazon EFS.</p>
      */
     inline CreateFileSystemResult& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the EFS file system, in the format
+     * <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i>
+     * </code>. Example with sample data:
+     * <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+     * </p>
+     */
+    inline const Aws::String& GetFileSystemArn() const{ return m_fileSystemArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the EFS file system, in the format
+     * <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i>
+     * </code>. Example with sample data:
+     * <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+     * </p>
+     */
+    inline void SetFileSystemArn(const Aws::String& value) { m_fileSystemArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the EFS file system, in the format
+     * <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i>
+     * </code>. Example with sample data:
+     * <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+     * </p>
+     */
+    inline void SetFileSystemArn(Aws::String&& value) { m_fileSystemArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the EFS file system, in the format
+     * <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i>
+     * </code>. Example with sample data:
+     * <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+     * </p>
+     */
+    inline void SetFileSystemArn(const char* value) { m_fileSystemArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the EFS file system, in the format
+     * <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i>
+     * </code>. Example with sample data:
+     * <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+     * </p>
+     */
+    inline CreateFileSystemResult& WithFileSystemArn(const Aws::String& value) { SetFileSystemArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the EFS file system, in the format
+     * <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i>
+     * </code>. Example with sample data:
+     * <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+     * </p>
+     */
+    inline CreateFileSystemResult& WithFileSystemArn(Aws::String&& value) { SetFileSystemArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the EFS file system, in the format
+     * <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i>
+     * </code>. Example with sample data:
+     * <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+     * </p>
+     */
+    inline CreateFileSystemResult& WithFileSystemArn(const char* value) { SetFileSystemArn(value); return *this;}
 
 
     /**
@@ -595,6 +649,8 @@ namespace Model
     Aws::String m_creationToken;
 
     Aws::String m_fileSystemId;
+
+    Aws::String m_fileSystemArn;
 
     Aws::Utils::DateTime m_creationTime;
 

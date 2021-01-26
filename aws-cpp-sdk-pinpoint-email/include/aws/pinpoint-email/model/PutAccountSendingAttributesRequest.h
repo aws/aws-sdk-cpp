@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/pinpoint-email/PinpointEmail_EXPORTS.h>
@@ -47,36 +37,36 @@ namespace Model
     /**
      * <p>Enables or disables your account's ability to send email. Set to
      * <code>true</code> to enable email sending, or set to <code>false</code> to
-     * disable email sending.</p> <note> <p>If AWS paused your account's ability to
+     * disable email sending.</p>  <p>If AWS paused your account's ability to
      * send email, you can't use this operation to resume your account's ability to
-     * send email.</p> </note>
+     * send email.</p> 
      */
     inline bool GetSendingEnabled() const{ return m_sendingEnabled; }
 
     /**
      * <p>Enables or disables your account's ability to send email. Set to
      * <code>true</code> to enable email sending, or set to <code>false</code> to
-     * disable email sending.</p> <note> <p>If AWS paused your account's ability to
+     * disable email sending.</p>  <p>If AWS paused your account's ability to
      * send email, you can't use this operation to resume your account's ability to
-     * send email.</p> </note>
+     * send email.</p> 
      */
     inline bool SendingEnabledHasBeenSet() const { return m_sendingEnabledHasBeenSet; }
 
     /**
      * <p>Enables or disables your account's ability to send email. Set to
      * <code>true</code> to enable email sending, or set to <code>false</code> to
-     * disable email sending.</p> <note> <p>If AWS paused your account's ability to
+     * disable email sending.</p>  <p>If AWS paused your account's ability to
      * send email, you can't use this operation to resume your account's ability to
-     * send email.</p> </note>
+     * send email.</p> 
      */
     inline void SetSendingEnabled(bool value) { m_sendingEnabledHasBeenSet = true; m_sendingEnabled = value; }
 
     /**
      * <p>Enables or disables your account's ability to send email. Set to
      * <code>true</code> to enable email sending, or set to <code>false</code> to
-     * disable email sending.</p> <note> <p>If AWS paused your account's ability to
+     * disable email sending.</p>  <p>If AWS paused your account's ability to
      * send email, you can't use this operation to resume your account's ability to
-     * send email.</p> </note>
+     * send email.</p> 
      */
     inline PutAccountSendingAttributesRequest& WithSendingEnabled(bool value) { SetSendingEnabled(value); return *this;}
 

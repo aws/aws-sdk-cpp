@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/ec2/model/SpotAllocationStrategy.h>
+#include <aws/ec2/model/FleetSpotMaintenanceStrategiesRequest.h>
 #include <aws/ec2/model/SpotInstanceInterruptionBehavior.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -129,6 +120,43 @@ namespace Model
      * instances that are launching.</p>
      */
     inline SpotOptionsRequest& WithAllocationStrategy(SpotAllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The strategies for managing your Spot Instances that are at an elevated risk
+     * of being interrupted.</p>
+     */
+    inline const FleetSpotMaintenanceStrategiesRequest& GetMaintenanceStrategies() const{ return m_maintenanceStrategies; }
+
+    /**
+     * <p>The strategies for managing your Spot Instances that are at an elevated risk
+     * of being interrupted.</p>
+     */
+    inline bool MaintenanceStrategiesHasBeenSet() const { return m_maintenanceStrategiesHasBeenSet; }
+
+    /**
+     * <p>The strategies for managing your Spot Instances that are at an elevated risk
+     * of being interrupted.</p>
+     */
+    inline void SetMaintenanceStrategies(const FleetSpotMaintenanceStrategiesRequest& value) { m_maintenanceStrategiesHasBeenSet = true; m_maintenanceStrategies = value; }
+
+    /**
+     * <p>The strategies for managing your Spot Instances that are at an elevated risk
+     * of being interrupted.</p>
+     */
+    inline void SetMaintenanceStrategies(FleetSpotMaintenanceStrategiesRequest&& value) { m_maintenanceStrategiesHasBeenSet = true; m_maintenanceStrategies = std::move(value); }
+
+    /**
+     * <p>The strategies for managing your Spot Instances that are at an elevated risk
+     * of being interrupted.</p>
+     */
+    inline SpotOptionsRequest& WithMaintenanceStrategies(const FleetSpotMaintenanceStrategiesRequest& value) { SetMaintenanceStrategies(value); return *this;}
+
+    /**
+     * <p>The strategies for managing your Spot Instances that are at an elevated risk
+     * of being interrupted.</p>
+     */
+    inline SpotOptionsRequest& WithMaintenanceStrategies(FleetSpotMaintenanceStrategiesRequest&& value) { SetMaintenanceStrategies(std::move(value)); return *this;}
 
 
     /**
@@ -336,6 +364,9 @@ namespace Model
 
     SpotAllocationStrategy m_allocationStrategy;
     bool m_allocationStrategyHasBeenSet;
+
+    FleetSpotMaintenanceStrategiesRequest m_maintenanceStrategies;
+    bool m_maintenanceStrategiesHasBeenSet;
 
     SpotInstanceInterruptionBehavior m_instanceInterruptionBehavior;
     bool m_instanceInterruptionBehaviorHasBeenSet;

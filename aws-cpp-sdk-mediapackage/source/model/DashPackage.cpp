@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediapackage/model/DashPackage.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -50,7 +40,10 @@ DashPackage::DashPackage() :
     m_segmentTemplateFormatHasBeenSet(false),
     m_streamSelectionHasBeenSet(false),
     m_suggestedPresentationDelaySeconds(0),
-    m_suggestedPresentationDelaySecondsHasBeenSet(false)
+    m_suggestedPresentationDelaySecondsHasBeenSet(false),
+    m_utcTiming(UtcTiming::NOT_SET),
+    m_utcTimingHasBeenSet(false),
+    m_utcTimingUriHasBeenSet(false)
 {
 }
 
@@ -76,7 +69,10 @@ DashPackage::DashPackage(JsonView jsonValue) :
     m_segmentTemplateFormatHasBeenSet(false),
     m_streamSelectionHasBeenSet(false),
     m_suggestedPresentationDelaySeconds(0),
-    m_suggestedPresentationDelaySecondsHasBeenSet(false)
+    m_suggestedPresentationDelaySecondsHasBeenSet(false),
+    m_utcTiming(UtcTiming::NOT_SET),
+    m_utcTimingHasBeenSet(false),
+    m_utcTimingUriHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -180,6 +176,20 @@ DashPackage& DashPackage::operator =(JsonView jsonValue)
     m_suggestedPresentationDelaySecondsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("utcTiming"))
+  {
+    m_utcTiming = UtcTimingMapper::GetUtcTimingForName(jsonValue.GetString("utcTiming"));
+
+    m_utcTimingHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("utcTimingUri"))
+  {
+    m_utcTimingUri = jsonValue.GetString("utcTimingUri");
+
+    m_utcTimingUriHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -268,6 +278,17 @@ JsonValue DashPackage::Jsonize() const
   if(m_suggestedPresentationDelaySecondsHasBeenSet)
   {
    payload.WithInteger("suggestedPresentationDelaySeconds", m_suggestedPresentationDelaySeconds);
+
+  }
+
+  if(m_utcTimingHasBeenSet)
+  {
+   payload.WithString("utcTiming", UtcTimingMapper::GetNameForUtcTiming(m_utcTiming));
+  }
+
+  if(m_utcTimingUriHasBeenSet)
+  {
+   payload.WithString("utcTimingUri", m_utcTimingUri);
 
   }
 

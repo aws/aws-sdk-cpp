@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
@@ -130,42 +120,42 @@ namespace Model
 
 
     /**
-     * <p>The master account ID.</p>
+     * <p>The administrator account ID.</p>
      */
     inline const Aws::String& GetMasterId() const{ return m_masterId; }
 
     /**
-     * <p>The master account ID.</p>
+     * <p>The administrator account ID.</p>
      */
     inline bool MasterIdHasBeenSet() const { return m_masterIdHasBeenSet; }
 
     /**
-     * <p>The master account ID.</p>
+     * <p>The administrator account ID.</p>
      */
     inline void SetMasterId(const Aws::String& value) { m_masterIdHasBeenSet = true; m_masterId = value; }
 
     /**
-     * <p>The master account ID.</p>
+     * <p>The administrator account ID.</p>
      */
     inline void SetMasterId(Aws::String&& value) { m_masterIdHasBeenSet = true; m_masterId = std::move(value); }
 
     /**
-     * <p>The master account ID.</p>
+     * <p>The administrator account ID.</p>
      */
     inline void SetMasterId(const char* value) { m_masterIdHasBeenSet = true; m_masterId.assign(value); }
 
     /**
-     * <p>The master account ID.</p>
+     * <p>The administrator account ID.</p>
      */
     inline Member& WithMasterId(const Aws::String& value) { SetMasterId(value); return *this;}
 
     /**
-     * <p>The master account ID.</p>
+     * <p>The administrator account ID.</p>
      */
     inline Member& WithMasterId(Aws::String&& value) { SetMasterId(std::move(value)); return *this;}
 
     /**
-     * <p>The master account ID.</p>
+     * <p>The administrator account ID.</p>
      */
     inline Member& WithMasterId(const char* value) { SetMasterId(value); return *this;}
 
@@ -212,42 +202,42 @@ namespace Model
 
 
     /**
-     * <p>The status of the relationship between the member and the master.</p>
+     * <p>The status of the relationship between the member and the administrator.</p>
      */
     inline const Aws::String& GetRelationshipStatus() const{ return m_relationshipStatus; }
 
     /**
-     * <p>The status of the relationship between the member and the master.</p>
+     * <p>The status of the relationship between the member and the administrator.</p>
      */
     inline bool RelationshipStatusHasBeenSet() const { return m_relationshipStatusHasBeenSet; }
 
     /**
-     * <p>The status of the relationship between the member and the master.</p>
+     * <p>The status of the relationship between the member and the administrator.</p>
      */
     inline void SetRelationshipStatus(const Aws::String& value) { m_relationshipStatusHasBeenSet = true; m_relationshipStatus = value; }
 
     /**
-     * <p>The status of the relationship between the member and the master.</p>
+     * <p>The status of the relationship between the member and the administrator.</p>
      */
     inline void SetRelationshipStatus(Aws::String&& value) { m_relationshipStatusHasBeenSet = true; m_relationshipStatus = std::move(value); }
 
     /**
-     * <p>The status of the relationship between the member and the master.</p>
+     * <p>The status of the relationship between the member and the administrator.</p>
      */
     inline void SetRelationshipStatus(const char* value) { m_relationshipStatusHasBeenSet = true; m_relationshipStatus.assign(value); }
 
     /**
-     * <p>The status of the relationship between the member and the master.</p>
+     * <p>The status of the relationship between the member and the administrator.</p>
      */
     inline Member& WithRelationshipStatus(const Aws::String& value) { SetRelationshipStatus(value); return *this;}
 
     /**
-     * <p>The status of the relationship between the member and the master.</p>
+     * <p>The status of the relationship between the member and the administrator.</p>
      */
     inline Member& WithRelationshipStatus(Aws::String&& value) { SetRelationshipStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the relationship between the member and the master.</p>
+     * <p>The status of the relationship between the member and the administrator.</p>
      */
     inline Member& WithRelationshipStatus(const char* value) { SetRelationshipStatus(value); return *this;}
 

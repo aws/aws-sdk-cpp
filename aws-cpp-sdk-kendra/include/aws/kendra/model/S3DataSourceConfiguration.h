@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kendra/Kendra_EXPORTS.h>
@@ -148,82 +138,173 @@ namespace Model
 
 
     /**
-     * <p>A list of glob patterns for documents that should not be indexed. If a
-     * document that matches an inclusion prefix also matches an exclusion pattern, the
+     * <p>A list of glob patterns for documents that should be indexed. If a document
+     * that matches an inclusion pattern also matches an exclusion pattern, the
      * document is not indexed.</p> <p>For more information about glob patterns, see <a
-     * href="http://wikipedia.org/wiki/Glob_%28programming%29">glob (programming)</a>
+     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
+     * in <i>Wikipedia</i>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetInclusionPatterns() const{ return m_inclusionPatterns; }
+
+    /**
+     * <p>A list of glob patterns for documents that should be indexed. If a document
+     * that matches an inclusion pattern also matches an exclusion pattern, the
+     * document is not indexed.</p> <p>For more information about glob patterns, see <a
+     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
+     * in <i>Wikipedia</i>.</p>
+     */
+    inline bool InclusionPatternsHasBeenSet() const { return m_inclusionPatternsHasBeenSet; }
+
+    /**
+     * <p>A list of glob patterns for documents that should be indexed. If a document
+     * that matches an inclusion pattern also matches an exclusion pattern, the
+     * document is not indexed.</p> <p>For more information about glob patterns, see <a
+     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
+     * in <i>Wikipedia</i>.</p>
+     */
+    inline void SetInclusionPatterns(const Aws::Vector<Aws::String>& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns = value; }
+
+    /**
+     * <p>A list of glob patterns for documents that should be indexed. If a document
+     * that matches an inclusion pattern also matches an exclusion pattern, the
+     * document is not indexed.</p> <p>For more information about glob patterns, see <a
+     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
+     * in <i>Wikipedia</i>.</p>
+     */
+    inline void SetInclusionPatterns(Aws::Vector<Aws::String>&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns = std::move(value); }
+
+    /**
+     * <p>A list of glob patterns for documents that should be indexed. If a document
+     * that matches an inclusion pattern also matches an exclusion pattern, the
+     * document is not indexed.</p> <p>For more information about glob patterns, see <a
+     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
+     * in <i>Wikipedia</i>.</p>
+     */
+    inline S3DataSourceConfiguration& WithInclusionPatterns(const Aws::Vector<Aws::String>& value) { SetInclusionPatterns(value); return *this;}
+
+    /**
+     * <p>A list of glob patterns for documents that should be indexed. If a document
+     * that matches an inclusion pattern also matches an exclusion pattern, the
+     * document is not indexed.</p> <p>For more information about glob patterns, see <a
+     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
+     * in <i>Wikipedia</i>.</p>
+     */
+    inline S3DataSourceConfiguration& WithInclusionPatterns(Aws::Vector<Aws::String>&& value) { SetInclusionPatterns(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of glob patterns for documents that should be indexed. If a document
+     * that matches an inclusion pattern also matches an exclusion pattern, the
+     * document is not indexed.</p> <p>For more information about glob patterns, see <a
+     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
+     * in <i>Wikipedia</i>.</p>
+     */
+    inline S3DataSourceConfiguration& AddInclusionPatterns(const Aws::String& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(value); return *this; }
+
+    /**
+     * <p>A list of glob patterns for documents that should be indexed. If a document
+     * that matches an inclusion pattern also matches an exclusion pattern, the
+     * document is not indexed.</p> <p>For more information about glob patterns, see <a
+     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
+     * in <i>Wikipedia</i>.</p>
+     */
+    inline S3DataSourceConfiguration& AddInclusionPatterns(Aws::String&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of glob patterns for documents that should be indexed. If a document
+     * that matches an inclusion pattern also matches an exclusion pattern, the
+     * document is not indexed.</p> <p>For more information about glob patterns, see <a
+     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
+     * in <i>Wikipedia</i>.</p>
+     */
+    inline S3DataSourceConfiguration& AddInclusionPatterns(const char* value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(value); return *this; }
+
+
+    /**
+     * <p>A list of glob patterns for documents that should not be indexed. If a
+     * document that matches an inclusion prefix or inclusion pattern also matches an
+     * exclusion pattern, the document is not indexed.</p> <p>For more information
+     * about glob patterns, see <a
+     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
      * in <i>Wikipedia</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExclusionPatterns() const{ return m_exclusionPatterns; }
 
     /**
      * <p>A list of glob patterns for documents that should not be indexed. If a
-     * document that matches an inclusion prefix also matches an exclusion pattern, the
-     * document is not indexed.</p> <p>For more information about glob patterns, see <a
-     * href="http://wikipedia.org/wiki/Glob_%28programming%29">glob (programming)</a>
+     * document that matches an inclusion prefix or inclusion pattern also matches an
+     * exclusion pattern, the document is not indexed.</p> <p>For more information
+     * about glob patterns, see <a
+     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
      * in <i>Wikipedia</i>.</p>
      */
     inline bool ExclusionPatternsHasBeenSet() const { return m_exclusionPatternsHasBeenSet; }
 
     /**
      * <p>A list of glob patterns for documents that should not be indexed. If a
-     * document that matches an inclusion prefix also matches an exclusion pattern, the
-     * document is not indexed.</p> <p>For more information about glob patterns, see <a
-     * href="http://wikipedia.org/wiki/Glob_%28programming%29">glob (programming)</a>
+     * document that matches an inclusion prefix or inclusion pattern also matches an
+     * exclusion pattern, the document is not indexed.</p> <p>For more information
+     * about glob patterns, see <a
+     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
      * in <i>Wikipedia</i>.</p>
      */
     inline void SetExclusionPatterns(const Aws::Vector<Aws::String>& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = value; }
 
     /**
      * <p>A list of glob patterns for documents that should not be indexed. If a
-     * document that matches an inclusion prefix also matches an exclusion pattern, the
-     * document is not indexed.</p> <p>For more information about glob patterns, see <a
-     * href="http://wikipedia.org/wiki/Glob_%28programming%29">glob (programming)</a>
+     * document that matches an inclusion prefix or inclusion pattern also matches an
+     * exclusion pattern, the document is not indexed.</p> <p>For more information
+     * about glob patterns, see <a
+     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
      * in <i>Wikipedia</i>.</p>
      */
     inline void SetExclusionPatterns(Aws::Vector<Aws::String>&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = std::move(value); }
 
     /**
      * <p>A list of glob patterns for documents that should not be indexed. If a
-     * document that matches an inclusion prefix also matches an exclusion pattern, the
-     * document is not indexed.</p> <p>For more information about glob patterns, see <a
-     * href="http://wikipedia.org/wiki/Glob_%28programming%29">glob (programming)</a>
+     * document that matches an inclusion prefix or inclusion pattern also matches an
+     * exclusion pattern, the document is not indexed.</p> <p>For more information
+     * about glob patterns, see <a
+     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
      * in <i>Wikipedia</i>.</p>
      */
     inline S3DataSourceConfiguration& WithExclusionPatterns(const Aws::Vector<Aws::String>& value) { SetExclusionPatterns(value); return *this;}
 
     /**
      * <p>A list of glob patterns for documents that should not be indexed. If a
-     * document that matches an inclusion prefix also matches an exclusion pattern, the
-     * document is not indexed.</p> <p>For more information about glob patterns, see <a
-     * href="http://wikipedia.org/wiki/Glob_%28programming%29">glob (programming)</a>
+     * document that matches an inclusion prefix or inclusion pattern also matches an
+     * exclusion pattern, the document is not indexed.</p> <p>For more information
+     * about glob patterns, see <a
+     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
      * in <i>Wikipedia</i>.</p>
      */
     inline S3DataSourceConfiguration& WithExclusionPatterns(Aws::Vector<Aws::String>&& value) { SetExclusionPatterns(std::move(value)); return *this;}
 
     /**
      * <p>A list of glob patterns for documents that should not be indexed. If a
-     * document that matches an inclusion prefix also matches an exclusion pattern, the
-     * document is not indexed.</p> <p>For more information about glob patterns, see <a
-     * href="http://wikipedia.org/wiki/Glob_%28programming%29">glob (programming)</a>
+     * document that matches an inclusion prefix or inclusion pattern also matches an
+     * exclusion pattern, the document is not indexed.</p> <p>For more information
+     * about glob patterns, see <a
+     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
      * in <i>Wikipedia</i>.</p>
      */
     inline S3DataSourceConfiguration& AddExclusionPatterns(const Aws::String& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(value); return *this; }
 
     /**
      * <p>A list of glob patterns for documents that should not be indexed. If a
-     * document that matches an inclusion prefix also matches an exclusion pattern, the
-     * document is not indexed.</p> <p>For more information about glob patterns, see <a
-     * href="http://wikipedia.org/wiki/Glob_%28programming%29">glob (programming)</a>
+     * document that matches an inclusion prefix or inclusion pattern also matches an
+     * exclusion pattern, the document is not indexed.</p> <p>For more information
+     * about glob patterns, see <a
+     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
      * in <i>Wikipedia</i>.</p>
      */
     inline S3DataSourceConfiguration& AddExclusionPatterns(Aws::String&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of glob patterns for documents that should not be indexed. If a
-     * document that matches an inclusion prefix also matches an exclusion pattern, the
-     * document is not indexed.</p> <p>For more information about glob patterns, see <a
-     * href="http://wikipedia.org/wiki/Glob_%28programming%29">glob (programming)</a>
+     * document that matches an inclusion prefix or inclusion pattern also matches an
+     * exclusion pattern, the document is not indexed.</p> <p>For more information
+     * about glob patterns, see <a
+     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
      * in <i>Wikipedia</i>.</p>
      */
     inline S3DataSourceConfiguration& AddExclusionPatterns(const char* value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(value); return *this; }
@@ -250,37 +331,49 @@ namespace Model
 
     /**
      * <p>Provides the path to the S3 bucket that contains the user context filtering
-     * files for the data source.</p>
+     * files for the data source. For the format of the file, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access control
+     * for S3 data sources</a>.</p>
      */
     inline const AccessControlListConfiguration& GetAccessControlListConfiguration() const{ return m_accessControlListConfiguration; }
 
     /**
      * <p>Provides the path to the S3 bucket that contains the user context filtering
-     * files for the data source.</p>
+     * files for the data source. For the format of the file, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access control
+     * for S3 data sources</a>.</p>
      */
     inline bool AccessControlListConfigurationHasBeenSet() const { return m_accessControlListConfigurationHasBeenSet; }
 
     /**
      * <p>Provides the path to the S3 bucket that contains the user context filtering
-     * files for the data source.</p>
+     * files for the data source. For the format of the file, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access control
+     * for S3 data sources</a>.</p>
      */
     inline void SetAccessControlListConfiguration(const AccessControlListConfiguration& value) { m_accessControlListConfigurationHasBeenSet = true; m_accessControlListConfiguration = value; }
 
     /**
      * <p>Provides the path to the S3 bucket that contains the user context filtering
-     * files for the data source.</p>
+     * files for the data source. For the format of the file, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access control
+     * for S3 data sources</a>.</p>
      */
     inline void SetAccessControlListConfiguration(AccessControlListConfiguration&& value) { m_accessControlListConfigurationHasBeenSet = true; m_accessControlListConfiguration = std::move(value); }
 
     /**
      * <p>Provides the path to the S3 bucket that contains the user context filtering
-     * files for the data source.</p>
+     * files for the data source. For the format of the file, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access control
+     * for S3 data sources</a>.</p>
      */
     inline S3DataSourceConfiguration& WithAccessControlListConfiguration(const AccessControlListConfiguration& value) { SetAccessControlListConfiguration(value); return *this;}
 
     /**
      * <p>Provides the path to the S3 bucket that contains the user context filtering
-     * files for the data source.</p>
+     * files for the data source. For the format of the file, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access control
+     * for S3 data sources</a>.</p>
      */
     inline S3DataSourceConfiguration& WithAccessControlListConfiguration(AccessControlListConfiguration&& value) { SetAccessControlListConfiguration(std::move(value)); return *this;}
 
@@ -291,6 +384,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_inclusionPrefixes;
     bool m_inclusionPrefixesHasBeenSet;
+
+    Aws::Vector<Aws::String> m_inclusionPatterns;
+    bool m_inclusionPatternsHasBeenSet;
 
     Aws::Vector<Aws::String> m_exclusionPatterns;
     bool m_exclusionPatternsHasBeenSet;

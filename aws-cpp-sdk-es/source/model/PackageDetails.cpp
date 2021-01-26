@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/es/model/PackageDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -37,6 +27,8 @@ PackageDetails::PackageDetails() :
     m_packageStatus(PackageStatus::NOT_SET),
     m_packageStatusHasBeenSet(false),
     m_createdAtHasBeenSet(false),
+    m_lastUpdatedAtHasBeenSet(false),
+    m_availablePackageVersionHasBeenSet(false),
     m_errorDetailsHasBeenSet(false)
 {
 }
@@ -50,6 +42,8 @@ PackageDetails::PackageDetails(JsonView jsonValue) :
     m_packageStatus(PackageStatus::NOT_SET),
     m_packageStatusHasBeenSet(false),
     m_createdAtHasBeenSet(false),
+    m_lastUpdatedAtHasBeenSet(false),
+    m_availablePackageVersionHasBeenSet(false),
     m_errorDetailsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -99,6 +93,20 @@ PackageDetails& PackageDetails::operator =(JsonView jsonValue)
     m_createdAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LastUpdatedAt"))
+  {
+    m_lastUpdatedAt = jsonValue.GetDouble("LastUpdatedAt");
+
+    m_lastUpdatedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AvailablePackageVersion"))
+  {
+    m_availablePackageVersion = jsonValue.GetString("AvailablePackageVersion");
+
+    m_availablePackageVersionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ErrorDetails"))
   {
     m_errorDetails = jsonValue.GetObject("ErrorDetails");
@@ -144,6 +152,17 @@ JsonValue PackageDetails::Jsonize() const
   if(m_createdAtHasBeenSet)
   {
    payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
+  if(m_lastUpdatedAtHasBeenSet)
+  {
+   payload.WithDouble("LastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_availablePackageVersionHasBeenSet)
+  {
+   payload.WithString("AvailablePackageVersion", m_availablePackageVersion);
+
   }
 
   if(m_errorDetailsHasBeenSet)

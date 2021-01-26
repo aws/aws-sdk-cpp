@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
@@ -132,50 +122,130 @@ namespace Model
 
 
     /**
-     * <p>The entity tag is an MD5 hash of the object. ETag reflects only changes to
-     * the contents of an object, not its metadata.</p>
+     * <p>The entity tag is a hash of the object. The ETag reflects changes only to the
+     * contents of an object, not its metadata. The ETag may or may not be an MD5
+     * digest of the object data. Whether or not it is depends on how the object was
+     * created and how it is encrypted as described below:</p> <ul> <li> <p>Objects
+     * created by the PUT Object, POST Object, or Copy operation, or through the AWS
+     * Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that
+     * are an MD5 digest of their object data.</p> </li> <li> <p>Objects created by the
+     * PUT Object, POST Object, or Copy operation, or through the AWS Management
+     * Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are not an MD5
+     * digest of their object data.</p> </li> <li> <p>If an object is created by either
+     * the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest,
+     * regardless of the method of encryption.</p> </li> </ul>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
 
     /**
-     * <p>The entity tag is an MD5 hash of the object. ETag reflects only changes to
-     * the contents of an object, not its metadata.</p>
+     * <p>The entity tag is a hash of the object. The ETag reflects changes only to the
+     * contents of an object, not its metadata. The ETag may or may not be an MD5
+     * digest of the object data. Whether or not it is depends on how the object was
+     * created and how it is encrypted as described below:</p> <ul> <li> <p>Objects
+     * created by the PUT Object, POST Object, or Copy operation, or through the AWS
+     * Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that
+     * are an MD5 digest of their object data.</p> </li> <li> <p>Objects created by the
+     * PUT Object, POST Object, or Copy operation, or through the AWS Management
+     * Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are not an MD5
+     * digest of their object data.</p> </li> <li> <p>If an object is created by either
+     * the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest,
+     * regardless of the method of encryption.</p> </li> </ul>
      */
     inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
 
     /**
-     * <p>The entity tag is an MD5 hash of the object. ETag reflects only changes to
-     * the contents of an object, not its metadata.</p>
+     * <p>The entity tag is a hash of the object. The ETag reflects changes only to the
+     * contents of an object, not its metadata. The ETag may or may not be an MD5
+     * digest of the object data. Whether or not it is depends on how the object was
+     * created and how it is encrypted as described below:</p> <ul> <li> <p>Objects
+     * created by the PUT Object, POST Object, or Copy operation, or through the AWS
+     * Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that
+     * are an MD5 digest of their object data.</p> </li> <li> <p>Objects created by the
+     * PUT Object, POST Object, or Copy operation, or through the AWS Management
+     * Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are not an MD5
+     * digest of their object data.</p> </li> <li> <p>If an object is created by either
+     * the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest,
+     * regardless of the method of encryption.</p> </li> </ul>
      */
     inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
 
     /**
-     * <p>The entity tag is an MD5 hash of the object. ETag reflects only changes to
-     * the contents of an object, not its metadata.</p>
+     * <p>The entity tag is a hash of the object. The ETag reflects changes only to the
+     * contents of an object, not its metadata. The ETag may or may not be an MD5
+     * digest of the object data. Whether or not it is depends on how the object was
+     * created and how it is encrypted as described below:</p> <ul> <li> <p>Objects
+     * created by the PUT Object, POST Object, or Copy operation, or through the AWS
+     * Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that
+     * are an MD5 digest of their object data.</p> </li> <li> <p>Objects created by the
+     * PUT Object, POST Object, or Copy operation, or through the AWS Management
+     * Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are not an MD5
+     * digest of their object data.</p> </li> <li> <p>If an object is created by either
+     * the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest,
+     * regardless of the method of encryption.</p> </li> </ul>
      */
     inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = std::move(value); }
 
     /**
-     * <p>The entity tag is an MD5 hash of the object. ETag reflects only changes to
-     * the contents of an object, not its metadata.</p>
+     * <p>The entity tag is a hash of the object. The ETag reflects changes only to the
+     * contents of an object, not its metadata. The ETag may or may not be an MD5
+     * digest of the object data. Whether or not it is depends on how the object was
+     * created and how it is encrypted as described below:</p> <ul> <li> <p>Objects
+     * created by the PUT Object, POST Object, or Copy operation, or through the AWS
+     * Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that
+     * are an MD5 digest of their object data.</p> </li> <li> <p>Objects created by the
+     * PUT Object, POST Object, or Copy operation, or through the AWS Management
+     * Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are not an MD5
+     * digest of their object data.</p> </li> <li> <p>If an object is created by either
+     * the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest,
+     * regardless of the method of encryption.</p> </li> </ul>
      */
     inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
 
     /**
-     * <p>The entity tag is an MD5 hash of the object. ETag reflects only changes to
-     * the contents of an object, not its metadata.</p>
+     * <p>The entity tag is a hash of the object. The ETag reflects changes only to the
+     * contents of an object, not its metadata. The ETag may or may not be an MD5
+     * digest of the object data. Whether or not it is depends on how the object was
+     * created and how it is encrypted as described below:</p> <ul> <li> <p>Objects
+     * created by the PUT Object, POST Object, or Copy operation, or through the AWS
+     * Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that
+     * are an MD5 digest of their object data.</p> </li> <li> <p>Objects created by the
+     * PUT Object, POST Object, or Copy operation, or through the AWS Management
+     * Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are not an MD5
+     * digest of their object data.</p> </li> <li> <p>If an object is created by either
+     * the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest,
+     * regardless of the method of encryption.</p> </li> </ul>
      */
     inline Object& WithETag(const Aws::String& value) { SetETag(value); return *this;}
 
     /**
-     * <p>The entity tag is an MD5 hash of the object. ETag reflects only changes to
-     * the contents of an object, not its metadata.</p>
+     * <p>The entity tag is a hash of the object. The ETag reflects changes only to the
+     * contents of an object, not its metadata. The ETag may or may not be an MD5
+     * digest of the object data. Whether or not it is depends on how the object was
+     * created and how it is encrypted as described below:</p> <ul> <li> <p>Objects
+     * created by the PUT Object, POST Object, or Copy operation, or through the AWS
+     * Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that
+     * are an MD5 digest of their object data.</p> </li> <li> <p>Objects created by the
+     * PUT Object, POST Object, or Copy operation, or through the AWS Management
+     * Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are not an MD5
+     * digest of their object data.</p> </li> <li> <p>If an object is created by either
+     * the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest,
+     * regardless of the method of encryption.</p> </li> </ul>
      */
     inline Object& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
 
     /**
-     * <p>The entity tag is an MD5 hash of the object. ETag reflects only changes to
-     * the contents of an object, not its metadata.</p>
+     * <p>The entity tag is a hash of the object. The ETag reflects changes only to the
+     * contents of an object, not its metadata. The ETag may or may not be an MD5
+     * digest of the object data. Whether or not it is depends on how the object was
+     * created and how it is encrypted as described below:</p> <ul> <li> <p>Objects
+     * created by the PUT Object, POST Object, or Copy operation, or through the AWS
+     * Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that
+     * are an MD5 digest of their object data.</p> </li> <li> <p>Objects created by the
+     * PUT Object, POST Object, or Copy operation, or through the AWS Management
+     * Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are not an MD5
+     * digest of their object data.</p> </li> <li> <p>If an object is created by either
+     * the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest,
+     * regardless of the method of encryption.</p> </li> </ul>
      */
     inline Object& WithETag(const char* value) { SetETag(value); return *this;}
 

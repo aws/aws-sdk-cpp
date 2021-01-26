@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -71,7 +61,7 @@ static const char* ALLOCATION_TAG = "MediaConvertClient";
 MediaConvertClient::MediaConvertClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<MediaConvertErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -81,7 +71,7 @@ MediaConvertClient::MediaConvertClient(const Client::ClientConfiguration& client
 MediaConvertClient::MediaConvertClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<MediaConvertErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -92,7 +82,7 @@ MediaConvertClient::MediaConvertClient(const std::shared_ptr<AWSCredentialsProvi
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<MediaConvertErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -105,6 +95,7 @@ MediaConvertClient::~MediaConvertClient()
 
 void MediaConvertClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("MediaConvert");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -134,15 +125,7 @@ AssociateCertificateOutcome MediaConvertClient::AssociateCertificate(const Assoc
   Aws::StringStream ss;
   ss << "/2017-08-29/certificates";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AssociateCertificateOutcome(AssociateCertificateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AssociateCertificateOutcome(outcome.GetError());
-  }
+  return AssociateCertificateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AssociateCertificateOutcomeCallable MediaConvertClient::AssociateCertificateCallable(const AssociateCertificateRequest& request) const
@@ -175,15 +158,7 @@ CancelJobOutcome MediaConvertClient::CancelJob(const CancelJobRequest& request) 
   ss << "/2017-08-29/jobs/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CancelJobOutcome(CancelJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CancelJobOutcome(outcome.GetError());
-  }
+  return CancelJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 CancelJobOutcomeCallable MediaConvertClient::CancelJobCallable(const CancelJobRequest& request) const
@@ -210,15 +185,7 @@ CreateJobOutcome MediaConvertClient::CreateJob(const CreateJobRequest& request) 
   Aws::StringStream ss;
   ss << "/2017-08-29/jobs";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateJobOutcome(CreateJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateJobOutcome(outcome.GetError());
-  }
+  return CreateJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateJobOutcomeCallable MediaConvertClient::CreateJobCallable(const CreateJobRequest& request) const
@@ -245,15 +212,7 @@ CreateJobTemplateOutcome MediaConvertClient::CreateJobTemplate(const CreateJobTe
   Aws::StringStream ss;
   ss << "/2017-08-29/jobTemplates";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateJobTemplateOutcome(CreateJobTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateJobTemplateOutcome(outcome.GetError());
-  }
+  return CreateJobTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateJobTemplateOutcomeCallable MediaConvertClient::CreateJobTemplateCallable(const CreateJobTemplateRequest& request) const
@@ -280,15 +239,7 @@ CreatePresetOutcome MediaConvertClient::CreatePreset(const CreatePresetRequest& 
   Aws::StringStream ss;
   ss << "/2017-08-29/presets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreatePresetOutcome(CreatePresetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreatePresetOutcome(outcome.GetError());
-  }
+  return CreatePresetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreatePresetOutcomeCallable MediaConvertClient::CreatePresetCallable(const CreatePresetRequest& request) const
@@ -315,15 +266,7 @@ CreateQueueOutcome MediaConvertClient::CreateQueue(const CreateQueueRequest& req
   Aws::StringStream ss;
   ss << "/2017-08-29/queues";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateQueueOutcome(CreateQueueResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateQueueOutcome(outcome.GetError());
-  }
+  return CreateQueueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateQueueOutcomeCallable MediaConvertClient::CreateQueueCallable(const CreateQueueRequest& request) const
@@ -356,15 +299,7 @@ DeleteJobTemplateOutcome MediaConvertClient::DeleteJobTemplate(const DeleteJobTe
   ss << "/2017-08-29/jobTemplates/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteJobTemplateOutcome(DeleteJobTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteJobTemplateOutcome(outcome.GetError());
-  }
+  return DeleteJobTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteJobTemplateOutcomeCallable MediaConvertClient::DeleteJobTemplateCallable(const DeleteJobTemplateRequest& request) const
@@ -397,15 +332,7 @@ DeletePresetOutcome MediaConvertClient::DeletePreset(const DeletePresetRequest& 
   ss << "/2017-08-29/presets/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeletePresetOutcome(DeletePresetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeletePresetOutcome(outcome.GetError());
-  }
+  return DeletePresetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeletePresetOutcomeCallable MediaConvertClient::DeletePresetCallable(const DeletePresetRequest& request) const
@@ -438,15 +365,7 @@ DeleteQueueOutcome MediaConvertClient::DeleteQueue(const DeleteQueueRequest& req
   ss << "/2017-08-29/queues/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteQueueOutcome(DeleteQueueResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteQueueOutcome(outcome.GetError());
-  }
+  return DeleteQueueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteQueueOutcomeCallable MediaConvertClient::DeleteQueueCallable(const DeleteQueueRequest& request) const
@@ -473,15 +392,7 @@ DescribeEndpointsOutcome MediaConvertClient::DescribeEndpoints(const DescribeEnd
   Aws::StringStream ss;
   ss << "/2017-08-29/endpoints";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeEndpointsOutcome(DescribeEndpointsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeEndpointsOutcome(outcome.GetError());
-  }
+  return DescribeEndpointsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeEndpointsOutcomeCallable MediaConvertClient::DescribeEndpointsCallable(const DescribeEndpointsRequest& request) const
@@ -514,15 +425,7 @@ DisassociateCertificateOutcome MediaConvertClient::DisassociateCertificate(const
   ss << "/2017-08-29/certificates/";
   ss << request.GetArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisassociateCertificateOutcome(DisassociateCertificateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisassociateCertificateOutcome(outcome.GetError());
-  }
+  return DisassociateCertificateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisassociateCertificateOutcomeCallable MediaConvertClient::DisassociateCertificateCallable(const DisassociateCertificateRequest& request) const
@@ -555,15 +458,7 @@ GetJobOutcome MediaConvertClient::GetJob(const GetJobRequest& request) const
   ss << "/2017-08-29/jobs/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetJobOutcome(GetJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetJobOutcome(outcome.GetError());
-  }
+  return GetJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetJobOutcomeCallable MediaConvertClient::GetJobCallable(const GetJobRequest& request) const
@@ -596,15 +491,7 @@ GetJobTemplateOutcome MediaConvertClient::GetJobTemplate(const GetJobTemplateReq
   ss << "/2017-08-29/jobTemplates/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetJobTemplateOutcome(GetJobTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetJobTemplateOutcome(outcome.GetError());
-  }
+  return GetJobTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetJobTemplateOutcomeCallable MediaConvertClient::GetJobTemplateCallable(const GetJobTemplateRequest& request) const
@@ -637,15 +524,7 @@ GetPresetOutcome MediaConvertClient::GetPreset(const GetPresetRequest& request) 
   ss << "/2017-08-29/presets/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetPresetOutcome(GetPresetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetPresetOutcome(outcome.GetError());
-  }
+  return GetPresetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetPresetOutcomeCallable MediaConvertClient::GetPresetCallable(const GetPresetRequest& request) const
@@ -678,15 +557,7 @@ GetQueueOutcome MediaConvertClient::GetQueue(const GetQueueRequest& request) con
   ss << "/2017-08-29/queues/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetQueueOutcome(GetQueueResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetQueueOutcome(outcome.GetError());
-  }
+  return GetQueueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetQueueOutcomeCallable MediaConvertClient::GetQueueCallable(const GetQueueRequest& request) const
@@ -713,15 +584,7 @@ ListJobTemplatesOutcome MediaConvertClient::ListJobTemplates(const ListJobTempla
   Aws::StringStream ss;
   ss << "/2017-08-29/jobTemplates";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListJobTemplatesOutcome(ListJobTemplatesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListJobTemplatesOutcome(outcome.GetError());
-  }
+  return ListJobTemplatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListJobTemplatesOutcomeCallable MediaConvertClient::ListJobTemplatesCallable(const ListJobTemplatesRequest& request) const
@@ -748,15 +611,7 @@ ListJobsOutcome MediaConvertClient::ListJobs(const ListJobsRequest& request) con
   Aws::StringStream ss;
   ss << "/2017-08-29/jobs";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListJobsOutcome(ListJobsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListJobsOutcome(outcome.GetError());
-  }
+  return ListJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListJobsOutcomeCallable MediaConvertClient::ListJobsCallable(const ListJobsRequest& request) const
@@ -783,15 +638,7 @@ ListPresetsOutcome MediaConvertClient::ListPresets(const ListPresetsRequest& req
   Aws::StringStream ss;
   ss << "/2017-08-29/presets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListPresetsOutcome(ListPresetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListPresetsOutcome(outcome.GetError());
-  }
+  return ListPresetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListPresetsOutcomeCallable MediaConvertClient::ListPresetsCallable(const ListPresetsRequest& request) const
@@ -818,15 +665,7 @@ ListQueuesOutcome MediaConvertClient::ListQueues(const ListQueuesRequest& reques
   Aws::StringStream ss;
   ss << "/2017-08-29/queues";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListQueuesOutcome(ListQueuesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListQueuesOutcome(outcome.GetError());
-  }
+  return ListQueuesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListQueuesOutcomeCallable MediaConvertClient::ListQueuesCallable(const ListQueuesRequest& request) const
@@ -859,15 +698,7 @@ ListTagsForResourceOutcome MediaConvertClient::ListTagsForResource(const ListTag
   ss << "/2017-08-29/tags/";
   ss << request.GetArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable MediaConvertClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -894,15 +725,7 @@ TagResourceOutcome MediaConvertClient::TagResource(const TagResourceRequest& req
   Aws::StringStream ss;
   ss << "/2017-08-29/tags";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable MediaConvertClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -935,15 +758,7 @@ UntagResourceOutcome MediaConvertClient::UntagResource(const UntagResourceReques
   ss << "/2017-08-29/tags/";
   ss << request.GetArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable MediaConvertClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -976,15 +791,7 @@ UpdateJobTemplateOutcome MediaConvertClient::UpdateJobTemplate(const UpdateJobTe
   ss << "/2017-08-29/jobTemplates/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateJobTemplateOutcome(UpdateJobTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateJobTemplateOutcome(outcome.GetError());
-  }
+  return UpdateJobTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateJobTemplateOutcomeCallable MediaConvertClient::UpdateJobTemplateCallable(const UpdateJobTemplateRequest& request) const
@@ -1017,15 +824,7 @@ UpdatePresetOutcome MediaConvertClient::UpdatePreset(const UpdatePresetRequest& 
   ss << "/2017-08-29/presets/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdatePresetOutcome(UpdatePresetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdatePresetOutcome(outcome.GetError());
-  }
+  return UpdatePresetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdatePresetOutcomeCallable MediaConvertClient::UpdatePresetCallable(const UpdatePresetRequest& request) const
@@ -1058,15 +857,7 @@ UpdateQueueOutcome MediaConvertClient::UpdateQueue(const UpdateQueueRequest& req
   ss << "/2017-08-29/queues/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateQueueOutcome(UpdateQueueResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateQueueOutcome(outcome.GetError());
-  }
+  return UpdateQueueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateQueueOutcomeCallable MediaConvertClient::UpdateQueueCallable(const UpdateQueueRequest& request) const

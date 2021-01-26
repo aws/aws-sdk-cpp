@@ -96,7 +96,7 @@
         {"shape":"LimitExceededException"},
         {"shape":"ResourceInUseException"}
       ],
-      "documentation":"<p>Creates a job that imports training data from your data source (an Amazon S3 bucket) to an Amazon Personalize dataset. To allow Amazon Personalize to import the training data, you must specify an AWS Identity and Access Management (IAM) role that has permission to read from the data source.</p> <important> <p>The dataset import job replaces any previous data in the dataset.</p> </important> <p> <b>Status</b> </p> <p>A dataset import job can be in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul> <p>To get the status of the import job, call <a>DescribeDatasetImportJob</a>, providing the Amazon Resource Name (ARN) of the dataset import job. The dataset import is complete when the status shows as ACTIVE. If the status shows as CREATE FAILED, the response includes a <code>failureReason</code> key, which describes why the job failed.</p> <note> <p>Importing takes time. You must wait until the status shows as ACTIVE before training a model using the dataset.</p> </note> <p class=\"title\"> <b>Related APIs</b> </p> <ul> <li> <p> <a>ListDatasetImportJobs</a> </p> </li> <li> <p> <a>DescribeDatasetImportJob</a> </p> </li> </ul>"
+      "documentation":"<p>Creates a job that imports training data from your data source (an Amazon S3 bucket) to an Amazon Personalize dataset. To allow Amazon Personalize to import the training data, you must specify an AWS Identity and Access Management (IAM) role that has permission to read from the data source, as Amazon Personalize makes a copy of your data and processes it in an internal AWS system.</p> <important> <p>The dataset import job replaces any previous data in the dataset.</p> </important> <p> <b>Status</b> </p> <p>A dataset import job can be in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul> <p>To get the status of the import job, call <a>DescribeDatasetImportJob</a>, providing the Amazon Resource Name (ARN) of the dataset import job. The dataset import is complete when the status shows as ACTIVE. If the status shows as CREATE FAILED, the response includes a <code>failureReason</code> key, which describes why the job failed.</p> <note> <p>Importing takes time. You must wait until the status shows as ACTIVE before training a model using the dataset.</p> </note> <p class=\"title\"> <b>Related APIs</b> </p> <ul> <li> <p> <a>ListDatasetImportJobs</a> </p> </li> <li> <p> <a>DescribeDatasetImportJob</a> </p> </li> </ul>"
     },
     "CreateEventTracker":{
       "name":"CreateEventTracker",
@@ -115,6 +115,22 @@
       ],
       "documentation":"<p>Creates an event tracker that you use when sending event data to the specified dataset group using the <a href=\"https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html\">PutEvents</a> API.</p> <p>When Amazon Personalize creates an event tracker, it also creates an <i>event-interactions</i> dataset in the dataset group associated with the event tracker. The event-interactions dataset stores the event data from the <code>PutEvents</code> call. The contents of this dataset are not available to the user.</p> <note> <p>Only one event tracker can be associated with a dataset group. You will get an error if you call <code>CreateEventTracker</code> using the same dataset group as an existing event tracker.</p> </note> <p>When you send event data you include your tracking ID. The tracking ID identifies the customer and authorizes the customer to send the data.</p> <p>The event tracker can be in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul> <p>To get the status of the event tracker, call <a>DescribeEventTracker</a>.</p> <note> <p>The event tracker must be in the ACTIVE state before using the tracking ID.</p> </note> <p class=\"title\"> <b>Related APIs</b> </p> <ul> <li> <p> <a>ListEventTrackers</a> </p> </li> <li> <p> <a>DescribeEventTracker</a> </p> </li> <li> <p> <a>DeleteEventTracker</a> </p> </li> </ul>",
       "idempotent":true
+    },
+    "CreateFilter":{
+      "name":"CreateFilter",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateFilterRequest"},
+      "output":{"shape":"CreateFilterResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"ResourceAlreadyExistsException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"LimitExceededException"}
+      ],
+      "documentation":"<p>Creates a recommendation filter. For more information, see <a href=\"https://docs.aws.amazon.com/personalize/latest/dg/filters.html\">Using Filters with Amazon Personalize</a>.</p>"
     },
     "CreateSchema":{
       "name":"CreateSchema",
@@ -160,6 +176,7 @@
       "errors":[
         {"shape":"InvalidInputException"},
         {"shape":"ResourceNotFoundException"},
+        {"shape":"LimitExceededException"},
         {"shape":"ResourceInUseException"}
       ],
       "documentation":"<p>Trains or retrains an active solution. A solution is created using the <a>CreateSolution</a> operation and must be in the ACTIVE state before calling <code>CreateSolutionVersion</code>. A new version of the solution is created every time you call this operation.</p> <p> <b>Status</b> </p> <p>A solution version can be in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul> <p>To get the status of the version, call <a>DescribeSolutionVersion</a>. Wait until the status shows as ACTIVE before calling <code>CreateCampaign</code>.</p> <p>If the status shows as CREATE FAILED, the response includes a <code>failureReason</code> key, which describes why the job failed.</p> <p class=\"title\"> <b>Related APIs</b> </p> <ul> <li> <p> <a>ListSolutionVersions</a> </p> </li> <li> <p> <a>DescribeSolutionVersion</a> </p> </li> </ul> <ul> <li> <p> <a>ListSolutions</a> </p> </li> <li> <p> <a>CreateSolution</a> </p> </li> <li> <p> <a>DescribeSolution</a> </p> </li> <li> <p> <a>DeleteSolution</a> </p> </li> </ul>"
@@ -223,6 +240,20 @@
       ],
       "documentation":"<p>Deletes the event tracker. Does not delete the event-interactions dataset from the associated dataset group. For more information on event trackers, see <a>CreateEventTracker</a>.</p>",
       "idempotent":true
+    },
+    "DeleteFilter":{
+      "name":"DeleteFilter",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteFilterRequest"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ResourceInUseException"}
+      ],
+      "documentation":"<p>Deletes a filter.</p>"
     },
     "DeleteSchema":{
       "name":"DeleteSchema",
@@ -372,6 +403,21 @@
         {"shape":"ResourceNotFoundException"}
       ],
       "documentation":"<p>Describes the given feature transformation.</p>",
+      "idempotent":true
+    },
+    "DescribeFilter":{
+      "name":"DescribeFilter",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeFilterRequest"},
+      "output":{"shape":"DescribeFilterResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p>Describes a filter's properties.</p>",
       "idempotent":true
     },
     "DescribeRecipe":{
@@ -536,6 +582,21 @@
         {"shape":"InvalidNextTokenException"}
       ],
       "documentation":"<p>Returns the list of event trackers associated with the account. The response provides the properties for each event tracker, including the Amazon Resource Name (ARN) and tracking ID. For more information on event trackers, see <a>CreateEventTracker</a>.</p>",
+      "idempotent":true
+    },
+    "ListFilters":{
+      "name":"ListFilters",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListFiltersRequest"},
+      "output":{"shape":"ListFiltersResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"InvalidNextTokenException"}
+      ],
+      "documentation":"<p>Lists all filters that belong to a given dataset group.</p>",
       "idempotent":true
     },
     "ListRecipes":{
@@ -729,6 +790,10 @@
           "shape":"Arn",
           "documentation":"<p>The Amazon Resource Name (ARN) of the batch inference job.</p>"
         },
+        "filterArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the filter used on the batch inference job.</p>"
+        },
         "failureReason":{
           "shape":"FailureReason",
           "documentation":"<p>If the batch inference job failed, the reason for the failure.</p>"
@@ -749,6 +814,10 @@
           "shape":"BatchInferenceJobOutput",
           "documentation":"<p>The Amazon S3 bucket that contains the output data generated by the batch inference job.</p>"
         },
+        "batchInferenceJobConfig":{
+          "shape":"BatchInferenceJobConfig",
+          "documentation":"<p>A string to string map of the configuration details of a batch inference job.</p>"
+        },
         "roleArn":{
           "shape":"RoleArn",
           "documentation":"<p>The ARN of the Amazon Identity and Access Management (IAM) role that requested the batch inference job.</p>"
@@ -767,6 +836,16 @@
         }
       },
       "documentation":"<p>Contains information on a batch inference job.</p>"
+    },
+    "BatchInferenceJobConfig":{
+      "type":"structure",
+      "members":{
+        "itemExplorationConfig":{
+          "shape":"HyperParameters",
+          "documentation":"<p>A string to string map specifying the inference hyperparameters you wish to use for hyperparameter optimization. See <a>customizing-solution-config-hpo</a>.</p>"
+        }
+      },
+      "documentation":"<p>The configuration details of a batch inference job.</p>"
     },
     "BatchInferenceJobInput":{
       "type":"structure",
@@ -849,6 +928,10 @@
           "shape":"TransactionsPerSecond",
           "documentation":"<p>Specifies the requested minimum provisioned transactions (recommendations) per second.</p>"
         },
+        "campaignConfig":{
+          "shape":"CampaignConfig",
+          "documentation":"<p>The configuration details of a campaign.</p>"
+        },
         "status":{
           "shape":"Status",
           "documentation":"<p>The status of the campaign.</p> <p>A campaign can be in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul>"
@@ -868,6 +951,16 @@
         "latestCampaignUpdate":{"shape":"CampaignUpdateSummary"}
       },
       "documentation":"<p>Describes a deployed solution version, otherwise known as a campaign. For more information on campaigns, see <a>CreateCampaign</a>.</p>"
+    },
+    "CampaignConfig":{
+      "type":"structure",
+      "members":{
+        "itemExplorationConfig":{
+          "shape":"HyperParameters",
+          "documentation":"<p>A string to string map specifying the inference hyperparameters you wish to use for hyperparameter optimization. See <a>customizing-solution-config-hpo</a>.</p>"
+        }
+      },
+      "documentation":"<p>The configuration details of a campaign.</p>"
     },
     "CampaignSummary":{
       "type":"structure",
@@ -910,6 +1003,7 @@
           "shape":"TransactionsPerSecond",
           "documentation":"<p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>"
         },
+        "campaignConfig":{"shape":"CampaignConfig"},
         "status":{
           "shape":"Status",
           "documentation":"<p>The status of the campaign update.</p> <p>A campaign update can be in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul>"
@@ -1011,6 +1105,10 @@
           "shape":"Arn",
           "documentation":"<p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the batch inference recommendations.</p>"
         },
+        "filterArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the filter to apply to the batch inference job. For more information on using filters, see Using Filters with Amazon Personalize.</p>"
+        },
         "numResults":{
           "shape":"NumBatchResults",
           "documentation":"<p>The number of recommendations to retreive.</p>"
@@ -1026,6 +1124,10 @@
         "roleArn":{
           "shape":"RoleArn",
           "documentation":"<p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and out Amazon S3 buckets respectively.</p>"
+        },
+        "batchInferenceJobConfig":{
+          "shape":"BatchInferenceJobConfig",
+          "documentation":"<p>The configuration details of a batch inference job.</p>"
         }
       }
     },
@@ -1057,6 +1159,10 @@
         "minProvisionedTPS":{
           "shape":"TransactionsPerSecond",
           "documentation":"<p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>"
+        },
+        "campaignConfig":{
+          "shape":"CampaignConfig",
+          "documentation":"<p>The configuration details of a campaign.</p>"
         }
       }
     },
@@ -1195,6 +1301,37 @@
         "trackingId":{
           "shape":"TrackingId",
           "documentation":"<p>The ID of the event tracker. Include this ID in requests to the <a href=\"https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html\">PutEvents</a> API.</p>"
+        }
+      }
+    },
+    "CreateFilterRequest":{
+      "type":"structure",
+      "required":[
+        "name",
+        "datasetGroupArn",
+        "filterExpression"
+      ],
+      "members":{
+        "name":{
+          "shape":"Name",
+          "documentation":"<p>The name of the filter to create.</p>"
+        },
+        "datasetGroupArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the dataset group that the filter will belong to.</p>"
+        },
+        "filterExpression":{
+          "shape":"FilterExpression",
+          "documentation":"<p>The filter expression that designates the interaction types that the filter will filter out. A filter expression must follow the following format:</p> <p> <code>EXCLUDE itemId WHERE INTERACTIONS.event_type in (\"EVENT_TYPE\")</code> </p> <p>Where \"EVENT_TYPE\" is the type of event to filter out. To filter out all items with any interactions history, set <code>\"*\"</code> as the EVENT_TYPE. For more information, see <a href=\"https://docs.aws.amazon.com/personalize/latest/dg/filters.html\">Using Filters with Amazon Personalize</a>.</p>"
+        }
+      }
+    },
+    "CreateFilterResponse":{
+      "type":"structure",
+      "members":{
+        "filterArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the new filter.</p>"
         }
       }
     },
@@ -1714,6 +1851,16 @@
         }
       }
     },
+    "DeleteFilterRequest":{
+      "type":"structure",
+      "required":["filterArn"],
+      "members":{
+        "filterArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the filter to delete.</p>"
+        }
+      }
+    },
     "DeleteSchemaRequest":{
       "type":"structure",
       "required":["schemaArn"],
@@ -1883,6 +2030,25 @@
         "featureTransformation":{
           "shape":"FeatureTransformation",
           "documentation":"<p>A listing of the FeatureTransformation properties.</p>"
+        }
+      }
+    },
+    "DescribeFilterRequest":{
+      "type":"structure",
+      "required":["filterArn"],
+      "members":{
+        "filterArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the filter to describe.</p>"
+        }
+      }
+    },
+    "DescribeFilterResponse":{
+      "type":"structure",
+      "members":{
+        "filter":{
+          "shape":"Filter",
+          "documentation":"<p>The filter's details.</p>"
         }
       }
     },
@@ -2086,6 +2252,89 @@
       "type":"map",
       "key":{"shape":"ParameterName"},
       "value":{"shape":"ParameterValue"},
+      "max":100
+    },
+    "Filter":{
+      "type":"structure",
+      "members":{
+        "name":{
+          "shape":"Name",
+          "documentation":"<p>The name of the filter.</p>"
+        },
+        "filterArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the filter.</p>"
+        },
+        "creationDateTime":{
+          "shape":"Date",
+          "documentation":"<p>The time at which the filter was created.</p>"
+        },
+        "lastUpdatedDateTime":{
+          "shape":"Date",
+          "documentation":"<p>The time at which the filter was last updated.</p>"
+        },
+        "datasetGroupArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the dataset group to which the filter belongs.</p>"
+        },
+        "failureReason":{
+          "shape":"FailureReason",
+          "documentation":"<p>If the filter failed, the reason for its failure.</p>"
+        },
+        "filterExpression":{
+          "shape":"FilterExpression",
+          "documentation":"<p>Specifies the type of item interactions to filter out of recommendation results. The filter expression must follow the following format:</p> <p> <code>EXCLUDE itemId WHERE INTERACTIONS.event_type in (\"EVENT_TYPE\")</code> </p> <p>Where \"EVENT_TYPE\" is the type of event to filter out. For more information, see <a href=\"https://docs.aws.amazon.com/personalize/latest/dg/filters.html\">Using Filters with Amazon Personalize</a>.</p>"
+        },
+        "status":{
+          "shape":"Status",
+          "documentation":"<p>The status of the filter.</p>"
+        }
+      },
+      "documentation":"<p>Contains information on a recommendation filter, including its ARN, status, and filter expression.</p>"
+    },
+    "FilterExpression":{
+      "type":"string",
+      "max":2500,
+      "min":1,
+      "sensitive":true
+    },
+    "FilterSummary":{
+      "type":"structure",
+      "members":{
+        "name":{
+          "shape":"Name",
+          "documentation":"<p>The name of the filter.</p>"
+        },
+        "filterArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the filter.</p>"
+        },
+        "creationDateTime":{
+          "shape":"Date",
+          "documentation":"<p>The time at which the filter was created.</p>"
+        },
+        "lastUpdatedDateTime":{
+          "shape":"Date",
+          "documentation":"<p>The time at which the filter was last updated.</p>"
+        },
+        "datasetGroupArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the dataset group to which the filter belongs.</p>"
+        },
+        "failureReason":{
+          "shape":"FailureReason",
+          "documentation":"<p>If the filter failed, the reason for the failure.</p>"
+        },
+        "status":{
+          "shape":"Status",
+          "documentation":"<p>The status of the filter.</p>"
+        }
+      },
+      "documentation":"<p>A short summary of a filter's attributes.</p>"
+    },
+    "Filters":{
+      "type":"list",
+      "member":{"shape":"FilterSummary"},
       "max":100
     },
     "GetSolutionMetricsRequest":{
@@ -2422,6 +2671,36 @@
         "nextToken":{
           "shape":"NextToken",
           "documentation":"<p>A token for getting the next set of event trackers (if they exist).</p>"
+        }
+      }
+    },
+    "ListFiltersRequest":{
+      "type":"structure",
+      "members":{
+        "datasetGroupArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the dataset group that contains the filters.</p>"
+        },
+        "nextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>A token returned from the previous call to <code>ListFilters</code> for getting the next set of filters (if they exist).</p>"
+        },
+        "maxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>The maximum number of filters to return.</p>"
+        }
+      }
+    },
+    "ListFiltersResponse":{
+      "type":"structure",
+      "members":{
+        "Filters":{
+          "shape":"Filters",
+          "documentation":"<p>A list of returned filters.</p>"
+        },
+        "nextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>A token for getting the next set of filters (if they exist).</p>"
         }
       }
     },
@@ -2987,6 +3266,10 @@
         "minProvisionedTPS":{
           "shape":"TransactionsPerSecond",
           "documentation":"<p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>"
+        },
+        "campaignConfig":{
+          "shape":"CampaignConfig",
+          "documentation":"<p>The configuration details of a campaign.</p>"
         }
       }
     },

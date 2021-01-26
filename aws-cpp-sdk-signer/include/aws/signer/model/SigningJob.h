@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/signer/Signer_EXPORTS.h>
@@ -265,6 +255,304 @@ namespace Model
      */
     inline SigningJob& WithStatus(SigningStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether the signing job is revoked.</p>
+     */
+    inline bool GetIsRevoked() const{ return m_isRevoked; }
+
+    /**
+     * <p>Indicates whether the signing job is revoked.</p>
+     */
+    inline bool IsRevokedHasBeenSet() const { return m_isRevokedHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the signing job is revoked.</p>
+     */
+    inline void SetIsRevoked(bool value) { m_isRevokedHasBeenSet = true; m_isRevoked = value; }
+
+    /**
+     * <p>Indicates whether the signing job is revoked.</p>
+     */
+    inline SigningJob& WithIsRevoked(bool value) { SetIsRevoked(value); return *this;}
+
+
+    /**
+     * <p>The name of the signing profile that created a signing job.</p>
+     */
+    inline const Aws::String& GetProfileName() const{ return m_profileName; }
+
+    /**
+     * <p>The name of the signing profile that created a signing job.</p>
+     */
+    inline bool ProfileNameHasBeenSet() const { return m_profileNameHasBeenSet; }
+
+    /**
+     * <p>The name of the signing profile that created a signing job.</p>
+     */
+    inline void SetProfileName(const Aws::String& value) { m_profileNameHasBeenSet = true; m_profileName = value; }
+
+    /**
+     * <p>The name of the signing profile that created a signing job.</p>
+     */
+    inline void SetProfileName(Aws::String&& value) { m_profileNameHasBeenSet = true; m_profileName = std::move(value); }
+
+    /**
+     * <p>The name of the signing profile that created a signing job.</p>
+     */
+    inline void SetProfileName(const char* value) { m_profileNameHasBeenSet = true; m_profileName.assign(value); }
+
+    /**
+     * <p>The name of the signing profile that created a signing job.</p>
+     */
+    inline SigningJob& WithProfileName(const Aws::String& value) { SetProfileName(value); return *this;}
+
+    /**
+     * <p>The name of the signing profile that created a signing job.</p>
+     */
+    inline SigningJob& WithProfileName(Aws::String&& value) { SetProfileName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the signing profile that created a signing job.</p>
+     */
+    inline SigningJob& WithProfileName(const char* value) { SetProfileName(value); return *this;}
+
+
+    /**
+     * <p>The version of the signing profile that created a signing job.</p>
+     */
+    inline const Aws::String& GetProfileVersion() const{ return m_profileVersion; }
+
+    /**
+     * <p>The version of the signing profile that created a signing job.</p>
+     */
+    inline bool ProfileVersionHasBeenSet() const { return m_profileVersionHasBeenSet; }
+
+    /**
+     * <p>The version of the signing profile that created a signing job.</p>
+     */
+    inline void SetProfileVersion(const Aws::String& value) { m_profileVersionHasBeenSet = true; m_profileVersion = value; }
+
+    /**
+     * <p>The version of the signing profile that created a signing job.</p>
+     */
+    inline void SetProfileVersion(Aws::String&& value) { m_profileVersionHasBeenSet = true; m_profileVersion = std::move(value); }
+
+    /**
+     * <p>The version of the signing profile that created a signing job.</p>
+     */
+    inline void SetProfileVersion(const char* value) { m_profileVersionHasBeenSet = true; m_profileVersion.assign(value); }
+
+    /**
+     * <p>The version of the signing profile that created a signing job.</p>
+     */
+    inline SigningJob& WithProfileVersion(const Aws::String& value) { SetProfileVersion(value); return *this;}
+
+    /**
+     * <p>The version of the signing profile that created a signing job.</p>
+     */
+    inline SigningJob& WithProfileVersion(Aws::String&& value) { SetProfileVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The version of the signing profile that created a signing job.</p>
+     */
+    inline SigningJob& WithProfileVersion(const char* value) { SetProfileVersion(value); return *this;}
+
+
+    /**
+     * <p>The unique identifier for a signing platform.</p>
+     */
+    inline const Aws::String& GetPlatformId() const{ return m_platformId; }
+
+    /**
+     * <p>The unique identifier for a signing platform.</p>
+     */
+    inline bool PlatformIdHasBeenSet() const { return m_platformIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for a signing platform.</p>
+     */
+    inline void SetPlatformId(const Aws::String& value) { m_platformIdHasBeenSet = true; m_platformId = value; }
+
+    /**
+     * <p>The unique identifier for a signing platform.</p>
+     */
+    inline void SetPlatformId(Aws::String&& value) { m_platformIdHasBeenSet = true; m_platformId = std::move(value); }
+
+    /**
+     * <p>The unique identifier for a signing platform.</p>
+     */
+    inline void SetPlatformId(const char* value) { m_platformIdHasBeenSet = true; m_platformId.assign(value); }
+
+    /**
+     * <p>The unique identifier for a signing platform.</p>
+     */
+    inline SigningJob& WithPlatformId(const Aws::String& value) { SetPlatformId(value); return *this;}
+
+    /**
+     * <p>The unique identifier for a signing platform.</p>
+     */
+    inline SigningJob& WithPlatformId(Aws::String&& value) { SetPlatformId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique identifier for a signing platform.</p>
+     */
+    inline SigningJob& WithPlatformId(const char* value) { SetPlatformId(value); return *this;}
+
+
+    /**
+     * <p>The name of a signing platform.</p>
+     */
+    inline const Aws::String& GetPlatformDisplayName() const{ return m_platformDisplayName; }
+
+    /**
+     * <p>The name of a signing platform.</p>
+     */
+    inline bool PlatformDisplayNameHasBeenSet() const { return m_platformDisplayNameHasBeenSet; }
+
+    /**
+     * <p>The name of a signing platform.</p>
+     */
+    inline void SetPlatformDisplayName(const Aws::String& value) { m_platformDisplayNameHasBeenSet = true; m_platformDisplayName = value; }
+
+    /**
+     * <p>The name of a signing platform.</p>
+     */
+    inline void SetPlatformDisplayName(Aws::String&& value) { m_platformDisplayNameHasBeenSet = true; m_platformDisplayName = std::move(value); }
+
+    /**
+     * <p>The name of a signing platform.</p>
+     */
+    inline void SetPlatformDisplayName(const char* value) { m_platformDisplayNameHasBeenSet = true; m_platformDisplayName.assign(value); }
+
+    /**
+     * <p>The name of a signing platform.</p>
+     */
+    inline SigningJob& WithPlatformDisplayName(const Aws::String& value) { SetPlatformDisplayName(value); return *this;}
+
+    /**
+     * <p>The name of a signing platform.</p>
+     */
+    inline SigningJob& WithPlatformDisplayName(Aws::String&& value) { SetPlatformDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of a signing platform.</p>
+     */
+    inline SigningJob& WithPlatformDisplayName(const char* value) { SetPlatformDisplayName(value); return *this;}
+
+
+    /**
+     * <p>The time when the signature of a signing job expires.</p>
+     */
+    inline const Aws::Utils::DateTime& GetSignatureExpiresAt() const{ return m_signatureExpiresAt; }
+
+    /**
+     * <p>The time when the signature of a signing job expires.</p>
+     */
+    inline bool SignatureExpiresAtHasBeenSet() const { return m_signatureExpiresAtHasBeenSet; }
+
+    /**
+     * <p>The time when the signature of a signing job expires.</p>
+     */
+    inline void SetSignatureExpiresAt(const Aws::Utils::DateTime& value) { m_signatureExpiresAtHasBeenSet = true; m_signatureExpiresAt = value; }
+
+    /**
+     * <p>The time when the signature of a signing job expires.</p>
+     */
+    inline void SetSignatureExpiresAt(Aws::Utils::DateTime&& value) { m_signatureExpiresAtHasBeenSet = true; m_signatureExpiresAt = std::move(value); }
+
+    /**
+     * <p>The time when the signature of a signing job expires.</p>
+     */
+    inline SigningJob& WithSignatureExpiresAt(const Aws::Utils::DateTime& value) { SetSignatureExpiresAt(value); return *this;}
+
+    /**
+     * <p>The time when the signature of a signing job expires.</p>
+     */
+    inline SigningJob& WithSignatureExpiresAt(Aws::Utils::DateTime&& value) { SetSignatureExpiresAt(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The AWS account ID of the job owner.</p>
+     */
+    inline const Aws::String& GetJobOwner() const{ return m_jobOwner; }
+
+    /**
+     * <p>The AWS account ID of the job owner.</p>
+     */
+    inline bool JobOwnerHasBeenSet() const { return m_jobOwnerHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID of the job owner.</p>
+     */
+    inline void SetJobOwner(const Aws::String& value) { m_jobOwnerHasBeenSet = true; m_jobOwner = value; }
+
+    /**
+     * <p>The AWS account ID of the job owner.</p>
+     */
+    inline void SetJobOwner(Aws::String&& value) { m_jobOwnerHasBeenSet = true; m_jobOwner = std::move(value); }
+
+    /**
+     * <p>The AWS account ID of the job owner.</p>
+     */
+    inline void SetJobOwner(const char* value) { m_jobOwnerHasBeenSet = true; m_jobOwner.assign(value); }
+
+    /**
+     * <p>The AWS account ID of the job owner.</p>
+     */
+    inline SigningJob& WithJobOwner(const Aws::String& value) { SetJobOwner(value); return *this;}
+
+    /**
+     * <p>The AWS account ID of the job owner.</p>
+     */
+    inline SigningJob& WithJobOwner(Aws::String&& value) { SetJobOwner(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS account ID of the job owner.</p>
+     */
+    inline SigningJob& WithJobOwner(const char* value) { SetJobOwner(value); return *this;}
+
+
+    /**
+     * <p>The AWS account ID of the job invoker.</p>
+     */
+    inline const Aws::String& GetJobInvoker() const{ return m_jobInvoker; }
+
+    /**
+     * <p>The AWS account ID of the job invoker.</p>
+     */
+    inline bool JobInvokerHasBeenSet() const { return m_jobInvokerHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID of the job invoker.</p>
+     */
+    inline void SetJobInvoker(const Aws::String& value) { m_jobInvokerHasBeenSet = true; m_jobInvoker = value; }
+
+    /**
+     * <p>The AWS account ID of the job invoker.</p>
+     */
+    inline void SetJobInvoker(Aws::String&& value) { m_jobInvokerHasBeenSet = true; m_jobInvoker = std::move(value); }
+
+    /**
+     * <p>The AWS account ID of the job invoker.</p>
+     */
+    inline void SetJobInvoker(const char* value) { m_jobInvokerHasBeenSet = true; m_jobInvoker.assign(value); }
+
+    /**
+     * <p>The AWS account ID of the job invoker.</p>
+     */
+    inline SigningJob& WithJobInvoker(const Aws::String& value) { SetJobInvoker(value); return *this;}
+
+    /**
+     * <p>The AWS account ID of the job invoker.</p>
+     */
+    inline SigningJob& WithJobInvoker(Aws::String&& value) { SetJobInvoker(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS account ID of the job invoker.</p>
+     */
+    inline SigningJob& WithJobInvoker(const char* value) { SetJobInvoker(value); return *this;}
+
   private:
 
     Aws::String m_jobId;
@@ -284,6 +572,30 @@ namespace Model
 
     SigningStatus m_status;
     bool m_statusHasBeenSet;
+
+    bool m_isRevoked;
+    bool m_isRevokedHasBeenSet;
+
+    Aws::String m_profileName;
+    bool m_profileNameHasBeenSet;
+
+    Aws::String m_profileVersion;
+    bool m_profileVersionHasBeenSet;
+
+    Aws::String m_platformId;
+    bool m_platformIdHasBeenSet;
+
+    Aws::String m_platformDisplayName;
+    bool m_platformDisplayNameHasBeenSet;
+
+    Aws::Utils::DateTime m_signatureExpiresAt;
+    bool m_signatureExpiresAtHasBeenSet;
+
+    Aws::String m_jobOwner;
+    bool m_jobOwnerHasBeenSet;
+
+    Aws::String m_jobInvoker;
+    bool m_jobInvokerHasBeenSet;
   };
 
 } // namespace Model

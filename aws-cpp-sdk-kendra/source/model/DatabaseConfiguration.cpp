@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kendra/model/DatabaseConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,7 +24,8 @@ DatabaseConfiguration::DatabaseConfiguration() :
     m_connectionConfigurationHasBeenSet(false),
     m_vpcConfigurationHasBeenSet(false),
     m_columnConfigurationHasBeenSet(false),
-    m_aclConfigurationHasBeenSet(false)
+    m_aclConfigurationHasBeenSet(false),
+    m_sqlConfigurationHasBeenSet(false)
 {
 }
 
@@ -44,7 +35,8 @@ DatabaseConfiguration::DatabaseConfiguration(JsonView jsonValue) :
     m_connectionConfigurationHasBeenSet(false),
     m_vpcConfigurationHasBeenSet(false),
     m_columnConfigurationHasBeenSet(false),
-    m_aclConfigurationHasBeenSet(false)
+    m_aclConfigurationHasBeenSet(false),
+    m_sqlConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +78,13 @@ DatabaseConfiguration& DatabaseConfiguration::operator =(JsonView jsonValue)
     m_aclConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SqlConfiguration"))
+  {
+    m_sqlConfiguration = jsonValue.GetObject("SqlConfiguration");
+
+    m_sqlConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -119,6 +118,12 @@ JsonValue DatabaseConfiguration::Jsonize() const
   if(m_aclConfigurationHasBeenSet)
   {
    payload.WithObject("AclConfiguration", m_aclConfiguration.Jsonize());
+
+  }
+
+  if(m_sqlConfigurationHasBeenSet)
+  {
+   payload.WithObject("SqlConfiguration", m_sqlConfiguration.Jsonize());
 
   }
 

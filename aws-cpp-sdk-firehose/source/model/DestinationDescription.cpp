@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/firehose/model/DestinationDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,7 +24,8 @@ DestinationDescription::DestinationDescription() :
     m_extendedS3DestinationDescriptionHasBeenSet(false),
     m_redshiftDestinationDescriptionHasBeenSet(false),
     m_elasticsearchDestinationDescriptionHasBeenSet(false),
-    m_splunkDestinationDescriptionHasBeenSet(false)
+    m_splunkDestinationDescriptionHasBeenSet(false),
+    m_httpEndpointDestinationDescriptionHasBeenSet(false)
 {
 }
 
@@ -44,7 +35,8 @@ DestinationDescription::DestinationDescription(JsonView jsonValue) :
     m_extendedS3DestinationDescriptionHasBeenSet(false),
     m_redshiftDestinationDescriptionHasBeenSet(false),
     m_elasticsearchDestinationDescriptionHasBeenSet(false),
-    m_splunkDestinationDescriptionHasBeenSet(false)
+    m_splunkDestinationDescriptionHasBeenSet(false),
+    m_httpEndpointDestinationDescriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -93,6 +85,13 @@ DestinationDescription& DestinationDescription::operator =(JsonView jsonValue)
     m_splunkDestinationDescriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("HttpEndpointDestinationDescription"))
+  {
+    m_httpEndpointDestinationDescription = jsonValue.GetObject("HttpEndpointDestinationDescription");
+
+    m_httpEndpointDestinationDescriptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -133,6 +132,12 @@ JsonValue DestinationDescription::Jsonize() const
   if(m_splunkDestinationDescriptionHasBeenSet)
   {
    payload.WithObject("SplunkDestinationDescription", m_splunkDestinationDescription.Jsonize());
+
+  }
+
+  if(m_httpEndpointDestinationDescriptionHasBeenSet)
+  {
+   payload.WithObject("HttpEndpointDestinationDescription", m_httpEndpointDestinationDescription.Jsonize());
 
   }
 

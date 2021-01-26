@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/elasticache/model/CacheSecurityGroup.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -34,7 +24,8 @@ CacheSecurityGroup::CacheSecurityGroup() :
     m_ownerIdHasBeenSet(false),
     m_cacheSecurityGroupNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_eC2SecurityGroupsHasBeenSet(false)
+    m_eC2SecurityGroupsHasBeenSet(false),
+    m_aRNHasBeenSet(false)
 {
 }
 
@@ -42,7 +33,8 @@ CacheSecurityGroup::CacheSecurityGroup(const XmlNode& xmlNode) :
     m_ownerIdHasBeenSet(false),
     m_cacheSecurityGroupNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_eC2SecurityGroupsHasBeenSet(false)
+    m_eC2SecurityGroupsHasBeenSet(false),
+    m_aRNHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -83,6 +75,12 @@ CacheSecurityGroup& CacheSecurityGroup::operator =(const XmlNode& xmlNode)
 
       m_eC2SecurityGroupsHasBeenSet = true;
     }
+    XmlNode aRNNode = resultNode.FirstChild("ARN");
+    if(!aRNNode.IsNull())
+    {
+      m_aRN = Aws::Utils::Xml::DecodeEscapedXmlText(aRNNode.GetText());
+      m_aRNHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -116,6 +114,11 @@ void CacheSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* locat
       }
   }
 
+  if(m_aRNHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ARN=" << StringUtils::URLEncode(m_aRN.c_str()) << "&";
+  }
+
 }
 
 void CacheSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -141,6 +144,10 @@ void CacheSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* locat
         eC2SecurityGroupsSs << location <<  ".EC2SecurityGroup." << eC2SecurityGroupsIdx++;
         item.OutputToStream(oStream, eC2SecurityGroupsSs.str().c_str());
       }
+  }
+  if(m_aRNHasBeenSet)
+  {
+      oStream << location << ".ARN=" << StringUtils::URLEncode(m_aRN.c_str()) << "&";
   }
 }
 

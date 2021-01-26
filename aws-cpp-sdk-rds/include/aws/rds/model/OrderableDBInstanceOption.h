@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -690,74 +680,47 @@ namespace Model
 
 
     /**
-     * <p>A list of the supported DB engine modes.</p> <note> <p> <code>global</code>
-     * engine mode only applies for global database clusters created with Aurora MySQL
-     * version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global
-     * database use <code>provisioned</code> engine mode. </p> </note>
+     * <p>A list of the supported DB engine modes.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSupportedEngineModes() const{ return m_supportedEngineModes; }
 
     /**
-     * <p>A list of the supported DB engine modes.</p> <note> <p> <code>global</code>
-     * engine mode only applies for global database clusters created with Aurora MySQL
-     * version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global
-     * database use <code>provisioned</code> engine mode. </p> </note>
+     * <p>A list of the supported DB engine modes.</p>
      */
     inline bool SupportedEngineModesHasBeenSet() const { return m_supportedEngineModesHasBeenSet; }
 
     /**
-     * <p>A list of the supported DB engine modes.</p> <note> <p> <code>global</code>
-     * engine mode only applies for global database clusters created with Aurora MySQL
-     * version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global
-     * database use <code>provisioned</code> engine mode. </p> </note>
+     * <p>A list of the supported DB engine modes.</p>
      */
     inline void SetSupportedEngineModes(const Aws::Vector<Aws::String>& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes = value; }
 
     /**
-     * <p>A list of the supported DB engine modes.</p> <note> <p> <code>global</code>
-     * engine mode only applies for global database clusters created with Aurora MySQL
-     * version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global
-     * database use <code>provisioned</code> engine mode. </p> </note>
+     * <p>A list of the supported DB engine modes.</p>
      */
     inline void SetSupportedEngineModes(Aws::Vector<Aws::String>&& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes = std::move(value); }
 
     /**
-     * <p>A list of the supported DB engine modes.</p> <note> <p> <code>global</code>
-     * engine mode only applies for global database clusters created with Aurora MySQL
-     * version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global
-     * database use <code>provisioned</code> engine mode. </p> </note>
+     * <p>A list of the supported DB engine modes.</p>
      */
     inline OrderableDBInstanceOption& WithSupportedEngineModes(const Aws::Vector<Aws::String>& value) { SetSupportedEngineModes(value); return *this;}
 
     /**
-     * <p>A list of the supported DB engine modes.</p> <note> <p> <code>global</code>
-     * engine mode only applies for global database clusters created with Aurora MySQL
-     * version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global
-     * database use <code>provisioned</code> engine mode. </p> </note>
+     * <p>A list of the supported DB engine modes.</p>
      */
     inline OrderableDBInstanceOption& WithSupportedEngineModes(Aws::Vector<Aws::String>&& value) { SetSupportedEngineModes(std::move(value)); return *this;}
 
     /**
-     * <p>A list of the supported DB engine modes.</p> <note> <p> <code>global</code>
-     * engine mode only applies for global database clusters created with Aurora MySQL
-     * version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global
-     * database use <code>provisioned</code> engine mode. </p> </note>
+     * <p>A list of the supported DB engine modes.</p>
      */
     inline OrderableDBInstanceOption& AddSupportedEngineModes(const Aws::String& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes.push_back(value); return *this; }
 
     /**
-     * <p>A list of the supported DB engine modes.</p> <note> <p> <code>global</code>
-     * engine mode only applies for global database clusters created with Aurora MySQL
-     * version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global
-     * database use <code>provisioned</code> engine mode. </p> </note>
+     * <p>A list of the supported DB engine modes.</p>
      */
     inline OrderableDBInstanceOption& AddSupportedEngineModes(Aws::String&& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of the supported DB engine modes.</p> <note> <p> <code>global</code>
-     * engine mode only applies for global database clusters created with Aurora MySQL
-     * version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global
-     * database use <code>provisioned</code> engine mode. </p> </note>
+     * <p>A list of the supported DB engine modes.</p>
      */
     inline OrderableDBInstanceOption& AddSupportedEngineModes(const char* value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes.push_back(value); return *this; }
 
@@ -806,6 +769,64 @@ namespace Model
      * <p>Whether a DB instance supports Kerberos Authentication.</p>
      */
     inline OrderableDBInstanceOption& WithSupportsKerberosAuthentication(bool value) { SetSupportsKerberosAuthentication(value); return *this;}
+
+
+    /**
+     * <p>Whether a DB instance supports RDS on Outposts.</p> <p>For more information
+     * about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
+     * RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
+     */
+    inline bool GetOutpostCapable() const{ return m_outpostCapable; }
+
+    /**
+     * <p>Whether a DB instance supports RDS on Outposts.</p> <p>For more information
+     * about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
+     * RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
+     */
+    inline bool OutpostCapableHasBeenSet() const { return m_outpostCapableHasBeenSet; }
+
+    /**
+     * <p>Whether a DB instance supports RDS on Outposts.</p> <p>For more information
+     * about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
+     * RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
+     */
+    inline void SetOutpostCapable(bool value) { m_outpostCapableHasBeenSet = true; m_outpostCapable = value; }
+
+    /**
+     * <p>Whether a DB instance supports RDS on Outposts.</p> <p>For more information
+     * about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
+     * RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
+     */
+    inline OrderableDBInstanceOption& WithOutpostCapable(bool value) { SetOutpostCapable(value); return *this;}
+
+
+    /**
+     * <p>A value that indicates whether you can use Aurora global databases with a
+     * specific combination of other DB engine attributes.</p>
+     */
+    inline bool GetSupportsGlobalDatabases() const{ return m_supportsGlobalDatabases; }
+
+    /**
+     * <p>A value that indicates whether you can use Aurora global databases with a
+     * specific combination of other DB engine attributes.</p>
+     */
+    inline bool SupportsGlobalDatabasesHasBeenSet() const { return m_supportsGlobalDatabasesHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether you can use Aurora global databases with a
+     * specific combination of other DB engine attributes.</p>
+     */
+    inline void SetSupportsGlobalDatabases(bool value) { m_supportsGlobalDatabasesHasBeenSet = true; m_supportsGlobalDatabases = value; }
+
+    /**
+     * <p>A value that indicates whether you can use Aurora global databases with a
+     * specific combination of other DB engine attributes.</p>
+     */
+    inline OrderableDBInstanceOption& WithSupportsGlobalDatabases(bool value) { SetSupportsGlobalDatabases(value); return *this;}
 
   private:
 
@@ -883,6 +904,12 @@ namespace Model
 
     bool m_supportsKerberosAuthentication;
     bool m_supportsKerberosAuthenticationHasBeenSet;
+
+    bool m_outpostCapable;
+    bool m_outpostCapableHasBeenSet;
+
+    bool m_supportsGlobalDatabases;
+    bool m_supportsGlobalDatabasesHasBeenSet;
   };
 
 } // namespace Model

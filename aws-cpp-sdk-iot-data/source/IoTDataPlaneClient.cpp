@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -32,6 +22,7 @@
 #include <aws/iot-data/IoTDataPlaneErrorMarshaller.h>
 #include <aws/iot-data/model/DeleteThingShadowRequest.h>
 #include <aws/iot-data/model/GetThingShadowRequest.h>
+#include <aws/iot-data/model/ListNamedShadowsForThingRequest.h>
 #include <aws/iot-data/model/PublishRequest.h>
 #include <aws/iot-data/model/UpdateThingShadowRequest.h>
 
@@ -50,7 +41,7 @@ static const char* ALLOCATION_TAG = "IoTDataPlaneClient";
 IoTDataPlaneClient::IoTDataPlaneClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<IoTDataPlaneErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -60,7 +51,7 @@ IoTDataPlaneClient::IoTDataPlaneClient(const Client::ClientConfiguration& client
 IoTDataPlaneClient::IoTDataPlaneClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<IoTDataPlaneErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -71,7 +62,7 @@ IoTDataPlaneClient::IoTDataPlaneClient(const std::shared_ptr<AWSCredentialsProvi
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<IoTDataPlaneErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -84,6 +75,7 @@ IoTDataPlaneClient::~IoTDataPlaneClient()
 
 void IoTDataPlaneClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("IoT Data Plane");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -120,15 +112,7 @@ DeleteThingShadowOutcome IoTDataPlaneClient::DeleteThingShadow(const DeleteThing
   ss << request.GetThingName();
   ss << "/shadow";
   uri.SetPath(uri.GetPath() + ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
-  if(outcome.IsSuccess())
-  {
-    return DeleteThingShadowOutcome(DeleteThingShadowResult(outcome.GetResultWithOwnership()));
-  }
-  else
-  {
-    return DeleteThingShadowOutcome(outcome.GetError());
-  }
+  return DeleteThingShadowOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
 DeleteThingShadowOutcomeCallable IoTDataPlaneClient::DeleteThingShadowCallable(const DeleteThingShadowRequest& request) const
@@ -162,15 +146,7 @@ GetThingShadowOutcome IoTDataPlaneClient::GetThingShadow(const GetThingShadowReq
   ss << request.GetThingName();
   ss << "/shadow";
   uri.SetPath(uri.GetPath() + ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return GetThingShadowOutcome(GetThingShadowResult(outcome.GetResultWithOwnership()));
-  }
-  else
-  {
-    return GetThingShadowOutcome(outcome.GetError());
-  }
+  return GetThingShadowOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetThingShadowOutcomeCallable IoTDataPlaneClient::GetThingShadowCallable(const GetThingShadowRequest& request) const
@@ -191,6 +167,39 @@ void IoTDataPlaneClient::GetThingShadowAsyncHelper(const GetThingShadowRequest& 
   handler(this, request, GetThingShadow(request), context);
 }
 
+ListNamedShadowsForThingOutcome IoTDataPlaneClient::ListNamedShadowsForThing(const ListNamedShadowsForThingRequest& request) const
+{
+  if (!request.ThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListNamedShadowsForThing", "Required field: ThingName, is not set");
+    return ListNamedShadowsForThingOutcome(Aws::Client::AWSError<IoTDataPlaneErrors>(IoTDataPlaneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/api/things/shadow/ListNamedShadowsForThing/";
+  ss << request.GetThingName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListNamedShadowsForThingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListNamedShadowsForThingOutcomeCallable IoTDataPlaneClient::ListNamedShadowsForThingCallable(const ListNamedShadowsForThingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListNamedShadowsForThingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListNamedShadowsForThing(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTDataPlaneClient::ListNamedShadowsForThingAsync(const ListNamedShadowsForThingRequest& request, const ListNamedShadowsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListNamedShadowsForThingAsyncHelper( request, handler, context ); } );
+}
+
+void IoTDataPlaneClient::ListNamedShadowsForThingAsyncHelper(const ListNamedShadowsForThingRequest& request, const ListNamedShadowsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListNamedShadowsForThing(request), context);
+}
+
 PublishOutcome IoTDataPlaneClient::Publish(const PublishRequest& request) const
 {
   if (!request.TopicHasBeenSet())
@@ -203,15 +212,7 @@ PublishOutcome IoTDataPlaneClient::Publish(const PublishRequest& request) const
   ss << "/topics/";
   ss << request.GetTopic();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PublishOutcome(NoResult());
-  }
-  else
-  {
-    return PublishOutcome(outcome.GetError());
-  }
+  return PublishOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PublishOutcomeCallable IoTDataPlaneClient::PublishCallable(const PublishRequest& request) const
@@ -245,15 +246,7 @@ UpdateThingShadowOutcome IoTDataPlaneClient::UpdateThingShadow(const UpdateThing
   ss << request.GetThingName();
   ss << "/shadow";
   uri.SetPath(uri.GetPath() + ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return UpdateThingShadowOutcome(UpdateThingShadowResult(outcome.GetResultWithOwnership()));
-  }
-  else
-  {
-    return UpdateThingShadowOutcome(outcome.GetError());
-  }
+  return UpdateThingShadowOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 UpdateThingShadowOutcomeCallable IoTDataPlaneClient::UpdateThingShadowCallable(const UpdateThingShadowRequest& request) const

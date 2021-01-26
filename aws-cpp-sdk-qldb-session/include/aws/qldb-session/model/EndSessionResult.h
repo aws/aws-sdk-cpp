@@ -1,20 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/qldb-session/QLDBSession_EXPORTS.h>
+#include <aws/qldb-session/model/TimingInformation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -44,6 +36,41 @@ namespace Model
     EndSessionResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    /**
+     * <p>Contains server-side performance information for the command.</p>
+     */
+    inline const TimingInformation& GetTimingInformation() const{ return m_timingInformation; }
+
+    /**
+     * <p>Contains server-side performance information for the command.</p>
+     */
+    inline bool TimingInformationHasBeenSet() const { return m_timingInformationHasBeenSet; }
+
+    /**
+     * <p>Contains server-side performance information for the command.</p>
+     */
+    inline void SetTimingInformation(const TimingInformation& value) { m_timingInformationHasBeenSet = true; m_timingInformation = value; }
+
+    /**
+     * <p>Contains server-side performance information for the command.</p>
+     */
+    inline void SetTimingInformation(TimingInformation&& value) { m_timingInformationHasBeenSet = true; m_timingInformation = std::move(value); }
+
+    /**
+     * <p>Contains server-side performance information for the command.</p>
+     */
+    inline EndSessionResult& WithTimingInformation(const TimingInformation& value) { SetTimingInformation(value); return *this;}
+
+    /**
+     * <p>Contains server-side performance information for the command.</p>
+     */
+    inline EndSessionResult& WithTimingInformation(TimingInformation&& value) { SetTimingInformation(std::move(value)); return *this;}
+
+  private:
+
+    TimingInformation m_timingInformation;
+    bool m_timingInformationHasBeenSet;
   };
 
 } // namespace Model

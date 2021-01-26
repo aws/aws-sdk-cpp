@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -35,10 +25,8 @@ namespace Model
 {
 
   /**
-   * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-   * preview release. It is subject to change.</p> </note> <p>Displays the settings
-   * that control the size and behavior of the connection pool associated with a
-   * <code>DBProxyTarget</code>.</p><p><h3>See Also:</h3>   <a
+   * <p>Displays the settings that control the size and behavior of the connection
+   * pool associated with a <code>DBProxyTarget</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ConnectionPoolConfigurationInfo">AWS
    * API Reference</a></p>
    */
@@ -252,8 +240,7 @@ namespace Model
      * sure that each connection has identical settings such as time zone and character
      * set. This setting is empty by default. For multiple statements, use semicolons
      * as the separator. You can also include multiple variables in a single
-     * <code>SET</code> statement, such as <code>SET x=1, y=2</code>. </p> <p>
-     * <code>InitQuery</code> is not currently supported for PostgreSQL.</p>
+     * <code>SET</code> statement, such as <code>SET x=1, y=2</code>. </p>
      */
     inline const Aws::String& GetInitQuery() const{ return m_initQuery; }
 
@@ -263,8 +250,7 @@ namespace Model
      * sure that each connection has identical settings such as time zone and character
      * set. This setting is empty by default. For multiple statements, use semicolons
      * as the separator. You can also include multiple variables in a single
-     * <code>SET</code> statement, such as <code>SET x=1, y=2</code>. </p> <p>
-     * <code>InitQuery</code> is not currently supported for PostgreSQL.</p>
+     * <code>SET</code> statement, such as <code>SET x=1, y=2</code>. </p>
      */
     inline bool InitQueryHasBeenSet() const { return m_initQueryHasBeenSet; }
 
@@ -274,8 +260,7 @@ namespace Model
      * sure that each connection has identical settings such as time zone and character
      * set. This setting is empty by default. For multiple statements, use semicolons
      * as the separator. You can also include multiple variables in a single
-     * <code>SET</code> statement, such as <code>SET x=1, y=2</code>. </p> <p>
-     * <code>InitQuery</code> is not currently supported for PostgreSQL.</p>
+     * <code>SET</code> statement, such as <code>SET x=1, y=2</code>. </p>
      */
     inline void SetInitQuery(const Aws::String& value) { m_initQueryHasBeenSet = true; m_initQuery = value; }
 
@@ -285,8 +270,7 @@ namespace Model
      * sure that each connection has identical settings such as time zone and character
      * set. This setting is empty by default. For multiple statements, use semicolons
      * as the separator. You can also include multiple variables in a single
-     * <code>SET</code> statement, such as <code>SET x=1, y=2</code>. </p> <p>
-     * <code>InitQuery</code> is not currently supported for PostgreSQL.</p>
+     * <code>SET</code> statement, such as <code>SET x=1, y=2</code>. </p>
      */
     inline void SetInitQuery(Aws::String&& value) { m_initQueryHasBeenSet = true; m_initQuery = std::move(value); }
 
@@ -296,8 +280,7 @@ namespace Model
      * sure that each connection has identical settings such as time zone and character
      * set. This setting is empty by default. For multiple statements, use semicolons
      * as the separator. You can also include multiple variables in a single
-     * <code>SET</code> statement, such as <code>SET x=1, y=2</code>. </p> <p>
-     * <code>InitQuery</code> is not currently supported for PostgreSQL.</p>
+     * <code>SET</code> statement, such as <code>SET x=1, y=2</code>. </p>
      */
     inline void SetInitQuery(const char* value) { m_initQueryHasBeenSet = true; m_initQuery.assign(value); }
 
@@ -307,8 +290,7 @@ namespace Model
      * sure that each connection has identical settings such as time zone and character
      * set. This setting is empty by default. For multiple statements, use semicolons
      * as the separator. You can also include multiple variables in a single
-     * <code>SET</code> statement, such as <code>SET x=1, y=2</code>. </p> <p>
-     * <code>InitQuery</code> is not currently supported for PostgreSQL.</p>
+     * <code>SET</code> statement, such as <code>SET x=1, y=2</code>. </p>
      */
     inline ConnectionPoolConfigurationInfo& WithInitQuery(const Aws::String& value) { SetInitQuery(value); return *this;}
 
@@ -318,8 +300,7 @@ namespace Model
      * sure that each connection has identical settings such as time zone and character
      * set. This setting is empty by default. For multiple statements, use semicolons
      * as the separator. You can also include multiple variables in a single
-     * <code>SET</code> statement, such as <code>SET x=1, y=2</code>. </p> <p>
-     * <code>InitQuery</code> is not currently supported for PostgreSQL.</p>
+     * <code>SET</code> statement, such as <code>SET x=1, y=2</code>. </p>
      */
     inline ConnectionPoolConfigurationInfo& WithInitQuery(Aws::String&& value) { SetInitQuery(std::move(value)); return *this;}
 
@@ -329,8 +310,7 @@ namespace Model
      * sure that each connection has identical settings such as time zone and character
      * set. This setting is empty by default. For multiple statements, use semicolons
      * as the separator. You can also include multiple variables in a single
-     * <code>SET</code> statement, such as <code>SET x=1, y=2</code>. </p> <p>
-     * <code>InitQuery</code> is not currently supported for PostgreSQL.</p>
+     * <code>SET</code> statement, such as <code>SET x=1, y=2</code>. </p>
      */
     inline ConnectionPoolConfigurationInfo& WithInitQuery(const char* value) { SetInitQuery(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/managedblockchain/model/Node.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -36,6 +26,8 @@ Node::Node() :
     m_availabilityZoneHasBeenSet(false),
     m_frameworkAttributesHasBeenSet(false),
     m_logPublishingConfigurationHasBeenSet(false),
+    m_stateDB(StateDBType::NOT_SET),
+    m_stateDBHasBeenSet(false),
     m_status(NodeStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationDateHasBeenSet(false)
@@ -50,6 +42,8 @@ Node::Node(JsonView jsonValue) :
     m_availabilityZoneHasBeenSet(false),
     m_frameworkAttributesHasBeenSet(false),
     m_logPublishingConfigurationHasBeenSet(false),
+    m_stateDB(StateDBType::NOT_SET),
+    m_stateDBHasBeenSet(false),
     m_status(NodeStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationDateHasBeenSet(false)
@@ -106,6 +100,13 @@ Node& Node::operator =(JsonView jsonValue)
     m_logPublishingConfiguration = jsonValue.GetObject("LogPublishingConfiguration");
 
     m_logPublishingConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StateDB"))
+  {
+    m_stateDB = StateDBTypeMapper::GetStateDBTypeForName(jsonValue.GetString("StateDB"));
+
+    m_stateDBHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Status"))
@@ -169,6 +170,11 @@ JsonValue Node::Jsonize() const
   {
    payload.WithObject("LogPublishingConfiguration", m_logPublishingConfiguration.Jsonize());
 
+  }
+
+  if(m_stateDBHasBeenSet)
+  {
+   payload.WithString("StateDB", StateDBTypeMapper::GetNameForStateDBType(m_stateDB));
   }
 
   if(m_statusHasBeenSet)

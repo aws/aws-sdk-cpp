@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kms/KMS_EXPORTS.h>
@@ -304,87 +294,99 @@ namespace Model
 
 
     /**
-     * <p>The cryptographic operations for which you can use the CMK.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> for which you can use the CMK.</p>
      */
     inline const KeyUsageType& GetKeyUsage() const{ return m_keyUsage; }
 
     /**
-     * <p>The cryptographic operations for which you can use the CMK.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> for which you can use the CMK.</p>
      */
     inline bool KeyUsageHasBeenSet() const { return m_keyUsageHasBeenSet; }
 
     /**
-     * <p>The cryptographic operations for which you can use the CMK.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> for which you can use the CMK.</p>
      */
     inline void SetKeyUsage(const KeyUsageType& value) { m_keyUsageHasBeenSet = true; m_keyUsage = value; }
 
     /**
-     * <p>The cryptographic operations for which you can use the CMK.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> for which you can use the CMK.</p>
      */
     inline void SetKeyUsage(KeyUsageType&& value) { m_keyUsageHasBeenSet = true; m_keyUsage = std::move(value); }
 
     /**
-     * <p>The cryptographic operations for which you can use the CMK.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> for which you can use the CMK.</p>
      */
     inline KeyMetadata& WithKeyUsage(const KeyUsageType& value) { SetKeyUsage(value); return *this;}
 
     /**
-     * <p>The cryptographic operations for which you can use the CMK.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> for which you can use the CMK.</p>
      */
     inline KeyMetadata& WithKeyUsage(KeyUsageType&& value) { SetKeyUsage(std::move(value)); return *this;}
 
 
     /**
-     * <p>The state of the CMK.</p> <p>For more information about how key state affects
-     * the use of a CMK, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-     * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
-     * Management Service Developer Guide</i>.</p>
+     * <p>The current status of the CMK.</p> <p>For more information about how key
+     * state affects the use of a CMK, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+     * state: Effect on your CMK</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline const KeyState& GetKeyState() const{ return m_keyState; }
 
     /**
-     * <p>The state of the CMK.</p> <p>For more information about how key state affects
-     * the use of a CMK, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-     * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
-     * Management Service Developer Guide</i>.</p>
+     * <p>The current status of the CMK.</p> <p>For more information about how key
+     * state affects the use of a CMK, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+     * state: Effect on your CMK</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline bool KeyStateHasBeenSet() const { return m_keyStateHasBeenSet; }
 
     /**
-     * <p>The state of the CMK.</p> <p>For more information about how key state affects
-     * the use of a CMK, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-     * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
-     * Management Service Developer Guide</i>.</p>
+     * <p>The current status of the CMK.</p> <p>For more information about how key
+     * state affects the use of a CMK, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+     * state: Effect on your CMK</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline void SetKeyState(const KeyState& value) { m_keyStateHasBeenSet = true; m_keyState = value; }
 
     /**
-     * <p>The state of the CMK.</p> <p>For more information about how key state affects
-     * the use of a CMK, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-     * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
-     * Management Service Developer Guide</i>.</p>
+     * <p>The current status of the CMK.</p> <p>For more information about how key
+     * state affects the use of a CMK, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+     * state: Effect on your CMK</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline void SetKeyState(KeyState&& value) { m_keyStateHasBeenSet = true; m_keyState = std::move(value); }
 
     /**
-     * <p>The state of the CMK.</p> <p>For more information about how key state affects
-     * the use of a CMK, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-     * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
-     * Management Service Developer Guide</i>.</p>
+     * <p>The current status of the CMK.</p> <p>For more information about how key
+     * state affects the use of a CMK, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+     * state: Effect on your CMK</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline KeyMetadata& WithKeyState(const KeyState& value) { SetKeyState(value); return *this;}
 
     /**
-     * <p>The state of the CMK.</p> <p>For more information about how key state affects
-     * the use of a CMK, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-     * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
-     * Management Service Developer Guide</i>.</p>
+     * <p>The current status of the CMK.</p> <p>For more information about how key
+     * state affects the use of a CMK, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+     * state: Effect on your CMK</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline KeyMetadata& WithKeyState(KeyState&& value) { SetKeyState(std::move(value)); return *this;}
 
@@ -812,115 +814,115 @@ namespace Model
 
 
     /**
-     * <p>A list of encryption algorithms that the CMK supports. You cannot use the CMK
-     * with other encryption algorithms within AWS KMS.</p> <p>This field appears only
-     * when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
+     * <p>The encryption algorithms that the CMK supports. You cannot use the CMK with
+     * other encryption algorithms within AWS KMS.</p> <p>This field appears only when
+     * the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
      */
     inline const Aws::Vector<EncryptionAlgorithmSpec>& GetEncryptionAlgorithms() const{ return m_encryptionAlgorithms; }
 
     /**
-     * <p>A list of encryption algorithms that the CMK supports. You cannot use the CMK
-     * with other encryption algorithms within AWS KMS.</p> <p>This field appears only
-     * when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
+     * <p>The encryption algorithms that the CMK supports. You cannot use the CMK with
+     * other encryption algorithms within AWS KMS.</p> <p>This field appears only when
+     * the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
      */
     inline bool EncryptionAlgorithmsHasBeenSet() const { return m_encryptionAlgorithmsHasBeenSet; }
 
     /**
-     * <p>A list of encryption algorithms that the CMK supports. You cannot use the CMK
-     * with other encryption algorithms within AWS KMS.</p> <p>This field appears only
-     * when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
+     * <p>The encryption algorithms that the CMK supports. You cannot use the CMK with
+     * other encryption algorithms within AWS KMS.</p> <p>This field appears only when
+     * the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
      */
     inline void SetEncryptionAlgorithms(const Aws::Vector<EncryptionAlgorithmSpec>& value) { m_encryptionAlgorithmsHasBeenSet = true; m_encryptionAlgorithms = value; }
 
     /**
-     * <p>A list of encryption algorithms that the CMK supports. You cannot use the CMK
-     * with other encryption algorithms within AWS KMS.</p> <p>This field appears only
-     * when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
+     * <p>The encryption algorithms that the CMK supports. You cannot use the CMK with
+     * other encryption algorithms within AWS KMS.</p> <p>This field appears only when
+     * the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
      */
     inline void SetEncryptionAlgorithms(Aws::Vector<EncryptionAlgorithmSpec>&& value) { m_encryptionAlgorithmsHasBeenSet = true; m_encryptionAlgorithms = std::move(value); }
 
     /**
-     * <p>A list of encryption algorithms that the CMK supports. You cannot use the CMK
-     * with other encryption algorithms within AWS KMS.</p> <p>This field appears only
-     * when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
+     * <p>The encryption algorithms that the CMK supports. You cannot use the CMK with
+     * other encryption algorithms within AWS KMS.</p> <p>This field appears only when
+     * the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
      */
     inline KeyMetadata& WithEncryptionAlgorithms(const Aws::Vector<EncryptionAlgorithmSpec>& value) { SetEncryptionAlgorithms(value); return *this;}
 
     /**
-     * <p>A list of encryption algorithms that the CMK supports. You cannot use the CMK
-     * with other encryption algorithms within AWS KMS.</p> <p>This field appears only
-     * when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
+     * <p>The encryption algorithms that the CMK supports. You cannot use the CMK with
+     * other encryption algorithms within AWS KMS.</p> <p>This field appears only when
+     * the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
      */
     inline KeyMetadata& WithEncryptionAlgorithms(Aws::Vector<EncryptionAlgorithmSpec>&& value) { SetEncryptionAlgorithms(std::move(value)); return *this;}
 
     /**
-     * <p>A list of encryption algorithms that the CMK supports. You cannot use the CMK
-     * with other encryption algorithms within AWS KMS.</p> <p>This field appears only
-     * when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
+     * <p>The encryption algorithms that the CMK supports. You cannot use the CMK with
+     * other encryption algorithms within AWS KMS.</p> <p>This field appears only when
+     * the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
      */
     inline KeyMetadata& AddEncryptionAlgorithms(const EncryptionAlgorithmSpec& value) { m_encryptionAlgorithmsHasBeenSet = true; m_encryptionAlgorithms.push_back(value); return *this; }
 
     /**
-     * <p>A list of encryption algorithms that the CMK supports. You cannot use the CMK
-     * with other encryption algorithms within AWS KMS.</p> <p>This field appears only
-     * when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
+     * <p>The encryption algorithms that the CMK supports. You cannot use the CMK with
+     * other encryption algorithms within AWS KMS.</p> <p>This field appears only when
+     * the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
      */
     inline KeyMetadata& AddEncryptionAlgorithms(EncryptionAlgorithmSpec&& value) { m_encryptionAlgorithmsHasBeenSet = true; m_encryptionAlgorithms.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A list of signing algorithms that the CMK supports. You cannot use the CMK
-     * with other signing algorithms within AWS KMS.</p> <p>This field appears only
-     * when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.</p>
+     * <p>The signing algorithms that the CMK supports. You cannot use the CMK with
+     * other signing algorithms within AWS KMS.</p> <p>This field appears only when the
+     * <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.</p>
      */
     inline const Aws::Vector<SigningAlgorithmSpec>& GetSigningAlgorithms() const{ return m_signingAlgorithms; }
 
     /**
-     * <p>A list of signing algorithms that the CMK supports. You cannot use the CMK
-     * with other signing algorithms within AWS KMS.</p> <p>This field appears only
-     * when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.</p>
+     * <p>The signing algorithms that the CMK supports. You cannot use the CMK with
+     * other signing algorithms within AWS KMS.</p> <p>This field appears only when the
+     * <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.</p>
      */
     inline bool SigningAlgorithmsHasBeenSet() const { return m_signingAlgorithmsHasBeenSet; }
 
     /**
-     * <p>A list of signing algorithms that the CMK supports. You cannot use the CMK
-     * with other signing algorithms within AWS KMS.</p> <p>This field appears only
-     * when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.</p>
+     * <p>The signing algorithms that the CMK supports. You cannot use the CMK with
+     * other signing algorithms within AWS KMS.</p> <p>This field appears only when the
+     * <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.</p>
      */
     inline void SetSigningAlgorithms(const Aws::Vector<SigningAlgorithmSpec>& value) { m_signingAlgorithmsHasBeenSet = true; m_signingAlgorithms = value; }
 
     /**
-     * <p>A list of signing algorithms that the CMK supports. You cannot use the CMK
-     * with other signing algorithms within AWS KMS.</p> <p>This field appears only
-     * when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.</p>
+     * <p>The signing algorithms that the CMK supports. You cannot use the CMK with
+     * other signing algorithms within AWS KMS.</p> <p>This field appears only when the
+     * <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.</p>
      */
     inline void SetSigningAlgorithms(Aws::Vector<SigningAlgorithmSpec>&& value) { m_signingAlgorithmsHasBeenSet = true; m_signingAlgorithms = std::move(value); }
 
     /**
-     * <p>A list of signing algorithms that the CMK supports. You cannot use the CMK
-     * with other signing algorithms within AWS KMS.</p> <p>This field appears only
-     * when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.</p>
+     * <p>The signing algorithms that the CMK supports. You cannot use the CMK with
+     * other signing algorithms within AWS KMS.</p> <p>This field appears only when the
+     * <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.</p>
      */
     inline KeyMetadata& WithSigningAlgorithms(const Aws::Vector<SigningAlgorithmSpec>& value) { SetSigningAlgorithms(value); return *this;}
 
     /**
-     * <p>A list of signing algorithms that the CMK supports. You cannot use the CMK
-     * with other signing algorithms within AWS KMS.</p> <p>This field appears only
-     * when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.</p>
+     * <p>The signing algorithms that the CMK supports. You cannot use the CMK with
+     * other signing algorithms within AWS KMS.</p> <p>This field appears only when the
+     * <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.</p>
      */
     inline KeyMetadata& WithSigningAlgorithms(Aws::Vector<SigningAlgorithmSpec>&& value) { SetSigningAlgorithms(std::move(value)); return *this;}
 
     /**
-     * <p>A list of signing algorithms that the CMK supports. You cannot use the CMK
-     * with other signing algorithms within AWS KMS.</p> <p>This field appears only
-     * when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.</p>
+     * <p>The signing algorithms that the CMK supports. You cannot use the CMK with
+     * other signing algorithms within AWS KMS.</p> <p>This field appears only when the
+     * <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.</p>
      */
     inline KeyMetadata& AddSigningAlgorithms(const SigningAlgorithmSpec& value) { m_signingAlgorithmsHasBeenSet = true; m_signingAlgorithms.push_back(value); return *this; }
 
     /**
-     * <p>A list of signing algorithms that the CMK supports. You cannot use the CMK
-     * with other signing algorithms within AWS KMS.</p> <p>This field appears only
-     * when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.</p>
+     * <p>The signing algorithms that the CMK supports. You cannot use the CMK with
+     * other signing algorithms within AWS KMS.</p> <p>This field appears only when the
+     * <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.</p>
      */
     inline KeyMetadata& AddSigningAlgorithms(SigningAlgorithmSpec&& value) { m_signingAlgorithmsHasBeenSet = true; m_signingAlgorithms.push_back(std::move(value)); return *this; }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
@@ -184,7 +174,7 @@ namespace Model
      * <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format:
      * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
      * For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not
-     * defined. </p>
+     * defined.</p>
      */
     inline const Aws::Vector<Aws::String>& GetProviderARNs() const{ return m_providerARNs; }
 
@@ -193,7 +183,7 @@ namespace Model
      * <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format:
      * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
      * For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not
-     * defined. </p>
+     * defined.</p>
      */
     inline bool ProviderARNsHasBeenSet() const { return m_providerARNsHasBeenSet; }
 
@@ -202,7 +192,7 @@ namespace Model
      * <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format:
      * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
      * For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not
-     * defined. </p>
+     * defined.</p>
      */
     inline void SetProviderARNs(const Aws::Vector<Aws::String>& value) { m_providerARNsHasBeenSet = true; m_providerARNs = value; }
 
@@ -211,7 +201,7 @@ namespace Model
      * <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format:
      * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
      * For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not
-     * defined. </p>
+     * defined.</p>
      */
     inline void SetProviderARNs(Aws::Vector<Aws::String>&& value) { m_providerARNsHasBeenSet = true; m_providerARNs = std::move(value); }
 
@@ -220,7 +210,7 @@ namespace Model
      * <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format:
      * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
      * For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not
-     * defined. </p>
+     * defined.</p>
      */
     inline CreateAuthorizerRequest& WithProviderARNs(const Aws::Vector<Aws::String>& value) { SetProviderARNs(value); return *this;}
 
@@ -229,7 +219,7 @@ namespace Model
      * <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format:
      * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
      * For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not
-     * defined. </p>
+     * defined.</p>
      */
     inline CreateAuthorizerRequest& WithProviderARNs(Aws::Vector<Aws::String>&& value) { SetProviderARNs(std::move(value)); return *this;}
 
@@ -238,7 +228,7 @@ namespace Model
      * <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format:
      * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
      * For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not
-     * defined. </p>
+     * defined.</p>
      */
     inline CreateAuthorizerRequest& AddProviderARNs(const Aws::String& value) { m_providerARNsHasBeenSet = true; m_providerARNs.push_back(value); return *this; }
 
@@ -247,7 +237,7 @@ namespace Model
      * <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format:
      * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
      * For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not
-     * defined. </p>
+     * defined.</p>
      */
     inline CreateAuthorizerRequest& AddProviderARNs(Aws::String&& value) { m_providerARNsHasBeenSet = true; m_providerARNs.push_back(std::move(value)); return *this; }
 
@@ -256,7 +246,7 @@ namespace Model
      * <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format:
      * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
      * For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not
-     * defined. </p>
+     * defined.</p>
      */
     inline CreateAuthorizerRequest& AddProviderARNs(const char* value) { m_providerARNsHasBeenSet = true; m_providerARNs.push_back(value); return *this; }
 

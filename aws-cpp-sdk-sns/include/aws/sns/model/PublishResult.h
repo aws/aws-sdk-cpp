@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sns/SNS_EXPORTS.h>
@@ -91,6 +81,70 @@ namespace Model
     inline PublishResult& WithMessageId(const char* value) { SetMessageId(value); return *this;}
 
 
+    /**
+     * <p>This response element applies only to FIFO (first-in-first-out) topics. </p>
+     * <p>The sequence number is a large, non-consecutive number that Amazon SNS
+     * assigns to each message. The length of <code>SequenceNumber</code> is 128 bits.
+     * <code>SequenceNumber</code> continues to increase for each
+     * <code>MessageGroupId</code>.</p>
+     */
+    inline const Aws::String& GetSequenceNumber() const{ return m_sequenceNumber; }
+
+    /**
+     * <p>This response element applies only to FIFO (first-in-first-out) topics. </p>
+     * <p>The sequence number is a large, non-consecutive number that Amazon SNS
+     * assigns to each message. The length of <code>SequenceNumber</code> is 128 bits.
+     * <code>SequenceNumber</code> continues to increase for each
+     * <code>MessageGroupId</code>.</p>
+     */
+    inline void SetSequenceNumber(const Aws::String& value) { m_sequenceNumber = value; }
+
+    /**
+     * <p>This response element applies only to FIFO (first-in-first-out) topics. </p>
+     * <p>The sequence number is a large, non-consecutive number that Amazon SNS
+     * assigns to each message. The length of <code>SequenceNumber</code> is 128 bits.
+     * <code>SequenceNumber</code> continues to increase for each
+     * <code>MessageGroupId</code>.</p>
+     */
+    inline void SetSequenceNumber(Aws::String&& value) { m_sequenceNumber = std::move(value); }
+
+    /**
+     * <p>This response element applies only to FIFO (first-in-first-out) topics. </p>
+     * <p>The sequence number is a large, non-consecutive number that Amazon SNS
+     * assigns to each message. The length of <code>SequenceNumber</code> is 128 bits.
+     * <code>SequenceNumber</code> continues to increase for each
+     * <code>MessageGroupId</code>.</p>
+     */
+    inline void SetSequenceNumber(const char* value) { m_sequenceNumber.assign(value); }
+
+    /**
+     * <p>This response element applies only to FIFO (first-in-first-out) topics. </p>
+     * <p>The sequence number is a large, non-consecutive number that Amazon SNS
+     * assigns to each message. The length of <code>SequenceNumber</code> is 128 bits.
+     * <code>SequenceNumber</code> continues to increase for each
+     * <code>MessageGroupId</code>.</p>
+     */
+    inline PublishResult& WithSequenceNumber(const Aws::String& value) { SetSequenceNumber(value); return *this;}
+
+    /**
+     * <p>This response element applies only to FIFO (first-in-first-out) topics. </p>
+     * <p>The sequence number is a large, non-consecutive number that Amazon SNS
+     * assigns to each message. The length of <code>SequenceNumber</code> is 128 bits.
+     * <code>SequenceNumber</code> continues to increase for each
+     * <code>MessageGroupId</code>.</p>
+     */
+    inline PublishResult& WithSequenceNumber(Aws::String&& value) { SetSequenceNumber(std::move(value)); return *this;}
+
+    /**
+     * <p>This response element applies only to FIFO (first-in-first-out) topics. </p>
+     * <p>The sequence number is a large, non-consecutive number that Amazon SNS
+     * assigns to each message. The length of <code>SequenceNumber</code> is 128 bits.
+     * <code>SequenceNumber</code> continues to increase for each
+     * <code>MessageGroupId</code>.</p>
+     */
+    inline PublishResult& WithSequenceNumber(const char* value) { SetSequenceNumber(value); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -109,6 +163,8 @@ namespace Model
   private:
 
     Aws::String m_messageId;
+
+    Aws::String m_sequenceNumber;
 
     ResponseMetadata m_responseMetadata;
   };

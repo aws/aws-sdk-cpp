@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
@@ -139,45 +129,45 @@ namespace Model
         class UpdateNotificationSettingsRequest;
         class UpdateQualificationTypeRequest;
 
-        typedef Aws::Utils::Outcome<AcceptQualificationRequestResult, Aws::Client::AWSError<MTurkErrors>> AcceptQualificationRequestOutcome;
-        typedef Aws::Utils::Outcome<ApproveAssignmentResult, Aws::Client::AWSError<MTurkErrors>> ApproveAssignmentOutcome;
-        typedef Aws::Utils::Outcome<AssociateQualificationWithWorkerResult, Aws::Client::AWSError<MTurkErrors>> AssociateQualificationWithWorkerOutcome;
-        typedef Aws::Utils::Outcome<CreateAdditionalAssignmentsForHITResult, Aws::Client::AWSError<MTurkErrors>> CreateAdditionalAssignmentsForHITOutcome;
-        typedef Aws::Utils::Outcome<CreateHITResult, Aws::Client::AWSError<MTurkErrors>> CreateHITOutcome;
-        typedef Aws::Utils::Outcome<CreateHITTypeResult, Aws::Client::AWSError<MTurkErrors>> CreateHITTypeOutcome;
-        typedef Aws::Utils::Outcome<CreateHITWithHITTypeResult, Aws::Client::AWSError<MTurkErrors>> CreateHITWithHITTypeOutcome;
-        typedef Aws::Utils::Outcome<CreateQualificationTypeResult, Aws::Client::AWSError<MTurkErrors>> CreateQualificationTypeOutcome;
-        typedef Aws::Utils::Outcome<CreateWorkerBlockResult, Aws::Client::AWSError<MTurkErrors>> CreateWorkerBlockOutcome;
-        typedef Aws::Utils::Outcome<DeleteHITResult, Aws::Client::AWSError<MTurkErrors>> DeleteHITOutcome;
-        typedef Aws::Utils::Outcome<DeleteQualificationTypeResult, Aws::Client::AWSError<MTurkErrors>> DeleteQualificationTypeOutcome;
-        typedef Aws::Utils::Outcome<DeleteWorkerBlockResult, Aws::Client::AWSError<MTurkErrors>> DeleteWorkerBlockOutcome;
-        typedef Aws::Utils::Outcome<DisassociateQualificationFromWorkerResult, Aws::Client::AWSError<MTurkErrors>> DisassociateQualificationFromWorkerOutcome;
-        typedef Aws::Utils::Outcome<GetAccountBalanceResult, Aws::Client::AWSError<MTurkErrors>> GetAccountBalanceOutcome;
-        typedef Aws::Utils::Outcome<GetAssignmentResult, Aws::Client::AWSError<MTurkErrors>> GetAssignmentOutcome;
-        typedef Aws::Utils::Outcome<GetFileUploadURLResult, Aws::Client::AWSError<MTurkErrors>> GetFileUploadURLOutcome;
-        typedef Aws::Utils::Outcome<GetHITResult, Aws::Client::AWSError<MTurkErrors>> GetHITOutcome;
-        typedef Aws::Utils::Outcome<GetQualificationScoreResult, Aws::Client::AWSError<MTurkErrors>> GetQualificationScoreOutcome;
-        typedef Aws::Utils::Outcome<GetQualificationTypeResult, Aws::Client::AWSError<MTurkErrors>> GetQualificationTypeOutcome;
-        typedef Aws::Utils::Outcome<ListAssignmentsForHITResult, Aws::Client::AWSError<MTurkErrors>> ListAssignmentsForHITOutcome;
-        typedef Aws::Utils::Outcome<ListBonusPaymentsResult, Aws::Client::AWSError<MTurkErrors>> ListBonusPaymentsOutcome;
-        typedef Aws::Utils::Outcome<ListHITsResult, Aws::Client::AWSError<MTurkErrors>> ListHITsOutcome;
-        typedef Aws::Utils::Outcome<ListHITsForQualificationTypeResult, Aws::Client::AWSError<MTurkErrors>> ListHITsForQualificationTypeOutcome;
-        typedef Aws::Utils::Outcome<ListQualificationRequestsResult, Aws::Client::AWSError<MTurkErrors>> ListQualificationRequestsOutcome;
-        typedef Aws::Utils::Outcome<ListQualificationTypesResult, Aws::Client::AWSError<MTurkErrors>> ListQualificationTypesOutcome;
-        typedef Aws::Utils::Outcome<ListReviewPolicyResultsForHITResult, Aws::Client::AWSError<MTurkErrors>> ListReviewPolicyResultsForHITOutcome;
-        typedef Aws::Utils::Outcome<ListReviewableHITsResult, Aws::Client::AWSError<MTurkErrors>> ListReviewableHITsOutcome;
-        typedef Aws::Utils::Outcome<ListWorkerBlocksResult, Aws::Client::AWSError<MTurkErrors>> ListWorkerBlocksOutcome;
-        typedef Aws::Utils::Outcome<ListWorkersWithQualificationTypeResult, Aws::Client::AWSError<MTurkErrors>> ListWorkersWithQualificationTypeOutcome;
-        typedef Aws::Utils::Outcome<NotifyWorkersResult, Aws::Client::AWSError<MTurkErrors>> NotifyWorkersOutcome;
-        typedef Aws::Utils::Outcome<RejectAssignmentResult, Aws::Client::AWSError<MTurkErrors>> RejectAssignmentOutcome;
-        typedef Aws::Utils::Outcome<RejectQualificationRequestResult, Aws::Client::AWSError<MTurkErrors>> RejectQualificationRequestOutcome;
-        typedef Aws::Utils::Outcome<SendBonusResult, Aws::Client::AWSError<MTurkErrors>> SendBonusOutcome;
-        typedef Aws::Utils::Outcome<SendTestEventNotificationResult, Aws::Client::AWSError<MTurkErrors>> SendTestEventNotificationOutcome;
-        typedef Aws::Utils::Outcome<UpdateExpirationForHITResult, Aws::Client::AWSError<MTurkErrors>> UpdateExpirationForHITOutcome;
-        typedef Aws::Utils::Outcome<UpdateHITReviewStatusResult, Aws::Client::AWSError<MTurkErrors>> UpdateHITReviewStatusOutcome;
-        typedef Aws::Utils::Outcome<UpdateHITTypeOfHITResult, Aws::Client::AWSError<MTurkErrors>> UpdateHITTypeOfHITOutcome;
-        typedef Aws::Utils::Outcome<UpdateNotificationSettingsResult, Aws::Client::AWSError<MTurkErrors>> UpdateNotificationSettingsOutcome;
-        typedef Aws::Utils::Outcome<UpdateQualificationTypeResult, Aws::Client::AWSError<MTurkErrors>> UpdateQualificationTypeOutcome;
+        typedef Aws::Utils::Outcome<AcceptQualificationRequestResult, MTurkError> AcceptQualificationRequestOutcome;
+        typedef Aws::Utils::Outcome<ApproveAssignmentResult, MTurkError> ApproveAssignmentOutcome;
+        typedef Aws::Utils::Outcome<AssociateQualificationWithWorkerResult, MTurkError> AssociateQualificationWithWorkerOutcome;
+        typedef Aws::Utils::Outcome<CreateAdditionalAssignmentsForHITResult, MTurkError> CreateAdditionalAssignmentsForHITOutcome;
+        typedef Aws::Utils::Outcome<CreateHITResult, MTurkError> CreateHITOutcome;
+        typedef Aws::Utils::Outcome<CreateHITTypeResult, MTurkError> CreateHITTypeOutcome;
+        typedef Aws::Utils::Outcome<CreateHITWithHITTypeResult, MTurkError> CreateHITWithHITTypeOutcome;
+        typedef Aws::Utils::Outcome<CreateQualificationTypeResult, MTurkError> CreateQualificationTypeOutcome;
+        typedef Aws::Utils::Outcome<CreateWorkerBlockResult, MTurkError> CreateWorkerBlockOutcome;
+        typedef Aws::Utils::Outcome<DeleteHITResult, MTurkError> DeleteHITOutcome;
+        typedef Aws::Utils::Outcome<DeleteQualificationTypeResult, MTurkError> DeleteQualificationTypeOutcome;
+        typedef Aws::Utils::Outcome<DeleteWorkerBlockResult, MTurkError> DeleteWorkerBlockOutcome;
+        typedef Aws::Utils::Outcome<DisassociateQualificationFromWorkerResult, MTurkError> DisassociateQualificationFromWorkerOutcome;
+        typedef Aws::Utils::Outcome<GetAccountBalanceResult, MTurkError> GetAccountBalanceOutcome;
+        typedef Aws::Utils::Outcome<GetAssignmentResult, MTurkError> GetAssignmentOutcome;
+        typedef Aws::Utils::Outcome<GetFileUploadURLResult, MTurkError> GetFileUploadURLOutcome;
+        typedef Aws::Utils::Outcome<GetHITResult, MTurkError> GetHITOutcome;
+        typedef Aws::Utils::Outcome<GetQualificationScoreResult, MTurkError> GetQualificationScoreOutcome;
+        typedef Aws::Utils::Outcome<GetQualificationTypeResult, MTurkError> GetQualificationTypeOutcome;
+        typedef Aws::Utils::Outcome<ListAssignmentsForHITResult, MTurkError> ListAssignmentsForHITOutcome;
+        typedef Aws::Utils::Outcome<ListBonusPaymentsResult, MTurkError> ListBonusPaymentsOutcome;
+        typedef Aws::Utils::Outcome<ListHITsResult, MTurkError> ListHITsOutcome;
+        typedef Aws::Utils::Outcome<ListHITsForQualificationTypeResult, MTurkError> ListHITsForQualificationTypeOutcome;
+        typedef Aws::Utils::Outcome<ListQualificationRequestsResult, MTurkError> ListQualificationRequestsOutcome;
+        typedef Aws::Utils::Outcome<ListQualificationTypesResult, MTurkError> ListQualificationTypesOutcome;
+        typedef Aws::Utils::Outcome<ListReviewPolicyResultsForHITResult, MTurkError> ListReviewPolicyResultsForHITOutcome;
+        typedef Aws::Utils::Outcome<ListReviewableHITsResult, MTurkError> ListReviewableHITsOutcome;
+        typedef Aws::Utils::Outcome<ListWorkerBlocksResult, MTurkError> ListWorkerBlocksOutcome;
+        typedef Aws::Utils::Outcome<ListWorkersWithQualificationTypeResult, MTurkError> ListWorkersWithQualificationTypeOutcome;
+        typedef Aws::Utils::Outcome<NotifyWorkersResult, MTurkError> NotifyWorkersOutcome;
+        typedef Aws::Utils::Outcome<RejectAssignmentResult, MTurkError> RejectAssignmentOutcome;
+        typedef Aws::Utils::Outcome<RejectQualificationRequestResult, MTurkError> RejectQualificationRequestOutcome;
+        typedef Aws::Utils::Outcome<SendBonusResult, MTurkError> SendBonusOutcome;
+        typedef Aws::Utils::Outcome<SendTestEventNotificationResult, MTurkError> SendTestEventNotificationOutcome;
+        typedef Aws::Utils::Outcome<UpdateExpirationForHITResult, MTurkError> UpdateExpirationForHITOutcome;
+        typedef Aws::Utils::Outcome<UpdateHITReviewStatusResult, MTurkError> UpdateHITReviewStatusOutcome;
+        typedef Aws::Utils::Outcome<UpdateHITTypeOfHITResult, MTurkError> UpdateHITTypeOfHITOutcome;
+        typedef Aws::Utils::Outcome<UpdateNotificationSettingsResult, MTurkError> UpdateNotificationSettingsOutcome;
+        typedef Aws::Utils::Outcome<UpdateQualificationTypeResult, MTurkError> UpdateQualificationTypeOutcome;
 
         typedef std::future<AcceptQualificationRequestOutcome> AcceptQualificationRequestOutcomeCallable;
         typedef std::future<ApproveAssignmentOutcome> ApproveAssignmentOutcomeCallable;
@@ -291,8 +281,6 @@ namespace Model
 
         virtual ~MTurkClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "MTurk"; }
-
 
         /**
          * <p> The <code>AcceptQualificationRequest</code> operation approves a Worker's
@@ -398,14 +386,14 @@ namespace Model
          * that the Worker submit a Qualification request. It gives the Qualification
          * directly to the Worker. </p> <p> You can only assign a Qualification of a
          * Qualification type that you created (using the
-         * <code>CreateQualificationType</code> operation). </p> <note> <p> Note:
+         * <code>CreateQualificationType</code> operation). </p>  <p> Note:
          * <code>AssociateQualificationWithWorker</code> does not affect any pending
          * Qualification requests for the Qualification by the Worker. If you assign a
          * Qualification to a Worker, then later grant a Qualification request made by the
          * Worker, the granting of the request may modify the Qualification score. To
          * resolve a pending Qualification request without affecting the Qualification the
          * Worker already has, reject the request with the
-         * <code>RejectQualificationRequest</code> operation. </p> </note><p><h3>See
+         * <code>RejectQualificationRequest</code> operation. </p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/AssociateQualificationWithWorker">AWS
          * API Reference</a></p>
@@ -418,14 +406,14 @@ namespace Model
          * that the Worker submit a Qualification request. It gives the Qualification
          * directly to the Worker. </p> <p> You can only assign a Qualification of a
          * Qualification type that you created (using the
-         * <code>CreateQualificationType</code> operation). </p> <note> <p> Note:
+         * <code>CreateQualificationType</code> operation). </p>  <p> Note:
          * <code>AssociateQualificationWithWorker</code> does not affect any pending
          * Qualification requests for the Qualification by the Worker. If you assign a
          * Qualification to a Worker, then later grant a Qualification request made by the
          * Worker, the granting of the request may modify the Qualification score. To
          * resolve a pending Qualification request without affecting the Qualification the
          * Worker already has, reject the request with the
-         * <code>RejectQualificationRequest</code> operation. </p> </note><p><h3>See
+         * <code>RejectQualificationRequest</code> operation. </p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/AssociateQualificationWithWorker">AWS
          * API Reference</a></p>
@@ -440,14 +428,14 @@ namespace Model
          * that the Worker submit a Qualification request. It gives the Qualification
          * directly to the Worker. </p> <p> You can only assign a Qualification of a
          * Qualification type that you created (using the
-         * <code>CreateQualificationType</code> operation). </p> <note> <p> Note:
+         * <code>CreateQualificationType</code> operation). </p>  <p> Note:
          * <code>AssociateQualificationWithWorker</code> does not affect any pending
          * Qualification requests for the Qualification by the Worker. If you assign a
          * Qualification to a Worker, then later grant a Qualification request made by the
          * Worker, the granting of the request may modify the Qualification score. To
          * resolve a pending Qualification request without affecting the Qualification the
          * Worker already has, reject the request with the
-         * <code>RejectQualificationRequest</code> operation. </p> </note><p><h3>See
+         * <code>RejectQualificationRequest</code> operation. </p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/AssociateQualificationWithWorker">AWS
          * API Reference</a></p>
@@ -459,7 +447,7 @@ namespace Model
         /**
          * <p> The <code>CreateAdditionalAssignmentsForHIT</code> operation increases the
          * maximum number of assignments of an existing HIT. </p> <p> To extend the maximum
-         * number of assignments, specify the number of additional assignments.</p> <note>
+         * number of assignments, specify the number of additional assignments.</p> 
          * <ul> <li> <p>HITs created with fewer than 10 assignments cannot be extended to
          * have 10 or more assignments. Attempting to add assignments in a way that brings
          * the total number of assignments for a HIT from fewer than 10 assignments to 10
@@ -468,7 +456,7 @@ namespace Model
          * </li> <li> <p>HITs that were created before July 22, 2015 cannot be extended.
          * Attempting to extend HITs that were created before July 22, 2015 will result in
          * an <code>AWS.MechanicalTurk.HITTooOldForExtension</code> exception. </p> </li>
-         * </ul> </note><p><h3>See Also:</h3>   <a
+         * </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateAdditionalAssignmentsForHIT">AWS
          * API Reference</a></p>
          */
@@ -477,7 +465,7 @@ namespace Model
         /**
          * <p> The <code>CreateAdditionalAssignmentsForHIT</code> operation increases the
          * maximum number of assignments of an existing HIT. </p> <p> To extend the maximum
-         * number of assignments, specify the number of additional assignments.</p> <note>
+         * number of assignments, specify the number of additional assignments.</p> 
          * <ul> <li> <p>HITs created with fewer than 10 assignments cannot be extended to
          * have 10 or more assignments. Attempting to add assignments in a way that brings
          * the total number of assignments for a HIT from fewer than 10 assignments to 10
@@ -486,7 +474,7 @@ namespace Model
          * </li> <li> <p>HITs that were created before July 22, 2015 cannot be extended.
          * Attempting to extend HITs that were created before July 22, 2015 will result in
          * an <code>AWS.MechanicalTurk.HITTooOldForExtension</code> exception. </p> </li>
-         * </ul> </note><p><h3>See Also:</h3>   <a
+         * </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateAdditionalAssignmentsForHIT">AWS
          * API Reference</a></p>
          *
@@ -497,7 +485,7 @@ namespace Model
         /**
          * <p> The <code>CreateAdditionalAssignmentsForHIT</code> operation increases the
          * maximum number of assignments of an existing HIT. </p> <p> To extend the maximum
-         * number of assignments, specify the number of additional assignments.</p> <note>
+         * number of assignments, specify the number of additional assignments.</p> 
          * <ul> <li> <p>HITs created with fewer than 10 assignments cannot be extended to
          * have 10 or more assignments. Attempting to add assignments in a way that brings
          * the total number of assignments for a HIT from fewer than 10 assignments to 10
@@ -506,7 +494,7 @@ namespace Model
          * </li> <li> <p>HITs that were created before July 22, 2015 cannot be extended.
          * Attempting to extend HITs that were created before July 22, 2015 will result in
          * an <code>AWS.MechanicalTurk.HITTooOldForExtension</code> exception. </p> </li>
-         * </ul> </note><p><h3>See Also:</h3>   <a
+         * </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateAdditionalAssignmentsForHIT">AWS
          * API Reference</a></p>
          *
@@ -530,10 +518,10 @@ namespace Model
          * HITs. </p> <p>CreateHIT also supports several ways to provide question data: by
          * providing a value for the <code>Question</code> parameter that fully specifies
          * the contents of the HIT, or by providing a <code>HitLayoutId</code> and
-         * associated <code>HitLayoutParameters</code>. </p> <note> <p> If a HIT is created
+         * associated <code>HitLayoutParameters</code>. </p>  <p> If a HIT is created
          * with 10 or more maximum assignments, there is an additional fee. For more
          * information, see <a href="https://requester.mturk.com/pricing">Amazon Mechanical
-         * Turk Pricing</a>.</p> </note><p><h3>See Also:</h3>   <a
+         * Turk Pricing</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateHIT">AWS
          * API Reference</a></p>
          */
@@ -555,10 +543,10 @@ namespace Model
          * HITs. </p> <p>CreateHIT also supports several ways to provide question data: by
          * providing a value for the <code>Question</code> parameter that fully specifies
          * the contents of the HIT, or by providing a <code>HitLayoutId</code> and
-         * associated <code>HitLayoutParameters</code>. </p> <note> <p> If a HIT is created
+         * associated <code>HitLayoutParameters</code>. </p>  <p> If a HIT is created
          * with 10 or more maximum assignments, there is an additional fee. For more
          * information, see <a href="https://requester.mturk.com/pricing">Amazon Mechanical
-         * Turk Pricing</a>.</p> </note><p><h3>See Also:</h3>   <a
+         * Turk Pricing</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateHIT">AWS
          * API Reference</a></p>
          *
@@ -582,10 +570,10 @@ namespace Model
          * HITs. </p> <p>CreateHIT also supports several ways to provide question data: by
          * providing a value for the <code>Question</code> parameter that fully specifies
          * the contents of the HIT, or by providing a <code>HitLayoutId</code> and
-         * associated <code>HitLayoutParameters</code>. </p> <note> <p> If a HIT is created
+         * associated <code>HitLayoutParameters</code>. </p>  <p> If a HIT is created
          * with 10 or more maximum assignments, there is an additional fee. For more
          * information, see <a href="https://requester.mturk.com/pricing">Amazon Mechanical
-         * Turk Pricing</a>.</p> </note><p><h3>See Also:</h3>   <a
+         * Turk Pricing</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateHIT">AWS
          * API Reference</a></p>
          *
@@ -639,10 +627,10 @@ namespace Model
          * <p>CreateHITWithHITType also supports several ways to provide question data: by
          * providing a value for the <code>Question</code> parameter that fully specifies
          * the contents of the HIT, or by providing a <code>HitLayoutId</code> and
-         * associated <code>HitLayoutParameters</code>. </p> <note> <p> If a HIT is created
+         * associated <code>HitLayoutParameters</code>. </p>  <p> If a HIT is created
          * with 10 or more maximum assignments, there is an additional fee. For more
          * information, see <a href="https://requester.mturk.com/pricing">Amazon Mechanical
-         * Turk Pricing</a>. </p> </note><p><h3>See Also:</h3>   <a
+         * Turk Pricing</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateHITWithHITType">AWS
          * API Reference</a></p>
          */
@@ -657,10 +645,10 @@ namespace Model
          * <p>CreateHITWithHITType also supports several ways to provide question data: by
          * providing a value for the <code>Question</code> parameter that fully specifies
          * the contents of the HIT, or by providing a <code>HitLayoutId</code> and
-         * associated <code>HitLayoutParameters</code>. </p> <note> <p> If a HIT is created
+         * associated <code>HitLayoutParameters</code>. </p>  <p> If a HIT is created
          * with 10 or more maximum assignments, there is an additional fee. For more
          * information, see <a href="https://requester.mturk.com/pricing">Amazon Mechanical
-         * Turk Pricing</a>. </p> </note><p><h3>See Also:</h3>   <a
+         * Turk Pricing</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateHITWithHITType">AWS
          * API Reference</a></p>
          *
@@ -677,10 +665,10 @@ namespace Model
          * <p>CreateHITWithHITType also supports several ways to provide question data: by
          * providing a value for the <code>Question</code> parameter that fully specifies
          * the contents of the HIT, or by providing a <code>HitLayoutId</code> and
-         * associated <code>HitLayoutParameters</code>. </p> <note> <p> If a HIT is created
+         * associated <code>HitLayoutParameters</code>. </p>  <p> If a HIT is created
          * with 10 or more maximum assignments, there is an additional fee. For more
          * information, see <a href="https://requester.mturk.com/pricing">Amazon Mechanical
-         * Turk Pricing</a>. </p> </note><p><h3>See Also:</h3>   <a
+         * Turk Pricing</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateHITWithHITType">AWS
          * API Reference</a></p>
          *
@@ -761,13 +749,13 @@ namespace Model
          * DeleteHIT operation on a HIT that is not in the <code>Reviewable</code> state
          * (for example, that has not expired, or still has active assignments), or on a
          * HIT that is Reviewable but without all of its submitted assignments already
-         * approved or rejected, the service will return an error. </p> <note> <ul> <li>
+         * approved or rejected, the service will return an error. </p>  <ul> <li>
          * <p> HITs are automatically disposed of after 120 days. </p> </li> <li> <p> After
          * you dispose of a HIT, you can no longer approve the HIT's rejected assignments.
          * </p> </li> <li> <p> Disposed HITs are not returned in results for the ListHITs
          * operation. </p> </li> <li> <p> Disposing HITs can improve the performance of
          * operations such as ListReviewableHITs and ListHITs. </p> </li> </ul>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DeleteHIT">AWS
          * API Reference</a></p>
          */
@@ -781,13 +769,13 @@ namespace Model
          * DeleteHIT operation on a HIT that is not in the <code>Reviewable</code> state
          * (for example, that has not expired, or still has active assignments), or on a
          * HIT that is Reviewable but without all of its submitted assignments already
-         * approved or rejected, the service will return an error. </p> <note> <ul> <li>
+         * approved or rejected, the service will return an error. </p>  <ul> <li>
          * <p> HITs are automatically disposed of after 120 days. </p> </li> <li> <p> After
          * you dispose of a HIT, you can no longer approve the HIT's rejected assignments.
          * </p> </li> <li> <p> Disposed HITs are not returned in results for the ListHITs
          * operation. </p> </li> <li> <p> Disposing HITs can improve the performance of
          * operations such as ListReviewableHITs and ListHITs. </p> </li> </ul>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DeleteHIT">AWS
          * API Reference</a></p>
          *
@@ -803,13 +791,13 @@ namespace Model
          * DeleteHIT operation on a HIT that is not in the <code>Reviewable</code> state
          * (for example, that has not expired, or still has active assignments), or on a
          * HIT that is Reviewable but without all of its submitted assignments already
-         * approved or rejected, the service will return an error. </p> <note> <ul> <li>
+         * approved or rejected, the service will return an error. </p>  <ul> <li>
          * <p> HITs are automatically disposed of after 120 days. </p> </li> <li> <p> After
          * you dispose of a HIT, you can no longer approve the HIT's rejected assignments.
          * </p> </li> <li> <p> Disposed HITs are not returned in results for the ListHITs
          * operation. </p> </li> <li> <p> Disposing HITs can improve the performance of
          * operations such as ListReviewableHITs and ListHITs. </p> </li> </ul>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DeleteHIT">AWS
          * API Reference</a></p>
          *
@@ -824,11 +812,11 @@ namespace Model
          * because the Qualifications might be needed for active HITs. If there are any
          * pending requests for the Qualification type, Amazon Mechanical Turk rejects
          * those requests. After you delete a Qualification type, you can no longer use it
-         * to create HITs or HIT types.</p> <note> <p>DeleteQualificationType must wait for
+         * to create HITs or HIT types.</p>  <p>DeleteQualificationType must wait for
          * all the HITs that use the deleted Qualification type to be deleted before
          * completing. It may take up to 48 hours before DeleteQualificationType completes
          * and the unique name of the Qualification type is available for reuse with
-         * CreateQualificationType.</p> </note><p><h3>See Also:</h3>   <a
+         * CreateQualificationType.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DeleteQualificationType">AWS
          * API Reference</a></p>
          */
@@ -841,11 +829,11 @@ namespace Model
          * because the Qualifications might be needed for active HITs. If there are any
          * pending requests for the Qualification type, Amazon Mechanical Turk rejects
          * those requests. After you delete a Qualification type, you can no longer use it
-         * to create HITs or HIT types.</p> <note> <p>DeleteQualificationType must wait for
+         * to create HITs or HIT types.</p>  <p>DeleteQualificationType must wait for
          * all the HITs that use the deleted Qualification type to be deleted before
          * completing. It may take up to 48 hours before DeleteQualificationType completes
          * and the unique name of the Qualification type is available for reuse with
-         * CreateQualificationType.</p> </note><p><h3>See Also:</h3>   <a
+         * CreateQualificationType.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DeleteQualificationType">AWS
          * API Reference</a></p>
          *
@@ -860,11 +848,11 @@ namespace Model
          * because the Qualifications might be needed for active HITs. If there are any
          * pending requests for the Qualification type, Amazon Mechanical Turk rejects
          * those requests. After you delete a Qualification type, you can no longer use it
-         * to create HITs or HIT types.</p> <note> <p>DeleteQualificationType must wait for
+         * to create HITs or HIT types.</p>  <p>DeleteQualificationType must wait for
          * all the HITs that use the deleted Qualification type to be deleted before
          * completing. It may take up to 48 hours before DeleteQualificationType completes
          * and the unique name of the Qualification type is available for reuse with
-         * CreateQualificationType.</p> </note><p><h3>See Also:</h3>   <a
+         * CreateQualificationType.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DeleteQualificationType">AWS
          * API Reference</a></p>
          *

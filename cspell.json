@@ -4,14 +4,16 @@
     "words": [
         // C++ STL
         "smatch",
+        // General
+        "SDK's", "sdks", "awssdk", "executables", "debuggable",
         // AWS general
         "Arns", "AMZN", "amzn",
         // AWS Signature
         "SIGV", "AUTHV",
         // CMake
-        "cmake",
+        "cmake", "DCMAKE", "AUTORUN", "DEPS", "STREQUAL", "RPATH", "STREQUAL", "DTARGET", "TOOLCHAIN", "DANDROID", "DBUILD", "DGIT", "SYSROOT", "DSTATIC", "BINDIR", "LIBDIR", "INCLUDEDIR", "DHAS",
         // Compiler and linker
-        "Wpedantic", "Wextra", "Werror", "xldscope", "Wtype", "Wunused",
+        "Wpedantic", "Wextra", "Werror", "xldscope", "Wtype", "Wunused", "RTTI", "ffunction", "fdata", "fsanitize", "pathconf", "unistd", "umask",
         // Android NDK
         "JNIEXPORT", "jint", "JNICALL", "jobject", "jclass", "jmethod", "Ljava",
         // XML parser
@@ -21,13 +23,17 @@
         // IXMLHTTPRequest2
         "IXML", "IXMLHTTP", "HRESULT", "REFIID", "EXCEPINFO", "CLSID", "INPROC", "ONDATA",
         // MSVC
-        "MSFT", "LPDWORD", "DATAW", "mkgmtime", "vscprintf", "wtoi",
+        "msvc", "MSFT", "LPDWORD", "DATAW", "mkgmtime", "vscprintf", "wtoi", "msxml", "runtimeobject", "winhttp", "Wininet",
         // Crypto
-        "decryptor", "encryptor", "NTSTATUS", "PBYTE", "PUCHAR", "noconf", "HAMC", "PBCRYPT",
+        "decryptor", "encryptor", "NTSTATUS", "PBYTE", "PUCHAR", "noconf", "HAMC", "PBCRYPT", "BCRYPT",
         // EC2
         "IMDS",
         // Cognito
-        "cognito"
+        "cognito",
+        // License and Notice
+        "SPDX", "grinninglizard", "Thomason", "Lepilleur", "Sidebotham", "Rublee", "Andrey", "Kamaev",
+        // Dependencies
+        "openssl"
     ],
     "ignoreWords": [
         // variables defined in ConcurrentStreamBuf

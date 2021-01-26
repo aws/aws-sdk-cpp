@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/wafv2/WAFV2_EXPORTS.h>
@@ -88,43 +78,43 @@ namespace Model
 
     /**
      * <p>Used for web ACLs that are scoped for regional applications. A regional
-     * application can be an Application Load Balancer (ALB) or an API Gateway stage.
-     * </p>
+     * application can be an Application Load Balancer (ALB), an API Gateway REST API,
+     * or an AppSync GraphQL API. </p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
      * <p>Used for web ACLs that are scoped for regional applications. A regional
-     * application can be an Application Load Balancer (ALB) or an API Gateway stage.
-     * </p>
+     * application can be an Application Load Balancer (ALB), an API Gateway REST API,
+     * or an AppSync GraphQL API. </p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>Used for web ACLs that are scoped for regional applications. A regional
-     * application can be an Application Load Balancer (ALB) or an API Gateway stage.
-     * </p>
+     * application can be an Application Load Balancer (ALB), an API Gateway REST API,
+     * or an AppSync GraphQL API. </p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
      * <p>Used for web ACLs that are scoped for regional applications. A regional
-     * application can be an Application Load Balancer (ALB) or an API Gateway stage.
-     * </p>
+     * application can be an Application Load Balancer (ALB), an API Gateway REST API,
+     * or an AppSync GraphQL API. </p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>Used for web ACLs that are scoped for regional applications. A regional
-     * application can be an Application Load Balancer (ALB) or an API Gateway stage.
-     * </p>
+     * application can be an Application Load Balancer (ALB), an API Gateway REST API,
+     * or an AppSync GraphQL API. </p>
      */
     inline ListResourcesForWebACLRequest& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
      * <p>Used for web ACLs that are scoped for regional applications. A regional
-     * application can be an Application Load Balancer (ALB) or an API Gateway stage.
-     * </p>
+     * application can be an Application Load Balancer (ALB), an API Gateway REST API,
+     * or an AppSync GraphQL API. </p>
      */
     inline ListResourcesForWebACLRequest& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 

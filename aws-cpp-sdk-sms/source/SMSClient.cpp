@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -35,6 +25,7 @@
 #include <aws/sms/model/DeleteAppRequest.h>
 #include <aws/sms/model/DeleteAppLaunchConfigurationRequest.h>
 #include <aws/sms/model/DeleteAppReplicationConfigurationRequest.h>
+#include <aws/sms/model/DeleteAppValidationConfigurationRequest.h>
 #include <aws/sms/model/DeleteReplicationJobRequest.h>
 #include <aws/sms/model/DeleteServerCatalogRequest.h>
 #include <aws/sms/model/DisassociateConnectorRequest.h>
@@ -43,16 +34,22 @@
 #include <aws/sms/model/GetAppRequest.h>
 #include <aws/sms/model/GetAppLaunchConfigurationRequest.h>
 #include <aws/sms/model/GetAppReplicationConfigurationRequest.h>
+#include <aws/sms/model/GetAppValidationConfigurationRequest.h>
+#include <aws/sms/model/GetAppValidationOutputRequest.h>
 #include <aws/sms/model/GetConnectorsRequest.h>
 #include <aws/sms/model/GetReplicationJobsRequest.h>
 #include <aws/sms/model/GetReplicationRunsRequest.h>
 #include <aws/sms/model/GetServersRequest.h>
+#include <aws/sms/model/ImportAppCatalogRequest.h>
 #include <aws/sms/model/ImportServerCatalogRequest.h>
 #include <aws/sms/model/LaunchAppRequest.h>
 #include <aws/sms/model/ListAppsRequest.h>
+#include <aws/sms/model/NotifyAppValidationOutputRequest.h>
 #include <aws/sms/model/PutAppLaunchConfigurationRequest.h>
 #include <aws/sms/model/PutAppReplicationConfigurationRequest.h>
+#include <aws/sms/model/PutAppValidationConfigurationRequest.h>
 #include <aws/sms/model/StartAppReplicationRequest.h>
+#include <aws/sms/model/StartOnDemandAppReplicationRequest.h>
 #include <aws/sms/model/StartOnDemandReplicationRunRequest.h>
 #include <aws/sms/model/StopAppReplicationRequest.h>
 #include <aws/sms/model/TerminateAppRequest.h>
@@ -74,7 +71,7 @@ static const char* ALLOCATION_TAG = "SMSClient";
 SMSClient::SMSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<SMSErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -84,7 +81,7 @@ SMSClient::SMSClient(const Client::ClientConfiguration& clientConfiguration) :
 SMSClient::SMSClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<SMSErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -95,7 +92,7 @@ SMSClient::SMSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<SMSErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -108,6 +105,7 @@ SMSClient::~SMSClient()
 
 void SMSClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("SMS");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -137,15 +135,7 @@ CreateAppOutcome SMSClient::CreateApp(const CreateAppRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateAppOutcome(CreateAppResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateAppOutcome(outcome.GetError());
-  }
+  return CreateAppOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateAppOutcomeCallable SMSClient::CreateAppCallable(const CreateAppRequest& request) const
@@ -172,15 +162,7 @@ CreateReplicationJobOutcome SMSClient::CreateReplicationJob(const CreateReplicat
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateReplicationJobOutcome(CreateReplicationJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateReplicationJobOutcome(outcome.GetError());
-  }
+  return CreateReplicationJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateReplicationJobOutcomeCallable SMSClient::CreateReplicationJobCallable(const CreateReplicationJobRequest& request) const
@@ -207,15 +189,7 @@ DeleteAppOutcome SMSClient::DeleteApp(const DeleteAppRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteAppOutcome(DeleteAppResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteAppOutcome(outcome.GetError());
-  }
+  return DeleteAppOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteAppOutcomeCallable SMSClient::DeleteAppCallable(const DeleteAppRequest& request) const
@@ -242,15 +216,7 @@ DeleteAppLaunchConfigurationOutcome SMSClient::DeleteAppLaunchConfiguration(cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteAppLaunchConfigurationOutcome(DeleteAppLaunchConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteAppLaunchConfigurationOutcome(outcome.GetError());
-  }
+  return DeleteAppLaunchConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteAppLaunchConfigurationOutcomeCallable SMSClient::DeleteAppLaunchConfigurationCallable(const DeleteAppLaunchConfigurationRequest& request) const
@@ -277,15 +243,7 @@ DeleteAppReplicationConfigurationOutcome SMSClient::DeleteAppReplicationConfigur
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteAppReplicationConfigurationOutcome(DeleteAppReplicationConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteAppReplicationConfigurationOutcome(outcome.GetError());
-  }
+  return DeleteAppReplicationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteAppReplicationConfigurationOutcomeCallable SMSClient::DeleteAppReplicationConfigurationCallable(const DeleteAppReplicationConfigurationRequest& request) const
@@ -306,21 +264,40 @@ void SMSClient::DeleteAppReplicationConfigurationAsyncHelper(const DeleteAppRepl
   handler(this, request, DeleteAppReplicationConfiguration(request), context);
 }
 
+DeleteAppValidationConfigurationOutcome SMSClient::DeleteAppValidationConfiguration(const DeleteAppValidationConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteAppValidationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteAppValidationConfigurationOutcomeCallable SMSClient::DeleteAppValidationConfigurationCallable(const DeleteAppValidationConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAppValidationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAppValidationConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SMSClient::DeleteAppValidationConfigurationAsync(const DeleteAppValidationConfigurationRequest& request, const DeleteAppValidationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAppValidationConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void SMSClient::DeleteAppValidationConfigurationAsyncHelper(const DeleteAppValidationConfigurationRequest& request, const DeleteAppValidationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAppValidationConfiguration(request), context);
+}
+
 DeleteReplicationJobOutcome SMSClient::DeleteReplicationJob(const DeleteReplicationJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteReplicationJobOutcome(DeleteReplicationJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteReplicationJobOutcome(outcome.GetError());
-  }
+  return DeleteReplicationJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteReplicationJobOutcomeCallable SMSClient::DeleteReplicationJobCallable(const DeleteReplicationJobRequest& request) const
@@ -347,15 +324,7 @@ DeleteServerCatalogOutcome SMSClient::DeleteServerCatalog(const DeleteServerCata
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteServerCatalogOutcome(DeleteServerCatalogResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteServerCatalogOutcome(outcome.GetError());
-  }
+  return DeleteServerCatalogOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteServerCatalogOutcomeCallable SMSClient::DeleteServerCatalogCallable(const DeleteServerCatalogRequest& request) const
@@ -382,15 +351,7 @@ DisassociateConnectorOutcome SMSClient::DisassociateConnector(const Disassociate
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisassociateConnectorOutcome(DisassociateConnectorResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisassociateConnectorOutcome(outcome.GetError());
-  }
+  return DisassociateConnectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisassociateConnectorOutcomeCallable SMSClient::DisassociateConnectorCallable(const DisassociateConnectorRequest& request) const
@@ -417,15 +378,7 @@ GenerateChangeSetOutcome SMSClient::GenerateChangeSet(const GenerateChangeSetReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GenerateChangeSetOutcome(GenerateChangeSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GenerateChangeSetOutcome(outcome.GetError());
-  }
+  return GenerateChangeSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GenerateChangeSetOutcomeCallable SMSClient::GenerateChangeSetCallable(const GenerateChangeSetRequest& request) const
@@ -452,15 +405,7 @@ GenerateTemplateOutcome SMSClient::GenerateTemplate(const GenerateTemplateReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GenerateTemplateOutcome(GenerateTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GenerateTemplateOutcome(outcome.GetError());
-  }
+  return GenerateTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GenerateTemplateOutcomeCallable SMSClient::GenerateTemplateCallable(const GenerateTemplateRequest& request) const
@@ -487,15 +432,7 @@ GetAppOutcome SMSClient::GetApp(const GetAppRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetAppOutcome(GetAppResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetAppOutcome(outcome.GetError());
-  }
+  return GetAppOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAppOutcomeCallable SMSClient::GetAppCallable(const GetAppRequest& request) const
@@ -522,15 +459,7 @@ GetAppLaunchConfigurationOutcome SMSClient::GetAppLaunchConfiguration(const GetA
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetAppLaunchConfigurationOutcome(GetAppLaunchConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetAppLaunchConfigurationOutcome(outcome.GetError());
-  }
+  return GetAppLaunchConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAppLaunchConfigurationOutcomeCallable SMSClient::GetAppLaunchConfigurationCallable(const GetAppLaunchConfigurationRequest& request) const
@@ -557,15 +486,7 @@ GetAppReplicationConfigurationOutcome SMSClient::GetAppReplicationConfiguration(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetAppReplicationConfigurationOutcome(GetAppReplicationConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetAppReplicationConfigurationOutcome(outcome.GetError());
-  }
+  return GetAppReplicationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAppReplicationConfigurationOutcomeCallable SMSClient::GetAppReplicationConfigurationCallable(const GetAppReplicationConfigurationRequest& request) const
@@ -586,21 +507,67 @@ void SMSClient::GetAppReplicationConfigurationAsyncHelper(const GetAppReplicatio
   handler(this, request, GetAppReplicationConfiguration(request), context);
 }
 
+GetAppValidationConfigurationOutcome SMSClient::GetAppValidationConfiguration(const GetAppValidationConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetAppValidationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetAppValidationConfigurationOutcomeCallable SMSClient::GetAppValidationConfigurationCallable(const GetAppValidationConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAppValidationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAppValidationConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SMSClient::GetAppValidationConfigurationAsync(const GetAppValidationConfigurationRequest& request, const GetAppValidationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAppValidationConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void SMSClient::GetAppValidationConfigurationAsyncHelper(const GetAppValidationConfigurationRequest& request, const GetAppValidationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAppValidationConfiguration(request), context);
+}
+
+GetAppValidationOutputOutcome SMSClient::GetAppValidationOutput(const GetAppValidationOutputRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetAppValidationOutputOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetAppValidationOutputOutcomeCallable SMSClient::GetAppValidationOutputCallable(const GetAppValidationOutputRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAppValidationOutputOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAppValidationOutput(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SMSClient::GetAppValidationOutputAsync(const GetAppValidationOutputRequest& request, const GetAppValidationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAppValidationOutputAsyncHelper( request, handler, context ); } );
+}
+
+void SMSClient::GetAppValidationOutputAsyncHelper(const GetAppValidationOutputRequest& request, const GetAppValidationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAppValidationOutput(request), context);
+}
+
 GetConnectorsOutcome SMSClient::GetConnectors(const GetConnectorsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetConnectorsOutcome(GetConnectorsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetConnectorsOutcome(outcome.GetError());
-  }
+  return GetConnectorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetConnectorsOutcomeCallable SMSClient::GetConnectorsCallable(const GetConnectorsRequest& request) const
@@ -627,15 +594,7 @@ GetReplicationJobsOutcome SMSClient::GetReplicationJobs(const GetReplicationJobs
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetReplicationJobsOutcome(GetReplicationJobsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetReplicationJobsOutcome(outcome.GetError());
-  }
+  return GetReplicationJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetReplicationJobsOutcomeCallable SMSClient::GetReplicationJobsCallable(const GetReplicationJobsRequest& request) const
@@ -662,15 +621,7 @@ GetReplicationRunsOutcome SMSClient::GetReplicationRuns(const GetReplicationRuns
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetReplicationRunsOutcome(GetReplicationRunsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetReplicationRunsOutcome(outcome.GetError());
-  }
+  return GetReplicationRunsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetReplicationRunsOutcomeCallable SMSClient::GetReplicationRunsCallable(const GetReplicationRunsRequest& request) const
@@ -697,15 +648,7 @@ GetServersOutcome SMSClient::GetServers(const GetServersRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetServersOutcome(GetServersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetServersOutcome(outcome.GetError());
-  }
+  return GetServersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetServersOutcomeCallable SMSClient::GetServersCallable(const GetServersRequest& request) const
@@ -726,21 +669,40 @@ void SMSClient::GetServersAsyncHelper(const GetServersRequest& request, const Ge
   handler(this, request, GetServers(request), context);
 }
 
+ImportAppCatalogOutcome SMSClient::ImportAppCatalog(const ImportAppCatalogRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ImportAppCatalogOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ImportAppCatalogOutcomeCallable SMSClient::ImportAppCatalogCallable(const ImportAppCatalogRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ImportAppCatalogOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportAppCatalog(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SMSClient::ImportAppCatalogAsync(const ImportAppCatalogRequest& request, const ImportAppCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ImportAppCatalogAsyncHelper( request, handler, context ); } );
+}
+
+void SMSClient::ImportAppCatalogAsyncHelper(const ImportAppCatalogRequest& request, const ImportAppCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ImportAppCatalog(request), context);
+}
+
 ImportServerCatalogOutcome SMSClient::ImportServerCatalog(const ImportServerCatalogRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ImportServerCatalogOutcome(ImportServerCatalogResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ImportServerCatalogOutcome(outcome.GetError());
-  }
+  return ImportServerCatalogOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ImportServerCatalogOutcomeCallable SMSClient::ImportServerCatalogCallable(const ImportServerCatalogRequest& request) const
@@ -767,15 +729,7 @@ LaunchAppOutcome SMSClient::LaunchApp(const LaunchAppRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return LaunchAppOutcome(LaunchAppResult(outcome.GetResult()));
-  }
-  else
-  {
-    return LaunchAppOutcome(outcome.GetError());
-  }
+  return LaunchAppOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 LaunchAppOutcomeCallable SMSClient::LaunchAppCallable(const LaunchAppRequest& request) const
@@ -802,15 +756,7 @@ ListAppsOutcome SMSClient::ListApps(const ListAppsRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListAppsOutcome(ListAppsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListAppsOutcome(outcome.GetError());
-  }
+  return ListAppsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListAppsOutcomeCallable SMSClient::ListAppsCallable(const ListAppsRequest& request) const
@@ -831,21 +777,40 @@ void SMSClient::ListAppsAsyncHelper(const ListAppsRequest& request, const ListAp
   handler(this, request, ListApps(request), context);
 }
 
+NotifyAppValidationOutputOutcome SMSClient::NotifyAppValidationOutput(const NotifyAppValidationOutputRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return NotifyAppValidationOutputOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+NotifyAppValidationOutputOutcomeCallable SMSClient::NotifyAppValidationOutputCallable(const NotifyAppValidationOutputRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< NotifyAppValidationOutputOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->NotifyAppValidationOutput(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SMSClient::NotifyAppValidationOutputAsync(const NotifyAppValidationOutputRequest& request, const NotifyAppValidationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->NotifyAppValidationOutputAsyncHelper( request, handler, context ); } );
+}
+
+void SMSClient::NotifyAppValidationOutputAsyncHelper(const NotifyAppValidationOutputRequest& request, const NotifyAppValidationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, NotifyAppValidationOutput(request), context);
+}
+
 PutAppLaunchConfigurationOutcome SMSClient::PutAppLaunchConfiguration(const PutAppLaunchConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutAppLaunchConfigurationOutcome(PutAppLaunchConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutAppLaunchConfigurationOutcome(outcome.GetError());
-  }
+  return PutAppLaunchConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutAppLaunchConfigurationOutcomeCallable SMSClient::PutAppLaunchConfigurationCallable(const PutAppLaunchConfigurationRequest& request) const
@@ -872,15 +837,7 @@ PutAppReplicationConfigurationOutcome SMSClient::PutAppReplicationConfiguration(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutAppReplicationConfigurationOutcome(PutAppReplicationConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutAppReplicationConfigurationOutcome(outcome.GetError());
-  }
+  return PutAppReplicationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutAppReplicationConfigurationOutcomeCallable SMSClient::PutAppReplicationConfigurationCallable(const PutAppReplicationConfigurationRequest& request) const
@@ -901,21 +858,40 @@ void SMSClient::PutAppReplicationConfigurationAsyncHelper(const PutAppReplicatio
   handler(this, request, PutAppReplicationConfiguration(request), context);
 }
 
+PutAppValidationConfigurationOutcome SMSClient::PutAppValidationConfiguration(const PutAppValidationConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return PutAppValidationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutAppValidationConfigurationOutcomeCallable SMSClient::PutAppValidationConfigurationCallable(const PutAppValidationConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutAppValidationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutAppValidationConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SMSClient::PutAppValidationConfigurationAsync(const PutAppValidationConfigurationRequest& request, const PutAppValidationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutAppValidationConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void SMSClient::PutAppValidationConfigurationAsyncHelper(const PutAppValidationConfigurationRequest& request, const PutAppValidationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutAppValidationConfiguration(request), context);
+}
+
 StartAppReplicationOutcome SMSClient::StartAppReplication(const StartAppReplicationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartAppReplicationOutcome(StartAppReplicationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartAppReplicationOutcome(outcome.GetError());
-  }
+  return StartAppReplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartAppReplicationOutcomeCallable SMSClient::StartAppReplicationCallable(const StartAppReplicationRequest& request) const
@@ -936,21 +912,40 @@ void SMSClient::StartAppReplicationAsyncHelper(const StartAppReplicationRequest&
   handler(this, request, StartAppReplication(request), context);
 }
 
+StartOnDemandAppReplicationOutcome SMSClient::StartOnDemandAppReplication(const StartOnDemandAppReplicationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return StartOnDemandAppReplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartOnDemandAppReplicationOutcomeCallable SMSClient::StartOnDemandAppReplicationCallable(const StartOnDemandAppReplicationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartOnDemandAppReplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartOnDemandAppReplication(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SMSClient::StartOnDemandAppReplicationAsync(const StartOnDemandAppReplicationRequest& request, const StartOnDemandAppReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartOnDemandAppReplicationAsyncHelper( request, handler, context ); } );
+}
+
+void SMSClient::StartOnDemandAppReplicationAsyncHelper(const StartOnDemandAppReplicationRequest& request, const StartOnDemandAppReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartOnDemandAppReplication(request), context);
+}
+
 StartOnDemandReplicationRunOutcome SMSClient::StartOnDemandReplicationRun(const StartOnDemandReplicationRunRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartOnDemandReplicationRunOutcome(StartOnDemandReplicationRunResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartOnDemandReplicationRunOutcome(outcome.GetError());
-  }
+  return StartOnDemandReplicationRunOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartOnDemandReplicationRunOutcomeCallable SMSClient::StartOnDemandReplicationRunCallable(const StartOnDemandReplicationRunRequest& request) const
@@ -977,15 +972,7 @@ StopAppReplicationOutcome SMSClient::StopAppReplication(const StopAppReplication
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StopAppReplicationOutcome(StopAppReplicationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StopAppReplicationOutcome(outcome.GetError());
-  }
+  return StopAppReplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopAppReplicationOutcomeCallable SMSClient::StopAppReplicationCallable(const StopAppReplicationRequest& request) const
@@ -1012,15 +999,7 @@ TerminateAppOutcome SMSClient::TerminateApp(const TerminateAppRequest& request) 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TerminateAppOutcome(TerminateAppResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TerminateAppOutcome(outcome.GetError());
-  }
+  return TerminateAppOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TerminateAppOutcomeCallable SMSClient::TerminateAppCallable(const TerminateAppRequest& request) const
@@ -1047,15 +1026,7 @@ UpdateAppOutcome SMSClient::UpdateApp(const UpdateAppRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateAppOutcome(UpdateAppResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateAppOutcome(outcome.GetError());
-  }
+  return UpdateAppOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateAppOutcomeCallable SMSClient::UpdateAppCallable(const UpdateAppRequest& request) const
@@ -1082,15 +1053,7 @@ UpdateReplicationJobOutcome SMSClient::UpdateReplicationJob(const UpdateReplicat
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateReplicationJobOutcome(UpdateReplicationJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateReplicationJobOutcome(outcome.GetError());
-  }
+  return UpdateReplicationJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateReplicationJobOutcomeCallable SMSClient::UpdateReplicationJobCallable(const UpdateReplicationJobRequest& request) const

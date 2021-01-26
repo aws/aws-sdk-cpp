@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/elasticache/model/GlobalReplicationGroup.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -46,7 +36,8 @@ GlobalReplicationGroup::GlobalReplicationGroup() :
     m_transitEncryptionEnabled(false),
     m_transitEncryptionEnabledHasBeenSet(false),
     m_atRestEncryptionEnabled(false),
-    m_atRestEncryptionEnabledHasBeenSet(false)
+    m_atRestEncryptionEnabledHasBeenSet(false),
+    m_aRNHasBeenSet(false)
 {
 }
 
@@ -66,7 +57,8 @@ GlobalReplicationGroup::GlobalReplicationGroup(const XmlNode& xmlNode) :
     m_transitEncryptionEnabled(false),
     m_transitEncryptionEnabledHasBeenSet(false),
     m_atRestEncryptionEnabled(false),
-    m_atRestEncryptionEnabledHasBeenSet(false)
+    m_atRestEncryptionEnabledHasBeenSet(false),
+    m_aRNHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -161,6 +153,12 @@ GlobalReplicationGroup& GlobalReplicationGroup::operator =(const XmlNode& xmlNod
       m_atRestEncryptionEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(atRestEncryptionEnabledNode.GetText()).c_str()).c_str());
       m_atRestEncryptionEnabledHasBeenSet = true;
     }
+    XmlNode aRNNode = resultNode.FirstChild("ARN");
+    if(!aRNNode.IsNull())
+    {
+      m_aRN = Aws::Utils::Xml::DecodeEscapedXmlText(aRNNode.GetText());
+      m_aRNHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -240,6 +238,11 @@ void GlobalReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* l
       oStream << location << index << locationValue << ".AtRestEncryptionEnabled=" << std::boolalpha << m_atRestEncryptionEnabled << "&";
   }
 
+  if(m_aRNHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ARN=" << StringUtils::URLEncode(m_aRN.c_str()) << "&";
+  }
+
 }
 
 void GlobalReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -303,6 +306,10 @@ void GlobalReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* l
   if(m_atRestEncryptionEnabledHasBeenSet)
   {
       oStream << location << ".AtRestEncryptionEnabled=" << std::boolalpha << m_atRestEncryptionEnabled << "&";
+  }
+  if(m_aRNHasBeenSet)
+  {
+      oStream << location << ".ARN=" << StringUtils::URLEncode(m_aRN.c_str()) << "&";
   }
 }
 

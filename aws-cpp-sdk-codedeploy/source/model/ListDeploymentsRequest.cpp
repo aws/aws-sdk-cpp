@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/codedeploy/model/ListDeploymentsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -25,6 +15,7 @@ using namespace Aws::Utils;
 ListDeploymentsRequest::ListDeploymentsRequest() : 
     m_applicationNameHasBeenSet(false),
     m_deploymentGroupNameHasBeenSet(false),
+    m_externalIdHasBeenSet(false),
     m_includeOnlyStatusesHasBeenSet(false),
     m_createTimeRangeHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
@@ -44,6 +35,12 @@ Aws::String ListDeploymentsRequest::SerializePayload() const
   if(m_deploymentGroupNameHasBeenSet)
   {
    payload.WithString("deploymentGroupName", m_deploymentGroupName);
+
+  }
+
+  if(m_externalIdHasBeenSet)
+  {
+   payload.WithString("externalId", m_externalId);
 
   }
 

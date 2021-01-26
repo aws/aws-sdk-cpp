@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -166,66 +156,74 @@ namespace Model
 
 
     /**
-     * <p>A list of key-value pairs. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User
-     * Guide</i>. </p>
+     * <p>An array of key-value pairs. You can use tags to categorize your AWS
+     * resources in different ways, for example, by purpose, owner, or environment. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A list of key-value pairs. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User
-     * Guide</i>. </p>
+     * <p>An array of key-value pairs. You can use tags to categorize your AWS
+     * resources in different ways, for example, by purpose, owner, or environment. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A list of key-value pairs. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User
-     * Guide</i>. </p>
+     * <p>An array of key-value pairs. You can use tags to categorize your AWS
+     * resources in different ways, for example, by purpose, owner, or environment. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A list of key-value pairs. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User
-     * Guide</i>. </p>
+     * <p>An array of key-value pairs. You can use tags to categorize your AWS
+     * resources in different ways, for example, by purpose, owner, or environment. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A list of key-value pairs. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User
-     * Guide</i>. </p>
+     * <p>An array of key-value pairs. You can use tags to categorize your AWS
+     * resources in different ways, for example, by purpose, owner, or environment. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p>
      */
     inline CreateEndpointConfigRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A list of key-value pairs. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User
-     * Guide</i>. </p>
+     * <p>An array of key-value pairs. You can use tags to categorize your AWS
+     * resources in different ways, for example, by purpose, owner, or environment. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p>
      */
     inline CreateEndpointConfigRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A list of key-value pairs. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User
-     * Guide</i>. </p>
+     * <p>An array of key-value pairs. You can use tags to categorize your AWS
+     * resources in different ways, for example, by purpose, owner, or environment. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p>
      */
     inline CreateEndpointConfigRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>A list of key-value pairs. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User
-     * Guide</i>. </p>
+     * <p>An array of key-value pairs. You can use tags to categorize your AWS
+     * resources in different ways, for example, by purpose, owner, or environment. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a>.</p>
      */
     inline CreateEndpointConfigRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
@@ -245,7 +243,7 @@ namespace Model
      * requests. For more information, refer to the AWS Key Management Service
      * section<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">
-     * Using Key Policies in AWS KMS </a> </p> <note> <p>Certain Nitro-based instances
+     * Using Key Policies in AWS KMS </a> </p>  <p>Certain Nitro-based instances
      * include local storage, dependent on the instance type. Local storage volumes are
      * encrypted using a hardware module on the instance. You can't request a
      * <code>KmsKeyId</code> when using an instance type with local storage. If any of
@@ -259,7 +257,7 @@ namespace Model
      * Store Volumes</a>.</p> <p>For more information about local instance storage
      * encryption, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
-     * Instance Store Volumes</a>.</p> </note>
+     * Instance Store Volumes</a>.</p> 
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
@@ -278,7 +276,7 @@ namespace Model
      * requests. For more information, refer to the AWS Key Management Service
      * section<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">
-     * Using Key Policies in AWS KMS </a> </p> <note> <p>Certain Nitro-based instances
+     * Using Key Policies in AWS KMS </a> </p>  <p>Certain Nitro-based instances
      * include local storage, dependent on the instance type. Local storage volumes are
      * encrypted using a hardware module on the instance. You can't request a
      * <code>KmsKeyId</code> when using an instance type with local storage. If any of
@@ -292,7 +290,7 @@ namespace Model
      * Store Volumes</a>.</p> <p>For more information about local instance storage
      * encryption, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
-     * Instance Store Volumes</a>.</p> </note>
+     * Instance Store Volumes</a>.</p> 
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
@@ -311,7 +309,7 @@ namespace Model
      * requests. For more information, refer to the AWS Key Management Service
      * section<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">
-     * Using Key Policies in AWS KMS </a> </p> <note> <p>Certain Nitro-based instances
+     * Using Key Policies in AWS KMS </a> </p>  <p>Certain Nitro-based instances
      * include local storage, dependent on the instance type. Local storage volumes are
      * encrypted using a hardware module on the instance. You can't request a
      * <code>KmsKeyId</code> when using an instance type with local storage. If any of
@@ -325,7 +323,7 @@ namespace Model
      * Store Volumes</a>.</p> <p>For more information about local instance storage
      * encryption, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
-     * Instance Store Volumes</a>.</p> </note>
+     * Instance Store Volumes</a>.</p> 
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
@@ -344,7 +342,7 @@ namespace Model
      * requests. For more information, refer to the AWS Key Management Service
      * section<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">
-     * Using Key Policies in AWS KMS </a> </p> <note> <p>Certain Nitro-based instances
+     * Using Key Policies in AWS KMS </a> </p>  <p>Certain Nitro-based instances
      * include local storage, dependent on the instance type. Local storage volumes are
      * encrypted using a hardware module on the instance. You can't request a
      * <code>KmsKeyId</code> when using an instance type with local storage. If any of
@@ -358,7 +356,7 @@ namespace Model
      * Store Volumes</a>.</p> <p>For more information about local instance storage
      * encryption, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
-     * Instance Store Volumes</a>.</p> </note>
+     * Instance Store Volumes</a>.</p> 
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
@@ -377,7 +375,7 @@ namespace Model
      * requests. For more information, refer to the AWS Key Management Service
      * section<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">
-     * Using Key Policies in AWS KMS </a> </p> <note> <p>Certain Nitro-based instances
+     * Using Key Policies in AWS KMS </a> </p>  <p>Certain Nitro-based instances
      * include local storage, dependent on the instance type. Local storage volumes are
      * encrypted using a hardware module on the instance. You can't request a
      * <code>KmsKeyId</code> when using an instance type with local storage. If any of
@@ -391,7 +389,7 @@ namespace Model
      * Store Volumes</a>.</p> <p>For more information about local instance storage
      * encryption, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
-     * Instance Store Volumes</a>.</p> </note>
+     * Instance Store Volumes</a>.</p> 
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
@@ -410,7 +408,7 @@ namespace Model
      * requests. For more information, refer to the AWS Key Management Service
      * section<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">
-     * Using Key Policies in AWS KMS </a> </p> <note> <p>Certain Nitro-based instances
+     * Using Key Policies in AWS KMS </a> </p>  <p>Certain Nitro-based instances
      * include local storage, dependent on the instance type. Local storage volumes are
      * encrypted using a hardware module on the instance. You can't request a
      * <code>KmsKeyId</code> when using an instance type with local storage. If any of
@@ -424,7 +422,7 @@ namespace Model
      * Store Volumes</a>.</p> <p>For more information about local instance storage
      * encryption, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
-     * Instance Store Volumes</a>.</p> </note>
+     * Instance Store Volumes</a>.</p> 
      */
     inline CreateEndpointConfigRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
@@ -443,7 +441,7 @@ namespace Model
      * requests. For more information, refer to the AWS Key Management Service
      * section<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">
-     * Using Key Policies in AWS KMS </a> </p> <note> <p>Certain Nitro-based instances
+     * Using Key Policies in AWS KMS </a> </p>  <p>Certain Nitro-based instances
      * include local storage, dependent on the instance type. Local storage volumes are
      * encrypted using a hardware module on the instance. You can't request a
      * <code>KmsKeyId</code> when using an instance type with local storage. If any of
@@ -457,7 +455,7 @@ namespace Model
      * Store Volumes</a>.</p> <p>For more information about local instance storage
      * encryption, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
-     * Instance Store Volumes</a>.</p> </note>
+     * Instance Store Volumes</a>.</p> 
      */
     inline CreateEndpointConfigRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
@@ -476,7 +474,7 @@ namespace Model
      * requests. For more information, refer to the AWS Key Management Service
      * section<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">
-     * Using Key Policies in AWS KMS </a> </p> <note> <p>Certain Nitro-based instances
+     * Using Key Policies in AWS KMS </a> </p>  <p>Certain Nitro-based instances
      * include local storage, dependent on the instance type. Local storage volumes are
      * encrypted using a hardware module on the instance. You can't request a
      * <code>KmsKeyId</code> when using an instance type with local storage. If any of
@@ -490,7 +488,7 @@ namespace Model
      * Store Volumes</a>.</p> <p>For more information about local instance storage
      * encryption, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
-     * Instance Store Volumes</a>.</p> </note>
+     * Instance Store Volumes</a>.</p> 
      */
     inline CreateEndpointConfigRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

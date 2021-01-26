@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
@@ -98,13 +88,13 @@ namespace Model
      * <p>The complete key schema for a global secondary index, which consists of one
      * or more pairs of attribute names and key types:</p> <ul> <li> <p>
      * <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code> - sort
-     * key</p> </li> </ul> <note> <p>The partition key of an item is also known as its
+     * key</p> </li> </ul>  <p>The partition key of an item is also known as its
      * <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage
      * of an internal hash function to evenly distribute data items across partitions,
      * based on their partition key values.</p> <p>The sort key of an item is also
      * known as its <i>range attribute</i>. The term "range attribute" derives from the
      * way DynamoDB stores items with the same partition key physically close together,
-     * in sorted order by the sort key value.</p> </note>
+     * in sorted order by the sort key value.</p> 
      */
     inline const Aws::Vector<KeySchemaElement>& GetKeySchema() const{ return m_keySchema; }
 
@@ -112,13 +102,13 @@ namespace Model
      * <p>The complete key schema for a global secondary index, which consists of one
      * or more pairs of attribute names and key types:</p> <ul> <li> <p>
      * <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code> - sort
-     * key</p> </li> </ul> <note> <p>The partition key of an item is also known as its
+     * key</p> </li> </ul>  <p>The partition key of an item is also known as its
      * <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage
      * of an internal hash function to evenly distribute data items across partitions,
      * based on their partition key values.</p> <p>The sort key of an item is also
      * known as its <i>range attribute</i>. The term "range attribute" derives from the
      * way DynamoDB stores items with the same partition key physically close together,
-     * in sorted order by the sort key value.</p> </note>
+     * in sorted order by the sort key value.</p> 
      */
     inline bool KeySchemaHasBeenSet() const { return m_keySchemaHasBeenSet; }
 
@@ -126,13 +116,13 @@ namespace Model
      * <p>The complete key schema for a global secondary index, which consists of one
      * or more pairs of attribute names and key types:</p> <ul> <li> <p>
      * <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code> - sort
-     * key</p> </li> </ul> <note> <p>The partition key of an item is also known as its
+     * key</p> </li> </ul>  <p>The partition key of an item is also known as its
      * <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage
      * of an internal hash function to evenly distribute data items across partitions,
      * based on their partition key values.</p> <p>The sort key of an item is also
      * known as its <i>range attribute</i>. The term "range attribute" derives from the
      * way DynamoDB stores items with the same partition key physically close together,
-     * in sorted order by the sort key value.</p> </note>
+     * in sorted order by the sort key value.</p> 
      */
     inline void SetKeySchema(const Aws::Vector<KeySchemaElement>& value) { m_keySchemaHasBeenSet = true; m_keySchema = value; }
 
@@ -140,13 +130,13 @@ namespace Model
      * <p>The complete key schema for a global secondary index, which consists of one
      * or more pairs of attribute names and key types:</p> <ul> <li> <p>
      * <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code> - sort
-     * key</p> </li> </ul> <note> <p>The partition key of an item is also known as its
+     * key</p> </li> </ul>  <p>The partition key of an item is also known as its
      * <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage
      * of an internal hash function to evenly distribute data items across partitions,
      * based on their partition key values.</p> <p>The sort key of an item is also
      * known as its <i>range attribute</i>. The term "range attribute" derives from the
      * way DynamoDB stores items with the same partition key physically close together,
-     * in sorted order by the sort key value.</p> </note>
+     * in sorted order by the sort key value.</p> 
      */
     inline void SetKeySchema(Aws::Vector<KeySchemaElement>&& value) { m_keySchemaHasBeenSet = true; m_keySchema = std::move(value); }
 
@@ -154,13 +144,13 @@ namespace Model
      * <p>The complete key schema for a global secondary index, which consists of one
      * or more pairs of attribute names and key types:</p> <ul> <li> <p>
      * <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code> - sort
-     * key</p> </li> </ul> <note> <p>The partition key of an item is also known as its
+     * key</p> </li> </ul>  <p>The partition key of an item is also known as its
      * <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage
      * of an internal hash function to evenly distribute data items across partitions,
      * based on their partition key values.</p> <p>The sort key of an item is also
      * known as its <i>range attribute</i>. The term "range attribute" derives from the
      * way DynamoDB stores items with the same partition key physically close together,
-     * in sorted order by the sort key value.</p> </note>
+     * in sorted order by the sort key value.</p> 
      */
     inline GlobalSecondaryIndexDescription& WithKeySchema(const Aws::Vector<KeySchemaElement>& value) { SetKeySchema(value); return *this;}
 
@@ -168,13 +158,13 @@ namespace Model
      * <p>The complete key schema for a global secondary index, which consists of one
      * or more pairs of attribute names and key types:</p> <ul> <li> <p>
      * <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code> - sort
-     * key</p> </li> </ul> <note> <p>The partition key of an item is also known as its
+     * key</p> </li> </ul>  <p>The partition key of an item is also known as its
      * <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage
      * of an internal hash function to evenly distribute data items across partitions,
      * based on their partition key values.</p> <p>The sort key of an item is also
      * known as its <i>range attribute</i>. The term "range attribute" derives from the
      * way DynamoDB stores items with the same partition key physically close together,
-     * in sorted order by the sort key value.</p> </note>
+     * in sorted order by the sort key value.</p> 
      */
     inline GlobalSecondaryIndexDescription& WithKeySchema(Aws::Vector<KeySchemaElement>&& value) { SetKeySchema(std::move(value)); return *this;}
 
@@ -182,13 +172,13 @@ namespace Model
      * <p>The complete key schema for a global secondary index, which consists of one
      * or more pairs of attribute names and key types:</p> <ul> <li> <p>
      * <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code> - sort
-     * key</p> </li> </ul> <note> <p>The partition key of an item is also known as its
+     * key</p> </li> </ul>  <p>The partition key of an item is also known as its
      * <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage
      * of an internal hash function to evenly distribute data items across partitions,
      * based on their partition key values.</p> <p>The sort key of an item is also
      * known as its <i>range attribute</i>. The term "range attribute" derives from the
      * way DynamoDB stores items with the same partition key physically close together,
-     * in sorted order by the sort key value.</p> </note>
+     * in sorted order by the sort key value.</p> 
      */
     inline GlobalSecondaryIndexDescription& AddKeySchema(const KeySchemaElement& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(value); return *this; }
 
@@ -196,13 +186,13 @@ namespace Model
      * <p>The complete key schema for a global secondary index, which consists of one
      * or more pairs of attribute names and key types:</p> <ul> <li> <p>
      * <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code> - sort
-     * key</p> </li> </ul> <note> <p>The partition key of an item is also known as its
+     * key</p> </li> </ul>  <p>The partition key of an item is also known as its
      * <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage
      * of an internal hash function to evenly distribute data items across partitions,
      * based on their partition key values.</p> <p>The sort key of an item is also
      * known as its <i>range attribute</i>. The term "range attribute" derives from the
      * way DynamoDB stores items with the same partition key physically close together,
-     * in sorted order by the sort key value.</p> </note>
+     * in sorted order by the sort key value.</p> 
      */
     inline GlobalSecondaryIndexDescription& AddKeySchema(KeySchemaElement&& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(std::move(value)); return *this; }
 
@@ -316,9 +306,9 @@ namespace Model
      * when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
      * true. You can't delete the index that is being created when
      * <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
-     * false. </p> <note> <p>For indexes that were created during a
+     * false. </p>  <p>For indexes that were created during a
      * <code>CreateTable</code> operation, the <code>Backfilling</code> attribute does
-     * not appear in the <code>DescribeTable</code> output.</p> </note>
+     * not appear in the <code>DescribeTable</code> output.</p> 
      */
     inline bool GetBackfilling() const{ return m_backfilling; }
 
@@ -333,9 +323,9 @@ namespace Model
      * when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
      * true. You can't delete the index that is being created when
      * <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
-     * false. </p> <note> <p>For indexes that were created during a
+     * false. </p>  <p>For indexes that were created during a
      * <code>CreateTable</code> operation, the <code>Backfilling</code> attribute does
-     * not appear in the <code>DescribeTable</code> output.</p> </note>
+     * not appear in the <code>DescribeTable</code> output.</p> 
      */
     inline bool BackfillingHasBeenSet() const { return m_backfillingHasBeenSet; }
 
@@ -350,9 +340,9 @@ namespace Model
      * when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
      * true. You can't delete the index that is being created when
      * <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
-     * false. </p> <note> <p>For indexes that were created during a
+     * false. </p>  <p>For indexes that were created during a
      * <code>CreateTable</code> operation, the <code>Backfilling</code> attribute does
-     * not appear in the <code>DescribeTable</code> output.</p> </note>
+     * not appear in the <code>DescribeTable</code> output.</p> 
      */
     inline void SetBackfilling(bool value) { m_backfillingHasBeenSet = true; m_backfilling = value; }
 
@@ -367,9 +357,9 @@ namespace Model
      * when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
      * true. You can't delete the index that is being created when
      * <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
-     * false. </p> <note> <p>For indexes that were created during a
+     * false. </p>  <p>For indexes that were created during a
      * <code>CreateTable</code> operation, the <code>Backfilling</code> attribute does
-     * not appear in the <code>DescribeTable</code> output.</p> </note>
+     * not appear in the <code>DescribeTable</code> output.</p> 
      */
     inline GlobalSecondaryIndexDescription& WithBackfilling(bool value) { SetBackfilling(value); return *this;}
 
@@ -378,8 +368,8 @@ namespace Model
      * <p>Represents the provisioned throughput settings for the specified global
      * secondary index.</p> <p>For current minimum and maximum provisioned throughput
      * values, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+     * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const ProvisionedThroughputDescription& GetProvisionedThroughput() const{ return m_provisionedThroughput; }
 
@@ -387,8 +377,8 @@ namespace Model
      * <p>Represents the provisioned throughput settings for the specified global
      * secondary index.</p> <p>For current minimum and maximum provisioned throughput
      * values, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+     * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool ProvisionedThroughputHasBeenSet() const { return m_provisionedThroughputHasBeenSet; }
 
@@ -396,8 +386,8 @@ namespace Model
      * <p>Represents the provisioned throughput settings for the specified global
      * secondary index.</p> <p>For current minimum and maximum provisioned throughput
      * values, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+     * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetProvisionedThroughput(const ProvisionedThroughputDescription& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
 
@@ -405,8 +395,8 @@ namespace Model
      * <p>Represents the provisioned throughput settings for the specified global
      * secondary index.</p> <p>For current minimum and maximum provisioned throughput
      * values, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+     * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetProvisionedThroughput(ProvisionedThroughputDescription&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = std::move(value); }
 
@@ -414,8 +404,8 @@ namespace Model
      * <p>Represents the provisioned throughput settings for the specified global
      * secondary index.</p> <p>For current minimum and maximum provisioned throughput
      * values, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+     * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline GlobalSecondaryIndexDescription& WithProvisionedThroughput(const ProvisionedThroughputDescription& value) { SetProvisionedThroughput(value); return *this;}
 
@@ -423,8 +413,8 @@ namespace Model
      * <p>Represents the provisioned throughput settings for the specified global
      * secondary index.</p> <p>For current minimum and maximum provisioned throughput
      * values, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+     * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline GlobalSecondaryIndexDescription& WithProvisionedThroughput(ProvisionedThroughputDescription&& value) { SetProvisionedThroughput(std::move(value)); return *this;}
 

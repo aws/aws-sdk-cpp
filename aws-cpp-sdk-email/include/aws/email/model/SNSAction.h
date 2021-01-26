@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/email/SES_EXPORTS.h>
@@ -45,10 +35,10 @@ namespace Model
    * a policy to the topic to give Amazon SES permissions to access it. For
    * information about giving permissions, see the <a
    * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
-   * SES Developer Guide</a>.</p> <important> <p>You can only publish emails that are
+   * SES Developer Guide</a>.</p>  <p>You can only publish emails that are
    * 150 KB or less (including the header) to Amazon SNS. Larger emails will bounce.
    * If you anticipate emails larger than 150 KB, use the S3 action instead.</p>
-   * </important> <p>For information about using a receipt rule to publish an Amazon
+   *  <p>For information about using a receipt rule to publish an Amazon
    * SNS notification, see the <a
    * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-sns.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a

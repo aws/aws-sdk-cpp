@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ds/DirectoryService_EXPORTS.h>
@@ -147,7 +137,19 @@ namespace Model
      * creates a directory administrator account with the user name
      * <code>Administrator</code> and this password.</p> <p>If you need to change the
      * password for the administrator account, you can use the <a>ResetUserPassword</a>
-     * API call.</p>
+     * API call.</p> <p>The regex pattern for this string is made up of the following
+     * conditions:</p> <ul> <li> <p>Length (?=^.{8,64}$) – Must be between 8 and 64
+     * characters</p> </li> </ul> <p>AND any 3 of the following password complexity
+     * rules required by Active Directory:</p> <ul> <li> <p>Numbers and upper case and
+     * lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p> </li> <li> <p>Numbers and special
+     * characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p> </li> <li>
+     * <p>Special characters and upper case and lower case
+     * (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p> </li> <li> <p>Numbers and upper
+     * case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p> </li>
+     * </ul> <p>For additional information about how Active Directory passwords are
+     * enforced, see <a
+     * href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password
+     * must meet complexity requirements</a> on the Microsoft website.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
 
@@ -156,7 +158,19 @@ namespace Model
      * creates a directory administrator account with the user name
      * <code>Administrator</code> and this password.</p> <p>If you need to change the
      * password for the administrator account, you can use the <a>ResetUserPassword</a>
-     * API call.</p>
+     * API call.</p> <p>The regex pattern for this string is made up of the following
+     * conditions:</p> <ul> <li> <p>Length (?=^.{8,64}$) – Must be between 8 and 64
+     * characters</p> </li> </ul> <p>AND any 3 of the following password complexity
+     * rules required by Active Directory:</p> <ul> <li> <p>Numbers and upper case and
+     * lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p> </li> <li> <p>Numbers and special
+     * characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p> </li> <li>
+     * <p>Special characters and upper case and lower case
+     * (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p> </li> <li> <p>Numbers and upper
+     * case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p> </li>
+     * </ul> <p>For additional information about how Active Directory passwords are
+     * enforced, see <a
+     * href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password
+     * must meet complexity requirements</a> on the Microsoft website.</p>
      */
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
@@ -165,7 +179,19 @@ namespace Model
      * creates a directory administrator account with the user name
      * <code>Administrator</code> and this password.</p> <p>If you need to change the
      * password for the administrator account, you can use the <a>ResetUserPassword</a>
-     * API call.</p>
+     * API call.</p> <p>The regex pattern for this string is made up of the following
+     * conditions:</p> <ul> <li> <p>Length (?=^.{8,64}$) – Must be between 8 and 64
+     * characters</p> </li> </ul> <p>AND any 3 of the following password complexity
+     * rules required by Active Directory:</p> <ul> <li> <p>Numbers and upper case and
+     * lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p> </li> <li> <p>Numbers and special
+     * characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p> </li> <li>
+     * <p>Special characters and upper case and lower case
+     * (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p> </li> <li> <p>Numbers and upper
+     * case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p> </li>
+     * </ul> <p>For additional information about how Active Directory passwords are
+     * enforced, see <a
+     * href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password
+     * must meet complexity requirements</a> on the Microsoft website.</p>
      */
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
 
@@ -174,7 +200,19 @@ namespace Model
      * creates a directory administrator account with the user name
      * <code>Administrator</code> and this password.</p> <p>If you need to change the
      * password for the administrator account, you can use the <a>ResetUserPassword</a>
-     * API call.</p>
+     * API call.</p> <p>The regex pattern for this string is made up of the following
+     * conditions:</p> <ul> <li> <p>Length (?=^.{8,64}$) – Must be between 8 and 64
+     * characters</p> </li> </ul> <p>AND any 3 of the following password complexity
+     * rules required by Active Directory:</p> <ul> <li> <p>Numbers and upper case and
+     * lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p> </li> <li> <p>Numbers and special
+     * characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p> </li> <li>
+     * <p>Special characters and upper case and lower case
+     * (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p> </li> <li> <p>Numbers and upper
+     * case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p> </li>
+     * </ul> <p>For additional information about how Active Directory passwords are
+     * enforced, see <a
+     * href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password
+     * must meet complexity requirements</a> on the Microsoft website.</p>
      */
     inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
 
@@ -183,7 +221,19 @@ namespace Model
      * creates a directory administrator account with the user name
      * <code>Administrator</code> and this password.</p> <p>If you need to change the
      * password for the administrator account, you can use the <a>ResetUserPassword</a>
-     * API call.</p>
+     * API call.</p> <p>The regex pattern for this string is made up of the following
+     * conditions:</p> <ul> <li> <p>Length (?=^.{8,64}$) – Must be between 8 and 64
+     * characters</p> </li> </ul> <p>AND any 3 of the following password complexity
+     * rules required by Active Directory:</p> <ul> <li> <p>Numbers and upper case and
+     * lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p> </li> <li> <p>Numbers and special
+     * characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p> </li> <li>
+     * <p>Special characters and upper case and lower case
+     * (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p> </li> <li> <p>Numbers and upper
+     * case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p> </li>
+     * </ul> <p>For additional information about how Active Directory passwords are
+     * enforced, see <a
+     * href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password
+     * must meet complexity requirements</a> on the Microsoft website.</p>
      */
     inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
 
@@ -192,7 +242,19 @@ namespace Model
      * creates a directory administrator account with the user name
      * <code>Administrator</code> and this password.</p> <p>If you need to change the
      * password for the administrator account, you can use the <a>ResetUserPassword</a>
-     * API call.</p>
+     * API call.</p> <p>The regex pattern for this string is made up of the following
+     * conditions:</p> <ul> <li> <p>Length (?=^.{8,64}$) – Must be between 8 and 64
+     * characters</p> </li> </ul> <p>AND any 3 of the following password complexity
+     * rules required by Active Directory:</p> <ul> <li> <p>Numbers and upper case and
+     * lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p> </li> <li> <p>Numbers and special
+     * characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p> </li> <li>
+     * <p>Special characters and upper case and lower case
+     * (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p> </li> <li> <p>Numbers and upper
+     * case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p> </li>
+     * </ul> <p>For additional information about how Active Directory passwords are
+     * enforced, see <a
+     * href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password
+     * must meet complexity requirements</a> on the Microsoft website.</p>
      */
     inline CreateDirectoryRequest& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
 
@@ -201,7 +263,19 @@ namespace Model
      * creates a directory administrator account with the user name
      * <code>Administrator</code> and this password.</p> <p>If you need to change the
      * password for the administrator account, you can use the <a>ResetUserPassword</a>
-     * API call.</p>
+     * API call.</p> <p>The regex pattern for this string is made up of the following
+     * conditions:</p> <ul> <li> <p>Length (?=^.{8,64}$) – Must be between 8 and 64
+     * characters</p> </li> </ul> <p>AND any 3 of the following password complexity
+     * rules required by Active Directory:</p> <ul> <li> <p>Numbers and upper case and
+     * lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p> </li> <li> <p>Numbers and special
+     * characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p> </li> <li>
+     * <p>Special characters and upper case and lower case
+     * (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p> </li> <li> <p>Numbers and upper
+     * case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p> </li>
+     * </ul> <p>For additional information about how Active Directory passwords are
+     * enforced, see <a
+     * href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password
+     * must meet complexity requirements</a> on the Microsoft website.</p>
      */
     inline CreateDirectoryRequest& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
 
@@ -210,7 +284,19 @@ namespace Model
      * creates a directory administrator account with the user name
      * <code>Administrator</code> and this password.</p> <p>If you need to change the
      * password for the administrator account, you can use the <a>ResetUserPassword</a>
-     * API call.</p>
+     * API call.</p> <p>The regex pattern for this string is made up of the following
+     * conditions:</p> <ul> <li> <p>Length (?=^.{8,64}$) – Must be between 8 and 64
+     * characters</p> </li> </ul> <p>AND any 3 of the following password complexity
+     * rules required by Active Directory:</p> <ul> <li> <p>Numbers and upper case and
+     * lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])</p> </li> <li> <p>Numbers and special
+     * characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])</p> </li> <li>
+     * <p>Special characters and upper case and lower case
+     * (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])</p> </li> <li> <p>Numbers and upper
+     * case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])</p> </li>
+     * </ul> <p>For additional information about how Active Directory passwords are
+     * enforced, see <a
+     * href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password
+     * must meet complexity requirements</a> on the Microsoft website.</p>
      */
     inline CreateDirectoryRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
 

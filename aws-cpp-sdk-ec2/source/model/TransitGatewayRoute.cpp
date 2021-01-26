@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/TransitGatewayRoute.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -32,6 +22,7 @@ namespace Model
 
 TransitGatewayRoute::TransitGatewayRoute() : 
     m_destinationCidrBlockHasBeenSet(false),
+    m_prefixListIdHasBeenSet(false),
     m_transitGatewayAttachmentsHasBeenSet(false),
     m_type(TransitGatewayRouteType::NOT_SET),
     m_typeHasBeenSet(false),
@@ -42,6 +33,7 @@ TransitGatewayRoute::TransitGatewayRoute() :
 
 TransitGatewayRoute::TransitGatewayRoute(const XmlNode& xmlNode) : 
     m_destinationCidrBlockHasBeenSet(false),
+    m_prefixListIdHasBeenSet(false),
     m_transitGatewayAttachmentsHasBeenSet(false),
     m_type(TransitGatewayRouteType::NOT_SET),
     m_typeHasBeenSet(false),
@@ -62,6 +54,12 @@ TransitGatewayRoute& TransitGatewayRoute::operator =(const XmlNode& xmlNode)
     {
       m_destinationCidrBlock = Aws::Utils::Xml::DecodeEscapedXmlText(destinationCidrBlockNode.GetText());
       m_destinationCidrBlockHasBeenSet = true;
+    }
+    XmlNode prefixListIdNode = resultNode.FirstChild("prefixListId");
+    if(!prefixListIdNode.IsNull())
+    {
+      m_prefixListId = Aws::Utils::Xml::DecodeEscapedXmlText(prefixListIdNode.GetText());
+      m_prefixListIdHasBeenSet = true;
     }
     XmlNode transitGatewayAttachmentsNode = resultNode.FirstChild("transitGatewayAttachments");
     if(!transitGatewayAttachmentsNode.IsNull())
@@ -99,6 +97,11 @@ void TransitGatewayRoute::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".DestinationCidrBlock=" << StringUtils::URLEncode(m_destinationCidrBlock.c_str()) << "&";
   }
 
+  if(m_prefixListIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PrefixListId=" << StringUtils::URLEncode(m_prefixListId.c_str()) << "&";
+  }
+
   if(m_transitGatewayAttachmentsHasBeenSet)
   {
       unsigned transitGatewayAttachmentsIdx = 1;
@@ -127,6 +130,10 @@ void TransitGatewayRoute::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_destinationCidrBlockHasBeenSet)
   {
       oStream << location << ".DestinationCidrBlock=" << StringUtils::URLEncode(m_destinationCidrBlock.c_str()) << "&";
+  }
+  if(m_prefixListIdHasBeenSet)
+  {
+      oStream << location << ".PrefixListId=" << StringUtils::URLEncode(m_prefixListId.c_str()) << "&";
   }
   if(m_transitGatewayAttachmentsHasBeenSet)
   {

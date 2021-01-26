@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudhsm/CloudHSM_EXPORTS.h>
@@ -101,26 +91,26 @@ namespace Model
         class ModifyLunaClientRequest;
         class RemoveTagsFromResourceRequest;
 
-        typedef Aws::Utils::Outcome<AddTagsToResourceResult, Aws::Client::AWSError<CloudHSMErrors>> AddTagsToResourceOutcome;
-        typedef Aws::Utils::Outcome<CreateHapgResult, Aws::Client::AWSError<CloudHSMErrors>> CreateHapgOutcome;
-        typedef Aws::Utils::Outcome<CreateHsmResult, Aws::Client::AWSError<CloudHSMErrors>> CreateHsmOutcome;
-        typedef Aws::Utils::Outcome<CreateLunaClientResult, Aws::Client::AWSError<CloudHSMErrors>> CreateLunaClientOutcome;
-        typedef Aws::Utils::Outcome<DeleteHapgResult, Aws::Client::AWSError<CloudHSMErrors>> DeleteHapgOutcome;
-        typedef Aws::Utils::Outcome<DeleteHsmResult, Aws::Client::AWSError<CloudHSMErrors>> DeleteHsmOutcome;
-        typedef Aws::Utils::Outcome<DeleteLunaClientResult, Aws::Client::AWSError<CloudHSMErrors>> DeleteLunaClientOutcome;
-        typedef Aws::Utils::Outcome<DescribeHapgResult, Aws::Client::AWSError<CloudHSMErrors>> DescribeHapgOutcome;
-        typedef Aws::Utils::Outcome<DescribeHsmResult, Aws::Client::AWSError<CloudHSMErrors>> DescribeHsmOutcome;
-        typedef Aws::Utils::Outcome<DescribeLunaClientResult, Aws::Client::AWSError<CloudHSMErrors>> DescribeLunaClientOutcome;
-        typedef Aws::Utils::Outcome<GetConfigResult, Aws::Client::AWSError<CloudHSMErrors>> GetConfigOutcome;
-        typedef Aws::Utils::Outcome<ListAvailableZonesResult, Aws::Client::AWSError<CloudHSMErrors>> ListAvailableZonesOutcome;
-        typedef Aws::Utils::Outcome<ListHapgsResult, Aws::Client::AWSError<CloudHSMErrors>> ListHapgsOutcome;
-        typedef Aws::Utils::Outcome<ListHsmsResult, Aws::Client::AWSError<CloudHSMErrors>> ListHsmsOutcome;
-        typedef Aws::Utils::Outcome<ListLunaClientsResult, Aws::Client::AWSError<CloudHSMErrors>> ListLunaClientsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<CloudHSMErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ModifyHapgResult, Aws::Client::AWSError<CloudHSMErrors>> ModifyHapgOutcome;
-        typedef Aws::Utils::Outcome<ModifyHsmResult, Aws::Client::AWSError<CloudHSMErrors>> ModifyHsmOutcome;
-        typedef Aws::Utils::Outcome<ModifyLunaClientResult, Aws::Client::AWSError<CloudHSMErrors>> ModifyLunaClientOutcome;
-        typedef Aws::Utils::Outcome<RemoveTagsFromResourceResult, Aws::Client::AWSError<CloudHSMErrors>> RemoveTagsFromResourceOutcome;
+        typedef Aws::Utils::Outcome<AddTagsToResourceResult, CloudHSMError> AddTagsToResourceOutcome;
+        typedef Aws::Utils::Outcome<CreateHapgResult, CloudHSMError> CreateHapgOutcome;
+        typedef Aws::Utils::Outcome<CreateHsmResult, CloudHSMError> CreateHsmOutcome;
+        typedef Aws::Utils::Outcome<CreateLunaClientResult, CloudHSMError> CreateLunaClientOutcome;
+        typedef Aws::Utils::Outcome<DeleteHapgResult, CloudHSMError> DeleteHapgOutcome;
+        typedef Aws::Utils::Outcome<DeleteHsmResult, CloudHSMError> DeleteHsmOutcome;
+        typedef Aws::Utils::Outcome<DeleteLunaClientResult, CloudHSMError> DeleteLunaClientOutcome;
+        typedef Aws::Utils::Outcome<DescribeHapgResult, CloudHSMError> DescribeHapgOutcome;
+        typedef Aws::Utils::Outcome<DescribeHsmResult, CloudHSMError> DescribeHsmOutcome;
+        typedef Aws::Utils::Outcome<DescribeLunaClientResult, CloudHSMError> DescribeLunaClientOutcome;
+        typedef Aws::Utils::Outcome<GetConfigResult, CloudHSMError> GetConfigOutcome;
+        typedef Aws::Utils::Outcome<ListAvailableZonesResult, CloudHSMError> ListAvailableZonesOutcome;
+        typedef Aws::Utils::Outcome<ListHapgsResult, CloudHSMError> ListHapgsOutcome;
+        typedef Aws::Utils::Outcome<ListHsmsResult, CloudHSMError> ListHsmsOutcome;
+        typedef Aws::Utils::Outcome<ListLunaClientsResult, CloudHSMError> ListLunaClientsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, CloudHSMError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ModifyHapgResult, CloudHSMError> ModifyHapgOutcome;
+        typedef Aws::Utils::Outcome<ModifyHsmResult, CloudHSMError> ModifyHsmOutcome;
+        typedef Aws::Utils::Outcome<ModifyLunaClientResult, CloudHSMError> ModifyLunaClientOutcome;
+        typedef Aws::Utils::Outcome<RemoveTagsFromResourceResult, CloudHSMError> RemoveTagsFromResourceOutcome;
 
         typedef std::future<AddTagsToResourceOutcome> AddTagsToResourceOutcomeCallable;
         typedef std::future<CreateHapgOutcome> CreateHapgOutcomeCallable;
@@ -208,8 +198,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~CloudHSMClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "CloudHSM"; }
 
 
         /**
@@ -365,10 +353,10 @@ namespace Model
          * to request a refund, delete the instance using the <a>DeleteHsm</a> operation,
          * go to the <a href="https://console.aws.amazon.com/support/home">AWS Support
          * Center</a>, create a new case, and select <b>Account and Billing
-         * Support</b>.</p> <important> <p>It can take up to 20 minutes to create and
+         * Support</b>.</p>  <p>It can take up to 20 minutes to create and
          * provision an HSM. You can monitor the status of the HSM with the
          * <a>DescribeHsm</a> operation. The HSM is ready to be initialized when the status
-         * changes to <code>RUNNING</code>.</p> </important><p><h3>See Also:</h3>   <a
+         * changes to <code>RUNNING</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm">AWS
          * API Reference</a></p>
          */
@@ -393,10 +381,10 @@ namespace Model
          * to request a refund, delete the instance using the <a>DeleteHsm</a> operation,
          * go to the <a href="https://console.aws.amazon.com/support/home">AWS Support
          * Center</a>, create a new case, and select <b>Account and Billing
-         * Support</b>.</p> <important> <p>It can take up to 20 minutes to create and
+         * Support</b>.</p>  <p>It can take up to 20 minutes to create and
          * provision an HSM. You can monitor the status of the HSM with the
          * <a>DescribeHsm</a> operation. The HSM is ready to be initialized when the status
-         * changes to <code>RUNNING</code>.</p> </important><p><h3>See Also:</h3>   <a
+         * changes to <code>RUNNING</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm">AWS
          * API Reference</a></p>
          *
@@ -423,10 +411,10 @@ namespace Model
          * to request a refund, delete the instance using the <a>DeleteHsm</a> operation,
          * go to the <a href="https://console.aws.amazon.com/support/home">AWS Support
          * Center</a>, create a new case, and select <b>Account and Billing
-         * Support</b>.</p> <important> <p>It can take up to 20 minutes to create and
+         * Support</b>.</p>  <p>It can take up to 20 minutes to create and
          * provision an HSM. You can monitor the status of the HSM with the
          * <a>DescribeHsm</a> operation. The HSM is ready to be initialized when the status
-         * changes to <code>RUNNING</code>.</p> </important><p><h3>See Also:</h3>   <a
+         * changes to <code>RUNNING</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm">AWS
          * API Reference</a></p>
          *
@@ -1373,12 +1361,12 @@ namespace Model
          * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User
          * Guide</a>, and the <a
          * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
-         * Reference</a>.</p> <p>Modifies an HSM.</p> <important> <p>This operation can
+         * Reference</a>.</p> <p>Modifies an HSM.</p>  <p>This operation can
          * result in the HSM being offline for up to 15 minutes while the AWS CloudHSM
          * service is reconfigured. If you are modifying a production HSM, you should
          * ensure that your AWS CloudHSM service is configured for high availability, and
          * consider executing this operation during a maintenance window.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm">AWS
          * API Reference</a></p>
          */
@@ -1397,12 +1385,12 @@ namespace Model
          * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User
          * Guide</a>, and the <a
          * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
-         * Reference</a>.</p> <p>Modifies an HSM.</p> <important> <p>This operation can
+         * Reference</a>.</p> <p>Modifies an HSM.</p>  <p>This operation can
          * result in the HSM being offline for up to 15 minutes while the AWS CloudHSM
          * service is reconfigured. If you are modifying a production HSM, you should
          * ensure that your AWS CloudHSM service is configured for high availability, and
          * consider executing this operation during a maintenance window.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm">AWS
          * API Reference</a></p>
          *
@@ -1423,12 +1411,12 @@ namespace Model
          * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User
          * Guide</a>, and the <a
          * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
-         * Reference</a>.</p> <p>Modifies an HSM.</p> <important> <p>This operation can
+         * Reference</a>.</p> <p>Modifies an HSM.</p>  <p>This operation can
          * result in the HSM being offline for up to 15 minutes while the AWS CloudHSM
          * service is reconfigured. If you are modifying a production HSM, you should
          * ensure that your AWS CloudHSM service is configured for high availability, and
          * consider executing this operation during a maintenance window.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm">AWS
          * API Reference</a></p>
          *

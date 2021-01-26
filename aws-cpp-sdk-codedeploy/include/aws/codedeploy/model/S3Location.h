@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
@@ -149,43 +139,49 @@ namespace Model
 
     /**
      * <p>The file type of the application revision. Must be one of the following:</p>
-     * <ul> <li> <p>tar: A tar archive file.</p> </li> <li> <p>tgz: A compressed tar
-     * archive file.</p> </li> <li> <p>zip: A zip archive file.</p> </li> </ul>
+     * <ul> <li> <p> <code>tar</code>: A tar archive file.</p> </li> <li> <p>
+     * <code>tgz</code>: A compressed tar archive file.</p> </li> <li> <p>
+     * <code>zip</code>: A zip archive file.</p> </li> </ul>
      */
     inline const BundleType& GetBundleType() const{ return m_bundleType; }
 
     /**
      * <p>The file type of the application revision. Must be one of the following:</p>
-     * <ul> <li> <p>tar: A tar archive file.</p> </li> <li> <p>tgz: A compressed tar
-     * archive file.</p> </li> <li> <p>zip: A zip archive file.</p> </li> </ul>
+     * <ul> <li> <p> <code>tar</code>: A tar archive file.</p> </li> <li> <p>
+     * <code>tgz</code>: A compressed tar archive file.</p> </li> <li> <p>
+     * <code>zip</code>: A zip archive file.</p> </li> </ul>
      */
     inline bool BundleTypeHasBeenSet() const { return m_bundleTypeHasBeenSet; }
 
     /**
      * <p>The file type of the application revision. Must be one of the following:</p>
-     * <ul> <li> <p>tar: A tar archive file.</p> </li> <li> <p>tgz: A compressed tar
-     * archive file.</p> </li> <li> <p>zip: A zip archive file.</p> </li> </ul>
+     * <ul> <li> <p> <code>tar</code>: A tar archive file.</p> </li> <li> <p>
+     * <code>tgz</code>: A compressed tar archive file.</p> </li> <li> <p>
+     * <code>zip</code>: A zip archive file.</p> </li> </ul>
      */
     inline void SetBundleType(const BundleType& value) { m_bundleTypeHasBeenSet = true; m_bundleType = value; }
 
     /**
      * <p>The file type of the application revision. Must be one of the following:</p>
-     * <ul> <li> <p>tar: A tar archive file.</p> </li> <li> <p>tgz: A compressed tar
-     * archive file.</p> </li> <li> <p>zip: A zip archive file.</p> </li> </ul>
+     * <ul> <li> <p> <code>tar</code>: A tar archive file.</p> </li> <li> <p>
+     * <code>tgz</code>: A compressed tar archive file.</p> </li> <li> <p>
+     * <code>zip</code>: A zip archive file.</p> </li> </ul>
      */
     inline void SetBundleType(BundleType&& value) { m_bundleTypeHasBeenSet = true; m_bundleType = std::move(value); }
 
     /**
      * <p>The file type of the application revision. Must be one of the following:</p>
-     * <ul> <li> <p>tar: A tar archive file.</p> </li> <li> <p>tgz: A compressed tar
-     * archive file.</p> </li> <li> <p>zip: A zip archive file.</p> </li> </ul>
+     * <ul> <li> <p> <code>tar</code>: A tar archive file.</p> </li> <li> <p>
+     * <code>tgz</code>: A compressed tar archive file.</p> </li> <li> <p>
+     * <code>zip</code>: A zip archive file.</p> </li> </ul>
      */
     inline S3Location& WithBundleType(const BundleType& value) { SetBundleType(value); return *this;}
 
     /**
      * <p>The file type of the application revision. Must be one of the following:</p>
-     * <ul> <li> <p>tar: A tar archive file.</p> </li> <li> <p>tgz: A compressed tar
-     * archive file.</p> </li> <li> <p>zip: A zip archive file.</p> </li> </ul>
+     * <ul> <li> <p> <code>tar</code>: A tar archive file.</p> </li> <li> <p>
+     * <code>tgz</code>: A compressed tar archive file.</p> </li> <li> <p>
+     * <code>zip</code>: A zip archive file.</p> </li> </ul>
      */
     inline S3Location& WithBundleType(BundleType&& value) { SetBundleType(std::move(value)); return *this;}
 

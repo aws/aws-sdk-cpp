@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
@@ -172,74 +162,110 @@ namespace Model
 
 
     /**
-     * Indicates how to respond to the AFD values in the input stream. RESPOND causes
-     * input video to be clipped, depending on the AFD value, input display aspect
-     * ratio, and output display aspect ratio, and (except for FRAMECAPTURE codec)
-     * includes the values in the output. PASSTHROUGH (does not apply to FRAMECAPTURE
-     * codec) ignores the AFD values and includes the values in the output, so input
-     * video is not clipped. NONE ignores the AFD values and does not include the
-     * values through to the output, so input video is not clipped.
+     * Indicates how MediaLive will respond to the AFD values that might be in the
+     * input video. If you do not know what AFD signaling is, or if your downstream
+     * system has not given you guidance, choose PASSTHROUGH.
+RESPOND: MediaLive clips
+     * the input video using a formula that uses the AFD values (configured in
+     * afdSignaling ), the input display aspect ratio, and the output display aspect
+     * ratio. MediaLive also includes the AFD values in the output, unless the codec
+     * for this encode is FRAME_CAPTURE.
+PASSTHROUGH: MediaLive ignores the AFD values
+     * and does not clip the video. But MediaLive does include the values in the
+     * output.
+NONE: MediaLive does not clip the input video and does not include the
+     * AFD values in the output
      */
     inline const VideoDescriptionRespondToAfd& GetRespondToAfd() const{ return m_respondToAfd; }
 
     /**
-     * Indicates how to respond to the AFD values in the input stream. RESPOND causes
-     * input video to be clipped, depending on the AFD value, input display aspect
-     * ratio, and output display aspect ratio, and (except for FRAMECAPTURE codec)
-     * includes the values in the output. PASSTHROUGH (does not apply to FRAMECAPTURE
-     * codec) ignores the AFD values and includes the values in the output, so input
-     * video is not clipped. NONE ignores the AFD values and does not include the
-     * values through to the output, so input video is not clipped.
+     * Indicates how MediaLive will respond to the AFD values that might be in the
+     * input video. If you do not know what AFD signaling is, or if your downstream
+     * system has not given you guidance, choose PASSTHROUGH.
+RESPOND: MediaLive clips
+     * the input video using a formula that uses the AFD values (configured in
+     * afdSignaling ), the input display aspect ratio, and the output display aspect
+     * ratio. MediaLive also includes the AFD values in the output, unless the codec
+     * for this encode is FRAME_CAPTURE.
+PASSTHROUGH: MediaLive ignores the AFD values
+     * and does not clip the video. But MediaLive does include the values in the
+     * output.
+NONE: MediaLive does not clip the input video and does not include the
+     * AFD values in the output
      */
     inline bool RespondToAfdHasBeenSet() const { return m_respondToAfdHasBeenSet; }
 
     /**
-     * Indicates how to respond to the AFD values in the input stream. RESPOND causes
-     * input video to be clipped, depending on the AFD value, input display aspect
-     * ratio, and output display aspect ratio, and (except for FRAMECAPTURE codec)
-     * includes the values in the output. PASSTHROUGH (does not apply to FRAMECAPTURE
-     * codec) ignores the AFD values and includes the values in the output, so input
-     * video is not clipped. NONE ignores the AFD values and does not include the
-     * values through to the output, so input video is not clipped.
+     * Indicates how MediaLive will respond to the AFD values that might be in the
+     * input video. If you do not know what AFD signaling is, or if your downstream
+     * system has not given you guidance, choose PASSTHROUGH.
+RESPOND: MediaLive clips
+     * the input video using a formula that uses the AFD values (configured in
+     * afdSignaling ), the input display aspect ratio, and the output display aspect
+     * ratio. MediaLive also includes the AFD values in the output, unless the codec
+     * for this encode is FRAME_CAPTURE.
+PASSTHROUGH: MediaLive ignores the AFD values
+     * and does not clip the video. But MediaLive does include the values in the
+     * output.
+NONE: MediaLive does not clip the input video and does not include the
+     * AFD values in the output
      */
     inline void SetRespondToAfd(const VideoDescriptionRespondToAfd& value) { m_respondToAfdHasBeenSet = true; m_respondToAfd = value; }
 
     /**
-     * Indicates how to respond to the AFD values in the input stream. RESPOND causes
-     * input video to be clipped, depending on the AFD value, input display aspect
-     * ratio, and output display aspect ratio, and (except for FRAMECAPTURE codec)
-     * includes the values in the output. PASSTHROUGH (does not apply to FRAMECAPTURE
-     * codec) ignores the AFD values and includes the values in the output, so input
-     * video is not clipped. NONE ignores the AFD values and does not include the
-     * values through to the output, so input video is not clipped.
+     * Indicates how MediaLive will respond to the AFD values that might be in the
+     * input video. If you do not know what AFD signaling is, or if your downstream
+     * system has not given you guidance, choose PASSTHROUGH.
+RESPOND: MediaLive clips
+     * the input video using a formula that uses the AFD values (configured in
+     * afdSignaling ), the input display aspect ratio, and the output display aspect
+     * ratio. MediaLive also includes the AFD values in the output, unless the codec
+     * for this encode is FRAME_CAPTURE.
+PASSTHROUGH: MediaLive ignores the AFD values
+     * and does not clip the video. But MediaLive does include the values in the
+     * output.
+NONE: MediaLive does not clip the input video and does not include the
+     * AFD values in the output
      */
     inline void SetRespondToAfd(VideoDescriptionRespondToAfd&& value) { m_respondToAfdHasBeenSet = true; m_respondToAfd = std::move(value); }
 
     /**
-     * Indicates how to respond to the AFD values in the input stream. RESPOND causes
-     * input video to be clipped, depending on the AFD value, input display aspect
-     * ratio, and output display aspect ratio, and (except for FRAMECAPTURE codec)
-     * includes the values in the output. PASSTHROUGH (does not apply to FRAMECAPTURE
-     * codec) ignores the AFD values and includes the values in the output, so input
-     * video is not clipped. NONE ignores the AFD values and does not include the
-     * values through to the output, so input video is not clipped.
+     * Indicates how MediaLive will respond to the AFD values that might be in the
+     * input video. If you do not know what AFD signaling is, or if your downstream
+     * system has not given you guidance, choose PASSTHROUGH.
+RESPOND: MediaLive clips
+     * the input video using a formula that uses the AFD values (configured in
+     * afdSignaling ), the input display aspect ratio, and the output display aspect
+     * ratio. MediaLive also includes the AFD values in the output, unless the codec
+     * for this encode is FRAME_CAPTURE.
+PASSTHROUGH: MediaLive ignores the AFD values
+     * and does not clip the video. But MediaLive does include the values in the
+     * output.
+NONE: MediaLive does not clip the input video and does not include the
+     * AFD values in the output
      */
     inline VideoDescription& WithRespondToAfd(const VideoDescriptionRespondToAfd& value) { SetRespondToAfd(value); return *this;}
 
     /**
-     * Indicates how to respond to the AFD values in the input stream. RESPOND causes
-     * input video to be clipped, depending on the AFD value, input display aspect
-     * ratio, and output display aspect ratio, and (except for FRAMECAPTURE codec)
-     * includes the values in the output. PASSTHROUGH (does not apply to FRAMECAPTURE
-     * codec) ignores the AFD values and includes the values in the output, so input
-     * video is not clipped. NONE ignores the AFD values and does not include the
-     * values through to the output, so input video is not clipped.
+     * Indicates how MediaLive will respond to the AFD values that might be in the
+     * input video. If you do not know what AFD signaling is, or if your downstream
+     * system has not given you guidance, choose PASSTHROUGH.
+RESPOND: MediaLive clips
+     * the input video using a formula that uses the AFD values (configured in
+     * afdSignaling ), the input display aspect ratio, and the output display aspect
+     * ratio. MediaLive also includes the AFD values in the output, unless the codec
+     * for this encode is FRAME_CAPTURE.
+PASSTHROUGH: MediaLive ignores the AFD values
+     * and does not clip the video. But MediaLive does include the values in the
+     * output.
+NONE: MediaLive does not clip the input video and does not include the
+     * AFD values in the output
      */
     inline VideoDescription& WithRespondToAfd(VideoDescriptionRespondToAfd&& value) { SetRespondToAfd(std::move(value)); return *this;}
 
 
     /**
-     * STRETCHTOOUTPUT configures the output position to stretch the video to the
+     * STRETCH_TO_OUTPUT configures the output position to stretch the video to the
      * specified output resolution (height and width). This option will override any
      * position value. DEFAULT may insert black boxes (pillar boxes or letter boxes)
      * around the video to provide the specified output resolution.
@@ -247,7 +273,7 @@ namespace Model
     inline const VideoDescriptionScalingBehavior& GetScalingBehavior() const{ return m_scalingBehavior; }
 
     /**
-     * STRETCHTOOUTPUT configures the output position to stretch the video to the
+     * STRETCH_TO_OUTPUT configures the output position to stretch the video to the
      * specified output resolution (height and width). This option will override any
      * position value. DEFAULT may insert black boxes (pillar boxes or letter boxes)
      * around the video to provide the specified output resolution.
@@ -255,7 +281,7 @@ namespace Model
     inline bool ScalingBehaviorHasBeenSet() const { return m_scalingBehaviorHasBeenSet; }
 
     /**
-     * STRETCHTOOUTPUT configures the output position to stretch the video to the
+     * STRETCH_TO_OUTPUT configures the output position to stretch the video to the
      * specified output resolution (height and width). This option will override any
      * position value. DEFAULT may insert black boxes (pillar boxes or letter boxes)
      * around the video to provide the specified output resolution.
@@ -263,7 +289,7 @@ namespace Model
     inline void SetScalingBehavior(const VideoDescriptionScalingBehavior& value) { m_scalingBehaviorHasBeenSet = true; m_scalingBehavior = value; }
 
     /**
-     * STRETCHTOOUTPUT configures the output position to stretch the video to the
+     * STRETCH_TO_OUTPUT configures the output position to stretch the video to the
      * specified output resolution (height and width). This option will override any
      * position value. DEFAULT may insert black boxes (pillar boxes or letter boxes)
      * around the video to provide the specified output resolution.
@@ -271,7 +297,7 @@ namespace Model
     inline void SetScalingBehavior(VideoDescriptionScalingBehavior&& value) { m_scalingBehaviorHasBeenSet = true; m_scalingBehavior = std::move(value); }
 
     /**
-     * STRETCHTOOUTPUT configures the output position to stretch the video to the
+     * STRETCH_TO_OUTPUT configures the output position to stretch the video to the
      * specified output resolution (height and width). This option will override any
      * position value. DEFAULT may insert black boxes (pillar boxes or letter boxes)
      * around the video to provide the specified output resolution.
@@ -279,7 +305,7 @@ namespace Model
     inline VideoDescription& WithScalingBehavior(const VideoDescriptionScalingBehavior& value) { SetScalingBehavior(value); return *this;}
 
     /**
-     * STRETCHTOOUTPUT configures the output position to stretch the video to the
+     * STRETCH_TO_OUTPUT configures the output position to stretch the video to the
      * specified output resolution (height and width). This option will override any
      * position value. DEFAULT may insert black boxes (pillar boxes or letter boxes)
      * around the video to provide the specified output resolution.

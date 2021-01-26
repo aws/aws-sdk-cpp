@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/KernelGatewayAppSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,12 +19,14 @@ namespace Model
 {
 
 KernelGatewayAppSettings::KernelGatewayAppSettings() : 
-    m_defaultResourceSpecHasBeenSet(false)
+    m_defaultResourceSpecHasBeenSet(false),
+    m_customImagesHasBeenSet(false)
 {
 }
 
 KernelGatewayAppSettings::KernelGatewayAppSettings(JsonView jsonValue) : 
-    m_defaultResourceSpecHasBeenSet(false)
+    m_defaultResourceSpecHasBeenSet(false),
+    m_customImagesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +40,16 @@ KernelGatewayAppSettings& KernelGatewayAppSettings::operator =(JsonView jsonValu
     m_defaultResourceSpecHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CustomImages"))
+  {
+    Array<JsonView> customImagesJsonList = jsonValue.GetArray("CustomImages");
+    for(unsigned customImagesIndex = 0; customImagesIndex < customImagesJsonList.GetLength(); ++customImagesIndex)
+    {
+      m_customImages.push_back(customImagesJsonList[customImagesIndex].AsObject());
+    }
+    m_customImagesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +60,17 @@ JsonValue KernelGatewayAppSettings::Jsonize() const
   if(m_defaultResourceSpecHasBeenSet)
   {
    payload.WithObject("DefaultResourceSpec", m_defaultResourceSpec.Jsonize());
+
+  }
+
+  if(m_customImagesHasBeenSet)
+  {
+   Array<JsonValue> customImagesJsonList(m_customImages.size());
+   for(unsigned customImagesIndex = 0; customImagesIndex < customImagesJsonList.GetLength(); ++customImagesIndex)
+   {
+     customImagesJsonList[customImagesIndex].AsObject(m_customImages[customImagesIndex].Jsonize());
+   }
+   payload.WithArray("CustomImages", std::move(customImagesJsonList));
 
   }
 

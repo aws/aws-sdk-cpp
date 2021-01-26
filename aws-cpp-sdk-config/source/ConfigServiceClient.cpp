@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -46,6 +36,7 @@
 #include <aws/config/model/DeleteRemediationExceptionsRequest.h>
 #include <aws/config/model/DeleteResourceConfigRequest.h>
 #include <aws/config/model/DeleteRetentionConfigurationRequest.h>
+#include <aws/config/model/DeleteStoredQueryRequest.h>
 #include <aws/config/model/DeliverConfigSnapshotRequest.h>
 #include <aws/config/model/DescribeAggregateComplianceByConfigRulesRequest.h>
 #include <aws/config/model/DescribeAggregationAuthorizationsRequest.h>
@@ -84,8 +75,10 @@
 #include <aws/config/model/GetOrganizationConfigRuleDetailedStatusRequest.h>
 #include <aws/config/model/GetOrganizationConformancePackDetailedStatusRequest.h>
 #include <aws/config/model/GetResourceConfigHistoryRequest.h>
+#include <aws/config/model/GetStoredQueryRequest.h>
 #include <aws/config/model/ListAggregateDiscoveredResourcesRequest.h>
 #include <aws/config/model/ListDiscoveredResourcesRequest.h>
+#include <aws/config/model/ListStoredQueriesRequest.h>
 #include <aws/config/model/ListTagsForResourceRequest.h>
 #include <aws/config/model/PutAggregationAuthorizationRequest.h>
 #include <aws/config/model/PutConfigRuleRequest.h>
@@ -94,12 +87,14 @@
 #include <aws/config/model/PutConformancePackRequest.h>
 #include <aws/config/model/PutDeliveryChannelRequest.h>
 #include <aws/config/model/PutEvaluationsRequest.h>
+#include <aws/config/model/PutExternalEvaluationRequest.h>
 #include <aws/config/model/PutOrganizationConfigRuleRequest.h>
 #include <aws/config/model/PutOrganizationConformancePackRequest.h>
 #include <aws/config/model/PutRemediationConfigurationsRequest.h>
 #include <aws/config/model/PutRemediationExceptionsRequest.h>
 #include <aws/config/model/PutResourceConfigRequest.h>
 #include <aws/config/model/PutRetentionConfigurationRequest.h>
+#include <aws/config/model/PutStoredQueryRequest.h>
 #include <aws/config/model/SelectAggregateResourceConfigRequest.h>
 #include <aws/config/model/SelectResourceConfigRequest.h>
 #include <aws/config/model/StartConfigRulesEvaluationRequest.h>
@@ -124,7 +119,7 @@ static const char* ALLOCATION_TAG = "ConfigServiceClient";
 ConfigServiceClient::ConfigServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ConfigServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -134,7 +129,7 @@ ConfigServiceClient::ConfigServiceClient(const Client::ClientConfiguration& clie
 ConfigServiceClient::ConfigServiceClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ConfigServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -145,7 +140,7 @@ ConfigServiceClient::ConfigServiceClient(const std::shared_ptr<AWSCredentialsPro
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ConfigServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -158,6 +153,7 @@ ConfigServiceClient::~ConfigServiceClient()
 
 void ConfigServiceClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("Config Service");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -187,15 +183,7 @@ BatchGetAggregateResourceConfigOutcome ConfigServiceClient::BatchGetAggregateRes
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return BatchGetAggregateResourceConfigOutcome(BatchGetAggregateResourceConfigResult(outcome.GetResult()));
-  }
-  else
-  {
-    return BatchGetAggregateResourceConfigOutcome(outcome.GetError());
-  }
+  return BatchGetAggregateResourceConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchGetAggregateResourceConfigOutcomeCallable ConfigServiceClient::BatchGetAggregateResourceConfigCallable(const BatchGetAggregateResourceConfigRequest& request) const
@@ -222,15 +210,7 @@ BatchGetResourceConfigOutcome ConfigServiceClient::BatchGetResourceConfig(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return BatchGetResourceConfigOutcome(BatchGetResourceConfigResult(outcome.GetResult()));
-  }
-  else
-  {
-    return BatchGetResourceConfigOutcome(outcome.GetError());
-  }
+  return BatchGetResourceConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchGetResourceConfigOutcomeCallable ConfigServiceClient::BatchGetResourceConfigCallable(const BatchGetResourceConfigRequest& request) const
@@ -257,15 +237,7 @@ DeleteAggregationAuthorizationOutcome ConfigServiceClient::DeleteAggregationAuth
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteAggregationAuthorizationOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteAggregationAuthorizationOutcome(outcome.GetError());
-  }
+  return DeleteAggregationAuthorizationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteAggregationAuthorizationOutcomeCallable ConfigServiceClient::DeleteAggregationAuthorizationCallable(const DeleteAggregationAuthorizationRequest& request) const
@@ -292,15 +264,7 @@ DeleteConfigRuleOutcome ConfigServiceClient::DeleteConfigRule(const DeleteConfig
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteConfigRuleOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteConfigRuleOutcome(outcome.GetError());
-  }
+  return DeleteConfigRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteConfigRuleOutcomeCallable ConfigServiceClient::DeleteConfigRuleCallable(const DeleteConfigRuleRequest& request) const
@@ -327,15 +291,7 @@ DeleteConfigurationAggregatorOutcome ConfigServiceClient::DeleteConfigurationAgg
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteConfigurationAggregatorOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteConfigurationAggregatorOutcome(outcome.GetError());
-  }
+  return DeleteConfigurationAggregatorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteConfigurationAggregatorOutcomeCallable ConfigServiceClient::DeleteConfigurationAggregatorCallable(const DeleteConfigurationAggregatorRequest& request) const
@@ -362,15 +318,7 @@ DeleteConfigurationRecorderOutcome ConfigServiceClient::DeleteConfigurationRecor
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteConfigurationRecorderOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteConfigurationRecorderOutcome(outcome.GetError());
-  }
+  return DeleteConfigurationRecorderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteConfigurationRecorderOutcomeCallable ConfigServiceClient::DeleteConfigurationRecorderCallable(const DeleteConfigurationRecorderRequest& request) const
@@ -397,15 +345,7 @@ DeleteConformancePackOutcome ConfigServiceClient::DeleteConformancePack(const De
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteConformancePackOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteConformancePackOutcome(outcome.GetError());
-  }
+  return DeleteConformancePackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteConformancePackOutcomeCallable ConfigServiceClient::DeleteConformancePackCallable(const DeleteConformancePackRequest& request) const
@@ -432,15 +372,7 @@ DeleteDeliveryChannelOutcome ConfigServiceClient::DeleteDeliveryChannel(const De
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDeliveryChannelOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteDeliveryChannelOutcome(outcome.GetError());
-  }
+  return DeleteDeliveryChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDeliveryChannelOutcomeCallable ConfigServiceClient::DeleteDeliveryChannelCallable(const DeleteDeliveryChannelRequest& request) const
@@ -467,15 +399,7 @@ DeleteEvaluationResultsOutcome ConfigServiceClient::DeleteEvaluationResults(cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteEvaluationResultsOutcome(DeleteEvaluationResultsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteEvaluationResultsOutcome(outcome.GetError());
-  }
+  return DeleteEvaluationResultsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteEvaluationResultsOutcomeCallable ConfigServiceClient::DeleteEvaluationResultsCallable(const DeleteEvaluationResultsRequest& request) const
@@ -502,15 +426,7 @@ DeleteOrganizationConfigRuleOutcome ConfigServiceClient::DeleteOrganizationConfi
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteOrganizationConfigRuleOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteOrganizationConfigRuleOutcome(outcome.GetError());
-  }
+  return DeleteOrganizationConfigRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteOrganizationConfigRuleOutcomeCallable ConfigServiceClient::DeleteOrganizationConfigRuleCallable(const DeleteOrganizationConfigRuleRequest& request) const
@@ -537,15 +453,7 @@ DeleteOrganizationConformancePackOutcome ConfigServiceClient::DeleteOrganization
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteOrganizationConformancePackOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteOrganizationConformancePackOutcome(outcome.GetError());
-  }
+  return DeleteOrganizationConformancePackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteOrganizationConformancePackOutcomeCallable ConfigServiceClient::DeleteOrganizationConformancePackCallable(const DeleteOrganizationConformancePackRequest& request) const
@@ -572,15 +480,7 @@ DeletePendingAggregationRequestOutcome ConfigServiceClient::DeletePendingAggrega
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeletePendingAggregationRequestOutcome(NoResult());
-  }
-  else
-  {
-    return DeletePendingAggregationRequestOutcome(outcome.GetError());
-  }
+  return DeletePendingAggregationRequestOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeletePendingAggregationRequestOutcomeCallable ConfigServiceClient::DeletePendingAggregationRequestCallable(const DeletePendingAggregationRequestRequest& request) const
@@ -607,15 +507,7 @@ DeleteRemediationConfigurationOutcome ConfigServiceClient::DeleteRemediationConf
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteRemediationConfigurationOutcome(DeleteRemediationConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteRemediationConfigurationOutcome(outcome.GetError());
-  }
+  return DeleteRemediationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteRemediationConfigurationOutcomeCallable ConfigServiceClient::DeleteRemediationConfigurationCallable(const DeleteRemediationConfigurationRequest& request) const
@@ -642,15 +534,7 @@ DeleteRemediationExceptionsOutcome ConfigServiceClient::DeleteRemediationExcepti
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteRemediationExceptionsOutcome(DeleteRemediationExceptionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteRemediationExceptionsOutcome(outcome.GetError());
-  }
+  return DeleteRemediationExceptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteRemediationExceptionsOutcomeCallable ConfigServiceClient::DeleteRemediationExceptionsCallable(const DeleteRemediationExceptionsRequest& request) const
@@ -677,15 +561,7 @@ DeleteResourceConfigOutcome ConfigServiceClient::DeleteResourceConfig(const Dele
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteResourceConfigOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteResourceConfigOutcome(outcome.GetError());
-  }
+  return DeleteResourceConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteResourceConfigOutcomeCallable ConfigServiceClient::DeleteResourceConfigCallable(const DeleteResourceConfigRequest& request) const
@@ -712,15 +588,7 @@ DeleteRetentionConfigurationOutcome ConfigServiceClient::DeleteRetentionConfigur
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteRetentionConfigurationOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteRetentionConfigurationOutcome(outcome.GetError());
-  }
+  return DeleteRetentionConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteRetentionConfigurationOutcomeCallable ConfigServiceClient::DeleteRetentionConfigurationCallable(const DeleteRetentionConfigurationRequest& request) const
@@ -741,21 +609,40 @@ void ConfigServiceClient::DeleteRetentionConfigurationAsyncHelper(const DeleteRe
   handler(this, request, DeleteRetentionConfiguration(request), context);
 }
 
+DeleteStoredQueryOutcome ConfigServiceClient::DeleteStoredQuery(const DeleteStoredQueryRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteStoredQueryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteStoredQueryOutcomeCallable ConfigServiceClient::DeleteStoredQueryCallable(const DeleteStoredQueryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteStoredQueryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteStoredQuery(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::DeleteStoredQueryAsync(const DeleteStoredQueryRequest& request, const DeleteStoredQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteStoredQueryAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::DeleteStoredQueryAsyncHelper(const DeleteStoredQueryRequest& request, const DeleteStoredQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteStoredQuery(request), context);
+}
+
 DeliverConfigSnapshotOutcome ConfigServiceClient::DeliverConfigSnapshot(const DeliverConfigSnapshotRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeliverConfigSnapshotOutcome(DeliverConfigSnapshotResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeliverConfigSnapshotOutcome(outcome.GetError());
-  }
+  return DeliverConfigSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeliverConfigSnapshotOutcomeCallable ConfigServiceClient::DeliverConfigSnapshotCallable(const DeliverConfigSnapshotRequest& request) const
@@ -782,15 +669,7 @@ DescribeAggregateComplianceByConfigRulesOutcome ConfigServiceClient::DescribeAgg
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeAggregateComplianceByConfigRulesOutcome(DescribeAggregateComplianceByConfigRulesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeAggregateComplianceByConfigRulesOutcome(outcome.GetError());
-  }
+  return DescribeAggregateComplianceByConfigRulesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeAggregateComplianceByConfigRulesOutcomeCallable ConfigServiceClient::DescribeAggregateComplianceByConfigRulesCallable(const DescribeAggregateComplianceByConfigRulesRequest& request) const
@@ -817,15 +696,7 @@ DescribeAggregationAuthorizationsOutcome ConfigServiceClient::DescribeAggregatio
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeAggregationAuthorizationsOutcome(DescribeAggregationAuthorizationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeAggregationAuthorizationsOutcome(outcome.GetError());
-  }
+  return DescribeAggregationAuthorizationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeAggregationAuthorizationsOutcomeCallable ConfigServiceClient::DescribeAggregationAuthorizationsCallable(const DescribeAggregationAuthorizationsRequest& request) const
@@ -852,15 +723,7 @@ DescribeComplianceByConfigRuleOutcome ConfigServiceClient::DescribeComplianceByC
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeComplianceByConfigRuleOutcome(DescribeComplianceByConfigRuleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeComplianceByConfigRuleOutcome(outcome.GetError());
-  }
+  return DescribeComplianceByConfigRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeComplianceByConfigRuleOutcomeCallable ConfigServiceClient::DescribeComplianceByConfigRuleCallable(const DescribeComplianceByConfigRuleRequest& request) const
@@ -887,15 +750,7 @@ DescribeComplianceByResourceOutcome ConfigServiceClient::DescribeComplianceByRes
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeComplianceByResourceOutcome(DescribeComplianceByResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeComplianceByResourceOutcome(outcome.GetError());
-  }
+  return DescribeComplianceByResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeComplianceByResourceOutcomeCallable ConfigServiceClient::DescribeComplianceByResourceCallable(const DescribeComplianceByResourceRequest& request) const
@@ -922,15 +777,7 @@ DescribeConfigRuleEvaluationStatusOutcome ConfigServiceClient::DescribeConfigRul
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeConfigRuleEvaluationStatusOutcome(DescribeConfigRuleEvaluationStatusResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeConfigRuleEvaluationStatusOutcome(outcome.GetError());
-  }
+  return DescribeConfigRuleEvaluationStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeConfigRuleEvaluationStatusOutcomeCallable ConfigServiceClient::DescribeConfigRuleEvaluationStatusCallable(const DescribeConfigRuleEvaluationStatusRequest& request) const
@@ -957,15 +804,7 @@ DescribeConfigRulesOutcome ConfigServiceClient::DescribeConfigRules(const Descri
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeConfigRulesOutcome(DescribeConfigRulesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeConfigRulesOutcome(outcome.GetError());
-  }
+  return DescribeConfigRulesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeConfigRulesOutcomeCallable ConfigServiceClient::DescribeConfigRulesCallable(const DescribeConfigRulesRequest& request) const
@@ -992,15 +831,7 @@ DescribeConfigurationAggregatorSourcesStatusOutcome ConfigServiceClient::Describ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeConfigurationAggregatorSourcesStatusOutcome(DescribeConfigurationAggregatorSourcesStatusResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeConfigurationAggregatorSourcesStatusOutcome(outcome.GetError());
-  }
+  return DescribeConfigurationAggregatorSourcesStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeConfigurationAggregatorSourcesStatusOutcomeCallable ConfigServiceClient::DescribeConfigurationAggregatorSourcesStatusCallable(const DescribeConfigurationAggregatorSourcesStatusRequest& request) const
@@ -1027,15 +858,7 @@ DescribeConfigurationAggregatorsOutcome ConfigServiceClient::DescribeConfigurati
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeConfigurationAggregatorsOutcome(DescribeConfigurationAggregatorsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeConfigurationAggregatorsOutcome(outcome.GetError());
-  }
+  return DescribeConfigurationAggregatorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeConfigurationAggregatorsOutcomeCallable ConfigServiceClient::DescribeConfigurationAggregatorsCallable(const DescribeConfigurationAggregatorsRequest& request) const
@@ -1062,15 +885,7 @@ DescribeConfigurationRecorderStatusOutcome ConfigServiceClient::DescribeConfigur
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeConfigurationRecorderStatusOutcome(DescribeConfigurationRecorderStatusResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeConfigurationRecorderStatusOutcome(outcome.GetError());
-  }
+  return DescribeConfigurationRecorderStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeConfigurationRecorderStatusOutcomeCallable ConfigServiceClient::DescribeConfigurationRecorderStatusCallable(const DescribeConfigurationRecorderStatusRequest& request) const
@@ -1097,15 +912,7 @@ DescribeConfigurationRecordersOutcome ConfigServiceClient::DescribeConfiguration
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeConfigurationRecordersOutcome(DescribeConfigurationRecordersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeConfigurationRecordersOutcome(outcome.GetError());
-  }
+  return DescribeConfigurationRecordersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeConfigurationRecordersOutcomeCallable ConfigServiceClient::DescribeConfigurationRecordersCallable(const DescribeConfigurationRecordersRequest& request) const
@@ -1132,15 +939,7 @@ DescribeConformancePackComplianceOutcome ConfigServiceClient::DescribeConformanc
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeConformancePackComplianceOutcome(DescribeConformancePackComplianceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeConformancePackComplianceOutcome(outcome.GetError());
-  }
+  return DescribeConformancePackComplianceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeConformancePackComplianceOutcomeCallable ConfigServiceClient::DescribeConformancePackComplianceCallable(const DescribeConformancePackComplianceRequest& request) const
@@ -1167,15 +966,7 @@ DescribeConformancePackStatusOutcome ConfigServiceClient::DescribeConformancePac
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeConformancePackStatusOutcome(DescribeConformancePackStatusResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeConformancePackStatusOutcome(outcome.GetError());
-  }
+  return DescribeConformancePackStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeConformancePackStatusOutcomeCallable ConfigServiceClient::DescribeConformancePackStatusCallable(const DescribeConformancePackStatusRequest& request) const
@@ -1202,15 +993,7 @@ DescribeConformancePacksOutcome ConfigServiceClient::DescribeConformancePacks(co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeConformancePacksOutcome(DescribeConformancePacksResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeConformancePacksOutcome(outcome.GetError());
-  }
+  return DescribeConformancePacksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeConformancePacksOutcomeCallable ConfigServiceClient::DescribeConformancePacksCallable(const DescribeConformancePacksRequest& request) const
@@ -1237,15 +1020,7 @@ DescribeDeliveryChannelStatusOutcome ConfigServiceClient::DescribeDeliveryChanne
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeDeliveryChannelStatusOutcome(DescribeDeliveryChannelStatusResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeDeliveryChannelStatusOutcome(outcome.GetError());
-  }
+  return DescribeDeliveryChannelStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeDeliveryChannelStatusOutcomeCallable ConfigServiceClient::DescribeDeliveryChannelStatusCallable(const DescribeDeliveryChannelStatusRequest& request) const
@@ -1272,15 +1047,7 @@ DescribeDeliveryChannelsOutcome ConfigServiceClient::DescribeDeliveryChannels(co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeDeliveryChannelsOutcome(DescribeDeliveryChannelsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeDeliveryChannelsOutcome(outcome.GetError());
-  }
+  return DescribeDeliveryChannelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeDeliveryChannelsOutcomeCallable ConfigServiceClient::DescribeDeliveryChannelsCallable(const DescribeDeliveryChannelsRequest& request) const
@@ -1307,15 +1074,7 @@ DescribeOrganizationConfigRuleStatusesOutcome ConfigServiceClient::DescribeOrgan
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeOrganizationConfigRuleStatusesOutcome(DescribeOrganizationConfigRuleStatusesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeOrganizationConfigRuleStatusesOutcome(outcome.GetError());
-  }
+  return DescribeOrganizationConfigRuleStatusesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeOrganizationConfigRuleStatusesOutcomeCallable ConfigServiceClient::DescribeOrganizationConfigRuleStatusesCallable(const DescribeOrganizationConfigRuleStatusesRequest& request) const
@@ -1342,15 +1101,7 @@ DescribeOrganizationConfigRulesOutcome ConfigServiceClient::DescribeOrganization
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeOrganizationConfigRulesOutcome(DescribeOrganizationConfigRulesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeOrganizationConfigRulesOutcome(outcome.GetError());
-  }
+  return DescribeOrganizationConfigRulesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeOrganizationConfigRulesOutcomeCallable ConfigServiceClient::DescribeOrganizationConfigRulesCallable(const DescribeOrganizationConfigRulesRequest& request) const
@@ -1377,15 +1128,7 @@ DescribeOrganizationConformancePackStatusesOutcome ConfigServiceClient::Describe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeOrganizationConformancePackStatusesOutcome(DescribeOrganizationConformancePackStatusesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeOrganizationConformancePackStatusesOutcome(outcome.GetError());
-  }
+  return DescribeOrganizationConformancePackStatusesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeOrganizationConformancePackStatusesOutcomeCallable ConfigServiceClient::DescribeOrganizationConformancePackStatusesCallable(const DescribeOrganizationConformancePackStatusesRequest& request) const
@@ -1412,15 +1155,7 @@ DescribeOrganizationConformancePacksOutcome ConfigServiceClient::DescribeOrganiz
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeOrganizationConformancePacksOutcome(DescribeOrganizationConformancePacksResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeOrganizationConformancePacksOutcome(outcome.GetError());
-  }
+  return DescribeOrganizationConformancePacksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeOrganizationConformancePacksOutcomeCallable ConfigServiceClient::DescribeOrganizationConformancePacksCallable(const DescribeOrganizationConformancePacksRequest& request) const
@@ -1447,15 +1182,7 @@ DescribePendingAggregationRequestsOutcome ConfigServiceClient::DescribePendingAg
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribePendingAggregationRequestsOutcome(DescribePendingAggregationRequestsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribePendingAggregationRequestsOutcome(outcome.GetError());
-  }
+  return DescribePendingAggregationRequestsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribePendingAggregationRequestsOutcomeCallable ConfigServiceClient::DescribePendingAggregationRequestsCallable(const DescribePendingAggregationRequestsRequest& request) const
@@ -1482,15 +1209,7 @@ DescribeRemediationConfigurationsOutcome ConfigServiceClient::DescribeRemediatio
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeRemediationConfigurationsOutcome(DescribeRemediationConfigurationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeRemediationConfigurationsOutcome(outcome.GetError());
-  }
+  return DescribeRemediationConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeRemediationConfigurationsOutcomeCallable ConfigServiceClient::DescribeRemediationConfigurationsCallable(const DescribeRemediationConfigurationsRequest& request) const
@@ -1517,15 +1236,7 @@ DescribeRemediationExceptionsOutcome ConfigServiceClient::DescribeRemediationExc
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeRemediationExceptionsOutcome(DescribeRemediationExceptionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeRemediationExceptionsOutcome(outcome.GetError());
-  }
+  return DescribeRemediationExceptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeRemediationExceptionsOutcomeCallable ConfigServiceClient::DescribeRemediationExceptionsCallable(const DescribeRemediationExceptionsRequest& request) const
@@ -1552,15 +1263,7 @@ DescribeRemediationExecutionStatusOutcome ConfigServiceClient::DescribeRemediati
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeRemediationExecutionStatusOutcome(DescribeRemediationExecutionStatusResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeRemediationExecutionStatusOutcome(outcome.GetError());
-  }
+  return DescribeRemediationExecutionStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeRemediationExecutionStatusOutcomeCallable ConfigServiceClient::DescribeRemediationExecutionStatusCallable(const DescribeRemediationExecutionStatusRequest& request) const
@@ -1587,15 +1290,7 @@ DescribeRetentionConfigurationsOutcome ConfigServiceClient::DescribeRetentionCon
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeRetentionConfigurationsOutcome(DescribeRetentionConfigurationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeRetentionConfigurationsOutcome(outcome.GetError());
-  }
+  return DescribeRetentionConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeRetentionConfigurationsOutcomeCallable ConfigServiceClient::DescribeRetentionConfigurationsCallable(const DescribeRetentionConfigurationsRequest& request) const
@@ -1622,15 +1317,7 @@ GetAggregateComplianceDetailsByConfigRuleOutcome ConfigServiceClient::GetAggrega
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetAggregateComplianceDetailsByConfigRuleOutcome(GetAggregateComplianceDetailsByConfigRuleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetAggregateComplianceDetailsByConfigRuleOutcome(outcome.GetError());
-  }
+  return GetAggregateComplianceDetailsByConfigRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAggregateComplianceDetailsByConfigRuleOutcomeCallable ConfigServiceClient::GetAggregateComplianceDetailsByConfigRuleCallable(const GetAggregateComplianceDetailsByConfigRuleRequest& request) const
@@ -1657,15 +1344,7 @@ GetAggregateConfigRuleComplianceSummaryOutcome ConfigServiceClient::GetAggregate
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetAggregateConfigRuleComplianceSummaryOutcome(GetAggregateConfigRuleComplianceSummaryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetAggregateConfigRuleComplianceSummaryOutcome(outcome.GetError());
-  }
+  return GetAggregateConfigRuleComplianceSummaryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAggregateConfigRuleComplianceSummaryOutcomeCallable ConfigServiceClient::GetAggregateConfigRuleComplianceSummaryCallable(const GetAggregateConfigRuleComplianceSummaryRequest& request) const
@@ -1692,15 +1371,7 @@ GetAggregateDiscoveredResourceCountsOutcome ConfigServiceClient::GetAggregateDis
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetAggregateDiscoveredResourceCountsOutcome(GetAggregateDiscoveredResourceCountsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetAggregateDiscoveredResourceCountsOutcome(outcome.GetError());
-  }
+  return GetAggregateDiscoveredResourceCountsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAggregateDiscoveredResourceCountsOutcomeCallable ConfigServiceClient::GetAggregateDiscoveredResourceCountsCallable(const GetAggregateDiscoveredResourceCountsRequest& request) const
@@ -1727,15 +1398,7 @@ GetAggregateResourceConfigOutcome ConfigServiceClient::GetAggregateResourceConfi
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetAggregateResourceConfigOutcome(GetAggregateResourceConfigResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetAggregateResourceConfigOutcome(outcome.GetError());
-  }
+  return GetAggregateResourceConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAggregateResourceConfigOutcomeCallable ConfigServiceClient::GetAggregateResourceConfigCallable(const GetAggregateResourceConfigRequest& request) const
@@ -1762,15 +1425,7 @@ GetComplianceDetailsByConfigRuleOutcome ConfigServiceClient::GetComplianceDetail
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetComplianceDetailsByConfigRuleOutcome(GetComplianceDetailsByConfigRuleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetComplianceDetailsByConfigRuleOutcome(outcome.GetError());
-  }
+  return GetComplianceDetailsByConfigRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetComplianceDetailsByConfigRuleOutcomeCallable ConfigServiceClient::GetComplianceDetailsByConfigRuleCallable(const GetComplianceDetailsByConfigRuleRequest& request) const
@@ -1797,15 +1452,7 @@ GetComplianceDetailsByResourceOutcome ConfigServiceClient::GetComplianceDetailsB
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetComplianceDetailsByResourceOutcome(GetComplianceDetailsByResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetComplianceDetailsByResourceOutcome(outcome.GetError());
-  }
+  return GetComplianceDetailsByResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetComplianceDetailsByResourceOutcomeCallable ConfigServiceClient::GetComplianceDetailsByResourceCallable(const GetComplianceDetailsByResourceRequest& request) const
@@ -1830,15 +1477,7 @@ GetComplianceSummaryByConfigRuleOutcome ConfigServiceClient::GetComplianceSummar
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-  JsonOutcome outcome = MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "GetComplianceSummaryByConfigRule");
-  if(outcome.IsSuccess())
-  {
-    return GetComplianceSummaryByConfigRuleOutcome(GetComplianceSummaryByConfigRuleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetComplianceSummaryByConfigRuleOutcome(outcome.GetError());
-  }
+  return GetComplianceSummaryByConfigRuleOutcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "GetComplianceSummaryByConfigRule"));
 }
 
 GetComplianceSummaryByConfigRuleOutcomeCallable ConfigServiceClient::GetComplianceSummaryByConfigRuleCallable() const
@@ -1865,15 +1504,7 @@ GetComplianceSummaryByResourceTypeOutcome ConfigServiceClient::GetComplianceSumm
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetComplianceSummaryByResourceTypeOutcome(GetComplianceSummaryByResourceTypeResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetComplianceSummaryByResourceTypeOutcome(outcome.GetError());
-  }
+  return GetComplianceSummaryByResourceTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetComplianceSummaryByResourceTypeOutcomeCallable ConfigServiceClient::GetComplianceSummaryByResourceTypeCallable(const GetComplianceSummaryByResourceTypeRequest& request) const
@@ -1900,15 +1531,7 @@ GetConformancePackComplianceDetailsOutcome ConfigServiceClient::GetConformancePa
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetConformancePackComplianceDetailsOutcome(GetConformancePackComplianceDetailsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetConformancePackComplianceDetailsOutcome(outcome.GetError());
-  }
+  return GetConformancePackComplianceDetailsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetConformancePackComplianceDetailsOutcomeCallable ConfigServiceClient::GetConformancePackComplianceDetailsCallable(const GetConformancePackComplianceDetailsRequest& request) const
@@ -1935,15 +1558,7 @@ GetConformancePackComplianceSummaryOutcome ConfigServiceClient::GetConformancePa
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetConformancePackComplianceSummaryOutcome(GetConformancePackComplianceSummaryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetConformancePackComplianceSummaryOutcome(outcome.GetError());
-  }
+  return GetConformancePackComplianceSummaryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetConformancePackComplianceSummaryOutcomeCallable ConfigServiceClient::GetConformancePackComplianceSummaryCallable(const GetConformancePackComplianceSummaryRequest& request) const
@@ -1970,15 +1585,7 @@ GetDiscoveredResourceCountsOutcome ConfigServiceClient::GetDiscoveredResourceCou
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDiscoveredResourceCountsOutcome(GetDiscoveredResourceCountsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDiscoveredResourceCountsOutcome(outcome.GetError());
-  }
+  return GetDiscoveredResourceCountsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDiscoveredResourceCountsOutcomeCallable ConfigServiceClient::GetDiscoveredResourceCountsCallable(const GetDiscoveredResourceCountsRequest& request) const
@@ -2005,15 +1612,7 @@ GetOrganizationConfigRuleDetailedStatusOutcome ConfigServiceClient::GetOrganizat
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetOrganizationConfigRuleDetailedStatusOutcome(GetOrganizationConfigRuleDetailedStatusResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetOrganizationConfigRuleDetailedStatusOutcome(outcome.GetError());
-  }
+  return GetOrganizationConfigRuleDetailedStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetOrganizationConfigRuleDetailedStatusOutcomeCallable ConfigServiceClient::GetOrganizationConfigRuleDetailedStatusCallable(const GetOrganizationConfigRuleDetailedStatusRequest& request) const
@@ -2040,15 +1639,7 @@ GetOrganizationConformancePackDetailedStatusOutcome ConfigServiceClient::GetOrga
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetOrganizationConformancePackDetailedStatusOutcome(GetOrganizationConformancePackDetailedStatusResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetOrganizationConformancePackDetailedStatusOutcome(outcome.GetError());
-  }
+  return GetOrganizationConformancePackDetailedStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetOrganizationConformancePackDetailedStatusOutcomeCallable ConfigServiceClient::GetOrganizationConformancePackDetailedStatusCallable(const GetOrganizationConformancePackDetailedStatusRequest& request) const
@@ -2075,15 +1666,7 @@ GetResourceConfigHistoryOutcome ConfigServiceClient::GetResourceConfigHistory(co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetResourceConfigHistoryOutcome(GetResourceConfigHistoryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetResourceConfigHistoryOutcome(outcome.GetError());
-  }
+  return GetResourceConfigHistoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetResourceConfigHistoryOutcomeCallable ConfigServiceClient::GetResourceConfigHistoryCallable(const GetResourceConfigHistoryRequest& request) const
@@ -2104,21 +1687,40 @@ void ConfigServiceClient::GetResourceConfigHistoryAsyncHelper(const GetResourceC
   handler(this, request, GetResourceConfigHistory(request), context);
 }
 
+GetStoredQueryOutcome ConfigServiceClient::GetStoredQuery(const GetStoredQueryRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetStoredQueryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetStoredQueryOutcomeCallable ConfigServiceClient::GetStoredQueryCallable(const GetStoredQueryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetStoredQueryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStoredQuery(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::GetStoredQueryAsync(const GetStoredQueryRequest& request, const GetStoredQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetStoredQueryAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::GetStoredQueryAsyncHelper(const GetStoredQueryRequest& request, const GetStoredQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetStoredQuery(request), context);
+}
+
 ListAggregateDiscoveredResourcesOutcome ConfigServiceClient::ListAggregateDiscoveredResources(const ListAggregateDiscoveredResourcesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListAggregateDiscoveredResourcesOutcome(ListAggregateDiscoveredResourcesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListAggregateDiscoveredResourcesOutcome(outcome.GetError());
-  }
+  return ListAggregateDiscoveredResourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListAggregateDiscoveredResourcesOutcomeCallable ConfigServiceClient::ListAggregateDiscoveredResourcesCallable(const ListAggregateDiscoveredResourcesRequest& request) const
@@ -2145,15 +1747,7 @@ ListDiscoveredResourcesOutcome ConfigServiceClient::ListDiscoveredResources(cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListDiscoveredResourcesOutcome(ListDiscoveredResourcesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListDiscoveredResourcesOutcome(outcome.GetError());
-  }
+  return ListDiscoveredResourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDiscoveredResourcesOutcomeCallable ConfigServiceClient::ListDiscoveredResourcesCallable(const ListDiscoveredResourcesRequest& request) const
@@ -2174,21 +1768,40 @@ void ConfigServiceClient::ListDiscoveredResourcesAsyncHelper(const ListDiscovere
   handler(this, request, ListDiscoveredResources(request), context);
 }
 
+ListStoredQueriesOutcome ConfigServiceClient::ListStoredQueries(const ListStoredQueriesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListStoredQueriesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListStoredQueriesOutcomeCallable ConfigServiceClient::ListStoredQueriesCallable(const ListStoredQueriesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListStoredQueriesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStoredQueries(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::ListStoredQueriesAsync(const ListStoredQueriesRequest& request, const ListStoredQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListStoredQueriesAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::ListStoredQueriesAsyncHelper(const ListStoredQueriesRequest& request, const ListStoredQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListStoredQueries(request), context);
+}
+
 ListTagsForResourceOutcome ConfigServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable ConfigServiceClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -2215,15 +1828,7 @@ PutAggregationAuthorizationOutcome ConfigServiceClient::PutAggregationAuthorizat
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutAggregationAuthorizationOutcome(PutAggregationAuthorizationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutAggregationAuthorizationOutcome(outcome.GetError());
-  }
+  return PutAggregationAuthorizationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutAggregationAuthorizationOutcomeCallable ConfigServiceClient::PutAggregationAuthorizationCallable(const PutAggregationAuthorizationRequest& request) const
@@ -2250,15 +1855,7 @@ PutConfigRuleOutcome ConfigServiceClient::PutConfigRule(const PutConfigRuleReque
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutConfigRuleOutcome(NoResult());
-  }
-  else
-  {
-    return PutConfigRuleOutcome(outcome.GetError());
-  }
+  return PutConfigRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutConfigRuleOutcomeCallable ConfigServiceClient::PutConfigRuleCallable(const PutConfigRuleRequest& request) const
@@ -2285,15 +1882,7 @@ PutConfigurationAggregatorOutcome ConfigServiceClient::PutConfigurationAggregato
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutConfigurationAggregatorOutcome(PutConfigurationAggregatorResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutConfigurationAggregatorOutcome(outcome.GetError());
-  }
+  return PutConfigurationAggregatorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutConfigurationAggregatorOutcomeCallable ConfigServiceClient::PutConfigurationAggregatorCallable(const PutConfigurationAggregatorRequest& request) const
@@ -2320,15 +1909,7 @@ PutConfigurationRecorderOutcome ConfigServiceClient::PutConfigurationRecorder(co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutConfigurationRecorderOutcome(NoResult());
-  }
-  else
-  {
-    return PutConfigurationRecorderOutcome(outcome.GetError());
-  }
+  return PutConfigurationRecorderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutConfigurationRecorderOutcomeCallable ConfigServiceClient::PutConfigurationRecorderCallable(const PutConfigurationRecorderRequest& request) const
@@ -2355,15 +1936,7 @@ PutConformancePackOutcome ConfigServiceClient::PutConformancePack(const PutConfo
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutConformancePackOutcome(PutConformancePackResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutConformancePackOutcome(outcome.GetError());
-  }
+  return PutConformancePackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutConformancePackOutcomeCallable ConfigServiceClient::PutConformancePackCallable(const PutConformancePackRequest& request) const
@@ -2390,15 +1963,7 @@ PutDeliveryChannelOutcome ConfigServiceClient::PutDeliveryChannel(const PutDeliv
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutDeliveryChannelOutcome(NoResult());
-  }
-  else
-  {
-    return PutDeliveryChannelOutcome(outcome.GetError());
-  }
+  return PutDeliveryChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutDeliveryChannelOutcomeCallable ConfigServiceClient::PutDeliveryChannelCallable(const PutDeliveryChannelRequest& request) const
@@ -2425,15 +1990,7 @@ PutEvaluationsOutcome ConfigServiceClient::PutEvaluations(const PutEvaluationsRe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutEvaluationsOutcome(PutEvaluationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutEvaluationsOutcome(outcome.GetError());
-  }
+  return PutEvaluationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutEvaluationsOutcomeCallable ConfigServiceClient::PutEvaluationsCallable(const PutEvaluationsRequest& request) const
@@ -2454,21 +2011,40 @@ void ConfigServiceClient::PutEvaluationsAsyncHelper(const PutEvaluationsRequest&
   handler(this, request, PutEvaluations(request), context);
 }
 
+PutExternalEvaluationOutcome ConfigServiceClient::PutExternalEvaluation(const PutExternalEvaluationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return PutExternalEvaluationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutExternalEvaluationOutcomeCallable ConfigServiceClient::PutExternalEvaluationCallable(const PutExternalEvaluationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutExternalEvaluationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutExternalEvaluation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::PutExternalEvaluationAsync(const PutExternalEvaluationRequest& request, const PutExternalEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutExternalEvaluationAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::PutExternalEvaluationAsyncHelper(const PutExternalEvaluationRequest& request, const PutExternalEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutExternalEvaluation(request), context);
+}
+
 PutOrganizationConfigRuleOutcome ConfigServiceClient::PutOrganizationConfigRule(const PutOrganizationConfigRuleRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutOrganizationConfigRuleOutcome(PutOrganizationConfigRuleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutOrganizationConfigRuleOutcome(outcome.GetError());
-  }
+  return PutOrganizationConfigRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutOrganizationConfigRuleOutcomeCallable ConfigServiceClient::PutOrganizationConfigRuleCallable(const PutOrganizationConfigRuleRequest& request) const
@@ -2495,15 +2071,7 @@ PutOrganizationConformancePackOutcome ConfigServiceClient::PutOrganizationConfor
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutOrganizationConformancePackOutcome(PutOrganizationConformancePackResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutOrganizationConformancePackOutcome(outcome.GetError());
-  }
+  return PutOrganizationConformancePackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutOrganizationConformancePackOutcomeCallable ConfigServiceClient::PutOrganizationConformancePackCallable(const PutOrganizationConformancePackRequest& request) const
@@ -2530,15 +2098,7 @@ PutRemediationConfigurationsOutcome ConfigServiceClient::PutRemediationConfigura
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutRemediationConfigurationsOutcome(PutRemediationConfigurationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutRemediationConfigurationsOutcome(outcome.GetError());
-  }
+  return PutRemediationConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutRemediationConfigurationsOutcomeCallable ConfigServiceClient::PutRemediationConfigurationsCallable(const PutRemediationConfigurationsRequest& request) const
@@ -2565,15 +2125,7 @@ PutRemediationExceptionsOutcome ConfigServiceClient::PutRemediationExceptions(co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutRemediationExceptionsOutcome(PutRemediationExceptionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutRemediationExceptionsOutcome(outcome.GetError());
-  }
+  return PutRemediationExceptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutRemediationExceptionsOutcomeCallable ConfigServiceClient::PutRemediationExceptionsCallable(const PutRemediationExceptionsRequest& request) const
@@ -2600,15 +2152,7 @@ PutResourceConfigOutcome ConfigServiceClient::PutResourceConfig(const PutResourc
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutResourceConfigOutcome(NoResult());
-  }
-  else
-  {
-    return PutResourceConfigOutcome(outcome.GetError());
-  }
+  return PutResourceConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutResourceConfigOutcomeCallable ConfigServiceClient::PutResourceConfigCallable(const PutResourceConfigRequest& request) const
@@ -2635,15 +2179,7 @@ PutRetentionConfigurationOutcome ConfigServiceClient::PutRetentionConfiguration(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutRetentionConfigurationOutcome(PutRetentionConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutRetentionConfigurationOutcome(outcome.GetError());
-  }
+  return PutRetentionConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutRetentionConfigurationOutcomeCallable ConfigServiceClient::PutRetentionConfigurationCallable(const PutRetentionConfigurationRequest& request) const
@@ -2664,21 +2200,40 @@ void ConfigServiceClient::PutRetentionConfigurationAsyncHelper(const PutRetentio
   handler(this, request, PutRetentionConfiguration(request), context);
 }
 
+PutStoredQueryOutcome ConfigServiceClient::PutStoredQuery(const PutStoredQueryRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return PutStoredQueryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutStoredQueryOutcomeCallable ConfigServiceClient::PutStoredQueryCallable(const PutStoredQueryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutStoredQueryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutStoredQuery(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::PutStoredQueryAsync(const PutStoredQueryRequest& request, const PutStoredQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutStoredQueryAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::PutStoredQueryAsyncHelper(const PutStoredQueryRequest& request, const PutStoredQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutStoredQuery(request), context);
+}
+
 SelectAggregateResourceConfigOutcome ConfigServiceClient::SelectAggregateResourceConfig(const SelectAggregateResourceConfigRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SelectAggregateResourceConfigOutcome(SelectAggregateResourceConfigResult(outcome.GetResult()));
-  }
-  else
-  {
-    return SelectAggregateResourceConfigOutcome(outcome.GetError());
-  }
+  return SelectAggregateResourceConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SelectAggregateResourceConfigOutcomeCallable ConfigServiceClient::SelectAggregateResourceConfigCallable(const SelectAggregateResourceConfigRequest& request) const
@@ -2705,15 +2260,7 @@ SelectResourceConfigOutcome ConfigServiceClient::SelectResourceConfig(const Sele
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SelectResourceConfigOutcome(SelectResourceConfigResult(outcome.GetResult()));
-  }
-  else
-  {
-    return SelectResourceConfigOutcome(outcome.GetError());
-  }
+  return SelectResourceConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SelectResourceConfigOutcomeCallable ConfigServiceClient::SelectResourceConfigCallable(const SelectResourceConfigRequest& request) const
@@ -2740,15 +2287,7 @@ StartConfigRulesEvaluationOutcome ConfigServiceClient::StartConfigRulesEvaluatio
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartConfigRulesEvaluationOutcome(StartConfigRulesEvaluationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartConfigRulesEvaluationOutcome(outcome.GetError());
-  }
+  return StartConfigRulesEvaluationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartConfigRulesEvaluationOutcomeCallable ConfigServiceClient::StartConfigRulesEvaluationCallable(const StartConfigRulesEvaluationRequest& request) const
@@ -2775,15 +2314,7 @@ StartConfigurationRecorderOutcome ConfigServiceClient::StartConfigurationRecorde
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartConfigurationRecorderOutcome(NoResult());
-  }
-  else
-  {
-    return StartConfigurationRecorderOutcome(outcome.GetError());
-  }
+  return StartConfigurationRecorderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartConfigurationRecorderOutcomeCallable ConfigServiceClient::StartConfigurationRecorderCallable(const StartConfigurationRecorderRequest& request) const
@@ -2810,15 +2341,7 @@ StartRemediationExecutionOutcome ConfigServiceClient::StartRemediationExecution(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartRemediationExecutionOutcome(StartRemediationExecutionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartRemediationExecutionOutcome(outcome.GetError());
-  }
+  return StartRemediationExecutionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartRemediationExecutionOutcomeCallable ConfigServiceClient::StartRemediationExecutionCallable(const StartRemediationExecutionRequest& request) const
@@ -2845,15 +2368,7 @@ StopConfigurationRecorderOutcome ConfigServiceClient::StopConfigurationRecorder(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StopConfigurationRecorderOutcome(NoResult());
-  }
-  else
-  {
-    return StopConfigurationRecorderOutcome(outcome.GetError());
-  }
+  return StopConfigurationRecorderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopConfigurationRecorderOutcomeCallable ConfigServiceClient::StopConfigurationRecorderCallable(const StopConfigurationRecorderRequest& request) const
@@ -2880,15 +2395,7 @@ TagResourceOutcome ConfigServiceClient::TagResource(const TagResourceRequest& re
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(NoResult());
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable ConfigServiceClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -2915,15 +2422,7 @@ UntagResourceOutcome ConfigServiceClient::UntagResource(const UntagResourceReque
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(NoResult());
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable ConfigServiceClient::UntagResourceCallable(const UntagResourceRequest& request) const

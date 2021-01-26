@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
@@ -215,83 +205,83 @@ namespace Model
         class UpdateUploadRequest;
         class UpdateVPCEConfigurationRequest;
 
-        typedef Aws::Utils::Outcome<CreateDevicePoolResult, Aws::Client::AWSError<DeviceFarmErrors>> CreateDevicePoolOutcome;
-        typedef Aws::Utils::Outcome<CreateInstanceProfileResult, Aws::Client::AWSError<DeviceFarmErrors>> CreateInstanceProfileOutcome;
-        typedef Aws::Utils::Outcome<CreateNetworkProfileResult, Aws::Client::AWSError<DeviceFarmErrors>> CreateNetworkProfileOutcome;
-        typedef Aws::Utils::Outcome<CreateProjectResult, Aws::Client::AWSError<DeviceFarmErrors>> CreateProjectOutcome;
-        typedef Aws::Utils::Outcome<CreateRemoteAccessSessionResult, Aws::Client::AWSError<DeviceFarmErrors>> CreateRemoteAccessSessionOutcome;
-        typedef Aws::Utils::Outcome<CreateTestGridProjectResult, Aws::Client::AWSError<DeviceFarmErrors>> CreateTestGridProjectOutcome;
-        typedef Aws::Utils::Outcome<CreateTestGridUrlResult, Aws::Client::AWSError<DeviceFarmErrors>> CreateTestGridUrlOutcome;
-        typedef Aws::Utils::Outcome<CreateUploadResult, Aws::Client::AWSError<DeviceFarmErrors>> CreateUploadOutcome;
-        typedef Aws::Utils::Outcome<CreateVPCEConfigurationResult, Aws::Client::AWSError<DeviceFarmErrors>> CreateVPCEConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DeleteDevicePoolResult, Aws::Client::AWSError<DeviceFarmErrors>> DeleteDevicePoolOutcome;
-        typedef Aws::Utils::Outcome<DeleteInstanceProfileResult, Aws::Client::AWSError<DeviceFarmErrors>> DeleteInstanceProfileOutcome;
-        typedef Aws::Utils::Outcome<DeleteNetworkProfileResult, Aws::Client::AWSError<DeviceFarmErrors>> DeleteNetworkProfileOutcome;
-        typedef Aws::Utils::Outcome<DeleteProjectResult, Aws::Client::AWSError<DeviceFarmErrors>> DeleteProjectOutcome;
-        typedef Aws::Utils::Outcome<DeleteRemoteAccessSessionResult, Aws::Client::AWSError<DeviceFarmErrors>> DeleteRemoteAccessSessionOutcome;
-        typedef Aws::Utils::Outcome<DeleteRunResult, Aws::Client::AWSError<DeviceFarmErrors>> DeleteRunOutcome;
-        typedef Aws::Utils::Outcome<DeleteTestGridProjectResult, Aws::Client::AWSError<DeviceFarmErrors>> DeleteTestGridProjectOutcome;
-        typedef Aws::Utils::Outcome<DeleteUploadResult, Aws::Client::AWSError<DeviceFarmErrors>> DeleteUploadOutcome;
-        typedef Aws::Utils::Outcome<DeleteVPCEConfigurationResult, Aws::Client::AWSError<DeviceFarmErrors>> DeleteVPCEConfigurationOutcome;
-        typedef Aws::Utils::Outcome<GetAccountSettingsResult, Aws::Client::AWSError<DeviceFarmErrors>> GetAccountSettingsOutcome;
-        typedef Aws::Utils::Outcome<GetDeviceResult, Aws::Client::AWSError<DeviceFarmErrors>> GetDeviceOutcome;
-        typedef Aws::Utils::Outcome<GetDeviceInstanceResult, Aws::Client::AWSError<DeviceFarmErrors>> GetDeviceInstanceOutcome;
-        typedef Aws::Utils::Outcome<GetDevicePoolResult, Aws::Client::AWSError<DeviceFarmErrors>> GetDevicePoolOutcome;
-        typedef Aws::Utils::Outcome<GetDevicePoolCompatibilityResult, Aws::Client::AWSError<DeviceFarmErrors>> GetDevicePoolCompatibilityOutcome;
-        typedef Aws::Utils::Outcome<GetInstanceProfileResult, Aws::Client::AWSError<DeviceFarmErrors>> GetInstanceProfileOutcome;
-        typedef Aws::Utils::Outcome<GetJobResult, Aws::Client::AWSError<DeviceFarmErrors>> GetJobOutcome;
-        typedef Aws::Utils::Outcome<GetNetworkProfileResult, Aws::Client::AWSError<DeviceFarmErrors>> GetNetworkProfileOutcome;
-        typedef Aws::Utils::Outcome<GetOfferingStatusResult, Aws::Client::AWSError<DeviceFarmErrors>> GetOfferingStatusOutcome;
-        typedef Aws::Utils::Outcome<GetProjectResult, Aws::Client::AWSError<DeviceFarmErrors>> GetProjectOutcome;
-        typedef Aws::Utils::Outcome<GetRemoteAccessSessionResult, Aws::Client::AWSError<DeviceFarmErrors>> GetRemoteAccessSessionOutcome;
-        typedef Aws::Utils::Outcome<GetRunResult, Aws::Client::AWSError<DeviceFarmErrors>> GetRunOutcome;
-        typedef Aws::Utils::Outcome<GetSuiteResult, Aws::Client::AWSError<DeviceFarmErrors>> GetSuiteOutcome;
-        typedef Aws::Utils::Outcome<GetTestResult, Aws::Client::AWSError<DeviceFarmErrors>> GetTestOutcome;
-        typedef Aws::Utils::Outcome<GetTestGridProjectResult, Aws::Client::AWSError<DeviceFarmErrors>> GetTestGridProjectOutcome;
-        typedef Aws::Utils::Outcome<GetTestGridSessionResult, Aws::Client::AWSError<DeviceFarmErrors>> GetTestGridSessionOutcome;
-        typedef Aws::Utils::Outcome<GetUploadResult, Aws::Client::AWSError<DeviceFarmErrors>> GetUploadOutcome;
-        typedef Aws::Utils::Outcome<GetVPCEConfigurationResult, Aws::Client::AWSError<DeviceFarmErrors>> GetVPCEConfigurationOutcome;
-        typedef Aws::Utils::Outcome<InstallToRemoteAccessSessionResult, Aws::Client::AWSError<DeviceFarmErrors>> InstallToRemoteAccessSessionOutcome;
-        typedef Aws::Utils::Outcome<ListArtifactsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListArtifactsOutcome;
-        typedef Aws::Utils::Outcome<ListDeviceInstancesResult, Aws::Client::AWSError<DeviceFarmErrors>> ListDeviceInstancesOutcome;
-        typedef Aws::Utils::Outcome<ListDevicePoolsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListDevicePoolsOutcome;
-        typedef Aws::Utils::Outcome<ListDevicesResult, Aws::Client::AWSError<DeviceFarmErrors>> ListDevicesOutcome;
-        typedef Aws::Utils::Outcome<ListInstanceProfilesResult, Aws::Client::AWSError<DeviceFarmErrors>> ListInstanceProfilesOutcome;
-        typedef Aws::Utils::Outcome<ListJobsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListJobsOutcome;
-        typedef Aws::Utils::Outcome<ListNetworkProfilesResult, Aws::Client::AWSError<DeviceFarmErrors>> ListNetworkProfilesOutcome;
-        typedef Aws::Utils::Outcome<ListOfferingPromotionsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListOfferingPromotionsOutcome;
-        typedef Aws::Utils::Outcome<ListOfferingTransactionsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListOfferingTransactionsOutcome;
-        typedef Aws::Utils::Outcome<ListOfferingsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListOfferingsOutcome;
-        typedef Aws::Utils::Outcome<ListProjectsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListProjectsOutcome;
-        typedef Aws::Utils::Outcome<ListRemoteAccessSessionsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListRemoteAccessSessionsOutcome;
-        typedef Aws::Utils::Outcome<ListRunsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListRunsOutcome;
-        typedef Aws::Utils::Outcome<ListSamplesResult, Aws::Client::AWSError<DeviceFarmErrors>> ListSamplesOutcome;
-        typedef Aws::Utils::Outcome<ListSuitesResult, Aws::Client::AWSError<DeviceFarmErrors>> ListSuitesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<DeviceFarmErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListTestGridProjectsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListTestGridProjectsOutcome;
-        typedef Aws::Utils::Outcome<ListTestGridSessionActionsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListTestGridSessionActionsOutcome;
-        typedef Aws::Utils::Outcome<ListTestGridSessionArtifactsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListTestGridSessionArtifactsOutcome;
-        typedef Aws::Utils::Outcome<ListTestGridSessionsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListTestGridSessionsOutcome;
-        typedef Aws::Utils::Outcome<ListTestsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListTestsOutcome;
-        typedef Aws::Utils::Outcome<ListUniqueProblemsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListUniqueProblemsOutcome;
-        typedef Aws::Utils::Outcome<ListUploadsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListUploadsOutcome;
-        typedef Aws::Utils::Outcome<ListVPCEConfigurationsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListVPCEConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<PurchaseOfferingResult, Aws::Client::AWSError<DeviceFarmErrors>> PurchaseOfferingOutcome;
-        typedef Aws::Utils::Outcome<RenewOfferingResult, Aws::Client::AWSError<DeviceFarmErrors>> RenewOfferingOutcome;
-        typedef Aws::Utils::Outcome<ScheduleRunResult, Aws::Client::AWSError<DeviceFarmErrors>> ScheduleRunOutcome;
-        typedef Aws::Utils::Outcome<StopJobResult, Aws::Client::AWSError<DeviceFarmErrors>> StopJobOutcome;
-        typedef Aws::Utils::Outcome<StopRemoteAccessSessionResult, Aws::Client::AWSError<DeviceFarmErrors>> StopRemoteAccessSessionOutcome;
-        typedef Aws::Utils::Outcome<StopRunResult, Aws::Client::AWSError<DeviceFarmErrors>> StopRunOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<DeviceFarmErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<DeviceFarmErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateDeviceInstanceResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateDeviceInstanceOutcome;
-        typedef Aws::Utils::Outcome<UpdateDevicePoolResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateDevicePoolOutcome;
-        typedef Aws::Utils::Outcome<UpdateInstanceProfileResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateInstanceProfileOutcome;
-        typedef Aws::Utils::Outcome<UpdateNetworkProfileResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateNetworkProfileOutcome;
-        typedef Aws::Utils::Outcome<UpdateProjectResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateProjectOutcome;
-        typedef Aws::Utils::Outcome<UpdateTestGridProjectResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateTestGridProjectOutcome;
-        typedef Aws::Utils::Outcome<UpdateUploadResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateUploadOutcome;
-        typedef Aws::Utils::Outcome<UpdateVPCEConfigurationResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateVPCEConfigurationOutcome;
+        typedef Aws::Utils::Outcome<CreateDevicePoolResult, DeviceFarmError> CreateDevicePoolOutcome;
+        typedef Aws::Utils::Outcome<CreateInstanceProfileResult, DeviceFarmError> CreateInstanceProfileOutcome;
+        typedef Aws::Utils::Outcome<CreateNetworkProfileResult, DeviceFarmError> CreateNetworkProfileOutcome;
+        typedef Aws::Utils::Outcome<CreateProjectResult, DeviceFarmError> CreateProjectOutcome;
+        typedef Aws::Utils::Outcome<CreateRemoteAccessSessionResult, DeviceFarmError> CreateRemoteAccessSessionOutcome;
+        typedef Aws::Utils::Outcome<CreateTestGridProjectResult, DeviceFarmError> CreateTestGridProjectOutcome;
+        typedef Aws::Utils::Outcome<CreateTestGridUrlResult, DeviceFarmError> CreateTestGridUrlOutcome;
+        typedef Aws::Utils::Outcome<CreateUploadResult, DeviceFarmError> CreateUploadOutcome;
+        typedef Aws::Utils::Outcome<CreateVPCEConfigurationResult, DeviceFarmError> CreateVPCEConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DeleteDevicePoolResult, DeviceFarmError> DeleteDevicePoolOutcome;
+        typedef Aws::Utils::Outcome<DeleteInstanceProfileResult, DeviceFarmError> DeleteInstanceProfileOutcome;
+        typedef Aws::Utils::Outcome<DeleteNetworkProfileResult, DeviceFarmError> DeleteNetworkProfileOutcome;
+        typedef Aws::Utils::Outcome<DeleteProjectResult, DeviceFarmError> DeleteProjectOutcome;
+        typedef Aws::Utils::Outcome<DeleteRemoteAccessSessionResult, DeviceFarmError> DeleteRemoteAccessSessionOutcome;
+        typedef Aws::Utils::Outcome<DeleteRunResult, DeviceFarmError> DeleteRunOutcome;
+        typedef Aws::Utils::Outcome<DeleteTestGridProjectResult, DeviceFarmError> DeleteTestGridProjectOutcome;
+        typedef Aws::Utils::Outcome<DeleteUploadResult, DeviceFarmError> DeleteUploadOutcome;
+        typedef Aws::Utils::Outcome<DeleteVPCEConfigurationResult, DeviceFarmError> DeleteVPCEConfigurationOutcome;
+        typedef Aws::Utils::Outcome<GetAccountSettingsResult, DeviceFarmError> GetAccountSettingsOutcome;
+        typedef Aws::Utils::Outcome<GetDeviceResult, DeviceFarmError> GetDeviceOutcome;
+        typedef Aws::Utils::Outcome<GetDeviceInstanceResult, DeviceFarmError> GetDeviceInstanceOutcome;
+        typedef Aws::Utils::Outcome<GetDevicePoolResult, DeviceFarmError> GetDevicePoolOutcome;
+        typedef Aws::Utils::Outcome<GetDevicePoolCompatibilityResult, DeviceFarmError> GetDevicePoolCompatibilityOutcome;
+        typedef Aws::Utils::Outcome<GetInstanceProfileResult, DeviceFarmError> GetInstanceProfileOutcome;
+        typedef Aws::Utils::Outcome<GetJobResult, DeviceFarmError> GetJobOutcome;
+        typedef Aws::Utils::Outcome<GetNetworkProfileResult, DeviceFarmError> GetNetworkProfileOutcome;
+        typedef Aws::Utils::Outcome<GetOfferingStatusResult, DeviceFarmError> GetOfferingStatusOutcome;
+        typedef Aws::Utils::Outcome<GetProjectResult, DeviceFarmError> GetProjectOutcome;
+        typedef Aws::Utils::Outcome<GetRemoteAccessSessionResult, DeviceFarmError> GetRemoteAccessSessionOutcome;
+        typedef Aws::Utils::Outcome<GetRunResult, DeviceFarmError> GetRunOutcome;
+        typedef Aws::Utils::Outcome<GetSuiteResult, DeviceFarmError> GetSuiteOutcome;
+        typedef Aws::Utils::Outcome<GetTestResult, DeviceFarmError> GetTestOutcome;
+        typedef Aws::Utils::Outcome<GetTestGridProjectResult, DeviceFarmError> GetTestGridProjectOutcome;
+        typedef Aws::Utils::Outcome<GetTestGridSessionResult, DeviceFarmError> GetTestGridSessionOutcome;
+        typedef Aws::Utils::Outcome<GetUploadResult, DeviceFarmError> GetUploadOutcome;
+        typedef Aws::Utils::Outcome<GetVPCEConfigurationResult, DeviceFarmError> GetVPCEConfigurationOutcome;
+        typedef Aws::Utils::Outcome<InstallToRemoteAccessSessionResult, DeviceFarmError> InstallToRemoteAccessSessionOutcome;
+        typedef Aws::Utils::Outcome<ListArtifactsResult, DeviceFarmError> ListArtifactsOutcome;
+        typedef Aws::Utils::Outcome<ListDeviceInstancesResult, DeviceFarmError> ListDeviceInstancesOutcome;
+        typedef Aws::Utils::Outcome<ListDevicePoolsResult, DeviceFarmError> ListDevicePoolsOutcome;
+        typedef Aws::Utils::Outcome<ListDevicesResult, DeviceFarmError> ListDevicesOutcome;
+        typedef Aws::Utils::Outcome<ListInstanceProfilesResult, DeviceFarmError> ListInstanceProfilesOutcome;
+        typedef Aws::Utils::Outcome<ListJobsResult, DeviceFarmError> ListJobsOutcome;
+        typedef Aws::Utils::Outcome<ListNetworkProfilesResult, DeviceFarmError> ListNetworkProfilesOutcome;
+        typedef Aws::Utils::Outcome<ListOfferingPromotionsResult, DeviceFarmError> ListOfferingPromotionsOutcome;
+        typedef Aws::Utils::Outcome<ListOfferingTransactionsResult, DeviceFarmError> ListOfferingTransactionsOutcome;
+        typedef Aws::Utils::Outcome<ListOfferingsResult, DeviceFarmError> ListOfferingsOutcome;
+        typedef Aws::Utils::Outcome<ListProjectsResult, DeviceFarmError> ListProjectsOutcome;
+        typedef Aws::Utils::Outcome<ListRemoteAccessSessionsResult, DeviceFarmError> ListRemoteAccessSessionsOutcome;
+        typedef Aws::Utils::Outcome<ListRunsResult, DeviceFarmError> ListRunsOutcome;
+        typedef Aws::Utils::Outcome<ListSamplesResult, DeviceFarmError> ListSamplesOutcome;
+        typedef Aws::Utils::Outcome<ListSuitesResult, DeviceFarmError> ListSuitesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, DeviceFarmError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListTestGridProjectsResult, DeviceFarmError> ListTestGridProjectsOutcome;
+        typedef Aws::Utils::Outcome<ListTestGridSessionActionsResult, DeviceFarmError> ListTestGridSessionActionsOutcome;
+        typedef Aws::Utils::Outcome<ListTestGridSessionArtifactsResult, DeviceFarmError> ListTestGridSessionArtifactsOutcome;
+        typedef Aws::Utils::Outcome<ListTestGridSessionsResult, DeviceFarmError> ListTestGridSessionsOutcome;
+        typedef Aws::Utils::Outcome<ListTestsResult, DeviceFarmError> ListTestsOutcome;
+        typedef Aws::Utils::Outcome<ListUniqueProblemsResult, DeviceFarmError> ListUniqueProblemsOutcome;
+        typedef Aws::Utils::Outcome<ListUploadsResult, DeviceFarmError> ListUploadsOutcome;
+        typedef Aws::Utils::Outcome<ListVPCEConfigurationsResult, DeviceFarmError> ListVPCEConfigurationsOutcome;
+        typedef Aws::Utils::Outcome<PurchaseOfferingResult, DeviceFarmError> PurchaseOfferingOutcome;
+        typedef Aws::Utils::Outcome<RenewOfferingResult, DeviceFarmError> RenewOfferingOutcome;
+        typedef Aws::Utils::Outcome<ScheduleRunResult, DeviceFarmError> ScheduleRunOutcome;
+        typedef Aws::Utils::Outcome<StopJobResult, DeviceFarmError> StopJobOutcome;
+        typedef Aws::Utils::Outcome<StopRemoteAccessSessionResult, DeviceFarmError> StopRemoteAccessSessionOutcome;
+        typedef Aws::Utils::Outcome<StopRunResult, DeviceFarmError> StopRunOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, DeviceFarmError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, DeviceFarmError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateDeviceInstanceResult, DeviceFarmError> UpdateDeviceInstanceOutcome;
+        typedef Aws::Utils::Outcome<UpdateDevicePoolResult, DeviceFarmError> UpdateDevicePoolOutcome;
+        typedef Aws::Utils::Outcome<UpdateInstanceProfileResult, DeviceFarmError> UpdateInstanceProfileOutcome;
+        typedef Aws::Utils::Outcome<UpdateNetworkProfileResult, DeviceFarmError> UpdateNetworkProfileOutcome;
+        typedef Aws::Utils::Outcome<UpdateProjectResult, DeviceFarmError> UpdateProjectOutcome;
+        typedef Aws::Utils::Outcome<UpdateTestGridProjectResult, DeviceFarmError> UpdateTestGridProjectOutcome;
+        typedef Aws::Utils::Outcome<UpdateUploadResult, DeviceFarmError> UpdateUploadOutcome;
+        typedef Aws::Utils::Outcome<UpdateVPCEConfigurationResult, DeviceFarmError> UpdateVPCEConfigurationOutcome;
 
         typedef std::future<CreateDevicePoolOutcome> CreateDevicePoolOutcomeCallable;
         typedef std::future<CreateInstanceProfileOutcome> CreateInstanceProfileOutcomeCallable;
@@ -491,8 +481,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~DeviceFarmClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "Device Farm"; }
 
 
         /**
@@ -899,8 +887,8 @@ namespace Model
 
         /**
          * <p> Deletes a Selenium testing project and all content generated under it. </p>
-         * <important> <p>You cannot undo this operation.</p> </important> <note> <p>You
-         * cannot delete a project if it has active sessions.</p> </note><p><h3>See
+         *  <p>You cannot undo this operation.</p>   <p>You
+         * cannot delete a project if it has active sessions.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteTestGridProject">AWS
          * API Reference</a></p>
@@ -909,8 +897,8 @@ namespace Model
 
         /**
          * <p> Deletes a Selenium testing project and all content generated under it. </p>
-         * <important> <p>You cannot undo this operation.</p> </important> <note> <p>You
-         * cannot delete a project if it has active sessions.</p> </note><p><h3>See
+         *  <p>You cannot undo this operation.</p>   <p>You
+         * cannot delete a project if it has active sessions.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteTestGridProject">AWS
          * API Reference</a></p>
@@ -921,8 +909,8 @@ namespace Model
 
         /**
          * <p> Deletes a Selenium testing project and all content generated under it. </p>
-         * <important> <p>You cannot undo this operation.</p> </important> <note> <p>You
-         * cannot delete a project if it has active sessions.</p> </note><p><h3>See
+         *  <p>You cannot undo this operation.</p>   <p>You
+         * cannot delete a project if it has active sessions.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteTestGridProject">AWS
          * API Reference</a></p>

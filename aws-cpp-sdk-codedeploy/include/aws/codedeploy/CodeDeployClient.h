@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
@@ -33,6 +23,7 @@
 #include <aws/codedeploy/model/CreateDeploymentGroupResult.h>
 #include <aws/codedeploy/model/DeleteDeploymentGroupResult.h>
 #include <aws/codedeploy/model/DeleteGitHubAccountTokenResult.h>
+#include <aws/codedeploy/model/DeleteResourcesByExternalIdResult.h>
 #include <aws/codedeploy/model/GetApplicationResult.h>
 #include <aws/codedeploy/model/GetApplicationRevisionResult.h>
 #include <aws/codedeploy/model/GetDeploymentResult.h>
@@ -110,6 +101,7 @@ namespace Model
         class DeleteDeploymentConfigRequest;
         class DeleteDeploymentGroupRequest;
         class DeleteGitHubAccountTokenRequest;
+        class DeleteResourcesByExternalIdRequest;
         class DeregisterOnPremisesInstanceRequest;
         class GetApplicationRequest;
         class GetApplicationRevisionRequest;
@@ -137,48 +129,49 @@ namespace Model
         class UpdateApplicationRequest;
         class UpdateDeploymentGroupRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeDeployErrors>> AddTagsToOnPremisesInstancesOutcome;
-        typedef Aws::Utils::Outcome<BatchGetApplicationRevisionsResult, Aws::Client::AWSError<CodeDeployErrors>> BatchGetApplicationRevisionsOutcome;
-        typedef Aws::Utils::Outcome<BatchGetApplicationsResult, Aws::Client::AWSError<CodeDeployErrors>> BatchGetApplicationsOutcome;
-        typedef Aws::Utils::Outcome<BatchGetDeploymentGroupsResult, Aws::Client::AWSError<CodeDeployErrors>> BatchGetDeploymentGroupsOutcome;
-        typedef Aws::Utils::Outcome<BatchGetDeploymentTargetsResult, Aws::Client::AWSError<CodeDeployErrors>> BatchGetDeploymentTargetsOutcome;
-        typedef Aws::Utils::Outcome<BatchGetDeploymentsResult, Aws::Client::AWSError<CodeDeployErrors>> BatchGetDeploymentsOutcome;
-        typedef Aws::Utils::Outcome<BatchGetOnPremisesInstancesResult, Aws::Client::AWSError<CodeDeployErrors>> BatchGetOnPremisesInstancesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeDeployErrors>> ContinueDeploymentOutcome;
-        typedef Aws::Utils::Outcome<CreateApplicationResult, Aws::Client::AWSError<CodeDeployErrors>> CreateApplicationOutcome;
-        typedef Aws::Utils::Outcome<CreateDeploymentResult, Aws::Client::AWSError<CodeDeployErrors>> CreateDeploymentOutcome;
-        typedef Aws::Utils::Outcome<CreateDeploymentConfigResult, Aws::Client::AWSError<CodeDeployErrors>> CreateDeploymentConfigOutcome;
-        typedef Aws::Utils::Outcome<CreateDeploymentGroupResult, Aws::Client::AWSError<CodeDeployErrors>> CreateDeploymentGroupOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeDeployErrors>> DeleteApplicationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeDeployErrors>> DeleteDeploymentConfigOutcome;
-        typedef Aws::Utils::Outcome<DeleteDeploymentGroupResult, Aws::Client::AWSError<CodeDeployErrors>> DeleteDeploymentGroupOutcome;
-        typedef Aws::Utils::Outcome<DeleteGitHubAccountTokenResult, Aws::Client::AWSError<CodeDeployErrors>> DeleteGitHubAccountTokenOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeDeployErrors>> DeregisterOnPremisesInstanceOutcome;
-        typedef Aws::Utils::Outcome<GetApplicationResult, Aws::Client::AWSError<CodeDeployErrors>> GetApplicationOutcome;
-        typedef Aws::Utils::Outcome<GetApplicationRevisionResult, Aws::Client::AWSError<CodeDeployErrors>> GetApplicationRevisionOutcome;
-        typedef Aws::Utils::Outcome<GetDeploymentResult, Aws::Client::AWSError<CodeDeployErrors>> GetDeploymentOutcome;
-        typedef Aws::Utils::Outcome<GetDeploymentConfigResult, Aws::Client::AWSError<CodeDeployErrors>> GetDeploymentConfigOutcome;
-        typedef Aws::Utils::Outcome<GetDeploymentGroupResult, Aws::Client::AWSError<CodeDeployErrors>> GetDeploymentGroupOutcome;
-        typedef Aws::Utils::Outcome<GetDeploymentTargetResult, Aws::Client::AWSError<CodeDeployErrors>> GetDeploymentTargetOutcome;
-        typedef Aws::Utils::Outcome<GetOnPremisesInstanceResult, Aws::Client::AWSError<CodeDeployErrors>> GetOnPremisesInstanceOutcome;
-        typedef Aws::Utils::Outcome<ListApplicationRevisionsResult, Aws::Client::AWSError<CodeDeployErrors>> ListApplicationRevisionsOutcome;
-        typedef Aws::Utils::Outcome<ListApplicationsResult, Aws::Client::AWSError<CodeDeployErrors>> ListApplicationsOutcome;
-        typedef Aws::Utils::Outcome<ListDeploymentConfigsResult, Aws::Client::AWSError<CodeDeployErrors>> ListDeploymentConfigsOutcome;
-        typedef Aws::Utils::Outcome<ListDeploymentGroupsResult, Aws::Client::AWSError<CodeDeployErrors>> ListDeploymentGroupsOutcome;
-        typedef Aws::Utils::Outcome<ListDeploymentTargetsResult, Aws::Client::AWSError<CodeDeployErrors>> ListDeploymentTargetsOutcome;
-        typedef Aws::Utils::Outcome<ListDeploymentsResult, Aws::Client::AWSError<CodeDeployErrors>> ListDeploymentsOutcome;
-        typedef Aws::Utils::Outcome<ListGitHubAccountTokenNamesResult, Aws::Client::AWSError<CodeDeployErrors>> ListGitHubAccountTokenNamesOutcome;
-        typedef Aws::Utils::Outcome<ListOnPremisesInstancesResult, Aws::Client::AWSError<CodeDeployErrors>> ListOnPremisesInstancesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<CodeDeployErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PutLifecycleEventHookExecutionStatusResult, Aws::Client::AWSError<CodeDeployErrors>> PutLifecycleEventHookExecutionStatusOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeDeployErrors>> RegisterApplicationRevisionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeDeployErrors>> RegisterOnPremisesInstanceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeDeployErrors>> RemoveTagsFromOnPremisesInstancesOutcome;
-        typedef Aws::Utils::Outcome<StopDeploymentResult, Aws::Client::AWSError<CodeDeployErrors>> StopDeploymentOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<CodeDeployErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<CodeDeployErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeDeployErrors>> UpdateApplicationOutcome;
-        typedef Aws::Utils::Outcome<UpdateDeploymentGroupResult, Aws::Client::AWSError<CodeDeployErrors>> UpdateDeploymentGroupOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CodeDeployError> AddTagsToOnPremisesInstancesOutcome;
+        typedef Aws::Utils::Outcome<BatchGetApplicationRevisionsResult, CodeDeployError> BatchGetApplicationRevisionsOutcome;
+        typedef Aws::Utils::Outcome<BatchGetApplicationsResult, CodeDeployError> BatchGetApplicationsOutcome;
+        typedef Aws::Utils::Outcome<BatchGetDeploymentGroupsResult, CodeDeployError> BatchGetDeploymentGroupsOutcome;
+        typedef Aws::Utils::Outcome<BatchGetDeploymentTargetsResult, CodeDeployError> BatchGetDeploymentTargetsOutcome;
+        typedef Aws::Utils::Outcome<BatchGetDeploymentsResult, CodeDeployError> BatchGetDeploymentsOutcome;
+        typedef Aws::Utils::Outcome<BatchGetOnPremisesInstancesResult, CodeDeployError> BatchGetOnPremisesInstancesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CodeDeployError> ContinueDeploymentOutcome;
+        typedef Aws::Utils::Outcome<CreateApplicationResult, CodeDeployError> CreateApplicationOutcome;
+        typedef Aws::Utils::Outcome<CreateDeploymentResult, CodeDeployError> CreateDeploymentOutcome;
+        typedef Aws::Utils::Outcome<CreateDeploymentConfigResult, CodeDeployError> CreateDeploymentConfigOutcome;
+        typedef Aws::Utils::Outcome<CreateDeploymentGroupResult, CodeDeployError> CreateDeploymentGroupOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CodeDeployError> DeleteApplicationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CodeDeployError> DeleteDeploymentConfigOutcome;
+        typedef Aws::Utils::Outcome<DeleteDeploymentGroupResult, CodeDeployError> DeleteDeploymentGroupOutcome;
+        typedef Aws::Utils::Outcome<DeleteGitHubAccountTokenResult, CodeDeployError> DeleteGitHubAccountTokenOutcome;
+        typedef Aws::Utils::Outcome<DeleteResourcesByExternalIdResult, CodeDeployError> DeleteResourcesByExternalIdOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CodeDeployError> DeregisterOnPremisesInstanceOutcome;
+        typedef Aws::Utils::Outcome<GetApplicationResult, CodeDeployError> GetApplicationOutcome;
+        typedef Aws::Utils::Outcome<GetApplicationRevisionResult, CodeDeployError> GetApplicationRevisionOutcome;
+        typedef Aws::Utils::Outcome<GetDeploymentResult, CodeDeployError> GetDeploymentOutcome;
+        typedef Aws::Utils::Outcome<GetDeploymentConfigResult, CodeDeployError> GetDeploymentConfigOutcome;
+        typedef Aws::Utils::Outcome<GetDeploymentGroupResult, CodeDeployError> GetDeploymentGroupOutcome;
+        typedef Aws::Utils::Outcome<GetDeploymentTargetResult, CodeDeployError> GetDeploymentTargetOutcome;
+        typedef Aws::Utils::Outcome<GetOnPremisesInstanceResult, CodeDeployError> GetOnPremisesInstanceOutcome;
+        typedef Aws::Utils::Outcome<ListApplicationRevisionsResult, CodeDeployError> ListApplicationRevisionsOutcome;
+        typedef Aws::Utils::Outcome<ListApplicationsResult, CodeDeployError> ListApplicationsOutcome;
+        typedef Aws::Utils::Outcome<ListDeploymentConfigsResult, CodeDeployError> ListDeploymentConfigsOutcome;
+        typedef Aws::Utils::Outcome<ListDeploymentGroupsResult, CodeDeployError> ListDeploymentGroupsOutcome;
+        typedef Aws::Utils::Outcome<ListDeploymentTargetsResult, CodeDeployError> ListDeploymentTargetsOutcome;
+        typedef Aws::Utils::Outcome<ListDeploymentsResult, CodeDeployError> ListDeploymentsOutcome;
+        typedef Aws::Utils::Outcome<ListGitHubAccountTokenNamesResult, CodeDeployError> ListGitHubAccountTokenNamesOutcome;
+        typedef Aws::Utils::Outcome<ListOnPremisesInstancesResult, CodeDeployError> ListOnPremisesInstancesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, CodeDeployError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<PutLifecycleEventHookExecutionStatusResult, CodeDeployError> PutLifecycleEventHookExecutionStatusOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CodeDeployError> RegisterApplicationRevisionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CodeDeployError> RegisterOnPremisesInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CodeDeployError> RemoveTagsFromOnPremisesInstancesOutcome;
+        typedef Aws::Utils::Outcome<StopDeploymentResult, CodeDeployError> StopDeploymentOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, CodeDeployError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, CodeDeployError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CodeDeployError> UpdateApplicationOutcome;
+        typedef Aws::Utils::Outcome<UpdateDeploymentGroupResult, CodeDeployError> UpdateDeploymentGroupOutcome;
 
         typedef std::future<AddTagsToOnPremisesInstancesOutcome> AddTagsToOnPremisesInstancesOutcomeCallable;
         typedef std::future<BatchGetApplicationRevisionsOutcome> BatchGetApplicationRevisionsOutcomeCallable;
@@ -196,6 +189,7 @@ namespace Model
         typedef std::future<DeleteDeploymentConfigOutcome> DeleteDeploymentConfigOutcomeCallable;
         typedef std::future<DeleteDeploymentGroupOutcome> DeleteDeploymentGroupOutcomeCallable;
         typedef std::future<DeleteGitHubAccountTokenOutcome> DeleteGitHubAccountTokenOutcomeCallable;
+        typedef std::future<DeleteResourcesByExternalIdOutcome> DeleteResourcesByExternalIdOutcomeCallable;
         typedef std::future<DeregisterOnPremisesInstanceOutcome> DeregisterOnPremisesInstanceOutcomeCallable;
         typedef std::future<GetApplicationOutcome> GetApplicationOutcomeCallable;
         typedef std::future<GetApplicationRevisionOutcome> GetApplicationRevisionOutcomeCallable;
@@ -242,6 +236,7 @@ namespace Model
     typedef std::function<void(const CodeDeployClient*, const Model::DeleteDeploymentConfigRequest&, const Model::DeleteDeploymentConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDeploymentConfigResponseReceivedHandler;
     typedef std::function<void(const CodeDeployClient*, const Model::DeleteDeploymentGroupRequest&, const Model::DeleteDeploymentGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDeploymentGroupResponseReceivedHandler;
     typedef std::function<void(const CodeDeployClient*, const Model::DeleteGitHubAccountTokenRequest&, const Model::DeleteGitHubAccountTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGitHubAccountTokenResponseReceivedHandler;
+    typedef std::function<void(const CodeDeployClient*, const Model::DeleteResourcesByExternalIdRequest&, const Model::DeleteResourcesByExternalIdOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourcesByExternalIdResponseReceivedHandler;
     typedef std::function<void(const CodeDeployClient*, const Model::DeregisterOnPremisesInstanceRequest&, const Model::DeregisterOnPremisesInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterOnPremisesInstanceResponseReceivedHandler;
     typedef std::function<void(const CodeDeployClient*, const Model::GetApplicationRequest&, const Model::GetApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationResponseReceivedHandler;
     typedef std::function<void(const CodeDeployClient*, const Model::GetApplicationRevisionRequest&, const Model::GetApplicationRevisionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationRevisionResponseReceivedHandler;
@@ -353,8 +348,6 @@ namespace Model
 
         virtual ~CodeDeployClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "CodeDeploy"; }
-
 
         /**
          * <p>Adds tags to on-premises instances.</p><p><h3>See Also:</h3>   <a
@@ -414,7 +407,7 @@ namespace Model
 
         /**
          * <p>Gets information about one or more applications. The maximum number of
-         * applications that can be returned is 25.</p><p><h3>See Also:</h3>   <a
+         * applications that can be returned is 100.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplications">AWS
          * API Reference</a></p>
          */
@@ -422,7 +415,7 @@ namespace Model
 
         /**
          * <p>Gets information about one or more applications. The maximum number of
-         * applications that can be returned is 25.</p><p><h3>See Also:</h3>   <a
+         * applications that can be returned is 100.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplications">AWS
          * API Reference</a></p>
          *
@@ -432,7 +425,7 @@ namespace Model
 
         /**
          * <p>Gets information about one or more applications. The maximum number of
-         * applications that can be returned is 25.</p><p><h3>See Also:</h3>   <a
+         * applications that can be returned is 100.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplications">AWS
          * API Reference</a></p>
          *
@@ -473,10 +466,12 @@ namespace Model
          * method works with all compute types and should be used instead of the deprecated
          * <code>BatchGetDeploymentInstances</code>. The maximum number of targets that can
          * be returned is 25.</p> <p> The type of targets returned depends on the
-         * deployment's compute platform: </p> <ul> <li> <p> <b>EC2/On-premises</b>:
-         * Information about EC2 instance targets. </p> </li> <li> <p> <b>AWS Lambda</b>:
-         * Information about Lambda functions targets. </p> </li> <li> <p> <b>Amazon
-         * ECS</b>: Information about Amazon ECS service targets. </p> </li>
+         * deployment's compute platform or deployment method: </p> <ul> <li> <p>
+         * <b>EC2/On-premises</b>: Information about EC2 instance targets. </p> </li> <li>
+         * <p> <b>AWS Lambda</b>: Information about Lambda functions targets. </p> </li>
+         * <li> <p> <b>Amazon ECS</b>: Information about Amazon ECS service targets. </p>
+         * </li> <li> <p> <b>CloudFormation</b>: Information about targets of blue/green
+         * deployments initiated by a CloudFormation stack update.</p> </li>
          * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentTargets">AWS
          * API Reference</a></p>
@@ -488,10 +483,12 @@ namespace Model
          * method works with all compute types and should be used instead of the deprecated
          * <code>BatchGetDeploymentInstances</code>. The maximum number of targets that can
          * be returned is 25.</p> <p> The type of targets returned depends on the
-         * deployment's compute platform: </p> <ul> <li> <p> <b>EC2/On-premises</b>:
-         * Information about EC2 instance targets. </p> </li> <li> <p> <b>AWS Lambda</b>:
-         * Information about Lambda functions targets. </p> </li> <li> <p> <b>Amazon
-         * ECS</b>: Information about Amazon ECS service targets. </p> </li>
+         * deployment's compute platform or deployment method: </p> <ul> <li> <p>
+         * <b>EC2/On-premises</b>: Information about EC2 instance targets. </p> </li> <li>
+         * <p> <b>AWS Lambda</b>: Information about Lambda functions targets. </p> </li>
+         * <li> <p> <b>Amazon ECS</b>: Information about Amazon ECS service targets. </p>
+         * </li> <li> <p> <b>CloudFormation</b>: Information about targets of blue/green
+         * deployments initiated by a CloudFormation stack update.</p> </li>
          * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentTargets">AWS
          * API Reference</a></p>
@@ -505,10 +502,12 @@ namespace Model
          * method works with all compute types and should be used instead of the deprecated
          * <code>BatchGetDeploymentInstances</code>. The maximum number of targets that can
          * be returned is 25.</p> <p> The type of targets returned depends on the
-         * deployment's compute platform: </p> <ul> <li> <p> <b>EC2/On-premises</b>:
-         * Information about EC2 instance targets. </p> </li> <li> <p> <b>AWS Lambda</b>:
-         * Information about Lambda functions targets. </p> </li> <li> <p> <b>Amazon
-         * ECS</b>: Information about Amazon ECS service targets. </p> </li>
+         * deployment's compute platform or deployment method: </p> <ul> <li> <p>
+         * <b>EC2/On-premises</b>: Information about EC2 instance targets. </p> </li> <li>
+         * <p> <b>AWS Lambda</b>: Information about Lambda functions targets. </p> </li>
+         * <li> <p> <b>Amazon ECS</b>: Information about Amazon ECS service targets. </p>
+         * </li> <li> <p> <b>CloudFormation</b>: Information about targets of blue/green
+         * deployments initiated by a CloudFormation stack update.</p> </li>
          * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentTargets">AWS
          * API Reference</a></p>
@@ -748,18 +747,18 @@ namespace Model
         virtual void DeleteApplicationAsync(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a deployment configuration.</p> <note> <p>A deployment configuration
+         * <p>Deletes a deployment configuration.</p>  <p>A deployment configuration
          * cannot be deleted if it is currently in use. Predefined configurations cannot be
-         * deleted.</p> </note><p><h3>See Also:</h3>   <a
+         * deleted.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentConfig">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteDeploymentConfigOutcome DeleteDeploymentConfig(const Model::DeleteDeploymentConfigRequest& request) const;
 
         /**
-         * <p>Deletes a deployment configuration.</p> <note> <p>A deployment configuration
+         * <p>Deletes a deployment configuration.</p>  <p>A deployment configuration
          * cannot be deleted if it is currently in use. Predefined configurations cannot be
-         * deleted.</p> </note><p><h3>See Also:</h3>   <a
+         * deleted.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentConfig">AWS
          * API Reference</a></p>
          *
@@ -768,9 +767,9 @@ namespace Model
         virtual Model::DeleteDeploymentConfigOutcomeCallable DeleteDeploymentConfigCallable(const Model::DeleteDeploymentConfigRequest& request) const;
 
         /**
-         * <p>Deletes a deployment configuration.</p> <note> <p>A deployment configuration
+         * <p>Deletes a deployment configuration.</p>  <p>A deployment configuration
          * cannot be deleted if it is currently in use. Predefined configurations cannot be
-         * deleted.</p> </note><p><h3>See Also:</h3>   <a
+         * deleted.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentConfig">AWS
          * API Reference</a></p>
          *
@@ -827,6 +826,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteGitHubAccountTokenAsync(const Model::DeleteGitHubAccountTokenRequest& request, const DeleteGitHubAccountTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes resources linked to an external ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteResourcesByExternalId">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteResourcesByExternalIdOutcome DeleteResourcesByExternalId(const Model::DeleteResourcesByExternalIdRequest& request) const;
+
+        /**
+         * <p>Deletes resources linked to an external ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteResourcesByExternalId">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteResourcesByExternalIdOutcomeCallable DeleteResourcesByExternalIdCallable(const Model::DeleteResourcesByExternalIdRequest& request) const;
+
+        /**
+         * <p>Deletes resources linked to an external ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteResourcesByExternalId">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteResourcesByExternalIdAsync(const Model::DeleteResourcesByExternalIdRequest& request, const DeleteResourcesByExternalIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deregisters an on-premises instance.</p><p><h3>See Also:</h3>   <a
@@ -904,22 +928,22 @@ namespace Model
         virtual void GetApplicationRevisionAsync(const Model::GetApplicationRevisionRequest& request, const GetApplicationRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a deployment.</p> <note> <p> The <code>content</code>
+         * <p>Gets information about a deployment.</p>  <p> The <code>content</code>
          * property of the <code>appSpecContent</code> object in the returned revision is
          * always null. Use <code>GetApplicationRevision</code> and the <code>sha256</code>
          * property of the returned <code>appSpecContent</code> object to get the content
-         * of the deployment’s AppSpec file. </p> </note><p><h3>See Also:</h3>   <a
+         * of the deployment’s AppSpec file. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeployment">AWS
          * API Reference</a></p>
          */
         virtual Model::GetDeploymentOutcome GetDeployment(const Model::GetDeploymentRequest& request) const;
 
         /**
-         * <p>Gets information about a deployment.</p> <note> <p> The <code>content</code>
+         * <p>Gets information about a deployment.</p>  <p> The <code>content</code>
          * property of the <code>appSpecContent</code> object in the returned revision is
          * always null. Use <code>GetApplicationRevision</code> and the <code>sha256</code>
          * property of the returned <code>appSpecContent</code> object to get the content
-         * of the deployment’s AppSpec file. </p> </note><p><h3>See Also:</h3>   <a
+         * of the deployment’s AppSpec file. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeployment">AWS
          * API Reference</a></p>
          *
@@ -928,11 +952,11 @@ namespace Model
         virtual Model::GetDeploymentOutcomeCallable GetDeploymentCallable(const Model::GetDeploymentRequest& request) const;
 
         /**
-         * <p>Gets information about a deployment.</p> <note> <p> The <code>content</code>
+         * <p>Gets information about a deployment.</p>  <p> The <code>content</code>
          * property of the <code>appSpecContent</code> object in the returned revision is
          * always null. Use <code>GetApplicationRevision</code> and the <code>sha256</code>
          * property of the returned <code>appSpecContent</code> object to get the content
-         * of the deployment’s AppSpec file. </p> </note><p><h3>See Also:</h3>   <a
+         * of the deployment’s AppSpec file. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeployment">AWS
          * API Reference</a></p>
          *
@@ -1280,18 +1304,18 @@ namespace Model
         virtual void ListOnPremisesInstancesAsync(const Model::ListOnPremisesInstancesRequest& request, const ListOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns a list of tags for the resource identified by a specified ARN. Tags
-         * are used to organize and categorize your CodeDeploy resources. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p> Returns a list of tags for the resource identified by a specified Amazon
+         * Resource Name (ARN). Tags are used to organize and categorize your CodeDeploy
+         * resources. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListTagsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p> Returns a list of tags for the resource identified by a specified ARN. Tags
-         * are used to organize and categorize your CodeDeploy resources. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p> Returns a list of tags for the resource identified by a specified Amazon
+         * Resource Name (ARN). Tags are used to organize and categorize your CodeDeploy
+         * resources. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -1300,9 +1324,9 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p> Returns a list of tags for the resource identified by a specified ARN. Tags
-         * are used to organize and categorize your CodeDeploy resources. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p> Returns a list of tags for the resource identified by a specified Amazon
+         * Resource Name (ARN). Tags are used to organize and categorize your CodeDeploy
+         * resources. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -1311,20 +1335,38 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Sets the result of a Lambda validation function. The function validates one
-         * or both lifecycle events (<code>BeforeAllowTraffic</code> and
-         * <code>AfterAllowTraffic</code>) and returns <code>Succeeded</code> or
-         * <code>Failed</code>. </p><p><h3>See Also:</h3>   <a
+         * <p> Sets the result of a Lambda validation function. The function validates
+         * lifecycle hooks during a deployment that uses the AWS Lambda or Amazon ECS
+         * compute platform. For AWS Lambda deployments, the available lifecycle hooks are
+         * <code>BeforeAllowTraffic</code> and <code>AfterAllowTraffic</code>. For Amazon
+         * ECS deployments, the available lifecycle hooks are <code>BeforeInstall</code>,
+         * <code>AfterInstall</code>, <code>AfterAllowTestTraffic</code>,
+         * <code>BeforeAllowTraffic</code>, and <code>AfterAllowTraffic</code>. Lambda
+         * validation functions return <code>Succeeded</code> or <code>Failed</code>. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-lambda">AppSpec
+         * 'hooks' Section for an AWS Lambda Deployment </a> and <a
+         * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-ecs">AppSpec
+         * 'hooks' Section for an Amazon ECS Deployment</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/PutLifecycleEventHookExecutionStatus">AWS
          * API Reference</a></p>
          */
         virtual Model::PutLifecycleEventHookExecutionStatusOutcome PutLifecycleEventHookExecutionStatus(const Model::PutLifecycleEventHookExecutionStatusRequest& request) const;
 
         /**
-         * <p> Sets the result of a Lambda validation function. The function validates one
-         * or both lifecycle events (<code>BeforeAllowTraffic</code> and
-         * <code>AfterAllowTraffic</code>) and returns <code>Succeeded</code> or
-         * <code>Failed</code>. </p><p><h3>See Also:</h3>   <a
+         * <p> Sets the result of a Lambda validation function. The function validates
+         * lifecycle hooks during a deployment that uses the AWS Lambda or Amazon ECS
+         * compute platform. For AWS Lambda deployments, the available lifecycle hooks are
+         * <code>BeforeAllowTraffic</code> and <code>AfterAllowTraffic</code>. For Amazon
+         * ECS deployments, the available lifecycle hooks are <code>BeforeInstall</code>,
+         * <code>AfterInstall</code>, <code>AfterAllowTestTraffic</code>,
+         * <code>BeforeAllowTraffic</code>, and <code>AfterAllowTraffic</code>. Lambda
+         * validation functions return <code>Succeeded</code> or <code>Failed</code>. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-lambda">AppSpec
+         * 'hooks' Section for an AWS Lambda Deployment </a> and <a
+         * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-ecs">AppSpec
+         * 'hooks' Section for an Amazon ECS Deployment</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/PutLifecycleEventHookExecutionStatus">AWS
          * API Reference</a></p>
          *
@@ -1333,10 +1375,19 @@ namespace Model
         virtual Model::PutLifecycleEventHookExecutionStatusOutcomeCallable PutLifecycleEventHookExecutionStatusCallable(const Model::PutLifecycleEventHookExecutionStatusRequest& request) const;
 
         /**
-         * <p> Sets the result of a Lambda validation function. The function validates one
-         * or both lifecycle events (<code>BeforeAllowTraffic</code> and
-         * <code>AfterAllowTraffic</code>) and returns <code>Succeeded</code> or
-         * <code>Failed</code>. </p><p><h3>See Also:</h3>   <a
+         * <p> Sets the result of a Lambda validation function. The function validates
+         * lifecycle hooks during a deployment that uses the AWS Lambda or Amazon ECS
+         * compute platform. For AWS Lambda deployments, the available lifecycle hooks are
+         * <code>BeforeAllowTraffic</code> and <code>AfterAllowTraffic</code>. For Amazon
+         * ECS deployments, the available lifecycle hooks are <code>BeforeInstall</code>,
+         * <code>AfterInstall</code>, <code>AfterAllowTestTraffic</code>,
+         * <code>BeforeAllowTraffic</code>, and <code>AfterAllowTraffic</code>. Lambda
+         * validation functions return <code>Succeeded</code> or <code>Failed</code>. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-lambda">AppSpec
+         * 'hooks' Section for an AWS Lambda Deployment </a> and <a
+         * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-ecs">AppSpec
+         * 'hooks' Section for an Amazon ECS Deployment</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/PutLifecycleEventHookExecutionStatus">AWS
          * API Reference</a></p>
          *
@@ -1373,18 +1424,18 @@ namespace Model
         virtual void RegisterApplicationRevisionAsync(const Model::RegisterApplicationRevisionRequest& request, const RegisterApplicationRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Registers an on-premises instance.</p> <note> <p>Only one IAM ARN (an IAM
+         * <p>Registers an on-premises instance.</p>  <p>Only one IAM ARN (an IAM
          * session ARN or IAM user ARN) is supported in the request. You cannot use
-         * both.</p> </note><p><h3>See Also:</h3>   <a
+         * both.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterOnPremisesInstance">AWS
          * API Reference</a></p>
          */
         virtual Model::RegisterOnPremisesInstanceOutcome RegisterOnPremisesInstance(const Model::RegisterOnPremisesInstanceRequest& request) const;
 
         /**
-         * <p>Registers an on-premises instance.</p> <note> <p>Only one IAM ARN (an IAM
+         * <p>Registers an on-premises instance.</p>  <p>Only one IAM ARN (an IAM
          * session ARN or IAM user ARN) is supported in the request. You cannot use
-         * both.</p> </note><p><h3>See Also:</h3>   <a
+         * both.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterOnPremisesInstance">AWS
          * API Reference</a></p>
          *
@@ -1393,9 +1444,9 @@ namespace Model
         virtual Model::RegisterOnPremisesInstanceOutcomeCallable RegisterOnPremisesInstanceCallable(const Model::RegisterOnPremisesInstanceRequest& request) const;
 
         /**
-         * <p>Registers an on-premises instance.</p> <note> <p>Only one IAM ARN (an IAM
+         * <p>Registers an on-premises instance.</p>  <p>Only one IAM ARN (an IAM
          * session ARN or IAM user ARN) is supported in the request. You cannot use
-         * both.</p> </note><p><h3>See Also:</h3>   <a
+         * both.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterOnPremisesInstance">AWS
          * API Reference</a></p>
          *
@@ -1489,9 +1540,9 @@ namespace Model
 
         /**
          * <p> Disassociates a resource from a list of tags. The resource is identified by
-         * the <code>ResourceArn</code> input parameter. The tags are identfied by the list
-         * of keys in the <code>TagKeys</code> input parameter. </p><p><h3>See Also:</h3>  
-         * <a
+         * the <code>ResourceArn</code> input parameter. The tags are identified by the
+         * list of keys in the <code>TagKeys</code> input parameter. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -1499,9 +1550,9 @@ namespace Model
 
         /**
          * <p> Disassociates a resource from a list of tags. The resource is identified by
-         * the <code>ResourceArn</code> input parameter. The tags are identfied by the list
-         * of keys in the <code>TagKeys</code> input parameter. </p><p><h3>See Also:</h3>  
-         * <a
+         * the <code>ResourceArn</code> input parameter. The tags are identified by the
+         * list of keys in the <code>TagKeys</code> input parameter. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -1511,9 +1562,9 @@ namespace Model
 
         /**
          * <p> Disassociates a resource from a list of tags. The resource is identified by
-         * the <code>ResourceArn</code> input parameter. The tags are identfied by the list
-         * of keys in the <code>TagKeys</code> input parameter. </p><p><h3>See Also:</h3>  
-         * <a
+         * the <code>ResourceArn</code> input parameter. The tags are identified by the
+         * list of keys in the <code>TagKeys</code> input parameter. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -1591,6 +1642,7 @@ namespace Model
         void DeleteDeploymentConfigAsyncHelper(const Model::DeleteDeploymentConfigRequest& request, const DeleteDeploymentConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDeploymentGroupAsyncHelper(const Model::DeleteDeploymentGroupRequest& request, const DeleteDeploymentGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteGitHubAccountTokenAsyncHelper(const Model::DeleteGitHubAccountTokenRequest& request, const DeleteGitHubAccountTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteResourcesByExternalIdAsyncHelper(const Model::DeleteResourcesByExternalIdRequest& request, const DeleteResourcesByExternalIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeregisterOnPremisesInstanceAsyncHelper(const Model::DeregisterOnPremisesInstanceRequest& request, const DeregisterOnPremisesInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetApplicationAsyncHelper(const Model::GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetApplicationRevisionAsyncHelper(const Model::GetApplicationRevisionRequest& request, const GetApplicationRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

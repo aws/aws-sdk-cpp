@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -51,7 +41,7 @@ static const char* ALLOCATION_TAG = "AugmentedAIRuntimeClient";
 AugmentedAIRuntimeClient::AugmentedAIRuntimeClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<AugmentedAIRuntimeErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -61,7 +51,7 @@ AugmentedAIRuntimeClient::AugmentedAIRuntimeClient(const Client::ClientConfigura
 AugmentedAIRuntimeClient::AugmentedAIRuntimeClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<AugmentedAIRuntimeErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -72,7 +62,7 @@ AugmentedAIRuntimeClient::AugmentedAIRuntimeClient(const std::shared_ptr<AWSCred
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<AugmentedAIRuntimeErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -85,6 +75,7 @@ AugmentedAIRuntimeClient::~AugmentedAIRuntimeClient()
 
 void AugmentedAIRuntimeClient::init(const ClientConfiguration& config)
 {
+  SetServiceClientName("SageMaker A2I Runtime");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -120,15 +111,7 @@ DeleteHumanLoopOutcome AugmentedAIRuntimeClient::DeleteHumanLoop(const DeleteHum
   ss << "/human-loops/";
   ss << request.GetHumanLoopName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteHumanLoopOutcome(DeleteHumanLoopResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteHumanLoopOutcome(outcome.GetError());
-  }
+  return DeleteHumanLoopOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteHumanLoopOutcomeCallable AugmentedAIRuntimeClient::DeleteHumanLoopCallable(const DeleteHumanLoopRequest& request) const
@@ -161,15 +144,7 @@ DescribeHumanLoopOutcome AugmentedAIRuntimeClient::DescribeHumanLoop(const Descr
   ss << "/human-loops/";
   ss << request.GetHumanLoopName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeHumanLoopOutcome(DescribeHumanLoopResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeHumanLoopOutcome(outcome.GetError());
-  }
+  return DescribeHumanLoopOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeHumanLoopOutcomeCallable AugmentedAIRuntimeClient::DescribeHumanLoopCallable(const DescribeHumanLoopRequest& request) const
@@ -201,15 +176,7 @@ ListHumanLoopsOutcome AugmentedAIRuntimeClient::ListHumanLoops(const ListHumanLo
   Aws::StringStream ss;
   ss << "/human-loops";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListHumanLoopsOutcome(ListHumanLoopsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListHumanLoopsOutcome(outcome.GetError());
-  }
+  return ListHumanLoopsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListHumanLoopsOutcomeCallable AugmentedAIRuntimeClient::ListHumanLoopsCallable(const ListHumanLoopsRequest& request) const
@@ -236,15 +203,7 @@ StartHumanLoopOutcome AugmentedAIRuntimeClient::StartHumanLoop(const StartHumanL
   Aws::StringStream ss;
   ss << "/human-loops";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartHumanLoopOutcome(StartHumanLoopResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartHumanLoopOutcome(outcome.GetError());
-  }
+  return StartHumanLoopOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartHumanLoopOutcomeCallable AugmentedAIRuntimeClient::StartHumanLoopCallable(const StartHumanLoopRequest& request) const
@@ -271,15 +230,7 @@ StopHumanLoopOutcome AugmentedAIRuntimeClient::StopHumanLoop(const StopHumanLoop
   Aws::StringStream ss;
   ss << "/human-loops/stop";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StopHumanLoopOutcome(StopHumanLoopResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StopHumanLoopOutcome(outcome.GetError());
-  }
+  return StopHumanLoopOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopHumanLoopOutcomeCallable AugmentedAIRuntimeClient::StopHumanLoopCallable(const StopHumanLoopRequest& request) const

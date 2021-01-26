@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
@@ -106,58 +96,58 @@ namespace Model
 
 
     /**
-     * <p>The descriptive message including the error the EMR service has identified as
-     * the cause of step failure. This is text from an error log that describes the
-     * root cause of the failure.</p>
+     * <p>The descriptive message including the error the Amazon EMR service has
+     * identified as the cause of step failure. This is text from an error log that
+     * describes the root cause of the failure.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p>The descriptive message including the error the EMR service has identified as
-     * the cause of step failure. This is text from an error log that describes the
-     * root cause of the failure.</p>
+     * <p>The descriptive message including the error the Amazon EMR service has
+     * identified as the cause of step failure. This is text from an error log that
+     * describes the root cause of the failure.</p>
      */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
-     * <p>The descriptive message including the error the EMR service has identified as
-     * the cause of step failure. This is text from an error log that describes the
-     * root cause of the failure.</p>
+     * <p>The descriptive message including the error the Amazon EMR service has
+     * identified as the cause of step failure. This is text from an error log that
+     * describes the root cause of the failure.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p>The descriptive message including the error the EMR service has identified as
-     * the cause of step failure. This is text from an error log that describes the
-     * root cause of the failure.</p>
+     * <p>The descriptive message including the error the Amazon EMR service has
+     * identified as the cause of step failure. This is text from an error log that
+     * describes the root cause of the failure.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
-     * <p>The descriptive message including the error the EMR service has identified as
-     * the cause of step failure. This is text from an error log that describes the
-     * root cause of the failure.</p>
+     * <p>The descriptive message including the error the Amazon EMR service has
+     * identified as the cause of step failure. This is text from an error log that
+     * describes the root cause of the failure.</p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * <p>The descriptive message including the error the EMR service has identified as
-     * the cause of step failure. This is text from an error log that describes the
-     * root cause of the failure.</p>
+     * <p>The descriptive message including the error the Amazon EMR service has
+     * identified as the cause of step failure. This is text from an error log that
+     * describes the root cause of the failure.</p>
      */
     inline FailureDetails& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>The descriptive message including the error the EMR service has identified as
-     * the cause of step failure. This is text from an error log that describes the
-     * root cause of the failure.</p>
+     * <p>The descriptive message including the error the Amazon EMR service has
+     * identified as the cause of step failure. This is text from an error log that
+     * describes the root cause of the failure.</p>
      */
     inline FailureDetails& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * <p>The descriptive message including the error the EMR service has identified as
-     * the cause of step failure. This is text from an error log that describes the
-     * root cause of the failure.</p>
+     * <p>The descriptive message including the error the Amazon EMR service has
+     * identified as the cause of step failure. This is text from an error log that
+     * describes the root cause of the failure.</p>
      */
     inline FailureDetails& WithMessage(const char* value) { SetMessage(value); return *this;}
 

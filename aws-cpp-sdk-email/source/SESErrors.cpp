@@ -1,30 +1,189 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/email/SESErrors.h>
+#include <aws/email/model/ConfigurationSetDoesNotExistException.h>
+#include <aws/email/model/InvalidFirehoseDestinationException.h>
+#include <aws/email/model/InvalidSnsTopicException.h>
+#include <aws/email/model/TrackingOptionsDoesNotExistException.h>
+#include <aws/email/model/ConfigurationSetSendingPausedException.h>
+#include <aws/email/model/InvalidS3ConfigurationException.h>
+#include <aws/email/model/EventDestinationDoesNotExistException.h>
+#include <aws/email/model/TemplateDoesNotExistException.h>
+#include <aws/email/model/MissingRenderingAttributeException.h>
+#include <aws/email/model/ConfigurationSetAlreadyExistsException.h>
+#include <aws/email/model/EventDestinationAlreadyExistsException.h>
+#include <aws/email/model/CustomVerificationEmailTemplateDoesNotExistException.h>
+#include <aws/email/model/InvalidLambdaFunctionException.h>
+#include <aws/email/model/InvalidCloudWatchDestinationException.h>
+#include <aws/email/model/InvalidRenderingParameterException.h>
+#include <aws/email/model/InvalidSNSDestinationException.h>
+#include <aws/email/model/AlreadyExistsException.h>
+#include <aws/email/model/TrackingOptionsAlreadyExistsException.h>
+#include <aws/email/model/InvalidTemplateException.h>
+#include <aws/email/model/FromEmailAddressNotVerifiedException.h>
+#include <aws/email/model/CannotDeleteException.h>
+#include <aws/email/model/RuleSetDoesNotExistException.h>
+#include <aws/email/model/CustomVerificationEmailTemplateAlreadyExistsException.h>
+#include <aws/email/model/RuleDoesNotExistException.h>
 
 using namespace Aws::Client;
-using namespace Aws::SES;
 using namespace Aws::Utils;
+using namespace Aws::SES;
+using namespace Aws::SES::Model;
 
 namespace Aws
 {
 namespace SES
 {
+template<> AWS_SES_API ConfigurationSetDoesNotExistException SESError::GetModeledError()
+{
+  assert(this->GetErrorType() == SESErrors::CONFIGURATION_SET_DOES_NOT_EXIST);
+  return ConfigurationSetDoesNotExistException(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SES_API InvalidFirehoseDestinationException SESError::GetModeledError()
+{
+  assert(this->GetErrorType() == SESErrors::INVALID_FIREHOSE_DESTINATION);
+  return InvalidFirehoseDestinationException(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SES_API InvalidSnsTopicException SESError::GetModeledError()
+{
+  assert(this->GetErrorType() == SESErrors::INVALID_SNS_TOPIC);
+  return InvalidSnsTopicException(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SES_API TrackingOptionsDoesNotExistException SESError::GetModeledError()
+{
+  assert(this->GetErrorType() == SESErrors::TRACKING_OPTIONS_DOES_NOT_EXIST);
+  return TrackingOptionsDoesNotExistException(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SES_API ConfigurationSetSendingPausedException SESError::GetModeledError()
+{
+  assert(this->GetErrorType() == SESErrors::CONFIGURATION_SET_SENDING_PAUSED);
+  return ConfigurationSetSendingPausedException(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SES_API InvalidS3ConfigurationException SESError::GetModeledError()
+{
+  assert(this->GetErrorType() == SESErrors::INVALID_S3_CONFIGURATION);
+  return InvalidS3ConfigurationException(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SES_API EventDestinationDoesNotExistException SESError::GetModeledError()
+{
+  assert(this->GetErrorType() == SESErrors::EVENT_DESTINATION_DOES_NOT_EXIST);
+  return EventDestinationDoesNotExistException(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SES_API TemplateDoesNotExistException SESError::GetModeledError()
+{
+  assert(this->GetErrorType() == SESErrors::TEMPLATE_DOES_NOT_EXIST);
+  return TemplateDoesNotExistException(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SES_API MissingRenderingAttributeException SESError::GetModeledError()
+{
+  assert(this->GetErrorType() == SESErrors::MISSING_RENDERING_ATTRIBUTE);
+  return MissingRenderingAttributeException(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SES_API ConfigurationSetAlreadyExistsException SESError::GetModeledError()
+{
+  assert(this->GetErrorType() == SESErrors::CONFIGURATION_SET_ALREADY_EXISTS);
+  return ConfigurationSetAlreadyExistsException(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SES_API EventDestinationAlreadyExistsException SESError::GetModeledError()
+{
+  assert(this->GetErrorType() == SESErrors::EVENT_DESTINATION_ALREADY_EXISTS);
+  return EventDestinationAlreadyExistsException(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SES_API CustomVerificationEmailTemplateDoesNotExistException SESError::GetModeledError()
+{
+  assert(this->GetErrorType() == SESErrors::CUSTOM_VERIFICATION_EMAIL_TEMPLATE_DOES_NOT_EXIST);
+  return CustomVerificationEmailTemplateDoesNotExistException(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SES_API InvalidLambdaFunctionException SESError::GetModeledError()
+{
+  assert(this->GetErrorType() == SESErrors::INVALID_LAMBDA_FUNCTION);
+  return InvalidLambdaFunctionException(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SES_API InvalidCloudWatchDestinationException SESError::GetModeledError()
+{
+  assert(this->GetErrorType() == SESErrors::INVALID_CLOUD_WATCH_DESTINATION);
+  return InvalidCloudWatchDestinationException(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SES_API InvalidRenderingParameterException SESError::GetModeledError()
+{
+  assert(this->GetErrorType() == SESErrors::INVALID_RENDERING_PARAMETER);
+  return InvalidRenderingParameterException(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SES_API InvalidSNSDestinationException SESError::GetModeledError()
+{
+  assert(this->GetErrorType() == SESErrors::INVALID_S_N_S_DESTINATION);
+  return InvalidSNSDestinationException(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SES_API AlreadyExistsException SESError::GetModeledError()
+{
+  assert(this->GetErrorType() == SESErrors::ALREADY_EXISTS);
+  return AlreadyExistsException(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SES_API TrackingOptionsAlreadyExistsException SESError::GetModeledError()
+{
+  assert(this->GetErrorType() == SESErrors::TRACKING_OPTIONS_ALREADY_EXISTS);
+  return TrackingOptionsAlreadyExistsException(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SES_API InvalidTemplateException SESError::GetModeledError()
+{
+  assert(this->GetErrorType() == SESErrors::INVALID_TEMPLATE);
+  return InvalidTemplateException(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SES_API FromEmailAddressNotVerifiedException SESError::GetModeledError()
+{
+  assert(this->GetErrorType() == SESErrors::FROM_EMAIL_ADDRESS_NOT_VERIFIED);
+  return FromEmailAddressNotVerifiedException(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SES_API CannotDeleteException SESError::GetModeledError()
+{
+  assert(this->GetErrorType() == SESErrors::CANNOT_DELETE);
+  return CannotDeleteException(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SES_API RuleSetDoesNotExistException SESError::GetModeledError()
+{
+  assert(this->GetErrorType() == SESErrors::RULE_SET_DOES_NOT_EXIST);
+  return RuleSetDoesNotExistException(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SES_API CustomVerificationEmailTemplateAlreadyExistsException SESError::GetModeledError()
+{
+  assert(this->GetErrorType() == SESErrors::CUSTOM_VERIFICATION_EMAIL_TEMPLATE_ALREADY_EXISTS);
+  return CustomVerificationEmailTemplateAlreadyExistsException(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SES_API RuleDoesNotExistException SESError::GetModeledError()
+{
+  assert(this->GetErrorType() == SESErrors::RULE_DOES_NOT_EXIST);
+  return RuleDoesNotExistException(this->GetXmlPayload().GetRootElement());
+}
+
 namespace SESErrorMapper
 {
 
@@ -78,7 +237,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::LIMIT_EXCEEDED), true);
   }
   else if (hashCode == INVALID_TRACKING_OPTIONS_HASH)
   {

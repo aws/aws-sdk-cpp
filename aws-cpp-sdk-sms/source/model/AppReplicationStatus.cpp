@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sms/model/AppReplicationStatus.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -38,6 +28,7 @@ namespace Aws
         static const int REPLICATION_PENDING_HASH = HashingUtils::HashString("REPLICATION_PENDING");
         static const int REPLICATION_IN_PROGRESS_HASH = HashingUtils::HashString("REPLICATION_IN_PROGRESS");
         static const int REPLICATED_HASH = HashingUtils::HashString("REPLICATED");
+        static const int PARTIALLY_REPLICATED_HASH = HashingUtils::HashString("PARTIALLY_REPLICATED");
         static const int DELTA_REPLICATION_IN_PROGRESS_HASH = HashingUtils::HashString("DELTA_REPLICATION_IN_PROGRESS");
         static const int DELTA_REPLICATED_HASH = HashingUtils::HashString("DELTA_REPLICATED");
         static const int DELTA_REPLICATION_FAILED_HASH = HashingUtils::HashString("DELTA_REPLICATION_FAILED");
@@ -81,6 +72,10 @@ namespace Aws
           else if (hashCode == REPLICATED_HASH)
           {
             return AppReplicationStatus::REPLICATED;
+          }
+          else if (hashCode == PARTIALLY_REPLICATED_HASH)
+          {
+            return AppReplicationStatus::PARTIALLY_REPLICATED;
           }
           else if (hashCode == DELTA_REPLICATION_IN_PROGRESS_HASH)
           {
@@ -140,6 +135,8 @@ namespace Aws
             return "REPLICATION_IN_PROGRESS";
           case AppReplicationStatus::REPLICATED:
             return "REPLICATED";
+          case AppReplicationStatus::PARTIALLY_REPLICATED:
+            return "PARTIALLY_REPLICATED";
           case AppReplicationStatus::DELTA_REPLICATION_IN_PROGRESS:
             return "DELTA_REPLICATION_IN_PROGRESS";
           case AppReplicationStatus::DELTA_REPLICATED:

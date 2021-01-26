@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/lakeformation/model/DataLakeSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,14 +21,16 @@ namespace Model
 DataLakeSettings::DataLakeSettings() : 
     m_dataLakeAdminsHasBeenSet(false),
     m_createDatabaseDefaultPermissionsHasBeenSet(false),
-    m_createTableDefaultPermissionsHasBeenSet(false)
+    m_createTableDefaultPermissionsHasBeenSet(false),
+    m_trustedResourceOwnersHasBeenSet(false)
 {
 }
 
 DataLakeSettings::DataLakeSettings(JsonView jsonValue) : 
     m_dataLakeAdminsHasBeenSet(false),
     m_createDatabaseDefaultPermissionsHasBeenSet(false),
-    m_createTableDefaultPermissionsHasBeenSet(false)
+    m_createTableDefaultPermissionsHasBeenSet(false),
+    m_trustedResourceOwnersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -73,6 +65,16 @@ DataLakeSettings& DataLakeSettings::operator =(JsonView jsonValue)
       m_createTableDefaultPermissions.push_back(createTableDefaultPermissionsJsonList[createTableDefaultPermissionsIndex].AsObject());
     }
     m_createTableDefaultPermissionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TrustedResourceOwners"))
+  {
+    Array<JsonView> trustedResourceOwnersJsonList = jsonValue.GetArray("TrustedResourceOwners");
+    for(unsigned trustedResourceOwnersIndex = 0; trustedResourceOwnersIndex < trustedResourceOwnersJsonList.GetLength(); ++trustedResourceOwnersIndex)
+    {
+      m_trustedResourceOwners.push_back(trustedResourceOwnersJsonList[trustedResourceOwnersIndex].AsString());
+    }
+    m_trustedResourceOwnersHasBeenSet = true;
   }
 
   return *this;
@@ -112,6 +114,17 @@ JsonValue DataLakeSettings::Jsonize() const
      createTableDefaultPermissionsJsonList[createTableDefaultPermissionsIndex].AsObject(m_createTableDefaultPermissions[createTableDefaultPermissionsIndex].Jsonize());
    }
    payload.WithArray("CreateTableDefaultPermissions", std::move(createTableDefaultPermissionsJsonList));
+
+  }
+
+  if(m_trustedResourceOwnersHasBeenSet)
+  {
+   Array<JsonValue> trustedResourceOwnersJsonList(m_trustedResourceOwners.size());
+   for(unsigned trustedResourceOwnersIndex = 0; trustedResourceOwnersIndex < trustedResourceOwnersJsonList.GetLength(); ++trustedResourceOwnersIndex)
+   {
+     trustedResourceOwnersJsonList[trustedResourceOwnersIndex].AsString(m_trustedResourceOwners[trustedResourceOwnersIndex]);
+   }
+   payload.WithArray("TrustedResourceOwners", std::move(trustedResourceOwnersJsonList));
 
   }
 

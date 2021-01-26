@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iotevents-data/IoTEventsData_EXPORTS.h>
@@ -69,10 +59,10 @@ namespace Model
         class DescribeDetectorRequest;
         class ListDetectorsRequest;
 
-        typedef Aws::Utils::Outcome<BatchPutMessageResult, Aws::Client::AWSError<IoTEventsDataErrors>> BatchPutMessageOutcome;
-        typedef Aws::Utils::Outcome<BatchUpdateDetectorResult, Aws::Client::AWSError<IoTEventsDataErrors>> BatchUpdateDetectorOutcome;
-        typedef Aws::Utils::Outcome<DescribeDetectorResult, Aws::Client::AWSError<IoTEventsDataErrors>> DescribeDetectorOutcome;
-        typedef Aws::Utils::Outcome<ListDetectorsResult, Aws::Client::AWSError<IoTEventsDataErrors>> ListDetectorsOutcome;
+        typedef Aws::Utils::Outcome<BatchPutMessageResult, IoTEventsDataError> BatchPutMessageOutcome;
+        typedef Aws::Utils::Outcome<BatchUpdateDetectorResult, IoTEventsDataError> BatchUpdateDetectorOutcome;
+        typedef Aws::Utils::Outcome<DescribeDetectorResult, IoTEventsDataError> DescribeDetectorOutcome;
+        typedef Aws::Utils::Outcome<ListDetectorsResult, IoTEventsDataError> ListDetectorsOutcome;
 
         typedef std::future<BatchPutMessageOutcome> BatchPutMessageOutcomeCallable;
         typedef std::future<BatchUpdateDetectorOutcome> BatchUpdateDetectorOutcomeCallable;
@@ -118,8 +108,6 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~IoTEventsDataClient();
-
-        inline virtual const char* GetServiceClientName() const override { return "IoT Events Data"; }
 
 
         /**
