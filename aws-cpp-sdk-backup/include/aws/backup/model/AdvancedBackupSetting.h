@@ -40,58 +40,82 @@ namespace Model
 
 
     /**
-     * <p>The type of AWS resource to be backed up. For VSS Windows backups, the only
-     * supported resource type is Amazon EC2.</p> <p>Valid values:
-     * <code>EC2</code>.</p>
+     * <p>Specifies an object containing resource type and backup options. The only
+     * supported resource type is Amazon EC2 instances with Windows VSS. For an
+     * CloudFormation example, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/integrate-cloudformation-with-aws-backup.html">sample
+     * CloudFormation template to enable Windows VSS</a> in the <i>AWS Backup User
+     * Guide</i>.</p> <p>Valid values: <code>EC2</code>.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of AWS resource to be backed up. For VSS Windows backups, the only
-     * supported resource type is Amazon EC2.</p> <p>Valid values:
-     * <code>EC2</code>.</p>
+     * <p>Specifies an object containing resource type and backup options. The only
+     * supported resource type is Amazon EC2 instances with Windows VSS. For an
+     * CloudFormation example, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/integrate-cloudformation-with-aws-backup.html">sample
+     * CloudFormation template to enable Windows VSS</a> in the <i>AWS Backup User
+     * Guide</i>.</p> <p>Valid values: <code>EC2</code>.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of AWS resource to be backed up. For VSS Windows backups, the only
-     * supported resource type is Amazon EC2.</p> <p>Valid values:
-     * <code>EC2</code>.</p>
+     * <p>Specifies an object containing resource type and backup options. The only
+     * supported resource type is Amazon EC2 instances with Windows VSS. For an
+     * CloudFormation example, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/integrate-cloudformation-with-aws-backup.html">sample
+     * CloudFormation template to enable Windows VSS</a> in the <i>AWS Backup User
+     * Guide</i>.</p> <p>Valid values: <code>EC2</code>.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of AWS resource to be backed up. For VSS Windows backups, the only
-     * supported resource type is Amazon EC2.</p> <p>Valid values:
-     * <code>EC2</code>.</p>
+     * <p>Specifies an object containing resource type and backup options. The only
+     * supported resource type is Amazon EC2 instances with Windows VSS. For an
+     * CloudFormation example, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/integrate-cloudformation-with-aws-backup.html">sample
+     * CloudFormation template to enable Windows VSS</a> in the <i>AWS Backup User
+     * Guide</i>.</p> <p>Valid values: <code>EC2</code>.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of AWS resource to be backed up. For VSS Windows backups, the only
-     * supported resource type is Amazon EC2.</p> <p>Valid values:
-     * <code>EC2</code>.</p>
+     * <p>Specifies an object containing resource type and backup options. The only
+     * supported resource type is Amazon EC2 instances with Windows VSS. For an
+     * CloudFormation example, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/integrate-cloudformation-with-aws-backup.html">sample
+     * CloudFormation template to enable Windows VSS</a> in the <i>AWS Backup User
+     * Guide</i>.</p> <p>Valid values: <code>EC2</code>.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>The type of AWS resource to be backed up. For VSS Windows backups, the only
-     * supported resource type is Amazon EC2.</p> <p>Valid values:
-     * <code>EC2</code>.</p>
+     * <p>Specifies an object containing resource type and backup options. The only
+     * supported resource type is Amazon EC2 instances with Windows VSS. For an
+     * CloudFormation example, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/integrate-cloudformation-with-aws-backup.html">sample
+     * CloudFormation template to enable Windows VSS</a> in the <i>AWS Backup User
+     * Guide</i>.</p> <p>Valid values: <code>EC2</code>.</p>
      */
     inline AdvancedBackupSetting& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of AWS resource to be backed up. For VSS Windows backups, the only
-     * supported resource type is Amazon EC2.</p> <p>Valid values:
-     * <code>EC2</code>.</p>
+     * <p>Specifies an object containing resource type and backup options. The only
+     * supported resource type is Amazon EC2 instances with Windows VSS. For an
+     * CloudFormation example, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/integrate-cloudformation-with-aws-backup.html">sample
+     * CloudFormation template to enable Windows VSS</a> in the <i>AWS Backup User
+     * Guide</i>.</p> <p>Valid values: <code>EC2</code>.</p>
      */
     inline AdvancedBackupSetting& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of AWS resource to be backed up. For VSS Windows backups, the only
-     * supported resource type is Amazon EC2.</p> <p>Valid values:
-     * <code>EC2</code>.</p>
+     * <p>Specifies an object containing resource type and backup options. The only
+     * supported resource type is Amazon EC2 instances with Windows VSS. For an
+     * CloudFormation example, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/integrate-cloudformation-with-aws-backup.html">sample
+     * CloudFormation template to enable Windows VSS</a> in the <i>AWS Backup User
+     * Guide</i>.</p> <p>Valid values: <code>EC2</code>.</p>
      */
     inline AdvancedBackupSetting& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 

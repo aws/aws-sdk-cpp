@@ -105,10 +105,10 @@ namespace Model
      * that ensures the uniqueness (idempotency) of the request.</p> </li> <li> <p>
      * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
      * recovery point is restored to a new Amazon EFS file system.</p> </li> <li> <p>
-     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each
-     * string is a file path. Use <code>ItemsToRestore</code> to restore specific files
-     * or directories rather than the entire file system. This parameter is
-     * optional.</p> </li> </ul>
+     * <code>ItemsToRestore </code>: An array of one to five strings where each string
+     * is a file path. Use <code>ItemsToRestore</code> to restore specific files or
+     * directories rather than the entire file system. This parameter is optional. For
+     * example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const{ return m_metadata; }
 
@@ -135,10 +135,10 @@ namespace Model
      * that ensures the uniqueness (idempotency) of the request.</p> </li> <li> <p>
      * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
      * recovery point is restored to a new Amazon EFS file system.</p> </li> <li> <p>
-     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each
-     * string is a file path. Use <code>ItemsToRestore</code> to restore specific files
-     * or directories rather than the entire file system. This parameter is
-     * optional.</p> </li> </ul>
+     * <code>ItemsToRestore </code>: An array of one to five strings where each string
+     * is a file path. Use <code>ItemsToRestore</code> to restore specific files or
+     * directories rather than the entire file system. This parameter is optional. For
+     * example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p> </li> </ul>
      */
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
 
@@ -165,10 +165,10 @@ namespace Model
      * that ensures the uniqueness (idempotency) of the request.</p> </li> <li> <p>
      * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
      * recovery point is restored to a new Amazon EFS file system.</p> </li> <li> <p>
-     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each
-     * string is a file path. Use <code>ItemsToRestore</code> to restore specific files
-     * or directories rather than the entire file system. This parameter is
-     * optional.</p> </li> </ul>
+     * <code>ItemsToRestore </code>: An array of one to five strings where each string
+     * is a file path. Use <code>ItemsToRestore</code> to restore specific files or
+     * directories rather than the entire file system. This parameter is optional. For
+     * example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p> </li> </ul>
      */
     inline void SetMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_metadataHasBeenSet = true; m_metadata = value; }
 
@@ -195,10 +195,10 @@ namespace Model
      * that ensures the uniqueness (idempotency) of the request.</p> </li> <li> <p>
      * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
      * recovery point is restored to a new Amazon EFS file system.</p> </li> <li> <p>
-     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each
-     * string is a file path. Use <code>ItemsToRestore</code> to restore specific files
-     * or directories rather than the entire file system. This parameter is
-     * optional.</p> </li> </ul>
+     * <code>ItemsToRestore </code>: An array of one to five strings where each string
+     * is a file path. Use <code>ItemsToRestore</code> to restore specific files or
+     * directories rather than the entire file system. This parameter is optional. For
+     * example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p> </li> </ul>
      */
     inline void SetMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
 
@@ -225,10 +225,10 @@ namespace Model
      * that ensures the uniqueness (idempotency) of the request.</p> </li> <li> <p>
      * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
      * recovery point is restored to a new Amazon EFS file system.</p> </li> <li> <p>
-     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each
-     * string is a file path. Use <code>ItemsToRestore</code> to restore specific files
-     * or directories rather than the entire file system. This parameter is
-     * optional.</p> </li> </ul>
+     * <code>ItemsToRestore </code>: An array of one to five strings where each string
+     * is a file path. Use <code>ItemsToRestore</code> to restore specific files or
+     * directories rather than the entire file system. This parameter is optional. For
+     * example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p> </li> </ul>
      */
     inline StartRestoreJobRequest& WithMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetMetadata(value); return *this;}
 
@@ -255,10 +255,10 @@ namespace Model
      * that ensures the uniqueness (idempotency) of the request.</p> </li> <li> <p>
      * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
      * recovery point is restored to a new Amazon EFS file system.</p> </li> <li> <p>
-     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each
-     * string is a file path. Use <code>ItemsToRestore</code> to restore specific files
-     * or directories rather than the entire file system. This parameter is
-     * optional.</p> </li> </ul>
+     * <code>ItemsToRestore </code>: An array of one to five strings where each string
+     * is a file path. Use <code>ItemsToRestore</code> to restore specific files or
+     * directories rather than the entire file system. This parameter is optional. For
+     * example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p> </li> </ul>
      */
     inline StartRestoreJobRequest& WithMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetMetadata(std::move(value)); return *this;}
 
@@ -285,10 +285,10 @@ namespace Model
      * that ensures the uniqueness (idempotency) of the request.</p> </li> <li> <p>
      * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
      * recovery point is restored to a new Amazon EFS file system.</p> </li> <li> <p>
-     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each
-     * string is a file path. Use <code>ItemsToRestore</code> to restore specific files
-     * or directories rather than the entire file system. This parameter is
-     * optional.</p> </li> </ul>
+     * <code>ItemsToRestore </code>: An array of one to five strings where each string
+     * is a file path. Use <code>ItemsToRestore</code> to restore specific files or
+     * directories rather than the entire file system. This parameter is optional. For
+     * example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p> </li> </ul>
      */
     inline StartRestoreJobRequest& AddMetadata(const Aws::String& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
 
@@ -315,10 +315,10 @@ namespace Model
      * that ensures the uniqueness (idempotency) of the request.</p> </li> <li> <p>
      * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
      * recovery point is restored to a new Amazon EFS file system.</p> </li> <li> <p>
-     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each
-     * string is a file path. Use <code>ItemsToRestore</code> to restore specific files
-     * or directories rather than the entire file system. This parameter is
-     * optional.</p> </li> </ul>
+     * <code>ItemsToRestore </code>: An array of one to five strings where each string
+     * is a file path. Use <code>ItemsToRestore</code> to restore specific files or
+     * directories rather than the entire file system. This parameter is optional. For
+     * example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p> </li> </ul>
      */
     inline StartRestoreJobRequest& AddMetadata(Aws::String&& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
 
@@ -345,10 +345,10 @@ namespace Model
      * that ensures the uniqueness (idempotency) of the request.</p> </li> <li> <p>
      * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
      * recovery point is restored to a new Amazon EFS file system.</p> </li> <li> <p>
-     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each
-     * string is a file path. Use <code>ItemsToRestore</code> to restore specific files
-     * or directories rather than the entire file system. This parameter is
-     * optional.</p> </li> </ul>
+     * <code>ItemsToRestore </code>: An array of one to five strings where each string
+     * is a file path. Use <code>ItemsToRestore</code> to restore specific files or
+     * directories rather than the entire file system. This parameter is optional. For
+     * example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p> </li> </ul>
      */
     inline StartRestoreJobRequest& AddMetadata(const Aws::String& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
 
@@ -375,10 +375,10 @@ namespace Model
      * that ensures the uniqueness (idempotency) of the request.</p> </li> <li> <p>
      * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
      * recovery point is restored to a new Amazon EFS file system.</p> </li> <li> <p>
-     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each
-     * string is a file path. Use <code>ItemsToRestore</code> to restore specific files
-     * or directories rather than the entire file system. This parameter is
-     * optional.</p> </li> </ul>
+     * <code>ItemsToRestore </code>: An array of one to five strings where each string
+     * is a file path. Use <code>ItemsToRestore</code> to restore specific files or
+     * directories rather than the entire file system. This parameter is optional. For
+     * example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p> </li> </ul>
      */
     inline StartRestoreJobRequest& AddMetadata(Aws::String&& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -405,10 +405,10 @@ namespace Model
      * that ensures the uniqueness (idempotency) of the request.</p> </li> <li> <p>
      * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
      * recovery point is restored to a new Amazon EFS file system.</p> </li> <li> <p>
-     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each
-     * string is a file path. Use <code>ItemsToRestore</code> to restore specific files
-     * or directories rather than the entire file system. This parameter is
-     * optional.</p> </li> </ul>
+     * <code>ItemsToRestore </code>: An array of one to five strings where each string
+     * is a file path. Use <code>ItemsToRestore</code> to restore specific files or
+     * directories rather than the entire file system. This parameter is optional. For
+     * example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p> </li> </ul>
      */
     inline StartRestoreJobRequest& AddMetadata(const char* key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
 
@@ -435,10 +435,10 @@ namespace Model
      * that ensures the uniqueness (idempotency) of the request.</p> </li> <li> <p>
      * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
      * recovery point is restored to a new Amazon EFS file system.</p> </li> <li> <p>
-     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each
-     * string is a file path. Use <code>ItemsToRestore</code> to restore specific files
-     * or directories rather than the entire file system. This parameter is
-     * optional.</p> </li> </ul>
+     * <code>ItemsToRestore </code>: An array of one to five strings where each string
+     * is a file path. Use <code>ItemsToRestore</code> to restore specific files or
+     * directories rather than the entire file system. This parameter is optional. For
+     * example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p> </li> </ul>
      */
     inline StartRestoreJobRequest& AddMetadata(Aws::String&& key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
 
@@ -465,10 +465,10 @@ namespace Model
      * that ensures the uniqueness (idempotency) of the request.</p> </li> <li> <p>
      * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
      * recovery point is restored to a new Amazon EFS file system.</p> </li> <li> <p>
-     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each
-     * string is a file path. Use <code>ItemsToRestore</code> to restore specific files
-     * or directories rather than the entire file system. This parameter is
-     * optional.</p> </li> </ul>
+     * <code>ItemsToRestore </code>: An array of one to five strings where each string
+     * is a file path. Use <code>ItemsToRestore</code> to restore specific files or
+     * directories rather than the entire file system. This parameter is optional. For
+     * example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p> </li> </ul>
      */
     inline StartRestoreJobRequest& AddMetadata(const char* key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
 
@@ -586,7 +586,8 @@ namespace Model
      * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
      * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
      * <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
-     * <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
@@ -597,7 +598,8 @@ namespace Model
      * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
      * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
      * <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
-     * <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
@@ -608,7 +610,8 @@ namespace Model
      * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
      * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
      * <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
-     * <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
@@ -619,7 +622,8 @@ namespace Model
      * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
      * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
      * <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
-     * <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
@@ -630,7 +634,8 @@ namespace Model
      * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
      * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
      * <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
-     * <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
@@ -641,7 +646,8 @@ namespace Model
      * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
      * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
      * <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
-     * <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline StartRestoreJobRequest& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
@@ -652,7 +658,8 @@ namespace Model
      * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
      * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
      * <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
-     * <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline StartRestoreJobRequest& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
@@ -663,7 +670,8 @@ namespace Model
      * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
      * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
      * <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
-     * <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline StartRestoreJobRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 

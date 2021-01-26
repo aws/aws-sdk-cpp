@@ -592,50 +592,74 @@ namespace Model
 
 
     /**
-     * <p>Specifies the IAM role ARN used to create the target recovery point; for
-     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+     * <p>Specifies the IAM role ARN used to create the target recovery point. IAM
+     * roles other than the default role must include either <code>AWSBackup</code> or
+     * <code>AwsBackup</code> in the role name. For example,
+     * <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names
+     * without those strings lack permissions to perform backup jobs.</p>
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
 
     /**
-     * <p>Specifies the IAM role ARN used to create the target recovery point; for
-     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+     * <p>Specifies the IAM role ARN used to create the target recovery point. IAM
+     * roles other than the default role must include either <code>AWSBackup</code> or
+     * <code>AwsBackup</code> in the role name. For example,
+     * <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names
+     * without those strings lack permissions to perform backup jobs.</p>
      */
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
 
     /**
-     * <p>Specifies the IAM role ARN used to create the target recovery point; for
-     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+     * <p>Specifies the IAM role ARN used to create the target recovery point. IAM
+     * roles other than the default role must include either <code>AWSBackup</code> or
+     * <code>AwsBackup</code> in the role name. For example,
+     * <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names
+     * without those strings lack permissions to perform backup jobs.</p>
      */
     inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
 
     /**
-     * <p>Specifies the IAM role ARN used to create the target recovery point; for
-     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+     * <p>Specifies the IAM role ARN used to create the target recovery point. IAM
+     * roles other than the default role must include either <code>AWSBackup</code> or
+     * <code>AwsBackup</code> in the role name. For example,
+     * <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names
+     * without those strings lack permissions to perform backup jobs.</p>
      */
     inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
 
     /**
-     * <p>Specifies the IAM role ARN used to create the target recovery point; for
-     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+     * <p>Specifies the IAM role ARN used to create the target recovery point. IAM
+     * roles other than the default role must include either <code>AWSBackup</code> or
+     * <code>AwsBackup</code> in the role name. For example,
+     * <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names
+     * without those strings lack permissions to perform backup jobs.</p>
      */
     inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
 
     /**
-     * <p>Specifies the IAM role ARN used to create the target recovery point; for
-     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+     * <p>Specifies the IAM role ARN used to create the target recovery point. IAM
+     * roles other than the default role must include either <code>AWSBackup</code> or
+     * <code>AwsBackup</code> in the role name. For example,
+     * <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names
+     * without those strings lack permissions to perform backup jobs.</p>
      */
     inline BackupJob& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
 
     /**
-     * <p>Specifies the IAM role ARN used to create the target recovery point; for
-     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+     * <p>Specifies the IAM role ARN used to create the target recovery point. IAM
+     * roles other than the default role must include either <code>AWSBackup</code> or
+     * <code>AwsBackup</code> in the role name. For example,
+     * <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names
+     * without those strings lack permissions to perform backup jobs.</p>
      */
     inline BackupJob& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the IAM role ARN used to create the target recovery point; for
-     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+     * <p>Specifies the IAM role ARN used to create the target recovery point. IAM
+     * roles other than the default role must include either <code>AWSBackup</code> or
+     * <code>AwsBackup</code> in the role name. For example,
+     * <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names
+     * without those strings lack permissions to perform backup jobs.</p>
      */
     inline BackupJob& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
 

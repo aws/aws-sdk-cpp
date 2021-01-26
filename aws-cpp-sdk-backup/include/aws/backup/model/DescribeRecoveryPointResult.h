@@ -595,6 +595,7 @@ namespace Model
      * 90 days. Therefore, the “expire after days” setting must be 90 days greater than
      * the “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
      */
     inline const Lifecycle& GetLifecycle() const{ return m_lifecycle; }
 
@@ -606,6 +607,7 @@ namespace Model
      * 90 days. Therefore, the “expire after days” setting must be 90 days greater than
      * the “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
      */
     inline void SetLifecycle(const Lifecycle& value) { m_lifecycle = value; }
 
@@ -617,6 +619,7 @@ namespace Model
      * 90 days. Therefore, the “expire after days” setting must be 90 days greater than
      * the “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
      */
     inline void SetLifecycle(Lifecycle&& value) { m_lifecycle = std::move(value); }
 
@@ -628,6 +631,7 @@ namespace Model
      * 90 days. Therefore, the “expire after days” setting must be 90 days greater than
      * the “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
      */
     inline DescribeRecoveryPointResult& WithLifecycle(const Lifecycle& value) { SetLifecycle(value); return *this;}
 
@@ -639,6 +643,7 @@ namespace Model
      * 90 days. Therefore, the “expire after days” setting must be 90 days greater than
      * the “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
      */
     inline DescribeRecoveryPointResult& WithLifecycle(Lifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
 
