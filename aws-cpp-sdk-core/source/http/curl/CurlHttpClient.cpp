@@ -575,8 +575,7 @@ void CurlHttpClient::MakeRequestInternal(HttpRequest& request,
         if (usingProxy)
         {
             Aws::StringStream ss;
-            ss << try_redefine(m_proxyScheme, Aws::String(SchemeMapper::ToString(requestConfiguration.proxyScheme)))
-              << "://" << try_redefine(m_proxyHost, requestConfiguration.proxyHost);
+            ss << m_proxyScheme << "://" << try_redefine(m_proxyHost, requestConfiguration.proxyHost);
             curl_easy_setopt(connectionHandle, CURLOPT_PROXY, ss.str().c_str());
             curl_easy_setopt(connectionHandle, CURLOPT_PROXYPORT, (long) try_redefine(m_proxyPort, requestConfiguration.proxyPort, 0U));
             if (!m_proxyUserName.empty() || !m_proxyPassword.empty())
