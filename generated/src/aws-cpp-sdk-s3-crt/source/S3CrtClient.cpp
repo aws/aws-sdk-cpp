@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -609,7 +609,7 @@ Aws::Client::XmlOutcome S3CrtClient::GenerateXmlOutcome(const std::shared_ptr<Ht
       return XmlOutcome(std::move(httpOutcome));
   }
 
-  if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
+  if (httpOutcome.GetResult()->GetResponseBody().peek() != std::char_traits<char>::eof())
   {
       XmlDocument xmlDoc = XmlDocument::CreateFromXmlStream(httpOutcome.GetResult()->GetResponseBody());
 
