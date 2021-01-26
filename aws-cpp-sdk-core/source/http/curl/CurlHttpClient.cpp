@@ -440,18 +440,10 @@ CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
     m_proxyPort(clientConfig.proxyPort), m_verifySSL(clientConfig.verifySSL), m_caPath(clientConfig.caPath),
     m_caFile(clientConfig.caFile),
     m_disableExpectHeader(clientConfig.disableExpectHeader),
-    m_allowRedirects(clientConfig.followRedirects),
-    m_perRequestConfiguration(clientConfig.perRequestConfiguration)
+    m_allowRedirects(clientConfig.followRedirects)
 {
 }
 
-template<typename T>
-static inline T try_redefine(const T & origin, const T & redefined, const T & default_value = T {})
-{
-    if (redefined != default_value && redefined != origin)
-        return redefined;
-    return origin;
-}
 
 void CurlHttpClient::MakeRequestInternal(HttpRequest& request,
         std::shared_ptr<StandardHttpResponse>& response,
@@ -507,7 +499,6 @@ void CurlHttpClient::MakeRequestInternal(HttpRequest& request,
 
     if (connectionHandle)
     {
-        auto requestConfiguration = m_perRequestConfiguration(request);
         AWS_LOGSTREAM_DEBUG(CURL_HTTP_CLIENT_TAG, "Obtained connection handle " << connectionHandle);
 
         if (headers)
@@ -571,13 +562,12 @@ void CurlHttpClient::MakeRequestInternal(HttpRequest& request,
         curl_easy_setopt(connectionHandle, CURLOPT_VERBOSE, 1);
         curl_easy_setopt(connectionHandle, CURLOPT_DEBUGFUNCTION, CurlDebugCallback);
 #endif
-        bool usingProxy = !try_redefine(m_proxyHost, requestConfiguration.proxyHost).empty();
-        if (usingProxy)
+        if (m_isUsingProxy)
         {
             Aws::StringStream ss;
-            ss << m_proxyScheme << "://" << try_redefine(m_proxyHost, requestConfiguration.proxyHost);
+            ss << m_proxyScheme << "://" << m_proxyHost;
             curl_easy_setopt(connectionHandle, CURLOPT_PROXY, ss.str().c_str());
-            curl_easy_setopt(connectionHandle, CURLOPT_PROXYPORT, (long) try_redefine(m_proxyPort, requestConfiguration.proxyPort, 0U));
+            curl_easy_setopt(connectionHandle, CURLOPT_PROXYPORT, (long) m_proxyPort);
             if (!m_proxyUserName.empty() || !m_proxyPassword.empty())
             {
                 curl_easy_setopt(connectionHandle, CURLOPT_PROXYUSERNAME, m_proxyUserName.c_str());
