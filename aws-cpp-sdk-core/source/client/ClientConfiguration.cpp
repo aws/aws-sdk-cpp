@@ -124,14 +124,15 @@ ClientConfiguration::ClientConfiguration() :
         return;
     }
 
-    if (Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_EC2_METADATA_DISABLED").c_str()) != "true")
-    {
-        auto client = Aws::Internal::GetEC2MetadataClient();
-        if (client)
-        {
-            region = client->GetCurrentRegion();
-        }
-    }
+    /// Don't try to access EC2 metadata by default.
+    //if (Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_EC2_METADATA_DISABLED").c_str()) != "true")
+    //{
+    //    auto client = Aws::Internal::GetEC2MetadataClient();
+    //    if (client)
+    //    {
+    //        region = client->GetCurrentRegion();
+    //    }
+    //}
 
     if (!region.empty())
     {
