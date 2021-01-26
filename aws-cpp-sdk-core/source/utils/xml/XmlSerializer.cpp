@@ -205,7 +205,7 @@ Aws::String XmlDocument::ConvertToString() const
     return printer.CStr();
 }
 
-XmlDocument XmlDocument::CreateFromXmlStream(Aws::IStream& xmlStream)
+XmlDocument XmlDocument::CreateFromXmlStream(Aws::IOStream& xmlStream)
 {
     Aws::String xmlString((Aws::IStreamBufIterator(xmlStream)), Aws::IStreamBufIterator());
     return CreateFromXmlString(xmlString);

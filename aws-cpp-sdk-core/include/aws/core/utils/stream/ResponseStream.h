@@ -19,8 +19,6 @@
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 
-#include <utility>
-
 namespace Aws
 {
     namespace Utils
@@ -49,7 +47,6 @@ namespace Aws
                  * Takes ownership of an underlying stream.
                  */
                 ResponseStream(IOStream* underlyingStreamToManage);
-                ResponseStream(IStream* underlyingStreamToManage);
                 ResponseStream(const ResponseStream&) = delete;
                 ~ResponseStream();
 
@@ -62,14 +59,12 @@ namespace Aws
                 /**
                  * Gives access to underlying stream, but keep in mind that this changes state of the stream
                  */
-                inline Aws::IStream & GetUnderlyingStream() const { return *m_underlyingStream; }
+                inline Aws::IOStream& GetUnderlyingStream() const { return *m_underlyingStream; }
 
-                /**
-                 * Set underlying stream
-                 */
-                void SetUnderlyingStream(std::shared_ptr<Aws::IStream> stream) { m_underlyingStream = std::move(stream); }
             private:
-                std::shared_ptr<Aws::IStream> m_underlyingStream;
+                void ReleaseStream();
+
+                Aws::IOStream* m_underlyingStream;
             };
 
             class AWS_CORE_API DefaultUnderlyingStream : public Aws::IOStream

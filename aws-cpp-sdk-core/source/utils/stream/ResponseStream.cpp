@@ -35,11 +35,6 @@ ResponseStream::ResponseStream(Aws::IOStream* underlyingStreamToManage) :
 {
 }
 
-ResponseStream::ResponseStream(Aws::IStream* underlyingStreamToManage) :
-    m_underlyingStream(underlyingStreamToManage)
-{
-}
-
 ResponseStream::ResponseStream(const Aws::IOStreamFactory& factory) :
     m_underlyingStream(factory())
 {
@@ -57,6 +52,7 @@ ResponseStream& ResponseStream::operator=(ResponseStream&& toMove)
         return *this;
     }
 
+    ReleaseStream();
     m_underlyingStream = toMove.m_underlyingStream;
     toMove.m_underlyingStream = nullptr;
 
@@ -65,6 +61,18 @@ ResponseStream& ResponseStream::operator=(ResponseStream&& toMove)
 
 ResponseStream::~ResponseStream()
 {
+    ReleaseStream();
+}
+
+void ResponseStream::ReleaseStream()
+{
+    if (m_underlyingStream)
+    {
+        m_underlyingStream->flush();
+        Aws::Delete(m_underlyingStream);
+    }
+
+    m_underlyingStream = nullptr;
 }
 
 static const char *DEFAULT_STREAM_TAG = "DefaultUnderlyingStream";

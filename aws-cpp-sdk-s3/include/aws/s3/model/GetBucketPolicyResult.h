@@ -49,7 +49,7 @@ namespace Model
     /**
      * <p>The bucket policy as a JSON document.</p>
      */
-    inline Aws::IStream& GetPolicy() { return m_policy.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetPolicy() { return m_policy.GetUnderlyingStream(); }
 
     /**
      * <p>The bucket policy as a JSON document.</p>
