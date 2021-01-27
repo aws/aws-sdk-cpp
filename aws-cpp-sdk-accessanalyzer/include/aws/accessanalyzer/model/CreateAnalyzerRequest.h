@@ -246,38 +246,44 @@ namespace Model
 
 
     /**
-     * <p>The type of analyzer to create. Only ACCOUNT analyzers are supported. You can
-     * create only one analyzer per account per Region.</p>
+     * <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are
+     * supported. You can create only one analyzer per account per Region. You can
+     * create up to 5 analyzers per organization per Region.</p>
      */
     inline const Type& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of analyzer to create. Only ACCOUNT analyzers are supported. You can
-     * create only one analyzer per account per Region.</p>
+     * <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are
+     * supported. You can create only one analyzer per account per Region. You can
+     * create up to 5 analyzers per organization per Region.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of analyzer to create. Only ACCOUNT analyzers are supported. You can
-     * create only one analyzer per account per Region.</p>
+     * <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are
+     * supported. You can create only one analyzer per account per Region. You can
+     * create up to 5 analyzers per organization per Region.</p>
      */
     inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of analyzer to create. Only ACCOUNT analyzers are supported. You can
-     * create only one analyzer per account per Region.</p>
+     * <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are
+     * supported. You can create only one analyzer per account per Region. You can
+     * create up to 5 analyzers per organization per Region.</p>
      */
     inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of analyzer to create. Only ACCOUNT analyzers are supported. You can
-     * create only one analyzer per account per Region.</p>
+     * <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are
+     * supported. You can create only one analyzer per account per Region. You can
+     * create up to 5 analyzers per organization per Region.</p>
      */
     inline CreateAnalyzerRequest& WithType(const Type& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of analyzer to create. Only ACCOUNT analyzers are supported. You can
-     * create only one analyzer per account per Region.</p>
+     * <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are
+     * supported. You can create only one analyzer per account per Region. You can
+     * create up to 5 analyzers per organization per Region.</p>
      */
     inline CreateAnalyzerRequest& WithType(Type&& value) { SetType(std::move(value)); return *this;}
 

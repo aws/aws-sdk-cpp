@@ -1406,17 +1406,18 @@ namespace Model
          * your Lightsail container service. The log in credentials expire 12 hours after
          * they are created, at which point you will need to create a new set of log in
          * credentials.</p>  <p>You can only push container images to the container
-         * service registry of your Lightsail account. You cannot pull container images
+         * service registry of your Lightsail account. You cannot pull container images or
          * perform any other container image management actions on the container service
-         * registry of your Lightsail account.</p>  <p>After you push your container
-         * images to the container image registry of your Lightsail account, use the
+         * registry.</p>  <p>After you push your container images to the container
+         * image registry of your Lightsail account, use the
          * <code>RegisterContainerImage</code> action to register the pushed images to a
          * specific Lightsail container service.</p>  <p>This action is not required
          * if you install and use the Lightsail Control (lightsailctl) plugin to push
          * container images to your Lightsail container service. For more information, see
-         * <a href="amazon-lightsail-pushing-container-images">Pushing and managing
-         * container images on your Amazon Lightsail container services</a> in the
-         * <i>Lightsail Dev Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-pushing-container-images">Pushing
+         * and managing container images on your Amazon Lightsail container services</a> in
+         * the <i>Lightsail Dev Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContainerServiceRegistryLogin">AWS
          * API Reference</a></p>
          */
@@ -1430,17 +1431,18 @@ namespace Model
          * your Lightsail container service. The log in credentials expire 12 hours after
          * they are created, at which point you will need to create a new set of log in
          * credentials.</p>  <p>You can only push container images to the container
-         * service registry of your Lightsail account. You cannot pull container images
+         * service registry of your Lightsail account. You cannot pull container images or
          * perform any other container image management actions on the container service
-         * registry of your Lightsail account.</p>  <p>After you push your container
-         * images to the container image registry of your Lightsail account, use the
+         * registry.</p>  <p>After you push your container images to the container
+         * image registry of your Lightsail account, use the
          * <code>RegisterContainerImage</code> action to register the pushed images to a
          * specific Lightsail container service.</p>  <p>This action is not required
          * if you install and use the Lightsail Control (lightsailctl) plugin to push
          * container images to your Lightsail container service. For more information, see
-         * <a href="amazon-lightsail-pushing-container-images">Pushing and managing
-         * container images on your Amazon Lightsail container services</a> in the
-         * <i>Lightsail Dev Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-pushing-container-images">Pushing
+         * and managing container images on your Amazon Lightsail container services</a> in
+         * the <i>Lightsail Dev Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContainerServiceRegistryLogin">AWS
          * API Reference</a></p>
          *
@@ -1456,17 +1458,18 @@ namespace Model
          * your Lightsail container service. The log in credentials expire 12 hours after
          * they are created, at which point you will need to create a new set of log in
          * credentials.</p>  <p>You can only push container images to the container
-         * service registry of your Lightsail account. You cannot pull container images
+         * service registry of your Lightsail account. You cannot pull container images or
          * perform any other container image management actions on the container service
-         * registry of your Lightsail account.</p>  <p>After you push your container
-         * images to the container image registry of your Lightsail account, use the
+         * registry.</p>  <p>After you push your container images to the container
+         * image registry of your Lightsail account, use the
          * <code>RegisterContainerImage</code> action to register the pushed images to a
          * specific Lightsail container service.</p>  <p>This action is not required
          * if you install and use the Lightsail Control (lightsailctl) plugin to push
          * container images to your Lightsail container service. For more information, see
-         * <a href="amazon-lightsail-pushing-container-images">Pushing and managing
-         * container images on your Amazon Lightsail container services</a> in the
-         * <i>Lightsail Dev Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-pushing-container-images">Pushing
+         * and managing container images on your Amazon Lightsail container services</a> in
+         * the <i>Lightsail Dev Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContainerServiceRegistryLogin">AWS
          * API Reference</a></p>
          *

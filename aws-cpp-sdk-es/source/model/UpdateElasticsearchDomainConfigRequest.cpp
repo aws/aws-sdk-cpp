@@ -23,7 +23,9 @@ UpdateElasticsearchDomainConfigRequest::UpdateElasticsearchDomainConfigRequest()
     m_accessPoliciesHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false),
     m_domainEndpointOptionsHasBeenSet(false),
-    m_advancedSecurityOptionsHasBeenSet(false)
+    m_advancedSecurityOptionsHasBeenSet(false),
+    m_nodeToNodeEncryptionOptionsHasBeenSet(false),
+    m_encryptionAtRestOptionsHasBeenSet(false)
 {
 }
 
@@ -98,6 +100,18 @@ Aws::String UpdateElasticsearchDomainConfigRequest::SerializePayload() const
   if(m_advancedSecurityOptionsHasBeenSet)
   {
    payload.WithObject("AdvancedSecurityOptions", m_advancedSecurityOptions.Jsonize());
+
+  }
+
+  if(m_nodeToNodeEncryptionOptionsHasBeenSet)
+  {
+   payload.WithObject("NodeToNodeEncryptionOptions", m_nodeToNodeEncryptionOptions.Jsonize());
+
+  }
+
+  if(m_encryptionAtRestOptionsHasBeenSet)
+  {
+   payload.WithObject("EncryptionAtRestOptions", m_encryptionAtRestOptions.Jsonize());
 
   }
 
