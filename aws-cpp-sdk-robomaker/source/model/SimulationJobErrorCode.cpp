@@ -47,6 +47,7 @@ namespace Aws
         static const int WrongRegionS3Output_HASH = HashingUtils::HashString("WrongRegionS3Output");
         static const int WrongRegionRobotApplication_HASH = HashingUtils::HashString("WrongRegionRobotApplication");
         static const int WrongRegionSimulationApplication_HASH = HashingUtils::HashString("WrongRegionSimulationApplication");
+        static const int UploadContentMismatchError_HASH = HashingUtils::HashString("UploadContentMismatchError");
 
 
         SimulationJobErrorCode GetSimulationJobErrorCodeForName(const Aws::String& name)
@@ -160,6 +161,10 @@ namespace Aws
           {
             return SimulationJobErrorCode::WrongRegionSimulationApplication;
           }
+          else if (hashCode == UploadContentMismatchError_HASH)
+          {
+            return SimulationJobErrorCode::UploadContentMismatchError;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -228,6 +233,8 @@ namespace Aws
             return "WrongRegionRobotApplication";
           case SimulationJobErrorCode::WrongRegionSimulationApplication:
             return "WrongRegionSimulationApplication";
+          case SimulationJobErrorCode::UploadContentMismatchError:
+            return "UploadContentMismatchError";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

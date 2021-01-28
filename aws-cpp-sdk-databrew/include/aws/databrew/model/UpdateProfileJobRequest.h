@@ -175,69 +175,63 @@ namespace Model
 
 
     /**
-     * <p>A value that enables or disables Amazon CloudWatch logging for the current
-     * AWS account. If logging is enabled, CloudWatch writes one log stream for each
-     * job run.</p>
+     * <p>Enables or disables Amazon CloudWatch logging for the job. If logging is
+     * enabled, CloudWatch writes one log stream for each job run.</p>
      */
     inline const LogSubscription& GetLogSubscription() const{ return m_logSubscription; }
 
     /**
-     * <p>A value that enables or disables Amazon CloudWatch logging for the current
-     * AWS account. If logging is enabled, CloudWatch writes one log stream for each
-     * job run.</p>
+     * <p>Enables or disables Amazon CloudWatch logging for the job. If logging is
+     * enabled, CloudWatch writes one log stream for each job run.</p>
      */
     inline bool LogSubscriptionHasBeenSet() const { return m_logSubscriptionHasBeenSet; }
 
     /**
-     * <p>A value that enables or disables Amazon CloudWatch logging for the current
-     * AWS account. If logging is enabled, CloudWatch writes one log stream for each
-     * job run.</p>
+     * <p>Enables or disables Amazon CloudWatch logging for the job. If logging is
+     * enabled, CloudWatch writes one log stream for each job run.</p>
      */
     inline void SetLogSubscription(const LogSubscription& value) { m_logSubscriptionHasBeenSet = true; m_logSubscription = value; }
 
     /**
-     * <p>A value that enables or disables Amazon CloudWatch logging for the current
-     * AWS account. If logging is enabled, CloudWatch writes one log stream for each
-     * job run.</p>
+     * <p>Enables or disables Amazon CloudWatch logging for the job. If logging is
+     * enabled, CloudWatch writes one log stream for each job run.</p>
      */
     inline void SetLogSubscription(LogSubscription&& value) { m_logSubscriptionHasBeenSet = true; m_logSubscription = std::move(value); }
 
     /**
-     * <p>A value that enables or disables Amazon CloudWatch logging for the current
-     * AWS account. If logging is enabled, CloudWatch writes one log stream for each
-     * job run.</p>
+     * <p>Enables or disables Amazon CloudWatch logging for the job. If logging is
+     * enabled, CloudWatch writes one log stream for each job run.</p>
      */
     inline UpdateProfileJobRequest& WithLogSubscription(const LogSubscription& value) { SetLogSubscription(value); return *this;}
 
     /**
-     * <p>A value that enables or disables Amazon CloudWatch logging for the current
-     * AWS account. If logging is enabled, CloudWatch writes one log stream for each
-     * job run.</p>
+     * <p>Enables or disables Amazon CloudWatch logging for the job. If logging is
+     * enabled, CloudWatch writes one log stream for each job run.</p>
      */
     inline UpdateProfileJobRequest& WithLogSubscription(LogSubscription&& value) { SetLogSubscription(std::move(value)); return *this;}
 
 
     /**
-     * <p>The maximum number of nodes that DataBrew can use when the job processes
-     * data.</p>
+     * <p>The maximum number of compute nodes that DataBrew can use when the job
+     * processes data.</p>
      */
     inline int GetMaxCapacity() const{ return m_maxCapacity; }
 
     /**
-     * <p>The maximum number of nodes that DataBrew can use when the job processes
-     * data.</p>
+     * <p>The maximum number of compute nodes that DataBrew can use when the job
+     * processes data.</p>
      */
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
 
     /**
-     * <p>The maximum number of nodes that DataBrew can use when the job processes
-     * data.</p>
+     * <p>The maximum number of compute nodes that DataBrew can use when the job
+     * processes data.</p>
      */
     inline void SetMaxCapacity(int value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
 
     /**
-     * <p>The maximum number of nodes that DataBrew can use when the job processes
-     * data.</p>
+     * <p>The maximum number of compute nodes that DataBrew can use when the job
+     * processes data.</p>
      */
     inline UpdateProfileJobRequest& WithMaxCapacity(int value) { SetMaxCapacity(value); return *this;}
 
@@ -284,49 +278,49 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed for this request.</p>
+     * (IAM) role to be assumed when DataBrew runs the job.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed for this request.</p>
+     * (IAM) role to be assumed when DataBrew runs the job.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed for this request.</p>
+     * (IAM) role to be assumed when DataBrew runs the job.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed for this request.</p>
+     * (IAM) role to be assumed when DataBrew runs the job.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed for this request.</p>
+     * (IAM) role to be assumed when DataBrew runs the job.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed for this request.</p>
+     * (IAM) role to be assumed when DataBrew runs the job.</p>
      */
     inline UpdateProfileJobRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed for this request.</p>
+     * (IAM) role to be assumed when DataBrew runs the job.</p>
      */
     inline UpdateProfileJobRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed for this request.</p>
+     * (IAM) role to be assumed when DataBrew runs the job.</p>
      */
     inline UpdateProfileJobRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

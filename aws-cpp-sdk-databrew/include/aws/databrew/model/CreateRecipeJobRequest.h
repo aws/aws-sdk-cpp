@@ -178,85 +178,87 @@ namespace Model
 
 
     /**
-     * <p>A unique name for the job.</p>
+     * <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9),
+     * hyphen (-), period (.), and space.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>A unique name for the job.</p>
+     * <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9),
+     * hyphen (-), period (.), and space.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>A unique name for the job.</p>
+     * <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9),
+     * hyphen (-), period (.), and space.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>A unique name for the job.</p>
+     * <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9),
+     * hyphen (-), period (.), and space.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>A unique name for the job.</p>
+     * <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9),
+     * hyphen (-), period (.), and space.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>A unique name for the job.</p>
+     * <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9),
+     * hyphen (-), period (.), and space.</p>
      */
     inline CreateRecipeJobRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>A unique name for the job.</p>
+     * <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9),
+     * hyphen (-), period (.), and space.</p>
      */
     inline CreateRecipeJobRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>A unique name for the job.</p>
+     * <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9),
+     * hyphen (-), period (.), and space.</p>
      */
     inline CreateRecipeJobRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>A value that enables or disables Amazon CloudWatch logging for the current
-     * AWS account. If logging is enabled, CloudWatch writes one log stream for each
-     * job run.</p>
+     * <p>Enables or disables Amazon CloudWatch logging for the job. If logging is
+     * enabled, CloudWatch writes one log stream for each job run.</p>
      */
     inline const LogSubscription& GetLogSubscription() const{ return m_logSubscription; }
 
     /**
-     * <p>A value that enables or disables Amazon CloudWatch logging for the current
-     * AWS account. If logging is enabled, CloudWatch writes one log stream for each
-     * job run.</p>
+     * <p>Enables or disables Amazon CloudWatch logging for the job. If logging is
+     * enabled, CloudWatch writes one log stream for each job run.</p>
      */
     inline bool LogSubscriptionHasBeenSet() const { return m_logSubscriptionHasBeenSet; }
 
     /**
-     * <p>A value that enables or disables Amazon CloudWatch logging for the current
-     * AWS account. If logging is enabled, CloudWatch writes one log stream for each
-     * job run.</p>
+     * <p>Enables or disables Amazon CloudWatch logging for the job. If logging is
+     * enabled, CloudWatch writes one log stream for each job run.</p>
      */
     inline void SetLogSubscription(const LogSubscription& value) { m_logSubscriptionHasBeenSet = true; m_logSubscription = value; }
 
     /**
-     * <p>A value that enables or disables Amazon CloudWatch logging for the current
-     * AWS account. If logging is enabled, CloudWatch writes one log stream for each
-     * job run.</p>
+     * <p>Enables or disables Amazon CloudWatch logging for the job. If logging is
+     * enabled, CloudWatch writes one log stream for each job run.</p>
      */
     inline void SetLogSubscription(LogSubscription&& value) { m_logSubscriptionHasBeenSet = true; m_logSubscription = std::move(value); }
 
     /**
-     * <p>A value that enables or disables Amazon CloudWatch logging for the current
-     * AWS account. If logging is enabled, CloudWatch writes one log stream for each
-     * job run.</p>
+     * <p>Enables or disables Amazon CloudWatch logging for the job. If logging is
+     * enabled, CloudWatch writes one log stream for each job run.</p>
      */
     inline CreateRecipeJobRequest& WithLogSubscription(const LogSubscription& value) { SetLogSubscription(value); return *this;}
 
     /**
-     * <p>A value that enables or disables Amazon CloudWatch logging for the current
-     * AWS account. If logging is enabled, CloudWatch writes one log stream for each
-     * job run.</p>
+     * <p>Enables or disables Amazon CloudWatch logging for the job. If logging is
+     * enabled, CloudWatch writes one log stream for each job run.</p>
      */
     inline CreateRecipeJobRequest& WithLogSubscription(LogSubscription&& value) { SetLogSubscription(std::move(value)); return *this;}
 
@@ -418,115 +420,115 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed for this request.</p>
+     * (IAM) role to be assumed when DataBrew runs the job.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed for this request.</p>
+     * (IAM) role to be assumed when DataBrew runs the job.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed for this request.</p>
+     * (IAM) role to be assumed when DataBrew runs the job.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed for this request.</p>
+     * (IAM) role to be assumed when DataBrew runs the job.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed for this request.</p>
+     * (IAM) role to be assumed when DataBrew runs the job.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed for this request.</p>
+     * (IAM) role to be assumed when DataBrew runs the job.</p>
      */
     inline CreateRecipeJobRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed for this request.</p>
+     * (IAM) role to be assumed when DataBrew runs the job.</p>
      */
     inline CreateRecipeJobRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed for this request.</p>
+     * (IAM) role to be assumed when DataBrew runs the job.</p>
      */
     inline CreateRecipeJobRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
 
     /**
-     * <p>Metadata tags to apply to this job dataset.</p>
+     * <p>Metadata tags to apply to this job.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Metadata tags to apply to this job dataset.</p>
+     * <p>Metadata tags to apply to this job.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Metadata tags to apply to this job dataset.</p>
+     * <p>Metadata tags to apply to this job.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Metadata tags to apply to this job dataset.</p>
+     * <p>Metadata tags to apply to this job.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Metadata tags to apply to this job dataset.</p>
+     * <p>Metadata tags to apply to this job.</p>
      */
     inline CreateRecipeJobRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Metadata tags to apply to this job dataset.</p>
+     * <p>Metadata tags to apply to this job.</p>
      */
     inline CreateRecipeJobRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Metadata tags to apply to this job dataset.</p>
+     * <p>Metadata tags to apply to this job.</p>
      */
     inline CreateRecipeJobRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>Metadata tags to apply to this job dataset.</p>
+     * <p>Metadata tags to apply to this job.</p>
      */
     inline CreateRecipeJobRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Metadata tags to apply to this job dataset.</p>
+     * <p>Metadata tags to apply to this job.</p>
      */
     inline CreateRecipeJobRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Metadata tags to apply to this job dataset.</p>
+     * <p>Metadata tags to apply to this job.</p>
      */
     inline CreateRecipeJobRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Metadata tags to apply to this job dataset.</p>
+     * <p>Metadata tags to apply to this job.</p>
      */
     inline CreateRecipeJobRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Metadata tags to apply to this job dataset.</p>
+     * <p>Metadata tags to apply to this job.</p>
      */
     inline CreateRecipeJobRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Metadata tags to apply to this job dataset.</p>
+     * <p>Metadata tags to apply to this job.</p>
      */
     inline CreateRecipeJobRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

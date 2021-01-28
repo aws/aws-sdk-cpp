@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents a single step to be performed in an AWS Glue DataBrew
-   * recipe.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents a single step from a DataBrew recipe to be
+   * performed.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/RecipeStep">AWS
    * API Reference</a></p>
    */

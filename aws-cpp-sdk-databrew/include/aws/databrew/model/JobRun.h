@@ -30,7 +30,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents one run of an AWS Glue DataBrew job.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents one run of a DataBrew job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/JobRun">AWS API
    * Reference</a></p>
    */
@@ -476,42 +476,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier (the user name) of the user who initiated the job run. </p>
+     * <p>The Amazon Resource Name (ARN) of the user who initiated the job run. </p>
      */
     inline const Aws::String& GetStartedBy() const{ return m_startedBy; }
 
     /**
-     * <p>The identifier (the user name) of the user who initiated the job run. </p>
+     * <p>The Amazon Resource Name (ARN) of the user who initiated the job run. </p>
      */
     inline bool StartedByHasBeenSet() const { return m_startedByHasBeenSet; }
 
     /**
-     * <p>The identifier (the user name) of the user who initiated the job run. </p>
+     * <p>The Amazon Resource Name (ARN) of the user who initiated the job run. </p>
      */
     inline void SetStartedBy(const Aws::String& value) { m_startedByHasBeenSet = true; m_startedBy = value; }
 
     /**
-     * <p>The identifier (the user name) of the user who initiated the job run. </p>
+     * <p>The Amazon Resource Name (ARN) of the user who initiated the job run. </p>
      */
     inline void SetStartedBy(Aws::String&& value) { m_startedByHasBeenSet = true; m_startedBy = std::move(value); }
 
     /**
-     * <p>The identifier (the user name) of the user who initiated the job run. </p>
+     * <p>The Amazon Resource Name (ARN) of the user who initiated the job run. </p>
      */
     inline void SetStartedBy(const char* value) { m_startedByHasBeenSet = true; m_startedBy.assign(value); }
 
     /**
-     * <p>The identifier (the user name) of the user who initiated the job run. </p>
+     * <p>The Amazon Resource Name (ARN) of the user who initiated the job run. </p>
      */
     inline JobRun& WithStartedBy(const Aws::String& value) { SetStartedBy(value); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user who initiated the job run. </p>
+     * <p>The Amazon Resource Name (ARN) of the user who initiated the job run. </p>
      */
     inline JobRun& WithStartedBy(Aws::String&& value) { SetStartedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user who initiated the job run. </p>
+     * <p>The Amazon Resource Name (ARN) of the user who initiated the job run. </p>
      */
     inline JobRun& WithStartedBy(const char* value) { SetStartedBy(value); return *this;}
 

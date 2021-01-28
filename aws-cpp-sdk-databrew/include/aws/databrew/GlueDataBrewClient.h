@@ -282,16 +282,40 @@ namespace Model
 
 
         /**
-         * <p>Deletes one or more versions of a recipe at a time.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Deletes one or more versions of a recipe at a time.</p> <p>The entire request
+         * will be rejected if:</p> <ul> <li> <p>The recipe does not exist.</p> </li> <li>
+         * <p>There is an invalid version identifier in the list of versions.</p> </li>
+         * <li> <p>The verision list is empty.</p> </li> <li> <p>The version list size
+         * exceeds 50.</p> </li> <li> <p>The verison list contains duplicate entries.</p>
+         * </li> </ul> <p>The request will complete successfully, but with partial
+         * failures, if:</p> <ul> <li> <p>A version does not exist.</p> </li> <li> <p>A
+         * version is being used by a job.</p> </li> <li> <p>You specify
+         * <code>LATEST_WORKING</code>, but it's being used by a project.</p> </li> <li>
+         * <p>The version fails to be deleted.</p> </li> </ul> <p>The
+         * <code>LATEST_WORKING</code> version will only be deleted if the recipe has no
+         * other versions. If you try to delete <code>LATEST_WORKING</code> while other
+         * versions exist (or if they can't be deleted), then <code>LATEST_WORKING</code>
+         * will be listed as partial failure in the response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/BatchDeleteRecipeVersion">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchDeleteRecipeVersionOutcome BatchDeleteRecipeVersion(const Model::BatchDeleteRecipeVersionRequest& request) const;
 
         /**
-         * <p>Deletes one or more versions of a recipe at a time.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Deletes one or more versions of a recipe at a time.</p> <p>The entire request
+         * will be rejected if:</p> <ul> <li> <p>The recipe does not exist.</p> </li> <li>
+         * <p>There is an invalid version identifier in the list of versions.</p> </li>
+         * <li> <p>The verision list is empty.</p> </li> <li> <p>The version list size
+         * exceeds 50.</p> </li> <li> <p>The verison list contains duplicate entries.</p>
+         * </li> </ul> <p>The request will complete successfully, but with partial
+         * failures, if:</p> <ul> <li> <p>A version does not exist.</p> </li> <li> <p>A
+         * version is being used by a job.</p> </li> <li> <p>You specify
+         * <code>LATEST_WORKING</code>, but it's being used by a project.</p> </li> <li>
+         * <p>The version fails to be deleted.</p> </li> </ul> <p>The
+         * <code>LATEST_WORKING</code> version will only be deleted if the recipe has no
+         * other versions. If you try to delete <code>LATEST_WORKING</code> while other
+         * versions exist (or if they can't be deleted), then <code>LATEST_WORKING</code>
+         * will be listed as partial failure in the response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/BatchDeleteRecipeVersion">AWS
          * API Reference</a></p>
          *
@@ -300,8 +324,20 @@ namespace Model
         virtual Model::BatchDeleteRecipeVersionOutcomeCallable BatchDeleteRecipeVersionCallable(const Model::BatchDeleteRecipeVersionRequest& request) const;
 
         /**
-         * <p>Deletes one or more versions of a recipe at a time.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Deletes one or more versions of a recipe at a time.</p> <p>The entire request
+         * will be rejected if:</p> <ul> <li> <p>The recipe does not exist.</p> </li> <li>
+         * <p>There is an invalid version identifier in the list of versions.</p> </li>
+         * <li> <p>The verision list is empty.</p> </li> <li> <p>The version list size
+         * exceeds 50.</p> </li> <li> <p>The verison list contains duplicate entries.</p>
+         * </li> </ul> <p>The request will complete successfully, but with partial
+         * failures, if:</p> <ul> <li> <p>A version does not exist.</p> </li> <li> <p>A
+         * version is being used by a job.</p> </li> <li> <p>You specify
+         * <code>LATEST_WORKING</code>, but it's being used by a project.</p> </li> <li>
+         * <p>The version fails to be deleted.</p> </li> </ul> <p>The
+         * <code>LATEST_WORKING</code> version will only be deleted if the recipe has no
+         * other versions. If you try to delete <code>LATEST_WORKING</code> while other
+         * versions exist (or if they can't be deleted), then <code>LATEST_WORKING</code>
+         * will be listed as partial failure in the response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/BatchDeleteRecipeVersion">AWS
          * API Reference</a></p>
          *
@@ -310,16 +346,14 @@ namespace Model
         virtual void BatchDeleteRecipeVersionAsync(const Model::BatchDeleteRecipeVersionRequest& request, const BatchDeleteRecipeVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new AWS Glue DataBrew dataset for this AWS account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a new DataBrew dataset.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateDataset">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateDatasetOutcome CreateDataset(const Model::CreateDatasetRequest& request) const;
 
         /**
-         * <p>Creates a new AWS Glue DataBrew dataset for this AWS account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a new DataBrew dataset.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateDataset">AWS
          * API Reference</a></p>
          *
@@ -328,8 +362,7 @@ namespace Model
         virtual Model::CreateDatasetOutcomeCallable CreateDatasetCallable(const Model::CreateDatasetRequest& request) const;
 
         /**
-         * <p>Creates a new AWS Glue DataBrew dataset for this AWS account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a new DataBrew dataset.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateDataset">AWS
          * API Reference</a></p>
          *
@@ -338,16 +371,16 @@ namespace Model
         virtual void CreateDatasetAsync(const Model::CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new job to profile an AWS Glue DataBrew dataset that exists in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new job to analyze a dataset and create its data
+         * profile.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateProfileJob">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateProfileJobOutcome CreateProfileJob(const Model::CreateProfileJobRequest& request) const;
 
         /**
-         * <p>Creates a new job to profile an AWS Glue DataBrew dataset that exists in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new job to analyze a dataset and create its data
+         * profile.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateProfileJob">AWS
          * API Reference</a></p>
          *
@@ -356,8 +389,8 @@ namespace Model
         virtual Model::CreateProfileJobOutcomeCallable CreateProfileJobCallable(const Model::CreateProfileJobRequest& request) const;
 
         /**
-         * <p>Creates a new job to profile an AWS Glue DataBrew dataset that exists in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new job to analyze a dataset and create its data
+         * profile.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateProfileJob">AWS
          * API Reference</a></p>
          *
@@ -366,16 +399,14 @@ namespace Model
         virtual void CreateProfileJobAsync(const Model::CreateProfileJobRequest& request, const CreateProfileJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new AWS Glue DataBrew project in the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new DataBrew project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateProject">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateProjectOutcome CreateProject(const Model::CreateProjectRequest& request) const;
 
         /**
-         * <p>Creates a new AWS Glue DataBrew project in the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new DataBrew project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateProject">AWS
          * API Reference</a></p>
          *
@@ -384,8 +415,7 @@ namespace Model
         virtual Model::CreateProjectOutcomeCallable CreateProjectCallable(const Model::CreateProjectRequest& request) const;
 
         /**
-         * <p>Creates a new AWS Glue DataBrew project in the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new DataBrew project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateProject">AWS
          * API Reference</a></p>
          *
@@ -394,16 +424,14 @@ namespace Model
         virtual void CreateProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new AWS Glue DataBrew recipe for the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new DataBrew recipe.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateRecipe">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateRecipeOutcome CreateRecipe(const Model::CreateRecipeRequest& request) const;
 
         /**
-         * <p>Creates a new AWS Glue DataBrew recipe for the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new DataBrew recipe.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateRecipe">AWS
          * API Reference</a></p>
          *
@@ -412,8 +440,7 @@ namespace Model
         virtual Model::CreateRecipeOutcomeCallable CreateRecipeCallable(const Model::CreateRecipeRequest& request) const;
 
         /**
-         * <p>Creates a new AWS Glue DataBrew recipe for the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new DataBrew recipe.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateRecipe">AWS
          * API Reference</a></p>
          *
@@ -422,18 +449,16 @@ namespace Model
         virtual void CreateRecipeAsync(const Model::CreateRecipeRequest& request, const CreateRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new job for an existing AWS Glue DataBrew recipe in the current AWS
-         * account. You can create a standalone job using either a project, or a
-         * combination of a recipe and a dataset.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new job to transform input data, using steps defined in an existing
+         * AWS Glue DataBrew recipe</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateRecipeJob">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateRecipeJobOutcome CreateRecipeJob(const Model::CreateRecipeJobRequest& request) const;
 
         /**
-         * <p>Creates a new job for an existing AWS Glue DataBrew recipe in the current AWS
-         * account. You can create a standalone job using either a project, or a
-         * combination of a recipe and a dataset.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new job to transform input data, using steps defined in an existing
+         * AWS Glue DataBrew recipe</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateRecipeJob">AWS
          * API Reference</a></p>
          *
@@ -442,9 +467,8 @@ namespace Model
         virtual Model::CreateRecipeJobOutcomeCallable CreateRecipeJobCallable(const Model::CreateRecipeJobRequest& request) const;
 
         /**
-         * <p>Creates a new job for an existing AWS Glue DataBrew recipe in the current AWS
-         * account. You can create a standalone job using either a project, or a
-         * combination of a recipe and a dataset.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new job to transform input data, using steps defined in an existing
+         * AWS Glue DataBrew recipe</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateRecipeJob">AWS
          * API Reference</a></p>
          *
@@ -453,18 +477,16 @@ namespace Model
         virtual void CreateRecipeJobAsync(const Model::CreateRecipeJobRequest& request, const CreateRecipeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new schedule for one or more AWS Glue DataBrew jobs. Jobs can be
-         * run at a specific date and time, or at regular intervals.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a new schedule for one or more DataBrew jobs. Jobs can be run at a
+         * specific date and time, or at regular intervals.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateSchedule">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateScheduleOutcome CreateSchedule(const Model::CreateScheduleRequest& request) const;
 
         /**
-         * <p>Creates a new schedule for one or more AWS Glue DataBrew jobs. Jobs can be
-         * run at a specific date and time, or at regular intervals.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a new schedule for one or more DataBrew jobs. Jobs can be run at a
+         * specific date and time, or at regular intervals.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateSchedule">AWS
          * API Reference</a></p>
          *
@@ -473,9 +495,8 @@ namespace Model
         virtual Model::CreateScheduleOutcomeCallable CreateScheduleCallable(const Model::CreateScheduleRequest& request) const;
 
         /**
-         * <p>Creates a new schedule for one or more AWS Glue DataBrew jobs. Jobs can be
-         * run at a specific date and time, or at regular intervals.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a new schedule for one or more DataBrew jobs. Jobs can be run at a
+         * specific date and time, or at regular intervals.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateSchedule">AWS
          * API Reference</a></p>
          *
@@ -484,14 +505,14 @@ namespace Model
         virtual void CreateScheduleAsync(const Model::CreateScheduleRequest& request, const CreateScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a dataset from AWS Glue DataBrew.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a dataset from DataBrew.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DeleteDataset">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteDatasetOutcome DeleteDataset(const Model::DeleteDatasetRequest& request) const;
 
         /**
-         * <p>Deletes a dataset from AWS Glue DataBrew.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a dataset from DataBrew.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DeleteDataset">AWS
          * API Reference</a></p>
          *
@@ -500,7 +521,7 @@ namespace Model
         virtual Model::DeleteDatasetOutcomeCallable DeleteDatasetCallable(const Model::DeleteDatasetRequest& request) const;
 
         /**
-         * <p>Deletes a dataset from AWS Glue DataBrew.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a dataset from DataBrew.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DeleteDataset">AWS
          * API Reference</a></p>
          *
@@ -509,16 +530,14 @@ namespace Model
         virtual void DeleteDatasetAsync(const Model::DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified AWS Glue DataBrew job from the current AWS account. The
-         * job can be for a recipe or for a profile.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified DataBrew job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DeleteJob">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteJobOutcome DeleteJob(const Model::DeleteJobRequest& request) const;
 
         /**
-         * <p>Deletes the specified AWS Glue DataBrew job from the current AWS account. The
-         * job can be for a recipe or for a profile.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified DataBrew job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DeleteJob">AWS
          * API Reference</a></p>
          *
@@ -527,8 +546,7 @@ namespace Model
         virtual Model::DeleteJobOutcomeCallable DeleteJobCallable(const Model::DeleteJobRequest& request) const;
 
         /**
-         * <p>Deletes the specified AWS Glue DataBrew job from the current AWS account. The
-         * job can be for a recipe or for a profile.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified DataBrew job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DeleteJob">AWS
          * API Reference</a></p>
          *
@@ -537,16 +555,14 @@ namespace Model
         virtual void DeleteJobAsync(const Model::DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an existing AWS Glue DataBrew project from the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an existing DataBrew project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DeleteProject">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteProjectOutcome DeleteProject(const Model::DeleteProjectRequest& request) const;
 
         /**
-         * <p>Deletes an existing AWS Glue DataBrew project from the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an existing DataBrew project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DeleteProject">AWS
          * API Reference</a></p>
          *
@@ -555,8 +571,7 @@ namespace Model
         virtual Model::DeleteProjectOutcomeCallable DeleteProjectCallable(const Model::DeleteProjectRequest& request) const;
 
         /**
-         * <p>Deletes an existing AWS Glue DataBrew project from the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an existing DataBrew project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DeleteProject">AWS
          * API Reference</a></p>
          *
@@ -565,16 +580,14 @@ namespace Model
         virtual void DeleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a single version of an AWS Glue DataBrew recipe.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes a single version of a DataBrew recipe.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DeleteRecipeVersion">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteRecipeVersionOutcome DeleteRecipeVersion(const Model::DeleteRecipeVersionRequest& request) const;
 
         /**
-         * <p>Deletes a single version of an AWS Glue DataBrew recipe.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes a single version of a DataBrew recipe.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DeleteRecipeVersion">AWS
          * API Reference</a></p>
          *
@@ -583,8 +596,7 @@ namespace Model
         virtual Model::DeleteRecipeVersionOutcomeCallable DeleteRecipeVersionCallable(const Model::DeleteRecipeVersionRequest& request) const;
 
         /**
-         * <p>Deletes a single version of an AWS Glue DataBrew recipe.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes a single version of a DataBrew recipe.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DeleteRecipeVersion">AWS
          * API Reference</a></p>
          *
@@ -593,16 +605,14 @@ namespace Model
         virtual void DeleteRecipeVersionAsync(const Model::DeleteRecipeVersionRequest& request, const DeleteRecipeVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified AWS Glue DataBrew schedule from the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified DataBrew schedule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DeleteSchedule">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteScheduleOutcome DeleteSchedule(const Model::DeleteScheduleRequest& request) const;
 
         /**
-         * <p>Deletes the specified AWS Glue DataBrew schedule from the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified DataBrew schedule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DeleteSchedule">AWS
          * API Reference</a></p>
          *
@@ -611,8 +621,7 @@ namespace Model
         virtual Model::DeleteScheduleOutcomeCallable DeleteScheduleCallable(const Model::DeleteScheduleRequest& request) const;
 
         /**
-         * <p>Deletes the specified AWS Glue DataBrew schedule from the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified DataBrew schedule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DeleteSchedule">AWS
          * API Reference</a></p>
          *
@@ -621,16 +630,16 @@ namespace Model
         virtual void DeleteScheduleAsync(const Model::DeleteScheduleRequest& request, const DeleteScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the definition of a specific AWS Glue DataBrew dataset that is in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the definition of a specific DataBrew dataset.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeDataset">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeDatasetOutcome DescribeDataset(const Model::DescribeDatasetRequest& request) const;
 
         /**
-         * <p>Returns the definition of a specific AWS Glue DataBrew dataset that is in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the definition of a specific DataBrew dataset.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeDataset">AWS
          * API Reference</a></p>
          *
@@ -639,8 +648,8 @@ namespace Model
         virtual Model::DescribeDatasetOutcomeCallable DescribeDatasetCallable(const Model::DescribeDatasetRequest& request) const;
 
         /**
-         * <p>Returns the definition of a specific AWS Glue DataBrew dataset that is in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the definition of a specific DataBrew dataset.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeDataset">AWS
          * API Reference</a></p>
          *
@@ -649,16 +658,16 @@ namespace Model
         virtual void DescribeDatasetAsync(const Model::DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the definition of a specific AWS Glue DataBrew job that is in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the definition of a specific DataBrew job.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeJob">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeJobOutcome DescribeJob(const Model::DescribeJobRequest& request) const;
 
         /**
-         * <p>Returns the definition of a specific AWS Glue DataBrew job that is in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the definition of a specific DataBrew job.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeJob">AWS
          * API Reference</a></p>
          *
@@ -667,8 +676,8 @@ namespace Model
         virtual Model::DescribeJobOutcomeCallable DescribeJobCallable(const Model::DescribeJobRequest& request) const;
 
         /**
-         * <p>Returns the definition of a specific AWS Glue DataBrew job that is in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the definition of a specific DataBrew job.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeJob">AWS
          * API Reference</a></p>
          *
@@ -677,16 +686,16 @@ namespace Model
         virtual void DescribeJobAsync(const Model::DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the definition of a specific AWS Glue DataBrew project that is in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the definition of a specific DataBrew project.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeProject">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeProjectOutcome DescribeProject(const Model::DescribeProjectRequest& request) const;
 
         /**
-         * <p>Returns the definition of a specific AWS Glue DataBrew project that is in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the definition of a specific DataBrew project.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeProject">AWS
          * API Reference</a></p>
          *
@@ -695,8 +704,8 @@ namespace Model
         virtual Model::DescribeProjectOutcomeCallable DescribeProjectCallable(const Model::DescribeProjectRequest& request) const;
 
         /**
-         * <p>Returns the definition of a specific AWS Glue DataBrew project that is in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the definition of a specific DataBrew project.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeProject">AWS
          * API Reference</a></p>
          *
@@ -705,16 +714,16 @@ namespace Model
         virtual void DescribeProjectAsync(const Model::DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the definition of a specific AWS Glue DataBrew recipe that is in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the definition of a specific DataBrew recipe corresponding to a
+         * particular version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeRecipe">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeRecipeOutcome DescribeRecipe(const Model::DescribeRecipeRequest& request) const;
 
         /**
-         * <p>Returns the definition of a specific AWS Glue DataBrew recipe that is in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the definition of a specific DataBrew recipe corresponding to a
+         * particular version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeRecipe">AWS
          * API Reference</a></p>
          *
@@ -723,8 +732,8 @@ namespace Model
         virtual Model::DescribeRecipeOutcomeCallable DescribeRecipeCallable(const Model::DescribeRecipeRequest& request) const;
 
         /**
-         * <p>Returns the definition of a specific AWS Glue DataBrew recipe that is in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the definition of a specific DataBrew recipe corresponding to a
+         * particular version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeRecipe">AWS
          * API Reference</a></p>
          *
@@ -733,16 +742,16 @@ namespace Model
         virtual void DescribeRecipeAsync(const Model::DescribeRecipeRequest& request, const DescribeRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the definition of a specific AWS Glue DataBrew schedule that is in
-         * the current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the definition of a specific DataBrew schedule.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeSchedule">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeScheduleOutcome DescribeSchedule(const Model::DescribeScheduleRequest& request) const;
 
         /**
-         * <p>Returns the definition of a specific AWS Glue DataBrew schedule that is in
-         * the current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the definition of a specific DataBrew schedule.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeSchedule">AWS
          * API Reference</a></p>
          *
@@ -751,8 +760,8 @@ namespace Model
         virtual Model::DescribeScheduleOutcomeCallable DescribeScheduleCallable(const Model::DescribeScheduleRequest& request) const;
 
         /**
-         * <p>Returns the definition of a specific AWS Glue DataBrew schedule that is in
-         * the current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the definition of a specific DataBrew schedule.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeSchedule">AWS
          * API Reference</a></p>
          *
@@ -761,16 +770,14 @@ namespace Model
         virtual void DescribeScheduleAsync(const Model::DescribeScheduleRequest& request, const DescribeScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all of the AWS Glue DataBrew datasets for the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all of the DataBrew datasets.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListDatasets">AWS
          * API Reference</a></p>
          */
         virtual Model::ListDatasetsOutcome ListDatasets(const Model::ListDatasetsRequest& request) const;
 
         /**
-         * <p>Lists all of the AWS Glue DataBrew datasets for the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all of the DataBrew datasets.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListDatasets">AWS
          * API Reference</a></p>
          *
@@ -779,8 +786,7 @@ namespace Model
         virtual Model::ListDatasetsOutcomeCallable ListDatasetsCallable(const Model::ListDatasetsRequest& request) const;
 
         /**
-         * <p>Lists all of the AWS Glue DataBrew datasets for the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all of the DataBrew datasets.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListDatasets">AWS
          * API Reference</a></p>
          *
@@ -789,16 +795,16 @@ namespace Model
         virtual void ListDatasetsAsync(const Model::ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all of the previous runs of a particular AWS Glue DataBrew job in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all of the previous runs of a particular DataBrew job.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListJobRuns">AWS
          * API Reference</a></p>
          */
         virtual Model::ListJobRunsOutcome ListJobRuns(const Model::ListJobRunsRequest& request) const;
 
         /**
-         * <p>Lists all of the previous runs of a particular AWS Glue DataBrew job in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all of the previous runs of a particular DataBrew job.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListJobRuns">AWS
          * API Reference</a></p>
          *
@@ -807,8 +813,8 @@ namespace Model
         virtual Model::ListJobRunsOutcomeCallable ListJobRunsCallable(const Model::ListJobRunsRequest& request) const;
 
         /**
-         * <p>Lists all of the previous runs of a particular AWS Glue DataBrew job in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all of the previous runs of a particular DataBrew job.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListJobRuns">AWS
          * API Reference</a></p>
          *
@@ -817,16 +823,16 @@ namespace Model
         virtual void ListJobRunsAsync(const Model::ListJobRunsRequest& request, const ListJobRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the AWS Glue DataBrew jobs in the current AWS account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all of the DataBrew jobs that are defined.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListJobs">AWS
          * API Reference</a></p>
          */
         virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request) const;
 
         /**
-         * <p>Lists the AWS Glue DataBrew jobs in the current AWS account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all of the DataBrew jobs that are defined.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListJobs">AWS
          * API Reference</a></p>
          *
@@ -835,8 +841,8 @@ namespace Model
         virtual Model::ListJobsOutcomeCallable ListJobsCallable(const Model::ListJobsRequest& request) const;
 
         /**
-         * <p>Lists the AWS Glue DataBrew jobs in the current AWS account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all of the DataBrew jobs that are defined.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListJobs">AWS
          * API Reference</a></p>
          *
@@ -845,16 +851,16 @@ namespace Model
         virtual void ListJobsAsync(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all of the DataBrew projects in the current AWS account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all of the DataBrew projects that are defined.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListProjects">AWS
          * API Reference</a></p>
          */
         virtual Model::ListProjectsOutcome ListProjects(const Model::ListProjectsRequest& request) const;
 
         /**
-         * <p>Lists all of the DataBrew projects in the current AWS account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all of the DataBrew projects that are defined.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListProjects">AWS
          * API Reference</a></p>
          *
@@ -863,8 +869,8 @@ namespace Model
         virtual Model::ListProjectsOutcomeCallable ListProjectsCallable(const Model::ListProjectsRequest& request) const;
 
         /**
-         * <p>Lists all of the DataBrew projects in the current AWS account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all of the DataBrew projects that are defined.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListProjects">AWS
          * API Reference</a></p>
          *
@@ -873,16 +879,16 @@ namespace Model
         virtual void ListProjectsAsync(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all of the versions of a particular AWS Glue DataBrew recipe in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the versions of a particular DataBrew recipe, except for
+         * <code>LATEST_WORKING</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListRecipeVersions">AWS
          * API Reference</a></p>
          */
         virtual Model::ListRecipeVersionsOutcome ListRecipeVersions(const Model::ListRecipeVersionsRequest& request) const;
 
         /**
-         * <p>Lists all of the versions of a particular AWS Glue DataBrew recipe in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the versions of a particular DataBrew recipe, except for
+         * <code>LATEST_WORKING</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListRecipeVersions">AWS
          * API Reference</a></p>
          *
@@ -891,8 +897,8 @@ namespace Model
         virtual Model::ListRecipeVersionsOutcomeCallable ListRecipeVersionsCallable(const Model::ListRecipeVersionsRequest& request) const;
 
         /**
-         * <p>Lists all of the versions of a particular AWS Glue DataBrew recipe in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the versions of a particular DataBrew recipe, except for
+         * <code>LATEST_WORKING</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListRecipeVersions">AWS
          * API Reference</a></p>
          *
@@ -901,16 +907,16 @@ namespace Model
         virtual void ListRecipeVersionsAsync(const Model::ListRecipeVersionsRequest& request, const ListRecipeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all of the AWS Glue DataBrew recipes in the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all of the DataBrew recipes that are defined.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListRecipes">AWS
          * API Reference</a></p>
          */
         virtual Model::ListRecipesOutcome ListRecipes(const Model::ListRecipesRequest& request) const;
 
         /**
-         * <p>Lists all of the AWS Glue DataBrew recipes in the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all of the DataBrew recipes that are defined.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListRecipes">AWS
          * API Reference</a></p>
          *
@@ -919,8 +925,8 @@ namespace Model
         virtual Model::ListRecipesOutcomeCallable ListRecipesCallable(const Model::ListRecipesRequest& request) const;
 
         /**
-         * <p>Lists all of the AWS Glue DataBrew recipes in the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all of the DataBrew recipes that are defined.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListRecipes">AWS
          * API Reference</a></p>
          *
@@ -929,16 +935,14 @@ namespace Model
         virtual void ListRecipesAsync(const Model::ListRecipesRequest& request, const ListRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the AWS Glue DataBrew schedules in the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the DataBrew schedules that are defined.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListSchedules">AWS
          * API Reference</a></p>
          */
         virtual Model::ListSchedulesOutcome ListSchedules(const Model::ListSchedulesRequest& request) const;
 
         /**
-         * <p>Lists the AWS Glue DataBrew schedules in the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the DataBrew schedules that are defined.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListSchedules">AWS
          * API Reference</a></p>
          *
@@ -947,8 +951,7 @@ namespace Model
         virtual Model::ListSchedulesOutcomeCallable ListSchedulesCallable(const Model::ListSchedulesRequest& request) const;
 
         /**
-         * <p>Lists the AWS Glue DataBrew schedules in the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the DataBrew schedules that are defined.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListSchedules">AWS
          * API Reference</a></p>
          *
@@ -957,16 +960,14 @@ namespace Model
         virtual void ListSchedulesAsync(const Model::ListSchedulesRequest& request, const ListSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all the tags for an AWS Glue DataBrew resource. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all the tags for a DataBrew resource. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListTagsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists all the tags for an AWS Glue DataBrew resource. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all the tags for a DataBrew resource. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -975,8 +976,7 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists all the tags for an AWS Glue DataBrew resource. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all the tags for a DataBrew resource. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -985,16 +985,14 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Publishes a new major version of an AWS Glue DataBrew recipe that exists in
-         * the current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Publishes a new version of a DataBrew recipe.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/PublishRecipe">AWS
          * API Reference</a></p>
          */
         virtual Model::PublishRecipeOutcome PublishRecipe(const Model::PublishRecipeRequest& request) const;
 
         /**
-         * <p>Publishes a new major version of an AWS Glue DataBrew recipe that exists in
-         * the current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Publishes a new version of a DataBrew recipe.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/PublishRecipe">AWS
          * API Reference</a></p>
          *
@@ -1003,8 +1001,7 @@ namespace Model
         virtual Model::PublishRecipeOutcomeCallable PublishRecipeCallable(const Model::PublishRecipeRequest& request) const;
 
         /**
-         * <p>Publishes a new major version of an AWS Glue DataBrew recipe that exists in
-         * the current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Publishes a new version of a DataBrew recipe.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/PublishRecipe">AWS
          * API Reference</a></p>
          *
@@ -1013,7 +1010,7 @@ namespace Model
         virtual void PublishRecipeAsync(const Model::PublishRecipeRequest& request, const PublishRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Performs a recipe step within an interactive AWS Glue DataBrew session that's
+         * <p>Performs a recipe step within an interactive DataBrew session that's
          * currently open.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/SendProjectSessionAction">AWS
          * API Reference</a></p>
@@ -1021,7 +1018,7 @@ namespace Model
         virtual Model::SendProjectSessionActionOutcome SendProjectSessionAction(const Model::SendProjectSessionActionRequest& request) const;
 
         /**
-         * <p>Performs a recipe step within an interactive AWS Glue DataBrew session that's
+         * <p>Performs a recipe step within an interactive DataBrew session that's
          * currently open.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/SendProjectSessionAction">AWS
          * API Reference</a></p>
@@ -1031,7 +1028,7 @@ namespace Model
         virtual Model::SendProjectSessionActionOutcomeCallable SendProjectSessionActionCallable(const Model::SendProjectSessionActionRequest& request) const;
 
         /**
-         * <p>Performs a recipe step within an interactive AWS Glue DataBrew session that's
+         * <p>Performs a recipe step within an interactive DataBrew session that's
          * currently open.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/SendProjectSessionAction">AWS
          * API Reference</a></p>
@@ -1041,16 +1038,14 @@ namespace Model
         virtual void SendProjectSessionActionAsync(const Model::SendProjectSessionActionRequest& request, const SendProjectSessionActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Runs an AWS Glue DataBrew job that exists in the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Runs a DataBrew job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/StartJobRun">AWS
          * API Reference</a></p>
          */
         virtual Model::StartJobRunOutcome StartJobRun(const Model::StartJobRunRequest& request) const;
 
         /**
-         * <p>Runs an AWS Glue DataBrew job that exists in the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Runs a DataBrew job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/StartJobRun">AWS
          * API Reference</a></p>
          *
@@ -1059,8 +1054,7 @@ namespace Model
         virtual Model::StartJobRunOutcomeCallable StartJobRunCallable(const Model::StartJobRunRequest& request) const;
 
         /**
-         * <p>Runs an AWS Glue DataBrew job that exists in the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Runs a DataBrew job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/StartJobRun">AWS
          * API Reference</a></p>
          *
@@ -1069,16 +1063,16 @@ namespace Model
         virtual void StartJobRunAsync(const Model::StartJobRunRequest& request, const StartJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an interactive session, enabling you to manipulate an AWS Glue
-         * DataBrew project.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an interactive session, enabling you to manipulate data in a DataBrew
+         * project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/StartProjectSession">AWS
          * API Reference</a></p>
          */
         virtual Model::StartProjectSessionOutcome StartProjectSession(const Model::StartProjectSessionRequest& request) const;
 
         /**
-         * <p>Creates an interactive session, enabling you to manipulate an AWS Glue
-         * DataBrew project.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an interactive session, enabling you to manipulate data in a DataBrew
+         * project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/StartProjectSession">AWS
          * API Reference</a></p>
          *
@@ -1087,8 +1081,8 @@ namespace Model
         virtual Model::StartProjectSessionOutcomeCallable StartProjectSessionCallable(const Model::StartProjectSessionRequest& request) const;
 
         /**
-         * <p>Creates an interactive session, enabling you to manipulate an AWS Glue
-         * DataBrew project.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an interactive session, enabling you to manipulate data in a DataBrew
+         * project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/StartProjectSession">AWS
          * API Reference</a></p>
          *
@@ -1097,16 +1091,14 @@ namespace Model
         virtual void StartProjectSessionAsync(const Model::StartProjectSessionRequest& request, const StartProjectSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stops the specified job from running in the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops a particular run of a job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/StopJobRun">AWS
          * API Reference</a></p>
          */
         virtual Model::StopJobRunOutcome StopJobRun(const Model::StopJobRunRequest& request) const;
 
         /**
-         * <p>Stops the specified job from running in the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops a particular run of a job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/StopJobRun">AWS
          * API Reference</a></p>
          *
@@ -1115,8 +1107,7 @@ namespace Model
         virtual Model::StopJobRunOutcomeCallable StopJobRunCallable(const Model::StopJobRunRequest& request) const;
 
         /**
-         * <p>Stops the specified job from running in the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops a particular run of a job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/StopJobRun">AWS
          * API Reference</a></p>
          *
@@ -1125,16 +1116,16 @@ namespace Model
         virtual void StopJobRunAsync(const Model::StopJobRunRequest& request, const StopJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds metadata tags to an AWS Glue DataBrew resource, such as a dataset, job,
-         * project, or recipe.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds metadata tags to a DataBrew resource, such as a dataset, project,
+         * recipe, job, or schedule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/TagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds metadata tags to an AWS Glue DataBrew resource, such as a dataset, job,
-         * project, or recipe.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds metadata tags to a DataBrew resource, such as a dataset, project,
+         * recipe, job, or schedule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/TagResource">AWS
          * API Reference</a></p>
          *
@@ -1143,8 +1134,8 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds metadata tags to an AWS Glue DataBrew resource, such as a dataset, job,
-         * project, or recipe.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds metadata tags to a DataBrew resource, such as a dataset, project,
+         * recipe, job, or schedule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/TagResource">AWS
          * API Reference</a></p>
          *
@@ -1153,16 +1144,14 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes metadata tags from an AWS Glue DataBrew resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes metadata tags from a DataBrew resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes metadata tags from an AWS Glue DataBrew resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes metadata tags from a DataBrew resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -1171,8 +1160,7 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes metadata tags from an AWS Glue DataBrew resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes metadata tags from a DataBrew resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -1181,16 +1169,16 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the definition of an existing AWS Glue DataBrew dataset in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the definition of an existing DataBrew dataset.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateDataset">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateDatasetOutcome UpdateDataset(const Model::UpdateDatasetRequest& request) const;
 
         /**
-         * <p>Modifies the definition of an existing AWS Glue DataBrew dataset in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the definition of an existing DataBrew dataset.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateDataset">AWS
          * API Reference</a></p>
          *
@@ -1199,8 +1187,8 @@ namespace Model
         virtual Model::UpdateDatasetOutcomeCallable UpdateDatasetCallable(const Model::UpdateDatasetRequest& request) const;
 
         /**
-         * <p>Modifies the definition of an existing AWS Glue DataBrew dataset in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the definition of an existing DataBrew dataset.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateDataset">AWS
          * API Reference</a></p>
          *
@@ -1209,16 +1197,16 @@ namespace Model
         virtual void UpdateDatasetAsync(const Model::UpdateDatasetRequest& request, const UpdateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the definition of an existing AWS Glue DataBrew job in the current
-         * AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the definition of an existing profile job.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateProfileJob">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateProfileJobOutcome UpdateProfileJob(const Model::UpdateProfileJobRequest& request) const;
 
         /**
-         * <p>Modifies the definition of an existing AWS Glue DataBrew job in the current
-         * AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the definition of an existing profile job.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateProfileJob">AWS
          * API Reference</a></p>
          *
@@ -1227,8 +1215,8 @@ namespace Model
         virtual Model::UpdateProfileJobOutcomeCallable UpdateProfileJobCallable(const Model::UpdateProfileJobRequest& request) const;
 
         /**
-         * <p>Modifies the definition of an existing AWS Glue DataBrew job in the current
-         * AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the definition of an existing profile job.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateProfileJob">AWS
          * API Reference</a></p>
          *
@@ -1237,16 +1225,16 @@ namespace Model
         virtual void UpdateProfileJobAsync(const Model::UpdateProfileJobRequest& request, const UpdateProfileJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the definition of an existing AWS Glue DataBrew project in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the definition of an existing DataBrew project.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateProject">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateProjectOutcome UpdateProject(const Model::UpdateProjectRequest& request) const;
 
         /**
-         * <p>Modifies the definition of an existing AWS Glue DataBrew project in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the definition of an existing DataBrew project.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateProject">AWS
          * API Reference</a></p>
          *
@@ -1255,8 +1243,8 @@ namespace Model
         virtual Model::UpdateProjectOutcomeCallable UpdateProjectCallable(const Model::UpdateProjectRequest& request) const;
 
         /**
-         * <p>Modifies the definition of an existing AWS Glue DataBrew project in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the definition of an existing DataBrew project.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateProject">AWS
          * API Reference</a></p>
          *
@@ -1265,16 +1253,16 @@ namespace Model
         virtual void UpdateProjectAsync(const Model::UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the definition of the latest working version of an AWS Glue DataBrew
-         * recipe in the current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the definition of the <code>LATEST_WORKING</code> version of a
+         * DataBrew recipe.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateRecipe">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateRecipeOutcome UpdateRecipe(const Model::UpdateRecipeRequest& request) const;
 
         /**
-         * <p>Modifies the definition of the latest working version of an AWS Glue DataBrew
-         * recipe in the current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the definition of the <code>LATEST_WORKING</code> version of a
+         * DataBrew recipe.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateRecipe">AWS
          * API Reference</a></p>
          *
@@ -1283,8 +1271,8 @@ namespace Model
         virtual Model::UpdateRecipeOutcomeCallable UpdateRecipeCallable(const Model::UpdateRecipeRequest& request) const;
 
         /**
-         * <p>Modifies the definition of the latest working version of an AWS Glue DataBrew
-         * recipe in the current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the definition of the <code>LATEST_WORKING</code> version of a
+         * DataBrew recipe.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateRecipe">AWS
          * API Reference</a></p>
          *
@@ -1293,16 +1281,16 @@ namespace Model
         virtual void UpdateRecipeAsync(const Model::UpdateRecipeRequest& request, const UpdateRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the definition of an existing AWS Glue DataBrew recipe job in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the definition of an existing DataBrew recipe job.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateRecipeJob">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateRecipeJobOutcome UpdateRecipeJob(const Model::UpdateRecipeJobRequest& request) const;
 
         /**
-         * <p>Modifies the definition of an existing AWS Glue DataBrew recipe job in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the definition of an existing DataBrew recipe job.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateRecipeJob">AWS
          * API Reference</a></p>
          *
@@ -1311,8 +1299,8 @@ namespace Model
         virtual Model::UpdateRecipeJobOutcomeCallable UpdateRecipeJobCallable(const Model::UpdateRecipeJobRequest& request) const;
 
         /**
-         * <p>Modifies the definition of an existing AWS Glue DataBrew recipe job in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the definition of an existing DataBrew recipe job.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateRecipeJob">AWS
          * API Reference</a></p>
          *
@@ -1321,16 +1309,16 @@ namespace Model
         virtual void UpdateRecipeJobAsync(const Model::UpdateRecipeJobRequest& request, const UpdateRecipeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the definition of an existing AWS Glue DataBrew schedule in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the definition of an existing DataBrew schedule.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateSchedule">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateScheduleOutcome UpdateSchedule(const Model::UpdateScheduleRequest& request) const;
 
         /**
-         * <p>Modifies the definition of an existing AWS Glue DataBrew schedule in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the definition of an existing DataBrew schedule.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateSchedule">AWS
          * API Reference</a></p>
          *
@@ -1339,8 +1327,8 @@ namespace Model
         virtual Model::UpdateScheduleOutcomeCallable UpdateScheduleCallable(const Model::UpdateScheduleRequest& request) const;
 
         /**
-         * <p>Modifies the definition of an existing AWS Glue DataBrew schedule in the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the definition of an existing DataBrew schedule.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateSchedule">AWS
          * API Reference</a></p>
          *

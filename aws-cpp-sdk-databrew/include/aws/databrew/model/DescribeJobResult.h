@@ -369,50 +369,45 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether Amazon CloudWatch logging is enabled for this
-     * job.</p>
+     * <p>Indicates whether Amazon CloudWatch logging is enabled for this job.</p>
      */
     inline const LogSubscription& GetLogSubscription() const{ return m_logSubscription; }
 
     /**
-     * <p>A value that indicates whether Amazon CloudWatch logging is enabled for this
-     * job.</p>
+     * <p>Indicates whether Amazon CloudWatch logging is enabled for this job.</p>
      */
     inline void SetLogSubscription(const LogSubscription& value) { m_logSubscription = value; }
 
     /**
-     * <p>A value that indicates whether Amazon CloudWatch logging is enabled for this
-     * job.</p>
+     * <p>Indicates whether Amazon CloudWatch logging is enabled for this job.</p>
      */
     inline void SetLogSubscription(LogSubscription&& value) { m_logSubscription = std::move(value); }
 
     /**
-     * <p>A value that indicates whether Amazon CloudWatch logging is enabled for this
-     * job.</p>
+     * <p>Indicates whether Amazon CloudWatch logging is enabled for this job.</p>
      */
     inline DescribeJobResult& WithLogSubscription(const LogSubscription& value) { SetLogSubscription(value); return *this;}
 
     /**
-     * <p>A value that indicates whether Amazon CloudWatch logging is enabled for this
-     * job.</p>
+     * <p>Indicates whether Amazon CloudWatch logging is enabled for this job.</p>
      */
     inline DescribeJobResult& WithLogSubscription(LogSubscription&& value) { SetLogSubscription(std::move(value)); return *this;}
 
 
     /**
-     * <p>The maximum number of nodes that AWS Glue DataBrew can consume when the job
+     * <p>The maximum number of compute nodes that DataBrew can consume when the job
      * processes data.</p>
      */
     inline int GetMaxCapacity() const{ return m_maxCapacity; }
 
     /**
-     * <p>The maximum number of nodes that AWS Glue DataBrew can consume when the job
+     * <p>The maximum number of compute nodes that DataBrew can consume when the job
      * processes data.</p>
      */
     inline void SetMaxCapacity(int value) { m_maxCapacity = value; }
 
     /**
-     * <p>The maximum number of nodes that AWS Glue DataBrew can consume when the job
+     * <p>The maximum number of compute nodes that DataBrew can consume when the job
      * processes data.</p>
      */
     inline DescribeJobResult& WithMaxCapacity(int value) { SetMaxCapacity(value); return *this;}
@@ -559,44 +554,44 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that was assumed
-     * for this request.</p>
+     * <p>The ARN of the AWS Identity and Access Management (IAM) role to be assumed
+     * when DataBrew runs the job.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that was assumed
-     * for this request.</p>
+     * <p>The ARN of the AWS Identity and Access Management (IAM) role to be assumed
+     * when DataBrew runs the job.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that was assumed
-     * for this request.</p>
+     * <p>The ARN of the AWS Identity and Access Management (IAM) role to be assumed
+     * when DataBrew runs the job.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that was assumed
-     * for this request.</p>
+     * <p>The ARN of the AWS Identity and Access Management (IAM) role to be assumed
+     * when DataBrew runs the job.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that was assumed
-     * for this request.</p>
+     * <p>The ARN of the AWS Identity and Access Management (IAM) role to be assumed
+     * when DataBrew runs the job.</p>
      */
     inline DescribeJobResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that was assumed
-     * for this request.</p>
+     * <p>The ARN of the AWS Identity and Access Management (IAM) role to be assumed
+     * when DataBrew runs the job.</p>
      */
     inline DescribeJobResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that was assumed
-     * for this request.</p>
+     * <p>The ARN of the AWS Identity and Access Management (IAM) role to be assumed
+     * when DataBrew runs the job.</p>
      */
     inline DescribeJobResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

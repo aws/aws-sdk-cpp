@@ -176,85 +176,87 @@ namespace Model
 
 
     /**
-     * <p>The name of the job to be created.</p>
+     * <p>The name of the job to be created. Valid characters are alphanumeric (A-Z,
+     * a-z, 0-9), hyphen (-), period (.), and space.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the job to be created.</p>
+     * <p>The name of the job to be created. Valid characters are alphanumeric (A-Z,
+     * a-z, 0-9), hyphen (-), period (.), and space.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the job to be created.</p>
+     * <p>The name of the job to be created. Valid characters are alphanumeric (A-Z,
+     * a-z, 0-9), hyphen (-), period (.), and space.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the job to be created.</p>
+     * <p>The name of the job to be created. Valid characters are alphanumeric (A-Z,
+     * a-z, 0-9), hyphen (-), period (.), and space.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the job to be created.</p>
+     * <p>The name of the job to be created. Valid characters are alphanumeric (A-Z,
+     * a-z, 0-9), hyphen (-), period (.), and space.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the job to be created.</p>
+     * <p>The name of the job to be created. Valid characters are alphanumeric (A-Z,
+     * a-z, 0-9), hyphen (-), period (.), and space.</p>
      */
     inline CreateProfileJobRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the job to be created.</p>
+     * <p>The name of the job to be created. Valid characters are alphanumeric (A-Z,
+     * a-z, 0-9), hyphen (-), period (.), and space.</p>
      */
     inline CreateProfileJobRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the job to be created.</p>
+     * <p>The name of the job to be created. Valid characters are alphanumeric (A-Z,
+     * a-z, 0-9), hyphen (-), period (.), and space.</p>
      */
     inline CreateProfileJobRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>A value that enables or disables Amazon CloudWatch logging for the current
-     * AWS account. If logging is enabled, CloudWatch writes one log stream for each
-     * job run.</p>
+     * <p>Enables or disables Amazon CloudWatch logging for the job. If logging is
+     * enabled, CloudWatch writes one log stream for each job run.</p>
      */
     inline const LogSubscription& GetLogSubscription() const{ return m_logSubscription; }
 
     /**
-     * <p>A value that enables or disables Amazon CloudWatch logging for the current
-     * AWS account. If logging is enabled, CloudWatch writes one log stream for each
-     * job run.</p>
+     * <p>Enables or disables Amazon CloudWatch logging for the job. If logging is
+     * enabled, CloudWatch writes one log stream for each job run.</p>
      */
     inline bool LogSubscriptionHasBeenSet() const { return m_logSubscriptionHasBeenSet; }
 
     /**
-     * <p>A value that enables or disables Amazon CloudWatch logging for the current
-     * AWS account. If logging is enabled, CloudWatch writes one log stream for each
-     * job run.</p>
+     * <p>Enables or disables Amazon CloudWatch logging for the job. If logging is
+     * enabled, CloudWatch writes one log stream for each job run.</p>
      */
     inline void SetLogSubscription(const LogSubscription& value) { m_logSubscriptionHasBeenSet = true; m_logSubscription = value; }
 
     /**
-     * <p>A value that enables or disables Amazon CloudWatch logging for the current
-     * AWS account. If logging is enabled, CloudWatch writes one log stream for each
-     * job run.</p>
+     * <p>Enables or disables Amazon CloudWatch logging for the job. If logging is
+     * enabled, CloudWatch writes one log stream for each job run.</p>
      */
     inline void SetLogSubscription(LogSubscription&& value) { m_logSubscriptionHasBeenSet = true; m_logSubscription = std::move(value); }
 
     /**
-     * <p>A value that enables or disables Amazon CloudWatch logging for the current
-     * AWS account. If logging is enabled, CloudWatch writes one log stream for each
-     * job run.</p>
+     * <p>Enables or disables Amazon CloudWatch logging for the job. If logging is
+     * enabled, CloudWatch writes one log stream for each job run.</p>
      */
     inline CreateProfileJobRequest& WithLogSubscription(const LogSubscription& value) { SetLogSubscription(value); return *this;}
 
     /**
-     * <p>A value that enables or disables Amazon CloudWatch logging for the current
-     * AWS account. If logging is enabled, CloudWatch writes one log stream for each
-     * job run.</p>
+     * <p>Enables or disables Amazon CloudWatch logging for the job. If logging is
+     * enabled, CloudWatch writes one log stream for each job run.</p>
      */
     inline CreateProfileJobRequest& WithLogSubscription(LogSubscription&& value) { SetLogSubscription(std::move(value)); return *this;}
 
@@ -326,49 +328,49 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed for this request.</p>
+     * (IAM) role to be assumed when DataBrew runs the job.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed for this request.</p>
+     * (IAM) role to be assumed when DataBrew runs the job.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed for this request.</p>
+     * (IAM) role to be assumed when DataBrew runs the job.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed for this request.</p>
+     * (IAM) role to be assumed when DataBrew runs the job.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed for this request.</p>
+     * (IAM) role to be assumed when DataBrew runs the job.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed for this request.</p>
+     * (IAM) role to be assumed when DataBrew runs the job.</p>
      */
     inline CreateProfileJobRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed for this request.</p>
+     * (IAM) role to be assumed when DataBrew runs the job.</p>
      */
     inline CreateProfileJobRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed for this request.</p>
+     * (IAM) role to be assumed when DataBrew runs the job.</p>
      */
     inline CreateProfileJobRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

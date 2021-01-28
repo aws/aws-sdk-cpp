@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents all of the attributes of an AWS Glue DataBrew
-   * project.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents all of the attributes of a DataBrew project.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Project">AWS
    * API Reference</a></p>
    */
@@ -114,42 +114,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier (the user name) of the user who crated the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who crated the project.</p>
      */
     inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
 
     /**
-     * <p>The identifier (the user name) of the user who crated the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who crated the project.</p>
      */
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
 
     /**
-     * <p>The identifier (the user name) of the user who crated the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who crated the project.</p>
      */
     inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
 
     /**
-     * <p>The identifier (the user name) of the user who crated the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who crated the project.</p>
      */
     inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
 
     /**
-     * <p>The identifier (the user name) of the user who crated the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who crated the project.</p>
      */
     inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
 
     /**
-     * <p>The identifier (the user name) of the user who crated the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who crated the project.</p>
      */
     inline Project& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user who crated the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who crated the project.</p>
      */
     inline Project& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user who crated the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who crated the project.</p>
      */
     inline Project& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
 
@@ -227,42 +227,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier (user name) of the user who last modified the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the project.</p>
      */
     inline const Aws::String& GetLastModifiedBy() const{ return m_lastModifiedBy; }
 
     /**
-     * <p>The identifier (user name) of the user who last modified the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the project.</p>
      */
     inline bool LastModifiedByHasBeenSet() const { return m_lastModifiedByHasBeenSet; }
 
     /**
-     * <p>The identifier (user name) of the user who last modified the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the project.</p>
      */
     inline void SetLastModifiedBy(const Aws::String& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = value; }
 
     /**
-     * <p>The identifier (user name) of the user who last modified the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the project.</p>
      */
     inline void SetLastModifiedBy(Aws::String&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::move(value); }
 
     /**
-     * <p>The identifier (user name) of the user who last modified the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the project.</p>
      */
     inline void SetLastModifiedBy(const char* value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy.assign(value); }
 
     /**
-     * <p>The identifier (user name) of the user who last modified the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the project.</p>
      */
     inline Project& WithLastModifiedBy(const Aws::String& value) { SetLastModifiedBy(value); return *this;}
 
     /**
-     * <p>The identifier (user name) of the user who last modified the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the project.</p>
      */
     inline Project& WithLastModifiedBy(Aws::String&& value) { SetLastModifiedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier (user name) of the user who last modified the project.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the project.</p>
      */
     inline Project& WithLastModifiedBy(const char* value) { SetLastModifiedBy(value); return *this;}
 
@@ -549,49 +549,49 @@ namespace Model
 
 
     /**
-     * <p>The identifier (the user name) of the user that opened the project for
+     * <p>The Amazon Resource Name (ARN) of the user that opened the project for
      * use.</p>
      */
     inline const Aws::String& GetOpenedBy() const{ return m_openedBy; }
 
     /**
-     * <p>The identifier (the user name) of the user that opened the project for
+     * <p>The Amazon Resource Name (ARN) of the user that opened the project for
      * use.</p>
      */
     inline bool OpenedByHasBeenSet() const { return m_openedByHasBeenSet; }
 
     /**
-     * <p>The identifier (the user name) of the user that opened the project for
+     * <p>The Amazon Resource Name (ARN) of the user that opened the project for
      * use.</p>
      */
     inline void SetOpenedBy(const Aws::String& value) { m_openedByHasBeenSet = true; m_openedBy = value; }
 
     /**
-     * <p>The identifier (the user name) of the user that opened the project for
+     * <p>The Amazon Resource Name (ARN) of the user that opened the project for
      * use.</p>
      */
     inline void SetOpenedBy(Aws::String&& value) { m_openedByHasBeenSet = true; m_openedBy = std::move(value); }
 
     /**
-     * <p>The identifier (the user name) of the user that opened the project for
+     * <p>The Amazon Resource Name (ARN) of the user that opened the project for
      * use.</p>
      */
     inline void SetOpenedBy(const char* value) { m_openedByHasBeenSet = true; m_openedBy.assign(value); }
 
     /**
-     * <p>The identifier (the user name) of the user that opened the project for
+     * <p>The Amazon Resource Name (ARN) of the user that opened the project for
      * use.</p>
      */
     inline Project& WithOpenedBy(const Aws::String& value) { SetOpenedBy(value); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user that opened the project for
+     * <p>The Amazon Resource Name (ARN) of the user that opened the project for
      * use.</p>
      */
     inline Project& WithOpenedBy(Aws::String&& value) { SetOpenedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user that opened the project for
+     * <p>The Amazon Resource Name (ARN) of the user that opened the project for
      * use.</p>
      */
     inline Project& WithOpenedBy(const char* value) { SetOpenedBy(value); return *this;}

@@ -27,7 +27,8 @@ NetworkSummary::NetworkSummary() :
     m_frameworkVersionHasBeenSet(false),
     m_status(NetworkStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+    m_creationDateHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ NetworkSummary::NetworkSummary(JsonView jsonValue) :
     m_frameworkVersionHasBeenSet(false),
     m_status(NetworkStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+    m_creationDateHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -96,6 +98,13 @@ NetworkSummary& NetworkSummary::operator =(JsonView jsonValue)
     m_creationDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Arn"))
+  {
+    m_arn = jsonValue.GetString("Arn");
+
+    m_arnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -140,6 +149,12 @@ JsonValue NetworkSummary::Jsonize() const
   if(m_creationDateHasBeenSet)
   {
    payload.WithString("CreationDate", m_creationDate.ToGmtString(DateFormat::ISO_8601));
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("Arn", m_arn);
+
   }
 
   return payload;

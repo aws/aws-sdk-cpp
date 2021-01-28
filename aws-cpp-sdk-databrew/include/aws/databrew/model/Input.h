@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Information on how AWS Glue DataBrew can find data, in either the AWS Glue
-   * Data Catalog or Amazon S3.</p><p><h3>See Also:</h3>   <a
+   * <p>Information on how DataBrew can find data, in either the AWS Glue Data
+   * Catalog or Amazon S3.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Input">AWS API
    * Reference</a></p>
    */
