@@ -41,49 +41,49 @@ namespace Model
 
 
     /**
-     * <p>A formatted URL that will be shown to an agent in the Contact Control Panel
+     * <p>A formatted URL that displays to an agent in the Contact Control Panel
      * (CCP)</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>A formatted URL that will be shown to an agent in the Contact Control Panel
+     * <p>A formatted URL that displays to an agent in the Contact Control Panel
      * (CCP)</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>A formatted URL that will be shown to an agent in the Contact Control Panel
+     * <p>A formatted URL that displays to an agent in the Contact Control Panel
      * (CCP)</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>A formatted URL that will be shown to an agent in the Contact Control Panel
+     * <p>A formatted URL that displays to an agent in the Contact Control Panel
      * (CCP)</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>A formatted URL that will be shown to an agent in the Contact Control Panel
+     * <p>A formatted URL that displays to an agent in the Contact Control Panel
      * (CCP)</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>A formatted URL that will be shown to an agent in the Contact Control Panel
+     * <p>A formatted URL that displays to an agent in the Contact Control Panel
      * (CCP)</p>
      */
     inline Reference& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>A formatted URL that will be shown to an agent in the Contact Control Panel
+     * <p>A formatted URL that displays to an agent in the Contact Control Panel
      * (CCP)</p>
      */
     inline Reference& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>A formatted URL that will be shown to an agent in the Contact Control Panel
+     * <p>A formatted URL that displays to an agent in the Contact Control Panel
      * (CCP)</p>
      */
     inline Reference& WithValue(const char* value) { SetValue(value); return *this;}

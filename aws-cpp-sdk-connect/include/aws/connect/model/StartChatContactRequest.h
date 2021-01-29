@@ -176,7 +176,7 @@ namespace Model
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
+     * Amazon Connect attributes. They can be accessed in contact flows just like any
      * other contact attributes. </p> <p>There can be up to 32,768 UTF-8 bytes across
      * all key-value pairs per contact. Attribute keys can include only alphanumeric,
      * dash, and underscore characters.</p>
@@ -185,7 +185,7 @@ namespace Model
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
+     * Amazon Connect attributes. They can be accessed in contact flows just like any
      * other contact attributes. </p> <p>There can be up to 32,768 UTF-8 bytes across
      * all key-value pairs per contact. Attribute keys can include only alphanumeric,
      * dash, and underscore characters.</p>
@@ -194,7 +194,7 @@ namespace Model
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
+     * Amazon Connect attributes. They can be accessed in contact flows just like any
      * other contact attributes. </p> <p>There can be up to 32,768 UTF-8 bytes across
      * all key-value pairs per contact. Attribute keys can include only alphanumeric,
      * dash, and underscore characters.</p>
@@ -203,7 +203,7 @@ namespace Model
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
+     * Amazon Connect attributes. They can be accessed in contact flows just like any
      * other contact attributes. </p> <p>There can be up to 32,768 UTF-8 bytes across
      * all key-value pairs per contact. Attribute keys can include only alphanumeric,
      * dash, and underscore characters.</p>
@@ -212,7 +212,7 @@ namespace Model
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
+     * Amazon Connect attributes. They can be accessed in contact flows just like any
      * other contact attributes. </p> <p>There can be up to 32,768 UTF-8 bytes across
      * all key-value pairs per contact. Attribute keys can include only alphanumeric,
      * dash, and underscore characters.</p>
@@ -221,7 +221,7 @@ namespace Model
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
+     * Amazon Connect attributes. They can be accessed in contact flows just like any
      * other contact attributes. </p> <p>There can be up to 32,768 UTF-8 bytes across
      * all key-value pairs per contact. Attribute keys can include only alphanumeric,
      * dash, and underscore characters.</p>
@@ -230,7 +230,7 @@ namespace Model
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
+     * Amazon Connect attributes. They can be accessed in contact flows just like any
      * other contact attributes. </p> <p>There can be up to 32,768 UTF-8 bytes across
      * all key-value pairs per contact. Attribute keys can include only alphanumeric,
      * dash, and underscore characters.</p>
@@ -239,7 +239,7 @@ namespace Model
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
+     * Amazon Connect attributes. They can be accessed in contact flows just like any
      * other contact attributes. </p> <p>There can be up to 32,768 UTF-8 bytes across
      * all key-value pairs per contact. Attribute keys can include only alphanumeric,
      * dash, and underscore characters.</p>
@@ -248,7 +248,7 @@ namespace Model
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
+     * Amazon Connect attributes. They can be accessed in contact flows just like any
      * other contact attributes. </p> <p>There can be up to 32,768 UTF-8 bytes across
      * all key-value pairs per contact. Attribute keys can include only alphanumeric,
      * dash, and underscore characters.</p>
@@ -257,7 +257,7 @@ namespace Model
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
+     * Amazon Connect attributes. They can be accessed in contact flows just like any
      * other contact attributes. </p> <p>There can be up to 32,768 UTF-8 bytes across
      * all key-value pairs per contact. Attribute keys can include only alphanumeric,
      * dash, and underscore characters.</p>
@@ -266,7 +266,7 @@ namespace Model
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
+     * Amazon Connect attributes. They can be accessed in contact flows just like any
      * other contact attributes. </p> <p>There can be up to 32,768 UTF-8 bytes across
      * all key-value pairs per contact. Attribute keys can include only alphanumeric,
      * dash, and underscore characters.</p>
@@ -275,7 +275,7 @@ namespace Model
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
+     * Amazon Connect attributes. They can be accessed in contact flows just like any
      * other contact attributes. </p> <p>There can be up to 32,768 UTF-8 bytes across
      * all key-value pairs per contact. Attribute keys can include only alphanumeric,
      * dash, and underscore characters.</p>
@@ -284,7 +284,7 @@ namespace Model
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
+     * Amazon Connect attributes. They can be accessed in contact flows just like any
      * other contact attributes. </p> <p>There can be up to 32,768 UTF-8 bytes across
      * all key-value pairs per contact. Attribute keys can include only alphanumeric,
      * dash, and underscore characters.</p>

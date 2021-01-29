@@ -41,66 +41,42 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the AWS account that owns the buckets. If you
-     * specify this value and don't specify a value for the buckets array, the job
-     * analyzes objects in all the buckets that are owned by the account and meet other
-     * conditions specified for the job.</p>
+     * <p>The unique identifier for the AWS account that owns the buckets.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The unique identifier for the AWS account that owns the buckets. If you
-     * specify this value and don't specify a value for the buckets array, the job
-     * analyzes objects in all the buckets that are owned by the account and meet other
-     * conditions specified for the job.</p>
+     * <p>The unique identifier for the AWS account that owns the buckets.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the AWS account that owns the buckets. If you
-     * specify this value and don't specify a value for the buckets array, the job
-     * analyzes objects in all the buckets that are owned by the account and meet other
-     * conditions specified for the job.</p>
+     * <p>The unique identifier for the AWS account that owns the buckets.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The unique identifier for the AWS account that owns the buckets. If you
-     * specify this value and don't specify a value for the buckets array, the job
-     * analyzes objects in all the buckets that are owned by the account and meet other
-     * conditions specified for the job.</p>
+     * <p>The unique identifier for the AWS account that owns the buckets.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The unique identifier for the AWS account that owns the buckets. If you
-     * specify this value and don't specify a value for the buckets array, the job
-     * analyzes objects in all the buckets that are owned by the account and meet other
-     * conditions specified for the job.</p>
+     * <p>The unique identifier for the AWS account that owns the buckets.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The unique identifier for the AWS account that owns the buckets. If you
-     * specify this value and don't specify a value for the buckets array, the job
-     * analyzes objects in all the buckets that are owned by the account and meet other
-     * conditions specified for the job.</p>
+     * <p>The unique identifier for the AWS account that owns the buckets.</p>
      */
     inline S3BucketDefinitionForJob& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the AWS account that owns the buckets. If you
-     * specify this value and don't specify a value for the buckets array, the job
-     * analyzes objects in all the buckets that are owned by the account and meet other
-     * conditions specified for the job.</p>
+     * <p>The unique identifier for the AWS account that owns the buckets.</p>
      */
     inline S3BucketDefinitionForJob& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the AWS account that owns the buckets. If you
-     * specify this value and don't specify a value for the buckets array, the job
-     * analyzes objects in all the buckets that are owned by the account and meet other
-     * conditions specified for the job.</p>
+     * <p>The unique identifier for the AWS account that owns the buckets.</p>
      */
     inline S3BucketDefinitionForJob& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 

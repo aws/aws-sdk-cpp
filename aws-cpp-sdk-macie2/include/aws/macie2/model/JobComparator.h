@@ -22,7 +22,8 @@ namespace Model
     LT,
     LTE,
     NE,
-    CONTAINS
+    CONTAINS,
+    STARTS_WITH
   };
 
 namespace JobComparatorMapper

@@ -165,32 +165,32 @@ namespace Model
 
 
     /**
-     * <p>Who is being recorded.</p>
+     * <p>The person being recorded.</p>
      */
     inline const VoiceRecordingConfiguration& GetVoiceRecordingConfiguration() const{ return m_voiceRecordingConfiguration; }
 
     /**
-     * <p>Who is being recorded.</p>
+     * <p>The person being recorded.</p>
      */
     inline bool VoiceRecordingConfigurationHasBeenSet() const { return m_voiceRecordingConfigurationHasBeenSet; }
 
     /**
-     * <p>Who is being recorded.</p>
+     * <p>The person being recorded.</p>
      */
     inline void SetVoiceRecordingConfiguration(const VoiceRecordingConfiguration& value) { m_voiceRecordingConfigurationHasBeenSet = true; m_voiceRecordingConfiguration = value; }
 
     /**
-     * <p>Who is being recorded.</p>
+     * <p>The person being recorded.</p>
      */
     inline void SetVoiceRecordingConfiguration(VoiceRecordingConfiguration&& value) { m_voiceRecordingConfigurationHasBeenSet = true; m_voiceRecordingConfiguration = std::move(value); }
 
     /**
-     * <p>Who is being recorded.</p>
+     * <p>The person being recorded.</p>
      */
     inline StartContactRecordingRequest& WithVoiceRecordingConfiguration(const VoiceRecordingConfiguration& value) { SetVoiceRecordingConfiguration(value); return *this;}
 
     /**
-     * <p>Who is being recorded.</p>
+     * <p>The person being recorded.</p>
      */
     inline StartContactRecordingRequest& WithVoiceRecordingConfiguration(VoiceRecordingConfiguration&& value) { SetVoiceRecordingConfiguration(std::move(value)); return *this;}
 

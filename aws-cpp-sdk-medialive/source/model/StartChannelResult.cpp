@@ -147,6 +147,12 @@ StartChannelResult& StartChannelResult::operator =(const Aws::AmazonWebServiceRe
     }
   }
 
+  if(jsonValue.ValueExists("vpc"))
+  {
+    m_vpc = jsonValue.GetObject("vpc");
+
+  }
+
 
 
   return *this;

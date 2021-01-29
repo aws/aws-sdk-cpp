@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the queue.</p>
+     * <p>The identifier for the queue.</p>
      */
     inline const Aws::String& GetQueueId() const{ return m_queueId; }
 
     /**
-     * <p>The identifier of the queue.</p>
+     * <p>The identifier for the queue.</p>
      */
     inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the queue.</p>
+     * <p>The identifier for the queue.</p>
      */
     inline void SetQueueId(const Aws::String& value) { m_queueIdHasBeenSet = true; m_queueId = value; }
 
     /**
-     * <p>The identifier of the queue.</p>
+     * <p>The identifier for the queue.</p>
      */
     inline void SetQueueId(Aws::String&& value) { m_queueIdHasBeenSet = true; m_queueId = std::move(value); }
 
     /**
-     * <p>The identifier of the queue.</p>
+     * <p>The identifier for the queue.</p>
      */
     inline void SetQueueId(const char* value) { m_queueIdHasBeenSet = true; m_queueId.assign(value); }
 
     /**
-     * <p>The identifier of the queue.</p>
+     * <p>The identifier for the queue.</p>
      */
     inline RoutingProfileQueueConfigSummary& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
 
     /**
-     * <p>The identifier of the queue.</p>
+     * <p>The identifier for the queue.</p>
      */
     inline RoutingProfileQueueConfigSummary& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the queue.</p>
+     * <p>The identifier for the queue.</p>
      */
     inline RoutingProfileQueueConfigSummary& WithQueueId(const char* value) { SetQueueId(value); return *this;}
 

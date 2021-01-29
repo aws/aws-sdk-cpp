@@ -13,6 +13,7 @@
 #include <aws/medialive/model/LogLevel.h>
 #include <aws/medialive/model/ChannelState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/medialive/model/VpcOutputSettings.h>
 #include <aws/medialive/model/OutputDestination.h>
 #include <aws/medialive/model/ChannelEgressEndpoint.h>
 #include <aws/medialive/model/InputAttachment.h>
@@ -609,6 +610,37 @@ one destination per
      */
     inline ChannelSummary& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * Settings for VPC output
+     */
+    inline const VpcOutputSettings& GetVpc() const{ return m_vpc; }
+
+    /**
+     * Settings for VPC output
+     */
+    inline bool VpcHasBeenSet() const { return m_vpcHasBeenSet; }
+
+    /**
+     * Settings for VPC output
+     */
+    inline void SetVpc(const VpcOutputSettings& value) { m_vpcHasBeenSet = true; m_vpc = value; }
+
+    /**
+     * Settings for VPC output
+     */
+    inline void SetVpc(VpcOutputSettings&& value) { m_vpcHasBeenSet = true; m_vpc = std::move(value); }
+
+    /**
+     * Settings for VPC output
+     */
+    inline ChannelSummary& WithVpc(const VpcOutputSettings& value) { SetVpc(value); return *this;}
+
+    /**
+     * Settings for VPC output
+     */
+    inline ChannelSummary& WithVpc(VpcOutputSettings&& value) { SetVpc(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -652,6 +684,9 @@ one destination per
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    VpcOutputSettings m_vpc;
+    bool m_vpcHasBeenSet;
   };
 
 } // namespace Model

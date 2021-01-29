@@ -202,98 +202,98 @@ namespace Model
 
     /**
      * <p>The inbound queues associated with the routing profile. If no queue is added,
-     * the agent can only make outbound calls.</p>
+     * the agent can make only outbound calls.</p>
      */
     inline const Aws::Vector<RoutingProfileQueueConfig>& GetQueueConfigs() const{ return m_queueConfigs; }
 
     /**
      * <p>The inbound queues associated with the routing profile. If no queue is added,
-     * the agent can only make outbound calls.</p>
+     * the agent can make only outbound calls.</p>
      */
     inline bool QueueConfigsHasBeenSet() const { return m_queueConfigsHasBeenSet; }
 
     /**
      * <p>The inbound queues associated with the routing profile. If no queue is added,
-     * the agent can only make outbound calls.</p>
+     * the agent can make only outbound calls.</p>
      */
     inline void SetQueueConfigs(const Aws::Vector<RoutingProfileQueueConfig>& value) { m_queueConfigsHasBeenSet = true; m_queueConfigs = value; }
 
     /**
      * <p>The inbound queues associated with the routing profile. If no queue is added,
-     * the agent can only make outbound calls.</p>
+     * the agent can make only outbound calls.</p>
      */
     inline void SetQueueConfigs(Aws::Vector<RoutingProfileQueueConfig>&& value) { m_queueConfigsHasBeenSet = true; m_queueConfigs = std::move(value); }
 
     /**
      * <p>The inbound queues associated with the routing profile. If no queue is added,
-     * the agent can only make outbound calls.</p>
+     * the agent can make only outbound calls.</p>
      */
     inline CreateRoutingProfileRequest& WithQueueConfigs(const Aws::Vector<RoutingProfileQueueConfig>& value) { SetQueueConfigs(value); return *this;}
 
     /**
      * <p>The inbound queues associated with the routing profile. If no queue is added,
-     * the agent can only make outbound calls.</p>
+     * the agent can make only outbound calls.</p>
      */
     inline CreateRoutingProfileRequest& WithQueueConfigs(Aws::Vector<RoutingProfileQueueConfig>&& value) { SetQueueConfigs(std::move(value)); return *this;}
 
     /**
      * <p>The inbound queues associated with the routing profile. If no queue is added,
-     * the agent can only make outbound calls.</p>
+     * the agent can make only outbound calls.</p>
      */
     inline CreateRoutingProfileRequest& AddQueueConfigs(const RoutingProfileQueueConfig& value) { m_queueConfigsHasBeenSet = true; m_queueConfigs.push_back(value); return *this; }
 
     /**
      * <p>The inbound queues associated with the routing profile. If no queue is added,
-     * the agent can only make outbound calls.</p>
+     * the agent can make only outbound calls.</p>
      */
     inline CreateRoutingProfileRequest& AddQueueConfigs(RoutingProfileQueueConfig&& value) { m_queueConfigsHasBeenSet = true; m_queueConfigs.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The channels agents can handle in the Contact Control Panel (CCP) for this
-     * routing profile.</p>
+     * <p>The channels that agents can handle in the Contact Control Panel (CCP) for
+     * this routing profile.</p>
      */
     inline const Aws::Vector<MediaConcurrency>& GetMediaConcurrencies() const{ return m_mediaConcurrencies; }
 
     /**
-     * <p>The channels agents can handle in the Contact Control Panel (CCP) for this
-     * routing profile.</p>
+     * <p>The channels that agents can handle in the Contact Control Panel (CCP) for
+     * this routing profile.</p>
      */
     inline bool MediaConcurrenciesHasBeenSet() const { return m_mediaConcurrenciesHasBeenSet; }
 
     /**
-     * <p>The channels agents can handle in the Contact Control Panel (CCP) for this
-     * routing profile.</p>
+     * <p>The channels that agents can handle in the Contact Control Panel (CCP) for
+     * this routing profile.</p>
      */
     inline void SetMediaConcurrencies(const Aws::Vector<MediaConcurrency>& value) { m_mediaConcurrenciesHasBeenSet = true; m_mediaConcurrencies = value; }
 
     /**
-     * <p>The channels agents can handle in the Contact Control Panel (CCP) for this
-     * routing profile.</p>
+     * <p>The channels that agents can handle in the Contact Control Panel (CCP) for
+     * this routing profile.</p>
      */
     inline void SetMediaConcurrencies(Aws::Vector<MediaConcurrency>&& value) { m_mediaConcurrenciesHasBeenSet = true; m_mediaConcurrencies = std::move(value); }
 
     /**
-     * <p>The channels agents can handle in the Contact Control Panel (CCP) for this
-     * routing profile.</p>
+     * <p>The channels that agents can handle in the Contact Control Panel (CCP) for
+     * this routing profile.</p>
      */
     inline CreateRoutingProfileRequest& WithMediaConcurrencies(const Aws::Vector<MediaConcurrency>& value) { SetMediaConcurrencies(value); return *this;}
 
     /**
-     * <p>The channels agents can handle in the Contact Control Panel (CCP) for this
-     * routing profile.</p>
+     * <p>The channels that agents can handle in the Contact Control Panel (CCP) for
+     * this routing profile.</p>
      */
     inline CreateRoutingProfileRequest& WithMediaConcurrencies(Aws::Vector<MediaConcurrency>&& value) { SetMediaConcurrencies(std::move(value)); return *this;}
 
     /**
-     * <p>The channels agents can handle in the Contact Control Panel (CCP) for this
-     * routing profile.</p>
+     * <p>The channels that agents can handle in the Contact Control Panel (CCP) for
+     * this routing profile.</p>
      */
     inline CreateRoutingProfileRequest& AddMediaConcurrencies(const MediaConcurrency& value) { m_mediaConcurrenciesHasBeenSet = true; m_mediaConcurrencies.push_back(value); return *this; }
 
     /**
-     * <p>The channels agents can handle in the Contact Control Panel (CCP) for this
-     * routing profile.</p>
+     * <p>The channels that agents can handle in the Contact Control Panel (CCP) for
+     * this routing profile.</p>
      */
     inline CreateRoutingProfileRequest& AddMediaConcurrencies(MediaConcurrency&& value) { m_mediaConcurrenciesHasBeenSet = true; m_mediaConcurrencies.push_back(std::move(value)); return *this; }
 
