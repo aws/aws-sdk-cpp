@@ -27,12 +27,19 @@ namespace S3Endpoint
   static const int US_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-east-1");
   static const int AWS_GLOBAL_HASH = Aws::Utils::HashingUtils::HashString("aws-global");
 
-  Aws::String ForAccessPointArn(const S3ARN& arn, const Aws::String& regionNameOverride, bool useDualStack)
+  Aws::String ForAccessPointArn(const S3ARN& arn, const Aws::String& regionNameOverride, bool useDualStack, const Aws::String& endpointOverride)
   {
+    Aws::StringStream ss;
+
+    if (!endpointOverride.empty())
+    {
+      ss << arn.GetResourceId() << "-" << arn.GetAccountId() << "." << endpointOverride;
+      return ss.str();
+    }
+
     const Aws::String& region = regionNameOverride.empty() ? arn.GetRegion() : regionNameOverride;
     auto hash = Aws::Utils::HashingUtils::HashString(region.c_str());
 
-    Aws::StringStream ss;
     ss << arn.GetResourceId() << "-" << arn.GetAccountId() << ".s3-accesspoint.";
     if (useDualStack)
     {
@@ -48,12 +55,21 @@ namespace S3Endpoint
     return ss.str();
   }
 
-  Aws::String ForOutpostsArn(const S3ARN& arn, const Aws::String& regionNameOverride)
+  Aws::String ForOutpostsArn(const S3ARN& arn, const Aws::String& regionNameOverride, bool useDualStack, const Aws::String& endpointOverride)
   {
+    AWS_UNREFERENCED_PARAM(useDualStack);
+    assert(!useDualStack);
+    Aws::StringStream ss;
+
+    if (!endpointOverride.empty())
+    {
+      ss << arn.GetSubResourceId() << "-" << arn.GetAccountId() << "." << arn.GetResourceId() << "." << endpointOverride;
+      return ss.str();
+    }
+
     const Aws::String& region = regionNameOverride.empty() ? arn.GetRegion() : regionNameOverride;
     auto hash = Aws::Utils::HashingUtils::HashString(region.c_str());
 
-    Aws::StringStream ss;
     ss << arn.GetSubResourceId() << "-" << arn.GetAccountId() << "." << arn.GetResourceId() << ".s3-outposts." << region << "." << "amazonaws.com";
 
     if (hash == CN_NORTH_1_HASH || hash == CN_NORTHWEST_1_HASH)

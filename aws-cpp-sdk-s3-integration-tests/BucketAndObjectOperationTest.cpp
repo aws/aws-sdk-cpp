@@ -8,6 +8,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/DefaultRetryStrategy.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/utils/crypto/Cipher.h>
@@ -42,6 +43,7 @@
 #include <aws/testing/ProxyConfig.h>
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/testing/TestingEnvironment.h>
+#include <aws/testing/mocks/monitoring/TestingMonitoring.h>
 #include <fstream>
 
 #ifdef _WIN32
@@ -76,6 +78,7 @@ namespace
     static std::string BASE_EVENT_STREAM_LARGE_FILE_TEST_BUCKET_NAME = "largeeventstream";
     static std::string BASE_EVENT_STREAM_ERRORS_IN_EVENT_TEST_BUCKET_NAME = "errorsinevent";
     static std::string BASE_CROSS_REGION_BUCKET_NAME = "crossregion";
+    static std::string BASE_ENDPOINT_OVERRIDE_BUCKET_NAME = "endpointoverride";
     static const char* ALLOCATION_TAG = "BucketAndObjectOperationTest";
     static const char* TEST_OBJ_KEY = "TestObjectKey";
     static const char* TEST_NOT_MODIFIED_OBJ_KEY = "TestNotModifiedObjectKey";
@@ -86,6 +89,7 @@ namespace
     //to get around this, this string is url encoded version of "TestUnicode中国Key". At test time, we'll convert it to the unicode string
     static const char* URLENCODED_UNICODE_KEY = "TestUnicode%E4%B8%AD%E5%9B%BDKey";
     static const char* URIESCAPE_KEY = "Esc ape+Me$";
+    static const char* CUSTOM_ENDPOINT_OVERRIDE = "beta.example.com";
 
     static const int TIMEOUT_MAX = 20;
 
@@ -113,6 +117,7 @@ namespace
         AppendUUID(BASE_EVENT_STREAM_LARGE_FILE_TEST_BUCKET_NAME);
         AppendUUID(BASE_EVENT_STREAM_ERRORS_IN_EVENT_TEST_BUCKET_NAME);
         AppendUUID(BASE_CROSS_REGION_BUCKET_NAME);
+        AppendUUID(BASE_ENDPOINT_OVERRIDE_BUCKET_NAME);
     }
 
     class RetryFiveTimesRetryStrategy: public Aws::Client::RetryStrategy
@@ -176,10 +181,13 @@ namespace
             retryClient = Aws::MakeShared<S3Client>(ALLOCATION_TAG,
                     Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config,
                         AWSAuthV4Signer::PayloadSigningPolicy::Never /*signPayloads*/, true /*useVirtualAddressing*/);
+            // Using client side monitoring for endpoint override testing.
+            TestingMonitoringManager::InitTestingMonitoring();
         }
 
         static void TearDownTestCase()
         {
+            TestingMonitoringManager::CleanupTestingMonitoring();
             DeleteBucket(CalculateBucketName(BASE_CREATE_BUCKET_TEST_NAME.c_str()));
             DeleteBucket(CalculateBucketName(BASE_DNS_UNFRIENDLY_TEST_NAME.c_str()));
             DeleteBucket(CalculateBucketName(BASE_LOCATION_BUCKET_TEST_NAME.c_str()));
@@ -1701,6 +1709,115 @@ namespace
         ASSERT_TRUE(deleteBucketOutcome.IsSuccess());
     }
 
+    TEST_F(BucketAndObjectOperationTest, TestCustomEndpointOverride)
+    {
+        // Access Point ARN without dualstack
+        ASSERT_STREQ("myendpoint-123456789012.beta.example.com",
+            S3Endpoint::ForAccessPointArn(S3ARN("arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint"), "", false /* useDualStack */, "beta.example.com").c_str());
+        // Outpost Access Point ARN without dualstack
+        ASSERT_STREQ("myaccesspoint-123456789012.op-01234567890123456.beta.example.com",
+            S3Endpoint::ForOutpostsArn(S3ARN("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"), "",
+                false /* useDualStack */, "beta.example.com").c_str());
+
+        Aws::String fullBucketName = CalculateBucketName(BASE_ENDPOINT_OVERRIDE_BUCKET_NAME.c_str());
+        Aws::StringStream ss;
+
+        // Traditional bucket name with virtual addressing
+        ClientConfiguration config;
+        config.region = Aws::Region::US_WEST_2;
+        config.endpointOverride = CUSTOM_ENDPOINT_OVERRIDE;
+        config.retryStrategy = Aws::MakeShared<Aws::Client::DefaultRetryStrategy>(ALLOCATION_TAG, 0 /* don't retry */, 25);
+        S3Client s3ClientWithVirtualAddressing(config, AWSAuthV4Signer::PayloadSigningPolicy::Never, true /*useVirtualAddressing*/);
+
+        ListObjectsRequest listObjectsRequest;
+        listObjectsRequest.SetBucket(fullBucketName);
+        auto listObjectsOutcome = s3ClientWithVirtualAddressing.ListObjects(listObjectsRequest);
+        ASSERT_FALSE(listObjectsOutcome.IsSuccess());
+        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, listObjectsOutcome.GetError().GetResponseCode());
+        ss << "https://" << fullBucketName << "." << CUSTOM_ENDPOINT_OVERRIDE;
+        ASSERT_STREQ(ss.str().c_str(), TestingMonitoringMetrics::s_lastUriString.c_str());
+        ASSERT_STREQ("s3", TestingMonitoringMetrics::s_lastSigningServiceName.c_str());
+
+        // Access Point Arn with virtual addressing
+        listObjectsRequest.SetBucket("arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint");
+        listObjectsOutcome = s3ClientWithVirtualAddressing.ListObjects(listObjectsRequest);
+        ASSERT_FALSE(listObjectsOutcome.IsSuccess());
+        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, listObjectsOutcome.GetError().GetResponseCode());
+        ss.str("");
+        ss << "https://myendpoint-123456789012." << CUSTOM_ENDPOINT_OVERRIDE;
+        ASSERT_STREQ(ss.str().c_str(), TestingMonitoringMetrics::s_lastUriString.c_str());
+        ASSERT_STREQ("s3", TestingMonitoringMetrics::s_lastSigningServiceName.c_str());
+
+        // Outposts Access Point Arn with virtual addressing
+        listObjectsRequest.SetBucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint");
+        listObjectsOutcome = s3ClientWithVirtualAddressing.ListObjects(listObjectsRequest);
+        ASSERT_FALSE(listObjectsOutcome.IsSuccess());
+        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, listObjectsOutcome.GetError().GetResponseCode());
+        ss.str("");
+        ss << "https://myaccesspoint-123456789012.op-01234567890123456." << CUSTOM_ENDPOINT_OVERRIDE;
+        ASSERT_STREQ(ss.str().c_str(), TestingMonitoringMetrics::s_lastUriString.c_str());
+        ASSERT_STREQ("s3-outposts", TestingMonitoringMetrics::s_lastSigningServiceName.c_str());
+
+        // ListBuckets
+        auto listBucketsOutcome = s3ClientWithVirtualAddressing.ListBuckets();
+        ASSERT_FALSE(listBucketsOutcome.IsSuccess());
+        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, listBucketsOutcome.GetError().GetResponseCode());
+        ss.str("");
+        ss << "https://" << CUSTOM_ENDPOINT_OVERRIDE;
+        ASSERT_STREQ(ss.str().c_str(), TestingMonitoringMetrics::s_lastUriString.c_str());
+        ASSERT_STREQ("s3", TestingMonitoringMetrics::s_lastSigningServiceName.c_str());
+
+        // Tradition bucket name with path addressing
+        S3Client s3ClientWithPathAddressing(config, AWSAuthV4Signer::PayloadSigningPolicy::Never, false /*useVirtualAddressing*/);
+        listObjectsRequest.SetBucket(fullBucketName);
+        listObjectsOutcome = s3ClientWithPathAddressing.ListObjects(listObjectsRequest);
+        ASSERT_FALSE(listObjectsOutcome.IsSuccess());
+        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, listObjectsOutcome.GetError().GetResponseCode());
+        ss.str("");
+        ss << "https://" << CUSTOM_ENDPOINT_OVERRIDE << "/" << fullBucketName;
+        ASSERT_STREQ(ss.str().c_str(), TestingMonitoringMetrics::s_lastUriString.c_str());
+        ASSERT_STREQ("s3", TestingMonitoringMetrics::s_lastSigningServiceName.c_str());
+
+        // Use arn region, Access Point Arn with virtual addressing
+        Aws::String awsS3UseArnRegion = Aws::Environment::GetEnv("AWS_S3_USE_ARN_REGION");
+        Aws::Environment::SetEnv("AWS_S3_USE_ARN_REGION", "true", 1);
+        config.region = Aws::Region::EU_WEST_1;
+        S3Client s3ClientInEuWest1(config, AWSAuthV4Signer::PayloadSigningPolicy::Never, true /*useVirtualAddressing*/);
+        if (awsS3UseArnRegion.empty())
+        {
+            Aws::Environment::UnSetEnv("AWS_S3_USE_ARN_REGION");
+        }
+        else
+        {
+            Aws::Environment::SetEnv("AWS_S3_USE_ARN_REGION", awsS3UseArnRegion.c_str(), 1);
+        }
+        listObjectsRequest.SetBucket("arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint");
+        listObjectsOutcome = s3ClientInEuWest1.ListObjects(listObjectsRequest);
+        ASSERT_FALSE(listObjectsOutcome.IsSuccess());
+        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, listObjectsOutcome.GetError().GetResponseCode());
+        ss.str("");
+        ss << "https://myendpoint-123456789012." << CUSTOM_ENDPOINT_OVERRIDE;
+        ASSERT_STREQ(ss.str().c_str(), TestingMonitoringMetrics::s_lastUriString.c_str());
+        ASSERT_STREQ("s3", TestingMonitoringMetrics::s_lastSigningServiceName.c_str());
+        ASSERT_STREQ("us-west-2", TestingMonitoringMetrics::s_lastSigningRegion.c_str());
+
+        // Failure case, dualstack endpoint is not compatible with custom endpoint override.
+        config.region = Aws::Region::US_WEST_2;
+        config.useDualStack = true;
+        S3Client s3ClientWithDualStack(config, AWSAuthV4Signer::PayloadSigningPolicy::Never, true /*useVirtualAddressing*/);
+        listObjectsRequest.SetBucket(fullBucketName);
+        listObjectsOutcome = s3ClientWithDualStack.ListObjects(listObjectsRequest);
+        ASSERT_FALSE(listObjectsOutcome.IsSuccess());
+        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, listObjectsOutcome.GetError().GetResponseCode());
+        ASSERT_EQ(S3Errors::VALIDATION, listObjectsOutcome.GetError().GetErrorType());
+
+        listObjectsRequest.SetBucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint");
+        listObjectsOutcome = s3ClientWithDualStack.ListObjects(listObjectsRequest);
+        ASSERT_FALSE(listObjectsOutcome.IsSuccess());
+        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, listObjectsOutcome.GetError().GetResponseCode());
+        ASSERT_EQ(S3Errors::VALIDATION, listObjectsOutcome.GetError().GetErrorType());
+    }
+
     TEST_F(BucketAndObjectOperationTest, TestS3AccessPointARNValidation)
     {
         // The followings are examples for valid S3 ARN:
@@ -1837,5 +1954,4 @@ namespace
         ASSERT_STREQ("access-point-name-123456789120.outpost-id.s3-outposts.cn-north-1.amazonaws.com.cn",
             S3Endpoint::ForOutpostsArn(S3ARN("arn:aws-cn:s3-outposts:cn-north-1:123456789120:outpost:outpost-id:accesspoint:access-point-name"), "").c_str());
     }
-
 }

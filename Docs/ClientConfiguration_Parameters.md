@@ -52,7 +52,14 @@ This value determines the length of time, in milliseconds, to wait before timing
 The retry strategy defaults to exponential backoff. You can override this default by implementing a subclass of RetryStrategy and passing an instance.
 
 ### Endpoint Override
-Do not alter the endpoint.
+This value will override the endpoints the client hits.
+
+Specially, for Amazon S3 and S3 Control clients, you could configure this value to access Amazon S3 interface VPC endpoints (AWS PrivateLink).
+
+For example,
+- use `bucket.vpce-1a2b3c4d-5e6f.s3.us-east-1.vpce.amazonaws.com` to access S3 buckets.
+- use `accesspoint.vpce-1a2b3c4d-5e6f.s3.us-east-1.vpce.amazonaws.com` to access S3 Access Points.
+- use `control.vpce-1a2b3c4d-5e6f.s3.us-east-1.vpce.amazonaws.com` for S3 Control APIs.
 
 ### Proxy Scheme, Host, Port, User Name, and Password
 These settings allow you to configure a proxy for all communication with AWS. Examples of when this functionality might be useful include debugging in conjunction with the Burp suite, or using a proxy to connect to the internet.

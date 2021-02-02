@@ -6,6 +6,7 @@
 
 #include <aws/external/gtest.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/DefaultRetryStrategy.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -14,6 +15,7 @@
 #include <aws/core/utils/UUID.h>
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/testing/TestingEnvironment.h>
+#include <aws/testing/mocks/monitoring/TestingMonitoring.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/CreateBucketRequest.h>
 #include <aws/s3/model/HeadBucketRequest.h>
@@ -48,6 +50,7 @@ namespace
     static const char PRESIGNED_URLS_BUCKET_NAME[] = "presignedaccesspointbucket";
     static const char PRESIGNED_URLS_ACCESS_POINT[] = "presignedaccesspoint";
     static const char TEST_OBJECT_KEY[] = "TestObjectKey";
+    static const char CUSTOM_ENDPOINT_OVERRIDE[] = "beta.example.com";
     static const int TIMEOUT_MAX = 20;
 
     class S3ControlTest : public ::testing::Test
@@ -81,6 +84,16 @@ namespace
         }
 
     protected:
+
+        static void SetUpTestCase()
+        {
+            TestingMonitoringManager::InitTestingMonitoring();
+        }
+
+        static void TearDownTestCase()
+        {
+            TestingMonitoringManager::CleanupTestingMonitoring();
+        }
 
         Aws::String BuildResourceName(const char* baseAccessPoint)
         {
@@ -368,11 +381,10 @@ namespace
 
         // Using custom endpoint
         config.region = Aws::Region::US_WEST_2;
-        config.endpointOverride = "s3.amazonaws.com";
+        config.endpointOverride = "s3-accesspoint.us-west-2.amazonaws.com";
         S3::S3Client s3ClientInUsWest2UsingCustomEndpoint(config);
         headBucketOutcome = s3ClientInUsWest2UsingCustomEndpoint.HeadBucket(headBucketRequest);
-        ASSERT_FALSE(headBucketOutcome.IsSuccess());
-        ASSERT_EQ(S3::S3Errors::VALIDATION, headBucketOutcome.GetError().GetErrorType());
+        ASSERT_TRUE(headBucketOutcome.IsSuccess());
 
         // Using path style addressing
         config.endpointOverride = "";
@@ -524,6 +536,7 @@ namespace
         // Cross region Outpost ARN
         config.region = Aws::Region::US_EAST_1;
         config.useDualStack = false;
+        config.endpointOverride = "";
         S3ControlClient clientInUsEast1(config);
         getAccessPointOutcome = clientInUsEast1.GetAccessPoint(getAccessPointRequest);
         ASSERT_FALSE(getAccessPointOutcome.IsSuccess());
@@ -560,6 +573,95 @@ namespace
         DoPresignedUrlTest(accessPointArn, putRequest);
 
         CleanUpAccessPointTest(bucketName, accessPoint);
+    }
+    TEST_F(S3ControlTest, TestCustomEndpointOverride)
+    {
+        // Outpost Access Point ARN without dualstack
+        ASSERT_STREQ("beta.example.com",
+            S3ControlEndpoint::ForOutpostsArn(S3ControlARN("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"),
+                "", false, "beta.example.com").c_str());
+        // Outpost Bucket ARN without dualstack
+        ASSERT_STREQ("beta.example.com",
+            S3ControlEndpoint::ForOutpostsArn(S3ControlARN("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket"),
+                "", false, "beta.example.com").c_str());
+
+        Aws::String bucketName = BuildResourceName(BASE_BUCKET_NAME);
+        Aws::String outpostId = BuildResourceName(BASE_OUTPOST_ID);
+        Aws::String accessPointName = BuildResourceName(BASE_ACCESS_POINT);
+        Aws::StringStream ss;
+
+        ClientConfiguration config;
+        config.region = Aws::Region::US_WEST_2;
+        config.endpointOverride = CUSTOM_ENDPOINT_OVERRIDE;
+        config.retryStrategy = Aws::MakeShared<Aws::Client::DefaultRetryStrategy>(ALLOCATION_TAG, 0 /* don't retry */, 25);
+        S3ControlClient s3ControlClient(config);
+        config.useDualStack = true;
+        S3ControlClient s3ControlClientWithDualStack(config);
+
+        // Traditional Access Point name
+        GetAccessPointRequest getAccessPointRequest;
+        getAccessPointRequest.SetAccountId(m_accountId);
+        getAccessPointRequest.SetName(accessPointName);
+        auto getAccessPointOutcome = s3ControlClient.GetAccessPoint(getAccessPointRequest);
+        ASSERT_FALSE(getAccessPointOutcome.IsSuccess());
+        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, getAccessPointOutcome.GetError().GetResponseCode());
+        ss << "https://" << m_accountId << "." << CUSTOM_ENDPOINT_OVERRIDE << "/v20180820/accesspoint/" << accessPointName;
+        ASSERT_STREQ(ss.str().c_str(), TestingMonitoringMetrics::s_lastUriString.c_str());
+        ASSERT_STREQ("s3", TestingMonitoringMetrics::s_lastSigningServiceName.c_str());
+
+        getAccessPointOutcome = s3ControlClientWithDualStack.GetAccessPoint(getAccessPointRequest);
+        ASSERT_FALSE(getAccessPointOutcome.IsSuccess());
+        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, getAccessPointOutcome.GetError().GetResponseCode());
+        ASSERT_EQ(S3ControlErrors::VALIDATION, getAccessPointOutcome.GetError().GetErrorType());
+
+        // Outposts Access Point Arn
+        getAccessPointRequest.SetAccountId("");
+        getAccessPointRequest.SetName("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint");
+        getAccessPointOutcome = s3ControlClient.GetAccessPoint(getAccessPointRequest);
+        ASSERT_FALSE(getAccessPointOutcome.IsSuccess());
+        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, getAccessPointOutcome.GetError().GetResponseCode());
+        ss.str("");
+        ss << "https://" << CUSTOM_ENDPOINT_OVERRIDE << "/v20180820/accesspoint/myaccesspoint";
+        ASSERT_STREQ(ss.str().c_str(), TestingMonitoringMetrics::s_lastUriString.c_str());
+        ASSERT_STREQ("s3-outposts", TestingMonitoringMetrics::s_lastSigningServiceName.c_str());
+
+        getAccessPointOutcome = s3ControlClientWithDualStack.GetAccessPoint(getAccessPointRequest);
+        ASSERT_FALSE(getAccessPointOutcome.IsSuccess());
+        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, getAccessPointOutcome.GetError().GetResponseCode());
+        ASSERT_EQ(S3ControlErrors::VALIDATION, getAccessPointOutcome.GetError().GetErrorType());
+
+        // Traditional bucket name with Outposts
+        CreateBucketRequest createBucketRequest;
+        createBucketRequest.SetBucket(bucketName);
+        createBucketRequest.SetOutpostId(outpostId);
+        auto createBucketOutcome = s3ControlClient.CreateBucket(createBucketRequest);
+        ASSERT_FALSE(createBucketOutcome.IsSuccess());
+        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, createBucketOutcome.GetError().GetResponseCode());
+        ss.str("");
+        ss << "https://" << CUSTOM_ENDPOINT_OVERRIDE << "/v20180820/bucket/" << bucketName;
+        ASSERT_STREQ(ss.str().c_str(), TestingMonitoringMetrics::s_lastUriString.c_str());
+        ASSERT_STREQ("s3-outposts", TestingMonitoringMetrics::s_lastSigningServiceName.c_str());
+
+        createBucketOutcome = s3ControlClientWithDualStack.CreateBucket(createBucketRequest);
+        ASSERT_FALSE(createBucketOutcome.IsSuccess());
+        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, createBucketOutcome.GetError().GetResponseCode());
+        ASSERT_EQ(S3ControlErrors::VALIDATION, createBucketOutcome.GetError().GetErrorType());
+
+        // Outposts Bucket Arn
+        GetBucketRequest getBucketRequest;
+        getBucketRequest.SetBucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket");
+        auto getBucketOutcome = s3ControlClient.GetBucket(getBucketRequest);
+        ASSERT_FALSE(getBucketOutcome.IsSuccess());
+        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, getBucketOutcome.GetError().GetResponseCode());
+        ss.str("");
+        ss << "https://" << CUSTOM_ENDPOINT_OVERRIDE << "/v20180820/bucket/mybucket";
+        ASSERT_STREQ(ss.str().c_str(), TestingMonitoringMetrics::s_lastUriString.c_str());
+        ASSERT_STREQ("s3-outposts", TestingMonitoringMetrics::s_lastSigningServiceName.c_str());
+
+        getBucketOutcome = s3ControlClientWithDualStack.GetBucket(getBucketRequest);
+        ASSERT_FALSE(getBucketOutcome.IsSuccess());
+        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, getBucketOutcome.GetError().GetResponseCode());
+        ASSERT_EQ(S3ControlErrors::VALIDATION, getBucketOutcome.GetError().GetErrorType());
     }
 
     TEST_F(S3ControlTest, TestS3ControlARNValidation)
