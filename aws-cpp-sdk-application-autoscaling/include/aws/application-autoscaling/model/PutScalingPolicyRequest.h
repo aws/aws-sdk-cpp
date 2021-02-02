@@ -779,9 +779,9 @@ namespace Model
      * Amazon Keyspaces (for Apache Cassandra), or Amazon MSK.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies</a> and <a
+     * tracking scaling policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-     * Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+     * scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline const PolicyType& GetPolicyType() const{ return m_policyType; }
 
@@ -793,9 +793,9 @@ namespace Model
      * Amazon Keyspaces (for Apache Cassandra), or Amazon MSK.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies</a> and <a
+     * tracking scaling policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-     * Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+     * scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
 
@@ -807,9 +807,9 @@ namespace Model
      * Amazon Keyspaces (for Apache Cassandra), or Amazon MSK.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies</a> and <a
+     * tracking scaling policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-     * Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+     * scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline void SetPolicyType(const PolicyType& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
@@ -821,9 +821,9 @@ namespace Model
      * Amazon Keyspaces (for Apache Cassandra), or Amazon MSK.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies</a> and <a
+     * tracking scaling policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-     * Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+     * scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline void SetPolicyType(PolicyType&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
 
@@ -835,9 +835,9 @@ namespace Model
      * Amazon Keyspaces (for Apache Cassandra), or Amazon MSK.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies</a> and <a
+     * tracking scaling policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-     * Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+     * scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline PutScalingPolicyRequest& WithPolicyType(const PolicyType& value) { SetPolicyType(value); return *this;}
 
@@ -849,9 +849,9 @@ namespace Model
      * Amazon Keyspaces (for Apache Cassandra), or Amazon MSK.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies</a> and <a
+     * tracking scaling policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-     * Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+     * scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline PutScalingPolicyRequest& WithPolicyType(PolicyType&& value) { SetPolicyType(std::move(value)); return *this;}
 

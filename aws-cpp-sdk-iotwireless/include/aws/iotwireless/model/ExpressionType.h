@@ -16,7 +16,8 @@ namespace Model
   enum class ExpressionType
   {
     NOT_SET,
-    RuleName
+    RuleName,
+    MqttTopic
   };
 
 namespace ExpressionTypeMapper

@@ -64,23 +64,22 @@ namespace Model
      * Beanstalk environment</dt> <dd> <p>Specify the hosted zone ID for the region
      * that you created the environment in. The environment must have a regionalized
      * subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS
-     * Elastic Beanstalk</a> in the "AWS Service Endpoints" chapter of the <i>Amazon
-     * Web Services General Reference</i>.</p> </dd> <dt>ELB load balancer</dt> <dd>
-     * <p>Specify the value of the hosted zone ID for the load balancer. Use the
-     * following methods to get the hosted zone ID:</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Service
-     * Endpoints</a> table in the "Elastic Load Balancing Endpoints and Quotas" topic
-     * in the <i>Amazon Web Services General Reference</i>: Use the value that
-     * corresponds with the region that you created your load balancer in. Note that
-     * there are separate columns for Application and Classic Load Balancers and for
-     * Network Load Balancers.</p> </li> <li> <p> <b>AWS Management Console</b>: Go to
-     * the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane, select
-     * the load balancer, and get the value of the <b>Hosted zone</b> field on the
-     * <b>Description</b> tab.</p> </li> <li> <p> <b>Elastic Load Balancing API</b>:
-     * Use <code>DescribeLoadBalancers</code> to get the applicable value. For more
-     * information, see the applicable guide:</p> <ul> <li> <p>Classic Load Balancers:
-     * Use <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">AWS
+     * Elastic Beanstalk endpoints and quotas</a> in the the <i>Amazon Web Services
+     * General Reference</i>.</p> </dd> <dt>ELB load balancer</dt> <dd> <p>Specify the
+     * value of the hosted zone ID for the load balancer. Use the following methods to
+     * get the hosted zone ID:</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load
+     * Balancing endpoints and quotas</a> topic in the <i>Amazon Web Services General
+     * Reference</i>: Use the value that corresponds with the region that you created
+     * your load balancer in. Note that there are separate columns for Application and
+     * Classic Load Balancers and for Network Load Balancers.</p> </li> <li> <p> <b>AWS
+     * Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b>
+     * in the navigation pane, select the load balancer, and get the value of the
+     * <b>Hosted zone</b> field on the <b>Description</b> tab.</p> </li> <li> <p>
+     * <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get
+     * the applicable value. For more information, see the applicable guide:</p> <ul>
+     * <li> <p>Classic Load Balancers: Use <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li> <li>
      * <p>Application and Network Load Balancers: Use <a
@@ -126,23 +125,22 @@ namespace Model
      * Beanstalk environment</dt> <dd> <p>Specify the hosted zone ID for the region
      * that you created the environment in. The environment must have a regionalized
      * subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS
-     * Elastic Beanstalk</a> in the "AWS Service Endpoints" chapter of the <i>Amazon
-     * Web Services General Reference</i>.</p> </dd> <dt>ELB load balancer</dt> <dd>
-     * <p>Specify the value of the hosted zone ID for the load balancer. Use the
-     * following methods to get the hosted zone ID:</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Service
-     * Endpoints</a> table in the "Elastic Load Balancing Endpoints and Quotas" topic
-     * in the <i>Amazon Web Services General Reference</i>: Use the value that
-     * corresponds with the region that you created your load balancer in. Note that
-     * there are separate columns for Application and Classic Load Balancers and for
-     * Network Load Balancers.</p> </li> <li> <p> <b>AWS Management Console</b>: Go to
-     * the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane, select
-     * the load balancer, and get the value of the <b>Hosted zone</b> field on the
-     * <b>Description</b> tab.</p> </li> <li> <p> <b>Elastic Load Balancing API</b>:
-     * Use <code>DescribeLoadBalancers</code> to get the applicable value. For more
-     * information, see the applicable guide:</p> <ul> <li> <p>Classic Load Balancers:
-     * Use <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">AWS
+     * Elastic Beanstalk endpoints and quotas</a> in the the <i>Amazon Web Services
+     * General Reference</i>.</p> </dd> <dt>ELB load balancer</dt> <dd> <p>Specify the
+     * value of the hosted zone ID for the load balancer. Use the following methods to
+     * get the hosted zone ID:</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load
+     * Balancing endpoints and quotas</a> topic in the <i>Amazon Web Services General
+     * Reference</i>: Use the value that corresponds with the region that you created
+     * your load balancer in. Note that there are separate columns for Application and
+     * Classic Load Balancers and for Network Load Balancers.</p> </li> <li> <p> <b>AWS
+     * Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b>
+     * in the navigation pane, select the load balancer, and get the value of the
+     * <b>Hosted zone</b> field on the <b>Description</b> tab.</p> </li> <li> <p>
+     * <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get
+     * the applicable value. For more information, see the applicable guide:</p> <ul>
+     * <li> <p>Classic Load Balancers: Use <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li> <li>
      * <p>Application and Network Load Balancers: Use <a
@@ -188,23 +186,22 @@ namespace Model
      * Beanstalk environment</dt> <dd> <p>Specify the hosted zone ID for the region
      * that you created the environment in. The environment must have a regionalized
      * subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS
-     * Elastic Beanstalk</a> in the "AWS Service Endpoints" chapter of the <i>Amazon
-     * Web Services General Reference</i>.</p> </dd> <dt>ELB load balancer</dt> <dd>
-     * <p>Specify the value of the hosted zone ID for the load balancer. Use the
-     * following methods to get the hosted zone ID:</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Service
-     * Endpoints</a> table in the "Elastic Load Balancing Endpoints and Quotas" topic
-     * in the <i>Amazon Web Services General Reference</i>: Use the value that
-     * corresponds with the region that you created your load balancer in. Note that
-     * there are separate columns for Application and Classic Load Balancers and for
-     * Network Load Balancers.</p> </li> <li> <p> <b>AWS Management Console</b>: Go to
-     * the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane, select
-     * the load balancer, and get the value of the <b>Hosted zone</b> field on the
-     * <b>Description</b> tab.</p> </li> <li> <p> <b>Elastic Load Balancing API</b>:
-     * Use <code>DescribeLoadBalancers</code> to get the applicable value. For more
-     * information, see the applicable guide:</p> <ul> <li> <p>Classic Load Balancers:
-     * Use <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">AWS
+     * Elastic Beanstalk endpoints and quotas</a> in the the <i>Amazon Web Services
+     * General Reference</i>.</p> </dd> <dt>ELB load balancer</dt> <dd> <p>Specify the
+     * value of the hosted zone ID for the load balancer. Use the following methods to
+     * get the hosted zone ID:</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load
+     * Balancing endpoints and quotas</a> topic in the <i>Amazon Web Services General
+     * Reference</i>: Use the value that corresponds with the region that you created
+     * your load balancer in. Note that there are separate columns for Application and
+     * Classic Load Balancers and for Network Load Balancers.</p> </li> <li> <p> <b>AWS
+     * Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b>
+     * in the navigation pane, select the load balancer, and get the value of the
+     * <b>Hosted zone</b> field on the <b>Description</b> tab.</p> </li> <li> <p>
+     * <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get
+     * the applicable value. For more information, see the applicable guide:</p> <ul>
+     * <li> <p>Classic Load Balancers: Use <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li> <li>
      * <p>Application and Network Load Balancers: Use <a
@@ -250,23 +247,22 @@ namespace Model
      * Beanstalk environment</dt> <dd> <p>Specify the hosted zone ID for the region
      * that you created the environment in. The environment must have a regionalized
      * subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS
-     * Elastic Beanstalk</a> in the "AWS Service Endpoints" chapter of the <i>Amazon
-     * Web Services General Reference</i>.</p> </dd> <dt>ELB load balancer</dt> <dd>
-     * <p>Specify the value of the hosted zone ID for the load balancer. Use the
-     * following methods to get the hosted zone ID:</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Service
-     * Endpoints</a> table in the "Elastic Load Balancing Endpoints and Quotas" topic
-     * in the <i>Amazon Web Services General Reference</i>: Use the value that
-     * corresponds with the region that you created your load balancer in. Note that
-     * there are separate columns for Application and Classic Load Balancers and for
-     * Network Load Balancers.</p> </li> <li> <p> <b>AWS Management Console</b>: Go to
-     * the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane, select
-     * the load balancer, and get the value of the <b>Hosted zone</b> field on the
-     * <b>Description</b> tab.</p> </li> <li> <p> <b>Elastic Load Balancing API</b>:
-     * Use <code>DescribeLoadBalancers</code> to get the applicable value. For more
-     * information, see the applicable guide:</p> <ul> <li> <p>Classic Load Balancers:
-     * Use <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">AWS
+     * Elastic Beanstalk endpoints and quotas</a> in the the <i>Amazon Web Services
+     * General Reference</i>.</p> </dd> <dt>ELB load balancer</dt> <dd> <p>Specify the
+     * value of the hosted zone ID for the load balancer. Use the following methods to
+     * get the hosted zone ID:</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load
+     * Balancing endpoints and quotas</a> topic in the <i>Amazon Web Services General
+     * Reference</i>: Use the value that corresponds with the region that you created
+     * your load balancer in. Note that there are separate columns for Application and
+     * Classic Load Balancers and for Network Load Balancers.</p> </li> <li> <p> <b>AWS
+     * Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b>
+     * in the navigation pane, select the load balancer, and get the value of the
+     * <b>Hosted zone</b> field on the <b>Description</b> tab.</p> </li> <li> <p>
+     * <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get
+     * the applicable value. For more information, see the applicable guide:</p> <ul>
+     * <li> <p>Classic Load Balancers: Use <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li> <li>
      * <p>Application and Network Load Balancers: Use <a
@@ -312,23 +308,22 @@ namespace Model
      * Beanstalk environment</dt> <dd> <p>Specify the hosted zone ID for the region
      * that you created the environment in. The environment must have a regionalized
      * subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS
-     * Elastic Beanstalk</a> in the "AWS Service Endpoints" chapter of the <i>Amazon
-     * Web Services General Reference</i>.</p> </dd> <dt>ELB load balancer</dt> <dd>
-     * <p>Specify the value of the hosted zone ID for the load balancer. Use the
-     * following methods to get the hosted zone ID:</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Service
-     * Endpoints</a> table in the "Elastic Load Balancing Endpoints and Quotas" topic
-     * in the <i>Amazon Web Services General Reference</i>: Use the value that
-     * corresponds with the region that you created your load balancer in. Note that
-     * there are separate columns for Application and Classic Load Balancers and for
-     * Network Load Balancers.</p> </li> <li> <p> <b>AWS Management Console</b>: Go to
-     * the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane, select
-     * the load balancer, and get the value of the <b>Hosted zone</b> field on the
-     * <b>Description</b> tab.</p> </li> <li> <p> <b>Elastic Load Balancing API</b>:
-     * Use <code>DescribeLoadBalancers</code> to get the applicable value. For more
-     * information, see the applicable guide:</p> <ul> <li> <p>Classic Load Balancers:
-     * Use <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">AWS
+     * Elastic Beanstalk endpoints and quotas</a> in the the <i>Amazon Web Services
+     * General Reference</i>.</p> </dd> <dt>ELB load balancer</dt> <dd> <p>Specify the
+     * value of the hosted zone ID for the load balancer. Use the following methods to
+     * get the hosted zone ID:</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load
+     * Balancing endpoints and quotas</a> topic in the <i>Amazon Web Services General
+     * Reference</i>: Use the value that corresponds with the region that you created
+     * your load balancer in. Note that there are separate columns for Application and
+     * Classic Load Balancers and for Network Load Balancers.</p> </li> <li> <p> <b>AWS
+     * Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b>
+     * in the navigation pane, select the load balancer, and get the value of the
+     * <b>Hosted zone</b> field on the <b>Description</b> tab.</p> </li> <li> <p>
+     * <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get
+     * the applicable value. For more information, see the applicable guide:</p> <ul>
+     * <li> <p>Classic Load Balancers: Use <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li> <li>
      * <p>Application and Network Load Balancers: Use <a
@@ -374,23 +369,22 @@ namespace Model
      * Beanstalk environment</dt> <dd> <p>Specify the hosted zone ID for the region
      * that you created the environment in. The environment must have a regionalized
      * subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS
-     * Elastic Beanstalk</a> in the "AWS Service Endpoints" chapter of the <i>Amazon
-     * Web Services General Reference</i>.</p> </dd> <dt>ELB load balancer</dt> <dd>
-     * <p>Specify the value of the hosted zone ID for the load balancer. Use the
-     * following methods to get the hosted zone ID:</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Service
-     * Endpoints</a> table in the "Elastic Load Balancing Endpoints and Quotas" topic
-     * in the <i>Amazon Web Services General Reference</i>: Use the value that
-     * corresponds with the region that you created your load balancer in. Note that
-     * there are separate columns for Application and Classic Load Balancers and for
-     * Network Load Balancers.</p> </li> <li> <p> <b>AWS Management Console</b>: Go to
-     * the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane, select
-     * the load balancer, and get the value of the <b>Hosted zone</b> field on the
-     * <b>Description</b> tab.</p> </li> <li> <p> <b>Elastic Load Balancing API</b>:
-     * Use <code>DescribeLoadBalancers</code> to get the applicable value. For more
-     * information, see the applicable guide:</p> <ul> <li> <p>Classic Load Balancers:
-     * Use <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">AWS
+     * Elastic Beanstalk endpoints and quotas</a> in the the <i>Amazon Web Services
+     * General Reference</i>.</p> </dd> <dt>ELB load balancer</dt> <dd> <p>Specify the
+     * value of the hosted zone ID for the load balancer. Use the following methods to
+     * get the hosted zone ID:</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load
+     * Balancing endpoints and quotas</a> topic in the <i>Amazon Web Services General
+     * Reference</i>: Use the value that corresponds with the region that you created
+     * your load balancer in. Note that there are separate columns for Application and
+     * Classic Load Balancers and for Network Load Balancers.</p> </li> <li> <p> <b>AWS
+     * Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b>
+     * in the navigation pane, select the load balancer, and get the value of the
+     * <b>Hosted zone</b> field on the <b>Description</b> tab.</p> </li> <li> <p>
+     * <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get
+     * the applicable value. For more information, see the applicable guide:</p> <ul>
+     * <li> <p>Classic Load Balancers: Use <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li> <li>
      * <p>Application and Network Load Balancers: Use <a
@@ -436,23 +430,22 @@ namespace Model
      * Beanstalk environment</dt> <dd> <p>Specify the hosted zone ID for the region
      * that you created the environment in. The environment must have a regionalized
      * subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS
-     * Elastic Beanstalk</a> in the "AWS Service Endpoints" chapter of the <i>Amazon
-     * Web Services General Reference</i>.</p> </dd> <dt>ELB load balancer</dt> <dd>
-     * <p>Specify the value of the hosted zone ID for the load balancer. Use the
-     * following methods to get the hosted zone ID:</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Service
-     * Endpoints</a> table in the "Elastic Load Balancing Endpoints and Quotas" topic
-     * in the <i>Amazon Web Services General Reference</i>: Use the value that
-     * corresponds with the region that you created your load balancer in. Note that
-     * there are separate columns for Application and Classic Load Balancers and for
-     * Network Load Balancers.</p> </li> <li> <p> <b>AWS Management Console</b>: Go to
-     * the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane, select
-     * the load balancer, and get the value of the <b>Hosted zone</b> field on the
-     * <b>Description</b> tab.</p> </li> <li> <p> <b>Elastic Load Balancing API</b>:
-     * Use <code>DescribeLoadBalancers</code> to get the applicable value. For more
-     * information, see the applicable guide:</p> <ul> <li> <p>Classic Load Balancers:
-     * Use <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">AWS
+     * Elastic Beanstalk endpoints and quotas</a> in the the <i>Amazon Web Services
+     * General Reference</i>.</p> </dd> <dt>ELB load balancer</dt> <dd> <p>Specify the
+     * value of the hosted zone ID for the load balancer. Use the following methods to
+     * get the hosted zone ID:</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load
+     * Balancing endpoints and quotas</a> topic in the <i>Amazon Web Services General
+     * Reference</i>: Use the value that corresponds with the region that you created
+     * your load balancer in. Note that there are separate columns for Application and
+     * Classic Load Balancers and for Network Load Balancers.</p> </li> <li> <p> <b>AWS
+     * Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b>
+     * in the navigation pane, select the load balancer, and get the value of the
+     * <b>Hosted zone</b> field on the <b>Description</b> tab.</p> </li> <li> <p>
+     * <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get
+     * the applicable value. For more information, see the applicable guide:</p> <ul>
+     * <li> <p>Classic Load Balancers: Use <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li> <li>
      * <p>Application and Network Load Balancers: Use <a
@@ -498,23 +491,22 @@ namespace Model
      * Beanstalk environment</dt> <dd> <p>Specify the hosted zone ID for the region
      * that you created the environment in. The environment must have a regionalized
      * subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS
-     * Elastic Beanstalk</a> in the "AWS Service Endpoints" chapter of the <i>Amazon
-     * Web Services General Reference</i>.</p> </dd> <dt>ELB load balancer</dt> <dd>
-     * <p>Specify the value of the hosted zone ID for the load balancer. Use the
-     * following methods to get the hosted zone ID:</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Service
-     * Endpoints</a> table in the "Elastic Load Balancing Endpoints and Quotas" topic
-     * in the <i>Amazon Web Services General Reference</i>: Use the value that
-     * corresponds with the region that you created your load balancer in. Note that
-     * there are separate columns for Application and Classic Load Balancers and for
-     * Network Load Balancers.</p> </li> <li> <p> <b>AWS Management Console</b>: Go to
-     * the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane, select
-     * the load balancer, and get the value of the <b>Hosted zone</b> field on the
-     * <b>Description</b> tab.</p> </li> <li> <p> <b>Elastic Load Balancing API</b>:
-     * Use <code>DescribeLoadBalancers</code> to get the applicable value. For more
-     * information, see the applicable guide:</p> <ul> <li> <p>Classic Load Balancers:
-     * Use <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">AWS
+     * Elastic Beanstalk endpoints and quotas</a> in the the <i>Amazon Web Services
+     * General Reference</i>.</p> </dd> <dt>ELB load balancer</dt> <dd> <p>Specify the
+     * value of the hosted zone ID for the load balancer. Use the following methods to
+     * get the hosted zone ID:</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load
+     * Balancing endpoints and quotas</a> topic in the <i>Amazon Web Services General
+     * Reference</i>: Use the value that corresponds with the region that you created
+     * your load balancer in. Note that there are separate columns for Application and
+     * Classic Load Balancers and for Network Load Balancers.</p> </li> <li> <p> <b>AWS
+     * Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b>
+     * in the navigation pane, select the load balancer, and get the value of the
+     * <b>Hosted zone</b> field on the <b>Description</b> tab.</p> </li> <li> <p>
+     * <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get
+     * the applicable value. For more information, see the applicable guide:</p> <ul>
+     * <li> <p>Classic Load Balancers: Use <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li> <li>
      * <p>Application and Network Load Balancers: Use <a

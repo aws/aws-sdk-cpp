@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int RuleName_HASH = HashingUtils::HashString("RuleName");
+        static const int MqttTopic_HASH = HashingUtils::HashString("MqttTopic");
 
 
         ExpressionType GetExpressionTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == RuleName_HASH)
           {
             return ExpressionType::RuleName;
+          }
+          else if (hashCode == MqttTopic_HASH)
+          {
+            return ExpressionType::MqttTopic;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case ExpressionType::RuleName:
             return "RuleName";
+          case ExpressionType::MqttTopic:
+            return "MqttTopic";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

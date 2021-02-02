@@ -74,42 +74,42 @@ namespace Model
 
 
     /**
-     * <p>An alphanumeric string used to identify a key signing key (KSK).</p>
+     * <p>A string used to identify a key-signing key (KSK).</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>An alphanumeric string used to identify a key signing key (KSK).</p>
+     * <p>A string used to identify a key-signing key (KSK).</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>An alphanumeric string used to identify a key signing key (KSK).</p>
+     * <p>A string used to identify a key-signing key (KSK).</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>An alphanumeric string used to identify a key signing key (KSK).</p>
+     * <p>A string used to identify a key-signing key (KSK).</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>An alphanumeric string used to identify a key signing key (KSK).</p>
+     * <p>A string used to identify a key-signing key (KSK).</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>An alphanumeric string used to identify a key signing key (KSK).</p>
+     * <p>A string used to identify a key-signing key (KSK).</p>
      */
     inline DeleteKeySigningKeyRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>An alphanumeric string used to identify a key signing key (KSK).</p>
+     * <p>A string used to identify a key-signing key (KSK).</p>
      */
     inline DeleteKeySigningKeyRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>An alphanumeric string used to identify a key signing key (KSK).</p>
+     * <p>A string used to identify a key-signing key (KSK).</p>
      */
     inline DeleteKeySigningKeyRequest& WithName(const char* value) { SetName(value); return *this;}
 

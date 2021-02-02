@@ -79,42 +79,42 @@ namespace Model
 
 
     /**
-     * <p>Fingerprint for Sidewalk application server private key.</p>
+     * <p>The fingerprint of the Sidewalk application server private key.</p>
      */
     inline const Aws::String& GetFingerprint() const{ return m_fingerprint; }
 
     /**
-     * <p>Fingerprint for Sidewalk application server private key.</p>
+     * <p>The fingerprint of the Sidewalk application server private key.</p>
      */
     inline bool FingerprintHasBeenSet() const { return m_fingerprintHasBeenSet; }
 
     /**
-     * <p>Fingerprint for Sidewalk application server private key.</p>
+     * <p>The fingerprint of the Sidewalk application server private key.</p>
      */
     inline void SetFingerprint(const Aws::String& value) { m_fingerprintHasBeenSet = true; m_fingerprint = value; }
 
     /**
-     * <p>Fingerprint for Sidewalk application server private key.</p>
+     * <p>The fingerprint of the Sidewalk application server private key.</p>
      */
     inline void SetFingerprint(Aws::String&& value) { m_fingerprintHasBeenSet = true; m_fingerprint = std::move(value); }
 
     /**
-     * <p>Fingerprint for Sidewalk application server private key.</p>
+     * <p>The fingerprint of the Sidewalk application server private key.</p>
      */
     inline void SetFingerprint(const char* value) { m_fingerprintHasBeenSet = true; m_fingerprint.assign(value); }
 
     /**
-     * <p>Fingerprint for Sidewalk application server private key.</p>
+     * <p>The fingerprint of the Sidewalk application server private key.</p>
      */
     inline SidewalkAccountInfoWithFingerprint& WithFingerprint(const Aws::String& value) { SetFingerprint(value); return *this;}
 
     /**
-     * <p>Fingerprint for Sidewalk application server private key.</p>
+     * <p>The fingerprint of the Sidewalk application server private key.</p>
      */
     inline SidewalkAccountInfoWithFingerprint& WithFingerprint(Aws::String&& value) { SetFingerprint(std::move(value)); return *this;}
 
     /**
-     * <p>Fingerprint for Sidewalk application server private key.</p>
+     * <p>The fingerprint of the Sidewalk application server private key.</p>
      */
     inline SidewalkAccountInfoWithFingerprint& WithFingerprint(const char* value) { SetFingerprint(value); return *this;}
 

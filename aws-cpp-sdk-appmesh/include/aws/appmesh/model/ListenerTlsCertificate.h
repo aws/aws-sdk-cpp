@@ -7,6 +7,7 @@
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/appmesh/model/ListenerTlsAcmCertificate.h>
 #include <aws/appmesh/model/ListenerTlsFileCertificate.h>
+#include <aws/appmesh/model/ListenerTlsSdsCertificate.h>
 #include <utility>
 
 namespace Aws
@@ -106,6 +107,43 @@ namespace Model
      */
     inline ListenerTlsCertificate& WithFile(ListenerTlsFileCertificate&& value) { SetFile(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A reference to an object that represents a listener's Secret Discovery
+     * Service certificate.</p>
+     */
+    inline const ListenerTlsSdsCertificate& GetSds() const{ return m_sds; }
+
+    /**
+     * <p>A reference to an object that represents a listener's Secret Discovery
+     * Service certificate.</p>
+     */
+    inline bool SdsHasBeenSet() const { return m_sdsHasBeenSet; }
+
+    /**
+     * <p>A reference to an object that represents a listener's Secret Discovery
+     * Service certificate.</p>
+     */
+    inline void SetSds(const ListenerTlsSdsCertificate& value) { m_sdsHasBeenSet = true; m_sds = value; }
+
+    /**
+     * <p>A reference to an object that represents a listener's Secret Discovery
+     * Service certificate.</p>
+     */
+    inline void SetSds(ListenerTlsSdsCertificate&& value) { m_sdsHasBeenSet = true; m_sds = std::move(value); }
+
+    /**
+     * <p>A reference to an object that represents a listener's Secret Discovery
+     * Service certificate.</p>
+     */
+    inline ListenerTlsCertificate& WithSds(const ListenerTlsSdsCertificate& value) { SetSds(value); return *this;}
+
+    /**
+     * <p>A reference to an object that represents a listener's Secret Discovery
+     * Service certificate.</p>
+     */
+    inline ListenerTlsCertificate& WithSds(ListenerTlsSdsCertificate&& value) { SetSds(std::move(value)); return *this;}
+
   private:
 
     ListenerTlsAcmCertificate m_acm;
@@ -113,6 +151,9 @@ namespace Model
 
     ListenerTlsFileCertificate m_file;
     bool m_fileHasBeenSet;
+
+    ListenerTlsSdsCertificate m_sds;
+    bool m_sdsHasBeenSet;
   };
 
 } // namespace Model

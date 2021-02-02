@@ -416,7 +416,7 @@ namespace Model
 
 
         /**
-         * <p>Activates a key signing key (KSK) so that it can be used for signing by
+         * <p>Activates a key-signing key (KSK) so that it can be used for signing by
          * DNSSEC. This operation changes the KSK status to
          * <code>ACTIVE</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ActivateKeySigningKey">AWS
@@ -425,7 +425,7 @@ namespace Model
         virtual Model::ActivateKeySigningKeyOutcome ActivateKeySigningKey(const Model::ActivateKeySigningKeyRequest& request) const;
 
         /**
-         * <p>Activates a key signing key (KSK) so that it can be used for signing by
+         * <p>Activates a key-signing key (KSK) so that it can be used for signing by
          * DNSSEC. This operation changes the KSK status to
          * <code>ACTIVE</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ActivateKeySigningKey">AWS
@@ -436,7 +436,7 @@ namespace Model
         virtual Model::ActivateKeySigningKeyOutcomeCallable ActivateKeySigningKeyCallable(const Model::ActivateKeySigningKeyRequest& request) const;
 
         /**
-         * <p>Activates a key signing key (KSK) so that it can be used for signing by
+         * <p>Activates a key-signing key (KSK) so that it can be used for signing by
          * DNSSEC. This operation changes the KSK status to
          * <code>ACTIVE</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ActivateKeySigningKey">AWS
@@ -950,7 +950,7 @@ namespace Model
         virtual void CreateHostedZoneAsync(const Model::CreateHostedZoneRequest& request, const CreateHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new key signing key (KSK) associated with a hosted zone. You can
+         * <p>Creates a new key-signing key (KSK) associated with a hosted zone. You can
          * only have two KSKs per hosted zone.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateKeySigningKey">AWS
          * API Reference</a></p>
@@ -958,7 +958,7 @@ namespace Model
         virtual Model::CreateKeySigningKeyOutcome CreateKeySigningKey(const Model::CreateKeySigningKeyRequest& request) const;
 
         /**
-         * <p>Creates a new key signing key (KSK) associated with a hosted zone. You can
+         * <p>Creates a new key-signing key (KSK) associated with a hosted zone. You can
          * only have two KSKs per hosted zone.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateKeySigningKey">AWS
          * API Reference</a></p>
@@ -968,7 +968,7 @@ namespace Model
         virtual Model::CreateKeySigningKeyOutcomeCallable CreateKeySigningKeyCallable(const Model::CreateKeySigningKeyRequest& request) const;
 
         /**
-         * <p>Creates a new key signing key (KSK) associated with a hosted zone. You can
+         * <p>Creates a new key-signing key (KSK) associated with a hosted zone. You can
          * only have two KSKs per hosted zone.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateKeySigningKey">AWS
          * API Reference</a></p>
@@ -1497,7 +1497,7 @@ namespace Model
         virtual void CreateVPCAssociationAuthorizationAsync(const Model::CreateVPCAssociationAuthorizationRequest& request, const CreateVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deactivates a key signing key (KSK) so that it will not be used for signing
+         * <p>Deactivates a key-signing key (KSK) so that it will not be used for signing
          * by DNSSEC. This operation changes the KSK status to
          * <code>INACTIVE</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeactivateKeySigningKey">AWS
@@ -1506,7 +1506,7 @@ namespace Model
         virtual Model::DeactivateKeySigningKeyOutcome DeactivateKeySigningKey(const Model::DeactivateKeySigningKeyRequest& request) const;
 
         /**
-         * <p>Deactivates a key signing key (KSK) so that it will not be used for signing
+         * <p>Deactivates a key-signing key (KSK) so that it will not be used for signing
          * by DNSSEC. This operation changes the KSK status to
          * <code>INACTIVE</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeactivateKeySigningKey">AWS
@@ -1517,7 +1517,7 @@ namespace Model
         virtual Model::DeactivateKeySigningKeyOutcomeCallable DeactivateKeySigningKeyCallable(const Model::DeactivateKeySigningKeyRequest& request) const;
 
         /**
-         * <p>Deactivates a key signing key (KSK) so that it will not be used for signing
+         * <p>Deactivates a key-signing key (KSK) so that it will not be used for signing
          * by DNSSEC. This operation changes the KSK status to
          * <code>INACTIVE</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeactivateKeySigningKey">AWS
@@ -1728,7 +1728,7 @@ namespace Model
         virtual void DeleteHostedZoneAsync(const Model::DeleteHostedZoneRequest& request, const DeleteHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a key signing key (KSK). Before you can delete a KSK, you must
+         * <p>Deletes a key-signing key (KSK). Before you can delete a KSK, you must
          * deactivate it. The KSK must be deactived before you can delete it regardless of
          * whether the hosted zone is enabled for DNSSEC signing.</p><p><h3>See Also:</h3> 
          * <a
@@ -1738,7 +1738,7 @@ namespace Model
         virtual Model::DeleteKeySigningKeyOutcome DeleteKeySigningKey(const Model::DeleteKeySigningKeyRequest& request) const;
 
         /**
-         * <p>Deletes a key signing key (KSK). Before you can delete a KSK, you must
+         * <p>Deletes a key-signing key (KSK). Before you can delete a KSK, you must
          * deactivate it. The KSK must be deactived before you can delete it regardless of
          * whether the hosted zone is enabled for DNSSEC signing.</p><p><h3>See Also:</h3> 
          * <a
@@ -1750,7 +1750,7 @@ namespace Model
         virtual Model::DeleteKeySigningKeyOutcomeCallable DeleteKeySigningKeyCallable(const Model::DeleteKeySigningKeyRequest& request) const;
 
         /**
-         * <p>Deletes a key signing key (KSK). Before you can delete a KSK, you must
+         * <p>Deletes a key-signing key (KSK). Before you can delete a KSK, you must
          * deactivate it. The KSK must be deactived before you can delete it regardless of
          * whether the hosted zone is enabled for DNSSEC signing.</p><p><h3>See Also:</h3> 
          * <a
@@ -1987,7 +1987,7 @@ namespace Model
 
         /**
          * <p>Disables DNSSEC signing in a specific hosted zone. This action does not
-         * deactivate any key signing keys (KSKs) that are active in the hosted
+         * deactivate any key-signing keys (KSKs) that are active in the hosted
          * zone.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisableHostedZoneDNSSEC">AWS
          * API Reference</a></p>
@@ -1996,7 +1996,7 @@ namespace Model
 
         /**
          * <p>Disables DNSSEC signing in a specific hosted zone. This action does not
-         * deactivate any key signing keys (KSKs) that are active in the hosted
+         * deactivate any key-signing keys (KSKs) that are active in the hosted
          * zone.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisableHostedZoneDNSSEC">AWS
          * API Reference</a></p>
@@ -2007,7 +2007,7 @@ namespace Model
 
         /**
          * <p>Disables DNSSEC signing in a specific hosted zone. This action does not
-         * deactivate any key signing keys (KSKs) that are active in the hosted
+         * deactivate any key-signing keys (KSKs) that are active in the hosted
          * zone.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisableHostedZoneDNSSEC">AWS
          * API Reference</a></p>
@@ -2219,9 +2219,11 @@ namespace Model
         virtual void GetChangeAsync(const Model::GetChangeRequest& request, const GetChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p> <code>GetCheckerIpRanges</code> still works, but we recommend
-         * that you download ip-ranges.json, which includes IP address ranges for all AWS
-         * services. For more information, see <a
+         * <p>Route 53 does not perform authorization for this API because it retrieves
+         * information that is already available to the public.</p>  <p>
+         * <code>GetCheckerIpRanges</code> still works, but we recommend that you download
+         * ip-ranges.json, which includes IP address ranges for all AWS services. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-ip-addresses.html">IP
          * Address Ranges of Amazon Route 53 Servers</a> in the <i>Amazon Route 53
          * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -2231,9 +2233,11 @@ namespace Model
         virtual Model::GetCheckerIpRangesOutcome GetCheckerIpRanges(const Model::GetCheckerIpRangesRequest& request) const;
 
         /**
-         *  <p> <code>GetCheckerIpRanges</code> still works, but we recommend
-         * that you download ip-ranges.json, which includes IP address ranges for all AWS
-         * services. For more information, see <a
+         * <p>Route 53 does not perform authorization for this API because it retrieves
+         * information that is already available to the public.</p>  <p>
+         * <code>GetCheckerIpRanges</code> still works, but we recommend that you download
+         * ip-ranges.json, which includes IP address ranges for all AWS services. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-ip-addresses.html">IP
          * Address Ranges of Amazon Route 53 Servers</a> in the <i>Amazon Route 53
          * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -2245,9 +2249,11 @@ namespace Model
         virtual Model::GetCheckerIpRangesOutcomeCallable GetCheckerIpRangesCallable(const Model::GetCheckerIpRangesRequest& request) const;
 
         /**
-         *  <p> <code>GetCheckerIpRanges</code> still works, but we recommend
-         * that you download ip-ranges.json, which includes IP address ranges for all AWS
-         * services. For more information, see <a
+         * <p>Route 53 does not perform authorization for this API because it retrieves
+         * information that is already available to the public.</p>  <p>
+         * <code>GetCheckerIpRanges</code> still works, but we recommend that you download
+         * ip-ranges.json, which includes IP address ranges for all AWS services. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-ip-addresses.html">IP
          * Address Ranges of Amazon Route 53 Servers</a> in the <i>Amazon Route 53
          * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -2260,8 +2266,7 @@ namespace Model
 
         /**
          * <p>Returns information about DNSSEC for a specific hosted zone, including the
-         * key signing keys (KSKs) and zone signing keys (ZSKs) in the hosted
-         * zone.</p><p><h3>See Also:</h3>   <a
+         * key-signing keys (KSKs) in the hosted zone.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetDNSSEC">AWS
          * API Reference</a></p>
          */
@@ -2269,8 +2274,7 @@ namespace Model
 
         /**
          * <p>Returns information about DNSSEC for a specific hosted zone, including the
-         * key signing keys (KSKs) and zone signing keys (ZSKs) in the hosted
-         * zone.</p><p><h3>See Also:</h3>   <a
+         * key-signing keys (KSKs) in the hosted zone.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetDNSSEC">AWS
          * API Reference</a></p>
          *
@@ -2280,8 +2284,7 @@ namespace Model
 
         /**
          * <p>Returns information about DNSSEC for a specific hosted zone, including the
-         * key signing keys (KSKs) and zone signing keys (ZSKs) in the hosted
-         * zone.</p><p><h3>See Also:</h3>   <a
+         * key-signing keys (KSKs) in the hosted zone.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetDNSSEC">AWS
          * API Reference</a></p>
          *
@@ -2291,9 +2294,11 @@ namespace Model
 
         /**
          * <p>Gets information about whether a specified geographic location is supported
-         * for Amazon Route 53 geolocation resource record sets.</p> <p>Use the following
-         * syntax to determine whether a continent is supported for geolocation:</p> <p>
-         * <code>GET /2013-04-01/geolocation?continentcode=<i>two-letter abbreviation for a
+         * for Amazon Route 53 geolocation resource record sets.</p> <p>Route 53 does not
+         * perform authorization for this API because it retrieves information that is
+         * already available to the public.</p> <p>Use the following syntax to determine
+         * whether a continent is supported for geolocation:</p> <p> <code>GET
+         * /2013-04-01/geolocation?continentcode=<i>two-letter abbreviation for a
          * continent</i> </code> </p> <p>Use the following syntax to determine whether a
          * country is supported for geolocation:</p> <p> <code>GET
          * /2013-04-01/geolocation?countrycode=<i>two-character country code</i> </code>
@@ -2309,9 +2314,11 @@ namespace Model
 
         /**
          * <p>Gets information about whether a specified geographic location is supported
-         * for Amazon Route 53 geolocation resource record sets.</p> <p>Use the following
-         * syntax to determine whether a continent is supported for geolocation:</p> <p>
-         * <code>GET /2013-04-01/geolocation?continentcode=<i>two-letter abbreviation for a
+         * for Amazon Route 53 geolocation resource record sets.</p> <p>Route 53 does not
+         * perform authorization for this API because it retrieves information that is
+         * already available to the public.</p> <p>Use the following syntax to determine
+         * whether a continent is supported for geolocation:</p> <p> <code>GET
+         * /2013-04-01/geolocation?continentcode=<i>two-letter abbreviation for a
          * continent</i> </code> </p> <p>Use the following syntax to determine whether a
          * country is supported for geolocation:</p> <p> <code>GET
          * /2013-04-01/geolocation?countrycode=<i>two-character country code</i> </code>
@@ -2329,9 +2336,11 @@ namespace Model
 
         /**
          * <p>Gets information about whether a specified geographic location is supported
-         * for Amazon Route 53 geolocation resource record sets.</p> <p>Use the following
-         * syntax to determine whether a continent is supported for geolocation:</p> <p>
-         * <code>GET /2013-04-01/geolocation?continentcode=<i>two-letter abbreviation for a
+         * for Amazon Route 53 geolocation resource record sets.</p> <p>Route 53 does not
+         * perform authorization for this API because it retrieves information that is
+         * already available to the public.</p> <p>Use the following syntax to determine
+         * whether a continent is supported for geolocation:</p> <p> <code>GET
+         * /2013-04-01/geolocation?continentcode=<i>two-letter abbreviation for a
          * continent</i> </code> </p> <p>Use the following syntax to determine whether a
          * country is supported for geolocation:</p> <p> <code>GET
          * /2013-04-01/geolocation?countrycode=<i>two-character country code</i> </code>
@@ -2779,8 +2788,9 @@ namespace Model
          * listed first, and continents are listed last. If Amazon Route 53 supports
          * subdivisions for a country (for example, states or provinces), the subdivisions
          * for that country are listed in alphabetical order immediately after the
-         * corresponding country.</p> <p>For a list of supported geolocation codes, see the
-         * <a
+         * corresponding country.</p> <p>Route 53 does not perform authorization for this
+         * API because it retrieves information that is already available to the
+         * public.</p> <p>For a list of supported geolocation codes, see the <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GeoLocation.html">GeoLocation</a>
          * data type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListGeoLocations">AWS
@@ -2793,8 +2803,9 @@ namespace Model
          * listed first, and continents are listed last. If Amazon Route 53 supports
          * subdivisions for a country (for example, states or provinces), the subdivisions
          * for that country are listed in alphabetical order immediately after the
-         * corresponding country.</p> <p>For a list of supported geolocation codes, see the
-         * <a
+         * corresponding country.</p> <p>Route 53 does not perform authorization for this
+         * API because it retrieves information that is already available to the
+         * public.</p> <p>For a list of supported geolocation codes, see the <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GeoLocation.html">GeoLocation</a>
          * data type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListGeoLocations">AWS
@@ -2809,8 +2820,9 @@ namespace Model
          * listed first, and continents are listed last. If Amazon Route 53 supports
          * subdivisions for a country (for example, states or provinces), the subdivisions
          * for that country are listed in alphabetical order immediately after the
-         * corresponding country.</p> <p>For a list of supported geolocation codes, see the
-         * <a
+         * corresponding country.</p> <p>Route 53 does not perform authorization for this
+         * API because it retrieves information that is already available to the
+         * public.</p> <p>For a list of supported geolocation codes, see the <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GeoLocation.html">GeoLocation</a>
          * data type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListGeoLocations">AWS

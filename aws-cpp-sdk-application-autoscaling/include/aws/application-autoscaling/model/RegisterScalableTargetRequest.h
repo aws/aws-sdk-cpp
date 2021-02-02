@@ -852,7 +852,7 @@ namespace Model
      * uses a service-linked role, which it creates if it does not yet exist. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles">Application
-     * Auto Scaling IAM Roles</a>.</p>
+     * Auto Scaling IAM roles</a>.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
@@ -864,7 +864,7 @@ namespace Model
      * uses a service-linked role, which it creates if it does not yet exist. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles">Application
-     * Auto Scaling IAM Roles</a>.</p>
+     * Auto Scaling IAM roles</a>.</p>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
@@ -876,7 +876,7 @@ namespace Model
      * uses a service-linked role, which it creates if it does not yet exist. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles">Application
-     * Auto Scaling IAM Roles</a>.</p>
+     * Auto Scaling IAM roles</a>.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
@@ -888,7 +888,7 @@ namespace Model
      * uses a service-linked role, which it creates if it does not yet exist. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles">Application
-     * Auto Scaling IAM Roles</a>.</p>
+     * Auto Scaling IAM roles</a>.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
@@ -900,7 +900,7 @@ namespace Model
      * uses a service-linked role, which it creates if it does not yet exist. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles">Application
-     * Auto Scaling IAM Roles</a>.</p>
+     * Auto Scaling IAM roles</a>.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
@@ -912,7 +912,7 @@ namespace Model
      * uses a service-linked role, which it creates if it does not yet exist. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles">Application
-     * Auto Scaling IAM Roles</a>.</p>
+     * Auto Scaling IAM roles</a>.</p>
      */
     inline RegisterScalableTargetRequest& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
@@ -924,7 +924,7 @@ namespace Model
      * uses a service-linked role, which it creates if it does not yet exist. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles">Application
-     * Auto Scaling IAM Roles</a>.</p>
+     * Auto Scaling IAM roles</a>.</p>
      */
     inline RegisterScalableTargetRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
@@ -936,7 +936,7 @@ namespace Model
      * uses a service-linked role, which it creates if it does not yet exist. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles">Application
-     * Auto Scaling IAM Roles</a>.</p>
+     * Auto Scaling IAM roles</a>.</p>
      */
     inline RegisterScalableTargetRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
@@ -955,7 +955,7 @@ namespace Model
      * suspension is in effect, all scaling activities that involve scheduled actions
      * are suspended. </p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspending
-     * and Resuming Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+     * and resuming scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline const SuspendedState& GetSuspendedState() const{ return m_suspendedState; }
 
@@ -973,7 +973,7 @@ namespace Model
      * suspension is in effect, all scaling activities that involve scheduled actions
      * are suspended. </p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspending
-     * and Resuming Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+     * and resuming scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline bool SuspendedStateHasBeenSet() const { return m_suspendedStateHasBeenSet; }
 
@@ -991,7 +991,7 @@ namespace Model
      * suspension is in effect, all scaling activities that involve scheduled actions
      * are suspended. </p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspending
-     * and Resuming Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+     * and resuming scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline void SetSuspendedState(const SuspendedState& value) { m_suspendedStateHasBeenSet = true; m_suspendedState = value; }
 
@@ -1009,7 +1009,7 @@ namespace Model
      * suspension is in effect, all scaling activities that involve scheduled actions
      * are suspended. </p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspending
-     * and Resuming Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+     * and resuming scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline void SetSuspendedState(SuspendedState&& value) { m_suspendedStateHasBeenSet = true; m_suspendedState = std::move(value); }
 
@@ -1027,7 +1027,7 @@ namespace Model
      * suspension is in effect, all scaling activities that involve scheduled actions
      * are suspended. </p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspending
-     * and Resuming Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+     * and resuming scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline RegisterScalableTargetRequest& WithSuspendedState(const SuspendedState& value) { SetSuspendedState(value); return *this;}
 
@@ -1045,7 +1045,7 @@ namespace Model
      * suspension is in effect, all scaling activities that involve scheduled actions
      * are suspended. </p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspending
-     * and Resuming Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+     * and resuming scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline RegisterScalableTargetRequest& WithSuspendedState(SuspendedState&& value) { SetSuspendedState(std::move(value)); return *this;}
 
