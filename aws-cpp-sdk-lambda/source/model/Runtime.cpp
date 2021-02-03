@@ -26,6 +26,7 @@ namespace Aws
         static const int nodejs8_10_HASH = HashingUtils::HashString("nodejs8.10");
         static const int nodejs10_x_HASH = HashingUtils::HashString("nodejs10.x");
         static const int nodejs12_x_HASH = HashingUtils::HashString("nodejs12.x");
+        static const int nodejs14_x_HASH = HashingUtils::HashString("nodejs14.x");
         static const int java8_HASH = HashingUtils::HashString("java8");
         static const int java8_al2_HASH = HashingUtils::HashString("java8.al2");
         static const int java11_HASH = HashingUtils::HashString("java11");
@@ -71,6 +72,10 @@ namespace Aws
           else if (hashCode == nodejs12_x_HASH)
           {
             return Runtime::nodejs12_x;
+          }
+          else if (hashCode == nodejs14_x_HASH)
+          {
+            return Runtime::nodejs14_x;
           }
           else if (hashCode == java8_HASH)
           {
@@ -166,6 +171,8 @@ namespace Aws
             return "nodejs10.x";
           case Runtime::nodejs12_x:
             return "nodejs12.x";
+          case Runtime::nodejs14_x:
+            return "nodejs14.x";
           case Runtime::java8:
             return "java8";
           case Runtime::java8_al2:

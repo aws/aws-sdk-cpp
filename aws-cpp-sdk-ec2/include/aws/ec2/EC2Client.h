@@ -145,6 +145,7 @@
 #include <aws/ec2/model/DeregisterTransitGatewayMulticastGroupSourcesResponse.h>
 #include <aws/ec2/model/DescribeAccountAttributesResponse.h>
 #include <aws/ec2/model/DescribeAddressesResponse.h>
+#include <aws/ec2/model/DescribeAddressesAttributeResponse.h>
 #include <aws/ec2/model/DescribeAggregateIdFormatResponse.h>
 #include <aws/ec2/model/DescribeAvailabilityZonesResponse.h>
 #include <aws/ec2/model/DescribeBundleTasksResponse.h>
@@ -312,6 +313,7 @@
 #include <aws/ec2/model/ImportKeyPairResponse.h>
 #include <aws/ec2/model/ImportSnapshotResponse.h>
 #include <aws/ec2/model/ImportVolumeResponse.h>
+#include <aws/ec2/model/ModifyAddressAttributeResponse.h>
 #include <aws/ec2/model/ModifyAvailabilityZoneGroupResponse.h>
 #include <aws/ec2/model/ModifyCapacityReservationResponse.h>
 #include <aws/ec2/model/ModifyClientVpnEndpointResponse.h>
@@ -368,6 +370,7 @@
 #include <aws/ec2/model/ReplaceTransitGatewayRouteResponse.h>
 #include <aws/ec2/model/RequestSpotFleetResponse.h>
 #include <aws/ec2/model/RequestSpotInstancesResponse.h>
+#include <aws/ec2/model/ResetAddressAttributeResponse.h>
 #include <aws/ec2/model/ResetEbsDefaultKmsKeyIdResponse.h>
 #include <aws/ec2/model/ResetFpgaImageAttributeResponse.h>
 #include <aws/ec2/model/RestoreAddressToClassicResponse.h>
@@ -600,6 +603,7 @@ namespace Model
         class DeregisterTransitGatewayMulticastGroupSourcesRequest;
         class DescribeAccountAttributesRequest;
         class DescribeAddressesRequest;
+        class DescribeAddressesAttributeRequest;
         class DescribeAggregateIdFormatRequest;
         class DescribeAvailabilityZonesRequest;
         class DescribeBundleTasksRequest;
@@ -775,6 +779,7 @@ namespace Model
         class ImportKeyPairRequest;
         class ImportSnapshotRequest;
         class ImportVolumeRequest;
+        class ModifyAddressAttributeRequest;
         class ModifyAvailabilityZoneGroupRequest;
         class ModifyCapacityReservationRequest;
         class ModifyClientVpnEndpointRequest;
@@ -845,6 +850,7 @@ namespace Model
         class ReportInstanceStatusRequest;
         class RequestSpotFleetRequest;
         class RequestSpotInstancesRequest;
+        class ResetAddressAttributeRequest;
         class ResetEbsDefaultKmsKeyIdRequest;
         class ResetFpgaImageAttributeRequest;
         class ResetImageAttributeRequest;
@@ -1038,6 +1044,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeregisterTransitGatewayMulticastGroupSourcesResponse, EC2Error> DeregisterTransitGatewayMulticastGroupSourcesOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountAttributesResponse, EC2Error> DescribeAccountAttributesOutcome;
         typedef Aws::Utils::Outcome<DescribeAddressesResponse, EC2Error> DescribeAddressesOutcome;
+        typedef Aws::Utils::Outcome<DescribeAddressesAttributeResponse, EC2Error> DescribeAddressesAttributeOutcome;
         typedef Aws::Utils::Outcome<DescribeAggregateIdFormatResponse, EC2Error> DescribeAggregateIdFormatOutcome;
         typedef Aws::Utils::Outcome<DescribeAvailabilityZonesResponse, EC2Error> DescribeAvailabilityZonesOutcome;
         typedef Aws::Utils::Outcome<DescribeBundleTasksResponse, EC2Error> DescribeBundleTasksOutcome;
@@ -1213,6 +1220,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ImportKeyPairResponse, EC2Error> ImportKeyPairOutcome;
         typedef Aws::Utils::Outcome<ImportSnapshotResponse, EC2Error> ImportSnapshotOutcome;
         typedef Aws::Utils::Outcome<ImportVolumeResponse, EC2Error> ImportVolumeOutcome;
+        typedef Aws::Utils::Outcome<ModifyAddressAttributeResponse, EC2Error> ModifyAddressAttributeOutcome;
         typedef Aws::Utils::Outcome<ModifyAvailabilityZoneGroupResponse, EC2Error> ModifyAvailabilityZoneGroupOutcome;
         typedef Aws::Utils::Outcome<ModifyCapacityReservationResponse, EC2Error> ModifyCapacityReservationOutcome;
         typedef Aws::Utils::Outcome<ModifyClientVpnEndpointResponse, EC2Error> ModifyClientVpnEndpointOutcome;
@@ -1283,6 +1291,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> ReportInstanceStatusOutcome;
         typedef Aws::Utils::Outcome<RequestSpotFleetResponse, EC2Error> RequestSpotFleetOutcome;
         typedef Aws::Utils::Outcome<RequestSpotInstancesResponse, EC2Error> RequestSpotInstancesOutcome;
+        typedef Aws::Utils::Outcome<ResetAddressAttributeResponse, EC2Error> ResetAddressAttributeOutcome;
         typedef Aws::Utils::Outcome<ResetEbsDefaultKmsKeyIdResponse, EC2Error> ResetEbsDefaultKmsKeyIdOutcome;
         typedef Aws::Utils::Outcome<ResetFpgaImageAttributeResponse, EC2Error> ResetFpgaImageAttributeOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> ResetImageAttributeOutcome;
@@ -1476,6 +1485,7 @@ namespace Model
         typedef std::future<DeregisterTransitGatewayMulticastGroupSourcesOutcome> DeregisterTransitGatewayMulticastGroupSourcesOutcomeCallable;
         typedef std::future<DescribeAccountAttributesOutcome> DescribeAccountAttributesOutcomeCallable;
         typedef std::future<DescribeAddressesOutcome> DescribeAddressesOutcomeCallable;
+        typedef std::future<DescribeAddressesAttributeOutcome> DescribeAddressesAttributeOutcomeCallable;
         typedef std::future<DescribeAggregateIdFormatOutcome> DescribeAggregateIdFormatOutcomeCallable;
         typedef std::future<DescribeAvailabilityZonesOutcome> DescribeAvailabilityZonesOutcomeCallable;
         typedef std::future<DescribeBundleTasksOutcome> DescribeBundleTasksOutcomeCallable;
@@ -1651,6 +1661,7 @@ namespace Model
         typedef std::future<ImportKeyPairOutcome> ImportKeyPairOutcomeCallable;
         typedef std::future<ImportSnapshotOutcome> ImportSnapshotOutcomeCallable;
         typedef std::future<ImportVolumeOutcome> ImportVolumeOutcomeCallable;
+        typedef std::future<ModifyAddressAttributeOutcome> ModifyAddressAttributeOutcomeCallable;
         typedef std::future<ModifyAvailabilityZoneGroupOutcome> ModifyAvailabilityZoneGroupOutcomeCallable;
         typedef std::future<ModifyCapacityReservationOutcome> ModifyCapacityReservationOutcomeCallable;
         typedef std::future<ModifyClientVpnEndpointOutcome> ModifyClientVpnEndpointOutcomeCallable;
@@ -1721,6 +1732,7 @@ namespace Model
         typedef std::future<ReportInstanceStatusOutcome> ReportInstanceStatusOutcomeCallable;
         typedef std::future<RequestSpotFleetOutcome> RequestSpotFleetOutcomeCallable;
         typedef std::future<RequestSpotInstancesOutcome> RequestSpotInstancesOutcomeCallable;
+        typedef std::future<ResetAddressAttributeOutcome> ResetAddressAttributeOutcomeCallable;
         typedef std::future<ResetEbsDefaultKmsKeyIdOutcome> ResetEbsDefaultKmsKeyIdOutcomeCallable;
         typedef std::future<ResetFpgaImageAttributeOutcome> ResetFpgaImageAttributeOutcomeCallable;
         typedef std::future<ResetImageAttributeOutcome> ResetImageAttributeOutcomeCallable;
@@ -1917,6 +1929,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DeregisterTransitGatewayMulticastGroupSourcesRequest&, const Model::DeregisterTransitGatewayMulticastGroupSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterTransitGatewayMulticastGroupSourcesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeAccountAttributesRequest&, const Model::DescribeAccountAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountAttributesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeAddressesRequest&, const Model::DescribeAddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAddressesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeAddressesAttributeRequest&, const Model::DescribeAddressesAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAddressesAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeAggregateIdFormatRequest&, const Model::DescribeAggregateIdFormatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAggregateIdFormatResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeAvailabilityZonesRequest&, const Model::DescribeAvailabilityZonesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAvailabilityZonesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeBundleTasksRequest&, const Model::DescribeBundleTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBundleTasksResponseReceivedHandler;
@@ -2092,6 +2105,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ImportKeyPairRequest&, const Model::ImportKeyPairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportKeyPairResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ImportSnapshotRequest&, const Model::ImportSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportSnapshotResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ImportVolumeRequest&, const Model::ImportVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportVolumeResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ModifyAddressAttributeRequest&, const Model::ModifyAddressAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyAddressAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyAvailabilityZoneGroupRequest&, const Model::ModifyAvailabilityZoneGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyAvailabilityZoneGroupResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyCapacityReservationRequest&, const Model::ModifyCapacityReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyCapacityReservationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyClientVpnEndpointRequest&, const Model::ModifyClientVpnEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClientVpnEndpointResponseReceivedHandler;
@@ -2162,6 +2176,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ReportInstanceStatusRequest&, const Model::ReportInstanceStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReportInstanceStatusResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::RequestSpotFleetRequest&, const Model::RequestSpotFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RequestSpotFleetResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::RequestSpotInstancesRequest&, const Model::RequestSpotInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RequestSpotInstancesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ResetAddressAttributeRequest&, const Model::ResetAddressAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetAddressAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ResetEbsDefaultKmsKeyIdRequest&, const Model::ResetEbsDefaultKmsKeyIdOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetEbsDefaultKmsKeyIdResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ResetFpgaImageAttributeRequest&, const Model::ResetFpgaImageAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetFpgaImageAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ResetImageAttributeRequest&, const Model::ResetImageAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetImageAttributeResponseReceivedHandler;
@@ -8800,24 +8815,34 @@ namespace Model
         virtual void DeleteVpcEndpointServiceConfigurationsAsync(const Model::DeleteVpcEndpointServiceConfigurationsRequest& request, const DeleteVpcEndpointServiceConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes one or more specified VPC endpoints. Deleting a gateway endpoint also
-         * deletes the endpoint routes in the route tables that were associated with the
-         * endpoint. Deleting an interface endpoint or a Gateway Load Balancer endpoint
-         * deletes the endpoint network interfaces. Gateway Load Balancer endpoints can
-         * only be deleted if the routes that are associated with the endpoint are
-         * deleted.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes one or more specified VPC endpoints. You can delete any of the
+         * following types of VPC endpoints. </p> <ul> <li> <p>Gateway endpoint,</p> </li>
+         * <li> <p>Gateway Load Balancer endpoint,</p> </li> <li> <p>Interface endpoint</p>
+         * </li> </ul> <p>The following rules apply when you delete a VPC endpoint:</p>
+         * <ul> <li> <p>When you delete a gateway endpoint, we delete the endpoint routes
+         * in the route tables that are associated with the endpoint.</p> </li> <li>
+         * <p>When you delete a Gateway Load Balancer endpoint, we delete the endpoint
+         * network interfaces. </p> <p>You can only delete Gateway Load Balancer endpoints
+         * when the routes that are associated with the endpoint are deleted.</p> </li>
+         * <li> <p>When you delete an interface endpoint, we delete the endpoint network
+         * interfaces.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpoints">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteVpcEndpointsOutcome DeleteVpcEndpoints(const Model::DeleteVpcEndpointsRequest& request) const;
 
         /**
-         * <p>Deletes one or more specified VPC endpoints. Deleting a gateway endpoint also
-         * deletes the endpoint routes in the route tables that were associated with the
-         * endpoint. Deleting an interface endpoint or a Gateway Load Balancer endpoint
-         * deletes the endpoint network interfaces. Gateway Load Balancer endpoints can
-         * only be deleted if the routes that are associated with the endpoint are
-         * deleted.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes one or more specified VPC endpoints. You can delete any of the
+         * following types of VPC endpoints. </p> <ul> <li> <p>Gateway endpoint,</p> </li>
+         * <li> <p>Gateway Load Balancer endpoint,</p> </li> <li> <p>Interface endpoint</p>
+         * </li> </ul> <p>The following rules apply when you delete a VPC endpoint:</p>
+         * <ul> <li> <p>When you delete a gateway endpoint, we delete the endpoint routes
+         * in the route tables that are associated with the endpoint.</p> </li> <li>
+         * <p>When you delete a Gateway Load Balancer endpoint, we delete the endpoint
+         * network interfaces. </p> <p>You can only delete Gateway Load Balancer endpoints
+         * when the routes that are associated with the endpoint are deleted.</p> </li>
+         * <li> <p>When you delete an interface endpoint, we delete the endpoint network
+         * interfaces.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpoints">AWS
          * API Reference</a></p>
          *
@@ -8826,12 +8851,17 @@ namespace Model
         virtual Model::DeleteVpcEndpointsOutcomeCallable DeleteVpcEndpointsCallable(const Model::DeleteVpcEndpointsRequest& request) const;
 
         /**
-         * <p>Deletes one or more specified VPC endpoints. Deleting a gateway endpoint also
-         * deletes the endpoint routes in the route tables that were associated with the
-         * endpoint. Deleting an interface endpoint or a Gateway Load Balancer endpoint
-         * deletes the endpoint network interfaces. Gateway Load Balancer endpoints can
-         * only be deleted if the routes that are associated with the endpoint are
-         * deleted.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes one or more specified VPC endpoints. You can delete any of the
+         * following types of VPC endpoints. </p> <ul> <li> <p>Gateway endpoint,</p> </li>
+         * <li> <p>Gateway Load Balancer endpoint,</p> </li> <li> <p>Interface endpoint</p>
+         * </li> </ul> <p>The following rules apply when you delete a VPC endpoint:</p>
+         * <ul> <li> <p>When you delete a gateway endpoint, we delete the endpoint routes
+         * in the route tables that are associated with the endpoint.</p> </li> <li>
+         * <p>When you delete a Gateway Load Balancer endpoint, we delete the endpoint
+         * network interfaces. </p> <p>You can only delete Gateway Load Balancer endpoints
+         * when the routes that are associated with the endpoint are deleted.</p> </li>
+         * <li> <p>When you delete an interface endpoint, we delete the endpoint network
+         * interfaces.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpoints">AWS
          * API Reference</a></p>
          *
@@ -9287,6 +9317,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeAddressesAsync(const Model::DescribeAddressesRequest& request, const DescribeAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the attributes of the specified Elastic IP addresses. For
+         * requirements, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
+         * reverse DNS for email applications</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressesAttribute">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAddressesAttributeOutcome DescribeAddressesAttribute(const Model::DescribeAddressesAttributeRequest& request) const;
+
+        /**
+         * <p>Describes the attributes of the specified Elastic IP addresses. For
+         * requirements, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
+         * reverse DNS for email applications</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressesAttribute">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAddressesAttributeOutcomeCallable DescribeAddressesAttributeCallable(const Model::DescribeAddressesAttributeRequest& request) const;
+
+        /**
+         * <p>Describes the attributes of the specified Elastic IP addresses. For
+         * requirements, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
+         * reverse DNS for email applications</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressesAttribute">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAddressesAttributeAsync(const Model::DescribeAddressesAttributeRequest& request, const DescribeAddressesAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the longer ID format settings for all resource types in a specific
@@ -13601,14 +13665,13 @@ namespace Model
 
         /**
          * <p>Describes available services to which you can create a VPC endpoint.</p>
-         * <p>When the service provider and the consumer have different accounts multiple
-         * Availability Zones, and the consumer views the VPC endpoint service information,
-         * the response only includes the common Availability Zones. For example, when the
-         * service provider account uses <code>us-east-1a</code> and
+         * <p>When the service provider and the consumer have different accounts in
+         * multiple Availability Zones, and the consumer views the VPC endpoint service
+         * information, the response only includes the common Availability Zones. For
+         * example, when the service provider account uses <code>us-east-1a</code> and
          * <code>us-east-1c</code> and the consumer uses <code>us-east-1a</code> and
-         * us-east-1a and us-east-1b, the response includes the VPC endpoint services in
-         * the common Availability Zone, <code>us-east-1a</code>.</p><p><h3>See Also:</h3> 
-         * <a
+         * <code>us-east-1b</code>, the response includes the VPC endpoint services in the
+         * common Availability Zone, <code>us-east-1a</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServices">AWS
          * API Reference</a></p>
          */
@@ -13616,14 +13679,13 @@ namespace Model
 
         /**
          * <p>Describes available services to which you can create a VPC endpoint.</p>
-         * <p>When the service provider and the consumer have different accounts multiple
-         * Availability Zones, and the consumer views the VPC endpoint service information,
-         * the response only includes the common Availability Zones. For example, when the
-         * service provider account uses <code>us-east-1a</code> and
+         * <p>When the service provider and the consumer have different accounts in
+         * multiple Availability Zones, and the consumer views the VPC endpoint service
+         * information, the response only includes the common Availability Zones. For
+         * example, when the service provider account uses <code>us-east-1a</code> and
          * <code>us-east-1c</code> and the consumer uses <code>us-east-1a</code> and
-         * us-east-1a and us-east-1b, the response includes the VPC endpoint services in
-         * the common Availability Zone, <code>us-east-1a</code>.</p><p><h3>See Also:</h3> 
-         * <a
+         * <code>us-east-1b</code>, the response includes the VPC endpoint services in the
+         * common Availability Zone, <code>us-east-1a</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServices">AWS
          * API Reference</a></p>
          *
@@ -13633,14 +13695,13 @@ namespace Model
 
         /**
          * <p>Describes available services to which you can create a VPC endpoint.</p>
-         * <p>When the service provider and the consumer have different accounts multiple
-         * Availability Zones, and the consumer views the VPC endpoint service information,
-         * the response only includes the common Availability Zones. For example, when the
-         * service provider account uses <code>us-east-1a</code> and
+         * <p>When the service provider and the consumer have different accounts in
+         * multiple Availability Zones, and the consumer views the VPC endpoint service
+         * information, the response only includes the common Availability Zones. For
+         * example, when the service provider account uses <code>us-east-1a</code> and
          * <code>us-east-1c</code> and the consumer uses <code>us-east-1a</code> and
-         * us-east-1a and us-east-1b, the response includes the VPC endpoint services in
-         * the common Availability Zone, <code>us-east-1a</code>.</p><p><h3>See Also:</h3> 
-         * <a
+         * <code>us-east-1b</code>, the response includes the VPC endpoint services in the
+         * common Availability Zone, <code>us-east-1a</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServices">AWS
          * API Reference</a></p>
          *
@@ -15966,6 +16027,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ImportVolumeAsync(const Model::ImportVolumeRequest& request, const ImportVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Modifies an attribute of the specified Elastic IP address. For requirements,
+         * see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
+         * reverse DNS for email applications</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAddressAttribute">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyAddressAttributeOutcome ModifyAddressAttribute(const Model::ModifyAddressAttributeRequest& request) const;
+
+        /**
+         * <p>Modifies an attribute of the specified Elastic IP address. For requirements,
+         * see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
+         * reverse DNS for email applications</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAddressAttribute">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyAddressAttributeOutcomeCallable ModifyAddressAttributeCallable(const Model::ModifyAddressAttributeRequest& request) const;
+
+        /**
+         * <p>Modifies an attribute of the specified Elastic IP address. For requirements,
+         * see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
+         * reverse DNS for email applications</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAddressAttribute">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyAddressAttributeAsync(const Model::ModifyAddressAttributeRequest& request, const ModifyAddressAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the opt-in status of the Local Zone and Wavelength Zone group for
@@ -19404,6 +19499,37 @@ namespace Model
         virtual void RequestSpotInstancesAsync(const Model::RequestSpotInstancesRequest& request, const RequestSpotInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Resets the attribute of the specified IP address. For requirements, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
+         * reverse DNS for email applications</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetAddressAttribute">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ResetAddressAttributeOutcome ResetAddressAttribute(const Model::ResetAddressAttributeRequest& request) const;
+
+        /**
+         * <p>Resets the attribute of the specified IP address. For requirements, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
+         * reverse DNS for email applications</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetAddressAttribute">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ResetAddressAttributeOutcomeCallable ResetAddressAttributeCallable(const Model::ResetAddressAttributeRequest& request) const;
+
+        /**
+         * <p>Resets the attribute of the specified IP address. For requirements, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
+         * reverse DNS for email applications</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetAddressAttribute">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ResetAddressAttributeAsync(const Model::ResetAddressAttributeRequest& request, const ResetAddressAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Resets the default customer master key (CMK) for EBS encryption for your
          * account in this Region to the AWS managed CMK for EBS.</p> <p>After resetting
          * the default CMK to the AWS managed CMK, you can continue to encrypt by a
@@ -20988,6 +21114,7 @@ namespace Model
         void DeregisterTransitGatewayMulticastGroupSourcesAsyncHelper(const Model::DeregisterTransitGatewayMulticastGroupSourcesRequest& request, const DeregisterTransitGatewayMulticastGroupSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccountAttributesAsyncHelper(const Model::DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAddressesAsyncHelper(const Model::DescribeAddressesRequest& request, const DescribeAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeAddressesAttributeAsyncHelper(const Model::DescribeAddressesAttributeRequest& request, const DescribeAddressesAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAggregateIdFormatAsyncHelper(const Model::DescribeAggregateIdFormatRequest& request, const DescribeAggregateIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAvailabilityZonesAsyncHelper(const Model::DescribeAvailabilityZonesRequest& request, const DescribeAvailabilityZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBundleTasksAsyncHelper(const Model::DescribeBundleTasksRequest& request, const DescribeBundleTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -21163,6 +21290,7 @@ namespace Model
         void ImportKeyPairAsyncHelper(const Model::ImportKeyPairRequest& request, const ImportKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportSnapshotAsyncHelper(const Model::ImportSnapshotRequest& request, const ImportSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportVolumeAsyncHelper(const Model::ImportVolumeRequest& request, const ImportVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyAddressAttributeAsyncHelper(const Model::ModifyAddressAttributeRequest& request, const ModifyAddressAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyAvailabilityZoneGroupAsyncHelper(const Model::ModifyAvailabilityZoneGroupRequest& request, const ModifyAvailabilityZoneGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyCapacityReservationAsyncHelper(const Model::ModifyCapacityReservationRequest& request, const ModifyCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyClientVpnEndpointAsyncHelper(const Model::ModifyClientVpnEndpointRequest& request, const ModifyClientVpnEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -21233,6 +21361,7 @@ namespace Model
         void ReportInstanceStatusAsyncHelper(const Model::ReportInstanceStatusRequest& request, const ReportInstanceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RequestSpotFleetAsyncHelper(const Model::RequestSpotFleetRequest& request, const RequestSpotFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RequestSpotInstancesAsyncHelper(const Model::RequestSpotInstancesRequest& request, const RequestSpotInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ResetAddressAttributeAsyncHelper(const Model::ResetAddressAttributeRequest& request, const ResetAddressAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResetEbsDefaultKmsKeyIdAsyncHelper(const Model::ResetEbsDefaultKmsKeyIdRequest& request, const ResetEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResetFpgaImageAttributeAsyncHelper(const Model::ResetFpgaImageAttributeRequest& request, const ResetFpgaImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResetImageAttributeAsyncHelper(const Model::ResetImageAttributeRequest& request, const ResetImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

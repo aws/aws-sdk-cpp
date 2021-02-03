@@ -700,9 +700,14 @@ namespace Model
      * <p> Set to true to report the status of a build's start and finish to your
      * source provider. This option is valid only when your source provider is GitHub,
      * GitHub Enterprise, or Bitbucket. If this is set and you use a different source
-     * provider, an invalidInputException is thrown. </p>  <p> The status of a
-     * build triggered by a webhook is always reported to your source provider. </p>
-     * 
+     * provider, an <code>invalidInputException</code> is thrown. </p> <p>To be able to
+     * report the build status to the source provider, the user associated with the
+     * source provider must have write access to the repo. If the user does not have
+     * write access, the build status cannot be updated. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
+     * provider access</a> in the <i>AWS CodeBuild User Guide</i>.</p>  <p> The
+     * status of a build triggered by a webhook is always reported to your source
+     * provider. </p> 
      */
     inline bool GetReportBuildStatus() const{ return m_reportBuildStatus; }
 
@@ -710,9 +715,14 @@ namespace Model
      * <p> Set to true to report the status of a build's start and finish to your
      * source provider. This option is valid only when your source provider is GitHub,
      * GitHub Enterprise, or Bitbucket. If this is set and you use a different source
-     * provider, an invalidInputException is thrown. </p>  <p> The status of a
-     * build triggered by a webhook is always reported to your source provider. </p>
-     * 
+     * provider, an <code>invalidInputException</code> is thrown. </p> <p>To be able to
+     * report the build status to the source provider, the user associated with the
+     * source provider must have write access to the repo. If the user does not have
+     * write access, the build status cannot be updated. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
+     * provider access</a> in the <i>AWS CodeBuild User Guide</i>.</p>  <p> The
+     * status of a build triggered by a webhook is always reported to your source
+     * provider. </p> 
      */
     inline bool ReportBuildStatusHasBeenSet() const { return m_reportBuildStatusHasBeenSet; }
 
@@ -720,9 +730,14 @@ namespace Model
      * <p> Set to true to report the status of a build's start and finish to your
      * source provider. This option is valid only when your source provider is GitHub,
      * GitHub Enterprise, or Bitbucket. If this is set and you use a different source
-     * provider, an invalidInputException is thrown. </p>  <p> The status of a
-     * build triggered by a webhook is always reported to your source provider. </p>
-     * 
+     * provider, an <code>invalidInputException</code> is thrown. </p> <p>To be able to
+     * report the build status to the source provider, the user associated with the
+     * source provider must have write access to the repo. If the user does not have
+     * write access, the build status cannot be updated. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
+     * provider access</a> in the <i>AWS CodeBuild User Guide</i>.</p>  <p> The
+     * status of a build triggered by a webhook is always reported to your source
+     * provider. </p> 
      */
     inline void SetReportBuildStatus(bool value) { m_reportBuildStatusHasBeenSet = true; m_reportBuildStatus = value; }
 
@@ -730,9 +745,14 @@ namespace Model
      * <p> Set to true to report the status of a build's start and finish to your
      * source provider. This option is valid only when your source provider is GitHub,
      * GitHub Enterprise, or Bitbucket. If this is set and you use a different source
-     * provider, an invalidInputException is thrown. </p>  <p> The status of a
-     * build triggered by a webhook is always reported to your source provider. </p>
-     * 
+     * provider, an <code>invalidInputException</code> is thrown. </p> <p>To be able to
+     * report the build status to the source provider, the user associated with the
+     * source provider must have write access to the repo. If the user does not have
+     * write access, the build status cannot be updated. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
+     * provider access</a> in the <i>AWS CodeBuild User Guide</i>.</p>  <p> The
+     * status of a build triggered by a webhook is always reported to your source
+     * provider. </p> 
      */
     inline ProjectSource& WithReportBuildStatus(bool value) { SetReportBuildStatus(value); return *this;}
 

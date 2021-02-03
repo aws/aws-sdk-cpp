@@ -131,6 +131,47 @@ namespace Model
      */
     inline DescribeProductsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>The ARN of the integration to return.</p>
+     */
+    inline const Aws::String& GetProductArn() const{ return m_productArn; }
+
+    /**
+     * <p>The ARN of the integration to return.</p>
+     */
+    inline bool ProductArnHasBeenSet() const { return m_productArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the integration to return.</p>
+     */
+    inline void SetProductArn(const Aws::String& value) { m_productArnHasBeenSet = true; m_productArn = value; }
+
+    /**
+     * <p>The ARN of the integration to return.</p>
+     */
+    inline void SetProductArn(Aws::String&& value) { m_productArnHasBeenSet = true; m_productArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the integration to return.</p>
+     */
+    inline void SetProductArn(const char* value) { m_productArnHasBeenSet = true; m_productArn.assign(value); }
+
+    /**
+     * <p>The ARN of the integration to return.</p>
+     */
+    inline DescribeProductsRequest& WithProductArn(const Aws::String& value) { SetProductArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the integration to return.</p>
+     */
+    inline DescribeProductsRequest& WithProductArn(Aws::String&& value) { SetProductArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the integration to return.</p>
+     */
+    inline DescribeProductsRequest& WithProductArn(const char* value) { SetProductArn(value); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -138,6 +179,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
+    Aws::String m_productArn;
+    bool m_productArnHasBeenSet;
   };
 
 } // namespace Model

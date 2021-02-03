@@ -1689,32 +1689,38 @@ namespace Model
 
 
     /**
-     * <p>Provides details about an action that was detected for the finding.</p>
+     * <p>Provides details about an action that affects or that was taken on a
+     * resource.</p>
      */
     inline const Action& GetAction() const{ return m_action; }
 
     /**
-     * <p>Provides details about an action that was detected for the finding.</p>
+     * <p>Provides details about an action that affects or that was taken on a
+     * resource.</p>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
-     * <p>Provides details about an action that was detected for the finding.</p>
+     * <p>Provides details about an action that affects or that was taken on a
+     * resource.</p>
      */
     inline void SetAction(const Action& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
-     * <p>Provides details about an action that was detected for the finding.</p>
+     * <p>Provides details about an action that affects or that was taken on a
+     * resource.</p>
      */
     inline void SetAction(Action&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
-     * <p>Provides details about an action that was detected for the finding.</p>
+     * <p>Provides details about an action that affects or that was taken on a
+     * resource.</p>
      */
     inline AwsSecurityFinding& WithAction(const Action& value) { SetAction(value); return *this;}
 
     /**
-     * <p>Provides details about an action that was detected for the finding.</p>
+     * <p>Provides details about an action that affects or that was taken on a
+     * resource.</p>
      */
     inline AwsSecurityFinding& WithAction(Action&& value) { SetAction(std::move(value)); return *this;}
 

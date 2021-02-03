@@ -510,7 +510,9 @@ namespace Model
      * service.</p> <p>To use a private hosted zone, you must set the following VPC
      * attributes to <code>true</code>: <code>enableDnsHostnames</code> and
      * <code>enableDnsSupport</code>. Use <a>ModifyVpcAttribute</a> to set the VPC
-     * attributes.</p> <p>Default: <code>true</code> </p>
+     * attributes.</p>  <p>Private DNS is not supported for Amazon S3
+     * interface endpoints.</p>  <p>Default: <code>true</code> for
+     * supported endpoints</p>
      */
     inline bool GetPrivateDnsEnabled() const{ return m_privateDnsEnabled; }
 
@@ -525,7 +527,9 @@ namespace Model
      * service.</p> <p>To use a private hosted zone, you must set the following VPC
      * attributes to <code>true</code>: <code>enableDnsHostnames</code> and
      * <code>enableDnsSupport</code>. Use <a>ModifyVpcAttribute</a> to set the VPC
-     * attributes.</p> <p>Default: <code>true</code> </p>
+     * attributes.</p>  <p>Private DNS is not supported for Amazon S3
+     * interface endpoints.</p>  <p>Default: <code>true</code> for
+     * supported endpoints</p>
      */
     inline bool PrivateDnsEnabledHasBeenSet() const { return m_privateDnsEnabledHasBeenSet; }
 
@@ -540,7 +544,9 @@ namespace Model
      * service.</p> <p>To use a private hosted zone, you must set the following VPC
      * attributes to <code>true</code>: <code>enableDnsHostnames</code> and
      * <code>enableDnsSupport</code>. Use <a>ModifyVpcAttribute</a> to set the VPC
-     * attributes.</p> <p>Default: <code>true</code> </p>
+     * attributes.</p>  <p>Private DNS is not supported for Amazon S3
+     * interface endpoints.</p>  <p>Default: <code>true</code> for
+     * supported endpoints</p>
      */
     inline void SetPrivateDnsEnabled(bool value) { m_privateDnsEnabledHasBeenSet = true; m_privateDnsEnabled = value; }
 
@@ -555,7 +561,9 @@ namespace Model
      * service.</p> <p>To use a private hosted zone, you must set the following VPC
      * attributes to <code>true</code>: <code>enableDnsHostnames</code> and
      * <code>enableDnsSupport</code>. Use <a>ModifyVpcAttribute</a> to set the VPC
-     * attributes.</p> <p>Default: <code>true</code> </p>
+     * attributes.</p>  <p>Private DNS is not supported for Amazon S3
+     * interface endpoints.</p>  <p>Default: <code>true</code> for
+     * supported endpoints</p>
      */
     inline CreateVpcEndpointRequest& WithPrivateDnsEnabled(bool value) { SetPrivateDnsEnabled(value); return *this;}
 

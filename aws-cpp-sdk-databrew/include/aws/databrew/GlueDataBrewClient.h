@@ -25,6 +25,7 @@
 #include <aws/databrew/model/DeleteScheduleResult.h>
 #include <aws/databrew/model/DescribeDatasetResult.h>
 #include <aws/databrew/model/DescribeJobResult.h>
+#include <aws/databrew/model/DescribeJobRunResult.h>
 #include <aws/databrew/model/DescribeProjectResult.h>
 #include <aws/databrew/model/DescribeRecipeResult.h>
 #include <aws/databrew/model/DescribeScheduleResult.h>
@@ -102,6 +103,7 @@ namespace Model
         class DeleteScheduleRequest;
         class DescribeDatasetRequest;
         class DescribeJobRequest;
+        class DescribeJobRunRequest;
         class DescribeProjectRequest;
         class DescribeRecipeRequest;
         class DescribeScheduleRequest;
@@ -141,6 +143,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteScheduleResult, GlueDataBrewError> DeleteScheduleOutcome;
         typedef Aws::Utils::Outcome<DescribeDatasetResult, GlueDataBrewError> DescribeDatasetOutcome;
         typedef Aws::Utils::Outcome<DescribeJobResult, GlueDataBrewError> DescribeJobOutcome;
+        typedef Aws::Utils::Outcome<DescribeJobRunResult, GlueDataBrewError> DescribeJobRunOutcome;
         typedef Aws::Utils::Outcome<DescribeProjectResult, GlueDataBrewError> DescribeProjectOutcome;
         typedef Aws::Utils::Outcome<DescribeRecipeResult, GlueDataBrewError> DescribeRecipeOutcome;
         typedef Aws::Utils::Outcome<DescribeScheduleResult, GlueDataBrewError> DescribeScheduleOutcome;
@@ -180,6 +183,7 @@ namespace Model
         typedef std::future<DeleteScheduleOutcome> DeleteScheduleOutcomeCallable;
         typedef std::future<DescribeDatasetOutcome> DescribeDatasetOutcomeCallable;
         typedef std::future<DescribeJobOutcome> DescribeJobOutcomeCallable;
+        typedef std::future<DescribeJobRunOutcome> DescribeJobRunOutcomeCallable;
         typedef std::future<DescribeProjectOutcome> DescribeProjectOutcomeCallable;
         typedef std::future<DescribeRecipeOutcome> DescribeRecipeOutcomeCallable;
         typedef std::future<DescribeScheduleOutcome> DescribeScheduleOutcomeCallable;
@@ -222,6 +226,7 @@ namespace Model
     typedef std::function<void(const GlueDataBrewClient*, const Model::DeleteScheduleRequest&, const Model::DeleteScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteScheduleResponseReceivedHandler;
     typedef std::function<void(const GlueDataBrewClient*, const Model::DescribeDatasetRequest&, const Model::DescribeDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetResponseReceivedHandler;
     typedef std::function<void(const GlueDataBrewClient*, const Model::DescribeJobRequest&, const Model::DescribeJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobResponseReceivedHandler;
+    typedef std::function<void(const GlueDataBrewClient*, const Model::DescribeJobRunRequest&, const Model::DescribeJobRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobRunResponseReceivedHandler;
     typedef std::function<void(const GlueDataBrewClient*, const Model::DescribeProjectRequest&, const Model::DescribeProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProjectResponseReceivedHandler;
     typedef std::function<void(const GlueDataBrewClient*, const Model::DescribeRecipeRequest&, const Model::DescribeRecipeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRecipeResponseReceivedHandler;
     typedef std::function<void(const GlueDataBrewClient*, const Model::DescribeScheduleRequest&, const Model::DescribeScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScheduleResponseReceivedHandler;
@@ -684,6 +689,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeJobAsync(const Model::DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Represents one run of a DataBrew job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeJobRun">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeJobRunOutcome DescribeJobRun(const Model::DescribeJobRunRequest& request) const;
+
+        /**
+         * <p>Represents one run of a DataBrew job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeJobRun">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeJobRunOutcomeCallable DescribeJobRunCallable(const Model::DescribeJobRunRequest& request) const;
+
+        /**
+         * <p>Represents one run of a DataBrew job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeJobRun">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeJobRunAsync(const Model::DescribeJobRunRequest& request, const DescribeJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the definition of a specific DataBrew project.</p><p><h3>See
@@ -1354,6 +1384,7 @@ namespace Model
         void DeleteScheduleAsyncHelper(const Model::DeleteScheduleRequest& request, const DeleteScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDatasetAsyncHelper(const Model::DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeJobAsyncHelper(const Model::DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeJobRunAsyncHelper(const Model::DescribeJobRunRequest& request, const DescribeJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeProjectAsyncHelper(const Model::DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRecipeAsyncHelper(const Model::DescribeRecipeRequest& request, const DescribeRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeScheduleAsyncHelper(const Model::DescribeScheduleRequest& request, const DescribeScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

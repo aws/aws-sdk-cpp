@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Options that define how DataBrew will write a Csv file a.</p><p><h3>See
+   * <p>Options that define how DataBrew will write a Csv file.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CsvOutputOptions">AWS
    * API Reference</a></p>

@@ -1030,18 +1030,22 @@ namespace Model
         virtual void DescribeOrganizationConfigurationAsync(const Model::DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about the available products that you can subscribe to
-         * and integrate with Security Hub in order to consolidate findings.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns information about product integrations in Security Hub.</p> <p>You
+         * can optionally provide an integration ARN. If you provide an integration ARN,
+         * then the results only include that integration.</p> <p>If you do not provide an
+         * integration ARN, then the results include all of the available product
+         * integrations. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeProducts">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeProductsOutcome DescribeProducts(const Model::DescribeProductsRequest& request) const;
 
         /**
-         * <p>Returns information about the available products that you can subscribe to
-         * and integrate with Security Hub in order to consolidate findings.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns information about product integrations in Security Hub.</p> <p>You
+         * can optionally provide an integration ARN. If you provide an integration ARN,
+         * then the results only include that integration.</p> <p>If you do not provide an
+         * integration ARN, then the results include all of the available product
+         * integrations. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeProducts">AWS
          * API Reference</a></p>
          *
@@ -1050,9 +1054,11 @@ namespace Model
         virtual Model::DescribeProductsOutcomeCallable DescribeProductsCallable(const Model::DescribeProductsRequest& request) const;
 
         /**
-         * <p>Returns information about the available products that you can subscribe to
-         * and integrate with Security Hub in order to consolidate findings.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns information about product integrations in Security Hub.</p> <p>You
+         * can optionally provide an integration ARN. If you provide an integration ARN,
+         * then the results only include that integration.</p> <p>If you do not provide an
+         * integration ARN, then the results include all of the available product
+         * integrations. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeProducts">AWS
          * API Reference</a></p>
          *
