@@ -32,6 +32,7 @@ DataSet::DataSet() :
     m_consumedSpiceCapacityInBytes(0),
     m_consumedSpiceCapacityInBytesHasBeenSet(false),
     m_columnGroupsHasBeenSet(false),
+    m_fieldFoldersHasBeenSet(false),
     m_rowLevelPermissionDataSetHasBeenSet(false),
     m_columnLevelPermissionRulesHasBeenSet(false)
 {
@@ -51,6 +52,7 @@ DataSet::DataSet(JsonView jsonValue) :
     m_consumedSpiceCapacityInBytes(0),
     m_consumedSpiceCapacityInBytesHasBeenSet(false),
     m_columnGroupsHasBeenSet(false),
+    m_fieldFoldersHasBeenSet(false),
     m_rowLevelPermissionDataSetHasBeenSet(false),
     m_columnLevelPermissionRulesHasBeenSet(false)
 {
@@ -146,6 +148,16 @@ DataSet& DataSet::operator =(JsonView jsonValue)
       m_columnGroups.push_back(columnGroupsJsonList[columnGroupsIndex].AsObject());
     }
     m_columnGroupsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FieldFolders"))
+  {
+    Aws::Map<Aws::String, JsonView> fieldFoldersJsonMap = jsonValue.GetObject("FieldFolders").GetAllObjects();
+    for(auto& fieldFoldersItem : fieldFoldersJsonMap)
+    {
+      m_fieldFolders[fieldFoldersItem.first] = fieldFoldersItem.second.AsObject();
+    }
+    m_fieldFoldersHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("RowLevelPermissionDataSet"))
@@ -252,6 +264,17 @@ JsonValue DataSet::Jsonize() const
      columnGroupsJsonList[columnGroupsIndex].AsObject(m_columnGroups[columnGroupsIndex].Jsonize());
    }
    payload.WithArray("ColumnGroups", std::move(columnGroupsJsonList));
+
+  }
+
+  if(m_fieldFoldersHasBeenSet)
+  {
+   JsonValue fieldFoldersJsonMap;
+   for(auto& fieldFoldersItem : m_fieldFolders)
+   {
+     fieldFoldersJsonMap.WithObject(fieldFoldersItem.first, fieldFoldersItem.second.Jsonize());
+   }
+   payload.WithObject("FieldFolders", std::move(fieldFoldersJsonMap));
 
   }
 

@@ -46,7 +46,7 @@ namespace Model
 
     public:
         StartConversationHandler();
-        StartConversationHandler& operator=(const StartConversationHandler& handler) = default;
+        StartConversationHandler& operator=(const StartConversationHandler&) = default;
 
         virtual void OnEvent() override;
 

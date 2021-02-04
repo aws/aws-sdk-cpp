@@ -11,6 +11,7 @@
 #include <aws/athena/model/QueryExecutionContext.h>
 #include <aws/athena/model/QueryExecutionStatus.h>
 #include <aws/athena/model/QueryExecutionStatistics.h>
+#include <aws/athena/model/EngineVersion.h>
 #include <utility>
 
 namespace Aws
@@ -380,6 +381,37 @@ namespace Model
      */
     inline QueryExecution& WithWorkGroup(const char* value) { SetWorkGroup(value); return *this;}
 
+
+    /**
+     * <p>The engine version that executed the query.</p>
+     */
+    inline const EngineVersion& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p>The engine version that executed the query.</p>
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
+
+    /**
+     * <p>The engine version that executed the query.</p>
+     */
+    inline void SetEngineVersion(const EngineVersion& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
+
+    /**
+     * <p>The engine version that executed the query.</p>
+     */
+    inline void SetEngineVersion(EngineVersion&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
+
+    /**
+     * <p>The engine version that executed the query.</p>
+     */
+    inline QueryExecution& WithEngineVersion(const EngineVersion& value) { SetEngineVersion(value); return *this;}
+
+    /**
+     * <p>The engine version that executed the query.</p>
+     */
+    inline QueryExecution& WithEngineVersion(EngineVersion&& value) { SetEngineVersion(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_queryExecutionId;
@@ -405,6 +437,9 @@ namespace Model
 
     Aws::String m_workGroup;
     bool m_workGroupHasBeenSet;
+
+    EngineVersion m_engineVersion;
+    bool m_engineVersionHasBeenSet;
   };
 
 } // namespace Model

@@ -40,44 +40,117 @@ namespace Model
 
 
     /**
-     * <p>The target Region.</p>
+     * <p>The target Region for the snapshot copies.</p> <p>If you specify a target
+     * Region, you must omit <b>Target</b>. You cannot specify a target Region and a
+     * target Outpost in the same rule.</p>
      */
     inline const Aws::String& GetTargetRegion() const{ return m_targetRegion; }
 
     /**
-     * <p>The target Region.</p>
+     * <p>The target Region for the snapshot copies.</p> <p>If you specify a target
+     * Region, you must omit <b>Target</b>. You cannot specify a target Region and a
+     * target Outpost in the same rule.</p>
      */
     inline bool TargetRegionHasBeenSet() const { return m_targetRegionHasBeenSet; }
 
     /**
-     * <p>The target Region.</p>
+     * <p>The target Region for the snapshot copies.</p> <p>If you specify a target
+     * Region, you must omit <b>Target</b>. You cannot specify a target Region and a
+     * target Outpost in the same rule.</p>
      */
     inline void SetTargetRegion(const Aws::String& value) { m_targetRegionHasBeenSet = true; m_targetRegion = value; }
 
     /**
-     * <p>The target Region.</p>
+     * <p>The target Region for the snapshot copies.</p> <p>If you specify a target
+     * Region, you must omit <b>Target</b>. You cannot specify a target Region and a
+     * target Outpost in the same rule.</p>
      */
     inline void SetTargetRegion(Aws::String&& value) { m_targetRegionHasBeenSet = true; m_targetRegion = std::move(value); }
 
     /**
-     * <p>The target Region.</p>
+     * <p>The target Region for the snapshot copies.</p> <p>If you specify a target
+     * Region, you must omit <b>Target</b>. You cannot specify a target Region and a
+     * target Outpost in the same rule.</p>
      */
     inline void SetTargetRegion(const char* value) { m_targetRegionHasBeenSet = true; m_targetRegion.assign(value); }
 
     /**
-     * <p>The target Region.</p>
+     * <p>The target Region for the snapshot copies.</p> <p>If you specify a target
+     * Region, you must omit <b>Target</b>. You cannot specify a target Region and a
+     * target Outpost in the same rule.</p>
      */
     inline CrossRegionCopyRule& WithTargetRegion(const Aws::String& value) { SetTargetRegion(value); return *this;}
 
     /**
-     * <p>The target Region.</p>
+     * <p>The target Region for the snapshot copies.</p> <p>If you specify a target
+     * Region, you must omit <b>Target</b>. You cannot specify a target Region and a
+     * target Outpost in the same rule.</p>
      */
     inline CrossRegionCopyRule& WithTargetRegion(Aws::String&& value) { SetTargetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The target Region.</p>
+     * <p>The target Region for the snapshot copies.</p> <p>If you specify a target
+     * Region, you must omit <b>Target</b>. You cannot specify a target Region and a
+     * target Outpost in the same rule.</p>
      */
     inline CrossRegionCopyRule& WithTargetRegion(const char* value) { SetTargetRegion(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the target AWS Outpost for the snapshot
+     * copies.</p> <p>If you specify an ARN, you must omit <b>TargetRegion</b>. You
+     * cannot specify a target Region and a target Outpost in the same rule.</p>
+     */
+    inline const Aws::String& GetTarget() const{ return m_target; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the target AWS Outpost for the snapshot
+     * copies.</p> <p>If you specify an ARN, you must omit <b>TargetRegion</b>. You
+     * cannot specify a target Region and a target Outpost in the same rule.</p>
+     */
+    inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the target AWS Outpost for the snapshot
+     * copies.</p> <p>If you specify an ARN, you must omit <b>TargetRegion</b>. You
+     * cannot specify a target Region and a target Outpost in the same rule.</p>
+     */
+    inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the target AWS Outpost for the snapshot
+     * copies.</p> <p>If you specify an ARN, you must omit <b>TargetRegion</b>. You
+     * cannot specify a target Region and a target Outpost in the same rule.</p>
+     */
+    inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the target AWS Outpost for the snapshot
+     * copies.</p> <p>If you specify an ARN, you must omit <b>TargetRegion</b>. You
+     * cannot specify a target Region and a target Outpost in the same rule.</p>
+     */
+    inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the target AWS Outpost for the snapshot
+     * copies.</p> <p>If you specify an ARN, you must omit <b>TargetRegion</b>. You
+     * cannot specify a target Region and a target Outpost in the same rule.</p>
+     */
+    inline CrossRegionCopyRule& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the target AWS Outpost for the snapshot
+     * copies.</p> <p>If you specify an ARN, you must omit <b>TargetRegion</b>. You
+     * cannot specify a target Region and a target Outpost in the same rule.</p>
+     */
+    inline CrossRegionCopyRule& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the target AWS Outpost for the snapshot
+     * copies.</p> <p>If you specify an ARN, you must omit <b>TargetRegion</b>. You
+     * cannot specify a target Region and a target Outpost in the same rule.</p>
+     */
+    inline CrossRegionCopyRule& WithTarget(const char* value) { SetTarget(value); return *this;}
 
 
     /**
@@ -229,6 +302,9 @@ namespace Model
 
     Aws::String m_targetRegion;
     bool m_targetRegionHasBeenSet;
+
+    Aws::String m_target;
+    bool m_targetHasBeenSet;
 
     bool m_encrypted;
     bool m_encryptedHasBeenSet;

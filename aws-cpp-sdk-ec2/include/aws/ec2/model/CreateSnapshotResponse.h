@@ -556,6 +556,70 @@ namespace Model
 
 
     /**
+     * <p>The ARN of the AWS Outpost on which the snapshot is stored. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS
+     * Local Snapshot on Outposts</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
+     */
+    inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
+
+    /**
+     * <p>The ARN of the AWS Outpost on which the snapshot is stored. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS
+     * Local Snapshot on Outposts</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
+     */
+    inline void SetOutpostArn(const Aws::String& value) { m_outpostArn = value; }
+
+    /**
+     * <p>The ARN of the AWS Outpost on which the snapshot is stored. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS
+     * Local Snapshot on Outposts</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
+     */
+    inline void SetOutpostArn(Aws::String&& value) { m_outpostArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the AWS Outpost on which the snapshot is stored. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS
+     * Local Snapshot on Outposts</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
+     */
+    inline void SetOutpostArn(const char* value) { m_outpostArn.assign(value); }
+
+    /**
+     * <p>The ARN of the AWS Outpost on which the snapshot is stored. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS
+     * Local Snapshot on Outposts</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
+     */
+    inline CreateSnapshotResponse& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the AWS Outpost on which the snapshot is stored. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS
+     * Local Snapshot on Outposts</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
+     */
+    inline CreateSnapshotResponse& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the AWS Outpost on which the snapshot is stored. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS
+     * Local Snapshot on Outposts</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
+     */
+    inline CreateSnapshotResponse& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
+
+
+    /**
      * <p>Any tags assigned to the snapshot.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -633,6 +697,8 @@ namespace Model
     int m_volumeSize;
 
     Aws::String m_ownerAlias;
+
+    Aws::String m_outpostArn;
 
     Aws::Vector<Tag> m_tags;
 

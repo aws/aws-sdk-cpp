@@ -430,6 +430,47 @@ namespace Model
 
 
     /**
+     * <p>The ARN of the Outpost on which the snapshot is stored.</p>
+     */
+    inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
+
+    /**
+     * <p>The ARN of the Outpost on which the snapshot is stored.</p>
+     */
+    inline bool OutpostArnHasBeenSet() const { return m_outpostArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the Outpost on which the snapshot is stored.</p>
+     */
+    inline void SetOutpostArn(const Aws::String& value) { m_outpostArnHasBeenSet = true; m_outpostArn = value; }
+
+    /**
+     * <p>The ARN of the Outpost on which the snapshot is stored.</p>
+     */
+    inline void SetOutpostArn(Aws::String&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the Outpost on which the snapshot is stored.</p>
+     */
+    inline void SetOutpostArn(const char* value) { m_outpostArnHasBeenSet = true; m_outpostArn.assign(value); }
+
+    /**
+     * <p>The ARN of the Outpost on which the snapshot is stored.</p>
+     */
+    inline EbsBlockDevice& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the Outpost on which the snapshot is stored.</p>
+     */
+    inline EbsBlockDevice& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the Outpost on which the snapshot is stored.</p>
+     */
+    inline EbsBlockDevice& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
+
+
+    /**
      * <p>Indicates whether the encryption state of an EBS volume is changed while
      * being restored from a backing snapshot. The effect of setting the encryption
      * state to <code>true</code> depends on the volume origin (new or from a
@@ -515,6 +556,9 @@ namespace Model
 
     int m_throughput;
     bool m_throughputHasBeenSet;
+
+    Aws::String m_outpostArn;
+    bool m_outpostArnHasBeenSet;
 
     bool m_encrypted;
     bool m_encryptedHasBeenSet;

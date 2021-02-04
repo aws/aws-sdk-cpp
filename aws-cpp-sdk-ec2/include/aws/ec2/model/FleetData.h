@@ -667,22 +667,38 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether EC2 Fleet should replace unhealthy instances.</p>
+     * <p>Indicates whether EC2 Fleet should replace unhealthy Spot Instances.
+     * Supported only for fleets of type <code>maintain</code>. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2
+     * Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool GetReplaceUnhealthyInstances() const{ return m_replaceUnhealthyInstances; }
 
     /**
-     * <p>Indicates whether EC2 Fleet should replace unhealthy instances.</p>
+     * <p>Indicates whether EC2 Fleet should replace unhealthy Spot Instances.
+     * Supported only for fleets of type <code>maintain</code>. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2
+     * Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool ReplaceUnhealthyInstancesHasBeenSet() const { return m_replaceUnhealthyInstancesHasBeenSet; }
 
     /**
-     * <p>Indicates whether EC2 Fleet should replace unhealthy instances.</p>
+     * <p>Indicates whether EC2 Fleet should replace unhealthy Spot Instances.
+     * Supported only for fleets of type <code>maintain</code>. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2
+     * Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetReplaceUnhealthyInstances(bool value) { m_replaceUnhealthyInstancesHasBeenSet = true; m_replaceUnhealthyInstances = value; }
 
     /**
-     * <p>Indicates whether EC2 Fleet should replace unhealthy instances.</p>
+     * <p>Indicates whether EC2 Fleet should replace unhealthy Spot Instances.
+     * Supported only for fleets of type <code>maintain</code>. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2
+     * Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline FleetData& WithReplaceUnhealthyInstances(bool value) { SetReplaceUnhealthyInstances(value); return *this;}
 

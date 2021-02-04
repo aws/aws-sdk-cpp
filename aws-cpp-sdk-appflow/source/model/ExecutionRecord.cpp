@@ -24,7 +24,9 @@ ExecutionRecord::ExecutionRecord() :
     m_executionStatusHasBeenSet(false),
     m_executionResultHasBeenSet(false),
     m_startedAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false)
+    m_lastUpdatedAtHasBeenSet(false),
+    m_dataPullStartTimeHasBeenSet(false),
+    m_dataPullEndTimeHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ ExecutionRecord::ExecutionRecord(JsonView jsonValue) :
     m_executionStatusHasBeenSet(false),
     m_executionResultHasBeenSet(false),
     m_startedAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false)
+    m_lastUpdatedAtHasBeenSet(false),
+    m_dataPullStartTimeHasBeenSet(false),
+    m_dataPullEndTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +80,20 @@ ExecutionRecord& ExecutionRecord::operator =(JsonView jsonValue)
     m_lastUpdatedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("dataPullStartTime"))
+  {
+    m_dataPullStartTime = jsonValue.GetDouble("dataPullStartTime");
+
+    m_dataPullStartTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dataPullEndTime"))
+  {
+    m_dataPullEndTime = jsonValue.GetDouble("dataPullEndTime");
+
+    m_dataPullEndTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +126,16 @@ JsonValue ExecutionRecord::Jsonize() const
   if(m_lastUpdatedAtHasBeenSet)
   {
    payload.WithDouble("lastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_dataPullStartTimeHasBeenSet)
+  {
+   payload.WithDouble("dataPullStartTime", m_dataPullStartTime.SecondsWithMSPrecision());
+  }
+
+  if(m_dataPullEndTimeHasBeenSet)
+  {
+   payload.WithDouble("dataPullEndTime", m_dataPullEndTime.SecondsWithMSPrecision());
   }
 
   return payload;
