@@ -38,7 +38,8 @@ namespace Model
     INVALID_ROLE_NAME,
     INVALID_SYSTEM_TAGS_PARAMETER,
     DUPLICATE_TAG_KEY,
-    TARGET_NOT_SUPPORTED
+    TARGET_NOT_SUPPORTED,
+    INVALID_EMAIL_ADDRESS_TARGET
   };
 
 namespace InvalidInputExceptionReasonMapper

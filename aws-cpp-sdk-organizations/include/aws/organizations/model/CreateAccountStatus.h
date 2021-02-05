@@ -362,9 +362,13 @@ namespace Model
      * <li> <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with
      * the same information.</p> </li> <li> <p>EMAIL_ALREADY_EXISTS: The account could
      * not be created because another AWS account with that email address already
-     * exists.</p> </li> <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the
-     * AWS GovCloud (US) Region could not be created because this Region already
-     * includes an account with that email address.</p> </li> <li> <p>INVALID_ADDRESS:
+     * exists.</p> </li> <li> <p>FAILED_BUSINESS_VALIDATION: The AWS account that owns
+     * your organization failed to receive business license validation.</p> </li> <li>
+     * <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region
+     * could not be created because this Region already includes an account with that
+     * email address.</p> </li> <li> <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The AWS
+     * account that owns your organization can't complete business license validation
+     * because it doesn't have valid identity data.</p> </li> <li> <p>INVALID_ADDRESS:
      * The account could not be created because the address you provided is not
      * valid.</p> </li> <li> <p>INVALID_EMAIL: The account could not be created because
      * the email address you provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE:
@@ -373,7 +377,11 @@ namespace Model
      * <p>MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has
      * not received Business Validation.</p> </li> <li> <p> MISSING_PAYMENT_INSTRUMENT:
      * You must configure the management account with a valid payment method, such as a
-     * credit card.</p> </li> </ul>
+     * credit card.</p> </li> <li> <p>PENDING_BUSINESS_VALIDATION: The AWS account that
+     * owns your organization is still in the process of completing business license
+     * validation.</p> </li> <li> <p>UNKNOWN_BUSINESS_VALIDATION: The AWS account that
+     * owns your organization has an unknown issue with business license
+     * validation.</p> </li> </ul>
      */
     inline const CreateAccountFailureReason& GetFailureReason() const{ return m_failureReason; }
 
@@ -384,9 +392,13 @@ namespace Model
      * <li> <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with
      * the same information.</p> </li> <li> <p>EMAIL_ALREADY_EXISTS: The account could
      * not be created because another AWS account with that email address already
-     * exists.</p> </li> <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the
-     * AWS GovCloud (US) Region could not be created because this Region already
-     * includes an account with that email address.</p> </li> <li> <p>INVALID_ADDRESS:
+     * exists.</p> </li> <li> <p>FAILED_BUSINESS_VALIDATION: The AWS account that owns
+     * your organization failed to receive business license validation.</p> </li> <li>
+     * <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region
+     * could not be created because this Region already includes an account with that
+     * email address.</p> </li> <li> <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The AWS
+     * account that owns your organization can't complete business license validation
+     * because it doesn't have valid identity data.</p> </li> <li> <p>INVALID_ADDRESS:
      * The account could not be created because the address you provided is not
      * valid.</p> </li> <li> <p>INVALID_EMAIL: The account could not be created because
      * the email address you provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE:
@@ -395,7 +407,11 @@ namespace Model
      * <p>MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has
      * not received Business Validation.</p> </li> <li> <p> MISSING_PAYMENT_INSTRUMENT:
      * You must configure the management account with a valid payment method, such as a
-     * credit card.</p> </li> </ul>
+     * credit card.</p> </li> <li> <p>PENDING_BUSINESS_VALIDATION: The AWS account that
+     * owns your organization is still in the process of completing business license
+     * validation.</p> </li> <li> <p>UNKNOWN_BUSINESS_VALIDATION: The AWS account that
+     * owns your organization has an unknown issue with business license
+     * validation.</p> </li> </ul>
      */
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
 
@@ -406,9 +422,13 @@ namespace Model
      * <li> <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with
      * the same information.</p> </li> <li> <p>EMAIL_ALREADY_EXISTS: The account could
      * not be created because another AWS account with that email address already
-     * exists.</p> </li> <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the
-     * AWS GovCloud (US) Region could not be created because this Region already
-     * includes an account with that email address.</p> </li> <li> <p>INVALID_ADDRESS:
+     * exists.</p> </li> <li> <p>FAILED_BUSINESS_VALIDATION: The AWS account that owns
+     * your organization failed to receive business license validation.</p> </li> <li>
+     * <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region
+     * could not be created because this Region already includes an account with that
+     * email address.</p> </li> <li> <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The AWS
+     * account that owns your organization can't complete business license validation
+     * because it doesn't have valid identity data.</p> </li> <li> <p>INVALID_ADDRESS:
      * The account could not be created because the address you provided is not
      * valid.</p> </li> <li> <p>INVALID_EMAIL: The account could not be created because
      * the email address you provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE:
@@ -417,7 +437,11 @@ namespace Model
      * <p>MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has
      * not received Business Validation.</p> </li> <li> <p> MISSING_PAYMENT_INSTRUMENT:
      * You must configure the management account with a valid payment method, such as a
-     * credit card.</p> </li> </ul>
+     * credit card.</p> </li> <li> <p>PENDING_BUSINESS_VALIDATION: The AWS account that
+     * owns your organization is still in the process of completing business license
+     * validation.</p> </li> <li> <p>UNKNOWN_BUSINESS_VALIDATION: The AWS account that
+     * owns your organization has an unknown issue with business license
+     * validation.</p> </li> </ul>
      */
     inline void SetFailureReason(const CreateAccountFailureReason& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
 
@@ -428,9 +452,13 @@ namespace Model
      * <li> <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with
      * the same information.</p> </li> <li> <p>EMAIL_ALREADY_EXISTS: The account could
      * not be created because another AWS account with that email address already
-     * exists.</p> </li> <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the
-     * AWS GovCloud (US) Region could not be created because this Region already
-     * includes an account with that email address.</p> </li> <li> <p>INVALID_ADDRESS:
+     * exists.</p> </li> <li> <p>FAILED_BUSINESS_VALIDATION: The AWS account that owns
+     * your organization failed to receive business license validation.</p> </li> <li>
+     * <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region
+     * could not be created because this Region already includes an account with that
+     * email address.</p> </li> <li> <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The AWS
+     * account that owns your organization can't complete business license validation
+     * because it doesn't have valid identity data.</p> </li> <li> <p>INVALID_ADDRESS:
      * The account could not be created because the address you provided is not
      * valid.</p> </li> <li> <p>INVALID_EMAIL: The account could not be created because
      * the email address you provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE:
@@ -439,7 +467,11 @@ namespace Model
      * <p>MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has
      * not received Business Validation.</p> </li> <li> <p> MISSING_PAYMENT_INSTRUMENT:
      * You must configure the management account with a valid payment method, such as a
-     * credit card.</p> </li> </ul>
+     * credit card.</p> </li> <li> <p>PENDING_BUSINESS_VALIDATION: The AWS account that
+     * owns your organization is still in the process of completing business license
+     * validation.</p> </li> <li> <p>UNKNOWN_BUSINESS_VALIDATION: The AWS account that
+     * owns your organization has an unknown issue with business license
+     * validation.</p> </li> </ul>
      */
     inline void SetFailureReason(CreateAccountFailureReason&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
 
@@ -450,9 +482,13 @@ namespace Model
      * <li> <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with
      * the same information.</p> </li> <li> <p>EMAIL_ALREADY_EXISTS: The account could
      * not be created because another AWS account with that email address already
-     * exists.</p> </li> <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the
-     * AWS GovCloud (US) Region could not be created because this Region already
-     * includes an account with that email address.</p> </li> <li> <p>INVALID_ADDRESS:
+     * exists.</p> </li> <li> <p>FAILED_BUSINESS_VALIDATION: The AWS account that owns
+     * your organization failed to receive business license validation.</p> </li> <li>
+     * <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region
+     * could not be created because this Region already includes an account with that
+     * email address.</p> </li> <li> <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The AWS
+     * account that owns your organization can't complete business license validation
+     * because it doesn't have valid identity data.</p> </li> <li> <p>INVALID_ADDRESS:
      * The account could not be created because the address you provided is not
      * valid.</p> </li> <li> <p>INVALID_EMAIL: The account could not be created because
      * the email address you provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE:
@@ -461,7 +497,11 @@ namespace Model
      * <p>MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has
      * not received Business Validation.</p> </li> <li> <p> MISSING_PAYMENT_INSTRUMENT:
      * You must configure the management account with a valid payment method, such as a
-     * credit card.</p> </li> </ul>
+     * credit card.</p> </li> <li> <p>PENDING_BUSINESS_VALIDATION: The AWS account that
+     * owns your organization is still in the process of completing business license
+     * validation.</p> </li> <li> <p>UNKNOWN_BUSINESS_VALIDATION: The AWS account that
+     * owns your organization has an unknown issue with business license
+     * validation.</p> </li> </ul>
      */
     inline CreateAccountStatus& WithFailureReason(const CreateAccountFailureReason& value) { SetFailureReason(value); return *this;}
 
@@ -472,9 +512,13 @@ namespace Model
      * <li> <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with
      * the same information.</p> </li> <li> <p>EMAIL_ALREADY_EXISTS: The account could
      * not be created because another AWS account with that email address already
-     * exists.</p> </li> <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the
-     * AWS GovCloud (US) Region could not be created because this Region already
-     * includes an account with that email address.</p> </li> <li> <p>INVALID_ADDRESS:
+     * exists.</p> </li> <li> <p>FAILED_BUSINESS_VALIDATION: The AWS account that owns
+     * your organization failed to receive business license validation.</p> </li> <li>
+     * <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region
+     * could not be created because this Region already includes an account with that
+     * email address.</p> </li> <li> <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The AWS
+     * account that owns your organization can't complete business license validation
+     * because it doesn't have valid identity data.</p> </li> <li> <p>INVALID_ADDRESS:
      * The account could not be created because the address you provided is not
      * valid.</p> </li> <li> <p>INVALID_EMAIL: The account could not be created because
      * the email address you provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE:
@@ -483,7 +527,11 @@ namespace Model
      * <p>MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has
      * not received Business Validation.</p> </li> <li> <p> MISSING_PAYMENT_INSTRUMENT:
      * You must configure the management account with a valid payment method, such as a
-     * credit card.</p> </li> </ul>
+     * credit card.</p> </li> <li> <p>PENDING_BUSINESS_VALIDATION: The AWS account that
+     * owns your organization is still in the process of completing business license
+     * validation.</p> </li> <li> <p>UNKNOWN_BUSINESS_VALIDATION: The AWS account that
+     * owns your organization has an unknown issue with business license
+     * validation.</p> </li> </ul>
      */
     inline CreateAccountStatus& WithFailureReason(CreateAccountFailureReason&& value) { SetFailureReason(std::move(value)); return *this;}
 

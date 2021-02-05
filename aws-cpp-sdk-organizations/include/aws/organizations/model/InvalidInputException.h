@@ -33,23 +33,25 @@ namespace Model
    * among the tags attached to the same entity.</p> </li> <li> <p>IMMUTABLE_POLICY:
    * You specified a policy that is managed by AWS and can't be modified.</p> </li>
    * <li> <p>INPUT_REQUIRED: You must include a value for all required
-   * parameters.</p> </li> <li> <p>INVALID_ENUM: You specified an invalid value.</p>
-   * </li> <li> <p>INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type
-   * string.</p> </li> <li> <p>INVALID_FULL_NAME_TARGET: You specified a full name
-   * that contains invalid characters.</p> </li> <li> <p>INVALID_LIST_MEMBER: You
-   * provided a list to a parameter that contains at least one invalid value.</p>
-   * </li> <li> <p>INVALID_PAGINATION_TOKEN: Get the value for the
-   * <code>NextToken</code> parameter from the response to a previous call of the
-   * operation.</p> </li> <li> <p>INVALID_PARTY_TYPE_TARGET: You specified the wrong
-   * type of entity (account, organization, or email) as a party.</p> </li> <li>
-   * <p>INVALID_PATTERN: You provided a value that doesn't match the required
-   * pattern.</p> </li> <li> <p>INVALID_PATTERN_TARGET_ID: You specified a policy
-   * target ID that doesn't match the required pattern.</p> </li> <li>
-   * <p>INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name
-   * can't begin with the reserved prefix <code>AWSServiceRoleFor</code>.</p> </li>
-   * <li> <p>INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid Amazon
-   * Resource Name (ARN) for the organization.</p> </li> <li>
-   * <p>INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID. </p> </li> <li>
+   * parameters.</p> </li> <li> <p>INVALID_EMAIL_ADDRESS_TARGET: You specified an
+   * invalid email address for the invited account owner.</p> </li> <li>
+   * <p>INVALID_ENUM: You specified an invalid value.</p> </li> <li>
+   * <p>INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.</p>
+   * </li> <li> <p>INVALID_FULL_NAME_TARGET: You specified a full name that contains
+   * invalid characters.</p> </li> <li> <p>INVALID_LIST_MEMBER: You provided a list
+   * to a parameter that contains at least one invalid value.</p> </li> <li>
+   * <p>INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code>
+   * parameter from the response to a previous call of the operation.</p> </li> <li>
+   * <p>INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account,
+   * organization, or email) as a party.</p> </li> <li> <p>INVALID_PATTERN: You
+   * provided a value that doesn't match the required pattern.</p> </li> <li>
+   * <p>INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't
+   * match the required pattern.</p> </li> <li> <p>INVALID_ROLE_NAME: You provided a
+   * role name that isn't valid. A role name can't begin with the reserved prefix
+   * <code>AWSServiceRoleFor</code>.</p> </li> <li>
+   * <p>INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid Amazon Resource
+   * Name (ARN) for the organization.</p> </li> <li> <p>INVALID_SYNTAX_POLICY_ID: You
+   * specified an invalid policy ID. </p> </li> <li>
    * <p>INVALID_SYSTEM_TAGS_PARAMETER: You specified a tag key that is a system tag.
    * You can’t add, edit, or delete system tag keys because they're reserved for AWS
    * use. System tags don’t count against your tags per resource limit.</p> </li>
