@@ -11,6 +11,7 @@
 #include <aws/macie2/model/ObjectCountByEncryptionType.h>
 #include <aws/macie2/model/BucketPublicAccess.h>
 #include <aws/macie2/model/ReplicationDetails.h>
+#include <aws/macie2/model/BucketServerSideEncryption.h>
 #include <aws/macie2/model/SharedAccess.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/macie2/model/ObjectLevelStatistics.h>
@@ -410,44 +411,44 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the bucket is publicly accessible. If this value is true,
-     * an access control list (ACL), bucket policy, or block public access settings
-     * allow the bucket to be accessed by the general public.</p>
+     * <p>Specifies whether the bucket is publicly accessible due to the combination of
+     * permissions settings that apply to the bucket, and provides information about
+     * those settings.</p>
      */
     inline const BucketPublicAccess& GetPublicAccess() const{ return m_publicAccess; }
 
     /**
-     * <p>Specifies whether the bucket is publicly accessible. If this value is true,
-     * an access control list (ACL), bucket policy, or block public access settings
-     * allow the bucket to be accessed by the general public.</p>
+     * <p>Specifies whether the bucket is publicly accessible due to the combination of
+     * permissions settings that apply to the bucket, and provides information about
+     * those settings.</p>
      */
     inline bool PublicAccessHasBeenSet() const { return m_publicAccessHasBeenSet; }
 
     /**
-     * <p>Specifies whether the bucket is publicly accessible. If this value is true,
-     * an access control list (ACL), bucket policy, or block public access settings
-     * allow the bucket to be accessed by the general public.</p>
+     * <p>Specifies whether the bucket is publicly accessible due to the combination of
+     * permissions settings that apply to the bucket, and provides information about
+     * those settings.</p>
      */
     inline void SetPublicAccess(const BucketPublicAccess& value) { m_publicAccessHasBeenSet = true; m_publicAccess = value; }
 
     /**
-     * <p>Specifies whether the bucket is publicly accessible. If this value is true,
-     * an access control list (ACL), bucket policy, or block public access settings
-     * allow the bucket to be accessed by the general public.</p>
+     * <p>Specifies whether the bucket is publicly accessible due to the combination of
+     * permissions settings that apply to the bucket, and provides information about
+     * those settings.</p>
      */
     inline void SetPublicAccess(BucketPublicAccess&& value) { m_publicAccessHasBeenSet = true; m_publicAccess = std::move(value); }
 
     /**
-     * <p>Specifies whether the bucket is publicly accessible. If this value is true,
-     * an access control list (ACL), bucket policy, or block public access settings
-     * allow the bucket to be accessed by the general public.</p>
+     * <p>Specifies whether the bucket is publicly accessible due to the combination of
+     * permissions settings that apply to the bucket, and provides information about
+     * those settings.</p>
      */
     inline BucketMetadata& WithPublicAccess(const BucketPublicAccess& value) { SetPublicAccess(value); return *this;}
 
     /**
-     * <p>Specifies whether the bucket is publicly accessible. If this value is true,
-     * an access control list (ACL), bucket policy, or block public access settings
-     * allow the bucket to be accessed by the general public.</p>
+     * <p>Specifies whether the bucket is publicly accessible due to the combination of
+     * permissions settings that apply to the bucket, and provides information about
+     * those settings.</p>
      */
     inline BucketMetadata& WithPublicAccess(BucketPublicAccess&& value) { SetPublicAccess(std::move(value)); return *this;}
 
@@ -528,6 +529,43 @@ namespace Model
      * to buckets for other AWS accounts and, if so, which accounts.</p>
      */
     inline BucketMetadata& WithReplicationDetails(ReplicationDetails&& value) { SetReplicationDetails(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies whether the bucket encrypts new objects by default and, if so, the
+     * type of server-side encryption that's used.</p>
+     */
+    inline const BucketServerSideEncryption& GetServerSideEncryption() const{ return m_serverSideEncryption; }
+
+    /**
+     * <p>Specifies whether the bucket encrypts new objects by default and, if so, the
+     * type of server-side encryption that's used.</p>
+     */
+    inline bool ServerSideEncryptionHasBeenSet() const { return m_serverSideEncryptionHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the bucket encrypts new objects by default and, if so, the
+     * type of server-side encryption that's used.</p>
+     */
+    inline void SetServerSideEncryption(const BucketServerSideEncryption& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = value; }
+
+    /**
+     * <p>Specifies whether the bucket encrypts new objects by default and, if so, the
+     * type of server-side encryption that's used.</p>
+     */
+    inline void SetServerSideEncryption(BucketServerSideEncryption&& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = std::move(value); }
+
+    /**
+     * <p>Specifies whether the bucket encrypts new objects by default and, if so, the
+     * type of server-side encryption that's used.</p>
+     */
+    inline BucketMetadata& WithServerSideEncryption(const BucketServerSideEncryption& value) { SetServerSideEncryption(value); return *this;}
+
+    /**
+     * <p>Specifies whether the bucket encrypts new objects by default and, if so, the
+     * type of server-side encryption that's used.</p>
+     */
+    inline BucketMetadata& WithServerSideEncryption(BucketServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
 
 
     /**
@@ -834,6 +872,9 @@ namespace Model
 
     ReplicationDetails m_replicationDetails;
     bool m_replicationDetailsHasBeenSet;
+
+    BucketServerSideEncryption m_serverSideEncryption;
+    bool m_serverSideEncryptionHasBeenSet;
 
     SharedAccess m_sharedAccess;
     bool m_sharedAccessHasBeenSet;

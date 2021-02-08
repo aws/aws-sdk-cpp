@@ -63,7 +63,7 @@ Stream& Stream::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("startTime"))
   {
-    m_startTime = jsonValue.GetDouble("startTime");
+    m_startTime = jsonValue.GetString("startTime");
 
     m_startTimeHasBeenSet = true;
   }
@@ -110,7 +110,7 @@ JsonValue Stream::Jsonize() const
 
   if(m_startTimeHasBeenSet)
   {
-   payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
+   payload.WithString("startTime", m_startTime.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_stateHasBeenSet)

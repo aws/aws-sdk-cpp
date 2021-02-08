@@ -52,19 +52,25 @@ namespace Model
      * Indicates whether sticky sessions are enabled. The value is <code>true</code> or
      * <code>false</code>. The default is <code>false</code>.</p> </li> <li> <p>
      * <code>stickiness.type</code> - The type of sticky sessions. The possible values
-     * are <code>lb_cookie</code> for Application Load Balancers or
-     * <code>source_ip</code> for Network Load Balancers.</p> </li> </ul> <p>The
-     * following attributes are supported only if the load balancer is an Application
-     * Load Balancer and the target is an instance or an IP address:</p> <ul> <li> <p>
-     * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
-     * determines how the load balancer selects targets when routing requests. The
-     * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
-     * The default is <code>round_robin</code>.</p> </li> <li> <p>
+     * are <code>lb_cookie</code> and <code>app_cookie</code> for Application Load
+     * Balancers or <code>source_ip</code> for Network Load Balancers.</p> </li> </ul>
+     * <p>The following attributes are supported only if the load balancer is an
+     * Application Load Balancer and the target is an instance or an IP address:</p>
+     * <ul> <li> <p> <code>load_balancing.algorithm.type</code> - The load balancing
+     * algorithm determines how the load balancer selects targets when routing
+     * requests. The value is <code>round_robin</code> or
+     * <code>least_outstanding_requests</code>. The default is
+     * <code>round_robin</code>.</p> </li> <li> <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
      * which a newly registered target receives an increasing share of the traffic to
      * the target group. After this time period ends, the target receives its full
      * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
      * seconds (disabled).</p> </li> <li> <p>
+     * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in
+     * seconds, during which requests from a client should be routed to the same
+     * target. After this time period expires, the application-based cookie is
+     * considered stale. The range is 1 second to 1 week (604800 seconds). The default
+     * value is 1 day (86400 seconds).</p> </li> <li> <p>
      * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
@@ -107,19 +113,25 @@ namespace Model
      * Indicates whether sticky sessions are enabled. The value is <code>true</code> or
      * <code>false</code>. The default is <code>false</code>.</p> </li> <li> <p>
      * <code>stickiness.type</code> - The type of sticky sessions. The possible values
-     * are <code>lb_cookie</code> for Application Load Balancers or
-     * <code>source_ip</code> for Network Load Balancers.</p> </li> </ul> <p>The
-     * following attributes are supported only if the load balancer is an Application
-     * Load Balancer and the target is an instance or an IP address:</p> <ul> <li> <p>
-     * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
-     * determines how the load balancer selects targets when routing requests. The
-     * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
-     * The default is <code>round_robin</code>.</p> </li> <li> <p>
+     * are <code>lb_cookie</code> and <code>app_cookie</code> for Application Load
+     * Balancers or <code>source_ip</code> for Network Load Balancers.</p> </li> </ul>
+     * <p>The following attributes are supported only if the load balancer is an
+     * Application Load Balancer and the target is an instance or an IP address:</p>
+     * <ul> <li> <p> <code>load_balancing.algorithm.type</code> - The load balancing
+     * algorithm determines how the load balancer selects targets when routing
+     * requests. The value is <code>round_robin</code> or
+     * <code>least_outstanding_requests</code>. The default is
+     * <code>round_robin</code>.</p> </li> <li> <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
      * which a newly registered target receives an increasing share of the traffic to
      * the target group. After this time period ends, the target receives its full
      * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
      * seconds (disabled).</p> </li> <li> <p>
+     * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in
+     * seconds, during which requests from a client should be routed to the same
+     * target. After this time period expires, the application-based cookie is
+     * considered stale. The range is 1 second to 1 week (604800 seconds). The default
+     * value is 1 day (86400 seconds).</p> </li> <li> <p>
      * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
@@ -162,19 +174,25 @@ namespace Model
      * Indicates whether sticky sessions are enabled. The value is <code>true</code> or
      * <code>false</code>. The default is <code>false</code>.</p> </li> <li> <p>
      * <code>stickiness.type</code> - The type of sticky sessions. The possible values
-     * are <code>lb_cookie</code> for Application Load Balancers or
-     * <code>source_ip</code> for Network Load Balancers.</p> </li> </ul> <p>The
-     * following attributes are supported only if the load balancer is an Application
-     * Load Balancer and the target is an instance or an IP address:</p> <ul> <li> <p>
-     * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
-     * determines how the load balancer selects targets when routing requests. The
-     * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
-     * The default is <code>round_robin</code>.</p> </li> <li> <p>
+     * are <code>lb_cookie</code> and <code>app_cookie</code> for Application Load
+     * Balancers or <code>source_ip</code> for Network Load Balancers.</p> </li> </ul>
+     * <p>The following attributes are supported only if the load balancer is an
+     * Application Load Balancer and the target is an instance or an IP address:</p>
+     * <ul> <li> <p> <code>load_balancing.algorithm.type</code> - The load balancing
+     * algorithm determines how the load balancer selects targets when routing
+     * requests. The value is <code>round_robin</code> or
+     * <code>least_outstanding_requests</code>. The default is
+     * <code>round_robin</code>.</p> </li> <li> <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
      * which a newly registered target receives an increasing share of the traffic to
      * the target group. After this time period ends, the target receives its full
      * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
      * seconds (disabled).</p> </li> <li> <p>
+     * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in
+     * seconds, during which requests from a client should be routed to the same
+     * target. After this time period expires, the application-based cookie is
+     * considered stale. The range is 1 second to 1 week (604800 seconds). The default
+     * value is 1 day (86400 seconds).</p> </li> <li> <p>
      * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
@@ -217,19 +235,25 @@ namespace Model
      * Indicates whether sticky sessions are enabled. The value is <code>true</code> or
      * <code>false</code>. The default is <code>false</code>.</p> </li> <li> <p>
      * <code>stickiness.type</code> - The type of sticky sessions. The possible values
-     * are <code>lb_cookie</code> for Application Load Balancers or
-     * <code>source_ip</code> for Network Load Balancers.</p> </li> </ul> <p>The
-     * following attributes are supported only if the load balancer is an Application
-     * Load Balancer and the target is an instance or an IP address:</p> <ul> <li> <p>
-     * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
-     * determines how the load balancer selects targets when routing requests. The
-     * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
-     * The default is <code>round_robin</code>.</p> </li> <li> <p>
+     * are <code>lb_cookie</code> and <code>app_cookie</code> for Application Load
+     * Balancers or <code>source_ip</code> for Network Load Balancers.</p> </li> </ul>
+     * <p>The following attributes are supported only if the load balancer is an
+     * Application Load Balancer and the target is an instance or an IP address:</p>
+     * <ul> <li> <p> <code>load_balancing.algorithm.type</code> - The load balancing
+     * algorithm determines how the load balancer selects targets when routing
+     * requests. The value is <code>round_robin</code> or
+     * <code>least_outstanding_requests</code>. The default is
+     * <code>round_robin</code>.</p> </li> <li> <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
      * which a newly registered target receives an increasing share of the traffic to
      * the target group. After this time period ends, the target receives its full
      * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
      * seconds (disabled).</p> </li> <li> <p>
+     * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in
+     * seconds, during which requests from a client should be routed to the same
+     * target. After this time period expires, the application-based cookie is
+     * considered stale. The range is 1 second to 1 week (604800 seconds). The default
+     * value is 1 day (86400 seconds).</p> </li> <li> <p>
      * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
@@ -272,19 +296,25 @@ namespace Model
      * Indicates whether sticky sessions are enabled. The value is <code>true</code> or
      * <code>false</code>. The default is <code>false</code>.</p> </li> <li> <p>
      * <code>stickiness.type</code> - The type of sticky sessions. The possible values
-     * are <code>lb_cookie</code> for Application Load Balancers or
-     * <code>source_ip</code> for Network Load Balancers.</p> </li> </ul> <p>The
-     * following attributes are supported only if the load balancer is an Application
-     * Load Balancer and the target is an instance or an IP address:</p> <ul> <li> <p>
-     * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
-     * determines how the load balancer selects targets when routing requests. The
-     * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
-     * The default is <code>round_robin</code>.</p> </li> <li> <p>
+     * are <code>lb_cookie</code> and <code>app_cookie</code> for Application Load
+     * Balancers or <code>source_ip</code> for Network Load Balancers.</p> </li> </ul>
+     * <p>The following attributes are supported only if the load balancer is an
+     * Application Load Balancer and the target is an instance or an IP address:</p>
+     * <ul> <li> <p> <code>load_balancing.algorithm.type</code> - The load balancing
+     * algorithm determines how the load balancer selects targets when routing
+     * requests. The value is <code>round_robin</code> or
+     * <code>least_outstanding_requests</code>. The default is
+     * <code>round_robin</code>.</p> </li> <li> <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
      * which a newly registered target receives an increasing share of the traffic to
      * the target group. After this time period ends, the target receives its full
      * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
      * seconds (disabled).</p> </li> <li> <p>
+     * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in
+     * seconds, during which requests from a client should be routed to the same
+     * target. After this time period expires, the application-based cookie is
+     * considered stale. The range is 1 second to 1 week (604800 seconds). The default
+     * value is 1 day (86400 seconds).</p> </li> <li> <p>
      * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
@@ -327,19 +357,25 @@ namespace Model
      * Indicates whether sticky sessions are enabled. The value is <code>true</code> or
      * <code>false</code>. The default is <code>false</code>.</p> </li> <li> <p>
      * <code>stickiness.type</code> - The type of sticky sessions. The possible values
-     * are <code>lb_cookie</code> for Application Load Balancers or
-     * <code>source_ip</code> for Network Load Balancers.</p> </li> </ul> <p>The
-     * following attributes are supported only if the load balancer is an Application
-     * Load Balancer and the target is an instance or an IP address:</p> <ul> <li> <p>
-     * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
-     * determines how the load balancer selects targets when routing requests. The
-     * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
-     * The default is <code>round_robin</code>.</p> </li> <li> <p>
+     * are <code>lb_cookie</code> and <code>app_cookie</code> for Application Load
+     * Balancers or <code>source_ip</code> for Network Load Balancers.</p> </li> </ul>
+     * <p>The following attributes are supported only if the load balancer is an
+     * Application Load Balancer and the target is an instance or an IP address:</p>
+     * <ul> <li> <p> <code>load_balancing.algorithm.type</code> - The load balancing
+     * algorithm determines how the load balancer selects targets when routing
+     * requests. The value is <code>round_robin</code> or
+     * <code>least_outstanding_requests</code>. The default is
+     * <code>round_robin</code>.</p> </li> <li> <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
      * which a newly registered target receives an increasing share of the traffic to
      * the target group. After this time period ends, the target receives its full
      * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
      * seconds (disabled).</p> </li> <li> <p>
+     * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in
+     * seconds, during which requests from a client should be routed to the same
+     * target. After this time period expires, the application-based cookie is
+     * considered stale. The range is 1 second to 1 week (604800 seconds). The default
+     * value is 1 day (86400 seconds).</p> </li> <li> <p>
      * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
@@ -382,19 +418,25 @@ namespace Model
      * Indicates whether sticky sessions are enabled. The value is <code>true</code> or
      * <code>false</code>. The default is <code>false</code>.</p> </li> <li> <p>
      * <code>stickiness.type</code> - The type of sticky sessions. The possible values
-     * are <code>lb_cookie</code> for Application Load Balancers or
-     * <code>source_ip</code> for Network Load Balancers.</p> </li> </ul> <p>The
-     * following attributes are supported only if the load balancer is an Application
-     * Load Balancer and the target is an instance or an IP address:</p> <ul> <li> <p>
-     * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
-     * determines how the load balancer selects targets when routing requests. The
-     * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
-     * The default is <code>round_robin</code>.</p> </li> <li> <p>
+     * are <code>lb_cookie</code> and <code>app_cookie</code> for Application Load
+     * Balancers or <code>source_ip</code> for Network Load Balancers.</p> </li> </ul>
+     * <p>The following attributes are supported only if the load balancer is an
+     * Application Load Balancer and the target is an instance or an IP address:</p>
+     * <ul> <li> <p> <code>load_balancing.algorithm.type</code> - The load balancing
+     * algorithm determines how the load balancer selects targets when routing
+     * requests. The value is <code>round_robin</code> or
+     * <code>least_outstanding_requests</code>. The default is
+     * <code>round_robin</code>.</p> </li> <li> <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
      * which a newly registered target receives an increasing share of the traffic to
      * the target group. After this time period ends, the target receives its full
      * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
      * seconds (disabled).</p> </li> <li> <p>
+     * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in
+     * seconds, during which requests from a client should be routed to the same
+     * target. After this time period expires, the application-based cookie is
+     * considered stale. The range is 1 second to 1 week (604800 seconds). The default
+     * value is 1 day (86400 seconds).</p> </li> <li> <p>
      * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
@@ -437,19 +479,25 @@ namespace Model
      * Indicates whether sticky sessions are enabled. The value is <code>true</code> or
      * <code>false</code>. The default is <code>false</code>.</p> </li> <li> <p>
      * <code>stickiness.type</code> - The type of sticky sessions. The possible values
-     * are <code>lb_cookie</code> for Application Load Balancers or
-     * <code>source_ip</code> for Network Load Balancers.</p> </li> </ul> <p>The
-     * following attributes are supported only if the load balancer is an Application
-     * Load Balancer and the target is an instance or an IP address:</p> <ul> <li> <p>
-     * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
-     * determines how the load balancer selects targets when routing requests. The
-     * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
-     * The default is <code>round_robin</code>.</p> </li> <li> <p>
+     * are <code>lb_cookie</code> and <code>app_cookie</code> for Application Load
+     * Balancers or <code>source_ip</code> for Network Load Balancers.</p> </li> </ul>
+     * <p>The following attributes are supported only if the load balancer is an
+     * Application Load Balancer and the target is an instance or an IP address:</p>
+     * <ul> <li> <p> <code>load_balancing.algorithm.type</code> - The load balancing
+     * algorithm determines how the load balancer selects targets when routing
+     * requests. The value is <code>round_robin</code> or
+     * <code>least_outstanding_requests</code>. The default is
+     * <code>round_robin</code>.</p> </li> <li> <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
      * which a newly registered target receives an increasing share of the traffic to
      * the target group. After this time period ends, the target receives its full
      * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
      * seconds (disabled).</p> </li> <li> <p>
+     * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in
+     * seconds, during which requests from a client should be routed to the same
+     * target. After this time period expires, the application-based cookie is
+     * considered stale. The range is 1 second to 1 week (604800 seconds). The default
+     * value is 1 day (86400 seconds).</p> </li> <li> <p>
      * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is

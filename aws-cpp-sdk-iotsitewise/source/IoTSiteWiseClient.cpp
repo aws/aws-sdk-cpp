@@ -30,7 +30,6 @@
 #include <aws/iotsitewise/model/CreateDashboardRequest.h>
 #include <aws/iotsitewise/model/CreateGatewayRequest.h>
 #include <aws/iotsitewise/model/CreatePortalRequest.h>
-#include <aws/iotsitewise/model/CreatePresignedPortalUrlRequest.h>
 #include <aws/iotsitewise/model/CreateProjectRequest.h>
 #include <aws/iotsitewise/model/DeleteAccessPolicyRequest.h>
 #include <aws/iotsitewise/model/DeleteAssetRequest.h>
@@ -540,49 +539,6 @@ void IoTSiteWiseClient::CreatePortalAsync(const CreatePortalRequest& request, co
 void IoTSiteWiseClient::CreatePortalAsyncHelper(const CreatePortalRequest& request, const CreatePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreatePortal(request), context);
-}
-
-CreatePresignedPortalUrlOutcome IoTSiteWiseClient::CreatePresignedPortalUrl(const CreatePresignedPortalUrlRequest& request) const
-{
-  if (!request.PortalIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("CreatePresignedPortalUrl", "Required field: PortalId, is not set");
-    return CreatePresignedPortalUrlOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PortalId]", false));
-  }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("monitor." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("CreatePresignedPortalUrl", "Invalid DNS host: " << uri.GetAuthority());
-      return CreatePresignedPortalUrlOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  Aws::StringStream ss;
-  ss << "/portals/";
-  ss << request.GetPortalId();
-  ss << "/presigned-url";
-  uri.SetPath(uri.GetPath() + ss.str());
-  return CreatePresignedPortalUrlOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-}
-
-CreatePresignedPortalUrlOutcomeCallable IoTSiteWiseClient::CreatePresignedPortalUrlCallable(const CreatePresignedPortalUrlRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< CreatePresignedPortalUrlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePresignedPortalUrl(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void IoTSiteWiseClient::CreatePresignedPortalUrlAsync(const CreatePresignedPortalUrlRequest& request, const CreatePresignedPortalUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePresignedPortalUrlAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::CreatePresignedPortalUrlAsyncHelper(const CreatePresignedPortalUrlRequest& request, const CreatePresignedPortalUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreatePresignedPortalUrl(request), context);
 }
 
 CreateProjectOutcome IoTSiteWiseClient::CreateProject(const CreateProjectRequest& request) const

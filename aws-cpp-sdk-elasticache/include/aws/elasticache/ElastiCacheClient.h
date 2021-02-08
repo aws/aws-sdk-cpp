@@ -1415,18 +1415,18 @@ namespace Model
         virtual void DeleteCacheSecurityGroupAsync(const Model::DeleteCacheSecurityGroupRequest& request, const DeleteCacheSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a cache subnet group.</p>  <p>You cannot delete a cache subnet
-         * group if it is associated with any clusters.</p> <p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes a cache subnet group.</p>  <p>You cannot delete a default cache
+         * subnet group or one that is associated with any clusters.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSubnetGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteCacheSubnetGroupOutcome DeleteCacheSubnetGroup(const Model::DeleteCacheSubnetGroupRequest& request) const;
 
         /**
-         * <p>Deletes a cache subnet group.</p>  <p>You cannot delete a cache subnet
-         * group if it is associated with any clusters.</p> <p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes a cache subnet group.</p>  <p>You cannot delete a default cache
+         * subnet group or one that is associated with any clusters.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSubnetGroup">AWS
          * API Reference</a></p>
          *
@@ -1435,9 +1435,9 @@ namespace Model
         virtual Model::DeleteCacheSubnetGroupOutcomeCallable DeleteCacheSubnetGroupCallable(const Model::DeleteCacheSubnetGroupRequest& request) const;
 
         /**
-         * <p>Deletes a cache subnet group.</p>  <p>You cannot delete a cache subnet
-         * group if it is associated with any clusters.</p> <p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes a cache subnet group.</p>  <p>You cannot delete a default cache
+         * subnet group or one that is associated with any clusters.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSubnetGroup">AWS
          * API Reference</a></p>
          *
@@ -2572,7 +2572,7 @@ namespace Model
 
         /**
          * <p>Modifies a replication group's shards (node groups) by allowing you to add
-         * shards, remove shards, or rebalance the keyspaces among exisiting
+         * shards, remove shards, or rebalance the keyspaces among existing
          * shards.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroupShardConfiguration">AWS
          * API Reference</a></p>
@@ -2581,7 +2581,7 @@ namespace Model
 
         /**
          * <p>Modifies a replication group's shards (node groups) by allowing you to add
-         * shards, remove shards, or rebalance the keyspaces among exisiting
+         * shards, remove shards, or rebalance the keyspaces among existing
          * shards.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroupShardConfiguration">AWS
          * API Reference</a></p>
@@ -2592,7 +2592,7 @@ namespace Model
 
         /**
          * <p>Modifies a replication group's shards (node groups) by allowing you to add
-         * shards, remove shards, or rebalance the keyspaces among exisiting
+         * shards, remove shards, or rebalance the keyspaces among existing
          * shards.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroupShardConfiguration">AWS
          * API Reference</a></p>

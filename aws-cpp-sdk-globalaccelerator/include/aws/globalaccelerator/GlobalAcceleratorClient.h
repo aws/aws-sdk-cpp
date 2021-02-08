@@ -644,7 +644,10 @@ namespace Model
          * cannot receive traffic. To enable all destinations to receive traffic, or to
          * specify individual port mappings that can receive traffic, see the <a
          * href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_AllowCustomRoutingTraffic.html">
-         * AllowCustomRoutingTraffic</a> operation.</p><p><h3>See Also:</h3>   <a
+         * AllowCustomRoutingTraffic</a> operation.</p>  <p>Global Accelerator
+         * is a global service that supports endpoints in multiple AWS Regions but you must
+         * specify the US West (Oregon) Region to create or update accelerators.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateCustomRoutingAccelerator">AWS
          * API Reference</a></p>
          */
@@ -658,7 +661,10 @@ namespace Model
          * cannot receive traffic. To enable all destinations to receive traffic, or to
          * specify individual port mappings that can receive traffic, see the <a
          * href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_AllowCustomRoutingTraffic.html">
-         * AllowCustomRoutingTraffic</a> operation.</p><p><h3>See Also:</h3>   <a
+         * AllowCustomRoutingTraffic</a> operation.</p>  <p>Global Accelerator
+         * is a global service that supports endpoints in multiple AWS Regions but you must
+         * specify the US West (Oregon) Region to create or update accelerators.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateCustomRoutingAccelerator">AWS
          * API Reference</a></p>
          *
@@ -674,7 +680,10 @@ namespace Model
          * cannot receive traffic. To enable all destinations to receive traffic, or to
          * specify individual port mappings that can receive traffic, see the <a
          * href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_AllowCustomRoutingTraffic.html">
-         * AllowCustomRoutingTraffic</a> operation.</p><p><h3>See Also:</h3>   <a
+         * AllowCustomRoutingTraffic</a> operation.</p>  <p>Global Accelerator
+         * is a global service that supports endpoints in multiple AWS Regions but you must
+         * specify the US West (Oregon) Region to create or update accelerators.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateCustomRoutingAccelerator">AWS
          * API Reference</a></p>
          *

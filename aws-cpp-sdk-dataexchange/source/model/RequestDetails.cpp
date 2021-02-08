@@ -21,6 +21,7 @@ namespace Model
 RequestDetails::RequestDetails() : 
     m_exportAssetToSignedUrlHasBeenSet(false),
     m_exportAssetsToS3HasBeenSet(false),
+    m_exportRevisionsToS3HasBeenSet(false),
     m_importAssetFromSignedUrlHasBeenSet(false),
     m_importAssetsFromS3HasBeenSet(false)
 {
@@ -29,6 +30,7 @@ RequestDetails::RequestDetails() :
 RequestDetails::RequestDetails(JsonView jsonValue) : 
     m_exportAssetToSignedUrlHasBeenSet(false),
     m_exportAssetsToS3HasBeenSet(false),
+    m_exportRevisionsToS3HasBeenSet(false),
     m_importAssetFromSignedUrlHasBeenSet(false),
     m_importAssetsFromS3HasBeenSet(false)
 {
@@ -49,6 +51,13 @@ RequestDetails& RequestDetails::operator =(JsonView jsonValue)
     m_exportAssetsToS3 = jsonValue.GetObject("ExportAssetsToS3");
 
     m_exportAssetsToS3HasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExportRevisionsToS3"))
+  {
+    m_exportRevisionsToS3 = jsonValue.GetObject("ExportRevisionsToS3");
+
+    m_exportRevisionsToS3HasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ImportAssetFromSignedUrl"))
@@ -81,6 +90,12 @@ JsonValue RequestDetails::Jsonize() const
   if(m_exportAssetsToS3HasBeenSet)
   {
    payload.WithObject("ExportAssetsToS3", m_exportAssetsToS3.Jsonize());
+
+  }
+
+  if(m_exportRevisionsToS3HasBeenSet)
+  {
+   payload.WithObject("ExportRevisionsToS3", m_exportRevisionsToS3.Jsonize());
 
   }
 

@@ -27,8 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a condition for filtering the results of a query for account quotas
-   * and usage data.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies a condition for filtering the results of a query for the quotas and
+   * usage data that applies to one or more Amazon Macie accounts.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UsageStatisticsFilter">AWS
    * API Reference</a></p>
    */

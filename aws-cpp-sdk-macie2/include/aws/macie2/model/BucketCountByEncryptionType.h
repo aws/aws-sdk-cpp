@@ -23,8 +23,8 @@ namespace Model
 
   /**
    * <p>Provides information about the number of S3 buckets that use certain types of
-   * server-side encryption or don't encrypt objects by default.</p><p><h3>See
-   * Also:</h3>   <a
+   * server-side encryption by default or don't encrypt new objects by
+   * default.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketCountByEncryptionType">AWS
    * API Reference</a></p>
    */
@@ -39,83 +39,83 @@ namespace Model
 
     /**
      * <p>The total number of buckets that use an AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) by default to encrypt objects. These buckets use AWS
-     * managed AWS KMS (AWS-KMS) encryption or customer managed AWS KMS (SSE-KMS)
-     * encryption.</p>
+     * customer master key (CMK) to encrypt new objects by default. These buckets use
+     * AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS encryption
+     * (SSE-KMS).</p>
      */
     inline long long GetKmsManaged() const{ return m_kmsManaged; }
 
     /**
      * <p>The total number of buckets that use an AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) by default to encrypt objects. These buckets use AWS
-     * managed AWS KMS (AWS-KMS) encryption or customer managed AWS KMS (SSE-KMS)
-     * encryption.</p>
+     * customer master key (CMK) to encrypt new objects by default. These buckets use
+     * AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS encryption
+     * (SSE-KMS).</p>
      */
     inline bool KmsManagedHasBeenSet() const { return m_kmsManagedHasBeenSet; }
 
     /**
      * <p>The total number of buckets that use an AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) by default to encrypt objects. These buckets use AWS
-     * managed AWS KMS (AWS-KMS) encryption or customer managed AWS KMS (SSE-KMS)
-     * encryption.</p>
+     * customer master key (CMK) to encrypt new objects by default. These buckets use
+     * AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS encryption
+     * (SSE-KMS).</p>
      */
     inline void SetKmsManaged(long long value) { m_kmsManagedHasBeenSet = true; m_kmsManaged = value; }
 
     /**
      * <p>The total number of buckets that use an AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) by default to encrypt objects. These buckets use AWS
-     * managed AWS KMS (AWS-KMS) encryption or customer managed AWS KMS (SSE-KMS)
-     * encryption.</p>
+     * customer master key (CMK) to encrypt new objects by default. These buckets use
+     * AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS encryption
+     * (SSE-KMS).</p>
      */
     inline BucketCountByEncryptionType& WithKmsManaged(long long value) { SetKmsManaged(value); return *this;}
 
 
     /**
-     * <p>The total number of buckets that use an Amazon S3 managed key by default to
-     * encrypt objects. These buckets use Amazon S3 managed (SSE-S3) encryption.</p>
+     * <p>The total number of buckets that use an Amazon S3 managed key to encrypt new
+     * objects by default. These buckets use Amazon S3 managed encryption (SSE-S3).</p>
      */
     inline long long GetS3Managed() const{ return m_s3Managed; }
 
     /**
-     * <p>The total number of buckets that use an Amazon S3 managed key by default to
-     * encrypt objects. These buckets use Amazon S3 managed (SSE-S3) encryption.</p>
+     * <p>The total number of buckets that use an Amazon S3 managed key to encrypt new
+     * objects by default. These buckets use Amazon S3 managed encryption (SSE-S3).</p>
      */
     inline bool S3ManagedHasBeenSet() const { return m_s3ManagedHasBeenSet; }
 
     /**
-     * <p>The total number of buckets that use an Amazon S3 managed key by default to
-     * encrypt objects. These buckets use Amazon S3 managed (SSE-S3) encryption.</p>
+     * <p>The total number of buckets that use an Amazon S3 managed key to encrypt new
+     * objects by default. These buckets use Amazon S3 managed encryption (SSE-S3).</p>
      */
     inline void SetS3Managed(long long value) { m_s3ManagedHasBeenSet = true; m_s3Managed = value; }
 
     /**
-     * <p>The total number of buckets that use an Amazon S3 managed key by default to
-     * encrypt objects. These buckets use Amazon S3 managed (SSE-S3) encryption.</p>
+     * <p>The total number of buckets that use an Amazon S3 managed key to encrypt new
+     * objects by default. These buckets use Amazon S3 managed encryption (SSE-S3).</p>
      */
     inline BucketCountByEncryptionType& WithS3Managed(long long value) { SetS3Managed(value); return *this;}
 
 
     /**
-     * <p>The total number of buckets that don't encrypt objects by default. Default
-     * encryption is disabled for these buckets.</p>
+     * <p>The total number of buckets that don't encrypt new objects by default.
+     * Default encryption is disabled for these buckets.</p>
      */
     inline long long GetUnencrypted() const{ return m_unencrypted; }
 
     /**
-     * <p>The total number of buckets that don't encrypt objects by default. Default
-     * encryption is disabled for these buckets.</p>
+     * <p>The total number of buckets that don't encrypt new objects by default.
+     * Default encryption is disabled for these buckets.</p>
      */
     inline bool UnencryptedHasBeenSet() const { return m_unencryptedHasBeenSet; }
 
     /**
-     * <p>The total number of buckets that don't encrypt objects by default. Default
-     * encryption is disabled for these buckets.</p>
+     * <p>The total number of buckets that don't encrypt new objects by default.
+     * Default encryption is disabled for these buckets.</p>
      */
     inline void SetUnencrypted(long long value) { m_unencryptedHasBeenSet = true; m_unencrypted = value; }
 
     /**
-     * <p>The total number of buckets that don't encrypt objects by default. Default
-     * encryption is disabled for these buckets.</p>
+     * <p>The total number of buckets that don't encrypt new objects by default.
+     * Default encryption is disabled for these buckets.</p>
      */
     inline BucketCountByEncryptionType& WithUnencrypted(long long value) { SetUnencrypted(value); return *this;}
 
