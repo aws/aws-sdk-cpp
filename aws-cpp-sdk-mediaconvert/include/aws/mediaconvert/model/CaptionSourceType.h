@@ -25,6 +25,7 @@ namespace Model
     STL,
     SRT,
     SMI,
+    SMPTE_TT,
     TELETEXT,
     NULL_SOURCE,
     IMSC

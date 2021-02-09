@@ -29,6 +29,7 @@ namespace Aws
         static const int STL_HASH = HashingUtils::HashString("STL");
         static const int SRT_HASH = HashingUtils::HashString("SRT");
         static const int SMI_HASH = HashingUtils::HashString("SMI");
+        static const int SMPTE_TT_HASH = HashingUtils::HashString("SMPTE_TT");
         static const int TELETEXT_HASH = HashingUtils::HashString("TELETEXT");
         static const int NULL_SOURCE_HASH = HashingUtils::HashString("NULL_SOURCE");
         static const int IMSC_HASH = HashingUtils::HashString("IMSC");
@@ -72,6 +73,10 @@ namespace Aws
           else if (hashCode == SMI_HASH)
           {
             return CaptionSourceType::SMI;
+          }
+          else if (hashCode == SMPTE_TT_HASH)
+          {
+            return CaptionSourceType::SMPTE_TT;
           }
           else if (hashCode == TELETEXT_HASH)
           {
@@ -117,6 +122,8 @@ namespace Aws
             return "SRT";
           case CaptionSourceType::SMI:
             return "SMI";
+          case CaptionSourceType::SMPTE_TT:
+            return "SMPTE_TT";
           case CaptionSourceType::TELETEXT:
             return "TELETEXT";
           case CaptionSourceType::NULL_SOURCE:
