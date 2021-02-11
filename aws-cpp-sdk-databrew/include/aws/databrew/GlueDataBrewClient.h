@@ -290,8 +290,8 @@ namespace Model
          * <p>Deletes one or more versions of a recipe at a time.</p> <p>The entire request
          * will be rejected if:</p> <ul> <li> <p>The recipe does not exist.</p> </li> <li>
          * <p>There is an invalid version identifier in the list of versions.</p> </li>
-         * <li> <p>The verision list is empty.</p> </li> <li> <p>The version list size
-         * exceeds 50.</p> </li> <li> <p>The verison list contains duplicate entries.</p>
+         * <li> <p>The version list is empty.</p> </li> <li> <p>The version list size
+         * exceeds 50.</p> </li> <li> <p>The version list contains duplicate entries.</p>
          * </li> </ul> <p>The request will complete successfully, but with partial
          * failures, if:</p> <ul> <li> <p>A version does not exist.</p> </li> <li> <p>A
          * version is being used by a job.</p> </li> <li> <p>You specify
@@ -310,8 +310,8 @@ namespace Model
          * <p>Deletes one or more versions of a recipe at a time.</p> <p>The entire request
          * will be rejected if:</p> <ul> <li> <p>The recipe does not exist.</p> </li> <li>
          * <p>There is an invalid version identifier in the list of versions.</p> </li>
-         * <li> <p>The verision list is empty.</p> </li> <li> <p>The version list size
-         * exceeds 50.</p> </li> <li> <p>The verison list contains duplicate entries.</p>
+         * <li> <p>The version list is empty.</p> </li> <li> <p>The version list size
+         * exceeds 50.</p> </li> <li> <p>The version list contains duplicate entries.</p>
          * </li> </ul> <p>The request will complete successfully, but with partial
          * failures, if:</p> <ul> <li> <p>A version does not exist.</p> </li> <li> <p>A
          * version is being used by a job.</p> </li> <li> <p>You specify
@@ -332,8 +332,8 @@ namespace Model
          * <p>Deletes one or more versions of a recipe at a time.</p> <p>The entire request
          * will be rejected if:</p> <ul> <li> <p>The recipe does not exist.</p> </li> <li>
          * <p>There is an invalid version identifier in the list of versions.</p> </li>
-         * <li> <p>The verision list is empty.</p> </li> <li> <p>The version list size
-         * exceeds 50.</p> </li> <li> <p>The verison list contains duplicate entries.</p>
+         * <li> <p>The version list is empty.</p> </li> <li> <p>The version list size
+         * exceeds 50.</p> </li> <li> <p>The version list contains duplicate entries.</p>
          * </li> </ul> <p>The request will complete successfully, but with partial
          * failures, if:</p> <ul> <li> <p>A version does not exist.</p> </li> <li> <p>A
          * version is being used by a job.</p> </li> <li> <p>You specify

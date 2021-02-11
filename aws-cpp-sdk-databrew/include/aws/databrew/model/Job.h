@@ -13,6 +13,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/databrew/model/RecipeReference.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/databrew/model/JobSample.h>
 #include <aws/databrew/model/Output.h>
 #include <utility>
 
@@ -845,6 +846,55 @@ namespace Model
      */
     inline Job& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Sample configuration for profile jobs only. Determines the number of rows on
+     * which the profile job will be executed. If a JobSample value is not provided,
+     * the default value will be used. The default value is CUSTOM_ROWS for the mode
+     * parameter and 20000 for the size parameter.</p>
+     */
+    inline const JobSample& GetJobSample() const{ return m_jobSample; }
+
+    /**
+     * <p>Sample configuration for profile jobs only. Determines the number of rows on
+     * which the profile job will be executed. If a JobSample value is not provided,
+     * the default value will be used. The default value is CUSTOM_ROWS for the mode
+     * parameter and 20000 for the size parameter.</p>
+     */
+    inline bool JobSampleHasBeenSet() const { return m_jobSampleHasBeenSet; }
+
+    /**
+     * <p>Sample configuration for profile jobs only. Determines the number of rows on
+     * which the profile job will be executed. If a JobSample value is not provided,
+     * the default value will be used. The default value is CUSTOM_ROWS for the mode
+     * parameter and 20000 for the size parameter.</p>
+     */
+    inline void SetJobSample(const JobSample& value) { m_jobSampleHasBeenSet = true; m_jobSample = value; }
+
+    /**
+     * <p>Sample configuration for profile jobs only. Determines the number of rows on
+     * which the profile job will be executed. If a JobSample value is not provided,
+     * the default value will be used. The default value is CUSTOM_ROWS for the mode
+     * parameter and 20000 for the size parameter.</p>
+     */
+    inline void SetJobSample(JobSample&& value) { m_jobSampleHasBeenSet = true; m_jobSample = std::move(value); }
+
+    /**
+     * <p>Sample configuration for profile jobs only. Determines the number of rows on
+     * which the profile job will be executed. If a JobSample value is not provided,
+     * the default value will be used. The default value is CUSTOM_ROWS for the mode
+     * parameter and 20000 for the size parameter.</p>
+     */
+    inline Job& WithJobSample(const JobSample& value) { SetJobSample(value); return *this;}
+
+    /**
+     * <p>Sample configuration for profile jobs only. Determines the number of rows on
+     * which the profile job will be executed. If a JobSample value is not provided,
+     * the default value will be used. The default value is CUSTOM_ROWS for the mode
+     * parameter and 20000 for the size parameter.</p>
+     */
+    inline Job& WithJobSample(JobSample&& value) { SetJobSample(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_accountId;
@@ -906,6 +956,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    JobSample m_jobSample;
+    bool m_jobSampleHasBeenSet;
   };
 
 } // namespace Model

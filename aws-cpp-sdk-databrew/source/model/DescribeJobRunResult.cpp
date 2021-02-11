@@ -123,6 +123,12 @@ DescribeJobRunResult& DescribeJobRunResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("JobSample"))
+  {
+    m_jobSample = jsonValue.GetObject("JobSample");
+
+  }
+
 
 
   return *this;

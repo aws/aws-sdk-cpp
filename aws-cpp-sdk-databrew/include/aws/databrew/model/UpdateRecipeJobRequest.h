@@ -87,48 +87,48 @@ namespace Model
 
     /**
      * <p>The encryption mode for the job, which can be one of the following:</p> <ul>
-     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed
-     * keys.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
+     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS
+     * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
     inline const EncryptionMode& GetEncryptionMode() const{ return m_encryptionMode; }
 
     /**
      * <p>The encryption mode for the job, which can be one of the following:</p> <ul>
-     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed
-     * keys.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
+     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS
+     * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
     inline bool EncryptionModeHasBeenSet() const { return m_encryptionModeHasBeenSet; }
 
     /**
      * <p>The encryption mode for the job, which can be one of the following:</p> <ul>
-     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed
-     * keys.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
+     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS
+     * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
     inline void SetEncryptionMode(const EncryptionMode& value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = value; }
 
     /**
      * <p>The encryption mode for the job, which can be one of the following:</p> <ul>
-     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed
-     * keys.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
+     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS
+     * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
     inline void SetEncryptionMode(EncryptionMode&& value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = std::move(value); }
 
     /**
      * <p>The encryption mode for the job, which can be one of the following:</p> <ul>
-     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed
-     * keys.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
+     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS
+     * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
     inline UpdateRecipeJobRequest& WithEncryptionMode(const EncryptionMode& value) { SetEncryptionMode(value); return *this;}
 
     /**
      * <p>The encryption mode for the job, which can be one of the following:</p> <ul>
-     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed
-     * keys.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
+     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS
+     * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
     inline UpdateRecipeJobRequest& WithEncryptionMode(EncryptionMode&& value) { SetEncryptionMode(std::move(value)); return *this;}

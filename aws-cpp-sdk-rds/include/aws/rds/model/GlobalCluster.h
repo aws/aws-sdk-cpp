@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rds/model/FailoverState.h>
 #include <aws/rds/model/GlobalClusterMember.h>
 #include <utility>
 
@@ -443,6 +444,55 @@ namespace Model
      */
     inline GlobalCluster& AddGlobalClusterMembers(GlobalClusterMember&& value) { m_globalClusterMembersHasBeenSet = true; m_globalClusterMembers.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A data object containing all properties for the current state of an
+     * in-process or pending failover process for this Aurora global database. This
+     * object is empty unless the <a>FailoverGlobalCluster</a> API operation has been
+     * called on this Aurora global database (<a>GlobalCluster</a>). </p>
+     */
+    inline const FailoverState& GetFailoverState() const{ return m_failoverState; }
+
+    /**
+     * <p>A data object containing all properties for the current state of an
+     * in-process or pending failover process for this Aurora global database. This
+     * object is empty unless the <a>FailoverGlobalCluster</a> API operation has been
+     * called on this Aurora global database (<a>GlobalCluster</a>). </p>
+     */
+    inline bool FailoverStateHasBeenSet() const { return m_failoverStateHasBeenSet; }
+
+    /**
+     * <p>A data object containing all properties for the current state of an
+     * in-process or pending failover process for this Aurora global database. This
+     * object is empty unless the <a>FailoverGlobalCluster</a> API operation has been
+     * called on this Aurora global database (<a>GlobalCluster</a>). </p>
+     */
+    inline void SetFailoverState(const FailoverState& value) { m_failoverStateHasBeenSet = true; m_failoverState = value; }
+
+    /**
+     * <p>A data object containing all properties for the current state of an
+     * in-process or pending failover process for this Aurora global database. This
+     * object is empty unless the <a>FailoverGlobalCluster</a> API operation has been
+     * called on this Aurora global database (<a>GlobalCluster</a>). </p>
+     */
+    inline void SetFailoverState(FailoverState&& value) { m_failoverStateHasBeenSet = true; m_failoverState = std::move(value); }
+
+    /**
+     * <p>A data object containing all properties for the current state of an
+     * in-process or pending failover process for this Aurora global database. This
+     * object is empty unless the <a>FailoverGlobalCluster</a> API operation has been
+     * called on this Aurora global database (<a>GlobalCluster</a>). </p>
+     */
+    inline GlobalCluster& WithFailoverState(const FailoverState& value) { SetFailoverState(value); return *this;}
+
+    /**
+     * <p>A data object containing all properties for the current state of an
+     * in-process or pending failover process for this Aurora global database. This
+     * object is empty unless the <a>FailoverGlobalCluster</a> API operation has been
+     * called on this Aurora global database (<a>GlobalCluster</a>). </p>
+     */
+    inline GlobalCluster& WithFailoverState(FailoverState&& value) { SetFailoverState(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_globalClusterIdentifier;
@@ -474,6 +524,9 @@ namespace Model
 
     Aws::Vector<GlobalClusterMember> m_globalClusterMembers;
     bool m_globalClusterMembersHasBeenSet;
+
+    FailoverState m_failoverState;
+    bool m_failoverStateHasBeenSet;
   };
 
 } // namespace Model

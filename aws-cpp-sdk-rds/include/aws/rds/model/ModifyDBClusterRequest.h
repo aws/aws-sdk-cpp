@@ -1451,38 +1451,58 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to enable write operations to be forwarded
-     * from this cluster to the primary cluster in an Aurora global database. The
-     * resulting changes are replicated back to this cluster. This parameter only
-     * applies to DB clusters that are secondary clusters in an Aurora global database.
-     * By default, Aurora disallows write operations for secondary clusters.</p>
+     * <p>A value that indicates whether to enable this DB cluster to forward write
+     * operations to the primary cluster of an Aurora global database
+     * (<a>GlobalCluster</a>). By default, write operations are not allowed on Aurora
+     * DB clusters that are secondary clusters in an Aurora global database.</p> <p>You
+     * can set this value only on Aurora DB clusters that are members of an Aurora
+     * global database. With this parameter enabled, a secondary cluster can forward
+     * writes to the current primary cluster and the resulting changes are replicated
+     * back to this cluster. For the primary DB cluster of an Aurora global database,
+     * this value is used immediately if the primary is demoted by the
+     * <a>FailoverGlobalCluster</a> API operation, but it does nothing until then. </p>
      */
     inline bool GetEnableGlobalWriteForwarding() const{ return m_enableGlobalWriteForwarding; }
 
     /**
-     * <p>A value that indicates whether to enable write operations to be forwarded
-     * from this cluster to the primary cluster in an Aurora global database. The
-     * resulting changes are replicated back to this cluster. This parameter only
-     * applies to DB clusters that are secondary clusters in an Aurora global database.
-     * By default, Aurora disallows write operations for secondary clusters.</p>
+     * <p>A value that indicates whether to enable this DB cluster to forward write
+     * operations to the primary cluster of an Aurora global database
+     * (<a>GlobalCluster</a>). By default, write operations are not allowed on Aurora
+     * DB clusters that are secondary clusters in an Aurora global database.</p> <p>You
+     * can set this value only on Aurora DB clusters that are members of an Aurora
+     * global database. With this parameter enabled, a secondary cluster can forward
+     * writes to the current primary cluster and the resulting changes are replicated
+     * back to this cluster. For the primary DB cluster of an Aurora global database,
+     * this value is used immediately if the primary is demoted by the
+     * <a>FailoverGlobalCluster</a> API operation, but it does nothing until then. </p>
      */
     inline bool EnableGlobalWriteForwardingHasBeenSet() const { return m_enableGlobalWriteForwardingHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to enable write operations to be forwarded
-     * from this cluster to the primary cluster in an Aurora global database. The
-     * resulting changes are replicated back to this cluster. This parameter only
-     * applies to DB clusters that are secondary clusters in an Aurora global database.
-     * By default, Aurora disallows write operations for secondary clusters.</p>
+     * <p>A value that indicates whether to enable this DB cluster to forward write
+     * operations to the primary cluster of an Aurora global database
+     * (<a>GlobalCluster</a>). By default, write operations are not allowed on Aurora
+     * DB clusters that are secondary clusters in an Aurora global database.</p> <p>You
+     * can set this value only on Aurora DB clusters that are members of an Aurora
+     * global database. With this parameter enabled, a secondary cluster can forward
+     * writes to the current primary cluster and the resulting changes are replicated
+     * back to this cluster. For the primary DB cluster of an Aurora global database,
+     * this value is used immediately if the primary is demoted by the
+     * <a>FailoverGlobalCluster</a> API operation, but it does nothing until then. </p>
      */
     inline void SetEnableGlobalWriteForwarding(bool value) { m_enableGlobalWriteForwardingHasBeenSet = true; m_enableGlobalWriteForwarding = value; }
 
     /**
-     * <p>A value that indicates whether to enable write operations to be forwarded
-     * from this cluster to the primary cluster in an Aurora global database. The
-     * resulting changes are replicated back to this cluster. This parameter only
-     * applies to DB clusters that are secondary clusters in an Aurora global database.
-     * By default, Aurora disallows write operations for secondary clusters.</p>
+     * <p>A value that indicates whether to enable this DB cluster to forward write
+     * operations to the primary cluster of an Aurora global database
+     * (<a>GlobalCluster</a>). By default, write operations are not allowed on Aurora
+     * DB clusters that are secondary clusters in an Aurora global database.</p> <p>You
+     * can set this value only on Aurora DB clusters that are members of an Aurora
+     * global database. With this parameter enabled, a secondary cluster can forward
+     * writes to the current primary cluster and the resulting changes are replicated
+     * back to this cluster. For the primary DB cluster of an Aurora global database,
+     * this value is used immediately if the primary is demoted by the
+     * <a>FailoverGlobalCluster</a> API operation, but it does nothing until then. </p>
      */
     inline ModifyDBClusterRequest& WithEnableGlobalWriteForwarding(bool value) { SetEnableGlobalWriteForwarding(value); return *this;}
 

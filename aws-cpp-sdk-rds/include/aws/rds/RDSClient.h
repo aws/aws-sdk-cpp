@@ -90,6 +90,7 @@
 #include <aws/rds/model/DescribeValidDBInstanceModificationsResult.h>
 #include <aws/rds/model/DownloadDBLogFilePortionResult.h>
 #include <aws/rds/model/FailoverDBClusterResult.h>
+#include <aws/rds/model/FailoverGlobalClusterResult.h>
 #include <aws/rds/model/ImportInstallationMediaResult.h>
 #include <aws/rds/model/ListTagsForResourceResult.h>
 #include <aws/rds/model/ModifyCertificatesResult.h>
@@ -263,6 +264,7 @@ namespace Aws
         class DescribeValidDBInstanceModificationsRequest;
         class DownloadDBLogFilePortionRequest;
         class FailoverDBClusterRequest;
+        class FailoverGlobalClusterRequest;
         class ImportInstallationMediaRequest;
         class ListTagsForResourceRequest;
         class ModifyCertificatesRequest;
@@ -396,6 +398,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<DescribeValidDBInstanceModificationsResult, RDSError> DescribeValidDBInstanceModificationsOutcome;
         typedef Aws::Utils::Outcome<DownloadDBLogFilePortionResult, RDSError> DownloadDBLogFilePortionOutcome;
         typedef Aws::Utils::Outcome<FailoverDBClusterResult, RDSError> FailoverDBClusterOutcome;
+        typedef Aws::Utils::Outcome<FailoverGlobalClusterResult, RDSError> FailoverGlobalClusterOutcome;
         typedef Aws::Utils::Outcome<ImportInstallationMediaResult, RDSError> ImportInstallationMediaOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, RDSError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ModifyCertificatesResult, RDSError> ModifyCertificatesOutcome;
@@ -529,6 +532,7 @@ namespace Aws
         typedef std::future<DescribeValidDBInstanceModificationsOutcome> DescribeValidDBInstanceModificationsOutcomeCallable;
         typedef std::future<DownloadDBLogFilePortionOutcome> DownloadDBLogFilePortionOutcomeCallable;
         typedef std::future<FailoverDBClusterOutcome> FailoverDBClusterOutcomeCallable;
+        typedef std::future<FailoverGlobalClusterOutcome> FailoverGlobalClusterOutcomeCallable;
         typedef std::future<ImportInstallationMediaOutcome> ImportInstallationMediaOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ModifyCertificatesOutcome> ModifyCertificatesOutcomeCallable;
@@ -665,6 +669,7 @@ namespace Aws
     typedef std::function<void(const RDSClient*, const Model::DescribeValidDBInstanceModificationsRequest&, const Model::DescribeValidDBInstanceModificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeValidDBInstanceModificationsResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DownloadDBLogFilePortionRequest&, const Model::DownloadDBLogFilePortionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DownloadDBLogFilePortionResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::FailoverDBClusterRequest&, const Model::FailoverDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > FailoverDBClusterResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::FailoverGlobalClusterRequest&, const Model::FailoverGlobalClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > FailoverGlobalClusterResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ImportInstallationMediaRequest&, const Model::ImportInstallationMediaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportInstallationMediaResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ModifyCertificatesRequest&, const Model::ModifyCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyCertificatesResponseReceivedHandler;
@@ -4134,6 +4139,73 @@ namespace Aws
         virtual void FailoverDBClusterAsync(const Model::FailoverDBClusterRequest& request, const FailoverDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Initiates the failover process for an Aurora global database
+         * (<a>GlobalCluster</a>).</p> <p>A failover for an Aurora global database promotes
+         * one of secondary read-only DB clusters to be the primary DB cluster and demotes
+         * the primary DB cluster to being a secondary (read-only) DB cluster. In other
+         * words, the role of the current primary DB cluster and the selected (target) DB
+         * cluster are switched. The selected secondary DB cluster assumes full read/write
+         * capabilities for the Aurora global database.</p> <p>For more information about
+         * failing over an Amazon Aurora global database, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.managed-failover">Managed
+         * planned failover for Amazon Aurora global databases</a> in the <i>Amazon Aurora
+         * User Guide.</i> </p>  <p>This action applies to <a>GlobalCluster</a>
+         * (Aurora global databases) only. Use this action only on healthy Aurora global
+         * databases with running Aurora DB clusters and no Region-wide outages, to test
+         * disaster recovery scenarios or to reconfigure your Aurora global database
+         * topology. </p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverGlobalCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::FailoverGlobalClusterOutcome FailoverGlobalCluster(const Model::FailoverGlobalClusterRequest& request) const;
+
+        /**
+         * <p>Initiates the failover process for an Aurora global database
+         * (<a>GlobalCluster</a>).</p> <p>A failover for an Aurora global database promotes
+         * one of secondary read-only DB clusters to be the primary DB cluster and demotes
+         * the primary DB cluster to being a secondary (read-only) DB cluster. In other
+         * words, the role of the current primary DB cluster and the selected (target) DB
+         * cluster are switched. The selected secondary DB cluster assumes full read/write
+         * capabilities for the Aurora global database.</p> <p>For more information about
+         * failing over an Amazon Aurora global database, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.managed-failover">Managed
+         * planned failover for Amazon Aurora global databases</a> in the <i>Amazon Aurora
+         * User Guide.</i> </p>  <p>This action applies to <a>GlobalCluster</a>
+         * (Aurora global databases) only. Use this action only on healthy Aurora global
+         * databases with running Aurora DB clusters and no Region-wide outages, to test
+         * disaster recovery scenarios or to reconfigure your Aurora global database
+         * topology. </p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverGlobalCluster">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::FailoverGlobalClusterOutcomeCallable FailoverGlobalClusterCallable(const Model::FailoverGlobalClusterRequest& request) const;
+
+        /**
+         * <p>Initiates the failover process for an Aurora global database
+         * (<a>GlobalCluster</a>).</p> <p>A failover for an Aurora global database promotes
+         * one of secondary read-only DB clusters to be the primary DB cluster and demotes
+         * the primary DB cluster to being a secondary (read-only) DB cluster. In other
+         * words, the role of the current primary DB cluster and the selected (target) DB
+         * cluster are switched. The selected secondary DB cluster assumes full read/write
+         * capabilities for the Aurora global database.</p> <p>For more information about
+         * failing over an Amazon Aurora global database, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.managed-failover">Managed
+         * planned failover for Amazon Aurora global databases</a> in the <i>Amazon Aurora
+         * User Guide.</i> </p>  <p>This action applies to <a>GlobalCluster</a>
+         * (Aurora global databases) only. Use this action only on healthy Aurora global
+         * databases with running Aurora DB clusters and no Region-wide outages, to test
+         * disaster recovery scenarios or to reconfigure your Aurora global database
+         * topology. </p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverGlobalCluster">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void FailoverGlobalClusterAsync(const Model::FailoverGlobalClusterRequest& request, const FailoverGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Imports the installation media for a DB engine that requires an on-premises
          * customer provided license, such as SQL Server.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ImportInstallationMedia">AWS
@@ -6390,6 +6462,7 @@ namespace Aws
         void DescribeValidDBInstanceModificationsAsyncHelper(const Model::DescribeValidDBInstanceModificationsRequest& request, const DescribeValidDBInstanceModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DownloadDBLogFilePortionAsyncHelper(const Model::DownloadDBLogFilePortionRequest& request, const DownloadDBLogFilePortionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void FailoverDBClusterAsyncHelper(const Model::FailoverDBClusterRequest& request, const FailoverDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void FailoverGlobalClusterAsyncHelper(const Model::FailoverGlobalClusterRequest& request, const FailoverGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportInstallationMediaAsyncHelper(const Model::ImportInstallationMediaRequest& request, const ImportInstallationMediaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyCertificatesAsyncHelper(const Model::ModifyCertificatesRequest& request, const ModifyCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

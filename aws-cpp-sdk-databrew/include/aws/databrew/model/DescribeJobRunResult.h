@@ -11,6 +11,7 @@
 #include <aws/databrew/model/LogSubscription.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/databrew/model/RecipeReference.h>
+#include <aws/databrew/model/JobSample.h>
 #include <aws/databrew/model/Output.h>
 #include <utility>
 
@@ -160,19 +161,19 @@ namespace Model
 
 
     /**
-     * <p>The amount of time, in seconds, during which a job run consumed
+     * <p>The amount of time, in seconds, during which the job run consumed
      * resources.</p>
      */
     inline int GetExecutionTime() const{ return m_executionTime; }
 
     /**
-     * <p>The amount of time, in seconds, during which a job run consumed
+     * <p>The amount of time, in seconds, during which the job run consumed
      * resources.</p>
      */
     inline void SetExecutionTime(int value) { m_executionTime = value; }
 
     /**
-     * <p>The amount of time, in seconds, during which a job run consumed
+     * <p>The amount of time, in seconds, during which the job run consumed
      * resources.</p>
      */
     inline DescribeJobRunResult& WithExecutionTime(int value) { SetExecutionTime(value); return *this;}
@@ -398,37 +399,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user who initiated the job run.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who started the job run.</p>
      */
     inline const Aws::String& GetStartedBy() const{ return m_startedBy; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user who initiated the job run.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who started the job run.</p>
      */
     inline void SetStartedBy(const Aws::String& value) { m_startedBy = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user who initiated the job run.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who started the job run.</p>
      */
     inline void SetStartedBy(Aws::String&& value) { m_startedBy = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user who initiated the job run.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who started the job run.</p>
      */
     inline void SetStartedBy(const char* value) { m_startedBy.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user who initiated the job run.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who started the job run.</p>
      */
     inline DescribeJobRunResult& WithStartedBy(const Aws::String& value) { SetStartedBy(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user who initiated the job run.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who started the job run.</p>
      */
     inline DescribeJobRunResult& WithStartedBy(Aws::String&& value) { SetStartedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user who initiated the job run.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who started the job run.</p>
      */
     inline DescribeJobRunResult& WithStartedBy(const char* value) { SetStartedBy(value); return *this;}
 
@@ -457,6 +458,47 @@ namespace Model
      * <p>The date and time when the job run began.</p>
      */
     inline DescribeJobRunResult& WithStartedOn(Aws::Utils::DateTime&& value) { SetStartedOn(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Sample configuration for profile jobs only. Determines the number of rows on
+     * which the profile job will be executed. If a JobSample value is not provided,
+     * the default value will be used. The default value is CUSTOM_ROWS for the mode
+     * parameter and 20000 for the size parameter.</p>
+     */
+    inline const JobSample& GetJobSample() const{ return m_jobSample; }
+
+    /**
+     * <p>Sample configuration for profile jobs only. Determines the number of rows on
+     * which the profile job will be executed. If a JobSample value is not provided,
+     * the default value will be used. The default value is CUSTOM_ROWS for the mode
+     * parameter and 20000 for the size parameter.</p>
+     */
+    inline void SetJobSample(const JobSample& value) { m_jobSample = value; }
+
+    /**
+     * <p>Sample configuration for profile jobs only. Determines the number of rows on
+     * which the profile job will be executed. If a JobSample value is not provided,
+     * the default value will be used. The default value is CUSTOM_ROWS for the mode
+     * parameter and 20000 for the size parameter.</p>
+     */
+    inline void SetJobSample(JobSample&& value) { m_jobSample = std::move(value); }
+
+    /**
+     * <p>Sample configuration for profile jobs only. Determines the number of rows on
+     * which the profile job will be executed. If a JobSample value is not provided,
+     * the default value will be used. The default value is CUSTOM_ROWS for the mode
+     * parameter and 20000 for the size parameter.</p>
+     */
+    inline DescribeJobRunResult& WithJobSample(const JobSample& value) { SetJobSample(value); return *this;}
+
+    /**
+     * <p>Sample configuration for profile jobs only. Determines the number of rows on
+     * which the profile job will be executed. If a JobSample value is not provided,
+     * the default value will be used. The default value is CUSTOM_ROWS for the mode
+     * parameter and 20000 for the size parameter.</p>
+     */
+    inline DescribeJobRunResult& WithJobSample(JobSample&& value) { SetJobSample(std::move(value)); return *this;}
 
   private:
 
@@ -487,6 +529,8 @@ namespace Model
     Aws::String m_startedBy;
 
     Aws::Utils::DateTime m_startedOn;
+
+    JobSample m_jobSample;
   };
 
 } // namespace Model

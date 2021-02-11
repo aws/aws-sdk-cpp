@@ -28,7 +28,8 @@ CreateProfileJobRequest::CreateProfileJobRequest() :
     m_roleArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_timeout(0),
-    m_timeoutHasBeenSet(false)
+    m_timeoutHasBeenSet(false),
+    m_jobSampleHasBeenSet(false)
 {
 }
 
@@ -102,6 +103,12 @@ Aws::String CreateProfileJobRequest::SerializePayload() const
   if(m_timeoutHasBeenSet)
   {
    payload.WithInteger("Timeout", m_timeout);
+
+  }
+
+  if(m_jobSampleHasBeenSet)
+  {
+   payload.WithObject("JobSample", m_jobSample.Jsonize());
 
   }
 
