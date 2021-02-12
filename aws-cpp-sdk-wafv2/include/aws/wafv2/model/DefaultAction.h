@@ -25,14 +25,10 @@ namespace Model
 {
 
   /**
-   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p>  <p>In a <a>WebACL</a>, this is the action
-   * that you want AWS WAF to perform when a web request doesn't match any of the
-   * rules in the <code>WebACL</code>. The default action must be a terminating
-   * action, so count is not allowed.</p><p><h3>See Also:</h3>   <a
+   * <p>In a <a>WebACL</a>, this is the action that you want AWS WAF to perform when
+   * a web request doesn't match any of the rules in the <code>WebACL</code>. The
+   * default action must be a terminating action, so count is not
+   * allowed.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DefaultAction">AWS
    * API Reference</a></p>
    */

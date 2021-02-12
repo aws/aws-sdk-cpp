@@ -24,16 +24,11 @@ namespace Model
 {
 
   /**
-   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p>  <p>High-level information about a
-   * <a>RegexPatternSet</a>, returned by operations like create and list. This
-   * provides information like the ID, that you can use to retrieve and manage a
-   * <code>RegexPatternSet</code>, and the ARN, that you provide to the
-   * <a>RegexPatternSetReferenceStatement</a> to use the pattern set in a
-   * <a>Rule</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>High-level information about a <a>RegexPatternSet</a>, returned by operations
+   * like create and list. This provides information like the ID, that you can use to
+   * retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you
+   * provide to the <a>RegexPatternSetReferenceStatement</a> to use the pattern set
+   * in a <a>Rule</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/RegexPatternSetSummary">AWS
    * API Reference</a></p>
    */
@@ -153,50 +148,42 @@ namespace Model
 
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline RegexPatternSetSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline RegexPatternSetSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline RegexPatternSetSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
 

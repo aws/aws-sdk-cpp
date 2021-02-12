@@ -207,7 +207,8 @@ namespace Model
      * specify the times in Coordinated Universal Time (UTC) format. UTC format
      * includes the special designator, <code>Z</code>. For example,
      * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous
-     * three hours.</p>
+     * three hours. If you specify a start time that's earlier than three hours ago,
+     * AWS WAF sets it to three hours ago.</p>
      */
     inline const TimeWindow& GetTimeWindow() const{ return m_timeWindow; }
 
@@ -217,7 +218,8 @@ namespace Model
      * specify the times in Coordinated Universal Time (UTC) format. UTC format
      * includes the special designator, <code>Z</code>. For example,
      * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous
-     * three hours.</p>
+     * three hours. If you specify a start time that's earlier than three hours ago,
+     * AWS WAF sets it to three hours ago.</p>
      */
     inline bool TimeWindowHasBeenSet() const { return m_timeWindowHasBeenSet; }
 
@@ -227,7 +229,8 @@ namespace Model
      * specify the times in Coordinated Universal Time (UTC) format. UTC format
      * includes the special designator, <code>Z</code>. For example,
      * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous
-     * three hours.</p>
+     * three hours. If you specify a start time that's earlier than three hours ago,
+     * AWS WAF sets it to three hours ago.</p>
      */
     inline void SetTimeWindow(const TimeWindow& value) { m_timeWindowHasBeenSet = true; m_timeWindow = value; }
 
@@ -237,7 +240,8 @@ namespace Model
      * specify the times in Coordinated Universal Time (UTC) format. UTC format
      * includes the special designator, <code>Z</code>. For example,
      * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous
-     * three hours.</p>
+     * three hours. If you specify a start time that's earlier than three hours ago,
+     * AWS WAF sets it to three hours ago.</p>
      */
     inline void SetTimeWindow(TimeWindow&& value) { m_timeWindowHasBeenSet = true; m_timeWindow = std::move(value); }
 
@@ -247,7 +251,8 @@ namespace Model
      * specify the times in Coordinated Universal Time (UTC) format. UTC format
      * includes the special designator, <code>Z</code>. For example,
      * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous
-     * three hours.</p>
+     * three hours. If you specify a start time that's earlier than three hours ago,
+     * AWS WAF sets it to three hours ago.</p>
      */
     inline GetSampledRequestsRequest& WithTimeWindow(const TimeWindow& value) { SetTimeWindow(value); return *this;}
 
@@ -257,7 +262,8 @@ namespace Model
      * specify the times in Coordinated Universal Time (UTC) format. UTC format
      * includes the special designator, <code>Z</code>. For example,
      * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous
-     * three hours.</p>
+     * three hours. If you specify a start time that's earlier than three hours ago,
+     * AWS WAF sets it to three hours ago.</p>
      */
     inline GetSampledRequestsRequest& WithTimeWindow(TimeWindow&& value) { SetTimeWindow(std::move(value)); return *this;}
 

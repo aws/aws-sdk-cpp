@@ -28,6 +28,7 @@ namespace Model
     MinSize,
     ReleaseVersion,
     PublicAccessCidrs,
+    IdentityProviderConfig,
     AddonVersion,
     ServiceAccountRoleArn,
     ResolveConflicts

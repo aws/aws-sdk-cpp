@@ -26,14 +26,10 @@ namespace Model
 {
 
   /**
-   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p>  <p>A rule statement used to run the rules
-   * that are defined in a managed rule group. To use this, provide the vendor name
-   * and the name of the rule group in this statement. You can retrieve the required
-   * names by calling <a>ListAvailableManagedRuleGroups</a>.</p> <p>You can't nest a
+   * <p>A rule statement used to run the rules that are defined in a managed rule
+   * group. To use this, provide the vendor name and the name of the rule group in
+   * this statement. You can retrieve the required names by calling
+   * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You can't nest a
    * <code>ManagedRuleGroupStatement</code>, for example for use inside a
    * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
    * as a top-level statement within a rule.</p><p><h3>See Also:</h3>   <a

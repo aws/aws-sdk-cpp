@@ -34,43 +34,43 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the account that was associated with the
-     * master account.</p>
+     * administrator account.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the account that was associated with the
-     * master account.</p>
+     * administrator account.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the account that was associated with the
-     * master account.</p>
+     * administrator account.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the account that was associated with the
-     * master account.</p>
+     * administrator account.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the account that was associated with the
-     * master account.</p>
+     * administrator account.</p>
      */
     inline CreateMemberResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the account that was associated with the
-     * master account.</p>
+     * administrator account.</p>
      */
     inline CreateMemberResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the account that was associated with the
-     * master account.</p>
+     * administrator account.</p>
      */
     inline CreateMemberResult& WithArn(const char* value) { SetArn(value); return *this;}
 

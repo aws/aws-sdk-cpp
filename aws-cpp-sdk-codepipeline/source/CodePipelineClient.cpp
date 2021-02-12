@@ -30,6 +30,7 @@
 #include <aws/codepipeline/model/DeregisterWebhookWithThirdPartyRequest.h>
 #include <aws/codepipeline/model/DisableStageTransitionRequest.h>
 #include <aws/codepipeline/model/EnableStageTransitionRequest.h>
+#include <aws/codepipeline/model/GetActionTypeRequest.h>
 #include <aws/codepipeline/model/GetJobDetailsRequest.h>
 #include <aws/codepipeline/model/GetPipelineRequest.h>
 #include <aws/codepipeline/model/GetPipelineExecutionRequest.h>
@@ -56,6 +57,7 @@
 #include <aws/codepipeline/model/StopPipelineExecutionRequest.h>
 #include <aws/codepipeline/model/TagResourceRequest.h>
 #include <aws/codepipeline/model/UntagResourceRequest.h>
+#include <aws/codepipeline/model/UpdateActionTypeRequest.h>
 #include <aws/codepipeline/model/UpdatePipelineRequest.h>
 
 using namespace Aws;
@@ -399,6 +401,33 @@ void CodePipelineClient::EnableStageTransitionAsync(const EnableStageTransitionR
 void CodePipelineClient::EnableStageTransitionAsyncHelper(const EnableStageTransitionRequest& request, const EnableStageTransitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, EnableStageTransition(request), context);
+}
+
+GetActionTypeOutcome CodePipelineClient::GetActionType(const GetActionTypeRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetActionTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetActionTypeOutcomeCallable CodePipelineClient::GetActionTypeCallable(const GetActionTypeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetActionTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetActionType(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodePipelineClient::GetActionTypeAsync(const GetActionTypeRequest& request, const GetActionTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetActionTypeAsyncHelper( request, handler, context ); } );
+}
+
+void CodePipelineClient::GetActionTypeAsyncHelper(const GetActionTypeRequest& request, const GetActionTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetActionType(request), context);
 }
 
 GetJobDetailsOutcome CodePipelineClient::GetJobDetails(const GetJobDetailsRequest& request) const
@@ -1101,6 +1130,33 @@ void CodePipelineClient::UntagResourceAsync(const UntagResourceRequest& request,
 void CodePipelineClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdateActionTypeOutcome CodePipelineClient::UpdateActionType(const UpdateActionTypeRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateActionTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateActionTypeOutcomeCallable CodePipelineClient::UpdateActionTypeCallable(const UpdateActionTypeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateActionTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateActionType(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodePipelineClient::UpdateActionTypeAsync(const UpdateActionTypeRequest& request, const UpdateActionTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateActionTypeAsyncHelper( request, handler, context ); } );
+}
+
+void CodePipelineClient::UpdateActionTypeAsyncHelper(const UpdateActionTypeRequest& request, const UpdateActionTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateActionType(request), context);
 }
 
 UpdatePipelineOutcome CodePipelineClient::UpdatePipeline(const UpdatePipelineRequest& request) const

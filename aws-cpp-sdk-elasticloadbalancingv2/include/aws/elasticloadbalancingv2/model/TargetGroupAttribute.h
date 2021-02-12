@@ -66,6 +66,10 @@ namespace Model
      * the target group. After this time period ends, the target receives its full
      * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
      * seconds (disabled).</p> </li> <li> <p>
+     * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
+     * application-based cookie. Names that start with the following names are not
+     * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>.
+     * They're reserved for use by the load balancer.</p> </li> <li> <p>
      * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the application-based cookie is
@@ -93,10 +97,11 @@ namespace Model
      * <code>preserve_client_ip.enabled</code> - Indicates whether client IP
      * preservation is enabled. The value is <code>true</code> or <code>false</code>.
      * The default is disabled if the target group type is IP address and the target
-     * group protocol is TCP or TLS. Otherwise, the default is enabled. </p> </li> <li>
-     * <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol
-     * version 2 is enabled. The value is <code>true</code> or <code>false</code>. The
-     * default is <code>false</code>.</p> </li> </ul>
+     * group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP
+     * preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
+     * <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy
+     * Protocol version 2 is enabled. The value is <code>true</code> or
+     * <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
@@ -127,6 +132,10 @@ namespace Model
      * the target group. After this time period ends, the target receives its full
      * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
      * seconds (disabled).</p> </li> <li> <p>
+     * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
+     * application-based cookie. Names that start with the following names are not
+     * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>.
+     * They're reserved for use by the load balancer.</p> </li> <li> <p>
      * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the application-based cookie is
@@ -154,10 +163,11 @@ namespace Model
      * <code>preserve_client_ip.enabled</code> - Indicates whether client IP
      * preservation is enabled. The value is <code>true</code> or <code>false</code>.
      * The default is disabled if the target group type is IP address and the target
-     * group protocol is TCP or TLS. Otherwise, the default is enabled. </p> </li> <li>
-     * <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol
-     * version 2 is enabled. The value is <code>true</code> or <code>false</code>. The
-     * default is <code>false</code>.</p> </li> </ul>
+     * group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP
+     * preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
+     * <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy
+     * Protocol version 2 is enabled. The value is <code>true</code> or
+     * <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
@@ -188,6 +198,10 @@ namespace Model
      * the target group. After this time period ends, the target receives its full
      * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
      * seconds (disabled).</p> </li> <li> <p>
+     * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
+     * application-based cookie. Names that start with the following names are not
+     * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>.
+     * They're reserved for use by the load balancer.</p> </li> <li> <p>
      * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the application-based cookie is
@@ -215,10 +229,11 @@ namespace Model
      * <code>preserve_client_ip.enabled</code> - Indicates whether client IP
      * preservation is enabled. The value is <code>true</code> or <code>false</code>.
      * The default is disabled if the target group type is IP address and the target
-     * group protocol is TCP or TLS. Otherwise, the default is enabled. </p> </li> <li>
-     * <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol
-     * version 2 is enabled. The value is <code>true</code> or <code>false</code>. The
-     * default is <code>false</code>.</p> </li> </ul>
+     * group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP
+     * preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
+     * <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy
+     * Protocol version 2 is enabled. The value is <code>true</code> or
+     * <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
@@ -249,6 +264,10 @@ namespace Model
      * the target group. After this time period ends, the target receives its full
      * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
      * seconds (disabled).</p> </li> <li> <p>
+     * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
+     * application-based cookie. Names that start with the following names are not
+     * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>.
+     * They're reserved for use by the load balancer.</p> </li> <li> <p>
      * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the application-based cookie is
@@ -276,10 +295,11 @@ namespace Model
      * <code>preserve_client_ip.enabled</code> - Indicates whether client IP
      * preservation is enabled. The value is <code>true</code> or <code>false</code>.
      * The default is disabled if the target group type is IP address and the target
-     * group protocol is TCP or TLS. Otherwise, the default is enabled. </p> </li> <li>
-     * <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol
-     * version 2 is enabled. The value is <code>true</code> or <code>false</code>. The
-     * default is <code>false</code>.</p> </li> </ul>
+     * group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP
+     * preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
+     * <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy
+     * Protocol version 2 is enabled. The value is <code>true</code> or
+     * <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
@@ -310,6 +330,10 @@ namespace Model
      * the target group. After this time period ends, the target receives its full
      * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
      * seconds (disabled).</p> </li> <li> <p>
+     * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
+     * application-based cookie. Names that start with the following names are not
+     * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>.
+     * They're reserved for use by the load balancer.</p> </li> <li> <p>
      * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the application-based cookie is
@@ -337,10 +361,11 @@ namespace Model
      * <code>preserve_client_ip.enabled</code> - Indicates whether client IP
      * preservation is enabled. The value is <code>true</code> or <code>false</code>.
      * The default is disabled if the target group type is IP address and the target
-     * group protocol is TCP or TLS. Otherwise, the default is enabled. </p> </li> <li>
-     * <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol
-     * version 2 is enabled. The value is <code>true</code> or <code>false</code>. The
-     * default is <code>false</code>.</p> </li> </ul>
+     * group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP
+     * preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
+     * <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy
+     * Protocol version 2 is enabled. The value is <code>true</code> or
+     * <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
@@ -371,6 +396,10 @@ namespace Model
      * the target group. After this time period ends, the target receives its full
      * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
      * seconds (disabled).</p> </li> <li> <p>
+     * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
+     * application-based cookie. Names that start with the following names are not
+     * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>.
+     * They're reserved for use by the load balancer.</p> </li> <li> <p>
      * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the application-based cookie is
@@ -398,10 +427,11 @@ namespace Model
      * <code>preserve_client_ip.enabled</code> - Indicates whether client IP
      * preservation is enabled. The value is <code>true</code> or <code>false</code>.
      * The default is disabled if the target group type is IP address and the target
-     * group protocol is TCP or TLS. Otherwise, the default is enabled. </p> </li> <li>
-     * <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol
-     * version 2 is enabled. The value is <code>true</code> or <code>false</code>. The
-     * default is <code>false</code>.</p> </li> </ul>
+     * group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP
+     * preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
+     * <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy
+     * Protocol version 2 is enabled. The value is <code>true</code> or
+     * <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
      */
     inline TargetGroupAttribute& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
@@ -432,6 +462,10 @@ namespace Model
      * the target group. After this time period ends, the target receives its full
      * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
      * seconds (disabled).</p> </li> <li> <p>
+     * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
+     * application-based cookie. Names that start with the following names are not
+     * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>.
+     * They're reserved for use by the load balancer.</p> </li> <li> <p>
      * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the application-based cookie is
@@ -459,10 +493,11 @@ namespace Model
      * <code>preserve_client_ip.enabled</code> - Indicates whether client IP
      * preservation is enabled. The value is <code>true</code> or <code>false</code>.
      * The default is disabled if the target group type is IP address and the target
-     * group protocol is TCP or TLS. Otherwise, the default is enabled. </p> </li> <li>
-     * <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol
-     * version 2 is enabled. The value is <code>true</code> or <code>false</code>. The
-     * default is <code>false</code>.</p> </li> </ul>
+     * group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP
+     * preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
+     * <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy
+     * Protocol version 2 is enabled. The value is <code>true</code> or
+     * <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
      */
     inline TargetGroupAttribute& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
@@ -493,6 +528,10 @@ namespace Model
      * the target group. After this time period ends, the target receives its full
      * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
      * seconds (disabled).</p> </li> <li> <p>
+     * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
+     * application-based cookie. Names that start with the following names are not
+     * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>.
+     * They're reserved for use by the load balancer.</p> </li> <li> <p>
      * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the application-based cookie is
@@ -520,10 +559,11 @@ namespace Model
      * <code>preserve_client_ip.enabled</code> - Indicates whether client IP
      * preservation is enabled. The value is <code>true</code> or <code>false</code>.
      * The default is disabled if the target group type is IP address and the target
-     * group protocol is TCP or TLS. Otherwise, the default is enabled. </p> </li> <li>
-     * <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol
-     * version 2 is enabled. The value is <code>true</code> or <code>false</code>. The
-     * default is <code>false</code>.</p> </li> </ul>
+     * group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP
+     * preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
+     * <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy
+     * Protocol version 2 is enabled. The value is <code>true</code> or
+     * <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
      */
     inline TargetGroupAttribute& WithKey(const char* value) { SetKey(value); return *this;}
 

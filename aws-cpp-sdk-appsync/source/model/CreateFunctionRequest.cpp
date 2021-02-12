@@ -19,7 +19,8 @@ CreateFunctionRequest::CreateFunctionRequest() :
     m_dataSourceNameHasBeenSet(false),
     m_requestMappingTemplateHasBeenSet(false),
     m_responseMappingTemplateHasBeenSet(false),
-    m_functionVersionHasBeenSet(false)
+    m_functionVersionHasBeenSet(false),
+    m_syncConfigHasBeenSet(false)
 {
 }
 
@@ -60,6 +61,12 @@ Aws::String CreateFunctionRequest::SerializePayload() const
   if(m_functionVersionHasBeenSet)
   {
    payload.WithString("functionVersion", m_functionVersion);
+
+  }
+
+  if(m_syncConfigHasBeenSet)
+  {
+   payload.WithObject("syncConfig", m_syncConfig.Jsonize());
 
   }
 

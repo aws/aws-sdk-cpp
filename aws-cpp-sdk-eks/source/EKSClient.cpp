@@ -20,6 +20,7 @@
 #include <aws/eks/EKSClient.h>
 #include <aws/eks/EKSEndpoint.h>
 #include <aws/eks/EKSErrorMarshaller.h>
+#include <aws/eks/model/AssociateIdentityProviderConfigRequest.h>
 #include <aws/eks/model/CreateAddonRequest.h>
 #include <aws/eks/model/CreateClusterRequest.h>
 #include <aws/eks/model/CreateFargateProfileRequest.h>
@@ -32,11 +33,14 @@
 #include <aws/eks/model/DescribeAddonVersionsRequest.h>
 #include <aws/eks/model/DescribeClusterRequest.h>
 #include <aws/eks/model/DescribeFargateProfileRequest.h>
+#include <aws/eks/model/DescribeIdentityProviderConfigRequest.h>
 #include <aws/eks/model/DescribeNodegroupRequest.h>
 #include <aws/eks/model/DescribeUpdateRequest.h>
+#include <aws/eks/model/DisassociateIdentityProviderConfigRequest.h>
 #include <aws/eks/model/ListAddonsRequest.h>
 #include <aws/eks/model/ListClustersRequest.h>
 #include <aws/eks/model/ListFargateProfilesRequest.h>
+#include <aws/eks/model/ListIdentityProviderConfigsRequest.h>
 #include <aws/eks/model/ListNodegroupsRequest.h>
 #include <aws/eks/model/ListTagsForResourceRequest.h>
 #include <aws/eks/model/ListUpdatesRequest.h>
@@ -119,6 +123,40 @@ void EKSClient::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+AssociateIdentityProviderConfigOutcome EKSClient::AssociateIdentityProviderConfig(const AssociateIdentityProviderConfigRequest& request) const
+{
+  if (!request.ClusterNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateIdentityProviderConfig", "Required field: ClusterName, is not set");
+    return AssociateIdentityProviderConfigOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/clusters/";
+  ss << request.GetClusterName();
+  ss << "/identity-provider-configs/associate";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return AssociateIdentityProviderConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateIdentityProviderConfigOutcomeCallable EKSClient::AssociateIdentityProviderConfigCallable(const AssociateIdentityProviderConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateIdentityProviderConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateIdentityProviderConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EKSClient::AssociateIdentityProviderConfigAsync(const AssociateIdentityProviderConfigRequest& request, const AssociateIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateIdentityProviderConfigAsyncHelper( request, handler, context ); } );
+}
+
+void EKSClient::AssociateIdentityProviderConfigAsyncHelper(const AssociateIdentityProviderConfigRequest& request, const AssociateIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateIdentityProviderConfig(request), context);
 }
 
 CreateAddonOutcome EKSClient::CreateAddon(const CreateAddonRequest& request) const
@@ -543,6 +581,40 @@ void EKSClient::DescribeFargateProfileAsyncHelper(const DescribeFargateProfileRe
   handler(this, request, DescribeFargateProfile(request), context);
 }
 
+DescribeIdentityProviderConfigOutcome EKSClient::DescribeIdentityProviderConfig(const DescribeIdentityProviderConfigRequest& request) const
+{
+  if (!request.ClusterNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeIdentityProviderConfig", "Required field: ClusterName, is not set");
+    return DescribeIdentityProviderConfigOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/clusters/";
+  ss << request.GetClusterName();
+  ss << "/identity-provider-configs/describe";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeIdentityProviderConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeIdentityProviderConfigOutcomeCallable EKSClient::DescribeIdentityProviderConfigCallable(const DescribeIdentityProviderConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeIdentityProviderConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeIdentityProviderConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EKSClient::DescribeIdentityProviderConfigAsync(const DescribeIdentityProviderConfigRequest& request, const DescribeIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeIdentityProviderConfigAsyncHelper( request, handler, context ); } );
+}
+
+void EKSClient::DescribeIdentityProviderConfigAsyncHelper(const DescribeIdentityProviderConfigRequest& request, const DescribeIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeIdentityProviderConfig(request), context);
+}
+
 DescribeNodegroupOutcome EKSClient::DescribeNodegroup(const DescribeNodegroupRequest& request) const
 {
   if (!request.ClusterNameHasBeenSet())
@@ -621,6 +693,40 @@ void EKSClient::DescribeUpdateAsync(const DescribeUpdateRequest& request, const 
 void EKSClient::DescribeUpdateAsyncHelper(const DescribeUpdateRequest& request, const DescribeUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeUpdate(request), context);
+}
+
+DisassociateIdentityProviderConfigOutcome EKSClient::DisassociateIdentityProviderConfig(const DisassociateIdentityProviderConfigRequest& request) const
+{
+  if (!request.ClusterNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateIdentityProviderConfig", "Required field: ClusterName, is not set");
+    return DisassociateIdentityProviderConfigOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/clusters/";
+  ss << request.GetClusterName();
+  ss << "/identity-provider-configs/disassociate";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DisassociateIdentityProviderConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateIdentityProviderConfigOutcomeCallable EKSClient::DisassociateIdentityProviderConfigCallable(const DisassociateIdentityProviderConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateIdentityProviderConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateIdentityProviderConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EKSClient::DisassociateIdentityProviderConfigAsync(const DisassociateIdentityProviderConfigRequest& request, const DisassociateIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateIdentityProviderConfigAsyncHelper( request, handler, context ); } );
+}
+
+void EKSClient::DisassociateIdentityProviderConfigAsyncHelper(const DisassociateIdentityProviderConfigRequest& request, const DisassociateIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateIdentityProviderConfig(request), context);
 }
 
 ListAddonsOutcome EKSClient::ListAddons(const ListAddonsRequest& request) const
@@ -716,6 +822,40 @@ void EKSClient::ListFargateProfilesAsync(const ListFargateProfilesRequest& reque
 void EKSClient::ListFargateProfilesAsyncHelper(const ListFargateProfilesRequest& request, const ListFargateProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListFargateProfiles(request), context);
+}
+
+ListIdentityProviderConfigsOutcome EKSClient::ListIdentityProviderConfigs(const ListIdentityProviderConfigsRequest& request) const
+{
+  if (!request.ClusterNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListIdentityProviderConfigs", "Required field: ClusterName, is not set");
+    return ListIdentityProviderConfigsOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/clusters/";
+  ss << request.GetClusterName();
+  ss << "/identity-provider-configs";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListIdentityProviderConfigsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListIdentityProviderConfigsOutcomeCallable EKSClient::ListIdentityProviderConfigsCallable(const ListIdentityProviderConfigsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListIdentityProviderConfigsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListIdentityProviderConfigs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EKSClient::ListIdentityProviderConfigsAsync(const ListIdentityProviderConfigsRequest& request, const ListIdentityProviderConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListIdentityProviderConfigsAsyncHelper( request, handler, context ); } );
+}
+
+void EKSClient::ListIdentityProviderConfigsAsyncHelper(const ListIdentityProviderConfigsRequest& request, const ListIdentityProviderConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListIdentityProviderConfigs(request), context);
 }
 
 ListNodegroupsOutcome EKSClient::ListNodegroups(const ListNodegroupsRequest& request) const

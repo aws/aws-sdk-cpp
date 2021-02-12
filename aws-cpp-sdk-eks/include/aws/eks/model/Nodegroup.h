@@ -663,64 +663,64 @@ namespace Model
 
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Nodes
      * receive permissions for these API calls through an IAM instance profile and
      * associated policies.</p>
      */
     inline const Aws::String& GetNodeRole() const{ return m_nodeRole; }
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Nodes
      * receive permissions for these API calls through an IAM instance profile and
      * associated policies.</p>
      */
     inline bool NodeRoleHasBeenSet() const { return m_nodeRoleHasBeenSet; }
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Nodes
      * receive permissions for these API calls through an IAM instance profile and
      * associated policies.</p>
      */
     inline void SetNodeRole(const Aws::String& value) { m_nodeRoleHasBeenSet = true; m_nodeRole = value; }
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Nodes
      * receive permissions for these API calls through an IAM instance profile and
      * associated policies.</p>
      */
     inline void SetNodeRole(Aws::String&& value) { m_nodeRoleHasBeenSet = true; m_nodeRole = std::move(value); }
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Nodes
      * receive permissions for these API calls through an IAM instance profile and
      * associated policies.</p>
      */
     inline void SetNodeRole(const char* value) { m_nodeRoleHasBeenSet = true; m_nodeRole.assign(value); }
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Nodes
      * receive permissions for these API calls through an IAM instance profile and
      * associated policies.</p>
      */
     inline Nodegroup& WithNodeRole(const Aws::String& value) { SetNodeRole(value); return *this;}
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Nodes
      * receive permissions for these API calls through an IAM instance profile and
      * associated policies.</p>
      */
     inline Nodegroup& WithNodeRole(Aws::String&& value) { SetNodeRole(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Nodes
      * receive permissions for these API calls through an IAM instance profile and
      * associated policies.</p>
      */

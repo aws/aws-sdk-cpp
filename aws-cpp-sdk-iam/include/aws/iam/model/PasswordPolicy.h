@@ -61,85 +61,101 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether to require symbols for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one of the
+     * following symbols:</p> <p>! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '</p>
      */
     inline bool GetRequireSymbols() const{ return m_requireSymbols; }
 
     /**
-     * <p>Specifies whether to require symbols for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one of the
+     * following symbols:</p> <p>! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '</p>
      */
     inline bool RequireSymbolsHasBeenSet() const { return m_requireSymbolsHasBeenSet; }
 
     /**
-     * <p>Specifies whether to require symbols for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one of the
+     * following symbols:</p> <p>! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '</p>
      */
     inline void SetRequireSymbols(bool value) { m_requireSymbolsHasBeenSet = true; m_requireSymbols = value; }
 
     /**
-     * <p>Specifies whether to require symbols for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one of the
+     * following symbols:</p> <p>! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '</p>
      */
     inline PasswordPolicy& WithRequireSymbols(bool value) { SetRequireSymbols(value); return *this;}
 
 
     /**
-     * <p>Specifies whether to require numbers for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one numeric
+     * character (0 to 9).</p>
      */
     inline bool GetRequireNumbers() const{ return m_requireNumbers; }
 
     /**
-     * <p>Specifies whether to require numbers for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one numeric
+     * character (0 to 9).</p>
      */
     inline bool RequireNumbersHasBeenSet() const { return m_requireNumbersHasBeenSet; }
 
     /**
-     * <p>Specifies whether to require numbers for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one numeric
+     * character (0 to 9).</p>
      */
     inline void SetRequireNumbers(bool value) { m_requireNumbersHasBeenSet = true; m_requireNumbers = value; }
 
     /**
-     * <p>Specifies whether to require numbers for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one numeric
+     * character (0 to 9).</p>
      */
     inline PasswordPolicy& WithRequireNumbers(bool value) { SetRequireNumbers(value); return *this;}
 
 
     /**
-     * <p>Specifies whether to require uppercase characters for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one uppercase
+     * character (A to Z).</p>
      */
     inline bool GetRequireUppercaseCharacters() const{ return m_requireUppercaseCharacters; }
 
     /**
-     * <p>Specifies whether to require uppercase characters for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one uppercase
+     * character (A to Z).</p>
      */
     inline bool RequireUppercaseCharactersHasBeenSet() const { return m_requireUppercaseCharactersHasBeenSet; }
 
     /**
-     * <p>Specifies whether to require uppercase characters for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one uppercase
+     * character (A to Z).</p>
      */
     inline void SetRequireUppercaseCharacters(bool value) { m_requireUppercaseCharactersHasBeenSet = true; m_requireUppercaseCharacters = value; }
 
     /**
-     * <p>Specifies whether to require uppercase characters for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one uppercase
+     * character (A to Z).</p>
      */
     inline PasswordPolicy& WithRequireUppercaseCharacters(bool value) { SetRequireUppercaseCharacters(value); return *this;}
 
 
     /**
-     * <p>Specifies whether to require lowercase characters for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one lowercase
+     * character (a to z).</p>
      */
     inline bool GetRequireLowercaseCharacters() const{ return m_requireLowercaseCharacters; }
 
     /**
-     * <p>Specifies whether to require lowercase characters for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one lowercase
+     * character (a to z).</p>
      */
     inline bool RequireLowercaseCharactersHasBeenSet() const { return m_requireLowercaseCharactersHasBeenSet; }
 
     /**
-     * <p>Specifies whether to require lowercase characters for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one lowercase
+     * character (a to z).</p>
      */
     inline void SetRequireLowercaseCharacters(bool value) { m_requireLowercaseCharactersHasBeenSet = true; m_requireLowercaseCharacters = value; }
 
     /**
-     * <p>Specifies whether to require lowercase characters for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one lowercase
+     * character (a to z).</p>
      */
     inline PasswordPolicy& WithRequireLowercaseCharacters(bool value) { SetRequireLowercaseCharacters(value); return *this;}
 

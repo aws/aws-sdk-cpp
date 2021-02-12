@@ -26,14 +26,10 @@ namespace Model
 {
 
   /**
-   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p>  <p>Part of the response from
-   * <a>GetSampledRequests</a>. This is a complex type that appears as
-   * <code>Request</code> in the response syntax. <code>HTTPRequest</code> contains
-   * information about one of the web requests. </p><p><h3>See Also:</h3>   <a
+   * <p>Part of the response from <a>GetSampledRequests</a>. This is a complex type
+   * that appears as <code>Request</code> in the response syntax.
+   * <code>HTTPRequest</code> contains information about one of the web requests.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/HTTPRequest">AWS
    * API Reference</a></p>
    */

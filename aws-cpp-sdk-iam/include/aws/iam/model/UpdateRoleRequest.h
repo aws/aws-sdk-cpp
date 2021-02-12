@@ -133,7 +133,7 @@ namespace Model
      * when you use those operations to create a console URL. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
-     * IAM Roles</a> in the <i>IAM User Guide</i>.</p>
+     * IAM roles</a> in the <i>IAM User Guide</i>.</p>
      */
     inline int GetMaxSessionDuration() const{ return m_maxSessionDuration; }
 
@@ -152,7 +152,7 @@ namespace Model
      * when you use those operations to create a console URL. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
-     * IAM Roles</a> in the <i>IAM User Guide</i>.</p>
+     * IAM roles</a> in the <i>IAM User Guide</i>.</p>
      */
     inline bool MaxSessionDurationHasBeenSet() const { return m_maxSessionDurationHasBeenSet; }
 
@@ -171,7 +171,7 @@ namespace Model
      * when you use those operations to create a console URL. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
-     * IAM Roles</a> in the <i>IAM User Guide</i>.</p>
+     * IAM roles</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetMaxSessionDuration(int value) { m_maxSessionDurationHasBeenSet = true; m_maxSessionDuration = value; }
 
@@ -190,7 +190,7 @@ namespace Model
      * when you use those operations to create a console URL. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
-     * IAM Roles</a> in the <i>IAM User Guide</i>.</p>
+     * IAM roles</a> in the <i>IAM User Guide</i>.</p>
      */
     inline UpdateRoleRequest& WithMaxSessionDuration(int value) { SetMaxSessionDuration(value); return *this;}
 

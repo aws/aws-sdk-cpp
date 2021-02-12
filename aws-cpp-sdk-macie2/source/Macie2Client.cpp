@@ -38,10 +38,12 @@
 #include <aws/macie2/model/DescribeOrganizationConfigurationRequest.h>
 #include <aws/macie2/model/DisableMacieRequest.h>
 #include <aws/macie2/model/DisableOrganizationAdminAccountRequest.h>
+#include <aws/macie2/model/DisassociateFromAdministratorAccountRequest.h>
 #include <aws/macie2/model/DisassociateFromMasterAccountRequest.h>
 #include <aws/macie2/model/DisassociateMemberRequest.h>
 #include <aws/macie2/model/EnableMacieRequest.h>
 #include <aws/macie2/model/EnableOrganizationAdminAccountRequest.h>
+#include <aws/macie2/model/GetAdministratorAccountRequest.h>
 #include <aws/macie2/model/GetBucketStatisticsRequest.h>
 #include <aws/macie2/model/GetClassificationExportConfigurationRequest.h>
 #include <aws/macie2/model/GetCustomDataIdentifierRequest.h>
@@ -660,6 +662,33 @@ void Macie2Client::DisableOrganizationAdminAccountAsyncHelper(const DisableOrgan
   handler(this, request, DisableOrganizationAdminAccount(request), context);
 }
 
+DisassociateFromAdministratorAccountOutcome Macie2Client::DisassociateFromAdministratorAccount(const DisassociateFromAdministratorAccountRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/administrator/disassociate";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DisassociateFromAdministratorAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateFromAdministratorAccountOutcomeCallable Macie2Client::DisassociateFromAdministratorAccountCallable(const DisassociateFromAdministratorAccountRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateFromAdministratorAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateFromAdministratorAccount(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Macie2Client::DisassociateFromAdministratorAccountAsync(const DisassociateFromAdministratorAccountRequest& request, const DisassociateFromAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateFromAdministratorAccountAsyncHelper( request, handler, context ); } );
+}
+
+void Macie2Client::DisassociateFromAdministratorAccountAsyncHelper(const DisassociateFromAdministratorAccountRequest& request, const DisassociateFromAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateFromAdministratorAccount(request), context);
+}
+
 DisassociateFromMasterAccountOutcome Macie2Client::DisassociateFromMasterAccount(const DisassociateFromMasterAccountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -772,6 +801,33 @@ void Macie2Client::EnableOrganizationAdminAccountAsync(const EnableOrganizationA
 void Macie2Client::EnableOrganizationAdminAccountAsyncHelper(const EnableOrganizationAdminAccountRequest& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, EnableOrganizationAdminAccount(request), context);
+}
+
+GetAdministratorAccountOutcome Macie2Client::GetAdministratorAccount(const GetAdministratorAccountRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/administrator";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetAdministratorAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetAdministratorAccountOutcomeCallable Macie2Client::GetAdministratorAccountCallable(const GetAdministratorAccountRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAdministratorAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAdministratorAccount(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Macie2Client::GetAdministratorAccountAsync(const GetAdministratorAccountRequest& request, const GetAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAdministratorAccountAsyncHelper( request, handler, context ); } );
+}
+
+void Macie2Client::GetAdministratorAccountAsyncHelper(const GetAdministratorAccountRequest& request, const GetAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAdministratorAccount(request), context);
 }
 
 GetBucketStatisticsOutcome Macie2Client::GetBucketStatistics(const GetBucketStatisticsRequest& request) const

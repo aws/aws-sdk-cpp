@@ -26,14 +26,10 @@ namespace Model
 {
 
   /**
-   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p>  <p>Defines an association between Amazon
-   * Kinesis Data Firehose destinations and a web ACL resource, for logging from AWS
-   * WAF. As part of the association, you can specify parts of the standard logging
-   * fields to keep out of the logs. </p><p><h3>See Also:</h3>   <a
+   * <p>Defines an association between Amazon Kinesis Data Firehose destinations and
+   * a web ACL resource, for logging from AWS WAF. As part of the association, you
+   * can specify parts of the standard logging fields to keep out of the logs.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/LoggingConfiguration">AWS
    * API Reference</a></p>
    */

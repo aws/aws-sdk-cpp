@@ -72,6 +72,42 @@ namespace Model
 
 
     /**
+     * <p>The AWS account ID for the administrator account.</p>
+     */
+    inline const Aws::String& GetAdministratorAccountId() const{ return m_administratorAccountId; }
+
+    /**
+     * <p>The AWS account ID for the administrator account.</p>
+     */
+    inline void SetAdministratorAccountId(const Aws::String& value) { m_administratorAccountId = value; }
+
+    /**
+     * <p>The AWS account ID for the administrator account.</p>
+     */
+    inline void SetAdministratorAccountId(Aws::String&& value) { m_administratorAccountId = std::move(value); }
+
+    /**
+     * <p>The AWS account ID for the administrator account.</p>
+     */
+    inline void SetAdministratorAccountId(const char* value) { m_administratorAccountId.assign(value); }
+
+    /**
+     * <p>The AWS account ID for the administrator account.</p>
+     */
+    inline GetMemberResult& WithAdministratorAccountId(const Aws::String& value) { SetAdministratorAccountId(value); return *this;}
+
+    /**
+     * <p>The AWS account ID for the administrator account.</p>
+     */
+    inline GetMemberResult& WithAdministratorAccountId(Aws::String&& value) { SetAdministratorAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS account ID for the administrator account.</p>
+     */
+    inline GetMemberResult& WithAdministratorAccountId(const char* value) { SetAdministratorAccountId(value); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) of the account.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
@@ -180,68 +216,82 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID for the master account.</p>
+     * <p>(Deprecated) The AWS account ID for the administrator account. This property
+     * has been replaced by the administratorAccountId property and is retained only
+     * for backward compatibility.</p>
      */
     inline const Aws::String& GetMasterAccountId() const{ return m_masterAccountId; }
 
     /**
-     * <p>The AWS account ID for the master account.</p>
+     * <p>(Deprecated) The AWS account ID for the administrator account. This property
+     * has been replaced by the administratorAccountId property and is retained only
+     * for backward compatibility.</p>
      */
     inline void SetMasterAccountId(const Aws::String& value) { m_masterAccountId = value; }
 
     /**
-     * <p>The AWS account ID for the master account.</p>
+     * <p>(Deprecated) The AWS account ID for the administrator account. This property
+     * has been replaced by the administratorAccountId property and is retained only
+     * for backward compatibility.</p>
      */
     inline void SetMasterAccountId(Aws::String&& value) { m_masterAccountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID for the master account.</p>
+     * <p>(Deprecated) The AWS account ID for the administrator account. This property
+     * has been replaced by the administratorAccountId property and is retained only
+     * for backward compatibility.</p>
      */
     inline void SetMasterAccountId(const char* value) { m_masterAccountId.assign(value); }
 
     /**
-     * <p>The AWS account ID for the master account.</p>
+     * <p>(Deprecated) The AWS account ID for the administrator account. This property
+     * has been replaced by the administratorAccountId property and is retained only
+     * for backward compatibility.</p>
      */
     inline GetMemberResult& WithMasterAccountId(const Aws::String& value) { SetMasterAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID for the master account.</p>
+     * <p>(Deprecated) The AWS account ID for the administrator account. This property
+     * has been replaced by the administratorAccountId property and is retained only
+     * for backward compatibility.</p>
      */
     inline GetMemberResult& WithMasterAccountId(Aws::String&& value) { SetMasterAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID for the master account.</p>
+     * <p>(Deprecated) The AWS account ID for the administrator account. This property
+     * has been replaced by the administratorAccountId property and is retained only
+     * for backward compatibility.</p>
      */
     inline GetMemberResult& WithMasterAccountId(const char* value) { SetMasterAccountId(value); return *this;}
 
 
     /**
-     * <p>The current status of the relationship between the account and the master
-     * account.</p>
+     * <p>The current status of the relationship between the account and the
+     * administrator account.</p>
      */
     inline const RelationshipStatus& GetRelationshipStatus() const{ return m_relationshipStatus; }
 
     /**
-     * <p>The current status of the relationship between the account and the master
-     * account.</p>
+     * <p>The current status of the relationship between the account and the
+     * administrator account.</p>
      */
     inline void SetRelationshipStatus(const RelationshipStatus& value) { m_relationshipStatus = value; }
 
     /**
-     * <p>The current status of the relationship between the account and the master
-     * account.</p>
+     * <p>The current status of the relationship between the account and the
+     * administrator account.</p>
      */
     inline void SetRelationshipStatus(RelationshipStatus&& value) { m_relationshipStatus = std::move(value); }
 
     /**
-     * <p>The current status of the relationship between the account and the master
-     * account.</p>
+     * <p>The current status of the relationship between the account and the
+     * administrator account.</p>
      */
     inline GetMemberResult& WithRelationshipStatus(const RelationshipStatus& value) { SetRelationshipStatus(value); return *this;}
 
     /**
-     * <p>The current status of the relationship between the account and the master
-     * account.</p>
+     * <p>The current status of the relationship between the account and the
+     * administrator account.</p>
      */
     inline GetMemberResult& WithRelationshipStatus(RelationshipStatus&& value) { SetRelationshipStatus(std::move(value)); return *this;}
 
@@ -321,42 +371,44 @@ namespace Model
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, of the most recent
-     * change to the status of the relationship between the account and the master
-     * account.</p>
+     * change to the status of the relationship between the account and the
+     * administrator account.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, of the most recent
-     * change to the status of the relationship between the account and the master
-     * account.</p>
+     * change to the status of the relationship between the account and the
+     * administrator account.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAt = value; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, of the most recent
-     * change to the status of the relationship between the account and the master
-     * account.</p>
+     * change to the status of the relationship between the account and the
+     * administrator account.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAt = std::move(value); }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, of the most recent
-     * change to the status of the relationship between the account and the master
-     * account.</p>
+     * change to the status of the relationship between the account and the
+     * administrator account.</p>
      */
     inline GetMemberResult& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, of the most recent
-     * change to the status of the relationship between the account and the master
-     * account.</p>
+     * change to the status of the relationship between the account and the
+     * administrator account.</p>
      */
     inline GetMemberResult& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_accountId;
+
+    Aws::String m_administratorAccountId;
 
     Aws::String m_arn;
 

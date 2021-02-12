@@ -26,6 +26,7 @@ DBClusterSnapshot::DBClusterSnapshot() :
     m_dBClusterIdentifierHasBeenSet(false),
     m_snapshotCreateTimeHasBeenSet(false),
     m_engineHasBeenSet(false),
+    m_engineModeHasBeenSet(false),
     m_allocatedStorage(0),
     m_allocatedStorageHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -56,6 +57,7 @@ DBClusterSnapshot::DBClusterSnapshot(const XmlNode& xmlNode) :
     m_dBClusterIdentifierHasBeenSet(false),
     m_snapshotCreateTimeHasBeenSet(false),
     m_engineHasBeenSet(false),
+    m_engineModeHasBeenSet(false),
     m_allocatedStorage(0),
     m_allocatedStorageHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -122,6 +124,12 @@ DBClusterSnapshot& DBClusterSnapshot::operator =(const XmlNode& xmlNode)
     {
       m_engine = Aws::Utils::Xml::DecodeEscapedXmlText(engineNode.GetText());
       m_engineHasBeenSet = true;
+    }
+    XmlNode engineModeNode = resultNode.FirstChild("EngineMode");
+    if(!engineModeNode.IsNull())
+    {
+      m_engineMode = Aws::Utils::Xml::DecodeEscapedXmlText(engineModeNode.GetText());
+      m_engineModeHasBeenSet = true;
     }
     XmlNode allocatedStorageNode = resultNode.FirstChild("AllocatedStorage");
     if(!allocatedStorageNode.IsNull())
@@ -261,6 +269,11 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << index << locationValue << ".Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
 
+  if(m_engineModeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EngineMode=" << StringUtils::URLEncode(m_engineMode.c_str()) << "&";
+  }
+
   if(m_allocatedStorageHasBeenSet)
   {
       oStream << location << index << locationValue << ".AllocatedStorage=" << m_allocatedStorage << "&";
@@ -374,6 +387,10 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
   if(m_engineHasBeenSet)
   {
       oStream << location << ".Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
+  }
+  if(m_engineModeHasBeenSet)
+  {
+      oStream << location << ".EngineMode=" << StringUtils::URLEncode(m_engineMode.c_str()) << "&";
   }
   if(m_allocatedStorageHasBeenSet)
   {

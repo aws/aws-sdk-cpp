@@ -118,6 +118,47 @@ namespace Model
      */
     inline ListActionTypesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>The Region to filter on for the list of action types.</p>
+     */
+    inline const Aws::String& GetRegionFilter() const{ return m_regionFilter; }
+
+    /**
+     * <p>The Region to filter on for the list of action types.</p>
+     */
+    inline bool RegionFilterHasBeenSet() const { return m_regionFilterHasBeenSet; }
+
+    /**
+     * <p>The Region to filter on for the list of action types.</p>
+     */
+    inline void SetRegionFilter(const Aws::String& value) { m_regionFilterHasBeenSet = true; m_regionFilter = value; }
+
+    /**
+     * <p>The Region to filter on for the list of action types.</p>
+     */
+    inline void SetRegionFilter(Aws::String&& value) { m_regionFilterHasBeenSet = true; m_regionFilter = std::move(value); }
+
+    /**
+     * <p>The Region to filter on for the list of action types.</p>
+     */
+    inline void SetRegionFilter(const char* value) { m_regionFilterHasBeenSet = true; m_regionFilter.assign(value); }
+
+    /**
+     * <p>The Region to filter on for the list of action types.</p>
+     */
+    inline ListActionTypesRequest& WithRegionFilter(const Aws::String& value) { SetRegionFilter(value); return *this;}
+
+    /**
+     * <p>The Region to filter on for the list of action types.</p>
+     */
+    inline ListActionTypesRequest& WithRegionFilter(Aws::String&& value) { SetRegionFilter(std::move(value)); return *this;}
+
+    /**
+     * <p>The Region to filter on for the list of action types.</p>
+     */
+    inline ListActionTypesRequest& WithRegionFilter(const char* value) { SetRegionFilter(value); return *this;}
+
   private:
 
     ActionOwner m_actionOwnerFilter;
@@ -125,6 +166,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
+    Aws::String m_regionFilter;
+    bool m_regionFilterHasBeenSet;
   };
 
 } // namespace Model

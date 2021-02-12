@@ -36,6 +36,12 @@ GetMemberResult& GetMemberResult::operator =(const Aws::AmazonWebServiceResult<J
 
   }
 
+  if(jsonValue.ValueExists("administratorAccountId"))
+  {
+    m_administratorAccountId = jsonValue.GetString("administratorAccountId");
+
+  }
+
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");

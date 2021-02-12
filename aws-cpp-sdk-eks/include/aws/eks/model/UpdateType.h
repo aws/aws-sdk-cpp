@@ -20,6 +20,8 @@ namespace Model
     EndpointAccessUpdate,
     LoggingUpdate,
     ConfigUpdate,
+    AssociateIdentityProviderConfig,
+    DisassociateIdentityProviderConfig,
     AddonUpdate
   };
 

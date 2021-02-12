@@ -227,44 +227,93 @@ namespace Model
 
 
     /**
-     * <p>Specifies the name of the database engine.</p>
+     * <p>Specifies the name of the database engine for this DB cluster snapshot.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>Specifies the name of the database engine.</p>
+     * <p>Specifies the name of the database engine for this DB cluster snapshot.</p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p>Specifies the name of the database engine.</p>
+     * <p>Specifies the name of the database engine for this DB cluster snapshot.</p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>Specifies the name of the database engine.</p>
+     * <p>Specifies the name of the database engine for this DB cluster snapshot.</p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>Specifies the name of the database engine.</p>
+     * <p>Specifies the name of the database engine for this DB cluster snapshot.</p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p>Specifies the name of the database engine.</p>
+     * <p>Specifies the name of the database engine for this DB cluster snapshot.</p>
      */
     inline DBClusterSnapshot& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>Specifies the name of the database engine.</p>
+     * <p>Specifies the name of the database engine for this DB cluster snapshot.</p>
      */
     inline DBClusterSnapshot& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the name of the database engine.</p>
+     * <p>Specifies the name of the database engine for this DB cluster snapshot.</p>
      */
     inline DBClusterSnapshot& WithEngine(const char* value) { SetEngine(value); return *this;}
+
+
+    /**
+     * <p>Provides the engine mode of the database engine for this DB cluster
+     * snapshot.</p>
+     */
+    inline const Aws::String& GetEngineMode() const{ return m_engineMode; }
+
+    /**
+     * <p>Provides the engine mode of the database engine for this DB cluster
+     * snapshot.</p>
+     */
+    inline bool EngineModeHasBeenSet() const { return m_engineModeHasBeenSet; }
+
+    /**
+     * <p>Provides the engine mode of the database engine for this DB cluster
+     * snapshot.</p>
+     */
+    inline void SetEngineMode(const Aws::String& value) { m_engineModeHasBeenSet = true; m_engineMode = value; }
+
+    /**
+     * <p>Provides the engine mode of the database engine for this DB cluster
+     * snapshot.</p>
+     */
+    inline void SetEngineMode(Aws::String&& value) { m_engineModeHasBeenSet = true; m_engineMode = std::move(value); }
+
+    /**
+     * <p>Provides the engine mode of the database engine for this DB cluster
+     * snapshot.</p>
+     */
+    inline void SetEngineMode(const char* value) { m_engineModeHasBeenSet = true; m_engineMode.assign(value); }
+
+    /**
+     * <p>Provides the engine mode of the database engine for this DB cluster
+     * snapshot.</p>
+     */
+    inline DBClusterSnapshot& WithEngineMode(const Aws::String& value) { SetEngineMode(value); return *this;}
+
+    /**
+     * <p>Provides the engine mode of the database engine for this DB cluster
+     * snapshot.</p>
+     */
+    inline DBClusterSnapshot& WithEngineMode(Aws::String&& value) { SetEngineMode(std::move(value)); return *this;}
+
+    /**
+     * <p>Provides the engine mode of the database engine for this DB cluster
+     * snapshot.</p>
+     */
+    inline DBClusterSnapshot& WithEngineMode(const char* value) { SetEngineMode(value); return *this;}
 
 
     /**
@@ -433,42 +482,42 @@ namespace Model
 
 
     /**
-     * <p>Provides the master username for the DB cluster snapshot.</p>
+     * <p>Provides the master username for this DB cluster snapshot.</p>
      */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
 
     /**
-     * <p>Provides the master username for the DB cluster snapshot.</p>
+     * <p>Provides the master username for this DB cluster snapshot.</p>
      */
     inline bool MasterUsernameHasBeenSet() const { return m_masterUsernameHasBeenSet; }
 
     /**
-     * <p>Provides the master username for the DB cluster snapshot.</p>
+     * <p>Provides the master username for this DB cluster snapshot.</p>
      */
     inline void SetMasterUsername(const Aws::String& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
 
     /**
-     * <p>Provides the master username for the DB cluster snapshot.</p>
+     * <p>Provides the master username for this DB cluster snapshot.</p>
      */
     inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::move(value); }
 
     /**
-     * <p>Provides the master username for the DB cluster snapshot.</p>
+     * <p>Provides the master username for this DB cluster snapshot.</p>
      */
     inline void SetMasterUsername(const char* value) { m_masterUsernameHasBeenSet = true; m_masterUsername.assign(value); }
 
     /**
-     * <p>Provides the master username for the DB cluster snapshot.</p>
+     * <p>Provides the master username for this DB cluster snapshot.</p>
      */
     inline DBClusterSnapshot& WithMasterUsername(const Aws::String& value) { SetMasterUsername(value); return *this;}
 
     /**
-     * <p>Provides the master username for the DB cluster snapshot.</p>
+     * <p>Provides the master username for this DB cluster snapshot.</p>
      */
     inline DBClusterSnapshot& WithMasterUsername(Aws::String&& value) { SetMasterUsername(std::move(value)); return *this;}
 
     /**
-     * <p>Provides the master username for the DB cluster snapshot.</p>
+     * <p>Provides the master username for this DB cluster snapshot.</p>
      */
     inline DBClusterSnapshot& WithMasterUsername(const char* value) { SetMasterUsername(value); return *this;}
 
@@ -858,6 +907,9 @@ namespace Model
 
     Aws::String m_engine;
     bool m_engineHasBeenSet;
+
+    Aws::String m_engineMode;
+    bool m_engineModeHasBeenSet;
 
     int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;

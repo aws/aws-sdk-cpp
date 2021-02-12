@@ -34,7 +34,8 @@ Policy::Policy() :
     m_isAttachableHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_createDateHasBeenSet(false),
-    m_updateDateHasBeenSet(false)
+    m_updateDateHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ Policy::Policy(const XmlNode& xmlNode) :
     m_isAttachableHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_createDateHasBeenSet(false),
-    m_updateDateHasBeenSet(false)
+    m_updateDateHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -129,6 +131,18 @@ Policy& Policy::operator =(const XmlNode& xmlNode)
       m_updateDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_updateDateHasBeenSet = true;
     }
+    XmlNode tagsNode = resultNode.FirstChild("Tags");
+    if(!tagsNode.IsNull())
+    {
+      XmlNode tagsMember = tagsNode.FirstChild("member");
+      while(!tagsMember.IsNull())
+      {
+        m_tags.push_back(tagsMember);
+        tagsMember = tagsMember.NextNode("member");
+      }
+
+      m_tagsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -191,6 +205,17 @@ void Policy::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       oStream << location << index << locationValue << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location << index << locationValue << ".Tags.member." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
+  }
+
 }
 
 void Policy::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -238,6 +263,16 @@ void Policy::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_updateDateHasBeenSet)
   {
       oStream << location << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".Tags.member." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
   }
 }
 

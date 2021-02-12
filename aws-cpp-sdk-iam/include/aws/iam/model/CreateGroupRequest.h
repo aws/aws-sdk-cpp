@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p> The path to the group. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
@@ -53,7 +53,7 @@ namespace Model
     /**
      * <p> The path to the group. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
@@ -67,7 +67,7 @@ namespace Model
     /**
      * <p> The path to the group. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
@@ -81,7 +81,7 @@ namespace Model
     /**
      * <p> The path to the group. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
@@ -95,7 +95,7 @@ namespace Model
     /**
      * <p> The path to the group. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
@@ -109,7 +109,7 @@ namespace Model
     /**
      * <p> The path to the group. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
@@ -123,7 +123,7 @@ namespace Model
     /**
      * <p> The path to the group. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
@@ -137,7 +137,7 @@ namespace Model
     /**
      * <p> The path to the group. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a

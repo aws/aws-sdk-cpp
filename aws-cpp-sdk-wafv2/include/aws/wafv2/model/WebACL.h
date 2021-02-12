@@ -29,20 +29,15 @@ namespace Model
 {
 
   /**
-   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p>  <p> A Web ACL defines a collection of
-   * rules to use to inspect and control web requests. Each rule has an action
-   * defined (allow, block, or count) for requests that match the statement of the
-   * rule. In the Web ACL, you assign a default action to take (allow, block) for any
-   * request that does not match any of the rules. The rules in a Web ACL can be a
-   * combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group.
-   * You can associate a Web ACL with one or more AWS resources to protect. The
-   * resources can be Amazon CloudFront, an Amazon API Gateway REST API, an
-   * Application Load Balancer, or an AWS AppSync GraphQL API. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p> A Web ACL defines a collection of rules to use to inspect and control web
+   * requests. Each rule has an action defined (allow, block, or count) for requests
+   * that match the statement of the rule. In the Web ACL, you assign a default
+   * action to take (allow, block) for any request that does not match any of the
+   * rules. The rules in a Web ACL can be a combination of the types <a>Rule</a>,
+   * <a>RuleGroup</a>, and managed rule group. You can associate a Web ACL with one
+   * or more AWS resources to protect. The resources can be Amazon CloudFront, an
+   * Amazon API Gateway REST API, an Application Load Balancer, or an AWS AppSync
+   * GraphQL API. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/WebACL">AWS API
    * Reference</a></p>
    */
@@ -248,50 +243,42 @@ namespace Model
 
 
     /**
-     * <p>A description of the Web ACL that helps with identification. You cannot
-     * change the description of a Web ACL after you create it.</p>
+     * <p>A description of the Web ACL that helps with identification. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A description of the Web ACL that helps with identification. You cannot
-     * change the description of a Web ACL after you create it.</p>
+     * <p>A description of the Web ACL that helps with identification. </p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A description of the Web ACL that helps with identification. You cannot
-     * change the description of a Web ACL after you create it.</p>
+     * <p>A description of the Web ACL that helps with identification. </p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A description of the Web ACL that helps with identification. You cannot
-     * change the description of a Web ACL after you create it.</p>
+     * <p>A description of the Web ACL that helps with identification. </p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A description of the Web ACL that helps with identification. You cannot
-     * change the description of a Web ACL after you create it.</p>
+     * <p>A description of the Web ACL that helps with identification. </p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A description of the Web ACL that helps with identification. You cannot
-     * change the description of a Web ACL after you create it.</p>
+     * <p>A description of the Web ACL that helps with identification. </p>
      */
     inline WebACL& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A description of the Web ACL that helps with identification. You cannot
-     * change the description of a Web ACL after you create it.</p>
+     * <p>A description of the Web ACL that helps with identification. </p>
      */
     inline WebACL& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description of the Web ACL that helps with identification. You cannot
-     * change the description of a Web ACL after you create it.</p>
+     * <p>A description of the Web ACL that helps with identification. </p>
      */
     inline WebACL& WithDescription(const char* value) { SetDescription(value); return *this;}
 

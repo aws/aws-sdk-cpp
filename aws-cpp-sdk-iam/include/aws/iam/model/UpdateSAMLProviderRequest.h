@@ -113,8 +113,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the SAML provider to update.</p> <p>For
      * more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline const Aws::String& GetSAMLProviderArn() const{ return m_sAMLProviderArn; }
 
@@ -122,8 +121,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the SAML provider to update.</p> <p>For
      * more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline bool SAMLProviderArnHasBeenSet() const { return m_sAMLProviderArnHasBeenSet; }
 
@@ -131,8 +129,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the SAML provider to update.</p> <p>For
      * more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetSAMLProviderArn(const Aws::String& value) { m_sAMLProviderArnHasBeenSet = true; m_sAMLProviderArn = value; }
 
@@ -140,8 +137,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the SAML provider to update.</p> <p>For
      * more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetSAMLProviderArn(Aws::String&& value) { m_sAMLProviderArnHasBeenSet = true; m_sAMLProviderArn = std::move(value); }
 
@@ -149,8 +145,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the SAML provider to update.</p> <p>For
      * more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetSAMLProviderArn(const char* value) { m_sAMLProviderArnHasBeenSet = true; m_sAMLProviderArn.assign(value); }
 
@@ -158,8 +153,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the SAML provider to update.</p> <p>For
      * more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline UpdateSAMLProviderRequest& WithSAMLProviderArn(const Aws::String& value) { SetSAMLProviderArn(value); return *this;}
 
@@ -167,8 +161,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the SAML provider to update.</p> <p>For
      * more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline UpdateSAMLProviderRequest& WithSAMLProviderArn(Aws::String&& value) { SetSAMLProviderArn(std::move(value)); return *this;}
 
@@ -176,8 +169,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the SAML provider to update.</p> <p>For
      * more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline UpdateSAMLProviderRequest& WithSAMLProviderArn(const char* value) { SetSAMLProviderArn(value); return *this;}
 

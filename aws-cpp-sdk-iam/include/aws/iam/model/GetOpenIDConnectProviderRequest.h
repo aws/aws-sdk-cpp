@@ -42,8 +42,7 @@ namespace Model
      * the <a>ListOpenIDConnectProviders</a> operation.</p> <p>For more information
      * about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline const Aws::String& GetOpenIDConnectProviderArn() const{ return m_openIDConnectProviderArn; }
 
@@ -53,8 +52,7 @@ namespace Model
      * the <a>ListOpenIDConnectProviders</a> operation.</p> <p>For more information
      * about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline bool OpenIDConnectProviderArnHasBeenSet() const { return m_openIDConnectProviderArnHasBeenSet; }
 
@@ -64,8 +62,7 @@ namespace Model
      * the <a>ListOpenIDConnectProviders</a> operation.</p> <p>For more information
      * about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetOpenIDConnectProviderArn(const Aws::String& value) { m_openIDConnectProviderArnHasBeenSet = true; m_openIDConnectProviderArn = value; }
 
@@ -75,8 +72,7 @@ namespace Model
      * the <a>ListOpenIDConnectProviders</a> operation.</p> <p>For more information
      * about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetOpenIDConnectProviderArn(Aws::String&& value) { m_openIDConnectProviderArnHasBeenSet = true; m_openIDConnectProviderArn = std::move(value); }
 
@@ -86,8 +82,7 @@ namespace Model
      * the <a>ListOpenIDConnectProviders</a> operation.</p> <p>For more information
      * about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetOpenIDConnectProviderArn(const char* value) { m_openIDConnectProviderArnHasBeenSet = true; m_openIDConnectProviderArn.assign(value); }
 
@@ -97,8 +92,7 @@ namespace Model
      * the <a>ListOpenIDConnectProviders</a> operation.</p> <p>For more information
      * about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline GetOpenIDConnectProviderRequest& WithOpenIDConnectProviderArn(const Aws::String& value) { SetOpenIDConnectProviderArn(value); return *this;}
 
@@ -108,8 +102,7 @@ namespace Model
      * the <a>ListOpenIDConnectProviders</a> operation.</p> <p>For more information
      * about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline GetOpenIDConnectProviderRequest& WithOpenIDConnectProviderArn(Aws::String&& value) { SetOpenIDConnectProviderArn(std::move(value)); return *this;}
 
@@ -119,8 +112,7 @@ namespace Model
      * the <a>ListOpenIDConnectProviders</a> operation.</p> <p>For more information
      * about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline GetOpenIDConnectProviderRequest& WithOpenIDConnectProviderArn(const char* value) { SetOpenIDConnectProviderArn(value); return *this;}
 

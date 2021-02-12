@@ -45,8 +45,7 @@ namespace Model
      * specify a user, the simulation also includes all policies that are attached to
      * any groups the user belongs to.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline const Aws::String& GetPolicySourceArn() const{ return m_policySourceArn; }
 
@@ -57,8 +56,7 @@ namespace Model
      * specify a user, the simulation also includes all policies that are attached to
      * any groups the user belongs to.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline bool PolicySourceArnHasBeenSet() const { return m_policySourceArnHasBeenSet; }
 
@@ -69,8 +67,7 @@ namespace Model
      * specify a user, the simulation also includes all policies that are attached to
      * any groups the user belongs to.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetPolicySourceArn(const Aws::String& value) { m_policySourceArnHasBeenSet = true; m_policySourceArn = value; }
 
@@ -81,8 +78,7 @@ namespace Model
      * specify a user, the simulation also includes all policies that are attached to
      * any groups the user belongs to.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetPolicySourceArn(Aws::String&& value) { m_policySourceArnHasBeenSet = true; m_policySourceArn = std::move(value); }
 
@@ -93,8 +89,7 @@ namespace Model
      * specify a user, the simulation also includes all policies that are attached to
      * any groups the user belongs to.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetPolicySourceArn(const char* value) { m_policySourceArnHasBeenSet = true; m_policySourceArn.assign(value); }
 
@@ -105,8 +100,7 @@ namespace Model
      * specify a user, the simulation also includes all policies that are attached to
      * any groups the user belongs to.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline SimulatePrincipalPolicyRequest& WithPolicySourceArn(const Aws::String& value) { SetPolicySourceArn(value); return *this;}
 
@@ -117,8 +111,7 @@ namespace Model
      * specify a user, the simulation also includes all policies that are attached to
      * any groups the user belongs to.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline SimulatePrincipalPolicyRequest& WithPolicySourceArn(Aws::String&& value) { SetPolicySourceArn(std::move(value)); return *this;}
 
@@ -129,8 +122,7 @@ namespace Model
      * specify a user, the simulation also includes all policies that are attached to
      * any groups the user belongs to.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline SimulatePrincipalPolicyRequest& WithPolicySourceArn(const char* value) { SetPolicySourceArn(value); return *this;}
 
@@ -272,7 +264,7 @@ namespace Model
      * boundary policy is used for the simulation. For more information about
      * permissions boundaries, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     * Boundaries for IAM Entities</a> in the <i>IAM User Guide</i>. The policy input
+     * boundaries for IAM entities</a> in the <i>IAM User Guide</i>. The policy input
      * is specified as a string containing the complete, valid JSON text of a
      * permissions boundary policy.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
@@ -296,7 +288,7 @@ namespace Model
      * boundary policy is used for the simulation. For more information about
      * permissions boundaries, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     * Boundaries for IAM Entities</a> in the <i>IAM User Guide</i>. The policy input
+     * boundaries for IAM entities</a> in the <i>IAM User Guide</i>. The policy input
      * is specified as a string containing the complete, valid JSON text of a
      * permissions boundary policy.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
@@ -320,7 +312,7 @@ namespace Model
      * boundary policy is used for the simulation. For more information about
      * permissions boundaries, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     * Boundaries for IAM Entities</a> in the <i>IAM User Guide</i>. The policy input
+     * boundaries for IAM entities</a> in the <i>IAM User Guide</i>. The policy input
      * is specified as a string containing the complete, valid JSON text of a
      * permissions boundary policy.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
@@ -344,7 +336,7 @@ namespace Model
      * boundary policy is used for the simulation. For more information about
      * permissions boundaries, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     * Boundaries for IAM Entities</a> in the <i>IAM User Guide</i>. The policy input
+     * boundaries for IAM entities</a> in the <i>IAM User Guide</i>. The policy input
      * is specified as a string containing the complete, valid JSON text of a
      * permissions boundary policy.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
@@ -368,7 +360,7 @@ namespace Model
      * boundary policy is used for the simulation. For more information about
      * permissions boundaries, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     * Boundaries for IAM Entities</a> in the <i>IAM User Guide</i>. The policy input
+     * boundaries for IAM entities</a> in the <i>IAM User Guide</i>. The policy input
      * is specified as a string containing the complete, valid JSON text of a
      * permissions boundary policy.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
@@ -392,7 +384,7 @@ namespace Model
      * boundary policy is used for the simulation. For more information about
      * permissions boundaries, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     * Boundaries for IAM Entities</a> in the <i>IAM User Guide</i>. The policy input
+     * boundaries for IAM entities</a> in the <i>IAM User Guide</i>. The policy input
      * is specified as a string containing the complete, valid JSON text of a
      * permissions boundary policy.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
@@ -416,7 +408,7 @@ namespace Model
      * boundary policy is used for the simulation. For more information about
      * permissions boundaries, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     * Boundaries for IAM Entities</a> in the <i>IAM User Guide</i>. The policy input
+     * boundaries for IAM entities</a> in the <i>IAM User Guide</i>. The policy input
      * is specified as a string containing the complete, valid JSON text of a
      * permissions boundary policy.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
@@ -440,7 +432,7 @@ namespace Model
      * boundary policy is used for the simulation. For more information about
      * permissions boundaries, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     * Boundaries for IAM Entities</a> in the <i>IAM User Guide</i>. The policy input
+     * boundaries for IAM entities</a> in the <i>IAM User Guide</i>. The policy input
      * is specified as a string containing the complete, valid JSON text of a
      * permissions boundary policy.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
@@ -464,7 +456,7 @@ namespace Model
      * boundary policy is used for the simulation. For more information about
      * permissions boundaries, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     * Boundaries for IAM Entities</a> in the <i>IAM User Guide</i>. The policy input
+     * boundaries for IAM entities</a> in the <i>IAM User Guide</i>. The policy input
      * is specified as a string containing the complete, valid JSON text of a
      * permissions boundary policy.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
@@ -548,14 +540,14 @@ namespace Model
      * parameter is not provided, then the value defaults to <code>*</code> (all
      * resources). Each API in the <code>ActionNames</code> parameter is evaluated for
      * each resource in this list. The simulation determines the access result (allowed
-     * or denied) of each combination and reports it in the response.</p> <p>The
-     * simulation does not automatically retrieve policies for the specified resources.
-     * If you want to include a resource policy in the simulation, then you must
-     * include the policy as a string in the <code>ResourcePolicy</code> parameter.</p>
-     * <p>For more information about ARNs, see <a
+     * or denied) of each combination and reports it in the response. You can simulate
+     * resources that don't exist in your account.</p> <p>The simulation does not
+     * automatically retrieve policies for the specified resources. If you want to
+     * include a resource policy in the simulation, then you must include the policy as
+     * a string in the <code>ResourcePolicy</code> parameter.</p> <p>For more
+     * information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceArns() const{ return m_resourceArns; }
 
@@ -564,14 +556,14 @@ namespace Model
      * parameter is not provided, then the value defaults to <code>*</code> (all
      * resources). Each API in the <code>ActionNames</code> parameter is evaluated for
      * each resource in this list. The simulation determines the access result (allowed
-     * or denied) of each combination and reports it in the response.</p> <p>The
-     * simulation does not automatically retrieve policies for the specified resources.
-     * If you want to include a resource policy in the simulation, then you must
-     * include the policy as a string in the <code>ResourcePolicy</code> parameter.</p>
-     * <p>For more information about ARNs, see <a
+     * or denied) of each combination and reports it in the response. You can simulate
+     * resources that don't exist in your account.</p> <p>The simulation does not
+     * automatically retrieve policies for the specified resources. If you want to
+     * include a resource policy in the simulation, then you must include the policy as
+     * a string in the <code>ResourcePolicy</code> parameter.</p> <p>For more
+     * information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline bool ResourceArnsHasBeenSet() const { return m_resourceArnsHasBeenSet; }
 
@@ -580,14 +572,14 @@ namespace Model
      * parameter is not provided, then the value defaults to <code>*</code> (all
      * resources). Each API in the <code>ActionNames</code> parameter is evaluated for
      * each resource in this list. The simulation determines the access result (allowed
-     * or denied) of each combination and reports it in the response.</p> <p>The
-     * simulation does not automatically retrieve policies for the specified resources.
-     * If you want to include a resource policy in the simulation, then you must
-     * include the policy as a string in the <code>ResourcePolicy</code> parameter.</p>
-     * <p>For more information about ARNs, see <a
+     * or denied) of each combination and reports it in the response. You can simulate
+     * resources that don't exist in your account.</p> <p>The simulation does not
+     * automatically retrieve policies for the specified resources. If you want to
+     * include a resource policy in the simulation, then you must include the policy as
+     * a string in the <code>ResourcePolicy</code> parameter.</p> <p>For more
+     * information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetResourceArns(const Aws::Vector<Aws::String>& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = value; }
 
@@ -596,14 +588,14 @@ namespace Model
      * parameter is not provided, then the value defaults to <code>*</code> (all
      * resources). Each API in the <code>ActionNames</code> parameter is evaluated for
      * each resource in this list. The simulation determines the access result (allowed
-     * or denied) of each combination and reports it in the response.</p> <p>The
-     * simulation does not automatically retrieve policies for the specified resources.
-     * If you want to include a resource policy in the simulation, then you must
-     * include the policy as a string in the <code>ResourcePolicy</code> parameter.</p>
-     * <p>For more information about ARNs, see <a
+     * or denied) of each combination and reports it in the response. You can simulate
+     * resources that don't exist in your account.</p> <p>The simulation does not
+     * automatically retrieve policies for the specified resources. If you want to
+     * include a resource policy in the simulation, then you must include the policy as
+     * a string in the <code>ResourcePolicy</code> parameter.</p> <p>For more
+     * information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetResourceArns(Aws::Vector<Aws::String>&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = std::move(value); }
 
@@ -612,14 +604,14 @@ namespace Model
      * parameter is not provided, then the value defaults to <code>*</code> (all
      * resources). Each API in the <code>ActionNames</code> parameter is evaluated for
      * each resource in this list. The simulation determines the access result (allowed
-     * or denied) of each combination and reports it in the response.</p> <p>The
-     * simulation does not automatically retrieve policies for the specified resources.
-     * If you want to include a resource policy in the simulation, then you must
-     * include the policy as a string in the <code>ResourcePolicy</code> parameter.</p>
-     * <p>For more information about ARNs, see <a
+     * or denied) of each combination and reports it in the response. You can simulate
+     * resources that don't exist in your account.</p> <p>The simulation does not
+     * automatically retrieve policies for the specified resources. If you want to
+     * include a resource policy in the simulation, then you must include the policy as
+     * a string in the <code>ResourcePolicy</code> parameter.</p> <p>For more
+     * information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline SimulatePrincipalPolicyRequest& WithResourceArns(const Aws::Vector<Aws::String>& value) { SetResourceArns(value); return *this;}
 
@@ -628,14 +620,14 @@ namespace Model
      * parameter is not provided, then the value defaults to <code>*</code> (all
      * resources). Each API in the <code>ActionNames</code> parameter is evaluated for
      * each resource in this list. The simulation determines the access result (allowed
-     * or denied) of each combination and reports it in the response.</p> <p>The
-     * simulation does not automatically retrieve policies for the specified resources.
-     * If you want to include a resource policy in the simulation, then you must
-     * include the policy as a string in the <code>ResourcePolicy</code> parameter.</p>
-     * <p>For more information about ARNs, see <a
+     * or denied) of each combination and reports it in the response. You can simulate
+     * resources that don't exist in your account.</p> <p>The simulation does not
+     * automatically retrieve policies for the specified resources. If you want to
+     * include a resource policy in the simulation, then you must include the policy as
+     * a string in the <code>ResourcePolicy</code> parameter.</p> <p>For more
+     * information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline SimulatePrincipalPolicyRequest& WithResourceArns(Aws::Vector<Aws::String>&& value) { SetResourceArns(std::move(value)); return *this;}
 
@@ -644,14 +636,14 @@ namespace Model
      * parameter is not provided, then the value defaults to <code>*</code> (all
      * resources). Each API in the <code>ActionNames</code> parameter is evaluated for
      * each resource in this list. The simulation determines the access result (allowed
-     * or denied) of each combination and reports it in the response.</p> <p>The
-     * simulation does not automatically retrieve policies for the specified resources.
-     * If you want to include a resource policy in the simulation, then you must
-     * include the policy as a string in the <code>ResourcePolicy</code> parameter.</p>
-     * <p>For more information about ARNs, see <a
+     * or denied) of each combination and reports it in the response. You can simulate
+     * resources that don't exist in your account.</p> <p>The simulation does not
+     * automatically retrieve policies for the specified resources. If you want to
+     * include a resource policy in the simulation, then you must include the policy as
+     * a string in the <code>ResourcePolicy</code> parameter.</p> <p>For more
+     * information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline SimulatePrincipalPolicyRequest& AddResourceArns(const Aws::String& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
 
@@ -660,14 +652,14 @@ namespace Model
      * parameter is not provided, then the value defaults to <code>*</code> (all
      * resources). Each API in the <code>ActionNames</code> parameter is evaluated for
      * each resource in this list. The simulation determines the access result (allowed
-     * or denied) of each combination and reports it in the response.</p> <p>The
-     * simulation does not automatically retrieve policies for the specified resources.
-     * If you want to include a resource policy in the simulation, then you must
-     * include the policy as a string in the <code>ResourcePolicy</code> parameter.</p>
-     * <p>For more information about ARNs, see <a
+     * or denied) of each combination and reports it in the response. You can simulate
+     * resources that don't exist in your account.</p> <p>The simulation does not
+     * automatically retrieve policies for the specified resources. If you want to
+     * include a resource policy in the simulation, then you must include the policy as
+     * a string in the <code>ResourcePolicy</code> parameter.</p> <p>For more
+     * information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline SimulatePrincipalPolicyRequest& AddResourceArns(Aws::String&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(std::move(value)); return *this; }
 
@@ -676,14 +668,14 @@ namespace Model
      * parameter is not provided, then the value defaults to <code>*</code> (all
      * resources). Each API in the <code>ActionNames</code> parameter is evaluated for
      * each resource in this list. The simulation determines the access result (allowed
-     * or denied) of each combination and reports it in the response.</p> <p>The
-     * simulation does not automatically retrieve policies for the specified resources.
-     * If you want to include a resource policy in the simulation, then you must
-     * include the policy as a string in the <code>ResourcePolicy</code> parameter.</p>
-     * <p>For more information about ARNs, see <a
+     * or denied) of each combination and reports it in the response. You can simulate
+     * resources that don't exist in your account.</p> <p>The simulation does not
+     * automatically retrieve policies for the specified resources. If you want to
+     * include a resource policy in the simulation, then you must include the policy as
+     * a string in the <code>ResourcePolicy</code> parameter.</p> <p>For more
+     * information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline SimulatePrincipalPolicyRequest& AddResourceArns(const char* value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
 
@@ -939,8 +931,7 @@ namespace Model
      * a value to use in evaluating the policy.</p> <p>For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline const Aws::String& GetCallerArn() const{ return m_callerArn; }
 
@@ -961,8 +952,7 @@ namespace Model
      * a value to use in evaluating the policy.</p> <p>For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline bool CallerArnHasBeenSet() const { return m_callerArnHasBeenSet; }
 
@@ -983,8 +973,7 @@ namespace Model
      * a value to use in evaluating the policy.</p> <p>For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetCallerArn(const Aws::String& value) { m_callerArnHasBeenSet = true; m_callerArn = value; }
 
@@ -1005,8 +994,7 @@ namespace Model
      * a value to use in evaluating the policy.</p> <p>For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetCallerArn(Aws::String&& value) { m_callerArnHasBeenSet = true; m_callerArn = std::move(value); }
 
@@ -1027,8 +1015,7 @@ namespace Model
      * a value to use in evaluating the policy.</p> <p>For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetCallerArn(const char* value) { m_callerArnHasBeenSet = true; m_callerArn.assign(value); }
 
@@ -1049,8 +1036,7 @@ namespace Model
      * a value to use in evaluating the policy.</p> <p>For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline SimulatePrincipalPolicyRequest& WithCallerArn(const Aws::String& value) { SetCallerArn(value); return *this;}
 
@@ -1071,8 +1057,7 @@ namespace Model
      * a value to use in evaluating the policy.</p> <p>For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline SimulatePrincipalPolicyRequest& WithCallerArn(Aws::String&& value) { SetCallerArn(std::move(value)); return *this;}
 
@@ -1093,8 +1078,7 @@ namespace Model
      * a value to use in evaluating the policy.</p> <p>For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline SimulatePrincipalPolicyRequest& WithCallerArn(const char* value) { SetCallerArn(value); return *this;}
 
@@ -1171,7 +1155,7 @@ namespace Model
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
+     * platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,
      * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
@@ -1199,7 +1183,7 @@ namespace Model
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
+     * platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,
      * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
@@ -1227,7 +1211,7 @@ namespace Model
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
+     * platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,
      * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
@@ -1255,7 +1239,7 @@ namespace Model
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
+     * platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,
      * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
@@ -1283,7 +1267,7 @@ namespace Model
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
+     * platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,
      * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
@@ -1311,7 +1295,7 @@ namespace Model
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
+     * platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,
      * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
@@ -1339,7 +1323,7 @@ namespace Model
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
+     * platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,
      * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
@@ -1367,7 +1351,7 @@ namespace Model
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
+     * platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,
      * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
