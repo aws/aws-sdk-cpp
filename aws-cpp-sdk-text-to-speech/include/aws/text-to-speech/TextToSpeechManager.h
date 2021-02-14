@@ -85,6 +85,11 @@ namespace Aws
             Aws::Vector<std::pair<Aws::String, Aws::String>> ListAvailableVoices() const;
 
             /**
+             * Sets the active engine for use with the Polly Service.
+             */
+            void SetActiveEngine(const Aws::String& engine);
+
+            /**
              * Sets the active voice for use with the Polly Service.
              */
             void SetActiveVoice(const Aws::String& voice);
@@ -99,6 +104,7 @@ namespace Aws
             Polly::PollyClient* m_pollyClient;
             std::shared_ptr<PCMOutputDriver> m_activeDriver;
             Aws::Vector<std::shared_ptr<PCMOutputDriver>> m_drivers;
+            std::atomic<Polly::Model::Engine> m_activeEngine;
             std::atomic<Polly::Model::VoiceId> m_activeVoice;
             CapabilityInfo m_selectedCaps;
             mutable std::mutex m_driverLock;

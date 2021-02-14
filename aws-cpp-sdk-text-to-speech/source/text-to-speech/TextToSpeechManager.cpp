@@ -41,7 +41,7 @@ namespace Aws
 
         TextToSpeechManager::TextToSpeechManager(const std::shared_ptr<Polly::PollyClient>& pollyClient, 
             const std::shared_ptr<PCMOutputDriverFactory>& driverFactory) 
-            : m_pollyClient(pollyClient.get()), m_activeVoice(VoiceId::Kimberly)
+            : m_pollyClient(pollyClient.get()), m_activeEngine(Engine::standard), m_activeVoice(VoiceId::Kimberly)
         {
             m_drivers = (driverFactory ? driverFactory : DefaultPCMOutputDriverFactoryInitFn())->LoadDrivers();
         }
@@ -66,6 +66,7 @@ namespace Aws
                 .WithSampleRate(StringUtils::to_string(m_selectedCaps.sampleRate))
                 .WithTextType(TextType::text)
                 .WithText(text)
+                .WithEngine(m_activeEngine)
                 .WithVoiceId(m_activeVoice);
 
             auto context = Aws::MakeShared<SendTextCompletionHandlerCallbackContext>(CLASS_TAG);
@@ -126,6 +127,12 @@ namespace Aws
             }
 
             return m_voices;
+        }
+
+        void TextToSpeechManager::SetActiveEngine(const Aws::String& engine)
+        {
+            AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Setting active engine as: " << engine);
+            m_activeEngine = EngineMapper::GetEngineForName(engine);
         }
 
         void TextToSpeechManager::SetActiveVoice(const Aws::String& voice)
