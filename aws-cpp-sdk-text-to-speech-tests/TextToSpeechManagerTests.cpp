@@ -361,6 +361,7 @@ TEST(TextToSpeechManagerTests, TestSynthResponseAndOutput)
     devInfo1.capabilities.push_back(capability);
     driver1->AddDevice(devInfo1);
 
+    manager->SetActiveEngine("standard");
     manager->SetActiveVoice("Maxim");
 
     std::mutex lock;
@@ -382,7 +383,84 @@ TEST(TextToSpeechManagerTests, TestSynthResponseAndOutput)
 
     auto capturedRequest = pollyClient->GetCapturedSynthesizeSpeech();
     ASSERT_STREQ(REQUEST_TEXT, capturedRequest.GetText().c_str());
+    ASSERT_EQ(Engine::standard, capturedRequest.GetEngine());
     ASSERT_EQ(VoiceId::Maxim, capturedRequest.GetVoiceId());
+
+    ASSERT_EQ(1u, driver1->GetPrimeCalledCount());
+    ASSERT_EQ(1u, driver1->GetFlushCalledCount());
+
+    auto buffers = driver1->GetWrittenBuffers();
+    ASSERT_EQ(1u, buffers.size());
+
+    char actualSentData[sizeof(STREAM_CONTENT)];
+    memset(actualSentData, 0, sizeof(STREAM_CONTENT));
+    memcpy(actualSentData, buffers[0].GetUnderlyingData(), buffers[0].GetLength());
+    ASSERT_STREQ(STREAM_CONTENT, actualSentData);
+
+    ASSERT_EQ(0u, driver2->GetFlushCalledCount());
+    ASSERT_EQ(0u, driver2->GetPrimeCalledCount());
+    pollyClient = nullptr;
+}
+
+TEST(TextToSpeechManagerTests, TestSynthNeuralEngine)
+{
+    Aws::Client::ClientConfiguration clientConfig;
+    clientConfig.executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOC_TAG, 5);
+    auto pollyClient = Aws::MakeShared<MockPollyClient>(ALLOC_TAG, clientConfig);
+
+    auto driver1 = Aws::MakeShared<MockPCMDriver>(ALLOC_TAG);
+    driver1->MockWriteResponse(true);
+
+    auto driver2 = Aws::MakeShared<MockPCMDriver>(ALLOC_TAG);
+
+    auto driverFactory = Aws::MakeShared<MockPCMDriverFactory>(ALLOC_TAG);
+    driverFactory->AddDriver(driver1);
+    driverFactory->AddDriver(driver2);
+
+    auto strStream = Aws::New<Aws::StringStream>(ALLOC_TAG);
+    const char STREAM_CONTENT[] = "Stream content. blah blah blah";
+    *strStream << STREAM_CONTENT;
+
+    SynthesizeSpeechResult res;
+    res.ReplaceBody(strStream);
+
+    pollyClient->MockSynthesizeSpeech(std::move(res));
+
+    auto manager = TextToSpeechManager::Create(pollyClient, driverFactory);
+
+    DeviceInfo devInfo1;
+    devInfo1.deviceId = "device1";
+    devInfo1.deviceName = "deviceName1";
+
+    CapabilityInfo capability;
+    capability.sampleRate = KHZ_8;
+    devInfo1.capabilities.push_back(capability);
+    driver1->AddDevice(devInfo1);
+
+    manager->SetActiveEngine("neural");
+    manager->SetActiveVoice("Matthew");
+
+    std::mutex lock;
+    std::condition_variable semaphore;
+
+    const char* REQUEST_TEXT = "Blah blah blah";
+
+    SendTextCompletedHandler handler = [&](const char* text, const SynthesizeSpeechOutcome&, bool sent)
+        {
+            std::lock_guard<std::mutex> lockGuard(lock);
+            EXPECT_STREQ(REQUEST_TEXT, text);
+            EXPECT_TRUE(sent);
+            semaphore.notify_all();
+        };
+
+    std::unique_lock<std::mutex> locker(lock);
+    manager->SendTextToOutputDevice(REQUEST_TEXT, handler);
+    semaphore.wait(locker);
+
+    auto capturedRequest = pollyClient->GetCapturedSynthesizeSpeech();
+    ASSERT_STREQ(REQUEST_TEXT, capturedRequest.GetText().c_str());
+    ASSERT_EQ(Engine::neural, capturedRequest.GetEngine());
+    ASSERT_EQ(VoiceId::Matthew, capturedRequest.GetVoiceId());
 
     ASSERT_EQ(1u, driver1->GetPrimeCalledCount());
     ASSERT_EQ(1u, driver1->GetFlushCalledCount());
