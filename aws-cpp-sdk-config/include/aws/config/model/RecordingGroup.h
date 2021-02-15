@@ -160,7 +160,7 @@ namespace Model
      * <p>A comma-separated list that specifies the types of AWS resources for which
      * AWS Config records configuration changes (for example,
      * <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).</p>
-     * <p>Before you can set this option to <code>true</code>, you must set the
+     * <p>To record all configuration changes, you must set the
      * <code>allSupported</code> option to <code>false</code>.</p> <p>If you set this
      * option to <code>true</code>, when AWS Config adds support for a new type of
      * resource, it will not record resources of that type unless you manually add that
@@ -176,7 +176,7 @@ namespace Model
      * <p>A comma-separated list that specifies the types of AWS resources for which
      * AWS Config records configuration changes (for example,
      * <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).</p>
-     * <p>Before you can set this option to <code>true</code>, you must set the
+     * <p>To record all configuration changes, you must set the
      * <code>allSupported</code> option to <code>false</code>.</p> <p>If you set this
      * option to <code>true</code>, when AWS Config adds support for a new type of
      * resource, it will not record resources of that type unless you manually add that
@@ -192,7 +192,7 @@ namespace Model
      * <p>A comma-separated list that specifies the types of AWS resources for which
      * AWS Config records configuration changes (for example,
      * <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).</p>
-     * <p>Before you can set this option to <code>true</code>, you must set the
+     * <p>To record all configuration changes, you must set the
      * <code>allSupported</code> option to <code>false</code>.</p> <p>If you set this
      * option to <code>true</code>, when AWS Config adds support for a new type of
      * resource, it will not record resources of that type unless you manually add that
@@ -208,7 +208,7 @@ namespace Model
      * <p>A comma-separated list that specifies the types of AWS resources for which
      * AWS Config records configuration changes (for example,
      * <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).</p>
-     * <p>Before you can set this option to <code>true</code>, you must set the
+     * <p>To record all configuration changes, you must set the
      * <code>allSupported</code> option to <code>false</code>.</p> <p>If you set this
      * option to <code>true</code>, when AWS Config adds support for a new type of
      * resource, it will not record resources of that type unless you manually add that
@@ -224,7 +224,7 @@ namespace Model
      * <p>A comma-separated list that specifies the types of AWS resources for which
      * AWS Config records configuration changes (for example,
      * <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).</p>
-     * <p>Before you can set this option to <code>true</code>, you must set the
+     * <p>To record all configuration changes, you must set the
      * <code>allSupported</code> option to <code>false</code>.</p> <p>If you set this
      * option to <code>true</code>, when AWS Config adds support for a new type of
      * resource, it will not record resources of that type unless you manually add that
@@ -240,7 +240,7 @@ namespace Model
      * <p>A comma-separated list that specifies the types of AWS resources for which
      * AWS Config records configuration changes (for example,
      * <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).</p>
-     * <p>Before you can set this option to <code>true</code>, you must set the
+     * <p>To record all configuration changes, you must set the
      * <code>allSupported</code> option to <code>false</code>.</p> <p>If you set this
      * option to <code>true</code>, when AWS Config adds support for a new type of
      * resource, it will not record resources of that type unless you manually add that
@@ -256,7 +256,7 @@ namespace Model
      * <p>A comma-separated list that specifies the types of AWS resources for which
      * AWS Config records configuration changes (for example,
      * <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).</p>
-     * <p>Before you can set this option to <code>true</code>, you must set the
+     * <p>To record all configuration changes, you must set the
      * <code>allSupported</code> option to <code>false</code>.</p> <p>If you set this
      * option to <code>true</code>, when AWS Config adds support for a new type of
      * resource, it will not record resources of that type unless you manually add that
@@ -272,7 +272,7 @@ namespace Model
      * <p>A comma-separated list that specifies the types of AWS resources for which
      * AWS Config records configuration changes (for example,
      * <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).</p>
-     * <p>Before you can set this option to <code>true</code>, you must set the
+     * <p>To record all configuration changes, you must set the
      * <code>allSupported</code> option to <code>false</code>.</p> <p>If you set this
      * option to <code>true</code>, when AWS Config adds support for a new type of
      * resource, it will not record resources of that type unless you manually add that

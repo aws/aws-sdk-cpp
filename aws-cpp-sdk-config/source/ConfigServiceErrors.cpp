@@ -22,6 +22,7 @@ static const int MAX_NUMBER_OF_CONFIG_RULES_EXCEEDED_HASH = HashingUtils::HashSt
 static const int OVERSIZED_CONFIGURATION_ITEM_HASH = HashingUtils::HashString("OversizedConfigurationItemException");
 static const int NO_SUCH_CONFORMANCE_PACK_HASH = HashingUtils::HashString("NoSuchConformancePackException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int INVALID_S3_KMS_KEY_ARN_HASH = HashingUtils::HashString("InvalidS3KmsKeyArnException");
 static const int CONFORMANCE_PACK_TEMPLATE_VALIDATION_HASH = HashingUtils::HashString("ConformancePackTemplateValidationException");
 static const int INSUFFICIENT_PERMISSIONS_HASH = HashingUtils::HashString("InsufficientPermissionsException");
 static const int MAX_NUMBER_OF_CONFIGURATION_RECORDERS_EXCEEDED_HASH = HashingUtils::HashString("MaxNumberOfConfigurationRecordersExceededException");
@@ -88,6 +89,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConfigServiceErrors::LIMIT_EXCEEDED), true);
+  }
+  else if (hashCode == INVALID_S3_KMS_KEY_ARN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConfigServiceErrors::INVALID_S3_KMS_KEY_ARN), false);
   }
   else if (hashCode == CONFORMANCE_PACK_TEMPLATE_VALIDATION_HASH)
   {

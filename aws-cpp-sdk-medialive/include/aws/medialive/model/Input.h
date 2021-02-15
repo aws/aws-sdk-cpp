@@ -346,6 +346,52 @@ SINGLE_PIPELINE - You can
 
 
     /**
+     * A list of IDs for all Inputs which are partners of this one.
+     */
+    inline const Aws::Vector<Aws::String>& GetInputPartnerIds() const{ return m_inputPartnerIds; }
+
+    /**
+     * A list of IDs for all Inputs which are partners of this one.
+     */
+    inline bool InputPartnerIdsHasBeenSet() const { return m_inputPartnerIdsHasBeenSet; }
+
+    /**
+     * A list of IDs for all Inputs which are partners of this one.
+     */
+    inline void SetInputPartnerIds(const Aws::Vector<Aws::String>& value) { m_inputPartnerIdsHasBeenSet = true; m_inputPartnerIds = value; }
+
+    /**
+     * A list of IDs for all Inputs which are partners of this one.
+     */
+    inline void SetInputPartnerIds(Aws::Vector<Aws::String>&& value) { m_inputPartnerIdsHasBeenSet = true; m_inputPartnerIds = std::move(value); }
+
+    /**
+     * A list of IDs for all Inputs which are partners of this one.
+     */
+    inline Input& WithInputPartnerIds(const Aws::Vector<Aws::String>& value) { SetInputPartnerIds(value); return *this;}
+
+    /**
+     * A list of IDs for all Inputs which are partners of this one.
+     */
+    inline Input& WithInputPartnerIds(Aws::Vector<Aws::String>&& value) { SetInputPartnerIds(std::move(value)); return *this;}
+
+    /**
+     * A list of IDs for all Inputs which are partners of this one.
+     */
+    inline Input& AddInputPartnerIds(const Aws::String& value) { m_inputPartnerIdsHasBeenSet = true; m_inputPartnerIds.push_back(value); return *this; }
+
+    /**
+     * A list of IDs for all Inputs which are partners of this one.
+     */
+    inline Input& AddInputPartnerIds(Aws::String&& value) { m_inputPartnerIdsHasBeenSet = true; m_inputPartnerIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * A list of IDs for all Inputs which are partners of this one.
+     */
+    inline Input& AddInputPartnerIds(const char* value) { m_inputPartnerIdsHasBeenSet = true; m_inputPartnerIds.push_back(value); return *this; }
+
+
+    /**
      * Certain pull input sources can be dynamic, meaning that they can have their
      * URL's dynamically changes
 during input switch actions. Presently, this
@@ -740,6 +786,9 @@ during input switch actions. Presently, this
 
     Aws::Vector<InputDeviceSettings> m_inputDevices;
     bool m_inputDevicesHasBeenSet;
+
+    Aws::Vector<Aws::String> m_inputPartnerIds;
+    bool m_inputPartnerIdsHasBeenSet;
 
     InputSourceType m_inputSourceType;
     bool m_inputSourceTypeHasBeenSet;

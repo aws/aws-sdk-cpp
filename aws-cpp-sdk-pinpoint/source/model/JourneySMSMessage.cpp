@@ -21,6 +21,7 @@ namespace Model
 JourneySMSMessage::JourneySMSMessage() : 
     m_messageType(MessageType::NOT_SET),
     m_messageTypeHasBeenSet(false),
+    m_originationNumberHasBeenSet(false),
     m_senderIdHasBeenSet(false)
 {
 }
@@ -28,6 +29,7 @@ JourneySMSMessage::JourneySMSMessage() :
 JourneySMSMessage::JourneySMSMessage(JsonView jsonValue) : 
     m_messageType(MessageType::NOT_SET),
     m_messageTypeHasBeenSet(false),
+    m_originationNumberHasBeenSet(false),
     m_senderIdHasBeenSet(false)
 {
   *this = jsonValue;
@@ -40,6 +42,13 @@ JourneySMSMessage& JourneySMSMessage::operator =(JsonView jsonValue)
     m_messageType = MessageTypeMapper::GetMessageTypeForName(jsonValue.GetString("MessageType"));
 
     m_messageTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OriginationNumber"))
+  {
+    m_originationNumber = jsonValue.GetString("OriginationNumber");
+
+    m_originationNumberHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SenderId"))
@@ -59,6 +68,12 @@ JsonValue JourneySMSMessage::Jsonize() const
   if(m_messageTypeHasBeenSet)
   {
    payload.WithString("MessageType", MessageTypeMapper::GetNameForMessageType(m_messageType));
+  }
+
+  if(m_originationNumberHasBeenSet)
+  {
+   payload.WithString("OriginationNumber", m_originationNumber);
+
   }
 
   if(m_senderIdHasBeenSet)

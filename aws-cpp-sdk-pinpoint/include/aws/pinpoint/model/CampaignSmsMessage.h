@@ -130,6 +130,79 @@ namespace Model
 
 
     /**
+     * <p>The long code to send the SMS message from. This value should be one of the
+     * dedicated long codes that's assigned to your AWS account. Although it isn't
+     * required, we recommend that you specify the long code using an E.164 format to
+     * ensure prompt and accurate delivery of the message. For example,
+     * +12065550100.</p>
+     */
+    inline const Aws::String& GetOriginationNumber() const{ return m_originationNumber; }
+
+    /**
+     * <p>The long code to send the SMS message from. This value should be one of the
+     * dedicated long codes that's assigned to your AWS account. Although it isn't
+     * required, we recommend that you specify the long code using an E.164 format to
+     * ensure prompt and accurate delivery of the message. For example,
+     * +12065550100.</p>
+     */
+    inline bool OriginationNumberHasBeenSet() const { return m_originationNumberHasBeenSet; }
+
+    /**
+     * <p>The long code to send the SMS message from. This value should be one of the
+     * dedicated long codes that's assigned to your AWS account. Although it isn't
+     * required, we recommend that you specify the long code using an E.164 format to
+     * ensure prompt and accurate delivery of the message. For example,
+     * +12065550100.</p>
+     */
+    inline void SetOriginationNumber(const Aws::String& value) { m_originationNumberHasBeenSet = true; m_originationNumber = value; }
+
+    /**
+     * <p>The long code to send the SMS message from. This value should be one of the
+     * dedicated long codes that's assigned to your AWS account. Although it isn't
+     * required, we recommend that you specify the long code using an E.164 format to
+     * ensure prompt and accurate delivery of the message. For example,
+     * +12065550100.</p>
+     */
+    inline void SetOriginationNumber(Aws::String&& value) { m_originationNumberHasBeenSet = true; m_originationNumber = std::move(value); }
+
+    /**
+     * <p>The long code to send the SMS message from. This value should be one of the
+     * dedicated long codes that's assigned to your AWS account. Although it isn't
+     * required, we recommend that you specify the long code using an E.164 format to
+     * ensure prompt and accurate delivery of the message. For example,
+     * +12065550100.</p>
+     */
+    inline void SetOriginationNumber(const char* value) { m_originationNumberHasBeenSet = true; m_originationNumber.assign(value); }
+
+    /**
+     * <p>The long code to send the SMS message from. This value should be one of the
+     * dedicated long codes that's assigned to your AWS account. Although it isn't
+     * required, we recommend that you specify the long code using an E.164 format to
+     * ensure prompt and accurate delivery of the message. For example,
+     * +12065550100.</p>
+     */
+    inline CampaignSmsMessage& WithOriginationNumber(const Aws::String& value) { SetOriginationNumber(value); return *this;}
+
+    /**
+     * <p>The long code to send the SMS message from. This value should be one of the
+     * dedicated long codes that's assigned to your AWS account. Although it isn't
+     * required, we recommend that you specify the long code using an E.164 format to
+     * ensure prompt and accurate delivery of the message. For example,
+     * +12065550100.</p>
+     */
+    inline CampaignSmsMessage& WithOriginationNumber(Aws::String&& value) { SetOriginationNumber(std::move(value)); return *this;}
+
+    /**
+     * <p>The long code to send the SMS message from. This value should be one of the
+     * dedicated long codes that's assigned to your AWS account. Although it isn't
+     * required, we recommend that you specify the long code using an E.164 format to
+     * ensure prompt and accurate delivery of the message. For example,
+     * +12065550100.</p>
+     */
+    inline CampaignSmsMessage& WithOriginationNumber(const char* value) { SetOriginationNumber(value); return *this;}
+
+
+    /**
      * <p>The sender ID to display on recipients' devices when they receive the SMS
      * message.</p>
      */
@@ -184,6 +257,9 @@ namespace Model
 
     MessageType m_messageType;
     bool m_messageTypeHasBeenSet;
+
+    Aws::String m_originationNumber;
+    bool m_originationNumberHasBeenSet;
 
     Aws::String m_senderId;
     bool m_senderIdHasBeenSet;

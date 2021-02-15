@@ -9,11 +9,11 @@
 #include <aws/mediatailor/model/AvailSuppression.h>
 #include <aws/mediatailor/model/Bumper.h>
 #include <aws/mediatailor/model/CdnConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/mediatailor/model/DashConfiguration.h>
 #include <aws/mediatailor/model/HlsConfiguration.h>
 #include <aws/mediatailor/model/LivePreRollConfiguration.h>
 #include <aws/mediatailor/model/ManifestProcessingRules.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -195,6 +195,62 @@ namespace Model
      * CloudFront, for content and ad segment management. </p>
      */
     inline GetPlaybackConfigurationResult& WithCdnConfiguration(CdnConfiguration&& value) { SetCdnConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Predefined aliases for dynamic variables.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& GetConfigurationAliases() const{ return m_configurationAliases; }
+
+    /**
+     * <p>Predefined aliases for dynamic variables.</p>
+     */
+    inline void SetConfigurationAliases(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& value) { m_configurationAliases = value; }
+
+    /**
+     * <p>Predefined aliases for dynamic variables.</p>
+     */
+    inline void SetConfigurationAliases(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>&& value) { m_configurationAliases = std::move(value); }
+
+    /**
+     * <p>Predefined aliases for dynamic variables.</p>
+     */
+    inline GetPlaybackConfigurationResult& WithConfigurationAliases(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& value) { SetConfigurationAliases(value); return *this;}
+
+    /**
+     * <p>Predefined aliases for dynamic variables.</p>
+     */
+    inline GetPlaybackConfigurationResult& WithConfigurationAliases(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>&& value) { SetConfigurationAliases(std::move(value)); return *this;}
+
+    /**
+     * <p>Predefined aliases for dynamic variables.</p>
+     */
+    inline GetPlaybackConfigurationResult& AddConfigurationAliases(const Aws::String& key, const Aws::Map<Aws::String, Aws::String>& value) { m_configurationAliases.emplace(key, value); return *this; }
+
+    /**
+     * <p>Predefined aliases for dynamic variables.</p>
+     */
+    inline GetPlaybackConfigurationResult& AddConfigurationAliases(Aws::String&& key, const Aws::Map<Aws::String, Aws::String>& value) { m_configurationAliases.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Predefined aliases for dynamic variables.</p>
+     */
+    inline GetPlaybackConfigurationResult& AddConfigurationAliases(const Aws::String& key, Aws::Map<Aws::String, Aws::String>&& value) { m_configurationAliases.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Predefined aliases for dynamic variables.</p>
+     */
+    inline GetPlaybackConfigurationResult& AddConfigurationAliases(Aws::String&& key, Aws::Map<Aws::String, Aws::String>&& value) { m_configurationAliases.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Predefined aliases for dynamic variables.</p>
+     */
+    inline GetPlaybackConfigurationResult& AddConfigurationAliases(const char* key, Aws::Map<Aws::String, Aws::String>&& value) { m_configurationAliases.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Predefined aliases for dynamic variables.</p>
+     */
+    inline GetPlaybackConfigurationResult& AddConfigurationAliases(const char* key, const Aws::Map<Aws::String, Aws::String>& value) { m_configurationAliases.emplace(key, value); return *this; }
 
 
     /**
@@ -723,6 +779,8 @@ namespace Model
     Bumper m_bumper;
 
     CdnConfiguration m_cdnConfiguration;
+
+    Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_configurationAliases;
 
     DashConfiguration m_dashConfiguration;
 

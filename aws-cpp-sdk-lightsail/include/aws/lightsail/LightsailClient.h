@@ -1160,30 +1160,34 @@ namespace Model
         virtual void CopySnapshotAsync(const Model::CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an SSL/TLS certificate for a Amazon Lightsail content delivery
-         * network (CDN) distribution.</p> <p>After the certificate is created, use the
-         * <code>AttachCertificateToDistribution</code> action to attach the certificate to
-         * your distribution.</p>  <p>Only certificates created in the
-         * <code>us-east-1</code> AWS Region can be attached to Lightsail distributions.
-         * Lightsail distributions are global resources that can reference an origin in any
-         * AWS Region, and distribute its content globally. However, all distributions are
-         * located in the <code>us-east-1</code> Region.</p> <p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates an SSL/TLS certificate for an Amazon Lightsail content delivery
+         * network (CDN) distribution and a container service.</p> <p>After the certificate
+         * is valid, use the <code>AttachCertificateToDistribution</code> action to use the
+         * certificate and its domains with your distribution. Or use the
+         * <code>UpdateContainerService</code> action to use the certificate and its
+         * domains with your container service.</p>  <p>Only certificates
+         * created in the <code>us-east-1</code> AWS Region can be attached to Lightsail
+         * distributions. Lightsail distributions are global resources that can reference
+         * an origin in any AWS Region, and distribute its content globally. However, all
+         * distributions are located in the <code>us-east-1</code> Region.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateCertificate">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateCertificateOutcome CreateCertificate(const Model::CreateCertificateRequest& request) const;
 
         /**
-         * <p>Creates an SSL/TLS certificate for a Amazon Lightsail content delivery
-         * network (CDN) distribution.</p> <p>After the certificate is created, use the
-         * <code>AttachCertificateToDistribution</code> action to attach the certificate to
-         * your distribution.</p>  <p>Only certificates created in the
-         * <code>us-east-1</code> AWS Region can be attached to Lightsail distributions.
-         * Lightsail distributions are global resources that can reference an origin in any
-         * AWS Region, and distribute its content globally. However, all distributions are
-         * located in the <code>us-east-1</code> Region.</p> <p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates an SSL/TLS certificate for an Amazon Lightsail content delivery
+         * network (CDN) distribution and a container service.</p> <p>After the certificate
+         * is valid, use the <code>AttachCertificateToDistribution</code> action to use the
+         * certificate and its domains with your distribution. Or use the
+         * <code>UpdateContainerService</code> action to use the certificate and its
+         * domains with your container service.</p>  <p>Only certificates
+         * created in the <code>us-east-1</code> AWS Region can be attached to Lightsail
+         * distributions. Lightsail distributions are global resources that can reference
+         * an origin in any AWS Region, and distribute its content globally. However, all
+         * distributions are located in the <code>us-east-1</code> Region.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateCertificate">AWS
          * API Reference</a></p>
          *
@@ -1192,15 +1196,17 @@ namespace Model
         virtual Model::CreateCertificateOutcomeCallable CreateCertificateCallable(const Model::CreateCertificateRequest& request) const;
 
         /**
-         * <p>Creates an SSL/TLS certificate for a Amazon Lightsail content delivery
-         * network (CDN) distribution.</p> <p>After the certificate is created, use the
-         * <code>AttachCertificateToDistribution</code> action to attach the certificate to
-         * your distribution.</p>  <p>Only certificates created in the
-         * <code>us-east-1</code> AWS Region can be attached to Lightsail distributions.
-         * Lightsail distributions are global resources that can reference an origin in any
-         * AWS Region, and distribute its content globally. However, all distributions are
-         * located in the <code>us-east-1</code> Region.</p> <p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates an SSL/TLS certificate for an Amazon Lightsail content delivery
+         * network (CDN) distribution and a container service.</p> <p>After the certificate
+         * is valid, use the <code>AttachCertificateToDistribution</code> action to use the
+         * certificate and its domains with your distribution. Or use the
+         * <code>UpdateContainerService</code> action to use the certificate and its
+         * domains with your container service.</p>  <p>Only certificates
+         * created in the <code>us-east-1</code> AWS Region can be attached to Lightsail
+         * distributions. Lightsail distributions are global resources that can reference
+         * an origin in any AWS Region, and distribute its content globally. However, all
+         * distributions are located in the <code>us-east-1</code> Region.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateCertificate">AWS
          * API Reference</a></p>
          *
@@ -1990,10 +1996,10 @@ namespace Model
         virtual void CreateLoadBalancerAsync(const Model::CreateLoadBalancerRequest& request, const CreateLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a Lightsail load balancer TLS certificate.</p> <p>TLS is just an
-         * updated, more secure version of Secure Socket Layer (SSL).</p> <p>The
-         * <code>CreateLoadBalancerTlsCertificate</code> operation supports tag-based
-         * access control via resource tags applied to the resource identified by
+         * <p>Creates an SSL/TLS certificate for an Amazon Lightsail load balancer.</p>
+         * <p>TLS is just an updated, more secure version of Secure Socket Layer (SSL).</p>
+         * <p>The <code>CreateLoadBalancerTlsCertificate</code> operation supports
+         * tag-based access control via resource tags applied to the resource identified by
          * <code>load balancer name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
@@ -2003,10 +2009,10 @@ namespace Model
         virtual Model::CreateLoadBalancerTlsCertificateOutcome CreateLoadBalancerTlsCertificate(const Model::CreateLoadBalancerTlsCertificateRequest& request) const;
 
         /**
-         * <p>Creates a Lightsail load balancer TLS certificate.</p> <p>TLS is just an
-         * updated, more secure version of Secure Socket Layer (SSL).</p> <p>The
-         * <code>CreateLoadBalancerTlsCertificate</code> operation supports tag-based
-         * access control via resource tags applied to the resource identified by
+         * <p>Creates an SSL/TLS certificate for an Amazon Lightsail load balancer.</p>
+         * <p>TLS is just an updated, more secure version of Secure Socket Layer (SSL).</p>
+         * <p>The <code>CreateLoadBalancerTlsCertificate</code> operation supports
+         * tag-based access control via resource tags applied to the resource identified by
          * <code>load balancer name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
@@ -2018,10 +2024,10 @@ namespace Model
         virtual Model::CreateLoadBalancerTlsCertificateOutcomeCallable CreateLoadBalancerTlsCertificateCallable(const Model::CreateLoadBalancerTlsCertificateRequest& request) const;
 
         /**
-         * <p>Creates a Lightsail load balancer TLS certificate.</p> <p>TLS is just an
-         * updated, more secure version of Secure Socket Layer (SSL).</p> <p>The
-         * <code>CreateLoadBalancerTlsCertificate</code> operation supports tag-based
-         * access control via resource tags applied to the resource identified by
+         * <p>Creates an SSL/TLS certificate for an Amazon Lightsail load balancer.</p>
+         * <p>TLS is just an updated, more secure version of Secure Socket Layer (SSL).</p>
+         * <p>The <code>CreateLoadBalancerTlsCertificate</code> operation supports
+         * tag-based access control via resource tags applied to the resource identified by
          * <code>load balancer name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
@@ -5466,9 +5472,9 @@ namespace Model
          *  <p>This action is not required if you install and use the Lightsail
          * Control (lightsailctl) plugin to push container images to your Lightsail
          * container service. For more information, see <a
-         * href="amazon-lightsail-pushing-container-images">Pushing and managing container
-         * images on your Amazon Lightsail container services</a> in the <i>Lightsail Dev
-         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-pushing-container-images">Pushing
+         * and managing container images on your Amazon Lightsail container services</a> in
+         * the <i>Lightsail Dev Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RegisterContainerImage">AWS
          * API Reference</a></p>
          */
@@ -5479,9 +5485,9 @@ namespace Model
          *  <p>This action is not required if you install and use the Lightsail
          * Control (lightsailctl) plugin to push container images to your Lightsail
          * container service. For more information, see <a
-         * href="amazon-lightsail-pushing-container-images">Pushing and managing container
-         * images on your Amazon Lightsail container services</a> in the <i>Lightsail Dev
-         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-pushing-container-images">Pushing
+         * and managing container images on your Amazon Lightsail container services</a> in
+         * the <i>Lightsail Dev Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RegisterContainerImage">AWS
          * API Reference</a></p>
          *
@@ -5494,9 +5500,9 @@ namespace Model
          *  <p>This action is not required if you install and use the Lightsail
          * Control (lightsailctl) plugin to push container images to your Lightsail
          * container service. For more information, see <a
-         * href="amazon-lightsail-pushing-container-images">Pushing and managing container
-         * images on your Amazon Lightsail container services</a> in the <i>Lightsail Dev
-         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-pushing-container-images">Pushing
+         * and managing container images on your Amazon Lightsail container services</a> in
+         * the <i>Lightsail Dev Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RegisterContainerImage">AWS
          * API Reference</a></p>
          *
@@ -5628,7 +5634,7 @@ namespace Model
         virtual void SendContactMethodVerificationAsync(const Model::SendContactMethodVerificationRequest& request, const SendContactMethodVerificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sets the IP address type for a Amazon Lightsail resource.</p> <p>Use this
+         * <p>Sets the IP address type for an Amazon Lightsail resource.</p> <p>Use this
          * action to enable dual-stack for a resource, which enables IPv4 and IPv6 for the
          * specified resource. Alternately, you can use this action to disable dual-stack,
          * and enable IPv4 only.</p><p><h3>See Also:</h3>   <a
@@ -5638,7 +5644,7 @@ namespace Model
         virtual Model::SetIpAddressTypeOutcome SetIpAddressType(const Model::SetIpAddressTypeRequest& request) const;
 
         /**
-         * <p>Sets the IP address type for a Amazon Lightsail resource.</p> <p>Use this
+         * <p>Sets the IP address type for an Amazon Lightsail resource.</p> <p>Use this
          * action to enable dual-stack for a resource, which enables IPv4 and IPv6 for the
          * specified resource. Alternately, you can use this action to disable dual-stack,
          * and enable IPv4 only.</p><p><h3>See Also:</h3>   <a
@@ -5650,7 +5656,7 @@ namespace Model
         virtual Model::SetIpAddressTypeOutcomeCallable SetIpAddressTypeCallable(const Model::SetIpAddressTypeRequest& request) const;
 
         /**
-         * <p>Sets the IP address type for a Amazon Lightsail resource.</p> <p>Use this
+         * <p>Sets the IP address type for an Amazon Lightsail resource.</p> <p>Use this
          * action to enable dual-stack for a resource, which enables IPv4 and IPv6 for the
          * specified resource. Alternately, you can use this action to disable dual-stack,
          * and enable IPv4 only.</p><p><h3>See Also:</h3>   <a

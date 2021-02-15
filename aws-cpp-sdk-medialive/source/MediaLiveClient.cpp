@@ -31,6 +31,7 @@
 #include <aws/medialive/model/CreateInputSecurityGroupRequest.h>
 #include <aws/medialive/model/CreateMultiplexRequest.h>
 #include <aws/medialive/model/CreateMultiplexProgramRequest.h>
+#include <aws/medialive/model/CreatePartnerInputRequest.h>
 #include <aws/medialive/model/CreateTagsRequest.h>
 #include <aws/medialive/model/DeleteChannelRequest.h>
 #include <aws/medialive/model/DeleteInputRequest.h>
@@ -472,6 +473,40 @@ void MediaLiveClient::CreateMultiplexProgramAsync(const CreateMultiplexProgramRe
 void MediaLiveClient::CreateMultiplexProgramAsyncHelper(const CreateMultiplexProgramRequest& request, const CreateMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateMultiplexProgram(request), context);
+}
+
+CreatePartnerInputOutcome MediaLiveClient::CreatePartnerInput(const CreatePartnerInputRequest& request) const
+{
+  if (!request.InputIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreatePartnerInput", "Required field: InputId, is not set");
+    return CreatePartnerInputOutcome(Aws::Client::AWSError<MediaLiveErrors>(MediaLiveErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InputId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/prod/inputs/";
+  ss << request.GetInputId();
+  ss << "/partners";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreatePartnerInputOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreatePartnerInputOutcomeCallable MediaLiveClient::CreatePartnerInputCallable(const CreatePartnerInputRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreatePartnerInputOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePartnerInput(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaLiveClient::CreatePartnerInputAsync(const CreatePartnerInputRequest& request, const CreatePartnerInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreatePartnerInputAsyncHelper( request, handler, context ); } );
+}
+
+void MediaLiveClient::CreatePartnerInputAsyncHelper(const CreatePartnerInputRequest& request, const CreatePartnerInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreatePartnerInput(request), context);
 }
 
 CreateTagsOutcome MediaLiveClient::CreateTags(const CreateTagsRequest& request) const

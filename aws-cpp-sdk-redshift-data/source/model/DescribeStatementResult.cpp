@@ -18,6 +18,7 @@ using namespace Aws;
 
 DescribeStatementResult::DescribeStatementResult() : 
     m_duration(0),
+    m_hasResultSet(false),
     m_redshiftPid(0),
     m_redshiftQueryId(0),
     m_resultRows(0),
@@ -28,6 +29,7 @@ DescribeStatementResult::DescribeStatementResult() :
 
 DescribeStatementResult::DescribeStatementResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_duration(0),
+    m_hasResultSet(false),
     m_redshiftPid(0),
     m_redshiftQueryId(0),
     m_resultRows(0),
@@ -73,6 +75,12 @@ DescribeStatementResult& DescribeStatementResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetString("Error");
+
+  }
+
+  if(jsonValue.ValueExists("HasResultSet"))
+  {
+    m_hasResultSet = jsonValue.GetBool("HasResultSet");
 
   }
 
