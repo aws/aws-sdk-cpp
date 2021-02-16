@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 AcceptInvitationRequest::AcceptInvitationRequest() : 
+    m_administratorAccountIdHasBeenSet(false),
     m_invitationIdHasBeenSet(false),
     m_masterAccountHasBeenSet(false)
 {
@@ -21,6 +22,12 @@ AcceptInvitationRequest::AcceptInvitationRequest() :
 Aws::String AcceptInvitationRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_administratorAccountIdHasBeenSet)
+  {
+   payload.WithString("administratorAccountId", m_administratorAccountId);
+
+  }
 
   if(m_invitationIdHasBeenSet)
   {

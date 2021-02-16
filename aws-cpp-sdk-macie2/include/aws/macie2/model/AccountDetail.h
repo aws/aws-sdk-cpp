@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies details for an account to associate with an Amazon Macie master
-   * account.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies details for an account to associate with an Amazon Macie
+   * administrator account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AccountDetail">AWS
    * API Reference</a></p>
    */

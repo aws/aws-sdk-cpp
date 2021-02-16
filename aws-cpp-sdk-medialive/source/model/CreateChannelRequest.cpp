@@ -26,7 +26,8 @@ CreateChannelRequest::CreateChannelRequest() :
     m_requestId(Aws::Utils::UUID::RandomUUID()),
     m_requestIdHasBeenSet(true),
     m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_vpcHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,12 @@ Aws::String CreateChannelRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_vpcHasBeenSet)
+  {
+   payload.WithObject("vpc", m_vpc.Jsonize());
 
   }
 

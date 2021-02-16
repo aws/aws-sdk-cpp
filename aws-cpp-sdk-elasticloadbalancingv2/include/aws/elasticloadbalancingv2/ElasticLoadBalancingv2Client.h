@@ -379,7 +379,7 @@ namespace Model
 
         /**
          * <p>Creates a listener for the specified Application Load Balancer, Network Load
-         * Balancer. or Gateway Load Balancer.</p> <p>For more information, see the
+         * Balancer, or Gateway Load Balancer.</p> <p>For more information, see the
          * following:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
          * for your Application Load Balancers</a> </p> </li> <li> <p> <a
@@ -397,7 +397,7 @@ namespace Model
 
         /**
          * <p>Creates a listener for the specified Application Load Balancer, Network Load
-         * Balancer. or Gateway Load Balancer.</p> <p>For more information, see the
+         * Balancer, or Gateway Load Balancer.</p> <p>For more information, see the
          * following:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
          * for your Application Load Balancers</a> </p> </li> <li> <p> <a
@@ -417,7 +417,7 @@ namespace Model
 
         /**
          * <p>Creates a listener for the specified Application Load Balancer, Network Load
-         * Balancer. or Gateway Load Balancer.</p> <p>For more information, see the
+         * Balancer, or Gateway Load Balancer.</p> <p>For more information, see the
          * following:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
          * for your Application Load Balancers</a> </p> </li> <li> <p> <a

@@ -147,6 +147,12 @@ StopChannelResult& StopChannelResult::operator =(const Aws::AmazonWebServiceResu
     }
   }
 
+  if(jsonValue.ValueExists("vpc"))
+  {
+    m_vpc = jsonValue.GetObject("vpc");
+
+  }
+
 
 
   return *this;

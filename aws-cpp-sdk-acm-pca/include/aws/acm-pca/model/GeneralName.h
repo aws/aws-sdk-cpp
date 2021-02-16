@@ -29,7 +29,7 @@ namespace Model
   /**
    * <p>Describes an ASN.1 X.400 <code>GeneralName</code> as defined in <a
    * href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. Only one of the
-   * following naming options should be providied. Providing more than one option
+   * following naming options should be provided. Providing more than one option
    * results in an <code>InvalidArgsException</code> error.</p><p><h3>See Also:</h3> 
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/GeneralName">AWS

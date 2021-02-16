@@ -339,8 +339,8 @@ namespace Model
      * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
-     * Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * Service</p> </li> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li>
+     * <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline const Aws::String& GetByResourceType() const{ return m_byResourceType; }
 
@@ -350,8 +350,8 @@ namespace Model
      * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
-     * Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * Service</p> </li> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li>
+     * <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline bool ByResourceTypeHasBeenSet() const { return m_byResourceTypeHasBeenSet; }
 
@@ -361,8 +361,8 @@ namespace Model
      * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
-     * Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * Service</p> </li> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li>
+     * <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline void SetByResourceType(const Aws::String& value) { m_byResourceTypeHasBeenSet = true; m_byResourceType = value; }
 
@@ -372,8 +372,8 @@ namespace Model
      * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
-     * Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * Service</p> </li> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li>
+     * <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline void SetByResourceType(Aws::String&& value) { m_byResourceTypeHasBeenSet = true; m_byResourceType = std::move(value); }
 
@@ -383,8 +383,8 @@ namespace Model
      * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
-     * Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * Service</p> </li> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li>
+     * <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline void SetByResourceType(const char* value) { m_byResourceTypeHasBeenSet = true; m_byResourceType.assign(value); }
 
@@ -394,8 +394,8 @@ namespace Model
      * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
-     * Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * Service</p> </li> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li>
+     * <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline ListBackupJobsRequest& WithByResourceType(const Aws::String& value) { SetByResourceType(value); return *this;}
 
@@ -405,8 +405,8 @@ namespace Model
      * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
-     * Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * Service</p> </li> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li>
+     * <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline ListBackupJobsRequest& WithByResourceType(Aws::String&& value) { SetByResourceType(std::move(value)); return *this;}
 
@@ -416,57 +416,73 @@ namespace Model
      * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
-     * Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * Service</p> </li> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li>
+     * <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline ListBackupJobsRequest& WithByResourceType(const char* value) { SetByResourceType(value); return *this;}
 
 
     /**
      * <p>The account ID to list the jobs from. Returns only backup jobs associated
-     * with the specified account ID.</p>
+     * with the specified account ID.</p> <p>If used from an AWS Organizations
+     * management account, passing <code>*</code> returns all jobs across the
+     * organization.</p>
      */
     inline const Aws::String& GetByAccountId() const{ return m_byAccountId; }
 
     /**
      * <p>The account ID to list the jobs from. Returns only backup jobs associated
-     * with the specified account ID.</p>
+     * with the specified account ID.</p> <p>If used from an AWS Organizations
+     * management account, passing <code>*</code> returns all jobs across the
+     * organization.</p>
      */
     inline bool ByAccountIdHasBeenSet() const { return m_byAccountIdHasBeenSet; }
 
     /**
      * <p>The account ID to list the jobs from. Returns only backup jobs associated
-     * with the specified account ID.</p>
+     * with the specified account ID.</p> <p>If used from an AWS Organizations
+     * management account, passing <code>*</code> returns all jobs across the
+     * organization.</p>
      */
     inline void SetByAccountId(const Aws::String& value) { m_byAccountIdHasBeenSet = true; m_byAccountId = value; }
 
     /**
      * <p>The account ID to list the jobs from. Returns only backup jobs associated
-     * with the specified account ID.</p>
+     * with the specified account ID.</p> <p>If used from an AWS Organizations
+     * management account, passing <code>*</code> returns all jobs across the
+     * organization.</p>
      */
     inline void SetByAccountId(Aws::String&& value) { m_byAccountIdHasBeenSet = true; m_byAccountId = std::move(value); }
 
     /**
      * <p>The account ID to list the jobs from. Returns only backup jobs associated
-     * with the specified account ID.</p>
+     * with the specified account ID.</p> <p>If used from an AWS Organizations
+     * management account, passing <code>*</code> returns all jobs across the
+     * organization.</p>
      */
     inline void SetByAccountId(const char* value) { m_byAccountIdHasBeenSet = true; m_byAccountId.assign(value); }
 
     /**
      * <p>The account ID to list the jobs from. Returns only backup jobs associated
-     * with the specified account ID.</p>
+     * with the specified account ID.</p> <p>If used from an AWS Organizations
+     * management account, passing <code>*</code> returns all jobs across the
+     * organization.</p>
      */
     inline ListBackupJobsRequest& WithByAccountId(const Aws::String& value) { SetByAccountId(value); return *this;}
 
     /**
      * <p>The account ID to list the jobs from. Returns only backup jobs associated
-     * with the specified account ID.</p>
+     * with the specified account ID.</p> <p>If used from an AWS Organizations
+     * management account, passing <code>*</code> returns all jobs across the
+     * organization.</p>
      */
     inline ListBackupJobsRequest& WithByAccountId(Aws::String&& value) { SetByAccountId(std::move(value)); return *this;}
 
     /**
      * <p>The account ID to list the jobs from. Returns only backup jobs associated
-     * with the specified account ID.</p>
+     * with the specified account ID.</p> <p>If used from an AWS Organizations
+     * management account, passing <code>*</code> returns all jobs across the
+     * organization.</p>
      */
     inline ListBackupJobsRequest& WithByAccountId(const char* value) { SetByAccountId(value); return *this;}
 

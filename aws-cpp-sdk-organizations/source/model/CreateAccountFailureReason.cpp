@@ -28,6 +28,10 @@ namespace Aws
         static const int INTERNAL_FAILURE_HASH = HashingUtils::HashString("INTERNAL_FAILURE");
         static const int GOVCLOUD_ACCOUNT_ALREADY_EXISTS_HASH = HashingUtils::HashString("GOVCLOUD_ACCOUNT_ALREADY_EXISTS");
         static const int MISSING_BUSINESS_VALIDATION_HASH = HashingUtils::HashString("MISSING_BUSINESS_VALIDATION");
+        static const int FAILED_BUSINESS_VALIDATION_HASH = HashingUtils::HashString("FAILED_BUSINESS_VALIDATION");
+        static const int PENDING_BUSINESS_VALIDATION_HASH = HashingUtils::HashString("PENDING_BUSINESS_VALIDATION");
+        static const int INVALID_IDENTITY_FOR_BUSINESS_VALIDATION_HASH = HashingUtils::HashString("INVALID_IDENTITY_FOR_BUSINESS_VALIDATION");
+        static const int UNKNOWN_BUSINESS_VALIDATION_HASH = HashingUtils::HashString("UNKNOWN_BUSINESS_VALIDATION");
         static const int MISSING_PAYMENT_INSTRUMENT_HASH = HashingUtils::HashString("MISSING_PAYMENT_INSTRUMENT");
 
 
@@ -66,6 +70,22 @@ namespace Aws
           {
             return CreateAccountFailureReason::MISSING_BUSINESS_VALIDATION;
           }
+          else if (hashCode == FAILED_BUSINESS_VALIDATION_HASH)
+          {
+            return CreateAccountFailureReason::FAILED_BUSINESS_VALIDATION;
+          }
+          else if (hashCode == PENDING_BUSINESS_VALIDATION_HASH)
+          {
+            return CreateAccountFailureReason::PENDING_BUSINESS_VALIDATION;
+          }
+          else if (hashCode == INVALID_IDENTITY_FOR_BUSINESS_VALIDATION_HASH)
+          {
+            return CreateAccountFailureReason::INVALID_IDENTITY_FOR_BUSINESS_VALIDATION;
+          }
+          else if (hashCode == UNKNOWN_BUSINESS_VALIDATION_HASH)
+          {
+            return CreateAccountFailureReason::UNKNOWN_BUSINESS_VALIDATION;
+          }
           else if (hashCode == MISSING_PAYMENT_INSTRUMENT_HASH)
           {
             return CreateAccountFailureReason::MISSING_PAYMENT_INSTRUMENT;
@@ -100,6 +120,14 @@ namespace Aws
             return "GOVCLOUD_ACCOUNT_ALREADY_EXISTS";
           case CreateAccountFailureReason::MISSING_BUSINESS_VALIDATION:
             return "MISSING_BUSINESS_VALIDATION";
+          case CreateAccountFailureReason::FAILED_BUSINESS_VALIDATION:
+            return "FAILED_BUSINESS_VALIDATION";
+          case CreateAccountFailureReason::PENDING_BUSINESS_VALIDATION:
+            return "PENDING_BUSINESS_VALIDATION";
+          case CreateAccountFailureReason::INVALID_IDENTITY_FOR_BUSINESS_VALIDATION:
+            return "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION";
+          case CreateAccountFailureReason::UNKNOWN_BUSINESS_VALIDATION:
+            return "UNKNOWN_BUSINESS_VALIDATION";
           case CreateAccountFailureReason::MISSING_PAYMENT_INSTRUMENT:
             return "MISSING_PAYMENT_INSTRUMENT";
           default:

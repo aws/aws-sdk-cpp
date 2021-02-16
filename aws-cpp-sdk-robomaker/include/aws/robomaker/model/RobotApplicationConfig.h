@@ -7,6 +7,8 @@
 #include <aws/robomaker/RoboMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/robomaker/model/LaunchConfig.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/robomaker/model/UploadConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -151,6 +153,80 @@ namespace Model
      */
     inline RobotApplicationConfig& WithLaunchConfig(LaunchConfig&& value) { SetLaunchConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The upload configurations for the robot application.</p>
+     */
+    inline const Aws::Vector<UploadConfiguration>& GetUploadConfigurations() const{ return m_uploadConfigurations; }
+
+    /**
+     * <p>The upload configurations for the robot application.</p>
+     */
+    inline bool UploadConfigurationsHasBeenSet() const { return m_uploadConfigurationsHasBeenSet; }
+
+    /**
+     * <p>The upload configurations for the robot application.</p>
+     */
+    inline void SetUploadConfigurations(const Aws::Vector<UploadConfiguration>& value) { m_uploadConfigurationsHasBeenSet = true; m_uploadConfigurations = value; }
+
+    /**
+     * <p>The upload configurations for the robot application.</p>
+     */
+    inline void SetUploadConfigurations(Aws::Vector<UploadConfiguration>&& value) { m_uploadConfigurationsHasBeenSet = true; m_uploadConfigurations = std::move(value); }
+
+    /**
+     * <p>The upload configurations for the robot application.</p>
+     */
+    inline RobotApplicationConfig& WithUploadConfigurations(const Aws::Vector<UploadConfiguration>& value) { SetUploadConfigurations(value); return *this;}
+
+    /**
+     * <p>The upload configurations for the robot application.</p>
+     */
+    inline RobotApplicationConfig& WithUploadConfigurations(Aws::Vector<UploadConfiguration>&& value) { SetUploadConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>The upload configurations for the robot application.</p>
+     */
+    inline RobotApplicationConfig& AddUploadConfigurations(const UploadConfiguration& value) { m_uploadConfigurationsHasBeenSet = true; m_uploadConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>The upload configurations for the robot application.</p>
+     */
+    inline RobotApplicationConfig& AddUploadConfigurations(UploadConfiguration&& value) { m_uploadConfigurationsHasBeenSet = true; m_uploadConfigurations.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A Boolean indicating whether to use default upload configurations. By
+     * default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the
+     * application terminates and all ROS topics will be recorded.</p> <p>If you set
+     * this value, you must specify an <code>outputLocation</code>. </p>
+     */
+    inline bool GetUseDefaultUploadConfigurations() const{ return m_useDefaultUploadConfigurations; }
+
+    /**
+     * <p>A Boolean indicating whether to use default upload configurations. By
+     * default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the
+     * application terminates and all ROS topics will be recorded.</p> <p>If you set
+     * this value, you must specify an <code>outputLocation</code>. </p>
+     */
+    inline bool UseDefaultUploadConfigurationsHasBeenSet() const { return m_useDefaultUploadConfigurationsHasBeenSet; }
+
+    /**
+     * <p>A Boolean indicating whether to use default upload configurations. By
+     * default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the
+     * application terminates and all ROS topics will be recorded.</p> <p>If you set
+     * this value, you must specify an <code>outputLocation</code>. </p>
+     */
+    inline void SetUseDefaultUploadConfigurations(bool value) { m_useDefaultUploadConfigurationsHasBeenSet = true; m_useDefaultUploadConfigurations = value; }
+
+    /**
+     * <p>A Boolean indicating whether to use default upload configurations. By
+     * default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the
+     * application terminates and all ROS topics will be recorded.</p> <p>If you set
+     * this value, you must specify an <code>outputLocation</code>. </p>
+     */
+    inline RobotApplicationConfig& WithUseDefaultUploadConfigurations(bool value) { SetUseDefaultUploadConfigurations(value); return *this;}
+
   private:
 
     Aws::String m_application;
@@ -161,6 +237,12 @@ namespace Model
 
     LaunchConfig m_launchConfig;
     bool m_launchConfigHasBeenSet;
+
+    Aws::Vector<UploadConfiguration> m_uploadConfigurations;
+    bool m_uploadConfigurationsHasBeenSet;
+
+    bool m_useDefaultUploadConfigurations;
+    bool m_useDefaultUploadConfigurationsHasBeenSet;
   };
 
 } // namespace Model

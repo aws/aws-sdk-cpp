@@ -529,25 +529,29 @@ namespace Model
 
     /**
      * <p>(Interface endpoint) Indicates whether a private hosted zone is associated
-     * with the VPC.</p>
+     * with the VPC.</p>  <p>Private DNS is not supported for Amazon S3
+     * interface endpoints.</p> 
      */
     inline bool GetPrivateDnsEnabled() const{ return m_privateDnsEnabled; }
 
     /**
      * <p>(Interface endpoint) Indicates whether a private hosted zone is associated
-     * with the VPC.</p>
+     * with the VPC.</p>  <p>Private DNS is not supported for Amazon S3
+     * interface endpoints.</p> 
      */
     inline bool PrivateDnsEnabledHasBeenSet() const { return m_privateDnsEnabledHasBeenSet; }
 
     /**
      * <p>(Interface endpoint) Indicates whether a private hosted zone is associated
-     * with the VPC.</p>
+     * with the VPC.</p>  <p>Private DNS is not supported for Amazon S3
+     * interface endpoints.</p> 
      */
     inline void SetPrivateDnsEnabled(bool value) { m_privateDnsEnabledHasBeenSet = true; m_privateDnsEnabled = value; }
 
     /**
      * <p>(Interface endpoint) Indicates whether a private hosted zone is associated
-     * with the VPC.</p>
+     * with the VPC.</p>  <p>Private DNS is not supported for Amazon S3
+     * interface endpoints.</p> 
      */
     inline ModifyVpcEndpointRequest& WithPrivateDnsEnabled(bool value) { SetPrivateDnsEnabled(value); return *this;}
 

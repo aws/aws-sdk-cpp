@@ -119,21 +119,21 @@ void ${className}::init(const ClientConfiguration& config)
 #if($metadata.hasPreSignedUrl)
   m_useDualStack = config.useDualStack;
 #end
-#if($virtualAddressingSupported || $arnEndpointSupported || $metadata.hasEndpointTrait)
+#if($virtualAddressingSupported || $arnEndpointSupported || $vpcEndpointSupported || $metadata.hasEndpointTrait)
   m_scheme = m_configScheme;
 #if($arnEndpointSupported)
   m_useDualStack = config.useDualStack;
 #end
   if (config.endpointOverride.empty())
   {
-#if($arnEndpointSupported)
+#if($arnEndpointSupported || $vpcEndpointSupported)
       m_useCustomEndpoint = false;
 #end
       m_baseUri = ${metadata.classNamePrefix}Endpoint::ForRegion(config.region, config.useDualStack${ForRegionExtraArgsString});
   }
   else
   {
-#if($arnEndpointSupported)
+#if($arnEndpointSupported || $vpcEndpointSupported)
       m_useCustomEndpoint = true;
 #end
       OverrideEndpoint(config.endpointOverride);

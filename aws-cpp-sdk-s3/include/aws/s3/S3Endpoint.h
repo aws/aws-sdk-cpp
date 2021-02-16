@@ -29,15 +29,18 @@ namespace S3Endpoint
    * @param arn The S3 Access Point ARN
    * @param regionNameOverride Override region name in ARN if it's not empty
    * @param useDualStack Using dual-stack endpoint if true
+   * @param endpointOverride Override endpoint if it's not empty
    */
-  AWS_S3_API Aws::String ForAccessPointArn(const S3ARN& arn, const Aws::String& regionNameOverride = "", bool useDualStack = false);
+  AWS_S3_API Aws::String ForAccessPointArn(const S3ARN& arn, const Aws::String& regionNameOverride = "", bool useDualStack = false, const Aws::String& endpointOverride = "");
 
   /**
    * Compute endpoint based on Outposts ARN.
    * @param arn The S3 Outposts ARN
    * @param regionNameOverride Override region name in ARN if it's not empty
+   * @param useDualStack Using dual-stack endpoint if true
+   * @param endpointOverride Override endpoint if it's not empty
    */
-  AWS_S3_API Aws::String ForOutpostsArn(const S3ARN& arn, const Aws::String& regionNameOverride = "");
+  AWS_S3_API Aws::String ForOutpostsArn(const S3ARN& arn, const Aws::String& regionNameOverride = "", bool useDualStack = false, const Aws::String& endpointOverride = "");
 } // namespace S3Endpoint
 } // namespace S3
 } // namespace Aws

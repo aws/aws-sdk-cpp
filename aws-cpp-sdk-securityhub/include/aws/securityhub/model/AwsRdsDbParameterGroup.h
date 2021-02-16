@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Provides information about a parameter group for a DB instance.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsDbParameterGroup">AWS
    * API Reference</a></p>
    */
@@ -38,83 +39,83 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The name of the parameter group.</p>
      */
     inline const Aws::String& GetDbParameterGroupName() const{ return m_dbParameterGroupName; }
 
     /**
-     * <p/>
+     * <p>The name of the parameter group.</p>
      */
     inline bool DbParameterGroupNameHasBeenSet() const { return m_dbParameterGroupNameHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The name of the parameter group.</p>
      */
     inline void SetDbParameterGroupName(const Aws::String& value) { m_dbParameterGroupNameHasBeenSet = true; m_dbParameterGroupName = value; }
 
     /**
-     * <p/>
+     * <p>The name of the parameter group.</p>
      */
     inline void SetDbParameterGroupName(Aws::String&& value) { m_dbParameterGroupNameHasBeenSet = true; m_dbParameterGroupName = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The name of the parameter group.</p>
      */
     inline void SetDbParameterGroupName(const char* value) { m_dbParameterGroupNameHasBeenSet = true; m_dbParameterGroupName.assign(value); }
 
     /**
-     * <p/>
+     * <p>The name of the parameter group.</p>
      */
     inline AwsRdsDbParameterGroup& WithDbParameterGroupName(const Aws::String& value) { SetDbParameterGroupName(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The name of the parameter group.</p>
      */
     inline AwsRdsDbParameterGroup& WithDbParameterGroupName(Aws::String&& value) { SetDbParameterGroupName(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The name of the parameter group.</p>
      */
     inline AwsRdsDbParameterGroup& WithDbParameterGroupName(const char* value) { SetDbParameterGroupName(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The status of parameter updates.</p>
      */
     inline const Aws::String& GetParameterApplyStatus() const{ return m_parameterApplyStatus; }
 
     /**
-     * <p/>
+     * <p>The status of parameter updates.</p>
      */
     inline bool ParameterApplyStatusHasBeenSet() const { return m_parameterApplyStatusHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The status of parameter updates.</p>
      */
     inline void SetParameterApplyStatus(const Aws::String& value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus = value; }
 
     /**
-     * <p/>
+     * <p>The status of parameter updates.</p>
      */
     inline void SetParameterApplyStatus(Aws::String&& value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The status of parameter updates.</p>
      */
     inline void SetParameterApplyStatus(const char* value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus.assign(value); }
 
     /**
-     * <p/>
+     * <p>The status of parameter updates.</p>
      */
     inline AwsRdsDbParameterGroup& WithParameterApplyStatus(const Aws::String& value) { SetParameterApplyStatus(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The status of parameter updates.</p>
      */
     inline AwsRdsDbParameterGroup& WithParameterApplyStatus(Aws::String&& value) { SetParameterApplyStatus(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The status of parameter updates.</p>
      */
     inline AwsRdsDbParameterGroup& WithParameterApplyStatus(const char* value) { SetParameterApplyStatus(value); return *this;}
 

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/athena/Athena_EXPORTS.h>
 #include <aws/athena/model/ResultConfigurationUpdates.h>
+#include <aws/athena/model/EngineVersion.h>
 #include <utility>
 
 namespace Aws
@@ -249,6 +250,61 @@ namespace Model
      */
     inline WorkGroupConfigurationUpdates& WithRequesterPaysEnabled(bool value) { SetRequesterPaysEnabled(value); return *this;}
 
+
+    /**
+     * <p>The engine version requested when a workgroup is updated. After the update,
+     * all queries on the workgroup run on the requested engine version. If no value
+     * was previously set, the default is Auto. Queries on the
+     * <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview
+     * engine regardless of this setting.</p>
+     */
+    inline const EngineVersion& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p>The engine version requested when a workgroup is updated. After the update,
+     * all queries on the workgroup run on the requested engine version. If no value
+     * was previously set, the default is Auto. Queries on the
+     * <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview
+     * engine regardless of this setting.</p>
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
+
+    /**
+     * <p>The engine version requested when a workgroup is updated. After the update,
+     * all queries on the workgroup run on the requested engine version. If no value
+     * was previously set, the default is Auto. Queries on the
+     * <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview
+     * engine regardless of this setting.</p>
+     */
+    inline void SetEngineVersion(const EngineVersion& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
+
+    /**
+     * <p>The engine version requested when a workgroup is updated. After the update,
+     * all queries on the workgroup run on the requested engine version. If no value
+     * was previously set, the default is Auto. Queries on the
+     * <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview
+     * engine regardless of this setting.</p>
+     */
+    inline void SetEngineVersion(EngineVersion&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
+
+    /**
+     * <p>The engine version requested when a workgroup is updated. After the update,
+     * all queries on the workgroup run on the requested engine version. If no value
+     * was previously set, the default is Auto. Queries on the
+     * <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview
+     * engine regardless of this setting.</p>
+     */
+    inline WorkGroupConfigurationUpdates& WithEngineVersion(const EngineVersion& value) { SetEngineVersion(value); return *this;}
+
+    /**
+     * <p>The engine version requested when a workgroup is updated. After the update,
+     * all queries on the workgroup run on the requested engine version. If no value
+     * was previously set, the default is Auto. Queries on the
+     * <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview
+     * engine regardless of this setting.</p>
+     */
+    inline WorkGroupConfigurationUpdates& WithEngineVersion(EngineVersion&& value) { SetEngineVersion(std::move(value)); return *this;}
+
   private:
 
     bool m_enforceWorkGroupConfiguration;
@@ -268,6 +324,9 @@ namespace Model
 
     bool m_requesterPaysEnabled;
     bool m_requesterPaysEnabledHasBeenSet;
+
+    EngineVersion m_engineVersion;
+    bool m_engineVersionHasBeenSet;
   };
 
 } // namespace Model

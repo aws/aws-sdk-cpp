@@ -259,6 +259,27 @@ namespace Model
 
 
     /**
+     * <p>Reserved. Capacity Reservations you have created are accepted by default.</p>
+     */
+    inline bool GetAccept() const{ return m_accept; }
+
+    /**
+     * <p>Reserved. Capacity Reservations you have created are accepted by default.</p>
+     */
+    inline bool AcceptHasBeenSet() const { return m_acceptHasBeenSet; }
+
+    /**
+     * <p>Reserved. Capacity Reservations you have created are accepted by default.</p>
+     */
+    inline void SetAccept(bool value) { m_acceptHasBeenSet = true; m_accept = value; }
+
+    /**
+     * <p>Reserved. Capacity Reservations you have created are accepted by default.</p>
+     */
+    inline ModifyCapacityReservationRequest& WithAccept(bool value) { SetAccept(value); return *this;}
+
+
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -303,6 +324,9 @@ namespace Model
 
     EndDateType m_endDateType;
     bool m_endDateTypeHasBeenSet;
+
+    bool m_accept;
+    bool m_acceptHasBeenSet;
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;

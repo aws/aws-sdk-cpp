@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Bans a user from a channel.</p><p><h3>See Also:</h3>   <a
+   * <p>The details of a channel ban.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ChannelBan">AWS
    * API Reference</a></p>
    */
@@ -143,32 +143,32 @@ namespace Model
 
 
     /**
-     * <p>The parameter of the action.</p>
+     * <p>The <code>AppInstanceUser</code> who created the ban.</p>
      */
     inline const Identity& GetCreatedBy() const{ return m_createdBy; }
 
     /**
-     * <p>The parameter of the action.</p>
+     * <p>The <code>AppInstanceUser</code> who created the ban.</p>
      */
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
 
     /**
-     * <p>The parameter of the action.</p>
+     * <p>The <code>AppInstanceUser</code> who created the ban.</p>
      */
     inline void SetCreatedBy(const Identity& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
 
     /**
-     * <p>The parameter of the action.</p>
+     * <p>The <code>AppInstanceUser</code> who created the ban.</p>
      */
     inline void SetCreatedBy(Identity&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
 
     /**
-     * <p>The parameter of the action.</p>
+     * <p>The <code>AppInstanceUser</code> who created the ban.</p>
      */
     inline ChannelBan& WithCreatedBy(const Identity& value) { SetCreatedBy(value); return *this;}
 
     /**
-     * <p>The parameter of the action.</p>
+     * <p>The <code>AppInstanceUser</code> who created the ban.</p>
      */
     inline ChannelBan& WithCreatedBy(Identity&& value) { SetCreatedBy(std::move(value)); return *this;}
 

@@ -24,6 +24,6 @@
   if (arn && !request.Get${accountIdMemberWithFirstLetterCapitalized}().empty() && request.Get${accountIdMemberWithFirstLetterCapitalized}() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
 #end

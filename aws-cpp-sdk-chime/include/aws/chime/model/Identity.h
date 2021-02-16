@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The ARN and name of a user.</p><p><h3>See Also:</h3>   <a
+   * <p>The details of a user.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/Identity">AWS API
    * Reference</a></p>
    */

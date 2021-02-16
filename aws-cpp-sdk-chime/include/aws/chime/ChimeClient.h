@@ -932,26 +932,26 @@ namespace Model
    * about the Amazon Chime API, including operations, types, inputs and outputs, and
    * error codes. It also includes some server-side API actions to use with the
    * Amazon Chime SDK. For more information about the Amazon Chime SDK, see <a
-   * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-   * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p> <p>You can
+   * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html"> Using the
+   * Amazon Chime SDK </a> in the <i>Amazon Chime Developer Guide</i>.</p> <p>You can
    * use an AWS SDK, the AWS Command Line Interface (AWS CLI), or the REST API to
    * make API calls. We recommend using an AWS SDK or the AWS CLI. Each API operation
    * includes links to information about using it with a language-specific AWS SDK or
-   * the AWS CLI.</p> <dl> <dt>Using an AWS SDK</dt> <dd> <p>You don't need to write
+   * the AWS CLI.</p> <dl> <dt>Using an AWS SDK</dt> <dd> <p> You don't need to write
    * code to calculate a signature for request authentication. The SDK clients
    * authenticate your requests by using access keys that you provide. For more
    * information about AWS SDKs, see the <a
-   * href="http://aws.amazon.com/developer/">AWS Developer Center</a>.</p> </dd>
+   * href="http://aws.amazon.com/developer/">AWS Developer Center</a>. </p> </dd>
    * <dt>Using the AWS CLI</dt> <dd> <p>Use your access keys with the AWS CLI to make
    * API calls. For information about setting up the AWS CLI, see <a
    * href="https://docs.aws.amazon.com/cli/latest/userguide/installing.html">Installing
    * the AWS Command Line Interface</a> in the <i>AWS Command Line Interface User
    * Guide</i>. For a list of available Amazon Chime commands, see the <a
    * href="https://docs.aws.amazon.com/cli/latest/reference/chime/index.html">Amazon
-   * Chime commands</a> in the <i>AWS CLI Command Reference</i>.</p> </dd> <dt>Using
-   * REST</dt> <dd> <p>If you use REST to make API calls, you must authenticate your
-   * request by providing a signature. Amazon Chime supports Signature Version 4. For
-   * more information, see <a
+   * Chime commands</a> in the <i>AWS CLI Command Reference</i>. </p> </dd> <dt>Using
+   * REST APIs</dt> <dd> <p>If you use REST to make API calls, you must authenticate
+   * your request by providing a signature. Amazon Chime supports signature version
+   * 4. For more information, see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
    * Version 4 Signing Process</a> in the <i>Amazon Web Services General
    * Reference</i>.</p> <p>When making REST API calls, use the service name
@@ -1103,7 +1103,7 @@ namespace Model
         virtual void AssociateSigninDelegateGroupsWithAccountAsync(const Model::AssociateSigninDelegateGroupsWithAccountRequest& request, const AssociateSigninDelegateGroupsWithAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates up to 100 new attendees for an active Amazon Chime SDK meeting. For
+         * <p> Creates up to 100 new attendees for an active Amazon Chime SDK meeting. For
          * more information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
          * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p><p><h3>See
@@ -1114,7 +1114,7 @@ namespace Model
         virtual Model::BatchCreateAttendeeOutcome BatchCreateAttendee(const Model::BatchCreateAttendeeRequest& request) const;
 
         /**
-         * <p>Creates up to 100 new attendees for an active Amazon Chime SDK meeting. For
+         * <p> Creates up to 100 new attendees for an active Amazon Chime SDK meeting. For
          * more information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
          * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p><p><h3>See
@@ -1127,7 +1127,7 @@ namespace Model
         virtual Model::BatchCreateAttendeeOutcomeCallable BatchCreateAttendeeCallable(const Model::BatchCreateAttendeeRequest& request) const;
 
         /**
-         * <p>Creates up to 100 new attendees for an active Amazon Chime SDK meeting. For
+         * <p> Creates up to 100 new attendees for an active Amazon Chime SDK meeting. For
          * more information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
          * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p><p><h3>See
@@ -1141,9 +1141,9 @@ namespace Model
 
         /**
          * <p>Adds up to 50 members to a chat room in an Amazon Chime Enterprise account.
-         * Members can be either users or bots. The member role designates whether the
-         * member is a chat room administrator or a general chat room member.</p><p><h3>See
-         * Also:</h3>   <a
+         * Members can be users or bots. The member role designates whether the member is a
+         * chat room administrator or a general chat room member.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateRoomMembership">AWS
          * API Reference</a></p>
          */
@@ -1151,9 +1151,9 @@ namespace Model
 
         /**
          * <p>Adds up to 50 members to a chat room in an Amazon Chime Enterprise account.
-         * Members can be either users or bots. The member role designates whether the
-         * member is a chat room administrator or a general chat room member.</p><p><h3>See
-         * Also:</h3>   <a
+         * Members can be users or bots. The member role designates whether the member is a
+         * chat room administrator or a general chat room member.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateRoomMembership">AWS
          * API Reference</a></p>
          *
@@ -1163,9 +1163,9 @@ namespace Model
 
         /**
          * <p>Adds up to 50 members to a chat room in an Amazon Chime Enterprise account.
-         * Members can be either users or bots. The member role designates whether the
-         * member is a chat room administrator or a general chat room member.</p><p><h3>See
-         * Also:</h3>   <a
+         * Members can be users or bots. The member role designates whether the member is a
+         * chat room administrator or a general chat room member.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateRoomMembership">AWS
          * API Reference</a></p>
          *
@@ -1174,20 +1174,20 @@ namespace Model
         virtual void BatchCreateRoomMembershipAsync(const Model::BatchCreateRoomMembershipRequest& request, const BatchCreateRoomMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Moves phone numbers into the <b>Deletion queue</b>. Phone numbers must be
+         * <p> Moves phone numbers into the <b>Deletion queue</b>. Phone numbers must be
          * disassociated from any users or Amazon Chime Voice Connectors before they can be
-         * deleted.</p> <p>Phone numbers remain in the <b>Deletion queue</b> for 7 days
-         * before they are deleted permanently.</p><p><h3>See Also:</h3>   <a
+         * deleted. </p> <p> Phone numbers remain in the <b>Deletion queue</b> for 7 days
+         * before they are deleted permanently. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchDeletePhoneNumber">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchDeletePhoneNumberOutcome BatchDeletePhoneNumber(const Model::BatchDeletePhoneNumberRequest& request) const;
 
         /**
-         * <p>Moves phone numbers into the <b>Deletion queue</b>. Phone numbers must be
+         * <p> Moves phone numbers into the <b>Deletion queue</b>. Phone numbers must be
          * disassociated from any users or Amazon Chime Voice Connectors before they can be
-         * deleted.</p> <p>Phone numbers remain in the <b>Deletion queue</b> for 7 days
-         * before they are deleted permanently.</p><p><h3>See Also:</h3>   <a
+         * deleted. </p> <p> Phone numbers remain in the <b>Deletion queue</b> for 7 days
+         * before they are deleted permanently. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchDeletePhoneNumber">AWS
          * API Reference</a></p>
          *
@@ -1196,10 +1196,10 @@ namespace Model
         virtual Model::BatchDeletePhoneNumberOutcomeCallable BatchDeletePhoneNumberCallable(const Model::BatchDeletePhoneNumberRequest& request) const;
 
         /**
-         * <p>Moves phone numbers into the <b>Deletion queue</b>. Phone numbers must be
+         * <p> Moves phone numbers into the <b>Deletion queue</b>. Phone numbers must be
          * disassociated from any users or Amazon Chime Voice Connectors before they can be
-         * deleted.</p> <p>Phone numbers remain in the <b>Deletion queue</b> for 7 days
-         * before they are deleted permanently.</p><p><h3>See Also:</h3>   <a
+         * deleted. </p> <p> Phone numbers remain in the <b>Deletion queue</b> for 7 days
+         * before they are deleted permanently. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchDeletePhoneNumber">AWS
          * API Reference</a></p>
          *
@@ -1214,15 +1214,15 @@ namespace Model
          * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
          * Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
          * Guide</i>.</p> <p>Users suspended from a <code>Team</code> account are
-         * disassociated from the account, but they can continue to use Amazon Chime as
-         * free users. To remove the suspension from suspended <code>Team</code> account
-         * users, invite them to the <code>Team</code> account again. You can use the
+         * disassociated from the account,but they can continue to use Amazon Chime as free
+         * users. To remove the suspension from suspended <code>Team</code> account users,
+         * invite them to the <code>Team</code> account again. You can use the
          * <a>InviteUsers</a> action to do so.</p> <p>Users suspended from an
          * <code>EnterpriseLWA</code> account are immediately signed out of Amazon Chime
          * and can no longer sign in. To remove the suspension from suspended
          * <code>EnterpriseLWA</code> account users, use the <a>BatchUnsuspendUser</a>
-         * action. </p> <p>To sign out users without suspending them, use the
-         * <a>LogoutUser</a> action.</p><p><h3>See Also:</h3>   <a
+         * action.</p> <p> To sign out users without suspending them, use the
+         * <a>LogoutUser</a> action. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchSuspendUser">AWS
          * API Reference</a></p>
          */
@@ -1235,15 +1235,15 @@ namespace Model
          * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
          * Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
          * Guide</i>.</p> <p>Users suspended from a <code>Team</code> account are
-         * disassociated from the account, but they can continue to use Amazon Chime as
-         * free users. To remove the suspension from suspended <code>Team</code> account
-         * users, invite them to the <code>Team</code> account again. You can use the
+         * disassociated from the account,but they can continue to use Amazon Chime as free
+         * users. To remove the suspension from suspended <code>Team</code> account users,
+         * invite them to the <code>Team</code> account again. You can use the
          * <a>InviteUsers</a> action to do so.</p> <p>Users suspended from an
          * <code>EnterpriseLWA</code> account are immediately signed out of Amazon Chime
          * and can no longer sign in. To remove the suspension from suspended
          * <code>EnterpriseLWA</code> account users, use the <a>BatchUnsuspendUser</a>
-         * action. </p> <p>To sign out users without suspending them, use the
-         * <a>LogoutUser</a> action.</p><p><h3>See Also:</h3>   <a
+         * action.</p> <p> To sign out users without suspending them, use the
+         * <a>LogoutUser</a> action. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchSuspendUser">AWS
          * API Reference</a></p>
          *
@@ -1258,15 +1258,15 @@ namespace Model
          * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
          * Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
          * Guide</i>.</p> <p>Users suspended from a <code>Team</code> account are
-         * disassociated from the account, but they can continue to use Amazon Chime as
-         * free users. To remove the suspension from suspended <code>Team</code> account
-         * users, invite them to the <code>Team</code> account again. You can use the
+         * disassociated from the account,but they can continue to use Amazon Chime as free
+         * users. To remove the suspension from suspended <code>Team</code> account users,
+         * invite them to the <code>Team</code> account again. You can use the
          * <a>InviteUsers</a> action to do so.</p> <p>Users suspended from an
          * <code>EnterpriseLWA</code> account are immediately signed out of Amazon Chime
          * and can no longer sign in. To remove the suspension from suspended
          * <code>EnterpriseLWA</code> account users, use the <a>BatchUnsuspendUser</a>
-         * action. </p> <p>To sign out users without suspending them, use the
-         * <a>LogoutUser</a> action.</p><p><h3>See Also:</h3>   <a
+         * action.</p> <p> To sign out users without suspending them, use the
+         * <a>LogoutUser</a> action. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchSuspendUser">AWS
          * API Reference</a></p>
          *
@@ -1281,9 +1281,9 @@ namespace Model
          * more information about different account types, see <a
          * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
          * Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
-         * Guide</i>.</p> <p>Previously suspended users who are unsuspended using this
+         * Guide</i>.</p> <p> Previously suspended users who are unsuspended using this
          * action are returned to <code>Registered</code> status. Users who are not
-         * previously suspended are ignored.</p><p><h3>See Also:</h3>   <a
+         * previously suspended are ignored. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchUnsuspendUser">AWS
          * API Reference</a></p>
          */
@@ -1296,9 +1296,9 @@ namespace Model
          * more information about different account types, see <a
          * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
          * Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
-         * Guide</i>.</p> <p>Previously suspended users who are unsuspended using this
+         * Guide</i>.</p> <p> Previously suspended users who are unsuspended using this
          * action are returned to <code>Registered</code> status. Users who are not
-         * previously suspended are ignored.</p><p><h3>See Also:</h3>   <a
+         * previously suspended are ignored. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchUnsuspendUser">AWS
          * API Reference</a></p>
          *
@@ -1313,9 +1313,9 @@ namespace Model
          * more information about different account types, see <a
          * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
          * Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
-         * Guide</i>.</p> <p>Previously suspended users who are unsuspended using this
+         * Guide</i>.</p> <p> Previously suspended users who are unsuspended using this
          * action are returned to <code>Registered</code> status. Users who are not
-         * previously suspended are ignored.</p><p><h3>See Also:</h3>   <a
+         * previously suspended are ignored. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchUnsuspendUser">AWS
          * API Reference</a></p>
          *
@@ -1324,9 +1324,9 @@ namespace Model
         virtual void BatchUnsuspendUserAsync(const Model::BatchUnsuspendUserRequest& request, const BatchUnsuspendUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates phone number product types or calling names. You can update one
-         * attribute at a time for each <code>UpdatePhoneNumberRequestItem</code>. For
-         * example, you can update either the product type or the calling name.</p> <p>For
+         * <p> Updates phone number product types or calling names. You can update one
+         * attribute at a time for each <code>UpdatePhoneNumberRequestItem</code> . For
+         * example, you can update either the product type or the calling name. </p> <p>For
          * product types, choose from Amazon Chime Business Calling and Amazon Chime Voice
          * Connector. For toll-free numbers, you must use the Amazon Chime Voice Connector
          * product type.</p> <p>Updates to outbound calling names can take up to 72 hours
@@ -1338,9 +1338,9 @@ namespace Model
         virtual Model::BatchUpdatePhoneNumberOutcome BatchUpdatePhoneNumber(const Model::BatchUpdatePhoneNumberRequest& request) const;
 
         /**
-         * <p>Updates phone number product types or calling names. You can update one
-         * attribute at a time for each <code>UpdatePhoneNumberRequestItem</code>. For
-         * example, you can update either the product type or the calling name.</p> <p>For
+         * <p> Updates phone number product types or calling names. You can update one
+         * attribute at a time for each <code>UpdatePhoneNumberRequestItem</code> . For
+         * example, you can update either the product type or the calling name. </p> <p>For
          * product types, choose from Amazon Chime Business Calling and Amazon Chime Voice
          * Connector. For toll-free numbers, you must use the Amazon Chime Voice Connector
          * product type.</p> <p>Updates to outbound calling names can take up to 72 hours
@@ -1354,9 +1354,9 @@ namespace Model
         virtual Model::BatchUpdatePhoneNumberOutcomeCallable BatchUpdatePhoneNumberCallable(const Model::BatchUpdatePhoneNumberRequest& request) const;
 
         /**
-         * <p>Updates phone number product types or calling names. You can update one
-         * attribute at a time for each <code>UpdatePhoneNumberRequestItem</code>. For
-         * example, you can update either the product type or the calling name.</p> <p>For
+         * <p> Updates phone number product types or calling names. You can update one
+         * attribute at a time for each <code>UpdatePhoneNumberRequestItem</code> . For
+         * example, you can update either the product type or the calling name. </p> <p>For
          * product types, choose from Amazon Chime Business Calling and Amazon Chime Voice
          * Connector. For toll-free numbers, you must use the Amazon Chime Voice Connector
          * product type.</p> <p>Updates to outbound calling names can take up to 72 hours
@@ -1370,9 +1370,9 @@ namespace Model
         virtual void BatchUpdatePhoneNumberAsync(const Model::BatchUpdatePhoneNumberRequest& request, const BatchUpdatePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates user details within the <a>UpdateUserRequestItem</a> object for up to
-         * 20 users for the specified Amazon Chime account. Currently, only
-         * <code>LicenseType</code> updates are supported for this action.</p><p><h3>See
+         * <p> Updates user details within the <a>UpdateUserRequestItem</a> object for up
+         * to 20 users for the specified Amazon Chime account. Currently, only
+         * <code>LicenseType</code> updates are supported for this action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchUpdateUser">AWS
          * API Reference</a></p>
@@ -1380,9 +1380,9 @@ namespace Model
         virtual Model::BatchUpdateUserOutcome BatchUpdateUser(const Model::BatchUpdateUserRequest& request) const;
 
         /**
-         * <p>Updates user details within the <a>UpdateUserRequestItem</a> object for up to
-         * 20 users for the specified Amazon Chime account. Currently, only
-         * <code>LicenseType</code> updates are supported for this action.</p><p><h3>See
+         * <p> Updates user details within the <a>UpdateUserRequestItem</a> object for up
+         * to 20 users for the specified Amazon Chime account. Currently, only
+         * <code>LicenseType</code> updates are supported for this action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchUpdateUser">AWS
          * API Reference</a></p>
@@ -1392,9 +1392,9 @@ namespace Model
         virtual Model::BatchUpdateUserOutcomeCallable BatchUpdateUserCallable(const Model::BatchUpdateUserRequest& request) const;
 
         /**
-         * <p>Updates user details within the <a>UpdateUserRequestItem</a> object for up to
-         * 20 users for the specified Amazon Chime account. Currently, only
-         * <code>LicenseType</code> updates are supported for this action.</p><p><h3>See
+         * <p> Updates user details within the <a>UpdateUserRequestItem</a> object for up
+         * to 20 users for the specified Amazon Chime account. Currently, only
+         * <code>LicenseType</code> updates are supported for this action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchUpdateUser">AWS
          * API Reference</a></p>
@@ -1444,20 +1444,20 @@ namespace Model
         virtual void CreateAccountAsync(const Model::CreateAccountRequest& request, const CreateAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an Amazon Chime Messaging SDK <code>AppInstance</code> under an AWS
-         * Account. Only Messaging SDK customers use this API.
-         * <code>CreateAppInstance</code> supports <code>idempotency</code> behavior as
-         * described in the AWS API Standard.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an Amazon Chime SDK messaging <code>AppInstance</code> under an AWS
+         * account. Only SDK messaging customers use this API.
+         * <code>CreateAppInstance</code> supports idempotency behavior as described in the
+         * AWS API Standard.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstance">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateAppInstanceOutcome CreateAppInstance(const Model::CreateAppInstanceRequest& request) const;
 
         /**
-         * <p>Creates an Amazon Chime Messaging SDK <code>AppInstance</code> under an AWS
-         * Account. Only Messaging SDK customers use this API.
-         * <code>CreateAppInstance</code> supports <code>idempotency</code> behavior as
-         * described in the AWS API Standard.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an Amazon Chime SDK messaging <code>AppInstance</code> under an AWS
+         * account. Only SDK messaging customers use this API.
+         * <code>CreateAppInstance</code> supports idempotency behavior as described in the
+         * AWS API Standard.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstance">AWS
          * API Reference</a></p>
          *
@@ -1466,10 +1466,10 @@ namespace Model
         virtual Model::CreateAppInstanceOutcomeCallable CreateAppInstanceCallable(const Model::CreateAppInstanceRequest& request) const;
 
         /**
-         * <p>Creates an Amazon Chime Messaging SDK <code>AppInstance</code> under an AWS
-         * Account. Only Messaging SDK customers use this API.
-         * <code>CreateAppInstance</code> supports <code>idempotency</code> behavior as
-         * described in the AWS API Standard.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an Amazon Chime SDK messaging <code>AppInstance</code> under an AWS
+         * account. Only SDK messaging customers use this API.
+         * <code>CreateAppInstance</code> supports idempotency behavior as described in the
+         * AWS API Standard.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstance">AWS
          * API Reference</a></p>
          *
@@ -1480,10 +1480,10 @@ namespace Model
         /**
          * <p>Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>.
          * The promoted user can perform the following actions. </p> <ul> <li> <p>
-         * <code>ChannelModerator</code> actions across all channels in the app
-         * instance.</p> </li> <li> <p> <code>DeleteChannelMessage</code> actions.</p>
-         * </li> </ul> <p>Only an <code>AppInstanceUser</code> can be promoted to an
-         * <code>AppInstanceAdmin</code> role.</p><p><h3>See Also:</h3>   <a
+         * <code>ChannelModerator</code> actions across all channels in the
+         * <code>AppInstance</code>.</p> </li> <li> <p> <code>DeleteChannelMessage</code>
+         * actions.</p> </li> </ul> <p>Only an <code>AppInstanceUser</code> can be promoted
+         * to an <code>AppInstanceAdmin</code> role.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstanceAdmin">AWS
          * API Reference</a></p>
          */
@@ -1492,10 +1492,10 @@ namespace Model
         /**
          * <p>Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>.
          * The promoted user can perform the following actions. </p> <ul> <li> <p>
-         * <code>ChannelModerator</code> actions across all channels in the app
-         * instance.</p> </li> <li> <p> <code>DeleteChannelMessage</code> actions.</p>
-         * </li> </ul> <p>Only an <code>AppInstanceUser</code> can be promoted to an
-         * <code>AppInstanceAdmin</code> role.</p><p><h3>See Also:</h3>   <a
+         * <code>ChannelModerator</code> actions across all channels in the
+         * <code>AppInstance</code>.</p> </li> <li> <p> <code>DeleteChannelMessage</code>
+         * actions.</p> </li> </ul> <p>Only an <code>AppInstanceUser</code> can be promoted
+         * to an <code>AppInstanceAdmin</code> role.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstanceAdmin">AWS
          * API Reference</a></p>
          *
@@ -1506,10 +1506,10 @@ namespace Model
         /**
          * <p>Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>.
          * The promoted user can perform the following actions. </p> <ul> <li> <p>
-         * <code>ChannelModerator</code> actions across all channels in the app
-         * instance.</p> </li> <li> <p> <code>DeleteChannelMessage</code> actions.</p>
-         * </li> </ul> <p>Only an <code>AppInstanceUser</code> can be promoted to an
-         * <code>AppInstanceAdmin</code> role.</p><p><h3>See Also:</h3>   <a
+         * <code>ChannelModerator</code> actions across all channels in the
+         * <code>AppInstance</code>.</p> </li> <li> <p> <code>DeleteChannelMessage</code>
+         * actions.</p> </li> </ul> <p>Only an <code>AppInstanceUser</code> can be promoted
+         * to an <code>AppInstanceAdmin</code> role.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstanceAdmin">AWS
          * API Reference</a></p>
          *
@@ -1549,10 +1549,10 @@ namespace Model
         virtual void CreateAppInstanceUserAsync(const Model::CreateAppInstanceUserRequest& request, const CreateAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new attendee for an active Amazon Chime SDK meeting. For more
+         * <p> Creates a new attendee for an active Amazon Chime SDK meeting. For more
          * information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAttendee">AWS
          * API Reference</a></p>
@@ -1560,10 +1560,10 @@ namespace Model
         virtual Model::CreateAttendeeOutcome CreateAttendee(const Model::CreateAttendeeRequest& request) const;
 
         /**
-         * <p>Creates a new attendee for an active Amazon Chime SDK meeting. For more
+         * <p> Creates a new attendee for an active Amazon Chime SDK meeting. For more
          * information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAttendee">AWS
          * API Reference</a></p>
@@ -1573,10 +1573,10 @@ namespace Model
         virtual Model::CreateAttendeeOutcomeCallable CreateAttendeeCallable(const Model::CreateAttendeeRequest& request) const;
 
         /**
-         * <p>Creates a new attendee for an active Amazon Chime SDK meeting. For more
+         * <p> Creates a new attendee for an active Amazon Chime SDK meeting. For more
          * information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAttendee">AWS
          * API Reference</a></p>
@@ -1615,8 +1615,10 @@ namespace Model
 
         /**
          * <p>Creates a channel to which you can add users and send messages.</p> <p>
-         * <b>Restriction</b>: You can't change a channel's privacy.</p><p><h3>See
-         * Also:</h3>   <a
+         * <b>Restriction</b>: You can't change a channel's privacy.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannel">AWS
          * API Reference</a></p>
          */
@@ -1624,8 +1626,10 @@ namespace Model
 
         /**
          * <p>Creates a channel to which you can add users and send messages.</p> <p>
-         * <b>Restriction</b>: You can't change a channel's privacy.</p><p><h3>See
-         * Also:</h3>   <a
+         * <b>Restriction</b>: You can't change a channel's privacy.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannel">AWS
          * API Reference</a></p>
          *
@@ -1635,8 +1639,10 @@ namespace Model
 
         /**
          * <p>Creates a channel to which you can add users and send messages.</p> <p>
-         * <b>Restriction</b>: You can't change a channel's privacy.</p><p><h3>See
-         * Also:</h3>   <a
+         * <b>Restriction</b>: You can't change a channel's privacy.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannel">AWS
          * API Reference</a></p>
          *
@@ -1648,9 +1654,11 @@ namespace Model
          * <p>Permanently bans a member from a channel. Moderators can't add banned members
          * to a channel. To undo a ban, you first have to <code>DeleteChannelBan</code>,
          * and then <code>CreateChannelMembership</code>. Bans are cleaned up when you
-         * delete users or channels. </p> <p>If you ban a user who is already part of a
-         * channel, that user is automatically kicked from the channel.</p><p><h3>See
-         * Also:</h3>   <a
+         * delete users or channels.</p> <p>If you ban a user who is already part of a
+         * channel, that user is automatically kicked from the channel.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelBan">AWS
          * API Reference</a></p>
          */
@@ -1660,9 +1668,11 @@ namespace Model
          * <p>Permanently bans a member from a channel. Moderators can't add banned members
          * to a channel. To undo a ban, you first have to <code>DeleteChannelBan</code>,
          * and then <code>CreateChannelMembership</code>. Bans are cleaned up when you
-         * delete users or channels. </p> <p>If you ban a user who is already part of a
-         * channel, that user is automatically kicked from the channel.</p><p><h3>See
-         * Also:</h3>   <a
+         * delete users or channels.</p> <p>If you ban a user who is already part of a
+         * channel, that user is automatically kicked from the channel.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelBan">AWS
          * API Reference</a></p>
          *
@@ -1674,9 +1684,11 @@ namespace Model
          * <p>Permanently bans a member from a channel. Moderators can't add banned members
          * to a channel. To undo a ban, you first have to <code>DeleteChannelBan</code>,
          * and then <code>CreateChannelMembership</code>. Bans are cleaned up when you
-         * delete users or channels. </p> <p>If you ban a user who is already part of a
-         * channel, that user is automatically kicked from the channel.</p><p><h3>See
-         * Also:</h3>   <a
+         * delete users or channels.</p> <p>If you ban a user who is already part of a
+         * channel, that user is automatically kicked from the channel.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelBan">AWS
          * API Reference</a></p>
          *
@@ -1692,7 +1704,10 @@ namespace Model
          * </li> </ul> <p>Privacy settings impact this action as follows:</p> <ul> <li>
          * <p>Public Channels: You do not need to be a member to list messages, but you
          * must be a member to send messages.</p> </li> <li> <p>Private Channels: You must
-         * be a member to list or send messages.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * be a member to list or send messages.</p> </li> </ul>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelMembership">AWS
          * API Reference</a></p>
          */
@@ -1706,7 +1721,10 @@ namespace Model
          * </li> </ul> <p>Privacy settings impact this action as follows:</p> <ul> <li>
          * <p>Public Channels: You do not need to be a member to list messages, but you
          * must be a member to send messages.</p> </li> <li> <p>Private Channels: You must
-         * be a member to list or send messages.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * be a member to list or send messages.</p> </li> </ul>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelMembership">AWS
          * API Reference</a></p>
          *
@@ -1722,7 +1740,10 @@ namespace Model
          * </li> </ul> <p>Privacy settings impact this action as follows:</p> <ul> <li>
          * <p>Public Channels: You do not need to be a member to list messages, but you
          * must be a member to send messages.</p> </li> <li> <p>Private Channels: You must
-         * be a member to list or send messages.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * be a member to list or send messages.</p> </li> </ul>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelMembership">AWS
          * API Reference</a></p>
          *
@@ -1735,8 +1756,10 @@ namespace Model
          * <ul> <li> <p>Add and remove other members of the channel.</p> </li> <li> <p>Add
          * and remove other moderators of the channel.</p> </li> <li> <p>Add and remove
          * user bans for the channel.</p> </li> <li> <p>Redact messages in the channel.</p>
-         * </li> <li> <p>List messages in the channel.</p> </li> </ul><p><h3>See Also:</h3>
-         * <a
+         * </li> <li> <p>List messages in the channel.</p> </li> </ul>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelModerator">AWS
          * API Reference</a></p>
          */
@@ -1747,8 +1770,10 @@ namespace Model
          * <ul> <li> <p>Add and remove other members of the channel.</p> </li> <li> <p>Add
          * and remove other moderators of the channel.</p> </li> <li> <p>Add and remove
          * user bans for the channel.</p> </li> <li> <p>Redact messages in the channel.</p>
-         * </li> <li> <p>List messages in the channel.</p> </li> </ul><p><h3>See Also:</h3>
-         * <a
+         * </li> <li> <p>List messages in the channel.</p> </li> </ul>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelModerator">AWS
          * API Reference</a></p>
          *
@@ -1761,8 +1786,10 @@ namespace Model
          * <ul> <li> <p>Add and remove other members of the channel.</p> </li> <li> <p>Add
          * and remove other moderators of the channel.</p> </li> <li> <p>Add and remove
          * user bans for the channel.</p> </li> <li> <p>Redact messages in the channel.</p>
-         * </li> <li> <p>List messages in the channel.</p> </li> </ul><p><h3>See Also:</h3>
-         * <a
+         * </li> <li> <p>List messages in the channel.</p> </li> </ul>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelModerator">AWS
          * API Reference</a></p>
          *
@@ -1771,13 +1798,13 @@ namespace Model
         virtual void CreateChannelModeratorAsync(const Model::CreateChannelModeratorRequest& request, const CreateChannelModeratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new Amazon Chime SDK meeting in the specified media Region with no
+         * <p> Creates a new Amazon Chime SDK meeting in the specified media Region with no
          * initial attendees. For more information about specifying media Regions, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon
-         * Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more
-         * information about the Amazon Chime SDK, see <a
+         * Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i> . For
+         * more information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeeting">AWS
          * API Reference</a></p>
@@ -1785,13 +1812,13 @@ namespace Model
         virtual Model::CreateMeetingOutcome CreateMeeting(const Model::CreateMeetingRequest& request) const;
 
         /**
-         * <p>Creates a new Amazon Chime SDK meeting in the specified media Region with no
+         * <p> Creates a new Amazon Chime SDK meeting in the specified media Region with no
          * initial attendees. For more information about specifying media Regions, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon
-         * Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more
-         * information about the Amazon Chime SDK, see <a
+         * Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i> . For
+         * more information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeeting">AWS
          * API Reference</a></p>
@@ -1801,13 +1828,13 @@ namespace Model
         virtual Model::CreateMeetingOutcomeCallable CreateMeetingCallable(const Model::CreateMeetingRequest& request) const;
 
         /**
-         * <p>Creates a new Amazon Chime SDK meeting in the specified media Region with no
+         * <p> Creates a new Amazon Chime SDK meeting in the specified media Region with no
          * initial attendees. For more information about specifying media Regions, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon
-         * Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more
-         * information about the Amazon Chime SDK, see <a
+         * Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i> . For
+         * more information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeeting">AWS
          * API Reference</a></p>
@@ -1819,11 +1846,11 @@ namespace Model
         /**
          * <p>Uses the join token and call metadata in a meeting request (From number, To
          * number, and so forth) to initiate an outbound call to a public switched
-         * telephone network (PSTN) and joins them into Chime meeting. Also ensures that
+         * telephone network (PSTN) and join them into a Chime meeting. Also ensures that
          * the From number belongs to the customer.</p> <p>To play welcome audio or
          * implement an interactive voice response (IVR), use the
-         * <code>CreateSipMediaApplicationCall</code> API with the corresponding SIP media
-         * application ID.</p><p><h3>See Also:</h3>   <a
+         * <code>CreateSipMediaApplicationCall</code> action with the corresponding SIP
+         * media application ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeetingDialOut">AWS
          * API Reference</a></p>
          */
@@ -1832,11 +1859,11 @@ namespace Model
         /**
          * <p>Uses the join token and call metadata in a meeting request (From number, To
          * number, and so forth) to initiate an outbound call to a public switched
-         * telephone network (PSTN) and joins them into Chime meeting. Also ensures that
+         * telephone network (PSTN) and join them into a Chime meeting. Also ensures that
          * the From number belongs to the customer.</p> <p>To play welcome audio or
          * implement an interactive voice response (IVR), use the
-         * <code>CreateSipMediaApplicationCall</code> API with the corresponding SIP media
-         * application ID.</p><p><h3>See Also:</h3>   <a
+         * <code>CreateSipMediaApplicationCall</code> action with the corresponding SIP
+         * media application ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeetingDialOut">AWS
          * API Reference</a></p>
          *
@@ -1847,11 +1874,11 @@ namespace Model
         /**
          * <p>Uses the join token and call metadata in a meeting request (From number, To
          * number, and so forth) to initiate an outbound call to a public switched
-         * telephone network (PSTN) and joins them into Chime meeting. Also ensures that
+         * telephone network (PSTN) and join them into a Chime meeting. Also ensures that
          * the From number belongs to the customer.</p> <p>To play welcome audio or
          * implement an interactive voice response (IVR), use the
-         * <code>CreateSipMediaApplicationCall</code> API with the corresponding SIP media
-         * application ID.</p><p><h3>See Also:</h3>   <a
+         * <code>CreateSipMediaApplicationCall</code> action with the corresponding SIP
+         * media application ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeetingDialOut">AWS
          * API Reference</a></p>
          *
@@ -1860,13 +1887,13 @@ namespace Model
         virtual void CreateMeetingDialOutAsync(const Model::CreateMeetingDialOutRequest& request, const CreateMeetingDialOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new Amazon Chime SDK meeting in the specified media Region, with
+         * <p> Creates a new Amazon Chime SDK meeting in the specified media Region, with
          * attendees. For more information about specifying media Regions, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon
-         * Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more
-         * information about the Amazon Chime SDK, see <a
+         * Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i> . For
+         * more information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeetingWithAttendees">AWS
          * API Reference</a></p>
@@ -1874,13 +1901,13 @@ namespace Model
         virtual Model::CreateMeetingWithAttendeesOutcome CreateMeetingWithAttendees(const Model::CreateMeetingWithAttendeesRequest& request) const;
 
         /**
-         * <p>Creates a new Amazon Chime SDK meeting in the specified media Region, with
+         * <p> Creates a new Amazon Chime SDK meeting in the specified media Region, with
          * attendees. For more information about specifying media Regions, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon
-         * Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more
-         * information about the Amazon Chime SDK, see <a
+         * Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i> . For
+         * more information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeetingWithAttendees">AWS
          * API Reference</a></p>
@@ -1890,13 +1917,13 @@ namespace Model
         virtual Model::CreateMeetingWithAttendeesOutcomeCallable CreateMeetingWithAttendeesCallable(const Model::CreateMeetingWithAttendeesRequest& request) const;
 
         /**
-         * <p>Creates a new Amazon Chime SDK meeting in the specified media Region, with
+         * <p> Creates a new Amazon Chime SDK meeting in the specified media Region, with
          * attendees. For more information about specifying media Regions, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon
-         * Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more
-         * information about the Amazon Chime SDK, see <a
+         * Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i> . For
+         * more information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeetingWithAttendees">AWS
          * API Reference</a></p>
@@ -2144,10 +2171,11 @@ namespace Model
         /**
          * <p>Creates an Amazon Chime Voice Connector under the administrator's AWS
          * account. You can choose to create an Amazon Chime Voice Connector in a specific
-         * AWS Region.</p> <p>Enabling <a>CreateVoiceConnectorRequest$RequireEncryption</a>
-         * configures your Amazon Chime Voice Connector to use TLS transport for SIP
-         * signaling and Secure RTP (SRTP) for media. Inbound calls use TLS transport, and
-         * unencrypted outbound calls are blocked.</p><p><h3>See Also:</h3>   <a
+         * AWS Region.</p> <p> Enabling
+         * <a>CreateVoiceConnectorRequest$RequireEncryption</a> configures your Amazon
+         * Chime Voice Connector to use TLS transport for SIP signaling and Secure RTP
+         * (SRTP) for media. Inbound calls use TLS transport, and unencrypted outbound
+         * calls are blocked. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateVoiceConnector">AWS
          * API Reference</a></p>
          */
@@ -2156,10 +2184,11 @@ namespace Model
         /**
          * <p>Creates an Amazon Chime Voice Connector under the administrator's AWS
          * account. You can choose to create an Amazon Chime Voice Connector in a specific
-         * AWS Region.</p> <p>Enabling <a>CreateVoiceConnectorRequest$RequireEncryption</a>
-         * configures your Amazon Chime Voice Connector to use TLS transport for SIP
-         * signaling and Secure RTP (SRTP) for media. Inbound calls use TLS transport, and
-         * unencrypted outbound calls are blocked.</p><p><h3>See Also:</h3>   <a
+         * AWS Region.</p> <p> Enabling
+         * <a>CreateVoiceConnectorRequest$RequireEncryption</a> configures your Amazon
+         * Chime Voice Connector to use TLS transport for SIP signaling and Secure RTP
+         * (SRTP) for media. Inbound calls use TLS transport, and unencrypted outbound
+         * calls are blocked. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateVoiceConnector">AWS
          * API Reference</a></p>
          *
@@ -2170,10 +2199,11 @@ namespace Model
         /**
          * <p>Creates an Amazon Chime Voice Connector under the administrator's AWS
          * account. You can choose to create an Amazon Chime Voice Connector in a specific
-         * AWS Region.</p> <p>Enabling <a>CreateVoiceConnectorRequest$RequireEncryption</a>
-         * configures your Amazon Chime Voice Connector to use TLS transport for SIP
-         * signaling and Secure RTP (SRTP) for media. Inbound calls use TLS transport, and
-         * unencrypted outbound calls are blocked.</p><p><h3>See Also:</h3>   <a
+         * AWS Region.</p> <p> Enabling
+         * <a>CreateVoiceConnectorRequest$RequireEncryption</a> configures your Amazon
+         * Chime Voice Connector to use TLS transport for SIP signaling and Secure RTP
+         * (SRTP) for media. Inbound calls use TLS transport, and unencrypted outbound
+         * calls are blocked. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateVoiceConnector">AWS
          * API Reference</a></p>
          *
@@ -2223,15 +2253,15 @@ namespace Model
 
         /**
          * <p>Deletes the specified Amazon Chime account. You must suspend all users before
-         * deleting a <code>Team</code> account. You can use the <a>BatchSuspendUser</a>
-         * action to do so.</p> <p>For <code>EnterpriseLWA</code> and
+         * deleting <code>Team</code> account. You can use the <a>BatchSuspendUser</a>
+         * action to dodo.</p> <p>For <code>EnterpriseLWA</code> and
          * <code>EnterpriseAD</code> accounts, you must release the claimed domains for
          * your Amazon Chime account before deletion. As soon as you release the domain,
          * all users under that account are suspended.</p> <p>Deleted accounts appear in
-         * your <code>Disabled</code> accounts list for 90 days. To restore a deleted
-         * account from your <code>Disabled</code> accounts list, you must contact AWS
-         * Support.</p> <p>After 90 days, deleted accounts are permanently removed from
-         * your <code>Disabled</code> accounts list.</p><p><h3>See Also:</h3>   <a
+         * your <code>Disabled</code> accounts list for 90 days. To restore deleted account
+         * from your <code>Disabled</code> accounts list, you must contact AWS Support.</p>
+         * <p> After 90 days, deleted accounts are permanently removed from your
+         * <code>Disabled</code> accounts list. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAccount">AWS
          * API Reference</a></p>
          */
@@ -2239,15 +2269,15 @@ namespace Model
 
         /**
          * <p>Deletes the specified Amazon Chime account. You must suspend all users before
-         * deleting a <code>Team</code> account. You can use the <a>BatchSuspendUser</a>
-         * action to do so.</p> <p>For <code>EnterpriseLWA</code> and
+         * deleting <code>Team</code> account. You can use the <a>BatchSuspendUser</a>
+         * action to dodo.</p> <p>For <code>EnterpriseLWA</code> and
          * <code>EnterpriseAD</code> accounts, you must release the claimed domains for
          * your Amazon Chime account before deletion. As soon as you release the domain,
          * all users under that account are suspended.</p> <p>Deleted accounts appear in
-         * your <code>Disabled</code> accounts list for 90 days. To restore a deleted
-         * account from your <code>Disabled</code> accounts list, you must contact AWS
-         * Support.</p> <p>After 90 days, deleted accounts are permanently removed from
-         * your <code>Disabled</code> accounts list.</p><p><h3>See Also:</h3>   <a
+         * your <code>Disabled</code> accounts list for 90 days. To restore deleted account
+         * from your <code>Disabled</code> accounts list, you must contact AWS Support.</p>
+         * <p> After 90 days, deleted accounts are permanently removed from your
+         * <code>Disabled</code> accounts list. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAccount">AWS
          * API Reference</a></p>
          *
@@ -2257,15 +2287,15 @@ namespace Model
 
         /**
          * <p>Deletes the specified Amazon Chime account. You must suspend all users before
-         * deleting a <code>Team</code> account. You can use the <a>BatchSuspendUser</a>
-         * action to do so.</p> <p>For <code>EnterpriseLWA</code> and
+         * deleting <code>Team</code> account. You can use the <a>BatchSuspendUser</a>
+         * action to dodo.</p> <p>For <code>EnterpriseLWA</code> and
          * <code>EnterpriseAD</code> accounts, you must release the claimed domains for
          * your Amazon Chime account before deletion. As soon as you release the domain,
          * all users under that account are suspended.</p> <p>Deleted accounts appear in
-         * your <code>Disabled</code> accounts list for 90 days. To restore a deleted
-         * account from your <code>Disabled</code> accounts list, you must contact AWS
-         * Support.</p> <p>After 90 days, deleted accounts are permanently removed from
-         * your <code>Disabled</code> accounts list.</p><p><h3>See Also:</h3>   <a
+         * your <code>Disabled</code> accounts list for 90 days. To restore deleted account
+         * from your <code>Disabled</code> accounts list, you must contact AWS Support.</p>
+         * <p> After 90 days, deleted accounts are permanently removed from your
+         * <code>Disabled</code> accounts list. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAccount">AWS
          * API Reference</a></p>
          *
@@ -2330,16 +2360,16 @@ namespace Model
         virtual void DeleteAppInstanceAdminAsync(const Model::DeleteAppInstanceAdminRequest& request, const DeleteAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the streaming configurations of an app instance.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the streaming configurations of an
+         * <code>AppInstance</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceStreamingConfigurations">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteAppInstanceStreamingConfigurationsOutcome DeleteAppInstanceStreamingConfigurations(const Model::DeleteAppInstanceStreamingConfigurationsRequest& request) const;
 
         /**
-         * <p>Deletes the streaming configurations of an app instance.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the streaming configurations of an
+         * <code>AppInstance</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceStreamingConfigurations">AWS
          * API Reference</a></p>
          *
@@ -2348,8 +2378,8 @@ namespace Model
         virtual Model::DeleteAppInstanceStreamingConfigurationsOutcomeCallable DeleteAppInstanceStreamingConfigurationsCallable(const Model::DeleteAppInstanceStreamingConfigurationsRequest& request) const;
 
         /**
-         * <p>Deletes the streaming configurations of an app instance.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the streaming configurations of an
+         * <code>AppInstance</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceStreamingConfigurations">AWS
          * API Reference</a></p>
          *
@@ -2383,12 +2413,12 @@ namespace Model
         virtual void DeleteAppInstanceUserAsync(const Model::DeleteAppInstanceUserRequest& request, const DeleteAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an attendee from the specified Amazon Chime SDK meeting and deletes
-         * their <code>JoinToken</code>. Attendees are automatically deleted when a Amazon
+         * <p> Deletes an attendee from the specified Amazon Chime SDK meeting and deletes
+         * their <code>JoinToken</code> . Attendees are automatically deleted when a Amazon
          * Chime SDK meeting is deleted. For more information about the Amazon Chime SDK,
          * see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAttendee">AWS
          * API Reference</a></p>
@@ -2396,12 +2426,12 @@ namespace Model
         virtual Model::DeleteAttendeeOutcome DeleteAttendee(const Model::DeleteAttendeeRequest& request) const;
 
         /**
-         * <p>Deletes an attendee from the specified Amazon Chime SDK meeting and deletes
-         * their <code>JoinToken</code>. Attendees are automatically deleted when a Amazon
+         * <p> Deletes an attendee from the specified Amazon Chime SDK meeting and deletes
+         * their <code>JoinToken</code> . Attendees are automatically deleted when a Amazon
          * Chime SDK meeting is deleted. For more information about the Amazon Chime SDK,
          * see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAttendee">AWS
          * API Reference</a></p>
@@ -2411,12 +2441,12 @@ namespace Model
         virtual Model::DeleteAttendeeOutcomeCallable DeleteAttendeeCallable(const Model::DeleteAttendeeRequest& request) const;
 
         /**
-         * <p>Deletes an attendee from the specified Amazon Chime SDK meeting and deletes
-         * their <code>JoinToken</code>. Attendees are automatically deleted when a Amazon
+         * <p> Deletes an attendee from the specified Amazon Chime SDK meeting and deletes
+         * their <code>JoinToken</code> . Attendees are automatically deleted when a Amazon
          * Chime SDK meeting is deleted. For more information about the Amazon Chime SDK,
          * see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAttendee">AWS
          * API Reference</a></p>
@@ -2427,7 +2457,10 @@ namespace Model
 
         /**
          * <p>Immediately makes a channel and its memberships inaccessible and marks them
-         * for deletion. This is an irreversible process.</p><p><h3>See Also:</h3>   <a
+         * for deletion. This is an irreversible process.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannel">AWS
          * API Reference</a></p>
          */
@@ -2435,7 +2468,10 @@ namespace Model
 
         /**
          * <p>Immediately makes a channel and its memberships inaccessible and marks them
-         * for deletion. This is an irreversible process.</p><p><h3>See Also:</h3>   <a
+         * for deletion. This is an irreversible process.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannel">AWS
          * API Reference</a></p>
          *
@@ -2445,7 +2481,10 @@ namespace Model
 
         /**
          * <p>Immediately makes a channel and its memberships inaccessible and marks them
-         * for deletion. This is an irreversible process.</p><p><h3>See Also:</h3>   <a
+         * for deletion. This is an irreversible process.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannel">AWS
          * API Reference</a></p>
          *
@@ -2454,14 +2493,20 @@ namespace Model
         virtual void DeleteChannelAsync(const Model::DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes a user from a channel's ban list.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a user from a channel's ban list.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelBan">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteChannelBanOutcome DeleteChannelBan(const Model::DeleteChannelBanRequest& request) const;
 
         /**
-         * <p>Removes a user from a channel's ban list.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a user from a channel's ban list.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelBan">AWS
          * API Reference</a></p>
          *
@@ -2470,7 +2515,10 @@ namespace Model
         virtual Model::DeleteChannelBanOutcomeCallable DeleteChannelBanCallable(const Model::DeleteChannelBanRequest& request) const;
 
         /**
-         * <p>Removes a user from a channel's ban list.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a user from a channel's ban list.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelBan">AWS
          * API Reference</a></p>
          *
@@ -2479,14 +2527,20 @@ namespace Model
         virtual void DeleteChannelBanAsync(const Model::DeleteChannelBanRequest& request, const DeleteChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes a member from a channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a member from a channel.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelMembership">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteChannelMembershipOutcome DeleteChannelMembership(const Model::DeleteChannelMembershipRequest& request) const;
 
         /**
-         * <p>Removes a member from a channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a member from a channel.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelMembership">AWS
          * API Reference</a></p>
          *
@@ -2495,7 +2549,10 @@ namespace Model
         virtual Model::DeleteChannelMembershipOutcomeCallable DeleteChannelMembershipCallable(const Model::DeleteChannelMembershipRequest& request) const;
 
         /**
-         * <p>Removes a member from a channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a member from a channel.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelMembership">AWS
          * API Reference</a></p>
          *
@@ -2506,8 +2563,10 @@ namespace Model
         /**
          * <p>Deletes a channel message. Only admins can perform this action. Deletion
          * makes messages inaccessible immediately. A background process deletes any
-         * revisions created by <code>UpdateChannelMessage</code>.</p><p><h3>See Also:</h3>
-         * <a
+         * revisions created by <code>UpdateChannelMessage</code>.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelMessage">AWS
          * API Reference</a></p>
          */
@@ -2516,8 +2575,10 @@ namespace Model
         /**
          * <p>Deletes a channel message. Only admins can perform this action. Deletion
          * makes messages inaccessible immediately. A background process deletes any
-         * revisions created by <code>UpdateChannelMessage</code>.</p><p><h3>See Also:</h3>
-         * <a
+         * revisions created by <code>UpdateChannelMessage</code>.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelMessage">AWS
          * API Reference</a></p>
          *
@@ -2528,8 +2589,10 @@ namespace Model
         /**
          * <p>Deletes a channel message. Only admins can perform this action. Deletion
          * makes messages inaccessible immediately. A background process deletes any
-         * revisions created by <code>UpdateChannelMessage</code>.</p><p><h3>See Also:</h3>
-         * <a
+         * revisions created by <code>UpdateChannelMessage</code>.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelMessage">AWS
          * API Reference</a></p>
          *
@@ -2538,14 +2601,20 @@ namespace Model
         virtual void DeleteChannelMessageAsync(const Model::DeleteChannelMessageRequest& request, const DeleteChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a channel moderator.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a channel moderator.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelModerator">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteChannelModeratorOutcome DeleteChannelModerator(const Model::DeleteChannelModeratorRequest& request) const;
 
         /**
-         * <p>Deletes a channel moderator.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a channel moderator.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelModerator">AWS
          * API Reference</a></p>
          *
@@ -2554,7 +2623,10 @@ namespace Model
         virtual Model::DeleteChannelModeratorOutcomeCallable DeleteChannelModeratorCallable(const Model::DeleteChannelModeratorRequest& request) const;
 
         /**
-         * <p>Deletes a channel moderator.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a channel moderator.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelModerator">AWS
          * API Reference</a></p>
          *
@@ -2592,8 +2664,9 @@ namespace Model
 
         /**
          * <p>Deletes the specified Amazon Chime SDK meeting. When a meeting is deleted,
-         * its attendees are also deleted and clients can no longer join it. For more
-         * information about the Amazon Chime SDK, see <a
+         * its attendees are also deleted, clients connected to the meeting are
+         * disconnected, and clients can no longer join the meeting. For more information
+         * about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
          * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2604,8 +2677,9 @@ namespace Model
 
         /**
          * <p>Deletes the specified Amazon Chime SDK meeting. When a meeting is deleted,
-         * its attendees are also deleted and clients can no longer join it. For more
-         * information about the Amazon Chime SDK, see <a
+         * its attendees are also deleted, clients connected to the meeting are
+         * disconnected, and clients can no longer join the meeting. For more information
+         * about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
          * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2618,8 +2692,9 @@ namespace Model
 
         /**
          * <p>Deletes the specified Amazon Chime SDK meeting. When a meeting is deleted,
-         * its attendees are also deleted and clients can no longer join it. For more
-         * information about the Amazon Chime SDK, see <a
+         * its attendees are also deleted, clients connected to the meeting are
+         * disconnected, and clients can no longer join the meeting. For more information
+         * about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
          * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2631,22 +2706,22 @@ namespace Model
         virtual void DeleteMeetingAsync(const Model::DeleteMeetingRequest& request, const DeleteMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Moves the specified phone number into the <b>Deletion queue</b>. A phone
+         * <p>Moves the specified phone number into the <b>Deletionqueue</b>. A phone
          * number must be disassociated from any users or Amazon Chime Voice Connectors
-         * before it can be deleted.</p> <p>Deleted phone numbers remain in the <b>Deletion
-         * queue</b> for 7 days before they are deleted permanently.</p><p><h3>See
-         * Also:</h3>   <a
+         * before it can be deleted.</p> <p> Deleted phone numbers remain in the
+         * <b>Deletion queue</b> for 7 days before they are deleted permanently.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeletePhoneNumber">AWS
          * API Reference</a></p>
          */
         virtual Model::DeletePhoneNumberOutcome DeletePhoneNumber(const Model::DeletePhoneNumberRequest& request) const;
 
         /**
-         * <p>Moves the specified phone number into the <b>Deletion queue</b>. A phone
+         * <p>Moves the specified phone number into the <b>Deletionqueue</b>. A phone
          * number must be disassociated from any users or Amazon Chime Voice Connectors
-         * before it can be deleted.</p> <p>Deleted phone numbers remain in the <b>Deletion
-         * queue</b> for 7 days before they are deleted permanently.</p><p><h3>See
-         * Also:</h3>   <a
+         * before it can be deleted.</p> <p> Deleted phone numbers remain in the
+         * <b>Deletion queue</b> for 7 days before they are deleted permanently.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeletePhoneNumber">AWS
          * API Reference</a></p>
          *
@@ -2655,11 +2730,11 @@ namespace Model
         virtual Model::DeletePhoneNumberOutcomeCallable DeletePhoneNumberCallable(const Model::DeletePhoneNumberRequest& request) const;
 
         /**
-         * <p>Moves the specified phone number into the <b>Deletion queue</b>. A phone
+         * <p>Moves the specified phone number into the <b>Deletionqueue</b>. A phone
          * number must be disassociated from any users or Amazon Chime Voice Connectors
-         * before it can be deleted.</p> <p>Deleted phone numbers remain in the <b>Deletion
-         * queue</b> for 7 days before they are deleted permanently.</p><p><h3>See
-         * Also:</h3>   <a
+         * before it can be deleted.</p> <p> Deleted phone numbers remain in the
+         * <b>Deletion queue</b> for 7 days before they are deleted permanently.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeletePhoneNumber">AWS
          * API Reference</a></p>
          *
@@ -2864,18 +2939,18 @@ namespace Model
         virtual void DeleteVoiceConnectorEmergencyCallingConfigurationAsync(const Model::DeleteVoiceConnectorEmergencyCallingConfigurationRequest& request, const DeleteVoiceConnectorEmergencyCallingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified Amazon Chime Voice Connector group. Any
+         * <p> Deletes the specified Amazon Chime Voice Connector group. Any
          * <code>VoiceConnectorItems</code> and phone numbers associated with the group
-         * must be removed before it can be deleted.</p><p><h3>See Also:</h3>   <a
+         * must be removed before it can be deleted. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteVoiceConnectorGroupOutcome DeleteVoiceConnectorGroup(const Model::DeleteVoiceConnectorGroupRequest& request) const;
 
         /**
-         * <p>Deletes the specified Amazon Chime Voice Connector group. Any
+         * <p> Deletes the specified Amazon Chime Voice Connector group. Any
          * <code>VoiceConnectorItems</code> and phone numbers associated with the group
-         * must be removed before it can be deleted.</p><p><h3>See Also:</h3>   <a
+         * must be removed before it can be deleted. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorGroup">AWS
          * API Reference</a></p>
          *
@@ -2884,9 +2959,9 @@ namespace Model
         virtual Model::DeleteVoiceConnectorGroupOutcomeCallable DeleteVoiceConnectorGroupCallable(const Model::DeleteVoiceConnectorGroupRequest& request) const;
 
         /**
-         * <p>Deletes the specified Amazon Chime Voice Connector group. Any
+         * <p> Deletes the specified Amazon Chime Voice Connector group. Any
          * <code>VoiceConnectorItems</code> and phone numbers associated with the group
-         * must be removed before it can be deleted.</p><p><h3>See Also:</h3>   <a
+         * must be removed before it can be deleted. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorGroup">AWS
          * API Reference</a></p>
          *
@@ -3103,7 +3178,7 @@ namespace Model
         virtual void DescribeAppInstanceAdminAsync(const Model::DescribeAppInstanceAdminRequest& request, const DescribeAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the full details of an <code>AppInstanceUser</code>.</p><p><h3>See
+         * <p> Returns the full details of an <code>AppInstanceUser</code> . </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstanceUser">AWS
          * API Reference</a></p>
@@ -3111,7 +3186,7 @@ namespace Model
         virtual Model::DescribeAppInstanceUserOutcome DescribeAppInstanceUser(const Model::DescribeAppInstanceUserRequest& request) const;
 
         /**
-         * <p>Returns the full details of an <code>AppInstanceUser</code>.</p><p><h3>See
+         * <p> Returns the full details of an <code>AppInstanceUser</code> . </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstanceUser">AWS
          * API Reference</a></p>
@@ -3121,7 +3196,7 @@ namespace Model
         virtual Model::DescribeAppInstanceUserOutcomeCallable DescribeAppInstanceUserCallable(const Model::DescribeAppInstanceUserRequest& request) const;
 
         /**
-         * <p>Returns the full details of an <code>AppInstanceUser</code>.</p><p><h3>See
+         * <p> Returns the full details of an <code>AppInstanceUser</code> . </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstanceUser">AWS
          * API Reference</a></p>
@@ -3131,16 +3206,22 @@ namespace Model
         virtual void DescribeAppInstanceUserAsync(const Model::DescribeAppInstanceUserRequest& request, const DescribeAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the full details of a channel in an Amazon Chime app
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the full details of a channel in an Amazon Chime
+         * <code>AppInstance</code>.</p>  <p>The <code>x-amz-chime-bearer</code>
+         * request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user
+         * that makes the API call as the value in the header.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannel">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeChannelOutcome DescribeChannel(const Model::DescribeChannelRequest& request) const;
 
         /**
-         * <p>Returns the full details of a channel in an Amazon Chime app
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the full details of a channel in an Amazon Chime
+         * <code>AppInstance</code>.</p>  <p>The <code>x-amz-chime-bearer</code>
+         * request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user
+         * that makes the API call as the value in the header.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannel">AWS
          * API Reference</a></p>
          *
@@ -3149,8 +3230,11 @@ namespace Model
         virtual Model::DescribeChannelOutcomeCallable DescribeChannelCallable(const Model::DescribeChannelRequest& request) const;
 
         /**
-         * <p>Returns the full details of a channel in an Amazon Chime app
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the full details of a channel in an Amazon Chime
+         * <code>AppInstance</code>.</p>  <p>The <code>x-amz-chime-bearer</code>
+         * request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user
+         * that makes the API call as the value in the header.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannel">AWS
          * API Reference</a></p>
          *
@@ -3159,14 +3243,20 @@ namespace Model
         virtual void DescribeChannelAsync(const Model::DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the full details of a channel ban.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the full details of a channel ban.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelBan">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeChannelBanOutcome DescribeChannelBan(const Model::DescribeChannelBanRequest& request) const;
 
         /**
-         * <p>Returns the full details of a channel ban.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the full details of a channel ban.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelBan">AWS
          * API Reference</a></p>
          *
@@ -3175,7 +3265,10 @@ namespace Model
         virtual Model::DescribeChannelBanOutcomeCallable DescribeChannelBanCallable(const Model::DescribeChannelBanRequest& request) const;
 
         /**
-         * <p>Returns the full details of a channel ban.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the full details of a channel ban.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelBan">AWS
          * API Reference</a></p>
          *
@@ -3184,16 +3277,20 @@ namespace Model
         virtual void DescribeChannelBanAsync(const Model::DescribeChannelBanRequest& request, const DescribeChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the full details of a user's channel membership.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the full details of a user's channel membership.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelMembership">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeChannelMembershipOutcome DescribeChannelMembership(const Model::DescribeChannelMembershipRequest& request) const;
 
         /**
-         * <p>Returns the full details of a user's channel membership.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the full details of a user's channel membership.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelMembership">AWS
          * API Reference</a></p>
          *
@@ -3202,8 +3299,10 @@ namespace Model
         virtual Model::DescribeChannelMembershipOutcomeCallable DescribeChannelMembershipCallable(const Model::DescribeChannelMembershipRequest& request) const;
 
         /**
-         * <p>Returns the full details of a user's channel membership.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the full details of a user's channel membership.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelMembership">AWS
          * API Reference</a></p>
          *
@@ -3212,16 +3311,22 @@ namespace Model
         virtual void DescribeChannelMembershipAsync(const Model::DescribeChannelMembershipRequest& request, const DescribeChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the details of a channel based on the membership of the
-         * <code>AppInstanceUser</code> specified.</p><p><h3>See Also:</h3>   <a
+         * <p> Returns the details of a channel based on the membership of the specified
+         * <code>AppInstanceUser</code>.</p>  <p>The <code>x-amz-chime-bearer</code>
+         * request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user
+         * that makes the API call as the value in the header.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelMembershipForAppInstanceUser">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeChannelMembershipForAppInstanceUserOutcome DescribeChannelMembershipForAppInstanceUser(const Model::DescribeChannelMembershipForAppInstanceUserRequest& request) const;
 
         /**
-         * <p>Returns the details of a channel based on the membership of the
-         * <code>AppInstanceUser</code> specified.</p><p><h3>See Also:</h3>   <a
+         * <p> Returns the details of a channel based on the membership of the specified
+         * <code>AppInstanceUser</code>.</p>  <p>The <code>x-amz-chime-bearer</code>
+         * request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user
+         * that makes the API call as the value in the header.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelMembershipForAppInstanceUser">AWS
          * API Reference</a></p>
          *
@@ -3230,8 +3335,11 @@ namespace Model
         virtual Model::DescribeChannelMembershipForAppInstanceUserOutcomeCallable DescribeChannelMembershipForAppInstanceUserCallable(const Model::DescribeChannelMembershipForAppInstanceUserRequest& request) const;
 
         /**
-         * <p>Returns the details of a channel based on the membership of the
-         * <code>AppInstanceUser</code> specified.</p><p><h3>See Also:</h3>   <a
+         * <p> Returns the details of a channel based on the membership of the specified
+         * <code>AppInstanceUser</code>.</p>  <p>The <code>x-amz-chime-bearer</code>
+         * request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user
+         * that makes the API call as the value in the header.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelMembershipForAppInstanceUser">AWS
          * API Reference</a></p>
          *
@@ -3241,7 +3349,10 @@ namespace Model
 
         /**
          * <p>Returns the full details of a channel moderated by the specified
-         * <code>AppInstanceUser</code>.</p><p><h3>See Also:</h3>   <a
+         * <code>AppInstanceUser</code>.</p>  <p>The <code>x-amz-chime-bearer</code>
+         * request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user
+         * that makes the API call as the value in the header.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelModeratedByAppInstanceUser">AWS
          * API Reference</a></p>
          */
@@ -3249,7 +3360,10 @@ namespace Model
 
         /**
          * <p>Returns the full details of a channel moderated by the specified
-         * <code>AppInstanceUser</code>.</p><p><h3>See Also:</h3>   <a
+         * <code>AppInstanceUser</code>.</p>  <p>The <code>x-amz-chime-bearer</code>
+         * request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user
+         * that makes the API call as the value in the header.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelModeratedByAppInstanceUser">AWS
          * API Reference</a></p>
          *
@@ -3259,7 +3373,10 @@ namespace Model
 
         /**
          * <p>Returns the full details of a channel moderated by the specified
-         * <code>AppInstanceUser</code>.</p><p><h3>See Also:</h3>   <a
+         * <code>AppInstanceUser</code>.</p>  <p>The <code>x-amz-chime-bearer</code>
+         * request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user
+         * that makes the API call as the value in the header.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelModeratedByAppInstanceUser">AWS
          * API Reference</a></p>
          *
@@ -3268,16 +3385,20 @@ namespace Model
         virtual void DescribeChannelModeratedByAppInstanceUserAsync(const Model::DescribeChannelModeratedByAppInstanceUserRequest& request, const DescribeChannelModeratedByAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the full details of a single ChannelModerator.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the full details of a single ChannelModerator.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelModerator">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeChannelModeratorOutcome DescribeChannelModerator(const Model::DescribeChannelModeratorRequest& request) const;
 
         /**
-         * <p>Returns the full details of a single ChannelModerator.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the full details of a single ChannelModerator.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelModerator">AWS
          * API Reference</a></p>
          *
@@ -3286,8 +3407,10 @@ namespace Model
         virtual Model::DescribeChannelModeratorOutcomeCallable DescribeChannelModeratorCallable(const Model::DescribeChannelModeratorRequest& request) const;
 
         /**
-         * <p>Returns the full details of a single ChannelModerator.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the full details of a single ChannelModerator.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelModerator">AWS
          * API Reference</a></p>
          *
@@ -3437,7 +3560,7 @@ namespace Model
 
         /**
          * <p>Retrieves account settings for the specified Amazon Chime account ID, such as
-         * remote control and dial out settings. For more information about these settings,
+         * remote control and dialout settings. For more information about these settings,
          * see <a href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the
          * Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -3448,7 +3571,7 @@ namespace Model
 
         /**
          * <p>Retrieves account settings for the specified Amazon Chime account ID, such as
-         * remote control and dial out settings. For more information about these settings,
+         * remote control and dialout settings. For more information about these settings,
          * see <a href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the
          * Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -3461,7 +3584,7 @@ namespace Model
 
         /**
          * <p>Retrieves account settings for the specified Amazon Chime account ID, such as
-         * remote control and dial out settings. For more information about these settings,
+         * remote control and dialout settings. For more information about these settings,
          * see <a href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the
          * Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -3473,16 +3596,16 @@ namespace Model
         virtual void GetAccountSettingsAsync(const Model::GetAccountSettingsRequest& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the retention settings for an app instance.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Gets the retention settings for an <code>AppInstance</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAppInstanceRetentionSettings">AWS
          * API Reference</a></p>
          */
         virtual Model::GetAppInstanceRetentionSettingsOutcome GetAppInstanceRetentionSettings(const Model::GetAppInstanceRetentionSettingsRequest& request) const;
 
         /**
-         * <p>Gets the retention settings for an app instance.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Gets the retention settings for an <code>AppInstance</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAppInstanceRetentionSettings">AWS
          * API Reference</a></p>
          *
@@ -3491,8 +3614,8 @@ namespace Model
         virtual Model::GetAppInstanceRetentionSettingsOutcomeCallable GetAppInstanceRetentionSettingsCallable(const Model::GetAppInstanceRetentionSettingsRequest& request) const;
 
         /**
-         * <p>Gets the retention settings for an app instance.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Gets the retention settings for an <code>AppInstance</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAppInstanceRetentionSettings">AWS
          * API Reference</a></p>
          *
@@ -3501,16 +3624,16 @@ namespace Model
         virtual void GetAppInstanceRetentionSettingsAsync(const Model::GetAppInstanceRetentionSettingsRequest& request, const GetAppInstanceRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the streaming settings for an app instance.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Gets the streaming settings for an <code>AppInstance</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAppInstanceStreamingConfigurations">AWS
          * API Reference</a></p>
          */
         virtual Model::GetAppInstanceStreamingConfigurationsOutcome GetAppInstanceStreamingConfigurations(const Model::GetAppInstanceStreamingConfigurationsRequest& request) const;
 
         /**
-         * <p>Gets the streaming settings for an app instance.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Gets the streaming settings for an <code>AppInstance</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAppInstanceStreamingConfigurations">AWS
          * API Reference</a></p>
          *
@@ -3519,8 +3642,8 @@ namespace Model
         virtual Model::GetAppInstanceStreamingConfigurationsOutcomeCallable GetAppInstanceStreamingConfigurationsCallable(const Model::GetAppInstanceStreamingConfigurationsRequest& request) const;
 
         /**
-         * <p>Gets the streaming settings for an app instance.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Gets the streaming settings for an <code>AppInstance</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAppInstanceStreamingConfigurations">AWS
          * API Reference</a></p>
          *
@@ -3529,10 +3652,10 @@ namespace Model
         virtual void GetAppInstanceStreamingConfigurationsAsync(const Model::GetAppInstanceStreamingConfigurationsRequest& request, const GetAppInstanceStreamingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the Amazon Chime SDK attendee details for a specified meeting ID and
+         * <p> Gets the Amazon Chime SDK attendee details for a specified meeting ID and
          * attendee ID. For more information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAttendee">AWS
          * API Reference</a></p>
@@ -3540,10 +3663,10 @@ namespace Model
         virtual Model::GetAttendeeOutcome GetAttendee(const Model::GetAttendeeRequest& request) const;
 
         /**
-         * <p>Gets the Amazon Chime SDK attendee details for a specified meeting ID and
+         * <p> Gets the Amazon Chime SDK attendee details for a specified meeting ID and
          * attendee ID. For more information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAttendee">AWS
          * API Reference</a></p>
@@ -3553,10 +3676,10 @@ namespace Model
         virtual Model::GetAttendeeOutcomeCallable GetAttendeeCallable(const Model::GetAttendeeRequest& request) const;
 
         /**
-         * <p>Gets the Amazon Chime SDK attendee details for a specified meeting ID and
+         * <p> Gets the Amazon Chime SDK attendee details for a specified meeting ID and
          * attendee ID. For more information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAttendee">AWS
          * API Reference</a></p>
@@ -3594,14 +3717,20 @@ namespace Model
         virtual void GetBotAsync(const Model::GetBotRequest& request, const GetBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the full details of a channel message.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the full details of a channel message.</p>  <p>The
+         * x-amz-chime-bearer request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetChannelMessage">AWS
          * API Reference</a></p>
          */
         virtual Model::GetChannelMessageOutcome GetChannelMessage(const Model::GetChannelMessageRequest& request) const;
 
         /**
-         * <p>Gets the full details of a channel message.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the full details of a channel message.</p>  <p>The
+         * x-amz-chime-bearer request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetChannelMessage">AWS
          * API Reference</a></p>
          *
@@ -3610,7 +3739,10 @@ namespace Model
         virtual Model::GetChannelMessageOutcomeCallable GetChannelMessageCallable(const Model::GetChannelMessageRequest& request) const;
 
         /**
-         * <p>Gets the full details of a channel message.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the full details of a channel message.</p>  <p>The
+         * x-amz-chime-bearer request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetChannelMessage">AWS
          * API Reference</a></p>
          *
@@ -3620,8 +3752,8 @@ namespace Model
 
         /**
          * <p>Gets details for an events configuration that allows a bot to receive
-         * outgoing events, such as an HTTPS endpoint or Lambda function ARN.
-         * </p><p><h3>See Also:</h3>   <a
+         * outgoing events, such as an HTTPS endpoint or Lambda function ARN.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetEventsConfiguration">AWS
          * API Reference</a></p>
          */
@@ -3629,8 +3761,8 @@ namespace Model
 
         /**
          * <p>Gets details for an events configuration that allows a bot to receive
-         * outgoing events, such as an HTTPS endpoint or Lambda function ARN.
-         * </p><p><h3>See Also:</h3>   <a
+         * outgoing events, such as an HTTPS endpoint or Lambda function ARN.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetEventsConfiguration">AWS
          * API Reference</a></p>
          *
@@ -3640,8 +3772,8 @@ namespace Model
 
         /**
          * <p>Gets details for an events configuration that allows a bot to receive
-         * outgoing events, such as an HTTPS endpoint or Lambda function ARN.
-         * </p><p><h3>See Also:</h3>   <a
+         * outgoing events, such as an HTTPS endpoint or Lambda function ARN.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetEventsConfiguration">AWS
          * API Reference</a></p>
          *
@@ -3680,10 +3812,10 @@ namespace Model
          */
         virtual void GetGlobalSettingsAsync(const GetGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
         /**
-         * <p>Gets the Amazon Chime SDK meeting details for the specified meeting ID. For
+         * <p> Gets the Amazon Chime SDK meeting details for the specified meeting ID. For
          * more information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMeeting">AWS
          * API Reference</a></p>
@@ -3691,10 +3823,10 @@ namespace Model
         virtual Model::GetMeetingOutcome GetMeeting(const Model::GetMeetingRequest& request) const;
 
         /**
-         * <p>Gets the Amazon Chime SDK meeting details for the specified meeting ID. For
+         * <p> Gets the Amazon Chime SDK meeting details for the specified meeting ID. For
          * more information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMeeting">AWS
          * API Reference</a></p>
@@ -3704,10 +3836,10 @@ namespace Model
         virtual Model::GetMeetingOutcomeCallable GetMeetingCallable(const Model::GetMeetingRequest& request) const;
 
         /**
-         * <p>Gets the Amazon Chime SDK meeting details for the specified meeting ID. For
+         * <p> Gets the Amazon Chime SDK meeting details for the specified meeting ID. For
          * more information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMeeting">AWS
          * API Reference</a></p>
@@ -3717,14 +3849,16 @@ namespace Model
         virtual void GetMeetingAsync(const Model::GetMeetingRequest& request, const GetMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>The endpoint for the messaging session.</p><p><h3>See Also:</h3>   <a
+         * <p>The details of the endpoint for the messaging session.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMessagingSessionEndpoint">AWS
          * API Reference</a></p>
          */
         virtual Model::GetMessagingSessionEndpointOutcome GetMessagingSessionEndpoint(const Model::GetMessagingSessionEndpointRequest& request) const;
 
         /**
-         * <p>The endpoint for the messaging session.</p><p><h3>See Also:</h3>   <a
+         * <p>The details of the endpoint for the messaging session.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMessagingSessionEndpoint">AWS
          * API Reference</a></p>
          *
@@ -3733,7 +3867,8 @@ namespace Model
         virtual Model::GetMessagingSessionEndpointOutcomeCallable GetMessagingSessionEndpointCallable(const Model::GetMessagingSessionEndpointRequest& request) const;
 
         /**
-         * <p>The endpoint for the messaging session.</p><p><h3>See Also:</h3>   <a
+         * <p>The details of the endpoint for the messaging session.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMessagingSessionEndpoint">AWS
          * API Reference</a></p>
          *
@@ -3770,7 +3905,7 @@ namespace Model
         virtual void GetPhoneNumberAsync(const Model::GetPhoneNumberRequest& request, const GetPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves details for the specified phone number order, such as order
+         * <p>Retrieves details for the specified phone number order, such as the order
          * creation timestamp, phone numbers in E.164 format, product type, and order
          * status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetPhoneNumberOrder">AWS
@@ -3779,7 +3914,7 @@ namespace Model
         virtual Model::GetPhoneNumberOrderOutcome GetPhoneNumberOrder(const Model::GetPhoneNumberOrderRequest& request) const;
 
         /**
-         * <p>Retrieves details for the specified phone number order, such as order
+         * <p>Retrieves details for the specified phone number order, such as the order
          * creation timestamp, phone numbers in E.164 format, product type, and order
          * status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetPhoneNumberOrder">AWS
@@ -3790,7 +3925,7 @@ namespace Model
         virtual Model::GetPhoneNumberOrderOutcomeCallable GetPhoneNumberOrderCallable(const Model::GetPhoneNumberOrderRequest& request) const;
 
         /**
-         * <p>Retrieves details for the specified phone number order, such as order
+         * <p>Retrieves details for the specified phone number order, such as the order
          * creation timestamp, phone numbers in E.164 format, product type, and order
          * status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetPhoneNumberOrder">AWS
@@ -3856,22 +3991,22 @@ namespace Model
         virtual void GetProxySessionAsync(const Model::GetProxySessionRequest& request, const GetProxySessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the retention settings for the specified Amazon Chime Enterprise
+         * <p> Gets the retention settings for the specified Amazon Chime Enterprise
          * account. For more information about retention settings, see <a
          * href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing
-         * Chat Retention Policies</a> in the <i>Amazon Chime Administration
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i> .
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetRetentionSettings">AWS
          * API Reference</a></p>
          */
         virtual Model::GetRetentionSettingsOutcome GetRetentionSettings(const Model::GetRetentionSettingsRequest& request) const;
 
         /**
-         * <p>Gets the retention settings for the specified Amazon Chime Enterprise
+         * <p> Gets the retention settings for the specified Amazon Chime Enterprise
          * account. For more information about retention settings, see <a
          * href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing
-         * Chat Retention Policies</a> in the <i>Amazon Chime Administration
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i> .
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetRetentionSettings">AWS
          * API Reference</a></p>
          *
@@ -3880,11 +4015,11 @@ namespace Model
         virtual Model::GetRetentionSettingsOutcomeCallable GetRetentionSettingsCallable(const Model::GetRetentionSettingsRequest& request) const;
 
         /**
-         * <p>Gets the retention settings for the specified Amazon Chime Enterprise
+         * <p> Gets the retention settings for the specified Amazon Chime Enterprise
          * account. For more information about retention settings, see <a
          * href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing
-         * Chat Retention Policies</a> in the <i>Amazon Chime Administration
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i> .
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetRetentionSettings">AWS
          * API Reference</a></p>
          *
@@ -4006,9 +4141,9 @@ namespace Model
 
         /**
          * <p>Retrieves details for the specified user ID, such as primary email address,
-         * license type, and personal meeting PIN.</p> <p>To retrieve user details with an
+         * license type,and personal meeting PIN.</p> <p> To retrieve user details with an
          * email address instead of a user ID, use the <a>ListUsers</a> action, and then
-         * filter by email address.</p><p><h3>See Also:</h3>   <a
+         * filter by email address. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetUser">AWS API
          * Reference</a></p>
          */
@@ -4016,9 +4151,9 @@ namespace Model
 
         /**
          * <p>Retrieves details for the specified user ID, such as primary email address,
-         * license type, and personal meeting PIN.</p> <p>To retrieve user details with an
+         * license type,and personal meeting PIN.</p> <p> To retrieve user details with an
          * email address instead of a user ID, use the <a>ListUsers</a> action, and then
-         * filter by email address.</p><p><h3>See Also:</h3>   <a
+         * filter by email address. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetUser">AWS API
          * Reference</a></p>
          *
@@ -4028,9 +4163,9 @@ namespace Model
 
         /**
          * <p>Retrieves details for the specified user ID, such as primary email address,
-         * license type, and personal meeting PIN.</p> <p>To retrieve user details with an
+         * license type,and personal meeting PIN.</p> <p> To retrieve user details with an
          * email address instead of a user ID, use the <a>ListUsers</a> action, and then
-         * filter by email address.</p><p><h3>See Also:</h3>   <a
+         * filter by email address. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetUser">AWS API
          * Reference</a></p>
          *
@@ -4068,7 +4203,7 @@ namespace Model
 
         /**
          * <p>Retrieves details for the specified Amazon Chime Voice Connector, such as
-         * timestamps, name, outbound host, and encryption requirements.</p><p><h3>See
+         * timestamps,name, outbound host, and encryption requirements.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnector">AWS
          * API Reference</a></p>
@@ -4077,7 +4212,7 @@ namespace Model
 
         /**
          * <p>Retrieves details for the specified Amazon Chime Voice Connector, such as
-         * timestamps, name, outbound host, and encryption requirements.</p><p><h3>See
+         * timestamps,name, outbound host, and encryption requirements.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnector">AWS
          * API Reference</a></p>
@@ -4088,7 +4223,7 @@ namespace Model
 
         /**
          * <p>Retrieves details for the specified Amazon Chime Voice Connector, such as
-         * timestamps, name, outbound host, and encryption requirements.</p><p><h3>See
+         * timestamps,name, outbound host, and encryption requirements.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnector">AWS
          * API Reference</a></p>
@@ -4126,18 +4261,18 @@ namespace Model
         virtual void GetVoiceConnectorEmergencyCallingConfigurationAsync(const Model::GetVoiceConnectorEmergencyCallingConfigurationRequest& request, const GetVoiceConnectorEmergencyCallingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves details for the specified Amazon Chime Voice Connector group, such
-         * as timestamps, name, and associated
-         * <code>VoiceConnectorItems</code>.</p><p><h3>See Also:</h3>   <a
+         * <p> Retrieves details for the specified Amazon Chime Voice Connector group, such
+         * as timestamps,name, and associated <code>VoiceConnectorItems</code> .
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::GetVoiceConnectorGroupOutcome GetVoiceConnectorGroup(const Model::GetVoiceConnectorGroupRequest& request) const;
 
         /**
-         * <p>Retrieves details for the specified Amazon Chime Voice Connector group, such
-         * as timestamps, name, and associated
-         * <code>VoiceConnectorItems</code>.</p><p><h3>See Also:</h3>   <a
+         * <p> Retrieves details for the specified Amazon Chime Voice Connector group, such
+         * as timestamps,name, and associated <code>VoiceConnectorItems</code> .
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorGroup">AWS
          * API Reference</a></p>
          *
@@ -4146,9 +4281,9 @@ namespace Model
         virtual Model::GetVoiceConnectorGroupOutcomeCallable GetVoiceConnectorGroupCallable(const Model::GetVoiceConnectorGroupRequest& request) const;
 
         /**
-         * <p>Retrieves details for the specified Amazon Chime Voice Connector group, such
-         * as timestamps, name, and associated
-         * <code>VoiceConnectorItems</code>.</p><p><h3>See Also:</h3>   <a
+         * <p> Retrieves details for the specified Amazon Chime Voice Connector group, such
+         * as timestamps,name, and associated <code>VoiceConnectorItems</code> .
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorGroup">AWS
          * API Reference</a></p>
          *
@@ -4159,7 +4294,7 @@ namespace Model
         /**
          * <p>Retrieves the logging configuration details for the specified Amazon Chime
          * Voice Connector. Shows whether SIP message logs are enabled for sending to
-         * Amazon CloudWatch.</p><p><h3>See Also:</h3>   <a
+         * Amazon CloudWatch Logs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorLoggingConfiguration">AWS
          * API Reference</a></p>
          */
@@ -4168,7 +4303,7 @@ namespace Model
         /**
          * <p>Retrieves the logging configuration details for the specified Amazon Chime
          * Voice Connector. Shows whether SIP message logs are enabled for sending to
-         * Amazon CloudWatch.</p><p><h3>See Also:</h3>   <a
+         * Amazon CloudWatch Logs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorLoggingConfiguration">AWS
          * API Reference</a></p>
          *
@@ -4179,7 +4314,7 @@ namespace Model
         /**
          * <p>Retrieves the logging configuration details for the specified Amazon Chime
          * Voice Connector. Shows whether SIP message logs are enabled for sending to
-         * Amazon CloudWatch.</p><p><h3>See Also:</h3>   <a
+         * Amazon CloudWatch Logs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorLoggingConfiguration">AWS
          * API Reference</a></p>
          *
@@ -4339,7 +4474,7 @@ namespace Model
         /**
          * <p>Sends email to a maximum of 50 users, inviting them to the specified Amazon
          * Chime <code>Team</code> account. Only <code>Team</code> account types are
-         * currently supported for this action. </p><p><h3>See Also:</h3>   <a
+         * currently supported for this action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/InviteUsers">AWS
          * API Reference</a></p>
          */
@@ -4348,7 +4483,7 @@ namespace Model
         /**
          * <p>Sends email to a maximum of 50 users, inviting them to the specified Amazon
          * Chime <code>Team</code> account. Only <code>Team</code> account types are
-         * currently supported for this action. </p><p><h3>See Also:</h3>   <a
+         * currently supported for this action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/InviteUsers">AWS
          * API Reference</a></p>
          *
@@ -4359,7 +4494,7 @@ namespace Model
         /**
          * <p>Sends email to a maximum of 50 users, inviting them to the specified Amazon
          * Chime <code>Team</code> account. Only <code>Team</code> account types are
-         * currently supported for this action. </p><p><h3>See Also:</h3>   <a
+         * currently supported for this action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/InviteUsers">AWS
          * API Reference</a></p>
          *
@@ -4370,7 +4505,7 @@ namespace Model
         /**
          * <p>Lists the Amazon Chime accounts under the administrator's AWS account. You
          * can filter accounts by account name prefix. To find out which Amazon Chime
-         * account a user belongs to, you can filter by the user's email address, which
+         * account a user belongs to, toucan filter by the user's email address, which
          * returns one account result.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAccounts">AWS
          * API Reference</a></p>
@@ -4380,7 +4515,7 @@ namespace Model
         /**
          * <p>Lists the Amazon Chime accounts under the administrator's AWS account. You
          * can filter accounts by account name prefix. To find out which Amazon Chime
-         * account a user belongs to, you can filter by the user's email address, which
+         * account a user belongs to, toucan filter by the user's email address, which
          * returns one account result.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAccounts">AWS
          * API Reference</a></p>
@@ -4392,7 +4527,7 @@ namespace Model
         /**
          * <p>Lists the Amazon Chime accounts under the administrator's AWS account. You
          * can filter accounts by account name prefix. To find out which Amazon Chime
-         * account a user belongs to, you can filter by the user's email address, which
+         * account a user belongs to, toucan filter by the user's email address, which
          * returns one account result.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAccounts">AWS
          * API Reference</a></p>
@@ -4402,16 +4537,16 @@ namespace Model
         virtual void ListAccountsAsync(const Model::ListAccountsRequest& request, const ListAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of the administrators in the app instance.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of the administrators in the
+         * <code>AppInstance</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstanceAdmins">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAppInstanceAdminsOutcome ListAppInstanceAdmins(const Model::ListAppInstanceAdminsRequest& request) const;
 
         /**
-         * <p>Returns a list of the administrators in the app instance.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of the administrators in the
+         * <code>AppInstance</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstanceAdmins">AWS
          * API Reference</a></p>
          *
@@ -4420,8 +4555,8 @@ namespace Model
         virtual Model::ListAppInstanceAdminsOutcomeCallable ListAppInstanceAdminsCallable(const Model::ListAppInstanceAdminsRequest& request) const;
 
         /**
-         * <p>Returns a list of the administrators in the app instance.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of the administrators in the
+         * <code>AppInstance</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstanceAdmins">AWS
          * API Reference</a></p>
          *
@@ -4430,16 +4565,16 @@ namespace Model
         virtual void ListAppInstanceAdminsAsync(const Model::ListAppInstanceAdminsRequest& request, const ListAppInstanceAdminsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List all <code>AppInstanceUsers</code> created under a single app
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p> List all <code>AppInstanceUsers</code> created under a single
+         * <code>AppInstance</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstanceUsers">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAppInstanceUsersOutcome ListAppInstanceUsers(const Model::ListAppInstanceUsersRequest& request) const;
 
         /**
-         * <p>List all <code>AppInstanceUsers</code> created under a single app
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p> List all <code>AppInstanceUsers</code> created under a single
+         * <code>AppInstance</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstanceUsers">AWS
          * API Reference</a></p>
          *
@@ -4448,8 +4583,8 @@ namespace Model
         virtual Model::ListAppInstanceUsersOutcomeCallable ListAppInstanceUsersCallable(const Model::ListAppInstanceUsersRequest& request) const;
 
         /**
-         * <p>List all <code>AppInstanceUsers</code> created under a single app
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p> List all <code>AppInstanceUsers</code> created under a single
+         * <code>AppInstance</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstanceUsers">AWS
          * API Reference</a></p>
          *
@@ -4458,7 +4593,7 @@ namespace Model
         virtual void ListAppInstanceUsersAsync(const Model::ListAppInstanceUsersRequest& request, const ListAppInstanceUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all Amazon Chime app instances created under a single AWS
+         * <p>Lists all Amazon Chime <code>AppInstance</code>s created under a single AWS
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstances">AWS
          * API Reference</a></p>
@@ -4466,7 +4601,7 @@ namespace Model
         virtual Model::ListAppInstancesOutcome ListAppInstances(const Model::ListAppInstancesRequest& request) const;
 
         /**
-         * <p>Lists all Amazon Chime app instances created under a single AWS
+         * <p>Lists all Amazon Chime <code>AppInstance</code>s created under a single AWS
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstances">AWS
          * API Reference</a></p>
@@ -4476,7 +4611,7 @@ namespace Model
         virtual Model::ListAppInstancesOutcomeCallable ListAppInstancesCallable(const Model::ListAppInstancesRequest& request) const;
 
         /**
-         * <p>Lists all Amazon Chime app instances created under a single AWS
+         * <p>Lists all Amazon Chime <code>AppInstance</code>s created under a single AWS
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstances">AWS
          * API Reference</a></p>
@@ -4514,10 +4649,10 @@ namespace Model
         virtual void ListAttendeeTagsAsync(const Model::ListAttendeeTagsRequest& request, const ListAttendeeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the attendees for the specified Amazon Chime SDK meeting. For more
+         * <p> Lists the attendees for the specified Amazon Chime SDK meeting. For more
          * information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAttendees">AWS
          * API Reference</a></p>
@@ -4525,10 +4660,10 @@ namespace Model
         virtual Model::ListAttendeesOutcome ListAttendees(const Model::ListAttendeesRequest& request) const;
 
         /**
-         * <p>Lists the attendees for the specified Amazon Chime SDK meeting. For more
+         * <p> Lists the attendees for the specified Amazon Chime SDK meeting. For more
          * information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAttendees">AWS
          * API Reference</a></p>
@@ -4538,10 +4673,10 @@ namespace Model
         virtual Model::ListAttendeesOutcomeCallable ListAttendeesCallable(const Model::ListAttendeesRequest& request) const;
 
         /**
-         * <p>Lists the attendees for the specified Amazon Chime SDK meeting. For more
+         * <p> Lists the attendees for the specified Amazon Chime SDK meeting. For more
          * information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAttendees">AWS
          * API Reference</a></p>
@@ -4579,16 +4714,20 @@ namespace Model
         virtual void ListBotsAsync(const Model::ListBotsRequest& request, const ListBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all the users banned from a particular channel.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all the users banned from a particular channel.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelBans">AWS
          * API Reference</a></p>
          */
         virtual Model::ListChannelBansOutcome ListChannelBans(const Model::ListChannelBansRequest& request) const;
 
         /**
-         * <p>Lists all the users banned from a particular channel.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all the users banned from a particular channel.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelBans">AWS
          * API Reference</a></p>
          *
@@ -4597,8 +4736,10 @@ namespace Model
         virtual Model::ListChannelBansOutcomeCallable ListChannelBansCallable(const Model::ListChannelBansRequest& request) const;
 
         /**
-         * <p>Lists all the users banned from a particular channel.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all the users banned from a particular channel.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelBans">AWS
          * API Reference</a></p>
          *
@@ -4607,14 +4748,20 @@ namespace Model
         virtual void ListChannelBansAsync(const Model::ListChannelBansRequest& request, const ListChannelBansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all channel memberships in a channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all channel memberships in a channel.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMemberships">AWS
          * API Reference</a></p>
          */
         virtual Model::ListChannelMembershipsOutcome ListChannelMemberships(const Model::ListChannelMembershipsRequest& request) const;
 
         /**
-         * <p>Lists all channel memberships in a channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all channel memberships in a channel.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMemberships">AWS
          * API Reference</a></p>
          *
@@ -4623,7 +4770,10 @@ namespace Model
         virtual Model::ListChannelMembershipsOutcomeCallable ListChannelMembershipsCallable(const Model::ListChannelMembershipsRequest& request) const;
 
         /**
-         * <p>Lists all channel memberships in a channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all channel memberships in a channel.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMemberships">AWS
          * API Reference</a></p>
          *
@@ -4632,18 +4782,24 @@ namespace Model
         virtual void ListChannelMembershipsAsync(const Model::ListChannelMembershipsRequest& request, const ListChannelMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all channels that a particular <code>AppInstanceUser</code> is a part
+         * <p> Lists all channels that a particular <code>AppInstanceUser</code> is a part
          * of. Only an <code>AppInstanceAdmin</code> can call the API with a user ARN that
-         * is not their own.</p><p><h3>See Also:</h3>   <a
+         * is not their own. </p>  <p>The <code>x-amz-chime-bearer</code> request
+         * header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that
+         * makes the API call as the value in the header.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMembershipsForAppInstanceUser">AWS
          * API Reference</a></p>
          */
         virtual Model::ListChannelMembershipsForAppInstanceUserOutcome ListChannelMembershipsForAppInstanceUser(const Model::ListChannelMembershipsForAppInstanceUserRequest& request) const;
 
         /**
-         * <p>Lists all channels that a particular <code>AppInstanceUser</code> is a part
+         * <p> Lists all channels that a particular <code>AppInstanceUser</code> is a part
          * of. Only an <code>AppInstanceAdmin</code> can call the API with a user ARN that
-         * is not their own.</p><p><h3>See Also:</h3>   <a
+         * is not their own. </p>  <p>The <code>x-amz-chime-bearer</code> request
+         * header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that
+         * makes the API call as the value in the header.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMembershipsForAppInstanceUser">AWS
          * API Reference</a></p>
          *
@@ -4652,9 +4808,12 @@ namespace Model
         virtual Model::ListChannelMembershipsForAppInstanceUserOutcomeCallable ListChannelMembershipsForAppInstanceUserCallable(const Model::ListChannelMembershipsForAppInstanceUserRequest& request) const;
 
         /**
-         * <p>Lists all channels that a particular <code>AppInstanceUser</code> is a part
+         * <p> Lists all channels that a particular <code>AppInstanceUser</code> is a part
          * of. Only an <code>AppInstanceAdmin</code> can call the API with a user ARN that
-         * is not their own.</p><p><h3>See Also:</h3>   <a
+         * is not their own. </p>  <p>The <code>x-amz-chime-bearer</code> request
+         * header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that
+         * makes the API call as the value in the header.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMembershipsForAppInstanceUser">AWS
          * API Reference</a></p>
          *
@@ -4664,11 +4823,13 @@ namespace Model
 
         /**
          * <p>List all the messages in a channel. Returns a paginated list of
-         * <code>ChannelMessages</code>. Sorted in descending order by default, based on
-         * the creation timestamp.</p>  <p>Redacted messages appear in the results as
+         * <code>ChannelMessages</code>. By default, sorted by creation timestamp in
+         * descending order .</p>  <p>Redacted messages appear in the results as
          * empty, since they are only redacted, not deleted. Deleted messages do not appear
          * in the results. This action always returns the latest version of an edited
-         * message.</p> <p><h3>See Also:</h3>   <a
+         * message.</p> <p>Also, the x-amz-chime-bearer request header is mandatory. Use
+         * the <code>AppInstanceUserArn</code> of the user that makes the API call as the
+         * value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMessages">AWS
          * API Reference</a></p>
          */
@@ -4676,11 +4837,13 @@ namespace Model
 
         /**
          * <p>List all the messages in a channel. Returns a paginated list of
-         * <code>ChannelMessages</code>. Sorted in descending order by default, based on
-         * the creation timestamp.</p>  <p>Redacted messages appear in the results as
+         * <code>ChannelMessages</code>. By default, sorted by creation timestamp in
+         * descending order .</p>  <p>Redacted messages appear in the results as
          * empty, since they are only redacted, not deleted. Deleted messages do not appear
          * in the results. This action always returns the latest version of an edited
-         * message.</p> <p><h3>See Also:</h3>   <a
+         * message.</p> <p>Also, the x-amz-chime-bearer request header is mandatory. Use
+         * the <code>AppInstanceUserArn</code> of the user that makes the API call as the
+         * value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMessages">AWS
          * API Reference</a></p>
          *
@@ -4690,11 +4853,13 @@ namespace Model
 
         /**
          * <p>List all the messages in a channel. Returns a paginated list of
-         * <code>ChannelMessages</code>. Sorted in descending order by default, based on
-         * the creation timestamp.</p>  <p>Redacted messages appear in the results as
+         * <code>ChannelMessages</code>. By default, sorted by creation timestamp in
+         * descending order .</p>  <p>Redacted messages appear in the results as
          * empty, since they are only redacted, not deleted. Deleted messages do not appear
          * in the results. This action always returns the latest version of an edited
-         * message.</p> <p><h3>See Also:</h3>   <a
+         * message.</p> <p>Also, the x-amz-chime-bearer request header is mandatory. Use
+         * the <code>AppInstanceUserArn</code> of the user that makes the API call as the
+         * value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMessages">AWS
          * API Reference</a></p>
          *
@@ -4703,14 +4868,20 @@ namespace Model
         virtual void ListChannelMessagesAsync(const Model::ListChannelMessagesRequest& request, const ListChannelMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all the moderators for a channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all the moderators for a channel.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelModerators">AWS
          * API Reference</a></p>
          */
         virtual Model::ListChannelModeratorsOutcome ListChannelModerators(const Model::ListChannelModeratorsRequest& request) const;
 
         /**
-         * <p>Lists all the moderators for a channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all the moderators for a channel.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelModerators">AWS
          * API Reference</a></p>
          *
@@ -4719,7 +4890,10 @@ namespace Model
         virtual Model::ListChannelModeratorsOutcomeCallable ListChannelModeratorsCallable(const Model::ListChannelModeratorsRequest& request) const;
 
         /**
-         * <p>Lists all the moderators for a channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all the moderators for a channel.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelModerators">AWS
          * API Reference</a></p>
          *
@@ -4730,10 +4904,13 @@ namespace Model
         /**
          * <p>Lists all Channels created under a single Chime App as a paginated list. You
          * can specify filters to narrow results.</p> <p class="title"> <b>Functionality
-         * &amp; restrictions</b> </p> <ul> <li> <p>Use privacy = <code>PUBLIC</code> to
-         * retrieve all public channels in the account</p> </li> <li> <p>Only an
+         * &amp; restrictions</b> </p> <ul> <li> <p> Use privacy = <code>PUBLIC</code> to
+         * retrieve all public channels in the account </p> </li> <li> <p>Only an
          * <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list the
-         * private channels in an account.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * private channels in an account.</p> </li> </ul>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannels">AWS
          * API Reference</a></p>
          */
@@ -4742,10 +4919,13 @@ namespace Model
         /**
          * <p>Lists all Channels created under a single Chime App as a paginated list. You
          * can specify filters to narrow results.</p> <p class="title"> <b>Functionality
-         * &amp; restrictions</b> </p> <ul> <li> <p>Use privacy = <code>PUBLIC</code> to
-         * retrieve all public channels in the account</p> </li> <li> <p>Only an
+         * &amp; restrictions</b> </p> <ul> <li> <p> Use privacy = <code>PUBLIC</code> to
+         * retrieve all public channels in the account </p> </li> <li> <p>Only an
          * <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list the
-         * private channels in an account.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * private channels in an account.</p> </li> </ul>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannels">AWS
          * API Reference</a></p>
          *
@@ -4756,10 +4936,13 @@ namespace Model
         /**
          * <p>Lists all Channels created under a single Chime App as a paginated list. You
          * can specify filters to narrow results.</p> <p class="title"> <b>Functionality
-         * &amp; restrictions</b> </p> <ul> <li> <p>Use privacy = <code>PUBLIC</code> to
-         * retrieve all public channels in the account</p> </li> <li> <p>Only an
+         * &amp; restrictions</b> </p> <ul> <li> <p> Use privacy = <code>PUBLIC</code> to
+         * retrieve all public channels in the account </p> </li> <li> <p>Only an
          * <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list the
-         * private channels in an account.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * private channels in an account.</p> </li> </ul>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannels">AWS
          * API Reference</a></p>
          *
@@ -4768,16 +4951,20 @@ namespace Model
         virtual void ListChannelsAsync(const Model::ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>A list of the channels moderated by an app instance user.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>A list of the channels moderated by an <code>AppInstanceUser</code>.</p>
+         *  <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use
+         * the <code>AppInstanceUserArn</code> of the user that makes the API call as the
+         * value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelsModeratedByAppInstanceUser">AWS
          * API Reference</a></p>
          */
         virtual Model::ListChannelsModeratedByAppInstanceUserOutcome ListChannelsModeratedByAppInstanceUser(const Model::ListChannelsModeratedByAppInstanceUserRequest& request) const;
 
         /**
-         * <p>A list of the channels moderated by an app instance user.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>A list of the channels moderated by an <code>AppInstanceUser</code>.</p>
+         *  <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use
+         * the <code>AppInstanceUserArn</code> of the user that makes the API call as the
+         * value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelsModeratedByAppInstanceUser">AWS
          * API Reference</a></p>
          *
@@ -4786,8 +4973,10 @@ namespace Model
         virtual Model::ListChannelsModeratedByAppInstanceUserOutcomeCallable ListChannelsModeratedByAppInstanceUserCallable(const Model::ListChannelsModeratedByAppInstanceUserRequest& request) const;
 
         /**
-         * <p>A list of the channels moderated by an app instance user.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>A list of the channels moderated by an <code>AppInstanceUser</code>.</p>
+         *  <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use
+         * the <code>AppInstanceUserArn</code> of the user that makes the API call as the
+         * value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelsModeratedByAppInstanceUser">AWS
          * API Reference</a></p>
          *
@@ -4824,10 +5013,10 @@ namespace Model
         virtual void ListMeetingTagsAsync(const Model::ListMeetingTagsRequest& request, const ListMeetingTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists up to 100 active Amazon Chime SDK meetings. For more information about
+         * <p> Lists up to 100 active Amazon Chime SDK meetings. For more information about
          * the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListMeetings">AWS
          * API Reference</a></p>
@@ -4835,10 +5024,10 @@ namespace Model
         virtual Model::ListMeetingsOutcome ListMeetings(const Model::ListMeetingsRequest& request) const;
 
         /**
-         * <p>Lists up to 100 active Amazon Chime SDK meetings. For more information about
+         * <p> Lists up to 100 active Amazon Chime SDK meetings. For more information about
          * the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListMeetings">AWS
          * API Reference</a></p>
@@ -4848,10 +5037,10 @@ namespace Model
         virtual Model::ListMeetingsOutcomeCallable ListMeetingsCallable(const Model::ListMeetingsRequest& request) const;
 
         /**
-         * <p>Lists up to 100 active Amazon Chime SDK meetings. For more information about
+         * <p> Lists up to 100 active Amazon Chime SDK meetings. For more information about
          * the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListMeetings">AWS
          * API Reference</a></p>
@@ -5237,7 +5426,7 @@ namespace Model
         virtual void LogoutUserAsync(const Model::LogoutUserRequest& request, const LogoutUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sets the amount of time in days that a given app instance retains
+         * <p>Sets the amount of time in days that a given <code>AppInstance</code> retains
          * data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutAppInstanceRetentionSettings">AWS
          * API Reference</a></p>
@@ -5245,7 +5434,7 @@ namespace Model
         virtual Model::PutAppInstanceRetentionSettingsOutcome PutAppInstanceRetentionSettings(const Model::PutAppInstanceRetentionSettingsRequest& request) const;
 
         /**
-         * <p>Sets the amount of time in days that a given app instance retains
+         * <p>Sets the amount of time in days that a given <code>AppInstance</code> retains
          * data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutAppInstanceRetentionSettings">AWS
          * API Reference</a></p>
@@ -5255,7 +5444,7 @@ namespace Model
         virtual Model::PutAppInstanceRetentionSettingsOutcomeCallable PutAppInstanceRetentionSettingsCallable(const Model::PutAppInstanceRetentionSettingsRequest& request) const;
 
         /**
-         * <p>Sets the amount of time in days that a given app instance retains
+         * <p>Sets the amount of time in days that a given <code>AppInstance</code> retains
          * data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutAppInstanceRetentionSettings">AWS
          * API Reference</a></p>
@@ -5265,16 +5454,16 @@ namespace Model
         virtual void PutAppInstanceRetentionSettingsAsync(const Model::PutAppInstanceRetentionSettingsRequest& request, const PutAppInstanceRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>The data streaming configurations of an app instance.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>The data streaming configurations of an
+         * <code>AppInstance</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutAppInstanceStreamingConfigurations">AWS
          * API Reference</a></p>
          */
         virtual Model::PutAppInstanceStreamingConfigurationsOutcome PutAppInstanceStreamingConfigurations(const Model::PutAppInstanceStreamingConfigurationsRequest& request) const;
 
         /**
-         * <p>The data streaming configurations of an app instance.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>The data streaming configurations of an
+         * <code>AppInstance</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutAppInstanceStreamingConfigurations">AWS
          * API Reference</a></p>
          *
@@ -5283,8 +5472,8 @@ namespace Model
         virtual Model::PutAppInstanceStreamingConfigurationsOutcomeCallable PutAppInstanceStreamingConfigurationsCallable(const Model::PutAppInstanceStreamingConfigurationsRequest& request) const;
 
         /**
-         * <p>The data streaming configurations of an app instance.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>The data streaming configurations of an
+         * <code>AppInstance</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutAppInstanceStreamingConfigurations">AWS
          * API Reference</a></p>
          *
@@ -5324,36 +5513,36 @@ namespace Model
         virtual void PutEventsConfigurationAsync(const Model::PutEventsConfigurationRequest& request, const PutEventsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Puts retention settings for the specified Amazon Chime Enterprise account. We
-         * recommend using AWS CloudTrail to monitor usage of this API for your account.
+         * <p> Puts retention settings for the specified Amazon Chime Enterprise account.
+         * We recommend using AWS CloudTrail to monitor usage of this API for your account.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/chime/latest/ag/cloudtrail.html">Logging
          * Amazon Chime API Calls with AWS CloudTrail</a> in the <i>Amazon Chime
-         * Administration Guide</i>.</p> <p>To turn off existing retention settings, remove
-         * the number of days from the corresponding <b>RetentionDays</b> field in the
-         * <b>RetentionSettings</b> object. For more information about retention settings,
-         * see <a
+         * Administration Guide</i> . </p> <p> To turn off existing retention settings,
+         * remove the number of days from the corresponding <b>RetentionDays</b> field in
+         * the <b>RetentionSettings</b> object. For more information about retention
+         * settings, see <a
          * href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing
-         * Chat Retention Policies</a> in the <i>Amazon Chime Administration
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i> .
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutRetentionSettings">AWS
          * API Reference</a></p>
          */
         virtual Model::PutRetentionSettingsOutcome PutRetentionSettings(const Model::PutRetentionSettingsRequest& request) const;
 
         /**
-         * <p>Puts retention settings for the specified Amazon Chime Enterprise account. We
-         * recommend using AWS CloudTrail to monitor usage of this API for your account.
+         * <p> Puts retention settings for the specified Amazon Chime Enterprise account.
+         * We recommend using AWS CloudTrail to monitor usage of this API for your account.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/chime/latest/ag/cloudtrail.html">Logging
          * Amazon Chime API Calls with AWS CloudTrail</a> in the <i>Amazon Chime
-         * Administration Guide</i>.</p> <p>To turn off existing retention settings, remove
-         * the number of days from the corresponding <b>RetentionDays</b> field in the
-         * <b>RetentionSettings</b> object. For more information about retention settings,
-         * see <a
+         * Administration Guide</i> . </p> <p> To turn off existing retention settings,
+         * remove the number of days from the corresponding <b>RetentionDays</b> field in
+         * the <b>RetentionSettings</b> object. For more information about retention
+         * settings, see <a
          * href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing
-         * Chat Retention Policies</a> in the <i>Amazon Chime Administration
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i> .
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutRetentionSettings">AWS
          * API Reference</a></p>
          *
@@ -5362,18 +5551,18 @@ namespace Model
         virtual Model::PutRetentionSettingsOutcomeCallable PutRetentionSettingsCallable(const Model::PutRetentionSettingsRequest& request) const;
 
         /**
-         * <p>Puts retention settings for the specified Amazon Chime Enterprise account. We
-         * recommend using AWS CloudTrail to monitor usage of this API for your account.
+         * <p> Puts retention settings for the specified Amazon Chime Enterprise account.
+         * We recommend using AWS CloudTrail to monitor usage of this API for your account.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/chime/latest/ag/cloudtrail.html">Logging
          * Amazon Chime API Calls with AWS CloudTrail</a> in the <i>Amazon Chime
-         * Administration Guide</i>.</p> <p>To turn off existing retention settings, remove
-         * the number of days from the corresponding <b>RetentionDays</b> field in the
-         * <b>RetentionSettings</b> object. For more information about retention settings,
-         * see <a
+         * Administration Guide</i> . </p> <p> To turn off existing retention settings,
+         * remove the number of days from the corresponding <b>RetentionDays</b> field in
+         * the <b>RetentionSettings</b> object. For more information about retention
+         * settings, see <a
          * href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing
-         * Chat Retention Policies</a> in the <i>Amazon Chime Administration
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i> .
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutRetentionSettings">AWS
          * API Reference</a></p>
          *
@@ -5542,8 +5731,8 @@ namespace Model
         /**
          * <p>Adds a streaming configuration for the specified Amazon Chime Voice
          * Connector. The streaming configuration specifies whether media streaming is
-         * enabled for sending to Amazon Kinesis. It also sets the retention period, in
-         * hours, for the Amazon Kinesis data.</p><p><h3>See Also:</h3>   <a
+         * enabled for sending to Indonesians. It also sets the retention period, in hours,
+         * for the Amazon Kinesis data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorStreamingConfiguration">AWS
          * API Reference</a></p>
          */
@@ -5552,8 +5741,8 @@ namespace Model
         /**
          * <p>Adds a streaming configuration for the specified Amazon Chime Voice
          * Connector. The streaming configuration specifies whether media streaming is
-         * enabled for sending to Amazon Kinesis. It also sets the retention period, in
-         * hours, for the Amazon Kinesis data.</p><p><h3>See Also:</h3>   <a
+         * enabled for sending to Indonesians. It also sets the retention period, in hours,
+         * for the Amazon Kinesis data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorStreamingConfiguration">AWS
          * API Reference</a></p>
          *
@@ -5564,8 +5753,8 @@ namespace Model
         /**
          * <p>Adds a streaming configuration for the specified Amazon Chime Voice
          * Connector. The streaming configuration specifies whether media streaming is
-         * enabled for sending to Amazon Kinesis. It also sets the retention period, in
-         * hours, for the Amazon Kinesis data.</p><p><h3>See Also:</h3>   <a
+         * enabled for sending to Indonesians. It also sets the retention period, in hours,
+         * for the Amazon Kinesis data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorStreamingConfiguration">AWS
          * API Reference</a></p>
          *
@@ -5637,8 +5826,10 @@ namespace Model
 
         /**
          * <p>Redacts message content, but not metadata. The message exists in the back
-         * end, but the action returns null content, and the state shows as
-         * redacted.</p><p><h3>See Also:</h3>   <a
+         * end, but the action returns null content, and the state shows as redacted.</p>
+         *  <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use
+         * the <code>AppInstanceUserArn</code> of the user that makes the API call as the
+         * value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactChannelMessage">AWS
          * API Reference</a></p>
          */
@@ -5646,8 +5837,10 @@ namespace Model
 
         /**
          * <p>Redacts message content, but not metadata. The message exists in the back
-         * end, but the action returns null content, and the state shows as
-         * redacted.</p><p><h3>See Also:</h3>   <a
+         * end, but the action returns null content, and the state shows as redacted.</p>
+         *  <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use
+         * the <code>AppInstanceUserArn</code> of the user that makes the API call as the
+         * value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactChannelMessage">AWS
          * API Reference</a></p>
          *
@@ -5657,8 +5850,10 @@ namespace Model
 
         /**
          * <p>Redacts message content, but not metadata. The message exists in the back
-         * end, but the action returns null content, and the state shows as
-         * redacted.</p><p><h3>See Also:</h3>   <a
+         * end, but the action returns null content, and the state shows as redacted.</p>
+         *  <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use
+         * the <code>AppInstanceUserArn</code> of the user that makes the API call as the
+         * value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactChannelMessage">AWS
          * API Reference</a></p>
          *
@@ -5833,9 +6028,11 @@ namespace Model
 
         /**
          * <p>Sends a message to a particular channel that the member is a part of.</p>
-         *  <p> <code>STANDARD</code> messages can contain 4KB of data and the 1KB of
-         * metadata. <code>CONTROL</code> messages can contain 30 bytes of data and no
-         * metadata.</p> <p><h3>See Also:</h3>   <a
+         *  <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use
+         * the <code>AppInstanceUserArn</code> of the user that makes the API call as the
+         * value in the header.</p> <p>Also, <code>STANDARD</code> messages can contain 4KB
+         * of data and the 1KB of metadata. <code>CONTROL</code> messages can contain 30
+         * bytes of data and no metadata.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/SendChannelMessage">AWS
          * API Reference</a></p>
          */
@@ -5843,9 +6040,11 @@ namespace Model
 
         /**
          * <p>Sends a message to a particular channel that the member is a part of.</p>
-         *  <p> <code>STANDARD</code> messages can contain 4KB of data and the 1KB of
-         * metadata. <code>CONTROL</code> messages can contain 30 bytes of data and no
-         * metadata.</p> <p><h3>See Also:</h3>   <a
+         *  <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use
+         * the <code>AppInstanceUserArn</code> of the user that makes the API call as the
+         * value in the header.</p> <p>Also, <code>STANDARD</code> messages can contain 4KB
+         * of data and the 1KB of metadata. <code>CONTROL</code> messages can contain 30
+         * bytes of data and no metadata.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/SendChannelMessage">AWS
          * API Reference</a></p>
          *
@@ -5855,9 +6054,11 @@ namespace Model
 
         /**
          * <p>Sends a message to a particular channel that the member is a part of.</p>
-         *  <p> <code>STANDARD</code> messages can contain 4KB of data and the 1KB of
-         * metadata. <code>CONTROL</code> messages can contain 30 bytes of data and no
-         * metadata.</p> <p><h3>See Also:</h3>   <a
+         *  <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use
+         * the <code>AppInstanceUserArn</code> of the user that makes the API call as the
+         * value in the header.</p> <p>Also, <code>STANDARD</code> messages can contain 4KB
+         * of data and the 1KB of metadata. <code>CONTROL</code> messages can contain 30
+         * bytes of data and no metadata.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/SendChannelMessage">AWS
          * API Reference</a></p>
          *
@@ -6130,7 +6331,7 @@ namespace Model
         virtual void UpdateAppInstanceAsync(const Model::UpdateAppInstanceRequest& request, const UpdateAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the details for an <code>AppInstanceUser</code>. You can update names
+         * <p>Updates the details of an <code>AppInstanceUser</code>. You can update names
          * and metadata.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAppInstanceUser">AWS
          * API Reference</a></p>
@@ -6138,7 +6339,7 @@ namespace Model
         virtual Model::UpdateAppInstanceUserOutcome UpdateAppInstanceUser(const Model::UpdateAppInstanceUserRequest& request) const;
 
         /**
-         * <p>Updates the details for an <code>AppInstanceUser</code>. You can update names
+         * <p>Updates the details of an <code>AppInstanceUser</code>. You can update names
          * and metadata.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAppInstanceUser">AWS
          * API Reference</a></p>
@@ -6148,7 +6349,7 @@ namespace Model
         virtual Model::UpdateAppInstanceUserOutcomeCallable UpdateAppInstanceUserCallable(const Model::UpdateAppInstanceUserRequest& request) const;
 
         /**
-         * <p>Updates the details for an <code>AppInstanceUser</code>. You can update names
+         * <p>Updates the details of an <code>AppInstanceUser</code>. You can update names
          * and metadata.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAppInstanceUser">AWS
          * API Reference</a></p>
@@ -6187,7 +6388,10 @@ namespace Model
 
         /**
          * <p>Update a channel's attributes.</p> <p> <b>Restriction</b>: You can't change a
-         * channel's privacy.</p><p><h3>See Also:</h3>   <a
+         * channel's privacy. </p>  <p>The <code>x-amz-chime-bearer</code> request
+         * header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that
+         * makes the API call as the value in the header.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannel">AWS
          * API Reference</a></p>
          */
@@ -6195,7 +6399,10 @@ namespace Model
 
         /**
          * <p>Update a channel's attributes.</p> <p> <b>Restriction</b>: You can't change a
-         * channel's privacy.</p><p><h3>See Also:</h3>   <a
+         * channel's privacy. </p>  <p>The <code>x-amz-chime-bearer</code> request
+         * header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that
+         * makes the API call as the value in the header.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannel">AWS
          * API Reference</a></p>
          *
@@ -6205,7 +6412,10 @@ namespace Model
 
         /**
          * <p>Update a channel's attributes.</p> <p> <b>Restriction</b>: You can't change a
-         * channel's privacy.</p><p><h3>See Also:</h3>   <a
+         * channel's privacy. </p>  <p>The <code>x-amz-chime-bearer</code> request
+         * header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that
+         * makes the API call as the value in the header.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannel">AWS
          * API Reference</a></p>
          *
@@ -6214,14 +6424,20 @@ namespace Model
         virtual void UpdateChannelAsync(const Model::UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the content of a message.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the content of a message.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannelMessage">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateChannelMessageOutcome UpdateChannelMessage(const Model::UpdateChannelMessageRequest& request) const;
 
         /**
-         * <p>Updates the content of a message.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the content of a message.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannelMessage">AWS
          * API Reference</a></p>
          *
@@ -6230,7 +6446,10 @@ namespace Model
         virtual Model::UpdateChannelMessageOutcomeCallable UpdateChannelMessageCallable(const Model::UpdateChannelMessageRequest& request) const;
 
         /**
-         * <p>Updates the content of a message.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the content of a message.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
+         * in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannelMessage">AWS
          * API Reference</a></p>
          *
@@ -6239,16 +6458,20 @@ namespace Model
         virtual void UpdateChannelMessageAsync(const Model::UpdateChannelMessageRequest& request, const UpdateChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sets the timestamp to the point when a user last read messages in a
-         * channel.</p><p><h3>See Also:</h3>   <a
+         * <p>The details of the time when a user last read messages in a channel.</p>
+         *  <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use
+         * the <code>AppInstanceUserArn</code> of the user that makes the API call as the
+         * value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannelReadMarker">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateChannelReadMarkerOutcome UpdateChannelReadMarker(const Model::UpdateChannelReadMarkerRequest& request) const;
 
         /**
-         * <p>Sets the timestamp to the point when a user last read messages in a
-         * channel.</p><p><h3>See Also:</h3>   <a
+         * <p>The details of the time when a user last read messages in a channel.</p>
+         *  <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use
+         * the <code>AppInstanceUserArn</code> of the user that makes the API call as the
+         * value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannelReadMarker">AWS
          * API Reference</a></p>
          *
@@ -6257,8 +6480,10 @@ namespace Model
         virtual Model::UpdateChannelReadMarkerOutcomeCallable UpdateChannelReadMarkerCallable(const Model::UpdateChannelReadMarkerRequest& request) const;
 
         /**
-         * <p>Sets the timestamp to the point when a user last read messages in a
-         * channel.</p><p><h3>See Also:</h3>   <a
+         * <p>The details of the time when a user last read messages in a channel.</p>
+         *  <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use
+         * the <code>AppInstanceUserArn</code> of the user that makes the API call as the
+         * value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannelReadMarker">AWS
          * API Reference</a></p>
          *
@@ -6465,7 +6690,7 @@ namespace Model
         virtual void UpdateRoomMembershipAsync(const Model::UpdateRoomMembershipRequest& request, const UpdateRoomMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the details for the specified SIP media application.</p><p><h3>See
+         * <p>Updates the details of the specified SIP media application.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateSipMediaApplication">AWS
          * API Reference</a></p>
@@ -6473,7 +6698,7 @@ namespace Model
         virtual Model::UpdateSipMediaApplicationOutcome UpdateSipMediaApplication(const Model::UpdateSipMediaApplicationRequest& request) const;
 
         /**
-         * <p>Updates the details for the specified SIP media application.</p><p><h3>See
+         * <p>Updates the details of the specified SIP media application.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateSipMediaApplication">AWS
          * API Reference</a></p>
@@ -6483,7 +6708,7 @@ namespace Model
         virtual Model::UpdateSipMediaApplicationOutcomeCallable UpdateSipMediaApplicationCallable(const Model::UpdateSipMediaApplicationRequest& request) const;
 
         /**
-         * <p>Updates the details for the specified SIP media application.</p><p><h3>See
+         * <p>Updates the details of the specified SIP media application.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateSipMediaApplication">AWS
          * API Reference</a></p>
@@ -6493,14 +6718,14 @@ namespace Model
         virtual void UpdateSipMediaApplicationAsync(const Model::UpdateSipMediaApplicationRequest& request, const UpdateSipMediaApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the details for the specified SIP rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the details of the specified SIP rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateSipRule">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateSipRuleOutcome UpdateSipRule(const Model::UpdateSipRuleRequest& request) const;
 
         /**
-         * <p>Updates the details for the specified SIP rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the details of the specified SIP rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateSipRule">AWS
          * API Reference</a></p>
          *
@@ -6509,7 +6734,7 @@ namespace Model
         virtual Model::UpdateSipRuleOutcomeCallable UpdateSipRuleCallable(const Model::UpdateSipRuleRequest& request) const;
 
         /**
-         * <p>Updates the details for the specified SIP rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the details of the specified SIP rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateSipRule">AWS
          * API Reference</a></p>
          *
@@ -6518,8 +6743,8 @@ namespace Model
         virtual void UpdateSipRuleAsync(const Model::UpdateSipRuleRequest& request, const UpdateSipRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates user details for a specified user ID. Currently, only
-         * <code>LicenseType</code> updates are supported for this action.</p><p><h3>See
+         * <p> Updates user details for a specified user ID. Currently, only
+         * <code>LicenseType</code> updates are supported for this action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateUser">AWS
          * API Reference</a></p>
@@ -6527,8 +6752,8 @@ namespace Model
         virtual Model::UpdateUserOutcome UpdateUser(const Model::UpdateUserRequest& request) const;
 
         /**
-         * <p>Updates user details for a specified user ID. Currently, only
-         * <code>LicenseType</code> updates are supported for this action.</p><p><h3>See
+         * <p> Updates user details for a specified user ID. Currently, only
+         * <code>LicenseType</code> updates are supported for this action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateUser">AWS
          * API Reference</a></p>
@@ -6538,8 +6763,8 @@ namespace Model
         virtual Model::UpdateUserOutcomeCallable UpdateUserCallable(const Model::UpdateUserRequest& request) const;
 
         /**
-         * <p>Updates user details for a specified user ID. Currently, only
-         * <code>LicenseType</code> updates are supported for this action.</p><p><h3>See
+         * <p> Updates user details for a specified user ID. Currently, only
+         * <code>LicenseType</code> updates are supported for this action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateUser">AWS
          * API Reference</a></p>
@@ -6605,7 +6830,7 @@ namespace Model
         virtual void UpdateVoiceConnectorAsync(const Model::UpdateVoiceConnectorRequest& request, const UpdateVoiceConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates details for the specified Amazon Chime Voice Connector group, such as
+         * <p>Updates details of the specified Amazon Chime Voice Connector group, such as
          * the name and Amazon Chime Voice Connector priority ranking.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateVoiceConnectorGroup">AWS
@@ -6614,7 +6839,7 @@ namespace Model
         virtual Model::UpdateVoiceConnectorGroupOutcome UpdateVoiceConnectorGroup(const Model::UpdateVoiceConnectorGroupRequest& request) const;
 
         /**
-         * <p>Updates details for the specified Amazon Chime Voice Connector group, such as
+         * <p>Updates details of the specified Amazon Chime Voice Connector group, such as
          * the name and Amazon Chime Voice Connector priority ranking.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateVoiceConnectorGroup">AWS
@@ -6625,7 +6850,7 @@ namespace Model
         virtual Model::UpdateVoiceConnectorGroupOutcomeCallable UpdateVoiceConnectorGroupCallable(const Model::UpdateVoiceConnectorGroupRequest& request) const;
 
         /**
-         * <p>Updates details for the specified Amazon Chime Voice Connector group, such as
+         * <p>Updates details of the specified Amazon Chime Voice Connector group, such as
          * the name and Amazon Chime Voice Connector priority ranking.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateVoiceConnectorGroup">AWS

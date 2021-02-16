@@ -47,6 +47,8 @@ def ParseArguments():
 
 serviceNameRemaps = {
     "runtime.lex" : "lex",
+    "runtime.lex.v2" : "lexv2-runtime",
+    "models.lex.v2" : "lexv2-models",
     "entitlement.marketplace" : "marketplace-entitlement",
     "runtime.sagemaker" : "sagemaker-runtime",
     "transfer" : "awstransfer",

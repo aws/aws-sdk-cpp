@@ -1482,7 +1482,7 @@ namespace Model
      * <code>false</code> means that checking is disabled. The value must be
      * <code>false</code> for the instance to perform NAT. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
-     * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     * instances</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
     inline bool GetSourceDestCheck() const{ return m_sourceDestCheck; }
 
@@ -1493,7 +1493,7 @@ namespace Model
      * <code>false</code> means that checking is disabled. The value must be
      * <code>false</code> for the instance to perform NAT. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
-     * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     * instances</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
     inline bool SourceDestCheckHasBeenSet() const { return m_sourceDestCheckHasBeenSet; }
 
@@ -1504,7 +1504,7 @@ namespace Model
      * <code>false</code> means that checking is disabled. The value must be
      * <code>false</code> for the instance to perform NAT. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
-     * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     * instances</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
     inline void SetSourceDestCheck(bool value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = value; }
 
@@ -1515,7 +1515,7 @@ namespace Model
      * <code>false</code> means that checking is disabled. The value must be
      * <code>false</code> for the instance to perform NAT. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
-     * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     * instances</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
     inline Instance& WithSourceDestCheck(bool value) { SetSourceDestCheck(value); return *this;}
 

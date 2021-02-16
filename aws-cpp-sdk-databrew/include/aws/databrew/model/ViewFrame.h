@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the data being being transformed during an AWS Glue DataBrew
-   * project session.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents the data being being transformed during an action.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ViewFrame">AWS
    * API Reference</a></p>
    */

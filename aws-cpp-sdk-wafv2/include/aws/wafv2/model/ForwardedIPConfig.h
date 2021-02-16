@@ -116,10 +116,10 @@ namespace Model
      * valid IP address in the specified position.</p>  <p>If the specified
      * header isn't present in the request, AWS WAF doesn't apply the rule to the web
      * request at all.</p>  <p>You can specify the following fallback
-     * behaviors:</p> <ul> <li> <p>MATCH - Treat the web request as matching the rule
-     * statement. AWS WAF applies the rule action to the request.</p> </li> <li>
-     * <p>NO_MATCH - Treat the web request as not matching the rule statement.</p>
-     * </li> </ul>
+     * behaviors:</p> <ul> <li> <p> <code>MATCH</code> - Treat the web request as
+     * matching the rule statement. AWS WAF applies the rule action to the request.</p>
+     * </li> <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the
+     * rule statement.</p> </li> </ul>
      */
     inline const FallbackBehavior& GetFallbackBehavior() const{ return m_fallbackBehavior; }
 
@@ -128,10 +128,10 @@ namespace Model
      * valid IP address in the specified position.</p>  <p>If the specified
      * header isn't present in the request, AWS WAF doesn't apply the rule to the web
      * request at all.</p>  <p>You can specify the following fallback
-     * behaviors:</p> <ul> <li> <p>MATCH - Treat the web request as matching the rule
-     * statement. AWS WAF applies the rule action to the request.</p> </li> <li>
-     * <p>NO_MATCH - Treat the web request as not matching the rule statement.</p>
-     * </li> </ul>
+     * behaviors:</p> <ul> <li> <p> <code>MATCH</code> - Treat the web request as
+     * matching the rule statement. AWS WAF applies the rule action to the request.</p>
+     * </li> <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the
+     * rule statement.</p> </li> </ul>
      */
     inline bool FallbackBehaviorHasBeenSet() const { return m_fallbackBehaviorHasBeenSet; }
 
@@ -140,10 +140,10 @@ namespace Model
      * valid IP address in the specified position.</p>  <p>If the specified
      * header isn't present in the request, AWS WAF doesn't apply the rule to the web
      * request at all.</p>  <p>You can specify the following fallback
-     * behaviors:</p> <ul> <li> <p>MATCH - Treat the web request as matching the rule
-     * statement. AWS WAF applies the rule action to the request.</p> </li> <li>
-     * <p>NO_MATCH - Treat the web request as not matching the rule statement.</p>
-     * </li> </ul>
+     * behaviors:</p> <ul> <li> <p> <code>MATCH</code> - Treat the web request as
+     * matching the rule statement. AWS WAF applies the rule action to the request.</p>
+     * </li> <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the
+     * rule statement.</p> </li> </ul>
      */
     inline void SetFallbackBehavior(const FallbackBehavior& value) { m_fallbackBehaviorHasBeenSet = true; m_fallbackBehavior = value; }
 
@@ -152,10 +152,10 @@ namespace Model
      * valid IP address in the specified position.</p>  <p>If the specified
      * header isn't present in the request, AWS WAF doesn't apply the rule to the web
      * request at all.</p>  <p>You can specify the following fallback
-     * behaviors:</p> <ul> <li> <p>MATCH - Treat the web request as matching the rule
-     * statement. AWS WAF applies the rule action to the request.</p> </li> <li>
-     * <p>NO_MATCH - Treat the web request as not matching the rule statement.</p>
-     * </li> </ul>
+     * behaviors:</p> <ul> <li> <p> <code>MATCH</code> - Treat the web request as
+     * matching the rule statement. AWS WAF applies the rule action to the request.</p>
+     * </li> <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the
+     * rule statement.</p> </li> </ul>
      */
     inline void SetFallbackBehavior(FallbackBehavior&& value) { m_fallbackBehaviorHasBeenSet = true; m_fallbackBehavior = std::move(value); }
 
@@ -164,10 +164,10 @@ namespace Model
      * valid IP address in the specified position.</p>  <p>If the specified
      * header isn't present in the request, AWS WAF doesn't apply the rule to the web
      * request at all.</p>  <p>You can specify the following fallback
-     * behaviors:</p> <ul> <li> <p>MATCH - Treat the web request as matching the rule
-     * statement. AWS WAF applies the rule action to the request.</p> </li> <li>
-     * <p>NO_MATCH - Treat the web request as not matching the rule statement.</p>
-     * </li> </ul>
+     * behaviors:</p> <ul> <li> <p> <code>MATCH</code> - Treat the web request as
+     * matching the rule statement. AWS WAF applies the rule action to the request.</p>
+     * </li> <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the
+     * rule statement.</p> </li> </ul>
      */
     inline ForwardedIPConfig& WithFallbackBehavior(const FallbackBehavior& value) { SetFallbackBehavior(value); return *this;}
 
@@ -176,10 +176,10 @@ namespace Model
      * valid IP address in the specified position.</p>  <p>If the specified
      * header isn't present in the request, AWS WAF doesn't apply the rule to the web
      * request at all.</p>  <p>You can specify the following fallback
-     * behaviors:</p> <ul> <li> <p>MATCH - Treat the web request as matching the rule
-     * statement. AWS WAF applies the rule action to the request.</p> </li> <li>
-     * <p>NO_MATCH - Treat the web request as not matching the rule statement.</p>
-     * </li> </ul>
+     * behaviors:</p> <ul> <li> <p> <code>MATCH</code> - Treat the web request as
+     * matching the rule statement. AWS WAF applies the rule action to the request.</p>
+     * </li> <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the
+     * rule statement.</p> </li> </ul>
      */
     inline ForwardedIPConfig& WithFallbackBehavior(FallbackBehavior&& value) { SetFallbackBehavior(std::move(value)); return *this;}
 

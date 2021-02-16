@@ -225,8 +225,8 @@ namespace Model
    * Notification Service (Amazon SNS) is a web service that enables you to build
    * distributed web-enabled applications. Applications can use Amazon SNS to easily
    * push real-time notification messages to interested subscribers over multiple
-   * delivery protocols. For more information about this product see <a
-   * href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. For detailed
+   * delivery protocols. For more information about this product see the <a
+   * href="http://aws.amazon.com/sns/">Amazon SNS product page</a>. For detailed
    * information about Amazon SNS features and their associated API calls, see the <a
    * href="https://docs.aws.amazon.com/sns/latest/dg/">Amazon SNS Developer
    * Guide</a>. </p> <p>For information on the permissions you need to use this API,
@@ -1395,8 +1395,10 @@ namespace Model
          * the <code>MessageAttributes.entry.N</code> parameter. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Publishing
-         * to a mobile phone</a> in the <i>Amazon SNS Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * to a mobile phone</a> in the <i>Amazon SNS Developer Guide</i>.</p>  <p>To
+         * use this operation, you must grant the Amazon SNS service principal
+         * (<code>sns.amazonaws.com</code>) permission to perform the
+         * <code>s3:ListBucket</code> action. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes">AWS
          * API Reference</a></p>
          */
@@ -1409,8 +1411,10 @@ namespace Model
          * the <code>MessageAttributes.entry.N</code> parameter. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Publishing
-         * to a mobile phone</a> in the <i>Amazon SNS Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * to a mobile phone</a> in the <i>Amazon SNS Developer Guide</i>.</p>  <p>To
+         * use this operation, you must grant the Amazon SNS service principal
+         * (<code>sns.amazonaws.com</code>) permission to perform the
+         * <code>s3:ListBucket</code> action. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes">AWS
          * API Reference</a></p>
          *
@@ -1425,8 +1429,10 @@ namespace Model
          * the <code>MessageAttributes.entry.N</code> parameter. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Publishing
-         * to a mobile phone</a> in the <i>Amazon SNS Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * to a mobile phone</a> in the <i>Amazon SNS Developer Guide</i>.</p>  <p>To
+         * use this operation, you must grant the Amazon SNS service principal
+         * (<code>sns.amazonaws.com</code>) permission to perform the
+         * <code>s3:ListBucket</code> action. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes">AWS
          * API Reference</a></p>
          *

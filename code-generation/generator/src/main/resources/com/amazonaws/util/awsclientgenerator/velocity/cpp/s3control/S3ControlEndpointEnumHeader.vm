@@ -29,7 +29,7 @@ namespace ${metadata.classNamePrefix}Endpoint
    * @param arn The S3 Outposts ARN
    * @param regionNameOverride Override region name in ARN if it's not empty
    */
-  ${exportValue} Aws::String ForOutpostsArn(const ${metadata.classNamePrefix}ARN& arn, const Aws::String& regionNameOverride = "");
+  ${exportValue} Aws::String ForOutpostsArn(const ${metadata.classNamePrefix}ARN& arn, const Aws::String& regionNameOverride = "", bool useDualStack = false, const Aws::String& endpointOverride = "");
 } // namespace ${metadata.classNamePrefix}Endpoint
 } // namespace ${serviceNamespace}
 } // namespace ${rootNamespace}

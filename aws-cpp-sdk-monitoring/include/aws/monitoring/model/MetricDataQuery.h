@@ -309,7 +309,11 @@ namespace Model
      * <p>A human-readable label for this metric or expression. This is especially
      * useful if this is an expression, so that you know what the value represents. If
      * the metric or expression is shown in a CloudWatch dashboard widget, the label is
-     * shown. If Label is omitted, CloudWatch generates a default.</p>
+     * shown. If Label is omitted, CloudWatch generates a default.</p> <p>You can put
+     * dynamic expressions into a label, so that it is more descriptive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using
+     * Dynamic Labels</a>.</p>
      */
     inline const Aws::String& GetLabel() const{ return m_label; }
 
@@ -317,7 +321,11 @@ namespace Model
      * <p>A human-readable label for this metric or expression. This is especially
      * useful if this is an expression, so that you know what the value represents. If
      * the metric or expression is shown in a CloudWatch dashboard widget, the label is
-     * shown. If Label is omitted, CloudWatch generates a default.</p>
+     * shown. If Label is omitted, CloudWatch generates a default.</p> <p>You can put
+     * dynamic expressions into a label, so that it is more descriptive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using
+     * Dynamic Labels</a>.</p>
      */
     inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
 
@@ -325,7 +333,11 @@ namespace Model
      * <p>A human-readable label for this metric or expression. This is especially
      * useful if this is an expression, so that you know what the value represents. If
      * the metric or expression is shown in a CloudWatch dashboard widget, the label is
-     * shown. If Label is omitted, CloudWatch generates a default.</p>
+     * shown. If Label is omitted, CloudWatch generates a default.</p> <p>You can put
+     * dynamic expressions into a label, so that it is more descriptive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using
+     * Dynamic Labels</a>.</p>
      */
     inline void SetLabel(const Aws::String& value) { m_labelHasBeenSet = true; m_label = value; }
 
@@ -333,7 +345,11 @@ namespace Model
      * <p>A human-readable label for this metric or expression. This is especially
      * useful if this is an expression, so that you know what the value represents. If
      * the metric or expression is shown in a CloudWatch dashboard widget, the label is
-     * shown. If Label is omitted, CloudWatch generates a default.</p>
+     * shown. If Label is omitted, CloudWatch generates a default.</p> <p>You can put
+     * dynamic expressions into a label, so that it is more descriptive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using
+     * Dynamic Labels</a>.</p>
      */
     inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
 
@@ -341,7 +357,11 @@ namespace Model
      * <p>A human-readable label for this metric or expression. This is especially
      * useful if this is an expression, so that you know what the value represents. If
      * the metric or expression is shown in a CloudWatch dashboard widget, the label is
-     * shown. If Label is omitted, CloudWatch generates a default.</p>
+     * shown. If Label is omitted, CloudWatch generates a default.</p> <p>You can put
+     * dynamic expressions into a label, so that it is more descriptive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using
+     * Dynamic Labels</a>.</p>
      */
     inline void SetLabel(const char* value) { m_labelHasBeenSet = true; m_label.assign(value); }
 
@@ -349,7 +369,11 @@ namespace Model
      * <p>A human-readable label for this metric or expression. This is especially
      * useful if this is an expression, so that you know what the value represents. If
      * the metric or expression is shown in a CloudWatch dashboard widget, the label is
-     * shown. If Label is omitted, CloudWatch generates a default.</p>
+     * shown. If Label is omitted, CloudWatch generates a default.</p> <p>You can put
+     * dynamic expressions into a label, so that it is more descriptive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using
+     * Dynamic Labels</a>.</p>
      */
     inline MetricDataQuery& WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
 
@@ -357,7 +381,11 @@ namespace Model
      * <p>A human-readable label for this metric or expression. This is especially
      * useful if this is an expression, so that you know what the value represents. If
      * the metric or expression is shown in a CloudWatch dashboard widget, the label is
-     * shown. If Label is omitted, CloudWatch generates a default.</p>
+     * shown. If Label is omitted, CloudWatch generates a default.</p> <p>You can put
+     * dynamic expressions into a label, so that it is more descriptive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using
+     * Dynamic Labels</a>.</p>
      */
     inline MetricDataQuery& WithLabel(Aws::String&& value) { SetLabel(std::move(value)); return *this;}
 
@@ -365,7 +393,11 @@ namespace Model
      * <p>A human-readable label for this metric or expression. This is especially
      * useful if this is an expression, so that you know what the value represents. If
      * the metric or expression is shown in a CloudWatch dashboard widget, the label is
-     * shown. If Label is omitted, CloudWatch generates a default.</p>
+     * shown. If Label is omitted, CloudWatch generates a default.</p> <p>You can put
+     * dynamic expressions into a label, so that it is more descriptive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using
+     * Dynamic Labels</a>.</p>
      */
     inline MetricDataQuery& WithLabel(const char* value) { SetLabel(value); return *this;}
 

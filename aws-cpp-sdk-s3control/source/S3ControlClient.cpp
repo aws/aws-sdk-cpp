@@ -112,6 +112,7 @@ S3ControlClient::~S3ControlClient()
 void S3ControlClient::init(const ClientConfiguration& config)
 {
   SetServiceClientName("S3 Control");
+  LoadS3ControlSpecificConfig(config.profileName);
   m_configScheme = SchemeMapper::ToString(config.scheme);
   m_scheme = m_configScheme;
   m_useDualStack = config.useDualStack;
@@ -163,7 +164,7 @@ CreateAccessPointOutcome S3ControlClient::CreateAccessPoint(const CreateAccessPo
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket(), false, "");
   if (!computeEndpointOutcome.IsSuccess())
@@ -315,7 +316,7 @@ DeleteAccessPointOutcome S3ControlClient::DeleteAccessPoint(const DeleteAccessPo
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetName(), false, "/v20180820/accesspoint/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -376,7 +377,7 @@ DeleteAccessPointPolicyOutcome S3ControlClient::DeleteAccessPointPolicy(const De
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetName(), false, "/v20180820/accesspoint/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -438,7 +439,7 @@ DeleteBucketOutcome S3ControlClient::DeleteBucket(const DeleteBucketRequest& req
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket(), false, "/v20180820/bucket/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -499,7 +500,7 @@ DeleteBucketLifecycleConfigurationOutcome S3ControlClient::DeleteBucketLifecycle
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket(), false, "/v20180820/bucket/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -561,7 +562,7 @@ DeleteBucketPolicyOutcome S3ControlClient::DeleteBucketPolicy(const DeleteBucket
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket(), false, "/v20180820/bucket/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -623,7 +624,7 @@ DeleteBucketTaggingOutcome S3ControlClient::DeleteBucketTagging(const DeleteBuck
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket(), false, "/v20180820/bucket/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -966,7 +967,7 @@ GetAccessPointOutcome S3ControlClient::GetAccessPoint(const GetAccessPointReques
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetName(), false, "/v20180820/accesspoint/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -1027,7 +1028,7 @@ GetAccessPointPolicyOutcome S3ControlClient::GetAccessPointPolicy(const GetAcces
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetName(), false, "/v20180820/accesspoint/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -1089,7 +1090,7 @@ GetAccessPointPolicyStatusOutcome S3ControlClient::GetAccessPointPolicyStatus(co
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetName(), false, "/v20180820/accesspoint/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -1151,7 +1152,7 @@ GetBucketOutcome S3ControlClient::GetBucket(const GetBucketRequest& request) con
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket(), false, "/v20180820/bucket/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -1212,7 +1213,7 @@ GetBucketLifecycleConfigurationOutcome S3ControlClient::GetBucketLifecycleConfig
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket(), false, "/v20180820/bucket/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -1274,7 +1275,7 @@ GetBucketPolicyOutcome S3ControlClient::GetBucketPolicy(const GetBucketPolicyReq
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket(), false, "/v20180820/bucket/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -1336,7 +1337,7 @@ GetBucketTaggingOutcome S3ControlClient::GetBucketTagging(const GetBucketTagging
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket(), false, "/v20180820/bucket/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -1617,7 +1618,7 @@ ListAccessPointsOutcome S3ControlClient::ListAccessPoints(const ListAccessPoints
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket(), false, "");
   if (!computeEndpointOutcome.IsSuccess())
@@ -1832,7 +1833,7 @@ PutAccessPointPolicyOutcome S3ControlClient::PutAccessPointPolicy(const PutAcces
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetName(), false, "/v20180820/accesspoint/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -1894,7 +1895,7 @@ PutBucketLifecycleConfigurationOutcome S3ControlClient::PutBucketLifecycleConfig
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket(), false, "/v20180820/bucket/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -1956,7 +1957,7 @@ PutBucketPolicyOutcome S3ControlClient::PutBucketPolicy(const PutBucketPolicyReq
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket(), false, "/v20180820/bucket/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -2018,7 +2019,7 @@ PutBucketTaggingOutcome S3ControlClient::PutBucketTagging(const PutBucketTagging
   if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
   {
       return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false));
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
   }
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket(), false, "/v20180820/bucket/");
   if (!computeEndpointOutcome.IsSuccess())
@@ -2446,6 +2447,12 @@ void S3ControlClient::LoadS3ControlSpecificConfig(const Aws::String& profile)
 
 ComputeEndpointOutcome S3ControlClient::ComputeEndpointString(bool hasOutpostId) const
 {
+    if (m_useDualStack && m_useCustomEndpoint)
+    {
+        return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
+            "Dual-stack endpoint is incompatible with a custom endpoint override.", false));
+    }
+
     Aws::StringStream ss;
     ss << m_scheme << "://";
     if (hasOutpostId)
@@ -2454,6 +2461,11 @@ ComputeEndpointOutcome S3ControlClient::ComputeEndpointString(bool hasOutpostId)
         {
             return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
                 "S3 Outposts endpoints do not support dualstack right now.", false));
+        }
+        else if (m_useCustomEndpoint)
+        {
+            ss << m_baseUri;
+            return ComputeEndpointOutcome(ComputeEndpointResult(ss.str(), Aws::Region::ComputeSignerRegion(m_region), "s3-outposts"));
         }
         else
         {
@@ -2470,6 +2482,12 @@ ComputeEndpointOutcome S3ControlClient::ComputeEndpointString(bool hasOutpostId)
 
 ComputeEndpointOutcome S3ControlClient::ComputeEndpointString(const Aws::String& name, bool hasOutpostId, const Aws::String& uriPathPrefix) const
 {
+    if (m_useDualStack && m_useCustomEndpoint)
+    {
+        return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
+            "Dual-stack endpoint is incompatible with a custom endpoint override.", false));
+    }
+
     Aws::StringStream ss;
     ss << m_scheme << "://";
     Aws::String signerRegion = Aws::Region::ComputeSignerRegion(m_region);
@@ -2477,12 +2495,6 @@ ComputeEndpointOutcome S3ControlClient::ComputeEndpointString(const Aws::String&
 
     if (arn)
     {
-        if (m_useCustomEndpoint)
-        {
-            return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
-                "Custom endpoint is not compatible with ARNs as request parameters.", false));
-        }
-
         S3ControlARNOutcome S3ControlArnOutcome = m_useArnRegion ? arn.Validate() : arn.Validate(m_region.c_str());
         if (!S3ControlArnOutcome.IsSuccess())
         {
@@ -2496,7 +2508,7 @@ ComputeEndpointOutcome S3ControlClient::ComputeEndpointString(const Aws::String&
                 return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
                     "Outposts Access Points do not support dualstack right now.", false));
             }
-            ss << S3ControlEndpoint::ForOutpostsArn(arn, m_useArnRegion ? "" : m_region);
+            ss << S3ControlEndpoint::ForOutpostsArn(arn, m_useArnRegion ? "" : m_region, m_useDualStack, m_useCustomEndpoint ? m_baseUri : "");
             if (!uriPathPrefix.empty())
             {
                 ss << uriPathPrefix << arn.GetSubResourceId();

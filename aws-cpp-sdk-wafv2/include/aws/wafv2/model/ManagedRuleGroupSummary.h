@@ -24,13 +24,9 @@ namespace Model
 {
 
   /**
-   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p>  <p>High-level information about a managed
-   * rule group, returned by <a>ListAvailableManagedRuleGroups</a>. This provides
-   * information like the name and vendor name, that you provide when you add a
+   * <p>High-level information about a managed rule group, returned by
+   * <a>ListAvailableManagedRuleGroups</a>. This provides information like the name
+   * and vendor name, that you provide when you add a
    * <a>ManagedRuleGroupStatement</a> to a web ACL. Managed rule groups include AWS
    * Managed Rules rule groups, which are free of charge to AWS WAF customers, and
    * AWS Marketplace managed rule groups, which you can subscribe to through AWS

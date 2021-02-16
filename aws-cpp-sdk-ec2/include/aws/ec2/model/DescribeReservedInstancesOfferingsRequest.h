@@ -362,7 +362,7 @@ namespace Model
      * <p>The instance type that the reservation will cover (for example,
      * <code>m1.small</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
 
@@ -370,7 +370,7 @@ namespace Model
      * <p>The instance type that the reservation will cover (for example,
      * <code>m1.small</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
@@ -378,7 +378,7 @@ namespace Model
      * <p>The instance type that the reservation will cover (for example,
      * <code>m1.small</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
@@ -386,7 +386,7 @@ namespace Model
      * <p>The instance type that the reservation will cover (for example,
      * <code>m1.small</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
@@ -394,7 +394,7 @@ namespace Model
      * <p>The instance type that the reservation will cover (for example,
      * <code>m1.small</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline DescribeReservedInstancesOfferingsRequest& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
 
@@ -402,7 +402,7 @@ namespace Model
      * <p>The instance type that the reservation will cover (for example,
      * <code>m1.small</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline DescribeReservedInstancesOfferingsRequest& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 

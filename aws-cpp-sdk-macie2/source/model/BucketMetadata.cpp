@@ -35,6 +35,7 @@ BucketMetadata::BucketMetadata() :
     m_publicAccessHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_replicationDetailsHasBeenSet(false),
+    m_serverSideEncryptionHasBeenSet(false),
     m_sharedAccess(SharedAccess::NOT_SET),
     m_sharedAccessHasBeenSet(false),
     m_sizeInBytes(0),
@@ -66,6 +67,7 @@ BucketMetadata::BucketMetadata(JsonView jsonValue) :
     m_publicAccessHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_replicationDetailsHasBeenSet(false),
+    m_serverSideEncryptionHasBeenSet(false),
     m_sharedAccess(SharedAccess::NOT_SET),
     m_sharedAccessHasBeenSet(false),
     m_sizeInBytes(0),
@@ -172,6 +174,13 @@ BucketMetadata& BucketMetadata::operator =(JsonView jsonValue)
     m_replicationDetails = jsonValue.GetObject("replicationDetails");
 
     m_replicationDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("serverSideEncryption"))
+  {
+    m_serverSideEncryption = jsonValue.GetObject("serverSideEncryption");
+
+    m_serverSideEncryptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sharedAccess"))
@@ -306,6 +315,12 @@ JsonValue BucketMetadata::Jsonize() const
   if(m_replicationDetailsHasBeenSet)
   {
    payload.WithObject("replicationDetails", m_replicationDetails.Jsonize());
+
+  }
+
+  if(m_serverSideEncryptionHasBeenSet)
+  {
+   payload.WithObject("serverSideEncryption", m_serverSideEncryption.Jsonize());
 
   }
 

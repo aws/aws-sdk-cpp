@@ -74,6 +74,7 @@
 #include <aws/sesv2/model/PutDedicatedIpInPoolResult.h>
 #include <aws/sesv2/model/PutDedicatedIpWarmupAttributesResult.h>
 #include <aws/sesv2/model/PutDeliverabilityDashboardOptionResult.h>
+#include <aws/sesv2/model/PutEmailIdentityConfigurationSetAttributesResult.h>
 #include <aws/sesv2/model/PutEmailIdentityDkimAttributesResult.h>
 #include <aws/sesv2/model/PutEmailIdentityDkimSigningAttributesResult.h>
 #include <aws/sesv2/model/PutEmailIdentityFeedbackAttributesResult.h>
@@ -193,6 +194,7 @@ namespace Model
         class PutDedicatedIpInPoolRequest;
         class PutDedicatedIpWarmupAttributesRequest;
         class PutDeliverabilityDashboardOptionRequest;
+        class PutEmailIdentityConfigurationSetAttributesRequest;
         class PutEmailIdentityDkimAttributesRequest;
         class PutEmailIdentityDkimSigningAttributesRequest;
         class PutEmailIdentityFeedbackAttributesRequest;
@@ -274,6 +276,7 @@ namespace Model
         typedef Aws::Utils::Outcome<PutDedicatedIpInPoolResult, SESV2Error> PutDedicatedIpInPoolOutcome;
         typedef Aws::Utils::Outcome<PutDedicatedIpWarmupAttributesResult, SESV2Error> PutDedicatedIpWarmupAttributesOutcome;
         typedef Aws::Utils::Outcome<PutDeliverabilityDashboardOptionResult, SESV2Error> PutDeliverabilityDashboardOptionOutcome;
+        typedef Aws::Utils::Outcome<PutEmailIdentityConfigurationSetAttributesResult, SESV2Error> PutEmailIdentityConfigurationSetAttributesOutcome;
         typedef Aws::Utils::Outcome<PutEmailIdentityDkimAttributesResult, SESV2Error> PutEmailIdentityDkimAttributesOutcome;
         typedef Aws::Utils::Outcome<PutEmailIdentityDkimSigningAttributesResult, SESV2Error> PutEmailIdentityDkimSigningAttributesOutcome;
         typedef Aws::Utils::Outcome<PutEmailIdentityFeedbackAttributesResult, SESV2Error> PutEmailIdentityFeedbackAttributesOutcome;
@@ -355,6 +358,7 @@ namespace Model
         typedef std::future<PutDedicatedIpInPoolOutcome> PutDedicatedIpInPoolOutcomeCallable;
         typedef std::future<PutDedicatedIpWarmupAttributesOutcome> PutDedicatedIpWarmupAttributesOutcomeCallable;
         typedef std::future<PutDeliverabilityDashboardOptionOutcome> PutDeliverabilityDashboardOptionOutcomeCallable;
+        typedef std::future<PutEmailIdentityConfigurationSetAttributesOutcome> PutEmailIdentityConfigurationSetAttributesOutcomeCallable;
         typedef std::future<PutEmailIdentityDkimAttributesOutcome> PutEmailIdentityDkimAttributesOutcomeCallable;
         typedef std::future<PutEmailIdentityDkimSigningAttributesOutcome> PutEmailIdentityDkimSigningAttributesOutcomeCallable;
         typedef std::future<PutEmailIdentityFeedbackAttributesOutcome> PutEmailIdentityFeedbackAttributesOutcomeCallable;
@@ -439,6 +443,7 @@ namespace Model
     typedef std::function<void(const SESV2Client*, const Model::PutDedicatedIpInPoolRequest&, const Model::PutDedicatedIpInPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDedicatedIpInPoolResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutDedicatedIpWarmupAttributesRequest&, const Model::PutDedicatedIpWarmupAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDedicatedIpWarmupAttributesResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutDeliverabilityDashboardOptionRequest&, const Model::PutDeliverabilityDashboardOptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDeliverabilityDashboardOptionResponseReceivedHandler;
+    typedef std::function<void(const SESV2Client*, const Model::PutEmailIdentityConfigurationSetAttributesRequest&, const Model::PutEmailIdentityConfigurationSetAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEmailIdentityConfigurationSetAttributesResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutEmailIdentityDkimAttributesRequest&, const Model::PutEmailIdentityDkimAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEmailIdentityDkimAttributesResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutEmailIdentityDkimSigningAttributesRequest&, const Model::PutEmailIdentityDkimSigningAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEmailIdentityDkimSigningAttributesResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutEmailIdentityFeedbackAttributesRequest&, const Model::PutEmailIdentityFeedbackAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEmailIdentityFeedbackAttributesResponseReceivedHandler;
@@ -792,8 +797,14 @@ namespace Model
          * <code>CreateEmailIdentity</code> operation has to include the
          * <code>DkimSigningAttributes</code> object. When you specify this object, you
          * provide a selector (a component of the DNS record name that identifies the
-         * public key that you want to use for DKIM authentication) and a private
-         * key.</p><p><h3>See Also:</h3>   <a
+         * public key that you want to use for DKIM authentication) and a private key.</p>
+         * <p>When you verify a domain, this operation provides a set of DKIM tokens, which
+         * you can convert into CNAME tokens. You add these CNAME tokens to the DNS
+         * configuration for your domain. Your domain is verified when Amazon SES detects
+         * these records in the DNS configuration for your domain. For some DNS providers,
+         * it can take 72 hours or more to complete the domain verification process.</p>
+         * <p>Additionally, you can associate an existing configuration set with the email
+         * identity that you're verifying.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateEmailIdentity">AWS
          * API Reference</a></p>
          */
@@ -820,8 +831,14 @@ namespace Model
          * <code>CreateEmailIdentity</code> operation has to include the
          * <code>DkimSigningAttributes</code> object. When you specify this object, you
          * provide a selector (a component of the DNS record name that identifies the
-         * public key that you want to use for DKIM authentication) and a private
-         * key.</p><p><h3>See Also:</h3>   <a
+         * public key that you want to use for DKIM authentication) and a private key.</p>
+         * <p>When you verify a domain, this operation provides a set of DKIM tokens, which
+         * you can convert into CNAME tokens. You add these CNAME tokens to the DNS
+         * configuration for your domain. Your domain is verified when Amazon SES detects
+         * these records in the DNS configuration for your domain. For some DNS providers,
+         * it can take 72 hours or more to complete the domain verification process.</p>
+         * <p>Additionally, you can associate an existing configuration set with the email
+         * identity that you're verifying.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateEmailIdentity">AWS
          * API Reference</a></p>
          *
@@ -850,8 +867,14 @@ namespace Model
          * <code>CreateEmailIdentity</code> operation has to include the
          * <code>DkimSigningAttributes</code> object. When you specify this object, you
          * provide a selector (a component of the DNS record name that identifies the
-         * public key that you want to use for DKIM authentication) and a private
-         * key.</p><p><h3>See Also:</h3>   <a
+         * public key that you want to use for DKIM authentication) and a private key.</p>
+         * <p>When you verify a domain, this operation provides a set of DKIM tokens, which
+         * you can convert into CNAME tokens. You add these CNAME tokens to the DNS
+         * configuration for your domain. Your domain is verified when Amazon SES detects
+         * these records in the DNS configuration for your domain. For some DNS providers,
+         * it can take 72 hours or more to complete the domain verification process.</p>
+         * <p>Additionally, you can associate an existing configuration set with the email
+         * identity that you're verifying.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateEmailIdentity">AWS
          * API Reference</a></p>
          *
@@ -2676,6 +2699,34 @@ namespace Model
         virtual void PutDeliverabilityDashboardOptionAsync(const Model::PutDeliverabilityDashboardOptionRequest& request, const PutDeliverabilityDashboardOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Used to associate a configuration set with an email identity.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutEmailIdentityConfigurationSetAttributes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutEmailIdentityConfigurationSetAttributesOutcome PutEmailIdentityConfigurationSetAttributes(const Model::PutEmailIdentityConfigurationSetAttributesRequest& request) const;
+
+        /**
+         * <p>Used to associate a configuration set with an email identity.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutEmailIdentityConfigurationSetAttributes">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutEmailIdentityConfigurationSetAttributesOutcomeCallable PutEmailIdentityConfigurationSetAttributesCallable(const Model::PutEmailIdentityConfigurationSetAttributesRequest& request) const;
+
+        /**
+         * <p>Used to associate a configuration set with an email identity.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutEmailIdentityConfigurationSetAttributes">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutEmailIdentityConfigurationSetAttributesAsync(const Model::PutEmailIdentityConfigurationSetAttributesRequest& request, const PutEmailIdentityConfigurationSetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Used to enable or disable DKIM authentication for an email
          * identity.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutEmailIdentityDkimAttributes">AWS
@@ -3398,6 +3449,7 @@ namespace Model
         void PutDedicatedIpInPoolAsyncHelper(const Model::PutDedicatedIpInPoolRequest& request, const PutDedicatedIpInPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutDedicatedIpWarmupAttributesAsyncHelper(const Model::PutDedicatedIpWarmupAttributesRequest& request, const PutDedicatedIpWarmupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutDeliverabilityDashboardOptionAsyncHelper(const Model::PutDeliverabilityDashboardOptionRequest& request, const PutDeliverabilityDashboardOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutEmailIdentityConfigurationSetAttributesAsyncHelper(const Model::PutEmailIdentityConfigurationSetAttributesRequest& request, const PutEmailIdentityConfigurationSetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutEmailIdentityDkimAttributesAsyncHelper(const Model::PutEmailIdentityDkimAttributesRequest& request, const PutEmailIdentityDkimAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutEmailIdentityDkimSigningAttributesAsyncHelper(const Model::PutEmailIdentityDkimSigningAttributesRequest& request, const PutEmailIdentityDkimSigningAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutEmailIdentityFeedbackAttributesAsyncHelper(const Model::PutEmailIdentityFeedbackAttributesRequest& request, const PutEmailIdentityFeedbackAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

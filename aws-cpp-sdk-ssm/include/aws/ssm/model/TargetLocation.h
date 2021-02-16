@@ -182,49 +182,49 @@ namespace Model
 
     /**
      * <p>The maximum number of errors allowed before the system stops queueing
-     * additional Automation executions for the currently running Automation. </p>
+     * additional Automation executions for the currently running Automation.</p>
      */
     inline const Aws::String& GetTargetLocationMaxErrors() const{ return m_targetLocationMaxErrors; }
 
     /**
      * <p>The maximum number of errors allowed before the system stops queueing
-     * additional Automation executions for the currently running Automation. </p>
+     * additional Automation executions for the currently running Automation.</p>
      */
     inline bool TargetLocationMaxErrorsHasBeenSet() const { return m_targetLocationMaxErrorsHasBeenSet; }
 
     /**
      * <p>The maximum number of errors allowed before the system stops queueing
-     * additional Automation executions for the currently running Automation. </p>
+     * additional Automation executions for the currently running Automation.</p>
      */
     inline void SetTargetLocationMaxErrors(const Aws::String& value) { m_targetLocationMaxErrorsHasBeenSet = true; m_targetLocationMaxErrors = value; }
 
     /**
      * <p>The maximum number of errors allowed before the system stops queueing
-     * additional Automation executions for the currently running Automation. </p>
+     * additional Automation executions for the currently running Automation.</p>
      */
     inline void SetTargetLocationMaxErrors(Aws::String&& value) { m_targetLocationMaxErrorsHasBeenSet = true; m_targetLocationMaxErrors = std::move(value); }
 
     /**
      * <p>The maximum number of errors allowed before the system stops queueing
-     * additional Automation executions for the currently running Automation. </p>
+     * additional Automation executions for the currently running Automation.</p>
      */
     inline void SetTargetLocationMaxErrors(const char* value) { m_targetLocationMaxErrorsHasBeenSet = true; m_targetLocationMaxErrors.assign(value); }
 
     /**
      * <p>The maximum number of errors allowed before the system stops queueing
-     * additional Automation executions for the currently running Automation. </p>
+     * additional Automation executions for the currently running Automation.</p>
      */
     inline TargetLocation& WithTargetLocationMaxErrors(const Aws::String& value) { SetTargetLocationMaxErrors(value); return *this;}
 
     /**
      * <p>The maximum number of errors allowed before the system stops queueing
-     * additional Automation executions for the currently running Automation. </p>
+     * additional Automation executions for the currently running Automation.</p>
      */
     inline TargetLocation& WithTargetLocationMaxErrors(Aws::String&& value) { SetTargetLocationMaxErrors(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of errors allowed before the system stops queueing
-     * additional Automation executions for the currently running Automation. </p>
+     * additional Automation executions for the currently running Automation.</p>
      */
     inline TargetLocation& WithTargetLocationMaxErrors(const char* value) { SetTargetLocationMaxErrors(value); return *this;}
 

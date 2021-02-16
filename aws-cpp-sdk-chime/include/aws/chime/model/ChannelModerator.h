@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Creates a moderator on a channel.</p><p><h3>See Also:</h3>   <a
+   * <p>The details of a channel moderator.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ChannelModerator">AWS
    * API Reference</a></p>
    */
@@ -143,32 +143,32 @@ namespace Model
 
 
     /**
-     * <p>The member who created the moderator.</p>
+     * <p>The <code>AppInstanceUser</code> who created the moderator.</p>
      */
     inline const Identity& GetCreatedBy() const{ return m_createdBy; }
 
     /**
-     * <p>The member who created the moderator.</p>
+     * <p>The <code>AppInstanceUser</code> who created the moderator.</p>
      */
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
 
     /**
-     * <p>The member who created the moderator.</p>
+     * <p>The <code>AppInstanceUser</code> who created the moderator.</p>
      */
     inline void SetCreatedBy(const Identity& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
 
     /**
-     * <p>The member who created the moderator.</p>
+     * <p>The <code>AppInstanceUser</code> who created the moderator.</p>
      */
     inline void SetCreatedBy(Identity&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
 
     /**
-     * <p>The member who created the moderator.</p>
+     * <p>The <code>AppInstanceUser</code> who created the moderator.</p>
      */
     inline ChannelModerator& WithCreatedBy(const Identity& value) { SetCreatedBy(value); return *this;}
 
     /**
-     * <p>The member who created the moderator.</p>
+     * <p>The <code>AppInstanceUser</code> who created the moderator.</p>
      */
     inline ChannelModerator& WithCreatedBy(Identity&& value) { SetCreatedBy(std::move(value)); return *this;}
 

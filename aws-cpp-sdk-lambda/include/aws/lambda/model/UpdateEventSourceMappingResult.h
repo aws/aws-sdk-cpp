@@ -687,20 +687,20 @@ namespace Model
 
 
     /**
-     * <p>(Streams) The duration of a processing window in seconds. The range is
-     * between 1 second up to 15 minutes.</p>
+     * <p>(Streams) The duration in seconds of a processing window. The range is
+     * between 1 second up to 900 seconds.</p>
      */
     inline int GetTumblingWindowInSeconds() const{ return m_tumblingWindowInSeconds; }
 
     /**
-     * <p>(Streams) The duration of a processing window in seconds. The range is
-     * between 1 second up to 15 minutes.</p>
+     * <p>(Streams) The duration in seconds of a processing window. The range is
+     * between 1 second up to 900 seconds.</p>
      */
     inline void SetTumblingWindowInSeconds(int value) { m_tumblingWindowInSeconds = value; }
 
     /**
-     * <p>(Streams) The duration of a processing window in seconds. The range is
-     * between 1 second up to 15 minutes.</p>
+     * <p>(Streams) The duration in seconds of a processing window. The range is
+     * between 1 second up to 900 seconds.</p>
      */
     inline UpdateEventSourceMappingResult& WithTumblingWindowInSeconds(int value) { SetTumblingWindowInSeconds(value); return *this;}
 

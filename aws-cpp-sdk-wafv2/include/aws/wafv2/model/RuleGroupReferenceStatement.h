@@ -26,16 +26,12 @@ namespace Model
 {
 
   /**
-   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p>  <p>A rule statement used to run the rules
-   * that are defined in a <a>RuleGroup</a>. To use this, create a rule group with
-   * your rules, then provide the ARN of the rule group in this statement.</p> <p>You
-   * cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use
-   * inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be
-   * referenced as a top-level statement within a rule.</p><p><h3>See Also:</h3>   <a
+   * <p>A rule statement used to run the rules that are defined in a
+   * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
+   * the ARN of the rule group in this statement.</p> <p>You cannot nest a
+   * <code>RuleGroupReferenceStatement</code>, for example for use inside a
+   * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
+   * as a top-level statement within a rule.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/RuleGroupReferenceStatement">AWS
    * API Reference</a></p>
    */

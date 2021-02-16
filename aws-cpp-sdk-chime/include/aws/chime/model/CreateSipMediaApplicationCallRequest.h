@@ -74,42 +74,42 @@ namespace Model
 
 
     /**
-     * <p>The phone number that the user dials in order to connect to a meeting</p>
+     * <p>The phone number that the user dials in order to connect to a meeting.</p>
      */
     inline const Aws::String& GetToPhoneNumber() const{ return m_toPhoneNumber; }
 
     /**
-     * <p>The phone number that the user dials in order to connect to a meeting</p>
+     * <p>The phone number that the user dials in order to connect to a meeting.</p>
      */
     inline bool ToPhoneNumberHasBeenSet() const { return m_toPhoneNumberHasBeenSet; }
 
     /**
-     * <p>The phone number that the user dials in order to connect to a meeting</p>
+     * <p>The phone number that the user dials in order to connect to a meeting.</p>
      */
     inline void SetToPhoneNumber(const Aws::String& value) { m_toPhoneNumberHasBeenSet = true; m_toPhoneNumber = value; }
 
     /**
-     * <p>The phone number that the user dials in order to connect to a meeting</p>
+     * <p>The phone number that the user dials in order to connect to a meeting.</p>
      */
     inline void SetToPhoneNumber(Aws::String&& value) { m_toPhoneNumberHasBeenSet = true; m_toPhoneNumber = std::move(value); }
 
     /**
-     * <p>The phone number that the user dials in order to connect to a meeting</p>
+     * <p>The phone number that the user dials in order to connect to a meeting.</p>
      */
     inline void SetToPhoneNumber(const char* value) { m_toPhoneNumberHasBeenSet = true; m_toPhoneNumber.assign(value); }
 
     /**
-     * <p>The phone number that the user dials in order to connect to a meeting</p>
+     * <p>The phone number that the user dials in order to connect to a meeting.</p>
      */
     inline CreateSipMediaApplicationCallRequest& WithToPhoneNumber(const Aws::String& value) { SetToPhoneNumber(value); return *this;}
 
     /**
-     * <p>The phone number that the user dials in order to connect to a meeting</p>
+     * <p>The phone number that the user dials in order to connect to a meeting.</p>
      */
     inline CreateSipMediaApplicationCallRequest& WithToPhoneNumber(Aws::String&& value) { SetToPhoneNumber(std::move(value)); return *this;}
 
     /**
-     * <p>The phone number that the user dials in order to connect to a meeting</p>
+     * <p>The phone number that the user dials in order to connect to a meeting.</p>
      */
     inline CreateSipMediaApplicationCallRequest& WithToPhoneNumber(const char* value) { SetToPhoneNumber(value); return *this;}
 

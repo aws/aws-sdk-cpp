@@ -80,6 +80,103 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot.
+     * Only specify this parameter when copying a snapshot from an AWS Region to an
+     * Outpost. The snapshot must be in the Region for the destination Outpost. You
+     * cannot copy a snapshot from an Outpost to a Region, from one Outpost to another,
+     * or within the same Outpost.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots">
+     * Copying snapshots from an AWS Region to an Outpost</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p>
+     */
+    inline const Aws::String& GetDestinationOutpostArn() const{ return m_destinationOutpostArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot.
+     * Only specify this parameter when copying a snapshot from an AWS Region to an
+     * Outpost. The snapshot must be in the Region for the destination Outpost. You
+     * cannot copy a snapshot from an Outpost to a Region, from one Outpost to another,
+     * or within the same Outpost.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots">
+     * Copying snapshots from an AWS Region to an Outpost</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p>
+     */
+    inline bool DestinationOutpostArnHasBeenSet() const { return m_destinationOutpostArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot.
+     * Only specify this parameter when copying a snapshot from an AWS Region to an
+     * Outpost. The snapshot must be in the Region for the destination Outpost. You
+     * cannot copy a snapshot from an Outpost to a Region, from one Outpost to another,
+     * or within the same Outpost.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots">
+     * Copying snapshots from an AWS Region to an Outpost</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetDestinationOutpostArn(const Aws::String& value) { m_destinationOutpostArnHasBeenSet = true; m_destinationOutpostArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot.
+     * Only specify this parameter when copying a snapshot from an AWS Region to an
+     * Outpost. The snapshot must be in the Region for the destination Outpost. You
+     * cannot copy a snapshot from an Outpost to a Region, from one Outpost to another,
+     * or within the same Outpost.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots">
+     * Copying snapshots from an AWS Region to an Outpost</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetDestinationOutpostArn(Aws::String&& value) { m_destinationOutpostArnHasBeenSet = true; m_destinationOutpostArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot.
+     * Only specify this parameter when copying a snapshot from an AWS Region to an
+     * Outpost. The snapshot must be in the Region for the destination Outpost. You
+     * cannot copy a snapshot from an Outpost to a Region, from one Outpost to another,
+     * or within the same Outpost.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots">
+     * Copying snapshots from an AWS Region to an Outpost</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetDestinationOutpostArn(const char* value) { m_destinationOutpostArnHasBeenSet = true; m_destinationOutpostArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot.
+     * Only specify this parameter when copying a snapshot from an AWS Region to an
+     * Outpost. The snapshot must be in the Region for the destination Outpost. You
+     * cannot copy a snapshot from an Outpost to a Region, from one Outpost to another,
+     * or within the same Outpost.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots">
+     * Copying snapshots from an AWS Region to an Outpost</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p>
+     */
+    inline CopySnapshotRequest& WithDestinationOutpostArn(const Aws::String& value) { SetDestinationOutpostArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot.
+     * Only specify this parameter when copying a snapshot from an AWS Region to an
+     * Outpost. The snapshot must be in the Region for the destination Outpost. You
+     * cannot copy a snapshot from an Outpost to a Region, from one Outpost to another,
+     * or within the same Outpost.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots">
+     * Copying snapshots from an AWS Region to an Outpost</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p>
+     */
+    inline CopySnapshotRequest& WithDestinationOutpostArn(Aws::String&& value) { SetDestinationOutpostArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot.
+     * Only specify this parameter when copying a snapshot from an AWS Region to an
+     * Outpost. The snapshot must be in the Region for the destination Outpost. You
+     * cannot copy a snapshot from an Outpost to a Region, from one Outpost to another,
+     * or within the same Outpost.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots">
+     * Copying snapshots from an AWS Region to an Outpost</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p>
+     */
+    inline CopySnapshotRequest& WithDestinationOutpostArn(const char* value) { SetDestinationOutpostArn(value); return *this;}
+
+
+    /**
      * <p>The destination Region to use in the <code>PresignedUrl</code> parameter of a
      * snapshot copy operation. This parameter is only valid for specifying the
      * destination Region in a <code>PresignedUrl</code> parameter, where it is
@@ -678,6 +775,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    Aws::String m_destinationOutpostArn;
+    bool m_destinationOutpostArnHasBeenSet;
 
     Aws::String m_destinationRegion;
     bool m_destinationRegionHasBeenSet;

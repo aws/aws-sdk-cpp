@@ -311,7 +311,8 @@ namespace Model
      * <p>This field is only used when SortBy is provided in the request. The maximum
      * number of objects that to be returned for this request. If MaxResults is not
      * specified with SortBy, the request will return 1000 results as the default value
-     * for this parameter.</p>
+     * for this parameter.</p> <p>For <code>GetTags</code>, MaxResults has an upper
+     * limit of 1000.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
@@ -319,7 +320,8 @@ namespace Model
      * <p>This field is only used when SortBy is provided in the request. The maximum
      * number of objects that to be returned for this request. If MaxResults is not
      * specified with SortBy, the request will return 1000 results as the default value
-     * for this parameter.</p>
+     * for this parameter.</p> <p>For <code>GetTags</code>, MaxResults has an upper
+     * limit of 1000.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
@@ -327,7 +329,8 @@ namespace Model
      * <p>This field is only used when SortBy is provided in the request. The maximum
      * number of objects that to be returned for this request. If MaxResults is not
      * specified with SortBy, the request will return 1000 results as the default value
-     * for this parameter.</p>
+     * for this parameter.</p> <p>For <code>GetTags</code>, MaxResults has an upper
+     * limit of 1000.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
@@ -335,7 +338,8 @@ namespace Model
      * <p>This field is only used when SortBy is provided in the request. The maximum
      * number of objects that to be returned for this request. If MaxResults is not
      * specified with SortBy, the request will return 1000 results as the default value
-     * for this parameter.</p>
+     * for this parameter.</p> <p>For <code>GetTags</code>, MaxResults has an upper
+     * limit of 1000.</p>
      */
     inline GetTagsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

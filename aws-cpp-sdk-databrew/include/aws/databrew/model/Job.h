@@ -13,6 +13,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/databrew/model/RecipeReference.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/databrew/model/JobSample.h>
 #include <aws/databrew/model/Output.h>
 #include <utility>
 
@@ -32,9 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents all of the attributes of an AWS Glue DataBrew job.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Job">AWS API
+   * <p>Represents all of the attributes of a DataBrew job.</p><p><h3>See Also:</h3> 
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Job">AWS API
    * Reference</a></p>
    */
   class AWS_GLUEDATABREW_API Job
@@ -88,42 +88,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier (the user name) of the user who created the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the job.</p>
      */
     inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
 
     /**
-     * <p>The identifier (the user name) of the user who created the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the job.</p>
      */
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
 
     /**
-     * <p>The identifier (the user name) of the user who created the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the job.</p>
      */
     inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
 
     /**
-     * <p>The identifier (the user name) of the user who created the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the job.</p>
      */
     inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
 
     /**
-     * <p>The identifier (the user name) of the user who created the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the job.</p>
      */
     inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
 
     /**
-     * <p>The identifier (the user name) of the user who created the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the job.</p>
      */
     inline Job& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user who created the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the job.</p>
      */
     inline Job& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user who created the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the job.</p>
      */
     inline Job& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
 
@@ -201,50 +201,66 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect a
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect
+     * the job output. For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting
+     * data written by DataBrew jobs</a> </p>
      */
     inline const Aws::String& GetEncryptionKeyArn() const{ return m_encryptionKeyArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect a
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect
+     * the job output. For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting
+     * data written by DataBrew jobs</a> </p>
      */
     inline bool EncryptionKeyArnHasBeenSet() const { return m_encryptionKeyArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect a
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect
+     * the job output. For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting
+     * data written by DataBrew jobs</a> </p>
      */
     inline void SetEncryptionKeyArn(const Aws::String& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect a
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect
+     * the job output. For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting
+     * data written by DataBrew jobs</a> </p>
      */
     inline void SetEncryptionKeyArn(Aws::String&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect a
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect
+     * the job output. For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting
+     * data written by DataBrew jobs</a> </p>
      */
     inline void SetEncryptionKeyArn(const char* value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect a
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect
+     * the job output. For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting
+     * data written by DataBrew jobs</a> </p>
      */
     inline Job& WithEncryptionKeyArn(const Aws::String& value) { SetEncryptionKeyArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect a
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect
+     * the job output. For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting
+     * data written by DataBrew jobs</a> </p>
      */
     inline Job& WithEncryptionKeyArn(Aws::String&& value) { SetEncryptionKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect a
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect
+     * the job output. For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting
+     * data written by DataBrew jobs</a> </p>
      */
     inline Job& WithEncryptionKeyArn(const char* value) { SetEncryptionKeyArn(value); return *this;}
 
@@ -389,42 +405,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the job.</p>
      */
     inline const Aws::String& GetLastModifiedBy() const{ return m_lastModifiedBy; }
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the job.</p>
      */
     inline bool LastModifiedByHasBeenSet() const { return m_lastModifiedByHasBeenSet; }
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the job.</p>
      */
     inline void SetLastModifiedBy(const Aws::String& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = value; }
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the job.</p>
      */
     inline void SetLastModifiedBy(Aws::String&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::move(value); }
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the job.</p>
      */
     inline void SetLastModifiedBy(const char* value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy.assign(value); }
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the job.</p>
      */
     inline Job& WithLastModifiedBy(const Aws::String& value) { SetLastModifiedBy(value); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the job.</p>
      */
     inline Job& WithLastModifiedBy(Aws::String&& value) { SetLastModifiedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the job.</p>
      */
     inline Job& WithLastModifiedBy(const char* value) { SetLastModifiedBy(value); return *this;}
 
@@ -830,6 +846,55 @@ namespace Model
      */
     inline Job& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Sample configuration for profile jobs only. Determines the number of rows on
+     * which the profile job will be executed. If a JobSample value is not provided,
+     * the default value will be used. The default value is CUSTOM_ROWS for the mode
+     * parameter and 20000 for the size parameter.</p>
+     */
+    inline const JobSample& GetJobSample() const{ return m_jobSample; }
+
+    /**
+     * <p>Sample configuration for profile jobs only. Determines the number of rows on
+     * which the profile job will be executed. If a JobSample value is not provided,
+     * the default value will be used. The default value is CUSTOM_ROWS for the mode
+     * parameter and 20000 for the size parameter.</p>
+     */
+    inline bool JobSampleHasBeenSet() const { return m_jobSampleHasBeenSet; }
+
+    /**
+     * <p>Sample configuration for profile jobs only. Determines the number of rows on
+     * which the profile job will be executed. If a JobSample value is not provided,
+     * the default value will be used. The default value is CUSTOM_ROWS for the mode
+     * parameter and 20000 for the size parameter.</p>
+     */
+    inline void SetJobSample(const JobSample& value) { m_jobSampleHasBeenSet = true; m_jobSample = value; }
+
+    /**
+     * <p>Sample configuration for profile jobs only. Determines the number of rows on
+     * which the profile job will be executed. If a JobSample value is not provided,
+     * the default value will be used. The default value is CUSTOM_ROWS for the mode
+     * parameter and 20000 for the size parameter.</p>
+     */
+    inline void SetJobSample(JobSample&& value) { m_jobSampleHasBeenSet = true; m_jobSample = std::move(value); }
+
+    /**
+     * <p>Sample configuration for profile jobs only. Determines the number of rows on
+     * which the profile job will be executed. If a JobSample value is not provided,
+     * the default value will be used. The default value is CUSTOM_ROWS for the mode
+     * parameter and 20000 for the size parameter.</p>
+     */
+    inline Job& WithJobSample(const JobSample& value) { SetJobSample(value); return *this;}
+
+    /**
+     * <p>Sample configuration for profile jobs only. Determines the number of rows on
+     * which the profile job will be executed. If a JobSample value is not provided,
+     * the default value will be used. The default value is CUSTOM_ROWS for the mode
+     * parameter and 20000 for the size parameter.</p>
+     */
+    inline Job& WithJobSample(JobSample&& value) { SetJobSample(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_accountId;
@@ -891,6 +956,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    JobSample m_jobSample;
+    bool m_jobSampleHasBeenSet;
   };
 
 } // namespace Model

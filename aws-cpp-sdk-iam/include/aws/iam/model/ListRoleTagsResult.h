@@ -36,51 +36,51 @@ namespace Model
 
 
     /**
-     * <p>The list of tags currently that is attached to the role. Each tag consists of
-     * a key name and an associated value. If no tags are attached to the specified
-     * role, the response contains an empty list.</p>
+     * <p>The list of tags that are currently attached to the role. Each tag consists
+     * of a key name and an associated value. If no tags are attached to the specified
+     * resource, the response contains an empty list.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The list of tags currently that is attached to the role. Each tag consists of
-     * a key name and an associated value. If no tags are attached to the specified
-     * role, the response contains an empty list.</p>
+     * <p>The list of tags that are currently attached to the role. Each tag consists
+     * of a key name and an associated value. If no tags are attached to the specified
+     * resource, the response contains an empty list.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
 
     /**
-     * <p>The list of tags currently that is attached to the role. Each tag consists of
-     * a key name and an associated value. If no tags are attached to the specified
-     * role, the response contains an empty list.</p>
+     * <p>The list of tags that are currently attached to the role. Each tag consists
+     * of a key name and an associated value. If no tags are attached to the specified
+     * resource, the response contains an empty list.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>The list of tags currently that is attached to the role. Each tag consists of
-     * a key name and an associated value. If no tags are attached to the specified
-     * role, the response contains an empty list.</p>
+     * <p>The list of tags that are currently attached to the role. Each tag consists
+     * of a key name and an associated value. If no tags are attached to the specified
+     * resource, the response contains an empty list.</p>
      */
     inline ListRoleTagsResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The list of tags currently that is attached to the role. Each tag consists of
-     * a key name and an associated value. If no tags are attached to the specified
-     * role, the response contains an empty list.</p>
+     * <p>The list of tags that are currently attached to the role. Each tag consists
+     * of a key name and an associated value. If no tags are attached to the specified
+     * resource, the response contains an empty list.</p>
      */
     inline ListRoleTagsResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The list of tags currently that is attached to the role. Each tag consists of
-     * a key name and an associated value. If no tags are attached to the specified
-     * role, the response contains an empty list.</p>
+     * <p>The list of tags that are currently attached to the role. Each tag consists
+     * of a key name and an associated value. If no tags are attached to the specified
+     * resource, the response contains an empty list.</p>
      */
     inline ListRoleTagsResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The list of tags currently that is attached to the role. Each tag consists of
-     * a key name and an associated value. If no tags are attached to the specified
-     * role, the response contains an empty list.</p>
+     * <p>The list of tags that are currently attached to the role. Each tag consists
+     * of a key name and an associated value. If no tags are attached to the specified
+     * resource, the response contains an empty list.</p>
      */
     inline ListRoleTagsResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 

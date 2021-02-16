@@ -155,50 +155,42 @@ namespace Model
 
 
     /**
-     * <p>A description of the IP set that helps with identification. You cannot change
-     * the description of an IP set after you create it.</p>
+     * <p>A description of the IP set that helps with identification. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A description of the IP set that helps with identification. You cannot change
-     * the description of an IP set after you create it.</p>
+     * <p>A description of the IP set that helps with identification. </p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A description of the IP set that helps with identification. You cannot change
-     * the description of an IP set after you create it.</p>
+     * <p>A description of the IP set that helps with identification. </p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A description of the IP set that helps with identification. You cannot change
-     * the description of an IP set after you create it.</p>
+     * <p>A description of the IP set that helps with identification. </p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A description of the IP set that helps with identification. You cannot change
-     * the description of an IP set after you create it.</p>
+     * <p>A description of the IP set that helps with identification. </p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A description of the IP set that helps with identification. You cannot change
-     * the description of an IP set after you create it.</p>
+     * <p>A description of the IP set that helps with identification. </p>
      */
     inline CreateIPSetRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A description of the IP set that helps with identification. You cannot change
-     * the description of an IP set after you create it.</p>
+     * <p>A description of the IP set that helps with identification. </p>
      */
     inline CreateIPSetRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description of the IP set that helps with identification. You cannot change
-     * the description of an IP set after you create it.</p>
+     * <p>A description of the IP set that helps with identification. </p>
      */
     inline CreateIPSetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 

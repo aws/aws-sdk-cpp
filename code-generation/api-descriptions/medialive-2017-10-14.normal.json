@@ -554,6 +554,48 @@
       ],
       "documentation": "Create a new program in the multiplex."
     },
+    "CreatePartnerInput": {
+      "name": "CreatePartnerInput",
+      "http": {
+        "method": "POST",
+        "requestUri": "/prod/inputs/{inputId}/partners",
+        "responseCode": 201
+      },
+      "input": {
+        "shape": "CreatePartnerInputRequest"
+      },
+      "output": {
+        "shape": "CreatePartnerInputResponse",
+        "documentation": "Successfully created the input."
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "This request was invalid"
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "Internal Service Error"
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "Access was denied"
+        },
+        {
+          "shape": "BadGatewayException",
+          "documentation": "Bad Gateway Error"
+        },
+        {
+          "shape": "GatewayTimeoutException",
+          "documentation": "Gateway Timeout Error"
+        },
+        {
+          "shape": "TooManyRequestsException",
+          "documentation": "Limit exceeded"
+        }
+      ],
+      "documentation": "Create a partner input"
+    },
     "CreateTags": {
       "name": "CreateTags",
       "http": {
@@ -4233,6 +4275,11 @@
           "shape": "Tags",
           "locationName": "tags",
           "documentation": "A collection of key-value pairs."
+        },
+        "Vpc": {
+          "shape": "VpcOutputSettings",
+          "locationName": "vpc",
+          "documentation": "Settings for VPC output"
         }
       },
       "documentation": "Placeholder documentation for Channel"
@@ -4359,6 +4406,11 @@
           "shape": "Tags",
           "locationName": "tags",
           "documentation": "A collection of key-value pairs."
+        },
+        "Vpc": {
+          "shape": "VpcOutputSettings",
+          "locationName": "vpc",
+          "documentation": "Settings for VPC output"
         }
       },
       "documentation": "Placeholder documentation for ChannelSummary"
@@ -4445,6 +4497,11 @@
           "shape": "Tags",
           "locationName": "tags",
           "documentation": "A collection of key-value pairs."
+        },
+        "Vpc": {
+          "shape": "VpcOutputSettings",
+          "locationName": "vpc",
+          "documentation": "Settings for VPC output"
         }
       },
       "documentation": "Placeholder documentation for CreateChannel"
@@ -4511,6 +4568,11 @@
           "shape": "Tags",
           "locationName": "tags",
           "documentation": "A collection of key-value pairs."
+        },
+        "Vpc": {
+          "shape": "VpcOutputSettings",
+          "locationName": "vpc",
+          "documentation": "Settings for VPC output"
         }
       },
       "documentation": "A request to create a channel"
@@ -4892,6 +4954,69 @@
       },
       "documentation": "Placeholder documentation for CreateMultiplexResultModel"
     },
+    "CreatePartnerInput": {
+      "type": "structure",
+      "members": {
+        "RequestId": {
+          "shape": "__string",
+          "locationName": "requestId",
+          "documentation": "Unique identifier of the request to ensure the request is handled\nexactly once in case of retries.\n",
+          "idempotencyToken": true
+        },
+        "Tags": {
+          "shape": "Tags",
+          "locationName": "tags",
+          "documentation": "A collection of key-value pairs."
+        }
+      },
+      "documentation": "Placeholder documentation for CreatePartnerInput"
+    },
+    "CreatePartnerInputRequest": {
+      "type": "structure",
+      "members": {
+        "InputId": {
+          "shape": "__string",
+          "location": "uri",
+          "locationName": "inputId",
+          "documentation": "Unique ID of the input."
+        },
+        "RequestId": {
+          "shape": "__string",
+          "locationName": "requestId",
+          "documentation": "Unique identifier of the request to ensure the request is handled\nexactly once in case of retries.\n",
+          "idempotencyToken": true
+        },
+        "Tags": {
+          "shape": "Tags",
+          "locationName": "tags",
+          "documentation": "A collection of key-value pairs."
+        }
+      },
+      "documentation": "A request to create a partner input",
+      "required": [
+        "InputId"
+      ]
+    },
+    "CreatePartnerInputResponse": {
+      "type": "structure",
+      "members": {
+        "Input": {
+          "shape": "Input",
+          "locationName": "input"
+        }
+      },
+      "documentation": "Placeholder documentation for CreatePartnerInputResponse"
+    },
+    "CreatePartnerInputResultModel": {
+      "type": "structure",
+      "members": {
+        "Input": {
+          "shape": "Input",
+          "locationName": "input"
+        }
+      },
+      "documentation": "Placeholder documentation for CreatePartnerInputResultModel"
+    },
     "CreateTagsRequest": {
       "type": "structure",
       "members": {
@@ -5005,6 +5130,11 @@
           "shape": "Tags",
           "locationName": "tags",
           "documentation": "A collection of key-value pairs."
+        },
+        "Vpc": {
+          "shape": "VpcOutputSettings",
+          "locationName": "vpc",
+          "documentation": "Settings for VPC output"
         }
       },
       "documentation": "Placeholder documentation for DeleteChannelResponse"
@@ -5423,6 +5553,11 @@
           "shape": "Tags",
           "locationName": "tags",
           "documentation": "A collection of key-value pairs."
+        },
+        "Vpc": {
+          "shape": "VpcOutputSettings",
+          "locationName": "vpc",
+          "documentation": "Settings for VPC output"
         }
       },
       "documentation": "Placeholder documentation for DescribeChannelResponse"
@@ -5613,6 +5748,11 @@
           "shape": "__listOfInputDeviceSettings",
           "locationName": "inputDevices",
           "documentation": "Settings for the input devices."
+        },
+        "InputPartnerIds": {
+          "shape": "__listOf__string",
+          "locationName": "inputPartnerIds",
+          "documentation": "A list of IDs for all Inputs which are partners of this one."
         },
         "InputSourceType": {
           "shape": "InputSourceType",
@@ -6911,6 +7051,12 @@
         "Destination"
       ]
     },
+    "FrameCaptureHlsSettings": {
+      "type": "structure",
+      "members": {
+      },
+      "documentation": "Frame Capture Hls Settings"
+    },
     "FrameCaptureIntervalUnit": {
       "type": "string",
       "documentation": "Frame Capture Interval Unit",
@@ -6944,10 +7090,7 @@
           "documentation": "Unit for the frame capture interval."
         }
       },
-      "documentation": "Frame Capture Settings",
-      "required": [
-        "CaptureInterval"
-      ]
+      "documentation": "Frame Capture Settings"
     },
     "GatewayTimeoutException": {
       "type": "structure",
@@ -8378,6 +8521,10 @@
           "shape": "Fmp4HlsSettings",
           "locationName": "fmp4HlsSettings"
         },
+        "FrameCaptureHlsSettings": {
+          "shape": "FrameCaptureHlsSettings",
+          "locationName": "frameCaptureHlsSettings"
+        },
         "StandardHlsSettings": {
           "shape": "StandardHlsSettings",
           "locationName": "standardHlsSettings"
@@ -8509,6 +8656,11 @@
           "shape": "__listOfInputDeviceSettings",
           "locationName": "inputDevices",
           "documentation": "Settings for the input devices."
+        },
+        "InputPartnerIds": {
+          "shape": "__listOf__string",
+          "locationName": "inputPartnerIds",
+          "documentation": "A list of IDs for all Inputs which are partners of this one."
         },
         "InputSourceType": {
           "shape": "InputSourceType",
@@ -13100,6 +13252,11 @@
           "shape": "Tags",
           "locationName": "tags",
           "documentation": "A collection of key-value pairs."
+        },
+        "Vpc": {
+          "shape": "VpcOutputSettings",
+          "locationName": "vpc",
+          "documentation": "Settings for VPC output"
         }
       },
       "documentation": "Placeholder documentation for StartChannelResponse"
@@ -13375,6 +13532,11 @@
           "shape": "Tags",
           "locationName": "tags",
           "documentation": "A collection of key-value pairs."
+        },
+        "Vpc": {
+          "shape": "VpcOutputSettings",
+          "locationName": "vpc",
+          "documentation": "Settings for VPC output"
         }
       },
       "documentation": "Placeholder documentation for StopChannelResponse"
@@ -14594,6 +14756,30 @@
         }
       },
       "documentation": "Video Selector Settings"
+    },
+    "VpcOutputSettings": {
+      "type": "structure",
+      "members": {
+        "PublicAddressAllocationIds": {
+          "shape": "__listOf__string",
+          "locationName": "publicAddressAllocationIds",
+          "documentation": "List of public address allocation ids to associate with ENIs that will be created in Output VPC.\nMust specify one for SINGLE_PIPELINE, two for STANDARD channels\n"
+        },
+        "SecurityGroupIds": {
+          "shape": "__listOf__string",
+          "locationName": "securityGroupIds",
+          "documentation": "A list of up to 5 EC2 VPC security group IDs to attach to the Output VPC network interfaces.\nIf none are specified then the VPC default security group will be used\n"
+        },
+        "SubnetIds": {
+          "shape": "__listOf__string",
+          "locationName": "subnetIds",
+          "documentation": "A list of VPC subnet IDs from the same VPC.\nIf STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).\n"
+        }
+      },
+      "documentation": "The properties for a private VPC Output\nWhen this property is specified, the output egress addresses will be created in a user specified VPC\n",
+      "required": [
+        "SubnetIds"
+      ]
     },
     "WavCodingMode": {
       "type": "string",

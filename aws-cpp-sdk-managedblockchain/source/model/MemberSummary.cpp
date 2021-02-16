@@ -26,7 +26,8 @@ MemberSummary::MemberSummary() :
     m_statusHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_isOwned(false),
-    m_isOwnedHasBeenSet(false)
+    m_isOwnedHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ MemberSummary::MemberSummary(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_isOwned(false),
-    m_isOwnedHasBeenSet(false)
+    m_isOwnedHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -87,6 +89,13 @@ MemberSummary& MemberSummary::operator =(JsonView jsonValue)
     m_isOwnedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Arn"))
+  {
+    m_arn = jsonValue.GetString("Arn");
+
+    m_arnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -125,6 +134,12 @@ JsonValue MemberSummary::Jsonize() const
   if(m_isOwnedHasBeenSet)
   {
    payload.WithBool("IsOwned", m_isOwned);
+
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("Arn", m_arn);
 
   }
 

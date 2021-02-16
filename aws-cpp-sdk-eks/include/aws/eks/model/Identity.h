@@ -24,8 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing an identity provider for authentication
-   * credentials.</p><p><h3>See Also:</h3>   <a
+   * <p>An object representing an identity provider.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/Identity">AWS API
    * Reference</a></p>
    */
@@ -39,38 +38,38 @@ namespace Model
 
 
     /**
-     * <p>The <a href="https://openid.net/connect/">OpenID Connect</a> identity
-     * provider information for the cluster.</p>
+     * <p>An object representing the <a href="https://openid.net/connect/">OpenID
+     * Connect</a> identity provider information.</p>
      */
     inline const OIDC& GetOidc() const{ return m_oidc; }
 
     /**
-     * <p>The <a href="https://openid.net/connect/">OpenID Connect</a> identity
-     * provider information for the cluster.</p>
+     * <p>An object representing the <a href="https://openid.net/connect/">OpenID
+     * Connect</a> identity provider information.</p>
      */
     inline bool OidcHasBeenSet() const { return m_oidcHasBeenSet; }
 
     /**
-     * <p>The <a href="https://openid.net/connect/">OpenID Connect</a> identity
-     * provider information for the cluster.</p>
+     * <p>An object representing the <a href="https://openid.net/connect/">OpenID
+     * Connect</a> identity provider information.</p>
      */
     inline void SetOidc(const OIDC& value) { m_oidcHasBeenSet = true; m_oidc = value; }
 
     /**
-     * <p>The <a href="https://openid.net/connect/">OpenID Connect</a> identity
-     * provider information for the cluster.</p>
+     * <p>An object representing the <a href="https://openid.net/connect/">OpenID
+     * Connect</a> identity provider information.</p>
      */
     inline void SetOidc(OIDC&& value) { m_oidcHasBeenSet = true; m_oidc = std::move(value); }
 
     /**
-     * <p>The <a href="https://openid.net/connect/">OpenID Connect</a> identity
-     * provider information for the cluster.</p>
+     * <p>An object representing the <a href="https://openid.net/connect/">OpenID
+     * Connect</a> identity provider information.</p>
      */
     inline Identity& WithOidc(const OIDC& value) { SetOidc(value); return *this;}
 
     /**
-     * <p>The <a href="https://openid.net/connect/">OpenID Connect</a> identity
-     * provider information for the cluster.</p>
+     * <p>An object representing the <a href="https://openid.net/connect/">OpenID
+     * Connect</a> identity provider information.</p>
      */
     inline Identity& WithOidc(OIDC&& value) { SetOidc(std::move(value)); return *this;}
 

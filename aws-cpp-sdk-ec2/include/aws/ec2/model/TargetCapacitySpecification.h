@@ -38,8 +38,8 @@ namespace Model
    * <code>MaxTotalPrice</code> parameters are located in <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_OnDemandOptions.html">OnDemandOptions</a>
    * and <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotOptions">SpotOptions</a>
-   * </p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotOptions">SpotOptions</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TargetCapacitySpecification">AWS
    * API Reference</a></p>
    */

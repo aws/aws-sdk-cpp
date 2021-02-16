@@ -36,42 +36,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the dataset to be created.</p>
+     * <p>The name of the dataset to be created. Valid characters are alphanumeric
+     * (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the dataset to be created.</p>
+     * <p>The name of the dataset to be created. Valid characters are alphanumeric
+     * (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the dataset to be created.</p>
+     * <p>The name of the dataset to be created. Valid characters are alphanumeric
+     * (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the dataset to be created.</p>
+     * <p>The name of the dataset to be created. Valid characters are alphanumeric
+     * (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the dataset to be created.</p>
+     * <p>The name of the dataset to be created. Valid characters are alphanumeric
+     * (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the dataset to be created.</p>
+     * <p>The name of the dataset to be created. Valid characters are alphanumeric
+     * (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
      */
     inline CreateDatasetRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the dataset to be created.</p>
+     * <p>The name of the dataset to be created. Valid characters are alphanumeric
+     * (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
      */
     inline CreateDatasetRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the dataset to be created.</p>
+     * <p>The name of the dataset to be created. Valid characters are alphanumeric
+     * (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
      */
     inline CreateDatasetRequest& WithName(const char* value) { SetName(value); return *this;}
 

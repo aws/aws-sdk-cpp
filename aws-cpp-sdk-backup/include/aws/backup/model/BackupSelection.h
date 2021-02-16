@@ -196,56 +196,64 @@ namespace Model
     /**
      * <p>An array of conditions used to specify a set of resources to assign to a
      * backup plan; for example, <code>"StringEquals": {"ec2:ResourceTag/Department":
-     * "accounting"</code>.</p>
+     * "accounting"</code>. Assigns the backup plan to every resource with at least one
+     * matching tag.</p>
      */
     inline const Aws::Vector<Condition>& GetListOfTags() const{ return m_listOfTags; }
 
     /**
      * <p>An array of conditions used to specify a set of resources to assign to a
      * backup plan; for example, <code>"StringEquals": {"ec2:ResourceTag/Department":
-     * "accounting"</code>.</p>
+     * "accounting"</code>. Assigns the backup plan to every resource with at least one
+     * matching tag.</p>
      */
     inline bool ListOfTagsHasBeenSet() const { return m_listOfTagsHasBeenSet; }
 
     /**
      * <p>An array of conditions used to specify a set of resources to assign to a
      * backup plan; for example, <code>"StringEquals": {"ec2:ResourceTag/Department":
-     * "accounting"</code>.</p>
+     * "accounting"</code>. Assigns the backup plan to every resource with at least one
+     * matching tag.</p>
      */
     inline void SetListOfTags(const Aws::Vector<Condition>& value) { m_listOfTagsHasBeenSet = true; m_listOfTags = value; }
 
     /**
      * <p>An array of conditions used to specify a set of resources to assign to a
      * backup plan; for example, <code>"StringEquals": {"ec2:ResourceTag/Department":
-     * "accounting"</code>.</p>
+     * "accounting"</code>. Assigns the backup plan to every resource with at least one
+     * matching tag.</p>
      */
     inline void SetListOfTags(Aws::Vector<Condition>&& value) { m_listOfTagsHasBeenSet = true; m_listOfTags = std::move(value); }
 
     /**
      * <p>An array of conditions used to specify a set of resources to assign to a
      * backup plan; for example, <code>"StringEquals": {"ec2:ResourceTag/Department":
-     * "accounting"</code>.</p>
+     * "accounting"</code>. Assigns the backup plan to every resource with at least one
+     * matching tag.</p>
      */
     inline BackupSelection& WithListOfTags(const Aws::Vector<Condition>& value) { SetListOfTags(value); return *this;}
 
     /**
      * <p>An array of conditions used to specify a set of resources to assign to a
      * backup plan; for example, <code>"StringEquals": {"ec2:ResourceTag/Department":
-     * "accounting"</code>.</p>
+     * "accounting"</code>. Assigns the backup plan to every resource with at least one
+     * matching tag.</p>
      */
     inline BackupSelection& WithListOfTags(Aws::Vector<Condition>&& value) { SetListOfTags(std::move(value)); return *this;}
 
     /**
      * <p>An array of conditions used to specify a set of resources to assign to a
      * backup plan; for example, <code>"StringEquals": {"ec2:ResourceTag/Department":
-     * "accounting"</code>.</p>
+     * "accounting"</code>. Assigns the backup plan to every resource with at least one
+     * matching tag.</p>
      */
     inline BackupSelection& AddListOfTags(const Condition& value) { m_listOfTagsHasBeenSet = true; m_listOfTags.push_back(value); return *this; }
 
     /**
      * <p>An array of conditions used to specify a set of resources to assign to a
      * backup plan; for example, <code>"StringEquals": {"ec2:ResourceTag/Department":
-     * "accounting"</code>.</p>
+     * "accounting"</code>. Assigns the backup plan to every resource with at least one
+     * matching tag.</p>
      */
     inline BackupSelection& AddListOfTags(Condition&& value) { m_listOfTagsHasBeenSet = true; m_listOfTags.push_back(std::move(value)); return *this; }
 

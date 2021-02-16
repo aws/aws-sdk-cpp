@@ -740,16 +740,16 @@ namespace Model
         virtual void DescribeCopyJobAsync(const Model::DescribeCopyJobRequest& request, const DescribeCopyJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>The current feature settings for the AWS Account.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Describes the global settings of the AWS account, including whether it is
+         * opted in to cross-account backup.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeGlobalSettings">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeGlobalSettingsOutcome DescribeGlobalSettings(const Model::DescribeGlobalSettingsRequest& request) const;
 
         /**
-         * <p>The current feature settings for the AWS Account.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Describes the global settings of the AWS account, including whether it is
+         * opted in to cross-account backup.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeGlobalSettings">AWS
          * API Reference</a></p>
          *
@@ -758,8 +758,8 @@ namespace Model
         virtual Model::DescribeGlobalSettingsOutcomeCallable DescribeGlobalSettingsCallable(const Model::DescribeGlobalSettingsRequest& request) const;
 
         /**
-         * <p>The current feature settings for the AWS Account.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Describes the global settings of the AWS account, including whether it is
+         * opted in to cross-account backup.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeGlobalSettings">AWS
          * API Reference</a></p>
          *
@@ -1764,7 +1764,7 @@ namespace Model
         virtual void UpdateBackupPlanAsync(const Model::UpdateBackupPlanRequest& request, const UpdateBackupPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the current global settings for the AWS Account. Use the
+         * <p>Updates the current global settings for the AWS account. Use the
          * <code>DescribeGlobalSettings</code> API to determine the current
          * settings.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateGlobalSettings">AWS
@@ -1773,7 +1773,7 @@ namespace Model
         virtual Model::UpdateGlobalSettingsOutcome UpdateGlobalSettings(const Model::UpdateGlobalSettingsRequest& request) const;
 
         /**
-         * <p>Updates the current global settings for the AWS Account. Use the
+         * <p>Updates the current global settings for the AWS account. Use the
          * <code>DescribeGlobalSettings</code> API to determine the current
          * settings.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateGlobalSettings">AWS
@@ -1784,7 +1784,7 @@ namespace Model
         virtual Model::UpdateGlobalSettingsOutcomeCallable UpdateGlobalSettingsCallable(const Model::UpdateGlobalSettingsRequest& request) const;
 
         /**
-         * <p>Updates the current global settings for the AWS Account. Use the
+         * <p>Updates the current global settings for the AWS account. Use the
          * <code>DescribeGlobalSettings</code> API to determine the current
          * settings.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateGlobalSettings">AWS
@@ -1802,7 +1802,8 @@ namespace Model
          * be stored in cold storage for a minimum of 90 days. Therefore, the “expire after
          * days” setting must be 90 days greater than the “transition to cold after days”
          * setting. The “transition to cold after days” setting cannot be changed after a
-         * backup has been transitioned to cold. </p><p><h3>See Also:</h3>   <a
+         * backup has been transitioned to cold. </p> <p>Only Amazon EFS file system
+         * backups can be transitioned to cold storage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRecoveryPointLifecycle">AWS
          * API Reference</a></p>
          */
@@ -1816,7 +1817,8 @@ namespace Model
          * be stored in cold storage for a minimum of 90 days. Therefore, the “expire after
          * days” setting must be 90 days greater than the “transition to cold after days”
          * setting. The “transition to cold after days” setting cannot be changed after a
-         * backup has been transitioned to cold. </p><p><h3>See Also:</h3>   <a
+         * backup has been transitioned to cold. </p> <p>Only Amazon EFS file system
+         * backups can be transitioned to cold storage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRecoveryPointLifecycle">AWS
          * API Reference</a></p>
          *
@@ -1832,7 +1834,8 @@ namespace Model
          * be stored in cold storage for a minimum of 90 days. Therefore, the “expire after
          * days” setting must be 90 days greater than the “transition to cold after days”
          * setting. The “transition to cold after days” setting cannot be changed after a
-         * backup has been transitioned to cold. </p><p><h3>See Also:</h3>   <a
+         * backup has been transitioned to cold. </p> <p>Only Amazon EFS file system
+         * backups can be transitioned to cold storage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRecoveryPointLifecycle">AWS
          * API Reference</a></p>
          *

@@ -25,10 +25,9 @@ namespace Model
 
   /**
    * <p>A structure that represents user-provided metadata that can be associated
-   * with a resource such as an IAM user or role. For more information about tagging,
-   * see <a
+   * with an IAM resource. For more information about tagging, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
-   * Identities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * resources</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/Tag">AWS API
    * Reference</a></p>
    */

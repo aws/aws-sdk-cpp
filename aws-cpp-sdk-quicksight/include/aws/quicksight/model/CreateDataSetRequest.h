@@ -14,6 +14,7 @@
 #include <aws/quicksight/model/PhysicalTable.h>
 #include <aws/quicksight/model/LogicalTable.h>
 #include <aws/quicksight/model/ColumnGroup.h>
+#include <aws/quicksight/model/FieldFolder.h>
 #include <aws/quicksight/model/ResourcePermission.h>
 #include <aws/quicksight/model/ColumnLevelPermissionRule.h>
 #include <aws/quicksight/model/Tag.h>
@@ -400,6 +401,67 @@ namespace Model
 
 
     /**
+     * <p>The folder that contains fields and nested subfolders for your dataset.</p>
+     */
+    inline const Aws::Map<Aws::String, FieldFolder>& GetFieldFolders() const{ return m_fieldFolders; }
+
+    /**
+     * <p>The folder that contains fields and nested subfolders for your dataset.</p>
+     */
+    inline bool FieldFoldersHasBeenSet() const { return m_fieldFoldersHasBeenSet; }
+
+    /**
+     * <p>The folder that contains fields and nested subfolders for your dataset.</p>
+     */
+    inline void SetFieldFolders(const Aws::Map<Aws::String, FieldFolder>& value) { m_fieldFoldersHasBeenSet = true; m_fieldFolders = value; }
+
+    /**
+     * <p>The folder that contains fields and nested subfolders for your dataset.</p>
+     */
+    inline void SetFieldFolders(Aws::Map<Aws::String, FieldFolder>&& value) { m_fieldFoldersHasBeenSet = true; m_fieldFolders = std::move(value); }
+
+    /**
+     * <p>The folder that contains fields and nested subfolders for your dataset.</p>
+     */
+    inline CreateDataSetRequest& WithFieldFolders(const Aws::Map<Aws::String, FieldFolder>& value) { SetFieldFolders(value); return *this;}
+
+    /**
+     * <p>The folder that contains fields and nested subfolders for your dataset.</p>
+     */
+    inline CreateDataSetRequest& WithFieldFolders(Aws::Map<Aws::String, FieldFolder>&& value) { SetFieldFolders(std::move(value)); return *this;}
+
+    /**
+     * <p>The folder that contains fields and nested subfolders for your dataset.</p>
+     */
+    inline CreateDataSetRequest& AddFieldFolders(const Aws::String& key, const FieldFolder& value) { m_fieldFoldersHasBeenSet = true; m_fieldFolders.emplace(key, value); return *this; }
+
+    /**
+     * <p>The folder that contains fields and nested subfolders for your dataset.</p>
+     */
+    inline CreateDataSetRequest& AddFieldFolders(Aws::String&& key, const FieldFolder& value) { m_fieldFoldersHasBeenSet = true; m_fieldFolders.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The folder that contains fields and nested subfolders for your dataset.</p>
+     */
+    inline CreateDataSetRequest& AddFieldFolders(const Aws::String& key, FieldFolder&& value) { m_fieldFoldersHasBeenSet = true; m_fieldFolders.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The folder that contains fields and nested subfolders for your dataset.</p>
+     */
+    inline CreateDataSetRequest& AddFieldFolders(Aws::String&& key, FieldFolder&& value) { m_fieldFoldersHasBeenSet = true; m_fieldFolders.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The folder that contains fields and nested subfolders for your dataset.</p>
+     */
+    inline CreateDataSetRequest& AddFieldFolders(const char* key, FieldFolder&& value) { m_fieldFoldersHasBeenSet = true; m_fieldFolders.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The folder that contains fields and nested subfolders for your dataset.</p>
+     */
+    inline CreateDataSetRequest& AddFieldFolders(const char* key, const FieldFolder& value) { m_fieldFoldersHasBeenSet = true; m_fieldFolders.emplace(key, value); return *this; }
+
+
+    /**
      * <p>A list of resource permissions on the dataset.</p>
      */
     inline const Aws::Vector<ResourcePermission>& GetPermissions() const{ return m_permissions; }
@@ -596,6 +658,9 @@ namespace Model
 
     Aws::Vector<ColumnGroup> m_columnGroups;
     bool m_columnGroupsHasBeenSet;
+
+    Aws::Map<Aws::String, FieldFolder> m_fieldFolders;
+    bool m_fieldFoldersHasBeenSet;
 
     Aws::Vector<ResourcePermission> m_permissions;
     bool m_permissionsHasBeenSet;

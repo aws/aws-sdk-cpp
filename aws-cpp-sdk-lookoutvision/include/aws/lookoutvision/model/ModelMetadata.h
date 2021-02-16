@@ -267,32 +267,38 @@ namespace Model
 
 
     /**
-     * <p>Performance metrics for the model. Created during training.</p>
+     * <p>Performance metrics for the model. Not available until training has
+     * successfully completed.</p>
      */
     inline const ModelPerformance& GetPerformance() const{ return m_performance; }
 
     /**
-     * <p>Performance metrics for the model. Created during training.</p>
+     * <p>Performance metrics for the model. Not available until training has
+     * successfully completed.</p>
      */
     inline bool PerformanceHasBeenSet() const { return m_performanceHasBeenSet; }
 
     /**
-     * <p>Performance metrics for the model. Created during training.</p>
+     * <p>Performance metrics for the model. Not available until training has
+     * successfully completed.</p>
      */
     inline void SetPerformance(const ModelPerformance& value) { m_performanceHasBeenSet = true; m_performance = value; }
 
     /**
-     * <p>Performance metrics for the model. Created during training.</p>
+     * <p>Performance metrics for the model. Not available until training has
+     * successfully completed.</p>
      */
     inline void SetPerformance(ModelPerformance&& value) { m_performanceHasBeenSet = true; m_performance = std::move(value); }
 
     /**
-     * <p>Performance metrics for the model. Created during training.</p>
+     * <p>Performance metrics for the model. Not available until training has
+     * successfully completed.</p>
      */
     inline ModelMetadata& WithPerformance(const ModelPerformance& value) { SetPerformance(value); return *this;}
 
     /**
-     * <p>Performance metrics for the model. Created during training.</p>
+     * <p>Performance metrics for the model. Not available until training has
+     * successfully completed.</p>
      */
     inline ModelMetadata& WithPerformance(ModelPerformance&& value) { SetPerformance(std::move(value)); return *this;}
 

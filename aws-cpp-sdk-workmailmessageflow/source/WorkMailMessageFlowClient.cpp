@@ -21,6 +21,7 @@
 #include <aws/workmailmessageflow/WorkMailMessageFlowEndpoint.h>
 #include <aws/workmailmessageflow/WorkMailMessageFlowErrorMarshaller.h>
 #include <aws/workmailmessageflow/model/GetRawMessageContentRequest.h>
+#include <aws/workmailmessageflow/model/PutRawMessageContentRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -126,5 +127,38 @@ void WorkMailMessageFlowClient::GetRawMessageContentAsync(const GetRawMessageCon
 void WorkMailMessageFlowClient::GetRawMessageContentAsyncHelper(const GetRawMessageContentRequest& request, const GetRawMessageContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetRawMessageContent(request), context);
+}
+
+PutRawMessageContentOutcome WorkMailMessageFlowClient::PutRawMessageContent(const PutRawMessageContentRequest& request) const
+{
+  if (!request.MessageIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutRawMessageContent", "Required field: MessageId, is not set");
+    return PutRawMessageContentOutcome(Aws::Client::AWSError<WorkMailMessageFlowErrors>(WorkMailMessageFlowErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MessageId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/messages/";
+  ss << request.GetMessageId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return PutRawMessageContentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutRawMessageContentOutcomeCallable WorkMailMessageFlowClient::PutRawMessageContentCallable(const PutRawMessageContentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutRawMessageContentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutRawMessageContent(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailMessageFlowClient::PutRawMessageContentAsync(const PutRawMessageContentRequest& request, const PutRawMessageContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutRawMessageContentAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailMessageFlowClient::PutRawMessageContentAsyncHelper(const PutRawMessageContentRequest& request, const PutRawMessageContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutRawMessageContent(request), context);
 }
 

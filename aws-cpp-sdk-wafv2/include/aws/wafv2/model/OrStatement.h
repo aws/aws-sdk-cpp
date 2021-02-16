@@ -25,14 +25,9 @@ namespace Model
 {
 
   /**
-   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p>  <p>A logical rule statement used to
-   * combine other rule statements with OR logic. You provide more than one
-   * <a>Statement</a> within the <code>OrStatement</code>. </p><p><h3>See Also:</h3> 
-   * <a
+   * <p>A logical rule statement used to combine other rule statements with OR logic.
+   * You provide more than one <a>Statement</a> within the <code>OrStatement</code>.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/OrStatement">AWS
    * API Reference</a></p>
    */

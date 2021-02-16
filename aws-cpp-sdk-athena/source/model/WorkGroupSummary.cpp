@@ -23,7 +23,8 @@ WorkGroupSummary::WorkGroupSummary() :
     m_state(WorkGroupState::NOT_SET),
     m_stateHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+    m_creationTimeHasBeenSet(false),
+    m_engineVersionHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ WorkGroupSummary::WorkGroupSummary(JsonView jsonValue) :
     m_state(WorkGroupState::NOT_SET),
     m_stateHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+    m_creationTimeHasBeenSet(false),
+    m_engineVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -67,6 +69,13 @@ WorkGroupSummary& WorkGroupSummary::operator =(JsonView jsonValue)
     m_creationTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EngineVersion"))
+  {
+    m_engineVersion = jsonValue.GetObject("EngineVersion");
+
+    m_engineVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -94,6 +103,12 @@ JsonValue WorkGroupSummary::Jsonize() const
   if(m_creationTimeHasBeenSet)
   {
    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  }
+
+  if(m_engineVersionHasBeenSet)
+  {
+   payload.WithObject("EngineVersion", m_engineVersion.Jsonize());
+
   }
 
   return payload;

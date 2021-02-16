@@ -97,43 +97,61 @@ namespace Model
 
     /**
      * <p>The type of data catalog to create: <code>LAMBDA</code> for a federated
-     * catalog, <code>GLUE</code> for AWS Glue Catalog, or <code>HIVE</code> for an
-     * external hive metastore.</p>
+     * catalog or <code>HIVE</code> for an external hive metastore.</p>  <p>Do
+     * not use the <code>GLUE</code> type. This refers to the
+     * <code>AwsDataCatalog</code> that already exists in your account, of which you
+     * can have only one. Specifying the <code>GLUE</code> type will result in an
+     * <code>INVALID_INPUT</code> error.</p> 
      */
     inline const DataCatalogType& GetType() const{ return m_type; }
 
     /**
      * <p>The type of data catalog to create: <code>LAMBDA</code> for a federated
-     * catalog, <code>GLUE</code> for AWS Glue Catalog, or <code>HIVE</code> for an
-     * external hive metastore.</p>
+     * catalog or <code>HIVE</code> for an external hive metastore.</p>  <p>Do
+     * not use the <code>GLUE</code> type. This refers to the
+     * <code>AwsDataCatalog</code> that already exists in your account, of which you
+     * can have only one. Specifying the <code>GLUE</code> type will result in an
+     * <code>INVALID_INPUT</code> error.</p> 
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of data catalog to create: <code>LAMBDA</code> for a federated
-     * catalog, <code>GLUE</code> for AWS Glue Catalog, or <code>HIVE</code> for an
-     * external hive metastore.</p>
+     * catalog or <code>HIVE</code> for an external hive metastore.</p>  <p>Do
+     * not use the <code>GLUE</code> type. This refers to the
+     * <code>AwsDataCatalog</code> that already exists in your account, of which you
+     * can have only one. Specifying the <code>GLUE</code> type will result in an
+     * <code>INVALID_INPUT</code> error.</p> 
      */
     inline void SetType(const DataCatalogType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The type of data catalog to create: <code>LAMBDA</code> for a federated
-     * catalog, <code>GLUE</code> for AWS Glue Catalog, or <code>HIVE</code> for an
-     * external hive metastore.</p>
+     * catalog or <code>HIVE</code> for an external hive metastore.</p>  <p>Do
+     * not use the <code>GLUE</code> type. This refers to the
+     * <code>AwsDataCatalog</code> that already exists in your account, of which you
+     * can have only one. Specifying the <code>GLUE</code> type will result in an
+     * <code>INVALID_INPUT</code> error.</p> 
      */
     inline void SetType(DataCatalogType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of data catalog to create: <code>LAMBDA</code> for a federated
-     * catalog, <code>GLUE</code> for AWS Glue Catalog, or <code>HIVE</code> for an
-     * external hive metastore.</p>
+     * catalog or <code>HIVE</code> for an external hive metastore.</p>  <p>Do
+     * not use the <code>GLUE</code> type. This refers to the
+     * <code>AwsDataCatalog</code> that already exists in your account, of which you
+     * can have only one. Specifying the <code>GLUE</code> type will result in an
+     * <code>INVALID_INPUT</code> error.</p> 
      */
     inline CreateDataCatalogRequest& WithType(const DataCatalogType& value) { SetType(value); return *this;}
 
     /**
      * <p>The type of data catalog to create: <code>LAMBDA</code> for a federated
-     * catalog, <code>GLUE</code> for AWS Glue Catalog, or <code>HIVE</code> for an
-     * external hive metastore.</p>
+     * catalog or <code>HIVE</code> for an external hive metastore.</p>  <p>Do
+     * not use the <code>GLUE</code> type. This refers to the
+     * <code>AwsDataCatalog</code> that already exists in your account, of which you
+     * can have only one. Specifying the <code>GLUE</code> type will result in an
+     * <code>INVALID_INPUT</code> error.</p> 
      */
     inline CreateDataCatalogRequest& WithType(DataCatalogType&& value) { SetType(std::move(value)); return *this;}
 
@@ -195,8 +213,7 @@ namespace Model
      * </code> </p> </li> <li> <p> If you have a composite Lambda function that
      * processes both metadata and data, use the following syntax to specify your
      * Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
-     * </ul> </li> <li> <p>The <code>GLUE</code> type has no parameters.</p> </li>
-     * </ul>
+     * </ul> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
 
@@ -216,8 +233,7 @@ namespace Model
      * </code> </p> </li> <li> <p> If you have a composite Lambda function that
      * processes both metadata and data, use the following syntax to specify your
      * Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
-     * </ul> </li> <li> <p>The <code>GLUE</code> type has no parameters.</p> </li>
-     * </ul>
+     * </ul> </li> </ul>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
@@ -237,8 +253,7 @@ namespace Model
      * </code> </p> </li> <li> <p> If you have a composite Lambda function that
      * processes both metadata and data, use the following syntax to specify your
      * Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
-     * </ul> </li> <li> <p>The <code>GLUE</code> type has no parameters.</p> </li>
-     * </ul>
+     * </ul> </li> </ul>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
@@ -258,8 +273,7 @@ namespace Model
      * </code> </p> </li> <li> <p> If you have a composite Lambda function that
      * processes both metadata and data, use the following syntax to specify your
      * Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
-     * </ul> </li> <li> <p>The <code>GLUE</code> type has no parameters.</p> </li>
-     * </ul>
+     * </ul> </li> </ul>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
@@ -279,8 +293,7 @@ namespace Model
      * </code> </p> </li> <li> <p> If you have a composite Lambda function that
      * processes both metadata and data, use the following syntax to specify your
      * Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
-     * </ul> </li> <li> <p>The <code>GLUE</code> type has no parameters.</p> </li>
-     * </ul>
+     * </ul> </li> </ul>
      */
     inline CreateDataCatalogRequest& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
 
@@ -300,8 +313,7 @@ namespace Model
      * </code> </p> </li> <li> <p> If you have a composite Lambda function that
      * processes both metadata and data, use the following syntax to specify your
      * Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
-     * </ul> </li> <li> <p>The <code>GLUE</code> type has no parameters.</p> </li>
-     * </ul>
+     * </ul> </li> </ul>
      */
     inline CreateDataCatalogRequest& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
 
@@ -321,8 +333,7 @@ namespace Model
      * </code> </p> </li> <li> <p> If you have a composite Lambda function that
      * processes both metadata and data, use the following syntax to specify your
      * Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
-     * </ul> </li> <li> <p>The <code>GLUE</code> type has no parameters.</p> </li>
-     * </ul>
+     * </ul> </li> </ul>
      */
     inline CreateDataCatalogRequest& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
@@ -342,8 +353,7 @@ namespace Model
      * </code> </p> </li> <li> <p> If you have a composite Lambda function that
      * processes both metadata and data, use the following syntax to specify your
      * Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
-     * </ul> </li> <li> <p>The <code>GLUE</code> type has no parameters.</p> </li>
-     * </ul>
+     * </ul> </li> </ul>
      */
     inline CreateDataCatalogRequest& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
@@ -363,8 +373,7 @@ namespace Model
      * </code> </p> </li> <li> <p> If you have a composite Lambda function that
      * processes both metadata and data, use the following syntax to specify your
      * Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
-     * </ul> </li> <li> <p>The <code>GLUE</code> type has no parameters.</p> </li>
-     * </ul>
+     * </ul> </li> </ul>
      */
     inline CreateDataCatalogRequest& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
@@ -384,8 +393,7 @@ namespace Model
      * </code> </p> </li> <li> <p> If you have a composite Lambda function that
      * processes both metadata and data, use the following syntax to specify your
      * Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
-     * </ul> </li> <li> <p>The <code>GLUE</code> type has no parameters.</p> </li>
-     * </ul>
+     * </ul> </li> </ul>
      */
     inline CreateDataCatalogRequest& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -405,8 +413,7 @@ namespace Model
      * </code> </p> </li> <li> <p> If you have a composite Lambda function that
      * processes both metadata and data, use the following syntax to specify your
      * Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
-     * </ul> </li> <li> <p>The <code>GLUE</code> type has no parameters.</p> </li>
-     * </ul>
+     * </ul> </li> </ul>
      */
     inline CreateDataCatalogRequest& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
@@ -426,8 +433,7 @@ namespace Model
      * </code> </p> </li> <li> <p> If you have a composite Lambda function that
      * processes both metadata and data, use the following syntax to specify your
      * Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
-     * </ul> </li> <li> <p>The <code>GLUE</code> type has no parameters.</p> </li>
-     * </ul>
+     * </ul> </li> </ul>
      */
     inline CreateDataCatalogRequest& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
@@ -447,8 +453,7 @@ namespace Model
      * </code> </p> </li> <li> <p> If you have a composite Lambda function that
      * processes both metadata and data, use the following syntax to specify your
      * Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
-     * </ul> </li> <li> <p>The <code>GLUE</code> type has no parameters.</p> </li>
-     * </ul>
+     * </ul> </li> </ul>
      */
     inline CreateDataCatalogRequest& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 

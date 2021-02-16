@@ -28,6 +28,7 @@
 #include <aws/athena/model/GetWorkGroupResult.h>
 #include <aws/athena/model/ListDataCatalogsResult.h>
 #include <aws/athena/model/ListDatabasesResult.h>
+#include <aws/athena/model/ListEngineVersionsResult.h>
 #include <aws/athena/model/ListNamedQueriesResult.h>
 #include <aws/athena/model/ListQueryExecutionsResult.h>
 #include <aws/athena/model/ListTableMetadataResult.h>
@@ -95,6 +96,7 @@ namespace Model
         class GetWorkGroupRequest;
         class ListDataCatalogsRequest;
         class ListDatabasesRequest;
+        class ListEngineVersionsRequest;
         class ListNamedQueriesRequest;
         class ListQueryExecutionsRequest;
         class ListTableMetadataRequest;
@@ -124,6 +126,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetWorkGroupResult, AthenaError> GetWorkGroupOutcome;
         typedef Aws::Utils::Outcome<ListDataCatalogsResult, AthenaError> ListDataCatalogsOutcome;
         typedef Aws::Utils::Outcome<ListDatabasesResult, AthenaError> ListDatabasesOutcome;
+        typedef Aws::Utils::Outcome<ListEngineVersionsResult, AthenaError> ListEngineVersionsOutcome;
         typedef Aws::Utils::Outcome<ListNamedQueriesResult, AthenaError> ListNamedQueriesOutcome;
         typedef Aws::Utils::Outcome<ListQueryExecutionsResult, AthenaError> ListQueryExecutionsOutcome;
         typedef Aws::Utils::Outcome<ListTableMetadataResult, AthenaError> ListTableMetadataOutcome;
@@ -153,6 +156,7 @@ namespace Model
         typedef std::future<GetWorkGroupOutcome> GetWorkGroupOutcomeCallable;
         typedef std::future<ListDataCatalogsOutcome> ListDataCatalogsOutcomeCallable;
         typedef std::future<ListDatabasesOutcome> ListDatabasesOutcomeCallable;
+        typedef std::future<ListEngineVersionsOutcome> ListEngineVersionsOutcomeCallable;
         typedef std::future<ListNamedQueriesOutcome> ListNamedQueriesOutcomeCallable;
         typedef std::future<ListQueryExecutionsOutcome> ListQueryExecutionsOutcomeCallable;
         typedef std::future<ListTableMetadataOutcome> ListTableMetadataOutcomeCallable;
@@ -185,6 +189,7 @@ namespace Model
     typedef std::function<void(const AthenaClient*, const Model::GetWorkGroupRequest&, const Model::GetWorkGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkGroupResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::ListDataCatalogsRequest&, const Model::ListDataCatalogsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataCatalogsResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::ListDatabasesRequest&, const Model::ListDatabasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatabasesResponseReceivedHandler;
+    typedef std::function<void(const AthenaClient*, const Model::ListEngineVersionsRequest&, const Model::ListEngineVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEngineVersionsResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::ListNamedQueriesRequest&, const Model::ListNamedQueriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNamedQueriesResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::ListQueryExecutionsRequest&, const Model::ListQueryExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQueryExecutionsResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::ListTableMetadataRequest&, const Model::ListTableMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTableMetadataResponseReceivedHandler;
@@ -547,7 +552,7 @@ namespace Model
         virtual void GetDataCatalogAsync(const Model::GetDataCatalogRequest& request, const GetDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a database object for the specfied database and data
+         * <p>Returns a database object for the specified database and data
          * catalog.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetDatabase">AWS
          * API Reference</a></p>
@@ -555,7 +560,7 @@ namespace Model
         virtual Model::GetDatabaseOutcome GetDatabase(const Model::GetDatabaseRequest& request) const;
 
         /**
-         * <p>Returns a database object for the specfied database and data
+         * <p>Returns a database object for the specified database and data
          * catalog.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetDatabase">AWS
          * API Reference</a></p>
@@ -565,7 +570,7 @@ namespace Model
         virtual Model::GetDatabaseOutcomeCallable GetDatabaseCallable(const Model::GetDatabaseRequest& request) const;
 
         /**
-         * <p>Returns a database object for the specfied database and data
+         * <p>Returns a database object for the specified database and data
          * catalog.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetDatabase">AWS
          * API Reference</a></p>
@@ -814,6 +819,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDatabasesAsync(const Model::ListDatabasesRequest& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of engine versions that are available to choose from,
+         * including the Auto option.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListEngineVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListEngineVersionsOutcome ListEngineVersions(const Model::ListEngineVersionsRequest& request) const;
+
+        /**
+         * <p>Returns a list of engine versions that are available to choose from,
+         * including the Auto option.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListEngineVersions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListEngineVersionsOutcomeCallable ListEngineVersionsCallable(const Model::ListEngineVersionsRequest& request) const;
+
+        /**
+         * <p>Returns a list of engine versions that are available to choose from,
+         * including the Auto option.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListEngineVersions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListEngineVersionsAsync(const Model::ListEngineVersionsRequest& request, const ListEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides a list of available query IDs only for queries saved in the
@@ -1234,6 +1267,7 @@ namespace Model
         void GetWorkGroupAsyncHelper(const Model::GetWorkGroupRequest& request, const GetWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDataCatalogsAsyncHelper(const Model::ListDataCatalogsRequest& request, const ListDataCatalogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDatabasesAsyncHelper(const Model::ListDatabasesRequest& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListEngineVersionsAsyncHelper(const Model::ListEngineVersionsRequest& request, const ListEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListNamedQueriesAsyncHelper(const Model::ListNamedQueriesRequest& request, const ListNamedQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListQueryExecutionsAsyncHelper(const Model::ListQueryExecutionsRequest& request, const ListQueryExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTableMetadataAsyncHelper(const Model::ListTableMetadataRequest& request, const ListTableMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

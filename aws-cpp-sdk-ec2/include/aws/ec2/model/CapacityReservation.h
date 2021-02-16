@@ -518,8 +518,8 @@ namespace Model
      * </li> <li> <p> <code>expired</code> - The Capacity Reservation expired
      * automatically at the date and time specified in your request. The reserved
      * capacity is no longer available for your use.</p> </li> <li> <p>
-     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The
-     * reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved
+     * capacity is no longer available for your use.</p> </li> <li> <p>
      * <code>pending</code> - The Capacity Reservation request was successful but the
      * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
      * The Capacity Reservation request has failed. A request might fail due to invalid
@@ -535,8 +535,8 @@ namespace Model
      * </li> <li> <p> <code>expired</code> - The Capacity Reservation expired
      * automatically at the date and time specified in your request. The reserved
      * capacity is no longer available for your use.</p> </li> <li> <p>
-     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The
-     * reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved
+     * capacity is no longer available for your use.</p> </li> <li> <p>
      * <code>pending</code> - The Capacity Reservation request was successful but the
      * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
      * The Capacity Reservation request has failed. A request might fail due to invalid
@@ -552,8 +552,8 @@ namespace Model
      * </li> <li> <p> <code>expired</code> - The Capacity Reservation expired
      * automatically at the date and time specified in your request. The reserved
      * capacity is no longer available for your use.</p> </li> <li> <p>
-     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The
-     * reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved
+     * capacity is no longer available for your use.</p> </li> <li> <p>
      * <code>pending</code> - The Capacity Reservation request was successful but the
      * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
      * The Capacity Reservation request has failed. A request might fail due to invalid
@@ -569,8 +569,8 @@ namespace Model
      * </li> <li> <p> <code>expired</code> - The Capacity Reservation expired
      * automatically at the date and time specified in your request. The reserved
      * capacity is no longer available for your use.</p> </li> <li> <p>
-     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The
-     * reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved
+     * capacity is no longer available for your use.</p> </li> <li> <p>
      * <code>pending</code> - The Capacity Reservation request was successful but the
      * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
      * The Capacity Reservation request has failed. A request might fail due to invalid
@@ -586,8 +586,8 @@ namespace Model
      * </li> <li> <p> <code>expired</code> - The Capacity Reservation expired
      * automatically at the date and time specified in your request. The reserved
      * capacity is no longer available for your use.</p> </li> <li> <p>
-     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The
-     * reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved
+     * capacity is no longer available for your use.</p> </li> <li> <p>
      * <code>pending</code> - The Capacity Reservation request was successful but the
      * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
      * The Capacity Reservation request has failed. A request might fail due to invalid
@@ -603,8 +603,8 @@ namespace Model
      * </li> <li> <p> <code>expired</code> - The Capacity Reservation expired
      * automatically at the date and time specified in your request. The reserved
      * capacity is no longer available for your use.</p> </li> <li> <p>
-     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The
-     * reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved
+     * capacity is no longer available for your use.</p> </li> <li> <p>
      * <code>pending</code> - The Capacity Reservation request was successful but the
      * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
      * The Capacity Reservation request has failed. A request might fail due to invalid
@@ -612,6 +612,37 @@ namespace Model
      * requests are retained for 60 minutes.</p> </li> </ul>
      */
     inline CapacityReservation& WithState(CapacityReservationState&& value) { SetState(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The date and time at which the Capacity Reservation was started.</p>
+     */
+    inline const Aws::Utils::DateTime& GetStartDate() const{ return m_startDate; }
+
+    /**
+     * <p>The date and time at which the Capacity Reservation was started.</p>
+     */
+    inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
+
+    /**
+     * <p>The date and time at which the Capacity Reservation was started.</p>
+     */
+    inline void SetStartDate(const Aws::Utils::DateTime& value) { m_startDateHasBeenSet = true; m_startDate = value; }
+
+    /**
+     * <p>The date and time at which the Capacity Reservation was started.</p>
+     */
+    inline void SetStartDate(Aws::Utils::DateTime&& value) { m_startDateHasBeenSet = true; m_startDate = std::move(value); }
+
+    /**
+     * <p>The date and time at which the Capacity Reservation was started.</p>
+     */
+    inline CapacityReservation& WithStartDate(const Aws::Utils::DateTime& value) { SetStartDate(value); return *this;}
+
+    /**
+     * <p>The date and time at which the Capacity Reservation was started.</p>
+     */
+    inline CapacityReservation& WithStartDate(Aws::Utils::DateTime&& value) { SetStartDate(std::move(value)); return *this;}
 
 
     /**
@@ -914,6 +945,9 @@ namespace Model
 
     CapacityReservationState m_state;
     bool m_stateHasBeenSet;
+
+    Aws::Utils::DateTime m_startDate;
+    bool m_startDateHasBeenSet;
 
     Aws::Utils::DateTime m_endDate;
     bool m_endDateHasBeenSet;

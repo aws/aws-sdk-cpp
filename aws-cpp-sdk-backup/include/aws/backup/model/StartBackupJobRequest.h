@@ -248,50 +248,66 @@ namespace Model
 
     /**
      * <p>A value in minutes after a backup is scheduled before a job will be canceled
-     * if it doesn't start successfully. This value is optional.</p>
+     * if it doesn't start successfully. This value is optional, and the default is 8
+     * hours.</p>
      */
     inline long long GetStartWindowMinutes() const{ return m_startWindowMinutes; }
 
     /**
      * <p>A value in minutes after a backup is scheduled before a job will be canceled
-     * if it doesn't start successfully. This value is optional.</p>
+     * if it doesn't start successfully. This value is optional, and the default is 8
+     * hours.</p>
      */
     inline bool StartWindowMinutesHasBeenSet() const { return m_startWindowMinutesHasBeenSet; }
 
     /**
      * <p>A value in minutes after a backup is scheduled before a job will be canceled
-     * if it doesn't start successfully. This value is optional.</p>
+     * if it doesn't start successfully. This value is optional, and the default is 8
+     * hours.</p>
      */
     inline void SetStartWindowMinutes(long long value) { m_startWindowMinutesHasBeenSet = true; m_startWindowMinutes = value; }
 
     /**
      * <p>A value in minutes after a backup is scheduled before a job will be canceled
-     * if it doesn't start successfully. This value is optional.</p>
+     * if it doesn't start successfully. This value is optional, and the default is 8
+     * hours.</p>
      */
     inline StartBackupJobRequest& WithStartWindowMinutes(long long value) { SetStartWindowMinutes(value); return *this;}
 
 
     /**
-     * <p>A value in minutes after a backup job is successfully started before it must
-     * be completed or it will be canceled by AWS Backup. This value is optional.</p>
+     * <p>A value in minutes during which a successfully started backup must complete,
+     * or else AWS Backup will cancel the job. This value is optional. This value
+     * begins counting down from when the backup was scheduled. It does not add
+     * additional time for <code>StartWindowMinutes</code>, or if the backup started
+     * later than scheduled.</p>
      */
     inline long long GetCompleteWindowMinutes() const{ return m_completeWindowMinutes; }
 
     /**
-     * <p>A value in minutes after a backup job is successfully started before it must
-     * be completed or it will be canceled by AWS Backup. This value is optional.</p>
+     * <p>A value in minutes during which a successfully started backup must complete,
+     * or else AWS Backup will cancel the job. This value is optional. This value
+     * begins counting down from when the backup was scheduled. It does not add
+     * additional time for <code>StartWindowMinutes</code>, or if the backup started
+     * later than scheduled.</p>
      */
     inline bool CompleteWindowMinutesHasBeenSet() const { return m_completeWindowMinutesHasBeenSet; }
 
     /**
-     * <p>A value in minutes after a backup job is successfully started before it must
-     * be completed or it will be canceled by AWS Backup. This value is optional.</p>
+     * <p>A value in minutes during which a successfully started backup must complete,
+     * or else AWS Backup will cancel the job. This value is optional. This value
+     * begins counting down from when the backup was scheduled. It does not add
+     * additional time for <code>StartWindowMinutes</code>, or if the backup started
+     * later than scheduled.</p>
      */
     inline void SetCompleteWindowMinutes(long long value) { m_completeWindowMinutesHasBeenSet = true; m_completeWindowMinutes = value; }
 
     /**
-     * <p>A value in minutes after a backup job is successfully started before it must
-     * be completed or it will be canceled by AWS Backup. This value is optional.</p>
+     * <p>A value in minutes during which a successfully started backup must complete,
+     * or else AWS Backup will cancel the job. This value is optional. This value
+     * begins counting down from when the backup was scheduled. It does not add
+     * additional time for <code>StartWindowMinutes</code>, or if the backup started
+     * later than scheduled.</p>
      */
     inline StartBackupJobRequest& WithCompleteWindowMinutes(long long value) { SetCompleteWindowMinutes(value); return *this;}
 
@@ -304,6 +320,7 @@ namespace Model
      * days. Therefore, the “expire after days” setting must be 90 days greater than
      * the “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
      */
     inline const Lifecycle& GetLifecycle() const{ return m_lifecycle; }
 
@@ -315,6 +332,7 @@ namespace Model
      * days. Therefore, the “expire after days” setting must be 90 days greater than
      * the “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
      */
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
 
@@ -326,6 +344,7 @@ namespace Model
      * days. Therefore, the “expire after days” setting must be 90 days greater than
      * the “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
      */
     inline void SetLifecycle(const Lifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
 
@@ -337,6 +356,7 @@ namespace Model
      * days. Therefore, the “expire after days” setting must be 90 days greater than
      * the “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
      */
     inline void SetLifecycle(Lifecycle&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
 
@@ -348,6 +368,7 @@ namespace Model
      * days. Therefore, the “expire after days” setting must be 90 days greater than
      * the “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
      */
     inline StartBackupJobRequest& WithLifecycle(const Lifecycle& value) { SetLifecycle(value); return *this;}
 
@@ -359,6 +380,7 @@ namespace Model
      * days. Therefore, the “expire after days” setting must be 90 days greater than
      * the “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
      */
     inline StartBackupJobRequest& WithLifecycle(Lifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
 

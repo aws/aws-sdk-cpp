@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents all of the attributes of an AWS Glue DataBrew
-   * recipe.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents the name and version of a DataBrew recipe.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/RecipeReference">AWS
    * API Reference</a></p>
    */

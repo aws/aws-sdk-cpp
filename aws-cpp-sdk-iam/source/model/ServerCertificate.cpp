@@ -23,14 +23,16 @@ namespace Model
 ServerCertificate::ServerCertificate() : 
     m_serverCertificateMetadataHasBeenSet(false),
     m_certificateBodyHasBeenSet(false),
-    m_certificateChainHasBeenSet(false)
+    m_certificateChainHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
 ServerCertificate::ServerCertificate(const XmlNode& xmlNode) : 
     m_serverCertificateMetadataHasBeenSet(false),
     m_certificateBodyHasBeenSet(false),
-    m_certificateChainHasBeenSet(false)
+    m_certificateChainHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -59,6 +61,18 @@ ServerCertificate& ServerCertificate::operator =(const XmlNode& xmlNode)
       m_certificateChain = Aws::Utils::Xml::DecodeEscapedXmlText(certificateChainNode.GetText());
       m_certificateChainHasBeenSet = true;
     }
+    XmlNode tagsNode = resultNode.FirstChild("Tags");
+    if(!tagsNode.IsNull())
+    {
+      XmlNode tagsMember = tagsNode.FirstChild("member");
+      while(!tagsMember.IsNull())
+      {
+        m_tags.push_back(tagsMember);
+        tagsMember = tagsMember.NextNode("member");
+      }
+
+      m_tagsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -83,6 +97,17 @@ void ServerCertificate::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << index << locationValue << ".CertificateChain=" << StringUtils::URLEncode(m_certificateChain.c_str()) << "&";
   }
 
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location << index << locationValue << ".Tags.member." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
+  }
+
 }
 
 void ServerCertificate::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -100,6 +125,16 @@ void ServerCertificate::OutputToStream(Aws::OStream& oStream, const char* locati
   if(m_certificateChainHasBeenSet)
   {
       oStream << location << ".CertificateChain=" << StringUtils::URLEncode(m_certificateChain.c_str()) << "&";
+  }
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".Tags.member." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
   }
 }
 

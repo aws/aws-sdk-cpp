@@ -21,14 +21,16 @@ namespace Model
 ListenerTls::ListenerTls() : 
     m_certificateHasBeenSet(false),
     m_mode(ListenerTlsMode::NOT_SET),
-    m_modeHasBeenSet(false)
+    m_modeHasBeenSet(false),
+    m_validationHasBeenSet(false)
 {
 }
 
 ListenerTls::ListenerTls(JsonView jsonValue) : 
     m_certificateHasBeenSet(false),
     m_mode(ListenerTlsMode::NOT_SET),
-    m_modeHasBeenSet(false)
+    m_modeHasBeenSet(false),
+    m_validationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +51,13 @@ ListenerTls& ListenerTls::operator =(JsonView jsonValue)
     m_modeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("validation"))
+  {
+    m_validation = jsonValue.GetObject("validation");
+
+    m_validationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -65,6 +74,12 @@ JsonValue ListenerTls::Jsonize() const
   if(m_modeHasBeenSet)
   {
    payload.WithString("mode", ListenerTlsModeMapper::GetNameForListenerTlsMode(m_mode));
+  }
+
+  if(m_validationHasBeenSet)
+  {
+   payload.WithObject("validation", m_validation.Jsonize());
+
   }
 
   return payload;

@@ -35,83 +35,91 @@ namespace Model
 
 
     /**
-     * <p>The name of the dataset to associate this project with.</p>
+     * <p>The name of an existing dataset to associate this project with.</p>
      */
     inline const Aws::String& GetDatasetName() const{ return m_datasetName; }
 
     /**
-     * <p>The name of the dataset to associate this project with.</p>
+     * <p>The name of an existing dataset to associate this project with.</p>
      */
     inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
 
     /**
-     * <p>The name of the dataset to associate this project with.</p>
+     * <p>The name of an existing dataset to associate this project with.</p>
      */
     inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
 
     /**
-     * <p>The name of the dataset to associate this project with.</p>
+     * <p>The name of an existing dataset to associate this project with.</p>
      */
     inline void SetDatasetName(Aws::String&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::move(value); }
 
     /**
-     * <p>The name of the dataset to associate this project with.</p>
+     * <p>The name of an existing dataset to associate this project with.</p>
      */
     inline void SetDatasetName(const char* value) { m_datasetNameHasBeenSet = true; m_datasetName.assign(value); }
 
     /**
-     * <p>The name of the dataset to associate this project with.</p>
+     * <p>The name of an existing dataset to associate this project with.</p>
      */
     inline CreateProjectRequest& WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
 
     /**
-     * <p>The name of the dataset to associate this project with.</p>
+     * <p>The name of an existing dataset to associate this project with.</p>
      */
     inline CreateProjectRequest& WithDatasetName(Aws::String&& value) { SetDatasetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the dataset to associate this project with.</p>
+     * <p>The name of an existing dataset to associate this project with.</p>
      */
     inline CreateProjectRequest& WithDatasetName(const char* value) { SetDatasetName(value); return *this;}
 
 
     /**
-     * <p>A unique name for the new project.</p>
+     * <p>A unique name for the new project. Valid characters are alphanumeric (A-Z,
+     * a-z, 0-9), hyphen (-), period (.), and space.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>A unique name for the new project.</p>
+     * <p>A unique name for the new project. Valid characters are alphanumeric (A-Z,
+     * a-z, 0-9), hyphen (-), period (.), and space.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>A unique name for the new project.</p>
+     * <p>A unique name for the new project. Valid characters are alphanumeric (A-Z,
+     * a-z, 0-9), hyphen (-), period (.), and space.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>A unique name for the new project.</p>
+     * <p>A unique name for the new project. Valid characters are alphanumeric (A-Z,
+     * a-z, 0-9), hyphen (-), period (.), and space.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>A unique name for the new project.</p>
+     * <p>A unique name for the new project. Valid characters are alphanumeric (A-Z,
+     * a-z, 0-9), hyphen (-), period (.), and space.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>A unique name for the new project.</p>
+     * <p>A unique name for the new project. Valid characters are alphanumeric (A-Z,
+     * a-z, 0-9), hyphen (-), period (.), and space.</p>
      */
     inline CreateProjectRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>A unique name for the new project.</p>
+     * <p>A unique name for the new project. Valid characters are alphanumeric (A-Z,
+     * a-z, 0-9), hyphen (-), period (.), and space.</p>
      */
     inline CreateProjectRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>A unique name for the new project.</p>
+     * <p>A unique name for the new project. Valid characters are alphanumeric (A-Z,
+     * a-z, 0-9), hyphen (-), period (.), and space.</p>
      */
     inline CreateProjectRequest& WithName(const char* value) { SetName(value); return *this;}
 

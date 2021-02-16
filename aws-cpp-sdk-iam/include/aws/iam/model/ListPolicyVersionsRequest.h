@@ -40,8 +40,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
      * versions.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
 
@@ -49,8 +48,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
      * versions.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
 
@@ -58,8 +56,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
      * versions.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
@@ -67,8 +64,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
      * versions.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::move(value); }
 
@@ -76,8 +72,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
      * versions.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
@@ -85,8 +80,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
      * versions.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline ListPolicyVersionsRequest& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
 
@@ -94,8 +88,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
      * versions.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline ListPolicyVersionsRequest& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
 
@@ -103,8 +96,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
      * versions.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline ListPolicyVersionsRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 

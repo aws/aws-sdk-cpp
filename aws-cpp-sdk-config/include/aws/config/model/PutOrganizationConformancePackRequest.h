@@ -192,131 +192,99 @@ namespace Model
 
 
     /**
-     * <p>Location of an Amazon S3 bucket where AWS Config can deliver evaluation
-     * results. AWS Config stores intermediate files while processing conformance pack
-     * template. </p> <p>The delivery bucket name should start with awsconfigconforms.
-     * For example: "Resource": "arn:aws:s3:::your_bucket_name/ *". For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html">Permissions
-     * for cross account bucket access</a>.</p>
+     * <p>Amazon S3 bucket where AWS Config stores conformance pack templates.</p>
+     *  <p>This field is optional.</p> 
      */
     inline const Aws::String& GetDeliveryS3Bucket() const{ return m_deliveryS3Bucket; }
 
     /**
-     * <p>Location of an Amazon S3 bucket where AWS Config can deliver evaluation
-     * results. AWS Config stores intermediate files while processing conformance pack
-     * template. </p> <p>The delivery bucket name should start with awsconfigconforms.
-     * For example: "Resource": "arn:aws:s3:::your_bucket_name/ *". For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html">Permissions
-     * for cross account bucket access</a>.</p>
+     * <p>Amazon S3 bucket where AWS Config stores conformance pack templates.</p>
+     *  <p>This field is optional.</p> 
      */
     inline bool DeliveryS3BucketHasBeenSet() const { return m_deliveryS3BucketHasBeenSet; }
 
     /**
-     * <p>Location of an Amazon S3 bucket where AWS Config can deliver evaluation
-     * results. AWS Config stores intermediate files while processing conformance pack
-     * template. </p> <p>The delivery bucket name should start with awsconfigconforms.
-     * For example: "Resource": "arn:aws:s3:::your_bucket_name/ *". For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html">Permissions
-     * for cross account bucket access</a>.</p>
+     * <p>Amazon S3 bucket where AWS Config stores conformance pack templates.</p>
+     *  <p>This field is optional.</p> 
      */
     inline void SetDeliveryS3Bucket(const Aws::String& value) { m_deliveryS3BucketHasBeenSet = true; m_deliveryS3Bucket = value; }
 
     /**
-     * <p>Location of an Amazon S3 bucket where AWS Config can deliver evaluation
-     * results. AWS Config stores intermediate files while processing conformance pack
-     * template. </p> <p>The delivery bucket name should start with awsconfigconforms.
-     * For example: "Resource": "arn:aws:s3:::your_bucket_name/ *". For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html">Permissions
-     * for cross account bucket access</a>.</p>
+     * <p>Amazon S3 bucket where AWS Config stores conformance pack templates.</p>
+     *  <p>This field is optional.</p> 
      */
     inline void SetDeliveryS3Bucket(Aws::String&& value) { m_deliveryS3BucketHasBeenSet = true; m_deliveryS3Bucket = std::move(value); }
 
     /**
-     * <p>Location of an Amazon S3 bucket where AWS Config can deliver evaluation
-     * results. AWS Config stores intermediate files while processing conformance pack
-     * template. </p> <p>The delivery bucket name should start with awsconfigconforms.
-     * For example: "Resource": "arn:aws:s3:::your_bucket_name/ *". For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html">Permissions
-     * for cross account bucket access</a>.</p>
+     * <p>Amazon S3 bucket where AWS Config stores conformance pack templates.</p>
+     *  <p>This field is optional.</p> 
      */
     inline void SetDeliveryS3Bucket(const char* value) { m_deliveryS3BucketHasBeenSet = true; m_deliveryS3Bucket.assign(value); }
 
     /**
-     * <p>Location of an Amazon S3 bucket where AWS Config can deliver evaluation
-     * results. AWS Config stores intermediate files while processing conformance pack
-     * template. </p> <p>The delivery bucket name should start with awsconfigconforms.
-     * For example: "Resource": "arn:aws:s3:::your_bucket_name/ *". For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html">Permissions
-     * for cross account bucket access</a>.</p>
+     * <p>Amazon S3 bucket where AWS Config stores conformance pack templates.</p>
+     *  <p>This field is optional.</p> 
      */
     inline PutOrganizationConformancePackRequest& WithDeliveryS3Bucket(const Aws::String& value) { SetDeliveryS3Bucket(value); return *this;}
 
     /**
-     * <p>Location of an Amazon S3 bucket where AWS Config can deliver evaluation
-     * results. AWS Config stores intermediate files while processing conformance pack
-     * template. </p> <p>The delivery bucket name should start with awsconfigconforms.
-     * For example: "Resource": "arn:aws:s3:::your_bucket_name/ *". For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html">Permissions
-     * for cross account bucket access</a>.</p>
+     * <p>Amazon S3 bucket where AWS Config stores conformance pack templates.</p>
+     *  <p>This field is optional.</p> 
      */
     inline PutOrganizationConformancePackRequest& WithDeliveryS3Bucket(Aws::String&& value) { SetDeliveryS3Bucket(std::move(value)); return *this;}
 
     /**
-     * <p>Location of an Amazon S3 bucket where AWS Config can deliver evaluation
-     * results. AWS Config stores intermediate files while processing conformance pack
-     * template. </p> <p>The delivery bucket name should start with awsconfigconforms.
-     * For example: "Resource": "arn:aws:s3:::your_bucket_name/ *". For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html">Permissions
-     * for cross account bucket access</a>.</p>
+     * <p>Amazon S3 bucket where AWS Config stores conformance pack templates.</p>
+     *  <p>This field is optional.</p> 
      */
     inline PutOrganizationConformancePackRequest& WithDeliveryS3Bucket(const char* value) { SetDeliveryS3Bucket(value); return *this;}
 
 
     /**
-     * <p>The prefix for the Amazon S3 bucket.</p>
+     * <p>The prefix for the Amazon S3 bucket.</p>  <p>This field is
+     * optional.</p> 
      */
     inline const Aws::String& GetDeliveryS3KeyPrefix() const{ return m_deliveryS3KeyPrefix; }
 
     /**
-     * <p>The prefix for the Amazon S3 bucket.</p>
+     * <p>The prefix for the Amazon S3 bucket.</p>  <p>This field is
+     * optional.</p> 
      */
     inline bool DeliveryS3KeyPrefixHasBeenSet() const { return m_deliveryS3KeyPrefixHasBeenSet; }
 
     /**
-     * <p>The prefix for the Amazon S3 bucket.</p>
+     * <p>The prefix for the Amazon S3 bucket.</p>  <p>This field is
+     * optional.</p> 
      */
     inline void SetDeliveryS3KeyPrefix(const Aws::String& value) { m_deliveryS3KeyPrefixHasBeenSet = true; m_deliveryS3KeyPrefix = value; }
 
     /**
-     * <p>The prefix for the Amazon S3 bucket.</p>
+     * <p>The prefix for the Amazon S3 bucket.</p>  <p>This field is
+     * optional.</p> 
      */
     inline void SetDeliveryS3KeyPrefix(Aws::String&& value) { m_deliveryS3KeyPrefixHasBeenSet = true; m_deliveryS3KeyPrefix = std::move(value); }
 
     /**
-     * <p>The prefix for the Amazon S3 bucket.</p>
+     * <p>The prefix for the Amazon S3 bucket.</p>  <p>This field is
+     * optional.</p> 
      */
     inline void SetDeliveryS3KeyPrefix(const char* value) { m_deliveryS3KeyPrefixHasBeenSet = true; m_deliveryS3KeyPrefix.assign(value); }
 
     /**
-     * <p>The prefix for the Amazon S3 bucket.</p>
+     * <p>The prefix for the Amazon S3 bucket.</p>  <p>This field is
+     * optional.</p> 
      */
     inline PutOrganizationConformancePackRequest& WithDeliveryS3KeyPrefix(const Aws::String& value) { SetDeliveryS3KeyPrefix(value); return *this;}
 
     /**
-     * <p>The prefix for the Amazon S3 bucket.</p>
+     * <p>The prefix for the Amazon S3 bucket.</p>  <p>This field is
+     * optional.</p> 
      */
     inline PutOrganizationConformancePackRequest& WithDeliveryS3KeyPrefix(Aws::String&& value) { SetDeliveryS3KeyPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>The prefix for the Amazon S3 bucket.</p>
+     * <p>The prefix for the Amazon S3 bucket.</p>  <p>This field is
+     * optional.</p> 
      */
     inline PutOrganizationConformancePackRequest& WithDeliveryS3KeyPrefix(const char* value) { SetDeliveryS3KeyPrefix(value); return *this;}
 

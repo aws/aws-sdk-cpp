@@ -96,7 +96,7 @@ namespace Model
 
 
     /**
-     * <p>The date and time that the global settings was last updated. This update is
+     * <p>The date and time that the global settings were last updated. This update is
      * in Unix format and Coordinated Universal Time (UTC). The value of
      * <code>LastUpdateTime</code> is accurate to milliseconds. For example, the value
      * 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
@@ -104,7 +104,7 @@ namespace Model
     inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
 
     /**
-     * <p>The date and time that the global settings was last updated. This update is
+     * <p>The date and time that the global settings were last updated. This update is
      * in Unix format and Coordinated Universal Time (UTC). The value of
      * <code>LastUpdateTime</code> is accurate to milliseconds. For example, the value
      * 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
@@ -112,7 +112,7 @@ namespace Model
     inline void SetLastUpdateTime(const Aws::Utils::DateTime& value) { m_lastUpdateTime = value; }
 
     /**
-     * <p>The date and time that the global settings was last updated. This update is
+     * <p>The date and time that the global settings were last updated. This update is
      * in Unix format and Coordinated Universal Time (UTC). The value of
      * <code>LastUpdateTime</code> is accurate to milliseconds. For example, the value
      * 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
@@ -120,7 +120,7 @@ namespace Model
     inline void SetLastUpdateTime(Aws::Utils::DateTime&& value) { m_lastUpdateTime = std::move(value); }
 
     /**
-     * <p>The date and time that the global settings was last updated. This update is
+     * <p>The date and time that the global settings were last updated. This update is
      * in Unix format and Coordinated Universal Time (UTC). The value of
      * <code>LastUpdateTime</code> is accurate to milliseconds. For example, the value
      * 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
@@ -128,7 +128,7 @@ namespace Model
     inline DescribeGlobalSettingsResult& WithLastUpdateTime(const Aws::Utils::DateTime& value) { SetLastUpdateTime(value); return *this;}
 
     /**
-     * <p>The date and time that the global settings was last updated. This update is
+     * <p>The date and time that the global settings were last updated. This update is
      * in Unix format and Coordinated Universal Time (UTC). The value of
      * <code>LastUpdateTime</code> is accurate to milliseconds. For example, the value
      * 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>

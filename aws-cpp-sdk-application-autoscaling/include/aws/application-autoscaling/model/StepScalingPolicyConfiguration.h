@@ -233,7 +233,7 @@ namespace Model
      * global secondary indexes</p> </li> <li> <p>Amazon Comprehend document
      * classification and entity recognizer endpoints</p> </li> <li> <p>Lambda
      * provisioned concurrency</p> </li> <li> <p>Amazon Keyspaces tables</p> </li> <li>
-     * <p>Amazon MSK cluster storage</p> </li> </ul>
+     * <p>Amazon MSK broker storage</p> </li> </ul>
      */
     inline int GetCooldown() const{ return m_cooldown; }
 
@@ -266,7 +266,7 @@ namespace Model
      * global secondary indexes</p> </li> <li> <p>Amazon Comprehend document
      * classification and entity recognizer endpoints</p> </li> <li> <p>Lambda
      * provisioned concurrency</p> </li> <li> <p>Amazon Keyspaces tables</p> </li> <li>
-     * <p>Amazon MSK cluster storage</p> </li> </ul>
+     * <p>Amazon MSK broker storage</p> </li> </ul>
      */
     inline bool CooldownHasBeenSet() const { return m_cooldownHasBeenSet; }
 
@@ -299,7 +299,7 @@ namespace Model
      * global secondary indexes</p> </li> <li> <p>Amazon Comprehend document
      * classification and entity recognizer endpoints</p> </li> <li> <p>Lambda
      * provisioned concurrency</p> </li> <li> <p>Amazon Keyspaces tables</p> </li> <li>
-     * <p>Amazon MSK cluster storage</p> </li> </ul>
+     * <p>Amazon MSK broker storage</p> </li> </ul>
      */
     inline void SetCooldown(int value) { m_cooldownHasBeenSet = true; m_cooldown = value; }
 
@@ -332,7 +332,7 @@ namespace Model
      * global secondary indexes</p> </li> <li> <p>Amazon Comprehend document
      * classification and entity recognizer endpoints</p> </li> <li> <p>Lambda
      * provisioned concurrency</p> </li> <li> <p>Amazon Keyspaces tables</p> </li> <li>
-     * <p>Amazon MSK cluster storage</p> </li> </ul>
+     * <p>Amazon MSK broker storage</p> </li> </ul>
      */
     inline StepScalingPolicyConfiguration& WithCooldown(int value) { SetCooldown(value); return *this;}
 

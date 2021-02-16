@@ -327,42 +327,74 @@ namespace Model
 
 
     /**
-     * <p>The rule for cross-Region snapshot copies.</p>
+     * <p>The rule for cross-Region snapshot copies.</p> <p>You can only specify
+     * cross-Region copy rules for policies that create snapshots in a Region. If the
+     * policy creates snapshots on an Outpost, then you cannot copy the snapshots to a
+     * Region or to an Outpost. If the policy creates snapshots in a Region, then
+     * snapshots can be copied to up to three Regions or Outposts.</p>
      */
     inline const Aws::Vector<CrossRegionCopyRule>& GetCrossRegionCopyRules() const{ return m_crossRegionCopyRules; }
 
     /**
-     * <p>The rule for cross-Region snapshot copies.</p>
+     * <p>The rule for cross-Region snapshot copies.</p> <p>You can only specify
+     * cross-Region copy rules for policies that create snapshots in a Region. If the
+     * policy creates snapshots on an Outpost, then you cannot copy the snapshots to a
+     * Region or to an Outpost. If the policy creates snapshots in a Region, then
+     * snapshots can be copied to up to three Regions or Outposts.</p>
      */
     inline bool CrossRegionCopyRulesHasBeenSet() const { return m_crossRegionCopyRulesHasBeenSet; }
 
     /**
-     * <p>The rule for cross-Region snapshot copies.</p>
+     * <p>The rule for cross-Region snapshot copies.</p> <p>You can only specify
+     * cross-Region copy rules for policies that create snapshots in a Region. If the
+     * policy creates snapshots on an Outpost, then you cannot copy the snapshots to a
+     * Region or to an Outpost. If the policy creates snapshots in a Region, then
+     * snapshots can be copied to up to three Regions or Outposts.</p>
      */
     inline void SetCrossRegionCopyRules(const Aws::Vector<CrossRegionCopyRule>& value) { m_crossRegionCopyRulesHasBeenSet = true; m_crossRegionCopyRules = value; }
 
     /**
-     * <p>The rule for cross-Region snapshot copies.</p>
+     * <p>The rule for cross-Region snapshot copies.</p> <p>You can only specify
+     * cross-Region copy rules for policies that create snapshots in a Region. If the
+     * policy creates snapshots on an Outpost, then you cannot copy the snapshots to a
+     * Region or to an Outpost. If the policy creates snapshots in a Region, then
+     * snapshots can be copied to up to three Regions or Outposts.</p>
      */
     inline void SetCrossRegionCopyRules(Aws::Vector<CrossRegionCopyRule>&& value) { m_crossRegionCopyRulesHasBeenSet = true; m_crossRegionCopyRules = std::move(value); }
 
     /**
-     * <p>The rule for cross-Region snapshot copies.</p>
+     * <p>The rule for cross-Region snapshot copies.</p> <p>You can only specify
+     * cross-Region copy rules for policies that create snapshots in a Region. If the
+     * policy creates snapshots on an Outpost, then you cannot copy the snapshots to a
+     * Region or to an Outpost. If the policy creates snapshots in a Region, then
+     * snapshots can be copied to up to three Regions or Outposts.</p>
      */
     inline Schedule& WithCrossRegionCopyRules(const Aws::Vector<CrossRegionCopyRule>& value) { SetCrossRegionCopyRules(value); return *this;}
 
     /**
-     * <p>The rule for cross-Region snapshot copies.</p>
+     * <p>The rule for cross-Region snapshot copies.</p> <p>You can only specify
+     * cross-Region copy rules for policies that create snapshots in a Region. If the
+     * policy creates snapshots on an Outpost, then you cannot copy the snapshots to a
+     * Region or to an Outpost. If the policy creates snapshots in a Region, then
+     * snapshots can be copied to up to three Regions or Outposts.</p>
      */
     inline Schedule& WithCrossRegionCopyRules(Aws::Vector<CrossRegionCopyRule>&& value) { SetCrossRegionCopyRules(std::move(value)); return *this;}
 
     /**
-     * <p>The rule for cross-Region snapshot copies.</p>
+     * <p>The rule for cross-Region snapshot copies.</p> <p>You can only specify
+     * cross-Region copy rules for policies that create snapshots in a Region. If the
+     * policy creates snapshots on an Outpost, then you cannot copy the snapshots to a
+     * Region or to an Outpost. If the policy creates snapshots in a Region, then
+     * snapshots can be copied to up to three Regions or Outposts.</p>
      */
     inline Schedule& AddCrossRegionCopyRules(const CrossRegionCopyRule& value) { m_crossRegionCopyRulesHasBeenSet = true; m_crossRegionCopyRules.push_back(value); return *this; }
 
     /**
-     * <p>The rule for cross-Region snapshot copies.</p>
+     * <p>The rule for cross-Region snapshot copies.</p> <p>You can only specify
+     * cross-Region copy rules for policies that create snapshots in a Region. If the
+     * policy creates snapshots on an Outpost, then you cannot copy the snapshots to a
+     * Region or to an Outpost. If the policy creates snapshots in a Region, then
+     * snapshots can be copied to up to three Regions or Outposts.</p>
      */
     inline Schedule& AddCrossRegionCopyRules(CrossRegionCopyRule&& value) { m_crossRegionCopyRulesHasBeenSet = true; m_crossRegionCopyRules.push_back(std::move(value)); return *this; }
 

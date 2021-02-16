@@ -347,7 +347,7 @@ namespace Model
 
     /**
      * <p>The type of request. The default value is <code>maintain</code>.</p> <ul>
-     * <li> <p> <code>maintain</code> - The EC2 Fleet plaees an asynchronous request
+     * <li> <p> <code>maintain</code> - The EC2 Fleet places an asynchronous request
      * for your desired capacity, and continues to maintain your desired Spot capacity
      * by replenishing interrupted Spot Instances.</p> </li> <li> <p>
      * <code>request</code> - The EC2 Fleet places an asynchronous one-time request for
@@ -358,14 +358,13 @@ namespace Model
      * returns errors for any instances that could not be launched.</p> </li> </ul>
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type">EC2
-     * Fleet request types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const FleetType& GetType() const{ return m_type; }
 
     /**
      * <p>The type of request. The default value is <code>maintain</code>.</p> <ul>
-     * <li> <p> <code>maintain</code> - The EC2 Fleet plaees an asynchronous request
+     * <li> <p> <code>maintain</code> - The EC2 Fleet places an asynchronous request
      * for your desired capacity, and continues to maintain your desired Spot capacity
      * by replenishing interrupted Spot Instances.</p> </li> <li> <p>
      * <code>request</code> - The EC2 Fleet places an asynchronous one-time request for
@@ -376,14 +375,13 @@ namespace Model
      * returns errors for any instances that could not be launched.</p> </li> </ul>
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type">EC2
-     * Fleet request types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of request. The default value is <code>maintain</code>.</p> <ul>
-     * <li> <p> <code>maintain</code> - The EC2 Fleet plaees an asynchronous request
+     * <li> <p> <code>maintain</code> - The EC2 Fleet places an asynchronous request
      * for your desired capacity, and continues to maintain your desired Spot capacity
      * by replenishing interrupted Spot Instances.</p> </li> <li> <p>
      * <code>request</code> - The EC2 Fleet places an asynchronous one-time request for
@@ -394,14 +392,13 @@ namespace Model
      * returns errors for any instances that could not be launched.</p> </li> </ul>
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type">EC2
-     * Fleet request types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetType(const FleetType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The type of request. The default value is <code>maintain</code>.</p> <ul>
-     * <li> <p> <code>maintain</code> - The EC2 Fleet plaees an asynchronous request
+     * <li> <p> <code>maintain</code> - The EC2 Fleet places an asynchronous request
      * for your desired capacity, and continues to maintain your desired Spot capacity
      * by replenishing interrupted Spot Instances.</p> </li> <li> <p>
      * <code>request</code> - The EC2 Fleet places an asynchronous one-time request for
@@ -412,14 +409,13 @@ namespace Model
      * returns errors for any instances that could not be launched.</p> </li> </ul>
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type">EC2
-     * Fleet request types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetType(FleetType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of request. The default value is <code>maintain</code>.</p> <ul>
-     * <li> <p> <code>maintain</code> - The EC2 Fleet plaees an asynchronous request
+     * <li> <p> <code>maintain</code> - The EC2 Fleet places an asynchronous request
      * for your desired capacity, and continues to maintain your desired Spot capacity
      * by replenishing interrupted Spot Instances.</p> </li> <li> <p>
      * <code>request</code> - The EC2 Fleet places an asynchronous one-time request for
@@ -430,14 +426,13 @@ namespace Model
      * returns errors for any instances that could not be launched.</p> </li> </ul>
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type">EC2
-     * Fleet request types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline CreateFleetRequest& WithType(const FleetType& value) { SetType(value); return *this;}
 
     /**
      * <p>The type of request. The default value is <code>maintain</code>.</p> <ul>
-     * <li> <p> <code>maintain</code> - The EC2 Fleet plaees an asynchronous request
+     * <li> <p> <code>maintain</code> - The EC2 Fleet places an asynchronous request
      * for your desired capacity, and continues to maintain your desired Spot capacity
      * by replenishing interrupted Spot Instances.</p> </li> <li> <p>
      * <code>request</code> - The EC2 Fleet places an asynchronous one-time request for
@@ -448,8 +443,7 @@ namespace Model
      * returns errors for any instances that could not be launched.</p> </li> </ul>
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type">EC2
-     * Fleet request types</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline CreateFleetRequest& WithType(FleetType&& value) { SetType(std::move(value)); return *this;}
 
@@ -547,22 +541,38 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether EC2 Fleet should replace unhealthy instances.</p>
+     * <p>Indicates whether EC2 Fleet should replace unhealthy Spot Instances.
+     * Supported only for fleets of type <code>maintain</code>. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2
+     * Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool GetReplaceUnhealthyInstances() const{ return m_replaceUnhealthyInstances; }
 
     /**
-     * <p>Indicates whether EC2 Fleet should replace unhealthy instances.</p>
+     * <p>Indicates whether EC2 Fleet should replace unhealthy Spot Instances.
+     * Supported only for fleets of type <code>maintain</code>. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2
+     * Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool ReplaceUnhealthyInstancesHasBeenSet() const { return m_replaceUnhealthyInstancesHasBeenSet; }
 
     /**
-     * <p>Indicates whether EC2 Fleet should replace unhealthy instances.</p>
+     * <p>Indicates whether EC2 Fleet should replace unhealthy Spot Instances.
+     * Supported only for fleets of type <code>maintain</code>. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2
+     * Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetReplaceUnhealthyInstances(bool value) { m_replaceUnhealthyInstancesHasBeenSet = true; m_replaceUnhealthyInstances = value; }
 
     /**
-     * <p>Indicates whether EC2 Fleet should replace unhealthy instances.</p>
+     * <p>Indicates whether EC2 Fleet should replace unhealthy Spot Instances.
+     * Supported only for fleets of type <code>maintain</code>. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2
+     * Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline CreateFleetRequest& WithReplaceUnhealthyInstances(bool value) { SetReplaceUnhealthyInstances(value); return *this;}
 

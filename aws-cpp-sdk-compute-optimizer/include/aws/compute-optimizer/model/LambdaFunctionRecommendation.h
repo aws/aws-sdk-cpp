@@ -484,9 +484,10 @@ namespace Model
      * resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
      * This finding reason code is part of the <code>Unavailable</code> finding
      * classification.</p> </li> <li> <p> <b> <code>Inconclusive</code> </b> — The
-     * function does not qualify for a recommendation, or there was an internal error.
-     * This finding reason code is part of the <code>Unavailable</code> finding
-     * classification.</p> </li> </ul>
+     * function does not qualify for a recommendation because Compute Optimizer cannot
+     * generate a recommendation with a high degree of confidence. This finding reason
+     * code is part of the <code>Unavailable</code> finding classification.</p> </li>
+     * </ul>
      */
     inline const Aws::Vector<LambdaFunctionRecommendationFindingReasonCode>& GetFindingReasonCodes() const{ return m_findingReasonCodes; }
 
@@ -511,9 +512,10 @@ namespace Model
      * resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
      * This finding reason code is part of the <code>Unavailable</code> finding
      * classification.</p> </li> <li> <p> <b> <code>Inconclusive</code> </b> — The
-     * function does not qualify for a recommendation, or there was an internal error.
-     * This finding reason code is part of the <code>Unavailable</code> finding
-     * classification.</p> </li> </ul>
+     * function does not qualify for a recommendation because Compute Optimizer cannot
+     * generate a recommendation with a high degree of confidence. This finding reason
+     * code is part of the <code>Unavailable</code> finding classification.</p> </li>
+     * </ul>
      */
     inline bool FindingReasonCodesHasBeenSet() const { return m_findingReasonCodesHasBeenSet; }
 
@@ -538,9 +540,10 @@ namespace Model
      * resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
      * This finding reason code is part of the <code>Unavailable</code> finding
      * classification.</p> </li> <li> <p> <b> <code>Inconclusive</code> </b> — The
-     * function does not qualify for a recommendation, or there was an internal error.
-     * This finding reason code is part of the <code>Unavailable</code> finding
-     * classification.</p> </li> </ul>
+     * function does not qualify for a recommendation because Compute Optimizer cannot
+     * generate a recommendation with a high degree of confidence. This finding reason
+     * code is part of the <code>Unavailable</code> finding classification.</p> </li>
+     * </ul>
      */
     inline void SetFindingReasonCodes(const Aws::Vector<LambdaFunctionRecommendationFindingReasonCode>& value) { m_findingReasonCodesHasBeenSet = true; m_findingReasonCodes = value; }
 
@@ -565,9 +568,10 @@ namespace Model
      * resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
      * This finding reason code is part of the <code>Unavailable</code> finding
      * classification.</p> </li> <li> <p> <b> <code>Inconclusive</code> </b> — The
-     * function does not qualify for a recommendation, or there was an internal error.
-     * This finding reason code is part of the <code>Unavailable</code> finding
-     * classification.</p> </li> </ul>
+     * function does not qualify for a recommendation because Compute Optimizer cannot
+     * generate a recommendation with a high degree of confidence. This finding reason
+     * code is part of the <code>Unavailable</code> finding classification.</p> </li>
+     * </ul>
      */
     inline void SetFindingReasonCodes(Aws::Vector<LambdaFunctionRecommendationFindingReasonCode>&& value) { m_findingReasonCodesHasBeenSet = true; m_findingReasonCodes = std::move(value); }
 
@@ -592,9 +596,10 @@ namespace Model
      * resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
      * This finding reason code is part of the <code>Unavailable</code> finding
      * classification.</p> </li> <li> <p> <b> <code>Inconclusive</code> </b> — The
-     * function does not qualify for a recommendation, or there was an internal error.
-     * This finding reason code is part of the <code>Unavailable</code> finding
-     * classification.</p> </li> </ul>
+     * function does not qualify for a recommendation because Compute Optimizer cannot
+     * generate a recommendation with a high degree of confidence. This finding reason
+     * code is part of the <code>Unavailable</code> finding classification.</p> </li>
+     * </ul>
      */
     inline LambdaFunctionRecommendation& WithFindingReasonCodes(const Aws::Vector<LambdaFunctionRecommendationFindingReasonCode>& value) { SetFindingReasonCodes(value); return *this;}
 
@@ -619,9 +624,10 @@ namespace Model
      * resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
      * This finding reason code is part of the <code>Unavailable</code> finding
      * classification.</p> </li> <li> <p> <b> <code>Inconclusive</code> </b> — The
-     * function does not qualify for a recommendation, or there was an internal error.
-     * This finding reason code is part of the <code>Unavailable</code> finding
-     * classification.</p> </li> </ul>
+     * function does not qualify for a recommendation because Compute Optimizer cannot
+     * generate a recommendation with a high degree of confidence. This finding reason
+     * code is part of the <code>Unavailable</code> finding classification.</p> </li>
+     * </ul>
      */
     inline LambdaFunctionRecommendation& WithFindingReasonCodes(Aws::Vector<LambdaFunctionRecommendationFindingReasonCode>&& value) { SetFindingReasonCodes(std::move(value)); return *this;}
 
@@ -646,9 +652,10 @@ namespace Model
      * resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
      * This finding reason code is part of the <code>Unavailable</code> finding
      * classification.</p> </li> <li> <p> <b> <code>Inconclusive</code> </b> — The
-     * function does not qualify for a recommendation, or there was an internal error.
-     * This finding reason code is part of the <code>Unavailable</code> finding
-     * classification.</p> </li> </ul>
+     * function does not qualify for a recommendation because Compute Optimizer cannot
+     * generate a recommendation with a high degree of confidence. This finding reason
+     * code is part of the <code>Unavailable</code> finding classification.</p> </li>
+     * </ul>
      */
     inline LambdaFunctionRecommendation& AddFindingReasonCodes(const LambdaFunctionRecommendationFindingReasonCode& value) { m_findingReasonCodesHasBeenSet = true; m_findingReasonCodes.push_back(value); return *this; }
 
@@ -673,9 +680,10 @@ namespace Model
      * resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
      * This finding reason code is part of the <code>Unavailable</code> finding
      * classification.</p> </li> <li> <p> <b> <code>Inconclusive</code> </b> — The
-     * function does not qualify for a recommendation, or there was an internal error.
-     * This finding reason code is part of the <code>Unavailable</code> finding
-     * classification.</p> </li> </ul>
+     * function does not qualify for a recommendation because Compute Optimizer cannot
+     * generate a recommendation with a high degree of confidence. This finding reason
+     * code is part of the <code>Unavailable</code> finding classification.</p> </li>
+     * </ul>
      */
     inline LambdaFunctionRecommendation& AddFindingReasonCodes(LambdaFunctionRecommendationFindingReasonCode&& value) { m_findingReasonCodesHasBeenSet = true; m_findingReasonCodes.push_back(std::move(value)); return *this; }
 

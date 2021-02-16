@@ -1171,49 +1171,49 @@ namespace Model
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group.</p>
+     * group. Must be Redis.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group.</p>
+     * group. Must be Redis.</p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group.</p>
+     * group. Must be Redis.</p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group.</p>
+     * group. Must be Redis.</p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group.</p>
+     * group. Must be Redis.</p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group.</p>
+     * group. Must be Redis.</p>
      */
     inline CreateReplicationGroupRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group.</p>
+     * group. Must be Redis.</p>
      */
     inline CreateReplicationGroupRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group.</p>
+     * group. Must be Redis.</p>
      */
     inline CreateReplicationGroupRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -1326,12 +1326,9 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p>  <p>If you are restoring to an engine version that is
-     * different than the original, you must specify the default version of that
-     * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     *  <p>If you are running Redis version 3.2.4 or later, only one node group
-     * (shard), and want to use a default parameter group, we recommend that you
-     * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
+     * engine is used.</p> <p>If you are running Redis version 3.2.4 or later, only one
+     * node group (shard), and want to use a default parameter group, we recommend that
+     * you specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
      * <code>CacheParameterGroupName=default.redis3.2</code>.</p> </li> <li> <p>To
      * create a Redis (cluster mode enabled) replication group, use
@@ -1343,12 +1340,9 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p>  <p>If you are restoring to an engine version that is
-     * different than the original, you must specify the default version of that
-     * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     *  <p>If you are running Redis version 3.2.4 or later, only one node group
-     * (shard), and want to use a default parameter group, we recommend that you
-     * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
+     * engine is used.</p> <p>If you are running Redis version 3.2.4 or later, only one
+     * node group (shard), and want to use a default parameter group, we recommend that
+     * you specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
      * <code>CacheParameterGroupName=default.redis3.2</code>.</p> </li> <li> <p>To
      * create a Redis (cluster mode enabled) replication group, use
@@ -1360,12 +1354,9 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p>  <p>If you are restoring to an engine version that is
-     * different than the original, you must specify the default version of that
-     * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     *  <p>If you are running Redis version 3.2.4 or later, only one node group
-     * (shard), and want to use a default parameter group, we recommend that you
-     * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
+     * engine is used.</p> <p>If you are running Redis version 3.2.4 or later, only one
+     * node group (shard), and want to use a default parameter group, we recommend that
+     * you specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
      * <code>CacheParameterGroupName=default.redis3.2</code>.</p> </li> <li> <p>To
      * create a Redis (cluster mode enabled) replication group, use
@@ -1377,12 +1368,9 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p>  <p>If you are restoring to an engine version that is
-     * different than the original, you must specify the default version of that
-     * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     *  <p>If you are running Redis version 3.2.4 or later, only one node group
-     * (shard), and want to use a default parameter group, we recommend that you
-     * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
+     * engine is used.</p> <p>If you are running Redis version 3.2.4 or later, only one
+     * node group (shard), and want to use a default parameter group, we recommend that
+     * you specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
      * <code>CacheParameterGroupName=default.redis3.2</code>.</p> </li> <li> <p>To
      * create a Redis (cluster mode enabled) replication group, use
@@ -1394,12 +1382,9 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p>  <p>If you are restoring to an engine version that is
-     * different than the original, you must specify the default version of that
-     * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     *  <p>If you are running Redis version 3.2.4 or later, only one node group
-     * (shard), and want to use a default parameter group, we recommend that you
-     * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
+     * engine is used.</p> <p>If you are running Redis version 3.2.4 or later, only one
+     * node group (shard), and want to use a default parameter group, we recommend that
+     * you specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
      * <code>CacheParameterGroupName=default.redis3.2</code>.</p> </li> <li> <p>To
      * create a Redis (cluster mode enabled) replication group, use
@@ -1411,12 +1396,9 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p>  <p>If you are restoring to an engine version that is
-     * different than the original, you must specify the default version of that
-     * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     *  <p>If you are running Redis version 3.2.4 or later, only one node group
-     * (shard), and want to use a default parameter group, we recommend that you
-     * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
+     * engine is used.</p> <p>If you are running Redis version 3.2.4 or later, only one
+     * node group (shard), and want to use a default parameter group, we recommend that
+     * you specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
      * <code>CacheParameterGroupName=default.redis3.2</code>.</p> </li> <li> <p>To
      * create a Redis (cluster mode enabled) replication group, use
@@ -1428,12 +1410,9 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p>  <p>If you are restoring to an engine version that is
-     * different than the original, you must specify the default version of that
-     * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     *  <p>If you are running Redis version 3.2.4 or later, only one node group
-     * (shard), and want to use a default parameter group, we recommend that you
-     * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
+     * engine is used.</p> <p>If you are running Redis version 3.2.4 or later, only one
+     * node group (shard), and want to use a default parameter group, we recommend that
+     * you specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
      * <code>CacheParameterGroupName=default.redis3.2</code>.</p> </li> <li> <p>To
      * create a Redis (cluster mode enabled) replication group, use
@@ -1445,12 +1424,9 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p>  <p>If you are restoring to an engine version that is
-     * different than the original, you must specify the default version of that
-     * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     *  <p>If you are running Redis version 3.2.4 or later, only one node group
-     * (shard), and want to use a default parameter group, we recommend that you
-     * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
+     * engine is used.</p> <p>If you are running Redis version 3.2.4 or later, only one
+     * node group (shard), and want to use a default parameter group, we recommend that
+     * you specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
      * <code>CacheParameterGroupName=default.redis3.2</code>.</p> </li> <li> <p>To
      * create a Redis (cluster mode enabled) replication group, use

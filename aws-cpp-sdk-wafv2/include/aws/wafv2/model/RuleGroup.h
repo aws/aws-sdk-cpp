@@ -27,16 +27,11 @@ namespace Model
 {
 
   /**
-   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p>  <p> A rule group defines a collection of
-   * rules to inspect and control web requests that you can use in a <a>WebACL</a>.
-   * When you create a rule group, you define an immutable capacity limit. If you
-   * update a rule group, you must stay within the capacity. This allows others to
-   * reuse the rule group with confidence in its capacity requirements.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p> A rule group defines a collection of rules to inspect and control web
+   * requests that you can use in a <a>WebACL</a>. When you create a rule group, you
+   * define an immutable capacity limit. If you update a rule group, you must stay
+   * within the capacity. This allows others to reuse the rule group with confidence
+   * in its capacity requirements. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/RuleGroup">AWS API
    * Reference</a></p>
    */
@@ -258,50 +253,42 @@ namespace Model
 
 
     /**
-     * <p>A description of the rule group that helps with identification. You cannot
-     * change the description of a rule group after you create it.</p>
+     * <p>A description of the rule group that helps with identification. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A description of the rule group that helps with identification. You cannot
-     * change the description of a rule group after you create it.</p>
+     * <p>A description of the rule group that helps with identification. </p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A description of the rule group that helps with identification. You cannot
-     * change the description of a rule group after you create it.</p>
+     * <p>A description of the rule group that helps with identification. </p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A description of the rule group that helps with identification. You cannot
-     * change the description of a rule group after you create it.</p>
+     * <p>A description of the rule group that helps with identification. </p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A description of the rule group that helps with identification. You cannot
-     * change the description of a rule group after you create it.</p>
+     * <p>A description of the rule group that helps with identification. </p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A description of the rule group that helps with identification. You cannot
-     * change the description of a rule group after you create it.</p>
+     * <p>A description of the rule group that helps with identification. </p>
      */
     inline RuleGroup& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A description of the rule group that helps with identification. You cannot
-     * change the description of a rule group after you create it.</p>
+     * <p>A description of the rule group that helps with identification. </p>
      */
     inline RuleGroup& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description of the rule group that helps with identification. You cannot
-     * change the description of a rule group after you create it.</p>
+     * <p>A description of the rule group that helps with identification. </p>
      */
     inline RuleGroup& WithDescription(const char* value) { SetDescription(value); return *this;}
 

@@ -58,7 +58,10 @@ namespace Model
     POSITION,
     FORWARDED_IP_CONFIG,
     IP_SET_FORWARDED_IP_CONFIG,
-    HEADER_NAME
+    HEADER_NAME,
+    JSON_MATCH_PATTERN,
+    JSON_MATCH_SCOPE,
+    BODY_PARSING_FALLBACK_BEHAVIOR
   };
 
 namespace ParameterExceptionFieldMapper

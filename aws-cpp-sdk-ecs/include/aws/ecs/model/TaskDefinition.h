@@ -12,6 +12,7 @@
 #include <aws/ecs/model/PidMode.h>
 #include <aws/ecs/model/IpcMode.h>
 #include <aws/ecs/model/ProxyConfiguration.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ecs/model/ContainerDefinition.h>
 #include <aws/ecs/model/Volume.h>
 #include <aws/ecs/model/Attribute.h>
@@ -1839,6 +1840,109 @@ namespace Model
      */
     inline TaskDefinition& WithProxyConfiguration(ProxyConfiguration&& value) { SetProxyConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Unix timestamp for when the task definition was registered.</p>
+     */
+    inline const Aws::Utils::DateTime& GetRegisteredAt() const{ return m_registeredAt; }
+
+    /**
+     * <p>The Unix timestamp for when the task definition was registered.</p>
+     */
+    inline bool RegisteredAtHasBeenSet() const { return m_registeredAtHasBeenSet; }
+
+    /**
+     * <p>The Unix timestamp for when the task definition was registered.</p>
+     */
+    inline void SetRegisteredAt(const Aws::Utils::DateTime& value) { m_registeredAtHasBeenSet = true; m_registeredAt = value; }
+
+    /**
+     * <p>The Unix timestamp for when the task definition was registered.</p>
+     */
+    inline void SetRegisteredAt(Aws::Utils::DateTime&& value) { m_registeredAtHasBeenSet = true; m_registeredAt = std::move(value); }
+
+    /**
+     * <p>The Unix timestamp for when the task definition was registered.</p>
+     */
+    inline TaskDefinition& WithRegisteredAt(const Aws::Utils::DateTime& value) { SetRegisteredAt(value); return *this;}
+
+    /**
+     * <p>The Unix timestamp for when the task definition was registered.</p>
+     */
+    inline TaskDefinition& WithRegisteredAt(Aws::Utils::DateTime&& value) { SetRegisteredAt(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Unix timestamp for when the task definition was deregistered.</p>
+     */
+    inline const Aws::Utils::DateTime& GetDeregisteredAt() const{ return m_deregisteredAt; }
+
+    /**
+     * <p>The Unix timestamp for when the task definition was deregistered.</p>
+     */
+    inline bool DeregisteredAtHasBeenSet() const { return m_deregisteredAtHasBeenSet; }
+
+    /**
+     * <p>The Unix timestamp for when the task definition was deregistered.</p>
+     */
+    inline void SetDeregisteredAt(const Aws::Utils::DateTime& value) { m_deregisteredAtHasBeenSet = true; m_deregisteredAt = value; }
+
+    /**
+     * <p>The Unix timestamp for when the task definition was deregistered.</p>
+     */
+    inline void SetDeregisteredAt(Aws::Utils::DateTime&& value) { m_deregisteredAtHasBeenSet = true; m_deregisteredAt = std::move(value); }
+
+    /**
+     * <p>The Unix timestamp for when the task definition was deregistered.</p>
+     */
+    inline TaskDefinition& WithDeregisteredAt(const Aws::Utils::DateTime& value) { SetDeregisteredAt(value); return *this;}
+
+    /**
+     * <p>The Unix timestamp for when the task definition was deregistered.</p>
+     */
+    inline TaskDefinition& WithDeregisteredAt(Aws::Utils::DateTime&& value) { SetDeregisteredAt(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The principal that registered the task definition.</p>
+     */
+    inline const Aws::String& GetRegisteredBy() const{ return m_registeredBy; }
+
+    /**
+     * <p>The principal that registered the task definition.</p>
+     */
+    inline bool RegisteredByHasBeenSet() const { return m_registeredByHasBeenSet; }
+
+    /**
+     * <p>The principal that registered the task definition.</p>
+     */
+    inline void SetRegisteredBy(const Aws::String& value) { m_registeredByHasBeenSet = true; m_registeredBy = value; }
+
+    /**
+     * <p>The principal that registered the task definition.</p>
+     */
+    inline void SetRegisteredBy(Aws::String&& value) { m_registeredByHasBeenSet = true; m_registeredBy = std::move(value); }
+
+    /**
+     * <p>The principal that registered the task definition.</p>
+     */
+    inline void SetRegisteredBy(const char* value) { m_registeredByHasBeenSet = true; m_registeredBy.assign(value); }
+
+    /**
+     * <p>The principal that registered the task definition.</p>
+     */
+    inline TaskDefinition& WithRegisteredBy(const Aws::String& value) { SetRegisteredBy(value); return *this;}
+
+    /**
+     * <p>The principal that registered the task definition.</p>
+     */
+    inline TaskDefinition& WithRegisteredBy(Aws::String&& value) { SetRegisteredBy(std::move(value)); return *this;}
+
+    /**
+     * <p>The principal that registered the task definition.</p>
+     */
+    inline TaskDefinition& WithRegisteredBy(const char* value) { SetRegisteredBy(value); return *this;}
+
   private:
 
     Aws::String m_taskDefinitionArn;
@@ -1897,6 +2001,15 @@ namespace Model
 
     ProxyConfiguration m_proxyConfiguration;
     bool m_proxyConfigurationHasBeenSet;
+
+    Aws::Utils::DateTime m_registeredAt;
+    bool m_registeredAtHasBeenSet;
+
+    Aws::Utils::DateTime m_deregisteredAt;
+    bool m_deregisteredAtHasBeenSet;
+
+    Aws::String m_registeredBy;
+    bool m_registeredByHasBeenSet;
   };
 
 } // namespace Model

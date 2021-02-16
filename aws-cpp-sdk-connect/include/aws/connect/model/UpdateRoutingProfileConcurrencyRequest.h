@@ -117,42 +117,42 @@ namespace Model
 
 
     /**
-     * <p>The channels agents can handle in the Contact Control Panel (CCP).</p>
+     * <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
      */
     inline const Aws::Vector<MediaConcurrency>& GetMediaConcurrencies() const{ return m_mediaConcurrencies; }
 
     /**
-     * <p>The channels agents can handle in the Contact Control Panel (CCP).</p>
+     * <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
      */
     inline bool MediaConcurrenciesHasBeenSet() const { return m_mediaConcurrenciesHasBeenSet; }
 
     /**
-     * <p>The channels agents can handle in the Contact Control Panel (CCP).</p>
+     * <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
      */
     inline void SetMediaConcurrencies(const Aws::Vector<MediaConcurrency>& value) { m_mediaConcurrenciesHasBeenSet = true; m_mediaConcurrencies = value; }
 
     /**
-     * <p>The channels agents can handle in the Contact Control Panel (CCP).</p>
+     * <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
      */
     inline void SetMediaConcurrencies(Aws::Vector<MediaConcurrency>&& value) { m_mediaConcurrenciesHasBeenSet = true; m_mediaConcurrencies = std::move(value); }
 
     /**
-     * <p>The channels agents can handle in the Contact Control Panel (CCP).</p>
+     * <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
      */
     inline UpdateRoutingProfileConcurrencyRequest& WithMediaConcurrencies(const Aws::Vector<MediaConcurrency>& value) { SetMediaConcurrencies(value); return *this;}
 
     /**
-     * <p>The channels agents can handle in the Contact Control Panel (CCP).</p>
+     * <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
      */
     inline UpdateRoutingProfileConcurrencyRequest& WithMediaConcurrencies(Aws::Vector<MediaConcurrency>&& value) { SetMediaConcurrencies(std::move(value)); return *this;}
 
     /**
-     * <p>The channels agents can handle in the Contact Control Panel (CCP).</p>
+     * <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
      */
     inline UpdateRoutingProfileConcurrencyRequest& AddMediaConcurrencies(const MediaConcurrency& value) { m_mediaConcurrenciesHasBeenSet = true; m_mediaConcurrencies.push_back(value); return *this; }
 
     /**
-     * <p>The channels agents can handle in the Contact Control Panel (CCP).</p>
+     * <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
      */
     inline UpdateRoutingProfileConcurrencyRequest& AddMediaConcurrencies(MediaConcurrency&& value) { m_mediaConcurrenciesHasBeenSet = true; m_mediaConcurrencies.push_back(std::move(value)); return *this; }
 

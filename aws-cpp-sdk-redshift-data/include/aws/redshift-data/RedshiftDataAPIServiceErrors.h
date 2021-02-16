@@ -47,7 +47,8 @@ enum class RedshiftDataAPIServiceErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  EXECUTE_STATEMENT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACTIVE_STATEMENTS_EXCEEDED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  EXECUTE_STATEMENT,
   INTERNAL_SERVER
 };
 

@@ -201,6 +201,63 @@ namespace Model
 
 
     /**
+     * <p>The name of the cache parameter group to use with the Global datastore. It
+     * must be compatible with the major engine version used by the Global
+     * datastore.</p>
+     */
+    inline const Aws::String& GetCacheParameterGroupName() const{ return m_cacheParameterGroupName; }
+
+    /**
+     * <p>The name of the cache parameter group to use with the Global datastore. It
+     * must be compatible with the major engine version used by the Global
+     * datastore.</p>
+     */
+    inline bool CacheParameterGroupNameHasBeenSet() const { return m_cacheParameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the cache parameter group to use with the Global datastore. It
+     * must be compatible with the major engine version used by the Global
+     * datastore.</p>
+     */
+    inline void SetCacheParameterGroupName(const Aws::String& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
+
+    /**
+     * <p>The name of the cache parameter group to use with the Global datastore. It
+     * must be compatible with the major engine version used by the Global
+     * datastore.</p>
+     */
+    inline void SetCacheParameterGroupName(Aws::String&& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = std::move(value); }
+
+    /**
+     * <p>The name of the cache parameter group to use with the Global datastore. It
+     * must be compatible with the major engine version used by the Global
+     * datastore.</p>
+     */
+    inline void SetCacheParameterGroupName(const char* value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName.assign(value); }
+
+    /**
+     * <p>The name of the cache parameter group to use with the Global datastore. It
+     * must be compatible with the major engine version used by the Global
+     * datastore.</p>
+     */
+    inline ModifyGlobalReplicationGroupRequest& WithCacheParameterGroupName(const Aws::String& value) { SetCacheParameterGroupName(value); return *this;}
+
+    /**
+     * <p>The name of the cache parameter group to use with the Global datastore. It
+     * must be compatible with the major engine version used by the Global
+     * datastore.</p>
+     */
+    inline ModifyGlobalReplicationGroupRequest& WithCacheParameterGroupName(Aws::String&& value) { SetCacheParameterGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the cache parameter group to use with the Global datastore. It
+     * must be compatible with the major engine version used by the Global
+     * datastore.</p>
+     */
+    inline ModifyGlobalReplicationGroupRequest& WithCacheParameterGroupName(const char* value) { SetCacheParameterGroupName(value); return *this;}
+
+
+    /**
      * <p>A description of the Global Datastore</p>
      */
     inline const Aws::String& GetGlobalReplicationGroupDescription() const{ return m_globalReplicationGroupDescription; }
@@ -278,6 +335,9 @@ namespace Model
 
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
+    Aws::String m_cacheParameterGroupName;
+    bool m_cacheParameterGroupNameHasBeenSet;
 
     Aws::String m_globalReplicationGroupDescription;
     bool m_globalReplicationGroupDescriptionHasBeenSet;

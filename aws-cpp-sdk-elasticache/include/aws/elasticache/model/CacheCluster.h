@@ -99,55 +99,49 @@ namespace Model
 
 
     /**
-     * <p>Represents a Memcached cluster endpoint which, if Automatic Discovery is
-     * enabled on the cluster, can be used by an application to connect to any node in
-     * the cluster. The configuration endpoint will always have <code>.cfg</code> in
-     * it.</p> <p>Example:
+     * <p>Represents a Memcached cluster endpoint which can be used by an application
+     * to connect to any node in the cluster. The configuration endpoint will always
+     * have <code>.cfg</code> in it.</p> <p>Example:
      * <code>mem-3.9dvc4r<u>.cfg</u>.usw2.cache.amazonaws.com:11211</code> </p>
      */
     inline const Endpoint& GetConfigurationEndpoint() const{ return m_configurationEndpoint; }
 
     /**
-     * <p>Represents a Memcached cluster endpoint which, if Automatic Discovery is
-     * enabled on the cluster, can be used by an application to connect to any node in
-     * the cluster. The configuration endpoint will always have <code>.cfg</code> in
-     * it.</p> <p>Example:
+     * <p>Represents a Memcached cluster endpoint which can be used by an application
+     * to connect to any node in the cluster. The configuration endpoint will always
+     * have <code>.cfg</code> in it.</p> <p>Example:
      * <code>mem-3.9dvc4r<u>.cfg</u>.usw2.cache.amazonaws.com:11211</code> </p>
      */
     inline bool ConfigurationEndpointHasBeenSet() const { return m_configurationEndpointHasBeenSet; }
 
     /**
-     * <p>Represents a Memcached cluster endpoint which, if Automatic Discovery is
-     * enabled on the cluster, can be used by an application to connect to any node in
-     * the cluster. The configuration endpoint will always have <code>.cfg</code> in
-     * it.</p> <p>Example:
+     * <p>Represents a Memcached cluster endpoint which can be used by an application
+     * to connect to any node in the cluster. The configuration endpoint will always
+     * have <code>.cfg</code> in it.</p> <p>Example:
      * <code>mem-3.9dvc4r<u>.cfg</u>.usw2.cache.amazonaws.com:11211</code> </p>
      */
     inline void SetConfigurationEndpoint(const Endpoint& value) { m_configurationEndpointHasBeenSet = true; m_configurationEndpoint = value; }
 
     /**
-     * <p>Represents a Memcached cluster endpoint which, if Automatic Discovery is
-     * enabled on the cluster, can be used by an application to connect to any node in
-     * the cluster. The configuration endpoint will always have <code>.cfg</code> in
-     * it.</p> <p>Example:
+     * <p>Represents a Memcached cluster endpoint which can be used by an application
+     * to connect to any node in the cluster. The configuration endpoint will always
+     * have <code>.cfg</code> in it.</p> <p>Example:
      * <code>mem-3.9dvc4r<u>.cfg</u>.usw2.cache.amazonaws.com:11211</code> </p>
      */
     inline void SetConfigurationEndpoint(Endpoint&& value) { m_configurationEndpointHasBeenSet = true; m_configurationEndpoint = std::move(value); }
 
     /**
-     * <p>Represents a Memcached cluster endpoint which, if Automatic Discovery is
-     * enabled on the cluster, can be used by an application to connect to any node in
-     * the cluster. The configuration endpoint will always have <code>.cfg</code> in
-     * it.</p> <p>Example:
+     * <p>Represents a Memcached cluster endpoint which can be used by an application
+     * to connect to any node in the cluster. The configuration endpoint will always
+     * have <code>.cfg</code> in it.</p> <p>Example:
      * <code>mem-3.9dvc4r<u>.cfg</u>.usw2.cache.amazonaws.com:11211</code> </p>
      */
     inline CacheCluster& WithConfigurationEndpoint(const Endpoint& value) { SetConfigurationEndpoint(value); return *this;}
 
     /**
-     * <p>Represents a Memcached cluster endpoint which, if Automatic Discovery is
-     * enabled on the cluster, can be used by an application to connect to any node in
-     * the cluster. The configuration endpoint will always have <code>.cfg</code> in
-     * it.</p> <p>Example:
+     * <p>Represents a Memcached cluster endpoint which can be used by an application
+     * to connect to any node in the cluster. The configuration endpoint will always
+     * have <code>.cfg</code> in it.</p> <p>Example:
      * <code>mem-3.9dvc4r<u>.cfg</u>.usw2.cache.amazonaws.com:11211</code> </p>
      */
     inline CacheCluster& WithConfigurationEndpoint(Endpoint&& value) { SetConfigurationEndpoint(std::move(value)); return *this;}

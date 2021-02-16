@@ -39,76 +39,80 @@ namespace Model
 
 
     /**
-     * <p>The minimum number of worker nodes that the managed node group can scale in
-     * to. This number must be greater than zero.</p>
+     * <p>The minimum number of nodes that the managed node group can scale in to. This
+     * number must be greater than zero.</p>
      */
     inline int GetMinSize() const{ return m_minSize; }
 
     /**
-     * <p>The minimum number of worker nodes that the managed node group can scale in
-     * to. This number must be greater than zero.</p>
+     * <p>The minimum number of nodes that the managed node group can scale in to. This
+     * number must be greater than zero.</p>
      */
     inline bool MinSizeHasBeenSet() const { return m_minSizeHasBeenSet; }
 
     /**
-     * <p>The minimum number of worker nodes that the managed node group can scale in
-     * to. This number must be greater than zero.</p>
+     * <p>The minimum number of nodes that the managed node group can scale in to. This
+     * number must be greater than zero.</p>
      */
     inline void SetMinSize(int value) { m_minSizeHasBeenSet = true; m_minSize = value; }
 
     /**
-     * <p>The minimum number of worker nodes that the managed node group can scale in
-     * to. This number must be greater than zero.</p>
+     * <p>The minimum number of nodes that the managed node group can scale in to. This
+     * number must be greater than zero.</p>
      */
     inline NodegroupScalingConfig& WithMinSize(int value) { SetMinSize(value); return *this;}
 
 
     /**
-     * <p>The maximum number of worker nodes that the managed node group can scale out
-     * to. Managed node groups can support up to 100 nodes by default.</p>
+     * <p>The maximum number of nodes that the managed node group can scale out to. For
+     * information about the maximum number that you can specify, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon
+     * EKS service quotas</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline int GetMaxSize() const{ return m_maxSize; }
 
     /**
-     * <p>The maximum number of worker nodes that the managed node group can scale out
-     * to. Managed node groups can support up to 100 nodes by default.</p>
+     * <p>The maximum number of nodes that the managed node group can scale out to. For
+     * information about the maximum number that you can specify, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon
+     * EKS service quotas</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline bool MaxSizeHasBeenSet() const { return m_maxSizeHasBeenSet; }
 
     /**
-     * <p>The maximum number of worker nodes that the managed node group can scale out
-     * to. Managed node groups can support up to 100 nodes by default.</p>
+     * <p>The maximum number of nodes that the managed node group can scale out to. For
+     * information about the maximum number that you can specify, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon
+     * EKS service quotas</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetMaxSize(int value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
 
     /**
-     * <p>The maximum number of worker nodes that the managed node group can scale out
-     * to. Managed node groups can support up to 100 nodes by default.</p>
+     * <p>The maximum number of nodes that the managed node group can scale out to. For
+     * information about the maximum number that you can specify, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon
+     * EKS service quotas</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline NodegroupScalingConfig& WithMaxSize(int value) { SetMaxSize(value); return *this;}
 
 
     /**
-     * <p>The current number of worker nodes that the managed node group should
-     * maintain.</p>
+     * <p>The current number of nodes that the managed node group should maintain.</p>
      */
     inline int GetDesiredSize() const{ return m_desiredSize; }
 
     /**
-     * <p>The current number of worker nodes that the managed node group should
-     * maintain.</p>
+     * <p>The current number of nodes that the managed node group should maintain.</p>
      */
     inline bool DesiredSizeHasBeenSet() const { return m_desiredSizeHasBeenSet; }
 
     /**
-     * <p>The current number of worker nodes that the managed node group should
-     * maintain.</p>
+     * <p>The current number of nodes that the managed node group should maintain.</p>
      */
     inline void SetDesiredSize(int value) { m_desiredSizeHasBeenSet = true; m_desiredSize = value; }
 
     /**
-     * <p>The current number of worker nodes that the managed node group should
-     * maintain.</p>
+     * <p>The current number of nodes that the managed node group should maintain.</p>
      */
     inline NodegroupScalingConfig& WithDesiredSize(int value) { SetDesiredSize(value); return *this;}
 

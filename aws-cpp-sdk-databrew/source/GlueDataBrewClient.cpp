@@ -34,6 +34,7 @@
 #include <aws/databrew/model/DeleteScheduleRequest.h>
 #include <aws/databrew/model/DescribeDatasetRequest.h>
 #include <aws/databrew/model/DescribeJobRequest.h>
+#include <aws/databrew/model/DescribeJobRunRequest.h>
 #include <aws/databrew/model/DescribeProjectRequest.h>
 #include <aws/databrew/model/DescribeRecipeRequest.h>
 #include <aws/databrew/model/DescribeScheduleRequest.h>
@@ -564,6 +565,46 @@ void GlueDataBrewClient::DescribeJobAsync(const DescribeJobRequest& request, con
 void GlueDataBrewClient::DescribeJobAsyncHelper(const DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeJob(request), context);
+}
+
+DescribeJobRunOutcome GlueDataBrewClient::DescribeJobRun(const DescribeJobRunRequest& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeJobRun", "Required field: Name, is not set");
+    return DescribeJobRunOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.RunIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeJobRun", "Required field: RunId, is not set");
+    return DescribeJobRunOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RunId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/jobs/";
+  ss << request.GetName();
+  ss << "/jobRun/";
+  ss << request.GetRunId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeJobRunOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeJobRunOutcomeCallable GlueDataBrewClient::DescribeJobRunCallable(const DescribeJobRunRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeJobRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeJobRun(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueDataBrewClient::DescribeJobRunAsync(const DescribeJobRunRequest& request, const DescribeJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeJobRunAsyncHelper( request, handler, context ); } );
+}
+
+void GlueDataBrewClient::DescribeJobRunAsyncHelper(const DescribeJobRunRequest& request, const DescribeJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeJobRun(request), context);
 }
 
 DescribeProjectOutcome GlueDataBrewClient::DescribeProject(const DescribeProjectRequest& request) const

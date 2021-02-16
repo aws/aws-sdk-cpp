@@ -42,6 +42,7 @@ ResourceDetails::ResourceDetails() :
     m_awsApiGatewayStageHasBeenSet(false),
     m_awsApiGatewayRestApiHasBeenSet(false),
     m_awsCloudTrailTrailHasBeenSet(false),
+    m_awsSsmPatchComplianceHasBeenSet(false),
     m_awsCertificateManagerCertificateHasBeenSet(false),
     m_awsRedshiftClusterHasBeenSet(false),
     m_awsElbLoadBalancerHasBeenSet(false),
@@ -86,6 +87,7 @@ ResourceDetails::ResourceDetails(JsonView jsonValue) :
     m_awsApiGatewayStageHasBeenSet(false),
     m_awsApiGatewayRestApiHasBeenSet(false),
     m_awsCloudTrailTrailHasBeenSet(false),
+    m_awsSsmPatchComplianceHasBeenSet(false),
     m_awsCertificateManagerCertificateHasBeenSet(false),
     m_awsRedshiftClusterHasBeenSet(false),
     m_awsElbLoadBalancerHasBeenSet(false),
@@ -268,6 +270,13 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsCloudTrailTrail = jsonValue.GetObject("AwsCloudTrailTrail");
 
     m_awsCloudTrailTrailHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsSsmPatchCompliance"))
+  {
+    m_awsSsmPatchCompliance = jsonValue.GetObject("AwsSsmPatchCompliance");
+
+    m_awsSsmPatchComplianceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AwsCertificateManagerCertificate"))
@@ -534,6 +543,12 @@ JsonValue ResourceDetails::Jsonize() const
   if(m_awsCloudTrailTrailHasBeenSet)
   {
    payload.WithObject("AwsCloudTrailTrail", m_awsCloudTrailTrail.Jsonize());
+
+  }
+
+  if(m_awsSsmPatchComplianceHasBeenSet)
+  {
+   payload.WithObject("AwsSsmPatchCompliance", m_awsSsmPatchCompliance.Jsonize());
 
   }
 

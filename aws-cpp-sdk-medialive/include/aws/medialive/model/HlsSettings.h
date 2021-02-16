@@ -7,6 +7,7 @@
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/AudioOnlyHlsSettings.h>
 #include <aws/medialive/model/Fmp4HlsSettings.h>
+#include <aws/medialive/model/FrameCaptureHlsSettings.h>
 #include <aws/medialive/model/StandardHlsSettings.h>
 #include <utility>
 
@@ -78,6 +79,25 @@ namespace Model
 
 
     
+    inline const FrameCaptureHlsSettings& GetFrameCaptureHlsSettings() const{ return m_frameCaptureHlsSettings; }
+
+    
+    inline bool FrameCaptureHlsSettingsHasBeenSet() const { return m_frameCaptureHlsSettingsHasBeenSet; }
+
+    
+    inline void SetFrameCaptureHlsSettings(const FrameCaptureHlsSettings& value) { m_frameCaptureHlsSettingsHasBeenSet = true; m_frameCaptureHlsSettings = value; }
+
+    
+    inline void SetFrameCaptureHlsSettings(FrameCaptureHlsSettings&& value) { m_frameCaptureHlsSettingsHasBeenSet = true; m_frameCaptureHlsSettings = std::move(value); }
+
+    
+    inline HlsSettings& WithFrameCaptureHlsSettings(const FrameCaptureHlsSettings& value) { SetFrameCaptureHlsSettings(value); return *this;}
+
+    
+    inline HlsSettings& WithFrameCaptureHlsSettings(FrameCaptureHlsSettings&& value) { SetFrameCaptureHlsSettings(std::move(value)); return *this;}
+
+
+    
     inline const StandardHlsSettings& GetStandardHlsSettings() const{ return m_standardHlsSettings; }
 
     
@@ -102,6 +122,9 @@ namespace Model
 
     Fmp4HlsSettings m_fmp4HlsSettings;
     bool m_fmp4HlsSettingsHasBeenSet;
+
+    FrameCaptureHlsSettings m_frameCaptureHlsSettings;
+    bool m_frameCaptureHlsSettingsHasBeenSet;
 
     StandardHlsSettings m_standardHlsSettings;
     bool m_standardHlsSettingsHasBeenSet;

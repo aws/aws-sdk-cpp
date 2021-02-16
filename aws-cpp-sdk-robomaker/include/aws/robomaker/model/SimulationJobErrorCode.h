@@ -42,7 +42,8 @@ namespace Model
     WrongRegionS3Bucket,
     WrongRegionS3Output,
     WrongRegionRobotApplication,
-    WrongRegionSimulationApplication
+    WrongRegionSimulationApplication,
+    UploadContentMismatchError
   };
 
 namespace SimulationJobErrorCodeMapper

@@ -4013,6 +4013,12 @@ Aws::String S3Client::GeneratePresignedUrlWithSSEC(const Aws::String& bucket, co
 
 ComputeEndpointOutcome S3Client::ComputeEndpointString(const Aws::String& bucketOrArn) const
 {
+    if (m_useDualStack && m_useCustomEndpoint)
+    {
+        return ComputeEndpointOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::VALIDATION, "VALIDATION",
+            "Dual-stack endpoint is incompatible with a custom endpoint override.", false));
+    }
+
     Aws::StringStream ss;
     ss << m_scheme << "://";
     Aws::String bucket = bucketOrArn;
@@ -4021,12 +4027,6 @@ ComputeEndpointOutcome S3Client::ComputeEndpointString(const Aws::String& bucket
 
     if (arn)
     {
-        if (m_useCustomEndpoint)
-        {
-            return ComputeEndpointOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::VALIDATION, "VALIDATION",
-                "Custom endpoint is not compatible with Access Point ARN or Outposts ARN in Bucket field.", false));
-        }
-
         if (!m_useVirtualAddressing)
         {
             return ComputeEndpointOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::VALIDATION, "VALIDATION",
@@ -4041,7 +4041,7 @@ ComputeEndpointOutcome S3Client::ComputeEndpointString(const Aws::String& bucket
         signerRegion = m_useArnRegion ? arn.GetRegion() : signerRegion;
         if (arn.GetResourceType() == ARNResourceType::ACCESSPOINT)
         {
-            ss << S3Endpoint::ForAccessPointArn(arn, m_useArnRegion ? "" : m_region, m_useDualStack);
+            ss << S3Endpoint::ForAccessPointArn(arn, m_useArnRegion ? "" : m_region, m_useDualStack, m_useCustomEndpoint ? m_baseUri : "");
             return ComputeEndpointOutcome(ComputeEndpointResult(ss.str(), signerRegion, SERVICE_NAME));
         }
         else if (arn.GetResourceType() == ARNResourceType::OUTPOST)
@@ -4051,7 +4051,7 @@ ComputeEndpointOutcome S3Client::ComputeEndpointString(const Aws::String& bucket
                 return ComputeEndpointOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::VALIDATION, "VALIDATION",
                     "Outposts Access Points do not support dualstack right now.", false));
             }
-            ss << S3Endpoint::ForOutpostsArn(arn, m_useArnRegion ? "" : m_region);
+            ss << S3Endpoint::ForOutpostsArn(arn, m_useArnRegion ? "" : m_region, m_useDualStack, m_useCustomEndpoint ? m_baseUri : "");
             return ComputeEndpointOutcome(ComputeEndpointResult(ss.str(), signerRegion, "s3-outposts"));
         }
     }
@@ -4074,6 +4074,11 @@ ComputeEndpointOutcome S3Client::ComputeEndpointString(const Aws::String& bucket
 
 ComputeEndpointOutcome S3Client::ComputeEndpointString() const
 {
+    if (m_useDualStack && m_useCustomEndpoint)
+    {
+        return ComputeEndpointOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::VALIDATION, "VALIDATION",
+            "Dual-stack endpoint is incompatible with a custom endpoint override.", false));
+    }
     Aws::StringStream ss;
     ss << m_scheme << "://" << m_baseUri;
     return ComputeEndpointOutcome(ComputeEndpointResult(ss.str(), Aws::Region::ComputeSignerRegion(m_region), SERVICE_NAME));

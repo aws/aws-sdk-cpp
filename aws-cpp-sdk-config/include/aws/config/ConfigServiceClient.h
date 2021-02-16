@@ -1093,16 +1093,16 @@ namespace Model
         virtual void DeleteRetentionConfigurationAsync(const Model::DeleteRetentionConfigurationRequest& request, const DeleteRetentionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the stored query for an AWS account in an AWS Region. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the stored query for a single AWS account and a single AWS
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteStoredQuery">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteStoredQueryOutcome DeleteStoredQuery(const Model::DeleteStoredQueryRequest& request) const;
 
         /**
-         * <p>Deletes the stored query for an AWS account in an AWS Region. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the stored query for a single AWS account and a single AWS
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteStoredQuery">AWS
          * API Reference</a></p>
          *
@@ -1111,8 +1111,8 @@ namespace Model
         virtual Model::DeleteStoredQueryOutcomeCallable DeleteStoredQueryCallable(const Model::DeleteStoredQueryRequest& request) const;
 
         /**
-         * <p>Deletes the stored query for an AWS account in an AWS Region. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the stored query for a single AWS account and a single AWS
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteStoredQuery">AWS
          * API Reference</a></p>
          *
@@ -2776,16 +2776,16 @@ namespace Model
         virtual void ListDiscoveredResourcesAsync(const Model::ListDiscoveredResourcesRequest& request, const ListDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List the stored queries for an AWS account in an AWS Region. The default is
-         * 100. </p><p><h3>See Also:</h3>   <a
+         * <p>Lists the stored queries for a single AWS account and a single AWS Region.
+         * The default is 100. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListStoredQueries">AWS
          * API Reference</a></p>
          */
         virtual Model::ListStoredQueriesOutcome ListStoredQueries(const Model::ListStoredQueriesRequest& request) const;
 
         /**
-         * <p>List the stored queries for an AWS account in an AWS Region. The default is
-         * 100. </p><p><h3>See Also:</h3>   <a
+         * <p>Lists the stored queries for a single AWS account and a single AWS Region.
+         * The default is 100. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListStoredQueries">AWS
          * API Reference</a></p>
          *
@@ -2794,8 +2794,8 @@ namespace Model
         virtual Model::ListStoredQueriesOutcomeCallable ListStoredQueriesCallable(const Model::ListStoredQueriesRequest& request) const;
 
         /**
-         * <p>List the stored queries for an AWS account in an AWS Region. The default is
-         * 100. </p><p><h3>See Also:</h3>   <a
+         * <p>Lists the stored queries for a single AWS account and a single AWS Region.
+         * The default is 100. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListStoredQueries">AWS
          * API Reference</a></p>
          *
@@ -2971,11 +2971,21 @@ namespace Model
         /**
          * <p>Creates and updates the configuration aggregator with the selected source
          * accounts and regions. The source account can be individual account(s) or an
-         * organization.</p>  <p>AWS Config should be enabled in source accounts and
-         * regions you want to aggregate.</p> <p>If your source type is an organization,
-         * you must be signed in to the master account and all features must be enabled in
-         * your organization. AWS Config calls <code>EnableAwsServiceAccess</code> API to
-         * enable integration between AWS Config and AWS Organizations. </p>
+         * organization.</p> <p> <code>accountIds</code> that are passed will be replaced
+         * with existing accounts. If you want to add additional accounts into the
+         * aggregator, call <code>DescribeAggregator</code> to get the previous accounts
+         * and then append new ones.</p>  <p>AWS Config should be enabled in source
+         * accounts and regions you want to aggregate.</p> <p>If your source type is an
+         * organization, you must be signed in to the management account or a registered
+         * delegated administrator and all the features must be enabled in your
+         * organization. If the caller is a management account, AWS Config calls
+         * <code>EnableAwsServiceAccess</code> API to enable integration between AWS Config
+         * and AWS Organizations. If the caller is a registered delegated administrator,
+         * AWS Config calls <code>ListDelegatedAdministrators</code> API to verify whether
+         * the caller is a valid delegated administrator.</p> <p>To register a delegated
+         * administrator, see <a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/set-up-aggregator-cli.html#register-a-delegated-administrator-cli">Register
+         * a Delegated Administrator</a> in the AWS Config developer guide. </p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationAggregator">AWS
          * API Reference</a></p>
@@ -2985,11 +2995,21 @@ namespace Model
         /**
          * <p>Creates and updates the configuration aggregator with the selected source
          * accounts and regions. The source account can be individual account(s) or an
-         * organization.</p>  <p>AWS Config should be enabled in source accounts and
-         * regions you want to aggregate.</p> <p>If your source type is an organization,
-         * you must be signed in to the master account and all features must be enabled in
-         * your organization. AWS Config calls <code>EnableAwsServiceAccess</code> API to
-         * enable integration between AWS Config and AWS Organizations. </p>
+         * organization.</p> <p> <code>accountIds</code> that are passed will be replaced
+         * with existing accounts. If you want to add additional accounts into the
+         * aggregator, call <code>DescribeAggregator</code> to get the previous accounts
+         * and then append new ones.</p>  <p>AWS Config should be enabled in source
+         * accounts and regions you want to aggregate.</p> <p>If your source type is an
+         * organization, you must be signed in to the management account or a registered
+         * delegated administrator and all the features must be enabled in your
+         * organization. If the caller is a management account, AWS Config calls
+         * <code>EnableAwsServiceAccess</code> API to enable integration between AWS Config
+         * and AWS Organizations. If the caller is a registered delegated administrator,
+         * AWS Config calls <code>ListDelegatedAdministrators</code> API to verify whether
+         * the caller is a valid delegated administrator.</p> <p>To register a delegated
+         * administrator, see <a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/set-up-aggregator-cli.html#register-a-delegated-administrator-cli">Register
+         * a Delegated Administrator</a> in the AWS Config developer guide. </p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationAggregator">AWS
          * API Reference</a></p>
@@ -3001,11 +3021,21 @@ namespace Model
         /**
          * <p>Creates and updates the configuration aggregator with the selected source
          * accounts and regions. The source account can be individual account(s) or an
-         * organization.</p>  <p>AWS Config should be enabled in source accounts and
-         * regions you want to aggregate.</p> <p>If your source type is an organization,
-         * you must be signed in to the master account and all features must be enabled in
-         * your organization. AWS Config calls <code>EnableAwsServiceAccess</code> API to
-         * enable integration between AWS Config and AWS Organizations. </p>
+         * organization.</p> <p> <code>accountIds</code> that are passed will be replaced
+         * with existing accounts. If you want to add additional accounts into the
+         * aggregator, call <code>DescribeAggregator</code> to get the previous accounts
+         * and then append new ones.</p>  <p>AWS Config should be enabled in source
+         * accounts and regions you want to aggregate.</p> <p>If your source type is an
+         * organization, you must be signed in to the management account or a registered
+         * delegated administrator and all the features must be enabled in your
+         * organization. If the caller is a management account, AWS Config calls
+         * <code>EnableAwsServiceAccess</code> API to enable integration between AWS Config
+         * and AWS Organizations. If the caller is a registered delegated administrator,
+         * AWS Config calls <code>ListDelegatedAdministrators</code> API to verify whether
+         * the caller is a valid delegated administrator.</p> <p>To register a delegated
+         * administrator, see <a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/set-up-aggregator-cli.html#register-a-delegated-administrator-cli">Register
+         * a Delegated Administrator</a> in the AWS Config developer guide. </p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationAggregator">AWS
          * API Reference</a></p>
@@ -3196,19 +3226,31 @@ namespace Model
         virtual void PutEvaluationsAsync(const Model::PutEvaluationsRequest& request, const PutEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Add or updates the evaluations for process checks. This API checks if the
+         * rule is a process check when the name of the AWS Config rule is
+         * provided.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutExternalEvaluation">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutExternalEvaluationOutcome PutExternalEvaluation(const Model::PutExternalEvaluationRequest& request) const;
 
         /**
-         * 
+         * <p>Add or updates the evaluations for process checks. This API checks if the
+         * rule is a process check when the name of the AWS Config rule is
+         * provided.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutExternalEvaluation">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutExternalEvaluationOutcomeCallable PutExternalEvaluationCallable(const Model::PutExternalEvaluationRequest& request) const;
 
         /**
-         * 
+         * <p>Add or updates the evaluations for process checks. This API checks if the
+         * rule is a process check when the name of the AWS Config rule is
+         * provided.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutExternalEvaluation">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -3471,7 +3513,7 @@ namespace Model
 
         /**
          * <p>A remediation exception is when a specific resource is no longer considered
-         * for auto-remediation. This API adds a new exception or updates an exisiting
+         * for auto-remediation. This API adds a new exception or updates an existing
          * exception for a specific resource with a specific AWS Config rule. </p> 
          * <p>AWS Config generates a remediation exception when a problem occurs executing
          * a remediation action to a specific resource. Remediation exceptions blocks
@@ -3484,7 +3526,7 @@ namespace Model
 
         /**
          * <p>A remediation exception is when a specific resource is no longer considered
-         * for auto-remediation. This API adds a new exception or updates an exisiting
+         * for auto-remediation. This API adds a new exception or updates an existing
          * exception for a specific resource with a specific AWS Config rule. </p> 
          * <p>AWS Config generates a remediation exception when a problem occurs executing
          * a remediation action to a specific resource. Remediation exceptions blocks
@@ -3499,7 +3541,7 @@ namespace Model
 
         /**
          * <p>A remediation exception is when a specific resource is no longer considered
-         * for auto-remediation. This API adds a new exception or updates an exisiting
+         * for auto-remediation. This API adds a new exception or updates an existing
          * exception for a specific resource with a specific AWS Config rule. </p> 
          * <p>AWS Config generates a remediation exception when a problem occurs executing
          * a remediation action to a specific resource. Remediation exceptions blocks
@@ -3612,9 +3654,9 @@ namespace Model
 
         /**
          * <p>Saves a new query or updates an existing saved query. The
-         * <code>QueryName</code> must be unique for an AWS account in an AWS Region. You
-         * can create upto 300 queries in an AWS account in an AWS Region.</p><p><h3>See
-         * Also:</h3>   <a
+         * <code>QueryName</code> must be unique for a single AWS account and a single AWS
+         * Region. You can create upto 300 queries in a single AWS account and a single AWS
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutStoredQuery">AWS
          * API Reference</a></p>
          */
@@ -3622,9 +3664,9 @@ namespace Model
 
         /**
          * <p>Saves a new query or updates an existing saved query. The
-         * <code>QueryName</code> must be unique for an AWS account in an AWS Region. You
-         * can create upto 300 queries in an AWS account in an AWS Region.</p><p><h3>See
-         * Also:</h3>   <a
+         * <code>QueryName</code> must be unique for a single AWS account and a single AWS
+         * Region. You can create upto 300 queries in a single AWS account and a single AWS
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutStoredQuery">AWS
          * API Reference</a></p>
          *
@@ -3634,9 +3676,9 @@ namespace Model
 
         /**
          * <p>Saves a new query or updates an existing saved query. The
-         * <code>QueryName</code> must be unique for an AWS account in an AWS Region. You
-         * can create upto 300 queries in an AWS account in an AWS Region.</p><p><h3>See
-         * Also:</h3>   <a
+         * <code>QueryName</code> must be unique for a single AWS account and a single AWS
+         * Region. You can create upto 300 queries in a single AWS account and a single AWS
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutStoredQuery">AWS
          * API Reference</a></p>
          *

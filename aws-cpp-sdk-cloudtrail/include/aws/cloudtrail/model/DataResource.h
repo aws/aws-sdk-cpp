@@ -77,56 +77,72 @@ namespace Model
     /**
      * <p>The resource type in which you want to log data events. You can specify
      * <code>AWS::S3::Object</code> or <code>AWS::Lambda::Function</code>
-     * resources.</p>
+     * resources.</p> <p>The <code>AWS::S3Outposts::Object</code> resource type is not
+     * valid in basic event selectors. To log data events on this resource type, use
+     * advanced event selectors.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
      * <p>The resource type in which you want to log data events. You can specify
      * <code>AWS::S3::Object</code> or <code>AWS::Lambda::Function</code>
-     * resources.</p>
+     * resources.</p> <p>The <code>AWS::S3Outposts::Object</code> resource type is not
+     * valid in basic event selectors. To log data events on this resource type, use
+     * advanced event selectors.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The resource type in which you want to log data events. You can specify
      * <code>AWS::S3::Object</code> or <code>AWS::Lambda::Function</code>
-     * resources.</p>
+     * resources.</p> <p>The <code>AWS::S3Outposts::Object</code> resource type is not
+     * valid in basic event selectors. To log data events on this resource type, use
+     * advanced event selectors.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The resource type in which you want to log data events. You can specify
      * <code>AWS::S3::Object</code> or <code>AWS::Lambda::Function</code>
-     * resources.</p>
+     * resources.</p> <p>The <code>AWS::S3Outposts::Object</code> resource type is not
+     * valid in basic event selectors. To log data events on this resource type, use
+     * advanced event selectors.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The resource type in which you want to log data events. You can specify
      * <code>AWS::S3::Object</code> or <code>AWS::Lambda::Function</code>
-     * resources.</p>
+     * resources.</p> <p>The <code>AWS::S3Outposts::Object</code> resource type is not
+     * valid in basic event selectors. To log data events on this resource type, use
+     * advanced event selectors.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
      * <p>The resource type in which you want to log data events. You can specify
      * <code>AWS::S3::Object</code> or <code>AWS::Lambda::Function</code>
-     * resources.</p>
+     * resources.</p> <p>The <code>AWS::S3Outposts::Object</code> resource type is not
+     * valid in basic event selectors. To log data events on this resource type, use
+     * advanced event selectors.</p>
      */
     inline DataResource& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
      * <p>The resource type in which you want to log data events. You can specify
      * <code>AWS::S3::Object</code> or <code>AWS::Lambda::Function</code>
-     * resources.</p>
+     * resources.</p> <p>The <code>AWS::S3Outposts::Object</code> resource type is not
+     * valid in basic event selectors. To log data events on this resource type, use
+     * advanced event selectors.</p>
      */
     inline DataResource& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The resource type in which you want to log data events. You can specify
      * <code>AWS::S3::Object</code> or <code>AWS::Lambda::Function</code>
-     * resources.</p>
+     * resources.</p> <p>The <code>AWS::S3Outposts::Object</code> resource type is not
+     * valid in basic event selectors. To log data events on this resource type, use
+     * advanced event selectors.</p>
      */
     inline DataResource& WithType(const char* value) { SetType(value); return *this;}
 

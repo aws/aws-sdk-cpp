@@ -76,29 +76,29 @@ namespace Model
 
     /**
      * <p>The transmit mode to use to send data to the wireless device. Can be:
-     * <code>0</code> for UM (unacknowledge mode), <code>1</code> for AM (acknowledge
-     * mode), or <code>2</code> for (TM) transparent mode.</p>
+     * <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge
+     * mode).</p>
      */
     inline int GetTransmitMode() const{ return m_transmitMode; }
 
     /**
      * <p>The transmit mode to use to send data to the wireless device. Can be:
-     * <code>0</code> for UM (unacknowledge mode), <code>1</code> for AM (acknowledge
-     * mode), or <code>2</code> for (TM) transparent mode.</p>
+     * <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge
+     * mode).</p>
      */
     inline bool TransmitModeHasBeenSet() const { return m_transmitModeHasBeenSet; }
 
     /**
      * <p>The transmit mode to use to send data to the wireless device. Can be:
-     * <code>0</code> for UM (unacknowledge mode), <code>1</code> for AM (acknowledge
-     * mode), or <code>2</code> for (TM) transparent mode.</p>
+     * <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge
+     * mode).</p>
      */
     inline void SetTransmitMode(int value) { m_transmitModeHasBeenSet = true; m_transmitMode = value; }
 
     /**
      * <p>The transmit mode to use to send data to the wireless device. Can be:
-     * <code>0</code> for UM (unacknowledge mode), <code>1</code> for AM (acknowledge
-     * mode), or <code>2</code> for (TM) transparent mode.</p>
+     * <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge
+     * mode).</p>
      */
     inline SendDataToWirelessDeviceRequest& WithTransmitMode(int value) { SetTransmitMode(value); return *this;}
 

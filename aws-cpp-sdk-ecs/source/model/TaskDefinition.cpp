@@ -42,7 +42,10 @@ TaskDefinition::TaskDefinition() :
     m_pidModeHasBeenSet(false),
     m_ipcMode(IpcMode::NOT_SET),
     m_ipcModeHasBeenSet(false),
-    m_proxyConfigurationHasBeenSet(false)
+    m_proxyConfigurationHasBeenSet(false),
+    m_registeredAtHasBeenSet(false),
+    m_deregisteredAtHasBeenSet(false),
+    m_registeredByHasBeenSet(false)
 {
 }
 
@@ -70,7 +73,10 @@ TaskDefinition::TaskDefinition(JsonView jsonValue) :
     m_pidModeHasBeenSet(false),
     m_ipcMode(IpcMode::NOT_SET),
     m_ipcModeHasBeenSet(false),
-    m_proxyConfigurationHasBeenSet(false)
+    m_proxyConfigurationHasBeenSet(false),
+    m_registeredAtHasBeenSet(false),
+    m_deregisteredAtHasBeenSet(false),
+    m_registeredByHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -231,6 +237,27 @@ TaskDefinition& TaskDefinition::operator =(JsonView jsonValue)
     m_proxyConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("registeredAt"))
+  {
+    m_registeredAt = jsonValue.GetDouble("registeredAt");
+
+    m_registeredAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("deregisteredAt"))
+  {
+    m_deregisteredAt = jsonValue.GetDouble("deregisteredAt");
+
+    m_deregisteredAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("registeredBy"))
+  {
+    m_registeredBy = jsonValue.GetString("registeredBy");
+
+    m_registeredByHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -380,6 +407,22 @@ JsonValue TaskDefinition::Jsonize() const
   if(m_proxyConfigurationHasBeenSet)
   {
    payload.WithObject("proxyConfiguration", m_proxyConfiguration.Jsonize());
+
+  }
+
+  if(m_registeredAtHasBeenSet)
+  {
+   payload.WithDouble("registeredAt", m_registeredAt.SecondsWithMSPrecision());
+  }
+
+  if(m_deregisteredAtHasBeenSet)
+  {
+   payload.WithDouble("deregisteredAt", m_deregisteredAt.SecondsWithMSPrecision());
+  }
+
+  if(m_registeredByHasBeenSet)
+  {
+   payload.WithString("registeredBy", m_registeredBy);
 
   }
 

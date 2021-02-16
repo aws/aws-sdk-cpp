@@ -63,6 +63,9 @@ namespace Aws
         static const int FORWARDED_IP_CONFIG_HASH = HashingUtils::HashString("FORWARDED_IP_CONFIG");
         static const int IP_SET_FORWARDED_IP_CONFIG_HASH = HashingUtils::HashString("IP_SET_FORWARDED_IP_CONFIG");
         static const int HEADER_NAME_HASH = HashingUtils::HashString("HEADER_NAME");
+        static const int JSON_MATCH_PATTERN_HASH = HashingUtils::HashString("JSON_MATCH_PATTERN");
+        static const int JSON_MATCH_SCOPE_HASH = HashingUtils::HashString("JSON_MATCH_SCOPE");
+        static const int BODY_PARSING_FALLBACK_BEHAVIOR_HASH = HashingUtils::HashString("BODY_PARSING_FALLBACK_BEHAVIOR");
 
 
         ParameterExceptionField GetParameterExceptionFieldForName(const Aws::String& name)
@@ -240,6 +243,18 @@ namespace Aws
           {
             return ParameterExceptionField::HEADER_NAME;
           }
+          else if (hashCode == JSON_MATCH_PATTERN_HASH)
+          {
+            return ParameterExceptionField::JSON_MATCH_PATTERN;
+          }
+          else if (hashCode == JSON_MATCH_SCOPE_HASH)
+          {
+            return ParameterExceptionField::JSON_MATCH_SCOPE;
+          }
+          else if (hashCode == BODY_PARSING_FALLBACK_BEHAVIOR_HASH)
+          {
+            return ParameterExceptionField::BODY_PARSING_FALLBACK_BEHAVIOR;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -340,6 +355,12 @@ namespace Aws
             return "IP_SET_FORWARDED_IP_CONFIG";
           case ParameterExceptionField::HEADER_NAME:
             return "HEADER_NAME";
+          case ParameterExceptionField::JSON_MATCH_PATTERN:
+            return "JSON_MATCH_PATTERN";
+          case ParameterExceptionField::JSON_MATCH_SCOPE:
+            return "JSON_MATCH_SCOPE";
+          case ParameterExceptionField::BODY_PARSING_FALLBACK_BEHAVIOR:
+            return "BODY_PARSING_FALLBACK_BEHAVIOR";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

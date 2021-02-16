@@ -145,6 +145,7 @@
 #include <aws/ec2/model/DeregisterTransitGatewayMulticastGroupSourcesResponse.h>
 #include <aws/ec2/model/DescribeAccountAttributesResponse.h>
 #include <aws/ec2/model/DescribeAddressesResponse.h>
+#include <aws/ec2/model/DescribeAddressesAttributeResponse.h>
 #include <aws/ec2/model/DescribeAggregateIdFormatResponse.h>
 #include <aws/ec2/model/DescribeAvailabilityZonesResponse.h>
 #include <aws/ec2/model/DescribeBundleTasksResponse.h>
@@ -312,6 +313,7 @@
 #include <aws/ec2/model/ImportKeyPairResponse.h>
 #include <aws/ec2/model/ImportSnapshotResponse.h>
 #include <aws/ec2/model/ImportVolumeResponse.h>
+#include <aws/ec2/model/ModifyAddressAttributeResponse.h>
 #include <aws/ec2/model/ModifyAvailabilityZoneGroupResponse.h>
 #include <aws/ec2/model/ModifyCapacityReservationResponse.h>
 #include <aws/ec2/model/ModifyClientVpnEndpointResponse.h>
@@ -368,6 +370,7 @@
 #include <aws/ec2/model/ReplaceTransitGatewayRouteResponse.h>
 #include <aws/ec2/model/RequestSpotFleetResponse.h>
 #include <aws/ec2/model/RequestSpotInstancesResponse.h>
+#include <aws/ec2/model/ResetAddressAttributeResponse.h>
 #include <aws/ec2/model/ResetEbsDefaultKmsKeyIdResponse.h>
 #include <aws/ec2/model/ResetFpgaImageAttributeResponse.h>
 #include <aws/ec2/model/RestoreAddressToClassicResponse.h>
@@ -600,6 +603,7 @@ namespace Model
         class DeregisterTransitGatewayMulticastGroupSourcesRequest;
         class DescribeAccountAttributesRequest;
         class DescribeAddressesRequest;
+        class DescribeAddressesAttributeRequest;
         class DescribeAggregateIdFormatRequest;
         class DescribeAvailabilityZonesRequest;
         class DescribeBundleTasksRequest;
@@ -775,6 +779,7 @@ namespace Model
         class ImportKeyPairRequest;
         class ImportSnapshotRequest;
         class ImportVolumeRequest;
+        class ModifyAddressAttributeRequest;
         class ModifyAvailabilityZoneGroupRequest;
         class ModifyCapacityReservationRequest;
         class ModifyClientVpnEndpointRequest;
@@ -845,6 +850,7 @@ namespace Model
         class ReportInstanceStatusRequest;
         class RequestSpotFleetRequest;
         class RequestSpotInstancesRequest;
+        class ResetAddressAttributeRequest;
         class ResetEbsDefaultKmsKeyIdRequest;
         class ResetFpgaImageAttributeRequest;
         class ResetImageAttributeRequest;
@@ -1038,6 +1044,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeregisterTransitGatewayMulticastGroupSourcesResponse, EC2Error> DeregisterTransitGatewayMulticastGroupSourcesOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountAttributesResponse, EC2Error> DescribeAccountAttributesOutcome;
         typedef Aws::Utils::Outcome<DescribeAddressesResponse, EC2Error> DescribeAddressesOutcome;
+        typedef Aws::Utils::Outcome<DescribeAddressesAttributeResponse, EC2Error> DescribeAddressesAttributeOutcome;
         typedef Aws::Utils::Outcome<DescribeAggregateIdFormatResponse, EC2Error> DescribeAggregateIdFormatOutcome;
         typedef Aws::Utils::Outcome<DescribeAvailabilityZonesResponse, EC2Error> DescribeAvailabilityZonesOutcome;
         typedef Aws::Utils::Outcome<DescribeBundleTasksResponse, EC2Error> DescribeBundleTasksOutcome;
@@ -1213,6 +1220,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ImportKeyPairResponse, EC2Error> ImportKeyPairOutcome;
         typedef Aws::Utils::Outcome<ImportSnapshotResponse, EC2Error> ImportSnapshotOutcome;
         typedef Aws::Utils::Outcome<ImportVolumeResponse, EC2Error> ImportVolumeOutcome;
+        typedef Aws::Utils::Outcome<ModifyAddressAttributeResponse, EC2Error> ModifyAddressAttributeOutcome;
         typedef Aws::Utils::Outcome<ModifyAvailabilityZoneGroupResponse, EC2Error> ModifyAvailabilityZoneGroupOutcome;
         typedef Aws::Utils::Outcome<ModifyCapacityReservationResponse, EC2Error> ModifyCapacityReservationOutcome;
         typedef Aws::Utils::Outcome<ModifyClientVpnEndpointResponse, EC2Error> ModifyClientVpnEndpointOutcome;
@@ -1283,6 +1291,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> ReportInstanceStatusOutcome;
         typedef Aws::Utils::Outcome<RequestSpotFleetResponse, EC2Error> RequestSpotFleetOutcome;
         typedef Aws::Utils::Outcome<RequestSpotInstancesResponse, EC2Error> RequestSpotInstancesOutcome;
+        typedef Aws::Utils::Outcome<ResetAddressAttributeResponse, EC2Error> ResetAddressAttributeOutcome;
         typedef Aws::Utils::Outcome<ResetEbsDefaultKmsKeyIdResponse, EC2Error> ResetEbsDefaultKmsKeyIdOutcome;
         typedef Aws::Utils::Outcome<ResetFpgaImageAttributeResponse, EC2Error> ResetFpgaImageAttributeOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> ResetImageAttributeOutcome;
@@ -1476,6 +1485,7 @@ namespace Model
         typedef std::future<DeregisterTransitGatewayMulticastGroupSourcesOutcome> DeregisterTransitGatewayMulticastGroupSourcesOutcomeCallable;
         typedef std::future<DescribeAccountAttributesOutcome> DescribeAccountAttributesOutcomeCallable;
         typedef std::future<DescribeAddressesOutcome> DescribeAddressesOutcomeCallable;
+        typedef std::future<DescribeAddressesAttributeOutcome> DescribeAddressesAttributeOutcomeCallable;
         typedef std::future<DescribeAggregateIdFormatOutcome> DescribeAggregateIdFormatOutcomeCallable;
         typedef std::future<DescribeAvailabilityZonesOutcome> DescribeAvailabilityZonesOutcomeCallable;
         typedef std::future<DescribeBundleTasksOutcome> DescribeBundleTasksOutcomeCallable;
@@ -1651,6 +1661,7 @@ namespace Model
         typedef std::future<ImportKeyPairOutcome> ImportKeyPairOutcomeCallable;
         typedef std::future<ImportSnapshotOutcome> ImportSnapshotOutcomeCallable;
         typedef std::future<ImportVolumeOutcome> ImportVolumeOutcomeCallable;
+        typedef std::future<ModifyAddressAttributeOutcome> ModifyAddressAttributeOutcomeCallable;
         typedef std::future<ModifyAvailabilityZoneGroupOutcome> ModifyAvailabilityZoneGroupOutcomeCallable;
         typedef std::future<ModifyCapacityReservationOutcome> ModifyCapacityReservationOutcomeCallable;
         typedef std::future<ModifyClientVpnEndpointOutcome> ModifyClientVpnEndpointOutcomeCallable;
@@ -1721,6 +1732,7 @@ namespace Model
         typedef std::future<ReportInstanceStatusOutcome> ReportInstanceStatusOutcomeCallable;
         typedef std::future<RequestSpotFleetOutcome> RequestSpotFleetOutcomeCallable;
         typedef std::future<RequestSpotInstancesOutcome> RequestSpotInstancesOutcomeCallable;
+        typedef std::future<ResetAddressAttributeOutcome> ResetAddressAttributeOutcomeCallable;
         typedef std::future<ResetEbsDefaultKmsKeyIdOutcome> ResetEbsDefaultKmsKeyIdOutcomeCallable;
         typedef std::future<ResetFpgaImageAttributeOutcome> ResetFpgaImageAttributeOutcomeCallable;
         typedef std::future<ResetImageAttributeOutcome> ResetImageAttributeOutcomeCallable;
@@ -1917,6 +1929,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DeregisterTransitGatewayMulticastGroupSourcesRequest&, const Model::DeregisterTransitGatewayMulticastGroupSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterTransitGatewayMulticastGroupSourcesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeAccountAttributesRequest&, const Model::DescribeAccountAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountAttributesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeAddressesRequest&, const Model::DescribeAddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAddressesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeAddressesAttributeRequest&, const Model::DescribeAddressesAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAddressesAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeAggregateIdFormatRequest&, const Model::DescribeAggregateIdFormatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAggregateIdFormatResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeAvailabilityZonesRequest&, const Model::DescribeAvailabilityZonesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAvailabilityZonesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeBundleTasksRequest&, const Model::DescribeBundleTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBundleTasksResponseReceivedHandler;
@@ -2092,6 +2105,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ImportKeyPairRequest&, const Model::ImportKeyPairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportKeyPairResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ImportSnapshotRequest&, const Model::ImportSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportSnapshotResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ImportVolumeRequest&, const Model::ImportVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportVolumeResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ModifyAddressAttributeRequest&, const Model::ModifyAddressAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyAddressAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyAvailabilityZoneGroupRequest&, const Model::ModifyAvailabilityZoneGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyAvailabilityZoneGroupResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyCapacityReservationRequest&, const Model::ModifyCapacityReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyCapacityReservationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyClientVpnEndpointRequest&, const Model::ModifyClientVpnEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClientVpnEndpointResponseReceivedHandler;
@@ -2162,6 +2176,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ReportInstanceStatusRequest&, const Model::ReportInstanceStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReportInstanceStatusResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::RequestSpotFleetRequest&, const Model::RequestSpotFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RequestSpotFleetResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::RequestSpotInstancesRequest&, const Model::RequestSpotInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RequestSpotInstancesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ResetAddressAttributeRequest&, const Model::ResetAddressAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetAddressAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ResetEbsDefaultKmsKeyIdRequest&, const Model::ResetEbsDefaultKmsKeyIdOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetEbsDefaultKmsKeyIdResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ResetFpgaImageAttributeRequest&, const Model::ResetFpgaImageAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetFpgaImageAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ResetImageAttributeRequest&, const Model::ResetImageAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetImageAttributeResponseReceivedHandler;
@@ -3891,8 +3906,8 @@ namespace Model
          * <p>Cancels the specified Reserved Instance listing in the Reserved Instance
          * Marketplace.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-         * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelReservedInstancesListing">AWS
          * API Reference</a></p>
          */
@@ -3902,8 +3917,8 @@ namespace Model
          * <p>Cancels the specified Reserved Instance listing in the Reserved Instance
          * Marketplace.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-         * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelReservedInstancesListing">AWS
          * API Reference</a></p>
          *
@@ -3915,8 +3930,8 @@ namespace Model
          * <p>Cancels the specified Reserved Instance listing in the Reserved Instance
          * Marketplace.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-         * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelReservedInstancesListing">AWS
          * API Reference</a></p>
          *
@@ -4064,13 +4079,25 @@ namespace Model
         virtual void CopyFpgaImageAsync(const Model::CopyFpgaImageRequest& request, const CopyFpgaImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Initiates the copy of an AMI from the specified source Region to the current
-         * Region. You specify the destination Region by using its endpoint when making the
-         * request.</p> <p>Copies of encrypted backing snapshots for the AMI are encrypted.
+         * <p>Initiates the copy of an AMI. You can copy an AMI from one Region to another,
+         * or from a Region to an AWS Outpost. You can't copy an AMI from an Outpost to a
+         * Region, from one Outpost to another, or within the same Outpost.</p> <p>To copy
+         * an AMI from one Region to another, specify the source Region using the
+         * <b>SourceRegion</b> parameter, and specify the destination Region using its
+         * endpoint. Copies of encrypted backing snapshots for the AMI are encrypted.
          * Copies of unencrypted backing snapshots remain unencrypted, unless you set
          * <code>Encrypted</code> during the copy operation. You cannot create an
-         * unencrypted copy of an encrypted backing snapshot.</p> <p>For more information
-         * about the prerequisites and limits when copying an AMI, see <a
+         * unencrypted copy of an encrypted backing snapshot.</p> <p>To copy an AMI from a
+         * Region to an Outpost, specify the source Region using the <b>SourceRegion</b>
+         * parameter, and specify the ARN of the destination Outpost using
+         * <b>DestinationOutpostArn</b>. Backing snapshots copied to an Outpost are
+         * encrypted by default using the default encryption key for the Region, or a
+         * different key that you specify in the request using <b>KmsKeyId</b>. Outposts do
+         * not support unencrypted snapshots. For more information, <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
+         * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
+         * Cloud User Guide</i>.</p> <p/> <p>For more information about the prerequisites
+         * and limits when copying an AMI, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying
          * an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -4080,13 +4107,25 @@ namespace Model
         virtual Model::CopyImageOutcome CopyImage(const Model::CopyImageRequest& request) const;
 
         /**
-         * <p>Initiates the copy of an AMI from the specified source Region to the current
-         * Region. You specify the destination Region by using its endpoint when making the
-         * request.</p> <p>Copies of encrypted backing snapshots for the AMI are encrypted.
+         * <p>Initiates the copy of an AMI. You can copy an AMI from one Region to another,
+         * or from a Region to an AWS Outpost. You can't copy an AMI from an Outpost to a
+         * Region, from one Outpost to another, or within the same Outpost.</p> <p>To copy
+         * an AMI from one Region to another, specify the source Region using the
+         * <b>SourceRegion</b> parameter, and specify the destination Region using its
+         * endpoint. Copies of encrypted backing snapshots for the AMI are encrypted.
          * Copies of unencrypted backing snapshots remain unencrypted, unless you set
          * <code>Encrypted</code> during the copy operation. You cannot create an
-         * unencrypted copy of an encrypted backing snapshot.</p> <p>For more information
-         * about the prerequisites and limits when copying an AMI, see <a
+         * unencrypted copy of an encrypted backing snapshot.</p> <p>To copy an AMI from a
+         * Region to an Outpost, specify the source Region using the <b>SourceRegion</b>
+         * parameter, and specify the ARN of the destination Outpost using
+         * <b>DestinationOutpostArn</b>. Backing snapshots copied to an Outpost are
+         * encrypted by default using the default encryption key for the Region, or a
+         * different key that you specify in the request using <b>KmsKeyId</b>. Outposts do
+         * not support unencrypted snapshots. For more information, <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
+         * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
+         * Cloud User Guide</i>.</p> <p/> <p>For more information about the prerequisites
+         * and limits when copying an AMI, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying
          * an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -4098,13 +4137,25 @@ namespace Model
         virtual Model::CopyImageOutcomeCallable CopyImageCallable(const Model::CopyImageRequest& request) const;
 
         /**
-         * <p>Initiates the copy of an AMI from the specified source Region to the current
-         * Region. You specify the destination Region by using its endpoint when making the
-         * request.</p> <p>Copies of encrypted backing snapshots for the AMI are encrypted.
+         * <p>Initiates the copy of an AMI. You can copy an AMI from one Region to another,
+         * or from a Region to an AWS Outpost. You can't copy an AMI from an Outpost to a
+         * Region, from one Outpost to another, or within the same Outpost.</p> <p>To copy
+         * an AMI from one Region to another, specify the source Region using the
+         * <b>SourceRegion</b> parameter, and specify the destination Region using its
+         * endpoint. Copies of encrypted backing snapshots for the AMI are encrypted.
          * Copies of unencrypted backing snapshots remain unencrypted, unless you set
          * <code>Encrypted</code> during the copy operation. You cannot create an
-         * unencrypted copy of an encrypted backing snapshot.</p> <p>For more information
-         * about the prerequisites and limits when copying an AMI, see <a
+         * unencrypted copy of an encrypted backing snapshot.</p> <p>To copy an AMI from a
+         * Region to an Outpost, specify the source Region using the <b>SourceRegion</b>
+         * parameter, and specify the ARN of the destination Outpost using
+         * <b>DestinationOutpostArn</b>. Backing snapshots copied to an Outpost are
+         * encrypted by default using the default encryption key for the Region, or a
+         * different key that you specify in the request using <b>KmsKeyId</b>. Outposts do
+         * not support unencrypted snapshots. For more information, <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
+         * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
+         * Cloud User Guide</i>.</p> <p/> <p>For more information about the prerequisites
+         * and limits when copying an AMI, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying
          * an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -4117,15 +4168,23 @@ namespace Model
 
         /**
          * <p>Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3.
-         * You can copy the snapshot within the same Region or from one Region to another.
-         * You can use the snapshot to create EBS volumes or Amazon Machine Images
-         * (AMIs).</p> <p>Copies of encrypted EBS snapshots remain encrypted. Copies of
-         * unencrypted snapshots remain unencrypted, unless you enable encryption for the
-         * snapshot copy operation. By default, encrypted snapshot copies use the default
-         * AWS Key Management Service (AWS KMS) customer master key (CMK); however, you can
-         * specify a different CMK.</p> <p>To copy an encrypted snapshot that has been
-         * shared from another account, you must have permissions for the CMK used to
-         * encrypt the snapshot.</p> <p>Snapshots created by copying another snapshot have
+         * You can copy a snapshot within the same Region, from one Region to another, or
+         * from a Region to an Outpost. You can't copy a snapshot from an Outpost to a
+         * Region, from one Outpost to another, or within the same Outpost.</p> <p>You can
+         * use the snapshot to create EBS volumes or Amazon Machine Images (AMIs).</p>
+         * <p>When copying snapshots to a Region, copies of encrypted EBS snapshots remain
+         * encrypted. Copies of unencrypted snapshots remain unencrypted, unless you enable
+         * encryption for the snapshot copy operation. By default, encrypted snapshot
+         * copies use the default AWS Key Management Service (AWS KMS) customer master key
+         * (CMK); however, you can specify a different CMK. To copy an encrypted snapshot
+         * that has been shared from another account, you must have permissions for the CMK
+         * used to encrypt the snapshot.</p> <p>Snapshots copied to an Outpost are
+         * encrypted by default using the default encryption key for the Region, or a
+         * different key that you specify in the request using <b>KmsKeyId</b>. Outposts do
+         * not support unencrypted snapshots. For more information, <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
+         * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
+         * Cloud User Guide</i>.</p> <p>Snapshots created by copying another snapshot have
          * an arbitrary volume ID that should not be used for any purpose.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
@@ -4138,15 +4197,23 @@ namespace Model
 
         /**
          * <p>Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3.
-         * You can copy the snapshot within the same Region or from one Region to another.
-         * You can use the snapshot to create EBS volumes or Amazon Machine Images
-         * (AMIs).</p> <p>Copies of encrypted EBS snapshots remain encrypted. Copies of
-         * unencrypted snapshots remain unencrypted, unless you enable encryption for the
-         * snapshot copy operation. By default, encrypted snapshot copies use the default
-         * AWS Key Management Service (AWS KMS) customer master key (CMK); however, you can
-         * specify a different CMK.</p> <p>To copy an encrypted snapshot that has been
-         * shared from another account, you must have permissions for the CMK used to
-         * encrypt the snapshot.</p> <p>Snapshots created by copying another snapshot have
+         * You can copy a snapshot within the same Region, from one Region to another, or
+         * from a Region to an Outpost. You can't copy a snapshot from an Outpost to a
+         * Region, from one Outpost to another, or within the same Outpost.</p> <p>You can
+         * use the snapshot to create EBS volumes or Amazon Machine Images (AMIs).</p>
+         * <p>When copying snapshots to a Region, copies of encrypted EBS snapshots remain
+         * encrypted. Copies of unencrypted snapshots remain unencrypted, unless you enable
+         * encryption for the snapshot copy operation. By default, encrypted snapshot
+         * copies use the default AWS Key Management Service (AWS KMS) customer master key
+         * (CMK); however, you can specify a different CMK. To copy an encrypted snapshot
+         * that has been shared from another account, you must have permissions for the CMK
+         * used to encrypt the snapshot.</p> <p>Snapshots copied to an Outpost are
+         * encrypted by default using the default encryption key for the Region, or a
+         * different key that you specify in the request using <b>KmsKeyId</b>. Outposts do
+         * not support unencrypted snapshots. For more information, <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
+         * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
+         * Cloud User Guide</i>.</p> <p>Snapshots created by copying another snapshot have
          * an arbitrary volume ID that should not be used for any purpose.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
@@ -4161,15 +4228,23 @@ namespace Model
 
         /**
          * <p>Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3.
-         * You can copy the snapshot within the same Region or from one Region to another.
-         * You can use the snapshot to create EBS volumes or Amazon Machine Images
-         * (AMIs).</p> <p>Copies of encrypted EBS snapshots remain encrypted. Copies of
-         * unencrypted snapshots remain unencrypted, unless you enable encryption for the
-         * snapshot copy operation. By default, encrypted snapshot copies use the default
-         * AWS Key Management Service (AWS KMS) customer master key (CMK); however, you can
-         * specify a different CMK.</p> <p>To copy an encrypted snapshot that has been
-         * shared from another account, you must have permissions for the CMK used to
-         * encrypt the snapshot.</p> <p>Snapshots created by copying another snapshot have
+         * You can copy a snapshot within the same Region, from one Region to another, or
+         * from a Region to an Outpost. You can't copy a snapshot from an Outpost to a
+         * Region, from one Outpost to another, or within the same Outpost.</p> <p>You can
+         * use the snapshot to create EBS volumes or Amazon Machine Images (AMIs).</p>
+         * <p>When copying snapshots to a Region, copies of encrypted EBS snapshots remain
+         * encrypted. Copies of unencrypted snapshots remain unencrypted, unless you enable
+         * encryption for the snapshot copy operation. By default, encrypted snapshot
+         * copies use the default AWS Key Management Service (AWS KMS) customer master key
+         * (CMK); however, you can specify a different CMK. To copy an encrypted snapshot
+         * that has been shared from another account, you must have permissions for the CMK
+         * used to encrypt the snapshot.</p> <p>Snapshots copied to an Outpost are
+         * encrypted by default using the default encryption key for the Region, or a
+         * different key that you specify in the request using <b>KmsKeyId</b>. Outposts do
+         * not support unencrypted snapshots. For more information, <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
+         * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
+         * Cloud User Guide</i>.</p> <p>Snapshots created by copying another snapshot have
          * an arbitrary volume ID that should not be used for any purpose.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
@@ -4191,11 +4266,11 @@ namespace Model
          * you always have access to Amazon EC2 capacity when you need it, for as long as
          * you need it. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html">Capacity
-         * Reservations</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <p>Your request to create a Capacity Reservation could fail if Amazon EC2 does
-         * not have sufficient capacity to fulfill the request. If your request fails due
-         * to Amazon EC2 capacity constraints, either try again at a later time, try in a
-         * different Availability Zone, or request a smaller capacity reservation. If your
+         * Reservations</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Your request to
+         * create a Capacity Reservation could fail if Amazon EC2 does not have sufficient
+         * capacity to fulfill the request. If your request fails due to Amazon EC2
+         * capacity constraints, either try again at a later time, try in a different
+         * Availability Zone, or request a smaller capacity reservation. If your
          * application is flexible across instance types and sizes, try to create a
          * Capacity Reservation with different instance attributes.</p> <p>Your request
          * could also fail if the requested quantity exceeds your On-Demand Instance limit
@@ -4203,8 +4278,8 @@ namespace Model
          * increase your On-Demand Instance limit for the required instance type and try
          * again. For more information about increasing your instance limits, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
-         * EC2 Service Limits</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * EC2 Service Quotas</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservation">AWS
          * API Reference</a></p>
          */
@@ -4219,11 +4294,11 @@ namespace Model
          * you always have access to Amazon EC2 capacity when you need it, for as long as
          * you need it. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html">Capacity
-         * Reservations</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <p>Your request to create a Capacity Reservation could fail if Amazon EC2 does
-         * not have sufficient capacity to fulfill the request. If your request fails due
-         * to Amazon EC2 capacity constraints, either try again at a later time, try in a
-         * different Availability Zone, or request a smaller capacity reservation. If your
+         * Reservations</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Your request to
+         * create a Capacity Reservation could fail if Amazon EC2 does not have sufficient
+         * capacity to fulfill the request. If your request fails due to Amazon EC2
+         * capacity constraints, either try again at a later time, try in a different
+         * Availability Zone, or request a smaller capacity reservation. If your
          * application is flexible across instance types and sizes, try to create a
          * Capacity Reservation with different instance attributes.</p> <p>Your request
          * could also fail if the requested quantity exceeds your On-Demand Instance limit
@@ -4231,8 +4306,8 @@ namespace Model
          * increase your On-Demand Instance limit for the required instance type and try
          * again. For more information about increasing your instance limits, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
-         * EC2 Service Limits</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * EC2 Service Quotas</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservation">AWS
          * API Reference</a></p>
          *
@@ -4249,11 +4324,11 @@ namespace Model
          * you always have access to Amazon EC2 capacity when you need it, for as long as
          * you need it. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html">Capacity
-         * Reservations</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <p>Your request to create a Capacity Reservation could fail if Amazon EC2 does
-         * not have sufficient capacity to fulfill the request. If your request fails due
-         * to Amazon EC2 capacity constraints, either try again at a later time, try in a
-         * different Availability Zone, or request a smaller capacity reservation. If your
+         * Reservations</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Your request to
+         * create a Capacity Reservation could fail if Amazon EC2 does not have sufficient
+         * capacity to fulfill the request. If your request fails due to Amazon EC2
+         * capacity constraints, either try again at a later time, try in a different
+         * Availability Zone, or request a smaller capacity reservation. If your
          * application is flexible across instance types and sizes, try to create a
          * Capacity Reservation with different instance attributes.</p> <p>Your request
          * could also fail if the requested quantity exceeds your On-Demand Instance limit
@@ -4261,8 +4336,8 @@ namespace Model
          * increase your On-Demand Instance limit for the required instance type and try
          * again. For more information about increasing your instance limits, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
-         * EC2 Service Limits</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * EC2 Service Quotas</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservation">AWS
          * API Reference</a></p>
          *
@@ -4742,10 +4817,9 @@ namespace Model
          * multiple launch specifications that vary by instance type, AMI, Availability
          * Zone, or subnet.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html">Launching
-         * an EC2 Fleet</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet">AWS API
-         * Reference</a></p>
+         * an EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateFleetOutcome CreateFleet(const Model::CreateFleetRequest& request) const;
 
@@ -4754,10 +4828,9 @@ namespace Model
          * multiple launch specifications that vary by instance type, AMI, Availability
          * Zone, or subnet.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html">Launching
-         * an EC2 Fleet</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet">AWS API
-         * Reference</a></p>
+         * an EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -4768,10 +4841,9 @@ namespace Model
          * multiple launch specifications that vary by instance type, AMI, Availability
          * Zone, or subnet.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html">Launching
-         * an EC2 Fleet</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet">AWS API
-         * Reference</a></p>
+         * an EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -5522,8 +5594,7 @@ namespace Model
          * not share the same hardware with instances in another partition.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-         * groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * groups</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePlacementGroup">AWS
          * API Reference</a></p>
          */
@@ -5540,8 +5611,7 @@ namespace Model
          * not share the same hardware with instances in another partition.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-         * groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * groups</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePlacementGroup">AWS
          * API Reference</a></p>
          *
@@ -5560,8 +5630,7 @@ namespace Model
          * not share the same hardware with instances in another partition.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-         * groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * groups</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePlacementGroup">AWS
          * API Reference</a></p>
          *
@@ -5589,8 +5658,8 @@ namespace Model
          * <a>DescribeReservedInstancesListings</a> operation.</p> <p>For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-         * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReservedInstancesListing">AWS
          * API Reference</a></p>
          */
@@ -5616,8 +5685,8 @@ namespace Model
          * <a>DescribeReservedInstancesListings</a> operation.</p> <p>For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-         * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReservedInstancesListing">AWS
          * API Reference</a></p>
          *
@@ -5645,8 +5714,8 @@ namespace Model
          * <a>DescribeReservedInstancesListings</a> operation.</p> <p>For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-         * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReservedInstancesListing">AWS
          * API Reference</a></p>
          *
@@ -5858,24 +5927,28 @@ namespace Model
         /**
          * <p>Creates a snapshot of an EBS volume and stores it in Amazon S3. You can use
          * snapshots for backups, to make copies of EBS volumes, and to save data before
-         * shutting down an instance.</p> <p>When a snapshot is created, any AWS
-         * Marketplace product codes that are associated with the source volume are
-         * propagated to the snapshot.</p> <p>You can take a snapshot of an attached volume
-         * that is in use. However, snapshots only capture data that has been written to
-         * your EBS volume at the time the snapshot command is issued; this might exclude
-         * any data that has been cached by any applications or the operating system. If
-         * you can pause any file systems on the volume long enough to take a snapshot,
-         * your snapshot should be complete. However, if you cannot pause all file writes
-         * to the volume, you should unmount the volume from within the instance, issue the
-         * snapshot command, and then remount the volume to ensure a consistent and
-         * complete snapshot. You may remount and use your volume while the snapshot status
-         * is <code>pending</code>.</p> <p>To create a snapshot for EBS volumes that serve
-         * as root devices, you should stop the instance before taking the snapshot.</p>
-         * <p>Snapshots that are taken from encrypted volumes are automatically encrypted.
-         * Volumes that are created from encrypted snapshots are also automatically
-         * encrypted. Your encrypted volumes and any associated snapshots always remain
-         * protected.</p> <p>You can tag your snapshots during creation. For more
-         * information, see <a
+         * shutting down an instance.</p> <p>You can create snapshots of volumes in a
+         * Region and volumes on an Outpost. If you create a snapshot of a volume in a
+         * Region, the snapshot must be stored in the same Region as the volume. If you
+         * create a snapshot of a volume on an Outpost, the snapshot can be stored on the
+         * same Outpost as the volume, or in the Region for that Outpost.</p> <p>When a
+         * snapshot is created, any AWS Marketplace product codes that are associated with
+         * the source volume are propagated to the snapshot.</p> <p>You can take a snapshot
+         * of an attached volume that is in use. However, snapshots only capture data that
+         * has been written to your EBS volume at the time the snapshot command is issued;
+         * this might exclude any data that has been cached by any applications or the
+         * operating system. If you can pause any file systems on the volume long enough to
+         * take a snapshot, your snapshot should be complete. However, if you cannot pause
+         * all file writes to the volume, you should unmount the volume from within the
+         * instance, issue the snapshot command, and then remount the volume to ensure a
+         * consistent and complete snapshot. You may remount and use your volume while the
+         * snapshot status is <code>pending</code>.</p> <p>To create a snapshot for EBS
+         * volumes that serve as root devices, you should stop the instance before taking
+         * the snapshot.</p> <p>Snapshots that are taken from encrypted volumes are
+         * automatically encrypted. Volumes that are created from encrypted snapshots are
+         * also automatically encrypted. Your encrypted volumes and any associated
+         * snapshots always remain protected.</p> <p>You can tag your snapshots during
+         * creation. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>For more information, see <a
@@ -5892,24 +5965,28 @@ namespace Model
         /**
          * <p>Creates a snapshot of an EBS volume and stores it in Amazon S3. You can use
          * snapshots for backups, to make copies of EBS volumes, and to save data before
-         * shutting down an instance.</p> <p>When a snapshot is created, any AWS
-         * Marketplace product codes that are associated with the source volume are
-         * propagated to the snapshot.</p> <p>You can take a snapshot of an attached volume
-         * that is in use. However, snapshots only capture data that has been written to
-         * your EBS volume at the time the snapshot command is issued; this might exclude
-         * any data that has been cached by any applications or the operating system. If
-         * you can pause any file systems on the volume long enough to take a snapshot,
-         * your snapshot should be complete. However, if you cannot pause all file writes
-         * to the volume, you should unmount the volume from within the instance, issue the
-         * snapshot command, and then remount the volume to ensure a consistent and
-         * complete snapshot. You may remount and use your volume while the snapshot status
-         * is <code>pending</code>.</p> <p>To create a snapshot for EBS volumes that serve
-         * as root devices, you should stop the instance before taking the snapshot.</p>
-         * <p>Snapshots that are taken from encrypted volumes are automatically encrypted.
-         * Volumes that are created from encrypted snapshots are also automatically
-         * encrypted. Your encrypted volumes and any associated snapshots always remain
-         * protected.</p> <p>You can tag your snapshots during creation. For more
-         * information, see <a
+         * shutting down an instance.</p> <p>You can create snapshots of volumes in a
+         * Region and volumes on an Outpost. If you create a snapshot of a volume in a
+         * Region, the snapshot must be stored in the same Region as the volume. If you
+         * create a snapshot of a volume on an Outpost, the snapshot can be stored on the
+         * same Outpost as the volume, or in the Region for that Outpost.</p> <p>When a
+         * snapshot is created, any AWS Marketplace product codes that are associated with
+         * the source volume are propagated to the snapshot.</p> <p>You can take a snapshot
+         * of an attached volume that is in use. However, snapshots only capture data that
+         * has been written to your EBS volume at the time the snapshot command is issued;
+         * this might exclude any data that has been cached by any applications or the
+         * operating system. If you can pause any file systems on the volume long enough to
+         * take a snapshot, your snapshot should be complete. However, if you cannot pause
+         * all file writes to the volume, you should unmount the volume from within the
+         * instance, issue the snapshot command, and then remount the volume to ensure a
+         * consistent and complete snapshot. You may remount and use your volume while the
+         * snapshot status is <code>pending</code>.</p> <p>To create a snapshot for EBS
+         * volumes that serve as root devices, you should stop the instance before taking
+         * the snapshot.</p> <p>Snapshots that are taken from encrypted volumes are
+         * automatically encrypted. Volumes that are created from encrypted snapshots are
+         * also automatically encrypted. Your encrypted volumes and any associated
+         * snapshots always remain protected.</p> <p>You can tag your snapshots during
+         * creation. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>For more information, see <a
@@ -5928,24 +6005,28 @@ namespace Model
         /**
          * <p>Creates a snapshot of an EBS volume and stores it in Amazon S3. You can use
          * snapshots for backups, to make copies of EBS volumes, and to save data before
-         * shutting down an instance.</p> <p>When a snapshot is created, any AWS
-         * Marketplace product codes that are associated with the source volume are
-         * propagated to the snapshot.</p> <p>You can take a snapshot of an attached volume
-         * that is in use. However, snapshots only capture data that has been written to
-         * your EBS volume at the time the snapshot command is issued; this might exclude
-         * any data that has been cached by any applications or the operating system. If
-         * you can pause any file systems on the volume long enough to take a snapshot,
-         * your snapshot should be complete. However, if you cannot pause all file writes
-         * to the volume, you should unmount the volume from within the instance, issue the
-         * snapshot command, and then remount the volume to ensure a consistent and
-         * complete snapshot. You may remount and use your volume while the snapshot status
-         * is <code>pending</code>.</p> <p>To create a snapshot for EBS volumes that serve
-         * as root devices, you should stop the instance before taking the snapshot.</p>
-         * <p>Snapshots that are taken from encrypted volumes are automatically encrypted.
-         * Volumes that are created from encrypted snapshots are also automatically
-         * encrypted. Your encrypted volumes and any associated snapshots always remain
-         * protected.</p> <p>You can tag your snapshots during creation. For more
-         * information, see <a
+         * shutting down an instance.</p> <p>You can create snapshots of volumes in a
+         * Region and volumes on an Outpost. If you create a snapshot of a volume in a
+         * Region, the snapshot must be stored in the same Region as the volume. If you
+         * create a snapshot of a volume on an Outpost, the snapshot can be stored on the
+         * same Outpost as the volume, or in the Region for that Outpost.</p> <p>When a
+         * snapshot is created, any AWS Marketplace product codes that are associated with
+         * the source volume are propagated to the snapshot.</p> <p>You can take a snapshot
+         * of an attached volume that is in use. However, snapshots only capture data that
+         * has been written to your EBS volume at the time the snapshot command is issued;
+         * this might exclude any data that has been cached by any applications or the
+         * operating system. If you can pause any file systems on the volume long enough to
+         * take a snapshot, your snapshot should be complete. However, if you cannot pause
+         * all file writes to the volume, you should unmount the volume from within the
+         * instance, issue the snapshot command, and then remount the volume to ensure a
+         * consistent and complete snapshot. You may remount and use your volume while the
+         * snapshot status is <code>pending</code>.</p> <p>To create a snapshot for EBS
+         * volumes that serve as root devices, you should stop the instance before taking
+         * the snapshot.</p> <p>Snapshots that are taken from encrypted volumes are
+         * automatically encrypted. Volumes that are created from encrypted snapshots are
+         * also automatically encrypted. Your encrypted volumes and any associated
+         * snapshots always remain protected.</p> <p>You can tag your snapshots during
+         * creation. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>For more information, see <a
@@ -5965,8 +6046,12 @@ namespace Model
          * <p>Creates crash-consistent snapshots of multiple EBS volumes and stores the
          * data in S3. Volumes are chosen by specifying an instance. Any attached volumes
          * will produce one snapshot each that is crash-consistent across the instance.
-         * Boot volumes can be excluded by changing the parameters. </p><p><h3>See
-         * Also:</h3>   <a
+         * Boot volumes can be excluded by changing the parameters. </p> <p>You can create
+         * multi-volume snapshots of instances in a Region and instances on an Outpost. If
+         * you create snapshots from an instance in a Region, the snapshots must be stored
+         * in the same Region as the instance. If you create snapshots from an instance on
+         * an Outpost, the snapshots can be stored on the same Outpost as the instance, or
+         * in the Region for that Outpost.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshots">AWS
          * API Reference</a></p>
          */
@@ -5976,8 +6061,12 @@ namespace Model
          * <p>Creates crash-consistent snapshots of multiple EBS volumes and stores the
          * data in S3. Volumes are chosen by specifying an instance. Any attached volumes
          * will produce one snapshot each that is crash-consistent across the instance.
-         * Boot volumes can be excluded by changing the parameters. </p><p><h3>See
-         * Also:</h3>   <a
+         * Boot volumes can be excluded by changing the parameters. </p> <p>You can create
+         * multi-volume snapshots of instances in a Region and instances on an Outpost. If
+         * you create snapshots from an instance in a Region, the snapshots must be stored
+         * in the same Region as the instance. If you create snapshots from an instance on
+         * an Outpost, the snapshots can be stored on the same Outpost as the instance, or
+         * in the Region for that Outpost.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshots">AWS
          * API Reference</a></p>
          *
@@ -5989,8 +6078,12 @@ namespace Model
          * <p>Creates crash-consistent snapshots of multiple EBS volumes and stores the
          * data in S3. Volumes are chosen by specifying an instance. Any attached volumes
          * will produce one snapshot each that is crash-consistent across the instance.
-         * Boot volumes can be excluded by changing the parameters. </p><p><h3>See
-         * Also:</h3>   <a
+         * Boot volumes can be excluded by changing the parameters. </p> <p>You can create
+         * multi-volume snapshots of instances in a Region and instances on an Outpost. If
+         * you create snapshots from an instance in a Region, the snapshots must be stored
+         * in the same Region as the instance. If you create snapshots from an instance on
+         * an Outpost, the snapshots can be stored on the same Outpost as the instance, or
+         * in the Region for that Outpost.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshots">AWS
          * API Reference</a></p>
          *
@@ -7475,9 +7568,8 @@ namespace Model
          * request to delete <code>instant</code> fleets.</p> </li> </ul> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#delete-fleet">Deleting
-         * an EC2 Fleet</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFleets">AWS
+         * an EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFleets">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteFleetsOutcome DeleteFleets(const Model::DeleteFleetsRequest& request) const;
@@ -7500,9 +7592,8 @@ namespace Model
          * request to delete <code>instant</code> fleets.</p> </li> </ul> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#delete-fleet">Deleting
-         * an EC2 Fleet</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFleets">AWS
+         * an EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFleets">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -7527,9 +7618,8 @@ namespace Model
          * request to delete <code>instant</code> fleets.</p> </li> </ul> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#delete-fleet">Deleting
-         * an EC2 Fleet</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFleets">AWS
+         * an EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFleets">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -8004,8 +8094,7 @@ namespace Model
          * the placement group before you can delete the placement group. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-         * groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * groups</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePlacementGroup">AWS
          * API Reference</a></p>
          */
@@ -8016,8 +8105,7 @@ namespace Model
          * the placement group before you can delete the placement group. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-         * groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * groups</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePlacementGroup">AWS
          * API Reference</a></p>
          *
@@ -8030,8 +8118,7 @@ namespace Model
          * the placement group before you can delete the placement group. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-         * groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * groups</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePlacementGroup">AWS
          * API Reference</a></p>
          *
@@ -8812,24 +8899,34 @@ namespace Model
         virtual void DeleteVpcEndpointServiceConfigurationsAsync(const Model::DeleteVpcEndpointServiceConfigurationsRequest& request, const DeleteVpcEndpointServiceConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes one or more specified VPC endpoints. Deleting a gateway endpoint also
-         * deletes the endpoint routes in the route tables that were associated with the
-         * endpoint. Deleting an interface endpoint or a Gateway Load Balancer endpoint
-         * deletes the endpoint network interfaces. Gateway Load Balancer endpoints can
-         * only be deleted if the routes that are associated with the endpoint are
-         * deleted.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes one or more specified VPC endpoints. You can delete any of the
+         * following types of VPC endpoints. </p> <ul> <li> <p>Gateway endpoint,</p> </li>
+         * <li> <p>Gateway Load Balancer endpoint,</p> </li> <li> <p>Interface endpoint</p>
+         * </li> </ul> <p>The following rules apply when you delete a VPC endpoint:</p>
+         * <ul> <li> <p>When you delete a gateway endpoint, we delete the endpoint routes
+         * in the route tables that are associated with the endpoint.</p> </li> <li>
+         * <p>When you delete a Gateway Load Balancer endpoint, we delete the endpoint
+         * network interfaces. </p> <p>You can only delete Gateway Load Balancer endpoints
+         * when the routes that are associated with the endpoint are deleted.</p> </li>
+         * <li> <p>When you delete an interface endpoint, we delete the endpoint network
+         * interfaces.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpoints">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteVpcEndpointsOutcome DeleteVpcEndpoints(const Model::DeleteVpcEndpointsRequest& request) const;
 
         /**
-         * <p>Deletes one or more specified VPC endpoints. Deleting a gateway endpoint also
-         * deletes the endpoint routes in the route tables that were associated with the
-         * endpoint. Deleting an interface endpoint or a Gateway Load Balancer endpoint
-         * deletes the endpoint network interfaces. Gateway Load Balancer endpoints can
-         * only be deleted if the routes that are associated with the endpoint are
-         * deleted.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes one or more specified VPC endpoints. You can delete any of the
+         * following types of VPC endpoints. </p> <ul> <li> <p>Gateway endpoint,</p> </li>
+         * <li> <p>Gateway Load Balancer endpoint,</p> </li> <li> <p>Interface endpoint</p>
+         * </li> </ul> <p>The following rules apply when you delete a VPC endpoint:</p>
+         * <ul> <li> <p>When you delete a gateway endpoint, we delete the endpoint routes
+         * in the route tables that are associated with the endpoint.</p> </li> <li>
+         * <p>When you delete a Gateway Load Balancer endpoint, we delete the endpoint
+         * network interfaces. </p> <p>You can only delete Gateway Load Balancer endpoints
+         * when the routes that are associated with the endpoint are deleted.</p> </li>
+         * <li> <p>When you delete an interface endpoint, we delete the endpoint network
+         * interfaces.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpoints">AWS
          * API Reference</a></p>
          *
@@ -8838,12 +8935,17 @@ namespace Model
         virtual Model::DeleteVpcEndpointsOutcomeCallable DeleteVpcEndpointsCallable(const Model::DeleteVpcEndpointsRequest& request) const;
 
         /**
-         * <p>Deletes one or more specified VPC endpoints. Deleting a gateway endpoint also
-         * deletes the endpoint routes in the route tables that were associated with the
-         * endpoint. Deleting an interface endpoint or a Gateway Load Balancer endpoint
-         * deletes the endpoint network interfaces. Gateway Load Balancer endpoints can
-         * only be deleted if the routes that are associated with the endpoint are
-         * deleted.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes one or more specified VPC endpoints. You can delete any of the
+         * following types of VPC endpoints. </p> <ul> <li> <p>Gateway endpoint,</p> </li>
+         * <li> <p>Gateway Load Balancer endpoint,</p> </li> <li> <p>Interface endpoint</p>
+         * </li> </ul> <p>The following rules apply when you delete a VPC endpoint:</p>
+         * <ul> <li> <p>When you delete a gateway endpoint, we delete the endpoint routes
+         * in the route tables that are associated with the endpoint.</p> </li> <li>
+         * <p>When you delete a Gateway Load Balancer endpoint, we delete the endpoint
+         * network interfaces. </p> <p>You can only delete Gateway Load Balancer endpoints
+         * when the routes that are associated with the endpoint are deleted.</p> </li>
+         * <li> <p>When you delete an interface endpoint, we delete the endpoint network
+         * interfaces.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpoints">AWS
          * API Reference</a></p>
          *
@@ -9299,6 +9401,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeAddressesAsync(const Model::DescribeAddressesRequest& request, const DescribeAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the attributes of the specified Elastic IP addresses. For
+         * requirements, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
+         * reverse DNS for email applications</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressesAttribute">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAddressesAttributeOutcome DescribeAddressesAttribute(const Model::DescribeAddressesAttributeRequest& request) const;
+
+        /**
+         * <p>Describes the attributes of the specified Elastic IP addresses. For
+         * requirements, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
+         * reverse DNS for email applications</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressesAttribute">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAddressesAttributeOutcomeCallable DescribeAddressesAttributeCallable(const Model::DescribeAddressesAttributeRequest& request) const;
+
+        /**
+         * <p>Describes the attributes of the specified Elastic IP addresses. For
+         * requirements, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
+         * reverse DNS for email applications</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressesAttribute">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAddressesAttributeAsync(const Model::DescribeAddressesAttributeRequest& request, const DescribeAddressesAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the longer ID format settings for all resource types in a specific
@@ -10030,8 +10166,11 @@ namespace Model
          * <p>Describes the events for the specified EC2 Fleet during the specified
          * time.</p> <p>EC2 Fleet events are delayed by up to 30 seconds before they can be
          * described. This ensures that you can query by the last evaluated time and not
-         * miss a recorded event. EC2 Fleet events are available for 48
-         * hours.</p><p><h3>See Also:</h3>   <a
+         * miss a recorded event. EC2 Fleet events are available for 48 hours.</p> <p>For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html#monitor-ec2-fleet">Monitoring
+         * your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetHistory">AWS
          * API Reference</a></p>
          */
@@ -10041,8 +10180,11 @@ namespace Model
          * <p>Describes the events for the specified EC2 Fleet during the specified
          * time.</p> <p>EC2 Fleet events are delayed by up to 30 seconds before they can be
          * described. This ensures that you can query by the last evaluated time and not
-         * miss a recorded event. EC2 Fleet events are available for 48
-         * hours.</p><p><h3>See Also:</h3>   <a
+         * miss a recorded event. EC2 Fleet events are available for 48 hours.</p> <p>For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html#monitor-ec2-fleet">Monitoring
+         * your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetHistory">AWS
          * API Reference</a></p>
          *
@@ -10054,8 +10196,11 @@ namespace Model
          * <p>Describes the events for the specified EC2 Fleet during the specified
          * time.</p> <p>EC2 Fleet events are delayed by up to 30 seconds before they can be
          * described. This ensures that you can query by the last evaluated time and not
-         * miss a recorded event. EC2 Fleet events are available for 48
-         * hours.</p><p><h3>See Also:</h3>   <a
+         * miss a recorded event. EC2 Fleet events are available for 48 hours.</p> <p>For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html#monitor-ec2-fleet">Monitoring
+         * your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetHistory">AWS
          * API Reference</a></p>
          *
@@ -10064,16 +10209,22 @@ namespace Model
         virtual void DescribeFleetHistoryAsync(const Model::DescribeFleetHistoryRequest& request, const DescribeFleetHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the running instances for the specified EC2 Fleet.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes the running instances for the specified EC2 Fleet.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html#monitor-ec2-fleet">Monitoring
+         * your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetInstances">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeFleetInstancesOutcome DescribeFleetInstances(const Model::DescribeFleetInstancesRequest& request) const;
 
         /**
-         * <p>Describes the running instances for the specified EC2 Fleet.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes the running instances for the specified EC2 Fleet.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html#monitor-ec2-fleet">Monitoring
+         * your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetInstances">AWS
          * API Reference</a></p>
          *
@@ -10082,8 +10233,11 @@ namespace Model
         virtual Model::DescribeFleetInstancesOutcomeCallable DescribeFleetInstancesCallable(const Model::DescribeFleetInstancesRequest& request) const;
 
         /**
-         * <p>Describes the running instances for the specified EC2 Fleet.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes the running instances for the specified EC2 Fleet.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html#monitor-ec2-fleet">Monitoring
+         * your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetInstances">AWS
          * API Reference</a></p>
          *
@@ -10092,16 +10246,22 @@ namespace Model
         virtual void DescribeFleetInstancesAsync(const Model::DescribeFleetInstancesRequest& request, const DescribeFleetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the specified EC2 Fleets or all of your EC2 Fleets.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes the specified EC2 Fleets or all of your EC2 Fleets.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html#monitor-ec2-fleet">Monitoring
+         * your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleets">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeFleetsOutcome DescribeFleets(const Model::DescribeFleetsRequest& request) const;
 
         /**
-         * <p>Describes the specified EC2 Fleets or all of your EC2 Fleets.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes the specified EC2 Fleets or all of your EC2 Fleets.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html#monitor-ec2-fleet">Monitoring
+         * your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleets">AWS
          * API Reference</a></p>
          *
@@ -10110,8 +10270,11 @@ namespace Model
         virtual Model::DescribeFleetsOutcomeCallable DescribeFleetsCallable(const Model::DescribeFleetsRequest& request) const;
 
         /**
-         * <p>Describes the specified EC2 Fleets or all of your EC2 Fleets.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes the specified EC2 Fleets or all of your EC2 Fleets.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html#monitor-ec2-fleet">Monitoring
+         * your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleets">AWS
          * API Reference</a></p>
          *
@@ -10217,8 +10380,7 @@ namespace Model
          * and Region of the offering matches that of the Dedicated Hosts with which it is
          * to be associated. For more information about supported instance types, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
-         * Hosts Overview</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-         * </p><p><h3>See Also:</h3>   <a
+         * Hosts</a> in the <i>Amazon EC2 User Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHostReservationOfferings">AWS
          * API Reference</a></p>
          */
@@ -10232,8 +10394,7 @@ namespace Model
          * and Region of the offering matches that of the Dedicated Hosts with which it is
          * to be associated. For more information about supported instance types, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
-         * Hosts Overview</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-         * </p><p><h3>See Also:</h3>   <a
+         * Hosts</a> in the <i>Amazon EC2 User Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHostReservationOfferings">AWS
          * API Reference</a></p>
          *
@@ -10249,8 +10410,7 @@ namespace Model
          * and Region of the offering matches that of the Dedicated Hosts with which it is
          * to be associated. For more information about supported instance types, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
-         * Hosts Overview</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-         * </p><p><h3>See Also:</h3>   <a
+         * Hosts</a> in the <i>Amazon EC2 User Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHostReservationOfferings">AWS
          * API Reference</a></p>
          *
@@ -10737,8 +10897,8 @@ namespace Model
          * fails. If you specify only instance IDs in an unaffected zone, the call works
          * normally.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-         * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceCreditSpecifications">AWS
          * API Reference</a></p>
          */
@@ -10763,8 +10923,8 @@ namespace Model
          * fails. If you specify only instance IDs in an unaffected zone, the call works
          * normally.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-         * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceCreditSpecifications">AWS
          * API Reference</a></p>
          *
@@ -10791,8 +10951,8 @@ namespace Model
          * fails. If you specify only instance IDs in an unaffected zone, the call works
          * normally.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-         * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceCreditSpecifications">AWS
          * API Reference</a></p>
          *
@@ -10838,19 +10998,17 @@ namespace Model
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
          * checks for your instances</a> and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
-         * instances with failed status checks</a> in the <i>Amazon Elastic Compute Cloud
-         * User Guide</i>.</p> </li> <li> <p> <b>Scheduled events</b> - Amazon EC2 can
-         * schedule events (such as reboot, stop, or terminate) for your instances related
-         * to hardware issues, software updates, or system maintenance. For more
-         * information, see <a
+         * instances with failed status checks</a> in the <i>Amazon EC2 User Guide</i>.</p>
+         * </li> <li> <p> <b>Scheduled events</b> - Amazon EC2 can schedule events (such as
+         * reboot, stop, or terminate) for your instances related to hardware issues,
+         * software updates, or system maintenance. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
-         * events for your instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> </li> <li> <p> <b>Instance state</b> - You can manage your
-         * instances from the moment you launch them through their termination. For more
-         * information, see <a
+         * events for your instances</a> in the <i>Amazon EC2 User Guide</i>.</p> </li>
+         * <li> <p> <b>Instance state</b> - You can manage your instances from the moment
+         * you launch them through their termination. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-         * lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceStatus">AWS
          * API Reference</a></p>
          */
@@ -10866,19 +11024,17 @@ namespace Model
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
          * checks for your instances</a> and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
-         * instances with failed status checks</a> in the <i>Amazon Elastic Compute Cloud
-         * User Guide</i>.</p> </li> <li> <p> <b>Scheduled events</b> - Amazon EC2 can
-         * schedule events (such as reboot, stop, or terminate) for your instances related
-         * to hardware issues, software updates, or system maintenance. For more
-         * information, see <a
+         * instances with failed status checks</a> in the <i>Amazon EC2 User Guide</i>.</p>
+         * </li> <li> <p> <b>Scheduled events</b> - Amazon EC2 can schedule events (such as
+         * reboot, stop, or terminate) for your instances related to hardware issues,
+         * software updates, or system maintenance. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
-         * events for your instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> </li> <li> <p> <b>Instance state</b> - You can manage your
-         * instances from the moment you launch them through their termination. For more
-         * information, see <a
+         * events for your instances</a> in the <i>Amazon EC2 User Guide</i>.</p> </li>
+         * <li> <p> <b>Instance state</b> - You can manage your instances from the moment
+         * you launch them through their termination. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-         * lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceStatus">AWS
          * API Reference</a></p>
          *
@@ -10896,19 +11052,17 @@ namespace Model
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
          * checks for your instances</a> and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
-         * instances with failed status checks</a> in the <i>Amazon Elastic Compute Cloud
-         * User Guide</i>.</p> </li> <li> <p> <b>Scheduled events</b> - Amazon EC2 can
-         * schedule events (such as reboot, stop, or terminate) for your instances related
-         * to hardware issues, software updates, or system maintenance. For more
-         * information, see <a
+         * instances with failed status checks</a> in the <i>Amazon EC2 User Guide</i>.</p>
+         * </li> <li> <p> <b>Scheduled events</b> - Amazon EC2 can schedule events (such as
+         * reboot, stop, or terminate) for your instances related to hardware issues,
+         * software updates, or system maintenance. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
-         * events for your instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> </li> <li> <p> <b>Instance state</b> - You can manage your
-         * instances from the moment you launch them through their termination. For more
-         * information, see <a
+         * events for your instances</a> in the <i>Amazon EC2 User Guide</i>.</p> </li>
+         * <li> <p> <b>Instance state</b> - You can manage your instances from the moment
+         * you launch them through their termination. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-         * lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceStatus">AWS
          * API Reference</a></p>
          *
@@ -11636,8 +11790,7 @@ namespace Model
          * <p>Describes the specified placement groups or all of your placement groups. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-         * groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * groups</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePlacementGroups">AWS
          * API Reference</a></p>
          */
@@ -11647,8 +11800,7 @@ namespace Model
          * <p>Describes the specified placement groups or all of your placement groups. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-         * groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * groups</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePlacementGroups">AWS
          * API Reference</a></p>
          *
@@ -11660,8 +11812,7 @@ namespace Model
          * <p>Describes the specified placement groups or all of your placement groups. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-         * groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * groups</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePlacementGroups">AWS
          * API Reference</a></p>
          *
@@ -11863,8 +12014,7 @@ namespace Model
          * <p>Describes one or more of the Reserved Instances that you purchased.</p>
          * <p>For more information about Reserved Instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
-         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstances">AWS
          * API Reference</a></p>
          */
@@ -11874,8 +12024,7 @@ namespace Model
          * <p>Describes one or more of the Reserved Instances that you purchased.</p>
          * <p>For more information about Reserved Instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
-         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstances">AWS
          * API Reference</a></p>
          *
@@ -11887,8 +12036,7 @@ namespace Model
          * <p>Describes one or more of the Reserved Instances that you purchased.</p>
          * <p>For more information about Reserved Instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
-         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstances">AWS
          * API Reference</a></p>
          *
@@ -11912,8 +12060,8 @@ namespace Model
          * you until your demand is met. You are charged based on the total price of all of
          * the listings that you purchase.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-         * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesListings">AWS
          * API Reference</a></p>
          */
@@ -11935,8 +12083,8 @@ namespace Model
          * you until your demand is met. You are charged based on the total price of all of
          * the listings that you purchase.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-         * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesListings">AWS
          * API Reference</a></p>
          *
@@ -11960,8 +12108,8 @@ namespace Model
          * you until your demand is met. You are charged based on the total price of all of
          * the listings that you purchase.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-         * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesListings">AWS
          * API Reference</a></p>
          *
@@ -11975,8 +12123,8 @@ namespace Model
          * requests is returned. If a modification ID is specified, only information about
          * the specific modification is returned.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
-         * Reserved Instances</a> in the Amazon Elastic Compute Cloud User
-         * Guide.</p><p><h3>See Also:</h3>   <a
+         * Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesModifications">AWS
          * API Reference</a></p>
          */
@@ -11988,8 +12136,8 @@ namespace Model
          * requests is returned. If a modification ID is specified, only information about
          * the specific modification is returned.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
-         * Reserved Instances</a> in the Amazon Elastic Compute Cloud User
-         * Guide.</p><p><h3>See Also:</h3>   <a
+         * Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesModifications">AWS
          * API Reference</a></p>
          *
@@ -12003,8 +12151,8 @@ namespace Model
          * requests is returned. If a modification ID is specified, only information about
          * the specific modification is returned.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
-         * Reserved Instances</a> in the Amazon Elastic Compute Cloud User
-         * Guide.</p><p><h3>See Also:</h3>   <a
+         * Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesModifications">AWS
          * API Reference</a></p>
          *
@@ -12022,8 +12170,8 @@ namespace Model
          * results. This is to ensure that you do not purchase your own Reserved
          * Instances.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-         * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesOfferings">AWS
          * API Reference</a></p>
          */
@@ -12039,8 +12187,8 @@ namespace Model
          * results. This is to ensure that you do not purchase your own Reserved
          * Instances.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-         * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesOfferings">AWS
          * API Reference</a></p>
          *
@@ -12058,8 +12206,8 @@ namespace Model
          * results. This is to ensure that you do not purchase your own Reserved
          * Instances.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-         * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesOfferings">AWS
          * API Reference</a></p>
          *
@@ -13601,14 +13749,13 @@ namespace Model
 
         /**
          * <p>Describes available services to which you can create a VPC endpoint.</p>
-         * <p>When the service provider and the consumer have different accounts multiple
-         * Availability Zones, and the consumer views the VPC endpoint service information,
-         * the response only includes the common Availability Zones. For example, when the
-         * service provider account uses <code>us-east-1a</code> and
+         * <p>When the service provider and the consumer have different accounts in
+         * multiple Availability Zones, and the consumer views the VPC endpoint service
+         * information, the response only includes the common Availability Zones. For
+         * example, when the service provider account uses <code>us-east-1a</code> and
          * <code>us-east-1c</code> and the consumer uses <code>us-east-1a</code> and
-         * us-east-1a and us-east-1b, the response includes the VPC endpoint services in
-         * the common Availability Zone, <code>us-east-1a</code>.</p><p><h3>See Also:</h3> 
-         * <a
+         * <code>us-east-1b</code>, the response includes the VPC endpoint services in the
+         * common Availability Zone, <code>us-east-1a</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServices">AWS
          * API Reference</a></p>
          */
@@ -13616,14 +13763,13 @@ namespace Model
 
         /**
          * <p>Describes available services to which you can create a VPC endpoint.</p>
-         * <p>When the service provider and the consumer have different accounts multiple
-         * Availability Zones, and the consumer views the VPC endpoint service information,
-         * the response only includes the common Availability Zones. For example, when the
-         * service provider account uses <code>us-east-1a</code> and
+         * <p>When the service provider and the consumer have different accounts in
+         * multiple Availability Zones, and the consumer views the VPC endpoint service
+         * information, the response only includes the common Availability Zones. For
+         * example, when the service provider account uses <code>us-east-1a</code> and
          * <code>us-east-1c</code> and the consumer uses <code>us-east-1a</code> and
-         * us-east-1a and us-east-1b, the response includes the VPC endpoint services in
-         * the common Availability Zone, <code>us-east-1a</code>.</p><p><h3>See Also:</h3> 
-         * <a
+         * <code>us-east-1b</code>, the response includes the VPC endpoint services in the
+         * common Availability Zone, <code>us-east-1a</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServices">AWS
          * API Reference</a></p>
          *
@@ -13633,14 +13779,13 @@ namespace Model
 
         /**
          * <p>Describes available services to which you can create a VPC endpoint.</p>
-         * <p>When the service provider and the consumer have different accounts multiple
-         * Availability Zones, and the consumer views the VPC endpoint service information,
-         * the response only includes the common Availability Zones. For example, when the
-         * service provider account uses <code>us-east-1a</code> and
+         * <p>When the service provider and the consumer have different accounts in
+         * multiple Availability Zones, and the consumer views the VPC endpoint service
+         * information, the response only includes the common Availability Zones. For
+         * example, when the service provider account uses <code>us-east-1a</code> and
          * <code>us-east-1c</code> and the consumer uses <code>us-east-1a</code> and
-         * us-east-1a and us-east-1b, the response includes the VPC endpoint services in
-         * the common Availability Zone, <code>us-east-1a</code>.</p><p><h3>See Also:</h3> 
-         * <a
+         * <code>us-east-1b</code>, the response includes the VPC endpoint services in the
+         * common Availability Zone, <code>us-east-1a</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServices">AWS
          * API Reference</a></p>
          *
@@ -15114,8 +15259,8 @@ namespace Model
          * instance lifecycle. This option is supported on instance types that use the
          * Nitro hypervisor.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html#instance-console-console-output">Instance
-         * Console Output</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * console output</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleOutput">AWS
          * API Reference</a></p>
          */
@@ -15134,8 +15279,8 @@ namespace Model
          * instance lifecycle. This option is supported on instance types that use the
          * Nitro hypervisor.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html#instance-console-console-output">Instance
-         * Console Output</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * console output</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleOutput">AWS
          * API Reference</a></p>
          *
@@ -15156,8 +15301,8 @@ namespace Model
          * instance lifecycle. This option is supported on instance types that use the
          * Nitro hypervisor.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html#instance-console-console-output">Instance
-         * Console Output</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * console output</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleOutput">AWS
          * API Reference</a></p>
          *
@@ -15200,8 +15345,8 @@ namespace Model
          * <p>Describes the default credit option for CPU usage of a burstable performance
          * instance family.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-         * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetDefaultCreditSpecification">AWS
          * API Reference</a></p>
          */
@@ -15211,8 +15356,8 @@ namespace Model
          * <p>Describes the default credit option for CPU usage of a burstable performance
          * instance family.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-         * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetDefaultCreditSpecification">AWS
          * API Reference</a></p>
          *
@@ -15224,8 +15369,8 @@ namespace Model
          * <p>Describes the default credit option for CPU usage of a burstable performance
          * instance family.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-         * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetDefaultCreditSpecification">AWS
          * API Reference</a></p>
          *
@@ -15489,16 +15634,15 @@ namespace Model
          * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/UsingConfig_WinAMI.html">EC2Config</a>
          * and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2launch.html">EC2Launch</a>
-         * in the Amazon Elastic Compute Cloud User Guide.</p> <p>For the
-         * <code>EC2Config</code> service, the password is not generated for rebundled AMIs
-         * unless <code>Ec2SetPassword</code> is enabled before bundling.</p> <p>The
-         * password is encrypted using the key pair that you specified when you launched
-         * the instance. You must provide the corresponding key pair file.</p> <p>When you
-         * launch an instance, password generation and encryption may take a few minutes.
-         * If you try to retrieve the password before it's available, the output returns an
-         * empty string. We recommend that you wait up to 15 minutes after launching an
-         * instance before trying to retrieve the generated password.</p><p><h3>See
-         * Also:</h3>   <a
+         * in the <i>Amazon EC2 User Guide</i>.</p> <p>For the <code>EC2Config</code>
+         * service, the password is not generated for rebundled AMIs unless
+         * <code>Ec2SetPassword</code> is enabled before bundling.</p> <p>The password is
+         * encrypted using the key pair that you specified when you launched the instance.
+         * You must provide the corresponding key pair file.</p> <p>When you launch an
+         * instance, password generation and encryption may take a few minutes. If you try
+         * to retrieve the password before it's available, the output returns an empty
+         * string. We recommend that you wait up to 15 minutes after launching an instance
+         * before trying to retrieve the generated password.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetPasswordData">AWS
          * API Reference</a></p>
          */
@@ -15513,16 +15657,15 @@ namespace Model
          * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/UsingConfig_WinAMI.html">EC2Config</a>
          * and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2launch.html">EC2Launch</a>
-         * in the Amazon Elastic Compute Cloud User Guide.</p> <p>For the
-         * <code>EC2Config</code> service, the password is not generated for rebundled AMIs
-         * unless <code>Ec2SetPassword</code> is enabled before bundling.</p> <p>The
-         * password is encrypted using the key pair that you specified when you launched
-         * the instance. You must provide the corresponding key pair file.</p> <p>When you
-         * launch an instance, password generation and encryption may take a few minutes.
-         * If you try to retrieve the password before it's available, the output returns an
-         * empty string. We recommend that you wait up to 15 minutes after launching an
-         * instance before trying to retrieve the generated password.</p><p><h3>See
-         * Also:</h3>   <a
+         * in the <i>Amazon EC2 User Guide</i>.</p> <p>For the <code>EC2Config</code>
+         * service, the password is not generated for rebundled AMIs unless
+         * <code>Ec2SetPassword</code> is enabled before bundling.</p> <p>The password is
+         * encrypted using the key pair that you specified when you launched the instance.
+         * You must provide the corresponding key pair file.</p> <p>When you launch an
+         * instance, password generation and encryption may take a few minutes. If you try
+         * to retrieve the password before it's available, the output returns an empty
+         * string. We recommend that you wait up to 15 minutes after launching an instance
+         * before trying to retrieve the generated password.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetPasswordData">AWS
          * API Reference</a></p>
          *
@@ -15539,16 +15682,15 @@ namespace Model
          * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/UsingConfig_WinAMI.html">EC2Config</a>
          * and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2launch.html">EC2Launch</a>
-         * in the Amazon Elastic Compute Cloud User Guide.</p> <p>For the
-         * <code>EC2Config</code> service, the password is not generated for rebundled AMIs
-         * unless <code>Ec2SetPassword</code> is enabled before bundling.</p> <p>The
-         * password is encrypted using the key pair that you specified when you launched
-         * the instance. You must provide the corresponding key pair file.</p> <p>When you
-         * launch an instance, password generation and encryption may take a few minutes.
-         * If you try to retrieve the password before it's available, the output returns an
-         * empty string. We recommend that you wait up to 15 minutes after launching an
-         * instance before trying to retrieve the generated password.</p><p><h3>See
-         * Also:</h3>   <a
+         * in the <i>Amazon EC2 User Guide</i>.</p> <p>For the <code>EC2Config</code>
+         * service, the password is not generated for rebundled AMIs unless
+         * <code>Ec2SetPassword</code> is enabled before bundling.</p> <p>The password is
+         * encrypted using the key pair that you specified when you launched the instance.
+         * You must provide the corresponding key pair file.</p> <p>When you launch an
+         * instance, password generation and encryption may take a few minutes. If you try
+         * to retrieve the password before it's available, the output returns an empty
+         * string. We recommend that you wait up to 15 minutes after launching an instance
+         * before trying to retrieve the generated password.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetPasswordData">AWS
          * API Reference</a></p>
          *
@@ -15971,6 +16113,40 @@ namespace Model
         virtual void ImportVolumeAsync(const Model::ImportVolumeRequest& request, const ImportVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modifies an attribute of the specified Elastic IP address. For requirements,
+         * see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
+         * reverse DNS for email applications</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAddressAttribute">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyAddressAttributeOutcome ModifyAddressAttribute(const Model::ModifyAddressAttributeRequest& request) const;
+
+        /**
+         * <p>Modifies an attribute of the specified Elastic IP address. For requirements,
+         * see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
+         * reverse DNS for email applications</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAddressAttribute">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyAddressAttributeOutcomeCallable ModifyAddressAttributeCallable(const Model::ModifyAddressAttributeRequest& request) const;
+
+        /**
+         * <p>Modifies an attribute of the specified Elastic IP address. For requirements,
+         * see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
+         * reverse DNS for email applications</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAddressAttribute">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyAddressAttributeAsync(const Model::ModifyAddressAttributeRequest& request, const ModifyAddressAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Changes the opt-in status of the Local Zone and Wavelength Zone group for
          * your account.</p> <p>Use <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
@@ -16089,8 +16265,8 @@ namespace Model
          * <code>DefaultCreditSpecification</code> for updates.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-         * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyDefaultCreditSpecification">AWS
          * API Reference</a></p>
          */
@@ -16110,8 +16286,8 @@ namespace Model
          * <code>DefaultCreditSpecification</code> for updates.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-         * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyDefaultCreditSpecification">AWS
          * API Reference</a></p>
          *
@@ -16133,8 +16309,8 @@ namespace Model
          * <code>DefaultCreditSpecification</code> for updates.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-         * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyDefaultCreditSpecification">AWS
          * API Reference</a></p>
          *
@@ -16642,7 +16818,7 @@ namespace Model
          * <a>ModifyNetworkInterfaceAttribute</a> action.</p> <p>To modify some attributes,
          * the instance must be stopped. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">Modifying
-         * attributes of a stopped instance</a> in the <i>Amazon Elastic Compute Cloud User
+         * attributes of a stopped instance</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceAttribute">AWS
          * API Reference</a></p>
@@ -16659,7 +16835,7 @@ namespace Model
          * <a>ModifyNetworkInterfaceAttribute</a> action.</p> <p>To modify some attributes,
          * the instance must be stopped. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">Modifying
-         * attributes of a stopped instance</a> in the <i>Amazon Elastic Compute Cloud User
+         * attributes of a stopped instance</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceAttribute">AWS
          * API Reference</a></p>
@@ -16678,7 +16854,7 @@ namespace Model
          * <a>ModifyNetworkInterfaceAttribute</a> action.</p> <p>To modify some attributes,
          * the instance must be stopped. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">Modifying
-         * attributes of a stopped instance</a> in the <i>Amazon Elastic Compute Cloud User
+         * attributes of a stopped instance</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceAttribute">AWS
          * API Reference</a></p>
@@ -16726,8 +16902,8 @@ namespace Model
          * performance instance. The credit options are <code>standard</code> and
          * <code>unlimited</code>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-         * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCreditSpecification">AWS
          * API Reference</a></p>
          */
@@ -16738,8 +16914,8 @@ namespace Model
          * performance instance. The credit options are <code>standard</code> and
          * <code>unlimited</code>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-         * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCreditSpecification">AWS
          * API Reference</a></p>
          *
@@ -16752,8 +16928,8 @@ namespace Model
          * performance instance. The credit options are <code>standard</code> and
          * <code>unlimited</code>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-         * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCreditSpecification">AWS
          * API Reference</a></p>
          *
@@ -16798,7 +16974,8 @@ namespace Model
          * from “pending” to “applied” in subsequent describe-instances API calls. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-         * metadata and user data</a>.</p><p><h3>See Also:</h3>   <a
+         * metadata and user data</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataOptions">AWS
          * API Reference</a></p>
          */
@@ -16813,7 +16990,8 @@ namespace Model
          * from “pending” to “applied” in subsequent describe-instances API calls. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-         * metadata and user data</a>.</p><p><h3>See Also:</h3>   <a
+         * metadata and user data</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataOptions">AWS
          * API Reference</a></p>
          *
@@ -16830,7 +17008,8 @@ namespace Model
          * from “pending” to “applied” in subsequent describe-instances API calls. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-         * metadata and user data</a>.</p><p><h3>See Also:</h3>   <a
+         * metadata and user data</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataOptions">AWS
          * API Reference</a></p>
          *
@@ -17019,8 +17198,8 @@ namespace Model
          * Instances to be modified must be identical, except for Availability Zone,
          * network platform, and instance type.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
-         * Reserved Instances</a> in the Amazon Elastic Compute Cloud User
-         * Guide.</p><p><h3>See Also:</h3>   <a
+         * Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyReservedInstances">AWS
          * API Reference</a></p>
          */
@@ -17032,8 +17211,8 @@ namespace Model
          * Instances to be modified must be identical, except for Availability Zone,
          * network platform, and instance type.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
-         * Reserved Instances</a> in the Amazon Elastic Compute Cloud User
-         * Guide.</p><p><h3>See Also:</h3>   <a
+         * Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyReservedInstances">AWS
          * API Reference</a></p>
          *
@@ -17047,8 +17226,8 @@ namespace Model
          * Instances to be modified must be identical, except for Availability Zone,
          * network platform, and instance type.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
-         * Reserved Instances</a> in the Amazon Elastic Compute Cloud User
-         * Guide.</p><p><h3>See Also:</h3>   <a
+         * Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyReservedInstances">AWS
          * API Reference</a></p>
          *
@@ -18141,9 +18320,8 @@ namespace Model
          * <p>Enables detailed monitoring for a running instance. Otherwise, basic
          * monitoring is enabled. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
-         * your instances and volumes</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p>To disable detailed monitoring, see .</p><p><h3>See Also:</h3>
-         * <a
+         * your instances and volumes</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>To
+         * disable detailed monitoring, see .</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MonitorInstances">AWS
          * API Reference</a></p>
          */
@@ -18153,9 +18331,8 @@ namespace Model
          * <p>Enables detailed monitoring for a running instance. Otherwise, basic
          * monitoring is enabled. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
-         * your instances and volumes</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p>To disable detailed monitoring, see .</p><p><h3>See Also:</h3>
-         * <a
+         * your instances and volumes</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>To
+         * disable detailed monitoring, see .</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MonitorInstances">AWS
          * API Reference</a></p>
          *
@@ -18167,9 +18344,8 @@ namespace Model
          * <p>Enables detailed monitoring for a running instance. Otherwise, basic
          * monitoring is enabled. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
-         * your instances and volumes</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p>To disable detailed monitoring, see .</p><p><h3>See Also:</h3>
-         * <a
+         * your instances and volumes</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>To
+         * disable detailed monitoring, see .</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MonitorInstances">AWS
          * API Reference</a></p>
          *
@@ -18336,8 +18512,8 @@ namespace Model
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
          * Instances</a> and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-         * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseReservedInstancesOffering">AWS
          * API Reference</a></p>
          */
@@ -18355,8 +18531,8 @@ namespace Model
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
          * Instances</a> and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-         * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseReservedInstancesOffering">AWS
          * API Reference</a></p>
          *
@@ -18376,8 +18552,8 @@ namespace Model
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
          * Instances</a> and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-         * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseReservedInstancesOffering">AWS
          * API Reference</a></p>
          *
@@ -18439,8 +18615,8 @@ namespace Model
          * down within a few minutes, Amazon EC2 performs a hard reboot.</p> <p>For more
          * information about troubleshooting, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html">Getting
-         * console output and rebooting instances</a> in the <i>Amazon Elastic Compute
-         * Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * console output and rebooting instances</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RebootInstances">AWS
          * API Reference</a></p>
          */
@@ -18454,8 +18630,8 @@ namespace Model
          * down within a few minutes, Amazon EC2 performs a hard reboot.</p> <p>For more
          * information about troubleshooting, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html">Getting
-         * console output and rebooting instances</a> in the <i>Amazon Elastic Compute
-         * Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * console output and rebooting instances</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RebootInstances">AWS
          * API Reference</a></p>
          *
@@ -18471,8 +18647,8 @@ namespace Model
          * down within a few minutes, Amazon EC2 performs a hard reboot.</p> <p>For more
          * information about troubleshooting, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html">Getting
-         * console output and rebooting instances</a> in the <i>Amazon Elastic Compute
-         * Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * console output and rebooting instances</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RebootInstances">AWS
          * API Reference</a></p>
          *
@@ -19407,6 +19583,37 @@ namespace Model
         virtual void RequestSpotInstancesAsync(const Model::RequestSpotInstancesRequest& request, const RequestSpotInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Resets the attribute of the specified IP address. For requirements, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
+         * reverse DNS for email applications</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetAddressAttribute">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ResetAddressAttributeOutcome ResetAddressAttribute(const Model::ResetAddressAttributeRequest& request) const;
+
+        /**
+         * <p>Resets the attribute of the specified IP address. For requirements, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
+         * reverse DNS for email applications</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetAddressAttribute">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ResetAddressAttributeOutcomeCallable ResetAddressAttributeCallable(const Model::ResetAddressAttributeRequest& request) const;
+
+        /**
+         * <p>Resets the attribute of the specified IP address. For requirements, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
+         * reverse DNS for email applications</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetAddressAttribute">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ResetAddressAttributeAsync(const Model::ResetAddressAttributeRequest& request, const ResetAddressAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Resets the default customer master key (CMK) for EBS encryption for your
          * account in this Region to the AWS managed CMK for EBS.</p> <p>After resetting
          * the default CMK to the AWS managed CMK, you can continue to encrypt by a
@@ -19521,8 +19728,7 @@ namespace Model
          * <code>false</code> for a NAT instance to perform NAT. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
-         * Instances</a> in the <i>Amazon Virtual Private Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instances</a> in the <i>Amazon VPC User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetInstanceAttribute">AWS
          * API Reference</a></p>
          */
@@ -19538,8 +19744,7 @@ namespace Model
          * <code>false</code> for a NAT instance to perform NAT. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
-         * Instances</a> in the <i>Amazon Virtual Private Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instances</a> in the <i>Amazon VPC User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetInstanceAttribute">AWS
          * API Reference</a></p>
          *
@@ -19557,8 +19762,7 @@ namespace Model
          * <code>false</code> for a NAT instance to perform NAT. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
-         * Instances</a> in the <i>Amazon Virtual Private Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instances</a> in the <i>Amazon VPC User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetInstanceAttribute">AWS
          * API Reference</a></p>
          *
@@ -19889,13 +20093,11 @@ namespace Model
          * the instance. Amazon EC2 public images use this feature to provide secure access
          * without passwords. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-         * pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For
-         * troubleshooting, see <a
+         * pairs</a>.</p> <p>For troubleshooting, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What
          * to do if an instance immediately terminates</a>, and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
-         * connecting to your instance</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * connecting to your instance</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunInstances">AWS
          * API Reference</a></p>
          */
@@ -19941,13 +20143,11 @@ namespace Model
          * the instance. Amazon EC2 public images use this feature to provide secure access
          * without passwords. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-         * pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For
-         * troubleshooting, see <a
+         * pairs</a>.</p> <p>For troubleshooting, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What
          * to do if an instance immediately terminates</a>, and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
-         * connecting to your instance</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * connecting to your instance</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunInstances">AWS
          * API Reference</a></p>
          *
@@ -19995,13 +20195,11 @@ namespace Model
          * the instance. Amazon EC2 public images use this feature to provide secure access
          * without passwords. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-         * pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For
-         * troubleshooting, see <a
+         * pairs</a>.</p> <p>For troubleshooting, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What
          * to do if an instance immediately terminates</a>, and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
-         * connecting to your instance</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * connecting to your instance</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunInstances">AWS
          * API Reference</a></p>
          *
@@ -20018,8 +20216,7 @@ namespace Model
          * the current scheduled time period ends, you can launch it again after a few
          * minutes. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-scheduled-instances.html">Scheduled
-         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunScheduledInstances">AWS
          * API Reference</a></p>
          */
@@ -20034,8 +20231,7 @@ namespace Model
          * the current scheduled time period ends, you can launch it again after a few
          * minutes. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-scheduled-instances.html">Scheduled
-         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunScheduledInstances">AWS
          * API Reference</a></p>
          *
@@ -20052,8 +20248,7 @@ namespace Model
          * the current scheduled time period ends, you can launch it again after a few
          * minutes. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-scheduled-instances.html">Scheduled
-         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunScheduledInstances">AWS
          * API Reference</a></p>
          *
@@ -20233,8 +20428,7 @@ namespace Model
          * <p>Performing this operation on an instance that uses an instance store as its
          * root device returns an error.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stopping
-         * instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartInstances">AWS
          * API Reference</a></p>
          */
@@ -20258,8 +20452,7 @@ namespace Model
          * <p>Performing this operation on an instance that uses an instance store as its
          * root device returns an error.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stopping
-         * instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartInstances">AWS
          * API Reference</a></p>
          *
@@ -20285,8 +20478,7 @@ namespace Model
          * <p>Performing this operation on an instance that uses an instance store as its
          * root device returns an error.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stopping
-         * instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartInstances">AWS
          * API Reference</a></p>
          *
@@ -20376,13 +20568,13 @@ namespace Model
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
          * prerequisites</a>. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-         * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <p>We don't charge usage for a stopped instance, or data transfer fees; however,
-         * your root partition Amazon EBS volume remains and continues to persist your
-         * data, and you are charged for Amazon EBS volume usage. Every time you start your
-         * Windows instance, Amazon EC2 charges you for a full instance hour. If you stop
-         * and restart your Windows instance, a new instance hour begins and Amazon EC2
-         * charges you for another full instance hour even if you are still within the same
+         * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>We don't charge
+         * usage for a stopped instance, or data transfer fees; however, your root
+         * partition Amazon EBS volume remains and continues to persist your data, and you
+         * are charged for Amazon EBS volume usage. Every time you start your Windows
+         * instance, Amazon EC2 charges you for a full instance hour. If you stop and
+         * restart your Windows instance, a new instance hour begins and Amazon EC2 charges
+         * you for another full instance hour even if you are still within the same
          * 60-minute period when it was stopped. Every time you start your Linux instance,
          * Amazon EC2 charges a one-minute minimum for instance usage, and thereafter
          * charges per second for instance usage.</p> <p>You can't stop or hibernate
@@ -20390,28 +20582,27 @@ namespace Model
          * Instances, but you can specify that Amazon EC2 should hibernate Spot Instances
          * when they are interrupted. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
-         * interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p>When you stop or hibernate an instance, we shut it down. You
-         * can restart your instance at any time. Before stopping or hibernating an
-         * instance, make sure it is in a state from which it can be restarted. Stopping an
-         * instance does not preserve data stored in RAM, but hibernating an instance does
-         * preserve data stored in RAM. If an instance cannot hibernate successfully, a
-         * normal shutdown occurs.</p> <p>Stopping and hibernating an instance is different
-         * to rebooting or terminating it. For example, when you stop or hibernate an
-         * instance, the root device and any other devices attached to the instance
-         * persist. When you terminate an instance, the root device and any other devices
-         * attached during the instance launch are automatically deleted. For more
-         * information about the differences between rebooting, stopping, hibernating, and
-         * terminating instances, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-         * lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>When
-         * you stop an instance, we attempt to shut it down forcibly after a short while.
-         * If your instance appears stuck in the stopping state after a period of time,
-         * there may be an issue with the underlying host computer. For more information,
+         * interrupted Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>When
+         * you stop or hibernate an instance, we shut it down. You can restart your
+         * instance at any time. Before stopping or hibernating an instance, make sure it
+         * is in a state from which it can be restarted. Stopping an instance does not
+         * preserve data stored in RAM, but hibernating an instance does preserve data
+         * stored in RAM. If an instance cannot hibernate successfully, a normal shutdown
+         * occurs.</p> <p>Stopping and hibernating an instance is different to rebooting or
+         * terminating it. For example, when you stop or hibernate an instance, the root
+         * device and any other devices attached to the instance persist. When you
+         * terminate an instance, the root device and any other devices attached during the
+         * instance launch are automatically deleted. For more information about the
+         * differences between rebooting, stopping, hibernating, and terminating instances,
          * see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+         * lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>When you stop an
+         * instance, we attempt to shut it down forcibly after a short while. If your
+         * instance appears stuck in the stopping state after a period of time, there may
+         * be an issue with the underlying host computer. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshooting
-         * stopping your instance</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * stopping your instance</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StopInstances">AWS
          * API Reference</a></p>
          */
@@ -20425,13 +20616,13 @@ namespace Model
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
          * prerequisites</a>. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-         * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <p>We don't charge usage for a stopped instance, or data transfer fees; however,
-         * your root partition Amazon EBS volume remains and continues to persist your
-         * data, and you are charged for Amazon EBS volume usage. Every time you start your
-         * Windows instance, Amazon EC2 charges you for a full instance hour. If you stop
-         * and restart your Windows instance, a new instance hour begins and Amazon EC2
-         * charges you for another full instance hour even if you are still within the same
+         * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>We don't charge
+         * usage for a stopped instance, or data transfer fees; however, your root
+         * partition Amazon EBS volume remains and continues to persist your data, and you
+         * are charged for Amazon EBS volume usage. Every time you start your Windows
+         * instance, Amazon EC2 charges you for a full instance hour. If you stop and
+         * restart your Windows instance, a new instance hour begins and Amazon EC2 charges
+         * you for another full instance hour even if you are still within the same
          * 60-minute period when it was stopped. Every time you start your Linux instance,
          * Amazon EC2 charges a one-minute minimum for instance usage, and thereafter
          * charges per second for instance usage.</p> <p>You can't stop or hibernate
@@ -20439,28 +20630,27 @@ namespace Model
          * Instances, but you can specify that Amazon EC2 should hibernate Spot Instances
          * when they are interrupted. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
-         * interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p>When you stop or hibernate an instance, we shut it down. You
-         * can restart your instance at any time. Before stopping or hibernating an
-         * instance, make sure it is in a state from which it can be restarted. Stopping an
-         * instance does not preserve data stored in RAM, but hibernating an instance does
-         * preserve data stored in RAM. If an instance cannot hibernate successfully, a
-         * normal shutdown occurs.</p> <p>Stopping and hibernating an instance is different
-         * to rebooting or terminating it. For example, when you stop or hibernate an
-         * instance, the root device and any other devices attached to the instance
-         * persist. When you terminate an instance, the root device and any other devices
-         * attached during the instance launch are automatically deleted. For more
-         * information about the differences between rebooting, stopping, hibernating, and
-         * terminating instances, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-         * lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>When
-         * you stop an instance, we attempt to shut it down forcibly after a short while.
-         * If your instance appears stuck in the stopping state after a period of time,
-         * there may be an issue with the underlying host computer. For more information,
+         * interrupted Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>When
+         * you stop or hibernate an instance, we shut it down. You can restart your
+         * instance at any time. Before stopping or hibernating an instance, make sure it
+         * is in a state from which it can be restarted. Stopping an instance does not
+         * preserve data stored in RAM, but hibernating an instance does preserve data
+         * stored in RAM. If an instance cannot hibernate successfully, a normal shutdown
+         * occurs.</p> <p>Stopping and hibernating an instance is different to rebooting or
+         * terminating it. For example, when you stop or hibernate an instance, the root
+         * device and any other devices attached to the instance persist. When you
+         * terminate an instance, the root device and any other devices attached during the
+         * instance launch are automatically deleted. For more information about the
+         * differences between rebooting, stopping, hibernating, and terminating instances,
          * see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+         * lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>When you stop an
+         * instance, we attempt to shut it down forcibly after a short while. If your
+         * instance appears stuck in the stopping state after a period of time, there may
+         * be an issue with the underlying host computer. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshooting
-         * stopping your instance</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * stopping your instance</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StopInstances">AWS
          * API Reference</a></p>
          *
@@ -20476,13 +20666,13 @@ namespace Model
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
          * prerequisites</a>. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-         * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <p>We don't charge usage for a stopped instance, or data transfer fees; however,
-         * your root partition Amazon EBS volume remains and continues to persist your
-         * data, and you are charged for Amazon EBS volume usage. Every time you start your
-         * Windows instance, Amazon EC2 charges you for a full instance hour. If you stop
-         * and restart your Windows instance, a new instance hour begins and Amazon EC2
-         * charges you for another full instance hour even if you are still within the same
+         * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>We don't charge
+         * usage for a stopped instance, or data transfer fees; however, your root
+         * partition Amazon EBS volume remains and continues to persist your data, and you
+         * are charged for Amazon EBS volume usage. Every time you start your Windows
+         * instance, Amazon EC2 charges you for a full instance hour. If you stop and
+         * restart your Windows instance, a new instance hour begins and Amazon EC2 charges
+         * you for another full instance hour even if you are still within the same
          * 60-minute period when it was stopped. Every time you start your Linux instance,
          * Amazon EC2 charges a one-minute minimum for instance usage, and thereafter
          * charges per second for instance usage.</p> <p>You can't stop or hibernate
@@ -20490,28 +20680,27 @@ namespace Model
          * Instances, but you can specify that Amazon EC2 should hibernate Spot Instances
          * when they are interrupted. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
-         * interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p>When you stop or hibernate an instance, we shut it down. You
-         * can restart your instance at any time. Before stopping or hibernating an
-         * instance, make sure it is in a state from which it can be restarted. Stopping an
-         * instance does not preserve data stored in RAM, but hibernating an instance does
-         * preserve data stored in RAM. If an instance cannot hibernate successfully, a
-         * normal shutdown occurs.</p> <p>Stopping and hibernating an instance is different
-         * to rebooting or terminating it. For example, when you stop or hibernate an
-         * instance, the root device and any other devices attached to the instance
-         * persist. When you terminate an instance, the root device and any other devices
-         * attached during the instance launch are automatically deleted. For more
-         * information about the differences between rebooting, stopping, hibernating, and
-         * terminating instances, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-         * lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>When
-         * you stop an instance, we attempt to shut it down forcibly after a short while.
-         * If your instance appears stuck in the stopping state after a period of time,
-         * there may be an issue with the underlying host computer. For more information,
+         * interrupted Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>When
+         * you stop or hibernate an instance, we shut it down. You can restart your
+         * instance at any time. Before stopping or hibernating an instance, make sure it
+         * is in a state from which it can be restarted. Stopping an instance does not
+         * preserve data stored in RAM, but hibernating an instance does preserve data
+         * stored in RAM. If an instance cannot hibernate successfully, a normal shutdown
+         * occurs.</p> <p>Stopping and hibernating an instance is different to rebooting or
+         * terminating it. For example, when you stop or hibernate an instance, the root
+         * device and any other devices attached to the instance persist. When you
+         * terminate an instance, the root device and any other devices attached during the
+         * instance launch are automatically deleted. For more information about the
+         * differences between rebooting, stopping, hibernating, and terminating instances,
          * see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+         * lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>When you stop an
+         * instance, we attempt to shut it down forcibly after a short while. If your
+         * instance appears stuck in the stopping state after a period of time, there may
+         * be an issue with the underlying host computer. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshooting
-         * stopping your instance</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * stopping your instance</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StopInstances">AWS
          * API Reference</a></p>
          *
@@ -20567,11 +20756,11 @@ namespace Model
          * <code>true</code> are automatically deleted. For more information about the
          * differences between stopping and terminating instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-         * lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For
-         * more information about troubleshooting, see <a
+         * lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>For more information
+         * about troubleshooting, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
-         * terminating your instance</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * terminating your instance</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateInstances">AWS
          * API Reference</a></p>
          */
@@ -20594,11 +20783,11 @@ namespace Model
          * <code>true</code> are automatically deleted. For more information about the
          * differences between stopping and terminating instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-         * lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For
-         * more information about troubleshooting, see <a
+         * lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>For more information
+         * about troubleshooting, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
-         * terminating your instance</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * terminating your instance</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateInstances">AWS
          * API Reference</a></p>
          *
@@ -20623,11 +20812,11 @@ namespace Model
          * <code>true</code> are automatically deleted. For more information about the
          * differences between stopping and terminating instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-         * lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For
-         * more information about troubleshooting, see <a
+         * lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>For more information
+         * about troubleshooting, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
-         * terminating your instance</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * terminating your instance</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateInstances">AWS
          * API Reference</a></p>
          *
@@ -20695,7 +20884,7 @@ namespace Model
          * <p>Disables detailed monitoring for a running instance. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
-         * your instances and volumes</a> in the <i>Amazon Elastic Compute Cloud User
+         * your instances and volumes</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnmonitorInstances">AWS
          * API Reference</a></p>
@@ -20706,7 +20895,7 @@ namespace Model
          * <p>Disables detailed monitoring for a running instance. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
-         * your instances and volumes</a> in the <i>Amazon Elastic Compute Cloud User
+         * your instances and volumes</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnmonitorInstances">AWS
          * API Reference</a></p>
@@ -20719,7 +20908,7 @@ namespace Model
          * <p>Disables detailed monitoring for a running instance. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
-         * your instances and volumes</a> in the <i>Amazon Elastic Compute Cloud User
+         * your instances and volumes</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnmonitorInstances">AWS
          * API Reference</a></p>
@@ -21009,6 +21198,7 @@ namespace Model
         void DeregisterTransitGatewayMulticastGroupSourcesAsyncHelper(const Model::DeregisterTransitGatewayMulticastGroupSourcesRequest& request, const DeregisterTransitGatewayMulticastGroupSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccountAttributesAsyncHelper(const Model::DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAddressesAsyncHelper(const Model::DescribeAddressesRequest& request, const DescribeAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeAddressesAttributeAsyncHelper(const Model::DescribeAddressesAttributeRequest& request, const DescribeAddressesAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAggregateIdFormatAsyncHelper(const Model::DescribeAggregateIdFormatRequest& request, const DescribeAggregateIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAvailabilityZonesAsyncHelper(const Model::DescribeAvailabilityZonesRequest& request, const DescribeAvailabilityZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBundleTasksAsyncHelper(const Model::DescribeBundleTasksRequest& request, const DescribeBundleTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -21184,6 +21374,7 @@ namespace Model
         void ImportKeyPairAsyncHelper(const Model::ImportKeyPairRequest& request, const ImportKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportSnapshotAsyncHelper(const Model::ImportSnapshotRequest& request, const ImportSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportVolumeAsyncHelper(const Model::ImportVolumeRequest& request, const ImportVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyAddressAttributeAsyncHelper(const Model::ModifyAddressAttributeRequest& request, const ModifyAddressAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyAvailabilityZoneGroupAsyncHelper(const Model::ModifyAvailabilityZoneGroupRequest& request, const ModifyAvailabilityZoneGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyCapacityReservationAsyncHelper(const Model::ModifyCapacityReservationRequest& request, const ModifyCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyClientVpnEndpointAsyncHelper(const Model::ModifyClientVpnEndpointRequest& request, const ModifyClientVpnEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -21254,6 +21445,7 @@ namespace Model
         void ReportInstanceStatusAsyncHelper(const Model::ReportInstanceStatusRequest& request, const ReportInstanceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RequestSpotFleetAsyncHelper(const Model::RequestSpotFleetRequest& request, const RequestSpotFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RequestSpotInstancesAsyncHelper(const Model::RequestSpotInstancesRequest& request, const RequestSpotInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ResetAddressAttributeAsyncHelper(const Model::ResetAddressAttributeRequest& request, const ResetAddressAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResetEbsDefaultKmsKeyIdAsyncHelper(const Model::ResetEbsDefaultKmsKeyIdRequest& request, const ResetEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResetFpgaImageAttributeAsyncHelper(const Model::ResetFpgaImageAttributeRequest& request, const ResetFpgaImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResetImageAttributeAsyncHelper(const Model::ResetImageAttributeRequest& request, const ResetImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

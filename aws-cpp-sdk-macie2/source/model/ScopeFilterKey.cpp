@@ -25,6 +25,7 @@ namespace Aws
         static const int OBJECT_LAST_MODIFIED_DATE_HASH = HashingUtils::HashString("OBJECT_LAST_MODIFIED_DATE");
         static const int OBJECT_SIZE_HASH = HashingUtils::HashString("OBJECT_SIZE");
         static const int TAG_HASH = HashingUtils::HashString("TAG");
+        static const int OBJECT_KEY_HASH = HashingUtils::HashString("OBJECT_KEY");
 
 
         ScopeFilterKey GetScopeFilterKeyForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return ScopeFilterKey::TAG;
           }
+          else if (hashCode == OBJECT_KEY_HASH)
+          {
+            return ScopeFilterKey::OBJECT_KEY;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "OBJECT_SIZE";
           case ScopeFilterKey::TAG:
             return "TAG";
+          case ScopeFilterKey::OBJECT_KEY:
+            return "OBJECT_KEY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

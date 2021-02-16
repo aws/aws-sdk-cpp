@@ -27,32 +27,28 @@ namespace Model
   class Statement;
 
   /**
-   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p>  <p>A rate-based rule tracks the rate of
-   * requests for each originating IP address, and triggers the rule action when the
-   * rate exceeds a limit that you specify on the number of requests in any 5-minute
-   * time span. You can use this to put a temporary block on requests from an IP
-   * address that is sending excessive requests.</p> <p>When the rule action
-   * triggers, AWS WAF blocks additional requests from the IP address until the
-   * request rate falls below the limit.</p> <p>You can optionally nest another
-   * statement inside the rate-based statement, to narrow the scope of the rule so
-   * that it only counts requests that match the nested statement. For example, based
-   * on recent requests that you have seen from an attacker, you might create a
-   * rate-based rule with a nested AND rule statement that contains the following
-   * nested statements:</p> <ul> <li> <p>An IP match statement with an IP set that
-   * specified the address 192.0.2.44.</p> </li> <li> <p>A string match statement
-   * that searches in the User-Agent header for the string BadBot.</p> </li> </ul>
-   * <p>In this rate-based rule, you also define a rate limit. For this example, the
-   * rate limit is 1,000. Requests that meet both of the conditions in the statements
-   * are counted. If the count exceeds 1,000 requests per five minutes, the rule
-   * action triggers. Requests that do not meet both conditions are not counted
-   * towards the rate limit and are not affected by this rule.</p> <p>You cannot nest
-   * a <code>RateBasedStatement</code>, for example for use inside a
-   * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-   * as a top-level statement within a rule.</p><p><h3>See Also:</h3>   <a
+   * <p>A rate-based rule tracks the rate of requests for each originating IP
+   * address, and triggers the rule action when the rate exceeds a limit that you
+   * specify on the number of requests in any 5-minute time span. You can use this to
+   * put a temporary block on requests from an IP address that is sending excessive
+   * requests.</p> <p>When the rule action triggers, AWS WAF blocks additional
+   * requests from the IP address until the request rate falls below the limit.</p>
+   * <p>You can optionally nest another statement inside the rate-based statement, to
+   * narrow the scope of the rule so that it only counts requests that match the
+   * nested statement. For example, based on recent requests that you have seen from
+   * an attacker, you might create a rate-based rule with a nested AND rule statement
+   * that contains the following nested statements:</p> <ul> <li> <p>An IP match
+   * statement with an IP set that specified the address 192.0.2.44.</p> </li> <li>
+   * <p>A string match statement that searches in the User-Agent header for the
+   * string BadBot.</p> </li> </ul> <p>In this rate-based rule, you also define a
+   * rate limit. For this example, the rate limit is 1,000. Requests that meet both
+   * of the conditions in the statements are counted. If the count exceeds 1,000
+   * requests per five minutes, the rule action triggers. Requests that do not meet
+   * both conditions are not counted towards the rate limit and are not affected by
+   * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code>, for example
+   * for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can
+   * only be referenced as a top-level statement within a rule.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/RateBasedStatement">AWS
    * API Reference</a></p>
    */

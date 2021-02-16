@@ -189,6 +189,63 @@ namespace Model
      */
     inline CreateEmailIdentityRequest& WithDkimSigningAttributes(DkimSigningAttributes&& value) { SetDkimSigningAttributes(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configuration set to use by default when sending from this identity. Note
+     * that any configuration set defined in the email sending request takes
+     * precedence. </p>
+     */
+    inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
+
+    /**
+     * <p>The configuration set to use by default when sending from this identity. Note
+     * that any configuration set defined in the email sending request takes
+     * precedence. </p>
+     */
+    inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
+
+    /**
+     * <p>The configuration set to use by default when sending from this identity. Note
+     * that any configuration set defined in the email sending request takes
+     * precedence. </p>
+     */
+    inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
+
+    /**
+     * <p>The configuration set to use by default when sending from this identity. Note
+     * that any configuration set defined in the email sending request takes
+     * precedence. </p>
+     */
+    inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
+
+    /**
+     * <p>The configuration set to use by default when sending from this identity. Note
+     * that any configuration set defined in the email sending request takes
+     * precedence. </p>
+     */
+    inline void SetConfigurationSetName(const char* value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName.assign(value); }
+
+    /**
+     * <p>The configuration set to use by default when sending from this identity. Note
+     * that any configuration set defined in the email sending request takes
+     * precedence. </p>
+     */
+    inline CreateEmailIdentityRequest& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
+
+    /**
+     * <p>The configuration set to use by default when sending from this identity. Note
+     * that any configuration set defined in the email sending request takes
+     * precedence. </p>
+     */
+    inline CreateEmailIdentityRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The configuration set to use by default when sending from this identity. Note
+     * that any configuration set defined in the email sending request takes
+     * precedence. </p>
+     */
+    inline CreateEmailIdentityRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
+
   private:
 
     Aws::String m_emailIdentity;
@@ -199,6 +256,9 @@ namespace Model
 
     DkimSigningAttributes m_dkimSigningAttributes;
     bool m_dkimSigningAttributesHasBeenSet;
+
+    Aws::String m_configurationSetName;
+    bool m_configurationSetNameHasBeenSet;
   };
 
 } // namespace Model

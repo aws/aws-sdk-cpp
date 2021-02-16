@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The URL to the artifact.</p>
+     * <p>The URL of the artifact.</p>
      */
     inline const Aws::String& GetPreSignedUrl() const{ return m_preSignedUrl; }
 
     /**
-     * <p>The URL to the artifact.</p>
+     * <p>The URL of the artifact.</p>
      */
     inline void SetPreSignedUrl(const Aws::String& value) { m_preSignedUrl = value; }
 
     /**
-     * <p>The URL to the artifact.</p>
+     * <p>The URL of the artifact.</p>
      */
     inline void SetPreSignedUrl(Aws::String&& value) { m_preSignedUrl = std::move(value); }
 
     /**
-     * <p>The URL to the artifact.</p>
+     * <p>The URL of the artifact.</p>
      */
     inline void SetPreSignedUrl(const char* value) { m_preSignedUrl.assign(value); }
 
     /**
-     * <p>The URL to the artifact.</p>
+     * <p>The URL of the artifact.</p>
      */
     inline GetComponentVersionArtifactResult& WithPreSignedUrl(const Aws::String& value) { SetPreSignedUrl(value); return *this;}
 
     /**
-     * <p>The URL to the artifact.</p>
+     * <p>The URL of the artifact.</p>
      */
     inline GetComponentVersionArtifactResult& WithPreSignedUrl(Aws::String&& value) { SetPreSignedUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The URL to the artifact.</p>
+     * <p>The URL of the artifact.</p>
      */
     inline GetComponentVersionArtifactResult& WithPreSignedUrl(const char* value) { SetPreSignedUrl(value); return *this;}
 

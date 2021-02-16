@@ -32,6 +32,8 @@ namespace Model
 
     Aws::String SerializePayload() const override;
 
+    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
 
     /**
      * <p>The ARN of the channel.</p>
@@ -147,44 +149,85 @@ namespace Model
 
 
     /**
-     * <p>The metadata of the channel.</p>
+     * <p>The metadata for the update request.</p>
      */
     inline const Aws::String& GetMetadata() const{ return m_metadata; }
 
     /**
-     * <p>The metadata of the channel.</p>
+     * <p>The metadata for the update request.</p>
      */
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
 
     /**
-     * <p>The metadata of the channel.</p>
+     * <p>The metadata for the update request.</p>
      */
     inline void SetMetadata(const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata = value; }
 
     /**
-     * <p>The metadata of the channel.</p>
+     * <p>The metadata for the update request.</p>
      */
     inline void SetMetadata(Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
 
     /**
-     * <p>The metadata of the channel.</p>
+     * <p>The metadata for the update request.</p>
      */
     inline void SetMetadata(const char* value) { m_metadataHasBeenSet = true; m_metadata.assign(value); }
 
     /**
-     * <p>The metadata of the channel.</p>
+     * <p>The metadata for the update request.</p>
      */
     inline UpdateChannelRequest& WithMetadata(const Aws::String& value) { SetMetadata(value); return *this;}
 
     /**
-     * <p>The metadata of the channel.</p>
+     * <p>The metadata for the update request.</p>
      */
     inline UpdateChannelRequest& WithMetadata(Aws::String&& value) { SetMetadata(std::move(value)); return *this;}
 
     /**
-     * <p>The metadata of the channel.</p>
+     * <p>The metadata for the update request.</p>
      */
     inline UpdateChannelRequest& WithMetadata(const char* value) { SetMetadata(value); return *this;}
+
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline const Aws::String& GetChimeBearer() const{ return m_chimeBearer; }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline bool ChimeBearerHasBeenSet() const { return m_chimeBearerHasBeenSet; }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline void SetChimeBearer(const Aws::String& value) { m_chimeBearerHasBeenSet = true; m_chimeBearer = value; }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline void SetChimeBearer(Aws::String&& value) { m_chimeBearerHasBeenSet = true; m_chimeBearer = std::move(value); }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline void SetChimeBearer(const char* value) { m_chimeBearerHasBeenSet = true; m_chimeBearer.assign(value); }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline UpdateChannelRequest& WithChimeBearer(const Aws::String& value) { SetChimeBearer(value); return *this;}
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline UpdateChannelRequest& WithChimeBearer(Aws::String&& value) { SetChimeBearer(std::move(value)); return *this;}
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline UpdateChannelRequest& WithChimeBearer(const char* value) { SetChimeBearer(value); return *this;}
 
   private:
 
@@ -199,6 +242,9 @@ namespace Model
 
     Aws::String m_metadata;
     bool m_metadataHasBeenSet;
+
+    Aws::String m_chimeBearer;
+    bool m_chimeBearerHasBeenSet;
   };
 
 } // namespace Model

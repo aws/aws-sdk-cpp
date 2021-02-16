@@ -2042,8 +2042,7 @@
     "AnalysisName":{
       "type":"string",
       "max":2048,
-      "min":1,
-      "pattern":"[\\u0020-\\u00FF]+"
+      "min":1
     },
     "AnalysisSearchFilter":{
       "type":"structure",
@@ -2066,7 +2065,8 @@
     "AnalysisSearchFilterList":{
       "type":"list",
       "member":{"shape":"AnalysisSearchFilter"},
-      "max":1
+      "max":1,
+      "min":1
     },
     "AnalysisSourceEntity":{
       "type":"structure",
@@ -2800,6 +2800,10 @@
         "ColumnGroups":{
           "shape":"ColumnGroupList",
           "documentation":"<p>Groupings of columns that work together in certain QuickSight features. Currently, only geospatial hierarchy is supported.</p>"
+        },
+        "FieldFolders":{
+          "shape":"FieldFolderMap",
+          "documentation":"<p>The folder that contains fields and nested subfolders for your dataset.</p>"
         },
         "Permissions":{
           "shape":"ResourcePermissionList",
@@ -3608,8 +3612,7 @@
     "DashboardName":{
       "type":"string",
       "max":2048,
-      "min":1,
-      "pattern":"[\\u0020-\\u00FF]+"
+      "min":1
     },
     "DashboardPublishOptions":{
       "type":"structure",
@@ -3651,7 +3654,8 @@
     "DashboardSearchFilterList":{
       "type":"list",
       "member":{"shape":"DashboardSearchFilter"},
-      "max":1
+      "max":1,
+      "min":1
     },
     "DashboardSourceEntity":{
       "type":"structure",
@@ -3872,6 +3876,10 @@
         "ColumnGroups":{
           "shape":"ColumnGroupList",
           "documentation":"<p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>"
+        },
+        "FieldFolders":{
+          "shape":"FieldFolderMap",
+          "documentation":"<p>The folder that contains fields and nested subfolders for your dataset.</p>"
         },
         "RowLevelPermissionDataSet":{
           "shape":"RowLevelPermissionDataSet",
@@ -6005,6 +6013,34 @@
       "max":4096,
       "min":1
     },
+    "FieldFolder":{
+      "type":"structure",
+      "members":{
+        "description":{
+          "shape":"FieldFolderDescription",
+          "documentation":"<p>The description for a field folder.</p>"
+        },
+        "columns":{
+          "shape":"FolderColumnList",
+          "documentation":"<p>A folder has a list of columns. A column can only be in one folder.</p>"
+        }
+      },
+      "documentation":"<p>A FieldFolder element is a folder that contains fields and nested subfolders.</p>"
+    },
+    "FieldFolderDescription":{
+      "type":"string",
+      "max":500
+    },
+    "FieldFolderMap":{
+      "type":"map",
+      "key":{"shape":"FieldFolderPath"},
+      "value":{"shape":"FieldFolder"}
+    },
+    "FieldFolderPath":{
+      "type":"string",
+      "max":1000,
+      "min":1
+    },
     "FileFormat":{
       "type":"string",
       "enum":[
@@ -6030,6 +6066,11 @@
     "FilterOperator":{
       "type":"string",
       "enum":["StringEquals"]
+    },
+    "FolderColumnList":{
+      "type":"list",
+      "member":{"shape":"String"},
+      "max":5000
     },
     "GeoSpatialColumnGroup":{
       "type":"structure",
@@ -9108,8 +9149,7 @@
     "TemplateName":{
       "type":"string",
       "max":2048,
-      "min":1,
-      "pattern":"[\\u0020-\\u00FF]+"
+      "min":1
     },
     "TemplateSourceAnalysis":{
       "type":"structure",
@@ -10220,6 +10260,10 @@
         "ColumnGroups":{
           "shape":"ColumnGroupList",
           "documentation":"<p>Groupings of columns that work together in certain QuickSight features. Currently, only geospatial hierarchy is supported.</p>"
+        },
+        "FieldFolders":{
+          "shape":"FieldFolderMap",
+          "documentation":"<p>The folder that contains fields and nested subfolders for your dataset.</p>"
         },
         "RowLevelPermissionDataSet":{
           "shape":"RowLevelPermissionDataSet",

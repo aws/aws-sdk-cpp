@@ -28,8 +28,8 @@ namespace Model
    * that your Spot Instance is at an elevated risk of being interrupted. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-capacity-rebalance">Capacity
-   * rebalancing</a> in the <i>Amazon Elastic Compute Cloud User
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * rebalancing</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/FleetSpotCapacityRebalanceRequest">AWS
    * API Reference</a></p>
    */

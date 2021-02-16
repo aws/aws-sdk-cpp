@@ -231,7 +231,7 @@ namespace Model
      * <p>The status of the analyzer. An <code>Active</code> analyzer successfully
      * monitors supported resources and generates new findings. The analyzer is
      * <code>Disabled</code> when a user action, such as removing trusted access for
-     * IAM Access Analyzer from AWS Organizations, causes the analyzer to stop
+     * AWS IAM Access Analyzer from AWS Organizations, causes the analyzer to stop
      * generating new findings. The status is <code>Creating</code> when the analyzer
      * creation is in progress and <code>Failed</code> when the analyzer creation has
      * failed. </p>
@@ -242,7 +242,7 @@ namespace Model
      * <p>The status of the analyzer. An <code>Active</code> analyzer successfully
      * monitors supported resources and generates new findings. The analyzer is
      * <code>Disabled</code> when a user action, such as removing trusted access for
-     * IAM Access Analyzer from AWS Organizations, causes the analyzer to stop
+     * AWS IAM Access Analyzer from AWS Organizations, causes the analyzer to stop
      * generating new findings. The status is <code>Creating</code> when the analyzer
      * creation is in progress and <code>Failed</code> when the analyzer creation has
      * failed. </p>
@@ -253,7 +253,7 @@ namespace Model
      * <p>The status of the analyzer. An <code>Active</code> analyzer successfully
      * monitors supported resources and generates new findings. The analyzer is
      * <code>Disabled</code> when a user action, such as removing trusted access for
-     * IAM Access Analyzer from AWS Organizations, causes the analyzer to stop
+     * AWS IAM Access Analyzer from AWS Organizations, causes the analyzer to stop
      * generating new findings. The status is <code>Creating</code> when the analyzer
      * creation is in progress and <code>Failed</code> when the analyzer creation has
      * failed. </p>
@@ -264,7 +264,7 @@ namespace Model
      * <p>The status of the analyzer. An <code>Active</code> analyzer successfully
      * monitors supported resources and generates new findings. The analyzer is
      * <code>Disabled</code> when a user action, such as removing trusted access for
-     * IAM Access Analyzer from AWS Organizations, causes the analyzer to stop
+     * AWS IAM Access Analyzer from AWS Organizations, causes the analyzer to stop
      * generating new findings. The status is <code>Creating</code> when the analyzer
      * creation is in progress and <code>Failed</code> when the analyzer creation has
      * failed. </p>
@@ -275,7 +275,7 @@ namespace Model
      * <p>The status of the analyzer. An <code>Active</code> analyzer successfully
      * monitors supported resources and generates new findings. The analyzer is
      * <code>Disabled</code> when a user action, such as removing trusted access for
-     * IAM Access Analyzer from AWS Organizations, causes the analyzer to stop
+     * AWS IAM Access Analyzer from AWS Organizations, causes the analyzer to stop
      * generating new findings. The status is <code>Creating</code> when the analyzer
      * creation is in progress and <code>Failed</code> when the analyzer creation has
      * failed. </p>
@@ -286,7 +286,7 @@ namespace Model
      * <p>The status of the analyzer. An <code>Active</code> analyzer successfully
      * monitors supported resources and generates new findings. The analyzer is
      * <code>Disabled</code> when a user action, such as removing trusted access for
-     * IAM Access Analyzer from AWS Organizations, causes the analyzer to stop
+     * AWS IAM Access Analyzer from AWS Organizations, causes the analyzer to stop
      * generating new findings. The status is <code>Creating</code> when the analyzer
      * creation is in progress and <code>Failed</code> when the analyzer creation has
      * failed. </p>

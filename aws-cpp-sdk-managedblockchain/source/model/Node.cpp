@@ -30,7 +30,9 @@ Node::Node() :
     m_stateDBHasBeenSet(false),
     m_status(NodeStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+    m_creationDateHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
 }
 
@@ -46,7 +48,9 @@ Node::Node(JsonView jsonValue) :
     m_stateDBHasBeenSet(false),
     m_status(NodeStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+    m_creationDateHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -123,6 +127,23 @@ Node& Node::operator =(JsonView jsonValue)
     m_creationDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Arn"))
+  {
+    m_arn = jsonValue.GetString("Arn");
+
+    m_arnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -185,6 +206,23 @@ JsonValue Node::Jsonize() const
   if(m_creationDateHasBeenSet)
   {
    payload.WithString("CreationDate", m_creationDate.ToGmtString(DateFormat::ISO_8601));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("Arn", m_arn);
+
   }
 
   return payload;

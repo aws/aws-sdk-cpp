@@ -23,6 +23,7 @@ PlaybackConfiguration::PlaybackConfiguration() :
     m_availSuppressionHasBeenSet(false),
     m_bumperHasBeenSet(false),
     m_cdnConfigurationHasBeenSet(false),
+    m_configurationAliasesHasBeenSet(false),
     m_dashConfigurationHasBeenSet(false),
     m_hlsConfigurationHasBeenSet(false),
     m_manifestProcessingRulesHasBeenSet(false),
@@ -44,6 +45,7 @@ PlaybackConfiguration::PlaybackConfiguration(JsonView jsonValue) :
     m_availSuppressionHasBeenSet(false),
     m_bumperHasBeenSet(false),
     m_cdnConfigurationHasBeenSet(false),
+    m_configurationAliasesHasBeenSet(false),
     m_dashConfigurationHasBeenSet(false),
     m_hlsConfigurationHasBeenSet(false),
     m_manifestProcessingRulesHasBeenSet(false),
@@ -89,6 +91,22 @@ PlaybackConfiguration& PlaybackConfiguration::operator =(JsonView jsonValue)
     m_cdnConfiguration = jsonValue.GetObject("CdnConfiguration");
 
     m_cdnConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ConfigurationAliases"))
+  {
+    Aws::Map<Aws::String, JsonView> configurationAliasesJsonMap = jsonValue.GetObject("ConfigurationAliases").GetAllObjects();
+    for(auto& configurationAliasesItem : configurationAliasesJsonMap)
+    {
+      Aws::Map<Aws::String, JsonView> __mapOf__stringJsonMap = configurationAliasesItem.second.GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> __mapOf__stringMap;
+      for(auto& __mapOf__stringItem : __mapOf__stringJsonMap)
+      {
+        __mapOf__stringMap[__mapOf__stringItem.first] = __mapOf__stringItem.second.AsString();
+      }
+      m_configurationAliases[configurationAliasesItem.first] = std::move(__mapOf__stringMap);
+    }
+    m_configurationAliasesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DashConfiguration"))
@@ -206,6 +224,22 @@ JsonValue PlaybackConfiguration::Jsonize() const
   if(m_cdnConfigurationHasBeenSet)
   {
    payload.WithObject("CdnConfiguration", m_cdnConfiguration.Jsonize());
+
+  }
+
+  if(m_configurationAliasesHasBeenSet)
+  {
+   JsonValue configurationAliasesJsonMap;
+   for(auto& configurationAliasesItem : m_configurationAliases)
+   {
+     JsonValue __mapOf__stringJsonMap;
+     for(auto& __mapOf__stringItem : configurationAliasesItem.second)
+     {
+       __mapOf__stringJsonMap.WithString(__mapOf__stringItem.first, __mapOf__stringItem.second);
+     }
+     configurationAliasesJsonMap.WithObject(configurationAliasesItem.first, std::move(__mapOf__stringJsonMap));
+   }
+   payload.WithObject("ConfigurationAliases", std::move(configurationAliasesJsonMap));
 
   }
 

@@ -16,15 +16,18 @@
 #include <aws/connect/model/CreateContactFlowResult.h>
 #include <aws/connect/model/CreateInstanceResult.h>
 #include <aws/connect/model/CreateIntegrationAssociationResult.h>
+#include <aws/connect/model/CreateQueueResult.h>
 #include <aws/connect/model/CreateQuickConnectResult.h>
 #include <aws/connect/model/CreateRoutingProfileResult.h>
 #include <aws/connect/model/CreateUseCaseResult.h>
 #include <aws/connect/model/CreateUserResult.h>
 #include <aws/connect/model/CreateUserHierarchyGroupResult.h>
 #include <aws/connect/model/DescribeContactFlowResult.h>
+#include <aws/connect/model/DescribeHoursOfOperationResult.h>
 #include <aws/connect/model/DescribeInstanceResult.h>
 #include <aws/connect/model/DescribeInstanceAttributeResult.h>
 #include <aws/connect/model/DescribeInstanceStorageConfigResult.h>
+#include <aws/connect/model/DescribeQueueResult.h>
 #include <aws/connect/model/DescribeQuickConnectResult.h>
 #include <aws/connect/model/DescribeRoutingProfileResult.h>
 #include <aws/connect/model/DescribeUserResult.h>
@@ -45,6 +48,7 @@
 #include <aws/connect/model/ListLexBotsResult.h>
 #include <aws/connect/model/ListPhoneNumbersResult.h>
 #include <aws/connect/model/ListPromptsResult.h>
+#include <aws/connect/model/ListQueueQuickConnectsResult.h>
 #include <aws/connect/model/ListQueuesResult.h>
 #include <aws/connect/model/ListQuickConnectsResult.h>
 #include <aws/connect/model/ListRoutingProfileQueuesResult.h>
@@ -108,11 +112,13 @@ namespace Model
         class AssociateInstanceStorageConfigRequest;
         class AssociateLambdaFunctionRequest;
         class AssociateLexBotRequest;
+        class AssociateQueueQuickConnectsRequest;
         class AssociateRoutingProfileQueuesRequest;
         class AssociateSecurityKeyRequest;
         class CreateContactFlowRequest;
         class CreateInstanceRequest;
         class CreateIntegrationAssociationRequest;
+        class CreateQueueRequest;
         class CreateQuickConnectRequest;
         class CreateRoutingProfileRequest;
         class CreateUseCaseRequest;
@@ -125,9 +131,11 @@ namespace Model
         class DeleteUserRequest;
         class DeleteUserHierarchyGroupRequest;
         class DescribeContactFlowRequest;
+        class DescribeHoursOfOperationRequest;
         class DescribeInstanceRequest;
         class DescribeInstanceAttributeRequest;
         class DescribeInstanceStorageConfigRequest;
+        class DescribeQueueRequest;
         class DescribeQuickConnectRequest;
         class DescribeRoutingProfileRequest;
         class DescribeUserRequest;
@@ -137,6 +145,7 @@ namespace Model
         class DisassociateInstanceStorageConfigRequest;
         class DisassociateLambdaFunctionRequest;
         class DisassociateLexBotRequest;
+        class DisassociateQueueQuickConnectsRequest;
         class DisassociateRoutingProfileQueuesRequest;
         class DisassociateSecurityKeyRequest;
         class GetContactAttributesRequest;
@@ -154,6 +163,7 @@ namespace Model
         class ListLexBotsRequest;
         class ListPhoneNumbersRequest;
         class ListPromptsRequest;
+        class ListQueueQuickConnectsRequest;
         class ListQueuesRequest;
         class ListQuickConnectsRequest;
         class ListRoutingProfileQueuesRequest;
@@ -179,6 +189,11 @@ namespace Model
         class UpdateContactFlowNameRequest;
         class UpdateInstanceAttributeRequest;
         class UpdateInstanceStorageConfigRequest;
+        class UpdateQueueHoursOfOperationRequest;
+        class UpdateQueueMaxContactsRequest;
+        class UpdateQueueNameRequest;
+        class UpdateQueueOutboundCallerConfigRequest;
+        class UpdateQueueStatusRequest;
         class UpdateQuickConnectConfigRequest;
         class UpdateQuickConnectNameRequest;
         class UpdateRoutingProfileConcurrencyRequest;
@@ -197,11 +212,13 @@ namespace Model
         typedef Aws::Utils::Outcome<AssociateInstanceStorageConfigResult, ConnectError> AssociateInstanceStorageConfigOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociateLambdaFunctionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociateLexBotOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociateQueueQuickConnectsOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociateRoutingProfileQueuesOutcome;
         typedef Aws::Utils::Outcome<AssociateSecurityKeyResult, ConnectError> AssociateSecurityKeyOutcome;
         typedef Aws::Utils::Outcome<CreateContactFlowResult, ConnectError> CreateContactFlowOutcome;
         typedef Aws::Utils::Outcome<CreateInstanceResult, ConnectError> CreateInstanceOutcome;
         typedef Aws::Utils::Outcome<CreateIntegrationAssociationResult, ConnectError> CreateIntegrationAssociationOutcome;
+        typedef Aws::Utils::Outcome<CreateQueueResult, ConnectError> CreateQueueOutcome;
         typedef Aws::Utils::Outcome<CreateQuickConnectResult, ConnectError> CreateQuickConnectOutcome;
         typedef Aws::Utils::Outcome<CreateRoutingProfileResult, ConnectError> CreateRoutingProfileOutcome;
         typedef Aws::Utils::Outcome<CreateUseCaseResult, ConnectError> CreateUseCaseOutcome;
@@ -214,9 +231,11 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteUserOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteUserHierarchyGroupOutcome;
         typedef Aws::Utils::Outcome<DescribeContactFlowResult, ConnectError> DescribeContactFlowOutcome;
+        typedef Aws::Utils::Outcome<DescribeHoursOfOperationResult, ConnectError> DescribeHoursOfOperationOutcome;
         typedef Aws::Utils::Outcome<DescribeInstanceResult, ConnectError> DescribeInstanceOutcome;
         typedef Aws::Utils::Outcome<DescribeInstanceAttributeResult, ConnectError> DescribeInstanceAttributeOutcome;
         typedef Aws::Utils::Outcome<DescribeInstanceStorageConfigResult, ConnectError> DescribeInstanceStorageConfigOutcome;
+        typedef Aws::Utils::Outcome<DescribeQueueResult, ConnectError> DescribeQueueOutcome;
         typedef Aws::Utils::Outcome<DescribeQuickConnectResult, ConnectError> DescribeQuickConnectOutcome;
         typedef Aws::Utils::Outcome<DescribeRoutingProfileResult, ConnectError> DescribeRoutingProfileOutcome;
         typedef Aws::Utils::Outcome<DescribeUserResult, ConnectError> DescribeUserOutcome;
@@ -226,6 +245,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateInstanceStorageConfigOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateLambdaFunctionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateLexBotOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateQueueQuickConnectsOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateRoutingProfileQueuesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateSecurityKeyOutcome;
         typedef Aws::Utils::Outcome<GetContactAttributesResult, ConnectError> GetContactAttributesOutcome;
@@ -243,6 +263,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListLexBotsResult, ConnectError> ListLexBotsOutcome;
         typedef Aws::Utils::Outcome<ListPhoneNumbersResult, ConnectError> ListPhoneNumbersOutcome;
         typedef Aws::Utils::Outcome<ListPromptsResult, ConnectError> ListPromptsOutcome;
+        typedef Aws::Utils::Outcome<ListQueueQuickConnectsResult, ConnectError> ListQueueQuickConnectsOutcome;
         typedef Aws::Utils::Outcome<ListQueuesResult, ConnectError> ListQueuesOutcome;
         typedef Aws::Utils::Outcome<ListQuickConnectsResult, ConnectError> ListQuickConnectsOutcome;
         typedef Aws::Utils::Outcome<ListRoutingProfileQueuesResult, ConnectError> ListRoutingProfileQueuesOutcome;
@@ -268,6 +289,11 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateContactFlowNameOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateInstanceAttributeOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateInstanceStorageConfigOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateQueueHoursOfOperationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateQueueMaxContactsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateQueueNameOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateQueueOutboundCallerConfigOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateQueueStatusOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateQuickConnectConfigOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateQuickConnectNameOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateRoutingProfileConcurrencyOutcome;
@@ -286,11 +312,13 @@ namespace Model
         typedef std::future<AssociateInstanceStorageConfigOutcome> AssociateInstanceStorageConfigOutcomeCallable;
         typedef std::future<AssociateLambdaFunctionOutcome> AssociateLambdaFunctionOutcomeCallable;
         typedef std::future<AssociateLexBotOutcome> AssociateLexBotOutcomeCallable;
+        typedef std::future<AssociateQueueQuickConnectsOutcome> AssociateQueueQuickConnectsOutcomeCallable;
         typedef std::future<AssociateRoutingProfileQueuesOutcome> AssociateRoutingProfileQueuesOutcomeCallable;
         typedef std::future<AssociateSecurityKeyOutcome> AssociateSecurityKeyOutcomeCallable;
         typedef std::future<CreateContactFlowOutcome> CreateContactFlowOutcomeCallable;
         typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
         typedef std::future<CreateIntegrationAssociationOutcome> CreateIntegrationAssociationOutcomeCallable;
+        typedef std::future<CreateQueueOutcome> CreateQueueOutcomeCallable;
         typedef std::future<CreateQuickConnectOutcome> CreateQuickConnectOutcomeCallable;
         typedef std::future<CreateRoutingProfileOutcome> CreateRoutingProfileOutcomeCallable;
         typedef std::future<CreateUseCaseOutcome> CreateUseCaseOutcomeCallable;
@@ -303,9 +331,11 @@ namespace Model
         typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
         typedef std::future<DeleteUserHierarchyGroupOutcome> DeleteUserHierarchyGroupOutcomeCallable;
         typedef std::future<DescribeContactFlowOutcome> DescribeContactFlowOutcomeCallable;
+        typedef std::future<DescribeHoursOfOperationOutcome> DescribeHoursOfOperationOutcomeCallable;
         typedef std::future<DescribeInstanceOutcome> DescribeInstanceOutcomeCallable;
         typedef std::future<DescribeInstanceAttributeOutcome> DescribeInstanceAttributeOutcomeCallable;
         typedef std::future<DescribeInstanceStorageConfigOutcome> DescribeInstanceStorageConfigOutcomeCallable;
+        typedef std::future<DescribeQueueOutcome> DescribeQueueOutcomeCallable;
         typedef std::future<DescribeQuickConnectOutcome> DescribeQuickConnectOutcomeCallable;
         typedef std::future<DescribeRoutingProfileOutcome> DescribeRoutingProfileOutcomeCallable;
         typedef std::future<DescribeUserOutcome> DescribeUserOutcomeCallable;
@@ -315,6 +345,7 @@ namespace Model
         typedef std::future<DisassociateInstanceStorageConfigOutcome> DisassociateInstanceStorageConfigOutcomeCallable;
         typedef std::future<DisassociateLambdaFunctionOutcome> DisassociateLambdaFunctionOutcomeCallable;
         typedef std::future<DisassociateLexBotOutcome> DisassociateLexBotOutcomeCallable;
+        typedef std::future<DisassociateQueueQuickConnectsOutcome> DisassociateQueueQuickConnectsOutcomeCallable;
         typedef std::future<DisassociateRoutingProfileQueuesOutcome> DisassociateRoutingProfileQueuesOutcomeCallable;
         typedef std::future<DisassociateSecurityKeyOutcome> DisassociateSecurityKeyOutcomeCallable;
         typedef std::future<GetContactAttributesOutcome> GetContactAttributesOutcomeCallable;
@@ -332,6 +363,7 @@ namespace Model
         typedef std::future<ListLexBotsOutcome> ListLexBotsOutcomeCallable;
         typedef std::future<ListPhoneNumbersOutcome> ListPhoneNumbersOutcomeCallable;
         typedef std::future<ListPromptsOutcome> ListPromptsOutcomeCallable;
+        typedef std::future<ListQueueQuickConnectsOutcome> ListQueueQuickConnectsOutcomeCallable;
         typedef std::future<ListQueuesOutcome> ListQueuesOutcomeCallable;
         typedef std::future<ListQuickConnectsOutcome> ListQuickConnectsOutcomeCallable;
         typedef std::future<ListRoutingProfileQueuesOutcome> ListRoutingProfileQueuesOutcomeCallable;
@@ -357,6 +389,11 @@ namespace Model
         typedef std::future<UpdateContactFlowNameOutcome> UpdateContactFlowNameOutcomeCallable;
         typedef std::future<UpdateInstanceAttributeOutcome> UpdateInstanceAttributeOutcomeCallable;
         typedef std::future<UpdateInstanceStorageConfigOutcome> UpdateInstanceStorageConfigOutcomeCallable;
+        typedef std::future<UpdateQueueHoursOfOperationOutcome> UpdateQueueHoursOfOperationOutcomeCallable;
+        typedef std::future<UpdateQueueMaxContactsOutcome> UpdateQueueMaxContactsOutcomeCallable;
+        typedef std::future<UpdateQueueNameOutcome> UpdateQueueNameOutcomeCallable;
+        typedef std::future<UpdateQueueOutboundCallerConfigOutcome> UpdateQueueOutboundCallerConfigOutcomeCallable;
+        typedef std::future<UpdateQueueStatusOutcome> UpdateQueueStatusOutcomeCallable;
         typedef std::future<UpdateQuickConnectConfigOutcome> UpdateQuickConnectConfigOutcomeCallable;
         typedef std::future<UpdateQuickConnectNameOutcome> UpdateQuickConnectNameOutcomeCallable;
         typedef std::future<UpdateRoutingProfileConcurrencyOutcome> UpdateRoutingProfileConcurrencyOutcomeCallable;
@@ -378,11 +415,13 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::AssociateInstanceStorageConfigRequest&, const Model::AssociateInstanceStorageConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateInstanceStorageConfigResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::AssociateLambdaFunctionRequest&, const Model::AssociateLambdaFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateLambdaFunctionResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::AssociateLexBotRequest&, const Model::AssociateLexBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateLexBotResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::AssociateQueueQuickConnectsRequest&, const Model::AssociateQueueQuickConnectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateQueueQuickConnectsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::AssociateRoutingProfileQueuesRequest&, const Model::AssociateRoutingProfileQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateRoutingProfileQueuesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::AssociateSecurityKeyRequest&, const Model::AssociateSecurityKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateSecurityKeyResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateContactFlowRequest&, const Model::CreateContactFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContactFlowResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateInstanceRequest&, const Model::CreateInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInstanceResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateIntegrationAssociationRequest&, const Model::CreateIntegrationAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIntegrationAssociationResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::CreateQueueRequest&, const Model::CreateQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateQueueResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateQuickConnectRequest&, const Model::CreateQuickConnectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateQuickConnectResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateRoutingProfileRequest&, const Model::CreateRoutingProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRoutingProfileResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateUseCaseRequest&, const Model::CreateUseCaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUseCaseResponseReceivedHandler;
@@ -395,9 +434,11 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::DeleteUserRequest&, const Model::DeleteUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteUserHierarchyGroupRequest&, const Model::DeleteUserHierarchyGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserHierarchyGroupResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeContactFlowRequest&, const Model::DescribeContactFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContactFlowResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::DescribeHoursOfOperationRequest&, const Model::DescribeHoursOfOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHoursOfOperationResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeInstanceRequest&, const Model::DescribeInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeInstanceAttributeRequest&, const Model::DescribeInstanceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceAttributeResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeInstanceStorageConfigRequest&, const Model::DescribeInstanceStorageConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceStorageConfigResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::DescribeQueueRequest&, const Model::DescribeQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeQueueResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeQuickConnectRequest&, const Model::DescribeQuickConnectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeQuickConnectResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeRoutingProfileRequest&, const Model::DescribeRoutingProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRoutingProfileResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeUserRequest&, const Model::DescribeUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserResponseReceivedHandler;
@@ -407,6 +448,7 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::DisassociateInstanceStorageConfigRequest&, const Model::DisassociateInstanceStorageConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateInstanceStorageConfigResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DisassociateLambdaFunctionRequest&, const Model::DisassociateLambdaFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateLambdaFunctionResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DisassociateLexBotRequest&, const Model::DisassociateLexBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateLexBotResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::DisassociateQueueQuickConnectsRequest&, const Model::DisassociateQueueQuickConnectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateQueueQuickConnectsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DisassociateRoutingProfileQueuesRequest&, const Model::DisassociateRoutingProfileQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateRoutingProfileQueuesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DisassociateSecurityKeyRequest&, const Model::DisassociateSecurityKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateSecurityKeyResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::GetContactAttributesRequest&, const Model::GetContactAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContactAttributesResponseReceivedHandler;
@@ -424,6 +466,7 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::ListLexBotsRequest&, const Model::ListLexBotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLexBotsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListPhoneNumbersRequest&, const Model::ListPhoneNumbersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPhoneNumbersResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListPromptsRequest&, const Model::ListPromptsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPromptsResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::ListQueueQuickConnectsRequest&, const Model::ListQueueQuickConnectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQueueQuickConnectsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListQueuesRequest&, const Model::ListQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQueuesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListQuickConnectsRequest&, const Model::ListQuickConnectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQuickConnectsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListRoutingProfileQueuesRequest&, const Model::ListRoutingProfileQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRoutingProfileQueuesResponseReceivedHandler;
@@ -449,6 +492,11 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::UpdateContactFlowNameRequest&, const Model::UpdateContactFlowNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContactFlowNameResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateInstanceAttributeRequest&, const Model::UpdateInstanceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInstanceAttributeResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateInstanceStorageConfigRequest&, const Model::UpdateInstanceStorageConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInstanceStorageConfigResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::UpdateQueueHoursOfOperationRequest&, const Model::UpdateQueueHoursOfOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQueueHoursOfOperationResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::UpdateQueueMaxContactsRequest&, const Model::UpdateQueueMaxContactsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQueueMaxContactsResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::UpdateQueueNameRequest&, const Model::UpdateQueueNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQueueNameResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::UpdateQueueOutboundCallerConfigRequest&, const Model::UpdateQueueOutboundCallerConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQueueOutboundCallerConfigResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::UpdateQueueStatusRequest&, const Model::UpdateQueueStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQueueStatusResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateQuickConnectConfigRequest&, const Model::UpdateQuickConnectConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQuickConnectConfigResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateQuickConnectNameRequest&, const Model::UpdateQuickConnectNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQuickConnectNameResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateRoutingProfileConcurrencyRequest&, const Model::UpdateRoutingProfileConcurrencyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRoutingProfileConcurrencyResponseReceivedHandler;
@@ -464,18 +512,18 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::UpdateUserSecurityProfilesRequest&, const Model::UpdateUserSecurityProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserSecurityProfilesResponseReceivedHandler;
 
   /**
-   * <p>Amazon Connect is a cloud-based contact center solution that makes it easy to
-   * set up and manage a customer contact center and provide reliable customer
-   * engagement at any scale.</p> <p>Amazon Connect provides rich metrics and
-   * real-time reporting that allow you to optimize contact routing. You can also
-   * resolve customer issues more efficiently by putting customers in touch with the
-   * right agents.</p> <p>There are limits to the number of Amazon Connect resources
-   * that you can create and limits to the number of requests that you can make per
-   * second. For more information, see <a
+   * <p>Amazon Connect is a cloud-based contact center solution that you use to set
+   * up and manage a customer contact center and provide reliable customer engagement
+   * at any scale.</p> <p>Amazon Connect provides metrics and real-time reporting
+   * that enable you to optimize contact routing. You can also resolve customer
+   * issues more efficiently by getting customers in touch with the appropriate
+   * agents.</p> <p>There are limits to the number of Amazon Connect resources that
+   * you can create. There are also limits to the number of requests that you can
+   * make per second. For more information, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
    * Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-   * <p>To connect programmatically to an AWS service, you use an endpoint. For a
-   * list of Amazon Connect endpoints, see <a
+   * <p>You can connect programmatically to an AWS service by using an endpoint. For
+   * a list of Amazon Connect endpoints, see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
    * Connect Endpoints</a>.</p>  <p>Working with contact flows? Check out the
    * <a
@@ -547,8 +595,8 @@ namespace Model
          * for example, that you can't define an instance with multiple S3 buckets for
          * storing chat transcripts.</p> <p>This API does not create a resource that
          * doesn't exist. It only associates it to the instance. Ensure that the resource
-         * being specified in the storage configuration, like an Amazon S3 bucket, exists
-         * when being used for association.</p><p><h3>See Also:</h3>   <a
+         * being specified in the storage configuration, like an S3 bucket, exists when
+         * being used for association.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateInstanceStorageConfig">AWS
          * API Reference</a></p>
          */
@@ -561,8 +609,8 @@ namespace Model
          * for example, that you can't define an instance with multiple S3 buckets for
          * storing chat transcripts.</p> <p>This API does not create a resource that
          * doesn't exist. It only associates it to the instance. Ensure that the resource
-         * being specified in the storage configuration, like an Amazon S3 bucket, exists
-         * when being used for association.</p><p><h3>See Also:</h3>   <a
+         * being specified in the storage configuration, like an S3 bucket, exists when
+         * being used for association.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateInstanceStorageConfig">AWS
          * API Reference</a></p>
          *
@@ -577,8 +625,8 @@ namespace Model
          * for example, that you can't define an instance with multiple S3 buckets for
          * storing chat transcripts.</p> <p>This API does not create a resource that
          * doesn't exist. It only associates it to the instance. Ensure that the resource
-         * being specified in the storage configuration, like an Amazon S3 bucket, exists
-         * when being used for association.</p><p><h3>See Also:</h3>   <a
+         * being specified in the storage configuration, like an S3 bucket, exists when
+         * being used for association.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateInstanceStorageConfig">AWS
          * API Reference</a></p>
          *
@@ -647,6 +695,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateLexBotAsync(const Model::AssociateLexBotRequest& request, const AssociateLexBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Associates a set of quick connects with a queue.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateQueueQuickConnects">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateQueueQuickConnectsOutcome AssociateQueueQuickConnects(const Model::AssociateQueueQuickConnectsRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Associates a set of quick connects with a queue.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateQueueQuickConnects">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateQueueQuickConnectsOutcomeCallable AssociateQueueQuickConnectsCallable(const Model::AssociateQueueQuickConnectsRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Associates a set of quick connects with a queue.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateQueueQuickConnects">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateQueueQuickConnectsAsync(const Model::AssociateQueueQuickConnectsRequest& request, const AssociateQueueQuickConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a set of queues with a routing profile.</p><p><h3>See Also:</h3>  
@@ -744,9 +823,10 @@ namespace Model
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Initiates an Amazon Connect instance with all the supported
-         * channels enabled. It does not attach any storage (such as Amazon S3, or Kinesis)
-         * or allow for any configurations on features such as Contact Lens for Amazon
-         * Connect. </p><p><h3>See Also:</h3>   <a
+         * channels enabled. It does not attach any storage, such as Amazon Simple Storage
+         * Service (Amazon S3) or Amazon Kinesis. It also does not allow for any
+         * configurations on features, such as Contact Lens for Amazon Connect.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateInstance">AWS
          * API Reference</a></p>
          */
@@ -755,9 +835,10 @@ namespace Model
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Initiates an Amazon Connect instance with all the supported
-         * channels enabled. It does not attach any storage (such as Amazon S3, or Kinesis)
-         * or allow for any configurations on features such as Contact Lens for Amazon
-         * Connect. </p><p><h3>See Also:</h3>   <a
+         * channels enabled. It does not attach any storage, such as Amazon Simple Storage
+         * Service (Amazon S3) or Amazon Kinesis. It also does not allow for any
+         * configurations on features, such as Contact Lens for Amazon Connect.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateInstance">AWS
          * API Reference</a></p>
          *
@@ -768,9 +849,10 @@ namespace Model
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Initiates an Amazon Connect instance with all the supported
-         * channels enabled. It does not attach any storage (such as Amazon S3, or Kinesis)
-         * or allow for any configurations on features such as Contact Lens for Amazon
-         * Connect. </p><p><h3>See Also:</h3>   <a
+         * channels enabled. It does not attach any storage, such as Amazon Simple Storage
+         * Service (Amazon S3) or Amazon Kinesis. It also does not allow for any
+         * configurations on features, such as Contact Lens for Amazon Connect.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateInstance">AWS
          * API Reference</a></p>
          *
@@ -808,6 +890,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateIntegrationAssociationAsync(const Model::CreateIntegrationAssociationRequest& request, const CreateIntegrationAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Creates a new queue for the specified Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateQueue">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateQueueOutcome CreateQueue(const Model::CreateQueueRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Creates a new queue for the specified Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateQueue">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateQueueOutcomeCallable CreateQueueCallable(const Model::CreateQueueRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Creates a new queue for the specified Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateQueue">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateQueueAsync(const Model::CreateQueueRequest& request, const CreateQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
@@ -1189,8 +1302,36 @@ namespace Model
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Describes the hours of operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeHoursOfOperation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeHoursOfOperationOutcome DescribeHoursOfOperation(const Model::DescribeHoursOfOperationRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Describes the hours of operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeHoursOfOperation">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeHoursOfOperationOutcomeCallable DescribeHoursOfOperationCallable(const Model::DescribeHoursOfOperationRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Describes the hours of operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeHoursOfOperation">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeHoursOfOperationAsync(const Model::DescribeHoursOfOperationRequest& request, const DescribeHoursOfOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Returns the current state of the specified instance identifier.
-         * It tracks the instance while it is being created and returns an error status if
+         * It tracks the instance while it is being created and returns an error status, if
          * applicable. </p> <p>If an instance is not created successfully, the instance
          * status reason field returns details relevant to the reason. The instance in a
          * failed state is returned only for 24 hours after the CreateInstance API was
@@ -1203,7 +1344,7 @@ namespace Model
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Returns the current state of the specified instance identifier.
-         * It tracks the instance while it is being created and returns an error status if
+         * It tracks the instance while it is being created and returns an error status, if
          * applicable. </p> <p>If an instance is not created successfully, the instance
          * status reason field returns details relevant to the reason. The instance in a
          * failed state is returned only for 24 hours after the CreateInstance API was
@@ -1218,7 +1359,7 @@ namespace Model
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Returns the current state of the specified instance identifier.
-         * It tracks the instance while it is being created and returns an error status if
+         * It tracks the instance while it is being created and returns an error status, if
          * applicable. </p> <p>If an instance is not created successfully, the instance
          * status reason field returns details relevant to the reason. The instance in a
          * failed state is returned only for 24 hours after the CreateInstance API was
@@ -1291,6 +1432,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeInstanceStorageConfigAsync(const Model::DescribeInstanceStorageConfigRequest& request, const DescribeInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Describes the specified queue.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeQueue">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeQueueOutcome DescribeQueue(const Model::DescribeQueueRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Describes the specified queue.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeQueue">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeQueueOutcomeCallable DescribeQueueCallable(const Model::DescribeQueueRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Describes the specified queue.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeQueue">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeQueueAsync(const Model::DescribeQueueRequest& request, const DescribeQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
@@ -1496,8 +1665,8 @@ namespace Model
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Remove the Lambda function from the drop-down options available
-         * in the relevant contact flow blocks.</p><p><h3>See Also:</h3>   <a
+         * change.</p> <p>Remove the Lambda function from the dropdown options available in
+         * the relevant contact flow blocks.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLambdaFunction">AWS
          * API Reference</a></p>
          */
@@ -1505,8 +1674,8 @@ namespace Model
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Remove the Lambda function from the drop-down options available
-         * in the relevant contact flow blocks.</p><p><h3>See Also:</h3>   <a
+         * change.</p> <p>Remove the Lambda function from the dropdown options available in
+         * the relevant contact flow blocks.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLambdaFunction">AWS
          * API Reference</a></p>
          *
@@ -1516,8 +1685,8 @@ namespace Model
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Remove the Lambda function from the drop-down options available
-         * in the relevant contact flow blocks.</p><p><h3>See Also:</h3>   <a
+         * change.</p> <p>Remove the Lambda function from the dropdown options available in
+         * the relevant contact flow blocks.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLambdaFunction">AWS
          * API Reference</a></p>
          *
@@ -1555,6 +1724,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateLexBotAsync(const Model::DisassociateLexBotRequest& request, const DisassociateLexBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Disassociates a set of quick connects from a queue.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateQueueQuickConnects">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateQueueQuickConnectsOutcome DisassociateQueueQuickConnects(const Model::DisassociateQueueQuickConnectsRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Disassociates a set of quick connects from a queue.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateQueueQuickConnects">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateQueueQuickConnectsOutcomeCallable DisassociateQueueQuickConnectsCallable(const Model::DisassociateQueueQuickConnectsRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Disassociates a set of quick connects from a queue.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateQueueQuickConnects">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateQueueQuickConnectsAsync(const Model::DisassociateQueueQuickConnectsRequest& request, const DisassociateQueueQuickConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates a set of queues from a routing profile.</p><p><h3>See
@@ -1988,8 +2188,8 @@ namespace Model
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Returns a paginated list of all the Lambda functions that show up
-         * in the drop-down options in the relevant contact flow blocks.</p><p><h3>See
+         * change.</p> <p>Returns a paginated list of all Lambda functions that display in
+         * the dropdown options in the relevant contact flow blocks.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLambdaFunctions">AWS
          * API Reference</a></p>
@@ -1998,8 +2198,8 @@ namespace Model
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Returns a paginated list of all the Lambda functions that show up
-         * in the drop-down options in the relevant contact flow blocks.</p><p><h3>See
+         * change.</p> <p>Returns a paginated list of all Lambda functions that display in
+         * the dropdown options in the relevant contact flow blocks.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLambdaFunctions">AWS
          * API Reference</a></p>
@@ -2010,8 +2210,8 @@ namespace Model
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Returns a paginated list of all the Lambda functions that show up
-         * in the drop-down options in the relevant contact flow blocks.</p><p><h3>See
+         * change.</p> <p>Returns a paginated list of all Lambda functions that display in
+         * the dropdown options in the relevant contact flow blocks.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLambdaFunctions">AWS
          * API Reference</a></p>
@@ -2117,6 +2317,37 @@ namespace Model
         virtual void ListPromptsAsync(const Model::ListPromptsRequest& request, const ListPromptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Lists the quick connects associated with a queue.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQueueQuickConnects">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListQueueQuickConnectsOutcome ListQueueQuickConnects(const Model::ListQueueQuickConnectsRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Lists the quick connects associated with a queue.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQueueQuickConnects">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListQueueQuickConnectsOutcomeCallable ListQueueQuickConnectsCallable(const Model::ListQueueQuickConnectsRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Lists the quick connects associated with a queue.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQueueQuickConnects">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListQueueQuickConnectsAsync(const Model::ListQueueQuickConnectsRequest& request, const ListQueueQuickConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Provides information about the queues for the specified Amazon Connect
          * instance.</p> <p>For more information about queues, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-queues-standard-and-agent.html">Queues:
@@ -2185,7 +2416,7 @@ namespace Model
         virtual void ListQuickConnectsAsync(const Model::ListQuickConnectsRequest& request, const ListQuickConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List the queues associated with a routing profile.</p><p><h3>See Also:</h3>  
+         * <p>Lists the queues associated with a routing profile.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRoutingProfileQueues">AWS
          * API Reference</a></p>
@@ -2193,7 +2424,7 @@ namespace Model
         virtual Model::ListRoutingProfileQueuesOutcome ListRoutingProfileQueues(const Model::ListRoutingProfileQueuesRequest& request) const;
 
         /**
-         * <p>List the queues associated with a routing profile.</p><p><h3>See Also:</h3>  
+         * <p>Lists the queues associated with a routing profile.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRoutingProfileQueues">AWS
          * API Reference</a></p>
@@ -2203,7 +2434,7 @@ namespace Model
         virtual Model::ListRoutingProfileQueuesOutcomeCallable ListRoutingProfileQueuesCallable(const Model::ListRoutingProfileQueuesRequest& request) const;
 
         /**
-         * <p>List the queues associated with a routing profile.</p><p><h3>See Also:</h3>  
+         * <p>Lists the queues associated with a routing profile.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRoutingProfileQueues">AWS
          * API Reference</a></p>
@@ -2368,7 +2599,7 @@ namespace Model
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>List the use cases. </p><p><h3>See Also:</h3>   <a
+         * change.</p> <p>Lists the use cases. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUseCases">AWS
          * API Reference</a></p>
          */
@@ -2376,7 +2607,7 @@ namespace Model
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>List the use cases. </p><p><h3>See Also:</h3>   <a
+         * change.</p> <p>Lists the use cases. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUseCases">AWS
          * API Reference</a></p>
          *
@@ -2386,7 +2617,7 @@ namespace Model
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>List the use cases. </p><p><h3>See Also:</h3>   <a
+         * change.</p> <p>Lists the use cases. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUseCases">AWS
          * API Reference</a></p>
          *
@@ -2498,8 +2729,8 @@ namespace Model
          * this API provides a token required to obtain credentials from the <a
          * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
          * API in the Amazon Connect Participant Service.</p> <p>When a new chat contact is
-         * successfully created, clients need to subscribe to the participant’s connection
-         * for the created chat within 5 minutes. This is achieved by invoking <a
+         * successfully created, clients must subscribe to the participant’s connection for
+         * the created chat within 5 minutes. This is achieved by invoking <a
          * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
          * with WEBSOCKET and CONNECTION_CREDENTIALS. </p> <p>A 429 error occurs in two
          * situations:</p> <ul> <li> <p>API rate limit is exceeded. API TPS throttling
@@ -2508,7 +2739,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">quota
          * for concurrent active chats</a> is exceeded. Active chat throttling returns a
          * <code>LimitExceededException</code>.</p> </li> </ul> <p>For more information
-         * about how chat works, see <a
+         * about chat, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a>
          * in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartChatContact">AWS
@@ -2521,8 +2752,8 @@ namespace Model
          * this API provides a token required to obtain credentials from the <a
          * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
          * API in the Amazon Connect Participant Service.</p> <p>When a new chat contact is
-         * successfully created, clients need to subscribe to the participant’s connection
-         * for the created chat within 5 minutes. This is achieved by invoking <a
+         * successfully created, clients must subscribe to the participant’s connection for
+         * the created chat within 5 minutes. This is achieved by invoking <a
          * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
          * with WEBSOCKET and CONNECTION_CREDENTIALS. </p> <p>A 429 error occurs in two
          * situations:</p> <ul> <li> <p>API rate limit is exceeded. API TPS throttling
@@ -2531,7 +2762,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">quota
          * for concurrent active chats</a> is exceeded. Active chat throttling returns a
          * <code>LimitExceededException</code>.</p> </li> </ul> <p>For more information
-         * about how chat works, see <a
+         * about chat, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a>
          * in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartChatContact">AWS
@@ -2546,8 +2777,8 @@ namespace Model
          * this API provides a token required to obtain credentials from the <a
          * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
          * API in the Amazon Connect Participant Service.</p> <p>When a new chat contact is
-         * successfully created, clients need to subscribe to the participant’s connection
-         * for the created chat within 5 minutes. This is achieved by invoking <a
+         * successfully created, clients must subscribe to the participant’s connection for
+         * the created chat within 5 minutes. This is achieved by invoking <a
          * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
          * with WEBSOCKET and CONNECTION_CREDENTIALS. </p> <p>A 429 error occurs in two
          * situations:</p> <ul> <li> <p>API rate limit is exceeded. API TPS throttling
@@ -2556,7 +2787,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">quota
          * for concurrent active chats</a> is exceeded. Active chat throttling returns a
          * <code>LimitExceededException</code>.</p> </li> </ul> <p>For more information
-         * about how chat works, see <a
+         * about chat, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a>
          * in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartChatContact">AWS
@@ -2567,7 +2798,7 @@ namespace Model
         virtual void StartChatContactAsync(const Model::StartChatContactRequest& request, const StartChatContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>This API starts recording the contact when the agent joins the call.
+         * <p>Starts recording the contact when the agent joins the call.
          * StartContactRecording is a one-time action. For example, if you use
          * StopContactRecording to stop recording an ongoing call, you can't use
          * StartContactRecording to restart it. For scenarios where the recording has
@@ -2584,7 +2815,7 @@ namespace Model
         virtual Model::StartContactRecordingOutcome StartContactRecording(const Model::StartContactRecordingRequest& request) const;
 
         /**
-         * <p>This API starts recording the contact when the agent joins the call.
+         * <p>Starts recording the contact when the agent joins the call.
          * StartContactRecording is a one-time action. For example, if you use
          * StopContactRecording to stop recording an ongoing call, you can't use
          * StartContactRecording to restart it. For scenarios where the recording has
@@ -2603,7 +2834,7 @@ namespace Model
         virtual Model::StartContactRecordingOutcomeCallable StartContactRecordingCallable(const Model::StartContactRecordingRequest& request) const;
 
         /**
-         * <p>This API starts recording the contact when the agent joins the call.
+         * <p>Starts recording the contact when the agent joins the call.
          * StartContactRecording is a one-time action. For example, if you use
          * StopContactRecording to stop recording an ongoing call, you can't use
          * StartContactRecording to restart it. For scenarios where the recording has
@@ -2622,13 +2853,13 @@ namespace Model
         virtual void StartContactRecordingAsync(const Model::StartContactRecordingRequest& request, const StartContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>This API places an outbound call to a contact, and then initiates the contact
-         * flow. It performs the actions in the contact flow that's specified (in
-         * <code>ContactFlowId</code>).</p> <p>Agents are not involved in initiating the
-         * outbound API (that is, dialing the contact). If the contact flow places an
-         * outbound call to a contact, and then puts the contact in queue, that's when the
-         * call is routed to the agent, like any other inbound case.</p> <p>There is a 60
-         * second dialing timeout for this operation. If the call is not connected after 60
+         * <p>Places an outbound call to a contact, and then initiates the contact flow. It
+         * performs the actions in the contact flow that's specified (in
+         * <code>ContactFlowId</code>).</p> <p>Agents do not initiate the outbound API,
+         * which means that they do not dial the contact. If the contact flow places an
+         * outbound call to a contact, and then puts the contact in queue, the call is then
+         * routed to the agent, like any other inbound case.</p> <p>There is a 60-second
+         * dialing timeout for this operation. If the call is not connected after 60
          * seconds, it fails.</p>  <p>UK numbers with a 447 prefix are not allowed by
          * default. Before you can dial these UK mobile numbers, you must submit a service
          * quota increase request. For more information, see <a
@@ -2641,13 +2872,13 @@ namespace Model
         virtual Model::StartOutboundVoiceContactOutcome StartOutboundVoiceContact(const Model::StartOutboundVoiceContactRequest& request) const;
 
         /**
-         * <p>This API places an outbound call to a contact, and then initiates the contact
-         * flow. It performs the actions in the contact flow that's specified (in
-         * <code>ContactFlowId</code>).</p> <p>Agents are not involved in initiating the
-         * outbound API (that is, dialing the contact). If the contact flow places an
-         * outbound call to a contact, and then puts the contact in queue, that's when the
-         * call is routed to the agent, like any other inbound case.</p> <p>There is a 60
-         * second dialing timeout for this operation. If the call is not connected after 60
+         * <p>Places an outbound call to a contact, and then initiates the contact flow. It
+         * performs the actions in the contact flow that's specified (in
+         * <code>ContactFlowId</code>).</p> <p>Agents do not initiate the outbound API,
+         * which means that they do not dial the contact. If the contact flow places an
+         * outbound call to a contact, and then puts the contact in queue, the call is then
+         * routed to the agent, like any other inbound case.</p> <p>There is a 60-second
+         * dialing timeout for this operation. If the call is not connected after 60
          * seconds, it fails.</p>  <p>UK numbers with a 447 prefix are not allowed by
          * default. Before you can dial these UK mobile numbers, you must submit a service
          * quota increase request. For more information, see <a
@@ -2662,13 +2893,13 @@ namespace Model
         virtual Model::StartOutboundVoiceContactOutcomeCallable StartOutboundVoiceContactCallable(const Model::StartOutboundVoiceContactRequest& request) const;
 
         /**
-         * <p>This API places an outbound call to a contact, and then initiates the contact
-         * flow. It performs the actions in the contact flow that's specified (in
-         * <code>ContactFlowId</code>).</p> <p>Agents are not involved in initiating the
-         * outbound API (that is, dialing the contact). If the contact flow places an
-         * outbound call to a contact, and then puts the contact in queue, that's when the
-         * call is routed to the agent, like any other inbound case.</p> <p>There is a 60
-         * second dialing timeout for this operation. If the call is not connected after 60
+         * <p>Places an outbound call to a contact, and then initiates the contact flow. It
+         * performs the actions in the contact flow that's specified (in
+         * <code>ContactFlowId</code>).</p> <p>Agents do not initiate the outbound API,
+         * which means that they do not dial the contact. If the contact flow places an
+         * outbound call to a contact, and then puts the contact in queue, the call is then
+         * routed to the agent, like any other inbound case.</p> <p>There is a 60-second
+         * dialing timeout for this operation. If the call is not connected after 60
          * seconds, it fails.</p>  <p>UK numbers with a 447 prefix are not allowed by
          * default. Before you can dial these UK mobile numbers, you must submit a service
          * quota increase request. For more information, see <a
@@ -2733,26 +2964,26 @@ namespace Model
         virtual void StopContactAsync(const Model::StopContactRequest& request, const StopContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>When a contact is being recorded, this API stops recording the call.
-         * StopContactRecording is a one-time action. If you use StopContactRecording to
-         * stop recording an ongoing call, you can't use StartContactRecording to restart
-         * it. For scenarios where the recording has started and you want to suspend it for
-         * sensitive information (for example, to collect a credit card number), and then
-         * restart it, use SuspendContactRecording and ResumeContactRecording.</p> <p>Only
-         * voice recordings are supported at this time.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops recording a call when a contact is being recorded. StopContactRecording
+         * is a one-time action. If you use StopContactRecording to stop recording an
+         * ongoing call, you can't use StartContactRecording to restart it. For scenarios
+         * where the recording has started and you want to suspend it for sensitive
+         * information (for example, to collect a credit card number), and then restart it,
+         * use SuspendContactRecording and ResumeContactRecording.</p> <p>Only voice
+         * recordings are supported at this time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactRecording">AWS
          * API Reference</a></p>
          */
         virtual Model::StopContactRecordingOutcome StopContactRecording(const Model::StopContactRecordingRequest& request) const;
 
         /**
-         * <p>When a contact is being recorded, this API stops recording the call.
-         * StopContactRecording is a one-time action. If you use StopContactRecording to
-         * stop recording an ongoing call, you can't use StartContactRecording to restart
-         * it. For scenarios where the recording has started and you want to suspend it for
-         * sensitive information (for example, to collect a credit card number), and then
-         * restart it, use SuspendContactRecording and ResumeContactRecording.</p> <p>Only
-         * voice recordings are supported at this time.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops recording a call when a contact is being recorded. StopContactRecording
+         * is a one-time action. If you use StopContactRecording to stop recording an
+         * ongoing call, you can't use StartContactRecording to restart it. For scenarios
+         * where the recording has started and you want to suspend it for sensitive
+         * information (for example, to collect a credit card number), and then restart it,
+         * use SuspendContactRecording and ResumeContactRecording.</p> <p>Only voice
+         * recordings are supported at this time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactRecording">AWS
          * API Reference</a></p>
          *
@@ -2761,13 +2992,13 @@ namespace Model
         virtual Model::StopContactRecordingOutcomeCallable StopContactRecordingCallable(const Model::StopContactRecordingRequest& request) const;
 
         /**
-         * <p>When a contact is being recorded, this API stops recording the call.
-         * StopContactRecording is a one-time action. If you use StopContactRecording to
-         * stop recording an ongoing call, you can't use StartContactRecording to restart
-         * it. For scenarios where the recording has started and you want to suspend it for
-         * sensitive information (for example, to collect a credit card number), and then
-         * restart it, use SuspendContactRecording and ResumeContactRecording.</p> <p>Only
-         * voice recordings are supported at this time.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops recording a call when a contact is being recorded. StopContactRecording
+         * is a one-time action. If you use StopContactRecording to stop recording an
+         * ongoing call, you can't use StartContactRecording to restart it. For scenarios
+         * where the recording has started and you want to suspend it for sensitive
+         * information (for example, to collect a credit card number), and then restart it,
+         * use SuspendContactRecording and ResumeContactRecording.</p> <p>Only voice
+         * recordings are supported at this time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactRecording">AWS
          * API Reference</a></p>
          *
@@ -2817,7 +3048,7 @@ namespace Model
 
         /**
          * <p>Adds the specified tags to the specified resource.</p> <p>The supported
-         * resource types are users, routing profiles, quick connects, and contact
+         * resource types are users, routing profiles, queues, quick connects, and contact
          * flows.</p> <p>For sample policies that use tags, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
          * Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect
@@ -2829,7 +3060,7 @@ namespace Model
 
         /**
          * <p>Adds the specified tags to the specified resource.</p> <p>The supported
-         * resource types are users, routing profiles, quick connects, and contact
+         * resource types are users, routing profiles, queues, quick connects, and contact
          * flows.</p> <p>For sample policies that use tags, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
          * Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect
@@ -2843,7 +3074,7 @@ namespace Model
 
         /**
          * <p>Adds the specified tags to the specified resource.</p> <p>The supported
-         * resource types are users, routing profiles, quick connects, and contact
+         * resource types are users, routing profiles, queues, quick connects, and contact
          * flows.</p> <p>For sample policies that use tags, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
          * Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect
@@ -2886,20 +3117,21 @@ namespace Model
         /**
          * <p>Creates or updates the contact attributes associated with the specified
          * contact.</p> <p>You can add or update attributes for both ongoing and completed
-         * contacts. For example, you can update the customer's name or the reason the
-         * customer called while the call is active, or add notes about steps that the
-         * agent took during the call that are displayed to the next agent that takes the
-         * call. You can also update attributes for a contact using data from your CRM
+         * contacts. For example, while the call is active, you can update the customer's
+         * name or the reason the customer called. You can add notes about steps that the
+         * agent took during the call that display to the next agent that takes the call.
+         * You can also update attributes for a contact using data from your CRM
          * application and save the data with the contact in Amazon Connect. You could also
-         * flag calls for additional analysis, such as legal review or identifying abusive
+         * flag calls for additional analysis, such as legal review or to identify abusive
          * callers.</p> <p>Contact attributes are available in Amazon Connect for 24
          * months, and are then deleted.</p> <p> <b>Important:</b> You cannot use the
          * operation to update attributes for contacts that occurred prior to the release
-         * of the API, September 12, 2018. You can update attributes only for contacts that
-         * started after the release of the API. If you attempt to update attributes for a
-         * contact that occurred prior to the release of the API, a 400 error is returned.
-         * This applies also to queued callbacks that were initiated prior to the release
-         * of the API but are still active in your instance.</p><p><h3>See Also:</h3>   <a
+         * of the API, which was September 12, 2018. You can update attributes only for
+         * contacts that started after the release of the API. If you attempt to update
+         * attributes for a contact that occurred prior to the release of the API, a 400
+         * error is returned. This applies also to queued callbacks that were initiated
+         * prior to the release of the API but are still active in your
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactAttributes">AWS
          * API Reference</a></p>
          */
@@ -2908,20 +3140,21 @@ namespace Model
         /**
          * <p>Creates or updates the contact attributes associated with the specified
          * contact.</p> <p>You can add or update attributes for both ongoing and completed
-         * contacts. For example, you can update the customer's name or the reason the
-         * customer called while the call is active, or add notes about steps that the
-         * agent took during the call that are displayed to the next agent that takes the
-         * call. You can also update attributes for a contact using data from your CRM
+         * contacts. For example, while the call is active, you can update the customer's
+         * name or the reason the customer called. You can add notes about steps that the
+         * agent took during the call that display to the next agent that takes the call.
+         * You can also update attributes for a contact using data from your CRM
          * application and save the data with the contact in Amazon Connect. You could also
-         * flag calls for additional analysis, such as legal review or identifying abusive
+         * flag calls for additional analysis, such as legal review or to identify abusive
          * callers.</p> <p>Contact attributes are available in Amazon Connect for 24
          * months, and are then deleted.</p> <p> <b>Important:</b> You cannot use the
          * operation to update attributes for contacts that occurred prior to the release
-         * of the API, September 12, 2018. You can update attributes only for contacts that
-         * started after the release of the API. If you attempt to update attributes for a
-         * contact that occurred prior to the release of the API, a 400 error is returned.
-         * This applies also to queued callbacks that were initiated prior to the release
-         * of the API but are still active in your instance.</p><p><h3>See Also:</h3>   <a
+         * of the API, which was September 12, 2018. You can update attributes only for
+         * contacts that started after the release of the API. If you attempt to update
+         * attributes for a contact that occurred prior to the release of the API, a 400
+         * error is returned. This applies also to queued callbacks that were initiated
+         * prior to the release of the API but are still active in your
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactAttributes">AWS
          * API Reference</a></p>
          *
@@ -2932,20 +3165,21 @@ namespace Model
         /**
          * <p>Creates or updates the contact attributes associated with the specified
          * contact.</p> <p>You can add or update attributes for both ongoing and completed
-         * contacts. For example, you can update the customer's name or the reason the
-         * customer called while the call is active, or add notes about steps that the
-         * agent took during the call that are displayed to the next agent that takes the
-         * call. You can also update attributes for a contact using data from your CRM
+         * contacts. For example, while the call is active, you can update the customer's
+         * name or the reason the customer called. You can add notes about steps that the
+         * agent took during the call that display to the next agent that takes the call.
+         * You can also update attributes for a contact using data from your CRM
          * application and save the data with the contact in Amazon Connect. You could also
-         * flag calls for additional analysis, such as legal review or identifying abusive
+         * flag calls for additional analysis, such as legal review or to identify abusive
          * callers.</p> <p>Contact attributes are available in Amazon Connect for 24
          * months, and are then deleted.</p> <p> <b>Important:</b> You cannot use the
          * operation to update attributes for contacts that occurred prior to the release
-         * of the API, September 12, 2018. You can update attributes only for contacts that
-         * started after the release of the API. If you attempt to update attributes for a
-         * contact that occurred prior to the release of the API, a 400 error is returned.
-         * This applies also to queued callbacks that were initiated prior to the release
-         * of the API but are still active in your instance.</p><p><h3>See Also:</h3>   <a
+         * of the API, which was September 12, 2018. You can update attributes only for
+         * contacts that started after the release of the API. If you attempt to update
+         * attributes for a contact that occurred prior to the release of the API, a 400
+         * error is returned. This applies also to queued callbacks that were initiated
+         * prior to the release of the API but are still active in your
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactAttributes">AWS
          * API Reference</a></p>
          *
@@ -3085,6 +3319,161 @@ namespace Model
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Updates the hours of operation for the specified
+         * queue.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueHoursOfOperation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateQueueHoursOfOperationOutcome UpdateQueueHoursOfOperation(const Model::UpdateQueueHoursOfOperationRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Updates the hours of operation for the specified
+         * queue.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueHoursOfOperation">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateQueueHoursOfOperationOutcomeCallable UpdateQueueHoursOfOperationCallable(const Model::UpdateQueueHoursOfOperationRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Updates the hours of operation for the specified
+         * queue.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueHoursOfOperation">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateQueueHoursOfOperationAsync(const Model::UpdateQueueHoursOfOperationRequest& request, const UpdateQueueHoursOfOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Updates the maximum number of contacts allowed in a queue before
+         * it is considered full.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueMaxContacts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateQueueMaxContactsOutcome UpdateQueueMaxContacts(const Model::UpdateQueueMaxContactsRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Updates the maximum number of contacts allowed in a queue before
+         * it is considered full.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueMaxContacts">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateQueueMaxContactsOutcomeCallable UpdateQueueMaxContactsCallable(const Model::UpdateQueueMaxContactsRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Updates the maximum number of contacts allowed in a queue before
+         * it is considered full.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueMaxContacts">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateQueueMaxContactsAsync(const Model::UpdateQueueMaxContactsRequest& request, const UpdateQueueMaxContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Updates the name and description of a queue. At least
+         * <code>Name</code> or <code>Description</code> must be provided.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueName">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateQueueNameOutcome UpdateQueueName(const Model::UpdateQueueNameRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Updates the name and description of a queue. At least
+         * <code>Name</code> or <code>Description</code> must be provided.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueName">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateQueueNameOutcomeCallable UpdateQueueNameCallable(const Model::UpdateQueueNameRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Updates the name and description of a queue. At least
+         * <code>Name</code> or <code>Description</code> must be provided.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueName">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateQueueNameAsync(const Model::UpdateQueueNameRequest& request, const UpdateQueueNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Updates the outbound caller ID name, number, and outbound whisper
+         * flow for a specified queue.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueOutboundCallerConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateQueueOutboundCallerConfigOutcome UpdateQueueOutboundCallerConfig(const Model::UpdateQueueOutboundCallerConfigRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Updates the outbound caller ID name, number, and outbound whisper
+         * flow for a specified queue.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueOutboundCallerConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateQueueOutboundCallerConfigOutcomeCallable UpdateQueueOutboundCallerConfigCallable(const Model::UpdateQueueOutboundCallerConfigRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Updates the outbound caller ID name, number, and outbound whisper
+         * flow for a specified queue.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueOutboundCallerConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateQueueOutboundCallerConfigAsync(const Model::UpdateQueueOutboundCallerConfigRequest& request, const UpdateQueueOutboundCallerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Updates the status of the queue.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateQueueStatusOutcome UpdateQueueStatus(const Model::UpdateQueueStatusRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Updates the status of the queue.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueStatus">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateQueueStatusOutcomeCallable UpdateQueueStatusCallable(const Model::UpdateQueueStatusRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Updates the status of the queue.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueStatus">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateQueueStatusAsync(const Model::UpdateQueueStatusRequest& request, const UpdateQueueStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Updates the configuration settings for the specified quick
          * connect.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectConfig">AWS
@@ -3117,8 +3506,8 @@ namespace Model
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Updates the name and description of a quick connect. The request
-         * accepts the following data in JSON format. At least Name or Description must be
-         * provided.</p><p><h3>See Also:</h3>   <a
+         * accepts the following data in JSON format. At least <code>Name</code> or
+         * <code>Description</code> must be provided.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectName">AWS
          * API Reference</a></p>
          */
@@ -3127,8 +3516,8 @@ namespace Model
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Updates the name and description of a quick connect. The request
-         * accepts the following data in JSON format. At least Name or Description must be
-         * provided.</p><p><h3>See Also:</h3>   <a
+         * accepts the following data in JSON format. At least <code>Name</code> or
+         * <code>Description</code> must be provided.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectName">AWS
          * API Reference</a></p>
          *
@@ -3139,8 +3528,8 @@ namespace Model
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Updates the name and description of a quick connect. The request
-         * accepts the following data in JSON format. At least Name or Description must be
-         * provided.</p><p><h3>See Also:</h3>   <a
+         * accepts the following data in JSON format. At least <code>Name</code> or
+         * <code>Description</code> must be provided.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectName">AWS
          * API Reference</a></p>
          *
@@ -3346,12 +3735,12 @@ namespace Model
 
         /**
          * <p>Updates the identity information for the specified user.</p> 
-         * <p>Someone with the ability to invoke <code>UpdateUserIndentityInfo</code> can
-         * change the login credentials of other users by changing their email address.
-         * This poses a security risk to your organization. They can change the email
-         * address of a user to the attacker's email address, and then reset the password
-         * through email. We strongly recommend limiting who has the ability to invoke
-         * <code>UpdateUserIndentityInfo</code>. For more information, see <a
+         * <p>We strongly recommend limiting who has the ability to invoke
+         * <code>UpdateUserIdentityInfo</code>. Someone with that ability can change the
+         * login credentials of other users by changing their email address. This poses a
+         * security risk to your organization. They can change the email address of a user
+         * to the attacker's email address, and then reset the password through email. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html">Best
          * Practices for Security Profiles</a> in the <i>Amazon Connect Administrator
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -3362,12 +3751,12 @@ namespace Model
 
         /**
          * <p>Updates the identity information for the specified user.</p> 
-         * <p>Someone with the ability to invoke <code>UpdateUserIndentityInfo</code> can
-         * change the login credentials of other users by changing their email address.
-         * This poses a security risk to your organization. They can change the email
-         * address of a user to the attacker's email address, and then reset the password
-         * through email. We strongly recommend limiting who has the ability to invoke
-         * <code>UpdateUserIndentityInfo</code>. For more information, see <a
+         * <p>We strongly recommend limiting who has the ability to invoke
+         * <code>UpdateUserIdentityInfo</code>. Someone with that ability can change the
+         * login credentials of other users by changing their email address. This poses a
+         * security risk to your organization. They can change the email address of a user
+         * to the attacker's email address, and then reset the password through email. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html">Best
          * Practices for Security Profiles</a> in the <i>Amazon Connect Administrator
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -3380,12 +3769,12 @@ namespace Model
 
         /**
          * <p>Updates the identity information for the specified user.</p> 
-         * <p>Someone with the ability to invoke <code>UpdateUserIndentityInfo</code> can
-         * change the login credentials of other users by changing their email address.
-         * This poses a security risk to your organization. They can change the email
-         * address of a user to the attacker's email address, and then reset the password
-         * through email. We strongly recommend limiting who has the ability to invoke
-         * <code>UpdateUserIndentityInfo</code>. For more information, see <a
+         * <p>We strongly recommend limiting who has the ability to invoke
+         * <code>UpdateUserIdentityInfo</code>. Someone with that ability can change the
+         * login credentials of other users by changing their email address. This poses a
+         * security risk to your organization. They can change the email address of a user
+         * to the attacker's email address, and then reset the password through email. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html">Best
          * Practices for Security Profiles</a> in the <i>Amazon Connect Administrator
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -3488,11 +3877,13 @@ namespace Model
         void AssociateInstanceStorageConfigAsyncHelper(const Model::AssociateInstanceStorageConfigRequest& request, const AssociateInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateLambdaFunctionAsyncHelper(const Model::AssociateLambdaFunctionRequest& request, const AssociateLambdaFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateLexBotAsyncHelper(const Model::AssociateLexBotRequest& request, const AssociateLexBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssociateQueueQuickConnectsAsyncHelper(const Model::AssociateQueueQuickConnectsRequest& request, const AssociateQueueQuickConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateRoutingProfileQueuesAsyncHelper(const Model::AssociateRoutingProfileQueuesRequest& request, const AssociateRoutingProfileQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateSecurityKeyAsyncHelper(const Model::AssociateSecurityKeyRequest& request, const AssociateSecurityKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateContactFlowAsyncHelper(const Model::CreateContactFlowRequest& request, const CreateContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateInstanceAsyncHelper(const Model::CreateInstanceRequest& request, const CreateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateIntegrationAssociationAsyncHelper(const Model::CreateIntegrationAssociationRequest& request, const CreateIntegrationAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateQueueAsyncHelper(const Model::CreateQueueRequest& request, const CreateQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateQuickConnectAsyncHelper(const Model::CreateQuickConnectRequest& request, const CreateQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRoutingProfileAsyncHelper(const Model::CreateRoutingProfileRequest& request, const CreateRoutingProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUseCaseAsyncHelper(const Model::CreateUseCaseRequest& request, const CreateUseCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3505,9 +3896,11 @@ namespace Model
         void DeleteUserAsyncHelper(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUserHierarchyGroupAsyncHelper(const Model::DeleteUserHierarchyGroupRequest& request, const DeleteUserHierarchyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeContactFlowAsyncHelper(const Model::DescribeContactFlowRequest& request, const DescribeContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeHoursOfOperationAsyncHelper(const Model::DescribeHoursOfOperationRequest& request, const DescribeHoursOfOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstanceAsyncHelper(const Model::DescribeInstanceRequest& request, const DescribeInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstanceAttributeAsyncHelper(const Model::DescribeInstanceAttributeRequest& request, const DescribeInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstanceStorageConfigAsyncHelper(const Model::DescribeInstanceStorageConfigRequest& request, const DescribeInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeQueueAsyncHelper(const Model::DescribeQueueRequest& request, const DescribeQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeQuickConnectAsyncHelper(const Model::DescribeQuickConnectRequest& request, const DescribeQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRoutingProfileAsyncHelper(const Model::DescribeRoutingProfileRequest& request, const DescribeRoutingProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeUserAsyncHelper(const Model::DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3517,6 +3910,7 @@ namespace Model
         void DisassociateInstanceStorageConfigAsyncHelper(const Model::DisassociateInstanceStorageConfigRequest& request, const DisassociateInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateLambdaFunctionAsyncHelper(const Model::DisassociateLambdaFunctionRequest& request, const DisassociateLambdaFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateLexBotAsyncHelper(const Model::DisassociateLexBotRequest& request, const DisassociateLexBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateQueueQuickConnectsAsyncHelper(const Model::DisassociateQueueQuickConnectsRequest& request, const DisassociateQueueQuickConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateRoutingProfileQueuesAsyncHelper(const Model::DisassociateRoutingProfileQueuesRequest& request, const DisassociateRoutingProfileQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateSecurityKeyAsyncHelper(const Model::DisassociateSecurityKeyRequest& request, const DisassociateSecurityKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetContactAttributesAsyncHelper(const Model::GetContactAttributesRequest& request, const GetContactAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3534,6 +3928,7 @@ namespace Model
         void ListLexBotsAsyncHelper(const Model::ListLexBotsRequest& request, const ListLexBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPhoneNumbersAsyncHelper(const Model::ListPhoneNumbersRequest& request, const ListPhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPromptsAsyncHelper(const Model::ListPromptsRequest& request, const ListPromptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListQueueQuickConnectsAsyncHelper(const Model::ListQueueQuickConnectsRequest& request, const ListQueueQuickConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListQueuesAsyncHelper(const Model::ListQueuesRequest& request, const ListQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListQuickConnectsAsyncHelper(const Model::ListQuickConnectsRequest& request, const ListQuickConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRoutingProfileQueuesAsyncHelper(const Model::ListRoutingProfileQueuesRequest& request, const ListRoutingProfileQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3559,6 +3954,11 @@ namespace Model
         void UpdateContactFlowNameAsyncHelper(const Model::UpdateContactFlowNameRequest& request, const UpdateContactFlowNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateInstanceAttributeAsyncHelper(const Model::UpdateInstanceAttributeRequest& request, const UpdateInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateInstanceStorageConfigAsyncHelper(const Model::UpdateInstanceStorageConfigRequest& request, const UpdateInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateQueueHoursOfOperationAsyncHelper(const Model::UpdateQueueHoursOfOperationRequest& request, const UpdateQueueHoursOfOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateQueueMaxContactsAsyncHelper(const Model::UpdateQueueMaxContactsRequest& request, const UpdateQueueMaxContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateQueueNameAsyncHelper(const Model::UpdateQueueNameRequest& request, const UpdateQueueNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateQueueOutboundCallerConfigAsyncHelper(const Model::UpdateQueueOutboundCallerConfigRequest& request, const UpdateQueueOutboundCallerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateQueueStatusAsyncHelper(const Model::UpdateQueueStatusRequest& request, const UpdateQueueStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateQuickConnectConfigAsyncHelper(const Model::UpdateQuickConnectConfigRequest& request, const UpdateQuickConnectConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateQuickConnectNameAsyncHelper(const Model::UpdateQuickConnectNameRequest& request, const UpdateQuickConnectNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRoutingProfileConcurrencyAsyncHelper(const Model::UpdateRoutingProfileConcurrencyRequest& request, const UpdateRoutingProfileConcurrencyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

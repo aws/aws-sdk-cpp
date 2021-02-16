@@ -99,14 +99,14 @@ MemberDetail& MemberDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InvitedTime"))
   {
-    m_invitedTime = jsonValue.GetDouble("InvitedTime");
+    m_invitedTime = jsonValue.GetString("InvitedTime");
 
     m_invitedTimeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("UpdatedTime"))
   {
-    m_updatedTime = jsonValue.GetDouble("UpdatedTime");
+    m_updatedTime = jsonValue.GetString("UpdatedTime");
 
     m_updatedTimeHasBeenSet = true;
   }
@@ -120,7 +120,7 @@ MemberDetail& MemberDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PercentOfGraphUtilizationUpdatedTime"))
   {
-    m_percentOfGraphUtilizationUpdatedTime = jsonValue.GetDouble("PercentOfGraphUtilizationUpdatedTime");
+    m_percentOfGraphUtilizationUpdatedTime = jsonValue.GetString("PercentOfGraphUtilizationUpdatedTime");
 
     m_percentOfGraphUtilizationUpdatedTimeHasBeenSet = true;
   }
@@ -168,12 +168,12 @@ JsonValue MemberDetail::Jsonize() const
 
   if(m_invitedTimeHasBeenSet)
   {
-   payload.WithDouble("InvitedTime", m_invitedTime.SecondsWithMSPrecision());
+   payload.WithString("InvitedTime", m_invitedTime.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_updatedTimeHasBeenSet)
   {
-   payload.WithDouble("UpdatedTime", m_updatedTime.SecondsWithMSPrecision());
+   payload.WithString("UpdatedTime", m_updatedTime.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_percentOfGraphUtilizationHasBeenSet)
@@ -184,7 +184,7 @@ JsonValue MemberDetail::Jsonize() const
 
   if(m_percentOfGraphUtilizationUpdatedTimeHasBeenSet)
   {
-   payload.WithDouble("PercentOfGraphUtilizationUpdatedTime", m_percentOfGraphUtilizationUpdatedTime.SecondsWithMSPrecision());
+   payload.WithString("PercentOfGraphUtilizationUpdatedTime", m_percentOfGraphUtilizationUpdatedTime.ToGmtString(DateFormat::ISO_8601));
   }
 
   return payload;

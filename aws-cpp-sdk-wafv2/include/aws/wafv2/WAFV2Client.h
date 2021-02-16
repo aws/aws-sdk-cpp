@@ -335,17 +335,13 @@ namespace Model
 
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Associates a Web ACL with a regional
-         * application resource, to protect the resource. A regional application can be an
-         * Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL
-         * API. </p> <p>For AWS CloudFront, don't use this call. Instead, use your
-         * CloudFront distribution configuration. To associate a Web ACL, in the CloudFront
-         * call <code>UpdateDistribution</code>, set the web ACL ID to the Amazon Resource
-         * Name (ARN) of the Web ACL. For information, see <a
+         * <p>Associates a Web ACL with a regional application resource, to protect the
+         * resource. A regional application can be an Application Load Balancer (ALB), an
+         * API Gateway REST API, or an AppSync GraphQL API. </p> <p>For AWS CloudFront,
+         * don't use this call. Instead, use your CloudFront distribution configuration. To
+         * associate a Web ACL, in the CloudFront call <code>UpdateDistribution</code>, set
+         * the web ACL ID to the Amazon Resource Name (ARN) of the Web ACL. For
+         * information, see <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/AssociateWebACL">AWS
@@ -354,17 +350,13 @@ namespace Model
         virtual Model::AssociateWebACLOutcome AssociateWebACL(const Model::AssociateWebACLRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Associates a Web ACL with a regional
-         * application resource, to protect the resource. A regional application can be an
-         * Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL
-         * API. </p> <p>For AWS CloudFront, don't use this call. Instead, use your
-         * CloudFront distribution configuration. To associate a Web ACL, in the CloudFront
-         * call <code>UpdateDistribution</code>, set the web ACL ID to the Amazon Resource
-         * Name (ARN) of the Web ACL. For information, see <a
+         * <p>Associates a Web ACL with a regional application resource, to protect the
+         * resource. A regional application can be an Application Load Balancer (ALB), an
+         * API Gateway REST API, or an AppSync GraphQL API. </p> <p>For AWS CloudFront,
+         * don't use this call. Instead, use your CloudFront distribution configuration. To
+         * associate a Web ACL, in the CloudFront call <code>UpdateDistribution</code>, set
+         * the web ACL ID to the Amazon Resource Name (ARN) of the Web ACL. For
+         * information, see <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/AssociateWebACL">AWS
@@ -375,17 +367,13 @@ namespace Model
         virtual Model::AssociateWebACLOutcomeCallable AssociateWebACLCallable(const Model::AssociateWebACLRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Associates a Web ACL with a regional
-         * application resource, to protect the resource. A regional application can be an
-         * Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL
-         * API. </p> <p>For AWS CloudFront, don't use this call. Instead, use your
-         * CloudFront distribution configuration. To associate a Web ACL, in the CloudFront
-         * call <code>UpdateDistribution</code>, set the web ACL ID to the Amazon Resource
-         * Name (ARN) of the Web ACL. For information, see <a
+         * <p>Associates a Web ACL with a regional application resource, to protect the
+         * resource. A regional application can be an Application Load Balancer (ALB), an
+         * API Gateway REST API, or an AppSync GraphQL API. </p> <p>For AWS CloudFront,
+         * don't use this call. Instead, use your CloudFront distribution configuration. To
+         * associate a Web ACL, in the CloudFront call <code>UpdateDistribution</code>, set
+         * the web ACL ID to the Amazon Resource Name (ARN) of the Web ACL. For
+         * information, see <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/AssociateWebACL">AWS
@@ -396,40 +384,32 @@ namespace Model
         virtual void AssociateWebACLAsync(const Model::AssociateWebACLRequest& request, const AssociateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Returns the web ACL capacity unit (WCU)
-         * requirements for a specified scope and set of rules. You can use this to check
-         * the capacity requirements for the rules you want to use in a <a>RuleGroup</a> or
-         * <a>WebACL</a>. </p> <p>AWS WAF uses WCUs to calculate and control the operating
-         * resources that are used to run your rules, rule groups, and web ACLs. AWS WAF
-         * calculates capacity differently for each rule type, to reflect the relative cost
-         * of each rule. Simple rules that cost little to run use fewer WCUs than more
-         * complex rules that use more processing power. Rule group capacity is fixed at
-         * creation, which helps users plan their web ACL WCU usage when they use a rule
-         * group. The WCU limit for web ACLs is 1,500. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns the web ACL capacity unit (WCU) requirements for a specified scope
+         * and set of rules. You can use this to check the capacity requirements for the
+         * rules you want to use in a <a>RuleGroup</a> or <a>WebACL</a>. </p> <p>AWS WAF
+         * uses WCUs to calculate and control the operating resources that are used to run
+         * your rules, rule groups, and web ACLs. AWS WAF calculates capacity differently
+         * for each rule type, to reflect the relative cost of each rule. Simple rules that
+         * cost little to run use fewer WCUs than more complex rules that use more
+         * processing power. Rule group capacity is fixed at creation, which helps users
+         * plan their web ACL WCU usage when they use a rule group. The WCU limit for web
+         * ACLs is 1,500. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CheckCapacity">AWS
          * API Reference</a></p>
          */
         virtual Model::CheckCapacityOutcome CheckCapacity(const Model::CheckCapacityRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Returns the web ACL capacity unit (WCU)
-         * requirements for a specified scope and set of rules. You can use this to check
-         * the capacity requirements for the rules you want to use in a <a>RuleGroup</a> or
-         * <a>WebACL</a>. </p> <p>AWS WAF uses WCUs to calculate and control the operating
-         * resources that are used to run your rules, rule groups, and web ACLs. AWS WAF
-         * calculates capacity differently for each rule type, to reflect the relative cost
-         * of each rule. Simple rules that cost little to run use fewer WCUs than more
-         * complex rules that use more processing power. Rule group capacity is fixed at
-         * creation, which helps users plan their web ACL WCU usage when they use a rule
-         * group. The WCU limit for web ACLs is 1,500. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns the web ACL capacity unit (WCU) requirements for a specified scope
+         * and set of rules. You can use this to check the capacity requirements for the
+         * rules you want to use in a <a>RuleGroup</a> or <a>WebACL</a>. </p> <p>AWS WAF
+         * uses WCUs to calculate and control the operating resources that are used to run
+         * your rules, rule groups, and web ACLs. AWS WAF calculates capacity differently
+         * for each rule type, to reflect the relative cost of each rule. Simple rules that
+         * cost little to run use fewer WCUs than more complex rules that use more
+         * processing power. Rule group capacity is fixed at creation, which helps users
+         * plan their web ACL WCU usage when they use a rule group. The WCU limit for web
+         * ACLs is 1,500. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CheckCapacity">AWS
          * API Reference</a></p>
          *
@@ -438,20 +418,16 @@ namespace Model
         virtual Model::CheckCapacityOutcomeCallable CheckCapacityCallable(const Model::CheckCapacityRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Returns the web ACL capacity unit (WCU)
-         * requirements for a specified scope and set of rules. You can use this to check
-         * the capacity requirements for the rules you want to use in a <a>RuleGroup</a> or
-         * <a>WebACL</a>. </p> <p>AWS WAF uses WCUs to calculate and control the operating
-         * resources that are used to run your rules, rule groups, and web ACLs. AWS WAF
-         * calculates capacity differently for each rule type, to reflect the relative cost
-         * of each rule. Simple rules that cost little to run use fewer WCUs than more
-         * complex rules that use more processing power. Rule group capacity is fixed at
-         * creation, which helps users plan their web ACL WCU usage when they use a rule
-         * group. The WCU limit for web ACLs is 1,500. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns the web ACL capacity unit (WCU) requirements for a specified scope
+         * and set of rules. You can use this to check the capacity requirements for the
+         * rules you want to use in a <a>RuleGroup</a> or <a>WebACL</a>. </p> <p>AWS WAF
+         * uses WCUs to calculate and control the operating resources that are used to run
+         * your rules, rule groups, and web ACLs. AWS WAF calculates capacity differently
+         * for each rule type, to reflect the relative cost of each rule. Simple rules that
+         * cost little to run use fewer WCUs than more complex rules that use more
+         * processing power. Rule group capacity is fixed at creation, which helps users
+         * plan their web ACL WCU usage when they use a rule group. The WCU limit for web
+         * ACLs is 1,500. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CheckCapacity">AWS
          * API Reference</a></p>
          *
@@ -460,30 +436,22 @@ namespace Model
         virtual void CheckCapacityAsync(const Model::CheckCapacityRequest& request, const CheckCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Creates an <a>IPSet</a>, which you use
-         * to identify web requests that originate from specific IP addresses or ranges of
-         * IP addresses. For example, if you're receiving a lot of requests from a ranges
-         * of IP addresses, you can configure AWS WAF to block them using an IPSet that
-         * lists those IP addresses. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates an <a>IPSet</a>, which you use to identify web requests that
+         * originate from specific IP addresses or ranges of IP addresses. For example, if
+         * you're receiving a lot of requests from a ranges of IP addresses, you can
+         * configure AWS WAF to block them using an IPSet that lists those IP addresses.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateIPSet">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateIPSetOutcome CreateIPSet(const Model::CreateIPSetRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Creates an <a>IPSet</a>, which you use
-         * to identify web requests that originate from specific IP addresses or ranges of
-         * IP addresses. For example, if you're receiving a lot of requests from a ranges
-         * of IP addresses, you can configure AWS WAF to block them using an IPSet that
-         * lists those IP addresses. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates an <a>IPSet</a>, which you use to identify web requests that
+         * originate from specific IP addresses or ranges of IP addresses. For example, if
+         * you're receiving a lot of requests from a ranges of IP addresses, you can
+         * configure AWS WAF to block them using an IPSet that lists those IP addresses.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateIPSet">AWS
          * API Reference</a></p>
          *
@@ -492,15 +460,11 @@ namespace Model
         virtual Model::CreateIPSetOutcomeCallable CreateIPSetCallable(const Model::CreateIPSetRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Creates an <a>IPSet</a>, which you use
-         * to identify web requests that originate from specific IP addresses or ranges of
-         * IP addresses. For example, if you're receiving a lot of requests from a ranges
-         * of IP addresses, you can configure AWS WAF to block them using an IPSet that
-         * lists those IP addresses. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates an <a>IPSet</a>, which you use to identify web requests that
+         * originate from specific IP addresses or ranges of IP addresses. For example, if
+         * you're receiving a lot of requests from a ranges of IP addresses, you can
+         * configure AWS WAF to block them using an IPSet that lists those IP addresses.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateIPSet">AWS
          * API Reference</a></p>
          *
@@ -509,28 +473,18 @@ namespace Model
         virtual void CreateIPSetAsync(const Model::CreateIPSetRequest& request, const CreateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Creates a <a>RegexPatternSet</a>, which
-         * you reference in a <a>RegexPatternSetReferenceStatement</a>, to have AWS WAF
-         * inspect a web request component for the specified patterns.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a <a>RegexPatternSet</a>, which you reference in a
+         * <a>RegexPatternSetReferenceStatement</a>, to have AWS WAF inspect a web request
+         * component for the specified patterns.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateRegexPatternSet">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateRegexPatternSetOutcome CreateRegexPatternSet(const Model::CreateRegexPatternSetRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Creates a <a>RegexPatternSet</a>, which
-         * you reference in a <a>RegexPatternSetReferenceStatement</a>, to have AWS WAF
-         * inspect a web request component for the specified patterns.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a <a>RegexPatternSet</a>, which you reference in a
+         * <a>RegexPatternSetReferenceStatement</a>, to have AWS WAF inspect a web request
+         * component for the specified patterns.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateRegexPatternSet">AWS
          * API Reference</a></p>
          *
@@ -539,14 +493,9 @@ namespace Model
         virtual Model::CreateRegexPatternSetOutcomeCallable CreateRegexPatternSetCallable(const Model::CreateRegexPatternSetRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Creates a <a>RegexPatternSet</a>, which
-         * you reference in a <a>RegexPatternSetReferenceStatement</a>, to have AWS WAF
-         * inspect a web request component for the specified patterns.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a <a>RegexPatternSet</a>, which you reference in a
+         * <a>RegexPatternSetReferenceStatement</a>, to have AWS WAF inspect a web request
+         * component for the specified patterns.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateRegexPatternSet">AWS
          * API Reference</a></p>
          *
@@ -555,34 +504,24 @@ namespace Model
         virtual void CreateRegexPatternSetAsync(const Model::CreateRegexPatternSetRequest& request, const CreateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Creates a <a>RuleGroup</a> per the
-         * specifications provided. </p> <p> A rule group defines a collection of rules to
-         * inspect and control web requests that you can use in a <a>WebACL</a>. When you
-         * create a rule group, you define an immutable capacity limit. If you update a
-         * rule group, you must stay within the capacity. This allows others to reuse the
-         * rule group with confidence in its capacity requirements. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a <a>RuleGroup</a> per the specifications provided. </p> <p> A rule
+         * group defines a collection of rules to inspect and control web requests that you
+         * can use in a <a>WebACL</a>. When you create a rule group, you define an
+         * immutable capacity limit. If you update a rule group, you must stay within the
+         * capacity. This allows others to reuse the rule group with confidence in its
+         * capacity requirements. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateRuleGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateRuleGroupOutcome CreateRuleGroup(const Model::CreateRuleGroupRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Creates a <a>RuleGroup</a> per the
-         * specifications provided. </p> <p> A rule group defines a collection of rules to
-         * inspect and control web requests that you can use in a <a>WebACL</a>. When you
-         * create a rule group, you define an immutable capacity limit. If you update a
-         * rule group, you must stay within the capacity. This allows others to reuse the
-         * rule group with confidence in its capacity requirements. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a <a>RuleGroup</a> per the specifications provided. </p> <p> A rule
+         * group defines a collection of rules to inspect and control web requests that you
+         * can use in a <a>WebACL</a>. When you create a rule group, you define an
+         * immutable capacity limit. If you update a rule group, you must stay within the
+         * capacity. This allows others to reuse the rule group with confidence in its
+         * capacity requirements. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateRuleGroup">AWS
          * API Reference</a></p>
          *
@@ -591,17 +530,12 @@ namespace Model
         virtual Model::CreateRuleGroupOutcomeCallable CreateRuleGroupCallable(const Model::CreateRuleGroupRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Creates a <a>RuleGroup</a> per the
-         * specifications provided. </p> <p> A rule group defines a collection of rules to
-         * inspect and control web requests that you can use in a <a>WebACL</a>. When you
-         * create a rule group, you define an immutable capacity limit. If you update a
-         * rule group, you must stay within the capacity. This allows others to reuse the
-         * rule group with confidence in its capacity requirements. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a <a>RuleGroup</a> per the specifications provided. </p> <p> A rule
+         * group defines a collection of rules to inspect and control web requests that you
+         * can use in a <a>WebACL</a>. When you create a rule group, you define an
+         * immutable capacity limit. If you update a rule group, you must stay within the
+         * capacity. This allows others to reuse the rule group with confidence in its
+         * capacity requirements. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateRuleGroup">AWS
          * API Reference</a></p>
          *
@@ -610,40 +544,32 @@ namespace Model
         virtual void CreateRuleGroupAsync(const Model::CreateRuleGroupRequest& request, const CreateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Creates a <a>WebACL</a> per the
-         * specifications provided.</p> <p> A Web ACL defines a collection of rules to use
-         * to inspect and control web requests. Each rule has an action defined (allow,
-         * block, or count) for requests that match the statement of the rule. In the Web
-         * ACL, you assign a default action to take (allow, block) for any request that
-         * does not match any of the rules. The rules in a Web ACL can be a combination of
-         * the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can
-         * associate a Web ACL with one or more AWS resources to protect. The resources can
-         * be Amazon CloudFront, an Amazon API Gateway REST API, an Application Load
-         * Balancer, or an AWS AppSync GraphQL API. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates a <a>WebACL</a> per the specifications provided.</p> <p> A Web ACL
+         * defines a collection of rules to use to inspect and control web requests. Each
+         * rule has an action defined (allow, block, or count) for requests that match the
+         * statement of the rule. In the Web ACL, you assign a default action to take
+         * (allow, block) for any request that does not match any of the rules. The rules
+         * in a Web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>,
+         * and managed rule group. You can associate a Web ACL with one or more AWS
+         * resources to protect. The resources can be Amazon CloudFront, an Amazon API
+         * Gateway REST API, an Application Load Balancer, or an AWS AppSync GraphQL API.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateWebACL">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateWebACLOutcome CreateWebACL(const Model::CreateWebACLRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Creates a <a>WebACL</a> per the
-         * specifications provided.</p> <p> A Web ACL defines a collection of rules to use
-         * to inspect and control web requests. Each rule has an action defined (allow,
-         * block, or count) for requests that match the statement of the rule. In the Web
-         * ACL, you assign a default action to take (allow, block) for any request that
-         * does not match any of the rules. The rules in a Web ACL can be a combination of
-         * the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can
-         * associate a Web ACL with one or more AWS resources to protect. The resources can
-         * be Amazon CloudFront, an Amazon API Gateway REST API, an Application Load
-         * Balancer, or an AWS AppSync GraphQL API. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates a <a>WebACL</a> per the specifications provided.</p> <p> A Web ACL
+         * defines a collection of rules to use to inspect and control web requests. Each
+         * rule has an action defined (allow, block, or count) for requests that match the
+         * statement of the rule. In the Web ACL, you assign a default action to take
+         * (allow, block) for any request that does not match any of the rules. The rules
+         * in a Web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>,
+         * and managed rule group. You can associate a Web ACL with one or more AWS
+         * resources to protect. The resources can be Amazon CloudFront, an Amazon API
+         * Gateway REST API, an Application Load Balancer, or an AWS AppSync GraphQL API.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateWebACL">AWS
          * API Reference</a></p>
          *
@@ -652,20 +578,16 @@ namespace Model
         virtual Model::CreateWebACLOutcomeCallable CreateWebACLCallable(const Model::CreateWebACLRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Creates a <a>WebACL</a> per the
-         * specifications provided.</p> <p> A Web ACL defines a collection of rules to use
-         * to inspect and control web requests. Each rule has an action defined (allow,
-         * block, or count) for requests that match the statement of the rule. In the Web
-         * ACL, you assign a default action to take (allow, block) for any request that
-         * does not match any of the rules. The rules in a Web ACL can be a combination of
-         * the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can
-         * associate a Web ACL with one or more AWS resources to protect. The resources can
-         * be Amazon CloudFront, an Amazon API Gateway REST API, an Application Load
-         * Balancer, or an AWS AppSync GraphQL API. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates a <a>WebACL</a> per the specifications provided.</p> <p> A Web ACL
+         * defines a collection of rules to use to inspect and control web requests. Each
+         * rule has an action defined (allow, block, or count) for requests that match the
+         * statement of the rule. In the Web ACL, you assign a default action to take
+         * (allow, block) for any request that does not match any of the rules. The rules
+         * in a Web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>,
+         * and managed rule group. You can associate a Web ACL with one or more AWS
+         * resources to protect. The resources can be Amazon CloudFront, an Amazon API
+         * Gateway REST API, an Application Load Balancer, or an AWS AppSync GraphQL API.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateWebACL">AWS
          * API Reference</a></p>
          *
@@ -708,24 +630,14 @@ namespace Model
         virtual void DeleteFirewallManagerRuleGroupsAsync(const Model::DeleteFirewallManagerRuleGroupsRequest& request, const DeleteFirewallManagerRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Deletes the specified <a>IPSet</a>.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified <a>IPSet</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteIPSet">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteIPSetOutcome DeleteIPSet(const Model::DeleteIPSetRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Deletes the specified <a>IPSet</a>.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified <a>IPSet</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteIPSet">AWS
          * API Reference</a></p>
          *
@@ -734,12 +646,7 @@ namespace Model
         virtual Model::DeleteIPSetOutcomeCallable DeleteIPSetCallable(const Model::DeleteIPSetRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Deletes the specified <a>IPSet</a>.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified <a>IPSet</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteIPSet">AWS
          * API Reference</a></p>
          *
@@ -748,24 +655,16 @@ namespace Model
         virtual void DeleteIPSetAsync(const Model::DeleteIPSetRequest& request, const DeleteIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Deletes the <a>LoggingConfiguration</a>
-         * from the specified web ACL.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the <a>LoggingConfiguration</a> from the specified web
+         * ACL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteLoggingConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteLoggingConfigurationOutcome DeleteLoggingConfiguration(const Model::DeleteLoggingConfigurationRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Deletes the <a>LoggingConfiguration</a>
-         * from the specified web ACL.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the <a>LoggingConfiguration</a> from the specified web
+         * ACL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteLoggingConfiguration">AWS
          * API Reference</a></p>
          *
@@ -774,12 +673,8 @@ namespace Model
         virtual Model::DeleteLoggingConfigurationOutcomeCallable DeleteLoggingConfigurationCallable(const Model::DeleteLoggingConfigurationRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Deletes the <a>LoggingConfiguration</a>
-         * from the specified web ACL.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the <a>LoggingConfiguration</a> from the specified web
+         * ACL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteLoggingConfiguration">AWS
          * API Reference</a></p>
          *
@@ -819,24 +714,14 @@ namespace Model
         virtual void DeletePermissionPolicyAsync(const Model::DeletePermissionPolicyRequest& request, const DeletePermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Deletes the specified
-         * <a>RegexPatternSet</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified <a>RegexPatternSet</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteRegexPatternSet">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteRegexPatternSetOutcome DeleteRegexPatternSet(const Model::DeleteRegexPatternSetRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Deletes the specified
-         * <a>RegexPatternSet</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified <a>RegexPatternSet</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteRegexPatternSet">AWS
          * API Reference</a></p>
          *
@@ -845,12 +730,7 @@ namespace Model
         virtual Model::DeleteRegexPatternSetOutcomeCallable DeleteRegexPatternSetCallable(const Model::DeleteRegexPatternSetRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Deletes the specified
-         * <a>RegexPatternSet</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified <a>RegexPatternSet</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteRegexPatternSet">AWS
          * API Reference</a></p>
          *
@@ -859,24 +739,14 @@ namespace Model
         virtual void DeleteRegexPatternSetAsync(const Model::DeleteRegexPatternSetRequest& request, const DeleteRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Deletes the specified
-         * <a>RuleGroup</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified <a>RuleGroup</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteRuleGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteRuleGroupOutcome DeleteRuleGroup(const Model::DeleteRuleGroupRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Deletes the specified
-         * <a>RuleGroup</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified <a>RuleGroup</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteRuleGroup">AWS
          * API Reference</a></p>
          *
@@ -885,12 +755,7 @@ namespace Model
         virtual Model::DeleteRuleGroupOutcomeCallable DeleteRuleGroupCallable(const Model::DeleteRuleGroupRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Deletes the specified
-         * <a>RuleGroup</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified <a>RuleGroup</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteRuleGroup">AWS
          * API Reference</a></p>
          *
@@ -899,12 +764,7 @@ namespace Model
         virtual void DeleteRuleGroupAsync(const Model::DeleteRuleGroupRequest& request, const DeleteRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Deletes the specified
-         * <a>WebACL</a>.</p> <p>You can only use this if
+         * <p>Deletes the specified <a>WebACL</a>.</p> <p>You can only use this if
          * <code>ManagedByFirewallManager</code> is false in the specified <a>WebACL</a>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteWebACL">AWS
@@ -913,12 +773,7 @@ namespace Model
         virtual Model::DeleteWebACLOutcome DeleteWebACL(const Model::DeleteWebACLRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Deletes the specified
-         * <a>WebACL</a>.</p> <p>You can only use this if
+         * <p>Deletes the specified <a>WebACL</a>.</p> <p>You can only use this if
          * <code>ManagedByFirewallManager</code> is false in the specified <a>WebACL</a>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteWebACL">AWS
@@ -929,12 +784,7 @@ namespace Model
         virtual Model::DeleteWebACLOutcomeCallable DeleteWebACLCallable(const Model::DeleteWebACLRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Deletes the specified
-         * <a>WebACL</a>.</p> <p>You can only use this if
+         * <p>Deletes the specified <a>WebACL</a>.</p> <p>You can only use this if
          * <code>ManagedByFirewallManager</code> is false in the specified <a>WebACL</a>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteWebACL">AWS
@@ -945,26 +795,16 @@ namespace Model
         virtual void DeleteWebACLAsync(const Model::DeleteWebACLRequest& request, const DeleteWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Provides high-level information for a
-         * managed rule group, including descriptions of the rules. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Provides high-level information for a managed rule group, including
+         * descriptions of the rules. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DescribeManagedRuleGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeManagedRuleGroupOutcome DescribeManagedRuleGroup(const Model::DescribeManagedRuleGroupRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Provides high-level information for a
-         * managed rule group, including descriptions of the rules. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Provides high-level information for a managed rule group, including
+         * descriptions of the rules. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DescribeManagedRuleGroup">AWS
          * API Reference</a></p>
          *
@@ -973,13 +813,8 @@ namespace Model
         virtual Model::DescribeManagedRuleGroupOutcomeCallable DescribeManagedRuleGroupCallable(const Model::DescribeManagedRuleGroupRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Provides high-level information for a
-         * managed rule group, including descriptions of the rules. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Provides high-level information for a managed rule group, including
+         * descriptions of the rules. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DescribeManagedRuleGroup">AWS
          * API Reference</a></p>
          *
@@ -988,16 +823,12 @@ namespace Model
         virtual void DescribeManagedRuleGroupAsync(const Model::DescribeManagedRuleGroupRequest& request, const DescribeManagedRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Disassociates a Web ACL from a regional
-         * application resource. A regional application can be an Application Load Balancer
-         * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>For AWS
-         * CloudFront, don't use this call. Instead, use your CloudFront distribution
-         * configuration. To disassociate a Web ACL, provide an empty web ACL ID in the
-         * CloudFront call <code>UpdateDistribution</code>. For information, see <a
+         * <p>Disassociates a Web ACL from a regional application resource. A regional
+         * application can be an Application Load Balancer (ALB), an API Gateway REST API,
+         * or an AppSync GraphQL API. </p> <p>For AWS CloudFront, don't use this call.
+         * Instead, use your CloudFront distribution configuration. To disassociate a Web
+         * ACL, provide an empty web ACL ID in the CloudFront call
+         * <code>UpdateDistribution</code>. For information, see <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DisassociateWebACL">AWS
@@ -1006,16 +837,12 @@ namespace Model
         virtual Model::DisassociateWebACLOutcome DisassociateWebACL(const Model::DisassociateWebACLRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Disassociates a Web ACL from a regional
-         * application resource. A regional application can be an Application Load Balancer
-         * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>For AWS
-         * CloudFront, don't use this call. Instead, use your CloudFront distribution
-         * configuration. To disassociate a Web ACL, provide an empty web ACL ID in the
-         * CloudFront call <code>UpdateDistribution</code>. For information, see <a
+         * <p>Disassociates a Web ACL from a regional application resource. A regional
+         * application can be an Application Load Balancer (ALB), an API Gateway REST API,
+         * or an AppSync GraphQL API. </p> <p>For AWS CloudFront, don't use this call.
+         * Instead, use your CloudFront distribution configuration. To disassociate a Web
+         * ACL, provide an empty web ACL ID in the CloudFront call
+         * <code>UpdateDistribution</code>. For information, see <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DisassociateWebACL">AWS
@@ -1026,16 +853,12 @@ namespace Model
         virtual Model::DisassociateWebACLOutcomeCallable DisassociateWebACLCallable(const Model::DisassociateWebACLRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Disassociates a Web ACL from a regional
-         * application resource. A regional application can be an Application Load Balancer
-         * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>For AWS
-         * CloudFront, don't use this call. Instead, use your CloudFront distribution
-         * configuration. To disassociate a Web ACL, provide an empty web ACL ID in the
-         * CloudFront call <code>UpdateDistribution</code>. For information, see <a
+         * <p>Disassociates a Web ACL from a regional application resource. A regional
+         * application can be an Application Load Balancer (ALB), an API Gateway REST API,
+         * or an AppSync GraphQL API. </p> <p>For AWS CloudFront, don't use this call.
+         * Instead, use your CloudFront distribution configuration. To disassociate a Web
+         * ACL, provide an empty web ACL ID in the CloudFront call
+         * <code>UpdateDistribution</code>. For information, see <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DisassociateWebACL">AWS
@@ -1046,24 +869,14 @@ namespace Model
         virtual void DisassociateWebACLAsync(const Model::DisassociateWebACLRequest& request, const DisassociateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves the specified
-         * <a>IPSet</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the specified <a>IPSet</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetIPSet">AWS API
          * Reference</a></p>
          */
         virtual Model::GetIPSetOutcome GetIPSet(const Model::GetIPSetRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves the specified
-         * <a>IPSet</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the specified <a>IPSet</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetIPSet">AWS API
          * Reference</a></p>
          *
@@ -1072,12 +885,7 @@ namespace Model
         virtual Model::GetIPSetOutcomeCallable GetIPSetCallable(const Model::GetIPSetRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves the specified
-         * <a>IPSet</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the specified <a>IPSet</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetIPSet">AWS API
          * Reference</a></p>
          *
@@ -1086,24 +894,16 @@ namespace Model
         virtual void GetIPSetAsync(const Model::GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Returns the <a>LoggingConfiguration</a>
-         * for the specified web ACL.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the <a>LoggingConfiguration</a> for the specified web
+         * ACL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetLoggingConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::GetLoggingConfigurationOutcome GetLoggingConfiguration(const Model::GetLoggingConfigurationRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Returns the <a>LoggingConfiguration</a>
-         * for the specified web ACL.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the <a>LoggingConfiguration</a> for the specified web
+         * ACL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetLoggingConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1112,12 +912,8 @@ namespace Model
         virtual Model::GetLoggingConfigurationOutcomeCallable GetLoggingConfigurationCallable(const Model::GetLoggingConfigurationRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Returns the <a>LoggingConfiguration</a>
-         * for the specified web ACL.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the <a>LoggingConfiguration</a> for the specified web
+         * ACL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetLoggingConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1157,30 +953,20 @@ namespace Model
         virtual void GetPermissionPolicyAsync(const Model::GetPermissionPolicyRequest& request, const GetPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves the keys that are currently
-         * blocked by a rate-based rule. The maximum number of managed keys that can be
-         * blocked for a single rate-based rule is 10,000. If more than 10,000 addresses
-         * exceed the rate limit, those with the highest rates are blocked.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the keys that are currently blocked by a rate-based rule. The
+         * maximum number of managed keys that can be blocked for a single rate-based rule
+         * is 10,000. If more than 10,000 addresses exceed the rate limit, those with the
+         * highest rates are blocked.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRateBasedStatementManagedKeys">AWS
          * API Reference</a></p>
          */
         virtual Model::GetRateBasedStatementManagedKeysOutcome GetRateBasedStatementManagedKeys(const Model::GetRateBasedStatementManagedKeysRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves the keys that are currently
-         * blocked by a rate-based rule. The maximum number of managed keys that can be
-         * blocked for a single rate-based rule is 10,000. If more than 10,000 addresses
-         * exceed the rate limit, those with the highest rates are blocked.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the keys that are currently blocked by a rate-based rule. The
+         * maximum number of managed keys that can be blocked for a single rate-based rule
+         * is 10,000. If more than 10,000 addresses exceed the rate limit, those with the
+         * highest rates are blocked.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRateBasedStatementManagedKeys">AWS
          * API Reference</a></p>
          *
@@ -1189,15 +975,10 @@ namespace Model
         virtual Model::GetRateBasedStatementManagedKeysOutcomeCallable GetRateBasedStatementManagedKeysCallable(const Model::GetRateBasedStatementManagedKeysRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves the keys that are currently
-         * blocked by a rate-based rule. The maximum number of managed keys that can be
-         * blocked for a single rate-based rule is 10,000. If more than 10,000 addresses
-         * exceed the rate limit, those with the highest rates are blocked.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the keys that are currently blocked by a rate-based rule. The
+         * maximum number of managed keys that can be blocked for a single rate-based rule
+         * is 10,000. If more than 10,000 addresses exceed the rate limit, those with the
+         * highest rates are blocked.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRateBasedStatementManagedKeys">AWS
          * API Reference</a></p>
          *
@@ -1206,24 +987,14 @@ namespace Model
         virtual void GetRateBasedStatementManagedKeysAsync(const Model::GetRateBasedStatementManagedKeysRequest& request, const GetRateBasedStatementManagedKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves the specified
-         * <a>RegexPatternSet</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the specified <a>RegexPatternSet</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRegexPatternSet">AWS
          * API Reference</a></p>
          */
         virtual Model::GetRegexPatternSetOutcome GetRegexPatternSet(const Model::GetRegexPatternSetRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves the specified
-         * <a>RegexPatternSet</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the specified <a>RegexPatternSet</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRegexPatternSet">AWS
          * API Reference</a></p>
          *
@@ -1232,12 +1003,7 @@ namespace Model
         virtual Model::GetRegexPatternSetOutcomeCallable GetRegexPatternSetCallable(const Model::GetRegexPatternSetRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves the specified
-         * <a>RegexPatternSet</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the specified <a>RegexPatternSet</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRegexPatternSet">AWS
          * API Reference</a></p>
          *
@@ -1246,24 +1012,14 @@ namespace Model
         virtual void GetRegexPatternSetAsync(const Model::GetRegexPatternSetRequest& request, const GetRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves the specified
-         * <a>RuleGroup</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the specified <a>RuleGroup</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRuleGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::GetRuleGroupOutcome GetRuleGroup(const Model::GetRuleGroupRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves the specified
-         * <a>RuleGroup</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the specified <a>RuleGroup</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRuleGroup">AWS
          * API Reference</a></p>
          *
@@ -1272,12 +1028,7 @@ namespace Model
         virtual Model::GetRuleGroupOutcomeCallable GetRuleGroupCallable(const Model::GetRuleGroupRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves the specified
-         * <a>RuleGroup</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the specified <a>RuleGroup</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRuleGroup">AWS
          * API Reference</a></p>
          *
@@ -1286,42 +1037,32 @@ namespace Model
         virtual void GetRuleGroupAsync(const Model::GetRuleGroupRequest& request, const GetRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Gets detailed information about a
-         * specified number of requests--a sample--that AWS WAF randomly selects from among
-         * the first 5,000 requests that your AWS resource received during a time range
-         * that you choose. You can specify a sample size of up to 500 requests, and you
-         * can specify any time range in the previous three hours.</p> <p>
-         * <code>GetSampledRequests</code> returns a time range, which is usually the time
-         * range that you specified. However, if your resource (such as a CloudFront
-         * distribution) received 5,000 requests before the specified time range elapsed,
-         * <code>GetSampledRequests</code> returns an updated time range. This new time
-         * range indicates the actual period during which AWS WAF selected the requests in
-         * the sample.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets detailed information about a specified number of requests--a
+         * sample--that AWS WAF randomly selects from among the first 5,000 requests that
+         * your AWS resource received during a time range that you choose. You can specify
+         * a sample size of up to 500 requests, and you can specify any time range in the
+         * previous three hours.</p> <p> <code>GetSampledRequests</code> returns a time
+         * range, which is usually the time range that you specified. However, if your
+         * resource (such as a CloudFront distribution) received 5,000 requests before the
+         * specified time range elapsed, <code>GetSampledRequests</code> returns an updated
+         * time range. This new time range indicates the actual period during which AWS WAF
+         * selected the requests in the sample.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetSampledRequests">AWS
          * API Reference</a></p>
          */
         virtual Model::GetSampledRequestsOutcome GetSampledRequests(const Model::GetSampledRequestsRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Gets detailed information about a
-         * specified number of requests--a sample--that AWS WAF randomly selects from among
-         * the first 5,000 requests that your AWS resource received during a time range
-         * that you choose. You can specify a sample size of up to 500 requests, and you
-         * can specify any time range in the previous three hours.</p> <p>
-         * <code>GetSampledRequests</code> returns a time range, which is usually the time
-         * range that you specified. However, if your resource (such as a CloudFront
-         * distribution) received 5,000 requests before the specified time range elapsed,
-         * <code>GetSampledRequests</code> returns an updated time range. This new time
-         * range indicates the actual period during which AWS WAF selected the requests in
-         * the sample.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets detailed information about a specified number of requests--a
+         * sample--that AWS WAF randomly selects from among the first 5,000 requests that
+         * your AWS resource received during a time range that you choose. You can specify
+         * a sample size of up to 500 requests, and you can specify any time range in the
+         * previous three hours.</p> <p> <code>GetSampledRequests</code> returns a time
+         * range, which is usually the time range that you specified. However, if your
+         * resource (such as a CloudFront distribution) received 5,000 requests before the
+         * specified time range elapsed, <code>GetSampledRequests</code> returns an updated
+         * time range. This new time range indicates the actual period during which AWS WAF
+         * selected the requests in the sample.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetSampledRequests">AWS
          * API Reference</a></p>
          *
@@ -1330,21 +1071,16 @@ namespace Model
         virtual Model::GetSampledRequestsOutcomeCallable GetSampledRequestsCallable(const Model::GetSampledRequestsRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Gets detailed information about a
-         * specified number of requests--a sample--that AWS WAF randomly selects from among
-         * the first 5,000 requests that your AWS resource received during a time range
-         * that you choose. You can specify a sample size of up to 500 requests, and you
-         * can specify any time range in the previous three hours.</p> <p>
-         * <code>GetSampledRequests</code> returns a time range, which is usually the time
-         * range that you specified. However, if your resource (such as a CloudFront
-         * distribution) received 5,000 requests before the specified time range elapsed,
-         * <code>GetSampledRequests</code> returns an updated time range. This new time
-         * range indicates the actual period during which AWS WAF selected the requests in
-         * the sample.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets detailed information about a specified number of requests--a
+         * sample--that AWS WAF randomly selects from among the first 5,000 requests that
+         * your AWS resource received during a time range that you choose. You can specify
+         * a sample size of up to 500 requests, and you can specify any time range in the
+         * previous three hours.</p> <p> <code>GetSampledRequests</code> returns a time
+         * range, which is usually the time range that you specified. However, if your
+         * resource (such as a CloudFront distribution) received 5,000 requests before the
+         * specified time range elapsed, <code>GetSampledRequests</code> returns an updated
+         * time range. This new time range indicates the actual period during which AWS WAF
+         * selected the requests in the sample.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetSampledRequests">AWS
          * API Reference</a></p>
          *
@@ -1353,24 +1089,14 @@ namespace Model
         virtual void GetSampledRequestsAsync(const Model::GetSampledRequestsRequest& request, const GetSampledRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves the specified
-         * <a>WebACL</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the specified <a>WebACL</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetWebACL">AWS API
          * Reference</a></p>
          */
         virtual Model::GetWebACLOutcome GetWebACL(const Model::GetWebACLRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves the specified
-         * <a>WebACL</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the specified <a>WebACL</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetWebACL">AWS API
          * Reference</a></p>
          *
@@ -1379,12 +1105,7 @@ namespace Model
         virtual Model::GetWebACLOutcomeCallable GetWebACLCallable(const Model::GetWebACLRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves the specified
-         * <a>WebACL</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the specified <a>WebACL</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetWebACL">AWS API
          * Reference</a></p>
          *
@@ -1393,24 +1114,16 @@ namespace Model
         virtual void GetWebACLAsync(const Model::GetWebACLRequest& request, const GetWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves the <a>WebACL</a> for the
-         * specified resource. </p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the <a>WebACL</a> for the specified resource. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetWebACLForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::GetWebACLForResourceOutcome GetWebACLForResource(const Model::GetWebACLForResourceRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves the <a>WebACL</a> for the
-         * specified resource. </p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the <a>WebACL</a> for the specified resource. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetWebACLForResource">AWS
          * API Reference</a></p>
          *
@@ -1419,12 +1132,8 @@ namespace Model
         virtual Model::GetWebACLForResourceOutcomeCallable GetWebACLForResourceCallable(const Model::GetWebACLForResourceRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves the <a>WebACL</a> for the
-         * specified resource. </p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the <a>WebACL</a> for the specified resource. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetWebACLForResource">AWS
          * API Reference</a></p>
          *
@@ -1433,28 +1142,18 @@ namespace Model
         virtual void GetWebACLForResourceAsync(const Model::GetWebACLForResourceRequest& request, const GetWebACLForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves an array of managed rule
-         * groups that are available for you to use. This list includes all AWS Managed
-         * Rules rule groups and the AWS Marketplace managed rule groups that you're
-         * subscribed to.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves an array of managed rule groups that are available for you to use.
+         * This list includes all AWS Managed Rules rule groups and the AWS Marketplace
+         * managed rule groups that you're subscribed to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListAvailableManagedRuleGroups">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAvailableManagedRuleGroupsOutcome ListAvailableManagedRuleGroups(const Model::ListAvailableManagedRuleGroupsRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves an array of managed rule
-         * groups that are available for you to use. This list includes all AWS Managed
-         * Rules rule groups and the AWS Marketplace managed rule groups that you're
-         * subscribed to.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves an array of managed rule groups that are available for you to use.
+         * This list includes all AWS Managed Rules rule groups and the AWS Marketplace
+         * managed rule groups that you're subscribed to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListAvailableManagedRuleGroups">AWS
          * API Reference</a></p>
          *
@@ -1463,14 +1162,9 @@ namespace Model
         virtual Model::ListAvailableManagedRuleGroupsOutcomeCallable ListAvailableManagedRuleGroupsCallable(const Model::ListAvailableManagedRuleGroupsRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves an array of managed rule
-         * groups that are available for you to use. This list includes all AWS Managed
-         * Rules rule groups and the AWS Marketplace managed rule groups that you're
-         * subscribed to.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves an array of managed rule groups that are available for you to use.
+         * This list includes all AWS Managed Rules rule groups and the AWS Marketplace
+         * managed rule groups that you're subscribed to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListAvailableManagedRuleGroups">AWS
          * API Reference</a></p>
          *
@@ -1479,26 +1173,16 @@ namespace Model
         virtual void ListAvailableManagedRuleGroupsAsync(const Model::ListAvailableManagedRuleGroupsRequest& request, const ListAvailableManagedRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves an array of
-         * <a>IPSetSummary</a> objects for the IP sets that you manage.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves an array of <a>IPSetSummary</a> objects for the IP sets that you
+         * manage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListIPSets">AWS
          * API Reference</a></p>
          */
         virtual Model::ListIPSetsOutcome ListIPSets(const Model::ListIPSetsRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves an array of
-         * <a>IPSetSummary</a> objects for the IP sets that you manage.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves an array of <a>IPSetSummary</a> objects for the IP sets that you
+         * manage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListIPSets">AWS
          * API Reference</a></p>
          *
@@ -1507,13 +1191,8 @@ namespace Model
         virtual Model::ListIPSetsOutcomeCallable ListIPSetsCallable(const Model::ListIPSetsRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves an array of
-         * <a>IPSetSummary</a> objects for the IP sets that you manage.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves an array of <a>IPSetSummary</a> objects for the IP sets that you
+         * manage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListIPSets">AWS
          * API Reference</a></p>
          *
@@ -1522,24 +1201,16 @@ namespace Model
         virtual void ListIPSetsAsync(const Model::ListIPSetsRequest& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves an array of your
-         * <a>LoggingConfiguration</a> objects.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves an array of your <a>LoggingConfiguration</a> objects.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListLoggingConfigurations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListLoggingConfigurationsOutcome ListLoggingConfigurations(const Model::ListLoggingConfigurationsRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves an array of your
-         * <a>LoggingConfiguration</a> objects.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves an array of your <a>LoggingConfiguration</a> objects.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListLoggingConfigurations">AWS
          * API Reference</a></p>
          *
@@ -1548,12 +1219,8 @@ namespace Model
         virtual Model::ListLoggingConfigurationsOutcomeCallable ListLoggingConfigurationsCallable(const Model::ListLoggingConfigurationsRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves an array of your
-         * <a>LoggingConfiguration</a> objects.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves an array of your <a>LoggingConfiguration</a> objects.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListLoggingConfigurations">AWS
          * API Reference</a></p>
          *
@@ -1562,26 +1229,16 @@ namespace Model
         virtual void ListLoggingConfigurationsAsync(const Model::ListLoggingConfigurationsRequest& request, const ListLoggingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves an array of
-         * <a>RegexPatternSetSummary</a> objects for the regex pattern sets that you
-         * manage.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves an array of <a>RegexPatternSetSummary</a> objects for the regex
+         * pattern sets that you manage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListRegexPatternSets">AWS
          * API Reference</a></p>
          */
         virtual Model::ListRegexPatternSetsOutcome ListRegexPatternSets(const Model::ListRegexPatternSetsRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves an array of
-         * <a>RegexPatternSetSummary</a> objects for the regex pattern sets that you
-         * manage.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves an array of <a>RegexPatternSetSummary</a> objects for the regex
+         * pattern sets that you manage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListRegexPatternSets">AWS
          * API Reference</a></p>
          *
@@ -1590,13 +1247,8 @@ namespace Model
         virtual Model::ListRegexPatternSetsOutcomeCallable ListRegexPatternSetsCallable(const Model::ListRegexPatternSetsRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves an array of
-         * <a>RegexPatternSetSummary</a> objects for the regex pattern sets that you
-         * manage.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves an array of <a>RegexPatternSetSummary</a> objects for the regex
+         * pattern sets that you manage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListRegexPatternSets">AWS
          * API Reference</a></p>
          *
@@ -1605,30 +1257,20 @@ namespace Model
         virtual void ListRegexPatternSetsAsync(const Model::ListRegexPatternSetsRequest& request, const ListRegexPatternSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves an array of the Amazon
-         * Resource Names (ARNs) for the regional resources that are associated with the
-         * specified web ACL. If you want the list of AWS CloudFront resources, use the AWS
-         * CloudFront call <code>ListDistributionsByWebACLId</code>. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves an array of the Amazon Resource Names (ARNs) for the regional
+         * resources that are associated with the specified web ACL. If you want the list
+         * of AWS CloudFront resources, use the AWS CloudFront call
+         * <code>ListDistributionsByWebACLId</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListResourcesForWebACL">AWS
          * API Reference</a></p>
          */
         virtual Model::ListResourcesForWebACLOutcome ListResourcesForWebACL(const Model::ListResourcesForWebACLRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves an array of the Amazon
-         * Resource Names (ARNs) for the regional resources that are associated with the
-         * specified web ACL. If you want the list of AWS CloudFront resources, use the AWS
-         * CloudFront call <code>ListDistributionsByWebACLId</code>. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves an array of the Amazon Resource Names (ARNs) for the regional
+         * resources that are associated with the specified web ACL. If you want the list
+         * of AWS CloudFront resources, use the AWS CloudFront call
+         * <code>ListDistributionsByWebACLId</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListResourcesForWebACL">AWS
          * API Reference</a></p>
          *
@@ -1637,15 +1279,10 @@ namespace Model
         virtual Model::ListResourcesForWebACLOutcomeCallable ListResourcesForWebACLCallable(const Model::ListResourcesForWebACLRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves an array of the Amazon
-         * Resource Names (ARNs) for the regional resources that are associated with the
-         * specified web ACL. If you want the list of AWS CloudFront resources, use the AWS
-         * CloudFront call <code>ListDistributionsByWebACLId</code>. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves an array of the Amazon Resource Names (ARNs) for the regional
+         * resources that are associated with the specified web ACL. If you want the list
+         * of AWS CloudFront resources, use the AWS CloudFront call
+         * <code>ListDistributionsByWebACLId</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListResourcesForWebACL">AWS
          * API Reference</a></p>
          *
@@ -1654,26 +1291,16 @@ namespace Model
         virtual void ListResourcesForWebACLAsync(const Model::ListResourcesForWebACLRequest& request, const ListResourcesForWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves an array of
-         * <a>RuleGroupSummary</a> objects for the rule groups that you manage.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves an array of <a>RuleGroupSummary</a> objects for the rule groups
+         * that you manage. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListRuleGroups">AWS
          * API Reference</a></p>
          */
         virtual Model::ListRuleGroupsOutcome ListRuleGroups(const Model::ListRuleGroupsRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves an array of
-         * <a>RuleGroupSummary</a> objects for the rule groups that you manage.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves an array of <a>RuleGroupSummary</a> objects for the rule groups
+         * that you manage. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListRuleGroups">AWS
          * API Reference</a></p>
          *
@@ -1682,13 +1309,8 @@ namespace Model
         virtual Model::ListRuleGroupsOutcomeCallable ListRuleGroupsCallable(const Model::ListRuleGroupsRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves an array of
-         * <a>RuleGroupSummary</a> objects for the rule groups that you manage.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves an array of <a>RuleGroupSummary</a> objects for the rule groups
+         * that you manage. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListRuleGroups">AWS
          * API Reference</a></p>
          *
@@ -1697,36 +1319,28 @@ namespace Model
         virtual void ListRuleGroupsAsync(const Model::ListRuleGroupsRequest& request, const ListRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves the <a>TagInfoForResource</a>
-         * for the specified resource. Tags are key:value pairs that you can use to
-         * categorize and manage your resources, for purposes like billing. For example,
-         * you might set the tag key to "customer" and the value to the customer name or
-         * ID. You can specify one or more tags to add to each AWS resource, up to 50 tags
-         * for a resource.</p> <p>You can tag the AWS resources that you manage through AWS
-         * WAF: web ACLs, rule groups, IP sets, and regex pattern sets. You can't manage or
-         * view tags through the AWS WAF console. </p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the <a>TagInfoForResource</a> for the specified resource. Tags are
+         * key:value pairs that you can use to categorize and manage your resources, for
+         * purposes like billing. For example, you might set the tag key to "customer" and
+         * the value to the customer name or ID. You can specify one or more tags to add to
+         * each AWS resource, up to 50 tags for a resource.</p> <p>You can tag the AWS
+         * resources that you manage through AWS WAF: web ACLs, rule groups, IP sets, and
+         * regex pattern sets. You can't manage or view tags through the AWS WAF console.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListTagsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves the <a>TagInfoForResource</a>
-         * for the specified resource. Tags are key:value pairs that you can use to
-         * categorize and manage your resources, for purposes like billing. For example,
-         * you might set the tag key to "customer" and the value to the customer name or
-         * ID. You can specify one or more tags to add to each AWS resource, up to 50 tags
-         * for a resource.</p> <p>You can tag the AWS resources that you manage through AWS
-         * WAF: web ACLs, rule groups, IP sets, and regex pattern sets. You can't manage or
-         * view tags through the AWS WAF console. </p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the <a>TagInfoForResource</a> for the specified resource. Tags are
+         * key:value pairs that you can use to categorize and manage your resources, for
+         * purposes like billing. For example, you might set the tag key to "customer" and
+         * the value to the customer name or ID. You can specify one or more tags to add to
+         * each AWS resource, up to 50 tags for a resource.</p> <p>You can tag the AWS
+         * resources that you manage through AWS WAF: web ACLs, rule groups, IP sets, and
+         * regex pattern sets. You can't manage or view tags through the AWS WAF console.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -1735,18 +1349,14 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves the <a>TagInfoForResource</a>
-         * for the specified resource. Tags are key:value pairs that you can use to
-         * categorize and manage your resources, for purposes like billing. For example,
-         * you might set the tag key to "customer" and the value to the customer name or
-         * ID. You can specify one or more tags to add to each AWS resource, up to 50 tags
-         * for a resource.</p> <p>You can tag the AWS resources that you manage through AWS
-         * WAF: web ACLs, rule groups, IP sets, and regex pattern sets. You can't manage or
-         * view tags through the AWS WAF console. </p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the <a>TagInfoForResource</a> for the specified resource. Tags are
+         * key:value pairs that you can use to categorize and manage your resources, for
+         * purposes like billing. For example, you might set the tag key to "customer" and
+         * the value to the customer name or ID. You can specify one or more tags to add to
+         * each AWS resource, up to 50 tags for a resource.</p> <p>You can tag the AWS
+         * resources that you manage through AWS WAF: web ACLs, rule groups, IP sets, and
+         * regex pattern sets. You can't manage or view tags through the AWS WAF console.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -1755,26 +1365,16 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves an array of
-         * <a>WebACLSummary</a> objects for the web ACLs that you manage.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves an array of <a>WebACLSummary</a> objects for the web ACLs that you
+         * manage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListWebACLs">AWS
          * API Reference</a></p>
          */
         virtual Model::ListWebACLsOutcome ListWebACLs(const Model::ListWebACLsRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves an array of
-         * <a>WebACLSummary</a> objects for the web ACLs that you manage.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves an array of <a>WebACLSummary</a> objects for the web ACLs that you
+         * manage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListWebACLs">AWS
          * API Reference</a></p>
          *
@@ -1783,13 +1383,8 @@ namespace Model
         virtual Model::ListWebACLsOutcomeCallable ListWebACLsCallable(const Model::ListWebACLsRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Retrieves an array of
-         * <a>WebACLSummary</a> objects for the web ACLs that you manage.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves an array of <a>WebACLSummary</a> objects for the web ACLs that you
+         * manage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListWebACLs">AWS
          * API Reference</a></p>
          *
@@ -1798,21 +1393,17 @@ namespace Model
         virtual void ListWebACLsAsync(const Model::ListWebACLsRequest& request, const ListWebACLsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Enables the specified
-         * <a>LoggingConfiguration</a>, to start logging from a web ACL, according to the
-         * configuration provided.</p> <p>You can access information about all traffic that
-         * AWS WAF inspects using the following steps:</p> <ol> <li> <p>Create an Amazon
-         * Kinesis Data Firehose. </p> <p>Create the data firehose with a PUT source and in
-         * the Region that you are operating. If you are capturing logs for Amazon
-         * CloudFront, always create the firehose in US East (N. Virginia). </p> <p>Give
-         * the data firehose a name that starts with the prefix <code>aws-waf-logs-</code>.
-         * For example, <code>aws-waf-logs-us-east-2-analytics</code>.</p>  <p>Do not
-         * create the data firehose using a <code>Kinesis stream</code> as your source.</p>
-         *  </li> <li> <p>Associate that firehose to your web ACL using a
+         * <p>Enables the specified <a>LoggingConfiguration</a>, to start logging from a
+         * web ACL, according to the configuration provided.</p> <p>You can access
+         * information about all traffic that AWS WAF inspects using the following
+         * steps:</p> <ol> <li> <p>Create an Amazon Kinesis Data Firehose. </p> <p>Create
+         * the data firehose with a PUT source and in the Region that you are operating. If
+         * you are capturing logs for Amazon CloudFront, always create the firehose in US
+         * East (N. Virginia). </p> <p>Give the data firehose a name that starts with the
+         * prefix <code>aws-waf-logs-</code>. For example,
+         * <code>aws-waf-logs-us-east-2-analytics</code>.</p>  <p>Do not create the
+         * data firehose using a <code>Kinesis stream</code> as your source.</p> 
+         * </li> <li> <p>Associate that firehose to your web ACL using a
          * <code>PutLoggingConfiguration</code> request.</p> </li> </ol> <p>When you
          * successfully enable logging using a <code>PutLoggingConfiguration</code>
          * request, AWS WAF will create a service linked role with the necessary
@@ -1827,21 +1418,17 @@ namespace Model
         virtual Model::PutLoggingConfigurationOutcome PutLoggingConfiguration(const Model::PutLoggingConfigurationRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Enables the specified
-         * <a>LoggingConfiguration</a>, to start logging from a web ACL, according to the
-         * configuration provided.</p> <p>You can access information about all traffic that
-         * AWS WAF inspects using the following steps:</p> <ol> <li> <p>Create an Amazon
-         * Kinesis Data Firehose. </p> <p>Create the data firehose with a PUT source and in
-         * the Region that you are operating. If you are capturing logs for Amazon
-         * CloudFront, always create the firehose in US East (N. Virginia). </p> <p>Give
-         * the data firehose a name that starts with the prefix <code>aws-waf-logs-</code>.
-         * For example, <code>aws-waf-logs-us-east-2-analytics</code>.</p>  <p>Do not
-         * create the data firehose using a <code>Kinesis stream</code> as your source.</p>
-         *  </li> <li> <p>Associate that firehose to your web ACL using a
+         * <p>Enables the specified <a>LoggingConfiguration</a>, to start logging from a
+         * web ACL, according to the configuration provided.</p> <p>You can access
+         * information about all traffic that AWS WAF inspects using the following
+         * steps:</p> <ol> <li> <p>Create an Amazon Kinesis Data Firehose. </p> <p>Create
+         * the data firehose with a PUT source and in the Region that you are operating. If
+         * you are capturing logs for Amazon CloudFront, always create the firehose in US
+         * East (N. Virginia). </p> <p>Give the data firehose a name that starts with the
+         * prefix <code>aws-waf-logs-</code>. For example,
+         * <code>aws-waf-logs-us-east-2-analytics</code>.</p>  <p>Do not create the
+         * data firehose using a <code>Kinesis stream</code> as your source.</p> 
+         * </li> <li> <p>Associate that firehose to your web ACL using a
          * <code>PutLoggingConfiguration</code> request.</p> </li> </ol> <p>When you
          * successfully enable logging using a <code>PutLoggingConfiguration</code>
          * request, AWS WAF will create a service linked role with the necessary
@@ -1858,21 +1445,17 @@ namespace Model
         virtual Model::PutLoggingConfigurationOutcomeCallable PutLoggingConfigurationCallable(const Model::PutLoggingConfigurationRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Enables the specified
-         * <a>LoggingConfiguration</a>, to start logging from a web ACL, according to the
-         * configuration provided.</p> <p>You can access information about all traffic that
-         * AWS WAF inspects using the following steps:</p> <ol> <li> <p>Create an Amazon
-         * Kinesis Data Firehose. </p> <p>Create the data firehose with a PUT source and in
-         * the Region that you are operating. If you are capturing logs for Amazon
-         * CloudFront, always create the firehose in US East (N. Virginia). </p> <p>Give
-         * the data firehose a name that starts with the prefix <code>aws-waf-logs-</code>.
-         * For example, <code>aws-waf-logs-us-east-2-analytics</code>.</p>  <p>Do not
-         * create the data firehose using a <code>Kinesis stream</code> as your source.</p>
-         *  </li> <li> <p>Associate that firehose to your web ACL using a
+         * <p>Enables the specified <a>LoggingConfiguration</a>, to start logging from a
+         * web ACL, according to the configuration provided.</p> <p>You can access
+         * information about all traffic that AWS WAF inspects using the following
+         * steps:</p> <ol> <li> <p>Create an Amazon Kinesis Data Firehose. </p> <p>Create
+         * the data firehose with a PUT source and in the Region that you are operating. If
+         * you are capturing logs for Amazon CloudFront, always create the firehose in US
+         * East (N. Virginia). </p> <p>Give the data firehose a name that starts with the
+         * prefix <code>aws-waf-logs-</code>. For example,
+         * <code>aws-waf-logs-us-east-2-analytics</code>.</p>  <p>Do not create the
+         * data firehose using a <code>Kinesis stream</code> as your source.</p> 
+         * </li> <li> <p>Associate that firehose to your web ACL using a
          * <code>PutLoggingConfiguration</code> request.</p> </li> </ol> <p>When you
          * successfully enable logging using a <code>PutLoggingConfiguration</code>
          * request, AWS WAF will create a service linked role with the necessary
@@ -1935,36 +1518,28 @@ namespace Model
         virtual void PutPermissionPolicyAsync(const Model::PutPermissionPolicyRequest& request, const PutPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Associates tags with the specified AWS
-         * resource. Tags are key:value pairs that you can use to categorize and manage
-         * your resources, for purposes like billing. For example, you might set the tag
-         * key to "customer" and the value to the customer name or ID. You can specify one
-         * or more tags to add to each AWS resource, up to 50 tags for a resource.</p>
-         * <p>You can tag the AWS resources that you manage through AWS WAF: web ACLs, rule
-         * groups, IP sets, and regex pattern sets. You can't manage or view tags through
-         * the AWS WAF console. </p><p><h3>See Also:</h3>   <a
+         * <p>Associates tags with the specified AWS resource. Tags are key:value pairs
+         * that you can use to categorize and manage your resources, for purposes like
+         * billing. For example, you might set the tag key to "customer" and the value to
+         * the customer name or ID. You can specify one or more tags to add to each AWS
+         * resource, up to 50 tags for a resource.</p> <p>You can tag the AWS resources
+         * that you manage through AWS WAF: web ACLs, rule groups, IP sets, and regex
+         * pattern sets. You can't manage or view tags through the AWS WAF console.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/TagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Associates tags with the specified AWS
-         * resource. Tags are key:value pairs that you can use to categorize and manage
-         * your resources, for purposes like billing. For example, you might set the tag
-         * key to "customer" and the value to the customer name or ID. You can specify one
-         * or more tags to add to each AWS resource, up to 50 tags for a resource.</p>
-         * <p>You can tag the AWS resources that you manage through AWS WAF: web ACLs, rule
-         * groups, IP sets, and regex pattern sets. You can't manage or view tags through
-         * the AWS WAF console. </p><p><h3>See Also:</h3>   <a
+         * <p>Associates tags with the specified AWS resource. Tags are key:value pairs
+         * that you can use to categorize and manage your resources, for purposes like
+         * billing. For example, you might set the tag key to "customer" and the value to
+         * the customer name or ID. You can specify one or more tags to add to each AWS
+         * resource, up to 50 tags for a resource.</p> <p>You can tag the AWS resources
+         * that you manage through AWS WAF: web ACLs, rule groups, IP sets, and regex
+         * pattern sets. You can't manage or view tags through the AWS WAF console.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/TagResource">AWS
          * API Reference</a></p>
          *
@@ -1973,18 +1548,14 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Associates tags with the specified AWS
-         * resource. Tags are key:value pairs that you can use to categorize and manage
-         * your resources, for purposes like billing. For example, you might set the tag
-         * key to "customer" and the value to the customer name or ID. You can specify one
-         * or more tags to add to each AWS resource, up to 50 tags for a resource.</p>
-         * <p>You can tag the AWS resources that you manage through AWS WAF: web ACLs, rule
-         * groups, IP sets, and regex pattern sets. You can't manage or view tags through
-         * the AWS WAF console. </p><p><h3>See Also:</h3>   <a
+         * <p>Associates tags with the specified AWS resource. Tags are key:value pairs
+         * that you can use to categorize and manage your resources, for purposes like
+         * billing. For example, you might set the tag key to "customer" and the value to
+         * the customer name or ID. You can specify one or more tags to add to each AWS
+         * resource, up to 50 tags for a resource.</p> <p>You can tag the AWS resources
+         * that you manage through AWS WAF: web ACLs, rule groups, IP sets, and regex
+         * pattern sets. You can't manage or view tags through the AWS WAF console.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/TagResource">AWS
          * API Reference</a></p>
          *
@@ -1993,30 +1564,22 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Disassociates tags from an AWS
-         * resource. Tags are key:value pairs that you can associate with AWS resources.
-         * For example, the tag key might be "customer" and the tag value might be
-         * "companyA." You can specify one or more tags to add to each container. You can
-         * add up to 50 tags to each AWS resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Disassociates tags from an AWS resource. Tags are key:value pairs that you
+         * can associate with AWS resources. For example, the tag key might be "customer"
+         * and the tag value might be "companyA." You can specify one or more tags to add
+         * to each container. You can add up to 50 tags to each AWS resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Disassociates tags from an AWS
-         * resource. Tags are key:value pairs that you can associate with AWS resources.
-         * For example, the tag key might be "customer" and the tag value might be
-         * "companyA." You can specify one or more tags to add to each container. You can
-         * add up to 50 tags to each AWS resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Disassociates tags from an AWS resource. Tags are key:value pairs that you
+         * can associate with AWS resources. For example, the tag key might be "customer"
+         * and the tag value might be "companyA." You can specify one or more tags to add
+         * to each container. You can add up to 50 tags to each AWS resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -2025,15 +1588,11 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Disassociates tags from an AWS
-         * resource. Tags are key:value pairs that you can associate with AWS resources.
-         * For example, the tag key might be "customer" and the tag value might be
-         * "companyA." You can specify one or more tags to add to each container. You can
-         * add up to 50 tags to each AWS resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Disassociates tags from an AWS resource. Tags are key:value pairs that you
+         * can associate with AWS resources. For example, the tag key might be "customer"
+         * and the tag value might be "companyA." You can specify one or more tags to add
+         * to each container. You can add up to 50 tags to each AWS resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -2042,24 +1601,14 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Updates the specified
-         * <a>IPSet</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified <a>IPSet</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateIPSet">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateIPSetOutcome UpdateIPSet(const Model::UpdateIPSetRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Updates the specified
-         * <a>IPSet</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified <a>IPSet</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateIPSet">AWS
          * API Reference</a></p>
          *
@@ -2068,12 +1617,7 @@ namespace Model
         virtual Model::UpdateIPSetOutcomeCallable UpdateIPSetCallable(const Model::UpdateIPSetRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Updates the specified
-         * <a>IPSet</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified <a>IPSet</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateIPSet">AWS
          * API Reference</a></p>
          *
@@ -2082,24 +1626,14 @@ namespace Model
         virtual void UpdateIPSetAsync(const Model::UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Updates the specified
-         * <a>RegexPatternSet</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified <a>RegexPatternSet</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateRegexPatternSet">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateRegexPatternSetOutcome UpdateRegexPatternSet(const Model::UpdateRegexPatternSetRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Updates the specified
-         * <a>RegexPatternSet</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified <a>RegexPatternSet</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateRegexPatternSet">AWS
          * API Reference</a></p>
          *
@@ -2108,12 +1642,7 @@ namespace Model
         virtual Model::UpdateRegexPatternSetOutcomeCallable UpdateRegexPatternSetCallable(const Model::UpdateRegexPatternSetRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Updates the specified
-         * <a>RegexPatternSet</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified <a>RegexPatternSet</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateRegexPatternSet">AWS
          * API Reference</a></p>
          *
@@ -2122,32 +1651,24 @@ namespace Model
         virtual void UpdateRegexPatternSetAsync(const Model::UpdateRegexPatternSetRequest& request, const UpdateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Updates the specified
-         * <a>RuleGroup</a>.</p> <p> A rule group defines a collection of rules to inspect
-         * and control web requests that you can use in a <a>WebACL</a>. When you create a
-         * rule group, you define an immutable capacity limit. If you update a rule group,
-         * you must stay within the capacity. This allows others to reuse the rule group
-         * with confidence in its capacity requirements. </p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified <a>RuleGroup</a>.</p> <p> A rule group defines a
+         * collection of rules to inspect and control web requests that you can use in a
+         * <a>WebACL</a>. When you create a rule group, you define an immutable capacity
+         * limit. If you update a rule group, you must stay within the capacity. This
+         * allows others to reuse the rule group with confidence in its capacity
+         * requirements. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateRuleGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateRuleGroupOutcome UpdateRuleGroup(const Model::UpdateRuleGroupRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Updates the specified
-         * <a>RuleGroup</a>.</p> <p> A rule group defines a collection of rules to inspect
-         * and control web requests that you can use in a <a>WebACL</a>. When you create a
-         * rule group, you define an immutable capacity limit. If you update a rule group,
-         * you must stay within the capacity. This allows others to reuse the rule group
-         * with confidence in its capacity requirements. </p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified <a>RuleGroup</a>.</p> <p> A rule group defines a
+         * collection of rules to inspect and control web requests that you can use in a
+         * <a>WebACL</a>. When you create a rule group, you define an immutable capacity
+         * limit. If you update a rule group, you must stay within the capacity. This
+         * allows others to reuse the rule group with confidence in its capacity
+         * requirements. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateRuleGroup">AWS
          * API Reference</a></p>
          *
@@ -2156,16 +1677,12 @@ namespace Model
         virtual Model::UpdateRuleGroupOutcomeCallable UpdateRuleGroupCallable(const Model::UpdateRuleGroupRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Updates the specified
-         * <a>RuleGroup</a>.</p> <p> A rule group defines a collection of rules to inspect
-         * and control web requests that you can use in a <a>WebACL</a>. When you create a
-         * rule group, you define an immutable capacity limit. If you update a rule group,
-         * you must stay within the capacity. This allows others to reuse the rule group
-         * with confidence in its capacity requirements. </p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified <a>RuleGroup</a>.</p> <p> A rule group defines a
+         * collection of rules to inspect and control web requests that you can use in a
+         * <a>WebACL</a>. When you create a rule group, you define an immutable capacity
+         * limit. If you update a rule group, you must stay within the capacity. This
+         * allows others to reuse the rule group with confidence in its capacity
+         * requirements. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateRuleGroup">AWS
          * API Reference</a></p>
          *
@@ -2174,40 +1691,32 @@ namespace Model
         virtual void UpdateRuleGroupAsync(const Model::UpdateRuleGroupRequest& request, const UpdateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Updates the specified
-         * <a>WebACL</a>.</p> <p> A Web ACL defines a collection of rules to use to inspect
-         * and control web requests. Each rule has an action defined (allow, block, or
-         * count) for requests that match the statement of the rule. In the Web ACL, you
-         * assign a default action to take (allow, block) for any request that does not
-         * match any of the rules. The rules in a Web ACL can be a combination of the types
-         * <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a Web
-         * ACL with one or more AWS resources to protect. The resources can be Amazon
-         * CloudFront, an Amazon API Gateway REST API, an Application Load Balancer, or an
-         * AWS AppSync GraphQL API. </p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified <a>WebACL</a>.</p> <p> A Web ACL defines a collection
+         * of rules to use to inspect and control web requests. Each rule has an action
+         * defined (allow, block, or count) for requests that match the statement of the
+         * rule. In the Web ACL, you assign a default action to take (allow, block) for any
+         * request that does not match any of the rules. The rules in a Web ACL can be a
+         * combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group.
+         * You can associate a Web ACL with one or more AWS resources to protect. The
+         * resources can be Amazon CloudFront, an Amazon API Gateway REST API, an
+         * Application Load Balancer, or an AWS AppSync GraphQL API. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateWebACL">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateWebACLOutcome UpdateWebACL(const Model::UpdateWebACLRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Updates the specified
-         * <a>WebACL</a>.</p> <p> A Web ACL defines a collection of rules to use to inspect
-         * and control web requests. Each rule has an action defined (allow, block, or
-         * count) for requests that match the statement of the rule. In the Web ACL, you
-         * assign a default action to take (allow, block) for any request that does not
-         * match any of the rules. The rules in a Web ACL can be a combination of the types
-         * <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a Web
-         * ACL with one or more AWS resources to protect. The resources can be Amazon
-         * CloudFront, an Amazon API Gateway REST API, an Application Load Balancer, or an
-         * AWS AppSync GraphQL API. </p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified <a>WebACL</a>.</p> <p> A Web ACL defines a collection
+         * of rules to use to inspect and control web requests. Each rule has an action
+         * defined (allow, block, or count) for requests that match the statement of the
+         * rule. In the Web ACL, you assign a default action to take (allow, block) for any
+         * request that does not match any of the rules. The rules in a Web ACL can be a
+         * combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group.
+         * You can associate a Web ACL with one or more AWS resources to protect. The
+         * resources can be Amazon CloudFront, an Amazon API Gateway REST API, an
+         * Application Load Balancer, or an AWS AppSync GraphQL API. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateWebACL">AWS
          * API Reference</a></p>
          *
@@ -2216,20 +1725,16 @@ namespace Model
         virtual Model::UpdateWebACLOutcomeCallable UpdateWebACLCallable(const Model::UpdateWebACLRequest& request) const;
 
         /**
-         *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-         * released in November, 2019. For information, including how to migrate your AWS
-         * WAF resources from the prior release, see the <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p>  <p>Updates the specified
-         * <a>WebACL</a>.</p> <p> A Web ACL defines a collection of rules to use to inspect
-         * and control web requests. Each rule has an action defined (allow, block, or
-         * count) for requests that match the statement of the rule. In the Web ACL, you
-         * assign a default action to take (allow, block) for any request that does not
-         * match any of the rules. The rules in a Web ACL can be a combination of the types
-         * <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a Web
-         * ACL with one or more AWS resources to protect. The resources can be Amazon
-         * CloudFront, an Amazon API Gateway REST API, an Application Load Balancer, or an
-         * AWS AppSync GraphQL API. </p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified <a>WebACL</a>.</p> <p> A Web ACL defines a collection
+         * of rules to use to inspect and control web requests. Each rule has an action
+         * defined (allow, block, or count) for requests that match the statement of the
+         * rule. In the Web ACL, you assign a default action to take (allow, block) for any
+         * request that does not match any of the rules. The rules in a Web ACL can be a
+         * combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group.
+         * You can associate a Web ACL with one or more AWS resources to protect. The
+         * resources can be Amazon CloudFront, an Amazon API Gateway REST API, an
+         * Application Load Balancer, or an AWS AppSync GraphQL API. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateWebACL">AWS
          * API Reference</a></p>
          *

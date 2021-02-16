@@ -147,6 +147,12 @@ DescribeChannelResult& DescribeChannelResult::operator =(const Aws::AmazonWebSer
     }
   }
 
+  if(jsonValue.ValueExists("vpc"))
+  {
+    m_vpc = jsonValue.GetObject("vpc");
+
+  }
+
 
 
   return *this;

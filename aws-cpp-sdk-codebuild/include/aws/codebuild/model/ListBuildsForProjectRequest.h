@@ -77,50 +77,62 @@ namespace Model
 
 
     /**
-     * <p>The order to list build IDs. Valid values include:</p> <ul> <li> <p>
+     * <p>The order to list results in. The results are sorted by build number, not the
+     * build identifier.</p> <p>Valid values include:</p> <ul> <li> <p>
      * <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p>
      * </li> <li> <p> <code>DESCENDING</code>: List the build IDs in descending order
-     * by build ID.</p> </li> </ul>
+     * by build ID.</p> </li> </ul> <p>If the project has more than 100 builds, setting
+     * the sort order will result in an error. </p>
      */
     inline const SortOrderType& GetSortOrder() const{ return m_sortOrder; }
 
     /**
-     * <p>The order to list build IDs. Valid values include:</p> <ul> <li> <p>
+     * <p>The order to list results in. The results are sorted by build number, not the
+     * build identifier.</p> <p>Valid values include:</p> <ul> <li> <p>
      * <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p>
      * </li> <li> <p> <code>DESCENDING</code>: List the build IDs in descending order
-     * by build ID.</p> </li> </ul>
+     * by build ID.</p> </li> </ul> <p>If the project has more than 100 builds, setting
+     * the sort order will result in an error. </p>
      */
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
 
     /**
-     * <p>The order to list build IDs. Valid values include:</p> <ul> <li> <p>
+     * <p>The order to list results in. The results are sorted by build number, not the
+     * build identifier.</p> <p>Valid values include:</p> <ul> <li> <p>
      * <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p>
      * </li> <li> <p> <code>DESCENDING</code>: List the build IDs in descending order
-     * by build ID.</p> </li> </ul>
+     * by build ID.</p> </li> </ul> <p>If the project has more than 100 builds, setting
+     * the sort order will result in an error. </p>
      */
     inline void SetSortOrder(const SortOrderType& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
 
     /**
-     * <p>The order to list build IDs. Valid values include:</p> <ul> <li> <p>
+     * <p>The order to list results in. The results are sorted by build number, not the
+     * build identifier.</p> <p>Valid values include:</p> <ul> <li> <p>
      * <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p>
      * </li> <li> <p> <code>DESCENDING</code>: List the build IDs in descending order
-     * by build ID.</p> </li> </ul>
+     * by build ID.</p> </li> </ul> <p>If the project has more than 100 builds, setting
+     * the sort order will result in an error. </p>
      */
     inline void SetSortOrder(SortOrderType&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
 
     /**
-     * <p>The order to list build IDs. Valid values include:</p> <ul> <li> <p>
+     * <p>The order to list results in. The results are sorted by build number, not the
+     * build identifier.</p> <p>Valid values include:</p> <ul> <li> <p>
      * <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p>
      * </li> <li> <p> <code>DESCENDING</code>: List the build IDs in descending order
-     * by build ID.</p> </li> </ul>
+     * by build ID.</p> </li> </ul> <p>If the project has more than 100 builds, setting
+     * the sort order will result in an error. </p>
      */
     inline ListBuildsForProjectRequest& WithSortOrder(const SortOrderType& value) { SetSortOrder(value); return *this;}
 
     /**
-     * <p>The order to list build IDs. Valid values include:</p> <ul> <li> <p>
+     * <p>The order to list results in. The results are sorted by build number, not the
+     * build identifier.</p> <p>Valid values include:</p> <ul> <li> <p>
      * <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p>
      * </li> <li> <p> <code>DESCENDING</code>: List the build IDs in descending order
-     * by build ID.</p> </li> </ul>
+     * by build ID.</p> </li> </ul> <p>If the project has more than 100 builds, setting
+     * the sort order will result in an error. </p>
      */
     inline ListBuildsForProjectRequest& WithSortOrder(SortOrderType&& value) { SetSortOrder(std::move(value)); return *this;}
 

@@ -29,8 +29,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents a dataset that can be processed by AWS Glue
-   * DataBrew.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents a dataset that can be processed by DataBrew.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Dataset">AWS
    * API Reference</a></p>
    */
@@ -85,42 +85,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier (the user name) of the user who created the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the dataset.</p>
      */
     inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
 
     /**
-     * <p>The identifier (the user name) of the user who created the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the dataset.</p>
      */
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
 
     /**
-     * <p>The identifier (the user name) of the user who created the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the dataset.</p>
      */
     inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
 
     /**
-     * <p>The identifier (the user name) of the user who created the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the dataset.</p>
      */
     inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
 
     /**
-     * <p>The identifier (the user name) of the user who created the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the dataset.</p>
      */
     inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
 
     /**
-     * <p>The identifier (the user name) of the user who created the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the dataset.</p>
      */
     inline Dataset& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user who created the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the dataset.</p>
      */
     inline Dataset& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user who created the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the dataset.</p>
      */
     inline Dataset& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
 
@@ -297,42 +297,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the dataset.</p>
      */
     inline const Aws::String& GetLastModifiedBy() const{ return m_lastModifiedBy; }
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the dataset.</p>
      */
     inline bool LastModifiedByHasBeenSet() const { return m_lastModifiedByHasBeenSet; }
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the dataset.</p>
      */
     inline void SetLastModifiedBy(const Aws::String& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = value; }
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the dataset.</p>
      */
     inline void SetLastModifiedBy(Aws::String&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::move(value); }
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the dataset.</p>
      */
     inline void SetLastModifiedBy(const char* value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy.assign(value); }
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the dataset.</p>
      */
     inline Dataset& WithLastModifiedBy(const Aws::String& value) { SetLastModifiedBy(value); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the dataset.</p>
      */
     inline Dataset& WithLastModifiedBy(Aws::String&& value) { SetLastModifiedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the dataset.</p>
      */
     inline Dataset& WithLastModifiedBy(const char* value) { SetLastModifiedBy(value); return *this;}
 

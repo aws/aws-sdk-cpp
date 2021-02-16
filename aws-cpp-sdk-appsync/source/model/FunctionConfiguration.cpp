@@ -26,7 +26,8 @@ FunctionConfiguration::FunctionConfiguration() :
     m_dataSourceNameHasBeenSet(false),
     m_requestMappingTemplateHasBeenSet(false),
     m_responseMappingTemplateHasBeenSet(false),
-    m_functionVersionHasBeenSet(false)
+    m_functionVersionHasBeenSet(false),
+    m_syncConfigHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ FunctionConfiguration::FunctionConfiguration(JsonView jsonValue) :
     m_dataSourceNameHasBeenSet(false),
     m_requestMappingTemplateHasBeenSet(false),
     m_responseMappingTemplateHasBeenSet(false),
-    m_functionVersionHasBeenSet(false)
+    m_functionVersionHasBeenSet(false),
+    m_syncConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -101,6 +103,13 @@ FunctionConfiguration& FunctionConfiguration::operator =(JsonView jsonValue)
     m_functionVersionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("syncConfig"))
+  {
+    m_syncConfig = jsonValue.GetObject("syncConfig");
+
+    m_syncConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -153,6 +162,12 @@ JsonValue FunctionConfiguration::Jsonize() const
   if(m_functionVersionHasBeenSet)
   {
    payload.WithString("functionVersion", m_functionVersion);
+
+  }
+
+  if(m_syncConfigHasBeenSet)
+  {
+   payload.WithObject("syncConfig", m_syncConfig.Jsonize());
 
   }
 

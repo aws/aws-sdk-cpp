@@ -147,6 +147,12 @@ DeleteChannelResult& DeleteChannelResult::operator =(const Aws::AmazonWebService
     }
   }
 
+  if(jsonValue.ValueExists("vpc"))
+  {
+    m_vpc = jsonValue.GetObject("vpc");
+
+  }
+
 
 
   return *this;

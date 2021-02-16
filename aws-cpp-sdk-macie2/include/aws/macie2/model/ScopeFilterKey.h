@@ -20,7 +20,8 @@ namespace Model
     OBJECT_EXTENSION,
     OBJECT_LAST_MODIFIED_DATE,
     OBJECT_SIZE,
-    TAG
+    TAG,
+    OBJECT_KEY
   };
 
 namespace ScopeFilterKeyMapper

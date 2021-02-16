@@ -35,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p>AWS Region assigned to the SIP media application.</p>
+     * <p>The AWS Region assigned to the SIP media application.</p>
      */
     inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
 
     /**
-     * <p>AWS Region assigned to the SIP media application.</p>
+     * <p>The AWS Region assigned to the SIP media application.</p>
      */
     inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
 
     /**
-     * <p>AWS Region assigned to the SIP media application.</p>
+     * <p>The AWS Region assigned to the SIP media application.</p>
      */
     inline void SetAwsRegion(const Aws::String& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
 
     /**
-     * <p>AWS Region assigned to the SIP media application.</p>
+     * <p>The AWS Region assigned to the SIP media application.</p>
      */
     inline void SetAwsRegion(Aws::String&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
 
     /**
-     * <p>AWS Region assigned to the SIP media application.</p>
+     * <p>The AWS Region assigned to the SIP media application.</p>
      */
     inline void SetAwsRegion(const char* value) { m_awsRegionHasBeenSet = true; m_awsRegion.assign(value); }
 
     /**
-     * <p>AWS Region assigned to the SIP media application.</p>
+     * <p>The AWS Region assigned to the SIP media application.</p>
      */
     inline CreateSipMediaApplicationRequest& WithAwsRegion(const Aws::String& value) { SetAwsRegion(value); return *this;}
 
     /**
-     * <p>AWS Region assigned to the SIP media application.</p>
+     * <p>The AWS Region assigned to the SIP media application.</p>
      */
     inline CreateSipMediaApplicationRequest& WithAwsRegion(Aws::String&& value) { SetAwsRegion(std::move(value)); return *this;}
 
     /**
-     * <p>AWS Region assigned to the SIP media application.</p>
+     * <p>The AWS Region assigned to the SIP media application.</p>
      */
     inline CreateSipMediaApplicationRequest& WithAwsRegion(const char* value) { SetAwsRegion(value); return *this;}
 

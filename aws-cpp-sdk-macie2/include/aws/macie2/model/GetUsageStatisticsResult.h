@@ -7,6 +7,7 @@
 #include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/macie2/model/TimeRange.h>
 #include <aws/macie2/model/UsageRecord.h>
 #include <utility>
 
@@ -126,11 +127,49 @@ namespace Model
      */
     inline GetUsageStatisticsResult& AddRecords(UsageRecord&& value) { m_records.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The inclusive time period that the usage data applies to. Possible values
+     * are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS,
+     * for the preceding 30 days.</p>
+     */
+    inline const TimeRange& GetTimeRange() const{ return m_timeRange; }
+
+    /**
+     * <p>The inclusive time period that the usage data applies to. Possible values
+     * are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS,
+     * for the preceding 30 days.</p>
+     */
+    inline void SetTimeRange(const TimeRange& value) { m_timeRange = value; }
+
+    /**
+     * <p>The inclusive time period that the usage data applies to. Possible values
+     * are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS,
+     * for the preceding 30 days.</p>
+     */
+    inline void SetTimeRange(TimeRange&& value) { m_timeRange = std::move(value); }
+
+    /**
+     * <p>The inclusive time period that the usage data applies to. Possible values
+     * are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS,
+     * for the preceding 30 days.</p>
+     */
+    inline GetUsageStatisticsResult& WithTimeRange(const TimeRange& value) { SetTimeRange(value); return *this;}
+
+    /**
+     * <p>The inclusive time period that the usage data applies to. Possible values
+     * are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS,
+     * for the preceding 30 days.</p>
+     */
+    inline GetUsageStatisticsResult& WithTimeRange(TimeRange&& value) { SetTimeRange(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_nextToken;
 
     Aws::Vector<UsageRecord> m_records;
+
+    TimeRange m_timeRange;
   };
 
 } // namespace Model

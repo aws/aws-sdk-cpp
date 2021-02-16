@@ -32,8 +32,9 @@ namespace Model
    * transitioned to cold storage must be stored in cold storage for a minimum of 90
    * days. Therefore, the “expire after days” setting must be 90 days greater than
    * the “transition to cold after days” setting. The “transition to cold after days”
-   * setting cannot be changed after a backup has been transitioned to
-   * cold.</p><p><h3>See Also:</h3>   <a
+   * setting cannot be changed after a backup has been transitioned to cold.</p>
+   * <p>Only Amazon EFS file system backups can be transitioned to cold
+   * storage.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CalculatedLifecycle">AWS
    * API Reference</a></p>
    */

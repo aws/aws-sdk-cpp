@@ -20,6 +20,7 @@ namespace Model
     S3PutObjectCopy,
     S3PutObjectAcl,
     S3PutObjectTagging,
+    S3DeleteObjectTagging,
     S3InitiateRestoreObject,
     S3PutObjectLegalHold,
     S3PutObjectRetention

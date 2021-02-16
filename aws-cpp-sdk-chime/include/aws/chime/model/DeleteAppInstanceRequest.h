@@ -33,42 +33,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the app instance.</p>
+     * <p>The ARN of the <code>AppInstance</code>.</p>
      */
     inline const Aws::String& GetAppInstanceArn() const{ return m_appInstanceArn; }
 
     /**
-     * <p>The ARN of the app instance.</p>
+     * <p>The ARN of the <code>AppInstance</code>.</p>
      */
     inline bool AppInstanceArnHasBeenSet() const { return m_appInstanceArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the app instance.</p>
+     * <p>The ARN of the <code>AppInstance</code>.</p>
      */
     inline void SetAppInstanceArn(const Aws::String& value) { m_appInstanceArnHasBeenSet = true; m_appInstanceArn = value; }
 
     /**
-     * <p>The ARN of the app instance.</p>
+     * <p>The ARN of the <code>AppInstance</code>.</p>
      */
     inline void SetAppInstanceArn(Aws::String&& value) { m_appInstanceArnHasBeenSet = true; m_appInstanceArn = std::move(value); }
 
     /**
-     * <p>The ARN of the app instance.</p>
+     * <p>The ARN of the <code>AppInstance</code>.</p>
      */
     inline void SetAppInstanceArn(const char* value) { m_appInstanceArnHasBeenSet = true; m_appInstanceArn.assign(value); }
 
     /**
-     * <p>The ARN of the app instance.</p>
+     * <p>The ARN of the <code>AppInstance</code>.</p>
      */
     inline DeleteAppInstanceRequest& WithAppInstanceArn(const Aws::String& value) { SetAppInstanceArn(value); return *this;}
 
     /**
-     * <p>The ARN of the app instance.</p>
+     * <p>The ARN of the <code>AppInstance</code>.</p>
      */
     inline DeleteAppInstanceRequest& WithAppInstanceArn(Aws::String&& value) { SetAppInstanceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the app instance.</p>
+     * <p>The ARN of the <code>AppInstance</code>.</p>
      */
     inline DeleteAppInstanceRequest& WithAppInstanceArn(const char* value) { SetAppInstanceArn(value); return *this;}
 

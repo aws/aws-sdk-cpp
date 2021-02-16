@@ -19,6 +19,8 @@ namespace Model
 {
 
 CreateRule::CreateRule() : 
+    m_location(LocationValues::NOT_SET),
+    m_locationHasBeenSet(false),
     m_interval(0),
     m_intervalHasBeenSet(false),
     m_intervalUnit(IntervalUnitValues::NOT_SET),
@@ -29,6 +31,8 @@ CreateRule::CreateRule() :
 }
 
 CreateRule::CreateRule(JsonView jsonValue) : 
+    m_location(LocationValues::NOT_SET),
+    m_locationHasBeenSet(false),
     m_interval(0),
     m_intervalHasBeenSet(false),
     m_intervalUnit(IntervalUnitValues::NOT_SET),
@@ -41,6 +45,13 @@ CreateRule::CreateRule(JsonView jsonValue) :
 
 CreateRule& CreateRule::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("Location"))
+  {
+    m_location = LocationValuesMapper::GetLocationValuesForName(jsonValue.GetString("Location"));
+
+    m_locationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Interval"))
   {
     m_interval = jsonValue.GetInteger("Interval");
@@ -78,6 +89,11 @@ CreateRule& CreateRule::operator =(JsonView jsonValue)
 JsonValue CreateRule::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_locationHasBeenSet)
+  {
+   payload.WithString("Location", LocationValuesMapper::GetNameForLocationValues(m_location));
+  }
 
   if(m_intervalHasBeenSet)
   {

@@ -84,37 +84,37 @@ namespace Model
 
 
     /**
-     * <p>The total number of buckets, grouped by server-side encryption type. This
-     * object also reports the total number of buckets that don't encrypt objects by
-     * default.</p>
+     * <p>The total number of buckets, grouped by default server-side encryption type.
+     * This object also reports the total number of buckets that don't encrypt new
+     * objects by default.</p>
      */
     inline const BucketCountByEncryptionType& GetBucketCountByEncryptionType() const{ return m_bucketCountByEncryptionType; }
 
     /**
-     * <p>The total number of buckets, grouped by server-side encryption type. This
-     * object also reports the total number of buckets that don't encrypt objects by
-     * default.</p>
+     * <p>The total number of buckets, grouped by default server-side encryption type.
+     * This object also reports the total number of buckets that don't encrypt new
+     * objects by default.</p>
      */
     inline void SetBucketCountByEncryptionType(const BucketCountByEncryptionType& value) { m_bucketCountByEncryptionType = value; }
 
     /**
-     * <p>The total number of buckets, grouped by server-side encryption type. This
-     * object also reports the total number of buckets that don't encrypt objects by
-     * default.</p>
+     * <p>The total number of buckets, grouped by default server-side encryption type.
+     * This object also reports the total number of buckets that don't encrypt new
+     * objects by default.</p>
      */
     inline void SetBucketCountByEncryptionType(BucketCountByEncryptionType&& value) { m_bucketCountByEncryptionType = std::move(value); }
 
     /**
-     * <p>The total number of buckets, grouped by server-side encryption type. This
-     * object also reports the total number of buckets that don't encrypt objects by
-     * default.</p>
+     * <p>The total number of buckets, grouped by default server-side encryption type.
+     * This object also reports the total number of buckets that don't encrypt new
+     * objects by default.</p>
      */
     inline GetBucketStatisticsResult& WithBucketCountByEncryptionType(const BucketCountByEncryptionType& value) { SetBucketCountByEncryptionType(value); return *this;}
 
     /**
-     * <p>The total number of buckets, grouped by server-side encryption type. This
-     * object also reports the total number of buckets that don't encrypt objects by
-     * default.</p>
+     * <p>The total number of buckets, grouped by default server-side encryption type.
+     * This object also reports the total number of buckets that don't encrypt new
+     * objects by default.</p>
      */
     inline GetBucketStatisticsResult& WithBucketCountByEncryptionType(BucketCountByEncryptionType&& value) { SetBucketCountByEncryptionType(std::move(value)); return *this;}
 

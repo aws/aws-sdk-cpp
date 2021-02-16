@@ -36,42 +36,42 @@ namespace Model
 
 
     /**
-     * <p>S nsme for the project.</p>
+     * <p>The name for the project.</p>
      */
     inline const Aws::String& GetProjectName() const{ return m_projectName; }
 
     /**
-     * <p>S nsme for the project.</p>
+     * <p>The name for the project.</p>
      */
     inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
 
     /**
-     * <p>S nsme for the project.</p>
+     * <p>The name for the project.</p>
      */
     inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
 
     /**
-     * <p>S nsme for the project.</p>
+     * <p>The name for the project.</p>
      */
     inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = std::move(value); }
 
     /**
-     * <p>S nsme for the project.</p>
+     * <p>The name for the project.</p>
      */
     inline void SetProjectName(const char* value) { m_projectNameHasBeenSet = true; m_projectName.assign(value); }
 
     /**
-     * <p>S nsme for the project.</p>
+     * <p>The name for the project.</p>
      */
     inline CreateProjectRequest& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
 
     /**
-     * <p>S nsme for the project.</p>
+     * <p>The name for the project.</p>
      */
     inline CreateProjectRequest& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
 
     /**
-     * <p>S nsme for the project.</p>
+     * <p>The name for the project.</p>
      */
     inline CreateProjectRequest& WithProjectName(const char* value) { SetProjectName(value); return *this;}
 

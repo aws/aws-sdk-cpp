@@ -18,7 +18,8 @@ using namespace Aws::Http;
 DescribeProductsRequest::DescribeProductsRequest() : 
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_productArnHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,13 @@ void DescribeProductsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_maxResults;
       uri.AddQueryStringParameter("MaxResults", ss.str());
+      ss.str("");
+    }
+
+    if(m_productArnHasBeenSet)
+    {
+      ss << m_productArn;
+      uri.AddQueryStringParameter("ProductArn", ss.str());
       ss.str("");
     }
 

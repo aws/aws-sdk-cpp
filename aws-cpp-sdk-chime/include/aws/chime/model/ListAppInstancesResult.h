@@ -35,80 +35,80 @@ namespace Model
 
 
     /**
-     * <p>The information for each app instance.</p>
+     * <p>The information for each <code>AppInstance</code>.</p>
      */
     inline const Aws::Vector<AppInstanceSummary>& GetAppInstances() const{ return m_appInstances; }
 
     /**
-     * <p>The information for each app instance.</p>
+     * <p>The information for each <code>AppInstance</code>.</p>
      */
     inline void SetAppInstances(const Aws::Vector<AppInstanceSummary>& value) { m_appInstances = value; }
 
     /**
-     * <p>The information for each app instance.</p>
+     * <p>The information for each <code>AppInstance</code>.</p>
      */
     inline void SetAppInstances(Aws::Vector<AppInstanceSummary>&& value) { m_appInstances = std::move(value); }
 
     /**
-     * <p>The information for each app instance.</p>
+     * <p>The information for each <code>AppInstance</code>.</p>
      */
     inline ListAppInstancesResult& WithAppInstances(const Aws::Vector<AppInstanceSummary>& value) { SetAppInstances(value); return *this;}
 
     /**
-     * <p>The information for each app instance.</p>
+     * <p>The information for each <code>AppInstance</code>.</p>
      */
     inline ListAppInstancesResult& WithAppInstances(Aws::Vector<AppInstanceSummary>&& value) { SetAppInstances(std::move(value)); return *this;}
 
     /**
-     * <p>The information for each app instance.</p>
+     * <p>The information for each <code>AppInstance</code>.</p>
      */
     inline ListAppInstancesResult& AddAppInstances(const AppInstanceSummary& value) { m_appInstances.push_back(value); return *this; }
 
     /**
-     * <p>The information for each app instance.</p>
+     * <p>The information for each <code>AppInstance</code>.</p>
      */
     inline ListAppInstancesResult& AddAppInstances(AppInstanceSummary&& value) { m_appInstances.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The token passed by previous API requests until the maximum number of app
-     * instances is reached.</p>
+     * <p>The token passed by previous API requests until the maximum number of
+     * <code>AppInstance</code>s is reached.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token passed by previous API requests until the maximum number of app
-     * instances is reached.</p>
+     * <p>The token passed by previous API requests until the maximum number of
+     * <code>AppInstance</code>s is reached.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The token passed by previous API requests until the maximum number of app
-     * instances is reached.</p>
+     * <p>The token passed by previous API requests until the maximum number of
+     * <code>AppInstance</code>s is reached.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>The token passed by previous API requests until the maximum number of app
-     * instances is reached.</p>
+     * <p>The token passed by previous API requests until the maximum number of
+     * <code>AppInstance</code>s is reached.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The token passed by previous API requests until the maximum number of app
-     * instances is reached.</p>
+     * <p>The token passed by previous API requests until the maximum number of
+     * <code>AppInstance</code>s is reached.</p>
      */
     inline ListAppInstancesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token passed by previous API requests until the maximum number of app
-     * instances is reached.</p>
+     * <p>The token passed by previous API requests until the maximum number of
+     * <code>AppInstance</code>s is reached.</p>
      */
     inline ListAppInstancesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token passed by previous API requests until the maximum number of app
-     * instances is reached.</p>
+     * <p>The token passed by previous API requests until the maximum number of
+     * <code>AppInstance</code>s is reached.</p>
      */
     inline ListAppInstancesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

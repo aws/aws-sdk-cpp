@@ -24,10 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>For Amazon Chime Voice Connector groups, the Amazon Chime Voice Connectors to
-   * which to route inbound calls. Includes priority configuration settings. Limit: 3
-   * <code>VoiceConnectorItems</code> per Amazon Chime Voice Connector
-   * group.</p><p><h3>See Also:</h3>   <a
+   * <p> For Amazon Chime Voice Connector groups, the Amazon Chime Voice Connectors
+   * to which to route inbound calls. Includes priority configuration settings.
+   * Limit: 3 <code>VoiceConnectorItems</code> per Amazon Chime Voice Connector
+   * group. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/VoiceConnectorItem">AWS
    * API Reference</a></p>
    */
@@ -84,28 +84,28 @@ namespace Model
     /**
      * <p>The priority associated with the Amazon Chime Voice Connector, with 1 being
      * the highest priority. Higher priority Amazon Chime Voice Connectors are
-     * attempted first. </p>
+     * attempted first.</p>
      */
     inline int GetPriority() const{ return m_priority; }
 
     /**
      * <p>The priority associated with the Amazon Chime Voice Connector, with 1 being
      * the highest priority. Higher priority Amazon Chime Voice Connectors are
-     * attempted first. </p>
+     * attempted first.</p>
      */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
 
     /**
      * <p>The priority associated with the Amazon Chime Voice Connector, with 1 being
      * the highest priority. Higher priority Amazon Chime Voice Connectors are
-     * attempted first. </p>
+     * attempted first.</p>
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
      * <p>The priority associated with the Amazon Chime Voice Connector, with 1 being
      * the highest priority. Higher priority Amazon Chime Voice Connectors are
-     * attempted first. </p>
+     * attempted first.</p>
      */
     inline VoiceConnectorItem& WithPriority(int value) { SetPriority(value); return *this;}
 
