@@ -24,6 +24,7 @@
 #include <aws/devops-guru/model/DescribeAccountHealthRequest.h>
 #include <aws/devops-guru/model/DescribeAccountOverviewRequest.h>
 #include <aws/devops-guru/model/DescribeAnomalyRequest.h>
+#include <aws/devops-guru/model/DescribeFeedbackRequest.h>
 #include <aws/devops-guru/model/DescribeInsightRequest.h>
 #include <aws/devops-guru/model/DescribeResourceCollectionHealthRequest.h>
 #include <aws/devops-guru/model/DescribeServiceIntegrationRequest.h>
@@ -224,6 +225,33 @@ void DevOpsGuruClient::DescribeAnomalyAsync(const DescribeAnomalyRequest& reques
 void DevOpsGuruClient::DescribeAnomalyAsyncHelper(const DescribeAnomalyRequest& request, const DescribeAnomalyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeAnomaly(request), context);
+}
+
+DescribeFeedbackOutcome DevOpsGuruClient::DescribeFeedback(const DescribeFeedbackRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/feedback";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeFeedbackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeFeedbackOutcomeCallable DevOpsGuruClient::DescribeFeedbackCallable(const DescribeFeedbackRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFeedbackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFeedback(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DevOpsGuruClient::DescribeFeedbackAsync(const DescribeFeedbackRequest& request, const DescribeFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeFeedbackAsyncHelper( request, handler, context ); } );
+}
+
+void DevOpsGuruClient::DescribeFeedbackAsyncHelper(const DescribeFeedbackRequest& request, const DescribeFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeFeedback(request), context);
 }
 
 DescribeInsightOutcome DevOpsGuruClient::DescribeInsight(const DescribeInsightRequest& request) const

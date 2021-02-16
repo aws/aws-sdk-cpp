@@ -44,7 +44,9 @@ Project::Project() :
     m_badgeHasBeenSet(false),
     m_logsConfigHasBeenSet(false),
     m_fileSystemLocationsHasBeenSet(false),
-    m_buildBatchConfigHasBeenSet(false)
+    m_buildBatchConfigHasBeenSet(false),
+    m_concurrentBuildLimit(0),
+    m_concurrentBuildLimitHasBeenSet(false)
 {
 }
 
@@ -74,7 +76,9 @@ Project::Project(JsonView jsonValue) :
     m_badgeHasBeenSet(false),
     m_logsConfigHasBeenSet(false),
     m_fileSystemLocationsHasBeenSet(false),
-    m_buildBatchConfigHasBeenSet(false)
+    m_buildBatchConfigHasBeenSet(false),
+    m_concurrentBuildLimit(0),
+    m_concurrentBuildLimitHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -264,6 +268,13 @@ Project& Project::operator =(JsonView jsonValue)
     m_buildBatchConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("concurrentBuildLimit"))
+  {
+    m_concurrentBuildLimit = jsonValue.GetInteger("concurrentBuildLimit");
+
+    m_concurrentBuildLimitHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -435,6 +446,12 @@ JsonValue Project::Jsonize() const
   if(m_buildBatchConfigHasBeenSet)
   {
    payload.WithObject("buildBatchConfig", m_buildBatchConfig.Jsonize());
+
+  }
+
+  if(m_concurrentBuildLimitHasBeenSet)
+  {
+   payload.WithInteger("concurrentBuildLimit", m_concurrentBuildLimit);
 
   }
 

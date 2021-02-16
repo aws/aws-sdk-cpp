@@ -35,7 +35,9 @@ UpdateProjectRequest::UpdateProjectRequest() :
     m_badgeEnabledHasBeenSet(false),
     m_logsConfigHasBeenSet(false),
     m_fileSystemLocationsHasBeenSet(false),
-    m_buildBatchConfigHasBeenSet(false)
+    m_buildBatchConfigHasBeenSet(false),
+    m_concurrentBuildLimit(0),
+    m_concurrentBuildLimitHasBeenSet(false)
 {
 }
 
@@ -185,6 +187,12 @@ Aws::String UpdateProjectRequest::SerializePayload() const
   if(m_buildBatchConfigHasBeenSet)
   {
    payload.WithObject("buildBatchConfig", m_buildBatchConfig.Jsonize());
+
+  }
+
+  if(m_concurrentBuildLimitHasBeenSet)
+  {
+   payload.WithInteger("concurrentBuildLimit", m_concurrentBuildLimit);
 
   }
 
