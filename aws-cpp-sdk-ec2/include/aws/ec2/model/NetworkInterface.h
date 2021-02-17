@@ -599,50 +599,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the entity that launched the instance on your behalf (for example,
-     * AWS Management Console or Auto Scaling).</p>
+     * <p>The alias or AWS account ID of the principal or service that created the
+     * network interface.</p>
      */
     inline const Aws::String& GetRequesterId() const{ return m_requesterId; }
 
     /**
-     * <p>The ID of the entity that launched the instance on your behalf (for example,
-     * AWS Management Console or Auto Scaling).</p>
+     * <p>The alias or AWS account ID of the principal or service that created the
+     * network interface.</p>
      */
     inline bool RequesterIdHasBeenSet() const { return m_requesterIdHasBeenSet; }
 
     /**
-     * <p>The ID of the entity that launched the instance on your behalf (for example,
-     * AWS Management Console or Auto Scaling).</p>
+     * <p>The alias or AWS account ID of the principal or service that created the
+     * network interface.</p>
      */
     inline void SetRequesterId(const Aws::String& value) { m_requesterIdHasBeenSet = true; m_requesterId = value; }
 
     /**
-     * <p>The ID of the entity that launched the instance on your behalf (for example,
-     * AWS Management Console or Auto Scaling).</p>
+     * <p>The alias or AWS account ID of the principal or service that created the
+     * network interface.</p>
      */
     inline void SetRequesterId(Aws::String&& value) { m_requesterIdHasBeenSet = true; m_requesterId = std::move(value); }
 
     /**
-     * <p>The ID of the entity that launched the instance on your behalf (for example,
-     * AWS Management Console or Auto Scaling).</p>
+     * <p>The alias or AWS account ID of the principal or service that created the
+     * network interface.</p>
      */
     inline void SetRequesterId(const char* value) { m_requesterIdHasBeenSet = true; m_requesterId.assign(value); }
 
     /**
-     * <p>The ID of the entity that launched the instance on your behalf (for example,
-     * AWS Management Console or Auto Scaling).</p>
+     * <p>The alias or AWS account ID of the principal or service that created the
+     * network interface.</p>
      */
     inline NetworkInterface& WithRequesterId(const Aws::String& value) { SetRequesterId(value); return *this;}
 
     /**
-     * <p>The ID of the entity that launched the instance on your behalf (for example,
-     * AWS Management Console or Auto Scaling).</p>
+     * <p>The alias or AWS account ID of the principal or service that created the
+     * network interface.</p>
      */
     inline NetworkInterface& WithRequesterId(Aws::String&& value) { SetRequesterId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the entity that launched the instance on your behalf (for example,
-     * AWS Management Console or Auto Scaling).</p>
+     * <p>The alias or AWS account ID of the principal or service that created the
+     * network interface.</p>
      */
     inline NetworkInterface& WithRequesterId(const char* value) { SetRequesterId(value); return *this;}
 

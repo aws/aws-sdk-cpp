@@ -34,27 +34,27 @@ namespace Model
 
 
     /**
-     * <p>Information about the instance export task.</p>
+     * <p>Information about the export instance task.</p>
      */
     inline const ExportTask& GetExportTask() const{ return m_exportTask; }
 
     /**
-     * <p>Information about the instance export task.</p>
+     * <p>Information about the export instance task.</p>
      */
     inline void SetExportTask(const ExportTask& value) { m_exportTask = value; }
 
     /**
-     * <p>Information about the instance export task.</p>
+     * <p>Information about the export instance task.</p>
      */
     inline void SetExportTask(ExportTask&& value) { m_exportTask = std::move(value); }
 
     /**
-     * <p>Information about the instance export task.</p>
+     * <p>Information about the export instance task.</p>
      */
     inline CreateInstanceExportTaskResponse& WithExportTask(const ExportTask& value) { SetExportTask(value); return *this;}
 
     /**
-     * <p>Information about the instance export task.</p>
+     * <p>Information about the export instance task.</p>
      */
     inline CreateInstanceExportTaskResponse& WithExportTask(ExportTask&& value) { SetExportTask(std::move(value)); return *this;}
 

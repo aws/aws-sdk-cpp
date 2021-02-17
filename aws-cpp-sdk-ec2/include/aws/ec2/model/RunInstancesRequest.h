@@ -1244,32 +1244,32 @@ namespace Model
 
 
     /**
-     * <p>The IAM instance profile.</p>
+     * <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
      */
     inline const IamInstanceProfileSpecification& GetIamInstanceProfile() const{ return m_iamInstanceProfile; }
 
     /**
-     * <p>The IAM instance profile.</p>
+     * <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
      */
     inline bool IamInstanceProfileHasBeenSet() const { return m_iamInstanceProfileHasBeenSet; }
 
     /**
-     * <p>The IAM instance profile.</p>
+     * <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
      */
     inline void SetIamInstanceProfile(const IamInstanceProfileSpecification& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
 
     /**
-     * <p>The IAM instance profile.</p>
+     * <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
      */
     inline void SetIamInstanceProfile(IamInstanceProfileSpecification&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = std::move(value); }
 
     /**
-     * <p>The IAM instance profile.</p>
+     * <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
      */
     inline RunInstancesRequest& WithIamInstanceProfile(const IamInstanceProfileSpecification& value) { SetIamInstanceProfile(value); return *this;}
 
     /**
-     * <p>The IAM instance profile.</p>
+     * <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
      */
     inline RunInstancesRequest& WithIamInstanceProfile(IamInstanceProfileSpecification&& value) { SetIamInstanceProfile(std::move(value)); return *this;}
 

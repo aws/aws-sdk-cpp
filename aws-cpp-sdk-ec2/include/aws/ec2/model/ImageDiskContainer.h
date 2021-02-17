@@ -125,49 +125,57 @@ namespace Model
 
     /**
      * <p>The format of the disk image being imported.</p> <p>Valid values:
-     * <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> |<code>VMDK</code> </p>
+     * <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> |
+     * <code>RAW</code> </p>
      */
     inline const Aws::String& GetFormat() const{ return m_format; }
 
     /**
      * <p>The format of the disk image being imported.</p> <p>Valid values:
-     * <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> |<code>VMDK</code> </p>
+     * <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> |
+     * <code>RAW</code> </p>
      */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
      * <p>The format of the disk image being imported.</p> <p>Valid values:
-     * <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> |<code>VMDK</code> </p>
+     * <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> |
+     * <code>RAW</code> </p>
      */
     inline void SetFormat(const Aws::String& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
      * <p>The format of the disk image being imported.</p> <p>Valid values:
-     * <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> |<code>VMDK</code> </p>
+     * <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> |
+     * <code>RAW</code> </p>
      */
     inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
     /**
      * <p>The format of the disk image being imported.</p> <p>Valid values:
-     * <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> |<code>VMDK</code> </p>
+     * <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> |
+     * <code>RAW</code> </p>
      */
     inline void SetFormat(const char* value) { m_formatHasBeenSet = true; m_format.assign(value); }
 
     /**
      * <p>The format of the disk image being imported.</p> <p>Valid values:
-     * <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> |<code>VMDK</code> </p>
+     * <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> |
+     * <code>RAW</code> </p>
      */
     inline ImageDiskContainer& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
 
     /**
      * <p>The format of the disk image being imported.</p> <p>Valid values:
-     * <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> |<code>VMDK</code> </p>
+     * <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> |
+     * <code>RAW</code> </p>
      */
     inline ImageDiskContainer& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
 
     /**
      * <p>The format of the disk image being imported.</p> <p>Valid values:
-     * <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> |<code>VMDK</code> </p>
+     * <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> |
+     * <code>RAW</code> </p>
      */
     inline ImageDiskContainer& WithFormat(const char* value) { SetFormat(value); return *this;}
 

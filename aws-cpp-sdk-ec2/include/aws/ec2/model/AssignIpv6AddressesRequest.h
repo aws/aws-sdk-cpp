@@ -38,28 +38,36 @@ namespace Model
   public:
 
     /**
-     * <p>The number of IPv6 addresses to assign to the network interface. Amazon EC2
+     * <p>The number of additional IPv6 addresses to assign to the network interface.
+     * The specified number of IPv6 addresses are assigned in addition to the existing
+     * IPv6 addresses that are already assigned to the network interface. Amazon EC2
      * automatically selects the IPv6 addresses from the subnet range. You can't use
      * this option if specifying specific IPv6 addresses.</p>
      */
     inline int GetIpv6AddressCount() const{ return m_ipv6AddressCount; }
 
     /**
-     * <p>The number of IPv6 addresses to assign to the network interface. Amazon EC2
+     * <p>The number of additional IPv6 addresses to assign to the network interface.
+     * The specified number of IPv6 addresses are assigned in addition to the existing
+     * IPv6 addresses that are already assigned to the network interface. Amazon EC2
      * automatically selects the IPv6 addresses from the subnet range. You can't use
      * this option if specifying specific IPv6 addresses.</p>
      */
     inline bool Ipv6AddressCountHasBeenSet() const { return m_ipv6AddressCountHasBeenSet; }
 
     /**
-     * <p>The number of IPv6 addresses to assign to the network interface. Amazon EC2
+     * <p>The number of additional IPv6 addresses to assign to the network interface.
+     * The specified number of IPv6 addresses are assigned in addition to the existing
+     * IPv6 addresses that are already assigned to the network interface. Amazon EC2
      * automatically selects the IPv6 addresses from the subnet range. You can't use
      * this option if specifying specific IPv6 addresses.</p>
      */
     inline void SetIpv6AddressCount(int value) { m_ipv6AddressCountHasBeenSet = true; m_ipv6AddressCount = value; }
 
     /**
-     * <p>The number of IPv6 addresses to assign to the network interface. Amazon EC2
+     * <p>The number of additional IPv6 addresses to assign to the network interface.
+     * The specified number of IPv6 addresses are assigned in addition to the existing
+     * IPv6 addresses that are already assigned to the network interface. Amazon EC2
      * automatically selects the IPv6 addresses from the subnet range. You can't use
      * this option if specifying specific IPv6 addresses.</p>
      */

@@ -257,58 +257,74 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use for encypting the model. If this parameter is not specified,
-     * the model is encrypted by a key that AWS owns and manages.</p>
+     * <p>The identifier for your AWS Key Management Service (AWS KMS) customer master
+     * key (CMK). The key is used to encrypt training and test images copied into the
+     * service for model training. Your source images are unaffected. If this parameter
+     * is not specified, the copied images are encrypted by a key that AWS owns and
+     * manages.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use for encypting the model. If this parameter is not specified,
-     * the model is encrypted by a key that AWS owns and manages.</p>
+     * <p>The identifier for your AWS Key Management Service (AWS KMS) customer master
+     * key (CMK). The key is used to encrypt training and test images copied into the
+     * service for model training. Your source images are unaffected. If this parameter
+     * is not specified, the copied images are encrypted by a key that AWS owns and
+     * manages.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use for encypting the model. If this parameter is not specified,
-     * the model is encrypted by a key that AWS owns and manages.</p>
+     * <p>The identifier for your AWS Key Management Service (AWS KMS) customer master
+     * key (CMK). The key is used to encrypt training and test images copied into the
+     * service for model training. Your source images are unaffected. If this parameter
+     * is not specified, the copied images are encrypted by a key that AWS owns and
+     * manages.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use for encypting the model. If this parameter is not specified,
-     * the model is encrypted by a key that AWS owns and manages.</p>
+     * <p>The identifier for your AWS Key Management Service (AWS KMS) customer master
+     * key (CMK). The key is used to encrypt training and test images copied into the
+     * service for model training. Your source images are unaffected. If this parameter
+     * is not specified, the copied images are encrypted by a key that AWS owns and
+     * manages.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use for encypting the model. If this parameter is not specified,
-     * the model is encrypted by a key that AWS owns and manages.</p>
+     * <p>The identifier for your AWS Key Management Service (AWS KMS) customer master
+     * key (CMK). The key is used to encrypt training and test images copied into the
+     * service for model training. Your source images are unaffected. If this parameter
+     * is not specified, the copied images are encrypted by a key that AWS owns and
+     * manages.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use for encypting the model. If this parameter is not specified,
-     * the model is encrypted by a key that AWS owns and manages.</p>
+     * <p>The identifier for your AWS Key Management Service (AWS KMS) customer master
+     * key (CMK). The key is used to encrypt training and test images copied into the
+     * service for model training. Your source images are unaffected. If this parameter
+     * is not specified, the copied images are encrypted by a key that AWS owns and
+     * manages.</p>
      */
     inline CreateModelRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use for encypting the model. If this parameter is not specified,
-     * the model is encrypted by a key that AWS owns and manages.</p>
+     * <p>The identifier for your AWS Key Management Service (AWS KMS) customer master
+     * key (CMK). The key is used to encrypt training and test images copied into the
+     * service for model training. Your source images are unaffected. If this parameter
+     * is not specified, the copied images are encrypted by a key that AWS owns and
+     * manages.</p>
      */
     inline CreateModelRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use for encypting the model. If this parameter is not specified,
-     * the model is encrypted by a key that AWS owns and manages.</p>
+     * <p>The identifier for your AWS Key Management Service (AWS KMS) customer master
+     * key (CMK). The key is used to encrypt training and test images copied into the
+     * service for model training. Your source images are unaffected. If this parameter
+     * is not specified, the copied images are encrypted by a key that AWS owns and
+     * manages.</p>
      */
     inline CreateModelRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

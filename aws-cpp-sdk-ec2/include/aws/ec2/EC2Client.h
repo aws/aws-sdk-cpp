@@ -2210,20 +2210,25 @@ namespace Model
   /**
    * <fullname>Amazon Elastic Compute Cloud</fullname> <p>Amazon Elastic Compute
    * Cloud (Amazon EC2) provides secure and resizable computing capacity in the AWS
-   * cloud. Using Amazon EC2 eliminates the need to invest in hardware up front, so
-   * you can develop and deploy applications faster.</p> <p>To learn more, see the
-   * following resources:</p> <ul> <li> <p>Amazon EC2: <a
-   * href="http://aws.amazon.com/ec2">AmazonEC2 product page</a>, <a
-   * href="http://aws.amazon.com/documentation/ec2">Amazon EC2 documentation</a> </p>
-   * </li> <li> <p>Amazon EBS: <a href="http://aws.amazon.com/ebs">Amazon EBS product
-   * page</a>, <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon
-   * EBS documentation</a> </p> </li> <li> <p>Amazon VPC: <a
-   * href="http://aws.amazon.com/vpc">Amazon VPC product page</a>, <a
-   * href="http://aws.amazon.com/documentation/vpc">Amazon VPC documentation</a> </p>
-   * </li> <li> <p>AWS VPN: <a href="http://aws.amazon.com/vpn">AWS VPN product
-   * page</a>, <a href="http://aws.amazon.com/documentation/vpn">AWS VPN
-   * documentation</a> </p> </li> </ul>
+   * Cloud. Using Amazon EC2 eliminates the need to invest in hardware up front, so
+   * you can develop and deploy applications faster. Amazon Virtual Private Cloud
+   * (Amazon VPC) enables you to provision a logically isolated section of the AWS
+   * Cloud where you can launch AWS resources in a virtual network that you've
+   * defined. Amazon Elastic Block Store (Amazon EBS) provides block level storage
+   * volumes for use with EC2 instances. EBS volumes are highly available and
+   * reliable storage volumes that can be attached to any running instance and used
+   * like a hard drive.</p> <p>To learn more, see the following resources:</p> <ul>
+   * <li> <p>Amazon EC2: <a href="http://aws.amazon.com/ec2">AmazonEC2 product
+   * page</a>, <a href="http://aws.amazon.com/documentation/ec2">Amazon EC2
+   * documentation</a> </p> </li> <li> <p>Amazon EBS: <a
+   * href="http://aws.amazon.com/ebs">Amazon EBS product page</a>, <a
+   * href="http://aws.amazon.com/documentation/ebs">Amazon EBS documentation</a> </p>
+   * </li> <li> <p>Amazon VPC: <a href="http://aws.amazon.com/vpc">Amazon VPC product
+   * page</a>, <a href="http://aws.amazon.com/documentation/vpc">Amazon VPC
+   * documentation</a> </p> </li> <li> <p>AWS VPN: <a
+   * href="http://aws.amazon.com/vpn">AWS VPN product page</a>, <a
+   * href="http://aws.amazon.com/documentation/vpn">AWS VPN documentation</a> </p>
+   * </li> </ul>
    */
   class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient
   {
@@ -18664,34 +18669,39 @@ namespace Model
          * your own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          *  <p>For Amazon EBS-backed instances, <a>CreateImage</a> creates and
          * registers the AMI in a single request, so you don't have to register the AMI
-         * yourself.</p>  <p>You can also use <code>RegisterImage</code> to create
-         * an Amazon EBS-backed Linux AMI from a snapshot of a root device volume. You
-         * specify the snapshot using the block device mapping. For more information, see
-         * <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-launch-snapshot.html">Launching
-         * a Linux instance from a backup</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p>If any snapshots have AWS Marketplace product codes, they are
-         * copied to the new AMI.</p> <p>Windows and some Linux distributions, such as Red
-         * Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise Server (SLES), use the EC2
-         * billing product code associated with an AMI to verify the subscription status
-         * for package updates. To create a new AMI for operating systems that require a
-         * billing product code, instead of registering the AMI, do the following to
-         * preserve the billing product code association:</p> <ol> <li> <p>Launch an
-         * instance from an existing AMI with that billing product code.</p> </li> <li>
-         * <p>Customize the instance.</p> </li> <li> <p>Create an AMI from the instance
-         * using <a>CreateImage</a>.</p> </li> </ol> <p>If you purchase a Reserved Instance
-         * to apply to an On-Demand Instance that was launched from an AMI with a billing
-         * product code, make sure that the Reserved Instance has the matching billing
-         * product code. If you purchase a Reserved Instance without the matching billing
-         * product code, the Reserved Instance will not be applied to the On-Demand
-         * Instance. For information about how to obtain the platform details and billing
-         * information of an AMI, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
-         * billing information</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p>If needed, you can deregister an AMI at any time. Any
+         * yourself.</p>  <p>If needed, you can deregister an AMI at any time. Any
          * modifications you make to an AMI backed by an instance store volume invalidates
          * its registration. If you make changes to an image, deregister the previous image
-         * and register the new image.</p><p><h3>See Also:</h3>   <a
+         * and register the new image.</p> <p> <b>Register a snapshot of a root device
+         * volume</b> </p> <p>You can use <code>RegisterImage</code> to create an Amazon
+         * EBS-backed Linux AMI from a snapshot of a root device volume. You specify the
+         * snapshot using a block device mapping. You can't set the encryption state of the
+         * volume using the block device mapping. If the snapshot is encrypted, or
+         * encryption by default is enabled, the root volume of an instance launched from
+         * the AMI is encrypted.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html#creating-launching-ami-from-snapshot">Create
+         * a Linux AMI from a snapshot</a> and <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Use
+         * encryption with EBS-backed AMIs</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p> <b>AWS Marketplace product codes</b> </p> <p>If any snapshots
+         * have AWS Marketplace product codes, they are copied to the new AMI.</p>
+         * <p>Windows and some Linux distributions, such as Red Hat Enterprise Linux (RHEL)
+         * and SUSE Linux Enterprise Server (SLES), use the EC2 billing product code
+         * associated with an AMI to verify the subscription status for package updates. To
+         * create a new AMI for operating systems that require a billing product code,
+         * instead of registering the AMI, do the following to preserve the billing product
+         * code association:</p> <ol> <li> <p>Launch an instance from an existing AMI with
+         * that billing product code.</p> </li> <li> <p>Customize the instance.</p> </li>
+         * <li> <p>Create an AMI from the instance using <a>CreateImage</a>.</p> </li>
+         * </ol> <p>If you purchase a Reserved Instance to apply to an On-Demand Instance
+         * that was launched from an AMI with a billing product code, make sure that the
+         * Reserved Instance has the matching billing product code. If you purchase a
+         * Reserved Instance without the matching billing product code, the Reserved
+         * Instance will not be applied to the On-Demand Instance. For information about
+         * how to obtain the platform details and billing information of an AMI, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
+         * billing information</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterImage">AWS
          * API Reference</a></p>
          */
@@ -18705,34 +18715,39 @@ namespace Model
          * your own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          *  <p>For Amazon EBS-backed instances, <a>CreateImage</a> creates and
          * registers the AMI in a single request, so you don't have to register the AMI
-         * yourself.</p>  <p>You can also use <code>RegisterImage</code> to create
-         * an Amazon EBS-backed Linux AMI from a snapshot of a root device volume. You
-         * specify the snapshot using the block device mapping. For more information, see
-         * <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-launch-snapshot.html">Launching
-         * a Linux instance from a backup</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p>If any snapshots have AWS Marketplace product codes, they are
-         * copied to the new AMI.</p> <p>Windows and some Linux distributions, such as Red
-         * Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise Server (SLES), use the EC2
-         * billing product code associated with an AMI to verify the subscription status
-         * for package updates. To create a new AMI for operating systems that require a
-         * billing product code, instead of registering the AMI, do the following to
-         * preserve the billing product code association:</p> <ol> <li> <p>Launch an
-         * instance from an existing AMI with that billing product code.</p> </li> <li>
-         * <p>Customize the instance.</p> </li> <li> <p>Create an AMI from the instance
-         * using <a>CreateImage</a>.</p> </li> </ol> <p>If you purchase a Reserved Instance
-         * to apply to an On-Demand Instance that was launched from an AMI with a billing
-         * product code, make sure that the Reserved Instance has the matching billing
-         * product code. If you purchase a Reserved Instance without the matching billing
-         * product code, the Reserved Instance will not be applied to the On-Demand
-         * Instance. For information about how to obtain the platform details and billing
-         * information of an AMI, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
-         * billing information</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p>If needed, you can deregister an AMI at any time. Any
+         * yourself.</p>  <p>If needed, you can deregister an AMI at any time. Any
          * modifications you make to an AMI backed by an instance store volume invalidates
          * its registration. If you make changes to an image, deregister the previous image
-         * and register the new image.</p><p><h3>See Also:</h3>   <a
+         * and register the new image.</p> <p> <b>Register a snapshot of a root device
+         * volume</b> </p> <p>You can use <code>RegisterImage</code> to create an Amazon
+         * EBS-backed Linux AMI from a snapshot of a root device volume. You specify the
+         * snapshot using a block device mapping. You can't set the encryption state of the
+         * volume using the block device mapping. If the snapshot is encrypted, or
+         * encryption by default is enabled, the root volume of an instance launched from
+         * the AMI is encrypted.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html#creating-launching-ami-from-snapshot">Create
+         * a Linux AMI from a snapshot</a> and <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Use
+         * encryption with EBS-backed AMIs</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p> <b>AWS Marketplace product codes</b> </p> <p>If any snapshots
+         * have AWS Marketplace product codes, they are copied to the new AMI.</p>
+         * <p>Windows and some Linux distributions, such as Red Hat Enterprise Linux (RHEL)
+         * and SUSE Linux Enterprise Server (SLES), use the EC2 billing product code
+         * associated with an AMI to verify the subscription status for package updates. To
+         * create a new AMI for operating systems that require a billing product code,
+         * instead of registering the AMI, do the following to preserve the billing product
+         * code association:</p> <ol> <li> <p>Launch an instance from an existing AMI with
+         * that billing product code.</p> </li> <li> <p>Customize the instance.</p> </li>
+         * <li> <p>Create an AMI from the instance using <a>CreateImage</a>.</p> </li>
+         * </ol> <p>If you purchase a Reserved Instance to apply to an On-Demand Instance
+         * that was launched from an AMI with a billing product code, make sure that the
+         * Reserved Instance has the matching billing product code. If you purchase a
+         * Reserved Instance without the matching billing product code, the Reserved
+         * Instance will not be applied to the On-Demand Instance. For information about
+         * how to obtain the platform details and billing information of an AMI, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
+         * billing information</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterImage">AWS
          * API Reference</a></p>
          *
@@ -18748,34 +18763,39 @@ namespace Model
          * your own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          *  <p>For Amazon EBS-backed instances, <a>CreateImage</a> creates and
          * registers the AMI in a single request, so you don't have to register the AMI
-         * yourself.</p>  <p>You can also use <code>RegisterImage</code> to create
-         * an Amazon EBS-backed Linux AMI from a snapshot of a root device volume. You
-         * specify the snapshot using the block device mapping. For more information, see
-         * <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-launch-snapshot.html">Launching
-         * a Linux instance from a backup</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p>If any snapshots have AWS Marketplace product codes, they are
-         * copied to the new AMI.</p> <p>Windows and some Linux distributions, such as Red
-         * Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise Server (SLES), use the EC2
-         * billing product code associated with an AMI to verify the subscription status
-         * for package updates. To create a new AMI for operating systems that require a
-         * billing product code, instead of registering the AMI, do the following to
-         * preserve the billing product code association:</p> <ol> <li> <p>Launch an
-         * instance from an existing AMI with that billing product code.</p> </li> <li>
-         * <p>Customize the instance.</p> </li> <li> <p>Create an AMI from the instance
-         * using <a>CreateImage</a>.</p> </li> </ol> <p>If you purchase a Reserved Instance
-         * to apply to an On-Demand Instance that was launched from an AMI with a billing
-         * product code, make sure that the Reserved Instance has the matching billing
-         * product code. If you purchase a Reserved Instance without the matching billing
-         * product code, the Reserved Instance will not be applied to the On-Demand
-         * Instance. For information about how to obtain the platform details and billing
-         * information of an AMI, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
-         * billing information</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p>If needed, you can deregister an AMI at any time. Any
+         * yourself.</p>  <p>If needed, you can deregister an AMI at any time. Any
          * modifications you make to an AMI backed by an instance store volume invalidates
          * its registration. If you make changes to an image, deregister the previous image
-         * and register the new image.</p><p><h3>See Also:</h3>   <a
+         * and register the new image.</p> <p> <b>Register a snapshot of a root device
+         * volume</b> </p> <p>You can use <code>RegisterImage</code> to create an Amazon
+         * EBS-backed Linux AMI from a snapshot of a root device volume. You specify the
+         * snapshot using a block device mapping. You can't set the encryption state of the
+         * volume using the block device mapping. If the snapshot is encrypted, or
+         * encryption by default is enabled, the root volume of an instance launched from
+         * the AMI is encrypted.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html#creating-launching-ami-from-snapshot">Create
+         * a Linux AMI from a snapshot</a> and <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Use
+         * encryption with EBS-backed AMIs</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p> <b>AWS Marketplace product codes</b> </p> <p>If any snapshots
+         * have AWS Marketplace product codes, they are copied to the new AMI.</p>
+         * <p>Windows and some Linux distributions, such as Red Hat Enterprise Linux (RHEL)
+         * and SUSE Linux Enterprise Server (SLES), use the EC2 billing product code
+         * associated with an AMI to verify the subscription status for package updates. To
+         * create a new AMI for operating systems that require a billing product code,
+         * instead of registering the AMI, do the following to preserve the billing product
+         * code association:</p> <ol> <li> <p>Launch an instance from an existing AMI with
+         * that billing product code.</p> </li> <li> <p>Customize the instance.</p> </li>
+         * <li> <p>Create an AMI from the instance using <a>CreateImage</a>.</p> </li>
+         * </ol> <p>If you purchase a Reserved Instance to apply to an On-Demand Instance
+         * that was launched from an AMI with a billing product code, make sure that the
+         * Reserved Instance has the matching billing product code. If you purchase a
+         * Reserved Instance without the matching billing product code, the Reserved
+         * Instance will not be applied to the On-Demand Instance. For information about
+         * how to obtain the platform details and billing information of an AMI, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
+         * billing information</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterImage">AWS
          * API Reference</a></p>
          *

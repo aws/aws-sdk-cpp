@@ -348,10 +348,8 @@ namespace Model
          * model, Amazon Lookout for Vision internally splits the remaining dataset into a
          * training and test dataset.</p> </li> <li> <p>If you delete the training dataset,
          * you must create a training dataset before you can create a model.</p> </li>
-         * </ul> <p>It might take a while to delete the dataset. To check the current
-         * status, check the <code>Status</code> field in the response from a call to
-         * <a>DescribeDataset</a>. </p> <p>This operation requires permissions to perform
-         * the <code>lookoutvision:DeleteDataset</code> operation.</p><p><h3>See Also:</h3>
+         * </ul> <p>This operation requires permissions to perform the
+         * <code>lookoutvision:DeleteDataset</code> operation.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/DeleteDataset">AWS
          * API Reference</a></p>
@@ -367,10 +365,8 @@ namespace Model
          * model, Amazon Lookout for Vision internally splits the remaining dataset into a
          * training and test dataset.</p> </li> <li> <p>If you delete the training dataset,
          * you must create a training dataset before you can create a model.</p> </li>
-         * </ul> <p>It might take a while to delete the dataset. To check the current
-         * status, check the <code>Status</code> field in the response from a call to
-         * <a>DescribeDataset</a>. </p> <p>This operation requires permissions to perform
-         * the <code>lookoutvision:DeleteDataset</code> operation.</p><p><h3>See Also:</h3>
+         * </ul> <p>This operation requires permissions to perform the
+         * <code>lookoutvision:DeleteDataset</code> operation.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/DeleteDataset">AWS
          * API Reference</a></p>
@@ -388,10 +384,8 @@ namespace Model
          * model, Amazon Lookout for Vision internally splits the remaining dataset into a
          * training and test dataset.</p> </li> <li> <p>If you delete the training dataset,
          * you must create a training dataset before you can create a model.</p> </li>
-         * </ul> <p>It might take a while to delete the dataset. To check the current
-         * status, check the <code>Status</code> field in the response from a call to
-         * <a>DescribeDataset</a>. </p> <p>This operation requires permissions to perform
-         * the <code>lookoutvision:DeleteDataset</code> operation.</p><p><h3>See Also:</h3>
+         * </ul> <p>This operation requires permissions to perform the
+         * <code>lookoutvision:DeleteDataset</code> operation.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/DeleteDataset">AWS
          * API Reference</a></p>
@@ -402,7 +396,10 @@ namespace Model
 
         /**
          * <p>Deletes an Amazon Lookout for Vision model. You can't delete a running model.
-         * To stop a running model, use the <a>StopModel</a> operation.</p> <p>This
+         * To stop a running model, use the <a>StopModel</a> operation.</p> <p>It might
+         * take a few seconds to delete a model. To determine if a model has been deleted,
+         * call <a>ListProjects</a> and check if the version of the model
+         * (<code>ModelVersion</code>) is in the <code>Models</code> array. </p> <p>This
          * operation requires permissions to perform the
          * <code>lookoutvision:DeleteModel</code> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/DeleteModel">AWS
@@ -412,7 +409,10 @@ namespace Model
 
         /**
          * <p>Deletes an Amazon Lookout for Vision model. You can't delete a running model.
-         * To stop a running model, use the <a>StopModel</a> operation.</p> <p>This
+         * To stop a running model, use the <a>StopModel</a> operation.</p> <p>It might
+         * take a few seconds to delete a model. To determine if a model has been deleted,
+         * call <a>ListProjects</a> and check if the version of the model
+         * (<code>ModelVersion</code>) is in the <code>Models</code> array. </p> <p>This
          * operation requires permissions to perform the
          * <code>lookoutvision:DeleteModel</code> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/DeleteModel">AWS
@@ -424,7 +424,10 @@ namespace Model
 
         /**
          * <p>Deletes an Amazon Lookout for Vision model. You can't delete a running model.
-         * To stop a running model, use the <a>StopModel</a> operation.</p> <p>This
+         * To stop a running model, use the <a>StopModel</a> operation.</p> <p>It might
+         * take a few seconds to delete a model. To determine if a model has been deleted,
+         * call <a>ListProjects</a> and check if the version of the model
+         * (<code>ModelVersion</code>) is in the <code>Models</code> array. </p> <p>This
          * operation requires permissions to perform the
          * <code>lookoutvision:DeleteModel</code> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/DeleteModel">AWS
@@ -764,12 +767,13 @@ namespace Model
         /**
          * <p>Starts the running of the version of an Amazon Lookout for Vision model.
          * Starting a model takes a while to complete. To check the current state of the
-         * model, use <a>DescribeModel</a>.</p> <p>Once the model is running, you can
-         * detect custom labels in new images by calling <a>DetectAnomalies</a>.</p> 
-         * <p>You are charged for the amount of time that the model is running. To stop a
-         * running model, call <a>StopModel</a>.</p>  <p>This operation requires
-         * permissions to perform the <code>lookoutvision:StartModel</code>
-         * operation.</p><p><h3>See Also:</h3>   <a
+         * model, use <a>DescribeModel</a>.</p> <p>A model is ready to use when its status
+         * is <code>HOSTED</code>.</p> <p>Once the model is running, you can detect custom
+         * labels in new images by calling <a>DetectAnomalies</a>.</p>  <p>You are
+         * charged for the amount of time that the model is running. To stop a running
+         * model, call <a>StopModel</a>.</p>  <p>This operation requires permissions
+         * to perform the <code>lookoutvision:StartModel</code> operation.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/StartModel">AWS
          * API Reference</a></p>
          */
@@ -778,12 +782,13 @@ namespace Model
         /**
          * <p>Starts the running of the version of an Amazon Lookout for Vision model.
          * Starting a model takes a while to complete. To check the current state of the
-         * model, use <a>DescribeModel</a>.</p> <p>Once the model is running, you can
-         * detect custom labels in new images by calling <a>DetectAnomalies</a>.</p> 
-         * <p>You are charged for the amount of time that the model is running. To stop a
-         * running model, call <a>StopModel</a>.</p>  <p>This operation requires
-         * permissions to perform the <code>lookoutvision:StartModel</code>
-         * operation.</p><p><h3>See Also:</h3>   <a
+         * model, use <a>DescribeModel</a>.</p> <p>A model is ready to use when its status
+         * is <code>HOSTED</code>.</p> <p>Once the model is running, you can detect custom
+         * labels in new images by calling <a>DetectAnomalies</a>.</p>  <p>You are
+         * charged for the amount of time that the model is running. To stop a running
+         * model, call <a>StopModel</a>.</p>  <p>This operation requires permissions
+         * to perform the <code>lookoutvision:StartModel</code> operation.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/StartModel">AWS
          * API Reference</a></p>
          *
@@ -794,12 +799,13 @@ namespace Model
         /**
          * <p>Starts the running of the version of an Amazon Lookout for Vision model.
          * Starting a model takes a while to complete. To check the current state of the
-         * model, use <a>DescribeModel</a>.</p> <p>Once the model is running, you can
-         * detect custom labels in new images by calling <a>DetectAnomalies</a>.</p> 
-         * <p>You are charged for the amount of time that the model is running. To stop a
-         * running model, call <a>StopModel</a>.</p>  <p>This operation requires
-         * permissions to perform the <code>lookoutvision:StartModel</code>
-         * operation.</p><p><h3>See Also:</h3>   <a
+         * model, use <a>DescribeModel</a>.</p> <p>A model is ready to use when its status
+         * is <code>HOSTED</code>.</p> <p>Once the model is running, you can detect custom
+         * labels in new images by calling <a>DetectAnomalies</a>.</p>  <p>You are
+         * charged for the amount of time that the model is running. To stop a running
+         * model, call <a>StopModel</a>.</p>  <p>This operation requires permissions
+         * to perform the <code>lookoutvision:StartModel</code> operation.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/StartModel">AWS
          * API Reference</a></p>
          *
@@ -808,20 +814,22 @@ namespace Model
         virtual void StartModelAsync(const Model::StartModelRequest& request, const StartModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stops a running model. The operation might take a while to complete. To check
-         * the current status, call <a>DescribeModel</a>. </p> <p>This operation requires
-         * permissions to perform the <code>lookoutvision:StopModel</code>
-         * operation.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops the hosting of a running model. The operation might take a while to
+         * complete. To check the current status, call <a>DescribeModel</a>. </p> <p>After
+         * the model hosting stops, the <code>Status</code> of the model is
+         * <code>TRAINED</code>.</p> <p>This operation requires permissions to perform the
+         * <code>lookoutvision:StopModel</code> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/StopModel">AWS
          * API Reference</a></p>
          */
         virtual Model::StopModelOutcome StopModel(const Model::StopModelRequest& request) const;
 
         /**
-         * <p>Stops a running model. The operation might take a while to complete. To check
-         * the current status, call <a>DescribeModel</a>. </p> <p>This operation requires
-         * permissions to perform the <code>lookoutvision:StopModel</code>
-         * operation.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops the hosting of a running model. The operation might take a while to
+         * complete. To check the current status, call <a>DescribeModel</a>. </p> <p>After
+         * the model hosting stops, the <code>Status</code> of the model is
+         * <code>TRAINED</code>.</p> <p>This operation requires permissions to perform the
+         * <code>lookoutvision:StopModel</code> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/StopModel">AWS
          * API Reference</a></p>
          *
@@ -830,10 +838,11 @@ namespace Model
         virtual Model::StopModelOutcomeCallable StopModelCallable(const Model::StopModelRequest& request) const;
 
         /**
-         * <p>Stops a running model. The operation might take a while to complete. To check
-         * the current status, call <a>DescribeModel</a>. </p> <p>This operation requires
-         * permissions to perform the <code>lookoutvision:StopModel</code>
-         * operation.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops the hosting of a running model. The operation might take a while to
+         * complete. To check the current status, call <a>DescribeModel</a>. </p> <p>After
+         * the model hosting stops, the <code>Status</code> of the model is
+         * <code>TRAINED</code>.</p> <p>This operation requires permissions to perform the
+         * <code>lookoutvision:StopModel</code> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/StopModel">AWS
          * API Reference</a></p>
          *
