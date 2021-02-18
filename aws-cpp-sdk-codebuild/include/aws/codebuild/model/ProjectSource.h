@@ -53,8 +53,8 @@ namespace Model
      * repository.</p> </li> <li> <p> <code>GITHUB_ENTERPRISE</code>: The source code
      * is in a GitHub Enterprise Server repository.</p> </li> <li> <p>
      * <code>NO_SOURCE</code>: The project does not have input source code.</p> </li>
-     * <li> <p> <code>S3</code>: The source code is in an Amazon Simple Storage Service
-     * (Amazon S3) input bucket.</p> </li> </ul>
+     * <li> <p> <code>S3</code>: The source code is in an Amazon S3 input bucket.</p>
+     * </li> </ul>
      */
     inline const SourceType& GetType() const{ return m_type; }
 
@@ -69,8 +69,8 @@ namespace Model
      * repository.</p> </li> <li> <p> <code>GITHUB_ENTERPRISE</code>: The source code
      * is in a GitHub Enterprise Server repository.</p> </li> <li> <p>
      * <code>NO_SOURCE</code>: The project does not have input source code.</p> </li>
-     * <li> <p> <code>S3</code>: The source code is in an Amazon Simple Storage Service
-     * (Amazon S3) input bucket.</p> </li> </ul>
+     * <li> <p> <code>S3</code>: The source code is in an Amazon S3 input bucket.</p>
+     * </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -85,8 +85,8 @@ namespace Model
      * repository.</p> </li> <li> <p> <code>GITHUB_ENTERPRISE</code>: The source code
      * is in a GitHub Enterprise Server repository.</p> </li> <li> <p>
      * <code>NO_SOURCE</code>: The project does not have input source code.</p> </li>
-     * <li> <p> <code>S3</code>: The source code is in an Amazon Simple Storage Service
-     * (Amazon S3) input bucket.</p> </li> </ul>
+     * <li> <p> <code>S3</code>: The source code is in an Amazon S3 input bucket.</p>
+     * </li> </ul>
      */
     inline void SetType(const SourceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -101,8 +101,8 @@ namespace Model
      * repository.</p> </li> <li> <p> <code>GITHUB_ENTERPRISE</code>: The source code
      * is in a GitHub Enterprise Server repository.</p> </li> <li> <p>
      * <code>NO_SOURCE</code>: The project does not have input source code.</p> </li>
-     * <li> <p> <code>S3</code>: The source code is in an Amazon Simple Storage Service
-     * (Amazon S3) input bucket.</p> </li> </ul>
+     * <li> <p> <code>S3</code>: The source code is in an Amazon S3 input bucket.</p>
+     * </li> </ul>
      */
     inline void SetType(SourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -117,8 +117,8 @@ namespace Model
      * repository.</p> </li> <li> <p> <code>GITHUB_ENTERPRISE</code>: The source code
      * is in a GitHub Enterprise Server repository.</p> </li> <li> <p>
      * <code>NO_SOURCE</code>: The project does not have input source code.</p> </li>
-     * <li> <p> <code>S3</code>: The source code is in an Amazon Simple Storage Service
-     * (Amazon S3) input bucket.</p> </li> </ul>
+     * <li> <p> <code>S3</code>: The source code is in an Amazon S3 input bucket.</p>
+     * </li> </ul>
      */
     inline ProjectSource& WithType(const SourceType& value) { SetType(value); return *this;}
 
@@ -133,8 +133,8 @@ namespace Model
      * repository.</p> </li> <li> <p> <code>GITHUB_ENTERPRISE</code>: The source code
      * is in a GitHub Enterprise Server repository.</p> </li> <li> <p>
      * <code>NO_SOURCE</code>: The project does not have input source code.</p> </li>
-     * <li> <p> <code>S3</code>: The source code is in an Amazon Simple Storage Service
-     * (Amazon S3) input bucket.</p> </li> </ul>
+     * <li> <p> <code>S3</code>: The source code is in an Amazon S3 input bucket.</p>
+     * </li> </ul>
      */
     inline ProjectSource& WithType(SourceType&& value) { SetType(std::move(value)); return *this;}
 
@@ -149,9 +149,9 @@ namespace Model
      * repository, the HTTPS clone URL to the repository that contains the source code
      * and the buildspec file (for example,
      * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).</p>
-     * </li> <li> <p>For source code in an Amazon Simple Storage Service (Amazon S3)
-     * input bucket, one of the following. </p> <ul> <li> <p>The path to the ZIP file
-     * that contains the source code (for example,
+     * </li> <li> <p>For source code in an Amazon S3 input bucket, one of the
+     * following. </p> <ul> <li> <p>The path to the ZIP file that contains the source
+     * code (for example,
      * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>). </p>
      * </li> <li> <p>The path to the folder that contains the source code (for example,
      * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
@@ -190,9 +190,9 @@ namespace Model
      * repository, the HTTPS clone URL to the repository that contains the source code
      * and the buildspec file (for example,
      * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).</p>
-     * </li> <li> <p>For source code in an Amazon Simple Storage Service (Amazon S3)
-     * input bucket, one of the following. </p> <ul> <li> <p>The path to the ZIP file
-     * that contains the source code (for example,
+     * </li> <li> <p>For source code in an Amazon S3 input bucket, one of the
+     * following. </p> <ul> <li> <p>The path to the ZIP file that contains the source
+     * code (for example,
      * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>). </p>
      * </li> <li> <p>The path to the folder that contains the source code (for example,
      * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
@@ -231,9 +231,9 @@ namespace Model
      * repository, the HTTPS clone URL to the repository that contains the source code
      * and the buildspec file (for example,
      * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).</p>
-     * </li> <li> <p>For source code in an Amazon Simple Storage Service (Amazon S3)
-     * input bucket, one of the following. </p> <ul> <li> <p>The path to the ZIP file
-     * that contains the source code (for example,
+     * </li> <li> <p>For source code in an Amazon S3 input bucket, one of the
+     * following. </p> <ul> <li> <p>The path to the ZIP file that contains the source
+     * code (for example,
      * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>). </p>
      * </li> <li> <p>The path to the folder that contains the source code (for example,
      * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
@@ -272,9 +272,9 @@ namespace Model
      * repository, the HTTPS clone URL to the repository that contains the source code
      * and the buildspec file (for example,
      * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).</p>
-     * </li> <li> <p>For source code in an Amazon Simple Storage Service (Amazon S3)
-     * input bucket, one of the following. </p> <ul> <li> <p>The path to the ZIP file
-     * that contains the source code (for example,
+     * </li> <li> <p>For source code in an Amazon S3 input bucket, one of the
+     * following. </p> <ul> <li> <p>The path to the ZIP file that contains the source
+     * code (for example,
      * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>). </p>
      * </li> <li> <p>The path to the folder that contains the source code (for example,
      * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
@@ -313,9 +313,9 @@ namespace Model
      * repository, the HTTPS clone URL to the repository that contains the source code
      * and the buildspec file (for example,
      * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).</p>
-     * </li> <li> <p>For source code in an Amazon Simple Storage Service (Amazon S3)
-     * input bucket, one of the following. </p> <ul> <li> <p>The path to the ZIP file
-     * that contains the source code (for example,
+     * </li> <li> <p>For source code in an Amazon S3 input bucket, one of the
+     * following. </p> <ul> <li> <p>The path to the ZIP file that contains the source
+     * code (for example,
      * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>). </p>
      * </li> <li> <p>The path to the folder that contains the source code (for example,
      * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
@@ -354,9 +354,9 @@ namespace Model
      * repository, the HTTPS clone URL to the repository that contains the source code
      * and the buildspec file (for example,
      * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).</p>
-     * </li> <li> <p>For source code in an Amazon Simple Storage Service (Amazon S3)
-     * input bucket, one of the following. </p> <ul> <li> <p>The path to the ZIP file
-     * that contains the source code (for example,
+     * </li> <li> <p>For source code in an Amazon S3 input bucket, one of the
+     * following. </p> <ul> <li> <p>The path to the ZIP file that contains the source
+     * code (for example,
      * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>). </p>
      * </li> <li> <p>The path to the folder that contains the source code (for example,
      * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
@@ -395,9 +395,9 @@ namespace Model
      * repository, the HTTPS clone URL to the repository that contains the source code
      * and the buildspec file (for example,
      * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).</p>
-     * </li> <li> <p>For source code in an Amazon Simple Storage Service (Amazon S3)
-     * input bucket, one of the following. </p> <ul> <li> <p>The path to the ZIP file
-     * that contains the source code (for example,
+     * </li> <li> <p>For source code in an Amazon S3 input bucket, one of the
+     * following. </p> <ul> <li> <p>The path to the ZIP file that contains the source
+     * code (for example,
      * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>). </p>
      * </li> <li> <p>The path to the folder that contains the source code (for example,
      * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
@@ -436,9 +436,9 @@ namespace Model
      * repository, the HTTPS clone URL to the repository that contains the source code
      * and the buildspec file (for example,
      * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).</p>
-     * </li> <li> <p>For source code in an Amazon Simple Storage Service (Amazon S3)
-     * input bucket, one of the following. </p> <ul> <li> <p>The path to the ZIP file
-     * that contains the source code (for example,
+     * </li> <li> <p>For source code in an Amazon S3 input bucket, one of the
+     * following. </p> <ul> <li> <p>The path to the ZIP file that contains the source
+     * code (for example,
      * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>). </p>
      * </li> <li> <p>The path to the folder that contains the source code (for example,
      * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).

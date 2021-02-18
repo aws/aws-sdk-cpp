@@ -76,44 +76,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
-     * to perform the model compilation job.</p>
+     * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
      */
     inline const Aws::String& GetCompilationJobArn() const{ return m_compilationJobArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
-     * to perform the model compilation job.</p>
+     * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
      */
     inline void SetCompilationJobArn(const Aws::String& value) { m_compilationJobArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
-     * to perform the model compilation job.</p>
+     * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
      */
     inline void SetCompilationJobArn(Aws::String&& value) { m_compilationJobArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
-     * to perform the model compilation job.</p>
+     * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
      */
     inline void SetCompilationJobArn(const char* value) { m_compilationJobArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
-     * to perform the model compilation job.</p>
+     * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
      */
     inline DescribeCompilationJobResult& WithCompilationJobArn(const Aws::String& value) { SetCompilationJobArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
-     * to perform the model compilation job.</p>
+     * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
      */
     inline DescribeCompilationJobResult& WithCompilationJobArn(Aws::String&& value) { SetCompilationJobArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
-     * to perform the model compilation job.</p>
+     * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
      */
     inline DescribeCompilationJobResult& WithCompilationJobArn(const char* value) { SetCompilationJobArn(value); return *this;}
 
@@ -428,37 +421,44 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
+     * to perform the model compilation job.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
+     * to perform the model compilation job.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
+     * to perform the model compilation job.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
+     * to perform the model compilation job.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
+     * to perform the model compilation job.</p>
      */
     inline DescribeCompilationJobResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
+     * to perform the model compilation job.</p>
      */
     inline DescribeCompilationJobResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
+     * to perform the model compilation job.</p>
      */
     inline DescribeCompilationJobResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

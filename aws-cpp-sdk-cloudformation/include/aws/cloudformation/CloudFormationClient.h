@@ -800,28 +800,38 @@ namespace Model
         virtual void DeleteStackSetAsync(const Model::DeleteStackSetRequest& request, const DeleteStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes a type or type version from active use in the CloudFormation
-         * registry. If a type or type version is deregistered, it cannot be used in
-         * CloudFormation operations.</p> <p>To deregister a type, you must individually
-         * deregister all registered versions of that type. If a type has only a single
-         * registered version, deregistering that version results in the type itself being
-         * deregistered. </p> <p>You cannot deregister the default version of a type,
-         * unless it is the only registered version of that type, in which case the type
-         * itself is deregistered as well. </p><p><h3>See Also:</h3>   <a
+         * <p>Marks an extension or extension version as <code>DEPRECATED</code> in the
+         * CloudFormation registry, removing it from active use. Deprecated extensions or
+         * extension versions cannot be used in CloudFormation operations.</p> <p>To
+         * deregister an entire extension, you must individually deregister all active
+         * versions of that extension. If an extension has only a single active version,
+         * deregistering that version results in the extension itself being deregistered
+         * and marked as deprecated in the registry. </p> <p>You cannot deregister the
+         * default version of an extension if there are other active version of that
+         * extension. If you do deregister the default version of an extension, the
+         * textensionype itself is deregistered as well and marked as deprecated. </p>
+         * <p>To view the deprecation status of an extension or extension version, use <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeregisterType">AWS
          * API Reference</a></p>
          */
         virtual Model::DeregisterTypeOutcome DeregisterType(const Model::DeregisterTypeRequest& request) const;
 
         /**
-         * <p>Removes a type or type version from active use in the CloudFormation
-         * registry. If a type or type version is deregistered, it cannot be used in
-         * CloudFormation operations.</p> <p>To deregister a type, you must individually
-         * deregister all registered versions of that type. If a type has only a single
-         * registered version, deregistering that version results in the type itself being
-         * deregistered. </p> <p>You cannot deregister the default version of a type,
-         * unless it is the only registered version of that type, in which case the type
-         * itself is deregistered as well. </p><p><h3>See Also:</h3>   <a
+         * <p>Marks an extension or extension version as <code>DEPRECATED</code> in the
+         * CloudFormation registry, removing it from active use. Deprecated extensions or
+         * extension versions cannot be used in CloudFormation operations.</p> <p>To
+         * deregister an entire extension, you must individually deregister all active
+         * versions of that extension. If an extension has only a single active version,
+         * deregistering that version results in the extension itself being deregistered
+         * and marked as deprecated in the registry. </p> <p>You cannot deregister the
+         * default version of an extension if there are other active version of that
+         * extension. If you do deregister the default version of an extension, the
+         * textensionype itself is deregistered as well and marked as deprecated. </p>
+         * <p>To view the deprecation status of an extension or extension version, use <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeregisterType">AWS
          * API Reference</a></p>
          *
@@ -830,14 +840,19 @@ namespace Model
         virtual Model::DeregisterTypeOutcomeCallable DeregisterTypeCallable(const Model::DeregisterTypeRequest& request) const;
 
         /**
-         * <p>Removes a type or type version from active use in the CloudFormation
-         * registry. If a type or type version is deregistered, it cannot be used in
-         * CloudFormation operations.</p> <p>To deregister a type, you must individually
-         * deregister all registered versions of that type. If a type has only a single
-         * registered version, deregistering that version results in the type itself being
-         * deregistered. </p> <p>You cannot deregister the default version of a type,
-         * unless it is the only registered version of that type, in which case the type
-         * itself is deregistered as well. </p><p><h3>See Also:</h3>   <a
+         * <p>Marks an extension or extension version as <code>DEPRECATED</code> in the
+         * CloudFormation registry, removing it from active use. Deprecated extensions or
+         * extension versions cannot be used in CloudFormation operations.</p> <p>To
+         * deregister an entire extension, you must individually deregister all active
+         * versions of that extension. If an extension has only a single active version,
+         * deregistering that version results in the extension itself being deregistered
+         * and marked as deprecated in the registry. </p> <p>You cannot deregister the
+         * default version of an extension if there are other active version of that
+         * extension. If you do deregister the default version of an extension, the
+         * textensionype itself is deregistered as well and marked as deprecated. </p>
+         * <p>To view the deprecation status of an extension or extension version, use <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeregisterType">AWS
          * API Reference</a></p>
          *
@@ -1325,20 +1340,20 @@ namespace Model
         virtual void DescribeStacksAsync(const Model::DescribeStacksRequest& request, const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns detailed information about a type that has been registered.</p> <p>If
-         * you specify a <code>VersionId</code>, <code>DescribeType</code> returns
-         * information about that specific type version. Otherwise, it returns information
-         * about the default type version.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns detailed information about an extension that has been registered.</p>
+         * <p>If you specify a <code>VersionId</code>, <code>DescribeType</code> returns
+         * information about that specific extension version. Otherwise, it returns
+         * information about the default extension version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeType">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeTypeOutcome DescribeType(const Model::DescribeTypeRequest& request) const;
 
         /**
-         * <p>Returns detailed information about a type that has been registered.</p> <p>If
-         * you specify a <code>VersionId</code>, <code>DescribeType</code> returns
-         * information about that specific type version. Otherwise, it returns information
-         * about the default type version.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns detailed information about an extension that has been registered.</p>
+         * <p>If you specify a <code>VersionId</code>, <code>DescribeType</code> returns
+         * information about that specific extension version. Otherwise, it returns
+         * information about the default extension version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeType">AWS
          * API Reference</a></p>
          *
@@ -1347,10 +1362,10 @@ namespace Model
         virtual Model::DescribeTypeOutcomeCallable DescribeTypeCallable(const Model::DescribeTypeRequest& request) const;
 
         /**
-         * <p>Returns detailed information about a type that has been registered.</p> <p>If
-         * you specify a <code>VersionId</code>, <code>DescribeType</code> returns
-         * information about that specific type version. Otherwise, it returns information
-         * about the default type version.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns detailed information about an extension that has been registered.</p>
+         * <p>If you specify a <code>VersionId</code>, <code>DescribeType</code> returns
+         * information about that specific extension version. Otherwise, it returns
+         * information about the default extension version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeType">AWS
          * API Reference</a></p>
          *
@@ -1359,26 +1374,26 @@ namespace Model
         virtual void DescribeTypeAsync(const Model::DescribeTypeRequest& request, const DescribeTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about a type's registration, including its current status
-         * and type and version identifiers.</p> <p>When you initiate a registration
+         * <p>Returns information about an extension's registration, including its current
+         * status and type and version identifiers.</p> <p>When you initiate a registration
          * request using <code> <a>RegisterType</a> </code>, you can then use <code>
          * <a>DescribeTypeRegistration</a> </code> to monitor the progress of that
          * registration request.</p> <p>Once the registration request has completed, use
-         * <code> <a>DescribeType</a> </code> to return detailed informaiton about a
-         * type.</p><p><h3>See Also:</h3>   <a
+         * <code> <a>DescribeType</a> </code> to return detailed information about an
+         * extension.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeTypeRegistration">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeTypeRegistrationOutcome DescribeTypeRegistration(const Model::DescribeTypeRegistrationRequest& request) const;
 
         /**
-         * <p>Returns information about a type's registration, including its current status
-         * and type and version identifiers.</p> <p>When you initiate a registration
+         * <p>Returns information about an extension's registration, including its current
+         * status and type and version identifiers.</p> <p>When you initiate a registration
          * request using <code> <a>RegisterType</a> </code>, you can then use <code>
          * <a>DescribeTypeRegistration</a> </code> to monitor the progress of that
          * registration request.</p> <p>Once the registration request has completed, use
-         * <code> <a>DescribeType</a> </code> to return detailed informaiton about a
-         * type.</p><p><h3>See Also:</h3>   <a
+         * <code> <a>DescribeType</a> </code> to return detailed information about an
+         * extension.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeTypeRegistration">AWS
          * API Reference</a></p>
          *
@@ -1387,13 +1402,13 @@ namespace Model
         virtual Model::DescribeTypeRegistrationOutcomeCallable DescribeTypeRegistrationCallable(const Model::DescribeTypeRegistrationRequest& request) const;
 
         /**
-         * <p>Returns information about a type's registration, including its current status
-         * and type and version identifiers.</p> <p>When you initiate a registration
+         * <p>Returns information about an extension's registration, including its current
+         * status and type and version identifiers.</p> <p>When you initiate a registration
          * request using <code> <a>RegisterType</a> </code>, you can then use <code>
          * <a>DescribeTypeRegistration</a> </code> to monitor the progress of that
          * registration request.</p> <p>Once the registration request has completed, use
-         * <code> <a>DescribeType</a> </code> to return detailed informaiton about a
-         * type.</p><p><h3>See Also:</h3>   <a
+         * <code> <a>DescribeType</a> </code> to return detailed information about an
+         * extension.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeTypeRegistration">AWS
          * API Reference</a></p>
          *
@@ -1578,7 +1593,7 @@ namespace Model
          * on the number of stack instances included in the stack set, as well as the
          * number of resources included in each stack.</p> <p>Once the operation has
          * completed, use the following actions to return drift information:</p> <ul> <li>
-         * <p>Use <code> <a>DescribeStackSet</a> </code> to return detailed informaiton
+         * <p>Use <code> <a>DescribeStackSet</a> </code> to return detailed information
          * about the stack set, including detailed information about the last
          * <i>completed</i> drift operation performed on the stack set. (Information about
          * drift operations that are in progress is not included.)</p> </li> <li> <p>Use
@@ -1612,7 +1627,7 @@ namespace Model
          * on the number of stack instances included in the stack set, as well as the
          * number of resources included in each stack.</p> <p>Once the operation has
          * completed, use the following actions to return drift information:</p> <ul> <li>
-         * <p>Use <code> <a>DescribeStackSet</a> </code> to return detailed informaiton
+         * <p>Use <code> <a>DescribeStackSet</a> </code> to return detailed information
          * about the stack set, including detailed information about the last
          * <i>completed</i> drift operation performed on the stack set. (Information about
          * drift operations that are in progress is not included.)</p> </li> <li> <p>Use
@@ -1648,7 +1663,7 @@ namespace Model
          * on the number of stack instances included in the stack set, as well as the
          * number of resources included in each stack.</p> <p>Once the operation has
          * completed, use the following actions to return drift information:</p> <ul> <li>
-         * <p>Use <code> <a>DescribeStackSet</a> </code> to return detailed informaiton
+         * <p>Use <code> <a>DescribeStackSet</a> </code> to return detailed information
          * about the stack set, including detailed information about the last
          * <i>completed</i> drift operation performed on the stack set. (Information about
          * drift operations that are in progress is not included.)</p> </li> <li> <p>Use
@@ -2117,7 +2132,17 @@ namespace Model
 
         /**
          * <p>Returns summary information about stack sets that are associated with the
-         * user.</p><p><h3>See Also:</h3>   <a
+         * user.</p> <ul> <li> <p>[Self-managed permissions] If you set the
+         * <code>CallAs</code> parameter to <code>SELF</code> while signed in to your AWS
+         * account, <code>ListStackSets</code> returns all self-managed stack sets in your
+         * AWS account.</p> </li> <li> <p>[Service-managed permissions] If you set the
+         * <code>CallAs</code> parameter to <code>SELF</code> while signed in to the
+         * organization's management account, <code>ListStackSets</code> returns all stack
+         * sets in the management account.</p> </li> <li> <p>[Service-managed permissions]
+         * If you set the <code>CallAs</code> parameter to <code>DELEGATED_ADMIN</code>
+         * while signed in to your member account, <code>ListStackSets</code> returns all
+         * stack sets with service-managed permissions in the management account.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSets">AWS
          * API Reference</a></p>
          */
@@ -2125,7 +2150,17 @@ namespace Model
 
         /**
          * <p>Returns summary information about stack sets that are associated with the
-         * user.</p><p><h3>See Also:</h3>   <a
+         * user.</p> <ul> <li> <p>[Self-managed permissions] If you set the
+         * <code>CallAs</code> parameter to <code>SELF</code> while signed in to your AWS
+         * account, <code>ListStackSets</code> returns all self-managed stack sets in your
+         * AWS account.</p> </li> <li> <p>[Service-managed permissions] If you set the
+         * <code>CallAs</code> parameter to <code>SELF</code> while signed in to the
+         * organization's management account, <code>ListStackSets</code> returns all stack
+         * sets in the management account.</p> </li> <li> <p>[Service-managed permissions]
+         * If you set the <code>CallAs</code> parameter to <code>DELEGATED_ADMIN</code>
+         * while signed in to your member account, <code>ListStackSets</code> returns all
+         * stack sets with service-managed permissions in the management account.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSets">AWS
          * API Reference</a></p>
          *
@@ -2135,7 +2170,17 @@ namespace Model
 
         /**
          * <p>Returns summary information about stack sets that are associated with the
-         * user.</p><p><h3>See Also:</h3>   <a
+         * user.</p> <ul> <li> <p>[Self-managed permissions] If you set the
+         * <code>CallAs</code> parameter to <code>SELF</code> while signed in to your AWS
+         * account, <code>ListStackSets</code> returns all self-managed stack sets in your
+         * AWS account.</p> </li> <li> <p>[Service-managed permissions] If you set the
+         * <code>CallAs</code> parameter to <code>SELF</code> while signed in to the
+         * organization's management account, <code>ListStackSets</code> returns all stack
+         * sets in the management account.</p> </li> <li> <p>[Service-managed permissions]
+         * If you set the <code>CallAs</code> parameter to <code>DELEGATED_ADMIN</code>
+         * while signed in to your member account, <code>ListStackSets</code> returns all
+         * stack sets with service-managed permissions in the management account.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSets">AWS
          * API Reference</a></p>
          *
@@ -2182,7 +2227,7 @@ namespace Model
 
         /**
          * <p>Returns a list of registration tokens for the specified
-         * type(s).</p><p><h3>See Also:</h3>   <a
+         * extension(s).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypeRegistrations">AWS
          * API Reference</a></p>
          */
@@ -2190,7 +2235,7 @@ namespace Model
 
         /**
          * <p>Returns a list of registration tokens for the specified
-         * type(s).</p><p><h3>See Also:</h3>   <a
+         * extension(s).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypeRegistrations">AWS
          * API Reference</a></p>
          *
@@ -2200,7 +2245,7 @@ namespace Model
 
         /**
          * <p>Returns a list of registration tokens for the specified
-         * type(s).</p><p><h3>See Also:</h3>   <a
+         * extension(s).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypeRegistrations">AWS
          * API Reference</a></p>
          *
@@ -2209,7 +2254,7 @@ namespace Model
         virtual void ListTypeRegistrationsAsync(const Model::ListTypeRegistrationsRequest& request, const ListTypeRegistrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns summary information about the versions of a type.</p><p><h3>See
+         * <p>Returns summary information about the versions of an extension.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypeVersions">AWS
          * API Reference</a></p>
@@ -2217,7 +2262,7 @@ namespace Model
         virtual Model::ListTypeVersionsOutcome ListTypeVersions(const Model::ListTypeVersionsRequest& request) const;
 
         /**
-         * <p>Returns summary information about the versions of a type.</p><p><h3>See
+         * <p>Returns summary information about the versions of an extension.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypeVersions">AWS
          * API Reference</a></p>
@@ -2227,7 +2272,7 @@ namespace Model
         virtual Model::ListTypeVersionsOutcomeCallable ListTypeVersionsCallable(const Model::ListTypeVersionsRequest& request) const;
 
         /**
-         * <p>Returns summary information about the versions of a type.</p><p><h3>See
+         * <p>Returns summary information about the versions of an extension.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypeVersions">AWS
          * API Reference</a></p>
@@ -2237,7 +2282,7 @@ namespace Model
         virtual void ListTypeVersionsAsync(const Model::ListTypeVersionsRequest& request, const ListTypeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns summary information about types that have been registered with
+         * <p>Returns summary information about extension that have been registered with
          * CloudFormation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypes">AWS
          * API Reference</a></p>
@@ -2245,7 +2290,7 @@ namespace Model
         virtual Model::ListTypesOutcome ListTypes(const Model::ListTypesRequest& request) const;
 
         /**
-         * <p>Returns summary information about types that have been registered with
+         * <p>Returns summary information about extension that have been registered with
          * CloudFormation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypes">AWS
          * API Reference</a></p>
@@ -2255,7 +2300,7 @@ namespace Model
         virtual Model::ListTypesOutcomeCallable ListTypesCallable(const Model::ListTypesRequest& request) const;
 
         /**
-         * <p>Returns summary information about types that have been registered with
+         * <p>Returns summary information about extension that have been registered with
          * CloudFormation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypes">AWS
          * API Reference</a></p>
@@ -2299,19 +2344,19 @@ namespace Model
         virtual void RecordHandlerProgressAsync(const Model::RecordHandlerProgressRequest& request, const RecordHandlerProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Registers a type with the CloudFormation service. Registering a type makes it
-         * available for use in CloudFormation templates in your AWS account, and
-         * includes:</p> <ul> <li> <p>Validating the resource schema</p> </li> <li>
-         * <p>Determining which handlers have been specified for the resource</p> </li>
-         * <li> <p>Making the resource type available for use in your account</p> </li>
-         * </ul> <p>For more information on how to develop types and ready them for
-         * registeration, see <a
+         * <p>Registers an extension with the CloudFormation service. Registering an
+         * extension makes it available for use in CloudFormation templates in your AWS
+         * account, and includes:</p> <ul> <li> <p>Validating the extension schema</p>
+         * </li> <li> <p>Determining which handlers, if any, have been specified for the
+         * extension</p> </li> <li> <p>Making the extension available for use in your
+         * account</p> </li> </ul> <p>For more information on how to develop extensions and
+         * ready them for registeration, see <a
          * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating
          * Resource Providers</a> in the <i>CloudFormation CLI User Guide</i>.</p> <p>You
-         * can have a maximum of 50 resource type versions registered at a time. This
+         * can have a maximum of 50 resource extension versions registered at a time. This
          * maximum is per account and per region. Use <a
          * href="AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a>
-         * to deregister specific resource type versions if necessary.</p> <p>Once you have
+         * to deregister specific extension versions if necessary.</p> <p>Once you have
          * initiated a registration request using <code> <a>RegisterType</a> </code>, you
          * can use <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress
          * of the registration request.</p><p><h3>See Also:</h3>   <a
@@ -2321,19 +2366,19 @@ namespace Model
         virtual Model::RegisterTypeOutcome RegisterType(const Model::RegisterTypeRequest& request) const;
 
         /**
-         * <p>Registers a type with the CloudFormation service. Registering a type makes it
-         * available for use in CloudFormation templates in your AWS account, and
-         * includes:</p> <ul> <li> <p>Validating the resource schema</p> </li> <li>
-         * <p>Determining which handlers have been specified for the resource</p> </li>
-         * <li> <p>Making the resource type available for use in your account</p> </li>
-         * </ul> <p>For more information on how to develop types and ready them for
-         * registeration, see <a
+         * <p>Registers an extension with the CloudFormation service. Registering an
+         * extension makes it available for use in CloudFormation templates in your AWS
+         * account, and includes:</p> <ul> <li> <p>Validating the extension schema</p>
+         * </li> <li> <p>Determining which handlers, if any, have been specified for the
+         * extension</p> </li> <li> <p>Making the extension available for use in your
+         * account</p> </li> </ul> <p>For more information on how to develop extensions and
+         * ready them for registeration, see <a
          * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating
          * Resource Providers</a> in the <i>CloudFormation CLI User Guide</i>.</p> <p>You
-         * can have a maximum of 50 resource type versions registered at a time. This
+         * can have a maximum of 50 resource extension versions registered at a time. This
          * maximum is per account and per region. Use <a
          * href="AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a>
-         * to deregister specific resource type versions if necessary.</p> <p>Once you have
+         * to deregister specific extension versions if necessary.</p> <p>Once you have
          * initiated a registration request using <code> <a>RegisterType</a> </code>, you
          * can use <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress
          * of the registration request.</p><p><h3>See Also:</h3>   <a
@@ -2345,19 +2390,19 @@ namespace Model
         virtual Model::RegisterTypeOutcomeCallable RegisterTypeCallable(const Model::RegisterTypeRequest& request) const;
 
         /**
-         * <p>Registers a type with the CloudFormation service. Registering a type makes it
-         * available for use in CloudFormation templates in your AWS account, and
-         * includes:</p> <ul> <li> <p>Validating the resource schema</p> </li> <li>
-         * <p>Determining which handlers have been specified for the resource</p> </li>
-         * <li> <p>Making the resource type available for use in your account</p> </li>
-         * </ul> <p>For more information on how to develop types and ready them for
-         * registeration, see <a
+         * <p>Registers an extension with the CloudFormation service. Registering an
+         * extension makes it available for use in CloudFormation templates in your AWS
+         * account, and includes:</p> <ul> <li> <p>Validating the extension schema</p>
+         * </li> <li> <p>Determining which handlers, if any, have been specified for the
+         * extension</p> </li> <li> <p>Making the extension available for use in your
+         * account</p> </li> </ul> <p>For more information on how to develop extensions and
+         * ready them for registeration, see <a
          * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating
          * Resource Providers</a> in the <i>CloudFormation CLI User Guide</i>.</p> <p>You
-         * can have a maximum of 50 resource type versions registered at a time. This
+         * can have a maximum of 50 resource extension versions registered at a time. This
          * maximum is per account and per region. Use <a
          * href="AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a>
-         * to deregister specific resource type versions if necessary.</p> <p>Once you have
+         * to deregister specific extension versions if necessary.</p> <p>Once you have
          * initiated a registration request using <code> <a>RegisterType</a> </code>, you
          * can use <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress
          * of the registration request.</p><p><h3>See Also:</h3>   <a
@@ -2394,16 +2439,18 @@ namespace Model
         virtual void SetStackPolicyAsync(const Model::SetStackPolicyRequest& request, const SetStackPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Specify the default version of a type. The default version of a type will be
-         * used in CloudFormation operations.</p><p><h3>See Also:</h3>   <a
+         * <p>Specify the default version of an extension. The default version of an
+         * extension will be used in CloudFormation operations.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetTypeDefaultVersion">AWS
          * API Reference</a></p>
          */
         virtual Model::SetTypeDefaultVersionOutcome SetTypeDefaultVersion(const Model::SetTypeDefaultVersionRequest& request) const;
 
         /**
-         * <p>Specify the default version of a type. The default version of a type will be
-         * used in CloudFormation operations.</p><p><h3>See Also:</h3>   <a
+         * <p>Specify the default version of an extension. The default version of an
+         * extension will be used in CloudFormation operations.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetTypeDefaultVersion">AWS
          * API Reference</a></p>
          *
@@ -2412,8 +2459,9 @@ namespace Model
         virtual Model::SetTypeDefaultVersionOutcomeCallable SetTypeDefaultVersionCallable(const Model::SetTypeDefaultVersionRequest& request) const;
 
         /**
-         * <p>Specify the default version of a type. The default version of a type will be
-         * used in CloudFormation operations.</p><p><h3>See Also:</h3>   <a
+         * <p>Specify the default version of an extension. The default version of an
+         * extension will be used in CloudFormation operations.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetTypeDefaultVersion">AWS
          * API Reference</a></p>
          *

@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudformation/model/PermissionModels.h>
 #include <aws/cloudformation/model/AutoDeployment.h>
+#include <aws/cloudformation/model/CallAs.h>
 #include <aws/cloudformation/model/Parameter.h>
 #include <aws/cloudformation/model/Capability.h>
 #include <aws/cloudformation/model/Tag.h>
@@ -233,7 +234,7 @@ namespace Model
     /**
      * <p>The location of the file that contains the template body. The URL must point
      * to a template (maximum size: 460,800 bytes) that's located in an Amazon S3
-     * bucket. For more information, see <a
+     * bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
@@ -243,7 +244,7 @@ namespace Model
     /**
      * <p>The location of the file that contains the template body. The URL must point
      * to a template (maximum size: 460,800 bytes) that's located in an Amazon S3
-     * bucket. For more information, see <a
+     * bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
@@ -253,7 +254,7 @@ namespace Model
     /**
      * <p>The location of the file that contains the template body. The URL must point
      * to a template (maximum size: 460,800 bytes) that's located in an Amazon S3
-     * bucket. For more information, see <a
+     * bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
@@ -263,7 +264,7 @@ namespace Model
     /**
      * <p>The location of the file that contains the template body. The URL must point
      * to a template (maximum size: 460,800 bytes) that's located in an Amazon S3
-     * bucket. For more information, see <a
+     * bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
@@ -273,7 +274,7 @@ namespace Model
     /**
      * <p>The location of the file that contains the template body. The URL must point
      * to a template (maximum size: 460,800 bytes) that's located in an Amazon S3
-     * bucket. For more information, see <a
+     * bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
@@ -283,7 +284,7 @@ namespace Model
     /**
      * <p>The location of the file that contains the template body. The URL must point
      * to a template (maximum size: 460,800 bytes) that's located in an Amazon S3
-     * bucket. For more information, see <a
+     * bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
@@ -293,7 +294,7 @@ namespace Model
     /**
      * <p>The location of the file that contains the template body. The URL must point
      * to a template (maximum size: 460,800 bytes) that's located in an Amazon S3
-     * bucket. For more information, see <a
+     * bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
@@ -303,7 +304,7 @@ namespace Model
     /**
      * <p>The location of the file that contains the template body. The URL must point
      * to a template (maximum size: 460,800 bytes) that's located in an Amazon S3
-     * bucket. For more information, see <a
+     * bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
@@ -1199,6 +1200,121 @@ namespace Model
 
 
     /**
+     * <p>[Service-managed permissions] Specifies whether you are acting as an account
+     * administrator in the organization's management account or as a delegated
+     * administrator in a member account.</p> <p>By default, <code>SELF</code> is
+     * specified. Use <code>SELF</code> for stack sets with self-managed
+     * permissions.</p> <ul> <li> <p>To create a stack set with service-managed
+     * permissions while signed in to the management account, specify
+     * <code>SELF</code>.</p> </li> <li> <p>To create a stack set with service-managed
+     * permissions while signed in to a delegated administrator account, specify
+     * <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS account must be registered as a
+     * delegated admin in the management account. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
+     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * </li> </ul> <p>Stack sets with service-managed permissions are created in the
+     * management account, including stack sets that are created by delegated
+     * administrators.</p>
+     */
+    inline const CallAs& GetCallAs() const{ return m_callAs; }
+
+    /**
+     * <p>[Service-managed permissions] Specifies whether you are acting as an account
+     * administrator in the organization's management account or as a delegated
+     * administrator in a member account.</p> <p>By default, <code>SELF</code> is
+     * specified. Use <code>SELF</code> for stack sets with self-managed
+     * permissions.</p> <ul> <li> <p>To create a stack set with service-managed
+     * permissions while signed in to the management account, specify
+     * <code>SELF</code>.</p> </li> <li> <p>To create a stack set with service-managed
+     * permissions while signed in to a delegated administrator account, specify
+     * <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS account must be registered as a
+     * delegated admin in the management account. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
+     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * </li> </ul> <p>Stack sets with service-managed permissions are created in the
+     * management account, including stack sets that are created by delegated
+     * administrators.</p>
+     */
+    inline bool CallAsHasBeenSet() const { return m_callAsHasBeenSet; }
+
+    /**
+     * <p>[Service-managed permissions] Specifies whether you are acting as an account
+     * administrator in the organization's management account or as a delegated
+     * administrator in a member account.</p> <p>By default, <code>SELF</code> is
+     * specified. Use <code>SELF</code> for stack sets with self-managed
+     * permissions.</p> <ul> <li> <p>To create a stack set with service-managed
+     * permissions while signed in to the management account, specify
+     * <code>SELF</code>.</p> </li> <li> <p>To create a stack set with service-managed
+     * permissions while signed in to a delegated administrator account, specify
+     * <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS account must be registered as a
+     * delegated admin in the management account. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
+     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * </li> </ul> <p>Stack sets with service-managed permissions are created in the
+     * management account, including stack sets that are created by delegated
+     * administrators.</p>
+     */
+    inline void SetCallAs(const CallAs& value) { m_callAsHasBeenSet = true; m_callAs = value; }
+
+    /**
+     * <p>[Service-managed permissions] Specifies whether you are acting as an account
+     * administrator in the organization's management account or as a delegated
+     * administrator in a member account.</p> <p>By default, <code>SELF</code> is
+     * specified. Use <code>SELF</code> for stack sets with self-managed
+     * permissions.</p> <ul> <li> <p>To create a stack set with service-managed
+     * permissions while signed in to the management account, specify
+     * <code>SELF</code>.</p> </li> <li> <p>To create a stack set with service-managed
+     * permissions while signed in to a delegated administrator account, specify
+     * <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS account must be registered as a
+     * delegated admin in the management account. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
+     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * </li> </ul> <p>Stack sets with service-managed permissions are created in the
+     * management account, including stack sets that are created by delegated
+     * administrators.</p>
+     */
+    inline void SetCallAs(CallAs&& value) { m_callAsHasBeenSet = true; m_callAs = std::move(value); }
+
+    /**
+     * <p>[Service-managed permissions] Specifies whether you are acting as an account
+     * administrator in the organization's management account or as a delegated
+     * administrator in a member account.</p> <p>By default, <code>SELF</code> is
+     * specified. Use <code>SELF</code> for stack sets with self-managed
+     * permissions.</p> <ul> <li> <p>To create a stack set with service-managed
+     * permissions while signed in to the management account, specify
+     * <code>SELF</code>.</p> </li> <li> <p>To create a stack set with service-managed
+     * permissions while signed in to a delegated administrator account, specify
+     * <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS account must be registered as a
+     * delegated admin in the management account. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
+     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * </li> </ul> <p>Stack sets with service-managed permissions are created in the
+     * management account, including stack sets that are created by delegated
+     * administrators.</p>
+     */
+    inline CreateStackSetRequest& WithCallAs(const CallAs& value) { SetCallAs(value); return *this;}
+
+    /**
+     * <p>[Service-managed permissions] Specifies whether you are acting as an account
+     * administrator in the organization's management account or as a delegated
+     * administrator in a member account.</p> <p>By default, <code>SELF</code> is
+     * specified. Use <code>SELF</code> for stack sets with self-managed
+     * permissions.</p> <ul> <li> <p>To create a stack set with service-managed
+     * permissions while signed in to the management account, specify
+     * <code>SELF</code>.</p> </li> <li> <p>To create a stack set with service-managed
+     * permissions while signed in to a delegated administrator account, specify
+     * <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS account must be registered as a
+     * delegated admin in the management account. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
+     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * </li> </ul> <p>Stack sets with service-managed permissions are created in the
+     * management account, including stack sets that are created by delegated
+     * administrators.</p>
+     */
+    inline CreateStackSetRequest& WithCallAs(CallAs&& value) { SetCallAs(std::move(value)); return *this;}
+
+
+    /**
      * <p>A unique identifier for this <code>CreateStackSet</code> request. Specify
      * this token if you plan to retry requests so that AWS CloudFormation knows that
      * you're not attempting to create another stack set with the same name. You might
@@ -1312,6 +1428,9 @@ namespace Model
 
     AutoDeployment m_autoDeployment;
     bool m_autoDeploymentHasBeenSet;
+
+    CallAs m_callAs;
+    bool m_callAsHasBeenSet;
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;

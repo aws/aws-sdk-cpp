@@ -208,44 +208,44 @@ namespace Model
 
 
     /**
-     * <p>[<code>Service-managed</code> permissions] Describes whether StackSets
-     * automatically deploys to AWS Organizations accounts that are added to a target
-     * organizational unit (OU).</p>
+     * <p>[Service-managed permissions] Describes whether StackSets automatically
+     * deploys to AWS Organizations accounts that are added to a target organizational
+     * unit (OU).</p>
      */
     inline const AutoDeployment& GetAutoDeployment() const{ return m_autoDeployment; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] Describes whether StackSets
-     * automatically deploys to AWS Organizations accounts that are added to a target
-     * organizational unit (OU).</p>
+     * <p>[Service-managed permissions] Describes whether StackSets automatically
+     * deploys to AWS Organizations accounts that are added to a target organizational
+     * unit (OU).</p>
      */
     inline bool AutoDeploymentHasBeenSet() const { return m_autoDeploymentHasBeenSet; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] Describes whether StackSets
-     * automatically deploys to AWS Organizations accounts that are added to a target
-     * organizational unit (OU).</p>
+     * <p>[Service-managed permissions] Describes whether StackSets automatically
+     * deploys to AWS Organizations accounts that are added to a target organizational
+     * unit (OU).</p>
      */
     inline void SetAutoDeployment(const AutoDeployment& value) { m_autoDeploymentHasBeenSet = true; m_autoDeployment = value; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] Describes whether StackSets
-     * automatically deploys to AWS Organizations accounts that are added to a target
-     * organizational unit (OU).</p>
+     * <p>[Service-managed permissions] Describes whether StackSets automatically
+     * deploys to AWS Organizations accounts that are added to a target organizational
+     * unit (OU).</p>
      */
     inline void SetAutoDeployment(AutoDeployment&& value) { m_autoDeploymentHasBeenSet = true; m_autoDeployment = std::move(value); }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] Describes whether StackSets
-     * automatically deploys to AWS Organizations accounts that are added to a target
-     * organizational unit (OU).</p>
+     * <p>[Service-managed permissions] Describes whether StackSets automatically
+     * deploys to AWS Organizations accounts that are added to a target organizational
+     * unit (OU).</p>
      */
     inline StackSetSummary& WithAutoDeployment(const AutoDeployment& value) { SetAutoDeployment(value); return *this;}
 
     /**
-     * <p>[<code>Service-managed</code> permissions] Describes whether StackSets
-     * automatically deploys to AWS Organizations accounts that are added to a target
-     * organizational unit (OU).</p>
+     * <p>[Service-managed permissions] Describes whether StackSets automatically
+     * deploys to AWS Organizations accounts that are added to a target organizational
+     * unit (OU).</p>
      */
     inline StackSetSummary& WithAutoDeployment(AutoDeployment&& value) { SetAutoDeployment(std::move(value)); return *this;}
 

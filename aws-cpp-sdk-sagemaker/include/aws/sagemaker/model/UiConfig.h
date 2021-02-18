@@ -115,9 +115,9 @@ namespace Model
      * <p>The ARN of the worker task template used to render the worker UI and tools
      * for labeling job tasks.</p> <p>Use this parameter when you are creating a
      * labeling job for 3D point cloud and video fram labeling jobs. Use your labeling
-     * job task type to select one of the following ARN's and use it with this
-     * parameter when you create a labeling job. Replace <code>aws-region</code> with
-     * the AWS region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
+     * job task type to select one of the following ARNs and use it with this parameter
+     * when you create a labeling job. Replace <code>aws-region</code> with the AWS
+     * region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
      * HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D point
      * cloud object detection and 3D point cloud object detection adjustment labeling
      * jobs. </p> <ul> <li> <p>
@@ -146,9 +146,9 @@ namespace Model
      * <p>The ARN of the worker task template used to render the worker UI and tools
      * for labeling job tasks.</p> <p>Use this parameter when you are creating a
      * labeling job for 3D point cloud and video fram labeling jobs. Use your labeling
-     * job task type to select one of the following ARN's and use it with this
-     * parameter when you create a labeling job. Replace <code>aws-region</code> with
-     * the AWS region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
+     * job task type to select one of the following ARNs and use it with this parameter
+     * when you create a labeling job. Replace <code>aws-region</code> with the AWS
+     * region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
      * HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D point
      * cloud object detection and 3D point cloud object detection adjustment labeling
      * jobs. </p> <ul> <li> <p>
@@ -177,9 +177,9 @@ namespace Model
      * <p>The ARN of the worker task template used to render the worker UI and tools
      * for labeling job tasks.</p> <p>Use this parameter when you are creating a
      * labeling job for 3D point cloud and video fram labeling jobs. Use your labeling
-     * job task type to select one of the following ARN's and use it with this
-     * parameter when you create a labeling job. Replace <code>aws-region</code> with
-     * the AWS region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
+     * job task type to select one of the following ARNs and use it with this parameter
+     * when you create a labeling job. Replace <code>aws-region</code> with the AWS
+     * region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
      * HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D point
      * cloud object detection and 3D point cloud object detection adjustment labeling
      * jobs. </p> <ul> <li> <p>
@@ -208,9 +208,9 @@ namespace Model
      * <p>The ARN of the worker task template used to render the worker UI and tools
      * for labeling job tasks.</p> <p>Use this parameter when you are creating a
      * labeling job for 3D point cloud and video fram labeling jobs. Use your labeling
-     * job task type to select one of the following ARN's and use it with this
-     * parameter when you create a labeling job. Replace <code>aws-region</code> with
-     * the AWS region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
+     * job task type to select one of the following ARNs and use it with this parameter
+     * when you create a labeling job. Replace <code>aws-region</code> with the AWS
+     * region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
      * HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D point
      * cloud object detection and 3D point cloud object detection adjustment labeling
      * jobs. </p> <ul> <li> <p>
@@ -239,9 +239,9 @@ namespace Model
      * <p>The ARN of the worker task template used to render the worker UI and tools
      * for labeling job tasks.</p> <p>Use this parameter when you are creating a
      * labeling job for 3D point cloud and video fram labeling jobs. Use your labeling
-     * job task type to select one of the following ARN's and use it with this
-     * parameter when you create a labeling job. Replace <code>aws-region</code> with
-     * the AWS region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
+     * job task type to select one of the following ARNs and use it with this parameter
+     * when you create a labeling job. Replace <code>aws-region</code> with the AWS
+     * region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
      * HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D point
      * cloud object detection and 3D point cloud object detection adjustment labeling
      * jobs. </p> <ul> <li> <p>
@@ -270,9 +270,9 @@ namespace Model
      * <p>The ARN of the worker task template used to render the worker UI and tools
      * for labeling job tasks.</p> <p>Use this parameter when you are creating a
      * labeling job for 3D point cloud and video fram labeling jobs. Use your labeling
-     * job task type to select one of the following ARN's and use it with this
-     * parameter when you create a labeling job. Replace <code>aws-region</code> with
-     * the AWS region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
+     * job task type to select one of the following ARNs and use it with this parameter
+     * when you create a labeling job. Replace <code>aws-region</code> with the AWS
+     * region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
      * HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D point
      * cloud object detection and 3D point cloud object detection adjustment labeling
      * jobs. </p> <ul> <li> <p>
@@ -301,9 +301,9 @@ namespace Model
      * <p>The ARN of the worker task template used to render the worker UI and tools
      * for labeling job tasks.</p> <p>Use this parameter when you are creating a
      * labeling job for 3D point cloud and video fram labeling jobs. Use your labeling
-     * job task type to select one of the following ARN's and use it with this
-     * parameter when you create a labeling job. Replace <code>aws-region</code> with
-     * the AWS region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
+     * job task type to select one of the following ARNs and use it with this parameter
+     * when you create a labeling job. Replace <code>aws-region</code> with the AWS
+     * region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
      * HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D point
      * cloud object detection and 3D point cloud object detection adjustment labeling
      * jobs. </p> <ul> <li> <p>
@@ -332,9 +332,9 @@ namespace Model
      * <p>The ARN of the worker task template used to render the worker UI and tools
      * for labeling job tasks.</p> <p>Use this parameter when you are creating a
      * labeling job for 3D point cloud and video fram labeling jobs. Use your labeling
-     * job task type to select one of the following ARN's and use it with this
-     * parameter when you create a labeling job. Replace <code>aws-region</code> with
-     * the AWS region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
+     * job task type to select one of the following ARNs and use it with this parameter
+     * when you create a labeling job. Replace <code>aws-region</code> with the AWS
+     * region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
      * HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D point
      * cloud object detection and 3D point cloud object detection adjustment labeling
      * jobs. </p> <ul> <li> <p>

@@ -670,44 +670,44 @@ namespace Model
 
 
     /**
-     * <p>[<code>Service-managed</code> permissions] Describes whether StackSets
-     * automatically deploys to AWS Organizations accounts that are added to a target
-     * organization or organizational unit (OU).</p>
+     * <p>[Service-managed permissions] Describes whether StackSets automatically
+     * deploys to AWS Organizations accounts that are added to a target organization or
+     * organizational unit (OU).</p>
      */
     inline const AutoDeployment& GetAutoDeployment() const{ return m_autoDeployment; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] Describes whether StackSets
-     * automatically deploys to AWS Organizations accounts that are added to a target
-     * organization or organizational unit (OU).</p>
+     * <p>[Service-managed permissions] Describes whether StackSets automatically
+     * deploys to AWS Organizations accounts that are added to a target organization or
+     * organizational unit (OU).</p>
      */
     inline bool AutoDeploymentHasBeenSet() const { return m_autoDeploymentHasBeenSet; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] Describes whether StackSets
-     * automatically deploys to AWS Organizations accounts that are added to a target
-     * organization or organizational unit (OU).</p>
+     * <p>[Service-managed permissions] Describes whether StackSets automatically
+     * deploys to AWS Organizations accounts that are added to a target organization or
+     * organizational unit (OU).</p>
      */
     inline void SetAutoDeployment(const AutoDeployment& value) { m_autoDeploymentHasBeenSet = true; m_autoDeployment = value; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] Describes whether StackSets
-     * automatically deploys to AWS Organizations accounts that are added to a target
-     * organization or organizational unit (OU).</p>
+     * <p>[Service-managed permissions] Describes whether StackSets automatically
+     * deploys to AWS Organizations accounts that are added to a target organization or
+     * organizational unit (OU).</p>
      */
     inline void SetAutoDeployment(AutoDeployment&& value) { m_autoDeploymentHasBeenSet = true; m_autoDeployment = std::move(value); }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] Describes whether StackSets
-     * automatically deploys to AWS Organizations accounts that are added to a target
-     * organization or organizational unit (OU).</p>
+     * <p>[Service-managed permissions] Describes whether StackSets automatically
+     * deploys to AWS Organizations accounts that are added to a target organization or
+     * organizational unit (OU).</p>
      */
     inline StackSet& WithAutoDeployment(const AutoDeployment& value) { SetAutoDeployment(value); return *this;}
 
     /**
-     * <p>[<code>Service-managed</code> permissions] Describes whether StackSets
-     * automatically deploys to AWS Organizations accounts that are added to a target
-     * organization or organizational unit (OU).</p>
+     * <p>[Service-managed permissions] Describes whether StackSets automatically
+     * deploys to AWS Organizations accounts that are added to a target organization or
+     * organizational unit (OU).</p>
      */
     inline StackSet& WithAutoDeployment(AutoDeployment&& value) { SetAutoDeployment(std::move(value)); return *this;}
 
@@ -804,64 +804,64 @@ namespace Model
 
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) IDs that you specified for <a
+     * <p>[Service-managed permissions] The organization root ID or organizational unit
+     * (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOrganizationalUnitIds() const{ return m_organizationalUnitIds; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) IDs that you specified for <a
+     * <p>[Service-managed permissions] The organization root ID or organizational unit
+     * (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline bool OrganizationalUnitIdsHasBeenSet() const { return m_organizationalUnitIdsHasBeenSet; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) IDs that you specified for <a
+     * <p>[Service-managed permissions] The organization root ID or organizational unit
+     * (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline void SetOrganizationalUnitIds(const Aws::Vector<Aws::String>& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds = value; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) IDs that you specified for <a
+     * <p>[Service-managed permissions] The organization root ID or organizational unit
+     * (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline void SetOrganizationalUnitIds(Aws::Vector<Aws::String>&& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds = std::move(value); }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) IDs that you specified for <a
+     * <p>[Service-managed permissions] The organization root ID or organizational unit
+     * (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline StackSet& WithOrganizationalUnitIds(const Aws::Vector<Aws::String>& value) { SetOrganizationalUnitIds(value); return *this;}
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) IDs that you specified for <a
+     * <p>[Service-managed permissions] The organization root ID or organizational unit
+     * (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline StackSet& WithOrganizationalUnitIds(Aws::Vector<Aws::String>&& value) { SetOrganizationalUnitIds(std::move(value)); return *this;}
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) IDs that you specified for <a
+     * <p>[Service-managed permissions] The organization root ID or organizational unit
+     * (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline StackSet& AddOrganizationalUnitIds(const Aws::String& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.push_back(value); return *this; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) IDs that you specified for <a
+     * <p>[Service-managed permissions] The organization root ID or organizational unit
+     * (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline StackSet& AddOrganizationalUnitIds(Aws::String&& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) IDs that you specified for <a
+     * <p>[Service-managed permissions] The organization root ID or organizational unit
+     * (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline StackSet& AddOrganizationalUnitIds(const char* value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.push_back(value); return *this; }

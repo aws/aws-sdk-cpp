@@ -48,7 +48,7 @@ namespace Model
      * supported for <code>secondaryArtifacts</code>.</p>  </li> <li> <p>
      * <code>NO_ARTIFACTS</code>: The build project does not produce any build
      * output.</p> </li> <li> <p> <code>S3</code>: The build project stores build
-     * output in Amazon Simple Storage Service (Amazon S3).</p> </li> </ul>
+     * output in Amazon S3.</p> </li> </ul>
      */
     inline const ArtifactsType& GetType() const{ return m_type; }
 
@@ -59,7 +59,7 @@ namespace Model
      * supported for <code>secondaryArtifacts</code>.</p>  </li> <li> <p>
      * <code>NO_ARTIFACTS</code>: The build project does not produce any build
      * output.</p> </li> <li> <p> <code>S3</code>: The build project stores build
-     * output in Amazon Simple Storage Service (Amazon S3).</p> </li> </ul>
+     * output in Amazon S3.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -70,7 +70,7 @@ namespace Model
      * supported for <code>secondaryArtifacts</code>.</p>  </li> <li> <p>
      * <code>NO_ARTIFACTS</code>: The build project does not produce any build
      * output.</p> </li> <li> <p> <code>S3</code>: The build project stores build
-     * output in Amazon Simple Storage Service (Amazon S3).</p> </li> </ul>
+     * output in Amazon S3.</p> </li> </ul>
      */
     inline void SetType(const ArtifactsType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -81,7 +81,7 @@ namespace Model
      * supported for <code>secondaryArtifacts</code>.</p>  </li> <li> <p>
      * <code>NO_ARTIFACTS</code>: The build project does not produce any build
      * output.</p> </li> <li> <p> <code>S3</code>: The build project stores build
-     * output in Amazon Simple Storage Service (Amazon S3).</p> </li> </ul>
+     * output in Amazon S3.</p> </li> </ul>
      */
     inline void SetType(ArtifactsType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -92,7 +92,7 @@ namespace Model
      * supported for <code>secondaryArtifacts</code>.</p>  </li> <li> <p>
      * <code>NO_ARTIFACTS</code>: The build project does not produce any build
      * output.</p> </li> <li> <p> <code>S3</code>: The build project stores build
-     * output in Amazon Simple Storage Service (Amazon S3).</p> </li> </ul>
+     * output in Amazon S3.</p> </li> </ul>
      */
     inline ProjectArtifacts& WithType(const ArtifactsType& value) { SetType(value); return *this;}
 
@@ -103,7 +103,7 @@ namespace Model
      * supported for <code>secondaryArtifacts</code>.</p>  </li> <li> <p>
      * <code>NO_ARTIFACTS</code>: The build project does not produce any build
      * output.</p> </li> <li> <p> <code>S3</code>: The build project stores build
-     * output in Amazon Simple Storage Service (Amazon S3).</p> </li> </ul>
+     * output in Amazon S3.</p> </li> </ul>
      */
     inline ProjectArtifacts& WithType(ArtifactsType&& value) { SetType(std::move(value)); return *this;}
 
@@ -796,33 +796,29 @@ namespace Model
 
     /**
      * <p> Set to true if you do not want your output artifacts encrypted. This option
-     * is valid only if your artifacts type is Amazon Simple Storage Service (Amazon
-     * S3). If this is set with another artifacts type, an invalidInputException is
-     * thrown. </p>
+     * is valid only if your artifacts type is Amazon S3. If this is set with another
+     * artifacts type, an invalidInputException is thrown. </p>
      */
     inline bool GetEncryptionDisabled() const{ return m_encryptionDisabled; }
 
     /**
      * <p> Set to true if you do not want your output artifacts encrypted. This option
-     * is valid only if your artifacts type is Amazon Simple Storage Service (Amazon
-     * S3). If this is set with another artifacts type, an invalidInputException is
-     * thrown. </p>
+     * is valid only if your artifacts type is Amazon S3. If this is set with another
+     * artifacts type, an invalidInputException is thrown. </p>
      */
     inline bool EncryptionDisabledHasBeenSet() const { return m_encryptionDisabledHasBeenSet; }
 
     /**
      * <p> Set to true if you do not want your output artifacts encrypted. This option
-     * is valid only if your artifacts type is Amazon Simple Storage Service (Amazon
-     * S3). If this is set with another artifacts type, an invalidInputException is
-     * thrown. </p>
+     * is valid only if your artifacts type is Amazon S3. If this is set with another
+     * artifacts type, an invalidInputException is thrown. </p>
      */
     inline void SetEncryptionDisabled(bool value) { m_encryptionDisabledHasBeenSet = true; m_encryptionDisabled = value; }
 
     /**
      * <p> Set to true if you do not want your output artifacts encrypted. This option
-     * is valid only if your artifacts type is Amazon Simple Storage Service (Amazon
-     * S3). If this is set with another artifacts type, an invalidInputException is
-     * thrown. </p>
+     * is valid only if your artifacts type is Amazon S3. If this is set with another
+     * artifacts type, an invalidInputException is thrown. </p>
      */
     inline ProjectArtifacts& WithEncryptionDisabled(bool value) { SetEncryptionDisabled(value); return *this;}
 

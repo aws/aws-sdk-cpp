@@ -45,42 +45,50 @@ namespace Model
 
 
     /**
-     * <p>List of input configurations for the processing job.</p>
+     * <p>An array of inputs configuring the data to download into the processing
+     * container.</p>
      */
     inline const Aws::Vector<ProcessingInput>& GetProcessingInputs() const{ return m_processingInputs; }
 
     /**
-     * <p>List of input configurations for the processing job.</p>
+     * <p>An array of inputs configuring the data to download into the processing
+     * container.</p>
      */
     inline bool ProcessingInputsHasBeenSet() const { return m_processingInputsHasBeenSet; }
 
     /**
-     * <p>List of input configurations for the processing job.</p>
+     * <p>An array of inputs configuring the data to download into the processing
+     * container.</p>
      */
     inline void SetProcessingInputs(const Aws::Vector<ProcessingInput>& value) { m_processingInputsHasBeenSet = true; m_processingInputs = value; }
 
     /**
-     * <p>List of input configurations for the processing job.</p>
+     * <p>An array of inputs configuring the data to download into the processing
+     * container.</p>
      */
     inline void SetProcessingInputs(Aws::Vector<ProcessingInput>&& value) { m_processingInputsHasBeenSet = true; m_processingInputs = std::move(value); }
 
     /**
-     * <p>List of input configurations for the processing job.</p>
+     * <p>An array of inputs configuring the data to download into the processing
+     * container.</p>
      */
     inline CreateProcessingJobRequest& WithProcessingInputs(const Aws::Vector<ProcessingInput>& value) { SetProcessingInputs(value); return *this;}
 
     /**
-     * <p>List of input configurations for the processing job.</p>
+     * <p>An array of inputs configuring the data to download into the processing
+     * container.</p>
      */
     inline CreateProcessingJobRequest& WithProcessingInputs(Aws::Vector<ProcessingInput>&& value) { SetProcessingInputs(std::move(value)); return *this;}
 
     /**
-     * <p>List of input configurations for the processing job.</p>
+     * <p>An array of inputs configuring the data to download into the processing
+     * container.</p>
      */
     inline CreateProcessingJobRequest& AddProcessingInputs(const ProcessingInput& value) { m_processingInputsHasBeenSet = true; m_processingInputs.push_back(value); return *this; }
 
     /**
-     * <p>List of input configurations for the processing job.</p>
+     * <p>An array of inputs configuring the data to download into the processing
+     * container.</p>
      */
     inline CreateProcessingJobRequest& AddProcessingInputs(ProcessingInput&& value) { m_processingInputsHasBeenSet = true; m_processingInputs.push_back(std::move(value)); return *this; }
 
@@ -271,98 +279,123 @@ namespace Model
 
 
     /**
-     * <p>Sets the environment variables in the Docker container.</p>
+     * <p>The environment variables to set in the Docker container. Up to 100 key and
+     * values entries in the map are supported.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const{ return m_environment; }
 
     /**
-     * <p>Sets the environment variables in the Docker container.</p>
+     * <p>The environment variables to set in the Docker container. Up to 100 key and
+     * values entries in the map are supported.</p>
      */
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
 
     /**
-     * <p>Sets the environment variables in the Docker container.</p>
+     * <p>The environment variables to set in the Docker container. Up to 100 key and
+     * values entries in the map are supported.</p>
      */
     inline void SetEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { m_environmentHasBeenSet = true; m_environment = value; }
 
     /**
-     * <p>Sets the environment variables in the Docker container.</p>
+     * <p>The environment variables to set in the Docker container. Up to 100 key and
+     * values entries in the map are supported.</p>
      */
     inline void SetEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
 
     /**
-     * <p>Sets the environment variables in the Docker container.</p>
+     * <p>The environment variables to set in the Docker container. Up to 100 key and
+     * values entries in the map are supported.</p>
      */
     inline CreateProcessingJobRequest& WithEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { SetEnvironment(value); return *this;}
 
     /**
-     * <p>Sets the environment variables in the Docker container.</p>
+     * <p>The environment variables to set in the Docker container. Up to 100 key and
+     * values entries in the map are supported.</p>
      */
     inline CreateProcessingJobRequest& WithEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { SetEnvironment(std::move(value)); return *this;}
 
     /**
-     * <p>Sets the environment variables in the Docker container.</p>
+     * <p>The environment variables to set in the Docker container. Up to 100 key and
+     * values entries in the map are supported.</p>
      */
     inline CreateProcessingJobRequest& AddEnvironment(const Aws::String& key, const Aws::String& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
 
     /**
-     * <p>Sets the environment variables in the Docker container.</p>
+     * <p>The environment variables to set in the Docker container. Up to 100 key and
+     * values entries in the map are supported.</p>
      */
     inline CreateProcessingJobRequest& AddEnvironment(Aws::String&& key, const Aws::String& value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Sets the environment variables in the Docker container.</p>
+     * <p>The environment variables to set in the Docker container. Up to 100 key and
+     * values entries in the map are supported.</p>
      */
     inline CreateProcessingJobRequest& AddEnvironment(const Aws::String& key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Sets the environment variables in the Docker container.</p>
+     * <p>The environment variables to set in the Docker container. Up to 100 key and
+     * values entries in the map are supported.</p>
      */
     inline CreateProcessingJobRequest& AddEnvironment(Aws::String&& key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Sets the environment variables in the Docker container.</p>
+     * <p>The environment variables to set in the Docker container. Up to 100 key and
+     * values entries in the map are supported.</p>
      */
     inline CreateProcessingJobRequest& AddEnvironment(const char* key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Sets the environment variables in the Docker container.</p>
+     * <p>The environment variables to set in the Docker container. Up to 100 key and
+     * values entries in the map are supported.</p>
      */
     inline CreateProcessingJobRequest& AddEnvironment(Aws::String&& key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Sets the environment variables in the Docker container.</p>
+     * <p>The environment variables to set in the Docker container. Up to 100 key and
+     * values entries in the map are supported.</p>
      */
     inline CreateProcessingJobRequest& AddEnvironment(const char* key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
 
 
     /**
-     * <p>Networking options for a processing job.</p>
+     * <p>Networking options for a processing job, such as whether to allow inbound and
+     * outbound network calls to and from processing containers, and the VPC subnets
+     * and security groups to use for VPC-enabled processing jobs.</p>
      */
     inline const NetworkConfig& GetNetworkConfig() const{ return m_networkConfig; }
 
     /**
-     * <p>Networking options for a processing job.</p>
+     * <p>Networking options for a processing job, such as whether to allow inbound and
+     * outbound network calls to and from processing containers, and the VPC subnets
+     * and security groups to use for VPC-enabled processing jobs.</p>
      */
     inline bool NetworkConfigHasBeenSet() const { return m_networkConfigHasBeenSet; }
 
     /**
-     * <p>Networking options for a processing job.</p>
+     * <p>Networking options for a processing job, such as whether to allow inbound and
+     * outbound network calls to and from processing containers, and the VPC subnets
+     * and security groups to use for VPC-enabled processing jobs.</p>
      */
     inline void SetNetworkConfig(const NetworkConfig& value) { m_networkConfigHasBeenSet = true; m_networkConfig = value; }
 
     /**
-     * <p>Networking options for a processing job.</p>
+     * <p>Networking options for a processing job, such as whether to allow inbound and
+     * outbound network calls to and from processing containers, and the VPC subnets
+     * and security groups to use for VPC-enabled processing jobs.</p>
      */
     inline void SetNetworkConfig(NetworkConfig&& value) { m_networkConfigHasBeenSet = true; m_networkConfig = std::move(value); }
 
     /**
-     * <p>Networking options for a processing job.</p>
+     * <p>Networking options for a processing job, such as whether to allow inbound and
+     * outbound network calls to and from processing containers, and the VPC subnets
+     * and security groups to use for VPC-enabled processing jobs.</p>
      */
     inline CreateProcessingJobRequest& WithNetworkConfig(const NetworkConfig& value) { SetNetworkConfig(value); return *this;}
 
     /**
-     * <p>Networking options for a processing job.</p>
+     * <p>Networking options for a processing job, such as whether to allow inbound and
+     * outbound network calls to and from processing containers, and the VPC subnets
+     * and security groups to use for VPC-enabled processing jobs.</p>
      */
     inline CreateProcessingJobRequest& WithNetworkConfig(NetworkConfig&& value) { SetNetworkConfig(std::move(value)); return *this;}
 

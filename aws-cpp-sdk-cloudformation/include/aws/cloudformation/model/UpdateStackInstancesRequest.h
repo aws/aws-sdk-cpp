@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudformation/model/DeploymentTargets.h>
 #include <aws/cloudformation/model/StackSetOperationPreferences.h>
+#include <aws/cloudformation/model/CallAs.h>
 #include <aws/cloudformation/model/Parameter.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -91,150 +92,144 @@ namespace Model
 
 
     /**
-     * <p>[<code>Self-managed</code> permissions] The names of one or more AWS accounts
-     * for which you want to update parameter values for stack instances. The
-     * overridden parameter values will be applied to all stack instances in the
-     * specified accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
+     * <p>[Self-managed permissions] The names of one or more AWS accounts for which
+     * you want to update parameter values for stack instances. The overridden
+     * parameter values will be applied to all stack instances in the specified
+     * accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
      * <code>DeploymentTargets</code>, but not both.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccounts() const{ return m_accounts; }
 
     /**
-     * <p>[<code>Self-managed</code> permissions] The names of one or more AWS accounts
-     * for which you want to update parameter values for stack instances. The
-     * overridden parameter values will be applied to all stack instances in the
-     * specified accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
+     * <p>[Self-managed permissions] The names of one or more AWS accounts for which
+     * you want to update parameter values for stack instances. The overridden
+     * parameter values will be applied to all stack instances in the specified
+     * accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
      * <code>DeploymentTargets</code>, but not both.</p>
      */
     inline bool AccountsHasBeenSet() const { return m_accountsHasBeenSet; }
 
     /**
-     * <p>[<code>Self-managed</code> permissions] The names of one or more AWS accounts
-     * for which you want to update parameter values for stack instances. The
-     * overridden parameter values will be applied to all stack instances in the
-     * specified accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
+     * <p>[Self-managed permissions] The names of one or more AWS accounts for which
+     * you want to update parameter values for stack instances. The overridden
+     * parameter values will be applied to all stack instances in the specified
+     * accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
      * <code>DeploymentTargets</code>, but not both.</p>
      */
     inline void SetAccounts(const Aws::Vector<Aws::String>& value) { m_accountsHasBeenSet = true; m_accounts = value; }
 
     /**
-     * <p>[<code>Self-managed</code> permissions] The names of one or more AWS accounts
-     * for which you want to update parameter values for stack instances. The
-     * overridden parameter values will be applied to all stack instances in the
-     * specified accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
+     * <p>[Self-managed permissions] The names of one or more AWS accounts for which
+     * you want to update parameter values for stack instances. The overridden
+     * parameter values will be applied to all stack instances in the specified
+     * accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
      * <code>DeploymentTargets</code>, but not both.</p>
      */
     inline void SetAccounts(Aws::Vector<Aws::String>&& value) { m_accountsHasBeenSet = true; m_accounts = std::move(value); }
 
     /**
-     * <p>[<code>Self-managed</code> permissions] The names of one or more AWS accounts
-     * for which you want to update parameter values for stack instances. The
-     * overridden parameter values will be applied to all stack instances in the
-     * specified accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
+     * <p>[Self-managed permissions] The names of one or more AWS accounts for which
+     * you want to update parameter values for stack instances. The overridden
+     * parameter values will be applied to all stack instances in the specified
+     * accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
      * <code>DeploymentTargets</code>, but not both.</p>
      */
     inline UpdateStackInstancesRequest& WithAccounts(const Aws::Vector<Aws::String>& value) { SetAccounts(value); return *this;}
 
     /**
-     * <p>[<code>Self-managed</code> permissions] The names of one or more AWS accounts
-     * for which you want to update parameter values for stack instances. The
-     * overridden parameter values will be applied to all stack instances in the
-     * specified accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
+     * <p>[Self-managed permissions] The names of one or more AWS accounts for which
+     * you want to update parameter values for stack instances. The overridden
+     * parameter values will be applied to all stack instances in the specified
+     * accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
      * <code>DeploymentTargets</code>, but not both.</p>
      */
     inline UpdateStackInstancesRequest& WithAccounts(Aws::Vector<Aws::String>&& value) { SetAccounts(std::move(value)); return *this;}
 
     /**
-     * <p>[<code>Self-managed</code> permissions] The names of one or more AWS accounts
-     * for which you want to update parameter values for stack instances. The
-     * overridden parameter values will be applied to all stack instances in the
-     * specified accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
+     * <p>[Self-managed permissions] The names of one or more AWS accounts for which
+     * you want to update parameter values for stack instances. The overridden
+     * parameter values will be applied to all stack instances in the specified
+     * accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
      * <code>DeploymentTargets</code>, but not both.</p>
      */
     inline UpdateStackInstancesRequest& AddAccounts(const Aws::String& value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
 
     /**
-     * <p>[<code>Self-managed</code> permissions] The names of one or more AWS accounts
-     * for which you want to update parameter values for stack instances. The
-     * overridden parameter values will be applied to all stack instances in the
-     * specified accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
+     * <p>[Self-managed permissions] The names of one or more AWS accounts for which
+     * you want to update parameter values for stack instances. The overridden
+     * parameter values will be applied to all stack instances in the specified
+     * accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
      * <code>DeploymentTargets</code>, but not both.</p>
      */
     inline UpdateStackInstancesRequest& AddAccounts(Aws::String&& value) { m_accountsHasBeenSet = true; m_accounts.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>[<code>Self-managed</code> permissions] The names of one or more AWS accounts
-     * for which you want to update parameter values for stack instances. The
-     * overridden parameter values will be applied to all stack instances in the
-     * specified accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
+     * <p>[Self-managed permissions] The names of one or more AWS accounts for which
+     * you want to update parameter values for stack instances. The overridden
+     * parameter values will be applied to all stack instances in the specified
+     * accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
      * <code>DeploymentTargets</code>, but not both.</p>
      */
     inline UpdateStackInstancesRequest& AddAccounts(const char* value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
 
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts for
-     * which you want to update parameter values for stack instances. If your update
-     * targets OUs, the overridden parameter values only apply to the accounts that are
-     * currently in the target OUs and their child OUs. Accounts added to the target
-     * OUs and their child OUs in the future won't use the overridden values.</p>
-     * <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but
-     * not both.</p>
+     * <p>[Service-managed permissions] The AWS Organizations accounts for which you
+     * want to update parameter values for stack instances. If your update targets OUs,
+     * the overridden parameter values only apply to the accounts that are currently in
+     * the target OUs and their child OUs. Accounts added to the target OUs and their
+     * child OUs in the future won't use the overridden values.</p> <p>You can specify
+     * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline const DeploymentTargets& GetDeploymentTargets() const{ return m_deploymentTargets; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts for
-     * which you want to update parameter values for stack instances. If your update
-     * targets OUs, the overridden parameter values only apply to the accounts that are
-     * currently in the target OUs and their child OUs. Accounts added to the target
-     * OUs and their child OUs in the future won't use the overridden values.</p>
-     * <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but
-     * not both.</p>
+     * <p>[Service-managed permissions] The AWS Organizations accounts for which you
+     * want to update parameter values for stack instances. If your update targets OUs,
+     * the overridden parameter values only apply to the accounts that are currently in
+     * the target OUs and their child OUs. Accounts added to the target OUs and their
+     * child OUs in the future won't use the overridden values.</p> <p>You can specify
+     * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline bool DeploymentTargetsHasBeenSet() const { return m_deploymentTargetsHasBeenSet; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts for
-     * which you want to update parameter values for stack instances. If your update
-     * targets OUs, the overridden parameter values only apply to the accounts that are
-     * currently in the target OUs and their child OUs. Accounts added to the target
-     * OUs and their child OUs in the future won't use the overridden values.</p>
-     * <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but
-     * not both.</p>
+     * <p>[Service-managed permissions] The AWS Organizations accounts for which you
+     * want to update parameter values for stack instances. If your update targets OUs,
+     * the overridden parameter values only apply to the accounts that are currently in
+     * the target OUs and their child OUs. Accounts added to the target OUs and their
+     * child OUs in the future won't use the overridden values.</p> <p>You can specify
+     * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline void SetDeploymentTargets(const DeploymentTargets& value) { m_deploymentTargetsHasBeenSet = true; m_deploymentTargets = value; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts for
-     * which you want to update parameter values for stack instances. If your update
-     * targets OUs, the overridden parameter values only apply to the accounts that are
-     * currently in the target OUs and their child OUs. Accounts added to the target
-     * OUs and their child OUs in the future won't use the overridden values.</p>
-     * <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but
-     * not both.</p>
+     * <p>[Service-managed permissions] The AWS Organizations accounts for which you
+     * want to update parameter values for stack instances. If your update targets OUs,
+     * the overridden parameter values only apply to the accounts that are currently in
+     * the target OUs and their child OUs. Accounts added to the target OUs and their
+     * child OUs in the future won't use the overridden values.</p> <p>You can specify
+     * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline void SetDeploymentTargets(DeploymentTargets&& value) { m_deploymentTargetsHasBeenSet = true; m_deploymentTargets = std::move(value); }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts for
-     * which you want to update parameter values for stack instances. If your update
-     * targets OUs, the overridden parameter values only apply to the accounts that are
-     * currently in the target OUs and their child OUs. Accounts added to the target
-     * OUs and their child OUs in the future won't use the overridden values.</p>
-     * <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but
-     * not both.</p>
+     * <p>[Service-managed permissions] The AWS Organizations accounts for which you
+     * want to update parameter values for stack instances. If your update targets OUs,
+     * the overridden parameter values only apply to the accounts that are currently in
+     * the target OUs and their child OUs. Accounts added to the target OUs and their
+     * child OUs in the future won't use the overridden values.</p> <p>You can specify
+     * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline UpdateStackInstancesRequest& WithDeploymentTargets(const DeploymentTargets& value) { SetDeploymentTargets(value); return *this;}
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts for
-     * which you want to update parameter values for stack instances. If your update
-     * targets OUs, the overridden parameter values only apply to the accounts that are
-     * currently in the target OUs and their child OUs. Accounts added to the target
-     * OUs and their child OUs in the future won't use the overridden values.</p>
-     * <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but
-     * not both.</p>
+     * <p>[Service-managed permissions] The AWS Organizations accounts for which you
+     * want to update parameter values for stack instances. If your update targets OUs,
+     * the overridden parameter values only apply to the accounts that are currently in
+     * the target OUs and their child OUs. Accounts added to the target OUs and their
+     * child OUs in the future won't use the overridden values.</p> <p>You can specify
+     * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline UpdateStackInstancesRequest& WithDeploymentTargets(DeploymentTargets&& value) { SetDeploymentTargets(std::move(value)); return *this;}
 
@@ -655,6 +650,103 @@ namespace Model
      */
     inline UpdateStackInstancesRequest& WithOperationId(const char* value) { SetOperationId(value); return *this;}
 
+
+    /**
+     * <p>[Service-managed permissions] Specifies whether you are acting as an account
+     * administrator in the organization's management account or as a delegated
+     * administrator in a member account.</p> <p>By default, <code>SELF</code> is
+     * specified. Use <code>SELF</code> for stack sets with self-managed
+     * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
+     * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS
+     * account must be registered as a delegated administrator in the management
+     * account. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
+     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * </li> </ul>
+     */
+    inline const CallAs& GetCallAs() const{ return m_callAs; }
+
+    /**
+     * <p>[Service-managed permissions] Specifies whether you are acting as an account
+     * administrator in the organization's management account or as a delegated
+     * administrator in a member account.</p> <p>By default, <code>SELF</code> is
+     * specified. Use <code>SELF</code> for stack sets with self-managed
+     * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
+     * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS
+     * account must be registered as a delegated administrator in the management
+     * account. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
+     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * </li> </ul>
+     */
+    inline bool CallAsHasBeenSet() const { return m_callAsHasBeenSet; }
+
+    /**
+     * <p>[Service-managed permissions] Specifies whether you are acting as an account
+     * administrator in the organization's management account or as a delegated
+     * administrator in a member account.</p> <p>By default, <code>SELF</code> is
+     * specified. Use <code>SELF</code> for stack sets with self-managed
+     * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
+     * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS
+     * account must be registered as a delegated administrator in the management
+     * account. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
+     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * </li> </ul>
+     */
+    inline void SetCallAs(const CallAs& value) { m_callAsHasBeenSet = true; m_callAs = value; }
+
+    /**
+     * <p>[Service-managed permissions] Specifies whether you are acting as an account
+     * administrator in the organization's management account or as a delegated
+     * administrator in a member account.</p> <p>By default, <code>SELF</code> is
+     * specified. Use <code>SELF</code> for stack sets with self-managed
+     * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
+     * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS
+     * account must be registered as a delegated administrator in the management
+     * account. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
+     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * </li> </ul>
+     */
+    inline void SetCallAs(CallAs&& value) { m_callAsHasBeenSet = true; m_callAs = std::move(value); }
+
+    /**
+     * <p>[Service-managed permissions] Specifies whether you are acting as an account
+     * administrator in the organization's management account or as a delegated
+     * administrator in a member account.</p> <p>By default, <code>SELF</code> is
+     * specified. Use <code>SELF</code> for stack sets with self-managed
+     * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
+     * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS
+     * account must be registered as a delegated administrator in the management
+     * account. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
+     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * </li> </ul>
+     */
+    inline UpdateStackInstancesRequest& WithCallAs(const CallAs& value) { SetCallAs(value); return *this;}
+
+    /**
+     * <p>[Service-managed permissions] Specifies whether you are acting as an account
+     * administrator in the organization's management account or as a delegated
+     * administrator in a member account.</p> <p>By default, <code>SELF</code> is
+     * specified. Use <code>SELF</code> for stack sets with self-managed
+     * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
+     * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS
+     * account must be registered as a delegated administrator in the management
+     * account. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
+     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * </li> </ul>
+     */
+    inline UpdateStackInstancesRequest& WithCallAs(CallAs&& value) { SetCallAs(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_stackSetName;
@@ -677,6 +769,9 @@ namespace Model
 
     Aws::String m_operationId;
     bool m_operationIdHasBeenSet;
+
+    CallAs m_callAs;
+    bool m_callAsHasBeenSet;
   };
 
 } // namespace Model

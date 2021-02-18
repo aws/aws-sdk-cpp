@@ -283,49 +283,49 @@ namespace Model
 
     /**
      * <p>Additional information about the batch build phase. Especially to help
-     * troubleshoot a failed btach build.</p>
+     * troubleshoot a failed batch build.</p>
      */
     inline const Aws::Vector<PhaseContext>& GetContexts() const{ return m_contexts; }
 
     /**
      * <p>Additional information about the batch build phase. Especially to help
-     * troubleshoot a failed btach build.</p>
+     * troubleshoot a failed batch build.</p>
      */
     inline bool ContextsHasBeenSet() const { return m_contextsHasBeenSet; }
 
     /**
      * <p>Additional information about the batch build phase. Especially to help
-     * troubleshoot a failed btach build.</p>
+     * troubleshoot a failed batch build.</p>
      */
     inline void SetContexts(const Aws::Vector<PhaseContext>& value) { m_contextsHasBeenSet = true; m_contexts = value; }
 
     /**
      * <p>Additional information about the batch build phase. Especially to help
-     * troubleshoot a failed btach build.</p>
+     * troubleshoot a failed batch build.</p>
      */
     inline void SetContexts(Aws::Vector<PhaseContext>&& value) { m_contextsHasBeenSet = true; m_contexts = std::move(value); }
 
     /**
      * <p>Additional information about the batch build phase. Especially to help
-     * troubleshoot a failed btach build.</p>
+     * troubleshoot a failed batch build.</p>
      */
     inline BuildBatchPhase& WithContexts(const Aws::Vector<PhaseContext>& value) { SetContexts(value); return *this;}
 
     /**
      * <p>Additional information about the batch build phase. Especially to help
-     * troubleshoot a failed btach build.</p>
+     * troubleshoot a failed batch build.</p>
      */
     inline BuildBatchPhase& WithContexts(Aws::Vector<PhaseContext>&& value) { SetContexts(std::move(value)); return *this;}
 
     /**
      * <p>Additional information about the batch build phase. Especially to help
-     * troubleshoot a failed btach build.</p>
+     * troubleshoot a failed batch build.</p>
      */
     inline BuildBatchPhase& AddContexts(const PhaseContext& value) { m_contextsHasBeenSet = true; m_contexts.push_back(value); return *this; }
 
     /**
      * <p>Additional information about the batch build phase. Especially to help
-     * troubleshoot a failed btach build.</p>
+     * troubleshoot a failed batch build.</p>
      */
     inline BuildBatchPhase& AddContexts(PhaseContext&& value) { m_contextsHasBeenSet = true; m_contexts.push_back(std::move(value)); return *this; }
 

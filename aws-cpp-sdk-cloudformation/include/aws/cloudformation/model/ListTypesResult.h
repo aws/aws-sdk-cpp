@@ -37,43 +37,43 @@ namespace Model
 
     /**
      * <p>A list of <code>TypeSummary</code> structures that contain information about
-     * the specified types.</p>
+     * the specified extensions.</p>
      */
     inline const Aws::Vector<TypeSummary>& GetTypeSummaries() const{ return m_typeSummaries; }
 
     /**
      * <p>A list of <code>TypeSummary</code> structures that contain information about
-     * the specified types.</p>
+     * the specified extensions.</p>
      */
     inline void SetTypeSummaries(const Aws::Vector<TypeSummary>& value) { m_typeSummaries = value; }
 
     /**
      * <p>A list of <code>TypeSummary</code> structures that contain information about
-     * the specified types.</p>
+     * the specified extensions.</p>
      */
     inline void SetTypeSummaries(Aws::Vector<TypeSummary>&& value) { m_typeSummaries = std::move(value); }
 
     /**
      * <p>A list of <code>TypeSummary</code> structures that contain information about
-     * the specified types.</p>
+     * the specified extensions.</p>
      */
     inline ListTypesResult& WithTypeSummaries(const Aws::Vector<TypeSummary>& value) { SetTypeSummaries(value); return *this;}
 
     /**
      * <p>A list of <code>TypeSummary</code> structures that contain information about
-     * the specified types.</p>
+     * the specified extensions.</p>
      */
     inline ListTypesResult& WithTypeSummaries(Aws::Vector<TypeSummary>&& value) { SetTypeSummaries(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>TypeSummary</code> structures that contain information about
-     * the specified types.</p>
+     * the specified extensions.</p>
      */
     inline ListTypesResult& AddTypeSummaries(const TypeSummary& value) { m_typeSummaries.push_back(value); return *this; }
 
     /**
      * <p>A list of <code>TypeSummary</code> structures that contain information about
-     * the specified types.</p>
+     * the specified extensions.</p>
      */
     inline ListTypesResult& AddTypeSummaries(TypeSummary&& value) { m_typeSummaries.push_back(std::move(value)); return *this; }
 

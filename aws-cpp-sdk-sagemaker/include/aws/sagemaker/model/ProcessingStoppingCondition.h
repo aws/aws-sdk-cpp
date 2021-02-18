@@ -22,8 +22,9 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a time limit for how long the processing job is allowed to
-   * run.</p><p><h3>See Also:</h3>   <a
+   * <p>Configures conditions under which the processing job should be stopped, such
+   * as how long the processing job has been running. After the condition is met, the
+   * processing job is stopped.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProcessingStoppingCondition">AWS
    * API Reference</a></p>
    */

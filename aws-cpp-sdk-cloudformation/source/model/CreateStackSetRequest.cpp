@@ -23,6 +23,8 @@ CreateStackSetRequest::CreateStackSetRequest() :
     m_permissionModel(PermissionModels::NOT_SET),
     m_permissionModelHasBeenSet(false),
     m_autoDeploymentHasBeenSet(false),
+    m_callAs(CallAs::NOT_SET),
+    m_callAsHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true)
 {
@@ -101,6 +103,11 @@ Aws::String CreateStackSetRequest::SerializePayload() const
   if(m_autoDeploymentHasBeenSet)
   {
     m_autoDeployment.OutputToStream(ss, "AutoDeployment");
+  }
+
+  if(m_callAsHasBeenSet)
+  {
+    ss << "CallAs=" << CallAsMapper::GetNameForCallAs(m_callAs) << "&";
   }
 
   if(m_clientRequestTokenHasBeenSet)

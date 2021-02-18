@@ -187,73 +187,73 @@ namespace Model
 
     /**
      * <p>The location of the file that contains the revised template. The URL must
-     * point to a template (max size: 460,800 bytes) that is located in an S3 bucket.
-     * AWS CloudFormation generates the change set by comparing this template with the
-     * stack that you specified.</p> <p>Conditional: You must specify only
-     * <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
+     * point to a template (max size: 460,800 bytes) that is located in an S3 bucket or
+     * a Systems Manager document. AWS CloudFormation generates the change set by
+     * comparing this template with the stack that you specified.</p> <p>Conditional:
+     * You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
      */
     inline const Aws::String& GetTemplateURL() const{ return m_templateURL; }
 
     /**
      * <p>The location of the file that contains the revised template. The URL must
-     * point to a template (max size: 460,800 bytes) that is located in an S3 bucket.
-     * AWS CloudFormation generates the change set by comparing this template with the
-     * stack that you specified.</p> <p>Conditional: You must specify only
-     * <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
+     * point to a template (max size: 460,800 bytes) that is located in an S3 bucket or
+     * a Systems Manager document. AWS CloudFormation generates the change set by
+     * comparing this template with the stack that you specified.</p> <p>Conditional:
+     * You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
      */
     inline bool TemplateURLHasBeenSet() const { return m_templateURLHasBeenSet; }
 
     /**
      * <p>The location of the file that contains the revised template. The URL must
-     * point to a template (max size: 460,800 bytes) that is located in an S3 bucket.
-     * AWS CloudFormation generates the change set by comparing this template with the
-     * stack that you specified.</p> <p>Conditional: You must specify only
-     * <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
+     * point to a template (max size: 460,800 bytes) that is located in an S3 bucket or
+     * a Systems Manager document. AWS CloudFormation generates the change set by
+     * comparing this template with the stack that you specified.</p> <p>Conditional:
+     * You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
      */
     inline void SetTemplateURL(const Aws::String& value) { m_templateURLHasBeenSet = true; m_templateURL = value; }
 
     /**
      * <p>The location of the file that contains the revised template. The URL must
-     * point to a template (max size: 460,800 bytes) that is located in an S3 bucket.
-     * AWS CloudFormation generates the change set by comparing this template with the
-     * stack that you specified.</p> <p>Conditional: You must specify only
-     * <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
+     * point to a template (max size: 460,800 bytes) that is located in an S3 bucket or
+     * a Systems Manager document. AWS CloudFormation generates the change set by
+     * comparing this template with the stack that you specified.</p> <p>Conditional:
+     * You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
      */
     inline void SetTemplateURL(Aws::String&& value) { m_templateURLHasBeenSet = true; m_templateURL = std::move(value); }
 
     /**
      * <p>The location of the file that contains the revised template. The URL must
-     * point to a template (max size: 460,800 bytes) that is located in an S3 bucket.
-     * AWS CloudFormation generates the change set by comparing this template with the
-     * stack that you specified.</p> <p>Conditional: You must specify only
-     * <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
+     * point to a template (max size: 460,800 bytes) that is located in an S3 bucket or
+     * a Systems Manager document. AWS CloudFormation generates the change set by
+     * comparing this template with the stack that you specified.</p> <p>Conditional:
+     * You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
      */
     inline void SetTemplateURL(const char* value) { m_templateURLHasBeenSet = true; m_templateURL.assign(value); }
 
     /**
      * <p>The location of the file that contains the revised template. The URL must
-     * point to a template (max size: 460,800 bytes) that is located in an S3 bucket.
-     * AWS CloudFormation generates the change set by comparing this template with the
-     * stack that you specified.</p> <p>Conditional: You must specify only
-     * <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
+     * point to a template (max size: 460,800 bytes) that is located in an S3 bucket or
+     * a Systems Manager document. AWS CloudFormation generates the change set by
+     * comparing this template with the stack that you specified.</p> <p>Conditional:
+     * You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
      */
     inline CreateChangeSetRequest& WithTemplateURL(const Aws::String& value) { SetTemplateURL(value); return *this;}
 
     /**
      * <p>The location of the file that contains the revised template. The URL must
-     * point to a template (max size: 460,800 bytes) that is located in an S3 bucket.
-     * AWS CloudFormation generates the change set by comparing this template with the
-     * stack that you specified.</p> <p>Conditional: You must specify only
-     * <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
+     * point to a template (max size: 460,800 bytes) that is located in an S3 bucket or
+     * a Systems Manager document. AWS CloudFormation generates the change set by
+     * comparing this template with the stack that you specified.</p> <p>Conditional:
+     * You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
      */
     inline CreateChangeSetRequest& WithTemplateURL(Aws::String&& value) { SetTemplateURL(std::move(value)); return *this;}
 
     /**
      * <p>The location of the file that contains the revised template. The URL must
-     * point to a template (max size: 460,800 bytes) that is located in an S3 bucket.
-     * AWS CloudFormation generates the change set by comparing this template with the
-     * stack that you specified.</p> <p>Conditional: You must specify only
-     * <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
+     * point to a template (max size: 460,800 bytes) that is located in an S3 bucket or
+     * a Systems Manager document. AWS CloudFormation generates the change set by
+     * comparing this template with the stack that you specified.</p> <p>Conditional:
+     * You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
      */
     inline CreateChangeSetRequest& WithTemplateURL(const char* value) { SetTemplateURL(value); return *this;}
 

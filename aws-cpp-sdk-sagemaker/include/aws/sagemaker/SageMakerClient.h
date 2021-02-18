@@ -3198,8 +3198,9 @@ namespace Model
          * and granted access to all of the Apps and files associated with the Domain's
          * Amazon Elastic File System (EFS) volume. This operation can only be called when
          * the authentication mode equals IAM. </p>  <p>The URL that you get from a
-         * call to <code>CreatePresignedDomainUrl</code> is valid only for 5 minutes. If
-         * you try to use the URL after the 5-minute limit expires, you are directed to the
+         * call to <code>CreatePresignedDomainUrl</code> has a default timeout of 5
+         * minutes. You can configure this value using <code>ExpiresInSeconds</code>. If
+         * you try to use the URL after the timeout limit expires, you are directed to the
          * AWS console sign-in page.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedDomainUrl">AWS
          * API Reference</a></p>
@@ -3212,8 +3213,9 @@ namespace Model
          * and granted access to all of the Apps and files associated with the Domain's
          * Amazon Elastic File System (EFS) volume. This operation can only be called when
          * the authentication mode equals IAM. </p>  <p>The URL that you get from a
-         * call to <code>CreatePresignedDomainUrl</code> is valid only for 5 minutes. If
-         * you try to use the URL after the 5-minute limit expires, you are directed to the
+         * call to <code>CreatePresignedDomainUrl</code> has a default timeout of 5
+         * minutes. You can configure this value using <code>ExpiresInSeconds</code>. If
+         * you try to use the URL after the timeout limit expires, you are directed to the
          * AWS console sign-in page.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedDomainUrl">AWS
          * API Reference</a></p>
@@ -3228,8 +3230,9 @@ namespace Model
          * and granted access to all of the Apps and files associated with the Domain's
          * Amazon Elastic File System (EFS) volume. This operation can only be called when
          * the authentication mode equals IAM. </p>  <p>The URL that you get from a
-         * call to <code>CreatePresignedDomainUrl</code> is valid only for 5 minutes. If
-         * you try to use the URL after the 5-minute limit expires, you are directed to the
+         * call to <code>CreatePresignedDomainUrl</code> has a default timeout of 5
+         * minutes. You can configure this value using <code>ExpiresInSeconds</code>. If
+         * you try to use the URL after the timeout limit expires, you are directed to the
          * AWS console sign-in page.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedDomainUrl">AWS
          * API Reference</a></p>
@@ -7753,14 +7756,40 @@ namespace Model
         virtual void ListTagsAsync(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists training jobs.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists training jobs.</p>  <p>When <code>StatusEquals</code> and
+         * <code>MaxResults</code> are set at the same time, the <code>MaxResults</code>
+         * number of training jobs are first retrieved ignoring the
+         * <code>StatusEquals</code> parameter and then they are filtered by the
+         * <code>StatusEquals</code> parameter, which is returned as a response. For
+         * example, if <code>ListTrainingJobs</code> is invoked with the following
+         * parameters:</p> <p> <code>{ ... MaxResults: 100, StatusEquals: InProgress ...
+         * }</code> </p> <p>Then, 100 trainings jobs with any status including those other
+         * than <code>InProgress</code> are selected first (sorted according the creation
+         * time, from the latest to the oldest) and those with status
+         * <code>InProgress</code> are returned.</p> <p>You can quickly test the API using
+         * the following AWS CLI code.</p> <p> <code>aws sagemaker list-training-jobs
+         * --max-results 100 --status-equals InProgress</code> </p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobs">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTrainingJobsOutcome ListTrainingJobs(const Model::ListTrainingJobsRequest& request) const;
 
         /**
-         * <p>Lists training jobs.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists training jobs.</p>  <p>When <code>StatusEquals</code> and
+         * <code>MaxResults</code> are set at the same time, the <code>MaxResults</code>
+         * number of training jobs are first retrieved ignoring the
+         * <code>StatusEquals</code> parameter and then they are filtered by the
+         * <code>StatusEquals</code> parameter, which is returned as a response. For
+         * example, if <code>ListTrainingJobs</code> is invoked with the following
+         * parameters:</p> <p> <code>{ ... MaxResults: 100, StatusEquals: InProgress ...
+         * }</code> </p> <p>Then, 100 trainings jobs with any status including those other
+         * than <code>InProgress</code> are selected first (sorted according the creation
+         * time, from the latest to the oldest) and those with status
+         * <code>InProgress</code> are returned.</p> <p>You can quickly test the API using
+         * the following AWS CLI code.</p> <p> <code>aws sagemaker list-training-jobs
+         * --max-results 100 --status-equals InProgress</code> </p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobs">AWS
          * API Reference</a></p>
          *
@@ -7769,7 +7798,20 @@ namespace Model
         virtual Model::ListTrainingJobsOutcomeCallable ListTrainingJobsCallable(const Model::ListTrainingJobsRequest& request) const;
 
         /**
-         * <p>Lists training jobs.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists training jobs.</p>  <p>When <code>StatusEquals</code> and
+         * <code>MaxResults</code> are set at the same time, the <code>MaxResults</code>
+         * number of training jobs are first retrieved ignoring the
+         * <code>StatusEquals</code> parameter and then they are filtered by the
+         * <code>StatusEquals</code> parameter, which is returned as a response. For
+         * example, if <code>ListTrainingJobs</code> is invoked with the following
+         * parameters:</p> <p> <code>{ ... MaxResults: 100, StatusEquals: InProgress ...
+         * }</code> </p> <p>Then, 100 trainings jobs with any status including those other
+         * than <code>InProgress</code> are selected first (sorted according the creation
+         * time, from the latest to the oldest) and those with status
+         * <code>InProgress</code> are returned.</p> <p>You can quickly test the API using
+         * the following AWS CLI code.</p> <p> <code>aws sagemaker list-training-jobs
+         * --max-results 100 --status-equals InProgress</code> </p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobs">AWS
          * API Reference</a></p>
          *

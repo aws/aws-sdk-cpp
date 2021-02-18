@@ -81,6 +81,63 @@ namespace Model
 
 
     /**
+     * <p>The AWS account identifier of the owner of the Amazon S3 bucket. This allows
+     * report data to be exported to an Amazon S3 bucket that is owned by an account
+     * other than the account running the build.</p>
+     */
+    inline const Aws::String& GetBucketOwner() const{ return m_bucketOwner; }
+
+    /**
+     * <p>The AWS account identifier of the owner of the Amazon S3 bucket. This allows
+     * report data to be exported to an Amazon S3 bucket that is owned by an account
+     * other than the account running the build.</p>
+     */
+    inline bool BucketOwnerHasBeenSet() const { return m_bucketOwnerHasBeenSet; }
+
+    /**
+     * <p>The AWS account identifier of the owner of the Amazon S3 bucket. This allows
+     * report data to be exported to an Amazon S3 bucket that is owned by an account
+     * other than the account running the build.</p>
+     */
+    inline void SetBucketOwner(const Aws::String& value) { m_bucketOwnerHasBeenSet = true; m_bucketOwner = value; }
+
+    /**
+     * <p>The AWS account identifier of the owner of the Amazon S3 bucket. This allows
+     * report data to be exported to an Amazon S3 bucket that is owned by an account
+     * other than the account running the build.</p>
+     */
+    inline void SetBucketOwner(Aws::String&& value) { m_bucketOwnerHasBeenSet = true; m_bucketOwner = std::move(value); }
+
+    /**
+     * <p>The AWS account identifier of the owner of the Amazon S3 bucket. This allows
+     * report data to be exported to an Amazon S3 bucket that is owned by an account
+     * other than the account running the build.</p>
+     */
+    inline void SetBucketOwner(const char* value) { m_bucketOwnerHasBeenSet = true; m_bucketOwner.assign(value); }
+
+    /**
+     * <p>The AWS account identifier of the owner of the Amazon S3 bucket. This allows
+     * report data to be exported to an Amazon S3 bucket that is owned by an account
+     * other than the account running the build.</p>
+     */
+    inline S3ReportExportConfig& WithBucketOwner(const Aws::String& value) { SetBucketOwner(value); return *this;}
+
+    /**
+     * <p>The AWS account identifier of the owner of the Amazon S3 bucket. This allows
+     * report data to be exported to an Amazon S3 bucket that is owned by an account
+     * other than the account running the build.</p>
+     */
+    inline S3ReportExportConfig& WithBucketOwner(Aws::String&& value) { SetBucketOwner(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS account identifier of the owner of the Amazon S3 bucket. This allows
+     * report data to be exported to an Amazon S3 bucket that is owned by an account
+     * other than the account running the build.</p>
+     */
+    inline S3ReportExportConfig& WithBucketOwner(const char* value) { SetBucketOwner(value); return *this;}
+
+
+    /**
      * <p> The path to the exported report's raw data results. </p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
@@ -245,6 +302,9 @@ namespace Model
 
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
+    Aws::String m_bucketOwner;
+    bool m_bucketOwnerHasBeenSet;
 
     Aws::String m_path;
     bool m_pathHasBeenSet;

@@ -17,7 +17,9 @@ ListStackInstancesRequest::ListStackInstancesRequest() :
     m_maxResultsHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_stackInstanceAccountHasBeenSet(false),
-    m_stackInstanceRegionHasBeenSet(false)
+    m_stackInstanceRegionHasBeenSet(false),
+    m_callAs(CallAs::NOT_SET),
+    m_callAsHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,11 @@ Aws::String ListStackInstancesRequest::SerializePayload() const
   if(m_stackInstanceRegionHasBeenSet)
   {
     ss << "StackInstanceRegion=" << StringUtils::URLEncode(m_stackInstanceRegion.c_str()) << "&";
+  }
+
+  if(m_callAsHasBeenSet)
+  {
+    ss << "CallAs=" << CallAsMapper::GetNameForCallAs(m_callAs) << "&";
   }
 
   ss << "Version=2010-05-15";

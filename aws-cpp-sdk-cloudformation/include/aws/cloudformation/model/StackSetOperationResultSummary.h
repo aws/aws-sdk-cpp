@@ -43,50 +43,50 @@ namespace Model
 
 
     /**
-     * <p>[<code>Self-managed</code> permissions] The name of the AWS account for this
-     * operation result.</p>
+     * <p>[Self-managed permissions] The name of the AWS account for this operation
+     * result.</p>
      */
     inline const Aws::String& GetAccount() const{ return m_account; }
 
     /**
-     * <p>[<code>Self-managed</code> permissions] The name of the AWS account for this
-     * operation result.</p>
+     * <p>[Self-managed permissions] The name of the AWS account for this operation
+     * result.</p>
      */
     inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
 
     /**
-     * <p>[<code>Self-managed</code> permissions] The name of the AWS account for this
-     * operation result.</p>
+     * <p>[Self-managed permissions] The name of the AWS account for this operation
+     * result.</p>
      */
     inline void SetAccount(const Aws::String& value) { m_accountHasBeenSet = true; m_account = value; }
 
     /**
-     * <p>[<code>Self-managed</code> permissions] The name of the AWS account for this
-     * operation result.</p>
+     * <p>[Self-managed permissions] The name of the AWS account for this operation
+     * result.</p>
      */
     inline void SetAccount(Aws::String&& value) { m_accountHasBeenSet = true; m_account = std::move(value); }
 
     /**
-     * <p>[<code>Self-managed</code> permissions] The name of the AWS account for this
-     * operation result.</p>
+     * <p>[Self-managed permissions] The name of the AWS account for this operation
+     * result.</p>
      */
     inline void SetAccount(const char* value) { m_accountHasBeenSet = true; m_account.assign(value); }
 
     /**
-     * <p>[<code>Self-managed</code> permissions] The name of the AWS account for this
-     * operation result.</p>
+     * <p>[Self-managed permissions] The name of the AWS account for this operation
+     * result.</p>
      */
     inline StackSetOperationResultSummary& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
 
     /**
-     * <p>[<code>Self-managed</code> permissions] The name of the AWS account for this
-     * operation result.</p>
+     * <p>[Self-managed permissions] The name of the AWS account for this operation
+     * result.</p>
      */
     inline StackSetOperationResultSummary& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
 
     /**
-     * <p>[<code>Self-managed</code> permissions] The name of the AWS account for this
-     * operation result.</p>
+     * <p>[Self-managed permissions] The name of the AWS account for this operation
+     * result.</p>
      */
     inline StackSetOperationResultSummary& WithAccount(const char* value) { SetAccount(value); return *this;}
 
@@ -314,57 +314,57 @@ namespace Model
 
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) IDs that you specified for <a
+     * <p>[Service-managed permissions] The organization root ID or organizational unit
+     * (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline const Aws::String& GetOrganizationalUnitId() const{ return m_organizationalUnitId; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) IDs that you specified for <a
+     * <p>[Service-managed permissions] The organization root ID or organizational unit
+     * (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline bool OrganizationalUnitIdHasBeenSet() const { return m_organizationalUnitIdHasBeenSet; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) IDs that you specified for <a
+     * <p>[Service-managed permissions] The organization root ID or organizational unit
+     * (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline void SetOrganizationalUnitId(const Aws::String& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = value; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) IDs that you specified for <a
+     * <p>[Service-managed permissions] The organization root ID or organizational unit
+     * (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline void SetOrganizationalUnitId(Aws::String&& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = std::move(value); }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) IDs that you specified for <a
+     * <p>[Service-managed permissions] The organization root ID or organizational unit
+     * (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline void SetOrganizationalUnitId(const char* value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId.assign(value); }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) IDs that you specified for <a
+     * <p>[Service-managed permissions] The organization root ID or organizational unit
+     * (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline StackSetOperationResultSummary& WithOrganizationalUnitId(const Aws::String& value) { SetOrganizationalUnitId(value); return *this;}
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) IDs that you specified for <a
+     * <p>[Service-managed permissions] The organization root ID or organizational unit
+     * (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline StackSetOperationResultSummary& WithOrganizationalUnitId(Aws::String&& value) { SetOrganizationalUnitId(std::move(value)); return *this;}
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) IDs that you specified for <a
+     * <p>[Service-managed permissions] The organization root ID or organizational unit
+     * (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline StackSetOperationResultSummary& WithOrganizationalUnitId(const char* value) { SetOrganizationalUnitId(value); return *this;}
