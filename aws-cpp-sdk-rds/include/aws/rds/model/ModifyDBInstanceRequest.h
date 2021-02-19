@@ -3228,6 +3228,47 @@ namespace Model
      */
     inline ModifyDBInstanceRequest& WithEnableCustomerOwnedIp(bool value) { SetEnableCustomerOwnedIp(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in AWS Backup.</p>
+     */
+    inline const Aws::String& GetAwsBackupRecoveryPointArn() const{ return m_awsBackupRecoveryPointArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in AWS Backup.</p>
+     */
+    inline bool AwsBackupRecoveryPointArnHasBeenSet() const { return m_awsBackupRecoveryPointArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in AWS Backup.</p>
+     */
+    inline void SetAwsBackupRecoveryPointArn(const Aws::String& value) { m_awsBackupRecoveryPointArnHasBeenSet = true; m_awsBackupRecoveryPointArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in AWS Backup.</p>
+     */
+    inline void SetAwsBackupRecoveryPointArn(Aws::String&& value) { m_awsBackupRecoveryPointArnHasBeenSet = true; m_awsBackupRecoveryPointArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in AWS Backup.</p>
+     */
+    inline void SetAwsBackupRecoveryPointArn(const char* value) { m_awsBackupRecoveryPointArnHasBeenSet = true; m_awsBackupRecoveryPointArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in AWS Backup.</p>
+     */
+    inline ModifyDBInstanceRequest& WithAwsBackupRecoveryPointArn(const Aws::String& value) { SetAwsBackupRecoveryPointArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in AWS Backup.</p>
+     */
+    inline ModifyDBInstanceRequest& WithAwsBackupRecoveryPointArn(Aws::String&& value) { SetAwsBackupRecoveryPointArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in AWS Backup.</p>
+     */
+    inline ModifyDBInstanceRequest& WithAwsBackupRecoveryPointArn(const char* value) { SetAwsBackupRecoveryPointArn(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -3361,6 +3402,9 @@ namespace Model
 
     bool m_enableCustomerOwnedIp;
     bool m_enableCustomerOwnedIpHasBeenSet;
+
+    Aws::String m_awsBackupRecoveryPointArn;
+    bool m_awsBackupRecoveryPointArnHasBeenSet;
   };
 
 } // namespace Model

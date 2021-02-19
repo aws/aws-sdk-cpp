@@ -101,7 +101,8 @@ DBInstance::DBInstance() :
     m_tagListHasBeenSet(false),
     m_dBInstanceAutomatedBackupsReplicationsHasBeenSet(false),
     m_customerOwnedIpEnabled(false),
-    m_customerOwnedIpEnabledHasBeenSet(false)
+    m_customerOwnedIpEnabledHasBeenSet(false),
+    m_awsBackupRecoveryPointArnHasBeenSet(false)
 {
 }
 
@@ -186,7 +187,8 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_tagListHasBeenSet(false),
     m_dBInstanceAutomatedBackupsReplicationsHasBeenSet(false),
     m_customerOwnedIpEnabled(false),
-    m_customerOwnedIpEnabledHasBeenSet(false)
+    m_customerOwnedIpEnabledHasBeenSet(false),
+    m_awsBackupRecoveryPointArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -653,6 +655,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_customerOwnedIpEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(customerOwnedIpEnabledNode.GetText()).c_str()).c_str());
       m_customerOwnedIpEnabledHasBeenSet = true;
     }
+    XmlNode awsBackupRecoveryPointArnNode = resultNode.FirstChild("AwsBackupRecoveryPointArn");
+    if(!awsBackupRecoveryPointArnNode.IsNull())
+    {
+      m_awsBackupRecoveryPointArn = Aws::Utils::Xml::DecodeEscapedXmlText(awsBackupRecoveryPointArnNode.GetText());
+      m_awsBackupRecoveryPointArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -1055,6 +1063,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".CustomerOwnedIpEnabled=" << std::boolalpha << m_customerOwnedIpEnabled << "&";
   }
 
+  if(m_awsBackupRecoveryPointArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
+  }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1390,6 +1403,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_customerOwnedIpEnabledHasBeenSet)
   {
       oStream << location << ".CustomerOwnedIpEnabled=" << std::boolalpha << m_customerOwnedIpEnabled << "&";
+  }
+  if(m_awsBackupRecoveryPointArnHasBeenSet)
+  {
+      oStream << location << ".AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
   }
 }
 
