@@ -28,7 +28,8 @@ ProductionVariant::ProductionVariant() :
     m_initialVariantWeight(0.0),
     m_initialVariantWeightHasBeenSet(false),
     m_acceleratorType(ProductionVariantAcceleratorType::NOT_SET),
-    m_acceleratorTypeHasBeenSet(false)
+    m_acceleratorTypeHasBeenSet(false),
+    m_coreDumpConfigHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ ProductionVariant::ProductionVariant(JsonView jsonValue) :
     m_initialVariantWeight(0.0),
     m_initialVariantWeightHasBeenSet(false),
     m_acceleratorType(ProductionVariantAcceleratorType::NOT_SET),
-    m_acceleratorTypeHasBeenSet(false)
+    m_acceleratorTypeHasBeenSet(false),
+    m_coreDumpConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -91,6 +93,13 @@ ProductionVariant& ProductionVariant::operator =(JsonView jsonValue)
     m_acceleratorTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CoreDumpConfig"))
+  {
+    m_coreDumpConfig = jsonValue.GetObject("CoreDumpConfig");
+
+    m_coreDumpConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -130,6 +139,12 @@ JsonValue ProductionVariant::Jsonize() const
   if(m_acceleratorTypeHasBeenSet)
   {
    payload.WithString("AcceleratorType", ProductionVariantAcceleratorTypeMapper::GetNameForProductionVariantAcceleratorType(m_acceleratorType));
+  }
+
+  if(m_coreDumpConfigHasBeenSet)
+  {
+   payload.WithObject("CoreDumpConfig", m_coreDumpConfig.Jsonize());
+
   }
 
   return payload;

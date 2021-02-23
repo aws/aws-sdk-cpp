@@ -24,23 +24,64 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about how to store model training results (model
-   * artifacts).</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/OutputDataConfig">AWS
+   * <p>Specifies configuration for a core dump from the model container when the
+   * process crashes.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProductionVariantCoreDumpConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API OutputDataConfig
+  class AWS_SAGEMAKER_API ProductionVariantCoreDumpConfig
   {
   public:
-    OutputDataConfig();
-    OutputDataConfig(Aws::Utils::Json::JsonView jsonValue);
-    OutputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    ProductionVariantCoreDumpConfig();
+    ProductionVariantCoreDumpConfig(Aws::Utils::Json::JsonView jsonValue);
+    ProductionVariantCoreDumpConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
+     * <p>The Amazon S3 bucket to send the core dump to.</p>
+     */
+    inline const Aws::String& GetDestinationS3Uri() const{ return m_destinationS3Uri; }
+
+    /**
+     * <p>The Amazon S3 bucket to send the core dump to.</p>
+     */
+    inline bool DestinationS3UriHasBeenSet() const { return m_destinationS3UriHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 bucket to send the core dump to.</p>
+     */
+    inline void SetDestinationS3Uri(const Aws::String& value) { m_destinationS3UriHasBeenSet = true; m_destinationS3Uri = value; }
+
+    /**
+     * <p>The Amazon S3 bucket to send the core dump to.</p>
+     */
+    inline void SetDestinationS3Uri(Aws::String&& value) { m_destinationS3UriHasBeenSet = true; m_destinationS3Uri = std::move(value); }
+
+    /**
+     * <p>The Amazon S3 bucket to send the core dump to.</p>
+     */
+    inline void SetDestinationS3Uri(const char* value) { m_destinationS3UriHasBeenSet = true; m_destinationS3Uri.assign(value); }
+
+    /**
+     * <p>The Amazon S3 bucket to send the core dump to.</p>
+     */
+    inline ProductionVariantCoreDumpConfig& WithDestinationS3Uri(const Aws::String& value) { SetDestinationS3Uri(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 bucket to send the core dump to.</p>
+     */
+    inline ProductionVariantCoreDumpConfig& WithDestinationS3Uri(Aws::String&& value) { SetDestinationS3Uri(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon S3 bucket to send the core dump to.</p>
+     */
+    inline ProductionVariantCoreDumpConfig& WithDestinationS3Uri(const char* value) { SetDestinationS3Uri(value); return *this;}
+
+
+    /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt the model artifacts at rest using Amazon S3 server-side encryption. The
+     * encrypt the core dump data at rest using Amazon S3 server-side encryption. The
      * <code>KmsKeyId</code> can be any of the following formats: </p> <ul> <li> <p>//
      * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
      * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
@@ -58,12 +99,11 @@ namespace Model
      * encryption, set the condition key of
      * <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/mazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>,
-     * or <code>CreateHyperParameterTuningJob</code> requests. For more information,
-     * see <a
+     * specify in your <code>CreateEndpoint</code> and <code>UpdateEndpoint</code>
+     * requests. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
@@ -72,7 +112,7 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt the model artifacts at rest using Amazon S3 server-side encryption. The
+     * encrypt the core dump data at rest using Amazon S3 server-side encryption. The
      * <code>KmsKeyId</code> can be any of the following formats: </p> <ul> <li> <p>//
      * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
      * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
@@ -90,12 +130,11 @@ namespace Model
      * encryption, set the condition key of
      * <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/mazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>,
-     * or <code>CreateHyperParameterTuningJob</code> requests. For more information,
-     * see <a
+     * specify in your <code>CreateEndpoint</code> and <code>UpdateEndpoint</code>
+     * requests. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
@@ -104,7 +143,7 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt the model artifacts at rest using Amazon S3 server-side encryption. The
+     * encrypt the core dump data at rest using Amazon S3 server-side encryption. The
      * <code>KmsKeyId</code> can be any of the following formats: </p> <ul> <li> <p>//
      * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
      * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
@@ -122,12 +161,11 @@ namespace Model
      * encryption, set the condition key of
      * <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/mazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>,
-     * or <code>CreateHyperParameterTuningJob</code> requests. For more information,
-     * see <a
+     * specify in your <code>CreateEndpoint</code> and <code>UpdateEndpoint</code>
+     * requests. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
@@ -136,7 +174,7 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt the model artifacts at rest using Amazon S3 server-side encryption. The
+     * encrypt the core dump data at rest using Amazon S3 server-side encryption. The
      * <code>KmsKeyId</code> can be any of the following formats: </p> <ul> <li> <p>//
      * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
      * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
@@ -154,12 +192,11 @@ namespace Model
      * encryption, set the condition key of
      * <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/mazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>,
-     * or <code>CreateHyperParameterTuningJob</code> requests. For more information,
-     * see <a
+     * specify in your <code>CreateEndpoint</code> and <code>UpdateEndpoint</code>
+     * requests. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
@@ -168,7 +205,7 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt the model artifacts at rest using Amazon S3 server-side encryption. The
+     * encrypt the core dump data at rest using Amazon S3 server-side encryption. The
      * <code>KmsKeyId</code> can be any of the following formats: </p> <ul> <li> <p>//
      * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
      * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
@@ -186,12 +223,11 @@ namespace Model
      * encryption, set the condition key of
      * <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/mazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>,
-     * or <code>CreateHyperParameterTuningJob</code> requests. For more information,
-     * see <a
+     * specify in your <code>CreateEndpoint</code> and <code>UpdateEndpoint</code>
+     * requests. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
@@ -200,7 +236,7 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt the model artifacts at rest using Amazon S3 server-side encryption. The
+     * encrypt the core dump data at rest using Amazon S3 server-side encryption. The
      * <code>KmsKeyId</code> can be any of the following formats: </p> <ul> <li> <p>//
      * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
      * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
@@ -218,21 +254,20 @@ namespace Model
      * encryption, set the condition key of
      * <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/mazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>,
-     * or <code>CreateHyperParameterTuningJob</code> requests. For more information,
-     * see <a
+     * specify in your <code>CreateEndpoint</code> and <code>UpdateEndpoint</code>
+     * requests. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
      */
-    inline OutputDataConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+    inline ProductionVariantCoreDumpConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt the model artifacts at rest using Amazon S3 server-side encryption. The
+     * encrypt the core dump data at rest using Amazon S3 server-side encryption. The
      * <code>KmsKeyId</code> can be any of the following formats: </p> <ul> <li> <p>//
      * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
      * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
@@ -250,21 +285,20 @@ namespace Model
      * encryption, set the condition key of
      * <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/mazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>,
-     * or <code>CreateHyperParameterTuningJob</code> requests. For more information,
-     * see <a
+     * specify in your <code>CreateEndpoint</code> and <code>UpdateEndpoint</code>
+     * requests. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
      */
-    inline OutputDataConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+    inline ProductionVariantCoreDumpConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt the model artifacts at rest using Amazon S3 server-side encryption. The
+     * encrypt the core dump data at rest using Amazon S3 server-side encryption. The
      * <code>KmsKeyId</code> can be any of the following formats: </p> <ul> <li> <p>//
      * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
      * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
@@ -282,74 +316,24 @@ namespace Model
      * encryption, set the condition key of
      * <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/mazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>,
-     * or <code>CreateHyperParameterTuningJob</code> requests. For more information,
-     * see <a
+     * specify in your <code>CreateEndpoint</code> and <code>UpdateEndpoint</code>
+     * requests. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
      */
-    inline OutputDataConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
-
-
-    /**
-     * <p>Identifies the S3 path where you want Amazon SageMaker to store the model
-     * artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>. </p>
-     */
-    inline const Aws::String& GetS3OutputPath() const{ return m_s3OutputPath; }
-
-    /**
-     * <p>Identifies the S3 path where you want Amazon SageMaker to store the model
-     * artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>. </p>
-     */
-    inline bool S3OutputPathHasBeenSet() const { return m_s3OutputPathHasBeenSet; }
-
-    /**
-     * <p>Identifies the S3 path where you want Amazon SageMaker to store the model
-     * artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>. </p>
-     */
-    inline void SetS3OutputPath(const Aws::String& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = value; }
-
-    /**
-     * <p>Identifies the S3 path where you want Amazon SageMaker to store the model
-     * artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>. </p>
-     */
-    inline void SetS3OutputPath(Aws::String&& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = std::move(value); }
-
-    /**
-     * <p>Identifies the S3 path where you want Amazon SageMaker to store the model
-     * artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>. </p>
-     */
-    inline void SetS3OutputPath(const char* value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath.assign(value); }
-
-    /**
-     * <p>Identifies the S3 path where you want Amazon SageMaker to store the model
-     * artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>. </p>
-     */
-    inline OutputDataConfig& WithS3OutputPath(const Aws::String& value) { SetS3OutputPath(value); return *this;}
-
-    /**
-     * <p>Identifies the S3 path where you want Amazon SageMaker to store the model
-     * artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>. </p>
-     */
-    inline OutputDataConfig& WithS3OutputPath(Aws::String&& value) { SetS3OutputPath(std::move(value)); return *this;}
-
-    /**
-     * <p>Identifies the S3 path where you want Amazon SageMaker to store the model
-     * artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>. </p>
-     */
-    inline OutputDataConfig& WithS3OutputPath(const char* value) { SetS3OutputPath(value); return *this;}
+    inline ProductionVariantCoreDumpConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
   private:
 
+    Aws::String m_destinationS3Uri;
+    bool m_destinationS3UriHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
-
-    Aws::String m_s3OutputPath;
-    bool m_s3OutputPathHasBeenSet;
   };
 
 } // namespace Model
