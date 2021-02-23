@@ -173,49 +173,61 @@ namespace Model
 
     /**
      * <p>The type of the data source. Currently, the supported types for this
-     * operation are: <code>ATHENA, AURORA, AURORA_POSTGRESQL, MARIADB, MYSQL,
-     * POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>.
-     * Use <code>ListDataSources</code> to return a list of all data sources.</p>
+     * operation are: <code>ATHENA, AURORA, AURORA_POSTGRESQL, AMAZON_ELASTICSEARCH,
+     * MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER,
+     * TERADATA</code>. Use <code>ListDataSources</code> to return a list of all data
+     * sources.</p> <p> <code>AMAZON_ELASTICSEARCH</code> is for Amazon managed
+     * Elasticsearch Service.</p>
      */
     inline const DataSourceType& GetType() const{ return m_type; }
 
     /**
      * <p>The type of the data source. Currently, the supported types for this
-     * operation are: <code>ATHENA, AURORA, AURORA_POSTGRESQL, MARIADB, MYSQL,
-     * POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>.
-     * Use <code>ListDataSources</code> to return a list of all data sources.</p>
+     * operation are: <code>ATHENA, AURORA, AURORA_POSTGRESQL, AMAZON_ELASTICSEARCH,
+     * MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER,
+     * TERADATA</code>. Use <code>ListDataSources</code> to return a list of all data
+     * sources.</p> <p> <code>AMAZON_ELASTICSEARCH</code> is for Amazon managed
+     * Elasticsearch Service.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of the data source. Currently, the supported types for this
-     * operation are: <code>ATHENA, AURORA, AURORA_POSTGRESQL, MARIADB, MYSQL,
-     * POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>.
-     * Use <code>ListDataSources</code> to return a list of all data sources.</p>
+     * operation are: <code>ATHENA, AURORA, AURORA_POSTGRESQL, AMAZON_ELASTICSEARCH,
+     * MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER,
+     * TERADATA</code>. Use <code>ListDataSources</code> to return a list of all data
+     * sources.</p> <p> <code>AMAZON_ELASTICSEARCH</code> is for Amazon managed
+     * Elasticsearch Service.</p>
      */
     inline void SetType(const DataSourceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The type of the data source. Currently, the supported types for this
-     * operation are: <code>ATHENA, AURORA, AURORA_POSTGRESQL, MARIADB, MYSQL,
-     * POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>.
-     * Use <code>ListDataSources</code> to return a list of all data sources.</p>
+     * operation are: <code>ATHENA, AURORA, AURORA_POSTGRESQL, AMAZON_ELASTICSEARCH,
+     * MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER,
+     * TERADATA</code>. Use <code>ListDataSources</code> to return a list of all data
+     * sources.</p> <p> <code>AMAZON_ELASTICSEARCH</code> is for Amazon managed
+     * Elasticsearch Service.</p>
      */
     inline void SetType(DataSourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of the data source. Currently, the supported types for this
-     * operation are: <code>ATHENA, AURORA, AURORA_POSTGRESQL, MARIADB, MYSQL,
-     * POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>.
-     * Use <code>ListDataSources</code> to return a list of all data sources.</p>
+     * operation are: <code>ATHENA, AURORA, AURORA_POSTGRESQL, AMAZON_ELASTICSEARCH,
+     * MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER,
+     * TERADATA</code>. Use <code>ListDataSources</code> to return a list of all data
+     * sources.</p> <p> <code>AMAZON_ELASTICSEARCH</code> is for Amazon managed
+     * Elasticsearch Service.</p>
      */
     inline CreateDataSourceRequest& WithType(const DataSourceType& value) { SetType(value); return *this;}
 
     /**
      * <p>The type of the data source. Currently, the supported types for this
-     * operation are: <code>ATHENA, AURORA, AURORA_POSTGRESQL, MARIADB, MYSQL,
-     * POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>.
-     * Use <code>ListDataSources</code> to return a list of all data sources.</p>
+     * operation are: <code>ATHENA, AURORA, AURORA_POSTGRESQL, AMAZON_ELASTICSEARCH,
+     * MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER,
+     * TERADATA</code>. Use <code>ListDataSources</code> to return a list of all data
+     * sources.</p> <p> <code>AMAZON_ELASTICSEARCH</code> is for Amazon managed
+     * Elasticsearch Service.</p>
      */
     inline CreateDataSourceRequest& WithType(DataSourceType&& value) { SetType(std::move(value)); return *this;}
 

@@ -233,6 +233,104 @@ namespace Model
      */
     inline JourneySMSMessage& WithSenderId(const char* value) { SetSenderId(value); return *this;}
 
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline const Aws::String& GetEntityId() const{ return m_entityId; }
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline JourneySMSMessage& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline JourneySMSMessage& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline JourneySMSMessage& WithEntityId(const char* value) { SetEntityId(value); return *this;}
+
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline const Aws::String& GetTemplateId() const{ return m_templateId; }
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline bool TemplateIdHasBeenSet() const { return m_templateIdHasBeenSet; }
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline void SetTemplateId(const Aws::String& value) { m_templateIdHasBeenSet = true; m_templateId = value; }
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline void SetTemplateId(Aws::String&& value) { m_templateIdHasBeenSet = true; m_templateId = std::move(value); }
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline void SetTemplateId(const char* value) { m_templateIdHasBeenSet = true; m_templateId.assign(value); }
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline JourneySMSMessage& WithTemplateId(const Aws::String& value) { SetTemplateId(value); return *this;}
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline JourneySMSMessage& WithTemplateId(Aws::String&& value) { SetTemplateId(std::move(value)); return *this;}
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline JourneySMSMessage& WithTemplateId(const char* value) { SetTemplateId(value); return *this;}
+
   private:
 
     MessageType m_messageType;
@@ -243,6 +341,12 @@ namespace Model
 
     Aws::String m_senderId;
     bool m_senderIdHasBeenSet;
+
+    Aws::String m_entityId;
+    bool m_entityIdHasBeenSet;
+
+    Aws::String m_templateId;
+    bool m_templateIdHasBeenSet;
   };
 
 } // namespace Model

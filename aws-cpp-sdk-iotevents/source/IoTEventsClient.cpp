@@ -25,13 +25,16 @@
 #include <aws/iotevents/model/DeleteDetectorModelRequest.h>
 #include <aws/iotevents/model/DeleteInputRequest.h>
 #include <aws/iotevents/model/DescribeDetectorModelRequest.h>
+#include <aws/iotevents/model/DescribeDetectorModelAnalysisRequest.h>
 #include <aws/iotevents/model/DescribeInputRequest.h>
 #include <aws/iotevents/model/DescribeLoggingOptionsRequest.h>
+#include <aws/iotevents/model/GetDetectorModelAnalysisResultsRequest.h>
 #include <aws/iotevents/model/ListDetectorModelVersionsRequest.h>
 #include <aws/iotevents/model/ListDetectorModelsRequest.h>
 #include <aws/iotevents/model/ListInputsRequest.h>
 #include <aws/iotevents/model/ListTagsForResourceRequest.h>
 #include <aws/iotevents/model/PutLoggingOptionsRequest.h>
+#include <aws/iotevents/model/StartDetectorModelAnalysisRequest.h>
 #include <aws/iotevents/model/TagResourceRequest.h>
 #include <aws/iotevents/model/UntagResourceRequest.h>
 #include <aws/iotevents/model/UpdateDetectorModelRequest.h>
@@ -263,6 +266,39 @@ void IoTEventsClient::DescribeDetectorModelAsyncHelper(const DescribeDetectorMod
   handler(this, request, DescribeDetectorModel(request), context);
 }
 
+DescribeDetectorModelAnalysisOutcome IoTEventsClient::DescribeDetectorModelAnalysis(const DescribeDetectorModelAnalysisRequest& request) const
+{
+  if (!request.AnalysisIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeDetectorModelAnalysis", "Required field: AnalysisId, is not set");
+    return DescribeDetectorModelAnalysisOutcome(Aws::Client::AWSError<IoTEventsErrors>(IoTEventsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalysisId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/analysis/detector-models/";
+  ss << request.GetAnalysisId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeDetectorModelAnalysisOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeDetectorModelAnalysisOutcomeCallable IoTEventsClient::DescribeDetectorModelAnalysisCallable(const DescribeDetectorModelAnalysisRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDetectorModelAnalysisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDetectorModelAnalysis(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTEventsClient::DescribeDetectorModelAnalysisAsync(const DescribeDetectorModelAnalysisRequest& request, const DescribeDetectorModelAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDetectorModelAnalysisAsyncHelper( request, handler, context ); } );
+}
+
+void IoTEventsClient::DescribeDetectorModelAnalysisAsyncHelper(const DescribeDetectorModelAnalysisRequest& request, const DescribeDetectorModelAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDetectorModelAnalysis(request), context);
+}
+
 DescribeInputOutcome IoTEventsClient::DescribeInput(const DescribeInputRequest& request) const
 {
   if (!request.InputNameHasBeenSet())
@@ -321,6 +357,40 @@ void IoTEventsClient::DescribeLoggingOptionsAsync(const DescribeLoggingOptionsRe
 void IoTEventsClient::DescribeLoggingOptionsAsyncHelper(const DescribeLoggingOptionsRequest& request, const DescribeLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeLoggingOptions(request), context);
+}
+
+GetDetectorModelAnalysisResultsOutcome IoTEventsClient::GetDetectorModelAnalysisResults(const GetDetectorModelAnalysisResultsRequest& request) const
+{
+  if (!request.AnalysisIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDetectorModelAnalysisResults", "Required field: AnalysisId, is not set");
+    return GetDetectorModelAnalysisResultsOutcome(Aws::Client::AWSError<IoTEventsErrors>(IoTEventsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalysisId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/analysis/detector-models/";
+  ss << request.GetAnalysisId();
+  ss << "/results";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetDetectorModelAnalysisResultsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetDetectorModelAnalysisResultsOutcomeCallable IoTEventsClient::GetDetectorModelAnalysisResultsCallable(const GetDetectorModelAnalysisResultsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetDetectorModelAnalysisResultsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDetectorModelAnalysisResults(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTEventsClient::GetDetectorModelAnalysisResultsAsync(const GetDetectorModelAnalysisResultsRequest& request, const GetDetectorModelAnalysisResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetDetectorModelAnalysisResultsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTEventsClient::GetDetectorModelAnalysisResultsAsyncHelper(const GetDetectorModelAnalysisResultsRequest& request, const GetDetectorModelAnalysisResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetDetectorModelAnalysisResults(request), context);
 }
 
 ListDetectorModelVersionsOutcome IoTEventsClient::ListDetectorModelVersions(const ListDetectorModelVersionsRequest& request) const
@@ -468,6 +538,33 @@ void IoTEventsClient::PutLoggingOptionsAsync(const PutLoggingOptionsRequest& req
 void IoTEventsClient::PutLoggingOptionsAsyncHelper(const PutLoggingOptionsRequest& request, const PutLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutLoggingOptions(request), context);
+}
+
+StartDetectorModelAnalysisOutcome IoTEventsClient::StartDetectorModelAnalysis(const StartDetectorModelAnalysisRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/analysis/detector-models/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return StartDetectorModelAnalysisOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartDetectorModelAnalysisOutcomeCallable IoTEventsClient::StartDetectorModelAnalysisCallable(const StartDetectorModelAnalysisRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartDetectorModelAnalysisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartDetectorModelAnalysis(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTEventsClient::StartDetectorModelAnalysisAsync(const StartDetectorModelAnalysisRequest& request, const StartDetectorModelAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartDetectorModelAnalysisAsyncHelper( request, handler, context ); } );
+}
+
+void IoTEventsClient::StartDetectorModelAnalysisAsyncHelper(const StartDetectorModelAnalysisRequest& request, const StartDetectorModelAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartDetectorModelAnalysis(request), context);
 }
 
 TagResourceOutcome IoTEventsClient::TagResource(const TagResourceRequest& request) const

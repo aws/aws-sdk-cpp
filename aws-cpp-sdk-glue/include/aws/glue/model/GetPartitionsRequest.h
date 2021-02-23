@@ -571,6 +571,19 @@ namespace Model
      */
     inline GetPartitionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    
+    inline bool GetExcludeColumnSchema() const{ return m_excludeColumnSchema; }
+
+    
+    inline bool ExcludeColumnSchemaHasBeenSet() const { return m_excludeColumnSchemaHasBeenSet; }
+
+    
+    inline void SetExcludeColumnSchema(bool value) { m_excludeColumnSchemaHasBeenSet = true; m_excludeColumnSchema = value; }
+
+    
+    inline GetPartitionsRequest& WithExcludeColumnSchema(bool value) { SetExcludeColumnSchema(value); return *this;}
+
   private:
 
     Aws::String m_catalogId;
@@ -593,6 +606,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
+    bool m_excludeColumnSchema;
+    bool m_excludeColumnSchemaHasBeenSet;
   };
 
 } // namespace Model

@@ -16,12 +16,15 @@
 #include <aws/iotevents/model/DeleteDetectorModelResult.h>
 #include <aws/iotevents/model/DeleteInputResult.h>
 #include <aws/iotevents/model/DescribeDetectorModelResult.h>
+#include <aws/iotevents/model/DescribeDetectorModelAnalysisResult.h>
 #include <aws/iotevents/model/DescribeInputResult.h>
 #include <aws/iotevents/model/DescribeLoggingOptionsResult.h>
+#include <aws/iotevents/model/GetDetectorModelAnalysisResultsResult.h>
 #include <aws/iotevents/model/ListDetectorModelVersionsResult.h>
 #include <aws/iotevents/model/ListDetectorModelsResult.h>
 #include <aws/iotevents/model/ListInputsResult.h>
 #include <aws/iotevents/model/ListTagsForResourceResult.h>
+#include <aws/iotevents/model/StartDetectorModelAnalysisResult.h>
 #include <aws/iotevents/model/TagResourceResult.h>
 #include <aws/iotevents/model/UntagResourceResult.h>
 #include <aws/iotevents/model/UpdateDetectorModelResult.h>
@@ -71,13 +74,16 @@ namespace Model
         class DeleteDetectorModelRequest;
         class DeleteInputRequest;
         class DescribeDetectorModelRequest;
+        class DescribeDetectorModelAnalysisRequest;
         class DescribeInputRequest;
         class DescribeLoggingOptionsRequest;
+        class GetDetectorModelAnalysisResultsRequest;
         class ListDetectorModelVersionsRequest;
         class ListDetectorModelsRequest;
         class ListInputsRequest;
         class ListTagsForResourceRequest;
         class PutLoggingOptionsRequest;
+        class StartDetectorModelAnalysisRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateDetectorModelRequest;
@@ -88,13 +94,16 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteDetectorModelResult, IoTEventsError> DeleteDetectorModelOutcome;
         typedef Aws::Utils::Outcome<DeleteInputResult, IoTEventsError> DeleteInputOutcome;
         typedef Aws::Utils::Outcome<DescribeDetectorModelResult, IoTEventsError> DescribeDetectorModelOutcome;
+        typedef Aws::Utils::Outcome<DescribeDetectorModelAnalysisResult, IoTEventsError> DescribeDetectorModelAnalysisOutcome;
         typedef Aws::Utils::Outcome<DescribeInputResult, IoTEventsError> DescribeInputOutcome;
         typedef Aws::Utils::Outcome<DescribeLoggingOptionsResult, IoTEventsError> DescribeLoggingOptionsOutcome;
+        typedef Aws::Utils::Outcome<GetDetectorModelAnalysisResultsResult, IoTEventsError> GetDetectorModelAnalysisResultsOutcome;
         typedef Aws::Utils::Outcome<ListDetectorModelVersionsResult, IoTEventsError> ListDetectorModelVersionsOutcome;
         typedef Aws::Utils::Outcome<ListDetectorModelsResult, IoTEventsError> ListDetectorModelsOutcome;
         typedef Aws::Utils::Outcome<ListInputsResult, IoTEventsError> ListInputsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, IoTEventsError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, IoTEventsError> PutLoggingOptionsOutcome;
+        typedef Aws::Utils::Outcome<StartDetectorModelAnalysisResult, IoTEventsError> StartDetectorModelAnalysisOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, IoTEventsError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, IoTEventsError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateDetectorModelResult, IoTEventsError> UpdateDetectorModelOutcome;
@@ -105,13 +114,16 @@ namespace Model
         typedef std::future<DeleteDetectorModelOutcome> DeleteDetectorModelOutcomeCallable;
         typedef std::future<DeleteInputOutcome> DeleteInputOutcomeCallable;
         typedef std::future<DescribeDetectorModelOutcome> DescribeDetectorModelOutcomeCallable;
+        typedef std::future<DescribeDetectorModelAnalysisOutcome> DescribeDetectorModelAnalysisOutcomeCallable;
         typedef std::future<DescribeInputOutcome> DescribeInputOutcomeCallable;
         typedef std::future<DescribeLoggingOptionsOutcome> DescribeLoggingOptionsOutcomeCallable;
+        typedef std::future<GetDetectorModelAnalysisResultsOutcome> GetDetectorModelAnalysisResultsOutcomeCallable;
         typedef std::future<ListDetectorModelVersionsOutcome> ListDetectorModelVersionsOutcomeCallable;
         typedef std::future<ListDetectorModelsOutcome> ListDetectorModelsOutcomeCallable;
         typedef std::future<ListInputsOutcome> ListInputsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutLoggingOptionsOutcome> PutLoggingOptionsOutcomeCallable;
+        typedef std::future<StartDetectorModelAnalysisOutcome> StartDetectorModelAnalysisOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateDetectorModelOutcome> UpdateDetectorModelOutcomeCallable;
@@ -125,13 +137,16 @@ namespace Model
     typedef std::function<void(const IoTEventsClient*, const Model::DeleteDetectorModelRequest&, const Model::DeleteDetectorModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDetectorModelResponseReceivedHandler;
     typedef std::function<void(const IoTEventsClient*, const Model::DeleteInputRequest&, const Model::DeleteInputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInputResponseReceivedHandler;
     typedef std::function<void(const IoTEventsClient*, const Model::DescribeDetectorModelRequest&, const Model::DescribeDetectorModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDetectorModelResponseReceivedHandler;
+    typedef std::function<void(const IoTEventsClient*, const Model::DescribeDetectorModelAnalysisRequest&, const Model::DescribeDetectorModelAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDetectorModelAnalysisResponseReceivedHandler;
     typedef std::function<void(const IoTEventsClient*, const Model::DescribeInputRequest&, const Model::DescribeInputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInputResponseReceivedHandler;
     typedef std::function<void(const IoTEventsClient*, const Model::DescribeLoggingOptionsRequest&, const Model::DescribeLoggingOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLoggingOptionsResponseReceivedHandler;
+    typedef std::function<void(const IoTEventsClient*, const Model::GetDetectorModelAnalysisResultsRequest&, const Model::GetDetectorModelAnalysisResultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDetectorModelAnalysisResultsResponseReceivedHandler;
     typedef std::function<void(const IoTEventsClient*, const Model::ListDetectorModelVersionsRequest&, const Model::ListDetectorModelVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDetectorModelVersionsResponseReceivedHandler;
     typedef std::function<void(const IoTEventsClient*, const Model::ListDetectorModelsRequest&, const Model::ListDetectorModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDetectorModelsResponseReceivedHandler;
     typedef std::function<void(const IoTEventsClient*, const Model::ListInputsRequest&, const Model::ListInputsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInputsResponseReceivedHandler;
     typedef std::function<void(const IoTEventsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const IoTEventsClient*, const Model::PutLoggingOptionsRequest&, const Model::PutLoggingOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLoggingOptionsResponseReceivedHandler;
+    typedef std::function<void(const IoTEventsClient*, const Model::StartDetectorModelAnalysisRequest&, const Model::StartDetectorModelAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDetectorModelAnalysisResponseReceivedHandler;
     typedef std::function<void(const IoTEventsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const IoTEventsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const IoTEventsClient*, const Model::UpdateDetectorModelRequest&, const Model::UpdateDetectorModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDetectorModelResponseReceivedHandler;
@@ -305,6 +320,34 @@ namespace Model
         virtual void DescribeDetectorModelAsync(const Model::DescribeDetectorModelRequest& request, const DescribeDetectorModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves execution information about a detector model analysis</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeDetectorModelAnalysis">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDetectorModelAnalysisOutcome DescribeDetectorModelAnalysis(const Model::DescribeDetectorModelAnalysisRequest& request) const;
+
+        /**
+         * <p>Retrieves execution information about a detector model analysis</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeDetectorModelAnalysis">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeDetectorModelAnalysisOutcomeCallable DescribeDetectorModelAnalysisCallable(const Model::DescribeDetectorModelAnalysisRequest& request) const;
+
+        /**
+         * <p>Retrieves execution information about a detector model analysis</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeDetectorModelAnalysis">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeDetectorModelAnalysisAsync(const Model::DescribeDetectorModelAnalysisRequest& request, const DescribeDetectorModelAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes an input.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeInput">AWS
          * API Reference</a></p>
@@ -356,6 +399,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeLoggingOptionsAsync(const Model::DescribeLoggingOptionsRequest& request, const DescribeLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves one or more analysis results of the detector model.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/GetDetectorModelAnalysisResults">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDetectorModelAnalysisResultsOutcome GetDetectorModelAnalysisResults(const Model::GetDetectorModelAnalysisResultsRequest& request) const;
+
+        /**
+         * <p>Retrieves one or more analysis results of the detector model.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/GetDetectorModelAnalysisResults">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDetectorModelAnalysisResultsOutcomeCallable GetDetectorModelAnalysisResultsCallable(const Model::GetDetectorModelAnalysisResultsRequest& request) const;
+
+        /**
+         * <p>Retrieves one or more analysis results of the detector model.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/GetDetectorModelAnalysisResults">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDetectorModelAnalysisResultsAsync(const Model::GetDetectorModelAnalysisResultsRequest& request, const GetDetectorModelAnalysisResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the versions of a detector model. Only the metadata associated with
@@ -507,6 +578,40 @@ namespace Model
         virtual void PutLoggingOptionsAsync(const Model::PutLoggingOptionsRequest& request, const PutLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Performs an analysis of your detector model. For more information, see <a
+         * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Running
+         * detector model analyses</a> in the <i>AWS IoT Events Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/StartDetectorModelAnalysis">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartDetectorModelAnalysisOutcome StartDetectorModelAnalysis(const Model::StartDetectorModelAnalysisRequest& request) const;
+
+        /**
+         * <p>Performs an analysis of your detector model. For more information, see <a
+         * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Running
+         * detector model analyses</a> in the <i>AWS IoT Events Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/StartDetectorModelAnalysis">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartDetectorModelAnalysisOutcomeCallable StartDetectorModelAnalysisCallable(const Model::StartDetectorModelAnalysisRequest& request) const;
+
+        /**
+         * <p>Performs an analysis of your detector model. For more information, see <a
+         * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Running
+         * detector model analyses</a> in the <i>AWS IoT Events Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/StartDetectorModelAnalysis">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartDetectorModelAnalysisAsync(const Model::StartDetectorModelAnalysisRequest& request, const StartDetectorModelAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Adds to or modifies the tags of the given resource. Tags are metadata that
          * can be used to manage a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/TagResource">AWS
@@ -627,13 +732,16 @@ namespace Model
         void DeleteDetectorModelAsyncHelper(const Model::DeleteDetectorModelRequest& request, const DeleteDetectorModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteInputAsyncHelper(const Model::DeleteInputRequest& request, const DeleteInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDetectorModelAsyncHelper(const Model::DescribeDetectorModelRequest& request, const DescribeDetectorModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeDetectorModelAnalysisAsyncHelper(const Model::DescribeDetectorModelAnalysisRequest& request, const DescribeDetectorModelAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInputAsyncHelper(const Model::DescribeInputRequest& request, const DescribeInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLoggingOptionsAsyncHelper(const Model::DescribeLoggingOptionsRequest& request, const DescribeLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDetectorModelAnalysisResultsAsyncHelper(const Model::GetDetectorModelAnalysisResultsRequest& request, const GetDetectorModelAnalysisResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDetectorModelVersionsAsyncHelper(const Model::ListDetectorModelVersionsRequest& request, const ListDetectorModelVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDetectorModelsAsyncHelper(const Model::ListDetectorModelsRequest& request, const ListDetectorModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInputsAsyncHelper(const Model::ListInputsRequest& request, const ListInputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutLoggingOptionsAsyncHelper(const Model::PutLoggingOptionsRequest& request, const PutLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartDetectorModelAnalysisAsyncHelper(const Model::StartDetectorModelAnalysisRequest& request, const StartDetectorModelAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDetectorModelAsyncHelper(const Model::UpdateDetectorModelRequest& request, const UpdateDetectorModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

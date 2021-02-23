@@ -152,6 +152,31 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether to include scaling activity from deleted Auto Scaling
+     * groups.</p>
+     */
+    inline bool GetIncludeDeletedGroups() const{ return m_includeDeletedGroups; }
+
+    /**
+     * <p>Indicates whether to include scaling activity from deleted Auto Scaling
+     * groups.</p>
+     */
+    inline bool IncludeDeletedGroupsHasBeenSet() const { return m_includeDeletedGroupsHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to include scaling activity from deleted Auto Scaling
+     * groups.</p>
+     */
+    inline void SetIncludeDeletedGroups(bool value) { m_includeDeletedGroupsHasBeenSet = true; m_includeDeletedGroups = value; }
+
+    /**
+     * <p>Indicates whether to include scaling activity from deleted Auto Scaling
+     * groups.</p>
+     */
+    inline DescribeScalingActivitiesRequest& WithIncludeDeletedGroups(bool value) { SetIncludeDeletedGroups(value); return *this;}
+
+
+    /**
      * <p>The maximum number of items to return with this call. The default value is
      * <code>100</code> and the maximum value is <code>100</code>.</p>
      */
@@ -231,6 +256,9 @@ namespace Model
 
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
+
+    bool m_includeDeletedGroups;
+    bool m_includeDeletedGroupsHasBeenSet;
 
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;

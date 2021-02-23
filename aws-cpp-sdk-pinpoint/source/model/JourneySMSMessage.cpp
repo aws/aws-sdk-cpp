@@ -22,7 +22,9 @@ JourneySMSMessage::JourneySMSMessage() :
     m_messageType(MessageType::NOT_SET),
     m_messageTypeHasBeenSet(false),
     m_originationNumberHasBeenSet(false),
-    m_senderIdHasBeenSet(false)
+    m_senderIdHasBeenSet(false),
+    m_entityIdHasBeenSet(false),
+    m_templateIdHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ JourneySMSMessage::JourneySMSMessage(JsonView jsonValue) :
     m_messageType(MessageType::NOT_SET),
     m_messageTypeHasBeenSet(false),
     m_originationNumberHasBeenSet(false),
-    m_senderIdHasBeenSet(false)
+    m_senderIdHasBeenSet(false),
+    m_entityIdHasBeenSet(false),
+    m_templateIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +62,20 @@ JourneySMSMessage& JourneySMSMessage::operator =(JsonView jsonValue)
     m_senderIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EntityId"))
+  {
+    m_entityId = jsonValue.GetString("EntityId");
+
+    m_entityIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TemplateId"))
+  {
+    m_templateId = jsonValue.GetString("TemplateId");
+
+    m_templateIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -79,6 +97,18 @@ JsonValue JourneySMSMessage::Jsonize() const
   if(m_senderIdHasBeenSet)
   {
    payload.WithString("SenderId", m_senderId);
+
+  }
+
+  if(m_entityIdHasBeenSet)
+  {
+   payload.WithString("EntityId", m_entityId);
+
+  }
+
+  if(m_templateIdHasBeenSet)
+  {
+   payload.WithString("TemplateId", m_templateId);
 
   }
 

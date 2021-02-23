@@ -22,16 +22,16 @@ namespace Model
 
   /**
    */
-  class AWS_IOTEVENTS_API ListDetectorModelVersionsRequest : public IoTEventsRequest
+  class AWS_IOTEVENTS_API GetDetectorModelAnalysisResultsRequest : public IoTEventsRequest
   {
   public:
-    ListDetectorModelVersionsRequest();
+    GetDetectorModelAnalysisResultsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
     // Note: this is not true for response, multiple operations may have the same response name,
     // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ListDetectorModelVersions"; }
+    inline virtual const char* GetServiceRequestName() const override { return "GetDetectorModelAnalysisResults"; }
 
     Aws::String SerializePayload() const override;
 
@@ -39,44 +39,44 @@ namespace Model
 
 
     /**
-     * <p>The name of the detector model whose versions are returned.</p>
+     * <p>The ID of the analysis result that you want to retrieve.</p>
      */
-    inline const Aws::String& GetDetectorModelName() const{ return m_detectorModelName; }
+    inline const Aws::String& GetAnalysisId() const{ return m_analysisId; }
 
     /**
-     * <p>The name of the detector model whose versions are returned.</p>
+     * <p>The ID of the analysis result that you want to retrieve.</p>
      */
-    inline bool DetectorModelNameHasBeenSet() const { return m_detectorModelNameHasBeenSet; }
+    inline bool AnalysisIdHasBeenSet() const { return m_analysisIdHasBeenSet; }
 
     /**
-     * <p>The name of the detector model whose versions are returned.</p>
+     * <p>The ID of the analysis result that you want to retrieve.</p>
      */
-    inline void SetDetectorModelName(const Aws::String& value) { m_detectorModelNameHasBeenSet = true; m_detectorModelName = value; }
+    inline void SetAnalysisId(const Aws::String& value) { m_analysisIdHasBeenSet = true; m_analysisId = value; }
 
     /**
-     * <p>The name of the detector model whose versions are returned.</p>
+     * <p>The ID of the analysis result that you want to retrieve.</p>
      */
-    inline void SetDetectorModelName(Aws::String&& value) { m_detectorModelNameHasBeenSet = true; m_detectorModelName = std::move(value); }
+    inline void SetAnalysisId(Aws::String&& value) { m_analysisIdHasBeenSet = true; m_analysisId = std::move(value); }
 
     /**
-     * <p>The name of the detector model whose versions are returned.</p>
+     * <p>The ID of the analysis result that you want to retrieve.</p>
      */
-    inline void SetDetectorModelName(const char* value) { m_detectorModelNameHasBeenSet = true; m_detectorModelName.assign(value); }
+    inline void SetAnalysisId(const char* value) { m_analysisIdHasBeenSet = true; m_analysisId.assign(value); }
 
     /**
-     * <p>The name of the detector model whose versions are returned.</p>
+     * <p>The ID of the analysis result that you want to retrieve.</p>
      */
-    inline ListDetectorModelVersionsRequest& WithDetectorModelName(const Aws::String& value) { SetDetectorModelName(value); return *this;}
+    inline GetDetectorModelAnalysisResultsRequest& WithAnalysisId(const Aws::String& value) { SetAnalysisId(value); return *this;}
 
     /**
-     * <p>The name of the detector model whose versions are returned.</p>
+     * <p>The ID of the analysis result that you want to retrieve.</p>
      */
-    inline ListDetectorModelVersionsRequest& WithDetectorModelName(Aws::String&& value) { SetDetectorModelName(std::move(value)); return *this;}
+    inline GetDetectorModelAnalysisResultsRequest& WithAnalysisId(Aws::String&& value) { SetAnalysisId(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the detector model whose versions are returned.</p>
+     * <p>The ID of the analysis result that you want to retrieve.</p>
      */
-    inline ListDetectorModelVersionsRequest& WithDetectorModelName(const char* value) { SetDetectorModelName(value); return *this;}
+    inline GetDetectorModelAnalysisResultsRequest& WithAnalysisId(const char* value) { SetAnalysisId(value); return *this;}
 
 
     /**
@@ -107,17 +107,17 @@ namespace Model
     /**
      * <p>The token that you can use to return the next set of results.</p>
      */
-    inline ListDetectorModelVersionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline GetDetectorModelAnalysisResultsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>The token that you can use to return the next set of results.</p>
      */
-    inline ListDetectorModelVersionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+    inline GetDetectorModelAnalysisResultsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token that you can use to return the next set of results.</p>
      */
-    inline ListDetectorModelVersionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline GetDetectorModelAnalysisResultsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
@@ -138,12 +138,12 @@ namespace Model
     /**
      * <p>The maximum number of results to be returned per request.</p>
      */
-    inline ListDetectorModelVersionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline GetDetectorModelAnalysisResultsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
 
-    Aws::String m_detectorModelName;
-    bool m_detectorModelNameHasBeenSet;
+    Aws::String m_analysisId;
+    bool m_analysisIdHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

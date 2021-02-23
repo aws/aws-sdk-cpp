@@ -20,7 +20,9 @@ GetPartitionsRequest::GetPartitionsRequest() :
     m_nextTokenHasBeenSet(false),
     m_segmentHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_excludeColumnSchema(false),
+    m_excludeColumnSchemaHasBeenSet(false)
 {
 }
 
@@ -67,6 +69,12 @@ Aws::String GetPartitionsRequest::SerializePayload() const
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("MaxResults", m_maxResults);
+
+  }
+
+  if(m_excludeColumnSchemaHasBeenSet)
+  {
+   payload.WithBool("ExcludeColumnSchema", m_excludeColumnSchema);
 
   }
 
