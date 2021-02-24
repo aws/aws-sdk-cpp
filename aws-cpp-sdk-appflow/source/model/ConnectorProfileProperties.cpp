@@ -23,6 +23,7 @@ ConnectorProfileProperties::ConnectorProfileProperties() :
     m_datadogHasBeenSet(false),
     m_dynatraceHasBeenSet(false),
     m_googleAnalyticsHasBeenSet(false),
+    m_honeycodeHasBeenSet(false),
     m_inforNexusHasBeenSet(false),
     m_marketoHasBeenSet(false),
     m_redshiftHasBeenSet(false),
@@ -42,6 +43,7 @@ ConnectorProfileProperties::ConnectorProfileProperties(JsonView jsonValue) :
     m_datadogHasBeenSet(false),
     m_dynatraceHasBeenSet(false),
     m_googleAnalyticsHasBeenSet(false),
+    m_honeycodeHasBeenSet(false),
     m_inforNexusHasBeenSet(false),
     m_marketoHasBeenSet(false),
     m_redshiftHasBeenSet(false),
@@ -85,6 +87,13 @@ ConnectorProfileProperties& ConnectorProfileProperties::operator =(JsonView json
     m_googleAnalytics = jsonValue.GetObject("GoogleAnalytics");
 
     m_googleAnalyticsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Honeycode"))
+  {
+    m_honeycode = jsonValue.GetObject("Honeycode");
+
+    m_honeycodeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("InforNexus"))
@@ -192,6 +201,12 @@ JsonValue ConnectorProfileProperties::Jsonize() const
   if(m_googleAnalyticsHasBeenSet)
   {
    payload.WithObject("GoogleAnalytics", m_googleAnalytics.Jsonize());
+
+  }
+
+  if(m_honeycodeHasBeenSet)
+  {
+   payload.WithObject("Honeycode", m_honeycode.Jsonize());
 
   }
 

@@ -23,6 +23,8 @@
 #include <aws/appflow/model/ZendeskMetadata.h>
 #include <aws/appflow/model/EventBridgeMetadata.h>
 #include <aws/appflow/model/UpsolverMetadata.h>
+#include <aws/appflow/model/CustomerProfilesMetadata.h>
+#include <aws/appflow/model/HoneycodeMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -613,6 +615,44 @@ namespace Model
      */
     inline ConnectorMetadata& WithUpsolver(UpsolverMetadata&& value) { SetUpsolver(std::move(value)); return *this;}
 
+
+    
+    inline const CustomerProfilesMetadata& GetCustomerProfiles() const{ return m_customerProfiles; }
+
+    
+    inline bool CustomerProfilesHasBeenSet() const { return m_customerProfilesHasBeenSet; }
+
+    
+    inline void SetCustomerProfiles(const CustomerProfilesMetadata& value) { m_customerProfilesHasBeenSet = true; m_customerProfiles = value; }
+
+    
+    inline void SetCustomerProfiles(CustomerProfilesMetadata&& value) { m_customerProfilesHasBeenSet = true; m_customerProfiles = std::move(value); }
+
+    
+    inline ConnectorMetadata& WithCustomerProfiles(const CustomerProfilesMetadata& value) { SetCustomerProfiles(value); return *this;}
+
+    
+    inline ConnectorMetadata& WithCustomerProfiles(CustomerProfilesMetadata&& value) { SetCustomerProfiles(std::move(value)); return *this;}
+
+
+    
+    inline const HoneycodeMetadata& GetHoneycode() const{ return m_honeycode; }
+
+    
+    inline bool HoneycodeHasBeenSet() const { return m_honeycodeHasBeenSet; }
+
+    
+    inline void SetHoneycode(const HoneycodeMetadata& value) { m_honeycodeHasBeenSet = true; m_honeycode = value; }
+
+    
+    inline void SetHoneycode(HoneycodeMetadata&& value) { m_honeycodeHasBeenSet = true; m_honeycode = std::move(value); }
+
+    
+    inline ConnectorMetadata& WithHoneycode(const HoneycodeMetadata& value) { SetHoneycode(value); return *this;}
+
+    
+    inline ConnectorMetadata& WithHoneycode(HoneycodeMetadata&& value) { SetHoneycode(std::move(value)); return *this;}
+
   private:
 
     AmplitudeMetadata m_amplitude;
@@ -668,6 +708,12 @@ namespace Model
 
     UpsolverMetadata m_upsolver;
     bool m_upsolverHasBeenSet;
+
+    CustomerProfilesMetadata m_customerProfiles;
+    bool m_customerProfilesHasBeenSet;
+
+    HoneycodeMetadata m_honeycode;
+    bool m_honeycodeHasBeenSet;
   };
 
 } // namespace Model

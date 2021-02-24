@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/es/model/DomainEndpointOptions.h>
 #include <aws/es/model/AdvancedSecurityOptionsInput.h>
+#include <aws/es/model/AutoTuneOptionsInput.h>
 #include <aws/es/model/LogType.h>
 #include <aws/es/model/LogPublishingOption.h>
 #include <utility>
@@ -746,6 +747,37 @@ namespace Model
      */
     inline CreateElasticsearchDomainRequest& WithAdvancedSecurityOptions(AdvancedSecurityOptionsInput&& value) { SetAdvancedSecurityOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies Auto-Tune options.</p>
+     */
+    inline const AutoTuneOptionsInput& GetAutoTuneOptions() const{ return m_autoTuneOptions; }
+
+    /**
+     * <p>Specifies Auto-Tune options.</p>
+     */
+    inline bool AutoTuneOptionsHasBeenSet() const { return m_autoTuneOptionsHasBeenSet; }
+
+    /**
+     * <p>Specifies Auto-Tune options.</p>
+     */
+    inline void SetAutoTuneOptions(const AutoTuneOptionsInput& value) { m_autoTuneOptionsHasBeenSet = true; m_autoTuneOptions = value; }
+
+    /**
+     * <p>Specifies Auto-Tune options.</p>
+     */
+    inline void SetAutoTuneOptions(AutoTuneOptionsInput&& value) { m_autoTuneOptionsHasBeenSet = true; m_autoTuneOptions = std::move(value); }
+
+    /**
+     * <p>Specifies Auto-Tune options.</p>
+     */
+    inline CreateElasticsearchDomainRequest& WithAutoTuneOptions(const AutoTuneOptionsInput& value) { SetAutoTuneOptions(value); return *this;}
+
+    /**
+     * <p>Specifies Auto-Tune options.</p>
+     */
+    inline CreateElasticsearchDomainRequest& WithAutoTuneOptions(AutoTuneOptionsInput&& value) { SetAutoTuneOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -789,6 +821,9 @@ namespace Model
 
     AdvancedSecurityOptionsInput m_advancedSecurityOptions;
     bool m_advancedSecurityOptionsHasBeenSet;
+
+    AutoTuneOptionsInput m_autoTuneOptions;
+    bool m_autoTuneOptionsHasBeenSet;
   };
 
 } // namespace Model

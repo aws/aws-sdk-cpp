@@ -9,6 +9,7 @@
 #include <aws/appflow/model/DatadogConnectorProfileProperties.h>
 #include <aws/appflow/model/DynatraceConnectorProfileProperties.h>
 #include <aws/appflow/model/GoogleAnalyticsConnectorProfileProperties.h>
+#include <aws/appflow/model/HoneycodeConnectorProfileProperties.h>
 #include <aws/appflow/model/InforNexusConnectorProfileProperties.h>
 #include <aws/appflow/model/MarketoConnectorProfileProperties.h>
 #include <aws/appflow/model/RedshiftConnectorProfileProperties.h>
@@ -174,6 +175,25 @@ namespace Model
      * <p> The connector-specific properties required Google Analytics. </p>
      */
     inline ConnectorProfileProperties& WithGoogleAnalytics(GoogleAnalyticsConnectorProfileProperties&& value) { SetGoogleAnalytics(std::move(value)); return *this;}
+
+
+    
+    inline const HoneycodeConnectorProfileProperties& GetHoneycode() const{ return m_honeycode; }
+
+    
+    inline bool HoneycodeHasBeenSet() const { return m_honeycodeHasBeenSet; }
+
+    
+    inline void SetHoneycode(const HoneycodeConnectorProfileProperties& value) { m_honeycodeHasBeenSet = true; m_honeycode = value; }
+
+    
+    inline void SetHoneycode(HoneycodeConnectorProfileProperties&& value) { m_honeycodeHasBeenSet = true; m_honeycode = std::move(value); }
+
+    
+    inline ConnectorProfileProperties& WithHoneycode(const HoneycodeConnectorProfileProperties& value) { SetHoneycode(value); return *this;}
+
+    
+    inline ConnectorProfileProperties& WithHoneycode(HoneycodeConnectorProfileProperties&& value) { SetHoneycode(std::move(value)); return *this;}
 
 
     /**
@@ -529,6 +549,9 @@ namespace Model
 
     GoogleAnalyticsConnectorProfileProperties m_googleAnalytics;
     bool m_googleAnalyticsHasBeenSet;
+
+    HoneycodeConnectorProfileProperties m_honeycode;
+    bool m_honeycodeHasBeenSet;
 
     InforNexusConnectorProfileProperties m_inforNexus;
     bool m_inforNexusHasBeenSet;

@@ -20,6 +20,7 @@
 #include <aws/mediapackage-vod/MediaPackageVodClient.h>
 #include <aws/mediapackage-vod/MediaPackageVodEndpoint.h>
 #include <aws/mediapackage-vod/MediaPackageVodErrorMarshaller.h>
+#include <aws/mediapackage-vod/model/ConfigureLogsRequest.h>
 #include <aws/mediapackage-vod/model/CreateAssetRequest.h>
 #include <aws/mediapackage-vod/model/CreatePackagingConfigurationRequest.h>
 #include <aws/mediapackage-vod/model/CreatePackagingGroupRequest.h>
@@ -108,6 +109,40 @@ void MediaPackageVodClient::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+ConfigureLogsOutcome MediaPackageVodClient::ConfigureLogs(const ConfigureLogsRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ConfigureLogs", "Required field: Id, is not set");
+    return ConfigureLogsOutcome(Aws::Client::AWSError<MediaPackageVodErrors>(MediaPackageVodErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/packaging_groups/";
+  ss << request.GetId();
+  ss << "/configure_logs";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ConfigureLogsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+ConfigureLogsOutcomeCallable MediaPackageVodClient::ConfigureLogsCallable(const ConfigureLogsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ConfigureLogsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ConfigureLogs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaPackageVodClient::ConfigureLogsAsync(const ConfigureLogsRequest& request, const ConfigureLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ConfigureLogsAsyncHelper( request, handler, context ); } );
+}
+
+void MediaPackageVodClient::ConfigureLogsAsyncHelper(const ConfigureLogsRequest& request, const ConfigureLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ConfigureLogs(request), context);
 }
 
 CreateAssetOutcome MediaPackageVodClient::CreateAsset(const CreateAssetRequest& request) const

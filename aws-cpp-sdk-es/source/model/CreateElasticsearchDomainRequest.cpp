@@ -26,7 +26,8 @@ CreateElasticsearchDomainRequest::CreateElasticsearchDomainRequest() :
     m_advancedOptionsHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false),
     m_domainEndpointOptionsHasBeenSet(false),
-    m_advancedSecurityOptionsHasBeenSet(false)
+    m_advancedSecurityOptionsHasBeenSet(false),
+    m_autoTuneOptionsHasBeenSet(false)
 {
 }
 
@@ -125,6 +126,12 @@ Aws::String CreateElasticsearchDomainRequest::SerializePayload() const
   if(m_advancedSecurityOptionsHasBeenSet)
   {
    payload.WithObject("AdvancedSecurityOptions", m_advancedSecurityOptions.Jsonize());
+
+  }
+
+  if(m_autoTuneOptionsHasBeenSet)
+  {
+   payload.WithObject("AutoTuneOptions", m_autoTuneOptions.Jsonize());
 
   }
 

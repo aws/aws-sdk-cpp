@@ -10,7 +10,10 @@
 #include <aws/appflow/model/SalesforceDestinationProperties.h>
 #include <aws/appflow/model/SnowflakeDestinationProperties.h>
 #include <aws/appflow/model/EventBridgeDestinationProperties.h>
+#include <aws/appflow/model/LookoutMetricsDestinationProperties.h>
 #include <aws/appflow/model/UpsolverDestinationProperties.h>
+#include <aws/appflow/model/HoneycodeDestinationProperties.h>
+#include <aws/appflow/model/CustomerProfilesDestinationProperties.h>
 #include <utility>
 
 namespace Aws
@@ -198,6 +201,25 @@ namespace Model
     inline DestinationConnectorProperties& WithEventBridge(EventBridgeDestinationProperties&& value) { SetEventBridge(std::move(value)); return *this;}
 
 
+    
+    inline const LookoutMetricsDestinationProperties& GetLookoutMetrics() const{ return m_lookoutMetrics; }
+
+    
+    inline bool LookoutMetricsHasBeenSet() const { return m_lookoutMetricsHasBeenSet; }
+
+    
+    inline void SetLookoutMetrics(const LookoutMetricsDestinationProperties& value) { m_lookoutMetricsHasBeenSet = true; m_lookoutMetrics = value; }
+
+    
+    inline void SetLookoutMetrics(LookoutMetricsDestinationProperties&& value) { m_lookoutMetricsHasBeenSet = true; m_lookoutMetrics = std::move(value); }
+
+    
+    inline DestinationConnectorProperties& WithLookoutMetrics(const LookoutMetricsDestinationProperties& value) { SetLookoutMetrics(value); return *this;}
+
+    
+    inline DestinationConnectorProperties& WithLookoutMetrics(LookoutMetricsDestinationProperties&& value) { SetLookoutMetrics(std::move(value)); return *this;}
+
+
     /**
      * <p> The properties required to query Upsolver. </p>
      */
@@ -228,6 +250,44 @@ namespace Model
      */
     inline DestinationConnectorProperties& WithUpsolver(UpsolverDestinationProperties&& value) { SetUpsolver(std::move(value)); return *this;}
 
+
+    
+    inline const HoneycodeDestinationProperties& GetHoneycode() const{ return m_honeycode; }
+
+    
+    inline bool HoneycodeHasBeenSet() const { return m_honeycodeHasBeenSet; }
+
+    
+    inline void SetHoneycode(const HoneycodeDestinationProperties& value) { m_honeycodeHasBeenSet = true; m_honeycode = value; }
+
+    
+    inline void SetHoneycode(HoneycodeDestinationProperties&& value) { m_honeycodeHasBeenSet = true; m_honeycode = std::move(value); }
+
+    
+    inline DestinationConnectorProperties& WithHoneycode(const HoneycodeDestinationProperties& value) { SetHoneycode(value); return *this;}
+
+    
+    inline DestinationConnectorProperties& WithHoneycode(HoneycodeDestinationProperties&& value) { SetHoneycode(std::move(value)); return *this;}
+
+
+    
+    inline const CustomerProfilesDestinationProperties& GetCustomerProfiles() const{ return m_customerProfiles; }
+
+    
+    inline bool CustomerProfilesHasBeenSet() const { return m_customerProfilesHasBeenSet; }
+
+    
+    inline void SetCustomerProfiles(const CustomerProfilesDestinationProperties& value) { m_customerProfilesHasBeenSet = true; m_customerProfiles = value; }
+
+    
+    inline void SetCustomerProfiles(CustomerProfilesDestinationProperties&& value) { m_customerProfilesHasBeenSet = true; m_customerProfiles = std::move(value); }
+
+    
+    inline DestinationConnectorProperties& WithCustomerProfiles(const CustomerProfilesDestinationProperties& value) { SetCustomerProfiles(value); return *this;}
+
+    
+    inline DestinationConnectorProperties& WithCustomerProfiles(CustomerProfilesDestinationProperties&& value) { SetCustomerProfiles(std::move(value)); return *this;}
+
   private:
 
     RedshiftDestinationProperties m_redshift;
@@ -245,8 +305,17 @@ namespace Model
     EventBridgeDestinationProperties m_eventBridge;
     bool m_eventBridgeHasBeenSet;
 
+    LookoutMetricsDestinationProperties m_lookoutMetrics;
+    bool m_lookoutMetricsHasBeenSet;
+
     UpsolverDestinationProperties m_upsolver;
     bool m_upsolverHasBeenSet;
+
+    HoneycodeDestinationProperties m_honeycode;
+    bool m_honeycodeHasBeenSet;
+
+    CustomerProfilesDestinationProperties m_customerProfiles;
+    bool m_customerProfilesHasBeenSet;
   };
 
 } // namespace Model

@@ -17,6 +17,7 @@
 #include <aws/es/model/AdvancedSecurityOptionsInput.h>
 #include <aws/es/model/NodeToNodeEncryptionOptions.h>
 #include <aws/es/model/EncryptionAtRestOptions.h>
+#include <aws/es/model/AutoTuneOptions.h>
 #include <aws/es/model/LogType.h>
 #include <aws/es/model/LogPublishingOption.h>
 #include <utility>
@@ -642,6 +643,37 @@ namespace Model
      */
     inline UpdateElasticsearchDomainConfigRequest& WithEncryptionAtRestOptions(EncryptionAtRestOptions&& value) { SetEncryptionAtRestOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies Auto-Tune options.</p>
+     */
+    inline const AutoTuneOptions& GetAutoTuneOptions() const{ return m_autoTuneOptions; }
+
+    /**
+     * <p>Specifies Auto-Tune options.</p>
+     */
+    inline bool AutoTuneOptionsHasBeenSet() const { return m_autoTuneOptionsHasBeenSet; }
+
+    /**
+     * <p>Specifies Auto-Tune options.</p>
+     */
+    inline void SetAutoTuneOptions(const AutoTuneOptions& value) { m_autoTuneOptionsHasBeenSet = true; m_autoTuneOptions = value; }
+
+    /**
+     * <p>Specifies Auto-Tune options.</p>
+     */
+    inline void SetAutoTuneOptions(AutoTuneOptions&& value) { m_autoTuneOptionsHasBeenSet = true; m_autoTuneOptions = std::move(value); }
+
+    /**
+     * <p>Specifies Auto-Tune options.</p>
+     */
+    inline UpdateElasticsearchDomainConfigRequest& WithAutoTuneOptions(const AutoTuneOptions& value) { SetAutoTuneOptions(value); return *this;}
+
+    /**
+     * <p>Specifies Auto-Tune options.</p>
+     */
+    inline UpdateElasticsearchDomainConfigRequest& WithAutoTuneOptions(AutoTuneOptions&& value) { SetAutoTuneOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -682,6 +714,9 @@ namespace Model
 
     EncryptionAtRestOptions m_encryptionAtRestOptions;
     bool m_encryptionAtRestOptionsHasBeenSet;
+
+    AutoTuneOptions m_autoTuneOptions;
+    bool m_autoTuneOptionsHasBeenSet;
   };
 
 } // namespace Model

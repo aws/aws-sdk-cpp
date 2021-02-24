@@ -31,6 +31,7 @@
 #include <aws/es/model/DeleteInboundCrossClusterSearchConnectionRequest.h>
 #include <aws/es/model/DeleteOutboundCrossClusterSearchConnectionRequest.h>
 #include <aws/es/model/DeletePackageRequest.h>
+#include <aws/es/model/DescribeDomainAutoTunesRequest.h>
 #include <aws/es/model/DescribeElasticsearchDomainRequest.h>
 #include <aws/es/model/DescribeElasticsearchDomainConfigRequest.h>
 #include <aws/es/model/DescribeElasticsearchDomainsRequest.h>
@@ -495,6 +496,40 @@ void ElasticsearchServiceClient::DeletePackageAsync(const DeletePackageRequest& 
 void ElasticsearchServiceClient::DeletePackageAsyncHelper(const DeletePackageRequest& request, const DeletePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeletePackage(request), context);
+}
+
+DescribeDomainAutoTunesOutcome ElasticsearchServiceClient::DescribeDomainAutoTunes(const DescribeDomainAutoTunesRequest& request) const
+{
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeDomainAutoTunes", "Required field: DomainName, is not set");
+    return DescribeDomainAutoTunesOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2015-01-01/es/domain/";
+  ss << request.GetDomainName();
+  ss << "/autoTunes";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeDomainAutoTunesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeDomainAutoTunesOutcomeCallable ElasticsearchServiceClient::DescribeDomainAutoTunesCallable(const DescribeDomainAutoTunesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDomainAutoTunesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDomainAutoTunes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticsearchServiceClient::DescribeDomainAutoTunesAsync(const DescribeDomainAutoTunesRequest& request, const DescribeDomainAutoTunesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDomainAutoTunesAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticsearchServiceClient::DescribeDomainAutoTunesAsyncHelper(const DescribeDomainAutoTunesRequest& request, const DescribeDomainAutoTunesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDomainAutoTunes(request), context);
 }
 
 DescribeElasticsearchDomainOutcome ElasticsearchServiceClient::DescribeElasticsearchDomain(const DescribeElasticsearchDomainRequest& request) const

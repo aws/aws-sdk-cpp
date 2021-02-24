@@ -40,32 +40,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the utilization metric.</p>
+     * <p>The name of the utilization metric.</p> <p>The following utilization metrics
+     * are available:</p> <ul> <li> <p> <code>Duration</code> - The amount of time that
+     * your function code spends processing an event.</p> </li> <li> <p>
+     * <code>Memory</code> - The amount of memory used per invocation.</p> </li> </ul>
      */
     inline const LambdaFunctionMetricName& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the utilization metric.</p>
+     * <p>The name of the utilization metric.</p> <p>The following utilization metrics
+     * are available:</p> <ul> <li> <p> <code>Duration</code> - The amount of time that
+     * your function code spends processing an event.</p> </li> <li> <p>
+     * <code>Memory</code> - The amount of memory used per invocation.</p> </li> </ul>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the utilization metric.</p>
+     * <p>The name of the utilization metric.</p> <p>The following utilization metrics
+     * are available:</p> <ul> <li> <p> <code>Duration</code> - The amount of time that
+     * your function code spends processing an event.</p> </li> <li> <p>
+     * <code>Memory</code> - The amount of memory used per invocation.</p> </li> </ul>
      */
     inline void SetName(const LambdaFunctionMetricName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the utilization metric.</p>
+     * <p>The name of the utilization metric.</p> <p>The following utilization metrics
+     * are available:</p> <ul> <li> <p> <code>Duration</code> - The amount of time that
+     * your function code spends processing an event.</p> </li> <li> <p>
+     * <code>Memory</code> - The amount of memory used per invocation.</p> </li> </ul>
      */
     inline void SetName(LambdaFunctionMetricName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the utilization metric.</p>
+     * <p>The name of the utilization metric.</p> <p>The following utilization metrics
+     * are available:</p> <ul> <li> <p> <code>Duration</code> - The amount of time that
+     * your function code spends processing an event.</p> </li> <li> <p>
+     * <code>Memory</code> - The amount of memory used per invocation.</p> </li> </ul>
      */
     inline LambdaFunctionUtilizationMetric& WithName(const LambdaFunctionMetricName& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the utilization metric.</p>
+     * <p>The name of the utilization metric.</p> <p>The following utilization metrics
+     * are available:</p> <ul> <li> <p> <code>Duration</code> - The amount of time that
+     * your function code spends processing an event.</p> </li> <li> <p>
+     * <code>Memory</code> - The amount of memory used per invocation.</p> </li> </ul>
      */
     inline LambdaFunctionUtilizationMetric& WithName(LambdaFunctionMetricName&& value) { SetName(std::move(value)); return *this;}
 

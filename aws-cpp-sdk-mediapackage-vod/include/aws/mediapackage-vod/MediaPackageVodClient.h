@@ -11,6 +11,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediapackage-vod/model/ConfigureLogsResult.h>
 #include <aws/mediapackage-vod/model/CreateAssetResult.h>
 #include <aws/mediapackage-vod/model/CreatePackagingConfigurationResult.h>
 #include <aws/mediapackage-vod/model/CreatePackagingGroupResult.h>
@@ -65,6 +66,7 @@ namespace MediaPackageVod
 
 namespace Model
 {
+        class ConfigureLogsRequest;
         class CreateAssetRequest;
         class CreatePackagingConfigurationRequest;
         class CreatePackagingGroupRequest;
@@ -82,6 +84,7 @@ namespace Model
         class UntagResourceRequest;
         class UpdatePackagingGroupRequest;
 
+        typedef Aws::Utils::Outcome<ConfigureLogsResult, MediaPackageVodError> ConfigureLogsOutcome;
         typedef Aws::Utils::Outcome<CreateAssetResult, MediaPackageVodError> CreateAssetOutcome;
         typedef Aws::Utils::Outcome<CreatePackagingConfigurationResult, MediaPackageVodError> CreatePackagingConfigurationOutcome;
         typedef Aws::Utils::Outcome<CreatePackagingGroupResult, MediaPackageVodError> CreatePackagingGroupOutcome;
@@ -99,6 +102,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, MediaPackageVodError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdatePackagingGroupResult, MediaPackageVodError> UpdatePackagingGroupOutcome;
 
+        typedef std::future<ConfigureLogsOutcome> ConfigureLogsOutcomeCallable;
         typedef std::future<CreateAssetOutcome> CreateAssetOutcomeCallable;
         typedef std::future<CreatePackagingConfigurationOutcome> CreatePackagingConfigurationOutcomeCallable;
         typedef std::future<CreatePackagingGroupOutcome> CreatePackagingGroupOutcomeCallable;
@@ -119,6 +123,7 @@ namespace Model
 
   class MediaPackageVodClient;
 
+    typedef std::function<void(const MediaPackageVodClient*, const Model::ConfigureLogsRequest&, const Model::ConfigureLogsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfigureLogsResponseReceivedHandler;
     typedef std::function<void(const MediaPackageVodClient*, const Model::CreateAssetRequest&, const Model::CreateAssetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAssetResponseReceivedHandler;
     typedef std::function<void(const MediaPackageVodClient*, const Model::CreatePackagingConfigurationRequest&, const Model::CreatePackagingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePackagingConfigurationResponseReceivedHandler;
     typedef std::function<void(const MediaPackageVodClient*, const Model::CreatePackagingGroupRequest&, const Model::CreatePackagingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePackagingGroupResponseReceivedHandler;
@@ -165,6 +170,34 @@ namespace Model
 
         virtual ~MediaPackageVodClient();
 
+
+        /**
+         * Changes the packaging group's properities to configure log
+         * subscription<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/ConfigureLogs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ConfigureLogsOutcome ConfigureLogs(const Model::ConfigureLogsRequest& request) const;
+
+        /**
+         * Changes the packaging group's properities to configure log
+         * subscription<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/ConfigureLogs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ConfigureLogsOutcomeCallable ConfigureLogsCallable(const Model::ConfigureLogsRequest& request) const;
+
+        /**
+         * Changes the packaging group's properities to configure log
+         * subscription<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/ConfigureLogs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ConfigureLogsAsync(const Model::ConfigureLogsRequest& request, const ConfigureLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Creates a new MediaPackage VOD Asset resource.<p><h3>See Also:</h3>   <a
@@ -609,6 +642,7 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void ConfigureLogsAsyncHelper(const Model::ConfigureLogsRequest& request, const ConfigureLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAssetAsyncHelper(const Model::CreateAssetRequest& request, const CreateAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePackagingConfigurationAsyncHelper(const Model::CreatePackagingConfigurationRequest& request, const CreatePackagingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePackagingGroupAsyncHelper(const Model::CreatePackagingGroupRequest& request, const CreatePackagingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

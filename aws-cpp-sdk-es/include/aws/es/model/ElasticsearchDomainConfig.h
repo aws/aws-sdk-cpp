@@ -18,6 +18,7 @@
 #include <aws/es/model/LogPublishingOptionsStatus.h>
 #include <aws/es/model/DomainEndpointOptionsStatus.h>
 #include <aws/es/model/AdvancedSecurityOptionsStatus.h>
+#include <aws/es/model/AutoTuneOptionsStatus.h>
 #include <utility>
 
 namespace Aws
@@ -523,6 +524,37 @@ namespace Model
      */
     inline ElasticsearchDomainConfig& WithAdvancedSecurityOptions(AdvancedSecurityOptionsStatus&& value) { SetAdvancedSecurityOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies <code>AutoTuneOptions</code> for the domain. </p>
+     */
+    inline const AutoTuneOptionsStatus& GetAutoTuneOptions() const{ return m_autoTuneOptions; }
+
+    /**
+     * <p>Specifies <code>AutoTuneOptions</code> for the domain. </p>
+     */
+    inline bool AutoTuneOptionsHasBeenSet() const { return m_autoTuneOptionsHasBeenSet; }
+
+    /**
+     * <p>Specifies <code>AutoTuneOptions</code> for the domain. </p>
+     */
+    inline void SetAutoTuneOptions(const AutoTuneOptionsStatus& value) { m_autoTuneOptionsHasBeenSet = true; m_autoTuneOptions = value; }
+
+    /**
+     * <p>Specifies <code>AutoTuneOptions</code> for the domain. </p>
+     */
+    inline void SetAutoTuneOptions(AutoTuneOptionsStatus&& value) { m_autoTuneOptionsHasBeenSet = true; m_autoTuneOptions = std::move(value); }
+
+    /**
+     * <p>Specifies <code>AutoTuneOptions</code> for the domain. </p>
+     */
+    inline ElasticsearchDomainConfig& WithAutoTuneOptions(const AutoTuneOptionsStatus& value) { SetAutoTuneOptions(value); return *this;}
+
+    /**
+     * <p>Specifies <code>AutoTuneOptions</code> for the domain. </p>
+     */
+    inline ElasticsearchDomainConfig& WithAutoTuneOptions(AutoTuneOptionsStatus&& value) { SetAutoTuneOptions(std::move(value)); return *this;}
+
   private:
 
     ElasticsearchVersionStatus m_elasticsearchVersion;
@@ -563,6 +595,9 @@ namespace Model
 
     AdvancedSecurityOptionsStatus m_advancedSecurityOptions;
     bool m_advancedSecurityOptionsHasBeenSet;
+
+    AutoTuneOptionsStatus m_autoTuneOptions;
+    bool m_autoTuneOptionsHasBeenSet;
   };
 
 } // namespace Model

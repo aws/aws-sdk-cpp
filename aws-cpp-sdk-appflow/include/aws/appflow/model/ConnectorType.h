@@ -33,7 +33,10 @@ namespace Model
     Amplitude,
     Veeva,
     EventBridge,
-    Upsolver
+    LookoutMetrics,
+    Upsolver,
+    Honeycode,
+    CustomerProfiles
   };
 
 namespace ConnectorTypeMapper

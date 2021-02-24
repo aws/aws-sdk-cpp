@@ -25,7 +25,8 @@ UpdateElasticsearchDomainConfigRequest::UpdateElasticsearchDomainConfigRequest()
     m_domainEndpointOptionsHasBeenSet(false),
     m_advancedSecurityOptionsHasBeenSet(false),
     m_nodeToNodeEncryptionOptionsHasBeenSet(false),
-    m_encryptionAtRestOptionsHasBeenSet(false)
+    m_encryptionAtRestOptionsHasBeenSet(false),
+    m_autoTuneOptionsHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,12 @@ Aws::String UpdateElasticsearchDomainConfigRequest::SerializePayload() const
   if(m_encryptionAtRestOptionsHasBeenSet)
   {
    payload.WithObject("EncryptionAtRestOptions", m_encryptionAtRestOptions.Jsonize());
+
+  }
+
+  if(m_autoTuneOptionsHasBeenSet)
+  {
+   payload.WithObject("AutoTuneOptions", m_autoTuneOptions.Jsonize());
 
   }
 

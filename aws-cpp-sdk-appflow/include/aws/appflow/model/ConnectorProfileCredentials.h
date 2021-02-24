@@ -9,6 +9,7 @@
 #include <aws/appflow/model/DatadogConnectorProfileCredentials.h>
 #include <aws/appflow/model/DynatraceConnectorProfileCredentials.h>
 #include <aws/appflow/model/GoogleAnalyticsConnectorProfileCredentials.h>
+#include <aws/appflow/model/HoneycodeConnectorProfileCredentials.h>
 #include <aws/appflow/model/InforNexusConnectorProfileCredentials.h>
 #include <aws/appflow/model/MarketoConnectorProfileCredentials.h>
 #include <aws/appflow/model/RedshiftConnectorProfileCredentials.h>
@@ -180,6 +181,25 @@ namespace Model
      * </p>
      */
     inline ConnectorProfileCredentials& WithGoogleAnalytics(GoogleAnalyticsConnectorProfileCredentials&& value) { SetGoogleAnalytics(std::move(value)); return *this;}
+
+
+    
+    inline const HoneycodeConnectorProfileCredentials& GetHoneycode() const{ return m_honeycode; }
+
+    
+    inline bool HoneycodeHasBeenSet() const { return m_honeycodeHasBeenSet; }
+
+    
+    inline void SetHoneycode(const HoneycodeConnectorProfileCredentials& value) { m_honeycodeHasBeenSet = true; m_honeycode = value; }
+
+    
+    inline void SetHoneycode(HoneycodeConnectorProfileCredentials&& value) { m_honeycodeHasBeenSet = true; m_honeycode = std::move(value); }
+
+    
+    inline ConnectorProfileCredentials& WithHoneycode(const HoneycodeConnectorProfileCredentials& value) { SetHoneycode(value); return *this;}
+
+    
+    inline ConnectorProfileCredentials& WithHoneycode(HoneycodeConnectorProfileCredentials&& value) { SetHoneycode(std::move(value)); return *this;}
 
 
     /**
@@ -535,6 +555,9 @@ namespace Model
 
     GoogleAnalyticsConnectorProfileCredentials m_googleAnalytics;
     bool m_googleAnalyticsHasBeenSet;
+
+    HoneycodeConnectorProfileCredentials m_honeycode;
+    bool m_honeycodeHasBeenSet;
 
     InforNexusConnectorProfileCredentials m_inforNexus;
     bool m_inforNexusHasBeenSet;
