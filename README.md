@@ -147,16 +147,18 @@ For information about maintenance and support for SDK major versions and our und
 * [AWS SDKs and Tools Version Support Matrix](https://docs.aws.amazon.com/credref/latest/refdocs/version-support-matrix.html)
 
 
-
 # Getting Help
 
-The best way to interact with our team is through GitHub. You can [open an issue](https://github.com/aws/aws-sdk-cpp/issues/new/choose) and choose from one of our templates for guidance, bug reports, or feature requests. You may also find help on community resources such as [StackOverFlow](https://stackoverflow.com/questions/tagged/aws-sdk-cpp) with the tag #aws-sdk-cpp or If you have a support plan with [AWS Support](https://aws.amazon.com/premiumsupport/), you can also create a new support case.
+The best way to interact with our team is through GitHub. You can [open an issue](https://github.com/aws/aws-sdk-cpp/issues/new/choose) and choose from one of our templates for guidance, bug reports, or feature requests.
+
+You may also find help on community resources such as [StackOverFlow](https://stackoverflow.com/) with the tag [#aws-sdk-cpp](https://stackoverflow.com/questions/tagged/aws-cli) or on the [AWS Discussion Forum for CPP](https://forums.aws.amazon.com/forum.jspa?forumID=245). If you have a support plan with [AWS Support](https://aws.amazon.com/premiumsupport/), you can also create a new support case.
 
 Please make sure to check out our resources too before opening an issue:
 * Our [Developer Guide](https://docs.aws.amazon.com/sdk-for-cpp/v1/developer-guide/welcome.html) and [API reference](http://sdk.amazonaws.com/cpp/api/LATEST/index.html)
 * Our [Changelog](./CHANGELOG.md) for recent breaking changes.
 * Our [Contribute](./CONTRIBUTING.md) guide.
 * Our [samples repo](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp).
+
 
 # Using the SDK and Other Topics
 * [Using the SDK](./Docs/SDK_usage_guide.md)
