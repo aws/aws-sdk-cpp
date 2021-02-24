@@ -36,6 +36,14 @@ namespace Aws
             inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
             inline const Aws::String& GetExternalId() const { return m_externalId; }
             inline void SetExternalId(const Aws::String& value) { m_externalId = value; }
+            inline const Aws::String& GetSsoStartUrl() const { return m_sso_start_url; }
+            inline void SetSsoStartUrl(const Aws::String& value) { m_sso_start_url = value; }
+            inline const Aws::String& GetSsoRegion() const { return m_sso_region; }
+            inline void SetSsoRegion(const Aws::String& value) { m_sso_region = value; }
+            inline const Aws::String& GetSsoAccountId() const { return m_sso_account_id; }
+            inline void SetSsoAccountId(const Aws::String& value) { m_sso_account_id = value; }
+            inline const Aws::String& GetSsoRoleName() const { return m_sso_role_name; }
+            inline void SetSsoRoleName(const Aws::String& value) { m_sso_role_name = value; }
             inline const Aws::String& GetSourceProfile() const { return m_sourceProfile; }
             inline void SetSourceProfile(const Aws::String& value ) { m_sourceProfile = value; }
             inline const Aws::String& GetCredentialProcess() const { return m_credentialProcess; }
@@ -56,6 +64,10 @@ namespace Aws
             Aws::String m_externalId;
             Aws::String m_sourceProfile;
             Aws::String m_credentialProcess;
+            Aws::String m_sso_start_url;
+            Aws::String m_sso_region;
+            Aws::String m_sso_account_id;
+            Aws::String m_sso_role_name;
             Aws::Map<Aws::String, Aws::String> m_allKeyValPairs;
         };
 
