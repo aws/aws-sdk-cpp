@@ -136,6 +136,31 @@ namespace Model
      */
     inline ExcelOptions& AddSheetIndexes(int value) { m_sheetIndexesHasBeenSet = true; m_sheetIndexes.push_back(value); return *this; }
 
+
+    /**
+     * <p>A variable that specifies whether the first row in the file will be parsed as
+     * the header. If false, column names will be auto-generated.</p>
+     */
+    inline bool GetHeaderRow() const{ return m_headerRow; }
+
+    /**
+     * <p>A variable that specifies whether the first row in the file will be parsed as
+     * the header. If false, column names will be auto-generated.</p>
+     */
+    inline bool HeaderRowHasBeenSet() const { return m_headerRowHasBeenSet; }
+
+    /**
+     * <p>A variable that specifies whether the first row in the file will be parsed as
+     * the header. If false, column names will be auto-generated.</p>
+     */
+    inline void SetHeaderRow(bool value) { m_headerRowHasBeenSet = true; m_headerRow = value; }
+
+    /**
+     * <p>A variable that specifies whether the first row in the file will be parsed as
+     * the header. If false, column names will be auto-generated.</p>
+     */
+    inline ExcelOptions& WithHeaderRow(bool value) { SetHeaderRow(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_sheetNames;
@@ -143,6 +168,9 @@ namespace Model
 
     Aws::Vector<int> m_sheetIndexes;
     bool m_sheetIndexesHasBeenSet;
+
+    bool m_headerRow;
+    bool m_headerRowHasBeenSet;
   };
 
 } // namespace Model

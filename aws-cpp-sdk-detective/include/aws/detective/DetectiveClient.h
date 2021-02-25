@@ -120,22 +120,26 @@ namespace Model
    * Private Cloud (Amazon VPC) flow logs. It also extracts findings detected by
    * Amazon GuardDuty.</p> <p>The Detective API primarily supports the creation and
    * management of behavior graphs. A behavior graph contains the extracted data from
-   * a set of member accounts, and is created and managed by a master account.</p>
-   * <p>Every behavior graph is specific to a Region. You can only use the API to
-   * manage graphs that belong to the Region that is associated with the currently
-   * selected endpoint.</p> <p>A Detective master account can use the Detective API
-   * to do the following:</p> <ul> <li> <p>Enable and disable Detective. Enabling
-   * Detective creates a new behavior graph.</p> </li> <li> <p>View the list of
-   * member accounts in a behavior graph.</p> </li> <li> <p>Add member accounts to a
-   * behavior graph.</p> </li> <li> <p>Remove member accounts from a behavior
-   * graph.</p> </li> </ul> <p>A member account can use the Detective API to do the
-   * following:</p> <ul> <li> <p>View the list of behavior graphs that they are
-   * invited to.</p> </li> <li> <p>Accept an invitation to contribute to a behavior
-   * graph.</p> </li> <li> <p>Decline an invitation to contribute to a behavior
-   * graph.</p> </li> <li> <p>Remove their account from a behavior graph.</p> </li>
-   * </ul> <p>All API actions are logged as CloudTrail events. See <a
+   * a set of member accounts, and is created and managed by an administrator
+   * account.</p> <p>Every behavior graph is specific to a Region. You can only use
+   * the API to manage graphs that belong to the Region that is associated with the
+   * currently selected endpoint.</p> <p>A Detective administrator account can use
+   * the Detective API to do the following:</p> <ul> <li> <p>Enable and disable
+   * Detective. Enabling Detective creates a new behavior graph.</p> </li> <li>
+   * <p>View the list of member accounts in a behavior graph.</p> </li> <li> <p>Add
+   * member accounts to a behavior graph.</p> </li> <li> <p>Remove member accounts
+   * from a behavior graph.</p> </li> </ul> <p>A member account can use the Detective
+   * API to do the following:</p> <ul> <li> <p>View the list of behavior graphs that
+   * they are invited to.</p> </li> <li> <p>Accept an invitation to contribute to a
+   * behavior graph.</p> </li> <li> <p>Decline an invitation to contribute to a
+   * behavior graph.</p> </li> <li> <p>Remove their account from a behavior
+   * graph.</p> </li> </ul> <p>All API actions are logged as CloudTrail events. See
+   * <a
    * href="https://docs.aws.amazon.com/detective/latest/adminguide/logging-using-cloudtrail.html">Logging
-   * Detective API Calls with CloudTrail</a>.</p>
+   * Detective API Calls with CloudTrail</a>.</p>  <p>We replaced the term
+   * "master account" with the term "administrator account." An administrator account
+   * is used to centrally manage multiple accounts. In the case of Detective, the
+   * administrator account manages the accounts in their behavior graph.</p> 
    */
   class AWS_DETECTIVE_API DetectiveClient : public Aws::Client::AWSJsonClient
   {
@@ -200,20 +204,20 @@ namespace Model
 
         /**
          * <p>Creates a new behavior graph for the calling account, and sets that account
-         * as the master account. This operation is called by the account that is enabling
-         * Detective.</p> <p>Before you try to enable Detective, make sure that your
-         * account has been enrolled in Amazon GuardDuty for at least 48 hours. If you do
-         * not meet this requirement, you cannot enable Detective. If you do meet the
+         * as the administrator account. This operation is called by the account that is
+         * enabling Detective.</p> <p>Before you try to enable Detective, make sure that
+         * your account has been enrolled in Amazon GuardDuty for at least 48 hours. If you
+         * do not meet this requirement, you cannot enable Detective. If you do meet the
          * GuardDuty prerequisite, then when you make the request to enable Detective, it
          * checks whether your data volume is within the Detective quota. If it exceeds the
          * quota, then you cannot enable Detective. </p> <p>The operation also enables
          * Detective for the calling account in the currently selected Region. It returns
          * the ARN of the new behavior graph.</p> <p> <code>CreateGraph</code> triggers a
          * process to create the corresponding data tables for the new behavior graph.</p>
-         * <p>An account can only be the master account for one behavior graph within a
-         * Region. If the same account calls <code>CreateGraph</code> with the same master
-         * account, it always returns the same behavior graph ARN. It does not create a new
-         * behavior graph.</p><p><h3>See Also:</h3>   <a
+         * <p>An account can only be the administrator account for one behavior graph
+         * within a Region. If the same account calls <code>CreateGraph</code> with the
+         * same administrator account, it always returns the same behavior graph ARN. It
+         * does not create a new behavior graph.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/CreateGraph">AWS
          * API Reference</a></p>
          */
@@ -221,20 +225,20 @@ namespace Model
 
         /**
          * <p>Creates a new behavior graph for the calling account, and sets that account
-         * as the master account. This operation is called by the account that is enabling
-         * Detective.</p> <p>Before you try to enable Detective, make sure that your
-         * account has been enrolled in Amazon GuardDuty for at least 48 hours. If you do
-         * not meet this requirement, you cannot enable Detective. If you do meet the
+         * as the administrator account. This operation is called by the account that is
+         * enabling Detective.</p> <p>Before you try to enable Detective, make sure that
+         * your account has been enrolled in Amazon GuardDuty for at least 48 hours. If you
+         * do not meet this requirement, you cannot enable Detective. If you do meet the
          * GuardDuty prerequisite, then when you make the request to enable Detective, it
          * checks whether your data volume is within the Detective quota. If it exceeds the
          * quota, then you cannot enable Detective. </p> <p>The operation also enables
          * Detective for the calling account in the currently selected Region. It returns
          * the ARN of the new behavior graph.</p> <p> <code>CreateGraph</code> triggers a
          * process to create the corresponding data tables for the new behavior graph.</p>
-         * <p>An account can only be the master account for one behavior graph within a
-         * Region. If the same account calls <code>CreateGraph</code> with the same master
-         * account, it always returns the same behavior graph ARN. It does not create a new
-         * behavior graph.</p><p><h3>See Also:</h3>   <a
+         * <p>An account can only be the administrator account for one behavior graph
+         * within a Region. If the same account calls <code>CreateGraph</code> with the
+         * same administrator account, it always returns the same behavior graph ARN. It
+         * does not create a new behavior graph.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/CreateGraph">AWS
          * API Reference</a></p>
          *
@@ -244,20 +248,20 @@ namespace Model
 
         /**
          * <p>Creates a new behavior graph for the calling account, and sets that account
-         * as the master account. This operation is called by the account that is enabling
-         * Detective.</p> <p>Before you try to enable Detective, make sure that your
-         * account has been enrolled in Amazon GuardDuty for at least 48 hours. If you do
-         * not meet this requirement, you cannot enable Detective. If you do meet the
+         * as the administrator account. This operation is called by the account that is
+         * enabling Detective.</p> <p>Before you try to enable Detective, make sure that
+         * your account has been enrolled in Amazon GuardDuty for at least 48 hours. If you
+         * do not meet this requirement, you cannot enable Detective. If you do meet the
          * GuardDuty prerequisite, then when you make the request to enable Detective, it
          * checks whether your data volume is within the Detective quota. If it exceeds the
          * quota, then you cannot enable Detective. </p> <p>The operation also enables
          * Detective for the calling account in the currently selected Region. It returns
          * the ARN of the new behavior graph.</p> <p> <code>CreateGraph</code> triggers a
          * process to create the corresponding data tables for the new behavior graph.</p>
-         * <p>An account can only be the master account for one behavior graph within a
-         * Region. If the same account calls <code>CreateGraph</code> with the same master
-         * account, it always returns the same behavior graph ARN. It does not create a new
-         * behavior graph.</p><p><h3>See Also:</h3>   <a
+         * <p>An account can only be the administrator account for one behavior graph
+         * within a Region. If the same account calls <code>CreateGraph</code> with the
+         * same administrator account, it always returns the same behavior graph ARN. It
+         * does not create a new behavior graph.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/CreateGraph">AWS
          * API Reference</a></p>
          *
@@ -266,17 +270,20 @@ namespace Model
         virtual void CreateGraphAsync(const CreateGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
         /**
          * <p>Sends a request to invite the specified AWS accounts to be member accounts in
-         * the behavior graph. This operation can only be called by the master account for
-         * a behavior graph. </p> <p> <code>CreateMembers</code> verifies the accounts and
-         * then sends invitations to the verified accounts.</p> <p>The request provides the
-         * behavior graph ARN and the list of accounts to invite.</p> <p>The response
-         * separates the requested accounts into two lists:</p> <ul> <li> <p>The accounts
-         * that <code>CreateMembers</code> was able to start the verification for. This
-         * list includes member accounts that are being verified, that have passed
-         * verification and are being sent an invitation, and that have failed
-         * verification.</p> </li> <li> <p>The accounts that <code>CreateMembers</code> was
-         * unable to process. This list includes accounts that were already invited to be
-         * member accounts in the behavior graph.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * the behavior graph. This operation can only be called by the administrator
+         * account for a behavior graph. </p> <p> <code>CreateMembers</code> verifies the
+         * accounts and then invites the verified accounts. The administrator can
+         * optionally specify to not send invitation emails to the member accounts. This
+         * would be used when the administrator manages their member accounts
+         * centrally.</p> <p>The request provides the behavior graph ARN and the list of
+         * accounts to invite.</p> <p>The response separates the requested accounts into
+         * two lists:</p> <ul> <li> <p>The accounts that <code>CreateMembers</code> was
+         * able to start the verification for. This list includes member accounts that are
+         * being verified, that have passed verification and are to be invited, and that
+         * have failed verification.</p> </li> <li> <p>The accounts that
+         * <code>CreateMembers</code> was unable to process. This list includes accounts
+         * that were already invited to be member accounts in the behavior graph.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/CreateMembers">AWS
          * API Reference</a></p>
          */
@@ -284,17 +291,20 @@ namespace Model
 
         /**
          * <p>Sends a request to invite the specified AWS accounts to be member accounts in
-         * the behavior graph. This operation can only be called by the master account for
-         * a behavior graph. </p> <p> <code>CreateMembers</code> verifies the accounts and
-         * then sends invitations to the verified accounts.</p> <p>The request provides the
-         * behavior graph ARN and the list of accounts to invite.</p> <p>The response
-         * separates the requested accounts into two lists:</p> <ul> <li> <p>The accounts
-         * that <code>CreateMembers</code> was able to start the verification for. This
-         * list includes member accounts that are being verified, that have passed
-         * verification and are being sent an invitation, and that have failed
-         * verification.</p> </li> <li> <p>The accounts that <code>CreateMembers</code> was
-         * unable to process. This list includes accounts that were already invited to be
-         * member accounts in the behavior graph.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * the behavior graph. This operation can only be called by the administrator
+         * account for a behavior graph. </p> <p> <code>CreateMembers</code> verifies the
+         * accounts and then invites the verified accounts. The administrator can
+         * optionally specify to not send invitation emails to the member accounts. This
+         * would be used when the administrator manages their member accounts
+         * centrally.</p> <p>The request provides the behavior graph ARN and the list of
+         * accounts to invite.</p> <p>The response separates the requested accounts into
+         * two lists:</p> <ul> <li> <p>The accounts that <code>CreateMembers</code> was
+         * able to start the verification for. This list includes member accounts that are
+         * being verified, that have passed verification and are to be invited, and that
+         * have failed verification.</p> </li> <li> <p>The accounts that
+         * <code>CreateMembers</code> was unable to process. This list includes accounts
+         * that were already invited to be member accounts in the behavior graph.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/CreateMembers">AWS
          * API Reference</a></p>
          *
@@ -304,17 +314,20 @@ namespace Model
 
         /**
          * <p>Sends a request to invite the specified AWS accounts to be member accounts in
-         * the behavior graph. This operation can only be called by the master account for
-         * a behavior graph. </p> <p> <code>CreateMembers</code> verifies the accounts and
-         * then sends invitations to the verified accounts.</p> <p>The request provides the
-         * behavior graph ARN and the list of accounts to invite.</p> <p>The response
-         * separates the requested accounts into two lists:</p> <ul> <li> <p>The accounts
-         * that <code>CreateMembers</code> was able to start the verification for. This
-         * list includes member accounts that are being verified, that have passed
-         * verification and are being sent an invitation, and that have failed
-         * verification.</p> </li> <li> <p>The accounts that <code>CreateMembers</code> was
-         * unable to process. This list includes accounts that were already invited to be
-         * member accounts in the behavior graph.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * the behavior graph. This operation can only be called by the administrator
+         * account for a behavior graph. </p> <p> <code>CreateMembers</code> verifies the
+         * accounts and then invites the verified accounts. The administrator can
+         * optionally specify to not send invitation emails to the member accounts. This
+         * would be used when the administrator manages their member accounts
+         * centrally.</p> <p>The request provides the behavior graph ARN and the list of
+         * accounts to invite.</p> <p>The response separates the requested accounts into
+         * two lists:</p> <ul> <li> <p>The accounts that <code>CreateMembers</code> was
+         * able to start the verification for. This list includes member accounts that are
+         * being verified, that have passed verification and are to be invited, and that
+         * have failed verification.</p> </li> <li> <p>The accounts that
+         * <code>CreateMembers</code> was unable to process. This list includes accounts
+         * that were already invited to be member accounts in the behavior graph.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/CreateMembers">AWS
          * API Reference</a></p>
          *
@@ -325,7 +338,7 @@ namespace Model
         /**
          * <p>Disables the specified behavior graph and queues it to be deleted. This
          * operation removes the graph from each member account's list of behavior
-         * graphs.</p> <p> <code>DeleteGraph</code> can only be called by the master
+         * graphs.</p> <p> <code>DeleteGraph</code> can only be called by the administrator
          * account for a behavior graph.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DeleteGraph">AWS
          * API Reference</a></p>
@@ -335,7 +348,7 @@ namespace Model
         /**
          * <p>Disables the specified behavior graph and queues it to be deleted. This
          * operation removes the graph from each member account's list of behavior
-         * graphs.</p> <p> <code>DeleteGraph</code> can only be called by the master
+         * graphs.</p> <p> <code>DeleteGraph</code> can only be called by the administrator
          * account for a behavior graph.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DeleteGraph">AWS
          * API Reference</a></p>
@@ -347,7 +360,7 @@ namespace Model
         /**
          * <p>Disables the specified behavior graph and queues it to be deleted. This
          * operation removes the graph from each member account's list of behavior
-         * graphs.</p> <p> <code>DeleteGraph</code> can only be called by the master
+         * graphs.</p> <p> <code>DeleteGraph</code> can only be called by the administrator
          * account for a behavior graph.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DeleteGraph">AWS
          * API Reference</a></p>
@@ -357,22 +370,22 @@ namespace Model
         virtual void DeleteGraphAsync(const Model::DeleteGraphRequest& request, const DeleteGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes one or more member accounts from the master account behavior graph.
-         * This operation can only be called by a Detective master account. That account
-         * cannot use <code>DeleteMembers</code> to delete their own account from the
-         * behavior graph. To disable a behavior graph, the master account uses the
-         * <code>DeleteGraph</code> API method.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes one or more member accounts from the administrator account's behavior
+         * graph. This operation can only be called by a Detective administrator account.
+         * That account cannot use <code>DeleteMembers</code> to delete their own account
+         * from the behavior graph. To disable a behavior graph, the administrator account
+         * uses the <code>DeleteGraph</code> API method.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DeleteMembers">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteMembersOutcome DeleteMembers(const Model::DeleteMembersRequest& request) const;
 
         /**
-         * <p>Deletes one or more member accounts from the master account behavior graph.
-         * This operation can only be called by a Detective master account. That account
-         * cannot use <code>DeleteMembers</code> to delete their own account from the
-         * behavior graph. To disable a behavior graph, the master account uses the
-         * <code>DeleteGraph</code> API method.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes one or more member accounts from the administrator account's behavior
+         * graph. This operation can only be called by a Detective administrator account.
+         * That account cannot use <code>DeleteMembers</code> to delete their own account
+         * from the behavior graph. To disable a behavior graph, the administrator account
+         * uses the <code>DeleteGraph</code> API method.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DeleteMembers">AWS
          * API Reference</a></p>
          *
@@ -381,11 +394,11 @@ namespace Model
         virtual Model::DeleteMembersOutcomeCallable DeleteMembersCallable(const Model::DeleteMembersRequest& request) const;
 
         /**
-         * <p>Deletes one or more member accounts from the master account behavior graph.
-         * This operation can only be called by a Detective master account. That account
-         * cannot use <code>DeleteMembers</code> to delete their own account from the
-         * behavior graph. To disable a behavior graph, the master account uses the
-         * <code>DeleteGraph</code> API method.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes one or more member accounts from the administrator account's behavior
+         * graph. This operation can only be called by a Detective administrator account.
+         * That account cannot use <code>DeleteMembers</code> to delete their own account
+         * from the behavior graph. To disable a behavior graph, the administrator account
+         * uses the <code>DeleteGraph</code> API method.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DeleteMembers">AWS
          * API Reference</a></p>
          *
@@ -453,20 +466,22 @@ namespace Model
         virtual void GetMembersAsync(const Model::GetMembersRequest& request, const GetMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the list of behavior graphs that the calling account is a master of.
-         * This operation can only be called by a master account.</p> <p>Because an account
-         * can currently only be the master of one behavior graph within a Region, the
-         * results always contain a single graph.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the list of behavior graphs that the calling account is an
+         * administrator account of. This operation can only be called by an administrator
+         * account.</p> <p>Because an account can currently only be the administrator of
+         * one behavior graph within a Region, the results always contain a single behavior
+         * graph.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListGraphs">AWS
          * API Reference</a></p>
          */
         virtual Model::ListGraphsOutcome ListGraphs(const Model::ListGraphsRequest& request) const;
 
         /**
-         * <p>Returns the list of behavior graphs that the calling account is a master of.
-         * This operation can only be called by a master account.</p> <p>Because an account
-         * can currently only be the master of one behavior graph within a Region, the
-         * results always contain a single graph.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the list of behavior graphs that the calling account is an
+         * administrator account of. This operation can only be called by an administrator
+         * account.</p> <p>Because an account can currently only be the administrator of
+         * one behavior graph within a Region, the results always contain a single behavior
+         * graph.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListGraphs">AWS
          * API Reference</a></p>
          *
@@ -475,10 +490,11 @@ namespace Model
         virtual Model::ListGraphsOutcomeCallable ListGraphsCallable(const Model::ListGraphsRequest& request) const;
 
         /**
-         * <p>Returns the list of behavior graphs that the calling account is a master of.
-         * This operation can only be called by a master account.</p> <p>Because an account
-         * can currently only be the master of one behavior graph within a Region, the
-         * results always contain a single graph.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the list of behavior graphs that the calling account is an
+         * administrator account of. This operation can only be called by an administrator
+         * account.</p> <p>Because an account can currently only be the administrator of
+         * one behavior graph within a Region, the results always contain a single behavior
+         * graph.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListGraphs">AWS
          * API Reference</a></p>
          *

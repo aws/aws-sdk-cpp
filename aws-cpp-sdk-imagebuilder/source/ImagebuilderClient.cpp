@@ -52,6 +52,7 @@
 #include <aws/imagebuilder/model/ListContainerRecipesRequest.h>
 #include <aws/imagebuilder/model/ListDistributionConfigurationsRequest.h>
 #include <aws/imagebuilder/model/ListImageBuildVersionsRequest.h>
+#include <aws/imagebuilder/model/ListImagePackagesRequest.h>
 #include <aws/imagebuilder/model/ListImagePipelineImagesRequest.h>
 #include <aws/imagebuilder/model/ListImagePipelinesRequest.h>
 #include <aws/imagebuilder/model/ListImageRecipesRequest.h>
@@ -1094,6 +1095,33 @@ void ImagebuilderClient::ListImageBuildVersionsAsync(const ListImageBuildVersion
 void ImagebuilderClient::ListImageBuildVersionsAsyncHelper(const ListImageBuildVersionsRequest& request, const ListImageBuildVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListImageBuildVersions(request), context);
+}
+
+ListImagePackagesOutcome ImagebuilderClient::ListImagePackages(const ListImagePackagesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/ListImagePackages";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListImagePackagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListImagePackagesOutcomeCallable ImagebuilderClient::ListImagePackagesCallable(const ListImagePackagesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListImagePackagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListImagePackages(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ImagebuilderClient::ListImagePackagesAsync(const ListImagePackagesRequest& request, const ListImagePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListImagePackagesAsyncHelper( request, handler, context ); } );
+}
+
+void ImagebuilderClient::ListImagePackagesAsyncHelper(const ListImagePackagesRequest& request, const ListImagePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListImagePackages(request), context);
 }
 
 ListImagePipelineImagesOutcome ImagebuilderClient::ListImagePipelineImages(const ListImagePipelineImagesRequest& request) const

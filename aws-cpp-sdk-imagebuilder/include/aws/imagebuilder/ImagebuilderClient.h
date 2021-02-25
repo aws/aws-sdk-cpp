@@ -43,6 +43,7 @@
 #include <aws/imagebuilder/model/ListContainerRecipesResult.h>
 #include <aws/imagebuilder/model/ListDistributionConfigurationsResult.h>
 #include <aws/imagebuilder/model/ListImageBuildVersionsResult.h>
+#include <aws/imagebuilder/model/ListImagePackagesResult.h>
 #include <aws/imagebuilder/model/ListImagePipelineImagesResult.h>
 #include <aws/imagebuilder/model/ListImagePipelinesResult.h>
 #include <aws/imagebuilder/model/ListImageRecipesResult.h>
@@ -130,6 +131,7 @@ namespace Model
         class ListContainerRecipesRequest;
         class ListDistributionConfigurationsRequest;
         class ListImageBuildVersionsRequest;
+        class ListImagePackagesRequest;
         class ListImagePipelineImagesRequest;
         class ListImagePipelinesRequest;
         class ListImageRecipesRequest;
@@ -179,6 +181,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListContainerRecipesResult, ImagebuilderError> ListContainerRecipesOutcome;
         typedef Aws::Utils::Outcome<ListDistributionConfigurationsResult, ImagebuilderError> ListDistributionConfigurationsOutcome;
         typedef Aws::Utils::Outcome<ListImageBuildVersionsResult, ImagebuilderError> ListImageBuildVersionsOutcome;
+        typedef Aws::Utils::Outcome<ListImagePackagesResult, ImagebuilderError> ListImagePackagesOutcome;
         typedef Aws::Utils::Outcome<ListImagePipelineImagesResult, ImagebuilderError> ListImagePipelineImagesOutcome;
         typedef Aws::Utils::Outcome<ListImagePipelinesResult, ImagebuilderError> ListImagePipelinesOutcome;
         typedef Aws::Utils::Outcome<ListImageRecipesResult, ImagebuilderError> ListImageRecipesOutcome;
@@ -228,6 +231,7 @@ namespace Model
         typedef std::future<ListContainerRecipesOutcome> ListContainerRecipesOutcomeCallable;
         typedef std::future<ListDistributionConfigurationsOutcome> ListDistributionConfigurationsOutcomeCallable;
         typedef std::future<ListImageBuildVersionsOutcome> ListImageBuildVersionsOutcomeCallable;
+        typedef std::future<ListImagePackagesOutcome> ListImagePackagesOutcomeCallable;
         typedef std::future<ListImagePipelineImagesOutcome> ListImagePipelineImagesOutcomeCallable;
         typedef std::future<ListImagePipelinesOutcome> ListImagePipelinesOutcomeCallable;
         typedef std::future<ListImageRecipesOutcome> ListImageRecipesOutcomeCallable;
@@ -280,6 +284,7 @@ namespace Model
     typedef std::function<void(const ImagebuilderClient*, const Model::ListContainerRecipesRequest&, const Model::ListContainerRecipesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContainerRecipesResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::ListDistributionConfigurationsRequest&, const Model::ListDistributionConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDistributionConfigurationsResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::ListImageBuildVersionsRequest&, const Model::ListImageBuildVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImageBuildVersionsResponseReceivedHandler;
+    typedef std::function<void(const ImagebuilderClient*, const Model::ListImagePackagesRequest&, const Model::ListImagePackagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImagePackagesResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::ListImagePipelineImagesRequest&, const Model::ListImagePipelineImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImagePipelineImagesResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::ListImagePipelinesRequest&, const Model::ListImagePipelinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImagePipelinesResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::ListImageRecipesRequest&, const Model::ListImageRecipesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImageRecipesResponseReceivedHandler;
@@ -1170,6 +1175,37 @@ namespace Model
         virtual void ListImageBuildVersionsAsync(const Model::ListImageBuildVersionsRequest& request, const ListImageBuildVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>List the Packages that are associated with an Image Build Version, as
+         * determined by AWS Systems Manager Inventory at build time.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImagePackages">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListImagePackagesOutcome ListImagePackages(const Model::ListImagePackagesRequest& request) const;
+
+        /**
+         * <p>List the Packages that are associated with an Image Build Version, as
+         * determined by AWS Systems Manager Inventory at build time.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImagePackages">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListImagePackagesOutcomeCallable ListImagePackagesCallable(const Model::ListImagePackagesRequest& request) const;
+
+        /**
+         * <p>List the Packages that are associated with an Image Build Version, as
+         * determined by AWS Systems Manager Inventory at build time.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImagePackages">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListImagePackagesAsync(const Model::ListImagePackagesRequest& request, const ListImagePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Returns a list of images created by the specified pipeline. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImagePipelineImages">AWS
@@ -1713,6 +1749,7 @@ namespace Model
         void ListContainerRecipesAsyncHelper(const Model::ListContainerRecipesRequest& request, const ListContainerRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDistributionConfigurationsAsyncHelper(const Model::ListDistributionConfigurationsRequest& request, const ListDistributionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListImageBuildVersionsAsyncHelper(const Model::ListImageBuildVersionsRequest& request, const ListImageBuildVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListImagePackagesAsyncHelper(const Model::ListImagePackagesRequest& request, const ListImagePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListImagePipelineImagesAsyncHelper(const Model::ListImagePipelineImagesRequest& request, const ListImagePipelineImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListImagePipelinesAsyncHelper(const Model::ListImagePipelinesRequest& request, const ListImagePipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListImageRecipesAsyncHelper(const Model::ListImageRecipesRequest& request, const ListImageRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -7,6 +7,7 @@
 #include <aws/databrew/GlueDataBrew_EXPORTS.h>
 #include <aws/databrew/GlueDataBrewRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/databrew/model/InputFormat.h>
 #include <aws/databrew/model/FormatOptions.h>
 #include <aws/databrew/model/Input.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -82,6 +83,37 @@ namespace Model
      * (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
      */
     inline CreateDatasetRequest& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>Specifies the file format of a dataset created from an S3 file or folder.</p>
+     */
+    inline const InputFormat& GetFormat() const{ return m_format; }
+
+    /**
+     * <p>Specifies the file format of a dataset created from an S3 file or folder.</p>
+     */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
+
+    /**
+     * <p>Specifies the file format of a dataset created from an S3 file or folder.</p>
+     */
+    inline void SetFormat(const InputFormat& value) { m_formatHasBeenSet = true; m_format = value; }
+
+    /**
+     * <p>Specifies the file format of a dataset created from an S3 file or folder.</p>
+     */
+    inline void SetFormat(InputFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
+
+    /**
+     * <p>Specifies the file format of a dataset created from an S3 file or folder.</p>
+     */
+    inline CreateDatasetRequest& WithFormat(const InputFormat& value) { SetFormat(value); return *this;}
+
+    /**
+     * <p>Specifies the file format of a dataset created from an S3 file or folder.</p>
+     */
+    inline CreateDatasetRequest& WithFormat(InputFormat&& value) { SetFormat(std::move(value)); return *this;}
 
 
     
@@ -191,6 +223,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    InputFormat m_format;
+    bool m_formatHasBeenSet;
 
     FormatOptions m_formatOptions;
     bool m_formatOptionsHasBeenSet;

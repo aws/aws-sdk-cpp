@@ -133,6 +133,35 @@ namespace Model
 
 
     /**
+     * <p>if set to <code>true</code>, then the member accounts do not receive email
+     * notifications. By default, this is set to <code>false</code>, and the member
+     * accounts receive email notifications.</p>
+     */
+    inline bool GetDisableEmailNotification() const{ return m_disableEmailNotification; }
+
+    /**
+     * <p>if set to <code>true</code>, then the member accounts do not receive email
+     * notifications. By default, this is set to <code>false</code>, and the member
+     * accounts receive email notifications.</p>
+     */
+    inline bool DisableEmailNotificationHasBeenSet() const { return m_disableEmailNotificationHasBeenSet; }
+
+    /**
+     * <p>if set to <code>true</code>, then the member accounts do not receive email
+     * notifications. By default, this is set to <code>false</code>, and the member
+     * accounts receive email notifications.</p>
+     */
+    inline void SetDisableEmailNotification(bool value) { m_disableEmailNotificationHasBeenSet = true; m_disableEmailNotification = value; }
+
+    /**
+     * <p>if set to <code>true</code>, then the member accounts do not receive email
+     * notifications. By default, this is set to <code>false</code>, and the member
+     * accounts receive email notifications.</p>
+     */
+    inline CreateMembersRequest& WithDisableEmailNotification(bool value) { SetDisableEmailNotification(value); return *this;}
+
+
+    /**
      * <p>The list of AWS accounts to invite to become member accounts in the behavior
      * graph. For each invited account, the account list contains the account
      * identifier and the AWS account root user email address.</p>
@@ -195,6 +224,9 @@ namespace Model
 
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
+    bool m_disableEmailNotification;
+    bool m_disableEmailNotificationHasBeenSet;
 
     Aws::Vector<Account> m_accounts;
     bool m_accountsHasBeenSet;

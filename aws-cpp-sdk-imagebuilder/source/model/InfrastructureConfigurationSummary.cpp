@@ -25,7 +25,9 @@ InfrastructureConfigurationSummary::InfrastructureConfigurationSummary() :
     m_dateCreatedHasBeenSet(false),
     m_dateUpdatedHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_instanceTypesHasBeenSet(false),
+    m_instanceProfileNameHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,9 @@ InfrastructureConfigurationSummary::InfrastructureConfigurationSummary(JsonView 
     m_dateCreatedHasBeenSet(false),
     m_dateUpdatedHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_instanceTypesHasBeenSet(false),
+    m_instanceProfileNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -98,6 +102,23 @@ InfrastructureConfigurationSummary& InfrastructureConfigurationSummary::operator
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("instanceTypes"))
+  {
+    Array<JsonView> instanceTypesJsonList = jsonValue.GetArray("instanceTypes");
+    for(unsigned instanceTypesIndex = 0; instanceTypesIndex < instanceTypesJsonList.GetLength(); ++instanceTypesIndex)
+    {
+      m_instanceTypes.push_back(instanceTypesJsonList[instanceTypesIndex].AsString());
+    }
+    m_instanceTypesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("instanceProfileName"))
+  {
+    m_instanceProfileName = jsonValue.GetString("instanceProfileName");
+
+    m_instanceProfileNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -154,6 +175,23 @@ JsonValue InfrastructureConfigurationSummary::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_instanceTypesHasBeenSet)
+  {
+   Array<JsonValue> instanceTypesJsonList(m_instanceTypes.size());
+   for(unsigned instanceTypesIndex = 0; instanceTypesIndex < instanceTypesJsonList.GetLength(); ++instanceTypesIndex)
+   {
+     instanceTypesJsonList[instanceTypesIndex].AsString(m_instanceTypes[instanceTypesIndex]);
+   }
+   payload.WithArray("instanceTypes", std::move(instanceTypesJsonList));
+
+  }
+
+  if(m_instanceProfileNameHasBeenSet)
+  {
+   payload.WithString("instanceProfileName", m_instanceProfileName);
 
   }
 

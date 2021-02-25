@@ -165,44 +165,52 @@ namespace Model
 
 
     /**
-     * <p>The AWS account identifier of the master account for the behavior graph.</p>
+     * <p>The AWS account identifier of the administrator account for the behavior
+     * graph.</p>
      */
-    inline const Aws::String& GetMasterId() const{ return m_masterId; }
+    inline const Aws::String& GetAdministratorId() const{ return m_administratorId; }
 
     /**
-     * <p>The AWS account identifier of the master account for the behavior graph.</p>
+     * <p>The AWS account identifier of the administrator account for the behavior
+     * graph.</p>
      */
-    inline bool MasterIdHasBeenSet() const { return m_masterIdHasBeenSet; }
+    inline bool AdministratorIdHasBeenSet() const { return m_administratorIdHasBeenSet; }
 
     /**
-     * <p>The AWS account identifier of the master account for the behavior graph.</p>
+     * <p>The AWS account identifier of the administrator account for the behavior
+     * graph.</p>
      */
-    inline void SetMasterId(const Aws::String& value) { m_masterIdHasBeenSet = true; m_masterId = value; }
+    inline void SetAdministratorId(const Aws::String& value) { m_administratorIdHasBeenSet = true; m_administratorId = value; }
 
     /**
-     * <p>The AWS account identifier of the master account for the behavior graph.</p>
+     * <p>The AWS account identifier of the administrator account for the behavior
+     * graph.</p>
      */
-    inline void SetMasterId(Aws::String&& value) { m_masterIdHasBeenSet = true; m_masterId = std::move(value); }
+    inline void SetAdministratorId(Aws::String&& value) { m_administratorIdHasBeenSet = true; m_administratorId = std::move(value); }
 
     /**
-     * <p>The AWS account identifier of the master account for the behavior graph.</p>
+     * <p>The AWS account identifier of the administrator account for the behavior
+     * graph.</p>
      */
-    inline void SetMasterId(const char* value) { m_masterIdHasBeenSet = true; m_masterId.assign(value); }
+    inline void SetAdministratorId(const char* value) { m_administratorIdHasBeenSet = true; m_administratorId.assign(value); }
 
     /**
-     * <p>The AWS account identifier of the master account for the behavior graph.</p>
+     * <p>The AWS account identifier of the administrator account for the behavior
+     * graph.</p>
      */
-    inline MemberDetail& WithMasterId(const Aws::String& value) { SetMasterId(value); return *this;}
+    inline MemberDetail& WithAdministratorId(const Aws::String& value) { SetAdministratorId(value); return *this;}
 
     /**
-     * <p>The AWS account identifier of the master account for the behavior graph.</p>
+     * <p>The AWS account identifier of the administrator account for the behavior
+     * graph.</p>
      */
-    inline MemberDetail& WithMasterId(Aws::String&& value) { SetMasterId(std::move(value)); return *this;}
+    inline MemberDetail& WithAdministratorId(Aws::String&& value) { SetAdministratorId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account identifier of the master account for the behavior graph.</p>
+     * <p>The AWS account identifier of the administrator account for the behavior
+     * graph.</p>
      */
-    inline MemberDetail& WithMasterId(const char* value) { SetMasterId(value); return *this;}
+    inline MemberDetail& WithAdministratorId(const char* value) { SetAdministratorId(value); return *this;}
 
 
     /**
@@ -565,8 +573,8 @@ namespace Model
     Aws::String m_graphArn;
     bool m_graphArnHasBeenSet;
 
-    Aws::String m_masterId;
-    bool m_masterIdHasBeenSet;
+    Aws::String m_administratorId;
+    bool m_administratorIdHasBeenSet;
 
     MemberStatus m_status;
     bool m_statusHasBeenSet;

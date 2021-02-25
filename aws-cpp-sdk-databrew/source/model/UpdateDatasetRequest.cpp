@@ -14,6 +14,8 @@ using namespace Aws::Utils;
 
 UpdateDatasetRequest::UpdateDatasetRequest() : 
     m_nameHasBeenSet(false),
+    m_format(InputFormat::NOT_SET),
+    m_formatHasBeenSet(false),
     m_formatOptionsHasBeenSet(false),
     m_inputHasBeenSet(false)
 {
@@ -22,6 +24,11 @@ UpdateDatasetRequest::UpdateDatasetRequest() :
 Aws::String UpdateDatasetRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_formatHasBeenSet)
+  {
+   payload.WithString("Format", InputFormatMapper::GetNameForInputFormat(m_format));
+  }
 
   if(m_formatOptionsHasBeenSet)
   {

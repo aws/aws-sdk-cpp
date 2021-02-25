@@ -22,7 +22,7 @@ MemberDetail::MemberDetail() :
     m_accountIdHasBeenSet(false),
     m_emailAddressHasBeenSet(false),
     m_graphArnHasBeenSet(false),
-    m_masterIdHasBeenSet(false),
+    m_administratorIdHasBeenSet(false),
     m_status(MemberStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_disabledReason(MemberDisabledReason::NOT_SET),
@@ -39,7 +39,7 @@ MemberDetail::MemberDetail(JsonView jsonValue) :
     m_accountIdHasBeenSet(false),
     m_emailAddressHasBeenSet(false),
     m_graphArnHasBeenSet(false),
-    m_masterIdHasBeenSet(false),
+    m_administratorIdHasBeenSet(false),
     m_status(MemberStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_disabledReason(MemberDisabledReason::NOT_SET),
@@ -76,11 +76,11 @@ MemberDetail& MemberDetail::operator =(JsonView jsonValue)
     m_graphArnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("MasterId"))
+  if(jsonValue.ValueExists("AdministratorId"))
   {
-    m_masterId = jsonValue.GetString("MasterId");
+    m_administratorId = jsonValue.GetString("AdministratorId");
 
-    m_masterIdHasBeenSet = true;
+    m_administratorIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Status"))
@@ -150,9 +150,9 @@ JsonValue MemberDetail::Jsonize() const
 
   }
 
-  if(m_masterIdHasBeenSet)
+  if(m_administratorIdHasBeenSet)
   {
-   payload.WithString("MasterId", m_masterId);
+   payload.WithString("AdministratorId", m_administratorId);
 
   }
 

@@ -19,12 +19,16 @@ namespace Model
 {
 
 CsvOptions::CsvOptions() : 
-    m_delimiterHasBeenSet(false)
+    m_delimiterHasBeenSet(false),
+    m_headerRow(false),
+    m_headerRowHasBeenSet(false)
 {
 }
 
 CsvOptions::CsvOptions(JsonView jsonValue) : 
-    m_delimiterHasBeenSet(false)
+    m_delimiterHasBeenSet(false),
+    m_headerRow(false),
+    m_headerRowHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +42,13 @@ CsvOptions& CsvOptions::operator =(JsonView jsonValue)
     m_delimiterHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("HeaderRow"))
+  {
+    m_headerRow = jsonValue.GetBool("HeaderRow");
+
+    m_headerRowHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +59,12 @@ JsonValue CsvOptions::Jsonize() const
   if(m_delimiterHasBeenSet)
   {
    payload.WithString("Delimiter", m_delimiter);
+
+  }
+
+  if(m_headerRowHasBeenSet)
+  {
+   payload.WithBool("HeaderRow", m_headerRow);
 
   }
 

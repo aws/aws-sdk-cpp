@@ -393,42 +393,42 @@ namespace Model
 
 
     /**
-     * <p>The progress of the disk snapshot operation.</p>
+     * <p>The progress of the snapshot.</p>
      */
     inline const Aws::String& GetProgress() const{ return m_progress; }
 
     /**
-     * <p>The progress of the disk snapshot operation.</p>
+     * <p>The progress of the snapshot.</p>
      */
     inline bool ProgressHasBeenSet() const { return m_progressHasBeenSet; }
 
     /**
-     * <p>The progress of the disk snapshot operation.</p>
+     * <p>The progress of the snapshot.</p>
      */
     inline void SetProgress(const Aws::String& value) { m_progressHasBeenSet = true; m_progress = value; }
 
     /**
-     * <p>The progress of the disk snapshot operation.</p>
+     * <p>The progress of the snapshot.</p>
      */
     inline void SetProgress(Aws::String&& value) { m_progressHasBeenSet = true; m_progress = std::move(value); }
 
     /**
-     * <p>The progress of the disk snapshot operation.</p>
+     * <p>The progress of the snapshot.</p>
      */
     inline void SetProgress(const char* value) { m_progressHasBeenSet = true; m_progress.assign(value); }
 
     /**
-     * <p>The progress of the disk snapshot operation.</p>
+     * <p>The progress of the snapshot.</p>
      */
     inline DiskSnapshot& WithProgress(const Aws::String& value) { SetProgress(value); return *this;}
 
     /**
-     * <p>The progress of the disk snapshot operation.</p>
+     * <p>The progress of the snapshot.</p>
      */
     inline DiskSnapshot& WithProgress(Aws::String&& value) { SetProgress(std::move(value)); return *this;}
 
     /**
-     * <p>The progress of the disk snapshot operation.</p>
+     * <p>The progress of the snapshot.</p>
      */
     inline DiskSnapshot& WithProgress(const char* value) { SetProgress(value); return *this;}
 

@@ -7,6 +7,7 @@
 #include <aws/databrew/GlueDataBrew_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/databrew/model/InputFormat.h>
 #include <aws/databrew/model/FormatOptions.h>
 #include <aws/databrew/model/Input.h>
 #include <aws/databrew/model/Source.h>
@@ -133,6 +134,32 @@ namespace Model
      * <p>The name of the dataset.</p>
      */
     inline DescribeDatasetResult& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>Specifies the file format of a dataset created from an S3 file or folder.</p>
+     */
+    inline const InputFormat& GetFormat() const{ return m_format; }
+
+    /**
+     * <p>Specifies the file format of a dataset created from an S3 file or folder.</p>
+     */
+    inline void SetFormat(const InputFormat& value) { m_format = value; }
+
+    /**
+     * <p>Specifies the file format of a dataset created from an S3 file or folder.</p>
+     */
+    inline void SetFormat(InputFormat&& value) { m_format = std::move(value); }
+
+    /**
+     * <p>Specifies the file format of a dataset created from an S3 file or folder.</p>
+     */
+    inline DescribeDatasetResult& WithFormat(const InputFormat& value) { SetFormat(value); return *this;}
+
+    /**
+     * <p>Specifies the file format of a dataset created from an S3 file or folder.</p>
+     */
+    inline DescribeDatasetResult& WithFormat(InputFormat&& value) { SetFormat(std::move(value)); return *this;}
 
 
     
@@ -363,6 +390,8 @@ namespace Model
     Aws::Utils::DateTime m_createDate;
 
     Aws::String m_name;
+
+    InputFormat m_format;
 
     FormatOptions m_formatOptions;
 

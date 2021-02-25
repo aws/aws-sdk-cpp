@@ -23,6 +23,8 @@ Dataset::Dataset() :
     m_createdByHasBeenSet(false),
     m_createDateHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_format(InputFormat::NOT_SET),
+    m_formatHasBeenSet(false),
     m_formatOptionsHasBeenSet(false),
     m_inputHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
@@ -39,6 +41,8 @@ Dataset::Dataset(JsonView jsonValue) :
     m_createdByHasBeenSet(false),
     m_createDateHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_format(InputFormat::NOT_SET),
+    m_formatHasBeenSet(false),
     m_formatOptionsHasBeenSet(false),
     m_inputHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
@@ -79,6 +83,13 @@ Dataset& Dataset::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("Name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Format"))
+  {
+    m_format = InputFormatMapper::GetInputFormatForName(jsonValue.GetString("Format"));
+
+    m_formatHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("FormatOptions"))
@@ -161,6 +172,11 @@ JsonValue Dataset::Jsonize() const
   {
    payload.WithString("Name", m_name);
 
+  }
+
+  if(m_formatHasBeenSet)
+  {
+   payload.WithString("Format", InputFormatMapper::GetNameForInputFormat(m_format));
   }
 
   if(m_formatOptionsHasBeenSet)
