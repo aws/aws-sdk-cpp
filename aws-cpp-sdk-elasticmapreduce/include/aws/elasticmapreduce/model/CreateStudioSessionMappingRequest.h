@@ -175,7 +175,7 @@ namespace Model
 
     /**
      * <p>The name of the user or group. For more information, see <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserName</a>
+     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
      * in the <i>AWS SSO Identity Store API Reference</i>. Either
@@ -185,7 +185,7 @@ namespace Model
 
     /**
      * <p>The name of the user or group. For more information, see <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserName</a>
+     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
      * in the <i>AWS SSO Identity Store API Reference</i>. Either
@@ -195,7 +195,7 @@ namespace Model
 
     /**
      * <p>The name of the user or group. For more information, see <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserName</a>
+     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
      * in the <i>AWS SSO Identity Store API Reference</i>. Either
@@ -205,7 +205,7 @@ namespace Model
 
     /**
      * <p>The name of the user or group. For more information, see <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserName</a>
+     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
      * in the <i>AWS SSO Identity Store API Reference</i>. Either
@@ -215,7 +215,7 @@ namespace Model
 
     /**
      * <p>The name of the user or group. For more information, see <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserName</a>
+     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
      * in the <i>AWS SSO Identity Store API Reference</i>. Either
@@ -225,7 +225,7 @@ namespace Model
 
     /**
      * <p>The name of the user or group. For more information, see <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserName</a>
+     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
      * in the <i>AWS SSO Identity Store API Reference</i>. Either
@@ -235,7 +235,7 @@ namespace Model
 
     /**
      * <p>The name of the user or group. For more information, see <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserName</a>
+     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
      * in the <i>AWS SSO Identity Store API Reference</i>. Either
@@ -245,7 +245,7 @@ namespace Model
 
     /**
      * <p>The name of the user or group. For more information, see <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserName</a>
+     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
      * in the <i>AWS SSO Identity Store API Reference</i>. Either
@@ -255,32 +255,38 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the identity to map to the Studio is a user or a group.</p>
+     * <p>Specifies whether the identity to map to the Amazon EMR Studio is a user or a
+     * group.</p>
      */
     inline const IdentityType& GetIdentityType() const{ return m_identityType; }
 
     /**
-     * <p>Specifies whether the identity to map to the Studio is a user or a group.</p>
+     * <p>Specifies whether the identity to map to the Amazon EMR Studio is a user or a
+     * group.</p>
      */
     inline bool IdentityTypeHasBeenSet() const { return m_identityTypeHasBeenSet; }
 
     /**
-     * <p>Specifies whether the identity to map to the Studio is a user or a group.</p>
+     * <p>Specifies whether the identity to map to the Amazon EMR Studio is a user or a
+     * group.</p>
      */
     inline void SetIdentityType(const IdentityType& value) { m_identityTypeHasBeenSet = true; m_identityType = value; }
 
     /**
-     * <p>Specifies whether the identity to map to the Studio is a user or a group.</p>
+     * <p>Specifies whether the identity to map to the Amazon EMR Studio is a user or a
+     * group.</p>
      */
     inline void SetIdentityType(IdentityType&& value) { m_identityTypeHasBeenSet = true; m_identityType = std::move(value); }
 
     /**
-     * <p>Specifies whether the identity to map to the Studio is a user or a group.</p>
+     * <p>Specifies whether the identity to map to the Amazon EMR Studio is a user or a
+     * group.</p>
      */
     inline CreateStudioSessionMappingRequest& WithIdentityType(const IdentityType& value) { SetIdentityType(value); return *this;}
 
     /**
-     * <p>Specifies whether the identity to map to the Studio is a user or a group.</p>
+     * <p>Specifies whether the identity to map to the Amazon EMR Studio is a user or a
+     * group.</p>
      */
     inline CreateStudioSessionMappingRequest& WithIdentityType(IdentityType&& value) { SetIdentityType(std::move(value)); return *this;}
 

@@ -130,6 +130,7 @@ namespace Model
         class StartNotebookExecutionRequest;
         class StopNotebookExecutionRequest;
         class TerminateJobFlowsRequest;
+        class UpdateStudioRequest;
         class UpdateStudioSessionMappingRequest;
 
         typedef Aws::Utils::Outcome<AddInstanceFleetResult, EMRError> AddInstanceFleetOutcome;
@@ -176,6 +177,7 @@ namespace Model
         typedef Aws::Utils::Outcome<StartNotebookExecutionResult, EMRError> StartNotebookExecutionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EMRError> StopNotebookExecutionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EMRError> TerminateJobFlowsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, EMRError> UpdateStudioOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EMRError> UpdateStudioSessionMappingOutcome;
 
         typedef std::future<AddInstanceFleetOutcome> AddInstanceFleetOutcomeCallable;
@@ -222,6 +224,7 @@ namespace Model
         typedef std::future<StartNotebookExecutionOutcome> StartNotebookExecutionOutcomeCallable;
         typedef std::future<StopNotebookExecutionOutcome> StopNotebookExecutionOutcomeCallable;
         typedef std::future<TerminateJobFlowsOutcome> TerminateJobFlowsOutcomeCallable;
+        typedef std::future<UpdateStudioOutcome> UpdateStudioOutcomeCallable;
         typedef std::future<UpdateStudioSessionMappingOutcome> UpdateStudioSessionMappingOutcomeCallable;
 } // namespace Model
 
@@ -271,6 +274,7 @@ namespace Model
     typedef std::function<void(const EMRClient*, const Model::StartNotebookExecutionRequest&, const Model::StartNotebookExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartNotebookExecutionResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::StopNotebookExecutionRequest&, const Model::StopNotebookExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopNotebookExecutionResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::TerminateJobFlowsRequest&, const Model::TerminateJobFlowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateJobFlowsResponseReceivedHandler;
+    typedef std::function<void(const EMRClient*, const Model::UpdateStudioRequest&, const Model::UpdateStudioOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStudioResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::UpdateStudioSessionMappingRequest&, const Model::UpdateStudioSessionMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStudioSessionMappingResponseReceivedHandler;
 
   /**
@@ -550,18 +554,14 @@ namespace Model
         virtual void CreateSecurityConfigurationAsync(const Model::CreateSecurityConfigurationRequest& request, const CreateSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and
-         * are subject to change.</p>  <p>Creates a new Amazon EMR
-         * Studio.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new Amazon EMR Studio.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateStudio">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateStudioOutcome CreateStudio(const Model::CreateStudioRequest& request) const;
 
         /**
-         *  <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and
-         * are subject to change.</p>  <p>Creates a new Amazon EMR
-         * Studio.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new Amazon EMR Studio.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateStudio">AWS
          * API Reference</a></p>
          *
@@ -570,9 +570,7 @@ namespace Model
         virtual Model::CreateStudioOutcomeCallable CreateStudioCallable(const Model::CreateStudioRequest& request) const;
 
         /**
-         *  <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and
-         * are subject to change.</p>  <p>Creates a new Amazon EMR
-         * Studio.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new Amazon EMR Studio.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateStudio">AWS
          * API Reference</a></p>
          *
@@ -581,20 +579,18 @@ namespace Model
         virtual void CreateStudioAsync(const Model::CreateStudioRequest& request, const CreateStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and
-         * are subject to change.</p>  <p>Maps a user or group to the Amazon EMR
-         * Studio specified by <code>StudioId</code>, and applies a session policy to
-         * refine Studio permissions for that user or group.</p><p><h3>See Also:</h3>   <a
+         * <p>Maps a user or group to the Amazon EMR Studio specified by
+         * <code>StudioId</code>, and applies a session policy to refine Studio permissions
+         * for that user or group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateStudioSessionMapping">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateStudioSessionMappingOutcome CreateStudioSessionMapping(const Model::CreateStudioSessionMappingRequest& request) const;
 
         /**
-         *  <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and
-         * are subject to change.</p>  <p>Maps a user or group to the Amazon EMR
-         * Studio specified by <code>StudioId</code>, and applies a session policy to
-         * refine Studio permissions for that user or group.</p><p><h3>See Also:</h3>   <a
+         * <p>Maps a user or group to the Amazon EMR Studio specified by
+         * <code>StudioId</code>, and applies a session policy to refine Studio permissions
+         * for that user or group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateStudioSessionMapping">AWS
          * API Reference</a></p>
          *
@@ -603,10 +599,9 @@ namespace Model
         virtual Model::CreateStudioSessionMappingOutcomeCallable CreateStudioSessionMappingCallable(const Model::CreateStudioSessionMappingRequest& request) const;
 
         /**
-         *  <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and
-         * are subject to change.</p>  <p>Maps a user or group to the Amazon EMR
-         * Studio specified by <code>StudioId</code>, and applies a session policy to
-         * refine Studio permissions for that user or group.</p><p><h3>See Also:</h3>   <a
+         * <p>Maps a user or group to the Amazon EMR Studio specified by
+         * <code>StudioId</code>, and applies a session policy to refine Studio permissions
+         * for that user or group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateStudioSessionMapping">AWS
          * API Reference</a></p>
          *
@@ -640,18 +635,16 @@ namespace Model
         virtual void DeleteSecurityConfigurationAsync(const Model::DeleteSecurityConfigurationRequest& request, const DeleteSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and
-         * are subject to change.</p>  <p>Removes an Amazon EMR Studio from the
-         * Studio metadata store.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes an Amazon EMR Studio from the Studio metadata store.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteStudio">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteStudioOutcome DeleteStudio(const Model::DeleteStudioRequest& request) const;
 
         /**
-         *  <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and
-         * are subject to change.</p>  <p>Removes an Amazon EMR Studio from the
-         * Studio metadata store.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes an Amazon EMR Studio from the Studio metadata store.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteStudio">AWS
          * API Reference</a></p>
          *
@@ -660,9 +653,8 @@ namespace Model
         virtual Model::DeleteStudioOutcomeCallable DeleteStudioCallable(const Model::DeleteStudioRequest& request) const;
 
         /**
-         *  <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and
-         * are subject to change.</p>  <p>Removes an Amazon EMR Studio from the
-         * Studio metadata store.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes an Amazon EMR Studio from the Studio metadata store.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteStudio">AWS
          * API Reference</a></p>
          *
@@ -671,18 +663,16 @@ namespace Model
         virtual void DeleteStudioAsync(const Model::DeleteStudioRequest& request, const DeleteStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and
-         * are subject to change.</p>  <p>Removes a user or group from an Amazon EMR
-         * Studio.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a user or group from an Amazon EMR Studio.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteStudioSessionMapping">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteStudioSessionMappingOutcome DeleteStudioSessionMapping(const Model::DeleteStudioSessionMappingRequest& request) const;
 
         /**
-         *  <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and
-         * are subject to change.</p>  <p>Removes a user or group from an Amazon EMR
-         * Studio.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a user or group from an Amazon EMR Studio.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteStudioSessionMapping">AWS
          * API Reference</a></p>
          *
@@ -691,9 +681,8 @@ namespace Model
         virtual Model::DeleteStudioSessionMappingOutcomeCallable DeleteStudioSessionMappingCallable(const Model::DeleteStudioSessionMappingRequest& request) const;
 
         /**
-         *  <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and
-         * are subject to change.</p>  <p>Removes a user or group from an Amazon EMR
-         * Studio.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a user or group from an Amazon EMR Studio.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteStudioSessionMapping">AWS
          * API Reference</a></p>
          *
@@ -808,20 +797,16 @@ namespace Model
         virtual void DescribeStepAsync(const Model::DescribeStepRequest& request, const DescribeStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and
-         * are subject to change.</p>  <p>Returns details for the specified Amazon
-         * EMR Studio including ID, Name, VPC, Studio access URL, and so on.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns details for the specified Amazon EMR Studio including ID, Name, VPC,
+         * Studio access URL, and so on.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeStudio">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeStudioOutcome DescribeStudio(const Model::DescribeStudioRequest& request) const;
 
         /**
-         *  <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and
-         * are subject to change.</p>  <p>Returns details for the specified Amazon
-         * EMR Studio including ID, Name, VPC, Studio access URL, and so on.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns details for the specified Amazon EMR Studio including ID, Name, VPC,
+         * Studio access URL, and so on.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeStudio">AWS
          * API Reference</a></p>
          *
@@ -830,10 +815,8 @@ namespace Model
         virtual Model::DescribeStudioOutcomeCallable DescribeStudioCallable(const Model::DescribeStudioRequest& request) const;
 
         /**
-         *  <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and
-         * are subject to change.</p>  <p>Returns details for the specified Amazon
-         * EMR Studio including ID, Name, VPC, Studio access URL, and so on.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns details for the specified Amazon EMR Studio including ID, Name, VPC,
+         * Studio access URL, and so on.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeStudio">AWS
          * API Reference</a></p>
          *
@@ -907,18 +890,16 @@ namespace Model
         virtual void GetManagedScalingPolicyAsync(const Model::GetManagedScalingPolicyRequest& request, const GetManagedScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and
-         * are subject to change.</p>  <p>Fetches mapping details for the specified
-         * Amazon EMR Studio and identity (user or group).</p><p><h3>See Also:</h3>   <a
+         * <p>Fetches mapping details for the specified Amazon EMR Studio and identity
+         * (user or group).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetStudioSessionMapping">AWS
          * API Reference</a></p>
          */
         virtual Model::GetStudioSessionMappingOutcome GetStudioSessionMapping(const Model::GetStudioSessionMappingRequest& request) const;
 
         /**
-         *  <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and
-         * are subject to change.</p>  <p>Fetches mapping details for the specified
-         * Amazon EMR Studio and identity (user or group).</p><p><h3>See Also:</h3>   <a
+         * <p>Fetches mapping details for the specified Amazon EMR Studio and identity
+         * (user or group).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetStudioSessionMapping">AWS
          * API Reference</a></p>
          *
@@ -927,9 +908,8 @@ namespace Model
         virtual Model::GetStudioSessionMappingOutcomeCallable GetStudioSessionMappingCallable(const Model::GetStudioSessionMappingRequest& request) const;
 
         /**
-         *  <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and
-         * are subject to change.</p>  <p>Fetches mapping details for the specified
-         * Amazon EMR Studio and identity (user or group).</p><p><h3>See Also:</h3>   <a
+         * <p>Fetches mapping details for the specified Amazon EMR Studio and identity
+         * (user or group).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetStudioSessionMapping">AWS
          * API Reference</a></p>
          *
@@ -1175,7 +1155,7 @@ namespace Model
         /**
          * <p>Provides a list of steps for the cluster in reverse order unless you specify
          * <code>stepIds</code> with the request of filter by <code>StepStates</code>. You
-         * can specify a maximum of ten <code>stepIDs</code>.</p><p><h3>See Also:</h3>   <a
+         * can specify a maximum of 10 <code>stepIDs</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSteps">AWS
          * API Reference</a></p>
          */
@@ -1184,7 +1164,7 @@ namespace Model
         /**
          * <p>Provides a list of steps for the cluster in reverse order unless you specify
          * <code>stepIds</code> with the request of filter by <code>StepStates</code>. You
-         * can specify a maximum of ten <code>stepIDs</code>.</p><p><h3>See Also:</h3>   <a
+         * can specify a maximum of 10 <code>stepIDs</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSteps">AWS
          * API Reference</a></p>
          *
@@ -1195,7 +1175,7 @@ namespace Model
         /**
          * <p>Provides a list of steps for the cluster in reverse order unless you specify
          * <code>stepIds</code> with the request of filter by <code>StepStates</code>. You
-         * can specify a maximum of ten <code>stepIDs</code>.</p><p><h3>See Also:</h3>   <a
+         * can specify a maximum of 10 <code>stepIDs</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSteps">AWS
          * API Reference</a></p>
          *
@@ -1204,20 +1184,16 @@ namespace Model
         virtual void ListStepsAsync(const Model::ListStepsRequest& request, const ListStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and
-         * are subject to change.</p>  <p>Returns a list of all user or group
-         * session mappings for the EMR Studio specified by
-         * <code>StudioId</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of all user or group session mappings for the Amazon EMR
+         * Studio specified by <code>StudioId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListStudioSessionMappings">AWS
          * API Reference</a></p>
          */
         virtual Model::ListStudioSessionMappingsOutcome ListStudioSessionMappings(const Model::ListStudioSessionMappingsRequest& request) const;
 
         /**
-         *  <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and
-         * are subject to change.</p>  <p>Returns a list of all user or group
-         * session mappings for the EMR Studio specified by
-         * <code>StudioId</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of all user or group session mappings for the Amazon EMR
+         * Studio specified by <code>StudioId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListStudioSessionMappings">AWS
          * API Reference</a></p>
          *
@@ -1226,10 +1202,8 @@ namespace Model
         virtual Model::ListStudioSessionMappingsOutcomeCallable ListStudioSessionMappingsCallable(const Model::ListStudioSessionMappingsRequest& request) const;
 
         /**
-         *  <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and
-         * are subject to change.</p>  <p>Returns a list of all user or group
-         * session mappings for the EMR Studio specified by
-         * <code>StudioId</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of all user or group session mappings for the Amazon EMR
+         * Studio specified by <code>StudioId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListStudioSessionMappings">AWS
          * API Reference</a></p>
          *
@@ -1238,20 +1212,18 @@ namespace Model
         virtual void ListStudioSessionMappingsAsync(const Model::ListStudioSessionMappingsRequest& request, const ListStudioSessionMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and
-         * are subject to change.</p>  <p>Returns a list of all Amazon EMR Studios
-         * associated with the AWS account. The list includes details such as ID, Studio
-         * Access URL, and creation time for each Studio.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of all Amazon EMR Studios associated with the AWS account. The
+         * list includes details such as ID, Studio Access URL, and creation time for each
+         * Studio.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListStudios">AWS
          * API Reference</a></p>
          */
         virtual Model::ListStudiosOutcome ListStudios(const Model::ListStudiosRequest& request) const;
 
         /**
-         *  <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and
-         * are subject to change.</p>  <p>Returns a list of all Amazon EMR Studios
-         * associated with the AWS account. The list includes details such as ID, Studio
-         * Access URL, and creation time for each Studio.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of all Amazon EMR Studios associated with the AWS account. The
+         * list includes details such as ID, Studio Access URL, and creation time for each
+         * Studio.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListStudios">AWS
          * API Reference</a></p>
          *
@@ -1260,10 +1232,9 @@ namespace Model
         virtual Model::ListStudiosOutcomeCallable ListStudiosCallable(const Model::ListStudiosRequest& request) const;
 
         /**
-         *  <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and
-         * are subject to change.</p>  <p>Returns a list of all Amazon EMR Studios
-         * associated with the AWS account. The list includes details such as ID, Studio
-         * Access URL, and creation time for each Studio.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of all Amazon EMR Studios associated with the AWS account. The
+         * list includes details such as ID, Studio Access URL, and creation time for each
+         * Studio.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListStudios">AWS
          * API Reference</a></p>
          *
@@ -1890,18 +1861,44 @@ namespace Model
         virtual void TerminateJobFlowsAsync(const Model::TerminateJobFlowsRequest& request, const TerminateJobFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and
-         * are subject to change.</p>  <p>Updates the session policy attached to the
-         * user or group for the specified Amazon EMR Studio.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an Amazon EMR Studio configuration, including attributes such as
+         * name, description, and subnets.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/UpdateStudio">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateStudioOutcome UpdateStudio(const Model::UpdateStudioRequest& request) const;
+
+        /**
+         * <p>Updates an Amazon EMR Studio configuration, including attributes such as
+         * name, description, and subnets.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/UpdateStudio">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateStudioOutcomeCallable UpdateStudioCallable(const Model::UpdateStudioRequest& request) const;
+
+        /**
+         * <p>Updates an Amazon EMR Studio configuration, including attributes such as
+         * name, description, and subnets.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/UpdateStudio">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateStudioAsync(const Model::UpdateStudioRequest& request, const UpdateStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the session policy attached to the user or group for the specified
+         * Amazon EMR Studio.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/UpdateStudioSessionMapping">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateStudioSessionMappingOutcome UpdateStudioSessionMapping(const Model::UpdateStudioSessionMappingRequest& request) const;
 
         /**
-         *  <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and
-         * are subject to change.</p>  <p>Updates the session policy attached to the
-         * user or group for the specified Amazon EMR Studio.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the session policy attached to the user or group for the specified
+         * Amazon EMR Studio.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/UpdateStudioSessionMapping">AWS
          * API Reference</a></p>
          *
@@ -1910,9 +1907,8 @@ namespace Model
         virtual Model::UpdateStudioSessionMappingOutcomeCallable UpdateStudioSessionMappingCallable(const Model::UpdateStudioSessionMappingRequest& request) const;
 
         /**
-         *  <p>The Amazon EMR Studio APIs are in preview release for Amazon EMR and
-         * are subject to change.</p>  <p>Updates the session policy attached to the
-         * user or group for the specified Amazon EMR Studio.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the session policy attached to the user or group for the specified
+         * Amazon EMR Studio.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/UpdateStudioSessionMapping">AWS
          * API Reference</a></p>
          *
@@ -1968,6 +1964,7 @@ namespace Model
         void StartNotebookExecutionAsyncHelper(const Model::StartNotebookExecutionRequest& request, const StartNotebookExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopNotebookExecutionAsyncHelper(const Model::StopNotebookExecutionRequest& request, const StopNotebookExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TerminateJobFlowsAsyncHelper(const Model::TerminateJobFlowsRequest& request, const TerminateJobFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateStudioAsyncHelper(const Model::UpdateStudioRequest& request, const UpdateStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateStudioSessionMappingAsyncHelper(const Model::UpdateStudioSessionMappingRequest& request, const UpdateStudioSessionMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

@@ -792,122 +792,122 @@ namespace Model
 
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (for example,
+     * <p>Specifies the algorithm to use to when decrypting the object (for example,
      * AES256).</p>
      */
     inline const Aws::String& GetSSECustomerAlgorithm() const{ return m_sSECustomerAlgorithm; }
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (for example,
+     * <p>Specifies the algorithm to use to when decrypting the object (for example,
      * AES256).</p>
      */
     inline bool SSECustomerAlgorithmHasBeenSet() const { return m_sSECustomerAlgorithmHasBeenSet; }
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (for example,
+     * <p>Specifies the algorithm to use to when decrypting the object (for example,
      * AES256).</p>
      */
     inline void SetSSECustomerAlgorithm(const Aws::String& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = value; }
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (for example,
+     * <p>Specifies the algorithm to use to when decrypting the object (for example,
      * AES256).</p>
      */
     inline void SetSSECustomerAlgorithm(Aws::String&& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = std::move(value); }
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (for example,
+     * <p>Specifies the algorithm to use to when decrypting the object (for example,
      * AES256).</p>
      */
     inline void SetSSECustomerAlgorithm(const char* value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm.assign(value); }
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (for example,
+     * <p>Specifies the algorithm to use to when decrypting the object (for example,
      * AES256).</p>
      */
     inline GetObjectRequest& WithSSECustomerAlgorithm(const Aws::String& value) { SetSSECustomerAlgorithm(value); return *this;}
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (for example,
+     * <p>Specifies the algorithm to use to when decrypting the object (for example,
      * AES256).</p>
      */
     inline GetObjectRequest& WithSSECustomerAlgorithm(Aws::String&& value) { SetSSECustomerAlgorithm(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (for example,
+     * <p>Specifies the algorithm to use to when decrypting the object (for example,
      * AES256).</p>
      */
     inline GetObjectRequest& WithSSECustomerAlgorithm(const char* value) { SetSSECustomerAlgorithm(value); return *this;}
 
 
     /**
-     * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
-     * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon S3 does not store the encryption key. The key must be
-     * appropriate for use with the algorithm specified in the
+     * <p>Specifies the customer-provided encryption key for Amazon S3 used to encrypt
+     * the data. This value is used to decrypt the object when recovering it and must
+     * match the one used when storing the data. The key must be appropriate for use
+     * with the algorithm specified in the
      * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline const Aws::String& GetSSECustomerKey() const{ return m_sSECustomerKey; }
 
     /**
-     * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
-     * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon S3 does not store the encryption key. The key must be
-     * appropriate for use with the algorithm specified in the
+     * <p>Specifies the customer-provided encryption key for Amazon S3 used to encrypt
+     * the data. This value is used to decrypt the object when recovering it and must
+     * match the one used when storing the data. The key must be appropriate for use
+     * with the algorithm specified in the
      * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline bool SSECustomerKeyHasBeenSet() const { return m_sSECustomerKeyHasBeenSet; }
 
     /**
-     * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
-     * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon S3 does not store the encryption key. The key must be
-     * appropriate for use with the algorithm specified in the
+     * <p>Specifies the customer-provided encryption key for Amazon S3 used to encrypt
+     * the data. This value is used to decrypt the object when recovering it and must
+     * match the one used when storing the data. The key must be appropriate for use
+     * with the algorithm specified in the
      * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline void SetSSECustomerKey(const Aws::String& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = value; }
 
     /**
-     * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
-     * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon S3 does not store the encryption key. The key must be
-     * appropriate for use with the algorithm specified in the
+     * <p>Specifies the customer-provided encryption key for Amazon S3 used to encrypt
+     * the data. This value is used to decrypt the object when recovering it and must
+     * match the one used when storing the data. The key must be appropriate for use
+     * with the algorithm specified in the
      * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline void SetSSECustomerKey(Aws::String&& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = std::move(value); }
 
     /**
-     * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
-     * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon S3 does not store the encryption key. The key must be
-     * appropriate for use with the algorithm specified in the
+     * <p>Specifies the customer-provided encryption key for Amazon S3 used to encrypt
+     * the data. This value is used to decrypt the object when recovering it and must
+     * match the one used when storing the data. The key must be appropriate for use
+     * with the algorithm specified in the
      * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline void SetSSECustomerKey(const char* value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey.assign(value); }
 
     /**
-     * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
-     * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon S3 does not store the encryption key. The key must be
-     * appropriate for use with the algorithm specified in the
+     * <p>Specifies the customer-provided encryption key for Amazon S3 used to encrypt
+     * the data. This value is used to decrypt the object when recovering it and must
+     * match the one used when storing the data. The key must be appropriate for use
+     * with the algorithm specified in the
      * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline GetObjectRequest& WithSSECustomerKey(const Aws::String& value) { SetSSECustomerKey(value); return *this;}
 
     /**
-     * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
-     * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon S3 does not store the encryption key. The key must be
-     * appropriate for use with the algorithm specified in the
+     * <p>Specifies the customer-provided encryption key for Amazon S3 used to encrypt
+     * the data. This value is used to decrypt the object when recovering it and must
+     * match the one used when storing the data. The key must be appropriate for use
+     * with the algorithm specified in the
      * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline GetObjectRequest& WithSSECustomerKey(Aws::String&& value) { SetSSECustomerKey(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
-     * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon S3 does not store the encryption key. The key must be
-     * appropriate for use with the algorithm specified in the
+     * <p>Specifies the customer-provided encryption key for Amazon S3 used to encrypt
+     * the data. This value is used to decrypt the object when recovering it and must
+     * match the one used when storing the data. The key must be appropriate for use
+     * with the algorithm specified in the
      * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline GetObjectRequest& WithSSECustomerKey(const char* value) { SetSSECustomerKey(value); return *this;}

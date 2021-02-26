@@ -33,6 +33,7 @@ namespace Aws
         static const int ReleaseVersion_HASH = HashingUtils::HashString("ReleaseVersion");
         static const int PublicAccessCidrs_HASH = HashingUtils::HashString("PublicAccessCidrs");
         static const int IdentityProviderConfig_HASH = HashingUtils::HashString("IdentityProviderConfig");
+        static const int EncryptionConfig_HASH = HashingUtils::HashString("EncryptionConfig");
         static const int AddonVersion_HASH = HashingUtils::HashString("AddonVersion");
         static const int ServiceAccountRoleArn_HASH = HashingUtils::HashString("ServiceAccountRoleArn");
         static const int ResolveConflicts_HASH = HashingUtils::HashString("ResolveConflicts");
@@ -93,6 +94,10 @@ namespace Aws
           {
             return UpdateParamType::IdentityProviderConfig;
           }
+          else if (hashCode == EncryptionConfig_HASH)
+          {
+            return UpdateParamType::EncryptionConfig;
+          }
           else if (hashCode == AddonVersion_HASH)
           {
             return UpdateParamType::AddonVersion;
@@ -145,6 +150,8 @@ namespace Aws
             return "PublicAccessCidrs";
           case UpdateParamType::IdentityProviderConfig:
             return "IdentityProviderConfig";
+          case UpdateParamType::EncryptionConfig:
+            return "EncryptionConfig";
           case UpdateParamType::AddonVersion:
             return "AddonVersion";
           case UpdateParamType::ServiceAccountRoleArn:

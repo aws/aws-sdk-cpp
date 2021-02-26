@@ -64,6 +64,7 @@
 #include <aws/elasticmapreduce/model/StartNotebookExecutionRequest.h>
 #include <aws/elasticmapreduce/model/StopNotebookExecutionRequest.h>
 #include <aws/elasticmapreduce/model/TerminateJobFlowsRequest.h>
+#include <aws/elasticmapreduce/model/UpdateStudioRequest.h>
 #include <aws/elasticmapreduce/model/UpdateStudioSessionMappingRequest.h>
 
 using namespace Aws;
@@ -1325,6 +1326,33 @@ void EMRClient::TerminateJobFlowsAsync(const TerminateJobFlowsRequest& request, 
 void EMRClient::TerminateJobFlowsAsyncHelper(const TerminateJobFlowsRequest& request, const TerminateJobFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, TerminateJobFlows(request), context);
+}
+
+UpdateStudioOutcome EMRClient::UpdateStudio(const UpdateStudioRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateStudioOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateStudioOutcomeCallable EMRClient::UpdateStudioCallable(const UpdateStudioRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateStudioOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateStudio(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRClient::UpdateStudioAsync(const UpdateStudioRequest& request, const UpdateStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateStudioAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::UpdateStudioAsyncHelper(const UpdateStudioRequest& request, const UpdateStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateStudio(request), context);
 }
 
 UpdateStudioSessionMappingOutcome EMRClient::UpdateStudioSessionMapping(const UpdateStudioSessionMappingRequest& request) const

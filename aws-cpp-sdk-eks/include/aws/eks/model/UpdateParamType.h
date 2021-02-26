@@ -29,6 +29,7 @@ namespace Model
     ReleaseVersion,
     PublicAccessCidrs,
     IdentityProviderConfig,
+    EncryptionConfig,
     AddonVersion,
     ServiceAccountRoleArn,
     ResolveConflicts

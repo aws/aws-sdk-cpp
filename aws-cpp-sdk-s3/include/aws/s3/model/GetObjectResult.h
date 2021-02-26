@@ -212,27 +212,27 @@ namespace Model
 
 
     /**
-     * <p>Last modified date of the object</p>
+     * <p>Creation date of the object.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
 
     /**
-     * <p>Last modified date of the object</p>
+     * <p>Creation date of the object.</p>
      */
     inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModified = value; }
 
     /**
-     * <p>Last modified date of the object</p>
+     * <p>Creation date of the object.</p>
      */
     inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModified = std::move(value); }
 
     /**
-     * <p>Last modified date of the object</p>
+     * <p>Creation date of the object.</p>
      */
     inline GetObjectResult& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
 
     /**
-     * <p>Last modified date of the object</p>
+     * <p>Creation date of the object.</p>
      */
     inline GetObjectResult& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
 

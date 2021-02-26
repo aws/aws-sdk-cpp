@@ -379,9 +379,9 @@ namespace Model
 
 
     /**
-     * <p>All of the keys rolled up into a common prefix count as a single return when
-     * calculating the number of returns.</p> <p>A response can contain
-     * <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
+     * <p>All of the keys (up to 1,000) rolled up into a common prefix count as a
+     * single return when calculating the number of returns.</p> <p>A response can
+     * contain <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
      * <code>CommonPrefixes</code> contains all (if there are any) keys between
      * <code>Prefix</code> and the next occurrence of the string specified by a
      * delimiter.</p> <p> <code>CommonPrefixes</code> lists keys that act like
@@ -394,9 +394,9 @@ namespace Model
     inline const Aws::Vector<CommonPrefix>& GetCommonPrefixes() const{ return m_commonPrefixes; }
 
     /**
-     * <p>All of the keys rolled up into a common prefix count as a single return when
-     * calculating the number of returns.</p> <p>A response can contain
-     * <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
+     * <p>All of the keys (up to 1,000) rolled up into a common prefix count as a
+     * single return when calculating the number of returns.</p> <p>A response can
+     * contain <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
      * <code>CommonPrefixes</code> contains all (if there are any) keys between
      * <code>Prefix</code> and the next occurrence of the string specified by a
      * delimiter.</p> <p> <code>CommonPrefixes</code> lists keys that act like
@@ -409,9 +409,9 @@ namespace Model
     inline void SetCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { m_commonPrefixes = value; }
 
     /**
-     * <p>All of the keys rolled up into a common prefix count as a single return when
-     * calculating the number of returns.</p> <p>A response can contain
-     * <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
+     * <p>All of the keys (up to 1,000) rolled up into a common prefix count as a
+     * single return when calculating the number of returns.</p> <p>A response can
+     * contain <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
      * <code>CommonPrefixes</code> contains all (if there are any) keys between
      * <code>Prefix</code> and the next occurrence of the string specified by a
      * delimiter.</p> <p> <code>CommonPrefixes</code> lists keys that act like
@@ -424,9 +424,9 @@ namespace Model
     inline void SetCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { m_commonPrefixes = std::move(value); }
 
     /**
-     * <p>All of the keys rolled up into a common prefix count as a single return when
-     * calculating the number of returns.</p> <p>A response can contain
-     * <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
+     * <p>All of the keys (up to 1,000) rolled up into a common prefix count as a
+     * single return when calculating the number of returns.</p> <p>A response can
+     * contain <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
      * <code>CommonPrefixes</code> contains all (if there are any) keys between
      * <code>Prefix</code> and the next occurrence of the string specified by a
      * delimiter.</p> <p> <code>CommonPrefixes</code> lists keys that act like
@@ -439,9 +439,9 @@ namespace Model
     inline ListObjectsV2Result& WithCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { SetCommonPrefixes(value); return *this;}
 
     /**
-     * <p>All of the keys rolled up into a common prefix count as a single return when
-     * calculating the number of returns.</p> <p>A response can contain
-     * <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
+     * <p>All of the keys (up to 1,000) rolled up into a common prefix count as a
+     * single return when calculating the number of returns.</p> <p>A response can
+     * contain <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
      * <code>CommonPrefixes</code> contains all (if there are any) keys between
      * <code>Prefix</code> and the next occurrence of the string specified by a
      * delimiter.</p> <p> <code>CommonPrefixes</code> lists keys that act like
@@ -454,9 +454,9 @@ namespace Model
     inline ListObjectsV2Result& WithCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { SetCommonPrefixes(std::move(value)); return *this;}
 
     /**
-     * <p>All of the keys rolled up into a common prefix count as a single return when
-     * calculating the number of returns.</p> <p>A response can contain
-     * <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
+     * <p>All of the keys (up to 1,000) rolled up into a common prefix count as a
+     * single return when calculating the number of returns.</p> <p>A response can
+     * contain <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
      * <code>CommonPrefixes</code> contains all (if there are any) keys between
      * <code>Prefix</code> and the next occurrence of the string specified by a
      * delimiter.</p> <p> <code>CommonPrefixes</code> lists keys that act like
@@ -469,9 +469,9 @@ namespace Model
     inline ListObjectsV2Result& AddCommonPrefixes(const CommonPrefix& value) { m_commonPrefixes.push_back(value); return *this; }
 
     /**
-     * <p>All of the keys rolled up into a common prefix count as a single return when
-     * calculating the number of returns.</p> <p>A response can contain
-     * <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
+     * <p>All of the keys (up to 1,000) rolled up into a common prefix count as a
+     * single return when calculating the number of returns.</p> <p>A response can
+     * contain <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
      * <code>CommonPrefixes</code> contains all (if there are any) keys between
      * <code>Prefix</code> and the next occurrence of the string specified by a
      * delimiter.</p> <p> <code>CommonPrefixes</code> lists keys that act like
@@ -532,21 +532,21 @@ namespace Model
 
     /**
      * <p>KeyCount is the number of keys returned with this request. KeyCount will
-     * always be less than equals to MaxKeys field. Say you ask for 50 keys, your
+     * always be less than or equals to MaxKeys field. Say you ask for 50 keys, your
      * result will include less than equals 50 keys </p>
      */
     inline int GetKeyCount() const{ return m_keyCount; }
 
     /**
      * <p>KeyCount is the number of keys returned with this request. KeyCount will
-     * always be less than equals to MaxKeys field. Say you ask for 50 keys, your
+     * always be less than or equals to MaxKeys field. Say you ask for 50 keys, your
      * result will include less than equals 50 keys </p>
      */
     inline void SetKeyCount(int value) { m_keyCount = value; }
 
     /**
      * <p>KeyCount is the number of keys returned with this request. KeyCount will
-     * always be less than equals to MaxKeys field. Say you ask for 50 keys, your
+     * always be less than or equals to MaxKeys field. Say you ask for 50 keys, your
      * result will include less than equals 50 keys </p>
      */
     inline ListObjectsV2Result& WithKeyCount(int value) { SetKeyCount(value); return *this;}

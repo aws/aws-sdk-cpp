@@ -8,6 +8,7 @@
 #include <aws/s3/S3Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/Tagging.h>
+#include <aws/s3/model/RequestPayer.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -457,6 +458,25 @@ namespace Model
 
 
     
+    inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
+
+    
+    inline bool RequestPayerHasBeenSet() const { return m_requestPayerHasBeenSet; }
+
+    
+    inline void SetRequestPayer(const RequestPayer& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
+
+    
+    inline void SetRequestPayer(RequestPayer&& value) { m_requestPayerHasBeenSet = true; m_requestPayer = std::move(value); }
+
+    
+    inline PutObjectTaggingRequest& WithRequestPayer(const RequestPayer& value) { SetRequestPayer(value); return *this;}
+
+    
+    inline PutObjectTaggingRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(std::move(value)); return *this;}
+
+
+    
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
 
     
@@ -514,6 +534,9 @@ namespace Model
 
     Aws::String m_expectedBucketOwner;
     bool m_expectedBucketOwnerHasBeenSet;
+
+    RequestPayer m_requestPayer;
+    bool m_requestPayerHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
     bool m_customizedAccessLogTagHasBeenSet;

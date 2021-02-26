@@ -20,6 +20,7 @@
 #include <aws/eks/EKSClient.h>
 #include <aws/eks/EKSEndpoint.h>
 #include <aws/eks/EKSErrorMarshaller.h>
+#include <aws/eks/model/AssociateEncryptionConfigRequest.h>
 #include <aws/eks/model/AssociateIdentityProviderConfigRequest.h>
 #include <aws/eks/model/CreateAddonRequest.h>
 #include <aws/eks/model/CreateClusterRequest.h>
@@ -123,6 +124,40 @@ void EKSClient::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+AssociateEncryptionConfigOutcome EKSClient::AssociateEncryptionConfig(const AssociateEncryptionConfigRequest& request) const
+{
+  if (!request.ClusterNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateEncryptionConfig", "Required field: ClusterName, is not set");
+    return AssociateEncryptionConfigOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/clusters/";
+  ss << request.GetClusterName();
+  ss << "/encryption-config/associate";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return AssociateEncryptionConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateEncryptionConfigOutcomeCallable EKSClient::AssociateEncryptionConfigCallable(const AssociateEncryptionConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateEncryptionConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateEncryptionConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EKSClient::AssociateEncryptionConfigAsync(const AssociateEncryptionConfigRequest& request, const AssociateEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateEncryptionConfigAsyncHelper( request, handler, context ); } );
+}
+
+void EKSClient::AssociateEncryptionConfigAsyncHelper(const AssociateEncryptionConfigRequest& request, const AssociateEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateEncryptionConfig(request), context);
 }
 
 AssociateIdentityProviderConfigOutcome EKSClient::AssociateIdentityProviderConfig(const AssociateIdentityProviderConfigRequest& request) const

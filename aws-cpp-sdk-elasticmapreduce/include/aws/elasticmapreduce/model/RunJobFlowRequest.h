@@ -635,7 +635,7 @@ namespace Model
      * arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow
      * using MapR M3 or M5 Edition respectively.</p> </li> <li> <p>"mapr-m7" - launch
      * the cluster using MapR M7 Edition.</p> </li> <li> <p>"hunk" - launch the cluster
-     * with the Hunk Big Data Analtics Platform.</p> </li> <li> <p>"hue"- launch the
+     * with the Hunk Big Data Analytics Platform.</p> </li> <li> <p>"hue"- launch the
      * cluster with Hue installed.</p> </li> <li> <p>"spark" - launch the cluster with
      * Apache Spark installed.</p> </li> <li> <p>"ganglia" - launch the cluster with
      * the Ganglia Monitoring System installed.</p> </li> </ul>
@@ -656,7 +656,7 @@ namespace Model
      * arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow
      * using MapR M3 or M5 Edition respectively.</p> </li> <li> <p>"mapr-m7" - launch
      * the cluster using MapR M7 Edition.</p> </li> <li> <p>"hunk" - launch the cluster
-     * with the Hunk Big Data Analtics Platform.</p> </li> <li> <p>"hue"- launch the
+     * with the Hunk Big Data Analytics Platform.</p> </li> <li> <p>"hue"- launch the
      * cluster with Hue installed.</p> </li> <li> <p>"spark" - launch the cluster with
      * Apache Spark installed.</p> </li> <li> <p>"ganglia" - launch the cluster with
      * the Ganglia Monitoring System installed.</p> </li> </ul>
@@ -677,7 +677,7 @@ namespace Model
      * arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow
      * using MapR M3 or M5 Edition respectively.</p> </li> <li> <p>"mapr-m7" - launch
      * the cluster using MapR M7 Edition.</p> </li> <li> <p>"hunk" - launch the cluster
-     * with the Hunk Big Data Analtics Platform.</p> </li> <li> <p>"hue"- launch the
+     * with the Hunk Big Data Analytics Platform.</p> </li> <li> <p>"hue"- launch the
      * cluster with Hue installed.</p> </li> <li> <p>"spark" - launch the cluster with
      * Apache Spark installed.</p> </li> <li> <p>"ganglia" - launch the cluster with
      * the Ganglia Monitoring System installed.</p> </li> </ul>
@@ -698,7 +698,7 @@ namespace Model
      * arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow
      * using MapR M3 or M5 Edition respectively.</p> </li> <li> <p>"mapr-m7" - launch
      * the cluster using MapR M7 Edition.</p> </li> <li> <p>"hunk" - launch the cluster
-     * with the Hunk Big Data Analtics Platform.</p> </li> <li> <p>"hue"- launch the
+     * with the Hunk Big Data Analytics Platform.</p> </li> <li> <p>"hue"- launch the
      * cluster with Hue installed.</p> </li> <li> <p>"spark" - launch the cluster with
      * Apache Spark installed.</p> </li> <li> <p>"ganglia" - launch the cluster with
      * the Ganglia Monitoring System installed.</p> </li> </ul>
@@ -719,7 +719,7 @@ namespace Model
      * arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow
      * using MapR M3 or M5 Edition respectively.</p> </li> <li> <p>"mapr-m7" - launch
      * the cluster using MapR M7 Edition.</p> </li> <li> <p>"hunk" - launch the cluster
-     * with the Hunk Big Data Analtics Platform.</p> </li> <li> <p>"hue"- launch the
+     * with the Hunk Big Data Analytics Platform.</p> </li> <li> <p>"hue"- launch the
      * cluster with Hue installed.</p> </li> <li> <p>"spark" - launch the cluster with
      * Apache Spark installed.</p> </li> <li> <p>"ganglia" - launch the cluster with
      * the Ganglia Monitoring System installed.</p> </li> </ul>
@@ -740,7 +740,7 @@ namespace Model
      * arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow
      * using MapR M3 or M5 Edition respectively.</p> </li> <li> <p>"mapr-m7" - launch
      * the cluster using MapR M7 Edition.</p> </li> <li> <p>"hunk" - launch the cluster
-     * with the Hunk Big Data Analtics Platform.</p> </li> <li> <p>"hue"- launch the
+     * with the Hunk Big Data Analytics Platform.</p> </li> <li> <p>"hue"- launch the
      * cluster with Hue installed.</p> </li> <li> <p>"spark" - launch the cluster with
      * Apache Spark installed.</p> </li> <li> <p>"ganglia" - launch the cluster with
      * the Ganglia Monitoring System installed.</p> </li> </ul>
@@ -761,7 +761,7 @@ namespace Model
      * arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow
      * using MapR M3 or M5 Edition respectively.</p> </li> <li> <p>"mapr-m7" - launch
      * the cluster using MapR M7 Edition.</p> </li> <li> <p>"hunk" - launch the cluster
-     * with the Hunk Big Data Analtics Platform.</p> </li> <li> <p>"hue"- launch the
+     * with the Hunk Big Data Analytics Platform.</p> </li> <li> <p>"hue"- launch the
      * cluster with Hue installed.</p> </li> <li> <p>"spark" - launch the cluster with
      * Apache Spark installed.</p> </li> <li> <p>"ganglia" - launch the cluster with
      * the Ganglia Monitoring System installed.</p> </li> </ul>
@@ -782,7 +782,7 @@ namespace Model
      * arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow
      * using MapR M3 or M5 Edition respectively.</p> </li> <li> <p>"mapr-m7" - launch
      * the cluster using MapR M7 Edition.</p> </li> <li> <p>"hunk" - launch the cluster
-     * with the Hunk Big Data Analtics Platform.</p> </li> <li> <p>"hue"- launch the
+     * with the Hunk Big Data Analytics Platform.</p> </li> <li> <p>"hue"- launch the
      * cluster with Hue installed.</p> </li> <li> <p>"spark" - launch the cluster with
      * Apache Spark installed.</p> </li> <li> <p>"ganglia" - launch the cluster with
      * the Ganglia Monitoring System installed.</p> </li> </ul>

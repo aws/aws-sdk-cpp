@@ -22,6 +22,7 @@ namespace Model
     ConfigUpdate,
     AssociateIdentityProviderConfig,
     DisassociateIdentityProviderConfig,
+    AssociateEncryptionConfig,
     AddonUpdate
   };
 

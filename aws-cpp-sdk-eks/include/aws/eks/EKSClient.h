@@ -11,6 +11,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eks/model/AssociateEncryptionConfigResult.h>
 #include <aws/eks/model/AssociateIdentityProviderConfigResult.h>
 #include <aws/eks/model/CreateAddonResult.h>
 #include <aws/eks/model/CreateClusterResult.h>
@@ -81,6 +82,7 @@ namespace EKS
 
 namespace Model
 {
+        class AssociateEncryptionConfigRequest;
         class AssociateIdentityProviderConfigRequest;
         class CreateAddonRequest;
         class CreateClusterRequest;
@@ -113,6 +115,7 @@ namespace Model
         class UpdateNodegroupConfigRequest;
         class UpdateNodegroupVersionRequest;
 
+        typedef Aws::Utils::Outcome<AssociateEncryptionConfigResult, EKSError> AssociateEncryptionConfigOutcome;
         typedef Aws::Utils::Outcome<AssociateIdentityProviderConfigResult, EKSError> AssociateIdentityProviderConfigOutcome;
         typedef Aws::Utils::Outcome<CreateAddonResult, EKSError> CreateAddonOutcome;
         typedef Aws::Utils::Outcome<CreateClusterResult, EKSError> CreateClusterOutcome;
@@ -145,6 +148,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateNodegroupConfigResult, EKSError> UpdateNodegroupConfigOutcome;
         typedef Aws::Utils::Outcome<UpdateNodegroupVersionResult, EKSError> UpdateNodegroupVersionOutcome;
 
+        typedef std::future<AssociateEncryptionConfigOutcome> AssociateEncryptionConfigOutcomeCallable;
         typedef std::future<AssociateIdentityProviderConfigOutcome> AssociateIdentityProviderConfigOutcomeCallable;
         typedef std::future<CreateAddonOutcome> CreateAddonOutcomeCallable;
         typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
@@ -180,6 +184,7 @@ namespace Model
 
   class EKSClient;
 
+    typedef std::function<void(const EKSClient*, const Model::AssociateEncryptionConfigRequest&, const Model::AssociateEncryptionConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateEncryptionConfigResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::AssociateIdentityProviderConfigRequest&, const Model::AssociateIdentityProviderConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateIdentityProviderConfigResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::CreateAddonRequest&, const Model::CreateAddonOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAddonResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::CreateClusterRequest&, const Model::CreateClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClusterResponseReceivedHandler;
@@ -251,6 +256,43 @@ namespace Model
 
         virtual ~EKSClient();
 
+
+        /**
+         * <p>Associate encryption configuration to an existing cluster.</p> <p>You can use
+         * this API to enable encryption on existing clusters which do not have encryption
+         * already enabled. This allows you to implement a defense-in-depth security
+         * strategy without migrating applications to new EKS clusters.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateEncryptionConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateEncryptionConfigOutcome AssociateEncryptionConfig(const Model::AssociateEncryptionConfigRequest& request) const;
+
+        /**
+         * <p>Associate encryption configuration to an existing cluster.</p> <p>You can use
+         * this API to enable encryption on existing clusters which do not have encryption
+         * already enabled. This allows you to implement a defense-in-depth security
+         * strategy without migrating applications to new EKS clusters.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateEncryptionConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateEncryptionConfigOutcomeCallable AssociateEncryptionConfigCallable(const Model::AssociateEncryptionConfigRequest& request) const;
+
+        /**
+         * <p>Associate encryption configuration to an existing cluster.</p> <p>You can use
+         * this API to enable encryption on existing clusters which do not have encryption
+         * already enabled. This allows you to implement a defense-in-depth security
+         * strategy without migrating applications to new EKS clusters.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateEncryptionConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateEncryptionConfigAsync(const Model::AssociateEncryptionConfigRequest& request, const AssociateEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associate an identity provider configuration to a cluster.</p> <p>If you want
@@ -358,26 +400,10 @@ namespace Model
          * <code>logs</code>, and <code>proxy</code> data flows).</p> <p>Amazon EKS nodes
          * run in your AWS account and connect to your cluster's control plane via the
          * Kubernetes API server endpoint and a certificate file that is created for your
-         * cluster.</p> <p>You can use the <code>endpointPublicAccess</code> and
-         * <code>endpointPrivateAccess</code> parameters to enable or disable public and
-         * private access to your cluster's Kubernetes API server endpoint. By default,
-         * public access is enabled, and private access is disabled. For more information,
-         * see <a
-         * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-         * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
-         * </i>. </p> <p>You can use the <code>logging</code> parameter to enable or
-         * disable exporting the Kubernetes control plane logs for your cluster to
-         * CloudWatch Logs. By default, cluster control plane logs aren't exported to
-         * CloudWatch Logs. For more information, see <a
-         * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
-         * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
-         * </i>.</p>  <p>CloudWatch Logs ingestion, archive storage, and data
-         * scanning rates apply to exported control plane logs. For more information, see
-         * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-         * Pricing</a>.</p>  <p>Cluster creation typically takes between 10 and 15
-         * minutes. After you create an Amazon EKS cluster, you must configure your
-         * Kubernetes tooling to communicate with the API server and launch nodes into your
-         * cluster. For more information, see <a
+         * cluster.</p> <p>Cluster creation typically takes several minutes. After you
+         * create an Amazon EKS cluster, you must configure your Kubernetes tooling to
+         * communicate with the API server and launch nodes into your cluster. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing
          * Cluster Authentication</a> and <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
@@ -402,26 +428,10 @@ namespace Model
          * <code>logs</code>, and <code>proxy</code> data flows).</p> <p>Amazon EKS nodes
          * run in your AWS account and connect to your cluster's control plane via the
          * Kubernetes API server endpoint and a certificate file that is created for your
-         * cluster.</p> <p>You can use the <code>endpointPublicAccess</code> and
-         * <code>endpointPrivateAccess</code> parameters to enable or disable public and
-         * private access to your cluster's Kubernetes API server endpoint. By default,
-         * public access is enabled, and private access is disabled. For more information,
-         * see <a
-         * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-         * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
-         * </i>. </p> <p>You can use the <code>logging</code> parameter to enable or
-         * disable exporting the Kubernetes control plane logs for your cluster to
-         * CloudWatch Logs. By default, cluster control plane logs aren't exported to
-         * CloudWatch Logs. For more information, see <a
-         * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
-         * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
-         * </i>.</p>  <p>CloudWatch Logs ingestion, archive storage, and data
-         * scanning rates apply to exported control plane logs. For more information, see
-         * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-         * Pricing</a>.</p>  <p>Cluster creation typically takes between 10 and 15
-         * minutes. After you create an Amazon EKS cluster, you must configure your
-         * Kubernetes tooling to communicate with the API server and launch nodes into your
-         * cluster. For more information, see <a
+         * cluster.</p> <p>Cluster creation typically takes several minutes. After you
+         * create an Amazon EKS cluster, you must configure your Kubernetes tooling to
+         * communicate with the API server and launch nodes into your cluster. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing
          * Cluster Authentication</a> and <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
@@ -448,26 +458,10 @@ namespace Model
          * <code>logs</code>, and <code>proxy</code> data flows).</p> <p>Amazon EKS nodes
          * run in your AWS account and connect to your cluster's control plane via the
          * Kubernetes API server endpoint and a certificate file that is created for your
-         * cluster.</p> <p>You can use the <code>endpointPublicAccess</code> and
-         * <code>endpointPrivateAccess</code> parameters to enable or disable public and
-         * private access to your cluster's Kubernetes API server endpoint. By default,
-         * public access is enabled, and private access is disabled. For more information,
-         * see <a
-         * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-         * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
-         * </i>. </p> <p>You can use the <code>logging</code> parameter to enable or
-         * disable exporting the Kubernetes control plane logs for your cluster to
-         * CloudWatch Logs. By default, cluster control plane logs aren't exported to
-         * CloudWatch Logs. For more information, see <a
-         * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
-         * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
-         * </i>.</p>  <p>CloudWatch Logs ingestion, archive storage, and data
-         * scanning rates apply to exported control plane logs. For more information, see
-         * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-         * Pricing</a>.</p>  <p>Cluster creation typically takes between 10 and 15
-         * minutes. After you create an Amazon EKS cluster, you must configure your
-         * Kubernetes tooling to communicate with the API server and launch nodes into your
-         * cluster. For more information, see <a
+         * cluster.</p> <p>Cluster creation typically takes several minutes. After you
+         * create an Amazon EKS cluster, you must configure your Kubernetes tooling to
+         * communicate with the API server and launch nodes into your cluster. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing
          * Cluster Authentication</a> and <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
@@ -1625,6 +1619,7 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void AssociateEncryptionConfigAsyncHelper(const Model::AssociateEncryptionConfigRequest& request, const AssociateEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateIdentityProviderConfigAsyncHelper(const Model::AssociateIdentityProviderConfigRequest& request, const AssociateIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAddonAsyncHelper(const Model::CreateAddonRequest& request, const CreateAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateClusterAsyncHelper(const Model::CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

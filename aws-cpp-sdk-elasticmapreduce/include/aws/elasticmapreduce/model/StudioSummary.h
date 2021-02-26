@@ -172,42 +172,42 @@ namespace Model
 
 
     /**
-     * <p>The detailed description of the EMR Studio.</p>
+     * <p>The detailed description of the Amazon EMR Studio.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The detailed description of the EMR Studio.</p>
+     * <p>The detailed description of the Amazon EMR Studio.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The detailed description of the EMR Studio.</p>
+     * <p>The detailed description of the Amazon EMR Studio.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The detailed description of the EMR Studio.</p>
+     * <p>The detailed description of the Amazon EMR Studio.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The detailed description of the EMR Studio.</p>
+     * <p>The detailed description of the Amazon EMR Studio.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The detailed description of the EMR Studio.</p>
+     * <p>The detailed description of the Amazon EMR Studio.</p>
      */
     inline StudioSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The detailed description of the EMR Studio.</p>
+     * <p>The detailed description of the Amazon EMR Studio.</p>
      */
     inline StudioSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The detailed description of the EMR Studio.</p>
+     * <p>The detailed description of the Amazon EMR Studio.</p>
      */
     inline StudioSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
 

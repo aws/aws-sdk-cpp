@@ -43,49 +43,49 @@ namespace Model
 
     /**
      * <p>A list of Java properties that are set when the step runs. You can use these
-     * properties to pass key value pairs to your main function.</p>
+     * properties to pass key-value pairs to your main function.</p>
      */
     inline const Aws::Vector<KeyValue>& GetProperties() const{ return m_properties; }
 
     /**
      * <p>A list of Java properties that are set when the step runs. You can use these
-     * properties to pass key value pairs to your main function.</p>
+     * properties to pass key-value pairs to your main function.</p>
      */
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
 
     /**
      * <p>A list of Java properties that are set when the step runs. You can use these
-     * properties to pass key value pairs to your main function.</p>
+     * properties to pass key-value pairs to your main function.</p>
      */
     inline void SetProperties(const Aws::Vector<KeyValue>& value) { m_propertiesHasBeenSet = true; m_properties = value; }
 
     /**
      * <p>A list of Java properties that are set when the step runs. You can use these
-     * properties to pass key value pairs to your main function.</p>
+     * properties to pass key-value pairs to your main function.</p>
      */
     inline void SetProperties(Aws::Vector<KeyValue>&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
 
     /**
      * <p>A list of Java properties that are set when the step runs. You can use these
-     * properties to pass key value pairs to your main function.</p>
+     * properties to pass key-value pairs to your main function.</p>
      */
     inline HadoopJarStepConfig& WithProperties(const Aws::Vector<KeyValue>& value) { SetProperties(value); return *this;}
 
     /**
      * <p>A list of Java properties that are set when the step runs. You can use these
-     * properties to pass key value pairs to your main function.</p>
+     * properties to pass key-value pairs to your main function.</p>
      */
     inline HadoopJarStepConfig& WithProperties(Aws::Vector<KeyValue>&& value) { SetProperties(std::move(value)); return *this;}
 
     /**
      * <p>A list of Java properties that are set when the step runs. You can use these
-     * properties to pass key value pairs to your main function.</p>
+     * properties to pass key-value pairs to your main function.</p>
      */
     inline HadoopJarStepConfig& AddProperties(const KeyValue& value) { m_propertiesHasBeenSet = true; m_properties.push_back(value); return *this; }
 
     /**
      * <p>A list of Java properties that are set when the step runs. You can use these
-     * properties to pass key value pairs to your main function.</p>
+     * properties to pass key-value pairs to your main function.</p>
      */
     inline HadoopJarStepConfig& AddProperties(KeyValue&& value) { m_propertiesHasBeenSet = true; m_properties.push_back(std::move(value)); return *this; }
 
