@@ -235,20 +235,19 @@ namespace Aws
              SSOCredentialsClient& operator =(SSOCredentialsClient&& rhs) = delete;
              SSOCredentialsClient(SSOCredentialsClient&& rhs) = delete;
 
-             struct SSOCredentialsRequest
+             struct SSOGetRoleCredentialsRequest
              {
                  Aws::String m_ssoAccountId;
-                 Aws::String m_ssoRegion;
                  Aws::String m_ssoRoleName;
                  Aws::String m_accessToken;
              };
 
-             struct SSOCredentialsResult
+             struct SSOGetRoleCredentialsResult
              {
                  Aws::Auth::AWSCredentials creds;
              };
 
-             SSOCredentialsResult GetSSOCredentials(const SSOCredentialsRequest& request);
+             SSOGetRoleCredentialsResult GetSSOCredentials(const SSOGetRoleCredentialsRequest& request);
 
          private:
              Aws::String m_endpoint;

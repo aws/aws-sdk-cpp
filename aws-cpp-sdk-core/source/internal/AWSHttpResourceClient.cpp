@@ -35,6 +35,7 @@ static const char EC2_IMDS_TOKEN_HEADER[] = "x-aws-ec2-metadata-token";
 static const char RESOURCE_CLIENT_CONFIGURATION_ALLOCATION_TAG[] = "AWSHttpResourceClient";
 static const char EC2_METADATA_CLIENT_LOG_TAG[] = "EC2MetadataClient";
 static const char ECS_CREDENTIALS_CLIENT_LOG_TAG[] = "ECSCredentialsClient";
+static const char SSO_GET_ROLE_RESOURCE[] = "/federation/credentials";
 
 namespace Aws
 {
@@ -160,7 +161,7 @@ namespace Aws
 
                 if (!m_retryStrategy->ShouldRetry(error, retries))
                 {
-                    AWS_LOGSTREAM_ERROR(m_logtag.c_str(), "Can not retrive resource from " << httpRequest->GetURIString());
+                    AWS_LOGSTREAM_ERROR(m_logtag.c_str(), "Can not retrieve resource from " << httpRequest->GetURIString());
                     return {{}, response->GetHeaders(), error.GetResponseCode()};
                 }
                 auto sleepMillis = m_retryStrategy->CalculateDelayBeforeNextRetry(error, retries);
@@ -525,7 +526,7 @@ namespace Aws
 
             AWS_LOGSTREAM_DEBUG(SSO_RESOURCE_CLIENT_LOG_TAG, "Preparing SSO client for region: " << clientConfiguration.region);
 
-            ss << "portal.sso." << clientConfiguration.region << ".amazonaws.com";
+            ss << "portal.sso." << clientConfiguration.region << ".amazonaws.com/federation/credentials";
             if (hash == CN_NORTH_1_HASH || hash == CN_NORTHWEST_1_HASH)
             {
                 ss << ".cn";
@@ -535,19 +536,13 @@ namespace Aws
             AWS_LOGSTREAM_INFO(SSO_RESOURCE_CLIENT_LOG_TAG, "Creating SSO ResourceClient with endpoint: " << m_endpoint);
         }
 
-        SSOCredentialsClient::SSOCredentialsResult SSOCredentialsClient::GetSSOCredentials(const SSOCredentialsRequest &request)
+        SSOCredentialsClient::SSOGetRoleCredentialsResult SSOCredentialsClient::GetSSOCredentials(const SSOGetRoleCredentialsRequest &request)
         {
             Aws::StringStream ssUri;
             ssUri << m_endpoint << SSO_GET_ROLE_RESOURCE;
 
             std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(m_endpoint, HttpMethod::HTTP_GET,
                                                                        Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
-            //Calculate query string
-            Aws::StringStream ss;
-            ss << "Action=GetRoleCredentials"
-               << "&Version=2019-06-10"
-               << "&account_id=" << Aws::Utils::StringUtils::URLEncode(request.m_ssoAccountId.c_str())
-               << "&role_name=" << Aws::Utils::StringUtils::URLEncode(request.m_ssoRoleName.c_str());
 
             httpRequest->SetHeaderValue("x-amz-sso_bearer_token", request.m_accessToken);
 
@@ -559,6 +554,7 @@ namespace Aws
             Aws::String credentialsStr = GetResourceWithAWSWebServiceResult(httpRequest).GetPayload();
 
             Json::JsonValue credentialsDoc(credentialsStr);
+            AWS_LOGSTREAM_TRACE(SSO_RESOURCE_CLIENT_LOG_TAG, "Raw creds returned: " << credentialsStr);
             if (!credentialsDoc.WasParseSuccessful())
             {
                 AWS_LOGSTREAM_ERROR(SSO_RESOURCE_CLIENT_LOG_TAG, "Failed to load credential from running. Error: " << credentialsStr);
@@ -566,13 +562,12 @@ namespace Aws
             }
             Aws::Auth::AWSCredentials creds;
             Utils::Json::JsonView credentialsView(credentialsDoc);
-            creds.SetAWSAccessKeyId(credentialsView.GetString("AccessKeyId"));
-            creds.SetAWSSecretKey(credentialsView.GetString("SecretAccessKey"));
-            creds.SetSessionToken(credentialsView.GetString("SessionToken"));
-            creds.SetExpiration(credentialsView.GetInt64("Expiration"));
-            AWS_LOGSTREAM_DEBUG(SSO_RESOURCE_CLIENT_LOG_TAG, "Successfully pulled credentials from sso service with access key " << creds.GetAWSAccessKeyId());
-
-            SSOCredentialsClient::SSOCredentialsResult result;
+            auto roleCredentials = credentialsView.GetObject("roleCredentials");
+            creds.SetAWSAccessKeyId(roleCredentials.GetString("accessKeyId"));
+            creds.SetAWSSecretKey(roleCredentials.GetString("secretAccessKey"));
+            creds.SetSessionToken(roleCredentials.GetString("sessionToken"));
+            creds.SetExpiration(roleCredentials.GetInt64("expiration"));
+            SSOCredentialsClient::SSOGetRoleCredentialsResult result;
             result.creds = creds;
             return result;
         }
