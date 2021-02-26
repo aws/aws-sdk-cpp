@@ -221,5 +221,37 @@ namespace Aws
         private:
             Aws::String m_endpoint;
         };
+
+        /**
+         * To support retrieving credentials from SSO.
+         */
+         class AWS_CORE_API SSOCredentialsClient : public AWSHttpResourceClient
+         {
+         public:
+             SSOCredentialsClient(const Client::ClientConfiguration& clientConfiguration);
+
+             SSOCredentialsClient& operator =(SSOCredentialsClient& rhs) = delete;
+             SSOCredentialsClient(const SSOCredentialsClient& rhs) = delete;
+             SSOCredentialsClient& operator =(SSOCredentialsClient&& rhs) = delete;
+             SSOCredentialsClient(SSOCredentialsClient&& rhs) = delete;
+
+             struct SSOCredentialsRequest
+             {
+                 Aws::String m_ssoAccountId;
+                 Aws::String m_ssoRegion;
+                 Aws::String m_ssoRoleName;
+                 Aws::String m_accessToken;
+             };
+
+             struct SSOCredentialsResult
+             {
+                 Aws::Auth::AWSCredentials creds;
+             };
+
+             SSOCredentialsResult GetSSOCredentials(const SSOCredentialsRequest& request);
+
+         private:
+             Aws::String m_endpoint;
+         };
     } // namespace Internal
 } // namespace Aws

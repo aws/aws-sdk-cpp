@@ -502,5 +502,79 @@ namespace Aws
             }
             return result;
         }
+
+        static const char SSO_RESOURCE_CLIENT_LOG_TAG[] = "SSOResourceClient";
+        SSOCredentialsClient::SSOCredentialsClient(const Aws::Client::ClientConfiguration& clientConfiguration)
+                : AWSHttpResourceClient(clientConfiguration, SSO_RESOURCE_CLIENT_LOG_TAG)
+        {
+            SetErrorMarshaller(Aws::MakeUnique<Aws::Client::JsonErrorMarshaller>(SSO_RESOURCE_CLIENT_LOG_TAG));
+
+            Aws::StringStream ss;
+            if (clientConfiguration.scheme == Aws::Http::Scheme::HTTP)
+            {
+                ss << "http://";
+            }
+            else
+            {
+                ss << "https://";
+            }
+
+            static const int CN_NORTH_1_HASH = Aws::Utils::HashingUtils::HashString(Aws::Region::CN_NORTH_1);
+            static const int CN_NORTHWEST_1_HASH = Aws::Utils::HashingUtils::HashString(Aws::Region::CN_NORTHWEST_1);
+            auto hash = Aws::Utils::HashingUtils::HashString(clientConfiguration.region.c_str());
+
+            AWS_LOGSTREAM_DEBUG(SSO_RESOURCE_CLIENT_LOG_TAG, "Preparing SSO client for region: " << clientConfiguration.region);
+
+            ss << "portal.sso." << clientConfiguration.region << ".amazonaws.com";
+            if (hash == CN_NORTH_1_HASH || hash == CN_NORTHWEST_1_HASH)
+            {
+                ss << ".cn";
+            }
+            m_endpoint =  ss.str();
+
+            AWS_LOGSTREAM_INFO(SSO_RESOURCE_CLIENT_LOG_TAG, "Creating SSO ResourceClient with endpoint: " << m_endpoint);
+        }
+
+        SSOCredentialsClient::SSOCredentialsResult SSOCredentialsClient::GetSSOCredentials(const SSOCredentialsRequest &request)
+        {
+            Aws::StringStream ssUri;
+            ssUri << m_endpoint << SSO_GET_ROLE_RESOURCE;
+
+            std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(m_endpoint, HttpMethod::HTTP_GET,
+                                                                       Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
+            //Calculate query string
+            Aws::StringStream ss;
+            ss << "Action=GetRoleCredentials"
+               << "&Version=2019-06-10"
+               << "&account_id=" << Aws::Utils::StringUtils::URLEncode(request.m_ssoAccountId.c_str())
+               << "&role_name=" << Aws::Utils::StringUtils::URLEncode(request.m_ssoRoleName.c_str());
+
+            httpRequest->SetHeaderValue("x-amz-sso_bearer_token", request.m_accessToken);
+
+            httpRequest->SetUserAgent(ComputeUserAgentString());
+
+            httpRequest->AddQueryStringParameter("account_id", Aws::Utils::StringUtils::URLEncode(request.m_ssoAccountId.c_str()));
+            httpRequest->AddQueryStringParameter("role_name", Aws::Utils::StringUtils::URLEncode(request.m_ssoRoleName.c_str()));
+
+            Aws::String credentialsStr = GetResourceWithAWSWebServiceResult(httpRequest).GetPayload();
+
+            Json::JsonValue credentialsDoc(credentialsStr);
+            if (!credentialsDoc.WasParseSuccessful())
+            {
+                AWS_LOGSTREAM_ERROR(SSO_RESOURCE_CLIENT_LOG_TAG, "Failed to load credential from running. Error: " << credentialsStr);
+                return {};
+            }
+            Aws::Auth::AWSCredentials creds;
+            Utils::Json::JsonView credentialsView(credentialsDoc);
+            creds.SetAWSAccessKeyId(credentialsView.GetString("AccessKeyId"));
+            creds.SetAWSSecretKey(credentialsView.GetString("SecretAccessKey"));
+            creds.SetSessionToken(credentialsView.GetString("SessionToken"));
+            creds.SetExpiration(credentialsView.GetInt64("Expiration"));
+            AWS_LOGSTREAM_DEBUG(SSO_RESOURCE_CLIENT_LOG_TAG, "Successfully pulled credentials from sso service with access key " << creds.GetAWSAccessKeyId());
+
+            SSOCredentialsClient::SSOCredentialsResult result;
+            result.creds = creds;
+            return result;
+        }
     }
 }
