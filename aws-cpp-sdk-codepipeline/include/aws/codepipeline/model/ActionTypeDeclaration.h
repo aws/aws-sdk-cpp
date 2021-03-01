@@ -124,38 +124,38 @@ namespace Model
 
 
     /**
-     * <p>The action ID is composed of the action category, owner, provider, and
-     * version of the action type to be updated.</p>
+     * <p>The action category, owner, provider, and version of the action type to be
+     * updated.</p>
      */
     inline const ActionTypeIdentifier& GetId() const{ return m_id; }
 
     /**
-     * <p>The action ID is composed of the action category, owner, provider, and
-     * version of the action type to be updated.</p>
+     * <p>The action category, owner, provider, and version of the action type to be
+     * updated.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The action ID is composed of the action category, owner, provider, and
-     * version of the action type to be updated.</p>
+     * <p>The action category, owner, provider, and version of the action type to be
+     * updated.</p>
      */
     inline void SetId(const ActionTypeIdentifier& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The action ID is composed of the action category, owner, provider, and
-     * version of the action type to be updated.</p>
+     * <p>The action category, owner, provider, and version of the action type to be
+     * updated.</p>
      */
     inline void SetId(ActionTypeIdentifier&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The action ID is composed of the action category, owner, provider, and
-     * version of the action type to be updated.</p>
+     * <p>The action category, owner, provider, and version of the action type to be
+     * updated.</p>
      */
     inline ActionTypeDeclaration& WithId(const ActionTypeIdentifier& value) { SetId(value); return *this;}
 
     /**
-     * <p>The action ID is composed of the action category, owner, provider, and
-     * version of the action type to be updated.</p>
+     * <p>The action category, owner, provider, and version of the action type to be
+     * updated.</p>
      */
     inline ActionTypeDeclaration& WithId(ActionTypeIdentifier&& value) { SetId(std::move(value)); return *this;}
 

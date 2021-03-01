@@ -275,43 +275,43 @@ namespace Model
 
 
     /**
-     * <p>Defines the compliance level for approved patches. This means that if an
-     * approved patch is reported as missing, this is the severity of the compliance
+     * <p>Defines the compliance level for approved patches. When an approved patch is
+     * reported as missing, this value describes the severity of the compliance
      * violation. The default value is UNSPECIFIED.</p>
      */
     inline const PatchComplianceLevel& GetApprovedPatchesComplianceLevel() const{ return m_approvedPatchesComplianceLevel; }
 
     /**
-     * <p>Defines the compliance level for approved patches. This means that if an
-     * approved patch is reported as missing, this is the severity of the compliance
+     * <p>Defines the compliance level for approved patches. When an approved patch is
+     * reported as missing, this value describes the severity of the compliance
      * violation. The default value is UNSPECIFIED.</p>
      */
     inline bool ApprovedPatchesComplianceLevelHasBeenSet() const { return m_approvedPatchesComplianceLevelHasBeenSet; }
 
     /**
-     * <p>Defines the compliance level for approved patches. This means that if an
-     * approved patch is reported as missing, this is the severity of the compliance
+     * <p>Defines the compliance level for approved patches. When an approved patch is
+     * reported as missing, this value describes the severity of the compliance
      * violation. The default value is UNSPECIFIED.</p>
      */
     inline void SetApprovedPatchesComplianceLevel(const PatchComplianceLevel& value) { m_approvedPatchesComplianceLevelHasBeenSet = true; m_approvedPatchesComplianceLevel = value; }
 
     /**
-     * <p>Defines the compliance level for approved patches. This means that if an
-     * approved patch is reported as missing, this is the severity of the compliance
+     * <p>Defines the compliance level for approved patches. When an approved patch is
+     * reported as missing, this value describes the severity of the compliance
      * violation. The default value is UNSPECIFIED.</p>
      */
     inline void SetApprovedPatchesComplianceLevel(PatchComplianceLevel&& value) { m_approvedPatchesComplianceLevelHasBeenSet = true; m_approvedPatchesComplianceLevel = std::move(value); }
 
     /**
-     * <p>Defines the compliance level for approved patches. This means that if an
-     * approved patch is reported as missing, this is the severity of the compliance
+     * <p>Defines the compliance level for approved patches. When an approved patch is
+     * reported as missing, this value describes the severity of the compliance
      * violation. The default value is UNSPECIFIED.</p>
      */
     inline CreatePatchBaselineRequest& WithApprovedPatchesComplianceLevel(const PatchComplianceLevel& value) { SetApprovedPatchesComplianceLevel(value); return *this;}
 
     /**
-     * <p>Defines the compliance level for approved patches. This means that if an
-     * approved patch is reported as missing, this is the severity of the compliance
+     * <p>Defines the compliance level for approved patches. When an approved patch is
+     * reported as missing, this value describes the severity of the compliance
      * violation. The default value is UNSPECIFIED.</p>
      */
     inline CreatePatchBaselineRequest& WithApprovedPatchesComplianceLevel(PatchComplianceLevel&& value) { SetApprovedPatchesComplianceLevel(std::move(value)); return *this;}

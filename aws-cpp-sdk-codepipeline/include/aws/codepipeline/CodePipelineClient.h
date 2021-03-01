@@ -675,8 +675,8 @@ namespace Model
         /**
          * <p>Returns information about an action type created for an external provider,
          * where the action is to be used by customers of the external provider. The action
-         * can have been created with any supported integration model.</p><p><h3>See
-         * Also:</h3>   <a
+         * can be created with any supported integration model.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetActionType">AWS
          * API Reference</a></p>
          */
@@ -685,8 +685,8 @@ namespace Model
         /**
          * <p>Returns information about an action type created for an external provider,
          * where the action is to be used by customers of the external provider. The action
-         * can have been created with any supported integration model.</p><p><h3>See
-         * Also:</h3>   <a
+         * can be created with any supported integration model.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetActionType">AWS
          * API Reference</a></p>
          *
@@ -697,8 +697,8 @@ namespace Model
         /**
          * <p>Returns information about an action type created for an external provider,
          * where the action is to be used by customers of the external provider. The action
-         * can have been created with any supported integration model.</p><p><h3>See
-         * Also:</h3>   <a
+         * can be created with any supported integration model.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetActionType">AWS
          * API Reference</a></p>
          *
@@ -1543,22 +1543,20 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an action type that has been created with any supported integration
-         * model, where the action type is to be used by customers of the action type
-         * provider. Use a JSON file with the action definition and
-         * <code>UpdateActionType</code> to provide the full structure.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates an action type that was created with any supported integration model,
+         * where the action type is to be used by customers of the action type provider.
+         * Use a JSON file with the action definition and <code>UpdateActionType</code> to
+         * provide the full structure.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdateActionType">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateActionTypeOutcome UpdateActionType(const Model::UpdateActionTypeRequest& request) const;
 
         /**
-         * <p>Updates an action type that has been created with any supported integration
-         * model, where the action type is to be used by customers of the action type
-         * provider. Use a JSON file with the action definition and
-         * <code>UpdateActionType</code> to provide the full structure.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates an action type that was created with any supported integration model,
+         * where the action type is to be used by customers of the action type provider.
+         * Use a JSON file with the action definition and <code>UpdateActionType</code> to
+         * provide the full structure.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdateActionType">AWS
          * API Reference</a></p>
          *
@@ -1567,11 +1565,10 @@ namespace Model
         virtual Model::UpdateActionTypeOutcomeCallable UpdateActionTypeCallable(const Model::UpdateActionTypeRequest& request) const;
 
         /**
-         * <p>Updates an action type that has been created with any supported integration
-         * model, where the action type is to be used by customers of the action type
-         * provider. Use a JSON file with the action definition and
-         * <code>UpdateActionType</code> to provide the full structure.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates an action type that was created with any supported integration model,
+         * where the action type is to be used by customers of the action type provider.
+         * Use a JSON file with the action definition and <code>UpdateActionType</code> to
+         * provide the full structure.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdateActionType">AWS
          * API Reference</a></p>
          *

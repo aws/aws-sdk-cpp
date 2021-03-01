@@ -42,6 +42,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service setting to reset. For example,
      * <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.
      * The setting ID can be one of the following.</p> <ul> <li> <p>
+     * <code>/ssm/automation/customer-script-log-destination</code> </p> </li> <li> <p>
+     * <code>/ssm/automation/customer-script-log-group-name</code> </p> </li> <li> <p>
      * <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> <li> <p>
      * <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> <li> <p>
      * <code>/ssm/managed-instance/activation-tier</code> </p> </li> </ul>
@@ -52,6 +54,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service setting to reset. For example,
      * <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.
      * The setting ID can be one of the following.</p> <ul> <li> <p>
+     * <code>/ssm/automation/customer-script-log-destination</code> </p> </li> <li> <p>
+     * <code>/ssm/automation/customer-script-log-group-name</code> </p> </li> <li> <p>
      * <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> <li> <p>
      * <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> <li> <p>
      * <code>/ssm/managed-instance/activation-tier</code> </p> </li> </ul>
@@ -62,6 +66,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service setting to reset. For example,
      * <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.
      * The setting ID can be one of the following.</p> <ul> <li> <p>
+     * <code>/ssm/automation/customer-script-log-destination</code> </p> </li> <li> <p>
+     * <code>/ssm/automation/customer-script-log-group-name</code> </p> </li> <li> <p>
      * <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> <li> <p>
      * <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> <li> <p>
      * <code>/ssm/managed-instance/activation-tier</code> </p> </li> </ul>
@@ -72,6 +78,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service setting to reset. For example,
      * <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.
      * The setting ID can be one of the following.</p> <ul> <li> <p>
+     * <code>/ssm/automation/customer-script-log-destination</code> </p> </li> <li> <p>
+     * <code>/ssm/automation/customer-script-log-group-name</code> </p> </li> <li> <p>
      * <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> <li> <p>
      * <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> <li> <p>
      * <code>/ssm/managed-instance/activation-tier</code> </p> </li> </ul>
@@ -82,6 +90,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service setting to reset. For example,
      * <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.
      * The setting ID can be one of the following.</p> <ul> <li> <p>
+     * <code>/ssm/automation/customer-script-log-destination</code> </p> </li> <li> <p>
+     * <code>/ssm/automation/customer-script-log-group-name</code> </p> </li> <li> <p>
      * <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> <li> <p>
      * <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> <li> <p>
      * <code>/ssm/managed-instance/activation-tier</code> </p> </li> </ul>
@@ -92,6 +102,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service setting to reset. For example,
      * <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.
      * The setting ID can be one of the following.</p> <ul> <li> <p>
+     * <code>/ssm/automation/customer-script-log-destination</code> </p> </li> <li> <p>
+     * <code>/ssm/automation/customer-script-log-group-name</code> </p> </li> <li> <p>
      * <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> <li> <p>
      * <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> <li> <p>
      * <code>/ssm/managed-instance/activation-tier</code> </p> </li> </ul>
@@ -102,6 +114,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service setting to reset. For example,
      * <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.
      * The setting ID can be one of the following.</p> <ul> <li> <p>
+     * <code>/ssm/automation/customer-script-log-destination</code> </p> </li> <li> <p>
+     * <code>/ssm/automation/customer-script-log-group-name</code> </p> </li> <li> <p>
      * <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> <li> <p>
      * <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> <li> <p>
      * <code>/ssm/managed-instance/activation-tier</code> </p> </li> </ul>
@@ -112,6 +126,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service setting to reset. For example,
      * <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.
      * The setting ID can be one of the following.</p> <ul> <li> <p>
+     * <code>/ssm/automation/customer-script-log-destination</code> </p> </li> <li> <p>
+     * <code>/ssm/automation/customer-script-log-group-name</code> </p> </li> <li> <p>
      * <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> <li> <p>
      * <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> <li> <p>
      * <code>/ssm/managed-instance/activation-tier</code> </p> </li> </ul>
@@ -126,7 +142,11 @@ namespace Model
      * <p>Advanced</p> </li> <li> <p>Intelligent-Tiering</p> </li> </ul> <p>For the
      * <code>/ssm/parameter-store/high-throughput-enabled</code>, and
      * <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting
-     * value can be true or false.</p>
+     * value can be true or false.</p> <p>For the
+     * <code>/ssm/automation/customer-script-log-destination</code> setting ID, the
+     * setting value can be CloudWatch.</p> <p>For the
+     * <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the
+     * setting value can be the name of a CloudWatch Logs log group.</p>
      */
     inline const Aws::String& GetSettingValue() const{ return m_settingValue; }
 
@@ -137,7 +157,11 @@ namespace Model
      * <p>Advanced</p> </li> <li> <p>Intelligent-Tiering</p> </li> </ul> <p>For the
      * <code>/ssm/parameter-store/high-throughput-enabled</code>, and
      * <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting
-     * value can be true or false.</p>
+     * value can be true or false.</p> <p>For the
+     * <code>/ssm/automation/customer-script-log-destination</code> setting ID, the
+     * setting value can be CloudWatch.</p> <p>For the
+     * <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the
+     * setting value can be the name of a CloudWatch Logs log group.</p>
      */
     inline bool SettingValueHasBeenSet() const { return m_settingValueHasBeenSet; }
 
@@ -148,7 +172,11 @@ namespace Model
      * <p>Advanced</p> </li> <li> <p>Intelligent-Tiering</p> </li> </ul> <p>For the
      * <code>/ssm/parameter-store/high-throughput-enabled</code>, and
      * <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting
-     * value can be true or false.</p>
+     * value can be true or false.</p> <p>For the
+     * <code>/ssm/automation/customer-script-log-destination</code> setting ID, the
+     * setting value can be CloudWatch.</p> <p>For the
+     * <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the
+     * setting value can be the name of a CloudWatch Logs log group.</p>
      */
     inline void SetSettingValue(const Aws::String& value) { m_settingValueHasBeenSet = true; m_settingValue = value; }
 
@@ -159,7 +187,11 @@ namespace Model
      * <p>Advanced</p> </li> <li> <p>Intelligent-Tiering</p> </li> </ul> <p>For the
      * <code>/ssm/parameter-store/high-throughput-enabled</code>, and
      * <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting
-     * value can be true or false.</p>
+     * value can be true or false.</p> <p>For the
+     * <code>/ssm/automation/customer-script-log-destination</code> setting ID, the
+     * setting value can be CloudWatch.</p> <p>For the
+     * <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the
+     * setting value can be the name of a CloudWatch Logs log group.</p>
      */
     inline void SetSettingValue(Aws::String&& value) { m_settingValueHasBeenSet = true; m_settingValue = std::move(value); }
 
@@ -170,7 +202,11 @@ namespace Model
      * <p>Advanced</p> </li> <li> <p>Intelligent-Tiering</p> </li> </ul> <p>For the
      * <code>/ssm/parameter-store/high-throughput-enabled</code>, and
      * <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting
-     * value can be true or false.</p>
+     * value can be true or false.</p> <p>For the
+     * <code>/ssm/automation/customer-script-log-destination</code> setting ID, the
+     * setting value can be CloudWatch.</p> <p>For the
+     * <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the
+     * setting value can be the name of a CloudWatch Logs log group.</p>
      */
     inline void SetSettingValue(const char* value) { m_settingValueHasBeenSet = true; m_settingValue.assign(value); }
 
@@ -181,7 +217,11 @@ namespace Model
      * <p>Advanced</p> </li> <li> <p>Intelligent-Tiering</p> </li> </ul> <p>For the
      * <code>/ssm/parameter-store/high-throughput-enabled</code>, and
      * <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting
-     * value can be true or false.</p>
+     * value can be true or false.</p> <p>For the
+     * <code>/ssm/automation/customer-script-log-destination</code> setting ID, the
+     * setting value can be CloudWatch.</p> <p>For the
+     * <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the
+     * setting value can be the name of a CloudWatch Logs log group.</p>
      */
     inline UpdateServiceSettingRequest& WithSettingValue(const Aws::String& value) { SetSettingValue(value); return *this;}
 
@@ -192,7 +232,11 @@ namespace Model
      * <p>Advanced</p> </li> <li> <p>Intelligent-Tiering</p> </li> </ul> <p>For the
      * <code>/ssm/parameter-store/high-throughput-enabled</code>, and
      * <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting
-     * value can be true or false.</p>
+     * value can be true or false.</p> <p>For the
+     * <code>/ssm/automation/customer-script-log-destination</code> setting ID, the
+     * setting value can be CloudWatch.</p> <p>For the
+     * <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the
+     * setting value can be the name of a CloudWatch Logs log group.</p>
      */
     inline UpdateServiceSettingRequest& WithSettingValue(Aws::String&& value) { SetSettingValue(std::move(value)); return *this;}
 
@@ -203,7 +247,11 @@ namespace Model
      * <p>Advanced</p> </li> <li> <p>Intelligent-Tiering</p> </li> </ul> <p>For the
      * <code>/ssm/parameter-store/high-throughput-enabled</code>, and
      * <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting
-     * value can be true or false.</p>
+     * value can be true or false.</p> <p>For the
+     * <code>/ssm/automation/customer-script-log-destination</code> setting ID, the
+     * setting value can be CloudWatch.</p> <p>For the
+     * <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the
+     * setting value can be the name of a CloudWatch Logs log group.</p>
      */
     inline UpdateServiceSettingRequest& WithSettingValue(const char* value) { SetSettingValue(value); return *this;}
 

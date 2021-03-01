@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 GetDeployablePatchSnapshotForInstanceRequest::GetDeployablePatchSnapshotForInstanceRequest() : 
     m_instanceIdHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false)
+    m_snapshotIdHasBeenSet(false),
+    m_baselineOverrideHasBeenSet(false)
 {
 }
 
@@ -31,6 +32,12 @@ Aws::String GetDeployablePatchSnapshotForInstanceRequest::SerializePayload() con
   if(m_snapshotIdHasBeenSet)
   {
    payload.WithString("SnapshotId", m_snapshotId);
+
+  }
+
+  if(m_baselineOverrideHasBeenSet)
+  {
+   payload.WithObject("BaselineOverride", m_baselineOverride.Jsonize());
 
   }
 

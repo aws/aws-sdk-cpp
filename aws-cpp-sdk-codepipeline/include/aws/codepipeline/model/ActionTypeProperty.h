@@ -40,50 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The property name. This represents a field name that is displayed to
-     * users.</p>
+     * <p>The property name that is displayed to users.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The property name. This represents a field name that is displayed to
-     * users.</p>
+     * <p>The property name that is displayed to users.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The property name. This represents a field name that is displayed to
-     * users.</p>
+     * <p>The property name that is displayed to users.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The property name. This represents a field name that is displayed to
-     * users.</p>
+     * <p>The property name that is displayed to users.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The property name. This represents a field name that is displayed to
-     * users.</p>
+     * <p>The property name that is displayed to users.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The property name. This represents a field name that is displayed to
-     * users.</p>
+     * <p>The property name that is displayed to users.</p>
      */
     inline ActionTypeProperty& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The property name. This represents a field name that is displayed to
-     * users.</p>
+     * <p>The property name that is displayed to users.</p>
      */
     inline ActionTypeProperty& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The property name. This represents a field name that is displayed to
-     * users.</p>
+     * <p>The property name that is displayed to users.</p>
      */
     inline ActionTypeProperty& WithName(const char* value) { SetName(value); return *this;}
 
@@ -131,30 +123,30 @@ namespace Model
 
 
     /**
-     * <p>Determines whether the field value entered by the customer is logged. If
-     * <code>noEcho</code> is <code>true</code>, the value is not shown in CloudTrail
-     * logs for the action execution.</p>
+     * <p>Whether to omit the field value entered by the customer in the log. If
+     * <code>true</code>, the value is not saved in CloudTrail logs for the action
+     * execution.</p>
      */
     inline bool GetNoEcho() const{ return m_noEcho; }
 
     /**
-     * <p>Determines whether the field value entered by the customer is logged. If
-     * <code>noEcho</code> is <code>true</code>, the value is not shown in CloudTrail
-     * logs for the action execution.</p>
+     * <p>Whether to omit the field value entered by the customer in the log. If
+     * <code>true</code>, the value is not saved in CloudTrail logs for the action
+     * execution.</p>
      */
     inline bool NoEchoHasBeenSet() const { return m_noEchoHasBeenSet; }
 
     /**
-     * <p>Determines whether the field value entered by the customer is logged. If
-     * <code>noEcho</code> is <code>true</code>, the value is not shown in CloudTrail
-     * logs for the action execution.</p>
+     * <p>Whether to omit the field value entered by the customer in the log. If
+     * <code>true</code>, the value is not saved in CloudTrail logs for the action
+     * execution.</p>
      */
     inline void SetNoEcho(bool value) { m_noEchoHasBeenSet = true; m_noEcho = value; }
 
     /**
-     * <p>Determines whether the field value entered by the customer is logged. If
-     * <code>noEcho</code> is <code>true</code>, the value is not shown in CloudTrail
-     * logs for the action execution.</p>
+     * <p>Whether to omit the field value entered by the customer in the log. If
+     * <code>true</code>, the value is not saved in CloudTrail logs for the action
+     * execution.</p>
      */
     inline ActionTypeProperty& WithNoEcho(bool value) { SetNoEcho(value); return *this;}
 

@@ -40,105 +40,105 @@ namespace Model
 
 
     /**
-     * <p>A category defines what kind of action can be taken in the stage. Valid
-     * categories are limited to one of the following values:</p> <ul> <li> <p>
-     * <code>Source</code> </p> </li> <li> <p> <code>Build</code> </p> </li> <li> <p>
-     * <code>Test</code> </p> </li> <li> <p> <code>Deploy</code> </p> </li> <li> <p>
-     * <code>Approval</code> </p> </li> <li> <p> <code>Invoke</code> </p> </li> </ul>
+     * <p>Defines what kind of action can be taken in the stage, one of the
+     * following:</p> <ul> <li> <p> <code>Source</code> </p> </li> <li> <p>
+     * <code>Build</code> </p> </li> <li> <p> <code>Test</code> </p> </li> <li> <p>
+     * <code>Deploy</code> </p> </li> <li> <p> <code>Approval</code> </p> </li> <li>
+     * <p> <code>Invoke</code> </p> </li> </ul>
      */
     inline const ActionCategory& GetCategory() const{ return m_category; }
 
     /**
-     * <p>A category defines what kind of action can be taken in the stage. Valid
-     * categories are limited to one of the following values:</p> <ul> <li> <p>
-     * <code>Source</code> </p> </li> <li> <p> <code>Build</code> </p> </li> <li> <p>
-     * <code>Test</code> </p> </li> <li> <p> <code>Deploy</code> </p> </li> <li> <p>
-     * <code>Approval</code> </p> </li> <li> <p> <code>Invoke</code> </p> </li> </ul>
+     * <p>Defines what kind of action can be taken in the stage, one of the
+     * following:</p> <ul> <li> <p> <code>Source</code> </p> </li> <li> <p>
+     * <code>Build</code> </p> </li> <li> <p> <code>Test</code> </p> </li> <li> <p>
+     * <code>Deploy</code> </p> </li> <li> <p> <code>Approval</code> </p> </li> <li>
+     * <p> <code>Invoke</code> </p> </li> </ul>
      */
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
 
     /**
-     * <p>A category defines what kind of action can be taken in the stage. Valid
-     * categories are limited to one of the following values:</p> <ul> <li> <p>
-     * <code>Source</code> </p> </li> <li> <p> <code>Build</code> </p> </li> <li> <p>
-     * <code>Test</code> </p> </li> <li> <p> <code>Deploy</code> </p> </li> <li> <p>
-     * <code>Approval</code> </p> </li> <li> <p> <code>Invoke</code> </p> </li> </ul>
+     * <p>Defines what kind of action can be taken in the stage, one of the
+     * following:</p> <ul> <li> <p> <code>Source</code> </p> </li> <li> <p>
+     * <code>Build</code> </p> </li> <li> <p> <code>Test</code> </p> </li> <li> <p>
+     * <code>Deploy</code> </p> </li> <li> <p> <code>Approval</code> </p> </li> <li>
+     * <p> <code>Invoke</code> </p> </li> </ul>
      */
     inline void SetCategory(const ActionCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
 
     /**
-     * <p>A category defines what kind of action can be taken in the stage. Valid
-     * categories are limited to one of the following values:</p> <ul> <li> <p>
-     * <code>Source</code> </p> </li> <li> <p> <code>Build</code> </p> </li> <li> <p>
-     * <code>Test</code> </p> </li> <li> <p> <code>Deploy</code> </p> </li> <li> <p>
-     * <code>Approval</code> </p> </li> <li> <p> <code>Invoke</code> </p> </li> </ul>
+     * <p>Defines what kind of action can be taken in the stage, one of the
+     * following:</p> <ul> <li> <p> <code>Source</code> </p> </li> <li> <p>
+     * <code>Build</code> </p> </li> <li> <p> <code>Test</code> </p> </li> <li> <p>
+     * <code>Deploy</code> </p> </li> <li> <p> <code>Approval</code> </p> </li> <li>
+     * <p> <code>Invoke</code> </p> </li> </ul>
      */
     inline void SetCategory(ActionCategory&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
 
     /**
-     * <p>A category defines what kind of action can be taken in the stage. Valid
-     * categories are limited to one of the following values:</p> <ul> <li> <p>
-     * <code>Source</code> </p> </li> <li> <p> <code>Build</code> </p> </li> <li> <p>
-     * <code>Test</code> </p> </li> <li> <p> <code>Deploy</code> </p> </li> <li> <p>
-     * <code>Approval</code> </p> </li> <li> <p> <code>Invoke</code> </p> </li> </ul>
+     * <p>Defines what kind of action can be taken in the stage, one of the
+     * following:</p> <ul> <li> <p> <code>Source</code> </p> </li> <li> <p>
+     * <code>Build</code> </p> </li> <li> <p> <code>Test</code> </p> </li> <li> <p>
+     * <code>Deploy</code> </p> </li> <li> <p> <code>Approval</code> </p> </li> <li>
+     * <p> <code>Invoke</code> </p> </li> </ul>
      */
     inline ActionTypeIdentifier& WithCategory(const ActionCategory& value) { SetCategory(value); return *this;}
 
     /**
-     * <p>A category defines what kind of action can be taken in the stage. Valid
-     * categories are limited to one of the following values:</p> <ul> <li> <p>
-     * <code>Source</code> </p> </li> <li> <p> <code>Build</code> </p> </li> <li> <p>
-     * <code>Test</code> </p> </li> <li> <p> <code>Deploy</code> </p> </li> <li> <p>
-     * <code>Approval</code> </p> </li> <li> <p> <code>Invoke</code> </p> </li> </ul>
+     * <p>Defines what kind of action can be taken in the stage, one of the
+     * following:</p> <ul> <li> <p> <code>Source</code> </p> </li> <li> <p>
+     * <code>Build</code> </p> </li> <li> <p> <code>Test</code> </p> </li> <li> <p>
+     * <code>Deploy</code> </p> </li> <li> <p> <code>Approval</code> </p> </li> <li>
+     * <p> <code>Invoke</code> </p> </li> </ul>
      */
     inline ActionTypeIdentifier& WithCategory(ActionCategory&& value) { SetCategory(std::move(value)); return *this;}
 
 
     /**
-     * <p>The creator of the action type being called. There are two valid values for
-     * the <code>owner</code> field: <code>AWS</code> and <code>ThirdParty</code>.</p>
+     * <p>The creator of the action type being called: <code>AWS</code> or
+     * <code>ThirdParty</code>.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
 
     /**
-     * <p>The creator of the action type being called. There are two valid values for
-     * the <code>owner</code> field: <code>AWS</code> and <code>ThirdParty</code>.</p>
+     * <p>The creator of the action type being called: <code>AWS</code> or
+     * <code>ThirdParty</code>.</p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
-     * <p>The creator of the action type being called. There are two valid values for
-     * the <code>owner</code> field: <code>AWS</code> and <code>ThirdParty</code>.</p>
+     * <p>The creator of the action type being called: <code>AWS</code> or
+     * <code>ThirdParty</code>.</p>
      */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * <p>The creator of the action type being called. There are two valid values for
-     * the <code>owner</code> field: <code>AWS</code> and <code>ThirdParty</code>.</p>
+     * <p>The creator of the action type being called: <code>AWS</code> or
+     * <code>ThirdParty</code>.</p>
      */
     inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
-     * <p>The creator of the action type being called. There are two valid values for
-     * the <code>owner</code> field: <code>AWS</code> and <code>ThirdParty</code>.</p>
+     * <p>The creator of the action type being called: <code>AWS</code> or
+     * <code>ThirdParty</code>.</p>
      */
     inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
 
     /**
-     * <p>The creator of the action type being called. There are two valid values for
-     * the <code>owner</code> field: <code>AWS</code> and <code>ThirdParty</code>.</p>
+     * <p>The creator of the action type being called: <code>AWS</code> or
+     * <code>ThirdParty</code>.</p>
      */
     inline ActionTypeIdentifier& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
 
     /**
-     * <p>The creator of the action type being called. There are two valid values for
-     * the <code>owner</code> field: <code>AWS</code> and <code>ThirdParty</code>.</p>
+     * <p>The creator of the action type being called: <code>AWS</code> or
+     * <code>ThirdParty</code>.</p>
      */
     inline ActionTypeIdentifier& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The creator of the action type being called. There are two valid values for
-     * the <code>owner</code> field: <code>AWS</code> and <code>ThirdParty</code>.</p>
+     * <p>The creator of the action type being called: <code>AWS</code> or
+     * <code>ThirdParty</code>.</p>
      */
     inline ActionTypeIdentifier& WithOwner(const char* value) { SetOwner(value); return *this;}
 

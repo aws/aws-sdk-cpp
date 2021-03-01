@@ -2390,7 +2390,13 @@ namespace Model
 
         /**
          * <p>Determines the details for the room from which a skill request was invoked.
-         * This operation is used by skill developers.</p><p><h3>See Also:</h3>   <a
+         * This operation is used by skill developers.</p> <p>To query ResolveRoom from an
+         * Alexa skill, the skill ID needs to be authorized. When the skill is using an AWS
+         * Lambda function, the skill is automatically authorized when you publish your
+         * skill as a private skill to your AWS account. Skills that are hosted using a
+         * custom web service must be manually authorized. To get your skill authorized,
+         * contact AWS Support with your AWS account ID that queries the ResolveRoom API
+         * and skill ID. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ResolveRoom">AWS
          * API Reference</a></p>
          */
@@ -2398,7 +2404,13 @@ namespace Model
 
         /**
          * <p>Determines the details for the room from which a skill request was invoked.
-         * This operation is used by skill developers.</p><p><h3>See Also:</h3>   <a
+         * This operation is used by skill developers.</p> <p>To query ResolveRoom from an
+         * Alexa skill, the skill ID needs to be authorized. When the skill is using an AWS
+         * Lambda function, the skill is automatically authorized when you publish your
+         * skill as a private skill to your AWS account. Skills that are hosted using a
+         * custom web service must be manually authorized. To get your skill authorized,
+         * contact AWS Support with your AWS account ID that queries the ResolveRoom API
+         * and skill ID. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ResolveRoom">AWS
          * API Reference</a></p>
          *
@@ -2408,7 +2420,13 @@ namespace Model
 
         /**
          * <p>Determines the details for the room from which a skill request was invoked.
-         * This operation is used by skill developers.</p><p><h3>See Also:</h3>   <a
+         * This operation is used by skill developers.</p> <p>To query ResolveRoom from an
+         * Alexa skill, the skill ID needs to be authorized. When the skill is using an AWS
+         * Lambda function, the skill is automatically authorized when you publish your
+         * skill as a private skill to your AWS account. Skills that are hosted using a
+         * custom web service must be manually authorized. To get your skill authorized,
+         * contact AWS Support with your AWS account ID that queries the ResolveRoom API
+         * and skill ID. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ResolveRoom">AWS
          * API Reference</a></p>
          *

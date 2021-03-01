@@ -34,6 +34,7 @@ namespace Aws
         static const int ClusterUnreachable_HASH = HashingUtils::HashString("ClusterUnreachable");
         static const int InsufficientNumberOfReplicas_HASH = HashingUtils::HashString("InsufficientNumberOfReplicas");
         static const int ConfigurationConflict_HASH = HashingUtils::HashString("ConfigurationConflict");
+        static const int AdmissionRequestDenied_HASH = HashingUtils::HashString("AdmissionRequestDenied");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)
@@ -95,6 +96,10 @@ namespace Aws
           {
             return ErrorCode::ConfigurationConflict;
           }
+          else if (hashCode == AdmissionRequestDenied_HASH)
+          {
+            return ErrorCode::AdmissionRequestDenied;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -137,6 +142,8 @@ namespace Aws
             return "InsufficientNumberOfReplicas";
           case ErrorCode::ConfigurationConflict:
             return "ConfigurationConflict";
+          case ErrorCode::AdmissionRequestDenied:
+            return "AdmissionRequestDenied";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

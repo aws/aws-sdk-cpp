@@ -37,59 +37,59 @@ namespace Model
 
 
     /**
-     * <p>The minimum allowed number of artifacts that can be used with the action
-     * type. For example, you should specify a minimum and maximum of zero input
-     * artifacts for an action type with a category of <code>source</code>.</p>
+     * <p>The minimum number of artifacts that can be used with the action type. For
+     * example, you should specify a minimum and maximum of zero input artifacts for an
+     * action type with a category of <code>source</code>.</p>
      */
     inline int GetMinimumCount() const{ return m_minimumCount; }
 
     /**
-     * <p>The minimum allowed number of artifacts that can be used with the action
-     * type. For example, you should specify a minimum and maximum of zero input
-     * artifacts for an action type with a category of <code>source</code>.</p>
+     * <p>The minimum number of artifacts that can be used with the action type. For
+     * example, you should specify a minimum and maximum of zero input artifacts for an
+     * action type with a category of <code>source</code>.</p>
      */
     inline bool MinimumCountHasBeenSet() const { return m_minimumCountHasBeenSet; }
 
     /**
-     * <p>The minimum allowed number of artifacts that can be used with the action
-     * type. For example, you should specify a minimum and maximum of zero input
-     * artifacts for an action type with a category of <code>source</code>.</p>
+     * <p>The minimum number of artifacts that can be used with the action type. For
+     * example, you should specify a minimum and maximum of zero input artifacts for an
+     * action type with a category of <code>source</code>.</p>
      */
     inline void SetMinimumCount(int value) { m_minimumCountHasBeenSet = true; m_minimumCount = value; }
 
     /**
-     * <p>The minimum allowed number of artifacts that can be used with the action
-     * type. For example, you should specify a minimum and maximum of zero input
-     * artifacts for an action type with a category of <code>source</code>.</p>
+     * <p>The minimum number of artifacts that can be used with the action type. For
+     * example, you should specify a minimum and maximum of zero input artifacts for an
+     * action type with a category of <code>source</code>.</p>
      */
     inline ActionTypeArtifactDetails& WithMinimumCount(int value) { SetMinimumCount(value); return *this;}
 
 
     /**
-     * <p>The maximum allowed number of artifacts that can be used with the actiontype.
-     * For example, you should specify a minimum and maximum of zero input artifacts
-     * for an action type with a category of <code>source</code>.</p>
+     * <p>The maximum number of artifacts that can be used with the actiontype. For
+     * example, you should specify a minimum and maximum of zero input artifacts for an
+     * action type with a category of <code>source</code>.</p>
      */
     inline int GetMaximumCount() const{ return m_maximumCount; }
 
     /**
-     * <p>The maximum allowed number of artifacts that can be used with the actiontype.
-     * For example, you should specify a minimum and maximum of zero input artifacts
-     * for an action type with a category of <code>source</code>.</p>
+     * <p>The maximum number of artifacts that can be used with the actiontype. For
+     * example, you should specify a minimum and maximum of zero input artifacts for an
+     * action type with a category of <code>source</code>.</p>
      */
     inline bool MaximumCountHasBeenSet() const { return m_maximumCountHasBeenSet; }
 
     /**
-     * <p>The maximum allowed number of artifacts that can be used with the actiontype.
-     * For example, you should specify a minimum and maximum of zero input artifacts
-     * for an action type with a category of <code>source</code>.</p>
+     * <p>The maximum number of artifacts that can be used with the actiontype. For
+     * example, you should specify a minimum and maximum of zero input artifacts for an
+     * action type with a category of <code>source</code>.</p>
      */
     inline void SetMaximumCount(int value) { m_maximumCountHasBeenSet = true; m_maximumCount = value; }
 
     /**
-     * <p>The maximum allowed number of artifacts that can be used with the actiontype.
-     * For example, you should specify a minimum and maximum of zero input artifacts
-     * for an action type with a category of <code>source</code>.</p>
+     * <p>The maximum number of artifacts that can be used with the actiontype. For
+     * example, you should specify a minimum and maximum of zero input artifacts for an
+     * action type with a category of <code>source</code>.</p>
      */
     inline ActionTypeArtifactDetails& WithMaximumCount(int value) { SetMaximumCount(value); return *this;}
 

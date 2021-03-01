@@ -40,55 +40,55 @@ namespace Model
 
 
     /**
-     * <p>A list of AWS account IDs with allow access to use the action type in their
+     * <p>A list of AWS account IDs with access to use the action type in their
      * pipelines.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAllowedAccounts() const{ return m_allowedAccounts; }
 
     /**
-     * <p>A list of AWS account IDs with allow access to use the action type in their
+     * <p>A list of AWS account IDs with access to use the action type in their
      * pipelines.</p>
      */
     inline bool AllowedAccountsHasBeenSet() const { return m_allowedAccountsHasBeenSet; }
 
     /**
-     * <p>A list of AWS account IDs with allow access to use the action type in their
+     * <p>A list of AWS account IDs with access to use the action type in their
      * pipelines.</p>
      */
     inline void SetAllowedAccounts(const Aws::Vector<Aws::String>& value) { m_allowedAccountsHasBeenSet = true; m_allowedAccounts = value; }
 
     /**
-     * <p>A list of AWS account IDs with allow access to use the action type in their
+     * <p>A list of AWS account IDs with access to use the action type in their
      * pipelines.</p>
      */
     inline void SetAllowedAccounts(Aws::Vector<Aws::String>&& value) { m_allowedAccountsHasBeenSet = true; m_allowedAccounts = std::move(value); }
 
     /**
-     * <p>A list of AWS account IDs with allow access to use the action type in their
+     * <p>A list of AWS account IDs with access to use the action type in their
      * pipelines.</p>
      */
     inline ActionTypePermissions& WithAllowedAccounts(const Aws::Vector<Aws::String>& value) { SetAllowedAccounts(value); return *this;}
 
     /**
-     * <p>A list of AWS account IDs with allow access to use the action type in their
+     * <p>A list of AWS account IDs with access to use the action type in their
      * pipelines.</p>
      */
     inline ActionTypePermissions& WithAllowedAccounts(Aws::Vector<Aws::String>&& value) { SetAllowedAccounts(std::move(value)); return *this;}
 
     /**
-     * <p>A list of AWS account IDs with allow access to use the action type in their
+     * <p>A list of AWS account IDs with access to use the action type in their
      * pipelines.</p>
      */
     inline ActionTypePermissions& AddAllowedAccounts(const Aws::String& value) { m_allowedAccountsHasBeenSet = true; m_allowedAccounts.push_back(value); return *this; }
 
     /**
-     * <p>A list of AWS account IDs with allow access to use the action type in their
+     * <p>A list of AWS account IDs with access to use the action type in their
      * pipelines.</p>
      */
     inline ActionTypePermissions& AddAllowedAccounts(Aws::String&& value) { m_allowedAccountsHasBeenSet = true; m_allowedAccounts.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of AWS account IDs with allow access to use the action type in their
+     * <p>A list of AWS account IDs with access to use the action type in their
      * pipelines.</p>
      */
     inline ActionTypePermissions& AddAllowedAccounts(const char* value) { m_allowedAccountsHasBeenSet = true; m_allowedAccounts.push_back(value); return *this; }

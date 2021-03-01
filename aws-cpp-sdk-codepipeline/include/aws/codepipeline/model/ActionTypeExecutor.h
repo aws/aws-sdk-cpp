@@ -80,168 +80,144 @@ namespace Model
 
 
     /**
-     * <p>The integration model used to create and update the action type, such as the
-     * Lambda integration model. Each integration type has a related action engine, or
-     * executor. The available executor types are <code>Lambda</code> and
-     * <code>JobWorker</code>.</p>
+     * <p>The integration model used to create and update the action type,
+     * <code>Lambda</code> or <code>JobWorker</code>. </p>
      */
     inline const ExecutorType& GetType() const{ return m_type; }
 
     /**
-     * <p>The integration model used to create and update the action type, such as the
-     * Lambda integration model. Each integration type has a related action engine, or
-     * executor. The available executor types are <code>Lambda</code> and
-     * <code>JobWorker</code>.</p>
+     * <p>The integration model used to create and update the action type,
+     * <code>Lambda</code> or <code>JobWorker</code>. </p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The integration model used to create and update the action type, such as the
-     * Lambda integration model. Each integration type has a related action engine, or
-     * executor. The available executor types are <code>Lambda</code> and
-     * <code>JobWorker</code>.</p>
+     * <p>The integration model used to create and update the action type,
+     * <code>Lambda</code> or <code>JobWorker</code>. </p>
      */
     inline void SetType(const ExecutorType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The integration model used to create and update the action type, such as the
-     * Lambda integration model. Each integration type has a related action engine, or
-     * executor. The available executor types are <code>Lambda</code> and
-     * <code>JobWorker</code>.</p>
+     * <p>The integration model used to create and update the action type,
+     * <code>Lambda</code> or <code>JobWorker</code>. </p>
      */
     inline void SetType(ExecutorType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The integration model used to create and update the action type, such as the
-     * Lambda integration model. Each integration type has a related action engine, or
-     * executor. The available executor types are <code>Lambda</code> and
-     * <code>JobWorker</code>.</p>
+     * <p>The integration model used to create and update the action type,
+     * <code>Lambda</code> or <code>JobWorker</code>. </p>
      */
     inline ActionTypeExecutor& WithType(const ExecutorType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The integration model used to create and update the action type, such as the
-     * Lambda integration model. Each integration type has a related action engine, or
-     * executor. The available executor types are <code>Lambda</code> and
-     * <code>JobWorker</code>.</p>
+     * <p>The integration model used to create and update the action type,
+     * <code>Lambda</code> or <code>JobWorker</code>. </p>
      */
     inline ActionTypeExecutor& WithType(ExecutorType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
      * <p>The policy statement that specifies the permissions in the CodePipeline
-     * customer’s account that are needed to successfully run an action execution.</p>
-     * <p>To grant permission to another account, specify the account ID as the
-     * Principal. For AWS services, the Principal is a domain-style identifier defined
-     * by the service, like <code>codepipeline.amazonaws.com</code>.</p>  <p>The
-     * size of the passed JSON policy document cannot exceed 2048 characters.</p>
-     * 
+     * customer’s account that are needed to successfully run an action.</p> <p>To
+     * grant permission to another account, specify the account ID as the Principal, a
+     * domain-style identifier defined by the service, for example
+     * <code>codepipeline.amazonaws.com</code>.</p>  <p>The size of the passed
+     * JSON policy document cannot exceed 2048 characters.</p> 
      */
     inline const Aws::String& GetPolicyStatementsTemplate() const{ return m_policyStatementsTemplate; }
 
     /**
      * <p>The policy statement that specifies the permissions in the CodePipeline
-     * customer’s account that are needed to successfully run an action execution.</p>
-     * <p>To grant permission to another account, specify the account ID as the
-     * Principal. For AWS services, the Principal is a domain-style identifier defined
-     * by the service, like <code>codepipeline.amazonaws.com</code>.</p>  <p>The
-     * size of the passed JSON policy document cannot exceed 2048 characters.</p>
-     * 
+     * customer’s account that are needed to successfully run an action.</p> <p>To
+     * grant permission to another account, specify the account ID as the Principal, a
+     * domain-style identifier defined by the service, for example
+     * <code>codepipeline.amazonaws.com</code>.</p>  <p>The size of the passed
+     * JSON policy document cannot exceed 2048 characters.</p> 
      */
     inline bool PolicyStatementsTemplateHasBeenSet() const { return m_policyStatementsTemplateHasBeenSet; }
 
     /**
      * <p>The policy statement that specifies the permissions in the CodePipeline
-     * customer’s account that are needed to successfully run an action execution.</p>
-     * <p>To grant permission to another account, specify the account ID as the
-     * Principal. For AWS services, the Principal is a domain-style identifier defined
-     * by the service, like <code>codepipeline.amazonaws.com</code>.</p>  <p>The
-     * size of the passed JSON policy document cannot exceed 2048 characters.</p>
-     * 
+     * customer’s account that are needed to successfully run an action.</p> <p>To
+     * grant permission to another account, specify the account ID as the Principal, a
+     * domain-style identifier defined by the service, for example
+     * <code>codepipeline.amazonaws.com</code>.</p>  <p>The size of the passed
+     * JSON policy document cannot exceed 2048 characters.</p> 
      */
     inline void SetPolicyStatementsTemplate(const Aws::String& value) { m_policyStatementsTemplateHasBeenSet = true; m_policyStatementsTemplate = value; }
 
     /**
      * <p>The policy statement that specifies the permissions in the CodePipeline
-     * customer’s account that are needed to successfully run an action execution.</p>
-     * <p>To grant permission to another account, specify the account ID as the
-     * Principal. For AWS services, the Principal is a domain-style identifier defined
-     * by the service, like <code>codepipeline.amazonaws.com</code>.</p>  <p>The
-     * size of the passed JSON policy document cannot exceed 2048 characters.</p>
-     * 
+     * customer’s account that are needed to successfully run an action.</p> <p>To
+     * grant permission to another account, specify the account ID as the Principal, a
+     * domain-style identifier defined by the service, for example
+     * <code>codepipeline.amazonaws.com</code>.</p>  <p>The size of the passed
+     * JSON policy document cannot exceed 2048 characters.</p> 
      */
     inline void SetPolicyStatementsTemplate(Aws::String&& value) { m_policyStatementsTemplateHasBeenSet = true; m_policyStatementsTemplate = std::move(value); }
 
     /**
      * <p>The policy statement that specifies the permissions in the CodePipeline
-     * customer’s account that are needed to successfully run an action execution.</p>
-     * <p>To grant permission to another account, specify the account ID as the
-     * Principal. For AWS services, the Principal is a domain-style identifier defined
-     * by the service, like <code>codepipeline.amazonaws.com</code>.</p>  <p>The
-     * size of the passed JSON policy document cannot exceed 2048 characters.</p>
-     * 
+     * customer’s account that are needed to successfully run an action.</p> <p>To
+     * grant permission to another account, specify the account ID as the Principal, a
+     * domain-style identifier defined by the service, for example
+     * <code>codepipeline.amazonaws.com</code>.</p>  <p>The size of the passed
+     * JSON policy document cannot exceed 2048 characters.</p> 
      */
     inline void SetPolicyStatementsTemplate(const char* value) { m_policyStatementsTemplateHasBeenSet = true; m_policyStatementsTemplate.assign(value); }
 
     /**
      * <p>The policy statement that specifies the permissions in the CodePipeline
-     * customer’s account that are needed to successfully run an action execution.</p>
-     * <p>To grant permission to another account, specify the account ID as the
-     * Principal. For AWS services, the Principal is a domain-style identifier defined
-     * by the service, like <code>codepipeline.amazonaws.com</code>.</p>  <p>The
-     * size of the passed JSON policy document cannot exceed 2048 characters.</p>
-     * 
+     * customer’s account that are needed to successfully run an action.</p> <p>To
+     * grant permission to another account, specify the account ID as the Principal, a
+     * domain-style identifier defined by the service, for example
+     * <code>codepipeline.amazonaws.com</code>.</p>  <p>The size of the passed
+     * JSON policy document cannot exceed 2048 characters.</p> 
      */
     inline ActionTypeExecutor& WithPolicyStatementsTemplate(const Aws::String& value) { SetPolicyStatementsTemplate(value); return *this;}
 
     /**
      * <p>The policy statement that specifies the permissions in the CodePipeline
-     * customer’s account that are needed to successfully run an action execution.</p>
-     * <p>To grant permission to another account, specify the account ID as the
-     * Principal. For AWS services, the Principal is a domain-style identifier defined
-     * by the service, like <code>codepipeline.amazonaws.com</code>.</p>  <p>The
-     * size of the passed JSON policy document cannot exceed 2048 characters.</p>
-     * 
+     * customer’s account that are needed to successfully run an action.</p> <p>To
+     * grant permission to another account, specify the account ID as the Principal, a
+     * domain-style identifier defined by the service, for example
+     * <code>codepipeline.amazonaws.com</code>.</p>  <p>The size of the passed
+     * JSON policy document cannot exceed 2048 characters.</p> 
      */
     inline ActionTypeExecutor& WithPolicyStatementsTemplate(Aws::String&& value) { SetPolicyStatementsTemplate(std::move(value)); return *this;}
 
     /**
      * <p>The policy statement that specifies the permissions in the CodePipeline
-     * customer’s account that are needed to successfully run an action execution.</p>
-     * <p>To grant permission to another account, specify the account ID as the
-     * Principal. For AWS services, the Principal is a domain-style identifier defined
-     * by the service, like <code>codepipeline.amazonaws.com</code>.</p>  <p>The
-     * size of the passed JSON policy document cannot exceed 2048 characters.</p>
-     * 
+     * customer’s account that are needed to successfully run an action.</p> <p>To
+     * grant permission to another account, specify the account ID as the Principal, a
+     * domain-style identifier defined by the service, for example
+     * <code>codepipeline.amazonaws.com</code>.</p>  <p>The size of the passed
+     * JSON policy document cannot exceed 2048 characters.</p> 
      */
     inline ActionTypeExecutor& WithPolicyStatementsTemplate(const char* value) { SetPolicyStatementsTemplate(value); return *this;}
 
 
     /**
-     * <p>The timeout in seconds for the job. An action execution can consist of
-     * multiple jobs. This is the timeout for a single job, and not for the entire
-     * action execution.</p>
+     * <p>The timeout in seconds for the job. An action execution can have multiple
+     * jobs. This is the timeout for a single job, not the entire action execution.</p>
      */
     inline int GetJobTimeout() const{ return m_jobTimeout; }
 
     /**
-     * <p>The timeout in seconds for the job. An action execution can consist of
-     * multiple jobs. This is the timeout for a single job, and not for the entire
-     * action execution.</p>
+     * <p>The timeout in seconds for the job. An action execution can have multiple
+     * jobs. This is the timeout for a single job, not the entire action execution.</p>
      */
     inline bool JobTimeoutHasBeenSet() const { return m_jobTimeoutHasBeenSet; }
 
     /**
-     * <p>The timeout in seconds for the job. An action execution can consist of
-     * multiple jobs. This is the timeout for a single job, and not for the entire
-     * action execution.</p>
+     * <p>The timeout in seconds for the job. An action execution can have multiple
+     * jobs. This is the timeout for a single job, not the entire action execution.</p>
      */
     inline void SetJobTimeout(int value) { m_jobTimeoutHasBeenSet = true; m_jobTimeout = value; }
 
     /**
-     * <p>The timeout in seconds for the job. An action execution can consist of
-     * multiple jobs. This is the timeout for a single job, and not for the entire
-     * action execution.</p>
+     * <p>The timeout in seconds for the job. An action execution can have multiple
+     * jobs. This is the timeout for a single job, not the entire action execution.</p>
      */
     inline ActionTypeExecutor& WithJobTimeout(int value) { SetJobTimeout(value); return *this;}
 
