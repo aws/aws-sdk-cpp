@@ -78,43 +78,37 @@ namespace Model
 
     /**
      * <p>Attributes of an Ethereum network for Managed Blockchain resources
-     * participating in an Ethereum network. Ethereum on Managed Blockchain is in
-     * preview release and is subject to change.</p>
+     * participating in an Ethereum network. </p>
      */
     inline const NetworkEthereumAttributes& GetEthereum() const{ return m_ethereum; }
 
     /**
      * <p>Attributes of an Ethereum network for Managed Blockchain resources
-     * participating in an Ethereum network. Ethereum on Managed Blockchain is in
-     * preview release and is subject to change.</p>
+     * participating in an Ethereum network. </p>
      */
     inline bool EthereumHasBeenSet() const { return m_ethereumHasBeenSet; }
 
     /**
      * <p>Attributes of an Ethereum network for Managed Blockchain resources
-     * participating in an Ethereum network. Ethereum on Managed Blockchain is in
-     * preview release and is subject to change.</p>
+     * participating in an Ethereum network. </p>
      */
     inline void SetEthereum(const NetworkEthereumAttributes& value) { m_ethereumHasBeenSet = true; m_ethereum = value; }
 
     /**
      * <p>Attributes of an Ethereum network for Managed Blockchain resources
-     * participating in an Ethereum network. Ethereum on Managed Blockchain is in
-     * preview release and is subject to change.</p>
+     * participating in an Ethereum network. </p>
      */
     inline void SetEthereum(NetworkEthereumAttributes&& value) { m_ethereumHasBeenSet = true; m_ethereum = std::move(value); }
 
     /**
      * <p>Attributes of an Ethereum network for Managed Blockchain resources
-     * participating in an Ethereum network. Ethereum on Managed Blockchain is in
-     * preview release and is subject to change.</p>
+     * participating in an Ethereum network. </p>
      */
     inline NetworkFrameworkAttributes& WithEthereum(const NetworkEthereumAttributes& value) { SetEthereum(value); return *this;}
 
     /**
      * <p>Attributes of an Ethereum network for Managed Blockchain resources
-     * participating in an Ethereum network. Ethereum on Managed Blockchain is in
-     * preview release and is subject to change.</p>
+     * participating in an Ethereum network. </p>
      */
     inline NetworkFrameworkAttributes& WithEthereum(NetworkEthereumAttributes&& value) { SetEthereum(std::move(value)); return *this;}
 

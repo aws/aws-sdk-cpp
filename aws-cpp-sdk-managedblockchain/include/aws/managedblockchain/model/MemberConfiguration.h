@@ -203,8 +203,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
      * Guide</i>.</p> <p>When specifying tags during creation, you can specify multiple
-     * key-value pairs in a single request, with an overall maximum of 50 added to each
-     * resource.</p>
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
@@ -214,8 +214,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
      * Guide</i>.</p> <p>When specifying tags during creation, you can specify multiple
-     * key-value pairs in a single request, with an overall maximum of 50 added to each
-     * resource.</p>
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -225,8 +225,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
      * Guide</i>.</p> <p>When specifying tags during creation, you can specify multiple
-     * key-value pairs in a single request, with an overall maximum of 50 added to each
-     * resource.</p>
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -236,8 +236,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
      * Guide</i>.</p> <p>When specifying tags during creation, you can specify multiple
-     * key-value pairs in a single request, with an overall maximum of 50 added to each
-     * resource.</p>
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -247,8 +247,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
      * Guide</i>.</p> <p>When specifying tags during creation, you can specify multiple
-     * key-value pairs in a single request, with an overall maximum of 50 added to each
-     * resource.</p>
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p>
      */
     inline MemberConfiguration& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
@@ -258,8 +258,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
      * Guide</i>.</p> <p>When specifying tags during creation, you can specify multiple
-     * key-value pairs in a single request, with an overall maximum of 50 added to each
-     * resource.</p>
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p>
      */
     inline MemberConfiguration& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -269,8 +269,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
      * Guide</i>.</p> <p>When specifying tags during creation, you can specify multiple
-     * key-value pairs in a single request, with an overall maximum of 50 added to each
-     * resource.</p>
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p>
      */
     inline MemberConfiguration& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -280,8 +280,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
      * Guide</i>.</p> <p>When specifying tags during creation, you can specify multiple
-     * key-value pairs in a single request, with an overall maximum of 50 added to each
-     * resource.</p>
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p>
      */
     inline MemberConfiguration& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -291,8 +291,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
      * Guide</i>.</p> <p>When specifying tags during creation, you can specify multiple
-     * key-value pairs in a single request, with an overall maximum of 50 added to each
-     * resource.</p>
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p>
      */
     inline MemberConfiguration& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -302,8 +302,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
      * Guide</i>.</p> <p>When specifying tags during creation, you can specify multiple
-     * key-value pairs in a single request, with an overall maximum of 50 added to each
-     * resource.</p>
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p>
      */
     inline MemberConfiguration& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -313,8 +313,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
      * Guide</i>.</p> <p>When specifying tags during creation, you can specify multiple
-     * key-value pairs in a single request, with an overall maximum of 50 added to each
-     * resource.</p>
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p>
      */
     inline MemberConfiguration& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -324,8 +324,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
      * Guide</i>.</p> <p>When specifying tags during creation, you can specify multiple
-     * key-value pairs in a single request, with an overall maximum of 50 added to each
-     * resource.</p>
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p>
      */
     inline MemberConfiguration& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -335,8 +335,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
      * Guide</i>.</p> <p>When specifying tags during creation, you can specify multiple
-     * key-value pairs in a single request, with an overall maximum of 50 added to each
-     * resource.</p>
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p>
      */
     inline MemberConfiguration& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

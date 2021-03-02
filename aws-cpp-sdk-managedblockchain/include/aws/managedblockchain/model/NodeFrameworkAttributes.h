@@ -78,43 +78,37 @@ namespace Model
 
     /**
      * <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses
-     * Ethereum. Ethereum on Managed Blockchain is in preview release and is subject to
-     * change.</p>
+     * Ethereum. </p>
      */
     inline const NodeEthereumAttributes& GetEthereum() const{ return m_ethereum; }
 
     /**
      * <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses
-     * Ethereum. Ethereum on Managed Blockchain is in preview release and is subject to
-     * change.</p>
+     * Ethereum. </p>
      */
     inline bool EthereumHasBeenSet() const { return m_ethereumHasBeenSet; }
 
     /**
      * <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses
-     * Ethereum. Ethereum on Managed Blockchain is in preview release and is subject to
-     * change.</p>
+     * Ethereum. </p>
      */
     inline void SetEthereum(const NodeEthereumAttributes& value) { m_ethereumHasBeenSet = true; m_ethereum = value; }
 
     /**
      * <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses
-     * Ethereum. Ethereum on Managed Blockchain is in preview release and is subject to
-     * change.</p>
+     * Ethereum. </p>
      */
     inline void SetEthereum(NodeEthereumAttributes&& value) { m_ethereumHasBeenSet = true; m_ethereum = std::move(value); }
 
     /**
      * <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses
-     * Ethereum. Ethereum on Managed Blockchain is in preview release and is subject to
-     * change.</p>
+     * Ethereum. </p>
      */
     inline NodeFrameworkAttributes& WithEthereum(const NodeEthereumAttributes& value) { SetEthereum(value); return *this;}
 
     /**
      * <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses
-     * Ethereum. Ethereum on Managed Blockchain is in preview release and is subject to
-     * change.</p>
+     * Ethereum. </p>
      */
     inline NodeFrameworkAttributes& WithEthereum(NodeEthereumAttributes&& value) { SetEthereum(std::move(value)); return *this;}
 

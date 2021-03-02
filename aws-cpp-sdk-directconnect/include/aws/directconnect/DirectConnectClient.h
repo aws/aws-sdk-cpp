@@ -872,8 +872,8 @@ namespace Model
          * <p>When creating a IPv6 BGP peer, omit the Amazon address and customer address.
          * IPv6 addresses are automatically assigned from the Amazon pool of IPv6
          * addresses; you cannot specify custom IPv6 addresses.</p> <p>For a public virtual
-         * interface, the Autonomous System Number (ASN) must be private or already
-         * whitelisted for the virtual interface.</p><p><h3>See Also:</h3>   <a
+         * interface, the Autonomous System Number (ASN) must be private or already on the
+         * allow list for the virtual interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateBGPPeer">AWS
          * API Reference</a></p>
          */
@@ -888,8 +888,8 @@ namespace Model
          * <p>When creating a IPv6 BGP peer, omit the Amazon address and customer address.
          * IPv6 addresses are automatically assigned from the Amazon pool of IPv6
          * addresses; you cannot specify custom IPv6 addresses.</p> <p>For a public virtual
-         * interface, the Autonomous System Number (ASN) must be private or already
-         * whitelisted for the virtual interface.</p><p><h3>See Also:</h3>   <a
+         * interface, the Autonomous System Number (ASN) must be private or already on the
+         * allow list for the virtual interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateBGPPeer">AWS
          * API Reference</a></p>
          *
@@ -906,8 +906,8 @@ namespace Model
          * <p>When creating a IPv6 BGP peer, omit the Amazon address and customer address.
          * IPv6 addresses are automatically assigned from the Amazon pool of IPv6
          * addresses; you cannot specify custom IPv6 addresses.</p> <p>For a public virtual
-         * interface, the Autonomous System Number (ASN) must be private or already
-         * whitelisted for the virtual interface.</p><p><h3>See Also:</h3>   <a
+         * interface, the Autonomous System Number (ASN) must be private or already on the
+         * allow list for the virtual interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateBGPPeer">AWS
          * API Reference</a></p>
          *
@@ -1731,13 +1731,17 @@ namespace Model
 
         /**
          * <p>Lists the associations between your Direct Connect gateways and virtual
-         * private gateways. You must specify a Direct Connect gateway, a virtual private
-         * gateway, or both. If you specify a Direct Connect gateway, the response contains
-         * all virtual private gateways associated with the Direct Connect gateway. If you
-         * specify a virtual private gateway, the response contains all Direct Connect
-         * gateways associated with the virtual private gateway. If you specify both, the
-         * response contains the association between the Direct Connect gateway and the
-         * virtual private gateway.</p><p><h3>See Also:</h3>   <a
+         * private gateways and transit gateways. You must specify one of the
+         * following:</p> <ul> <li> <p>A Direct Connect gateway</p> <p>The response
+         * contains all virtual private gateways and transit gateways associated with the
+         * Direct Connect gateway.</p> </li> <li> <p>A virtual private gateway</p> <p>The
+         * response contains the Direct Connect gateway.</p> </li> <li> <p>A transit
+         * gateway</p> <p>The response contains the Direct Connect gateway.</p> </li> <li>
+         * <p>A Direct Connect gateway and a virtual private gateway</p> <p>The response
+         * contains the association between the Direct Connect gateway and virtual private
+         * gateway.</p> </li> <li> <p>A Direct Connect gateway and a transit gateway</p>
+         * <p>The response contains the association between the Direct Connect gateway and
+         * transit gateway.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAssociations">AWS
          * API Reference</a></p>
          */
@@ -1745,13 +1749,17 @@ namespace Model
 
         /**
          * <p>Lists the associations between your Direct Connect gateways and virtual
-         * private gateways. You must specify a Direct Connect gateway, a virtual private
-         * gateway, or both. If you specify a Direct Connect gateway, the response contains
-         * all virtual private gateways associated with the Direct Connect gateway. If you
-         * specify a virtual private gateway, the response contains all Direct Connect
-         * gateways associated with the virtual private gateway. If you specify both, the
-         * response contains the association between the Direct Connect gateway and the
-         * virtual private gateway.</p><p><h3>See Also:</h3>   <a
+         * private gateways and transit gateways. You must specify one of the
+         * following:</p> <ul> <li> <p>A Direct Connect gateway</p> <p>The response
+         * contains all virtual private gateways and transit gateways associated with the
+         * Direct Connect gateway.</p> </li> <li> <p>A virtual private gateway</p> <p>The
+         * response contains the Direct Connect gateway.</p> </li> <li> <p>A transit
+         * gateway</p> <p>The response contains the Direct Connect gateway.</p> </li> <li>
+         * <p>A Direct Connect gateway and a virtual private gateway</p> <p>The response
+         * contains the association between the Direct Connect gateway and virtual private
+         * gateway.</p> </li> <li> <p>A Direct Connect gateway and a transit gateway</p>
+         * <p>The response contains the association between the Direct Connect gateway and
+         * transit gateway.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAssociations">AWS
          * API Reference</a></p>
          *
@@ -1761,13 +1769,17 @@ namespace Model
 
         /**
          * <p>Lists the associations between your Direct Connect gateways and virtual
-         * private gateways. You must specify a Direct Connect gateway, a virtual private
-         * gateway, or both. If you specify a Direct Connect gateway, the response contains
-         * all virtual private gateways associated with the Direct Connect gateway. If you
-         * specify a virtual private gateway, the response contains all Direct Connect
-         * gateways associated with the virtual private gateway. If you specify both, the
-         * response contains the association between the Direct Connect gateway and the
-         * virtual private gateway.</p><p><h3>See Also:</h3>   <a
+         * private gateways and transit gateways. You must specify one of the
+         * following:</p> <ul> <li> <p>A Direct Connect gateway</p> <p>The response
+         * contains all virtual private gateways and transit gateways associated with the
+         * Direct Connect gateway.</p> </li> <li> <p>A virtual private gateway</p> <p>The
+         * response contains the Direct Connect gateway.</p> </li> <li> <p>A transit
+         * gateway</p> <p>The response contains the Direct Connect gateway.</p> </li> <li>
+         * <p>A Direct Connect gateway and a virtual private gateway</p> <p>The response
+         * contains the association between the Direct Connect gateway and virtual private
+         * gateway.</p> </li> <li> <p>A Direct Connect gateway and a transit gateway</p>
+         * <p>The response contains the association between the Direct Connect gateway and
+         * transit gateway.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAssociations">AWS
          * API Reference</a></p>
          *

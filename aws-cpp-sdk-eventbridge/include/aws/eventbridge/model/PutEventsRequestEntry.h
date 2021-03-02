@@ -332,6 +332,79 @@ namespace Model
      */
     inline PutEventsRequestEntry& WithEventBusName(const char* value) { SetEventBusName(value); return *this;}
 
+
+    /**
+     * <p>An AWS X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that
+     * contains the trace-id associated with the event.</p> <p>To learn more about
+     * X-Ray trace headers, see <a
+     * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
+     * header</a> in the AWS X-Ray Developer Guide.</p>
+     */
+    inline const Aws::String& GetTraceHeader() const{ return m_traceHeader; }
+
+    /**
+     * <p>An AWS X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that
+     * contains the trace-id associated with the event.</p> <p>To learn more about
+     * X-Ray trace headers, see <a
+     * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
+     * header</a> in the AWS X-Ray Developer Guide.</p>
+     */
+    inline bool TraceHeaderHasBeenSet() const { return m_traceHeaderHasBeenSet; }
+
+    /**
+     * <p>An AWS X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that
+     * contains the trace-id associated with the event.</p> <p>To learn more about
+     * X-Ray trace headers, see <a
+     * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
+     * header</a> in the AWS X-Ray Developer Guide.</p>
+     */
+    inline void SetTraceHeader(const Aws::String& value) { m_traceHeaderHasBeenSet = true; m_traceHeader = value; }
+
+    /**
+     * <p>An AWS X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that
+     * contains the trace-id associated with the event.</p> <p>To learn more about
+     * X-Ray trace headers, see <a
+     * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
+     * header</a> in the AWS X-Ray Developer Guide.</p>
+     */
+    inline void SetTraceHeader(Aws::String&& value) { m_traceHeaderHasBeenSet = true; m_traceHeader = std::move(value); }
+
+    /**
+     * <p>An AWS X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that
+     * contains the trace-id associated with the event.</p> <p>To learn more about
+     * X-Ray trace headers, see <a
+     * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
+     * header</a> in the AWS X-Ray Developer Guide.</p>
+     */
+    inline void SetTraceHeader(const char* value) { m_traceHeaderHasBeenSet = true; m_traceHeader.assign(value); }
+
+    /**
+     * <p>An AWS X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that
+     * contains the trace-id associated with the event.</p> <p>To learn more about
+     * X-Ray trace headers, see <a
+     * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
+     * header</a> in the AWS X-Ray Developer Guide.</p>
+     */
+    inline PutEventsRequestEntry& WithTraceHeader(const Aws::String& value) { SetTraceHeader(value); return *this;}
+
+    /**
+     * <p>An AWS X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that
+     * contains the trace-id associated with the event.</p> <p>To learn more about
+     * X-Ray trace headers, see <a
+     * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
+     * header</a> in the AWS X-Ray Developer Guide.</p>
+     */
+    inline PutEventsRequestEntry& WithTraceHeader(Aws::String&& value) { SetTraceHeader(std::move(value)); return *this;}
+
+    /**
+     * <p>An AWS X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that
+     * contains the trace-id associated with the event.</p> <p>To learn more about
+     * X-Ray trace headers, see <a
+     * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
+     * header</a> in the AWS X-Ray Developer Guide.</p>
+     */
+    inline PutEventsRequestEntry& WithTraceHeader(const char* value) { SetTraceHeader(value); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_time;
@@ -351,6 +424,9 @@ namespace Model
 
     Aws::String m_eventBusName;
     bool m_eventBusNameHasBeenSet;
+
+    Aws::String m_traceHeader;
+    bool m_traceHeaderHasBeenSet;
   };
 
 } // namespace Model

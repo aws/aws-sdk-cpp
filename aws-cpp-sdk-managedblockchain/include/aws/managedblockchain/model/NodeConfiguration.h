@@ -82,57 +82,49 @@ namespace Model
 
     /**
      * <p>The Availability Zone in which the node exists. Required for Ethereum nodes.
-     * Ethereum on Managed Blockchain is in preview release and is subject to
-     * change.</p>
+     * </p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
      * <p>The Availability Zone in which the node exists. Required for Ethereum nodes.
-     * Ethereum on Managed Blockchain is in preview release and is subject to
-     * change.</p>
+     * </p>
      */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The Availability Zone in which the node exists. Required for Ethereum nodes.
-     * Ethereum on Managed Blockchain is in preview release and is subject to
-     * change.</p>
+     * </p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
      * <p>The Availability Zone in which the node exists. Required for Ethereum nodes.
-     * Ethereum on Managed Blockchain is in preview release and is subject to
-     * change.</p>
+     * </p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Availability Zone in which the node exists. Required for Ethereum nodes.
-     * Ethereum on Managed Blockchain is in preview release and is subject to
-     * change.</p>
+     * </p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
      * <p>The Availability Zone in which the node exists. Required for Ethereum nodes.
-     * Ethereum on Managed Blockchain is in preview release and is subject to
-     * change.</p>
+     * </p>
      */
     inline NodeConfiguration& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
      * <p>The Availability Zone in which the node exists. Required for Ethereum nodes.
-     * Ethereum on Managed Blockchain is in preview release and is subject to
-     * change.</p>
+     * </p>
      */
     inline NodeConfiguration& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone in which the node exists. Required for Ethereum nodes.
-     * Ethereum on Managed Blockchain is in preview release and is subject to
-     * change.</p>
+     * </p>
      */
     inline NodeConfiguration& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 

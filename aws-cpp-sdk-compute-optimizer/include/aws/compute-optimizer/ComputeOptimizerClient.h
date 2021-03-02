@@ -536,22 +536,30 @@ namespace Model
         virtual void GetLambdaFunctionRecommendationsAsync(const Model::GetLambdaFunctionRecommendationsRequest& request, const GetLambdaFunctionRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the optimization findings for an account.</p> <p>For example, it
-         * returns the number of Amazon EC2 instances in an account that are
-         * under-provisioned, over-provisioned, or optimized. It also returns the number of
-         * Auto Scaling groups in an account that are not optimized, or
-         * optimized.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the optimization findings for an account.</p> <p>It returns the
+         * number of:</p> <ul> <li> <p>Amazon EC2 instances in an account that are
+         * <code>Underprovisioned</code>, <code>Overprovisioned</code>, or
+         * <code>Optimized</code>.</p> </li> <li> <p>Auto Scaling groups in an account that
+         * are <code>NotOptimized</code>, or <code>Optimized</code>.</p> </li> <li>
+         * <p>Amazon EBS volumes in an account that are <code>NotOptimized</code>, or
+         * <code>Optimized</code>.</p> </li> <li> <p>Lambda functions in an account that
+         * are <code>NotOptimized</code>, or <code>Optimized</code>.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetRecommendationSummaries">AWS
          * API Reference</a></p>
          */
         virtual Model::GetRecommendationSummariesOutcome GetRecommendationSummaries(const Model::GetRecommendationSummariesRequest& request) const;
 
         /**
-         * <p>Returns the optimization findings for an account.</p> <p>For example, it
-         * returns the number of Amazon EC2 instances in an account that are
-         * under-provisioned, over-provisioned, or optimized. It also returns the number of
-         * Auto Scaling groups in an account that are not optimized, or
-         * optimized.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the optimization findings for an account.</p> <p>It returns the
+         * number of:</p> <ul> <li> <p>Amazon EC2 instances in an account that are
+         * <code>Underprovisioned</code>, <code>Overprovisioned</code>, or
+         * <code>Optimized</code>.</p> </li> <li> <p>Auto Scaling groups in an account that
+         * are <code>NotOptimized</code>, or <code>Optimized</code>.</p> </li> <li>
+         * <p>Amazon EBS volumes in an account that are <code>NotOptimized</code>, or
+         * <code>Optimized</code>.</p> </li> <li> <p>Lambda functions in an account that
+         * are <code>NotOptimized</code>, or <code>Optimized</code>.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetRecommendationSummaries">AWS
          * API Reference</a></p>
          *
@@ -560,11 +568,15 @@ namespace Model
         virtual Model::GetRecommendationSummariesOutcomeCallable GetRecommendationSummariesCallable(const Model::GetRecommendationSummariesRequest& request) const;
 
         /**
-         * <p>Returns the optimization findings for an account.</p> <p>For example, it
-         * returns the number of Amazon EC2 instances in an account that are
-         * under-provisioned, over-provisioned, or optimized. It also returns the number of
-         * Auto Scaling groups in an account that are not optimized, or
-         * optimized.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the optimization findings for an account.</p> <p>It returns the
+         * number of:</p> <ul> <li> <p>Amazon EC2 instances in an account that are
+         * <code>Underprovisioned</code>, <code>Overprovisioned</code>, or
+         * <code>Optimized</code>.</p> </li> <li> <p>Auto Scaling groups in an account that
+         * are <code>NotOptimized</code>, or <code>Optimized</code>.</p> </li> <li>
+         * <p>Amazon EBS volumes in an account that are <code>NotOptimized</code>, or
+         * <code>Optimized</code>.</p> </li> <li> <p>Lambda functions in an account that
+         * are <code>NotOptimized</code>, or <code>Optimized</code>.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetRecommendationSummaries">AWS
          * API Reference</a></p>
          *

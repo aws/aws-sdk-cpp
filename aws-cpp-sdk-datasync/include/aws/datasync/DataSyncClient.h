@@ -41,6 +41,9 @@
 #include <aws/datasync/model/TagResourceResult.h>
 #include <aws/datasync/model/UntagResourceResult.h>
 #include <aws/datasync/model/UpdateAgentResult.h>
+#include <aws/datasync/model/UpdateLocationNfsResult.h>
+#include <aws/datasync/model/UpdateLocationObjectStorageResult.h>
+#include <aws/datasync/model/UpdateLocationSmbResult.h>
 #include <aws/datasync/model/UpdateTaskResult.h>
 #include <aws/datasync/model/UpdateTaskExecutionResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -112,6 +115,9 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateAgentRequest;
+        class UpdateLocationNfsRequest;
+        class UpdateLocationObjectStorageRequest;
+        class UpdateLocationSmbRequest;
         class UpdateTaskRequest;
         class UpdateTaskExecutionRequest;
 
@@ -145,6 +151,9 @@ namespace Model
         typedef Aws::Utils::Outcome<TagResourceResult, DataSyncError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, DataSyncError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateAgentResult, DataSyncError> UpdateAgentOutcome;
+        typedef Aws::Utils::Outcome<UpdateLocationNfsResult, DataSyncError> UpdateLocationNfsOutcome;
+        typedef Aws::Utils::Outcome<UpdateLocationObjectStorageResult, DataSyncError> UpdateLocationObjectStorageOutcome;
+        typedef Aws::Utils::Outcome<UpdateLocationSmbResult, DataSyncError> UpdateLocationSmbOutcome;
         typedef Aws::Utils::Outcome<UpdateTaskResult, DataSyncError> UpdateTaskOutcome;
         typedef Aws::Utils::Outcome<UpdateTaskExecutionResult, DataSyncError> UpdateTaskExecutionOutcome;
 
@@ -178,6 +187,9 @@ namespace Model
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateAgentOutcome> UpdateAgentOutcomeCallable;
+        typedef std::future<UpdateLocationNfsOutcome> UpdateLocationNfsOutcomeCallable;
+        typedef std::future<UpdateLocationObjectStorageOutcome> UpdateLocationObjectStorageOutcomeCallable;
+        typedef std::future<UpdateLocationSmbOutcome> UpdateLocationSmbOutcomeCallable;
         typedef std::future<UpdateTaskOutcome> UpdateTaskOutcomeCallable;
         typedef std::future<UpdateTaskExecutionOutcome> UpdateTaskExecutionOutcomeCallable;
 } // namespace Model
@@ -214,6 +226,9 @@ namespace Model
     typedef std::function<void(const DataSyncClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::UpdateAgentRequest&, const Model::UpdateAgentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAgentResponseReceivedHandler;
+    typedef std::function<void(const DataSyncClient*, const Model::UpdateLocationNfsRequest&, const Model::UpdateLocationNfsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLocationNfsResponseReceivedHandler;
+    typedef std::function<void(const DataSyncClient*, const Model::UpdateLocationObjectStorageRequest&, const Model::UpdateLocationObjectStorageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLocationObjectStorageResponseReceivedHandler;
+    typedef std::function<void(const DataSyncClient*, const Model::UpdateLocationSmbRequest&, const Model::UpdateLocationSmbOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLocationSmbResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::UpdateTaskRequest&, const Model::UpdateTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTaskResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::UpdateTaskExecutionRequest&, const Model::UpdateTaskExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTaskExecutionResponseReceivedHandler;
 
@@ -394,16 +409,16 @@ namespace Model
         virtual void CreateLocationEfsAsync(const Model::CreateLocationEfsRequest& request, const CreateLocationEfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an endpoint for an Amazon FSx for Windows file system.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates an endpoint for an Amazon FSx for Windows File Server file
+         * system.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxWindows">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateLocationFsxWindowsOutcome CreateLocationFsxWindows(const Model::CreateLocationFsxWindowsRequest& request) const;
 
         /**
-         * <p>Creates an endpoint for an Amazon FSx for Windows file system.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates an endpoint for an Amazon FSx for Windows File Server file
+         * system.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxWindows">AWS
          * API Reference</a></p>
          *
@@ -412,8 +427,8 @@ namespace Model
         virtual Model::CreateLocationFsxWindowsOutcomeCallable CreateLocationFsxWindowsCallable(const Model::CreateLocationFsxWindowsRequest& request) const;
 
         /**
-         * <p>Creates an endpoint for an Amazon FSx for Windows file system.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates an endpoint for an Amazon FSx for Windows File Server file
+         * system.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxWindows">AWS
          * API Reference</a></p>
          *
@@ -540,40 +555,42 @@ namespace Model
         virtual void CreateLocationSmbAsync(const Model::CreateLocationSmbRequest& request, const CreateLocationSmbResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a task. A task is a set of two locations (source and destination) and
-         * a set of Options that you use to control the behavior of a task. If you don't
-         * specify Options when you create a task, AWS DataSync populates them with service
-         * defaults.</p> <p>When you create a task, it first enters the CREATING state.
-         * During CREATING AWS DataSync attempts to mount the on-premises Network File
-         * System (NFS) location. The task transitions to the AVAILABLE state without
-         * waiting for the AWS location to become mounted. If required, AWS DataSync mounts
-         * the AWS location before each task execution.</p> <p>If an agent that is
-         * associated with a source (NFS) location goes offline, the task transitions to
-         * the UNAVAILABLE status. If the status of the task remains in the CREATING status
-         * for more than a few minutes, it means that your agent might be having trouble
-         * mounting the source NFS file system. Check the task's ErrorCode and ErrorDetail.
-         * Mount issues are often caused by either a misconfigured firewall or a mistyped
-         * NFS server hostname.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a task.</p> <p>A task includes a source location and a destination
+         * location, and a configuration that specifies how data is transferred. A task
+         * always transfers data from the source location to the destination location. The
+         * configuration specifies options such as task scheduling, bandwidth limits, etc.
+         * A task is the complete definition of a data transfer.</p> <p>When you create a
+         * task that transfers data between AWS services in different AWS Regions, one of
+         * the two locations that you specify must reside in the Region where DataSync is
+         * being used. The other location must be specified in a different Region.</p>
+         * <p>You can transfer data between commercial AWS Regions except for China, or
+         * between AWS GovCloud (US-East and US-West) Regions.</p>  <p>When you
+         * use DataSync to copy files or objects between AWS Regions, you pay for data
+         * transfer between Regions. This is billed as data transfer OUT from your source
+         * Region to your destination Region. For more information, see <a
+         * href="http://aws.amazon.com/ec2/pricing/on-demand/#Data_Transfer">Data Transfer
+         * pricing</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateTask">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateTaskOutcome CreateTask(const Model::CreateTaskRequest& request) const;
 
         /**
-         * <p>Creates a task. A task is a set of two locations (source and destination) and
-         * a set of Options that you use to control the behavior of a task. If you don't
-         * specify Options when you create a task, AWS DataSync populates them with service
-         * defaults.</p> <p>When you create a task, it first enters the CREATING state.
-         * During CREATING AWS DataSync attempts to mount the on-premises Network File
-         * System (NFS) location. The task transitions to the AVAILABLE state without
-         * waiting for the AWS location to become mounted. If required, AWS DataSync mounts
-         * the AWS location before each task execution.</p> <p>If an agent that is
-         * associated with a source (NFS) location goes offline, the task transitions to
-         * the UNAVAILABLE status. If the status of the task remains in the CREATING status
-         * for more than a few minutes, it means that your agent might be having trouble
-         * mounting the source NFS file system. Check the task's ErrorCode and ErrorDetail.
-         * Mount issues are often caused by either a misconfigured firewall or a mistyped
-         * NFS server hostname.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a task.</p> <p>A task includes a source location and a destination
+         * location, and a configuration that specifies how data is transferred. A task
+         * always transfers data from the source location to the destination location. The
+         * configuration specifies options such as task scheduling, bandwidth limits, etc.
+         * A task is the complete definition of a data transfer.</p> <p>When you create a
+         * task that transfers data between AWS services in different AWS Regions, one of
+         * the two locations that you specify must reside in the Region where DataSync is
+         * being used. The other location must be specified in a different Region.</p>
+         * <p>You can transfer data between commercial AWS Regions except for China, or
+         * between AWS GovCloud (US-East and US-West) Regions.</p>  <p>When you
+         * use DataSync to copy files or objects between AWS Regions, you pay for data
+         * transfer between Regions. This is billed as data transfer OUT from your source
+         * Region to your destination Region. For more information, see <a
+         * href="http://aws.amazon.com/ec2/pricing/on-demand/#Data_Transfer">Data Transfer
+         * pricing</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateTask">AWS
          * API Reference</a></p>
          *
@@ -582,20 +599,21 @@ namespace Model
         virtual Model::CreateTaskOutcomeCallable CreateTaskCallable(const Model::CreateTaskRequest& request) const;
 
         /**
-         * <p>Creates a task. A task is a set of two locations (source and destination) and
-         * a set of Options that you use to control the behavior of a task. If you don't
-         * specify Options when you create a task, AWS DataSync populates them with service
-         * defaults.</p> <p>When you create a task, it first enters the CREATING state.
-         * During CREATING AWS DataSync attempts to mount the on-premises Network File
-         * System (NFS) location. The task transitions to the AVAILABLE state without
-         * waiting for the AWS location to become mounted. If required, AWS DataSync mounts
-         * the AWS location before each task execution.</p> <p>If an agent that is
-         * associated with a source (NFS) location goes offline, the task transitions to
-         * the UNAVAILABLE status. If the status of the task remains in the CREATING status
-         * for more than a few minutes, it means that your agent might be having trouble
-         * mounting the source NFS file system. Check the task's ErrorCode and ErrorDetail.
-         * Mount issues are often caused by either a misconfigured firewall or a mistyped
-         * NFS server hostname.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a task.</p> <p>A task includes a source location and a destination
+         * location, and a configuration that specifies how data is transferred. A task
+         * always transfers data from the source location to the destination location. The
+         * configuration specifies options such as task scheduling, bandwidth limits, etc.
+         * A task is the complete definition of a data transfer.</p> <p>When you create a
+         * task that transfers data between AWS services in different AWS Regions, one of
+         * the two locations that you specify must reside in the Region where DataSync is
+         * being used. The other location must be specified in a different Region.</p>
+         * <p>You can transfer data between commercial AWS Regions except for China, or
+         * between AWS GovCloud (US-East and US-West) Regions.</p>  <p>When you
+         * use DataSync to copy files or objects between AWS Regions, you pay for data
+         * transfer between Regions. This is billed as data transfer OUT from your source
+         * Region to your destination Region. For more information, see <a
+         * href="http://aws.amazon.com/ec2/pricing/on-demand/#Data_Transfer">Data Transfer
+         * pricing</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateTask">AWS
          * API Reference</a></p>
          *
@@ -754,7 +772,7 @@ namespace Model
 
         /**
          * <p>Returns metadata, such as the path information about an Amazon FSx for
-         * Windows location.</p><p><h3>See Also:</h3>   <a
+         * Windows File Server location.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxWindows">AWS
          * API Reference</a></p>
          */
@@ -762,7 +780,7 @@ namespace Model
 
         /**
          * <p>Returns metadata, such as the path information about an Amazon FSx for
-         * Windows location.</p><p><h3>See Also:</h3>   <a
+         * Windows File Server location.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxWindows">AWS
          * API Reference</a></p>
          *
@@ -772,7 +790,7 @@ namespace Model
 
         /**
          * <p>Returns metadata, such as the path information about an Amazon FSx for
-         * Windows location.</p><p><h3>See Also:</h3>   <a
+         * Windows File Server location.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxWindows">AWS
          * API Reference</a></p>
          *
@@ -1228,6 +1246,102 @@ namespace Model
         virtual void UpdateAgentAsync(const Model::UpdateAgentRequest& request, const UpdateAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates some of the parameters of a previously created location for Network
+         * File System (NFS) access. For information about creating an NFS location, see
+         * <a>create-nfs-location</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationNfs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateLocationNfsOutcome UpdateLocationNfs(const Model::UpdateLocationNfsRequest& request) const;
+
+        /**
+         * <p>Updates some of the parameters of a previously created location for Network
+         * File System (NFS) access. For information about creating an NFS location, see
+         * <a>create-nfs-location</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationNfs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateLocationNfsOutcomeCallable UpdateLocationNfsCallable(const Model::UpdateLocationNfsRequest& request) const;
+
+        /**
+         * <p>Updates some of the parameters of a previously created location for Network
+         * File System (NFS) access. For information about creating an NFS location, see
+         * <a>create-nfs-location</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationNfs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateLocationNfsAsync(const Model::UpdateLocationNfsRequest& request, const UpdateLocationNfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates some of the parameters of a previously created location for
+         * self-managed object storage server access. For information about creating a
+         * self-managed object storage location, see
+         * <a>create-object-location</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationObjectStorage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateLocationObjectStorageOutcome UpdateLocationObjectStorage(const Model::UpdateLocationObjectStorageRequest& request) const;
+
+        /**
+         * <p>Updates some of the parameters of a previously created location for
+         * self-managed object storage server access. For information about creating a
+         * self-managed object storage location, see
+         * <a>create-object-location</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationObjectStorage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateLocationObjectStorageOutcomeCallable UpdateLocationObjectStorageCallable(const Model::UpdateLocationObjectStorageRequest& request) const;
+
+        /**
+         * <p>Updates some of the parameters of a previously created location for
+         * self-managed object storage server access. For information about creating a
+         * self-managed object storage location, see
+         * <a>create-object-location</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationObjectStorage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateLocationObjectStorageAsync(const Model::UpdateLocationObjectStorageRequest& request, const UpdateLocationObjectStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates some of the parameters of a previously created location for Server
+         * Message Block (SMB) file system access. For information about creating an SMB
+         * location, see <a>create-smb-location</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationSmb">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateLocationSmbOutcome UpdateLocationSmb(const Model::UpdateLocationSmbRequest& request) const;
+
+        /**
+         * <p>Updates some of the parameters of a previously created location for Server
+         * Message Block (SMB) file system access. For information about creating an SMB
+         * location, see <a>create-smb-location</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationSmb">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateLocationSmbOutcomeCallable UpdateLocationSmbCallable(const Model::UpdateLocationSmbRequest& request) const;
+
+        /**
+         * <p>Updates some of the parameters of a previously created location for Server
+         * Message Block (SMB) file system access. For information about creating an SMB
+         * location, see <a>create-smb-location</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationSmb">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateLocationSmbAsync(const Model::UpdateLocationSmbRequest& request, const UpdateLocationSmbResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the metadata associated with a task.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTask">AWS
          * API Reference</a></p>
@@ -1255,7 +1369,7 @@ namespace Model
         /**
          * <p>Updates execution of a task.</p> <p>You can modify bandwidth throttling for a
          * task execution that is running or queued. For more information, see <a
-         * href="https://docs.aws.amazon.com/datasync/latest/working-with-task-executions.html#adjust-bandwidth-throttling">Adjusting
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-task-executions.html#adjust-bandwidth-throttling">Adjusting
          * Bandwidth Throttling for a Task Execution</a>.</p>  <p>The only
          * <code>Option</code> that can be modified by <code>UpdateTaskExecution</code> is
          * <code> <a
@@ -1269,7 +1383,7 @@ namespace Model
         /**
          * <p>Updates execution of a task.</p> <p>You can modify bandwidth throttling for a
          * task execution that is running or queued. For more information, see <a
-         * href="https://docs.aws.amazon.com/datasync/latest/working-with-task-executions.html#adjust-bandwidth-throttling">Adjusting
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-task-executions.html#adjust-bandwidth-throttling">Adjusting
          * Bandwidth Throttling for a Task Execution</a>.</p>  <p>The only
          * <code>Option</code> that can be modified by <code>UpdateTaskExecution</code> is
          * <code> <a
@@ -1285,7 +1399,7 @@ namespace Model
         /**
          * <p>Updates execution of a task.</p> <p>You can modify bandwidth throttling for a
          * task execution that is running or queued. For more information, see <a
-         * href="https://docs.aws.amazon.com/datasync/latest/working-with-task-executions.html#adjust-bandwidth-throttling">Adjusting
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-task-executions.html#adjust-bandwidth-throttling">Adjusting
          * Bandwidth Throttling for a Task Execution</a>.</p>  <p>The only
          * <code>Option</code> that can be modified by <code>UpdateTaskExecution</code> is
          * <code> <a
@@ -1332,6 +1446,9 @@ namespace Model
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAgentAsyncHelper(const Model::UpdateAgentRequest& request, const UpdateAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateLocationNfsAsyncHelper(const Model::UpdateLocationNfsRequest& request, const UpdateLocationNfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateLocationObjectStorageAsyncHelper(const Model::UpdateLocationObjectStorageRequest& request, const UpdateLocationObjectStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateLocationSmbAsyncHelper(const Model::UpdateLocationSmbRequest& request, const UpdateLocationSmbResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTaskAsyncHelper(const Model::UpdateTaskRequest& request, const UpdateTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTaskExecutionAsyncHelper(const Model::UpdateTaskExecutionRequest& request, const UpdateTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

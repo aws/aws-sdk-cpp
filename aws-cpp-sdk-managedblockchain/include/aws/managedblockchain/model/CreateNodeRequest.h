@@ -264,8 +264,8 @@ namespace Model
     /**
      * <p>Tags to assign to the node. Each tag consists of a key and optional
      * value.</p> <p>When specifying tags during creation, you can specify multiple
-     * key-value pairs in a single request, with an overall maximum of 50 added to each
-     * resource.</p> <p>For more information about tags, see <a
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p> <p>For more information about tags, see <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
      * or <a
@@ -278,8 +278,8 @@ namespace Model
     /**
      * <p>Tags to assign to the node. Each tag consists of a key and optional
      * value.</p> <p>When specifying tags during creation, you can specify multiple
-     * key-value pairs in a single request, with an overall maximum of 50 added to each
-     * resource.</p> <p>For more information about tags, see <a
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p> <p>For more information about tags, see <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
      * or <a
@@ -292,8 +292,8 @@ namespace Model
     /**
      * <p>Tags to assign to the node. Each tag consists of a key and optional
      * value.</p> <p>When specifying tags during creation, you can specify multiple
-     * key-value pairs in a single request, with an overall maximum of 50 added to each
-     * resource.</p> <p>For more information about tags, see <a
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p> <p>For more information about tags, see <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
      * or <a
@@ -306,8 +306,8 @@ namespace Model
     /**
      * <p>Tags to assign to the node. Each tag consists of a key and optional
      * value.</p> <p>When specifying tags during creation, you can specify multiple
-     * key-value pairs in a single request, with an overall maximum of 50 added to each
-     * resource.</p> <p>For more information about tags, see <a
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p> <p>For more information about tags, see <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
      * or <a
@@ -320,8 +320,8 @@ namespace Model
     /**
      * <p>Tags to assign to the node. Each tag consists of a key and optional
      * value.</p> <p>When specifying tags during creation, you can specify multiple
-     * key-value pairs in a single request, with an overall maximum of 50 added to each
-     * resource.</p> <p>For more information about tags, see <a
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p> <p>For more information about tags, see <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
      * or <a
@@ -334,8 +334,8 @@ namespace Model
     /**
      * <p>Tags to assign to the node. Each tag consists of a key and optional
      * value.</p> <p>When specifying tags during creation, you can specify multiple
-     * key-value pairs in a single request, with an overall maximum of 50 added to each
-     * resource.</p> <p>For more information about tags, see <a
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p> <p>For more information about tags, see <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
      * or <a
@@ -348,8 +348,8 @@ namespace Model
     /**
      * <p>Tags to assign to the node. Each tag consists of a key and optional
      * value.</p> <p>When specifying tags during creation, you can specify multiple
-     * key-value pairs in a single request, with an overall maximum of 50 added to each
-     * resource.</p> <p>For more information about tags, see <a
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p> <p>For more information about tags, see <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
      * or <a
@@ -362,8 +362,8 @@ namespace Model
     /**
      * <p>Tags to assign to the node. Each tag consists of a key and optional
      * value.</p> <p>When specifying tags during creation, you can specify multiple
-     * key-value pairs in a single request, with an overall maximum of 50 added to each
-     * resource.</p> <p>For more information about tags, see <a
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p> <p>For more information about tags, see <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
      * or <a
@@ -376,8 +376,8 @@ namespace Model
     /**
      * <p>Tags to assign to the node. Each tag consists of a key and optional
      * value.</p> <p>When specifying tags during creation, you can specify multiple
-     * key-value pairs in a single request, with an overall maximum of 50 added to each
-     * resource.</p> <p>For more information about tags, see <a
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p> <p>For more information about tags, see <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
      * or <a
@@ -390,8 +390,8 @@ namespace Model
     /**
      * <p>Tags to assign to the node. Each tag consists of a key and optional
      * value.</p> <p>When specifying tags during creation, you can specify multiple
-     * key-value pairs in a single request, with an overall maximum of 50 added to each
-     * resource.</p> <p>For more information about tags, see <a
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p> <p>For more information about tags, see <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
      * or <a
@@ -404,8 +404,8 @@ namespace Model
     /**
      * <p>Tags to assign to the node. Each tag consists of a key and optional
      * value.</p> <p>When specifying tags during creation, you can specify multiple
-     * key-value pairs in a single request, with an overall maximum of 50 added to each
-     * resource.</p> <p>For more information about tags, see <a
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p> <p>For more information about tags, see <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
      * or <a
@@ -418,8 +418,8 @@ namespace Model
     /**
      * <p>Tags to assign to the node. Each tag consists of a key and optional
      * value.</p> <p>When specifying tags during creation, you can specify multiple
-     * key-value pairs in a single request, with an overall maximum of 50 added to each
-     * resource.</p> <p>For more information about tags, see <a
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p> <p>For more information about tags, see <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
      * or <a
@@ -432,8 +432,8 @@ namespace Model
     /**
      * <p>Tags to assign to the node. Each tag consists of a key and optional
      * value.</p> <p>When specifying tags during creation, you can specify multiple
-     * key-value pairs in a single request, with an overall maximum of 50 added to each
-     * resource.</p> <p>For more information about tags, see <a
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p> <p>For more information about tags, see <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
      * or <a

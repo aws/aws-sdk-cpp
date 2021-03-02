@@ -101,91 +101,104 @@ namespace Model
     /**
      * <p>The tags to assign to the specified resource. Tag values can be empty, for
      * example, <code>"MyTagKey" : ""</code>. You can specify multiple key-value pairs
-     * in a single request, with an overall maximum of 50 added to each resource.</p>
+     * in a single request, with an overall maximum of 50 tags added to each
+     * resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The tags to assign to the specified resource. Tag values can be empty, for
      * example, <code>"MyTagKey" : ""</code>. You can specify multiple key-value pairs
-     * in a single request, with an overall maximum of 50 added to each resource.</p>
+     * in a single request, with an overall maximum of 50 tags added to each
+     * resource.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags to assign to the specified resource. Tag values can be empty, for
      * example, <code>"MyTagKey" : ""</code>. You can specify multiple key-value pairs
-     * in a single request, with an overall maximum of 50 added to each resource.</p>
+     * in a single request, with an overall maximum of 50 tags added to each
+     * resource.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The tags to assign to the specified resource. Tag values can be empty, for
      * example, <code>"MyTagKey" : ""</code>. You can specify multiple key-value pairs
-     * in a single request, with an overall maximum of 50 added to each resource.</p>
+     * in a single request, with an overall maximum of 50 tags added to each
+     * resource.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tags to assign to the specified resource. Tag values can be empty, for
      * example, <code>"MyTagKey" : ""</code>. You can specify multiple key-value pairs
-     * in a single request, with an overall maximum of 50 added to each resource.</p>
+     * in a single request, with an overall maximum of 50 tags added to each
+     * resource.</p>
      */
     inline TagResourceRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The tags to assign to the specified resource. Tag values can be empty, for
      * example, <code>"MyTagKey" : ""</code>. You can specify multiple key-value pairs
-     * in a single request, with an overall maximum of 50 added to each resource.</p>
+     * in a single request, with an overall maximum of 50 tags added to each
+     * resource.</p>
      */
     inline TagResourceRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tags to assign to the specified resource. Tag values can be empty, for
      * example, <code>"MyTagKey" : ""</code>. You can specify multiple key-value pairs
-     * in a single request, with an overall maximum of 50 added to each resource.</p>
+     * in a single request, with an overall maximum of 50 tags added to each
+     * resource.</p>
      */
     inline TagResourceRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
      * <p>The tags to assign to the specified resource. Tag values can be empty, for
      * example, <code>"MyTagKey" : ""</code>. You can specify multiple key-value pairs
-     * in a single request, with an overall maximum of 50 added to each resource.</p>
+     * in a single request, with an overall maximum of 50 tags added to each
+     * resource.</p>
      */
     inline TagResourceRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags to assign to the specified resource. Tag values can be empty, for
      * example, <code>"MyTagKey" : ""</code>. You can specify multiple key-value pairs
-     * in a single request, with an overall maximum of 50 added to each resource.</p>
+     * in a single request, with an overall maximum of 50 tags added to each
+     * resource.</p>
      */
     inline TagResourceRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags to assign to the specified resource. Tag values can be empty, for
      * example, <code>"MyTagKey" : ""</code>. You can specify multiple key-value pairs
-     * in a single request, with an overall maximum of 50 added to each resource.</p>
+     * in a single request, with an overall maximum of 50 tags added to each
+     * resource.</p>
      */
     inline TagResourceRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The tags to assign to the specified resource. Tag values can be empty, for
      * example, <code>"MyTagKey" : ""</code>. You can specify multiple key-value pairs
-     * in a single request, with an overall maximum of 50 added to each resource.</p>
+     * in a single request, with an overall maximum of 50 tags added to each
+     * resource.</p>
      */
     inline TagResourceRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags to assign to the specified resource. Tag values can be empty, for
      * example, <code>"MyTagKey" : ""</code>. You can specify multiple key-value pairs
-     * in a single request, with an overall maximum of 50 added to each resource.</p>
+     * in a single request, with an overall maximum of 50 tags added to each
+     * resource.</p>
      */
     inline TagResourceRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags to assign to the specified resource. Tag values can be empty, for
      * example, <code>"MyTagKey" : ""</code>. You can specify multiple key-value pairs
-     * in a single request, with an overall maximum of 50 added to each resource.</p>
+     * in a single request, with an overall maximum of 50 tags added to each
+     * resource.</p>
      */
     inline TagResourceRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

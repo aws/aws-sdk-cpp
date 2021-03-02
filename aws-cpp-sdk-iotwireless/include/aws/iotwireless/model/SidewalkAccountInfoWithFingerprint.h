@@ -118,6 +118,47 @@ namespace Model
      */
     inline SidewalkAccountInfoWithFingerprint& WithFingerprint(const char* value) { SetFingerprint(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name of the resource.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name of the resource.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name of the resource.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * <p>The Amazon Resource Name of the resource.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name of the resource.</p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name of the resource.</p>
+     */
+    inline SidewalkAccountInfoWithFingerprint& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name of the resource.</p>
+     */
+    inline SidewalkAccountInfoWithFingerprint& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name of the resource.</p>
+     */
+    inline SidewalkAccountInfoWithFingerprint& WithArn(const char* value) { SetArn(value); return *this;}
+
   private:
 
     Aws::String m_amazonId;
@@ -125,6 +166,9 @@ namespace Model
 
     Aws::String m_fingerprint;
     bool m_fingerprintHasBeenSet;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
   };
 
 } // namespace Model

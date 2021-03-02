@@ -24,8 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Attributes of an Ethereum node. Ethereum on Managed Blockchain is in preview
-   * release and is subject to change.</p><p><h3>See Also:</h3>   <a
+   * <p>Attributes of an Ethereum node.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/NodeEthereumAttributes">AWS
    * API Reference</a></p>
    */

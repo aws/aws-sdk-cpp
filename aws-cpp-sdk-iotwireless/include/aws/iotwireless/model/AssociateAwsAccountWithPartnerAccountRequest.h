@@ -8,6 +8,8 @@
 #include <aws/iotwireless/IoTWirelessRequest.h>
 #include <aws/iotwireless/model/SidewalkAccountInfo.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iotwireless/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -129,6 +131,55 @@ namespace Model
      */
     inline AssociateAwsAccountWithPartnerAccountRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
+
+    /**
+     * <p>The tags attached to the specified resource. Tags are metadata that can be
+     * used to manage a resource</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags attached to the specified resource. Tags are metadata that can be
+     * used to manage a resource</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags attached to the specified resource. Tags are metadata that can be
+     * used to manage a resource</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags attached to the specified resource. Tags are metadata that can be
+     * used to manage a resource</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags attached to the specified resource. Tags are metadata that can be
+     * used to manage a resource</p>
+     */
+    inline AssociateAwsAccountWithPartnerAccountRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags attached to the specified resource. Tags are metadata that can be
+     * used to manage a resource</p>
+     */
+    inline AssociateAwsAccountWithPartnerAccountRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags attached to the specified resource. Tags are metadata that can be
+     * used to manage a resource</p>
+     */
+    inline AssociateAwsAccountWithPartnerAccountRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The tags attached to the specified resource. Tags are metadata that can be
+     * used to manage a resource</p>
+     */
+    inline AssociateAwsAccountWithPartnerAccountRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     SidewalkAccountInfo m_sidewalk;
@@ -136,6 +187,9 @@ namespace Model
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model
