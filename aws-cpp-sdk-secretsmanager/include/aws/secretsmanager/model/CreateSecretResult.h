@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/secretsmanager/SecretsManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/secretsmanager/model/ReplicationStatusType.h>
 #include <utility>
 
 namespace Aws
@@ -188,6 +190,49 @@ namespace Model
      */
     inline CreateSecretResult& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
+
+    /**
+     * <p>Describes a list of replication status objects as <code>InProgress</code>,
+     * <code>Failed</code> or <code>InSync</code>.</p>
+     */
+    inline const Aws::Vector<ReplicationStatusType>& GetReplicationStatus() const{ return m_replicationStatus; }
+
+    /**
+     * <p>Describes a list of replication status objects as <code>InProgress</code>,
+     * <code>Failed</code> or <code>InSync</code>.</p>
+     */
+    inline void SetReplicationStatus(const Aws::Vector<ReplicationStatusType>& value) { m_replicationStatus = value; }
+
+    /**
+     * <p>Describes a list of replication status objects as <code>InProgress</code>,
+     * <code>Failed</code> or <code>InSync</code>.</p>
+     */
+    inline void SetReplicationStatus(Aws::Vector<ReplicationStatusType>&& value) { m_replicationStatus = std::move(value); }
+
+    /**
+     * <p>Describes a list of replication status objects as <code>InProgress</code>,
+     * <code>Failed</code> or <code>InSync</code>.</p>
+     */
+    inline CreateSecretResult& WithReplicationStatus(const Aws::Vector<ReplicationStatusType>& value) { SetReplicationStatus(value); return *this;}
+
+    /**
+     * <p>Describes a list of replication status objects as <code>InProgress</code>,
+     * <code>Failed</code> or <code>InSync</code>.</p>
+     */
+    inline CreateSecretResult& WithReplicationStatus(Aws::Vector<ReplicationStatusType>&& value) { SetReplicationStatus(std::move(value)); return *this;}
+
+    /**
+     * <p>Describes a list of replication status objects as <code>InProgress</code>,
+     * <code>Failed</code> or <code>InSync</code>.</p>
+     */
+    inline CreateSecretResult& AddReplicationStatus(const ReplicationStatusType& value) { m_replicationStatus.push_back(value); return *this; }
+
+    /**
+     * <p>Describes a list of replication status objects as <code>InProgress</code>,
+     * <code>Failed</code> or <code>InSync</code>.</p>
+     */
+    inline CreateSecretResult& AddReplicationStatus(ReplicationStatusType&& value) { m_replicationStatus.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_aRN;
@@ -195,6 +240,8 @@ namespace Model
     Aws::String m_name;
 
     Aws::String m_versionId;
+
+    Aws::Vector<ReplicationStatusType> m_replicationStatus;
   };
 
 } // namespace Model

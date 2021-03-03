@@ -92,42 +92,98 @@ namespace Model
 
 
     /**
-     * <p>The event, in JSON format, to test against the event pattern.</p>
+     * <p>The event, in JSON format, to test against the event pattern. The JSON must
+     * follow the format specified in <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">AWS
+     * Events</a>, and the following fields are mandatory:</p> <ul> <li> <p>
+     * <code>id</code> </p> </li> <li> <p> <code>account</code> </p> </li> <li> <p>
+     * <code>source</code> </p> </li> <li> <p> <code>time</code> </p> </li> <li> <p>
+     * <code>region</code> </p> </li> <li> <p> <code>resources</code> </p> </li> <li>
+     * <p> <code>detail-type</code> </p> </li> </ul>
      */
     inline const Aws::String& GetEvent() const{ return m_event; }
 
     /**
-     * <p>The event, in JSON format, to test against the event pattern.</p>
+     * <p>The event, in JSON format, to test against the event pattern. The JSON must
+     * follow the format specified in <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">AWS
+     * Events</a>, and the following fields are mandatory:</p> <ul> <li> <p>
+     * <code>id</code> </p> </li> <li> <p> <code>account</code> </p> </li> <li> <p>
+     * <code>source</code> </p> </li> <li> <p> <code>time</code> </p> </li> <li> <p>
+     * <code>region</code> </p> </li> <li> <p> <code>resources</code> </p> </li> <li>
+     * <p> <code>detail-type</code> </p> </li> </ul>
      */
     inline bool EventHasBeenSet() const { return m_eventHasBeenSet; }
 
     /**
-     * <p>The event, in JSON format, to test against the event pattern.</p>
+     * <p>The event, in JSON format, to test against the event pattern. The JSON must
+     * follow the format specified in <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">AWS
+     * Events</a>, and the following fields are mandatory:</p> <ul> <li> <p>
+     * <code>id</code> </p> </li> <li> <p> <code>account</code> </p> </li> <li> <p>
+     * <code>source</code> </p> </li> <li> <p> <code>time</code> </p> </li> <li> <p>
+     * <code>region</code> </p> </li> <li> <p> <code>resources</code> </p> </li> <li>
+     * <p> <code>detail-type</code> </p> </li> </ul>
      */
     inline void SetEvent(const Aws::String& value) { m_eventHasBeenSet = true; m_event = value; }
 
     /**
-     * <p>The event, in JSON format, to test against the event pattern.</p>
+     * <p>The event, in JSON format, to test against the event pattern. The JSON must
+     * follow the format specified in <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">AWS
+     * Events</a>, and the following fields are mandatory:</p> <ul> <li> <p>
+     * <code>id</code> </p> </li> <li> <p> <code>account</code> </p> </li> <li> <p>
+     * <code>source</code> </p> </li> <li> <p> <code>time</code> </p> </li> <li> <p>
+     * <code>region</code> </p> </li> <li> <p> <code>resources</code> </p> </li> <li>
+     * <p> <code>detail-type</code> </p> </li> </ul>
      */
     inline void SetEvent(Aws::String&& value) { m_eventHasBeenSet = true; m_event = std::move(value); }
 
     /**
-     * <p>The event, in JSON format, to test against the event pattern.</p>
+     * <p>The event, in JSON format, to test against the event pattern. The JSON must
+     * follow the format specified in <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">AWS
+     * Events</a>, and the following fields are mandatory:</p> <ul> <li> <p>
+     * <code>id</code> </p> </li> <li> <p> <code>account</code> </p> </li> <li> <p>
+     * <code>source</code> </p> </li> <li> <p> <code>time</code> </p> </li> <li> <p>
+     * <code>region</code> </p> </li> <li> <p> <code>resources</code> </p> </li> <li>
+     * <p> <code>detail-type</code> </p> </li> </ul>
      */
     inline void SetEvent(const char* value) { m_eventHasBeenSet = true; m_event.assign(value); }
 
     /**
-     * <p>The event, in JSON format, to test against the event pattern.</p>
+     * <p>The event, in JSON format, to test against the event pattern. The JSON must
+     * follow the format specified in <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">AWS
+     * Events</a>, and the following fields are mandatory:</p> <ul> <li> <p>
+     * <code>id</code> </p> </li> <li> <p> <code>account</code> </p> </li> <li> <p>
+     * <code>source</code> </p> </li> <li> <p> <code>time</code> </p> </li> <li> <p>
+     * <code>region</code> </p> </li> <li> <p> <code>resources</code> </p> </li> <li>
+     * <p> <code>detail-type</code> </p> </li> </ul>
      */
     inline TestEventPatternRequest& WithEvent(const Aws::String& value) { SetEvent(value); return *this;}
 
     /**
-     * <p>The event, in JSON format, to test against the event pattern.</p>
+     * <p>The event, in JSON format, to test against the event pattern. The JSON must
+     * follow the format specified in <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">AWS
+     * Events</a>, and the following fields are mandatory:</p> <ul> <li> <p>
+     * <code>id</code> </p> </li> <li> <p> <code>account</code> </p> </li> <li> <p>
+     * <code>source</code> </p> </li> <li> <p> <code>time</code> </p> </li> <li> <p>
+     * <code>region</code> </p> </li> <li> <p> <code>resources</code> </p> </li> <li>
+     * <p> <code>detail-type</code> </p> </li> </ul>
      */
     inline TestEventPatternRequest& WithEvent(Aws::String&& value) { SetEvent(std::move(value)); return *this;}
 
     /**
-     * <p>The event, in JSON format, to test against the event pattern.</p>
+     * <p>The event, in JSON format, to test against the event pattern. The JSON must
+     * follow the format specified in <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">AWS
+     * Events</a>, and the following fields are mandatory:</p> <ul> <li> <p>
+     * <code>id</code> </p> </li> <li> <p> <code>account</code> </p> </li> <li> <p>
+     * <code>source</code> </p> </li> <li> <p> <code>time</code> </p> </li> <li> <p>
+     * <code>region</code> </p> </li> <li> <p> <code>resources</code> </p> </li> <li>
+     * <p> <code>detail-type</code> </p> </li> </ul>
      */
     inline TestEventPatternRequest& WithEvent(const char* value) { SetEvent(value); return *this;}
 

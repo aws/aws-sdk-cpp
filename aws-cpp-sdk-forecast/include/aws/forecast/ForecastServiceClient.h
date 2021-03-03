@@ -107,6 +107,7 @@ namespace Model
         class ListPredictorBacktestExportJobsRequest;
         class ListPredictorsRequest;
         class ListTagsForResourceRequest;
+        class StopResourceRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateDatasetGroupRequest;
@@ -141,6 +142,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListPredictorBacktestExportJobsResult, ForecastServiceError> ListPredictorBacktestExportJobsOutcome;
         typedef Aws::Utils::Outcome<ListPredictorsResult, ForecastServiceError> ListPredictorsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, ForecastServiceError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ForecastServiceError> StopResourceOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, ForecastServiceError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, ForecastServiceError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateDatasetGroupResult, ForecastServiceError> UpdateDatasetGroupOutcome;
@@ -175,6 +177,7 @@ namespace Model
         typedef std::future<ListPredictorBacktestExportJobsOutcome> ListPredictorBacktestExportJobsOutcomeCallable;
         typedef std::future<ListPredictorsOutcome> ListPredictorsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<StopResourceOutcome> StopResourceOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateDatasetGroupOutcome> UpdateDatasetGroupOutcomeCallable;
@@ -212,6 +215,7 @@ namespace Model
     typedef std::function<void(const ForecastServiceClient*, const Model::ListPredictorBacktestExportJobsRequest&, const Model::ListPredictorBacktestExportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPredictorBacktestExportJobsResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::ListPredictorsRequest&, const Model::ListPredictorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPredictorsResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const ForecastServiceClient*, const Model::StopResourceRequest&, const Model::StopResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopResourceResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::UpdateDatasetGroupRequest&, const Model::UpdateDatasetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDatasetGroupResponseReceivedHandler;
@@ -1735,6 +1739,49 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Stops a resource.</p> <p>The resource undergoes the following states:
+         * <code>CREATE_STOPPING</code> and <code>CREATE_STOPPED</code>. You cannot resume
+         * a resource once it has been stopped.</p> <p>This operation can be applied to the
+         * following resources (and their corresponding child resources):</p> <ul> <li>
+         * <p>Dataset Import Job</p> </li> <li> <p>Predictor Job</p> </li> <li> <p>Forecast
+         * Job</p> </li> <li> <p>Forecast Export Job</p> </li> <li> <p>Predictor Backtest
+         * Export Job</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/StopResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopResourceOutcome StopResource(const Model::StopResourceRequest& request) const;
+
+        /**
+         * <p>Stops a resource.</p> <p>The resource undergoes the following states:
+         * <code>CREATE_STOPPING</code> and <code>CREATE_STOPPED</code>. You cannot resume
+         * a resource once it has been stopped.</p> <p>This operation can be applied to the
+         * following resources (and their corresponding child resources):</p> <ul> <li>
+         * <p>Dataset Import Job</p> </li> <li> <p>Predictor Job</p> </li> <li> <p>Forecast
+         * Job</p> </li> <li> <p>Forecast Export Job</p> </li> <li> <p>Predictor Backtest
+         * Export Job</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/StopResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopResourceOutcomeCallable StopResourceCallable(const Model::StopResourceRequest& request) const;
+
+        /**
+         * <p>Stops a resource.</p> <p>The resource undergoes the following states:
+         * <code>CREATE_STOPPING</code> and <code>CREATE_STOPPED</code>. You cannot resume
+         * a resource once it has been stopped.</p> <p>This operation can be applied to the
+         * following resources (and their corresponding child resources):</p> <ul> <li>
+         * <p>Dataset Import Job</p> </li> <li> <p>Predictor Job</p> </li> <li> <p>Forecast
+         * Job</p> </li> <li> <p>Forecast Export Job</p> </li> <li> <p>Predictor Backtest
+         * Export Job</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/StopResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopResourceAsync(const Model::StopResourceRequest& request, const StopResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Associates the specified tags to a resource with the specified
          * <code>resourceArn</code>. If existing tags on a resource are not specified in
          * the request parameters, they are not changed. When a resource is deleted, the
@@ -1867,6 +1914,7 @@ namespace Model
         void ListPredictorBacktestExportJobsAsyncHelper(const Model::ListPredictorBacktestExportJobsRequest& request, const ListPredictorBacktestExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPredictorsAsyncHelper(const Model::ListPredictorsRequest& request, const ListPredictorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopResourceAsyncHelper(const Model::StopResourceRequest& request, const StopResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDatasetGroupAsyncHelper(const Model::UpdateDatasetGroupRequest& request, const UpdateDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

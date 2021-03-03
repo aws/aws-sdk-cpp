@@ -26,7 +26,9 @@ namespace Model
    * objects that Amazon Macie can't analyze in one or more S3 buckets. In a
    * BucketMetadata object, this data is for a specific bucket. In a
    * GetBucketStatisticsResponse object, this data is aggregated for all the buckets
-   * in the query results.</p><p><h3>See Also:</h3>   <a
+   * in the query results. If versioning is enabled for a bucket, total storage size
+   * values are based on the size of the latest version of each applicable object in
+   * the bucket.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ObjectLevelStatistics">AWS
    * API Reference</a></p>
    */

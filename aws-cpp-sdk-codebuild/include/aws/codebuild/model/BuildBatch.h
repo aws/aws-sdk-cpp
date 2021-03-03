@@ -1297,6 +1297,43 @@ namespace Model
      */
     inline BuildBatch& AddBuildGroups(BuildGroup&& value) { m_buildGroupsHasBeenSet = true; m_buildGroups.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p/> <p>Specifies if session debugging is enabled for this batch build. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing
+     * a running build in Session Manager</a>. Batch session debugging is not supported
+     * for matrix batch builds.</p>
+     */
+    inline bool GetDebugSessionEnabled() const{ return m_debugSessionEnabled; }
+
+    /**
+     * <p/> <p>Specifies if session debugging is enabled for this batch build. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing
+     * a running build in Session Manager</a>. Batch session debugging is not supported
+     * for matrix batch builds.</p>
+     */
+    inline bool DebugSessionEnabledHasBeenSet() const { return m_debugSessionEnabledHasBeenSet; }
+
+    /**
+     * <p/> <p>Specifies if session debugging is enabled for this batch build. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing
+     * a running build in Session Manager</a>. Batch session debugging is not supported
+     * for matrix batch builds.</p>
+     */
+    inline void SetDebugSessionEnabled(bool value) { m_debugSessionEnabledHasBeenSet = true; m_debugSessionEnabled = value; }
+
+    /**
+     * <p/> <p>Specifies if session debugging is enabled for this batch build. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing
+     * a running build in Session Manager</a>. Batch session debugging is not supported
+     * for matrix batch builds.</p>
+     */
+    inline BuildBatch& WithDebugSessionEnabled(bool value) { SetDebugSessionEnabled(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -1385,6 +1422,9 @@ namespace Model
 
     Aws::Vector<BuildGroup> m_buildGroups;
     bool m_buildGroupsHasBeenSet;
+
+    bool m_debugSessionEnabled;
+    bool m_debugSessionEnabledHasBeenSet;
   };
 
 } // namespace Model

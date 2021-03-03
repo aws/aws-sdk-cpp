@@ -55,8 +55,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
 
@@ -64,8 +63,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
 
@@ -73,8 +71,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
 
@@ -82,8 +79,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
 
@@ -91,8 +87,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
 
@@ -100,8 +95,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline CertificateDetail& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
 
@@ -109,8 +103,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline CertificateDetail& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
 
@@ -118,8 +111,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline CertificateDetail& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 
@@ -452,38 +444,32 @@ namespace Model
 
 
     /**
-     * <p>The time at which the certificate was requested. This value exists only when
-     * the certificate type is <code>AMAZON_ISSUED</code>. </p>
+     * <p>The time at which the certificate was requested.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The time at which the certificate was requested. This value exists only when
-     * the certificate type is <code>AMAZON_ISSUED</code>. </p>
+     * <p>The time at which the certificate was requested.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The time at which the certificate was requested. This value exists only when
-     * the certificate type is <code>AMAZON_ISSUED</code>. </p>
+     * <p>The time at which the certificate was requested.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The time at which the certificate was requested. This value exists only when
-     * the certificate type is <code>AMAZON_ISSUED</code>. </p>
+     * <p>The time at which the certificate was requested.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The time at which the certificate was requested. This value exists only when
-     * the certificate type is <code>AMAZON_ISSUED</code>. </p>
+     * <p>The time at which the certificate was requested.</p>
      */
     inline CertificateDetail& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The time at which the certificate was requested. This value exists only when
-     * the certificate type is <code>AMAZON_ISSUED</code>. </p>
+     * <p>The time at which the certificate was requested.</p>
      */
     inline CertificateDetail& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 

@@ -41,100 +41,108 @@ namespace Model
 
     /**
      * <p>The server-side encryption algorithm that's used when storing data in the
-     * bucket or object. If encryption is disabled for the bucket or object, this value
-     * is NONE.</p>
+     * bucket or object. If default encryption is disabled for the bucket or the object
+     * isn't encrypted using server-side encryption, this value is NONE.</p>
      */
     inline const EncryptionType& GetEncryptionType() const{ return m_encryptionType; }
 
     /**
      * <p>The server-side encryption algorithm that's used when storing data in the
-     * bucket or object. If encryption is disabled for the bucket or object, this value
-     * is NONE.</p>
+     * bucket or object. If default encryption is disabled for the bucket or the object
+     * isn't encrypted using server-side encryption, this value is NONE.</p>
      */
     inline bool EncryptionTypeHasBeenSet() const { return m_encryptionTypeHasBeenSet; }
 
     /**
      * <p>The server-side encryption algorithm that's used when storing data in the
-     * bucket or object. If encryption is disabled for the bucket or object, this value
-     * is NONE.</p>
+     * bucket or object. If default encryption is disabled for the bucket or the object
+     * isn't encrypted using server-side encryption, this value is NONE.</p>
      */
     inline void SetEncryptionType(const EncryptionType& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
 
     /**
      * <p>The server-side encryption algorithm that's used when storing data in the
-     * bucket or object. If encryption is disabled for the bucket or object, this value
-     * is NONE.</p>
+     * bucket or object. If default encryption is disabled for the bucket or the object
+     * isn't encrypted using server-side encryption, this value is NONE.</p>
      */
     inline void SetEncryptionType(EncryptionType&& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = std::move(value); }
 
     /**
      * <p>The server-side encryption algorithm that's used when storing data in the
-     * bucket or object. If encryption is disabled for the bucket or object, this value
-     * is NONE.</p>
+     * bucket or object. If default encryption is disabled for the bucket or the object
+     * isn't encrypted using server-side encryption, this value is NONE.</p>
      */
     inline ServerSideEncryption& WithEncryptionType(const EncryptionType& value) { SetEncryptionType(value); return *this;}
 
     /**
      * <p>The server-side encryption algorithm that's used when storing data in the
-     * bucket or object. If encryption is disabled for the bucket or object, this value
-     * is NONE.</p>
+     * bucket or object. If default encryption is disabled for the bucket or the object
+     * isn't encrypted using server-side encryption, this value is NONE.</p>
      */
     inline ServerSideEncryption& WithEncryptionType(EncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The unique identifier for the AWS Key Management Service (AWS KMS) master key
-     * that's used to encrypt the bucket or object. This value is null if AWS KMS isn't
-     * used to encrypt the bucket or object.</p>
+     * <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key
+     * Management Service (AWS KMS) customer master key (CMK) that's used to encrypt
+     * data in the bucket or the object. If an AWS KMS CMK isn't used, this value is
+     * null.</p>
      */
     inline const Aws::String& GetKmsMasterKeyId() const{ return m_kmsMasterKeyId; }
 
     /**
-     * <p>The unique identifier for the AWS Key Management Service (AWS KMS) master key
-     * that's used to encrypt the bucket or object. This value is null if AWS KMS isn't
-     * used to encrypt the bucket or object.</p>
+     * <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key
+     * Management Service (AWS KMS) customer master key (CMK) that's used to encrypt
+     * data in the bucket or the object. If an AWS KMS CMK isn't used, this value is
+     * null.</p>
      */
     inline bool KmsMasterKeyIdHasBeenSet() const { return m_kmsMasterKeyIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the AWS Key Management Service (AWS KMS) master key
-     * that's used to encrypt the bucket or object. This value is null if AWS KMS isn't
-     * used to encrypt the bucket or object.</p>
+     * <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key
+     * Management Service (AWS KMS) customer master key (CMK) that's used to encrypt
+     * data in the bucket or the object. If an AWS KMS CMK isn't used, this value is
+     * null.</p>
      */
     inline void SetKmsMasterKeyId(const Aws::String& value) { m_kmsMasterKeyIdHasBeenSet = true; m_kmsMasterKeyId = value; }
 
     /**
-     * <p>The unique identifier for the AWS Key Management Service (AWS KMS) master key
-     * that's used to encrypt the bucket or object. This value is null if AWS KMS isn't
-     * used to encrypt the bucket or object.</p>
+     * <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key
+     * Management Service (AWS KMS) customer master key (CMK) that's used to encrypt
+     * data in the bucket or the object. If an AWS KMS CMK isn't used, this value is
+     * null.</p>
      */
     inline void SetKmsMasterKeyId(Aws::String&& value) { m_kmsMasterKeyIdHasBeenSet = true; m_kmsMasterKeyId = std::move(value); }
 
     /**
-     * <p>The unique identifier for the AWS Key Management Service (AWS KMS) master key
-     * that's used to encrypt the bucket or object. This value is null if AWS KMS isn't
-     * used to encrypt the bucket or object.</p>
+     * <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key
+     * Management Service (AWS KMS) customer master key (CMK) that's used to encrypt
+     * data in the bucket or the object. If an AWS KMS CMK isn't used, this value is
+     * null.</p>
      */
     inline void SetKmsMasterKeyId(const char* value) { m_kmsMasterKeyIdHasBeenSet = true; m_kmsMasterKeyId.assign(value); }
 
     /**
-     * <p>The unique identifier for the AWS Key Management Service (AWS KMS) master key
-     * that's used to encrypt the bucket or object. This value is null if AWS KMS isn't
-     * used to encrypt the bucket or object.</p>
+     * <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key
+     * Management Service (AWS KMS) customer master key (CMK) that's used to encrypt
+     * data in the bucket or the object. If an AWS KMS CMK isn't used, this value is
+     * null.</p>
      */
     inline ServerSideEncryption& WithKmsMasterKeyId(const Aws::String& value) { SetKmsMasterKeyId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the AWS Key Management Service (AWS KMS) master key
-     * that's used to encrypt the bucket or object. This value is null if AWS KMS isn't
-     * used to encrypt the bucket or object.</p>
+     * <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key
+     * Management Service (AWS KMS) customer master key (CMK) that's used to encrypt
+     * data in the bucket or the object. If an AWS KMS CMK isn't used, this value is
+     * null.</p>
      */
     inline ServerSideEncryption& WithKmsMasterKeyId(Aws::String&& value) { SetKmsMasterKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the AWS Key Management Service (AWS KMS) master key
-     * that's used to encrypt the bucket or object. This value is null if AWS KMS isn't
-     * used to encrypt the bucket or object.</p>
+     * <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key
+     * Management Service (AWS KMS) customer master key (CMK) that's used to encrypt
+     * data in the bucket or the object. If an AWS KMS CMK isn't used, this value is
+     * null.</p>
      */
     inline ServerSideEncryption& WithKmsMasterKeyId(const char* value) { SetKmsMasterKeyId(value); return *this;}
 

@@ -115,64 +115,64 @@ namespace Model
     /**
      * <p>Specifies which accounts to include in the response, based on the status of
      * an account's relationship with the administrator account. By default, the
-     * response includes only current member accounts. To include all accounts, set the
-     * value for this parameter to false.</p>
+     * response includes only current member accounts. To include all accounts, set
+     * this value to false.</p>
      */
     inline const Aws::String& GetOnlyAssociated() const{ return m_onlyAssociated; }
 
     /**
      * <p>Specifies which accounts to include in the response, based on the status of
      * an account's relationship with the administrator account. By default, the
-     * response includes only current member accounts. To include all accounts, set the
-     * value for this parameter to false.</p>
+     * response includes only current member accounts. To include all accounts, set
+     * this value to false.</p>
      */
     inline bool OnlyAssociatedHasBeenSet() const { return m_onlyAssociatedHasBeenSet; }
 
     /**
      * <p>Specifies which accounts to include in the response, based on the status of
      * an account's relationship with the administrator account. By default, the
-     * response includes only current member accounts. To include all accounts, set the
-     * value for this parameter to false.</p>
+     * response includes only current member accounts. To include all accounts, set
+     * this value to false.</p>
      */
     inline void SetOnlyAssociated(const Aws::String& value) { m_onlyAssociatedHasBeenSet = true; m_onlyAssociated = value; }
 
     /**
      * <p>Specifies which accounts to include in the response, based on the status of
      * an account's relationship with the administrator account. By default, the
-     * response includes only current member accounts. To include all accounts, set the
-     * value for this parameter to false.</p>
+     * response includes only current member accounts. To include all accounts, set
+     * this value to false.</p>
      */
     inline void SetOnlyAssociated(Aws::String&& value) { m_onlyAssociatedHasBeenSet = true; m_onlyAssociated = std::move(value); }
 
     /**
      * <p>Specifies which accounts to include in the response, based on the status of
      * an account's relationship with the administrator account. By default, the
-     * response includes only current member accounts. To include all accounts, set the
-     * value for this parameter to false.</p>
+     * response includes only current member accounts. To include all accounts, set
+     * this value to false.</p>
      */
     inline void SetOnlyAssociated(const char* value) { m_onlyAssociatedHasBeenSet = true; m_onlyAssociated.assign(value); }
 
     /**
      * <p>Specifies which accounts to include in the response, based on the status of
      * an account's relationship with the administrator account. By default, the
-     * response includes only current member accounts. To include all accounts, set the
-     * value for this parameter to false.</p>
+     * response includes only current member accounts. To include all accounts, set
+     * this value to false.</p>
      */
     inline ListMembersRequest& WithOnlyAssociated(const Aws::String& value) { SetOnlyAssociated(value); return *this;}
 
     /**
      * <p>Specifies which accounts to include in the response, based on the status of
      * an account's relationship with the administrator account. By default, the
-     * response includes only current member accounts. To include all accounts, set the
-     * value for this parameter to false.</p>
+     * response includes only current member accounts. To include all accounts, set
+     * this value to false.</p>
      */
     inline ListMembersRequest& WithOnlyAssociated(Aws::String&& value) { SetOnlyAssociated(std::move(value)); return *this;}
 
     /**
      * <p>Specifies which accounts to include in the response, based on the status of
      * an account's relationship with the administrator account. By default, the
-     * response includes only current member accounts. To include all accounts, set the
-     * value for this parameter to false.</p>
+     * response includes only current member accounts. To include all accounts, set
+     * this value to false.</p>
      */
     inline ListMembersRequest& WithOnlyAssociated(const char* value) { SetOnlyAssociated(value); return *this;}
 

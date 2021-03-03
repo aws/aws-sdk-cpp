@@ -28,6 +28,7 @@
 #include <aws/acm/model/ImportCertificateRequest.h>
 #include <aws/acm/model/ListCertificatesRequest.h>
 #include <aws/acm/model/ListTagsForCertificateRequest.h>
+#include <aws/acm/model/PutAccountConfigurationRequest.h>
 #include <aws/acm/model/RemoveTagsFromCertificateRequest.h>
 #include <aws/acm/model/RenewCertificateRequest.h>
 #include <aws/acm/model/RequestCertificateRequest.h>
@@ -215,6 +216,31 @@ void ACMClient::ExportCertificateAsyncHelper(const ExportCertificateRequest& req
   handler(this, request, ExportCertificate(request), context);
 }
 
+GetAccountConfigurationOutcome ACMClient::GetAccountConfiguration() const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  return GetAccountConfigurationOutcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "GetAccountConfiguration"));
+}
+
+GetAccountConfigurationOutcomeCallable ACMClient::GetAccountConfigurationCallable() const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAccountConfigurationOutcome() > >(ALLOCATION_TAG, [this](){ return this->GetAccountConfiguration(); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ACMClient::GetAccountConfigurationAsync(const GetAccountConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, handler, context](){ this->GetAccountConfigurationAsyncHelper( handler, context ); } );
+}
+
+void ACMClient::GetAccountConfigurationAsyncHelper(const GetAccountConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, GetAccountConfiguration(), context);
+}
+
 GetCertificateOutcome ACMClient::GetCertificate(const GetCertificateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -321,6 +347,33 @@ void ACMClient::ListTagsForCertificateAsync(const ListTagsForCertificateRequest&
 void ACMClient::ListTagsForCertificateAsyncHelper(const ListTagsForCertificateRequest& request, const ListTagsForCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForCertificate(request), context);
+}
+
+PutAccountConfigurationOutcome ACMClient::PutAccountConfiguration(const PutAccountConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return PutAccountConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutAccountConfigurationOutcomeCallable ACMClient::PutAccountConfigurationCallable(const PutAccountConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutAccountConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutAccountConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ACMClient::PutAccountConfigurationAsync(const PutAccountConfigurationRequest& request, const PutAccountConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutAccountConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void ACMClient::PutAccountConfigurationAsyncHelper(const PutAccountConfigurationRequest& request, const PutAccountConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutAccountConfiguration(request), context);
 }
 
 RemoveTagsFromCertificateOutcome ACMClient::RemoveTagsFromCertificate(const RemoveTagsFromCertificateRequest& request) const

@@ -39,42 +39,58 @@ namespace Model
 
 
     /**
-     * <p>An identifier for a source in the build project.</p>
+     * <p>An identifier for a source in the build project. The identifier can only
+     * contain alphanumeric characters and underscores, and must be less than 128
+     * characters in length. </p>
      */
     inline const Aws::String& GetSourceIdentifier() const{ return m_sourceIdentifier; }
 
     /**
-     * <p>An identifier for a source in the build project.</p>
+     * <p>An identifier for a source in the build project. The identifier can only
+     * contain alphanumeric characters and underscores, and must be less than 128
+     * characters in length. </p>
      */
     inline bool SourceIdentifierHasBeenSet() const { return m_sourceIdentifierHasBeenSet; }
 
     /**
-     * <p>An identifier for a source in the build project.</p>
+     * <p>An identifier for a source in the build project. The identifier can only
+     * contain alphanumeric characters and underscores, and must be less than 128
+     * characters in length. </p>
      */
     inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
     /**
-     * <p>An identifier for a source in the build project.</p>
+     * <p>An identifier for a source in the build project. The identifier can only
+     * contain alphanumeric characters and underscores, and must be less than 128
+     * characters in length. </p>
      */
     inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = std::move(value); }
 
     /**
-     * <p>An identifier for a source in the build project.</p>
+     * <p>An identifier for a source in the build project. The identifier can only
+     * contain alphanumeric characters and underscores, and must be less than 128
+     * characters in length. </p>
      */
     inline void SetSourceIdentifier(const char* value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier.assign(value); }
 
     /**
-     * <p>An identifier for a source in the build project.</p>
+     * <p>An identifier for a source in the build project. The identifier can only
+     * contain alphanumeric characters and underscores, and must be less than 128
+     * characters in length. </p>
      */
     inline ProjectSourceVersion& WithSourceIdentifier(const Aws::String& value) { SetSourceIdentifier(value); return *this;}
 
     /**
-     * <p>An identifier for a source in the build project.</p>
+     * <p>An identifier for a source in the build project. The identifier can only
+     * contain alphanumeric characters and underscores, and must be less than 128
+     * characters in length. </p>
      */
     inline ProjectSourceVersion& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>An identifier for a source in the build project.</p>
+     * <p>An identifier for a source in the build project. The identifier can only
+     * contain alphanumeric characters and underscores, and must be less than 128
+     * characters in length. </p>
      */
     inline ProjectSourceVersion& WithSourceIdentifier(const char* value) { SetSourceIdentifier(value); return *this;}
 

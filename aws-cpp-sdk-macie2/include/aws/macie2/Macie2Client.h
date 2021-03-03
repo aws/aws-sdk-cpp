@@ -887,7 +887,9 @@ namespace Model
 
         /**
          * <p>(Deprecated) Disassociates a member account from its Amazon Macie
-         * administrator account.</p><p><h3>See Also:</h3>   <a
+         * administrator account. This operation has been replaced by the <link 
+         * linkend="DisassociateFromAdministratorAccount">DisassociateFromAdministratorAccount</link>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateFromMasterAccount">AWS
          * API Reference</a></p>
          */
@@ -895,7 +897,9 @@ namespace Model
 
         /**
          * <p>(Deprecated) Disassociates a member account from its Amazon Macie
-         * administrator account.</p><p><h3>See Also:</h3>   <a
+         * administrator account. This operation has been replaced by the <link 
+         * linkend="DisassociateFromAdministratorAccount">DisassociateFromAdministratorAccount</link>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateFromMasterAccount">AWS
          * API Reference</a></p>
          *
@@ -905,7 +909,9 @@ namespace Model
 
         /**
          * <p>(Deprecated) Disassociates a member account from its Amazon Macie
-         * administrator account.</p><p><h3>See Also:</h3>   <a
+         * administrator account. This operation has been replaced by the <link 
+         * linkend="DisassociateFromAdministratorAccount">DisassociateFromAdministratorAccount</link>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateFromMasterAccount">AWS
          * API Reference</a></p>
          *
@@ -1248,7 +1254,9 @@ namespace Model
 
         /**
          * <p>(Deprecated) Retrieves information about the Amazon Macie administrator
-         * account for an account.</p><p><h3>See Also:</h3>   <a
+         * account for an account. This operation has been replaced by the <link 
+         * linkend="GetAdministratorAccount">GetAdministratorAccount</link>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMasterAccount">AWS
          * API Reference</a></p>
          */
@@ -1256,7 +1264,9 @@ namespace Model
 
         /**
          * <p>(Deprecated) Retrieves information about the Amazon Macie administrator
-         * account for an account.</p><p><h3>See Also:</h3>   <a
+         * account for an account. This operation has been replaced by the <link 
+         * linkend="GetAdministratorAccount">GetAdministratorAccount</link>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMasterAccount">AWS
          * API Reference</a></p>
          *
@@ -1266,7 +1276,9 @@ namespace Model
 
         /**
          * <p>(Deprecated) Retrieves information about the Amazon Macie administrator
-         * account for an account.</p><p><h3>See Also:</h3>   <a
+         * account for an account. This operation has been replaced by the <link 
+         * linkend="GetAdministratorAccount">GetAdministratorAccount</link>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMasterAccount">AWS
          * API Reference</a></p>
          *

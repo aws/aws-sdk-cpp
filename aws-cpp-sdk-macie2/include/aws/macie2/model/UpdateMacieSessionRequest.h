@@ -77,44 +77,44 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether to change the status of the account. Valid values are:
-     * ENABLED, resume all Amazon Macie activities for the account; and, PAUSED,
-     * suspend all Macie activities for the account.</p>
+     * <p>Specifies a new status for the account. Valid values are: ENABLED, resume all
+     * Amazon Macie activities for the account; and, PAUSED, suspend all Macie
+     * activities for the account.</p>
      */
     inline const MacieStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Specifies whether to change the status of the account. Valid values are:
-     * ENABLED, resume all Amazon Macie activities for the account; and, PAUSED,
-     * suspend all Macie activities for the account.</p>
+     * <p>Specifies a new status for the account. Valid values are: ENABLED, resume all
+     * Amazon Macie activities for the account; and, PAUSED, suspend all Macie
+     * activities for the account.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>Specifies whether to change the status of the account. Valid values are:
-     * ENABLED, resume all Amazon Macie activities for the account; and, PAUSED,
-     * suspend all Macie activities for the account.</p>
+     * <p>Specifies a new status for the account. Valid values are: ENABLED, resume all
+     * Amazon Macie activities for the account; and, PAUSED, suspend all Macie
+     * activities for the account.</p>
      */
     inline void SetStatus(const MacieStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Specifies whether to change the status of the account. Valid values are:
-     * ENABLED, resume all Amazon Macie activities for the account; and, PAUSED,
-     * suspend all Macie activities for the account.</p>
+     * <p>Specifies a new status for the account. Valid values are: ENABLED, resume all
+     * Amazon Macie activities for the account; and, PAUSED, suspend all Macie
+     * activities for the account.</p>
      */
     inline void SetStatus(MacieStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>Specifies whether to change the status of the account. Valid values are:
-     * ENABLED, resume all Amazon Macie activities for the account; and, PAUSED,
-     * suspend all Macie activities for the account.</p>
+     * <p>Specifies a new status for the account. Valid values are: ENABLED, resume all
+     * Amazon Macie activities for the account; and, PAUSED, suspend all Macie
+     * activities for the account.</p>
      */
     inline UpdateMacieSessionRequest& WithStatus(const MacieStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Specifies whether to change the status of the account. Valid values are:
-     * ENABLED, resume all Amazon Macie activities for the account; and, PAUSED,
-     * suspend all Macie activities for the account.</p>
+     * <p>Specifies a new status for the account. Valid values are: ENABLED, resume all
+     * Amazon Macie activities for the account; and, PAUSED, suspend all Macie
+     * activities for the account.</p>
      */
     inline UpdateMacieSessionRequest& WithStatus(MacieStatus&& value) { SetStatus(std::move(value)); return *this;}
 

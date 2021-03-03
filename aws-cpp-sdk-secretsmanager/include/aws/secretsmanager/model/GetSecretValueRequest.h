@@ -213,11 +213,11 @@ namespace Model
 
     /**
      * <p>Specifies the unique identifier of the version of the secret that you want to
-     * retrieve. If you specify this parameter then don't specify
-     * <code>VersionStage</code>. If you don't specify either a
-     * <code>VersionStage</code> or <code>VersionId</code> then the default is to
-     * perform the operation on the version with the <code>VersionStage</code> value of
-     * <code>AWSCURRENT</code>.</p> <p>This value is typically a <a
+     * retrieve. If you specify both this parameter and <code>VersionStage</code>, the
+     * two parameters must refer to the same secret version. If you don't specify
+     * either a <code>VersionStage</code> or <code>VersionId</code> then the default is
+     * to perform the operation on the version with the <code>VersionStage</code> value
+     * of <code>AWSCURRENT</code>.</p> <p>This value is typically a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value with 32 hexadecimal digits.</p>
      */
@@ -225,11 +225,11 @@ namespace Model
 
     /**
      * <p>Specifies the unique identifier of the version of the secret that you want to
-     * retrieve. If you specify this parameter then don't specify
-     * <code>VersionStage</code>. If you don't specify either a
-     * <code>VersionStage</code> or <code>VersionId</code> then the default is to
-     * perform the operation on the version with the <code>VersionStage</code> value of
-     * <code>AWSCURRENT</code>.</p> <p>This value is typically a <a
+     * retrieve. If you specify both this parameter and <code>VersionStage</code>, the
+     * two parameters must refer to the same secret version. If you don't specify
+     * either a <code>VersionStage</code> or <code>VersionId</code> then the default is
+     * to perform the operation on the version with the <code>VersionStage</code> value
+     * of <code>AWSCURRENT</code>.</p> <p>This value is typically a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value with 32 hexadecimal digits.</p>
      */
@@ -237,11 +237,11 @@ namespace Model
 
     /**
      * <p>Specifies the unique identifier of the version of the secret that you want to
-     * retrieve. If you specify this parameter then don't specify
-     * <code>VersionStage</code>. If you don't specify either a
-     * <code>VersionStage</code> or <code>VersionId</code> then the default is to
-     * perform the operation on the version with the <code>VersionStage</code> value of
-     * <code>AWSCURRENT</code>.</p> <p>This value is typically a <a
+     * retrieve. If you specify both this parameter and <code>VersionStage</code>, the
+     * two parameters must refer to the same secret version. If you don't specify
+     * either a <code>VersionStage</code> or <code>VersionId</code> then the default is
+     * to perform the operation on the version with the <code>VersionStage</code> value
+     * of <code>AWSCURRENT</code>.</p> <p>This value is typically a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value with 32 hexadecimal digits.</p>
      */
@@ -249,11 +249,11 @@ namespace Model
 
     /**
      * <p>Specifies the unique identifier of the version of the secret that you want to
-     * retrieve. If you specify this parameter then don't specify
-     * <code>VersionStage</code>. If you don't specify either a
-     * <code>VersionStage</code> or <code>VersionId</code> then the default is to
-     * perform the operation on the version with the <code>VersionStage</code> value of
-     * <code>AWSCURRENT</code>.</p> <p>This value is typically a <a
+     * retrieve. If you specify both this parameter and <code>VersionStage</code>, the
+     * two parameters must refer to the same secret version. If you don't specify
+     * either a <code>VersionStage</code> or <code>VersionId</code> then the default is
+     * to perform the operation on the version with the <code>VersionStage</code> value
+     * of <code>AWSCURRENT</code>.</p> <p>This value is typically a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value with 32 hexadecimal digits.</p>
      */
@@ -261,11 +261,11 @@ namespace Model
 
     /**
      * <p>Specifies the unique identifier of the version of the secret that you want to
-     * retrieve. If you specify this parameter then don't specify
-     * <code>VersionStage</code>. If you don't specify either a
-     * <code>VersionStage</code> or <code>VersionId</code> then the default is to
-     * perform the operation on the version with the <code>VersionStage</code> value of
-     * <code>AWSCURRENT</code>.</p> <p>This value is typically a <a
+     * retrieve. If you specify both this parameter and <code>VersionStage</code>, the
+     * two parameters must refer to the same secret version. If you don't specify
+     * either a <code>VersionStage</code> or <code>VersionId</code> then the default is
+     * to perform the operation on the version with the <code>VersionStage</code> value
+     * of <code>AWSCURRENT</code>.</p> <p>This value is typically a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value with 32 hexadecimal digits.</p>
      */
@@ -273,11 +273,11 @@ namespace Model
 
     /**
      * <p>Specifies the unique identifier of the version of the secret that you want to
-     * retrieve. If you specify this parameter then don't specify
-     * <code>VersionStage</code>. If you don't specify either a
-     * <code>VersionStage</code> or <code>VersionId</code> then the default is to
-     * perform the operation on the version with the <code>VersionStage</code> value of
-     * <code>AWSCURRENT</code>.</p> <p>This value is typically a <a
+     * retrieve. If you specify both this parameter and <code>VersionStage</code>, the
+     * two parameters must refer to the same secret version. If you don't specify
+     * either a <code>VersionStage</code> or <code>VersionId</code> then the default is
+     * to perform the operation on the version with the <code>VersionStage</code> value
+     * of <code>AWSCURRENT</code>.</p> <p>This value is typically a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value with 32 hexadecimal digits.</p>
      */
@@ -285,11 +285,11 @@ namespace Model
 
     /**
      * <p>Specifies the unique identifier of the version of the secret that you want to
-     * retrieve. If you specify this parameter then don't specify
-     * <code>VersionStage</code>. If you don't specify either a
-     * <code>VersionStage</code> or <code>VersionId</code> then the default is to
-     * perform the operation on the version with the <code>VersionStage</code> value of
-     * <code>AWSCURRENT</code>.</p> <p>This value is typically a <a
+     * retrieve. If you specify both this parameter and <code>VersionStage</code>, the
+     * two parameters must refer to the same secret version. If you don't specify
+     * either a <code>VersionStage</code> or <code>VersionId</code> then the default is
+     * to perform the operation on the version with the <code>VersionStage</code> value
+     * of <code>AWSCURRENT</code>.</p> <p>This value is typically a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value with 32 hexadecimal digits.</p>
      */
@@ -297,11 +297,11 @@ namespace Model
 
     /**
      * <p>Specifies the unique identifier of the version of the secret that you want to
-     * retrieve. If you specify this parameter then don't specify
-     * <code>VersionStage</code>. If you don't specify either a
-     * <code>VersionStage</code> or <code>VersionId</code> then the default is to
-     * perform the operation on the version with the <code>VersionStage</code> value of
-     * <code>AWSCURRENT</code>.</p> <p>This value is typically a <a
+     * retrieve. If you specify both this parameter and <code>VersionStage</code>, the
+     * two parameters must refer to the same secret version. If you don't specify
+     * either a <code>VersionStage</code> or <code>VersionId</code> then the default is
+     * to perform the operation on the version with the <code>VersionStage</code> value
+     * of <code>AWSCURRENT</code>.</p> <p>This value is typically a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value with 32 hexadecimal digits.</p>
      */
@@ -311,88 +311,88 @@ namespace Model
     /**
      * <p>Specifies the secret version that you want to retrieve by the staging label
      * attached to the version.</p> <p>Staging labels are used to keep track of
-     * different versions during the rotation process. If you use this parameter then
-     * don't specify <code>VersionId</code>. If you don't specify either a
-     * <code>VersionStage</code> or <code>VersionId</code>, then the default is to
-     * perform the operation on the version with the <code>VersionStage</code> value of
-     * <code>AWSCURRENT</code>.</p>
+     * different versions during the rotation process. If you specify both this
+     * parameter and <code>VersionId</code>, the two parameters must refer to the same
+     * secret version . If you don't specify either a <code>VersionStage</code> or
+     * <code>VersionId</code>, then the default is to perform the operation on the
+     * version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
      */
     inline const Aws::String& GetVersionStage() const{ return m_versionStage; }
 
     /**
      * <p>Specifies the secret version that you want to retrieve by the staging label
      * attached to the version.</p> <p>Staging labels are used to keep track of
-     * different versions during the rotation process. If you use this parameter then
-     * don't specify <code>VersionId</code>. If you don't specify either a
-     * <code>VersionStage</code> or <code>VersionId</code>, then the default is to
-     * perform the operation on the version with the <code>VersionStage</code> value of
-     * <code>AWSCURRENT</code>.</p>
+     * different versions during the rotation process. If you specify both this
+     * parameter and <code>VersionId</code>, the two parameters must refer to the same
+     * secret version . If you don't specify either a <code>VersionStage</code> or
+     * <code>VersionId</code>, then the default is to perform the operation on the
+     * version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
      */
     inline bool VersionStageHasBeenSet() const { return m_versionStageHasBeenSet; }
 
     /**
      * <p>Specifies the secret version that you want to retrieve by the staging label
      * attached to the version.</p> <p>Staging labels are used to keep track of
-     * different versions during the rotation process. If you use this parameter then
-     * don't specify <code>VersionId</code>. If you don't specify either a
-     * <code>VersionStage</code> or <code>VersionId</code>, then the default is to
-     * perform the operation on the version with the <code>VersionStage</code> value of
-     * <code>AWSCURRENT</code>.</p>
+     * different versions during the rotation process. If you specify both this
+     * parameter and <code>VersionId</code>, the two parameters must refer to the same
+     * secret version . If you don't specify either a <code>VersionStage</code> or
+     * <code>VersionId</code>, then the default is to perform the operation on the
+     * version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
      */
     inline void SetVersionStage(const Aws::String& value) { m_versionStageHasBeenSet = true; m_versionStage = value; }
 
     /**
      * <p>Specifies the secret version that you want to retrieve by the staging label
      * attached to the version.</p> <p>Staging labels are used to keep track of
-     * different versions during the rotation process. If you use this parameter then
-     * don't specify <code>VersionId</code>. If you don't specify either a
-     * <code>VersionStage</code> or <code>VersionId</code>, then the default is to
-     * perform the operation on the version with the <code>VersionStage</code> value of
-     * <code>AWSCURRENT</code>.</p>
+     * different versions during the rotation process. If you specify both this
+     * parameter and <code>VersionId</code>, the two parameters must refer to the same
+     * secret version . If you don't specify either a <code>VersionStage</code> or
+     * <code>VersionId</code>, then the default is to perform the operation on the
+     * version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
      */
     inline void SetVersionStage(Aws::String&& value) { m_versionStageHasBeenSet = true; m_versionStage = std::move(value); }
 
     /**
      * <p>Specifies the secret version that you want to retrieve by the staging label
      * attached to the version.</p> <p>Staging labels are used to keep track of
-     * different versions during the rotation process. If you use this parameter then
-     * don't specify <code>VersionId</code>. If you don't specify either a
-     * <code>VersionStage</code> or <code>VersionId</code>, then the default is to
-     * perform the operation on the version with the <code>VersionStage</code> value of
-     * <code>AWSCURRENT</code>.</p>
+     * different versions during the rotation process. If you specify both this
+     * parameter and <code>VersionId</code>, the two parameters must refer to the same
+     * secret version . If you don't specify either a <code>VersionStage</code> or
+     * <code>VersionId</code>, then the default is to perform the operation on the
+     * version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
      */
     inline void SetVersionStage(const char* value) { m_versionStageHasBeenSet = true; m_versionStage.assign(value); }
 
     /**
      * <p>Specifies the secret version that you want to retrieve by the staging label
      * attached to the version.</p> <p>Staging labels are used to keep track of
-     * different versions during the rotation process. If you use this parameter then
-     * don't specify <code>VersionId</code>. If you don't specify either a
-     * <code>VersionStage</code> or <code>VersionId</code>, then the default is to
-     * perform the operation on the version with the <code>VersionStage</code> value of
-     * <code>AWSCURRENT</code>.</p>
+     * different versions during the rotation process. If you specify both this
+     * parameter and <code>VersionId</code>, the two parameters must refer to the same
+     * secret version . If you don't specify either a <code>VersionStage</code> or
+     * <code>VersionId</code>, then the default is to perform the operation on the
+     * version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
      */
     inline GetSecretValueRequest& WithVersionStage(const Aws::String& value) { SetVersionStage(value); return *this;}
 
     /**
      * <p>Specifies the secret version that you want to retrieve by the staging label
      * attached to the version.</p> <p>Staging labels are used to keep track of
-     * different versions during the rotation process. If you use this parameter then
-     * don't specify <code>VersionId</code>. If you don't specify either a
-     * <code>VersionStage</code> or <code>VersionId</code>, then the default is to
-     * perform the operation on the version with the <code>VersionStage</code> value of
-     * <code>AWSCURRENT</code>.</p>
+     * different versions during the rotation process. If you specify both this
+     * parameter and <code>VersionId</code>, the two parameters must refer to the same
+     * secret version . If you don't specify either a <code>VersionStage</code> or
+     * <code>VersionId</code>, then the default is to perform the operation on the
+     * version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
      */
     inline GetSecretValueRequest& WithVersionStage(Aws::String&& value) { SetVersionStage(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the secret version that you want to retrieve by the staging label
      * attached to the version.</p> <p>Staging labels are used to keep track of
-     * different versions during the rotation process. If you use this parameter then
-     * don't specify <code>VersionId</code>. If you don't specify either a
-     * <code>VersionStage</code> or <code>VersionId</code>, then the default is to
-     * perform the operation on the version with the <code>VersionStage</code> value of
-     * <code>AWSCURRENT</code>.</p>
+     * different versions during the rotation process. If you specify both this
+     * parameter and <code>VersionId</code>, the two parameters must refer to the same
+     * secret version . If you don't specify either a <code>VersionStage</code> or
+     * <code>VersionId</code>, then the default is to perform the operation on the
+     * version with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
      */
     inline GetSecretValueRequest& WithVersionStage(const char* value) { SetVersionStage(value); return *this;}
 

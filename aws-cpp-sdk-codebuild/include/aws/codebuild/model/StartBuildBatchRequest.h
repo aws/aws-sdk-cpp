@@ -1568,6 +1568,43 @@ namespace Model
      */
     inline StartBuildBatchRequest& WithBuildBatchConfigOverride(ProjectBuildBatchConfig&& value) { SetBuildBatchConfigOverride(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies if session debugging is enabled for this batch build. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing
+     * a running build in Session Manager</a>. Batch session debugging is not supported
+     * for matrix batch builds.</p>
+     */
+    inline bool GetDebugSessionEnabled() const{ return m_debugSessionEnabled; }
+
+    /**
+     * <p>Specifies if session debugging is enabled for this batch build. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing
+     * a running build in Session Manager</a>. Batch session debugging is not supported
+     * for matrix batch builds.</p>
+     */
+    inline bool DebugSessionEnabledHasBeenSet() const { return m_debugSessionEnabledHasBeenSet; }
+
+    /**
+     * <p>Specifies if session debugging is enabled for this batch build. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing
+     * a running build in Session Manager</a>. Batch session debugging is not supported
+     * for matrix batch builds.</p>
+     */
+    inline void SetDebugSessionEnabled(bool value) { m_debugSessionEnabledHasBeenSet = true; m_debugSessionEnabled = value; }
+
+    /**
+     * <p>Specifies if session debugging is enabled for this batch build. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing
+     * a running build in Session Manager</a>. Batch session debugging is not supported
+     * for matrix batch builds.</p>
+     */
+    inline StartBuildBatchRequest& WithDebugSessionEnabled(bool value) { SetDebugSessionEnabled(value); return *this;}
+
   private:
 
     Aws::String m_projectName;
@@ -1659,6 +1696,9 @@ namespace Model
 
     ProjectBuildBatchConfig m_buildBatchConfigOverride;
     bool m_buildBatchConfigOverrideHasBeenSet;
+
+    bool m_debugSessionEnabled;
+    bool m_debugSessionEnabledHasBeenSet;
   };
 
 } // namespace Model

@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Allows you to filter your list of secrets.</p><p><h3>See Also:</h3>   <a
+   * <p>Allows you to add filters when you use the search function in Secrets
+   * Manager.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/Filter">AWS
    * API Reference</a></p>
    */
@@ -71,47 +72,65 @@ namespace Model
 
 
     /**
-     * <p>Filters your list of secrets by a specific value.</p>
+     * <p>Filters your list of secrets by a specific value.</p> <p>You can prefix your
+     * search value with an exclamation mark (<code>!</code>) in order to perform
+     * negation filters. </p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
 
     /**
-     * <p>Filters your list of secrets by a specific value.</p>
+     * <p>Filters your list of secrets by a specific value.</p> <p>You can prefix your
+     * search value with an exclamation mark (<code>!</code>) in order to perform
+     * negation filters. </p>
      */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
-     * <p>Filters your list of secrets by a specific value.</p>
+     * <p>Filters your list of secrets by a specific value.</p> <p>You can prefix your
+     * search value with an exclamation mark (<code>!</code>) in order to perform
+     * negation filters. </p>
      */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**
-     * <p>Filters your list of secrets by a specific value.</p>
+     * <p>Filters your list of secrets by a specific value.</p> <p>You can prefix your
+     * search value with an exclamation mark (<code>!</code>) in order to perform
+     * negation filters. </p>
      */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
-     * <p>Filters your list of secrets by a specific value.</p>
+     * <p>Filters your list of secrets by a specific value.</p> <p>You can prefix your
+     * search value with an exclamation mark (<code>!</code>) in order to perform
+     * negation filters. </p>
      */
     inline Filter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
 
     /**
-     * <p>Filters your list of secrets by a specific value.</p>
+     * <p>Filters your list of secrets by a specific value.</p> <p>You can prefix your
+     * search value with an exclamation mark (<code>!</code>) in order to perform
+     * negation filters. </p>
      */
     inline Filter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
-     * <p>Filters your list of secrets by a specific value.</p>
+     * <p>Filters your list of secrets by a specific value.</p> <p>You can prefix your
+     * search value with an exclamation mark (<code>!</code>) in order to perform
+     * negation filters. </p>
      */
     inline Filter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
     /**
-     * <p>Filters your list of secrets by a specific value.</p>
+     * <p>Filters your list of secrets by a specific value.</p> <p>You can prefix your
+     * search value with an exclamation mark (<code>!</code>) in order to perform
+     * negation filters. </p>
      */
     inline Filter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Filters your list of secrets by a specific value.</p>
+     * <p>Filters your list of secrets by a specific value.</p> <p>You can prefix your
+     * search value with an exclamation mark (<code>!</code>) in order to perform
+     * negation filters. </p>
      */
     inline Filter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 

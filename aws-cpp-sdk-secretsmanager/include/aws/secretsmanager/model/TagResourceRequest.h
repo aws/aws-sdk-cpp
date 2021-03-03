@@ -220,8 +220,8 @@ namespace Model
      * parameter for the various command line tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For the AWS CLI, you
-     * can also use the syntax: <code>--Tags
-     * Key="Key1",Value="Value1",Key="Key2",Value="Value2"[,…]</code> </p>
+     * can also use the syntax: <code>--Tags Key="Key1",Value="Value1"
+     * Key="Key2",Value="Value2"[,…]</code> </p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -232,8 +232,8 @@ namespace Model
      * parameter for the various command line tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For the AWS CLI, you
-     * can also use the syntax: <code>--Tags
-     * Key="Key1",Value="Value1",Key="Key2",Value="Value2"[,…]</code> </p>
+     * can also use the syntax: <code>--Tags Key="Key1",Value="Value1"
+     * Key="Key2",Value="Value2"[,…]</code> </p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -244,8 +244,8 @@ namespace Model
      * parameter for the various command line tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For the AWS CLI, you
-     * can also use the syntax: <code>--Tags
-     * Key="Key1",Value="Value1",Key="Key2",Value="Value2"[,…]</code> </p>
+     * can also use the syntax: <code>--Tags Key="Key1",Value="Value1"
+     * Key="Key2",Value="Value2"[,…]</code> </p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -256,8 +256,8 @@ namespace Model
      * parameter for the various command line tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For the AWS CLI, you
-     * can also use the syntax: <code>--Tags
-     * Key="Key1",Value="Value1",Key="Key2",Value="Value2"[,…]</code> </p>
+     * can also use the syntax: <code>--Tags Key="Key1",Value="Value1"
+     * Key="Key2",Value="Value2"[,…]</code> </p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -268,8 +268,8 @@ namespace Model
      * parameter for the various command line tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For the AWS CLI, you
-     * can also use the syntax: <code>--Tags
-     * Key="Key1",Value="Value1",Key="Key2",Value="Value2"[,…]</code> </p>
+     * can also use the syntax: <code>--Tags Key="Key1",Value="Value1"
+     * Key="Key2",Value="Value2"[,…]</code> </p>
      */
     inline TagResourceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -280,8 +280,8 @@ namespace Model
      * parameter for the various command line tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For the AWS CLI, you
-     * can also use the syntax: <code>--Tags
-     * Key="Key1",Value="Value1",Key="Key2",Value="Value2"[,…]</code> </p>
+     * can also use the syntax: <code>--Tags Key="Key1",Value="Value1"
+     * Key="Key2",Value="Value2"[,…]</code> </p>
      */
     inline TagResourceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -292,8 +292,8 @@ namespace Model
      * parameter for the various command line tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For the AWS CLI, you
-     * can also use the syntax: <code>--Tags
-     * Key="Key1",Value="Value1",Key="Key2",Value="Value2"[,…]</code> </p>
+     * can also use the syntax: <code>--Tags Key="Key1",Value="Value1"
+     * Key="Key2",Value="Value2"[,…]</code> </p>
      */
     inline TagResourceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -304,8 +304,8 @@ namespace Model
      * parameter for the various command line tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For the AWS CLI, you
-     * can also use the syntax: <code>--Tags
-     * Key="Key1",Value="Value1",Key="Key2",Value="Value2"[,…]</code> </p>
+     * can also use the syntax: <code>--Tags Key="Key1",Value="Value1"
+     * Key="Key2",Value="Value2"[,…]</code> </p>
      */
     inline TagResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

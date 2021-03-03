@@ -10,6 +10,7 @@
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/secretsmanager/model/Tag.h>
+#include <aws/secretsmanager/model/ReplicaRegionType.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -142,7 +143,7 @@ namespace Model
      * same as those in the request, then the request is ignored.</p> </li> <li> <p>If
      * a version with this value already exists and that version's
      * <code>SecretString</code> and <code>SecretBinary</code> values are different
-     * from those in the request then the request fails because you cannot modify an
+     * from those in the request, then the request fails because you cannot modify an
      * existing version. Instead, use <a>PutSecretValue</a> to create a new
      * version.</p> </li> </ul> <p>This value becomes the <code>VersionId</code> of the
      * new version.</p>
@@ -172,7 +173,7 @@ namespace Model
      * same as those in the request, then the request is ignored.</p> </li> <li> <p>If
      * a version with this value already exists and that version's
      * <code>SecretString</code> and <code>SecretBinary</code> values are different
-     * from those in the request then the request fails because you cannot modify an
+     * from those in the request, then the request fails because you cannot modify an
      * existing version. Instead, use <a>PutSecretValue</a> to create a new
      * version.</p> </li> </ul> <p>This value becomes the <code>VersionId</code> of the
      * new version.</p>
@@ -202,7 +203,7 @@ namespace Model
      * same as those in the request, then the request is ignored.</p> </li> <li> <p>If
      * a version with this value already exists and that version's
      * <code>SecretString</code> and <code>SecretBinary</code> values are different
-     * from those in the request then the request fails because you cannot modify an
+     * from those in the request, then the request fails because you cannot modify an
      * existing version. Instead, use <a>PutSecretValue</a> to create a new
      * version.</p> </li> </ul> <p>This value becomes the <code>VersionId</code> of the
      * new version.</p>
@@ -232,7 +233,7 @@ namespace Model
      * same as those in the request, then the request is ignored.</p> </li> <li> <p>If
      * a version with this value already exists and that version's
      * <code>SecretString</code> and <code>SecretBinary</code> values are different
-     * from those in the request then the request fails because you cannot modify an
+     * from those in the request, then the request fails because you cannot modify an
      * existing version. Instead, use <a>PutSecretValue</a> to create a new
      * version.</p> </li> </ul> <p>This value becomes the <code>VersionId</code> of the
      * new version.</p>
@@ -262,7 +263,7 @@ namespace Model
      * same as those in the request, then the request is ignored.</p> </li> <li> <p>If
      * a version with this value already exists and that version's
      * <code>SecretString</code> and <code>SecretBinary</code> values are different
-     * from those in the request then the request fails because you cannot modify an
+     * from those in the request, then the request fails because you cannot modify an
      * existing version. Instead, use <a>PutSecretValue</a> to create a new
      * version.</p> </li> </ul> <p>This value becomes the <code>VersionId</code> of the
      * new version.</p>
@@ -292,7 +293,7 @@ namespace Model
      * same as those in the request, then the request is ignored.</p> </li> <li> <p>If
      * a version with this value already exists and that version's
      * <code>SecretString</code> and <code>SecretBinary</code> values are different
-     * from those in the request then the request fails because you cannot modify an
+     * from those in the request, then the request fails because you cannot modify an
      * existing version. Instead, use <a>PutSecretValue</a> to create a new
      * version.</p> </li> </ul> <p>This value becomes the <code>VersionId</code> of the
      * new version.</p>
@@ -322,7 +323,7 @@ namespace Model
      * same as those in the request, then the request is ignored.</p> </li> <li> <p>If
      * a version with this value already exists and that version's
      * <code>SecretString</code> and <code>SecretBinary</code> values are different
-     * from those in the request then the request fails because you cannot modify an
+     * from those in the request, then the request fails because you cannot modify an
      * existing version. Instead, use <a>PutSecretValue</a> to create a new
      * version.</p> </li> </ul> <p>This value becomes the <code>VersionId</code> of the
      * new version.</p>
@@ -352,7 +353,7 @@ namespace Model
      * same as those in the request, then the request is ignored.</p> </li> <li> <p>If
      * a version with this value already exists and that version's
      * <code>SecretString</code> and <code>SecretBinary</code> values are different
-     * from those in the request then the request fails because you cannot modify an
+     * from those in the request, then the request fails because you cannot modify an
      * existing version. Instead, use <a>PutSecretValue</a> to create a new
      * version.</p> </li> </ul> <p>This value becomes the <code>VersionId</code> of the
      * new version.</p>
@@ -1068,6 +1069,88 @@ namespace Model
      */
     inline CreateSecretRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>(Optional) Add a list of regions to replicate secrets. Secrets Manager
+     * replicates the KMSKeyID objects to the list of regions specified in the
+     * parameter.</p>
+     */
+    inline const Aws::Vector<ReplicaRegionType>& GetAddReplicaRegions() const{ return m_addReplicaRegions; }
+
+    /**
+     * <p>(Optional) Add a list of regions to replicate secrets. Secrets Manager
+     * replicates the KMSKeyID objects to the list of regions specified in the
+     * parameter.</p>
+     */
+    inline bool AddReplicaRegionsHasBeenSet() const { return m_addReplicaRegionsHasBeenSet; }
+
+    /**
+     * <p>(Optional) Add a list of regions to replicate secrets. Secrets Manager
+     * replicates the KMSKeyID objects to the list of regions specified in the
+     * parameter.</p>
+     */
+    inline void SetAddReplicaRegions(const Aws::Vector<ReplicaRegionType>& value) { m_addReplicaRegionsHasBeenSet = true; m_addReplicaRegions = value; }
+
+    /**
+     * <p>(Optional) Add a list of regions to replicate secrets. Secrets Manager
+     * replicates the KMSKeyID objects to the list of regions specified in the
+     * parameter.</p>
+     */
+    inline void SetAddReplicaRegions(Aws::Vector<ReplicaRegionType>&& value) { m_addReplicaRegionsHasBeenSet = true; m_addReplicaRegions = std::move(value); }
+
+    /**
+     * <p>(Optional) Add a list of regions to replicate secrets. Secrets Manager
+     * replicates the KMSKeyID objects to the list of regions specified in the
+     * parameter.</p>
+     */
+    inline CreateSecretRequest& WithAddReplicaRegions(const Aws::Vector<ReplicaRegionType>& value) { SetAddReplicaRegions(value); return *this;}
+
+    /**
+     * <p>(Optional) Add a list of regions to replicate secrets. Secrets Manager
+     * replicates the KMSKeyID objects to the list of regions specified in the
+     * parameter.</p>
+     */
+    inline CreateSecretRequest& WithAddReplicaRegions(Aws::Vector<ReplicaRegionType>&& value) { SetAddReplicaRegions(std::move(value)); return *this;}
+
+    /**
+     * <p>(Optional) Add a list of regions to replicate secrets. Secrets Manager
+     * replicates the KMSKeyID objects to the list of regions specified in the
+     * parameter.</p>
+     */
+    inline CreateSecretRequest& AddAddReplicaRegions(const ReplicaRegionType& value) { m_addReplicaRegionsHasBeenSet = true; m_addReplicaRegions.push_back(value); return *this; }
+
+    /**
+     * <p>(Optional) Add a list of regions to replicate secrets. Secrets Manager
+     * replicates the KMSKeyID objects to the list of regions specified in the
+     * parameter.</p>
+     */
+    inline CreateSecretRequest& AddAddReplicaRegions(ReplicaRegionType&& value) { m_addReplicaRegionsHasBeenSet = true; m_addReplicaRegions.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>(Optional) If set, the replication overwrites a secret with the same name in
+     * the destination region.</p>
+     */
+    inline bool GetForceOverwriteReplicaSecret() const{ return m_forceOverwriteReplicaSecret; }
+
+    /**
+     * <p>(Optional) If set, the replication overwrites a secret with the same name in
+     * the destination region.</p>
+     */
+    inline bool ForceOverwriteReplicaSecretHasBeenSet() const { return m_forceOverwriteReplicaSecretHasBeenSet; }
+
+    /**
+     * <p>(Optional) If set, the replication overwrites a secret with the same name in
+     * the destination region.</p>
+     */
+    inline void SetForceOverwriteReplicaSecret(bool value) { m_forceOverwriteReplicaSecretHasBeenSet = true; m_forceOverwriteReplicaSecret = value; }
+
+    /**
+     * <p>(Optional) If set, the replication overwrites a secret with the same name in
+     * the destination region.</p>
+     */
+    inline CreateSecretRequest& WithForceOverwriteReplicaSecret(bool value) { SetForceOverwriteReplicaSecret(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -1090,6 +1173,12 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::Vector<ReplicaRegionType> m_addReplicaRegions;
+    bool m_addReplicaRegionsHasBeenSet;
+
+    bool m_forceOverwriteReplicaSecret;
+    bool m_forceOverwriteReplicaSecretHasBeenSet;
   };
 
 } // namespace Model

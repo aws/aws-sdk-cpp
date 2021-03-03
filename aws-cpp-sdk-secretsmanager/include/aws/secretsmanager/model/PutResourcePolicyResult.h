@@ -69,44 +69,37 @@ namespace Model
 
 
     /**
-     * <p>The friendly name of the secret that the retrieved by the resource-based
-     * policy.</p>
+     * <p>The friendly name of the secret retrieved by the resource-based policy.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The friendly name of the secret that the retrieved by the resource-based
-     * policy.</p>
+     * <p>The friendly name of the secret retrieved by the resource-based policy.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p>The friendly name of the secret that the retrieved by the resource-based
-     * policy.</p>
+     * <p>The friendly name of the secret retrieved by the resource-based policy.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <p>The friendly name of the secret that the retrieved by the resource-based
-     * policy.</p>
+     * <p>The friendly name of the secret retrieved by the resource-based policy.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p>The friendly name of the secret that the retrieved by the resource-based
-     * policy.</p>
+     * <p>The friendly name of the secret retrieved by the resource-based policy.</p>
      */
     inline PutResourcePolicyResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The friendly name of the secret that the retrieved by the resource-based
-     * policy.</p>
+     * <p>The friendly name of the secret retrieved by the resource-based policy.</p>
      */
     inline PutResourcePolicyResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The friendly name of the secret that the retrieved by the resource-based
-     * policy.</p>
+     * <p>The friendly name of the secret retrieved by the resource-based policy.</p>
      */
     inline PutResourcePolicyResult& WithName(const char* value) { SetName(value); return *this;}
 

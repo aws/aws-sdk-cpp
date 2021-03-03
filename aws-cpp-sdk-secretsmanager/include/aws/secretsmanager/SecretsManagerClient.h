@@ -23,8 +23,11 @@
 #include <aws/secretsmanager/model/ListSecretsResult.h>
 #include <aws/secretsmanager/model/PutResourcePolicyResult.h>
 #include <aws/secretsmanager/model/PutSecretValueResult.h>
+#include <aws/secretsmanager/model/RemoveRegionsFromReplicationResult.h>
+#include <aws/secretsmanager/model/ReplicateSecretToRegionsResult.h>
 #include <aws/secretsmanager/model/RestoreSecretResult.h>
 #include <aws/secretsmanager/model/RotateSecretResult.h>
+#include <aws/secretsmanager/model/StopReplicationToReplicaResult.h>
 #include <aws/secretsmanager/model/UpdateSecretResult.h>
 #include <aws/secretsmanager/model/UpdateSecretVersionStageResult.h>
 #include <aws/secretsmanager/model/ValidateResourcePolicyResult.h>
@@ -80,8 +83,11 @@ namespace Model
         class ListSecretsRequest;
         class PutResourcePolicyRequest;
         class PutSecretValueRequest;
+        class RemoveRegionsFromReplicationRequest;
+        class ReplicateSecretToRegionsRequest;
         class RestoreSecretRequest;
         class RotateSecretRequest;
+        class StopReplicationToReplicaRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateSecretRequest;
@@ -100,8 +106,11 @@ namespace Model
         typedef Aws::Utils::Outcome<ListSecretsResult, SecretsManagerError> ListSecretsOutcome;
         typedef Aws::Utils::Outcome<PutResourcePolicyResult, SecretsManagerError> PutResourcePolicyOutcome;
         typedef Aws::Utils::Outcome<PutSecretValueResult, SecretsManagerError> PutSecretValueOutcome;
+        typedef Aws::Utils::Outcome<RemoveRegionsFromReplicationResult, SecretsManagerError> RemoveRegionsFromReplicationOutcome;
+        typedef Aws::Utils::Outcome<ReplicateSecretToRegionsResult, SecretsManagerError> ReplicateSecretToRegionsOutcome;
         typedef Aws::Utils::Outcome<RestoreSecretResult, SecretsManagerError> RestoreSecretOutcome;
         typedef Aws::Utils::Outcome<RotateSecretResult, SecretsManagerError> RotateSecretOutcome;
+        typedef Aws::Utils::Outcome<StopReplicationToReplicaResult, SecretsManagerError> StopReplicationToReplicaOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SecretsManagerError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SecretsManagerError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateSecretResult, SecretsManagerError> UpdateSecretOutcome;
@@ -120,8 +129,11 @@ namespace Model
         typedef std::future<ListSecretsOutcome> ListSecretsOutcomeCallable;
         typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
         typedef std::future<PutSecretValueOutcome> PutSecretValueOutcomeCallable;
+        typedef std::future<RemoveRegionsFromReplicationOutcome> RemoveRegionsFromReplicationOutcomeCallable;
+        typedef std::future<ReplicateSecretToRegionsOutcome> ReplicateSecretToRegionsOutcomeCallable;
         typedef std::future<RestoreSecretOutcome> RestoreSecretOutcomeCallable;
         typedef std::future<RotateSecretOutcome> RotateSecretOutcomeCallable;
+        typedef std::future<StopReplicationToReplicaOutcome> StopReplicationToReplicaOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateSecretOutcome> UpdateSecretOutcomeCallable;
@@ -143,8 +155,11 @@ namespace Model
     typedef std::function<void(const SecretsManagerClient*, const Model::ListSecretsRequest&, const Model::ListSecretsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSecretsResponseReceivedHandler;
     typedef std::function<void(const SecretsManagerClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const SecretsManagerClient*, const Model::PutSecretValueRequest&, const Model::PutSecretValueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSecretValueResponseReceivedHandler;
+    typedef std::function<void(const SecretsManagerClient*, const Model::RemoveRegionsFromReplicationRequest&, const Model::RemoveRegionsFromReplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveRegionsFromReplicationResponseReceivedHandler;
+    typedef std::function<void(const SecretsManagerClient*, const Model::ReplicateSecretToRegionsRequest&, const Model::ReplicateSecretToRegionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReplicateSecretToRegionsResponseReceivedHandler;
     typedef std::function<void(const SecretsManagerClient*, const Model::RestoreSecretRequest&, const Model::RestoreSecretOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreSecretResponseReceivedHandler;
     typedef std::function<void(const SecretsManagerClient*, const Model::RotateSecretRequest&, const Model::RotateSecretOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RotateSecretResponseReceivedHandler;
+    typedef std::function<void(const SecretsManagerClient*, const Model::StopReplicationToReplicaRequest&, const Model::StopReplicationToReplicaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopReplicationToReplicaResponseReceivedHandler;
     typedef std::function<void(const SecretsManagerClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const SecretsManagerClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const SecretsManagerClient*, const Model::UpdateSecretRequest&, const Model::UpdateSecretOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSecretResponseReceivedHandler;
@@ -521,7 +536,7 @@ namespace Model
          * following permissions:</p> <ul> <li> <p>secretsmanager:DeleteResourcePolicy</p>
          * </li> </ul> <p> <b>Related operations</b> </p> <ul> <li> <p>To attach a resource
          * policy to a secret, use <a>PutResourcePolicy</a>.</p> </li> <li> <p>To retrieve
-         * the current resource-based policy that's attached to a secret, use
+         * the current resource-based policy attached to a secret, use
          * <a>GetResourcePolicy</a>.</p> </li> <li> <p>To list all of the currently
          * available secrets, use <a>ListSecrets</a>.</p> </li> </ul><p><h3>See Also:</h3> 
          * <a
@@ -536,7 +551,7 @@ namespace Model
          * following permissions:</p> <ul> <li> <p>secretsmanager:DeleteResourcePolicy</p>
          * </li> </ul> <p> <b>Related operations</b> </p> <ul> <li> <p>To attach a resource
          * policy to a secret, use <a>PutResourcePolicy</a>.</p> </li> <li> <p>To retrieve
-         * the current resource-based policy that's attached to a secret, use
+         * the current resource-based policy attached to a secret, use
          * <a>GetResourcePolicy</a>.</p> </li> <li> <p>To list all of the currently
          * available secrets, use <a>ListSecrets</a>.</p> </li> </ul><p><h3>See Also:</h3> 
          * <a
@@ -553,7 +568,7 @@ namespace Model
          * following permissions:</p> <ul> <li> <p>secretsmanager:DeleteResourcePolicy</p>
          * </li> </ul> <p> <b>Related operations</b> </p> <ul> <li> <p>To attach a resource
          * policy to a secret, use <a>PutResourcePolicy</a>.</p> </li> <li> <p>To retrieve
-         * the current resource-based policy that's attached to a secret, use
+         * the current resource-based policy attached to a secret, use
          * <a>GetResourcePolicy</a>.</p> </li> <li> <p>To list all of the currently
          * available secrets, use <a>ListSecrets</a>.</p> </li> </ul><p><h3>See Also:</h3> 
          * <a
@@ -565,7 +580,7 @@ namespace Model
         virtual void DeleteResourcePolicyAsync(const Model::DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an entire secret and all of its versions. You can optionally include
+         * <p>Deletes an entire secret and all of the versions. You can optionally include
          * a recovery window during which you can restore the secret. If you don't specify
          * a recovery window value, the operation defaults to 30 days. Secrets Manager
          * attaches a <code>DeletionDate</code> stamp to the secret that specifies the end
@@ -573,21 +588,21 @@ namespace Model
          * deletes the secret permanently.</p> <p>At any time before recovery window ends,
          * you can use <a>RestoreSecret</a> to remove the <code>DeletionDate</code> and
          * cancel the deletion of the secret.</p> <p>You cannot access the encrypted secret
-         * information in any secret that is scheduled for deletion. If you need to access
-         * that information, you must cancel the deletion with <a>RestoreSecret</a> and
-         * then retrieve the information.</p>  <ul> <li> <p>There is no explicit
-         * operation to delete a version of a secret. Instead, remove all staging labels
-         * from the <code>VersionStage</code> field of a version. That marks the version as
-         * deprecated and allows Secrets Manager to delete it as needed. Versions that do
-         * not have any staging labels do not show up in <a>ListSecretVersionIds</a> unless
-         * you specify <code>IncludeDeprecated</code>.</p> </li> <li> <p>The permanent
-         * secret deletion at the end of the waiting period is performed as a background
-         * task with low priority. There is no guarantee of a specific time after the
-         * recovery window for the actual delete operation to occur.</p> </li> </ul>
-         *  <p> <b>Minimum permissions</b> </p> <p>To run this command, you must
-         * have the following permissions:</p> <ul> <li> <p>secretsmanager:DeleteSecret</p>
-         * </li> </ul> <p> <b>Related operations</b> </p> <ul> <li> <p>To create a secret,
-         * use <a>CreateSecret</a>.</p> </li> <li> <p>To cancel deletion of a version of a
+         * information in any secret scheduled for deletion. If you need to access that
+         * information, you must cancel the deletion with <a>RestoreSecret</a> and then
+         * retrieve the information.</p>  <ul> <li> <p>There is no explicit operation
+         * to delete a version of a secret. Instead, remove all staging labels from the
+         * <code>VersionStage</code> field of a version. That marks the version as
+         * deprecated and allows Secrets Manager to delete it as needed. Versions without
+         * any staging labels do not show up in <a>ListSecretVersionIds</a> unless you
+         * specify <code>IncludeDeprecated</code>.</p> </li> <li> <p>The permanent secret
+         * deletion at the end of the waiting period is performed as a background task with
+         * low priority. There is no guarantee of a specific time after the recovery window
+         * for the actual delete operation to occur.</p> </li> </ul>  <p> <b>Minimum
+         * permissions</b> </p> <p>To run this command, you must have the following
+         * permissions:</p> <ul> <li> <p>secretsmanager:DeleteSecret</p> </li> </ul> <p>
+         * <b>Related operations</b> </p> <ul> <li> <p>To create a secret, use
+         * <a>CreateSecret</a>.</p> </li> <li> <p>To cancel deletion of a version of a
          * secret before the recovery window has expired, use <a>RestoreSecret</a>.</p>
          * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteSecret">AWS
@@ -596,7 +611,7 @@ namespace Model
         virtual Model::DeleteSecretOutcome DeleteSecret(const Model::DeleteSecretRequest& request) const;
 
         /**
-         * <p>Deletes an entire secret and all of its versions. You can optionally include
+         * <p>Deletes an entire secret and all of the versions. You can optionally include
          * a recovery window during which you can restore the secret. If you don't specify
          * a recovery window value, the operation defaults to 30 days. Secrets Manager
          * attaches a <code>DeletionDate</code> stamp to the secret that specifies the end
@@ -604,21 +619,21 @@ namespace Model
          * deletes the secret permanently.</p> <p>At any time before recovery window ends,
          * you can use <a>RestoreSecret</a> to remove the <code>DeletionDate</code> and
          * cancel the deletion of the secret.</p> <p>You cannot access the encrypted secret
-         * information in any secret that is scheduled for deletion. If you need to access
-         * that information, you must cancel the deletion with <a>RestoreSecret</a> and
-         * then retrieve the information.</p>  <ul> <li> <p>There is no explicit
-         * operation to delete a version of a secret. Instead, remove all staging labels
-         * from the <code>VersionStage</code> field of a version. That marks the version as
-         * deprecated and allows Secrets Manager to delete it as needed. Versions that do
-         * not have any staging labels do not show up in <a>ListSecretVersionIds</a> unless
-         * you specify <code>IncludeDeprecated</code>.</p> </li> <li> <p>The permanent
-         * secret deletion at the end of the waiting period is performed as a background
-         * task with low priority. There is no guarantee of a specific time after the
-         * recovery window for the actual delete operation to occur.</p> </li> </ul>
-         *  <p> <b>Minimum permissions</b> </p> <p>To run this command, you must
-         * have the following permissions:</p> <ul> <li> <p>secretsmanager:DeleteSecret</p>
-         * </li> </ul> <p> <b>Related operations</b> </p> <ul> <li> <p>To create a secret,
-         * use <a>CreateSecret</a>.</p> </li> <li> <p>To cancel deletion of a version of a
+         * information in any secret scheduled for deletion. If you need to access that
+         * information, you must cancel the deletion with <a>RestoreSecret</a> and then
+         * retrieve the information.</p>  <ul> <li> <p>There is no explicit operation
+         * to delete a version of a secret. Instead, remove all staging labels from the
+         * <code>VersionStage</code> field of a version. That marks the version as
+         * deprecated and allows Secrets Manager to delete it as needed. Versions without
+         * any staging labels do not show up in <a>ListSecretVersionIds</a> unless you
+         * specify <code>IncludeDeprecated</code>.</p> </li> <li> <p>The permanent secret
+         * deletion at the end of the waiting period is performed as a background task with
+         * low priority. There is no guarantee of a specific time after the recovery window
+         * for the actual delete operation to occur.</p> </li> </ul>  <p> <b>Minimum
+         * permissions</b> </p> <p>To run this command, you must have the following
+         * permissions:</p> <ul> <li> <p>secretsmanager:DeleteSecret</p> </li> </ul> <p>
+         * <b>Related operations</b> </p> <ul> <li> <p>To create a secret, use
+         * <a>CreateSecret</a>.</p> </li> <li> <p>To cancel deletion of a version of a
          * secret before the recovery window has expired, use <a>RestoreSecret</a>.</p>
          * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteSecret">AWS
@@ -629,7 +644,7 @@ namespace Model
         virtual Model::DeleteSecretOutcomeCallable DeleteSecretCallable(const Model::DeleteSecretRequest& request) const;
 
         /**
-         * <p>Deletes an entire secret and all of its versions. You can optionally include
+         * <p>Deletes an entire secret and all of the versions. You can optionally include
          * a recovery window during which you can restore the secret. If you don't specify
          * a recovery window value, the operation defaults to 30 days. Secrets Manager
          * attaches a <code>DeletionDate</code> stamp to the secret that specifies the end
@@ -637,21 +652,21 @@ namespace Model
          * deletes the secret permanently.</p> <p>At any time before recovery window ends,
          * you can use <a>RestoreSecret</a> to remove the <code>DeletionDate</code> and
          * cancel the deletion of the secret.</p> <p>You cannot access the encrypted secret
-         * information in any secret that is scheduled for deletion. If you need to access
-         * that information, you must cancel the deletion with <a>RestoreSecret</a> and
-         * then retrieve the information.</p>  <ul> <li> <p>There is no explicit
-         * operation to delete a version of a secret. Instead, remove all staging labels
-         * from the <code>VersionStage</code> field of a version. That marks the version as
-         * deprecated and allows Secrets Manager to delete it as needed. Versions that do
-         * not have any staging labels do not show up in <a>ListSecretVersionIds</a> unless
-         * you specify <code>IncludeDeprecated</code>.</p> </li> <li> <p>The permanent
-         * secret deletion at the end of the waiting period is performed as a background
-         * task with low priority. There is no guarantee of a specific time after the
-         * recovery window for the actual delete operation to occur.</p> </li> </ul>
-         *  <p> <b>Minimum permissions</b> </p> <p>To run this command, you must
-         * have the following permissions:</p> <ul> <li> <p>secretsmanager:DeleteSecret</p>
-         * </li> </ul> <p> <b>Related operations</b> </p> <ul> <li> <p>To create a secret,
-         * use <a>CreateSecret</a>.</p> </li> <li> <p>To cancel deletion of a version of a
+         * information in any secret scheduled for deletion. If you need to access that
+         * information, you must cancel the deletion with <a>RestoreSecret</a> and then
+         * retrieve the information.</p>  <ul> <li> <p>There is no explicit operation
+         * to delete a version of a secret. Instead, remove all staging labels from the
+         * <code>VersionStage</code> field of a version. That marks the version as
+         * deprecated and allows Secrets Manager to delete it as needed. Versions without
+         * any staging labels do not show up in <a>ListSecretVersionIds</a> unless you
+         * specify <code>IncludeDeprecated</code>.</p> </li> <li> <p>The permanent secret
+         * deletion at the end of the waiting period is performed as a background task with
+         * low priority. There is no guarantee of a specific time after the recovery window
+         * for the actual delete operation to occur.</p> </li> </ul>  <p> <b>Minimum
+         * permissions</b> </p> <p>To run this command, you must have the following
+         * permissions:</p> <ul> <li> <p>secretsmanager:DeleteSecret</p> </li> </ul> <p>
+         * <b>Related operations</b> </p> <ul> <li> <p>To create a secret, use
+         * <a>CreateSecret</a>.</p> </li> <li> <p>To cancel deletion of a version of a
          * secret before the recovery window has expired, use <a>RestoreSecret</a>.</p>
          * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteSecret">AWS
@@ -1017,7 +1032,7 @@ namespace Model
          * permissions:</p> <ul> <li> <p>secretsmanager:PutResourcePolicy</p> </li> </ul>
          * <p> <b>Related operations</b> </p> <ul> <li> <p>To retrieve the resource policy
          * attached to a secret, use <a>GetResourcePolicy</a>.</p> </li> <li> <p>To delete
-         * the resource-based policy that's attached to a secret, use
+         * the resource-based policy attached to a secret, use
          * <a>DeleteResourcePolicy</a>.</p> </li> <li> <p>To list all of the currently
          * available secrets, use <a>ListSecrets</a>.</p> </li> </ul><p><h3>See Also:</h3> 
          * <a
@@ -1043,7 +1058,7 @@ namespace Model
          * permissions:</p> <ul> <li> <p>secretsmanager:PutResourcePolicy</p> </li> </ul>
          * <p> <b>Related operations</b> </p> <ul> <li> <p>To retrieve the resource policy
          * attached to a secret, use <a>GetResourcePolicy</a>.</p> </li> <li> <p>To delete
-         * the resource-based policy that's attached to a secret, use
+         * the resource-based policy attached to a secret, use
          * <a>DeleteResourcePolicy</a>.</p> </li> <li> <p>To list all of the currently
          * available secrets, use <a>ListSecrets</a>.</p> </li> </ul><p><h3>See Also:</h3> 
          * <a
@@ -1071,7 +1086,7 @@ namespace Model
          * permissions:</p> <ul> <li> <p>secretsmanager:PutResourcePolicy</p> </li> </ul>
          * <p> <b>Related operations</b> </p> <ul> <li> <p>To retrieve the resource policy
          * attached to a secret, use <a>GetResourcePolicy</a>.</p> </li> <li> <p>To delete
-         * the resource-based policy that's attached to a secret, use
+         * the resource-based policy attached to a secret, use
          * <a>DeleteResourcePolicy</a>.</p> </li> <li> <p>To list all of the currently
          * available secrets, use <a>ListSecrets</a>.</p> </li> </ul><p><h3>See Also:</h3> 
          * <a
@@ -1092,17 +1107,15 @@ namespace Model
          * <code>SecretBinary</code> field you must use the AWS CLI or one of the AWS
          * SDKs.</p>  <ul> <li> <p>If this operation creates the first version for
          * the secret then Secrets Manager automatically attaches the staging label
-         * <code>AWSCURRENT</code> to the new version.</p> </li> <li> <p>If another version
-         * of this secret already exists, then this operation does not automatically move
-         * any staging labels other than those that you explicitly specify in the
-         * <code>VersionStages</code> parameter.</p> </li> <li> <p>If this operation moves
-         * the staging label <code>AWSCURRENT</code> from another version to this version
-         * (because you included it in the <code>StagingLabels</code> parameter) then
-         * Secrets Manager also automatically moves the staging label
-         * <code>AWSPREVIOUS</code> to the version that <code>AWSCURRENT</code> was removed
-         * from.</p> </li> <li> <p>This operation is idempotent. If a version with a
-         * <code>VersionId</code> with the same value as the
-         * <code>ClientRequestToken</code> parameter already exists and you specify the
+         * <code>AWSCURRENT</code> to the new version.</p> </li> <li> <p>If you do not
+         * specify a value for VersionStages then Secrets Manager automatically moves the
+         * staging label <code>AWSCURRENT</code> to this new version.</p> </li> <li> <p>If
+         * this operation moves the staging label <code>AWSCURRENT</code> from another
+         * version to this version, then Secrets Manager also automatically moves the
+         * staging label <code>AWSPREVIOUS</code> to the version that
+         * <code>AWSCURRENT</code> was removed from.</p> </li> <li> <p>This operation is
+         * idempotent. If a version with a <code>VersionId</code> with the same value as
+         * the <code>ClientRequestToken</code> parameter already exists and you specify the
          * same secret data, the operation succeeds but does nothing. However, if the
          * secret data is different, then the operation fails because you cannot modify an
          * existing version; you can only create new ones.</p> </li> </ul>  <ul> <li>
@@ -1152,17 +1165,15 @@ namespace Model
          * <code>SecretBinary</code> field you must use the AWS CLI or one of the AWS
          * SDKs.</p>  <ul> <li> <p>If this operation creates the first version for
          * the secret then Secrets Manager automatically attaches the staging label
-         * <code>AWSCURRENT</code> to the new version.</p> </li> <li> <p>If another version
-         * of this secret already exists, then this operation does not automatically move
-         * any staging labels other than those that you explicitly specify in the
-         * <code>VersionStages</code> parameter.</p> </li> <li> <p>If this operation moves
-         * the staging label <code>AWSCURRENT</code> from another version to this version
-         * (because you included it in the <code>StagingLabels</code> parameter) then
-         * Secrets Manager also automatically moves the staging label
-         * <code>AWSPREVIOUS</code> to the version that <code>AWSCURRENT</code> was removed
-         * from.</p> </li> <li> <p>This operation is idempotent. If a version with a
-         * <code>VersionId</code> with the same value as the
-         * <code>ClientRequestToken</code> parameter already exists and you specify the
+         * <code>AWSCURRENT</code> to the new version.</p> </li> <li> <p>If you do not
+         * specify a value for VersionStages then Secrets Manager automatically moves the
+         * staging label <code>AWSCURRENT</code> to this new version.</p> </li> <li> <p>If
+         * this operation moves the staging label <code>AWSCURRENT</code> from another
+         * version to this version, then Secrets Manager also automatically moves the
+         * staging label <code>AWSPREVIOUS</code> to the version that
+         * <code>AWSCURRENT</code> was removed from.</p> </li> <li> <p>This operation is
+         * idempotent. If a version with a <code>VersionId</code> with the same value as
+         * the <code>ClientRequestToken</code> parameter already exists and you specify the
          * same secret data, the operation succeeds but does nothing. However, if the
          * secret data is different, then the operation fails because you cannot modify an
          * existing version; you can only create new ones.</p> </li> </ul>  <ul> <li>
@@ -1214,17 +1225,15 @@ namespace Model
          * <code>SecretBinary</code> field you must use the AWS CLI or one of the AWS
          * SDKs.</p>  <ul> <li> <p>If this operation creates the first version for
          * the secret then Secrets Manager automatically attaches the staging label
-         * <code>AWSCURRENT</code> to the new version.</p> </li> <li> <p>If another version
-         * of this secret already exists, then this operation does not automatically move
-         * any staging labels other than those that you explicitly specify in the
-         * <code>VersionStages</code> parameter.</p> </li> <li> <p>If this operation moves
-         * the staging label <code>AWSCURRENT</code> from another version to this version
-         * (because you included it in the <code>StagingLabels</code> parameter) then
-         * Secrets Manager also automatically moves the staging label
-         * <code>AWSPREVIOUS</code> to the version that <code>AWSCURRENT</code> was removed
-         * from.</p> </li> <li> <p>This operation is idempotent. If a version with a
-         * <code>VersionId</code> with the same value as the
-         * <code>ClientRequestToken</code> parameter already exists and you specify the
+         * <code>AWSCURRENT</code> to the new version.</p> </li> <li> <p>If you do not
+         * specify a value for VersionStages then Secrets Manager automatically moves the
+         * staging label <code>AWSCURRENT</code> to this new version.</p> </li> <li> <p>If
+         * this operation moves the staging label <code>AWSCURRENT</code> from another
+         * version to this version, then Secrets Manager also automatically moves the
+         * staging label <code>AWSPREVIOUS</code> to the version that
+         * <code>AWSCURRENT</code> was removed from.</p> </li> <li> <p>This operation is
+         * idempotent. If a version with a <code>VersionId</code> with the same value as
+         * the <code>ClientRequestToken</code> parameter already exists and you specify the
          * same secret data, the operation succeeds but does nothing. However, if the
          * secret data is different, then the operation fails because you cannot modify an
          * existing version; you can only create new ones.</p> </li> </ul>  <ul> <li>
@@ -1265,6 +1274,59 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutSecretValueAsync(const Model::PutSecretValueRequest& request, const PutSecretValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Remove regions from replication.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RemoveRegionsFromReplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RemoveRegionsFromReplicationOutcome RemoveRegionsFromReplication(const Model::RemoveRegionsFromReplicationRequest& request) const;
+
+        /**
+         * <p>Remove regions from replication.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RemoveRegionsFromReplication">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RemoveRegionsFromReplicationOutcomeCallable RemoveRegionsFromReplicationCallable(const Model::RemoveRegionsFromReplicationRequest& request) const;
+
+        /**
+         * <p>Remove regions from replication.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RemoveRegionsFromReplication">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RemoveRegionsFromReplicationAsync(const Model::RemoveRegionsFromReplicationRequest& request, const RemoveRegionsFromReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Converts an existing secret to a multi-Region secret and begins replication
+         * the secret to a list of new regions. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ReplicateSecretToRegions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ReplicateSecretToRegionsOutcome ReplicateSecretToRegions(const Model::ReplicateSecretToRegionsRequest& request) const;
+
+        /**
+         * <p>Converts an existing secret to a multi-Region secret and begins replication
+         * the secret to a list of new regions. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ReplicateSecretToRegions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ReplicateSecretToRegionsOutcomeCallable ReplicateSecretToRegionsCallable(const Model::ReplicateSecretToRegionsRequest& request) const;
+
+        /**
+         * <p>Converts an existing secret to a multi-Region secret and begins replication
+         * the secret to a list of new regions. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ReplicateSecretToRegions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ReplicateSecretToRegionsAsync(const Model::ReplicateSecretToRegionsRequest& request, const ReplicateSecretToRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels the scheduled deletion of a secret by removing the
@@ -1450,6 +1512,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RotateSecretAsync(const Model::RotateSecretRequest& request, const RotateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes the secret from replication and promotes the secret to a regional
+         * secret in the replica Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/StopReplicationToReplica">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopReplicationToReplicaOutcome StopReplicationToReplica(const Model::StopReplicationToReplicaRequest& request) const;
+
+        /**
+         * <p>Removes the secret from replication and promotes the secret to a regional
+         * secret in the replica Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/StopReplicationToReplica">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopReplicationToReplicaOutcomeCallable StopReplicationToReplicaCallable(const Model::StopReplicationToReplicaRequest& request) const;
+
+        /**
+         * <p>Removes the secret from replication and promotes the secret to a regional
+         * secret in the replica Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/StopReplicationToReplica">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopReplicationToReplicaAsync(const Model::StopReplicationToReplicaRequest& request, const StopReplicationToReplicaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attaches one or more tags, each consisting of a key name and a value, to the
@@ -1870,22 +1960,42 @@ namespace Model
         virtual void UpdateSecretVersionStageAsync(const Model::UpdateSecretVersionStageRequest& request, const UpdateSecretVersionStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Validates the JSON text of the resource-based policy document attached to the
-         * specified secret. The JSON request string input and response output displays
-         * formatted code with white space and line breaks for better readability. Submit
-         * your input as a single line JSON string. A resource-based policy is
-         * optional.</p><p><h3>See Also:</h3>   <a
+         * <p>Validates that the resource policy does not grant a wide range of IAM
+         * principals access to your secret. The JSON request string input and response
+         * output displays formatted code with white space and line breaks for better
+         * readability. Submit your input as a single line JSON string. A resource-based
+         * policy is optional for secrets.</p> <p>The API performs three checks when
+         * validating the secret:</p> <ul> <li> <p>Sends a call to <a
+         * href="https://aws.amazon.com/blogs/security/protect-sensitive-data-in-the-cloud-with-automated-reasoning-zelkova/">Zelkova</a>,
+         * an automated reasoning engine, to ensure your Resource Policy does not allow
+         * broad access to your secret.</p> </li> <li> <p>Checks for correct syntax in a
+         * policy.</p> </li> <li> <p>Verifies the policy does not lock out a caller.</p>
+         * </li> </ul> <p> <b>Minimum Permissions</b> </p> <p>You must have the permissions
+         * required to access the following APIs:</p> <ul> <li> <p>
+         * <code>secretsmanager:PutResourcePolicy</code> </p> </li> <li> <p>
+         * <code>secretsmanager:ValidateResourcePolicy</code> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ValidateResourcePolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::ValidateResourcePolicyOutcome ValidateResourcePolicy(const Model::ValidateResourcePolicyRequest& request) const;
 
         /**
-         * <p>Validates the JSON text of the resource-based policy document attached to the
-         * specified secret. The JSON request string input and response output displays
-         * formatted code with white space and line breaks for better readability. Submit
-         * your input as a single line JSON string. A resource-based policy is
-         * optional.</p><p><h3>See Also:</h3>   <a
+         * <p>Validates that the resource policy does not grant a wide range of IAM
+         * principals access to your secret. The JSON request string input and response
+         * output displays formatted code with white space and line breaks for better
+         * readability. Submit your input as a single line JSON string. A resource-based
+         * policy is optional for secrets.</p> <p>The API performs three checks when
+         * validating the secret:</p> <ul> <li> <p>Sends a call to <a
+         * href="https://aws.amazon.com/blogs/security/protect-sensitive-data-in-the-cloud-with-automated-reasoning-zelkova/">Zelkova</a>,
+         * an automated reasoning engine, to ensure your Resource Policy does not allow
+         * broad access to your secret.</p> </li> <li> <p>Checks for correct syntax in a
+         * policy.</p> </li> <li> <p>Verifies the policy does not lock out a caller.</p>
+         * </li> </ul> <p> <b>Minimum Permissions</b> </p> <p>You must have the permissions
+         * required to access the following APIs:</p> <ul> <li> <p>
+         * <code>secretsmanager:PutResourcePolicy</code> </p> </li> <li> <p>
+         * <code>secretsmanager:ValidateResourcePolicy</code> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ValidateResourcePolicy">AWS
          * API Reference</a></p>
          *
@@ -1894,11 +2004,21 @@ namespace Model
         virtual Model::ValidateResourcePolicyOutcomeCallable ValidateResourcePolicyCallable(const Model::ValidateResourcePolicyRequest& request) const;
 
         /**
-         * <p>Validates the JSON text of the resource-based policy document attached to the
-         * specified secret. The JSON request string input and response output displays
-         * formatted code with white space and line breaks for better readability. Submit
-         * your input as a single line JSON string. A resource-based policy is
-         * optional.</p><p><h3>See Also:</h3>   <a
+         * <p>Validates that the resource policy does not grant a wide range of IAM
+         * principals access to your secret. The JSON request string input and response
+         * output displays formatted code with white space and line breaks for better
+         * readability. Submit your input as a single line JSON string. A resource-based
+         * policy is optional for secrets.</p> <p>The API performs three checks when
+         * validating the secret:</p> <ul> <li> <p>Sends a call to <a
+         * href="https://aws.amazon.com/blogs/security/protect-sensitive-data-in-the-cloud-with-automated-reasoning-zelkova/">Zelkova</a>,
+         * an automated reasoning engine, to ensure your Resource Policy does not allow
+         * broad access to your secret.</p> </li> <li> <p>Checks for correct syntax in a
+         * policy.</p> </li> <li> <p>Verifies the policy does not lock out a caller.</p>
+         * </li> </ul> <p> <b>Minimum Permissions</b> </p> <p>You must have the permissions
+         * required to access the following APIs:</p> <ul> <li> <p>
+         * <code>secretsmanager:PutResourcePolicy</code> </p> </li> <li> <p>
+         * <code>secretsmanager:ValidateResourcePolicy</code> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ValidateResourcePolicy">AWS
          * API Reference</a></p>
          *
@@ -1922,8 +2042,11 @@ namespace Model
         void ListSecretsAsyncHelper(const Model::ListSecretsRequest& request, const ListSecretsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutResourcePolicyAsyncHelper(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutSecretValueAsyncHelper(const Model::PutSecretValueRequest& request, const PutSecretValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RemoveRegionsFromReplicationAsyncHelper(const Model::RemoveRegionsFromReplicationRequest& request, const RemoveRegionsFromReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ReplicateSecretToRegionsAsyncHelper(const Model::ReplicateSecretToRegionsRequest& request, const ReplicateSecretToRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreSecretAsyncHelper(const Model::RestoreSecretRequest& request, const RestoreSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RotateSecretAsyncHelper(const Model::RotateSecretRequest& request, const RotateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopReplicationToReplicaAsyncHelper(const Model::StopReplicationToReplicaRequest& request, const StopReplicationToReplicaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSecretAsyncHelper(const Model::UpdateSecretRequest& request, const UpdateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

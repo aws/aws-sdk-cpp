@@ -240,28 +240,44 @@ namespace Model
     /**
      * <p>The total storage size, in bytes, of the objects that Amazon Macie can
      * analyze in the bucket. These objects use a supported storage class and have a
-     * file name extension for a supported file or storage format.</p>
+     * file name extension for a supported file or storage format.</p> <p>If versioning
+     * is enabled for the bucket, Macie calculates this value based on the size of the
+     * latest version of each applicable object in the bucket. This value doesn't
+     * reflect the storage size of all versions of each applicable object in the
+     * bucket.</p>
      */
     inline long long GetClassifiableSizeInBytes() const{ return m_classifiableSizeInBytes; }
 
     /**
      * <p>The total storage size, in bytes, of the objects that Amazon Macie can
      * analyze in the bucket. These objects use a supported storage class and have a
-     * file name extension for a supported file or storage format.</p>
+     * file name extension for a supported file or storage format.</p> <p>If versioning
+     * is enabled for the bucket, Macie calculates this value based on the size of the
+     * latest version of each applicable object in the bucket. This value doesn't
+     * reflect the storage size of all versions of each applicable object in the
+     * bucket.</p>
      */
     inline bool ClassifiableSizeInBytesHasBeenSet() const { return m_classifiableSizeInBytesHasBeenSet; }
 
     /**
      * <p>The total storage size, in bytes, of the objects that Amazon Macie can
      * analyze in the bucket. These objects use a supported storage class and have a
-     * file name extension for a supported file or storage format.</p>
+     * file name extension for a supported file or storage format.</p> <p>If versioning
+     * is enabled for the bucket, Macie calculates this value based on the size of the
+     * latest version of each applicable object in the bucket. This value doesn't
+     * reflect the storage size of all versions of each applicable object in the
+     * bucket.</p>
      */
     inline void SetClassifiableSizeInBytes(long long value) { m_classifiableSizeInBytesHasBeenSet = true; m_classifiableSizeInBytes = value; }
 
     /**
      * <p>The total storage size, in bytes, of the objects that Amazon Macie can
      * analyze in the bucket. These objects use a supported storage class and have a
-     * file name extension for a supported file or storage format.</p>
+     * file name extension for a supported file or storage format.</p> <p>If versioning
+     * is enabled for the bucket, Macie calculates this value based on the size of the
+     * latest version of each applicable object in the bucket. This value doesn't
+     * reflect the storage size of all versions of each applicable object in the
+     * bucket.</p>
      */
     inline BucketMetadata& WithClassifiableSizeInBytes(long long value) { SetClassifiableSizeInBytes(value); return *this;}
 
@@ -311,37 +327,43 @@ namespace Model
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently retrieved data about the bucket from Amazon S3.</p>
+     * most recently retrieved both bucket and object metadata from Amazon S3 for the
+     * bucket.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently retrieved data about the bucket from Amazon S3.</p>
+     * most recently retrieved both bucket and object metadata from Amazon S3 for the
+     * bucket.</p>
      */
     inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently retrieved data about the bucket from Amazon S3.</p>
+     * most recently retrieved both bucket and object metadata from Amazon S3 for the
+     * bucket.</p>
      */
     inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently retrieved data about the bucket from Amazon S3.</p>
+     * most recently retrieved both bucket and object metadata from Amazon S3 for the
+     * bucket.</p>
      */
     inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::move(value); }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently retrieved data about the bucket from Amazon S3.</p>
+     * most recently retrieved both bucket and object metadata from Amazon S3 for the
+     * bucket.</p>
      */
     inline BucketMetadata& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently retrieved data about the bucket from Amazon S3.</p>
+     * most recently retrieved both bucket and object metadata from Amazon S3 for the
+     * bucket.</p>
      */
     inline BucketMetadata& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
 
@@ -636,43 +658,67 @@ namespace Model
 
 
     /**
-     * <p>The total storage size, in bytes, of the bucket.</p>
+     * <p>The total storage size, in bytes, of the bucket.</p> <p>If versioning is
+     * enabled for the bucket, Amazon Macie calculates this value based on the size of
+     * the latest version of each object in the bucket. This value doesn't reflect the
+     * storage size of all versions of each object in the bucket.</p>
      */
     inline long long GetSizeInBytes() const{ return m_sizeInBytes; }
 
     /**
-     * <p>The total storage size, in bytes, of the bucket.</p>
+     * <p>The total storage size, in bytes, of the bucket.</p> <p>If versioning is
+     * enabled for the bucket, Amazon Macie calculates this value based on the size of
+     * the latest version of each object in the bucket. This value doesn't reflect the
+     * storage size of all versions of each object in the bucket.</p>
      */
     inline bool SizeInBytesHasBeenSet() const { return m_sizeInBytesHasBeenSet; }
 
     /**
-     * <p>The total storage size, in bytes, of the bucket.</p>
+     * <p>The total storage size, in bytes, of the bucket.</p> <p>If versioning is
+     * enabled for the bucket, Amazon Macie calculates this value based on the size of
+     * the latest version of each object in the bucket. This value doesn't reflect the
+     * storage size of all versions of each object in the bucket.</p>
      */
     inline void SetSizeInBytes(long long value) { m_sizeInBytesHasBeenSet = true; m_sizeInBytes = value; }
 
     /**
-     * <p>The total storage size, in bytes, of the bucket.</p>
+     * <p>The total storage size, in bytes, of the bucket.</p> <p>If versioning is
+     * enabled for the bucket, Amazon Macie calculates this value based on the size of
+     * the latest version of each object in the bucket. This value doesn't reflect the
+     * storage size of all versions of each object in the bucket.</p>
      */
     inline BucketMetadata& WithSizeInBytes(long long value) { SetSizeInBytes(value); return *this;}
 
 
     /**
-     * <p>The total compressed storage size, in bytes, of the bucket.</p>
+     * <p>The total compressed storage size, in bytes, of the bucket.</p> <p>If
+     * versioning is enabled for the bucket, Macie calculates this value based on the
+     * size of the latest version of each object in the bucket. This value doesn't
+     * reflect the storage size of all versions of each object in the bucket.</p>
      */
     inline long long GetSizeInBytesCompressed() const{ return m_sizeInBytesCompressed; }
 
     /**
-     * <p>The total compressed storage size, in bytes, of the bucket.</p>
+     * <p>The total compressed storage size, in bytes, of the bucket.</p> <p>If
+     * versioning is enabled for the bucket, Macie calculates this value based on the
+     * size of the latest version of each object in the bucket. This value doesn't
+     * reflect the storage size of all versions of each object in the bucket.</p>
      */
     inline bool SizeInBytesCompressedHasBeenSet() const { return m_sizeInBytesCompressedHasBeenSet; }
 
     /**
-     * <p>The total compressed storage size, in bytes, of the bucket.</p>
+     * <p>The total compressed storage size, in bytes, of the bucket.</p> <p>If
+     * versioning is enabled for the bucket, Macie calculates this value based on the
+     * size of the latest version of each object in the bucket. This value doesn't
+     * reflect the storage size of all versions of each object in the bucket.</p>
      */
     inline void SetSizeInBytesCompressed(long long value) { m_sizeInBytesCompressedHasBeenSet = true; m_sizeInBytesCompressed = value; }
 
     /**
-     * <p>The total compressed storage size, in bytes, of the bucket.</p>
+     * <p>The total compressed storage size, in bytes, of the bucket.</p> <p>If
+     * versioning is enabled for the bucket, Macie calculates this value based on the
+     * size of the latest version of each object in the bucket. This value doesn't
+     * reflect the storage size of all versions of each object in the bucket.</p>
      */
     inline BucketMetadata& WithSizeInBytesCompressed(long long value) { SetSizeInBytesCompressed(value); return *this;}
 

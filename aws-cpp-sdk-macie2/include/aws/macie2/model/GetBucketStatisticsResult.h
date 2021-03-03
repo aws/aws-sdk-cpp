@@ -170,52 +170,69 @@ namespace Model
     /**
      * <p>The total storage size, in bytes, of all the objects that Amazon Macie can
      * analyze in the buckets. These objects use a supported storage class and have a
-     * file name extension for a supported file or storage format.</p>
+     * file name extension for a supported file or storage format.</p> <p>If versioning
+     * is enabled for any of the buckets, Macie calculates this value based on the size
+     * of the latest version of each applicable object in those buckets. This value
+     * doesn't reflect the storage size of all versions of all applicable objects in
+     * the buckets.</p>
      */
     inline long long GetClassifiableSizeInBytes() const{ return m_classifiableSizeInBytes; }
 
     /**
      * <p>The total storage size, in bytes, of all the objects that Amazon Macie can
      * analyze in the buckets. These objects use a supported storage class and have a
-     * file name extension for a supported file or storage format.</p>
+     * file name extension for a supported file or storage format.</p> <p>If versioning
+     * is enabled for any of the buckets, Macie calculates this value based on the size
+     * of the latest version of each applicable object in those buckets. This value
+     * doesn't reflect the storage size of all versions of all applicable objects in
+     * the buckets.</p>
      */
     inline void SetClassifiableSizeInBytes(long long value) { m_classifiableSizeInBytes = value; }
 
     /**
      * <p>The total storage size, in bytes, of all the objects that Amazon Macie can
      * analyze in the buckets. These objects use a supported storage class and have a
-     * file name extension for a supported file or storage format.</p>
+     * file name extension for a supported file or storage format.</p> <p>If versioning
+     * is enabled for any of the buckets, Macie calculates this value based on the size
+     * of the latest version of each applicable object in those buckets. This value
+     * doesn't reflect the storage size of all versions of all applicable objects in
+     * the buckets.</p>
      */
     inline GetBucketStatisticsResult& WithClassifiableSizeInBytes(long long value) { SetClassifiableSizeInBytes(value); return *this;}
 
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently retrieved data about the buckets from Amazon S3.</p>
+     * most recently retrieved both bucket and object metadata from Amazon S3 for the
+     * buckets.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently retrieved data about the buckets from Amazon S3.</p>
+     * most recently retrieved both bucket and object metadata from Amazon S3 for the
+     * buckets.</p>
      */
     inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdated = value; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently retrieved data about the buckets from Amazon S3.</p>
+     * most recently retrieved both bucket and object metadata from Amazon S3 for the
+     * buckets.</p>
      */
     inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdated = std::move(value); }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently retrieved data about the buckets from Amazon S3.</p>
+     * most recently retrieved both bucket and object metadata from Amazon S3 for the
+     * buckets.</p>
      */
     inline GetBucketStatisticsResult& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently retrieved data about the buckets from Amazon S3.</p>
+     * most recently retrieved both bucket and object metadata from Amazon S3 for the
+     * buckets.</p>
      */
     inline GetBucketStatisticsResult& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
 
@@ -237,33 +254,54 @@ namespace Model
 
 
     /**
-     * <p>The total storage size, in bytes, of the buckets.</p>
+     * <p>The total storage size, in bytes, of the buckets.</p> <p>If versioning is
+     * enabled for any of the buckets, Macie calculates this value based on the size of
+     * the latest version of each object in those buckets. This value doesn't reflect
+     * the storage size of all versions of the objects in the buckets.</p>
      */
     inline long long GetSizeInBytes() const{ return m_sizeInBytes; }
 
     /**
-     * <p>The total storage size, in bytes, of the buckets.</p>
+     * <p>The total storage size, in bytes, of the buckets.</p> <p>If versioning is
+     * enabled for any of the buckets, Macie calculates this value based on the size of
+     * the latest version of each object in those buckets. This value doesn't reflect
+     * the storage size of all versions of the objects in the buckets.</p>
      */
     inline void SetSizeInBytes(long long value) { m_sizeInBytes = value; }
 
     /**
-     * <p>The total storage size, in bytes, of the buckets.</p>
+     * <p>The total storage size, in bytes, of the buckets.</p> <p>If versioning is
+     * enabled for any of the buckets, Macie calculates this value based on the size of
+     * the latest version of each object in those buckets. This value doesn't reflect
+     * the storage size of all versions of the objects in the buckets.</p>
      */
     inline GetBucketStatisticsResult& WithSizeInBytes(long long value) { SetSizeInBytes(value); return *this;}
 
 
     /**
-     * <p>The total compressed storage size, in bytes, of the buckets.</p>
+     * <p>The total compressed storage size, in bytes, of the buckets.</p> <p>If
+     * versioning is enabled for any of the buckets, Macie calculates this value based
+     * on the size of the latest version of each object in those buckets. This value
+     * doesn't reflect the storage size of all versions of the objects in the
+     * buckets.</p>
      */
     inline long long GetSizeInBytesCompressed() const{ return m_sizeInBytesCompressed; }
 
     /**
-     * <p>The total compressed storage size, in bytes, of the buckets.</p>
+     * <p>The total compressed storage size, in bytes, of the buckets.</p> <p>If
+     * versioning is enabled for any of the buckets, Macie calculates this value based
+     * on the size of the latest version of each object in those buckets. This value
+     * doesn't reflect the storage size of all versions of the objects in the
+     * buckets.</p>
      */
     inline void SetSizeInBytesCompressed(long long value) { m_sizeInBytesCompressed = value; }
 
     /**
-     * <p>The total compressed storage size, in bytes, of the buckets.</p>
+     * <p>The total compressed storage size, in bytes, of the buckets.</p> <p>If
+     * versioning is enabled for any of the buckets, Macie calculates this value based
+     * on the size of the latest version of each object in those buckets. This value
+     * doesn't reflect the storage size of all versions of the objects in the
+     * buckets.</p>
      */
     inline GetBucketStatisticsResult& WithSizeInBytesCompressed(long long value) { SetSizeInBytesCompressed(value); return *this;}
 
@@ -305,35 +343,35 @@ namespace Model
 
 
     /**
-     * <p>The total storage size, in bytes, of all the objects that Amazon Macie can't
+     * <p>The total storage size, in bytes, of the objects that Amazon Macie can't
      * analyze in the buckets. These objects don't use a supported storage class or
      * don't have a file name extension for a supported file or storage format.</p>
      */
     inline const ObjectLevelStatistics& GetUnclassifiableObjectSizeInBytes() const{ return m_unclassifiableObjectSizeInBytes; }
 
     /**
-     * <p>The total storage size, in bytes, of all the objects that Amazon Macie can't
+     * <p>The total storage size, in bytes, of the objects that Amazon Macie can't
      * analyze in the buckets. These objects don't use a supported storage class or
      * don't have a file name extension for a supported file or storage format.</p>
      */
     inline void SetUnclassifiableObjectSizeInBytes(const ObjectLevelStatistics& value) { m_unclassifiableObjectSizeInBytes = value; }
 
     /**
-     * <p>The total storage size, in bytes, of all the objects that Amazon Macie can't
+     * <p>The total storage size, in bytes, of the objects that Amazon Macie can't
      * analyze in the buckets. These objects don't use a supported storage class or
      * don't have a file name extension for a supported file or storage format.</p>
      */
     inline void SetUnclassifiableObjectSizeInBytes(ObjectLevelStatistics&& value) { m_unclassifiableObjectSizeInBytes = std::move(value); }
 
     /**
-     * <p>The total storage size, in bytes, of all the objects that Amazon Macie can't
+     * <p>The total storage size, in bytes, of the objects that Amazon Macie can't
      * analyze in the buckets. These objects don't use a supported storage class or
      * don't have a file name extension for a supported file or storage format.</p>
      */
     inline GetBucketStatisticsResult& WithUnclassifiableObjectSizeInBytes(const ObjectLevelStatistics& value) { SetUnclassifiableObjectSizeInBytes(value); return *this;}
 
     /**
-     * <p>The total storage size, in bytes, of all the objects that Amazon Macie can't
+     * <p>The total storage size, in bytes, of the objects that Amazon Macie can't
      * analyze in the buckets. These objects don't use a supported storage class or
      * don't have a file name extension for a supported file or storage format.</p>
      */

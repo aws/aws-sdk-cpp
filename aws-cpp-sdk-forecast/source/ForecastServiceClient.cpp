@@ -50,6 +50,7 @@
 #include <aws/forecast/model/ListPredictorBacktestExportJobsRequest.h>
 #include <aws/forecast/model/ListPredictorsRequest.h>
 #include <aws/forecast/model/ListTagsForResourceRequest.h>
+#include <aws/forecast/model/StopResourceRequest.h>
 #include <aws/forecast/model/TagResourceRequest.h>
 #include <aws/forecast/model/UntagResourceRequest.h>
 #include <aws/forecast/model/UpdateDatasetGroupRequest.h>
@@ -935,6 +936,33 @@ void ForecastServiceClient::ListTagsForResourceAsync(const ListTagsForResourceRe
 void ForecastServiceClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+StopResourceOutcome ForecastServiceClient::StopResource(const StopResourceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return StopResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StopResourceOutcomeCallable ForecastServiceClient::StopResourceCallable(const StopResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::StopResourceAsync(const StopResourceRequest& request, const StopResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopResourceAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::StopResourceAsyncHelper(const StopResourceRequest& request, const StopResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopResource(request), context);
 }
 
 TagResourceOutcome ForecastServiceClient::TagResource(const TagResourceRequest& request) const

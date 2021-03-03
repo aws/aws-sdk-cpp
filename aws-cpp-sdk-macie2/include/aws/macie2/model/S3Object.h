@@ -335,32 +335,32 @@ namespace Model
 
 
     /**
-     * <p>The type of server-side encryption that's used for the object.</p>
+     * <p>The type of server-side encryption that's used to encrypt the object.</p>
      */
     inline const ServerSideEncryption& GetServerSideEncryption() const{ return m_serverSideEncryption; }
 
     /**
-     * <p>The type of server-side encryption that's used for the object.</p>
+     * <p>The type of server-side encryption that's used to encrypt the object.</p>
      */
     inline bool ServerSideEncryptionHasBeenSet() const { return m_serverSideEncryptionHasBeenSet; }
 
     /**
-     * <p>The type of server-side encryption that's used for the object.</p>
+     * <p>The type of server-side encryption that's used to encrypt the object.</p>
      */
     inline void SetServerSideEncryption(const ServerSideEncryption& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = value; }
 
     /**
-     * <p>The type of server-side encryption that's used for the object.</p>
+     * <p>The type of server-side encryption that's used to encrypt the object.</p>
      */
     inline void SetServerSideEncryption(ServerSideEncryption&& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = std::move(value); }
 
     /**
-     * <p>The type of server-side encryption that's used for the object.</p>
+     * <p>The type of server-side encryption that's used to encrypt the object.</p>
      */
     inline S3Object& WithServerSideEncryption(const ServerSideEncryption& value) { SetServerSideEncryption(value); return *this;}
 
     /**
-     * <p>The type of server-side encryption that's used for the object.</p>
+     * <p>The type of server-side encryption that's used to encrypt the object.</p>
      */
     inline S3Object& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
 
