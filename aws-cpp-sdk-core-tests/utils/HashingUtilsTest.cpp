@@ -117,6 +117,53 @@ TEST(HashingUtilsTest, TestSHA256FromString)
             "cf5b16a778af8380036ce59e7b0492370b249b11e8f07a51afac45037afee9d1");
 }
 
+TEST(HashingUtilsTest, TestSHA1FromString)
+{
+    Aws::String toHash = "TestToHash";
+
+    ByteBuffer digest = HashingUtils::CalculateSHA1(toHash);
+    ASSERT_EQ(20uL, digest.GetLength());
+
+    // SHA1 results come from https://www.di-mgt.com.au/sha_testvectors.html
+    EXPECT_STREQ(HashingUtils::HexEncode(HashingUtils::CalculateSHA1("")).c_str(),
+                 "da39a3ee5e6b4b0d3255bfef95601890afd80709");
+
+    EXPECT_STREQ(HashingUtils::HexEncode(HashingUtils::CalculateSHA1("abc")).c_str(),
+                 "a9993e364706816aba3e25717850c26c9cd0d89d");
+
+    EXPECT_STREQ(HashingUtils::HexEncode(HashingUtils::CalculateSHA1(
+            "abcdefghbcdefghicdefghijdefghijkefghijklfghijklmghijklmnhijklmnoijklmnopjklmnopqklmnopqrlmnopqrsmnopqrstnopqrstu")).c_str(),
+                 "a49b2446a02c645bf419f995b67091253a04a259");
+}
+
+TEST(HashingUtilsTest, TestSHA1FromStream)
+{
+    Aws::StringStream toHash;
+    toHash << "TestToHash";
+
+    ByteBuffer digest = HashingUtils::CalculateSHA1(toHash);
+    ASSERT_EQ(20uL, digest.GetLength());
+
+    // SHA1 results come from https://www.di-mgt.com.au/sha_testvectors.html
+    toHash.str("");
+    toHash.clear();
+    toHash << "";
+    EXPECT_STREQ(HashingUtils::HexEncode(HashingUtils::CalculateSHA1(toHash)).c_str(),
+            "da39a3ee5e6b4b0d3255bfef95601890afd80709");
+
+    toHash.str("");
+    toHash.clear();
+    toHash << "abc";
+    EXPECT_STREQ(HashingUtils::HexEncode(HashingUtils::CalculateSHA1(toHash)).c_str(),
+            "a9993e364706816aba3e25717850c26c9cd0d89d");
+
+    toHash.str("");
+    toHash.clear();
+    toHash << "abcdefghbcdefghicdefghijdefghijkefghijklfghijklmghijklmnhijklmnoijklmnopjklmnopqklmnopqrlmnopqrsmnopqrstnopqrstu";
+    EXPECT_STREQ(HashingUtils::HexEncode(HashingUtils::CalculateSHA1(toHash)).c_str(),
+            "a49b2446a02c645bf419f995b67091253a04a259");
+}
+
 TEST(HashingUtilsTest, TestSHA256FromStream)
 {
     Aws::StringStream toHash;
@@ -131,13 +178,13 @@ TEST(HashingUtilsTest, TestSHA256FromStream)
     // SHA256 results come from https://www.di-mgt.com.au/sha_testvectors.html
     toHash.str("");
     toHash.clear();
-    EXPECT_STREQ(HashingUtils::HexEncode(HashingUtils::CalculateSHA256(toHash)).c_str(), 
+    EXPECT_STREQ(HashingUtils::HexEncode(HashingUtils::CalculateSHA256(toHash)).c_str(),
             "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855");
 
     toHash.str("");
     toHash.clear();
     toHash << "abc";
-    EXPECT_STREQ(HashingUtils::HexEncode(HashingUtils::CalculateSHA256(toHash)).c_str(), 
+    EXPECT_STREQ(HashingUtils::HexEncode(HashingUtils::CalculateSHA256(toHash)).c_str(),
             "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad");
 
     toHash.str("");

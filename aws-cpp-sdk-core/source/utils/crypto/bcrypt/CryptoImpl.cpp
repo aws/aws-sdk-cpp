@@ -318,6 +318,21 @@ namespace Aws
                 return m_impl.Calculate(stream);
             }
 
+            Sha1BcryptImpl::Sha1BcryptImpl() :
+                    m_impl(BCRYPT_SHA1_ALGORITHM, false)
+            {
+            }
+
+            HashResult Sha1BcryptImpl::Calculate(const Aws::String& str)
+            {
+                return m_impl.Calculate(str);
+            }
+
+            HashResult Sha1BcryptImpl::Calculate(Aws::IStream& stream)
+            {
+                return m_impl.Calculate(stream);
+            }
+
             Sha256BcryptImpl::Sha256BcryptImpl() :
                 m_impl(BCRYPT_SHA256_ALGORITHM, false)
             {
