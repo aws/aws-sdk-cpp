@@ -6083,14 +6083,26 @@ namespace Model
         virtual void DescribeSubscribedWorkteamAsync(const Model::DescribeSubscribedWorkteamRequest& request, const DescribeSubscribedWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about a training job.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about a training job. </p> <p>Some of the attributes
+         * below only appear if the training job successfully starts. If the training job
+         * fails, <code>TrainingJobStatus</code> is <code>Failed</code> and, depending on
+         * the <code>FailureReason</code>, attributes like <code>TrainingStartTime</code>,
+         * <code>TrainingTimeInSeconds</code>, <code>TrainingEndTime</code>, and
+         * <code>BillableTimeInSeconds</code> may not be present in the
+         * response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrainingJob">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeTrainingJobOutcome DescribeTrainingJob(const Model::DescribeTrainingJobRequest& request) const;
 
         /**
-         * <p>Returns information about a training job.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about a training job. </p> <p>Some of the attributes
+         * below only appear if the training job successfully starts. If the training job
+         * fails, <code>TrainingJobStatus</code> is <code>Failed</code> and, depending on
+         * the <code>FailureReason</code>, attributes like <code>TrainingStartTime</code>,
+         * <code>TrainingTimeInSeconds</code>, <code>TrainingEndTime</code>, and
+         * <code>BillableTimeInSeconds</code> may not be present in the
+         * response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrainingJob">AWS
          * API Reference</a></p>
          *
@@ -6099,7 +6111,13 @@ namespace Model
         virtual Model::DescribeTrainingJobOutcomeCallable DescribeTrainingJobCallable(const Model::DescribeTrainingJobRequest& request) const;
 
         /**
-         * <p>Returns information about a training job.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about a training job. </p> <p>Some of the attributes
+         * below only appear if the training job successfully starts. If the training job
+         * fails, <code>TrainingJobStatus</code> is <code>Failed</code> and, depending on
+         * the <code>FailureReason</code>, attributes like <code>TrainingStartTime</code>,
+         * <code>TrainingTimeInSeconds</code>, <code>TrainingEndTime</code>, and
+         * <code>BillableTimeInSeconds</code> may not be present in the
+         * response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrainingJob">AWS
          * API Reference</a></p>
          *

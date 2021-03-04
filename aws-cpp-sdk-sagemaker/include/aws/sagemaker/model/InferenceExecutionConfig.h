@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies details about how containers in a multi-container are
+   * <p>Specifies details about how containers in a multi-container endpoint are
    * run.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/InferenceExecutionConfig">AWS
    * API Reference</a></p>

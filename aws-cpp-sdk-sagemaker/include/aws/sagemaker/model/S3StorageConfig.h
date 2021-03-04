@@ -175,6 +175,47 @@ namespace Model
      */
     inline S3StorageConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>The S3 path where offline records are written.</p>
+     */
+    inline const Aws::String& GetResolvedOutputS3Uri() const{ return m_resolvedOutputS3Uri; }
+
+    /**
+     * <p>The S3 path where offline records are written.</p>
+     */
+    inline bool ResolvedOutputS3UriHasBeenSet() const { return m_resolvedOutputS3UriHasBeenSet; }
+
+    /**
+     * <p>The S3 path where offline records are written.</p>
+     */
+    inline void SetResolvedOutputS3Uri(const Aws::String& value) { m_resolvedOutputS3UriHasBeenSet = true; m_resolvedOutputS3Uri = value; }
+
+    /**
+     * <p>The S3 path where offline records are written.</p>
+     */
+    inline void SetResolvedOutputS3Uri(Aws::String&& value) { m_resolvedOutputS3UriHasBeenSet = true; m_resolvedOutputS3Uri = std::move(value); }
+
+    /**
+     * <p>The S3 path where offline records are written.</p>
+     */
+    inline void SetResolvedOutputS3Uri(const char* value) { m_resolvedOutputS3UriHasBeenSet = true; m_resolvedOutputS3Uri.assign(value); }
+
+    /**
+     * <p>The S3 path where offline records are written.</p>
+     */
+    inline S3StorageConfig& WithResolvedOutputS3Uri(const Aws::String& value) { SetResolvedOutputS3Uri(value); return *this;}
+
+    /**
+     * <p>The S3 path where offline records are written.</p>
+     */
+    inline S3StorageConfig& WithResolvedOutputS3Uri(Aws::String&& value) { SetResolvedOutputS3Uri(std::move(value)); return *this;}
+
+    /**
+     * <p>The S3 path where offline records are written.</p>
+     */
+    inline S3StorageConfig& WithResolvedOutputS3Uri(const char* value) { SetResolvedOutputS3Uri(value); return *this;}
+
   private:
 
     Aws::String m_s3Uri;
@@ -182,6 +223,9 @@ namespace Model
 
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
+    Aws::String m_resolvedOutputS3Uri;
+    bool m_resolvedOutputS3UriHasBeenSet;
   };
 
 } // namespace Model

@@ -22,15 +22,22 @@
 #include <aws/eventbridge/EventBridgeErrorMarshaller.h>
 #include <aws/eventbridge/model/ActivateEventSourceRequest.h>
 #include <aws/eventbridge/model/CancelReplayRequest.h>
+#include <aws/eventbridge/model/CreateApiDestinationRequest.h>
 #include <aws/eventbridge/model/CreateArchiveRequest.h>
+#include <aws/eventbridge/model/CreateConnectionRequest.h>
 #include <aws/eventbridge/model/CreateEventBusRequest.h>
 #include <aws/eventbridge/model/CreatePartnerEventSourceRequest.h>
 #include <aws/eventbridge/model/DeactivateEventSourceRequest.h>
+#include <aws/eventbridge/model/DeauthorizeConnectionRequest.h>
+#include <aws/eventbridge/model/DeleteApiDestinationRequest.h>
 #include <aws/eventbridge/model/DeleteArchiveRequest.h>
+#include <aws/eventbridge/model/DeleteConnectionRequest.h>
 #include <aws/eventbridge/model/DeleteEventBusRequest.h>
 #include <aws/eventbridge/model/DeletePartnerEventSourceRequest.h>
 #include <aws/eventbridge/model/DeleteRuleRequest.h>
+#include <aws/eventbridge/model/DescribeApiDestinationRequest.h>
 #include <aws/eventbridge/model/DescribeArchiveRequest.h>
+#include <aws/eventbridge/model/DescribeConnectionRequest.h>
 #include <aws/eventbridge/model/DescribeEventBusRequest.h>
 #include <aws/eventbridge/model/DescribeEventSourceRequest.h>
 #include <aws/eventbridge/model/DescribePartnerEventSourceRequest.h>
@@ -38,7 +45,9 @@
 #include <aws/eventbridge/model/DescribeRuleRequest.h>
 #include <aws/eventbridge/model/DisableRuleRequest.h>
 #include <aws/eventbridge/model/EnableRuleRequest.h>
+#include <aws/eventbridge/model/ListApiDestinationsRequest.h>
 #include <aws/eventbridge/model/ListArchivesRequest.h>
+#include <aws/eventbridge/model/ListConnectionsRequest.h>
 #include <aws/eventbridge/model/ListEventBusesRequest.h>
 #include <aws/eventbridge/model/ListEventSourcesRequest.h>
 #include <aws/eventbridge/model/ListPartnerEventSourceAccountsRequest.h>
@@ -59,7 +68,9 @@
 #include <aws/eventbridge/model/TagResourceRequest.h>
 #include <aws/eventbridge/model/TestEventPatternRequest.h>
 #include <aws/eventbridge/model/UntagResourceRequest.h>
+#include <aws/eventbridge/model/UpdateApiDestinationRequest.h>
 #include <aws/eventbridge/model/UpdateArchiveRequest.h>
+#include <aws/eventbridge/model/UpdateConnectionRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -188,6 +199,33 @@ void EventBridgeClient::CancelReplayAsyncHelper(const CancelReplayRequest& reque
   handler(this, request, CancelReplay(request), context);
 }
 
+CreateApiDestinationOutcome EventBridgeClient::CreateApiDestination(const CreateApiDestinationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateApiDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateApiDestinationOutcomeCallable EventBridgeClient::CreateApiDestinationCallable(const CreateApiDestinationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateApiDestinationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateApiDestination(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EventBridgeClient::CreateApiDestinationAsync(const CreateApiDestinationRequest& request, const CreateApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateApiDestinationAsyncHelper( request, handler, context ); } );
+}
+
+void EventBridgeClient::CreateApiDestinationAsyncHelper(const CreateApiDestinationRequest& request, const CreateApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateApiDestination(request), context);
+}
+
 CreateArchiveOutcome EventBridgeClient::CreateArchive(const CreateArchiveRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -213,6 +251,33 @@ void EventBridgeClient::CreateArchiveAsync(const CreateArchiveRequest& request, 
 void EventBridgeClient::CreateArchiveAsyncHelper(const CreateArchiveRequest& request, const CreateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateArchive(request), context);
+}
+
+CreateConnectionOutcome EventBridgeClient::CreateConnection(const CreateConnectionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateConnectionOutcomeCallable EventBridgeClient::CreateConnectionCallable(const CreateConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EventBridgeClient::CreateConnectionAsync(const CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateConnectionAsyncHelper( request, handler, context ); } );
+}
+
+void EventBridgeClient::CreateConnectionAsyncHelper(const CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateConnection(request), context);
 }
 
 CreateEventBusOutcome EventBridgeClient::CreateEventBus(const CreateEventBusRequest& request) const
@@ -296,6 +361,60 @@ void EventBridgeClient::DeactivateEventSourceAsyncHelper(const DeactivateEventSo
   handler(this, request, DeactivateEventSource(request), context);
 }
 
+DeauthorizeConnectionOutcome EventBridgeClient::DeauthorizeConnection(const DeauthorizeConnectionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeauthorizeConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeauthorizeConnectionOutcomeCallable EventBridgeClient::DeauthorizeConnectionCallable(const DeauthorizeConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeauthorizeConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeauthorizeConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EventBridgeClient::DeauthorizeConnectionAsync(const DeauthorizeConnectionRequest& request, const DeauthorizeConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeauthorizeConnectionAsyncHelper( request, handler, context ); } );
+}
+
+void EventBridgeClient::DeauthorizeConnectionAsyncHelper(const DeauthorizeConnectionRequest& request, const DeauthorizeConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeauthorizeConnection(request), context);
+}
+
+DeleteApiDestinationOutcome EventBridgeClient::DeleteApiDestination(const DeleteApiDestinationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteApiDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteApiDestinationOutcomeCallable EventBridgeClient::DeleteApiDestinationCallable(const DeleteApiDestinationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteApiDestinationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteApiDestination(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EventBridgeClient::DeleteApiDestinationAsync(const DeleteApiDestinationRequest& request, const DeleteApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteApiDestinationAsyncHelper( request, handler, context ); } );
+}
+
+void EventBridgeClient::DeleteApiDestinationAsyncHelper(const DeleteApiDestinationRequest& request, const DeleteApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteApiDestination(request), context);
+}
+
 DeleteArchiveOutcome EventBridgeClient::DeleteArchive(const DeleteArchiveRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -321,6 +440,33 @@ void EventBridgeClient::DeleteArchiveAsync(const DeleteArchiveRequest& request, 
 void EventBridgeClient::DeleteArchiveAsyncHelper(const DeleteArchiveRequest& request, const DeleteArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteArchive(request), context);
+}
+
+DeleteConnectionOutcome EventBridgeClient::DeleteConnection(const DeleteConnectionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteConnectionOutcomeCallable EventBridgeClient::DeleteConnectionCallable(const DeleteConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EventBridgeClient::DeleteConnectionAsync(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteConnectionAsyncHelper( request, handler, context ); } );
+}
+
+void EventBridgeClient::DeleteConnectionAsyncHelper(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteConnection(request), context);
 }
 
 DeleteEventBusOutcome EventBridgeClient::DeleteEventBus(const DeleteEventBusRequest& request) const
@@ -404,6 +550,33 @@ void EventBridgeClient::DeleteRuleAsyncHelper(const DeleteRuleRequest& request, 
   handler(this, request, DeleteRule(request), context);
 }
 
+DescribeApiDestinationOutcome EventBridgeClient::DescribeApiDestination(const DescribeApiDestinationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeApiDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeApiDestinationOutcomeCallable EventBridgeClient::DescribeApiDestinationCallable(const DescribeApiDestinationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeApiDestinationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeApiDestination(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EventBridgeClient::DescribeApiDestinationAsync(const DescribeApiDestinationRequest& request, const DescribeApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeApiDestinationAsyncHelper( request, handler, context ); } );
+}
+
+void EventBridgeClient::DescribeApiDestinationAsyncHelper(const DescribeApiDestinationRequest& request, const DescribeApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeApiDestination(request), context);
+}
+
 DescribeArchiveOutcome EventBridgeClient::DescribeArchive(const DescribeArchiveRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -429,6 +602,33 @@ void EventBridgeClient::DescribeArchiveAsync(const DescribeArchiveRequest& reque
 void EventBridgeClient::DescribeArchiveAsyncHelper(const DescribeArchiveRequest& request, const DescribeArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeArchive(request), context);
+}
+
+DescribeConnectionOutcome EventBridgeClient::DescribeConnection(const DescribeConnectionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeConnectionOutcomeCallable EventBridgeClient::DescribeConnectionCallable(const DescribeConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EventBridgeClient::DescribeConnectionAsync(const DescribeConnectionRequest& request, const DescribeConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeConnectionAsyncHelper( request, handler, context ); } );
+}
+
+void EventBridgeClient::DescribeConnectionAsyncHelper(const DescribeConnectionRequest& request, const DescribeConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeConnection(request), context);
 }
 
 DescribeEventBusOutcome EventBridgeClient::DescribeEventBus(const DescribeEventBusRequest& request) const
@@ -620,6 +820,33 @@ void EventBridgeClient::EnableRuleAsyncHelper(const EnableRuleRequest& request, 
   handler(this, request, EnableRule(request), context);
 }
 
+ListApiDestinationsOutcome EventBridgeClient::ListApiDestinations(const ListApiDestinationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListApiDestinationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListApiDestinationsOutcomeCallable EventBridgeClient::ListApiDestinationsCallable(const ListApiDestinationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListApiDestinationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListApiDestinations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EventBridgeClient::ListApiDestinationsAsync(const ListApiDestinationsRequest& request, const ListApiDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListApiDestinationsAsyncHelper( request, handler, context ); } );
+}
+
+void EventBridgeClient::ListApiDestinationsAsyncHelper(const ListApiDestinationsRequest& request, const ListApiDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListApiDestinations(request), context);
+}
+
 ListArchivesOutcome EventBridgeClient::ListArchives(const ListArchivesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -645,6 +872,33 @@ void EventBridgeClient::ListArchivesAsync(const ListArchivesRequest& request, co
 void EventBridgeClient::ListArchivesAsyncHelper(const ListArchivesRequest& request, const ListArchivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListArchives(request), context);
+}
+
+ListConnectionsOutcome EventBridgeClient::ListConnections(const ListConnectionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListConnectionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListConnectionsOutcomeCallable EventBridgeClient::ListConnectionsCallable(const ListConnectionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListConnectionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListConnections(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EventBridgeClient::ListConnectionsAsync(const ListConnectionsRequest& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListConnectionsAsyncHelper( request, handler, context ); } );
+}
+
+void EventBridgeClient::ListConnectionsAsyncHelper(const ListConnectionsRequest& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListConnections(request), context);
 }
 
 ListEventBusesOutcome EventBridgeClient::ListEventBuses(const ListEventBusesRequest& request) const
@@ -1187,6 +1441,33 @@ void EventBridgeClient::UntagResourceAsyncHelper(const UntagResourceRequest& req
   handler(this, request, UntagResource(request), context);
 }
 
+UpdateApiDestinationOutcome EventBridgeClient::UpdateApiDestination(const UpdateApiDestinationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateApiDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateApiDestinationOutcomeCallable EventBridgeClient::UpdateApiDestinationCallable(const UpdateApiDestinationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateApiDestinationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApiDestination(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EventBridgeClient::UpdateApiDestinationAsync(const UpdateApiDestinationRequest& request, const UpdateApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateApiDestinationAsyncHelper( request, handler, context ); } );
+}
+
+void EventBridgeClient::UpdateApiDestinationAsyncHelper(const UpdateApiDestinationRequest& request, const UpdateApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateApiDestination(request), context);
+}
+
 UpdateArchiveOutcome EventBridgeClient::UpdateArchive(const UpdateArchiveRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1212,5 +1493,32 @@ void EventBridgeClient::UpdateArchiveAsync(const UpdateArchiveRequest& request, 
 void EventBridgeClient::UpdateArchiveAsyncHelper(const UpdateArchiveRequest& request, const UpdateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateArchive(request), context);
+}
+
+UpdateConnectionOutcome EventBridgeClient::UpdateConnection(const UpdateConnectionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateConnectionOutcomeCallable EventBridgeClient::UpdateConnectionCallable(const UpdateConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EventBridgeClient::UpdateConnectionAsync(const UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateConnectionAsyncHelper( request, handler, context ); } );
+}
+
+void EventBridgeClient::UpdateConnectionAsyncHelper(const UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateConnection(request), context);
 }
 

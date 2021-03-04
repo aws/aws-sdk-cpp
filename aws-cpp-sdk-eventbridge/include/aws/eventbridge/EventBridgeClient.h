@@ -12,17 +12,26 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/eventbridge/model/CancelReplayResult.h>
+#include <aws/eventbridge/model/CreateApiDestinationResult.h>
 #include <aws/eventbridge/model/CreateArchiveResult.h>
+#include <aws/eventbridge/model/CreateConnectionResult.h>
 #include <aws/eventbridge/model/CreateEventBusResult.h>
 #include <aws/eventbridge/model/CreatePartnerEventSourceResult.h>
+#include <aws/eventbridge/model/DeauthorizeConnectionResult.h>
+#include <aws/eventbridge/model/DeleteApiDestinationResult.h>
 #include <aws/eventbridge/model/DeleteArchiveResult.h>
+#include <aws/eventbridge/model/DeleteConnectionResult.h>
+#include <aws/eventbridge/model/DescribeApiDestinationResult.h>
 #include <aws/eventbridge/model/DescribeArchiveResult.h>
+#include <aws/eventbridge/model/DescribeConnectionResult.h>
 #include <aws/eventbridge/model/DescribeEventBusResult.h>
 #include <aws/eventbridge/model/DescribeEventSourceResult.h>
 #include <aws/eventbridge/model/DescribePartnerEventSourceResult.h>
 #include <aws/eventbridge/model/DescribeReplayResult.h>
 #include <aws/eventbridge/model/DescribeRuleResult.h>
+#include <aws/eventbridge/model/ListApiDestinationsResult.h>
 #include <aws/eventbridge/model/ListArchivesResult.h>
+#include <aws/eventbridge/model/ListConnectionsResult.h>
 #include <aws/eventbridge/model/ListEventBusesResult.h>
 #include <aws/eventbridge/model/ListEventSourcesResult.h>
 #include <aws/eventbridge/model/ListPartnerEventSourceAccountsResult.h>
@@ -41,7 +50,9 @@
 #include <aws/eventbridge/model/TagResourceResult.h>
 #include <aws/eventbridge/model/TestEventPatternResult.h>
 #include <aws/eventbridge/model/UntagResourceResult.h>
+#include <aws/eventbridge/model/UpdateApiDestinationResult.h>
 #include <aws/eventbridge/model/UpdateArchiveResult.h>
+#include <aws/eventbridge/model/UpdateConnectionResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -84,15 +95,22 @@ namespace Model
 {
         class ActivateEventSourceRequest;
         class CancelReplayRequest;
+        class CreateApiDestinationRequest;
         class CreateArchiveRequest;
+        class CreateConnectionRequest;
         class CreateEventBusRequest;
         class CreatePartnerEventSourceRequest;
         class DeactivateEventSourceRequest;
+        class DeauthorizeConnectionRequest;
+        class DeleteApiDestinationRequest;
         class DeleteArchiveRequest;
+        class DeleteConnectionRequest;
         class DeleteEventBusRequest;
         class DeletePartnerEventSourceRequest;
         class DeleteRuleRequest;
+        class DescribeApiDestinationRequest;
         class DescribeArchiveRequest;
+        class DescribeConnectionRequest;
         class DescribeEventBusRequest;
         class DescribeEventSourceRequest;
         class DescribePartnerEventSourceRequest;
@@ -100,7 +118,9 @@ namespace Model
         class DescribeRuleRequest;
         class DisableRuleRequest;
         class EnableRuleRequest;
+        class ListApiDestinationsRequest;
         class ListArchivesRequest;
+        class ListConnectionsRequest;
         class ListEventBusesRequest;
         class ListEventSourcesRequest;
         class ListPartnerEventSourceAccountsRequest;
@@ -121,19 +141,28 @@ namespace Model
         class TagResourceRequest;
         class TestEventPatternRequest;
         class UntagResourceRequest;
+        class UpdateApiDestinationRequest;
         class UpdateArchiveRequest;
+        class UpdateConnectionRequest;
 
         typedef Aws::Utils::Outcome<Aws::NoResult, EventBridgeError> ActivateEventSourceOutcome;
         typedef Aws::Utils::Outcome<CancelReplayResult, EventBridgeError> CancelReplayOutcome;
+        typedef Aws::Utils::Outcome<CreateApiDestinationResult, EventBridgeError> CreateApiDestinationOutcome;
         typedef Aws::Utils::Outcome<CreateArchiveResult, EventBridgeError> CreateArchiveOutcome;
+        typedef Aws::Utils::Outcome<CreateConnectionResult, EventBridgeError> CreateConnectionOutcome;
         typedef Aws::Utils::Outcome<CreateEventBusResult, EventBridgeError> CreateEventBusOutcome;
         typedef Aws::Utils::Outcome<CreatePartnerEventSourceResult, EventBridgeError> CreatePartnerEventSourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EventBridgeError> DeactivateEventSourceOutcome;
+        typedef Aws::Utils::Outcome<DeauthorizeConnectionResult, EventBridgeError> DeauthorizeConnectionOutcome;
+        typedef Aws::Utils::Outcome<DeleteApiDestinationResult, EventBridgeError> DeleteApiDestinationOutcome;
         typedef Aws::Utils::Outcome<DeleteArchiveResult, EventBridgeError> DeleteArchiveOutcome;
+        typedef Aws::Utils::Outcome<DeleteConnectionResult, EventBridgeError> DeleteConnectionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EventBridgeError> DeleteEventBusOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EventBridgeError> DeletePartnerEventSourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EventBridgeError> DeleteRuleOutcome;
+        typedef Aws::Utils::Outcome<DescribeApiDestinationResult, EventBridgeError> DescribeApiDestinationOutcome;
         typedef Aws::Utils::Outcome<DescribeArchiveResult, EventBridgeError> DescribeArchiveOutcome;
+        typedef Aws::Utils::Outcome<DescribeConnectionResult, EventBridgeError> DescribeConnectionOutcome;
         typedef Aws::Utils::Outcome<DescribeEventBusResult, EventBridgeError> DescribeEventBusOutcome;
         typedef Aws::Utils::Outcome<DescribeEventSourceResult, EventBridgeError> DescribeEventSourceOutcome;
         typedef Aws::Utils::Outcome<DescribePartnerEventSourceResult, EventBridgeError> DescribePartnerEventSourceOutcome;
@@ -141,7 +170,9 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeRuleResult, EventBridgeError> DescribeRuleOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EventBridgeError> DisableRuleOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EventBridgeError> EnableRuleOutcome;
+        typedef Aws::Utils::Outcome<ListApiDestinationsResult, EventBridgeError> ListApiDestinationsOutcome;
         typedef Aws::Utils::Outcome<ListArchivesResult, EventBridgeError> ListArchivesOutcome;
+        typedef Aws::Utils::Outcome<ListConnectionsResult, EventBridgeError> ListConnectionsOutcome;
         typedef Aws::Utils::Outcome<ListEventBusesResult, EventBridgeError> ListEventBusesOutcome;
         typedef Aws::Utils::Outcome<ListEventSourcesResult, EventBridgeError> ListEventSourcesOutcome;
         typedef Aws::Utils::Outcome<ListPartnerEventSourceAccountsResult, EventBridgeError> ListPartnerEventSourceAccountsOutcome;
@@ -162,19 +193,28 @@ namespace Model
         typedef Aws::Utils::Outcome<TagResourceResult, EventBridgeError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<TestEventPatternResult, EventBridgeError> TestEventPatternOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, EventBridgeError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateApiDestinationResult, EventBridgeError> UpdateApiDestinationOutcome;
         typedef Aws::Utils::Outcome<UpdateArchiveResult, EventBridgeError> UpdateArchiveOutcome;
+        typedef Aws::Utils::Outcome<UpdateConnectionResult, EventBridgeError> UpdateConnectionOutcome;
 
         typedef std::future<ActivateEventSourceOutcome> ActivateEventSourceOutcomeCallable;
         typedef std::future<CancelReplayOutcome> CancelReplayOutcomeCallable;
+        typedef std::future<CreateApiDestinationOutcome> CreateApiDestinationOutcomeCallable;
         typedef std::future<CreateArchiveOutcome> CreateArchiveOutcomeCallable;
+        typedef std::future<CreateConnectionOutcome> CreateConnectionOutcomeCallable;
         typedef std::future<CreateEventBusOutcome> CreateEventBusOutcomeCallable;
         typedef std::future<CreatePartnerEventSourceOutcome> CreatePartnerEventSourceOutcomeCallable;
         typedef std::future<DeactivateEventSourceOutcome> DeactivateEventSourceOutcomeCallable;
+        typedef std::future<DeauthorizeConnectionOutcome> DeauthorizeConnectionOutcomeCallable;
+        typedef std::future<DeleteApiDestinationOutcome> DeleteApiDestinationOutcomeCallable;
         typedef std::future<DeleteArchiveOutcome> DeleteArchiveOutcomeCallable;
+        typedef std::future<DeleteConnectionOutcome> DeleteConnectionOutcomeCallable;
         typedef std::future<DeleteEventBusOutcome> DeleteEventBusOutcomeCallable;
         typedef std::future<DeletePartnerEventSourceOutcome> DeletePartnerEventSourceOutcomeCallable;
         typedef std::future<DeleteRuleOutcome> DeleteRuleOutcomeCallable;
+        typedef std::future<DescribeApiDestinationOutcome> DescribeApiDestinationOutcomeCallable;
         typedef std::future<DescribeArchiveOutcome> DescribeArchiveOutcomeCallable;
+        typedef std::future<DescribeConnectionOutcome> DescribeConnectionOutcomeCallable;
         typedef std::future<DescribeEventBusOutcome> DescribeEventBusOutcomeCallable;
         typedef std::future<DescribeEventSourceOutcome> DescribeEventSourceOutcomeCallable;
         typedef std::future<DescribePartnerEventSourceOutcome> DescribePartnerEventSourceOutcomeCallable;
@@ -182,7 +222,9 @@ namespace Model
         typedef std::future<DescribeRuleOutcome> DescribeRuleOutcomeCallable;
         typedef std::future<DisableRuleOutcome> DisableRuleOutcomeCallable;
         typedef std::future<EnableRuleOutcome> EnableRuleOutcomeCallable;
+        typedef std::future<ListApiDestinationsOutcome> ListApiDestinationsOutcomeCallable;
         typedef std::future<ListArchivesOutcome> ListArchivesOutcomeCallable;
+        typedef std::future<ListConnectionsOutcome> ListConnectionsOutcomeCallable;
         typedef std::future<ListEventBusesOutcome> ListEventBusesOutcomeCallable;
         typedef std::future<ListEventSourcesOutcome> ListEventSourcesOutcomeCallable;
         typedef std::future<ListPartnerEventSourceAccountsOutcome> ListPartnerEventSourceAccountsOutcomeCallable;
@@ -203,22 +245,31 @@ namespace Model
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<TestEventPatternOutcome> TestEventPatternOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+        typedef std::future<UpdateApiDestinationOutcome> UpdateApiDestinationOutcomeCallable;
         typedef std::future<UpdateArchiveOutcome> UpdateArchiveOutcomeCallable;
+        typedef std::future<UpdateConnectionOutcome> UpdateConnectionOutcomeCallable;
 } // namespace Model
 
   class EventBridgeClient;
 
     typedef std::function<void(const EventBridgeClient*, const Model::ActivateEventSourceRequest&, const Model::ActivateEventSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ActivateEventSourceResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::CancelReplayRequest&, const Model::CancelReplayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelReplayResponseReceivedHandler;
+    typedef std::function<void(const EventBridgeClient*, const Model::CreateApiDestinationRequest&, const Model::CreateApiDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApiDestinationResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::CreateArchiveRequest&, const Model::CreateArchiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateArchiveResponseReceivedHandler;
+    typedef std::function<void(const EventBridgeClient*, const Model::CreateConnectionRequest&, const Model::CreateConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConnectionResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::CreateEventBusRequest&, const Model::CreateEventBusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEventBusResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::CreatePartnerEventSourceRequest&, const Model::CreatePartnerEventSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePartnerEventSourceResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DeactivateEventSourceRequest&, const Model::DeactivateEventSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeactivateEventSourceResponseReceivedHandler;
+    typedef std::function<void(const EventBridgeClient*, const Model::DeauthorizeConnectionRequest&, const Model::DeauthorizeConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeauthorizeConnectionResponseReceivedHandler;
+    typedef std::function<void(const EventBridgeClient*, const Model::DeleteApiDestinationRequest&, const Model::DeleteApiDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApiDestinationResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DeleteArchiveRequest&, const Model::DeleteArchiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteArchiveResponseReceivedHandler;
+    typedef std::function<void(const EventBridgeClient*, const Model::DeleteConnectionRequest&, const Model::DeleteConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConnectionResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DeleteEventBusRequest&, const Model::DeleteEventBusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventBusResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DeletePartnerEventSourceRequest&, const Model::DeletePartnerEventSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePartnerEventSourceResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DeleteRuleRequest&, const Model::DeleteRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRuleResponseReceivedHandler;
+    typedef std::function<void(const EventBridgeClient*, const Model::DescribeApiDestinationRequest&, const Model::DescribeApiDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeApiDestinationResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DescribeArchiveRequest&, const Model::DescribeArchiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeArchiveResponseReceivedHandler;
+    typedef std::function<void(const EventBridgeClient*, const Model::DescribeConnectionRequest&, const Model::DescribeConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConnectionResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DescribeEventBusRequest&, const Model::DescribeEventBusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventBusResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DescribeEventSourceRequest&, const Model::DescribeEventSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventSourceResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DescribePartnerEventSourceRequest&, const Model::DescribePartnerEventSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePartnerEventSourceResponseReceivedHandler;
@@ -226,7 +277,9 @@ namespace Model
     typedef std::function<void(const EventBridgeClient*, const Model::DescribeRuleRequest&, const Model::DescribeRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRuleResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::DisableRuleRequest&, const Model::DisableRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableRuleResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::EnableRuleRequest&, const Model::EnableRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableRuleResponseReceivedHandler;
+    typedef std::function<void(const EventBridgeClient*, const Model::ListApiDestinationsRequest&, const Model::ListApiDestinationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApiDestinationsResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::ListArchivesRequest&, const Model::ListArchivesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListArchivesResponseReceivedHandler;
+    typedef std::function<void(const EventBridgeClient*, const Model::ListConnectionsRequest&, const Model::ListConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConnectionsResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::ListEventBusesRequest&, const Model::ListEventBusesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventBusesResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::ListEventSourcesRequest&, const Model::ListEventSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventSourcesResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::ListPartnerEventSourceAccountsRequest&, const Model::ListPartnerEventSourceAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPartnerEventSourceAccountsResponseReceivedHandler;
@@ -247,7 +300,9 @@ namespace Model
     typedef std::function<void(const EventBridgeClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::TestEventPatternRequest&, const Model::TestEventPatternOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestEventPatternResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const EventBridgeClient*, const Model::UpdateApiDestinationRequest&, const Model::UpdateApiDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApiDestinationResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::UpdateArchiveRequest&, const Model::UpdateArchiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateArchiveResponseReceivedHandler;
+    typedef std::function<void(const EventBridgeClient*, const Model::UpdateConnectionRequest&, const Model::UpdateConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConnectionResponseReceivedHandler;
 
   /**
    * <p>Amazon EventBridge helps you to respond to state changes in your AWS
@@ -349,6 +404,34 @@ namespace Model
         virtual void CancelReplayAsync(const Model::CancelReplayRequest& request, const CancelReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates an API destination, which is an HTTP invocation endpoint configured
+         * as a target for events.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateApiDestination">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateApiDestinationOutcome CreateApiDestination(const Model::CreateApiDestinationRequest& request) const;
+
+        /**
+         * <p>Creates an API destination, which is an HTTP invocation endpoint configured
+         * as a target for events.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateApiDestination">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateApiDestinationOutcomeCallable CreateApiDestinationCallable(const Model::CreateApiDestinationRequest& request) const;
+
+        /**
+         * <p>Creates an API destination, which is an HTTP invocation endpoint configured
+         * as a target for events.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateApiDestination">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateApiDestinationAsync(const Model::CreateApiDestinationRequest& request, const CreateApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates an archive of events with the specified settings. When you create an
          * archive, incoming events might not immediately start being sent to the archive.
          * Allow a short period of time for changes to take effect. If you do not specify a
@@ -387,6 +470,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateArchiveAsync(const Model::CreateArchiveRequest& request, const CreateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a connection. A connection defines the authorization type and
+         * credentials to use for authorization with an API destination HTTP
+         * endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateConnectionOutcome CreateConnection(const Model::CreateConnectionRequest& request) const;
+
+        /**
+         * <p>Creates a connection. A connection defines the authorization type and
+         * credentials to use for authorization with an API destination HTTP
+         * endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateConnection">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateConnectionOutcomeCallable CreateConnectionCallable(const Model::CreateConnectionRequest& request) const;
+
+        /**
+         * <p>Creates a connection. A connection defines the authorization type and
+         * credentials to use for authorization with an API destination HTTP
+         * endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateConnection">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateConnectionAsync(const Model::CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new event bus within your account. This can be a custom event bus
@@ -539,6 +653,62 @@ namespace Model
         virtual void DeactivateEventSourceAsync(const Model::DeactivateEventSourceRequest& request, const DeactivateEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Removes all authorization parameters from the connection. This lets you
+         * remove the secret from the connection so you can reuse it without having to
+         * create a new connection.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeauthorizeConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeauthorizeConnectionOutcome DeauthorizeConnection(const Model::DeauthorizeConnectionRequest& request) const;
+
+        /**
+         * <p>Removes all authorization parameters from the connection. This lets you
+         * remove the secret from the connection so you can reuse it without having to
+         * create a new connection.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeauthorizeConnection">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeauthorizeConnectionOutcomeCallable DeauthorizeConnectionCallable(const Model::DeauthorizeConnectionRequest& request) const;
+
+        /**
+         * <p>Removes all authorization parameters from the connection. This lets you
+         * remove the secret from the connection so you can reuse it without having to
+         * create a new connection.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeauthorizeConnection">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeauthorizeConnectionAsync(const Model::DeauthorizeConnectionRequest& request, const DeauthorizeConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified API destination.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteApiDestination">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteApiDestinationOutcome DeleteApiDestination(const Model::DeleteApiDestinationRequest& request) const;
+
+        /**
+         * <p>Deletes the specified API destination.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteApiDestination">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteApiDestinationOutcomeCallable DeleteApiDestinationCallable(const Model::DeleteApiDestinationRequest& request) const;
+
+        /**
+         * <p>Deletes the specified API destination.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteApiDestination">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteApiDestinationAsync(const Model::DeleteApiDestinationRequest& request, const DeleteApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the specified archive.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteArchive">AWS
          * API Reference</a></p>
@@ -562,6 +732,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteArchiveAsync(const Model::DeleteArchiveRequest& request, const DeleteArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a connection.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteConnectionOutcome DeleteConnection(const Model::DeleteConnectionRequest& request) const;
+
+        /**
+         * <p>Deletes a connection.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteConnection">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteConnectionOutcomeCallable DeleteConnectionCallable(const Model::DeleteConnectionRequest& request) const;
+
+        /**
+         * <p>Deletes a connection.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteConnection">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteConnectionAsync(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified custom event bus or partner event bus. All rules
@@ -678,6 +873,31 @@ namespace Model
         virtual void DeleteRuleAsync(const Model::DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves details about an API destination.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeApiDestination">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeApiDestinationOutcome DescribeApiDestination(const Model::DescribeApiDestinationRequest& request) const;
+
+        /**
+         * <p>Retrieves details about an API destination.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeApiDestination">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeApiDestinationOutcomeCallable DescribeApiDestinationCallable(const Model::DescribeApiDestinationRequest& request) const;
+
+        /**
+         * <p>Retrieves details about an API destination.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeApiDestination">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeApiDestinationAsync(const Model::DescribeApiDestinationRequest& request, const DescribeApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves details about an archive.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeArchive">AWS
          * API Reference</a></p>
@@ -701,6 +921,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeArchiveAsync(const Model::DescribeArchiveRequest& request, const DescribeArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves details about a connection.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeConnectionOutcome DescribeConnection(const Model::DescribeConnectionRequest& request) const;
+
+        /**
+         * <p>Retrieves details about a connection.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeConnection">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeConnectionOutcomeCallable DescribeConnectionCallable(const Model::DescribeConnectionRequest& request) const;
+
+        /**
+         * <p>Retrieves details about a connection.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeConnection">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeConnectionAsync(const Model::DescribeConnectionRequest& request, const DescribeConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Displays details about an event bus in your account. This can include the
@@ -959,6 +1204,34 @@ namespace Model
         virtual void EnableRuleAsync(const Model::EnableRuleRequest& request, const EnableRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves a list of API destination in the account in the current
+         * Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListApiDestinations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListApiDestinationsOutcome ListApiDestinations(const Model::ListApiDestinationsRequest& request) const;
+
+        /**
+         * <p>Retrieves a list of API destination in the account in the current
+         * Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListApiDestinations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListApiDestinationsOutcomeCallable ListApiDestinationsCallable(const Model::ListApiDestinationsRequest& request) const;
+
+        /**
+         * <p>Retrieves a list of API destination in the account in the current
+         * Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListApiDestinations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListApiDestinationsAsync(const Model::ListApiDestinationsRequest& request, const ListApiDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists your archives. You can either list all the archives or you can provide
          * a prefix to match to the archive names. Filter parameters are
          * exclusive.</p><p><h3>See Also:</h3>   <a
@@ -988,6 +1261,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListArchivesAsync(const Model::ListArchivesRequest& request, const ListArchivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves a list of connections from the account.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListConnections">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListConnectionsOutcome ListConnections(const Model::ListConnectionsRequest& request) const;
+
+        /**
+         * <p>Retrieves a list of connections from the account.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListConnections">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListConnectionsOutcomeCallable ListConnectionsCallable(const Model::ListConnectionsRequest& request) const;
+
+        /**
+         * <p>Retrieves a list of connections from the account.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListConnections">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListConnectionsAsync(const Model::ListConnectionsRequest& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the event buses in your account, including the default event bus,
@@ -1563,14 +1864,15 @@ namespace Model
          * <p>Amazon SQS queues, including FIFO queues</p> </li> <li> <p>The default event
          * bus of another AWS account</p> </li> <li> <p>Amazon API Gateway REST APIs</p>
          * </li> <li> <p>Redshift Clusters to invoke Data API ExecuteStatement on</p> </li>
-         * </ul> <p>Creating rules with built-in targets is supported only in the AWS
-         * Management Console. The built-in targets are <code>EC2 CreateSnapshot API
-         * call</code>, <code>EC2 RebootInstances API call</code>, <code>EC2 StopInstances
-         * API call</code>, and <code>EC2 TerminateInstances API call</code>. </p> <p>For
-         * some target types, <code>PutTargets</code> provides target-specific parameters.
-         * If the target is a Kinesis data stream, you can optionally specify which shard
-         * the event goes to by using the <code>KinesisParameters</code> argument. To
-         * invoke a command on multiple EC2 instances with one rule, you can use the
+         * <li> <p>Custom/SaaS HTTPS APIs via EventBridge API Destinations</p> </li> </ul>
+         * <p>Creating rules with built-in targets is supported only in the AWS Management
+         * Console. The built-in targets are <code>EC2 CreateSnapshot API call</code>,
+         * <code>EC2 RebootInstances API call</code>, <code>EC2 StopInstances API
+         * call</code>, and <code>EC2 TerminateInstances API call</code>. </p> <p>For some
+         * target types, <code>PutTargets</code> provides target-specific parameters. If
+         * the target is a Kinesis data stream, you can optionally specify which shard the
+         * event goes to by using the <code>KinesisParameters</code> argument. To invoke a
+         * command on multiple EC2 instances with one rule, you can use the
          * <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls
          * against the resources that you own, Amazon EventBridge (CloudWatch Events) needs
          * the appropriate permissions. For AWS Lambda and Amazon SNS resources,
@@ -1642,14 +1944,15 @@ namespace Model
          * <p>Amazon SQS queues, including FIFO queues</p> </li> <li> <p>The default event
          * bus of another AWS account</p> </li> <li> <p>Amazon API Gateway REST APIs</p>
          * </li> <li> <p>Redshift Clusters to invoke Data API ExecuteStatement on</p> </li>
-         * </ul> <p>Creating rules with built-in targets is supported only in the AWS
-         * Management Console. The built-in targets are <code>EC2 CreateSnapshot API
-         * call</code>, <code>EC2 RebootInstances API call</code>, <code>EC2 StopInstances
-         * API call</code>, and <code>EC2 TerminateInstances API call</code>. </p> <p>For
-         * some target types, <code>PutTargets</code> provides target-specific parameters.
-         * If the target is a Kinesis data stream, you can optionally specify which shard
-         * the event goes to by using the <code>KinesisParameters</code> argument. To
-         * invoke a command on multiple EC2 instances with one rule, you can use the
+         * <li> <p>Custom/SaaS HTTPS APIs via EventBridge API Destinations</p> </li> </ul>
+         * <p>Creating rules with built-in targets is supported only in the AWS Management
+         * Console. The built-in targets are <code>EC2 CreateSnapshot API call</code>,
+         * <code>EC2 RebootInstances API call</code>, <code>EC2 StopInstances API
+         * call</code>, and <code>EC2 TerminateInstances API call</code>. </p> <p>For some
+         * target types, <code>PutTargets</code> provides target-specific parameters. If
+         * the target is a Kinesis data stream, you can optionally specify which shard the
+         * event goes to by using the <code>KinesisParameters</code> argument. To invoke a
+         * command on multiple EC2 instances with one rule, you can use the
          * <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls
          * against the resources that you own, Amazon EventBridge (CloudWatch Events) needs
          * the appropriate permissions. For AWS Lambda and Amazon SNS resources,
@@ -1723,14 +2026,15 @@ namespace Model
          * <p>Amazon SQS queues, including FIFO queues</p> </li> <li> <p>The default event
          * bus of another AWS account</p> </li> <li> <p>Amazon API Gateway REST APIs</p>
          * </li> <li> <p>Redshift Clusters to invoke Data API ExecuteStatement on</p> </li>
-         * </ul> <p>Creating rules with built-in targets is supported only in the AWS
-         * Management Console. The built-in targets are <code>EC2 CreateSnapshot API
-         * call</code>, <code>EC2 RebootInstances API call</code>, <code>EC2 StopInstances
-         * API call</code>, and <code>EC2 TerminateInstances API call</code>. </p> <p>For
-         * some target types, <code>PutTargets</code> provides target-specific parameters.
-         * If the target is a Kinesis data stream, you can optionally specify which shard
-         * the event goes to by using the <code>KinesisParameters</code> argument. To
-         * invoke a command on multiple EC2 instances with one rule, you can use the
+         * <li> <p>Custom/SaaS HTTPS APIs via EventBridge API Destinations</p> </li> </ul>
+         * <p>Creating rules with built-in targets is supported only in the AWS Management
+         * Console. The built-in targets are <code>EC2 CreateSnapshot API call</code>,
+         * <code>EC2 RebootInstances API call</code>, <code>EC2 StopInstances API
+         * call</code>, and <code>EC2 TerminateInstances API call</code>. </p> <p>For some
+         * target types, <code>PutTargets</code> provides target-specific parameters. If
+         * the target is a Kinesis data stream, you can optionally specify which shard the
+         * event goes to by using the <code>KinesisParameters</code> argument. To invoke a
+         * command on multiple EC2 instances with one rule, you can use the
          * <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls
          * against the resources that you own, Amazon EventBridge (CloudWatch Events) needs
          * the appropriate permissions. For AWS Lambda and Amazon SNS resources,
@@ -2057,6 +2361,31 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates an API destination.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateApiDestination">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateApiDestinationOutcome UpdateApiDestination(const Model::UpdateApiDestinationRequest& request) const;
+
+        /**
+         * <p>Updates an API destination.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateApiDestination">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateApiDestinationOutcomeCallable UpdateApiDestinationCallable(const Model::UpdateApiDestinationRequest& request) const;
+
+        /**
+         * <p>Updates an API destination.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateApiDestination">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateApiDestinationAsync(const Model::UpdateApiDestinationRequest& request, const UpdateApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the specified archive.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateArchive">AWS
          * API Reference</a></p>
@@ -2081,21 +2410,53 @@ namespace Model
          */
         virtual void UpdateArchiveAsync(const Model::UpdateArchiveRequest& request, const UpdateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Updates settings for a connection.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateConnectionOutcome UpdateConnection(const Model::UpdateConnectionRequest& request) const;
+
+        /**
+         * <p>Updates settings for a connection.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateConnection">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateConnectionOutcomeCallable UpdateConnectionCallable(const Model::UpdateConnectionRequest& request) const;
+
+        /**
+         * <p>Updates settings for a connection.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateConnection">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateConnectionAsync(const Model::UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void ActivateEventSourceAsyncHelper(const Model::ActivateEventSourceRequest& request, const ActivateEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelReplayAsyncHelper(const Model::CancelReplayRequest& request, const CancelReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateApiDestinationAsyncHelper(const Model::CreateApiDestinationRequest& request, const CreateApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateArchiveAsyncHelper(const Model::CreateArchiveRequest& request, const CreateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateConnectionAsyncHelper(const Model::CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEventBusAsyncHelper(const Model::CreateEventBusRequest& request, const CreateEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePartnerEventSourceAsyncHelper(const Model::CreatePartnerEventSourceRequest& request, const CreatePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeactivateEventSourceAsyncHelper(const Model::DeactivateEventSourceRequest& request, const DeactivateEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeauthorizeConnectionAsyncHelper(const Model::DeauthorizeConnectionRequest& request, const DeauthorizeConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteApiDestinationAsyncHelper(const Model::DeleteApiDestinationRequest& request, const DeleteApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteArchiveAsyncHelper(const Model::DeleteArchiveRequest& request, const DeleteArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteConnectionAsyncHelper(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEventBusAsyncHelper(const Model::DeleteEventBusRequest& request, const DeleteEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePartnerEventSourceAsyncHelper(const Model::DeletePartnerEventSourceRequest& request, const DeletePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRuleAsyncHelper(const Model::DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeApiDestinationAsyncHelper(const Model::DescribeApiDestinationRequest& request, const DescribeApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeArchiveAsyncHelper(const Model::DescribeArchiveRequest& request, const DescribeArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeConnectionAsyncHelper(const Model::DescribeConnectionRequest& request, const DescribeConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEventBusAsyncHelper(const Model::DescribeEventBusRequest& request, const DescribeEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEventSourceAsyncHelper(const Model::DescribeEventSourceRequest& request, const DescribeEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePartnerEventSourceAsyncHelper(const Model::DescribePartnerEventSourceRequest& request, const DescribePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2103,7 +2464,9 @@ namespace Model
         void DescribeRuleAsyncHelper(const Model::DescribeRuleRequest& request, const DescribeRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableRuleAsyncHelper(const Model::DisableRuleRequest& request, const DisableRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableRuleAsyncHelper(const Model::EnableRuleRequest& request, const EnableRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListApiDestinationsAsyncHelper(const Model::ListApiDestinationsRequest& request, const ListApiDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListArchivesAsyncHelper(const Model::ListArchivesRequest& request, const ListArchivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListConnectionsAsyncHelper(const Model::ListConnectionsRequest& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEventBusesAsyncHelper(const Model::ListEventBusesRequest& request, const ListEventBusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEventSourcesAsyncHelper(const Model::ListEventSourcesRequest& request, const ListEventSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPartnerEventSourceAccountsAsyncHelper(const Model::ListPartnerEventSourceAccountsRequest& request, const ListPartnerEventSourceAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2124,7 +2487,9 @@ namespace Model
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TestEventPatternAsyncHelper(const Model::TestEventPatternRequest& request, const TestEventPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateApiDestinationAsyncHelper(const Model::UpdateApiDestinationRequest& request, const UpdateApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateArchiveAsyncHelper(const Model::UpdateArchiveRequest& request, const UpdateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateConnectionAsyncHelper(const Model::UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

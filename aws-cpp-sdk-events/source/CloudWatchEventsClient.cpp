@@ -22,15 +22,22 @@
 #include <aws/events/CloudWatchEventsErrorMarshaller.h>
 #include <aws/events/model/ActivateEventSourceRequest.h>
 #include <aws/events/model/CancelReplayRequest.h>
+#include <aws/events/model/CreateApiDestinationRequest.h>
 #include <aws/events/model/CreateArchiveRequest.h>
+#include <aws/events/model/CreateConnectionRequest.h>
 #include <aws/events/model/CreateEventBusRequest.h>
 #include <aws/events/model/CreatePartnerEventSourceRequest.h>
 #include <aws/events/model/DeactivateEventSourceRequest.h>
+#include <aws/events/model/DeauthorizeConnectionRequest.h>
+#include <aws/events/model/DeleteApiDestinationRequest.h>
 #include <aws/events/model/DeleteArchiveRequest.h>
+#include <aws/events/model/DeleteConnectionRequest.h>
 #include <aws/events/model/DeleteEventBusRequest.h>
 #include <aws/events/model/DeletePartnerEventSourceRequest.h>
 #include <aws/events/model/DeleteRuleRequest.h>
+#include <aws/events/model/DescribeApiDestinationRequest.h>
 #include <aws/events/model/DescribeArchiveRequest.h>
+#include <aws/events/model/DescribeConnectionRequest.h>
 #include <aws/events/model/DescribeEventBusRequest.h>
 #include <aws/events/model/DescribeEventSourceRequest.h>
 #include <aws/events/model/DescribePartnerEventSourceRequest.h>
@@ -38,7 +45,9 @@
 #include <aws/events/model/DescribeRuleRequest.h>
 #include <aws/events/model/DisableRuleRequest.h>
 #include <aws/events/model/EnableRuleRequest.h>
+#include <aws/events/model/ListApiDestinationsRequest.h>
 #include <aws/events/model/ListArchivesRequest.h>
+#include <aws/events/model/ListConnectionsRequest.h>
 #include <aws/events/model/ListEventBusesRequest.h>
 #include <aws/events/model/ListEventSourcesRequest.h>
 #include <aws/events/model/ListPartnerEventSourceAccountsRequest.h>
@@ -59,7 +68,9 @@
 #include <aws/events/model/TagResourceRequest.h>
 #include <aws/events/model/TestEventPatternRequest.h>
 #include <aws/events/model/UntagResourceRequest.h>
+#include <aws/events/model/UpdateApiDestinationRequest.h>
 #include <aws/events/model/UpdateArchiveRequest.h>
+#include <aws/events/model/UpdateConnectionRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -188,6 +199,33 @@ void CloudWatchEventsClient::CancelReplayAsyncHelper(const CancelReplayRequest& 
   handler(this, request, CancelReplay(request), context);
 }
 
+CreateApiDestinationOutcome CloudWatchEventsClient::CreateApiDestination(const CreateApiDestinationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateApiDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateApiDestinationOutcomeCallable CloudWatchEventsClient::CreateApiDestinationCallable(const CreateApiDestinationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateApiDestinationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateApiDestination(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEventsClient::CreateApiDestinationAsync(const CreateApiDestinationRequest& request, const CreateApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateApiDestinationAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEventsClient::CreateApiDestinationAsyncHelper(const CreateApiDestinationRequest& request, const CreateApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateApiDestination(request), context);
+}
+
 CreateArchiveOutcome CloudWatchEventsClient::CreateArchive(const CreateArchiveRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -213,6 +251,33 @@ void CloudWatchEventsClient::CreateArchiveAsync(const CreateArchiveRequest& requ
 void CloudWatchEventsClient::CreateArchiveAsyncHelper(const CreateArchiveRequest& request, const CreateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateArchive(request), context);
+}
+
+CreateConnectionOutcome CloudWatchEventsClient::CreateConnection(const CreateConnectionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateConnectionOutcomeCallable CloudWatchEventsClient::CreateConnectionCallable(const CreateConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEventsClient::CreateConnectionAsync(const CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateConnectionAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEventsClient::CreateConnectionAsyncHelper(const CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateConnection(request), context);
 }
 
 CreateEventBusOutcome CloudWatchEventsClient::CreateEventBus(const CreateEventBusRequest& request) const
@@ -296,6 +361,60 @@ void CloudWatchEventsClient::DeactivateEventSourceAsyncHelper(const DeactivateEv
   handler(this, request, DeactivateEventSource(request), context);
 }
 
+DeauthorizeConnectionOutcome CloudWatchEventsClient::DeauthorizeConnection(const DeauthorizeConnectionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeauthorizeConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeauthorizeConnectionOutcomeCallable CloudWatchEventsClient::DeauthorizeConnectionCallable(const DeauthorizeConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeauthorizeConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeauthorizeConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEventsClient::DeauthorizeConnectionAsync(const DeauthorizeConnectionRequest& request, const DeauthorizeConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeauthorizeConnectionAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEventsClient::DeauthorizeConnectionAsyncHelper(const DeauthorizeConnectionRequest& request, const DeauthorizeConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeauthorizeConnection(request), context);
+}
+
+DeleteApiDestinationOutcome CloudWatchEventsClient::DeleteApiDestination(const DeleteApiDestinationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteApiDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteApiDestinationOutcomeCallable CloudWatchEventsClient::DeleteApiDestinationCallable(const DeleteApiDestinationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteApiDestinationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteApiDestination(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEventsClient::DeleteApiDestinationAsync(const DeleteApiDestinationRequest& request, const DeleteApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteApiDestinationAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEventsClient::DeleteApiDestinationAsyncHelper(const DeleteApiDestinationRequest& request, const DeleteApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteApiDestination(request), context);
+}
+
 DeleteArchiveOutcome CloudWatchEventsClient::DeleteArchive(const DeleteArchiveRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -321,6 +440,33 @@ void CloudWatchEventsClient::DeleteArchiveAsync(const DeleteArchiveRequest& requ
 void CloudWatchEventsClient::DeleteArchiveAsyncHelper(const DeleteArchiveRequest& request, const DeleteArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteArchive(request), context);
+}
+
+DeleteConnectionOutcome CloudWatchEventsClient::DeleteConnection(const DeleteConnectionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteConnectionOutcomeCallable CloudWatchEventsClient::DeleteConnectionCallable(const DeleteConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEventsClient::DeleteConnectionAsync(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteConnectionAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEventsClient::DeleteConnectionAsyncHelper(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteConnection(request), context);
 }
 
 DeleteEventBusOutcome CloudWatchEventsClient::DeleteEventBus(const DeleteEventBusRequest& request) const
@@ -404,6 +550,33 @@ void CloudWatchEventsClient::DeleteRuleAsyncHelper(const DeleteRuleRequest& requ
   handler(this, request, DeleteRule(request), context);
 }
 
+DescribeApiDestinationOutcome CloudWatchEventsClient::DescribeApiDestination(const DescribeApiDestinationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeApiDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeApiDestinationOutcomeCallable CloudWatchEventsClient::DescribeApiDestinationCallable(const DescribeApiDestinationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeApiDestinationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeApiDestination(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEventsClient::DescribeApiDestinationAsync(const DescribeApiDestinationRequest& request, const DescribeApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeApiDestinationAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEventsClient::DescribeApiDestinationAsyncHelper(const DescribeApiDestinationRequest& request, const DescribeApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeApiDestination(request), context);
+}
+
 DescribeArchiveOutcome CloudWatchEventsClient::DescribeArchive(const DescribeArchiveRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -429,6 +602,33 @@ void CloudWatchEventsClient::DescribeArchiveAsync(const DescribeArchiveRequest& 
 void CloudWatchEventsClient::DescribeArchiveAsyncHelper(const DescribeArchiveRequest& request, const DescribeArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeArchive(request), context);
+}
+
+DescribeConnectionOutcome CloudWatchEventsClient::DescribeConnection(const DescribeConnectionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeConnectionOutcomeCallable CloudWatchEventsClient::DescribeConnectionCallable(const DescribeConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEventsClient::DescribeConnectionAsync(const DescribeConnectionRequest& request, const DescribeConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeConnectionAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEventsClient::DescribeConnectionAsyncHelper(const DescribeConnectionRequest& request, const DescribeConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeConnection(request), context);
 }
 
 DescribeEventBusOutcome CloudWatchEventsClient::DescribeEventBus(const DescribeEventBusRequest& request) const
@@ -620,6 +820,33 @@ void CloudWatchEventsClient::EnableRuleAsyncHelper(const EnableRuleRequest& requ
   handler(this, request, EnableRule(request), context);
 }
 
+ListApiDestinationsOutcome CloudWatchEventsClient::ListApiDestinations(const ListApiDestinationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListApiDestinationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListApiDestinationsOutcomeCallable CloudWatchEventsClient::ListApiDestinationsCallable(const ListApiDestinationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListApiDestinationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListApiDestinations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEventsClient::ListApiDestinationsAsync(const ListApiDestinationsRequest& request, const ListApiDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListApiDestinationsAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEventsClient::ListApiDestinationsAsyncHelper(const ListApiDestinationsRequest& request, const ListApiDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListApiDestinations(request), context);
+}
+
 ListArchivesOutcome CloudWatchEventsClient::ListArchives(const ListArchivesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -645,6 +872,33 @@ void CloudWatchEventsClient::ListArchivesAsync(const ListArchivesRequest& reques
 void CloudWatchEventsClient::ListArchivesAsyncHelper(const ListArchivesRequest& request, const ListArchivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListArchives(request), context);
+}
+
+ListConnectionsOutcome CloudWatchEventsClient::ListConnections(const ListConnectionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListConnectionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListConnectionsOutcomeCallable CloudWatchEventsClient::ListConnectionsCallable(const ListConnectionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListConnectionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListConnections(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEventsClient::ListConnectionsAsync(const ListConnectionsRequest& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListConnectionsAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEventsClient::ListConnectionsAsyncHelper(const ListConnectionsRequest& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListConnections(request), context);
 }
 
 ListEventBusesOutcome CloudWatchEventsClient::ListEventBuses(const ListEventBusesRequest& request) const
@@ -1187,6 +1441,33 @@ void CloudWatchEventsClient::UntagResourceAsyncHelper(const UntagResourceRequest
   handler(this, request, UntagResource(request), context);
 }
 
+UpdateApiDestinationOutcome CloudWatchEventsClient::UpdateApiDestination(const UpdateApiDestinationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateApiDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateApiDestinationOutcomeCallable CloudWatchEventsClient::UpdateApiDestinationCallable(const UpdateApiDestinationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateApiDestinationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApiDestination(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEventsClient::UpdateApiDestinationAsync(const UpdateApiDestinationRequest& request, const UpdateApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateApiDestinationAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEventsClient::UpdateApiDestinationAsyncHelper(const UpdateApiDestinationRequest& request, const UpdateApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateApiDestination(request), context);
+}
+
 UpdateArchiveOutcome CloudWatchEventsClient::UpdateArchive(const UpdateArchiveRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1212,5 +1493,32 @@ void CloudWatchEventsClient::UpdateArchiveAsync(const UpdateArchiveRequest& requ
 void CloudWatchEventsClient::UpdateArchiveAsyncHelper(const UpdateArchiveRequest& request, const UpdateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateArchive(request), context);
+}
+
+UpdateConnectionOutcome CloudWatchEventsClient::UpdateConnection(const UpdateConnectionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateConnectionOutcomeCallable CloudWatchEventsClient::UpdateConnectionCallable(const UpdateConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEventsClient::UpdateConnectionAsync(const UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateConnectionAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEventsClient::UpdateConnectionAsyncHelper(const UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateConnection(request), context);
 }
 

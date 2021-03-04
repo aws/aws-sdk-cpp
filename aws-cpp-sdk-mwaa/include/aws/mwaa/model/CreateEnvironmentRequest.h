@@ -542,6 +542,47 @@ namespace Model
 
 
     /**
+     * <p>The minimum number of workers that you want to run in your environment. MWAA
+     * scales the number of Apache Airflow workers and the Fargate containers that run
+     * your tasks up to the number you specify in the <code>MaxWorkers</code> field.
+     * When there are no more tasks running, and no more in the queue, MWAA disposes of
+     * the extra containers leaving the worker count you specify in the
+     * <code>MinWorkers</code> field.</p>
+     */
+    inline int GetMinWorkers() const{ return m_minWorkers; }
+
+    /**
+     * <p>The minimum number of workers that you want to run in your environment. MWAA
+     * scales the number of Apache Airflow workers and the Fargate containers that run
+     * your tasks up to the number you specify in the <code>MaxWorkers</code> field.
+     * When there are no more tasks running, and no more in the queue, MWAA disposes of
+     * the extra containers leaving the worker count you specify in the
+     * <code>MinWorkers</code> field.</p>
+     */
+    inline bool MinWorkersHasBeenSet() const { return m_minWorkersHasBeenSet; }
+
+    /**
+     * <p>The minimum number of workers that you want to run in your environment. MWAA
+     * scales the number of Apache Airflow workers and the Fargate containers that run
+     * your tasks up to the number you specify in the <code>MaxWorkers</code> field.
+     * When there are no more tasks running, and no more in the queue, MWAA disposes of
+     * the extra containers leaving the worker count you specify in the
+     * <code>MinWorkers</code> field.</p>
+     */
+    inline void SetMinWorkers(int value) { m_minWorkersHasBeenSet = true; m_minWorkers = value; }
+
+    /**
+     * <p>The minimum number of workers that you want to run in your environment. MWAA
+     * scales the number of Apache Airflow workers and the Fargate containers that run
+     * your tasks up to the number you specify in the <code>MaxWorkers</code> field.
+     * When there are no more tasks running, and no more in the queue, MWAA disposes of
+     * the extra containers leaving the worker count you specify in the
+     * <code>MinWorkers</code> field.</p>
+     */
+    inline CreateEnvironmentRequest& WithMinWorkers(int value) { SetMinWorkers(value); return *this;}
+
+
+    /**
      * <p>The name of your MWAA environment.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -1169,6 +1210,9 @@ namespace Model
 
     int m_maxWorkers;
     bool m_maxWorkersHasBeenSet;
+
+    int m_minWorkers;
+    bool m_minWorkersHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

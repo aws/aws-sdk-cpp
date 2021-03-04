@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/servicediscovery/model/ServiceType.h>
 #include <aws/servicediscovery/model/DnsConfig.h>
 #include <aws/servicediscovery/model/HealthCheckConfig.h>
 #include <aws/servicediscovery/model/HealthCheckCustomConfig.h>
@@ -171,6 +172,67 @@ namespace Model
      * <p>The name of the service.</p>
      */
     inline ServiceSummary& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>Describes the systems that can be used to discover the service instances.</p>
+     * <dl> <dt>DNS_HTTP</dt> <dd> <p>The service instances can be discovered using
+     * either DNS queries or the <code>DiscoverInstances</code> API operation.</p>
+     * </dd> <dt>HTTP</dt> <dd> <p>The service instances can only be discovered using
+     * the <code>DiscoverInstances</code> API operation.</p> </dd> <dt>DNS</dt> <dd>
+     * <p>Reserved.</p> </dd> </dl>
+     */
+    inline const ServiceType& GetType() const{ return m_type; }
+
+    /**
+     * <p>Describes the systems that can be used to discover the service instances.</p>
+     * <dl> <dt>DNS_HTTP</dt> <dd> <p>The service instances can be discovered using
+     * either DNS queries or the <code>DiscoverInstances</code> API operation.</p>
+     * </dd> <dt>HTTP</dt> <dd> <p>The service instances can only be discovered using
+     * the <code>DiscoverInstances</code> API operation.</p> </dd> <dt>DNS</dt> <dd>
+     * <p>Reserved.</p> </dd> </dl>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Describes the systems that can be used to discover the service instances.</p>
+     * <dl> <dt>DNS_HTTP</dt> <dd> <p>The service instances can be discovered using
+     * either DNS queries or the <code>DiscoverInstances</code> API operation.</p>
+     * </dd> <dt>HTTP</dt> <dd> <p>The service instances can only be discovered using
+     * the <code>DiscoverInstances</code> API operation.</p> </dd> <dt>DNS</dt> <dd>
+     * <p>Reserved.</p> </dd> </dl>
+     */
+    inline void SetType(const ServiceType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>Describes the systems that can be used to discover the service instances.</p>
+     * <dl> <dt>DNS_HTTP</dt> <dd> <p>The service instances can be discovered using
+     * either DNS queries or the <code>DiscoverInstances</code> API operation.</p>
+     * </dd> <dt>HTTP</dt> <dd> <p>The service instances can only be discovered using
+     * the <code>DiscoverInstances</code> API operation.</p> </dd> <dt>DNS</dt> <dd>
+     * <p>Reserved.</p> </dd> </dl>
+     */
+    inline void SetType(ServiceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>Describes the systems that can be used to discover the service instances.</p>
+     * <dl> <dt>DNS_HTTP</dt> <dd> <p>The service instances can be discovered using
+     * either DNS queries or the <code>DiscoverInstances</code> API operation.</p>
+     * </dd> <dt>HTTP</dt> <dd> <p>The service instances can only be discovered using
+     * the <code>DiscoverInstances</code> API operation.</p> </dd> <dt>DNS</dt> <dd>
+     * <p>Reserved.</p> </dd> </dl>
+     */
+    inline ServiceSummary& WithType(const ServiceType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>Describes the systems that can be used to discover the service instances.</p>
+     * <dl> <dt>DNS_HTTP</dt> <dd> <p>The service instances can be discovered using
+     * either DNS queries or the <code>DiscoverInstances</code> API operation.</p>
+     * </dd> <dt>HTTP</dt> <dd> <p>The service instances can only be discovered using
+     * the <code>DiscoverInstances</code> API operation.</p> </dd> <dt>DNS</dt> <dd>
+     * <p>Reserved.</p> </dd> </dl>
+     */
+    inline ServiceSummary& WithType(ServiceType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
@@ -344,6 +406,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    ServiceType m_type;
+    bool m_typeHasBeenSet;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;

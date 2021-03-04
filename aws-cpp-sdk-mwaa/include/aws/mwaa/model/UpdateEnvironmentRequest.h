@@ -311,24 +311,45 @@ namespace Model
 
 
     /**
-     * <p>The Maximum Workers to update of your Amazon MWAA environment.</p>
+     * <p>The maximum number of workers to update of your Amazon MWAA environment.</p>
      */
     inline int GetMaxWorkers() const{ return m_maxWorkers; }
 
     /**
-     * <p>The Maximum Workers to update of your Amazon MWAA environment.</p>
+     * <p>The maximum number of workers to update of your Amazon MWAA environment.</p>
      */
     inline bool MaxWorkersHasBeenSet() const { return m_maxWorkersHasBeenSet; }
 
     /**
-     * <p>The Maximum Workers to update of your Amazon MWAA environment.</p>
+     * <p>The maximum number of workers to update of your Amazon MWAA environment.</p>
      */
     inline void SetMaxWorkers(int value) { m_maxWorkersHasBeenSet = true; m_maxWorkers = value; }
 
     /**
-     * <p>The Maximum Workers to update of your Amazon MWAA environment.</p>
+     * <p>The maximum number of workers to update of your Amazon MWAA environment.</p>
      */
     inline UpdateEnvironmentRequest& WithMaxWorkers(int value) { SetMaxWorkers(value); return *this;}
+
+
+    /**
+     * <p>The minimum number of workers to update of your Amazon MWAA environment.</p>
+     */
+    inline int GetMinWorkers() const{ return m_minWorkers; }
+
+    /**
+     * <p>The minimum number of workers to update of your Amazon MWAA environment.</p>
+     */
+    inline bool MinWorkersHasBeenSet() const { return m_minWorkersHasBeenSet; }
+
+    /**
+     * <p>The minimum number of workers to update of your Amazon MWAA environment.</p>
+     */
+    inline void SetMinWorkers(int value) { m_minWorkersHasBeenSet = true; m_minWorkers = value; }
+
+    /**
+     * <p>The minimum number of workers to update of your Amazon MWAA environment.</p>
+     */
+    inline UpdateEnvironmentRequest& WithMinWorkers(int value) { SetMinWorkers(value); return *this;}
 
 
     /**
@@ -725,6 +746,9 @@ namespace Model
 
     int m_maxWorkers;
     bool m_maxWorkersHasBeenSet;
+
+    int m_minWorkers;
+    bool m_minWorkersHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

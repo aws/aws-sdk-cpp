@@ -11,6 +11,7 @@
 #include <aws/servicediscovery/model/HealthCheckConfig.h>
 #include <aws/servicediscovery/model/HealthCheckCustomConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/servicediscovery/model/ServiceTypeOption.h>
 #include <aws/servicediscovery/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -51,6 +52,11 @@ namespace Model
      * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
      * assigns a name to the record by concatenating the service name and the namespace
      * name, for example:</p> <p> <code>_exampleservice._tcp.example.com</code> </p>
+     *  <p>For a single DNS namespace, you cannot create two services with names
+     * that differ only by case (such as EXAMPLE and example). Otherwise, these
+     * services will have the same DNS name. However, you can create multiple HTTP
+     * services with names that differ only by case because HTTP services are case
+     * sensitive.</p> 
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -65,6 +71,11 @@ namespace Model
      * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
      * assigns a name to the record by concatenating the service name and the namespace
      * name, for example:</p> <p> <code>_exampleservice._tcp.example.com</code> </p>
+     *  <p>For a single DNS namespace, you cannot create two services with names
+     * that differ only by case (such as EXAMPLE and example). Otherwise, these
+     * services will have the same DNS name. However, you can create multiple HTTP
+     * services with names that differ only by case because HTTP services are case
+     * sensitive.</p> 
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
@@ -79,6 +90,11 @@ namespace Model
      * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
      * assigns a name to the record by concatenating the service name and the namespace
      * name, for example:</p> <p> <code>_exampleservice._tcp.example.com</code> </p>
+     *  <p>For a single DNS namespace, you cannot create two services with names
+     * that differ only by case (such as EXAMPLE and example). Otherwise, these
+     * services will have the same DNS name. However, you can create multiple HTTP
+     * services with names that differ only by case because HTTP services are case
+     * sensitive.</p> 
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -93,6 +109,11 @@ namespace Model
      * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
      * assigns a name to the record by concatenating the service name and the namespace
      * name, for example:</p> <p> <code>_exampleservice._tcp.example.com</code> </p>
+     *  <p>For a single DNS namespace, you cannot create two services with names
+     * that differ only by case (such as EXAMPLE and example). Otherwise, these
+     * services will have the same DNS name. However, you can create multiple HTTP
+     * services with names that differ only by case because HTTP services are case
+     * sensitive.</p> 
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -107,6 +128,11 @@ namespace Model
      * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
      * assigns a name to the record by concatenating the service name and the namespace
      * name, for example:</p> <p> <code>_exampleservice._tcp.example.com</code> </p>
+     *  <p>For a single DNS namespace, you cannot create two services with names
+     * that differ only by case (such as EXAMPLE and example). Otherwise, these
+     * services will have the same DNS name. However, you can create multiple HTTP
+     * services with names that differ only by case because HTTP services are case
+     * sensitive.</p> 
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -121,6 +147,11 @@ namespace Model
      * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
      * assigns a name to the record by concatenating the service name and the namespace
      * name, for example:</p> <p> <code>_exampleservice._tcp.example.com</code> </p>
+     *  <p>For a single DNS namespace, you cannot create two services with names
+     * that differ only by case (such as EXAMPLE and example). Otherwise, these
+     * services will have the same DNS name. However, you can create multiple HTTP
+     * services with names that differ only by case because HTTP services are case
+     * sensitive.</p> 
      */
     inline CreateServiceRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -135,6 +166,11 @@ namespace Model
      * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
      * assigns a name to the record by concatenating the service name and the namespace
      * name, for example:</p> <p> <code>_exampleservice._tcp.example.com</code> </p>
+     *  <p>For a single DNS namespace, you cannot create two services with names
+     * that differ only by case (such as EXAMPLE and example). Otherwise, these
+     * services will have the same DNS name. However, you can create multiple HTTP
+     * services with names that differ only by case because HTTP services are case
+     * sensitive.</p> 
      */
     inline CreateServiceRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
@@ -149,6 +185,11 @@ namespace Model
      * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
      * assigns a name to the record by concatenating the service name and the namespace
      * name, for example:</p> <p> <code>_exampleservice._tcp.example.com</code> </p>
+     *  <p>For a single DNS namespace, you cannot create two services with names
+     * that differ only by case (such as EXAMPLE and example). Otherwise, these
+     * services will have the same DNS name. However, you can create multiple HTTP
+     * services with names that differ only by case because HTTP services are case
+     * sensitive.</p> 
      */
     inline CreateServiceRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -533,6 +574,55 @@ namespace Model
      */
     inline CreateServiceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>If present, specifies that the service instances are only discoverable using
+     * the <code>DiscoverInstances</code> API operation. No DNS records will be
+     * registered for the service instances. The only valid value is
+     * <code>HTTP</code>.</p>
+     */
+    inline const ServiceTypeOption& GetType() const{ return m_type; }
+
+    /**
+     * <p>If present, specifies that the service instances are only discoverable using
+     * the <code>DiscoverInstances</code> API operation. No DNS records will be
+     * registered for the service instances. The only valid value is
+     * <code>HTTP</code>.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>If present, specifies that the service instances are only discoverable using
+     * the <code>DiscoverInstances</code> API operation. No DNS records will be
+     * registered for the service instances. The only valid value is
+     * <code>HTTP</code>.</p>
+     */
+    inline void SetType(const ServiceTypeOption& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>If present, specifies that the service instances are only discoverable using
+     * the <code>DiscoverInstances</code> API operation. No DNS records will be
+     * registered for the service instances. The only valid value is
+     * <code>HTTP</code>.</p>
+     */
+    inline void SetType(ServiceTypeOption&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>If present, specifies that the service instances are only discoverable using
+     * the <code>DiscoverInstances</code> API operation. No DNS records will be
+     * registered for the service instances. The only valid value is
+     * <code>HTTP</code>.</p>
+     */
+    inline CreateServiceRequest& WithType(const ServiceTypeOption& value) { SetType(value); return *this;}
+
+    /**
+     * <p>If present, specifies that the service instances are only discoverable using
+     * the <code>DiscoverInstances</code> API operation. No DNS records will be
+     * registered for the service instances. The only valid value is
+     * <code>HTTP</code>.</p>
+     */
+    inline CreateServiceRequest& WithType(ServiceTypeOption&& value) { SetType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -558,6 +648,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    ServiceTypeOption m_type;
+    bool m_typeHasBeenSet;
   };
 
 } // namespace Model

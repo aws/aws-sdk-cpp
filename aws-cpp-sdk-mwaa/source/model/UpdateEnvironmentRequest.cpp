@@ -21,6 +21,8 @@ UpdateEnvironmentRequest::UpdateEnvironmentRequest() :
     m_loggingConfigurationHasBeenSet(false),
     m_maxWorkers(0),
     m_maxWorkersHasBeenSet(false),
+    m_minWorkers(0),
+    m_minWorkersHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_pluginsS3ObjectVersionHasBeenSet(false),
@@ -82,6 +84,12 @@ Aws::String UpdateEnvironmentRequest::SerializePayload() const
   if(m_maxWorkersHasBeenSet)
   {
    payload.WithInteger("MaxWorkers", m_maxWorkers);
+
+  }
+
+  if(m_minWorkersHasBeenSet)
+  {
+   payload.WithInteger("MinWorkers", m_minWorkers);
 
   }
 

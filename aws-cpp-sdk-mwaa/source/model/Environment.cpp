@@ -31,6 +31,8 @@ Environment::Environment() :
     m_loggingConfigurationHasBeenSet(false),
     m_maxWorkers(0),
     m_maxWorkersHasBeenSet(false),
+    m_minWorkers(0),
+    m_minWorkersHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_pluginsS3ObjectVersionHasBeenSet(false),
@@ -62,6 +64,8 @@ Environment::Environment(JsonView jsonValue) :
     m_loggingConfigurationHasBeenSet(false),
     m_maxWorkers(0),
     m_maxWorkersHasBeenSet(false),
+    m_minWorkers(0),
+    m_minWorkersHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_pluginsS3ObjectVersionHasBeenSet(false),
@@ -161,6 +165,13 @@ Environment& Environment::operator =(JsonView jsonValue)
     m_maxWorkers = jsonValue.GetInteger("MaxWorkers");
 
     m_maxWorkersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MinWorkers"))
+  {
+    m_minWorkers = jsonValue.GetInteger("MinWorkers");
+
+    m_minWorkersHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Name"))
@@ -331,6 +342,12 @@ JsonValue Environment::Jsonize() const
   if(m_maxWorkersHasBeenSet)
   {
    payload.WithInteger("MaxWorkers", m_maxWorkers);
+
+  }
+
+  if(m_minWorkersHasBeenSet)
+  {
+   payload.WithInteger("MinWorkers", m_minWorkers);
 
   }
 
