@@ -1130,6 +1130,47 @@ namespace Model
      */
     inline CreateDBClusterRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline bool SourceRegionHasBeenSet() const { return m_sourceRegionHasBeenSet; }
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline void SetSourceRegion(const Aws::String& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = value; }
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline void SetSourceRegion(Aws::String&& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = std::move(value); }
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline void SetSourceRegion(const char* value) { m_sourceRegionHasBeenSet = true; m_sourceRegion.assign(value); }
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline CreateDBClusterRequest& WithSourceRegion(const Aws::String& value) { SetSourceRegion(value); return *this;}
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline CreateDBClusterRequest& WithSourceRegion(Aws::String&& value) { SetSourceRegion(std::move(value)); return *this;}
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline CreateDBClusterRequest& WithSourceRegion(const char* value) { SetSourceRegion(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_availabilityZones;
@@ -1188,6 +1229,9 @@ namespace Model
 
     bool m_deletionProtection;
     bool m_deletionProtectionHasBeenSet;
+
+    Aws::String m_sourceRegion;
+    bool m_sourceRegionHasBeenSet;
   };
 
 } // namespace Model

@@ -667,6 +667,47 @@ namespace Model
      */
     inline CopyDBClusterSnapshotRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline bool SourceRegionHasBeenSet() const { return m_sourceRegionHasBeenSet; }
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline void SetSourceRegion(const Aws::String& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = value; }
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline void SetSourceRegion(Aws::String&& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = std::move(value); }
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline void SetSourceRegion(const char* value) { m_sourceRegionHasBeenSet = true; m_sourceRegion.assign(value); }
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline CopyDBClusterSnapshotRequest& WithSourceRegion(const Aws::String& value) { SetSourceRegion(value); return *this;}
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline CopyDBClusterSnapshotRequest& WithSourceRegion(Aws::String&& value) { SetSourceRegion(std::move(value)); return *this;}
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline CopyDBClusterSnapshotRequest& WithSourceRegion(const char* value) { SetSourceRegion(value); return *this;}
+
   private:
 
     Aws::String m_sourceDBClusterSnapshotIdentifier;
@@ -686,6 +727,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_sourceRegion;
+    bool m_sourceRegionHasBeenSet;
   };
 
 } // namespace Model
