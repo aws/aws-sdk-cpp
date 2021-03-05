@@ -39,7 +39,8 @@ CreateDBClusterRequest::CreateDBClusterRequest() :
     m_enableIAMDatabaseAuthenticationHasBeenSet(false),
     m_enableCloudwatchLogsExportsHasBeenSet(false),
     m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_sourceRegionHasBeenSet(false)
 {
 }
 

@@ -20,6 +20,7 @@ import com.amazonaws.util.awsclientgenerator.generators.cpp.ec2.Ec2CppClientGene
 import com.amazonaws.util.awsclientgenerator.generators.cpp.glacier.GlacierRestJsonCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.lambda.LambdaRestJsonCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.machinelearning.MachineLearningJsonCppClientGenerator;
+import com.amazonaws.util.awsclientgenerator.generators.cpp.neptune.NeptuneCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.polly.PollyCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.rds.RDSCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.s3.S3RestXmlCppClientGenerator;
@@ -61,6 +62,7 @@ public class ServiceGeneratorConfig {
             SPEC_OVERRIDE_MAPPING.put("cpp-polly", new PollyCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-rds", new RDSCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-docdb", new DocDBCppClientGenerator());
+            SPEC_OVERRIDE_MAPPING.put("cpp-neptune", new NeptuneCppClientGenerator());
 
         } catch (Exception e) {
             e.printStackTrace();
