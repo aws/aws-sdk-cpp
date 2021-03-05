@@ -24,13 +24,16 @@
 #include <aws/athena/model/BatchGetQueryExecutionRequest.h>
 #include <aws/athena/model/CreateDataCatalogRequest.h>
 #include <aws/athena/model/CreateNamedQueryRequest.h>
+#include <aws/athena/model/CreatePreparedStatementRequest.h>
 #include <aws/athena/model/CreateWorkGroupRequest.h>
 #include <aws/athena/model/DeleteDataCatalogRequest.h>
 #include <aws/athena/model/DeleteNamedQueryRequest.h>
+#include <aws/athena/model/DeletePreparedStatementRequest.h>
 #include <aws/athena/model/DeleteWorkGroupRequest.h>
 #include <aws/athena/model/GetDataCatalogRequest.h>
 #include <aws/athena/model/GetDatabaseRequest.h>
 #include <aws/athena/model/GetNamedQueryRequest.h>
+#include <aws/athena/model/GetPreparedStatementRequest.h>
 #include <aws/athena/model/GetQueryExecutionRequest.h>
 #include <aws/athena/model/GetQueryResultsRequest.h>
 #include <aws/athena/model/GetTableMetadataRequest.h>
@@ -39,6 +42,7 @@
 #include <aws/athena/model/ListDatabasesRequest.h>
 #include <aws/athena/model/ListEngineVersionsRequest.h>
 #include <aws/athena/model/ListNamedQueriesRequest.h>
+#include <aws/athena/model/ListPreparedStatementsRequest.h>
 #include <aws/athena/model/ListQueryExecutionsRequest.h>
 #include <aws/athena/model/ListTableMetadataRequest.h>
 #include <aws/athena/model/ListTagsForResourceRequest.h>
@@ -48,6 +52,7 @@
 #include <aws/athena/model/TagResourceRequest.h>
 #include <aws/athena/model/UntagResourceRequest.h>
 #include <aws/athena/model/UpdateDataCatalogRequest.h>
+#include <aws/athena/model/UpdatePreparedStatementRequest.h>
 #include <aws/athena/model/UpdateWorkGroupRequest.h>
 
 using namespace Aws;
@@ -231,6 +236,33 @@ void AthenaClient::CreateNamedQueryAsyncHelper(const CreateNamedQueryRequest& re
   handler(this, request, CreateNamedQuery(request), context);
 }
 
+CreatePreparedStatementOutcome AthenaClient::CreatePreparedStatement(const CreatePreparedStatementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreatePreparedStatementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreatePreparedStatementOutcomeCallable AthenaClient::CreatePreparedStatementCallable(const CreatePreparedStatementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreatePreparedStatementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePreparedStatement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::CreatePreparedStatementAsync(const CreatePreparedStatementRequest& request, const CreatePreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreatePreparedStatementAsyncHelper( request, handler, context ); } );
+}
+
+void AthenaClient::CreatePreparedStatementAsyncHelper(const CreatePreparedStatementRequest& request, const CreatePreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreatePreparedStatement(request), context);
+}
+
 CreateWorkGroupOutcome AthenaClient::CreateWorkGroup(const CreateWorkGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -310,6 +342,33 @@ void AthenaClient::DeleteNamedQueryAsync(const DeleteNamedQueryRequest& request,
 void AthenaClient::DeleteNamedQueryAsyncHelper(const DeleteNamedQueryRequest& request, const DeleteNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteNamedQuery(request), context);
+}
+
+DeletePreparedStatementOutcome AthenaClient::DeletePreparedStatement(const DeletePreparedStatementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeletePreparedStatementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeletePreparedStatementOutcomeCallable AthenaClient::DeletePreparedStatementCallable(const DeletePreparedStatementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeletePreparedStatementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePreparedStatement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::DeletePreparedStatementAsync(const DeletePreparedStatementRequest& request, const DeletePreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeletePreparedStatementAsyncHelper( request, handler, context ); } );
+}
+
+void AthenaClient::DeletePreparedStatementAsyncHelper(const DeletePreparedStatementRequest& request, const DeletePreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeletePreparedStatement(request), context);
 }
 
 DeleteWorkGroupOutcome AthenaClient::DeleteWorkGroup(const DeleteWorkGroupRequest& request) const
@@ -418,6 +477,33 @@ void AthenaClient::GetNamedQueryAsync(const GetNamedQueryRequest& request, const
 void AthenaClient::GetNamedQueryAsyncHelper(const GetNamedQueryRequest& request, const GetNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetNamedQuery(request), context);
+}
+
+GetPreparedStatementOutcome AthenaClient::GetPreparedStatement(const GetPreparedStatementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetPreparedStatementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetPreparedStatementOutcomeCallable AthenaClient::GetPreparedStatementCallable(const GetPreparedStatementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetPreparedStatementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPreparedStatement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::GetPreparedStatementAsync(const GetPreparedStatementRequest& request, const GetPreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetPreparedStatementAsyncHelper( request, handler, context ); } );
+}
+
+void AthenaClient::GetPreparedStatementAsyncHelper(const GetPreparedStatementRequest& request, const GetPreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetPreparedStatement(request), context);
 }
 
 GetQueryExecutionOutcome AthenaClient::GetQueryExecution(const GetQueryExecutionRequest& request) const
@@ -634,6 +720,33 @@ void AthenaClient::ListNamedQueriesAsync(const ListNamedQueriesRequest& request,
 void AthenaClient::ListNamedQueriesAsyncHelper(const ListNamedQueriesRequest& request, const ListNamedQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListNamedQueries(request), context);
+}
+
+ListPreparedStatementsOutcome AthenaClient::ListPreparedStatements(const ListPreparedStatementsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListPreparedStatementsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListPreparedStatementsOutcomeCallable AthenaClient::ListPreparedStatementsCallable(const ListPreparedStatementsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListPreparedStatementsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPreparedStatements(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::ListPreparedStatementsAsync(const ListPreparedStatementsRequest& request, const ListPreparedStatementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListPreparedStatementsAsyncHelper( request, handler, context ); } );
+}
+
+void AthenaClient::ListPreparedStatementsAsyncHelper(const ListPreparedStatementsRequest& request, const ListPreparedStatementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListPreparedStatements(request), context);
 }
 
 ListQueryExecutionsOutcome AthenaClient::ListQueryExecutions(const ListQueryExecutionsRequest& request) const
@@ -877,6 +990,33 @@ void AthenaClient::UpdateDataCatalogAsync(const UpdateDataCatalogRequest& reques
 void AthenaClient::UpdateDataCatalogAsyncHelper(const UpdateDataCatalogRequest& request, const UpdateDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateDataCatalog(request), context);
+}
+
+UpdatePreparedStatementOutcome AthenaClient::UpdatePreparedStatement(const UpdatePreparedStatementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdatePreparedStatementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdatePreparedStatementOutcomeCallable AthenaClient::UpdatePreparedStatementCallable(const UpdatePreparedStatementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePreparedStatementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePreparedStatement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::UpdatePreparedStatementAsync(const UpdatePreparedStatementRequest& request, const UpdatePreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdatePreparedStatementAsyncHelper( request, handler, context ); } );
+}
+
+void AthenaClient::UpdatePreparedStatementAsyncHelper(const UpdatePreparedStatementRequest& request, const UpdatePreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdatePreparedStatement(request), context);
 }
 
 UpdateWorkGroupOutcome AthenaClient::UpdateWorkGroup(const UpdateWorkGroupRequest& request) const

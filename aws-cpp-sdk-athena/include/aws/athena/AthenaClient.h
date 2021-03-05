@@ -15,13 +15,16 @@
 #include <aws/athena/model/BatchGetQueryExecutionResult.h>
 #include <aws/athena/model/CreateDataCatalogResult.h>
 #include <aws/athena/model/CreateNamedQueryResult.h>
+#include <aws/athena/model/CreatePreparedStatementResult.h>
 #include <aws/athena/model/CreateWorkGroupResult.h>
 #include <aws/athena/model/DeleteDataCatalogResult.h>
 #include <aws/athena/model/DeleteNamedQueryResult.h>
+#include <aws/athena/model/DeletePreparedStatementResult.h>
 #include <aws/athena/model/DeleteWorkGroupResult.h>
 #include <aws/athena/model/GetDataCatalogResult.h>
 #include <aws/athena/model/GetDatabaseResult.h>
 #include <aws/athena/model/GetNamedQueryResult.h>
+#include <aws/athena/model/GetPreparedStatementResult.h>
 #include <aws/athena/model/GetQueryExecutionResult.h>
 #include <aws/athena/model/GetQueryResultsResult.h>
 #include <aws/athena/model/GetTableMetadataResult.h>
@@ -30,6 +33,7 @@
 #include <aws/athena/model/ListDatabasesResult.h>
 #include <aws/athena/model/ListEngineVersionsResult.h>
 #include <aws/athena/model/ListNamedQueriesResult.h>
+#include <aws/athena/model/ListPreparedStatementsResult.h>
 #include <aws/athena/model/ListQueryExecutionsResult.h>
 #include <aws/athena/model/ListTableMetadataResult.h>
 #include <aws/athena/model/ListTagsForResourceResult.h>
@@ -39,6 +43,7 @@
 #include <aws/athena/model/TagResourceResult.h>
 #include <aws/athena/model/UntagResourceResult.h>
 #include <aws/athena/model/UpdateDataCatalogResult.h>
+#include <aws/athena/model/UpdatePreparedStatementResult.h>
 #include <aws/athena/model/UpdateWorkGroupResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -83,13 +88,16 @@ namespace Model
         class BatchGetQueryExecutionRequest;
         class CreateDataCatalogRequest;
         class CreateNamedQueryRequest;
+        class CreatePreparedStatementRequest;
         class CreateWorkGroupRequest;
         class DeleteDataCatalogRequest;
         class DeleteNamedQueryRequest;
+        class DeletePreparedStatementRequest;
         class DeleteWorkGroupRequest;
         class GetDataCatalogRequest;
         class GetDatabaseRequest;
         class GetNamedQueryRequest;
+        class GetPreparedStatementRequest;
         class GetQueryExecutionRequest;
         class GetQueryResultsRequest;
         class GetTableMetadataRequest;
@@ -98,6 +106,7 @@ namespace Model
         class ListDatabasesRequest;
         class ListEngineVersionsRequest;
         class ListNamedQueriesRequest;
+        class ListPreparedStatementsRequest;
         class ListQueryExecutionsRequest;
         class ListTableMetadataRequest;
         class ListTagsForResourceRequest;
@@ -107,19 +116,23 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateDataCatalogRequest;
+        class UpdatePreparedStatementRequest;
         class UpdateWorkGroupRequest;
 
         typedef Aws::Utils::Outcome<BatchGetNamedQueryResult, AthenaError> BatchGetNamedQueryOutcome;
         typedef Aws::Utils::Outcome<BatchGetQueryExecutionResult, AthenaError> BatchGetQueryExecutionOutcome;
         typedef Aws::Utils::Outcome<CreateDataCatalogResult, AthenaError> CreateDataCatalogOutcome;
         typedef Aws::Utils::Outcome<CreateNamedQueryResult, AthenaError> CreateNamedQueryOutcome;
+        typedef Aws::Utils::Outcome<CreatePreparedStatementResult, AthenaError> CreatePreparedStatementOutcome;
         typedef Aws::Utils::Outcome<CreateWorkGroupResult, AthenaError> CreateWorkGroupOutcome;
         typedef Aws::Utils::Outcome<DeleteDataCatalogResult, AthenaError> DeleteDataCatalogOutcome;
         typedef Aws::Utils::Outcome<DeleteNamedQueryResult, AthenaError> DeleteNamedQueryOutcome;
+        typedef Aws::Utils::Outcome<DeletePreparedStatementResult, AthenaError> DeletePreparedStatementOutcome;
         typedef Aws::Utils::Outcome<DeleteWorkGroupResult, AthenaError> DeleteWorkGroupOutcome;
         typedef Aws::Utils::Outcome<GetDataCatalogResult, AthenaError> GetDataCatalogOutcome;
         typedef Aws::Utils::Outcome<GetDatabaseResult, AthenaError> GetDatabaseOutcome;
         typedef Aws::Utils::Outcome<GetNamedQueryResult, AthenaError> GetNamedQueryOutcome;
+        typedef Aws::Utils::Outcome<GetPreparedStatementResult, AthenaError> GetPreparedStatementOutcome;
         typedef Aws::Utils::Outcome<GetQueryExecutionResult, AthenaError> GetQueryExecutionOutcome;
         typedef Aws::Utils::Outcome<GetQueryResultsResult, AthenaError> GetQueryResultsOutcome;
         typedef Aws::Utils::Outcome<GetTableMetadataResult, AthenaError> GetTableMetadataOutcome;
@@ -128,6 +141,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListDatabasesResult, AthenaError> ListDatabasesOutcome;
         typedef Aws::Utils::Outcome<ListEngineVersionsResult, AthenaError> ListEngineVersionsOutcome;
         typedef Aws::Utils::Outcome<ListNamedQueriesResult, AthenaError> ListNamedQueriesOutcome;
+        typedef Aws::Utils::Outcome<ListPreparedStatementsResult, AthenaError> ListPreparedStatementsOutcome;
         typedef Aws::Utils::Outcome<ListQueryExecutionsResult, AthenaError> ListQueryExecutionsOutcome;
         typedef Aws::Utils::Outcome<ListTableMetadataResult, AthenaError> ListTableMetadataOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, AthenaError> ListTagsForResourceOutcome;
@@ -137,19 +151,23 @@ namespace Model
         typedef Aws::Utils::Outcome<TagResourceResult, AthenaError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, AthenaError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateDataCatalogResult, AthenaError> UpdateDataCatalogOutcome;
+        typedef Aws::Utils::Outcome<UpdatePreparedStatementResult, AthenaError> UpdatePreparedStatementOutcome;
         typedef Aws::Utils::Outcome<UpdateWorkGroupResult, AthenaError> UpdateWorkGroupOutcome;
 
         typedef std::future<BatchGetNamedQueryOutcome> BatchGetNamedQueryOutcomeCallable;
         typedef std::future<BatchGetQueryExecutionOutcome> BatchGetQueryExecutionOutcomeCallable;
         typedef std::future<CreateDataCatalogOutcome> CreateDataCatalogOutcomeCallable;
         typedef std::future<CreateNamedQueryOutcome> CreateNamedQueryOutcomeCallable;
+        typedef std::future<CreatePreparedStatementOutcome> CreatePreparedStatementOutcomeCallable;
         typedef std::future<CreateWorkGroupOutcome> CreateWorkGroupOutcomeCallable;
         typedef std::future<DeleteDataCatalogOutcome> DeleteDataCatalogOutcomeCallable;
         typedef std::future<DeleteNamedQueryOutcome> DeleteNamedQueryOutcomeCallable;
+        typedef std::future<DeletePreparedStatementOutcome> DeletePreparedStatementOutcomeCallable;
         typedef std::future<DeleteWorkGroupOutcome> DeleteWorkGroupOutcomeCallable;
         typedef std::future<GetDataCatalogOutcome> GetDataCatalogOutcomeCallable;
         typedef std::future<GetDatabaseOutcome> GetDatabaseOutcomeCallable;
         typedef std::future<GetNamedQueryOutcome> GetNamedQueryOutcomeCallable;
+        typedef std::future<GetPreparedStatementOutcome> GetPreparedStatementOutcomeCallable;
         typedef std::future<GetQueryExecutionOutcome> GetQueryExecutionOutcomeCallable;
         typedef std::future<GetQueryResultsOutcome> GetQueryResultsOutcomeCallable;
         typedef std::future<GetTableMetadataOutcome> GetTableMetadataOutcomeCallable;
@@ -158,6 +176,7 @@ namespace Model
         typedef std::future<ListDatabasesOutcome> ListDatabasesOutcomeCallable;
         typedef std::future<ListEngineVersionsOutcome> ListEngineVersionsOutcomeCallable;
         typedef std::future<ListNamedQueriesOutcome> ListNamedQueriesOutcomeCallable;
+        typedef std::future<ListPreparedStatementsOutcome> ListPreparedStatementsOutcomeCallable;
         typedef std::future<ListQueryExecutionsOutcome> ListQueryExecutionsOutcomeCallable;
         typedef std::future<ListTableMetadataOutcome> ListTableMetadataOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -167,6 +186,7 @@ namespace Model
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateDataCatalogOutcome> UpdateDataCatalogOutcomeCallable;
+        typedef std::future<UpdatePreparedStatementOutcome> UpdatePreparedStatementOutcomeCallable;
         typedef std::future<UpdateWorkGroupOutcome> UpdateWorkGroupOutcomeCallable;
 } // namespace Model
 
@@ -176,13 +196,16 @@ namespace Model
     typedef std::function<void(const AthenaClient*, const Model::BatchGetQueryExecutionRequest&, const Model::BatchGetQueryExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetQueryExecutionResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::CreateDataCatalogRequest&, const Model::CreateDataCatalogOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataCatalogResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::CreateNamedQueryRequest&, const Model::CreateNamedQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNamedQueryResponseReceivedHandler;
+    typedef std::function<void(const AthenaClient*, const Model::CreatePreparedStatementRequest&, const Model::CreatePreparedStatementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePreparedStatementResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::CreateWorkGroupRequest&, const Model::CreateWorkGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkGroupResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::DeleteDataCatalogRequest&, const Model::DeleteDataCatalogOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataCatalogResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::DeleteNamedQueryRequest&, const Model::DeleteNamedQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNamedQueryResponseReceivedHandler;
+    typedef std::function<void(const AthenaClient*, const Model::DeletePreparedStatementRequest&, const Model::DeletePreparedStatementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePreparedStatementResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::DeleteWorkGroupRequest&, const Model::DeleteWorkGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkGroupResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::GetDataCatalogRequest&, const Model::GetDataCatalogOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataCatalogResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::GetDatabaseRequest&, const Model::GetDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDatabaseResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::GetNamedQueryRequest&, const Model::GetNamedQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetNamedQueryResponseReceivedHandler;
+    typedef std::function<void(const AthenaClient*, const Model::GetPreparedStatementRequest&, const Model::GetPreparedStatementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPreparedStatementResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::GetQueryExecutionRequest&, const Model::GetQueryExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQueryExecutionResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::GetQueryResultsRequest&, const Model::GetQueryResultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQueryResultsResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::GetTableMetadataRequest&, const Model::GetTableMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTableMetadataResponseReceivedHandler;
@@ -191,6 +214,7 @@ namespace Model
     typedef std::function<void(const AthenaClient*, const Model::ListDatabasesRequest&, const Model::ListDatabasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatabasesResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::ListEngineVersionsRequest&, const Model::ListEngineVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEngineVersionsResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::ListNamedQueriesRequest&, const Model::ListNamedQueriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNamedQueriesResponseReceivedHandler;
+    typedef std::function<void(const AthenaClient*, const Model::ListPreparedStatementsRequest&, const Model::ListPreparedStatementsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPreparedStatementsResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::ListQueryExecutionsRequest&, const Model::ListQueryExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQueryExecutionsResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::ListTableMetadataRequest&, const Model::ListTableMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTableMetadataResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
@@ -200,6 +224,7 @@ namespace Model
     typedef std::function<void(const AthenaClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::UpdateDataCatalogRequest&, const Model::UpdateDataCatalogOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataCatalogResponseReceivedHandler;
+    typedef std::function<void(const AthenaClient*, const Model::UpdatePreparedStatementRequest&, const Model::UpdatePreparedStatementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePreparedStatementResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::UpdateWorkGroupRequest&, const Model::UpdateWorkGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkGroupResponseReceivedHandler;
 
   /**
@@ -412,6 +437,34 @@ namespace Model
         virtual void CreateNamedQueryAsync(const Model::CreateNamedQueryRequest& request, const CreateNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a prepared statement for use with SQL queries in
+         * Athena.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreatePreparedStatement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreatePreparedStatementOutcome CreatePreparedStatement(const Model::CreatePreparedStatementRequest& request) const;
+
+        /**
+         * <p>Creates a prepared statement for use with SQL queries in
+         * Athena.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreatePreparedStatement">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreatePreparedStatementOutcomeCallable CreatePreparedStatementCallable(const Model::CreatePreparedStatementRequest& request) const;
+
+        /**
+         * <p>Creates a prepared statement for use with SQL queries in
+         * Athena.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreatePreparedStatement">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreatePreparedStatementAsync(const Model::CreatePreparedStatementRequest& request, const CreatePreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a workgroup with the specified name.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateWorkGroup">AWS
          * API Reference</a></p>
@@ -497,6 +550,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteNamedQueryAsync(const Model::DeleteNamedQueryRequest& request, const DeleteNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the prepared statement with the specified name from the specified
+         * workgroup.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeletePreparedStatement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeletePreparedStatementOutcome DeletePreparedStatement(const Model::DeletePreparedStatementRequest& request) const;
+
+        /**
+         * <p>Deletes the prepared statement with the specified name from the specified
+         * workgroup.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeletePreparedStatement">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeletePreparedStatementOutcomeCallable DeletePreparedStatementCallable(const Model::DeletePreparedStatementRequest& request) const;
+
+        /**
+         * <p>Deletes the prepared statement with the specified name from the specified
+         * workgroup.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeletePreparedStatement">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeletePreparedStatementAsync(const Model::DeletePreparedStatementRequest& request, const DeletePreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the workgroup with the specified name. The primary workgroup cannot
@@ -606,6 +687,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetNamedQueryAsync(const Model::GetNamedQueryRequest& request, const GetNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the prepared statement with the specified name from the specified
+         * workgroup.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetPreparedStatement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPreparedStatementOutcome GetPreparedStatement(const Model::GetPreparedStatementRequest& request) const;
+
+        /**
+         * <p>Retrieves the prepared statement with the specified name from the specified
+         * workgroup.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetPreparedStatement">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetPreparedStatementOutcomeCallable GetPreparedStatementCallable(const Model::GetPreparedStatementRequest& request) const;
+
+        /**
+         * <p>Retrieves the prepared statement with the specified name from the specified
+         * workgroup.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetPreparedStatement">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetPreparedStatementAsync(const Model::GetPreparedStatementRequest& request, const GetPreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a single execution of a query if you have access to
@@ -890,6 +999,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListNamedQueriesAsync(const Model::ListNamedQueriesRequest& request, const ListNamedQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the prepared statements in the specfied workgroup.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListPreparedStatements">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListPreparedStatementsOutcome ListPreparedStatements(const Model::ListPreparedStatementsRequest& request) const;
+
+        /**
+         * <p>Lists the prepared statements in the specfied workgroup.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListPreparedStatements">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListPreparedStatementsOutcomeCallable ListPreparedStatementsCallable(const Model::ListPreparedStatementsRequest& request) const;
+
+        /**
+         * <p>Lists the prepared statements in the specfied workgroup.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListPreparedStatements">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListPreparedStatementsAsync(const Model::ListPreparedStatementsRequest& request, const ListPreparedStatementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides a list of available query execution IDs for the queries in the
@@ -1219,6 +1356,31 @@ namespace Model
         virtual void UpdateDataCatalogAsync(const Model::UpdateDataCatalogRequest& request, const UpdateDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates a prepared statement.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdatePreparedStatement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdatePreparedStatementOutcome UpdatePreparedStatement(const Model::UpdatePreparedStatementRequest& request) const;
+
+        /**
+         * <p>Updates a prepared statement.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdatePreparedStatement">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdatePreparedStatementOutcomeCallable UpdatePreparedStatementCallable(const Model::UpdatePreparedStatementRequest& request) const;
+
+        /**
+         * <p>Updates a prepared statement.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdatePreparedStatement">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdatePreparedStatementAsync(const Model::UpdatePreparedStatementRequest& request, const UpdatePreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the workgroup with the specified name. The workgroup's name cannot be
          * changed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateWorkGroup">AWS
@@ -1254,13 +1416,16 @@ namespace Model
         void BatchGetQueryExecutionAsyncHelper(const Model::BatchGetQueryExecutionRequest& request, const BatchGetQueryExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDataCatalogAsyncHelper(const Model::CreateDataCatalogRequest& request, const CreateDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateNamedQueryAsyncHelper(const Model::CreateNamedQueryRequest& request, const CreateNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreatePreparedStatementAsyncHelper(const Model::CreatePreparedStatementRequest& request, const CreatePreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateWorkGroupAsyncHelper(const Model::CreateWorkGroupRequest& request, const CreateWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDataCatalogAsyncHelper(const Model::DeleteDataCatalogRequest& request, const DeleteDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteNamedQueryAsyncHelper(const Model::DeleteNamedQueryRequest& request, const DeleteNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeletePreparedStatementAsyncHelper(const Model::DeletePreparedStatementRequest& request, const DeletePreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteWorkGroupAsyncHelper(const Model::DeleteWorkGroupRequest& request, const DeleteWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDataCatalogAsyncHelper(const Model::GetDataCatalogRequest& request, const GetDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDatabaseAsyncHelper(const Model::GetDatabaseRequest& request, const GetDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetNamedQueryAsyncHelper(const Model::GetNamedQueryRequest& request, const GetNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetPreparedStatementAsyncHelper(const Model::GetPreparedStatementRequest& request, const GetPreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetQueryExecutionAsyncHelper(const Model::GetQueryExecutionRequest& request, const GetQueryExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetQueryResultsAsyncHelper(const Model::GetQueryResultsRequest& request, const GetQueryResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTableMetadataAsyncHelper(const Model::GetTableMetadataRequest& request, const GetTableMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1269,6 +1434,7 @@ namespace Model
         void ListDatabasesAsyncHelper(const Model::ListDatabasesRequest& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEngineVersionsAsyncHelper(const Model::ListEngineVersionsRequest& request, const ListEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListNamedQueriesAsyncHelper(const Model::ListNamedQueriesRequest& request, const ListNamedQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListPreparedStatementsAsyncHelper(const Model::ListPreparedStatementsRequest& request, const ListPreparedStatementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListQueryExecutionsAsyncHelper(const Model::ListQueryExecutionsRequest& request, const ListQueryExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTableMetadataAsyncHelper(const Model::ListTableMetadataRequest& request, const ListTableMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1278,6 +1444,7 @@ namespace Model
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDataCatalogAsyncHelper(const Model::UpdateDataCatalogRequest& request, const UpdateDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdatePreparedStatementAsyncHelper(const Model::UpdatePreparedStatementRequest& request, const UpdatePreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateWorkGroupAsyncHelper(const Model::UpdateWorkGroupRequest& request, const UpdateWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

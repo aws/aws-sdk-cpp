@@ -43,38 +43,32 @@ namespace Model
 
 
     /**
-     * <p>The protocol to inspect for. To match with any protocol, specify
-     * <code>ANY</code>. </p>
+     * <p>The protocol to inspect for. </p>
      */
     inline const StatefulRuleProtocol& GetProtocol() const{ return m_protocol; }
 
     /**
-     * <p>The protocol to inspect for. To match with any protocol, specify
-     * <code>ANY</code>. </p>
+     * <p>The protocol to inspect for. </p>
      */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
-     * <p>The protocol to inspect for. To match with any protocol, specify
-     * <code>ANY</code>. </p>
+     * <p>The protocol to inspect for. </p>
      */
     inline void SetProtocol(const StatefulRuleProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
-     * <p>The protocol to inspect for. To match with any protocol, specify
-     * <code>ANY</code>. </p>
+     * <p>The protocol to inspect for. </p>
      */
     inline void SetProtocol(StatefulRuleProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
-     * <p>The protocol to inspect for. To match with any protocol, specify
-     * <code>ANY</code>. </p>
+     * <p>The protocol to inspect for. </p>
      */
     inline Header& WithProtocol(const StatefulRuleProtocol& value) { SetProtocol(value); return *this;}
 
     /**
-     * <p>The protocol to inspect for. To match with any protocol, specify
-     * <code>ANY</code>. </p>
+     * <p>The protocol to inspect for. </p>
      */
     inline Header& WithProtocol(StatefulRuleProtocol&& value) { SetProtocol(std::move(value)); return *this;}
 

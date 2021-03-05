@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/shield/model/ProactiveEngagementStatus.h>
 #include <aws/shield/model/SubscriptionLimits.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/shield/model/Limit.h>
 #include <utility>
 
@@ -347,6 +348,47 @@ namespace Model
      */
     inline Subscription& WithSubscriptionLimits(SubscriptionLimits&& value) { SetSubscriptionLimits(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the subscription.</p>
+     */
+    inline const Aws::String& GetSubscriptionArn() const{ return m_subscriptionArn; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the subscription.</p>
+     */
+    inline bool SubscriptionArnHasBeenSet() const { return m_subscriptionArnHasBeenSet; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the subscription.</p>
+     */
+    inline void SetSubscriptionArn(const Aws::String& value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn = value; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the subscription.</p>
+     */
+    inline void SetSubscriptionArn(Aws::String&& value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn = std::move(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the subscription.</p>
+     */
+    inline void SetSubscriptionArn(const char* value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn.assign(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the subscription.</p>
+     */
+    inline Subscription& WithSubscriptionArn(const Aws::String& value) { SetSubscriptionArn(value); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the subscription.</p>
+     */
+    inline Subscription& WithSubscriptionArn(Aws::String&& value) { SetSubscriptionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the subscription.</p>
+     */
+    inline Subscription& WithSubscriptionArn(const char* value) { SetSubscriptionArn(value); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_startTime;
@@ -369,6 +411,9 @@ namespace Model
 
     SubscriptionLimits m_subscriptionLimits;
     bool m_subscriptionLimitsHasBeenSet;
+
+    Aws::String m_subscriptionArn;
+    bool m_subscriptionArnHasBeenSet;
   };
 
 } // namespace Model

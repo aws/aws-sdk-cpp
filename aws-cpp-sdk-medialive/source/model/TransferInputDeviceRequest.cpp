@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 TransferInputDeviceRequest::TransferInputDeviceRequest() : 
     m_inputDeviceIdHasBeenSet(false),
     m_targetCustomerIdHasBeenSet(false),
+    m_targetRegionHasBeenSet(false),
     m_transferMessageHasBeenSet(false)
 {
 }
@@ -26,6 +27,12 @@ Aws::String TransferInputDeviceRequest::SerializePayload() const
   if(m_targetCustomerIdHasBeenSet)
   {
    payload.WithString("targetCustomerId", m_targetCustomerId);
+
+  }
+
+  if(m_targetRegionHasBeenSet)
+  {
+   payload.WithString("targetRegion", m_targetRegion);
 
   }
 

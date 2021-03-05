@@ -21,6 +21,12 @@ namespace Appflow
 namespace Model
 {
 
+  /**
+   * <p> The properties that are applied when Amazon Lookout for Metrics is used as a
+   * destination. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/LookoutMetricsDestinationProperties">AWS
+   * API Reference</a></p>
+   */
   class AWS_APPFLOW_API LookoutMetricsDestinationProperties
   {
   public:

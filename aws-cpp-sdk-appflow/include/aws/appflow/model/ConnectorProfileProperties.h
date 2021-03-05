@@ -177,22 +177,34 @@ namespace Model
     inline ConnectorProfileProperties& WithGoogleAnalytics(GoogleAnalyticsConnectorProfileProperties&& value) { SetGoogleAnalytics(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p> The connector-specific properties required by Amazon Honeycode. </p>
+     */
     inline const HoneycodeConnectorProfileProperties& GetHoneycode() const{ return m_honeycode; }
 
-    
+    /**
+     * <p> The connector-specific properties required by Amazon Honeycode. </p>
+     */
     inline bool HoneycodeHasBeenSet() const { return m_honeycodeHasBeenSet; }
 
-    
+    /**
+     * <p> The connector-specific properties required by Amazon Honeycode. </p>
+     */
     inline void SetHoneycode(const HoneycodeConnectorProfileProperties& value) { m_honeycodeHasBeenSet = true; m_honeycode = value; }
 
-    
+    /**
+     * <p> The connector-specific properties required by Amazon Honeycode. </p>
+     */
     inline void SetHoneycode(HoneycodeConnectorProfileProperties&& value) { m_honeycodeHasBeenSet = true; m_honeycode = std::move(value); }
 
-    
+    /**
+     * <p> The connector-specific properties required by Amazon Honeycode. </p>
+     */
     inline ConnectorProfileProperties& WithHoneycode(const HoneycodeConnectorProfileProperties& value) { SetHoneycode(value); return *this;}
 
-    
+    /**
+     * <p> The connector-specific properties required by Amazon Honeycode. </p>
+     */
     inline ConnectorProfileProperties& WithHoneycode(HoneycodeConnectorProfileProperties&& value) { SetHoneycode(std::move(value)); return *this;}
 
 

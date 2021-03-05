@@ -201,22 +201,34 @@ namespace Model
     inline DestinationConnectorProperties& WithEventBridge(EventBridgeDestinationProperties&& value) { SetEventBridge(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p> The properties required to query Amazon Lookout for Metrics. </p>
+     */
     inline const LookoutMetricsDestinationProperties& GetLookoutMetrics() const{ return m_lookoutMetrics; }
 
-    
+    /**
+     * <p> The properties required to query Amazon Lookout for Metrics. </p>
+     */
     inline bool LookoutMetricsHasBeenSet() const { return m_lookoutMetricsHasBeenSet; }
 
-    
+    /**
+     * <p> The properties required to query Amazon Lookout for Metrics. </p>
+     */
     inline void SetLookoutMetrics(const LookoutMetricsDestinationProperties& value) { m_lookoutMetricsHasBeenSet = true; m_lookoutMetrics = value; }
 
-    
+    /**
+     * <p> The properties required to query Amazon Lookout for Metrics. </p>
+     */
     inline void SetLookoutMetrics(LookoutMetricsDestinationProperties&& value) { m_lookoutMetricsHasBeenSet = true; m_lookoutMetrics = std::move(value); }
 
-    
+    /**
+     * <p> The properties required to query Amazon Lookout for Metrics. </p>
+     */
     inline DestinationConnectorProperties& WithLookoutMetrics(const LookoutMetricsDestinationProperties& value) { SetLookoutMetrics(value); return *this;}
 
-    
+    /**
+     * <p> The properties required to query Amazon Lookout for Metrics. </p>
+     */
     inline DestinationConnectorProperties& WithLookoutMetrics(LookoutMetricsDestinationProperties&& value) { SetLookoutMetrics(std::move(value)); return *this;}
 
 
@@ -251,41 +263,65 @@ namespace Model
     inline DestinationConnectorProperties& WithUpsolver(UpsolverDestinationProperties&& value) { SetUpsolver(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p> The properties required to query Amazon Honeycode. </p>
+     */
     inline const HoneycodeDestinationProperties& GetHoneycode() const{ return m_honeycode; }
 
-    
+    /**
+     * <p> The properties required to query Amazon Honeycode. </p>
+     */
     inline bool HoneycodeHasBeenSet() const { return m_honeycodeHasBeenSet; }
 
-    
+    /**
+     * <p> The properties required to query Amazon Honeycode. </p>
+     */
     inline void SetHoneycode(const HoneycodeDestinationProperties& value) { m_honeycodeHasBeenSet = true; m_honeycode = value; }
 
-    
+    /**
+     * <p> The properties required to query Amazon Honeycode. </p>
+     */
     inline void SetHoneycode(HoneycodeDestinationProperties&& value) { m_honeycodeHasBeenSet = true; m_honeycode = std::move(value); }
 
-    
+    /**
+     * <p> The properties required to query Amazon Honeycode. </p>
+     */
     inline DestinationConnectorProperties& WithHoneycode(const HoneycodeDestinationProperties& value) { SetHoneycode(value); return *this;}
 
-    
+    /**
+     * <p> The properties required to query Amazon Honeycode. </p>
+     */
     inline DestinationConnectorProperties& WithHoneycode(HoneycodeDestinationProperties&& value) { SetHoneycode(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p> The properties required to query Amazon Connect Customer Profiles. </p>
+     */
     inline const CustomerProfilesDestinationProperties& GetCustomerProfiles() const{ return m_customerProfiles; }
 
-    
+    /**
+     * <p> The properties required to query Amazon Connect Customer Profiles. </p>
+     */
     inline bool CustomerProfilesHasBeenSet() const { return m_customerProfilesHasBeenSet; }
 
-    
+    /**
+     * <p> The properties required to query Amazon Connect Customer Profiles. </p>
+     */
     inline void SetCustomerProfiles(const CustomerProfilesDestinationProperties& value) { m_customerProfilesHasBeenSet = true; m_customerProfiles = value; }
 
-    
+    /**
+     * <p> The properties required to query Amazon Connect Customer Profiles. </p>
+     */
     inline void SetCustomerProfiles(CustomerProfilesDestinationProperties&& value) { m_customerProfilesHasBeenSet = true; m_customerProfiles = std::move(value); }
 
-    
+    /**
+     * <p> The properties required to query Amazon Connect Customer Profiles. </p>
+     */
     inline DestinationConnectorProperties& WithCustomerProfiles(const CustomerProfilesDestinationProperties& value) { SetCustomerProfiles(value); return *this;}
 
-    
+    /**
+     * <p> The properties required to query Amazon Connect Customer Profiles. </p>
+     */
     inline DestinationConnectorProperties& WithCustomerProfiles(CustomerProfilesDestinationProperties&& value) { SetCustomerProfiles(std::move(value)); return *this;}
 
   private:

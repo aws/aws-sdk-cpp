@@ -24,6 +24,12 @@ namespace Appflow
 namespace Model
 {
 
+  /**
+   * <p> The properties that are applied when Amazon Honeycode is used as a
+   * destination. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/HoneycodeDestinationProperties">AWS
+   * API Reference</a></p>
+   */
   class AWS_APPFLOW_API HoneycodeDestinationProperties
   {
   public:
@@ -33,28 +39,44 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p> The object specified in the Amazon Honeycode flow destination. </p>
+     */
     inline const Aws::String& GetObject() const{ return m_object; }
 
-    
+    /**
+     * <p> The object specified in the Amazon Honeycode flow destination. </p>
+     */
     inline bool ObjectHasBeenSet() const { return m_objectHasBeenSet; }
 
-    
+    /**
+     * <p> The object specified in the Amazon Honeycode flow destination. </p>
+     */
     inline void SetObject(const Aws::String& value) { m_objectHasBeenSet = true; m_object = value; }
 
-    
+    /**
+     * <p> The object specified in the Amazon Honeycode flow destination. </p>
+     */
     inline void SetObject(Aws::String&& value) { m_objectHasBeenSet = true; m_object = std::move(value); }
 
-    
+    /**
+     * <p> The object specified in the Amazon Honeycode flow destination. </p>
+     */
     inline void SetObject(const char* value) { m_objectHasBeenSet = true; m_object.assign(value); }
 
-    
+    /**
+     * <p> The object specified in the Amazon Honeycode flow destination. </p>
+     */
     inline HoneycodeDestinationProperties& WithObject(const Aws::String& value) { SetObject(value); return *this;}
 
-    
+    /**
+     * <p> The object specified in the Amazon Honeycode flow destination. </p>
+     */
     inline HoneycodeDestinationProperties& WithObject(Aws::String&& value) { SetObject(std::move(value)); return *this;}
 
-    
+    /**
+     * <p> The object specified in the Amazon Honeycode flow destination. </p>
+     */
     inline HoneycodeDestinationProperties& WithObject(const char* value) { SetObject(value); return *this;}
 
 

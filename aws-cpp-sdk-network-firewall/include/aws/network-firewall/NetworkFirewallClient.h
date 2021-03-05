@@ -232,11 +232,10 @@ namespace Model
    * block all other forms of traffic.</p> </li> <li> <p>Use custom lists of known
    * bad domains to limit the types of domain names that your applications can
    * access.</p> </li> <li> <p>Perform deep packet inspection on traffic entering or
-   * leaving your VPC.</p> </li> <li> <p>Rate limit traffic going from AWS to
-   * on-premises IP destinations.</p> </li> <li> <p>Use stateful protocol detection
-   * to filter protocols like HTTPS, regardless of the port used.</p> </li> </ul>
-   * <p>To enable Network Firewall for your VPCs, you perform steps in both Amazon
-   * VPC and in Network Firewall. For information about using Amazon VPC, see <a
+   * leaving your VPC.</p> </li> <li> <p>Use stateful protocol detection to filter
+   * protocols like HTTPS, regardless of the port used.</p> </li> </ul> <p>To enable
+   * Network Firewall for your VPCs, you perform steps in both Amazon VPC and in
+   * Network Firewall. For information about using Amazon VPC, see <a
    * href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon VPC User
    * Guide</a>.</p> <p>To start using Network Firewall, do the following: </p> <ol>
    * <li> <p>(Optional) If you don't already have a VPC that you want to protect,

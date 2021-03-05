@@ -40,63 +40,6 @@ namespace Model
   public:
 
     /**
-     * <p>The allocation ID of an Elastic IP address to associate with the NAT gateway.
-     * If the Elastic IP address is associated with another resource, you must first
-     * disassociate it.</p>
-     */
-    inline const Aws::String& GetAllocationId() const{ return m_allocationId; }
-
-    /**
-     * <p>The allocation ID of an Elastic IP address to associate with the NAT gateway.
-     * If the Elastic IP address is associated with another resource, you must first
-     * disassociate it.</p>
-     */
-    inline bool AllocationIdHasBeenSet() const { return m_allocationIdHasBeenSet; }
-
-    /**
-     * <p>The allocation ID of an Elastic IP address to associate with the NAT gateway.
-     * If the Elastic IP address is associated with another resource, you must first
-     * disassociate it.</p>
-     */
-    inline void SetAllocationId(const Aws::String& value) { m_allocationIdHasBeenSet = true; m_allocationId = value; }
-
-    /**
-     * <p>The allocation ID of an Elastic IP address to associate with the NAT gateway.
-     * If the Elastic IP address is associated with another resource, you must first
-     * disassociate it.</p>
-     */
-    inline void SetAllocationId(Aws::String&& value) { m_allocationIdHasBeenSet = true; m_allocationId = std::move(value); }
-
-    /**
-     * <p>The allocation ID of an Elastic IP address to associate with the NAT gateway.
-     * If the Elastic IP address is associated with another resource, you must first
-     * disassociate it.</p>
-     */
-    inline void SetAllocationId(const char* value) { m_allocationIdHasBeenSet = true; m_allocationId.assign(value); }
-
-    /**
-     * <p>The allocation ID of an Elastic IP address to associate with the NAT gateway.
-     * If the Elastic IP address is associated with another resource, you must first
-     * disassociate it.</p>
-     */
-    inline CreateNatGatewayRequest& WithAllocationId(const Aws::String& value) { SetAllocationId(value); return *this;}
-
-    /**
-     * <p>The allocation ID of an Elastic IP address to associate with the NAT gateway.
-     * If the Elastic IP address is associated with another resource, you must first
-     * disassociate it.</p>
-     */
-    inline CreateNatGatewayRequest& WithAllocationId(Aws::String&& value) { SetAllocationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The allocation ID of an Elastic IP address to associate with the NAT gateway.
-     * If the Elastic IP address is associated with another resource, you must first
-     * disassociate it.</p>
-     */
-    inline CreateNatGatewayRequest& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
-
-
-    /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
@@ -275,10 +218,64 @@ namespace Model
      */
     inline CreateNatGatewayRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 
-  private:
 
-    Aws::String m_allocationId;
-    bool m_allocationIdHasBeenSet;
+    /**
+     * <p>The allocation ID of an Elastic IP address to associate with the NAT gateway.
+     * If the Elastic IP address is associated with another resource, you must first
+     * disassociate it.</p>
+     */
+    inline const Aws::String& GetAllocationId() const{ return m_allocationId; }
+
+    /**
+     * <p>The allocation ID of an Elastic IP address to associate with the NAT gateway.
+     * If the Elastic IP address is associated with another resource, you must first
+     * disassociate it.</p>
+     */
+    inline bool AllocationIdHasBeenSet() const { return m_allocationIdHasBeenSet; }
+
+    /**
+     * <p>The allocation ID of an Elastic IP address to associate with the NAT gateway.
+     * If the Elastic IP address is associated with another resource, you must first
+     * disassociate it.</p>
+     */
+    inline void SetAllocationId(const Aws::String& value) { m_allocationIdHasBeenSet = true; m_allocationId = value; }
+
+    /**
+     * <p>The allocation ID of an Elastic IP address to associate with the NAT gateway.
+     * If the Elastic IP address is associated with another resource, you must first
+     * disassociate it.</p>
+     */
+    inline void SetAllocationId(Aws::String&& value) { m_allocationIdHasBeenSet = true; m_allocationId = std::move(value); }
+
+    /**
+     * <p>The allocation ID of an Elastic IP address to associate with the NAT gateway.
+     * If the Elastic IP address is associated with another resource, you must first
+     * disassociate it.</p>
+     */
+    inline void SetAllocationId(const char* value) { m_allocationIdHasBeenSet = true; m_allocationId.assign(value); }
+
+    /**
+     * <p>The allocation ID of an Elastic IP address to associate with the NAT gateway.
+     * If the Elastic IP address is associated with another resource, you must first
+     * disassociate it.</p>
+     */
+    inline CreateNatGatewayRequest& WithAllocationId(const Aws::String& value) { SetAllocationId(value); return *this;}
+
+    /**
+     * <p>The allocation ID of an Elastic IP address to associate with the NAT gateway.
+     * If the Elastic IP address is associated with another resource, you must first
+     * disassociate it.</p>
+     */
+    inline CreateNatGatewayRequest& WithAllocationId(Aws::String&& value) { SetAllocationId(std::move(value)); return *this;}
+
+    /**
+     * <p>The allocation ID of an Elastic IP address to associate with the NAT gateway.
+     * If the Elastic IP address is associated with another resource, you must first
+     * disassociate it.</p>
+     */
+    inline CreateNatGatewayRequest& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
+
+  private:
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
@@ -291,6 +288,9 @@ namespace Model
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet;
+
+    Aws::String m_allocationId;
+    bool m_allocationIdHasBeenSet;
   };
 
 } // namespace Model

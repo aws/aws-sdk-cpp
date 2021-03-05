@@ -42,56 +42,50 @@ namespace Model
   public:
 
     /**
-     * <p>The AMI attribute.</p> <p> <b>Note</b>: Depending on your account privileges,
-     * the <code>blockDeviceMapping</code> attribute may return a
-     * <code>Client.AuthFailure</code> error. If this happens, use
-     * <a>DescribeImages</a> to get information about the block device mapping for the
-     * AMI.</p>
+     * <p>The AMI attribute.</p> <p> <b>Note</b>: The <code>blockDeviceMapping</code>
+     * attribute is deprecated. Using this attribute returns the
+     * <code>Client.AuthFailure</code> error. To get information about the block device
+     * mappings for an AMI, use the <a>DescribeImages</a> action.</p>
      */
     inline const ImageAttributeName& GetAttribute() const{ return m_attribute; }
 
     /**
-     * <p>The AMI attribute.</p> <p> <b>Note</b>: Depending on your account privileges,
-     * the <code>blockDeviceMapping</code> attribute may return a
-     * <code>Client.AuthFailure</code> error. If this happens, use
-     * <a>DescribeImages</a> to get information about the block device mapping for the
-     * AMI.</p>
+     * <p>The AMI attribute.</p> <p> <b>Note</b>: The <code>blockDeviceMapping</code>
+     * attribute is deprecated. Using this attribute returns the
+     * <code>Client.AuthFailure</code> error. To get information about the block device
+     * mappings for an AMI, use the <a>DescribeImages</a> action.</p>
      */
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
 
     /**
-     * <p>The AMI attribute.</p> <p> <b>Note</b>: Depending on your account privileges,
-     * the <code>blockDeviceMapping</code> attribute may return a
-     * <code>Client.AuthFailure</code> error. If this happens, use
-     * <a>DescribeImages</a> to get information about the block device mapping for the
-     * AMI.</p>
+     * <p>The AMI attribute.</p> <p> <b>Note</b>: The <code>blockDeviceMapping</code>
+     * attribute is deprecated. Using this attribute returns the
+     * <code>Client.AuthFailure</code> error. To get information about the block device
+     * mappings for an AMI, use the <a>DescribeImages</a> action.</p>
      */
     inline void SetAttribute(const ImageAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
-     * <p>The AMI attribute.</p> <p> <b>Note</b>: Depending on your account privileges,
-     * the <code>blockDeviceMapping</code> attribute may return a
-     * <code>Client.AuthFailure</code> error. If this happens, use
-     * <a>DescribeImages</a> to get information about the block device mapping for the
-     * AMI.</p>
+     * <p>The AMI attribute.</p> <p> <b>Note</b>: The <code>blockDeviceMapping</code>
+     * attribute is deprecated. Using this attribute returns the
+     * <code>Client.AuthFailure</code> error. To get information about the block device
+     * mappings for an AMI, use the <a>DescribeImages</a> action.</p>
      */
     inline void SetAttribute(ImageAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
 
     /**
-     * <p>The AMI attribute.</p> <p> <b>Note</b>: Depending on your account privileges,
-     * the <code>blockDeviceMapping</code> attribute may return a
-     * <code>Client.AuthFailure</code> error. If this happens, use
-     * <a>DescribeImages</a> to get information about the block device mapping for the
-     * AMI.</p>
+     * <p>The AMI attribute.</p> <p> <b>Note</b>: The <code>blockDeviceMapping</code>
+     * attribute is deprecated. Using this attribute returns the
+     * <code>Client.AuthFailure</code> error. To get information about the block device
+     * mappings for an AMI, use the <a>DescribeImages</a> action.</p>
      */
     inline DescribeImageAttributeRequest& WithAttribute(const ImageAttributeName& value) { SetAttribute(value); return *this;}
 
     /**
-     * <p>The AMI attribute.</p> <p> <b>Note</b>: Depending on your account privileges,
-     * the <code>blockDeviceMapping</code> attribute may return a
-     * <code>Client.AuthFailure</code> error. If this happens, use
-     * <a>DescribeImages</a> to get information about the block device mapping for the
-     * AMI.</p>
+     * <p>The AMI attribute.</p> <p> <b>Note</b>: The <code>blockDeviceMapping</code>
+     * attribute is deprecated. Using this attribute returns the
+     * <code>Client.AuthFailure</code> error. To get information about the block device
+     * mappings for an AMI, use the <a>DescribeImages</a> action.</p>
      */
     inline DescribeImageAttributeRequest& WithAttribute(ImageAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
 

@@ -183,22 +183,40 @@ namespace Model
     inline ConnectorProfileCredentials& WithGoogleAnalytics(GoogleAnalyticsConnectorProfileCredentials&& value) { SetGoogleAnalytics(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p> The connector-specific credentials required when using Amazon Honeycode.
+     * </p>
+     */
     inline const HoneycodeConnectorProfileCredentials& GetHoneycode() const{ return m_honeycode; }
 
-    
+    /**
+     * <p> The connector-specific credentials required when using Amazon Honeycode.
+     * </p>
+     */
     inline bool HoneycodeHasBeenSet() const { return m_honeycodeHasBeenSet; }
 
-    
+    /**
+     * <p> The connector-specific credentials required when using Amazon Honeycode.
+     * </p>
+     */
     inline void SetHoneycode(const HoneycodeConnectorProfileCredentials& value) { m_honeycodeHasBeenSet = true; m_honeycode = value; }
 
-    
+    /**
+     * <p> The connector-specific credentials required when using Amazon Honeycode.
+     * </p>
+     */
     inline void SetHoneycode(HoneycodeConnectorProfileCredentials&& value) { m_honeycodeHasBeenSet = true; m_honeycode = std::move(value); }
 
-    
+    /**
+     * <p> The connector-specific credentials required when using Amazon Honeycode.
+     * </p>
+     */
     inline ConnectorProfileCredentials& WithHoneycode(const HoneycodeConnectorProfileCredentials& value) { SetHoneycode(value); return *this;}
 
-    
+    /**
+     * <p> The connector-specific credentials required when using Amazon Honeycode.
+     * </p>
+     */
     inline ConnectorProfileCredentials& WithHoneycode(HoneycodeConnectorProfileCredentials&& value) { SetHoneycode(std::move(value)); return *this;}
 
 

@@ -35,66 +35,42 @@ namespace Model
 
 
     /**
-     * <p> The type of connector, such as Salesforce, Amplitude, and so on. </p> 
-     * <p> <i>Locke</i> refers to a new destination known as Amazon Connect Customer
-     * Profiles. At this time, we recommend that you do not use this destination. </p>
-     * 
+     * <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
      */
     inline const Aws::Vector<ConnectorType>& GetConnectorTypes() const{ return m_connectorTypes; }
 
     /**
-     * <p> The type of connector, such as Salesforce, Amplitude, and so on. </p> 
-     * <p> <i>Locke</i> refers to a new destination known as Amazon Connect Customer
-     * Profiles. At this time, we recommend that you do not use this destination. </p>
-     * 
+     * <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
      */
     inline bool ConnectorTypesHasBeenSet() const { return m_connectorTypesHasBeenSet; }
 
     /**
-     * <p> The type of connector, such as Salesforce, Amplitude, and so on. </p> 
-     * <p> <i>Locke</i> refers to a new destination known as Amazon Connect Customer
-     * Profiles. At this time, we recommend that you do not use this destination. </p>
-     * 
+     * <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
      */
     inline void SetConnectorTypes(const Aws::Vector<ConnectorType>& value) { m_connectorTypesHasBeenSet = true; m_connectorTypes = value; }
 
     /**
-     * <p> The type of connector, such as Salesforce, Amplitude, and so on. </p> 
-     * <p> <i>Locke</i> refers to a new destination known as Amazon Connect Customer
-     * Profiles. At this time, we recommend that you do not use this destination. </p>
-     * 
+     * <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
      */
     inline void SetConnectorTypes(Aws::Vector<ConnectorType>&& value) { m_connectorTypesHasBeenSet = true; m_connectorTypes = std::move(value); }
 
     /**
-     * <p> The type of connector, such as Salesforce, Amplitude, and so on. </p> 
-     * <p> <i>Locke</i> refers to a new destination known as Amazon Connect Customer
-     * Profiles. At this time, we recommend that you do not use this destination. </p>
-     * 
+     * <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
      */
     inline DescribeConnectorsRequest& WithConnectorTypes(const Aws::Vector<ConnectorType>& value) { SetConnectorTypes(value); return *this;}
 
     /**
-     * <p> The type of connector, such as Salesforce, Amplitude, and so on. </p> 
-     * <p> <i>Locke</i> refers to a new destination known as Amazon Connect Customer
-     * Profiles. At this time, we recommend that you do not use this destination. </p>
-     * 
+     * <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
      */
     inline DescribeConnectorsRequest& WithConnectorTypes(Aws::Vector<ConnectorType>&& value) { SetConnectorTypes(std::move(value)); return *this;}
 
     /**
-     * <p> The type of connector, such as Salesforce, Amplitude, and so on. </p> 
-     * <p> <i>Locke</i> refers to a new destination known as Amazon Connect Customer
-     * Profiles. At this time, we recommend that you do not use this destination. </p>
-     * 
+     * <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
      */
     inline DescribeConnectorsRequest& AddConnectorTypes(const ConnectorType& value) { m_connectorTypesHasBeenSet = true; m_connectorTypes.push_back(value); return *this; }
 
     /**
-     * <p> The type of connector, such as Salesforce, Amplitude, and so on. </p> 
-     * <p> <i>Locke</i> refers to a new destination known as Amazon Connect Customer
-     * Profiles. At this time, we recommend that you do not use this destination. </p>
-     * 
+     * <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
      */
     inline DescribeConnectorsRequest& AddConnectorTypes(ConnectorType&& value) { m_connectorTypesHasBeenSet = true; m_connectorTypes.push_back(std::move(value)); return *this; }
 

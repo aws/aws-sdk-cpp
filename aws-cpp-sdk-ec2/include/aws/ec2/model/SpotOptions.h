@@ -50,9 +50,18 @@ namespace Model
      * pools with the lowest price. This is the default allocation strategy.</p> <p>If
      * the allocation strategy is <code>diversified</code>, EC2 Fleet launches
      * instances from all of the Spot Instance pools that you specify.</p> <p>If the
-     * allocation strategy is <code>capacity-optimized</code>, EC2 Fleet launches
-     * instances from Spot Instance pools with optimal capacity for the number of
-     * instances that are launching.</p>
+     * allocation strategy is <code>capacity-optimized</code> (recommended), EC2 Fleet
+     * launches instances from Spot Instance pools with optimal capacity for the number
+     * of instances that are launching. To give certain instance types a higher chance
+     * of launching first, use <code>capacity-optimized-prioritized</code>. Set a
+     * priority for each instance type by using the <code>Priority</code> parameter for
+     * <code>LaunchTemplateOverrides</code>. You can assign the same priority to
+     * different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on
+     * a best-effort basis, but optimizes for capacity first.
+     * <code>capacity-optimized-prioritized</code> is supported only if your fleet uses
+     * a launch template. Note that if the On-Demand <code>AllocationStrategy</code> is
+     * set to <code>prioritized</code>, the same priority is applied when fulfilling
+     * On-Demand capacity.</p>
      */
     inline const SpotAllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
 
@@ -63,9 +72,18 @@ namespace Model
      * pools with the lowest price. This is the default allocation strategy.</p> <p>If
      * the allocation strategy is <code>diversified</code>, EC2 Fleet launches
      * instances from all of the Spot Instance pools that you specify.</p> <p>If the
-     * allocation strategy is <code>capacity-optimized</code>, EC2 Fleet launches
-     * instances from Spot Instance pools with optimal capacity for the number of
-     * instances that are launching.</p>
+     * allocation strategy is <code>capacity-optimized</code> (recommended), EC2 Fleet
+     * launches instances from Spot Instance pools with optimal capacity for the number
+     * of instances that are launching. To give certain instance types a higher chance
+     * of launching first, use <code>capacity-optimized-prioritized</code>. Set a
+     * priority for each instance type by using the <code>Priority</code> parameter for
+     * <code>LaunchTemplateOverrides</code>. You can assign the same priority to
+     * different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on
+     * a best-effort basis, but optimizes for capacity first.
+     * <code>capacity-optimized-prioritized</code> is supported only if your fleet uses
+     * a launch template. Note that if the On-Demand <code>AllocationStrategy</code> is
+     * set to <code>prioritized</code>, the same priority is applied when fulfilling
+     * On-Demand capacity.</p>
      */
     inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
 
@@ -76,9 +94,18 @@ namespace Model
      * pools with the lowest price. This is the default allocation strategy.</p> <p>If
      * the allocation strategy is <code>diversified</code>, EC2 Fleet launches
      * instances from all of the Spot Instance pools that you specify.</p> <p>If the
-     * allocation strategy is <code>capacity-optimized</code>, EC2 Fleet launches
-     * instances from Spot Instance pools with optimal capacity for the number of
-     * instances that are launching.</p>
+     * allocation strategy is <code>capacity-optimized</code> (recommended), EC2 Fleet
+     * launches instances from Spot Instance pools with optimal capacity for the number
+     * of instances that are launching. To give certain instance types a higher chance
+     * of launching first, use <code>capacity-optimized-prioritized</code>. Set a
+     * priority for each instance type by using the <code>Priority</code> parameter for
+     * <code>LaunchTemplateOverrides</code>. You can assign the same priority to
+     * different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on
+     * a best-effort basis, but optimizes for capacity first.
+     * <code>capacity-optimized-prioritized</code> is supported only if your fleet uses
+     * a launch template. Note that if the On-Demand <code>AllocationStrategy</code> is
+     * set to <code>prioritized</code>, the same priority is applied when fulfilling
+     * On-Demand capacity.</p>
      */
     inline void SetAllocationStrategy(const SpotAllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
 
@@ -89,9 +116,18 @@ namespace Model
      * pools with the lowest price. This is the default allocation strategy.</p> <p>If
      * the allocation strategy is <code>diversified</code>, EC2 Fleet launches
      * instances from all of the Spot Instance pools that you specify.</p> <p>If the
-     * allocation strategy is <code>capacity-optimized</code>, EC2 Fleet launches
-     * instances from Spot Instance pools with optimal capacity for the number of
-     * instances that are launching.</p>
+     * allocation strategy is <code>capacity-optimized</code> (recommended), EC2 Fleet
+     * launches instances from Spot Instance pools with optimal capacity for the number
+     * of instances that are launching. To give certain instance types a higher chance
+     * of launching first, use <code>capacity-optimized-prioritized</code>. Set a
+     * priority for each instance type by using the <code>Priority</code> parameter for
+     * <code>LaunchTemplateOverrides</code>. You can assign the same priority to
+     * different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on
+     * a best-effort basis, but optimizes for capacity first.
+     * <code>capacity-optimized-prioritized</code> is supported only if your fleet uses
+     * a launch template. Note that if the On-Demand <code>AllocationStrategy</code> is
+     * set to <code>prioritized</code>, the same priority is applied when fulfilling
+     * On-Demand capacity.</p>
      */
     inline void SetAllocationStrategy(SpotAllocationStrategy&& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = std::move(value); }
 
@@ -102,9 +138,18 @@ namespace Model
      * pools with the lowest price. This is the default allocation strategy.</p> <p>If
      * the allocation strategy is <code>diversified</code>, EC2 Fleet launches
      * instances from all of the Spot Instance pools that you specify.</p> <p>If the
-     * allocation strategy is <code>capacity-optimized</code>, EC2 Fleet launches
-     * instances from Spot Instance pools with optimal capacity for the number of
-     * instances that are launching.</p>
+     * allocation strategy is <code>capacity-optimized</code> (recommended), EC2 Fleet
+     * launches instances from Spot Instance pools with optimal capacity for the number
+     * of instances that are launching. To give certain instance types a higher chance
+     * of launching first, use <code>capacity-optimized-prioritized</code>. Set a
+     * priority for each instance type by using the <code>Priority</code> parameter for
+     * <code>LaunchTemplateOverrides</code>. You can assign the same priority to
+     * different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on
+     * a best-effort basis, but optimizes for capacity first.
+     * <code>capacity-optimized-prioritized</code> is supported only if your fleet uses
+     * a launch template. Note that if the On-Demand <code>AllocationStrategy</code> is
+     * set to <code>prioritized</code>, the same priority is applied when fulfilling
+     * On-Demand capacity.</p>
      */
     inline SpotOptions& WithAllocationStrategy(const SpotAllocationStrategy& value) { SetAllocationStrategy(value); return *this;}
 
@@ -115,9 +160,18 @@ namespace Model
      * pools with the lowest price. This is the default allocation strategy.</p> <p>If
      * the allocation strategy is <code>diversified</code>, EC2 Fleet launches
      * instances from all of the Spot Instance pools that you specify.</p> <p>If the
-     * allocation strategy is <code>capacity-optimized</code>, EC2 Fleet launches
-     * instances from Spot Instance pools with optimal capacity for the number of
-     * instances that are launching.</p>
+     * allocation strategy is <code>capacity-optimized</code> (recommended), EC2 Fleet
+     * launches instances from Spot Instance pools with optimal capacity for the number
+     * of instances that are launching. To give certain instance types a higher chance
+     * of launching first, use <code>capacity-optimized-prioritized</code>. Set a
+     * priority for each instance type by using the <code>Priority</code> parameter for
+     * <code>LaunchTemplateOverrides</code>. You can assign the same priority to
+     * different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on
+     * a best-effort basis, but optimizes for capacity first.
+     * <code>capacity-optimized-prioritized</code> is supported only if your fleet uses
+     * a launch template. Note that if the On-Demand <code>AllocationStrategy</code> is
+     * set to <code>prioritized</code>, the same priority is applied when fulfilling
+     * On-Demand capacity.</p>
      */
     inline SpotOptions& WithAllocationStrategy(SpotAllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
 

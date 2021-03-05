@@ -249,42 +249,66 @@ namespace Model
 
 
     /**
-     * <p>The priority for the launch template override. If <b>AllocationStrategy</b>
-     * is set to <code>prioritized</code>, EC2 Fleet uses priority to determine which
-     * launch template override to use first in fulfilling On-Demand capacity. The
-     * highest priority is launched first. Valid values are whole numbers starting at
-     * <code>0</code>. The lower the number, the higher the priority. If no number is
-     * set, the launch template override has the lowest priority.</p>
+     * <p>The priority for the launch template override. The highest priority is
+     * launched first.</p> <p>If the On-Demand <code>AllocationStrategy</code> is set
+     * to <code>prioritized</code>, EC2 Fleet uses priority to determine which launch
+     * template override to use first in fulfilling On-Demand capacity.</p> <p>If the
+     * Spot <code>AllocationStrategy</code> is set to
+     * <code>capacity-optimized-prioritized</code>, EC2 Fleet uses priority on a
+     * best-effort basis to determine which launch template override to use first in
+     * fulfilling Spot capacity, but optimizes for capacity first.</p> <p>Valid values
+     * are whole numbers starting at <code>0</code>. The lower the number, the higher
+     * the priority. If no number is set, the launch template override has the lowest
+     * priority. You can set the same priority for different launch template
+     * overrides.</p>
      */
     inline double GetPriority() const{ return m_priority; }
 
     /**
-     * <p>The priority for the launch template override. If <b>AllocationStrategy</b>
-     * is set to <code>prioritized</code>, EC2 Fleet uses priority to determine which
-     * launch template override to use first in fulfilling On-Demand capacity. The
-     * highest priority is launched first. Valid values are whole numbers starting at
-     * <code>0</code>. The lower the number, the higher the priority. If no number is
-     * set, the launch template override has the lowest priority.</p>
+     * <p>The priority for the launch template override. The highest priority is
+     * launched first.</p> <p>If the On-Demand <code>AllocationStrategy</code> is set
+     * to <code>prioritized</code>, EC2 Fleet uses priority to determine which launch
+     * template override to use first in fulfilling On-Demand capacity.</p> <p>If the
+     * Spot <code>AllocationStrategy</code> is set to
+     * <code>capacity-optimized-prioritized</code>, EC2 Fleet uses priority on a
+     * best-effort basis to determine which launch template override to use first in
+     * fulfilling Spot capacity, but optimizes for capacity first.</p> <p>Valid values
+     * are whole numbers starting at <code>0</code>. The lower the number, the higher
+     * the priority. If no number is set, the launch template override has the lowest
+     * priority. You can set the same priority for different launch template
+     * overrides.</p>
      */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
 
     /**
-     * <p>The priority for the launch template override. If <b>AllocationStrategy</b>
-     * is set to <code>prioritized</code>, EC2 Fleet uses priority to determine which
-     * launch template override to use first in fulfilling On-Demand capacity. The
-     * highest priority is launched first. Valid values are whole numbers starting at
-     * <code>0</code>. The lower the number, the higher the priority. If no number is
-     * set, the launch template override has the lowest priority.</p>
+     * <p>The priority for the launch template override. The highest priority is
+     * launched first.</p> <p>If the On-Demand <code>AllocationStrategy</code> is set
+     * to <code>prioritized</code>, EC2 Fleet uses priority to determine which launch
+     * template override to use first in fulfilling On-Demand capacity.</p> <p>If the
+     * Spot <code>AllocationStrategy</code> is set to
+     * <code>capacity-optimized-prioritized</code>, EC2 Fleet uses priority on a
+     * best-effort basis to determine which launch template override to use first in
+     * fulfilling Spot capacity, but optimizes for capacity first.</p> <p>Valid values
+     * are whole numbers starting at <code>0</code>. The lower the number, the higher
+     * the priority. If no number is set, the launch template override has the lowest
+     * priority. You can set the same priority for different launch template
+     * overrides.</p>
      */
     inline void SetPriority(double value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
-     * <p>The priority for the launch template override. If <b>AllocationStrategy</b>
-     * is set to <code>prioritized</code>, EC2 Fleet uses priority to determine which
-     * launch template override to use first in fulfilling On-Demand capacity. The
-     * highest priority is launched first. Valid values are whole numbers starting at
-     * <code>0</code>. The lower the number, the higher the priority. If no number is
-     * set, the launch template override has the lowest priority.</p>
+     * <p>The priority for the launch template override. The highest priority is
+     * launched first.</p> <p>If the On-Demand <code>AllocationStrategy</code> is set
+     * to <code>prioritized</code>, EC2 Fleet uses priority to determine which launch
+     * template override to use first in fulfilling On-Demand capacity.</p> <p>If the
+     * Spot <code>AllocationStrategy</code> is set to
+     * <code>capacity-optimized-prioritized</code>, EC2 Fleet uses priority on a
+     * best-effort basis to determine which launch template override to use first in
+     * fulfilling Spot capacity, but optimizes for capacity first.</p> <p>Valid values
+     * are whole numbers starting at <code>0</code>. The lower the number, the higher
+     * the priority. If no number is set, the launch template override has the lowest
+     * priority. You can set the same priority for different launch template
+     * overrides.</p>
      */
     inline FleetLaunchTemplateOverridesRequest& WithPriority(double value) { SetPriority(value); return *this;}
 
