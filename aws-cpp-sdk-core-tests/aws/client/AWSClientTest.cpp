@@ -20,6 +20,7 @@
 #include <aws/core/auth/AWSCredentialsProvider.h>
 #include <fstream>
 #include <thread>
+#include <aws/core/utils/logging/LogMacros.h>
 
 using namespace Aws;
 using namespace Aws::Client;
