@@ -9,7 +9,7 @@ option(IN_SOURCE_BUILD "If the CRT libs are being built from your source tree (a
 # together. Only use this on CRT libraries (including S2N), libcrypto will stay as an assumed external dependency.
 #
 # package_name: is the name of the package to find
-# DEP_CRT_LIBS: output variable will be appended after each call to this function. You don't have to use it,
+# DEP_AWS_LIBS: output variable will be appended after each call to this function. You don't have to use it,
 #    but it can be passed directly target_link_libraries and it will be the properly qualified library
 #    name and namespace based on configuration.
 function(aws_use_package package_name)
