@@ -198,66 +198,66 @@ namespace Model
 
 
     /**
-     * <p>The bid price for each EC2 Spot Instance type as defined by
-     * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
-     * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
-     * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
+     * <p>If specified, indicates that the instance group uses Spot Instances. This is
+     * the maximum price you are willing to pay for Spot Instances. Specify
+     * <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or
+     * specify an amount in USD.</p>
      */
     inline const Aws::String& GetBidPrice() const{ return m_bidPrice; }
 
     /**
-     * <p>The bid price for each EC2 Spot Instance type as defined by
-     * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
-     * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
-     * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
+     * <p>If specified, indicates that the instance group uses Spot Instances. This is
+     * the maximum price you are willing to pay for Spot Instances. Specify
+     * <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or
+     * specify an amount in USD.</p>
      */
     inline bool BidPriceHasBeenSet() const { return m_bidPriceHasBeenSet; }
 
     /**
-     * <p>The bid price for each EC2 Spot Instance type as defined by
-     * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
-     * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
-     * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
+     * <p>If specified, indicates that the instance group uses Spot Instances. This is
+     * the maximum price you are willing to pay for Spot Instances. Specify
+     * <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or
+     * specify an amount in USD.</p>
      */
     inline void SetBidPrice(const Aws::String& value) { m_bidPriceHasBeenSet = true; m_bidPrice = value; }
 
     /**
-     * <p>The bid price for each EC2 Spot Instance type as defined by
-     * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
-     * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
-     * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
+     * <p>If specified, indicates that the instance group uses Spot Instances. This is
+     * the maximum price you are willing to pay for Spot Instances. Specify
+     * <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or
+     * specify an amount in USD.</p>
      */
     inline void SetBidPrice(Aws::String&& value) { m_bidPriceHasBeenSet = true; m_bidPrice = std::move(value); }
 
     /**
-     * <p>The bid price for each EC2 Spot Instance type as defined by
-     * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
-     * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
-     * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
+     * <p>If specified, indicates that the instance group uses Spot Instances. This is
+     * the maximum price you are willing to pay for Spot Instances. Specify
+     * <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or
+     * specify an amount in USD.</p>
      */
     inline void SetBidPrice(const char* value) { m_bidPriceHasBeenSet = true; m_bidPrice.assign(value); }
 
     /**
-     * <p>The bid price for each EC2 Spot Instance type as defined by
-     * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
-     * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
-     * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
+     * <p>If specified, indicates that the instance group uses Spot Instances. This is
+     * the maximum price you are willing to pay for Spot Instances. Specify
+     * <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or
+     * specify an amount in USD.</p>
      */
     inline InstanceGroup& WithBidPrice(const Aws::String& value) { SetBidPrice(value); return *this;}
 
     /**
-     * <p>The bid price for each EC2 Spot Instance type as defined by
-     * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
-     * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
-     * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
+     * <p>If specified, indicates that the instance group uses Spot Instances. This is
+     * the maximum price you are willing to pay for Spot Instances. Specify
+     * <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or
+     * specify an amount in USD.</p>
      */
     inline InstanceGroup& WithBidPrice(Aws::String&& value) { SetBidPrice(std::move(value)); return *this;}
 
     /**
-     * <p>The bid price for each EC2 Spot Instance type as defined by
-     * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
-     * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
-     * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
+     * <p>If specified, indicates that the instance group uses Spot Instances. This is
+     * the maximum price you are willing to pay for Spot Instances. Specify
+     * <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or
+     * specify an amount in USD.</p>
      */
     inline InstanceGroup& WithBidPrice(const char* value) { SetBidPrice(value); return *this;}
 

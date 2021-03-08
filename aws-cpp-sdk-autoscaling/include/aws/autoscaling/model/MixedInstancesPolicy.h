@@ -34,7 +34,7 @@ namespace Model
    * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>You can create a mixed
    * instances policy for a new Auto Scaling group, or you can create it for an
    * existing group by updating the group to specify
-   * <code>MixedInstancesPolicy</code> as the top-level parameter instead of a launch
+   * <code>MixedInstancesPolicy</code> as the top-level property instead of a launch
    * configuration or launch template.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/MixedInstancesPolicy">AWS
    * API Reference</a></p>
@@ -95,37 +95,37 @@ namespace Model
 
     /**
      * <p>Specifies the instances distribution. If not provided, the value for each
-     * parameter in <code>InstancesDistribution</code> uses a default value.</p>
+     * property in <code>InstancesDistribution</code> uses a default value.</p>
      */
     inline const InstancesDistribution& GetInstancesDistribution() const{ return m_instancesDistribution; }
 
     /**
      * <p>Specifies the instances distribution. If not provided, the value for each
-     * parameter in <code>InstancesDistribution</code> uses a default value.</p>
+     * property in <code>InstancesDistribution</code> uses a default value.</p>
      */
     inline bool InstancesDistributionHasBeenSet() const { return m_instancesDistributionHasBeenSet; }
 
     /**
      * <p>Specifies the instances distribution. If not provided, the value for each
-     * parameter in <code>InstancesDistribution</code> uses a default value.</p>
+     * property in <code>InstancesDistribution</code> uses a default value.</p>
      */
     inline void SetInstancesDistribution(const InstancesDistribution& value) { m_instancesDistributionHasBeenSet = true; m_instancesDistribution = value; }
 
     /**
      * <p>Specifies the instances distribution. If not provided, the value for each
-     * parameter in <code>InstancesDistribution</code> uses a default value.</p>
+     * property in <code>InstancesDistribution</code> uses a default value.</p>
      */
     inline void SetInstancesDistribution(InstancesDistribution&& value) { m_instancesDistributionHasBeenSet = true; m_instancesDistribution = std::move(value); }
 
     /**
      * <p>Specifies the instances distribution. If not provided, the value for each
-     * parameter in <code>InstancesDistribution</code> uses a default value.</p>
+     * property in <code>InstancesDistribution</code> uses a default value.</p>
      */
     inline MixedInstancesPolicy& WithInstancesDistribution(const InstancesDistribution& value) { SetInstancesDistribution(value); return *this;}
 
     /**
      * <p>Specifies the instances distribution. If not provided, the value for each
-     * parameter in <code>InstancesDistribution</code> uses a default value.</p>
+     * property in <code>InstancesDistribution</code> uses a default value.</p>
      */
     inline MixedInstancesPolicy& WithInstancesDistribution(InstancesDistribution&& value) { SetInstancesDistribution(std::move(value)); return *this;}
 

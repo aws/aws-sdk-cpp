@@ -28,7 +28,7 @@ namespace Model
    * underlying <code>PutObjectRetention</code> API. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using
    * S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon Simple
-   * Storage Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * Storage Service User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3SetObjectRetentionOperation">AWS
    * API Reference</a></p>
    */
@@ -72,7 +72,7 @@ namespace Model
      * Batch Operations job. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using
      * S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon Simple
-     * Storage Service Developer Guide</i>.</p>
+     * Storage Service User Guide</i>.</p>
      */
     inline const S3Retention& GetRetention() const{ return m_retention; }
 
@@ -81,7 +81,7 @@ namespace Model
      * Batch Operations job. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using
      * S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon Simple
-     * Storage Service Developer Guide</i>.</p>
+     * Storage Service User Guide</i>.</p>
      */
     inline bool RetentionHasBeenSet() const { return m_retentionHasBeenSet; }
 
@@ -90,7 +90,7 @@ namespace Model
      * Batch Operations job. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using
      * S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon Simple
-     * Storage Service Developer Guide</i>.</p>
+     * Storage Service User Guide</i>.</p>
      */
     inline void SetRetention(const S3Retention& value) { m_retentionHasBeenSet = true; m_retention = value; }
 
@@ -99,7 +99,7 @@ namespace Model
      * Batch Operations job. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using
      * S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon Simple
-     * Storage Service Developer Guide</i>.</p>
+     * Storage Service User Guide</i>.</p>
      */
     inline void SetRetention(S3Retention&& value) { m_retentionHasBeenSet = true; m_retention = std::move(value); }
 
@@ -108,7 +108,7 @@ namespace Model
      * Batch Operations job. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using
      * S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon Simple
-     * Storage Service Developer Guide</i>.</p>
+     * Storage Service User Guide</i>.</p>
      */
     inline S3SetObjectRetentionOperation& WithRetention(const S3Retention& value) { SetRetention(value); return *this;}
 
@@ -117,7 +117,7 @@ namespace Model
      * Batch Operations job. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using
      * S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon Simple
-     * Storage Service Developer Guide</i>.</p>
+     * Storage Service User Guide</i>.</p>
      */
     inline S3SetObjectRetentionOperation& WithRetention(S3Retention&& value) { SetRetention(std::move(value)); return *this;}
 

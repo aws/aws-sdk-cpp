@@ -1816,9 +1816,12 @@ namespace Model
          * <p>Returns a list of Lambda functions, with the version-specific configuration
          * of each. Lambda returns up to 50 functions per call.</p> <p>Set
          * <code>FunctionVersion</code> to <code>ALL</code> to include all published
-         * versions of each function in addition to the unpublished version. To get more
-         * information about a function or version, use <a>GetFunction</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * versions of each function in addition to the unpublished version. </p> 
+         * <p>The <code>ListFunctions</code> action returns a subset of the
+         * <a>FunctionConfiguration</a> fields. To get the additional fields (State,
+         * StateReasonCode, StateReason, LastUpdateStatus, LastUpdateStatusReason,
+         * LastUpdateStatusReasonCode) for a function or version, use
+         * <a>GetFunction</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">AWS
          * API Reference</a></p>
          */
@@ -1828,9 +1831,12 @@ namespace Model
          * <p>Returns a list of Lambda functions, with the version-specific configuration
          * of each. Lambda returns up to 50 functions per call.</p> <p>Set
          * <code>FunctionVersion</code> to <code>ALL</code> to include all published
-         * versions of each function in addition to the unpublished version. To get more
-         * information about a function or version, use <a>GetFunction</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * versions of each function in addition to the unpublished version. </p> 
+         * <p>The <code>ListFunctions</code> action returns a subset of the
+         * <a>FunctionConfiguration</a> fields. To get the additional fields (State,
+         * StateReasonCode, StateReason, LastUpdateStatus, LastUpdateStatusReason,
+         * LastUpdateStatusReasonCode) for a function or version, use
+         * <a>GetFunction</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">AWS
          * API Reference</a></p>
          *
@@ -1842,9 +1848,12 @@ namespace Model
          * <p>Returns a list of Lambda functions, with the version-specific configuration
          * of each. Lambda returns up to 50 functions per call.</p> <p>Set
          * <code>FunctionVersion</code> to <code>ALL</code> to include all published
-         * versions of each function in addition to the unpublished version. To get more
-         * information about a function or version, use <a>GetFunction</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * versions of each function in addition to the unpublished version. </p> 
+         * <p>The <code>ListFunctions</code> action returns a subset of the
+         * <a>FunctionConfiguration</a> fields. To get the additional fields (State,
+         * StateReasonCode, StateReason, LastUpdateStatus, LastUpdateStatusReason,
+         * LastUpdateStatusReasonCode) for a function or version, use
+         * <a>GetFunction</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">AWS
          * API Reference</a></p>
          *

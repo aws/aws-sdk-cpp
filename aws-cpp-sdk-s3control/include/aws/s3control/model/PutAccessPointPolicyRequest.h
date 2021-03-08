@@ -209,7 +209,7 @@ namespace Model
      * information about access point policies, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
      * data access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
-     * Service Developer Guide</i>.</p>
+     * Service User Guide</i>.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
@@ -218,7 +218,7 @@ namespace Model
      * information about access point policies, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
      * data access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
-     * Service Developer Guide</i>.</p>
+     * Service User Guide</i>.</p>
      */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
@@ -227,7 +227,7 @@ namespace Model
      * information about access point policies, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
      * data access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
-     * Service Developer Guide</i>.</p>
+     * Service User Guide</i>.</p>
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
@@ -236,7 +236,7 @@ namespace Model
      * information about access point policies, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
      * data access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
-     * Service Developer Guide</i>.</p>
+     * Service User Guide</i>.</p>
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
@@ -245,7 +245,7 @@ namespace Model
      * information about access point policies, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
      * data access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
-     * Service Developer Guide</i>.</p>
+     * Service User Guide</i>.</p>
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
@@ -254,7 +254,7 @@ namespace Model
      * information about access point policies, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
      * data access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
-     * Service Developer Guide</i>.</p>
+     * Service User Guide</i>.</p>
      */
     inline PutAccessPointPolicyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
@@ -263,7 +263,7 @@ namespace Model
      * information about access point policies, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
      * data access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
-     * Service Developer Guide</i>.</p>
+     * Service User Guide</i>.</p>
      */
     inline PutAccessPointPolicyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
@@ -272,7 +272,7 @@ namespace Model
      * information about access point policies, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
      * data access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
-     * Service Developer Guide</i>.</p>
+     * Service User Guide</i>.</p>
      */
     inline PutAccessPointPolicyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 

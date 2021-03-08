@@ -77,25 +77,25 @@ namespace Model
 
     /**
      * <p>The number of steps that can be executed concurrently. You can specify a
-     * maximum of 256 steps. </p>
+     * minimum of 1 step and a maximum of 256 steps. </p>
      */
     inline int GetStepConcurrencyLevel() const{ return m_stepConcurrencyLevel; }
 
     /**
      * <p>The number of steps that can be executed concurrently. You can specify a
-     * maximum of 256 steps. </p>
+     * minimum of 1 step and a maximum of 256 steps. </p>
      */
     inline bool StepConcurrencyLevelHasBeenSet() const { return m_stepConcurrencyLevelHasBeenSet; }
 
     /**
      * <p>The number of steps that can be executed concurrently. You can specify a
-     * maximum of 256 steps. </p>
+     * minimum of 1 step and a maximum of 256 steps. </p>
      */
     inline void SetStepConcurrencyLevel(int value) { m_stepConcurrencyLevelHasBeenSet = true; m_stepConcurrencyLevel = value; }
 
     /**
      * <p>The number of steps that can be executed concurrently. You can specify a
-     * maximum of 256 steps. </p>
+     * minimum of 1 step and a maximum of 256 steps. </p>
      */
     inline ModifyClusterRequest& WithStepConcurrencyLevel(int value) { SetStepConcurrencyLevel(value); return *this;}
 

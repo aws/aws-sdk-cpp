@@ -217,40 +217,40 @@ namespace Model
 
 
     /**
-     * <p>Sets the maximum number of keys returned in the response. By default the API
-     * returns up to 1,000 key names. The response might contain fewer keys but will
-     * never contain more. If additional keys satisfy the search criteria, but were not
-     * returned because max-keys was exceeded, the response contains
+     * <p>Sets the maximum number of keys returned in the response. By default the
+     * action returns up to 1,000 key names. The response might contain fewer keys but
+     * will never contain more. If additional keys satisfy the search criteria, but
+     * were not returned because max-keys was exceeded, the response contains
      * &lt;isTruncated&gt;true&lt;/isTruncated&gt;. To return the additional keys, see
      * key-marker and version-id-marker.</p>
      */
     inline int GetMaxKeys() const{ return m_maxKeys; }
 
     /**
-     * <p>Sets the maximum number of keys returned in the response. By default the API
-     * returns up to 1,000 key names. The response might contain fewer keys but will
-     * never contain more. If additional keys satisfy the search criteria, but were not
-     * returned because max-keys was exceeded, the response contains
+     * <p>Sets the maximum number of keys returned in the response. By default the
+     * action returns up to 1,000 key names. The response might contain fewer keys but
+     * will never contain more. If additional keys satisfy the search criteria, but
+     * were not returned because max-keys was exceeded, the response contains
      * &lt;isTruncated&gt;true&lt;/isTruncated&gt;. To return the additional keys, see
      * key-marker and version-id-marker.</p>
      */
     inline bool MaxKeysHasBeenSet() const { return m_maxKeysHasBeenSet; }
 
     /**
-     * <p>Sets the maximum number of keys returned in the response. By default the API
-     * returns up to 1,000 key names. The response might contain fewer keys but will
-     * never contain more. If additional keys satisfy the search criteria, but were not
-     * returned because max-keys was exceeded, the response contains
+     * <p>Sets the maximum number of keys returned in the response. By default the
+     * action returns up to 1,000 key names. The response might contain fewer keys but
+     * will never contain more. If additional keys satisfy the search criteria, but
+     * were not returned because max-keys was exceeded, the response contains
      * &lt;isTruncated&gt;true&lt;/isTruncated&gt;. To return the additional keys, see
      * key-marker and version-id-marker.</p>
      */
     inline void SetMaxKeys(int value) { m_maxKeysHasBeenSet = true; m_maxKeys = value; }
 
     /**
-     * <p>Sets the maximum number of keys returned in the response. By default the API
-     * returns up to 1,000 key names. The response might contain fewer keys but will
-     * never contain more. If additional keys satisfy the search criteria, but were not
-     * returned because max-keys was exceeded, the response contains
+     * <p>Sets the maximum number of keys returned in the response. By default the
+     * action returns up to 1,000 key names. The response might contain fewer keys but
+     * will never contain more. If additional keys satisfy the search criteria, but
+     * were not returned because max-keys was exceeded, the response contains
      * &lt;isTruncated&gt;true&lt;/isTruncated&gt;. To return the additional keys, see
      * key-marker and version-id-marker.</p>
      */

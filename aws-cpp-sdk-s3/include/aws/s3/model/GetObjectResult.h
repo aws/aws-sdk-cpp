@@ -169,44 +169,44 @@ namespace Model
 
 
     /**
-     * <p>Provides information about object restoration operation and expiration time
-     * of the restored object copy.</p>
+     * <p>Provides information about object restoration action and expiration time of
+     * the restored object copy.</p>
      */
     inline const Aws::String& GetRestore() const{ return m_restore; }
 
     /**
-     * <p>Provides information about object restoration operation and expiration time
-     * of the restored object copy.</p>
+     * <p>Provides information about object restoration action and expiration time of
+     * the restored object copy.</p>
      */
     inline void SetRestore(const Aws::String& value) { m_restore = value; }
 
     /**
-     * <p>Provides information about object restoration operation and expiration time
-     * of the restored object copy.</p>
+     * <p>Provides information about object restoration action and expiration time of
+     * the restored object copy.</p>
      */
     inline void SetRestore(Aws::String&& value) { m_restore = std::move(value); }
 
     /**
-     * <p>Provides information about object restoration operation and expiration time
-     * of the restored object copy.</p>
+     * <p>Provides information about object restoration action and expiration time of
+     * the restored object copy.</p>
      */
     inline void SetRestore(const char* value) { m_restore.assign(value); }
 
     /**
-     * <p>Provides information about object restoration operation and expiration time
-     * of the restored object copy.</p>
+     * <p>Provides information about object restoration action and expiration time of
+     * the restored object copy.</p>
      */
     inline GetObjectResult& WithRestore(const Aws::String& value) { SetRestore(value); return *this;}
 
     /**
-     * <p>Provides information about object restoration operation and expiration time
-     * of the restored object copy.</p>
+     * <p>Provides information about object restoration action and expiration time of
+     * the restored object copy.</p>
      */
     inline GetObjectResult& WithRestore(Aws::String&& value) { SetRestore(std::move(value)); return *this;}
 
     /**
-     * <p>Provides information about object restoration operation and expiration time
-     * of the restored object copy.</p>
+     * <p>Provides information about object restoration action and expiration time of
+     * the restored object copy.</p>
      */
     inline GetObjectResult& WithRestore(const char* value) { SetRestore(value); return *this;}
 

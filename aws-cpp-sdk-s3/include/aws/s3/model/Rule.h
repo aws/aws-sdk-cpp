@@ -252,7 +252,7 @@ namespace Model
      * information about Amazon S3 lifecycle configuration rules, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html">Transitioning
      * Objects Using Amazon S3 Lifecycle</a> in the <i>Amazon Simple Storage Service
-     * Developer Guide</i>.</p>
+     * User Guide</i>.</p>
      */
     inline const Transition& GetTransition() const{ return m_transition; }
 
@@ -261,7 +261,7 @@ namespace Model
      * information about Amazon S3 lifecycle configuration rules, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html">Transitioning
      * Objects Using Amazon S3 Lifecycle</a> in the <i>Amazon Simple Storage Service
-     * Developer Guide</i>.</p>
+     * User Guide</i>.</p>
      */
     inline bool TransitionHasBeenSet() const { return m_transitionHasBeenSet; }
 
@@ -270,7 +270,7 @@ namespace Model
      * information about Amazon S3 lifecycle configuration rules, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html">Transitioning
      * Objects Using Amazon S3 Lifecycle</a> in the <i>Amazon Simple Storage Service
-     * Developer Guide</i>.</p>
+     * User Guide</i>.</p>
      */
     inline void SetTransition(const Transition& value) { m_transitionHasBeenSet = true; m_transition = value; }
 
@@ -279,7 +279,7 @@ namespace Model
      * information about Amazon S3 lifecycle configuration rules, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html">Transitioning
      * Objects Using Amazon S3 Lifecycle</a> in the <i>Amazon Simple Storage Service
-     * Developer Guide</i>.</p>
+     * User Guide</i>.</p>
      */
     inline void SetTransition(Transition&& value) { m_transitionHasBeenSet = true; m_transition = std::move(value); }
 
@@ -288,7 +288,7 @@ namespace Model
      * information about Amazon S3 lifecycle configuration rules, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html">Transitioning
      * Objects Using Amazon S3 Lifecycle</a> in the <i>Amazon Simple Storage Service
-     * Developer Guide</i>.</p>
+     * User Guide</i>.</p>
      */
     inline Rule& WithTransition(const Transition& value) { SetTransition(value); return *this;}
 
@@ -297,7 +297,7 @@ namespace Model
      * information about Amazon S3 lifecycle configuration rules, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html">Transitioning
      * Objects Using Amazon S3 Lifecycle</a> in the <i>Amazon Simple Storage Service
-     * Developer Guide</i>.</p>
+     * User Guide</i>.</p>
      */
     inline Rule& WithTransition(Transition&& value) { SetTransition(std::move(value)); return *this;}
 

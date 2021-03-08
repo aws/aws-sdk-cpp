@@ -89,8 +89,8 @@ namespace Model
      * <p>Describes the cross-origin access configuration for objects in an Amazon S3
      * bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling
-     * Cross-Origin Resource Sharing</a> in the <i>Amazon Simple Storage Service
-     * Developer Guide</i>.</p>
+     * Cross-Origin Resource Sharing</a> in the <i>Amazon Simple Storage Service User
+     * Guide</i>.</p>
      */
     inline const CORSConfiguration& GetCORSConfiguration() const{ return m_cORSConfiguration; }
 
@@ -98,8 +98,8 @@ namespace Model
      * <p>Describes the cross-origin access configuration for objects in an Amazon S3
      * bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling
-     * Cross-Origin Resource Sharing</a> in the <i>Amazon Simple Storage Service
-     * Developer Guide</i>.</p>
+     * Cross-Origin Resource Sharing</a> in the <i>Amazon Simple Storage Service User
+     * Guide</i>.</p>
      */
     inline bool CORSConfigurationHasBeenSet() const { return m_cORSConfigurationHasBeenSet; }
 
@@ -107,8 +107,8 @@ namespace Model
      * <p>Describes the cross-origin access configuration for objects in an Amazon S3
      * bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling
-     * Cross-Origin Resource Sharing</a> in the <i>Amazon Simple Storage Service
-     * Developer Guide</i>.</p>
+     * Cross-Origin Resource Sharing</a> in the <i>Amazon Simple Storage Service User
+     * Guide</i>.</p>
      */
     inline void SetCORSConfiguration(const CORSConfiguration& value) { m_cORSConfigurationHasBeenSet = true; m_cORSConfiguration = value; }
 
@@ -116,8 +116,8 @@ namespace Model
      * <p>Describes the cross-origin access configuration for objects in an Amazon S3
      * bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling
-     * Cross-Origin Resource Sharing</a> in the <i>Amazon Simple Storage Service
-     * Developer Guide</i>.</p>
+     * Cross-Origin Resource Sharing</a> in the <i>Amazon Simple Storage Service User
+     * Guide</i>.</p>
      */
     inline void SetCORSConfiguration(CORSConfiguration&& value) { m_cORSConfigurationHasBeenSet = true; m_cORSConfiguration = std::move(value); }
 
@@ -125,8 +125,8 @@ namespace Model
      * <p>Describes the cross-origin access configuration for objects in an Amazon S3
      * bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling
-     * Cross-Origin Resource Sharing</a> in the <i>Amazon Simple Storage Service
-     * Developer Guide</i>.</p>
+     * Cross-Origin Resource Sharing</a> in the <i>Amazon Simple Storage Service User
+     * Guide</i>.</p>
      */
     inline PutBucketCorsRequest& WithCORSConfiguration(const CORSConfiguration& value) { SetCORSConfiguration(value); return *this;}
 
@@ -134,8 +134,8 @@ namespace Model
      * <p>Describes the cross-origin access configuration for objects in an Amazon S3
      * bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling
-     * Cross-Origin Resource Sharing</a> in the <i>Amazon Simple Storage Service
-     * Developer Guide</i>.</p>
+     * Cross-Origin Resource Sharing</a> in the <i>Amazon Simple Storage Service User
+     * Guide</i>.</p>
      */
     inline PutBucketCorsRequest& WithCORSConfiguration(CORSConfiguration&& value) { SetCORSConfiguration(std::move(value)); return *this;}
 

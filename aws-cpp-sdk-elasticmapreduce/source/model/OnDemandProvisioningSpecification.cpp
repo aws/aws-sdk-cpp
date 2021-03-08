@@ -20,13 +20,15 @@ namespace Model
 
 OnDemandProvisioningSpecification::OnDemandProvisioningSpecification() : 
     m_allocationStrategy(OnDemandProvisioningAllocationStrategy::NOT_SET),
-    m_allocationStrategyHasBeenSet(false)
+    m_allocationStrategyHasBeenSet(false),
+    m_capacityReservationOptionsHasBeenSet(false)
 {
 }
 
 OnDemandProvisioningSpecification::OnDemandProvisioningSpecification(JsonView jsonValue) : 
     m_allocationStrategy(OnDemandProvisioningAllocationStrategy::NOT_SET),
-    m_allocationStrategyHasBeenSet(false)
+    m_allocationStrategyHasBeenSet(false),
+    m_capacityReservationOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -40,6 +42,13 @@ OnDemandProvisioningSpecification& OnDemandProvisioningSpecification::operator =
     m_allocationStrategyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CapacityReservationOptions"))
+  {
+    m_capacityReservationOptions = jsonValue.GetObject("CapacityReservationOptions");
+
+    m_capacityReservationOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -50,6 +59,12 @@ JsonValue OnDemandProvisioningSpecification::Jsonize() const
   if(m_allocationStrategyHasBeenSet)
   {
    payload.WithString("AllocationStrategy", OnDemandProvisioningAllocationStrategyMapper::GetNameForOnDemandProvisioningAllocationStrategy(m_allocationStrategy));
+  }
+
+  if(m_capacityReservationOptionsHasBeenSet)
+  {
+   payload.WithObject("CapacityReservationOptions", m_capacityReservationOptions.Jsonize());
+
   }
 
   return payload;

@@ -28,7 +28,7 @@ namespace Model
    * <code>PutObjectLegalHold</code> API. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-legal-hold.html">Using
    * S3 Object Lock legal hold with S3 Batch Operations</a> in the <i>Amazon Simple
-   * Storage Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * Storage Service User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3SetObjectLegalHoldOperation">AWS
    * API Reference</a></p>
    */

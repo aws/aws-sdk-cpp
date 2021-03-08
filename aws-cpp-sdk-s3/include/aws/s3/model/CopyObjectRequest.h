@@ -88,20 +88,20 @@ namespace Model
 
 
     /**
-     * <p>The name of the destination bucket.</p> <p>When using this API with an access
-     * point, you must direct requests to the access point hostname. The access point
-     * hostname takes the form
+     * <p>The name of the destination bucket.</p> <p>When using this action with an
+     * access point, you must direct requests to the access point hostname. The access
+     * point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
+     * When using this action with an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
+     * Guide</i>.</p> <p>When using this action with Amazon S3 on Outposts, you must
      * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
      * takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * When using this action using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
      * S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
@@ -111,20 +111,20 @@ namespace Model
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>The name of the destination bucket.</p> <p>When using this API with an access
-     * point, you must direct requests to the access point hostname. The access point
-     * hostname takes the form
+     * <p>The name of the destination bucket.</p> <p>When using this action with an
+     * access point, you must direct requests to the access point hostname. The access
+     * point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
+     * When using this action with an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
+     * Guide</i>.</p> <p>When using this action with Amazon S3 on Outposts, you must
      * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
      * takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * When using this action using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
      * S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
@@ -134,20 +134,20 @@ namespace Model
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p>The name of the destination bucket.</p> <p>When using this API with an access
-     * point, you must direct requests to the access point hostname. The access point
-     * hostname takes the form
+     * <p>The name of the destination bucket.</p> <p>When using this action with an
+     * access point, you must direct requests to the access point hostname. The access
+     * point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
+     * When using this action with an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
+     * Guide</i>.</p> <p>When using this action with Amazon S3 on Outposts, you must
      * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
      * takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * When using this action using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
      * S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
@@ -157,20 +157,20 @@ namespace Model
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p>The name of the destination bucket.</p> <p>When using this API with an access
-     * point, you must direct requests to the access point hostname. The access point
-     * hostname takes the form
+     * <p>The name of the destination bucket.</p> <p>When using this action with an
+     * access point, you must direct requests to the access point hostname. The access
+     * point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
+     * When using this action with an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
+     * Guide</i>.</p> <p>When using this action with Amazon S3 on Outposts, you must
      * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
      * takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * When using this action using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
      * S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
@@ -180,20 +180,20 @@ namespace Model
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p>The name of the destination bucket.</p> <p>When using this API with an access
-     * point, you must direct requests to the access point hostname. The access point
-     * hostname takes the form
+     * <p>The name of the destination bucket.</p> <p>When using this action with an
+     * access point, you must direct requests to the access point hostname. The access
+     * point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
+     * When using this action with an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
+     * Guide</i>.</p> <p>When using this action with Amazon S3 on Outposts, you must
      * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
      * takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * When using this action using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
      * S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
@@ -203,20 +203,20 @@ namespace Model
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p>The name of the destination bucket.</p> <p>When using this API with an access
-     * point, you must direct requests to the access point hostname. The access point
-     * hostname takes the form
+     * <p>The name of the destination bucket.</p> <p>When using this action with an
+     * access point, you must direct requests to the access point hostname. The access
+     * point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
+     * When using this action with an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
+     * Guide</i>.</p> <p>When using this action with Amazon S3 on Outposts, you must
      * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
      * takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * When using this action using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
      * S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
@@ -226,20 +226,20 @@ namespace Model
     inline CopyObjectRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>The name of the destination bucket.</p> <p>When using this API with an access
-     * point, you must direct requests to the access point hostname. The access point
-     * hostname takes the form
+     * <p>The name of the destination bucket.</p> <p>When using this action with an
+     * access point, you must direct requests to the access point hostname. The access
+     * point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
+     * When using this action with an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
+     * Guide</i>.</p> <p>When using this action with Amazon S3 on Outposts, you must
      * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
      * takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * When using this action using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
      * S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
@@ -249,20 +249,20 @@ namespace Model
     inline CopyObjectRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the destination bucket.</p> <p>When using this API with an access
-     * point, you must direct requests to the access point hostname. The access point
-     * hostname takes the form
+     * <p>The name of the destination bucket.</p> <p>When using this action with an
+     * access point, you must direct requests to the access point hostname. The access
+     * point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
+     * When using this action with an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
+     * Guide</i>.</p> <p>When using this action with Amazon S3 on Outposts, you must
      * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
      * takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * When using this action using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
      * S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
@@ -1832,8 +1832,8 @@ namespace Model
      * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
      * with server-side encryption using AWS KMS (SSE-KMS). Setting this header to
      * <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption
-     * with SSE-KMS. </p> <p>Specifying this header with a COPY operation doesn’t
-     * affect bucket-level settings for S3 Bucket Key.</p>
+     * with SSE-KMS. </p> <p>Specifying this header with a COPY action doesn’t affect
+     * bucket-level settings for S3 Bucket Key.</p>
      */
     inline bool GetBucketKeyEnabled() const{ return m_bucketKeyEnabled; }
 
@@ -1841,8 +1841,8 @@ namespace Model
      * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
      * with server-side encryption using AWS KMS (SSE-KMS). Setting this header to
      * <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption
-     * with SSE-KMS. </p> <p>Specifying this header with a COPY operation doesn’t
-     * affect bucket-level settings for S3 Bucket Key.</p>
+     * with SSE-KMS. </p> <p>Specifying this header with a COPY action doesn’t affect
+     * bucket-level settings for S3 Bucket Key.</p>
      */
     inline bool BucketKeyEnabledHasBeenSet() const { return m_bucketKeyEnabledHasBeenSet; }
 
@@ -1850,8 +1850,8 @@ namespace Model
      * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
      * with server-side encryption using AWS KMS (SSE-KMS). Setting this header to
      * <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption
-     * with SSE-KMS. </p> <p>Specifying this header with a COPY operation doesn’t
-     * affect bucket-level settings for S3 Bucket Key.</p>
+     * with SSE-KMS. </p> <p>Specifying this header with a COPY action doesn’t affect
+     * bucket-level settings for S3 Bucket Key.</p>
      */
     inline void SetBucketKeyEnabled(bool value) { m_bucketKeyEnabledHasBeenSet = true; m_bucketKeyEnabled = value; }
 
@@ -1859,8 +1859,8 @@ namespace Model
      * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
      * with server-side encryption using AWS KMS (SSE-KMS). Setting this header to
      * <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption
-     * with SSE-KMS. </p> <p>Specifying this header with a COPY operation doesn’t
-     * affect bucket-level settings for S3 Bucket Key.</p>
+     * with SSE-KMS. </p> <p>Specifying this header with a COPY action doesn’t affect
+     * bucket-level settings for S3 Bucket Key.</p>
      */
     inline CopyObjectRequest& WithBucketKeyEnabled(bool value) { SetBucketKeyEnabled(value); return *this;}
 
