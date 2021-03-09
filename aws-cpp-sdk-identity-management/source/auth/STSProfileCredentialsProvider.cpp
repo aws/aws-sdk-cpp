@@ -115,6 +115,7 @@ static ProfileState CheckProfile(const Aws::Config::Profile& profile, bool topLe
     {
         state += ROLE_ARN;
     }
+    AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Profile " << profile.GetName() << " state: " << state);
 
     if (topLevelProfile)
     {
