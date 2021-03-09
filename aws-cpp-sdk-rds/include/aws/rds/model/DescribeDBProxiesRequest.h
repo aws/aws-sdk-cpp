@@ -39,42 +39,50 @@ namespace Model
   public:
 
     /**
-     * <p>The name of the DB proxy.</p>
+     * <p>The name of the DB proxy. If you omit this parameter, the output includes
+     * information about all DB proxies owned by your AWS account ID.</p>
      */
     inline const Aws::String& GetDBProxyName() const{ return m_dBProxyName; }
 
     /**
-     * <p>The name of the DB proxy.</p>
+     * <p>The name of the DB proxy. If you omit this parameter, the output includes
+     * information about all DB proxies owned by your AWS account ID.</p>
      */
     inline bool DBProxyNameHasBeenSet() const { return m_dBProxyNameHasBeenSet; }
 
     /**
-     * <p>The name of the DB proxy.</p>
+     * <p>The name of the DB proxy. If you omit this parameter, the output includes
+     * information about all DB proxies owned by your AWS account ID.</p>
      */
     inline void SetDBProxyName(const Aws::String& value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName = value; }
 
     /**
-     * <p>The name of the DB proxy.</p>
+     * <p>The name of the DB proxy. If you omit this parameter, the output includes
+     * information about all DB proxies owned by your AWS account ID.</p>
      */
     inline void SetDBProxyName(Aws::String&& value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName = std::move(value); }
 
     /**
-     * <p>The name of the DB proxy.</p>
+     * <p>The name of the DB proxy. If you omit this parameter, the output includes
+     * information about all DB proxies owned by your AWS account ID.</p>
      */
     inline void SetDBProxyName(const char* value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName.assign(value); }
 
     /**
-     * <p>The name of the DB proxy.</p>
+     * <p>The name of the DB proxy. If you omit this parameter, the output includes
+     * information about all DB proxies owned by your AWS account ID.</p>
      */
     inline DescribeDBProxiesRequest& WithDBProxyName(const Aws::String& value) { SetDBProxyName(value); return *this;}
 
     /**
-     * <p>The name of the DB proxy.</p>
+     * <p>The name of the DB proxy. If you omit this parameter, the output includes
+     * information about all DB proxies owned by your AWS account ID.</p>
      */
     inline DescribeDBProxiesRequest& WithDBProxyName(Aws::String&& value) { SetDBProxyName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the DB proxy.</p>
+     * <p>The name of the DB proxy. If you omit this parameter, the output includes
+     * information about all DB proxies owned by your AWS account ID.</p>
      */
     inline DescribeDBProxiesRequest& WithDBProxyName(const char* value) { SetDBProxyName(value); return *this;}
 

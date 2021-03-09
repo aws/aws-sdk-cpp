@@ -577,8 +577,7 @@ namespace Model
 
         /**
          * <p>Creates or updates one or more scheduled scaling actions for an Auto Scaling
-         * group. If you leave a parameter unspecified when updating a scheduled scaling
-         * action, the corresponding value remains unchanged.</p><p><h3>See Also:</h3>   <a
+         * group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/BatchPutScheduledUpdateGroupAction">AWS
          * API Reference</a></p>
          */
@@ -586,8 +585,7 @@ namespace Model
 
         /**
          * <p>Creates or updates one or more scheduled scaling actions for an Auto Scaling
-         * group. If you leave a parameter unspecified when updating a scheduled scaling
-         * action, the corresponding value remains unchanged.</p><p><h3>See Also:</h3>   <a
+         * group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/BatchPutScheduledUpdateGroupAction">AWS
          * API Reference</a></p>
          *
@@ -597,8 +595,7 @@ namespace Model
 
         /**
          * <p>Creates or updates one or more scheduled scaling actions for an Auto Scaling
-         * group. If you leave a parameter unspecified when updating a scheduled scaling
-         * action, the corresponding value remains unchanged.</p><p><h3>See Also:</h3>   <a
+         * group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/BatchPutScheduledUpdateGroupAction">AWS
          * API Reference</a></p>
          *
@@ -2326,9 +2323,8 @@ namespace Model
         virtual void PutScalingPolicyAsync(const Model::PutScalingPolicyRequest& request, const PutScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates or updates a scheduled scaling action for an Auto Scaling group. If
-         * you leave a parameter unspecified when updating a scheduled scaling action, the
-         * corresponding value remains unchanged.</p> <p>For more information, see <a
+         * <p>Creates or updates a scheduled scaling action for an Auto Scaling group.</p>
+         * <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html">Scheduled
          * scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2338,9 +2334,8 @@ namespace Model
         virtual Model::PutScheduledUpdateGroupActionOutcome PutScheduledUpdateGroupAction(const Model::PutScheduledUpdateGroupActionRequest& request) const;
 
         /**
-         * <p>Creates or updates a scheduled scaling action for an Auto Scaling group. If
-         * you leave a parameter unspecified when updating a scheduled scaling action, the
-         * corresponding value remains unchanged.</p> <p>For more information, see <a
+         * <p>Creates or updates a scheduled scaling action for an Auto Scaling group.</p>
+         * <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html">Scheduled
          * scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2352,9 +2347,8 @@ namespace Model
         virtual Model::PutScheduledUpdateGroupActionOutcomeCallable PutScheduledUpdateGroupActionCallable(const Model::PutScheduledUpdateGroupActionRequest& request) const;
 
         /**
-         * <p>Creates or updates a scheduled scaling action for an Auto Scaling group. If
-         * you leave a parameter unspecified when updating a scheduled scaling action, the
-         * corresponding value remains unchanged.</p> <p>For more information, see <a
+         * <p>Creates or updates a scheduled scaling action for an Auto Scaling group.</p>
+         * <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html">Scheduled
          * scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a

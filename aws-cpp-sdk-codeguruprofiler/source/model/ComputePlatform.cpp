@@ -20,20 +20,20 @@ namespace Aws
       namespace ComputePlatformMapper
       {
 
-        static const int AWSLambda_HASH = HashingUtils::HashString("AWSLambda");
         static const int Default_HASH = HashingUtils::HashString("Default");
+        static const int AWSLambda_HASH = HashingUtils::HashString("AWSLambda");
 
 
         ComputePlatform GetComputePlatformForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == AWSLambda_HASH)
-          {
-            return ComputePlatform::AWSLambda;
-          }
-          else if (hashCode == Default_HASH)
+          if (hashCode == Default_HASH)
           {
             return ComputePlatform::Default;
+          }
+          else if (hashCode == AWSLambda_HASH)
+          {
+            return ComputePlatform::AWSLambda;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +49,10 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case ComputePlatform::AWSLambda:
-            return "AWSLambda";
           case ComputePlatform::Default:
             return "Default";
+          case ComputePlatform::AWSLambda:
+            return "AWSLambda";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

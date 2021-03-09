@@ -33,7 +33,8 @@ ScheduledUpdateGroupAction::ScheduledUpdateGroupAction() :
     m_maxSize(0),
     m_maxSizeHasBeenSet(false),
     m_desiredCapacity(0),
-    m_desiredCapacityHasBeenSet(false)
+    m_desiredCapacityHasBeenSet(false),
+    m_timeZoneHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ ScheduledUpdateGroupAction::ScheduledUpdateGroupAction(const XmlNode& xmlNode) :
     m_maxSize(0),
     m_maxSizeHasBeenSet(false),
     m_desiredCapacity(0),
-    m_desiredCapacityHasBeenSet(false)
+    m_desiredCapacityHasBeenSet(false),
+    m_timeZoneHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -121,6 +123,12 @@ ScheduledUpdateGroupAction& ScheduledUpdateGroupAction::operator =(const XmlNode
       m_desiredCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(desiredCapacityNode.GetText()).c_str()).c_str());
       m_desiredCapacityHasBeenSet = true;
     }
+    XmlNode timeZoneNode = resultNode.FirstChild("TimeZone");
+    if(!timeZoneNode.IsNull())
+    {
+      m_timeZone = Aws::Utils::Xml::DecodeEscapedXmlText(timeZoneNode.GetText());
+      m_timeZoneHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -178,6 +186,11 @@ void ScheduledUpdateGroupAction::OutputToStream(Aws::OStream& oStream, const cha
       oStream << location << index << locationValue << ".DesiredCapacity=" << m_desiredCapacity << "&";
   }
 
+  if(m_timeZoneHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TimeZone=" << StringUtils::URLEncode(m_timeZone.c_str()) << "&";
+  }
+
 }
 
 void ScheduledUpdateGroupAction::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -221,6 +234,10 @@ void ScheduledUpdateGroupAction::OutputToStream(Aws::OStream& oStream, const cha
   if(m_desiredCapacityHasBeenSet)
   {
       oStream << location << ".DesiredCapacity=" << m_desiredCapacity << "&";
+  }
+  if(m_timeZoneHasBeenSet)
+  {
+      oStream << location << ".TimeZone=" << StringUtils::URLEncode(m_timeZone.c_str()) << "&";
   }
 }
 
