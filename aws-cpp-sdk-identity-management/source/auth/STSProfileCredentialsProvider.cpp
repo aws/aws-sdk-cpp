@@ -166,7 +166,8 @@ static ProfileState CheckProfile(const Aws::Config::Profile& profile, bool topLe
 void STSProfileCredentialsProvider::Reload()
 {
     // make a copy of the profiles map to be able to set credentials on the individual profiles when assuming role
-    auto loadedProfiles = Aws::Config::GetCachedCredentialsProfiles();
+    auto loadedProfiles = Aws::Config::GetCachedConfigProfiles();
+    auto loadedCredentialsProfiles = Aws::Config::GetCachedCredentialsProfiles();
     auto profileIt = loadedProfiles.find(m_profileName);
 
     if(profileIt == loadedProfiles.end())
@@ -257,14 +258,37 @@ void STSProfileCredentialsProvider::Reload()
         visitedProfiles.emplace(currentProfileName);
 
         const auto it = loadedProfiles.find(currentProfile->second.GetSourceProfile());
-        if(it == loadedProfiles.end())
+        const auto it2 = loadedCredentialsProfiles.find(currentProfile->second.GetSourceProfile());
+
+        constexpr int PROFILE_EXISTS_IN_CONFIG = 1;
+        constexpr int PROFILE_EXISTS_IN_CREDENTIALS = 2;
+
+        int state = 0;
+
+        if (it != loadedProfiles.end())
         {
-            // TODO: print the whole DAG for better debugging
-            AWS_LOGSTREAM_ERROR(CLASS_TAG, "Profile " << currentProfileName << " has an invalid source profile " << currentProfile->second.GetSourceProfile());
-            m_credentials = {};
-            return;
+            state += PROFILE_EXISTS_IN_CONFIG;
         }
-        currentProfile = it;
+        if (it2 != loadedCredentialsProfiles.end())
+        {
+            state += PROFILE_EXISTS_IN_CREDENTIALS;
+        }
+
+        switch (state)
+        {
+            case 1:
+                currentProfile = it;
+                break;
+            case 2:
+                currentProfile = it2;
+                break;
+            case 3:
+                currentProfile = CheckProfile(it->second, false) == ProfileState::Invalid ? CheckProfile(it2->second, false) == ProfileState::Invalid ? it : it2 : it2;
+            default:
+                AWS_LOGSTREAM_ERROR(CLASS_TAG, "Profile " << currentProfileName << " has an invalid source profile " << currentProfile->second.GetSourceProfile());
+                m_credentials = {};
+                return;
+        }
         sourceProfiles.push_back(currentProfile);
     }
 
