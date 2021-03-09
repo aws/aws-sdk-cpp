@@ -284,6 +284,7 @@ void STSProfileCredentialsProvider::Reload()
                 break;
             case 3:
                 currentProfile = CheckProfile(it->second, false) == ProfileState::Invalid ? CheckProfile(it2->second, false) == ProfileState::Invalid ? it : it2 : it2;
+                break;
             default:
                 AWS_LOGSTREAM_ERROR(CLASS_TAG, "Profile " << currentProfileName << " has an invalid source profile " << currentProfile->second.GetSourceProfile());
                 m_credentials = {};
