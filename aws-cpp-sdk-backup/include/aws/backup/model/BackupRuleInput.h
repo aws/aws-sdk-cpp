@@ -439,6 +439,35 @@ namespace Model
      */
     inline BackupRuleInput& AddCopyActions(CopyAction&& value) { m_copyActionsHasBeenSet = true; m_copyActions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specifies whether AWS Backup creates continuous backups. True causes AWS
+     * Backup to create continuous backups capable of point-in-time restore (PITR).
+     * False (or not specified) causes AWS Backup to create snapshot backups.</p>
+     */
+    inline bool GetEnableContinuousBackup() const{ return m_enableContinuousBackup; }
+
+    /**
+     * <p>Specifies whether AWS Backup creates continuous backups. True causes AWS
+     * Backup to create continuous backups capable of point-in-time restore (PITR).
+     * False (or not specified) causes AWS Backup to create snapshot backups.</p>
+     */
+    inline bool EnableContinuousBackupHasBeenSet() const { return m_enableContinuousBackupHasBeenSet; }
+
+    /**
+     * <p>Specifies whether AWS Backup creates continuous backups. True causes AWS
+     * Backup to create continuous backups capable of point-in-time restore (PITR).
+     * False (or not specified) causes AWS Backup to create snapshot backups.</p>
+     */
+    inline void SetEnableContinuousBackup(bool value) { m_enableContinuousBackupHasBeenSet = true; m_enableContinuousBackup = value; }
+
+    /**
+     * <p>Specifies whether AWS Backup creates continuous backups. True causes AWS
+     * Backup to create continuous backups capable of point-in-time restore (PITR).
+     * False (or not specified) causes AWS Backup to create snapshot backups.</p>
+     */
+    inline BackupRuleInput& WithEnableContinuousBackup(bool value) { SetEnableContinuousBackup(value); return *this;}
+
   private:
 
     Aws::String m_ruleName;
@@ -464,6 +493,9 @@ namespace Model
 
     Aws::Vector<CopyAction> m_copyActions;
     bool m_copyActionsHasBeenSet;
+
+    bool m_enableContinuousBackup;
+    bool m_enableContinuousBackupHasBeenSet;
   };
 
 } // namespace Model

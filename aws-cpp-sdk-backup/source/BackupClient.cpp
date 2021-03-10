@@ -37,6 +37,7 @@
 #include <aws/backup/model/DescribeRecoveryPointRequest.h>
 #include <aws/backup/model/DescribeRegionSettingsRequest.h>
 #include <aws/backup/model/DescribeRestoreJobRequest.h>
+#include <aws/backup/model/DisassociateRecoveryPointRequest.h>
 #include <aws/backup/model/ExportBackupPlanTemplateRequest.h>
 #include <aws/backup/model/GetBackupPlanRequest.h>
 #include <aws/backup/model/GetBackupPlanFromJSONRequest.h>
@@ -708,6 +709,47 @@ void BackupClient::DescribeRestoreJobAsync(const DescribeRestoreJobRequest& requ
 void BackupClient::DescribeRestoreJobAsyncHelper(const DescribeRestoreJobRequest& request, const DescribeRestoreJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeRestoreJob(request), context);
+}
+
+DisassociateRecoveryPointOutcome BackupClient::DisassociateRecoveryPoint(const DisassociateRecoveryPointRequest& request) const
+{
+  if (!request.BackupVaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateRecoveryPoint", "Required field: BackupVaultName, is not set");
+    return DisassociateRecoveryPointOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
+  }
+  if (!request.RecoveryPointArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateRecoveryPoint", "Required field: RecoveryPointArn, is not set");
+    return DisassociateRecoveryPointOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecoveryPointArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/backup-vaults/";
+  ss << request.GetBackupVaultName();
+  ss << "/recovery-points/";
+  ss << request.GetRecoveryPointArn();
+  ss << "/disassociate";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DisassociateRecoveryPointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateRecoveryPointOutcomeCallable BackupClient::DisassociateRecoveryPointCallable(const DisassociateRecoveryPointRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateRecoveryPointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateRecoveryPoint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::DisassociateRecoveryPointAsync(const DisassociateRecoveryPointRequest& request, const DisassociateRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateRecoveryPointAsyncHelper( request, handler, context ); } );
+}
+
+void BackupClient::DisassociateRecoveryPointAsyncHelper(const DisassociateRecoveryPointRequest& request, const DisassociateRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateRecoveryPoint(request), context);
 }
 
 ExportBackupPlanTemplateOutcome BackupClient::ExportBackupPlanTemplate(const ExportBackupPlanTemplateRequest& request) const

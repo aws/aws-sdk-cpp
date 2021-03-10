@@ -26,6 +26,7 @@ namespace Aws
         static const int Parameter_HASH = HashingUtils::HashString("Parameter");
         static const int PatchBaseline_HASH = HashingUtils::HashString("PatchBaseline");
         static const int OpsItem_HASH = HashingUtils::HashString("OpsItem");
+        static const int OpsMetadata_HASH = HashingUtils::HashString("OpsMetadata");
 
 
         ResourceTypeForTagging GetResourceTypeForTaggingForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return ResourceTypeForTagging::OpsItem;
           }
+          else if (hashCode == OpsMetadata_HASH)
+          {
+            return ResourceTypeForTagging::OpsMetadata;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +86,8 @@ namespace Aws
             return "PatchBaseline";
           case ResourceTypeForTagging::OpsItem:
             return "OpsItem";
+          case ResourceTypeForTagging::OpsMetadata:
+            return "OpsMetadata";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

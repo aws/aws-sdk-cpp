@@ -133,66 +133,82 @@ namespace Model
 
 
     /**
-     * <p>(Optional) The name of the plugin for which you want detailed results. If the
-     * document contains only one plugin, the name can be omitted and the details will
-     * be returned.</p> <p>Plugin names are also referred to as step names in Systems
-     * Manager documents.</p>
+     * <p>The name of the plugin for which you want detailed results. If the document
+     * contains only one plugin, you can omit the name and details for that plugin are
+     * returned. If the document contains more than one plugin, you must specify the
+     * name of the plugin for which you want to view details.</p> <p>Plugin names are
+     * also referred to as <i>step names</i> in Systems Manager documents. For example,
+     * <code>aws:RunShellScript</code> is a plugin.</p>
      */
     inline const Aws::String& GetPluginName() const{ return m_pluginName; }
 
     /**
-     * <p>(Optional) The name of the plugin for which you want detailed results. If the
-     * document contains only one plugin, the name can be omitted and the details will
-     * be returned.</p> <p>Plugin names are also referred to as step names in Systems
-     * Manager documents.</p>
+     * <p>The name of the plugin for which you want detailed results. If the document
+     * contains only one plugin, you can omit the name and details for that plugin are
+     * returned. If the document contains more than one plugin, you must specify the
+     * name of the plugin for which you want to view details.</p> <p>Plugin names are
+     * also referred to as <i>step names</i> in Systems Manager documents. For example,
+     * <code>aws:RunShellScript</code> is a plugin.</p>
      */
     inline bool PluginNameHasBeenSet() const { return m_pluginNameHasBeenSet; }
 
     /**
-     * <p>(Optional) The name of the plugin for which you want detailed results. If the
-     * document contains only one plugin, the name can be omitted and the details will
-     * be returned.</p> <p>Plugin names are also referred to as step names in Systems
-     * Manager documents.</p>
+     * <p>The name of the plugin for which you want detailed results. If the document
+     * contains only one plugin, you can omit the name and details for that plugin are
+     * returned. If the document contains more than one plugin, you must specify the
+     * name of the plugin for which you want to view details.</p> <p>Plugin names are
+     * also referred to as <i>step names</i> in Systems Manager documents. For example,
+     * <code>aws:RunShellScript</code> is a plugin.</p>
      */
     inline void SetPluginName(const Aws::String& value) { m_pluginNameHasBeenSet = true; m_pluginName = value; }
 
     /**
-     * <p>(Optional) The name of the plugin for which you want detailed results. If the
-     * document contains only one plugin, the name can be omitted and the details will
-     * be returned.</p> <p>Plugin names are also referred to as step names in Systems
-     * Manager documents.</p>
+     * <p>The name of the plugin for which you want detailed results. If the document
+     * contains only one plugin, you can omit the name and details for that plugin are
+     * returned. If the document contains more than one plugin, you must specify the
+     * name of the plugin for which you want to view details.</p> <p>Plugin names are
+     * also referred to as <i>step names</i> in Systems Manager documents. For example,
+     * <code>aws:RunShellScript</code> is a plugin.</p>
      */
     inline void SetPluginName(Aws::String&& value) { m_pluginNameHasBeenSet = true; m_pluginName = std::move(value); }
 
     /**
-     * <p>(Optional) The name of the plugin for which you want detailed results. If the
-     * document contains only one plugin, the name can be omitted and the details will
-     * be returned.</p> <p>Plugin names are also referred to as step names in Systems
-     * Manager documents.</p>
+     * <p>The name of the plugin for which you want detailed results. If the document
+     * contains only one plugin, you can omit the name and details for that plugin are
+     * returned. If the document contains more than one plugin, you must specify the
+     * name of the plugin for which you want to view details.</p> <p>Plugin names are
+     * also referred to as <i>step names</i> in Systems Manager documents. For example,
+     * <code>aws:RunShellScript</code> is a plugin.</p>
      */
     inline void SetPluginName(const char* value) { m_pluginNameHasBeenSet = true; m_pluginName.assign(value); }
 
     /**
-     * <p>(Optional) The name of the plugin for which you want detailed results. If the
-     * document contains only one plugin, the name can be omitted and the details will
-     * be returned.</p> <p>Plugin names are also referred to as step names in Systems
-     * Manager documents.</p>
+     * <p>The name of the plugin for which you want detailed results. If the document
+     * contains only one plugin, you can omit the name and details for that plugin are
+     * returned. If the document contains more than one plugin, you must specify the
+     * name of the plugin for which you want to view details.</p> <p>Plugin names are
+     * also referred to as <i>step names</i> in Systems Manager documents. For example,
+     * <code>aws:RunShellScript</code> is a plugin.</p>
      */
     inline GetCommandInvocationRequest& WithPluginName(const Aws::String& value) { SetPluginName(value); return *this;}
 
     /**
-     * <p>(Optional) The name of the plugin for which you want detailed results. If the
-     * document contains only one plugin, the name can be omitted and the details will
-     * be returned.</p> <p>Plugin names are also referred to as step names in Systems
-     * Manager documents.</p>
+     * <p>The name of the plugin for which you want detailed results. If the document
+     * contains only one plugin, you can omit the name and details for that plugin are
+     * returned. If the document contains more than one plugin, you must specify the
+     * name of the plugin for which you want to view details.</p> <p>Plugin names are
+     * also referred to as <i>step names</i> in Systems Manager documents. For example,
+     * <code>aws:RunShellScript</code> is a plugin.</p>
      */
     inline GetCommandInvocationRequest& WithPluginName(Aws::String&& value) { SetPluginName(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) The name of the plugin for which you want detailed results. If the
-     * document contains only one plugin, the name can be omitted and the details will
-     * be returned.</p> <p>Plugin names are also referred to as step names in Systems
-     * Manager documents.</p>
+     * <p>The name of the plugin for which you want detailed results. If the document
+     * contains only one plugin, you can omit the name and details for that plugin are
+     * returned. If the document contains more than one plugin, you must specify the
+     * name of the plugin for which you want to view details.</p> <p>Plugin names are
+     * also referred to as <i>step names</i> in Systems Manager documents. For example,
+     * <code>aws:RunShellScript</code> is a plugin.</p>
      */
     inline GetCommandInvocationRequest& WithPluginName(const char* value) { SetPluginName(value); return *this;}
 

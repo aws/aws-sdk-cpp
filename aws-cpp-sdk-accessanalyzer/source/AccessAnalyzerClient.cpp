@@ -21,14 +21,18 @@
 #include <aws/accessanalyzer/AccessAnalyzerEndpoint.h>
 #include <aws/accessanalyzer/AccessAnalyzerErrorMarshaller.h>
 #include <aws/accessanalyzer/model/ApplyArchiveRuleRequest.h>
+#include <aws/accessanalyzer/model/CreateAccessPreviewRequest.h>
 #include <aws/accessanalyzer/model/CreateAnalyzerRequest.h>
 #include <aws/accessanalyzer/model/CreateArchiveRuleRequest.h>
 #include <aws/accessanalyzer/model/DeleteAnalyzerRequest.h>
 #include <aws/accessanalyzer/model/DeleteArchiveRuleRequest.h>
+#include <aws/accessanalyzer/model/GetAccessPreviewRequest.h>
 #include <aws/accessanalyzer/model/GetAnalyzedResourceRequest.h>
 #include <aws/accessanalyzer/model/GetAnalyzerRequest.h>
 #include <aws/accessanalyzer/model/GetArchiveRuleRequest.h>
 #include <aws/accessanalyzer/model/GetFindingRequest.h>
+#include <aws/accessanalyzer/model/ListAccessPreviewFindingsRequest.h>
+#include <aws/accessanalyzer/model/ListAccessPreviewsRequest.h>
 #include <aws/accessanalyzer/model/ListAnalyzedResourcesRequest.h>
 #include <aws/accessanalyzer/model/ListAnalyzersRequest.h>
 #include <aws/accessanalyzer/model/ListArchiveRulesRequest.h>
@@ -138,6 +142,33 @@ void AccessAnalyzerClient::ApplyArchiveRuleAsync(const ApplyArchiveRuleRequest& 
 void AccessAnalyzerClient::ApplyArchiveRuleAsyncHelper(const ApplyArchiveRuleRequest& request, const ApplyArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ApplyArchiveRule(request), context);
+}
+
+CreateAccessPreviewOutcome AccessAnalyzerClient::CreateAccessPreview(const CreateAccessPreviewRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/access-preview";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateAccessPreviewOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateAccessPreviewOutcomeCallable AccessAnalyzerClient::CreateAccessPreviewCallable(const CreateAccessPreviewRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateAccessPreviewOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAccessPreview(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AccessAnalyzerClient::CreateAccessPreviewAsync(const CreateAccessPreviewRequest& request, const CreateAccessPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAccessPreviewAsyncHelper( request, handler, context ); } );
+}
+
+void AccessAnalyzerClient::CreateAccessPreviewAsyncHelper(const CreateAccessPreviewRequest& request, const CreateAccessPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateAccessPreview(request), context);
 }
 
 CreateAnalyzerOutcome AccessAnalyzerClient::CreateAnalyzer(const CreateAnalyzerRequest& request) const
@@ -272,6 +303,44 @@ void AccessAnalyzerClient::DeleteArchiveRuleAsync(const DeleteArchiveRuleRequest
 void AccessAnalyzerClient::DeleteArchiveRuleAsyncHelper(const DeleteArchiveRuleRequest& request, const DeleteArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteArchiveRule(request), context);
+}
+
+GetAccessPreviewOutcome AccessAnalyzerClient::GetAccessPreview(const GetAccessPreviewRequest& request) const
+{
+  if (!request.AccessPreviewIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAccessPreview", "Required field: AccessPreviewId, is not set");
+    return GetAccessPreviewOutcome(Aws::Client::AWSError<AccessAnalyzerErrors>(AccessAnalyzerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccessPreviewId]", false));
+  }
+  if (!request.AnalyzerArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAccessPreview", "Required field: AnalyzerArn, is not set");
+    return GetAccessPreviewOutcome(Aws::Client::AWSError<AccessAnalyzerErrors>(AccessAnalyzerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalyzerArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/access-preview/";
+  ss << request.GetAccessPreviewId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetAccessPreviewOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetAccessPreviewOutcomeCallable AccessAnalyzerClient::GetAccessPreviewCallable(const GetAccessPreviewRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAccessPreviewOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAccessPreview(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AccessAnalyzerClient::GetAccessPreviewAsync(const GetAccessPreviewRequest& request, const GetAccessPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAccessPreviewAsyncHelper( request, handler, context ); } );
+}
+
+void AccessAnalyzerClient::GetAccessPreviewAsyncHelper(const GetAccessPreviewRequest& request, const GetAccessPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAccessPreview(request), context);
 }
 
 GetAnalyzedResourceOutcome AccessAnalyzerClient::GetAnalyzedResource(const GetAnalyzedResourceRequest& request) const
@@ -420,6 +489,71 @@ void AccessAnalyzerClient::GetFindingAsync(const GetFindingRequest& request, con
 void AccessAnalyzerClient::GetFindingAsyncHelper(const GetFindingRequest& request, const GetFindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetFinding(request), context);
+}
+
+ListAccessPreviewFindingsOutcome AccessAnalyzerClient::ListAccessPreviewFindings(const ListAccessPreviewFindingsRequest& request) const
+{
+  if (!request.AccessPreviewIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAccessPreviewFindings", "Required field: AccessPreviewId, is not set");
+    return ListAccessPreviewFindingsOutcome(Aws::Client::AWSError<AccessAnalyzerErrors>(AccessAnalyzerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccessPreviewId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/access-preview/";
+  ss << request.GetAccessPreviewId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListAccessPreviewFindingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAccessPreviewFindingsOutcomeCallable AccessAnalyzerClient::ListAccessPreviewFindingsCallable(const ListAccessPreviewFindingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAccessPreviewFindingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAccessPreviewFindings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AccessAnalyzerClient::ListAccessPreviewFindingsAsync(const ListAccessPreviewFindingsRequest& request, const ListAccessPreviewFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAccessPreviewFindingsAsyncHelper( request, handler, context ); } );
+}
+
+void AccessAnalyzerClient::ListAccessPreviewFindingsAsyncHelper(const ListAccessPreviewFindingsRequest& request, const ListAccessPreviewFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAccessPreviewFindings(request), context);
+}
+
+ListAccessPreviewsOutcome AccessAnalyzerClient::ListAccessPreviews(const ListAccessPreviewsRequest& request) const
+{
+  if (!request.AnalyzerArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAccessPreviews", "Required field: AnalyzerArn, is not set");
+    return ListAccessPreviewsOutcome(Aws::Client::AWSError<AccessAnalyzerErrors>(AccessAnalyzerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalyzerArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/access-preview";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListAccessPreviewsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAccessPreviewsOutcomeCallable AccessAnalyzerClient::ListAccessPreviewsCallable(const ListAccessPreviewsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAccessPreviewsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAccessPreviews(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AccessAnalyzerClient::ListAccessPreviewsAsync(const ListAccessPreviewsRequest& request, const ListAccessPreviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAccessPreviewsAsyncHelper( request, handler, context ); } );
+}
+
+void AccessAnalyzerClient::ListAccessPreviewsAsyncHelper(const ListAccessPreviewsRequest& request, const ListAccessPreviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAccessPreviews(request), context);
 }
 
 ListAnalyzedResourcesOutcome AccessAnalyzerClient::ListAnalyzedResources(const ListAnalyzedResourcesRequest& request) const

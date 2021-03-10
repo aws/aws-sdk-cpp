@@ -38,31 +38,31 @@ namespace Model
 
 
     /**
-     * <p>An <code>AnalyedResource</code> object that contains information that Access
+     * <p>An <code>AnalyzedResource</code> object that contains information that Access
      * Analyzer found when it analyzed the resource.</p>
      */
     inline const AnalyzedResource& GetResource() const{ return m_resource; }
 
     /**
-     * <p>An <code>AnalyedResource</code> object that contains information that Access
+     * <p>An <code>AnalyzedResource</code> object that contains information that Access
      * Analyzer found when it analyzed the resource.</p>
      */
     inline void SetResource(const AnalyzedResource& value) { m_resource = value; }
 
     /**
-     * <p>An <code>AnalyedResource</code> object that contains information that Access
+     * <p>An <code>AnalyzedResource</code> object that contains information that Access
      * Analyzer found when it analyzed the resource.</p>
      */
     inline void SetResource(AnalyzedResource&& value) { m_resource = std::move(value); }
 
     /**
-     * <p>An <code>AnalyedResource</code> object that contains information that Access
+     * <p>An <code>AnalyzedResource</code> object that contains information that Access
      * Analyzer found when it analyzed the resource.</p>
      */
     inline GetAnalyzedResourceResult& WithResource(const AnalyzedResource& value) { SetResource(value); return *this;}
 
     /**
-     * <p>An <code>AnalyedResource</code> object that contains information that Access
+     * <p>An <code>AnalyzedResource</code> object that contains information that Access
      * Analyzer found when it analyzed the resource.</p>
      */
     inline GetAnalyzedResourceResult& WithResource(AnalyzedResource&& value) { SetResource(std::move(value)); return *this;}

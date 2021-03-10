@@ -28,7 +28,9 @@ BackupRuleInput::BackupRuleInput() :
     m_completionWindowMinutesHasBeenSet(false),
     m_lifecycleHasBeenSet(false),
     m_recoveryPointTagsHasBeenSet(false),
-    m_copyActionsHasBeenSet(false)
+    m_copyActionsHasBeenSet(false),
+    m_enableContinuousBackup(false),
+    m_enableContinuousBackupHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ BackupRuleInput::BackupRuleInput(JsonView jsonValue) :
     m_completionWindowMinutesHasBeenSet(false),
     m_lifecycleHasBeenSet(false),
     m_recoveryPointTagsHasBeenSet(false),
-    m_copyActionsHasBeenSet(false)
+    m_copyActionsHasBeenSet(false),
+    m_enableContinuousBackup(false),
+    m_enableContinuousBackupHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -111,6 +115,13 @@ BackupRuleInput& BackupRuleInput::operator =(JsonView jsonValue)
     m_copyActionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EnableContinuousBackup"))
+  {
+    m_enableContinuousBackup = jsonValue.GetBool("EnableContinuousBackup");
+
+    m_enableContinuousBackupHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -173,6 +184,12 @@ JsonValue BackupRuleInput::Jsonize() const
      copyActionsJsonList[copyActionsIndex].AsObject(m_copyActions[copyActionsIndex].Jsonize());
    }
    payload.WithArray("CopyActions", std::move(copyActionsJsonList));
+
+  }
+
+  if(m_enableContinuousBackupHasBeenSet)
+  {
+   payload.WithBool("EnableContinuousBackup", m_enableContinuousBackup);
 
   }
 

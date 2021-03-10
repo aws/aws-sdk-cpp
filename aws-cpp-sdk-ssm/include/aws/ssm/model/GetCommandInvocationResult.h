@@ -229,44 +229,44 @@ namespace Model
 
 
     /**
-     * <p>The name of the plugin for which you want detailed results. For example,
-     * aws:RunShellScript is a plugin.</p>
+     * <p>The name of the plugin, or <i>step name</i>, for which details are reported.
+     * For example, <code>aws:RunShellScript</code> is a plugin.</p>
      */
     inline const Aws::String& GetPluginName() const{ return m_pluginName; }
 
     /**
-     * <p>The name of the plugin for which you want detailed results. For example,
-     * aws:RunShellScript is a plugin.</p>
+     * <p>The name of the plugin, or <i>step name</i>, for which details are reported.
+     * For example, <code>aws:RunShellScript</code> is a plugin.</p>
      */
     inline void SetPluginName(const Aws::String& value) { m_pluginName = value; }
 
     /**
-     * <p>The name of the plugin for which you want detailed results. For example,
-     * aws:RunShellScript is a plugin.</p>
+     * <p>The name of the plugin, or <i>step name</i>, for which details are reported.
+     * For example, <code>aws:RunShellScript</code> is a plugin.</p>
      */
     inline void SetPluginName(Aws::String&& value) { m_pluginName = std::move(value); }
 
     /**
-     * <p>The name of the plugin for which you want detailed results. For example,
-     * aws:RunShellScript is a plugin.</p>
+     * <p>The name of the plugin, or <i>step name</i>, for which details are reported.
+     * For example, <code>aws:RunShellScript</code> is a plugin.</p>
      */
     inline void SetPluginName(const char* value) { m_pluginName.assign(value); }
 
     /**
-     * <p>The name of the plugin for which you want detailed results. For example,
-     * aws:RunShellScript is a plugin.</p>
+     * <p>The name of the plugin, or <i>step name</i>, for which details are reported.
+     * For example, <code>aws:RunShellScript</code> is a plugin.</p>
      */
     inline GetCommandInvocationResult& WithPluginName(const Aws::String& value) { SetPluginName(value); return *this;}
 
     /**
-     * <p>The name of the plugin for which you want detailed results. For example,
-     * aws:RunShellScript is a plugin.</p>
+     * <p>The name of the plugin, or <i>step name</i>, for which details are reported.
+     * For example, <code>aws:RunShellScript</code> is a plugin.</p>
      */
     inline GetCommandInvocationResult& WithPluginName(Aws::String&& value) { SetPluginName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the plugin for which you want detailed results. For example,
-     * aws:RunShellScript is a plugin.</p>
+     * <p>The name of the plugin, or <i>step name</i>, for which details are reported.
+     * For example, <code>aws:RunShellScript</code> is a plugin.</p>
      */
     inline GetCommandInvocationResult& WithPluginName(const char* value) { SetPluginName(value); return *this;}
 
