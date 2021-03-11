@@ -1468,25 +1468,25 @@ This field is optional; when
 
     /**
      * Softness. Selects quantizer matrix, larger values reduce high-frequency content
-     * in the encoded image.
+     * in the encoded image.  If not set to zero, must be greater than 15.
      */
     inline int GetSoftness() const{ return m_softness; }
 
     /**
      * Softness. Selects quantizer matrix, larger values reduce high-frequency content
-     * in the encoded image.
+     * in the encoded image.  If not set to zero, must be greater than 15.
      */
     inline bool SoftnessHasBeenSet() const { return m_softnessHasBeenSet; }
 
     /**
      * Softness. Selects quantizer matrix, larger values reduce high-frequency content
-     * in the encoded image.
+     * in the encoded image.  If not set to zero, must be greater than 15.
      */
     inline void SetSoftness(int value) { m_softnessHasBeenSet = true; m_softness = value; }
 
     /**
      * Softness. Selects quantizer matrix, larger values reduce high-frequency content
-     * in the encoded image.
+     * in the encoded image.  If not set to zero, must be greater than 15.
      */
     inline H264Settings& WithSoftness(int value) { SetSoftness(value); return *this;}
 

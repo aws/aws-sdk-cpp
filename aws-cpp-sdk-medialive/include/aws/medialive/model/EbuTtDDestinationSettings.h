@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
-#include <aws/medialive/model/EbuTtDFillLineGapControl.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/model/EbuTtDFillLineGapControl.h>
 #include <aws/medialive/model/EbuTtDDestinationStyleControl.h>
 #include <utility>
 
@@ -37,6 +37,63 @@ namespace Model
     EbuTtDDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
     EbuTtDDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Applies only if you plan to convert these source captions to EBU-TT-D or TTML in
+     * an output. Complete this field if you want to include the name of the copyright
+     * holder in the copyright metadata tag in the TTML
+     */
+    inline const Aws::String& GetCopyrightHolder() const{ return m_copyrightHolder; }
+
+    /**
+     * Applies only if you plan to convert these source captions to EBU-TT-D or TTML in
+     * an output. Complete this field if you want to include the name of the copyright
+     * holder in the copyright metadata tag in the TTML
+     */
+    inline bool CopyrightHolderHasBeenSet() const { return m_copyrightHolderHasBeenSet; }
+
+    /**
+     * Applies only if you plan to convert these source captions to EBU-TT-D or TTML in
+     * an output. Complete this field if you want to include the name of the copyright
+     * holder in the copyright metadata tag in the TTML
+     */
+    inline void SetCopyrightHolder(const Aws::String& value) { m_copyrightHolderHasBeenSet = true; m_copyrightHolder = value; }
+
+    /**
+     * Applies only if you plan to convert these source captions to EBU-TT-D or TTML in
+     * an output. Complete this field if you want to include the name of the copyright
+     * holder in the copyright metadata tag in the TTML
+     */
+    inline void SetCopyrightHolder(Aws::String&& value) { m_copyrightHolderHasBeenSet = true; m_copyrightHolder = std::move(value); }
+
+    /**
+     * Applies only if you plan to convert these source captions to EBU-TT-D or TTML in
+     * an output. Complete this field if you want to include the name of the copyright
+     * holder in the copyright metadata tag in the TTML
+     */
+    inline void SetCopyrightHolder(const char* value) { m_copyrightHolderHasBeenSet = true; m_copyrightHolder.assign(value); }
+
+    /**
+     * Applies only if you plan to convert these source captions to EBU-TT-D or TTML in
+     * an output. Complete this field if you want to include the name of the copyright
+     * holder in the copyright metadata tag in the TTML
+     */
+    inline EbuTtDDestinationSettings& WithCopyrightHolder(const Aws::String& value) { SetCopyrightHolder(value); return *this;}
+
+    /**
+     * Applies only if you plan to convert these source captions to EBU-TT-D or TTML in
+     * an output. Complete this field if you want to include the name of the copyright
+     * holder in the copyright metadata tag in the TTML
+     */
+    inline EbuTtDDestinationSettings& WithCopyrightHolder(Aws::String&& value) { SetCopyrightHolder(std::move(value)); return *this;}
+
+    /**
+     * Applies only if you plan to convert these source captions to EBU-TT-D or TTML in
+     * an output. Complete this field if you want to include the name of the copyright
+     * holder in the copyright metadata tag in the TTML
+     */
+    inline EbuTtDDestinationSettings& WithCopyrightHolder(const char* value) { SetCopyrightHolder(value); return *this;}
 
 
     /**
@@ -346,6 +403,9 @@ You specify only the
     inline EbuTtDDestinationSettings& WithStyleControl(EbuTtDDestinationStyleControl&& value) { SetStyleControl(std::move(value)); return *this;}
 
   private:
+
+    Aws::String m_copyrightHolder;
+    bool m_copyrightHolderHasBeenSet;
 
     EbuTtDFillLineGapControl m_fillLineGap;
     bool m_fillLineGapHasBeenSet;

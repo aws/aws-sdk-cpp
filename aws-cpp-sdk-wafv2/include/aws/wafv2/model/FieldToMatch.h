@@ -52,42 +52,48 @@ namespace Model
     /**
      * <p>Inspect a single header. Provide the name of the header to inspect, for
      * example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't
-     * case sensitive.</p>
+     * case sensitive.</p> <p>Example JSON: <code>"SingleHeader": { "Name": "haystack"
+     * }</code> </p>
      */
     inline const SingleHeader& GetSingleHeader() const{ return m_singleHeader; }
 
     /**
      * <p>Inspect a single header. Provide the name of the header to inspect, for
      * example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't
-     * case sensitive.</p>
+     * case sensitive.</p> <p>Example JSON: <code>"SingleHeader": { "Name": "haystack"
+     * }</code> </p>
      */
     inline bool SingleHeaderHasBeenSet() const { return m_singleHeaderHasBeenSet; }
 
     /**
      * <p>Inspect a single header. Provide the name of the header to inspect, for
      * example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't
-     * case sensitive.</p>
+     * case sensitive.</p> <p>Example JSON: <code>"SingleHeader": { "Name": "haystack"
+     * }</code> </p>
      */
     inline void SetSingleHeader(const SingleHeader& value) { m_singleHeaderHasBeenSet = true; m_singleHeader = value; }
 
     /**
      * <p>Inspect a single header. Provide the name of the header to inspect, for
      * example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't
-     * case sensitive.</p>
+     * case sensitive.</p> <p>Example JSON: <code>"SingleHeader": { "Name": "haystack"
+     * }</code> </p>
      */
     inline void SetSingleHeader(SingleHeader&& value) { m_singleHeaderHasBeenSet = true; m_singleHeader = std::move(value); }
 
     /**
      * <p>Inspect a single header. Provide the name of the header to inspect, for
      * example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't
-     * case sensitive.</p>
+     * case sensitive.</p> <p>Example JSON: <code>"SingleHeader": { "Name": "haystack"
+     * }</code> </p>
      */
     inline FieldToMatch& WithSingleHeader(const SingleHeader& value) { SetSingleHeader(value); return *this;}
 
     /**
      * <p>Inspect a single header. Provide the name of the header to inspect, for
      * example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't
-     * case sensitive.</p>
+     * case sensitive.</p> <p>Example JSON: <code>"SingleHeader": { "Name": "haystack"
+     * }</code> </p>
      */
     inline FieldToMatch& WithSingleHeader(SingleHeader&& value) { SetSingleHeader(std::move(value)); return *this;}
 
@@ -97,7 +103,8 @@ namespace Model
      * inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30
      * characters long and isn't case sensitive. </p> <p>This is used only to indicate
      * the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
-     * specification. </p>
+     * specification. </p> <p>Example JSON: <code>"SingleQueryArgument": { "Name":
+     * "myArgument" }</code> </p>
      */
     inline const SingleQueryArgument& GetSingleQueryArgument() const{ return m_singleQueryArgument; }
 
@@ -106,7 +113,8 @@ namespace Model
      * inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30
      * characters long and isn't case sensitive. </p> <p>This is used only to indicate
      * the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
-     * specification. </p>
+     * specification. </p> <p>Example JSON: <code>"SingleQueryArgument": { "Name":
+     * "myArgument" }</code> </p>
      */
     inline bool SingleQueryArgumentHasBeenSet() const { return m_singleQueryArgumentHasBeenSet; }
 
@@ -115,7 +123,8 @@ namespace Model
      * inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30
      * characters long and isn't case sensitive. </p> <p>This is used only to indicate
      * the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
-     * specification. </p>
+     * specification. </p> <p>Example JSON: <code>"SingleQueryArgument": { "Name":
+     * "myArgument" }</code> </p>
      */
     inline void SetSingleQueryArgument(const SingleQueryArgument& value) { m_singleQueryArgumentHasBeenSet = true; m_singleQueryArgument = value; }
 
@@ -124,7 +133,8 @@ namespace Model
      * inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30
      * characters long and isn't case sensitive. </p> <p>This is used only to indicate
      * the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
-     * specification. </p>
+     * specification. </p> <p>Example JSON: <code>"SingleQueryArgument": { "Name":
+     * "myArgument" }</code> </p>
      */
     inline void SetSingleQueryArgument(SingleQueryArgument&& value) { m_singleQueryArgumentHasBeenSet = true; m_singleQueryArgument = std::move(value); }
 
@@ -133,7 +143,8 @@ namespace Model
      * inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30
      * characters long and isn't case sensitive. </p> <p>This is used only to indicate
      * the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
-     * specification. </p>
+     * specification. </p> <p>Example JSON: <code>"SingleQueryArgument": { "Name":
+     * "myArgument" }</code> </p>
      */
     inline FieldToMatch& WithSingleQueryArgument(const SingleQueryArgument& value) { SetSingleQueryArgument(value); return *this;}
 
@@ -142,7 +153,8 @@ namespace Model
      * inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30
      * characters long and isn't case sensitive. </p> <p>This is used only to indicate
      * the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
-     * specification. </p>
+     * specification. </p> <p>Example JSON: <code>"SingleQueryArgument": { "Name":
+     * "myArgument" }</code> </p>
      */
     inline FieldToMatch& WithSingleQueryArgument(SingleQueryArgument&& value) { SetSingleQueryArgument(std::move(value)); return *this;}
 

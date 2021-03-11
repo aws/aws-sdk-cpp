@@ -253,8 +253,8 @@ namespace Model
     /**
      * <p>Contains an array of strings that specify one or more IP addresses or blocks
      * of IP addresses in Classless Inter-Domain Routing (CIDR) notation. AWS WAF
-     * supports all address ranges for IP versions IPv4 and IPv6. </p> <p>Examples:
-     * </p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that
+     * supports all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Examples: </p>
+     * <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that
      * originated from the IP address 192.0.2.44, specify
      * <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow,
      * block, or count requests that originated from IP addresses from 192.0.2.0 to
@@ -275,8 +275,8 @@ namespace Model
     /**
      * <p>Contains an array of strings that specify one or more IP addresses or blocks
      * of IP addresses in Classless Inter-Domain Routing (CIDR) notation. AWS WAF
-     * supports all address ranges for IP versions IPv4 and IPv6. </p> <p>Examples:
-     * </p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that
+     * supports all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Examples: </p>
+     * <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that
      * originated from the IP address 192.0.2.44, specify
      * <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow,
      * block, or count requests that originated from IP addresses from 192.0.2.0 to
@@ -297,8 +297,8 @@ namespace Model
     /**
      * <p>Contains an array of strings that specify one or more IP addresses or blocks
      * of IP addresses in Classless Inter-Domain Routing (CIDR) notation. AWS WAF
-     * supports all address ranges for IP versions IPv4 and IPv6. </p> <p>Examples:
-     * </p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that
+     * supports all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Examples: </p>
+     * <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that
      * originated from the IP address 192.0.2.44, specify
      * <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow,
      * block, or count requests that originated from IP addresses from 192.0.2.0 to
@@ -319,8 +319,8 @@ namespace Model
     /**
      * <p>Contains an array of strings that specify one or more IP addresses or blocks
      * of IP addresses in Classless Inter-Domain Routing (CIDR) notation. AWS WAF
-     * supports all address ranges for IP versions IPv4 and IPv6. </p> <p>Examples:
-     * </p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that
+     * supports all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Examples: </p>
+     * <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that
      * originated from the IP address 192.0.2.44, specify
      * <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow,
      * block, or count requests that originated from IP addresses from 192.0.2.0 to
@@ -341,8 +341,8 @@ namespace Model
     /**
      * <p>Contains an array of strings that specify one or more IP addresses or blocks
      * of IP addresses in Classless Inter-Domain Routing (CIDR) notation. AWS WAF
-     * supports all address ranges for IP versions IPv4 and IPv6. </p> <p>Examples:
-     * </p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that
+     * supports all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Examples: </p>
+     * <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that
      * originated from the IP address 192.0.2.44, specify
      * <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow,
      * block, or count requests that originated from IP addresses from 192.0.2.0 to
@@ -363,8 +363,8 @@ namespace Model
     /**
      * <p>Contains an array of strings that specify one or more IP addresses or blocks
      * of IP addresses in Classless Inter-Domain Routing (CIDR) notation. AWS WAF
-     * supports all address ranges for IP versions IPv4 and IPv6. </p> <p>Examples:
-     * </p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that
+     * supports all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Examples: </p>
+     * <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that
      * originated from the IP address 192.0.2.44, specify
      * <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow,
      * block, or count requests that originated from IP addresses from 192.0.2.0 to
@@ -385,8 +385,8 @@ namespace Model
     /**
      * <p>Contains an array of strings that specify one or more IP addresses or blocks
      * of IP addresses in Classless Inter-Domain Routing (CIDR) notation. AWS WAF
-     * supports all address ranges for IP versions IPv4 and IPv6. </p> <p>Examples:
-     * </p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that
+     * supports all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Examples: </p>
+     * <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that
      * originated from the IP address 192.0.2.44, specify
      * <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow,
      * block, or count requests that originated from IP addresses from 192.0.2.0 to
@@ -407,8 +407,8 @@ namespace Model
     /**
      * <p>Contains an array of strings that specify one or more IP addresses or blocks
      * of IP addresses in Classless Inter-Domain Routing (CIDR) notation. AWS WAF
-     * supports all address ranges for IP versions IPv4 and IPv6. </p> <p>Examples:
-     * </p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that
+     * supports all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Examples: </p>
+     * <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that
      * originated from the IP address 192.0.2.44, specify
      * <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow,
      * block, or count requests that originated from IP addresses from 192.0.2.0 to
@@ -429,8 +429,8 @@ namespace Model
     /**
      * <p>Contains an array of strings that specify one or more IP addresses or blocks
      * of IP addresses in Classless Inter-Domain Routing (CIDR) notation. AWS WAF
-     * supports all address ranges for IP versions IPv4 and IPv6. </p> <p>Examples:
-     * </p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that
+     * supports all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Examples: </p>
+     * <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that
      * originated from the IP address 192.0.2.44, specify
      * <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow,
      * block, or count requests that originated from IP addresses from 192.0.2.0 to

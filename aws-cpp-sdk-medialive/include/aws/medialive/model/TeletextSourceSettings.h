@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/model/CaptionRectangle.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -35,6 +36,37 @@ namespace Model
     TeletextSourceSettings(Aws::Utils::Json::JsonView jsonValue);
     TeletextSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Optionally defines a region where TTML style captions will be displayed
+     */
+    inline const CaptionRectangle& GetOutputRectangle() const{ return m_outputRectangle; }
+
+    /**
+     * Optionally defines a region where TTML style captions will be displayed
+     */
+    inline bool OutputRectangleHasBeenSet() const { return m_outputRectangleHasBeenSet; }
+
+    /**
+     * Optionally defines a region where TTML style captions will be displayed
+     */
+    inline void SetOutputRectangle(const CaptionRectangle& value) { m_outputRectangleHasBeenSet = true; m_outputRectangle = value; }
+
+    /**
+     * Optionally defines a region where TTML style captions will be displayed
+     */
+    inline void SetOutputRectangle(CaptionRectangle&& value) { m_outputRectangleHasBeenSet = true; m_outputRectangle = std::move(value); }
+
+    /**
+     * Optionally defines a region where TTML style captions will be displayed
+     */
+    inline TeletextSourceSettings& WithOutputRectangle(const CaptionRectangle& value) { SetOutputRectangle(value); return *this;}
+
+    /**
+     * Optionally defines a region where TTML style captions will be displayed
+     */
+    inline TeletextSourceSettings& WithOutputRectangle(CaptionRectangle&& value) { SetOutputRectangle(std::move(value)); return *this;}
 
 
     /**
@@ -94,6 +126,9 @@ namespace Model
     inline TeletextSourceSettings& WithPageNumber(const char* value) { SetPageNumber(value); return *this;}
 
   private:
+
+    CaptionRectangle m_outputRectangle;
+    bool m_outputRectangleHasBeenSet;
 
     Aws::String m_pageNumber;
     bool m_pageNumberHasBeenSet;

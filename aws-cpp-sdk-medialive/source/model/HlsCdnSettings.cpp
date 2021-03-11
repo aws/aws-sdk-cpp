@@ -22,6 +22,7 @@ HlsCdnSettings::HlsCdnSettings() :
     m_hlsAkamaiSettingsHasBeenSet(false),
     m_hlsBasicPutSettingsHasBeenSet(false),
     m_hlsMediaStoreSettingsHasBeenSet(false),
+    m_hlsS3SettingsHasBeenSet(false),
     m_hlsWebdavSettingsHasBeenSet(false)
 {
 }
@@ -30,6 +31,7 @@ HlsCdnSettings::HlsCdnSettings(JsonView jsonValue) :
     m_hlsAkamaiSettingsHasBeenSet(false),
     m_hlsBasicPutSettingsHasBeenSet(false),
     m_hlsMediaStoreSettingsHasBeenSet(false),
+    m_hlsS3SettingsHasBeenSet(false),
     m_hlsWebdavSettingsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -56,6 +58,13 @@ HlsCdnSettings& HlsCdnSettings::operator =(JsonView jsonValue)
     m_hlsMediaStoreSettings = jsonValue.GetObject("hlsMediaStoreSettings");
 
     m_hlsMediaStoreSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("hlsS3Settings"))
+  {
+    m_hlsS3Settings = jsonValue.GetObject("hlsS3Settings");
+
+    m_hlsS3SettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("hlsWebdavSettings"))
@@ -87,6 +96,12 @@ JsonValue HlsCdnSettings::Jsonize() const
   if(m_hlsMediaStoreSettingsHasBeenSet)
   {
    payload.WithObject("hlsMediaStoreSettings", m_hlsMediaStoreSettings.Jsonize());
+
+  }
+
+  if(m_hlsS3SettingsHasBeenSet)
+  {
+   payload.WithObject("hlsS3Settings", m_hlsS3Settings.Jsonize());
 
   }
 
