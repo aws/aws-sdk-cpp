@@ -26,16 +26,17 @@ PlaybackConfiguration::PlaybackConfiguration() :
     m_configurationAliasesHasBeenSet(false),
     m_dashConfigurationHasBeenSet(false),
     m_hlsConfigurationHasBeenSet(false),
+    m_livePreRollConfigurationHasBeenSet(false),
     m_manifestProcessingRulesHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_personalizationThresholdSeconds(0),
+    m_personalizationThresholdSecondsHasBeenSet(false),
     m_playbackConfigurationArnHasBeenSet(false),
     m_playbackEndpointPrefixHasBeenSet(false),
     m_sessionInitializationEndpointPrefixHasBeenSet(false),
     m_slateAdUrlHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_transcodeProfileNameHasBeenSet(false),
-    m_personalizationThresholdSeconds(0),
-    m_personalizationThresholdSecondsHasBeenSet(false),
     m_videoContentSourceUrlHasBeenSet(false)
 {
 }
@@ -48,16 +49,17 @@ PlaybackConfiguration::PlaybackConfiguration(JsonView jsonValue) :
     m_configurationAliasesHasBeenSet(false),
     m_dashConfigurationHasBeenSet(false),
     m_hlsConfigurationHasBeenSet(false),
+    m_livePreRollConfigurationHasBeenSet(false),
     m_manifestProcessingRulesHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_personalizationThresholdSeconds(0),
+    m_personalizationThresholdSecondsHasBeenSet(false),
     m_playbackConfigurationArnHasBeenSet(false),
     m_playbackEndpointPrefixHasBeenSet(false),
     m_sessionInitializationEndpointPrefixHasBeenSet(false),
     m_slateAdUrlHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_transcodeProfileNameHasBeenSet(false),
-    m_personalizationThresholdSeconds(0),
-    m_personalizationThresholdSecondsHasBeenSet(false),
     m_videoContentSourceUrlHasBeenSet(false)
 {
   *this = jsonValue;
@@ -123,6 +125,13 @@ PlaybackConfiguration& PlaybackConfiguration::operator =(JsonView jsonValue)
     m_hlsConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LivePreRollConfiguration"))
+  {
+    m_livePreRollConfiguration = jsonValue.GetObject("LivePreRollConfiguration");
+
+    m_livePreRollConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ManifestProcessingRules"))
   {
     m_manifestProcessingRules = jsonValue.GetObject("ManifestProcessingRules");
@@ -135,6 +144,13 @@ PlaybackConfiguration& PlaybackConfiguration::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("Name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PersonalizationThresholdSeconds"))
+  {
+    m_personalizationThresholdSeconds = jsonValue.GetInteger("PersonalizationThresholdSeconds");
+
+    m_personalizationThresholdSecondsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("PlaybackConfigurationArn"))
@@ -180,13 +196,6 @@ PlaybackConfiguration& PlaybackConfiguration::operator =(JsonView jsonValue)
     m_transcodeProfileName = jsonValue.GetString("TranscodeProfileName");
 
     m_transcodeProfileNameHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("PersonalizationThresholdSeconds"))
-  {
-    m_personalizationThresholdSeconds = jsonValue.GetInteger("PersonalizationThresholdSeconds");
-
-    m_personalizationThresholdSecondsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("VideoContentSourceUrl"))
@@ -255,6 +264,12 @@ JsonValue PlaybackConfiguration::Jsonize() const
 
   }
 
+  if(m_livePreRollConfigurationHasBeenSet)
+  {
+   payload.WithObject("LivePreRollConfiguration", m_livePreRollConfiguration.Jsonize());
+
+  }
+
   if(m_manifestProcessingRulesHasBeenSet)
   {
    payload.WithObject("ManifestProcessingRules", m_manifestProcessingRules.Jsonize());
@@ -264,6 +279,12 @@ JsonValue PlaybackConfiguration::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_personalizationThresholdSecondsHasBeenSet)
+  {
+   payload.WithInteger("PersonalizationThresholdSeconds", m_personalizationThresholdSeconds);
 
   }
 
@@ -305,12 +326,6 @@ JsonValue PlaybackConfiguration::Jsonize() const
   if(m_transcodeProfileNameHasBeenSet)
   {
    payload.WithString("TranscodeProfileName", m_transcodeProfileName);
-
-  }
-
-  if(m_personalizationThresholdSecondsHasBeenSet)
-  {
-   payload.WithInteger("PersonalizationThresholdSeconds", m_personalizationThresholdSeconds);
 
   }
 

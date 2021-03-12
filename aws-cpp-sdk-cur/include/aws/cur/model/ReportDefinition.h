@@ -361,6 +361,55 @@ namespace Model
      */
     inline ReportDefinition& WithReportVersioning(ReportVersioning&& value) { SetReportVersioning(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The Amazon resource name of the billing view. You can get this value by
+     * using the billing view service public APIs. </p>
+     */
+    inline const Aws::String& GetBillingViewArn() const{ return m_billingViewArn; }
+
+    /**
+     * <p> The Amazon resource name of the billing view. You can get this value by
+     * using the billing view service public APIs. </p>
+     */
+    inline bool BillingViewArnHasBeenSet() const { return m_billingViewArnHasBeenSet; }
+
+    /**
+     * <p> The Amazon resource name of the billing view. You can get this value by
+     * using the billing view service public APIs. </p>
+     */
+    inline void SetBillingViewArn(const Aws::String& value) { m_billingViewArnHasBeenSet = true; m_billingViewArn = value; }
+
+    /**
+     * <p> The Amazon resource name of the billing view. You can get this value by
+     * using the billing view service public APIs. </p>
+     */
+    inline void SetBillingViewArn(Aws::String&& value) { m_billingViewArnHasBeenSet = true; m_billingViewArn = std::move(value); }
+
+    /**
+     * <p> The Amazon resource name of the billing view. You can get this value by
+     * using the billing view service public APIs. </p>
+     */
+    inline void SetBillingViewArn(const char* value) { m_billingViewArnHasBeenSet = true; m_billingViewArn.assign(value); }
+
+    /**
+     * <p> The Amazon resource name of the billing view. You can get this value by
+     * using the billing view service public APIs. </p>
+     */
+    inline ReportDefinition& WithBillingViewArn(const Aws::String& value) { SetBillingViewArn(value); return *this;}
+
+    /**
+     * <p> The Amazon resource name of the billing view. You can get this value by
+     * using the billing view service public APIs. </p>
+     */
+    inline ReportDefinition& WithBillingViewArn(Aws::String&& value) { SetBillingViewArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The Amazon resource name of the billing view. You can get this value by
+     * using the billing view service public APIs. </p>
+     */
+    inline ReportDefinition& WithBillingViewArn(const char* value) { SetBillingViewArn(value); return *this;}
+
   private:
 
     Aws::String m_reportName;
@@ -395,6 +444,9 @@ namespace Model
 
     ReportVersioning m_reportVersioning;
     bool m_reportVersioningHasBeenSet;
+
+    Aws::String m_billingViewArn;
+    bool m_billingViewArnHasBeenSet;
   };
 
 } // namespace Model

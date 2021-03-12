@@ -105,202 +105,255 @@ namespace Model
 
 
     /**
-     * <p>The configuration for Avail Suppression. Ad suppression can be used to turn
-     * off ad personalization in a long manifest, or if a viewer joins mid-break.</p>
+     * <p>The configuration for avail suppression, also known as ad suppression. For
+     * more information about ad suppression, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad
+     * Suppression</a>.</p>
      */
     inline const AvailSuppression& GetAvailSuppression() const{ return m_availSuppression; }
 
     /**
-     * <p>The configuration for Avail Suppression. Ad suppression can be used to turn
-     * off ad personalization in a long manifest, or if a viewer joins mid-break.</p>
+     * <p>The configuration for avail suppression, also known as ad suppression. For
+     * more information about ad suppression, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad
+     * Suppression</a>.</p>
      */
     inline void SetAvailSuppression(const AvailSuppression& value) { m_availSuppression = value; }
 
     /**
-     * <p>The configuration for Avail Suppression. Ad suppression can be used to turn
-     * off ad personalization in a long manifest, or if a viewer joins mid-break.</p>
+     * <p>The configuration for avail suppression, also known as ad suppression. For
+     * more information about ad suppression, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad
+     * Suppression</a>.</p>
      */
     inline void SetAvailSuppression(AvailSuppression&& value) { m_availSuppression = std::move(value); }
 
     /**
-     * <p>The configuration for Avail Suppression. Ad suppression can be used to turn
-     * off ad personalization in a long manifest, or if a viewer joins mid-break.</p>
+     * <p>The configuration for avail suppression, also known as ad suppression. For
+     * more information about ad suppression, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad
+     * Suppression</a>.</p>
      */
     inline PutPlaybackConfigurationResult& WithAvailSuppression(const AvailSuppression& value) { SetAvailSuppression(value); return *this;}
 
     /**
-     * <p>The configuration for Avail Suppression. Ad suppression can be used to turn
-     * off ad personalization in a long manifest, or if a viewer joins mid-break.</p>
+     * <p>The configuration for avail suppression, also known as ad suppression. For
+     * more information about ad suppression, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad
+     * Suppression</a>.</p>
      */
     inline PutPlaybackConfigurationResult& WithAvailSuppression(AvailSuppression&& value) { SetAvailSuppression(std::move(value)); return *this;}
 
 
     /**
      * <p>The configuration for bumpers. Bumpers are short audio or video clips that
-     * play at the start or before the end of an ad break. </p>
+     * play at the start or before the end of an ad break. To learn more about bumpers,
+     * see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.</p>
      */
     inline const Bumper& GetBumper() const{ return m_bumper; }
 
     /**
      * <p>The configuration for bumpers. Bumpers are short audio or video clips that
-     * play at the start or before the end of an ad break. </p>
+     * play at the start or before the end of an ad break. To learn more about bumpers,
+     * see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.</p>
      */
     inline void SetBumper(const Bumper& value) { m_bumper = value; }
 
     /**
      * <p>The configuration for bumpers. Bumpers are short audio or video clips that
-     * play at the start or before the end of an ad break. </p>
+     * play at the start or before the end of an ad break. To learn more about bumpers,
+     * see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.</p>
      */
     inline void SetBumper(Bumper&& value) { m_bumper = std::move(value); }
 
     /**
      * <p>The configuration for bumpers. Bumpers are short audio or video clips that
-     * play at the start or before the end of an ad break. </p>
+     * play at the start or before the end of an ad break. To learn more about bumpers,
+     * see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.</p>
      */
     inline PutPlaybackConfigurationResult& WithBumper(const Bumper& value) { SetBumper(value); return *this;}
 
     /**
      * <p>The configuration for bumpers. Bumpers are short audio or video clips that
-     * play at the start or before the end of an ad break. </p>
+     * play at the start or before the end of an ad break. To learn more about bumpers,
+     * see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.</p>
      */
     inline PutPlaybackConfigurationResult& WithBumper(Bumper&& value) { SetBumper(std::move(value)); return *this;}
 
 
     /**
      * <p>The configuration for using a content delivery network (CDN), like Amazon
-     * CloudFront, for content and ad segment management. </p>
+     * CloudFront, for content and ad segment management.</p>
      */
     inline const CdnConfiguration& GetCdnConfiguration() const{ return m_cdnConfiguration; }
 
     /**
      * <p>The configuration for using a content delivery network (CDN), like Amazon
-     * CloudFront, for content and ad segment management. </p>
+     * CloudFront, for content and ad segment management.</p>
      */
     inline void SetCdnConfiguration(const CdnConfiguration& value) { m_cdnConfiguration = value; }
 
     /**
      * <p>The configuration for using a content delivery network (CDN), like Amazon
-     * CloudFront, for content and ad segment management. </p>
+     * CloudFront, for content and ad segment management.</p>
      */
     inline void SetCdnConfiguration(CdnConfiguration&& value) { m_cdnConfiguration = std::move(value); }
 
     /**
      * <p>The configuration for using a content delivery network (CDN), like Amazon
-     * CloudFront, for content and ad segment management. </p>
+     * CloudFront, for content and ad segment management.</p>
      */
     inline PutPlaybackConfigurationResult& WithCdnConfiguration(const CdnConfiguration& value) { SetCdnConfiguration(value); return *this;}
 
     /**
      * <p>The configuration for using a content delivery network (CDN), like Amazon
-     * CloudFront, for content and ad segment management. </p>
+     * CloudFront, for content and ad segment management.</p>
      */
     inline PutPlaybackConfigurationResult& WithCdnConfiguration(CdnConfiguration&& value) { SetCdnConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>Predefined aliases for dynamic variables.</p>
+     * <p>The player parameters and aliases used as dynamic variables during session
+     * initialization. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
+     * Variables</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& GetConfigurationAliases() const{ return m_configurationAliases; }
 
     /**
-     * <p>Predefined aliases for dynamic variables.</p>
+     * <p>The player parameters and aliases used as dynamic variables during session
+     * initialization. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
+     * Variables</a>.</p>
      */
     inline void SetConfigurationAliases(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& value) { m_configurationAliases = value; }
 
     /**
-     * <p>Predefined aliases for dynamic variables.</p>
+     * <p>The player parameters and aliases used as dynamic variables during session
+     * initialization. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
+     * Variables</a>.</p>
      */
     inline void SetConfigurationAliases(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>&& value) { m_configurationAliases = std::move(value); }
 
     /**
-     * <p>Predefined aliases for dynamic variables.</p>
+     * <p>The player parameters and aliases used as dynamic variables during session
+     * initialization. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
+     * Variables</a>.</p>
      */
     inline PutPlaybackConfigurationResult& WithConfigurationAliases(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& value) { SetConfigurationAliases(value); return *this;}
 
     /**
-     * <p>Predefined aliases for dynamic variables.</p>
+     * <p>The player parameters and aliases used as dynamic variables during session
+     * initialization. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
+     * Variables</a>.</p>
      */
     inline PutPlaybackConfigurationResult& WithConfigurationAliases(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>&& value) { SetConfigurationAliases(std::move(value)); return *this;}
 
     /**
-     * <p>Predefined aliases for dynamic variables.</p>
+     * <p>The player parameters and aliases used as dynamic variables during session
+     * initialization. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
+     * Variables</a>.</p>
      */
     inline PutPlaybackConfigurationResult& AddConfigurationAliases(const Aws::String& key, const Aws::Map<Aws::String, Aws::String>& value) { m_configurationAliases.emplace(key, value); return *this; }
 
     /**
-     * <p>Predefined aliases for dynamic variables.</p>
+     * <p>The player parameters and aliases used as dynamic variables during session
+     * initialization. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
+     * Variables</a>.</p>
      */
     inline PutPlaybackConfigurationResult& AddConfigurationAliases(Aws::String&& key, const Aws::Map<Aws::String, Aws::String>& value) { m_configurationAliases.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Predefined aliases for dynamic variables.</p>
+     * <p>The player parameters and aliases used as dynamic variables during session
+     * initialization. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
+     * Variables</a>.</p>
      */
     inline PutPlaybackConfigurationResult& AddConfigurationAliases(const Aws::String& key, Aws::Map<Aws::String, Aws::String>&& value) { m_configurationAliases.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Predefined aliases for dynamic variables.</p>
+     * <p>The player parameters and aliases used as dynamic variables during session
+     * initialization. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
+     * Variables</a>.</p>
      */
     inline PutPlaybackConfigurationResult& AddConfigurationAliases(Aws::String&& key, Aws::Map<Aws::String, Aws::String>&& value) { m_configurationAliases.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Predefined aliases for dynamic variables.</p>
+     * <p>The player parameters and aliases used as dynamic variables during session
+     * initialization. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
+     * Variables</a>.</p>
      */
     inline PutPlaybackConfigurationResult& AddConfigurationAliases(const char* key, Aws::Map<Aws::String, Aws::String>&& value) { m_configurationAliases.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Predefined aliases for dynamic variables.</p>
+     * <p>The player parameters and aliases used as dynamic variables during session
+     * initialization. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
+     * Variables</a>.</p>
      */
     inline PutPlaybackConfigurationResult& AddConfigurationAliases(const char* key, const Aws::Map<Aws::String, Aws::String>& value) { m_configurationAliases.emplace(key, value); return *this; }
 
 
     /**
-     * <p>The configuration for DASH content. </p>
+     * <p>The configuration for DASH content.</p>
      */
     inline const DashConfiguration& GetDashConfiguration() const{ return m_dashConfiguration; }
 
     /**
-     * <p>The configuration for DASH content. </p>
+     * <p>The configuration for DASH content.</p>
      */
     inline void SetDashConfiguration(const DashConfiguration& value) { m_dashConfiguration = value; }
 
     /**
-     * <p>The configuration for DASH content. </p>
+     * <p>The configuration for DASH content.</p>
      */
     inline void SetDashConfiguration(DashConfiguration&& value) { m_dashConfiguration = std::move(value); }
 
     /**
-     * <p>The configuration for DASH content. </p>
+     * <p>The configuration for DASH content.</p>
      */
     inline PutPlaybackConfigurationResult& WithDashConfiguration(const DashConfiguration& value) { SetDashConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration for DASH content. </p>
+     * <p>The configuration for DASH content.</p>
      */
     inline PutPlaybackConfigurationResult& WithDashConfiguration(DashConfiguration&& value) { SetDashConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>The configuration for HLS content. </p>
+     * <p>The configuration for HLS content.</p>
      */
     inline const HlsConfiguration& GetHlsConfiguration() const{ return m_hlsConfiguration; }
 
     /**
-     * <p>The configuration for HLS content. </p>
+     * <p>The configuration for HLS content.</p>
      */
     inline void SetHlsConfiguration(const HlsConfiguration& value) { m_hlsConfiguration = value; }
 
     /**
-     * <p>The configuration for HLS content. </p>
+     * <p>The configuration for HLS content.</p>
      */
     inline void SetHlsConfiguration(HlsConfiguration&& value) { m_hlsConfiguration = std::move(value); }
 
     /**
-     * <p>The configuration for HLS content. </p>
+     * <p>The configuration for HLS content.</p>
      */
     inline PutPlaybackConfigurationResult& WithHlsConfiguration(const HlsConfiguration& value) { SetHlsConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration for HLS content. </p>
+     * <p>The configuration for HLS content.</p>
      */
     inline PutPlaybackConfigurationResult& WithHlsConfiguration(HlsConfiguration&& value) { SetHlsConfiguration(std::move(value)); return *this;}
 
@@ -332,32 +385,32 @@ namespace Model
 
 
     /**
-     * The configuration for manifest processing rules. Manifest processing rules
-     * enable customization of the personalized manifests created by MediaTailor.
+     * <p>The configuration for manifest processing rules. Manifest processing rules
+     * enable customization of the personalized manifests created by MediaTailor.</p>
      */
     inline const ManifestProcessingRules& GetManifestProcessingRules() const{ return m_manifestProcessingRules; }
 
     /**
-     * The configuration for manifest processing rules. Manifest processing rules
-     * enable customization of the personalized manifests created by MediaTailor.
+     * <p>The configuration for manifest processing rules. Manifest processing rules
+     * enable customization of the personalized manifests created by MediaTailor.</p>
      */
     inline void SetManifestProcessingRules(const ManifestProcessingRules& value) { m_manifestProcessingRules = value; }
 
     /**
-     * The configuration for manifest processing rules. Manifest processing rules
-     * enable customization of the personalized manifests created by MediaTailor.
+     * <p>The configuration for manifest processing rules. Manifest processing rules
+     * enable customization of the personalized manifests created by MediaTailor.</p>
      */
     inline void SetManifestProcessingRules(ManifestProcessingRules&& value) { m_manifestProcessingRules = std::move(value); }
 
     /**
-     * The configuration for manifest processing rules. Manifest processing rules
-     * enable customization of the personalized manifests created by MediaTailor.
+     * <p>The configuration for manifest processing rules. Manifest processing rules
+     * enable customization of the personalized manifests created by MediaTailor.</p>
      */
     inline PutPlaybackConfigurationResult& WithManifestProcessingRules(const ManifestProcessingRules& value) { SetManifestProcessingRules(value); return *this;}
 
     /**
-     * The configuration for manifest processing rules. Manifest processing rules
-     * enable customization of the personalized manifests created by MediaTailor.
+     * <p>The configuration for manifest processing rules. Manifest processing rules
+     * enable customization of the personalized manifests created by MediaTailor.</p>
      */
     inline PutPlaybackConfigurationResult& WithManifestProcessingRules(ManifestProcessingRules&& value) { SetManifestProcessingRules(std::move(value)); return *this;}
 
@@ -399,142 +452,163 @@ namespace Model
 
 
     /**
-     * <p>The maximum duration of underfilled ad time (in seconds) allowed in an ad
-     * break.</p>
+     * <p>Defines the maximum duration of underfilled ad time (in seconds) allowed in
+     * an ad break. If the duration of underfilled ad time exceeds the personalization
+     * threshold, then the personalization of the ad break is abandoned and the
+     * underlying content is shown. This feature applies to <i>ad replacement</i> in
+     * live and VOD streams, rather than ad insertion, because it relies on an
+     * underlying content stream. For more information about ad break behavior,
+     * including ad replacement and insertion, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad
+     * Behavior in AWS Elemental MediaTailor</a>.</p>
      */
     inline int GetPersonalizationThresholdSeconds() const{ return m_personalizationThresholdSeconds; }
 
     /**
-     * <p>The maximum duration of underfilled ad time (in seconds) allowed in an ad
-     * break.</p>
+     * <p>Defines the maximum duration of underfilled ad time (in seconds) allowed in
+     * an ad break. If the duration of underfilled ad time exceeds the personalization
+     * threshold, then the personalization of the ad break is abandoned and the
+     * underlying content is shown. This feature applies to <i>ad replacement</i> in
+     * live and VOD streams, rather than ad insertion, because it relies on an
+     * underlying content stream. For more information about ad break behavior,
+     * including ad replacement and insertion, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad
+     * Behavior in AWS Elemental MediaTailor</a>.</p>
      */
     inline void SetPersonalizationThresholdSeconds(int value) { m_personalizationThresholdSeconds = value; }
 
     /**
-     * <p>The maximum duration of underfilled ad time (in seconds) allowed in an ad
-     * break.</p>
+     * <p>Defines the maximum duration of underfilled ad time (in seconds) allowed in
+     * an ad break. If the duration of underfilled ad time exceeds the personalization
+     * threshold, then the personalization of the ad break is abandoned and the
+     * underlying content is shown. This feature applies to <i>ad replacement</i> in
+     * live and VOD streams, rather than ad insertion, because it relies on an
+     * underlying content stream. For more information about ad break behavior,
+     * including ad replacement and insertion, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad
+     * Behavior in AWS Elemental MediaTailor</a>.</p>
      */
     inline PutPlaybackConfigurationResult& WithPersonalizationThresholdSeconds(int value) { SetPersonalizationThresholdSeconds(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the playback configuration. </p>
+     * <p>The Amazon Resource Name (ARN) for the playback configuration.</p>
      */
     inline const Aws::String& GetPlaybackConfigurationArn() const{ return m_playbackConfigurationArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the playback configuration. </p>
+     * <p>The Amazon Resource Name (ARN) for the playback configuration.</p>
      */
     inline void SetPlaybackConfigurationArn(const Aws::String& value) { m_playbackConfigurationArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the playback configuration. </p>
+     * <p>The Amazon Resource Name (ARN) for the playback configuration.</p>
      */
     inline void SetPlaybackConfigurationArn(Aws::String&& value) { m_playbackConfigurationArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the playback configuration. </p>
+     * <p>The Amazon Resource Name (ARN) for the playback configuration.</p>
      */
     inline void SetPlaybackConfigurationArn(const char* value) { m_playbackConfigurationArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the playback configuration. </p>
+     * <p>The Amazon Resource Name (ARN) for the playback configuration.</p>
      */
     inline PutPlaybackConfigurationResult& WithPlaybackConfigurationArn(const Aws::String& value) { SetPlaybackConfigurationArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the playback configuration. </p>
+     * <p>The Amazon Resource Name (ARN) for the playback configuration.</p>
      */
     inline PutPlaybackConfigurationResult& WithPlaybackConfigurationArn(Aws::String&& value) { SetPlaybackConfigurationArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the playback configuration. </p>
+     * <p>The Amazon Resource Name (ARN) for the playback configuration.</p>
      */
     inline PutPlaybackConfigurationResult& WithPlaybackConfigurationArn(const char* value) { SetPlaybackConfigurationArn(value); return *this;}
 
 
     /**
      * <p>The URL that the player accesses to get a manifest from AWS Elemental
-     * MediaTailor. This session will use server-side reporting. </p>
+     * MediaTailor. This session will use server-side reporting.</p>
      */
     inline const Aws::String& GetPlaybackEndpointPrefix() const{ return m_playbackEndpointPrefix; }
 
     /**
      * <p>The URL that the player accesses to get a manifest from AWS Elemental
-     * MediaTailor. This session will use server-side reporting. </p>
+     * MediaTailor. This session will use server-side reporting.</p>
      */
     inline void SetPlaybackEndpointPrefix(const Aws::String& value) { m_playbackEndpointPrefix = value; }
 
     /**
      * <p>The URL that the player accesses to get a manifest from AWS Elemental
-     * MediaTailor. This session will use server-side reporting. </p>
+     * MediaTailor. This session will use server-side reporting.</p>
      */
     inline void SetPlaybackEndpointPrefix(Aws::String&& value) { m_playbackEndpointPrefix = std::move(value); }
 
     /**
      * <p>The URL that the player accesses to get a manifest from AWS Elemental
-     * MediaTailor. This session will use server-side reporting. </p>
+     * MediaTailor. This session will use server-side reporting.</p>
      */
     inline void SetPlaybackEndpointPrefix(const char* value) { m_playbackEndpointPrefix.assign(value); }
 
     /**
      * <p>The URL that the player accesses to get a manifest from AWS Elemental
-     * MediaTailor. This session will use server-side reporting. </p>
+     * MediaTailor. This session will use server-side reporting.</p>
      */
     inline PutPlaybackConfigurationResult& WithPlaybackEndpointPrefix(const Aws::String& value) { SetPlaybackEndpointPrefix(value); return *this;}
 
     /**
      * <p>The URL that the player accesses to get a manifest from AWS Elemental
-     * MediaTailor. This session will use server-side reporting. </p>
+     * MediaTailor. This session will use server-side reporting.</p>
      */
     inline PutPlaybackConfigurationResult& WithPlaybackEndpointPrefix(Aws::String&& value) { SetPlaybackEndpointPrefix(std::move(value)); return *this;}
 
     /**
      * <p>The URL that the player accesses to get a manifest from AWS Elemental
-     * MediaTailor. This session will use server-side reporting. </p>
+     * MediaTailor. This session will use server-side reporting.</p>
      */
     inline PutPlaybackConfigurationResult& WithPlaybackEndpointPrefix(const char* value) { SetPlaybackEndpointPrefix(value); return *this;}
 
 
     /**
      * <p>The URL that the player uses to initialize a session that uses client-side
-     * reporting. </p>
+     * reporting.</p>
      */
     inline const Aws::String& GetSessionInitializationEndpointPrefix() const{ return m_sessionInitializationEndpointPrefix; }
 
     /**
      * <p>The URL that the player uses to initialize a session that uses client-side
-     * reporting. </p>
+     * reporting.</p>
      */
     inline void SetSessionInitializationEndpointPrefix(const Aws::String& value) { m_sessionInitializationEndpointPrefix = value; }
 
     /**
      * <p>The URL that the player uses to initialize a session that uses client-side
-     * reporting. </p>
+     * reporting.</p>
      */
     inline void SetSessionInitializationEndpointPrefix(Aws::String&& value) { m_sessionInitializationEndpointPrefix = std::move(value); }
 
     /**
      * <p>The URL that the player uses to initialize a session that uses client-side
-     * reporting. </p>
+     * reporting.</p>
      */
     inline void SetSessionInitializationEndpointPrefix(const char* value) { m_sessionInitializationEndpointPrefix.assign(value); }
 
     /**
      * <p>The URL that the player uses to initialize a session that uses client-side
-     * reporting. </p>
+     * reporting.</p>
      */
     inline PutPlaybackConfigurationResult& WithSessionInitializationEndpointPrefix(const Aws::String& value) { SetSessionInitializationEndpointPrefix(value); return *this;}
 
     /**
      * <p>The URL that the player uses to initialize a session that uses client-side
-     * reporting. </p>
+     * reporting.</p>
      */
     inline PutPlaybackConfigurationResult& WithSessionInitializationEndpointPrefix(Aws::String&& value) { SetSessionInitializationEndpointPrefix(std::move(value)); return *this;}
 
     /**
      * <p>The URL that the player uses to initialize a session that uses client-side
-     * reporting. </p>
+     * reporting.</p>
      */
     inline PutPlaybackConfigurationResult& WithSessionInitializationEndpointPrefix(const char* value) { SetSessionInitializationEndpointPrefix(value); return *this;}
 
@@ -545,7 +619,7 @@ namespace Model
      * gaps in media content. Configuring the slate is optional for non-VPAID playback
      * configurations. For VPAID, the slate is required because MediaTailor provides it
      * in the slots designated for dynamic ad content. The slate must be a high-quality
-     * asset that contains both audio and video. </p>
+     * asset that contains both audio and video.</p>
      */
     inline const Aws::String& GetSlateAdUrl() const{ return m_slateAdUrl; }
 
@@ -555,7 +629,7 @@ namespace Model
      * gaps in media content. Configuring the slate is optional for non-VPAID playback
      * configurations. For VPAID, the slate is required because MediaTailor provides it
      * in the slots designated for dynamic ad content. The slate must be a high-quality
-     * asset that contains both audio and video. </p>
+     * asset that contains both audio and video.</p>
      */
     inline void SetSlateAdUrl(const Aws::String& value) { m_slateAdUrl = value; }
 
@@ -565,7 +639,7 @@ namespace Model
      * gaps in media content. Configuring the slate is optional for non-VPAID playback
      * configurations. For VPAID, the slate is required because MediaTailor provides it
      * in the slots designated for dynamic ad content. The slate must be a high-quality
-     * asset that contains both audio and video. </p>
+     * asset that contains both audio and video.</p>
      */
     inline void SetSlateAdUrl(Aws::String&& value) { m_slateAdUrl = std::move(value); }
 
@@ -575,7 +649,7 @@ namespace Model
      * gaps in media content. Configuring the slate is optional for non-VPAID playback
      * configurations. For VPAID, the slate is required because MediaTailor provides it
      * in the slots designated for dynamic ad content. The slate must be a high-quality
-     * asset that contains both audio and video. </p>
+     * asset that contains both audio and video.</p>
      */
     inline void SetSlateAdUrl(const char* value) { m_slateAdUrl.assign(value); }
 
@@ -585,7 +659,7 @@ namespace Model
      * gaps in media content. Configuring the slate is optional for non-VPAID playback
      * configurations. For VPAID, the slate is required because MediaTailor provides it
      * in the slots designated for dynamic ad content. The slate must be a high-quality
-     * asset that contains both audio and video. </p>
+     * asset that contains both audio and video.</p>
      */
     inline PutPlaybackConfigurationResult& WithSlateAdUrl(const Aws::String& value) { SetSlateAdUrl(value); return *this;}
 
@@ -595,7 +669,7 @@ namespace Model
      * gaps in media content. Configuring the slate is optional for non-VPAID playback
      * configurations. For VPAID, the slate is required because MediaTailor provides it
      * in the slots designated for dynamic ad content. The slate must be a high-quality
-     * asset that contains both audio and video. </p>
+     * asset that contains both audio and video.</p>
      */
     inline PutPlaybackConfigurationResult& WithSlateAdUrl(Aws::String&& value) { SetSlateAdUrl(std::move(value)); return *this;}
 
@@ -605,68 +679,68 @@ namespace Model
      * gaps in media content. Configuring the slate is optional for non-VPAID playback
      * configurations. For VPAID, the slate is required because MediaTailor provides it
      * in the slots designated for dynamic ad content. The slate must be a high-quality
-     * asset that contains both audio and video. </p>
+     * asset that contains both audio and video.</p>
      */
     inline PutPlaybackConfigurationResult& WithSlateAdUrl(const char* value) { SetSlateAdUrl(value); return *this;}
 
 
     /**
-     * <p>The tags assigned to the playback configuration. </p>
+     * <p>The tags assigned to the playback configuration.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags assigned to the playback configuration. </p>
+     * <p>The tags assigned to the playback configuration.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
     /**
-     * <p>The tags assigned to the playback configuration. </p>
+     * <p>The tags assigned to the playback configuration.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>The tags assigned to the playback configuration. </p>
+     * <p>The tags assigned to the playback configuration.</p>
      */
     inline PutPlaybackConfigurationResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags assigned to the playback configuration. </p>
+     * <p>The tags assigned to the playback configuration.</p>
      */
     inline PutPlaybackConfigurationResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags assigned to the playback configuration. </p>
+     * <p>The tags assigned to the playback configuration.</p>
      */
     inline PutPlaybackConfigurationResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The tags assigned to the playback configuration. </p>
+     * <p>The tags assigned to the playback configuration.</p>
      */
     inline PutPlaybackConfigurationResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags assigned to the playback configuration. </p>
+     * <p>The tags assigned to the playback configuration.</p>
      */
     inline PutPlaybackConfigurationResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags assigned to the playback configuration. </p>
+     * <p>The tags assigned to the playback configuration.</p>
      */
     inline PutPlaybackConfigurationResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The tags assigned to the playback configuration. </p>
+     * <p>The tags assigned to the playback configuration.</p>
      */
     inline PutPlaybackConfigurationResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags assigned to the playback configuration. </p>
+     * <p>The tags assigned to the playback configuration.</p>
      */
     inline PutPlaybackConfigurationResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags assigned to the playback configuration. </p>
+     * <p>The tags assigned to the playback configuration.</p>
      */
     inline PutPlaybackConfigurationResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
@@ -729,43 +803,43 @@ namespace Model
 
 
     /**
-     * <p>The URL prefix for the master playlist for the stream, minus the asset ID.
+     * <p>The URL prefix for the parent manifest for the stream, minus the asset ID.
      * The maximum length is 512 characters.</p>
      */
     inline const Aws::String& GetVideoContentSourceUrl() const{ return m_videoContentSourceUrl; }
 
     /**
-     * <p>The URL prefix for the master playlist for the stream, minus the asset ID.
+     * <p>The URL prefix for the parent manifest for the stream, minus the asset ID.
      * The maximum length is 512 characters.</p>
      */
     inline void SetVideoContentSourceUrl(const Aws::String& value) { m_videoContentSourceUrl = value; }
 
     /**
-     * <p>The URL prefix for the master playlist for the stream, minus the asset ID.
+     * <p>The URL prefix for the parent manifest for the stream, minus the asset ID.
      * The maximum length is 512 characters.</p>
      */
     inline void SetVideoContentSourceUrl(Aws::String&& value) { m_videoContentSourceUrl = std::move(value); }
 
     /**
-     * <p>The URL prefix for the master playlist for the stream, minus the asset ID.
+     * <p>The URL prefix for the parent manifest for the stream, minus the asset ID.
      * The maximum length is 512 characters.</p>
      */
     inline void SetVideoContentSourceUrl(const char* value) { m_videoContentSourceUrl.assign(value); }
 
     /**
-     * <p>The URL prefix for the master playlist for the stream, minus the asset ID.
+     * <p>The URL prefix for the parent manifest for the stream, minus the asset ID.
      * The maximum length is 512 characters.</p>
      */
     inline PutPlaybackConfigurationResult& WithVideoContentSourceUrl(const Aws::String& value) { SetVideoContentSourceUrl(value); return *this;}
 
     /**
-     * <p>The URL prefix for the master playlist for the stream, minus the asset ID.
+     * <p>The URL prefix for the parent manifest for the stream, minus the asset ID.
      * The maximum length is 512 characters.</p>
      */
     inline PutPlaybackConfigurationResult& WithVideoContentSourceUrl(Aws::String&& value) { SetVideoContentSourceUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The URL prefix for the master playlist for the stream, minus the asset ID.
+     * <p>The URL prefix for the parent manifest for the stream, minus the asset ID.
      * The maximum length is 512 characters.</p>
      */
     inline PutPlaybackConfigurationResult& WithVideoContentSourceUrl(const char* value) { SetVideoContentSourceUrl(value); return *this;}

@@ -37,49 +37,49 @@ namespace Model
     /**
      * <p>Array of playback configurations. This might be all the available
      * configurations or a subset, depending on the settings that you provide and the
-     * total number of configurations stored. </p>
+     * total number of configurations stored.</p>
      */
     inline const Aws::Vector<PlaybackConfiguration>& GetItems() const{ return m_items; }
 
     /**
      * <p>Array of playback configurations. This might be all the available
      * configurations or a subset, depending on the settings that you provide and the
-     * total number of configurations stored. </p>
+     * total number of configurations stored.</p>
      */
     inline void SetItems(const Aws::Vector<PlaybackConfiguration>& value) { m_items = value; }
 
     /**
      * <p>Array of playback configurations. This might be all the available
      * configurations or a subset, depending on the settings that you provide and the
-     * total number of configurations stored. </p>
+     * total number of configurations stored.</p>
      */
     inline void SetItems(Aws::Vector<PlaybackConfiguration>&& value) { m_items = std::move(value); }
 
     /**
      * <p>Array of playback configurations. This might be all the available
      * configurations or a subset, depending on the settings that you provide and the
-     * total number of configurations stored. </p>
+     * total number of configurations stored.</p>
      */
     inline ListPlaybackConfigurationsResult& WithItems(const Aws::Vector<PlaybackConfiguration>& value) { SetItems(value); return *this;}
 
     /**
      * <p>Array of playback configurations. This might be all the available
      * configurations or a subset, depending on the settings that you provide and the
-     * total number of configurations stored. </p>
+     * total number of configurations stored.</p>
      */
     inline ListPlaybackConfigurationsResult& WithItems(Aws::Vector<PlaybackConfiguration>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
      * <p>Array of playback configurations. This might be all the available
      * configurations or a subset, depending on the settings that you provide and the
-     * total number of configurations stored. </p>
+     * total number of configurations stored.</p>
      */
     inline ListPlaybackConfigurationsResult& AddItems(const PlaybackConfiguration& value) { m_items.push_back(value); return *this; }
 
     /**
      * <p>Array of playback configurations. This might be all the available
      * configurations or a subset, depending on the settings that you provide and the
-     * total number of configurations stored. </p>
+     * total number of configurations stored.</p>
      */
     inline ListPlaybackConfigurationsResult& AddItems(PlaybackConfiguration&& value) { m_items.push_back(std::move(value)); return *this; }
 
