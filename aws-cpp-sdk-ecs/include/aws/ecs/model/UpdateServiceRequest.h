@@ -849,6 +849,39 @@ namespace Model
      */
     inline UpdateServiceRequest& WithHealthCheckGracePeriodSeconds(int value) { SetHealthCheckGracePeriodSeconds(value); return *this;}
 
+
+    /**
+     * <p>If <code>true</code>, this enables execute command functionality on all task
+     * containers.</p> <p>If you do not want to override the value that was set when
+     * the service was created, you can set this to <code>null</code> when performing
+     * this action.</p>
+     */
+    inline bool GetEnableExecuteCommand() const{ return m_enableExecuteCommand; }
+
+    /**
+     * <p>If <code>true</code>, this enables execute command functionality on all task
+     * containers.</p> <p>If you do not want to override the value that was set when
+     * the service was created, you can set this to <code>null</code> when performing
+     * this action.</p>
+     */
+    inline bool EnableExecuteCommandHasBeenSet() const { return m_enableExecuteCommandHasBeenSet; }
+
+    /**
+     * <p>If <code>true</code>, this enables execute command functionality on all task
+     * containers.</p> <p>If you do not want to override the value that was set when
+     * the service was created, you can set this to <code>null</code> when performing
+     * this action.</p>
+     */
+    inline void SetEnableExecuteCommand(bool value) { m_enableExecuteCommandHasBeenSet = true; m_enableExecuteCommand = value; }
+
+    /**
+     * <p>If <code>true</code>, this enables execute command functionality on all task
+     * containers.</p> <p>If you do not want to override the value that was set when
+     * the service was created, you can set this to <code>null</code> when performing
+     * this action.</p>
+     */
+    inline UpdateServiceRequest& WithEnableExecuteCommand(bool value) { SetEnableExecuteCommand(value); return *this;}
+
   private:
 
     Aws::String m_cluster;
@@ -886,6 +919,9 @@ namespace Model
 
     int m_healthCheckGracePeriodSeconds;
     bool m_healthCheckGracePeriodSecondsHasBeenSet;
+
+    bool m_enableExecuteCommand;
+    bool m_enableExecuteCommandHasBeenSet;
   };
 
 } // namespace Model

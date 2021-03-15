@@ -198,6 +198,35 @@ namespace Model
 
 
     /**
+     * <p>Whether or not the execute command functionality is enabled for the task. If
+     * <code>true</code>, this enables execute command functionality on all containers
+     * in the task.</p>
+     */
+    inline bool GetEnableExecuteCommand() const{ return m_enableExecuteCommand; }
+
+    /**
+     * <p>Whether or not the execute command functionality is enabled for the task. If
+     * <code>true</code>, this enables execute command functionality on all containers
+     * in the task.</p>
+     */
+    inline bool EnableExecuteCommandHasBeenSet() const { return m_enableExecuteCommandHasBeenSet; }
+
+    /**
+     * <p>Whether or not the execute command functionality is enabled for the task. If
+     * <code>true</code>, this enables execute command functionality on all containers
+     * in the task.</p>
+     */
+    inline void SetEnableExecuteCommand(bool value) { m_enableExecuteCommandHasBeenSet = true; m_enableExecuteCommand = value; }
+
+    /**
+     * <p>Whether or not the execute command functionality is enabled for the task. If
+     * <code>true</code>, this enables execute command functionality on all containers
+     * in the task.</p>
+     */
+    inline StartTaskRequest& WithEnableExecuteCommand(bool value) { SetEnableExecuteCommand(value); return *this;}
+
+
+    /**
      * <p>The name of the task group to associate with the task. The default value is
      * the family name of the task definition (for example, family:my-family-name).</p>
      */
@@ -786,6 +815,9 @@ namespace Model
 
     bool m_enableECSManagedTags;
     bool m_enableECSManagedTagsHasBeenSet;
+
+    bool m_enableExecuteCommand;
+    bool m_enableExecuteCommandHasBeenSet;
 
     Aws::String m_group;
     bool m_groupHasBeenSet;

@@ -55,7 +55,9 @@ Service::Service() :
     m_enableECSManagedTags(false),
     m_enableECSManagedTagsHasBeenSet(false),
     m_propagateTags(PropagateTags::NOT_SET),
-    m_propagateTagsHasBeenSet(false)
+    m_propagateTagsHasBeenSet(false),
+    m_enableExecuteCommand(false),
+    m_enableExecuteCommandHasBeenSet(false)
 {
 }
 
@@ -96,7 +98,9 @@ Service::Service(JsonView jsonValue) :
     m_enableECSManagedTags(false),
     m_enableECSManagedTagsHasBeenSet(false),
     m_propagateTags(PropagateTags::NOT_SET),
-    m_propagateTagsHasBeenSet(false)
+    m_propagateTagsHasBeenSet(false),
+    m_enableExecuteCommand(false),
+    m_enableExecuteCommandHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -333,6 +337,13 @@ Service& Service::operator =(JsonView jsonValue)
     m_propagateTagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("enableExecuteCommand"))
+  {
+    m_enableExecuteCommand = jsonValue.GetBool("enableExecuteCommand");
+
+    m_enableExecuteCommandHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -553,6 +564,12 @@ JsonValue Service::Jsonize() const
   if(m_propagateTagsHasBeenSet)
   {
    payload.WithString("propagateTags", PropagateTagsMapper::GetNameForPropagateTags(m_propagateTags));
+  }
+
+  if(m_enableExecuteCommandHasBeenSet)
+  {
+   payload.WithBool("enableExecuteCommand", m_enableExecuteCommand);
+
   }
 
   return payload;

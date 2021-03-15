@@ -678,65 +678,65 @@ namespace Model
 
     /**
      * <p>The task launch type that Amazon ECS should validate the task definition
-     * against. This ensures that the task definition parameters are compatible with
-     * the specified launch type. If no value is specified, it defaults to
-     * <code>EC2</code>.</p>
+     * against. A client exception is returned if the task definition doesn't validate
+     * against the compatibilities specified. If no value is specified, the parameter
+     * is omitted from the response.</p>
      */
     inline const Aws::Vector<Compatibility>& GetRequiresCompatibilities() const{ return m_requiresCompatibilities; }
 
     /**
      * <p>The task launch type that Amazon ECS should validate the task definition
-     * against. This ensures that the task definition parameters are compatible with
-     * the specified launch type. If no value is specified, it defaults to
-     * <code>EC2</code>.</p>
+     * against. A client exception is returned if the task definition doesn't validate
+     * against the compatibilities specified. If no value is specified, the parameter
+     * is omitted from the response.</p>
      */
     inline bool RequiresCompatibilitiesHasBeenSet() const { return m_requiresCompatibilitiesHasBeenSet; }
 
     /**
      * <p>The task launch type that Amazon ECS should validate the task definition
-     * against. This ensures that the task definition parameters are compatible with
-     * the specified launch type. If no value is specified, it defaults to
-     * <code>EC2</code>.</p>
+     * against. A client exception is returned if the task definition doesn't validate
+     * against the compatibilities specified. If no value is specified, the parameter
+     * is omitted from the response.</p>
      */
     inline void SetRequiresCompatibilities(const Aws::Vector<Compatibility>& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities = value; }
 
     /**
      * <p>The task launch type that Amazon ECS should validate the task definition
-     * against. This ensures that the task definition parameters are compatible with
-     * the specified launch type. If no value is specified, it defaults to
-     * <code>EC2</code>.</p>
+     * against. A client exception is returned if the task definition doesn't validate
+     * against the compatibilities specified. If no value is specified, the parameter
+     * is omitted from the response.</p>
      */
     inline void SetRequiresCompatibilities(Aws::Vector<Compatibility>&& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities = std::move(value); }
 
     /**
      * <p>The task launch type that Amazon ECS should validate the task definition
-     * against. This ensures that the task definition parameters are compatible with
-     * the specified launch type. If no value is specified, it defaults to
-     * <code>EC2</code>.</p>
+     * against. A client exception is returned if the task definition doesn't validate
+     * against the compatibilities specified. If no value is specified, the parameter
+     * is omitted from the response.</p>
      */
     inline RegisterTaskDefinitionRequest& WithRequiresCompatibilities(const Aws::Vector<Compatibility>& value) { SetRequiresCompatibilities(value); return *this;}
 
     /**
      * <p>The task launch type that Amazon ECS should validate the task definition
-     * against. This ensures that the task definition parameters are compatible with
-     * the specified launch type. If no value is specified, it defaults to
-     * <code>EC2</code>.</p>
+     * against. A client exception is returned if the task definition doesn't validate
+     * against the compatibilities specified. If no value is specified, the parameter
+     * is omitted from the response.</p>
      */
     inline RegisterTaskDefinitionRequest& WithRequiresCompatibilities(Aws::Vector<Compatibility>&& value) { SetRequiresCompatibilities(std::move(value)); return *this;}
 
     /**
      * <p>The task launch type that Amazon ECS should validate the task definition
-     * against. This ensures that the task definition parameters are compatible with
-     * the specified launch type. If no value is specified, it defaults to
-     * <code>EC2</code>.</p>
+     * against. A client exception is returned if the task definition doesn't validate
+     * against the compatibilities specified. If no value is specified, the parameter
+     * is omitted from the response.</p>
      */
     inline RegisterTaskDefinitionRequest& AddRequiresCompatibilities(const Compatibility& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities.push_back(value); return *this; }
 
     /**
      * <p>The task launch type that Amazon ECS should validate the task definition
-     * against. This ensures that the task definition parameters are compatible with
-     * the specified launch type. If no value is specified, it defaults to
-     * <code>EC2</code>.</p>
+     * against. A client exception is returned if the task definition doesn't validate
+     * against the compatibilities specified. If no value is specified, the parameter
+     * is omitted from the response.</p>
      */
     inline RegisterTaskDefinitionRequest& AddRequiresCompatibilities(Compatibility&& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities.push_back(std::move(value)); return *this; }
 
@@ -1302,7 +1302,7 @@ namespace Model
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
      * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers or tasks using the Fargate launch type.</p> 
+     * containers or tasks run on AWS Fargate.</p> 
      */
     inline const PidMode& GetPidMode() const{ return m_pidMode; }
 
@@ -1320,7 +1320,7 @@ namespace Model
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
      * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers or tasks using the Fargate launch type.</p> 
+     * containers or tasks run on AWS Fargate.</p> 
      */
     inline bool PidModeHasBeenSet() const { return m_pidModeHasBeenSet; }
 
@@ -1338,7 +1338,7 @@ namespace Model
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
      * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers or tasks using the Fargate launch type.</p> 
+     * containers or tasks run on AWS Fargate.</p> 
      */
     inline void SetPidMode(const PidMode& value) { m_pidModeHasBeenSet = true; m_pidMode = value; }
 
@@ -1356,7 +1356,7 @@ namespace Model
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
      * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers or tasks using the Fargate launch type.</p> 
+     * containers or tasks run on AWS Fargate.</p> 
      */
     inline void SetPidMode(PidMode&& value) { m_pidModeHasBeenSet = true; m_pidMode = std::move(value); }
 
@@ -1374,7 +1374,7 @@ namespace Model
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
      * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers or tasks using the Fargate launch type.</p> 
+     * containers or tasks run on AWS Fargate.</p> 
      */
     inline RegisterTaskDefinitionRequest& WithPidMode(const PidMode& value) { SetPidMode(value); return *this;}
 
@@ -1392,7 +1392,7 @@ namespace Model
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
      * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers or tasks using the Fargate launch type.</p> 
+     * containers or tasks run on AWS Fargate.</p> 
      */
     inline RegisterTaskDefinitionRequest& WithPidMode(PidMode&& value) { SetPidMode(std::move(value)); return *this;}
 
@@ -1424,7 +1424,7 @@ namespace Model
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
      * </li> </ul>  <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> 
+     * tasks run on AWS Fargate.</p> 
      */
     inline const IpcMode& GetIpcMode() const{ return m_ipcMode; }
 
@@ -1455,7 +1455,7 @@ namespace Model
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
      * </li> </ul>  <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> 
+     * tasks run on AWS Fargate.</p> 
      */
     inline bool IpcModeHasBeenSet() const { return m_ipcModeHasBeenSet; }
 
@@ -1486,7 +1486,7 @@ namespace Model
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
      * </li> </ul>  <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> 
+     * tasks run on AWS Fargate.</p> 
      */
     inline void SetIpcMode(const IpcMode& value) { m_ipcModeHasBeenSet = true; m_ipcMode = value; }
 
@@ -1517,7 +1517,7 @@ namespace Model
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
      * </li> </ul>  <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> 
+     * tasks run on AWS Fargate.</p> 
      */
     inline void SetIpcMode(IpcMode&& value) { m_ipcModeHasBeenSet = true; m_ipcMode = std::move(value); }
 
@@ -1548,7 +1548,7 @@ namespace Model
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
      * </li> </ul>  <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> 
+     * tasks run on AWS Fargate.</p> 
      */
     inline RegisterTaskDefinitionRequest& WithIpcMode(const IpcMode& value) { SetIpcMode(value); return *this;}
 
@@ -1579,7 +1579,7 @@ namespace Model
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
      * </li> </ul>  <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> 
+     * tasks run on AWS Fargate.</p> 
      */
     inline RegisterTaskDefinitionRequest& WithIpcMode(IpcMode&& value) { SetIpcMode(std::move(value)); return *this;}
 

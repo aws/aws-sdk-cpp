@@ -40,6 +40,7 @@
 #include <aws/ecs/model/DescribeTaskSetsRequest.h>
 #include <aws/ecs/model/DescribeTasksRequest.h>
 #include <aws/ecs/model/DiscoverPollEndpointRequest.h>
+#include <aws/ecs/model/ExecuteCommandRequest.h>
 #include <aws/ecs/model/ListAccountSettingsRequest.h>
 #include <aws/ecs/model/ListAttributesRequest.h>
 #include <aws/ecs/model/ListClustersRequest.h>
@@ -64,6 +65,7 @@
 #include <aws/ecs/model/TagResourceRequest.h>
 #include <aws/ecs/model/UntagResourceRequest.h>
 #include <aws/ecs/model/UpdateCapacityProviderRequest.h>
+#include <aws/ecs/model/UpdateClusterRequest.h>
 #include <aws/ecs/model/UpdateClusterSettingsRequest.h>
 #include <aws/ecs/model/UpdateContainerAgentRequest.h>
 #include <aws/ecs/model/UpdateContainerInstancesStateRequest.h>
@@ -682,6 +684,33 @@ void ECSClient::DiscoverPollEndpointAsync(const DiscoverPollEndpointRequest& req
 void ECSClient::DiscoverPollEndpointAsyncHelper(const DiscoverPollEndpointRequest& request, const DiscoverPollEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DiscoverPollEndpoint(request), context);
+}
+
+ExecuteCommandOutcome ECSClient::ExecuteCommand(const ExecuteCommandRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ExecuteCommandOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ExecuteCommandOutcomeCallable ECSClient::ExecuteCommandCallable(const ExecuteCommandRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ExecuteCommandOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExecuteCommand(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECSClient::ExecuteCommandAsync(const ExecuteCommandRequest& request, const ExecuteCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ExecuteCommandAsyncHelper( request, handler, context ); } );
+}
+
+void ECSClient::ExecuteCommandAsyncHelper(const ExecuteCommandRequest& request, const ExecuteCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ExecuteCommand(request), context);
 }
 
 ListAccountSettingsOutcome ECSClient::ListAccountSettings(const ListAccountSettingsRequest& request) const
@@ -1330,6 +1359,33 @@ void ECSClient::UpdateCapacityProviderAsync(const UpdateCapacityProviderRequest&
 void ECSClient::UpdateCapacityProviderAsyncHelper(const UpdateCapacityProviderRequest& request, const UpdateCapacityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateCapacityProvider(request), context);
+}
+
+UpdateClusterOutcome ECSClient::UpdateCluster(const UpdateClusterRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateClusterOutcomeCallable ECSClient::UpdateClusterCallable(const UpdateClusterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCluster(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECSClient::UpdateClusterAsync(const UpdateClusterRequest& request, const UpdateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateClusterAsyncHelper( request, handler, context ); } );
+}
+
+void ECSClient::UpdateClusterAsyncHelper(const UpdateClusterRequest& request, const UpdateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateCluster(request), context);
 }
 
 UpdateClusterSettingsOutcome ECSClient::UpdateClusterSettings(const UpdateClusterSettingsRequest& request) const

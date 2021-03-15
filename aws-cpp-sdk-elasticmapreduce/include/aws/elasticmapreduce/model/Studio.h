@@ -607,50 +607,50 @@ namespace Model
 
 
     /**
-     * <p>The default Amazon S3 location to back up Amazon EMR Studio Workspaces and
-     * notebook files.</p>
+     * <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook
+     * files.</p>
      */
     inline const Aws::String& GetDefaultS3Location() const{ return m_defaultS3Location; }
 
     /**
-     * <p>The default Amazon S3 location to back up Amazon EMR Studio Workspaces and
-     * notebook files.</p>
+     * <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook
+     * files.</p>
      */
     inline bool DefaultS3LocationHasBeenSet() const { return m_defaultS3LocationHasBeenSet; }
 
     /**
-     * <p>The default Amazon S3 location to back up Amazon EMR Studio Workspaces and
-     * notebook files.</p>
+     * <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook
+     * files.</p>
      */
     inline void SetDefaultS3Location(const Aws::String& value) { m_defaultS3LocationHasBeenSet = true; m_defaultS3Location = value; }
 
     /**
-     * <p>The default Amazon S3 location to back up Amazon EMR Studio Workspaces and
-     * notebook files.</p>
+     * <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook
+     * files.</p>
      */
     inline void SetDefaultS3Location(Aws::String&& value) { m_defaultS3LocationHasBeenSet = true; m_defaultS3Location = std::move(value); }
 
     /**
-     * <p>The default Amazon S3 location to back up Amazon EMR Studio Workspaces and
-     * notebook files.</p>
+     * <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook
+     * files.</p>
      */
     inline void SetDefaultS3Location(const char* value) { m_defaultS3LocationHasBeenSet = true; m_defaultS3Location.assign(value); }
 
     /**
-     * <p>The default Amazon S3 location to back up Amazon EMR Studio Workspaces and
-     * notebook files.</p>
+     * <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook
+     * files.</p>
      */
     inline Studio& WithDefaultS3Location(const Aws::String& value) { SetDefaultS3Location(value); return *this;}
 
     /**
-     * <p>The default Amazon S3 location to back up Amazon EMR Studio Workspaces and
-     * notebook files.</p>
+     * <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook
+     * files.</p>
      */
     inline Studio& WithDefaultS3Location(Aws::String&& value) { SetDefaultS3Location(std::move(value)); return *this;}
 
     /**
-     * <p>The default Amazon S3 location to back up Amazon EMR Studio Workspaces and
-     * notebook files.</p>
+     * <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook
+     * files.</p>
      */
     inline Studio& WithDefaultS3Location(const char* value) { SetDefaultS3Location(value); return *this;}
 

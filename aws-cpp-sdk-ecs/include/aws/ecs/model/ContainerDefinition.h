@@ -3101,7 +3101,7 @@ namespace Model
      * <code>--privileged</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> 
+     * tasks run on AWS Fargate.</p> 
      */
     inline bool GetPrivileged() const{ return m_privileged; }
 
@@ -3115,7 +3115,7 @@ namespace Model
      * <code>--privileged</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> 
+     * tasks run on AWS Fargate.</p> 
      */
     inline bool PrivilegedHasBeenSet() const { return m_privilegedHasBeenSet; }
 
@@ -3129,7 +3129,7 @@ namespace Model
      * <code>--privileged</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> 
+     * tasks run on AWS Fargate.</p> 
      */
     inline void SetPrivileged(bool value) { m_privilegedHasBeenSet = true; m_privileged = value; }
 
@@ -3143,7 +3143,7 @@ namespace Model
      * <code>--privileged</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> 
+     * tasks run on AWS Fargate.</p> 
      */
     inline ContainerDefinition& WithPrivileged(bool value) { SetPrivileged(value); return *this;}
 

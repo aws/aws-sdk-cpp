@@ -1594,6 +1594,35 @@ namespace Model
      */
     inline Service& WithPropagateTags(PropagateTags&& value) { SetPropagateTags(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Whether or not the execute command functionality is enabled for the service.
+     * If <code>true</code>, the execute command functionality is enabled for all
+     * containers in tasks as part of the service.</p>
+     */
+    inline bool GetEnableExecuteCommand() const{ return m_enableExecuteCommand; }
+
+    /**
+     * <p>Whether or not the execute command functionality is enabled for the service.
+     * If <code>true</code>, the execute command functionality is enabled for all
+     * containers in tasks as part of the service.</p>
+     */
+    inline bool EnableExecuteCommandHasBeenSet() const { return m_enableExecuteCommandHasBeenSet; }
+
+    /**
+     * <p>Whether or not the execute command functionality is enabled for the service.
+     * If <code>true</code>, the execute command functionality is enabled for all
+     * containers in tasks as part of the service.</p>
+     */
+    inline void SetEnableExecuteCommand(bool value) { m_enableExecuteCommandHasBeenSet = true; m_enableExecuteCommand = value; }
+
+    /**
+     * <p>Whether or not the execute command functionality is enabled for the service.
+     * If <code>true</code>, the execute command functionality is enabled for all
+     * containers in tasks as part of the service.</p>
+     */
+    inline Service& WithEnableExecuteCommand(bool value) { SetEnableExecuteCommand(value); return *this;}
+
   private:
 
     Aws::String m_serviceArn;
@@ -1682,6 +1711,9 @@ namespace Model
 
     PropagateTags m_propagateTags;
     bool m_propagateTagsHasBeenSet;
+
+    bool m_enableExecuteCommand;
+    bool m_enableExecuteCommandHasBeenSet;
   };
 
 } // namespace Model

@@ -700,6 +700,35 @@ namespace Model
 
 
     /**
+     * <p>Whether or not execute command functionality is enabled for this task. If
+     * <code>true</code>, this enables execute command functionality on all containers
+     * in the task.</p>
+     */
+    inline bool GetEnableExecuteCommand() const{ return m_enableExecuteCommand; }
+
+    /**
+     * <p>Whether or not execute command functionality is enabled for this task. If
+     * <code>true</code>, this enables execute command functionality on all containers
+     * in the task.</p>
+     */
+    inline bool EnableExecuteCommandHasBeenSet() const { return m_enableExecuteCommandHasBeenSet; }
+
+    /**
+     * <p>Whether or not execute command functionality is enabled for this task. If
+     * <code>true</code>, this enables execute command functionality on all containers
+     * in the task.</p>
+     */
+    inline void SetEnableExecuteCommand(bool value) { m_enableExecuteCommandHasBeenSet = true; m_enableExecuteCommand = value; }
+
+    /**
+     * <p>Whether or not execute command functionality is enabled for this task. If
+     * <code>true</code>, this enables execute command functionality on all containers
+     * in the task.</p>
+     */
+    inline Task& WithEnableExecuteCommand(bool value) { SetEnableExecuteCommand(value); return *this;}
+
+
+    /**
      * <p>The Unix timestamp for when the task execution stopped.</p>
      */
     inline const Aws::Utils::DateTime& GetExecutionStoppedAt() const{ return m_executionStoppedAt; }
@@ -1932,6 +1961,9 @@ namespace Model
 
     Aws::String m_desiredStatus;
     bool m_desiredStatusHasBeenSet;
+
+    bool m_enableExecuteCommand;
+    bool m_enableExecuteCommandHasBeenSet;
 
     Aws::Utils::DateTime m_executionStoppedAt;
     bool m_executionStoppedAtHasBeenSet;

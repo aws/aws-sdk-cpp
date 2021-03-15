@@ -655,7 +655,7 @@ namespace Model
      * <p>The launch type the tasks in the task set are using. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline const LaunchType& GetLaunchType() const{ return m_launchType; }
@@ -664,7 +664,7 @@ namespace Model
      * <p>The launch type the tasks in the task set are using. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
@@ -673,7 +673,7 @@ namespace Model
      * <p>The launch type the tasks in the task set are using. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
@@ -682,7 +682,7 @@ namespace Model
      * <p>The launch type the tasks in the task set are using. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
@@ -691,7 +691,7 @@ namespace Model
      * <p>The launch type the tasks in the task set are using. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline TaskSet& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
@@ -700,7 +700,7 @@ namespace Model
      * <p>The launch type the tasks in the task set are using. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline TaskSet& WithLaunchType(LaunchType&& value) { SetLaunchType(std::move(value)); return *this;}
@@ -748,89 +748,81 @@ namespace Model
 
 
     /**
-     * <p>The platform version on which the tasks in the task set are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * <p>The AWS Fargate platform version on which the tasks in the task set are
+     * running. A platform version is only specified for tasks run on AWS Fargate. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
 
     /**
-     * <p>The platform version on which the tasks in the task set are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * <p>The AWS Fargate platform version on which the tasks in the task set are
+     * running. A platform version is only specified for tasks run on AWS Fargate. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
 
     /**
-     * <p>The platform version on which the tasks in the task set are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * <p>The AWS Fargate platform version on which the tasks in the task set are
+     * running. A platform version is only specified for tasks run on AWS Fargate. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
     /**
-     * <p>The platform version on which the tasks in the task set are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * <p>The AWS Fargate platform version on which the tasks in the task set are
+     * running. A platform version is only specified for tasks run on AWS Fargate. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
 
     /**
-     * <p>The platform version on which the tasks in the task set are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * <p>The AWS Fargate platform version on which the tasks in the task set are
+     * running. A platform version is only specified for tasks run on AWS Fargate. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
 
     /**
-     * <p>The platform version on which the tasks in the task set are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * <p>The AWS Fargate platform version on which the tasks in the task set are
+     * running. A platform version is only specified for tasks run on AWS Fargate. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline TaskSet& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
 
     /**
-     * <p>The platform version on which the tasks in the task set are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * <p>The AWS Fargate platform version on which the tasks in the task set are
+     * running. A platform version is only specified for tasks run on AWS Fargate. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline TaskSet& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The platform version on which the tasks in the task set are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * <p>The AWS Fargate platform version on which the tasks in the task set are
+     * running. A platform version is only specified for tasks run on AWS Fargate. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline TaskSet& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
@@ -912,7 +904,7 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this task set.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p>
+     * discovery</a>.</p>
      */
     inline const Aws::Vector<ServiceRegistry>& GetServiceRegistries() const{ return m_serviceRegistries; }
 
@@ -920,7 +912,7 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this task set.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p>
+     * discovery</a>.</p>
      */
     inline bool ServiceRegistriesHasBeenSet() const { return m_serviceRegistriesHasBeenSet; }
 
@@ -928,7 +920,7 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this task set.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p>
+     * discovery</a>.</p>
      */
     inline void SetServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = value; }
 
@@ -936,7 +928,7 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this task set.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p>
+     * discovery</a>.</p>
      */
     inline void SetServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = std::move(value); }
 
@@ -944,7 +936,7 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this task set.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p>
+     * discovery</a>.</p>
      */
     inline TaskSet& WithServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { SetServiceRegistries(value); return *this;}
 
@@ -952,7 +944,7 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this task set.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p>
+     * discovery</a>.</p>
      */
     inline TaskSet& WithServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { SetServiceRegistries(std::move(value)); return *this;}
 
@@ -960,7 +952,7 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this task set.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p>
+     * discovery</a>.</p>
      */
     inline TaskSet& AddServiceRegistries(const ServiceRegistry& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(value); return *this; }
 
@@ -968,7 +960,7 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this task set.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p>
+     * discovery</a>.</p>
      */
     inline TaskSet& AddServiceRegistries(ServiceRegistry&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(std::move(value)); return *this; }
 

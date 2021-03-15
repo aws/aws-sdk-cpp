@@ -32,6 +32,8 @@ Task::Task() :
     m_cpuHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_desiredStatusHasBeenSet(false),
+    m_enableExecuteCommand(false),
+    m_enableExecuteCommandHasBeenSet(false),
     m_executionStoppedAtHasBeenSet(false),
     m_groupHasBeenSet(false),
     m_healthStatus(HealthStatus::NOT_SET),
@@ -74,6 +76,8 @@ Task::Task(JsonView jsonValue) :
     m_cpuHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_desiredStatusHasBeenSet(false),
+    m_enableExecuteCommand(false),
+    m_enableExecuteCommandHasBeenSet(false),
     m_executionStoppedAtHasBeenSet(false),
     m_groupHasBeenSet(false),
     m_healthStatus(HealthStatus::NOT_SET),
@@ -196,6 +200,13 @@ Task& Task::operator =(JsonView jsonValue)
     m_desiredStatus = jsonValue.GetString("desiredStatus");
 
     m_desiredStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("enableExecuteCommand"))
+  {
+    m_enableExecuteCommand = jsonValue.GetBool("enableExecuteCommand");
+
+    m_enableExecuteCommandHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("executionStoppedAt"))
@@ -439,6 +450,12 @@ JsonValue Task::Jsonize() const
   if(m_desiredStatusHasBeenSet)
   {
    payload.WithString("desiredStatus", m_desiredStatus);
+
+  }
+
+  if(m_enableExecuteCommandHasBeenSet)
+  {
+   payload.WithBool("enableExecuteCommand", m_enableExecuteCommand);
 
   }
 

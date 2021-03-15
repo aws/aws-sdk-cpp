@@ -44,194 +44,74 @@ namespace Model
 
 
     /**
-     * <p>The capacity provider strategy to use for the task.</p> <p>A capacity
-     * provider strategy consists of one or more capacity providers along with the
-     * <code>base</code> and <code>weight</code> to assign to them. A capacity provider
-     * must be associated with the cluster to be used in a capacity provider strategy.
-     * The <a>PutClusterCapacityProviders</a> API is used to associate a capacity
-     * provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-     * <code>UPDATING</code> status can be used.</p> <p>If a
+     * <p>The capacity provider strategy to use for the task.</p> <p>If a
      * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
-     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
-     * specifying a capacity provider that uses an Auto Scaling group, the capacity
-     * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
      */
     inline const Aws::Vector<CapacityProviderStrategyItem>& GetCapacityProviderStrategy() const{ return m_capacityProviderStrategy; }
 
     /**
-     * <p>The capacity provider strategy to use for the task.</p> <p>A capacity
-     * provider strategy consists of one or more capacity providers along with the
-     * <code>base</code> and <code>weight</code> to assign to them. A capacity provider
-     * must be associated with the cluster to be used in a capacity provider strategy.
-     * The <a>PutClusterCapacityProviders</a> API is used to associate a capacity
-     * provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-     * <code>UPDATING</code> status can be used.</p> <p>If a
+     * <p>The capacity provider strategy to use for the task.</p> <p>If a
      * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
-     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
-     * specifying a capacity provider that uses an Auto Scaling group, the capacity
-     * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
      */
     inline bool CapacityProviderStrategyHasBeenSet() const { return m_capacityProviderStrategyHasBeenSet; }
 
     /**
-     * <p>The capacity provider strategy to use for the task.</p> <p>A capacity
-     * provider strategy consists of one or more capacity providers along with the
-     * <code>base</code> and <code>weight</code> to assign to them. A capacity provider
-     * must be associated with the cluster to be used in a capacity provider strategy.
-     * The <a>PutClusterCapacityProviders</a> API is used to associate a capacity
-     * provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-     * <code>UPDATING</code> status can be used.</p> <p>If a
+     * <p>The capacity provider strategy to use for the task.</p> <p>If a
      * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
-     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
-     * specifying a capacity provider that uses an Auto Scaling group, the capacity
-     * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
      */
     inline void SetCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = value; }
 
     /**
-     * <p>The capacity provider strategy to use for the task.</p> <p>A capacity
-     * provider strategy consists of one or more capacity providers along with the
-     * <code>base</code> and <code>weight</code> to assign to them. A capacity provider
-     * must be associated with the cluster to be used in a capacity provider strategy.
-     * The <a>PutClusterCapacityProviders</a> API is used to associate a capacity
-     * provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-     * <code>UPDATING</code> status can be used.</p> <p>If a
+     * <p>The capacity provider strategy to use for the task.</p> <p>If a
      * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
-     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
-     * specifying a capacity provider that uses an Auto Scaling group, the capacity
-     * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
      */
     inline void SetCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = std::move(value); }
 
     /**
-     * <p>The capacity provider strategy to use for the task.</p> <p>A capacity
-     * provider strategy consists of one or more capacity providers along with the
-     * <code>base</code> and <code>weight</code> to assign to them. A capacity provider
-     * must be associated with the cluster to be used in a capacity provider strategy.
-     * The <a>PutClusterCapacityProviders</a> API is used to associate a capacity
-     * provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-     * <code>UPDATING</code> status can be used.</p> <p>If a
+     * <p>The capacity provider strategy to use for the task.</p> <p>If a
      * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
-     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
-     * specifying a capacity provider that uses an Auto Scaling group, the capacity
-     * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
      */
     inline RunTaskRequest& WithCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { SetCapacityProviderStrategy(value); return *this;}
 
     /**
-     * <p>The capacity provider strategy to use for the task.</p> <p>A capacity
-     * provider strategy consists of one or more capacity providers along with the
-     * <code>base</code> and <code>weight</code> to assign to them. A capacity provider
-     * must be associated with the cluster to be used in a capacity provider strategy.
-     * The <a>PutClusterCapacityProviders</a> API is used to associate a capacity
-     * provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-     * <code>UPDATING</code> status can be used.</p> <p>If a
+     * <p>The capacity provider strategy to use for the task.</p> <p>If a
      * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
-     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
-     * specifying a capacity provider that uses an Auto Scaling group, the capacity
-     * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
      */
     inline RunTaskRequest& WithCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { SetCapacityProviderStrategy(std::move(value)); return *this;}
 
     /**
-     * <p>The capacity provider strategy to use for the task.</p> <p>A capacity
-     * provider strategy consists of one or more capacity providers along with the
-     * <code>base</code> and <code>weight</code> to assign to them. A capacity provider
-     * must be associated with the cluster to be used in a capacity provider strategy.
-     * The <a>PutClusterCapacityProviders</a> API is used to associate a capacity
-     * provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-     * <code>UPDATING</code> status can be used.</p> <p>If a
+     * <p>The capacity provider strategy to use for the task.</p> <p>If a
      * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
-     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
-     * specifying a capacity provider that uses an Auto Scaling group, the capacity
-     * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
      */
     inline RunTaskRequest& AddCapacityProviderStrategy(const CapacityProviderStrategyItem& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(value); return *this; }
 
     /**
-     * <p>The capacity provider strategy to use for the task.</p> <p>A capacity
-     * provider strategy consists of one or more capacity providers along with the
-     * <code>base</code> and <code>weight</code> to assign to them. A capacity provider
-     * must be associated with the cluster to be used in a capacity provider strategy.
-     * The <a>PutClusterCapacityProviders</a> API is used to associate a capacity
-     * provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-     * <code>UPDATING</code> status can be used.</p> <p>If a
+     * <p>The capacity provider strategy to use for the task.</p> <p>If a
      * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
-     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
-     * specifying a capacity provider that uses an Auto Scaling group, the capacity
-     * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
      */
     inline RunTaskRequest& AddCapacityProviderStrategy(CapacityProviderStrategyItem&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(std::move(value)); return *this; }
 
@@ -356,6 +236,35 @@ namespace Model
 
 
     /**
+     * <p>Whether or not to enable the execute command functionality for the containers
+     * in this task. If <code>true</code>, this enables execute command functionality
+     * on all containers in the task.</p>
+     */
+    inline bool GetEnableExecuteCommand() const{ return m_enableExecuteCommand; }
+
+    /**
+     * <p>Whether or not to enable the execute command functionality for the containers
+     * in this task. If <code>true</code>, this enables execute command functionality
+     * on all containers in the task.</p>
+     */
+    inline bool EnableExecuteCommandHasBeenSet() const { return m_enableExecuteCommandHasBeenSet; }
+
+    /**
+     * <p>Whether or not to enable the execute command functionality for the containers
+     * in this task. If <code>true</code>, this enables execute command functionality
+     * on all containers in the task.</p>
+     */
+    inline void SetEnableExecuteCommand(bool value) { m_enableExecuteCommandHasBeenSet = true; m_enableExecuteCommand = value; }
+
+    /**
+     * <p>Whether or not to enable the execute command functionality for the containers
+     * in this task. If <code>true</code>, this enables execute command functionality
+     * on all containers in the task.</p>
+     */
+    inline RunTaskRequest& WithEnableExecuteCommand(bool value) { SetEnableExecuteCommand(value); return *this;}
+
+
+    /**
      * <p>The name of the task group to associate with the task. The default value is
      * the family name of the task definition (for example, family:my-family-name).</p>
      */
@@ -405,55 +314,91 @@ namespace Model
 
 
     /**
-     * <p>The launch type on which to run your task. For more information, see <a
+     * <p>The launch type on which to run your task. The accepted values are
+     * <code>FARGATE</code> and <code>EC2</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
+     * Guide</i>.</p> <p>When a value of <code>FARGATE</code> is specified, your tasks
+     * are launched on AWS Fargate On-Demand infrastructure. To use Fargate Spot, you
+     * must use a capacity provider strategy with the <code>FARGATE_SPOT</code>
+     * capacity provider.</p> <p>When a value of <code>EC2</code> is specified, your
+     * tasks are launched on Amazon EC2 instances registered to your cluster.</p> <p>If
+     * a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
      */
     inline const LaunchType& GetLaunchType() const{ return m_launchType; }
 
     /**
-     * <p>The launch type on which to run your task. For more information, see <a
+     * <p>The launch type on which to run your task. The accepted values are
+     * <code>FARGATE</code> and <code>EC2</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
+     * Guide</i>.</p> <p>When a value of <code>FARGATE</code> is specified, your tasks
+     * are launched on AWS Fargate On-Demand infrastructure. To use Fargate Spot, you
+     * must use a capacity provider strategy with the <code>FARGATE_SPOT</code>
+     * capacity provider.</p> <p>When a value of <code>EC2</code> is specified, your
+     * tasks are launched on Amazon EC2 instances registered to your cluster.</p> <p>If
+     * a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
      */
     inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
 
     /**
-     * <p>The launch type on which to run your task. For more information, see <a
+     * <p>The launch type on which to run your task. The accepted values are
+     * <code>FARGATE</code> and <code>EC2</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
+     * Guide</i>.</p> <p>When a value of <code>FARGATE</code> is specified, your tasks
+     * are launched on AWS Fargate On-Demand infrastructure. To use Fargate Spot, you
+     * must use a capacity provider strategy with the <code>FARGATE_SPOT</code>
+     * capacity provider.</p> <p>When a value of <code>EC2</code> is specified, your
+     * tasks are launched on Amazon EC2 instances registered to your cluster.</p> <p>If
+     * a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
      */
     inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
 
     /**
-     * <p>The launch type on which to run your task. For more information, see <a
+     * <p>The launch type on which to run your task. The accepted values are
+     * <code>FARGATE</code> and <code>EC2</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
+     * Guide</i>.</p> <p>When a value of <code>FARGATE</code> is specified, your tasks
+     * are launched on AWS Fargate On-Demand infrastructure. To use Fargate Spot, you
+     * must use a capacity provider strategy with the <code>FARGATE_SPOT</code>
+     * capacity provider.</p> <p>When a value of <code>EC2</code> is specified, your
+     * tasks are launched on Amazon EC2 instances registered to your cluster.</p> <p>If
+     * a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
      */
     inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
 
     /**
-     * <p>The launch type on which to run your task. For more information, see <a
+     * <p>The launch type on which to run your task. The accepted values are
+     * <code>FARGATE</code> and <code>EC2</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
+     * Guide</i>.</p> <p>When a value of <code>FARGATE</code> is specified, your tasks
+     * are launched on AWS Fargate On-Demand infrastructure. To use Fargate Spot, you
+     * must use a capacity provider strategy with the <code>FARGATE_SPOT</code>
+     * capacity provider.</p> <p>When a value of <code>EC2</code> is specified, your
+     * tasks are launched on Amazon EC2 instances registered to your cluster.</p> <p>If
+     * a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
      */
     inline RunTaskRequest& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
 
     /**
-     * <p>The launch type on which to run your task. For more information, see <a
+     * <p>The launch type on which to run your task. The accepted values are
+     * <code>FARGATE</code> and <code>EC2</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
+     * Guide</i>.</p> <p>When a value of <code>FARGATE</code> is specified, your tasks
+     * are launched on AWS Fargate On-Demand infrastructure. To use Fargate Spot, you
+     * must use a capacity provider strategy with the <code>FARGATE_SPOT</code>
+     * capacity provider.</p> <p>When a value of <code>EC2</code> is specified, your
+     * tasks are launched on Amazon EC2 instances registered to your cluster.</p> <p>If
+     * a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
      */
     inline RunTaskRequest& WithLaunchType(LaunchType&& value) { SetLaunchType(std::move(value)); return *this;}
@@ -1245,6 +1190,9 @@ namespace Model
 
     bool m_enableECSManagedTags;
     bool m_enableECSManagedTagsHasBeenSet;
+
+    bool m_enableExecuteCommand;
+    bool m_enableExecuteCommandHasBeenSet;
 
     Aws::String m_group;
     bool m_groupHasBeenSet;

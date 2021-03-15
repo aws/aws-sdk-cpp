@@ -19,6 +19,8 @@ RunTaskRequest::RunTaskRequest() :
     m_countHasBeenSet(false),
     m_enableECSManagedTags(false),
     m_enableECSManagedTagsHasBeenSet(false),
+    m_enableExecuteCommand(false),
+    m_enableExecuteCommandHasBeenSet(false),
     m_groupHasBeenSet(false),
     m_launchType(LaunchType::NOT_SET),
     m_launchTypeHasBeenSet(false),
@@ -66,6 +68,12 @@ Aws::String RunTaskRequest::SerializePayload() const
   if(m_enableECSManagedTagsHasBeenSet)
   {
    payload.WithBool("enableECSManagedTags", m_enableECSManagedTags);
+
+  }
+
+  if(m_enableExecuteCommandHasBeenSet)
+  {
+   payload.WithBool("enableExecuteCommand", m_enableExecuteCommand);
 
   }
 

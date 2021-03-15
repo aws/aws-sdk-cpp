@@ -21,6 +21,7 @@ namespace Model
 Cluster::Cluster() : 
     m_clusterArnHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
+    m_configurationHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_registeredContainerInstancesCount(0),
     m_registeredContainerInstancesCountHasBeenSet(false),
@@ -43,6 +44,7 @@ Cluster::Cluster() :
 Cluster::Cluster(JsonView jsonValue) : 
     m_clusterArnHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
+    m_configurationHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_registeredContainerInstancesCount(0),
     m_registeredContainerInstancesCountHasBeenSet(false),
@@ -77,6 +79,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_clusterName = jsonValue.GetString("clusterName");
 
     m_clusterNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("configuration"))
+  {
+    m_configuration = jsonValue.GetObject("configuration");
+
+    m_configurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -197,6 +206,12 @@ JsonValue Cluster::Jsonize() const
   if(m_clusterNameHasBeenSet)
   {
    payload.WithString("clusterName", m_clusterName);
+
+  }
+
+  if(m_configurationHasBeenSet)
+  {
+   payload.WithObject("configuration", m_configuration.Jsonize());
 
   }
 

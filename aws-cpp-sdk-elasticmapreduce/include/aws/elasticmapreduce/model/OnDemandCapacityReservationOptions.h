@@ -7,6 +7,7 @@
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/elasticmapreduce/model/OnDemandCapacityReservationUsageStrategy.h>
 #include <aws/elasticmapreduce/model/OnDemandCapacityReservationPreference.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -190,6 +191,55 @@ namespace Model
      */
     inline OnDemandCapacityReservationOptions& WithCapacityReservationPreference(OnDemandCapacityReservationPreference&& value) { SetCapacityReservationPreference(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ARN of the Capacity Reservation resource group in which to run the
+     * instance.</p>
+     */
+    inline const Aws::String& GetCapacityReservationResourceGroupArn() const{ return m_capacityReservationResourceGroupArn; }
+
+    /**
+     * <p>The ARN of the Capacity Reservation resource group in which to run the
+     * instance.</p>
+     */
+    inline bool CapacityReservationResourceGroupArnHasBeenSet() const { return m_capacityReservationResourceGroupArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the Capacity Reservation resource group in which to run the
+     * instance.</p>
+     */
+    inline void SetCapacityReservationResourceGroupArn(const Aws::String& value) { m_capacityReservationResourceGroupArnHasBeenSet = true; m_capacityReservationResourceGroupArn = value; }
+
+    /**
+     * <p>The ARN of the Capacity Reservation resource group in which to run the
+     * instance.</p>
+     */
+    inline void SetCapacityReservationResourceGroupArn(Aws::String&& value) { m_capacityReservationResourceGroupArnHasBeenSet = true; m_capacityReservationResourceGroupArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the Capacity Reservation resource group in which to run the
+     * instance.</p>
+     */
+    inline void SetCapacityReservationResourceGroupArn(const char* value) { m_capacityReservationResourceGroupArnHasBeenSet = true; m_capacityReservationResourceGroupArn.assign(value); }
+
+    /**
+     * <p>The ARN of the Capacity Reservation resource group in which to run the
+     * instance.</p>
+     */
+    inline OnDemandCapacityReservationOptions& WithCapacityReservationResourceGroupArn(const Aws::String& value) { SetCapacityReservationResourceGroupArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the Capacity Reservation resource group in which to run the
+     * instance.</p>
+     */
+    inline OnDemandCapacityReservationOptions& WithCapacityReservationResourceGroupArn(Aws::String&& value) { SetCapacityReservationResourceGroupArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the Capacity Reservation resource group in which to run the
+     * instance.</p>
+     */
+    inline OnDemandCapacityReservationOptions& WithCapacityReservationResourceGroupArn(const char* value) { SetCapacityReservationResourceGroupArn(value); return *this;}
+
   private:
 
     OnDemandCapacityReservationUsageStrategy m_usageStrategy;
@@ -197,6 +247,9 @@ namespace Model
 
     OnDemandCapacityReservationPreference m_capacityReservationPreference;
     bool m_capacityReservationPreferenceHasBeenSet;
+
+    Aws::String m_capacityReservationResourceGroupArn;
+    bool m_capacityReservationResourceGroupArnHasBeenSet;
   };
 
 } // namespace Model

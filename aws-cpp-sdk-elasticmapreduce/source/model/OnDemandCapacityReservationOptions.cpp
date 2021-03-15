@@ -22,7 +22,8 @@ OnDemandCapacityReservationOptions::OnDemandCapacityReservationOptions() :
     m_usageStrategy(OnDemandCapacityReservationUsageStrategy::NOT_SET),
     m_usageStrategyHasBeenSet(false),
     m_capacityReservationPreference(OnDemandCapacityReservationPreference::NOT_SET),
-    m_capacityReservationPreferenceHasBeenSet(false)
+    m_capacityReservationPreferenceHasBeenSet(false),
+    m_capacityReservationResourceGroupArnHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ OnDemandCapacityReservationOptions::OnDemandCapacityReservationOptions(JsonView 
     m_usageStrategy(OnDemandCapacityReservationUsageStrategy::NOT_SET),
     m_usageStrategyHasBeenSet(false),
     m_capacityReservationPreference(OnDemandCapacityReservationPreference::NOT_SET),
-    m_capacityReservationPreferenceHasBeenSet(false)
+    m_capacityReservationPreferenceHasBeenSet(false),
+    m_capacityReservationResourceGroupArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +53,13 @@ OnDemandCapacityReservationOptions& OnDemandCapacityReservationOptions::operator
     m_capacityReservationPreferenceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CapacityReservationResourceGroupArn"))
+  {
+    m_capacityReservationResourceGroupArn = jsonValue.GetString("CapacityReservationResourceGroupArn");
+
+    m_capacityReservationResourceGroupArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -66,6 +75,12 @@ JsonValue OnDemandCapacityReservationOptions::Jsonize() const
   if(m_capacityReservationPreferenceHasBeenSet)
   {
    payload.WithString("CapacityReservationPreference", OnDemandCapacityReservationPreferenceMapper::GetNameForOnDemandCapacityReservationPreference(m_capacityReservationPreference));
+  }
+
+  if(m_capacityReservationResourceGroupArnHasBeenSet)
+  {
+   payload.WithString("CapacityReservationResourceGroupArn", m_capacityReservationResourceGroupArn);
+
   }
 
   return payload;

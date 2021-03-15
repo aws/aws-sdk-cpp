@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>A word or phrase transcribed from the input audio.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>A word, phrase, or punctuation mark that is transcribed from the input
+   * audio.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/Item">AWS
    * API Reference</a></p>
    */
@@ -250,6 +250,31 @@ namespace Model
      */
     inline Item& WithSpeaker(const char* value) { SetSpeaker(value); return *this;}
 
+
+    /**
+     * <p>A value between 0 and 1 for an item that is a confidence score that Amazon
+     * Transcribe assigns to each word or phrase that it transcribes.</p>
+     */
+    inline double GetConfidence() const{ return m_confidence; }
+
+    /**
+     * <p>A value between 0 and 1 for an item that is a confidence score that Amazon
+     * Transcribe assigns to each word or phrase that it transcribes.</p>
+     */
+    inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
+
+    /**
+     * <p>A value between 0 and 1 for an item that is a confidence score that Amazon
+     * Transcribe assigns to each word or phrase that it transcribes.</p>
+     */
+    inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
+
+    /**
+     * <p>A value between 0 and 1 for an item that is a confidence score that Amazon
+     * Transcribe assigns to each word or phrase that it transcribes.</p>
+     */
+    inline Item& WithConfidence(double value) { SetConfidence(value); return *this;}
+
   private:
 
     double m_startTime;
@@ -269,6 +294,9 @@ namespace Model
 
     Aws::String m_speaker;
     bool m_speakerHasBeenSet;
+
+    double m_confidence;
+    bool m_confidenceHasBeenSet;
   };
 
 } // namespace Model
