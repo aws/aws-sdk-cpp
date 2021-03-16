@@ -24,7 +24,8 @@ EC2InstanceLimit::EC2InstanceLimit() :
     m_currentInstances(0),
     m_currentInstancesHasBeenSet(false),
     m_instanceLimit(0),
-    m_instanceLimitHasBeenSet(false)
+    m_instanceLimitHasBeenSet(false),
+    m_locationHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ EC2InstanceLimit::EC2InstanceLimit(JsonView jsonValue) :
     m_currentInstances(0),
     m_currentInstancesHasBeenSet(false),
     m_instanceLimit(0),
-    m_instanceLimitHasBeenSet(false)
+    m_instanceLimitHasBeenSet(false),
+    m_locationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -62,6 +64,13 @@ EC2InstanceLimit& EC2InstanceLimit::operator =(JsonView jsonValue)
     m_instanceLimitHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Location"))
+  {
+    m_location = jsonValue.GetString("Location");
+
+    m_locationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -83,6 +92,12 @@ JsonValue EC2InstanceLimit::Jsonize() const
   if(m_instanceLimitHasBeenSet)
   {
    payload.WithInteger("InstanceLimit", m_instanceLimit);
+
+  }
+
+  if(m_locationHasBeenSet)
+  {
+   payload.WithString("Location", m_location);
 
   }
 

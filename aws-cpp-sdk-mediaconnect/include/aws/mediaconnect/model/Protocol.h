@@ -20,7 +20,8 @@ namespace Model
     rtp_fec,
     rtp,
     zixi_pull,
-    rist
+    rist,
+    srt_listener
   };
 
 namespace ProtocolMapper

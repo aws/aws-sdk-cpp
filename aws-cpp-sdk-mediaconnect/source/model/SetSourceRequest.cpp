@@ -28,6 +28,8 @@ SetSourceRequest::SetSourceRequest() :
     m_maxBitrateHasBeenSet(false),
     m_maxLatency(0),
     m_maxLatencyHasBeenSet(false),
+    m_minLatency(0),
+    m_minLatencyHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_protocol(Protocol::NOT_SET),
     m_protocolHasBeenSet(false),
@@ -47,6 +49,8 @@ SetSourceRequest::SetSourceRequest(JsonView jsonValue) :
     m_maxBitrateHasBeenSet(false),
     m_maxLatency(0),
     m_maxLatencyHasBeenSet(false),
+    m_minLatency(0),
+    m_minLatencyHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_protocol(Protocol::NOT_SET),
     m_protocolHasBeenSet(false),
@@ -99,6 +103,13 @@ SetSourceRequest& SetSourceRequest::operator =(JsonView jsonValue)
     m_maxLatency = jsonValue.GetInteger("maxLatency");
 
     m_maxLatencyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("minLatency"))
+  {
+    m_minLatency = jsonValue.GetInteger("minLatency");
+
+    m_minLatencyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -176,6 +187,12 @@ JsonValue SetSourceRequest::Jsonize() const
   if(m_maxLatencyHasBeenSet)
   {
    payload.WithInteger("maxLatency", m_maxLatency);
+
+  }
+
+  if(m_minLatencyHasBeenSet)
+  {
+   payload.WithInteger("minLatency", m_minLatency);
 
   }
 

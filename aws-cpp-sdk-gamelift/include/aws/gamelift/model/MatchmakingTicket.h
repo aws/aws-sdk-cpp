@@ -146,7 +146,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift matchmaking configuration resource that is used
      * with this ticket.</p>
      */
@@ -154,7 +154,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift matchmaking configuration resource that is used
      * with this ticket.</p>
      */
@@ -162,7 +162,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift matchmaking configuration resource that is used
      * with this ticket.</p>
      */
@@ -170,7 +170,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift matchmaking configuration resource that is used
      * with this ticket.</p>
      */
@@ -178,7 +178,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift matchmaking configuration resource that is used
      * with this ticket.</p>
      */
@@ -186,7 +186,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift matchmaking configuration resource that is used
      * with this ticket.</p>
      */
@@ -194,7 +194,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift matchmaking configuration resource that is used
      * with this ticket.</p>
      */
@@ -202,7 +202,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift matchmaking configuration resource that is used
      * with this ticket.</p>
      */
@@ -455,42 +455,42 @@ namespace Model
     /**
      * <p>Time stamp indicating when this matchmaking request was received. Format is a
      * number expressed in Unix time as milliseconds (for example
-     * "1469498468.057").</p>
+     * <code>"1469498468.057"</code>).</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
      * <p>Time stamp indicating when this matchmaking request was received. Format is a
      * number expressed in Unix time as milliseconds (for example
-     * "1469498468.057").</p>
+     * <code>"1469498468.057"</code>).</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
      * <p>Time stamp indicating when this matchmaking request was received. Format is a
      * number expressed in Unix time as milliseconds (for example
-     * "1469498468.057").</p>
+     * <code>"1469498468.057"</code>).</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>Time stamp indicating when this matchmaking request was received. Format is a
      * number expressed in Unix time as milliseconds (for example
-     * "1469498468.057").</p>
+     * <code>"1469498468.057"</code>).</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * <p>Time stamp indicating when this matchmaking request was received. Format is a
      * number expressed in Unix time as milliseconds (for example
-     * "1469498468.057").</p>
+     * <code>"1469498468.057"</code>).</p>
      */
     inline MatchmakingTicket& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
      * <p>Time stamp indicating when this matchmaking request was received. Format is a
      * number expressed in Unix time as milliseconds (for example
-     * "1469498468.057").</p>
+     * <code>"1469498468.057"</code>).</p>
      */
     inline MatchmakingTicket& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
@@ -498,42 +498,42 @@ namespace Model
     /**
      * <p>Time stamp indicating when this matchmaking request stopped being processed
      * due to success, failure, or cancellation. Format is a number expressed in Unix
-     * time as milliseconds (for example "1469498468.057").</p>
+     * time as milliseconds (for example <code>"1469498468.057"</code>).</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
      * <p>Time stamp indicating when this matchmaking request stopped being processed
      * due to success, failure, or cancellation. Format is a number expressed in Unix
-     * time as milliseconds (for example "1469498468.057").</p>
+     * time as milliseconds (for example <code>"1469498468.057"</code>).</p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
      * <p>Time stamp indicating when this matchmaking request stopped being processed
      * due to success, failure, or cancellation. Format is a number expressed in Unix
-     * time as milliseconds (for example "1469498468.057").</p>
+     * time as milliseconds (for example <code>"1469498468.057"</code>).</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
      * <p>Time stamp indicating when this matchmaking request stopped being processed
      * due to success, failure, or cancellation. Format is a number expressed in Unix
-     * time as milliseconds (for example "1469498468.057").</p>
+     * time as milliseconds (for example <code>"1469498468.057"</code>).</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p>Time stamp indicating when this matchmaking request stopped being processed
      * due to success, failure, or cancellation. Format is a number expressed in Unix
-     * time as milliseconds (for example "1469498468.057").</p>
+     * time as milliseconds (for example <code>"1469498468.057"</code>).</p>
      */
     inline MatchmakingTicket& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
      * <p>Time stamp indicating when this matchmaking request stopped being processed
      * due to success, failure, or cancellation. Format is a number expressed in Unix
-     * time as milliseconds (for example "1469498468.057").</p>
+     * time as milliseconds (for example <code>"1469498468.057"</code>).</p>
      */
     inline MatchmakingTicket& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 

@@ -23,6 +23,8 @@ UpdateFlowSourceRequest::UpdateFlowSourceRequest() :
     m_maxBitrateHasBeenSet(false),
     m_maxLatency(0),
     m_maxLatencyHasBeenSet(false),
+    m_minLatency(0),
+    m_minLatencyHasBeenSet(false),
     m_protocol(Protocol::NOT_SET),
     m_protocolHasBeenSet(false),
     m_sourceArnHasBeenSet(false),
@@ -69,6 +71,12 @@ Aws::String UpdateFlowSourceRequest::SerializePayload() const
   if(m_maxLatencyHasBeenSet)
   {
    payload.WithInteger("maxLatency", m_maxLatency);
+
+  }
+
+  if(m_minLatencyHasBeenSet)
+  {
+   payload.WithInteger("minLatency", m_minLatency);
 
   }
 

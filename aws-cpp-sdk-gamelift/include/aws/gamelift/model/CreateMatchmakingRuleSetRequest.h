@@ -40,56 +40,56 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for a matchmaking rule set. A matchmaking configuration
+     * <p>A unique identifier for the matchmaking rule set. A matchmaking configuration
      * identifies the rule set it uses by this name value. Note that the rule set name
      * is different from the optional <code>name</code> field in the rule set body.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>A unique identifier for a matchmaking rule set. A matchmaking configuration
+     * <p>A unique identifier for the matchmaking rule set. A matchmaking configuration
      * identifies the rule set it uses by this name value. Note that the rule set name
      * is different from the optional <code>name</code> field in the rule set body.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>A unique identifier for a matchmaking rule set. A matchmaking configuration
+     * <p>A unique identifier for the matchmaking rule set. A matchmaking configuration
      * identifies the rule set it uses by this name value. Note that the rule set name
      * is different from the optional <code>name</code> field in the rule set body.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>A unique identifier for a matchmaking rule set. A matchmaking configuration
+     * <p>A unique identifier for the matchmaking rule set. A matchmaking configuration
      * identifies the rule set it uses by this name value. Note that the rule set name
      * is different from the optional <code>name</code> field in the rule set body.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>A unique identifier for a matchmaking rule set. A matchmaking configuration
+     * <p>A unique identifier for the matchmaking rule set. A matchmaking configuration
      * identifies the rule set it uses by this name value. Note that the rule set name
      * is different from the optional <code>name</code> field in the rule set body.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>A unique identifier for a matchmaking rule set. A matchmaking configuration
+     * <p>A unique identifier for the matchmaking rule set. A matchmaking configuration
      * identifies the rule set it uses by this name value. Note that the rule set name
      * is different from the optional <code>name</code> field in the rule set body.</p>
      */
     inline CreateMatchmakingRuleSetRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>A unique identifier for a matchmaking rule set. A matchmaking configuration
+     * <p>A unique identifier for the matchmaking rule set. A matchmaking configuration
      * identifies the rule set it uses by this name value. Note that the rule set name
      * is different from the optional <code>name</code> field in the rule set body.</p>
      */
     inline CreateMatchmakingRuleSetRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for a matchmaking rule set. A matchmaking configuration
+     * <p>A unique identifier for the matchmaking rule set. A matchmaking configuration
      * identifies the rule set it uses by this name value. Note that the rule set name
      * is different from the optional <code>name</code> field in the rule set body.</p>
      */

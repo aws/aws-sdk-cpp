@@ -8,6 +8,8 @@
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/gamelift/model/FilterConfiguration.h>
+#include <aws/gamelift/model/PriorityConfiguration.h>
 #include <aws/gamelift/model/PlayerLatencyPolicy.h>
 #include <aws/gamelift/model/GameSessionQueueDestination.h>
 #include <aws/gamelift/model/Tag.h>
@@ -120,173 +122,247 @@ namespace Model
 
 
     /**
-     * <p>A collection of latency policies to apply when processing game sessions
-     * placement requests with player latency information. Multiple policies are
-     * evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, the policy is enforced at the start of the
-     * game session placement for the duration period. With multiple policies, each
-     * policy is enforced consecutively for its duration period. For example, a queue
-     * might enforce a 60-second policy followed by a 120-second policy, and then no
-     * policy for the remainder of the placement. A player latency policy must set a
-     * value for <code>MaximumIndividualPlayerLatencyMilliseconds</code>. If none is
-     * set, this API request fails.</p>
+     * <p>A set of policies that act as a sliding cap on player latency. FleetIQ works
+     * to deliver low latency for most players in a game session. These policies ensure
+     * that no individual player can be placed into a game with unreasonably high
+     * latency. Use multiple policies to gradually relax latency requirements a step at
+     * a time. Multiple policies are applied based on their maximum allowed latency,
+     * starting with the lowest value.</p>
      */
     inline const Aws::Vector<PlayerLatencyPolicy>& GetPlayerLatencyPolicies() const{ return m_playerLatencyPolicies; }
 
     /**
-     * <p>A collection of latency policies to apply when processing game sessions
-     * placement requests with player latency information. Multiple policies are
-     * evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, the policy is enforced at the start of the
-     * game session placement for the duration period. With multiple policies, each
-     * policy is enforced consecutively for its duration period. For example, a queue
-     * might enforce a 60-second policy followed by a 120-second policy, and then no
-     * policy for the remainder of the placement. A player latency policy must set a
-     * value for <code>MaximumIndividualPlayerLatencyMilliseconds</code>. If none is
-     * set, this API request fails.</p>
+     * <p>A set of policies that act as a sliding cap on player latency. FleetIQ works
+     * to deliver low latency for most players in a game session. These policies ensure
+     * that no individual player can be placed into a game with unreasonably high
+     * latency. Use multiple policies to gradually relax latency requirements a step at
+     * a time. Multiple policies are applied based on their maximum allowed latency,
+     * starting with the lowest value.</p>
      */
     inline bool PlayerLatencyPoliciesHasBeenSet() const { return m_playerLatencyPoliciesHasBeenSet; }
 
     /**
-     * <p>A collection of latency policies to apply when processing game sessions
-     * placement requests with player latency information. Multiple policies are
-     * evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, the policy is enforced at the start of the
-     * game session placement for the duration period. With multiple policies, each
-     * policy is enforced consecutively for its duration period. For example, a queue
-     * might enforce a 60-second policy followed by a 120-second policy, and then no
-     * policy for the remainder of the placement. A player latency policy must set a
-     * value for <code>MaximumIndividualPlayerLatencyMilliseconds</code>. If none is
-     * set, this API request fails.</p>
+     * <p>A set of policies that act as a sliding cap on player latency. FleetIQ works
+     * to deliver low latency for most players in a game session. These policies ensure
+     * that no individual player can be placed into a game with unreasonably high
+     * latency. Use multiple policies to gradually relax latency requirements a step at
+     * a time. Multiple policies are applied based on their maximum allowed latency,
+     * starting with the lowest value.</p>
      */
     inline void SetPlayerLatencyPolicies(const Aws::Vector<PlayerLatencyPolicy>& value) { m_playerLatencyPoliciesHasBeenSet = true; m_playerLatencyPolicies = value; }
 
     /**
-     * <p>A collection of latency policies to apply when processing game sessions
-     * placement requests with player latency information. Multiple policies are
-     * evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, the policy is enforced at the start of the
-     * game session placement for the duration period. With multiple policies, each
-     * policy is enforced consecutively for its duration period. For example, a queue
-     * might enforce a 60-second policy followed by a 120-second policy, and then no
-     * policy for the remainder of the placement. A player latency policy must set a
-     * value for <code>MaximumIndividualPlayerLatencyMilliseconds</code>. If none is
-     * set, this API request fails.</p>
+     * <p>A set of policies that act as a sliding cap on player latency. FleetIQ works
+     * to deliver low latency for most players in a game session. These policies ensure
+     * that no individual player can be placed into a game with unreasonably high
+     * latency. Use multiple policies to gradually relax latency requirements a step at
+     * a time. Multiple policies are applied based on their maximum allowed latency,
+     * starting with the lowest value.</p>
      */
     inline void SetPlayerLatencyPolicies(Aws::Vector<PlayerLatencyPolicy>&& value) { m_playerLatencyPoliciesHasBeenSet = true; m_playerLatencyPolicies = std::move(value); }
 
     /**
-     * <p>A collection of latency policies to apply when processing game sessions
-     * placement requests with player latency information. Multiple policies are
-     * evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, the policy is enforced at the start of the
-     * game session placement for the duration period. With multiple policies, each
-     * policy is enforced consecutively for its duration period. For example, a queue
-     * might enforce a 60-second policy followed by a 120-second policy, and then no
-     * policy for the remainder of the placement. A player latency policy must set a
-     * value for <code>MaximumIndividualPlayerLatencyMilliseconds</code>. If none is
-     * set, this API request fails.</p>
+     * <p>A set of policies that act as a sliding cap on player latency. FleetIQ works
+     * to deliver low latency for most players in a game session. These policies ensure
+     * that no individual player can be placed into a game with unreasonably high
+     * latency. Use multiple policies to gradually relax latency requirements a step at
+     * a time. Multiple policies are applied based on their maximum allowed latency,
+     * starting with the lowest value.</p>
      */
     inline CreateGameSessionQueueRequest& WithPlayerLatencyPolicies(const Aws::Vector<PlayerLatencyPolicy>& value) { SetPlayerLatencyPolicies(value); return *this;}
 
     /**
-     * <p>A collection of latency policies to apply when processing game sessions
-     * placement requests with player latency information. Multiple policies are
-     * evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, the policy is enforced at the start of the
-     * game session placement for the duration period. With multiple policies, each
-     * policy is enforced consecutively for its duration period. For example, a queue
-     * might enforce a 60-second policy followed by a 120-second policy, and then no
-     * policy for the remainder of the placement. A player latency policy must set a
-     * value for <code>MaximumIndividualPlayerLatencyMilliseconds</code>. If none is
-     * set, this API request fails.</p>
+     * <p>A set of policies that act as a sliding cap on player latency. FleetIQ works
+     * to deliver low latency for most players in a game session. These policies ensure
+     * that no individual player can be placed into a game with unreasonably high
+     * latency. Use multiple policies to gradually relax latency requirements a step at
+     * a time. Multiple policies are applied based on their maximum allowed latency,
+     * starting with the lowest value.</p>
      */
     inline CreateGameSessionQueueRequest& WithPlayerLatencyPolicies(Aws::Vector<PlayerLatencyPolicy>&& value) { SetPlayerLatencyPolicies(std::move(value)); return *this;}
 
     /**
-     * <p>A collection of latency policies to apply when processing game sessions
-     * placement requests with player latency information. Multiple policies are
-     * evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, the policy is enforced at the start of the
-     * game session placement for the duration period. With multiple policies, each
-     * policy is enforced consecutively for its duration period. For example, a queue
-     * might enforce a 60-second policy followed by a 120-second policy, and then no
-     * policy for the remainder of the placement. A player latency policy must set a
-     * value for <code>MaximumIndividualPlayerLatencyMilliseconds</code>. If none is
-     * set, this API request fails.</p>
+     * <p>A set of policies that act as a sliding cap on player latency. FleetIQ works
+     * to deliver low latency for most players in a game session. These policies ensure
+     * that no individual player can be placed into a game with unreasonably high
+     * latency. Use multiple policies to gradually relax latency requirements a step at
+     * a time. Multiple policies are applied based on their maximum allowed latency,
+     * starting with the lowest value.</p>
      */
     inline CreateGameSessionQueueRequest& AddPlayerLatencyPolicies(const PlayerLatencyPolicy& value) { m_playerLatencyPoliciesHasBeenSet = true; m_playerLatencyPolicies.push_back(value); return *this; }
 
     /**
-     * <p>A collection of latency policies to apply when processing game sessions
-     * placement requests with player latency information. Multiple policies are
-     * evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, the policy is enforced at the start of the
-     * game session placement for the duration period. With multiple policies, each
-     * policy is enforced consecutively for its duration period. For example, a queue
-     * might enforce a 60-second policy followed by a 120-second policy, and then no
-     * policy for the remainder of the placement. A player latency policy must set a
-     * value for <code>MaximumIndividualPlayerLatencyMilliseconds</code>. If none is
-     * set, this API request fails.</p>
+     * <p>A set of policies that act as a sliding cap on player latency. FleetIQ works
+     * to deliver low latency for most players in a game session. These policies ensure
+     * that no individual player can be placed into a game with unreasonably high
+     * latency. Use multiple policies to gradually relax latency requirements a step at
+     * a time. Multiple policies are applied based on their maximum allowed latency,
+     * starting with the lowest value.</p>
      */
     inline CreateGameSessionQueueRequest& AddPlayerLatencyPolicies(PlayerLatencyPolicy&& value) { m_playerLatencyPoliciesHasBeenSet = true; m_playerLatencyPolicies.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A list of fleets that can be used to fulfill game session placement requests
-     * in the queue. Fleets are identified by either a fleet ARN or a fleet alias ARN.
-     * Destinations are listed in default preference order.</p>
+     * <p>A list of fleets and/or fleet aliases that can be used to fulfill game
+     * session placement requests in the queue. Destinations are identified by either a
+     * fleet ARN or a fleet alias ARN, and are listed in order of placement
+     * preference.</p>
      */
     inline const Aws::Vector<GameSessionQueueDestination>& GetDestinations() const{ return m_destinations; }
 
     /**
-     * <p>A list of fleets that can be used to fulfill game session placement requests
-     * in the queue. Fleets are identified by either a fleet ARN or a fleet alias ARN.
-     * Destinations are listed in default preference order.</p>
+     * <p>A list of fleets and/or fleet aliases that can be used to fulfill game
+     * session placement requests in the queue. Destinations are identified by either a
+     * fleet ARN or a fleet alias ARN, and are listed in order of placement
+     * preference.</p>
      */
     inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
 
     /**
-     * <p>A list of fleets that can be used to fulfill game session placement requests
-     * in the queue. Fleets are identified by either a fleet ARN or a fleet alias ARN.
-     * Destinations are listed in default preference order.</p>
+     * <p>A list of fleets and/or fleet aliases that can be used to fulfill game
+     * session placement requests in the queue. Destinations are identified by either a
+     * fleet ARN or a fleet alias ARN, and are listed in order of placement
+     * preference.</p>
      */
     inline void SetDestinations(const Aws::Vector<GameSessionQueueDestination>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
 
     /**
-     * <p>A list of fleets that can be used to fulfill game session placement requests
-     * in the queue. Fleets are identified by either a fleet ARN or a fleet alias ARN.
-     * Destinations are listed in default preference order.</p>
+     * <p>A list of fleets and/or fleet aliases that can be used to fulfill game
+     * session placement requests in the queue. Destinations are identified by either a
+     * fleet ARN or a fleet alias ARN, and are listed in order of placement
+     * preference.</p>
      */
     inline void SetDestinations(Aws::Vector<GameSessionQueueDestination>&& value) { m_destinationsHasBeenSet = true; m_destinations = std::move(value); }
 
     /**
-     * <p>A list of fleets that can be used to fulfill game session placement requests
-     * in the queue. Fleets are identified by either a fleet ARN or a fleet alias ARN.
-     * Destinations are listed in default preference order.</p>
+     * <p>A list of fleets and/or fleet aliases that can be used to fulfill game
+     * session placement requests in the queue. Destinations are identified by either a
+     * fleet ARN or a fleet alias ARN, and are listed in order of placement
+     * preference.</p>
      */
     inline CreateGameSessionQueueRequest& WithDestinations(const Aws::Vector<GameSessionQueueDestination>& value) { SetDestinations(value); return *this;}
 
     /**
-     * <p>A list of fleets that can be used to fulfill game session placement requests
-     * in the queue. Fleets are identified by either a fleet ARN or a fleet alias ARN.
-     * Destinations are listed in default preference order.</p>
+     * <p>A list of fleets and/or fleet aliases that can be used to fulfill game
+     * session placement requests in the queue. Destinations are identified by either a
+     * fleet ARN or a fleet alias ARN, and are listed in order of placement
+     * preference.</p>
      */
     inline CreateGameSessionQueueRequest& WithDestinations(Aws::Vector<GameSessionQueueDestination>&& value) { SetDestinations(std::move(value)); return *this;}
 
     /**
-     * <p>A list of fleets that can be used to fulfill game session placement requests
-     * in the queue. Fleets are identified by either a fleet ARN or a fleet alias ARN.
-     * Destinations are listed in default preference order.</p>
+     * <p>A list of fleets and/or fleet aliases that can be used to fulfill game
+     * session placement requests in the queue. Destinations are identified by either a
+     * fleet ARN or a fleet alias ARN, and are listed in order of placement
+     * preference.</p>
      */
     inline CreateGameSessionQueueRequest& AddDestinations(const GameSessionQueueDestination& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
 
     /**
-     * <p>A list of fleets that can be used to fulfill game session placement requests
-     * in the queue. Fleets are identified by either a fleet ARN or a fleet alias ARN.
-     * Destinations are listed in default preference order.</p>
+     * <p>A list of fleets and/or fleet aliases that can be used to fulfill game
+     * session placement requests in the queue. Destinations are identified by either a
+     * fleet ARN or a fleet alias ARN, and are listed in order of placement
+     * preference.</p>
      */
     inline CreateGameSessionQueueRequest& AddDestinations(GameSessionQueueDestination&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A list of locations where a queue is allowed to place new game sessions.
+     * Locations are specified in the form of AWS Region codes, such as
+     * <code>us-west-2</code>. If this parameter is not set, game sessions can be
+     * placed in any queue location. </p>
+     */
+    inline const FilterConfiguration& GetFilterConfiguration() const{ return m_filterConfiguration; }
+
+    /**
+     * <p>A list of locations where a queue is allowed to place new game sessions.
+     * Locations are specified in the form of AWS Region codes, such as
+     * <code>us-west-2</code>. If this parameter is not set, game sessions can be
+     * placed in any queue location. </p>
+     */
+    inline bool FilterConfigurationHasBeenSet() const { return m_filterConfigurationHasBeenSet; }
+
+    /**
+     * <p>A list of locations where a queue is allowed to place new game sessions.
+     * Locations are specified in the form of AWS Region codes, such as
+     * <code>us-west-2</code>. If this parameter is not set, game sessions can be
+     * placed in any queue location. </p>
+     */
+    inline void SetFilterConfiguration(const FilterConfiguration& value) { m_filterConfigurationHasBeenSet = true; m_filterConfiguration = value; }
+
+    /**
+     * <p>A list of locations where a queue is allowed to place new game sessions.
+     * Locations are specified in the form of AWS Region codes, such as
+     * <code>us-west-2</code>. If this parameter is not set, game sessions can be
+     * placed in any queue location. </p>
+     */
+    inline void SetFilterConfiguration(FilterConfiguration&& value) { m_filterConfigurationHasBeenSet = true; m_filterConfiguration = std::move(value); }
+
+    /**
+     * <p>A list of locations where a queue is allowed to place new game sessions.
+     * Locations are specified in the form of AWS Region codes, such as
+     * <code>us-west-2</code>. If this parameter is not set, game sessions can be
+     * placed in any queue location. </p>
+     */
+    inline CreateGameSessionQueueRequest& WithFilterConfiguration(const FilterConfiguration& value) { SetFilterConfiguration(value); return *this;}
+
+    /**
+     * <p>A list of locations where a queue is allowed to place new game sessions.
+     * Locations are specified in the form of AWS Region codes, such as
+     * <code>us-west-2</code>. If this parameter is not set, game sessions can be
+     * placed in any queue location. </p>
+     */
+    inline CreateGameSessionQueueRequest& WithFilterConfiguration(FilterConfiguration&& value) { SetFilterConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Custom settings to use when prioritizing destinations and locations for game
+     * session placements. This configuration replaces the FleetIQ default
+     * prioritization process. Priority types that are not explicitly named will be
+     * automatically applied at the end of the prioritization process. </p>
+     */
+    inline const PriorityConfiguration& GetPriorityConfiguration() const{ return m_priorityConfiguration; }
+
+    /**
+     * <p>Custom settings to use when prioritizing destinations and locations for game
+     * session placements. This configuration replaces the FleetIQ default
+     * prioritization process. Priority types that are not explicitly named will be
+     * automatically applied at the end of the prioritization process. </p>
+     */
+    inline bool PriorityConfigurationHasBeenSet() const { return m_priorityConfigurationHasBeenSet; }
+
+    /**
+     * <p>Custom settings to use when prioritizing destinations and locations for game
+     * session placements. This configuration replaces the FleetIQ default
+     * prioritization process. Priority types that are not explicitly named will be
+     * automatically applied at the end of the prioritization process. </p>
+     */
+    inline void SetPriorityConfiguration(const PriorityConfiguration& value) { m_priorityConfigurationHasBeenSet = true; m_priorityConfiguration = value; }
+
+    /**
+     * <p>Custom settings to use when prioritizing destinations and locations for game
+     * session placements. This configuration replaces the FleetIQ default
+     * prioritization process. Priority types that are not explicitly named will be
+     * automatically applied at the end of the prioritization process. </p>
+     */
+    inline void SetPriorityConfiguration(PriorityConfiguration&& value) { m_priorityConfigurationHasBeenSet = true; m_priorityConfiguration = std::move(value); }
+
+    /**
+     * <p>Custom settings to use when prioritizing destinations and locations for game
+     * session placements. This configuration replaces the FleetIQ default
+     * prioritization process. Priority types that are not explicitly named will be
+     * automatically applied at the end of the prioritization process. </p>
+     */
+    inline CreateGameSessionQueueRequest& WithPriorityConfiguration(const PriorityConfiguration& value) { SetPriorityConfiguration(value); return *this;}
+
+    /**
+     * <p>Custom settings to use when prioritizing destinations and locations for game
+     * session placements. This configuration replaces the FleetIQ default
+     * prioritization process. Priority types that are not explicitly named will be
+     * automatically applied at the end of the prioritization process. </p>
+     */
+    inline CreateGameSessionQueueRequest& WithPriorityConfiguration(PriorityConfiguration&& value) { SetPriorityConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -406,6 +482,12 @@ namespace Model
 
     Aws::Vector<GameSessionQueueDestination> m_destinations;
     bool m_destinationsHasBeenSet;
+
+    FilterConfiguration m_filterConfiguration;
+    bool m_filterConfigurationHasBeenSet;
+
+    PriorityConfiguration m_priorityConfiguration;
+    bool m_priorityConfigurationHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

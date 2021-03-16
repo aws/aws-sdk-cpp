@@ -25,6 +25,7 @@
 #include <aws/gamelift/model/CreateAliasRequest.h>
 #include <aws/gamelift/model/CreateBuildRequest.h>
 #include <aws/gamelift/model/CreateFleetRequest.h>
+#include <aws/gamelift/model/CreateFleetLocationsRequest.h>
 #include <aws/gamelift/model/CreateGameServerGroupRequest.h>
 #include <aws/gamelift/model/CreateGameSessionRequest.h>
 #include <aws/gamelift/model/CreateGameSessionQueueRequest.h>
@@ -38,6 +39,7 @@
 #include <aws/gamelift/model/DeleteAliasRequest.h>
 #include <aws/gamelift/model/DeleteBuildRequest.h>
 #include <aws/gamelift/model/DeleteFleetRequest.h>
+#include <aws/gamelift/model/DeleteFleetLocationsRequest.h>
 #include <aws/gamelift/model/DeleteGameServerGroupRequest.h>
 #include <aws/gamelift/model/DeleteGameSessionQueueRequest.h>
 #include <aws/gamelift/model/DeleteMatchmakingConfigurationRequest.h>
@@ -53,6 +55,9 @@
 #include <aws/gamelift/model/DescribeFleetAttributesRequest.h>
 #include <aws/gamelift/model/DescribeFleetCapacityRequest.h>
 #include <aws/gamelift/model/DescribeFleetEventsRequest.h>
+#include <aws/gamelift/model/DescribeFleetLocationAttributesRequest.h>
+#include <aws/gamelift/model/DescribeFleetLocationCapacityRequest.h>
+#include <aws/gamelift/model/DescribeFleetLocationUtilizationRequest.h>
 #include <aws/gamelift/model/DescribeFleetPortSettingsRequest.h>
 #include <aws/gamelift/model/DescribeFleetUtilizationRequest.h>
 #include <aws/gamelift/model/DescribeGameServerRequest.h>
@@ -317,6 +322,33 @@ void GameLiftClient::CreateFleetAsync(const CreateFleetRequest& request, const C
 void GameLiftClient::CreateFleetAsyncHelper(const CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateFleet(request), context);
+}
+
+CreateFleetLocationsOutcome GameLiftClient::CreateFleetLocations(const CreateFleetLocationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateFleetLocationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateFleetLocationsOutcomeCallable GameLiftClient::CreateFleetLocationsCallable(const CreateFleetLocationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateFleetLocationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFleetLocations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::CreateFleetLocationsAsync(const CreateFleetLocationsRequest& request, const CreateFleetLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateFleetLocationsAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::CreateFleetLocationsAsyncHelper(const CreateFleetLocationsRequest& request, const CreateFleetLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateFleetLocations(request), context);
 }
 
 CreateGameServerGroupOutcome GameLiftClient::CreateGameServerGroup(const CreateGameServerGroupRequest& request) const
@@ -668,6 +700,33 @@ void GameLiftClient::DeleteFleetAsync(const DeleteFleetRequest& request, const D
 void GameLiftClient::DeleteFleetAsyncHelper(const DeleteFleetRequest& request, const DeleteFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteFleet(request), context);
+}
+
+DeleteFleetLocationsOutcome GameLiftClient::DeleteFleetLocations(const DeleteFleetLocationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteFleetLocationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteFleetLocationsOutcomeCallable GameLiftClient::DeleteFleetLocationsCallable(const DeleteFleetLocationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteFleetLocationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFleetLocations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::DeleteFleetLocationsAsync(const DeleteFleetLocationsRequest& request, const DeleteFleetLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteFleetLocationsAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::DeleteFleetLocationsAsyncHelper(const DeleteFleetLocationsRequest& request, const DeleteFleetLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteFleetLocations(request), context);
 }
 
 DeleteGameServerGroupOutcome GameLiftClient::DeleteGameServerGroup(const DeleteGameServerGroupRequest& request) const
@@ -1073,6 +1132,87 @@ void GameLiftClient::DescribeFleetEventsAsync(const DescribeFleetEventsRequest& 
 void GameLiftClient::DescribeFleetEventsAsyncHelper(const DescribeFleetEventsRequest& request, const DescribeFleetEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeFleetEvents(request), context);
+}
+
+DescribeFleetLocationAttributesOutcome GameLiftClient::DescribeFleetLocationAttributes(const DescribeFleetLocationAttributesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeFleetLocationAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeFleetLocationAttributesOutcomeCallable GameLiftClient::DescribeFleetLocationAttributesCallable(const DescribeFleetLocationAttributesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFleetLocationAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFleetLocationAttributes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::DescribeFleetLocationAttributesAsync(const DescribeFleetLocationAttributesRequest& request, const DescribeFleetLocationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeFleetLocationAttributesAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::DescribeFleetLocationAttributesAsyncHelper(const DescribeFleetLocationAttributesRequest& request, const DescribeFleetLocationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeFleetLocationAttributes(request), context);
+}
+
+DescribeFleetLocationCapacityOutcome GameLiftClient::DescribeFleetLocationCapacity(const DescribeFleetLocationCapacityRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeFleetLocationCapacityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeFleetLocationCapacityOutcomeCallable GameLiftClient::DescribeFleetLocationCapacityCallable(const DescribeFleetLocationCapacityRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFleetLocationCapacityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFleetLocationCapacity(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::DescribeFleetLocationCapacityAsync(const DescribeFleetLocationCapacityRequest& request, const DescribeFleetLocationCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeFleetLocationCapacityAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::DescribeFleetLocationCapacityAsyncHelper(const DescribeFleetLocationCapacityRequest& request, const DescribeFleetLocationCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeFleetLocationCapacity(request), context);
+}
+
+DescribeFleetLocationUtilizationOutcome GameLiftClient::DescribeFleetLocationUtilization(const DescribeFleetLocationUtilizationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeFleetLocationUtilizationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeFleetLocationUtilizationOutcomeCallable GameLiftClient::DescribeFleetLocationUtilizationCallable(const DescribeFleetLocationUtilizationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFleetLocationUtilizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFleetLocationUtilization(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::DescribeFleetLocationUtilizationAsync(const DescribeFleetLocationUtilizationRequest& request, const DescribeFleetLocationUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeFleetLocationUtilizationAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::DescribeFleetLocationUtilizationAsyncHelper(const DescribeFleetLocationUtilizationRequest& request, const DescribeFleetLocationUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeFleetLocationUtilization(request), context);
 }
 
 DescribeFleetPortSettingsOutcome GameLiftClient::DescribeFleetPortSettings(const DescribeFleetPortSettingsRequest& request) const

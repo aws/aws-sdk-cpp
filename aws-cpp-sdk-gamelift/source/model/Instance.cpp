@@ -20,6 +20,7 @@ namespace Model
 
 Instance::Instance() : 
     m_fleetIdHasBeenSet(false),
+    m_fleetArnHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
     m_dnsNameHasBeenSet(false),
@@ -29,12 +30,14 @@ Instance::Instance() :
     m_typeHasBeenSet(false),
     m_status(InstanceStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+    m_creationTimeHasBeenSet(false),
+    m_locationHasBeenSet(false)
 {
 }
 
 Instance::Instance(JsonView jsonValue) : 
     m_fleetIdHasBeenSet(false),
+    m_fleetArnHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
     m_dnsNameHasBeenSet(false),
@@ -44,7 +47,8 @@ Instance::Instance(JsonView jsonValue) :
     m_typeHasBeenSet(false),
     m_status(InstanceStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+    m_creationTimeHasBeenSet(false),
+    m_locationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +60,13 @@ Instance& Instance::operator =(JsonView jsonValue)
     m_fleetId = jsonValue.GetString("FleetId");
 
     m_fleetIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FleetArn"))
+  {
+    m_fleetArn = jsonValue.GetString("FleetArn");
+
+    m_fleetArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("InstanceId"))
@@ -107,6 +118,13 @@ Instance& Instance::operator =(JsonView jsonValue)
     m_creationTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Location"))
+  {
+    m_location = jsonValue.GetString("Location");
+
+    m_locationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -117,6 +135,12 @@ JsonValue Instance::Jsonize() const
   if(m_fleetIdHasBeenSet)
   {
    payload.WithString("FleetId", m_fleetId);
+
+  }
+
+  if(m_fleetArnHasBeenSet)
+  {
+   payload.WithString("FleetArn", m_fleetArn);
 
   }
 
@@ -156,6 +180,12 @@ JsonValue Instance::Jsonize() const
   if(m_creationTimeHasBeenSet)
   {
    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  }
+
+  if(m_locationHasBeenSet)
+  {
+   payload.WithString("Location", m_location);
+
   }
 
   return payload;

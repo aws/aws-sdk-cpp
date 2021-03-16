@@ -43,6 +43,7 @@
 #include <aws/accessanalyzer/model/UntagResourceRequest.h>
 #include <aws/accessanalyzer/model/UpdateArchiveRuleRequest.h>
 #include <aws/accessanalyzer/model/UpdateFindingsRequest.h>
+#include <aws/accessanalyzer/model/ValidatePolicyRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -867,5 +868,32 @@ void AccessAnalyzerClient::UpdateFindingsAsync(const UpdateFindingsRequest& requ
 void AccessAnalyzerClient::UpdateFindingsAsyncHelper(const UpdateFindingsRequest& request, const UpdateFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateFindings(request), context);
+}
+
+ValidatePolicyOutcome AccessAnalyzerClient::ValidatePolicy(const ValidatePolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/policy/validation";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ValidatePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ValidatePolicyOutcomeCallable AccessAnalyzerClient::ValidatePolicyCallable(const ValidatePolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ValidatePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ValidatePolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AccessAnalyzerClient::ValidatePolicyAsync(const ValidatePolicyRequest& request, const ValidatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ValidatePolicyAsyncHelper( request, handler, context ); } );
+}
+
+void AccessAnalyzerClient::ValidatePolicyAsyncHelper(const ValidatePolicyRequest& request, const ValidatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ValidatePolicy(request), context);
 }
 

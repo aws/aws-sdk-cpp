@@ -31,20 +31,20 @@ namespace Model
 {
 
   /**
-   * <p> <b>This data type is used with the Amazon GameLift FleetIQ and game server
+   * <p> <b>This data type is used with the GameLift FleetIQ and game server
    * groups.</b> </p> <p>Properties that describe a game server group resource. A
    * game server group manages certain properties related to a corresponding EC2 Auto
    * Scaling group. </p> <p>A game server group is created by a successful call to
    * <code>CreateGameServerGroup</code> and deleted by calling
    * <code>DeleteGameServerGroup</code>. Game server group activity can be
    * temporarily suspended and resumed by calling <code>SuspendGameServerGroup</code>
-   * and <code>ResumeGameServerGroup</code>, respectively. </p> <ul> <li> <p>
-   * <a>CreateGameServerGroup</a> </p> </li> <li> <p> <a>ListGameServerGroups</a>
-   * </p> </li> <li> <p> <a>DescribeGameServerGroup</a> </p> </li> <li> <p>
-   * <a>UpdateGameServerGroup</a> </p> </li> <li> <p> <a>DeleteGameServerGroup</a>
-   * </p> </li> <li> <p> <a>ResumeGameServerGroup</a> </p> </li> <li> <p>
-   * <a>SuspendGameServerGroup</a> </p> </li> <li> <p>
-   * <a>DescribeGameServerInstances</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * and <code>ResumeGameServerGroup</code>, respectively. </p> <p> <b>Related
+   * actions</b> </p> <p> <a>CreateGameServerGroup</a> | <a>ListGameServerGroups</a>
+   * | <a>DescribeGameServerGroup</a> | <a>UpdateGameServerGroup</a> |
+   * <a>DeleteGameServerGroup</a> | <a>ResumeGameServerGroup</a> |
+   * <a>SuspendGameServerGroup</a> | <a>DescribeGameServerInstances</a> | <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All
+   * APIs by task</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameServerGroup">AWS
    * API Reference</a></p>
    */
@@ -728,43 +728,43 @@ namespace Model
 
 
     /**
-     * <p>A timestamp that indicates when this data object was created. Format is a
-     * number expressed in Unix time as milliseconds (for example
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
      * <code>"1469498468.057"</code>).</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>A timestamp that indicates when this data object was created. Format is a
-     * number expressed in Unix time as milliseconds (for example
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
      * <code>"1469498468.057"</code>).</p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
-     * <p>A timestamp that indicates when this data object was created. Format is a
-     * number expressed in Unix time as milliseconds (for example
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
      * <code>"1469498468.057"</code>).</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>A timestamp that indicates when this data object was created. Format is a
-     * number expressed in Unix time as milliseconds (for example
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
      * <code>"1469498468.057"</code>).</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>A timestamp that indicates when this data object was created. Format is a
-     * number expressed in Unix time as milliseconds (for example
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
      * <code>"1469498468.057"</code>).</p>
      */
     inline GameServerGroup& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>A timestamp that indicates when this data object was created. Format is a
-     * number expressed in Unix time as milliseconds (for example
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
      * <code>"1469498468.057"</code>).</p>
      */
     inline GameServerGroup& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}

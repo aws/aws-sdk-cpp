@@ -36,65 +36,65 @@ namespace Model
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value.. If you are
-     * not specifying a game server to claim, this value identifies where you want
-     * GameLift FleetIQ to look for an available game server to claim. </p>
+     * running. Use either the <a>GameServerGroup</a> name or ARN value. If you are not
+     * specifying a game server to claim, this value identifies where you want GameLift
+     * FleetIQ to look for an available game server to claim. </p>
      */
     inline const Aws::String& GetGameServerGroupName() const{ return m_gameServerGroupName; }
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value.. If you are
-     * not specifying a game server to claim, this value identifies where you want
-     * GameLift FleetIQ to look for an available game server to claim. </p>
+     * running. Use either the <a>GameServerGroup</a> name or ARN value. If you are not
+     * specifying a game server to claim, this value identifies where you want GameLift
+     * FleetIQ to look for an available game server to claim. </p>
      */
     inline bool GameServerGroupNameHasBeenSet() const { return m_gameServerGroupNameHasBeenSet; }
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value.. If you are
-     * not specifying a game server to claim, this value identifies where you want
-     * GameLift FleetIQ to look for an available game server to claim. </p>
+     * running. Use either the <a>GameServerGroup</a> name or ARN value. If you are not
+     * specifying a game server to claim, this value identifies where you want GameLift
+     * FleetIQ to look for an available game server to claim. </p>
      */
     inline void SetGameServerGroupName(const Aws::String& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = value; }
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value.. If you are
-     * not specifying a game server to claim, this value identifies where you want
-     * GameLift FleetIQ to look for an available game server to claim. </p>
+     * running. Use either the <a>GameServerGroup</a> name or ARN value. If you are not
+     * specifying a game server to claim, this value identifies where you want GameLift
+     * FleetIQ to look for an available game server to claim. </p>
      */
     inline void SetGameServerGroupName(Aws::String&& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = std::move(value); }
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value.. If you are
-     * not specifying a game server to claim, this value identifies where you want
-     * GameLift FleetIQ to look for an available game server to claim. </p>
+     * running. Use either the <a>GameServerGroup</a> name or ARN value. If you are not
+     * specifying a game server to claim, this value identifies where you want GameLift
+     * FleetIQ to look for an available game server to claim. </p>
      */
     inline void SetGameServerGroupName(const char* value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName.assign(value); }
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value.. If you are
-     * not specifying a game server to claim, this value identifies where you want
-     * GameLift FleetIQ to look for an available game server to claim. </p>
+     * running. Use either the <a>GameServerGroup</a> name or ARN value. If you are not
+     * specifying a game server to claim, this value identifies where you want GameLift
+     * FleetIQ to look for an available game server to claim. </p>
      */
     inline ClaimGameServerRequest& WithGameServerGroupName(const Aws::String& value) { SetGameServerGroupName(value); return *this;}
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value.. If you are
-     * not specifying a game server to claim, this value identifies where you want
-     * GameLift FleetIQ to look for an available game server to claim. </p>
+     * running. Use either the <a>GameServerGroup</a> name or ARN value. If you are not
+     * specifying a game server to claim, this value identifies where you want GameLift
+     * FleetIQ to look for an available game server to claim. </p>
      */
     inline ClaimGameServerRequest& WithGameServerGroupName(Aws::String&& value) { SetGameServerGroupName(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value.. If you are
-     * not specifying a game server to claim, this value identifies where you want
-     * GameLift FleetIQ to look for an available game server to claim. </p>
+     * running. Use either the <a>GameServerGroup</a> name or ARN value. If you are not
+     * specifying a game server to claim, this value identifies where you want GameLift
+     * FleetIQ to look for an available game server to claim. </p>
      */
     inline ClaimGameServerRequest& WithGameServerGroupName(const char* value) { SetGameServerGroupName(value); return *this;}
 

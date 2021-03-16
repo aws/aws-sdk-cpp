@@ -25,6 +25,8 @@ AddOutputRequest::AddOutputRequest() :
     m_encryptionHasBeenSet(false),
     m_maxLatency(0),
     m_maxLatencyHasBeenSet(false),
+    m_minLatency(0),
+    m_minLatencyHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
@@ -45,6 +47,8 @@ AddOutputRequest::AddOutputRequest(JsonView jsonValue) :
     m_encryptionHasBeenSet(false),
     m_maxLatency(0),
     m_maxLatencyHasBeenSet(false),
+    m_minLatency(0),
+    m_minLatencyHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
@@ -97,6 +101,13 @@ AddOutputRequest& AddOutputRequest::operator =(JsonView jsonValue)
     m_maxLatency = jsonValue.GetInteger("maxLatency");
 
     m_maxLatencyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("minLatency"))
+  {
+    m_minLatency = jsonValue.GetInteger("minLatency");
+
+    m_minLatencyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -187,6 +198,12 @@ JsonValue AddOutputRequest::Jsonize() const
   if(m_maxLatencyHasBeenSet)
   {
    payload.WithInteger("maxLatency", m_maxLatency);
+
+  }
+
+  if(m_minLatencyHasBeenSet)
+  {
+   payload.WithInteger("minLatency", m_minLatency);
 
   }
 

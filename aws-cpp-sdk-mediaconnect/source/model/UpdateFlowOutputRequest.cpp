@@ -20,6 +20,8 @@ UpdateFlowOutputRequest::UpdateFlowOutputRequest() :
     m_flowArnHasBeenSet(false),
     m_maxLatency(0),
     m_maxLatencyHasBeenSet(false),
+    m_minLatency(0),
+    m_minLatencyHasBeenSet(false),
     m_outputArnHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
@@ -69,6 +71,12 @@ Aws::String UpdateFlowOutputRequest::SerializePayload() const
   if(m_maxLatencyHasBeenSet)
   {
    payload.WithInteger("maxLatency", m_maxLatency);
+
+  }
+
+  if(m_minLatencyHasBeenSet)
+  {
+   payload.WithInteger("minLatency", m_minLatency);
 
   }
 

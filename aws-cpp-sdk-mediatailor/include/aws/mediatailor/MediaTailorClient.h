@@ -30,7 +30,6 @@
 #include <aws/mediatailor/model/GetPlaybackConfigurationResult.h>
 #include <aws/mediatailor/model/ListChannelsResult.h>
 #include <aws/mediatailor/model/ListPlaybackConfigurationsResult.h>
-#include <aws/mediatailor/model/ListProgramsResult.h>
 #include <aws/mediatailor/model/ListSourceLocationsResult.h>
 #include <aws/mediatailor/model/ListTagsForResourceResult.h>
 #include <aws/mediatailor/model/ListVodSourcesResult.h>
@@ -100,7 +99,6 @@ namespace Model
         class GetPlaybackConfigurationRequest;
         class ListChannelsRequest;
         class ListPlaybackConfigurationsRequest;
-        class ListProgramsRequest;
         class ListSourceLocationsRequest;
         class ListTagsForResourceRequest;
         class ListVodSourcesRequest;
@@ -133,7 +131,6 @@ namespace Model
         typedef Aws::Utils::Outcome<GetPlaybackConfigurationResult, MediaTailorError> GetPlaybackConfigurationOutcome;
         typedef Aws::Utils::Outcome<ListChannelsResult, MediaTailorError> ListChannelsOutcome;
         typedef Aws::Utils::Outcome<ListPlaybackConfigurationsResult, MediaTailorError> ListPlaybackConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<ListProgramsResult, MediaTailorError> ListProgramsOutcome;
         typedef Aws::Utils::Outcome<ListSourceLocationsResult, MediaTailorError> ListSourceLocationsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, MediaTailorError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListVodSourcesResult, MediaTailorError> ListVodSourcesOutcome;
@@ -166,7 +163,6 @@ namespace Model
         typedef std::future<GetPlaybackConfigurationOutcome> GetPlaybackConfigurationOutcomeCallable;
         typedef std::future<ListChannelsOutcome> ListChannelsOutcomeCallable;
         typedef std::future<ListPlaybackConfigurationsOutcome> ListPlaybackConfigurationsOutcomeCallable;
-        typedef std::future<ListProgramsOutcome> ListProgramsOutcomeCallable;
         typedef std::future<ListSourceLocationsOutcome> ListSourceLocationsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListVodSourcesOutcome> ListVodSourcesOutcomeCallable;
@@ -202,7 +198,6 @@ namespace Model
     typedef std::function<void(const MediaTailorClient*, const Model::GetPlaybackConfigurationRequest&, const Model::GetPlaybackConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPlaybackConfigurationResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::ListChannelsRequest&, const Model::ListChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelsResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::ListPlaybackConfigurationsRequest&, const Model::ListPlaybackConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPlaybackConfigurationsResponseReceivedHandler;
-    typedef std::function<void(const MediaTailorClient*, const Model::ListProgramsRequest&, const Model::ListProgramsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProgramsResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::ListSourceLocationsRequest&, const Model::ListSourceLocationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSourceLocationsResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::ListVodSourcesRequest&, const Model::ListVodSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVodSourcesResponseReceivedHandler;
@@ -789,34 +784,6 @@ namespace Model
         virtual void ListPlaybackConfigurationsAsync(const Model::ListPlaybackConfigurationsRequest& request, const ListPlaybackConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a list of programs on a specific channel.</p><p><h3>See Also:</h3> 
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPrograms">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::ListProgramsOutcome ListPrograms(const Model::ListProgramsRequest& request) const;
-
-        /**
-         * <p>Retrieves a list of programs on a specific channel.</p><p><h3>See Also:</h3> 
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPrograms">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListProgramsOutcomeCallable ListProgramsCallable(const Model::ListProgramsRequest& request) const;
-
-        /**
-         * <p>Retrieves a list of programs on a specific channel.</p><p><h3>See Also:</h3> 
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPrograms">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListProgramsAsync(const Model::ListProgramsRequest& request, const ListProgramsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
          * <p>Retrieves a list of source locations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListSourceLocations">AWS
          * API Reference</a></p>
@@ -1157,7 +1124,6 @@ namespace Model
         void GetPlaybackConfigurationAsyncHelper(const Model::GetPlaybackConfigurationRequest& request, const GetPlaybackConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListChannelsAsyncHelper(const Model::ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPlaybackConfigurationsAsyncHelper(const Model::ListPlaybackConfigurationsRequest& request, const ListPlaybackConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListProgramsAsyncHelper(const Model::ListProgramsRequest& request, const ListProgramsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSourceLocationsAsyncHelper(const Model::ListSourceLocationsRequest& request, const ListSourceLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListVodSourcesAsyncHelper(const Model::ListVodSourcesRequest& request, const ListVodSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -27,6 +27,7 @@
 #include <aws/accessanalyzer/model/ListTagsForResourceResult.h>
 #include <aws/accessanalyzer/model/TagResourceResult.h>
 #include <aws/accessanalyzer/model/UntagResourceResult.h>
+#include <aws/accessanalyzer/model/ValidatePolicyResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -90,6 +91,7 @@ namespace Model
         class UntagResourceRequest;
         class UpdateArchiveRuleRequest;
         class UpdateFindingsRequest;
+        class ValidatePolicyRequest;
 
         typedef Aws::Utils::Outcome<Aws::NoResult, AccessAnalyzerError> ApplyArchiveRuleOutcome;
         typedef Aws::Utils::Outcome<CreateAccessPreviewResult, AccessAnalyzerError> CreateAccessPreviewOutcome;
@@ -114,6 +116,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UntagResourceResult, AccessAnalyzerError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, AccessAnalyzerError> UpdateArchiveRuleOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, AccessAnalyzerError> UpdateFindingsOutcome;
+        typedef Aws::Utils::Outcome<ValidatePolicyResult, AccessAnalyzerError> ValidatePolicyOutcome;
 
         typedef std::future<ApplyArchiveRuleOutcome> ApplyArchiveRuleOutcomeCallable;
         typedef std::future<CreateAccessPreviewOutcome> CreateAccessPreviewOutcomeCallable;
@@ -138,6 +141,7 @@ namespace Model
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateArchiveRuleOutcome> UpdateArchiveRuleOutcomeCallable;
         typedef std::future<UpdateFindingsOutcome> UpdateFindingsOutcomeCallable;
+        typedef std::future<ValidatePolicyOutcome> ValidatePolicyOutcomeCallable;
 } // namespace Model
 
   class AccessAnalyzerClient;
@@ -165,6 +169,7 @@ namespace Model
     typedef std::function<void(const AccessAnalyzerClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const AccessAnalyzerClient*, const Model::UpdateArchiveRuleRequest&, const Model::UpdateArchiveRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateArchiveRuleResponseReceivedHandler;
     typedef std::function<void(const AccessAnalyzerClient*, const Model::UpdateFindingsRequest&, const Model::UpdateFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFindingsResponseReceivedHandler;
+    typedef std::function<void(const AccessAnalyzerClient*, const Model::ValidatePolicyRequest&, const Model::ValidatePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ValidatePolicyResponseReceivedHandler;
 
   /**
    * <p>AWS IAM Access Analyzer helps identify potential resource-access risks by
@@ -294,7 +299,11 @@ namespace Model
         /**
          * <p>Creates an archive rule for the specified analyzer. Archive rules
          * automatically archive new findings that meet the criteria you define when you
-         * create the rule.</p><p><h3>See Also:</h3>   <a
+         * create the rule.</p> <p>To learn about filter keys that you can use to create an
+         * archive rule, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">Access
+         * Analyzer filter keys</a> in the <b>IAM User Guide</b>.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateArchiveRule">AWS
          * API Reference</a></p>
          */
@@ -303,7 +312,11 @@ namespace Model
         /**
          * <p>Creates an archive rule for the specified analyzer. Archive rules
          * automatically archive new findings that meet the criteria you define when you
-         * create the rule.</p><p><h3>See Also:</h3>   <a
+         * create the rule.</p> <p>To learn about filter keys that you can use to create an
+         * archive rule, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">Access
+         * Analyzer filter keys</a> in the <b>IAM User Guide</b>.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateArchiveRule">AWS
          * API Reference</a></p>
          *
@@ -314,7 +327,11 @@ namespace Model
         /**
          * <p>Creates an archive rule for the specified analyzer. Archive rules
          * automatically archive new findings that meet the criteria you define when you
-         * create the rule.</p><p><h3>See Also:</h3>   <a
+         * create the rule.</p> <p>To learn about filter keys that you can use to create an
+         * archive rule, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">Access
+         * Analyzer filter keys</a> in the <b>IAM User Guide</b>.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateArchiveRule">AWS
          * API Reference</a></p>
          *
@@ -863,6 +880,40 @@ namespace Model
          */
         virtual void UpdateFindingsAsync(const Model::UpdateFindingsRequest& request, const UpdateFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Requests the validation of a policy and returns a list of findings. The
+         * findings help you identify issues and provide actionable recommendations to
+         * resolve the issue and enable you to author functional policies that meet
+         * security best practices. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ValidatePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ValidatePolicyOutcome ValidatePolicy(const Model::ValidatePolicyRequest& request) const;
+
+        /**
+         * <p>Requests the validation of a policy and returns a list of findings. The
+         * findings help you identify issues and provide actionable recommendations to
+         * resolve the issue and enable you to author functional policies that meet
+         * security best practices. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ValidatePolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ValidatePolicyOutcomeCallable ValidatePolicyCallable(const Model::ValidatePolicyRequest& request) const;
+
+        /**
+         * <p>Requests the validation of a policy and returns a list of findings. The
+         * findings help you identify issues and provide actionable recommendations to
+         * resolve the issue and enable you to author functional policies that meet
+         * security best practices. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ValidatePolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ValidatePolicyAsync(const Model::ValidatePolicyRequest& request, const ValidatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -890,6 +941,7 @@ namespace Model
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateArchiveRuleAsyncHelper(const Model::UpdateArchiveRuleRequest& request, const UpdateArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFindingsAsyncHelper(const Model::UpdateFindingsRequest& request, const UpdateFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ValidatePolicyAsyncHelper(const Model::ValidatePolicyRequest& request, const ValidatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

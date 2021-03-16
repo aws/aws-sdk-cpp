@@ -39,7 +39,6 @@
 #include <aws/mediatailor/model/GetPlaybackConfigurationRequest.h>
 #include <aws/mediatailor/model/ListChannelsRequest.h>
 #include <aws/mediatailor/model/ListPlaybackConfigurationsRequest.h>
-#include <aws/mediatailor/model/ListProgramsRequest.h>
 #include <aws/mediatailor/model/ListSourceLocationsRequest.h>
 #include <aws/mediatailor/model/ListTagsForResourceRequest.h>
 #include <aws/mediatailor/model/ListVodSourcesRequest.h>
@@ -784,40 +783,6 @@ void MediaTailorClient::ListPlaybackConfigurationsAsync(const ListPlaybackConfig
 void MediaTailorClient::ListPlaybackConfigurationsAsyncHelper(const ListPlaybackConfigurationsRequest& request, const ListPlaybackConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListPlaybackConfigurations(request), context);
-}
-
-ListProgramsOutcome MediaTailorClient::ListPrograms(const ListProgramsRequest& request) const
-{
-  if (!request.ChannelNameHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("ListPrograms", "Required field: ChannelName, is not set");
-    return ListProgramsOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelName]", false));
-  }
-  Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/channel/";
-  ss << request.GetChannelName();
-  ss << "/programs";
-  uri.SetPath(uri.GetPath() + ss.str());
-  return ListProgramsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-}
-
-ListProgramsOutcomeCallable MediaTailorClient::ListProgramsCallable(const ListProgramsRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< ListProgramsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPrograms(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void MediaTailorClient::ListProgramsAsync(const ListProgramsRequest& request, const ListProgramsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->ListProgramsAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::ListProgramsAsyncHelper(const ListProgramsRequest& request, const ListProgramsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListPrograms(request), context);
 }
 
 ListSourceLocationsOutcome MediaTailorClient::ListSourceLocations(const ListSourceLocationsRequest& request) const

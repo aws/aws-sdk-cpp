@@ -22,15 +22,13 @@ namespace Model
 {
 
   /**
-   * <p>Queue setting that determines the highest latency allowed for individual
-   * players when placing a game session. When a latency policy is in force, a game
-   * session cannot be placed with any fleet in a Region where a player reports
-   * latency higher than the cap. Latency policies are only enforced when the
-   * placement request contains player latency information.</p> <ul> <li> <p>
-   * <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
-   * <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
-   * <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * <p>Sets a latency cap for individual players when placing a game session. With a
+   * latency policy in force, a game session cannot be placed in a fleet location
+   * where a player reports latency higher than the cap. Latency policies are used
+   * only with placement request that provide player latency information. Player
+   * latency policies can be stacked to gradually relax latency requirements over
+   * time. </p> <p>Latency policies are part of a
+   * <a>GameSessionQueue</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PlayerLatencyPolicy">AWS
    * API Reference</a></p>
    */

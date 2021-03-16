@@ -26,10 +26,11 @@ namespace Model
 {
 
   /**
-   * <p>Log entry describing an event that involves Amazon GameLift resources (such
-   * as a fleet). In addition to tracking activity, event codes and messages can
-   * provide additional information for troubleshooting and debugging
-   * problems.</p><p><h3>See Also:</h3>   <a
+   * <p>Log entry describing an event that involves GameLift resources (such as a
+   * fleet). In addition to tracking activity, event codes and messages can provide
+   * additional information for troubleshooting and debugging problems.</p> <p>
+   * <b>Related actions</b> </p> <p> <a>DescribeFleetEvents</a> </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Event">AWS API
    * Reference</a></p>
    */
@@ -140,19 +141,19 @@ namespace Model
      * the files that are extracted and saved on the instance. Access the logs by using
      * the URL in <i>PreSignedLogUrl</i>.</p> </li> <li>
      * <p>FLEET_CREATION_RUNNING_INSTALLER – The game server build files were
-     * successfully extracted, and the Amazon GameLift is now running the build's
-     * install script (if one is included). Failure in this stage prevents a fleet from
-     * moving to <code>ACTIVE</code> status. Logs for this stage list the installation
-     * steps and whether or not the install completed successfully. Access the logs by
-     * using the URL in <i>PreSignedLogUrl</i>. </p> </li> <li>
+     * successfully extracted, and the GameLift is now running the build's install
+     * script (if one is included). Failure in this stage prevents a fleet from moving
+     * to <code>ACTIVE</code> status. Logs for this stage list the installation steps
+     * and whether or not the install completed successfully. Access the logs by using
+     * the URL in <i>PreSignedLogUrl</i>. </p> </li> <li>
      * <p>FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful,
-     * and the Amazon GameLift is now verifying that the game server launch paths,
-     * which are specified in the fleet's runtime configuration, exist. If any listed
-     * launch path exists, Amazon GameLift tries to launch a game server process and
-     * waits for the process to report ready. Failures in this stage prevent a fleet
-     * from moving to <code>ACTIVE</code> status. Logs for this stage list the launch
-     * paths in the runtime configuration and indicate whether each is found. Access
-     * the logs by using the URL in <i>PreSignedLogUrl</i>. </p> </li> <li>
+     * and the GameLift is now verifying that the game server launch paths, which are
+     * specified in the fleet's runtime configuration, exist. If any listed launch path
+     * exists, GameLift tries to launch a game server process and waits for the process
+     * to report ready. Failures in this stage prevent a fleet from moving to
+     * <code>ACTIVE</code> status. Logs for this stage list the launch paths in the
+     * runtime configuration and indicate whether each is found. Access the logs by
+     * using the URL in <i>PreSignedLogUrl</i>. </p> </li> <li>
      * <p>FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code>
      * to <code>VALIDATING</code>.</p> </li> <li> <p>
      * FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND -- Validation of the runtime
@@ -172,14 +173,13 @@ namespace Model
      * fleet's status changed from <code>ACTIVATING</code> to <code>ACTIVE</code>. The
      * fleet is now ready to host game sessions.</p> </li> </ul> <p> <b>VPC peering
      * events:</b> </p> <ul> <li> <p>FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering
-     * connection has been established between the VPC for an Amazon GameLift fleet and
-     * a VPC in your AWS account.</p> </li> <li> <p>FLEET_VPC_PEERING_FAILED -- A
-     * requested VPC peering connection has failed. Event details and status
-     * information (see <a>DescribeVpcPeeringConnections</a>) provide additional
-     * detail. A common reason for peering failure is that the two VPCs have
-     * overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR
-     * block for the VPC in your AWS account. For more information on VPC peering
-     * failures, see <a
+     * connection has been established between the VPC for an GameLift fleet and a VPC
+     * in your AWS account.</p> </li> <li> <p>FLEET_VPC_PEERING_FAILED -- A requested
+     * VPC peering connection has failed. Event details and status information (see
+     * <a>DescribeVpcPeeringConnections</a>) provide additional detail. A common reason
+     * for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4
+     * addresses. To resolve this, change the CIDR block for the VPC in your AWS
+     * account. For more information on VPC peering failures, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
      * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
@@ -212,19 +212,19 @@ namespace Model
      * the files that are extracted and saved on the instance. Access the logs by using
      * the URL in <i>PreSignedLogUrl</i>.</p> </li> <li>
      * <p>FLEET_CREATION_RUNNING_INSTALLER – The game server build files were
-     * successfully extracted, and the Amazon GameLift is now running the build's
-     * install script (if one is included). Failure in this stage prevents a fleet from
-     * moving to <code>ACTIVE</code> status. Logs for this stage list the installation
-     * steps and whether or not the install completed successfully. Access the logs by
-     * using the URL in <i>PreSignedLogUrl</i>. </p> </li> <li>
+     * successfully extracted, and the GameLift is now running the build's install
+     * script (if one is included). Failure in this stage prevents a fleet from moving
+     * to <code>ACTIVE</code> status. Logs for this stage list the installation steps
+     * and whether or not the install completed successfully. Access the logs by using
+     * the URL in <i>PreSignedLogUrl</i>. </p> </li> <li>
      * <p>FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful,
-     * and the Amazon GameLift is now verifying that the game server launch paths,
-     * which are specified in the fleet's runtime configuration, exist. If any listed
-     * launch path exists, Amazon GameLift tries to launch a game server process and
-     * waits for the process to report ready. Failures in this stage prevent a fleet
-     * from moving to <code>ACTIVE</code> status. Logs for this stage list the launch
-     * paths in the runtime configuration and indicate whether each is found. Access
-     * the logs by using the URL in <i>PreSignedLogUrl</i>. </p> </li> <li>
+     * and the GameLift is now verifying that the game server launch paths, which are
+     * specified in the fleet's runtime configuration, exist. If any listed launch path
+     * exists, GameLift tries to launch a game server process and waits for the process
+     * to report ready. Failures in this stage prevent a fleet from moving to
+     * <code>ACTIVE</code> status. Logs for this stage list the launch paths in the
+     * runtime configuration and indicate whether each is found. Access the logs by
+     * using the URL in <i>PreSignedLogUrl</i>. </p> </li> <li>
      * <p>FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code>
      * to <code>VALIDATING</code>.</p> </li> <li> <p>
      * FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND -- Validation of the runtime
@@ -244,14 +244,13 @@ namespace Model
      * fleet's status changed from <code>ACTIVATING</code> to <code>ACTIVE</code>. The
      * fleet is now ready to host game sessions.</p> </li> </ul> <p> <b>VPC peering
      * events:</b> </p> <ul> <li> <p>FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering
-     * connection has been established between the VPC for an Amazon GameLift fleet and
-     * a VPC in your AWS account.</p> </li> <li> <p>FLEET_VPC_PEERING_FAILED -- A
-     * requested VPC peering connection has failed. Event details and status
-     * information (see <a>DescribeVpcPeeringConnections</a>) provide additional
-     * detail. A common reason for peering failure is that the two VPCs have
-     * overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR
-     * block for the VPC in your AWS account. For more information on VPC peering
-     * failures, see <a
+     * connection has been established between the VPC for an GameLift fleet and a VPC
+     * in your AWS account.</p> </li> <li> <p>FLEET_VPC_PEERING_FAILED -- A requested
+     * VPC peering connection has failed. Event details and status information (see
+     * <a>DescribeVpcPeeringConnections</a>) provide additional detail. A common reason
+     * for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4
+     * addresses. To resolve this, change the CIDR block for the VPC in your AWS
+     * account. For more information on VPC peering failures, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
      * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
@@ -284,19 +283,19 @@ namespace Model
      * the files that are extracted and saved on the instance. Access the logs by using
      * the URL in <i>PreSignedLogUrl</i>.</p> </li> <li>
      * <p>FLEET_CREATION_RUNNING_INSTALLER – The game server build files were
-     * successfully extracted, and the Amazon GameLift is now running the build's
-     * install script (if one is included). Failure in this stage prevents a fleet from
-     * moving to <code>ACTIVE</code> status. Logs for this stage list the installation
-     * steps and whether or not the install completed successfully. Access the logs by
-     * using the URL in <i>PreSignedLogUrl</i>. </p> </li> <li>
+     * successfully extracted, and the GameLift is now running the build's install
+     * script (if one is included). Failure in this stage prevents a fleet from moving
+     * to <code>ACTIVE</code> status. Logs for this stage list the installation steps
+     * and whether or not the install completed successfully. Access the logs by using
+     * the URL in <i>PreSignedLogUrl</i>. </p> </li> <li>
      * <p>FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful,
-     * and the Amazon GameLift is now verifying that the game server launch paths,
-     * which are specified in the fleet's runtime configuration, exist. If any listed
-     * launch path exists, Amazon GameLift tries to launch a game server process and
-     * waits for the process to report ready. Failures in this stage prevent a fleet
-     * from moving to <code>ACTIVE</code> status. Logs for this stage list the launch
-     * paths in the runtime configuration and indicate whether each is found. Access
-     * the logs by using the URL in <i>PreSignedLogUrl</i>. </p> </li> <li>
+     * and the GameLift is now verifying that the game server launch paths, which are
+     * specified in the fleet's runtime configuration, exist. If any listed launch path
+     * exists, GameLift tries to launch a game server process and waits for the process
+     * to report ready. Failures in this stage prevent a fleet from moving to
+     * <code>ACTIVE</code> status. Logs for this stage list the launch paths in the
+     * runtime configuration and indicate whether each is found. Access the logs by
+     * using the URL in <i>PreSignedLogUrl</i>. </p> </li> <li>
      * <p>FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code>
      * to <code>VALIDATING</code>.</p> </li> <li> <p>
      * FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND -- Validation of the runtime
@@ -316,14 +315,13 @@ namespace Model
      * fleet's status changed from <code>ACTIVATING</code> to <code>ACTIVE</code>. The
      * fleet is now ready to host game sessions.</p> </li> </ul> <p> <b>VPC peering
      * events:</b> </p> <ul> <li> <p>FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering
-     * connection has been established between the VPC for an Amazon GameLift fleet and
-     * a VPC in your AWS account.</p> </li> <li> <p>FLEET_VPC_PEERING_FAILED -- A
-     * requested VPC peering connection has failed. Event details and status
-     * information (see <a>DescribeVpcPeeringConnections</a>) provide additional
-     * detail. A common reason for peering failure is that the two VPCs have
-     * overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR
-     * block for the VPC in your AWS account. For more information on VPC peering
-     * failures, see <a
+     * connection has been established between the VPC for an GameLift fleet and a VPC
+     * in your AWS account.</p> </li> <li> <p>FLEET_VPC_PEERING_FAILED -- A requested
+     * VPC peering connection has failed. Event details and status information (see
+     * <a>DescribeVpcPeeringConnections</a>) provide additional detail. A common reason
+     * for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4
+     * addresses. To resolve this, change the CIDR block for the VPC in your AWS
+     * account. For more information on VPC peering failures, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
      * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
@@ -356,19 +354,19 @@ namespace Model
      * the files that are extracted and saved on the instance. Access the logs by using
      * the URL in <i>PreSignedLogUrl</i>.</p> </li> <li>
      * <p>FLEET_CREATION_RUNNING_INSTALLER – The game server build files were
-     * successfully extracted, and the Amazon GameLift is now running the build's
-     * install script (if one is included). Failure in this stage prevents a fleet from
-     * moving to <code>ACTIVE</code> status. Logs for this stage list the installation
-     * steps and whether or not the install completed successfully. Access the logs by
-     * using the URL in <i>PreSignedLogUrl</i>. </p> </li> <li>
+     * successfully extracted, and the GameLift is now running the build's install
+     * script (if one is included). Failure in this stage prevents a fleet from moving
+     * to <code>ACTIVE</code> status. Logs for this stage list the installation steps
+     * and whether or not the install completed successfully. Access the logs by using
+     * the URL in <i>PreSignedLogUrl</i>. </p> </li> <li>
      * <p>FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful,
-     * and the Amazon GameLift is now verifying that the game server launch paths,
-     * which are specified in the fleet's runtime configuration, exist. If any listed
-     * launch path exists, Amazon GameLift tries to launch a game server process and
-     * waits for the process to report ready. Failures in this stage prevent a fleet
-     * from moving to <code>ACTIVE</code> status. Logs for this stage list the launch
-     * paths in the runtime configuration and indicate whether each is found. Access
-     * the logs by using the URL in <i>PreSignedLogUrl</i>. </p> </li> <li>
+     * and the GameLift is now verifying that the game server launch paths, which are
+     * specified in the fleet's runtime configuration, exist. If any listed launch path
+     * exists, GameLift tries to launch a game server process and waits for the process
+     * to report ready. Failures in this stage prevent a fleet from moving to
+     * <code>ACTIVE</code> status. Logs for this stage list the launch paths in the
+     * runtime configuration and indicate whether each is found. Access the logs by
+     * using the URL in <i>PreSignedLogUrl</i>. </p> </li> <li>
      * <p>FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code>
      * to <code>VALIDATING</code>.</p> </li> <li> <p>
      * FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND -- Validation of the runtime
@@ -388,14 +386,13 @@ namespace Model
      * fleet's status changed from <code>ACTIVATING</code> to <code>ACTIVE</code>. The
      * fleet is now ready to host game sessions.</p> </li> </ul> <p> <b>VPC peering
      * events:</b> </p> <ul> <li> <p>FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering
-     * connection has been established between the VPC for an Amazon GameLift fleet and
-     * a VPC in your AWS account.</p> </li> <li> <p>FLEET_VPC_PEERING_FAILED -- A
-     * requested VPC peering connection has failed. Event details and status
-     * information (see <a>DescribeVpcPeeringConnections</a>) provide additional
-     * detail. A common reason for peering failure is that the two VPCs have
-     * overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR
-     * block for the VPC in your AWS account. For more information on VPC peering
-     * failures, see <a
+     * connection has been established between the VPC for an GameLift fleet and a VPC
+     * in your AWS account.</p> </li> <li> <p>FLEET_VPC_PEERING_FAILED -- A requested
+     * VPC peering connection has failed. Event details and status information (see
+     * <a>DescribeVpcPeeringConnections</a>) provide additional detail. A common reason
+     * for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4
+     * addresses. To resolve this, change the CIDR block for the VPC in your AWS
+     * account. For more information on VPC peering failures, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
      * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
@@ -428,19 +425,19 @@ namespace Model
      * the files that are extracted and saved on the instance. Access the logs by using
      * the URL in <i>PreSignedLogUrl</i>.</p> </li> <li>
      * <p>FLEET_CREATION_RUNNING_INSTALLER – The game server build files were
-     * successfully extracted, and the Amazon GameLift is now running the build's
-     * install script (if one is included). Failure in this stage prevents a fleet from
-     * moving to <code>ACTIVE</code> status. Logs for this stage list the installation
-     * steps and whether or not the install completed successfully. Access the logs by
-     * using the URL in <i>PreSignedLogUrl</i>. </p> </li> <li>
+     * successfully extracted, and the GameLift is now running the build's install
+     * script (if one is included). Failure in this stage prevents a fleet from moving
+     * to <code>ACTIVE</code> status. Logs for this stage list the installation steps
+     * and whether or not the install completed successfully. Access the logs by using
+     * the URL in <i>PreSignedLogUrl</i>. </p> </li> <li>
      * <p>FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful,
-     * and the Amazon GameLift is now verifying that the game server launch paths,
-     * which are specified in the fleet's runtime configuration, exist. If any listed
-     * launch path exists, Amazon GameLift tries to launch a game server process and
-     * waits for the process to report ready. Failures in this stage prevent a fleet
-     * from moving to <code>ACTIVE</code> status. Logs for this stage list the launch
-     * paths in the runtime configuration and indicate whether each is found. Access
-     * the logs by using the URL in <i>PreSignedLogUrl</i>. </p> </li> <li>
+     * and the GameLift is now verifying that the game server launch paths, which are
+     * specified in the fleet's runtime configuration, exist. If any listed launch path
+     * exists, GameLift tries to launch a game server process and waits for the process
+     * to report ready. Failures in this stage prevent a fleet from moving to
+     * <code>ACTIVE</code> status. Logs for this stage list the launch paths in the
+     * runtime configuration and indicate whether each is found. Access the logs by
+     * using the URL in <i>PreSignedLogUrl</i>. </p> </li> <li>
      * <p>FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code>
      * to <code>VALIDATING</code>.</p> </li> <li> <p>
      * FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND -- Validation of the runtime
@@ -460,14 +457,13 @@ namespace Model
      * fleet's status changed from <code>ACTIVATING</code> to <code>ACTIVE</code>. The
      * fleet is now ready to host game sessions.</p> </li> </ul> <p> <b>VPC peering
      * events:</b> </p> <ul> <li> <p>FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering
-     * connection has been established between the VPC for an Amazon GameLift fleet and
-     * a VPC in your AWS account.</p> </li> <li> <p>FLEET_VPC_PEERING_FAILED -- A
-     * requested VPC peering connection has failed. Event details and status
-     * information (see <a>DescribeVpcPeeringConnections</a>) provide additional
-     * detail. A common reason for peering failure is that the two VPCs have
-     * overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR
-     * block for the VPC in your AWS account. For more information on VPC peering
-     * failures, see <a
+     * connection has been established between the VPC for an GameLift fleet and a VPC
+     * in your AWS account.</p> </li> <li> <p>FLEET_VPC_PEERING_FAILED -- A requested
+     * VPC peering connection has failed. Event details and status information (see
+     * <a>DescribeVpcPeeringConnections</a>) provide additional detail. A common reason
+     * for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4
+     * addresses. To resolve this, change the CIDR block for the VPC in your AWS
+     * account. For more information on VPC peering failures, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
      * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
@@ -500,19 +496,19 @@ namespace Model
      * the files that are extracted and saved on the instance. Access the logs by using
      * the URL in <i>PreSignedLogUrl</i>.</p> </li> <li>
      * <p>FLEET_CREATION_RUNNING_INSTALLER – The game server build files were
-     * successfully extracted, and the Amazon GameLift is now running the build's
-     * install script (if one is included). Failure in this stage prevents a fleet from
-     * moving to <code>ACTIVE</code> status. Logs for this stage list the installation
-     * steps and whether or not the install completed successfully. Access the logs by
-     * using the URL in <i>PreSignedLogUrl</i>. </p> </li> <li>
+     * successfully extracted, and the GameLift is now running the build's install
+     * script (if one is included). Failure in this stage prevents a fleet from moving
+     * to <code>ACTIVE</code> status. Logs for this stage list the installation steps
+     * and whether or not the install completed successfully. Access the logs by using
+     * the URL in <i>PreSignedLogUrl</i>. </p> </li> <li>
      * <p>FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful,
-     * and the Amazon GameLift is now verifying that the game server launch paths,
-     * which are specified in the fleet's runtime configuration, exist. If any listed
-     * launch path exists, Amazon GameLift tries to launch a game server process and
-     * waits for the process to report ready. Failures in this stage prevent a fleet
-     * from moving to <code>ACTIVE</code> status. Logs for this stage list the launch
-     * paths in the runtime configuration and indicate whether each is found. Access
-     * the logs by using the URL in <i>PreSignedLogUrl</i>. </p> </li> <li>
+     * and the GameLift is now verifying that the game server launch paths, which are
+     * specified in the fleet's runtime configuration, exist. If any listed launch path
+     * exists, GameLift tries to launch a game server process and waits for the process
+     * to report ready. Failures in this stage prevent a fleet from moving to
+     * <code>ACTIVE</code> status. Logs for this stage list the launch paths in the
+     * runtime configuration and indicate whether each is found. Access the logs by
+     * using the URL in <i>PreSignedLogUrl</i>. </p> </li> <li>
      * <p>FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code>
      * to <code>VALIDATING</code>.</p> </li> <li> <p>
      * FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND -- Validation of the runtime
@@ -532,14 +528,13 @@ namespace Model
      * fleet's status changed from <code>ACTIVATING</code> to <code>ACTIVE</code>. The
      * fleet is now ready to host game sessions.</p> </li> </ul> <p> <b>VPC peering
      * events:</b> </p> <ul> <li> <p>FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering
-     * connection has been established between the VPC for an Amazon GameLift fleet and
-     * a VPC in your AWS account.</p> </li> <li> <p>FLEET_VPC_PEERING_FAILED -- A
-     * requested VPC peering connection has failed. Event details and status
-     * information (see <a>DescribeVpcPeeringConnections</a>) provide additional
-     * detail. A common reason for peering failure is that the two VPCs have
-     * overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR
-     * block for the VPC in your AWS account. For more information on VPC peering
-     * failures, see <a
+     * connection has been established between the VPC for an GameLift fleet and a VPC
+     * in your AWS account.</p> </li> <li> <p>FLEET_VPC_PEERING_FAILED -- A requested
+     * VPC peering connection has failed. Event details and status information (see
+     * <a>DescribeVpcPeeringConnections</a>) provide additional detail. A common reason
+     * for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4
+     * addresses. To resolve this, change the CIDR block for the VPC in your AWS
+     * account. For more information on VPC peering failures, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
      * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
@@ -600,37 +595,37 @@ namespace Model
 
     /**
      * <p>Time stamp indicating when this event occurred. Format is a number expressed
-     * in Unix time as milliseconds (for example "1469498468.057").</p>
+     * in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
      */
     inline const Aws::Utils::DateTime& GetEventTime() const{ return m_eventTime; }
 
     /**
      * <p>Time stamp indicating when this event occurred. Format is a number expressed
-     * in Unix time as milliseconds (for example "1469498468.057").</p>
+     * in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
      */
     inline bool EventTimeHasBeenSet() const { return m_eventTimeHasBeenSet; }
 
     /**
      * <p>Time stamp indicating when this event occurred. Format is a number expressed
-     * in Unix time as milliseconds (for example "1469498468.057").</p>
+     * in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
      */
     inline void SetEventTime(const Aws::Utils::DateTime& value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
 
     /**
      * <p>Time stamp indicating when this event occurred. Format is a number expressed
-     * in Unix time as milliseconds (for example "1469498468.057").</p>
+     * in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
      */
     inline void SetEventTime(Aws::Utils::DateTime&& value) { m_eventTimeHasBeenSet = true; m_eventTime = std::move(value); }
 
     /**
      * <p>Time stamp indicating when this event occurred. Format is a number expressed
-     * in Unix time as milliseconds (for example "1469498468.057").</p>
+     * in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
      */
     inline Event& WithEventTime(const Aws::Utils::DateTime& value) { SetEventTime(value); return *this;}
 
     /**
      * <p>Time stamp indicating when this event occurred. Format is a number expressed
-     * in Unix time as milliseconds (for example "1469498468.057").</p>
+     * in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
      */
     inline Event& WithEventTime(Aws::Utils::DateTime&& value) { SetEventTime(std::move(value)); return *this;}
 
@@ -638,56 +633,56 @@ namespace Model
     /**
      * <p>Location of stored logs with additional detail that is related to the event.
      * This is useful for debugging issues. The URL is valid for 15 minutes. You can
-     * also access fleet creation logs through the Amazon GameLift console.</p>
+     * also access fleet creation logs through the GameLift console.</p>
      */
     inline const Aws::String& GetPreSignedLogUrl() const{ return m_preSignedLogUrl; }
 
     /**
      * <p>Location of stored logs with additional detail that is related to the event.
      * This is useful for debugging issues. The URL is valid for 15 minutes. You can
-     * also access fleet creation logs through the Amazon GameLift console.</p>
+     * also access fleet creation logs through the GameLift console.</p>
      */
     inline bool PreSignedLogUrlHasBeenSet() const { return m_preSignedLogUrlHasBeenSet; }
 
     /**
      * <p>Location of stored logs with additional detail that is related to the event.
      * This is useful for debugging issues. The URL is valid for 15 minutes. You can
-     * also access fleet creation logs through the Amazon GameLift console.</p>
+     * also access fleet creation logs through the GameLift console.</p>
      */
     inline void SetPreSignedLogUrl(const Aws::String& value) { m_preSignedLogUrlHasBeenSet = true; m_preSignedLogUrl = value; }
 
     /**
      * <p>Location of stored logs with additional detail that is related to the event.
      * This is useful for debugging issues. The URL is valid for 15 minutes. You can
-     * also access fleet creation logs through the Amazon GameLift console.</p>
+     * also access fleet creation logs through the GameLift console.</p>
      */
     inline void SetPreSignedLogUrl(Aws::String&& value) { m_preSignedLogUrlHasBeenSet = true; m_preSignedLogUrl = std::move(value); }
 
     /**
      * <p>Location of stored logs with additional detail that is related to the event.
      * This is useful for debugging issues. The URL is valid for 15 minutes. You can
-     * also access fleet creation logs through the Amazon GameLift console.</p>
+     * also access fleet creation logs through the GameLift console.</p>
      */
     inline void SetPreSignedLogUrl(const char* value) { m_preSignedLogUrlHasBeenSet = true; m_preSignedLogUrl.assign(value); }
 
     /**
      * <p>Location of stored logs with additional detail that is related to the event.
      * This is useful for debugging issues. The URL is valid for 15 minutes. You can
-     * also access fleet creation logs through the Amazon GameLift console.</p>
+     * also access fleet creation logs through the GameLift console.</p>
      */
     inline Event& WithPreSignedLogUrl(const Aws::String& value) { SetPreSignedLogUrl(value); return *this;}
 
     /**
      * <p>Location of stored logs with additional detail that is related to the event.
      * This is useful for debugging issues. The URL is valid for 15 minutes. You can
-     * also access fleet creation logs through the Amazon GameLift console.</p>
+     * also access fleet creation logs through the GameLift console.</p>
      */
     inline Event& WithPreSignedLogUrl(Aws::String&& value) { SetPreSignedLogUrl(std::move(value)); return *this;}
 
     /**
      * <p>Location of stored logs with additional detail that is related to the event.
      * This is useful for debugging issues. The URL is valid for 15 minutes. You can
-     * also access fleet creation logs through the Amazon GameLift console.</p>
+     * also access fleet creation logs through the GameLift console.</p>
      */
     inline Event& WithPreSignedLogUrl(const char* value) { SetPreSignedLogUrl(value); return *this;}
 

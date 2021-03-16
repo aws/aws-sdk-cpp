@@ -242,6 +242,10 @@ namespace Model
      * a Launch Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>. After the Auto Scaling group is created, update this
      * value directly in the Auto Scaling group using the AWS console or APIs.</p>
+     *  <p>If you specify network interfaces in your launch template, you must
+     * explicitly set the property <code>AssociatePublicIpAddress</code> to "true". If
+     * no network interface is specified in the launch template, GameLift FleetIQ uses
+     * your account's default VPC.</p> 
      */
     inline const LaunchTemplateSpecification& GetLaunchTemplate() const{ return m_launchTemplate; }
 
@@ -254,6 +258,10 @@ namespace Model
      * a Launch Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>. After the Auto Scaling group is created, update this
      * value directly in the Auto Scaling group using the AWS console or APIs.</p>
+     *  <p>If you specify network interfaces in your launch template, you must
+     * explicitly set the property <code>AssociatePublicIpAddress</code> to "true". If
+     * no network interface is specified in the launch template, GameLift FleetIQ uses
+     * your account's default VPC.</p> 
      */
     inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
 
@@ -266,6 +274,10 @@ namespace Model
      * a Launch Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>. After the Auto Scaling group is created, update this
      * value directly in the Auto Scaling group using the AWS console or APIs.</p>
+     *  <p>If you specify network interfaces in your launch template, you must
+     * explicitly set the property <code>AssociatePublicIpAddress</code> to "true". If
+     * no network interface is specified in the launch template, GameLift FleetIQ uses
+     * your account's default VPC.</p> 
      */
     inline void SetLaunchTemplate(const LaunchTemplateSpecification& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
 
@@ -278,6 +290,10 @@ namespace Model
      * a Launch Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>. After the Auto Scaling group is created, update this
      * value directly in the Auto Scaling group using the AWS console or APIs.</p>
+     *  <p>If you specify network interfaces in your launch template, you must
+     * explicitly set the property <code>AssociatePublicIpAddress</code> to "true". If
+     * no network interface is specified in the launch template, GameLift FleetIQ uses
+     * your account's default VPC.</p> 
      */
     inline void SetLaunchTemplate(LaunchTemplateSpecification&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
 
@@ -290,6 +306,10 @@ namespace Model
      * a Launch Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>. After the Auto Scaling group is created, update this
      * value directly in the Auto Scaling group using the AWS console or APIs.</p>
+     *  <p>If you specify network interfaces in your launch template, you must
+     * explicitly set the property <code>AssociatePublicIpAddress</code> to "true". If
+     * no network interface is specified in the launch template, GameLift FleetIQ uses
+     * your account's default VPC.</p> 
      */
     inline CreateGameServerGroupRequest& WithLaunchTemplate(const LaunchTemplateSpecification& value) { SetLaunchTemplate(value); return *this;}
 
@@ -302,6 +322,10 @@ namespace Model
      * a Launch Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>. After the Auto Scaling group is created, update this
      * value directly in the Auto Scaling group using the AWS console or APIs.</p>
+     *  <p>If you specify network interfaces in your launch template, you must
+     * explicitly set the property <code>AssociatePublicIpAddress</code> to "true". If
+     * no network interface is specified in the launch template, GameLift FleetIQ uses
+     * your account's default VPC.</p> 
      */
     inline CreateGameServerGroupRequest& WithLaunchTemplate(LaunchTemplateSpecification&& value) { SetLaunchTemplate(std::move(value)); return *this;}
 

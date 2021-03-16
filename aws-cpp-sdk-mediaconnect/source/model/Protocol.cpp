@@ -25,6 +25,7 @@ namespace Aws
         static const int rtp_HASH = HashingUtils::HashString("rtp");
         static const int zixi_pull_HASH = HashingUtils::HashString("zixi-pull");
         static const int rist_HASH = HashingUtils::HashString("rist");
+        static const int srt_listener_HASH = HashingUtils::HashString("srt-listener");
 
 
         Protocol GetProtocolForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return Protocol::rist;
           }
+          else if (hashCode == srt_listener_HASH)
+          {
+            return Protocol::srt_listener;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "zixi-pull";
           case Protocol::rist:
             return "rist";
+          case Protocol::srt_listener:
+            return "srt-listener";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

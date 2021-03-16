@@ -293,6 +293,43 @@ namespace Model
 
 
     /**
+     * The minimum latency in milliseconds for SRT-based streams. In streams that use
+     * the SRT protocol, this value that you set on your MediaConnect source or output
+     * represents the minimal potential latency of that connection. The latency of the
+     * stream is set to the highest number between the sender’s minimum latency and the
+     * receiver’s minimum latency.
+     */
+    inline int GetMinLatency() const{ return m_minLatency; }
+
+    /**
+     * The minimum latency in milliseconds for SRT-based streams. In streams that use
+     * the SRT protocol, this value that you set on your MediaConnect source or output
+     * represents the minimal potential latency of that connection. The latency of the
+     * stream is set to the highest number between the sender’s minimum latency and the
+     * receiver’s minimum latency.
+     */
+    inline bool MinLatencyHasBeenSet() const { return m_minLatencyHasBeenSet; }
+
+    /**
+     * The minimum latency in milliseconds for SRT-based streams. In streams that use
+     * the SRT protocol, this value that you set on your MediaConnect source or output
+     * represents the minimal potential latency of that connection. The latency of the
+     * stream is set to the highest number between the sender’s minimum latency and the
+     * receiver’s minimum latency.
+     */
+    inline void SetMinLatency(int value) { m_minLatencyHasBeenSet = true; m_minLatency = value; }
+
+    /**
+     * The minimum latency in milliseconds for SRT-based streams. In streams that use
+     * the SRT protocol, this value that you set on your MediaConnect source or output
+     * represents the minimal potential latency of that connection. The latency of the
+     * stream is set to the highest number between the sender’s minimum latency and the
+     * receiver’s minimum latency.
+     */
+    inline UpdateFlowOutputRequest& WithMinLatency(int value) { SetMinLatency(value); return *this;}
+
+
+    /**
      * The ARN of the output that you want to update.
      */
     inline const Aws::String& GetOutputArn() const{ return m_outputArn; }
@@ -545,6 +582,9 @@ namespace Model
 
     int m_maxLatency;
     bool m_maxLatencyHasBeenSet;
+
+    int m_minLatency;
+    bool m_minLatencyHasBeenSet;
 
     Aws::String m_outputArn;
     bool m_outputArnHasBeenSet;

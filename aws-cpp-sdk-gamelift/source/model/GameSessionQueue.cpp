@@ -24,7 +24,9 @@ GameSessionQueue::GameSessionQueue() :
     m_timeoutInSeconds(0),
     m_timeoutInSecondsHasBeenSet(false),
     m_playerLatencyPoliciesHasBeenSet(false),
-    m_destinationsHasBeenSet(false)
+    m_destinationsHasBeenSet(false),
+    m_filterConfigurationHasBeenSet(false),
+    m_priorityConfigurationHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ GameSessionQueue::GameSessionQueue(JsonView jsonValue) :
     m_timeoutInSeconds(0),
     m_timeoutInSecondsHasBeenSet(false),
     m_playerLatencyPoliciesHasBeenSet(false),
-    m_destinationsHasBeenSet(false)
+    m_destinationsHasBeenSet(false),
+    m_filterConfigurationHasBeenSet(false),
+    m_priorityConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -82,6 +86,20 @@ GameSessionQueue& GameSessionQueue::operator =(JsonView jsonValue)
     m_destinationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FilterConfiguration"))
+  {
+    m_filterConfiguration = jsonValue.GetObject("FilterConfiguration");
+
+    m_filterConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PriorityConfiguration"))
+  {
+    m_priorityConfiguration = jsonValue.GetObject("PriorityConfiguration");
+
+    m_priorityConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -126,6 +144,18 @@ JsonValue GameSessionQueue::Jsonize() const
      destinationsJsonList[destinationsIndex].AsObject(m_destinations[destinationsIndex].Jsonize());
    }
    payload.WithArray("Destinations", std::move(destinationsJsonList));
+
+  }
+
+  if(m_filterConfigurationHasBeenSet)
+  {
+   payload.WithObject("FilterConfiguration", m_filterConfiguration.Jsonize());
+
+  }
+
+  if(m_priorityConfigurationHasBeenSet)
+  {
+   payload.WithObject("PriorityConfiguration", m_priorityConfiguration.Jsonize());
 
   }
 
