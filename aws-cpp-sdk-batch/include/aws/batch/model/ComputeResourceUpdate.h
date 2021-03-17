@@ -75,10 +75,10 @@ namespace Model
      * <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p>
      *  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
      * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, AWS Batch might need
-     * to go above <code>maxvCpus</code> to meet your capacity requirements. In this
-     * event, AWS Batch will never go above <code>maxvCpus</code> by more than a single
-     * instance (e.g., no more than a single instance from among those specified in
-     * your compute environment).</p> 
+     * to exceed <code>maxvCpus</code> to meet your capacity requirements. In this
+     * event, AWS Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance. That is, no more than a single instance from among those specified in
+     * your compute environment.</p> 
      */
     inline int GetMaxvCpus() const{ return m_maxvCpus; }
 
@@ -86,10 +86,10 @@ namespace Model
      * <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p>
      *  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
      * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, AWS Batch might need
-     * to go above <code>maxvCpus</code> to meet your capacity requirements. In this
-     * event, AWS Batch will never go above <code>maxvCpus</code> by more than a single
-     * instance (e.g., no more than a single instance from among those specified in
-     * your compute environment).</p> 
+     * to exceed <code>maxvCpus</code> to meet your capacity requirements. In this
+     * event, AWS Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance. That is, no more than a single instance from among those specified in
+     * your compute environment.</p> 
      */
     inline bool MaxvCpusHasBeenSet() const { return m_maxvCpusHasBeenSet; }
 
@@ -97,10 +97,10 @@ namespace Model
      * <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p>
      *  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
      * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, AWS Batch might need
-     * to go above <code>maxvCpus</code> to meet your capacity requirements. In this
-     * event, AWS Batch will never go above <code>maxvCpus</code> by more than a single
-     * instance (e.g., no more than a single instance from among those specified in
-     * your compute environment).</p> 
+     * to exceed <code>maxvCpus</code> to meet your capacity requirements. In this
+     * event, AWS Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance. That is, no more than a single instance from among those specified in
+     * your compute environment.</p> 
      */
     inline void SetMaxvCpus(int value) { m_maxvCpusHasBeenSet = true; m_maxvCpus = value; }
 
@@ -108,10 +108,10 @@ namespace Model
      * <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p>
      *  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
      * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, AWS Batch might need
-     * to go above <code>maxvCpus</code> to meet your capacity requirements. In this
-     * event, AWS Batch will never go above <code>maxvCpus</code> by more than a single
-     * instance (e.g., no more than a single instance from among those specified in
-     * your compute environment).</p> 
+     * to exceed <code>maxvCpus</code> to meet your capacity requirements. In this
+     * event, AWS Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance. That is, no more than a single instance from among those specified in
+     * your compute environment.</p> 
      */
     inline ComputeResourceUpdate& WithMaxvCpus(int value) { SetMaxvCpus(value); return *this;}
 
@@ -146,101 +146,92 @@ namespace Model
 
 
     /**
-     * <p>The VPC subnets that the compute resources are launched into. This parameter
-     * is required for jobs running on Fargate compute resources, where it can contain
-     * up to 16 subnets. For more information, see <a
+     * <p>The VPC subnets that the compute resources are launched into. Fargate compute
+     * resources can contain up to 16 subnets. Providing an empty list will be handled
+     * as if this parameter wasn't specified and no change is made. This can't be
+     * specified for EC2 compute resources. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
-     * and Subnets</a> in the <i>Amazon VPC User Guide</i>. This can't be specified for
-     * EC2 compute resources. Providing an empty list will be handled as if this
-     * parameter wasn't specified and no change is made.</p>
+     * and Subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
 
     /**
-     * <p>The VPC subnets that the compute resources are launched into. This parameter
-     * is required for jobs running on Fargate compute resources, where it can contain
-     * up to 16 subnets. For more information, see <a
+     * <p>The VPC subnets that the compute resources are launched into. Fargate compute
+     * resources can contain up to 16 subnets. Providing an empty list will be handled
+     * as if this parameter wasn't specified and no change is made. This can't be
+     * specified for EC2 compute resources. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
-     * and Subnets</a> in the <i>Amazon VPC User Guide</i>. This can't be specified for
-     * EC2 compute resources. Providing an empty list will be handled as if this
-     * parameter wasn't specified and no change is made.</p>
+     * and Subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
     inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
 
     /**
-     * <p>The VPC subnets that the compute resources are launched into. This parameter
-     * is required for jobs running on Fargate compute resources, where it can contain
-     * up to 16 subnets. For more information, see <a
+     * <p>The VPC subnets that the compute resources are launched into. Fargate compute
+     * resources can contain up to 16 subnets. Providing an empty list will be handled
+     * as if this parameter wasn't specified and no change is made. This can't be
+     * specified for EC2 compute resources. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
-     * and Subnets</a> in the <i>Amazon VPC User Guide</i>. This can't be specified for
-     * EC2 compute resources. Providing an empty list will be handled as if this
-     * parameter wasn't specified and no change is made.</p>
+     * and Subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
     inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
 
     /**
-     * <p>The VPC subnets that the compute resources are launched into. This parameter
-     * is required for jobs running on Fargate compute resources, where it can contain
-     * up to 16 subnets. For more information, see <a
+     * <p>The VPC subnets that the compute resources are launched into. Fargate compute
+     * resources can contain up to 16 subnets. Providing an empty list will be handled
+     * as if this parameter wasn't specified and no change is made. This can't be
+     * specified for EC2 compute resources. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
-     * and Subnets</a> in the <i>Amazon VPC User Guide</i>. This can't be specified for
-     * EC2 compute resources. Providing an empty list will be handled as if this
-     * parameter wasn't specified and no change is made.</p>
+     * and Subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
     inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
 
     /**
-     * <p>The VPC subnets that the compute resources are launched into. This parameter
-     * is required for jobs running on Fargate compute resources, where it can contain
-     * up to 16 subnets. For more information, see <a
+     * <p>The VPC subnets that the compute resources are launched into. Fargate compute
+     * resources can contain up to 16 subnets. Providing an empty list will be handled
+     * as if this parameter wasn't specified and no change is made. This can't be
+     * specified for EC2 compute resources. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
-     * and Subnets</a> in the <i>Amazon VPC User Guide</i>. This can't be specified for
-     * EC2 compute resources. Providing an empty list will be handled as if this
-     * parameter wasn't specified and no change is made.</p>
+     * and Subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
     inline ComputeResourceUpdate& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
 
     /**
-     * <p>The VPC subnets that the compute resources are launched into. This parameter
-     * is required for jobs running on Fargate compute resources, where it can contain
-     * up to 16 subnets. For more information, see <a
+     * <p>The VPC subnets that the compute resources are launched into. Fargate compute
+     * resources can contain up to 16 subnets. Providing an empty list will be handled
+     * as if this parameter wasn't specified and no change is made. This can't be
+     * specified for EC2 compute resources. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
-     * and Subnets</a> in the <i>Amazon VPC User Guide</i>. This can't be specified for
-     * EC2 compute resources. Providing an empty list will be handled as if this
-     * parameter wasn't specified and no change is made.</p>
+     * and Subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
     inline ComputeResourceUpdate& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(std::move(value)); return *this;}
 
     /**
-     * <p>The VPC subnets that the compute resources are launched into. This parameter
-     * is required for jobs running on Fargate compute resources, where it can contain
-     * up to 16 subnets. For more information, see <a
+     * <p>The VPC subnets that the compute resources are launched into. Fargate compute
+     * resources can contain up to 16 subnets. Providing an empty list will be handled
+     * as if this parameter wasn't specified and no change is made. This can't be
+     * specified for EC2 compute resources. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
-     * and Subnets</a> in the <i>Amazon VPC User Guide</i>. This can't be specified for
-     * EC2 compute resources. Providing an empty list will be handled as if this
-     * parameter wasn't specified and no change is made.</p>
+     * and Subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
     inline ComputeResourceUpdate& AddSubnets(const Aws::String& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
     /**
-     * <p>The VPC subnets that the compute resources are launched into. This parameter
-     * is required for jobs running on Fargate compute resources, where it can contain
-     * up to 16 subnets. For more information, see <a
+     * <p>The VPC subnets that the compute resources are launched into. Fargate compute
+     * resources can contain up to 16 subnets. Providing an empty list will be handled
+     * as if this parameter wasn't specified and no change is made. This can't be
+     * specified for EC2 compute resources. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
-     * and Subnets</a> in the <i>Amazon VPC User Guide</i>. This can't be specified for
-     * EC2 compute resources. Providing an empty list will be handled as if this
-     * parameter wasn't specified and no change is made.</p>
+     * and Subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
     inline ComputeResourceUpdate& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The VPC subnets that the compute resources are launched into. This parameter
-     * is required for jobs running on Fargate compute resources, where it can contain
-     * up to 16 subnets. For more information, see <a
+     * <p>The VPC subnets that the compute resources are launched into. Fargate compute
+     * resources can contain up to 16 subnets. Providing an empty list will be handled
+     * as if this parameter wasn't specified and no change is made. This can't be
+     * specified for EC2 compute resources. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
-     * and Subnets</a> in the <i>Amazon VPC User Guide</i>. This can't be specified for
-     * EC2 compute resources. Providing an empty list will be handled as if this
-     * parameter wasn't specified and no change is made.</p>
+     * and Subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
     inline ComputeResourceUpdate& AddSubnets(const char* value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 

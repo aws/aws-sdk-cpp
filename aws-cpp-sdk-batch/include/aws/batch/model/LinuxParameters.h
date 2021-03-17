@@ -398,7 +398,7 @@ namespace Model
      * supported for job definitions using EC2 resources.</p> </li> <li> <p>If the
      * <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from a
      * job definition, each container will have a default <code>swappiness</code> value
-     * of 60 and the total swap usage will be limited to two times the memory
+     * of 60, and the total swap usage will be limited to two times the memory
      * reservation of the container.</p> </li> </ul>  <p>This parameter isn't
      * applicable to jobs running on Fargate resources and shouldn't be provided.</p>
      * 
@@ -430,7 +430,7 @@ namespace Model
      * supported for job definitions using EC2 resources.</p> </li> <li> <p>If the
      * <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from a
      * job definition, each container will have a default <code>swappiness</code> value
-     * of 60 and the total swap usage will be limited to two times the memory
+     * of 60, and the total swap usage will be limited to two times the memory
      * reservation of the container.</p> </li> </ul>  <p>This parameter isn't
      * applicable to jobs running on Fargate resources and shouldn't be provided.</p>
      * 
@@ -462,7 +462,7 @@ namespace Model
      * supported for job definitions using EC2 resources.</p> </li> <li> <p>If the
      * <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from a
      * job definition, each container will have a default <code>swappiness</code> value
-     * of 60 and the total swap usage will be limited to two times the memory
+     * of 60, and the total swap usage will be limited to two times the memory
      * reservation of the container.</p> </li> </ul>  <p>This parameter isn't
      * applicable to jobs running on Fargate resources and shouldn't be provided.</p>
      * 
@@ -494,7 +494,7 @@ namespace Model
      * supported for job definitions using EC2 resources.</p> </li> <li> <p>If the
      * <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from a
      * job definition, each container will have a default <code>swappiness</code> value
-     * of 60 and the total swap usage will be limited to two times the memory
+     * of 60, and the total swap usage will be limited to two times the memory
      * reservation of the container.</p> </li> </ul>  <p>This parameter isn't
      * applicable to jobs running on Fargate resources and shouldn't be provided.</p>
      * 

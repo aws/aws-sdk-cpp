@@ -82,49 +82,49 @@ namespace Model
 
     /**
      * <p>Describes the queue's ability to accept new jobs. If the job queue state is
-     * <code>ENABLED</code>, it is able to accept jobs. If the job queue state is
-     * <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs already
-     * in the queue can finish.</p>
+     * <code>ENABLED</code>, it can accept jobs. If the job queue state is
+     * <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
+     * the queue can finish.</p>
      */
     inline const JQState& GetState() const{ return m_state; }
 
     /**
      * <p>Describes the queue's ability to accept new jobs. If the job queue state is
-     * <code>ENABLED</code>, it is able to accept jobs. If the job queue state is
-     * <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs already
-     * in the queue can finish.</p>
+     * <code>ENABLED</code>, it can accept jobs. If the job queue state is
+     * <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
+     * the queue can finish.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>Describes the queue's ability to accept new jobs. If the job queue state is
-     * <code>ENABLED</code>, it is able to accept jobs. If the job queue state is
-     * <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs already
-     * in the queue can finish.</p>
+     * <code>ENABLED</code>, it can accept jobs. If the job queue state is
+     * <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
+     * the queue can finish.</p>
      */
     inline void SetState(const JQState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
      * <p>Describes the queue's ability to accept new jobs. If the job queue state is
-     * <code>ENABLED</code>, it is able to accept jobs. If the job queue state is
-     * <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs already
-     * in the queue can finish.</p>
+     * <code>ENABLED</code>, it can accept jobs. If the job queue state is
+     * <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
+     * the queue can finish.</p>
      */
     inline void SetState(JQState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>Describes the queue's ability to accept new jobs. If the job queue state is
-     * <code>ENABLED</code>, it is able to accept jobs. If the job queue state is
-     * <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs already
-     * in the queue can finish.</p>
+     * <code>ENABLED</code>, it can accept jobs. If the job queue state is
+     * <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
+     * the queue can finish.</p>
      */
     inline UpdateJobQueueRequest& WithState(const JQState& value) { SetState(value); return *this;}
 
     /**
      * <p>Describes the queue's ability to accept new jobs. If the job queue state is
-     * <code>ENABLED</code>, it is able to accept jobs. If the job queue state is
-     * <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs already
-     * in the queue can finish.</p>
+     * <code>ENABLED</code>, it can accept jobs. If the job queue state is
+     * <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
+     * the queue can finish.</p>
      */
     inline UpdateJobQueueRequest& WithState(JQState&& value) { SetState(std::move(value)); return *this;}
 
@@ -137,7 +137,7 @@ namespace Model
      * <code>10</code> is given scheduling preference over a job queue with a priority
      * value of <code>1</code>. All of the compute environments must be either EC2
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be
+     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      * mixed.</p>
      */
     inline int GetPriority() const{ return m_priority; }
@@ -150,7 +150,7 @@ namespace Model
      * <code>10</code> is given scheduling preference over a job queue with a priority
      * value of <code>1</code>. All of the compute environments must be either EC2
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be
+     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      * mixed.</p>
      */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
@@ -163,7 +163,7 @@ namespace Model
      * <code>10</code> is given scheduling preference over a job queue with a priority
      * value of <code>1</code>. All of the compute environments must be either EC2
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be
+     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      * mixed.</p>
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
@@ -176,7 +176,7 @@ namespace Model
      * <code>10</code> is given scheduling preference over a job queue with a priority
      * value of <code>1</code>. All of the compute environments must be either EC2
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be
+     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      * mixed.</p>
      */
     inline UpdateJobQueueRequest& WithPriority(int value) { SetPriority(value); return *this;}
@@ -189,7 +189,7 @@ namespace Model
      * environments must be in the <code>VALID</code> state before you can associate
      * them with a job queue. All of the compute environments must be either EC2
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be
+     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      * mixed.</p>  <p>All compute environments that are associated with a job
      * queue must share the same architecture. AWS Batch doesn't support mixing compute
      * environment architecture types in a single job queue.</p> 
@@ -203,7 +203,7 @@ namespace Model
      * environments must be in the <code>VALID</code> state before you can associate
      * them with a job queue. All of the compute environments must be either EC2
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be
+     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      * mixed.</p>  <p>All compute environments that are associated with a job
      * queue must share the same architecture. AWS Batch doesn't support mixing compute
      * environment architecture types in a single job queue.</p> 
@@ -217,7 +217,7 @@ namespace Model
      * environments must be in the <code>VALID</code> state before you can associate
      * them with a job queue. All of the compute environments must be either EC2
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be
+     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      * mixed.</p>  <p>All compute environments that are associated with a job
      * queue must share the same architecture. AWS Batch doesn't support mixing compute
      * environment architecture types in a single job queue.</p> 
@@ -231,7 +231,7 @@ namespace Model
      * environments must be in the <code>VALID</code> state before you can associate
      * them with a job queue. All of the compute environments must be either EC2
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be
+     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      * mixed.</p>  <p>All compute environments that are associated with a job
      * queue must share the same architecture. AWS Batch doesn't support mixing compute
      * environment architecture types in a single job queue.</p> 
@@ -245,7 +245,7 @@ namespace Model
      * environments must be in the <code>VALID</code> state before you can associate
      * them with a job queue. All of the compute environments must be either EC2
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be
+     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      * mixed.</p>  <p>All compute environments that are associated with a job
      * queue must share the same architecture. AWS Batch doesn't support mixing compute
      * environment architecture types in a single job queue.</p> 
@@ -259,7 +259,7 @@ namespace Model
      * environments must be in the <code>VALID</code> state before you can associate
      * them with a job queue. All of the compute environments must be either EC2
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be
+     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      * mixed.</p>  <p>All compute environments that are associated with a job
      * queue must share the same architecture. AWS Batch doesn't support mixing compute
      * environment architecture types in a single job queue.</p> 
@@ -273,7 +273,7 @@ namespace Model
      * environments must be in the <code>VALID</code> state before you can associate
      * them with a job queue. All of the compute environments must be either EC2
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be
+     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      * mixed.</p>  <p>All compute environments that are associated with a job
      * queue must share the same architecture. AWS Batch doesn't support mixing compute
      * environment architecture types in a single job queue.</p> 
@@ -287,7 +287,7 @@ namespace Model
      * environments must be in the <code>VALID</code> state before you can associate
      * them with a job queue. All of the compute environments must be either EC2
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be
+     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      * mixed.</p>  <p>All compute environments that are associated with a job
      * queue must share the same architecture. AWS Batch doesn't support mixing compute
      * environment architecture types in a single job queue.</p> 

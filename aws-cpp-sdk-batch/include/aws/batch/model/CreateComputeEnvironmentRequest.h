@@ -294,14 +294,23 @@ namespace Model
      * <p>The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to
      * make calls to other AWS services on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS
-     * Batch service IAM role</a> in the <i>AWS Batch User Guide</i>.</p> <p>If your
-     * specified role has a path other than <code>/</code>, then you must either
-     * specify the full role ARN (this is recommended) or prefix the role name with the
-     * path.</p>  <p>Depending on how you created your AWS Batch service role,
-     * its ARN might contain the <code>service-role</code> path prefix. When you only
-     * specify the name of the service role, AWS Batch assumes that your ARN doesn't
-     * use the <code>service-role</code> path prefix. Because of this, we recommend
-     * that you specify the full ARN of your service role when you create compute
+     * Batch service IAM role</a> in the <i>AWS Batch User Guide</i>.</p> 
+     * <p>If your account has already created the AWS Batch service-linked role, that
+     * role is used by default for your compute environment unless you specify a role
+     * here. If the AWS Batch service-linked role does not exist in your account, and
+     * no role is specified here, the service will try to create the AWS Batch
+     * service-linked role in your account.</p>  <p>If your specified role
+     * has a path other than <code>/</code>, then you must specify either the full role
+     * ARN (recommended) or prefix the role name with the path. For example, if a role
+     * with the name <code>bar</code> has a path of <code>/foo/</code> then you would
+     * specify <code>/foo/bar</code> as the role name. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+     * names and paths</a> in the <i>IAM User Guide</i>.</p>  <p>Depending on how
+     * you created your AWS Batch service role, its ARN might contain the
+     * <code>service-role</code> path prefix. When you only specify the name of the
+     * service role, AWS Batch assumes that your ARN doesn't use the
+     * <code>service-role</code> path prefix. Because of this, we recommend that you
+     * specify the full ARN of your service role when you create compute
      * environments.</p> 
      */
     inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
@@ -310,14 +319,23 @@ namespace Model
      * <p>The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to
      * make calls to other AWS services on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS
-     * Batch service IAM role</a> in the <i>AWS Batch User Guide</i>.</p> <p>If your
-     * specified role has a path other than <code>/</code>, then you must either
-     * specify the full role ARN (this is recommended) or prefix the role name with the
-     * path.</p>  <p>Depending on how you created your AWS Batch service role,
-     * its ARN might contain the <code>service-role</code> path prefix. When you only
-     * specify the name of the service role, AWS Batch assumes that your ARN doesn't
-     * use the <code>service-role</code> path prefix. Because of this, we recommend
-     * that you specify the full ARN of your service role when you create compute
+     * Batch service IAM role</a> in the <i>AWS Batch User Guide</i>.</p> 
+     * <p>If your account has already created the AWS Batch service-linked role, that
+     * role is used by default for your compute environment unless you specify a role
+     * here. If the AWS Batch service-linked role does not exist in your account, and
+     * no role is specified here, the service will try to create the AWS Batch
+     * service-linked role in your account.</p>  <p>If your specified role
+     * has a path other than <code>/</code>, then you must specify either the full role
+     * ARN (recommended) or prefix the role name with the path. For example, if a role
+     * with the name <code>bar</code> has a path of <code>/foo/</code> then you would
+     * specify <code>/foo/bar</code> as the role name. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+     * names and paths</a> in the <i>IAM User Guide</i>.</p>  <p>Depending on how
+     * you created your AWS Batch service role, its ARN might contain the
+     * <code>service-role</code> path prefix. When you only specify the name of the
+     * service role, AWS Batch assumes that your ARN doesn't use the
+     * <code>service-role</code> path prefix. Because of this, we recommend that you
+     * specify the full ARN of your service role when you create compute
      * environments.</p> 
      */
     inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
@@ -326,14 +344,23 @@ namespace Model
      * <p>The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to
      * make calls to other AWS services on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS
-     * Batch service IAM role</a> in the <i>AWS Batch User Guide</i>.</p> <p>If your
-     * specified role has a path other than <code>/</code>, then you must either
-     * specify the full role ARN (this is recommended) or prefix the role name with the
-     * path.</p>  <p>Depending on how you created your AWS Batch service role,
-     * its ARN might contain the <code>service-role</code> path prefix. When you only
-     * specify the name of the service role, AWS Batch assumes that your ARN doesn't
-     * use the <code>service-role</code> path prefix. Because of this, we recommend
-     * that you specify the full ARN of your service role when you create compute
+     * Batch service IAM role</a> in the <i>AWS Batch User Guide</i>.</p> 
+     * <p>If your account has already created the AWS Batch service-linked role, that
+     * role is used by default for your compute environment unless you specify a role
+     * here. If the AWS Batch service-linked role does not exist in your account, and
+     * no role is specified here, the service will try to create the AWS Batch
+     * service-linked role in your account.</p>  <p>If your specified role
+     * has a path other than <code>/</code>, then you must specify either the full role
+     * ARN (recommended) or prefix the role name with the path. For example, if a role
+     * with the name <code>bar</code> has a path of <code>/foo/</code> then you would
+     * specify <code>/foo/bar</code> as the role name. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+     * names and paths</a> in the <i>IAM User Guide</i>.</p>  <p>Depending on how
+     * you created your AWS Batch service role, its ARN might contain the
+     * <code>service-role</code> path prefix. When you only specify the name of the
+     * service role, AWS Batch assumes that your ARN doesn't use the
+     * <code>service-role</code> path prefix. Because of this, we recommend that you
+     * specify the full ARN of your service role when you create compute
      * environments.</p> 
      */
     inline void SetServiceRole(const Aws::String& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
@@ -342,14 +369,23 @@ namespace Model
      * <p>The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to
      * make calls to other AWS services on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS
-     * Batch service IAM role</a> in the <i>AWS Batch User Guide</i>.</p> <p>If your
-     * specified role has a path other than <code>/</code>, then you must either
-     * specify the full role ARN (this is recommended) or prefix the role name with the
-     * path.</p>  <p>Depending on how you created your AWS Batch service role,
-     * its ARN might contain the <code>service-role</code> path prefix. When you only
-     * specify the name of the service role, AWS Batch assumes that your ARN doesn't
-     * use the <code>service-role</code> path prefix. Because of this, we recommend
-     * that you specify the full ARN of your service role when you create compute
+     * Batch service IAM role</a> in the <i>AWS Batch User Guide</i>.</p> 
+     * <p>If your account has already created the AWS Batch service-linked role, that
+     * role is used by default for your compute environment unless you specify a role
+     * here. If the AWS Batch service-linked role does not exist in your account, and
+     * no role is specified here, the service will try to create the AWS Batch
+     * service-linked role in your account.</p>  <p>If your specified role
+     * has a path other than <code>/</code>, then you must specify either the full role
+     * ARN (recommended) or prefix the role name with the path. For example, if a role
+     * with the name <code>bar</code> has a path of <code>/foo/</code> then you would
+     * specify <code>/foo/bar</code> as the role name. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+     * names and paths</a> in the <i>IAM User Guide</i>.</p>  <p>Depending on how
+     * you created your AWS Batch service role, its ARN might contain the
+     * <code>service-role</code> path prefix. When you only specify the name of the
+     * service role, AWS Batch assumes that your ARN doesn't use the
+     * <code>service-role</code> path prefix. Because of this, we recommend that you
+     * specify the full ARN of your service role when you create compute
      * environments.</p> 
      */
     inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
@@ -358,14 +394,23 @@ namespace Model
      * <p>The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to
      * make calls to other AWS services on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS
-     * Batch service IAM role</a> in the <i>AWS Batch User Guide</i>.</p> <p>If your
-     * specified role has a path other than <code>/</code>, then you must either
-     * specify the full role ARN (this is recommended) or prefix the role name with the
-     * path.</p>  <p>Depending on how you created your AWS Batch service role,
-     * its ARN might contain the <code>service-role</code> path prefix. When you only
-     * specify the name of the service role, AWS Batch assumes that your ARN doesn't
-     * use the <code>service-role</code> path prefix. Because of this, we recommend
-     * that you specify the full ARN of your service role when you create compute
+     * Batch service IAM role</a> in the <i>AWS Batch User Guide</i>.</p> 
+     * <p>If your account has already created the AWS Batch service-linked role, that
+     * role is used by default for your compute environment unless you specify a role
+     * here. If the AWS Batch service-linked role does not exist in your account, and
+     * no role is specified here, the service will try to create the AWS Batch
+     * service-linked role in your account.</p>  <p>If your specified role
+     * has a path other than <code>/</code>, then you must specify either the full role
+     * ARN (recommended) or prefix the role name with the path. For example, if a role
+     * with the name <code>bar</code> has a path of <code>/foo/</code> then you would
+     * specify <code>/foo/bar</code> as the role name. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+     * names and paths</a> in the <i>IAM User Guide</i>.</p>  <p>Depending on how
+     * you created your AWS Batch service role, its ARN might contain the
+     * <code>service-role</code> path prefix. When you only specify the name of the
+     * service role, AWS Batch assumes that your ARN doesn't use the
+     * <code>service-role</code> path prefix. Because of this, we recommend that you
+     * specify the full ARN of your service role when you create compute
      * environments.</p> 
      */
     inline void SetServiceRole(const char* value) { m_serviceRoleHasBeenSet = true; m_serviceRole.assign(value); }
@@ -374,14 +419,23 @@ namespace Model
      * <p>The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to
      * make calls to other AWS services on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS
-     * Batch service IAM role</a> in the <i>AWS Batch User Guide</i>.</p> <p>If your
-     * specified role has a path other than <code>/</code>, then you must either
-     * specify the full role ARN (this is recommended) or prefix the role name with the
-     * path.</p>  <p>Depending on how you created your AWS Batch service role,
-     * its ARN might contain the <code>service-role</code> path prefix. When you only
-     * specify the name of the service role, AWS Batch assumes that your ARN doesn't
-     * use the <code>service-role</code> path prefix. Because of this, we recommend
-     * that you specify the full ARN of your service role when you create compute
+     * Batch service IAM role</a> in the <i>AWS Batch User Guide</i>.</p> 
+     * <p>If your account has already created the AWS Batch service-linked role, that
+     * role is used by default for your compute environment unless you specify a role
+     * here. If the AWS Batch service-linked role does not exist in your account, and
+     * no role is specified here, the service will try to create the AWS Batch
+     * service-linked role in your account.</p>  <p>If your specified role
+     * has a path other than <code>/</code>, then you must specify either the full role
+     * ARN (recommended) or prefix the role name with the path. For example, if a role
+     * with the name <code>bar</code> has a path of <code>/foo/</code> then you would
+     * specify <code>/foo/bar</code> as the role name. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+     * names and paths</a> in the <i>IAM User Guide</i>.</p>  <p>Depending on how
+     * you created your AWS Batch service role, its ARN might contain the
+     * <code>service-role</code> path prefix. When you only specify the name of the
+     * service role, AWS Batch assumes that your ARN doesn't use the
+     * <code>service-role</code> path prefix. Because of this, we recommend that you
+     * specify the full ARN of your service role when you create compute
      * environments.</p> 
      */
     inline CreateComputeEnvironmentRequest& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
@@ -390,14 +444,23 @@ namespace Model
      * <p>The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to
      * make calls to other AWS services on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS
-     * Batch service IAM role</a> in the <i>AWS Batch User Guide</i>.</p> <p>If your
-     * specified role has a path other than <code>/</code>, then you must either
-     * specify the full role ARN (this is recommended) or prefix the role name with the
-     * path.</p>  <p>Depending on how you created your AWS Batch service role,
-     * its ARN might contain the <code>service-role</code> path prefix. When you only
-     * specify the name of the service role, AWS Batch assumes that your ARN doesn't
-     * use the <code>service-role</code> path prefix. Because of this, we recommend
-     * that you specify the full ARN of your service role when you create compute
+     * Batch service IAM role</a> in the <i>AWS Batch User Guide</i>.</p> 
+     * <p>If your account has already created the AWS Batch service-linked role, that
+     * role is used by default for your compute environment unless you specify a role
+     * here. If the AWS Batch service-linked role does not exist in your account, and
+     * no role is specified here, the service will try to create the AWS Batch
+     * service-linked role in your account.</p>  <p>If your specified role
+     * has a path other than <code>/</code>, then you must specify either the full role
+     * ARN (recommended) or prefix the role name with the path. For example, if a role
+     * with the name <code>bar</code> has a path of <code>/foo/</code> then you would
+     * specify <code>/foo/bar</code> as the role name. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+     * names and paths</a> in the <i>IAM User Guide</i>.</p>  <p>Depending on how
+     * you created your AWS Batch service role, its ARN might contain the
+     * <code>service-role</code> path prefix. When you only specify the name of the
+     * service role, AWS Batch assumes that your ARN doesn't use the
+     * <code>service-role</code> path prefix. Because of this, we recommend that you
+     * specify the full ARN of your service role when you create compute
      * environments.</p> 
      */
     inline CreateComputeEnvironmentRequest& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
@@ -406,14 +469,23 @@ namespace Model
      * <p>The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to
      * make calls to other AWS services on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS
-     * Batch service IAM role</a> in the <i>AWS Batch User Guide</i>.</p> <p>If your
-     * specified role has a path other than <code>/</code>, then you must either
-     * specify the full role ARN (this is recommended) or prefix the role name with the
-     * path.</p>  <p>Depending on how you created your AWS Batch service role,
-     * its ARN might contain the <code>service-role</code> path prefix. When you only
-     * specify the name of the service role, AWS Batch assumes that your ARN doesn't
-     * use the <code>service-role</code> path prefix. Because of this, we recommend
-     * that you specify the full ARN of your service role when you create compute
+     * Batch service IAM role</a> in the <i>AWS Batch User Guide</i>.</p> 
+     * <p>If your account has already created the AWS Batch service-linked role, that
+     * role is used by default for your compute environment unless you specify a role
+     * here. If the AWS Batch service-linked role does not exist in your account, and
+     * no role is specified here, the service will try to create the AWS Batch
+     * service-linked role in your account.</p>  <p>If your specified role
+     * has a path other than <code>/</code>, then you must specify either the full role
+     * ARN (recommended) or prefix the role name with the path. For example, if a role
+     * with the name <code>bar</code> has a path of <code>/foo/</code> then you would
+     * specify <code>/foo/bar</code> as the role name. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+     * names and paths</a> in the <i>IAM User Guide</i>.</p>  <p>Depending on how
+     * you created your AWS Batch service role, its ARN might contain the
+     * <code>service-role</code> path prefix. When you only specify the name of the
+     * service role, AWS Batch assumes that your ARN doesn't use the
+     * <code>service-role</code> path prefix. Because of this, we recommend that you
+     * specify the full ARN of your service role when you create compute
      * environments.</p> 
      */
     inline CreateComputeEnvironmentRequest& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}

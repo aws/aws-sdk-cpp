@@ -467,8 +467,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
-     * assume. Jobs running on Fargate resources must provide an execution role. For
-     * more information, see <a
+     * assume. For jobs that run on Fargate resources, you must provide an execution
+     * role. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
      * Batch execution IAM role</a> in the <i>AWS Batch User Guide</i>.</p>
      */
@@ -476,8 +476,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
-     * assume. Jobs running on Fargate resources must provide an execution role. For
-     * more information, see <a
+     * assume. For jobs that run on Fargate resources, you must provide an execution
+     * role. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
      * Batch execution IAM role</a> in the <i>AWS Batch User Guide</i>.</p>
      */
@@ -485,8 +485,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
-     * assume. Jobs running on Fargate resources must provide an execution role. For
-     * more information, see <a
+     * assume. For jobs that run on Fargate resources, you must provide an execution
+     * role. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
      * Batch execution IAM role</a> in the <i>AWS Batch User Guide</i>.</p>
      */
@@ -494,8 +494,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
-     * assume. Jobs running on Fargate resources must provide an execution role. For
-     * more information, see <a
+     * assume. For jobs that run on Fargate resources, you must provide an execution
+     * role. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
      * Batch execution IAM role</a> in the <i>AWS Batch User Guide</i>.</p>
      */
@@ -503,8 +503,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
-     * assume. Jobs running on Fargate resources must provide an execution role. For
-     * more information, see <a
+     * assume. For jobs that run on Fargate resources, you must provide an execution
+     * role. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
      * Batch execution IAM role</a> in the <i>AWS Batch User Guide</i>.</p>
      */
@@ -512,8 +512,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
-     * assume. Jobs running on Fargate resources must provide an execution role. For
-     * more information, see <a
+     * assume. For jobs that run on Fargate resources, you must provide an execution
+     * role. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
      * Batch execution IAM role</a> in the <i>AWS Batch User Guide</i>.</p>
      */
@@ -521,8 +521,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
-     * assume. Jobs running on Fargate resources must provide an execution role. For
-     * more information, see <a
+     * assume. For jobs that run on Fargate resources, you must provide an execution
+     * role. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
      * Batch execution IAM role</a> in the <i>AWS Batch User Guide</i>.</p>
      */
@@ -530,8 +530,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role that AWS Batch can
-     * assume. Jobs running on Fargate resources must provide an execution role. For
-     * more information, see <a
+     * assume. For jobs that run on Fargate resources, you must provide an execution
+     * role. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
      * Batch execution IAM role</a> in the <i>AWS Batch User Guide</i>.</p>
      */
@@ -1092,7 +1092,7 @@ namespace Model
     /**
      * <p>The instance type to use for a multi-node parallel job. All node groups in a
      * multi-node parallel job must use the same instance type.</p>  <p>This
-     * parameter isn't applicable to single-node container jobs or for jobs running on
+     * parameter isn't applicable to single-node container jobs or for jobs that run on
      * Fargate resources and shouldn't be provided.</p> 
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
@@ -1100,7 +1100,7 @@ namespace Model
     /**
      * <p>The instance type to use for a multi-node parallel job. All node groups in a
      * multi-node parallel job must use the same instance type.</p>  <p>This
-     * parameter isn't applicable to single-node container jobs or for jobs running on
+     * parameter isn't applicable to single-node container jobs or for jobs that run on
      * Fargate resources and shouldn't be provided.</p> 
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
@@ -1108,7 +1108,7 @@ namespace Model
     /**
      * <p>The instance type to use for a multi-node parallel job. All node groups in a
      * multi-node parallel job must use the same instance type.</p>  <p>This
-     * parameter isn't applicable to single-node container jobs or for jobs running on
+     * parameter isn't applicable to single-node container jobs or for jobs that run on
      * Fargate resources and shouldn't be provided.</p> 
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
@@ -1116,7 +1116,7 @@ namespace Model
     /**
      * <p>The instance type to use for a multi-node parallel job. All node groups in a
      * multi-node parallel job must use the same instance type.</p>  <p>This
-     * parameter isn't applicable to single-node container jobs or for jobs running on
+     * parameter isn't applicable to single-node container jobs or for jobs that run on
      * Fargate resources and shouldn't be provided.</p> 
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
@@ -1124,7 +1124,7 @@ namespace Model
     /**
      * <p>The instance type to use for a multi-node parallel job. All node groups in a
      * multi-node parallel job must use the same instance type.</p>  <p>This
-     * parameter isn't applicable to single-node container jobs or for jobs running on
+     * parameter isn't applicable to single-node container jobs or for jobs that run on
      * Fargate resources and shouldn't be provided.</p> 
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
@@ -1132,7 +1132,7 @@ namespace Model
     /**
      * <p>The instance type to use for a multi-node parallel job. All node groups in a
      * multi-node parallel job must use the same instance type.</p>  <p>This
-     * parameter isn't applicable to single-node container jobs or for jobs running on
+     * parameter isn't applicable to single-node container jobs or for jobs that run on
      * Fargate resources and shouldn't be provided.</p> 
      */
     inline ContainerProperties& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
@@ -1140,7 +1140,7 @@ namespace Model
     /**
      * <p>The instance type to use for a multi-node parallel job. All node groups in a
      * multi-node parallel job must use the same instance type.</p>  <p>This
-     * parameter isn't applicable to single-node container jobs or for jobs running on
+     * parameter isn't applicable to single-node container jobs or for jobs that run on
      * Fargate resources and shouldn't be provided.</p> 
      */
     inline ContainerProperties& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
@@ -1148,7 +1148,7 @@ namespace Model
     /**
      * <p>The instance type to use for a multi-node parallel job. All node groups in a
      * multi-node parallel job must use the same instance type.</p>  <p>This
-     * parameter isn't applicable to single-node container jobs or for jobs running on
+     * parameter isn't applicable to single-node container jobs or for jobs that run on
      * Fargate resources and shouldn't be provided.</p> 
      */
     inline ContainerProperties& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
