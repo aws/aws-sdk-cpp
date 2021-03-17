@@ -555,12 +555,12 @@ namespace Aws
 
             Json::JsonValue credentialsDoc(credentialsStr);
             AWS_LOGSTREAM_TRACE(SSO_RESOURCE_CLIENT_LOG_TAG, "Raw creds returned: " << credentialsStr);
+            Aws::Auth::AWSCredentials creds;
             if (!credentialsDoc.WasParseSuccessful())
             {
                 AWS_LOGSTREAM_ERROR(SSO_RESOURCE_CLIENT_LOG_TAG, "Failed to load credential from running. Error: " << credentialsStr);
-                return {};
+                return SSOGetRoleCredentialsResult{creds};
             }
-            Aws::Auth::AWSCredentials creds;
             Utils::Json::JsonView credentialsView(credentialsDoc);
             auto roleCredentials = credentialsView.GetObject("roleCredentials");
             creds.SetAWSAccessKeyId(roleCredentials.GetString("accessKeyId"));
