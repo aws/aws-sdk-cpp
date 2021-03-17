@@ -57,6 +57,10 @@ void SSOCredentialsProvider::Reload()
     auto ssoTokenPath = ssToken.str();
     AWS_LOGSTREAM_DEBUG(SSO_CREDENTIALS_PROVIDER_LOG_TAG, "Loading token from: " << ssoTokenPath)
     Aws::String accessToken = LoadAccessTokenFile(ssoTokenPath);
+    if (accessToken.empty()) {
+        AWS_LOGSTREAM_TRACE(SSO_CREDENTIALS_PROVIDER_LOG_TAG, "Access token for SSO not available");
+        return;
+    }
     if (m_expiresAt < Aws::Utils::DateTime::Now()) {
         AWS_LOGSTREAM_ERROR(SSO_CREDENTIALS_PROVIDER_LOG_TAG, "Cached Token expired at " << m_expiresAt.ToGmtString(DateFormat::ISO_8601));
         return;
