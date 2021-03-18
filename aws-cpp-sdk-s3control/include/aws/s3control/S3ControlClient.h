@@ -15,14 +15,19 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/s3control/model/CreateAccessPointResult.h>
+#include <aws/s3control/model/CreateAccessPointForObjectLambdaResult.h>
 #include <aws/s3control/model/CreateBucketResult.h>
 #include <aws/s3control/model/CreateJobResult.h>
 #include <aws/s3control/model/DeleteJobTaggingResult.h>
 #include <aws/s3control/model/DeleteStorageLensConfigurationTaggingResult.h>
 #include <aws/s3control/model/DescribeJobResult.h>
 #include <aws/s3control/model/GetAccessPointResult.h>
+#include <aws/s3control/model/GetAccessPointConfigurationForObjectLambdaResult.h>
+#include <aws/s3control/model/GetAccessPointForObjectLambdaResult.h>
 #include <aws/s3control/model/GetAccessPointPolicyResult.h>
+#include <aws/s3control/model/GetAccessPointPolicyForObjectLambdaResult.h>
 #include <aws/s3control/model/GetAccessPointPolicyStatusResult.h>
+#include <aws/s3control/model/GetAccessPointPolicyStatusForObjectLambdaResult.h>
 #include <aws/s3control/model/GetBucketResult.h>
 #include <aws/s3control/model/GetBucketLifecycleConfigurationResult.h>
 #include <aws/s3control/model/GetBucketPolicyResult.h>
@@ -32,6 +37,7 @@
 #include <aws/s3control/model/GetStorageLensConfigurationResult.h>
 #include <aws/s3control/model/GetStorageLensConfigurationTaggingResult.h>
 #include <aws/s3control/model/ListAccessPointsResult.h>
+#include <aws/s3control/model/ListAccessPointsForObjectLambdaResult.h>
 #include <aws/s3control/model/ListJobsResult.h>
 #include <aws/s3control/model/ListRegionalBucketsResult.h>
 #include <aws/s3control/model/ListStorageLensConfigurationsResult.h>
@@ -84,10 +90,13 @@ namespace Aws
     namespace Model
     {
         class CreateAccessPointRequest;
+        class CreateAccessPointForObjectLambdaRequest;
         class CreateBucketRequest;
         class CreateJobRequest;
         class DeleteAccessPointRequest;
+        class DeleteAccessPointForObjectLambdaRequest;
         class DeleteAccessPointPolicyRequest;
+        class DeleteAccessPointPolicyForObjectLambdaRequest;
         class DeleteBucketRequest;
         class DeleteBucketLifecycleConfigurationRequest;
         class DeleteBucketPolicyRequest;
@@ -98,8 +107,12 @@ namespace Aws
         class DeleteStorageLensConfigurationTaggingRequest;
         class DescribeJobRequest;
         class GetAccessPointRequest;
+        class GetAccessPointConfigurationForObjectLambdaRequest;
+        class GetAccessPointForObjectLambdaRequest;
         class GetAccessPointPolicyRequest;
+        class GetAccessPointPolicyForObjectLambdaRequest;
         class GetAccessPointPolicyStatusRequest;
+        class GetAccessPointPolicyStatusForObjectLambdaRequest;
         class GetBucketRequest;
         class GetBucketLifecycleConfigurationRequest;
         class GetBucketPolicyRequest;
@@ -109,10 +122,13 @@ namespace Aws
         class GetStorageLensConfigurationRequest;
         class GetStorageLensConfigurationTaggingRequest;
         class ListAccessPointsRequest;
+        class ListAccessPointsForObjectLambdaRequest;
         class ListJobsRequest;
         class ListRegionalBucketsRequest;
         class ListStorageLensConfigurationsRequest;
+        class PutAccessPointConfigurationForObjectLambdaRequest;
         class PutAccessPointPolicyRequest;
+        class PutAccessPointPolicyForObjectLambdaRequest;
         class PutBucketLifecycleConfigurationRequest;
         class PutBucketPolicyRequest;
         class PutBucketTaggingRequest;
@@ -124,10 +140,13 @@ namespace Aws
         class UpdateJobStatusRequest;
 
         typedef Aws::Utils::Outcome<CreateAccessPointResult, S3ControlError> CreateAccessPointOutcome;
+        typedef Aws::Utils::Outcome<CreateAccessPointForObjectLambdaResult, S3ControlError> CreateAccessPointForObjectLambdaOutcome;
         typedef Aws::Utils::Outcome<CreateBucketResult, S3ControlError> CreateBucketOutcome;
         typedef Aws::Utils::Outcome<CreateJobResult, S3ControlError> CreateJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> DeleteAccessPointOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> DeleteAccessPointForObjectLambdaOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> DeleteAccessPointPolicyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> DeleteAccessPointPolicyForObjectLambdaOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> DeleteBucketOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> DeleteBucketLifecycleConfigurationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> DeleteBucketPolicyOutcome;
@@ -138,8 +157,12 @@ namespace Aws
         typedef Aws::Utils::Outcome<DeleteStorageLensConfigurationTaggingResult, S3ControlError> DeleteStorageLensConfigurationTaggingOutcome;
         typedef Aws::Utils::Outcome<DescribeJobResult, S3ControlError> DescribeJobOutcome;
         typedef Aws::Utils::Outcome<GetAccessPointResult, S3ControlError> GetAccessPointOutcome;
+        typedef Aws::Utils::Outcome<GetAccessPointConfigurationForObjectLambdaResult, S3ControlError> GetAccessPointConfigurationForObjectLambdaOutcome;
+        typedef Aws::Utils::Outcome<GetAccessPointForObjectLambdaResult, S3ControlError> GetAccessPointForObjectLambdaOutcome;
         typedef Aws::Utils::Outcome<GetAccessPointPolicyResult, S3ControlError> GetAccessPointPolicyOutcome;
+        typedef Aws::Utils::Outcome<GetAccessPointPolicyForObjectLambdaResult, S3ControlError> GetAccessPointPolicyForObjectLambdaOutcome;
         typedef Aws::Utils::Outcome<GetAccessPointPolicyStatusResult, S3ControlError> GetAccessPointPolicyStatusOutcome;
+        typedef Aws::Utils::Outcome<GetAccessPointPolicyStatusForObjectLambdaResult, S3ControlError> GetAccessPointPolicyStatusForObjectLambdaOutcome;
         typedef Aws::Utils::Outcome<GetBucketResult, S3ControlError> GetBucketOutcome;
         typedef Aws::Utils::Outcome<GetBucketLifecycleConfigurationResult, S3ControlError> GetBucketLifecycleConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetBucketPolicyResult, S3ControlError> GetBucketPolicyOutcome;
@@ -149,10 +172,13 @@ namespace Aws
         typedef Aws::Utils::Outcome<GetStorageLensConfigurationResult, S3ControlError> GetStorageLensConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetStorageLensConfigurationTaggingResult, S3ControlError> GetStorageLensConfigurationTaggingOutcome;
         typedef Aws::Utils::Outcome<ListAccessPointsResult, S3ControlError> ListAccessPointsOutcome;
+        typedef Aws::Utils::Outcome<ListAccessPointsForObjectLambdaResult, S3ControlError> ListAccessPointsForObjectLambdaOutcome;
         typedef Aws::Utils::Outcome<ListJobsResult, S3ControlError> ListJobsOutcome;
         typedef Aws::Utils::Outcome<ListRegionalBucketsResult, S3ControlError> ListRegionalBucketsOutcome;
         typedef Aws::Utils::Outcome<ListStorageLensConfigurationsResult, S3ControlError> ListStorageLensConfigurationsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> PutAccessPointConfigurationForObjectLambdaOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> PutAccessPointPolicyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> PutAccessPointPolicyForObjectLambdaOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> PutBucketLifecycleConfigurationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> PutBucketPolicyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> PutBucketTaggingOutcome;
@@ -164,10 +190,13 @@ namespace Aws
         typedef Aws::Utils::Outcome<UpdateJobStatusResult, S3ControlError> UpdateJobStatusOutcome;
 
         typedef std::future<CreateAccessPointOutcome> CreateAccessPointOutcomeCallable;
+        typedef std::future<CreateAccessPointForObjectLambdaOutcome> CreateAccessPointForObjectLambdaOutcomeCallable;
         typedef std::future<CreateBucketOutcome> CreateBucketOutcomeCallable;
         typedef std::future<CreateJobOutcome> CreateJobOutcomeCallable;
         typedef std::future<DeleteAccessPointOutcome> DeleteAccessPointOutcomeCallable;
+        typedef std::future<DeleteAccessPointForObjectLambdaOutcome> DeleteAccessPointForObjectLambdaOutcomeCallable;
         typedef std::future<DeleteAccessPointPolicyOutcome> DeleteAccessPointPolicyOutcomeCallable;
+        typedef std::future<DeleteAccessPointPolicyForObjectLambdaOutcome> DeleteAccessPointPolicyForObjectLambdaOutcomeCallable;
         typedef std::future<DeleteBucketOutcome> DeleteBucketOutcomeCallable;
         typedef std::future<DeleteBucketLifecycleConfigurationOutcome> DeleteBucketLifecycleConfigurationOutcomeCallable;
         typedef std::future<DeleteBucketPolicyOutcome> DeleteBucketPolicyOutcomeCallable;
@@ -178,8 +207,12 @@ namespace Aws
         typedef std::future<DeleteStorageLensConfigurationTaggingOutcome> DeleteStorageLensConfigurationTaggingOutcomeCallable;
         typedef std::future<DescribeJobOutcome> DescribeJobOutcomeCallable;
         typedef std::future<GetAccessPointOutcome> GetAccessPointOutcomeCallable;
+        typedef std::future<GetAccessPointConfigurationForObjectLambdaOutcome> GetAccessPointConfigurationForObjectLambdaOutcomeCallable;
+        typedef std::future<GetAccessPointForObjectLambdaOutcome> GetAccessPointForObjectLambdaOutcomeCallable;
         typedef std::future<GetAccessPointPolicyOutcome> GetAccessPointPolicyOutcomeCallable;
+        typedef std::future<GetAccessPointPolicyForObjectLambdaOutcome> GetAccessPointPolicyForObjectLambdaOutcomeCallable;
         typedef std::future<GetAccessPointPolicyStatusOutcome> GetAccessPointPolicyStatusOutcomeCallable;
+        typedef std::future<GetAccessPointPolicyStatusForObjectLambdaOutcome> GetAccessPointPolicyStatusForObjectLambdaOutcomeCallable;
         typedef std::future<GetBucketOutcome> GetBucketOutcomeCallable;
         typedef std::future<GetBucketLifecycleConfigurationOutcome> GetBucketLifecycleConfigurationOutcomeCallable;
         typedef std::future<GetBucketPolicyOutcome> GetBucketPolicyOutcomeCallable;
@@ -189,10 +222,13 @@ namespace Aws
         typedef std::future<GetStorageLensConfigurationOutcome> GetStorageLensConfigurationOutcomeCallable;
         typedef std::future<GetStorageLensConfigurationTaggingOutcome> GetStorageLensConfigurationTaggingOutcomeCallable;
         typedef std::future<ListAccessPointsOutcome> ListAccessPointsOutcomeCallable;
+        typedef std::future<ListAccessPointsForObjectLambdaOutcome> ListAccessPointsForObjectLambdaOutcomeCallable;
         typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
         typedef std::future<ListRegionalBucketsOutcome> ListRegionalBucketsOutcomeCallable;
         typedef std::future<ListStorageLensConfigurationsOutcome> ListStorageLensConfigurationsOutcomeCallable;
+        typedef std::future<PutAccessPointConfigurationForObjectLambdaOutcome> PutAccessPointConfigurationForObjectLambdaOutcomeCallable;
         typedef std::future<PutAccessPointPolicyOutcome> PutAccessPointPolicyOutcomeCallable;
+        typedef std::future<PutAccessPointPolicyForObjectLambdaOutcome> PutAccessPointPolicyForObjectLambdaOutcomeCallable;
         typedef std::future<PutBucketLifecycleConfigurationOutcome> PutBucketLifecycleConfigurationOutcomeCallable;
         typedef std::future<PutBucketPolicyOutcome> PutBucketPolicyOutcomeCallable;
         typedef std::future<PutBucketTaggingOutcome> PutBucketTaggingOutcomeCallable;
@@ -207,10 +243,13 @@ namespace Aws
     class S3ControlClient;
 
     typedef std::function<void(const S3ControlClient*, const Model::CreateAccessPointRequest&, const Model::CreateAccessPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAccessPointResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::CreateAccessPointForObjectLambdaRequest&, const Model::CreateAccessPointForObjectLambdaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAccessPointForObjectLambdaResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::CreateBucketRequest&, const Model::CreateBucketOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBucketResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::CreateJobRequest&, const Model::CreateJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateJobResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::DeleteAccessPointRequest&, const Model::DeleteAccessPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccessPointResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::DeleteAccessPointForObjectLambdaRequest&, const Model::DeleteAccessPointForObjectLambdaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccessPointForObjectLambdaResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::DeleteAccessPointPolicyRequest&, const Model::DeleteAccessPointPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccessPointPolicyResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::DeleteAccessPointPolicyForObjectLambdaRequest&, const Model::DeleteAccessPointPolicyForObjectLambdaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccessPointPolicyForObjectLambdaResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::DeleteBucketRequest&, const Model::DeleteBucketOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::DeleteBucketLifecycleConfigurationRequest&, const Model::DeleteBucketLifecycleConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketLifecycleConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::DeleteBucketPolicyRequest&, const Model::DeleteBucketPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketPolicyResponseReceivedHandler;
@@ -221,8 +260,12 @@ namespace Aws
     typedef std::function<void(const S3ControlClient*, const Model::DeleteStorageLensConfigurationTaggingRequest&, const Model::DeleteStorageLensConfigurationTaggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStorageLensConfigurationTaggingResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::DescribeJobRequest&, const Model::DescribeJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::GetAccessPointRequest&, const Model::GetAccessPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccessPointResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::GetAccessPointConfigurationForObjectLambdaRequest&, const Model::GetAccessPointConfigurationForObjectLambdaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccessPointConfigurationForObjectLambdaResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::GetAccessPointForObjectLambdaRequest&, const Model::GetAccessPointForObjectLambdaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccessPointForObjectLambdaResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::GetAccessPointPolicyRequest&, const Model::GetAccessPointPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccessPointPolicyResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::GetAccessPointPolicyForObjectLambdaRequest&, const Model::GetAccessPointPolicyForObjectLambdaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccessPointPolicyForObjectLambdaResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::GetAccessPointPolicyStatusRequest&, const Model::GetAccessPointPolicyStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccessPointPolicyStatusResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::GetAccessPointPolicyStatusForObjectLambdaRequest&, const Model::GetAccessPointPolicyStatusForObjectLambdaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccessPointPolicyStatusForObjectLambdaResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::GetBucketRequest&, const Model::GetBucketOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::GetBucketLifecycleConfigurationRequest&, const Model::GetBucketLifecycleConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketLifecycleConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::GetBucketPolicyRequest&, const Model::GetBucketPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketPolicyResponseReceivedHandler;
@@ -232,10 +275,13 @@ namespace Aws
     typedef std::function<void(const S3ControlClient*, const Model::GetStorageLensConfigurationRequest&, const Model::GetStorageLensConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStorageLensConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::GetStorageLensConfigurationTaggingRequest&, const Model::GetStorageLensConfigurationTaggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStorageLensConfigurationTaggingResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::ListAccessPointsRequest&, const Model::ListAccessPointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccessPointsResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::ListAccessPointsForObjectLambdaRequest&, const Model::ListAccessPointsForObjectLambdaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccessPointsForObjectLambdaResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::ListRegionalBucketsRequest&, const Model::ListRegionalBucketsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRegionalBucketsResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::ListStorageLensConfigurationsRequest&, const Model::ListStorageLensConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStorageLensConfigurationsResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::PutAccessPointConfigurationForObjectLambdaRequest&, const Model::PutAccessPointConfigurationForObjectLambdaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccessPointConfigurationForObjectLambdaResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::PutAccessPointPolicyRequest&, const Model::PutAccessPointPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccessPointPolicyResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::PutAccessPointPolicyForObjectLambdaRequest&, const Model::PutAccessPointPolicyForObjectLambdaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccessPointPolicyForObjectLambdaResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::PutBucketLifecycleConfigurationRequest&, const Model::PutBucketLifecycleConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketLifecycleConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::PutBucketPolicyRequest&, const Model::PutBucketPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketPolicyResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::PutBucketTaggingRequest&, const Model::PutBucketTaggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketTaggingResponseReceivedHandler;
@@ -291,19 +337,15 @@ namespace Aws
         /**
          * <p>Creates an access point and associates it with the specified bucket. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
          * Data Access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
-         * Service User Guide</i>.</p> <p/> <p> <b>Using this action with Amazon S3 on
-         * Outposts</b> </p> <p>This action: </p> <ul> <li> <p>Requires a virtual private
-         * cloud (VPC) configuration as S3 on Outposts only supports VPC style access
-         * points.</p> </li> <li> <p>Does not support ACL on S3 on Outposts buckets.</p>
-         * </li> <li> <p>Does not support Public Access on S3 on Outposts buckets.</p>
-         * </li> <li> <p>Does not support object lock for S3 on Outposts buckets.</p> </li>
-         * </ul> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-         * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User Guide
-         * </i>.</p> <p>All Amazon S3 on Outposts REST API requests for this action require
-         * an additional parameter of <code>x-amz-outpost-id</code> to be passed with the
+         * Service User Guide</i>.</p> <p/>  <p>S3 on Outposts only supports
+         * VPC-style Access Points. </p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">
+         * Accessing Amazon S3 on Outposts using virtual private cloud (VPC) only Access
+         * Points</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p> 
+         * <p>All Amazon S3 on Outposts REST API requests for this action require an
+         * additional parameter of <code>x-amz-outpost-id</code> to be passed with the
          * request and an S3 on Outposts endpoint hostname prefix instead of
          * <code>s3-control</code>. For an example of the request syntax for Amazon S3 on
          * Outposts that uses the S3 on Outposts endpoint hostname prefix and the
@@ -325,19 +367,15 @@ namespace Aws
         /**
          * <p>Creates an access point and associates it with the specified bucket. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
          * Data Access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
-         * Service User Guide</i>.</p> <p/> <p> <b>Using this action with Amazon S3 on
-         * Outposts</b> </p> <p>This action: </p> <ul> <li> <p>Requires a virtual private
-         * cloud (VPC) configuration as S3 on Outposts only supports VPC style access
-         * points.</p> </li> <li> <p>Does not support ACL on S3 on Outposts buckets.</p>
-         * </li> <li> <p>Does not support Public Access on S3 on Outposts buckets.</p>
-         * </li> <li> <p>Does not support object lock for S3 on Outposts buckets.</p> </li>
-         * </ul> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-         * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User Guide
-         * </i>.</p> <p>All Amazon S3 on Outposts REST API requests for this action require
-         * an additional parameter of <code>x-amz-outpost-id</code> to be passed with the
+         * Service User Guide</i>.</p> <p/>  <p>S3 on Outposts only supports
+         * VPC-style Access Points. </p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">
+         * Accessing Amazon S3 on Outposts using virtual private cloud (VPC) only Access
+         * Points</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p> 
+         * <p>All Amazon S3 on Outposts REST API requests for this action require an
+         * additional parameter of <code>x-amz-outpost-id</code> to be passed with the
          * request and an S3 on Outposts endpoint hostname prefix instead of
          * <code>s3-control</code>. For an example of the request syntax for Amazon S3 on
          * Outposts that uses the S3 on Outposts endpoint hostname prefix and the
@@ -361,19 +399,15 @@ namespace Aws
         /**
          * <p>Creates an access point and associates it with the specified bucket. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
          * Data Access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
-         * Service User Guide</i>.</p> <p/> <p> <b>Using this action with Amazon S3 on
-         * Outposts</b> </p> <p>This action: </p> <ul> <li> <p>Requires a virtual private
-         * cloud (VPC) configuration as S3 on Outposts only supports VPC style access
-         * points.</p> </li> <li> <p>Does not support ACL on S3 on Outposts buckets.</p>
-         * </li> <li> <p>Does not support Public Access on S3 on Outposts buckets.</p>
-         * </li> <li> <p>Does not support object lock for S3 on Outposts buckets.</p> </li>
-         * </ul> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-         * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User Guide
-         * </i>.</p> <p>All Amazon S3 on Outposts REST API requests for this action require
-         * an additional parameter of <code>x-amz-outpost-id</code> to be passed with the
+         * Service User Guide</i>.</p> <p/>  <p>S3 on Outposts only supports
+         * VPC-style Access Points. </p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">
+         * Accessing Amazon S3 on Outposts using virtual private cloud (VPC) only Access
+         * Points</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p> 
+         * <p>All Amazon S3 on Outposts REST API requests for this action require an
+         * additional parameter of <code>x-amz-outpost-id</code> to be passed with the
          * request and an S3 on Outposts endpoint hostname prefix instead of
          * <code>s3-control</code>. For an example of the request syntax for Amazon S3 on
          * Outposts that uses the S3 on Outposts endpoint hostname prefix and the
@@ -395,6 +429,61 @@ namespace Aws
         virtual void CreateAccessPointAsync(const Model::CreateAccessPointRequest& request, const CreateAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates an Object Lambda Access Point. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html">Transforming
+         * objects with Object Lambda Access Points</a> in the <i>Amazon Simple Storage
+         * Service User Guide</i>.</p> <p>The following actions are related to
+         * <code>CreateAccessPointForObjectLambda</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointForObjectLambda.html">DeleteAccessPointForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointForObjectLambda.html">GetAccessPointForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForObjectLambda.html">ListAccessPointsForObjectLambda</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessPointForObjectLambda">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAccessPointForObjectLambdaOutcome CreateAccessPointForObjectLambda(const Model::CreateAccessPointForObjectLambdaRequest& request) const;
+
+        /**
+         * <p>Creates an Object Lambda Access Point. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html">Transforming
+         * objects with Object Lambda Access Points</a> in the <i>Amazon Simple Storage
+         * Service User Guide</i>.</p> <p>The following actions are related to
+         * <code>CreateAccessPointForObjectLambda</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointForObjectLambda.html">DeleteAccessPointForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointForObjectLambda.html">GetAccessPointForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForObjectLambda.html">ListAccessPointsForObjectLambda</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessPointForObjectLambda">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateAccessPointForObjectLambdaOutcomeCallable CreateAccessPointForObjectLambdaCallable(const Model::CreateAccessPointForObjectLambdaRequest& request) const;
+
+        /**
+         * <p>Creates an Object Lambda Access Point. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html">Transforming
+         * objects with Object Lambda Access Points</a> in the <i>Amazon Simple Storage
+         * Service User Guide</i>.</p> <p>The following actions are related to
+         * <code>CreateAccessPointForObjectLambda</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointForObjectLambda.html">DeleteAccessPointForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointForObjectLambda.html">GetAccessPointForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForObjectLambda.html">ListAccessPointsForObjectLambda</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessPointForObjectLambda">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateAccessPointForObjectLambdaAsync(const Model::CreateAccessPointForObjectLambdaRequest& request, const CreateAccessPointForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          *  <p>This action creates an Amazon S3 on Outposts bucket. To create an S3
          * bucket, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">Create
@@ -402,19 +491,20 @@ namespace Aws
          * <p>Creates a new Outposts bucket. By creating the bucket, you become the bucket
          * owner. To create an Outposts bucket, you must have S3 on Outposts. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>Not every string is an acceptable bucket name. For information
          * on bucket naming restrictions, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Working
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/BucketRestrictions.html#bucketnamingrules">Working
          * with Amazon S3 Buckets</a>.</p> <p>S3 on Outposts buckets support:</p> <ul> <li>
          * <p>Tags</p> </li> <li> <p>LifecycleConfigurations for deleting expired
-         * objects</p> </li> </ul> <p>For a list of Amazon S3 features not supported by
-         * Amazon S3 on Outposts, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OnOutpostsRestrictionsLimitations.html#S3OnOutpostsFeatureLimitations">Unsupported
-         * Amazon S3 features</a>.</p> <p>For an example of the request syntax for Amazon
-         * S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and
-         * <code>x-amz-outpost-id</code> in your API request, see the <a
+         * objects</p> </li> </ul> <p>For a complete list of restrictions and Amazon S3
+         * feature limitations on S3 on Outposts, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OnOutpostsRestrictionsLimitations.html">
+         * Amazon S3 on Outposts Restrictions and Limitations</a>.</p> <p>For an example of
+         * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts
+         * endpoint hostname prefix and <code>x-amz-outpost-id</code> in your API request,
+         * see the <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html#API_control_CreateBucket_Examples">Examples</a>
          * section.</p> <p>The following actions are related to <code>CreateBucket</code>
          * for Amazon S3 on Outposts:</p> <ul> <li> <p> <a
@@ -441,19 +531,20 @@ namespace Aws
          * <p>Creates a new Outposts bucket. By creating the bucket, you become the bucket
          * owner. To create an Outposts bucket, you must have S3 on Outposts. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>Not every string is an acceptable bucket name. For information
          * on bucket naming restrictions, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Working
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/BucketRestrictions.html#bucketnamingrules">Working
          * with Amazon S3 Buckets</a>.</p> <p>S3 on Outposts buckets support:</p> <ul> <li>
          * <p>Tags</p> </li> <li> <p>LifecycleConfigurations for deleting expired
-         * objects</p> </li> </ul> <p>For a list of Amazon S3 features not supported by
-         * Amazon S3 on Outposts, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OnOutpostsRestrictionsLimitations.html#S3OnOutpostsFeatureLimitations">Unsupported
-         * Amazon S3 features</a>.</p> <p>For an example of the request syntax for Amazon
-         * S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and
-         * <code>x-amz-outpost-id</code> in your API request, see the <a
+         * objects</p> </li> </ul> <p>For a complete list of restrictions and Amazon S3
+         * feature limitations on S3 on Outposts, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OnOutpostsRestrictionsLimitations.html">
+         * Amazon S3 on Outposts Restrictions and Limitations</a>.</p> <p>For an example of
+         * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts
+         * endpoint hostname prefix and <code>x-amz-outpost-id</code> in your API request,
+         * see the <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html#API_control_CreateBucket_Examples">Examples</a>
          * section.</p> <p>The following actions are related to <code>CreateBucket</code>
          * for Amazon S3 on Outposts:</p> <ul> <li> <p> <a
@@ -482,19 +573,20 @@ namespace Aws
          * <p>Creates a new Outposts bucket. By creating the bucket, you become the bucket
          * owner. To create an Outposts bucket, you must have S3 on Outposts. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>Not every string is an acceptable bucket name. For information
          * on bucket naming restrictions, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Working
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/BucketRestrictions.html#bucketnamingrules">Working
          * with Amazon S3 Buckets</a>.</p> <p>S3 on Outposts buckets support:</p> <ul> <li>
          * <p>Tags</p> </li> <li> <p>LifecycleConfigurations for deleting expired
-         * objects</p> </li> </ul> <p>For a list of Amazon S3 features not supported by
-         * Amazon S3 on Outposts, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OnOutpostsRestrictionsLimitations.html#S3OnOutpostsFeatureLimitations">Unsupported
-         * Amazon S3 features</a>.</p> <p>For an example of the request syntax for Amazon
-         * S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and
-         * <code>x-amz-outpost-id</code> in your API request, see the <a
+         * objects</p> </li> </ul> <p>For a complete list of restrictions and Amazon S3
+         * feature limitations on S3 on Outposts, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OnOutpostsRestrictionsLimitations.html">
+         * Amazon S3 on Outposts Restrictions and Limitations</a>.</p> <p>For an example of
+         * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts
+         * endpoint hostname prefix and <code>x-amz-outpost-id</code> in your API request,
+         * see the <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html#API_control_CreateBucket_Examples">Examples</a>
          * section.</p> <p>The following actions are related to <code>CreateBucket</code>
          * for Amazon S3 on Outposts:</p> <ul> <li> <p> <a
@@ -659,6 +751,55 @@ namespace Aws
         virtual void DeleteAccessPointAsync(const Model::DeleteAccessPointRequest& request, const DeleteAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes the specified Object Lambda Access Point.</p> <p>The following
+         * actions are related to <code>DeleteAccessPointForObjectLambda</code>:</p> <ul>
+         * <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPointForObjectLambda.html">CreateAccessPointForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointForObjectLambda.html">GetAccessPointForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForObjectLambda.html">ListAccessPointsForObjectLambda</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointForObjectLambda">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAccessPointForObjectLambdaOutcome DeleteAccessPointForObjectLambda(const Model::DeleteAccessPointForObjectLambdaRequest& request) const;
+
+        /**
+         * <p>Deletes the specified Object Lambda Access Point.</p> <p>The following
+         * actions are related to <code>DeleteAccessPointForObjectLambda</code>:</p> <ul>
+         * <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPointForObjectLambda.html">CreateAccessPointForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointForObjectLambda.html">GetAccessPointForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForObjectLambda.html">ListAccessPointsForObjectLambda</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointForObjectLambda">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteAccessPointForObjectLambdaOutcomeCallable DeleteAccessPointForObjectLambdaCallable(const Model::DeleteAccessPointForObjectLambdaRequest& request) const;
+
+        /**
+         * <p>Deletes the specified Object Lambda Access Point.</p> <p>The following
+         * actions are related to <code>DeleteAccessPointForObjectLambda</code>:</p> <ul>
+         * <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPointForObjectLambda.html">CreateAccessPointForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointForObjectLambda.html">GetAccessPointForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForObjectLambda.html">ListAccessPointsForObjectLambda</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointForObjectLambda">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteAccessPointForObjectLambdaAsync(const Model::DeleteAccessPointForObjectLambdaRequest& request, const DeleteAccessPointForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the access point policy for the specified access point.</p> <p/>
          * <p>All Amazon S3 on Outposts REST API requests for this action require an
          * additional parameter of <code>x-amz-outpost-id</code> to be passed with the
@@ -723,6 +864,49 @@ namespace Aws
         virtual void DeleteAccessPointPolicyAsync(const Model::DeleteAccessPointPolicyRequest& request, const DeleteAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Removes the resource policy for an Object Lambda Access Point.</p> <p>The
+         * following actions are related to
+         * <code>DeleteAccessPointPolicyForObjectLambda</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicyForObjectLambda.html">GetAccessPointPolicyForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicyForObjectLambda.html">PutAccessPointPolicyForObjectLambda</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointPolicyForObjectLambda">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAccessPointPolicyForObjectLambdaOutcome DeleteAccessPointPolicyForObjectLambda(const Model::DeleteAccessPointPolicyForObjectLambdaRequest& request) const;
+
+        /**
+         * <p>Removes the resource policy for an Object Lambda Access Point.</p> <p>The
+         * following actions are related to
+         * <code>DeleteAccessPointPolicyForObjectLambda</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicyForObjectLambda.html">GetAccessPointPolicyForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicyForObjectLambda.html">PutAccessPointPolicyForObjectLambda</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointPolicyForObjectLambda">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteAccessPointPolicyForObjectLambdaOutcomeCallable DeleteAccessPointPolicyForObjectLambdaCallable(const Model::DeleteAccessPointPolicyForObjectLambdaRequest& request) const;
+
+        /**
+         * <p>Removes the resource policy for an Object Lambda Access Point.</p> <p>The
+         * following actions are related to
+         * <code>DeleteAccessPointPolicyForObjectLambda</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicyForObjectLambda.html">GetAccessPointPolicyForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicyForObjectLambda.html">PutAccessPointPolicyForObjectLambda</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointPolicyForObjectLambda">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteAccessPointPolicyForObjectLambdaAsync(const Model::DeleteAccessPointPolicyForObjectLambdaRequest& request, const DeleteAccessPointPolicyForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          *  <p>This action deletes an Amazon S3 on Outposts bucket. To delete an S3
          * bucket, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
@@ -730,7 +914,7 @@ namespace Aws
          * Amazon S3 on Outposts bucket. All objects (including all object versions and
          * delete markers) in the bucket must be deleted before the bucket itself can be
          * deleted. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>All Amazon S3 on Outposts REST API requests for this action
          * require an additional parameter of <code>x-amz-outpost-id</code> to be passed
@@ -759,7 +943,7 @@ namespace Aws
          * Amazon S3 on Outposts bucket. All objects (including all object versions and
          * delete markers) in the bucket must be deleted before the bucket itself can be
          * deleted. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>All Amazon S3 on Outposts REST API requests for this action
          * require an additional parameter of <code>x-amz-outpost-id</code> to be passed
@@ -790,7 +974,7 @@ namespace Aws
          * Amazon S3 on Outposts bucket. All objects (including all object versions and
          * delete markers) in the bucket must be deleted before the bucket itself can be
          * deleted. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>All Amazon S3 on Outposts REST API requests for this action
          * require an additional parameter of <code>x-amz-outpost-id</code> to be passed
@@ -823,7 +1007,7 @@ namespace Aws
          * subresource associated with the bucket. Your objects never expire, and Amazon S3
          * on Outposts no longer automatically deletes any objects on the basis of rules
          * contained in the deleted lifecycle configuration. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>To use this action, you must have permission to perform the
          * <code>s3-outposts:DeleteLifecycleConfiguration</code> action. By default, the
@@ -858,7 +1042,7 @@ namespace Aws
          * subresource associated with the bucket. Your objects never expire, and Amazon S3
          * on Outposts no longer automatically deletes any objects on the basis of rules
          * contained in the deleted lifecycle configuration. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>To use this action, you must have permission to perform the
          * <code>s3-outposts:DeleteLifecycleConfiguration</code> action. By default, the
@@ -895,7 +1079,7 @@ namespace Aws
          * subresource associated with the bucket. Your objects never expire, and Amazon S3
          * on Outposts no longer automatically deletes any objects on the basis of rules
          * contained in the deleted lifecycle configuration. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>To use this action, you must have permission to perform the
          * <code>s3-outposts:DeleteLifecycleConfiguration</code> action. By default, the
@@ -933,7 +1117,7 @@ namespace Aws
          * identity must have the <code>s3-outposts:DeleteBucketPolicy</code> permissions
          * on the specified Outposts bucket and belong to the bucket owner's account to use
          * this action. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>If you don't have <code>DeleteBucketPolicy</code> permissions,
          * Amazon S3 returns a <code>403 Access Denied</code> error. If you have the
@@ -974,7 +1158,7 @@ namespace Aws
          * identity must have the <code>s3-outposts:DeleteBucketPolicy</code> permissions
          * on the specified Outposts bucket and belong to the bucket owner's account to use
          * this action. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>If you don't have <code>DeleteBucketPolicy</code> permissions,
          * Amazon S3 returns a <code>403 Access Denied</code> error. If you have the
@@ -1017,7 +1201,7 @@ namespace Aws
          * identity must have the <code>s3-outposts:DeleteBucketPolicy</code> permissions
          * on the specified Outposts bucket and belong to the bucket owner's account to use
          * this action. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>If you don't have <code>DeleteBucketPolicy</code> permissions,
          * Amazon S3 returns a <code>403 Access Denied</code> error. If you have the
@@ -1055,7 +1239,7 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a>
          * in the <i>Amazon Simple Storage Service API</i>. </p>  <p>Deletes the
          * tags from the Outposts bucket. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>To use this action, you must have permission to perform the
          * <code>PutBucketTagging</code> action. By default, the bucket owner has this
@@ -1084,7 +1268,7 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a>
          * in the <i>Amazon Simple Storage Service API</i>. </p>  <p>Deletes the
          * tags from the Outposts bucket. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>To use this action, you must have permission to perform the
          * <code>PutBucketTagging</code> action. By default, the bucket owner has this
@@ -1115,7 +1299,7 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a>
          * in the <i>Amazon Simple Storage Service API</i>. </p>  <p>Deletes the
          * tags from the Outposts bucket. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>To use this action, you must have permission to perform the
          * <code>PutBucketTagging</code> action. By default, the bucket owner has this
@@ -1489,6 +1673,92 @@ namespace Aws
         virtual void GetAccessPointAsync(const Model::GetAccessPointRequest& request, const GetAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns configuration for an Object Lambda Access Point.</p> <p>The following
+         * actions are related to
+         * <code>GetAccessPointConfigurationForObjectLambda</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointConfigurationForObjectLambda.html">PutAccessPointConfigurationForObjectLambda</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointConfigurationForObjectLambda">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAccessPointConfigurationForObjectLambdaOutcome GetAccessPointConfigurationForObjectLambda(const Model::GetAccessPointConfigurationForObjectLambdaRequest& request) const;
+
+        /**
+         * <p>Returns configuration for an Object Lambda Access Point.</p> <p>The following
+         * actions are related to
+         * <code>GetAccessPointConfigurationForObjectLambda</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointConfigurationForObjectLambda.html">PutAccessPointConfigurationForObjectLambda</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointConfigurationForObjectLambda">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAccessPointConfigurationForObjectLambdaOutcomeCallable GetAccessPointConfigurationForObjectLambdaCallable(const Model::GetAccessPointConfigurationForObjectLambdaRequest& request) const;
+
+        /**
+         * <p>Returns configuration for an Object Lambda Access Point.</p> <p>The following
+         * actions are related to
+         * <code>GetAccessPointConfigurationForObjectLambda</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointConfigurationForObjectLambda.html">PutAccessPointConfigurationForObjectLambda</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointConfigurationForObjectLambda">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAccessPointConfigurationForObjectLambdaAsync(const Model::GetAccessPointConfigurationForObjectLambdaRequest& request, const GetAccessPointConfigurationForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns configuration information about the specified Object Lambda Access
+         * Point</p> <p>The following actions are related to
+         * <code>GetAccessPointForObjectLambda</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPointForObjectLambda.html">CreateAccessPointForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointForObjectLambda.html">DeleteAccessPointForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForObjectLambda.html">ListAccessPointsForObjectLambda</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointForObjectLambda">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAccessPointForObjectLambdaOutcome GetAccessPointForObjectLambda(const Model::GetAccessPointForObjectLambdaRequest& request) const;
+
+        /**
+         * <p>Returns configuration information about the specified Object Lambda Access
+         * Point</p> <p>The following actions are related to
+         * <code>GetAccessPointForObjectLambda</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPointForObjectLambda.html">CreateAccessPointForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointForObjectLambda.html">DeleteAccessPointForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForObjectLambda.html">ListAccessPointsForObjectLambda</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointForObjectLambda">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAccessPointForObjectLambdaOutcomeCallable GetAccessPointForObjectLambdaCallable(const Model::GetAccessPointForObjectLambdaRequest& request) const;
+
+        /**
+         * <p>Returns configuration information about the specified Object Lambda Access
+         * Point</p> <p>The following actions are related to
+         * <code>GetAccessPointForObjectLambda</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPointForObjectLambda.html">CreateAccessPointForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointForObjectLambda.html">DeleteAccessPointForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForObjectLambda.html">ListAccessPointsForObjectLambda</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointForObjectLambda">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAccessPointForObjectLambdaAsync(const Model::GetAccessPointForObjectLambdaRequest& request, const GetAccessPointForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the access point policy associated with the specified access
          * point.</p> <p>The following actions are related to
          * <code>GetAccessPointPolicy</code>:</p> <ul> <li> <p> <a
@@ -1532,10 +1802,53 @@ namespace Aws
         virtual void GetAccessPointPolicyAsync(const Model::GetAccessPointPolicyRequest& request, const GetAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the resource policy for an Object Lambda Access Point.</p> <p>The
+         * following actions are related to
+         * <code>GetAccessPointPolicyForObjectLambda</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicyForObjectLambda.html">DeleteAccessPointPolicyForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicyForObjectLambda.html">PutAccessPointPolicyForObjectLambda</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyForObjectLambda">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAccessPointPolicyForObjectLambdaOutcome GetAccessPointPolicyForObjectLambda(const Model::GetAccessPointPolicyForObjectLambdaRequest& request) const;
+
+        /**
+         * <p>Returns the resource policy for an Object Lambda Access Point.</p> <p>The
+         * following actions are related to
+         * <code>GetAccessPointPolicyForObjectLambda</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicyForObjectLambda.html">DeleteAccessPointPolicyForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicyForObjectLambda.html">PutAccessPointPolicyForObjectLambda</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyForObjectLambda">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAccessPointPolicyForObjectLambdaOutcomeCallable GetAccessPointPolicyForObjectLambdaCallable(const Model::GetAccessPointPolicyForObjectLambdaRequest& request) const;
+
+        /**
+         * <p>Returns the resource policy for an Object Lambda Access Point.</p> <p>The
+         * following actions are related to
+         * <code>GetAccessPointPolicyForObjectLambda</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicyForObjectLambda.html">DeleteAccessPointPolicyForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicyForObjectLambda.html">PutAccessPointPolicyForObjectLambda</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyForObjectLambda">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAccessPointPolicyForObjectLambdaAsync(const Model::GetAccessPointPolicyForObjectLambdaRequest& request, const GetAccessPointPolicyForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Indicates whether the specified access point currently has a policy that
          * allows public access. For more information about public access through access
          * points, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
          * Data Access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
          * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatus">AWS
@@ -1547,7 +1860,7 @@ namespace Aws
          * <p>Indicates whether the specified access point currently has a policy that
          * allows public access. For more information about public access through access
          * points, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
          * Data Access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
          * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatus">AWS
@@ -1561,7 +1874,7 @@ namespace Aws
          * <p>Indicates whether the specified access point currently has a policy that
          * allows public access. For more information about public access through access
          * points, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
          * Data Access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
          * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatus">AWS
@@ -1572,15 +1885,43 @@ namespace Aws
         virtual void GetAccessPointPolicyStatusAsync(const Model::GetAccessPointPolicyStatusRequest& request, const GetAccessPointPolicyStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the status of the resource policy associated with an Object Lambda
+         * Access Point.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatusForObjectLambda">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAccessPointPolicyStatusForObjectLambdaOutcome GetAccessPointPolicyStatusForObjectLambda(const Model::GetAccessPointPolicyStatusForObjectLambdaRequest& request) const;
+
+        /**
+         * <p>Returns the status of the resource policy associated with an Object Lambda
+         * Access Point.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatusForObjectLambda">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAccessPointPolicyStatusForObjectLambdaOutcomeCallable GetAccessPointPolicyStatusForObjectLambdaCallable(const Model::GetAccessPointPolicyStatusForObjectLambdaRequest& request) const;
+
+        /**
+         * <p>Returns the status of the resource policy associated with an Object Lambda
+         * Access Point.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatusForObjectLambda">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAccessPointPolicyStatusForObjectLambdaAsync(const Model::GetAccessPointPolicyStatusForObjectLambdaRequest& request, const GetAccessPointPolicyStatusForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets an Amazon S3 on Outposts bucket. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html"> Using
-         * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">
+         * Using Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>If you are using an identity other than the root user of the
-         * AWS account that owns the bucket, the calling identity must have the
-         * <code>s3-outposts:GetBucket</code> permissions on the specified bucket and
-         * belong to the bucket owner's account in order to use this action. Only users
-         * from Outposts bucket owner account with the right permissions can perform
-         * actions on an Outposts bucket. </p> <p> If you don't have
+         * AWS account that owns the Outposts bucket, the calling identity must have the
+         * <code>s3-outposts:GetBucket</code> permissions on the specified Outposts bucket
+         * and belong to the Outposts bucket owner's account in order to use this action.
+         * Only users from Outposts bucket owner account with the right permissions can
+         * perform actions on an Outposts bucket. </p> <p> If you don't have
          * <code>s3-outposts:GetBucket</code> permissions or you're not using an identity
          * that belongs to the bucket owner's account, Amazon S3 returns a <code>403 Access
          * Denied</code> error.</p> <p>The following actions are related to
@@ -1606,14 +1947,14 @@ namespace Aws
 
         /**
          * <p>Gets an Amazon S3 on Outposts bucket. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html"> Using
-         * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">
+         * Using Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>If you are using an identity other than the root user of the
-         * AWS account that owns the bucket, the calling identity must have the
-         * <code>s3-outposts:GetBucket</code> permissions on the specified bucket and
-         * belong to the bucket owner's account in order to use this action. Only users
-         * from Outposts bucket owner account with the right permissions can perform
-         * actions on an Outposts bucket. </p> <p> If you don't have
+         * AWS account that owns the Outposts bucket, the calling identity must have the
+         * <code>s3-outposts:GetBucket</code> permissions on the specified Outposts bucket
+         * and belong to the Outposts bucket owner's account in order to use this action.
+         * Only users from Outposts bucket owner account with the right permissions can
+         * perform actions on an Outposts bucket. </p> <p> If you don't have
          * <code>s3-outposts:GetBucket</code> permissions or you're not using an identity
          * that belongs to the bucket owner's account, Amazon S3 returns a <code>403 Access
          * Denied</code> error.</p> <p>The following actions are related to
@@ -1641,14 +1982,14 @@ namespace Aws
 
         /**
          * <p>Gets an Amazon S3 on Outposts bucket. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html"> Using
-         * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">
+         * Using Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>If you are using an identity other than the root user of the
-         * AWS account that owns the bucket, the calling identity must have the
-         * <code>s3-outposts:GetBucket</code> permissions on the specified bucket and
-         * belong to the bucket owner's account in order to use this action. Only users
-         * from Outposts bucket owner account with the right permissions can perform
-         * actions on an Outposts bucket. </p> <p> If you don't have
+         * AWS account that owns the Outposts bucket, the calling identity must have the
+         * <code>s3-outposts:GetBucket</code> permissions on the specified Outposts bucket
+         * and belong to the Outposts bucket owner's account in order to use this action.
+         * Only users from Outposts bucket owner account with the right permissions can
+         * perform actions on an Outposts bucket. </p> <p> If you don't have
          * <code>s3-outposts:GetBucket</code> permissions or you're not using an identity
          * that belongs to the bucket owner's account, Amazon S3 returns a <code>403 Access
          * Denied</code> error.</p> <p>The following actions are related to
@@ -1681,7 +2022,7 @@ namespace Aws
          * in the <i>Amazon Simple Storage Service API</i>. </p>  <p>Returns the
          * lifecycle configuration information set on the Outposts bucket. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> and for information about lifecycle configuration, see
          * <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">
@@ -1690,9 +2031,9 @@ namespace Aws
          * <code>s3-outposts:GetLifecycleConfiguration</code> action. The Outposts bucket
          * owner has this permission, by default. The bucket owner can grant this
          * permission to others. For more information about permissions, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
          * Related to Bucket Subresource Operations</a> and <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
          * Access Permissions to Your Amazon S3 Resources</a>.</p> <p>All Amazon S3 on
          * Outposts REST API requests for this action require an additional parameter of
          * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on
@@ -1724,7 +2065,7 @@ namespace Aws
          * in the <i>Amazon Simple Storage Service API</i>. </p>  <p>Returns the
          * lifecycle configuration information set on the Outposts bucket. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> and for information about lifecycle configuration, see
          * <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">
@@ -1733,9 +2074,9 @@ namespace Aws
          * <code>s3-outposts:GetLifecycleConfiguration</code> action. The Outposts bucket
          * owner has this permission, by default. The bucket owner can grant this
          * permission to others. For more information about permissions, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
          * Related to Bucket Subresource Operations</a> and <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
          * Access Permissions to Your Amazon S3 Resources</a>.</p> <p>All Amazon S3 on
          * Outposts REST API requests for this action require an additional parameter of
          * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on
@@ -1769,7 +2110,7 @@ namespace Aws
          * in the <i>Amazon Simple Storage Service API</i>. </p>  <p>Returns the
          * lifecycle configuration information set on the Outposts bucket. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> and for information about lifecycle configuration, see
          * <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">
@@ -1778,9 +2119,9 @@ namespace Aws
          * <code>s3-outposts:GetLifecycleConfiguration</code> action. The Outposts bucket
          * owner has this permission, by default. The bucket owner can grant this
          * permission to others. For more information about permissions, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
          * Related to Bucket Subresource Operations</a> and <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
          * Access Permissions to Your Amazon S3 Resources</a>.</p> <p>All Amazon S3 on
          * Outposts REST API requests for this action require an additional parameter of
          * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on
@@ -1813,7 +2154,7 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicy.html">GetBucketPolicy</a>
          * in the <i>Amazon Simple Storage Service API</i>. </p>  <p>Returns the
          * policy of a specified Outposts bucket. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>If you are using an identity other than the root user of the
          * AWS account that owns the bucket, the calling identity must have the
@@ -1855,7 +2196,7 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicy.html">GetBucketPolicy</a>
          * in the <i>Amazon Simple Storage Service API</i>. </p>  <p>Returns the
          * policy of a specified Outposts bucket. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>If you are using an identity other than the root user of the
          * AWS account that owns the bucket, the calling identity must have the
@@ -1899,7 +2240,7 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicy.html">GetBucketPolicy</a>
          * in the <i>Amazon Simple Storage Service API</i>. </p>  <p>Returns the
          * policy of a specified Outposts bucket. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>If you are using an identity other than the root user of the
          * AWS account that owns the bucket, the calling identity must have the
@@ -1943,7 +2284,7 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html">GetBucketTagging</a>
          * in the <i>Amazon Simple Storage Service API</i>. </p>  <p>Returns the tag
          * set associated with the Outposts bucket. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>To use this action, you must have permission to perform the
          * <code>GetBucketTagging</code> action. By default, the bucket owner has this
@@ -1975,7 +2316,7 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html">GetBucketTagging</a>
          * in the <i>Amazon Simple Storage Service API</i>. </p>  <p>Returns the tag
          * set associated with the Outposts bucket. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>To use this action, you must have permission to perform the
          * <code>GetBucketTagging</code> action. By default, the bucket owner has this
@@ -2009,7 +2350,7 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html">GetBucketTagging</a>
          * in the <i>Amazon Simple Storage Service API</i>. </p>  <p>Returns the tag
          * set associated with the Outposts bucket. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>To use this action, you must have permission to perform the
          * <code>GetBucketTagging</code> action. By default, the bucket owner has this
@@ -2331,6 +2672,64 @@ namespace Aws
         virtual void ListAccessPointsAsync(const Model::ListAccessPointsRequest& request, const ListAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of the access points associated with the Object Lambda Access
+         * Point. You can retrieve up to 1000 access points per call. If there are more
+         * than 1,000 access points (or the number specified in <code>maxResults</code>,
+         * whichever is less), the response will include a continuation token that you can
+         * use to list the additional access points.</p> <p>The following actions are
+         * related to <code>ListAccessPointsForObjectLambda</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPointForObjectLambda.html">CreateAccessPointForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointForObjectLambda.html">DeleteAccessPointForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointForObjectLambda.html">GetAccessPointForObjectLambda</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPointsForObjectLambda">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAccessPointsForObjectLambdaOutcome ListAccessPointsForObjectLambda(const Model::ListAccessPointsForObjectLambdaRequest& request) const;
+
+        /**
+         * <p>Returns a list of the access points associated with the Object Lambda Access
+         * Point. You can retrieve up to 1000 access points per call. If there are more
+         * than 1,000 access points (or the number specified in <code>maxResults</code>,
+         * whichever is less), the response will include a continuation token that you can
+         * use to list the additional access points.</p> <p>The following actions are
+         * related to <code>ListAccessPointsForObjectLambda</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPointForObjectLambda.html">CreateAccessPointForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointForObjectLambda.html">DeleteAccessPointForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointForObjectLambda.html">GetAccessPointForObjectLambda</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPointsForObjectLambda">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAccessPointsForObjectLambdaOutcomeCallable ListAccessPointsForObjectLambdaCallable(const Model::ListAccessPointsForObjectLambdaRequest& request) const;
+
+        /**
+         * <p>Returns a list of the access points associated with the Object Lambda Access
+         * Point. You can retrieve up to 1000 access points per call. If there are more
+         * than 1,000 access points (or the number specified in <code>maxResults</code>,
+         * whichever is less), the response will include a continuation token that you can
+         * use to list the additional access points.</p> <p>The following actions are
+         * related to <code>ListAccessPointsForObjectLambda</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPointForObjectLambda.html">CreateAccessPointForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointForObjectLambda.html">DeleteAccessPointForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointForObjectLambda.html">GetAccessPointForObjectLambda</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPointsForObjectLambda">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAccessPointsForObjectLambdaAsync(const Model::ListAccessPointsForObjectLambdaRequest& request, const ListAccessPointsForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists current S3 Batch Operations jobs and jobs that have ended within the
          * last 30 days for the AWS account making the request. For more information, see
          * <a
@@ -2397,7 +2796,7 @@ namespace Aws
         /**
          * <p>Returns a list of all Outposts buckets in an Outpost that are owned by the
          * authenticated sender of the request. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>For an example of the request syntax for Amazon S3 on Outposts
          * that uses the S3 on Outposts endpoint hostname prefix and
@@ -2412,7 +2811,7 @@ namespace Aws
         /**
          * <p>Returns a list of all Outposts buckets in an Outpost that are owned by the
          * authenticated sender of the request. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>For an example of the request syntax for Amazon S3 on Outposts
          * that uses the S3 on Outposts endpoint hostname prefix and
@@ -2429,7 +2828,7 @@ namespace Aws
         /**
          * <p>Returns a list of all Outposts buckets in an Outpost that are owned by the
          * authenticated sender of the request. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>For an example of the request syntax for Amazon S3 on Outposts
          * that uses the S3 on Outposts endpoint hostname prefix and
@@ -2497,6 +2896,43 @@ namespace Aws
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListStorageLensConfigurationsAsync(const Model::ListStorageLensConfigurationsRequest& request, const ListStorageLensConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Replaces configuration for an Object Lambda Access Point.</p> <p>The
+         * following actions are related to
+         * <code>PutAccessPointConfigurationForObjectLambda</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointConfigurationForObjectLambda.html">GetAccessPointConfigurationForObjectLambda</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointConfigurationForObjectLambda">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutAccessPointConfigurationForObjectLambdaOutcome PutAccessPointConfigurationForObjectLambda(const Model::PutAccessPointConfigurationForObjectLambdaRequest& request) const;
+
+        /**
+         * <p>Replaces configuration for an Object Lambda Access Point.</p> <p>The
+         * following actions are related to
+         * <code>PutAccessPointConfigurationForObjectLambda</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointConfigurationForObjectLambda.html">GetAccessPointConfigurationForObjectLambda</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointConfigurationForObjectLambda">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutAccessPointConfigurationForObjectLambdaOutcomeCallable PutAccessPointConfigurationForObjectLambdaCallable(const Model::PutAccessPointConfigurationForObjectLambdaRequest& request) const;
+
+        /**
+         * <p>Replaces configuration for an Object Lambda Access Point.</p> <p>The
+         * following actions are related to
+         * <code>PutAccessPointConfigurationForObjectLambda</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointConfigurationForObjectLambda.html">GetAccessPointConfigurationForObjectLambda</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointConfigurationForObjectLambda">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutAccessPointConfigurationForObjectLambdaAsync(const Model::PutAccessPointConfigurationForObjectLambdaRequest& request, const PutAccessPointConfigurationForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates an access policy with the specified access point. Each access
@@ -2569,22 +3005,71 @@ namespace Aws
         virtual void PutAccessPointPolicyAsync(const Model::PutAccessPointPolicyRequest& request, const PutAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates or replaces resource policy for an Object Lambda Access Point. For an
+         * example policy, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/olap-create.html#olap-create-cli">Creating
+         * Object Lambda Access Points</a> in the <i>Amazon Simple Storage Service User
+         * Guide</i>.</p> <p>The following actions are related to
+         * <code>PutAccessPointPolicyForObjectLambda</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicyForObjectLambda.html">DeleteAccessPointPolicyForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicyForObjectLambda.html">GetAccessPointPolicyForObjectLambda</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointPolicyForObjectLambda">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutAccessPointPolicyForObjectLambdaOutcome PutAccessPointPolicyForObjectLambda(const Model::PutAccessPointPolicyForObjectLambdaRequest& request) const;
+
+        /**
+         * <p>Creates or replaces resource policy for an Object Lambda Access Point. For an
+         * example policy, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/olap-create.html#olap-create-cli">Creating
+         * Object Lambda Access Points</a> in the <i>Amazon Simple Storage Service User
+         * Guide</i>.</p> <p>The following actions are related to
+         * <code>PutAccessPointPolicyForObjectLambda</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicyForObjectLambda.html">DeleteAccessPointPolicyForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicyForObjectLambda.html">GetAccessPointPolicyForObjectLambda</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointPolicyForObjectLambda">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutAccessPointPolicyForObjectLambdaOutcomeCallable PutAccessPointPolicyForObjectLambdaCallable(const Model::PutAccessPointPolicyForObjectLambdaRequest& request) const;
+
+        /**
+         * <p>Creates or replaces resource policy for an Object Lambda Access Point. For an
+         * example policy, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/olap-create.html#olap-create-cli">Creating
+         * Object Lambda Access Points</a> in the <i>Amazon Simple Storage Service User
+         * Guide</i>.</p> <p>The following actions are related to
+         * <code>PutAccessPointPolicyForObjectLambda</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicyForObjectLambda.html">DeleteAccessPointPolicyForObjectLambda</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicyForObjectLambda.html">GetAccessPointPolicyForObjectLambda</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointPolicyForObjectLambda">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutAccessPointPolicyForObjectLambdaAsync(const Model::PutAccessPointPolicyForObjectLambdaRequest& request, const PutAccessPointPolicyForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          *  <p>This action puts a lifecycle configuration to an Amazon S3 on Outposts
          * bucket. To put a lifecycle configuration to an S3 bucket, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
          * in the <i>Amazon Simple Storage Service API</i>. </p>  <p>Creates a new
-         * lifecycle configuration for the Outposts bucket or replaces an existing
+         * lifecycle configuration for the S3 on Outposts bucket or replaces an existing
          * lifecycle configuration. Outposts buckets only support lifecycle configurations
          * that delete/expire objects after a certain period of time and abort incomplete
-         * multipart uploads. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Managing
-         * Lifecycle Permissions for Amazon S3 on Outposts</a>.</p> <p/> <p>All Amazon S3
-         * on Outposts REST API requests for this action require an additional parameter of
-         * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on
-         * Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an
-         * example of the request syntax for Amazon S3 on Outposts that uses the S3 on
-         * Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived
-         * using the access point ARN, see the <a
+         * multipart uploads.</p> <p/> <p>All Amazon S3 on Outposts REST API requests for
+         * this action require an additional parameter of <code>x-amz-outpost-id</code> to
+         * be passed with the request and an S3 on Outposts endpoint hostname prefix
+         * instead of <code>s3-control</code>. For an example of the request syntax for
+         * Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and
+         * the <code>x-amz-outpost-id</code> derived using the access point ARN, see the <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketLifecycleConfiguration.html#API_control_PutBucketLifecycleConfiguration_Examples">Examples</a>
          * section.</p> <p>The following actions are related to
          * <code>PutBucketLifecycleConfiguration</code>:</p> <ul> <li> <p> <a
@@ -2602,18 +3087,15 @@ namespace Aws
          * bucket. To put a lifecycle configuration to an S3 bucket, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
          * in the <i>Amazon Simple Storage Service API</i>. </p>  <p>Creates a new
-         * lifecycle configuration for the Outposts bucket or replaces an existing
+         * lifecycle configuration for the S3 on Outposts bucket or replaces an existing
          * lifecycle configuration. Outposts buckets only support lifecycle configurations
          * that delete/expire objects after a certain period of time and abort incomplete
-         * multipart uploads. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Managing
-         * Lifecycle Permissions for Amazon S3 on Outposts</a>.</p> <p/> <p>All Amazon S3
-         * on Outposts REST API requests for this action require an additional parameter of
-         * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on
-         * Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an
-         * example of the request syntax for Amazon S3 on Outposts that uses the S3 on
-         * Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived
-         * using the access point ARN, see the <a
+         * multipart uploads.</p> <p/> <p>All Amazon S3 on Outposts REST API requests for
+         * this action require an additional parameter of <code>x-amz-outpost-id</code> to
+         * be passed with the request and an S3 on Outposts endpoint hostname prefix
+         * instead of <code>s3-control</code>. For an example of the request syntax for
+         * Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and
+         * the <code>x-amz-outpost-id</code> derived using the access point ARN, see the <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketLifecycleConfiguration.html#API_control_PutBucketLifecycleConfiguration_Examples">Examples</a>
          * section.</p> <p>The following actions are related to
          * <code>PutBucketLifecycleConfiguration</code>:</p> <ul> <li> <p> <a
@@ -2633,18 +3115,15 @@ namespace Aws
          * bucket. To put a lifecycle configuration to an S3 bucket, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
          * in the <i>Amazon Simple Storage Service API</i>. </p>  <p>Creates a new
-         * lifecycle configuration for the Outposts bucket or replaces an existing
+         * lifecycle configuration for the S3 on Outposts bucket or replaces an existing
          * lifecycle configuration. Outposts buckets only support lifecycle configurations
          * that delete/expire objects after a certain period of time and abort incomplete
-         * multipart uploads. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Managing
-         * Lifecycle Permissions for Amazon S3 on Outposts</a>.</p> <p/> <p>All Amazon S3
-         * on Outposts REST API requests for this action require an additional parameter of
-         * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on
-         * Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an
-         * example of the request syntax for Amazon S3 on Outposts that uses the S3 on
-         * Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived
-         * using the access point ARN, see the <a
+         * multipart uploads.</p> <p/> <p>All Amazon S3 on Outposts REST API requests for
+         * this action require an additional parameter of <code>x-amz-outpost-id</code> to
+         * be passed with the request and an S3 on Outposts endpoint hostname prefix
+         * instead of <code>s3-control</code>. For an example of the request syntax for
+         * Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and
+         * the <code>x-amz-outpost-id</code> derived using the access point ARN, see the <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketLifecycleConfiguration.html#API_control_PutBucketLifecycleConfiguration_Examples">Examples</a>
          * section.</p> <p>The following actions are related to
          * <code>PutBucketLifecycleConfiguration</code>:</p> <ul> <li> <p> <a
@@ -2665,7 +3144,7 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketPolicy.html">PutBucketPolicy</a>
          * in the <i>Amazon Simple Storage Service API</i>. </p>  <p>Applies an
          * Amazon S3 bucket policy to an Outposts bucket. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>If you are using an identity other than the root user of the
          * AWS account that owns the Outposts bucket, the calling identity must have the
@@ -2705,7 +3184,7 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketPolicy.html">PutBucketPolicy</a>
          * in the <i>Amazon Simple Storage Service API</i>. </p>  <p>Applies an
          * Amazon S3 bucket policy to an Outposts bucket. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>If you are using an identity other than the root user of the
          * AWS account that owns the Outposts bucket, the calling identity must have the
@@ -2747,7 +3226,7 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketPolicy.html">PutBucketPolicy</a>
          * in the <i>Amazon Simple Storage Service API</i>. </p>  <p>Applies an
          * Amazon S3 bucket policy to an Outposts bucket. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>If you are using an identity other than the root user of the
          * AWS account that owns the Outposts bucket, the calling identity must have the
@@ -2788,8 +3267,8 @@ namespace Aws
          * on an S3 bucket, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a>
          * in the <i>Amazon Simple Storage Service API</i>. </p>  <p>Sets the tags
-         * for an Outposts bucket. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * for an S3 on Outposts bucket. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>Use tags to organize your AWS bill to reflect your own cost
          * structure. To do this, sign up to get your AWS account bill with tag key values
@@ -2799,19 +3278,19 @@ namespace Aws
          * organize your billing information to see the total cost of that application
          * across several services. For more information, see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost
-         * Allocation and Tagging</a>.</p>  <p>Within a bucket, if you add a tag that
+         * allocation and tagging</a>.</p>  <p>Within a bucket, if you add a tag that
          * has the same key as an existing tag, the new value overwrites the old value. For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CostAllocTagging.html">
-         * Using Cost Allocation in Amazon S3 Bucket Tags</a>.</p>  <p>To use this
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CostAllocTagging.html">
+         * Using cost allocation in Amazon S3 bucket tags</a>.</p>  <p>To use this
          * action, you must have permissions to perform the
          * <code>s3-outposts:PutBucketTagging</code> action. The Outposts bucket owner has
          * this permission by default and can grant this permission to others. For more
          * information about permissions, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">
          * Permissions Related to Bucket Subresource Operations</a> and <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing
-         * Access Permissions to Your Amazon S3 Resources</a>.</p> <p>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+         * access permissions to your Amazon S3 resources</a>.</p> <p>
          * <code>PutBucketTagging</code> has the following special errors:</p> <ul> <li>
          * <p>Error code: <code>InvalidTagError</code> </p> <ul> <li> <p>Description: The
          * tag provided was not a valid tag. This error can occur if the tag did not pass
@@ -2850,8 +3329,8 @@ namespace Aws
          * on an S3 bucket, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a>
          * in the <i>Amazon Simple Storage Service API</i>. </p>  <p>Sets the tags
-         * for an Outposts bucket. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * for an S3 on Outposts bucket. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>Use tags to organize your AWS bill to reflect your own cost
          * structure. To do this, sign up to get your AWS account bill with tag key values
@@ -2861,19 +3340,19 @@ namespace Aws
          * organize your billing information to see the total cost of that application
          * across several services. For more information, see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost
-         * Allocation and Tagging</a>.</p>  <p>Within a bucket, if you add a tag that
+         * allocation and tagging</a>.</p>  <p>Within a bucket, if you add a tag that
          * has the same key as an existing tag, the new value overwrites the old value. For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CostAllocTagging.html">
-         * Using Cost Allocation in Amazon S3 Bucket Tags</a>.</p>  <p>To use this
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CostAllocTagging.html">
+         * Using cost allocation in Amazon S3 bucket tags</a>.</p>  <p>To use this
          * action, you must have permissions to perform the
          * <code>s3-outposts:PutBucketTagging</code> action. The Outposts bucket owner has
          * this permission by default and can grant this permission to others. For more
          * information about permissions, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">
          * Permissions Related to Bucket Subresource Operations</a> and <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing
-         * Access Permissions to Your Amazon S3 Resources</a>.</p> <p>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+         * access permissions to your Amazon S3 resources</a>.</p> <p>
          * <code>PutBucketTagging</code> has the following special errors:</p> <ul> <li>
          * <p>Error code: <code>InvalidTagError</code> </p> <ul> <li> <p>Description: The
          * tag provided was not a valid tag. This error can occur if the tag did not pass
@@ -2914,8 +3393,8 @@ namespace Aws
          * on an S3 bucket, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a>
          * in the <i>Amazon Simple Storage Service API</i>. </p>  <p>Sets the tags
-         * for an Outposts bucket. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+         * for an S3 on Outposts bucket. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User
          * Guide</i>.</p> <p>Use tags to organize your AWS bill to reflect your own cost
          * structure. To do this, sign up to get your AWS account bill with tag key values
@@ -2925,19 +3404,19 @@ namespace Aws
          * organize your billing information to see the total cost of that application
          * across several services. For more information, see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost
-         * Allocation and Tagging</a>.</p>  <p>Within a bucket, if you add a tag that
+         * allocation and tagging</a>.</p>  <p>Within a bucket, if you add a tag that
          * has the same key as an existing tag, the new value overwrites the old value. For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CostAllocTagging.html">
-         * Using Cost Allocation in Amazon S3 Bucket Tags</a>.</p>  <p>To use this
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CostAllocTagging.html">
+         * Using cost allocation in Amazon S3 bucket tags</a>.</p>  <p>To use this
          * action, you must have permissions to perform the
          * <code>s3-outposts:PutBucketTagging</code> action. The Outposts bucket owner has
          * this permission by default and can grant this permission to others. For more
          * information about permissions, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">
          * Permissions Related to Bucket Subresource Operations</a> and <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing
-         * Access Permissions to Your Amazon S3 Resources</a>.</p> <p>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+         * access permissions to your Amazon S3 resources</a>.</p> <p>
          * <code>PutBucketTagging</code> has the following special errors:</p> <ul> <li>
          * <p>Error code: <code>InvalidTagError</code> </p> <ul> <li> <p>Description: The
          * tag provided was not a valid tag. This error can occur if the tag did not pass
@@ -3407,10 +3886,13 @@ namespace Aws
         ComputeEndpointOutcome ComputeEndpointString(const Aws::String& name, bool hasOutpostId, const Aws::String& uriPathPrefix) const;
 
         void CreateAccessPointAsyncHelper(const Model::CreateAccessPointRequest& request, const CreateAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateAccessPointForObjectLambdaAsyncHelper(const Model::CreateAccessPointForObjectLambdaRequest& request, const CreateAccessPointForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateBucketAsyncHelper(const Model::CreateBucketRequest& request, const CreateBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateJobAsyncHelper(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAccessPointAsyncHelper(const Model::DeleteAccessPointRequest& request, const DeleteAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteAccessPointForObjectLambdaAsyncHelper(const Model::DeleteAccessPointForObjectLambdaRequest& request, const DeleteAccessPointForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAccessPointPolicyAsyncHelper(const Model::DeleteAccessPointPolicyRequest& request, const DeleteAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteAccessPointPolicyForObjectLambdaAsyncHelper(const Model::DeleteAccessPointPolicyForObjectLambdaRequest& request, const DeleteAccessPointPolicyForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBucketAsyncHelper(const Model::DeleteBucketRequest& request, const DeleteBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBucketLifecycleConfigurationAsyncHelper(const Model::DeleteBucketLifecycleConfigurationRequest& request, const DeleteBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBucketPolicyAsyncHelper(const Model::DeleteBucketPolicyRequest& request, const DeleteBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3421,8 +3903,12 @@ namespace Aws
         void DeleteStorageLensConfigurationTaggingAsyncHelper(const Model::DeleteStorageLensConfigurationTaggingRequest& request, const DeleteStorageLensConfigurationTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeJobAsyncHelper(const Model::DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAccessPointAsyncHelper(const Model::GetAccessPointRequest& request, const GetAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAccessPointConfigurationForObjectLambdaAsyncHelper(const Model::GetAccessPointConfigurationForObjectLambdaRequest& request, const GetAccessPointConfigurationForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAccessPointForObjectLambdaAsyncHelper(const Model::GetAccessPointForObjectLambdaRequest& request, const GetAccessPointForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAccessPointPolicyAsyncHelper(const Model::GetAccessPointPolicyRequest& request, const GetAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAccessPointPolicyForObjectLambdaAsyncHelper(const Model::GetAccessPointPolicyForObjectLambdaRequest& request, const GetAccessPointPolicyForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAccessPointPolicyStatusAsyncHelper(const Model::GetAccessPointPolicyStatusRequest& request, const GetAccessPointPolicyStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAccessPointPolicyStatusForObjectLambdaAsyncHelper(const Model::GetAccessPointPolicyStatusForObjectLambdaRequest& request, const GetAccessPointPolicyStatusForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBucketAsyncHelper(const Model::GetBucketRequest& request, const GetBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBucketLifecycleConfigurationAsyncHelper(const Model::GetBucketLifecycleConfigurationRequest& request, const GetBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBucketPolicyAsyncHelper(const Model::GetBucketPolicyRequest& request, const GetBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3432,10 +3918,13 @@ namespace Aws
         void GetStorageLensConfigurationAsyncHelper(const Model::GetStorageLensConfigurationRequest& request, const GetStorageLensConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetStorageLensConfigurationTaggingAsyncHelper(const Model::GetStorageLensConfigurationTaggingRequest& request, const GetStorageLensConfigurationTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAccessPointsAsyncHelper(const Model::ListAccessPointsRequest& request, const ListAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListAccessPointsForObjectLambdaAsyncHelper(const Model::ListAccessPointsForObjectLambdaRequest& request, const ListAccessPointsForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListJobsAsyncHelper(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRegionalBucketsAsyncHelper(const Model::ListRegionalBucketsRequest& request, const ListRegionalBucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListStorageLensConfigurationsAsyncHelper(const Model::ListStorageLensConfigurationsRequest& request, const ListStorageLensConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutAccessPointConfigurationForObjectLambdaAsyncHelper(const Model::PutAccessPointConfigurationForObjectLambdaRequest& request, const PutAccessPointConfigurationForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutAccessPointPolicyAsyncHelper(const Model::PutAccessPointPolicyRequest& request, const PutAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutAccessPointPolicyForObjectLambdaAsyncHelper(const Model::PutAccessPointPolicyForObjectLambdaRequest& request, const PutAccessPointPolicyForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutBucketLifecycleConfigurationAsyncHelper(const Model::PutBucketLifecycleConfigurationRequest& request, const PutBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutBucketPolicyAsyncHelper(const Model::PutBucketPolicyRequest& request, const PutBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutBucketTaggingAsyncHelper(const Model::PutBucketTaggingRequest& request, const PutBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

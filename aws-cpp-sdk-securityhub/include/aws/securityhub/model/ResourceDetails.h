@@ -17,6 +17,7 @@
 #include <aws/securityhub/model/AwsElbv2LoadBalancerDetails.h>
 #include <aws/securityhub/model/AwsElasticsearchDomainDetails.h>
 #include <aws/securityhub/model/AwsS3BucketDetails.h>
+#include <aws/securityhub/model/AwsS3AccountPublicAccessBlockDetails.h>
 #include <aws/securityhub/model/AwsS3ObjectDetails.h>
 #include <aws/securityhub/model/AwsSecretsManagerSecretDetails.h>
 #include <aws/securityhub/model/AwsIamAccessKeyDetails.h>
@@ -456,6 +457,43 @@ namespace Model
      * <p>Details about an Amazon S3 bucket related to a finding.</p>
      */
     inline ResourceDetails& WithAwsS3Bucket(AwsS3BucketDetails&& value) { SetAwsS3Bucket(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about the Amazon S3 Public Access Block configuration for an
+     * account.</p>
+     */
+    inline const AwsS3AccountPublicAccessBlockDetails& GetAwsS3AccountPublicAccessBlock() const{ return m_awsS3AccountPublicAccessBlock; }
+
+    /**
+     * <p>Details about the Amazon S3 Public Access Block configuration for an
+     * account.</p>
+     */
+    inline bool AwsS3AccountPublicAccessBlockHasBeenSet() const { return m_awsS3AccountPublicAccessBlockHasBeenSet; }
+
+    /**
+     * <p>Details about the Amazon S3 Public Access Block configuration for an
+     * account.</p>
+     */
+    inline void SetAwsS3AccountPublicAccessBlock(const AwsS3AccountPublicAccessBlockDetails& value) { m_awsS3AccountPublicAccessBlockHasBeenSet = true; m_awsS3AccountPublicAccessBlock = value; }
+
+    /**
+     * <p>Details about the Amazon S3 Public Access Block configuration for an
+     * account.</p>
+     */
+    inline void SetAwsS3AccountPublicAccessBlock(AwsS3AccountPublicAccessBlockDetails&& value) { m_awsS3AccountPublicAccessBlockHasBeenSet = true; m_awsS3AccountPublicAccessBlock = std::move(value); }
+
+    /**
+     * <p>Details about the Amazon S3 Public Access Block configuration for an
+     * account.</p>
+     */
+    inline ResourceDetails& WithAwsS3AccountPublicAccessBlock(const AwsS3AccountPublicAccessBlockDetails& value) { SetAwsS3AccountPublicAccessBlock(value); return *this;}
+
+    /**
+     * <p>Details about the Amazon S3 Public Access Block configuration for an
+     * account.</p>
+     */
+    inline ResourceDetails& WithAwsS3AccountPublicAccessBlock(AwsS3AccountPublicAccessBlockDetails&& value) { SetAwsS3AccountPublicAccessBlock(std::move(value)); return *this;}
 
 
     /**
@@ -1525,6 +1563,9 @@ namespace Model
 
     AwsS3BucketDetails m_awsS3Bucket;
     bool m_awsS3BucketHasBeenSet;
+
+    AwsS3AccountPublicAccessBlockDetails m_awsS3AccountPublicAccessBlock;
+    bool m_awsS3AccountPublicAccessBlockHasBeenSet;
 
     AwsS3ObjectDetails m_awsS3Object;
     bool m_awsS3ObjectHasBeenSet;

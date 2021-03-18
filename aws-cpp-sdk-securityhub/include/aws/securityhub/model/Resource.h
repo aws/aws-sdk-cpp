@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/model/Partition.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/securityhub/model/DataClassificationDetails.h>
 #include <aws/securityhub/model/ResourceDetails.h>
 #include <utility>
 
@@ -355,6 +356,43 @@ namespace Model
 
 
     /**
+     * <p>Contains information about sensitive data that was detected on the
+     * resource.</p>
+     */
+    inline const DataClassificationDetails& GetDataClassification() const{ return m_dataClassification; }
+
+    /**
+     * <p>Contains information about sensitive data that was detected on the
+     * resource.</p>
+     */
+    inline bool DataClassificationHasBeenSet() const { return m_dataClassificationHasBeenSet; }
+
+    /**
+     * <p>Contains information about sensitive data that was detected on the
+     * resource.</p>
+     */
+    inline void SetDataClassification(const DataClassificationDetails& value) { m_dataClassificationHasBeenSet = true; m_dataClassification = value; }
+
+    /**
+     * <p>Contains information about sensitive data that was detected on the
+     * resource.</p>
+     */
+    inline void SetDataClassification(DataClassificationDetails&& value) { m_dataClassificationHasBeenSet = true; m_dataClassification = std::move(value); }
+
+    /**
+     * <p>Contains information about sensitive data that was detected on the
+     * resource.</p>
+     */
+    inline Resource& WithDataClassification(const DataClassificationDetails& value) { SetDataClassification(value); return *this;}
+
+    /**
+     * <p>Contains information about sensitive data that was detected on the
+     * resource.</p>
+     */
+    inline Resource& WithDataClassification(DataClassificationDetails&& value) { SetDataClassification(std::move(value)); return *this;}
+
+
+    /**
      * <p>Additional details about the resource related to a finding.</p>
      */
     inline const ResourceDetails& GetDetails() const{ return m_details; }
@@ -403,6 +441,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    DataClassificationDetails m_dataClassification;
+    bool m_dataClassificationHasBeenSet;
 
     ResourceDetails m_details;
     bool m_detailsHasBeenSet;

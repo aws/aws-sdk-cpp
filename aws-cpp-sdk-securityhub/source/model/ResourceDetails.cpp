@@ -31,6 +31,7 @@ ResourceDetails::ResourceDetails() :
     m_awsElbv2LoadBalancerHasBeenSet(false),
     m_awsElasticsearchDomainHasBeenSet(false),
     m_awsS3BucketHasBeenSet(false),
+    m_awsS3AccountPublicAccessBlockHasBeenSet(false),
     m_awsS3ObjectHasBeenSet(false),
     m_awsSecretsManagerSecretHasBeenSet(false),
     m_awsIamAccessKeyHasBeenSet(false),
@@ -76,6 +77,7 @@ ResourceDetails::ResourceDetails(JsonView jsonValue) :
     m_awsElbv2LoadBalancerHasBeenSet(false),
     m_awsElasticsearchDomainHasBeenSet(false),
     m_awsS3BucketHasBeenSet(false),
+    m_awsS3AccountPublicAccessBlockHasBeenSet(false),
     m_awsS3ObjectHasBeenSet(false),
     m_awsSecretsManagerSecretHasBeenSet(false),
     m_awsIamAccessKeyHasBeenSet(false),
@@ -193,6 +195,13 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsS3Bucket = jsonValue.GetObject("AwsS3Bucket");
 
     m_awsS3BucketHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsS3AccountPublicAccessBlock"))
+  {
+    m_awsS3AccountPublicAccessBlock = jsonValue.GetObject("AwsS3AccountPublicAccessBlock");
+
+    m_awsS3AccountPublicAccessBlockHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AwsS3Object"))
@@ -477,6 +486,12 @@ JsonValue ResourceDetails::Jsonize() const
   if(m_awsS3BucketHasBeenSet)
   {
    payload.WithObject("AwsS3Bucket", m_awsS3Bucket.Jsonize());
+
+  }
+
+  if(m_awsS3AccountPublicAccessBlockHasBeenSet)
+  {
+   payload.WithObject("AwsS3AccountPublicAccessBlock", m_awsS3AccountPublicAccessBlock.Jsonize());
 
   }
 

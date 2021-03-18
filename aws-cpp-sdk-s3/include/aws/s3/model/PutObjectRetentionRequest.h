@@ -54,7 +54,7 @@ namespace Model
      * When using this action with an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
      */
@@ -69,7 +69,7 @@ namespace Model
      * When using this action with an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
      */
@@ -84,7 +84,7 @@ namespace Model
      * When using this action with an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
      */
@@ -99,7 +99,7 @@ namespace Model
      * When using this action with an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
      */
@@ -114,7 +114,7 @@ namespace Model
      * When using this action with an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
      */
@@ -129,7 +129,7 @@ namespace Model
      * When using this action with an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
      */
@@ -144,7 +144,7 @@ namespace Model
      * When using this action with an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
      */
@@ -159,7 +159,7 @@ namespace Model
      * When using this action with an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * Access Points</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
      */
@@ -393,56 +393,56 @@ namespace Model
 
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
      * different account, the request will fail with an HTTP <code>403 (Access
      * Denied)</code> error.</p>
      */
     inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
      * different account, the request will fail with an HTTP <code>403 (Access
      * Denied)</code> error.</p>
      */
     inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
      * different account, the request will fail with an HTTP <code>403 (Access
      * Denied)</code> error.</p>
      */
     inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
      * different account, the request will fail with an HTTP <code>403 (Access
      * Denied)</code> error.</p>
      */
     inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
      * different account, the request will fail with an HTTP <code>403 (Access
      * Denied)</code> error.</p>
      */
     inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
      * different account, the request will fail with an HTTP <code>403 (Access
      * Denied)</code> error.</p>
      */
     inline PutObjectRetentionRequest& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
      * different account, the request will fail with an HTTP <code>403 (Access
      * Denied)</code> error.</p>
      */
     inline PutObjectRetentionRequest& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
      * different account, the request will fail with an HTTP <code>403 (Access
      * Denied)</code> error.</p>
      */

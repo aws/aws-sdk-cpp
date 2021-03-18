@@ -608,8 +608,8 @@ namespace Model
          * back any replacements that have already been completed, but it prevents new
          * replacements from being started. </p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
-         * Auto Scaling Instances Based on an Instance Refresh</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Auto Scaling instances based on an instance refresh</a> in the <i>Amazon EC2
+         * Auto Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CancelInstanceRefresh">AWS
          * API Reference</a></p>
          */
@@ -620,8 +620,8 @@ namespace Model
          * back any replacements that have already been completed, but it prevents new
          * replacements from being started. </p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
-         * Auto Scaling Instances Based on an Instance Refresh</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Auto Scaling instances based on an instance refresh</a> in the <i>Amazon EC2
+         * Auto Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CancelInstanceRefresh">AWS
          * API Reference</a></p>
          *
@@ -634,8 +634,8 @@ namespace Model
          * back any replacements that have already been completed, but it prevents new
          * replacements from being started. </p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
-         * Auto Scaling Instances Based on an Instance Refresh</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Auto Scaling instances based on an instance refresh</a> in the <i>Amazon EC2
+         * Auto Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CancelInstanceRefresh">AWS
          * API Reference</a></p>
          *
@@ -1313,8 +1313,8 @@ namespace Model
          * <code>Cancelled</code> - The operation is cancelled. </p> </li> </ul> <p>For
          * more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
-         * Auto Scaling Instances Based on an Instance Refresh</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Auto Scaling instances based on an instance refresh</a> in the <i>Amazon EC2
+         * Auto Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeInstanceRefreshes">AWS
          * API Reference</a></p>
          */
@@ -1335,8 +1335,8 @@ namespace Model
          * <code>Cancelled</code> - The operation is cancelled. </p> </li> </ul> <p>For
          * more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
-         * Auto Scaling Instances Based on an Instance Refresh</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Auto Scaling instances based on an instance refresh</a> in the <i>Amazon EC2
+         * Auto Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeInstanceRefreshes">AWS
          * API Reference</a></p>
          *
@@ -1359,8 +1359,8 @@ namespace Model
          * <code>Cancelled</code> - The operation is cancelled. </p> </li> </ul> <p>For
          * more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
-         * Auto Scaling Instances Based on an Instance Refresh</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Auto Scaling instances based on an instance refresh</a> in the <i>Amazon EC2
+         * Auto Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeInstanceRefreshes">AWS
          * API Reference</a></p>
          *
@@ -2611,8 +2611,8 @@ namespace Model
          * To cancel an instance refresh operation in progress, use the
          * <a>CancelInstanceRefresh</a> API. </p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
-         * Auto Scaling Instances Based on an Instance Refresh</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Auto Scaling instances based on an instance refresh</a> in the <i>Amazon EC2
+         * Auto Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/StartInstanceRefresh">AWS
          * API Reference</a></p>
          */
@@ -2628,8 +2628,8 @@ namespace Model
          * To cancel an instance refresh operation in progress, use the
          * <a>CancelInstanceRefresh</a> API. </p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
-         * Auto Scaling Instances Based on an Instance Refresh</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Auto Scaling instances based on an instance refresh</a> in the <i>Amazon EC2
+         * Auto Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/StartInstanceRefresh">AWS
          * API Reference</a></p>
          *
@@ -2647,8 +2647,8 @@ namespace Model
          * To cancel an instance refresh operation in progress, use the
          * <a>CancelInstanceRefresh</a> API. </p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
-         * Auto Scaling Instances Based on an Instance Refresh</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Auto Scaling instances based on an instance refresh</a> in the <i>Amazon EC2
+         * Auto Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/StartInstanceRefresh">AWS
          * API Reference</a></p>
          *

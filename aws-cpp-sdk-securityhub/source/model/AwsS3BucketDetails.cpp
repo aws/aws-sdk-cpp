@@ -22,7 +22,8 @@ AwsS3BucketDetails::AwsS3BucketDetails() :
     m_ownerIdHasBeenSet(false),
     m_ownerNameHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_serverSideEncryptionConfigurationHasBeenSet(false)
+    m_serverSideEncryptionConfigurationHasBeenSet(false),
+    m_publicAccessBlockConfigurationHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ AwsS3BucketDetails::AwsS3BucketDetails(JsonView jsonValue) :
     m_ownerIdHasBeenSet(false),
     m_ownerNameHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_serverSideEncryptionConfigurationHasBeenSet(false)
+    m_serverSideEncryptionConfigurationHasBeenSet(false),
+    m_publicAccessBlockConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +67,13 @@ AwsS3BucketDetails& AwsS3BucketDetails::operator =(JsonView jsonValue)
     m_serverSideEncryptionConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PublicAccessBlockConfiguration"))
+  {
+    m_publicAccessBlockConfiguration = jsonValue.GetObject("PublicAccessBlockConfiguration");
+
+    m_publicAccessBlockConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +102,12 @@ JsonValue AwsS3BucketDetails::Jsonize() const
   if(m_serverSideEncryptionConfigurationHasBeenSet)
   {
    payload.WithObject("ServerSideEncryptionConfiguration", m_serverSideEncryptionConfiguration.Jsonize());
+
+  }
+
+  if(m_publicAccessBlockConfigurationHasBeenSet)
+  {
+   payload.WithObject("PublicAccessBlockConfiguration", m_publicAccessBlockConfiguration.Jsonize());
 
   }
 

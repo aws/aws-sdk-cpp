@@ -2213,6 +2213,27 @@ namespace Model
      */
     inline Cluster& WithClusterNamespaceArn(const char* value) { SetClusterNamespaceArn(value); return *this;}
 
+
+    /**
+     * <p>The total storage capacity of the cluster in megabytes. </p>
+     */
+    inline long long GetTotalStorageCapacityInMegaBytes() const{ return m_totalStorageCapacityInMegaBytes; }
+
+    /**
+     * <p>The total storage capacity of the cluster in megabytes. </p>
+     */
+    inline bool TotalStorageCapacityInMegaBytesHasBeenSet() const { return m_totalStorageCapacityInMegaBytesHasBeenSet; }
+
+    /**
+     * <p>The total storage capacity of the cluster in megabytes. </p>
+     */
+    inline void SetTotalStorageCapacityInMegaBytes(long long value) { m_totalStorageCapacityInMegaBytesHasBeenSet = true; m_totalStorageCapacityInMegaBytes = value; }
+
+    /**
+     * <p>The total storage capacity of the cluster in megabytes. </p>
+     */
+    inline Cluster& WithTotalStorageCapacityInMegaBytes(long long value) { SetTotalStorageCapacityInMegaBytes(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -2358,6 +2379,9 @@ namespace Model
 
     Aws::String m_clusterNamespaceArn;
     bool m_clusterNamespaceArnHasBeenSet;
+
+    long long m_totalStorageCapacityInMegaBytes;
+    bool m_totalStorageCapacityInMegaBytesHasBeenSet;
   };
 
 } // namespace Model

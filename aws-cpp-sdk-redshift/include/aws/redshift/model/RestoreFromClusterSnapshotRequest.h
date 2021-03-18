@@ -934,9 +934,10 @@ namespace Model
      * <p>The number of days that automated snapshots are retained. If the value is 0,
      * automated snapshots are disabled. Even if automated snapshots are disabled, you
      * can still create manual snapshots when you want with
-     * <a>CreateClusterSnapshot</a>. </p> <p>Default: The value selected for the
-     * cluster from which the snapshot was taken.</p> <p>Constraints: Must be a value
-     * from 0 to 35.</p>
+     * <a>CreateClusterSnapshot</a>. </p> <p>You can't disable automated snapshots for
+     * RA3 node types. Set the automated retention period from 1-35 days.</p>
+     * <p>Default: The value selected for the cluster from which the snapshot was
+     * taken.</p> <p>Constraints: Must be a value from 0 to 35.</p>
      */
     inline int GetAutomatedSnapshotRetentionPeriod() const{ return m_automatedSnapshotRetentionPeriod; }
 
@@ -944,9 +945,10 @@ namespace Model
      * <p>The number of days that automated snapshots are retained. If the value is 0,
      * automated snapshots are disabled. Even if automated snapshots are disabled, you
      * can still create manual snapshots when you want with
-     * <a>CreateClusterSnapshot</a>. </p> <p>Default: The value selected for the
-     * cluster from which the snapshot was taken.</p> <p>Constraints: Must be a value
-     * from 0 to 35.</p>
+     * <a>CreateClusterSnapshot</a>. </p> <p>You can't disable automated snapshots for
+     * RA3 node types. Set the automated retention period from 1-35 days.</p>
+     * <p>Default: The value selected for the cluster from which the snapshot was
+     * taken.</p> <p>Constraints: Must be a value from 0 to 35.</p>
      */
     inline bool AutomatedSnapshotRetentionPeriodHasBeenSet() const { return m_automatedSnapshotRetentionPeriodHasBeenSet; }
 
@@ -954,9 +956,10 @@ namespace Model
      * <p>The number of days that automated snapshots are retained. If the value is 0,
      * automated snapshots are disabled. Even if automated snapshots are disabled, you
      * can still create manual snapshots when you want with
-     * <a>CreateClusterSnapshot</a>. </p> <p>Default: The value selected for the
-     * cluster from which the snapshot was taken.</p> <p>Constraints: Must be a value
-     * from 0 to 35.</p>
+     * <a>CreateClusterSnapshot</a>. </p> <p>You can't disable automated snapshots for
+     * RA3 node types. Set the automated retention period from 1-35 days.</p>
+     * <p>Default: The value selected for the cluster from which the snapshot was
+     * taken.</p> <p>Constraints: Must be a value from 0 to 35.</p>
      */
     inline void SetAutomatedSnapshotRetentionPeriod(int value) { m_automatedSnapshotRetentionPeriodHasBeenSet = true; m_automatedSnapshotRetentionPeriod = value; }
 
@@ -964,9 +967,10 @@ namespace Model
      * <p>The number of days that automated snapshots are retained. If the value is 0,
      * automated snapshots are disabled. Even if automated snapshots are disabled, you
      * can still create manual snapshots when you want with
-     * <a>CreateClusterSnapshot</a>. </p> <p>Default: The value selected for the
-     * cluster from which the snapshot was taken.</p> <p>Constraints: Must be a value
-     * from 0 to 35.</p>
+     * <a>CreateClusterSnapshot</a>. </p> <p>You can't disable automated snapshots for
+     * RA3 node types. Set the automated retention period from 1-35 days.</p>
+     * <p>Default: The value selected for the cluster from which the snapshot was
+     * taken.</p> <p>Constraints: Must be a value from 0 to 35.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithAutomatedSnapshotRetentionPeriod(int value) { SetAutomatedSnapshotRetentionPeriod(value); return *this;}
 

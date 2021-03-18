@@ -474,46 +474,44 @@ namespace Model
         virtual void BatchEnableStandardsAsync(const Model::BatchEnableStandardsRequest& request, const BatchEnableStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Imports security findings generated from an integrated third-party product
-         * into Security Hub. This action is requested by the integrated product to import
-         * its findings into Security Hub.</p> <p>The maximum allowed size for a finding is
-         * 240 Kb. An error is returned for any finding larger than 240 Kb.</p> <p>After a
-         * finding is created, <code>BatchImportFindings</code> cannot be used to update
-         * the following finding fields and objects, which Security Hub customers use to
-         * manage their investigation workflow.</p> <ul> <li> <p> <code>Note</code> </p>
-         * </li> <li> <p> <code>UserDefinedFields</code> </p> </li> <li> <p>
+         * <p>Imports security findings generated from an integrated product into Security
+         * Hub. This action is requested by the integrated product to import its findings
+         * into Security Hub.</p> <p>The maximum allowed size for a finding is 240 Kb. An
+         * error is returned for any finding larger than 240 Kb.</p> <p>After a finding is
+         * created, <code>BatchImportFindings</code> cannot be used to update the following
+         * finding fields and objects, which Security Hub customers use to manage their
+         * investigation workflow.</p> <ul> <li> <p> <code>Note</code> </p> </li> <li> <p>
+         * <code>UserDefinedFields</code> </p> </li> <li> <p>
          * <code>VerificationState</code> </p> </li> <li> <p> <code>Workflow</code> </p>
-         * </li> </ul> <p> <code>BatchImportFindings</code> can be used to update the
-         * following finding fields and objects only if they have not been updated using
-         * <code>BatchUpdateFindings</code>. After they are updated using
-         * <code>BatchUpdateFindings</code>, these fields cannot be updated using
-         * <code>BatchImportFindings</code>.</p> <ul> <li> <p> <code>Confidence</code> </p>
-         * </li> <li> <p> <code>Criticality</code> </p> </li> <li> <p>
-         * <code>RelatedFindings</code> </p> </li> <li> <p> <code>Severity</code> </p>
-         * </li> <li> <p> <code>Types</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * </li> </ul> <p>Finding providers also should not use
+         * <code>BatchImportFindings</code> to update the following attributes.</p> <ul>
+         * <li> <p> <code>Confidence</code> </p> </li> <li> <p> <code>Criticality</code>
+         * </p> </li> <li> <p> <code>RelatedFindings</code> </p> </li> <li> <p>
+         * <code>Severity</code> </p> </li> <li> <p> <code>Types</code> </p> </li> </ul>
+         * <p>Instead, finding providers use <code>FindingProviderFields</code> to provide
+         * values for these attributes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchImportFindings">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchImportFindingsOutcome BatchImportFindings(const Model::BatchImportFindingsRequest& request) const;
 
         /**
-         * <p>Imports security findings generated from an integrated third-party product
-         * into Security Hub. This action is requested by the integrated product to import
-         * its findings into Security Hub.</p> <p>The maximum allowed size for a finding is
-         * 240 Kb. An error is returned for any finding larger than 240 Kb.</p> <p>After a
-         * finding is created, <code>BatchImportFindings</code> cannot be used to update
-         * the following finding fields and objects, which Security Hub customers use to
-         * manage their investigation workflow.</p> <ul> <li> <p> <code>Note</code> </p>
-         * </li> <li> <p> <code>UserDefinedFields</code> </p> </li> <li> <p>
+         * <p>Imports security findings generated from an integrated product into Security
+         * Hub. This action is requested by the integrated product to import its findings
+         * into Security Hub.</p> <p>The maximum allowed size for a finding is 240 Kb. An
+         * error is returned for any finding larger than 240 Kb.</p> <p>After a finding is
+         * created, <code>BatchImportFindings</code> cannot be used to update the following
+         * finding fields and objects, which Security Hub customers use to manage their
+         * investigation workflow.</p> <ul> <li> <p> <code>Note</code> </p> </li> <li> <p>
+         * <code>UserDefinedFields</code> </p> </li> <li> <p>
          * <code>VerificationState</code> </p> </li> <li> <p> <code>Workflow</code> </p>
-         * </li> </ul> <p> <code>BatchImportFindings</code> can be used to update the
-         * following finding fields and objects only if they have not been updated using
-         * <code>BatchUpdateFindings</code>. After they are updated using
-         * <code>BatchUpdateFindings</code>, these fields cannot be updated using
-         * <code>BatchImportFindings</code>.</p> <ul> <li> <p> <code>Confidence</code> </p>
-         * </li> <li> <p> <code>Criticality</code> </p> </li> <li> <p>
-         * <code>RelatedFindings</code> </p> </li> <li> <p> <code>Severity</code> </p>
-         * </li> <li> <p> <code>Types</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * </li> </ul> <p>Finding providers also should not use
+         * <code>BatchImportFindings</code> to update the following attributes.</p> <ul>
+         * <li> <p> <code>Confidence</code> </p> </li> <li> <p> <code>Criticality</code>
+         * </p> </li> <li> <p> <code>RelatedFindings</code> </p> </li> <li> <p>
+         * <code>Severity</code> </p> </li> <li> <p> <code>Types</code> </p> </li> </ul>
+         * <p>Instead, finding providers use <code>FindingProviderFields</code> to provide
+         * values for these attributes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchImportFindings">AWS
          * API Reference</a></p>
          *
@@ -522,23 +520,22 @@ namespace Model
         virtual Model::BatchImportFindingsOutcomeCallable BatchImportFindingsCallable(const Model::BatchImportFindingsRequest& request) const;
 
         /**
-         * <p>Imports security findings generated from an integrated third-party product
-         * into Security Hub. This action is requested by the integrated product to import
-         * its findings into Security Hub.</p> <p>The maximum allowed size for a finding is
-         * 240 Kb. An error is returned for any finding larger than 240 Kb.</p> <p>After a
-         * finding is created, <code>BatchImportFindings</code> cannot be used to update
-         * the following finding fields and objects, which Security Hub customers use to
-         * manage their investigation workflow.</p> <ul> <li> <p> <code>Note</code> </p>
-         * </li> <li> <p> <code>UserDefinedFields</code> </p> </li> <li> <p>
+         * <p>Imports security findings generated from an integrated product into Security
+         * Hub. This action is requested by the integrated product to import its findings
+         * into Security Hub.</p> <p>The maximum allowed size for a finding is 240 Kb. An
+         * error is returned for any finding larger than 240 Kb.</p> <p>After a finding is
+         * created, <code>BatchImportFindings</code> cannot be used to update the following
+         * finding fields and objects, which Security Hub customers use to manage their
+         * investigation workflow.</p> <ul> <li> <p> <code>Note</code> </p> </li> <li> <p>
+         * <code>UserDefinedFields</code> </p> </li> <li> <p>
          * <code>VerificationState</code> </p> </li> <li> <p> <code>Workflow</code> </p>
-         * </li> </ul> <p> <code>BatchImportFindings</code> can be used to update the
-         * following finding fields and objects only if they have not been updated using
-         * <code>BatchUpdateFindings</code>. After they are updated using
-         * <code>BatchUpdateFindings</code>, these fields cannot be updated using
-         * <code>BatchImportFindings</code>.</p> <ul> <li> <p> <code>Confidence</code> </p>
-         * </li> <li> <p> <code>Criticality</code> </p> </li> <li> <p>
-         * <code>RelatedFindings</code> </p> </li> <li> <p> <code>Severity</code> </p>
-         * </li> <li> <p> <code>Types</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * </li> </ul> <p>Finding providers also should not use
+         * <code>BatchImportFindings</code> to update the following attributes.</p> <ul>
+         * <li> <p> <code>Confidence</code> </p> </li> <li> <p> <code>Criticality</code>
+         * </p> </li> <li> <p> <code>RelatedFindings</code> </p> </li> <li> <p>
+         * <code>Severity</code> </p> </li> <li> <p> <code>Types</code> </p> </li> </ul>
+         * <p>Instead, finding providers use <code>FindingProviderFields</code> to provide
+         * values for these attributes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchImportFindings">AWS
          * API Reference</a></p>
          *

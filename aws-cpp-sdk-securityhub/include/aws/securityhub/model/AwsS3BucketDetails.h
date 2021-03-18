@@ -7,6 +7,7 @@
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/model/AwsS3BucketServerSideEncryptionConfiguration.h>
+#include <aws/securityhub/model/AwsS3AccountPublicAccessBlockDetails.h>
 #include <utility>
 
 namespace Aws
@@ -223,6 +224,43 @@ namespace Model
      */
     inline AwsS3BucketDetails& WithServerSideEncryptionConfiguration(AwsS3BucketServerSideEncryptionConfiguration&& value) { SetServerSideEncryptionConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides information about the Amazon S3 Public Access Block configuration
+     * for the S3 bucket.</p>
+     */
+    inline const AwsS3AccountPublicAccessBlockDetails& GetPublicAccessBlockConfiguration() const{ return m_publicAccessBlockConfiguration; }
+
+    /**
+     * <p>Provides information about the Amazon S3 Public Access Block configuration
+     * for the S3 bucket.</p>
+     */
+    inline bool PublicAccessBlockConfigurationHasBeenSet() const { return m_publicAccessBlockConfigurationHasBeenSet; }
+
+    /**
+     * <p>Provides information about the Amazon S3 Public Access Block configuration
+     * for the S3 bucket.</p>
+     */
+    inline void SetPublicAccessBlockConfiguration(const AwsS3AccountPublicAccessBlockDetails& value) { m_publicAccessBlockConfigurationHasBeenSet = true; m_publicAccessBlockConfiguration = value; }
+
+    /**
+     * <p>Provides information about the Amazon S3 Public Access Block configuration
+     * for the S3 bucket.</p>
+     */
+    inline void SetPublicAccessBlockConfiguration(AwsS3AccountPublicAccessBlockDetails&& value) { m_publicAccessBlockConfigurationHasBeenSet = true; m_publicAccessBlockConfiguration = std::move(value); }
+
+    /**
+     * <p>Provides information about the Amazon S3 Public Access Block configuration
+     * for the S3 bucket.</p>
+     */
+    inline AwsS3BucketDetails& WithPublicAccessBlockConfiguration(const AwsS3AccountPublicAccessBlockDetails& value) { SetPublicAccessBlockConfiguration(value); return *this;}
+
+    /**
+     * <p>Provides information about the Amazon S3 Public Access Block configuration
+     * for the S3 bucket.</p>
+     */
+    inline AwsS3BucketDetails& WithPublicAccessBlockConfiguration(AwsS3AccountPublicAccessBlockDetails&& value) { SetPublicAccessBlockConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_ownerId;
@@ -236,6 +274,9 @@ namespace Model
 
     AwsS3BucketServerSideEncryptionConfiguration m_serverSideEncryptionConfiguration;
     bool m_serverSideEncryptionConfigurationHasBeenSet;
+
+    AwsS3AccountPublicAccessBlockDetails m_publicAccessBlockConfiguration;
+    bool m_publicAccessBlockConfigurationHasBeenSet;
   };
 
 } // namespace Model

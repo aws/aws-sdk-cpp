@@ -24,7 +24,10 @@ RefreshPreferences::RefreshPreferences() :
     m_minHealthyPercentage(0),
     m_minHealthyPercentageHasBeenSet(false),
     m_instanceWarmup(0),
-    m_instanceWarmupHasBeenSet(false)
+    m_instanceWarmupHasBeenSet(false),
+    m_checkpointPercentagesHasBeenSet(false),
+    m_checkpointDelay(0),
+    m_checkpointDelayHasBeenSet(false)
 {
 }
 
@@ -32,7 +35,10 @@ RefreshPreferences::RefreshPreferences(const XmlNode& xmlNode) :
     m_minHealthyPercentage(0),
     m_minHealthyPercentageHasBeenSet(false),
     m_instanceWarmup(0),
-    m_instanceWarmupHasBeenSet(false)
+    m_instanceWarmupHasBeenSet(false),
+    m_checkpointPercentagesHasBeenSet(false),
+    m_checkpointDelay(0),
+    m_checkpointDelayHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -55,6 +61,24 @@ RefreshPreferences& RefreshPreferences::operator =(const XmlNode& xmlNode)
       m_instanceWarmup = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceWarmupNode.GetText()).c_str()).c_str());
       m_instanceWarmupHasBeenSet = true;
     }
+    XmlNode checkpointPercentagesNode = resultNode.FirstChild("CheckpointPercentages");
+    if(!checkpointPercentagesNode.IsNull())
+    {
+      XmlNode checkpointPercentagesMember = checkpointPercentagesNode.FirstChild("member");
+      while(!checkpointPercentagesMember.IsNull())
+      {
+         m_checkpointPercentages.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(checkpointPercentagesMember.GetText().c_str()).c_str()));
+        checkpointPercentagesMember = checkpointPercentagesMember.NextNode("member");
+      }
+
+      m_checkpointPercentagesHasBeenSet = true;
+    }
+    XmlNode checkpointDelayNode = resultNode.FirstChild("CheckpointDelay");
+    if(!checkpointDelayNode.IsNull())
+    {
+      m_checkpointDelay = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(checkpointDelayNode.GetText()).c_str()).c_str());
+      m_checkpointDelayHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -72,6 +96,20 @@ void RefreshPreferences::OutputToStream(Aws::OStream& oStream, const char* locat
       oStream << location << index << locationValue << ".InstanceWarmup=" << m_instanceWarmup << "&";
   }
 
+  if(m_checkpointPercentagesHasBeenSet)
+  {
+      unsigned checkpointPercentagesIdx = 1;
+      for(auto& item : m_checkpointPercentages)
+      {
+        oStream << location << index << locationValue << ".CheckpointPercentages.member." << checkpointPercentagesIdx++ << "=" << item << "&";
+      }
+  }
+
+  if(m_checkpointDelayHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CheckpointDelay=" << m_checkpointDelay << "&";
+  }
+
 }
 
 void RefreshPreferences::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -83,6 +121,18 @@ void RefreshPreferences::OutputToStream(Aws::OStream& oStream, const char* locat
   if(m_instanceWarmupHasBeenSet)
   {
       oStream << location << ".InstanceWarmup=" << m_instanceWarmup << "&";
+  }
+  if(m_checkpointPercentagesHasBeenSet)
+  {
+      unsigned checkpointPercentagesIdx = 1;
+      for(auto& item : m_checkpointPercentages)
+      {
+        oStream << location << ".CheckpointPercentages.member." << checkpointPercentagesIdx++ << "=" << item << "&";
+      }
+  }
+  if(m_checkpointDelayHasBeenSet)
+  {
+      oStream << location << ".CheckpointDelay=" << m_checkpointDelay << "&";
   }
 }
 

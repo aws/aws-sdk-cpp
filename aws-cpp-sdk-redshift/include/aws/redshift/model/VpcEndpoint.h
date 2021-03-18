@@ -7,6 +7,8 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/redshift/model/NetworkInterface.h>
 #include <utility>
 
 namespace Aws
@@ -88,10 +90,106 @@ namespace Model
      */
     inline VpcEndpoint& WithVpcEndpointId(const char* value) { SetVpcEndpointId(value); return *this;}
 
+
+    /**
+     * <p>The VPC identifier that the endpoint is associated. </p>
+     */
+    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The VPC identifier that the endpoint is associated. </p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+
+    /**
+     * <p>The VPC identifier that the endpoint is associated. </p>
+     */
+    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+
+    /**
+     * <p>The VPC identifier that the endpoint is associated. </p>
+     */
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
+
+    /**
+     * <p>The VPC identifier that the endpoint is associated. </p>
+     */
+    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
+
+    /**
+     * <p>The VPC identifier that the endpoint is associated. </p>
+     */
+    inline VpcEndpoint& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
+
+    /**
+     * <p>The VPC identifier that the endpoint is associated. </p>
+     */
+    inline VpcEndpoint& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
+
+    /**
+     * <p>The VPC identifier that the endpoint is associated. </p>
+     */
+    inline VpcEndpoint& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+
+
+    /**
+     * <p>One or more network interfaces of the endpoint. Also known as an interface
+     * endpoint. </p>
+     */
+    inline const Aws::Vector<NetworkInterface>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
+
+    /**
+     * <p>One or more network interfaces of the endpoint. Also known as an interface
+     * endpoint. </p>
+     */
+    inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
+
+    /**
+     * <p>One or more network interfaces of the endpoint. Also known as an interface
+     * endpoint. </p>
+     */
+    inline void SetNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
+
+    /**
+     * <p>One or more network interfaces of the endpoint. Also known as an interface
+     * endpoint. </p>
+     */
+    inline void SetNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
+
+    /**
+     * <p>One or more network interfaces of the endpoint. Also known as an interface
+     * endpoint. </p>
+     */
+    inline VpcEndpoint& WithNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { SetNetworkInterfaces(value); return *this;}
+
+    /**
+     * <p>One or more network interfaces of the endpoint. Also known as an interface
+     * endpoint. </p>
+     */
+    inline VpcEndpoint& WithNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more network interfaces of the endpoint. Also known as an interface
+     * endpoint. </p>
+     */
+    inline VpcEndpoint& AddNetworkInterfaces(const NetworkInterface& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
+
+    /**
+     * <p>One or more network interfaces of the endpoint. Also known as an interface
+     * endpoint. </p>
+     */
+    inline VpcEndpoint& AddNetworkInterfaces(NetworkInterface&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_vpcEndpointId;
     bool m_vpcEndpointIdHasBeenSet;
+
+    Aws::String m_vpcId;
+    bool m_vpcIdHasBeenSet;
+
+    Aws::Vector<NetworkInterface> m_networkInterfaces;
+    bool m_networkInterfacesHasBeenSet;
   };
 
 } // namespace Model

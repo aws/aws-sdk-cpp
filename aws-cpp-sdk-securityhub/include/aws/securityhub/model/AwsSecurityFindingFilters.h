@@ -505,96 +505,6 @@ namespace Model
 
 
     /**
-     * <p>The native severity as defined by the security-findings provider's solution
-     * that generated the finding.</p>
-     */
-    inline const Aws::Vector<NumberFilter>& GetSeverityProduct() const{ return m_severityProduct; }
-
-    /**
-     * <p>The native severity as defined by the security-findings provider's solution
-     * that generated the finding.</p>
-     */
-    inline bool SeverityProductHasBeenSet() const { return m_severityProductHasBeenSet; }
-
-    /**
-     * <p>The native severity as defined by the security-findings provider's solution
-     * that generated the finding.</p>
-     */
-    inline void SetSeverityProduct(const Aws::Vector<NumberFilter>& value) { m_severityProductHasBeenSet = true; m_severityProduct = value; }
-
-    /**
-     * <p>The native severity as defined by the security-findings provider's solution
-     * that generated the finding.</p>
-     */
-    inline void SetSeverityProduct(Aws::Vector<NumberFilter>&& value) { m_severityProductHasBeenSet = true; m_severityProduct = std::move(value); }
-
-    /**
-     * <p>The native severity as defined by the security-findings provider's solution
-     * that generated the finding.</p>
-     */
-    inline AwsSecurityFindingFilters& WithSeverityProduct(const Aws::Vector<NumberFilter>& value) { SetSeverityProduct(value); return *this;}
-
-    /**
-     * <p>The native severity as defined by the security-findings provider's solution
-     * that generated the finding.</p>
-     */
-    inline AwsSecurityFindingFilters& WithSeverityProduct(Aws::Vector<NumberFilter>&& value) { SetSeverityProduct(std::move(value)); return *this;}
-
-    /**
-     * <p>The native severity as defined by the security-findings provider's solution
-     * that generated the finding.</p>
-     */
-    inline AwsSecurityFindingFilters& AddSeverityProduct(const NumberFilter& value) { m_severityProductHasBeenSet = true; m_severityProduct.push_back(value); return *this; }
-
-    /**
-     * <p>The native severity as defined by the security-findings provider's solution
-     * that generated the finding.</p>
-     */
-    inline AwsSecurityFindingFilters& AddSeverityProduct(NumberFilter&& value) { m_severityProductHasBeenSet = true; m_severityProduct.push_back(std::move(value)); return *this; }
-
-
-    /**
-     * <p>The normalized severity of a finding.</p>
-     */
-    inline const Aws::Vector<NumberFilter>& GetSeverityNormalized() const{ return m_severityNormalized; }
-
-    /**
-     * <p>The normalized severity of a finding.</p>
-     */
-    inline bool SeverityNormalizedHasBeenSet() const { return m_severityNormalizedHasBeenSet; }
-
-    /**
-     * <p>The normalized severity of a finding.</p>
-     */
-    inline void SetSeverityNormalized(const Aws::Vector<NumberFilter>& value) { m_severityNormalizedHasBeenSet = true; m_severityNormalized = value; }
-
-    /**
-     * <p>The normalized severity of a finding.</p>
-     */
-    inline void SetSeverityNormalized(Aws::Vector<NumberFilter>&& value) { m_severityNormalizedHasBeenSet = true; m_severityNormalized = std::move(value); }
-
-    /**
-     * <p>The normalized severity of a finding.</p>
-     */
-    inline AwsSecurityFindingFilters& WithSeverityNormalized(const Aws::Vector<NumberFilter>& value) { SetSeverityNormalized(value); return *this;}
-
-    /**
-     * <p>The normalized severity of a finding.</p>
-     */
-    inline AwsSecurityFindingFilters& WithSeverityNormalized(Aws::Vector<NumberFilter>&& value) { SetSeverityNormalized(std::move(value)); return *this;}
-
-    /**
-     * <p>The normalized severity of a finding.</p>
-     */
-    inline AwsSecurityFindingFilters& AddSeverityNormalized(const NumberFilter& value) { m_severityNormalizedHasBeenSet = true; m_severityNormalized.push_back(value); return *this; }
-
-    /**
-     * <p>The normalized severity of a finding.</p>
-     */
-    inline AwsSecurityFindingFilters& AddSeverityNormalized(NumberFilter&& value) { m_severityNormalizedHasBeenSet = true; m_severityNormalized.push_back(std::move(value)); return *this; }
-
-
-    /**
      * <p>The label of a finding's severity.</p>
      */
     inline const Aws::Vector<StringFilter>& GetSeverityLabel() const{ return m_severityLabel; }
@@ -3842,6 +3752,389 @@ namespace Model
      */
     inline AwsSecurityFindingFilters& AddKeyword(KeywordFilter&& value) { m_keywordHasBeenSet = true; m_keyword.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The finding provider value for the finding confidence. Confidence is defined
+     * as the likelihood that a finding accurately identifies the behavior or issue
+     * that it was intended to identify.</p> <p>Confidence is scored on a 0-100 basis
+     * using a ratio scale, where 0 means zero percent confidence and 100 means 100
+     * percent confidence.</p>
+     */
+    inline const Aws::Vector<NumberFilter>& GetFindingProviderFieldsConfidence() const{ return m_findingProviderFieldsConfidence; }
+
+    /**
+     * <p>The finding provider value for the finding confidence. Confidence is defined
+     * as the likelihood that a finding accurately identifies the behavior or issue
+     * that it was intended to identify.</p> <p>Confidence is scored on a 0-100 basis
+     * using a ratio scale, where 0 means zero percent confidence and 100 means 100
+     * percent confidence.</p>
+     */
+    inline bool FindingProviderFieldsConfidenceHasBeenSet() const { return m_findingProviderFieldsConfidenceHasBeenSet; }
+
+    /**
+     * <p>The finding provider value for the finding confidence. Confidence is defined
+     * as the likelihood that a finding accurately identifies the behavior or issue
+     * that it was intended to identify.</p> <p>Confidence is scored on a 0-100 basis
+     * using a ratio scale, where 0 means zero percent confidence and 100 means 100
+     * percent confidence.</p>
+     */
+    inline void SetFindingProviderFieldsConfidence(const Aws::Vector<NumberFilter>& value) { m_findingProviderFieldsConfidenceHasBeenSet = true; m_findingProviderFieldsConfidence = value; }
+
+    /**
+     * <p>The finding provider value for the finding confidence. Confidence is defined
+     * as the likelihood that a finding accurately identifies the behavior or issue
+     * that it was intended to identify.</p> <p>Confidence is scored on a 0-100 basis
+     * using a ratio scale, where 0 means zero percent confidence and 100 means 100
+     * percent confidence.</p>
+     */
+    inline void SetFindingProviderFieldsConfidence(Aws::Vector<NumberFilter>&& value) { m_findingProviderFieldsConfidenceHasBeenSet = true; m_findingProviderFieldsConfidence = std::move(value); }
+
+    /**
+     * <p>The finding provider value for the finding confidence. Confidence is defined
+     * as the likelihood that a finding accurately identifies the behavior or issue
+     * that it was intended to identify.</p> <p>Confidence is scored on a 0-100 basis
+     * using a ratio scale, where 0 means zero percent confidence and 100 means 100
+     * percent confidence.</p>
+     */
+    inline AwsSecurityFindingFilters& WithFindingProviderFieldsConfidence(const Aws::Vector<NumberFilter>& value) { SetFindingProviderFieldsConfidence(value); return *this;}
+
+    /**
+     * <p>The finding provider value for the finding confidence. Confidence is defined
+     * as the likelihood that a finding accurately identifies the behavior or issue
+     * that it was intended to identify.</p> <p>Confidence is scored on a 0-100 basis
+     * using a ratio scale, where 0 means zero percent confidence and 100 means 100
+     * percent confidence.</p>
+     */
+    inline AwsSecurityFindingFilters& WithFindingProviderFieldsConfidence(Aws::Vector<NumberFilter>&& value) { SetFindingProviderFieldsConfidence(std::move(value)); return *this;}
+
+    /**
+     * <p>The finding provider value for the finding confidence. Confidence is defined
+     * as the likelihood that a finding accurately identifies the behavior or issue
+     * that it was intended to identify.</p> <p>Confidence is scored on a 0-100 basis
+     * using a ratio scale, where 0 means zero percent confidence and 100 means 100
+     * percent confidence.</p>
+     */
+    inline AwsSecurityFindingFilters& AddFindingProviderFieldsConfidence(const NumberFilter& value) { m_findingProviderFieldsConfidenceHasBeenSet = true; m_findingProviderFieldsConfidence.push_back(value); return *this; }
+
+    /**
+     * <p>The finding provider value for the finding confidence. Confidence is defined
+     * as the likelihood that a finding accurately identifies the behavior or issue
+     * that it was intended to identify.</p> <p>Confidence is scored on a 0-100 basis
+     * using a ratio scale, where 0 means zero percent confidence and 100 means 100
+     * percent confidence.</p>
+     */
+    inline AwsSecurityFindingFilters& AddFindingProviderFieldsConfidence(NumberFilter&& value) { m_findingProviderFieldsConfidenceHasBeenSet = true; m_findingProviderFieldsConfidence.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The finding provider value for the level of importance assigned to the
+     * resources associated with the findings.</p> <p>A score of 0 means that the
+     * underlying resources have no criticality, and a score of 100 is reserved for the
+     * most critical resources. </p>
+     */
+    inline const Aws::Vector<NumberFilter>& GetFindingProviderFieldsCriticality() const{ return m_findingProviderFieldsCriticality; }
+
+    /**
+     * <p>The finding provider value for the level of importance assigned to the
+     * resources associated with the findings.</p> <p>A score of 0 means that the
+     * underlying resources have no criticality, and a score of 100 is reserved for the
+     * most critical resources. </p>
+     */
+    inline bool FindingProviderFieldsCriticalityHasBeenSet() const { return m_findingProviderFieldsCriticalityHasBeenSet; }
+
+    /**
+     * <p>The finding provider value for the level of importance assigned to the
+     * resources associated with the findings.</p> <p>A score of 0 means that the
+     * underlying resources have no criticality, and a score of 100 is reserved for the
+     * most critical resources. </p>
+     */
+    inline void SetFindingProviderFieldsCriticality(const Aws::Vector<NumberFilter>& value) { m_findingProviderFieldsCriticalityHasBeenSet = true; m_findingProviderFieldsCriticality = value; }
+
+    /**
+     * <p>The finding provider value for the level of importance assigned to the
+     * resources associated with the findings.</p> <p>A score of 0 means that the
+     * underlying resources have no criticality, and a score of 100 is reserved for the
+     * most critical resources. </p>
+     */
+    inline void SetFindingProviderFieldsCriticality(Aws::Vector<NumberFilter>&& value) { m_findingProviderFieldsCriticalityHasBeenSet = true; m_findingProviderFieldsCriticality = std::move(value); }
+
+    /**
+     * <p>The finding provider value for the level of importance assigned to the
+     * resources associated with the findings.</p> <p>A score of 0 means that the
+     * underlying resources have no criticality, and a score of 100 is reserved for the
+     * most critical resources. </p>
+     */
+    inline AwsSecurityFindingFilters& WithFindingProviderFieldsCriticality(const Aws::Vector<NumberFilter>& value) { SetFindingProviderFieldsCriticality(value); return *this;}
+
+    /**
+     * <p>The finding provider value for the level of importance assigned to the
+     * resources associated with the findings.</p> <p>A score of 0 means that the
+     * underlying resources have no criticality, and a score of 100 is reserved for the
+     * most critical resources. </p>
+     */
+    inline AwsSecurityFindingFilters& WithFindingProviderFieldsCriticality(Aws::Vector<NumberFilter>&& value) { SetFindingProviderFieldsCriticality(std::move(value)); return *this;}
+
+    /**
+     * <p>The finding provider value for the level of importance assigned to the
+     * resources associated with the findings.</p> <p>A score of 0 means that the
+     * underlying resources have no criticality, and a score of 100 is reserved for the
+     * most critical resources. </p>
+     */
+    inline AwsSecurityFindingFilters& AddFindingProviderFieldsCriticality(const NumberFilter& value) { m_findingProviderFieldsCriticalityHasBeenSet = true; m_findingProviderFieldsCriticality.push_back(value); return *this; }
+
+    /**
+     * <p>The finding provider value for the level of importance assigned to the
+     * resources associated with the findings.</p> <p>A score of 0 means that the
+     * underlying resources have no criticality, and a score of 100 is reserved for the
+     * most critical resources. </p>
+     */
+    inline AwsSecurityFindingFilters& AddFindingProviderFieldsCriticality(NumberFilter&& value) { m_findingProviderFieldsCriticalityHasBeenSet = true; m_findingProviderFieldsCriticality.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The finding identifier of a related finding that is identified by the finding
+     * provider.</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetFindingProviderFieldsRelatedFindingsId() const{ return m_findingProviderFieldsRelatedFindingsId; }
+
+    /**
+     * <p>The finding identifier of a related finding that is identified by the finding
+     * provider.</p>
+     */
+    inline bool FindingProviderFieldsRelatedFindingsIdHasBeenSet() const { return m_findingProviderFieldsRelatedFindingsIdHasBeenSet; }
+
+    /**
+     * <p>The finding identifier of a related finding that is identified by the finding
+     * provider.</p>
+     */
+    inline void SetFindingProviderFieldsRelatedFindingsId(const Aws::Vector<StringFilter>& value) { m_findingProviderFieldsRelatedFindingsIdHasBeenSet = true; m_findingProviderFieldsRelatedFindingsId = value; }
+
+    /**
+     * <p>The finding identifier of a related finding that is identified by the finding
+     * provider.</p>
+     */
+    inline void SetFindingProviderFieldsRelatedFindingsId(Aws::Vector<StringFilter>&& value) { m_findingProviderFieldsRelatedFindingsIdHasBeenSet = true; m_findingProviderFieldsRelatedFindingsId = std::move(value); }
+
+    /**
+     * <p>The finding identifier of a related finding that is identified by the finding
+     * provider.</p>
+     */
+    inline AwsSecurityFindingFilters& WithFindingProviderFieldsRelatedFindingsId(const Aws::Vector<StringFilter>& value) { SetFindingProviderFieldsRelatedFindingsId(value); return *this;}
+
+    /**
+     * <p>The finding identifier of a related finding that is identified by the finding
+     * provider.</p>
+     */
+    inline AwsSecurityFindingFilters& WithFindingProviderFieldsRelatedFindingsId(Aws::Vector<StringFilter>&& value) { SetFindingProviderFieldsRelatedFindingsId(std::move(value)); return *this;}
+
+    /**
+     * <p>The finding identifier of a related finding that is identified by the finding
+     * provider.</p>
+     */
+    inline AwsSecurityFindingFilters& AddFindingProviderFieldsRelatedFindingsId(const StringFilter& value) { m_findingProviderFieldsRelatedFindingsIdHasBeenSet = true; m_findingProviderFieldsRelatedFindingsId.push_back(value); return *this; }
+
+    /**
+     * <p>The finding identifier of a related finding that is identified by the finding
+     * provider.</p>
+     */
+    inline AwsSecurityFindingFilters& AddFindingProviderFieldsRelatedFindingsId(StringFilter&& value) { m_findingProviderFieldsRelatedFindingsIdHasBeenSet = true; m_findingProviderFieldsRelatedFindingsId.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The ARN of the solution that generated a related finding that is identified
+     * by the finding provider.</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetFindingProviderFieldsRelatedFindingsProductArn() const{ return m_findingProviderFieldsRelatedFindingsProductArn; }
+
+    /**
+     * <p>The ARN of the solution that generated a related finding that is identified
+     * by the finding provider.</p>
+     */
+    inline bool FindingProviderFieldsRelatedFindingsProductArnHasBeenSet() const { return m_findingProviderFieldsRelatedFindingsProductArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the solution that generated a related finding that is identified
+     * by the finding provider.</p>
+     */
+    inline void SetFindingProviderFieldsRelatedFindingsProductArn(const Aws::Vector<StringFilter>& value) { m_findingProviderFieldsRelatedFindingsProductArnHasBeenSet = true; m_findingProviderFieldsRelatedFindingsProductArn = value; }
+
+    /**
+     * <p>The ARN of the solution that generated a related finding that is identified
+     * by the finding provider.</p>
+     */
+    inline void SetFindingProviderFieldsRelatedFindingsProductArn(Aws::Vector<StringFilter>&& value) { m_findingProviderFieldsRelatedFindingsProductArnHasBeenSet = true; m_findingProviderFieldsRelatedFindingsProductArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the solution that generated a related finding that is identified
+     * by the finding provider.</p>
+     */
+    inline AwsSecurityFindingFilters& WithFindingProviderFieldsRelatedFindingsProductArn(const Aws::Vector<StringFilter>& value) { SetFindingProviderFieldsRelatedFindingsProductArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the solution that generated a related finding that is identified
+     * by the finding provider.</p>
+     */
+    inline AwsSecurityFindingFilters& WithFindingProviderFieldsRelatedFindingsProductArn(Aws::Vector<StringFilter>&& value) { SetFindingProviderFieldsRelatedFindingsProductArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the solution that generated a related finding that is identified
+     * by the finding provider.</p>
+     */
+    inline AwsSecurityFindingFilters& AddFindingProviderFieldsRelatedFindingsProductArn(const StringFilter& value) { m_findingProviderFieldsRelatedFindingsProductArnHasBeenSet = true; m_findingProviderFieldsRelatedFindingsProductArn.push_back(value); return *this; }
+
+    /**
+     * <p>The ARN of the solution that generated a related finding that is identified
+     * by the finding provider.</p>
+     */
+    inline AwsSecurityFindingFilters& AddFindingProviderFieldsRelatedFindingsProductArn(StringFilter&& value) { m_findingProviderFieldsRelatedFindingsProductArnHasBeenSet = true; m_findingProviderFieldsRelatedFindingsProductArn.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The finding provider value for the severity label.</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetFindingProviderFieldsSeverityLabel() const{ return m_findingProviderFieldsSeverityLabel; }
+
+    /**
+     * <p>The finding provider value for the severity label.</p>
+     */
+    inline bool FindingProviderFieldsSeverityLabelHasBeenSet() const { return m_findingProviderFieldsSeverityLabelHasBeenSet; }
+
+    /**
+     * <p>The finding provider value for the severity label.</p>
+     */
+    inline void SetFindingProviderFieldsSeverityLabel(const Aws::Vector<StringFilter>& value) { m_findingProviderFieldsSeverityLabelHasBeenSet = true; m_findingProviderFieldsSeverityLabel = value; }
+
+    /**
+     * <p>The finding provider value for the severity label.</p>
+     */
+    inline void SetFindingProviderFieldsSeverityLabel(Aws::Vector<StringFilter>&& value) { m_findingProviderFieldsSeverityLabelHasBeenSet = true; m_findingProviderFieldsSeverityLabel = std::move(value); }
+
+    /**
+     * <p>The finding provider value for the severity label.</p>
+     */
+    inline AwsSecurityFindingFilters& WithFindingProviderFieldsSeverityLabel(const Aws::Vector<StringFilter>& value) { SetFindingProviderFieldsSeverityLabel(value); return *this;}
+
+    /**
+     * <p>The finding provider value for the severity label.</p>
+     */
+    inline AwsSecurityFindingFilters& WithFindingProviderFieldsSeverityLabel(Aws::Vector<StringFilter>&& value) { SetFindingProviderFieldsSeverityLabel(std::move(value)); return *this;}
+
+    /**
+     * <p>The finding provider value for the severity label.</p>
+     */
+    inline AwsSecurityFindingFilters& AddFindingProviderFieldsSeverityLabel(const StringFilter& value) { m_findingProviderFieldsSeverityLabelHasBeenSet = true; m_findingProviderFieldsSeverityLabel.push_back(value); return *this; }
+
+    /**
+     * <p>The finding provider value for the severity label.</p>
+     */
+    inline AwsSecurityFindingFilters& AddFindingProviderFieldsSeverityLabel(StringFilter&& value) { m_findingProviderFieldsSeverityLabelHasBeenSet = true; m_findingProviderFieldsSeverityLabel.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The finding provider's original value for the severity.</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetFindingProviderFieldsSeverityOriginal() const{ return m_findingProviderFieldsSeverityOriginal; }
+
+    /**
+     * <p>The finding provider's original value for the severity.</p>
+     */
+    inline bool FindingProviderFieldsSeverityOriginalHasBeenSet() const { return m_findingProviderFieldsSeverityOriginalHasBeenSet; }
+
+    /**
+     * <p>The finding provider's original value for the severity.</p>
+     */
+    inline void SetFindingProviderFieldsSeverityOriginal(const Aws::Vector<StringFilter>& value) { m_findingProviderFieldsSeverityOriginalHasBeenSet = true; m_findingProviderFieldsSeverityOriginal = value; }
+
+    /**
+     * <p>The finding provider's original value for the severity.</p>
+     */
+    inline void SetFindingProviderFieldsSeverityOriginal(Aws::Vector<StringFilter>&& value) { m_findingProviderFieldsSeverityOriginalHasBeenSet = true; m_findingProviderFieldsSeverityOriginal = std::move(value); }
+
+    /**
+     * <p>The finding provider's original value for the severity.</p>
+     */
+    inline AwsSecurityFindingFilters& WithFindingProviderFieldsSeverityOriginal(const Aws::Vector<StringFilter>& value) { SetFindingProviderFieldsSeverityOriginal(value); return *this;}
+
+    /**
+     * <p>The finding provider's original value for the severity.</p>
+     */
+    inline AwsSecurityFindingFilters& WithFindingProviderFieldsSeverityOriginal(Aws::Vector<StringFilter>&& value) { SetFindingProviderFieldsSeverityOriginal(std::move(value)); return *this;}
+
+    /**
+     * <p>The finding provider's original value for the severity.</p>
+     */
+    inline AwsSecurityFindingFilters& AddFindingProviderFieldsSeverityOriginal(const StringFilter& value) { m_findingProviderFieldsSeverityOriginalHasBeenSet = true; m_findingProviderFieldsSeverityOriginal.push_back(value); return *this; }
+
+    /**
+     * <p>The finding provider's original value for the severity.</p>
+     */
+    inline AwsSecurityFindingFilters& AddFindingProviderFieldsSeverityOriginal(StringFilter&& value) { m_findingProviderFieldsSeverityOriginalHasBeenSet = true; m_findingProviderFieldsSeverityOriginal.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>One or more finding types that the finding provider assigned to the finding.
+     * Uses the format of <code>namespace/category/classifier</code> that classify a
+     * finding.</p> <p>Valid namespace values are: Software and Configuration Checks |
+     * TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetFindingProviderFieldsTypes() const{ return m_findingProviderFieldsTypes; }
+
+    /**
+     * <p>One or more finding types that the finding provider assigned to the finding.
+     * Uses the format of <code>namespace/category/classifier</code> that classify a
+     * finding.</p> <p>Valid namespace values are: Software and Configuration Checks |
+     * TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
+     */
+    inline bool FindingProviderFieldsTypesHasBeenSet() const { return m_findingProviderFieldsTypesHasBeenSet; }
+
+    /**
+     * <p>One or more finding types that the finding provider assigned to the finding.
+     * Uses the format of <code>namespace/category/classifier</code> that classify a
+     * finding.</p> <p>Valid namespace values are: Software and Configuration Checks |
+     * TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
+     */
+    inline void SetFindingProviderFieldsTypes(const Aws::Vector<StringFilter>& value) { m_findingProviderFieldsTypesHasBeenSet = true; m_findingProviderFieldsTypes = value; }
+
+    /**
+     * <p>One or more finding types that the finding provider assigned to the finding.
+     * Uses the format of <code>namespace/category/classifier</code> that classify a
+     * finding.</p> <p>Valid namespace values are: Software and Configuration Checks |
+     * TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
+     */
+    inline void SetFindingProviderFieldsTypes(Aws::Vector<StringFilter>&& value) { m_findingProviderFieldsTypesHasBeenSet = true; m_findingProviderFieldsTypes = std::move(value); }
+
+    /**
+     * <p>One or more finding types that the finding provider assigned to the finding.
+     * Uses the format of <code>namespace/category/classifier</code> that classify a
+     * finding.</p> <p>Valid namespace values are: Software and Configuration Checks |
+     * TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
+     */
+    inline AwsSecurityFindingFilters& WithFindingProviderFieldsTypes(const Aws::Vector<StringFilter>& value) { SetFindingProviderFieldsTypes(value); return *this;}
+
+    /**
+     * <p>One or more finding types that the finding provider assigned to the finding.
+     * Uses the format of <code>namespace/category/classifier</code> that classify a
+     * finding.</p> <p>Valid namespace values are: Software and Configuration Checks |
+     * TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
+     */
+    inline AwsSecurityFindingFilters& WithFindingProviderFieldsTypes(Aws::Vector<StringFilter>&& value) { SetFindingProviderFieldsTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more finding types that the finding provider assigned to the finding.
+     * Uses the format of <code>namespace/category/classifier</code> that classify a
+     * finding.</p> <p>Valid namespace values are: Software and Configuration Checks |
+     * TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
+     */
+    inline AwsSecurityFindingFilters& AddFindingProviderFieldsTypes(const StringFilter& value) { m_findingProviderFieldsTypesHasBeenSet = true; m_findingProviderFieldsTypes.push_back(value); return *this; }
+
+    /**
+     * <p>One or more finding types that the finding provider assigned to the finding.
+     * Uses the format of <code>namespace/category/classifier</code> that classify a
+     * finding.</p> <p>Valid namespace values are: Software and Configuration Checks |
+     * TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
+     */
+    inline AwsSecurityFindingFilters& AddFindingProviderFieldsTypes(StringFilter&& value) { m_findingProviderFieldsTypesHasBeenSet = true; m_findingProviderFieldsTypes.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<StringFilter> m_productArn;
@@ -3870,12 +4163,6 @@ namespace Model
 
     Aws::Vector<DateFilter> m_updatedAt;
     bool m_updatedAtHasBeenSet;
-
-    Aws::Vector<NumberFilter> m_severityProduct;
-    bool m_severityProductHasBeenSet;
-
-    Aws::Vector<NumberFilter> m_severityNormalized;
-    bool m_severityNormalizedHasBeenSet;
 
     Aws::Vector<StringFilter> m_severityLabel;
     bool m_severityLabelHasBeenSet;
@@ -4095,6 +4382,27 @@ namespace Model
 
     Aws::Vector<KeywordFilter> m_keyword;
     bool m_keywordHasBeenSet;
+
+    Aws::Vector<NumberFilter> m_findingProviderFieldsConfidence;
+    bool m_findingProviderFieldsConfidenceHasBeenSet;
+
+    Aws::Vector<NumberFilter> m_findingProviderFieldsCriticality;
+    bool m_findingProviderFieldsCriticalityHasBeenSet;
+
+    Aws::Vector<StringFilter> m_findingProviderFieldsRelatedFindingsId;
+    bool m_findingProviderFieldsRelatedFindingsIdHasBeenSet;
+
+    Aws::Vector<StringFilter> m_findingProviderFieldsRelatedFindingsProductArn;
+    bool m_findingProviderFieldsRelatedFindingsProductArnHasBeenSet;
+
+    Aws::Vector<StringFilter> m_findingProviderFieldsSeverityLabel;
+    bool m_findingProviderFieldsSeverityLabelHasBeenSet;
+
+    Aws::Vector<StringFilter> m_findingProviderFieldsSeverityOriginal;
+    bool m_findingProviderFieldsSeverityOriginalHasBeenSet;
+
+    Aws::Vector<StringFilter> m_findingProviderFieldsTypes;
+    bool m_findingProviderFieldsTypesHasBeenSet;
   };
 
 } // namespace Model
