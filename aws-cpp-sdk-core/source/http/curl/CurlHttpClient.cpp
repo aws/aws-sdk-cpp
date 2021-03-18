@@ -456,6 +456,16 @@ CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
     {
         m_allowRedirects = true;
     }
+    if(clientConfig.nonProxyHosts.GetLength() > 0)
+    {
+        Aws::StringStream ss;
+        ss << clientConfig.nonProxyHosts.GetItem(0);
+        for (auto i=1u; i < clientConfig.nonProxyHosts.GetLength(); i++)
+        {
+            ss << "," << clientConfig.nonProxyHosts.GetItem(i);
+        }
+        m_nonProxyHosts = ss.str();
+    }
 }
 
 
@@ -587,6 +597,7 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
                 curl_easy_setopt(connectionHandle, CURLOPT_PROXYUSERNAME, m_proxyUserName.c_str());
                 curl_easy_setopt(connectionHandle, CURLOPT_PROXYPASSWORD, m_proxyPassword.c_str());
             }
+            curl_easy_setopt(connectionHandle, CURLOPT_NOPROXY, m_nonProxyHosts.c_str());
 #ifdef CURL_HAS_TLS_PROXY
             if (!m_proxySSLCertPath.empty())
             {
