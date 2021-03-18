@@ -30,9 +30,11 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
     static {
         opsThatDoNotSupportVirtualAddressing.add("CreateBucket");
         opsThatDoNotSupportVirtualAddressing.add("ListBuckets");
+        opsThatDoNotSupportVirtualAddressing.add("WriteGetObjectResponse");
 
         opsThatDoNotSupportArnEndpoint.add("CreateBucket");
         opsThatDoNotSupportArnEndpoint.add("ListBuckets");
+        opsThatDoNotSupportArnEndpoint.add("WriteGetObjectResponse");
 
         bucketLocationConstraints.add("us-east-1");
         bucketLocationConstraints.add("us-east-2");
@@ -72,22 +74,28 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
         serviceModel.getOperations().values().stream()
                 .filter(operationEntry ->
                         !opsThatDoNotSupportVirtualAddressing.contains(operationEntry.getName()))
-                .forEach(operationEntry -> operationEntry.setVirtualAddressAllowed(true));
-
-        serviceModel.getOperations().values().stream()
-                .filter(operationEntry ->
-                        !opsThatDoNotSupportVirtualAddressing.contains(operationEntry.getName()))
-                .forEach(operationEntry -> operationEntry.setVirtualAddressMemberName("Bucket"));
-
-        serviceModel.getOperations().values().stream()
-                .filter(operationEntry ->
-                        !opsThatDoNotSupportArnEndpoint.contains(operationEntry.getName()))
-                .forEach(operationEntry -> operationEntry.setArnEndpointAllowed(true));
+                .forEach(operationEntry -> {
+                    operationEntry.setVirtualAddressAllowed(true);
+                    operationEntry.setVirtualAddressMemberName("Bucket");
+                });
 
         serviceModel.getOperations().values().stream()
                 .filter(operationEntry ->
                         !opsThatDoNotSupportArnEndpoint.contains(operationEntry.getName()))
-                .forEach(operationEntry -> operationEntry.setArnEndpointMemberName("Bucket"));
+                .forEach(operationEntry -> {
+                    operationEntry.setArnEndpointAllowed(true);
+                    operationEntry.setArnEndpointMemberName("Bucket");
+                });
+
+        serviceModel.getOperations().values().stream()
+                .filter(operationEntry -> operationEntry.getName().equals("WriteGetObjectResponse"))
+                .forEach(operationEntry -> {
+                    operationEntry.setRequiresServiceNameOverride(true);
+                    operationEntry.setServiceNameOverride("s3-object-lambda");
+                    operationEntry.setSupportsChunkedEncoding(true);
+                });
+
+
 
         Shape locationConstraints = serviceModel.getShapes().get("BucketLocationConstraint");
 

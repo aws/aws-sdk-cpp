@@ -626,7 +626,7 @@ void AWSClient::AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpReq
     }
 
     //Add transfer-encoding:chunked to header
-    if (body && isChunked)
+    if (body && isChunked && !httpRequest->HasHeader(Http::CONTENT_LENGTH_HEADER))
     {
         httpRequest->SetTransferEncoding(CHUNKED_VALUE);
     }

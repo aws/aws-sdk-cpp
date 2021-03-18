@@ -23,6 +23,7 @@ public class Operation {
     private String authtype;
     private String authorizer;
     private boolean eventStream;
+    private boolean supportsChunkedEncoding;
 
     // ARN supports.
     private boolean arnEndpointAllowed;
@@ -39,6 +40,10 @@ public class Operation {
     private String outpostIdMemberName;
     private boolean outpostUseNonArnEndpoint;
     private boolean hasOutpostIdInArn;
+
+    // For S3 Object Lambda.
+    private boolean requiresServiceNameOverride;
+    private String serviceNameOverride;
 
     // For Host Prefix Injection.
     private boolean hasEndpointTrait;

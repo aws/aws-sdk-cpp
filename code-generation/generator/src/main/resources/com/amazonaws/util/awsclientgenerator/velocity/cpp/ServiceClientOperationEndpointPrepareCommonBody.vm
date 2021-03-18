@@ -24,6 +24,8 @@
 #end
 #elseif($operation.hasOutpostIdMember)
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString($outpostIdParam);
+#elseif($operation.requiresServiceNameOverride)
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointStringWithServiceName("$operation.serviceNameOverride");
 #else
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString();
 #end

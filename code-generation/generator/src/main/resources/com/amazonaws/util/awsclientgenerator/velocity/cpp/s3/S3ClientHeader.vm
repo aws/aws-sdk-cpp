@@ -177,11 +177,13 @@ namespace Aws
         void Load${metadata.classNamePrefix}SpecificConfig(const Aws::String& profile);
         ComputeEndpointOutcome ComputeEndpointString(const Aws::String& bucket) const;
         ComputeEndpointOutcome ComputeEndpointString() const;
+        ComputeEndpointOutcome ComputeEndpointStringWithServiceName(const Aws::String& serviceNameOverride = "") const;
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderAsyncHelpers.vm")
 
         Aws::String m_baseUri;
         Aws::String m_scheme;
+        bool m_enableHostPrefixInjection;
         Aws::String m_configScheme;
         std::shared_ptr<Utils::Threading::Executor> m_executor;
         bool m_useVirtualAddressing;
