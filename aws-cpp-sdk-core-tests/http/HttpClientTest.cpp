@@ -14,7 +14,7 @@
 #include <future>
 #include <chrono>
 
-#ifdef ENABLE_CURL_CLIENT
+#if defined(ENABLE_CURL_CLIENT) && ! defined(__ANDROID__)
 #include <curl/curl.h>
 #endif
 
@@ -23,10 +23,10 @@ using namespace Aws::Utils;
 using namespace Aws::Client;
 
 #ifndef NO_HTTP_CLIENT
-static const Aws::String randomUri = "http://some.unknown1234xxx.test.aws";
-static const Aws::String randomDomain = "some.unknown1234xxx.test.aws";
+static const char randomUri[] = "http://some.unknown1234xxx.test.aws";
+static const char randomDomain[] = "some.unknown1234xxx.test.aws";
 
-#ifdef ENABLE_CURL_CLIENT
+#if defined(ENABLE_CURL_CLIENT) && ! defined(__ANDROID__)
 static void assertErrorMessageIsPrefixedWithCurlErrorCode(int curlErrorCode, const Aws::String& errorMessage){
     Aws::StringStream ss;
     ss << "curlCode: ";
@@ -41,11 +41,11 @@ static void assertErrorMessageIsPrefixedWithCurlErrorCode(int curlErrorCode, con
         }
     }
 }
-#endif //ENABLE_CURL_CLIENT
+#endif //ENABLE_CURL_CLIENT AND NOT ANDROID
 
 static void makeRandomHttpRequest(std::shared_ptr<HttpClient> httpClient, bool expectProxyError)
 {
-    auto request = CreateHttpRequest(randomUri,HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    auto request = CreateHttpRequest(Aws::String(randomUri),HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
     auto response = httpClient->MakeRequest(request);
     ASSERT_NE(nullptr, response);
     //Modified the tests so that we catch an edge case where ISP's would try to get a response to the weird url
@@ -53,20 +53,18 @@ static void makeRandomHttpRequest(std::shared_ptr<HttpClient> httpClient, bool e
     if(expectProxyError)
     {
         ASSERT_TRUE(response->HasClientError());
-        AWS_LOGSTREAM_DEBUG("HTTP_CLIENT_TEST_NEW", "Has error: " << response->GetClientErrorMessage());
         ASSERT_EQ(CoreErrors::NETWORK_CONNECTION, response->GetClientErrorType());
         ASSERT_EQ(Aws::Http::HttpResponseCode::REQUEST_NOT_MADE, response->GetResponseCode());
-#ifdef ENABLE_CURL_CLIENT
+#if defined(ENABLE_CURL_CLIENT) && ! defined(__ANDROID__)
         assertErrorMessageIsPrefixedWithCurlErrorCode(CURLE_OPERATION_TIMEDOUT, response->GetClientErrorMessage());
 #endif
     }
     else
     {
         if (response->HasClientError()) {
-            AWS_LOGSTREAM_DEBUG("HTTP_CLIENT_TEST_OLD", "Has error: " << response->GetClientErrorMessage());
             ASSERT_EQ(CoreErrors::NETWORK_CONNECTION, response->GetClientErrorType());
             ASSERT_EQ(Aws::Http::HttpResponseCode::REQUEST_NOT_MADE, response->GetResponseCode());
-#ifdef ENABLE_CURL_CLIENT
+#if defined(ENABLE_CURL_CLIENT) && ! defined(__ANDROID__)
             assertErrorMessageIsPrefixedWithCurlErrorCode(CURLE_COULDNT_RESOLVE_HOST, response->GetClientErrorMessage());
 #endif
         }
@@ -102,6 +100,16 @@ TEST(HttpClientTest, TestRandomURLWithProxy)
 }
 
 TEST(HttpClientTest, TestRandomURLWithProxyAndDeclaredAsNonProxyHost)
+{
+    ClientConfiguration configuration = makeClientConfigurationWithProxy();
+    configuration.nonProxyHosts = Aws::Utils::Array<Aws::String>(2);
+    configuration.nonProxyHosts[0] = "test.aws";
+    configuration.nonProxyHosts[1] = "test.non.filtered.aws";
+    auto httpClient = CreateHttpClient(configuration);
+    makeRandomHttpRequest(httpClient, false);
+}
+
+TEST(HttpClientTest, TestRandomURLWithProxyAndDeclaredParentDomainAsNonProxyHost)
 {
     ClientConfiguration configuration = makeClientConfigurationWithProxy();
     configuration.nonProxyHosts = Aws::Utils::Array<Aws::String>(2);

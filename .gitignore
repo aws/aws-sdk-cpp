@@ -11,6 +11,10 @@ Release
 *.iml
 tags
 
+# CI Artifacts
+BuildSpec.json
+BuildSpec.zip
+
 #vim swap file
 *.swp
 
