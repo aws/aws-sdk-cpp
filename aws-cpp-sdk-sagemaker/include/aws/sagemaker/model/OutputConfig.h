@@ -294,12 +294,19 @@ namespace Model
      * compiler options are <code>TargetPlatform</code> specific. It is required for
      * NVIDIA accelerators and highly recommended for CPU compilations. For any other
      * cases, it is optional to specify <code>CompilerOptions.</code> </p> <ul> <li>
-     * <p> <code>CPU</code>: Compilation for CPU supports the following compiler
-     * options.</p> <ul> <li> <p> <code>mcpu</code>: CPU micro-architecture. For
-     * example, <code>{'mcpu': 'skylake-avx512'}</code> </p> </li> <li> <p>
-     * <code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon',
-     * '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>: Details of
-     * ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
+     * <p> <code>DTYPE</code>: Specifies the data type for the input. When compiling
+     * for <code>ml_*</code> (except for <code>ml_inf</code>) instances using PyTorch
+     * framework, provide the data type (dtype) of the model's input.
+     * <code>"float32"</code> is used if <code>"DTYPE"</code> is not specified. Options
+     * for data type are:</p> <ul> <li> <p>float32: Use either <code>"float"</code> or
+     * <code>"float32"</code>.</p> </li> <li> <p>int64: Use either <code>"int64"</code>
+     * or <code>"long"</code>.</p> </li> </ul> <p> For example, <code>{"dtype" :
+     * "float32"}</code>.</p> </li> <li> <p> <code>CPU</code>: Compilation for CPU
+     * supports the following compiler options.</p> <ul> <li> <p> <code>mcpu</code>:
+     * CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code>
+     * </p> </li> <li> <p> <code>mattr</code>: CPU flags. For example, <code>{'mattr':
+     * ['+neon', '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>:
+     * Details of ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
      * implementation of the Advanced SIMD extension used in ARMv7 processors.</p>
      * <p>For example, add <code>{'mattr': ['+neon']}</code> to the compiler options if
      * compiling for ARM 32-bit platform with the NEON support.</p> </li> </ul> </li>
@@ -345,12 +352,19 @@ namespace Model
      * compiler options are <code>TargetPlatform</code> specific. It is required for
      * NVIDIA accelerators and highly recommended for CPU compilations. For any other
      * cases, it is optional to specify <code>CompilerOptions.</code> </p> <ul> <li>
-     * <p> <code>CPU</code>: Compilation for CPU supports the following compiler
-     * options.</p> <ul> <li> <p> <code>mcpu</code>: CPU micro-architecture. For
-     * example, <code>{'mcpu': 'skylake-avx512'}</code> </p> </li> <li> <p>
-     * <code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon',
-     * '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>: Details of
-     * ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
+     * <p> <code>DTYPE</code>: Specifies the data type for the input. When compiling
+     * for <code>ml_*</code> (except for <code>ml_inf</code>) instances using PyTorch
+     * framework, provide the data type (dtype) of the model's input.
+     * <code>"float32"</code> is used if <code>"DTYPE"</code> is not specified. Options
+     * for data type are:</p> <ul> <li> <p>float32: Use either <code>"float"</code> or
+     * <code>"float32"</code>.</p> </li> <li> <p>int64: Use either <code>"int64"</code>
+     * or <code>"long"</code>.</p> </li> </ul> <p> For example, <code>{"dtype" :
+     * "float32"}</code>.</p> </li> <li> <p> <code>CPU</code>: Compilation for CPU
+     * supports the following compiler options.</p> <ul> <li> <p> <code>mcpu</code>:
+     * CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code>
+     * </p> </li> <li> <p> <code>mattr</code>: CPU flags. For example, <code>{'mattr':
+     * ['+neon', '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>:
+     * Details of ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
      * implementation of the Advanced SIMD extension used in ARMv7 processors.</p>
      * <p>For example, add <code>{'mattr': ['+neon']}</code> to the compiler options if
      * compiling for ARM 32-bit platform with the NEON support.</p> </li> </ul> </li>
@@ -396,12 +410,19 @@ namespace Model
      * compiler options are <code>TargetPlatform</code> specific. It is required for
      * NVIDIA accelerators and highly recommended for CPU compilations. For any other
      * cases, it is optional to specify <code>CompilerOptions.</code> </p> <ul> <li>
-     * <p> <code>CPU</code>: Compilation for CPU supports the following compiler
-     * options.</p> <ul> <li> <p> <code>mcpu</code>: CPU micro-architecture. For
-     * example, <code>{'mcpu': 'skylake-avx512'}</code> </p> </li> <li> <p>
-     * <code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon',
-     * '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>: Details of
-     * ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
+     * <p> <code>DTYPE</code>: Specifies the data type for the input. When compiling
+     * for <code>ml_*</code> (except for <code>ml_inf</code>) instances using PyTorch
+     * framework, provide the data type (dtype) of the model's input.
+     * <code>"float32"</code> is used if <code>"DTYPE"</code> is not specified. Options
+     * for data type are:</p> <ul> <li> <p>float32: Use either <code>"float"</code> or
+     * <code>"float32"</code>.</p> </li> <li> <p>int64: Use either <code>"int64"</code>
+     * or <code>"long"</code>.</p> </li> </ul> <p> For example, <code>{"dtype" :
+     * "float32"}</code>.</p> </li> <li> <p> <code>CPU</code>: Compilation for CPU
+     * supports the following compiler options.</p> <ul> <li> <p> <code>mcpu</code>:
+     * CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code>
+     * </p> </li> <li> <p> <code>mattr</code>: CPU flags. For example, <code>{'mattr':
+     * ['+neon', '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>:
+     * Details of ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
      * implementation of the Advanced SIMD extension used in ARMv7 processors.</p>
      * <p>For example, add <code>{'mattr': ['+neon']}</code> to the compiler options if
      * compiling for ARM 32-bit platform with the NEON support.</p> </li> </ul> </li>
@@ -447,12 +468,19 @@ namespace Model
      * compiler options are <code>TargetPlatform</code> specific. It is required for
      * NVIDIA accelerators and highly recommended for CPU compilations. For any other
      * cases, it is optional to specify <code>CompilerOptions.</code> </p> <ul> <li>
-     * <p> <code>CPU</code>: Compilation for CPU supports the following compiler
-     * options.</p> <ul> <li> <p> <code>mcpu</code>: CPU micro-architecture. For
-     * example, <code>{'mcpu': 'skylake-avx512'}</code> </p> </li> <li> <p>
-     * <code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon',
-     * '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>: Details of
-     * ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
+     * <p> <code>DTYPE</code>: Specifies the data type for the input. When compiling
+     * for <code>ml_*</code> (except for <code>ml_inf</code>) instances using PyTorch
+     * framework, provide the data type (dtype) of the model's input.
+     * <code>"float32"</code> is used if <code>"DTYPE"</code> is not specified. Options
+     * for data type are:</p> <ul> <li> <p>float32: Use either <code>"float"</code> or
+     * <code>"float32"</code>.</p> </li> <li> <p>int64: Use either <code>"int64"</code>
+     * or <code>"long"</code>.</p> </li> </ul> <p> For example, <code>{"dtype" :
+     * "float32"}</code>.</p> </li> <li> <p> <code>CPU</code>: Compilation for CPU
+     * supports the following compiler options.</p> <ul> <li> <p> <code>mcpu</code>:
+     * CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code>
+     * </p> </li> <li> <p> <code>mattr</code>: CPU flags. For example, <code>{'mattr':
+     * ['+neon', '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>:
+     * Details of ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
      * implementation of the Advanced SIMD extension used in ARMv7 processors.</p>
      * <p>For example, add <code>{'mattr': ['+neon']}</code> to the compiler options if
      * compiling for ARM 32-bit platform with the NEON support.</p> </li> </ul> </li>
@@ -498,12 +526,19 @@ namespace Model
      * compiler options are <code>TargetPlatform</code> specific. It is required for
      * NVIDIA accelerators and highly recommended for CPU compilations. For any other
      * cases, it is optional to specify <code>CompilerOptions.</code> </p> <ul> <li>
-     * <p> <code>CPU</code>: Compilation for CPU supports the following compiler
-     * options.</p> <ul> <li> <p> <code>mcpu</code>: CPU micro-architecture. For
-     * example, <code>{'mcpu': 'skylake-avx512'}</code> </p> </li> <li> <p>
-     * <code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon',
-     * '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>: Details of
-     * ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
+     * <p> <code>DTYPE</code>: Specifies the data type for the input. When compiling
+     * for <code>ml_*</code> (except for <code>ml_inf</code>) instances using PyTorch
+     * framework, provide the data type (dtype) of the model's input.
+     * <code>"float32"</code> is used if <code>"DTYPE"</code> is not specified. Options
+     * for data type are:</p> <ul> <li> <p>float32: Use either <code>"float"</code> or
+     * <code>"float32"</code>.</p> </li> <li> <p>int64: Use either <code>"int64"</code>
+     * or <code>"long"</code>.</p> </li> </ul> <p> For example, <code>{"dtype" :
+     * "float32"}</code>.</p> </li> <li> <p> <code>CPU</code>: Compilation for CPU
+     * supports the following compiler options.</p> <ul> <li> <p> <code>mcpu</code>:
+     * CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code>
+     * </p> </li> <li> <p> <code>mattr</code>: CPU flags. For example, <code>{'mattr':
+     * ['+neon', '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>:
+     * Details of ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
      * implementation of the Advanced SIMD extension used in ARMv7 processors.</p>
      * <p>For example, add <code>{'mattr': ['+neon']}</code> to the compiler options if
      * compiling for ARM 32-bit platform with the NEON support.</p> </li> </ul> </li>
@@ -549,12 +584,19 @@ namespace Model
      * compiler options are <code>TargetPlatform</code> specific. It is required for
      * NVIDIA accelerators and highly recommended for CPU compilations. For any other
      * cases, it is optional to specify <code>CompilerOptions.</code> </p> <ul> <li>
-     * <p> <code>CPU</code>: Compilation for CPU supports the following compiler
-     * options.</p> <ul> <li> <p> <code>mcpu</code>: CPU micro-architecture. For
-     * example, <code>{'mcpu': 'skylake-avx512'}</code> </p> </li> <li> <p>
-     * <code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon',
-     * '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>: Details of
-     * ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
+     * <p> <code>DTYPE</code>: Specifies the data type for the input. When compiling
+     * for <code>ml_*</code> (except for <code>ml_inf</code>) instances using PyTorch
+     * framework, provide the data type (dtype) of the model's input.
+     * <code>"float32"</code> is used if <code>"DTYPE"</code> is not specified. Options
+     * for data type are:</p> <ul> <li> <p>float32: Use either <code>"float"</code> or
+     * <code>"float32"</code>.</p> </li> <li> <p>int64: Use either <code>"int64"</code>
+     * or <code>"long"</code>.</p> </li> </ul> <p> For example, <code>{"dtype" :
+     * "float32"}</code>.</p> </li> <li> <p> <code>CPU</code>: Compilation for CPU
+     * supports the following compiler options.</p> <ul> <li> <p> <code>mcpu</code>:
+     * CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code>
+     * </p> </li> <li> <p> <code>mattr</code>: CPU flags. For example, <code>{'mattr':
+     * ['+neon', '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>:
+     * Details of ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
      * implementation of the Advanced SIMD extension used in ARMv7 processors.</p>
      * <p>For example, add <code>{'mattr': ['+neon']}</code> to the compiler options if
      * compiling for ARM 32-bit platform with the NEON support.</p> </li> </ul> </li>
@@ -600,12 +642,19 @@ namespace Model
      * compiler options are <code>TargetPlatform</code> specific. It is required for
      * NVIDIA accelerators and highly recommended for CPU compilations. For any other
      * cases, it is optional to specify <code>CompilerOptions.</code> </p> <ul> <li>
-     * <p> <code>CPU</code>: Compilation for CPU supports the following compiler
-     * options.</p> <ul> <li> <p> <code>mcpu</code>: CPU micro-architecture. For
-     * example, <code>{'mcpu': 'skylake-avx512'}</code> </p> </li> <li> <p>
-     * <code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon',
-     * '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>: Details of
-     * ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
+     * <p> <code>DTYPE</code>: Specifies the data type for the input. When compiling
+     * for <code>ml_*</code> (except for <code>ml_inf</code>) instances using PyTorch
+     * framework, provide the data type (dtype) of the model's input.
+     * <code>"float32"</code> is used if <code>"DTYPE"</code> is not specified. Options
+     * for data type are:</p> <ul> <li> <p>float32: Use either <code>"float"</code> or
+     * <code>"float32"</code>.</p> </li> <li> <p>int64: Use either <code>"int64"</code>
+     * or <code>"long"</code>.</p> </li> </ul> <p> For example, <code>{"dtype" :
+     * "float32"}</code>.</p> </li> <li> <p> <code>CPU</code>: Compilation for CPU
+     * supports the following compiler options.</p> <ul> <li> <p> <code>mcpu</code>:
+     * CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code>
+     * </p> </li> <li> <p> <code>mattr</code>: CPU flags. For example, <code>{'mattr':
+     * ['+neon', '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>:
+     * Details of ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
      * implementation of the Advanced SIMD extension used in ARMv7 processors.</p>
      * <p>For example, add <code>{'mattr': ['+neon']}</code> to the compiler options if
      * compiling for ARM 32-bit platform with the NEON support.</p> </li> </ul> </li>
@@ -651,12 +700,19 @@ namespace Model
      * compiler options are <code>TargetPlatform</code> specific. It is required for
      * NVIDIA accelerators and highly recommended for CPU compilations. For any other
      * cases, it is optional to specify <code>CompilerOptions.</code> </p> <ul> <li>
-     * <p> <code>CPU</code>: Compilation for CPU supports the following compiler
-     * options.</p> <ul> <li> <p> <code>mcpu</code>: CPU micro-architecture. For
-     * example, <code>{'mcpu': 'skylake-avx512'}</code> </p> </li> <li> <p>
-     * <code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon',
-     * '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>: Details of
-     * ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
+     * <p> <code>DTYPE</code>: Specifies the data type for the input. When compiling
+     * for <code>ml_*</code> (except for <code>ml_inf</code>) instances using PyTorch
+     * framework, provide the data type (dtype) of the model's input.
+     * <code>"float32"</code> is used if <code>"DTYPE"</code> is not specified. Options
+     * for data type are:</p> <ul> <li> <p>float32: Use either <code>"float"</code> or
+     * <code>"float32"</code>.</p> </li> <li> <p>int64: Use either <code>"int64"</code>
+     * or <code>"long"</code>.</p> </li> </ul> <p> For example, <code>{"dtype" :
+     * "float32"}</code>.</p> </li> <li> <p> <code>CPU</code>: Compilation for CPU
+     * supports the following compiler options.</p> <ul> <li> <p> <code>mcpu</code>:
+     * CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code>
+     * </p> </li> <li> <p> <code>mattr</code>: CPU flags. For example, <code>{'mattr':
+     * ['+neon', '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>:
+     * Details of ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
      * implementation of the Advanced SIMD extension used in ARMv7 processors.</p>
      * <p>For example, add <code>{'mattr': ['+neon']}</code> to the compiler options if
      * compiling for ARM 32-bit platform with the NEON support.</p> </li> </ul> </li>
