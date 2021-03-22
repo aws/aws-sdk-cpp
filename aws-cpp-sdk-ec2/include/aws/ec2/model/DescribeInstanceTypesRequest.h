@@ -203,10 +203,12 @@ namespace Model
      * <code>processor-info.supported-architecture</code> - The CPU architecture
      * (<code>arm64</code> | <code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p> <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock
-     * speed, in GHz.</p> </li> <li> <p> <code>supported-root-device-type</code> - The
-     * root device type (<code>ebs</code> | <code>instance-store</code>).</p> </li>
-     * <li> <p> <code>supported-usage-class</code> - The usage class
-     * (<code>on-demand</code> | <code>spot</code>).</p> </li> <li> <p>
+     * speed, in GHz.</p> </li> <li> <p> <code>supported-boot-mode</code> - The boot
+     * mode (<code>legacy-bios</code> | <code>uefi</code>).</p> </li> <li> <p>
+     * <code>supported-root-device-type</code> - The root device type (<code>ebs</code>
+     * | <code>instance-store</code>).</p> </li> <li> <p>
+     * <code>supported-usage-class</code> - The usage class (<code>on-demand</code> |
+     * <code>spot</code>).</p> </li> <li> <p>
      * <code>supported-virtualization-type</code> - The virtualization type
      * (<code>hvm</code> | <code>paravirtual</code>).</p> </li> <li> <p>
      * <code>vcpu-info.default-cores</code> - The default number of cores for the
@@ -296,10 +298,12 @@ namespace Model
      * <code>processor-info.supported-architecture</code> - The CPU architecture
      * (<code>arm64</code> | <code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p> <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock
-     * speed, in GHz.</p> </li> <li> <p> <code>supported-root-device-type</code> - The
-     * root device type (<code>ebs</code> | <code>instance-store</code>).</p> </li>
-     * <li> <p> <code>supported-usage-class</code> - The usage class
-     * (<code>on-demand</code> | <code>spot</code>).</p> </li> <li> <p>
+     * speed, in GHz.</p> </li> <li> <p> <code>supported-boot-mode</code> - The boot
+     * mode (<code>legacy-bios</code> | <code>uefi</code>).</p> </li> <li> <p>
+     * <code>supported-root-device-type</code> - The root device type (<code>ebs</code>
+     * | <code>instance-store</code>).</p> </li> <li> <p>
+     * <code>supported-usage-class</code> - The usage class (<code>on-demand</code> |
+     * <code>spot</code>).</p> </li> <li> <p>
      * <code>supported-virtualization-type</code> - The virtualization type
      * (<code>hvm</code> | <code>paravirtual</code>).</p> </li> <li> <p>
      * <code>vcpu-info.default-cores</code> - The default number of cores for the
@@ -389,10 +393,12 @@ namespace Model
      * <code>processor-info.supported-architecture</code> - The CPU architecture
      * (<code>arm64</code> | <code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p> <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock
-     * speed, in GHz.</p> </li> <li> <p> <code>supported-root-device-type</code> - The
-     * root device type (<code>ebs</code> | <code>instance-store</code>).</p> </li>
-     * <li> <p> <code>supported-usage-class</code> - The usage class
-     * (<code>on-demand</code> | <code>spot</code>).</p> </li> <li> <p>
+     * speed, in GHz.</p> </li> <li> <p> <code>supported-boot-mode</code> - The boot
+     * mode (<code>legacy-bios</code> | <code>uefi</code>).</p> </li> <li> <p>
+     * <code>supported-root-device-type</code> - The root device type (<code>ebs</code>
+     * | <code>instance-store</code>).</p> </li> <li> <p>
+     * <code>supported-usage-class</code> - The usage class (<code>on-demand</code> |
+     * <code>spot</code>).</p> </li> <li> <p>
      * <code>supported-virtualization-type</code> - The virtualization type
      * (<code>hvm</code> | <code>paravirtual</code>).</p> </li> <li> <p>
      * <code>vcpu-info.default-cores</code> - The default number of cores for the
@@ -482,10 +488,12 @@ namespace Model
      * <code>processor-info.supported-architecture</code> - The CPU architecture
      * (<code>arm64</code> | <code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p> <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock
-     * speed, in GHz.</p> </li> <li> <p> <code>supported-root-device-type</code> - The
-     * root device type (<code>ebs</code> | <code>instance-store</code>).</p> </li>
-     * <li> <p> <code>supported-usage-class</code> - The usage class
-     * (<code>on-demand</code> | <code>spot</code>).</p> </li> <li> <p>
+     * speed, in GHz.</p> </li> <li> <p> <code>supported-boot-mode</code> - The boot
+     * mode (<code>legacy-bios</code> | <code>uefi</code>).</p> </li> <li> <p>
+     * <code>supported-root-device-type</code> - The root device type (<code>ebs</code>
+     * | <code>instance-store</code>).</p> </li> <li> <p>
+     * <code>supported-usage-class</code> - The usage class (<code>on-demand</code> |
+     * <code>spot</code>).</p> </li> <li> <p>
      * <code>supported-virtualization-type</code> - The virtualization type
      * (<code>hvm</code> | <code>paravirtual</code>).</p> </li> <li> <p>
      * <code>vcpu-info.default-cores</code> - The default number of cores for the
@@ -575,10 +583,12 @@ namespace Model
      * <code>processor-info.supported-architecture</code> - The CPU architecture
      * (<code>arm64</code> | <code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p> <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock
-     * speed, in GHz.</p> </li> <li> <p> <code>supported-root-device-type</code> - The
-     * root device type (<code>ebs</code> | <code>instance-store</code>).</p> </li>
-     * <li> <p> <code>supported-usage-class</code> - The usage class
-     * (<code>on-demand</code> | <code>spot</code>).</p> </li> <li> <p>
+     * speed, in GHz.</p> </li> <li> <p> <code>supported-boot-mode</code> - The boot
+     * mode (<code>legacy-bios</code> | <code>uefi</code>).</p> </li> <li> <p>
+     * <code>supported-root-device-type</code> - The root device type (<code>ebs</code>
+     * | <code>instance-store</code>).</p> </li> <li> <p>
+     * <code>supported-usage-class</code> - The usage class (<code>on-demand</code> |
+     * <code>spot</code>).</p> </li> <li> <p>
      * <code>supported-virtualization-type</code> - The virtualization type
      * (<code>hvm</code> | <code>paravirtual</code>).</p> </li> <li> <p>
      * <code>vcpu-info.default-cores</code> - The default number of cores for the
@@ -668,10 +678,12 @@ namespace Model
      * <code>processor-info.supported-architecture</code> - The CPU architecture
      * (<code>arm64</code> | <code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p> <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock
-     * speed, in GHz.</p> </li> <li> <p> <code>supported-root-device-type</code> - The
-     * root device type (<code>ebs</code> | <code>instance-store</code>).</p> </li>
-     * <li> <p> <code>supported-usage-class</code> - The usage class
-     * (<code>on-demand</code> | <code>spot</code>).</p> </li> <li> <p>
+     * speed, in GHz.</p> </li> <li> <p> <code>supported-boot-mode</code> - The boot
+     * mode (<code>legacy-bios</code> | <code>uefi</code>).</p> </li> <li> <p>
+     * <code>supported-root-device-type</code> - The root device type (<code>ebs</code>
+     * | <code>instance-store</code>).</p> </li> <li> <p>
+     * <code>supported-usage-class</code> - The usage class (<code>on-demand</code> |
+     * <code>spot</code>).</p> </li> <li> <p>
      * <code>supported-virtualization-type</code> - The virtualization type
      * (<code>hvm</code> | <code>paravirtual</code>).</p> </li> <li> <p>
      * <code>vcpu-info.default-cores</code> - The default number of cores for the
@@ -761,10 +773,12 @@ namespace Model
      * <code>processor-info.supported-architecture</code> - The CPU architecture
      * (<code>arm64</code> | <code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p> <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock
-     * speed, in GHz.</p> </li> <li> <p> <code>supported-root-device-type</code> - The
-     * root device type (<code>ebs</code> | <code>instance-store</code>).</p> </li>
-     * <li> <p> <code>supported-usage-class</code> - The usage class
-     * (<code>on-demand</code> | <code>spot</code>).</p> </li> <li> <p>
+     * speed, in GHz.</p> </li> <li> <p> <code>supported-boot-mode</code> - The boot
+     * mode (<code>legacy-bios</code> | <code>uefi</code>).</p> </li> <li> <p>
+     * <code>supported-root-device-type</code> - The root device type (<code>ebs</code>
+     * | <code>instance-store</code>).</p> </li> <li> <p>
+     * <code>supported-usage-class</code> - The usage class (<code>on-demand</code> |
+     * <code>spot</code>).</p> </li> <li> <p>
      * <code>supported-virtualization-type</code> - The virtualization type
      * (<code>hvm</code> | <code>paravirtual</code>).</p> </li> <li> <p>
      * <code>vcpu-info.default-cores</code> - The default number of cores for the
@@ -854,10 +868,12 @@ namespace Model
      * <code>processor-info.supported-architecture</code> - The CPU architecture
      * (<code>arm64</code> | <code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p> <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock
-     * speed, in GHz.</p> </li> <li> <p> <code>supported-root-device-type</code> - The
-     * root device type (<code>ebs</code> | <code>instance-store</code>).</p> </li>
-     * <li> <p> <code>supported-usage-class</code> - The usage class
-     * (<code>on-demand</code> | <code>spot</code>).</p> </li> <li> <p>
+     * speed, in GHz.</p> </li> <li> <p> <code>supported-boot-mode</code> - The boot
+     * mode (<code>legacy-bios</code> | <code>uefi</code>).</p> </li> <li> <p>
+     * <code>supported-root-device-type</code> - The root device type (<code>ebs</code>
+     * | <code>instance-store</code>).</p> </li> <li> <p>
+     * <code>supported-usage-class</code> - The usage class (<code>on-demand</code> |
+     * <code>spot</code>).</p> </li> <li> <p>
      * <code>supported-virtualization-type</code> - The virtualization type
      * (<code>hvm</code> | <code>paravirtual</code>).</p> </li> <li> <p>
      * <code>vcpu-info.default-cores</code> - The default number of cores for the

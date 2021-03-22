@@ -297,6 +297,22 @@ namespace Model
 
 
     
+    inline const AttributeValue& GetBootMode() const{ return m_bootMode; }
+
+    
+    inline void SetBootMode(const AttributeValue& value) { m_bootMode = value; }
+
+    
+    inline void SetBootMode(AttributeValue&& value) { m_bootMode = std::move(value); }
+
+    
+    inline DescribeImageAttributeResponse& WithBootMode(const AttributeValue& value) { SetBootMode(value); return *this;}
+
+    
+    inline DescribeImageAttributeResponse& WithBootMode(AttributeValue&& value) { SetBootMode(std::move(value)); return *this;}
+
+
+    
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
     
@@ -328,6 +344,8 @@ namespace Model
     AttributeValue m_ramdiskId;
 
     AttributeValue m_sriovNetSupport;
+
+    AttributeValue m_bootMode;
 
     ResponseMetadata m_responseMetadata;
   };

@@ -87,12 +87,12 @@ namespace Model
      * point where you paused the job. Otherwise, Macie resumes the job according to
      * the schedule and other settings for the job.</p></li> <li><p>USER_PAUSED -
      * Pauses the job temporarily. This value is valid only if the job's current status
-     * is IDLE or RUNNING. If you specify this value and the job's current status is
-     * RUNNING, Macie immediately begins to pause all processing tasks for the job.</p>
-     * <p>If you pause a one-time job and you don't resume it within 30 days, the job
-     * expires and Macie cancels the job. If you pause a recurring job when its status
-     * is RUNNING and you don't resume it within 30 days, the job run expires and Macie
-     * cancels the run. To check the expiration date, refer to the
+     * is IDLE, PAUSED, or RUNNING. If you specify this value and the job's current
+     * status is RUNNING, Macie immediately begins to pause all processing tasks for
+     * the job.</p> <p>If you pause a one-time job and you don't resume it within 30
+     * days, the job expires and Macie cancels the job. If you pause a recurring job
+     * when its status is RUNNING and you don't resume it within 30 days, the job run
+     * expires and Macie cancels the run. To check the expiration date, refer to the
      * UserPausedDetails.jobExpiresAt property.</p></li></ul>
      */
     inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
@@ -110,12 +110,12 @@ namespace Model
      * point where you paused the job. Otherwise, Macie resumes the job according to
      * the schedule and other settings for the job.</p></li> <li><p>USER_PAUSED -
      * Pauses the job temporarily. This value is valid only if the job's current status
-     * is IDLE or RUNNING. If you specify this value and the job's current status is
-     * RUNNING, Macie immediately begins to pause all processing tasks for the job.</p>
-     * <p>If you pause a one-time job and you don't resume it within 30 days, the job
-     * expires and Macie cancels the job. If you pause a recurring job when its status
-     * is RUNNING and you don't resume it within 30 days, the job run expires and Macie
-     * cancels the run. To check the expiration date, refer to the
+     * is IDLE, PAUSED, or RUNNING. If you specify this value and the job's current
+     * status is RUNNING, Macie immediately begins to pause all processing tasks for
+     * the job.</p> <p>If you pause a one-time job and you don't resume it within 30
+     * days, the job expires and Macie cancels the job. If you pause a recurring job
+     * when its status is RUNNING and you don't resume it within 30 days, the job run
+     * expires and Macie cancels the run. To check the expiration date, refer to the
      * UserPausedDetails.jobExpiresAt property.</p></li></ul>
      */
     inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }
@@ -133,12 +133,12 @@ namespace Model
      * point where you paused the job. Otherwise, Macie resumes the job according to
      * the schedule and other settings for the job.</p></li> <li><p>USER_PAUSED -
      * Pauses the job temporarily. This value is valid only if the job's current status
-     * is IDLE or RUNNING. If you specify this value and the job's current status is
-     * RUNNING, Macie immediately begins to pause all processing tasks for the job.</p>
-     * <p>If you pause a one-time job and you don't resume it within 30 days, the job
-     * expires and Macie cancels the job. If you pause a recurring job when its status
-     * is RUNNING and you don't resume it within 30 days, the job run expires and Macie
-     * cancels the run. To check the expiration date, refer to the
+     * is IDLE, PAUSED, or RUNNING. If you specify this value and the job's current
+     * status is RUNNING, Macie immediately begins to pause all processing tasks for
+     * the job.</p> <p>If you pause a one-time job and you don't resume it within 30
+     * days, the job expires and Macie cancels the job. If you pause a recurring job
+     * when its status is RUNNING and you don't resume it within 30 days, the job run
+     * expires and Macie cancels the run. To check the expiration date, refer to the
      * UserPausedDetails.jobExpiresAt property.</p></li></ul>
      */
     inline void SetJobStatus(const JobStatus& value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
@@ -156,12 +156,12 @@ namespace Model
      * point where you paused the job. Otherwise, Macie resumes the job according to
      * the schedule and other settings for the job.</p></li> <li><p>USER_PAUSED -
      * Pauses the job temporarily. This value is valid only if the job's current status
-     * is IDLE or RUNNING. If you specify this value and the job's current status is
-     * RUNNING, Macie immediately begins to pause all processing tasks for the job.</p>
-     * <p>If you pause a one-time job and you don't resume it within 30 days, the job
-     * expires and Macie cancels the job. If you pause a recurring job when its status
-     * is RUNNING and you don't resume it within 30 days, the job run expires and Macie
-     * cancels the run. To check the expiration date, refer to the
+     * is IDLE, PAUSED, or RUNNING. If you specify this value and the job's current
+     * status is RUNNING, Macie immediately begins to pause all processing tasks for
+     * the job.</p> <p>If you pause a one-time job and you don't resume it within 30
+     * days, the job expires and Macie cancels the job. If you pause a recurring job
+     * when its status is RUNNING and you don't resume it within 30 days, the job run
+     * expires and Macie cancels the run. To check the expiration date, refer to the
      * UserPausedDetails.jobExpiresAt property.</p></li></ul>
      */
     inline void SetJobStatus(JobStatus&& value) { m_jobStatusHasBeenSet = true; m_jobStatus = std::move(value); }
@@ -179,12 +179,12 @@ namespace Model
      * point where you paused the job. Otherwise, Macie resumes the job according to
      * the schedule and other settings for the job.</p></li> <li><p>USER_PAUSED -
      * Pauses the job temporarily. This value is valid only if the job's current status
-     * is IDLE or RUNNING. If you specify this value and the job's current status is
-     * RUNNING, Macie immediately begins to pause all processing tasks for the job.</p>
-     * <p>If you pause a one-time job and you don't resume it within 30 days, the job
-     * expires and Macie cancels the job. If you pause a recurring job when its status
-     * is RUNNING and you don't resume it within 30 days, the job run expires and Macie
-     * cancels the run. To check the expiration date, refer to the
+     * is IDLE, PAUSED, or RUNNING. If you specify this value and the job's current
+     * status is RUNNING, Macie immediately begins to pause all processing tasks for
+     * the job.</p> <p>If you pause a one-time job and you don't resume it within 30
+     * days, the job expires and Macie cancels the job. If you pause a recurring job
+     * when its status is RUNNING and you don't resume it within 30 days, the job run
+     * expires and Macie cancels the run. To check the expiration date, refer to the
      * UserPausedDetails.jobExpiresAt property.</p></li></ul>
      */
     inline UpdateClassificationJobRequest& WithJobStatus(const JobStatus& value) { SetJobStatus(value); return *this;}
@@ -202,12 +202,12 @@ namespace Model
      * point where you paused the job. Otherwise, Macie resumes the job according to
      * the schedule and other settings for the job.</p></li> <li><p>USER_PAUSED -
      * Pauses the job temporarily. This value is valid only if the job's current status
-     * is IDLE or RUNNING. If you specify this value and the job's current status is
-     * RUNNING, Macie immediately begins to pause all processing tasks for the job.</p>
-     * <p>If you pause a one-time job and you don't resume it within 30 days, the job
-     * expires and Macie cancels the job. If you pause a recurring job when its status
-     * is RUNNING and you don't resume it within 30 days, the job run expires and Macie
-     * cancels the run. To check the expiration date, refer to the
+     * is IDLE, PAUSED, or RUNNING. If you specify this value and the job's current
+     * status is RUNNING, Macie immediately begins to pause all processing tasks for
+     * the job.</p> <p>If you pause a one-time job and you don't resume it within 30
+     * days, the job expires and Macie cancels the job. If you pause a recurring job
+     * when its status is RUNNING and you don't resume it within 30 days, the job run
+     * expires and Macie cancels the run. To check the expiration date, refer to the
      * UserPausedDetails.jobExpiresAt property.</p></li></ul>
      */
     inline UpdateClassificationJobRequest& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ArchitectureValues.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/BootModeValues.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
 #include <utility>
 
@@ -743,6 +744,49 @@ namespace Model
      */
     inline RegisterImageRequest& WithVirtualizationType(const char* value) { SetVirtualizationType(value); return *this;}
 
+
+    /**
+     * <p>The boot mode of the AMI. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline const BootModeValues& GetBootMode() const{ return m_bootMode; }
+
+    /**
+     * <p>The boot mode of the AMI. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline bool BootModeHasBeenSet() const { return m_bootModeHasBeenSet; }
+
+    /**
+     * <p>The boot mode of the AMI. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetBootMode(const BootModeValues& value) { m_bootModeHasBeenSet = true; m_bootMode = value; }
+
+    /**
+     * <p>The boot mode of the AMI. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetBootMode(BootModeValues&& value) { m_bootModeHasBeenSet = true; m_bootMode = std::move(value); }
+
+    /**
+     * <p>The boot mode of the AMI. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline RegisterImageRequest& WithBootMode(const BootModeValues& value) { SetBootMode(value); return *this;}
+
+    /**
+     * <p>The boot mode of the AMI. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline RegisterImageRequest& WithBootMode(BootModeValues&& value) { SetBootMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_imageLocation;
@@ -783,6 +827,9 @@ namespace Model
 
     Aws::String m_virtualizationType;
     bool m_virtualizationTypeHasBeenSet;
+
+    BootModeValues m_bootMode;
+    bool m_bootModeHasBeenSet;
   };
 
 } // namespace Model

@@ -105,10 +105,10 @@ namespace Model
      * Word document or non-binary text file, such as an HTML, JSON, TXT, or XML file.
      * Each object specifies the line that contains the data, and the position of the
      * data on that line.</p> <p>This value is often null for file types that are
-     * supported by Cell, Page, or Record objects. Exceptions are the locations of:
-     * data in unstructured sections of an otherwise structured file, such as a comment
-     * in a file; and, data in a malformed file that Amazon Macie analyzes as plain
-     * text.</p>
+     * supported by Cell, Page, or Record objects. Exceptions are the locations of data
+     * in: unstructured sections of an otherwise structured file, such as a comment in
+     * a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or
+     * TSV file that has any column names that contain sensitive data.</p>
      */
     inline const Aws::Vector<Range>& GetLineRanges() const{ return m_lineRanges; }
 
@@ -117,10 +117,10 @@ namespace Model
      * Word document or non-binary text file, such as an HTML, JSON, TXT, or XML file.
      * Each object specifies the line that contains the data, and the position of the
      * data on that line.</p> <p>This value is often null for file types that are
-     * supported by Cell, Page, or Record objects. Exceptions are the locations of:
-     * data in unstructured sections of an otherwise structured file, such as a comment
-     * in a file; and, data in a malformed file that Amazon Macie analyzes as plain
-     * text.</p>
+     * supported by Cell, Page, or Record objects. Exceptions are the locations of data
+     * in: unstructured sections of an otherwise structured file, such as a comment in
+     * a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or
+     * TSV file that has any column names that contain sensitive data.</p>
      */
     inline bool LineRangesHasBeenSet() const { return m_lineRangesHasBeenSet; }
 
@@ -129,10 +129,10 @@ namespace Model
      * Word document or non-binary text file, such as an HTML, JSON, TXT, or XML file.
      * Each object specifies the line that contains the data, and the position of the
      * data on that line.</p> <p>This value is often null for file types that are
-     * supported by Cell, Page, or Record objects. Exceptions are the locations of:
-     * data in unstructured sections of an otherwise structured file, such as a comment
-     * in a file; and, data in a malformed file that Amazon Macie analyzes as plain
-     * text.</p>
+     * supported by Cell, Page, or Record objects. Exceptions are the locations of data
+     * in: unstructured sections of an otherwise structured file, such as a comment in
+     * a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or
+     * TSV file that has any column names that contain sensitive data.</p>
      */
     inline void SetLineRanges(const Aws::Vector<Range>& value) { m_lineRangesHasBeenSet = true; m_lineRanges = value; }
 
@@ -141,10 +141,10 @@ namespace Model
      * Word document or non-binary text file, such as an HTML, JSON, TXT, or XML file.
      * Each object specifies the line that contains the data, and the position of the
      * data on that line.</p> <p>This value is often null for file types that are
-     * supported by Cell, Page, or Record objects. Exceptions are the locations of:
-     * data in unstructured sections of an otherwise structured file, such as a comment
-     * in a file; and, data in a malformed file that Amazon Macie analyzes as plain
-     * text.</p>
+     * supported by Cell, Page, or Record objects. Exceptions are the locations of data
+     * in: unstructured sections of an otherwise structured file, such as a comment in
+     * a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or
+     * TSV file that has any column names that contain sensitive data.</p>
      */
     inline void SetLineRanges(Aws::Vector<Range>&& value) { m_lineRangesHasBeenSet = true; m_lineRanges = std::move(value); }
 
@@ -153,10 +153,10 @@ namespace Model
      * Word document or non-binary text file, such as an HTML, JSON, TXT, or XML file.
      * Each object specifies the line that contains the data, and the position of the
      * data on that line.</p> <p>This value is often null for file types that are
-     * supported by Cell, Page, or Record objects. Exceptions are the locations of:
-     * data in unstructured sections of an otherwise structured file, such as a comment
-     * in a file; and, data in a malformed file that Amazon Macie analyzes as plain
-     * text.</p>
+     * supported by Cell, Page, or Record objects. Exceptions are the locations of data
+     * in: unstructured sections of an otherwise structured file, such as a comment in
+     * a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or
+     * TSV file that has any column names that contain sensitive data.</p>
      */
     inline Occurrences& WithLineRanges(const Aws::Vector<Range>& value) { SetLineRanges(value); return *this;}
 
@@ -165,10 +165,10 @@ namespace Model
      * Word document or non-binary text file, such as an HTML, JSON, TXT, or XML file.
      * Each object specifies the line that contains the data, and the position of the
      * data on that line.</p> <p>This value is often null for file types that are
-     * supported by Cell, Page, or Record objects. Exceptions are the locations of:
-     * data in unstructured sections of an otherwise structured file, such as a comment
-     * in a file; and, data in a malformed file that Amazon Macie analyzes as plain
-     * text.</p>
+     * supported by Cell, Page, or Record objects. Exceptions are the locations of data
+     * in: unstructured sections of an otherwise structured file, such as a comment in
+     * a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or
+     * TSV file that has any column names that contain sensitive data.</p>
      */
     inline Occurrences& WithLineRanges(Aws::Vector<Range>&& value) { SetLineRanges(std::move(value)); return *this;}
 
@@ -177,10 +177,10 @@ namespace Model
      * Word document or non-binary text file, such as an HTML, JSON, TXT, or XML file.
      * Each object specifies the line that contains the data, and the position of the
      * data on that line.</p> <p>This value is often null for file types that are
-     * supported by Cell, Page, or Record objects. Exceptions are the locations of:
-     * data in unstructured sections of an otherwise structured file, such as a comment
-     * in a file; and, data in a malformed file that Amazon Macie analyzes as plain
-     * text.</p>
+     * supported by Cell, Page, or Record objects. Exceptions are the locations of data
+     * in: unstructured sections of an otherwise structured file, such as a comment in
+     * a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or
+     * TSV file that has any column names that contain sensitive data.</p>
      */
     inline Occurrences& AddLineRanges(const Range& value) { m_lineRangesHasBeenSet = true; m_lineRanges.push_back(value); return *this; }
 
@@ -189,10 +189,10 @@ namespace Model
      * Word document or non-binary text file, such as an HTML, JSON, TXT, or XML file.
      * Each object specifies the line that contains the data, and the position of the
      * data on that line.</p> <p>This value is often null for file types that are
-     * supported by Cell, Page, or Record objects. Exceptions are the locations of:
-     * data in unstructured sections of an otherwise structured file, such as a comment
-     * in a file; and, data in a malformed file that Amazon Macie analyzes as plain
-     * text.</p>
+     * supported by Cell, Page, or Record objects. Exceptions are the locations of data
+     * in: unstructured sections of an otherwise structured file, such as a comment in
+     * a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or
+     * TSV file that has any column names that contain sensitive data.</p>
      */
     inline Occurrences& AddLineRanges(Range&& value) { m_lineRangesHasBeenSet = true; m_lineRanges.push_back(std::move(value)); return *this; }
 

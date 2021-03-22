@@ -55,7 +55,9 @@ Image::Image() :
     m_stateReasonHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_virtualizationType(VirtualizationType::NOT_SET),
-    m_virtualizationTypeHasBeenSet(false)
+    m_virtualizationTypeHasBeenSet(false),
+    m_bootMode(BootModeValues::NOT_SET),
+    m_bootModeHasBeenSet(false)
 {
 }
 
@@ -94,7 +96,9 @@ Image::Image(const XmlNode& xmlNode) :
     m_stateReasonHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_virtualizationType(VirtualizationType::NOT_SET),
-    m_virtualizationTypeHasBeenSet(false)
+    m_virtualizationTypeHasBeenSet(false),
+    m_bootMode(BootModeValues::NOT_SET),
+    m_bootModeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -279,6 +283,12 @@ Image& Image::operator =(const XmlNode& xmlNode)
       m_virtualizationType = VirtualizationTypeMapper::GetVirtualizationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(virtualizationTypeNode.GetText()).c_str()).c_str());
       m_virtualizationTypeHasBeenSet = true;
     }
+    XmlNode bootModeNode = resultNode.FirstChild("bootMode");
+    if(!bootModeNode.IsNull())
+    {
+      m_bootMode = BootModeValuesMapper::GetBootModeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bootModeNode.GetText()).c_str()).c_str());
+      m_bootModeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -436,6 +446,11 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       oStream << location << index << locationValue << ".VirtualizationType=" << VirtualizationTypeMapper::GetNameForVirtualizationType(m_virtualizationType) << "&";
   }
 
+  if(m_bootModeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".BootMode=" << BootModeValuesMapper::GetNameForBootModeValues(m_bootMode) << "&";
+  }
+
 }
 
 void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -563,6 +578,10 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_virtualizationTypeHasBeenSet)
   {
       oStream << location << ".VirtualizationType=" << VirtualizationTypeMapper::GetNameForVirtualizationType(m_virtualizationType) << "&";
+  }
+  if(m_bootModeHasBeenSet)
+  {
+      oStream << location << ".BootMode=" << BootModeValuesMapper::GetNameForBootModeValues(m_bootMode) << "&";
   }
 }
 

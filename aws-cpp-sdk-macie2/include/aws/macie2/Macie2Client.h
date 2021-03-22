@@ -41,6 +41,7 @@
 #include <aws/macie2/model/GetFindingStatisticsResult.h>
 #include <aws/macie2/model/GetFindingsResult.h>
 #include <aws/macie2/model/GetFindingsFilterResult.h>
+#include <aws/macie2/model/GetFindingsPublicationConfigurationResult.h>
 #include <aws/macie2/model/GetInvitationsCountResult.h>
 #include <aws/macie2/model/GetMacieSessionResult.h>
 #include <aws/macie2/model/GetMasterAccountResult.h>
@@ -56,6 +57,7 @@
 #include <aws/macie2/model/ListOrganizationAdminAccountsResult.h>
 #include <aws/macie2/model/ListTagsForResourceResult.h>
 #include <aws/macie2/model/PutClassificationExportConfigurationResult.h>
+#include <aws/macie2/model/PutFindingsPublicationConfigurationResult.h>
 #include <aws/macie2/model/TagResourceResult.h>
 #include <aws/macie2/model/TestCustomDataIdentifierResult.h>
 #include <aws/macie2/model/UntagResourceResult.h>
@@ -133,6 +135,7 @@ namespace Model
         class GetFindingStatisticsRequest;
         class GetFindingsRequest;
         class GetFindingsFilterRequest;
+        class GetFindingsPublicationConfigurationRequest;
         class GetInvitationsCountRequest;
         class GetMacieSessionRequest;
         class GetMasterAccountRequest;
@@ -148,6 +151,7 @@ namespace Model
         class ListOrganizationAdminAccountsRequest;
         class ListTagsForResourceRequest;
         class PutClassificationExportConfigurationRequest;
+        class PutFindingsPublicationConfigurationRequest;
         class TagResourceRequest;
         class TestCustomDataIdentifierRequest;
         class UntagResourceRequest;
@@ -187,6 +191,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetFindingStatisticsResult, Macie2Error> GetFindingStatisticsOutcome;
         typedef Aws::Utils::Outcome<GetFindingsResult, Macie2Error> GetFindingsOutcome;
         typedef Aws::Utils::Outcome<GetFindingsFilterResult, Macie2Error> GetFindingsFilterOutcome;
+        typedef Aws::Utils::Outcome<GetFindingsPublicationConfigurationResult, Macie2Error> GetFindingsPublicationConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetInvitationsCountResult, Macie2Error> GetInvitationsCountOutcome;
         typedef Aws::Utils::Outcome<GetMacieSessionResult, Macie2Error> GetMacieSessionOutcome;
         typedef Aws::Utils::Outcome<GetMasterAccountResult, Macie2Error> GetMasterAccountOutcome;
@@ -202,6 +207,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListOrganizationAdminAccountsResult, Macie2Error> ListOrganizationAdminAccountsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Macie2Error> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PutClassificationExportConfigurationResult, Macie2Error> PutClassificationExportConfigurationOutcome;
+        typedef Aws::Utils::Outcome<PutFindingsPublicationConfigurationResult, Macie2Error> PutFindingsPublicationConfigurationOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, Macie2Error> TagResourceOutcome;
         typedef Aws::Utils::Outcome<TestCustomDataIdentifierResult, Macie2Error> TestCustomDataIdentifierOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, Macie2Error> UntagResourceOutcome;
@@ -241,6 +247,7 @@ namespace Model
         typedef std::future<GetFindingStatisticsOutcome> GetFindingStatisticsOutcomeCallable;
         typedef std::future<GetFindingsOutcome> GetFindingsOutcomeCallable;
         typedef std::future<GetFindingsFilterOutcome> GetFindingsFilterOutcomeCallable;
+        typedef std::future<GetFindingsPublicationConfigurationOutcome> GetFindingsPublicationConfigurationOutcomeCallable;
         typedef std::future<GetInvitationsCountOutcome> GetInvitationsCountOutcomeCallable;
         typedef std::future<GetMacieSessionOutcome> GetMacieSessionOutcomeCallable;
         typedef std::future<GetMasterAccountOutcome> GetMasterAccountOutcomeCallable;
@@ -256,6 +263,7 @@ namespace Model
         typedef std::future<ListOrganizationAdminAccountsOutcome> ListOrganizationAdminAccountsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutClassificationExportConfigurationOutcome> PutClassificationExportConfigurationOutcomeCallable;
+        typedef std::future<PutFindingsPublicationConfigurationOutcome> PutFindingsPublicationConfigurationOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<TestCustomDataIdentifierOutcome> TestCustomDataIdentifierOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -298,6 +306,7 @@ namespace Model
     typedef std::function<void(const Macie2Client*, const Model::GetFindingStatisticsRequest&, const Model::GetFindingStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingStatisticsResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetFindingsRequest&, const Model::GetFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingsResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetFindingsFilterRequest&, const Model::GetFindingsFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingsFilterResponseReceivedHandler;
+    typedef std::function<void(const Macie2Client*, const Model::GetFindingsPublicationConfigurationRequest&, const Model::GetFindingsPublicationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingsPublicationConfigurationResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetInvitationsCountRequest&, const Model::GetInvitationsCountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInvitationsCountResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetMacieSessionRequest&, const Model::GetMacieSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMacieSessionResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetMasterAccountRequest&, const Model::GetMasterAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMasterAccountResponseReceivedHandler;
@@ -313,6 +322,7 @@ namespace Model
     typedef std::function<void(const Macie2Client*, const Model::ListOrganizationAdminAccountsRequest&, const Model::ListOrganizationAdminAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOrganizationAdminAccountsResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::PutClassificationExportConfigurationRequest&, const Model::PutClassificationExportConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutClassificationExportConfigurationResponseReceivedHandler;
+    typedef std::function<void(const Macie2Client*, const Model::PutFindingsPublicationConfigurationRequest&, const Model::PutFindingsPublicationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutFindingsPublicationConfigurationResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::TestCustomDataIdentifierRequest&, const Model::TestCustomDataIdentifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestCustomDataIdentifierResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
@@ -1197,6 +1207,34 @@ namespace Model
         virtual void GetFindingsFilterAsync(const Model::GetFindingsFilterRequest& request, const GetFindingsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves the configuration settings for publishing findings to AWS Security
+         * Hub.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsPublicationConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetFindingsPublicationConfigurationOutcome GetFindingsPublicationConfiguration(const Model::GetFindingsPublicationConfigurationRequest& request) const;
+
+        /**
+         * <p>Retrieves the configuration settings for publishing findings to AWS Security
+         * Hub.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsPublicationConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetFindingsPublicationConfigurationOutcomeCallable GetFindingsPublicationConfigurationCallable(const Model::GetFindingsPublicationConfigurationRequest& request) const;
+
+        /**
+         * <p>Retrieves the configuration settings for publishing findings to AWS Security
+         * Hub.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsPublicationConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetFindingsPublicationConfigurationAsync(const Model::GetFindingsPublicationConfigurationRequest& request, const GetFindingsPublicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves the count of Amazon Macie membership invitations that were received
          * by an account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetInvitationsCount">AWS
@@ -1626,6 +1664,34 @@ namespace Model
         virtual void PutClassificationExportConfigurationAsync(const Model::PutClassificationExportConfigurationRequest& request, const PutClassificationExportConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the configuration settings for publishing findings to AWS Security
+         * Hub.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutFindingsPublicationConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutFindingsPublicationConfigurationOutcome PutFindingsPublicationConfiguration(const Model::PutFindingsPublicationConfigurationRequest& request) const;
+
+        /**
+         * <p>Updates the configuration settings for publishing findings to AWS Security
+         * Hub.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutFindingsPublicationConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutFindingsPublicationConfigurationOutcomeCallable PutFindingsPublicationConfigurationCallable(const Model::PutFindingsPublicationConfigurationRequest& request) const;
+
+        /**
+         * <p>Updates the configuration settings for publishing findings to AWS Security
+         * Hub.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutFindingsPublicationConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutFindingsPublicationConfigurationAsync(const Model::PutFindingsPublicationConfigurationRequest& request, const PutFindingsPublicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Adds or updates one or more tags (keys and values) that are associated with a
          * classification job, custom data identifier, findings filter, or member
          * account.</p><p><h3>See Also:</h3>   <a
@@ -1883,6 +1949,7 @@ namespace Model
         void GetFindingStatisticsAsyncHelper(const Model::GetFindingStatisticsRequest& request, const GetFindingStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFindingsAsyncHelper(const Model::GetFindingsRequest& request, const GetFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFindingsFilterAsyncHelper(const Model::GetFindingsFilterRequest& request, const GetFindingsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetFindingsPublicationConfigurationAsyncHelper(const Model::GetFindingsPublicationConfigurationRequest& request, const GetFindingsPublicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetInvitationsCountAsyncHelper(const Model::GetInvitationsCountRequest& request, const GetInvitationsCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMacieSessionAsyncHelper(const Model::GetMacieSessionRequest& request, const GetMacieSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMasterAccountAsyncHelper(const Model::GetMasterAccountRequest& request, const GetMasterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1898,6 +1965,7 @@ namespace Model
         void ListOrganizationAdminAccountsAsyncHelper(const Model::ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutClassificationExportConfigurationAsyncHelper(const Model::PutClassificationExportConfigurationRequest& request, const PutClassificationExportConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutFindingsPublicationConfigurationAsyncHelper(const Model::PutFindingsPublicationConfigurationRequest& request, const PutFindingsPublicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TestCustomDataIdentifierAsyncHelper(const Model::TestCustomDataIdentifierRequest& request, const TestCustomDataIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

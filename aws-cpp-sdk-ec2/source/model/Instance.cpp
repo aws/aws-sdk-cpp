@@ -79,7 +79,9 @@ Instance::Instance() :
     m_hibernationOptionsHasBeenSet(false),
     m_licensesHasBeenSet(false),
     m_metadataOptionsHasBeenSet(false),
-    m_enclaveOptionsHasBeenSet(false)
+    m_enclaveOptionsHasBeenSet(false),
+    m_bootMode(BootModeValues::NOT_SET),
+    m_bootModeHasBeenSet(false)
 {
 }
 
@@ -142,7 +144,9 @@ Instance::Instance(const XmlNode& xmlNode) :
     m_hibernationOptionsHasBeenSet(false),
     m_licensesHasBeenSet(false),
     m_metadataOptionsHasBeenSet(false),
-    m_enclaveOptionsHasBeenSet(false)
+    m_enclaveOptionsHasBeenSet(false),
+    m_bootMode(BootModeValues::NOT_SET),
+    m_bootModeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -489,6 +493,12 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
       m_enclaveOptions = enclaveOptionsNode;
       m_enclaveOptionsHasBeenSet = true;
     }
+    XmlNode bootModeNode = resultNode.FirstChild("bootMode");
+    if(!bootModeNode.IsNull())
+    {
+      m_bootMode = BootModeValuesMapper::GetBootModeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bootModeNode.GetText()).c_str()).c_str());
+      m_bootModeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -804,6 +814,11 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       m_enclaveOptions.OutputToStream(oStream, enclaveOptionsLocationAndMemberSs.str().c_str());
   }
 
+  if(m_bootModeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".BootMode=" << BootModeValuesMapper::GetNameForBootModeValues(m_bootMode) << "&";
+  }
+
 }
 
 void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1067,6 +1082,10 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
       Aws::String enclaveOptionsLocationAndMember(location);
       enclaveOptionsLocationAndMember += ".EnclaveOptions";
       m_enclaveOptions.OutputToStream(oStream, enclaveOptionsLocationAndMember.c_str());
+  }
+  if(m_bootModeHasBeenSet)
+  {
+      oStream << location << ".BootMode=" << BootModeValuesMapper::GetNameForBootModeValues(m_bootMode) << "&";
   }
 }
 

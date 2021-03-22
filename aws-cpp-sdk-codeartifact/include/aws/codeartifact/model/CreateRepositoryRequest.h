@@ -42,42 +42,42 @@ namespace Model
 
 
     /**
-     * <p> The domain that contains the created repository. </p>
+     * <p> The name of the domain that contains the created repository. </p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
-     * <p> The domain that contains the created repository. </p>
+     * <p> The name of the domain that contains the created repository. </p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
-     * <p> The domain that contains the created repository. </p>
+     * <p> The name of the domain that contains the created repository. </p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p> The domain that contains the created repository. </p>
+     * <p> The name of the domain that contains the created repository. </p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
-     * <p> The domain that contains the created repository. </p>
+     * <p> The name of the domain that contains the created repository. </p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
-     * <p> The domain that contains the created repository. </p>
+     * <p> The name of the domain that contains the created repository. </p>
      */
     inline CreateRepositoryRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
-     * <p> The domain that contains the created repository. </p>
+     * <p> The name of the domain that contains the created repository. </p>
      */
     inline CreateRepositoryRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
-     * <p> The domain that contains the created repository. </p>
+     * <p> The name of the domain that contains the created repository. </p>
      */
     inline CreateRepositoryRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 

@@ -128,38 +128,38 @@ namespace Model
 
 
     /**
-     * <p>Specifies the status for the account. To enable Amazon Macie and start all
-     * Macie activities for the account, set this value to ENABLED.</p>
+     * <p>Specifies the new status for the account. To enable Amazon Macie and start
+     * all Macie activities for the account, set this value to ENABLED.</p>
      */
     inline const MacieStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Specifies the status for the account. To enable Amazon Macie and start all
-     * Macie activities for the account, set this value to ENABLED.</p>
+     * <p>Specifies the new status for the account. To enable Amazon Macie and start
+     * all Macie activities for the account, set this value to ENABLED.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>Specifies the status for the account. To enable Amazon Macie and start all
-     * Macie activities for the account, set this value to ENABLED.</p>
+     * <p>Specifies the new status for the account. To enable Amazon Macie and start
+     * all Macie activities for the account, set this value to ENABLED.</p>
      */
     inline void SetStatus(const MacieStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Specifies the status for the account. To enable Amazon Macie and start all
-     * Macie activities for the account, set this value to ENABLED.</p>
+     * <p>Specifies the new status for the account. To enable Amazon Macie and start
+     * all Macie activities for the account, set this value to ENABLED.</p>
      */
     inline void SetStatus(MacieStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>Specifies the status for the account. To enable Amazon Macie and start all
-     * Macie activities for the account, set this value to ENABLED.</p>
+     * <p>Specifies the new status for the account. To enable Amazon Macie and start
+     * all Macie activities for the account, set this value to ENABLED.</p>
      */
     inline EnableMacieRequest& WithStatus(const MacieStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Specifies the status for the account. To enable Amazon Macie and start all
-     * Macie activities for the account, set this value to ENABLED.</p>
+     * <p>Specifies the new status for the account. To enable Amazon Macie and start
+     * all Macie activities for the account, set this value to ENABLED.</p>
      */
     inline EnableMacieRequest& WithStatus(MacieStatus&& value) { SetStatus(std::move(value)); return *this;}
 

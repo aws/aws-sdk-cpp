@@ -80,49 +80,65 @@ namespace Model
 
     /**
      * <p>Any parameters that you specify override the same parameters in the launch
-     * template.</p>
+     * template.</p> <p>For fleets of type <code>request</code> and
+     * <code>maintain</code>, a maximum of 300 items is allowed across all launch
+     * templates.</p>
      */
     inline const Aws::Vector<FleetLaunchTemplateOverridesRequest>& GetOverrides() const{ return m_overrides; }
 
     /**
      * <p>Any parameters that you specify override the same parameters in the launch
-     * template.</p>
+     * template.</p> <p>For fleets of type <code>request</code> and
+     * <code>maintain</code>, a maximum of 300 items is allowed across all launch
+     * templates.</p>
      */
     inline bool OverridesHasBeenSet() const { return m_overridesHasBeenSet; }
 
     /**
      * <p>Any parameters that you specify override the same parameters in the launch
-     * template.</p>
+     * template.</p> <p>For fleets of type <code>request</code> and
+     * <code>maintain</code>, a maximum of 300 items is allowed across all launch
+     * templates.</p>
      */
     inline void SetOverrides(const Aws::Vector<FleetLaunchTemplateOverridesRequest>& value) { m_overridesHasBeenSet = true; m_overrides = value; }
 
     /**
      * <p>Any parameters that you specify override the same parameters in the launch
-     * template.</p>
+     * template.</p> <p>For fleets of type <code>request</code> and
+     * <code>maintain</code>, a maximum of 300 items is allowed across all launch
+     * templates.</p>
      */
     inline void SetOverrides(Aws::Vector<FleetLaunchTemplateOverridesRequest>&& value) { m_overridesHasBeenSet = true; m_overrides = std::move(value); }
 
     /**
      * <p>Any parameters that you specify override the same parameters in the launch
-     * template.</p>
+     * template.</p> <p>For fleets of type <code>request</code> and
+     * <code>maintain</code>, a maximum of 300 items is allowed across all launch
+     * templates.</p>
      */
     inline FleetLaunchTemplateConfigRequest& WithOverrides(const Aws::Vector<FleetLaunchTemplateOverridesRequest>& value) { SetOverrides(value); return *this;}
 
     /**
      * <p>Any parameters that you specify override the same parameters in the launch
-     * template.</p>
+     * template.</p> <p>For fleets of type <code>request</code> and
+     * <code>maintain</code>, a maximum of 300 items is allowed across all launch
+     * templates.</p>
      */
     inline FleetLaunchTemplateConfigRequest& WithOverrides(Aws::Vector<FleetLaunchTemplateOverridesRequest>&& value) { SetOverrides(std::move(value)); return *this;}
 
     /**
      * <p>Any parameters that you specify override the same parameters in the launch
-     * template.</p>
+     * template.</p> <p>For fleets of type <code>request</code> and
+     * <code>maintain</code>, a maximum of 300 items is allowed across all launch
+     * templates.</p>
      */
     inline FleetLaunchTemplateConfigRequest& AddOverrides(const FleetLaunchTemplateOverridesRequest& value) { m_overridesHasBeenSet = true; m_overrides.push_back(value); return *this; }
 
     /**
      * <p>Any parameters that you specify override the same parameters in the launch
-     * template.</p>
+     * template.</p> <p>For fleets of type <code>request</code> and
+     * <code>maintain</code>, a maximum of 300 items is allowed across all launch
+     * templates.</p>
      */
     inline FleetLaunchTemplateConfigRequest& AddOverrides(FleetLaunchTemplateOverridesRequest&& value) { m_overridesHasBeenSet = true; m_overrides.push_back(std::move(value)); return *this; }
 

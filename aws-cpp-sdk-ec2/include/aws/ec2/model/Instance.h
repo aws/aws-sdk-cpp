@@ -26,6 +26,7 @@
 #include <aws/ec2/model/HibernationOptions.h>
 #include <aws/ec2/model/InstanceMetadataOptionsResponse.h>
 #include <aws/ec2/model/EnclaveOptions.h>
+#include <aws/ec2/model/BootModeValues.h>
 #include <aws/ec2/model/ProductCode.h>
 #include <aws/ec2/model/InstanceBlockDeviceMapping.h>
 #include <aws/ec2/model/ElasticGpuAssociation.h>
@@ -1476,46 +1477,22 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether to enable an instance launched in a VPC to perform NAT.
-     * This controls whether source/destination checking is enabled on the instance. A
-     * value of <code>true</code> means that checking is enabled, and
-     * <code>false</code> means that checking is disabled. The value must be
-     * <code>false</code> for the instance to perform NAT. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
-     * instances</a> in the <i>Amazon VPC User Guide</i>.</p>
+     * <p>Indicates whether source/destination checking is enabled.</p>
      */
     inline bool GetSourceDestCheck() const{ return m_sourceDestCheck; }
 
     /**
-     * <p>Specifies whether to enable an instance launched in a VPC to perform NAT.
-     * This controls whether source/destination checking is enabled on the instance. A
-     * value of <code>true</code> means that checking is enabled, and
-     * <code>false</code> means that checking is disabled. The value must be
-     * <code>false</code> for the instance to perform NAT. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
-     * instances</a> in the <i>Amazon VPC User Guide</i>.</p>
+     * <p>Indicates whether source/destination checking is enabled.</p>
      */
     inline bool SourceDestCheckHasBeenSet() const { return m_sourceDestCheckHasBeenSet; }
 
     /**
-     * <p>Specifies whether to enable an instance launched in a VPC to perform NAT.
-     * This controls whether source/destination checking is enabled on the instance. A
-     * value of <code>true</code> means that checking is enabled, and
-     * <code>false</code> means that checking is disabled. The value must be
-     * <code>false</code> for the instance to perform NAT. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
-     * instances</a> in the <i>Amazon VPC User Guide</i>.</p>
+     * <p>Indicates whether source/destination checking is enabled.</p>
      */
     inline void SetSourceDestCheck(bool value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = value; }
 
     /**
-     * <p>Specifies whether to enable an instance launched in a VPC to perform NAT.
-     * This controls whether source/destination checking is enabled on the instance. A
-     * value of <code>true</code> means that checking is enabled, and
-     * <code>false</code> means that checking is disabled. The value must be
-     * <code>false</code> for the instance to perform NAT. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
-     * instances</a> in the <i>Amazon VPC User Guide</i>.</p>
+     * <p>Indicates whether source/destination checking is enabled.</p>
      */
     inline Instance& WithSourceDestCheck(bool value) { SetSourceDestCheck(value); return *this;}
 
@@ -1949,6 +1926,49 @@ namespace Model
      */
     inline Instance& WithEnclaveOptions(EnclaveOptions&& value) { SetEnclaveOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The boot mode of the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline const BootModeValues& GetBootMode() const{ return m_bootMode; }
+
+    /**
+     * <p>The boot mode of the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline bool BootModeHasBeenSet() const { return m_bootModeHasBeenSet; }
+
+    /**
+     * <p>The boot mode of the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline void SetBootMode(const BootModeValues& value) { m_bootModeHasBeenSet = true; m_bootMode = value; }
+
+    /**
+     * <p>The boot mode of the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline void SetBootMode(BootModeValues&& value) { m_bootModeHasBeenSet = true; m_bootMode = std::move(value); }
+
+    /**
+     * <p>The boot mode of the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline Instance& WithBootMode(const BootModeValues& value) { SetBootMode(value); return *this;}
+
+    /**
+     * <p>The boot mode of the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline Instance& WithBootMode(BootModeValues&& value) { SetBootMode(std::move(value)); return *this;}
+
   private:
 
     int m_amiLaunchIndex;
@@ -2094,6 +2114,9 @@ namespace Model
 
     EnclaveOptions m_enclaveOptions;
     bool m_enclaveOptionsHasBeenSet;
+
+    BootModeValues m_bootMode;
+    bool m_bootModeHasBeenSet;
   };
 
 } // namespace Model

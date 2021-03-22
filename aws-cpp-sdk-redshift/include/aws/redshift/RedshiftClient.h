@@ -68,6 +68,7 @@
 #include <aws/redshift/model/EnableSnapshotCopyResult.h>
 #include <aws/redshift/model/GetClusterCredentialsResult.h>
 #include <aws/redshift/model/GetReservedNodeExchangeOfferingsResult.h>
+#include <aws/redshift/model/ModifyAquaConfigurationResult.h>
 #include <aws/redshift/model/ModifyClusterResult.h>
 #include <aws/redshift/model/ModifyClusterDbRevisionResult.h>
 #include <aws/redshift/model/ModifyClusterIamRolesResult.h>
@@ -205,6 +206,7 @@ namespace Model
         class EnableSnapshotCopyRequest;
         class GetClusterCredentialsRequest;
         class GetReservedNodeExchangeOfferingsRequest;
+        class ModifyAquaConfigurationRequest;
         class ModifyClusterRequest;
         class ModifyClusterDbRevisionRequest;
         class ModifyClusterIamRolesRequest;
@@ -298,6 +300,7 @@ namespace Model
         typedef Aws::Utils::Outcome<EnableSnapshotCopyResult, RedshiftError> EnableSnapshotCopyOutcome;
         typedef Aws::Utils::Outcome<GetClusterCredentialsResult, RedshiftError> GetClusterCredentialsOutcome;
         typedef Aws::Utils::Outcome<GetReservedNodeExchangeOfferingsResult, RedshiftError> GetReservedNodeExchangeOfferingsOutcome;
+        typedef Aws::Utils::Outcome<ModifyAquaConfigurationResult, RedshiftError> ModifyAquaConfigurationOutcome;
         typedef Aws::Utils::Outcome<ModifyClusterResult, RedshiftError> ModifyClusterOutcome;
         typedef Aws::Utils::Outcome<ModifyClusterDbRevisionResult, RedshiftError> ModifyClusterDbRevisionOutcome;
         typedef Aws::Utils::Outcome<ModifyClusterIamRolesResult, RedshiftError> ModifyClusterIamRolesOutcome;
@@ -391,6 +394,7 @@ namespace Model
         typedef std::future<EnableSnapshotCopyOutcome> EnableSnapshotCopyOutcomeCallable;
         typedef std::future<GetClusterCredentialsOutcome> GetClusterCredentialsOutcomeCallable;
         typedef std::future<GetReservedNodeExchangeOfferingsOutcome> GetReservedNodeExchangeOfferingsOutcomeCallable;
+        typedef std::future<ModifyAquaConfigurationOutcome> ModifyAquaConfigurationOutcomeCallable;
         typedef std::future<ModifyClusterOutcome> ModifyClusterOutcomeCallable;
         typedef std::future<ModifyClusterDbRevisionOutcome> ModifyClusterDbRevisionOutcomeCallable;
         typedef std::future<ModifyClusterIamRolesOutcome> ModifyClusterIamRolesOutcomeCallable;
@@ -487,6 +491,7 @@ namespace Model
     typedef std::function<void(const RedshiftClient*, const Model::EnableSnapshotCopyRequest&, const Model::EnableSnapshotCopyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableSnapshotCopyResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::GetClusterCredentialsRequest&, const Model::GetClusterCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetClusterCredentialsResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::GetReservedNodeExchangeOfferingsRequest&, const Model::GetReservedNodeExchangeOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservedNodeExchangeOfferingsResponseReceivedHandler;
+    typedef std::function<void(const RedshiftClient*, const Model::ModifyAquaConfigurationRequest&, const Model::ModifyAquaConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyAquaConfigurationResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::ModifyClusterRequest&, const Model::ModifyClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClusterResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::ModifyClusterDbRevisionRequest&, const Model::ModifyClusterDbRevisionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClusterDbRevisionResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::ModifyClusterIamRolesRequest&, const Model::ModifyClusterIamRolesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClusterIamRolesResponseReceivedHandler;
@@ -3407,6 +3412,34 @@ namespace Model
         virtual void GetReservedNodeExchangeOfferingsAsync(const Model::GetReservedNodeExchangeOfferingsRequest& request, const GetReservedNodeExchangeOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modifies whether a cluster can use AQUA (Advanced Query Accelerator).
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyAquaConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyAquaConfigurationOutcome ModifyAquaConfiguration(const Model::ModifyAquaConfigurationRequest& request) const;
+
+        /**
+         * <p>Modifies whether a cluster can use AQUA (Advanced Query Accelerator).
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyAquaConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyAquaConfigurationOutcomeCallable ModifyAquaConfigurationCallable(const Model::ModifyAquaConfigurationRequest& request) const;
+
+        /**
+         * <p>Modifies whether a cluster can use AQUA (Advanced Query Accelerator).
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyAquaConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyAquaConfigurationAsync(const Model::ModifyAquaConfigurationRequest& request, const ModifyAquaConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Modifies the settings for a cluster.</p> <p>You can also change node type and
          * the number of nodes to scale up or down the cluster. When resizing a cluster,
          * you must specify both the number of nodes and the node type even if one of the
@@ -4372,6 +4405,7 @@ namespace Model
         void EnableSnapshotCopyAsyncHelper(const Model::EnableSnapshotCopyRequest& request, const EnableSnapshotCopyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetClusterCredentialsAsyncHelper(const Model::GetClusterCredentialsRequest& request, const GetClusterCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetReservedNodeExchangeOfferingsAsyncHelper(const Model::GetReservedNodeExchangeOfferingsRequest& request, const GetReservedNodeExchangeOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyAquaConfigurationAsyncHelper(const Model::ModifyAquaConfigurationRequest& request, const ModifyAquaConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyClusterAsyncHelper(const Model::ModifyClusterRequest& request, const ModifyClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyClusterDbRevisionAsyncHelper(const Model::ModifyClusterDbRevisionRequest& request, const ModifyClusterDbRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyClusterIamRolesAsyncHelper(const Model::ModifyClusterIamRolesRequest& request, const ModifyClusterIamRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

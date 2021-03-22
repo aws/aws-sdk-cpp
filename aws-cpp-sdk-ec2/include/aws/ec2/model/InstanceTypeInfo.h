@@ -22,6 +22,7 @@
 #include <aws/ec2/model/UsageClassType.h>
 #include <aws/ec2/model/RootDeviceType.h>
 #include <aws/ec2/model/VirtualizationType.h>
+#include <aws/ec2/model/BootModeType.h>
 #include <utility>
 
 namespace Aws
@@ -732,6 +733,63 @@ namespace Model
      */
     inline InstanceTypeInfo& WithAutoRecoverySupported(bool value) { SetAutoRecoverySupported(value); return *this;}
 
+
+    /**
+     * <p>The supported boot modes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline const Aws::Vector<BootModeType>& GetSupportedBootModes() const{ return m_supportedBootModes; }
+
+    /**
+     * <p>The supported boot modes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline bool SupportedBootModesHasBeenSet() const { return m_supportedBootModesHasBeenSet; }
+
+    /**
+     * <p>The supported boot modes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline void SetSupportedBootModes(const Aws::Vector<BootModeType>& value) { m_supportedBootModesHasBeenSet = true; m_supportedBootModes = value; }
+
+    /**
+     * <p>The supported boot modes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline void SetSupportedBootModes(Aws::Vector<BootModeType>&& value) { m_supportedBootModesHasBeenSet = true; m_supportedBootModes = std::move(value); }
+
+    /**
+     * <p>The supported boot modes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline InstanceTypeInfo& WithSupportedBootModes(const Aws::Vector<BootModeType>& value) { SetSupportedBootModes(value); return *this;}
+
+    /**
+     * <p>The supported boot modes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline InstanceTypeInfo& WithSupportedBootModes(Aws::Vector<BootModeType>&& value) { SetSupportedBootModes(std::move(value)); return *this;}
+
+    /**
+     * <p>The supported boot modes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline InstanceTypeInfo& AddSupportedBootModes(const BootModeType& value) { m_supportedBootModesHasBeenSet = true; m_supportedBootModes.push_back(value); return *this; }
+
+    /**
+     * <p>The supported boot modes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline InstanceTypeInfo& AddSupportedBootModes(BootModeType&& value) { m_supportedBootModesHasBeenSet = true; m_supportedBootModes.push_back(std::move(value)); return *this; }
+
   private:
 
     InstanceType m_instanceType;
@@ -802,6 +860,9 @@ namespace Model
 
     bool m_autoRecoverySupported;
     bool m_autoRecoverySupportedHasBeenSet;
+
+    Aws::Vector<BootModeType> m_supportedBootModes;
+    bool m_supportedBootModesHasBeenSet;
   };
 
 } // namespace Model

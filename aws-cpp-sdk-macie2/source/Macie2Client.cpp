@@ -50,6 +50,7 @@
 #include <aws/macie2/model/GetFindingStatisticsRequest.h>
 #include <aws/macie2/model/GetFindingsRequest.h>
 #include <aws/macie2/model/GetFindingsFilterRequest.h>
+#include <aws/macie2/model/GetFindingsPublicationConfigurationRequest.h>
 #include <aws/macie2/model/GetInvitationsCountRequest.h>
 #include <aws/macie2/model/GetMacieSessionRequest.h>
 #include <aws/macie2/model/GetMasterAccountRequest.h>
@@ -65,6 +66,7 @@
 #include <aws/macie2/model/ListOrganizationAdminAccountsRequest.h>
 #include <aws/macie2/model/ListTagsForResourceRequest.h>
 #include <aws/macie2/model/PutClassificationExportConfigurationRequest.h>
+#include <aws/macie2/model/PutFindingsPublicationConfigurationRequest.h>
 #include <aws/macie2/model/TagResourceRequest.h>
 #include <aws/macie2/model/TestCustomDataIdentifierRequest.h>
 #include <aws/macie2/model/UntagResourceRequest.h>
@@ -1004,6 +1006,33 @@ void Macie2Client::GetFindingsFilterAsyncHelper(const GetFindingsFilterRequest& 
   handler(this, request, GetFindingsFilter(request), context);
 }
 
+GetFindingsPublicationConfigurationOutcome Macie2Client::GetFindingsPublicationConfiguration(const GetFindingsPublicationConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/findings-publication-configuration";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetFindingsPublicationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetFindingsPublicationConfigurationOutcomeCallable Macie2Client::GetFindingsPublicationConfigurationCallable(const GetFindingsPublicationConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetFindingsPublicationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFindingsPublicationConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Macie2Client::GetFindingsPublicationConfigurationAsync(const GetFindingsPublicationConfigurationRequest& request, const GetFindingsPublicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetFindingsPublicationConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void Macie2Client::GetFindingsPublicationConfigurationAsyncHelper(const GetFindingsPublicationConfigurationRequest& request, const GetFindingsPublicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetFindingsPublicationConfiguration(request), context);
+}
+
 GetInvitationsCountOutcome Macie2Client::GetInvitationsCount(const GetInvitationsCountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1419,6 +1448,33 @@ void Macie2Client::PutClassificationExportConfigurationAsync(const PutClassifica
 void Macie2Client::PutClassificationExportConfigurationAsyncHelper(const PutClassificationExportConfigurationRequest& request, const PutClassificationExportConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutClassificationExportConfiguration(request), context);
+}
+
+PutFindingsPublicationConfigurationOutcome Macie2Client::PutFindingsPublicationConfiguration(const PutFindingsPublicationConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/findings-publication-configuration";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return PutFindingsPublicationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutFindingsPublicationConfigurationOutcomeCallable Macie2Client::PutFindingsPublicationConfigurationCallable(const PutFindingsPublicationConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutFindingsPublicationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutFindingsPublicationConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Macie2Client::PutFindingsPublicationConfigurationAsync(const PutFindingsPublicationConfigurationRequest& request, const PutFindingsPublicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutFindingsPublicationConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void Macie2Client::PutFindingsPublicationConfigurationAsyncHelper(const PutFindingsPublicationConfigurationRequest& request, const PutFindingsPublicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutFindingsPublicationConfiguration(request), context);
 }
 
 TagResourceOutcome Macie2Client::TagResource(const TagResourceRequest& request) const
