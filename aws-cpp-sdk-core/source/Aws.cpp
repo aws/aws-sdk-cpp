@@ -102,14 +102,26 @@ namespace Aws
         hooks.free_fn = Aws::Free;
         cJSON_InitHooks(&hooks);
         Aws::Net::InitNetwork();
+
+#ifdef ENABLE_EC2_METADATA_CLIENT
         Aws::Internal::InitEC2MetadataClient();
+#endif
+
+#ifdef ENABLE_MONITORING
         Aws::Monitoring::InitMonitoring(options.monitoringOptions.customizedMonitoringFactory_create_fn);
+#endif
     }
 
     void ShutdownAPI(const SDKOptions& options)
     {
+#ifdef ENABLE_MONITORING
         Aws::Monitoring::CleanupMonitoring();
+#endif
+
+#ifdef ENABLE_EC2_METADATA_CLIENT
         Aws::Internal::CleanupEC2MetadataClient();
+#endif
+
         Aws::Net::CleanupNetwork();
         Aws::CleanupEnumOverflowContainer();
         Aws::Http::CleanupHttp();

@@ -432,6 +432,14 @@ if (CURL_HAS_TLS_PROXY)
     target_compile_definitions(${PROJECT_NAME} PRIVATE "CURL_HAS_TLS_PROXY")
 endif()
 
+if (ENABLE_EC2_METADATA_CLIENT)
+    target_compile_definitions(${PROJECT_NAME} PRIVATE "ENABLE_EC2_METADATA_CLIENT")
+endif()
+
+if (ENABLE_MONITORING)
+    target_compile_definitions(${PROJECT_NAME} PRIVATE "ENABLE_MONITORING")
+endif()
+
 set(Core_INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}/include/")
 
 if(PLATFORM_CUSTOM)
