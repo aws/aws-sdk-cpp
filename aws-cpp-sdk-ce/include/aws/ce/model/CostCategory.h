@@ -314,6 +314,31 @@ namespace Model
      */
     inline CostCategory& AddProcessingStatus(CostCategoryProcessingStatus&& value) { m_processingStatusHasBeenSet = true; m_processingStatus.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+
+    
+    inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
+
+    
+    inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
+
+    
+    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
+
+    
+    inline void SetDefaultValue(const char* value) { m_defaultValueHasBeenSet = true; m_defaultValue.assign(value); }
+
+    
+    inline CostCategory& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
+
+    
+    inline CostCategory& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
+
+    
+    inline CostCategory& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
+
   private:
 
     Aws::String m_costCategoryArn;
@@ -336,6 +361,9 @@ namespace Model
 
     Aws::Vector<CostCategoryProcessingStatus> m_processingStatus;
     bool m_processingStatusHasBeenSet;
+
+    Aws::String m_defaultValue;
+    bool m_defaultValueHasBeenSet;
   };
 
 } // namespace Model

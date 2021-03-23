@@ -20,6 +20,8 @@ CreateGameSessionQueueRequest::CreateGameSessionQueueRequest() :
     m_destinationsHasBeenSet(false),
     m_filterConfigurationHasBeenSet(false),
     m_priorityConfigurationHasBeenSet(false),
+    m_customEventDataHasBeenSet(false),
+    m_notificationTargetHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -71,6 +73,18 @@ Aws::String CreateGameSessionQueueRequest::SerializePayload() const
   if(m_priorityConfigurationHasBeenSet)
   {
    payload.WithObject("PriorityConfiguration", m_priorityConfiguration.Jsonize());
+
+  }
+
+  if(m_customEventDataHasBeenSet)
+  {
+   payload.WithString("CustomEventData", m_customEventData);
+
+  }
+
+  if(m_notificationTargetHasBeenSet)
+  {
+   payload.WithString("NotificationTarget", m_notificationTarget);
 
   }
 

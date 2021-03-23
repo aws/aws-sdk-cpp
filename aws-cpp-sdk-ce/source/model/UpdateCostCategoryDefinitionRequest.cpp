@@ -16,7 +16,8 @@ UpdateCostCategoryDefinitionRequest::UpdateCostCategoryDefinitionRequest() :
     m_costCategoryArnHasBeenSet(false),
     m_ruleVersion(CostCategoryRuleVersion::NOT_SET),
     m_ruleVersionHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+    m_rulesHasBeenSet(false),
+    m_defaultValueHasBeenSet(false)
 {
 }
 
@@ -43,6 +44,12 @@ Aws::String UpdateCostCategoryDefinitionRequest::SerializePayload() const
      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
    }
    payload.WithArray("Rules", std::move(rulesJsonList));
+
+  }
+
+  if(m_defaultValueHasBeenSet)
+  {
+   payload.WithString("DefaultValue", m_defaultValue);
 
   }
 

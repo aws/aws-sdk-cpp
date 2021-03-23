@@ -399,42 +399,58 @@ namespace Model
 
 
     /**
-     * <p>An SNS topic ARN that is set up to receive matchmaking notifications.</p>
+     * <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
+     * Setting up notifications for matchmaking</a> for more information.</p>
      */
     inline const Aws::String& GetNotificationTarget() const{ return m_notificationTarget; }
 
     /**
-     * <p>An SNS topic ARN that is set up to receive matchmaking notifications.</p>
+     * <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
+     * Setting up notifications for matchmaking</a> for more information.</p>
      */
     inline bool NotificationTargetHasBeenSet() const { return m_notificationTargetHasBeenSet; }
 
     /**
-     * <p>An SNS topic ARN that is set up to receive matchmaking notifications.</p>
+     * <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
+     * Setting up notifications for matchmaking</a> for more information.</p>
      */
     inline void SetNotificationTarget(const Aws::String& value) { m_notificationTargetHasBeenSet = true; m_notificationTarget = value; }
 
     /**
-     * <p>An SNS topic ARN that is set up to receive matchmaking notifications.</p>
+     * <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
+     * Setting up notifications for matchmaking</a> for more information.</p>
      */
     inline void SetNotificationTarget(Aws::String&& value) { m_notificationTargetHasBeenSet = true; m_notificationTarget = std::move(value); }
 
     /**
-     * <p>An SNS topic ARN that is set up to receive matchmaking notifications.</p>
+     * <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
+     * Setting up notifications for matchmaking</a> for more information.</p>
      */
     inline void SetNotificationTarget(const char* value) { m_notificationTargetHasBeenSet = true; m_notificationTarget.assign(value); }
 
     /**
-     * <p>An SNS topic ARN that is set up to receive matchmaking notifications.</p>
+     * <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
+     * Setting up notifications for matchmaking</a> for more information.</p>
      */
     inline CreateMatchmakingConfigurationRequest& WithNotificationTarget(const Aws::String& value) { SetNotificationTarget(value); return *this;}
 
     /**
-     * <p>An SNS topic ARN that is set up to receive matchmaking notifications.</p>
+     * <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
+     * Setting up notifications for matchmaking</a> for more information.</p>
      */
     inline CreateMatchmakingConfigurationRequest& WithNotificationTarget(Aws::String&& value) { SetNotificationTarget(std::move(value)); return *this;}
 
     /**
-     * <p>An SNS topic ARN that is set up to receive matchmaking notifications.</p>
+     * <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
+     * Setting up notifications for matchmaking</a> for more information.</p>
      */
     inline CreateMatchmakingConfigurationRequest& WithNotificationTarget(const char* value) { SetNotificationTarget(value); return *this;}
 

@@ -305,6 +305,31 @@ namespace Model
      */
     inline CostCategoryReference& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
+
+    
+    inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+
+    
+    inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
+
+    
+    inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
+
+    
+    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
+
+    
+    inline void SetDefaultValue(const char* value) { m_defaultValueHasBeenSet = true; m_defaultValue.assign(value); }
+
+    
+    inline CostCategoryReference& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
+
+    
+    inline CostCategoryReference& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
+
+    
+    inline CostCategoryReference& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
+
   private:
 
     Aws::String m_costCategoryArn;
@@ -327,6 +352,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
+
+    Aws::String m_defaultValue;
+    bool m_defaultValueHasBeenSet;
   };
 
 } // namespace Model

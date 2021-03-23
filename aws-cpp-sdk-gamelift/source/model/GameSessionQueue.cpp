@@ -26,7 +26,9 @@ GameSessionQueue::GameSessionQueue() :
     m_playerLatencyPoliciesHasBeenSet(false),
     m_destinationsHasBeenSet(false),
     m_filterConfigurationHasBeenSet(false),
-    m_priorityConfigurationHasBeenSet(false)
+    m_priorityConfigurationHasBeenSet(false),
+    m_customEventDataHasBeenSet(false),
+    m_notificationTargetHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ GameSessionQueue::GameSessionQueue(JsonView jsonValue) :
     m_playerLatencyPoliciesHasBeenSet(false),
     m_destinationsHasBeenSet(false),
     m_filterConfigurationHasBeenSet(false),
-    m_priorityConfigurationHasBeenSet(false)
+    m_priorityConfigurationHasBeenSet(false),
+    m_customEventDataHasBeenSet(false),
+    m_notificationTargetHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -100,6 +104,20 @@ GameSessionQueue& GameSessionQueue::operator =(JsonView jsonValue)
     m_priorityConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CustomEventData"))
+  {
+    m_customEventData = jsonValue.GetString("CustomEventData");
+
+    m_customEventDataHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NotificationTarget"))
+  {
+    m_notificationTarget = jsonValue.GetString("NotificationTarget");
+
+    m_notificationTargetHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -156,6 +174,18 @@ JsonValue GameSessionQueue::Jsonize() const
   if(m_priorityConfigurationHasBeenSet)
   {
    payload.WithObject("PriorityConfiguration", m_priorityConfiguration.Jsonize());
+
+  }
+
+  if(m_customEventDataHasBeenSet)
+  {
+   payload.WithString("CustomEventData", m_customEventData);
+
+  }
+
+  if(m_notificationTargetHasBeenSet)
+  {
+   payload.WithString("NotificationTarget", m_notificationTarget);
 
   }
 

@@ -366,6 +366,120 @@ namespace Model
 
 
     /**
+     * <p> Information to be added to all events that are related to this game session
+     * queue. </p>
+     */
+    inline const Aws::String& GetCustomEventData() const{ return m_customEventData; }
+
+    /**
+     * <p> Information to be added to all events that are related to this game session
+     * queue. </p>
+     */
+    inline bool CustomEventDataHasBeenSet() const { return m_customEventDataHasBeenSet; }
+
+    /**
+     * <p> Information to be added to all events that are related to this game session
+     * queue. </p>
+     */
+    inline void SetCustomEventData(const Aws::String& value) { m_customEventDataHasBeenSet = true; m_customEventData = value; }
+
+    /**
+     * <p> Information to be added to all events that are related to this game session
+     * queue. </p>
+     */
+    inline void SetCustomEventData(Aws::String&& value) { m_customEventDataHasBeenSet = true; m_customEventData = std::move(value); }
+
+    /**
+     * <p> Information to be added to all events that are related to this game session
+     * queue. </p>
+     */
+    inline void SetCustomEventData(const char* value) { m_customEventDataHasBeenSet = true; m_customEventData.assign(value); }
+
+    /**
+     * <p> Information to be added to all events that are related to this game session
+     * queue. </p>
+     */
+    inline CreateGameSessionQueueRequest& WithCustomEventData(const Aws::String& value) { SetCustomEventData(value); return *this;}
+
+    /**
+     * <p> Information to be added to all events that are related to this game session
+     * queue. </p>
+     */
+    inline CreateGameSessionQueueRequest& WithCustomEventData(Aws::String&& value) { SetCustomEventData(std::move(value)); return *this;}
+
+    /**
+     * <p> Information to be added to all events that are related to this game session
+     * queue. </p>
+     */
+    inline CreateGameSessionQueueRequest& WithCustomEventData(const char* value) { SetCustomEventData(value); return *this;}
+
+
+    /**
+     * <p>An SNS topic ARN that is set up to receive game session placement
+     * notifications. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
+     * Setting up notifications for game session placement</a>.</p>
+     */
+    inline const Aws::String& GetNotificationTarget() const{ return m_notificationTarget; }
+
+    /**
+     * <p>An SNS topic ARN that is set up to receive game session placement
+     * notifications. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
+     * Setting up notifications for game session placement</a>.</p>
+     */
+    inline bool NotificationTargetHasBeenSet() const { return m_notificationTargetHasBeenSet; }
+
+    /**
+     * <p>An SNS topic ARN that is set up to receive game session placement
+     * notifications. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
+     * Setting up notifications for game session placement</a>.</p>
+     */
+    inline void SetNotificationTarget(const Aws::String& value) { m_notificationTargetHasBeenSet = true; m_notificationTarget = value; }
+
+    /**
+     * <p>An SNS topic ARN that is set up to receive game session placement
+     * notifications. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
+     * Setting up notifications for game session placement</a>.</p>
+     */
+    inline void SetNotificationTarget(Aws::String&& value) { m_notificationTargetHasBeenSet = true; m_notificationTarget = std::move(value); }
+
+    /**
+     * <p>An SNS topic ARN that is set up to receive game session placement
+     * notifications. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
+     * Setting up notifications for game session placement</a>.</p>
+     */
+    inline void SetNotificationTarget(const char* value) { m_notificationTargetHasBeenSet = true; m_notificationTarget.assign(value); }
+
+    /**
+     * <p>An SNS topic ARN that is set up to receive game session placement
+     * notifications. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
+     * Setting up notifications for game session placement</a>.</p>
+     */
+    inline CreateGameSessionQueueRequest& WithNotificationTarget(const Aws::String& value) { SetNotificationTarget(value); return *this;}
+
+    /**
+     * <p>An SNS topic ARN that is set up to receive game session placement
+     * notifications. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
+     * Setting up notifications for game session placement</a>.</p>
+     */
+    inline CreateGameSessionQueueRequest& WithNotificationTarget(Aws::String&& value) { SetNotificationTarget(std::move(value)); return *this;}
+
+    /**
+     * <p>An SNS topic ARN that is set up to receive game session placement
+     * notifications. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
+     * Setting up notifications for game session placement</a>.</p>
+     */
+    inline CreateGameSessionQueueRequest& WithNotificationTarget(const char* value) { SetNotificationTarget(value); return *this;}
+
+
+    /**
      * <p>A list of labels to assign to the new game session queue resource. Tags are
      * developer-defined key-value pairs. Tagging AWS resources are useful for resource
      * management, access management and cost allocation. For more information, see <a
@@ -488,6 +602,12 @@ namespace Model
 
     PriorityConfiguration m_priorityConfiguration;
     bool m_priorityConfigurationHasBeenSet;
+
+    Aws::String m_customEventData;
+    bool m_customEventDataHasBeenSet;
+
+    Aws::String m_notificationTarget;
+    bool m_notificationTargetHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

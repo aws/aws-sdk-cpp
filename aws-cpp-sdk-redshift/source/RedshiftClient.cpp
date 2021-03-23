@@ -88,7 +88,6 @@
 #include <aws/redshift/model/EnableSnapshotCopyRequest.h>
 #include <aws/redshift/model/GetClusterCredentialsRequest.h>
 #include <aws/redshift/model/GetReservedNodeExchangeOfferingsRequest.h>
-#include <aws/redshift/model/ModifyAquaConfigurationRequest.h>
 #include <aws/redshift/model/ModifyClusterRequest.h>
 #include <aws/redshift/model/ModifyClusterDbRevisionRequest.h>
 #include <aws/redshift/model/ModifyClusterIamRolesRequest.h>
@@ -2032,33 +2031,6 @@ void RedshiftClient::GetReservedNodeExchangeOfferingsAsync(const GetReservedNode
 void RedshiftClient::GetReservedNodeExchangeOfferingsAsyncHelper(const GetReservedNodeExchangeOfferingsRequest& request, const GetReservedNodeExchangeOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetReservedNodeExchangeOfferings(request), context);
-}
-
-ModifyAquaConfigurationOutcome RedshiftClient::ModifyAquaConfiguration(const ModifyAquaConfigurationRequest& request) const
-{
-  Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  return ModifyAquaConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
-}
-
-ModifyAquaConfigurationOutcomeCallable RedshiftClient::ModifyAquaConfigurationCallable(const ModifyAquaConfigurationRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< ModifyAquaConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyAquaConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void RedshiftClient::ModifyAquaConfigurationAsync(const ModifyAquaConfigurationRequest& request, const ModifyAquaConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyAquaConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void RedshiftClient::ModifyAquaConfigurationAsyncHelper(const ModifyAquaConfigurationRequest& request, const ModifyAquaConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ModifyAquaConfiguration(request), context);
 }
 
 ModifyClusterOutcome RedshiftClient::ModifyCluster(const ModifyClusterRequest& request) const
