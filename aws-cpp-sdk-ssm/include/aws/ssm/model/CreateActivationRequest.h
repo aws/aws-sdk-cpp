@@ -274,38 +274,50 @@ namespace Model
 
 
     /**
-     * <p>The date by which this activation request should expire. The default value is
-     * 24 hours.</p>
+     * <p>The date by which this activation request should expire, in timestamp format,
+     * such as "2021-07-07T00:00:00". You can specify a date up to 30 days in advance.
+     * If you don't provide an expiration date, the activation code expires in 24
+     * hours.</p>
      */
     inline const Aws::Utils::DateTime& GetExpirationDate() const{ return m_expirationDate; }
 
     /**
-     * <p>The date by which this activation request should expire. The default value is
-     * 24 hours.</p>
+     * <p>The date by which this activation request should expire, in timestamp format,
+     * such as "2021-07-07T00:00:00". You can specify a date up to 30 days in advance.
+     * If you don't provide an expiration date, the activation code expires in 24
+     * hours.</p>
      */
     inline bool ExpirationDateHasBeenSet() const { return m_expirationDateHasBeenSet; }
 
     /**
-     * <p>The date by which this activation request should expire. The default value is
-     * 24 hours.</p>
+     * <p>The date by which this activation request should expire, in timestamp format,
+     * such as "2021-07-07T00:00:00". You can specify a date up to 30 days in advance.
+     * If you don't provide an expiration date, the activation code expires in 24
+     * hours.</p>
      */
     inline void SetExpirationDate(const Aws::Utils::DateTime& value) { m_expirationDateHasBeenSet = true; m_expirationDate = value; }
 
     /**
-     * <p>The date by which this activation request should expire. The default value is
-     * 24 hours.</p>
+     * <p>The date by which this activation request should expire, in timestamp format,
+     * such as "2021-07-07T00:00:00". You can specify a date up to 30 days in advance.
+     * If you don't provide an expiration date, the activation code expires in 24
+     * hours.</p>
      */
     inline void SetExpirationDate(Aws::Utils::DateTime&& value) { m_expirationDateHasBeenSet = true; m_expirationDate = std::move(value); }
 
     /**
-     * <p>The date by which this activation request should expire. The default value is
-     * 24 hours.</p>
+     * <p>The date by which this activation request should expire, in timestamp format,
+     * such as "2021-07-07T00:00:00". You can specify a date up to 30 days in advance.
+     * If you don't provide an expiration date, the activation code expires in 24
+     * hours.</p>
      */
     inline CreateActivationRequest& WithExpirationDate(const Aws::Utils::DateTime& value) { SetExpirationDate(value); return *this;}
 
     /**
-     * <p>The date by which this activation request should expire. The default value is
-     * 24 hours.</p>
+     * <p>The date by which this activation request should expire, in timestamp format,
+     * such as "2021-07-07T00:00:00". You can specify a date up to 30 days in advance.
+     * If you don't provide an expiration date, the activation code expires in 24
+     * hours.</p>
      */
     inline CreateActivationRequest& WithExpirationDate(Aws::Utils::DateTime&& value) { SetExpirationDate(std::move(value)); return *this;}
 

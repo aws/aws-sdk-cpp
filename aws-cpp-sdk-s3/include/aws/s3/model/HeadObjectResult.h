@@ -161,7 +161,7 @@ namespace Model
      * or an archive copy is already restored.</p> <p> If an archive copy is already
      * restored, the header value indicates when Amazon S3 is scheduled to delete the
      * object copy. For example:</p> <p> <code>x-amz-restore: ongoing-request="false",
-     * expiry-date="Fri, 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object
+     * expiry-date="Fri, 21 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object
      * restoration is in progress, the header returns the value
      * <code>ongoing-request="true"</code>.</p> <p>For more information about archiving
      * objects, see <a
@@ -178,7 +178,7 @@ namespace Model
      * or an archive copy is already restored.</p> <p> If an archive copy is already
      * restored, the header value indicates when Amazon S3 is scheduled to delete the
      * object copy. For example:</p> <p> <code>x-amz-restore: ongoing-request="false",
-     * expiry-date="Fri, 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object
+     * expiry-date="Fri, 21 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object
      * restoration is in progress, the header returns the value
      * <code>ongoing-request="true"</code>.</p> <p>For more information about archiving
      * objects, see <a
@@ -195,7 +195,7 @@ namespace Model
      * or an archive copy is already restored.</p> <p> If an archive copy is already
      * restored, the header value indicates when Amazon S3 is scheduled to delete the
      * object copy. For example:</p> <p> <code>x-amz-restore: ongoing-request="false",
-     * expiry-date="Fri, 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object
+     * expiry-date="Fri, 21 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object
      * restoration is in progress, the header returns the value
      * <code>ongoing-request="true"</code>.</p> <p>For more information about archiving
      * objects, see <a
@@ -212,7 +212,7 @@ namespace Model
      * or an archive copy is already restored.</p> <p> If an archive copy is already
      * restored, the header value indicates when Amazon S3 is scheduled to delete the
      * object copy. For example:</p> <p> <code>x-amz-restore: ongoing-request="false",
-     * expiry-date="Fri, 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object
+     * expiry-date="Fri, 21 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object
      * restoration is in progress, the header returns the value
      * <code>ongoing-request="true"</code>.</p> <p>For more information about archiving
      * objects, see <a
@@ -229,7 +229,7 @@ namespace Model
      * or an archive copy is already restored.</p> <p> If an archive copy is already
      * restored, the header value indicates when Amazon S3 is scheduled to delete the
      * object copy. For example:</p> <p> <code>x-amz-restore: ongoing-request="false",
-     * expiry-date="Fri, 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object
+     * expiry-date="Fri, 21 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object
      * restoration is in progress, the header returns the value
      * <code>ongoing-request="true"</code>.</p> <p>For more information about archiving
      * objects, see <a
@@ -246,7 +246,7 @@ namespace Model
      * or an archive copy is already restored.</p> <p> If an archive copy is already
      * restored, the header value indicates when Amazon S3 is scheduled to delete the
      * object copy. For example:</p> <p> <code>x-amz-restore: ongoing-request="false",
-     * expiry-date="Fri, 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object
+     * expiry-date="Fri, 21 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object
      * restoration is in progress, the header returns the value
      * <code>ongoing-request="true"</code>.</p> <p>For more information about archiving
      * objects, see <a
@@ -263,7 +263,7 @@ namespace Model
      * or an archive copy is already restored.</p> <p> If an archive copy is already
      * restored, the header value indicates when Amazon S3 is scheduled to delete the
      * object copy. For example:</p> <p> <code>x-amz-restore: ongoing-request="false",
-     * expiry-date="Fri, 23 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object
+     * expiry-date="Fri, 21 Dec 2012 00:00:00 GMT"</code> </p> <p>If the object
      * restoration is in progress, the header returns the value
      * <code>ongoing-request="true"</code>.</p> <p>For more information about archiving
      * objects, see <a

@@ -185,15 +185,18 @@ namespace Model
      * <li> <p> <code>instance-type</code> - The instance type (for example
      * <code>c5.2xlarge</code> or c5*).</p> </li> <li> <p>
      * <code>memory-info.size-in-mib</code> - The memory size.</p> </li> <li> <p>
-     * <code>network-info.efa-supported</code> - Indicates whether the instance type
-     * supports Elastic Fabric Adapter (EFA) (<code>true</code> |
-     * <code>false</code>).</p> </li> <li> <p> <code>network-info.ena-support</code> -
-     * Indicates whether Elastic Network Adapter (ENA) is supported or required
-     * (<code>required</code> | <code>supported</code> | <code>unsupported</code>).</p>
-     * </li> <li> <p> <code>network-info.ipv4-addresses-per-interface</code> - The
-     * maximum number of private IPv4 addresses per network interface.</p> </li> <li>
-     * <p> <code>network-info.ipv6-addresses-per-interface</code> - The maximum number
-     * of private IPv6 addresses per network interface.</p> </li> <li> <p>
+     * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number
+     * of Elastic Fabric Adapters (EFAs) per instance. (<code>true</code> |
+     * <code>false</code>).</p> </li> <li> <p> <code>network-info.efa-supported</code>
+     * - Indicates whether the instance type supports Elastic Fabric Adapter (EFA)
+     * (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
+     * <code>network-info.ena-support</code> - Indicates whether Elastic Network
+     * Adapter (ENA) is supported or required (<code>required</code> |
+     * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>network-info.ipv4-addresses-per-interface</code> - The maximum number of
+     * private IPv4 addresses per network interface.</p> </li> <li> <p>
+     * <code>network-info.ipv6-addresses-per-interface</code> - The maximum number of
+     * private IPv6 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-supported</code> - Indicates whether the instance type
      * supports IPv6 (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of
@@ -280,15 +283,18 @@ namespace Model
      * <li> <p> <code>instance-type</code> - The instance type (for example
      * <code>c5.2xlarge</code> or c5*).</p> </li> <li> <p>
      * <code>memory-info.size-in-mib</code> - The memory size.</p> </li> <li> <p>
-     * <code>network-info.efa-supported</code> - Indicates whether the instance type
-     * supports Elastic Fabric Adapter (EFA) (<code>true</code> |
-     * <code>false</code>).</p> </li> <li> <p> <code>network-info.ena-support</code> -
-     * Indicates whether Elastic Network Adapter (ENA) is supported or required
-     * (<code>required</code> | <code>supported</code> | <code>unsupported</code>).</p>
-     * </li> <li> <p> <code>network-info.ipv4-addresses-per-interface</code> - The
-     * maximum number of private IPv4 addresses per network interface.</p> </li> <li>
-     * <p> <code>network-info.ipv6-addresses-per-interface</code> - The maximum number
-     * of private IPv6 addresses per network interface.</p> </li> <li> <p>
+     * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number
+     * of Elastic Fabric Adapters (EFAs) per instance. (<code>true</code> |
+     * <code>false</code>).</p> </li> <li> <p> <code>network-info.efa-supported</code>
+     * - Indicates whether the instance type supports Elastic Fabric Adapter (EFA)
+     * (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
+     * <code>network-info.ena-support</code> - Indicates whether Elastic Network
+     * Adapter (ENA) is supported or required (<code>required</code> |
+     * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>network-info.ipv4-addresses-per-interface</code> - The maximum number of
+     * private IPv4 addresses per network interface.</p> </li> <li> <p>
+     * <code>network-info.ipv6-addresses-per-interface</code> - The maximum number of
+     * private IPv6 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-supported</code> - Indicates whether the instance type
      * supports IPv6 (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of
@@ -375,15 +381,18 @@ namespace Model
      * <li> <p> <code>instance-type</code> - The instance type (for example
      * <code>c5.2xlarge</code> or c5*).</p> </li> <li> <p>
      * <code>memory-info.size-in-mib</code> - The memory size.</p> </li> <li> <p>
-     * <code>network-info.efa-supported</code> - Indicates whether the instance type
-     * supports Elastic Fabric Adapter (EFA) (<code>true</code> |
-     * <code>false</code>).</p> </li> <li> <p> <code>network-info.ena-support</code> -
-     * Indicates whether Elastic Network Adapter (ENA) is supported or required
-     * (<code>required</code> | <code>supported</code> | <code>unsupported</code>).</p>
-     * </li> <li> <p> <code>network-info.ipv4-addresses-per-interface</code> - The
-     * maximum number of private IPv4 addresses per network interface.</p> </li> <li>
-     * <p> <code>network-info.ipv6-addresses-per-interface</code> - The maximum number
-     * of private IPv6 addresses per network interface.</p> </li> <li> <p>
+     * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number
+     * of Elastic Fabric Adapters (EFAs) per instance. (<code>true</code> |
+     * <code>false</code>).</p> </li> <li> <p> <code>network-info.efa-supported</code>
+     * - Indicates whether the instance type supports Elastic Fabric Adapter (EFA)
+     * (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
+     * <code>network-info.ena-support</code> - Indicates whether Elastic Network
+     * Adapter (ENA) is supported or required (<code>required</code> |
+     * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>network-info.ipv4-addresses-per-interface</code> - The maximum number of
+     * private IPv4 addresses per network interface.</p> </li> <li> <p>
+     * <code>network-info.ipv6-addresses-per-interface</code> - The maximum number of
+     * private IPv6 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-supported</code> - Indicates whether the instance type
      * supports IPv6 (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of
@@ -470,15 +479,18 @@ namespace Model
      * <li> <p> <code>instance-type</code> - The instance type (for example
      * <code>c5.2xlarge</code> or c5*).</p> </li> <li> <p>
      * <code>memory-info.size-in-mib</code> - The memory size.</p> </li> <li> <p>
-     * <code>network-info.efa-supported</code> - Indicates whether the instance type
-     * supports Elastic Fabric Adapter (EFA) (<code>true</code> |
-     * <code>false</code>).</p> </li> <li> <p> <code>network-info.ena-support</code> -
-     * Indicates whether Elastic Network Adapter (ENA) is supported or required
-     * (<code>required</code> | <code>supported</code> | <code>unsupported</code>).</p>
-     * </li> <li> <p> <code>network-info.ipv4-addresses-per-interface</code> - The
-     * maximum number of private IPv4 addresses per network interface.</p> </li> <li>
-     * <p> <code>network-info.ipv6-addresses-per-interface</code> - The maximum number
-     * of private IPv6 addresses per network interface.</p> </li> <li> <p>
+     * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number
+     * of Elastic Fabric Adapters (EFAs) per instance. (<code>true</code> |
+     * <code>false</code>).</p> </li> <li> <p> <code>network-info.efa-supported</code>
+     * - Indicates whether the instance type supports Elastic Fabric Adapter (EFA)
+     * (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
+     * <code>network-info.ena-support</code> - Indicates whether Elastic Network
+     * Adapter (ENA) is supported or required (<code>required</code> |
+     * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>network-info.ipv4-addresses-per-interface</code> - The maximum number of
+     * private IPv4 addresses per network interface.</p> </li> <li> <p>
+     * <code>network-info.ipv6-addresses-per-interface</code> - The maximum number of
+     * private IPv6 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-supported</code> - Indicates whether the instance type
      * supports IPv6 (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of
@@ -565,15 +577,18 @@ namespace Model
      * <li> <p> <code>instance-type</code> - The instance type (for example
      * <code>c5.2xlarge</code> or c5*).</p> </li> <li> <p>
      * <code>memory-info.size-in-mib</code> - The memory size.</p> </li> <li> <p>
-     * <code>network-info.efa-supported</code> - Indicates whether the instance type
-     * supports Elastic Fabric Adapter (EFA) (<code>true</code> |
-     * <code>false</code>).</p> </li> <li> <p> <code>network-info.ena-support</code> -
-     * Indicates whether Elastic Network Adapter (ENA) is supported or required
-     * (<code>required</code> | <code>supported</code> | <code>unsupported</code>).</p>
-     * </li> <li> <p> <code>network-info.ipv4-addresses-per-interface</code> - The
-     * maximum number of private IPv4 addresses per network interface.</p> </li> <li>
-     * <p> <code>network-info.ipv6-addresses-per-interface</code> - The maximum number
-     * of private IPv6 addresses per network interface.</p> </li> <li> <p>
+     * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number
+     * of Elastic Fabric Adapters (EFAs) per instance. (<code>true</code> |
+     * <code>false</code>).</p> </li> <li> <p> <code>network-info.efa-supported</code>
+     * - Indicates whether the instance type supports Elastic Fabric Adapter (EFA)
+     * (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
+     * <code>network-info.ena-support</code> - Indicates whether Elastic Network
+     * Adapter (ENA) is supported or required (<code>required</code> |
+     * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>network-info.ipv4-addresses-per-interface</code> - The maximum number of
+     * private IPv4 addresses per network interface.</p> </li> <li> <p>
+     * <code>network-info.ipv6-addresses-per-interface</code> - The maximum number of
+     * private IPv6 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-supported</code> - Indicates whether the instance type
      * supports IPv6 (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of
@@ -660,15 +675,18 @@ namespace Model
      * <li> <p> <code>instance-type</code> - The instance type (for example
      * <code>c5.2xlarge</code> or c5*).</p> </li> <li> <p>
      * <code>memory-info.size-in-mib</code> - The memory size.</p> </li> <li> <p>
-     * <code>network-info.efa-supported</code> - Indicates whether the instance type
-     * supports Elastic Fabric Adapter (EFA) (<code>true</code> |
-     * <code>false</code>).</p> </li> <li> <p> <code>network-info.ena-support</code> -
-     * Indicates whether Elastic Network Adapter (ENA) is supported or required
-     * (<code>required</code> | <code>supported</code> | <code>unsupported</code>).</p>
-     * </li> <li> <p> <code>network-info.ipv4-addresses-per-interface</code> - The
-     * maximum number of private IPv4 addresses per network interface.</p> </li> <li>
-     * <p> <code>network-info.ipv6-addresses-per-interface</code> - The maximum number
-     * of private IPv6 addresses per network interface.</p> </li> <li> <p>
+     * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number
+     * of Elastic Fabric Adapters (EFAs) per instance. (<code>true</code> |
+     * <code>false</code>).</p> </li> <li> <p> <code>network-info.efa-supported</code>
+     * - Indicates whether the instance type supports Elastic Fabric Adapter (EFA)
+     * (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
+     * <code>network-info.ena-support</code> - Indicates whether Elastic Network
+     * Adapter (ENA) is supported or required (<code>required</code> |
+     * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>network-info.ipv4-addresses-per-interface</code> - The maximum number of
+     * private IPv4 addresses per network interface.</p> </li> <li> <p>
+     * <code>network-info.ipv6-addresses-per-interface</code> - The maximum number of
+     * private IPv6 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-supported</code> - Indicates whether the instance type
      * supports IPv6 (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of
@@ -755,15 +773,18 @@ namespace Model
      * <li> <p> <code>instance-type</code> - The instance type (for example
      * <code>c5.2xlarge</code> or c5*).</p> </li> <li> <p>
      * <code>memory-info.size-in-mib</code> - The memory size.</p> </li> <li> <p>
-     * <code>network-info.efa-supported</code> - Indicates whether the instance type
-     * supports Elastic Fabric Adapter (EFA) (<code>true</code> |
-     * <code>false</code>).</p> </li> <li> <p> <code>network-info.ena-support</code> -
-     * Indicates whether Elastic Network Adapter (ENA) is supported or required
-     * (<code>required</code> | <code>supported</code> | <code>unsupported</code>).</p>
-     * </li> <li> <p> <code>network-info.ipv4-addresses-per-interface</code> - The
-     * maximum number of private IPv4 addresses per network interface.</p> </li> <li>
-     * <p> <code>network-info.ipv6-addresses-per-interface</code> - The maximum number
-     * of private IPv6 addresses per network interface.</p> </li> <li> <p>
+     * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number
+     * of Elastic Fabric Adapters (EFAs) per instance. (<code>true</code> |
+     * <code>false</code>).</p> </li> <li> <p> <code>network-info.efa-supported</code>
+     * - Indicates whether the instance type supports Elastic Fabric Adapter (EFA)
+     * (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
+     * <code>network-info.ena-support</code> - Indicates whether Elastic Network
+     * Adapter (ENA) is supported or required (<code>required</code> |
+     * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>network-info.ipv4-addresses-per-interface</code> - The maximum number of
+     * private IPv4 addresses per network interface.</p> </li> <li> <p>
+     * <code>network-info.ipv6-addresses-per-interface</code> - The maximum number of
+     * private IPv6 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-supported</code> - Indicates whether the instance type
      * supports IPv6 (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of
@@ -850,15 +871,18 @@ namespace Model
      * <li> <p> <code>instance-type</code> - The instance type (for example
      * <code>c5.2xlarge</code> or c5*).</p> </li> <li> <p>
      * <code>memory-info.size-in-mib</code> - The memory size.</p> </li> <li> <p>
-     * <code>network-info.efa-supported</code> - Indicates whether the instance type
-     * supports Elastic Fabric Adapter (EFA) (<code>true</code> |
-     * <code>false</code>).</p> </li> <li> <p> <code>network-info.ena-support</code> -
-     * Indicates whether Elastic Network Adapter (ENA) is supported or required
-     * (<code>required</code> | <code>supported</code> | <code>unsupported</code>).</p>
-     * </li> <li> <p> <code>network-info.ipv4-addresses-per-interface</code> - The
-     * maximum number of private IPv4 addresses per network interface.</p> </li> <li>
-     * <p> <code>network-info.ipv6-addresses-per-interface</code> - The maximum number
-     * of private IPv6 addresses per network interface.</p> </li> <li> <p>
+     * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number
+     * of Elastic Fabric Adapters (EFAs) per instance. (<code>true</code> |
+     * <code>false</code>).</p> </li> <li> <p> <code>network-info.efa-supported</code>
+     * - Indicates whether the instance type supports Elastic Fabric Adapter (EFA)
+     * (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
+     * <code>network-info.ena-support</code> - Indicates whether Elastic Network
+     * Adapter (ENA) is supported or required (<code>required</code> |
+     * <code>supported</code> | <code>unsupported</code>).</p> </li> <li> <p>
+     * <code>network-info.ipv4-addresses-per-interface</code> - The maximum number of
+     * private IPv4 addresses per network interface.</p> </li> <li> <p>
+     * <code>network-info.ipv6-addresses-per-interface</code> - The maximum number of
+     * private IPv6 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-supported</code> - Indicates whether the instance type
      * supports IPv6 (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of

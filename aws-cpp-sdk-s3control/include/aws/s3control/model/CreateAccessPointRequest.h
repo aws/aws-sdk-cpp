@@ -296,22 +296,40 @@ namespace Model
     inline CreateAccessPointRequest& WithVpcConfiguration(VpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p> The <code>PublicAccessBlock</code> configuration that you want to apply to
+     * the access point. </p>
+     */
     inline const PublicAccessBlockConfiguration& GetPublicAccessBlockConfiguration() const{ return m_publicAccessBlockConfiguration; }
 
-    
+    /**
+     * <p> The <code>PublicAccessBlock</code> configuration that you want to apply to
+     * the access point. </p>
+     */
     inline bool PublicAccessBlockConfigurationHasBeenSet() const { return m_publicAccessBlockConfigurationHasBeenSet; }
 
-    
+    /**
+     * <p> The <code>PublicAccessBlock</code> configuration that you want to apply to
+     * the access point. </p>
+     */
     inline void SetPublicAccessBlockConfiguration(const PublicAccessBlockConfiguration& value) { m_publicAccessBlockConfigurationHasBeenSet = true; m_publicAccessBlockConfiguration = value; }
 
-    
+    /**
+     * <p> The <code>PublicAccessBlock</code> configuration that you want to apply to
+     * the access point. </p>
+     */
     inline void SetPublicAccessBlockConfiguration(PublicAccessBlockConfiguration&& value) { m_publicAccessBlockConfigurationHasBeenSet = true; m_publicAccessBlockConfiguration = std::move(value); }
 
-    
+    /**
+     * <p> The <code>PublicAccessBlock</code> configuration that you want to apply to
+     * the access point. </p>
+     */
     inline CreateAccessPointRequest& WithPublicAccessBlockConfiguration(const PublicAccessBlockConfiguration& value) { SetPublicAccessBlockConfiguration(value); return *this;}
 
-    
+    /**
+     * <p> The <code>PublicAccessBlock</code> configuration that you want to apply to
+     * the access point. </p>
+     */
     inline CreateAccessPointRequest& WithPublicAccessBlockConfiguration(PublicAccessBlockConfiguration&& value) { SetPublicAccessBlockConfiguration(std::move(value)); return *this;}
 
   private:

@@ -3142,7 +3142,7 @@ namespace Model
 
         /**
          * <p>Lists the resource record sets in a specified hosted zone.</p> <p>
-         * <code>ListResourceRecordSets</code> returns up to 100 resource record sets at a
+         * <code>ListResourceRecordSets</code> returns up to 300 resource record sets at a
          * time in ASCII order, beginning at a position specified by the <code>name</code>
          * and <code>type</code> elements.</p> <p> <b>Sort order</b> </p> <p>
          * <code>ListResourceRecordSets</code> sorts results first by DNS name with the
@@ -3188,7 +3188,7 @@ namespace Model
 
         /**
          * <p>Lists the resource record sets in a specified hosted zone.</p> <p>
-         * <code>ListResourceRecordSets</code> returns up to 100 resource record sets at a
+         * <code>ListResourceRecordSets</code> returns up to 300 resource record sets at a
          * time in ASCII order, beginning at a position specified by the <code>name</code>
          * and <code>type</code> elements.</p> <p> <b>Sort order</b> </p> <p>
          * <code>ListResourceRecordSets</code> sorts results first by DNS name with the
@@ -3236,7 +3236,7 @@ namespace Model
 
         /**
          * <p>Lists the resource record sets in a specified hosted zone.</p> <p>
-         * <code>ListResourceRecordSets</code> returns up to 100 resource record sets at a
+         * <code>ListResourceRecordSets</code> returns up to 300 resource record sets at a
          * time in ASCII order, beginning at a position specified by the <code>name</code>
          * and <code>type</code> elements.</p> <p> <b>Sort order</b> </p> <p>
          * <code>ListResourceRecordSets</code> sorts results first by DNS name with the

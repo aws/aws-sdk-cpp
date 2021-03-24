@@ -207,7 +207,8 @@ namespace Model
      * &lt;Code&gt; tag of the error XML response for a corresponding
      * <code>GetObject</code> call. Cannot be used with a successful
      * <code>StatusCode</code> header or when the transformed object is provided in the
-     * body.</p>
+     * body. All error codes from S3 are sentence-cased. Regex value is
+     * "^[A-Z][a-zA-Z]+$".</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
 
@@ -216,7 +217,8 @@ namespace Model
      * &lt;Code&gt; tag of the error XML response for a corresponding
      * <code>GetObject</code> call. Cannot be used with a successful
      * <code>StatusCode</code> header or when the transformed object is provided in the
-     * body.</p>
+     * body. All error codes from S3 are sentence-cased. Regex value is
+     * "^[A-Z][a-zA-Z]+$".</p>
      */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
@@ -225,7 +227,8 @@ namespace Model
      * &lt;Code&gt; tag of the error XML response for a corresponding
      * <code>GetObject</code> call. Cannot be used with a successful
      * <code>StatusCode</code> header or when the transformed object is provided in the
-     * body.</p>
+     * body. All error codes from S3 are sentence-cased. Regex value is
+     * "^[A-Z][a-zA-Z]+$".</p>
      */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
@@ -234,7 +237,8 @@ namespace Model
      * &lt;Code&gt; tag of the error XML response for a corresponding
      * <code>GetObject</code> call. Cannot be used with a successful
      * <code>StatusCode</code> header or when the transformed object is provided in the
-     * body.</p>
+     * body. All error codes from S3 are sentence-cased. Regex value is
+     * "^[A-Z][a-zA-Z]+$".</p>
      */
     inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
@@ -243,7 +247,8 @@ namespace Model
      * &lt;Code&gt; tag of the error XML response for a corresponding
      * <code>GetObject</code> call. Cannot be used with a successful
      * <code>StatusCode</code> header or when the transformed object is provided in the
-     * body.</p>
+     * body. All error codes from S3 are sentence-cased. Regex value is
+     * "^[A-Z][a-zA-Z]+$".</p>
      */
     inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
 
@@ -252,7 +257,8 @@ namespace Model
      * &lt;Code&gt; tag of the error XML response for a corresponding
      * <code>GetObject</code> call. Cannot be used with a successful
      * <code>StatusCode</code> header or when the transformed object is provided in the
-     * body.</p>
+     * body. All error codes from S3 are sentence-cased. Regex value is
+     * "^[A-Z][a-zA-Z]+$".</p>
      */
     inline WriteGetObjectResponseRequest& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
 
@@ -261,7 +267,8 @@ namespace Model
      * &lt;Code&gt; tag of the error XML response for a corresponding
      * <code>GetObject</code> call. Cannot be used with a successful
      * <code>StatusCode</code> header or when the transformed object is provided in the
-     * body.</p>
+     * body. All error codes from S3 are sentence-cased. Regex value is
+     * "^[A-Z][a-zA-Z]+$".</p>
      */
     inline WriteGetObjectResponseRequest& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
 
@@ -270,7 +277,8 @@ namespace Model
      * &lt;Code&gt; tag of the error XML response for a corresponding
      * <code>GetObject</code> call. Cannot be used with a successful
      * <code>StatusCode</code> header or when the transformed object is provided in the
-     * body.</p>
+     * body. All error codes from S3 are sentence-cased. Regex value is
+     * "^[A-Z][a-zA-Z]+$".</p>
      */
     inline WriteGetObjectResponseRequest& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
 

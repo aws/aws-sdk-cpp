@@ -156,8 +156,7 @@ namespace Model
      * combination. For more information about when Amazon S3 considers a bucket or
      * object public, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The
-     * Meaning of "Public"</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const PublicAccessBlockConfiguration& GetPublicAccessBlockConfiguration() const{ return m_publicAccessBlockConfiguration; }
 
@@ -167,8 +166,7 @@ namespace Model
      * combination. For more information about when Amazon S3 considers a bucket or
      * object public, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The
-     * Meaning of "Public"</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool PublicAccessBlockConfigurationHasBeenSet() const { return m_publicAccessBlockConfigurationHasBeenSet; }
 
@@ -178,8 +176,7 @@ namespace Model
      * combination. For more information about when Amazon S3 considers a bucket or
      * object public, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The
-     * Meaning of "Public"</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetPublicAccessBlockConfiguration(const PublicAccessBlockConfiguration& value) { m_publicAccessBlockConfigurationHasBeenSet = true; m_publicAccessBlockConfiguration = value; }
 
@@ -189,8 +186,7 @@ namespace Model
      * combination. For more information about when Amazon S3 considers a bucket or
      * object public, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The
-     * Meaning of "Public"</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetPublicAccessBlockConfiguration(PublicAccessBlockConfiguration&& value) { m_publicAccessBlockConfigurationHasBeenSet = true; m_publicAccessBlockConfiguration = std::move(value); }
 
@@ -200,8 +196,7 @@ namespace Model
      * combination. For more information about when Amazon S3 considers a bucket or
      * object public, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The
-     * Meaning of "Public"</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline PutPublicAccessBlockRequest& WithPublicAccessBlockConfiguration(const PublicAccessBlockConfiguration& value) { SetPublicAccessBlockConfiguration(value); return *this;}
 
@@ -211,8 +206,7 @@ namespace Model
      * combination. For more information about when Amazon S3 considers a bucket or
      * object public, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The
-     * Meaning of "Public"</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline PutPublicAccessBlockRequest& WithPublicAccessBlockConfiguration(PublicAccessBlockConfiguration&& value) { SetPublicAccessBlockConfiguration(std::move(value)); return *this;}
 

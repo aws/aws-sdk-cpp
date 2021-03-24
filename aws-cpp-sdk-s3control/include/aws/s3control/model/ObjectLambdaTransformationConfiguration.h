@@ -41,50 +41,50 @@ namespace Model
 
 
     /**
-     * <p>A container for the action of an Object Lambda Access Point
-     * configuration.</p>
+     * <p>A container for the action of an Object Lambda Access Point configuration.
+     * Valid input is <code>GetObject</code>.</p>
      */
     inline const Aws::Vector<ObjectLambdaTransformationConfigurationAction>& GetActions() const{ return m_actions; }
 
     /**
-     * <p>A container for the action of an Object Lambda Access Point
-     * configuration.</p>
+     * <p>A container for the action of an Object Lambda Access Point configuration.
+     * Valid input is <code>GetObject</code>.</p>
      */
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
 
     /**
-     * <p>A container for the action of an Object Lambda Access Point
-     * configuration.</p>
+     * <p>A container for the action of an Object Lambda Access Point configuration.
+     * Valid input is <code>GetObject</code>.</p>
      */
     inline void SetActions(const Aws::Vector<ObjectLambdaTransformationConfigurationAction>& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
     /**
-     * <p>A container for the action of an Object Lambda Access Point
-     * configuration.</p>
+     * <p>A container for the action of an Object Lambda Access Point configuration.
+     * Valid input is <code>GetObject</code>.</p>
      */
     inline void SetActions(Aws::Vector<ObjectLambdaTransformationConfigurationAction>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
 
     /**
-     * <p>A container for the action of an Object Lambda Access Point
-     * configuration.</p>
+     * <p>A container for the action of an Object Lambda Access Point configuration.
+     * Valid input is <code>GetObject</code>.</p>
      */
     inline ObjectLambdaTransformationConfiguration& WithActions(const Aws::Vector<ObjectLambdaTransformationConfigurationAction>& value) { SetActions(value); return *this;}
 
     /**
-     * <p>A container for the action of an Object Lambda Access Point
-     * configuration.</p>
+     * <p>A container for the action of an Object Lambda Access Point configuration.
+     * Valid input is <code>GetObject</code>.</p>
      */
     inline ObjectLambdaTransformationConfiguration& WithActions(Aws::Vector<ObjectLambdaTransformationConfigurationAction>&& value) { SetActions(std::move(value)); return *this;}
 
     /**
-     * <p>A container for the action of an Object Lambda Access Point
-     * configuration.</p>
+     * <p>A container for the action of an Object Lambda Access Point configuration.
+     * Valid input is <code>GetObject</code>.</p>
      */
     inline ObjectLambdaTransformationConfiguration& AddActions(const ObjectLambdaTransformationConfigurationAction& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 
     /**
-     * <p>A container for the action of an Object Lambda Access Point
-     * configuration.</p>
+     * <p>A container for the action of an Object Lambda Access Point configuration.
+     * Valid input is <code>GetObject</code>.</p>
      */
     inline ObjectLambdaTransformationConfiguration& AddActions(ObjectLambdaTransformationConfigurationAction&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 

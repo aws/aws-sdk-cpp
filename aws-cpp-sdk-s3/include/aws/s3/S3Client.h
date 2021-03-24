@@ -2809,16 +2809,16 @@ namespace Aws
         /**
          * <p>Removes the null version (if there is one) of an object and inserts a delete
          * marker, which becomes the latest version of the object. If there isn't a null
-         * version, Amazon S3 does not remove any objects.</p> <p>To remove a specific
-         * version, you must be the bucket owner and you must use the version Id
-         * subresource. Using this subresource permanently deletes the version. If the
-         * object deleted is a delete marker, Amazon S3 sets the response header,
-         * <code>x-amz-delete-marker</code>, to true. </p> <p>If the object you want to
-         * delete is in a bucket where the bucket versioning configuration is MFA Delete
-         * enabled, you must include the <code>x-amz-mfa</code> request header in the
-         * DELETE <code>versionId</code> request. Requests that include
-         * <code>x-amz-mfa</code> must use HTTPS. </p> <p> For more information about MFA
-         * Delete, see <a
+         * version, Amazon S3 does not remove any objects but will still respond that the
+         * command was successful.</p> <p>To remove a specific version, you must be the
+         * bucket owner and you must use the version Id subresource. Using this subresource
+         * permanently deletes the version. If the object deleted is a delete marker,
+         * Amazon S3 sets the response header, <code>x-amz-delete-marker</code>, to true.
+         * </p> <p>If the object you want to delete is in a bucket where the bucket
+         * versioning configuration is MFA Delete enabled, you must include the
+         * <code>x-amz-mfa</code> request header in the DELETE <code>versionId</code>
+         * request. Requests that include <code>x-amz-mfa</code> must use HTTPS. </p> <p>
+         * For more information about MFA Delete, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMFADelete.html">Using
          * MFA Delete</a>. To see sample requests that use versioning, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETE.html#ExampleVersionObjectDelete">Sample
@@ -2840,16 +2840,16 @@ namespace Aws
         /**
          * <p>Removes the null version (if there is one) of an object and inserts a delete
          * marker, which becomes the latest version of the object. If there isn't a null
-         * version, Amazon S3 does not remove any objects.</p> <p>To remove a specific
-         * version, you must be the bucket owner and you must use the version Id
-         * subresource. Using this subresource permanently deletes the version. If the
-         * object deleted is a delete marker, Amazon S3 sets the response header,
-         * <code>x-amz-delete-marker</code>, to true. </p> <p>If the object you want to
-         * delete is in a bucket where the bucket versioning configuration is MFA Delete
-         * enabled, you must include the <code>x-amz-mfa</code> request header in the
-         * DELETE <code>versionId</code> request. Requests that include
-         * <code>x-amz-mfa</code> must use HTTPS. </p> <p> For more information about MFA
-         * Delete, see <a
+         * version, Amazon S3 does not remove any objects but will still respond that the
+         * command was successful.</p> <p>To remove a specific version, you must be the
+         * bucket owner and you must use the version Id subresource. Using this subresource
+         * permanently deletes the version. If the object deleted is a delete marker,
+         * Amazon S3 sets the response header, <code>x-amz-delete-marker</code>, to true.
+         * </p> <p>If the object you want to delete is in a bucket where the bucket
+         * versioning configuration is MFA Delete enabled, you must include the
+         * <code>x-amz-mfa</code> request header in the DELETE <code>versionId</code>
+         * request. Requests that include <code>x-amz-mfa</code> must use HTTPS. </p> <p>
+         * For more information about MFA Delete, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMFADelete.html">Using
          * MFA Delete</a>. To see sample requests that use versioning, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETE.html#ExampleVersionObjectDelete">Sample
@@ -2873,16 +2873,16 @@ namespace Aws
         /**
          * <p>Removes the null version (if there is one) of an object and inserts a delete
          * marker, which becomes the latest version of the object. If there isn't a null
-         * version, Amazon S3 does not remove any objects.</p> <p>To remove a specific
-         * version, you must be the bucket owner and you must use the version Id
-         * subresource. Using this subresource permanently deletes the version. If the
-         * object deleted is a delete marker, Amazon S3 sets the response header,
-         * <code>x-amz-delete-marker</code>, to true. </p> <p>If the object you want to
-         * delete is in a bucket where the bucket versioning configuration is MFA Delete
-         * enabled, you must include the <code>x-amz-mfa</code> request header in the
-         * DELETE <code>versionId</code> request. Requests that include
-         * <code>x-amz-mfa</code> must use HTTPS. </p> <p> For more information about MFA
-         * Delete, see <a
+         * version, Amazon S3 does not remove any objects but will still respond that the
+         * command was successful.</p> <p>To remove a specific version, you must be the
+         * bucket owner and you must use the version Id subresource. Using this subresource
+         * permanently deletes the version. If the object deleted is a delete marker,
+         * Amazon S3 sets the response header, <code>x-amz-delete-marker</code>, to true.
+         * </p> <p>If the object you want to delete is in a bucket where the bucket
+         * versioning configuration is MFA Delete enabled, you must include the
+         * <code>x-amz-mfa</code> request header in the DELETE <code>versionId</code>
+         * request. Requests that include <code>x-amz-mfa</code> must use HTTPS. </p> <p>
+         * For more information about MFA Delete, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMFADelete.html">Using
          * MFA Delete</a>. To see sample requests that use versioning, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETE.html#ExampleVersionObjectDelete">Sample
@@ -6121,12 +6121,14 @@ namespace Aws
         /**
          * <p>Returns metadata about all versions of the objects in a bucket. You can also
          * use request parameters as selection criteria to return metadata about a subset
-         * of all the object versions. </p>  <p> A 200 OK response can contain valid
-         * or invalid XML. Make sure to design your application to parse the contents of
-         * the response and handle it appropriately.</p>  <p>To use this operation,
-         * you must have READ access to the bucket.</p> <p>This action is not supported by
-         * Amazon S3 on Outposts.</p> <p>The following operations are related to
-         * <code>ListObjectVersions</code>:</p> <ul> <li> <p> <a
+         * of all the object versions.</p>  <p> To use this operation, you must
+         * have permissions to perform the <code>s3:ListBucketVersions</code> action. Be
+         * aware of the name difference. </p>   <p> A 200 OK response can
+         * contain valid or invalid XML. Make sure to design your application to parse the
+         * contents of the response and handle it appropriately.</p>  <p>To use this
+         * operation, you must have READ access to the bucket.</p> <p>This action is not
+         * supported by Amazon S3 on Outposts.</p> <p>The following operations are related
+         * to <code>ListObjectVersions</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
@@ -6143,12 +6145,14 @@ namespace Aws
         /**
          * <p>Returns metadata about all versions of the objects in a bucket. You can also
          * use request parameters as selection criteria to return metadata about a subset
-         * of all the object versions. </p>  <p> A 200 OK response can contain valid
-         * or invalid XML. Make sure to design your application to parse the contents of
-         * the response and handle it appropriately.</p>  <p>To use this operation,
-         * you must have READ access to the bucket.</p> <p>This action is not supported by
-         * Amazon S3 on Outposts.</p> <p>The following operations are related to
-         * <code>ListObjectVersions</code>:</p> <ul> <li> <p> <a
+         * of all the object versions.</p>  <p> To use this operation, you must
+         * have permissions to perform the <code>s3:ListBucketVersions</code> action. Be
+         * aware of the name difference. </p>   <p> A 200 OK response can
+         * contain valid or invalid XML. Make sure to design your application to parse the
+         * contents of the response and handle it appropriately.</p>  <p>To use this
+         * operation, you must have READ access to the bucket.</p> <p>This action is not
+         * supported by Amazon S3 on Outposts.</p> <p>The following operations are related
+         * to <code>ListObjectVersions</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
@@ -6167,12 +6171,14 @@ namespace Aws
         /**
          * <p>Returns metadata about all versions of the objects in a bucket. You can also
          * use request parameters as selection criteria to return metadata about a subset
-         * of all the object versions. </p>  <p> A 200 OK response can contain valid
-         * or invalid XML. Make sure to design your application to parse the contents of
-         * the response and handle it appropriately.</p>  <p>To use this operation,
-         * you must have READ access to the bucket.</p> <p>This action is not supported by
-         * Amazon S3 on Outposts.</p> <p>The following operations are related to
-         * <code>ListObjectVersions</code>:</p> <ul> <li> <p> <a
+         * of all the object versions.</p>  <p> To use this operation, you must
+         * have permissions to perform the <code>s3:ListBucketVersions</code> action. Be
+         * aware of the name difference. </p>   <p> A 200 OK response can
+         * contain valid or invalid XML. Make sure to design your application to parse the
+         * contents of the response and handle it appropriately.</p>  <p>To use this
+         * operation, you must have READ access to the bucket.</p> <p>This action is not
+         * supported by Amazon S3 on Outposts.</p> <p>The following operations are related
+         * to <code>ListObjectVersions</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
@@ -8848,13 +8854,12 @@ namespace Aws
          * with a retention period configured using Amazon S3 Object Lock. For more
          * information about Amazon S3 Object Lock, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html">Amazon
-         * S3 Object Lock Overview</a> in the <i>Amazon Simple Storage Service Developer
-         * Guide</i>. </p>  <p> <b>Server-side Encryption</b> </p> <p>You can
-         * optionally request server-side encryption. With server-side encryption, Amazon
-         * S3 encrypts your data as it writes it to disks in its data centers and decrypts
-         * the data when you access it. You have the option to provide your own encryption
-         * key or use AWS managed encryption keys (SSE-S3 or SSE-KMS). For more
-         * information, see <a
+         * S3 Object Lock Overview</a> in the <i>Amazon S3 User Guide</i>. </p>  <p>
+         * <b>Server-side Encryption</b> </p> <p>You can optionally request server-side
+         * encryption. With server-side encryption, Amazon S3 encrypts your data as it
+         * writes it to disks in its data centers and decrypts the data when you access it.
+         * You have the option to provide your own encryption key or use AWS managed
+         * encryption keys (SSE-S3 or SSE-KMS). For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
          * Server-Side Encryption</a>.</p> <p>If you request server-side encryption using
          * AWS Key Management Service (SSE-KMS), you can enable an S3 Bucket Key at the
@@ -8915,13 +8920,12 @@ namespace Aws
          * with a retention period configured using Amazon S3 Object Lock. For more
          * information about Amazon S3 Object Lock, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html">Amazon
-         * S3 Object Lock Overview</a> in the <i>Amazon Simple Storage Service Developer
-         * Guide</i>. </p>  <p> <b>Server-side Encryption</b> </p> <p>You can
-         * optionally request server-side encryption. With server-side encryption, Amazon
-         * S3 encrypts your data as it writes it to disks in its data centers and decrypts
-         * the data when you access it. You have the option to provide your own encryption
-         * key or use AWS managed encryption keys (SSE-S3 or SSE-KMS). For more
-         * information, see <a
+         * S3 Object Lock Overview</a> in the <i>Amazon S3 User Guide</i>. </p>  <p>
+         * <b>Server-side Encryption</b> </p> <p>You can optionally request server-side
+         * encryption. With server-side encryption, Amazon S3 encrypts your data as it
+         * writes it to disks in its data centers and decrypts the data when you access it.
+         * You have the option to provide your own encryption key or use AWS managed
+         * encryption keys (SSE-S3 or SSE-KMS). For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
          * Server-Side Encryption</a>.</p> <p>If you request server-side encryption using
          * AWS Key Management Service (SSE-KMS), you can enable an S3 Bucket Key at the
@@ -8984,13 +8988,12 @@ namespace Aws
          * with a retention period configured using Amazon S3 Object Lock. For more
          * information about Amazon S3 Object Lock, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html">Amazon
-         * S3 Object Lock Overview</a> in the <i>Amazon Simple Storage Service Developer
-         * Guide</i>. </p>  <p> <b>Server-side Encryption</b> </p> <p>You can
-         * optionally request server-side encryption. With server-side encryption, Amazon
-         * S3 encrypts your data as it writes it to disks in its data centers and decrypts
-         * the data when you access it. You have the option to provide your own encryption
-         * key or use AWS managed encryption keys (SSE-S3 or SSE-KMS). For more
-         * information, see <a
+         * S3 Object Lock Overview</a> in the <i>Amazon S3 User Guide</i>. </p>  <p>
+         * <b>Server-side Encryption</b> </p> <p>You can optionally request server-side
+         * encryption. With server-side encryption, Amazon S3 encrypts your data as it
+         * writes it to disks in its data centers and decrypts the data when you access it.
+         * You have the option to provide your own encryption key or use AWS managed
+         * encryption keys (SSE-S3 or SSE-KMS). For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
          * Server-Side Encryption</a>.</p> <p>If you request server-side encryption using
          * AWS Key Management Service (SSE-KMS), you can enable an S3 Bucket Key at the
@@ -9299,22 +9302,22 @@ namespace Aws
         virtual void PutObjectAclAsync(const Model::PutObjectAclRequest& request, const PutObjectAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Applies a Legal Hold configuration to the specified object.</p> <p>This
-         * action is not supported by Amazon S3 on Outposts.</p> <p class="title">
-         * <b>Related Resources</b> </p> <ul> <li> <p> <a
+         * <p>Applies a Legal Hold configuration to the specified object. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
-         * Objects</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Objects</a>.</p> <p>This action is not supported by Amazon S3 on
+         * Outposts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLegalHold">AWS
          * API Reference</a></p>
          */
         virtual Model::PutObjectLegalHoldOutcome PutObjectLegalHold(const Model::PutObjectLegalHoldRequest& request) const;
 
         /**
-         * <p>Applies a Legal Hold configuration to the specified object.</p> <p>This
-         * action is not supported by Amazon S3 on Outposts.</p> <p class="title">
-         * <b>Related Resources</b> </p> <ul> <li> <p> <a
+         * <p>Applies a Legal Hold configuration to the specified object. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
-         * Objects</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Objects</a>.</p> <p>This action is not supported by Amazon S3 on
+         * Outposts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLegalHold">AWS
          * API Reference</a></p>
          *
@@ -9323,11 +9326,11 @@ namespace Aws
         virtual Model::PutObjectLegalHoldOutcomeCallable PutObjectLegalHoldCallable(const Model::PutObjectLegalHoldRequest& request) const;
 
         /**
-         * <p>Applies a Legal Hold configuration to the specified object.</p> <p>This
-         * action is not supported by Amazon S3 on Outposts.</p> <p class="title">
-         * <b>Related Resources</b> </p> <ul> <li> <p> <a
+         * <p>Applies a Legal Hold configuration to the specified object. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
-         * Objects</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Objects</a>.</p> <p>This action is not supported by Amazon S3 on
+         * Outposts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLegalHold">AWS
          * API Reference</a></p>
          *
@@ -9338,12 +9341,15 @@ namespace Aws
         /**
          * <p>Places an Object Lock configuration on the specified bucket. The rule
          * specified in the Object Lock configuration will be applied by default to every
-         * new object placed in the specified bucket.</p>  <p>
-         * <code>DefaultRetention</code> requires either Days or Years. You can't specify
-         * both at the same time.</p>  <p class="title"> <b>Related Resources</b>
-         * </p> <ul> <li> <p> <a
+         * new object placed in the specified bucket. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
-         * Objects</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Objects</a>. </p>  <ul> <li> <p>The <code>DefaultRetention</code> settings
+         * require both a mode and a period.</p> </li> <li> <p>The
+         * <code>DefaultRetention</code> period can be either <code>Days</code> or
+         * <code>Years</code> but you must select one. You cannot specify <code>Days</code>
+         * and <code>Years</code> at the same time.</p> </li> <li> <p>You can only enable
+         * Object Lock for new buckets. If you want to turn on Object Lock for an existing
+         * bucket, contact AWS Support.</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLockConfiguration">AWS
          * API Reference</a></p>
          */
@@ -9352,12 +9358,15 @@ namespace Aws
         /**
          * <p>Places an Object Lock configuration on the specified bucket. The rule
          * specified in the Object Lock configuration will be applied by default to every
-         * new object placed in the specified bucket.</p>  <p>
-         * <code>DefaultRetention</code> requires either Days or Years. You can't specify
-         * both at the same time.</p>  <p class="title"> <b>Related Resources</b>
-         * </p> <ul> <li> <p> <a
+         * new object placed in the specified bucket. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
-         * Objects</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Objects</a>. </p>  <ul> <li> <p>The <code>DefaultRetention</code> settings
+         * require both a mode and a period.</p> </li> <li> <p>The
+         * <code>DefaultRetention</code> period can be either <code>Days</code> or
+         * <code>Years</code> but you must select one. You cannot specify <code>Days</code>
+         * and <code>Years</code> at the same time.</p> </li> <li> <p>You can only enable
+         * Object Lock for new buckets. If you want to turn on Object Lock for an existing
+         * bucket, contact AWS Support.</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLockConfiguration">AWS
          * API Reference</a></p>
          *
@@ -9368,12 +9377,15 @@ namespace Aws
         /**
          * <p>Places an Object Lock configuration on the specified bucket. The rule
          * specified in the Object Lock configuration will be applied by default to every
-         * new object placed in the specified bucket.</p>  <p>
-         * <code>DefaultRetention</code> requires either Days or Years. You can't specify
-         * both at the same time.</p>  <p class="title"> <b>Related Resources</b>
-         * </p> <ul> <li> <p> <a
+         * new object placed in the specified bucket. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
-         * Objects</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Objects</a>. </p>  <ul> <li> <p>The <code>DefaultRetention</code> settings
+         * require both a mode and a period.</p> </li> <li> <p>The
+         * <code>DefaultRetention</code> period can be either <code>Days</code> or
+         * <code>Years</code> but you must select one. You cannot specify <code>Days</code>
+         * and <code>Years</code> at the same time.</p> </li> <li> <p>You can only enable
+         * Object Lock for new buckets. If you want to turn on Object Lock for an existing
+         * bucket, contact AWS Support.</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLockConfiguration">AWS
          * API Reference</a></p>
          *
@@ -9382,22 +9394,22 @@ namespace Aws
         virtual void PutObjectLockConfigurationAsync(const Model::PutObjectLockConfigurationRequest& request, const PutObjectLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Places an Object Retention configuration on an object.</p> <p>This action is
-         * not supported by Amazon S3 on Outposts.</p> <p class="title"> <b>Related
-         * Resources</b> </p> <ul> <li> <p> <a
+         * <p>Places an Object Retention configuration on an object. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
-         * Objects</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Objects</a>. </p> <p>This action is not supported by Amazon S3 on
+         * Outposts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectRetention">AWS
          * API Reference</a></p>
          */
         virtual Model::PutObjectRetentionOutcome PutObjectRetention(const Model::PutObjectRetentionRequest& request) const;
 
         /**
-         * <p>Places an Object Retention configuration on an object.</p> <p>This action is
-         * not supported by Amazon S3 on Outposts.</p> <p class="title"> <b>Related
-         * Resources</b> </p> <ul> <li> <p> <a
+         * <p>Places an Object Retention configuration on an object. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
-         * Objects</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Objects</a>. </p> <p>This action is not supported by Amazon S3 on
+         * Outposts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectRetention">AWS
          * API Reference</a></p>
          *
@@ -9406,11 +9418,11 @@ namespace Aws
         virtual Model::PutObjectRetentionOutcomeCallable PutObjectRetentionCallable(const Model::PutObjectRetentionRequest& request) const;
 
         /**
-         * <p>Places an Object Retention configuration on an object.</p> <p>This action is
-         * not supported by Amazon S3 on Outposts.</p> <p class="title"> <b>Related
-         * Resources</b> </p> <ul> <li> <p> <a
+         * <p>Places an Object Retention configuration on an object. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking
-         * Objects</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Objects</a>. </p> <p>This action is not supported by Amazon S3 on
+         * Outposts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectRetention">AWS
          * API Reference</a></p>
          *
@@ -10891,8 +10903,29 @@ namespace Aws
          * can provide the same metadata when it internally invokes <code>GetObject</code>.
          * When <code>WriteGetObjectResponse</code> is called by a customer-owned Lambda
          * function, the metadata returned to the end user <code>GetObject</code> call
-         * might differ from what Amazon S3 would normally return.</p><p><h3>See Also:</h3>
-         * <a
+         * might differ from what Amazon S3 would normally return.</p> <p>AWS provides some
+         * prebuilt Lambda functions that you can use with S3 Object Lambda to detect and
+         * redact personally identifiable information (PII) and decompress S3 objects.
+         * These Lambda functions are available in the AWS Serverless Application
+         * Repository, and can be selected through the AWS Management Console when you
+         * create your Object Lambda Access Point.</p> <p>Example 1: PII Access Control -
+         * This Lambda function uses Amazon Comprehend, a natural language processing (NLP)
+         * service using machine learning to find insights and relationships in text. It
+         * automatically detects personally identifiable information (PII) such as names,
+         * addresses, dates, credit card numbers, and social security numbers from
+         * documents in your Amazon S3 bucket. </p> <p>Example 2: PII Redaction - This
+         * Lambda function uses Amazon Comprehend, a natural language processing (NLP)
+         * service using machine learning to find insights and relationships in text. It
+         * automatically redacts personally identifiable information (PII) such as names,
+         * addresses, dates, credit card numbers, and social security numbers from
+         * documents in your Amazon S3 bucket. </p> <p>Example 3: Decompression - The
+         * Lambda function S3ObjectLambdaDecompression, is equipped to decompress objects
+         * stored in S3 in one of six compressed file formats including bzip2, gzip,
+         * snappy, zlib, zstandard and ZIP. </p> <p>For information on how to view and use
+         * these functions, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/olap-examples.html">Using
+         * AWS built Lambda functions</a> in the <i>Amazon S3 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/WriteGetObjectResponse">AWS
          * API Reference</a></p>
          */
@@ -10913,8 +10946,29 @@ namespace Aws
          * can provide the same metadata when it internally invokes <code>GetObject</code>.
          * When <code>WriteGetObjectResponse</code> is called by a customer-owned Lambda
          * function, the metadata returned to the end user <code>GetObject</code> call
-         * might differ from what Amazon S3 would normally return.</p><p><h3>See Also:</h3>
-         * <a
+         * might differ from what Amazon S3 would normally return.</p> <p>AWS provides some
+         * prebuilt Lambda functions that you can use with S3 Object Lambda to detect and
+         * redact personally identifiable information (PII) and decompress S3 objects.
+         * These Lambda functions are available in the AWS Serverless Application
+         * Repository, and can be selected through the AWS Management Console when you
+         * create your Object Lambda Access Point.</p> <p>Example 1: PII Access Control -
+         * This Lambda function uses Amazon Comprehend, a natural language processing (NLP)
+         * service using machine learning to find insights and relationships in text. It
+         * automatically detects personally identifiable information (PII) such as names,
+         * addresses, dates, credit card numbers, and social security numbers from
+         * documents in your Amazon S3 bucket. </p> <p>Example 2: PII Redaction - This
+         * Lambda function uses Amazon Comprehend, a natural language processing (NLP)
+         * service using machine learning to find insights and relationships in text. It
+         * automatically redacts personally identifiable information (PII) such as names,
+         * addresses, dates, credit card numbers, and social security numbers from
+         * documents in your Amazon S3 bucket. </p> <p>Example 3: Decompression - The
+         * Lambda function S3ObjectLambdaDecompression, is equipped to decompress objects
+         * stored in S3 in one of six compressed file formats including bzip2, gzip,
+         * snappy, zlib, zstandard and ZIP. </p> <p>For information on how to view and use
+         * these functions, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/olap-examples.html">Using
+         * AWS built Lambda functions</a> in the <i>Amazon S3 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/WriteGetObjectResponse">AWS
          * API Reference</a></p>
          *
@@ -10937,8 +10991,29 @@ namespace Aws
          * can provide the same metadata when it internally invokes <code>GetObject</code>.
          * When <code>WriteGetObjectResponse</code> is called by a customer-owned Lambda
          * function, the metadata returned to the end user <code>GetObject</code> call
-         * might differ from what Amazon S3 would normally return.</p><p><h3>See Also:</h3>
-         * <a
+         * might differ from what Amazon S3 would normally return.</p> <p>AWS provides some
+         * prebuilt Lambda functions that you can use with S3 Object Lambda to detect and
+         * redact personally identifiable information (PII) and decompress S3 objects.
+         * These Lambda functions are available in the AWS Serverless Application
+         * Repository, and can be selected through the AWS Management Console when you
+         * create your Object Lambda Access Point.</p> <p>Example 1: PII Access Control -
+         * This Lambda function uses Amazon Comprehend, a natural language processing (NLP)
+         * service using machine learning to find insights and relationships in text. It
+         * automatically detects personally identifiable information (PII) such as names,
+         * addresses, dates, credit card numbers, and social security numbers from
+         * documents in your Amazon S3 bucket. </p> <p>Example 2: PII Redaction - This
+         * Lambda function uses Amazon Comprehend, a natural language processing (NLP)
+         * service using machine learning to find insights and relationships in text. It
+         * automatically redacts personally identifiable information (PII) such as names,
+         * addresses, dates, credit card numbers, and social security numbers from
+         * documents in your Amazon S3 bucket. </p> <p>Example 3: Decompression - The
+         * Lambda function S3ObjectLambdaDecompression, is equipped to decompress objects
+         * stored in S3 in one of six compressed file formats including bzip2, gzip,
+         * snappy, zlib, zstandard and ZIP. </p> <p>For information on how to view and use
+         * these functions, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/olap-examples.html">Using
+         * AWS built Lambda functions</a> in the <i>Amazon S3 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/WriteGetObjectResponse">AWS
          * API Reference</a></p>
          *
