@@ -170,7 +170,7 @@ namespace Model
    * perform tasks such as the following automatically:</p> <ul> <li>
    * <p>Cryptographically sign your service requests</p> </li> <li> <p>Retry
    * requests</p> </li> <li> <p>Handle error responses</p> </li> </ul> <p>
-   * <b>Additional Information</b> </p> <ul> <li> <p> <a
+   * <b>Additional information</b> </p> <ul> <li> <p> <a
    * href="http://aws.amazon.com/sqs/">Amazon SQS Product Page</a> </p> </li> <li>
    * <p> <i>Amazon Simple Queue Service Developer Guide</i> </p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html">Making

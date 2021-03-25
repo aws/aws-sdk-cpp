@@ -3408,10 +3408,11 @@ namespace Model
          * <li> <p> <code>StoppingCondition</code> - To help cap training costs, use
          * <code>MaxRuntimeInSeconds</code> to set a time limit for training. Use
          * <code>MaxWaitTimeInSeconds</code> to specify how long you are willing to wait
-         * for a managed spot training job to complete. </p> </li> </ul> <p> For more
-         * information about Amazon SageMaker, see <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It
-         * Works</a>. </p><p><h3>See Also:</h3>   <a
+         * for a managed spot training job to complete. </p> </li> <li> <p>
+         * <code>Environment</code> - The environment variables to set in the Docker
+         * container.</p> </li> </ul> <p> For more information about Amazon SageMaker, see
+         * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How
+         * It Works</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrainingJob">AWS
          * API Reference</a></p>
          */
@@ -3449,10 +3450,11 @@ namespace Model
          * <li> <p> <code>StoppingCondition</code> - To help cap training costs, use
          * <code>MaxRuntimeInSeconds</code> to set a time limit for training. Use
          * <code>MaxWaitTimeInSeconds</code> to specify how long you are willing to wait
-         * for a managed spot training job to complete. </p> </li> </ul> <p> For more
-         * information about Amazon SageMaker, see <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It
-         * Works</a>. </p><p><h3>See Also:</h3>   <a
+         * for a managed spot training job to complete. </p> </li> <li> <p>
+         * <code>Environment</code> - The environment variables to set in the Docker
+         * container.</p> </li> </ul> <p> For more information about Amazon SageMaker, see
+         * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How
+         * It Works</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrainingJob">AWS
          * API Reference</a></p>
          *
@@ -3492,10 +3494,11 @@ namespace Model
          * <li> <p> <code>StoppingCondition</code> - To help cap training costs, use
          * <code>MaxRuntimeInSeconds</code> to set a time limit for training. Use
          * <code>MaxWaitTimeInSeconds</code> to specify how long you are willing to wait
-         * for a managed spot training job to complete. </p> </li> </ul> <p> For more
-         * information about Amazon SageMaker, see <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It
-         * Works</a>. </p><p><h3>See Also:</h3>   <a
+         * for a managed spot training job to complete. </p> </li> <li> <p>
+         * <code>Environment</code> - The environment variables to set in the Docker
+         * container.</p> </li> </ul> <p> For more information about Amazon SageMaker, see
+         * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How
+         * It Works</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrainingJob">AWS
          * API Reference</a></p>
          *

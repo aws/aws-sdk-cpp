@@ -30,12 +30,14 @@ namespace Model
 
   /**
    * <p>A collection of settings that apply to users of Amazon SageMaker Studio.
-   * These settings are specified when the <a>CreateUserProfile</a> API is called,
-   * and as <code>DefaultUserSettings</code> when the <a>CreateDomain</a> API is
-   * called.</p> <p> <code>SecurityGroups</code> is aggregated when specified in both
-   * calls. For all other settings in <code>UserSettings</code>, the values specified
-   * in <code>CreateUserProfile</code> take precedence over those specified in
-   * <code>CreateDomain</code>.</p><p><h3>See Also:</h3>   <a
+   * These settings are specified when the <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateUserProfile.html">CreateUserProfile</a>
+   * API is called, and as <code>DefaultUserSettings</code> when the <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
+   * API is called.</p> <p> <code>SecurityGroups</code> is aggregated when specified
+   * in both calls. For all other settings in <code>UserSettings</code>, the values
+   * specified in <code>CreateUserProfile</code> take precedence over those specified
+   * in <code>CreateDomain</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UserSettings">AWS
    * API Reference</a></p>
    */
@@ -199,32 +201,32 @@ namespace Model
 
 
     /**
-     * <p>The sharing settings.</p>
+     * <p>Specifies options for sharing SageMaker Studio notebooks.</p>
      */
     inline const SharingSettings& GetSharingSettings() const{ return m_sharingSettings; }
 
     /**
-     * <p>The sharing settings.</p>
+     * <p>Specifies options for sharing SageMaker Studio notebooks.</p>
      */
     inline bool SharingSettingsHasBeenSet() const { return m_sharingSettingsHasBeenSet; }
 
     /**
-     * <p>The sharing settings.</p>
+     * <p>Specifies options for sharing SageMaker Studio notebooks.</p>
      */
     inline void SetSharingSettings(const SharingSettings& value) { m_sharingSettingsHasBeenSet = true; m_sharingSettings = value; }
 
     /**
-     * <p>The sharing settings.</p>
+     * <p>Specifies options for sharing SageMaker Studio notebooks.</p>
      */
     inline void SetSharingSettings(SharingSettings&& value) { m_sharingSettingsHasBeenSet = true; m_sharingSettings = std::move(value); }
 
     /**
-     * <p>The sharing settings.</p>
+     * <p>Specifies options for sharing SageMaker Studio notebooks.</p>
      */
     inline UserSettings& WithSharingSettings(const SharingSettings& value) { SetSharingSettings(value); return *this;}
 
     /**
-     * <p>The sharing settings.</p>
+     * <p>Specifies options for sharing SageMaker Studio notebooks.</p>
      */
     inline UserSettings& WithSharingSettings(SharingSettings&& value) { SetSharingSettings(std::move(value)); return *this;}
 

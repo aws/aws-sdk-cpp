@@ -1525,6 +1525,67 @@ namespace Model
      */
     inline DescribeTrainingJobResult& WithProfilingStatus(ProfilingStatus&& value) { SetProfilingStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const{ return m_environment; }
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline void SetEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { m_environment = value; }
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline void SetEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { m_environment = std::move(value); }
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline DescribeTrainingJobResult& WithEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { SetEnvironment(value); return *this;}
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline DescribeTrainingJobResult& WithEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { SetEnvironment(std::move(value)); return *this;}
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline DescribeTrainingJobResult& AddEnvironment(const Aws::String& key, const Aws::String& value) { m_environment.emplace(key, value); return *this; }
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline DescribeTrainingJobResult& AddEnvironment(Aws::String&& key, const Aws::String& value) { m_environment.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline DescribeTrainingJobResult& AddEnvironment(const Aws::String& key, Aws::String&& value) { m_environment.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline DescribeTrainingJobResult& AddEnvironment(Aws::String&& key, Aws::String&& value) { m_environment.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline DescribeTrainingJobResult& AddEnvironment(const char* key, Aws::String&& value) { m_environment.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline DescribeTrainingJobResult& AddEnvironment(Aws::String&& key, const char* value) { m_environment.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline DescribeTrainingJobResult& AddEnvironment(const char* key, const char* value) { m_environment.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_trainingJobName;
@@ -1602,6 +1663,8 @@ namespace Model
     Aws::Vector<ProfilerRuleEvaluationStatus> m_profilerRuleEvaluationStatuses;
 
     ProfilingStatus m_profilingStatus;
+
+    Aws::Map<Aws::String, Aws::String> m_environment;
   };
 
 } // namespace Model

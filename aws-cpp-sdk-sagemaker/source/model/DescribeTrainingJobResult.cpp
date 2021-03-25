@@ -296,6 +296,15 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("Environment"))
+  {
+    Aws::Map<Aws::String, JsonView> environmentJsonMap = jsonValue.GetObject("Environment").GetAllObjects();
+    for(auto& environmentItem : environmentJsonMap)
+    {
+      m_environment[environmentItem.first] = environmentItem.second.AsString();
+    }
+  }
+
 
 
   return *this;

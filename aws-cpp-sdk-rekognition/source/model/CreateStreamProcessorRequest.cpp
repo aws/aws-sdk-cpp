@@ -17,7 +17,8 @@ CreateStreamProcessorRequest::CreateStreamProcessorRequest() :
     m_outputHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_settingsHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,17 @@ Aws::String CreateStreamProcessorRequest::SerializePayload() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("RoleArn", m_roleArn);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

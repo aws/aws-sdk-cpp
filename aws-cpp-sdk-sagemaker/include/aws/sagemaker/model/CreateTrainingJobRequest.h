@@ -1214,6 +1214,72 @@ namespace Model
      */
     inline CreateTrainingJobRequest& AddProfilerRuleConfigurations(ProfilerRuleConfiguration&& value) { m_profilerRuleConfigurationsHasBeenSet = true; m_profilerRuleConfigurations.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const{ return m_environment; }
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline void SetEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { m_environmentHasBeenSet = true; m_environment = value; }
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline void SetEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline CreateTrainingJobRequest& WithEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { SetEnvironment(value); return *this;}
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline CreateTrainingJobRequest& WithEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { SetEnvironment(std::move(value)); return *this;}
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline CreateTrainingJobRequest& AddEnvironment(const Aws::String& key, const Aws::String& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline CreateTrainingJobRequest& AddEnvironment(Aws::String&& key, const Aws::String& value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline CreateTrainingJobRequest& AddEnvironment(const Aws::String& key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline CreateTrainingJobRequest& AddEnvironment(Aws::String&& key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline CreateTrainingJobRequest& AddEnvironment(const char* key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline CreateTrainingJobRequest& AddEnvironment(Aws::String&& key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline CreateTrainingJobRequest& AddEnvironment(const char* key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_trainingJobName;
@@ -1275,6 +1341,9 @@ namespace Model
 
     Aws::Vector<ProfilerRuleConfiguration> m_profilerRuleConfigurations;
     bool m_profilerRuleConfigurationsHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_environment;
+    bool m_environmentHasBeenSet;
   };
 
 } // namespace Model

@@ -44,6 +44,7 @@
 #include <aws/rekognition/model/ListCollectionsResult.h>
 #include <aws/rekognition/model/ListFacesResult.h>
 #include <aws/rekognition/model/ListStreamProcessorsResult.h>
+#include <aws/rekognition/model/ListTagsForResourceResult.h>
 #include <aws/rekognition/model/RecognizeCelebritiesResult.h>
 #include <aws/rekognition/model/SearchFacesResult.h>
 #include <aws/rekognition/model/SearchFacesByImageResult.h>
@@ -59,6 +60,8 @@
 #include <aws/rekognition/model/StartTextDetectionResult.h>
 #include <aws/rekognition/model/StopProjectVersionResult.h>
 #include <aws/rekognition/model/StopStreamProcessorResult.h>
+#include <aws/rekognition/model/TagResourceResult.h>
+#include <aws/rekognition/model/UntagResourceResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -131,6 +134,7 @@ namespace Model
         class ListCollectionsRequest;
         class ListFacesRequest;
         class ListStreamProcessorsRequest;
+        class ListTagsForResourceRequest;
         class RecognizeCelebritiesRequest;
         class SearchFacesRequest;
         class SearchFacesByImageRequest;
@@ -146,6 +150,8 @@ namespace Model
         class StartTextDetectionRequest;
         class StopProjectVersionRequest;
         class StopStreamProcessorRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
 
         typedef Aws::Utils::Outcome<CompareFacesResult, RekognitionError> CompareFacesOutcome;
         typedef Aws::Utils::Outcome<CreateCollectionResult, RekognitionError> CreateCollectionOutcome;
@@ -180,6 +186,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListCollectionsResult, RekognitionError> ListCollectionsOutcome;
         typedef Aws::Utils::Outcome<ListFacesResult, RekognitionError> ListFacesOutcome;
         typedef Aws::Utils::Outcome<ListStreamProcessorsResult, RekognitionError> ListStreamProcessorsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, RekognitionError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<RecognizeCelebritiesResult, RekognitionError> RecognizeCelebritiesOutcome;
         typedef Aws::Utils::Outcome<SearchFacesResult, RekognitionError> SearchFacesOutcome;
         typedef Aws::Utils::Outcome<SearchFacesByImageResult, RekognitionError> SearchFacesByImageOutcome;
@@ -195,6 +202,8 @@ namespace Model
         typedef Aws::Utils::Outcome<StartTextDetectionResult, RekognitionError> StartTextDetectionOutcome;
         typedef Aws::Utils::Outcome<StopProjectVersionResult, RekognitionError> StopProjectVersionOutcome;
         typedef Aws::Utils::Outcome<StopStreamProcessorResult, RekognitionError> StopStreamProcessorOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, RekognitionError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, RekognitionError> UntagResourceOutcome;
 
         typedef std::future<CompareFacesOutcome> CompareFacesOutcomeCallable;
         typedef std::future<CreateCollectionOutcome> CreateCollectionOutcomeCallable;
@@ -229,6 +238,7 @@ namespace Model
         typedef std::future<ListCollectionsOutcome> ListCollectionsOutcomeCallable;
         typedef std::future<ListFacesOutcome> ListFacesOutcomeCallable;
         typedef std::future<ListStreamProcessorsOutcome> ListStreamProcessorsOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<RecognizeCelebritiesOutcome> RecognizeCelebritiesOutcomeCallable;
         typedef std::future<SearchFacesOutcome> SearchFacesOutcomeCallable;
         typedef std::future<SearchFacesByImageOutcome> SearchFacesByImageOutcomeCallable;
@@ -244,6 +254,8 @@ namespace Model
         typedef std::future<StartTextDetectionOutcome> StartTextDetectionOutcomeCallable;
         typedef std::future<StopProjectVersionOutcome> StopProjectVersionOutcomeCallable;
         typedef std::future<StopStreamProcessorOutcome> StopStreamProcessorOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 } // namespace Model
 
   class RekognitionClient;
@@ -281,6 +293,7 @@ namespace Model
     typedef std::function<void(const RekognitionClient*, const Model::ListCollectionsRequest&, const Model::ListCollectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCollectionsResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::ListFacesRequest&, const Model::ListFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFacesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::ListStreamProcessorsRequest&, const Model::ListStreamProcessorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamProcessorsResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::RecognizeCelebritiesRequest&, const Model::RecognizeCelebritiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RecognizeCelebritiesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::SearchFacesRequest&, const Model::SearchFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchFacesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::SearchFacesByImageRequest&, const Model::SearchFacesByImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchFacesByImageResponseReceivedHandler;
@@ -296,6 +309,8 @@ namespace Model
     typedef std::function<void(const RekognitionClient*, const Model::StartTextDetectionRequest&, const Model::StartTextDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartTextDetectionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::StopProjectVersionRequest&, const Model::StopProjectVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopProjectVersionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::StopStreamProcessorRequest&, const Model::StopStreamProcessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopStreamProcessorResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
 
   /**
    * <p>This is the Amazon Rekognition API reference.</p>
@@ -329,11 +344,19 @@ namespace Model
 
         /**
          * <p>Compares a face in the <i>source</i> input image with each of the 100 largest
-         * faces detected in the <i>target</i> input image. </p>  <p> If the source
-         * image contains multiple faces, the service detects the largest face and compares
-         * it with each face detected in the target image. </p>  <p>You pass the
-         * input and target images either as base64-encoded image bytes or as references to
-         * images in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition
+         * faces detected in the <i>target</i> input image. </p> <p> If the source image
+         * contains multiple faces, the service detects the largest face and compares it
+         * with each face detected in the target image. </p>  <p>CompareFaces uses
+         * machine learning algorithms, which are probabilistic. A false negative is an
+         * incorrect prediction that a face in the target image has a low similarity
+         * confidence score when compared to the face in the source image. To reduce the
+         * probability of false negatives, we recommend that you compare the target image
+         * against multiple source images. If you plan to use <code>CompareFaces</code> to
+         * make a decision that impacts an individual's rights, privacy, or access to
+         * services, we recommend that you pass the result to a human for review and
+         * further validation before taking action.</p>  <p>You pass the input and
+         * target images either as base64-encoded image bytes or as references to images in
+         * an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition
          * operations, passing image bytes isn't supported. The image must be formatted as
          * a PNG or JPEG file. </p> <p>In response, the operation returns an array of face
          * matches ordered by similarity score in descending order. For each face match,
@@ -371,11 +394,19 @@ namespace Model
 
         /**
          * <p>Compares a face in the <i>source</i> input image with each of the 100 largest
-         * faces detected in the <i>target</i> input image. </p>  <p> If the source
-         * image contains multiple faces, the service detects the largest face and compares
-         * it with each face detected in the target image. </p>  <p>You pass the
-         * input and target images either as base64-encoded image bytes or as references to
-         * images in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition
+         * faces detected in the <i>target</i> input image. </p> <p> If the source image
+         * contains multiple faces, the service detects the largest face and compares it
+         * with each face detected in the target image. </p>  <p>CompareFaces uses
+         * machine learning algorithms, which are probabilistic. A false negative is an
+         * incorrect prediction that a face in the target image has a low similarity
+         * confidence score when compared to the face in the source image. To reduce the
+         * probability of false negatives, we recommend that you compare the target image
+         * against multiple source images. If you plan to use <code>CompareFaces</code> to
+         * make a decision that impacts an individual's rights, privacy, or access to
+         * services, we recommend that you pass the result to a human for review and
+         * further validation before taking action.</p>  <p>You pass the input and
+         * target images either as base64-encoded image bytes or as references to images in
+         * an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition
          * operations, passing image bytes isn't supported. The image must be formatted as
          * a PNG or JPEG file. </p> <p>In response, the operation returns an array of face
          * matches ordered by similarity score in descending order. For each face match,
@@ -415,11 +446,19 @@ namespace Model
 
         /**
          * <p>Compares a face in the <i>source</i> input image with each of the 100 largest
-         * faces detected in the <i>target</i> input image. </p>  <p> If the source
-         * image contains multiple faces, the service detects the largest face and compares
-         * it with each face detected in the target image. </p>  <p>You pass the
-         * input and target images either as base64-encoded image bytes or as references to
-         * images in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition
+         * faces detected in the <i>target</i> input image. </p> <p> If the source image
+         * contains multiple faces, the service detects the largest face and compares it
+         * with each face detected in the target image. </p>  <p>CompareFaces uses
+         * machine learning algorithms, which are probabilistic. A false negative is an
+         * incorrect prediction that a face in the target image has a low similarity
+         * confidence score when compared to the face in the source image. To reduce the
+         * probability of false negatives, we recommend that you compare the target image
+         * against multiple source images. If you plan to use <code>CompareFaces</code> to
+         * make a decision that impacts an individual's rights, privacy, or access to
+         * services, we recommend that you pass the result to a human for review and
+         * further validation before taking action.</p>  <p>You pass the input and
+         * target images either as base64-encoded image bytes or as references to images in
+         * an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition
          * operations, passing image bytes isn't supported. The image must be formatted as
          * a PNG or JPEG file. </p> <p>In response, the operation returns an array of face
          * matches ordered by similarity score in descending order. For each face match,
@@ -2779,6 +2818,34 @@ namespace Model
         virtual void ListStreamProcessorsAsync(const Model::ListStreamProcessorsRequest& request, const ListStreamProcessorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Returns a list of tags in an Amazon Rekognition collection, stream
+         * processor, or Custom Labels model. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p> Returns a list of tags in an Amazon Rekognition collection, stream
+         * processor, or Custom Labels model. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p> Returns a list of tags in an Amazon Rekognition collection, stream
+         * processor, or Custom Labels model. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns an array of celebrities recognized in the input image. For more
          * information, see Recognizing Celebrities in the Amazon Rekognition Developer
          * Guide. </p> <p> <code>RecognizeCelebrities</code> returns the 64 largest faces
@@ -3717,6 +3784,68 @@ namespace Model
          */
         virtual void StopStreamProcessorAsync(const Model::StopStreamProcessorRequest& request, const StopStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p> Adds one or more key-value tags to an Amazon Rekognition collection, stream
+         * processor, or Custom Labels model. For more information, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+         * AWS Resources</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p> Adds one or more key-value tags to an Amazon Rekognition collection, stream
+         * processor, or Custom Labels model. For more information, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+         * AWS Resources</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p> Adds one or more key-value tags to an Amazon Rekognition collection, stream
+         * processor, or Custom Labels model. For more information, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+         * AWS Resources</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Removes one or more tags from an Amazon Rekognition collection, stream
+         * processor, or Custom Labels model. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p> Removes one or more tags from an Amazon Rekognition collection, stream
+         * processor, or Custom Labels model. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p> Removes one or more tags from an Amazon Rekognition collection, stream
+         * processor, or Custom Labels model. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -3754,6 +3883,7 @@ namespace Model
         void ListCollectionsAsyncHelper(const Model::ListCollectionsRequest& request, const ListCollectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFacesAsyncHelper(const Model::ListFacesRequest& request, const ListFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListStreamProcessorsAsyncHelper(const Model::ListStreamProcessorsRequest& request, const ListStreamProcessorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RecognizeCelebritiesAsyncHelper(const Model::RecognizeCelebritiesRequest& request, const RecognizeCelebritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchFacesAsyncHelper(const Model::SearchFacesRequest& request, const SearchFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchFacesByImageAsyncHelper(const Model::SearchFacesByImageRequest& request, const SearchFacesByImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3769,6 +3899,8 @@ namespace Model
         void StartTextDetectionAsyncHelper(const Model::StartTextDetectionRequest& request, const StartTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopProjectVersionAsyncHelper(const Model::StopProjectVersionRequest& request, const StopProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopStreamProcessorAsyncHelper(const Model::StopStreamProcessorRequest& request, const StopStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

@@ -30,6 +30,9 @@ namespace Aws
         static const int MaxAutoMLJobRuntimeReached_HASH = HashingUtils::HashString("MaxAutoMLJobRuntimeReached");
         static const int Stopping_HASH = HashingUtils::HashString("Stopping");
         static const int CandidateDefinitionsGenerated_HASH = HashingUtils::HashString("CandidateDefinitionsGenerated");
+        static const int GeneratingExplainabilityReport_HASH = HashingUtils::HashString("GeneratingExplainabilityReport");
+        static const int Completed_HASH = HashingUtils::HashString("Completed");
+        static const int ExplainabilityError_HASH = HashingUtils::HashString("ExplainabilityError");
 
 
         AutoMLJobSecondaryStatus GetAutoMLJobSecondaryStatusForName(const Aws::String& name)
@@ -75,6 +78,18 @@ namespace Aws
           {
             return AutoMLJobSecondaryStatus::CandidateDefinitionsGenerated;
           }
+          else if (hashCode == GeneratingExplainabilityReport_HASH)
+          {
+            return AutoMLJobSecondaryStatus::GeneratingExplainabilityReport;
+          }
+          else if (hashCode == Completed_HASH)
+          {
+            return AutoMLJobSecondaryStatus::Completed;
+          }
+          else if (hashCode == ExplainabilityError_HASH)
+          {
+            return AutoMLJobSecondaryStatus::ExplainabilityError;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -109,6 +124,12 @@ namespace Aws
             return "Stopping";
           case AutoMLJobSecondaryStatus::CandidateDefinitionsGenerated:
             return "CandidateDefinitionsGenerated";
+          case AutoMLJobSecondaryStatus::GeneratingExplainabilityReport:
+            return "GeneratingExplainabilityReport";
+          case AutoMLJobSecondaryStatus::Completed:
+            return "Completed";
+          case AutoMLJobSecondaryStatus::ExplainabilityError:
+            return "ExplainabilityError";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

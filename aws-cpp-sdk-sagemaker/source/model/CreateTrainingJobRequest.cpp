@@ -35,7 +35,8 @@ CreateTrainingJobRequest::CreateTrainingJobRequest() :
     m_tensorBoardOutputConfigHasBeenSet(false),
     m_experimentConfigHasBeenSet(false),
     m_profilerConfigHasBeenSet(false),
-    m_profilerRuleConfigurationsHasBeenSet(false)
+    m_profilerRuleConfigurationsHasBeenSet(false),
+    m_environmentHasBeenSet(false)
 {
 }
 
@@ -185,6 +186,17 @@ Aws::String CreateTrainingJobRequest::SerializePayload() const
      profilerRuleConfigurationsJsonList[profilerRuleConfigurationsIndex].AsObject(m_profilerRuleConfigurations[profilerRuleConfigurationsIndex].Jsonize());
    }
    payload.WithArray("ProfilerRuleConfigurations", std::move(profilerRuleConfigurationsJsonList));
+
+  }
+
+  if(m_environmentHasBeenSet)
+  {
+   JsonValue environmentJsonMap;
+   for(auto& environmentItem : m_environment)
+   {
+     environmentJsonMap.WithString(environmentItem.first, environmentItem.second);
+   }
+   payload.WithObject("Environment", std::move(environmentJsonMap));
 
   }
 
