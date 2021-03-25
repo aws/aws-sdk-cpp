@@ -165,7 +165,7 @@ static ProfileState CheckProfile(const Aws::Config::Profile& profile, bool topLe
 void STSProfileCredentialsProvider::Reload()
 {
     // make a copy of the profiles map to be able to set credentials on the individual profiles when assuming role
-    auto loadedProfiles = Aws::Config::GetCachedConfigProfiles();
+    auto loadedProfiles = Aws::Config::GetCachedCredentialsProfiles();
     auto profileIt = loadedProfiles.find(m_profileName);
 
     if(profileIt == loadedProfiles.end())
