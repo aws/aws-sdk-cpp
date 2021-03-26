@@ -16,7 +16,8 @@ PutIntegrationRequest::PutIntegrationRequest() :
     m_domainNameHasBeenSet(false),
     m_uriHasBeenSet(false),
     m_objectTypeNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_flowDefinitionHasBeenSet(false)
 {
 }
 
@@ -44,6 +45,12 @@ Aws::String PutIntegrationRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_flowDefinitionHasBeenSet)
+  {
+   payload.WithObject("FlowDefinition", m_flowDefinition.Jsonize());
 
   }
 

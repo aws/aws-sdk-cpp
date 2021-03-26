@@ -14,6 +14,7 @@
 #include <aws/eventbridge/model/SqsParameters.h>
 #include <aws/eventbridge/model/HttpParameters.h>
 #include <aws/eventbridge/model/RedshiftDataParameters.h>
+#include <aws/eventbridge/model/SageMakerPipelineParameters.h>
 #include <aws/eventbridge/model/DeadLetterConfig.h>
 #include <aws/eventbridge/model/RetryPolicy.h>
 #include <utility>
@@ -712,6 +713,55 @@ namespace Model
 
 
     /**
+     * <p>Contains the SageMaker Model Building Pipeline parameters to start execution
+     * of a SageMaker Model Building Pipeline.</p> <p>If you specify a SageMaker Model
+     * Building Pipeline as a target, you can use this to specify parameters to start a
+     * pipeline execution based on EventBridge events.</p>
+     */
+    inline const SageMakerPipelineParameters& GetSageMakerPipelineParameters() const{ return m_sageMakerPipelineParameters; }
+
+    /**
+     * <p>Contains the SageMaker Model Building Pipeline parameters to start execution
+     * of a SageMaker Model Building Pipeline.</p> <p>If you specify a SageMaker Model
+     * Building Pipeline as a target, you can use this to specify parameters to start a
+     * pipeline execution based on EventBridge events.</p>
+     */
+    inline bool SageMakerPipelineParametersHasBeenSet() const { return m_sageMakerPipelineParametersHasBeenSet; }
+
+    /**
+     * <p>Contains the SageMaker Model Building Pipeline parameters to start execution
+     * of a SageMaker Model Building Pipeline.</p> <p>If you specify a SageMaker Model
+     * Building Pipeline as a target, you can use this to specify parameters to start a
+     * pipeline execution based on EventBridge events.</p>
+     */
+    inline void SetSageMakerPipelineParameters(const SageMakerPipelineParameters& value) { m_sageMakerPipelineParametersHasBeenSet = true; m_sageMakerPipelineParameters = value; }
+
+    /**
+     * <p>Contains the SageMaker Model Building Pipeline parameters to start execution
+     * of a SageMaker Model Building Pipeline.</p> <p>If you specify a SageMaker Model
+     * Building Pipeline as a target, you can use this to specify parameters to start a
+     * pipeline execution based on EventBridge events.</p>
+     */
+    inline void SetSageMakerPipelineParameters(SageMakerPipelineParameters&& value) { m_sageMakerPipelineParametersHasBeenSet = true; m_sageMakerPipelineParameters = std::move(value); }
+
+    /**
+     * <p>Contains the SageMaker Model Building Pipeline parameters to start execution
+     * of a SageMaker Model Building Pipeline.</p> <p>If you specify a SageMaker Model
+     * Building Pipeline as a target, you can use this to specify parameters to start a
+     * pipeline execution based on EventBridge events.</p>
+     */
+    inline Target& WithSageMakerPipelineParameters(const SageMakerPipelineParameters& value) { SetSageMakerPipelineParameters(value); return *this;}
+
+    /**
+     * <p>Contains the SageMaker Model Building Pipeline parameters to start execution
+     * of a SageMaker Model Building Pipeline.</p> <p>If you specify a SageMaker Model
+     * Building Pipeline as a target, you can use this to specify parameters to start a
+     * pipeline execution based on EventBridge events.</p>
+     */
+    inline Target& WithSageMakerPipelineParameters(SageMakerPipelineParameters&& value) { SetSageMakerPipelineParameters(std::move(value)); return *this;}
+
+
+    /**
      * <p>The <code>DeadLetterConfig</code> that defines the target queue to send
      * dead-letter queue events to.</p>
      */
@@ -824,6 +874,9 @@ namespace Model
 
     RedshiftDataParameters m_redshiftDataParameters;
     bool m_redshiftDataParametersHasBeenSet;
+
+    SageMakerPipelineParameters m_sageMakerPipelineParameters;
+    bool m_sageMakerPipelineParametersHasBeenSet;
 
     DeadLetterConfig m_deadLetterConfig;
     bool m_deadLetterConfigHasBeenSet;

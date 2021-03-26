@@ -1864,15 +1864,16 @@ namespace Model
          * <p>Amazon SQS queues, including FIFO queues</p> </li> <li> <p>The default event
          * bus of another AWS account</p> </li> <li> <p>Amazon API Gateway REST APIs</p>
          * </li> <li> <p>Redshift Clusters to invoke Data API ExecuteStatement on</p> </li>
-         * <li> <p>Custom/SaaS HTTPS APIs via EventBridge API Destinations</p> </li> </ul>
-         * <p>Creating rules with built-in targets is supported only in the AWS Management
-         * Console. The built-in targets are <code>EC2 CreateSnapshot API call</code>,
-         * <code>EC2 RebootInstances API call</code>, <code>EC2 StopInstances API
-         * call</code>, and <code>EC2 TerminateInstances API call</code>. </p> <p>For some
-         * target types, <code>PutTargets</code> provides target-specific parameters. If
-         * the target is a Kinesis data stream, you can optionally specify which shard the
-         * event goes to by using the <code>KinesisParameters</code> argument. To invoke a
-         * command on multiple EC2 instances with one rule, you can use the
+         * <li> <p>Custom/SaaS HTTPS APIs via EventBridge API Destinations</p> </li> <li>
+         * <p>Amazon SageMaker Model Building Pipelines</p> </li> </ul> <p>Creating rules
+         * with built-in targets is supported only in the AWS Management Console. The
+         * built-in targets are <code>EC2 CreateSnapshot API call</code>, <code>EC2
+         * RebootInstances API call</code>, <code>EC2 StopInstances API call</code>, and
+         * <code>EC2 TerminateInstances API call</code>. </p> <p>For some target types,
+         * <code>PutTargets</code> provides target-specific parameters. If the target is a
+         * Kinesis data stream, you can optionally specify which shard the event goes to by
+         * using the <code>KinesisParameters</code> argument. To invoke a command on
+         * multiple EC2 instances with one rule, you can use the
          * <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls
          * against the resources that you own, Amazon EventBridge (CloudWatch Events) needs
          * the appropriate permissions. For AWS Lambda and Amazon SNS resources,
@@ -1944,15 +1945,16 @@ namespace Model
          * <p>Amazon SQS queues, including FIFO queues</p> </li> <li> <p>The default event
          * bus of another AWS account</p> </li> <li> <p>Amazon API Gateway REST APIs</p>
          * </li> <li> <p>Redshift Clusters to invoke Data API ExecuteStatement on</p> </li>
-         * <li> <p>Custom/SaaS HTTPS APIs via EventBridge API Destinations</p> </li> </ul>
-         * <p>Creating rules with built-in targets is supported only in the AWS Management
-         * Console. The built-in targets are <code>EC2 CreateSnapshot API call</code>,
-         * <code>EC2 RebootInstances API call</code>, <code>EC2 StopInstances API
-         * call</code>, and <code>EC2 TerminateInstances API call</code>. </p> <p>For some
-         * target types, <code>PutTargets</code> provides target-specific parameters. If
-         * the target is a Kinesis data stream, you can optionally specify which shard the
-         * event goes to by using the <code>KinesisParameters</code> argument. To invoke a
-         * command on multiple EC2 instances with one rule, you can use the
+         * <li> <p>Custom/SaaS HTTPS APIs via EventBridge API Destinations</p> </li> <li>
+         * <p>Amazon SageMaker Model Building Pipelines</p> </li> </ul> <p>Creating rules
+         * with built-in targets is supported only in the AWS Management Console. The
+         * built-in targets are <code>EC2 CreateSnapshot API call</code>, <code>EC2
+         * RebootInstances API call</code>, <code>EC2 StopInstances API call</code>, and
+         * <code>EC2 TerminateInstances API call</code>. </p> <p>For some target types,
+         * <code>PutTargets</code> provides target-specific parameters. If the target is a
+         * Kinesis data stream, you can optionally specify which shard the event goes to by
+         * using the <code>KinesisParameters</code> argument. To invoke a command on
+         * multiple EC2 instances with one rule, you can use the
          * <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls
          * against the resources that you own, Amazon EventBridge (CloudWatch Events) needs
          * the appropriate permissions. For AWS Lambda and Amazon SNS resources,
@@ -2026,15 +2028,16 @@ namespace Model
          * <p>Amazon SQS queues, including FIFO queues</p> </li> <li> <p>The default event
          * bus of another AWS account</p> </li> <li> <p>Amazon API Gateway REST APIs</p>
          * </li> <li> <p>Redshift Clusters to invoke Data API ExecuteStatement on</p> </li>
-         * <li> <p>Custom/SaaS HTTPS APIs via EventBridge API Destinations</p> </li> </ul>
-         * <p>Creating rules with built-in targets is supported only in the AWS Management
-         * Console. The built-in targets are <code>EC2 CreateSnapshot API call</code>,
-         * <code>EC2 RebootInstances API call</code>, <code>EC2 StopInstances API
-         * call</code>, and <code>EC2 TerminateInstances API call</code>. </p> <p>For some
-         * target types, <code>PutTargets</code> provides target-specific parameters. If
-         * the target is a Kinesis data stream, you can optionally specify which shard the
-         * event goes to by using the <code>KinesisParameters</code> argument. To invoke a
-         * command on multiple EC2 instances with one rule, you can use the
+         * <li> <p>Custom/SaaS HTTPS APIs via EventBridge API Destinations</p> </li> <li>
+         * <p>Amazon SageMaker Model Building Pipelines</p> </li> </ul> <p>Creating rules
+         * with built-in targets is supported only in the AWS Management Console. The
+         * built-in targets are <code>EC2 CreateSnapshot API call</code>, <code>EC2
+         * RebootInstances API call</code>, <code>EC2 StopInstances API call</code>, and
+         * <code>EC2 TerminateInstances API call</code>. </p> <p>For some target types,
+         * <code>PutTargets</code> provides target-specific parameters. If the target is a
+         * Kinesis data stream, you can optionally specify which shard the event goes to by
+         * using the <code>KinesisParameters</code> argument. To invoke a command on
+         * multiple EC2 instances with one rule, you can use the
          * <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls
          * against the resources that you own, Amazon EventBridge (CloudWatch Events) needs
          * the appropriate permissions. For AWS Lambda and Amazon SNS resources,

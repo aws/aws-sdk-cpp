@@ -8,6 +8,7 @@
 #include <aws/customer-profiles/CustomerProfilesRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/customer-profiles/model/FlowDefinition.h>
 #include <utility>
 
 namespace Aws
@@ -221,6 +222,25 @@ namespace Model
      */
     inline PutIntegrationRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    
+    inline const FlowDefinition& GetFlowDefinition() const{ return m_flowDefinition; }
+
+    
+    inline bool FlowDefinitionHasBeenSet() const { return m_flowDefinitionHasBeenSet; }
+
+    
+    inline void SetFlowDefinition(const FlowDefinition& value) { m_flowDefinitionHasBeenSet = true; m_flowDefinition = value; }
+
+    
+    inline void SetFlowDefinition(FlowDefinition&& value) { m_flowDefinitionHasBeenSet = true; m_flowDefinition = std::move(value); }
+
+    
+    inline PutIntegrationRequest& WithFlowDefinition(const FlowDefinition& value) { SetFlowDefinition(value); return *this;}
+
+    
+    inline PutIntegrationRequest& WithFlowDefinition(FlowDefinition&& value) { SetFlowDefinition(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -234,6 +254,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    FlowDefinition m_flowDefinition;
+    bool m_flowDefinitionHasBeenSet;
   };
 
 } // namespace Model
