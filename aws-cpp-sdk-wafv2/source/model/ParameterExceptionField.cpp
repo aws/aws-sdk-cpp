@@ -63,6 +63,10 @@ namespace Aws
         static const int FORWARDED_IP_CONFIG_HASH = HashingUtils::HashString("FORWARDED_IP_CONFIG");
         static const int IP_SET_FORWARDED_IP_CONFIG_HASH = HashingUtils::HashString("IP_SET_FORWARDED_IP_CONFIG");
         static const int HEADER_NAME_HASH = HashingUtils::HashString("HEADER_NAME");
+        static const int CUSTOM_REQUEST_HANDLING_HASH = HashingUtils::HashString("CUSTOM_REQUEST_HANDLING");
+        static const int RESPONSE_CONTENT_TYPE_HASH = HashingUtils::HashString("RESPONSE_CONTENT_TYPE");
+        static const int CUSTOM_RESPONSE_HASH = HashingUtils::HashString("CUSTOM_RESPONSE");
+        static const int CUSTOM_RESPONSE_BODY_HASH = HashingUtils::HashString("CUSTOM_RESPONSE_BODY");
         static const int JSON_MATCH_PATTERN_HASH = HashingUtils::HashString("JSON_MATCH_PATTERN");
         static const int JSON_MATCH_SCOPE_HASH = HashingUtils::HashString("JSON_MATCH_SCOPE");
         static const int BODY_PARSING_FALLBACK_BEHAVIOR_HASH = HashingUtils::HashString("BODY_PARSING_FALLBACK_BEHAVIOR");
@@ -243,6 +247,22 @@ namespace Aws
           {
             return ParameterExceptionField::HEADER_NAME;
           }
+          else if (hashCode == CUSTOM_REQUEST_HANDLING_HASH)
+          {
+            return ParameterExceptionField::CUSTOM_REQUEST_HANDLING;
+          }
+          else if (hashCode == RESPONSE_CONTENT_TYPE_HASH)
+          {
+            return ParameterExceptionField::RESPONSE_CONTENT_TYPE;
+          }
+          else if (hashCode == CUSTOM_RESPONSE_HASH)
+          {
+            return ParameterExceptionField::CUSTOM_RESPONSE;
+          }
+          else if (hashCode == CUSTOM_RESPONSE_BODY_HASH)
+          {
+            return ParameterExceptionField::CUSTOM_RESPONSE_BODY;
+          }
           else if (hashCode == JSON_MATCH_PATTERN_HASH)
           {
             return ParameterExceptionField::JSON_MATCH_PATTERN;
@@ -355,6 +375,14 @@ namespace Aws
             return "IP_SET_FORWARDED_IP_CONFIG";
           case ParameterExceptionField::HEADER_NAME:
             return "HEADER_NAME";
+          case ParameterExceptionField::CUSTOM_REQUEST_HANDLING:
+            return "CUSTOM_REQUEST_HANDLING";
+          case ParameterExceptionField::RESPONSE_CONTENT_TYPE:
+            return "RESPONSE_CONTENT_TYPE";
+          case ParameterExceptionField::CUSTOM_RESPONSE:
+            return "CUSTOM_RESPONSE";
+          case ParameterExceptionField::CUSTOM_RESPONSE_BODY:
+            return "CUSTOM_RESPONSE_BODY";
           case ParameterExceptionField::JSON_MATCH_PATTERN:
             return "JSON_MATCH_PATTERN";
           case ParameterExceptionField::JSON_MATCH_SCOPE:

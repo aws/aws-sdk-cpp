@@ -77,8 +77,9 @@ namespace Model
     /**
      * <p>Specify the end time for the position history in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>The given time
-     * for <code>EndTimeExclusive</code> must be after the time for
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the
+     * time that the request is made.</p> <p>Requirement:</p> <ul> <li> <p>The time
+     * specified for <code>EndTimeExclusive</code> must be after the time for
      * <code>StartTimeInclusive</code>.</p> </li> </ul>
      */
     inline const Aws::Utils::DateTime& GetEndTimeExclusive() const{ return m_endTimeExclusive; }
@@ -86,8 +87,9 @@ namespace Model
     /**
      * <p>Specify the end time for the position history in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>The given time
-     * for <code>EndTimeExclusive</code> must be after the time for
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the
+     * time that the request is made.</p> <p>Requirement:</p> <ul> <li> <p>The time
+     * specified for <code>EndTimeExclusive</code> must be after the time for
      * <code>StartTimeInclusive</code>.</p> </li> </ul>
      */
     inline bool EndTimeExclusiveHasBeenSet() const { return m_endTimeExclusiveHasBeenSet; }
@@ -95,8 +97,9 @@ namespace Model
     /**
      * <p>Specify the end time for the position history in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>The given time
-     * for <code>EndTimeExclusive</code> must be after the time for
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the
+     * time that the request is made.</p> <p>Requirement:</p> <ul> <li> <p>The time
+     * specified for <code>EndTimeExclusive</code> must be after the time for
      * <code>StartTimeInclusive</code>.</p> </li> </ul>
      */
     inline void SetEndTimeExclusive(const Aws::Utils::DateTime& value) { m_endTimeExclusiveHasBeenSet = true; m_endTimeExclusive = value; }
@@ -104,8 +107,9 @@ namespace Model
     /**
      * <p>Specify the end time for the position history in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>The given time
-     * for <code>EndTimeExclusive</code> must be after the time for
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the
+     * time that the request is made.</p> <p>Requirement:</p> <ul> <li> <p>The time
+     * specified for <code>EndTimeExclusive</code> must be after the time for
      * <code>StartTimeInclusive</code>.</p> </li> </ul>
      */
     inline void SetEndTimeExclusive(Aws::Utils::DateTime&& value) { m_endTimeExclusiveHasBeenSet = true; m_endTimeExclusive = std::move(value); }
@@ -113,8 +117,9 @@ namespace Model
     /**
      * <p>Specify the end time for the position history in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>The given time
-     * for <code>EndTimeExclusive</code> must be after the time for
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the
+     * time that the request is made.</p> <p>Requirement:</p> <ul> <li> <p>The time
+     * specified for <code>EndTimeExclusive</code> must be after the time for
      * <code>StartTimeInclusive</code>.</p> </li> </ul>
      */
     inline GetDevicePositionHistoryRequest& WithEndTimeExclusive(const Aws::Utils::DateTime& value) { SetEndTimeExclusive(value); return *this;}
@@ -122,8 +127,9 @@ namespace Model
     /**
      * <p>Specify the end time for the position history in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>The given time
-     * for <code>EndTimeExclusive</code> must be after the time for
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the
+     * time that the request is made.</p> <p>Requirement:</p> <ul> <li> <p>The time
+     * specified for <code>EndTimeExclusive</code> must be after the time for
      * <code>StartTimeInclusive</code>.</p> </li> </ul>
      */
     inline GetDevicePositionHistoryRequest& WithEndTimeExclusive(Aws::Utils::DateTime&& value) { SetEndTimeExclusive(std::move(value)); return *this;}
@@ -189,54 +195,60 @@ namespace Model
     /**
      * <p>Specify the start time for the position history in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>The given time
-     * for <code>EndTimeExclusive</code> must be after the time for
-     * <code>StartTimeInclusive</code>.</p> </li> </ul>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be 24
+     * hours prior to the time that the request is made.</p> <p>Requirement:</p> <ul>
+     * <li> <p>The time specified for <code>StartTimeInclusive</code> must be before
+     * <code>EndTimeExclusive</code>.</p> </li> </ul>
      */
     inline const Aws::Utils::DateTime& GetStartTimeInclusive() const{ return m_startTimeInclusive; }
 
     /**
      * <p>Specify the start time for the position history in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>The given time
-     * for <code>EndTimeExclusive</code> must be after the time for
-     * <code>StartTimeInclusive</code>.</p> </li> </ul>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be 24
+     * hours prior to the time that the request is made.</p> <p>Requirement:</p> <ul>
+     * <li> <p>The time specified for <code>StartTimeInclusive</code> must be before
+     * <code>EndTimeExclusive</code>.</p> </li> </ul>
      */
     inline bool StartTimeInclusiveHasBeenSet() const { return m_startTimeInclusiveHasBeenSet; }
 
     /**
      * <p>Specify the start time for the position history in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>The given time
-     * for <code>EndTimeExclusive</code> must be after the time for
-     * <code>StartTimeInclusive</code>.</p> </li> </ul>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be 24
+     * hours prior to the time that the request is made.</p> <p>Requirement:</p> <ul>
+     * <li> <p>The time specified for <code>StartTimeInclusive</code> must be before
+     * <code>EndTimeExclusive</code>.</p> </li> </ul>
      */
     inline void SetStartTimeInclusive(const Aws::Utils::DateTime& value) { m_startTimeInclusiveHasBeenSet = true; m_startTimeInclusive = value; }
 
     /**
      * <p>Specify the start time for the position history in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>The given time
-     * for <code>EndTimeExclusive</code> must be after the time for
-     * <code>StartTimeInclusive</code>.</p> </li> </ul>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be 24
+     * hours prior to the time that the request is made.</p> <p>Requirement:</p> <ul>
+     * <li> <p>The time specified for <code>StartTimeInclusive</code> must be before
+     * <code>EndTimeExclusive</code>.</p> </li> </ul>
      */
     inline void SetStartTimeInclusive(Aws::Utils::DateTime&& value) { m_startTimeInclusiveHasBeenSet = true; m_startTimeInclusive = std::move(value); }
 
     /**
      * <p>Specify the start time for the position history in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>The given time
-     * for <code>EndTimeExclusive</code> must be after the time for
-     * <code>StartTimeInclusive</code>.</p> </li> </ul>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be 24
+     * hours prior to the time that the request is made.</p> <p>Requirement:</p> <ul>
+     * <li> <p>The time specified for <code>StartTimeInclusive</code> must be before
+     * <code>EndTimeExclusive</code>.</p> </li> </ul>
      */
     inline GetDevicePositionHistoryRequest& WithStartTimeInclusive(const Aws::Utils::DateTime& value) { SetStartTimeInclusive(value); return *this;}
 
     /**
      * <p>Specify the start time for the position history in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>The given time
-     * for <code>EndTimeExclusive</code> must be after the time for
-     * <code>StartTimeInclusive</code>.</p> </li> </ul>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be 24
+     * hours prior to the time that the request is made.</p> <p>Requirement:</p> <ul>
+     * <li> <p>The time specified for <code>StartTimeInclusive</code> must be before
+     * <code>EndTimeExclusive</code>.</p> </li> </ul>
      */
     inline GetDevicePositionHistoryRequest& WithStartTimeInclusive(Aws::Utils::DateTime&& value) { SetStartTimeInclusive(std::move(value)); return *this;}
 

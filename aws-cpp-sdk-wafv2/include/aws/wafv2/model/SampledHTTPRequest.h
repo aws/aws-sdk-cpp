@@ -8,6 +8,8 @@
 #include <aws/wafv2/model/HTTPRequest.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/wafv2/model/HTTPHeader.h>
 #include <utility>
 
 namespace Aws
@@ -265,6 +267,76 @@ namespace Model
      */
     inline SampledHTTPRequest& WithRuleNameWithinRuleGroup(const char* value) { SetRuleNameWithinRuleGroup(value); return *this;}
 
+
+    /**
+     * <p>Custom request headers inserted by AWS WAF into the request, according to the
+     * custom request configuration for the matching rule action.</p>
+     */
+    inline const Aws::Vector<HTTPHeader>& GetRequestHeadersInserted() const{ return m_requestHeadersInserted; }
+
+    /**
+     * <p>Custom request headers inserted by AWS WAF into the request, according to the
+     * custom request configuration for the matching rule action.</p>
+     */
+    inline bool RequestHeadersInsertedHasBeenSet() const { return m_requestHeadersInsertedHasBeenSet; }
+
+    /**
+     * <p>Custom request headers inserted by AWS WAF into the request, according to the
+     * custom request configuration for the matching rule action.</p>
+     */
+    inline void SetRequestHeadersInserted(const Aws::Vector<HTTPHeader>& value) { m_requestHeadersInsertedHasBeenSet = true; m_requestHeadersInserted = value; }
+
+    /**
+     * <p>Custom request headers inserted by AWS WAF into the request, according to the
+     * custom request configuration for the matching rule action.</p>
+     */
+    inline void SetRequestHeadersInserted(Aws::Vector<HTTPHeader>&& value) { m_requestHeadersInsertedHasBeenSet = true; m_requestHeadersInserted = std::move(value); }
+
+    /**
+     * <p>Custom request headers inserted by AWS WAF into the request, according to the
+     * custom request configuration for the matching rule action.</p>
+     */
+    inline SampledHTTPRequest& WithRequestHeadersInserted(const Aws::Vector<HTTPHeader>& value) { SetRequestHeadersInserted(value); return *this;}
+
+    /**
+     * <p>Custom request headers inserted by AWS WAF into the request, according to the
+     * custom request configuration for the matching rule action.</p>
+     */
+    inline SampledHTTPRequest& WithRequestHeadersInserted(Aws::Vector<HTTPHeader>&& value) { SetRequestHeadersInserted(std::move(value)); return *this;}
+
+    /**
+     * <p>Custom request headers inserted by AWS WAF into the request, according to the
+     * custom request configuration for the matching rule action.</p>
+     */
+    inline SampledHTTPRequest& AddRequestHeadersInserted(const HTTPHeader& value) { m_requestHeadersInsertedHasBeenSet = true; m_requestHeadersInserted.push_back(value); return *this; }
+
+    /**
+     * <p>Custom request headers inserted by AWS WAF into the request, according to the
+     * custom request configuration for the matching rule action.</p>
+     */
+    inline SampledHTTPRequest& AddRequestHeadersInserted(HTTPHeader&& value) { m_requestHeadersInsertedHasBeenSet = true; m_requestHeadersInserted.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The response code that was sent for the request.</p>
+     */
+    inline int GetResponseCodeSent() const{ return m_responseCodeSent; }
+
+    /**
+     * <p>The response code that was sent for the request.</p>
+     */
+    inline bool ResponseCodeSentHasBeenSet() const { return m_responseCodeSentHasBeenSet; }
+
+    /**
+     * <p>The response code that was sent for the request.</p>
+     */
+    inline void SetResponseCodeSent(int value) { m_responseCodeSentHasBeenSet = true; m_responseCodeSent = value; }
+
+    /**
+     * <p>The response code that was sent for the request.</p>
+     */
+    inline SampledHTTPRequest& WithResponseCodeSent(int value) { SetResponseCodeSent(value); return *this;}
+
   private:
 
     HTTPRequest m_request;
@@ -281,6 +353,12 @@ namespace Model
 
     Aws::String m_ruleNameWithinRuleGroup;
     bool m_ruleNameWithinRuleGroupHasBeenSet;
+
+    Aws::Vector<HTTPHeader> m_requestHeadersInserted;
+    bool m_requestHeadersInsertedHasBeenSet;
+
+    int m_responseCodeSent;
+    bool m_responseCodeSentHasBeenSet;
   };
 
 } // namespace Model

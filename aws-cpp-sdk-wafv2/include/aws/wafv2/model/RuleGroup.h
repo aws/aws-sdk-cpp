@@ -8,7 +8,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wafv2/model/VisibilityConfig.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/wafv2/model/Rule.h>
+#include <aws/wafv2/model/CustomResponseBody.h>
 #include <utility>
 
 namespace Aws
@@ -394,6 +396,223 @@ namespace Model
      */
     inline RuleGroup& WithVisibilityConfig(VisibilityConfig&& value) { SetVisibilityConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A map of custom response keys and content bodies. When you create a rule with
+     * a block action, you can send a custom response to the web request. You define
+     * these for the rule group, and then use them in the rules that you define in the
+     * rule group. </p> <p>For information about customizing web requests and
+     * responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     * web requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
+     * size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p>
+     */
+    inline const Aws::Map<Aws::String, CustomResponseBody>& GetCustomResponseBodies() const{ return m_customResponseBodies; }
+
+    /**
+     * <p>A map of custom response keys and content bodies. When you create a rule with
+     * a block action, you can send a custom response to the web request. You define
+     * these for the rule group, and then use them in the rules that you define in the
+     * rule group. </p> <p>For information about customizing web requests and
+     * responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     * web requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
+     * size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p>
+     */
+    inline bool CustomResponseBodiesHasBeenSet() const { return m_customResponseBodiesHasBeenSet; }
+
+    /**
+     * <p>A map of custom response keys and content bodies. When you create a rule with
+     * a block action, you can send a custom response to the web request. You define
+     * these for the rule group, and then use them in the rules that you define in the
+     * rule group. </p> <p>For information about customizing web requests and
+     * responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     * web requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
+     * size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p>
+     */
+    inline void SetCustomResponseBodies(const Aws::Map<Aws::String, CustomResponseBody>& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies = value; }
+
+    /**
+     * <p>A map of custom response keys and content bodies. When you create a rule with
+     * a block action, you can send a custom response to the web request. You define
+     * these for the rule group, and then use them in the rules that you define in the
+     * rule group. </p> <p>For information about customizing web requests and
+     * responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     * web requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
+     * size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p>
+     */
+    inline void SetCustomResponseBodies(Aws::Map<Aws::String, CustomResponseBody>&& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies = std::move(value); }
+
+    /**
+     * <p>A map of custom response keys and content bodies. When you create a rule with
+     * a block action, you can send a custom response to the web request. You define
+     * these for the rule group, and then use them in the rules that you define in the
+     * rule group. </p> <p>For information about customizing web requests and
+     * responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     * web requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
+     * size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p>
+     */
+    inline RuleGroup& WithCustomResponseBodies(const Aws::Map<Aws::String, CustomResponseBody>& value) { SetCustomResponseBodies(value); return *this;}
+
+    /**
+     * <p>A map of custom response keys and content bodies. When you create a rule with
+     * a block action, you can send a custom response to the web request. You define
+     * these for the rule group, and then use them in the rules that you define in the
+     * rule group. </p> <p>For information about customizing web requests and
+     * responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     * web requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
+     * size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p>
+     */
+    inline RuleGroup& WithCustomResponseBodies(Aws::Map<Aws::String, CustomResponseBody>&& value) { SetCustomResponseBodies(std::move(value)); return *this;}
+
+    /**
+     * <p>A map of custom response keys and content bodies. When you create a rule with
+     * a block action, you can send a custom response to the web request. You define
+     * these for the rule group, and then use them in the rules that you define in the
+     * rule group. </p> <p>For information about customizing web requests and
+     * responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     * web requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
+     * size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p>
+     */
+    inline RuleGroup& AddCustomResponseBodies(const Aws::String& key, const CustomResponseBody& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(key, value); return *this; }
+
+    /**
+     * <p>A map of custom response keys and content bodies. When you create a rule with
+     * a block action, you can send a custom response to the web request. You define
+     * these for the rule group, and then use them in the rules that you define in the
+     * rule group. </p> <p>For information about customizing web requests and
+     * responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     * web requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
+     * size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p>
+     */
+    inline RuleGroup& AddCustomResponseBodies(Aws::String&& key, const CustomResponseBody& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map of custom response keys and content bodies. When you create a rule with
+     * a block action, you can send a custom response to the web request. You define
+     * these for the rule group, and then use them in the rules that you define in the
+     * rule group. </p> <p>For information about customizing web requests and
+     * responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     * web requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
+     * size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p>
+     */
+    inline RuleGroup& AddCustomResponseBodies(const Aws::String& key, CustomResponseBody&& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of custom response keys and content bodies. When you create a rule with
+     * a block action, you can send a custom response to the web request. You define
+     * these for the rule group, and then use them in the rules that you define in the
+     * rule group. </p> <p>For information about customizing web requests and
+     * responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     * web requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
+     * size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p>
+     */
+    inline RuleGroup& AddCustomResponseBodies(Aws::String&& key, CustomResponseBody&& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A map of custom response keys and content bodies. When you create a rule with
+     * a block action, you can send a custom response to the web request. You define
+     * these for the rule group, and then use them in the rules that you define in the
+     * rule group. </p> <p>For information about customizing web requests and
+     * responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     * web requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
+     * size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p>
+     */
+    inline RuleGroup& AddCustomResponseBodies(const char* key, CustomResponseBody&& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of custom response keys and content bodies. When you create a rule with
+     * a block action, you can send a custom response to the web request. You define
+     * these for the rule group, and then use them in the rules that you define in the
+     * rule group. </p> <p>For information about customizing web requests and
+     * responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     * web requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
+     * size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p>
+     */
+    inline RuleGroup& AddCustomResponseBodies(const char* key, const CustomResponseBody& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -416,6 +635,9 @@ namespace Model
 
     VisibilityConfig m_visibilityConfig;
     bool m_visibilityConfigHasBeenSet;
+
+    Aws::Map<Aws::String, CustomResponseBody> m_customResponseBodies;
+    bool m_customResponseBodiesHasBeenSet;
   };
 
 } // namespace Model

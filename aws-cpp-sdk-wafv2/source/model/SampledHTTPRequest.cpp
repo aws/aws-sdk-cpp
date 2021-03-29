@@ -24,7 +24,10 @@ SampledHTTPRequest::SampledHTTPRequest() :
     m_weightHasBeenSet(false),
     m_timestampHasBeenSet(false),
     m_actionHasBeenSet(false),
-    m_ruleNameWithinRuleGroupHasBeenSet(false)
+    m_ruleNameWithinRuleGroupHasBeenSet(false),
+    m_requestHeadersInsertedHasBeenSet(false),
+    m_responseCodeSent(0),
+    m_responseCodeSentHasBeenSet(false)
 {
 }
 
@@ -34,7 +37,10 @@ SampledHTTPRequest::SampledHTTPRequest(JsonView jsonValue) :
     m_weightHasBeenSet(false),
     m_timestampHasBeenSet(false),
     m_actionHasBeenSet(false),
-    m_ruleNameWithinRuleGroupHasBeenSet(false)
+    m_ruleNameWithinRuleGroupHasBeenSet(false),
+    m_requestHeadersInsertedHasBeenSet(false),
+    m_responseCodeSent(0),
+    m_responseCodeSentHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +82,23 @@ SampledHTTPRequest& SampledHTTPRequest::operator =(JsonView jsonValue)
     m_ruleNameWithinRuleGroupHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RequestHeadersInserted"))
+  {
+    Array<JsonView> requestHeadersInsertedJsonList = jsonValue.GetArray("RequestHeadersInserted");
+    for(unsigned requestHeadersInsertedIndex = 0; requestHeadersInsertedIndex < requestHeadersInsertedJsonList.GetLength(); ++requestHeadersInsertedIndex)
+    {
+      m_requestHeadersInserted.push_back(requestHeadersInsertedJsonList[requestHeadersInsertedIndex].AsObject());
+    }
+    m_requestHeadersInsertedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ResponseCodeSent"))
+  {
+    m_responseCodeSent = jsonValue.GetInteger("ResponseCodeSent");
+
+    m_responseCodeSentHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -109,6 +132,23 @@ JsonValue SampledHTTPRequest::Jsonize() const
   if(m_ruleNameWithinRuleGroupHasBeenSet)
   {
    payload.WithString("RuleNameWithinRuleGroup", m_ruleNameWithinRuleGroup);
+
+  }
+
+  if(m_requestHeadersInsertedHasBeenSet)
+  {
+   Array<JsonValue> requestHeadersInsertedJsonList(m_requestHeadersInserted.size());
+   for(unsigned requestHeadersInsertedIndex = 0; requestHeadersInsertedIndex < requestHeadersInsertedJsonList.GetLength(); ++requestHeadersInsertedIndex)
+   {
+     requestHeadersInsertedJsonList[requestHeadersInsertedIndex].AsObject(m_requestHeadersInserted[requestHeadersInsertedIndex].Jsonize());
+   }
+   payload.WithArray("RequestHeadersInserted", std::move(requestHeadersInsertedJsonList));
+
+  }
+
+  if(m_responseCodeSentHasBeenSet)
+  {
+   payload.WithInteger("ResponseCodeSent", m_responseCodeSent);
 
   }
 

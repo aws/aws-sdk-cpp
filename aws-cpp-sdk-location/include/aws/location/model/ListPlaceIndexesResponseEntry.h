@@ -7,6 +7,7 @@
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/location/model/PricingPlan.h>
 #include <utility>
 
 namespace Aws
@@ -83,42 +84,74 @@ namespace Model
 
 
     /**
-     * <p>The data provider of geospatial data.</p>
+     * <p>The data provider of geospatial data. Indicates one of the available
+     * providers:</p> <ul> <li> <p>Esri</p> </li> <li> <p>HERE</p> </li> </ul> <p>For
+     * additional details on data providers, see the <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     * Location Service data providers page</a>.</p>
      */
     inline const Aws::String& GetDataSource() const{ return m_dataSource; }
 
     /**
-     * <p>The data provider of geospatial data.</p>
+     * <p>The data provider of geospatial data. Indicates one of the available
+     * providers:</p> <ul> <li> <p>Esri</p> </li> <li> <p>HERE</p> </li> </ul> <p>For
+     * additional details on data providers, see the <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     * Location Service data providers page</a>.</p>
      */
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
 
     /**
-     * <p>The data provider of geospatial data.</p>
+     * <p>The data provider of geospatial data. Indicates one of the available
+     * providers:</p> <ul> <li> <p>Esri</p> </li> <li> <p>HERE</p> </li> </ul> <p>For
+     * additional details on data providers, see the <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     * Location Service data providers page</a>.</p>
      */
     inline void SetDataSource(const Aws::String& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
 
     /**
-     * <p>The data provider of geospatial data.</p>
+     * <p>The data provider of geospatial data. Indicates one of the available
+     * providers:</p> <ul> <li> <p>Esri</p> </li> <li> <p>HERE</p> </li> </ul> <p>For
+     * additional details on data providers, see the <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     * Location Service data providers page</a>.</p>
      */
     inline void SetDataSource(Aws::String&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
 
     /**
-     * <p>The data provider of geospatial data.</p>
+     * <p>The data provider of geospatial data. Indicates one of the available
+     * providers:</p> <ul> <li> <p>Esri</p> </li> <li> <p>HERE</p> </li> </ul> <p>For
+     * additional details on data providers, see the <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     * Location Service data providers page</a>.</p>
      */
     inline void SetDataSource(const char* value) { m_dataSourceHasBeenSet = true; m_dataSource.assign(value); }
 
     /**
-     * <p>The data provider of geospatial data.</p>
+     * <p>The data provider of geospatial data. Indicates one of the available
+     * providers:</p> <ul> <li> <p>Esri</p> </li> <li> <p>HERE</p> </li> </ul> <p>For
+     * additional details on data providers, see the <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     * Location Service data providers page</a>.</p>
      */
     inline ListPlaceIndexesResponseEntry& WithDataSource(const Aws::String& value) { SetDataSource(value); return *this;}
 
     /**
-     * <p>The data provider of geospatial data.</p>
+     * <p>The data provider of geospatial data. Indicates one of the available
+     * providers:</p> <ul> <li> <p>Esri</p> </li> <li> <p>HERE</p> </li> </ul> <p>For
+     * additional details on data providers, see the <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     * Location Service data providers page</a>.</p>
      */
     inline ListPlaceIndexesResponseEntry& WithDataSource(Aws::String&& value) { SetDataSource(std::move(value)); return *this;}
 
     /**
-     * <p>The data provider of geospatial data.</p>
+     * <p>The data provider of geospatial data. Indicates one of the available
+     * providers:</p> <ul> <li> <p>Esri</p> </li> <li> <p>HERE</p> </li> </ul> <p>For
+     * additional details on data providers, see the <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     * Location Service data providers page</a>.</p>
      */
     inline ListPlaceIndexesResponseEntry& WithDataSource(const char* value) { SetDataSource(value); return *this;}
 
@@ -206,6 +239,55 @@ namespace Model
 
 
     /**
+     * <p>The pricing plan for the specified Place index resource.</p> <p>For
+     * additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
+     * page</a>.</p>
+     */
+    inline const PricingPlan& GetPricingPlan() const{ return m_pricingPlan; }
+
+    /**
+     * <p>The pricing plan for the specified Place index resource.</p> <p>For
+     * additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
+     * page</a>.</p>
+     */
+    inline bool PricingPlanHasBeenSet() const { return m_pricingPlanHasBeenSet; }
+
+    /**
+     * <p>The pricing plan for the specified Place index resource.</p> <p>For
+     * additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
+     * page</a>.</p>
+     */
+    inline void SetPricingPlan(const PricingPlan& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = value; }
+
+    /**
+     * <p>The pricing plan for the specified Place index resource.</p> <p>For
+     * additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
+     * page</a>.</p>
+     */
+    inline void SetPricingPlan(PricingPlan&& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = std::move(value); }
+
+    /**
+     * <p>The pricing plan for the specified Place index resource.</p> <p>For
+     * additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
+     * page</a>.</p>
+     */
+    inline ListPlaceIndexesResponseEntry& WithPricingPlan(const PricingPlan& value) { SetPricingPlan(value); return *this;}
+
+    /**
+     * <p>The pricing plan for the specified Place index resource.</p> <p>For
+     * additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
+     * page</a>.</p>
+     */
+    inline ListPlaceIndexesResponseEntry& WithPricingPlan(PricingPlan&& value) { SetPricingPlan(std::move(value)); return *this;}
+
+
+    /**
      * <p>The timestamp for when the Place index resource was last updated in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
@@ -260,6 +342,9 @@ namespace Model
 
     Aws::String m_indexName;
     bool m_indexNameHasBeenSet;
+
+    PricingPlan m_pricingPlan;
+    bool m_pricingPlanHasBeenSet;
 
     Aws::Utils::DateTime m_updateTime;
     bool m_updateTimeHasBeenSet;

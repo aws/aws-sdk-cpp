@@ -20,6 +20,7 @@
 #include <aws/docdb/DocDBClient.h>
 #include <aws/docdb/DocDBEndpoint.h>
 #include <aws/docdb/DocDBErrorMarshaller.h>
+#include <aws/docdb/model/AddSourceIdentifierToSubscriptionRequest.h>
 #include <aws/docdb/model/AddTagsToResourceRequest.h>
 #include <aws/docdb/model/ApplyPendingMaintenanceActionRequest.h>
 #include <aws/docdb/model/CopyDBClusterParameterGroupRequest.h>
@@ -29,11 +30,13 @@
 #include <aws/docdb/model/CreateDBClusterSnapshotRequest.h>
 #include <aws/docdb/model/CreateDBInstanceRequest.h>
 #include <aws/docdb/model/CreateDBSubnetGroupRequest.h>
+#include <aws/docdb/model/CreateEventSubscriptionRequest.h>
 #include <aws/docdb/model/DeleteDBClusterRequest.h>
 #include <aws/docdb/model/DeleteDBClusterParameterGroupRequest.h>
 #include <aws/docdb/model/DeleteDBClusterSnapshotRequest.h>
 #include <aws/docdb/model/DeleteDBInstanceRequest.h>
 #include <aws/docdb/model/DeleteDBSubnetGroupRequest.h>
+#include <aws/docdb/model/DeleteEventSubscriptionRequest.h>
 #include <aws/docdb/model/DescribeCertificatesRequest.h>
 #include <aws/docdb/model/DescribeDBClusterParameterGroupsRequest.h>
 #include <aws/docdb/model/DescribeDBClusterParametersRequest.h>
@@ -45,6 +48,7 @@
 #include <aws/docdb/model/DescribeDBSubnetGroupsRequest.h>
 #include <aws/docdb/model/DescribeEngineDefaultClusterParametersRequest.h>
 #include <aws/docdb/model/DescribeEventCategoriesRequest.h>
+#include <aws/docdb/model/DescribeEventSubscriptionsRequest.h>
 #include <aws/docdb/model/DescribeEventsRequest.h>
 #include <aws/docdb/model/DescribeOrderableDBInstanceOptionsRequest.h>
 #include <aws/docdb/model/DescribePendingMaintenanceActionsRequest.h>
@@ -55,7 +59,9 @@
 #include <aws/docdb/model/ModifyDBClusterSnapshotAttributeRequest.h>
 #include <aws/docdb/model/ModifyDBInstanceRequest.h>
 #include <aws/docdb/model/ModifyDBSubnetGroupRequest.h>
+#include <aws/docdb/model/ModifyEventSubscriptionRequest.h>
 #include <aws/docdb/model/RebootDBInstanceRequest.h>
+#include <aws/docdb/model/RemoveSourceIdentifierFromSubscriptionRequest.h>
 #include <aws/docdb/model/RemoveTagsFromResourceRequest.h>
 #include <aws/docdb/model/ResetDBClusterParameterGroupRequest.h>
 #include <aws/docdb/model/RestoreDBClusterFromSnapshotRequest.h>
@@ -146,6 +152,33 @@ Aws::String DocDBClient::ConvertRequestToPresignedUrl(const AmazonSerializableWe
 
   URI uri(ss.str());
   return GeneratePresignedUrl(uri, Aws::Http::HttpMethod::HTTP_GET, region, 3600);
+}
+
+AddSourceIdentifierToSubscriptionOutcome DocDBClient::AddSourceIdentifierToSubscription(const AddSourceIdentifierToSubscriptionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return AddSourceIdentifierToSubscriptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+AddSourceIdentifierToSubscriptionOutcomeCallable DocDBClient::AddSourceIdentifierToSubscriptionCallable(const AddSourceIdentifierToSubscriptionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AddSourceIdentifierToSubscriptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddSourceIdentifierToSubscription(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DocDBClient::AddSourceIdentifierToSubscriptionAsync(const AddSourceIdentifierToSubscriptionRequest& request, const AddSourceIdentifierToSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AddSourceIdentifierToSubscriptionAsyncHelper( request, handler, context ); } );
+}
+
+void DocDBClient::AddSourceIdentifierToSubscriptionAsyncHelper(const AddSourceIdentifierToSubscriptionRequest& request, const AddSourceIdentifierToSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AddSourceIdentifierToSubscription(request), context);
 }
 
 AddTagsToResourceOutcome DocDBClient::AddTagsToResource(const AddTagsToResourceRequest& request) const
@@ -403,6 +436,33 @@ void DocDBClient::CreateDBSubnetGroupAsyncHelper(const CreateDBSubnetGroupReques
   handler(this, request, CreateDBSubnetGroup(request), context);
 }
 
+CreateEventSubscriptionOutcome DocDBClient::CreateEventSubscription(const CreateEventSubscriptionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateEventSubscriptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateEventSubscriptionOutcomeCallable DocDBClient::CreateEventSubscriptionCallable(const CreateEventSubscriptionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateEventSubscriptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEventSubscription(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DocDBClient::CreateEventSubscriptionAsync(const CreateEventSubscriptionRequest& request, const CreateEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateEventSubscriptionAsyncHelper( request, handler, context ); } );
+}
+
+void DocDBClient::CreateEventSubscriptionAsyncHelper(const CreateEventSubscriptionRequest& request, const CreateEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateEventSubscription(request), context);
+}
+
 DeleteDBClusterOutcome DocDBClient::DeleteDBCluster(const DeleteDBClusterRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -536,6 +596,33 @@ void DocDBClient::DeleteDBSubnetGroupAsync(const DeleteDBSubnetGroupRequest& req
 void DocDBClient::DeleteDBSubnetGroupAsyncHelper(const DeleteDBSubnetGroupRequest& request, const DeleteDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteDBSubnetGroup(request), context);
+}
+
+DeleteEventSubscriptionOutcome DocDBClient::DeleteEventSubscription(const DeleteEventSubscriptionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteEventSubscriptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeleteEventSubscriptionOutcomeCallable DocDBClient::DeleteEventSubscriptionCallable(const DeleteEventSubscriptionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteEventSubscriptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEventSubscription(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DocDBClient::DeleteEventSubscriptionAsync(const DeleteEventSubscriptionRequest& request, const DeleteEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteEventSubscriptionAsyncHelper( request, handler, context ); } );
+}
+
+void DocDBClient::DeleteEventSubscriptionAsyncHelper(const DeleteEventSubscriptionRequest& request, const DeleteEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteEventSubscription(request), context);
 }
 
 DescribeCertificatesOutcome DocDBClient::DescribeCertificates(const DescribeCertificatesRequest& request) const
@@ -835,6 +922,33 @@ void DocDBClient::DescribeEventCategoriesAsyncHelper(const DescribeEventCategori
   handler(this, request, DescribeEventCategories(request), context);
 }
 
+DescribeEventSubscriptionsOutcome DocDBClient::DescribeEventSubscriptions(const DescribeEventSubscriptionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeEventSubscriptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeEventSubscriptionsOutcomeCallable DocDBClient::DescribeEventSubscriptionsCallable(const DescribeEventSubscriptionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeEventSubscriptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEventSubscriptions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DocDBClient::DescribeEventSubscriptionsAsync(const DescribeEventSubscriptionsRequest& request, const DescribeEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventSubscriptionsAsyncHelper( request, handler, context ); } );
+}
+
+void DocDBClient::DescribeEventSubscriptionsAsyncHelper(const DescribeEventSubscriptionsRequest& request, const DescribeEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeEventSubscriptions(request), context);
+}
+
 DescribeEventsOutcome DocDBClient::DescribeEvents(const DescribeEventsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1105,6 +1219,33 @@ void DocDBClient::ModifyDBSubnetGroupAsyncHelper(const ModifyDBSubnetGroupReques
   handler(this, request, ModifyDBSubnetGroup(request), context);
 }
 
+ModifyEventSubscriptionOutcome DocDBClient::ModifyEventSubscription(const ModifyEventSubscriptionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ModifyEventSubscriptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+ModifyEventSubscriptionOutcomeCallable DocDBClient::ModifyEventSubscriptionCallable(const ModifyEventSubscriptionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyEventSubscriptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyEventSubscription(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DocDBClient::ModifyEventSubscriptionAsync(const ModifyEventSubscriptionRequest& request, const ModifyEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyEventSubscriptionAsyncHelper( request, handler, context ); } );
+}
+
+void DocDBClient::ModifyEventSubscriptionAsyncHelper(const ModifyEventSubscriptionRequest& request, const ModifyEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyEventSubscription(request), context);
+}
+
 RebootDBInstanceOutcome DocDBClient::RebootDBInstance(const RebootDBInstanceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1130,6 +1271,33 @@ void DocDBClient::RebootDBInstanceAsync(const RebootDBInstanceRequest& request, 
 void DocDBClient::RebootDBInstanceAsyncHelper(const RebootDBInstanceRequest& request, const RebootDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RebootDBInstance(request), context);
+}
+
+RemoveSourceIdentifierFromSubscriptionOutcome DocDBClient::RemoveSourceIdentifierFromSubscription(const RemoveSourceIdentifierFromSubscriptionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return RemoveSourceIdentifierFromSubscriptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+RemoveSourceIdentifierFromSubscriptionOutcomeCallable DocDBClient::RemoveSourceIdentifierFromSubscriptionCallable(const RemoveSourceIdentifierFromSubscriptionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RemoveSourceIdentifierFromSubscriptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveSourceIdentifierFromSubscription(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DocDBClient::RemoveSourceIdentifierFromSubscriptionAsync(const RemoveSourceIdentifierFromSubscriptionRequest& request, const RemoveSourceIdentifierFromSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RemoveSourceIdentifierFromSubscriptionAsyncHelper( request, handler, context ); } );
+}
+
+void DocDBClient::RemoveSourceIdentifierFromSubscriptionAsyncHelper(const RemoveSourceIdentifierFromSubscriptionRequest& request, const RemoveSourceIdentifierFromSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RemoveSourceIdentifierFromSubscription(request), context);
 }
 
 RemoveTagsFromResourceOutcome DocDBClient::RemoveTagsFromResource(const RemoveTagsFromResourceRequest& request) const

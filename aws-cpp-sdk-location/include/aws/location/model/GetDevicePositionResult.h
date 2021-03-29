@@ -102,71 +102,71 @@ namespace Model
 
 
     /**
-     * <p>The timestamp for when the tracker resource recieved the position in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
+     * <p>The timestamp for when the tracker resource received the device position in
+     * <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
     inline const Aws::Utils::DateTime& GetReceivedTime() const{ return m_receivedTime; }
 
     /**
-     * <p>The timestamp for when the tracker resource recieved the position in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
+     * <p>The timestamp for when the tracker resource received the device position in
+     * <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
     inline void SetReceivedTime(const Aws::Utils::DateTime& value) { m_receivedTime = value; }
 
     /**
-     * <p>The timestamp for when the tracker resource recieved the position in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
+     * <p>The timestamp for when the tracker resource received the device position in
+     * <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
     inline void SetReceivedTime(Aws::Utils::DateTime&& value) { m_receivedTime = std::move(value); }
 
     /**
-     * <p>The timestamp for when the tracker resource recieved the position in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
+     * <p>The timestamp for when the tracker resource received the device position in
+     * <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
     inline GetDevicePositionResult& WithReceivedTime(const Aws::Utils::DateTime& value) { SetReceivedTime(value); return *this;}
 
     /**
-     * <p>The timestamp for when the tracker resource recieved the position in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
+     * <p>The timestamp for when the tracker resource received the device position in
+     * <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
     inline GetDevicePositionResult& WithReceivedTime(Aws::Utils::DateTime&& value) { SetReceivedTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The timestamp for when the position was detected and sampled in <a
+     * <p>The timestamp at which the device's position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
     inline const Aws::Utils::DateTime& GetSampleTime() const{ return m_sampleTime; }
 
     /**
-     * <p>The timestamp for when the position was detected and sampled in <a
+     * <p>The timestamp at which the device's position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
     inline void SetSampleTime(const Aws::Utils::DateTime& value) { m_sampleTime = value; }
 
     /**
-     * <p>The timestamp for when the position was detected and sampled in <a
+     * <p>The timestamp at which the device's position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
     inline void SetSampleTime(Aws::Utils::DateTime&& value) { m_sampleTime = std::move(value); }
 
     /**
-     * <p>The timestamp for when the position was detected and sampled in <a
+     * <p>The timestamp at which the device's position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
     inline GetDevicePositionResult& WithSampleTime(const Aws::Utils::DateTime& value) { SetSampleTime(value); return *this;}
 
     /**
-     * <p>The timestamp for when the position was detected and sampled in <a
+     * <p>The timestamp at which the device's position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */

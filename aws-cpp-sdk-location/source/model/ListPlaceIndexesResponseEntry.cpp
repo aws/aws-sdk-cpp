@@ -23,6 +23,8 @@ ListPlaceIndexesResponseEntry::ListPlaceIndexesResponseEntry() :
     m_dataSourceHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_indexNameHasBeenSet(false),
+    m_pricingPlan(PricingPlan::NOT_SET),
+    m_pricingPlanHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
 {
 }
@@ -32,6 +34,8 @@ ListPlaceIndexesResponseEntry::ListPlaceIndexesResponseEntry(JsonView jsonValue)
     m_dataSourceHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_indexNameHasBeenSet(false),
+    m_pricingPlan(PricingPlan::NOT_SET),
+    m_pricingPlanHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -65,6 +69,13 @@ ListPlaceIndexesResponseEntry& ListPlaceIndexesResponseEntry::operator =(JsonVie
     m_indexName = jsonValue.GetString("IndexName");
 
     m_indexNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PricingPlan"))
+  {
+    m_pricingPlan = PricingPlanMapper::GetPricingPlanForName(jsonValue.GetString("PricingPlan"));
+
+    m_pricingPlanHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("UpdateTime"))
@@ -102,6 +113,11 @@ JsonValue ListPlaceIndexesResponseEntry::Jsonize() const
   {
    payload.WithString("IndexName", m_indexName);
 
+  }
+
+  if(m_pricingPlanHasBeenSet)
+  {
+   payload.WithString("PricingPlan", PricingPlanMapper::GetNameForPricingPlan(m_pricingPlan));
   }
 
   if(m_updateTimeHasBeenSet)

@@ -16,11 +16,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeTrackerResult::DescribeTrackerResult()
+DescribeTrackerResult::DescribeTrackerResult() : 
+    m_pricingPlan(PricingPlan::NOT_SET)
 {
 }
 
-DescribeTrackerResult::DescribeTrackerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DescribeTrackerResult::DescribeTrackerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_pricingPlan(PricingPlan::NOT_SET)
 {
   *this = result;
 }
@@ -37,6 +39,18 @@ DescribeTrackerResult& DescribeTrackerResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
+
+  }
+
+  if(jsonValue.ValueExists("PricingPlan"))
+  {
+    m_pricingPlan = PricingPlanMapper::GetPricingPlanForName(jsonValue.GetString("PricingPlan"));
+
+  }
+
+  if(jsonValue.ValueExists("PricingPlanDataSource"))
+  {
+    m_pricingPlanDataSource = jsonValue.GetString("PricingPlanDataSource");
 
   }
 

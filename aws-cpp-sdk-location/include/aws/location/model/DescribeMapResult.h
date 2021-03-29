@@ -8,6 +8,7 @@
 #include <aws/location/model/MapConfiguration.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/location/model/PricingPlan.h>
 #include <utility>
 
 namespace Aws
@@ -248,6 +249,52 @@ namespace Model
 
 
     /**
+     * <p>The pricing plan selected for the specified map resource.</p> <pre><code>
+     * &lt;p&gt;For additional details and restrictions on each pricing plan option,
+     * see the &lt;a
+     * href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location
+     * Service pricing page&lt;/a&gt;.&lt;/p&gt; </code></pre>
+     */
+    inline const PricingPlan& GetPricingPlan() const{ return m_pricingPlan; }
+
+    /**
+     * <p>The pricing plan selected for the specified map resource.</p> <pre><code>
+     * &lt;p&gt;For additional details and restrictions on each pricing plan option,
+     * see the &lt;a
+     * href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location
+     * Service pricing page&lt;/a&gt;.&lt;/p&gt; </code></pre>
+     */
+    inline void SetPricingPlan(const PricingPlan& value) { m_pricingPlan = value; }
+
+    /**
+     * <p>The pricing plan selected for the specified map resource.</p> <pre><code>
+     * &lt;p&gt;For additional details and restrictions on each pricing plan option,
+     * see the &lt;a
+     * href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location
+     * Service pricing page&lt;/a&gt;.&lt;/p&gt; </code></pre>
+     */
+    inline void SetPricingPlan(PricingPlan&& value) { m_pricingPlan = std::move(value); }
+
+    /**
+     * <p>The pricing plan selected for the specified map resource.</p> <pre><code>
+     * &lt;p&gt;For additional details and restrictions on each pricing plan option,
+     * see the &lt;a
+     * href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location
+     * Service pricing page&lt;/a&gt;.&lt;/p&gt; </code></pre>
+     */
+    inline DescribeMapResult& WithPricingPlan(const PricingPlan& value) { SetPricingPlan(value); return *this;}
+
+    /**
+     * <p>The pricing plan selected for the specified map resource.</p> <pre><code>
+     * &lt;p&gt;For additional details and restrictions on each pricing plan option,
+     * see the &lt;a
+     * href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location
+     * Service pricing page&lt;/a&gt;.&lt;/p&gt; </code></pre>
+     */
+    inline DescribeMapResult& WithPricingPlan(PricingPlan&& value) { SetPricingPlan(std::move(value)); return *this;}
+
+
+    /**
      * <p>The timestamp for when the map resource was last update in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
@@ -295,6 +342,8 @@ namespace Model
     Aws::String m_mapArn;
 
     Aws::String m_mapName;
+
+    PricingPlan m_pricingPlan;
 
     Aws::Utils::DateTime m_updateTime;
   };

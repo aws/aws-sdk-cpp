@@ -16,11 +16,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeGeofenceCollectionResult::DescribeGeofenceCollectionResult()
+DescribeGeofenceCollectionResult::DescribeGeofenceCollectionResult() : 
+    m_pricingPlan(PricingPlan::NOT_SET)
 {
 }
 
-DescribeGeofenceCollectionResult::DescribeGeofenceCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DescribeGeofenceCollectionResult::DescribeGeofenceCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_pricingPlan(PricingPlan::NOT_SET)
 {
   *this = result;
 }
@@ -49,6 +51,18 @@ DescribeGeofenceCollectionResult& DescribeGeofenceCollectionResult::operator =(c
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
+
+  }
+
+  if(jsonValue.ValueExists("PricingPlan"))
+  {
+    m_pricingPlan = PricingPlanMapper::GetPricingPlanForName(jsonValue.GetString("PricingPlan"));
+
+  }
+
+  if(jsonValue.ValueExists("PricingPlanDataSource"))
+  {
+    m_pricingPlanDataSource = jsonValue.GetString("PricingPlanDataSource");
 
   }
 

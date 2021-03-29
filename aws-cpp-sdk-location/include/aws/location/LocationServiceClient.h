@@ -266,7 +266,10 @@ namespace Model
         /**
          * <p>Creates an association between a geofence collection and a tracker resource.
          * This allows the tracker resource to communicate location data to the linked
-         * geofence collection.</p><p><h3>See Also:</h3>   <a
+         * geofence collection.</p>  <p>Currently not supported — Cross-account
+         * configurations, such as creating associations between a tracker resource in one
+         * account and a geofence collection in another account.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/AssociateTrackerConsumer">AWS
          * API Reference</a></p>
          */
@@ -275,7 +278,10 @@ namespace Model
         /**
          * <p>Creates an association between a geofence collection and a tracker resource.
          * This allows the tracker resource to communicate location data to the linked
-         * geofence collection.</p><p><h3>See Also:</h3>   <a
+         * geofence collection.</p>  <p>Currently not supported — Cross-account
+         * configurations, such as creating associations between a tracker resource in one
+         * account and a geofence collection in another account.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/AssociateTrackerConsumer">AWS
          * API Reference</a></p>
          *
@@ -286,7 +292,10 @@ namespace Model
         /**
          * <p>Creates an association between a geofence collection and a tracker resource.
          * This allows the tracker resource to communicate location data to the linked
-         * geofence collection.</p><p><h3>See Also:</h3>   <a
+         * geofence collection.</p>  <p>Currently not supported — Cross-account
+         * configurations, such as creating associations between a tracker resource in one
+         * account and a geofence collection in another account.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/AssociateTrackerConsumer">AWS
          * API Reference</a></p>
          *
@@ -326,16 +335,24 @@ namespace Model
         virtual void BatchDeleteGeofenceAsync(const Model::BatchDeleteGeofenceRequest& request, const BatchDeleteGeofenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Used in geofence monitoring. Evaluates device positions against the position
-         * of geofences in a given geofence collection.</p><p><h3>See Also:</h3>   <a
+         * <p>Evaluates device positions against the geofence geometries from a given
+         * geofence collection. The evaluation determines if the device has entered or
+         * exited a geofenced area, which publishes ENTER or EXIT geofence events to Amazon
+         * EventBridge.</p>  <p>The last geofence that a device was observed within,
+         * if any, is tracked for 30 days after the most recent device position update</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchEvaluateGeofences">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchEvaluateGeofencesOutcome BatchEvaluateGeofences(const Model::BatchEvaluateGeofencesRequest& request) const;
 
         /**
-         * <p>Used in geofence monitoring. Evaluates device positions against the position
-         * of geofences in a given geofence collection.</p><p><h3>See Also:</h3>   <a
+         * <p>Evaluates device positions against the geofence geometries from a given
+         * geofence collection. The evaluation determines if the device has entered or
+         * exited a geofenced area, which publishes ENTER or EXIT geofence events to Amazon
+         * EventBridge.</p>  <p>The last geofence that a device was observed within,
+         * if any, is tracked for 30 days after the most recent device position update</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchEvaluateGeofences">AWS
          * API Reference</a></p>
          *
@@ -344,8 +361,12 @@ namespace Model
         virtual Model::BatchEvaluateGeofencesOutcomeCallable BatchEvaluateGeofencesCallable(const Model::BatchEvaluateGeofencesRequest& request) const;
 
         /**
-         * <p>Used in geofence monitoring. Evaluates device positions against the position
-         * of geofences in a given geofence collection.</p><p><h3>See Also:</h3>   <a
+         * <p>Evaluates device positions against the geofence geometries from a given
+         * geofence collection. The evaluation determines if the device has entered or
+         * exited a geofenced area, which publishes ENTER or EXIT geofence events to Amazon
+         * EventBridge.</p>  <p>The last geofence that a device was observed within,
+         * if any, is tracked for 30 days after the most recent device position update</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchEvaluateGeofences">AWS
          * API Reference</a></p>
          *
@@ -354,18 +375,16 @@ namespace Model
         virtual void BatchEvaluateGeofencesAsync(const Model::BatchEvaluateGeofencesRequest& request, const BatchEvaluateGeofencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>A batch request to retrieve device positions.</p>  <p>The response will
-         * return the device positions from the last 24 hours.</p> <p><h3>See
-         * Also:</h3>   <a
+         * <p>A batch request to retrieve all device positions.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchGetDevicePosition">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchGetDevicePositionOutcome BatchGetDevicePosition(const Model::BatchGetDevicePositionRequest& request) const;
 
         /**
-         * <p>A batch request to retrieve device positions.</p>  <p>The response will
-         * return the device positions from the last 24 hours.</p> <p><h3>See
-         * Also:</h3>   <a
+         * <p>A batch request to retrieve all device positions.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchGetDevicePosition">AWS
          * API Reference</a></p>
          *
@@ -374,9 +393,8 @@ namespace Model
         virtual Model::BatchGetDevicePositionOutcomeCallable BatchGetDevicePositionCallable(const Model::BatchGetDevicePositionRequest& request) const;
 
         /**
-         * <p>A batch request to retrieve device positions.</p>  <p>The response will
-         * return the device positions from the last 24 hours.</p> <p><h3>See
-         * Also:</h3>   <a
+         * <p>A batch request to retrieve all device positions.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchGetDevicePosition">AWS
          * API Reference</a></p>
          *
@@ -385,7 +403,7 @@ namespace Model
         virtual void BatchGetDevicePositionAsync(const Model::BatchGetDevicePositionRequest& request, const BatchGetDevicePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>A batch request for storing geofences into a given geofence
+         * <p>A batch request for storing geofence geometries into a given geofence
          * collection.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchPutGeofence">AWS
          * API Reference</a></p>
@@ -393,7 +411,7 @@ namespace Model
         virtual Model::BatchPutGeofenceOutcome BatchPutGeofence(const Model::BatchPutGeofenceRequest& request) const;
 
         /**
-         * <p>A batch request for storing geofences into a given geofence
+         * <p>A batch request for storing geofence geometries into a given geofence
          * collection.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchPutGeofence">AWS
          * API Reference</a></p>
@@ -403,7 +421,7 @@ namespace Model
         virtual Model::BatchPutGeofenceOutcomeCallable BatchPutGeofenceCallable(const Model::BatchPutGeofenceRequest& request) const;
 
         /**
-         * <p>A batch request for storing geofences into a given geofence
+         * <p>A batch request for storing geofence geometries into a given geofence
          * collection.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchPutGeofence">AWS
          * API Reference</a></p>
@@ -413,22 +431,24 @@ namespace Model
         virtual void BatchPutGeofenceAsync(const Model::BatchPutGeofenceRequest& request, const BatchPutGeofenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Uploads a position update for one or more devices to a tracker resource. The
-         * data is used for API queries requesting the device position and position
-         * history.</p>  <p>Limitation — Location data is sampled at a fixed rate of
-         * 1 position per 30 second interval, and retained for 1 year before it is
-         * deleted.</p> <p><h3>See Also:</h3>   <a
+         * <p>Uploads position update data for one or more devices to a tracker resource.
+         * Amazon Location uses the data when reporting the last known device position and
+         * position history.</p>  <p>Only one position update is stored per sample
+         * time. Location data is sampled at a fixed rate of one position per 30-second
+         * interval, and retained for one year before it is deleted.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchUpdateDevicePosition">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchUpdateDevicePositionOutcome BatchUpdateDevicePosition(const Model::BatchUpdateDevicePositionRequest& request) const;
 
         /**
-         * <p>Uploads a position update for one or more devices to a tracker resource. The
-         * data is used for API queries requesting the device position and position
-         * history.</p>  <p>Limitation — Location data is sampled at a fixed rate of
-         * 1 position per 30 second interval, and retained for 1 year before it is
-         * deleted.</p> <p><h3>See Also:</h3>   <a
+         * <p>Uploads position update data for one or more devices to a tracker resource.
+         * Amazon Location uses the data when reporting the last known device position and
+         * position history.</p>  <p>Only one position update is stored per sample
+         * time. Location data is sampled at a fixed rate of one position per 30-second
+         * interval, and retained for one year before it is deleted.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchUpdateDevicePosition">AWS
          * API Reference</a></p>
          *
@@ -437,11 +457,12 @@ namespace Model
         virtual Model::BatchUpdateDevicePositionOutcomeCallable BatchUpdateDevicePositionCallable(const Model::BatchUpdateDevicePositionRequest& request) const;
 
         /**
-         * <p>Uploads a position update for one or more devices to a tracker resource. The
-         * data is used for API queries requesting the device position and position
-         * history.</p>  <p>Limitation — Location data is sampled at a fixed rate of
-         * 1 position per 30 second interval, and retained for 1 year before it is
-         * deleted.</p> <p><h3>See Also:</h3>   <a
+         * <p>Uploads position update data for one or more devices to a tracker resource.
+         * Amazon Location uses the data when reporting the last known device position and
+         * position history.</p>  <p>Only one position update is stored per sample
+         * time. Location data is sampled at a fixed rate of one position per 30-second
+         * interval, and retained for one year before it is deleted.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchUpdateDevicePosition">AWS
          * API Reference</a></p>
          *
@@ -831,7 +852,7 @@ namespace Model
         virtual void DescribeTrackerAsync(const Model::DescribeTrackerRequest& request, const DescribeTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the association bewteen a tracker resource and a geofence
+         * <p>Removes the association between a tracker resource and a geofence
          * collection.</p>  <p>Once you unlink a tracker resource from a geofence
          * collection, the tracker positions will no longer be automatically evaluated
          * against geofences.</p> <p><h3>See Also:</h3>   <a
@@ -841,7 +862,7 @@ namespace Model
         virtual Model::DisassociateTrackerConsumerOutcome DisassociateTrackerConsumer(const Model::DisassociateTrackerConsumerRequest& request) const;
 
         /**
-         * <p>Removes the association bewteen a tracker resource and a geofence
+         * <p>Removes the association between a tracker resource and a geofence
          * collection.</p>  <p>Once you unlink a tracker resource from a geofence
          * collection, the tracker positions will no longer be automatically evaluated
          * against geofences.</p> <p><h3>See Also:</h3>   <a
@@ -853,7 +874,7 @@ namespace Model
         virtual Model::DisassociateTrackerConsumerOutcomeCallable DisassociateTrackerConsumerCallable(const Model::DisassociateTrackerConsumerRequest& request) const;
 
         /**
-         * <p>Removes the association bewteen a tracker resource and a geofence
+         * <p>Removes the association between a tracker resource and a geofence
          * collection.</p>  <p>Once you unlink a tracker resource from a geofence
          * collection, the tracker positions will no longer be automatically evaluated
          * against geofences.</p> <p><h3>See Also:</h3>   <a
@@ -865,16 +886,18 @@ namespace Model
         virtual void DisassociateTrackerConsumerAsync(const Model::DisassociateTrackerConsumerRequest& request, const DisassociateTrackerConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the latest device position.</p>  <p>Limitation — Device
-         * positions are deleted after one year.</p> <p><h3>See Also:</h3>   <a
+         * <p>Retrieves a device's most recent position according to its sample time.</p>
+         *  <p>Device positions are deleted after one year.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GetDevicePosition">AWS
          * API Reference</a></p>
          */
         virtual Model::GetDevicePositionOutcome GetDevicePosition(const Model::GetDevicePositionRequest& request) const;
 
         /**
-         * <p>Retrieves the latest device position.</p>  <p>Limitation — Device
-         * positions are deleted after one year.</p> <p><h3>See Also:</h3>   <a
+         * <p>Retrieves a device's most recent position according to its sample time.</p>
+         *  <p>Device positions are deleted after one year.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GetDevicePosition">AWS
          * API Reference</a></p>
          *
@@ -883,8 +906,9 @@ namespace Model
         virtual Model::GetDevicePositionOutcomeCallable GetDevicePositionCallable(const Model::GetDevicePositionRequest& request) const;
 
         /**
-         * <p>Retrieves the latest device position.</p>  <p>Limitation — Device
-         * positions are deleted after one year.</p> <p><h3>See Also:</h3>   <a
+         * <p>Retrieves a device's most recent position according to its sample time.</p>
+         *  <p>Device positions are deleted after one year.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GetDevicePosition">AWS
          * API Reference</a></p>
          *
@@ -894,8 +918,8 @@ namespace Model
 
         /**
          * <p>Retrieves the device position history from a tracker resource within a
-         * specified range of time.</p>  <p>Limitation — Device positions are deleted
-         * after one year.</p> <p><h3>See Also:</h3>   <a
+         * specified range of time.</p>  <p>Device positions are deleted after 1
+         * year.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GetDevicePositionHistory">AWS
          * API Reference</a></p>
          */
@@ -903,8 +927,8 @@ namespace Model
 
         /**
          * <p>Retrieves the device position history from a tracker resource within a
-         * specified range of time.</p>  <p>Limitation — Device positions are deleted
-         * after one year.</p> <p><h3>See Also:</h3>   <a
+         * specified range of time.</p>  <p>Device positions are deleted after 1
+         * year.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GetDevicePositionHistory">AWS
          * API Reference</a></p>
          *
@@ -914,8 +938,8 @@ namespace Model
 
         /**
          * <p>Retrieves the device position history from a tracker resource within a
-         * specified range of time.</p>  <p>Limitation — Device positions are deleted
-         * after one year.</p> <p><h3>See Also:</h3>   <a
+         * specified range of time.</p>  <p>Device positions are deleted after 1
+         * year.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GetDevicePositionHistory">AWS
          * API Reference</a></p>
          *
@@ -1250,18 +1274,18 @@ namespace Model
         virtual void ListTrackersAsync(const Model::ListTrackersRequest& request, const ListTrackersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stores a geofence to a given geofence collection, or updates the geometry of
-         * an existing geofence if a geofence ID is included in the request.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Stores a geofence geometry in a given geofence collection, or updates the
+         * geometry of an existing geofence if a geofence ID is included in the request.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/PutGeofence">AWS
          * API Reference</a></p>
          */
         virtual Model::PutGeofenceOutcome PutGeofence(const Model::PutGeofenceRequest& request) const;
 
         /**
-         * <p>Stores a geofence to a given geofence collection, or updates the geometry of
-         * an existing geofence if a geofence ID is included in the request.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Stores a geofence geometry in a given geofence collection, or updates the
+         * geometry of an existing geofence if a geofence ID is included in the request.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/PutGeofence">AWS
          * API Reference</a></p>
          *
@@ -1270,9 +1294,9 @@ namespace Model
         virtual Model::PutGeofenceOutcomeCallable PutGeofenceCallable(const Model::PutGeofenceRequest& request) const;
 
         /**
-         * <p>Stores a geofence to a given geofence collection, or updates the geometry of
-         * an existing geofence if a geofence ID is included in the request.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Stores a geofence geometry in a given geofence collection, or updates the
+         * geometry of an existing geofence if a geofence ID is included in the request.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/PutGeofence">AWS
          * API Reference</a></p>
          *

@@ -83,42 +83,74 @@ namespace Model
 
 
     /**
-     * <p>The data provider of geospatial data for the Place index resource.</p>
+     * <p>The data provider of geospatial data. Indicates one of the available
+     * providers:</p> <ul> <li> <p>Esri</p> </li> <li> <p>HERE</p> </li> </ul> <p>For
+     * additional details on data providers, see the <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     * Location Service data providers page</a>.</p>
      */
     inline const Aws::String& GetDataSource() const{ return m_dataSource; }
 
     /**
-     * <p>The data provider of geospatial data for the Place index resource.</p>
+     * <p>The data provider of geospatial data. Indicates one of the available
+     * providers:</p> <ul> <li> <p>Esri</p> </li> <li> <p>HERE</p> </li> </ul> <p>For
+     * additional details on data providers, see the <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     * Location Service data providers page</a>.</p>
      */
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
 
     /**
-     * <p>The data provider of geospatial data for the Place index resource.</p>
+     * <p>The data provider of geospatial data. Indicates one of the available
+     * providers:</p> <ul> <li> <p>Esri</p> </li> <li> <p>HERE</p> </li> </ul> <p>For
+     * additional details on data providers, see the <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     * Location Service data providers page</a>.</p>
      */
     inline void SetDataSource(const Aws::String& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
 
     /**
-     * <p>The data provider of geospatial data for the Place index resource.</p>
+     * <p>The data provider of geospatial data. Indicates one of the available
+     * providers:</p> <ul> <li> <p>Esri</p> </li> <li> <p>HERE</p> </li> </ul> <p>For
+     * additional details on data providers, see the <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     * Location Service data providers page</a>.</p>
      */
     inline void SetDataSource(Aws::String&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
 
     /**
-     * <p>The data provider of geospatial data for the Place index resource.</p>
+     * <p>The data provider of geospatial data. Indicates one of the available
+     * providers:</p> <ul> <li> <p>Esri</p> </li> <li> <p>HERE</p> </li> </ul> <p>For
+     * additional details on data providers, see the <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     * Location Service data providers page</a>.</p>
      */
     inline void SetDataSource(const char* value) { m_dataSourceHasBeenSet = true; m_dataSource.assign(value); }
 
     /**
-     * <p>The data provider of geospatial data for the Place index resource.</p>
+     * <p>The data provider of geospatial data. Indicates one of the available
+     * providers:</p> <ul> <li> <p>Esri</p> </li> <li> <p>HERE</p> </li> </ul> <p>For
+     * additional details on data providers, see the <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     * Location Service data providers page</a>.</p>
      */
     inline SearchPlaceIndexForTextSummary& WithDataSource(const Aws::String& value) { SetDataSource(value); return *this;}
 
     /**
-     * <p>The data provider of geospatial data for the Place index resource.</p>
+     * <p>The data provider of geospatial data. Indicates one of the available
+     * providers:</p> <ul> <li> <p>Esri</p> </li> <li> <p>HERE</p> </li> </ul> <p>For
+     * additional details on data providers, see the <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     * Location Service data providers page</a>.</p>
      */
     inline SearchPlaceIndexForTextSummary& WithDataSource(Aws::String&& value) { SetDataSource(std::move(value)); return *this;}
 
     /**
-     * <p>The data provider of geospatial data for the Place index resource.</p>
+     * <p>The data provider of geospatial data. Indicates one of the available
+     * providers:</p> <ul> <li> <p>Esri</p> </li> <li> <p>HERE</p> </li> </ul> <p>For
+     * additional details on data providers, see the <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     * Location Service data providers page</a>.</p>
      */
     inline SearchPlaceIndexForTextSummary& WithDataSource(const char* value) { SetDataSource(value); return *this;}
 

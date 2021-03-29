@@ -7,6 +7,7 @@
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/location/model/PricingPlan.h>
 #include <utility>
 
 namespace Aws
@@ -103,6 +104,90 @@ namespace Model
      * <p>The optional description for the tracker resource.</p>
      */
     inline DescribeTrackerResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p>The pricing plan selected for the specified tracker resource.</p> <p>For
+     * additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
+     * page</a>.</p>
+     */
+    inline const PricingPlan& GetPricingPlan() const{ return m_pricingPlan; }
+
+    /**
+     * <p>The pricing plan selected for the specified tracker resource.</p> <p>For
+     * additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
+     * page</a>.</p>
+     */
+    inline void SetPricingPlan(const PricingPlan& value) { m_pricingPlan = value; }
+
+    /**
+     * <p>The pricing plan selected for the specified tracker resource.</p> <p>For
+     * additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
+     * page</a>.</p>
+     */
+    inline void SetPricingPlan(PricingPlan&& value) { m_pricingPlan = std::move(value); }
+
+    /**
+     * <p>The pricing plan selected for the specified tracker resource.</p> <p>For
+     * additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
+     * page</a>.</p>
+     */
+    inline DescribeTrackerResult& WithPricingPlan(const PricingPlan& value) { SetPricingPlan(value); return *this;}
+
+    /**
+     * <p>The pricing plan selected for the specified tracker resource.</p> <p>For
+     * additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
+     * page</a>.</p>
+     */
+    inline DescribeTrackerResult& WithPricingPlan(PricingPlan&& value) { SetPricingPlan(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The data source selected for the tracker resource and associated pricing
+     * plan.</p>
+     */
+    inline const Aws::String& GetPricingPlanDataSource() const{ return m_pricingPlanDataSource; }
+
+    /**
+     * <p>The data source selected for the tracker resource and associated pricing
+     * plan.</p>
+     */
+    inline void SetPricingPlanDataSource(const Aws::String& value) { m_pricingPlanDataSource = value; }
+
+    /**
+     * <p>The data source selected for the tracker resource and associated pricing
+     * plan.</p>
+     */
+    inline void SetPricingPlanDataSource(Aws::String&& value) { m_pricingPlanDataSource = std::move(value); }
+
+    /**
+     * <p>The data source selected for the tracker resource and associated pricing
+     * plan.</p>
+     */
+    inline void SetPricingPlanDataSource(const char* value) { m_pricingPlanDataSource.assign(value); }
+
+    /**
+     * <p>The data source selected for the tracker resource and associated pricing
+     * plan.</p>
+     */
+    inline DescribeTrackerResult& WithPricingPlanDataSource(const Aws::String& value) { SetPricingPlanDataSource(value); return *this;}
+
+    /**
+     * <p>The data source selected for the tracker resource and associated pricing
+     * plan.</p>
+     */
+    inline DescribeTrackerResult& WithPricingPlanDataSource(Aws::String&& value) { SetPricingPlanDataSource(std::move(value)); return *this;}
+
+    /**
+     * <p>The data source selected for the tracker resource and associated pricing
+     * plan.</p>
+     */
+    inline DescribeTrackerResult& WithPricingPlanDataSource(const char* value) { SetPricingPlanDataSource(value); return *this;}
 
 
     /**
@@ -224,6 +309,10 @@ namespace Model
     Aws::Utils::DateTime m_createTime;
 
     Aws::String m_description;
+
+    PricingPlan m_pricingPlan;
+
+    Aws::String m_pricingPlanDataSource;
 
     Aws::String m_trackerArn;
 

@@ -108,8 +108,8 @@ namespace Model
 
     /**
      * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), and
-     * underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
+     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
+     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
      * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
      * </ul>
      */
@@ -117,8 +117,8 @@ namespace Model
 
     /**
      * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), and
-     * underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
+     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
+     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
      * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
      * </ul>
      */
@@ -126,8 +126,8 @@ namespace Model
 
     /**
      * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), and
-     * underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
+     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
+     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
      * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
      * </ul>
      */
@@ -135,8 +135,8 @@ namespace Model
 
     /**
      * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), and
-     * underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
+     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
+     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
      * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
      * </ul>
      */
@@ -144,8 +144,8 @@ namespace Model
 
     /**
      * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), and
-     * underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
+     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
+     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
      * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
      * </ul>
      */
@@ -153,8 +153,8 @@ namespace Model
 
     /**
      * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), and
-     * underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
+     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
+     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
      * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
      * </ul>
      */
@@ -162,8 +162,8 @@ namespace Model
 
     /**
      * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), and
-     * underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
+     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
+     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
      * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
      * </ul>
      */
@@ -171,8 +171,8 @@ namespace Model
 
     /**
      * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), and
-     * underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
+     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
+     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
      * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
      * </ul>
      */
@@ -180,12 +180,7 @@ namespace Model
 
 
     /**
-     * <p>Specifies the pricing plan for your map resource. There's three pricing plan
-     * options:</p> <ul> <li> <p> <code>RequestBasedUsage</code> — Selects the
-     * "Request-Based Usage" pricing plan.</p> </li> <li> <p>
-     * <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing
-     * plan.</p> </li> <li> <p> <code>MobileAssetManagement</code> — Selects the
-     * "Mobile Asset Management" pricing plan.</p> </li> </ul> <p>For additional
+     * <p>Specifies the pricing plan for your map resource.</p> <p>For additional
      * details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
      * page</a>.</p>
@@ -193,12 +188,7 @@ namespace Model
     inline const PricingPlan& GetPricingPlan() const{ return m_pricingPlan; }
 
     /**
-     * <p>Specifies the pricing plan for your map resource. There's three pricing plan
-     * options:</p> <ul> <li> <p> <code>RequestBasedUsage</code> — Selects the
-     * "Request-Based Usage" pricing plan.</p> </li> <li> <p>
-     * <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing
-     * plan.</p> </li> <li> <p> <code>MobileAssetManagement</code> — Selects the
-     * "Mobile Asset Management" pricing plan.</p> </li> </ul> <p>For additional
+     * <p>Specifies the pricing plan for your map resource.</p> <p>For additional
      * details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
      * page</a>.</p>
@@ -206,12 +196,7 @@ namespace Model
     inline bool PricingPlanHasBeenSet() const { return m_pricingPlanHasBeenSet; }
 
     /**
-     * <p>Specifies the pricing plan for your map resource. There's three pricing plan
-     * options:</p> <ul> <li> <p> <code>RequestBasedUsage</code> — Selects the
-     * "Request-Based Usage" pricing plan.</p> </li> <li> <p>
-     * <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing
-     * plan.</p> </li> <li> <p> <code>MobileAssetManagement</code> — Selects the
-     * "Mobile Asset Management" pricing plan.</p> </li> </ul> <p>For additional
+     * <p>Specifies the pricing plan for your map resource.</p> <p>For additional
      * details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
      * page</a>.</p>
@@ -219,12 +204,7 @@ namespace Model
     inline void SetPricingPlan(const PricingPlan& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = value; }
 
     /**
-     * <p>Specifies the pricing plan for your map resource. There's three pricing plan
-     * options:</p> <ul> <li> <p> <code>RequestBasedUsage</code> — Selects the
-     * "Request-Based Usage" pricing plan.</p> </li> <li> <p>
-     * <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing
-     * plan.</p> </li> <li> <p> <code>MobileAssetManagement</code> — Selects the
-     * "Mobile Asset Management" pricing plan.</p> </li> </ul> <p>For additional
+     * <p>Specifies the pricing plan for your map resource.</p> <p>For additional
      * details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
      * page</a>.</p>
@@ -232,12 +212,7 @@ namespace Model
     inline void SetPricingPlan(PricingPlan&& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = std::move(value); }
 
     /**
-     * <p>Specifies the pricing plan for your map resource. There's three pricing plan
-     * options:</p> <ul> <li> <p> <code>RequestBasedUsage</code> — Selects the
-     * "Request-Based Usage" pricing plan.</p> </li> <li> <p>
-     * <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing
-     * plan.</p> </li> <li> <p> <code>MobileAssetManagement</code> — Selects the
-     * "Mobile Asset Management" pricing plan.</p> </li> </ul> <p>For additional
+     * <p>Specifies the pricing plan for your map resource.</p> <p>For additional
      * details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
      * page</a>.</p>
@@ -245,12 +220,7 @@ namespace Model
     inline CreateMapRequest& WithPricingPlan(const PricingPlan& value) { SetPricingPlan(value); return *this;}
 
     /**
-     * <p>Specifies the pricing plan for your map resource. There's three pricing plan
-     * options:</p> <ul> <li> <p> <code>RequestBasedUsage</code> — Selects the
-     * "Request-Based Usage" pricing plan.</p> </li> <li> <p>
-     * <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing
-     * plan.</p> </li> <li> <p> <code>MobileAssetManagement</code> — Selects the
-     * "Mobile Asset Management" pricing plan.</p> </li> </ul> <p>For additional
+     * <p>Specifies the pricing plan for your map resource.</p> <p>For additional
      * details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
      * page</a>.</p>

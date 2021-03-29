@@ -21,7 +21,8 @@ UpdateWebACLRequest::UpdateWebACLRequest() :
     m_descriptionHasBeenSet(false),
     m_rulesHasBeenSet(false),
     m_visibilityConfigHasBeenSet(false),
-    m_lockTokenHasBeenSet(false)
+    m_lockTokenHasBeenSet(false),
+    m_customResponseBodiesHasBeenSet(false)
 {
 }
 
@@ -78,6 +79,17 @@ Aws::String UpdateWebACLRequest::SerializePayload() const
   if(m_lockTokenHasBeenSet)
   {
    payload.WithString("LockToken", m_lockToken);
+
+  }
+
+  if(m_customResponseBodiesHasBeenSet)
+  {
+   JsonValue customResponseBodiesJsonMap;
+   for(auto& customResponseBodiesItem : m_customResponseBodies)
+   {
+     customResponseBodiesJsonMap.WithObject(customResponseBodiesItem.first, customResponseBodiesItem.second.Jsonize());
+   }
+   payload.WithObject("CustomResponseBodies", std::move(customResponseBodiesJsonMap));
 
   }
 

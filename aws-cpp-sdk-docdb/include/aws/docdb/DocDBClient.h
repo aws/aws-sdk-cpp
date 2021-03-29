@@ -12,6 +12,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/docdb/model/AddSourceIdentifierToSubscriptionResult.h>
 #include <aws/docdb/model/ApplyPendingMaintenanceActionResult.h>
 #include <aws/docdb/model/CopyDBClusterParameterGroupResult.h>
 #include <aws/docdb/model/CopyDBClusterSnapshotResult.h>
@@ -20,9 +21,11 @@
 #include <aws/docdb/model/CreateDBClusterSnapshotResult.h>
 #include <aws/docdb/model/CreateDBInstanceResult.h>
 #include <aws/docdb/model/CreateDBSubnetGroupResult.h>
+#include <aws/docdb/model/CreateEventSubscriptionResult.h>
 #include <aws/docdb/model/DeleteDBClusterResult.h>
 #include <aws/docdb/model/DeleteDBClusterSnapshotResult.h>
 #include <aws/docdb/model/DeleteDBInstanceResult.h>
+#include <aws/docdb/model/DeleteEventSubscriptionResult.h>
 #include <aws/docdb/model/DescribeCertificatesResult.h>
 #include <aws/docdb/model/DescribeDBClusterParameterGroupsResult.h>
 #include <aws/docdb/model/DescribeDBClusterParametersResult.h>
@@ -34,6 +37,7 @@
 #include <aws/docdb/model/DescribeDBSubnetGroupsResult.h>
 #include <aws/docdb/model/DescribeEngineDefaultClusterParametersResult.h>
 #include <aws/docdb/model/DescribeEventCategoriesResult.h>
+#include <aws/docdb/model/DescribeEventSubscriptionsResult.h>
 #include <aws/docdb/model/DescribeEventsResult.h>
 #include <aws/docdb/model/DescribeOrderableDBInstanceOptionsResult.h>
 #include <aws/docdb/model/DescribePendingMaintenanceActionsResult.h>
@@ -44,7 +48,9 @@
 #include <aws/docdb/model/ModifyDBClusterSnapshotAttributeResult.h>
 #include <aws/docdb/model/ModifyDBInstanceResult.h>
 #include <aws/docdb/model/ModifyDBSubnetGroupResult.h>
+#include <aws/docdb/model/ModifyEventSubscriptionResult.h>
 #include <aws/docdb/model/RebootDBInstanceResult.h>
+#include <aws/docdb/model/RemoveSourceIdentifierFromSubscriptionResult.h>
 #include <aws/docdb/model/ResetDBClusterParameterGroupResult.h>
 #include <aws/docdb/model/RestoreDBClusterFromSnapshotResult.h>
 #include <aws/docdb/model/RestoreDBClusterToPointInTimeResult.h>
@@ -96,6 +102,7 @@ namespace DocDB
 
 namespace Model
 {
+        class AddSourceIdentifierToSubscriptionRequest;
         class AddTagsToResourceRequest;
         class ApplyPendingMaintenanceActionRequest;
         class CopyDBClusterParameterGroupRequest;
@@ -105,11 +112,13 @@ namespace Model
         class CreateDBClusterSnapshotRequest;
         class CreateDBInstanceRequest;
         class CreateDBSubnetGroupRequest;
+        class CreateEventSubscriptionRequest;
         class DeleteDBClusterRequest;
         class DeleteDBClusterParameterGroupRequest;
         class DeleteDBClusterSnapshotRequest;
         class DeleteDBInstanceRequest;
         class DeleteDBSubnetGroupRequest;
+        class DeleteEventSubscriptionRequest;
         class DescribeCertificatesRequest;
         class DescribeDBClusterParameterGroupsRequest;
         class DescribeDBClusterParametersRequest;
@@ -121,6 +130,7 @@ namespace Model
         class DescribeDBSubnetGroupsRequest;
         class DescribeEngineDefaultClusterParametersRequest;
         class DescribeEventCategoriesRequest;
+        class DescribeEventSubscriptionsRequest;
         class DescribeEventsRequest;
         class DescribeOrderableDBInstanceOptionsRequest;
         class DescribePendingMaintenanceActionsRequest;
@@ -131,7 +141,9 @@ namespace Model
         class ModifyDBClusterSnapshotAttributeRequest;
         class ModifyDBInstanceRequest;
         class ModifyDBSubnetGroupRequest;
+        class ModifyEventSubscriptionRequest;
         class RebootDBInstanceRequest;
+        class RemoveSourceIdentifierFromSubscriptionRequest;
         class RemoveTagsFromResourceRequest;
         class ResetDBClusterParameterGroupRequest;
         class RestoreDBClusterFromSnapshotRequest;
@@ -139,6 +151,7 @@ namespace Model
         class StartDBClusterRequest;
         class StopDBClusterRequest;
 
+        typedef Aws::Utils::Outcome<AddSourceIdentifierToSubscriptionResult, DocDBError> AddSourceIdentifierToSubscriptionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, DocDBError> AddTagsToResourceOutcome;
         typedef Aws::Utils::Outcome<ApplyPendingMaintenanceActionResult, DocDBError> ApplyPendingMaintenanceActionOutcome;
         typedef Aws::Utils::Outcome<CopyDBClusterParameterGroupResult, DocDBError> CopyDBClusterParameterGroupOutcome;
@@ -148,11 +161,13 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateDBClusterSnapshotResult, DocDBError> CreateDBClusterSnapshotOutcome;
         typedef Aws::Utils::Outcome<CreateDBInstanceResult, DocDBError> CreateDBInstanceOutcome;
         typedef Aws::Utils::Outcome<CreateDBSubnetGroupResult, DocDBError> CreateDBSubnetGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateEventSubscriptionResult, DocDBError> CreateEventSubscriptionOutcome;
         typedef Aws::Utils::Outcome<DeleteDBClusterResult, DocDBError> DeleteDBClusterOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, DocDBError> DeleteDBClusterParameterGroupOutcome;
         typedef Aws::Utils::Outcome<DeleteDBClusterSnapshotResult, DocDBError> DeleteDBClusterSnapshotOutcome;
         typedef Aws::Utils::Outcome<DeleteDBInstanceResult, DocDBError> DeleteDBInstanceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, DocDBError> DeleteDBSubnetGroupOutcome;
+        typedef Aws::Utils::Outcome<DeleteEventSubscriptionResult, DocDBError> DeleteEventSubscriptionOutcome;
         typedef Aws::Utils::Outcome<DescribeCertificatesResult, DocDBError> DescribeCertificatesOutcome;
         typedef Aws::Utils::Outcome<DescribeDBClusterParameterGroupsResult, DocDBError> DescribeDBClusterParameterGroupsOutcome;
         typedef Aws::Utils::Outcome<DescribeDBClusterParametersResult, DocDBError> DescribeDBClusterParametersOutcome;
@@ -164,6 +179,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeDBSubnetGroupsResult, DocDBError> DescribeDBSubnetGroupsOutcome;
         typedef Aws::Utils::Outcome<DescribeEngineDefaultClusterParametersResult, DocDBError> DescribeEngineDefaultClusterParametersOutcome;
         typedef Aws::Utils::Outcome<DescribeEventCategoriesResult, DocDBError> DescribeEventCategoriesOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventSubscriptionsResult, DocDBError> DescribeEventSubscriptionsOutcome;
         typedef Aws::Utils::Outcome<DescribeEventsResult, DocDBError> DescribeEventsOutcome;
         typedef Aws::Utils::Outcome<DescribeOrderableDBInstanceOptionsResult, DocDBError> DescribeOrderableDBInstanceOptionsOutcome;
         typedef Aws::Utils::Outcome<DescribePendingMaintenanceActionsResult, DocDBError> DescribePendingMaintenanceActionsOutcome;
@@ -174,7 +190,9 @@ namespace Model
         typedef Aws::Utils::Outcome<ModifyDBClusterSnapshotAttributeResult, DocDBError> ModifyDBClusterSnapshotAttributeOutcome;
         typedef Aws::Utils::Outcome<ModifyDBInstanceResult, DocDBError> ModifyDBInstanceOutcome;
         typedef Aws::Utils::Outcome<ModifyDBSubnetGroupResult, DocDBError> ModifyDBSubnetGroupOutcome;
+        typedef Aws::Utils::Outcome<ModifyEventSubscriptionResult, DocDBError> ModifyEventSubscriptionOutcome;
         typedef Aws::Utils::Outcome<RebootDBInstanceResult, DocDBError> RebootDBInstanceOutcome;
+        typedef Aws::Utils::Outcome<RemoveSourceIdentifierFromSubscriptionResult, DocDBError> RemoveSourceIdentifierFromSubscriptionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, DocDBError> RemoveTagsFromResourceOutcome;
         typedef Aws::Utils::Outcome<ResetDBClusterParameterGroupResult, DocDBError> ResetDBClusterParameterGroupOutcome;
         typedef Aws::Utils::Outcome<RestoreDBClusterFromSnapshotResult, DocDBError> RestoreDBClusterFromSnapshotOutcome;
@@ -182,6 +200,7 @@ namespace Model
         typedef Aws::Utils::Outcome<StartDBClusterResult, DocDBError> StartDBClusterOutcome;
         typedef Aws::Utils::Outcome<StopDBClusterResult, DocDBError> StopDBClusterOutcome;
 
+        typedef std::future<AddSourceIdentifierToSubscriptionOutcome> AddSourceIdentifierToSubscriptionOutcomeCallable;
         typedef std::future<AddTagsToResourceOutcome> AddTagsToResourceOutcomeCallable;
         typedef std::future<ApplyPendingMaintenanceActionOutcome> ApplyPendingMaintenanceActionOutcomeCallable;
         typedef std::future<CopyDBClusterParameterGroupOutcome> CopyDBClusterParameterGroupOutcomeCallable;
@@ -191,11 +210,13 @@ namespace Model
         typedef std::future<CreateDBClusterSnapshotOutcome> CreateDBClusterSnapshotOutcomeCallable;
         typedef std::future<CreateDBInstanceOutcome> CreateDBInstanceOutcomeCallable;
         typedef std::future<CreateDBSubnetGroupOutcome> CreateDBSubnetGroupOutcomeCallable;
+        typedef std::future<CreateEventSubscriptionOutcome> CreateEventSubscriptionOutcomeCallable;
         typedef std::future<DeleteDBClusterOutcome> DeleteDBClusterOutcomeCallable;
         typedef std::future<DeleteDBClusterParameterGroupOutcome> DeleteDBClusterParameterGroupOutcomeCallable;
         typedef std::future<DeleteDBClusterSnapshotOutcome> DeleteDBClusterSnapshotOutcomeCallable;
         typedef std::future<DeleteDBInstanceOutcome> DeleteDBInstanceOutcomeCallable;
         typedef std::future<DeleteDBSubnetGroupOutcome> DeleteDBSubnetGroupOutcomeCallable;
+        typedef std::future<DeleteEventSubscriptionOutcome> DeleteEventSubscriptionOutcomeCallable;
         typedef std::future<DescribeCertificatesOutcome> DescribeCertificatesOutcomeCallable;
         typedef std::future<DescribeDBClusterParameterGroupsOutcome> DescribeDBClusterParameterGroupsOutcomeCallable;
         typedef std::future<DescribeDBClusterParametersOutcome> DescribeDBClusterParametersOutcomeCallable;
@@ -207,6 +228,7 @@ namespace Model
         typedef std::future<DescribeDBSubnetGroupsOutcome> DescribeDBSubnetGroupsOutcomeCallable;
         typedef std::future<DescribeEngineDefaultClusterParametersOutcome> DescribeEngineDefaultClusterParametersOutcomeCallable;
         typedef std::future<DescribeEventCategoriesOutcome> DescribeEventCategoriesOutcomeCallable;
+        typedef std::future<DescribeEventSubscriptionsOutcome> DescribeEventSubscriptionsOutcomeCallable;
         typedef std::future<DescribeEventsOutcome> DescribeEventsOutcomeCallable;
         typedef std::future<DescribeOrderableDBInstanceOptionsOutcome> DescribeOrderableDBInstanceOptionsOutcomeCallable;
         typedef std::future<DescribePendingMaintenanceActionsOutcome> DescribePendingMaintenanceActionsOutcomeCallable;
@@ -217,7 +239,9 @@ namespace Model
         typedef std::future<ModifyDBClusterSnapshotAttributeOutcome> ModifyDBClusterSnapshotAttributeOutcomeCallable;
         typedef std::future<ModifyDBInstanceOutcome> ModifyDBInstanceOutcomeCallable;
         typedef std::future<ModifyDBSubnetGroupOutcome> ModifyDBSubnetGroupOutcomeCallable;
+        typedef std::future<ModifyEventSubscriptionOutcome> ModifyEventSubscriptionOutcomeCallable;
         typedef std::future<RebootDBInstanceOutcome> RebootDBInstanceOutcomeCallable;
+        typedef std::future<RemoveSourceIdentifierFromSubscriptionOutcome> RemoveSourceIdentifierFromSubscriptionOutcomeCallable;
         typedef std::future<RemoveTagsFromResourceOutcome> RemoveTagsFromResourceOutcomeCallable;
         typedef std::future<ResetDBClusterParameterGroupOutcome> ResetDBClusterParameterGroupOutcomeCallable;
         typedef std::future<RestoreDBClusterFromSnapshotOutcome> RestoreDBClusterFromSnapshotOutcomeCallable;
@@ -228,6 +252,7 @@ namespace Model
 
   class DocDBClient;
 
+    typedef std::function<void(const DocDBClient*, const Model::AddSourceIdentifierToSubscriptionRequest&, const Model::AddSourceIdentifierToSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddSourceIdentifierToSubscriptionResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::AddTagsToResourceRequest&, const Model::AddTagsToResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsToResourceResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::ApplyPendingMaintenanceActionRequest&, const Model::ApplyPendingMaintenanceActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ApplyPendingMaintenanceActionResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::CopyDBClusterParameterGroupRequest&, const Model::CopyDBClusterParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyDBClusterParameterGroupResponseReceivedHandler;
@@ -237,11 +262,13 @@ namespace Model
     typedef std::function<void(const DocDBClient*, const Model::CreateDBClusterSnapshotRequest&, const Model::CreateDBClusterSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDBClusterSnapshotResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::CreateDBInstanceRequest&, const Model::CreateDBInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDBInstanceResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::CreateDBSubnetGroupRequest&, const Model::CreateDBSubnetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDBSubnetGroupResponseReceivedHandler;
+    typedef std::function<void(const DocDBClient*, const Model::CreateEventSubscriptionRequest&, const Model::CreateEventSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEventSubscriptionResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::DeleteDBClusterRequest&, const Model::DeleteDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBClusterResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::DeleteDBClusterParameterGroupRequest&, const Model::DeleteDBClusterParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBClusterParameterGroupResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::DeleteDBClusterSnapshotRequest&, const Model::DeleteDBClusterSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBClusterSnapshotResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::DeleteDBInstanceRequest&, const Model::DeleteDBInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBInstanceResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::DeleteDBSubnetGroupRequest&, const Model::DeleteDBSubnetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBSubnetGroupResponseReceivedHandler;
+    typedef std::function<void(const DocDBClient*, const Model::DeleteEventSubscriptionRequest&, const Model::DeleteEventSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventSubscriptionResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::DescribeCertificatesRequest&, const Model::DescribeCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCertificatesResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::DescribeDBClusterParameterGroupsRequest&, const Model::DescribeDBClusterParameterGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBClusterParameterGroupsResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::DescribeDBClusterParametersRequest&, const Model::DescribeDBClusterParametersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBClusterParametersResponseReceivedHandler;
@@ -253,6 +280,7 @@ namespace Model
     typedef std::function<void(const DocDBClient*, const Model::DescribeDBSubnetGroupsRequest&, const Model::DescribeDBSubnetGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBSubnetGroupsResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::DescribeEngineDefaultClusterParametersRequest&, const Model::DescribeEngineDefaultClusterParametersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEngineDefaultClusterParametersResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::DescribeEventCategoriesRequest&, const Model::DescribeEventCategoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventCategoriesResponseReceivedHandler;
+    typedef std::function<void(const DocDBClient*, const Model::DescribeEventSubscriptionsRequest&, const Model::DescribeEventSubscriptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventSubscriptionsResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::DescribeEventsRequest&, const Model::DescribeEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventsResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::DescribeOrderableDBInstanceOptionsRequest&, const Model::DescribeOrderableDBInstanceOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOrderableDBInstanceOptionsResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::DescribePendingMaintenanceActionsRequest&, const Model::DescribePendingMaintenanceActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePendingMaintenanceActionsResponseReceivedHandler;
@@ -263,7 +291,9 @@ namespace Model
     typedef std::function<void(const DocDBClient*, const Model::ModifyDBClusterSnapshotAttributeRequest&, const Model::ModifyDBClusterSnapshotAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDBClusterSnapshotAttributeResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::ModifyDBInstanceRequest&, const Model::ModifyDBInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDBInstanceResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::ModifyDBSubnetGroupRequest&, const Model::ModifyDBSubnetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDBSubnetGroupResponseReceivedHandler;
+    typedef std::function<void(const DocDBClient*, const Model::ModifyEventSubscriptionRequest&, const Model::ModifyEventSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyEventSubscriptionResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::RebootDBInstanceRequest&, const Model::RebootDBInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebootDBInstanceResponseReceivedHandler;
+    typedef std::function<void(const DocDBClient*, const Model::RemoveSourceIdentifierFromSubscriptionRequest&, const Model::RemoveSourceIdentifierFromSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveSourceIdentifierFromSubscriptionResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::RemoveTagsFromResourceRequest&, const Model::RemoveTagsFromResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsFromResourceResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::ResetDBClusterParameterGroupRequest&, const Model::ResetDBClusterParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetDBClusterParameterGroupResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::RestoreDBClusterFromSnapshotRequest&, const Model::RestoreDBClusterFromSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreDBClusterFromSnapshotResponseReceivedHandler;
@@ -306,6 +336,34 @@ namespace Model
         */
         Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
 
+
+        /**
+         * <p>Adds a source identifier to an existing event notification
+         * subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/AddSourceIdentifierToSubscription">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AddSourceIdentifierToSubscriptionOutcome AddSourceIdentifierToSubscription(const Model::AddSourceIdentifierToSubscriptionRequest& request) const;
+
+        /**
+         * <p>Adds a source identifier to an existing event notification
+         * subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/AddSourceIdentifierToSubscription">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AddSourceIdentifierToSubscriptionOutcomeCallable AddSourceIdentifierToSubscriptionCallable(const Model::AddSourceIdentifierToSubscriptionRequest& request) const;
+
+        /**
+         * <p>Adds a source identifier to an existing event notification
+         * subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/AddSourceIdentifierToSubscription">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AddSourceIdentifierToSubscriptionAsync(const Model::AddSourceIdentifierToSubscriptionRequest& request, const AddSourceIdentifierToSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds metadata tags to an Amazon DocumentDB resource. You can use these tags
@@ -620,6 +678,91 @@ namespace Model
         virtual void CreateDBSubnetGroupAsync(const Model::CreateDBSubnetGroupRequest& request, const CreateDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates an Amazon DocumentDB event notification subscription. This action
+         * requires a topic Amazon Resource Name (ARN) created by using the Amazon
+         * DocumentDB console, the Amazon SNS console, or the Amazon SNS API. To obtain an
+         * ARN with Amazon SNS, you must create a topic in Amazon SNS and subscribe to the
+         * topic. The ARN is displayed in the Amazon SNS console.</p> <p>You can specify
+         * the type of source (<code>SourceType</code>) that you want to be notified of.
+         * You can also provide a list of Amazon DocumentDB sources
+         * (<code>SourceIds</code>) that trigger the events, and you can provide a list of
+         * event categories (<code>EventCategories</code>) for events that you want to be
+         * notified of. For example, you can specify <code>SourceType = db-instance</code>,
+         * <code>SourceIds = mydbinstance1, mydbinstance2</code> and <code>EventCategories
+         * = Availability, Backup</code>.</p> <p>If you specify both the
+         * <code>SourceType</code> and <code>SourceIds</code> (such as <code>SourceType =
+         * db-instance</code> and <code>SourceIdentifier = myDBInstance1</code>), you are
+         * notified of all the <code>db-instance</code> events for the specified source. If
+         * you specify a <code>SourceType</code> but do not specify a
+         * <code>SourceIdentifier</code>, you receive notice of the events for that source
+         * type for all your Amazon DocumentDB sources. If you do not specify either the
+         * <code>SourceType</code> or the <code>SourceIdentifier</code>, you are notified
+         * of events generated from all Amazon DocumentDB sources belonging to your
+         * customer account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateEventSubscription">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateEventSubscriptionOutcome CreateEventSubscription(const Model::CreateEventSubscriptionRequest& request) const;
+
+        /**
+         * <p>Creates an Amazon DocumentDB event notification subscription. This action
+         * requires a topic Amazon Resource Name (ARN) created by using the Amazon
+         * DocumentDB console, the Amazon SNS console, or the Amazon SNS API. To obtain an
+         * ARN with Amazon SNS, you must create a topic in Amazon SNS and subscribe to the
+         * topic. The ARN is displayed in the Amazon SNS console.</p> <p>You can specify
+         * the type of source (<code>SourceType</code>) that you want to be notified of.
+         * You can also provide a list of Amazon DocumentDB sources
+         * (<code>SourceIds</code>) that trigger the events, and you can provide a list of
+         * event categories (<code>EventCategories</code>) for events that you want to be
+         * notified of. For example, you can specify <code>SourceType = db-instance</code>,
+         * <code>SourceIds = mydbinstance1, mydbinstance2</code> and <code>EventCategories
+         * = Availability, Backup</code>.</p> <p>If you specify both the
+         * <code>SourceType</code> and <code>SourceIds</code> (such as <code>SourceType =
+         * db-instance</code> and <code>SourceIdentifier = myDBInstance1</code>), you are
+         * notified of all the <code>db-instance</code> events for the specified source. If
+         * you specify a <code>SourceType</code> but do not specify a
+         * <code>SourceIdentifier</code>, you receive notice of the events for that source
+         * type for all your Amazon DocumentDB sources. If you do not specify either the
+         * <code>SourceType</code> or the <code>SourceIdentifier</code>, you are notified
+         * of events generated from all Amazon DocumentDB sources belonging to your
+         * customer account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateEventSubscription">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateEventSubscriptionOutcomeCallable CreateEventSubscriptionCallable(const Model::CreateEventSubscriptionRequest& request) const;
+
+        /**
+         * <p>Creates an Amazon DocumentDB event notification subscription. This action
+         * requires a topic Amazon Resource Name (ARN) created by using the Amazon
+         * DocumentDB console, the Amazon SNS console, or the Amazon SNS API. To obtain an
+         * ARN with Amazon SNS, you must create a topic in Amazon SNS and subscribe to the
+         * topic. The ARN is displayed in the Amazon SNS console.</p> <p>You can specify
+         * the type of source (<code>SourceType</code>) that you want to be notified of.
+         * You can also provide a list of Amazon DocumentDB sources
+         * (<code>SourceIds</code>) that trigger the events, and you can provide a list of
+         * event categories (<code>EventCategories</code>) for events that you want to be
+         * notified of. For example, you can specify <code>SourceType = db-instance</code>,
+         * <code>SourceIds = mydbinstance1, mydbinstance2</code> and <code>EventCategories
+         * = Availability, Backup</code>.</p> <p>If you specify both the
+         * <code>SourceType</code> and <code>SourceIds</code> (such as <code>SourceType =
+         * db-instance</code> and <code>SourceIdentifier = myDBInstance1</code>), you are
+         * notified of all the <code>db-instance</code> events for the specified source. If
+         * you specify a <code>SourceType</code> but do not specify a
+         * <code>SourceIdentifier</code>, you receive notice of the events for that source
+         * type for all your Amazon DocumentDB sources. If you do not specify either the
+         * <code>SourceType</code> or the <code>SourceIdentifier</code>, you are notified
+         * of events generated from all Amazon DocumentDB sources belonging to your
+         * customer account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateEventSubscription">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateEventSubscriptionAsync(const Model::CreateEventSubscriptionRequest& request, const CreateEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a previously provisioned cluster. When you delete a cluster, all
          * automated backups for that cluster are deleted and can't be recovered. Manual DB
          * cluster snapshots of the specified cluster are not deleted.</p> <p/><p><h3>See
@@ -770,6 +913,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteDBSubnetGroupAsync(const Model::DeleteDBSubnetGroupRequest& request, const DeleteDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an Amazon DocumentDB event notification subscription.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteEventSubscription">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteEventSubscriptionOutcome DeleteEventSubscription(const Model::DeleteEventSubscriptionRequest& request) const;
+
+        /**
+         * <p>Deletes an Amazon DocumentDB event notification subscription.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteEventSubscription">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteEventSubscriptionOutcomeCallable DeleteEventSubscriptionCallable(const Model::DeleteEventSubscriptionRequest& request) const;
+
+        /**
+         * <p>Deletes an Amazon DocumentDB event notification subscription.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteEventSubscription">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteEventSubscriptionAsync(const Model::DeleteEventSubscriptionRequest& request, const DeleteEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of certificate authority (CA) certificates provided by Amazon
@@ -1117,6 +1288,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeEventCategoriesAsync(const Model::DescribeEventCategoriesRequest& request, const DescribeEventCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists all the subscription descriptions for a customer account. The
+         * description for a subscription includes <code>SubscriptionName</code>,
+         * <code>SNSTopicARN</code>, <code>CustomerID</code>, <code>SourceType</code>,
+         * <code>SourceID</code>, <code>CreationTime</code>, and <code>Status</code>.</p>
+         * <p>If you specify a <code>SubscriptionName</code>, lists the description for
+         * that subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeEventSubscriptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeEventSubscriptionsOutcome DescribeEventSubscriptions(const Model::DescribeEventSubscriptionsRequest& request) const;
+
+        /**
+         * <p>Lists all the subscription descriptions for a customer account. The
+         * description for a subscription includes <code>SubscriptionName</code>,
+         * <code>SNSTopicARN</code>, <code>CustomerID</code>, <code>SourceType</code>,
+         * <code>SourceID</code>, <code>CreationTime</code>, and <code>Status</code>.</p>
+         * <p>If you specify a <code>SubscriptionName</code>, lists the description for
+         * that subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeEventSubscriptions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeEventSubscriptionsOutcomeCallable DescribeEventSubscriptionsCallable(const Model::DescribeEventSubscriptionsRequest& request) const;
+
+        /**
+         * <p>Lists all the subscription descriptions for a customer account. The
+         * description for a subscription includes <code>SubscriptionName</code>,
+         * <code>SNSTopicARN</code>, <code>CustomerID</code>, <code>SourceType</code>,
+         * <code>SourceID</code>, <code>CreationTime</code>, and <code>Status</code>.</p>
+         * <p>If you specify a <code>SubscriptionName</code>, lists the description for
+         * that subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeEventSubscriptions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeEventSubscriptionsAsync(const Model::DescribeEventSubscriptionsRequest& request, const DescribeEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns events related to instances, security groups, snapshots, and DB
@@ -1501,6 +1712,34 @@ namespace Model
         virtual void ModifyDBSubnetGroupAsync(const Model::ModifyDBSubnetGroupRequest& request, const ModifyDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modifies an existing Amazon DocumentDB event notification
+         * subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyEventSubscription">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyEventSubscriptionOutcome ModifyEventSubscription(const Model::ModifyEventSubscriptionRequest& request) const;
+
+        /**
+         * <p>Modifies an existing Amazon DocumentDB event notification
+         * subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyEventSubscription">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyEventSubscriptionOutcomeCallable ModifyEventSubscriptionCallable(const Model::ModifyEventSubscriptionRequest& request) const;
+
+        /**
+         * <p>Modifies an existing Amazon DocumentDB event notification
+         * subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyEventSubscription">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyEventSubscriptionAsync(const Model::ModifyEventSubscriptionRequest& request, const ModifyEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>You might need to reboot your instance, usually for maintenance reasons. For
          * example, if you make certain changes, or if you change the cluster parameter
          * group that is associated with the instance, you must reboot the instance for the
@@ -1542,6 +1781,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RebootDBInstanceAsync(const Model::RebootDBInstanceRequest& request, const RebootDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes a source identifier from an existing Amazon DocumentDB event
+         * notification subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RemoveSourceIdentifierFromSubscription">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RemoveSourceIdentifierFromSubscriptionOutcome RemoveSourceIdentifierFromSubscription(const Model::RemoveSourceIdentifierFromSubscriptionRequest& request) const;
+
+        /**
+         * <p>Removes a source identifier from an existing Amazon DocumentDB event
+         * notification subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RemoveSourceIdentifierFromSubscription">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RemoveSourceIdentifierFromSubscriptionOutcomeCallable RemoveSourceIdentifierFromSubscriptionCallable(const Model::RemoveSourceIdentifierFromSubscriptionRequest& request) const;
+
+        /**
+         * <p>Removes a source identifier from an existing Amazon DocumentDB event
+         * notification subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RemoveSourceIdentifierFromSubscription">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RemoveSourceIdentifierFromSubscriptionAsync(const Model::RemoveSourceIdentifierFromSubscriptionRequest& request, const RemoveSourceIdentifierFromSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes metadata tags from an Amazon DocumentDB resource.</p><p><h3>See
@@ -1775,6 +2042,7 @@ namespace Model
         void OverrideEndpoint(const Aws::String& endpoint);
   private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void AddSourceIdentifierToSubscriptionAsyncHelper(const Model::AddSourceIdentifierToSubscriptionRequest& request, const AddSourceIdentifierToSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddTagsToResourceAsyncHelper(const Model::AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ApplyPendingMaintenanceActionAsyncHelper(const Model::ApplyPendingMaintenanceActionRequest& request, const ApplyPendingMaintenanceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CopyDBClusterParameterGroupAsyncHelper(const Model::CopyDBClusterParameterGroupRequest& request, const CopyDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1784,11 +2052,13 @@ namespace Model
         void CreateDBClusterSnapshotAsyncHelper(const Model::CreateDBClusterSnapshotRequest& request, const CreateDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDBInstanceAsyncHelper(const Model::CreateDBInstanceRequest& request, const CreateDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDBSubnetGroupAsyncHelper(const Model::CreateDBSubnetGroupRequest& request, const CreateDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateEventSubscriptionAsyncHelper(const Model::CreateEventSubscriptionRequest& request, const CreateEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDBClusterAsyncHelper(const Model::DeleteDBClusterRequest& request, const DeleteDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDBClusterParameterGroupAsyncHelper(const Model::DeleteDBClusterParameterGroupRequest& request, const DeleteDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDBClusterSnapshotAsyncHelper(const Model::DeleteDBClusterSnapshotRequest& request, const DeleteDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDBInstanceAsyncHelper(const Model::DeleteDBInstanceRequest& request, const DeleteDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDBSubnetGroupAsyncHelper(const Model::DeleteDBSubnetGroupRequest& request, const DeleteDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteEventSubscriptionAsyncHelper(const Model::DeleteEventSubscriptionRequest& request, const DeleteEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCertificatesAsyncHelper(const Model::DescribeCertificatesRequest& request, const DescribeCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDBClusterParameterGroupsAsyncHelper(const Model::DescribeDBClusterParameterGroupsRequest& request, const DescribeDBClusterParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDBClusterParametersAsyncHelper(const Model::DescribeDBClusterParametersRequest& request, const DescribeDBClusterParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1800,6 +2070,7 @@ namespace Model
         void DescribeDBSubnetGroupsAsyncHelper(const Model::DescribeDBSubnetGroupsRequest& request, const DescribeDBSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEngineDefaultClusterParametersAsyncHelper(const Model::DescribeEngineDefaultClusterParametersRequest& request, const DescribeEngineDefaultClusterParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEventCategoriesAsyncHelper(const Model::DescribeEventCategoriesRequest& request, const DescribeEventCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeEventSubscriptionsAsyncHelper(const Model::DescribeEventSubscriptionsRequest& request, const DescribeEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEventsAsyncHelper(const Model::DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeOrderableDBInstanceOptionsAsyncHelper(const Model::DescribeOrderableDBInstanceOptionsRequest& request, const DescribeOrderableDBInstanceOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePendingMaintenanceActionsAsyncHelper(const Model::DescribePendingMaintenanceActionsRequest& request, const DescribePendingMaintenanceActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1810,7 +2081,9 @@ namespace Model
         void ModifyDBClusterSnapshotAttributeAsyncHelper(const Model::ModifyDBClusterSnapshotAttributeRequest& request, const ModifyDBClusterSnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyDBInstanceAsyncHelper(const Model::ModifyDBInstanceRequest& request, const ModifyDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyDBSubnetGroupAsyncHelper(const Model::ModifyDBSubnetGroupRequest& request, const ModifyDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyEventSubscriptionAsyncHelper(const Model::ModifyEventSubscriptionRequest& request, const ModifyEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RebootDBInstanceAsyncHelper(const Model::RebootDBInstanceRequest& request, const RebootDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RemoveSourceIdentifierFromSubscriptionAsyncHelper(const Model::RemoveSourceIdentifierFromSubscriptionRequest& request, const RemoveSourceIdentifierFromSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTagsFromResourceAsyncHelper(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResetDBClusterParameterGroupAsyncHelper(const Model::ResetDBClusterParameterGroupRequest& request, const ResetDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreDBClusterFromSnapshotAsyncHelper(const Model::RestoreDBClusterFromSnapshotRequest& request, const RestoreDBClusterFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -26,7 +26,8 @@ RuleGroup::RuleGroup() :
     m_aRNHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_rulesHasBeenSet(false),
-    m_visibilityConfigHasBeenSet(false)
+    m_visibilityConfigHasBeenSet(false),
+    m_customResponseBodiesHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ RuleGroup::RuleGroup(JsonView jsonValue) :
     m_aRNHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_rulesHasBeenSet(false),
-    m_visibilityConfigHasBeenSet(false)
+    m_visibilityConfigHasBeenSet(false),
+    m_customResponseBodiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -97,6 +99,16 @@ RuleGroup& RuleGroup::operator =(JsonView jsonValue)
     m_visibilityConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CustomResponseBodies"))
+  {
+    Aws::Map<Aws::String, JsonView> customResponseBodiesJsonMap = jsonValue.GetObject("CustomResponseBodies").GetAllObjects();
+    for(auto& customResponseBodiesItem : customResponseBodiesJsonMap)
+    {
+      m_customResponseBodies[customResponseBodiesItem.first] = customResponseBodiesItem.second.AsObject();
+    }
+    m_customResponseBodiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -148,6 +160,17 @@ JsonValue RuleGroup::Jsonize() const
   if(m_visibilityConfigHasBeenSet)
   {
    payload.WithObject("VisibilityConfig", m_visibilityConfig.Jsonize());
+
+  }
+
+  if(m_customResponseBodiesHasBeenSet)
+  {
+   JsonValue customResponseBodiesJsonMap;
+   for(auto& customResponseBodiesItem : m_customResponseBodies)
+   {
+     customResponseBodiesJsonMap.WithObject(customResponseBodiesItem.first, customResponseBodiesItem.second.Jsonize());
+   }
+   payload.WithObject("CustomResponseBodies", std::move(customResponseBodiesJsonMap));
 
   }
 
