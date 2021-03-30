@@ -534,10 +534,10 @@ namespace Model
      * following:</p> <ul> <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code>
      * and <code>Y</code> stand for major and minor version numbers. The maximum length
      * of each is 6 digits, and neither can be negative values. Both <code>X</code> and
-     * <code>Y</code> are required, and "0.0" is not a valid version.</p> </li> <li>
-     * <p> <code>LATEST_WORKING</code> - the most recent valid version being developed
-     * in a DataBrew project.</p> </li> <li> <p> <code>LATEST_PUBLISHED</code> - the
-     * most recent published version.</p> </li> </ul>
+     * <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li> <li> <p>
+     * <code>LATEST_WORKING</code> - the most recent valid version being developed in a
+     * DataBrew project.</p> </li> <li> <p> <code>LATEST_PUBLISHED</code> - the most
+     * recent published version.</p> </li> </ul>
      */
     inline const Aws::String& GetRecipeVersion() const{ return m_recipeVersion; }
 
@@ -546,10 +546,10 @@ namespace Model
      * following:</p> <ul> <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code>
      * and <code>Y</code> stand for major and minor version numbers. The maximum length
      * of each is 6 digits, and neither can be negative values. Both <code>X</code> and
-     * <code>Y</code> are required, and "0.0" is not a valid version.</p> </li> <li>
-     * <p> <code>LATEST_WORKING</code> - the most recent valid version being developed
-     * in a DataBrew project.</p> </li> <li> <p> <code>LATEST_PUBLISHED</code> - the
-     * most recent published version.</p> </li> </ul>
+     * <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li> <li> <p>
+     * <code>LATEST_WORKING</code> - the most recent valid version being developed in a
+     * DataBrew project.</p> </li> <li> <p> <code>LATEST_PUBLISHED</code> - the most
+     * recent published version.</p> </li> </ul>
      */
     inline bool RecipeVersionHasBeenSet() const { return m_recipeVersionHasBeenSet; }
 
@@ -558,10 +558,10 @@ namespace Model
      * following:</p> <ul> <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code>
      * and <code>Y</code> stand for major and minor version numbers. The maximum length
      * of each is 6 digits, and neither can be negative values. Both <code>X</code> and
-     * <code>Y</code> are required, and "0.0" is not a valid version.</p> </li> <li>
-     * <p> <code>LATEST_WORKING</code> - the most recent valid version being developed
-     * in a DataBrew project.</p> </li> <li> <p> <code>LATEST_PUBLISHED</code> - the
-     * most recent published version.</p> </li> </ul>
+     * <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li> <li> <p>
+     * <code>LATEST_WORKING</code> - the most recent valid version being developed in a
+     * DataBrew project.</p> </li> <li> <p> <code>LATEST_PUBLISHED</code> - the most
+     * recent published version.</p> </li> </ul>
      */
     inline void SetRecipeVersion(const Aws::String& value) { m_recipeVersionHasBeenSet = true; m_recipeVersion = value; }
 
@@ -570,10 +570,10 @@ namespace Model
      * following:</p> <ul> <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code>
      * and <code>Y</code> stand for major and minor version numbers. The maximum length
      * of each is 6 digits, and neither can be negative values. Both <code>X</code> and
-     * <code>Y</code> are required, and "0.0" is not a valid version.</p> </li> <li>
-     * <p> <code>LATEST_WORKING</code> - the most recent valid version being developed
-     * in a DataBrew project.</p> </li> <li> <p> <code>LATEST_PUBLISHED</code> - the
-     * most recent published version.</p> </li> </ul>
+     * <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li> <li> <p>
+     * <code>LATEST_WORKING</code> - the most recent valid version being developed in a
+     * DataBrew project.</p> </li> <li> <p> <code>LATEST_PUBLISHED</code> - the most
+     * recent published version.</p> </li> </ul>
      */
     inline void SetRecipeVersion(Aws::String&& value) { m_recipeVersionHasBeenSet = true; m_recipeVersion = std::move(value); }
 
@@ -582,10 +582,10 @@ namespace Model
      * following:</p> <ul> <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code>
      * and <code>Y</code> stand for major and minor version numbers. The maximum length
      * of each is 6 digits, and neither can be negative values. Both <code>X</code> and
-     * <code>Y</code> are required, and "0.0" is not a valid version.</p> </li> <li>
-     * <p> <code>LATEST_WORKING</code> - the most recent valid version being developed
-     * in a DataBrew project.</p> </li> <li> <p> <code>LATEST_PUBLISHED</code> - the
-     * most recent published version.</p> </li> </ul>
+     * <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li> <li> <p>
+     * <code>LATEST_WORKING</code> - the most recent valid version being developed in a
+     * DataBrew project.</p> </li> <li> <p> <code>LATEST_PUBLISHED</code> - the most
+     * recent published version.</p> </li> </ul>
      */
     inline void SetRecipeVersion(const char* value) { m_recipeVersionHasBeenSet = true; m_recipeVersion.assign(value); }
 
@@ -594,10 +594,10 @@ namespace Model
      * following:</p> <ul> <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code>
      * and <code>Y</code> stand for major and minor version numbers. The maximum length
      * of each is 6 digits, and neither can be negative values. Both <code>X</code> and
-     * <code>Y</code> are required, and "0.0" is not a valid version.</p> </li> <li>
-     * <p> <code>LATEST_WORKING</code> - the most recent valid version being developed
-     * in a DataBrew project.</p> </li> <li> <p> <code>LATEST_PUBLISHED</code> - the
-     * most recent published version.</p> </li> </ul>
+     * <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li> <li> <p>
+     * <code>LATEST_WORKING</code> - the most recent valid version being developed in a
+     * DataBrew project.</p> </li> <li> <p> <code>LATEST_PUBLISHED</code> - the most
+     * recent published version.</p> </li> </ul>
      */
     inline Recipe& WithRecipeVersion(const Aws::String& value) { SetRecipeVersion(value); return *this;}
 
@@ -606,10 +606,10 @@ namespace Model
      * following:</p> <ul> <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code>
      * and <code>Y</code> stand for major and minor version numbers. The maximum length
      * of each is 6 digits, and neither can be negative values. Both <code>X</code> and
-     * <code>Y</code> are required, and "0.0" is not a valid version.</p> </li> <li>
-     * <p> <code>LATEST_WORKING</code> - the most recent valid version being developed
-     * in a DataBrew project.</p> </li> <li> <p> <code>LATEST_PUBLISHED</code> - the
-     * most recent published version.</p> </li> </ul>
+     * <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li> <li> <p>
+     * <code>LATEST_WORKING</code> - the most recent valid version being developed in a
+     * DataBrew project.</p> </li> <li> <p> <code>LATEST_PUBLISHED</code> - the most
+     * recent published version.</p> </li> </ul>
      */
     inline Recipe& WithRecipeVersion(Aws::String&& value) { SetRecipeVersion(std::move(value)); return *this;}
 
@@ -618,10 +618,10 @@ namespace Model
      * following:</p> <ul> <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code>
      * and <code>Y</code> stand for major and minor version numbers. The maximum length
      * of each is 6 digits, and neither can be negative values. Both <code>X</code> and
-     * <code>Y</code> are required, and "0.0" is not a valid version.</p> </li> <li>
-     * <p> <code>LATEST_WORKING</code> - the most recent valid version being developed
-     * in a DataBrew project.</p> </li> <li> <p> <code>LATEST_PUBLISHED</code> - the
-     * most recent published version.</p> </li> </ul>
+     * <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li> <li> <p>
+     * <code>LATEST_WORKING</code> - the most recent valid version being developed in a
+     * DataBrew project.</p> </li> <li> <p> <code>LATEST_PUBLISHED</code> - the most
+     * recent published version.</p> </li> </ul>
      */
     inline Recipe& WithRecipeVersion(const char* value) { SetRecipeVersion(value); return *this;}
 

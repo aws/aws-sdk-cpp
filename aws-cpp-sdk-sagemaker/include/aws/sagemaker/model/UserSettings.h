@@ -30,14 +30,13 @@ namespace Model
 
   /**
    * <p>A collection of settings that apply to users of Amazon SageMaker Studio.
-   * These settings are specified when the <a
-   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateUserProfile.html">CreateUserProfile</a>
-   * API is called, and as <code>DefaultUserSettings</code> when the <a
-   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
-   * API is called.</p> <p> <code>SecurityGroups</code> is aggregated when specified
-   * in both calls. For all other settings in <code>UserSettings</code>, the values
-   * specified in <code>CreateUserProfile</code> take precedence over those specified
-   * in <code>CreateDomain</code>.</p><p><h3>See Also:</h3>   <a
+   * These settings are specified when the <code>CreateUserProfile</code> API is
+   * called, and as <code>DefaultUserSettings</code> when the
+   * <code>CreateDomain</code> API is called.</p> <p> <code>SecurityGroups</code> is
+   * aggregated when specified in both calls. For all other settings in
+   * <code>UserSettings</code>, the values specified in
+   * <code>CreateUserProfile</code> take precedence over those specified in
+   * <code>CreateDomain</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UserSettings">AWS
    * API Reference</a></p>
    */

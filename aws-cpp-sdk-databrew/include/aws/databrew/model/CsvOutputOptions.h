@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Options that define how DataBrew will write a Csv file.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Represents a set of options that define how DataBrew will write a
+   * comma-separated value (CSV) file.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CsvOutputOptions">AWS
    * API Reference</a></p>
    */
@@ -39,49 +39,49 @@ namespace Model
 
 
     /**
-     * <p>A single character that specifies the delimiter used to create Csv job
+     * <p>A single character that specifies the delimiter used to create CSV job
      * output.</p>
      */
     inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
 
     /**
-     * <p>A single character that specifies the delimiter used to create Csv job
+     * <p>A single character that specifies the delimiter used to create CSV job
      * output.</p>
      */
     inline bool DelimiterHasBeenSet() const { return m_delimiterHasBeenSet; }
 
     /**
-     * <p>A single character that specifies the delimiter used to create Csv job
+     * <p>A single character that specifies the delimiter used to create CSV job
      * output.</p>
      */
     inline void SetDelimiter(const Aws::String& value) { m_delimiterHasBeenSet = true; m_delimiter = value; }
 
     /**
-     * <p>A single character that specifies the delimiter used to create Csv job
+     * <p>A single character that specifies the delimiter used to create CSV job
      * output.</p>
      */
     inline void SetDelimiter(Aws::String&& value) { m_delimiterHasBeenSet = true; m_delimiter = std::move(value); }
 
     /**
-     * <p>A single character that specifies the delimiter used to create Csv job
+     * <p>A single character that specifies the delimiter used to create CSV job
      * output.</p>
      */
     inline void SetDelimiter(const char* value) { m_delimiterHasBeenSet = true; m_delimiter.assign(value); }
 
     /**
-     * <p>A single character that specifies the delimiter used to create Csv job
+     * <p>A single character that specifies the delimiter used to create CSV job
      * output.</p>
      */
     inline CsvOutputOptions& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
 
     /**
-     * <p>A single character that specifies the delimiter used to create Csv job
+     * <p>A single character that specifies the delimiter used to create CSV job
      * output.</p>
      */
     inline CsvOutputOptions& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
 
     /**
-     * <p>A single character that specifies the delimiter used to create Csv job
+     * <p>A single character that specifies the delimiter used to create CSV job
      * output.</p>
      */
     inline CsvOutputOptions& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}

@@ -267,48 +267,48 @@ namespace Model
 
     /**
      * <p>The encryption mode for the job, which can be one of the following:</p> <ul>
-     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed
-     * keys.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
+     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS
+     * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
     inline const EncryptionMode& GetEncryptionMode() const{ return m_encryptionMode; }
 
     /**
      * <p>The encryption mode for the job, which can be one of the following:</p> <ul>
-     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed
-     * keys.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
+     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS
+     * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
     inline bool EncryptionModeHasBeenSet() const { return m_encryptionModeHasBeenSet; }
 
     /**
      * <p>The encryption mode for the job, which can be one of the following:</p> <ul>
-     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed
-     * keys.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
+     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS
+     * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
     inline void SetEncryptionMode(const EncryptionMode& value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = value; }
 
     /**
      * <p>The encryption mode for the job, which can be one of the following:</p> <ul>
-     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed
-     * keys.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
+     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS
+     * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
     inline void SetEncryptionMode(EncryptionMode&& value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = std::move(value); }
 
     /**
      * <p>The encryption mode for the job, which can be one of the following:</p> <ul>
-     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed
-     * keys.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
+     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS
+     * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
     inline Job& WithEncryptionMode(const EncryptionMode& value) { SetEncryptionMode(value); return *this;}
 
     /**
      * <p>The encryption mode for the job, which can be one of the following:</p> <ul>
-     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed
-     * keys.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
+     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS
+     * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
     inline Job& WithEncryptionMode(EncryptionMode&& value) { SetEncryptionMode(std::move(value)); return *this;}
@@ -708,50 +708,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that will be assumed for this
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of the role to be assumed for this job.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that will be assumed for this
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of the role to be assumed for this job.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that will be assumed for this
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of the role to be assumed for this job.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that will be assumed for this
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of the role to be assumed for this job.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that will be assumed for this
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of the role to be assumed for this job.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that will be assumed for this
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of the role to be assumed for this job.</p>
      */
     inline Job& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that will be assumed for this
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of the role to be assumed for this job.</p>
      */
     inline Job& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that will be assumed for this
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of the role to be assumed for this job.</p>
      */
     inline Job& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -848,50 +840,50 @@ namespace Model
 
 
     /**
-     * <p>Sample configuration for profile jobs only. Determines the number of rows on
-     * which the profile job will be executed. If a JobSample value is not provided,
-     * the default value will be used. The default value is CUSTOM_ROWS for the mode
-     * parameter and 20000 for the size parameter.</p>
+     * <p>A sample configuration for profile jobs only, which determines the number of
+     * rows on which the profile job is run. If a <code>JobSample</code> value isn't
+     * provided, the default value is used. The default value is CUSTOM_ROWS for the
+     * mode parameter and 20,000 for the size parameter.</p>
      */
     inline const JobSample& GetJobSample() const{ return m_jobSample; }
 
     /**
-     * <p>Sample configuration for profile jobs only. Determines the number of rows on
-     * which the profile job will be executed. If a JobSample value is not provided,
-     * the default value will be used. The default value is CUSTOM_ROWS for the mode
-     * parameter and 20000 for the size parameter.</p>
+     * <p>A sample configuration for profile jobs only, which determines the number of
+     * rows on which the profile job is run. If a <code>JobSample</code> value isn't
+     * provided, the default value is used. The default value is CUSTOM_ROWS for the
+     * mode parameter and 20,000 for the size parameter.</p>
      */
     inline bool JobSampleHasBeenSet() const { return m_jobSampleHasBeenSet; }
 
     /**
-     * <p>Sample configuration for profile jobs only. Determines the number of rows on
-     * which the profile job will be executed. If a JobSample value is not provided,
-     * the default value will be used. The default value is CUSTOM_ROWS for the mode
-     * parameter and 20000 for the size parameter.</p>
+     * <p>A sample configuration for profile jobs only, which determines the number of
+     * rows on which the profile job is run. If a <code>JobSample</code> value isn't
+     * provided, the default value is used. The default value is CUSTOM_ROWS for the
+     * mode parameter and 20,000 for the size parameter.</p>
      */
     inline void SetJobSample(const JobSample& value) { m_jobSampleHasBeenSet = true; m_jobSample = value; }
 
     /**
-     * <p>Sample configuration for profile jobs only. Determines the number of rows on
-     * which the profile job will be executed. If a JobSample value is not provided,
-     * the default value will be used. The default value is CUSTOM_ROWS for the mode
-     * parameter and 20000 for the size parameter.</p>
+     * <p>A sample configuration for profile jobs only, which determines the number of
+     * rows on which the profile job is run. If a <code>JobSample</code> value isn't
+     * provided, the default value is used. The default value is CUSTOM_ROWS for the
+     * mode parameter and 20,000 for the size parameter.</p>
      */
     inline void SetJobSample(JobSample&& value) { m_jobSampleHasBeenSet = true; m_jobSample = std::move(value); }
 
     /**
-     * <p>Sample configuration for profile jobs only. Determines the number of rows on
-     * which the profile job will be executed. If a JobSample value is not provided,
-     * the default value will be used. The default value is CUSTOM_ROWS for the mode
-     * parameter and 20000 for the size parameter.</p>
+     * <p>A sample configuration for profile jobs only, which determines the number of
+     * rows on which the profile job is run. If a <code>JobSample</code> value isn't
+     * provided, the default value is used. The default value is CUSTOM_ROWS for the
+     * mode parameter and 20,000 for the size parameter.</p>
      */
     inline Job& WithJobSample(const JobSample& value) { SetJobSample(value); return *this;}
 
     /**
-     * <p>Sample configuration for profile jobs only. Determines the number of rows on
-     * which the profile job will be executed. If a JobSample value is not provided,
-     * the default value will be used. The default value is CUSTOM_ROWS for the mode
-     * parameter and 20000 for the size parameter.</p>
+     * <p>A sample configuration for profile jobs only, which determines the number of
+     * rows on which the profile job is run. If a <code>JobSample</code> value isn't
+     * provided, the default value is used. The default value is CUSTOM_ROWS for the
+     * mode parameter and 20,000 for the size parameter.</p>
      */
     inline Job& WithJobSample(JobSample&& value) { SetJobSample(std::move(value)); return *this;}
 

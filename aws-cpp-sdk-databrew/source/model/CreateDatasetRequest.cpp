@@ -18,6 +18,7 @@ CreateDatasetRequest::CreateDatasetRequest() :
     m_formatHasBeenSet(false),
     m_formatOptionsHasBeenSet(false),
     m_inputHasBeenSet(false),
+    m_pathOptionsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -46,6 +47,12 @@ Aws::String CreateDatasetRequest::SerializePayload() const
   if(m_inputHasBeenSet)
   {
    payload.WithObject("Input", m_input.Jsonize());
+
+  }
+
+  if(m_pathOptionsHasBeenSet)
+  {
+   payload.WithObject("PathOptions", m_pathOptions.Jsonize());
 
   }
 

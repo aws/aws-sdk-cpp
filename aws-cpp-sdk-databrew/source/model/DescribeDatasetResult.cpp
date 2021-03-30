@@ -86,6 +86,12 @@ DescribeDatasetResult& DescribeDatasetResult::operator =(const Aws::AmazonWebSer
 
   }
 
+  if(jsonValue.ValueExists("PathOptions"))
+  {
+    m_pathOptions = jsonValue.GetObject("PathOptions");
+
+  }
+
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();

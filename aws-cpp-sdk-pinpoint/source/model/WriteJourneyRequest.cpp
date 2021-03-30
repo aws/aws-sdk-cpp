@@ -32,7 +32,11 @@ WriteJourneyRequest::WriteJourneyRequest() :
     m_startActivityHasBeenSet(false),
     m_startConditionHasBeenSet(false),
     m_state(State::NOT_SET),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_waitForQuietTime(false),
+    m_waitForQuietTimeHasBeenSet(false),
+    m_refreshOnSegmentUpdate(false),
+    m_refreshOnSegmentUpdateHasBeenSet(false)
 {
 }
 
@@ -50,7 +54,11 @@ WriteJourneyRequest::WriteJourneyRequest(JsonView jsonValue) :
     m_startActivityHasBeenSet(false),
     m_startConditionHasBeenSet(false),
     m_state(State::NOT_SET),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_waitForQuietTime(false),
+    m_waitForQuietTimeHasBeenSet(false),
+    m_refreshOnSegmentUpdate(false),
+    m_refreshOnSegmentUpdateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -144,6 +152,20 @@ WriteJourneyRequest& WriteJourneyRequest::operator =(JsonView jsonValue)
     m_stateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WaitForQuietTime"))
+  {
+    m_waitForQuietTime = jsonValue.GetBool("WaitForQuietTime");
+
+    m_waitForQuietTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RefreshOnSegmentUpdate"))
+  {
+    m_refreshOnSegmentUpdate = jsonValue.GetBool("RefreshOnSegmentUpdate");
+
+    m_refreshOnSegmentUpdateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -225,6 +247,18 @@ JsonValue WriteJourneyRequest::Jsonize() const
   if(m_stateHasBeenSet)
   {
    payload.WithString("State", StateMapper::GetNameForState(m_state));
+  }
+
+  if(m_waitForQuietTimeHasBeenSet)
+  {
+   payload.WithBool("WaitForQuietTime", m_waitForQuietTime);
+
+  }
+
+  if(m_refreshOnSegmentUpdateHasBeenSet)
+  {
+   payload.WithBool("RefreshOnSegmentUpdate", m_refreshOnSegmentUpdate);
+
   }
 
   return payload;

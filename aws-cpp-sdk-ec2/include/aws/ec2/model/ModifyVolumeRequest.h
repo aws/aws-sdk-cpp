@@ -215,8 +215,8 @@ namespace Model
      * following are the supported values for each volume type:</p> <ul> <li> <p>
      * <code>gp3</code>: 3,000-16,000 IOPS</p> </li> <li> <p> <code>io1</code>:
      * 100-64,000 IOPS</p> </li> <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li>
-     * </ul> <p>Default: If no IOPS value is specified, the existing value is
-     * retained.</p>
+     * </ul> <p>Default: If no IOPS value is specified, the existing value is retained,
+     * unless a volume type is modified that supports different values.</p>
      */
     inline int GetIops() const{ return m_iops; }
 
@@ -226,8 +226,8 @@ namespace Model
      * following are the supported values for each volume type:</p> <ul> <li> <p>
      * <code>gp3</code>: 3,000-16,000 IOPS</p> </li> <li> <p> <code>io1</code>:
      * 100-64,000 IOPS</p> </li> <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li>
-     * </ul> <p>Default: If no IOPS value is specified, the existing value is
-     * retained.</p>
+     * </ul> <p>Default: If no IOPS value is specified, the existing value is retained,
+     * unless a volume type is modified that supports different values.</p>
      */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
@@ -237,8 +237,8 @@ namespace Model
      * following are the supported values for each volume type:</p> <ul> <li> <p>
      * <code>gp3</code>: 3,000-16,000 IOPS</p> </li> <li> <p> <code>io1</code>:
      * 100-64,000 IOPS</p> </li> <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li>
-     * </ul> <p>Default: If no IOPS value is specified, the existing value is
-     * retained.</p>
+     * </ul> <p>Default: If no IOPS value is specified, the existing value is retained,
+     * unless a volume type is modified that supports different values.</p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
@@ -248,8 +248,8 @@ namespace Model
      * following are the supported values for each volume type:</p> <ul> <li> <p>
      * <code>gp3</code>: 3,000-16,000 IOPS</p> </li> <li> <p> <code>io1</code>:
      * 100-64,000 IOPS</p> </li> <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li>
-     * </ul> <p>Default: If no IOPS value is specified, the existing value is
-     * retained.</p>
+     * </ul> <p>Default: If no IOPS value is specified, the existing value is retained,
+     * unless a volume type is modified that supports different values.</p>
      */
     inline ModifyVolumeRequest& WithIops(int value) { SetIops(value); return *this;}
 

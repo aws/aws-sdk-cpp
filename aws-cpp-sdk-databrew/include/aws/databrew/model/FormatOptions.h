@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Options that define the structure of either Csv, Excel, or JSON
-   * input.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents a set of options that define the structure of either
+   * comma-separated value (CSV), Excel, or JSON input.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/FormatOptions">AWS
    * API Reference</a></p>
    */
@@ -103,32 +103,32 @@ namespace Model
 
 
     /**
-     * <p>Options that define how Csv input is to be interpreted by DataBrew.</p>
+     * <p>Options that define how CSV input is to be interpreted by DataBrew.</p>
      */
     inline const CsvOptions& GetCsv() const{ return m_csv; }
 
     /**
-     * <p>Options that define how Csv input is to be interpreted by DataBrew.</p>
+     * <p>Options that define how CSV input is to be interpreted by DataBrew.</p>
      */
     inline bool CsvHasBeenSet() const { return m_csvHasBeenSet; }
 
     /**
-     * <p>Options that define how Csv input is to be interpreted by DataBrew.</p>
+     * <p>Options that define how CSV input is to be interpreted by DataBrew.</p>
      */
     inline void SetCsv(const CsvOptions& value) { m_csvHasBeenSet = true; m_csv = value; }
 
     /**
-     * <p>Options that define how Csv input is to be interpreted by DataBrew.</p>
+     * <p>Options that define how CSV input is to be interpreted by DataBrew.</p>
      */
     inline void SetCsv(CsvOptions&& value) { m_csvHasBeenSet = true; m_csv = std::move(value); }
 
     /**
-     * <p>Options that define how Csv input is to be interpreted by DataBrew.</p>
+     * <p>Options that define how CSV input is to be interpreted by DataBrew.</p>
      */
     inline FormatOptions& WithCsv(const CsvOptions& value) { SetCsv(value); return *this;}
 
     /**
-     * <p>Options that define how Csv input is to be interpreted by DataBrew.</p>
+     * <p>Options that define how CSV input is to be interpreted by DataBrew.</p>
      */
     inline FormatOptions& WithCsv(CsvOptions&& value) { SetCsv(std::move(value)); return *this;}
 

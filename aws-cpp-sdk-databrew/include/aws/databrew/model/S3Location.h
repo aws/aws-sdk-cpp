@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>An Amazon S3 location (bucket name an object key) where DataBrew can read
-   * input data, or write output from a job.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew
+   * can read input data, or write output from a job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/S3Location">AWS
    * API Reference</a></p>
    */

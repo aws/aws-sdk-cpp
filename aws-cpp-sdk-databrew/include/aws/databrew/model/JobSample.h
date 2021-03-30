@@ -24,11 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>Sample configuration for Profile Jobs only. Determines the number of rows on
-   * which the Profile job will be executed. If a JobSample value is not provided for
-   * profile jobs, the default value will be used. The default value is CUSTOM_ROWS
-   * for the mode parameter and 20000 for the size parameter.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A sample configuration for profile jobs only, which determines the number of
+   * rows on which the profile job is run. If a <code>JobSample</code> value isn't
+   * provided, the default is used. The default value is CUSTOM_ROWS for the mode
+   * parameter and 20,000 for the size parameter.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/JobSample">AWS
    * API Reference</a></p>
    */
@@ -42,85 +41,89 @@ namespace Model
 
 
     /**
-     * <p>Determines whether the profile job will be executed on the entire dataset or
-     * on a specified number of rows. Must be one of the following:</p> <ul> <li>
-     * <p>FULL_DATASET: Profile job will be executed on the entire dataset.</p> </li>
-     * <li> <p>CUSTOM_ROWS: Profile job will be executed on the number of rows
-     * specified in the Size parameter.</p> </li> </ul>
+     * <p>A value that determines whether the profile job is run on the entire dataset
+     * or a specified number of rows. This value must be one of the following:</p> <ul>
+     * <li> <p>FULL_DATASET - The profile job is run on the entire dataset.</p> </li>
+     * <li> <p>CUSTOM_ROWS - The profile job is run on the number of rows specified in
+     * the <code>Size</code> parameter.</p> </li> </ul>
      */
     inline const SampleMode& GetMode() const{ return m_mode; }
 
     /**
-     * <p>Determines whether the profile job will be executed on the entire dataset or
-     * on a specified number of rows. Must be one of the following:</p> <ul> <li>
-     * <p>FULL_DATASET: Profile job will be executed on the entire dataset.</p> </li>
-     * <li> <p>CUSTOM_ROWS: Profile job will be executed on the number of rows
-     * specified in the Size parameter.</p> </li> </ul>
+     * <p>A value that determines whether the profile job is run on the entire dataset
+     * or a specified number of rows. This value must be one of the following:</p> <ul>
+     * <li> <p>FULL_DATASET - The profile job is run on the entire dataset.</p> </li>
+     * <li> <p>CUSTOM_ROWS - The profile job is run on the number of rows specified in
+     * the <code>Size</code> parameter.</p> </li> </ul>
      */
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
 
     /**
-     * <p>Determines whether the profile job will be executed on the entire dataset or
-     * on a specified number of rows. Must be one of the following:</p> <ul> <li>
-     * <p>FULL_DATASET: Profile job will be executed on the entire dataset.</p> </li>
-     * <li> <p>CUSTOM_ROWS: Profile job will be executed on the number of rows
-     * specified in the Size parameter.</p> </li> </ul>
+     * <p>A value that determines whether the profile job is run on the entire dataset
+     * or a specified number of rows. This value must be one of the following:</p> <ul>
+     * <li> <p>FULL_DATASET - The profile job is run on the entire dataset.</p> </li>
+     * <li> <p>CUSTOM_ROWS - The profile job is run on the number of rows specified in
+     * the <code>Size</code> parameter.</p> </li> </ul>
      */
     inline void SetMode(const SampleMode& value) { m_modeHasBeenSet = true; m_mode = value; }
 
     /**
-     * <p>Determines whether the profile job will be executed on the entire dataset or
-     * on a specified number of rows. Must be one of the following:</p> <ul> <li>
-     * <p>FULL_DATASET: Profile job will be executed on the entire dataset.</p> </li>
-     * <li> <p>CUSTOM_ROWS: Profile job will be executed on the number of rows
-     * specified in the Size parameter.</p> </li> </ul>
+     * <p>A value that determines whether the profile job is run on the entire dataset
+     * or a specified number of rows. This value must be one of the following:</p> <ul>
+     * <li> <p>FULL_DATASET - The profile job is run on the entire dataset.</p> </li>
+     * <li> <p>CUSTOM_ROWS - The profile job is run on the number of rows specified in
+     * the <code>Size</code> parameter.</p> </li> </ul>
      */
     inline void SetMode(SampleMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
 
     /**
-     * <p>Determines whether the profile job will be executed on the entire dataset or
-     * on a specified number of rows. Must be one of the following:</p> <ul> <li>
-     * <p>FULL_DATASET: Profile job will be executed on the entire dataset.</p> </li>
-     * <li> <p>CUSTOM_ROWS: Profile job will be executed on the number of rows
-     * specified in the Size parameter.</p> </li> </ul>
+     * <p>A value that determines whether the profile job is run on the entire dataset
+     * or a specified number of rows. This value must be one of the following:</p> <ul>
+     * <li> <p>FULL_DATASET - The profile job is run on the entire dataset.</p> </li>
+     * <li> <p>CUSTOM_ROWS - The profile job is run on the number of rows specified in
+     * the <code>Size</code> parameter.</p> </li> </ul>
      */
     inline JobSample& WithMode(const SampleMode& value) { SetMode(value); return *this;}
 
     /**
-     * <p>Determines whether the profile job will be executed on the entire dataset or
-     * on a specified number of rows. Must be one of the following:</p> <ul> <li>
-     * <p>FULL_DATASET: Profile job will be executed on the entire dataset.</p> </li>
-     * <li> <p>CUSTOM_ROWS: Profile job will be executed on the number of rows
-     * specified in the Size parameter.</p> </li> </ul>
+     * <p>A value that determines whether the profile job is run on the entire dataset
+     * or a specified number of rows. This value must be one of the following:</p> <ul>
+     * <li> <p>FULL_DATASET - The profile job is run on the entire dataset.</p> </li>
+     * <li> <p>CUSTOM_ROWS - The profile job is run on the number of rows specified in
+     * the <code>Size</code> parameter.</p> </li> </ul>
      */
     inline JobSample& WithMode(SampleMode&& value) { SetMode(std::move(value)); return *this;}
 
 
     /**
-     * <p>Size parameter is only required when the mode is CUSTOM_ROWS. Profile job
-     * will be executed on the the specified number of rows. The maximum value for size
-     * is Long.MAX_VALUE.</p> <p>Long.MAX_VALUE = 9223372036854775807</p>
+     * <p>The <code>Size</code> parameter is only required when the mode is
+     * CUSTOM_ROWS. The profile job is run on the specified number of rows. The maximum
+     * value for size is Long.MAX_VALUE.</p> <p>Long.MAX_VALUE =
+     * 9223372036854775807</p>
      */
     inline long long GetSize() const{ return m_size; }
 
     /**
-     * <p>Size parameter is only required when the mode is CUSTOM_ROWS. Profile job
-     * will be executed on the the specified number of rows. The maximum value for size
-     * is Long.MAX_VALUE.</p> <p>Long.MAX_VALUE = 9223372036854775807</p>
+     * <p>The <code>Size</code> parameter is only required when the mode is
+     * CUSTOM_ROWS. The profile job is run on the specified number of rows. The maximum
+     * value for size is Long.MAX_VALUE.</p> <p>Long.MAX_VALUE =
+     * 9223372036854775807</p>
      */
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
 
     /**
-     * <p>Size parameter is only required when the mode is CUSTOM_ROWS. Profile job
-     * will be executed on the the specified number of rows. The maximum value for size
-     * is Long.MAX_VALUE.</p> <p>Long.MAX_VALUE = 9223372036854775807</p>
+     * <p>The <code>Size</code> parameter is only required when the mode is
+     * CUSTOM_ROWS. The profile job is run on the specified number of rows. The maximum
+     * value for size is Long.MAX_VALUE.</p> <p>Long.MAX_VALUE =
+     * 9223372036854775807</p>
      */
     inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
-     * <p>Size parameter is only required when the mode is CUSTOM_ROWS. Profile job
-     * will be executed on the the specified number of rows. The maximum value for size
-     * is Long.MAX_VALUE.</p> <p>Long.MAX_VALUE = 9223372036854775807</p>
+     * <p>The <code>Size</code> parameter is only required when the mode is
+     * CUSTOM_ROWS. The profile job is run on the specified number of rows. The maximum
+     * value for size is Long.MAX_VALUE.</p> <p>Long.MAX_VALUE =
+     * 9223372036854775807</p>
      */
     inline JobSample& WithSize(long long value) { SetSize(value); return *this;}
 

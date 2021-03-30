@@ -38,197 +38,203 @@ namespace Model
 
 
     /**
-     * <p>List the Candidates created for the job by providing the job's name.</p>
+     * <p>List the candidates created for the job by providing the job's name.</p>
      */
     inline const Aws::String& GetAutoMLJobName() const{ return m_autoMLJobName; }
 
     /**
-     * <p>List the Candidates created for the job by providing the job's name.</p>
+     * <p>List the candidates created for the job by providing the job's name.</p>
      */
     inline bool AutoMLJobNameHasBeenSet() const { return m_autoMLJobNameHasBeenSet; }
 
     /**
-     * <p>List the Candidates created for the job by providing the job's name.</p>
+     * <p>List the candidates created for the job by providing the job's name.</p>
      */
     inline void SetAutoMLJobName(const Aws::String& value) { m_autoMLJobNameHasBeenSet = true; m_autoMLJobName = value; }
 
     /**
-     * <p>List the Candidates created for the job by providing the job's name.</p>
+     * <p>List the candidates created for the job by providing the job's name.</p>
      */
     inline void SetAutoMLJobName(Aws::String&& value) { m_autoMLJobNameHasBeenSet = true; m_autoMLJobName = std::move(value); }
 
     /**
-     * <p>List the Candidates created for the job by providing the job's name.</p>
+     * <p>List the candidates created for the job by providing the job's name.</p>
      */
     inline void SetAutoMLJobName(const char* value) { m_autoMLJobNameHasBeenSet = true; m_autoMLJobName.assign(value); }
 
     /**
-     * <p>List the Candidates created for the job by providing the job's name.</p>
+     * <p>List the candidates created for the job by providing the job's name.</p>
      */
     inline ListCandidatesForAutoMLJobRequest& WithAutoMLJobName(const Aws::String& value) { SetAutoMLJobName(value); return *this;}
 
     /**
-     * <p>List the Candidates created for the job by providing the job's name.</p>
+     * <p>List the candidates created for the job by providing the job's name.</p>
      */
     inline ListCandidatesForAutoMLJobRequest& WithAutoMLJobName(Aws::String&& value) { SetAutoMLJobName(std::move(value)); return *this;}
 
     /**
-     * <p>List the Candidates created for the job by providing the job's name.</p>
+     * <p>List the candidates created for the job by providing the job's name.</p>
      */
     inline ListCandidatesForAutoMLJobRequest& WithAutoMLJobName(const char* value) { SetAutoMLJobName(value); return *this;}
 
 
     /**
-     * <p>List the Candidates for the job and filter by status.</p>
+     * <p>List the candidates for the job and filter by status.</p>
      */
     inline const CandidateStatus& GetStatusEquals() const{ return m_statusEquals; }
 
     /**
-     * <p>List the Candidates for the job and filter by status.</p>
+     * <p>List the candidates for the job and filter by status.</p>
      */
     inline bool StatusEqualsHasBeenSet() const { return m_statusEqualsHasBeenSet; }
 
     /**
-     * <p>List the Candidates for the job and filter by status.</p>
+     * <p>List the candidates for the job and filter by status.</p>
      */
     inline void SetStatusEquals(const CandidateStatus& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = value; }
 
     /**
-     * <p>List the Candidates for the job and filter by status.</p>
+     * <p>List the candidates for the job and filter by status.</p>
      */
     inline void SetStatusEquals(CandidateStatus&& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = std::move(value); }
 
     /**
-     * <p>List the Candidates for the job and filter by status.</p>
+     * <p>List the candidates for the job and filter by status.</p>
      */
     inline ListCandidatesForAutoMLJobRequest& WithStatusEquals(const CandidateStatus& value) { SetStatusEquals(value); return *this;}
 
     /**
-     * <p>List the Candidates for the job and filter by status.</p>
+     * <p>List the candidates for the job and filter by status.</p>
      */
     inline ListCandidatesForAutoMLJobRequest& WithStatusEquals(CandidateStatus&& value) { SetStatusEquals(std::move(value)); return *this;}
 
 
     /**
-     * <p>List the Candidates for the job and filter by candidate name.</p>
+     * <p>List the candidates for the job and filter by candidate name.</p>
      */
     inline const Aws::String& GetCandidateNameEquals() const{ return m_candidateNameEquals; }
 
     /**
-     * <p>List the Candidates for the job and filter by candidate name.</p>
+     * <p>List the candidates for the job and filter by candidate name.</p>
      */
     inline bool CandidateNameEqualsHasBeenSet() const { return m_candidateNameEqualsHasBeenSet; }
 
     /**
-     * <p>List the Candidates for the job and filter by candidate name.</p>
+     * <p>List the candidates for the job and filter by candidate name.</p>
      */
     inline void SetCandidateNameEquals(const Aws::String& value) { m_candidateNameEqualsHasBeenSet = true; m_candidateNameEquals = value; }
 
     /**
-     * <p>List the Candidates for the job and filter by candidate name.</p>
+     * <p>List the candidates for the job and filter by candidate name.</p>
      */
     inline void SetCandidateNameEquals(Aws::String&& value) { m_candidateNameEqualsHasBeenSet = true; m_candidateNameEquals = std::move(value); }
 
     /**
-     * <p>List the Candidates for the job and filter by candidate name.</p>
+     * <p>List the candidates for the job and filter by candidate name.</p>
      */
     inline void SetCandidateNameEquals(const char* value) { m_candidateNameEqualsHasBeenSet = true; m_candidateNameEquals.assign(value); }
 
     /**
-     * <p>List the Candidates for the job and filter by candidate name.</p>
+     * <p>List the candidates for the job and filter by candidate name.</p>
      */
     inline ListCandidatesForAutoMLJobRequest& WithCandidateNameEquals(const Aws::String& value) { SetCandidateNameEquals(value); return *this;}
 
     /**
-     * <p>List the Candidates for the job and filter by candidate name.</p>
+     * <p>List the candidates for the job and filter by candidate name.</p>
      */
     inline ListCandidatesForAutoMLJobRequest& WithCandidateNameEquals(Aws::String&& value) { SetCandidateNameEquals(std::move(value)); return *this;}
 
     /**
-     * <p>List the Candidates for the job and filter by candidate name.</p>
+     * <p>List the candidates for the job and filter by candidate name.</p>
      */
     inline ListCandidatesForAutoMLJobRequest& WithCandidateNameEquals(const char* value) { SetCandidateNameEquals(value); return *this;}
 
 
     /**
-     * <p>The sort order for the results. The default is Ascending.</p>
+     * <p>The sort order for the results. The default is <code>Ascending</code>.</p>
      */
     inline const AutoMLSortOrder& GetSortOrder() const{ return m_sortOrder; }
 
     /**
-     * <p>The sort order for the results. The default is Ascending.</p>
+     * <p>The sort order for the results. The default is <code>Ascending</code>.</p>
      */
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
 
     /**
-     * <p>The sort order for the results. The default is Ascending.</p>
+     * <p>The sort order for the results. The default is <code>Ascending</code>.</p>
      */
     inline void SetSortOrder(const AutoMLSortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
 
     /**
-     * <p>The sort order for the results. The default is Ascending.</p>
+     * <p>The sort order for the results. The default is <code>Ascending</code>.</p>
      */
     inline void SetSortOrder(AutoMLSortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
 
     /**
-     * <p>The sort order for the results. The default is Ascending.</p>
+     * <p>The sort order for the results. The default is <code>Ascending</code>.</p>
      */
     inline ListCandidatesForAutoMLJobRequest& WithSortOrder(const AutoMLSortOrder& value) { SetSortOrder(value); return *this;}
 
     /**
-     * <p>The sort order for the results. The default is Ascending.</p>
+     * <p>The sort order for the results. The default is <code>Ascending</code>.</p>
      */
     inline ListCandidatesForAutoMLJobRequest& WithSortOrder(AutoMLSortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
 
 
     /**
-     * <p>The parameter by which to sort the results. The default is Descending.</p>
+     * <p>The parameter by which to sort the results. The default is
+     * <code>Descending</code>.</p>
      */
     inline const CandidateSortBy& GetSortBy() const{ return m_sortBy; }
 
     /**
-     * <p>The parameter by which to sort the results. The default is Descending.</p>
+     * <p>The parameter by which to sort the results. The default is
+     * <code>Descending</code>.</p>
      */
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
 
     /**
-     * <p>The parameter by which to sort the results. The default is Descending.</p>
+     * <p>The parameter by which to sort the results. The default is
+     * <code>Descending</code>.</p>
      */
     inline void SetSortBy(const CandidateSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
     /**
-     * <p>The parameter by which to sort the results. The default is Descending.</p>
+     * <p>The parameter by which to sort the results. The default is
+     * <code>Descending</code>.</p>
      */
     inline void SetSortBy(CandidateSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
 
     /**
-     * <p>The parameter by which to sort the results. The default is Descending.</p>
+     * <p>The parameter by which to sort the results. The default is
+     * <code>Descending</code>.</p>
      */
     inline ListCandidatesForAutoMLJobRequest& WithSortBy(const CandidateSortBy& value) { SetSortBy(value); return *this;}
 
     /**
-     * <p>The parameter by which to sort the results. The default is Descending.</p>
+     * <p>The parameter by which to sort the results. The default is
+     * <code>Descending</code>.</p>
      */
     inline ListCandidatesForAutoMLJobRequest& WithSortBy(CandidateSortBy&& value) { SetSortBy(std::move(value)); return *this;}
 
 
     /**
-     * <p>List the job's Candidates up to a specified limit.</p>
+     * <p>List the job's candidates up to a specified limit.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>List the job's Candidates up to a specified limit.</p>
+     * <p>List the job's candidates up to a specified limit.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>List the job's Candidates up to a specified limit.</p>
+     * <p>List the job's candidates up to a specified limit.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>List the job's Candidates up to a specified limit.</p>
+     * <p>List the job's candidates up to a specified limit.</p>
      */
     inline ListCandidatesForAutoMLJobRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

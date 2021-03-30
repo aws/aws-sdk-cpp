@@ -392,42 +392,42 @@ namespace Model
 
     /**
      * <p>The sample size and sampling type to apply to the data. If this parameter
-     * isn't specified, then the sample will consiste of the first 500 rows from the
+     * isn't specified, then the sample consists of the first 500 rows from the
      * dataset.</p>
      */
     inline const Sample& GetSample() const{ return m_sample; }
 
     /**
      * <p>The sample size and sampling type to apply to the data. If this parameter
-     * isn't specified, then the sample will consiste of the first 500 rows from the
+     * isn't specified, then the sample consists of the first 500 rows from the
      * dataset.</p>
      */
     inline bool SampleHasBeenSet() const { return m_sampleHasBeenSet; }
 
     /**
      * <p>The sample size and sampling type to apply to the data. If this parameter
-     * isn't specified, then the sample will consiste of the first 500 rows from the
+     * isn't specified, then the sample consists of the first 500 rows from the
      * dataset.</p>
      */
     inline void SetSample(const Sample& value) { m_sampleHasBeenSet = true; m_sample = value; }
 
     /**
      * <p>The sample size and sampling type to apply to the data. If this parameter
-     * isn't specified, then the sample will consiste of the first 500 rows from the
+     * isn't specified, then the sample consists of the first 500 rows from the
      * dataset.</p>
      */
     inline void SetSample(Sample&& value) { m_sampleHasBeenSet = true; m_sample = std::move(value); }
 
     /**
      * <p>The sample size and sampling type to apply to the data. If this parameter
-     * isn't specified, then the sample will consiste of the first 500 rows from the
+     * isn't specified, then the sample consists of the first 500 rows from the
      * dataset.</p>
      */
     inline Project& WithSample(const Sample& value) { SetSample(value); return *this;}
 
     /**
      * <p>The sample size and sampling type to apply to the data. If this parameter
-     * isn't specified, then the sample will consiste of the first 500 rows from the
+     * isn't specified, then the sample consists of the first 500 rows from the
      * dataset.</p>
      */
     inline Project& WithSample(Sample&& value) { SetSample(std::move(value)); return *this;}

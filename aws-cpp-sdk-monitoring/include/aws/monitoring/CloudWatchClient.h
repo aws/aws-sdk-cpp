@@ -15,6 +15,7 @@
 #include <aws/monitoring/model/DeleteAnomalyDetectorResult.h>
 #include <aws/monitoring/model/DeleteDashboardsResult.h>
 #include <aws/monitoring/model/DeleteInsightRulesResult.h>
+#include <aws/monitoring/model/DeleteMetricStreamResult.h>
 #include <aws/monitoring/model/DescribeAlarmHistoryResult.h>
 #include <aws/monitoring/model/DescribeAlarmsResult.h>
 #include <aws/monitoring/model/DescribeAlarmsForMetricResult.h>
@@ -26,13 +27,18 @@
 #include <aws/monitoring/model/GetInsightRuleReportResult.h>
 #include <aws/monitoring/model/GetMetricDataResult.h>
 #include <aws/monitoring/model/GetMetricStatisticsResult.h>
+#include <aws/monitoring/model/GetMetricStreamResult.h>
 #include <aws/monitoring/model/GetMetricWidgetImageResult.h>
 #include <aws/monitoring/model/ListDashboardsResult.h>
+#include <aws/monitoring/model/ListMetricStreamsResult.h>
 #include <aws/monitoring/model/ListMetricsResult.h>
 #include <aws/monitoring/model/ListTagsForResourceResult.h>
 #include <aws/monitoring/model/PutAnomalyDetectorResult.h>
 #include <aws/monitoring/model/PutDashboardResult.h>
 #include <aws/monitoring/model/PutInsightRuleResult.h>
+#include <aws/monitoring/model/PutMetricStreamResult.h>
+#include <aws/monitoring/model/StartMetricStreamsResult.h>
+#include <aws/monitoring/model/StopMetricStreamsResult.h>
 #include <aws/monitoring/model/TagResourceResult.h>
 #include <aws/monitoring/model/UntagResourceResult.h>
 #include <aws/core/NoResult.h>
@@ -85,6 +91,7 @@ namespace Model
         class DeleteAnomalyDetectorRequest;
         class DeleteDashboardsRequest;
         class DeleteInsightRulesRequest;
+        class DeleteMetricStreamRequest;
         class DescribeAlarmHistoryRequest;
         class DescribeAlarmsRequest;
         class DescribeAlarmsForMetricRequest;
@@ -98,8 +105,10 @@ namespace Model
         class GetInsightRuleReportRequest;
         class GetMetricDataRequest;
         class GetMetricStatisticsRequest;
+        class GetMetricStreamRequest;
         class GetMetricWidgetImageRequest;
         class ListDashboardsRequest;
+        class ListMetricStreamsRequest;
         class ListMetricsRequest;
         class ListTagsForResourceRequest;
         class PutAnomalyDetectorRequest;
@@ -108,7 +117,10 @@ namespace Model
         class PutInsightRuleRequest;
         class PutMetricAlarmRequest;
         class PutMetricDataRequest;
+        class PutMetricStreamRequest;
         class SetAlarmStateRequest;
+        class StartMetricStreamsRequest;
+        class StopMetricStreamsRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
 
@@ -116,6 +128,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteAnomalyDetectorResult, CloudWatchError> DeleteAnomalyDetectorOutcome;
         typedef Aws::Utils::Outcome<DeleteDashboardsResult, CloudWatchError> DeleteDashboardsOutcome;
         typedef Aws::Utils::Outcome<DeleteInsightRulesResult, CloudWatchError> DeleteInsightRulesOutcome;
+        typedef Aws::Utils::Outcome<DeleteMetricStreamResult, CloudWatchError> DeleteMetricStreamOutcome;
         typedef Aws::Utils::Outcome<DescribeAlarmHistoryResult, CloudWatchError> DescribeAlarmHistoryOutcome;
         typedef Aws::Utils::Outcome<DescribeAlarmsResult, CloudWatchError> DescribeAlarmsOutcome;
         typedef Aws::Utils::Outcome<DescribeAlarmsForMetricResult, CloudWatchError> DescribeAlarmsForMetricOutcome;
@@ -129,8 +142,10 @@ namespace Model
         typedef Aws::Utils::Outcome<GetInsightRuleReportResult, CloudWatchError> GetInsightRuleReportOutcome;
         typedef Aws::Utils::Outcome<GetMetricDataResult, CloudWatchError> GetMetricDataOutcome;
         typedef Aws::Utils::Outcome<GetMetricStatisticsResult, CloudWatchError> GetMetricStatisticsOutcome;
+        typedef Aws::Utils::Outcome<GetMetricStreamResult, CloudWatchError> GetMetricStreamOutcome;
         typedef Aws::Utils::Outcome<GetMetricWidgetImageResult, CloudWatchError> GetMetricWidgetImageOutcome;
         typedef Aws::Utils::Outcome<ListDashboardsResult, CloudWatchError> ListDashboardsOutcome;
+        typedef Aws::Utils::Outcome<ListMetricStreamsResult, CloudWatchError> ListMetricStreamsOutcome;
         typedef Aws::Utils::Outcome<ListMetricsResult, CloudWatchError> ListMetricsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, CloudWatchError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PutAnomalyDetectorResult, CloudWatchError> PutAnomalyDetectorOutcome;
@@ -139,7 +154,10 @@ namespace Model
         typedef Aws::Utils::Outcome<PutInsightRuleResult, CloudWatchError> PutInsightRuleOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> PutMetricAlarmOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> PutMetricDataOutcome;
+        typedef Aws::Utils::Outcome<PutMetricStreamResult, CloudWatchError> PutMetricStreamOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> SetAlarmStateOutcome;
+        typedef Aws::Utils::Outcome<StartMetricStreamsResult, CloudWatchError> StartMetricStreamsOutcome;
+        typedef Aws::Utils::Outcome<StopMetricStreamsResult, CloudWatchError> StopMetricStreamsOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, CloudWatchError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, CloudWatchError> UntagResourceOutcome;
 
@@ -147,6 +165,7 @@ namespace Model
         typedef std::future<DeleteAnomalyDetectorOutcome> DeleteAnomalyDetectorOutcomeCallable;
         typedef std::future<DeleteDashboardsOutcome> DeleteDashboardsOutcomeCallable;
         typedef std::future<DeleteInsightRulesOutcome> DeleteInsightRulesOutcomeCallable;
+        typedef std::future<DeleteMetricStreamOutcome> DeleteMetricStreamOutcomeCallable;
         typedef std::future<DescribeAlarmHistoryOutcome> DescribeAlarmHistoryOutcomeCallable;
         typedef std::future<DescribeAlarmsOutcome> DescribeAlarmsOutcomeCallable;
         typedef std::future<DescribeAlarmsForMetricOutcome> DescribeAlarmsForMetricOutcomeCallable;
@@ -160,8 +179,10 @@ namespace Model
         typedef std::future<GetInsightRuleReportOutcome> GetInsightRuleReportOutcomeCallable;
         typedef std::future<GetMetricDataOutcome> GetMetricDataOutcomeCallable;
         typedef std::future<GetMetricStatisticsOutcome> GetMetricStatisticsOutcomeCallable;
+        typedef std::future<GetMetricStreamOutcome> GetMetricStreamOutcomeCallable;
         typedef std::future<GetMetricWidgetImageOutcome> GetMetricWidgetImageOutcomeCallable;
         typedef std::future<ListDashboardsOutcome> ListDashboardsOutcomeCallable;
+        typedef std::future<ListMetricStreamsOutcome> ListMetricStreamsOutcomeCallable;
         typedef std::future<ListMetricsOutcome> ListMetricsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutAnomalyDetectorOutcome> PutAnomalyDetectorOutcomeCallable;
@@ -170,7 +191,10 @@ namespace Model
         typedef std::future<PutInsightRuleOutcome> PutInsightRuleOutcomeCallable;
         typedef std::future<PutMetricAlarmOutcome> PutMetricAlarmOutcomeCallable;
         typedef std::future<PutMetricDataOutcome> PutMetricDataOutcomeCallable;
+        typedef std::future<PutMetricStreamOutcome> PutMetricStreamOutcomeCallable;
         typedef std::future<SetAlarmStateOutcome> SetAlarmStateOutcomeCallable;
+        typedef std::future<StartMetricStreamsOutcome> StartMetricStreamsOutcomeCallable;
+        typedef std::future<StopMetricStreamsOutcome> StopMetricStreamsOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 } // namespace Model
@@ -181,6 +205,7 @@ namespace Model
     typedef std::function<void(const CloudWatchClient*, const Model::DeleteAnomalyDetectorRequest&, const Model::DeleteAnomalyDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAnomalyDetectorResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::DeleteDashboardsRequest&, const Model::DeleteDashboardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDashboardsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::DeleteInsightRulesRequest&, const Model::DeleteInsightRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInsightRulesResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchClient*, const Model::DeleteMetricStreamRequest&, const Model::DeleteMetricStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMetricStreamResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::DescribeAlarmHistoryRequest&, const Model::DescribeAlarmHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAlarmHistoryResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::DescribeAlarmsRequest&, const Model::DescribeAlarmsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAlarmsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::DescribeAlarmsForMetricRequest&, const Model::DescribeAlarmsForMetricOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAlarmsForMetricResponseReceivedHandler;
@@ -194,8 +219,10 @@ namespace Model
     typedef std::function<void(const CloudWatchClient*, const Model::GetInsightRuleReportRequest&, const Model::GetInsightRuleReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInsightRuleReportResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::GetMetricDataRequest&, const Model::GetMetricDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMetricDataResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::GetMetricStatisticsRequest&, const Model::GetMetricStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMetricStatisticsResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchClient*, const Model::GetMetricStreamRequest&, const Model::GetMetricStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMetricStreamResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::GetMetricWidgetImageRequest&, const Model::GetMetricWidgetImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMetricWidgetImageResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::ListDashboardsRequest&, const Model::ListDashboardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDashboardsResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchClient*, const Model::ListMetricStreamsRequest&, const Model::ListMetricStreamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMetricStreamsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::ListMetricsRequest&, const Model::ListMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMetricsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::PutAnomalyDetectorRequest&, const Model::PutAnomalyDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAnomalyDetectorResponseReceivedHandler;
@@ -204,7 +231,10 @@ namespace Model
     typedef std::function<void(const CloudWatchClient*, const Model::PutInsightRuleRequest&, const Model::PutInsightRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutInsightRuleResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::PutMetricAlarmRequest&, const Model::PutMetricAlarmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMetricAlarmResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::PutMetricDataRequest&, const Model::PutMetricDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMetricDataResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchClient*, const Model::PutMetricStreamRequest&, const Model::PutMetricStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMetricStreamResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::SetAlarmStateRequest&, const Model::SetAlarmStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetAlarmStateResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchClient*, const Model::StartMetricStreamsRequest&, const Model::StartMetricStreamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMetricStreamsResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchClient*, const Model::StopMetricStreamsRequest&, const Model::StopMetricStreamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopMetricStreamsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
 
@@ -417,6 +447,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteInsightRulesAsync(const Model::DeleteInsightRulesRequest& request, const DeleteInsightRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Permanently deletes the metric stream that you specify.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteMetricStream">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteMetricStreamOutcome DeleteMetricStream(const Model::DeleteMetricStreamRequest& request) const;
+
+        /**
+         * <p>Permanently deletes the metric stream that you specify.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteMetricStream">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteMetricStreamOutcomeCallable DeleteMetricStreamCallable(const Model::DeleteMetricStreamRequest& request) const;
+
+        /**
+         * <p>Permanently deletes the metric stream that you specify.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteMetricStream">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteMetricStreamAsync(const Model::DeleteMetricStreamRequest& request, const DeleteMetricStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the history for the specified alarm. You can filter the results by
@@ -1086,6 +1144,34 @@ namespace Model
         virtual void GetMetricStatisticsAsync(const Model::GetMetricStatisticsRequest& request, const GetMetricStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns information about the metric stream that you specify.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStream">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMetricStreamOutcome GetMetricStream(const Model::GetMetricStreamRequest& request) const;
+
+        /**
+         * <p>Returns information about the metric stream that you specify.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStream">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetMetricStreamOutcomeCallable GetMetricStreamCallable(const Model::GetMetricStreamRequest& request) const;
+
+        /**
+         * <p>Returns information about the metric stream that you specify.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStream">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetMetricStreamAsync(const Model::GetMetricStreamRequest& request, const GetMetricStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>You can use the <code>GetMetricWidgetImage</code> API to retrieve a snapshot
          * graph of one or more Amazon CloudWatch metrics as a bitmap image. You can then
          * embed this image into your services and products, such as wiki pages, reports,
@@ -1182,6 +1268,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDashboardsAsync(const Model::ListDashboardsRequest& request, const ListDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of metric streams in this account.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetricStreams">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMetricStreamsOutcome ListMetricStreams(const Model::ListMetricStreamsRequest& request) const;
+
+        /**
+         * <p>Returns a list of metric streams in this account.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetricStreams">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListMetricStreamsOutcomeCallable ListMetricStreamsCallable(const Model::ListMetricStreamsRequest& request) const;
+
+        /**
+         * <p>Returns a list of metric streams in this account.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetricStreams">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListMetricStreamsAsync(const Model::ListMetricStreamsRequest& request, const ListMetricStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the specified metrics. You can use the returned metrics with <a
@@ -1570,7 +1684,7 @@ namespace Model
          * <code>iam:CreateServiceLinkedRole</code> to create an alarm with Systems Manager
          * OpsItem actions.</p> </li> </ul> <p>The first time you create an alarm in the
          * AWS Management Console, the CLI, or by using the PutMetricAlarm API, CloudWatch
-         * creates the necessary service-linked rolea for you. The service-linked roles are
+         * creates the necessary service-linked role for you. The service-linked roles are
          * called <code>AWSServiceRoleForCloudWatchEvents</code> and
          * <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>. For more information,
          * see <a
@@ -1596,7 +1710,7 @@ namespace Model
          * <code>iam:CreateServiceLinkedRole</code> to create an alarm with Systems Manager
          * OpsItem actions.</p> </li> </ul> <p>The first time you create an alarm in the
          * AWS Management Console, the CLI, or by using the PutMetricAlarm API, CloudWatch
-         * creates the necessary service-linked rolea for you. The service-linked roles are
+         * creates the necessary service-linked role for you. The service-linked roles are
          * called <code>AWSServiceRoleForCloudWatchEvents</code> and
          * <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>. For more information,
          * see <a
@@ -1624,7 +1738,7 @@ namespace Model
          * <code>iam:CreateServiceLinkedRole</code> to create an alarm with Systems Manager
          * OpsItem actions.</p> </li> </ul> <p>The first time you create an alarm in the
          * AWS Management Console, the CLI, or by using the PutMetricAlarm API, CloudWatch
-         * creates the necessary service-linked rolea for you. The service-linked roles are
+         * creates the necessary service-linked role for you. The service-linked roles are
          * called <code>AWSServiceRoleForCloudWatchEvents</code> and
          * <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>. For more information,
          * see <a
@@ -1789,6 +1903,79 @@ namespace Model
         virtual void PutMetricDataAsync(const Model::PutMetricDataRequest& request, const PutMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates or updates a metric stream. Metric streams can automatically stream
+         * CloudWatch metrics to AWS destinations including Amazon S3 and to many
+         * third-party solutions.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Metric-Streams.html">
+         * Using Metric Streams</a>.</p> <p>To create a metric stream, you must be logged
+         * on to an account that has the <code>iam:PassRole</code> permission and either
+         * the <code>CloudWatchFullAccess</code> policy or the
+         * <code>cloudwatch:PutMetricStream</code> permission.</p> <p>When you create or
+         * update a metric stream, you choose one of the following:</p> <ul> <li> <p>Stream
+         * metrics from all metric namespaces in the account.</p> </li> <li> <p>Stream
+         * metrics from all metric namespaces in the account, except for the namespaces
+         * that you list in <code>ExcludeFilters</code>.</p> </li> <li> <p>Stream metrics
+         * from only the metric namespaces that you list in
+         * <code>IncludeFilters</code>.</p> </li> </ul> <p>When you use
+         * <code>PutMetricStream</code> to create a new metric stream, the stream is
+         * created in the <code>running</code> state. If you use it to update an existing
+         * stream, the state of the stream is not changed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricStream">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutMetricStreamOutcome PutMetricStream(const Model::PutMetricStreamRequest& request) const;
+
+        /**
+         * <p>Creates or updates a metric stream. Metric streams can automatically stream
+         * CloudWatch metrics to AWS destinations including Amazon S3 and to many
+         * third-party solutions.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Metric-Streams.html">
+         * Using Metric Streams</a>.</p> <p>To create a metric stream, you must be logged
+         * on to an account that has the <code>iam:PassRole</code> permission and either
+         * the <code>CloudWatchFullAccess</code> policy or the
+         * <code>cloudwatch:PutMetricStream</code> permission.</p> <p>When you create or
+         * update a metric stream, you choose one of the following:</p> <ul> <li> <p>Stream
+         * metrics from all metric namespaces in the account.</p> </li> <li> <p>Stream
+         * metrics from all metric namespaces in the account, except for the namespaces
+         * that you list in <code>ExcludeFilters</code>.</p> </li> <li> <p>Stream metrics
+         * from only the metric namespaces that you list in
+         * <code>IncludeFilters</code>.</p> </li> </ul> <p>When you use
+         * <code>PutMetricStream</code> to create a new metric stream, the stream is
+         * created in the <code>running</code> state. If you use it to update an existing
+         * stream, the state of the stream is not changed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricStream">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutMetricStreamOutcomeCallable PutMetricStreamCallable(const Model::PutMetricStreamRequest& request) const;
+
+        /**
+         * <p>Creates or updates a metric stream. Metric streams can automatically stream
+         * CloudWatch metrics to AWS destinations including Amazon S3 and to many
+         * third-party solutions.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Metric-Streams.html">
+         * Using Metric Streams</a>.</p> <p>To create a metric stream, you must be logged
+         * on to an account that has the <code>iam:PassRole</code> permission and either
+         * the <code>CloudWatchFullAccess</code> policy or the
+         * <code>cloudwatch:PutMetricStream</code> permission.</p> <p>When you create or
+         * update a metric stream, you choose one of the following:</p> <ul> <li> <p>Stream
+         * metrics from all metric namespaces in the account.</p> </li> <li> <p>Stream
+         * metrics from all metric namespaces in the account, except for the namespaces
+         * that you list in <code>ExcludeFilters</code>.</p> </li> <li> <p>Stream metrics
+         * from only the metric namespaces that you list in
+         * <code>IncludeFilters</code>.</p> </li> </ul> <p>When you use
+         * <code>PutMetricStream</code> to create a new metric stream, the stream is
+         * created in the <code>running</code> state. If you use it to update an existing
+         * stream, the state of the stream is not changed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricStream">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutMetricStreamAsync(const Model::PutMetricStreamRequest& request, const PutMetricStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Temporarily sets the state of an alarm for testing purposes. When the updated
          * state differs from the previous value, the action configured for the appropriate
          * state is invoked. For example, if your alarm is configured to send an Amazon SNS
@@ -1857,6 +2044,62 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SetAlarmStateAsync(const Model::SetAlarmStateRequest& request, const SetAlarmStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Starts the streaming of metrics for one or more of your metric
+         * streams.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StartMetricStreams">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartMetricStreamsOutcome StartMetricStreams(const Model::StartMetricStreamsRequest& request) const;
+
+        /**
+         * <p>Starts the streaming of metrics for one or more of your metric
+         * streams.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StartMetricStreams">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartMetricStreamsOutcomeCallable StartMetricStreamsCallable(const Model::StartMetricStreamsRequest& request) const;
+
+        /**
+         * <p>Starts the streaming of metrics for one or more of your metric
+         * streams.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StartMetricStreams">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartMetricStreamsAsync(const Model::StartMetricStreamsRequest& request, const StartMetricStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Stops the streaming of metrics for one or more of your metric
+         * streams.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StopMetricStreams">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopMetricStreamsOutcome StopMetricStreams(const Model::StopMetricStreamsRequest& request) const;
+
+        /**
+         * <p>Stops the streaming of metrics for one or more of your metric
+         * streams.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StopMetricStreams">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopMetricStreamsOutcomeCallable StopMetricStreamsCallable(const Model::StopMetricStreamsRequest& request) const;
+
+        /**
+         * <p>Stops the streaming of metrics for one or more of your metric
+         * streams.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StopMetricStreams">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopMetricStreamsAsync(const Model::StopMetricStreamsRequest& request, const StopMetricStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns one or more tags (key-value pairs) to the specified CloudWatch
@@ -1955,6 +2198,7 @@ namespace Model
         void DeleteAnomalyDetectorAsyncHelper(const Model::DeleteAnomalyDetectorRequest& request, const DeleteAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDashboardsAsyncHelper(const Model::DeleteDashboardsRequest& request, const DeleteDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteInsightRulesAsyncHelper(const Model::DeleteInsightRulesRequest& request, const DeleteInsightRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteMetricStreamAsyncHelper(const Model::DeleteMetricStreamRequest& request, const DeleteMetricStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAlarmHistoryAsyncHelper(const Model::DescribeAlarmHistoryRequest& request, const DescribeAlarmHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAlarmsAsyncHelper(const Model::DescribeAlarmsRequest& request, const DescribeAlarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAlarmsForMetricAsyncHelper(const Model::DescribeAlarmsForMetricRequest& request, const DescribeAlarmsForMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1968,8 +2212,10 @@ namespace Model
         void GetInsightRuleReportAsyncHelper(const Model::GetInsightRuleReportRequest& request, const GetInsightRuleReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMetricDataAsyncHelper(const Model::GetMetricDataRequest& request, const GetMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMetricStatisticsAsyncHelper(const Model::GetMetricStatisticsRequest& request, const GetMetricStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetMetricStreamAsyncHelper(const Model::GetMetricStreamRequest& request, const GetMetricStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMetricWidgetImageAsyncHelper(const Model::GetMetricWidgetImageRequest& request, const GetMetricWidgetImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDashboardsAsyncHelper(const Model::ListDashboardsRequest& request, const ListDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListMetricStreamsAsyncHelper(const Model::ListMetricStreamsRequest& request, const ListMetricStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMetricsAsyncHelper(const Model::ListMetricsRequest& request, const ListMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutAnomalyDetectorAsyncHelper(const Model::PutAnomalyDetectorRequest& request, const PutAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1978,7 +2224,10 @@ namespace Model
         void PutInsightRuleAsyncHelper(const Model::PutInsightRuleRequest& request, const PutInsightRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutMetricAlarmAsyncHelper(const Model::PutMetricAlarmRequest& request, const PutMetricAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutMetricDataAsyncHelper(const Model::PutMetricDataRequest& request, const PutMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutMetricStreamAsyncHelper(const Model::PutMetricStreamRequest& request, const PutMetricStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetAlarmStateAsyncHelper(const Model::SetAlarmStateRequest& request, const SetAlarmStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartMetricStreamsAsyncHelper(const Model::StartMetricStreamsRequest& request, const StartMetricStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopMetricStreamsAsyncHelper(const Model::StopMetricStreamsRequest& request, const StopMetricStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

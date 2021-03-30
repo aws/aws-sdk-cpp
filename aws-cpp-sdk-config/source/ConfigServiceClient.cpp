@@ -39,6 +39,7 @@
 #include <aws/config/model/DeleteStoredQueryRequest.h>
 #include <aws/config/model/DeliverConfigSnapshotRequest.h>
 #include <aws/config/model/DescribeAggregateComplianceByConfigRulesRequest.h>
+#include <aws/config/model/DescribeAggregateComplianceByConformancePacksRequest.h>
 #include <aws/config/model/DescribeAggregationAuthorizationsRequest.h>
 #include <aws/config/model/DescribeComplianceByConfigRuleRequest.h>
 #include <aws/config/model/DescribeComplianceByResourceRequest.h>
@@ -64,6 +65,7 @@
 #include <aws/config/model/DescribeRetentionConfigurationsRequest.h>
 #include <aws/config/model/GetAggregateComplianceDetailsByConfigRuleRequest.h>
 #include <aws/config/model/GetAggregateConfigRuleComplianceSummaryRequest.h>
+#include <aws/config/model/GetAggregateConformancePackComplianceSummaryRequest.h>
 #include <aws/config/model/GetAggregateDiscoveredResourceCountsRequest.h>
 #include <aws/config/model/GetAggregateResourceConfigRequest.h>
 #include <aws/config/model/GetComplianceDetailsByConfigRuleRequest.h>
@@ -688,6 +690,33 @@ void ConfigServiceClient::DescribeAggregateComplianceByConfigRulesAsync(const De
 void ConfigServiceClient::DescribeAggregateComplianceByConfigRulesAsyncHelper(const DescribeAggregateComplianceByConfigRulesRequest& request, const DescribeAggregateComplianceByConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeAggregateComplianceByConfigRules(request), context);
+}
+
+DescribeAggregateComplianceByConformancePacksOutcome ConfigServiceClient::DescribeAggregateComplianceByConformancePacks(const DescribeAggregateComplianceByConformancePacksRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeAggregateComplianceByConformancePacksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeAggregateComplianceByConformancePacksOutcomeCallable ConfigServiceClient::DescribeAggregateComplianceByConformancePacksCallable(const DescribeAggregateComplianceByConformancePacksRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAggregateComplianceByConformancePacksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAggregateComplianceByConformancePacks(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::DescribeAggregateComplianceByConformancePacksAsync(const DescribeAggregateComplianceByConformancePacksRequest& request, const DescribeAggregateComplianceByConformancePacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAggregateComplianceByConformancePacksAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::DescribeAggregateComplianceByConformancePacksAsyncHelper(const DescribeAggregateComplianceByConformancePacksRequest& request, const DescribeAggregateComplianceByConformancePacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAggregateComplianceByConformancePacks(request), context);
 }
 
 DescribeAggregationAuthorizationsOutcome ConfigServiceClient::DescribeAggregationAuthorizations(const DescribeAggregationAuthorizationsRequest& request) const
@@ -1363,6 +1392,33 @@ void ConfigServiceClient::GetAggregateConfigRuleComplianceSummaryAsync(const Get
 void ConfigServiceClient::GetAggregateConfigRuleComplianceSummaryAsyncHelper(const GetAggregateConfigRuleComplianceSummaryRequest& request, const GetAggregateConfigRuleComplianceSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetAggregateConfigRuleComplianceSummary(request), context);
+}
+
+GetAggregateConformancePackComplianceSummaryOutcome ConfigServiceClient::GetAggregateConformancePackComplianceSummary(const GetAggregateConformancePackComplianceSummaryRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetAggregateConformancePackComplianceSummaryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetAggregateConformancePackComplianceSummaryOutcomeCallable ConfigServiceClient::GetAggregateConformancePackComplianceSummaryCallable(const GetAggregateConformancePackComplianceSummaryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAggregateConformancePackComplianceSummaryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAggregateConformancePackComplianceSummary(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::GetAggregateConformancePackComplianceSummaryAsync(const GetAggregateConformancePackComplianceSummaryRequest& request, const GetAggregateConformancePackComplianceSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAggregateConformancePackComplianceSummaryAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::GetAggregateConformancePackComplianceSummaryAsyncHelper(const GetAggregateConformancePackComplianceSummaryRequest& request, const GetAggregateConformancePackComplianceSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAggregateConformancePackComplianceSummary(request), context);
 }
 
 GetAggregateDiscoveredResourceCountsOutcome ConfigServiceClient::GetAggregateDiscoveredResourceCounts(const GetAggregateDiscoveredResourceCountsRequest& request) const

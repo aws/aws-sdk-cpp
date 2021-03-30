@@ -91,6 +91,7 @@
 #include <aws/ec2/model/CreateNetworkInterfaceRequest.h>
 #include <aws/ec2/model/CreateNetworkInterfacePermissionRequest.h>
 #include <aws/ec2/model/CreatePlacementGroupRequest.h>
+#include <aws/ec2/model/CreateReplaceRootVolumeTaskRequest.h>
 #include <aws/ec2/model/CreateReservedInstancesListingRequest.h>
 #include <aws/ec2/model/CreateRouteRequest.h>
 #include <aws/ec2/model/CreateRouteTableRequest.h>
@@ -253,6 +254,7 @@
 #include <aws/ec2/model/DescribePrincipalIdFormatRequest.h>
 #include <aws/ec2/model/DescribePublicIpv4PoolsRequest.h>
 #include <aws/ec2/model/DescribeRegionsRequest.h>
+#include <aws/ec2/model/DescribeReplaceRootVolumeTasksRequest.h>
 #include <aws/ec2/model/DescribeReservedInstancesRequest.h>
 #include <aws/ec2/model/DescribeReservedInstancesListingsRequest.h>
 #include <aws/ec2/model/DescribeReservedInstancesModificationsRequest.h>
@@ -308,6 +310,7 @@
 #include <aws/ec2/model/DetachVpnGatewayRequest.h>
 #include <aws/ec2/model/DisableEbsEncryptionByDefaultRequest.h>
 #include <aws/ec2/model/DisableFastSnapshotRestoresRequest.h>
+#include <aws/ec2/model/DisableSerialConsoleAccessRequest.h>
 #include <aws/ec2/model/DisableTransitGatewayRouteTablePropagationRequest.h>
 #include <aws/ec2/model/DisableVgwRoutePropagationRequest.h>
 #include <aws/ec2/model/DisableVpcClassicLinkRequest.h>
@@ -323,6 +326,7 @@
 #include <aws/ec2/model/DisassociateVpcCidrBlockRequest.h>
 #include <aws/ec2/model/EnableEbsEncryptionByDefaultRequest.h>
 #include <aws/ec2/model/EnableFastSnapshotRestoresRequest.h>
+#include <aws/ec2/model/EnableSerialConsoleAccessRequest.h>
 #include <aws/ec2/model/EnableTransitGatewayRouteTablePropagationRequest.h>
 #include <aws/ec2/model/EnableVgwRoutePropagationRequest.h>
 #include <aws/ec2/model/EnableVolumeIORequest.h>
@@ -348,6 +352,7 @@
 #include <aws/ec2/model/GetManagedPrefixListEntriesRequest.h>
 #include <aws/ec2/model/GetPasswordDataRequest.h>
 #include <aws/ec2/model/GetReservedInstancesExchangeQuoteRequest.h>
+#include <aws/ec2/model/GetSerialConsoleAccessStatusRequest.h>
 #include <aws/ec2/model/GetTransitGatewayAttachmentPropagationsRequest.h>
 #include <aws/ec2/model/GetTransitGatewayMulticastDomainAssociationsRequest.h>
 #include <aws/ec2/model/GetTransitGatewayPrefixListReferencesRequest.h>
@@ -2450,6 +2455,33 @@ void EC2Client::CreatePlacementGroupAsync(const CreatePlacementGroupRequest& req
 void EC2Client::CreatePlacementGroupAsyncHelper(const CreatePlacementGroupRequest& request, const CreatePlacementGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreatePlacementGroup(request), context);
+}
+
+CreateReplaceRootVolumeTaskOutcome EC2Client::CreateReplaceRootVolumeTask(const CreateReplaceRootVolumeTaskRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateReplaceRootVolumeTaskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateReplaceRootVolumeTaskOutcomeCallable EC2Client::CreateReplaceRootVolumeTaskCallable(const CreateReplaceRootVolumeTaskRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateReplaceRootVolumeTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateReplaceRootVolumeTask(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::CreateReplaceRootVolumeTaskAsync(const CreateReplaceRootVolumeTaskRequest& request, const CreateReplaceRootVolumeTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateReplaceRootVolumeTaskAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::CreateReplaceRootVolumeTaskAsyncHelper(const CreateReplaceRootVolumeTaskRequest& request, const CreateReplaceRootVolumeTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateReplaceRootVolumeTask(request), context);
 }
 
 CreateReservedInstancesListingOutcome EC2Client::CreateReservedInstancesListing(const CreateReservedInstancesListingRequest& request) const
@@ -6826,6 +6858,33 @@ void EC2Client::DescribeRegionsAsyncHelper(const DescribeRegionsRequest& request
   handler(this, request, DescribeRegions(request), context);
 }
 
+DescribeReplaceRootVolumeTasksOutcome EC2Client::DescribeReplaceRootVolumeTasks(const DescribeReplaceRootVolumeTasksRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeReplaceRootVolumeTasksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeReplaceRootVolumeTasksOutcomeCallable EC2Client::DescribeReplaceRootVolumeTasksCallable(const DescribeReplaceRootVolumeTasksRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeReplaceRootVolumeTasksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeReplaceRootVolumeTasks(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DescribeReplaceRootVolumeTasksAsync(const DescribeReplaceRootVolumeTasksRequest& request, const DescribeReplaceRootVolumeTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeReplaceRootVolumeTasksAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DescribeReplaceRootVolumeTasksAsyncHelper(const DescribeReplaceRootVolumeTasksRequest& request, const DescribeReplaceRootVolumeTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeReplaceRootVolumeTasks(request), context);
+}
+
 DescribeReservedInstancesOutcome EC2Client::DescribeReservedInstances(const DescribeReservedInstancesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -8311,6 +8370,33 @@ void EC2Client::DisableFastSnapshotRestoresAsyncHelper(const DisableFastSnapshot
   handler(this, request, DisableFastSnapshotRestores(request), context);
 }
 
+DisableSerialConsoleAccessOutcome EC2Client::DisableSerialConsoleAccess(const DisableSerialConsoleAccessRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DisableSerialConsoleAccessOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DisableSerialConsoleAccessOutcomeCallable EC2Client::DisableSerialConsoleAccessCallable(const DisableSerialConsoleAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisableSerialConsoleAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableSerialConsoleAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DisableSerialConsoleAccessAsync(const DisableSerialConsoleAccessRequest& request, const DisableSerialConsoleAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisableSerialConsoleAccessAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DisableSerialConsoleAccessAsyncHelper(const DisableSerialConsoleAccessRequest& request, const DisableSerialConsoleAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisableSerialConsoleAccess(request), context);
+}
+
 DisableTransitGatewayRouteTablePropagationOutcome EC2Client::DisableTransitGatewayRouteTablePropagation(const DisableTransitGatewayRouteTablePropagationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -8714,6 +8800,33 @@ void EC2Client::EnableFastSnapshotRestoresAsync(const EnableFastSnapshotRestores
 void EC2Client::EnableFastSnapshotRestoresAsyncHelper(const EnableFastSnapshotRestoresRequest& request, const EnableFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, EnableFastSnapshotRestores(request), context);
+}
+
+EnableSerialConsoleAccessOutcome EC2Client::EnableSerialConsoleAccess(const EnableSerialConsoleAccessRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return EnableSerialConsoleAccessOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+EnableSerialConsoleAccessOutcomeCallable EC2Client::EnableSerialConsoleAccessCallable(const EnableSerialConsoleAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< EnableSerialConsoleAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableSerialConsoleAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::EnableSerialConsoleAccessAsync(const EnableSerialConsoleAccessRequest& request, const EnableSerialConsoleAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->EnableSerialConsoleAccessAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::EnableSerialConsoleAccessAsyncHelper(const EnableSerialConsoleAccessRequest& request, const EnableSerialConsoleAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, EnableSerialConsoleAccess(request), context);
 }
 
 EnableTransitGatewayRouteTablePropagationOutcome EC2Client::EnableTransitGatewayRouteTablePropagation(const EnableTransitGatewayRouteTablePropagationRequest& request) const
@@ -9389,6 +9502,33 @@ void EC2Client::GetReservedInstancesExchangeQuoteAsync(const GetReservedInstance
 void EC2Client::GetReservedInstancesExchangeQuoteAsyncHelper(const GetReservedInstancesExchangeQuoteRequest& request, const GetReservedInstancesExchangeQuoteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetReservedInstancesExchangeQuote(request), context);
+}
+
+GetSerialConsoleAccessStatusOutcome EC2Client::GetSerialConsoleAccessStatus(const GetSerialConsoleAccessStatusRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetSerialConsoleAccessStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+GetSerialConsoleAccessStatusOutcomeCallable EC2Client::GetSerialConsoleAccessStatusCallable(const GetSerialConsoleAccessStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetSerialConsoleAccessStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSerialConsoleAccessStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::GetSerialConsoleAccessStatusAsync(const GetSerialConsoleAccessStatusRequest& request, const GetSerialConsoleAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetSerialConsoleAccessStatusAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::GetSerialConsoleAccessStatusAsyncHelper(const GetSerialConsoleAccessStatusRequest& request, const GetSerialConsoleAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetSerialConsoleAccessStatus(request), context);
 }
 
 GetTransitGatewayAttachmentPropagationsOutcome EC2Client::GetTransitGatewayAttachmentPropagations(const GetTransitGatewayAttachmentPropagationsRequest& request) const

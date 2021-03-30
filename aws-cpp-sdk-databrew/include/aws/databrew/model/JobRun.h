@@ -549,50 +549,50 @@ namespace Model
 
 
     /**
-     * <p>Sample configuration for profile jobs only. Determines the number of rows on
-     * which the profile job will be executed. If a JobSample value is not provided,
-     * the default value will be used. The default value is CUSTOM_ROWS for the mode
-     * parameter and 20000 for the size parameter.</p>
+     * <p>A sample configuration for profile jobs only, which determines the number of
+     * rows on which the profile job is run. If a <code>JobSample</code> value isn't
+     * provided, the default is used. The default value is CUSTOM_ROWS for the mode
+     * parameter and 20,000 for the size parameter.</p>
      */
     inline const JobSample& GetJobSample() const{ return m_jobSample; }
 
     /**
-     * <p>Sample configuration for profile jobs only. Determines the number of rows on
-     * which the profile job will be executed. If a JobSample value is not provided,
-     * the default value will be used. The default value is CUSTOM_ROWS for the mode
-     * parameter and 20000 for the size parameter.</p>
+     * <p>A sample configuration for profile jobs only, which determines the number of
+     * rows on which the profile job is run. If a <code>JobSample</code> value isn't
+     * provided, the default is used. The default value is CUSTOM_ROWS for the mode
+     * parameter and 20,000 for the size parameter.</p>
      */
     inline bool JobSampleHasBeenSet() const { return m_jobSampleHasBeenSet; }
 
     /**
-     * <p>Sample configuration for profile jobs only. Determines the number of rows on
-     * which the profile job will be executed. If a JobSample value is not provided,
-     * the default value will be used. The default value is CUSTOM_ROWS for the mode
-     * parameter and 20000 for the size parameter.</p>
+     * <p>A sample configuration for profile jobs only, which determines the number of
+     * rows on which the profile job is run. If a <code>JobSample</code> value isn't
+     * provided, the default is used. The default value is CUSTOM_ROWS for the mode
+     * parameter and 20,000 for the size parameter.</p>
      */
     inline void SetJobSample(const JobSample& value) { m_jobSampleHasBeenSet = true; m_jobSample = value; }
 
     /**
-     * <p>Sample configuration for profile jobs only. Determines the number of rows on
-     * which the profile job will be executed. If a JobSample value is not provided,
-     * the default value will be used. The default value is CUSTOM_ROWS for the mode
-     * parameter and 20000 for the size parameter.</p>
+     * <p>A sample configuration for profile jobs only, which determines the number of
+     * rows on which the profile job is run. If a <code>JobSample</code> value isn't
+     * provided, the default is used. The default value is CUSTOM_ROWS for the mode
+     * parameter and 20,000 for the size parameter.</p>
      */
     inline void SetJobSample(JobSample&& value) { m_jobSampleHasBeenSet = true; m_jobSample = std::move(value); }
 
     /**
-     * <p>Sample configuration for profile jobs only. Determines the number of rows on
-     * which the profile job will be executed. If a JobSample value is not provided,
-     * the default value will be used. The default value is CUSTOM_ROWS for the mode
-     * parameter and 20000 for the size parameter.</p>
+     * <p>A sample configuration for profile jobs only, which determines the number of
+     * rows on which the profile job is run. If a <code>JobSample</code> value isn't
+     * provided, the default is used. The default value is CUSTOM_ROWS for the mode
+     * parameter and 20,000 for the size parameter.</p>
      */
     inline JobRun& WithJobSample(const JobSample& value) { SetJobSample(value); return *this;}
 
     /**
-     * <p>Sample configuration for profile jobs only. Determines the number of rows on
-     * which the profile job will be executed. If a JobSample value is not provided,
-     * the default value will be used. The default value is CUSTOM_ROWS for the mode
-     * parameter and 20000 for the size parameter.</p>
+     * <p>A sample configuration for profile jobs only, which determines the number of
+     * rows on which the profile job is run. If a <code>JobSample</code> value isn't
+     * provided, the default is used. The default value is CUSTOM_ROWS for the mode
+     * parameter and 20,000 for the size parameter.</p>
      */
     inline JobRun& WithJobSample(JobSample&& value) { SetJobSample(std::move(value)); return *this;}
 

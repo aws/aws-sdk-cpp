@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Options that define the structure of Csv job output.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Represents a set of options that define the structure of comma-separated
+   * (CSV) job output.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/OutputFormatOptions">AWS
    * API Reference</a></p>
    */
@@ -39,32 +39,38 @@ namespace Model
 
 
     /**
-     * <p>Options that define how DataBrew writes Csv output.</p>
+     * <p>Represents a set of options that define the structure of comma-separated
+     * value (CSV) job output.</p>
      */
     inline const CsvOutputOptions& GetCsv() const{ return m_csv; }
 
     /**
-     * <p>Options that define how DataBrew writes Csv output.</p>
+     * <p>Represents a set of options that define the structure of comma-separated
+     * value (CSV) job output.</p>
      */
     inline bool CsvHasBeenSet() const { return m_csvHasBeenSet; }
 
     /**
-     * <p>Options that define how DataBrew writes Csv output.</p>
+     * <p>Represents a set of options that define the structure of comma-separated
+     * value (CSV) job output.</p>
      */
     inline void SetCsv(const CsvOutputOptions& value) { m_csvHasBeenSet = true; m_csv = value; }
 
     /**
-     * <p>Options that define how DataBrew writes Csv output.</p>
+     * <p>Represents a set of options that define the structure of comma-separated
+     * value (CSV) job output.</p>
      */
     inline void SetCsv(CsvOutputOptions&& value) { m_csvHasBeenSet = true; m_csv = std::move(value); }
 
     /**
-     * <p>Options that define how DataBrew writes Csv output.</p>
+     * <p>Represents a set of options that define the structure of comma-separated
+     * value (CSV) job output.</p>
      */
     inline OutputFormatOptions& WithCsv(const CsvOutputOptions& value) { SetCsv(value); return *this;}
 
     /**
-     * <p>Options that define how DataBrew writes Csv output.</p>
+     * <p>Represents a set of options that define the structure of comma-separated
+     * value (CSV) job output.</p>
      */
     inline OutputFormatOptions& WithCsv(CsvOutputOptions&& value) { SetCsv(std::move(value)); return *this;}
 

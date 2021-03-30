@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/CandidateStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/sagemaker/model/CandidateProperties.h>
 #include <aws/sagemaker/model/AutoMLCandidateStep.h>
 #include <aws/sagemaker/model/AutoMLContainerDefinition.h>
 #include <utility>
@@ -383,6 +384,37 @@ namespace Model
      */
     inline AutoMLCandidate& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 
+
+    /**
+     * <p>The AutoML candidate's properties.</p>
+     */
+    inline const CandidateProperties& GetCandidateProperties() const{ return m_candidateProperties; }
+
+    /**
+     * <p>The AutoML candidate's properties.</p>
+     */
+    inline bool CandidatePropertiesHasBeenSet() const { return m_candidatePropertiesHasBeenSet; }
+
+    /**
+     * <p>The AutoML candidate's properties.</p>
+     */
+    inline void SetCandidateProperties(const CandidateProperties& value) { m_candidatePropertiesHasBeenSet = true; m_candidateProperties = value; }
+
+    /**
+     * <p>The AutoML candidate's properties.</p>
+     */
+    inline void SetCandidateProperties(CandidateProperties&& value) { m_candidatePropertiesHasBeenSet = true; m_candidateProperties = std::move(value); }
+
+    /**
+     * <p>The AutoML candidate's properties.</p>
+     */
+    inline AutoMLCandidate& WithCandidateProperties(const CandidateProperties& value) { SetCandidateProperties(value); return *this;}
+
+    /**
+     * <p>The AutoML candidate's properties.</p>
+     */
+    inline AutoMLCandidate& WithCandidateProperties(CandidateProperties&& value) { SetCandidateProperties(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_candidateName;
@@ -414,6 +446,9 @@ namespace Model
 
     Aws::String m_failureReason;
     bool m_failureReasonHasBeenSet;
+
+    CandidateProperties m_candidateProperties;
+    bool m_candidatePropertiesHasBeenSet;
   };
 
 } // namespace Model

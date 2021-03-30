@@ -10,6 +10,7 @@
 #include <aws/databrew/model/InputFormat.h>
 #include <aws/databrew/model/FormatOptions.h>
 #include <aws/databrew/model/Input.h>
+#include <aws/databrew/model/PathOptions.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -86,32 +87,32 @@ namespace Model
 
 
     /**
-     * <p>Specifies the file format of a dataset created from an S3 file or folder.</p>
+     * <p>The file format of a dataset that is created from an S3 file or folder.</p>
      */
     inline const InputFormat& GetFormat() const{ return m_format; }
 
     /**
-     * <p>Specifies the file format of a dataset created from an S3 file or folder.</p>
+     * <p>The file format of a dataset that is created from an S3 file or folder.</p>
      */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
-     * <p>Specifies the file format of a dataset created from an S3 file or folder.</p>
+     * <p>The file format of a dataset that is created from an S3 file or folder.</p>
      */
     inline void SetFormat(const InputFormat& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
-     * <p>Specifies the file format of a dataset created from an S3 file or folder.</p>
+     * <p>The file format of a dataset that is created from an S3 file or folder.</p>
      */
     inline void SetFormat(InputFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
     /**
-     * <p>Specifies the file format of a dataset created from an S3 file or folder.</p>
+     * <p>The file format of a dataset that is created from an S3 file or folder.</p>
      */
     inline CreateDatasetRequest& WithFormat(const InputFormat& value) { SetFormat(value); return *this;}
 
     /**
-     * <p>Specifies the file format of a dataset created from an S3 file or folder.</p>
+     * <p>The file format of a dataset that is created from an S3 file or folder.</p>
      */
     inline CreateDatasetRequest& WithFormat(InputFormat&& value) { SetFormat(std::move(value)); return *this;}
 
@@ -152,6 +153,43 @@ namespace Model
 
     
     inline CreateDatasetRequest& WithInput(Input&& value) { SetInput(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A set of options that defines how DataBrew interprets an S3 path of the
+     * dataset.</p>
+     */
+    inline const PathOptions& GetPathOptions() const{ return m_pathOptions; }
+
+    /**
+     * <p>A set of options that defines how DataBrew interprets an S3 path of the
+     * dataset.</p>
+     */
+    inline bool PathOptionsHasBeenSet() const { return m_pathOptionsHasBeenSet; }
+
+    /**
+     * <p>A set of options that defines how DataBrew interprets an S3 path of the
+     * dataset.</p>
+     */
+    inline void SetPathOptions(const PathOptions& value) { m_pathOptionsHasBeenSet = true; m_pathOptions = value; }
+
+    /**
+     * <p>A set of options that defines how DataBrew interprets an S3 path of the
+     * dataset.</p>
+     */
+    inline void SetPathOptions(PathOptions&& value) { m_pathOptionsHasBeenSet = true; m_pathOptions = std::move(value); }
+
+    /**
+     * <p>A set of options that defines how DataBrew interprets an S3 path of the
+     * dataset.</p>
+     */
+    inline CreateDatasetRequest& WithPathOptions(const PathOptions& value) { SetPathOptions(value); return *this;}
+
+    /**
+     * <p>A set of options that defines how DataBrew interprets an S3 path of the
+     * dataset.</p>
+     */
+    inline CreateDatasetRequest& WithPathOptions(PathOptions&& value) { SetPathOptions(std::move(value)); return *this;}
 
 
     /**
@@ -232,6 +270,9 @@ namespace Model
 
     Input m_input;
     bool m_inputHasBeenSet;
+
+    PathOptions m_pathOptions;
+    bool m_pathOptionsHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

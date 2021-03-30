@@ -31,6 +31,7 @@ Dataset::Dataset() :
     m_lastModifiedByHasBeenSet(false),
     m_source(Source::NOT_SET),
     m_sourceHasBeenSet(false),
+    m_pathOptionsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_resourceArnHasBeenSet(false)
 {
@@ -49,6 +50,7 @@ Dataset::Dataset(JsonView jsonValue) :
     m_lastModifiedByHasBeenSet(false),
     m_source(Source::NOT_SET),
     m_sourceHasBeenSet(false),
+    m_pathOptionsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_resourceArnHasBeenSet(false)
 {
@@ -125,6 +127,13 @@ Dataset& Dataset::operator =(JsonView jsonValue)
     m_source = SourceMapper::GetSourceForName(jsonValue.GetString("Source"));
 
     m_sourceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PathOptions"))
+  {
+    m_pathOptions = jsonValue.GetObject("PathOptions");
+
+    m_pathOptionsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Tags"))
@@ -205,6 +214,12 @@ JsonValue Dataset::Jsonize() const
   if(m_sourceHasBeenSet)
   {
    payload.WithString("Source", SourceMapper::GetNameForSource(m_source));
+  }
+
+  if(m_pathOptionsHasBeenSet)
+  {
+   payload.WithObject("PathOptions", m_pathOptions.Jsonize());
+
   }
 
   if(m_tagsHasBeenSet)

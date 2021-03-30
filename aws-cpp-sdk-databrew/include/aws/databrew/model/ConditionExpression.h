@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>Represents an individual condition that evaluates to true or false.</p>
-   * <p>Conditions are used with recipe actions: The action is only performed for
+   * <p>Conditions are used with recipe actions. The action is only performed for
    * column values where the condition evaluates to true.</p> <p>If a recipe requires
    * more than one condition, then the recipe must specify multiple
    * <code>ConditionExpression</code> elements. Each condition is applied to the rows

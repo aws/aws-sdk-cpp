@@ -76,6 +76,7 @@
 #include <aws/ec2/model/CreateNetworkInterfaceResponse.h>
 #include <aws/ec2/model/CreateNetworkInterfacePermissionResponse.h>
 #include <aws/ec2/model/CreatePlacementGroupResponse.h>
+#include <aws/ec2/model/CreateReplaceRootVolumeTaskResponse.h>
 #include <aws/ec2/model/CreateReservedInstancesListingResponse.h>
 #include <aws/ec2/model/CreateRouteResponse.h>
 #include <aws/ec2/model/CreateRouteTableResponse.h>
@@ -215,6 +216,7 @@
 #include <aws/ec2/model/DescribePrincipalIdFormatResponse.h>
 #include <aws/ec2/model/DescribePublicIpv4PoolsResponse.h>
 #include <aws/ec2/model/DescribeRegionsResponse.h>
+#include <aws/ec2/model/DescribeReplaceRootVolumeTasksResponse.h>
 #include <aws/ec2/model/DescribeReservedInstancesResponse.h>
 #include <aws/ec2/model/DescribeReservedInstancesListingsResponse.h>
 #include <aws/ec2/model/DescribeReservedInstancesModificationsResponse.h>
@@ -267,6 +269,7 @@
 #include <aws/ec2/model/DetachVolumeResponse.h>
 #include <aws/ec2/model/DisableEbsEncryptionByDefaultResponse.h>
 #include <aws/ec2/model/DisableFastSnapshotRestoresResponse.h>
+#include <aws/ec2/model/DisableSerialConsoleAccessResponse.h>
 #include <aws/ec2/model/DisableTransitGatewayRouteTablePropagationResponse.h>
 #include <aws/ec2/model/DisableVpcClassicLinkResponse.h>
 #include <aws/ec2/model/DisableVpcClassicLinkDnsSupportResponse.h>
@@ -279,6 +282,7 @@
 #include <aws/ec2/model/DisassociateVpcCidrBlockResponse.h>
 #include <aws/ec2/model/EnableEbsEncryptionByDefaultResponse.h>
 #include <aws/ec2/model/EnableFastSnapshotRestoresResponse.h>
+#include <aws/ec2/model/EnableSerialConsoleAccessResponse.h>
 #include <aws/ec2/model/EnableTransitGatewayRouteTablePropagationResponse.h>
 #include <aws/ec2/model/EnableVpcClassicLinkResponse.h>
 #include <aws/ec2/model/EnableVpcClassicLinkDnsSupportResponse.h>
@@ -302,6 +306,7 @@
 #include <aws/ec2/model/GetManagedPrefixListEntriesResponse.h>
 #include <aws/ec2/model/GetPasswordDataResponse.h>
 #include <aws/ec2/model/GetReservedInstancesExchangeQuoteResponse.h>
+#include <aws/ec2/model/GetSerialConsoleAccessStatusResponse.h>
 #include <aws/ec2/model/GetTransitGatewayAttachmentPropagationsResponse.h>
 #include <aws/ec2/model/GetTransitGatewayMulticastDomainAssociationsResponse.h>
 #include <aws/ec2/model/GetTransitGatewayPrefixListReferencesResponse.h>
@@ -511,6 +516,7 @@ namespace Model
         class CreateNetworkInterfaceRequest;
         class CreateNetworkInterfacePermissionRequest;
         class CreatePlacementGroupRequest;
+        class CreateReplaceRootVolumeTaskRequest;
         class CreateReservedInstancesListingRequest;
         class CreateRouteRequest;
         class CreateRouteTableRequest;
@@ -673,6 +679,7 @@ namespace Model
         class DescribePrincipalIdFormatRequest;
         class DescribePublicIpv4PoolsRequest;
         class DescribeRegionsRequest;
+        class DescribeReplaceRootVolumeTasksRequest;
         class DescribeReservedInstancesRequest;
         class DescribeReservedInstancesListingsRequest;
         class DescribeReservedInstancesModificationsRequest;
@@ -728,6 +735,7 @@ namespace Model
         class DetachVpnGatewayRequest;
         class DisableEbsEncryptionByDefaultRequest;
         class DisableFastSnapshotRestoresRequest;
+        class DisableSerialConsoleAccessRequest;
         class DisableTransitGatewayRouteTablePropagationRequest;
         class DisableVgwRoutePropagationRequest;
         class DisableVpcClassicLinkRequest;
@@ -743,6 +751,7 @@ namespace Model
         class DisassociateVpcCidrBlockRequest;
         class EnableEbsEncryptionByDefaultRequest;
         class EnableFastSnapshotRestoresRequest;
+        class EnableSerialConsoleAccessRequest;
         class EnableTransitGatewayRouteTablePropagationRequest;
         class EnableVgwRoutePropagationRequest;
         class EnableVolumeIORequest;
@@ -768,6 +777,7 @@ namespace Model
         class GetManagedPrefixListEntriesRequest;
         class GetPasswordDataRequest;
         class GetReservedInstancesExchangeQuoteRequest;
+        class GetSerialConsoleAccessStatusRequest;
         class GetTransitGatewayAttachmentPropagationsRequest;
         class GetTransitGatewayMulticastDomainAssociationsRequest;
         class GetTransitGatewayPrefixListReferencesRequest;
@@ -952,6 +962,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateNetworkInterfaceResponse, EC2Error> CreateNetworkInterfaceOutcome;
         typedef Aws::Utils::Outcome<CreateNetworkInterfacePermissionResponse, EC2Error> CreateNetworkInterfacePermissionOutcome;
         typedef Aws::Utils::Outcome<CreatePlacementGroupResponse, EC2Error> CreatePlacementGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateReplaceRootVolumeTaskResponse, EC2Error> CreateReplaceRootVolumeTaskOutcome;
         typedef Aws::Utils::Outcome<CreateReservedInstancesListingResponse, EC2Error> CreateReservedInstancesListingOutcome;
         typedef Aws::Utils::Outcome<CreateRouteResponse, EC2Error> CreateRouteOutcome;
         typedef Aws::Utils::Outcome<CreateRouteTableResponse, EC2Error> CreateRouteTableOutcome;
@@ -1114,6 +1125,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribePrincipalIdFormatResponse, EC2Error> DescribePrincipalIdFormatOutcome;
         typedef Aws::Utils::Outcome<DescribePublicIpv4PoolsResponse, EC2Error> DescribePublicIpv4PoolsOutcome;
         typedef Aws::Utils::Outcome<DescribeRegionsResponse, EC2Error> DescribeRegionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeReplaceRootVolumeTasksResponse, EC2Error> DescribeReplaceRootVolumeTasksOutcome;
         typedef Aws::Utils::Outcome<DescribeReservedInstancesResponse, EC2Error> DescribeReservedInstancesOutcome;
         typedef Aws::Utils::Outcome<DescribeReservedInstancesListingsResponse, EC2Error> DescribeReservedInstancesListingsOutcome;
         typedef Aws::Utils::Outcome<DescribeReservedInstancesModificationsResponse, EC2Error> DescribeReservedInstancesModificationsOutcome;
@@ -1169,6 +1181,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DetachVpnGatewayOutcome;
         typedef Aws::Utils::Outcome<DisableEbsEncryptionByDefaultResponse, EC2Error> DisableEbsEncryptionByDefaultOutcome;
         typedef Aws::Utils::Outcome<DisableFastSnapshotRestoresResponse, EC2Error> DisableFastSnapshotRestoresOutcome;
+        typedef Aws::Utils::Outcome<DisableSerialConsoleAccessResponse, EC2Error> DisableSerialConsoleAccessOutcome;
         typedef Aws::Utils::Outcome<DisableTransitGatewayRouteTablePropagationResponse, EC2Error> DisableTransitGatewayRouteTablePropagationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DisableVgwRoutePropagationOutcome;
         typedef Aws::Utils::Outcome<DisableVpcClassicLinkResponse, EC2Error> DisableVpcClassicLinkOutcome;
@@ -1184,6 +1197,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DisassociateVpcCidrBlockResponse, EC2Error> DisassociateVpcCidrBlockOutcome;
         typedef Aws::Utils::Outcome<EnableEbsEncryptionByDefaultResponse, EC2Error> EnableEbsEncryptionByDefaultOutcome;
         typedef Aws::Utils::Outcome<EnableFastSnapshotRestoresResponse, EC2Error> EnableFastSnapshotRestoresOutcome;
+        typedef Aws::Utils::Outcome<EnableSerialConsoleAccessResponse, EC2Error> EnableSerialConsoleAccessOutcome;
         typedef Aws::Utils::Outcome<EnableTransitGatewayRouteTablePropagationResponse, EC2Error> EnableTransitGatewayRouteTablePropagationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> EnableVgwRoutePropagationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> EnableVolumeIOOutcome;
@@ -1209,6 +1223,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetManagedPrefixListEntriesResponse, EC2Error> GetManagedPrefixListEntriesOutcome;
         typedef Aws::Utils::Outcome<GetPasswordDataResponse, EC2Error> GetPasswordDataOutcome;
         typedef Aws::Utils::Outcome<GetReservedInstancesExchangeQuoteResponse, EC2Error> GetReservedInstancesExchangeQuoteOutcome;
+        typedef Aws::Utils::Outcome<GetSerialConsoleAccessStatusResponse, EC2Error> GetSerialConsoleAccessStatusOutcome;
         typedef Aws::Utils::Outcome<GetTransitGatewayAttachmentPropagationsResponse, EC2Error> GetTransitGatewayAttachmentPropagationsOutcome;
         typedef Aws::Utils::Outcome<GetTransitGatewayMulticastDomainAssociationsResponse, EC2Error> GetTransitGatewayMulticastDomainAssociationsOutcome;
         typedef Aws::Utils::Outcome<GetTransitGatewayPrefixListReferencesResponse, EC2Error> GetTransitGatewayPrefixListReferencesOutcome;
@@ -1393,6 +1408,7 @@ namespace Model
         typedef std::future<CreateNetworkInterfaceOutcome> CreateNetworkInterfaceOutcomeCallable;
         typedef std::future<CreateNetworkInterfacePermissionOutcome> CreateNetworkInterfacePermissionOutcomeCallable;
         typedef std::future<CreatePlacementGroupOutcome> CreatePlacementGroupOutcomeCallable;
+        typedef std::future<CreateReplaceRootVolumeTaskOutcome> CreateReplaceRootVolumeTaskOutcomeCallable;
         typedef std::future<CreateReservedInstancesListingOutcome> CreateReservedInstancesListingOutcomeCallable;
         typedef std::future<CreateRouteOutcome> CreateRouteOutcomeCallable;
         typedef std::future<CreateRouteTableOutcome> CreateRouteTableOutcomeCallable;
@@ -1555,6 +1571,7 @@ namespace Model
         typedef std::future<DescribePrincipalIdFormatOutcome> DescribePrincipalIdFormatOutcomeCallable;
         typedef std::future<DescribePublicIpv4PoolsOutcome> DescribePublicIpv4PoolsOutcomeCallable;
         typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
+        typedef std::future<DescribeReplaceRootVolumeTasksOutcome> DescribeReplaceRootVolumeTasksOutcomeCallable;
         typedef std::future<DescribeReservedInstancesOutcome> DescribeReservedInstancesOutcomeCallable;
         typedef std::future<DescribeReservedInstancesListingsOutcome> DescribeReservedInstancesListingsOutcomeCallable;
         typedef std::future<DescribeReservedInstancesModificationsOutcome> DescribeReservedInstancesModificationsOutcomeCallable;
@@ -1610,6 +1627,7 @@ namespace Model
         typedef std::future<DetachVpnGatewayOutcome> DetachVpnGatewayOutcomeCallable;
         typedef std::future<DisableEbsEncryptionByDefaultOutcome> DisableEbsEncryptionByDefaultOutcomeCallable;
         typedef std::future<DisableFastSnapshotRestoresOutcome> DisableFastSnapshotRestoresOutcomeCallable;
+        typedef std::future<DisableSerialConsoleAccessOutcome> DisableSerialConsoleAccessOutcomeCallable;
         typedef std::future<DisableTransitGatewayRouteTablePropagationOutcome> DisableTransitGatewayRouteTablePropagationOutcomeCallable;
         typedef std::future<DisableVgwRoutePropagationOutcome> DisableVgwRoutePropagationOutcomeCallable;
         typedef std::future<DisableVpcClassicLinkOutcome> DisableVpcClassicLinkOutcomeCallable;
@@ -1625,6 +1643,7 @@ namespace Model
         typedef std::future<DisassociateVpcCidrBlockOutcome> DisassociateVpcCidrBlockOutcomeCallable;
         typedef std::future<EnableEbsEncryptionByDefaultOutcome> EnableEbsEncryptionByDefaultOutcomeCallable;
         typedef std::future<EnableFastSnapshotRestoresOutcome> EnableFastSnapshotRestoresOutcomeCallable;
+        typedef std::future<EnableSerialConsoleAccessOutcome> EnableSerialConsoleAccessOutcomeCallable;
         typedef std::future<EnableTransitGatewayRouteTablePropagationOutcome> EnableTransitGatewayRouteTablePropagationOutcomeCallable;
         typedef std::future<EnableVgwRoutePropagationOutcome> EnableVgwRoutePropagationOutcomeCallable;
         typedef std::future<EnableVolumeIOOutcome> EnableVolumeIOOutcomeCallable;
@@ -1650,6 +1669,7 @@ namespace Model
         typedef std::future<GetManagedPrefixListEntriesOutcome> GetManagedPrefixListEntriesOutcomeCallable;
         typedef std::future<GetPasswordDataOutcome> GetPasswordDataOutcomeCallable;
         typedef std::future<GetReservedInstancesExchangeQuoteOutcome> GetReservedInstancesExchangeQuoteOutcomeCallable;
+        typedef std::future<GetSerialConsoleAccessStatusOutcome> GetSerialConsoleAccessStatusOutcomeCallable;
         typedef std::future<GetTransitGatewayAttachmentPropagationsOutcome> GetTransitGatewayAttachmentPropagationsOutcomeCallable;
         typedef std::future<GetTransitGatewayMulticastDomainAssociationsOutcome> GetTransitGatewayMulticastDomainAssociationsOutcomeCallable;
         typedef std::future<GetTransitGatewayPrefixListReferencesOutcome> GetTransitGatewayPrefixListReferencesOutcomeCallable;
@@ -1837,6 +1857,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::CreateNetworkInterfaceRequest&, const Model::CreateNetworkInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNetworkInterfaceResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateNetworkInterfacePermissionRequest&, const Model::CreateNetworkInterfacePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNetworkInterfacePermissionResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreatePlacementGroupRequest&, const Model::CreatePlacementGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePlacementGroupResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateReplaceRootVolumeTaskRequest&, const Model::CreateReplaceRootVolumeTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReplaceRootVolumeTaskResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateReservedInstancesListingRequest&, const Model::CreateReservedInstancesListingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReservedInstancesListingResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateRouteRequest&, const Model::CreateRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRouteResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateRouteTableRequest&, const Model::CreateRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRouteTableResponseReceivedHandler;
@@ -1999,6 +2020,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DescribePrincipalIdFormatRequest&, const Model::DescribePrincipalIdFormatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePrincipalIdFormatResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribePublicIpv4PoolsRequest&, const Model::DescribePublicIpv4PoolsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePublicIpv4PoolsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeRegionsRequest&, const Model::DescribeRegionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRegionsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeReplaceRootVolumeTasksRequest&, const Model::DescribeReplaceRootVolumeTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReplaceRootVolumeTasksResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeReservedInstancesRequest&, const Model::DescribeReservedInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReservedInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeReservedInstancesListingsRequest&, const Model::DescribeReservedInstancesListingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReservedInstancesListingsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeReservedInstancesModificationsRequest&, const Model::DescribeReservedInstancesModificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReservedInstancesModificationsResponseReceivedHandler;
@@ -2054,6 +2076,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DetachVpnGatewayRequest&, const Model::DetachVpnGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachVpnGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableEbsEncryptionByDefaultRequest&, const Model::DisableEbsEncryptionByDefaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableEbsEncryptionByDefaultResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableFastSnapshotRestoresRequest&, const Model::DisableFastSnapshotRestoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableFastSnapshotRestoresResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DisableSerialConsoleAccessRequest&, const Model::DisableSerialConsoleAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableSerialConsoleAccessResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableTransitGatewayRouteTablePropagationRequest&, const Model::DisableTransitGatewayRouteTablePropagationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableTransitGatewayRouteTablePropagationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableVgwRoutePropagationRequest&, const Model::DisableVgwRoutePropagationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableVgwRoutePropagationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableVpcClassicLinkRequest&, const Model::DisableVpcClassicLinkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableVpcClassicLinkResponseReceivedHandler;
@@ -2069,6 +2092,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DisassociateVpcCidrBlockRequest&, const Model::DisassociateVpcCidrBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateVpcCidrBlockResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableEbsEncryptionByDefaultRequest&, const Model::EnableEbsEncryptionByDefaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableEbsEncryptionByDefaultResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableFastSnapshotRestoresRequest&, const Model::EnableFastSnapshotRestoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableFastSnapshotRestoresResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::EnableSerialConsoleAccessRequest&, const Model::EnableSerialConsoleAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableSerialConsoleAccessResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableTransitGatewayRouteTablePropagationRequest&, const Model::EnableTransitGatewayRouteTablePropagationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableTransitGatewayRouteTablePropagationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableVgwRoutePropagationRequest&, const Model::EnableVgwRoutePropagationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableVgwRoutePropagationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableVolumeIORequest&, const Model::EnableVolumeIOOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableVolumeIOResponseReceivedHandler;
@@ -2094,6 +2118,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::GetManagedPrefixListEntriesRequest&, const Model::GetManagedPrefixListEntriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetManagedPrefixListEntriesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetPasswordDataRequest&, const Model::GetPasswordDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPasswordDataResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetReservedInstancesExchangeQuoteRequest&, const Model::GetReservedInstancesExchangeQuoteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservedInstancesExchangeQuoteResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetSerialConsoleAccessStatusRequest&, const Model::GetSerialConsoleAccessStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSerialConsoleAccessStatusResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayAttachmentPropagationsRequest&, const Model::GetTransitGatewayAttachmentPropagationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransitGatewayAttachmentPropagationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayMulticastDomainAssociationsRequest&, const Model::GetTransitGatewayMulticastDomainAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransitGatewayMulticastDomainAssociationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayPrefixListReferencesRequest&, const Model::GetTransitGatewayPrefixListReferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransitGatewayPrefixListReferencesResponseReceivedHandler;
@@ -3005,16 +3030,16 @@ namespace Model
          * information, see <a
          * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html">AWS
          * Certificate Manager for Nitro Enclaves</a> in the <i>AWS Nitro Enclaves User
-         * Guide</i>.</p> <p>When the IAM role is associated with the ACM certificate,
-         * places the certificate, certificate chain, and encrypted private key in an
+         * Guide</i>.</p> <p>When the IAM role is associated with the ACM certificate, the
+         * certificate, certificate chain, and encrypted private key are placed in an
          * Amazon S3 bucket that only the associated IAM role can access. The private key
          * of the certificate is encrypted with an AWS-managed KMS customer master (CMK)
          * that has an attached attestation-based CMK policy.</p> <p>To enable the IAM role
          * to access the Amazon S3 object, you must grant it permission to call
          * <code>s3:GetObject</code> on the Amazon S3 bucket returned by the command. To
          * enable the IAM role to access the AWS KMS CMK, you must grant it permission to
-         * call <code>kms:Decrypt</code> on AWS KMS CMK returned by the command. For more
-         * information, see <a
+         * call <code>kms:Decrypt</code> on the AWS KMS CMK returned by the command. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html#add-policy">
          * Grant the role permission to access the certificate and encryption key</a> in
          * the <i>AWS Nitro Enclaves User Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -3030,16 +3055,16 @@ namespace Model
          * information, see <a
          * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html">AWS
          * Certificate Manager for Nitro Enclaves</a> in the <i>AWS Nitro Enclaves User
-         * Guide</i>.</p> <p>When the IAM role is associated with the ACM certificate,
-         * places the certificate, certificate chain, and encrypted private key in an
+         * Guide</i>.</p> <p>When the IAM role is associated with the ACM certificate, the
+         * certificate, certificate chain, and encrypted private key are placed in an
          * Amazon S3 bucket that only the associated IAM role can access. The private key
          * of the certificate is encrypted with an AWS-managed KMS customer master (CMK)
          * that has an attached attestation-based CMK policy.</p> <p>To enable the IAM role
          * to access the Amazon S3 object, you must grant it permission to call
          * <code>s3:GetObject</code> on the Amazon S3 bucket returned by the command. To
          * enable the IAM role to access the AWS KMS CMK, you must grant it permission to
-         * call <code>kms:Decrypt</code> on AWS KMS CMK returned by the command. For more
-         * information, see <a
+         * call <code>kms:Decrypt</code> on the AWS KMS CMK returned by the command. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html#add-policy">
          * Grant the role permission to access the certificate and encryption key</a> in
          * the <i>AWS Nitro Enclaves User Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -3057,16 +3082,16 @@ namespace Model
          * information, see <a
          * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html">AWS
          * Certificate Manager for Nitro Enclaves</a> in the <i>AWS Nitro Enclaves User
-         * Guide</i>.</p> <p>When the IAM role is associated with the ACM certificate,
-         * places the certificate, certificate chain, and encrypted private key in an
+         * Guide</i>.</p> <p>When the IAM role is associated with the ACM certificate, the
+         * certificate, certificate chain, and encrypted private key are placed in an
          * Amazon S3 bucket that only the associated IAM role can access. The private key
          * of the certificate is encrypted with an AWS-managed KMS customer master (CMK)
          * that has an attached attestation-based CMK policy.</p> <p>To enable the IAM role
          * to access the Amazon S3 object, you must grant it permission to call
          * <code>s3:GetObject</code> on the Amazon S3 bucket returned by the command. To
          * enable the IAM role to access the AWS KMS CMK, you must grant it permission to
-         * call <code>kms:Decrypt</code> on AWS KMS CMK returned by the command. For more
-         * information, see <a
+         * call <code>kms:Decrypt</code> on the AWS KMS CMK returned by the command. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html#add-policy">
          * Grant the role permission to access the certificate and encryption key</a> in
          * the <i>AWS Nitro Enclaves User Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -5642,6 +5667,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreatePlacementGroupAsync(const Model::CreatePlacementGroupRequest& request, const CreatePlacementGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a root volume replacement task for an Amazon EC2 instance. The root
+         * volume can either be restored to its initial launch state, or it can be restored
+         * using a specific snapshot.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/">Replace a root volume</a> in the <i>Amazon
+         * Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReplaceRootVolumeTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateReplaceRootVolumeTaskOutcome CreateReplaceRootVolumeTask(const Model::CreateReplaceRootVolumeTaskRequest& request) const;
+
+        /**
+         * <p>Creates a root volume replacement task for an Amazon EC2 instance. The root
+         * volume can either be restored to its initial launch state, or it can be restored
+         * using a specific snapshot.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/">Replace a root volume</a> in the <i>Amazon
+         * Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReplaceRootVolumeTask">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateReplaceRootVolumeTaskOutcomeCallable CreateReplaceRootVolumeTaskCallable(const Model::CreateReplaceRootVolumeTaskRequest& request) const;
+
+        /**
+         * <p>Creates a root volume replacement task for an Amazon EC2 instance. The root
+         * volume can either be restored to its initial launch state, or it can be restored
+         * using a specific snapshot.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/">Replace a root volume</a> in the <i>Amazon
+         * Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReplaceRootVolumeTask">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateReplaceRootVolumeTaskAsync(const Model::CreateReplaceRootVolumeTaskRequest& request, const CreateReplaceRootVolumeTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a listing for Amazon EC2 Standard Reserved Instances to be sold in
@@ -12016,6 +12078,37 @@ namespace Model
         virtual void DescribeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes a root volume replacement task. For more information, see <a
+         * href="https://docs.aws.amazon.com/">Replace a root volume</a> in the <i>Amazon
+         * Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReplaceRootVolumeTasks">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeReplaceRootVolumeTasksOutcome DescribeReplaceRootVolumeTasks(const Model::DescribeReplaceRootVolumeTasksRequest& request) const;
+
+        /**
+         * <p>Describes a root volume replacement task. For more information, see <a
+         * href="https://docs.aws.amazon.com/">Replace a root volume</a> in the <i>Amazon
+         * Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReplaceRootVolumeTasks">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeReplaceRootVolumeTasksOutcomeCallable DescribeReplaceRootVolumeTasksCallable(const Model::DescribeReplaceRootVolumeTasksRequest& request) const;
+
+        /**
+         * <p>Describes a root volume replacement task. For more information, see <a
+         * href="https://docs.aws.amazon.com/">Replace a root volume</a> in the <i>Amazon
+         * Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReplaceRootVolumeTasks">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeReplaceRootVolumeTasksAsync(const Model::DescribeReplaceRootVolumeTasksRequest& request, const DescribeReplaceRootVolumeTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes one or more of the Reserved Instances that you purchased.</p>
          * <p>For more information about Reserved Instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
@@ -14216,6 +14309,46 @@ namespace Model
         virtual void DisableFastSnapshotRestoresAsync(const Model::DisableFastSnapshotRestoresRequest& request, const DisableFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Disables access to the EC2 serial console of all instances for your account.
+         * By default, access to the EC2 serial console is disabled for your account. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access">Manage
+         * account access to the EC2 serial console</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableSerialConsoleAccess">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableSerialConsoleAccessOutcome DisableSerialConsoleAccess(const Model::DisableSerialConsoleAccessRequest& request) const;
+
+        /**
+         * <p>Disables access to the EC2 serial console of all instances for your account.
+         * By default, access to the EC2 serial console is disabled for your account. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access">Manage
+         * account access to the EC2 serial console</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableSerialConsoleAccess">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisableSerialConsoleAccessOutcomeCallable DisableSerialConsoleAccessCallable(const Model::DisableSerialConsoleAccessRequest& request) const;
+
+        /**
+         * <p>Disables access to the EC2 serial console of all instances for your account.
+         * By default, access to the EC2 serial console is disabled for your account. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access">Manage
+         * account access to the EC2 serial console</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableSerialConsoleAccess">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisableSerialConsoleAccessAsync(const Model::DisableSerialConsoleAccessRequest& request, const DisableSerialConsoleAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Disables the specified resource attachment from propagating routes to the
          * specified propagation route table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableTransitGatewayRouteTablePropagation">AWS
@@ -14678,7 +14811,7 @@ namespace Model
         /**
          * <p>Enables EBS encryption by default for your account in the current Region.</p>
          * <p>After you enable encryption by default, the EBS volumes that you create are
-         * are always encrypted, either using the default CMK or the CMK that you specified
+         * always encrypted, either using the default CMK or the CMK that you specified
          * when you created each volume. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
@@ -14698,7 +14831,7 @@ namespace Model
         /**
          * <p>Enables EBS encryption by default for your account in the current Region.</p>
          * <p>After you enable encryption by default, the EBS volumes that you create are
-         * are always encrypted, either using the default CMK or the CMK that you specified
+         * always encrypted, either using the default CMK or the CMK that you specified
          * when you created each volume. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
@@ -14720,7 +14853,7 @@ namespace Model
         /**
          * <p>Enables EBS encryption by default for your account in the current Region.</p>
          * <p>After you enable encryption by default, the EBS volumes that you create are
-         * are always encrypted, either using the default CMK or the CMK that you specified
+         * always encrypted, either using the default CMK or the CMK that you specified
          * when you created each volume. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
@@ -14787,6 +14920,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void EnableFastSnapshotRestoresAsync(const Model::EnableFastSnapshotRestoresRequest& request, const EnableFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Enables access to the EC2 serial console of all instances for your account.
+         * By default, access to the EC2 serial console is disabled for your account. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access">Manage
+         * account access to the EC2 serial console</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableSerialConsoleAccess">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableSerialConsoleAccessOutcome EnableSerialConsoleAccess(const Model::EnableSerialConsoleAccessRequest& request) const;
+
+        /**
+         * <p>Enables access to the EC2 serial console of all instances for your account.
+         * By default, access to the EC2 serial console is disabled for your account. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access">Manage
+         * account access to the EC2 serial console</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableSerialConsoleAccess">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::EnableSerialConsoleAccessOutcomeCallable EnableSerialConsoleAccessCallable(const Model::EnableSerialConsoleAccessRequest& request) const;
+
+        /**
+         * <p>Enables access to the EC2 serial console of all instances for your account.
+         * By default, access to the EC2 serial console is disabled for your account. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access">Manage
+         * account access to the EC2 serial console</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableSerialConsoleAccess">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void EnableSerialConsoleAccessAsync(const Model::EnableSerialConsoleAccessRequest& request, const EnableSerialConsoleAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables the specified attachment to propagate routes to the specified
@@ -15739,6 +15912,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetReservedInstancesExchangeQuoteAsync(const Model::GetReservedInstancesExchangeQuoteRequest& request, const GetReservedInstancesExchangeQuoteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the access status of your account to the EC2 serial console of all
+         * instances. By default, access to the EC2 serial console is disabled for your
+         * account. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access">Manage
+         * account access to the EC2 serial console</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSerialConsoleAccessStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSerialConsoleAccessStatusOutcome GetSerialConsoleAccessStatus(const Model::GetSerialConsoleAccessStatusRequest& request) const;
+
+        /**
+         * <p>Retrieves the access status of your account to the EC2 serial console of all
+         * instances. By default, access to the EC2 serial console is disabled for your
+         * account. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access">Manage
+         * account access to the EC2 serial console</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSerialConsoleAccessStatus">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetSerialConsoleAccessStatusOutcomeCallable GetSerialConsoleAccessStatusCallable(const Model::GetSerialConsoleAccessStatusRequest& request) const;
+
+        /**
+         * <p>Retrieves the access status of your account to the EC2 serial console of all
+         * instances. By default, access to the EC2 serial console is disabled for your
+         * account. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access">Manage
+         * account access to the EC2 serial console</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSerialConsoleAccessStatus">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetSerialConsoleAccessStatusAsync(const Model::GetSerialConsoleAccessStatusRequest& request, const GetSerialConsoleAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the route tables to which the specified resource attachment propagates
@@ -21126,6 +21339,7 @@ namespace Model
         void CreateNetworkInterfaceAsyncHelper(const Model::CreateNetworkInterfaceRequest& request, const CreateNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateNetworkInterfacePermissionAsyncHelper(const Model::CreateNetworkInterfacePermissionRequest& request, const CreateNetworkInterfacePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePlacementGroupAsyncHelper(const Model::CreatePlacementGroupRequest& request, const CreatePlacementGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateReplaceRootVolumeTaskAsyncHelper(const Model::CreateReplaceRootVolumeTaskRequest& request, const CreateReplaceRootVolumeTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateReservedInstancesListingAsyncHelper(const Model::CreateReservedInstancesListingRequest& request, const CreateReservedInstancesListingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRouteAsyncHelper(const Model::CreateRouteRequest& request, const CreateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRouteTableAsyncHelper(const Model::CreateRouteTableRequest& request, const CreateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -21288,6 +21502,7 @@ namespace Model
         void DescribePrincipalIdFormatAsyncHelper(const Model::DescribePrincipalIdFormatRequest& request, const DescribePrincipalIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePublicIpv4PoolsAsyncHelper(const Model::DescribePublicIpv4PoolsRequest& request, const DescribePublicIpv4PoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRegionsAsyncHelper(const Model::DescribeRegionsRequest& request, const DescribeRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeReplaceRootVolumeTasksAsyncHelper(const Model::DescribeReplaceRootVolumeTasksRequest& request, const DescribeReplaceRootVolumeTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeReservedInstancesAsyncHelper(const Model::DescribeReservedInstancesRequest& request, const DescribeReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeReservedInstancesListingsAsyncHelper(const Model::DescribeReservedInstancesListingsRequest& request, const DescribeReservedInstancesListingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeReservedInstancesModificationsAsyncHelper(const Model::DescribeReservedInstancesModificationsRequest& request, const DescribeReservedInstancesModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -21343,6 +21558,7 @@ namespace Model
         void DetachVpnGatewayAsyncHelper(const Model::DetachVpnGatewayRequest& request, const DetachVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableEbsEncryptionByDefaultAsyncHelper(const Model::DisableEbsEncryptionByDefaultRequest& request, const DisableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableFastSnapshotRestoresAsyncHelper(const Model::DisableFastSnapshotRestoresRequest& request, const DisableFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisableSerialConsoleAccessAsyncHelper(const Model::DisableSerialConsoleAccessRequest& request, const DisableSerialConsoleAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableTransitGatewayRouteTablePropagationAsyncHelper(const Model::DisableTransitGatewayRouteTablePropagationRequest& request, const DisableTransitGatewayRouteTablePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableVgwRoutePropagationAsyncHelper(const Model::DisableVgwRoutePropagationRequest& request, const DisableVgwRoutePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableVpcClassicLinkAsyncHelper(const Model::DisableVpcClassicLinkRequest& request, const DisableVpcClassicLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -21358,6 +21574,7 @@ namespace Model
         void DisassociateVpcCidrBlockAsyncHelper(const Model::DisassociateVpcCidrBlockRequest& request, const DisassociateVpcCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableEbsEncryptionByDefaultAsyncHelper(const Model::EnableEbsEncryptionByDefaultRequest& request, const EnableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableFastSnapshotRestoresAsyncHelper(const Model::EnableFastSnapshotRestoresRequest& request, const EnableFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void EnableSerialConsoleAccessAsyncHelper(const Model::EnableSerialConsoleAccessRequest& request, const EnableSerialConsoleAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableTransitGatewayRouteTablePropagationAsyncHelper(const Model::EnableTransitGatewayRouteTablePropagationRequest& request, const EnableTransitGatewayRouteTablePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableVgwRoutePropagationAsyncHelper(const Model::EnableVgwRoutePropagationRequest& request, const EnableVgwRoutePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableVolumeIOAsyncHelper(const Model::EnableVolumeIORequest& request, const EnableVolumeIOResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -21383,6 +21600,7 @@ namespace Model
         void GetManagedPrefixListEntriesAsyncHelper(const Model::GetManagedPrefixListEntriesRequest& request, const GetManagedPrefixListEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPasswordDataAsyncHelper(const Model::GetPasswordDataRequest& request, const GetPasswordDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetReservedInstancesExchangeQuoteAsyncHelper(const Model::GetReservedInstancesExchangeQuoteRequest& request, const GetReservedInstancesExchangeQuoteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetSerialConsoleAccessStatusAsyncHelper(const Model::GetSerialConsoleAccessStatusRequest& request, const GetSerialConsoleAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTransitGatewayAttachmentPropagationsAsyncHelper(const Model::GetTransitGatewayAttachmentPropagationsRequest& request, const GetTransitGatewayAttachmentPropagationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTransitGatewayMulticastDomainAssociationsAsyncHelper(const Model::GetTransitGatewayMulticastDomainAssociationsRequest& request, const GetTransitGatewayMulticastDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTransitGatewayPrefixListReferencesAsyncHelper(const Model::GetTransitGatewayPrefixListReferencesRequest& request, const GetTransitGatewayPrefixListReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

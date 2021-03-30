@@ -22,11 +22,14 @@
 #include <aws/frauddetector/FraudDetectorErrorMarshaller.h>
 #include <aws/frauddetector/model/BatchCreateVariableRequest.h>
 #include <aws/frauddetector/model/BatchGetVariableRequest.h>
+#include <aws/frauddetector/model/CancelBatchPredictionJobRequest.h>
+#include <aws/frauddetector/model/CreateBatchPredictionJobRequest.h>
 #include <aws/frauddetector/model/CreateDetectorVersionRequest.h>
 #include <aws/frauddetector/model/CreateModelRequest.h>
 #include <aws/frauddetector/model/CreateModelVersionRequest.h>
 #include <aws/frauddetector/model/CreateRuleRequest.h>
 #include <aws/frauddetector/model/CreateVariableRequest.h>
+#include <aws/frauddetector/model/DeleteBatchPredictionJobRequest.h>
 #include <aws/frauddetector/model/DeleteDetectorRequest.h>
 #include <aws/frauddetector/model/DeleteDetectorVersionRequest.h>
 #include <aws/frauddetector/model/DeleteEntityTypeRequest.h>
@@ -41,6 +44,7 @@
 #include <aws/frauddetector/model/DeleteVariableRequest.h>
 #include <aws/frauddetector/model/DescribeDetectorRequest.h>
 #include <aws/frauddetector/model/DescribeModelVersionsRequest.h>
+#include <aws/frauddetector/model/GetBatchPredictionJobsRequest.h>
 #include <aws/frauddetector/model/GetDetectorVersionRequest.h>
 #include <aws/frauddetector/model/GetDetectorsRequest.h>
 #include <aws/frauddetector/model/GetEntityTypesRequest.h>
@@ -200,6 +204,60 @@ void FraudDetectorClient::BatchGetVariableAsyncHelper(const BatchGetVariableRequ
   handler(this, request, BatchGetVariable(request), context);
 }
 
+CancelBatchPredictionJobOutcome FraudDetectorClient::CancelBatchPredictionJob(const CancelBatchPredictionJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CancelBatchPredictionJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CancelBatchPredictionJobOutcomeCallable FraudDetectorClient::CancelBatchPredictionJobCallable(const CancelBatchPredictionJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CancelBatchPredictionJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelBatchPredictionJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FraudDetectorClient::CancelBatchPredictionJobAsync(const CancelBatchPredictionJobRequest& request, const CancelBatchPredictionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CancelBatchPredictionJobAsyncHelper( request, handler, context ); } );
+}
+
+void FraudDetectorClient::CancelBatchPredictionJobAsyncHelper(const CancelBatchPredictionJobRequest& request, const CancelBatchPredictionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CancelBatchPredictionJob(request), context);
+}
+
+CreateBatchPredictionJobOutcome FraudDetectorClient::CreateBatchPredictionJob(const CreateBatchPredictionJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateBatchPredictionJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateBatchPredictionJobOutcomeCallable FraudDetectorClient::CreateBatchPredictionJobCallable(const CreateBatchPredictionJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateBatchPredictionJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBatchPredictionJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FraudDetectorClient::CreateBatchPredictionJobAsync(const CreateBatchPredictionJobRequest& request, const CreateBatchPredictionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateBatchPredictionJobAsyncHelper( request, handler, context ); } );
+}
+
+void FraudDetectorClient::CreateBatchPredictionJobAsyncHelper(const CreateBatchPredictionJobRequest& request, const CreateBatchPredictionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateBatchPredictionJob(request), context);
+}
+
 CreateDetectorVersionOutcome FraudDetectorClient::CreateDetectorVersion(const CreateDetectorVersionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -333,6 +391,33 @@ void FraudDetectorClient::CreateVariableAsync(const CreateVariableRequest& reque
 void FraudDetectorClient::CreateVariableAsyncHelper(const CreateVariableRequest& request, const CreateVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateVariable(request), context);
+}
+
+DeleteBatchPredictionJobOutcome FraudDetectorClient::DeleteBatchPredictionJob(const DeleteBatchPredictionJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteBatchPredictionJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteBatchPredictionJobOutcomeCallable FraudDetectorClient::DeleteBatchPredictionJobCallable(const DeleteBatchPredictionJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBatchPredictionJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBatchPredictionJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FraudDetectorClient::DeleteBatchPredictionJobAsync(const DeleteBatchPredictionJobRequest& request, const DeleteBatchPredictionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBatchPredictionJobAsyncHelper( request, handler, context ); } );
+}
+
+void FraudDetectorClient::DeleteBatchPredictionJobAsyncHelper(const DeleteBatchPredictionJobRequest& request, const DeleteBatchPredictionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteBatchPredictionJob(request), context);
 }
 
 DeleteDetectorOutcome FraudDetectorClient::DeleteDetector(const DeleteDetectorRequest& request) const
@@ -711,6 +796,33 @@ void FraudDetectorClient::DescribeModelVersionsAsync(const DescribeModelVersions
 void FraudDetectorClient::DescribeModelVersionsAsyncHelper(const DescribeModelVersionsRequest& request, const DescribeModelVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeModelVersions(request), context);
+}
+
+GetBatchPredictionJobsOutcome FraudDetectorClient::GetBatchPredictionJobs(const GetBatchPredictionJobsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetBatchPredictionJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetBatchPredictionJobsOutcomeCallable FraudDetectorClient::GetBatchPredictionJobsCallable(const GetBatchPredictionJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetBatchPredictionJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBatchPredictionJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FraudDetectorClient::GetBatchPredictionJobsAsync(const GetBatchPredictionJobsRequest& request, const GetBatchPredictionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetBatchPredictionJobsAsyncHelper( request, handler, context ); } );
+}
+
+void FraudDetectorClient::GetBatchPredictionJobsAsyncHelper(const GetBatchPredictionJobsRequest& request, const GetBatchPredictionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetBatchPredictionJobs(request), context);
 }
 
 GetDetectorVersionOutcome FraudDetectorClient::GetDetectorVersion(const GetDetectorVersionRequest& request) const

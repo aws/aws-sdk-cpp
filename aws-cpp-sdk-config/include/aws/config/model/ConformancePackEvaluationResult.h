@@ -45,37 +45,37 @@ namespace Model
 
     /**
      * <p>The compliance type. The allowed values are <code>COMPLIANT</code> and
-     * <code>NON_COMPLIANT</code>. </p>
+     * <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
      */
     inline const ConformancePackComplianceType& GetComplianceType() const{ return m_complianceType; }
 
     /**
      * <p>The compliance type. The allowed values are <code>COMPLIANT</code> and
-     * <code>NON_COMPLIANT</code>. </p>
+     * <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
      */
     inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
 
     /**
      * <p>The compliance type. The allowed values are <code>COMPLIANT</code> and
-     * <code>NON_COMPLIANT</code>. </p>
+     * <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
      */
     inline void SetComplianceType(const ConformancePackComplianceType& value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
 
     /**
      * <p>The compliance type. The allowed values are <code>COMPLIANT</code> and
-     * <code>NON_COMPLIANT</code>. </p>
+     * <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
      */
     inline void SetComplianceType(ConformancePackComplianceType&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::move(value); }
 
     /**
      * <p>The compliance type. The allowed values are <code>COMPLIANT</code> and
-     * <code>NON_COMPLIANT</code>. </p>
+     * <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
      */
     inline ConformancePackEvaluationResult& WithComplianceType(const ConformancePackComplianceType& value) { SetComplianceType(value); return *this;}
 
     /**
      * <p>The compliance type. The allowed values are <code>COMPLIANT</code> and
-     * <code>NON_COMPLIANT</code>. </p>
+     * <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
      */
     inline ConformancePackEvaluationResult& WithComplianceType(ConformancePackComplianceType&& value) { SetComplianceType(std::move(value)); return *this;}
 

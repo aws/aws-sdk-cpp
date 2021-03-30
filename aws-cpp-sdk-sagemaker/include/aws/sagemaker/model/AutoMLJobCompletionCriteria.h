@@ -81,28 +81,28 @@ namespace Model
     /**
      * <p>The maximum time, in seconds, an AutoML job is allowed to wait for a trial to
      * complete. It must be equal to or greater than
-     * MaxRuntimePerTrainingJobInSeconds.</p>
+     * <code>MaxRuntimePerTrainingJobInSeconds</code>.</p>
      */
     inline int GetMaxAutoMLJobRuntimeInSeconds() const{ return m_maxAutoMLJobRuntimeInSeconds; }
 
     /**
      * <p>The maximum time, in seconds, an AutoML job is allowed to wait for a trial to
      * complete. It must be equal to or greater than
-     * MaxRuntimePerTrainingJobInSeconds.</p>
+     * <code>MaxRuntimePerTrainingJobInSeconds</code>.</p>
      */
     inline bool MaxAutoMLJobRuntimeInSecondsHasBeenSet() const { return m_maxAutoMLJobRuntimeInSecondsHasBeenSet; }
 
     /**
      * <p>The maximum time, in seconds, an AutoML job is allowed to wait for a trial to
      * complete. It must be equal to or greater than
-     * MaxRuntimePerTrainingJobInSeconds.</p>
+     * <code>MaxRuntimePerTrainingJobInSeconds</code>.</p>
      */
     inline void SetMaxAutoMLJobRuntimeInSeconds(int value) { m_maxAutoMLJobRuntimeInSecondsHasBeenSet = true; m_maxAutoMLJobRuntimeInSeconds = value; }
 
     /**
      * <p>The maximum time, in seconds, an AutoML job is allowed to wait for a trial to
      * complete. It must be equal to or greater than
-     * MaxRuntimePerTrainingJobInSeconds.</p>
+     * <code>MaxRuntimePerTrainingJobInSeconds</code>.</p>
      */
     inline AutoMLJobCompletionCriteria& WithMaxAutoMLJobRuntimeInSeconds(int value) { SetMaxAutoMLJobRuntimeInSeconds(value); return *this;}
 

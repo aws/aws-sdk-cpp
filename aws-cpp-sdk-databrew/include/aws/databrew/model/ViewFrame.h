@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the data being being transformed during an action.</p><p><h3>See
+   * <p>Represents the data being transformed during an action.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ViewFrame">AWS
    * API Reference</a></p>

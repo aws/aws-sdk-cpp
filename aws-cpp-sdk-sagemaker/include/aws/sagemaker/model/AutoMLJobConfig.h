@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>A collection of settings used for a job.</p><p><h3>See Also:</h3>   <a
+   * <p>A collection of settings used for an AutoML job.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLJobConfig">AWS
    * API Reference</a></p>
    */
@@ -39,38 +40,38 @@ namespace Model
 
 
     /**
-     * <p>How long a job is allowed to run, or how many candidates a job is allowed to
-     * generate.</p>
+     * <p>How long an AutoML job is allowed to run, or how many candidates a job is
+     * allowed to generate.</p>
      */
     inline const AutoMLJobCompletionCriteria& GetCompletionCriteria() const{ return m_completionCriteria; }
 
     /**
-     * <p>How long a job is allowed to run, or how many candidates a job is allowed to
-     * generate.</p>
+     * <p>How long an AutoML job is allowed to run, or how many candidates a job is
+     * allowed to generate.</p>
      */
     inline bool CompletionCriteriaHasBeenSet() const { return m_completionCriteriaHasBeenSet; }
 
     /**
-     * <p>How long a job is allowed to run, or how many candidates a job is allowed to
-     * generate.</p>
+     * <p>How long an AutoML job is allowed to run, or how many candidates a job is
+     * allowed to generate.</p>
      */
     inline void SetCompletionCriteria(const AutoMLJobCompletionCriteria& value) { m_completionCriteriaHasBeenSet = true; m_completionCriteria = value; }
 
     /**
-     * <p>How long a job is allowed to run, or how many candidates a job is allowed to
-     * generate.</p>
+     * <p>How long an AutoML job is allowed to run, or how many candidates a job is
+     * allowed to generate.</p>
      */
     inline void SetCompletionCriteria(AutoMLJobCompletionCriteria&& value) { m_completionCriteriaHasBeenSet = true; m_completionCriteria = std::move(value); }
 
     /**
-     * <p>How long a job is allowed to run, or how many candidates a job is allowed to
-     * generate.</p>
+     * <p>How long an AutoML job is allowed to run, or how many candidates a job is
+     * allowed to generate.</p>
      */
     inline AutoMLJobConfig& WithCompletionCriteria(const AutoMLJobCompletionCriteria& value) { SetCompletionCriteria(value); return *this;}
 
     /**
-     * <p>How long a job is allowed to run, or how many candidates a job is allowed to
-     * generate.</p>
+     * <p>How long an AutoML job is allowed to run, or how many candidates a job is
+     * allowed to generate.</p>
      */
     inline AutoMLJobConfig& WithCompletionCriteria(AutoMLJobCompletionCriteria&& value) { SetCompletionCriteria(std::move(value)); return *this;}
 
