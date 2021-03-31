@@ -22,6 +22,7 @@
 #include <aws/redshift/RedshiftErrorMarshaller.h>
 #include <aws/redshift/model/AcceptReservedNodeExchangeRequest.h>
 #include <aws/redshift/model/AuthorizeClusterSecurityGroupIngressRequest.h>
+#include <aws/redshift/model/AuthorizeEndpointAccessRequest.h>
 #include <aws/redshift/model/AuthorizeSnapshotAccessRequest.h>
 #include <aws/redshift/model/BatchDeleteClusterSnapshotsRequest.h>
 #include <aws/redshift/model/BatchModifyClusterSnapshotsRequest.h>
@@ -32,6 +33,7 @@
 #include <aws/redshift/model/CreateClusterSecurityGroupRequest.h>
 #include <aws/redshift/model/CreateClusterSnapshotRequest.h>
 #include <aws/redshift/model/CreateClusterSubnetGroupRequest.h>
+#include <aws/redshift/model/CreateEndpointAccessRequest.h>
 #include <aws/redshift/model/CreateEventSubscriptionRequest.h>
 #include <aws/redshift/model/CreateHsmClientCertificateRequest.h>
 #include <aws/redshift/model/CreateHsmConfigurationRequest.h>
@@ -45,6 +47,7 @@
 #include <aws/redshift/model/DeleteClusterSecurityGroupRequest.h>
 #include <aws/redshift/model/DeleteClusterSnapshotRequest.h>
 #include <aws/redshift/model/DeleteClusterSubnetGroupRequest.h>
+#include <aws/redshift/model/DeleteEndpointAccessRequest.h>
 #include <aws/redshift/model/DeleteEventSubscriptionRequest.h>
 #include <aws/redshift/model/DeleteHsmClientCertificateRequest.h>
 #include <aws/redshift/model/DeleteHsmConfigurationRequest.h>
@@ -64,6 +67,8 @@
 #include <aws/redshift/model/DescribeClusterVersionsRequest.h>
 #include <aws/redshift/model/DescribeClustersRequest.h>
 #include <aws/redshift/model/DescribeDefaultClusterParametersRequest.h>
+#include <aws/redshift/model/DescribeEndpointAccessRequest.h>
+#include <aws/redshift/model/DescribeEndpointAuthorizationRequest.h>
 #include <aws/redshift/model/DescribeEventCategoriesRequest.h>
 #include <aws/redshift/model/DescribeEventSubscriptionsRequest.h>
 #include <aws/redshift/model/DescribeEventsRequest.h>
@@ -96,6 +101,7 @@
 #include <aws/redshift/model/ModifyClusterSnapshotRequest.h>
 #include <aws/redshift/model/ModifyClusterSnapshotScheduleRequest.h>
 #include <aws/redshift/model/ModifyClusterSubnetGroupRequest.h>
+#include <aws/redshift/model/ModifyEndpointAccessRequest.h>
 #include <aws/redshift/model/ModifyEventSubscriptionRequest.h>
 #include <aws/redshift/model/ModifyScheduledActionRequest.h>
 #include <aws/redshift/model/ModifySnapshotCopyRetentionPeriodRequest.h>
@@ -110,6 +116,7 @@
 #include <aws/redshift/model/RestoreTableFromClusterSnapshotRequest.h>
 #include <aws/redshift/model/ResumeClusterRequest.h>
 #include <aws/redshift/model/RevokeClusterSecurityGroupIngressRequest.h>
+#include <aws/redshift/model/RevokeEndpointAccessRequest.h>
 #include <aws/redshift/model/RevokeSnapshotAccessRequest.h>
 #include <aws/redshift/model/RotateEncryptionKeyRequest.h>
 
@@ -249,6 +256,33 @@ void RedshiftClient::AuthorizeClusterSecurityGroupIngressAsync(const AuthorizeCl
 void RedshiftClient::AuthorizeClusterSecurityGroupIngressAsyncHelper(const AuthorizeClusterSecurityGroupIngressRequest& request, const AuthorizeClusterSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AuthorizeClusterSecurityGroupIngress(request), context);
+}
+
+AuthorizeEndpointAccessOutcome RedshiftClient::AuthorizeEndpointAccess(const AuthorizeEndpointAccessRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return AuthorizeEndpointAccessOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+AuthorizeEndpointAccessOutcomeCallable RedshiftClient::AuthorizeEndpointAccessCallable(const AuthorizeEndpointAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AuthorizeEndpointAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AuthorizeEndpointAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::AuthorizeEndpointAccessAsync(const AuthorizeEndpointAccessRequest& request, const AuthorizeEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AuthorizeEndpointAccessAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::AuthorizeEndpointAccessAsyncHelper(const AuthorizeEndpointAccessRequest& request, const AuthorizeEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AuthorizeEndpointAccess(request), context);
 }
 
 AuthorizeSnapshotAccessOutcome RedshiftClient::AuthorizeSnapshotAccess(const AuthorizeSnapshotAccessRequest& request) const
@@ -519,6 +553,33 @@ void RedshiftClient::CreateClusterSubnetGroupAsync(const CreateClusterSubnetGrou
 void RedshiftClient::CreateClusterSubnetGroupAsyncHelper(const CreateClusterSubnetGroupRequest& request, const CreateClusterSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateClusterSubnetGroup(request), context);
+}
+
+CreateEndpointAccessOutcome RedshiftClient::CreateEndpointAccess(const CreateEndpointAccessRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateEndpointAccessOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateEndpointAccessOutcomeCallable RedshiftClient::CreateEndpointAccessCallable(const CreateEndpointAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateEndpointAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEndpointAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::CreateEndpointAccessAsync(const CreateEndpointAccessRequest& request, const CreateEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateEndpointAccessAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::CreateEndpointAccessAsyncHelper(const CreateEndpointAccessRequest& request, const CreateEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateEndpointAccess(request), context);
 }
 
 CreateEventSubscriptionOutcome RedshiftClient::CreateEventSubscription(const CreateEventSubscriptionRequest& request) const
@@ -870,6 +931,33 @@ void RedshiftClient::DeleteClusterSubnetGroupAsync(const DeleteClusterSubnetGrou
 void RedshiftClient::DeleteClusterSubnetGroupAsyncHelper(const DeleteClusterSubnetGroupRequest& request, const DeleteClusterSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteClusterSubnetGroup(request), context);
+}
+
+DeleteEndpointAccessOutcome RedshiftClient::DeleteEndpointAccess(const DeleteEndpointAccessRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteEndpointAccessOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeleteEndpointAccessOutcomeCallable RedshiftClient::DeleteEndpointAccessCallable(const DeleteEndpointAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteEndpointAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEndpointAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::DeleteEndpointAccessAsync(const DeleteEndpointAccessRequest& request, const DeleteEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteEndpointAccessAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::DeleteEndpointAccessAsyncHelper(const DeleteEndpointAccessRequest& request, const DeleteEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteEndpointAccess(request), context);
 }
 
 DeleteEventSubscriptionOutcome RedshiftClient::DeleteEventSubscription(const DeleteEventSubscriptionRequest& request) const
@@ -1383,6 +1471,60 @@ void RedshiftClient::DescribeDefaultClusterParametersAsync(const DescribeDefault
 void RedshiftClient::DescribeDefaultClusterParametersAsyncHelper(const DescribeDefaultClusterParametersRequest& request, const DescribeDefaultClusterParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeDefaultClusterParameters(request), context);
+}
+
+DescribeEndpointAccessOutcome RedshiftClient::DescribeEndpointAccess(const DescribeEndpointAccessRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeEndpointAccessOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeEndpointAccessOutcomeCallable RedshiftClient::DescribeEndpointAccessCallable(const DescribeEndpointAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeEndpointAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEndpointAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::DescribeEndpointAccessAsync(const DescribeEndpointAccessRequest& request, const DescribeEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEndpointAccessAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::DescribeEndpointAccessAsyncHelper(const DescribeEndpointAccessRequest& request, const DescribeEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeEndpointAccess(request), context);
+}
+
+DescribeEndpointAuthorizationOutcome RedshiftClient::DescribeEndpointAuthorization(const DescribeEndpointAuthorizationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeEndpointAuthorizationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeEndpointAuthorizationOutcomeCallable RedshiftClient::DescribeEndpointAuthorizationCallable(const DescribeEndpointAuthorizationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeEndpointAuthorizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEndpointAuthorization(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::DescribeEndpointAuthorizationAsync(const DescribeEndpointAuthorizationRequest& request, const DescribeEndpointAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEndpointAuthorizationAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::DescribeEndpointAuthorizationAsyncHelper(const DescribeEndpointAuthorizationRequest& request, const DescribeEndpointAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeEndpointAuthorization(request), context);
 }
 
 DescribeEventCategoriesOutcome RedshiftClient::DescribeEventCategories(const DescribeEventCategoriesRequest& request) const
@@ -2249,6 +2391,33 @@ void RedshiftClient::ModifyClusterSubnetGroupAsyncHelper(const ModifyClusterSubn
   handler(this, request, ModifyClusterSubnetGroup(request), context);
 }
 
+ModifyEndpointAccessOutcome RedshiftClient::ModifyEndpointAccess(const ModifyEndpointAccessRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ModifyEndpointAccessOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+ModifyEndpointAccessOutcomeCallable RedshiftClient::ModifyEndpointAccessCallable(const ModifyEndpointAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyEndpointAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyEndpointAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::ModifyEndpointAccessAsync(const ModifyEndpointAccessRequest& request, const ModifyEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyEndpointAccessAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::ModifyEndpointAccessAsyncHelper(const ModifyEndpointAccessRequest& request, const ModifyEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyEndpointAccess(request), context);
+}
+
 ModifyEventSubscriptionOutcome RedshiftClient::ModifyEventSubscription(const ModifyEventSubscriptionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -2625,6 +2794,33 @@ void RedshiftClient::RevokeClusterSecurityGroupIngressAsync(const RevokeClusterS
 void RedshiftClient::RevokeClusterSecurityGroupIngressAsyncHelper(const RevokeClusterSecurityGroupIngressRequest& request, const RevokeClusterSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RevokeClusterSecurityGroupIngress(request), context);
+}
+
+RevokeEndpointAccessOutcome RedshiftClient::RevokeEndpointAccess(const RevokeEndpointAccessRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return RevokeEndpointAccessOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+RevokeEndpointAccessOutcomeCallable RedshiftClient::RevokeEndpointAccessCallable(const RevokeEndpointAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RevokeEndpointAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RevokeEndpointAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::RevokeEndpointAccessAsync(const RevokeEndpointAccessRequest& request, const RevokeEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RevokeEndpointAccessAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::RevokeEndpointAccessAsyncHelper(const RevokeEndpointAccessRequest& request, const RevokeEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RevokeEndpointAccess(request), context);
 }
 
 RevokeSnapshotAccessOutcome RedshiftClient::RevokeSnapshotAccess(const RevokeSnapshotAccessRequest& request) const

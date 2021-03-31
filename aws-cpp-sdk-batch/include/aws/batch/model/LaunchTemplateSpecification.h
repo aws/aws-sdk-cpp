@@ -130,8 +130,13 @@ namespace Model
      * <p>The version number of the launch template, <code>$Latest</code>, or
      * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, the latest
      * version of the launch template is used. If the value is <code>$Default</code>,
-     * the default version of the launch template is used.</p> <p>Default:
-     * <code>$Default</code>.</p>
+     * the default version of the launch template is used.</p>  <p>After the
+     * compute environment is created, the launch template version used will not be
+     * changed, even if the <code>$Default</code> or <code>$Latest</code> version for
+     * the launch template is updated. To use a new launch template version, create a
+     * new compute environment, add the new compute environment to the existing job
+     * queue, remove the old compute environment from the job queue, and delete the old
+     * compute environment.</p>  <p>Default: <code>$Default</code>.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
@@ -139,8 +144,13 @@ namespace Model
      * <p>The version number of the launch template, <code>$Latest</code>, or
      * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, the latest
      * version of the launch template is used. If the value is <code>$Default</code>,
-     * the default version of the launch template is used.</p> <p>Default:
-     * <code>$Default</code>.</p>
+     * the default version of the launch template is used.</p>  <p>After the
+     * compute environment is created, the launch template version used will not be
+     * changed, even if the <code>$Default</code> or <code>$Latest</code> version for
+     * the launch template is updated. To use a new launch template version, create a
+     * new compute environment, add the new compute environment to the existing job
+     * queue, remove the old compute environment from the job queue, and delete the old
+     * compute environment.</p>  <p>Default: <code>$Default</code>.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
@@ -148,8 +158,13 @@ namespace Model
      * <p>The version number of the launch template, <code>$Latest</code>, or
      * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, the latest
      * version of the launch template is used. If the value is <code>$Default</code>,
-     * the default version of the launch template is used.</p> <p>Default:
-     * <code>$Default</code>.</p>
+     * the default version of the launch template is used.</p>  <p>After the
+     * compute environment is created, the launch template version used will not be
+     * changed, even if the <code>$Default</code> or <code>$Latest</code> version for
+     * the launch template is updated. To use a new launch template version, create a
+     * new compute environment, add the new compute environment to the existing job
+     * queue, remove the old compute environment from the job queue, and delete the old
+     * compute environment.</p>  <p>Default: <code>$Default</code>.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
@@ -157,8 +172,13 @@ namespace Model
      * <p>The version number of the launch template, <code>$Latest</code>, or
      * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, the latest
      * version of the launch template is used. If the value is <code>$Default</code>,
-     * the default version of the launch template is used.</p> <p>Default:
-     * <code>$Default</code>.</p>
+     * the default version of the launch template is used.</p>  <p>After the
+     * compute environment is created, the launch template version used will not be
+     * changed, even if the <code>$Default</code> or <code>$Latest</code> version for
+     * the launch template is updated. To use a new launch template version, create a
+     * new compute environment, add the new compute environment to the existing job
+     * queue, remove the old compute environment from the job queue, and delete the old
+     * compute environment.</p>  <p>Default: <code>$Default</code>.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
@@ -166,8 +186,13 @@ namespace Model
      * <p>The version number of the launch template, <code>$Latest</code>, or
      * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, the latest
      * version of the launch template is used. If the value is <code>$Default</code>,
-     * the default version of the launch template is used.</p> <p>Default:
-     * <code>$Default</code>.</p>
+     * the default version of the launch template is used.</p>  <p>After the
+     * compute environment is created, the launch template version used will not be
+     * changed, even if the <code>$Default</code> or <code>$Latest</code> version for
+     * the launch template is updated. To use a new launch template version, create a
+     * new compute environment, add the new compute environment to the existing job
+     * queue, remove the old compute environment from the job queue, and delete the old
+     * compute environment.</p>  <p>Default: <code>$Default</code>.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
@@ -175,8 +200,13 @@ namespace Model
      * <p>The version number of the launch template, <code>$Latest</code>, or
      * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, the latest
      * version of the launch template is used. If the value is <code>$Default</code>,
-     * the default version of the launch template is used.</p> <p>Default:
-     * <code>$Default</code>.</p>
+     * the default version of the launch template is used.</p>  <p>After the
+     * compute environment is created, the launch template version used will not be
+     * changed, even if the <code>$Default</code> or <code>$Latest</code> version for
+     * the launch template is updated. To use a new launch template version, create a
+     * new compute environment, add the new compute environment to the existing job
+     * queue, remove the old compute environment from the job queue, and delete the old
+     * compute environment.</p>  <p>Default: <code>$Default</code>.</p>
      */
     inline LaunchTemplateSpecification& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
@@ -184,8 +214,13 @@ namespace Model
      * <p>The version number of the launch template, <code>$Latest</code>, or
      * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, the latest
      * version of the launch template is used. If the value is <code>$Default</code>,
-     * the default version of the launch template is used.</p> <p>Default:
-     * <code>$Default</code>.</p>
+     * the default version of the launch template is used.</p>  <p>After the
+     * compute environment is created, the launch template version used will not be
+     * changed, even if the <code>$Default</code> or <code>$Latest</code> version for
+     * the launch template is updated. To use a new launch template version, create a
+     * new compute environment, add the new compute environment to the existing job
+     * queue, remove the old compute environment from the job queue, and delete the old
+     * compute environment.</p>  <p>Default: <code>$Default</code>.</p>
      */
     inline LaunchTemplateSpecification& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
@@ -193,8 +228,13 @@ namespace Model
      * <p>The version number of the launch template, <code>$Latest</code>, or
      * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, the latest
      * version of the launch template is used. If the value is <code>$Default</code>,
-     * the default version of the launch template is used.</p> <p>Default:
-     * <code>$Default</code>.</p>
+     * the default version of the launch template is used.</p>  <p>After the
+     * compute environment is created, the launch template version used will not be
+     * changed, even if the <code>$Default</code> or <code>$Latest</code> version for
+     * the launch template is updated. To use a new launch template version, create a
+     * new compute environment, add the new compute environment to the existing job
+     * queue, remove the old compute environment from the job queue, and delete the old
+     * compute environment.</p>  <p>Default: <code>$Default</code>.</p>
      */
     inline LaunchTemplateSpecification& WithVersion(const char* value) { SetVersion(value); return *this;}
 

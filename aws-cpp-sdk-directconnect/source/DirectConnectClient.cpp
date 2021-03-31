@@ -27,6 +27,7 @@
 #include <aws/directconnect/model/AllocateTransitVirtualInterfaceRequest.h>
 #include <aws/directconnect/model/AssociateConnectionWithLagRequest.h>
 #include <aws/directconnect/model/AssociateHostedConnectionRequest.h>
+#include <aws/directconnect/model/AssociateMacSecKeyRequest.h>
 #include <aws/directconnect/model/AssociateVirtualInterfaceRequest.h>
 #include <aws/directconnect/model/ConfirmConnectionRequest.h>
 #include <aws/directconnect/model/ConfirmPrivateVirtualInterfaceRequest.h>
@@ -62,11 +63,13 @@
 #include <aws/directconnect/model/DescribeTagsRequest.h>
 #include <aws/directconnect/model/DescribeVirtualInterfacesRequest.h>
 #include <aws/directconnect/model/DisassociateConnectionFromLagRequest.h>
+#include <aws/directconnect/model/DisassociateMacSecKeyRequest.h>
 #include <aws/directconnect/model/ListVirtualInterfaceTestHistoryRequest.h>
 #include <aws/directconnect/model/StartBgpFailoverTestRequest.h>
 #include <aws/directconnect/model/StopBgpFailoverTestRequest.h>
 #include <aws/directconnect/model/TagResourceRequest.h>
 #include <aws/directconnect/model/UntagResourceRequest.h>
+#include <aws/directconnect/model/UpdateConnectionRequest.h>
 #include <aws/directconnect/model/UpdateDirectConnectGatewayAssociationRequest.h>
 #include <aws/directconnect/model/UpdateLagRequest.h>
 #include <aws/directconnect/model/UpdateVirtualInterfaceAttributesRequest.h>
@@ -331,6 +334,33 @@ void DirectConnectClient::AssociateHostedConnectionAsync(const AssociateHostedCo
 void DirectConnectClient::AssociateHostedConnectionAsyncHelper(const AssociateHostedConnectionRequest& request, const AssociateHostedConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AssociateHostedConnection(request), context);
+}
+
+AssociateMacSecKeyOutcome DirectConnectClient::AssociateMacSecKey(const AssociateMacSecKeyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return AssociateMacSecKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateMacSecKeyOutcomeCallable DirectConnectClient::AssociateMacSecKeyCallable(const AssociateMacSecKeyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateMacSecKeyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateMacSecKey(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::AssociateMacSecKeyAsync(const AssociateMacSecKeyRequest& request, const AssociateMacSecKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateMacSecKeyAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::AssociateMacSecKeyAsyncHelper(const AssociateMacSecKeyRequest& request, const AssociateMacSecKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateMacSecKey(request), context);
 }
 
 AssociateVirtualInterfaceOutcome DirectConnectClient::AssociateVirtualInterface(const AssociateVirtualInterfaceRequest& request) const
@@ -1328,6 +1358,33 @@ void DirectConnectClient::DisassociateConnectionFromLagAsyncHelper(const Disasso
   handler(this, request, DisassociateConnectionFromLag(request), context);
 }
 
+DisassociateMacSecKeyOutcome DirectConnectClient::DisassociateMacSecKey(const DisassociateMacSecKeyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DisassociateMacSecKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateMacSecKeyOutcomeCallable DirectConnectClient::DisassociateMacSecKeyCallable(const DisassociateMacSecKeyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateMacSecKeyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateMacSecKey(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::DisassociateMacSecKeyAsync(const DisassociateMacSecKeyRequest& request, const DisassociateMacSecKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateMacSecKeyAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::DisassociateMacSecKeyAsyncHelper(const DisassociateMacSecKeyRequest& request, const DisassociateMacSecKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateMacSecKey(request), context);
+}
+
 ListVirtualInterfaceTestHistoryOutcome DirectConnectClient::ListVirtualInterfaceTestHistory(const ListVirtualInterfaceTestHistoryRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1461,6 +1518,33 @@ void DirectConnectClient::UntagResourceAsync(const UntagResourceRequest& request
 void DirectConnectClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdateConnectionOutcome DirectConnectClient::UpdateConnection(const UpdateConnectionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateConnectionOutcomeCallable DirectConnectClient::UpdateConnectionCallable(const UpdateConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::UpdateConnectionAsync(const UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateConnectionAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::UpdateConnectionAsyncHelper(const UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateConnection(request), context);
 }
 
 UpdateDirectConnectGatewayAssociationOutcome DirectConnectClient::UpdateDirectConnectGatewayAssociation(const UpdateDirectConnectGatewayAssociationRequest& request) const

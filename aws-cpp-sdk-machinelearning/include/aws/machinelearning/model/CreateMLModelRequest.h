@@ -120,78 +120,78 @@ namespace Model
 
     /**
      * <p>The category of supervised learning that this <code>MLModel</code> will
-     * address. Choose from the following types:</p> <ul> <li>Choose
+     * address. Choose from the following types:</p> <ul> <li> <p>Choose
      * <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a
-     * numeric value.</li> <li>Choose <code>BINARY</code> if the <code>MLModel</code>
-     * result has two possible values.</li> <li>Choose <code>MULTICLASS</code> if the
-     * <code>MLModel</code> result has a limited number of values. </li> </ul> <p> For
-     * more information, see the <a
-     * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
+     * numeric value.</p> </li> <li> <p>Choose <code>BINARY</code> if the
+     * <code>MLModel</code> result has two possible values.</p> </li> <li> <p>Choose
+     * <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number
+     * of values.</p> </li> </ul> <p> For more information, see the <a
+     * href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
      * Learning Developer Guide</a>.</p>
      */
     inline const MLModelType& GetMLModelType() const{ return m_mLModelType; }
 
     /**
      * <p>The category of supervised learning that this <code>MLModel</code> will
-     * address. Choose from the following types:</p> <ul> <li>Choose
+     * address. Choose from the following types:</p> <ul> <li> <p>Choose
      * <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a
-     * numeric value.</li> <li>Choose <code>BINARY</code> if the <code>MLModel</code>
-     * result has two possible values.</li> <li>Choose <code>MULTICLASS</code> if the
-     * <code>MLModel</code> result has a limited number of values. </li> </ul> <p> For
-     * more information, see the <a
-     * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
+     * numeric value.</p> </li> <li> <p>Choose <code>BINARY</code> if the
+     * <code>MLModel</code> result has two possible values.</p> </li> <li> <p>Choose
+     * <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number
+     * of values.</p> </li> </ul> <p> For more information, see the <a
+     * href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
      * Learning Developer Guide</a>.</p>
      */
     inline bool MLModelTypeHasBeenSet() const { return m_mLModelTypeHasBeenSet; }
 
     /**
      * <p>The category of supervised learning that this <code>MLModel</code> will
-     * address. Choose from the following types:</p> <ul> <li>Choose
+     * address. Choose from the following types:</p> <ul> <li> <p>Choose
      * <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a
-     * numeric value.</li> <li>Choose <code>BINARY</code> if the <code>MLModel</code>
-     * result has two possible values.</li> <li>Choose <code>MULTICLASS</code> if the
-     * <code>MLModel</code> result has a limited number of values. </li> </ul> <p> For
-     * more information, see the <a
-     * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
+     * numeric value.</p> </li> <li> <p>Choose <code>BINARY</code> if the
+     * <code>MLModel</code> result has two possible values.</p> </li> <li> <p>Choose
+     * <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number
+     * of values.</p> </li> </ul> <p> For more information, see the <a
+     * href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
      * Learning Developer Guide</a>.</p>
      */
     inline void SetMLModelType(const MLModelType& value) { m_mLModelTypeHasBeenSet = true; m_mLModelType = value; }
 
     /**
      * <p>The category of supervised learning that this <code>MLModel</code> will
-     * address. Choose from the following types:</p> <ul> <li>Choose
+     * address. Choose from the following types:</p> <ul> <li> <p>Choose
      * <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a
-     * numeric value.</li> <li>Choose <code>BINARY</code> if the <code>MLModel</code>
-     * result has two possible values.</li> <li>Choose <code>MULTICLASS</code> if the
-     * <code>MLModel</code> result has a limited number of values. </li> </ul> <p> For
-     * more information, see the <a
-     * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
+     * numeric value.</p> </li> <li> <p>Choose <code>BINARY</code> if the
+     * <code>MLModel</code> result has two possible values.</p> </li> <li> <p>Choose
+     * <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number
+     * of values.</p> </li> </ul> <p> For more information, see the <a
+     * href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
      * Learning Developer Guide</a>.</p>
      */
     inline void SetMLModelType(MLModelType&& value) { m_mLModelTypeHasBeenSet = true; m_mLModelType = std::move(value); }
 
     /**
      * <p>The category of supervised learning that this <code>MLModel</code> will
-     * address. Choose from the following types:</p> <ul> <li>Choose
+     * address. Choose from the following types:</p> <ul> <li> <p>Choose
      * <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a
-     * numeric value.</li> <li>Choose <code>BINARY</code> if the <code>MLModel</code>
-     * result has two possible values.</li> <li>Choose <code>MULTICLASS</code> if the
-     * <code>MLModel</code> result has a limited number of values. </li> </ul> <p> For
-     * more information, see the <a
-     * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
+     * numeric value.</p> </li> <li> <p>Choose <code>BINARY</code> if the
+     * <code>MLModel</code> result has two possible values.</p> </li> <li> <p>Choose
+     * <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number
+     * of values.</p> </li> </ul> <p> For more information, see the <a
+     * href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
      * Learning Developer Guide</a>.</p>
      */
     inline CreateMLModelRequest& WithMLModelType(const MLModelType& value) { SetMLModelType(value); return *this;}
 
     /**
      * <p>The category of supervised learning that this <code>MLModel</code> will
-     * address. Choose from the following types:</p> <ul> <li>Choose
+     * address. Choose from the following types:</p> <ul> <li> <p>Choose
      * <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a
-     * numeric value.</li> <li>Choose <code>BINARY</code> if the <code>MLModel</code>
-     * result has two possible values.</li> <li>Choose <code>MULTICLASS</code> if the
-     * <code>MLModel</code> result has a limited number of values. </li> </ul> <p> For
-     * more information, see the <a
-     * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
+     * numeric value.</p> </li> <li> <p>Choose <code>BINARY</code> if the
+     * <code>MLModel</code> result has two possible values.</p> </li> <li> <p>Choose
+     * <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number
+     * of values.</p> </li> </ul> <p> For more information, see the <a
+     * href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
      * Learning Developer Guide</a>.</p>
      */
     inline CreateMLModelRequest& WithMLModelType(MLModelType&& value) { SetMLModelType(std::move(value)); return *this;}
@@ -200,29 +200,28 @@ namespace Model
     /**
      * <p>A list of the training parameters in the <code>MLModel</code>. The list is
      * implemented as a map of key-value pairs.</p> <p>The following is the current set
-     * of training parameters: </p> <ul> <li> <p><code>sgd.maxMLModelSizeInBytes</code>
+     * of training parameters:</p> <ul> <li> <p> <code>sgd.maxMLModelSizeInBytes</code>
      * - The maximum allowed size of the model. Depending on the input data, the size
      * of the model might affect its performance.</p> <p> The value is an integer that
      * ranges from <code>100000</code> to <code>2147483648</code>. The default value is
-     * <code>33554432</code>.</p> </li> <li><p><code>sgd.maxPasses</code> - The number
-     * of times that the training process traverses the observations to build the
-     * <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to
-     * <code>10000</code>. The default value is <code>10</code>.</p></li> <li>
-     * <p><code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data.
-     * Shuffling the data improves a model's ability to find the optimal solution for a
-     * variety of data types. The valid values are <code>auto</code> and
-     * <code>none</code>. The default value is <code>none</code>. We <?oxy_insert_start
-     * author="laurama" timestamp="20160329T131121-0700">strongly recommend that you
-     * shuffle your data.<?oxy_insert_end></p> </li> <li>
-     * <p><code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1
+     * <code>33554432</code>.</p> </li> <li> <p> <code>sgd.maxPasses</code> - The
+     * number of times that the training process traverses the observations to build
+     * the <code>MLModel</code>. The value is an integer that ranges from
+     * <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p>
+     * </li> <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the
+     * training data. Shuffling the data improves a model's ability to find the optimal
+     * solution for a variety of data types. The valid values are <code>auto</code> and
+     * <code>none</code>. The default value is <code>none</code>. We strongly recommend
+     * that you shuffle your data.</p> </li> <li> <p>
+     * <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1
      * norm. It controls overfitting the data by penalizing large coefficients. This
      * tends to drive coefficients to zero, resulting in a sparse feature set. If you
      * use this parameter, start by specifying a small value, such as
      * <code>1.0E-08</code>.</p> <p>The value is a double that ranges from
      * <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1
      * normalization. This parameter can't be used when <code>L2</code> is specified.
-     * Use this parameter sparingly.</p> </li> <li>
-     * <p><code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2
+     * Use this parameter sparingly.</p> </li> <li> <p>
+     * <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2
      * norm. It controls overfitting the data by penalizing large coefficients. This
      * tends to drive coefficients to small, nonzero values. If you use this parameter,
      * start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The
@@ -235,29 +234,28 @@ namespace Model
     /**
      * <p>A list of the training parameters in the <code>MLModel</code>. The list is
      * implemented as a map of key-value pairs.</p> <p>The following is the current set
-     * of training parameters: </p> <ul> <li> <p><code>sgd.maxMLModelSizeInBytes</code>
+     * of training parameters:</p> <ul> <li> <p> <code>sgd.maxMLModelSizeInBytes</code>
      * - The maximum allowed size of the model. Depending on the input data, the size
      * of the model might affect its performance.</p> <p> The value is an integer that
      * ranges from <code>100000</code> to <code>2147483648</code>. The default value is
-     * <code>33554432</code>.</p> </li> <li><p><code>sgd.maxPasses</code> - The number
-     * of times that the training process traverses the observations to build the
-     * <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to
-     * <code>10000</code>. The default value is <code>10</code>.</p></li> <li>
-     * <p><code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data.
-     * Shuffling the data improves a model's ability to find the optimal solution for a
-     * variety of data types. The valid values are <code>auto</code> and
-     * <code>none</code>. The default value is <code>none</code>. We <?oxy_insert_start
-     * author="laurama" timestamp="20160329T131121-0700">strongly recommend that you
-     * shuffle your data.<?oxy_insert_end></p> </li> <li>
-     * <p><code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1
+     * <code>33554432</code>.</p> </li> <li> <p> <code>sgd.maxPasses</code> - The
+     * number of times that the training process traverses the observations to build
+     * the <code>MLModel</code>. The value is an integer that ranges from
+     * <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p>
+     * </li> <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the
+     * training data. Shuffling the data improves a model's ability to find the optimal
+     * solution for a variety of data types. The valid values are <code>auto</code> and
+     * <code>none</code>. The default value is <code>none</code>. We strongly recommend
+     * that you shuffle your data.</p> </li> <li> <p>
+     * <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1
      * norm. It controls overfitting the data by penalizing large coefficients. This
      * tends to drive coefficients to zero, resulting in a sparse feature set. If you
      * use this parameter, start by specifying a small value, such as
      * <code>1.0E-08</code>.</p> <p>The value is a double that ranges from
      * <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1
      * normalization. This parameter can't be used when <code>L2</code> is specified.
-     * Use this parameter sparingly.</p> </li> <li>
-     * <p><code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2
+     * Use this parameter sparingly.</p> </li> <li> <p>
+     * <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2
      * norm. It controls overfitting the data by penalizing large coefficients. This
      * tends to drive coefficients to small, nonzero values. If you use this parameter,
      * start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The
@@ -270,29 +268,28 @@ namespace Model
     /**
      * <p>A list of the training parameters in the <code>MLModel</code>. The list is
      * implemented as a map of key-value pairs.</p> <p>The following is the current set
-     * of training parameters: </p> <ul> <li> <p><code>sgd.maxMLModelSizeInBytes</code>
+     * of training parameters:</p> <ul> <li> <p> <code>sgd.maxMLModelSizeInBytes</code>
      * - The maximum allowed size of the model. Depending on the input data, the size
      * of the model might affect its performance.</p> <p> The value is an integer that
      * ranges from <code>100000</code> to <code>2147483648</code>. The default value is
-     * <code>33554432</code>.</p> </li> <li><p><code>sgd.maxPasses</code> - The number
-     * of times that the training process traverses the observations to build the
-     * <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to
-     * <code>10000</code>. The default value is <code>10</code>.</p></li> <li>
-     * <p><code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data.
-     * Shuffling the data improves a model's ability to find the optimal solution for a
-     * variety of data types. The valid values are <code>auto</code> and
-     * <code>none</code>. The default value is <code>none</code>. We <?oxy_insert_start
-     * author="laurama" timestamp="20160329T131121-0700">strongly recommend that you
-     * shuffle your data.<?oxy_insert_end></p> </li> <li>
-     * <p><code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1
+     * <code>33554432</code>.</p> </li> <li> <p> <code>sgd.maxPasses</code> - The
+     * number of times that the training process traverses the observations to build
+     * the <code>MLModel</code>. The value is an integer that ranges from
+     * <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p>
+     * </li> <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the
+     * training data. Shuffling the data improves a model's ability to find the optimal
+     * solution for a variety of data types. The valid values are <code>auto</code> and
+     * <code>none</code>. The default value is <code>none</code>. We strongly recommend
+     * that you shuffle your data.</p> </li> <li> <p>
+     * <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1
      * norm. It controls overfitting the data by penalizing large coefficients. This
      * tends to drive coefficients to zero, resulting in a sparse feature set. If you
      * use this parameter, start by specifying a small value, such as
      * <code>1.0E-08</code>.</p> <p>The value is a double that ranges from
      * <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1
      * normalization. This parameter can't be used when <code>L2</code> is specified.
-     * Use this parameter sparingly.</p> </li> <li>
-     * <p><code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2
+     * Use this parameter sparingly.</p> </li> <li> <p>
+     * <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2
      * norm. It controls overfitting the data by penalizing large coefficients. This
      * tends to drive coefficients to small, nonzero values. If you use this parameter,
      * start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The
@@ -305,29 +302,28 @@ namespace Model
     /**
      * <p>A list of the training parameters in the <code>MLModel</code>. The list is
      * implemented as a map of key-value pairs.</p> <p>The following is the current set
-     * of training parameters: </p> <ul> <li> <p><code>sgd.maxMLModelSizeInBytes</code>
+     * of training parameters:</p> <ul> <li> <p> <code>sgd.maxMLModelSizeInBytes</code>
      * - The maximum allowed size of the model. Depending on the input data, the size
      * of the model might affect its performance.</p> <p> The value is an integer that
      * ranges from <code>100000</code> to <code>2147483648</code>. The default value is
-     * <code>33554432</code>.</p> </li> <li><p><code>sgd.maxPasses</code> - The number
-     * of times that the training process traverses the observations to build the
-     * <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to
-     * <code>10000</code>. The default value is <code>10</code>.</p></li> <li>
-     * <p><code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data.
-     * Shuffling the data improves a model's ability to find the optimal solution for a
-     * variety of data types. The valid values are <code>auto</code> and
-     * <code>none</code>. The default value is <code>none</code>. We <?oxy_insert_start
-     * author="laurama" timestamp="20160329T131121-0700">strongly recommend that you
-     * shuffle your data.<?oxy_insert_end></p> </li> <li>
-     * <p><code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1
+     * <code>33554432</code>.</p> </li> <li> <p> <code>sgd.maxPasses</code> - The
+     * number of times that the training process traverses the observations to build
+     * the <code>MLModel</code>. The value is an integer that ranges from
+     * <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p>
+     * </li> <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the
+     * training data. Shuffling the data improves a model's ability to find the optimal
+     * solution for a variety of data types. The valid values are <code>auto</code> and
+     * <code>none</code>. The default value is <code>none</code>. We strongly recommend
+     * that you shuffle your data.</p> </li> <li> <p>
+     * <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1
      * norm. It controls overfitting the data by penalizing large coefficients. This
      * tends to drive coefficients to zero, resulting in a sparse feature set. If you
      * use this parameter, start by specifying a small value, such as
      * <code>1.0E-08</code>.</p> <p>The value is a double that ranges from
      * <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1
      * normalization. This parameter can't be used when <code>L2</code> is specified.
-     * Use this parameter sparingly.</p> </li> <li>
-     * <p><code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2
+     * Use this parameter sparingly.</p> </li> <li> <p>
+     * <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2
      * norm. It controls overfitting the data by penalizing large coefficients. This
      * tends to drive coefficients to small, nonzero values. If you use this parameter,
      * start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The
@@ -340,29 +336,28 @@ namespace Model
     /**
      * <p>A list of the training parameters in the <code>MLModel</code>. The list is
      * implemented as a map of key-value pairs.</p> <p>The following is the current set
-     * of training parameters: </p> <ul> <li> <p><code>sgd.maxMLModelSizeInBytes</code>
+     * of training parameters:</p> <ul> <li> <p> <code>sgd.maxMLModelSizeInBytes</code>
      * - The maximum allowed size of the model. Depending on the input data, the size
      * of the model might affect its performance.</p> <p> The value is an integer that
      * ranges from <code>100000</code> to <code>2147483648</code>. The default value is
-     * <code>33554432</code>.</p> </li> <li><p><code>sgd.maxPasses</code> - The number
-     * of times that the training process traverses the observations to build the
-     * <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to
-     * <code>10000</code>. The default value is <code>10</code>.</p></li> <li>
-     * <p><code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data.
-     * Shuffling the data improves a model's ability to find the optimal solution for a
-     * variety of data types. The valid values are <code>auto</code> and
-     * <code>none</code>. The default value is <code>none</code>. We <?oxy_insert_start
-     * author="laurama" timestamp="20160329T131121-0700">strongly recommend that you
-     * shuffle your data.<?oxy_insert_end></p> </li> <li>
-     * <p><code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1
+     * <code>33554432</code>.</p> </li> <li> <p> <code>sgd.maxPasses</code> - The
+     * number of times that the training process traverses the observations to build
+     * the <code>MLModel</code>. The value is an integer that ranges from
+     * <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p>
+     * </li> <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the
+     * training data. Shuffling the data improves a model's ability to find the optimal
+     * solution for a variety of data types. The valid values are <code>auto</code> and
+     * <code>none</code>. The default value is <code>none</code>. We strongly recommend
+     * that you shuffle your data.</p> </li> <li> <p>
+     * <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1
      * norm. It controls overfitting the data by penalizing large coefficients. This
      * tends to drive coefficients to zero, resulting in a sparse feature set. If you
      * use this parameter, start by specifying a small value, such as
      * <code>1.0E-08</code>.</p> <p>The value is a double that ranges from
      * <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1
      * normalization. This parameter can't be used when <code>L2</code> is specified.
-     * Use this parameter sparingly.</p> </li> <li>
-     * <p><code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2
+     * Use this parameter sparingly.</p> </li> <li> <p>
+     * <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2
      * norm. It controls overfitting the data by penalizing large coefficients. This
      * tends to drive coefficients to small, nonzero values. If you use this parameter,
      * start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The
@@ -375,29 +370,28 @@ namespace Model
     /**
      * <p>A list of the training parameters in the <code>MLModel</code>. The list is
      * implemented as a map of key-value pairs.</p> <p>The following is the current set
-     * of training parameters: </p> <ul> <li> <p><code>sgd.maxMLModelSizeInBytes</code>
+     * of training parameters:</p> <ul> <li> <p> <code>sgd.maxMLModelSizeInBytes</code>
      * - The maximum allowed size of the model. Depending on the input data, the size
      * of the model might affect its performance.</p> <p> The value is an integer that
      * ranges from <code>100000</code> to <code>2147483648</code>. The default value is
-     * <code>33554432</code>.</p> </li> <li><p><code>sgd.maxPasses</code> - The number
-     * of times that the training process traverses the observations to build the
-     * <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to
-     * <code>10000</code>. The default value is <code>10</code>.</p></li> <li>
-     * <p><code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data.
-     * Shuffling the data improves a model's ability to find the optimal solution for a
-     * variety of data types. The valid values are <code>auto</code> and
-     * <code>none</code>. The default value is <code>none</code>. We <?oxy_insert_start
-     * author="laurama" timestamp="20160329T131121-0700">strongly recommend that you
-     * shuffle your data.<?oxy_insert_end></p> </li> <li>
-     * <p><code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1
+     * <code>33554432</code>.</p> </li> <li> <p> <code>sgd.maxPasses</code> - The
+     * number of times that the training process traverses the observations to build
+     * the <code>MLModel</code>. The value is an integer that ranges from
+     * <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p>
+     * </li> <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the
+     * training data. Shuffling the data improves a model's ability to find the optimal
+     * solution for a variety of data types. The valid values are <code>auto</code> and
+     * <code>none</code>. The default value is <code>none</code>. We strongly recommend
+     * that you shuffle your data.</p> </li> <li> <p>
+     * <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1
      * norm. It controls overfitting the data by penalizing large coefficients. This
      * tends to drive coefficients to zero, resulting in a sparse feature set. If you
      * use this parameter, start by specifying a small value, such as
      * <code>1.0E-08</code>.</p> <p>The value is a double that ranges from
      * <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1
      * normalization. This parameter can't be used when <code>L2</code> is specified.
-     * Use this parameter sparingly.</p> </li> <li>
-     * <p><code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2
+     * Use this parameter sparingly.</p> </li> <li> <p>
+     * <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2
      * norm. It controls overfitting the data by penalizing large coefficients. This
      * tends to drive coefficients to small, nonzero values. If you use this parameter,
      * start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The
@@ -410,29 +404,28 @@ namespace Model
     /**
      * <p>A list of the training parameters in the <code>MLModel</code>. The list is
      * implemented as a map of key-value pairs.</p> <p>The following is the current set
-     * of training parameters: </p> <ul> <li> <p><code>sgd.maxMLModelSizeInBytes</code>
+     * of training parameters:</p> <ul> <li> <p> <code>sgd.maxMLModelSizeInBytes</code>
      * - The maximum allowed size of the model. Depending on the input data, the size
      * of the model might affect its performance.</p> <p> The value is an integer that
      * ranges from <code>100000</code> to <code>2147483648</code>. The default value is
-     * <code>33554432</code>.</p> </li> <li><p><code>sgd.maxPasses</code> - The number
-     * of times that the training process traverses the observations to build the
-     * <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to
-     * <code>10000</code>. The default value is <code>10</code>.</p></li> <li>
-     * <p><code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data.
-     * Shuffling the data improves a model's ability to find the optimal solution for a
-     * variety of data types. The valid values are <code>auto</code> and
-     * <code>none</code>. The default value is <code>none</code>. We <?oxy_insert_start
-     * author="laurama" timestamp="20160329T131121-0700">strongly recommend that you
-     * shuffle your data.<?oxy_insert_end></p> </li> <li>
-     * <p><code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1
+     * <code>33554432</code>.</p> </li> <li> <p> <code>sgd.maxPasses</code> - The
+     * number of times that the training process traverses the observations to build
+     * the <code>MLModel</code>. The value is an integer that ranges from
+     * <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p>
+     * </li> <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the
+     * training data. Shuffling the data improves a model's ability to find the optimal
+     * solution for a variety of data types. The valid values are <code>auto</code> and
+     * <code>none</code>. The default value is <code>none</code>. We strongly recommend
+     * that you shuffle your data.</p> </li> <li> <p>
+     * <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1
      * norm. It controls overfitting the data by penalizing large coefficients. This
      * tends to drive coefficients to zero, resulting in a sparse feature set. If you
      * use this parameter, start by specifying a small value, such as
      * <code>1.0E-08</code>.</p> <p>The value is a double that ranges from
      * <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1
      * normalization. This parameter can't be used when <code>L2</code> is specified.
-     * Use this parameter sparingly.</p> </li> <li>
-     * <p><code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2
+     * Use this parameter sparingly.</p> </li> <li> <p>
+     * <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2
      * norm. It controls overfitting the data by penalizing large coefficients. This
      * tends to drive coefficients to small, nonzero values. If you use this parameter,
      * start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The
@@ -445,29 +438,28 @@ namespace Model
     /**
      * <p>A list of the training parameters in the <code>MLModel</code>. The list is
      * implemented as a map of key-value pairs.</p> <p>The following is the current set
-     * of training parameters: </p> <ul> <li> <p><code>sgd.maxMLModelSizeInBytes</code>
+     * of training parameters:</p> <ul> <li> <p> <code>sgd.maxMLModelSizeInBytes</code>
      * - The maximum allowed size of the model. Depending on the input data, the size
      * of the model might affect its performance.</p> <p> The value is an integer that
      * ranges from <code>100000</code> to <code>2147483648</code>. The default value is
-     * <code>33554432</code>.</p> </li> <li><p><code>sgd.maxPasses</code> - The number
-     * of times that the training process traverses the observations to build the
-     * <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to
-     * <code>10000</code>. The default value is <code>10</code>.</p></li> <li>
-     * <p><code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data.
-     * Shuffling the data improves a model's ability to find the optimal solution for a
-     * variety of data types. The valid values are <code>auto</code> and
-     * <code>none</code>. The default value is <code>none</code>. We <?oxy_insert_start
-     * author="laurama" timestamp="20160329T131121-0700">strongly recommend that you
-     * shuffle your data.<?oxy_insert_end></p> </li> <li>
-     * <p><code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1
+     * <code>33554432</code>.</p> </li> <li> <p> <code>sgd.maxPasses</code> - The
+     * number of times that the training process traverses the observations to build
+     * the <code>MLModel</code>. The value is an integer that ranges from
+     * <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p>
+     * </li> <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the
+     * training data. Shuffling the data improves a model's ability to find the optimal
+     * solution for a variety of data types. The valid values are <code>auto</code> and
+     * <code>none</code>. The default value is <code>none</code>. We strongly recommend
+     * that you shuffle your data.</p> </li> <li> <p>
+     * <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1
      * norm. It controls overfitting the data by penalizing large coefficients. This
      * tends to drive coefficients to zero, resulting in a sparse feature set. If you
      * use this parameter, start by specifying a small value, such as
      * <code>1.0E-08</code>.</p> <p>The value is a double that ranges from
      * <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1
      * normalization. This parameter can't be used when <code>L2</code> is specified.
-     * Use this parameter sparingly.</p> </li> <li>
-     * <p><code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2
+     * Use this parameter sparingly.</p> </li> <li> <p>
+     * <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2
      * norm. It controls overfitting the data by penalizing large coefficients. This
      * tends to drive coefficients to small, nonzero values. If you use this parameter,
      * start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The
@@ -480,29 +472,28 @@ namespace Model
     /**
      * <p>A list of the training parameters in the <code>MLModel</code>. The list is
      * implemented as a map of key-value pairs.</p> <p>The following is the current set
-     * of training parameters: </p> <ul> <li> <p><code>sgd.maxMLModelSizeInBytes</code>
+     * of training parameters:</p> <ul> <li> <p> <code>sgd.maxMLModelSizeInBytes</code>
      * - The maximum allowed size of the model. Depending on the input data, the size
      * of the model might affect its performance.</p> <p> The value is an integer that
      * ranges from <code>100000</code> to <code>2147483648</code>. The default value is
-     * <code>33554432</code>.</p> </li> <li><p><code>sgd.maxPasses</code> - The number
-     * of times that the training process traverses the observations to build the
-     * <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to
-     * <code>10000</code>. The default value is <code>10</code>.</p></li> <li>
-     * <p><code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data.
-     * Shuffling the data improves a model's ability to find the optimal solution for a
-     * variety of data types. The valid values are <code>auto</code> and
-     * <code>none</code>. The default value is <code>none</code>. We <?oxy_insert_start
-     * author="laurama" timestamp="20160329T131121-0700">strongly recommend that you
-     * shuffle your data.<?oxy_insert_end></p> </li> <li>
-     * <p><code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1
+     * <code>33554432</code>.</p> </li> <li> <p> <code>sgd.maxPasses</code> - The
+     * number of times that the training process traverses the observations to build
+     * the <code>MLModel</code>. The value is an integer that ranges from
+     * <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p>
+     * </li> <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the
+     * training data. Shuffling the data improves a model's ability to find the optimal
+     * solution for a variety of data types. The valid values are <code>auto</code> and
+     * <code>none</code>. The default value is <code>none</code>. We strongly recommend
+     * that you shuffle your data.</p> </li> <li> <p>
+     * <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1
      * norm. It controls overfitting the data by penalizing large coefficients. This
      * tends to drive coefficients to zero, resulting in a sparse feature set. If you
      * use this parameter, start by specifying a small value, such as
      * <code>1.0E-08</code>.</p> <p>The value is a double that ranges from
      * <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1
      * normalization. This parameter can't be used when <code>L2</code> is specified.
-     * Use this parameter sparingly.</p> </li> <li>
-     * <p><code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2
+     * Use this parameter sparingly.</p> </li> <li> <p>
+     * <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2
      * norm. It controls overfitting the data by penalizing large coefficients. This
      * tends to drive coefficients to small, nonzero values. If you use this parameter,
      * start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The
@@ -515,29 +506,28 @@ namespace Model
     /**
      * <p>A list of the training parameters in the <code>MLModel</code>. The list is
      * implemented as a map of key-value pairs.</p> <p>The following is the current set
-     * of training parameters: </p> <ul> <li> <p><code>sgd.maxMLModelSizeInBytes</code>
+     * of training parameters:</p> <ul> <li> <p> <code>sgd.maxMLModelSizeInBytes</code>
      * - The maximum allowed size of the model. Depending on the input data, the size
      * of the model might affect its performance.</p> <p> The value is an integer that
      * ranges from <code>100000</code> to <code>2147483648</code>. The default value is
-     * <code>33554432</code>.</p> </li> <li><p><code>sgd.maxPasses</code> - The number
-     * of times that the training process traverses the observations to build the
-     * <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to
-     * <code>10000</code>. The default value is <code>10</code>.</p></li> <li>
-     * <p><code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data.
-     * Shuffling the data improves a model's ability to find the optimal solution for a
-     * variety of data types. The valid values are <code>auto</code> and
-     * <code>none</code>. The default value is <code>none</code>. We <?oxy_insert_start
-     * author="laurama" timestamp="20160329T131121-0700">strongly recommend that you
-     * shuffle your data.<?oxy_insert_end></p> </li> <li>
-     * <p><code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1
+     * <code>33554432</code>.</p> </li> <li> <p> <code>sgd.maxPasses</code> - The
+     * number of times that the training process traverses the observations to build
+     * the <code>MLModel</code>. The value is an integer that ranges from
+     * <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p>
+     * </li> <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the
+     * training data. Shuffling the data improves a model's ability to find the optimal
+     * solution for a variety of data types. The valid values are <code>auto</code> and
+     * <code>none</code>. The default value is <code>none</code>. We strongly recommend
+     * that you shuffle your data.</p> </li> <li> <p>
+     * <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1
      * norm. It controls overfitting the data by penalizing large coefficients. This
      * tends to drive coefficients to zero, resulting in a sparse feature set. If you
      * use this parameter, start by specifying a small value, such as
      * <code>1.0E-08</code>.</p> <p>The value is a double that ranges from
      * <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1
      * normalization. This parameter can't be used when <code>L2</code> is specified.
-     * Use this parameter sparingly.</p> </li> <li>
-     * <p><code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2
+     * Use this parameter sparingly.</p> </li> <li> <p>
+     * <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2
      * norm. It controls overfitting the data by penalizing large coefficients. This
      * tends to drive coefficients to small, nonzero values. If you use this parameter,
      * start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The
@@ -550,29 +540,28 @@ namespace Model
     /**
      * <p>A list of the training parameters in the <code>MLModel</code>. The list is
      * implemented as a map of key-value pairs.</p> <p>The following is the current set
-     * of training parameters: </p> <ul> <li> <p><code>sgd.maxMLModelSizeInBytes</code>
+     * of training parameters:</p> <ul> <li> <p> <code>sgd.maxMLModelSizeInBytes</code>
      * - The maximum allowed size of the model. Depending on the input data, the size
      * of the model might affect its performance.</p> <p> The value is an integer that
      * ranges from <code>100000</code> to <code>2147483648</code>. The default value is
-     * <code>33554432</code>.</p> </li> <li><p><code>sgd.maxPasses</code> - The number
-     * of times that the training process traverses the observations to build the
-     * <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to
-     * <code>10000</code>. The default value is <code>10</code>.</p></li> <li>
-     * <p><code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data.
-     * Shuffling the data improves a model's ability to find the optimal solution for a
-     * variety of data types. The valid values are <code>auto</code> and
-     * <code>none</code>. The default value is <code>none</code>. We <?oxy_insert_start
-     * author="laurama" timestamp="20160329T131121-0700">strongly recommend that you
-     * shuffle your data.<?oxy_insert_end></p> </li> <li>
-     * <p><code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1
+     * <code>33554432</code>.</p> </li> <li> <p> <code>sgd.maxPasses</code> - The
+     * number of times that the training process traverses the observations to build
+     * the <code>MLModel</code>. The value is an integer that ranges from
+     * <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p>
+     * </li> <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the
+     * training data. Shuffling the data improves a model's ability to find the optimal
+     * solution for a variety of data types. The valid values are <code>auto</code> and
+     * <code>none</code>. The default value is <code>none</code>. We strongly recommend
+     * that you shuffle your data.</p> </li> <li> <p>
+     * <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1
      * norm. It controls overfitting the data by penalizing large coefficients. This
      * tends to drive coefficients to zero, resulting in a sparse feature set. If you
      * use this parameter, start by specifying a small value, such as
      * <code>1.0E-08</code>.</p> <p>The value is a double that ranges from
      * <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1
      * normalization. This parameter can't be used when <code>L2</code> is specified.
-     * Use this parameter sparingly.</p> </li> <li>
-     * <p><code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2
+     * Use this parameter sparingly.</p> </li> <li> <p>
+     * <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2
      * norm. It controls overfitting the data by penalizing large coefficients. This
      * tends to drive coefficients to small, nonzero values. If you use this parameter,
      * start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The
@@ -585,29 +574,28 @@ namespace Model
     /**
      * <p>A list of the training parameters in the <code>MLModel</code>. The list is
      * implemented as a map of key-value pairs.</p> <p>The following is the current set
-     * of training parameters: </p> <ul> <li> <p><code>sgd.maxMLModelSizeInBytes</code>
+     * of training parameters:</p> <ul> <li> <p> <code>sgd.maxMLModelSizeInBytes</code>
      * - The maximum allowed size of the model. Depending on the input data, the size
      * of the model might affect its performance.</p> <p> The value is an integer that
      * ranges from <code>100000</code> to <code>2147483648</code>. The default value is
-     * <code>33554432</code>.</p> </li> <li><p><code>sgd.maxPasses</code> - The number
-     * of times that the training process traverses the observations to build the
-     * <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to
-     * <code>10000</code>. The default value is <code>10</code>.</p></li> <li>
-     * <p><code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data.
-     * Shuffling the data improves a model's ability to find the optimal solution for a
-     * variety of data types. The valid values are <code>auto</code> and
-     * <code>none</code>. The default value is <code>none</code>. We <?oxy_insert_start
-     * author="laurama" timestamp="20160329T131121-0700">strongly recommend that you
-     * shuffle your data.<?oxy_insert_end></p> </li> <li>
-     * <p><code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1
+     * <code>33554432</code>.</p> </li> <li> <p> <code>sgd.maxPasses</code> - The
+     * number of times that the training process traverses the observations to build
+     * the <code>MLModel</code>. The value is an integer that ranges from
+     * <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p>
+     * </li> <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the
+     * training data. Shuffling the data improves a model's ability to find the optimal
+     * solution for a variety of data types. The valid values are <code>auto</code> and
+     * <code>none</code>. The default value is <code>none</code>. We strongly recommend
+     * that you shuffle your data.</p> </li> <li> <p>
+     * <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1
      * norm. It controls overfitting the data by penalizing large coefficients. This
      * tends to drive coefficients to zero, resulting in a sparse feature set. If you
      * use this parameter, start by specifying a small value, such as
      * <code>1.0E-08</code>.</p> <p>The value is a double that ranges from
      * <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1
      * normalization. This parameter can't be used when <code>L2</code> is specified.
-     * Use this parameter sparingly.</p> </li> <li>
-     * <p><code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2
+     * Use this parameter sparingly.</p> </li> <li> <p>
+     * <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2
      * norm. It controls overfitting the data by penalizing large coefficients. This
      * tends to drive coefficients to small, nonzero values. If you use this parameter,
      * start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The
@@ -620,29 +608,28 @@ namespace Model
     /**
      * <p>A list of the training parameters in the <code>MLModel</code>. The list is
      * implemented as a map of key-value pairs.</p> <p>The following is the current set
-     * of training parameters: </p> <ul> <li> <p><code>sgd.maxMLModelSizeInBytes</code>
+     * of training parameters:</p> <ul> <li> <p> <code>sgd.maxMLModelSizeInBytes</code>
      * - The maximum allowed size of the model. Depending on the input data, the size
      * of the model might affect its performance.</p> <p> The value is an integer that
      * ranges from <code>100000</code> to <code>2147483648</code>. The default value is
-     * <code>33554432</code>.</p> </li> <li><p><code>sgd.maxPasses</code> - The number
-     * of times that the training process traverses the observations to build the
-     * <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to
-     * <code>10000</code>. The default value is <code>10</code>.</p></li> <li>
-     * <p><code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data.
-     * Shuffling the data improves a model's ability to find the optimal solution for a
-     * variety of data types. The valid values are <code>auto</code> and
-     * <code>none</code>. The default value is <code>none</code>. We <?oxy_insert_start
-     * author="laurama" timestamp="20160329T131121-0700">strongly recommend that you
-     * shuffle your data.<?oxy_insert_end></p> </li> <li>
-     * <p><code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1
+     * <code>33554432</code>.</p> </li> <li> <p> <code>sgd.maxPasses</code> - The
+     * number of times that the training process traverses the observations to build
+     * the <code>MLModel</code>. The value is an integer that ranges from
+     * <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p>
+     * </li> <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the
+     * training data. Shuffling the data improves a model's ability to find the optimal
+     * solution for a variety of data types. The valid values are <code>auto</code> and
+     * <code>none</code>. The default value is <code>none</code>. We strongly recommend
+     * that you shuffle your data.</p> </li> <li> <p>
+     * <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1
      * norm. It controls overfitting the data by penalizing large coefficients. This
      * tends to drive coefficients to zero, resulting in a sparse feature set. If you
      * use this parameter, start by specifying a small value, such as
      * <code>1.0E-08</code>.</p> <p>The value is a double that ranges from
      * <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1
      * normalization. This parameter can't be used when <code>L2</code> is specified.
-     * Use this parameter sparingly.</p> </li> <li>
-     * <p><code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2
+     * Use this parameter sparingly.</p> </li> <li> <p>
+     * <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2
      * norm. It controls overfitting the data by penalizing large coefficients. This
      * tends to drive coefficients to small, nonzero values. If you use this parameter,
      * start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The

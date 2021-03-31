@@ -101,6 +101,31 @@ namespace Model
     inline DeploymentTargets& AddAccounts(const char* value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
 
 
+    
+    inline const Aws::String& GetAccountsUrl() const{ return m_accountsUrl; }
+
+    
+    inline bool AccountsUrlHasBeenSet() const { return m_accountsUrlHasBeenSet; }
+
+    
+    inline void SetAccountsUrl(const Aws::String& value) { m_accountsUrlHasBeenSet = true; m_accountsUrl = value; }
+
+    
+    inline void SetAccountsUrl(Aws::String&& value) { m_accountsUrlHasBeenSet = true; m_accountsUrl = std::move(value); }
+
+    
+    inline void SetAccountsUrl(const char* value) { m_accountsUrlHasBeenSet = true; m_accountsUrl.assign(value); }
+
+    
+    inline DeploymentTargets& WithAccountsUrl(const Aws::String& value) { SetAccountsUrl(value); return *this;}
+
+    
+    inline DeploymentTargets& WithAccountsUrl(Aws::String&& value) { SetAccountsUrl(std::move(value)); return *this;}
+
+    
+    inline DeploymentTargets& WithAccountsUrl(const char* value) { SetAccountsUrl(value); return *this;}
+
+
     /**
      * <p>The organization root ID or organizational unit (OU) IDs to which StackSets
      * deploys.</p>
@@ -159,6 +184,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_accounts;
     bool m_accountsHasBeenSet;
+
+    Aws::String m_accountsUrl;
+    bool m_accountsUrlHasBeenSet;
 
     Aws::Vector<Aws::String> m_organizationalUnitIds;
     bool m_organizationalUnitIdsHasBeenSet;

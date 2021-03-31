@@ -29,7 +29,8 @@ EndpointProperties::EndpointProperties() :
     m_currentInferenceUnits(0),
     m_currentInferenceUnitsHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+    m_lastModifiedTimeHasBeenSet(false),
+    m_dataAccessRoleArnHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ EndpointProperties::EndpointProperties(JsonView jsonValue) :
     m_currentInferenceUnits(0),
     m_currentInferenceUnitsHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+    m_lastModifiedTimeHasBeenSet(false),
+    m_dataAccessRoleArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -107,6 +109,13 @@ EndpointProperties& EndpointProperties::operator =(JsonView jsonValue)
     m_lastModifiedTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DataAccessRoleArn"))
+  {
+    m_dataAccessRoleArn = jsonValue.GetString("DataAccessRoleArn");
+
+    m_dataAccessRoleArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -157,6 +166,12 @@ JsonValue EndpointProperties::Jsonize() const
   if(m_lastModifiedTimeHasBeenSet)
   {
    payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_dataAccessRoleArnHasBeenSet)
+  {
+   payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
+
   }
 
   return payload;

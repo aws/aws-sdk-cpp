@@ -16,11 +16,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetWirelessGatewayStatisticsResult::GetWirelessGatewayStatisticsResult()
+GetWirelessGatewayStatisticsResult::GetWirelessGatewayStatisticsResult() : 
+    m_connectionStatus(ConnectionStatus::NOT_SET)
 {
 }
 
-GetWirelessGatewayStatisticsResult::GetWirelessGatewayStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+GetWirelessGatewayStatisticsResult::GetWirelessGatewayStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_connectionStatus(ConnectionStatus::NOT_SET)
 {
   *this = result;
 }
@@ -37,6 +39,12 @@ GetWirelessGatewayStatisticsResult& GetWirelessGatewayStatisticsResult::operator
   if(jsonValue.ValueExists("LastUplinkReceivedAt"))
   {
     m_lastUplinkReceivedAt = jsonValue.GetString("LastUplinkReceivedAt");
+
+  }
+
+  if(jsonValue.ValueExists("ConnectionStatus"))
+  {
+    m_connectionStatus = ConnectionStatusMapper::GetConnectionStatusForName(jsonValue.GetString("ConnectionStatus"));
 
   }
 

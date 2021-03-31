@@ -18,6 +18,7 @@
 #include <aws/directconnect/model/AllocateTransitVirtualInterfaceResult.h>
 #include <aws/directconnect/model/AssociateConnectionWithLagResult.h>
 #include <aws/directconnect/model/AssociateHostedConnectionResult.h>
+#include <aws/directconnect/model/AssociateMacSecKeyResult.h>
 #include <aws/directconnect/model/AssociateVirtualInterfaceResult.h>
 #include <aws/directconnect/model/ConfirmConnectionResult.h>
 #include <aws/directconnect/model/ConfirmPrivateVirtualInterfaceResult.h>
@@ -55,11 +56,13 @@
 #include <aws/directconnect/model/DescribeVirtualGatewaysResult.h>
 #include <aws/directconnect/model/DescribeVirtualInterfacesResult.h>
 #include <aws/directconnect/model/DisassociateConnectionFromLagResult.h>
+#include <aws/directconnect/model/DisassociateMacSecKeyResult.h>
 #include <aws/directconnect/model/ListVirtualInterfaceTestHistoryResult.h>
 #include <aws/directconnect/model/StartBgpFailoverTestResult.h>
 #include <aws/directconnect/model/StopBgpFailoverTestResult.h>
 #include <aws/directconnect/model/TagResourceResult.h>
 #include <aws/directconnect/model/UntagResourceResult.h>
+#include <aws/directconnect/model/UpdateConnectionResult.h>
 #include <aws/directconnect/model/UpdateDirectConnectGatewayAssociationResult.h>
 #include <aws/directconnect/model/UpdateLagResult.h>
 #include <aws/directconnect/model/UpdateVirtualInterfaceAttributesResult.h>
@@ -109,6 +112,7 @@ namespace Model
         class AllocateTransitVirtualInterfaceRequest;
         class AssociateConnectionWithLagRequest;
         class AssociateHostedConnectionRequest;
+        class AssociateMacSecKeyRequest;
         class AssociateVirtualInterfaceRequest;
         class ConfirmConnectionRequest;
         class ConfirmPrivateVirtualInterfaceRequest;
@@ -144,11 +148,13 @@ namespace Model
         class DescribeTagsRequest;
         class DescribeVirtualInterfacesRequest;
         class DisassociateConnectionFromLagRequest;
+        class DisassociateMacSecKeyRequest;
         class ListVirtualInterfaceTestHistoryRequest;
         class StartBgpFailoverTestRequest;
         class StopBgpFailoverTestRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
+        class UpdateConnectionRequest;
         class UpdateDirectConnectGatewayAssociationRequest;
         class UpdateLagRequest;
         class UpdateVirtualInterfaceAttributesRequest;
@@ -160,6 +166,7 @@ namespace Model
         typedef Aws::Utils::Outcome<AllocateTransitVirtualInterfaceResult, DirectConnectError> AllocateTransitVirtualInterfaceOutcome;
         typedef Aws::Utils::Outcome<AssociateConnectionWithLagResult, DirectConnectError> AssociateConnectionWithLagOutcome;
         typedef Aws::Utils::Outcome<AssociateHostedConnectionResult, DirectConnectError> AssociateHostedConnectionOutcome;
+        typedef Aws::Utils::Outcome<AssociateMacSecKeyResult, DirectConnectError> AssociateMacSecKeyOutcome;
         typedef Aws::Utils::Outcome<AssociateVirtualInterfaceResult, DirectConnectError> AssociateVirtualInterfaceOutcome;
         typedef Aws::Utils::Outcome<ConfirmConnectionResult, DirectConnectError> ConfirmConnectionOutcome;
         typedef Aws::Utils::Outcome<ConfirmPrivateVirtualInterfaceResult, DirectConnectError> ConfirmPrivateVirtualInterfaceOutcome;
@@ -197,11 +204,13 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeVirtualGatewaysResult, DirectConnectError> DescribeVirtualGatewaysOutcome;
         typedef Aws::Utils::Outcome<DescribeVirtualInterfacesResult, DirectConnectError> DescribeVirtualInterfacesOutcome;
         typedef Aws::Utils::Outcome<DisassociateConnectionFromLagResult, DirectConnectError> DisassociateConnectionFromLagOutcome;
+        typedef Aws::Utils::Outcome<DisassociateMacSecKeyResult, DirectConnectError> DisassociateMacSecKeyOutcome;
         typedef Aws::Utils::Outcome<ListVirtualInterfaceTestHistoryResult, DirectConnectError> ListVirtualInterfaceTestHistoryOutcome;
         typedef Aws::Utils::Outcome<StartBgpFailoverTestResult, DirectConnectError> StartBgpFailoverTestOutcome;
         typedef Aws::Utils::Outcome<StopBgpFailoverTestResult, DirectConnectError> StopBgpFailoverTestOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, DirectConnectError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, DirectConnectError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateConnectionResult, DirectConnectError> UpdateConnectionOutcome;
         typedef Aws::Utils::Outcome<UpdateDirectConnectGatewayAssociationResult, DirectConnectError> UpdateDirectConnectGatewayAssociationOutcome;
         typedef Aws::Utils::Outcome<UpdateLagResult, DirectConnectError> UpdateLagOutcome;
         typedef Aws::Utils::Outcome<UpdateVirtualInterfaceAttributesResult, DirectConnectError> UpdateVirtualInterfaceAttributesOutcome;
@@ -213,6 +222,7 @@ namespace Model
         typedef std::future<AllocateTransitVirtualInterfaceOutcome> AllocateTransitVirtualInterfaceOutcomeCallable;
         typedef std::future<AssociateConnectionWithLagOutcome> AssociateConnectionWithLagOutcomeCallable;
         typedef std::future<AssociateHostedConnectionOutcome> AssociateHostedConnectionOutcomeCallable;
+        typedef std::future<AssociateMacSecKeyOutcome> AssociateMacSecKeyOutcomeCallable;
         typedef std::future<AssociateVirtualInterfaceOutcome> AssociateVirtualInterfaceOutcomeCallable;
         typedef std::future<ConfirmConnectionOutcome> ConfirmConnectionOutcomeCallable;
         typedef std::future<ConfirmPrivateVirtualInterfaceOutcome> ConfirmPrivateVirtualInterfaceOutcomeCallable;
@@ -250,11 +260,13 @@ namespace Model
         typedef std::future<DescribeVirtualGatewaysOutcome> DescribeVirtualGatewaysOutcomeCallable;
         typedef std::future<DescribeVirtualInterfacesOutcome> DescribeVirtualInterfacesOutcomeCallable;
         typedef std::future<DisassociateConnectionFromLagOutcome> DisassociateConnectionFromLagOutcomeCallable;
+        typedef std::future<DisassociateMacSecKeyOutcome> DisassociateMacSecKeyOutcomeCallable;
         typedef std::future<ListVirtualInterfaceTestHistoryOutcome> ListVirtualInterfaceTestHistoryOutcomeCallable;
         typedef std::future<StartBgpFailoverTestOutcome> StartBgpFailoverTestOutcomeCallable;
         typedef std::future<StopBgpFailoverTestOutcome> StopBgpFailoverTestOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+        typedef std::future<UpdateConnectionOutcome> UpdateConnectionOutcomeCallable;
         typedef std::future<UpdateDirectConnectGatewayAssociationOutcome> UpdateDirectConnectGatewayAssociationOutcomeCallable;
         typedef std::future<UpdateLagOutcome> UpdateLagOutcomeCallable;
         typedef std::future<UpdateVirtualInterfaceAttributesOutcome> UpdateVirtualInterfaceAttributesOutcomeCallable;
@@ -269,6 +281,7 @@ namespace Model
     typedef std::function<void(const DirectConnectClient*, const Model::AllocateTransitVirtualInterfaceRequest&, const Model::AllocateTransitVirtualInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AllocateTransitVirtualInterfaceResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::AssociateConnectionWithLagRequest&, const Model::AssociateConnectionWithLagOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateConnectionWithLagResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::AssociateHostedConnectionRequest&, const Model::AssociateHostedConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateHostedConnectionResponseReceivedHandler;
+    typedef std::function<void(const DirectConnectClient*, const Model::AssociateMacSecKeyRequest&, const Model::AssociateMacSecKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateMacSecKeyResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::AssociateVirtualInterfaceRequest&, const Model::AssociateVirtualInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateVirtualInterfaceResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::ConfirmConnectionRequest&, const Model::ConfirmConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfirmConnectionResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::ConfirmPrivateVirtualInterfaceRequest&, const Model::ConfirmPrivateVirtualInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfirmPrivateVirtualInterfaceResponseReceivedHandler;
@@ -306,11 +319,13 @@ namespace Model
     typedef std::function<void(const DirectConnectClient*, const Model::DescribeVirtualGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVirtualGatewaysResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::DescribeVirtualInterfacesRequest&, const Model::DescribeVirtualInterfacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVirtualInterfacesResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::DisassociateConnectionFromLagRequest&, const Model::DisassociateConnectionFromLagOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateConnectionFromLagResponseReceivedHandler;
+    typedef std::function<void(const DirectConnectClient*, const Model::DisassociateMacSecKeyRequest&, const Model::DisassociateMacSecKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateMacSecKeyResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::ListVirtualInterfaceTestHistoryRequest&, const Model::ListVirtualInterfaceTestHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVirtualInterfaceTestHistoryResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::StartBgpFailoverTestRequest&, const Model::StartBgpFailoverTestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartBgpFailoverTestResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::StopBgpFailoverTestRequest&, const Model::StopBgpFailoverTestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopBgpFailoverTestResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const DirectConnectClient*, const Model::UpdateConnectionRequest&, const Model::UpdateConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConnectionResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::UpdateDirectConnectGatewayAssociationRequest&, const Model::UpdateDirectConnectGatewayAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDirectConnectGatewayAssociationResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::UpdateLagRequest&, const Model::UpdateLagOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLagResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::UpdateVirtualInterfaceAttributesRequest&, const Model::UpdateVirtualInterfaceAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVirtualInterfaceAttributesResponseReceivedHandler;
@@ -668,6 +683,52 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateHostedConnectionAsync(const Model::AssociateHostedConnectionRequest& request, const AssociateHostedConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Associates a MAC Security (MACsec) Connection Key Name (CKN)/ Connectivity
+         * Association Key (CAK) pair with an AWS Direct Connect dedicated connection.</p>
+         * <p>You must supply either the <code>secretARN,</code> or the CKN/CAK
+         * (<code>ckn</code> and <code>cak</code>) pair in the request.</p> <p>For
+         * information about MAC Security (MACsec) key considerations, see <a
+         * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-key-consideration">MACsec
+         * pre-shared CKN/CAK key considerations </a> in the <i>AWS Direct Connect User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateMacSecKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateMacSecKeyOutcome AssociateMacSecKey(const Model::AssociateMacSecKeyRequest& request) const;
+
+        /**
+         * <p>Associates a MAC Security (MACsec) Connection Key Name (CKN)/ Connectivity
+         * Association Key (CAK) pair with an AWS Direct Connect dedicated connection.</p>
+         * <p>You must supply either the <code>secretARN,</code> or the CKN/CAK
+         * (<code>ckn</code> and <code>cak</code>) pair in the request.</p> <p>For
+         * information about MAC Security (MACsec) key considerations, see <a
+         * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-key-consideration">MACsec
+         * pre-shared CKN/CAK key considerations </a> in the <i>AWS Direct Connect User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateMacSecKey">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateMacSecKeyOutcomeCallable AssociateMacSecKeyCallable(const Model::AssociateMacSecKeyRequest& request) const;
+
+        /**
+         * <p>Associates a MAC Security (MACsec) Connection Key Name (CKN)/ Connectivity
+         * Association Key (CAK) pair with an AWS Direct Connect dedicated connection.</p>
+         * <p>You must supply either the <code>secretARN,</code> or the CKN/CAK
+         * (<code>ckn</code> and <code>cak</code>) pair in the request.</p> <p>For
+         * information about MAC Security (MACsec) key considerations, see <a
+         * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-key-consideration">MACsec
+         * pre-shared CKN/CAK key considerations </a> in the <i>AWS Direct Connect User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateMacSecKey">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateMacSecKeyAsync(const Model::AssociateMacSecKeyRequest& request, const AssociateMacSecKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a virtual interface with a specified link aggregation group (LAG)
@@ -2181,6 +2242,34 @@ namespace Model
         virtual void DisassociateConnectionFromLagAsync(const Model::DisassociateConnectionFromLagRequest& request, const DisassociateConnectionFromLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Removes the association between a MAC Security (MACsec) security key and an
+         * AWS Direct Connect dedicated connection.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DisassociateMacSecKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateMacSecKeyOutcome DisassociateMacSecKey(const Model::DisassociateMacSecKeyRequest& request) const;
+
+        /**
+         * <p>Removes the association between a MAC Security (MACsec) security key and an
+         * AWS Direct Connect dedicated connection.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DisassociateMacSecKey">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateMacSecKeyOutcomeCallable DisassociateMacSecKeyCallable(const Model::DisassociateMacSecKeyRequest& request) const;
+
+        /**
+         * <p>Removes the association between a MAC Security (MACsec) security key and an
+         * AWS Direct Connect dedicated connection.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DisassociateMacSecKey">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateMacSecKeyAsync(const Model::DisassociateMacSecKeyRequest& request, const DisassociateMacSecKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the virtual interface failover test history.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ListVirtualInterfaceTestHistory">AWS
@@ -2348,6 +2437,40 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the AWS Direct Connect dedicated connection configuration.</p> <p>You
+         * can update the following parameters for a connection:</p> <ul> <li> <p>The
+         * connection name</p> </li> <li> <p>The connection's MAC Security (MACsec)
+         * encryption mode.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateConnectionOutcome UpdateConnection(const Model::UpdateConnectionRequest& request) const;
+
+        /**
+         * <p>Updates the AWS Direct Connect dedicated connection configuration.</p> <p>You
+         * can update the following parameters for a connection:</p> <ul> <li> <p>The
+         * connection name</p> </li> <li> <p>The connection's MAC Security (MACsec)
+         * encryption mode.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateConnection">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateConnectionOutcomeCallable UpdateConnectionCallable(const Model::UpdateConnectionRequest& request) const;
+
+        /**
+         * <p>Updates the AWS Direct Connect dedicated connection configuration.</p> <p>You
+         * can update the following parameters for a connection:</p> <ul> <li> <p>The
+         * connection name</p> </li> <li> <p>The connection's MAC Security (MACsec)
+         * encryption mode.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateConnection">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateConnectionAsync(const Model::UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the specified attributes of the Direct Connect gateway
          * association.</p> <p>Add or remove prefixes from the association.</p><p><h3>See
          * Also:</h3>   <a
@@ -2380,15 +2503,14 @@ namespace Model
 
         /**
          * <p>Updates the attributes of the specified link aggregation group (LAG).</p>
-         * <p>You can update the following attributes:</p> <ul> <li> <p>The name of the
+         * <p>You can update the following LAG attributes:</p> <ul> <li> <p>The name of the
          * LAG.</p> </li> <li> <p>The value for the minimum number of connections that must
-         * be operational for the LAG itself to be operational. </p> </li> </ul> <p>When
-         * you create a LAG, the default value for the minimum number of operational
-         * connections is zero (0). If you update this value and the number of operational
-         * connections falls below the specified value, the LAG automatically goes down to
-         * avoid over-utilization of the remaining connections. Adjust this value with
-         * care, as it could force the LAG down if it is set higher than the current number
-         * of operational connections.</p><p><h3>See Also:</h3>   <a
+         * be operational for the LAG itself to be operational. </p> </li> <li> <p>The
+         * LAG's MACsec encryption mode.</p> <p>AWS assigns this value to each connection
+         * which is part of the LAG.</p> </li> <li> <p>The tags</p> </li> </ul> 
+         * <p>If you adjust the threshold value for the minimum number of operational
+         * connections, ensure that the new value does not cause the LAG to fall below the
+         * threshold and become non-operational.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateLag">AWS
          * API Reference</a></p>
          */
@@ -2396,15 +2518,14 @@ namespace Model
 
         /**
          * <p>Updates the attributes of the specified link aggregation group (LAG).</p>
-         * <p>You can update the following attributes:</p> <ul> <li> <p>The name of the
+         * <p>You can update the following LAG attributes:</p> <ul> <li> <p>The name of the
          * LAG.</p> </li> <li> <p>The value for the minimum number of connections that must
-         * be operational for the LAG itself to be operational. </p> </li> </ul> <p>When
-         * you create a LAG, the default value for the minimum number of operational
-         * connections is zero (0). If you update this value and the number of operational
-         * connections falls below the specified value, the LAG automatically goes down to
-         * avoid over-utilization of the remaining connections. Adjust this value with
-         * care, as it could force the LAG down if it is set higher than the current number
-         * of operational connections.</p><p><h3>See Also:</h3>   <a
+         * be operational for the LAG itself to be operational. </p> </li> <li> <p>The
+         * LAG's MACsec encryption mode.</p> <p>AWS assigns this value to each connection
+         * which is part of the LAG.</p> </li> <li> <p>The tags</p> </li> </ul> 
+         * <p>If you adjust the threshold value for the minimum number of operational
+         * connections, ensure that the new value does not cause the LAG to fall below the
+         * threshold and become non-operational.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateLag">AWS
          * API Reference</a></p>
          *
@@ -2414,15 +2535,14 @@ namespace Model
 
         /**
          * <p>Updates the attributes of the specified link aggregation group (LAG).</p>
-         * <p>You can update the following attributes:</p> <ul> <li> <p>The name of the
+         * <p>You can update the following LAG attributes:</p> <ul> <li> <p>The name of the
          * LAG.</p> </li> <li> <p>The value for the minimum number of connections that must
-         * be operational for the LAG itself to be operational. </p> </li> </ul> <p>When
-         * you create a LAG, the default value for the minimum number of operational
-         * connections is zero (0). If you update this value and the number of operational
-         * connections falls below the specified value, the LAG automatically goes down to
-         * avoid over-utilization of the remaining connections. Adjust this value with
-         * care, as it could force the LAG down if it is set higher than the current number
-         * of operational connections.</p><p><h3>See Also:</h3>   <a
+         * be operational for the LAG itself to be operational. </p> </li> <li> <p>The
+         * LAG's MACsec encryption mode.</p> <p>AWS assigns this value to each connection
+         * which is part of the LAG.</p> </li> <li> <p>The tags</p> </li> </ul> 
+         * <p>If you adjust the threshold value for the minimum number of operational
+         * connections, ensure that the new value does not cause the LAG to fall below the
+         * threshold and become non-operational.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateLag">AWS
          * API Reference</a></p>
          *
@@ -2490,6 +2610,7 @@ namespace Model
         void AllocateTransitVirtualInterfaceAsyncHelper(const Model::AllocateTransitVirtualInterfaceRequest& request, const AllocateTransitVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateConnectionWithLagAsyncHelper(const Model::AssociateConnectionWithLagRequest& request, const AssociateConnectionWithLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateHostedConnectionAsyncHelper(const Model::AssociateHostedConnectionRequest& request, const AssociateHostedConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssociateMacSecKeyAsyncHelper(const Model::AssociateMacSecKeyRequest& request, const AssociateMacSecKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateVirtualInterfaceAsyncHelper(const Model::AssociateVirtualInterfaceRequest& request, const AssociateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ConfirmConnectionAsyncHelper(const Model::ConfirmConnectionRequest& request, const ConfirmConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ConfirmPrivateVirtualInterfaceAsyncHelper(const Model::ConfirmPrivateVirtualInterfaceRequest& request, const ConfirmPrivateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2527,11 +2648,13 @@ namespace Model
         void DescribeVirtualGatewaysAsyncHelper(const DescribeVirtualGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeVirtualInterfacesAsyncHelper(const Model::DescribeVirtualInterfacesRequest& request, const DescribeVirtualInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateConnectionFromLagAsyncHelper(const Model::DisassociateConnectionFromLagRequest& request, const DisassociateConnectionFromLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateMacSecKeyAsyncHelper(const Model::DisassociateMacSecKeyRequest& request, const DisassociateMacSecKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListVirtualInterfaceTestHistoryAsyncHelper(const Model::ListVirtualInterfaceTestHistoryRequest& request, const ListVirtualInterfaceTestHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartBgpFailoverTestAsyncHelper(const Model::StartBgpFailoverTestRequest& request, const StartBgpFailoverTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopBgpFailoverTestAsyncHelper(const Model::StopBgpFailoverTestRequest& request, const StopBgpFailoverTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateConnectionAsyncHelper(const Model::UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDirectConnectGatewayAssociationAsyncHelper(const Model::UpdateDirectConnectGatewayAssociationRequest& request, const UpdateDirectConnectGatewayAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateLagAsyncHelper(const Model::UpdateLagRequest& request, const UpdateLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateVirtualInterfaceAttributesAsyncHelper(const Model::UpdateVirtualInterfaceAttributesRequest& request, const UpdateVirtualInterfaceAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

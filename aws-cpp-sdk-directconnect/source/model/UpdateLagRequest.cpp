@@ -16,7 +16,8 @@ UpdateLagRequest::UpdateLagRequest() :
     m_lagIdHasBeenSet(false),
     m_lagNameHasBeenSet(false),
     m_minimumLinks(0),
-    m_minimumLinksHasBeenSet(false)
+    m_minimumLinksHasBeenSet(false),
+    m_encryptionModeHasBeenSet(false)
 {
 }
 
@@ -39,6 +40,12 @@ Aws::String UpdateLagRequest::SerializePayload() const
   if(m_minimumLinksHasBeenSet)
   {
    payload.WithInteger("minimumLinks", m_minimumLinks);
+
+  }
+
+  if(m_encryptionModeHasBeenSet)
+  {
+   payload.WithString("encryptionMode", m_encryptionMode);
 
   }
 

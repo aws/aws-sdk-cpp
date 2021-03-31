@@ -167,7 +167,7 @@ namespace Model
    * based on the quantity and scale of your specific workloads. With AWS Batch,
    * there's no need to install or manage batch computing software. This means that
    * you can focus your time and energy on analyzing results and solving your
-   * specific problems. </p>
+   * specific problems.</p>
    */
   class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient
   {

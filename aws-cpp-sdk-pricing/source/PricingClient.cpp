@@ -73,7 +73,7 @@ PricingClient::~PricingClient()
 
 void PricingClient::init(const ClientConfiguration& config)
 {
-  SetServiceClientName("api.pricing");
+  SetServiceClientName("Pricing");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

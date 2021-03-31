@@ -18,6 +18,9 @@
 #include <aws/detective/model/ListGraphsResult.h>
 #include <aws/detective/model/ListInvitationsResult.h>
 #include <aws/detective/model/ListMembersResult.h>
+#include <aws/detective/model/ListTagsForResourceResult.h>
+#include <aws/detective/model/TagResourceResult.h>
+#include <aws/detective/model/UntagResourceResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -59,6 +62,7 @@ namespace Detective
 namespace Model
 {
         class AcceptInvitationRequest;
+        class CreateGraphRequest;
         class CreateMembersRequest;
         class DeleteGraphRequest;
         class DeleteMembersRequest;
@@ -67,8 +71,11 @@ namespace Model
         class ListGraphsRequest;
         class ListInvitationsRequest;
         class ListMembersRequest;
+        class ListTagsForResourceRequest;
         class RejectInvitationRequest;
         class StartMonitoringMemberRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
 
         typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> AcceptInvitationOutcome;
         typedef Aws::Utils::Outcome<CreateGraphResult, DetectiveError> CreateGraphOutcome;
@@ -80,8 +87,11 @@ namespace Model
         typedef Aws::Utils::Outcome<ListGraphsResult, DetectiveError> ListGraphsOutcome;
         typedef Aws::Utils::Outcome<ListInvitationsResult, DetectiveError> ListInvitationsOutcome;
         typedef Aws::Utils::Outcome<ListMembersResult, DetectiveError> ListMembersOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, DetectiveError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> RejectInvitationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> StartMonitoringMemberOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, DetectiveError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, DetectiveError> UntagResourceOutcome;
 
         typedef std::future<AcceptInvitationOutcome> AcceptInvitationOutcomeCallable;
         typedef std::future<CreateGraphOutcome> CreateGraphOutcomeCallable;
@@ -93,14 +103,17 @@ namespace Model
         typedef std::future<ListGraphsOutcome> ListGraphsOutcomeCallable;
         typedef std::future<ListInvitationsOutcome> ListInvitationsOutcomeCallable;
         typedef std::future<ListMembersOutcome> ListMembersOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<RejectInvitationOutcome> RejectInvitationOutcomeCallable;
         typedef std::future<StartMonitoringMemberOutcome> StartMonitoringMemberOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 } // namespace Model
 
   class DetectiveClient;
 
     typedef std::function<void(const DetectiveClient*, const Model::AcceptInvitationRequest&, const Model::AcceptInvitationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptInvitationResponseReceivedHandler;
-    typedef std::function<void(const DetectiveClient*, const Model::CreateGraphOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGraphResponseReceivedHandler;
+    typedef std::function<void(const DetectiveClient*, const Model::CreateGraphRequest&, const Model::CreateGraphOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGraphResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::CreateMembersRequest&, const Model::CreateMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMembersResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::DeleteGraphRequest&, const Model::DeleteGraphOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGraphResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::DeleteMembersRequest&, const Model::DeleteMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMembersResponseReceivedHandler;
@@ -109,8 +122,11 @@ namespace Model
     typedef std::function<void(const DetectiveClient*, const Model::ListGraphsRequest&, const Model::ListGraphsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGraphsResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::ListInvitationsRequest&, const Model::ListInvitationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInvitationsResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::ListMembersRequest&, const Model::ListMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMembersResponseReceivedHandler;
+    typedef std::function<void(const DetectiveClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::RejectInvitationRequest&, const Model::RejectInvitationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectInvitationResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::StartMonitoringMemberRequest&, const Model::StartMonitoringMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMonitoringMemberResponseReceivedHandler;
+    typedef std::function<void(const DetectiveClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const DetectiveClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
 
   /**
    * <p>Detective uses machine learning and purpose-built visualizations to help you
@@ -221,7 +237,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/CreateGraph">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateGraphOutcome CreateGraph() const;
+        virtual Model::CreateGraphOutcome CreateGraph(const Model::CreateGraphRequest& request) const;
 
         /**
          * <p>Creates a new behavior graph for the calling account, and sets that account
@@ -244,7 +260,7 @@ namespace Model
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::CreateGraphOutcomeCallable CreateGraphCallable() const;
+        virtual Model::CreateGraphOutcomeCallable CreateGraphCallable(const Model::CreateGraphRequest& request) const;
 
         /**
          * <p>Creates a new behavior graph for the calling account, and sets that account
@@ -267,7 +283,8 @@ namespace Model
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void CreateGraphAsync(const CreateGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void CreateGraphAsync(const Model::CreateGraphRequest& request, const CreateGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
         /**
          * <p>Sends a request to invite the specified AWS accounts to be member accounts in
          * the behavior graph. This operation can only be called by the administrator
@@ -577,6 +594,34 @@ namespace Model
         virtual void ListMembersAsync(const Model::ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the tag values that are assigned to a behavior graph.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Returns the tag values that are assigned to a behavior graph.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Returns the tag values that are assigned to a behavior graph.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Rejects an invitation to contribute the account data to a behavior graph.
          * This operation must be called by a member account that has the
          * <code>INVITED</code> status.</p><p><h3>See Also:</h3>   <a
@@ -647,12 +692,62 @@ namespace Model
          */
         virtual void StartMonitoringMemberAsync(const Model::StartMonitoringMemberRequest& request, const StartMonitoringMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Applies tag values to a behavior graph.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Applies tag values to a behavior graph.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Applies tag values to a behavior graph.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes tags from a behavior graph.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes tags from a behavior graph.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes tags from a behavior graph.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AcceptInvitationAsyncHelper(const Model::AcceptInvitationRequest& request, const AcceptInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateGraphAsyncHelper(const CreateGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateGraphAsyncHelper(const Model::CreateGraphRequest& request, const CreateGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateMembersAsyncHelper(const Model::CreateMembersRequest& request, const CreateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteGraphAsyncHelper(const Model::DeleteGraphRequest& request, const DeleteGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteMembersAsyncHelper(const Model::DeleteMembersRequest& request, const DeleteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -661,8 +756,11 @@ namespace Model
         void ListGraphsAsyncHelper(const Model::ListGraphsRequest& request, const ListGraphsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInvitationsAsyncHelper(const Model::ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMembersAsyncHelper(const Model::ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RejectInvitationAsyncHelper(const Model::RejectInvitationRequest& request, const RejectInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartMonitoringMemberAsyncHelper(const Model::StartMonitoringMemberRequest& request, const StartMonitoringMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

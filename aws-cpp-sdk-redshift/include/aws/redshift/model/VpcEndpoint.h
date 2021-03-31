@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>The connection endpoint for connecting an Amazon Redshift cluster through the
-   * proxy.</p><p><h3>See Also:</h3>   <a
+   * <p>The connection endpoint for connecting to an Amazon Redshift cluster through
+   * the proxy.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/VpcEndpoint">AWS
    * API Reference</a></p>
    */

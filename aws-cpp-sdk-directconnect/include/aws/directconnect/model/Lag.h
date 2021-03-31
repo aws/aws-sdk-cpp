@@ -11,6 +11,7 @@
 #include <aws/directconnect/model/HasLogicalRedundancy.h>
 #include <aws/directconnect/model/Connection.h>
 #include <aws/directconnect/model/Tag.h>
+#include <aws/directconnect/model/MacSecKey.h>
 #include <utility>
 
 namespace Aws
@@ -715,6 +716,125 @@ namespace Model
      */
     inline Lag& WithProviderName(const char* value) { SetProviderName(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
+     */
+    inline bool GetMacSecCapable() const{ return m_macSecCapable; }
+
+    /**
+     * <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
+     */
+    inline bool MacSecCapableHasBeenSet() const { return m_macSecCapableHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
+     */
+    inline void SetMacSecCapable(bool value) { m_macSecCapableHasBeenSet = true; m_macSecCapable = value; }
+
+    /**
+     * <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
+     */
+    inline Lag& WithMacSecCapable(bool value) { SetMacSecCapable(value); return *this;}
+
+
+    /**
+     * <p>The LAG MAC Security (MACsec) encryption mode.</p> <p>The valid values are
+     * <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline const Aws::String& GetEncryptionMode() const{ return m_encryptionMode; }
+
+    /**
+     * <p>The LAG MAC Security (MACsec) encryption mode.</p> <p>The valid values are
+     * <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline bool EncryptionModeHasBeenSet() const { return m_encryptionModeHasBeenSet; }
+
+    /**
+     * <p>The LAG MAC Security (MACsec) encryption mode.</p> <p>The valid values are
+     * <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline void SetEncryptionMode(const Aws::String& value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = value; }
+
+    /**
+     * <p>The LAG MAC Security (MACsec) encryption mode.</p> <p>The valid values are
+     * <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline void SetEncryptionMode(Aws::String&& value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = std::move(value); }
+
+    /**
+     * <p>The LAG MAC Security (MACsec) encryption mode.</p> <p>The valid values are
+     * <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline void SetEncryptionMode(const char* value) { m_encryptionModeHasBeenSet = true; m_encryptionMode.assign(value); }
+
+    /**
+     * <p>The LAG MAC Security (MACsec) encryption mode.</p> <p>The valid values are
+     * <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline Lag& WithEncryptionMode(const Aws::String& value) { SetEncryptionMode(value); return *this;}
+
+    /**
+     * <p>The LAG MAC Security (MACsec) encryption mode.</p> <p>The valid values are
+     * <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline Lag& WithEncryptionMode(Aws::String&& value) { SetEncryptionMode(std::move(value)); return *this;}
+
+    /**
+     * <p>The LAG MAC Security (MACsec) encryption mode.</p> <p>The valid values are
+     * <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline Lag& WithEncryptionMode(const char* value) { SetEncryptionMode(value); return *this;}
+
+
+    /**
+     * <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
+     */
+    inline const Aws::Vector<MacSecKey>& GetMacSecKeys() const{ return m_macSecKeys; }
+
+    /**
+     * <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
+     */
+    inline bool MacSecKeysHasBeenSet() const { return m_macSecKeysHasBeenSet; }
+
+    /**
+     * <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
+     */
+    inline void SetMacSecKeys(const Aws::Vector<MacSecKey>& value) { m_macSecKeysHasBeenSet = true; m_macSecKeys = value; }
+
+    /**
+     * <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
+     */
+    inline void SetMacSecKeys(Aws::Vector<MacSecKey>&& value) { m_macSecKeysHasBeenSet = true; m_macSecKeys = std::move(value); }
+
+    /**
+     * <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
+     */
+    inline Lag& WithMacSecKeys(const Aws::Vector<MacSecKey>& value) { SetMacSecKeys(value); return *this;}
+
+    /**
+     * <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
+     */
+    inline Lag& WithMacSecKeys(Aws::Vector<MacSecKey>&& value) { SetMacSecKeys(std::move(value)); return *this;}
+
+    /**
+     * <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
+     */
+    inline Lag& AddMacSecKeys(const MacSecKey& value) { m_macSecKeysHasBeenSet = true; m_macSecKeys.push_back(value); return *this; }
+
+    /**
+     * <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
+     */
+    inline Lag& AddMacSecKeys(MacSecKey&& value) { m_macSecKeysHasBeenSet = true; m_macSecKeys.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_connectionsBandwidth;
@@ -767,6 +887,15 @@ namespace Model
 
     Aws::String m_providerName;
     bool m_providerNameHasBeenSet;
+
+    bool m_macSecCapable;
+    bool m_macSecCapableHasBeenSet;
+
+    Aws::String m_encryptionMode;
+    bool m_encryptionModeHasBeenSet;
+
+    Aws::Vector<MacSecKey> m_macSecKeys;
+    bool m_macSecKeysHasBeenSet;
   };
 
 } // namespace Model

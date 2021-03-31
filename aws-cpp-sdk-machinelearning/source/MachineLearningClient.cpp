@@ -97,7 +97,7 @@ MachineLearningClient::~MachineLearningClient()
 
 void MachineLearningClient::init(const ClientConfiguration& config)
 {
-  SetServiceClientName("machinelearning");
+  SetServiceClientName("Machine Learning");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

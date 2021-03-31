@@ -22,7 +22,8 @@ CreateEntityRecognizerRequest::CreateEntityRecognizerRequest() :
     m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false),
     m_volumeKmsKeyIdHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+    m_vpcConfigHasBeenSet(false),
+    m_modelKmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,12 @@ Aws::String CreateEntityRecognizerRequest::SerializePayload() const
   if(m_vpcConfigHasBeenSet)
   {
    payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_modelKmsKeyIdHasBeenSet)
+  {
+   payload.WithString("ModelKmsKeyId", m_modelKmsKeyId);
 
   }
 

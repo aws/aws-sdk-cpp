@@ -41,7 +41,11 @@ Lag::Lag() :
     m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
     m_hasLogicalRedundancyHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_providerNameHasBeenSet(false)
+    m_providerNameHasBeenSet(false),
+    m_macSecCapable(false),
+    m_macSecCapableHasBeenSet(false),
+    m_encryptionModeHasBeenSet(false),
+    m_macSecKeysHasBeenSet(false)
 {
 }
 
@@ -68,7 +72,11 @@ Lag::Lag(JsonView jsonValue) :
     m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
     m_hasLogicalRedundancyHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_providerNameHasBeenSet(false)
+    m_providerNameHasBeenSet(false),
+    m_macSecCapable(false),
+    m_macSecCapableHasBeenSet(false),
+    m_encryptionModeHasBeenSet(false),
+    m_macSecKeysHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -200,6 +208,30 @@ Lag& Lag::operator =(JsonView jsonValue)
     m_providerNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("macSecCapable"))
+  {
+    m_macSecCapable = jsonValue.GetBool("macSecCapable");
+
+    m_macSecCapableHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("encryptionMode"))
+  {
+    m_encryptionMode = jsonValue.GetString("encryptionMode");
+
+    m_encryptionModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("macSecKeys"))
+  {
+    Array<JsonView> macSecKeysJsonList = jsonValue.GetArray("macSecKeys");
+    for(unsigned macSecKeysIndex = 0; macSecKeysIndex < macSecKeysJsonList.GetLength(); ++macSecKeysIndex)
+    {
+      m_macSecKeys.push_back(macSecKeysJsonList[macSecKeysIndex].AsObject());
+    }
+    m_macSecKeysHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -314,6 +346,29 @@ JsonValue Lag::Jsonize() const
   if(m_providerNameHasBeenSet)
   {
    payload.WithString("providerName", m_providerName);
+
+  }
+
+  if(m_macSecCapableHasBeenSet)
+  {
+   payload.WithBool("macSecCapable", m_macSecCapable);
+
+  }
+
+  if(m_encryptionModeHasBeenSet)
+  {
+   payload.WithString("encryptionMode", m_encryptionMode);
+
+  }
+
+  if(m_macSecKeysHasBeenSet)
+  {
+   Array<JsonValue> macSecKeysJsonList(m_macSecKeys.size());
+   for(unsigned macSecKeysIndex = 0; macSecKeysIndex < macSecKeysJsonList.GetLength(); ++macSecKeysIndex)
+   {
+     macSecKeysJsonList[macSecKeysIndex].AsObject(m_macSecKeys[macSecKeysIndex].Jsonize());
+   }
+   payload.WithArray("macSecKeys", std::move(macSecKeysJsonList));
 
   }
 

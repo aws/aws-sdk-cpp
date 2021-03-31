@@ -349,61 +349,66 @@ namespace Model
 
     /**
      * <p>The status of the evaluation. This element can have one of the following
-     * values:</p> <ul> <li> <code>PENDING</code> - Amazon Machine Language (Amazon ML)
-     * submitted a request to evaluate an <code>MLModel</code>.</li> <li>
-     * <code>INPROGRESS</code> - The evaluation is underway.</li> <li>
+     * values:</p> <ul> <li> <p> <code>PENDING</code> - Amazon Machine Language (Amazon
+     * ML) submitted a request to evaluate an <code>MLModel</code>.</p> </li> <li> <p>
+     * <code>INPROGRESS</code> - The evaluation is underway.</p> </li> <li> <p>
      * <code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not
-     * run to completion. It is not usable.</li> <li> <code>COMPLETED</code> - The
-     * evaluation process completed successfully.</li> <li> <code>DELETED</code> - The
-     * <code>Evaluation</code> is marked as deleted. It is not usable.</li> </ul>
+     * run to completion. It is not usable.</p> </li> <li> <p> <code>COMPLETED</code> -
+     * The evaluation process completed successfully.</p> </li> <li> <p>
+     * <code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is
+     * not usable.</p> </li> </ul>
      */
     inline const EntityStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The status of the evaluation. This element can have one of the following
-     * values:</p> <ul> <li> <code>PENDING</code> - Amazon Machine Language (Amazon ML)
-     * submitted a request to evaluate an <code>MLModel</code>.</li> <li>
-     * <code>INPROGRESS</code> - The evaluation is underway.</li> <li>
+     * values:</p> <ul> <li> <p> <code>PENDING</code> - Amazon Machine Language (Amazon
+     * ML) submitted a request to evaluate an <code>MLModel</code>.</p> </li> <li> <p>
+     * <code>INPROGRESS</code> - The evaluation is underway.</p> </li> <li> <p>
      * <code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not
-     * run to completion. It is not usable.</li> <li> <code>COMPLETED</code> - The
-     * evaluation process completed successfully.</li> <li> <code>DELETED</code> - The
-     * <code>Evaluation</code> is marked as deleted. It is not usable.</li> </ul>
+     * run to completion. It is not usable.</p> </li> <li> <p> <code>COMPLETED</code> -
+     * The evaluation process completed successfully.</p> </li> <li> <p>
+     * <code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is
+     * not usable.</p> </li> </ul>
      */
     inline void SetStatus(const EntityStatus& value) { m_status = value; }
 
     /**
      * <p>The status of the evaluation. This element can have one of the following
-     * values:</p> <ul> <li> <code>PENDING</code> - Amazon Machine Language (Amazon ML)
-     * submitted a request to evaluate an <code>MLModel</code>.</li> <li>
-     * <code>INPROGRESS</code> - The evaluation is underway.</li> <li>
+     * values:</p> <ul> <li> <p> <code>PENDING</code> - Amazon Machine Language (Amazon
+     * ML) submitted a request to evaluate an <code>MLModel</code>.</p> </li> <li> <p>
+     * <code>INPROGRESS</code> - The evaluation is underway.</p> </li> <li> <p>
      * <code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not
-     * run to completion. It is not usable.</li> <li> <code>COMPLETED</code> - The
-     * evaluation process completed successfully.</li> <li> <code>DELETED</code> - The
-     * <code>Evaluation</code> is marked as deleted. It is not usable.</li> </ul>
+     * run to completion. It is not usable.</p> </li> <li> <p> <code>COMPLETED</code> -
+     * The evaluation process completed successfully.</p> </li> <li> <p>
+     * <code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is
+     * not usable.</p> </li> </ul>
      */
     inline void SetStatus(EntityStatus&& value) { m_status = std::move(value); }
 
     /**
      * <p>The status of the evaluation. This element can have one of the following
-     * values:</p> <ul> <li> <code>PENDING</code> - Amazon Machine Language (Amazon ML)
-     * submitted a request to evaluate an <code>MLModel</code>.</li> <li>
-     * <code>INPROGRESS</code> - The evaluation is underway.</li> <li>
+     * values:</p> <ul> <li> <p> <code>PENDING</code> - Amazon Machine Language (Amazon
+     * ML) submitted a request to evaluate an <code>MLModel</code>.</p> </li> <li> <p>
+     * <code>INPROGRESS</code> - The evaluation is underway.</p> </li> <li> <p>
      * <code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not
-     * run to completion. It is not usable.</li> <li> <code>COMPLETED</code> - The
-     * evaluation process completed successfully.</li> <li> <code>DELETED</code> - The
-     * <code>Evaluation</code> is marked as deleted. It is not usable.</li> </ul>
+     * run to completion. It is not usable.</p> </li> <li> <p> <code>COMPLETED</code> -
+     * The evaluation process completed successfully.</p> </li> <li> <p>
+     * <code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is
+     * not usable.</p> </li> </ul>
      */
     inline GetEvaluationResult& WithStatus(const EntityStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status of the evaluation. This element can have one of the following
-     * values:</p> <ul> <li> <code>PENDING</code> - Amazon Machine Language (Amazon ML)
-     * submitted a request to evaluate an <code>MLModel</code>.</li> <li>
-     * <code>INPROGRESS</code> - The evaluation is underway.</li> <li>
+     * values:</p> <ul> <li> <p> <code>PENDING</code> - Amazon Machine Language (Amazon
+     * ML) submitted a request to evaluate an <code>MLModel</code>.</p> </li> <li> <p>
+     * <code>INPROGRESS</code> - The evaluation is underway.</p> </li> <li> <p>
      * <code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not
-     * run to completion. It is not usable.</li> <li> <code>COMPLETED</code> - The
-     * evaluation process completed successfully.</li> <li> <code>DELETED</code> - The
-     * <code>Evaluation</code> is marked as deleted. It is not usable.</li> </ul>
+     * run to completion. It is not usable.</p> </li> <li> <p> <code>COMPLETED</code> -
+     * The evaluation process completed successfully.</p> </li> <li> <p>
+     * <code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is
+     * not usable.</p> </li> </ul>
      */
     inline GetEvaluationResult& WithStatus(EntityStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -420,7 +425,7 @@ namespace Model
      * multiclass <code>MLModel</code> uses the F1 score technique to measure
      * performance. </p> </li> </ul> <p> For more information about performance
      * metrics, please see the <a
-     * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
+     * href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
      * Learning Developer Guide</a>. </p>
      */
     inline const PerformanceMetrics& GetPerformanceMetrics() const{ return m_performanceMetrics; }
@@ -437,7 +442,7 @@ namespace Model
      * multiclass <code>MLModel</code> uses the F1 score technique to measure
      * performance. </p> </li> </ul> <p> For more information about performance
      * metrics, please see the <a
-     * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
+     * href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
      * Learning Developer Guide</a>. </p>
      */
     inline void SetPerformanceMetrics(const PerformanceMetrics& value) { m_performanceMetrics = value; }
@@ -454,7 +459,7 @@ namespace Model
      * multiclass <code>MLModel</code> uses the F1 score technique to measure
      * performance. </p> </li> </ul> <p> For more information about performance
      * metrics, please see the <a
-     * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
+     * href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
      * Learning Developer Guide</a>. </p>
      */
     inline void SetPerformanceMetrics(PerformanceMetrics&& value) { m_performanceMetrics = std::move(value); }
@@ -471,7 +476,7 @@ namespace Model
      * multiclass <code>MLModel</code> uses the F1 score technique to measure
      * performance. </p> </li> </ul> <p> For more information about performance
      * metrics, please see the <a
-     * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
+     * href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
      * Learning Developer Guide</a>. </p>
      */
     inline GetEvaluationResult& WithPerformanceMetrics(const PerformanceMetrics& value) { SetPerformanceMetrics(value); return *this;}
@@ -488,7 +493,7 @@ namespace Model
      * multiclass <code>MLModel</code> uses the F1 score technique to measure
      * performance. </p> </li> </ul> <p> For more information about performance
      * metrics, please see the <a
-     * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
+     * href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
      * Learning Developer Guide</a>. </p>
      */
     inline GetEvaluationResult& WithPerformanceMetrics(PerformanceMetrics&& value) { SetPerformanceMetrics(std::move(value)); return *this;}

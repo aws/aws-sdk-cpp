@@ -261,6 +261,52 @@ namespace Model
      */
     inline Location& AddAvailableProviders(const char* value) { m_availableProvidersHasBeenSet = true; m_availableProviders.push_back(value); return *this; }
 
+
+    /**
+     * <p>The available MAC Security (MACsec) port speeds for the location.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAvailableMacSecPortSpeeds() const{ return m_availableMacSecPortSpeeds; }
+
+    /**
+     * <p>The available MAC Security (MACsec) port speeds for the location.</p>
+     */
+    inline bool AvailableMacSecPortSpeedsHasBeenSet() const { return m_availableMacSecPortSpeedsHasBeenSet; }
+
+    /**
+     * <p>The available MAC Security (MACsec) port speeds for the location.</p>
+     */
+    inline void SetAvailableMacSecPortSpeeds(const Aws::Vector<Aws::String>& value) { m_availableMacSecPortSpeedsHasBeenSet = true; m_availableMacSecPortSpeeds = value; }
+
+    /**
+     * <p>The available MAC Security (MACsec) port speeds for the location.</p>
+     */
+    inline void SetAvailableMacSecPortSpeeds(Aws::Vector<Aws::String>&& value) { m_availableMacSecPortSpeedsHasBeenSet = true; m_availableMacSecPortSpeeds = std::move(value); }
+
+    /**
+     * <p>The available MAC Security (MACsec) port speeds for the location.</p>
+     */
+    inline Location& WithAvailableMacSecPortSpeeds(const Aws::Vector<Aws::String>& value) { SetAvailableMacSecPortSpeeds(value); return *this;}
+
+    /**
+     * <p>The available MAC Security (MACsec) port speeds for the location.</p>
+     */
+    inline Location& WithAvailableMacSecPortSpeeds(Aws::Vector<Aws::String>&& value) { SetAvailableMacSecPortSpeeds(std::move(value)); return *this;}
+
+    /**
+     * <p>The available MAC Security (MACsec) port speeds for the location.</p>
+     */
+    inline Location& AddAvailableMacSecPortSpeeds(const Aws::String& value) { m_availableMacSecPortSpeedsHasBeenSet = true; m_availableMacSecPortSpeeds.push_back(value); return *this; }
+
+    /**
+     * <p>The available MAC Security (MACsec) port speeds for the location.</p>
+     */
+    inline Location& AddAvailableMacSecPortSpeeds(Aws::String&& value) { m_availableMacSecPortSpeedsHasBeenSet = true; m_availableMacSecPortSpeeds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The available MAC Security (MACsec) port speeds for the location.</p>
+     */
+    inline Location& AddAvailableMacSecPortSpeeds(const char* value) { m_availableMacSecPortSpeedsHasBeenSet = true; m_availableMacSecPortSpeeds.push_back(value); return *this; }
+
   private:
 
     Aws::String m_locationCode;
@@ -277,6 +323,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_availableProviders;
     bool m_availableProvidersHasBeenSet;
+
+    Aws::Vector<Aws::String> m_availableMacSecPortSpeeds;
+    bool m_availableMacSecPortSpeedsHasBeenSet;
   };
 
 } // namespace Model

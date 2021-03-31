@@ -16,6 +16,7 @@
 #include <aws/workmail/model/CancelMailboxExportJobResult.h>
 #include <aws/workmail/model/CreateAliasResult.h>
 #include <aws/workmail/model/CreateGroupResult.h>
+#include <aws/workmail/model/CreateMobileDeviceAccessRuleResult.h>
 #include <aws/workmail/model/CreateOrganizationResult.h>
 #include <aws/workmail/model/CreateResourceResult.h>
 #include <aws/workmail/model/CreateUserResult.h>
@@ -23,6 +24,7 @@
 #include <aws/workmail/model/DeleteAliasResult.h>
 #include <aws/workmail/model/DeleteGroupResult.h>
 #include <aws/workmail/model/DeleteMailboxPermissionsResult.h>
+#include <aws/workmail/model/DeleteMobileDeviceAccessRuleResult.h>
 #include <aws/workmail/model/DeleteOrganizationResult.h>
 #include <aws/workmail/model/DeleteResourceResult.h>
 #include <aws/workmail/model/DeleteRetentionPolicyResult.h>
@@ -38,12 +40,14 @@
 #include <aws/workmail/model/GetAccessControlEffectResult.h>
 #include <aws/workmail/model/GetDefaultRetentionPolicyResult.h>
 #include <aws/workmail/model/GetMailboxDetailsResult.h>
+#include <aws/workmail/model/GetMobileDeviceAccessEffectResult.h>
 #include <aws/workmail/model/ListAccessControlRulesResult.h>
 #include <aws/workmail/model/ListAliasesResult.h>
 #include <aws/workmail/model/ListGroupMembersResult.h>
 #include <aws/workmail/model/ListGroupsResult.h>
 #include <aws/workmail/model/ListMailboxExportJobsResult.h>
 #include <aws/workmail/model/ListMailboxPermissionsResult.h>
+#include <aws/workmail/model/ListMobileDeviceAccessRulesResult.h>
 #include <aws/workmail/model/ListOrganizationsResult.h>
 #include <aws/workmail/model/ListResourceDelegatesResult.h>
 #include <aws/workmail/model/ListResourcesResult.h>
@@ -58,6 +62,7 @@
 #include <aws/workmail/model/TagResourceResult.h>
 #include <aws/workmail/model/UntagResourceResult.h>
 #include <aws/workmail/model/UpdateMailboxQuotaResult.h>
+#include <aws/workmail/model/UpdateMobileDeviceAccessRuleResult.h>
 #include <aws/workmail/model/UpdatePrimaryEmailAddressResult.h>
 #include <aws/workmail/model/UpdateResourceResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -104,6 +109,7 @@ namespace Model
         class CancelMailboxExportJobRequest;
         class CreateAliasRequest;
         class CreateGroupRequest;
+        class CreateMobileDeviceAccessRuleRequest;
         class CreateOrganizationRequest;
         class CreateResourceRequest;
         class CreateUserRequest;
@@ -111,6 +117,7 @@ namespace Model
         class DeleteAliasRequest;
         class DeleteGroupRequest;
         class DeleteMailboxPermissionsRequest;
+        class DeleteMobileDeviceAccessRuleRequest;
         class DeleteOrganizationRequest;
         class DeleteResourceRequest;
         class DeleteRetentionPolicyRequest;
@@ -126,12 +133,14 @@ namespace Model
         class GetAccessControlEffectRequest;
         class GetDefaultRetentionPolicyRequest;
         class GetMailboxDetailsRequest;
+        class GetMobileDeviceAccessEffectRequest;
         class ListAccessControlRulesRequest;
         class ListAliasesRequest;
         class ListGroupMembersRequest;
         class ListGroupsRequest;
         class ListMailboxExportJobsRequest;
         class ListMailboxPermissionsRequest;
+        class ListMobileDeviceAccessRulesRequest;
         class ListOrganizationsRequest;
         class ListResourceDelegatesRequest;
         class ListResourcesRequest;
@@ -146,6 +155,7 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateMailboxQuotaRequest;
+        class UpdateMobileDeviceAccessRuleRequest;
         class UpdatePrimaryEmailAddressRequest;
         class UpdateResourceRequest;
 
@@ -154,6 +164,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CancelMailboxExportJobResult, WorkMailError> CancelMailboxExportJobOutcome;
         typedef Aws::Utils::Outcome<CreateAliasResult, WorkMailError> CreateAliasOutcome;
         typedef Aws::Utils::Outcome<CreateGroupResult, WorkMailError> CreateGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateMobileDeviceAccessRuleResult, WorkMailError> CreateMobileDeviceAccessRuleOutcome;
         typedef Aws::Utils::Outcome<CreateOrganizationResult, WorkMailError> CreateOrganizationOutcome;
         typedef Aws::Utils::Outcome<CreateResourceResult, WorkMailError> CreateResourceOutcome;
         typedef Aws::Utils::Outcome<CreateUserResult, WorkMailError> CreateUserOutcome;
@@ -161,6 +172,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteAliasResult, WorkMailError> DeleteAliasOutcome;
         typedef Aws::Utils::Outcome<DeleteGroupResult, WorkMailError> DeleteGroupOutcome;
         typedef Aws::Utils::Outcome<DeleteMailboxPermissionsResult, WorkMailError> DeleteMailboxPermissionsOutcome;
+        typedef Aws::Utils::Outcome<DeleteMobileDeviceAccessRuleResult, WorkMailError> DeleteMobileDeviceAccessRuleOutcome;
         typedef Aws::Utils::Outcome<DeleteOrganizationResult, WorkMailError> DeleteOrganizationOutcome;
         typedef Aws::Utils::Outcome<DeleteResourceResult, WorkMailError> DeleteResourceOutcome;
         typedef Aws::Utils::Outcome<DeleteRetentionPolicyResult, WorkMailError> DeleteRetentionPolicyOutcome;
@@ -176,12 +188,14 @@ namespace Model
         typedef Aws::Utils::Outcome<GetAccessControlEffectResult, WorkMailError> GetAccessControlEffectOutcome;
         typedef Aws::Utils::Outcome<GetDefaultRetentionPolicyResult, WorkMailError> GetDefaultRetentionPolicyOutcome;
         typedef Aws::Utils::Outcome<GetMailboxDetailsResult, WorkMailError> GetMailboxDetailsOutcome;
+        typedef Aws::Utils::Outcome<GetMobileDeviceAccessEffectResult, WorkMailError> GetMobileDeviceAccessEffectOutcome;
         typedef Aws::Utils::Outcome<ListAccessControlRulesResult, WorkMailError> ListAccessControlRulesOutcome;
         typedef Aws::Utils::Outcome<ListAliasesResult, WorkMailError> ListAliasesOutcome;
         typedef Aws::Utils::Outcome<ListGroupMembersResult, WorkMailError> ListGroupMembersOutcome;
         typedef Aws::Utils::Outcome<ListGroupsResult, WorkMailError> ListGroupsOutcome;
         typedef Aws::Utils::Outcome<ListMailboxExportJobsResult, WorkMailError> ListMailboxExportJobsOutcome;
         typedef Aws::Utils::Outcome<ListMailboxPermissionsResult, WorkMailError> ListMailboxPermissionsOutcome;
+        typedef Aws::Utils::Outcome<ListMobileDeviceAccessRulesResult, WorkMailError> ListMobileDeviceAccessRulesOutcome;
         typedef Aws::Utils::Outcome<ListOrganizationsResult, WorkMailError> ListOrganizationsOutcome;
         typedef Aws::Utils::Outcome<ListResourceDelegatesResult, WorkMailError> ListResourceDelegatesOutcome;
         typedef Aws::Utils::Outcome<ListResourcesResult, WorkMailError> ListResourcesOutcome;
@@ -196,6 +210,7 @@ namespace Model
         typedef Aws::Utils::Outcome<TagResourceResult, WorkMailError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, WorkMailError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateMailboxQuotaResult, WorkMailError> UpdateMailboxQuotaOutcome;
+        typedef Aws::Utils::Outcome<UpdateMobileDeviceAccessRuleResult, WorkMailError> UpdateMobileDeviceAccessRuleOutcome;
         typedef Aws::Utils::Outcome<UpdatePrimaryEmailAddressResult, WorkMailError> UpdatePrimaryEmailAddressOutcome;
         typedef Aws::Utils::Outcome<UpdateResourceResult, WorkMailError> UpdateResourceOutcome;
 
@@ -204,6 +219,7 @@ namespace Model
         typedef std::future<CancelMailboxExportJobOutcome> CancelMailboxExportJobOutcomeCallable;
         typedef std::future<CreateAliasOutcome> CreateAliasOutcomeCallable;
         typedef std::future<CreateGroupOutcome> CreateGroupOutcomeCallable;
+        typedef std::future<CreateMobileDeviceAccessRuleOutcome> CreateMobileDeviceAccessRuleOutcomeCallable;
         typedef std::future<CreateOrganizationOutcome> CreateOrganizationOutcomeCallable;
         typedef std::future<CreateResourceOutcome> CreateResourceOutcomeCallable;
         typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
@@ -211,6 +227,7 @@ namespace Model
         typedef std::future<DeleteAliasOutcome> DeleteAliasOutcomeCallable;
         typedef std::future<DeleteGroupOutcome> DeleteGroupOutcomeCallable;
         typedef std::future<DeleteMailboxPermissionsOutcome> DeleteMailboxPermissionsOutcomeCallable;
+        typedef std::future<DeleteMobileDeviceAccessRuleOutcome> DeleteMobileDeviceAccessRuleOutcomeCallable;
         typedef std::future<DeleteOrganizationOutcome> DeleteOrganizationOutcomeCallable;
         typedef std::future<DeleteResourceOutcome> DeleteResourceOutcomeCallable;
         typedef std::future<DeleteRetentionPolicyOutcome> DeleteRetentionPolicyOutcomeCallable;
@@ -226,12 +243,14 @@ namespace Model
         typedef std::future<GetAccessControlEffectOutcome> GetAccessControlEffectOutcomeCallable;
         typedef std::future<GetDefaultRetentionPolicyOutcome> GetDefaultRetentionPolicyOutcomeCallable;
         typedef std::future<GetMailboxDetailsOutcome> GetMailboxDetailsOutcomeCallable;
+        typedef std::future<GetMobileDeviceAccessEffectOutcome> GetMobileDeviceAccessEffectOutcomeCallable;
         typedef std::future<ListAccessControlRulesOutcome> ListAccessControlRulesOutcomeCallable;
         typedef std::future<ListAliasesOutcome> ListAliasesOutcomeCallable;
         typedef std::future<ListGroupMembersOutcome> ListGroupMembersOutcomeCallable;
         typedef std::future<ListGroupsOutcome> ListGroupsOutcomeCallable;
         typedef std::future<ListMailboxExportJobsOutcome> ListMailboxExportJobsOutcomeCallable;
         typedef std::future<ListMailboxPermissionsOutcome> ListMailboxPermissionsOutcomeCallable;
+        typedef std::future<ListMobileDeviceAccessRulesOutcome> ListMobileDeviceAccessRulesOutcomeCallable;
         typedef std::future<ListOrganizationsOutcome> ListOrganizationsOutcomeCallable;
         typedef std::future<ListResourceDelegatesOutcome> ListResourceDelegatesOutcomeCallable;
         typedef std::future<ListResourcesOutcome> ListResourcesOutcomeCallable;
@@ -246,6 +265,7 @@ namespace Model
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateMailboxQuotaOutcome> UpdateMailboxQuotaOutcomeCallable;
+        typedef std::future<UpdateMobileDeviceAccessRuleOutcome> UpdateMobileDeviceAccessRuleOutcomeCallable;
         typedef std::future<UpdatePrimaryEmailAddressOutcome> UpdatePrimaryEmailAddressOutcomeCallable;
         typedef std::future<UpdateResourceOutcome> UpdateResourceOutcomeCallable;
 } // namespace Model
@@ -257,6 +277,7 @@ namespace Model
     typedef std::function<void(const WorkMailClient*, const Model::CancelMailboxExportJobRequest&, const Model::CancelMailboxExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelMailboxExportJobResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::CreateAliasRequest&, const Model::CreateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAliasResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::CreateGroupRequest&, const Model::CreateGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGroupResponseReceivedHandler;
+    typedef std::function<void(const WorkMailClient*, const Model::CreateMobileDeviceAccessRuleRequest&, const Model::CreateMobileDeviceAccessRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMobileDeviceAccessRuleResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::CreateOrganizationRequest&, const Model::CreateOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateOrganizationResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::CreateResourceRequest&, const Model::CreateResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateResourceResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::CreateUserRequest&, const Model::CreateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserResponseReceivedHandler;
@@ -264,6 +285,7 @@ namespace Model
     typedef std::function<void(const WorkMailClient*, const Model::DeleteAliasRequest&, const Model::DeleteAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAliasResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::DeleteGroupRequest&, const Model::DeleteGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGroupResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::DeleteMailboxPermissionsRequest&, const Model::DeleteMailboxPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMailboxPermissionsResponseReceivedHandler;
+    typedef std::function<void(const WorkMailClient*, const Model::DeleteMobileDeviceAccessRuleRequest&, const Model::DeleteMobileDeviceAccessRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMobileDeviceAccessRuleResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::DeleteOrganizationRequest&, const Model::DeleteOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteOrganizationResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::DeleteResourceRequest&, const Model::DeleteResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourceResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::DeleteRetentionPolicyRequest&, const Model::DeleteRetentionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRetentionPolicyResponseReceivedHandler;
@@ -279,12 +301,14 @@ namespace Model
     typedef std::function<void(const WorkMailClient*, const Model::GetAccessControlEffectRequest&, const Model::GetAccessControlEffectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccessControlEffectResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::GetDefaultRetentionPolicyRequest&, const Model::GetDefaultRetentionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDefaultRetentionPolicyResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::GetMailboxDetailsRequest&, const Model::GetMailboxDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMailboxDetailsResponseReceivedHandler;
+    typedef std::function<void(const WorkMailClient*, const Model::GetMobileDeviceAccessEffectRequest&, const Model::GetMobileDeviceAccessEffectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMobileDeviceAccessEffectResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::ListAccessControlRulesRequest&, const Model::ListAccessControlRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccessControlRulesResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::ListAliasesRequest&, const Model::ListAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAliasesResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::ListGroupMembersRequest&, const Model::ListGroupMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGroupMembersResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::ListGroupsRequest&, const Model::ListGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGroupsResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::ListMailboxExportJobsRequest&, const Model::ListMailboxExportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMailboxExportJobsResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::ListMailboxPermissionsRequest&, const Model::ListMailboxPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMailboxPermissionsResponseReceivedHandler;
+    typedef std::function<void(const WorkMailClient*, const Model::ListMobileDeviceAccessRulesRequest&, const Model::ListMobileDeviceAccessRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMobileDeviceAccessRulesResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::ListOrganizationsRequest&, const Model::ListOrganizationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOrganizationsResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::ListResourceDelegatesRequest&, const Model::ListResourceDelegatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceDelegatesResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::ListResourcesRequest&, const Model::ListResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourcesResponseReceivedHandler;
@@ -299,6 +323,7 @@ namespace Model
     typedef std::function<void(const WorkMailClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::UpdateMailboxQuotaRequest&, const Model::UpdateMailboxQuotaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMailboxQuotaResponseReceivedHandler;
+    typedef std::function<void(const WorkMailClient*, const Model::UpdateMobileDeviceAccessRuleRequest&, const Model::UpdateMobileDeviceAccessRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMobileDeviceAccessRuleResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::UpdatePrimaryEmailAddressRequest&, const Model::UpdatePrimaryEmailAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePrimaryEmailAddressResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::UpdateResourceRequest&, const Model::UpdateResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResourceResponseReceivedHandler;
 
@@ -492,6 +517,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateGroupAsync(const Model::CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new mobile device access rule for the specified Amazon WorkMail
+         * organization.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateMobileDeviceAccessRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateMobileDeviceAccessRuleOutcome CreateMobileDeviceAccessRule(const Model::CreateMobileDeviceAccessRuleRequest& request) const;
+
+        /**
+         * <p>Creates a new mobile device access rule for the specified Amazon WorkMail
+         * organization.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateMobileDeviceAccessRule">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateMobileDeviceAccessRuleOutcomeCallable CreateMobileDeviceAccessRuleCallable(const Model::CreateMobileDeviceAccessRuleRequest& request) const;
+
+        /**
+         * <p>Creates a new mobile device access rule for the specified Amazon WorkMail
+         * organization.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateMobileDeviceAccessRule">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateMobileDeviceAccessRuleAsync(const Model::CreateMobileDeviceAccessRuleRequest& request, const CreateMobileDeviceAccessRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new Amazon WorkMail organization. Optionally, you can choose to
@@ -736,6 +789,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteMailboxPermissionsAsync(const Model::DeleteMailboxPermissionsRequest& request, const DeleteMailboxPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a mobile device access rule for the specified Amazon WorkMail
+         * organization.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMobileDeviceAccessRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteMobileDeviceAccessRuleOutcome DeleteMobileDeviceAccessRule(const Model::DeleteMobileDeviceAccessRuleRequest& request) const;
+
+        /**
+         * <p>Deletes a mobile device access rule for the specified Amazon WorkMail
+         * organization.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMobileDeviceAccessRule">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteMobileDeviceAccessRuleOutcomeCallable DeleteMobileDeviceAccessRuleCallable(const Model::DeleteMobileDeviceAccessRuleRequest& request) const;
+
+        /**
+         * <p>Deletes a mobile device access rule for the specified Amazon WorkMail
+         * organization.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMobileDeviceAccessRule">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteMobileDeviceAccessRuleAsync(const Model::DeleteMobileDeviceAccessRuleRequest& request, const DeleteMobileDeviceAccessRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Amazon WorkMail organization and all underlying AWS resources
@@ -1173,6 +1254,40 @@ namespace Model
         virtual void GetMailboxDetailsAsync(const Model::GetMailboxDetailsRequest& request, const GetMailboxDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Simulates the effect of the mobile device access rules for the given
+         * attributes of a sample access event. Use this method to test the effects of the
+         * current set of mobile device access rules for the Amazon WorkMail organization
+         * for a particular user's attributes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMobileDeviceAccessEffect">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMobileDeviceAccessEffectOutcome GetMobileDeviceAccessEffect(const Model::GetMobileDeviceAccessEffectRequest& request) const;
+
+        /**
+         * <p>Simulates the effect of the mobile device access rules for the given
+         * attributes of a sample access event. Use this method to test the effects of the
+         * current set of mobile device access rules for the Amazon WorkMail organization
+         * for a particular user's attributes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMobileDeviceAccessEffect">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetMobileDeviceAccessEffectOutcomeCallable GetMobileDeviceAccessEffectCallable(const Model::GetMobileDeviceAccessEffectRequest& request) const;
+
+        /**
+         * <p>Simulates the effect of the mobile device access rules for the given
+         * attributes of a sample access event. Use this method to test the effects of the
+         * current set of mobile device access rules for the Amazon WorkMail organization
+         * for a particular user's attributes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMobileDeviceAccessEffect">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetMobileDeviceAccessEffectAsync(const Model::GetMobileDeviceAccessEffectRequest& request, const GetMobileDeviceAccessEffectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the access control rules for the specified organization.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAccessControlRules">AWS
@@ -1336,6 +1451,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListMailboxPermissionsAsync(const Model::ListMailboxPermissionsRequest& request, const ListMailboxPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the mobile device access rules for the specified Amazon WorkMail
+         * organization.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMobileDeviceAccessRules">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMobileDeviceAccessRulesOutcome ListMobileDeviceAccessRules(const Model::ListMobileDeviceAccessRulesRequest& request) const;
+
+        /**
+         * <p>Lists the mobile device access rules for the specified Amazon WorkMail
+         * organization.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMobileDeviceAccessRules">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListMobileDeviceAccessRulesOutcomeCallable ListMobileDeviceAccessRulesCallable(const Model::ListMobileDeviceAccessRulesRequest& request) const;
+
+        /**
+         * <p>Lists the mobile device access rules for the specified Amazon WorkMail
+         * organization.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMobileDeviceAccessRules">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListMobileDeviceAccessRulesAsync(const Model::ListMobileDeviceAccessRulesRequest& request, const ListMobileDeviceAccessRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns summaries of the customer's organizations.</p><p><h3>See Also:</h3>  
@@ -1772,6 +1915,34 @@ namespace Model
         virtual void UpdateMailboxQuotaAsync(const Model::UpdateMailboxQuotaRequest& request, const UpdateMailboxQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates a mobile device access rule for the specified Amazon WorkMail
+         * organization.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMobileDeviceAccessRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateMobileDeviceAccessRuleOutcome UpdateMobileDeviceAccessRule(const Model::UpdateMobileDeviceAccessRuleRequest& request) const;
+
+        /**
+         * <p>Updates a mobile device access rule for the specified Amazon WorkMail
+         * organization.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMobileDeviceAccessRule">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateMobileDeviceAccessRuleOutcomeCallable UpdateMobileDeviceAccessRuleCallable(const Model::UpdateMobileDeviceAccessRuleRequest& request) const;
+
+        /**
+         * <p>Updates a mobile device access rule for the specified Amazon WorkMail
+         * organization.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMobileDeviceAccessRule">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateMobileDeviceAccessRuleAsync(const Model::UpdateMobileDeviceAccessRuleRequest& request, const UpdateMobileDeviceAccessRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the primary email for a user, group, or resource. The current email
          * is moved into the list of aliases (or swapped between an existing alias and the
          * current primary email), and the email provided in the input is promoted as the
@@ -1848,6 +2019,7 @@ namespace Model
         void CancelMailboxExportJobAsyncHelper(const Model::CancelMailboxExportJobRequest& request, const CancelMailboxExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAliasAsyncHelper(const Model::CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateGroupAsyncHelper(const Model::CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateMobileDeviceAccessRuleAsyncHelper(const Model::CreateMobileDeviceAccessRuleRequest& request, const CreateMobileDeviceAccessRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateOrganizationAsyncHelper(const Model::CreateOrganizationRequest& request, const CreateOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateResourceAsyncHelper(const Model::CreateResourceRequest& request, const CreateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUserAsyncHelper(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1855,6 +2027,7 @@ namespace Model
         void DeleteAliasAsyncHelper(const Model::DeleteAliasRequest& request, const DeleteAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteGroupAsyncHelper(const Model::DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteMailboxPermissionsAsyncHelper(const Model::DeleteMailboxPermissionsRequest& request, const DeleteMailboxPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteMobileDeviceAccessRuleAsyncHelper(const Model::DeleteMobileDeviceAccessRuleRequest& request, const DeleteMobileDeviceAccessRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteOrganizationAsyncHelper(const Model::DeleteOrganizationRequest& request, const DeleteOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteResourceAsyncHelper(const Model::DeleteResourceRequest& request, const DeleteResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRetentionPolicyAsyncHelper(const Model::DeleteRetentionPolicyRequest& request, const DeleteRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1870,12 +2043,14 @@ namespace Model
         void GetAccessControlEffectAsyncHelper(const Model::GetAccessControlEffectRequest& request, const GetAccessControlEffectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDefaultRetentionPolicyAsyncHelper(const Model::GetDefaultRetentionPolicyRequest& request, const GetDefaultRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMailboxDetailsAsyncHelper(const Model::GetMailboxDetailsRequest& request, const GetMailboxDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetMobileDeviceAccessEffectAsyncHelper(const Model::GetMobileDeviceAccessEffectRequest& request, const GetMobileDeviceAccessEffectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAccessControlRulesAsyncHelper(const Model::ListAccessControlRulesRequest& request, const ListAccessControlRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAliasesAsyncHelper(const Model::ListAliasesRequest& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListGroupMembersAsyncHelper(const Model::ListGroupMembersRequest& request, const ListGroupMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListGroupsAsyncHelper(const Model::ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMailboxExportJobsAsyncHelper(const Model::ListMailboxExportJobsRequest& request, const ListMailboxExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMailboxPermissionsAsyncHelper(const Model::ListMailboxPermissionsRequest& request, const ListMailboxPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListMobileDeviceAccessRulesAsyncHelper(const Model::ListMobileDeviceAccessRulesRequest& request, const ListMobileDeviceAccessRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListOrganizationsAsyncHelper(const Model::ListOrganizationsRequest& request, const ListOrganizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListResourceDelegatesAsyncHelper(const Model::ListResourceDelegatesRequest& request, const ListResourceDelegatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListResourcesAsyncHelper(const Model::ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1890,6 +2065,7 @@ namespace Model
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateMailboxQuotaAsyncHelper(const Model::UpdateMailboxQuotaRequest& request, const UpdateMailboxQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateMobileDeviceAccessRuleAsyncHelper(const Model::UpdateMobileDeviceAccessRuleRequest& request, const UpdateMobileDeviceAccessRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePrimaryEmailAddressAsyncHelper(const Model::UpdatePrimaryEmailAddressRequest& request, const UpdatePrimaryEmailAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateResourceAsyncHelper(const Model::UpdateResourceRequest& request, const UpdateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

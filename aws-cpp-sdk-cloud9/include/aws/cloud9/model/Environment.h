@@ -9,6 +9,7 @@
 #include <aws/cloud9/model/EnvironmentType.h>
 #include <aws/cloud9/model/ConnectionType.h>
 #include <aws/cloud9/model/EnvironmentLifecycle.h>
+#include <aws/cloud9/model/ManagedCredentialsStatus.h>
 #include <utility>
 
 namespace Aws
@@ -214,32 +215,38 @@ namespace Model
 
 
     /**
-     * <p>The connection type used for connecting to an Amazon EC2 environment.</p>
+     * <p>The connection type used for connecting to an Amazon EC2 environment.
+     * <code>CONNECT_SSH</code> is selected by default.</p>
      */
     inline const ConnectionType& GetConnectionType() const{ return m_connectionType; }
 
     /**
-     * <p>The connection type used for connecting to an Amazon EC2 environment.</p>
+     * <p>The connection type used for connecting to an Amazon EC2 environment.
+     * <code>CONNECT_SSH</code> is selected by default.</p>
      */
     inline bool ConnectionTypeHasBeenSet() const { return m_connectionTypeHasBeenSet; }
 
     /**
-     * <p>The connection type used for connecting to an Amazon EC2 environment.</p>
+     * <p>The connection type used for connecting to an Amazon EC2 environment.
+     * <code>CONNECT_SSH</code> is selected by default.</p>
      */
     inline void SetConnectionType(const ConnectionType& value) { m_connectionTypeHasBeenSet = true; m_connectionType = value; }
 
     /**
-     * <p>The connection type used for connecting to an Amazon EC2 environment.</p>
+     * <p>The connection type used for connecting to an Amazon EC2 environment.
+     * <code>CONNECT_SSH</code> is selected by default.</p>
      */
     inline void SetConnectionType(ConnectionType&& value) { m_connectionTypeHasBeenSet = true; m_connectionType = std::move(value); }
 
     /**
-     * <p>The connection type used for connecting to an Amazon EC2 environment.</p>
+     * <p>The connection type used for connecting to an Amazon EC2 environment.
+     * <code>CONNECT_SSH</code> is selected by default.</p>
      */
     inline Environment& WithConnectionType(const ConnectionType& value) { SetConnectionType(value); return *this;}
 
     /**
-     * <p>The connection type used for connecting to an Amazon EC2 environment.</p>
+     * <p>The connection type used for connecting to an Amazon EC2 environment.
+     * <code>CONNECT_SSH</code> is selected by default.</p>
      */
     inline Environment& WithConnectionType(ConnectionType&& value) { SetConnectionType(std::move(value)); return *this;}
 
@@ -356,6 +363,97 @@ namespace Model
      */
     inline Environment& WithLifecycle(EnvironmentLifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Describes the status of AWS managed temporary credentials for the AWS Cloud9
+     * environment. Available values are:</p> <ul> <li> <p>
+     * <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code>
+     * </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p>
+     * <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p>
+     * <code>DISABLED_BY_COLLABORATOR</code> </p> </li> <li> <p>
+     * <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p>
+     * <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> <li> <p>
+     * <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p>
+     * <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p>
+     * <code>DISABLED_BY_DEFAULT</code> </p> </li> </ul>
+     */
+    inline const ManagedCredentialsStatus& GetManagedCredentialsStatus() const{ return m_managedCredentialsStatus; }
+
+    /**
+     * <p>Describes the status of AWS managed temporary credentials for the AWS Cloud9
+     * environment. Available values are:</p> <ul> <li> <p>
+     * <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code>
+     * </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p>
+     * <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p>
+     * <code>DISABLED_BY_COLLABORATOR</code> </p> </li> <li> <p>
+     * <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p>
+     * <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> <li> <p>
+     * <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p>
+     * <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p>
+     * <code>DISABLED_BY_DEFAULT</code> </p> </li> </ul>
+     */
+    inline bool ManagedCredentialsStatusHasBeenSet() const { return m_managedCredentialsStatusHasBeenSet; }
+
+    /**
+     * <p>Describes the status of AWS managed temporary credentials for the AWS Cloud9
+     * environment. Available values are:</p> <ul> <li> <p>
+     * <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code>
+     * </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p>
+     * <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p>
+     * <code>DISABLED_BY_COLLABORATOR</code> </p> </li> <li> <p>
+     * <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p>
+     * <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> <li> <p>
+     * <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p>
+     * <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p>
+     * <code>DISABLED_BY_DEFAULT</code> </p> </li> </ul>
+     */
+    inline void SetManagedCredentialsStatus(const ManagedCredentialsStatus& value) { m_managedCredentialsStatusHasBeenSet = true; m_managedCredentialsStatus = value; }
+
+    /**
+     * <p>Describes the status of AWS managed temporary credentials for the AWS Cloud9
+     * environment. Available values are:</p> <ul> <li> <p>
+     * <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code>
+     * </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p>
+     * <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p>
+     * <code>DISABLED_BY_COLLABORATOR</code> </p> </li> <li> <p>
+     * <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p>
+     * <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> <li> <p>
+     * <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p>
+     * <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p>
+     * <code>DISABLED_BY_DEFAULT</code> </p> </li> </ul>
+     */
+    inline void SetManagedCredentialsStatus(ManagedCredentialsStatus&& value) { m_managedCredentialsStatusHasBeenSet = true; m_managedCredentialsStatus = std::move(value); }
+
+    /**
+     * <p>Describes the status of AWS managed temporary credentials for the AWS Cloud9
+     * environment. Available values are:</p> <ul> <li> <p>
+     * <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code>
+     * </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p>
+     * <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p>
+     * <code>DISABLED_BY_COLLABORATOR</code> </p> </li> <li> <p>
+     * <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p>
+     * <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> <li> <p>
+     * <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p>
+     * <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p>
+     * <code>DISABLED_BY_DEFAULT</code> </p> </li> </ul>
+     */
+    inline Environment& WithManagedCredentialsStatus(const ManagedCredentialsStatus& value) { SetManagedCredentialsStatus(value); return *this;}
+
+    /**
+     * <p>Describes the status of AWS managed temporary credentials for the AWS Cloud9
+     * environment. Available values are:</p> <ul> <li> <p>
+     * <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code>
+     * </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p>
+     * <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p>
+     * <code>DISABLED_BY_COLLABORATOR</code> </p> </li> <li> <p>
+     * <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p>
+     * <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> <li> <p>
+     * <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p>
+     * <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p>
+     * <code>DISABLED_BY_DEFAULT</code> </p> </li> </ul>
+     */
+    inline Environment& WithManagedCredentialsStatus(ManagedCredentialsStatus&& value) { SetManagedCredentialsStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -381,6 +479,9 @@ namespace Model
 
     EnvironmentLifecycle m_lifecycle;
     bool m_lifecycleHasBeenSet;
+
+    ManagedCredentialsStatus m_managedCredentialsStatus;
+    bool m_managedCredentialsStatusHasBeenSet;
   };
 
 } // namespace Model
