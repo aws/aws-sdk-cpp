@@ -42,49 +42,49 @@ namespace Model
 
     /**
      * <p>The unique identifier of the index to search. The identifier is returned in
-     * the response from the operation.</p>
+     * the response from the <code>CreateIndex</code> operation.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
 
     /**
      * <p>The unique identifier of the index to search. The identifier is returned in
-     * the response from the operation.</p>
+     * the response from the <code>CreateIndex</code> operation.</p>
      */
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
 
     /**
      * <p>The unique identifier of the index to search. The identifier is returned in
-     * the response from the operation.</p>
+     * the response from the <code>CreateIndex</code> operation.</p>
      */
     inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
 
     /**
      * <p>The unique identifier of the index to search. The identifier is returned in
-     * the response from the operation.</p>
+     * the response from the <code>CreateIndex</code> operation.</p>
      */
     inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
 
     /**
      * <p>The unique identifier of the index to search. The identifier is returned in
-     * the response from the operation.</p>
+     * the response from the <code>CreateIndex</code> operation.</p>
      */
     inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
 
     /**
      * <p>The unique identifier of the index to search. The identifier is returned in
-     * the response from the operation.</p>
+     * the response from the <code>CreateIndex</code> operation.</p>
      */
     inline QueryRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
 
     /**
      * <p>The unique identifier of the index to search. The identifier is returned in
-     * the response from the operation.</p>
+     * the response from the <code>CreateIndex</code> operation.</p>
      */
     inline QueryRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the index to search. The identifier is returned in
-     * the response from the operation.</p>
+     * the response from the <code>CreateIndex</code> operation.</p>
      */
     inline QueryRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 

@@ -38,6 +38,7 @@ namespace Aws
         static const int REGEX_PATTERN_REFERENCE_STATEMENT_HASH = HashingUtils::HashString("REGEX_PATTERN_REFERENCE_STATEMENT");
         static const int IP_SET_REFERENCE_STATEMENT_HASH = HashingUtils::HashString("IP_SET_REFERENCE_STATEMENT");
         static const int MANAGED_RULE_SET_STATEMENT_HASH = HashingUtils::HashString("MANAGED_RULE_SET_STATEMENT");
+        static const int LABEL_MATCH_STATEMENT_HASH = HashingUtils::HashString("LABEL_MATCH_STATEMENT");
         static const int AND_STATEMENT_HASH = HashingUtils::HashString("AND_STATEMENT");
         static const int OR_STATEMENT_HASH = HashingUtils::HashString("OR_STATEMENT");
         static const int NOT_STATEMENT_HASH = HashingUtils::HashString("NOT_STATEMENT");
@@ -70,6 +71,8 @@ namespace Aws
         static const int JSON_MATCH_PATTERN_HASH = HashingUtils::HashString("JSON_MATCH_PATTERN");
         static const int JSON_MATCH_SCOPE_HASH = HashingUtils::HashString("JSON_MATCH_SCOPE");
         static const int BODY_PARSING_FALLBACK_BEHAVIOR_HASH = HashingUtils::HashString("BODY_PARSING_FALLBACK_BEHAVIOR");
+        static const int LOGGING_FILTER_HASH = HashingUtils::HashString("LOGGING_FILTER");
+        static const int FILTER_CONDITION_HASH = HashingUtils::HashString("FILTER_CONDITION");
 
 
         ParameterExceptionField GetParameterExceptionFieldForName(const Aws::String& name)
@@ -146,6 +149,10 @@ namespace Aws
           else if (hashCode == MANAGED_RULE_SET_STATEMENT_HASH)
           {
             return ParameterExceptionField::MANAGED_RULE_SET_STATEMENT;
+          }
+          else if (hashCode == LABEL_MATCH_STATEMENT_HASH)
+          {
+            return ParameterExceptionField::LABEL_MATCH_STATEMENT;
           }
           else if (hashCode == AND_STATEMENT_HASH)
           {
@@ -275,6 +282,14 @@ namespace Aws
           {
             return ParameterExceptionField::BODY_PARSING_FALLBACK_BEHAVIOR;
           }
+          else if (hashCode == LOGGING_FILTER_HASH)
+          {
+            return ParameterExceptionField::LOGGING_FILTER;
+          }
+          else if (hashCode == FILTER_CONDITION_HASH)
+          {
+            return ParameterExceptionField::FILTER_CONDITION;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -325,6 +340,8 @@ namespace Aws
             return "IP_SET_REFERENCE_STATEMENT";
           case ParameterExceptionField::MANAGED_RULE_SET_STATEMENT:
             return "MANAGED_RULE_SET_STATEMENT";
+          case ParameterExceptionField::LABEL_MATCH_STATEMENT:
+            return "LABEL_MATCH_STATEMENT";
           case ParameterExceptionField::AND_STATEMENT:
             return "AND_STATEMENT";
           case ParameterExceptionField::OR_STATEMENT:
@@ -389,6 +406,10 @@ namespace Aws
             return "JSON_MATCH_SCOPE";
           case ParameterExceptionField::BODY_PARSING_FALLBACK_BEHAVIOR:
             return "BODY_PARSING_FALLBACK_BEHAVIOR";
+          case ParameterExceptionField::LOGGING_FILTER:
+            return "LOGGING_FILTER";
+          case ParameterExceptionField::FILTER_CONDITION:
+            return "FILTER_CONDITION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

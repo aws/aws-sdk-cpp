@@ -27,7 +27,8 @@ CaptionDestinationSettings::CaptionDestinationSettings() :
     m_imscDestinationSettingsHasBeenSet(false),
     m_sccDestinationSettingsHasBeenSet(false),
     m_teletextDestinationSettingsHasBeenSet(false),
-    m_ttmlDestinationSettingsHasBeenSet(false)
+    m_ttmlDestinationSettingsHasBeenSet(false),
+    m_webvttDestinationSettingsHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ CaptionDestinationSettings::CaptionDestinationSettings(JsonView jsonValue) :
     m_imscDestinationSettingsHasBeenSet(false),
     m_sccDestinationSettingsHasBeenSet(false),
     m_teletextDestinationSettingsHasBeenSet(false),
-    m_ttmlDestinationSettingsHasBeenSet(false)
+    m_ttmlDestinationSettingsHasBeenSet(false),
+    m_webvttDestinationSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -103,6 +105,13 @@ CaptionDestinationSettings& CaptionDestinationSettings::operator =(JsonView json
     m_ttmlDestinationSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("webvttDestinationSettings"))
+  {
+    m_webvttDestinationSettings = jsonValue.GetObject("webvttDestinationSettings");
+
+    m_webvttDestinationSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -154,6 +163,12 @@ JsonValue CaptionDestinationSettings::Jsonize() const
   if(m_ttmlDestinationSettingsHasBeenSet)
   {
    payload.WithObject("ttmlDestinationSettings", m_ttmlDestinationSettings.Jsonize());
+
+  }
+
+  if(m_webvttDestinationSettingsHasBeenSet)
+  {
+   payload.WithObject("webvttDestinationSettings", m_webvttDestinationSettings.Jsonize());
 
   }
 

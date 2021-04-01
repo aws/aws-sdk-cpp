@@ -28,7 +28,8 @@ namespace Model
     SMPTE_TT,
     TELETEXT,
     NULL_SOURCE,
-    IMSC
+    IMSC,
+    WEBVTT
   };
 
 namespace CaptionSourceTypeMapper

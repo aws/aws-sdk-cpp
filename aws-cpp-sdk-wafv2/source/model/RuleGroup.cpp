@@ -27,7 +27,10 @@ RuleGroup::RuleGroup() :
     m_descriptionHasBeenSet(false),
     m_rulesHasBeenSet(false),
     m_visibilityConfigHasBeenSet(false),
-    m_customResponseBodiesHasBeenSet(false)
+    m_labelNamespaceHasBeenSet(false),
+    m_customResponseBodiesHasBeenSet(false),
+    m_availableLabelsHasBeenSet(false),
+    m_consumedLabelsHasBeenSet(false)
 {
 }
 
@@ -40,7 +43,10 @@ RuleGroup::RuleGroup(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_rulesHasBeenSet(false),
     m_visibilityConfigHasBeenSet(false),
-    m_customResponseBodiesHasBeenSet(false)
+    m_labelNamespaceHasBeenSet(false),
+    m_customResponseBodiesHasBeenSet(false),
+    m_availableLabelsHasBeenSet(false),
+    m_consumedLabelsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -99,6 +105,13 @@ RuleGroup& RuleGroup::operator =(JsonView jsonValue)
     m_visibilityConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LabelNamespace"))
+  {
+    m_labelNamespace = jsonValue.GetString("LabelNamespace");
+
+    m_labelNamespaceHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("CustomResponseBodies"))
   {
     Aws::Map<Aws::String, JsonView> customResponseBodiesJsonMap = jsonValue.GetObject("CustomResponseBodies").GetAllObjects();
@@ -107,6 +120,26 @@ RuleGroup& RuleGroup::operator =(JsonView jsonValue)
       m_customResponseBodies[customResponseBodiesItem.first] = customResponseBodiesItem.second.AsObject();
     }
     m_customResponseBodiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AvailableLabels"))
+  {
+    Array<JsonView> availableLabelsJsonList = jsonValue.GetArray("AvailableLabels");
+    for(unsigned availableLabelsIndex = 0; availableLabelsIndex < availableLabelsJsonList.GetLength(); ++availableLabelsIndex)
+    {
+      m_availableLabels.push_back(availableLabelsJsonList[availableLabelsIndex].AsObject());
+    }
+    m_availableLabelsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ConsumedLabels"))
+  {
+    Array<JsonView> consumedLabelsJsonList = jsonValue.GetArray("ConsumedLabels");
+    for(unsigned consumedLabelsIndex = 0; consumedLabelsIndex < consumedLabelsJsonList.GetLength(); ++consumedLabelsIndex)
+    {
+      m_consumedLabels.push_back(consumedLabelsJsonList[consumedLabelsIndex].AsObject());
+    }
+    m_consumedLabelsHasBeenSet = true;
   }
 
   return *this;
@@ -163,6 +196,12 @@ JsonValue RuleGroup::Jsonize() const
 
   }
 
+  if(m_labelNamespaceHasBeenSet)
+  {
+   payload.WithString("LabelNamespace", m_labelNamespace);
+
+  }
+
   if(m_customResponseBodiesHasBeenSet)
   {
    JsonValue customResponseBodiesJsonMap;
@@ -171,6 +210,28 @@ JsonValue RuleGroup::Jsonize() const
      customResponseBodiesJsonMap.WithObject(customResponseBodiesItem.first, customResponseBodiesItem.second.Jsonize());
    }
    payload.WithObject("CustomResponseBodies", std::move(customResponseBodiesJsonMap));
+
+  }
+
+  if(m_availableLabelsHasBeenSet)
+  {
+   Array<JsonValue> availableLabelsJsonList(m_availableLabels.size());
+   for(unsigned availableLabelsIndex = 0; availableLabelsIndex < availableLabelsJsonList.GetLength(); ++availableLabelsIndex)
+   {
+     availableLabelsJsonList[availableLabelsIndex].AsObject(m_availableLabels[availableLabelsIndex].Jsonize());
+   }
+   payload.WithArray("AvailableLabels", std::move(availableLabelsJsonList));
+
+  }
+
+  if(m_consumedLabelsHasBeenSet)
+  {
+   Array<JsonValue> consumedLabelsJsonList(m_consumedLabels.size());
+   for(unsigned consumedLabelsIndex = 0; consumedLabelsIndex < consumedLabelsJsonList.GetLength(); ++consumedLabelsIndex)
+   {
+     consumedLabelsJsonList[consumedLabelsIndex].AsObject(m_consumedLabels[consumedLabelsIndex].Jsonize());
+   }
+   payload.WithArray("ConsumedLabels", std::move(consumedLabelsJsonList));
 
   }
 

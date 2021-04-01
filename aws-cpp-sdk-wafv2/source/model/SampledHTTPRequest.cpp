@@ -27,7 +27,8 @@ SampledHTTPRequest::SampledHTTPRequest() :
     m_ruleNameWithinRuleGroupHasBeenSet(false),
     m_requestHeadersInsertedHasBeenSet(false),
     m_responseCodeSent(0),
-    m_responseCodeSentHasBeenSet(false)
+    m_responseCodeSentHasBeenSet(false),
+    m_labelsHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ SampledHTTPRequest::SampledHTTPRequest(JsonView jsonValue) :
     m_ruleNameWithinRuleGroupHasBeenSet(false),
     m_requestHeadersInsertedHasBeenSet(false),
     m_responseCodeSent(0),
-    m_responseCodeSentHasBeenSet(false)
+    m_responseCodeSentHasBeenSet(false),
+    m_labelsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -99,6 +101,16 @@ SampledHTTPRequest& SampledHTTPRequest::operator =(JsonView jsonValue)
     m_responseCodeSentHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Labels"))
+  {
+    Array<JsonView> labelsJsonList = jsonValue.GetArray("Labels");
+    for(unsigned labelsIndex = 0; labelsIndex < labelsJsonList.GetLength(); ++labelsIndex)
+    {
+      m_labels.push_back(labelsJsonList[labelsIndex].AsObject());
+    }
+    m_labelsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -149,6 +161,17 @@ JsonValue SampledHTTPRequest::Jsonize() const
   if(m_responseCodeSentHasBeenSet)
   {
    payload.WithInteger("ResponseCodeSent", m_responseCodeSent);
+
+  }
+
+  if(m_labelsHasBeenSet)
+  {
+   Array<JsonValue> labelsJsonList(m_labels.size());
+   for(unsigned labelsIndex = 0; labelsIndex < labelsJsonList.GetLength(); ++labelsIndex)
+   {
+     labelsJsonList[labelsIndex].AsObject(m_labels[labelsIndex].Jsonize());
+   }
+   payload.WithArray("Labels", std::move(labelsJsonList));
 
   }
 

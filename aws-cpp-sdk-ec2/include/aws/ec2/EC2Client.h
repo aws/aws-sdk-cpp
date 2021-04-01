@@ -299,6 +299,7 @@
 #include <aws/ec2/model/GetDefaultCreditSpecificationResponse.h>
 #include <aws/ec2/model/GetEbsDefaultKmsKeyIdResponse.h>
 #include <aws/ec2/model/GetEbsEncryptionByDefaultResponse.h>
+#include <aws/ec2/model/GetFlowLogsIntegrationTemplateResponse.h>
 #include <aws/ec2/model/GetGroupsForCapacityReservationResponse.h>
 #include <aws/ec2/model/GetHostReservationPurchasePreviewResponse.h>
 #include <aws/ec2/model/GetLaunchTemplateDataResponse.h>
@@ -770,6 +771,7 @@ namespace Model
         class GetDefaultCreditSpecificationRequest;
         class GetEbsDefaultKmsKeyIdRequest;
         class GetEbsEncryptionByDefaultRequest;
+        class GetFlowLogsIntegrationTemplateRequest;
         class GetGroupsForCapacityReservationRequest;
         class GetHostReservationPurchasePreviewRequest;
         class GetLaunchTemplateDataRequest;
@@ -1216,6 +1218,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetDefaultCreditSpecificationResponse, EC2Error> GetDefaultCreditSpecificationOutcome;
         typedef Aws::Utils::Outcome<GetEbsDefaultKmsKeyIdResponse, EC2Error> GetEbsDefaultKmsKeyIdOutcome;
         typedef Aws::Utils::Outcome<GetEbsEncryptionByDefaultResponse, EC2Error> GetEbsEncryptionByDefaultOutcome;
+        typedef Aws::Utils::Outcome<GetFlowLogsIntegrationTemplateResponse, EC2Error> GetFlowLogsIntegrationTemplateOutcome;
         typedef Aws::Utils::Outcome<GetGroupsForCapacityReservationResponse, EC2Error> GetGroupsForCapacityReservationOutcome;
         typedef Aws::Utils::Outcome<GetHostReservationPurchasePreviewResponse, EC2Error> GetHostReservationPurchasePreviewOutcome;
         typedef Aws::Utils::Outcome<GetLaunchTemplateDataResponse, EC2Error> GetLaunchTemplateDataOutcome;
@@ -1662,6 +1665,7 @@ namespace Model
         typedef std::future<GetDefaultCreditSpecificationOutcome> GetDefaultCreditSpecificationOutcomeCallable;
         typedef std::future<GetEbsDefaultKmsKeyIdOutcome> GetEbsDefaultKmsKeyIdOutcomeCallable;
         typedef std::future<GetEbsEncryptionByDefaultOutcome> GetEbsEncryptionByDefaultOutcomeCallable;
+        typedef std::future<GetFlowLogsIntegrationTemplateOutcome> GetFlowLogsIntegrationTemplateOutcomeCallable;
         typedef std::future<GetGroupsForCapacityReservationOutcome> GetGroupsForCapacityReservationOutcomeCallable;
         typedef std::future<GetHostReservationPurchasePreviewOutcome> GetHostReservationPurchasePreviewOutcomeCallable;
         typedef std::future<GetLaunchTemplateDataOutcome> GetLaunchTemplateDataOutcomeCallable;
@@ -2111,6 +2115,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::GetDefaultCreditSpecificationRequest&, const Model::GetDefaultCreditSpecificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDefaultCreditSpecificationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetEbsDefaultKmsKeyIdRequest&, const Model::GetEbsDefaultKmsKeyIdOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEbsDefaultKmsKeyIdResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetEbsEncryptionByDefaultRequest&, const Model::GetEbsEncryptionByDefaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEbsEncryptionByDefaultResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetFlowLogsIntegrationTemplateRequest&, const Model::GetFlowLogsIntegrationTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFlowLogsIntegrationTemplateResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetGroupsForCapacityReservationRequest&, const Model::GetGroupsForCapacityReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGroupsForCapacityReservationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetHostReservationPurchasePreviewRequest&, const Model::GetHostReservationPurchasePreviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHostReservationPurchasePreviewResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetLaunchTemplateDataRequest&, const Model::GetLaunchTemplateDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLaunchTemplateDataResponseReceivedHandler;
@@ -15637,6 +15642,58 @@ namespace Model
         virtual void GetEbsEncryptionByDefaultAsync(const Model::GetEbsEncryptionByDefaultRequest& request, const GetEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Generates a CloudFormation template that streamlines and automates the
+         * integration of VPC flow logs with Amazon Athena. This make it easier for you to
+         * query and gain insights from VPC flow logs data. Based on the information that
+         * you provide, we configure resources in the template to do the following:</p>
+         * <ul> <li> <p>Create a table in Athena that maps fields to a custom log
+         * format</p> </li> <li> <p>Create a Lambda function that updates the table with
+         * new partitions on a daily, weekly, or monthly basis</p> </li> <li> <p>Create a
+         * table partitioned between two timestamps in the past</p> </li> <li> <p>Create a
+         * set of named queries in Athena that you can use to get started quickly</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetFlowLogsIntegrationTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetFlowLogsIntegrationTemplateOutcome GetFlowLogsIntegrationTemplate(const Model::GetFlowLogsIntegrationTemplateRequest& request) const;
+
+        /**
+         * <p>Generates a CloudFormation template that streamlines and automates the
+         * integration of VPC flow logs with Amazon Athena. This make it easier for you to
+         * query and gain insights from VPC flow logs data. Based on the information that
+         * you provide, we configure resources in the template to do the following:</p>
+         * <ul> <li> <p>Create a table in Athena that maps fields to a custom log
+         * format</p> </li> <li> <p>Create a Lambda function that updates the table with
+         * new partitions on a daily, weekly, or monthly basis</p> </li> <li> <p>Create a
+         * table partitioned between two timestamps in the past</p> </li> <li> <p>Create a
+         * set of named queries in Athena that you can use to get started quickly</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetFlowLogsIntegrationTemplate">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetFlowLogsIntegrationTemplateOutcomeCallable GetFlowLogsIntegrationTemplateCallable(const Model::GetFlowLogsIntegrationTemplateRequest& request) const;
+
+        /**
+         * <p>Generates a CloudFormation template that streamlines and automates the
+         * integration of VPC flow logs with Amazon Athena. This make it easier for you to
+         * query and gain insights from VPC flow logs data. Based on the information that
+         * you provide, we configure resources in the template to do the following:</p>
+         * <ul> <li> <p>Create a table in Athena that maps fields to a custom log
+         * format</p> </li> <li> <p>Create a Lambda function that updates the table with
+         * new partitions on a daily, weekly, or monthly basis</p> </li> <li> <p>Create a
+         * table partitioned between two timestamps in the past</p> </li> <li> <p>Create a
+         * set of named queries in Athena that you can use to get started quickly</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetFlowLogsIntegrationTemplate">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetFlowLogsIntegrationTemplateAsync(const Model::GetFlowLogsIntegrationTemplateRequest& request, const GetFlowLogsIntegrationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the resource groups to which a Capacity Reservation has been
          * added.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetGroupsForCapacityReservation">AWS
@@ -21593,6 +21650,7 @@ namespace Model
         void GetDefaultCreditSpecificationAsyncHelper(const Model::GetDefaultCreditSpecificationRequest& request, const GetDefaultCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEbsDefaultKmsKeyIdAsyncHelper(const Model::GetEbsDefaultKmsKeyIdRequest& request, const GetEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEbsEncryptionByDefaultAsyncHelper(const Model::GetEbsEncryptionByDefaultRequest& request, const GetEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetFlowLogsIntegrationTemplateAsyncHelper(const Model::GetFlowLogsIntegrationTemplateRequest& request, const GetFlowLogsIntegrationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetGroupsForCapacityReservationAsyncHelper(const Model::GetGroupsForCapacityReservationRequest& request, const GetGroupsForCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetHostReservationPurchasePreviewAsyncHelper(const Model::GetHostReservationPurchasePreviewRequest& request, const GetHostReservationPurchasePreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLaunchTemplateDataAsyncHelper(const Model::GetLaunchTemplateDataRequest& request, const GetLaunchTemplateDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

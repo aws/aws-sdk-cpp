@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wafv2/model/HTTPHeader.h>
+#include <aws/wafv2/model/Label.h>
 #include <utility>
 
 namespace Aws
@@ -337,6 +338,87 @@ namespace Model
      */
     inline SampledHTTPRequest& WithResponseCodeSent(int value) { SetResponseCodeSent(value); return *this;}
 
+
+    /**
+     * <p>Labels applied to the web request by matching rules. AWS WAF applies fully
+     * qualified labels to matching web requests. A fully qualified label is the
+     * concatenation of a label namespace and a rule label. The rule's rule group or
+     * web ACL defines the label namespace. </p> <p>For example,
+     * <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code>
+     * or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
+     */
+    inline const Aws::Vector<Label>& GetLabels() const{ return m_labels; }
+
+    /**
+     * <p>Labels applied to the web request by matching rules. AWS WAF applies fully
+     * qualified labels to matching web requests. A fully qualified label is the
+     * concatenation of a label namespace and a rule label. The rule's rule group or
+     * web ACL defines the label namespace. </p> <p>For example,
+     * <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code>
+     * or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
+     */
+    inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
+
+    /**
+     * <p>Labels applied to the web request by matching rules. AWS WAF applies fully
+     * qualified labels to matching web requests. A fully qualified label is the
+     * concatenation of a label namespace and a rule label. The rule's rule group or
+     * web ACL defines the label namespace. </p> <p>For example,
+     * <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code>
+     * or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
+     */
+    inline void SetLabels(const Aws::Vector<Label>& value) { m_labelsHasBeenSet = true; m_labels = value; }
+
+    /**
+     * <p>Labels applied to the web request by matching rules. AWS WAF applies fully
+     * qualified labels to matching web requests. A fully qualified label is the
+     * concatenation of a label namespace and a rule label. The rule's rule group or
+     * web ACL defines the label namespace. </p> <p>For example,
+     * <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code>
+     * or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
+     */
+    inline void SetLabels(Aws::Vector<Label>&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
+
+    /**
+     * <p>Labels applied to the web request by matching rules. AWS WAF applies fully
+     * qualified labels to matching web requests. A fully qualified label is the
+     * concatenation of a label namespace and a rule label. The rule's rule group or
+     * web ACL defines the label namespace. </p> <p>For example,
+     * <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code>
+     * or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
+     */
+    inline SampledHTTPRequest& WithLabels(const Aws::Vector<Label>& value) { SetLabels(value); return *this;}
+
+    /**
+     * <p>Labels applied to the web request by matching rules. AWS WAF applies fully
+     * qualified labels to matching web requests. A fully qualified label is the
+     * concatenation of a label namespace and a rule label. The rule's rule group or
+     * web ACL defines the label namespace. </p> <p>For example,
+     * <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code>
+     * or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
+     */
+    inline SampledHTTPRequest& WithLabels(Aws::Vector<Label>&& value) { SetLabels(std::move(value)); return *this;}
+
+    /**
+     * <p>Labels applied to the web request by matching rules. AWS WAF applies fully
+     * qualified labels to matching web requests. A fully qualified label is the
+     * concatenation of a label namespace and a rule label. The rule's rule group or
+     * web ACL defines the label namespace. </p> <p>For example,
+     * <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code>
+     * or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
+     */
+    inline SampledHTTPRequest& AddLabels(const Label& value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
+
+    /**
+     * <p>Labels applied to the web request by matching rules. AWS WAF applies fully
+     * qualified labels to matching web requests. A fully qualified label is the
+     * concatenation of a label namespace and a rule label. The rule's rule group or
+     * web ACL defines the label namespace. </p> <p>For example,
+     * <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code>
+     * or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
+     */
+    inline SampledHTTPRequest& AddLabels(Label&& value) { m_labelsHasBeenSet = true; m_labels.push_back(std::move(value)); return *this; }
+
   private:
 
     HTTPRequest m_request;
@@ -359,6 +441,9 @@ namespace Model
 
     int m_responseCodeSent;
     bool m_responseCodeSentHasBeenSet;
+
+    Aws::Vector<Label> m_labels;
+    bool m_labelsHasBeenSet;
   };
 
 } // namespace Model

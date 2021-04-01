@@ -45,6 +45,30 @@ DescribeManagedRuleGroupResult& DescribeManagedRuleGroupResult::operator =(const
     }
   }
 
+  if(jsonValue.ValueExists("LabelNamespace"))
+  {
+    m_labelNamespace = jsonValue.GetString("LabelNamespace");
+
+  }
+
+  if(jsonValue.ValueExists("AvailableLabels"))
+  {
+    Array<JsonView> availableLabelsJsonList = jsonValue.GetArray("AvailableLabels");
+    for(unsigned availableLabelsIndex = 0; availableLabelsIndex < availableLabelsJsonList.GetLength(); ++availableLabelsIndex)
+    {
+      m_availableLabels.push_back(availableLabelsJsonList[availableLabelsIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("ConsumedLabels"))
+  {
+    Array<JsonView> consumedLabelsJsonList = jsonValue.GetArray("ConsumedLabels");
+    for(unsigned consumedLabelsIndex = 0; consumedLabelsIndex < consumedLabelsJsonList.GetLength(); ++consumedLabelsIndex)
+    {
+      m_consumedLabels.push_back(consumedLabelsJsonList[consumedLabelsIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

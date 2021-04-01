@@ -1601,14 +1601,24 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the specified <a>IPSet</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified <a>IPSet</a>. </p>  <p>This operation completely
+         * replaces any IP address specifications that you already have in the IP set with
+         * the ones that you provide to this call. If you want to add to or modify the
+         * addresses that are already in the IP set, retrieve those by calling
+         * <a>GetIPSet</a>, update them, and provide the complete updated array of IP
+         * addresses to this call.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateIPSet">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateIPSetOutcome UpdateIPSet(const Model::UpdateIPSetRequest& request) const;
 
         /**
-         * <p>Updates the specified <a>IPSet</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified <a>IPSet</a>. </p>  <p>This operation completely
+         * replaces any IP address specifications that you already have in the IP set with
+         * the ones that you provide to this call. If you want to add to or modify the
+         * addresses that are already in the IP set, retrieve those by calling
+         * <a>GetIPSet</a>, update them, and provide the complete updated array of IP
+         * addresses to this call.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateIPSet">AWS
          * API Reference</a></p>
          *
@@ -1617,7 +1627,12 @@ namespace Model
         virtual Model::UpdateIPSetOutcomeCallable UpdateIPSetCallable(const Model::UpdateIPSetRequest& request) const;
 
         /**
-         * <p>Updates the specified <a>IPSet</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified <a>IPSet</a>. </p>  <p>This operation completely
+         * replaces any IP address specifications that you already have in the IP set with
+         * the ones that you provide to this call. If you want to add to or modify the
+         * addresses that are already in the IP set, retrieve those by calling
+         * <a>GetIPSet</a>, update them, and provide the complete updated array of IP
+         * addresses to this call.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateIPSet">AWS
          * API Reference</a></p>
          *

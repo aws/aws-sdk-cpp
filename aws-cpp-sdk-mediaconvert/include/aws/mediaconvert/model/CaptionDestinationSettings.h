@@ -13,6 +13,7 @@
 #include <aws/mediaconvert/model/SccDestinationSettings.h>
 #include <aws/mediaconvert/model/TeletextDestinationSettings.h>
 #include <aws/mediaconvert/model/TtmlDestinationSettings.h>
+#include <aws/mediaconvert/model/WebvttDestinationSettings.h>
 #include <utility>
 
 namespace Aws
@@ -341,6 +342,37 @@ namespace Model
      */
     inline CaptionDestinationSettings& WithTtmlDestinationSettings(TtmlDestinationSettings&& value) { SetTtmlDestinationSettings(std::move(value)); return *this;}
 
+
+    /**
+     * WEBVTT Destination Settings
+     */
+    inline const WebvttDestinationSettings& GetWebvttDestinationSettings() const{ return m_webvttDestinationSettings; }
+
+    /**
+     * WEBVTT Destination Settings
+     */
+    inline bool WebvttDestinationSettingsHasBeenSet() const { return m_webvttDestinationSettingsHasBeenSet; }
+
+    /**
+     * WEBVTT Destination Settings
+     */
+    inline void SetWebvttDestinationSettings(const WebvttDestinationSettings& value) { m_webvttDestinationSettingsHasBeenSet = true; m_webvttDestinationSettings = value; }
+
+    /**
+     * WEBVTT Destination Settings
+     */
+    inline void SetWebvttDestinationSettings(WebvttDestinationSettings&& value) { m_webvttDestinationSettingsHasBeenSet = true; m_webvttDestinationSettings = std::move(value); }
+
+    /**
+     * WEBVTT Destination Settings
+     */
+    inline CaptionDestinationSettings& WithWebvttDestinationSettings(const WebvttDestinationSettings& value) { SetWebvttDestinationSettings(value); return *this;}
+
+    /**
+     * WEBVTT Destination Settings
+     */
+    inline CaptionDestinationSettings& WithWebvttDestinationSettings(WebvttDestinationSettings&& value) { SetWebvttDestinationSettings(std::move(value)); return *this;}
+
   private:
 
     BurninDestinationSettings m_burninDestinationSettings;
@@ -366,6 +398,9 @@ namespace Model
 
     TtmlDestinationSettings m_ttmlDestinationSettings;
     bool m_ttmlDestinationSettingsHasBeenSet;
+
+    WebvttDestinationSettings m_webvttDestinationSettings;
+    bool m_webvttDestinationSettingsHasBeenSet;
   };
 
 } // namespace Model

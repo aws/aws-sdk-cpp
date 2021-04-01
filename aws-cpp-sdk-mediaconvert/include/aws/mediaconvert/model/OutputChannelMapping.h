@@ -82,49 +82,49 @@ namespace Model
 
     /**
      * Use this setting to specify your remix values when they have a decimal
-     * component, such as -10.312, 0.08, or 4.9. MediaConvert rounds your remixing
+     * component, such as  -10.312, 0.08, or 4.9. MediaConvert rounds your remixing
      * values to the nearest thousandth.
      */
     inline const Aws::Vector<double>& GetInputChannelsFineTune() const{ return m_inputChannelsFineTune; }
 
     /**
      * Use this setting to specify your remix values when they have a decimal
-     * component, such as -10.312, 0.08, or 4.9. MediaConvert rounds your remixing
+     * component, such as  -10.312, 0.08, or 4.9. MediaConvert rounds your remixing
      * values to the nearest thousandth.
      */
     inline bool InputChannelsFineTuneHasBeenSet() const { return m_inputChannelsFineTuneHasBeenSet; }
 
     /**
      * Use this setting to specify your remix values when they have a decimal
-     * component, such as -10.312, 0.08, or 4.9. MediaConvert rounds your remixing
+     * component, such as  -10.312, 0.08, or 4.9. MediaConvert rounds your remixing
      * values to the nearest thousandth.
      */
     inline void SetInputChannelsFineTune(const Aws::Vector<double>& value) { m_inputChannelsFineTuneHasBeenSet = true; m_inputChannelsFineTune = value; }
 
     /**
      * Use this setting to specify your remix values when they have a decimal
-     * component, such as -10.312, 0.08, or 4.9. MediaConvert rounds your remixing
+     * component, such as  -10.312, 0.08, or 4.9. MediaConvert rounds your remixing
      * values to the nearest thousandth.
      */
     inline void SetInputChannelsFineTune(Aws::Vector<double>&& value) { m_inputChannelsFineTuneHasBeenSet = true; m_inputChannelsFineTune = std::move(value); }
 
     /**
      * Use this setting to specify your remix values when they have a decimal
-     * component, such as -10.312, 0.08, or 4.9. MediaConvert rounds your remixing
+     * component, such as  -10.312, 0.08, or 4.9. MediaConvert rounds your remixing
      * values to the nearest thousandth.
      */
     inline OutputChannelMapping& WithInputChannelsFineTune(const Aws::Vector<double>& value) { SetInputChannelsFineTune(value); return *this;}
 
     /**
      * Use this setting to specify your remix values when they have a decimal
-     * component, such as -10.312, 0.08, or 4.9. MediaConvert rounds your remixing
+     * component, such as  -10.312, 0.08, or 4.9. MediaConvert rounds your remixing
      * values to the nearest thousandth.
      */
     inline OutputChannelMapping& WithInputChannelsFineTune(Aws::Vector<double>&& value) { SetInputChannelsFineTune(std::move(value)); return *this;}
 
     /**
      * Use this setting to specify your remix values when they have a decimal
-     * component, such as -10.312, 0.08, or 4.9. MediaConvert rounds your remixing
+     * component, such as  -10.312, 0.08, or 4.9. MediaConvert rounds your remixing
      * values to the nearest thousandth.
      */
     inline OutputChannelMapping& AddInputChannelsFineTune(double value) { m_inputChannelsFineTuneHasBeenSet = true; m_inputChannelsFineTune.push_back(value); return *this; }

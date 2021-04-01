@@ -473,8 +473,8 @@ namespace Model
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
      * Microsoft SharePoint attributes to custom fields in the Amazon Kendra index. You
-     * must first create the index fields using the operation before you map SharePoint
-     * attributes. For more information, see <a
+     * must first create the index fields using the <code>UpdateIndex</code> operation
+     * before you map SharePoint attributes. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
      * Data Source Fields</a>.</p>
      */
@@ -483,8 +483,8 @@ namespace Model
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
      * Microsoft SharePoint attributes to custom fields in the Amazon Kendra index. You
-     * must first create the index fields using the operation before you map SharePoint
-     * attributes. For more information, see <a
+     * must first create the index fields using the <code>UpdateIndex</code> operation
+     * before you map SharePoint attributes. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
      * Data Source Fields</a>.</p>
      */
@@ -493,8 +493,8 @@ namespace Model
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
      * Microsoft SharePoint attributes to custom fields in the Amazon Kendra index. You
-     * must first create the index fields using the operation before you map SharePoint
-     * attributes. For more information, see <a
+     * must first create the index fields using the <code>UpdateIndex</code> operation
+     * before you map SharePoint attributes. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
      * Data Source Fields</a>.</p>
      */
@@ -503,8 +503,8 @@ namespace Model
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
      * Microsoft SharePoint attributes to custom fields in the Amazon Kendra index. You
-     * must first create the index fields using the operation before you map SharePoint
-     * attributes. For more information, see <a
+     * must first create the index fields using the <code>UpdateIndex</code> operation
+     * before you map SharePoint attributes. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
      * Data Source Fields</a>.</p>
      */
@@ -513,8 +513,8 @@ namespace Model
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
      * Microsoft SharePoint attributes to custom fields in the Amazon Kendra index. You
-     * must first create the index fields using the operation before you map SharePoint
-     * attributes. For more information, see <a
+     * must first create the index fields using the <code>UpdateIndex</code> operation
+     * before you map SharePoint attributes. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
      * Data Source Fields</a>.</p>
      */
@@ -523,8 +523,8 @@ namespace Model
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
      * Microsoft SharePoint attributes to custom fields in the Amazon Kendra index. You
-     * must first create the index fields using the operation before you map SharePoint
-     * attributes. For more information, see <a
+     * must first create the index fields using the <code>UpdateIndex</code> operation
+     * before you map SharePoint attributes. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
      * Data Source Fields</a>.</p>
      */
@@ -533,8 +533,8 @@ namespace Model
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
      * Microsoft SharePoint attributes to custom fields in the Amazon Kendra index. You
-     * must first create the index fields using the operation before you map SharePoint
-     * attributes. For more information, see <a
+     * must first create the index fields using the <code>UpdateIndex</code> operation
+     * before you map SharePoint attributes. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
      * Data Source Fields</a>.</p>
      */
@@ -543,8 +543,8 @@ namespace Model
     /**
      * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
      * Microsoft SharePoint attributes to custom fields in the Amazon Kendra index. You
-     * must first create the index fields using the operation before you map SharePoint
-     * attributes. For more information, see <a
+     * must first create the index fields using the <code>UpdateIndex</code> operation
+     * before you map SharePoint attributes. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
      * Data Source Fields</a>.</p>
      */

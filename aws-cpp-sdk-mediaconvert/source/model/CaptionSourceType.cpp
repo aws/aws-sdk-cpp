@@ -33,6 +33,7 @@ namespace Aws
         static const int TELETEXT_HASH = HashingUtils::HashString("TELETEXT");
         static const int NULL_SOURCE_HASH = HashingUtils::HashString("NULL_SOURCE");
         static const int IMSC_HASH = HashingUtils::HashString("IMSC");
+        static const int WEBVTT_HASH = HashingUtils::HashString("WEBVTT");
 
 
         CaptionSourceType GetCaptionSourceTypeForName(const Aws::String& name)
@@ -90,6 +91,10 @@ namespace Aws
           {
             return CaptionSourceType::IMSC;
           }
+          else if (hashCode == WEBVTT_HASH)
+          {
+            return CaptionSourceType::WEBVTT;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -130,6 +135,8 @@ namespace Aws
             return "NULL_SOURCE";
           case CaptionSourceType::IMSC:
             return "IMSC";
+          case CaptionSourceType::WEBVTT:
+            return "WEBVTT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

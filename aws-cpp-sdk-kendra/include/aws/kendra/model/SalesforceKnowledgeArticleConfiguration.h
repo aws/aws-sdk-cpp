@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies configuration information for the knowlege article types that
+   * <p>Specifies configuration information for the knowledge article types that
    * Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the
    * standard fields of knowledge articles, or the custom fields of custom knowledge
    * articles, but not both </p><p><h3>See Also:</h3>   <a

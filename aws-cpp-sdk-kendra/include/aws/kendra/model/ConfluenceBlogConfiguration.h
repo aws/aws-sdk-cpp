@@ -27,8 +27,8 @@ namespace Model
   /**
    * <p>Specifies the blog settings for the Confluence data source. Blogs are always
    * indexed unless filtered from the index by the <code>ExclusionPatterns</code> or
-   * <code>InclusionPatterns</code> fields in the data type.</p><p><h3>See Also:</h3>
-   * <a
+   * <code>InclusionPatterns</code> fields in the
+   * <code>ConfluenceConfiguration</code> type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ConfluenceBlogConfiguration">AWS
    * API Reference</a></p>
    */

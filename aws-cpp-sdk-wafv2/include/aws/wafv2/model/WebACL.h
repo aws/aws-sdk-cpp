@@ -660,6 +660,111 @@ namespace Model
 
 
     /**
+     * <p>The label namespace prefix for this web ACL. All labels added by rules in
+     * this web ACL have this prefix. </p> <ul> <li> <p>The syntax for the label
+     * namespace prefix for a web ACL is the following: </p> <p>
+     * <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code> </p> </li>
+     * <li> <p>When a rule with a label matches a web request, AWS WAF adds the fully
+     * qualified label to the request. A fully qualified label is made up of the label
+     * namespace from the rule group or web ACL where the rule is defined and the label
+     * from the rule, separated by a colon: </p> <p> <code>&lt;label
+     * namespace&gt;:&lt;label from rule&gt;</code> </p> </li> </ul>
+     */
+    inline const Aws::String& GetLabelNamespace() const{ return m_labelNamespace; }
+
+    /**
+     * <p>The label namespace prefix for this web ACL. All labels added by rules in
+     * this web ACL have this prefix. </p> <ul> <li> <p>The syntax for the label
+     * namespace prefix for a web ACL is the following: </p> <p>
+     * <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code> </p> </li>
+     * <li> <p>When a rule with a label matches a web request, AWS WAF adds the fully
+     * qualified label to the request. A fully qualified label is made up of the label
+     * namespace from the rule group or web ACL where the rule is defined and the label
+     * from the rule, separated by a colon: </p> <p> <code>&lt;label
+     * namespace&gt;:&lt;label from rule&gt;</code> </p> </li> </ul>
+     */
+    inline bool LabelNamespaceHasBeenSet() const { return m_labelNamespaceHasBeenSet; }
+
+    /**
+     * <p>The label namespace prefix for this web ACL. All labels added by rules in
+     * this web ACL have this prefix. </p> <ul> <li> <p>The syntax for the label
+     * namespace prefix for a web ACL is the following: </p> <p>
+     * <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code> </p> </li>
+     * <li> <p>When a rule with a label matches a web request, AWS WAF adds the fully
+     * qualified label to the request. A fully qualified label is made up of the label
+     * namespace from the rule group or web ACL where the rule is defined and the label
+     * from the rule, separated by a colon: </p> <p> <code>&lt;label
+     * namespace&gt;:&lt;label from rule&gt;</code> </p> </li> </ul>
+     */
+    inline void SetLabelNamespace(const Aws::String& value) { m_labelNamespaceHasBeenSet = true; m_labelNamespace = value; }
+
+    /**
+     * <p>The label namespace prefix for this web ACL. All labels added by rules in
+     * this web ACL have this prefix. </p> <ul> <li> <p>The syntax for the label
+     * namespace prefix for a web ACL is the following: </p> <p>
+     * <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code> </p> </li>
+     * <li> <p>When a rule with a label matches a web request, AWS WAF adds the fully
+     * qualified label to the request. A fully qualified label is made up of the label
+     * namespace from the rule group or web ACL where the rule is defined and the label
+     * from the rule, separated by a colon: </p> <p> <code>&lt;label
+     * namespace&gt;:&lt;label from rule&gt;</code> </p> </li> </ul>
+     */
+    inline void SetLabelNamespace(Aws::String&& value) { m_labelNamespaceHasBeenSet = true; m_labelNamespace = std::move(value); }
+
+    /**
+     * <p>The label namespace prefix for this web ACL. All labels added by rules in
+     * this web ACL have this prefix. </p> <ul> <li> <p>The syntax for the label
+     * namespace prefix for a web ACL is the following: </p> <p>
+     * <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code> </p> </li>
+     * <li> <p>When a rule with a label matches a web request, AWS WAF adds the fully
+     * qualified label to the request. A fully qualified label is made up of the label
+     * namespace from the rule group or web ACL where the rule is defined and the label
+     * from the rule, separated by a colon: </p> <p> <code>&lt;label
+     * namespace&gt;:&lt;label from rule&gt;</code> </p> </li> </ul>
+     */
+    inline void SetLabelNamespace(const char* value) { m_labelNamespaceHasBeenSet = true; m_labelNamespace.assign(value); }
+
+    /**
+     * <p>The label namespace prefix for this web ACL. All labels added by rules in
+     * this web ACL have this prefix. </p> <ul> <li> <p>The syntax for the label
+     * namespace prefix for a web ACL is the following: </p> <p>
+     * <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code> </p> </li>
+     * <li> <p>When a rule with a label matches a web request, AWS WAF adds the fully
+     * qualified label to the request. A fully qualified label is made up of the label
+     * namespace from the rule group or web ACL where the rule is defined and the label
+     * from the rule, separated by a colon: </p> <p> <code>&lt;label
+     * namespace&gt;:&lt;label from rule&gt;</code> </p> </li> </ul>
+     */
+    inline WebACL& WithLabelNamespace(const Aws::String& value) { SetLabelNamespace(value); return *this;}
+
+    /**
+     * <p>The label namespace prefix for this web ACL. All labels added by rules in
+     * this web ACL have this prefix. </p> <ul> <li> <p>The syntax for the label
+     * namespace prefix for a web ACL is the following: </p> <p>
+     * <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code> </p> </li>
+     * <li> <p>When a rule with a label matches a web request, AWS WAF adds the fully
+     * qualified label to the request. A fully qualified label is made up of the label
+     * namespace from the rule group or web ACL where the rule is defined and the label
+     * from the rule, separated by a colon: </p> <p> <code>&lt;label
+     * namespace&gt;:&lt;label from rule&gt;</code> </p> </li> </ul>
+     */
+    inline WebACL& WithLabelNamespace(Aws::String&& value) { SetLabelNamespace(std::move(value)); return *this;}
+
+    /**
+     * <p>The label namespace prefix for this web ACL. All labels added by rules in
+     * this web ACL have this prefix. </p> <ul> <li> <p>The syntax for the label
+     * namespace prefix for a web ACL is the following: </p> <p>
+     * <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code> </p> </li>
+     * <li> <p>When a rule with a label matches a web request, AWS WAF adds the fully
+     * qualified label to the request. A fully qualified label is made up of the label
+     * namespace from the rule group or web ACL where the rule is defined and the label
+     * from the rule, separated by a colon: </p> <p> <code>&lt;label
+     * namespace&gt;:&lt;label from rule&gt;</code> </p> </li> </ul>
+     */
+    inline WebACL& WithLabelNamespace(const char* value) { SetLabelNamespace(value); return *this;}
+
+
+    /**
      * <p>A map of custom response keys and content bodies. When you create a rule with
      * a block action, you can send a custom response to the web request. You define
      * these for the web ACL, and then use them in the rules and default actions that
@@ -909,6 +1014,9 @@ namespace Model
 
     bool m_managedByFirewallManager;
     bool m_managedByFirewallManagerHasBeenSet;
+
+    Aws::String m_labelNamespace;
+    bool m_labelNamespaceHasBeenSet;
 
     Aws::Map<Aws::String, CustomResponseBody> m_customResponseBodies;
     bool m_customResponseBodiesHasBeenSet;

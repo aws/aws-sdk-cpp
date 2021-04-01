@@ -38,49 +38,49 @@ namespace Model
 
     /**
      * <p>The identifier of the index to add the documents to. You need to create the
-     * index first using the <a>CreateIndex</a> operation.</p>
+     * index first using the <code>CreateIndex</code> operation.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
 
     /**
      * <p>The identifier of the index to add the documents to. You need to create the
-     * index first using the <a>CreateIndex</a> operation.</p>
+     * index first using the <code>CreateIndex</code> operation.</p>
      */
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
 
     /**
      * <p>The identifier of the index to add the documents to. You need to create the
-     * index first using the <a>CreateIndex</a> operation.</p>
+     * index first using the <code>CreateIndex</code> operation.</p>
      */
     inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
 
     /**
      * <p>The identifier of the index to add the documents to. You need to create the
-     * index first using the <a>CreateIndex</a> operation.</p>
+     * index first using the <code>CreateIndex</code> operation.</p>
      */
     inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
 
     /**
      * <p>The identifier of the index to add the documents to. You need to create the
-     * index first using the <a>CreateIndex</a> operation.</p>
+     * index first using the <code>CreateIndex</code> operation.</p>
      */
     inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
 
     /**
      * <p>The identifier of the index to add the documents to. You need to create the
-     * index first using the <a>CreateIndex</a> operation.</p>
+     * index first using the <code>CreateIndex</code> operation.</p>
      */
     inline BatchPutDocumentRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
 
     /**
      * <p>The identifier of the index to add the documents to. You need to create the
-     * index first using the <a>CreateIndex</a> operation.</p>
+     * index first using the <code>CreateIndex</code> operation.</p>
      */
     inline BatchPutDocumentRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the index to add the documents to. You need to create the
-     * index first using the <a>CreateIndex</a> operation.</p>
+     * index first using the <code>CreateIndex</code> operation.</p>
      */
     inline BatchPutDocumentRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 

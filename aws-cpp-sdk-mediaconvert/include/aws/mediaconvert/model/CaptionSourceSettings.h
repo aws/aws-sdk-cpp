@@ -140,44 +140,50 @@ namespace Model
 
 
     /**
-     * If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file,
-     * specify the URI of the input caption source file. If your caption source is IMSC
-     * in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
+     * If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an
+     * xml file, specify the URI of the input caption source file. If your caption
+     * source is IMSC in an IMF package, use TrackSourceSettings instead of
+     * FileSoureSettings.
      */
     inline const FileSourceSettings& GetFileSourceSettings() const{ return m_fileSourceSettings; }
 
     /**
-     * If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file,
-     * specify the URI of the input caption source file. If your caption source is IMSC
-     * in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
+     * If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an
+     * xml file, specify the URI of the input caption source file. If your caption
+     * source is IMSC in an IMF package, use TrackSourceSettings instead of
+     * FileSoureSettings.
      */
     inline bool FileSourceSettingsHasBeenSet() const { return m_fileSourceSettingsHasBeenSet; }
 
     /**
-     * If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file,
-     * specify the URI of the input caption source file. If your caption source is IMSC
-     * in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
+     * If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an
+     * xml file, specify the URI of the input caption source file. If your caption
+     * source is IMSC in an IMF package, use TrackSourceSettings instead of
+     * FileSoureSettings.
      */
     inline void SetFileSourceSettings(const FileSourceSettings& value) { m_fileSourceSettingsHasBeenSet = true; m_fileSourceSettings = value; }
 
     /**
-     * If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file,
-     * specify the URI of the input caption source file. If your caption source is IMSC
-     * in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
+     * If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an
+     * xml file, specify the URI of the input caption source file. If your caption
+     * source is IMSC in an IMF package, use TrackSourceSettings instead of
+     * FileSoureSettings.
      */
     inline void SetFileSourceSettings(FileSourceSettings&& value) { m_fileSourceSettingsHasBeenSet = true; m_fileSourceSettings = std::move(value); }
 
     /**
-     * If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file,
-     * specify the URI of the input caption source file. If your caption source is IMSC
-     * in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
+     * If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an
+     * xml file, specify the URI of the input caption source file. If your caption
+     * source is IMSC in an IMF package, use TrackSourceSettings instead of
+     * FileSoureSettings.
      */
     inline CaptionSourceSettings& WithFileSourceSettings(const FileSourceSettings& value) { SetFileSourceSettings(value); return *this;}
 
     /**
-     * If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file,
-     * specify the URI of the input caption source file. If your caption source is IMSC
-     * in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
+     * If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an
+     * xml file, specify the URI of the input caption source file. If your caption
+     * source is IMSC in an IMF package, use TrackSourceSettings instead of
+     * FileSoureSettings.
      */
     inline CaptionSourceSettings& WithFileSourceSettings(FileSourceSettings&& value) { SetFileSourceSettings(std::move(value)); return *this;}
 

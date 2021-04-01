@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lightsail/model/ContainerServicePowerName.h>
 #include <aws/lightsail/model/ContainerServiceState.h>
+#include <aws/lightsail/model/ContainerServiceStateDetail.h>
 #include <aws/lightsail/model/ContainerServiceDeployment.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/lightsail/model/Tag.h>
@@ -384,82 +385,149 @@ namespace Model
 
 
     /**
-     * <p>The current state of the container service.</p> <p>The state can be:</p> <ul>
-     * <li> <p> <code>Pending</code> - The container service is being created.</p>
-     * </li> <li> <p> <code>Ready</code> - The container service is created but does
-     * not have a container deployment.</p> </li> <li> <p> <code>Disabled</code> - The
-     * container service is disabled.</p> </li> <li> <p> <code>Updating</code> - The
-     * container service capacity or other setting is being updated.</p> </li> <li> <p>
-     * <code>Deploying</code> - The container service is launching a container
-     * deployment.</p> </li> <li> <p> <code>Running</code> - The container service is
-     * created and it has a container deployment.</p> </li> </ul>
+     * <p>The current state of the container service.</p> <p>The following container
+     * service states are possible:</p> <ul> <li> <p> <code>PENDING</code> - The
+     * container service is being created.</p> </li> <li> <p> <code>READY</code> - The
+     * container service is running but it does not have an active container
+     * deployment.</p> </li> <li> <p> <code>DEPLOYING</code> - The container service is
+     * launching a container deployment.</p> </li> <li> <p> <code>RUNNING</code> - The
+     * container service is running and it has an active container deployment.</p>
+     * </li> <li> <p> <code>UPDATING</code> - The container service capacity or its
+     * custom domains are being updated.</p> </li> <li> <p> <code>DELETING</code> - The
+     * container service is being deleted.</p> </li> <li> <p> <code>DISABLED</code> -
+     * The container service is disabled, and its active deployment and containers, if
+     * any, are shut down.</p> </li> </ul>
      */
     inline const ContainerServiceState& GetState() const{ return m_state; }
 
     /**
-     * <p>The current state of the container service.</p> <p>The state can be:</p> <ul>
-     * <li> <p> <code>Pending</code> - The container service is being created.</p>
-     * </li> <li> <p> <code>Ready</code> - The container service is created but does
-     * not have a container deployment.</p> </li> <li> <p> <code>Disabled</code> - The
-     * container service is disabled.</p> </li> <li> <p> <code>Updating</code> - The
-     * container service capacity or other setting is being updated.</p> </li> <li> <p>
-     * <code>Deploying</code> - The container service is launching a container
-     * deployment.</p> </li> <li> <p> <code>Running</code> - The container service is
-     * created and it has a container deployment.</p> </li> </ul>
+     * <p>The current state of the container service.</p> <p>The following container
+     * service states are possible:</p> <ul> <li> <p> <code>PENDING</code> - The
+     * container service is being created.</p> </li> <li> <p> <code>READY</code> - The
+     * container service is running but it does not have an active container
+     * deployment.</p> </li> <li> <p> <code>DEPLOYING</code> - The container service is
+     * launching a container deployment.</p> </li> <li> <p> <code>RUNNING</code> - The
+     * container service is running and it has an active container deployment.</p>
+     * </li> <li> <p> <code>UPDATING</code> - The container service capacity or its
+     * custom domains are being updated.</p> </li> <li> <p> <code>DELETING</code> - The
+     * container service is being deleted.</p> </li> <li> <p> <code>DISABLED</code> -
+     * The container service is disabled, and its active deployment and containers, if
+     * any, are shut down.</p> </li> </ul>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The current state of the container service.</p> <p>The state can be:</p> <ul>
-     * <li> <p> <code>Pending</code> - The container service is being created.</p>
-     * </li> <li> <p> <code>Ready</code> - The container service is created but does
-     * not have a container deployment.</p> </li> <li> <p> <code>Disabled</code> - The
-     * container service is disabled.</p> </li> <li> <p> <code>Updating</code> - The
-     * container service capacity or other setting is being updated.</p> </li> <li> <p>
-     * <code>Deploying</code> - The container service is launching a container
-     * deployment.</p> </li> <li> <p> <code>Running</code> - The container service is
-     * created and it has a container deployment.</p> </li> </ul>
+     * <p>The current state of the container service.</p> <p>The following container
+     * service states are possible:</p> <ul> <li> <p> <code>PENDING</code> - The
+     * container service is being created.</p> </li> <li> <p> <code>READY</code> - The
+     * container service is running but it does not have an active container
+     * deployment.</p> </li> <li> <p> <code>DEPLOYING</code> - The container service is
+     * launching a container deployment.</p> </li> <li> <p> <code>RUNNING</code> - The
+     * container service is running and it has an active container deployment.</p>
+     * </li> <li> <p> <code>UPDATING</code> - The container service capacity or its
+     * custom domains are being updated.</p> </li> <li> <p> <code>DELETING</code> - The
+     * container service is being deleted.</p> </li> <li> <p> <code>DISABLED</code> -
+     * The container service is disabled, and its active deployment and containers, if
+     * any, are shut down.</p> </li> </ul>
      */
     inline void SetState(const ContainerServiceState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The current state of the container service.</p> <p>The state can be:</p> <ul>
-     * <li> <p> <code>Pending</code> - The container service is being created.</p>
-     * </li> <li> <p> <code>Ready</code> - The container service is created but does
-     * not have a container deployment.</p> </li> <li> <p> <code>Disabled</code> - The
-     * container service is disabled.</p> </li> <li> <p> <code>Updating</code> - The
-     * container service capacity or other setting is being updated.</p> </li> <li> <p>
-     * <code>Deploying</code> - The container service is launching a container
-     * deployment.</p> </li> <li> <p> <code>Running</code> - The container service is
-     * created and it has a container deployment.</p> </li> </ul>
+     * <p>The current state of the container service.</p> <p>The following container
+     * service states are possible:</p> <ul> <li> <p> <code>PENDING</code> - The
+     * container service is being created.</p> </li> <li> <p> <code>READY</code> - The
+     * container service is running but it does not have an active container
+     * deployment.</p> </li> <li> <p> <code>DEPLOYING</code> - The container service is
+     * launching a container deployment.</p> </li> <li> <p> <code>RUNNING</code> - The
+     * container service is running and it has an active container deployment.</p>
+     * </li> <li> <p> <code>UPDATING</code> - The container service capacity or its
+     * custom domains are being updated.</p> </li> <li> <p> <code>DELETING</code> - The
+     * container service is being deleted.</p> </li> <li> <p> <code>DISABLED</code> -
+     * The container service is disabled, and its active deployment and containers, if
+     * any, are shut down.</p> </li> </ul>
      */
     inline void SetState(ContainerServiceState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The current state of the container service.</p> <p>The state can be:</p> <ul>
-     * <li> <p> <code>Pending</code> - The container service is being created.</p>
-     * </li> <li> <p> <code>Ready</code> - The container service is created but does
-     * not have a container deployment.</p> </li> <li> <p> <code>Disabled</code> - The
-     * container service is disabled.</p> </li> <li> <p> <code>Updating</code> - The
-     * container service capacity or other setting is being updated.</p> </li> <li> <p>
-     * <code>Deploying</code> - The container service is launching a container
-     * deployment.</p> </li> <li> <p> <code>Running</code> - The container service is
-     * created and it has a container deployment.</p> </li> </ul>
+     * <p>The current state of the container service.</p> <p>The following container
+     * service states are possible:</p> <ul> <li> <p> <code>PENDING</code> - The
+     * container service is being created.</p> </li> <li> <p> <code>READY</code> - The
+     * container service is running but it does not have an active container
+     * deployment.</p> </li> <li> <p> <code>DEPLOYING</code> - The container service is
+     * launching a container deployment.</p> </li> <li> <p> <code>RUNNING</code> - The
+     * container service is running and it has an active container deployment.</p>
+     * </li> <li> <p> <code>UPDATING</code> - The container service capacity or its
+     * custom domains are being updated.</p> </li> <li> <p> <code>DELETING</code> - The
+     * container service is being deleted.</p> </li> <li> <p> <code>DISABLED</code> -
+     * The container service is disabled, and its active deployment and containers, if
+     * any, are shut down.</p> </li> </ul>
      */
     inline ContainerService& WithState(const ContainerServiceState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The current state of the container service.</p> <p>The state can be:</p> <ul>
-     * <li> <p> <code>Pending</code> - The container service is being created.</p>
-     * </li> <li> <p> <code>Ready</code> - The container service is created but does
-     * not have a container deployment.</p> </li> <li> <p> <code>Disabled</code> - The
-     * container service is disabled.</p> </li> <li> <p> <code>Updating</code> - The
-     * container service capacity or other setting is being updated.</p> </li> <li> <p>
-     * <code>Deploying</code> - The container service is launching a container
-     * deployment.</p> </li> <li> <p> <code>Running</code> - The container service is
-     * created and it has a container deployment.</p> </li> </ul>
+     * <p>The current state of the container service.</p> <p>The following container
+     * service states are possible:</p> <ul> <li> <p> <code>PENDING</code> - The
+     * container service is being created.</p> </li> <li> <p> <code>READY</code> - The
+     * container service is running but it does not have an active container
+     * deployment.</p> </li> <li> <p> <code>DEPLOYING</code> - The container service is
+     * launching a container deployment.</p> </li> <li> <p> <code>RUNNING</code> - The
+     * container service is running and it has an active container deployment.</p>
+     * </li> <li> <p> <code>UPDATING</code> - The container service capacity or its
+     * custom domains are being updated.</p> </li> <li> <p> <code>DELETING</code> - The
+     * container service is being deleted.</p> </li> <li> <p> <code>DISABLED</code> -
+     * The container service is disabled, and its active deployment and containers, if
+     * any, are shut down.</p> </li> </ul>
      */
     inline ContainerService& WithState(ContainerServiceState&& value) { SetState(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An object that describes the current state of the container service.</p>
+     *  <p>The state detail is populated only when a container service is in a
+     * <code>PENDING</code>, <code>DEPLOYING</code>, or <code>UPDATING</code>
+     * state.</p> 
+     */
+    inline const ContainerServiceStateDetail& GetStateDetail() const{ return m_stateDetail; }
+
+    /**
+     * <p>An object that describes the current state of the container service.</p>
+     *  <p>The state detail is populated only when a container service is in a
+     * <code>PENDING</code>, <code>DEPLOYING</code>, or <code>UPDATING</code>
+     * state.</p> 
+     */
+    inline bool StateDetailHasBeenSet() const { return m_stateDetailHasBeenSet; }
+
+    /**
+     * <p>An object that describes the current state of the container service.</p>
+     *  <p>The state detail is populated only when a container service is in a
+     * <code>PENDING</code>, <code>DEPLOYING</code>, or <code>UPDATING</code>
+     * state.</p> 
+     */
+    inline void SetStateDetail(const ContainerServiceStateDetail& value) { m_stateDetailHasBeenSet = true; m_stateDetail = value; }
+
+    /**
+     * <p>An object that describes the current state of the container service.</p>
+     *  <p>The state detail is populated only when a container service is in a
+     * <code>PENDING</code>, <code>DEPLOYING</code>, or <code>UPDATING</code>
+     * state.</p> 
+     */
+    inline void SetStateDetail(ContainerServiceStateDetail&& value) { m_stateDetailHasBeenSet = true; m_stateDetail = std::move(value); }
+
+    /**
+     * <p>An object that describes the current state of the container service.</p>
+     *  <p>The state detail is populated only when a container service is in a
+     * <code>PENDING</code>, <code>DEPLOYING</code>, or <code>UPDATING</code>
+     * state.</p> 
+     */
+    inline ContainerService& WithStateDetail(const ContainerServiceStateDetail& value) { SetStateDetail(value); return *this;}
+
+    /**
+     * <p>An object that describes the current state of the container service.</p>
+     *  <p>The state detail is populated only when a container service is in a
+     * <code>PENDING</code>, <code>DEPLOYING</code>, or <code>UPDATING</code>
+     * state.</p> 
+     */
+    inline ContainerService& WithStateDetail(ContainerServiceStateDetail&& value) { SetStateDetail(std::move(value)); return *this;}
 
 
     /**
@@ -999,6 +1067,9 @@ namespace Model
 
     ContainerServiceState m_state;
     bool m_stateHasBeenSet;
+
+    ContainerServiceStateDetail m_stateDetail;
+    bool m_stateDetailHasBeenSet;
 
     int m_scale;
     bool m_scaleHasBeenSet;

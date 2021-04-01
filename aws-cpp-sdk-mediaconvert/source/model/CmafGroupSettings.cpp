@@ -40,6 +40,8 @@ CmafGroupSettings::CmafGroupSettings() :
     m_minFinalSegmentLengthHasBeenSet(false),
     m_mpdProfile(CmafMpdProfile::NOT_SET),
     m_mpdProfileHasBeenSet(false),
+    m_ptsOffsetHandlingForBFrames(CmafPtsOffsetHandlingForBFrames::NOT_SET),
+    m_ptsOffsetHandlingForBFramesHasBeenSet(false),
     m_segmentControl(CmafSegmentControl::NOT_SET),
     m_segmentControlHasBeenSet(false),
     m_segmentLength(0),
@@ -77,6 +79,8 @@ CmafGroupSettings::CmafGroupSettings(JsonView jsonValue) :
     m_minFinalSegmentLengthHasBeenSet(false),
     m_mpdProfile(CmafMpdProfile::NOT_SET),
     m_mpdProfileHasBeenSet(false),
+    m_ptsOffsetHandlingForBFrames(CmafPtsOffsetHandlingForBFrames::NOT_SET),
+    m_ptsOffsetHandlingForBFramesHasBeenSet(false),
     m_segmentControl(CmafSegmentControl::NOT_SET),
     m_segmentControlHasBeenSet(false),
     m_segmentLength(0),
@@ -187,6 +191,13 @@ CmafGroupSettings& CmafGroupSettings::operator =(JsonView jsonValue)
     m_mpdProfile = CmafMpdProfileMapper::GetCmafMpdProfileForName(jsonValue.GetString("mpdProfile"));
 
     m_mpdProfileHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ptsOffsetHandlingForBFrames"))
+  {
+    m_ptsOffsetHandlingForBFrames = CmafPtsOffsetHandlingForBFramesMapper::GetCmafPtsOffsetHandlingForBFramesForName(jsonValue.GetString("ptsOffsetHandlingForBFrames"));
+
+    m_ptsOffsetHandlingForBFramesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("segmentControl"))
@@ -314,6 +325,11 @@ JsonValue CmafGroupSettings::Jsonize() const
   if(m_mpdProfileHasBeenSet)
   {
    payload.WithString("mpdProfile", CmafMpdProfileMapper::GetNameForCmafMpdProfile(m_mpdProfile));
+  }
+
+  if(m_ptsOffsetHandlingForBFramesHasBeenSet)
+  {
+   payload.WithString("ptsOffsetHandlingForBFrames", CmafPtsOffsetHandlingForBFramesMapper::GetNameForCmafPtsOffsetHandlingForBFrames(m_ptsOffsetHandlingForBFrames));
   }
 
   if(m_segmentControlHasBeenSet)

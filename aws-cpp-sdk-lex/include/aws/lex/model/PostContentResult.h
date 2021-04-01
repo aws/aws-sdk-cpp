@@ -451,9 +451,11 @@ namespace Model
      * group in the response. The message field is an escaped JSON string containing
      * the messages. For more information about the structure of the JSON string
      * returned, see <a>msg-prompts-formats</a>.</p> <p>If the Lambda function returns
-     * a message, Amazon Lex passes it to the client in its response.</p>
+     * a message, Amazon Lex passes it to the client in its response.</p> <p>The
+     * <code>encodedMessage</code> field is base-64 encoded. You must decode the field
+     * before you can use the value.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetEncodedMessage() const{ return m_encodedMessage; }
 
     /**
      * <p>The message to convey to the user. The message can come from the bot's
@@ -468,9 +470,11 @@ namespace Model
      * group in the response. The message field is an escaped JSON string containing
      * the messages. For more information about the structure of the JSON string
      * returned, see <a>msg-prompts-formats</a>.</p> <p>If the Lambda function returns
-     * a message, Amazon Lex passes it to the client in its response.</p>
+     * a message, Amazon Lex passes it to the client in its response.</p> <p>The
+     * <code>encodedMessage</code> field is base-64 encoded. You must decode the field
+     * before you can use the value.</p>
      */
-    inline void SetMessage(const Aws::String& value) { m_message = value; }
+    inline void SetEncodedMessage(const Aws::String& value) { m_encodedMessage = value; }
 
     /**
      * <p>The message to convey to the user. The message can come from the bot's
@@ -485,9 +489,11 @@ namespace Model
      * group in the response. The message field is an escaped JSON string containing
      * the messages. For more information about the structure of the JSON string
      * returned, see <a>msg-prompts-formats</a>.</p> <p>If the Lambda function returns
-     * a message, Amazon Lex passes it to the client in its response.</p>
+     * a message, Amazon Lex passes it to the client in its response.</p> <p>The
+     * <code>encodedMessage</code> field is base-64 encoded. You must decode the field
+     * before you can use the value.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
+    inline void SetEncodedMessage(Aws::String&& value) { m_encodedMessage = std::move(value); }
 
     /**
      * <p>The message to convey to the user. The message can come from the bot's
@@ -502,9 +508,11 @@ namespace Model
      * group in the response. The message field is an escaped JSON string containing
      * the messages. For more information about the structure of the JSON string
      * returned, see <a>msg-prompts-formats</a>.</p> <p>If the Lambda function returns
-     * a message, Amazon Lex passes it to the client in its response.</p>
+     * a message, Amazon Lex passes it to the client in its response.</p> <p>The
+     * <code>encodedMessage</code> field is base-64 encoded. You must decode the field
+     * before you can use the value.</p>
      */
-    inline void SetMessage(const char* value) { m_message.assign(value); }
+    inline void SetEncodedMessage(const char* value) { m_encodedMessage.assign(value); }
 
     /**
      * <p>The message to convey to the user. The message can come from the bot's
@@ -519,9 +527,11 @@ namespace Model
      * group in the response. The message field is an escaped JSON string containing
      * the messages. For more information about the structure of the JSON string
      * returned, see <a>msg-prompts-formats</a>.</p> <p>If the Lambda function returns
-     * a message, Amazon Lex passes it to the client in its response.</p>
+     * a message, Amazon Lex passes it to the client in its response.</p> <p>The
+     * <code>encodedMessage</code> field is base-64 encoded. You must decode the field
+     * before you can use the value.</p>
      */
-    inline PostContentResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+    inline PostContentResult& WithEncodedMessage(const Aws::String& value) { SetEncodedMessage(value); return *this;}
 
     /**
      * <p>The message to convey to the user. The message can come from the bot's
@@ -536,9 +546,11 @@ namespace Model
      * group in the response. The message field is an escaped JSON string containing
      * the messages. For more information about the structure of the JSON string
      * returned, see <a>msg-prompts-formats</a>.</p> <p>If the Lambda function returns
-     * a message, Amazon Lex passes it to the client in its response.</p>
+     * a message, Amazon Lex passes it to the client in its response.</p> <p>The
+     * <code>encodedMessage</code> field is base-64 encoded. You must decode the field
+     * before you can use the value.</p>
      */
-    inline PostContentResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
+    inline PostContentResult& WithEncodedMessage(Aws::String&& value) { SetEncodedMessage(std::move(value)); return *this;}
 
     /**
      * <p>The message to convey to the user. The message can come from the bot's
@@ -553,9 +565,11 @@ namespace Model
      * group in the response. The message field is an escaped JSON string containing
      * the messages. For more information about the structure of the JSON string
      * returned, see <a>msg-prompts-formats</a>.</p> <p>If the Lambda function returns
-     * a message, Amazon Lex passes it to the client in its response.</p>
+     * a message, Amazon Lex passes it to the client in its response.</p> <p>The
+     * <code>encodedMessage</code> field is base-64 encoded. You must decode the field
+     * before you can use the value.</p>
      */
-    inline PostContentResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+    inline PostContentResult& WithEncodedMessage(const char* value) { SetEncodedMessage(value); return *this;}
 
 
     /**
@@ -825,66 +839,80 @@ namespace Model
 
     /**
      * <p>The text used to process the request.</p> <p>If the input was an audio
-     * stream, the <code>inputTranscript</code> field contains the text extracted from
-     * the audio stream. This is the text that is actually processed to recognize
-     * intents and slot values. You can use this information to determine if Amazon Lex
-     * is correctly processing the audio that you send.</p>
+     * stream, the <code>encodedInputTranscript</code> field contains the text
+     * extracted from the audio stream. This is the text that is actually processed to
+     * recognize intents and slot values. You can use this information to determine if
+     * Amazon Lex is correctly processing the audio that you send.</p> <p>The
+     * <code>encodedInputTranscript</code> field is base-64 encoded. You must decode
+     * the field before you can use the value.</p>
      */
-    inline const Aws::String& GetInputTranscript() const{ return m_inputTranscript; }
+    inline const Aws::String& GetEncodedInputTranscript() const{ return m_encodedInputTranscript; }
 
     /**
      * <p>The text used to process the request.</p> <p>If the input was an audio
-     * stream, the <code>inputTranscript</code> field contains the text extracted from
-     * the audio stream. This is the text that is actually processed to recognize
-     * intents and slot values. You can use this information to determine if Amazon Lex
-     * is correctly processing the audio that you send.</p>
+     * stream, the <code>encodedInputTranscript</code> field contains the text
+     * extracted from the audio stream. This is the text that is actually processed to
+     * recognize intents and slot values. You can use this information to determine if
+     * Amazon Lex is correctly processing the audio that you send.</p> <p>The
+     * <code>encodedInputTranscript</code> field is base-64 encoded. You must decode
+     * the field before you can use the value.</p>
      */
-    inline void SetInputTranscript(const Aws::String& value) { m_inputTranscript = value; }
+    inline void SetEncodedInputTranscript(const Aws::String& value) { m_encodedInputTranscript = value; }
 
     /**
      * <p>The text used to process the request.</p> <p>If the input was an audio
-     * stream, the <code>inputTranscript</code> field contains the text extracted from
-     * the audio stream. This is the text that is actually processed to recognize
-     * intents and slot values. You can use this information to determine if Amazon Lex
-     * is correctly processing the audio that you send.</p>
+     * stream, the <code>encodedInputTranscript</code> field contains the text
+     * extracted from the audio stream. This is the text that is actually processed to
+     * recognize intents and slot values. You can use this information to determine if
+     * Amazon Lex is correctly processing the audio that you send.</p> <p>The
+     * <code>encodedInputTranscript</code> field is base-64 encoded. You must decode
+     * the field before you can use the value.</p>
      */
-    inline void SetInputTranscript(Aws::String&& value) { m_inputTranscript = std::move(value); }
+    inline void SetEncodedInputTranscript(Aws::String&& value) { m_encodedInputTranscript = std::move(value); }
 
     /**
      * <p>The text used to process the request.</p> <p>If the input was an audio
-     * stream, the <code>inputTranscript</code> field contains the text extracted from
-     * the audio stream. This is the text that is actually processed to recognize
-     * intents and slot values. You can use this information to determine if Amazon Lex
-     * is correctly processing the audio that you send.</p>
+     * stream, the <code>encodedInputTranscript</code> field contains the text
+     * extracted from the audio stream. This is the text that is actually processed to
+     * recognize intents and slot values. You can use this information to determine if
+     * Amazon Lex is correctly processing the audio that you send.</p> <p>The
+     * <code>encodedInputTranscript</code> field is base-64 encoded. You must decode
+     * the field before you can use the value.</p>
      */
-    inline void SetInputTranscript(const char* value) { m_inputTranscript.assign(value); }
+    inline void SetEncodedInputTranscript(const char* value) { m_encodedInputTranscript.assign(value); }
 
     /**
      * <p>The text used to process the request.</p> <p>If the input was an audio
-     * stream, the <code>inputTranscript</code> field contains the text extracted from
-     * the audio stream. This is the text that is actually processed to recognize
-     * intents and slot values. You can use this information to determine if Amazon Lex
-     * is correctly processing the audio that you send.</p>
+     * stream, the <code>encodedInputTranscript</code> field contains the text
+     * extracted from the audio stream. This is the text that is actually processed to
+     * recognize intents and slot values. You can use this information to determine if
+     * Amazon Lex is correctly processing the audio that you send.</p> <p>The
+     * <code>encodedInputTranscript</code> field is base-64 encoded. You must decode
+     * the field before you can use the value.</p>
      */
-    inline PostContentResult& WithInputTranscript(const Aws::String& value) { SetInputTranscript(value); return *this;}
+    inline PostContentResult& WithEncodedInputTranscript(const Aws::String& value) { SetEncodedInputTranscript(value); return *this;}
 
     /**
      * <p>The text used to process the request.</p> <p>If the input was an audio
-     * stream, the <code>inputTranscript</code> field contains the text extracted from
-     * the audio stream. This is the text that is actually processed to recognize
-     * intents and slot values. You can use this information to determine if Amazon Lex
-     * is correctly processing the audio that you send.</p>
+     * stream, the <code>encodedInputTranscript</code> field contains the text
+     * extracted from the audio stream. This is the text that is actually processed to
+     * recognize intents and slot values. You can use this information to determine if
+     * Amazon Lex is correctly processing the audio that you send.</p> <p>The
+     * <code>encodedInputTranscript</code> field is base-64 encoded. You must decode
+     * the field before you can use the value.</p>
      */
-    inline PostContentResult& WithInputTranscript(Aws::String&& value) { SetInputTranscript(std::move(value)); return *this;}
+    inline PostContentResult& WithEncodedInputTranscript(Aws::String&& value) { SetEncodedInputTranscript(std::move(value)); return *this;}
 
     /**
      * <p>The text used to process the request.</p> <p>If the input was an audio
-     * stream, the <code>inputTranscript</code> field contains the text extracted from
-     * the audio stream. This is the text that is actually processed to recognize
-     * intents and slot values. You can use this information to determine if Amazon Lex
-     * is correctly processing the audio that you send.</p>
+     * stream, the <code>encodedInputTranscript</code> field contains the text
+     * extracted from the audio stream. This is the text that is actually processed to
+     * recognize intents and slot values. You can use this information to determine if
+     * Amazon Lex is correctly processing the audio that you send.</p> <p>The
+     * <code>encodedInputTranscript</code> field is base-64 encoded. You must decode
+     * the field before you can use the value.</p>
      */
-    inline PostContentResult& WithInputTranscript(const char* value) { SetInputTranscript(value); return *this;}
+    inline PostContentResult& WithEncodedInputTranscript(const char* value) { SetEncodedInputTranscript(value); return *this;}
 
 
     /**
@@ -1075,7 +1103,7 @@ namespace Model
 
     Aws::String m_sentimentResponse;
 
-    Aws::String m_message;
+    Aws::String m_encodedMessage;
 
     MessageFormatType m_messageFormat;
 
@@ -1083,7 +1111,7 @@ namespace Model
 
     Aws::String m_slotToElicit;
 
-    Aws::String m_inputTranscript;
+    Aws::String m_encodedInputTranscript;
 
   Aws::Utils::Stream::ResponseStream m_audioStream;
 

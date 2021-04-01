@@ -20,6 +20,8 @@ namespace Model
 
 DashIsoGroupSettings::DashIsoGroupSettings() : 
     m_additionalManifestsHasBeenSet(false),
+    m_audioChannelConfigSchemeIdUri(DashIsoGroupAudioChannelConfigSchemeIdUri::NOT_SET),
+    m_audioChannelConfigSchemeIdUriHasBeenSet(false),
     m_baseUrlHasBeenSet(false),
     m_destinationHasBeenSet(false),
     m_destinationSettingsHasBeenSet(false),
@@ -34,6 +36,8 @@ DashIsoGroupSettings::DashIsoGroupSettings() :
     m_minFinalSegmentLengthHasBeenSet(false),
     m_mpdProfile(DashIsoMpdProfile::NOT_SET),
     m_mpdProfileHasBeenSet(false),
+    m_ptsOffsetHandlingForBFrames(DashIsoPtsOffsetHandlingForBFrames::NOT_SET),
+    m_ptsOffsetHandlingForBFramesHasBeenSet(false),
     m_segmentControl(DashIsoSegmentControl::NOT_SET),
     m_segmentControlHasBeenSet(false),
     m_segmentLength(0),
@@ -45,6 +49,8 @@ DashIsoGroupSettings::DashIsoGroupSettings() :
 
 DashIsoGroupSettings::DashIsoGroupSettings(JsonView jsonValue) : 
     m_additionalManifestsHasBeenSet(false),
+    m_audioChannelConfigSchemeIdUri(DashIsoGroupAudioChannelConfigSchemeIdUri::NOT_SET),
+    m_audioChannelConfigSchemeIdUriHasBeenSet(false),
     m_baseUrlHasBeenSet(false),
     m_destinationHasBeenSet(false),
     m_destinationSettingsHasBeenSet(false),
@@ -59,6 +65,8 @@ DashIsoGroupSettings::DashIsoGroupSettings(JsonView jsonValue) :
     m_minFinalSegmentLengthHasBeenSet(false),
     m_mpdProfile(DashIsoMpdProfile::NOT_SET),
     m_mpdProfileHasBeenSet(false),
+    m_ptsOffsetHandlingForBFrames(DashIsoPtsOffsetHandlingForBFrames::NOT_SET),
+    m_ptsOffsetHandlingForBFramesHasBeenSet(false),
     m_segmentControl(DashIsoSegmentControl::NOT_SET),
     m_segmentControlHasBeenSet(false),
     m_segmentLength(0),
@@ -79,6 +87,13 @@ DashIsoGroupSettings& DashIsoGroupSettings::operator =(JsonView jsonValue)
       m_additionalManifests.push_back(additionalManifestsJsonList[additionalManifestsIndex].AsObject());
     }
     m_additionalManifestsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("audioChannelConfigSchemeIdUri"))
+  {
+    m_audioChannelConfigSchemeIdUri = DashIsoGroupAudioChannelConfigSchemeIdUriMapper::GetDashIsoGroupAudioChannelConfigSchemeIdUriForName(jsonValue.GetString("audioChannelConfigSchemeIdUri"));
+
+    m_audioChannelConfigSchemeIdUriHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("baseUrl"))
@@ -144,6 +159,13 @@ DashIsoGroupSettings& DashIsoGroupSettings::operator =(JsonView jsonValue)
     m_mpdProfileHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ptsOffsetHandlingForBFrames"))
+  {
+    m_ptsOffsetHandlingForBFrames = DashIsoPtsOffsetHandlingForBFramesMapper::GetDashIsoPtsOffsetHandlingForBFramesForName(jsonValue.GetString("ptsOffsetHandlingForBFrames"));
+
+    m_ptsOffsetHandlingForBFramesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("segmentControl"))
   {
     m_segmentControl = DashIsoSegmentControlMapper::GetDashIsoSegmentControlForName(jsonValue.GetString("segmentControl"));
@@ -181,6 +203,11 @@ JsonValue DashIsoGroupSettings::Jsonize() const
    }
    payload.WithArray("additionalManifests", std::move(additionalManifestsJsonList));
 
+  }
+
+  if(m_audioChannelConfigSchemeIdUriHasBeenSet)
+  {
+   payload.WithString("audioChannelConfigSchemeIdUri", DashIsoGroupAudioChannelConfigSchemeIdUriMapper::GetNameForDashIsoGroupAudioChannelConfigSchemeIdUri(m_audioChannelConfigSchemeIdUri));
   }
 
   if(m_baseUrlHasBeenSet)
@@ -233,6 +260,11 @@ JsonValue DashIsoGroupSettings::Jsonize() const
   if(m_mpdProfileHasBeenSet)
   {
    payload.WithString("mpdProfile", DashIsoMpdProfileMapper::GetNameForDashIsoMpdProfile(m_mpdProfile));
+  }
+
+  if(m_ptsOffsetHandlingForBFramesHasBeenSet)
+  {
+   payload.WithString("ptsOffsetHandlingForBFrames", DashIsoPtsOffsetHandlingForBFramesMapper::GetNameForDashIsoPtsOffsetHandlingForBFrames(m_ptsOffsetHandlingForBFrames));
   }
 
   if(m_segmentControlHasBeenSet)

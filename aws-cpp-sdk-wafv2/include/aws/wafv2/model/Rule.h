@@ -9,7 +9,9 @@
 #include <aws/wafv2/model/Statement.h>
 #include <aws/wafv2/model/RuleAction.h>
 #include <aws/wafv2/model/OverrideAction.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wafv2/model/VisibilityConfig.h>
+#include <aws/wafv2/model/Label.h>
 #include <utility>
 
 namespace Aws
@@ -357,6 +359,159 @@ namespace Model
 
 
     /**
+     * <p>Labels to apply to web requests that match the rule match statement. AWS WAF
+     * applies fully qualified labels to matching web requests. A fully qualified label
+     * is the concatenation of a label namespace and a rule label. The rule's rule
+     * group or web ACL defines the label namespace. </p> <p>Rules that run after this
+     * rule in the web ACL can match against these labels using a
+     * <code>LabelMatchStatement</code>.</p> <p>For each label, provide a
+     * case-sensitive string containing optional namespaces and a label name, according
+     * to the following guidelines:</p> <ul> <li> <p>Separate each component of the
+     * label with a colon. </p> </li> <li> <p>Each namespace or name can have up to 128
+     * characters.</p> </li> <li> <p>You can specify up to 5 namespaces in a label.</p>
+     * </li> <li> <p>Don't use the following reserved words in your label
+     * specification: <code>aws</code>, <code>waf</code>, <code>managed</code>,
+     * <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or
+     * <code>ipset</code>.</p> </li> </ul> <p>For example, <code>myLabelName</code> or
+     * <code>nameSpace1:nameSpace2:myLabelName</code>. </p>
+     */
+    inline const Aws::Vector<Label>& GetRuleLabels() const{ return m_ruleLabels; }
+
+    /**
+     * <p>Labels to apply to web requests that match the rule match statement. AWS WAF
+     * applies fully qualified labels to matching web requests. A fully qualified label
+     * is the concatenation of a label namespace and a rule label. The rule's rule
+     * group or web ACL defines the label namespace. </p> <p>Rules that run after this
+     * rule in the web ACL can match against these labels using a
+     * <code>LabelMatchStatement</code>.</p> <p>For each label, provide a
+     * case-sensitive string containing optional namespaces and a label name, according
+     * to the following guidelines:</p> <ul> <li> <p>Separate each component of the
+     * label with a colon. </p> </li> <li> <p>Each namespace or name can have up to 128
+     * characters.</p> </li> <li> <p>You can specify up to 5 namespaces in a label.</p>
+     * </li> <li> <p>Don't use the following reserved words in your label
+     * specification: <code>aws</code>, <code>waf</code>, <code>managed</code>,
+     * <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or
+     * <code>ipset</code>.</p> </li> </ul> <p>For example, <code>myLabelName</code> or
+     * <code>nameSpace1:nameSpace2:myLabelName</code>. </p>
+     */
+    inline bool RuleLabelsHasBeenSet() const { return m_ruleLabelsHasBeenSet; }
+
+    /**
+     * <p>Labels to apply to web requests that match the rule match statement. AWS WAF
+     * applies fully qualified labels to matching web requests. A fully qualified label
+     * is the concatenation of a label namespace and a rule label. The rule's rule
+     * group or web ACL defines the label namespace. </p> <p>Rules that run after this
+     * rule in the web ACL can match against these labels using a
+     * <code>LabelMatchStatement</code>.</p> <p>For each label, provide a
+     * case-sensitive string containing optional namespaces and a label name, according
+     * to the following guidelines:</p> <ul> <li> <p>Separate each component of the
+     * label with a colon. </p> </li> <li> <p>Each namespace or name can have up to 128
+     * characters.</p> </li> <li> <p>You can specify up to 5 namespaces in a label.</p>
+     * </li> <li> <p>Don't use the following reserved words in your label
+     * specification: <code>aws</code>, <code>waf</code>, <code>managed</code>,
+     * <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or
+     * <code>ipset</code>.</p> </li> </ul> <p>For example, <code>myLabelName</code> or
+     * <code>nameSpace1:nameSpace2:myLabelName</code>. </p>
+     */
+    inline void SetRuleLabels(const Aws::Vector<Label>& value) { m_ruleLabelsHasBeenSet = true; m_ruleLabels = value; }
+
+    /**
+     * <p>Labels to apply to web requests that match the rule match statement. AWS WAF
+     * applies fully qualified labels to matching web requests. A fully qualified label
+     * is the concatenation of a label namespace and a rule label. The rule's rule
+     * group or web ACL defines the label namespace. </p> <p>Rules that run after this
+     * rule in the web ACL can match against these labels using a
+     * <code>LabelMatchStatement</code>.</p> <p>For each label, provide a
+     * case-sensitive string containing optional namespaces and a label name, according
+     * to the following guidelines:</p> <ul> <li> <p>Separate each component of the
+     * label with a colon. </p> </li> <li> <p>Each namespace or name can have up to 128
+     * characters.</p> </li> <li> <p>You can specify up to 5 namespaces in a label.</p>
+     * </li> <li> <p>Don't use the following reserved words in your label
+     * specification: <code>aws</code>, <code>waf</code>, <code>managed</code>,
+     * <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or
+     * <code>ipset</code>.</p> </li> </ul> <p>For example, <code>myLabelName</code> or
+     * <code>nameSpace1:nameSpace2:myLabelName</code>. </p>
+     */
+    inline void SetRuleLabels(Aws::Vector<Label>&& value) { m_ruleLabelsHasBeenSet = true; m_ruleLabels = std::move(value); }
+
+    /**
+     * <p>Labels to apply to web requests that match the rule match statement. AWS WAF
+     * applies fully qualified labels to matching web requests. A fully qualified label
+     * is the concatenation of a label namespace and a rule label. The rule's rule
+     * group or web ACL defines the label namespace. </p> <p>Rules that run after this
+     * rule in the web ACL can match against these labels using a
+     * <code>LabelMatchStatement</code>.</p> <p>For each label, provide a
+     * case-sensitive string containing optional namespaces and a label name, according
+     * to the following guidelines:</p> <ul> <li> <p>Separate each component of the
+     * label with a colon. </p> </li> <li> <p>Each namespace or name can have up to 128
+     * characters.</p> </li> <li> <p>You can specify up to 5 namespaces in a label.</p>
+     * </li> <li> <p>Don't use the following reserved words in your label
+     * specification: <code>aws</code>, <code>waf</code>, <code>managed</code>,
+     * <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or
+     * <code>ipset</code>.</p> </li> </ul> <p>For example, <code>myLabelName</code> or
+     * <code>nameSpace1:nameSpace2:myLabelName</code>. </p>
+     */
+    inline Rule& WithRuleLabels(const Aws::Vector<Label>& value) { SetRuleLabels(value); return *this;}
+
+    /**
+     * <p>Labels to apply to web requests that match the rule match statement. AWS WAF
+     * applies fully qualified labels to matching web requests. A fully qualified label
+     * is the concatenation of a label namespace and a rule label. The rule's rule
+     * group or web ACL defines the label namespace. </p> <p>Rules that run after this
+     * rule in the web ACL can match against these labels using a
+     * <code>LabelMatchStatement</code>.</p> <p>For each label, provide a
+     * case-sensitive string containing optional namespaces and a label name, according
+     * to the following guidelines:</p> <ul> <li> <p>Separate each component of the
+     * label with a colon. </p> </li> <li> <p>Each namespace or name can have up to 128
+     * characters.</p> </li> <li> <p>You can specify up to 5 namespaces in a label.</p>
+     * </li> <li> <p>Don't use the following reserved words in your label
+     * specification: <code>aws</code>, <code>waf</code>, <code>managed</code>,
+     * <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or
+     * <code>ipset</code>.</p> </li> </ul> <p>For example, <code>myLabelName</code> or
+     * <code>nameSpace1:nameSpace2:myLabelName</code>. </p>
+     */
+    inline Rule& WithRuleLabels(Aws::Vector<Label>&& value) { SetRuleLabels(std::move(value)); return *this;}
+
+    /**
+     * <p>Labels to apply to web requests that match the rule match statement. AWS WAF
+     * applies fully qualified labels to matching web requests. A fully qualified label
+     * is the concatenation of a label namespace and a rule label. The rule's rule
+     * group or web ACL defines the label namespace. </p> <p>Rules that run after this
+     * rule in the web ACL can match against these labels using a
+     * <code>LabelMatchStatement</code>.</p> <p>For each label, provide a
+     * case-sensitive string containing optional namespaces and a label name, according
+     * to the following guidelines:</p> <ul> <li> <p>Separate each component of the
+     * label with a colon. </p> </li> <li> <p>Each namespace or name can have up to 128
+     * characters.</p> </li> <li> <p>You can specify up to 5 namespaces in a label.</p>
+     * </li> <li> <p>Don't use the following reserved words in your label
+     * specification: <code>aws</code>, <code>waf</code>, <code>managed</code>,
+     * <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or
+     * <code>ipset</code>.</p> </li> </ul> <p>For example, <code>myLabelName</code> or
+     * <code>nameSpace1:nameSpace2:myLabelName</code>. </p>
+     */
+    inline Rule& AddRuleLabels(const Label& value) { m_ruleLabelsHasBeenSet = true; m_ruleLabels.push_back(value); return *this; }
+
+    /**
+     * <p>Labels to apply to web requests that match the rule match statement. AWS WAF
+     * applies fully qualified labels to matching web requests. A fully qualified label
+     * is the concatenation of a label namespace and a rule label. The rule's rule
+     * group or web ACL defines the label namespace. </p> <p>Rules that run after this
+     * rule in the web ACL can match against these labels using a
+     * <code>LabelMatchStatement</code>.</p> <p>For each label, provide a
+     * case-sensitive string containing optional namespaces and a label name, according
+     * to the following guidelines:</p> <ul> <li> <p>Separate each component of the
+     * label with a colon. </p> </li> <li> <p>Each namespace or name can have up to 128
+     * characters.</p> </li> <li> <p>You can specify up to 5 namespaces in a label.</p>
+     * </li> <li> <p>Don't use the following reserved words in your label
+     * specification: <code>aws</code>, <code>waf</code>, <code>managed</code>,
+     * <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or
+     * <code>ipset</code>.</p> </li> </ul> <p>For example, <code>myLabelName</code> or
+     * <code>nameSpace1:nameSpace2:myLabelName</code>. </p>
+     */
+    inline Rule& AddRuleLabels(Label&& value) { m_ruleLabelsHasBeenSet = true; m_ruleLabels.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Defines and enables Amazon CloudWatch metrics and web request sample
      * collection. </p>
      */
@@ -408,6 +563,9 @@ namespace Model
 
     OverrideAction m_overrideAction;
     bool m_overrideActionHasBeenSet;
+
+    Aws::Vector<Label> m_ruleLabels;
+    bool m_ruleLabelsHasBeenSet;
 
     VisibilityConfig m_visibilityConfig;
     bool m_visibilityConfigHasBeenSet;

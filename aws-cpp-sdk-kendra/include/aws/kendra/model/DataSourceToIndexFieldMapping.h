@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>Maps a column or attribute in the data source to an index field. You must
-   * first create the fields in the index using the <a>UpdateIndex</a>
+   * first create the fields in the index using the <code>UpdateIndex</code>
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DataSourceToIndexFieldMapping">AWS
    * API Reference</a></p>

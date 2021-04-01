@@ -28,7 +28,7 @@ namespace Model
 
   /**
    * <p>Summary information for a Amazon Kendra data source. Returned in a call to
-   * .</p><p><h3>See Also:</h3>   <a
+   * the <code>DescribeDataSource</code> operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DataSourceSummary">AWS
    * API Reference</a></p>
    */
@@ -217,38 +217,38 @@ namespace Model
 
 
     /**
-     * <p>The status of the data source. When the status is <code>ATIVE</code> the data
-     * source is ready to use.</p>
+     * <p>The status of the data source. When the status is <code>ACTIVE</code> the
+     * data source is ready to use.</p>
      */
     inline const DataSourceStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the data source. When the status is <code>ATIVE</code> the data
-     * source is ready to use.</p>
+     * <p>The status of the data source. When the status is <code>ACTIVE</code> the
+     * data source is ready to use.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the data source. When the status is <code>ATIVE</code> the data
-     * source is ready to use.</p>
+     * <p>The status of the data source. When the status is <code>ACTIVE</code> the
+     * data source is ready to use.</p>
      */
     inline void SetStatus(const DataSourceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the data source. When the status is <code>ATIVE</code> the data
-     * source is ready to use.</p>
+     * <p>The status of the data source. When the status is <code>ACTIVE</code> the
+     * data source is ready to use.</p>
      */
     inline void SetStatus(DataSourceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the data source. When the status is <code>ATIVE</code> the data
-     * source is ready to use.</p>
+     * <p>The status of the data source. When the status is <code>ACTIVE</code> the
+     * data source is ready to use.</p>
      */
     inline DataSourceSummary& WithStatus(const DataSourceStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the data source. When the status is <code>ATIVE</code> the data
-     * source is ready to use.</p>
+     * <p>The status of the data source. When the status is <code>ACTIVE</code> the
+     * data source is ready to use.</p>
      */
     inline DataSourceSummary& WithStatus(DataSourceStatus&& value) { SetStatus(std::move(value)); return *this;}
 

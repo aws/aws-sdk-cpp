@@ -32,6 +32,7 @@ WebACL::WebACL() :
     m_postProcessFirewallManagerRuleGroupsHasBeenSet(false),
     m_managedByFirewallManager(false),
     m_managedByFirewallManagerHasBeenSet(false),
+    m_labelNamespaceHasBeenSet(false),
     m_customResponseBodiesHasBeenSet(false)
 {
 }
@@ -50,6 +51,7 @@ WebACL::WebACL(JsonView jsonValue) :
     m_postProcessFirewallManagerRuleGroupsHasBeenSet(false),
     m_managedByFirewallManager(false),
     m_managedByFirewallManagerHasBeenSet(false),
+    m_labelNamespaceHasBeenSet(false),
     m_customResponseBodiesHasBeenSet(false)
 {
   *this = jsonValue;
@@ -141,6 +143,13 @@ WebACL& WebACL::operator =(JsonView jsonValue)
     m_managedByFirewallManager = jsonValue.GetBool("ManagedByFirewallManager");
 
     m_managedByFirewallManagerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LabelNamespace"))
+  {
+    m_labelNamespace = jsonValue.GetString("LabelNamespace");
+
+    m_labelNamespaceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CustomResponseBodies"))
@@ -238,6 +247,12 @@ JsonValue WebACL::Jsonize() const
   if(m_managedByFirewallManagerHasBeenSet)
   {
    payload.WithBool("ManagedByFirewallManager", m_managedByFirewallManager);
+
+  }
+
+  if(m_labelNamespaceHasBeenSet)
+  {
+   payload.WithString("LabelNamespace", m_labelNamespace);
 
   }
 

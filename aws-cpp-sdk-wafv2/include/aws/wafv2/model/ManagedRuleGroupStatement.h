@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wafv2/model/ExcludedRule.h>
 #include <utility>
+#include <memory>
 
 namespace Aws
 {
@@ -24,6 +25,7 @@ namespace WAFV2
 {
 namespace Model
 {
+  class Statement;
 
   /**
    * <p>A rule statement used to run the rules that are defined in a managed rule
@@ -199,6 +201,25 @@ namespace Model
      */
     inline ManagedRuleGroupStatement& AddExcludedRules(ExcludedRule&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules.push_back(std::move(value)); return *this; }
 
+
+    
+    const Statement& GetScopeDownStatement() const;
+
+    
+    bool ScopeDownStatementHasBeenSet() const;
+
+    
+    void SetScopeDownStatement(const Statement& value);
+
+    
+    void SetScopeDownStatement(Statement&& value);
+
+    
+    ManagedRuleGroupStatement& WithScopeDownStatement(const Statement& value);
+
+    
+    ManagedRuleGroupStatement& WithScopeDownStatement(Statement&& value);
+
   private:
 
     Aws::String m_vendorName;
@@ -209,6 +230,9 @@ namespace Model
 
     Aws::Vector<ExcludedRule> m_excludedRules;
     bool m_excludedRulesHasBeenSet;
+
+    std::shared_ptr<Statement> m_scopeDownStatement;
+    bool m_scopeDownStatementHasBeenSet;
   };
 
 } // namespace Model

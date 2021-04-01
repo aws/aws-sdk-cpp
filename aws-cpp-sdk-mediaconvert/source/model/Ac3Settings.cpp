@@ -27,8 +27,12 @@ Ac3Settings::Ac3Settings() :
     m_codingModeHasBeenSet(false),
     m_dialnorm(0),
     m_dialnormHasBeenSet(false),
+    m_dynamicRangeCompressionLine(Ac3DynamicRangeCompressionLine::NOT_SET),
+    m_dynamicRangeCompressionLineHasBeenSet(false),
     m_dynamicRangeCompressionProfile(Ac3DynamicRangeCompressionProfile::NOT_SET),
     m_dynamicRangeCompressionProfileHasBeenSet(false),
+    m_dynamicRangeCompressionRf(Ac3DynamicRangeCompressionRf::NOT_SET),
+    m_dynamicRangeCompressionRfHasBeenSet(false),
     m_lfeFilter(Ac3LfeFilter::NOT_SET),
     m_lfeFilterHasBeenSet(false),
     m_metadataControl(Ac3MetadataControl::NOT_SET),
@@ -47,8 +51,12 @@ Ac3Settings::Ac3Settings(JsonView jsonValue) :
     m_codingModeHasBeenSet(false),
     m_dialnorm(0),
     m_dialnormHasBeenSet(false),
+    m_dynamicRangeCompressionLine(Ac3DynamicRangeCompressionLine::NOT_SET),
+    m_dynamicRangeCompressionLineHasBeenSet(false),
     m_dynamicRangeCompressionProfile(Ac3DynamicRangeCompressionProfile::NOT_SET),
     m_dynamicRangeCompressionProfileHasBeenSet(false),
+    m_dynamicRangeCompressionRf(Ac3DynamicRangeCompressionRf::NOT_SET),
+    m_dynamicRangeCompressionRfHasBeenSet(false),
     m_lfeFilter(Ac3LfeFilter::NOT_SET),
     m_lfeFilterHasBeenSet(false),
     m_metadataControl(Ac3MetadataControl::NOT_SET),
@@ -89,11 +97,25 @@ Ac3Settings& Ac3Settings::operator =(JsonView jsonValue)
     m_dialnormHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("dynamicRangeCompressionLine"))
+  {
+    m_dynamicRangeCompressionLine = Ac3DynamicRangeCompressionLineMapper::GetAc3DynamicRangeCompressionLineForName(jsonValue.GetString("dynamicRangeCompressionLine"));
+
+    m_dynamicRangeCompressionLineHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("dynamicRangeCompressionProfile"))
   {
     m_dynamicRangeCompressionProfile = Ac3DynamicRangeCompressionProfileMapper::GetAc3DynamicRangeCompressionProfileForName(jsonValue.GetString("dynamicRangeCompressionProfile"));
 
     m_dynamicRangeCompressionProfileHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dynamicRangeCompressionRf"))
+  {
+    m_dynamicRangeCompressionRf = Ac3DynamicRangeCompressionRfMapper::GetAc3DynamicRangeCompressionRfForName(jsonValue.GetString("dynamicRangeCompressionRf"));
+
+    m_dynamicRangeCompressionRfHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("lfeFilter"))
@@ -146,9 +168,19 @@ JsonValue Ac3Settings::Jsonize() const
 
   }
 
+  if(m_dynamicRangeCompressionLineHasBeenSet)
+  {
+   payload.WithString("dynamicRangeCompressionLine", Ac3DynamicRangeCompressionLineMapper::GetNameForAc3DynamicRangeCompressionLine(m_dynamicRangeCompressionLine));
+  }
+
   if(m_dynamicRangeCompressionProfileHasBeenSet)
   {
    payload.WithString("dynamicRangeCompressionProfile", Ac3DynamicRangeCompressionProfileMapper::GetNameForAc3DynamicRangeCompressionProfile(m_dynamicRangeCompressionProfile));
+  }
+
+  if(m_dynamicRangeCompressionRfHasBeenSet)
+  {
+   payload.WithString("dynamicRangeCompressionRf", Ac3DynamicRangeCompressionRfMapper::GetNameForAc3DynamicRangeCompressionRf(m_dynamicRangeCompressionRf));
   }
 
   if(m_lfeFilterHasBeenSet)

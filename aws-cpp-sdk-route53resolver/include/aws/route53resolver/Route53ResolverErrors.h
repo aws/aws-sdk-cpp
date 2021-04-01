@@ -47,7 +47,8 @@ enum class Route53ResolverErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_SERVICE_ERROR= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INTERNAL_SERVICE_ERROR,
   INVALID_NEXT_TOKEN,
   INVALID_PARAMETER,
   INVALID_POLICY_DOCUMENT,

@@ -26,6 +26,7 @@ namespace Aws
         static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
+        static const int DEPLOYING_HASH = HashingUtils::HashString("DEPLOYING");
 
 
         ContainerServiceState GetContainerServiceStateForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return ContainerServiceState::DISABLED;
           }
+          else if (hashCode == DEPLOYING_HASH)
+          {
+            return ContainerServiceState::DEPLOYING;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +86,8 @@ namespace Aws
             return "DELETING";
           case ContainerServiceState::DISABLED:
             return "DISABLED";
+          case ContainerServiceState::DEPLOYING:
+            return "DEPLOYING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
