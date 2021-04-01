@@ -8,6 +8,9 @@
 #set($memberName = $entry.key)
 #set($member = $entry.value)
 #set($lowerCaseVarName = $CppViewHelper.computeVariableName($memberName))
+#if($lowerCaseVarName.equals("result"))
+#set($lowerCaseVarName = "$CppViewHelper.computeVariableName($shape.name)$CppViewHelper.convertToUpperCamel($memberName)")
+#end
 #set($memberVarName = $CppViewHelper.computeMemberVariableName($memberName))
 #set($varNameHasBeenSet = $CppViewHelper.computeVariableHasBeenSetName($memberName))
 #if($memberName == $shape.payload)##member is the whole payload (not wrapped)
