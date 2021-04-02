@@ -421,7 +421,7 @@ namespace Model
 
         /**
          * <p>Creates a new distribution configuration. Distribution configurations define
-         * and configure the outputs of your pipeline. </p><p><h3>See Also:</h3>   <a
+         * and configure the outputs of your pipeline.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateDistributionConfiguration">AWS
          * API Reference</a></p>
          */
@@ -429,7 +429,7 @@ namespace Model
 
         /**
          * <p>Creates a new distribution configuration. Distribution configurations define
-         * and configure the outputs of your pipeline. </p><p><h3>See Also:</h3>   <a
+         * and configure the outputs of your pipeline.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateDistributionConfiguration">AWS
          * API Reference</a></p>
          *
@@ -439,7 +439,7 @@ namespace Model
 
         /**
          * <p>Creates a new distribution configuration. Distribution configurations define
-         * and configure the outputs of your pipeline. </p><p><h3>See Also:</h3>   <a
+         * and configure the outputs of your pipeline.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateDistributionConfiguration">AWS
          * API Reference</a></p>
          *
@@ -449,8 +449,8 @@ namespace Model
 
         /**
          * <p> Creates a new image. This request will create a new image along with all of
-         * the configured output resources defined in the distribution configuration.
-         * </p><p><h3>See Also:</h3>   <a
+         * the configured output resources defined in the distribution
+         * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImage">AWS
          * API Reference</a></p>
          */
@@ -458,8 +458,8 @@ namespace Model
 
         /**
          * <p> Creates a new image. This request will create a new image along with all of
-         * the configured output resources defined in the distribution configuration.
-         * </p><p><h3>See Also:</h3>   <a
+         * the configured output resources defined in the distribution
+         * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImage">AWS
          * API Reference</a></p>
          *
@@ -469,8 +469,8 @@ namespace Model
 
         /**
          * <p> Creates a new image. This request will create a new image along with all of
-         * the configured output resources defined in the distribution configuration.
-         * </p><p><h3>See Also:</h3>   <a
+         * the configured output resources defined in the distribution
+         * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImage">AWS
          * API Reference</a></p>
          *
@@ -480,7 +480,7 @@ namespace Model
 
         /**
          * <p> Creates a new image pipeline. Image pipelines enable you to automate the
-         * creation and distribution of images. </p><p><h3>See Also:</h3>   <a
+         * creation and distribution of images.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImagePipeline">AWS
          * API Reference</a></p>
          */
@@ -488,7 +488,7 @@ namespace Model
 
         /**
          * <p> Creates a new image pipeline. Image pipelines enable you to automate the
-         * creation and distribution of images. </p><p><h3>See Also:</h3>   <a
+         * creation and distribution of images.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImagePipeline">AWS
          * API Reference</a></p>
          *
@@ -498,7 +498,7 @@ namespace Model
 
         /**
          * <p> Creates a new image pipeline. Image pipelines enable you to automate the
-         * creation and distribution of images. </p><p><h3>See Also:</h3>   <a
+         * creation and distribution of images.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImagePipeline">AWS
          * API Reference</a></p>
          *
@@ -508,7 +508,7 @@ namespace Model
 
         /**
          * <p> Creates a new image recipe. Image recipes define how images are configured,
-         * tested, and assessed. </p><p><h3>See Also:</h3>   <a
+         * tested, and assessed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImageRecipe">AWS
          * API Reference</a></p>
          */
@@ -516,7 +516,7 @@ namespace Model
 
         /**
          * <p> Creates a new image recipe. Image recipes define how images are configured,
-         * tested, and assessed. </p><p><h3>See Also:</h3>   <a
+         * tested, and assessed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImageRecipe">AWS
          * API Reference</a></p>
          *
@@ -526,7 +526,7 @@ namespace Model
 
         /**
          * <p> Creates a new image recipe. Image recipes define how images are configured,
-         * tested, and assessed. </p><p><h3>See Also:</h3>   <a
+         * tested, and assessed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImageRecipe">AWS
          * API Reference</a></p>
          *
@@ -536,8 +536,8 @@ namespace Model
 
         /**
          * <p> Creates a new infrastructure configuration. An infrastructure configuration
-         * defines the environment in which your image will be built and tested.
-         * </p><p><h3>See Also:</h3>   <a
+         * defines the environment in which your image will be built and
+         * tested.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateInfrastructureConfiguration">AWS
          * API Reference</a></p>
          */
@@ -545,8 +545,8 @@ namespace Model
 
         /**
          * <p> Creates a new infrastructure configuration. An infrastructure configuration
-         * defines the environment in which your image will be built and tested.
-         * </p><p><h3>See Also:</h3>   <a
+         * defines the environment in which your image will be built and
+         * tested.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateInfrastructureConfiguration">AWS
          * API Reference</a></p>
          *
@@ -556,8 +556,8 @@ namespace Model
 
         /**
          * <p> Creates a new infrastructure configuration. An infrastructure configuration
-         * defines the environment in which your image will be built and tested.
-         * </p><p><h3>See Also:</h3>   <a
+         * defines the environment in which your image will be built and
+         * tested.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateInfrastructureConfiguration">AWS
          * API Reference</a></p>
          *
@@ -566,14 +566,14 @@ namespace Model
         virtual void CreateInfrastructureConfigurationAsync(const Model::CreateInfrastructureConfigurationRequest& request, const CreateInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Deletes a component build version. </p><p><h3>See Also:</h3>   <a
+         * <p> Deletes a component build version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteComponent">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteComponentOutcome DeleteComponent(const Model::DeleteComponentRequest& request) const;
 
         /**
-         * <p> Deletes a component build version. </p><p><h3>See Also:</h3>   <a
+         * <p> Deletes a component build version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteComponent">AWS
          * API Reference</a></p>
          *
@@ -582,7 +582,7 @@ namespace Model
         virtual Model::DeleteComponentOutcomeCallable DeleteComponentCallable(const Model::DeleteComponentRequest& request) const;
 
         /**
-         * <p> Deletes a component build version. </p><p><h3>See Also:</h3>   <a
+         * <p> Deletes a component build version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteComponent">AWS
          * API Reference</a></p>
          *
@@ -616,14 +616,14 @@ namespace Model
         virtual void DeleteContainerRecipeAsync(const Model::DeleteContainerRecipeRequest& request, const DeleteContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Deletes a distribution configuration. </p><p><h3>See Also:</h3>   <a
+         * <p> Deletes a distribution configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteDistributionConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteDistributionConfigurationOutcome DeleteDistributionConfiguration(const Model::DeleteDistributionConfigurationRequest& request) const;
 
         /**
-         * <p> Deletes a distribution configuration. </p><p><h3>See Also:</h3>   <a
+         * <p> Deletes a distribution configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteDistributionConfiguration">AWS
          * API Reference</a></p>
          *
@@ -632,7 +632,7 @@ namespace Model
         virtual Model::DeleteDistributionConfigurationOutcomeCallable DeleteDistributionConfigurationCallable(const Model::DeleteDistributionConfigurationRequest& request) const;
 
         /**
-         * <p> Deletes a distribution configuration. </p><p><h3>See Also:</h3>   <a
+         * <p> Deletes a distribution configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteDistributionConfiguration">AWS
          * API Reference</a></p>
          *
@@ -641,14 +641,14 @@ namespace Model
         virtual void DeleteDistributionConfigurationAsync(const Model::DeleteDistributionConfigurationRequest& request, const DeleteDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Deletes an image. </p><p><h3>See Also:</h3>   <a
+         * <p> Deletes an image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteImage">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteImageOutcome DeleteImage(const Model::DeleteImageRequest& request) const;
 
         /**
-         * <p> Deletes an image. </p><p><h3>See Also:</h3>   <a
+         * <p> Deletes an image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteImage">AWS
          * API Reference</a></p>
          *
@@ -657,7 +657,7 @@ namespace Model
         virtual Model::DeleteImageOutcomeCallable DeleteImageCallable(const Model::DeleteImageRequest& request) const;
 
         /**
-         * <p> Deletes an image. </p><p><h3>See Also:</h3>   <a
+         * <p> Deletes an image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteImage">AWS
          * API Reference</a></p>
          *
@@ -666,14 +666,14 @@ namespace Model
         virtual void DeleteImageAsync(const Model::DeleteImageRequest& request, const DeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Deletes an image pipeline. </p><p><h3>See Also:</h3>   <a
+         * <p> Deletes an image pipeline.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteImagePipeline">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteImagePipelineOutcome DeleteImagePipeline(const Model::DeleteImagePipelineRequest& request) const;
 
         /**
-         * <p> Deletes an image pipeline. </p><p><h3>See Also:</h3>   <a
+         * <p> Deletes an image pipeline.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteImagePipeline">AWS
          * API Reference</a></p>
          *
@@ -682,7 +682,7 @@ namespace Model
         virtual Model::DeleteImagePipelineOutcomeCallable DeleteImagePipelineCallable(const Model::DeleteImagePipelineRequest& request) const;
 
         /**
-         * <p> Deletes an image pipeline. </p><p><h3>See Also:</h3>   <a
+         * <p> Deletes an image pipeline.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteImagePipeline">AWS
          * API Reference</a></p>
          *
@@ -691,14 +691,14 @@ namespace Model
         virtual void DeleteImagePipelineAsync(const Model::DeleteImagePipelineRequest& request, const DeleteImagePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Deletes an image recipe. </p><p><h3>See Also:</h3>   <a
+         * <p> Deletes an image recipe.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteImageRecipe">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteImageRecipeOutcome DeleteImageRecipe(const Model::DeleteImageRecipeRequest& request) const;
 
         /**
-         * <p> Deletes an image recipe. </p><p><h3>See Also:</h3>   <a
+         * <p> Deletes an image recipe.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteImageRecipe">AWS
          * API Reference</a></p>
          *
@@ -707,7 +707,7 @@ namespace Model
         virtual Model::DeleteImageRecipeOutcomeCallable DeleteImageRecipeCallable(const Model::DeleteImageRecipeRequest& request) const;
 
         /**
-         * <p> Deletes an image recipe. </p><p><h3>See Also:</h3>   <a
+         * <p> Deletes an image recipe.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteImageRecipe">AWS
          * API Reference</a></p>
          *
@@ -716,14 +716,14 @@ namespace Model
         virtual void DeleteImageRecipeAsync(const Model::DeleteImageRecipeRequest& request, const DeleteImageRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Deletes an infrastructure configuration. </p><p><h3>See Also:</h3>   <a
+         * <p> Deletes an infrastructure configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteInfrastructureConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteInfrastructureConfigurationOutcome DeleteInfrastructureConfiguration(const Model::DeleteInfrastructureConfigurationRequest& request) const;
 
         /**
-         * <p> Deletes an infrastructure configuration. </p><p><h3>See Also:</h3>   <a
+         * <p> Deletes an infrastructure configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteInfrastructureConfiguration">AWS
          * API Reference</a></p>
          *
@@ -732,7 +732,7 @@ namespace Model
         virtual Model::DeleteInfrastructureConfigurationOutcomeCallable DeleteInfrastructureConfigurationCallable(const Model::DeleteInfrastructureConfigurationRequest& request) const;
 
         /**
-         * <p> Deletes an infrastructure configuration. </p><p><h3>See Also:</h3>   <a
+         * <p> Deletes an infrastructure configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteInfrastructureConfiguration">AWS
          * API Reference</a></p>
          *
@@ -741,14 +741,14 @@ namespace Model
         virtual void DeleteInfrastructureConfigurationAsync(const Model::DeleteInfrastructureConfigurationRequest& request, const DeleteInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Gets a component object. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets a component object.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetComponent">AWS
          * API Reference</a></p>
          */
         virtual Model::GetComponentOutcome GetComponent(const Model::GetComponentRequest& request) const;
 
         /**
-         * <p> Gets a component object. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets a component object.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetComponent">AWS
          * API Reference</a></p>
          *
@@ -757,7 +757,7 @@ namespace Model
         virtual Model::GetComponentOutcomeCallable GetComponentCallable(const Model::GetComponentRequest& request) const;
 
         /**
-         * <p> Gets a component object. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets a component object.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetComponent">AWS
          * API Reference</a></p>
          *
@@ -766,14 +766,14 @@ namespace Model
         virtual void GetComponentAsync(const Model::GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Gets a component policy. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets a component policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetComponentPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::GetComponentPolicyOutcome GetComponentPolicy(const Model::GetComponentPolicyRequest& request) const;
 
         /**
-         * <p> Gets a component policy. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets a component policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetComponentPolicy">AWS
          * API Reference</a></p>
          *
@@ -782,7 +782,7 @@ namespace Model
         virtual Model::GetComponentPolicyOutcomeCallable GetComponentPolicyCallable(const Model::GetComponentPolicyRequest& request) const;
 
         /**
-         * <p> Gets a component policy. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets a component policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetComponentPolicy">AWS
          * API Reference</a></p>
          *
@@ -841,14 +841,14 @@ namespace Model
         virtual void GetContainerRecipePolicyAsync(const Model::GetContainerRecipePolicyRequest& request, const GetContainerRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Gets a distribution configuration. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets a distribution configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetDistributionConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::GetDistributionConfigurationOutcome GetDistributionConfiguration(const Model::GetDistributionConfigurationRequest& request) const;
 
         /**
-         * <p> Gets a distribution configuration. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets a distribution configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetDistributionConfiguration">AWS
          * API Reference</a></p>
          *
@@ -857,7 +857,7 @@ namespace Model
         virtual Model::GetDistributionConfigurationOutcomeCallable GetDistributionConfigurationCallable(const Model::GetDistributionConfigurationRequest& request) const;
 
         /**
-         * <p> Gets a distribution configuration. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets a distribution configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetDistributionConfiguration">AWS
          * API Reference</a></p>
          *
@@ -866,14 +866,14 @@ namespace Model
         virtual void GetDistributionConfigurationAsync(const Model::GetDistributionConfigurationRequest& request, const GetDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Gets an image. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets an image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImage">AWS
          * API Reference</a></p>
          */
         virtual Model::GetImageOutcome GetImage(const Model::GetImageRequest& request) const;
 
         /**
-         * <p> Gets an image. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets an image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImage">AWS
          * API Reference</a></p>
          *
@@ -882,7 +882,7 @@ namespace Model
         virtual Model::GetImageOutcomeCallable GetImageCallable(const Model::GetImageRequest& request) const;
 
         /**
-         * <p> Gets an image. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets an image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImage">AWS
          * API Reference</a></p>
          *
@@ -891,14 +891,14 @@ namespace Model
         virtual void GetImageAsync(const Model::GetImageRequest& request, const GetImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Gets an image pipeline. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets an image pipeline.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImagePipeline">AWS
          * API Reference</a></p>
          */
         virtual Model::GetImagePipelineOutcome GetImagePipeline(const Model::GetImagePipelineRequest& request) const;
 
         /**
-         * <p> Gets an image pipeline. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets an image pipeline.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImagePipeline">AWS
          * API Reference</a></p>
          *
@@ -907,7 +907,7 @@ namespace Model
         virtual Model::GetImagePipelineOutcomeCallable GetImagePipelineCallable(const Model::GetImagePipelineRequest& request) const;
 
         /**
-         * <p> Gets an image pipeline. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets an image pipeline.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImagePipeline">AWS
          * API Reference</a></p>
          *
@@ -916,14 +916,14 @@ namespace Model
         virtual void GetImagePipelineAsync(const Model::GetImagePipelineRequest& request, const GetImagePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Gets an image policy. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets an image policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImagePolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::GetImagePolicyOutcome GetImagePolicy(const Model::GetImagePolicyRequest& request) const;
 
         /**
-         * <p> Gets an image policy. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets an image policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImagePolicy">AWS
          * API Reference</a></p>
          *
@@ -932,7 +932,7 @@ namespace Model
         virtual Model::GetImagePolicyOutcomeCallable GetImagePolicyCallable(const Model::GetImagePolicyRequest& request) const;
 
         /**
-         * <p> Gets an image policy. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets an image policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImagePolicy">AWS
          * API Reference</a></p>
          *
@@ -941,14 +941,14 @@ namespace Model
         virtual void GetImagePolicyAsync(const Model::GetImagePolicyRequest& request, const GetImagePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Gets an image recipe. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets an image recipe.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImageRecipe">AWS
          * API Reference</a></p>
          */
         virtual Model::GetImageRecipeOutcome GetImageRecipe(const Model::GetImageRecipeRequest& request) const;
 
         /**
-         * <p> Gets an image recipe. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets an image recipe.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImageRecipe">AWS
          * API Reference</a></p>
          *
@@ -957,7 +957,7 @@ namespace Model
         virtual Model::GetImageRecipeOutcomeCallable GetImageRecipeCallable(const Model::GetImageRecipeRequest& request) const;
 
         /**
-         * <p> Gets an image recipe. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets an image recipe.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImageRecipe">AWS
          * API Reference</a></p>
          *
@@ -966,14 +966,14 @@ namespace Model
         virtual void GetImageRecipeAsync(const Model::GetImageRecipeRequest& request, const GetImageRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Gets an image recipe policy. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets an image recipe policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImageRecipePolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::GetImageRecipePolicyOutcome GetImageRecipePolicy(const Model::GetImageRecipePolicyRequest& request) const;
 
         /**
-         * <p> Gets an image recipe policy. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets an image recipe policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImageRecipePolicy">AWS
          * API Reference</a></p>
          *
@@ -982,7 +982,7 @@ namespace Model
         virtual Model::GetImageRecipePolicyOutcomeCallable GetImageRecipePolicyCallable(const Model::GetImageRecipePolicyRequest& request) const;
 
         /**
-         * <p> Gets an image recipe policy. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets an image recipe policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImageRecipePolicy">AWS
          * API Reference</a></p>
          *
@@ -991,14 +991,14 @@ namespace Model
         virtual void GetImageRecipePolicyAsync(const Model::GetImageRecipePolicyRequest& request, const GetImageRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Gets an infrastructure configuration. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets an infrastructure configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetInfrastructureConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::GetInfrastructureConfigurationOutcome GetInfrastructureConfiguration(const Model::GetInfrastructureConfigurationRequest& request) const;
 
         /**
-         * <p> Gets an infrastructure configuration. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets an infrastructure configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetInfrastructureConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1007,7 +1007,7 @@ namespace Model
         virtual Model::GetInfrastructureConfigurationOutcomeCallable GetInfrastructureConfigurationCallable(const Model::GetInfrastructureConfigurationRequest& request) const;
 
         /**
-         * <p> Gets an infrastructure configuration. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets an infrastructure configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetInfrastructureConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1016,16 +1016,16 @@ namespace Model
         virtual void GetInfrastructureConfigurationAsync(const Model::GetInfrastructureConfigurationRequest& request, const GetInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Imports a component and transforms its data into a component document.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Imports a component and transforms its data into a component
+         * document.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImportComponent">AWS
          * API Reference</a></p>
          */
         virtual Model::ImportComponentOutcome ImportComponent(const Model::ImportComponentRequest& request) const;
 
         /**
-         * <p>Imports a component and transforms its data into a component document.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Imports a component and transforms its data into a component
+         * document.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImportComponent">AWS
          * API Reference</a></p>
          *
@@ -1034,8 +1034,8 @@ namespace Model
         virtual Model::ImportComponentOutcomeCallable ImportComponentCallable(const Model::ImportComponentRequest& request) const;
 
         /**
-         * <p>Imports a component and transforms its data into a component document.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Imports a component and transforms its data into a component
+         * document.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImportComponent">AWS
          * API Reference</a></p>
          *
@@ -1045,7 +1045,7 @@ namespace Model
 
         /**
          * <p> Returns the list of component build versions for the specified semantic
-         * version. </p><p><h3>See Also:</h3>   <a
+         * version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListComponentBuildVersions">AWS
          * API Reference</a></p>
          */
@@ -1053,7 +1053,7 @@ namespace Model
 
         /**
          * <p> Returns the list of component build versions for the specified semantic
-         * version. </p><p><h3>See Also:</h3>   <a
+         * version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListComponentBuildVersions">AWS
          * API Reference</a></p>
          *
@@ -1063,7 +1063,7 @@ namespace Model
 
         /**
          * <p> Returns the list of component build versions for the specified semantic
-         * version. </p><p><h3>See Also:</h3>   <a
+         * version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListComponentBuildVersions">AWS
          * API Reference</a></p>
          *
@@ -1073,7 +1073,7 @@ namespace Model
 
         /**
          * <p>Returns the list of component build versions for the specified semantic
-         * version. </p><p><h3>See Also:</h3>   <a
+         * version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListComponents">AWS
          * API Reference</a></p>
          */
@@ -1081,7 +1081,7 @@ namespace Model
 
         /**
          * <p>Returns the list of component build versions for the specified semantic
-         * version. </p><p><h3>See Also:</h3>   <a
+         * version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListComponents">AWS
          * API Reference</a></p>
          *
@@ -1091,7 +1091,7 @@ namespace Model
 
         /**
          * <p>Returns the list of component build versions for the specified semantic
-         * version. </p><p><h3>See Also:</h3>   <a
+         * version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListComponents">AWS
          * API Reference</a></p>
          *
@@ -1125,14 +1125,14 @@ namespace Model
         virtual void ListContainerRecipesAsync(const Model::ListContainerRecipesRequest& request, const ListContainerRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of distribution configurations. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of distribution configurations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListDistributionConfigurations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListDistributionConfigurationsOutcome ListDistributionConfigurations(const Model::ListDistributionConfigurationsRequest& request) const;
 
         /**
-         * <p>Returns a list of distribution configurations. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of distribution configurations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListDistributionConfigurations">AWS
          * API Reference</a></p>
          *
@@ -1141,7 +1141,7 @@ namespace Model
         virtual Model::ListDistributionConfigurationsOutcomeCallable ListDistributionConfigurationsCallable(const Model::ListDistributionConfigurationsRequest& request) const;
 
         /**
-         * <p>Returns a list of distribution configurations. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of distribution configurations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListDistributionConfigurations">AWS
          * API Reference</a></p>
          *
@@ -1150,14 +1150,14 @@ namespace Model
         virtual void ListDistributionConfigurationsAsync(const Model::ListDistributionConfigurationsRequest& request, const ListDistributionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns a list of image build versions. </p><p><h3>See Also:</h3>   <a
+         * <p> Returns a list of image build versions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageBuildVersions">AWS
          * API Reference</a></p>
          */
         virtual Model::ListImageBuildVersionsOutcome ListImageBuildVersions(const Model::ListImageBuildVersionsRequest& request) const;
 
         /**
-         * <p> Returns a list of image build versions. </p><p><h3>See Also:</h3>   <a
+         * <p> Returns a list of image build versions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageBuildVersions">AWS
          * API Reference</a></p>
          *
@@ -1166,7 +1166,7 @@ namespace Model
         virtual Model::ListImageBuildVersionsOutcomeCallable ListImageBuildVersionsCallable(const Model::ListImageBuildVersionsRequest& request) const;
 
         /**
-         * <p> Returns a list of image build versions. </p><p><h3>See Also:</h3>   <a
+         * <p> Returns a list of image build versions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageBuildVersions">AWS
          * API Reference</a></p>
          *
@@ -1206,7 +1206,7 @@ namespace Model
         virtual void ListImagePackagesAsync(const Model::ListImagePackagesRequest& request, const ListImagePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns a list of images created by the specified pipeline. </p><p><h3>See
+         * <p> Returns a list of images created by the specified pipeline.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImagePipelineImages">AWS
          * API Reference</a></p>
@@ -1214,7 +1214,7 @@ namespace Model
         virtual Model::ListImagePipelineImagesOutcome ListImagePipelineImages(const Model::ListImagePipelineImagesRequest& request) const;
 
         /**
-         * <p> Returns a list of images created by the specified pipeline. </p><p><h3>See
+         * <p> Returns a list of images created by the specified pipeline.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImagePipelineImages">AWS
          * API Reference</a></p>
@@ -1224,7 +1224,7 @@ namespace Model
         virtual Model::ListImagePipelineImagesOutcomeCallable ListImagePipelineImagesCallable(const Model::ListImagePipelineImagesRequest& request) const;
 
         /**
-         * <p> Returns a list of images created by the specified pipeline. </p><p><h3>See
+         * <p> Returns a list of images created by the specified pipeline.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImagePipelineImages">AWS
          * API Reference</a></p>
@@ -1234,14 +1234,14 @@ namespace Model
         virtual void ListImagePipelineImagesAsync(const Model::ListImagePipelineImagesRequest& request, const ListImagePipelineImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of image pipelines. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of image pipelines.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImagePipelines">AWS
          * API Reference</a></p>
          */
         virtual Model::ListImagePipelinesOutcome ListImagePipelines(const Model::ListImagePipelinesRequest& request) const;
 
         /**
-         * <p>Returns a list of image pipelines. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of image pipelines.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImagePipelines">AWS
          * API Reference</a></p>
          *
@@ -1250,7 +1250,7 @@ namespace Model
         virtual Model::ListImagePipelinesOutcomeCallable ListImagePipelinesCallable(const Model::ListImagePipelinesRequest& request) const;
 
         /**
-         * <p>Returns a list of image pipelines. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of image pipelines.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImagePipelines">AWS
          * API Reference</a></p>
          *
@@ -1259,14 +1259,14 @@ namespace Model
         virtual void ListImagePipelinesAsync(const Model::ListImagePipelinesRequest& request, const ListImagePipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns a list of image recipes. </p><p><h3>See Also:</h3>   <a
+         * <p> Returns a list of image recipes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageRecipes">AWS
          * API Reference</a></p>
          */
         virtual Model::ListImageRecipesOutcome ListImageRecipes(const Model::ListImageRecipesRequest& request) const;
 
         /**
-         * <p> Returns a list of image recipes. </p><p><h3>See Also:</h3>   <a
+         * <p> Returns a list of image recipes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageRecipes">AWS
          * API Reference</a></p>
          *
@@ -1275,7 +1275,7 @@ namespace Model
         virtual Model::ListImageRecipesOutcomeCallable ListImageRecipesCallable(const Model::ListImageRecipesRequest& request) const;
 
         /**
-         * <p> Returns a list of image recipes. </p><p><h3>See Also:</h3>   <a
+         * <p> Returns a list of image recipes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageRecipes">AWS
          * API Reference</a></p>
          *
@@ -1284,16 +1284,16 @@ namespace Model
         virtual void ListImageRecipesAsync(const Model::ListImageRecipesRequest& request, const ListImageRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns the list of images that you have access to. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p> Returns the list of images that you have access to.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImages">AWS
          * API Reference</a></p>
          */
         virtual Model::ListImagesOutcome ListImages(const Model::ListImagesRequest& request) const;
 
         /**
-         * <p> Returns the list of images that you have access to. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p> Returns the list of images that you have access to.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImages">AWS
          * API Reference</a></p>
          *
@@ -1302,8 +1302,8 @@ namespace Model
         virtual Model::ListImagesOutcomeCallable ListImagesCallable(const Model::ListImagesRequest& request) const;
 
         /**
-         * <p> Returns the list of images that you have access to. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p> Returns the list of images that you have access to.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImages">AWS
          * API Reference</a></p>
          *
@@ -1312,7 +1312,7 @@ namespace Model
         virtual void ListImagesAsync(const Model::ListImagesRequest& request, const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns a list of infrastructure configurations. </p><p><h3>See Also:</h3>  
+         * <p> Returns a list of infrastructure configurations.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListInfrastructureConfigurations">AWS
          * API Reference</a></p>
@@ -1320,7 +1320,7 @@ namespace Model
         virtual Model::ListInfrastructureConfigurationsOutcome ListInfrastructureConfigurations(const Model::ListInfrastructureConfigurationsRequest& request) const;
 
         /**
-         * <p> Returns a list of infrastructure configurations. </p><p><h3>See Also:</h3>  
+         * <p> Returns a list of infrastructure configurations.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListInfrastructureConfigurations">AWS
          * API Reference</a></p>
@@ -1330,7 +1330,7 @@ namespace Model
         virtual Model::ListInfrastructureConfigurationsOutcomeCallable ListInfrastructureConfigurationsCallable(const Model::ListInfrastructureConfigurationsRequest& request) const;
 
         /**
-         * <p> Returns a list of infrastructure configurations. </p><p><h3>See Also:</h3>  
+         * <p> Returns a list of infrastructure configurations.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListInfrastructureConfigurations">AWS
          * API Reference</a></p>
@@ -1340,7 +1340,7 @@ namespace Model
         virtual void ListInfrastructureConfigurationsAsync(const Model::ListInfrastructureConfigurationsRequest& request, const ListInfrastructureConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns the list of tags for the specified resource. </p><p><h3>See
+         * <p> Returns the list of tags for the specified resource.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -1348,7 +1348,7 @@ namespace Model
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p> Returns the list of tags for the specified resource. </p><p><h3>See
+         * <p> Returns the list of tags for the specified resource.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -1358,7 +1358,7 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p> Returns the list of tags for the specified resource. </p><p><h3>See
+         * <p> Returns the list of tags for the specified resource.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -1374,7 +1374,7 @@ namespace Model
          * <code>PutComponentPolicy</code>, you must also call the RAM API <a
          * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
          * in order for the resource to be visible to all principals with whom the resource
-         * is shared. </p><p><h3>See Also:</h3>   <a
+         * is shared.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutComponentPolicy">AWS
          * API Reference</a></p>
          */
@@ -1387,7 +1387,7 @@ namespace Model
          * <code>PutComponentPolicy</code>, you must also call the RAM API <a
          * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
          * in order for the resource to be visible to all principals with whom the resource
-         * is shared. </p><p><h3>See Also:</h3>   <a
+         * is shared.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutComponentPolicy">AWS
          * API Reference</a></p>
          *
@@ -1402,7 +1402,7 @@ namespace Model
          * <code>PutComponentPolicy</code>, you must also call the RAM API <a
          * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
          * in order for the resource to be visible to all principals with whom the resource
-         * is shared. </p><p><h3>See Also:</h3>   <a
+         * is shared.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutComponentPolicy">AWS
          * API Reference</a></p>
          *
@@ -1466,7 +1466,7 @@ namespace Model
          * <code>PutImagePolicy</code>, you must also call the RAM API <a
          * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
          * in order for the resource to be visible to all principals with whom the resource
-         * is shared. </p><p><h3>See Also:</h3>   <a
+         * is shared.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutImagePolicy">AWS
          * API Reference</a></p>
          */
@@ -1479,7 +1479,7 @@ namespace Model
          * <code>PutImagePolicy</code>, you must also call the RAM API <a
          * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
          * in order for the resource to be visible to all principals with whom the resource
-         * is shared. </p><p><h3>See Also:</h3>   <a
+         * is shared.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutImagePolicy">AWS
          * API Reference</a></p>
          *
@@ -1494,7 +1494,7 @@ namespace Model
          * <code>PutImagePolicy</code>, you must also call the RAM API <a
          * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
          * in order for the resource to be visible to all principals with whom the resource
-         * is shared. </p><p><h3>See Also:</h3>   <a
+         * is shared.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutImagePolicy">AWS
          * API Reference</a></p>
          *
@@ -1510,7 +1510,7 @@ namespace Model
          * <code>PutImageRecipePolicy</code>, you must also call the RAM API <a
          * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
          * in order for the resource to be visible to all principals with whom the resource
-         * is shared. </p><p><h3>See Also:</h3>   <a
+         * is shared.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutImageRecipePolicy">AWS
          * API Reference</a></p>
          */
@@ -1524,7 +1524,7 @@ namespace Model
          * <code>PutImageRecipePolicy</code>, you must also call the RAM API <a
          * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
          * in order for the resource to be visible to all principals with whom the resource
-         * is shared. </p><p><h3>See Also:</h3>   <a
+         * is shared.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutImageRecipePolicy">AWS
          * API Reference</a></p>
          *
@@ -1540,7 +1540,7 @@ namespace Model
          * <code>PutImageRecipePolicy</code>, you must also call the RAM API <a
          * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
          * in order for the resource to be visible to all principals with whom the resource
-         * is shared. </p><p><h3>See Also:</h3>   <a
+         * is shared.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutImageRecipePolicy">AWS
          * API Reference</a></p>
          *
@@ -1549,7 +1549,7 @@ namespace Model
         virtual void PutImageRecipePolicyAsync(const Model::PutImageRecipePolicyRequest& request, const PutImageRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Manually triggers a pipeline to create an image. </p><p><h3>See Also:</h3>  
+         * <p> Manually triggers a pipeline to create an image.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/StartImagePipelineExecution">AWS
          * API Reference</a></p>
@@ -1557,7 +1557,7 @@ namespace Model
         virtual Model::StartImagePipelineExecutionOutcome StartImagePipelineExecution(const Model::StartImagePipelineExecutionRequest& request) const;
 
         /**
-         * <p> Manually triggers a pipeline to create an image. </p><p><h3>See Also:</h3>  
+         * <p> Manually triggers a pipeline to create an image.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/StartImagePipelineExecution">AWS
          * API Reference</a></p>
@@ -1567,7 +1567,7 @@ namespace Model
         virtual Model::StartImagePipelineExecutionOutcomeCallable StartImagePipelineExecutionCallable(const Model::StartImagePipelineExecutionRequest& request) const;
 
         /**
-         * <p> Manually triggers a pipeline to create an image. </p><p><h3>See Also:</h3>  
+         * <p> Manually triggers a pipeline to create an image.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/StartImagePipelineExecution">AWS
          * API Reference</a></p>
@@ -1577,14 +1577,14 @@ namespace Model
         virtual void StartImagePipelineExecutionAsync(const Model::StartImagePipelineExecutionRequest& request, const StartImagePipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Adds a tag to a resource. </p><p><h3>See Also:</h3>   <a
+         * <p> Adds a tag to a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/TagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p> Adds a tag to a resource. </p><p><h3>See Also:</h3>   <a
+         * <p> Adds a tag to a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/TagResource">AWS
          * API Reference</a></p>
          *
@@ -1593,7 +1593,7 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p> Adds a tag to a resource. </p><p><h3>See Also:</h3>   <a
+         * <p> Adds a tag to a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/TagResource">AWS
          * API Reference</a></p>
          *
@@ -1602,14 +1602,14 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Removes a tag from a resource. </p><p><h3>See Also:</h3>   <a
+         * <p> Removes a tag from a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p> Removes a tag from a resource. </p><p><h3>See Also:</h3>   <a
+         * <p> Removes a tag from a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -1618,7 +1618,7 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p> Removes a tag from a resource. </p><p><h3>See Also:</h3>   <a
+         * <p> Removes a tag from a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -1628,7 +1628,7 @@ namespace Model
 
         /**
          * <p> Updates a new distribution configuration. Distribution configurations define
-         * and configure the outputs of your pipeline. </p><p><h3>See Also:</h3>   <a
+         * and configure the outputs of your pipeline.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateDistributionConfiguration">AWS
          * API Reference</a></p>
          */
@@ -1636,7 +1636,7 @@ namespace Model
 
         /**
          * <p> Updates a new distribution configuration. Distribution configurations define
-         * and configure the outputs of your pipeline. </p><p><h3>See Also:</h3>   <a
+         * and configure the outputs of your pipeline.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateDistributionConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1646,7 +1646,7 @@ namespace Model
 
         /**
          * <p> Updates a new distribution configuration. Distribution configurations define
-         * and configure the outputs of your pipeline. </p><p><h3>See Also:</h3>   <a
+         * and configure the outputs of your pipeline.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateDistributionConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1656,7 +1656,7 @@ namespace Model
 
         /**
          * <p> Updates a new image pipeline. Image pipelines enable you to automate the
-         * creation and distribution of images. </p><p><h3>See Also:</h3>   <a
+         * creation and distribution of images.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateImagePipeline">AWS
          * API Reference</a></p>
          */
@@ -1664,7 +1664,7 @@ namespace Model
 
         /**
          * <p> Updates a new image pipeline. Image pipelines enable you to automate the
-         * creation and distribution of images. </p><p><h3>See Also:</h3>   <a
+         * creation and distribution of images.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateImagePipeline">AWS
          * API Reference</a></p>
          *
@@ -1674,7 +1674,7 @@ namespace Model
 
         /**
          * <p> Updates a new image pipeline. Image pipelines enable you to automate the
-         * creation and distribution of images. </p><p><h3>See Also:</h3>   <a
+         * creation and distribution of images.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateImagePipeline">AWS
          * API Reference</a></p>
          *
@@ -1684,8 +1684,8 @@ namespace Model
 
         /**
          * <p> Updates a new infrastructure configuration. An infrastructure configuration
-         * defines the environment in which your image will be built and tested.
-         * </p><p><h3>See Also:</h3>   <a
+         * defines the environment in which your image will be built and
+         * tested.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateInfrastructureConfiguration">AWS
          * API Reference</a></p>
          */
@@ -1693,8 +1693,8 @@ namespace Model
 
         /**
          * <p> Updates a new infrastructure configuration. An infrastructure configuration
-         * defines the environment in which your image will be built and tested.
-         * </p><p><h3>See Also:</h3>   <a
+         * defines the environment in which your image will be built and
+         * tested.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateInfrastructureConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1704,8 +1704,8 @@ namespace Model
 
         /**
          * <p> Updates a new infrastructure configuration. An infrastructure configuration
-         * defines the environment in which your image will be built and tested.
-         * </p><p><h3>See Also:</h3>   <a
+         * defines the environment in which your image will be built and
+         * tested.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateInfrastructureConfiguration">AWS
          * API Reference</a></p>
          *

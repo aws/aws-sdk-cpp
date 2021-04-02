@@ -38,165 +38,165 @@ namespace Model
 
 
     /**
-     * <p> The name of the image recipe. </p>
+     * <p> The name of the image recipe.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p> The name of the image recipe. </p>
+     * <p> The name of the image recipe.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p> The name of the image recipe. </p>
+     * <p> The name of the image recipe.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p> The name of the image recipe. </p>
+     * <p> The name of the image recipe.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p> The name of the image recipe. </p>
+     * <p> The name of the image recipe.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p> The name of the image recipe. </p>
+     * <p> The name of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p> The name of the image recipe. </p>
+     * <p> The name of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p> The name of the image recipe. </p>
+     * <p> The name of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p> The description of the image recipe. </p>
+     * <p> The description of the image recipe.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p> The description of the image recipe. </p>
+     * <p> The description of the image recipe.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p> The description of the image recipe. </p>
+     * <p> The description of the image recipe.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p> The description of the image recipe. </p>
+     * <p> The description of the image recipe.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p> The description of the image recipe. </p>
+     * <p> The description of the image recipe.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p> The description of the image recipe. </p>
+     * <p> The description of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p> The description of the image recipe. </p>
+     * <p> The description of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p> The description of the image recipe. </p>
+     * <p> The description of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>The semantic version of the image recipe. </p>
+     * <p>The semantic version of the image recipe.</p>
      */
     inline const Aws::String& GetSemanticVersion() const{ return m_semanticVersion; }
 
     /**
-     * <p>The semantic version of the image recipe. </p>
+     * <p>The semantic version of the image recipe.</p>
      */
     inline bool SemanticVersionHasBeenSet() const { return m_semanticVersionHasBeenSet; }
 
     /**
-     * <p>The semantic version of the image recipe. </p>
+     * <p>The semantic version of the image recipe.</p>
      */
     inline void SetSemanticVersion(const Aws::String& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = value; }
 
     /**
-     * <p>The semantic version of the image recipe. </p>
+     * <p>The semantic version of the image recipe.</p>
      */
     inline void SetSemanticVersion(Aws::String&& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = std::move(value); }
 
     /**
-     * <p>The semantic version of the image recipe. </p>
+     * <p>The semantic version of the image recipe.</p>
      */
     inline void SetSemanticVersion(const char* value) { m_semanticVersionHasBeenSet = true; m_semanticVersion.assign(value); }
 
     /**
-     * <p>The semantic version of the image recipe. </p>
+     * <p>The semantic version of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& WithSemanticVersion(const Aws::String& value) { SetSemanticVersion(value); return *this;}
 
     /**
-     * <p>The semantic version of the image recipe. </p>
+     * <p>The semantic version of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& WithSemanticVersion(Aws::String&& value) { SetSemanticVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The semantic version of the image recipe. </p>
+     * <p>The semantic version of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& WithSemanticVersion(const char* value) { SetSemanticVersion(value); return *this;}
 
 
     /**
-     * <p>The components of the image recipe. </p>
+     * <p>The components of the image recipe.</p>
      */
     inline const Aws::Vector<ComponentConfiguration>& GetComponents() const{ return m_components; }
 
     /**
-     * <p>The components of the image recipe. </p>
+     * <p>The components of the image recipe.</p>
      */
     inline bool ComponentsHasBeenSet() const { return m_componentsHasBeenSet; }
 
     /**
-     * <p>The components of the image recipe. </p>
+     * <p>The components of the image recipe.</p>
      */
     inline void SetComponents(const Aws::Vector<ComponentConfiguration>& value) { m_componentsHasBeenSet = true; m_components = value; }
 
     /**
-     * <p>The components of the image recipe. </p>
+     * <p>The components of the image recipe.</p>
      */
     inline void SetComponents(Aws::Vector<ComponentConfiguration>&& value) { m_componentsHasBeenSet = true; m_components = std::move(value); }
 
     /**
-     * <p>The components of the image recipe. </p>
+     * <p>The components of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& WithComponents(const Aws::Vector<ComponentConfiguration>& value) { SetComponents(value); return *this;}
 
     /**
-     * <p>The components of the image recipe. </p>
+     * <p>The components of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& WithComponents(Aws::Vector<ComponentConfiguration>&& value) { SetComponents(std::move(value)); return *this;}
 
     /**
-     * <p>The components of the image recipe. </p>
+     * <p>The components of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& AddComponents(const ComponentConfiguration& value) { m_componentsHasBeenSet = true; m_components.push_back(value); return *this; }
 
     /**
-     * <p>The components of the image recipe. </p>
+     * <p>The components of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& AddComponents(ComponentConfiguration&& value) { m_componentsHasBeenSet = true; m_components.push_back(std::move(value)); return *this; }
 
@@ -208,7 +208,7 @@ namespace Model
      * You can provide the specific version that you want to use, or you can use a
      * wildcard in all of the fields. If you enter an AMI ID for the string value, you
      * must have access to the AMI, and the AMI must be in the same Region in which you
-     * are using Image Builder. </p>
+     * are using Image Builder.</p>
      */
     inline const Aws::String& GetParentImage() const{ return m_parentImage; }
 
@@ -219,7 +219,7 @@ namespace Model
      * You can provide the specific version that you want to use, or you can use a
      * wildcard in all of the fields. If you enter an AMI ID for the string value, you
      * must have access to the AMI, and the AMI must be in the same Region in which you
-     * are using Image Builder. </p>
+     * are using Image Builder.</p>
      */
     inline bool ParentImageHasBeenSet() const { return m_parentImageHasBeenSet; }
 
@@ -230,7 +230,7 @@ namespace Model
      * You can provide the specific version that you want to use, or you can use a
      * wildcard in all of the fields. If you enter an AMI ID for the string value, you
      * must have access to the AMI, and the AMI must be in the same Region in which you
-     * are using Image Builder. </p>
+     * are using Image Builder.</p>
      */
     inline void SetParentImage(const Aws::String& value) { m_parentImageHasBeenSet = true; m_parentImage = value; }
 
@@ -241,7 +241,7 @@ namespace Model
      * You can provide the specific version that you want to use, or you can use a
      * wildcard in all of the fields. If you enter an AMI ID for the string value, you
      * must have access to the AMI, and the AMI must be in the same Region in which you
-     * are using Image Builder. </p>
+     * are using Image Builder.</p>
      */
     inline void SetParentImage(Aws::String&& value) { m_parentImageHasBeenSet = true; m_parentImage = std::move(value); }
 
@@ -252,7 +252,7 @@ namespace Model
      * You can provide the specific version that you want to use, or you can use a
      * wildcard in all of the fields. If you enter an AMI ID for the string value, you
      * must have access to the AMI, and the AMI must be in the same Region in which you
-     * are using Image Builder. </p>
+     * are using Image Builder.</p>
      */
     inline void SetParentImage(const char* value) { m_parentImageHasBeenSet = true; m_parentImage.assign(value); }
 
@@ -263,7 +263,7 @@ namespace Model
      * You can provide the specific version that you want to use, or you can use a
      * wildcard in all of the fields. If you enter an AMI ID for the string value, you
      * must have access to the AMI, and the AMI must be in the same Region in which you
-     * are using Image Builder. </p>
+     * are using Image Builder.</p>
      */
     inline CreateImageRecipeRequest& WithParentImage(const Aws::String& value) { SetParentImage(value); return *this;}
 
@@ -274,7 +274,7 @@ namespace Model
      * You can provide the specific version that you want to use, or you can use a
      * wildcard in all of the fields. If you enter an AMI ID for the string value, you
      * must have access to the AMI, and the AMI must be in the same Region in which you
-     * are using Image Builder. </p>
+     * are using Image Builder.</p>
      */
     inline CreateImageRecipeRequest& WithParentImage(Aws::String&& value) { SetParentImage(std::move(value)); return *this;}
 
@@ -285,114 +285,114 @@ namespace Model
      * You can provide the specific version that you want to use, or you can use a
      * wildcard in all of the fields. If you enter an AMI ID for the string value, you
      * must have access to the AMI, and the AMI must be in the same Region in which you
-     * are using Image Builder. </p>
+     * are using Image Builder.</p>
      */
     inline CreateImageRecipeRequest& WithParentImage(const char* value) { SetParentImage(value); return *this;}
 
 
     /**
-     * <p>The block device mappings of the image recipe. </p>
+     * <p>The block device mappings of the image recipe.</p>
      */
     inline const Aws::Vector<InstanceBlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
 
     /**
-     * <p>The block device mappings of the image recipe. </p>
+     * <p>The block device mappings of the image recipe.</p>
      */
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
 
     /**
-     * <p>The block device mappings of the image recipe. </p>
+     * <p>The block device mappings of the image recipe.</p>
      */
     inline void SetBlockDeviceMappings(const Aws::Vector<InstanceBlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
 
     /**
-     * <p>The block device mappings of the image recipe. </p>
+     * <p>The block device mappings of the image recipe.</p>
      */
     inline void SetBlockDeviceMappings(Aws::Vector<InstanceBlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
 
     /**
-     * <p>The block device mappings of the image recipe. </p>
+     * <p>The block device mappings of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& WithBlockDeviceMappings(const Aws::Vector<InstanceBlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
 
     /**
-     * <p>The block device mappings of the image recipe. </p>
+     * <p>The block device mappings of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& WithBlockDeviceMappings(Aws::Vector<InstanceBlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
 
     /**
-     * <p>The block device mappings of the image recipe. </p>
+     * <p>The block device mappings of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& AddBlockDeviceMappings(const InstanceBlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
 
     /**
-     * <p>The block device mappings of the image recipe. </p>
+     * <p>The block device mappings of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& AddBlockDeviceMappings(InstanceBlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p> The tags of the image recipe. </p>
+     * <p> The tags of the image recipe.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p> The tags of the image recipe. </p>
+     * <p> The tags of the image recipe.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p> The tags of the image recipe. </p>
+     * <p> The tags of the image recipe.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p> The tags of the image recipe. </p>
+     * <p> The tags of the image recipe.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p> The tags of the image recipe. </p>
+     * <p> The tags of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p> The tags of the image recipe. </p>
+     * <p> The tags of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p> The tags of the image recipe. </p>
+     * <p> The tags of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p> The tags of the image recipe. </p>
+     * <p> The tags of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p> The tags of the image recipe. </p>
+     * <p> The tags of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p> The tags of the image recipe. </p>
+     * <p> The tags of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p> The tags of the image recipe. </p>
+     * <p> The tags of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p> The tags of the image recipe. </p>
+     * <p> The tags of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p> The tags of the image recipe. </p>
+     * <p> The tags of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -439,42 +439,42 @@ namespace Model
 
 
     /**
-     * <p>The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent.</p>
      */
     inline CreateImageRecipeRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent.</p>
      */
     inline CreateImageRecipeRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent.</p>
      */
     inline CreateImageRecipeRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

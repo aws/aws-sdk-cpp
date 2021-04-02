@@ -229,49 +229,49 @@ namespace Model
 
     /**
      * <p>The operating system version of the instance. For example, Amazon Linux 2,
-     * Ubuntu 18, or Microsoft Windows Server 2019. </p>
+     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
      */
     inline const Aws::String& GetOsVersion() const{ return m_osVersion; }
 
     /**
      * <p>The operating system version of the instance. For example, Amazon Linux 2,
-     * Ubuntu 18, or Microsoft Windows Server 2019. </p>
+     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
      */
     inline bool OsVersionHasBeenSet() const { return m_osVersionHasBeenSet; }
 
     /**
      * <p>The operating system version of the instance. For example, Amazon Linux 2,
-     * Ubuntu 18, or Microsoft Windows Server 2019. </p>
+     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
      */
     inline void SetOsVersion(const Aws::String& value) { m_osVersionHasBeenSet = true; m_osVersion = value; }
 
     /**
      * <p>The operating system version of the instance. For example, Amazon Linux 2,
-     * Ubuntu 18, or Microsoft Windows Server 2019. </p>
+     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
      */
     inline void SetOsVersion(Aws::String&& value) { m_osVersionHasBeenSet = true; m_osVersion = std::move(value); }
 
     /**
      * <p>The operating system version of the instance. For example, Amazon Linux 2,
-     * Ubuntu 18, or Microsoft Windows Server 2019. </p>
+     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
      */
     inline void SetOsVersion(const char* value) { m_osVersionHasBeenSet = true; m_osVersion.assign(value); }
 
     /**
      * <p>The operating system version of the instance. For example, Amazon Linux 2,
-     * Ubuntu 18, or Microsoft Windows Server 2019. </p>
+     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
      */
     inline ImageSummary& WithOsVersion(const Aws::String& value) { SetOsVersion(value); return *this;}
 
     /**
      * <p>The operating system version of the instance. For example, Amazon Linux 2,
-     * Ubuntu 18, or Microsoft Windows Server 2019. </p>
+     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
      */
     inline ImageSummary& WithOsVersion(Aws::String&& value) { SetOsVersion(std::move(value)); return *this;}
 
     /**
      * <p>The operating system version of the instance. For example, Amazon Linux 2,
-     * Ubuntu 18, or Microsoft Windows Server 2019. </p>
+     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
      */
     inline ImageSummary& WithOsVersion(const char* value) { SetOsVersion(value); return *this;}
 

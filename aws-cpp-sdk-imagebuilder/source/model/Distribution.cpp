@@ -22,7 +22,8 @@ Distribution::Distribution() :
     m_regionHasBeenSet(false),
     m_amiDistributionConfigurationHasBeenSet(false),
     m_containerDistributionConfigurationHasBeenSet(false),
-    m_licenseConfigurationArnsHasBeenSet(false)
+    m_licenseConfigurationArnsHasBeenSet(false),
+    m_launchTemplateConfigurationsHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ Distribution::Distribution(JsonView jsonValue) :
     m_regionHasBeenSet(false),
     m_amiDistributionConfigurationHasBeenSet(false),
     m_containerDistributionConfigurationHasBeenSet(false),
-    m_licenseConfigurationArnsHasBeenSet(false)
+    m_licenseConfigurationArnsHasBeenSet(false),
+    m_launchTemplateConfigurationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -68,6 +70,16 @@ Distribution& Distribution::operator =(JsonView jsonValue)
     m_licenseConfigurationArnsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("launchTemplateConfigurations"))
+  {
+    Array<JsonView> launchTemplateConfigurationsJsonList = jsonValue.GetArray("launchTemplateConfigurations");
+    for(unsigned launchTemplateConfigurationsIndex = 0; launchTemplateConfigurationsIndex < launchTemplateConfigurationsJsonList.GetLength(); ++launchTemplateConfigurationsIndex)
+    {
+      m_launchTemplateConfigurations.push_back(launchTemplateConfigurationsJsonList[launchTemplateConfigurationsIndex].AsObject());
+    }
+    m_launchTemplateConfigurationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -101,6 +113,17 @@ JsonValue Distribution::Jsonize() const
      licenseConfigurationArnsJsonList[licenseConfigurationArnsIndex].AsString(m_licenseConfigurationArns[licenseConfigurationArnsIndex]);
    }
    payload.WithArray("licenseConfigurationArns", std::move(licenseConfigurationArnsJsonList));
+
+  }
+
+  if(m_launchTemplateConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> launchTemplateConfigurationsJsonList(m_launchTemplateConfigurations.size());
+   for(unsigned launchTemplateConfigurationsIndex = 0; launchTemplateConfigurationsIndex < launchTemplateConfigurationsJsonList.GetLength(); ++launchTemplateConfigurationsIndex)
+   {
+     launchTemplateConfigurationsJsonList[launchTemplateConfigurationsIndex].AsObject(m_launchTemplateConfigurations[launchTemplateConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("launchTemplateConfigurations", std::move(launchTemplateConfigurationsJsonList));
 
   }
 

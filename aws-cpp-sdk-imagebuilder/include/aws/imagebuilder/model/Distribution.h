@@ -9,6 +9,7 @@
 #include <aws/imagebuilder/model/AmiDistributionConfiguration.h>
 #include <aws/imagebuilder/model/ContainerDistributionConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/imagebuilder/model/LaunchTemplateConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -27,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p> Defines the settings for a specific Region. </p><p><h3>See Also:</h3>   <a
+   * <p> Defines the settings for a specific Region.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/Distribution">AWS
    * API Reference</a></p>
    */
@@ -41,73 +42,73 @@ namespace Model
 
 
     /**
-     * <p>The target Region. </p>
+     * <p>The target Region.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The target Region. </p>
+     * <p>The target Region.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The target Region. </p>
+     * <p>The target Region.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The target Region. </p>
+     * <p>The target Region.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The target Region. </p>
+     * <p>The target Region.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The target Region. </p>
+     * <p>The target Region.</p>
      */
     inline Distribution& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The target Region. </p>
+     * <p>The target Region.</p>
      */
     inline Distribution& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The target Region. </p>
+     * <p>The target Region.</p>
      */
     inline Distribution& WithRegion(const char* value) { SetRegion(value); return *this;}
 
 
     /**
-     * <p>The specific AMI settings (for example, launch permissions, AMI tags). </p>
+     * <p>The specific AMI settings; for example, launch permissions or AMI tags.</p>
      */
     inline const AmiDistributionConfiguration& GetAmiDistributionConfiguration() const{ return m_amiDistributionConfiguration; }
 
     /**
-     * <p>The specific AMI settings (for example, launch permissions, AMI tags). </p>
+     * <p>The specific AMI settings; for example, launch permissions or AMI tags.</p>
      */
     inline bool AmiDistributionConfigurationHasBeenSet() const { return m_amiDistributionConfigurationHasBeenSet; }
 
     /**
-     * <p>The specific AMI settings (for example, launch permissions, AMI tags). </p>
+     * <p>The specific AMI settings; for example, launch permissions or AMI tags.</p>
      */
     inline void SetAmiDistributionConfiguration(const AmiDistributionConfiguration& value) { m_amiDistributionConfigurationHasBeenSet = true; m_amiDistributionConfiguration = value; }
 
     /**
-     * <p>The specific AMI settings (for example, launch permissions, AMI tags). </p>
+     * <p>The specific AMI settings; for example, launch permissions or AMI tags.</p>
      */
     inline void SetAmiDistributionConfiguration(AmiDistributionConfiguration&& value) { m_amiDistributionConfigurationHasBeenSet = true; m_amiDistributionConfiguration = std::move(value); }
 
     /**
-     * <p>The specific AMI settings (for example, launch permissions, AMI tags). </p>
+     * <p>The specific AMI settings; for example, launch permissions or AMI tags.</p>
      */
     inline Distribution& WithAmiDistributionConfiguration(const AmiDistributionConfiguration& value) { SetAmiDistributionConfiguration(value); return *this;}
 
     /**
-     * <p>The specific AMI settings (for example, launch permissions, AMI tags). </p>
+     * <p>The specific AMI settings; for example, launch permissions or AMI tags.</p>
      */
     inline Distribution& WithAmiDistributionConfiguration(AmiDistributionConfiguration&& value) { SetAmiDistributionConfiguration(std::move(value)); return *this;}
 
@@ -203,6 +204,55 @@ namespace Model
      */
     inline Distribution& AddLicenseConfigurationArns(const char* value) { m_licenseConfigurationArnsHasBeenSet = true; m_licenseConfigurationArns.push_back(value); return *this; }
 
+
+    /**
+     * <p>A group of launchTemplateConfiguration settings that apply to image
+     * distribution for specified accounts.</p>
+     */
+    inline const Aws::Vector<LaunchTemplateConfiguration>& GetLaunchTemplateConfigurations() const{ return m_launchTemplateConfigurations; }
+
+    /**
+     * <p>A group of launchTemplateConfiguration settings that apply to image
+     * distribution for specified accounts.</p>
+     */
+    inline bool LaunchTemplateConfigurationsHasBeenSet() const { return m_launchTemplateConfigurationsHasBeenSet; }
+
+    /**
+     * <p>A group of launchTemplateConfiguration settings that apply to image
+     * distribution for specified accounts.</p>
+     */
+    inline void SetLaunchTemplateConfigurations(const Aws::Vector<LaunchTemplateConfiguration>& value) { m_launchTemplateConfigurationsHasBeenSet = true; m_launchTemplateConfigurations = value; }
+
+    /**
+     * <p>A group of launchTemplateConfiguration settings that apply to image
+     * distribution for specified accounts.</p>
+     */
+    inline void SetLaunchTemplateConfigurations(Aws::Vector<LaunchTemplateConfiguration>&& value) { m_launchTemplateConfigurationsHasBeenSet = true; m_launchTemplateConfigurations = std::move(value); }
+
+    /**
+     * <p>A group of launchTemplateConfiguration settings that apply to image
+     * distribution for specified accounts.</p>
+     */
+    inline Distribution& WithLaunchTemplateConfigurations(const Aws::Vector<LaunchTemplateConfiguration>& value) { SetLaunchTemplateConfigurations(value); return *this;}
+
+    /**
+     * <p>A group of launchTemplateConfiguration settings that apply to image
+     * distribution for specified accounts.</p>
+     */
+    inline Distribution& WithLaunchTemplateConfigurations(Aws::Vector<LaunchTemplateConfiguration>&& value) { SetLaunchTemplateConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>A group of launchTemplateConfiguration settings that apply to image
+     * distribution for specified accounts.</p>
+     */
+    inline Distribution& AddLaunchTemplateConfigurations(const LaunchTemplateConfiguration& value) { m_launchTemplateConfigurationsHasBeenSet = true; m_launchTemplateConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>A group of launchTemplateConfiguration settings that apply to image
+     * distribution for specified accounts.</p>
+     */
+    inline Distribution& AddLaunchTemplateConfigurations(LaunchTemplateConfiguration&& value) { m_launchTemplateConfigurationsHasBeenSet = true; m_launchTemplateConfigurations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_region;
@@ -216,6 +266,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_licenseConfigurationArns;
     bool m_licenseConfigurationArnsHasBeenSet;
+
+    Aws::Vector<LaunchTemplateConfiguration> m_launchTemplateConfigurations;
+    bool m_launchTemplateConfigurationsHasBeenSet;
   };
 
 } // namespace Model

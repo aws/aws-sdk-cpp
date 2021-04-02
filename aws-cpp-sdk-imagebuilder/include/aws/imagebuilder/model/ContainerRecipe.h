@@ -9,6 +9,7 @@
 #include <aws/imagebuilder/model/ContainerType.h>
 #include <aws/imagebuilder/model/Platform.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/imagebuilder/model/InstanceConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/imagebuilder/model/TargetContainerRepository.h>
 #include <aws/imagebuilder/model/ComponentConfiguration.h>
@@ -357,6 +358,43 @@ namespace Model
      * <p>Components for build and test that are included in the container recipe.</p>
      */
     inline ContainerRecipe& AddComponents(ComponentConfiguration&& value) { m_componentsHasBeenSet = true; m_components.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A group of options that can be used to configure an instance for building and
+     * testing container images.</p>
+     */
+    inline const InstanceConfiguration& GetInstanceConfiguration() const{ return m_instanceConfiguration; }
+
+    /**
+     * <p>A group of options that can be used to configure an instance for building and
+     * testing container images.</p>
+     */
+    inline bool InstanceConfigurationHasBeenSet() const { return m_instanceConfigurationHasBeenSet; }
+
+    /**
+     * <p>A group of options that can be used to configure an instance for building and
+     * testing container images.</p>
+     */
+    inline void SetInstanceConfiguration(const InstanceConfiguration& value) { m_instanceConfigurationHasBeenSet = true; m_instanceConfiguration = value; }
+
+    /**
+     * <p>A group of options that can be used to configure an instance for building and
+     * testing container images.</p>
+     */
+    inline void SetInstanceConfiguration(InstanceConfiguration&& value) { m_instanceConfigurationHasBeenSet = true; m_instanceConfiguration = std::move(value); }
+
+    /**
+     * <p>A group of options that can be used to configure an instance for building and
+     * testing container images.</p>
+     */
+    inline ContainerRecipe& WithInstanceConfiguration(const InstanceConfiguration& value) { SetInstanceConfiguration(value); return *this;}
+
+    /**
+     * <p>A group of options that can be used to configure an instance for building and
+     * testing container images.</p>
+     */
+    inline ContainerRecipe& WithInstanceConfiguration(InstanceConfiguration&& value) { SetInstanceConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -738,6 +776,9 @@ namespace Model
 
     Aws::Vector<ComponentConfiguration> m_components;
     bool m_componentsHasBeenSet;
+
+    InstanceConfiguration m_instanceConfiguration;
+    bool m_instanceConfigurationHasBeenSet;
 
     Aws::String m_dockerfileTemplateData;
     bool m_dockerfileTemplateDataHasBeenSet;
