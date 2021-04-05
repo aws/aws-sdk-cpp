@@ -27,7 +27,8 @@ DestinationConnectorProperties::DestinationConnectorProperties() :
     m_lookoutMetricsHasBeenSet(false),
     m_upsolverHasBeenSet(false),
     m_honeycodeHasBeenSet(false),
-    m_customerProfilesHasBeenSet(false)
+    m_customerProfilesHasBeenSet(false),
+    m_zendeskHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ DestinationConnectorProperties::DestinationConnectorProperties(JsonView jsonValu
     m_lookoutMetricsHasBeenSet(false),
     m_upsolverHasBeenSet(false),
     m_honeycodeHasBeenSet(false),
-    m_customerProfilesHasBeenSet(false)
+    m_customerProfilesHasBeenSet(false),
+    m_zendeskHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -110,6 +112,13 @@ DestinationConnectorProperties& DestinationConnectorProperties::operator =(JsonV
     m_customerProfilesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Zendesk"))
+  {
+    m_zendesk = jsonValue.GetObject("Zendesk");
+
+    m_zendeskHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -168,6 +177,12 @@ JsonValue DestinationConnectorProperties::Jsonize() const
   if(m_customerProfilesHasBeenSet)
   {
    payload.WithObject("CustomerProfiles", m_customerProfiles.Jsonize());
+
+  }
+
+  if(m_zendeskHasBeenSet)
+  {
+   payload.WithObject("Zendesk", m_zendesk.Jsonize());
 
   }
 

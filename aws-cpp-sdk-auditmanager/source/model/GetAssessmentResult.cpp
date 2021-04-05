@@ -34,6 +34,12 @@ GetAssessmentResult& GetAssessmentResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("userRole"))
+  {
+    m_userRole = jsonValue.GetObject("userRole");
+
+  }
+
 
 
   return *this;

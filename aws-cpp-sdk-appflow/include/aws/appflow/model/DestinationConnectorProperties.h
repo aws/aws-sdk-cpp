@@ -14,6 +14,7 @@
 #include <aws/appflow/model/UpsolverDestinationProperties.h>
 #include <aws/appflow/model/HoneycodeDestinationProperties.h>
 #include <aws/appflow/model/CustomerProfilesDestinationProperties.h>
+#include <aws/appflow/model/ZendeskDestinationProperties.h>
 #include <utility>
 
 namespace Aws
@@ -324,6 +325,25 @@ namespace Model
      */
     inline DestinationConnectorProperties& WithCustomerProfiles(CustomerProfilesDestinationProperties&& value) { SetCustomerProfiles(std::move(value)); return *this;}
 
+
+    
+    inline const ZendeskDestinationProperties& GetZendesk() const{ return m_zendesk; }
+
+    
+    inline bool ZendeskHasBeenSet() const { return m_zendeskHasBeenSet; }
+
+    
+    inline void SetZendesk(const ZendeskDestinationProperties& value) { m_zendeskHasBeenSet = true; m_zendesk = value; }
+
+    
+    inline void SetZendesk(ZendeskDestinationProperties&& value) { m_zendeskHasBeenSet = true; m_zendesk = std::move(value); }
+
+    
+    inline DestinationConnectorProperties& WithZendesk(const ZendeskDestinationProperties& value) { SetZendesk(value); return *this;}
+
+    
+    inline DestinationConnectorProperties& WithZendesk(ZendeskDestinationProperties&& value) { SetZendesk(std::move(value)); return *this;}
+
   private:
 
     RedshiftDestinationProperties m_redshift;
@@ -352,6 +372,9 @@ namespace Model
 
     CustomerProfilesDestinationProperties m_customerProfiles;
     bool m_customerProfilesHasBeenSet;
+
+    ZendeskDestinationProperties m_zendesk;
+    bool m_zendeskHasBeenSet;
   };
 
 } // namespace Model

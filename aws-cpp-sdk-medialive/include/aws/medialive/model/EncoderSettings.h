@@ -11,6 +11,7 @@
 #include <aws/medialive/model/BlackoutSlate.h>
 #include <aws/medialive/model/FeatureActivations.h>
 #include <aws/medialive/model/GlobalConfiguration.h>
+#include <aws/medialive/model/MotionGraphicsConfiguration.h>
 #include <aws/medialive/model/NielsenConfiguration.h>
 #include <aws/medialive/model/TimecodeConfig.h>
 #include <aws/medialive/model/AudioDescription.h>
@@ -270,6 +271,37 @@ namespace Model
 
 
     /**
+     * Settings for motion graphics.
+     */
+    inline const MotionGraphicsConfiguration& GetMotionGraphicsConfiguration() const{ return m_motionGraphicsConfiguration; }
+
+    /**
+     * Settings for motion graphics.
+     */
+    inline bool MotionGraphicsConfigurationHasBeenSet() const { return m_motionGraphicsConfigurationHasBeenSet; }
+
+    /**
+     * Settings for motion graphics.
+     */
+    inline void SetMotionGraphicsConfiguration(const MotionGraphicsConfiguration& value) { m_motionGraphicsConfigurationHasBeenSet = true; m_motionGraphicsConfiguration = value; }
+
+    /**
+     * Settings for motion graphics.
+     */
+    inline void SetMotionGraphicsConfiguration(MotionGraphicsConfiguration&& value) { m_motionGraphicsConfigurationHasBeenSet = true; m_motionGraphicsConfiguration = std::move(value); }
+
+    /**
+     * Settings for motion graphics.
+     */
+    inline EncoderSettings& WithMotionGraphicsConfiguration(const MotionGraphicsConfiguration& value) { SetMotionGraphicsConfiguration(value); return *this;}
+
+    /**
+     * Settings for motion graphics.
+     */
+    inline EncoderSettings& WithMotionGraphicsConfiguration(MotionGraphicsConfiguration&& value) { SetMotionGraphicsConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * Nielsen configuration settings.
      */
     inline const NielsenConfiguration& GetNielsenConfiguration() const{ return m_nielsenConfiguration; }
@@ -402,6 +434,9 @@ namespace Model
 
     GlobalConfiguration m_globalConfiguration;
     bool m_globalConfigurationHasBeenSet;
+
+    MotionGraphicsConfiguration m_motionGraphicsConfiguration;
+    bool m_motionGraphicsConfigurationHasBeenSet;
 
     NielsenConfiguration m_nielsenConfiguration;
     bool m_nielsenConfigurationHasBeenSet;
