@@ -14,7 +14,7 @@
 #include <aws/medialive/model/LogLevel.h>
 #include <aws/medialive/model/ChannelState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/medialive/model/VpcOutputSettings.h>
+#include <aws/medialive/model/VpcOutputSettingsDescription.h>
 #include <aws/medialive/model/OutputDestination.h>
 #include <aws/medialive/model/ChannelEgressEndpoint.h>
 #include <aws/medialive/model/InputAttachment.h>
@@ -594,27 +594,27 @@ one destination per
     /**
      * Settings for VPC output
      */
-    inline const VpcOutputSettings& GetVpc() const{ return m_vpc; }
+    inline const VpcOutputSettingsDescription& GetVpc() const{ return m_vpc; }
 
     /**
      * Settings for VPC output
      */
-    inline void SetVpc(const VpcOutputSettings& value) { m_vpc = value; }
+    inline void SetVpc(const VpcOutputSettingsDescription& value) { m_vpc = value; }
 
     /**
      * Settings for VPC output
      */
-    inline void SetVpc(VpcOutputSettings&& value) { m_vpc = std::move(value); }
+    inline void SetVpc(VpcOutputSettingsDescription&& value) { m_vpc = std::move(value); }
 
     /**
      * Settings for VPC output
      */
-    inline DescribeChannelResult& WithVpc(const VpcOutputSettings& value) { SetVpc(value); return *this;}
+    inline DescribeChannelResult& WithVpc(const VpcOutputSettingsDescription& value) { SetVpc(value); return *this;}
 
     /**
      * Settings for VPC output
      */
-    inline DescribeChannelResult& WithVpc(VpcOutputSettings&& value) { SetVpc(std::move(value)); return *this;}
+    inline DescribeChannelResult& WithVpc(VpcOutputSettingsDescription&& value) { SetVpc(std::move(value)); return *this;}
 
   private:
 
@@ -650,7 +650,7 @@ one destination per
 
     Aws::Map<Aws::String, Aws::String> m_tags;
 
-    VpcOutputSettings m_vpc;
+    VpcOutputSettingsDescription m_vpc;
   };
 
 } // namespace Model

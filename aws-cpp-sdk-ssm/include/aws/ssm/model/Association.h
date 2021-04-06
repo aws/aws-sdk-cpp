@@ -359,42 +359,50 @@ namespace Model
 
 
     /**
-     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     * <p>A cron expression that specifies a schedule when the association runs. The
+     * schedule runs in Coordinated Universal Time (UTC).</p>
      */
     inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
 
     /**
-     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     * <p>A cron expression that specifies a schedule when the association runs. The
+     * schedule runs in Coordinated Universal Time (UTC).</p>
      */
     inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
 
     /**
-     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     * <p>A cron expression that specifies a schedule when the association runs. The
+     * schedule runs in Coordinated Universal Time (UTC).</p>
      */
     inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
 
     /**
-     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     * <p>A cron expression that specifies a schedule when the association runs. The
+     * schedule runs in Coordinated Universal Time (UTC).</p>
      */
     inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
 
     /**
-     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     * <p>A cron expression that specifies a schedule when the association runs. The
+     * schedule runs in Coordinated Universal Time (UTC).</p>
      */
     inline void SetScheduleExpression(const char* value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression.assign(value); }
 
     /**
-     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     * <p>A cron expression that specifies a schedule when the association runs. The
+     * schedule runs in Coordinated Universal Time (UTC).</p>
      */
     inline Association& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
 
     /**
-     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     * <p>A cron expression that specifies a schedule when the association runs. The
+     * schedule runs in Coordinated Universal Time (UTC).</p>
      */
     inline Association& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
 
     /**
-     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     * <p>A cron expression that specifies a schedule when the association runs. The
+     * schedule runs in Coordinated Universal Time (UTC).</p>
      */
     inline Association& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
 

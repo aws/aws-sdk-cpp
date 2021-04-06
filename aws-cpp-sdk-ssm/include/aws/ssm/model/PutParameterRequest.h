@@ -588,26 +588,22 @@ namespace Model
 
 
     /**
-     * <p>Overwrite an existing parameter. If not specified, will default to
-     * "false".</p>
+     * <p>Overwrite an existing parameter. The default value is 'false'.</p>
      */
     inline bool GetOverwrite() const{ return m_overwrite; }
 
     /**
-     * <p>Overwrite an existing parameter. If not specified, will default to
-     * "false".</p>
+     * <p>Overwrite an existing parameter. The default value is 'false'.</p>
      */
     inline bool OverwriteHasBeenSet() const { return m_overwriteHasBeenSet; }
 
     /**
-     * <p>Overwrite an existing parameter. If not specified, will default to
-     * "false".</p>
+     * <p>Overwrite an existing parameter. The default value is 'false'.</p>
      */
     inline void SetOverwrite(bool value) { m_overwriteHasBeenSet = true; m_overwrite = value; }
 
     /**
-     * <p>Overwrite an existing parameter. If not specified, will default to
-     * "false".</p>
+     * <p>Overwrite an existing parameter. The default value is 'false'.</p>
      */
     inline PutParameterRequest& WithOverwrite(bool value) { SetOverwrite(value); return *this;}
 

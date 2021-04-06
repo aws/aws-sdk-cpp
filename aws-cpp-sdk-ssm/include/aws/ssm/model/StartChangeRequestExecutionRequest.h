@@ -510,6 +510,106 @@ namespace Model
      */
     inline StartChangeRequestExecutionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The time that the requester expects the runbook workflow related to the
+     * change request to complete. The time is an estimate only that the requester
+     * provides for reviewers.</p>
+     */
+    inline const Aws::Utils::DateTime& GetScheduledEndTime() const{ return m_scheduledEndTime; }
+
+    /**
+     * <p>The time that the requester expects the runbook workflow related to the
+     * change request to complete. The time is an estimate only that the requester
+     * provides for reviewers.</p>
+     */
+    inline bool ScheduledEndTimeHasBeenSet() const { return m_scheduledEndTimeHasBeenSet; }
+
+    /**
+     * <p>The time that the requester expects the runbook workflow related to the
+     * change request to complete. The time is an estimate only that the requester
+     * provides for reviewers.</p>
+     */
+    inline void SetScheduledEndTime(const Aws::Utils::DateTime& value) { m_scheduledEndTimeHasBeenSet = true; m_scheduledEndTime = value; }
+
+    /**
+     * <p>The time that the requester expects the runbook workflow related to the
+     * change request to complete. The time is an estimate only that the requester
+     * provides for reviewers.</p>
+     */
+    inline void SetScheduledEndTime(Aws::Utils::DateTime&& value) { m_scheduledEndTimeHasBeenSet = true; m_scheduledEndTime = std::move(value); }
+
+    /**
+     * <p>The time that the requester expects the runbook workflow related to the
+     * change request to complete. The time is an estimate only that the requester
+     * provides for reviewers.</p>
+     */
+    inline StartChangeRequestExecutionRequest& WithScheduledEndTime(const Aws::Utils::DateTime& value) { SetScheduledEndTime(value); return *this;}
+
+    /**
+     * <p>The time that the requester expects the runbook workflow related to the
+     * change request to complete. The time is an estimate only that the requester
+     * provides for reviewers.</p>
+     */
+    inline StartChangeRequestExecutionRequest& WithScheduledEndTime(Aws::Utils::DateTime&& value) { SetScheduledEndTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>User-provided details about the change. If no details are provided, content
+     * specified in the <b>Template information</b> section of the associated change
+     * template is added.</p>
+     */
+    inline const Aws::String& GetChangeDetails() const{ return m_changeDetails; }
+
+    /**
+     * <p>User-provided details about the change. If no details are provided, content
+     * specified in the <b>Template information</b> section of the associated change
+     * template is added.</p>
+     */
+    inline bool ChangeDetailsHasBeenSet() const { return m_changeDetailsHasBeenSet; }
+
+    /**
+     * <p>User-provided details about the change. If no details are provided, content
+     * specified in the <b>Template information</b> section of the associated change
+     * template is added.</p>
+     */
+    inline void SetChangeDetails(const Aws::String& value) { m_changeDetailsHasBeenSet = true; m_changeDetails = value; }
+
+    /**
+     * <p>User-provided details about the change. If no details are provided, content
+     * specified in the <b>Template information</b> section of the associated change
+     * template is added.</p>
+     */
+    inline void SetChangeDetails(Aws::String&& value) { m_changeDetailsHasBeenSet = true; m_changeDetails = std::move(value); }
+
+    /**
+     * <p>User-provided details about the change. If no details are provided, content
+     * specified in the <b>Template information</b> section of the associated change
+     * template is added.</p>
+     */
+    inline void SetChangeDetails(const char* value) { m_changeDetailsHasBeenSet = true; m_changeDetails.assign(value); }
+
+    /**
+     * <p>User-provided details about the change. If no details are provided, content
+     * specified in the <b>Template information</b> section of the associated change
+     * template is added.</p>
+     */
+    inline StartChangeRequestExecutionRequest& WithChangeDetails(const Aws::String& value) { SetChangeDetails(value); return *this;}
+
+    /**
+     * <p>User-provided details about the change. If no details are provided, content
+     * specified in the <b>Template information</b> section of the associated change
+     * template is added.</p>
+     */
+    inline StartChangeRequestExecutionRequest& WithChangeDetails(Aws::String&& value) { SetChangeDetails(std::move(value)); return *this;}
+
+    /**
+     * <p>User-provided details about the change. If no details are provided, content
+     * specified in the <b>Template information</b> section of the associated change
+     * template is added.</p>
+     */
+    inline StartChangeRequestExecutionRequest& WithChangeDetails(const char* value) { SetChangeDetails(value); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_scheduledTime;
@@ -535,6 +635,12 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::Utils::DateTime m_scheduledEndTime;
+    bool m_scheduledEndTimeHasBeenSet;
+
+    Aws::String m_changeDetails;
+    bool m_changeDetailsHasBeenSet;
   };
 
 } // namespace Model

@@ -128,6 +128,7 @@
 #include <aws/ssm/model/StartSessionResult.h>
 #include <aws/ssm/model/StopAutomationExecutionResult.h>
 #include <aws/ssm/model/TerminateSessionResult.h>
+#include <aws/ssm/model/UnlabelParameterVersionResult.h>
 #include <aws/ssm/model/UpdateAssociationResult.h>
 #include <aws/ssm/model/UpdateAssociationStatusResult.h>
 #include <aws/ssm/model/UpdateDocumentResult.h>
@@ -298,6 +299,7 @@ namespace Model
         class StartSessionRequest;
         class StopAutomationExecutionRequest;
         class TerminateSessionRequest;
+        class UnlabelParameterVersionRequest;
         class UpdateAssociationRequest;
         class UpdateAssociationStatusRequest;
         class UpdateDocumentRequest;
@@ -430,6 +432,7 @@ namespace Model
         typedef Aws::Utils::Outcome<StartSessionResult, SSMError> StartSessionOutcome;
         typedef Aws::Utils::Outcome<StopAutomationExecutionResult, SSMError> StopAutomationExecutionOutcome;
         typedef Aws::Utils::Outcome<TerminateSessionResult, SSMError> TerminateSessionOutcome;
+        typedef Aws::Utils::Outcome<UnlabelParameterVersionResult, SSMError> UnlabelParameterVersionOutcome;
         typedef Aws::Utils::Outcome<UpdateAssociationResult, SSMError> UpdateAssociationOutcome;
         typedef Aws::Utils::Outcome<UpdateAssociationStatusResult, SSMError> UpdateAssociationStatusOutcome;
         typedef Aws::Utils::Outcome<UpdateDocumentResult, SSMError> UpdateDocumentOutcome;
@@ -562,6 +565,7 @@ namespace Model
         typedef std::future<StartSessionOutcome> StartSessionOutcomeCallable;
         typedef std::future<StopAutomationExecutionOutcome> StopAutomationExecutionOutcomeCallable;
         typedef std::future<TerminateSessionOutcome> TerminateSessionOutcomeCallable;
+        typedef std::future<UnlabelParameterVersionOutcome> UnlabelParameterVersionOutcomeCallable;
         typedef std::future<UpdateAssociationOutcome> UpdateAssociationOutcomeCallable;
         typedef std::future<UpdateAssociationStatusOutcome> UpdateAssociationStatusOutcomeCallable;
         typedef std::future<UpdateDocumentOutcome> UpdateDocumentOutcomeCallable;
@@ -697,6 +701,7 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::StartSessionRequest&, const Model::StartSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSessionResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::StopAutomationExecutionRequest&, const Model::StopAutomationExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopAutomationExecutionResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::TerminateSessionRequest&, const Model::TerminateSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateSessionResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::UnlabelParameterVersionRequest&, const Model::UnlabelParameterVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnlabelParameterVersionResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::UpdateAssociationRequest&, const Model::UpdateAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAssociationResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::UpdateAssociationStatusRequest&, const Model::UpdateAssociationStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAssociationStatusResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::UpdateDocumentRequest&, const Model::UpdateDocumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDocumentResponseReceivedHandler;
@@ -2920,7 +2925,11 @@ namespace Model
 
         /**
          * <p>Returns detailed information about command execution for an invocation or
-         * plugin. </p><p><h3>See Also:</h3>   <a
+         * plugin.</p> <p> <code>GetCommandInvocation</code> only gives the execution
+         * status of a plugin in a document. To get the command execution status on a
+         * specific instance, use <a>ListCommandInvocations</a>. To get the command
+         * execution status across instances, use <a>ListCommands</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation">AWS
          * API Reference</a></p>
          */
@@ -2928,7 +2937,11 @@ namespace Model
 
         /**
          * <p>Returns detailed information about command execution for an invocation or
-         * plugin. </p><p><h3>See Also:</h3>   <a
+         * plugin.</p> <p> <code>GetCommandInvocation</code> only gives the execution
+         * status of a plugin in a document. To get the command execution status on a
+         * specific instance, use <a>ListCommandInvocations</a>. To get the command
+         * execution status across instances, use <a>ListCommands</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation">AWS
          * API Reference</a></p>
          *
@@ -2938,7 +2951,11 @@ namespace Model
 
         /**
          * <p>Returns detailed information about command execution for an invocation or
-         * plugin. </p><p><h3>See Also:</h3>   <a
+         * plugin.</p> <p> <code>GetCommandInvocation</code> only gives the execution
+         * status of a plugin in a document. To get the command execution status on a
+         * specific instance, use <a>ListCommandInvocations</a>. To get the command
+         * execution status across instances, use <a>ListCommands</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation">AWS
          * API Reference</a></p>
          *
@@ -3654,15 +3671,15 @@ namespace Model
          * you can't attach Production to version 2.</p> </li> <li> <p>You can move a label
          * from one version of a parameter to another.</p> </li> <li> <p>You can't create a
          * label when you create a new parameter. You must attach a label to a specific
-         * version of a parameter.</p> </li> <li> <p>You can't delete a parameter label. If
-         * you no longer want to use a parameter label, then you must move it to a
-         * different version of a parameter.</p> </li> <li> <p>A label can have a maximum
-         * of 100 characters.</p> </li> <li> <p>Labels can contain letters (case
-         * sensitive), numbers, periods (.), hyphens (-), or underscores (_).</p> </li>
-         * <li> <p>Labels can't begin with a number, "aws," or "ssm" (not case sensitive).
-         * If a label fails to meet these requirements, then the label is not associated
-         * with a parameter and the system displays it in the list of InvalidLabels.</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * version of a parameter.</p> </li> <li> <p>If you no longer want to use a
+         * parameter label, then you can either delete it or move it to a different version
+         * of a parameter.</p> </li> <li> <p>A label can have a maximum of 100
+         * characters.</p> </li> <li> <p>Labels can contain letters (case sensitive),
+         * numbers, periods (.), hyphens (-), or underscores (_).</p> </li> <li> <p>Labels
+         * can't begin with a number, "aws," or "ssm" (not case sensitive). If a label
+         * fails to meet these requirements, then the label is not associated with a
+         * parameter and the system displays it in the list of InvalidLabels.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/LabelParameterVersion">AWS
          * API Reference</a></p>
          */
@@ -3680,15 +3697,15 @@ namespace Model
          * you can't attach Production to version 2.</p> </li> <li> <p>You can move a label
          * from one version of a parameter to another.</p> </li> <li> <p>You can't create a
          * label when you create a new parameter. You must attach a label to a specific
-         * version of a parameter.</p> </li> <li> <p>You can't delete a parameter label. If
-         * you no longer want to use a parameter label, then you must move it to a
-         * different version of a parameter.</p> </li> <li> <p>A label can have a maximum
-         * of 100 characters.</p> </li> <li> <p>Labels can contain letters (case
-         * sensitive), numbers, periods (.), hyphens (-), or underscores (_).</p> </li>
-         * <li> <p>Labels can't begin with a number, "aws," or "ssm" (not case sensitive).
-         * If a label fails to meet these requirements, then the label is not associated
-         * with a parameter and the system displays it in the list of InvalidLabels.</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * version of a parameter.</p> </li> <li> <p>If you no longer want to use a
+         * parameter label, then you can either delete it or move it to a different version
+         * of a parameter.</p> </li> <li> <p>A label can have a maximum of 100
+         * characters.</p> </li> <li> <p>Labels can contain letters (case sensitive),
+         * numbers, periods (.), hyphens (-), or underscores (_).</p> </li> <li> <p>Labels
+         * can't begin with a number, "aws," or "ssm" (not case sensitive). If a label
+         * fails to meet these requirements, then the label is not associated with a
+         * parameter and the system displays it in the list of InvalidLabels.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/LabelParameterVersion">AWS
          * API Reference</a></p>
          *
@@ -3708,15 +3725,15 @@ namespace Model
          * you can't attach Production to version 2.</p> </li> <li> <p>You can move a label
          * from one version of a parameter to another.</p> </li> <li> <p>You can't create a
          * label when you create a new parameter. You must attach a label to a specific
-         * version of a parameter.</p> </li> <li> <p>You can't delete a parameter label. If
-         * you no longer want to use a parameter label, then you must move it to a
-         * different version of a parameter.</p> </li> <li> <p>A label can have a maximum
-         * of 100 characters.</p> </li> <li> <p>Labels can contain letters (case
-         * sensitive), numbers, periods (.), hyphens (-), or underscores (_).</p> </li>
-         * <li> <p>Labels can't begin with a number, "aws," or "ssm" (not case sensitive).
-         * If a label fails to meet these requirements, then the label is not associated
-         * with a parameter and the system displays it in the list of InvalidLabels.</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * version of a parameter.</p> </li> <li> <p>If you no longer want to use a
+         * parameter label, then you can either delete it or move it to a different version
+         * of a parameter.</p> </li> <li> <p>A label can have a maximum of 100
+         * characters.</p> </li> <li> <p>Labels can contain letters (case sensitive),
+         * numbers, periods (.), hyphens (-), or underscores (_).</p> </li> <li> <p>Labels
+         * can't begin with a number, "aws," or "ssm" (not case sensitive). If a label
+         * fails to meet these requirements, then the label is not associated with a
+         * parameter and the system displays it in the list of InvalidLabels.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/LabelParameterVersion">AWS
          * API Reference</a></p>
          *
@@ -4878,6 +4895,31 @@ namespace Model
         virtual void TerminateSessionAsync(const Model::TerminateSessionRequest& request, const TerminateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Remove a label or labels from a parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UnlabelParameterVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UnlabelParameterVersionOutcome UnlabelParameterVersion(const Model::UnlabelParameterVersionRequest& request) const;
+
+        /**
+         * <p>Remove a label or labels from a parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UnlabelParameterVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UnlabelParameterVersionOutcomeCallable UnlabelParameterVersionCallable(const Model::UnlabelParameterVersionRequest& request) const;
+
+        /**
+         * <p>Remove a label or labels from a parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UnlabelParameterVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UnlabelParameterVersionAsync(const Model::UnlabelParameterVersionRequest& request, const UnlabelParameterVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates an association. You can update the association name and version, the
          * document version, schedule, parameters, and Amazon S3 output. </p> <p>In order
          * to call this API action, your IAM user account, group, or role must be
@@ -5615,6 +5657,7 @@ namespace Model
         void StartSessionAsyncHelper(const Model::StartSessionRequest& request, const StartSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopAutomationExecutionAsyncHelper(const Model::StopAutomationExecutionRequest& request, const StopAutomationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TerminateSessionAsyncHelper(const Model::TerminateSessionRequest& request, const TerminateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UnlabelParameterVersionAsyncHelper(const Model::UnlabelParameterVersionRequest& request, const UnlabelParameterVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAssociationAsyncHelper(const Model::UpdateAssociationRequest& request, const UpdateAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAssociationStatusAsyncHelper(const Model::UpdateAssociationStatusRequest& request, const UpdateAssociationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDocumentAsyncHelper(const Model::UpdateDocumentRequest& request, const UpdateDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

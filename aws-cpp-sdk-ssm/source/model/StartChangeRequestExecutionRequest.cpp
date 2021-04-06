@@ -20,7 +20,9 @@ StartChangeRequestExecutionRequest::StartChangeRequestExecutionRequest() :
     m_changeRequestNameHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_runbooksHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_scheduledEndTimeHasBeenSet(false),
+    m_changeDetailsHasBeenSet(false)
 {
 }
 
@@ -92,6 +94,17 @@ Aws::String StartChangeRequestExecutionRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_scheduledEndTimeHasBeenSet)
+  {
+   payload.WithDouble("ScheduledEndTime", m_scheduledEndTime.SecondsWithMSPrecision());
+  }
+
+  if(m_changeDetailsHasBeenSet)
+  {
+   payload.WithString("ChangeDetails", m_changeDetails);
 
   }
 
