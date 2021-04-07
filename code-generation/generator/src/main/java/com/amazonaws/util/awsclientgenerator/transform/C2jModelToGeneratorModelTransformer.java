@@ -505,16 +505,25 @@ public class C2jModelToGeneratorModelTransformer {
         if (shape.getName().equals(name)) {
             return shape;
         }
-        if (shapes.containsKey(name)) {
-            // Conflict with shape name defined by service team, need to rename it.
-            String newName = "";
-            switch(name) {
+
+        // Detect any conflicts with shape name defined by service team, need to rename it if so.
+        Optional<String> conflicted = shapes.keySet().stream().filter(shapeName ->
+            name.equals(shapeName) || shape.getMembers().values().stream().anyMatch(shapeMember ->
+                shapeMember.getShape().getName().equals(shapeName) && (name.equals("Get" + shapeName) || name.equals("Set" + shapeName)))).findFirst();
+        if (conflicted.isPresent()) {
+            String originalShapeName = conflicted.get();
+            String newShapeName = "";
+            switch(originalShapeName) {
                 case "CopyObjectResult":
-                    newName = "CopyObjectResultDetails";
-                    renameShapeMember(shape, name, newName);
+                    newShapeName = "CopyObjectResultDetails";
+                    renameShapeMember(shape, "CopyObjectResult", originalShapeName, newShapeName, true);
                     break;
                 case "BatchUpdateScheduleResult":
-                    shapes.remove(name);
+                    shapes.remove(originalShapeName);
+                    break;
+                case "GeneratedPolicyResult":
+                    newShapeName = "GeneratedPolicyResults";
+                    renameShapeMember(shape, "generatedPolicyResult", originalShapeName, newShapeName, false);
                     break;
                 default:
                     throw new RuntimeException("Unhandled shape name conflict: " + name);
@@ -554,13 +563,17 @@ public class C2jModelToGeneratorModelTransformer {
         cloned.setXmlNamespace(shape.getXmlNamespace());
         return cloned;
     }
-    void renameShapeMember(Shape parentShape, String originalName, String newName) {
-        shapes.get(originalName).setName(newName);
-        shapes.put(newName, shapes.get(originalName));
-        shapes.remove(originalName);
-        parentShape.getMembers().put(newName, parentShape.getMembers().get(originalName));
-        parentShape.RemoveMember(originalName);
-        parentShape.setPayload(newName);
+
+    void renameShapeMember(Shape parentShape, String originalMemberKey, String originalShapeName, String newShapeName, boolean isPayload) {
+        shapes.get(originalShapeName).setName(newShapeName);
+        shapes.put(newShapeName, shapes.get(originalShapeName));
+        shapes.remove(originalShapeName);
+        parentShape.getMembers().put(newShapeName, parentShape.getMembers().get(originalMemberKey));
+        parentShape.RemoveMember(originalMemberKey);
+        if (isPayload)
+        {
+            parentShape.setPayload(newShapeName);
+        }
     }
 
     Http convertHttp(C2jHttp c2jHttp) {
