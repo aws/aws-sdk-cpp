@@ -81,42 +81,50 @@ namespace Model
 
 
     /**
-     * <p>Key-pair name.</p>
+     * <p>An arbitrary string (a nickname) assigned to a playback key pair that helps
+     * the customer identify that resource. The value does not need to be unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Key-pair name.</p>
+     * <p>An arbitrary string (a nickname) assigned to a playback key pair that helps
+     * the customer identify that resource. The value does not need to be unique.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Key-pair name.</p>
+     * <p>An arbitrary string (a nickname) assigned to a playback key pair that helps
+     * the customer identify that resource. The value does not need to be unique.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Key-pair name.</p>
+     * <p>An arbitrary string (a nickname) assigned to a playback key pair that helps
+     * the customer identify that resource. The value does not need to be unique.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Key-pair name.</p>
+     * <p>An arbitrary string (a nickname) assigned to a playback key pair that helps
+     * the customer identify that resource. The value does not need to be unique.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Key-pair name.</p>
+     * <p>An arbitrary string (a nickname) assigned to a playback key pair that helps
+     * the customer identify that resource. The value does not need to be unique.</p>
      */
     inline PlaybackKeyPair& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Key-pair name.</p>
+     * <p>An arbitrary string (a nickname) assigned to a playback key pair that helps
+     * the customer identify that resource. The value does not need to be unique.</p>
      */
     inline PlaybackKeyPair& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Key-pair name.</p>
+     * <p>An arbitrary string (a nickname) assigned to a playback key pair that helps
+     * the customer identify that resource. The value does not need to be unique.</p>
      */
     inline PlaybackKeyPair& WithName(const char* value) { SetName(value); return *this;}
 

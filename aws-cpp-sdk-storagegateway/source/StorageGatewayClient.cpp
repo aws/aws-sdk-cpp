@@ -26,6 +26,7 @@
 #include <aws/storagegateway/model/AddUploadBufferRequest.h>
 #include <aws/storagegateway/model/AddWorkingStorageRequest.h>
 #include <aws/storagegateway/model/AssignTapePoolRequest.h>
+#include <aws/storagegateway/model/AssociateFileSystemRequest.h>
 #include <aws/storagegateway/model/AttachVolumeRequest.h>
 #include <aws/storagegateway/model/CancelArchivalRequest.h>
 #include <aws/storagegateway/model/CancelRetrievalRequest.h>
@@ -54,6 +55,7 @@
 #include <aws/storagegateway/model/DescribeCacheRequest.h>
 #include <aws/storagegateway/model/DescribeCachediSCSIVolumesRequest.h>
 #include <aws/storagegateway/model/DescribeChapCredentialsRequest.h>
+#include <aws/storagegateway/model/DescribeFileSystemAssociationsRequest.h>
 #include <aws/storagegateway/model/DescribeGatewayInformationRequest.h>
 #include <aws/storagegateway/model/DescribeMaintenanceStartTimeRequest.h>
 #include <aws/storagegateway/model/DescribeNFSFileSharesRequest.h>
@@ -69,9 +71,11 @@
 #include <aws/storagegateway/model/DescribeWorkingStorageRequest.h>
 #include <aws/storagegateway/model/DetachVolumeRequest.h>
 #include <aws/storagegateway/model/DisableGatewayRequest.h>
+#include <aws/storagegateway/model/DisassociateFileSystemRequest.h>
 #include <aws/storagegateway/model/JoinDomainRequest.h>
 #include <aws/storagegateway/model/ListAutomaticTapeCreationPoliciesRequest.h>
 #include <aws/storagegateway/model/ListFileSharesRequest.h>
+#include <aws/storagegateway/model/ListFileSystemAssociationsRequest.h>
 #include <aws/storagegateway/model/ListGatewaysRequest.h>
 #include <aws/storagegateway/model/ListLocalDisksRequest.h>
 #include <aws/storagegateway/model/ListTagsForResourceRequest.h>
@@ -95,6 +99,7 @@
 #include <aws/storagegateway/model/UpdateBandwidthRateLimitRequest.h>
 #include <aws/storagegateway/model/UpdateBandwidthRateLimitScheduleRequest.h>
 #include <aws/storagegateway/model/UpdateChapCredentialsRequest.h>
+#include <aws/storagegateway/model/UpdateFileSystemAssociationRequest.h>
 #include <aws/storagegateway/model/UpdateGatewayInformationRequest.h>
 #include <aws/storagegateway/model/UpdateGatewaySoftwareNowRequest.h>
 #include <aws/storagegateway/model/UpdateMaintenanceStartTimeRequest.h>
@@ -338,6 +343,33 @@ void StorageGatewayClient::AssignTapePoolAsync(const AssignTapePoolRequest& requ
 void StorageGatewayClient::AssignTapePoolAsyncHelper(const AssignTapePoolRequest& request, const AssignTapePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AssignTapePool(request), context);
+}
+
+AssociateFileSystemOutcome StorageGatewayClient::AssociateFileSystem(const AssociateFileSystemRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return AssociateFileSystemOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateFileSystemOutcomeCallable StorageGatewayClient::AssociateFileSystemCallable(const AssociateFileSystemRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateFileSystemOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateFileSystem(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void StorageGatewayClient::AssociateFileSystemAsync(const AssociateFileSystemRequest& request, const AssociateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateFileSystemAsyncHelper( request, handler, context ); } );
+}
+
+void StorageGatewayClient::AssociateFileSystemAsyncHelper(const AssociateFileSystemRequest& request, const AssociateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateFileSystem(request), context);
 }
 
 AttachVolumeOutcome StorageGatewayClient::AttachVolume(const AttachVolumeRequest& request) const
@@ -1096,6 +1128,33 @@ void StorageGatewayClient::DescribeChapCredentialsAsyncHelper(const DescribeChap
   handler(this, request, DescribeChapCredentials(request), context);
 }
 
+DescribeFileSystemAssociationsOutcome StorageGatewayClient::DescribeFileSystemAssociations(const DescribeFileSystemAssociationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeFileSystemAssociationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeFileSystemAssociationsOutcomeCallable StorageGatewayClient::DescribeFileSystemAssociationsCallable(const DescribeFileSystemAssociationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFileSystemAssociationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFileSystemAssociations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void StorageGatewayClient::DescribeFileSystemAssociationsAsync(const DescribeFileSystemAssociationsRequest& request, const DescribeFileSystemAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeFileSystemAssociationsAsyncHelper( request, handler, context ); } );
+}
+
+void StorageGatewayClient::DescribeFileSystemAssociationsAsyncHelper(const DescribeFileSystemAssociationsRequest& request, const DescribeFileSystemAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeFileSystemAssociations(request), context);
+}
+
 DescribeGatewayInformationOutcome StorageGatewayClient::DescribeGatewayInformation(const DescribeGatewayInformationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1501,6 +1560,33 @@ void StorageGatewayClient::DisableGatewayAsyncHelper(const DisableGatewayRequest
   handler(this, request, DisableGateway(request), context);
 }
 
+DisassociateFileSystemOutcome StorageGatewayClient::DisassociateFileSystem(const DisassociateFileSystemRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DisassociateFileSystemOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateFileSystemOutcomeCallable StorageGatewayClient::DisassociateFileSystemCallable(const DisassociateFileSystemRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateFileSystemOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateFileSystem(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void StorageGatewayClient::DisassociateFileSystemAsync(const DisassociateFileSystemRequest& request, const DisassociateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateFileSystemAsyncHelper( request, handler, context ); } );
+}
+
+void StorageGatewayClient::DisassociateFileSystemAsyncHelper(const DisassociateFileSystemRequest& request, const DisassociateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateFileSystem(request), context);
+}
+
 JoinDomainOutcome StorageGatewayClient::JoinDomain(const JoinDomainRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1580,6 +1666,33 @@ void StorageGatewayClient::ListFileSharesAsync(const ListFileSharesRequest& requ
 void StorageGatewayClient::ListFileSharesAsyncHelper(const ListFileSharesRequest& request, const ListFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListFileShares(request), context);
+}
+
+ListFileSystemAssociationsOutcome StorageGatewayClient::ListFileSystemAssociations(const ListFileSystemAssociationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListFileSystemAssociationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListFileSystemAssociationsOutcomeCallable StorageGatewayClient::ListFileSystemAssociationsCallable(const ListFileSystemAssociationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListFileSystemAssociationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFileSystemAssociations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void StorageGatewayClient::ListFileSystemAssociationsAsync(const ListFileSystemAssociationsRequest& request, const ListFileSystemAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListFileSystemAssociationsAsyncHelper( request, handler, context ); } );
+}
+
+void StorageGatewayClient::ListFileSystemAssociationsAsyncHelper(const ListFileSystemAssociationsRequest& request, const ListFileSystemAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListFileSystemAssociations(request), context);
 }
 
 ListGatewaysOutcome StorageGatewayClient::ListGateways(const ListGatewaysRequest& request) const
@@ -2201,6 +2314,33 @@ void StorageGatewayClient::UpdateChapCredentialsAsync(const UpdateChapCredential
 void StorageGatewayClient::UpdateChapCredentialsAsyncHelper(const UpdateChapCredentialsRequest& request, const UpdateChapCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateChapCredentials(request), context);
+}
+
+UpdateFileSystemAssociationOutcome StorageGatewayClient::UpdateFileSystemAssociation(const UpdateFileSystemAssociationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateFileSystemAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateFileSystemAssociationOutcomeCallable StorageGatewayClient::UpdateFileSystemAssociationCallable(const UpdateFileSystemAssociationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateFileSystemAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFileSystemAssociation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void StorageGatewayClient::UpdateFileSystemAssociationAsync(const UpdateFileSystemAssociationRequest& request, const UpdateFileSystemAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateFileSystemAssociationAsyncHelper( request, handler, context ); } );
+}
+
+void StorageGatewayClient::UpdateFileSystemAssociationAsyncHelper(const UpdateFileSystemAssociationRequest& request, const UpdateFileSystemAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateFileSystemAssociation(request), context);
 }
 
 UpdateGatewayInformationOutcome StorageGatewayClient::UpdateGatewayInformation(const UpdateGatewayInformationRequest& request) const

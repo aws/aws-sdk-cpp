@@ -83,50 +83,50 @@ namespace Model
 
 
     /**
-     * <p>URL of the video master manifest, required by the video player to play the
-     * HLS stream.</p>
+     * <p>URL of the master playlist, required by the video player to play the HLS
+     * stream.</p>
      */
     inline const Aws::String& GetPlaybackUrl() const{ return m_playbackUrl; }
 
     /**
-     * <p>URL of the video master manifest, required by the video player to play the
-     * HLS stream.</p>
+     * <p>URL of the master playlist, required by the video player to play the HLS
+     * stream.</p>
      */
     inline bool PlaybackUrlHasBeenSet() const { return m_playbackUrlHasBeenSet; }
 
     /**
-     * <p>URL of the video master manifest, required by the video player to play the
-     * HLS stream.</p>
+     * <p>URL of the master playlist, required by the video player to play the HLS
+     * stream.</p>
      */
     inline void SetPlaybackUrl(const Aws::String& value) { m_playbackUrlHasBeenSet = true; m_playbackUrl = value; }
 
     /**
-     * <p>URL of the video master manifest, required by the video player to play the
-     * HLS stream.</p>
+     * <p>URL of the master playlist, required by the video player to play the HLS
+     * stream.</p>
      */
     inline void SetPlaybackUrl(Aws::String&& value) { m_playbackUrlHasBeenSet = true; m_playbackUrl = std::move(value); }
 
     /**
-     * <p>URL of the video master manifest, required by the video player to play the
-     * HLS stream.</p>
+     * <p>URL of the master playlist, required by the video player to play the HLS
+     * stream.</p>
      */
     inline void SetPlaybackUrl(const char* value) { m_playbackUrlHasBeenSet = true; m_playbackUrl.assign(value); }
 
     /**
-     * <p>URL of the video master manifest, required by the video player to play the
-     * HLS stream.</p>
+     * <p>URL of the master playlist, required by the video player to play the HLS
+     * stream.</p>
      */
     inline Stream& WithPlaybackUrl(const Aws::String& value) { SetPlaybackUrl(value); return *this;}
 
     /**
-     * <p>URL of the video master manifest, required by the video player to play the
-     * HLS stream.</p>
+     * <p>URL of the master playlist, required by the video player to play the HLS
+     * stream.</p>
      */
     inline Stream& WithPlaybackUrl(Aws::String&& value) { SetPlaybackUrl(std::move(value)); return *this;}
 
     /**
-     * <p>URL of the video master manifest, required by the video player to play the
-     * HLS stream.</p>
+     * <p>URL of the master playlist, required by the video player to play the HLS
+     * stream.</p>
      */
     inline Stream& WithPlaybackUrl(const char* value) { SetPlaybackUrl(value); return *this;}
 
@@ -225,22 +225,26 @@ namespace Model
 
 
     /**
-     * <p>Number of current viewers of the stream.</p>
+     * <p>Number of current viewers of the stream. A value of -1 indicates that the
+     * request timed out; in this case, retry.</p>
      */
     inline long long GetViewerCount() const{ return m_viewerCount; }
 
     /**
-     * <p>Number of current viewers of the stream.</p>
+     * <p>Number of current viewers of the stream. A value of -1 indicates that the
+     * request timed out; in this case, retry.</p>
      */
     inline bool ViewerCountHasBeenSet() const { return m_viewerCountHasBeenSet; }
 
     /**
-     * <p>Number of current viewers of the stream.</p>
+     * <p>Number of current viewers of the stream. A value of -1 indicates that the
+     * request timed out; in this case, retry.</p>
      */
     inline void SetViewerCount(long long value) { m_viewerCountHasBeenSet = true; m_viewerCount = value; }
 
     /**
-     * <p>Number of current viewers of the stream.</p>
+     * <p>Number of current viewers of the stream. A value of -1 indicates that the
+     * request timed out; in this case, retry.</p>
      */
     inline Stream& WithViewerCount(long long value) { SetViewerCount(value); return *this;}
 

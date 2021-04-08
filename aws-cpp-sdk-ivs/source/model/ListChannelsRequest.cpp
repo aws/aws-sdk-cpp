@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 ListChannelsRequest::ListChannelsRequest() : 
     m_filterByNameHasBeenSet(false),
+    m_filterByRecordingConfigurationArnHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false)
@@ -27,6 +28,12 @@ Aws::String ListChannelsRequest::SerializePayload() const
   if(m_filterByNameHasBeenSet)
   {
    payload.WithString("filterByName", m_filterByName);
+
+  }
+
+  if(m_filterByRecordingConfigurationArnHasBeenSet)
+  {
+   payload.WithString("filterByRecordingConfigurationArn", m_filterByRecordingConfigurationArn);
 
   }
 

@@ -25,6 +25,7 @@ Channel::Channel() :
     m_latencyModeHasBeenSet(false),
     m_type(ChannelType::NOT_SET),
     m_typeHasBeenSet(false),
+    m_recordingConfigurationArnHasBeenSet(false),
     m_ingestEndpointHasBeenSet(false),
     m_playbackUrlHasBeenSet(false),
     m_authorized(false),
@@ -40,6 +41,7 @@ Channel::Channel(JsonView jsonValue) :
     m_latencyModeHasBeenSet(false),
     m_type(ChannelType::NOT_SET),
     m_typeHasBeenSet(false),
+    m_recordingConfigurationArnHasBeenSet(false),
     m_ingestEndpointHasBeenSet(false),
     m_playbackUrlHasBeenSet(false),
     m_authorized(false),
@@ -77,6 +79,13 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_type = ChannelTypeMapper::GetChannelTypeForName(jsonValue.GetString("type"));
 
     m_typeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("recordingConfigurationArn"))
+  {
+    m_recordingConfigurationArn = jsonValue.GetString("recordingConfigurationArn");
+
+    m_recordingConfigurationArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ingestEndpoint"))
@@ -137,6 +146,12 @@ JsonValue Channel::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("type", ChannelTypeMapper::GetNameForChannelType(m_type));
+  }
+
+  if(m_recordingConfigurationArnHasBeenSet)
+  {
+   payload.WithString("recordingConfigurationArn", m_recordingConfigurationArn);
+
   }
 
   if(m_ingestEndpointHasBeenSet)

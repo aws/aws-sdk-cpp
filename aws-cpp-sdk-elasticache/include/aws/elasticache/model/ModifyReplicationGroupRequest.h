@@ -284,34 +284,26 @@ namespace Model
 
 
     /**
-     * <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
-     * Downtime: Multi-AZ</a>.</p>
+     * <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag
+     * key must be accompanied by a tag value, although null is accepted.</p>
      */
     inline bool GetMultiAZEnabled() const{ return m_multiAZEnabled; }
 
     /**
-     * <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
-     * Downtime: Multi-AZ</a>.</p>
+     * <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag
+     * key must be accompanied by a tag value, although null is accepted.</p>
      */
     inline bool MultiAZEnabledHasBeenSet() const { return m_multiAZEnabledHasBeenSet; }
 
     /**
-     * <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
-     * Downtime: Multi-AZ</a>.</p>
+     * <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag
+     * key must be accompanied by a tag value, although null is accepted.</p>
      */
     inline void SetMultiAZEnabled(bool value) { m_multiAZEnabledHasBeenSet = true; m_multiAZEnabled = value; }
 
     /**
-     * <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
-     * Downtime: Multi-AZ</a>.</p>
+     * <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag
+     * key must be accompanied by a tag value, although null is accepted.</p>
      */
     inline ModifyReplicationGroupRequest& WithMultiAZEnabled(bool value) { SetMultiAZEnabled(value); return *this;}
 

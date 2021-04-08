@@ -23,17 +23,21 @@
 #include <aws/ivs/model/BatchGetChannelRequest.h>
 #include <aws/ivs/model/BatchGetStreamKeyRequest.h>
 #include <aws/ivs/model/CreateChannelRequest.h>
+#include <aws/ivs/model/CreateRecordingConfigurationRequest.h>
 #include <aws/ivs/model/CreateStreamKeyRequest.h>
 #include <aws/ivs/model/DeleteChannelRequest.h>
 #include <aws/ivs/model/DeletePlaybackKeyPairRequest.h>
+#include <aws/ivs/model/DeleteRecordingConfigurationRequest.h>
 #include <aws/ivs/model/DeleteStreamKeyRequest.h>
 #include <aws/ivs/model/GetChannelRequest.h>
 #include <aws/ivs/model/GetPlaybackKeyPairRequest.h>
+#include <aws/ivs/model/GetRecordingConfigurationRequest.h>
 #include <aws/ivs/model/GetStreamRequest.h>
 #include <aws/ivs/model/GetStreamKeyRequest.h>
 #include <aws/ivs/model/ImportPlaybackKeyPairRequest.h>
 #include <aws/ivs/model/ListChannelsRequest.h>
 #include <aws/ivs/model/ListPlaybackKeyPairsRequest.h>
+#include <aws/ivs/model/ListRecordingConfigurationsRequest.h>
 #include <aws/ivs/model/ListStreamKeysRequest.h>
 #include <aws/ivs/model/ListStreamsRequest.h>
 #include <aws/ivs/model/ListTagsForResourceRequest.h>
@@ -197,6 +201,33 @@ void IVSClient::CreateChannelAsyncHelper(const CreateChannelRequest& request, co
   handler(this, request, CreateChannel(request), context);
 }
 
+CreateRecordingConfigurationOutcome IVSClient::CreateRecordingConfiguration(const CreateRecordingConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/CreateRecordingConfiguration";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateRecordingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateRecordingConfigurationOutcomeCallable IVSClient::CreateRecordingConfigurationCallable(const CreateRecordingConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateRecordingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRecordingConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IVSClient::CreateRecordingConfigurationAsync(const CreateRecordingConfigurationRequest& request, const CreateRecordingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateRecordingConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void IVSClient::CreateRecordingConfigurationAsyncHelper(const CreateRecordingConfigurationRequest& request, const CreateRecordingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateRecordingConfiguration(request), context);
+}
+
 CreateStreamKeyOutcome IVSClient::CreateStreamKey(const CreateStreamKeyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -278,6 +309,33 @@ void IVSClient::DeletePlaybackKeyPairAsyncHelper(const DeletePlaybackKeyPairRequ
   handler(this, request, DeletePlaybackKeyPair(request), context);
 }
 
+DeleteRecordingConfigurationOutcome IVSClient::DeleteRecordingConfiguration(const DeleteRecordingConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/DeleteRecordingConfiguration";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteRecordingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteRecordingConfigurationOutcomeCallable IVSClient::DeleteRecordingConfigurationCallable(const DeleteRecordingConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRecordingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRecordingConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IVSClient::DeleteRecordingConfigurationAsync(const DeleteRecordingConfigurationRequest& request, const DeleteRecordingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteRecordingConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void IVSClient::DeleteRecordingConfigurationAsyncHelper(const DeleteRecordingConfigurationRequest& request, const DeleteRecordingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteRecordingConfiguration(request), context);
+}
+
 DeleteStreamKeyOutcome IVSClient::DeleteStreamKey(const DeleteStreamKeyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -357,6 +415,33 @@ void IVSClient::GetPlaybackKeyPairAsync(const GetPlaybackKeyPairRequest& request
 void IVSClient::GetPlaybackKeyPairAsyncHelper(const GetPlaybackKeyPairRequest& request, const GetPlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetPlaybackKeyPair(request), context);
+}
+
+GetRecordingConfigurationOutcome IVSClient::GetRecordingConfiguration(const GetRecordingConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/GetRecordingConfiguration";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetRecordingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetRecordingConfigurationOutcomeCallable IVSClient::GetRecordingConfigurationCallable(const GetRecordingConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRecordingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRecordingConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IVSClient::GetRecordingConfigurationAsync(const GetRecordingConfigurationRequest& request, const GetRecordingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetRecordingConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void IVSClient::GetRecordingConfigurationAsyncHelper(const GetRecordingConfigurationRequest& request, const GetRecordingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRecordingConfiguration(request), context);
 }
 
 GetStreamOutcome IVSClient::GetStream(const GetStreamRequest& request) const
@@ -492,6 +577,33 @@ void IVSClient::ListPlaybackKeyPairsAsync(const ListPlaybackKeyPairsRequest& req
 void IVSClient::ListPlaybackKeyPairsAsyncHelper(const ListPlaybackKeyPairsRequest& request, const ListPlaybackKeyPairsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListPlaybackKeyPairs(request), context);
+}
+
+ListRecordingConfigurationsOutcome IVSClient::ListRecordingConfigurations(const ListRecordingConfigurationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/ListRecordingConfigurations";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListRecordingConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListRecordingConfigurationsOutcomeCallable IVSClient::ListRecordingConfigurationsCallable(const ListRecordingConfigurationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListRecordingConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRecordingConfigurations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IVSClient::ListRecordingConfigurationsAsync(const ListRecordingConfigurationsRequest& request, const ListRecordingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListRecordingConfigurationsAsyncHelper( request, handler, context ); } );
+}
+
+void IVSClient::ListRecordingConfigurationsAsyncHelper(const ListRecordingConfigurationsRequest& request, const ListRecordingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListRecordingConfigurations(request), context);
 }
 
 ListStreamKeysOutcome IVSClient::ListStreamKeys(const ListStreamKeysRequest& request) const

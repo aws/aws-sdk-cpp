@@ -20,7 +20,8 @@ UpdateChannelRequest::UpdateChannelRequest() :
     m_type(ChannelType::NOT_SET),
     m_typeHasBeenSet(false),
     m_authorized(false),
-    m_authorizedHasBeenSet(false)
+    m_authorizedHasBeenSet(false),
+    m_recordingConfigurationArnHasBeenSet(false)
 {
 }
 
@@ -53,6 +54,12 @@ Aws::String UpdateChannelRequest::SerializePayload() const
   if(m_authorizedHasBeenSet)
   {
    payload.WithBool("authorized", m_authorized);
+
+  }
+
+  if(m_recordingConfigurationArnHasBeenSet)
+  {
+   payload.WithString("recordingConfigurationArn", m_recordingConfigurationArn);
 
   }
 

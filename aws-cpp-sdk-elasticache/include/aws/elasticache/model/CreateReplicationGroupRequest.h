@@ -158,42 +158,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline const Aws::String& GetGlobalReplicationGroupId() const{ return m_globalReplicationGroupId; }
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline bool GlobalReplicationGroupIdHasBeenSet() const { return m_globalReplicationGroupIdHasBeenSet; }
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline void SetGlobalReplicationGroupId(const Aws::String& value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId = value; }
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline void SetGlobalReplicationGroupId(Aws::String&& value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId = std::move(value); }
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline void SetGlobalReplicationGroupId(const char* value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId.assign(value); }
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline CreateReplicationGroupRequest& WithGlobalReplicationGroupId(const Aws::String& value) { SetGlobalReplicationGroupId(value); return *this;}
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline CreateReplicationGroupRequest& WithGlobalReplicationGroupId(Aws::String&& value) { SetGlobalReplicationGroupId(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline CreateReplicationGroupRequest& WithGlobalReplicationGroupId(const char* value) { SetGlobalReplicationGroupId(value); return *this;}
 
@@ -1637,74 +1637,82 @@ namespace Model
 
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource. Tags are
-     * comma-separated key,value pairs (e.g. Key=<code>myKey</code>,
-     * Value=<code>myKeyValue</code>. You can include multiple tags as shown following:
-     * Key=<code>myKey</code>, Value=<code>myKeyValue</code>
-     * Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>.</p>
+     * <p>A list of tags to be added to this resource. Tags are comma-separated
+     * key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You
+     * can include multiple tags as shown following: Key=<code>myKey</code>,
+     * Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>,
+     * Value=<code>mySecondKeyValue</code>. Tags on replication groups will be
+     * replicated to all nodes.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource. Tags are
-     * comma-separated key,value pairs (e.g. Key=<code>myKey</code>,
-     * Value=<code>myKeyValue</code>. You can include multiple tags as shown following:
-     * Key=<code>myKey</code>, Value=<code>myKeyValue</code>
-     * Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>.</p>
+     * <p>A list of tags to be added to this resource. Tags are comma-separated
+     * key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You
+     * can include multiple tags as shown following: Key=<code>myKey</code>,
+     * Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>,
+     * Value=<code>mySecondKeyValue</code>. Tags on replication groups will be
+     * replicated to all nodes.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource. Tags are
-     * comma-separated key,value pairs (e.g. Key=<code>myKey</code>,
-     * Value=<code>myKeyValue</code>. You can include multiple tags as shown following:
-     * Key=<code>myKey</code>, Value=<code>myKeyValue</code>
-     * Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>.</p>
+     * <p>A list of tags to be added to this resource. Tags are comma-separated
+     * key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You
+     * can include multiple tags as shown following: Key=<code>myKey</code>,
+     * Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>,
+     * Value=<code>mySecondKeyValue</code>. Tags on replication groups will be
+     * replicated to all nodes.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource. Tags are
-     * comma-separated key,value pairs (e.g. Key=<code>myKey</code>,
-     * Value=<code>myKeyValue</code>. You can include multiple tags as shown following:
-     * Key=<code>myKey</code>, Value=<code>myKeyValue</code>
-     * Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>.</p>
+     * <p>A list of tags to be added to this resource. Tags are comma-separated
+     * key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You
+     * can include multiple tags as shown following: Key=<code>myKey</code>,
+     * Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>,
+     * Value=<code>mySecondKeyValue</code>. Tags on replication groups will be
+     * replicated to all nodes.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource. Tags are
-     * comma-separated key,value pairs (e.g. Key=<code>myKey</code>,
-     * Value=<code>myKeyValue</code>. You can include multiple tags as shown following:
-     * Key=<code>myKey</code>, Value=<code>myKeyValue</code>
-     * Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>.</p>
+     * <p>A list of tags to be added to this resource. Tags are comma-separated
+     * key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You
+     * can include multiple tags as shown following: Key=<code>myKey</code>,
+     * Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>,
+     * Value=<code>mySecondKeyValue</code>. Tags on replication groups will be
+     * replicated to all nodes.</p>
      */
     inline CreateReplicationGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource. Tags are
-     * comma-separated key,value pairs (e.g. Key=<code>myKey</code>,
-     * Value=<code>myKeyValue</code>. You can include multiple tags as shown following:
-     * Key=<code>myKey</code>, Value=<code>myKeyValue</code>
-     * Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>.</p>
+     * <p>A list of tags to be added to this resource. Tags are comma-separated
+     * key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You
+     * can include multiple tags as shown following: Key=<code>myKey</code>,
+     * Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>,
+     * Value=<code>mySecondKeyValue</code>. Tags on replication groups will be
+     * replicated to all nodes.</p>
      */
     inline CreateReplicationGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource. Tags are
-     * comma-separated key,value pairs (e.g. Key=<code>myKey</code>,
-     * Value=<code>myKeyValue</code>. You can include multiple tags as shown following:
-     * Key=<code>myKey</code>, Value=<code>myKeyValue</code>
-     * Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>.</p>
+     * <p>A list of tags to be added to this resource. Tags are comma-separated
+     * key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You
+     * can include multiple tags as shown following: Key=<code>myKey</code>,
+     * Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>,
+     * Value=<code>mySecondKeyValue</code>. Tags on replication groups will be
+     * replicated to all nodes.</p>
      */
     inline CreateReplicationGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource. Tags are
-     * comma-separated key,value pairs (e.g. Key=<code>myKey</code>,
-     * Value=<code>myKeyValue</code>. You can include multiple tags as shown following:
-     * Key=<code>myKey</code>, Value=<code>myKeyValue</code>
-     * Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>.</p>
+     * <p>A list of tags to be added to this resource. Tags are comma-separated
+     * key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You
+     * can include multiple tags as shown following: Key=<code>myKey</code>,
+     * Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>,
+     * Value=<code>mySecondKeyValue</code>. Tags on replication groups will be
+     * replicated to all nodes.</p>
      */
     inline CreateReplicationGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

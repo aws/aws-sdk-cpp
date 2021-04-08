@@ -131,38 +131,38 @@ namespace Model
 
 
     /**
-     * <p>The name of the Global Datastore and role of this replication group in the
-     * Global Datastore.</p>
+     * <p>The name of the Global datastore and role of this replication group in the
+     * Global datastore.</p>
      */
     inline const GlobalReplicationGroupInfo& GetGlobalReplicationGroupInfo() const{ return m_globalReplicationGroupInfo; }
 
     /**
-     * <p>The name of the Global Datastore and role of this replication group in the
-     * Global Datastore.</p>
+     * <p>The name of the Global datastore and role of this replication group in the
+     * Global datastore.</p>
      */
     inline bool GlobalReplicationGroupInfoHasBeenSet() const { return m_globalReplicationGroupInfoHasBeenSet; }
 
     /**
-     * <p>The name of the Global Datastore and role of this replication group in the
-     * Global Datastore.</p>
+     * <p>The name of the Global datastore and role of this replication group in the
+     * Global datastore.</p>
      */
     inline void SetGlobalReplicationGroupInfo(const GlobalReplicationGroupInfo& value) { m_globalReplicationGroupInfoHasBeenSet = true; m_globalReplicationGroupInfo = value; }
 
     /**
-     * <p>The name of the Global Datastore and role of this replication group in the
-     * Global Datastore.</p>
+     * <p>The name of the Global datastore and role of this replication group in the
+     * Global datastore.</p>
      */
     inline void SetGlobalReplicationGroupInfo(GlobalReplicationGroupInfo&& value) { m_globalReplicationGroupInfoHasBeenSet = true; m_globalReplicationGroupInfo = std::move(value); }
 
     /**
-     * <p>The name of the Global Datastore and role of this replication group in the
-     * Global Datastore.</p>
+     * <p>The name of the Global datastore and role of this replication group in the
+     * Global datastore.</p>
      */
     inline ReplicationGroup& WithGlobalReplicationGroupInfo(const GlobalReplicationGroupInfo& value) { SetGlobalReplicationGroupInfo(value); return *this;}
 
     /**
-     * <p>The name of the Global Datastore and role of this replication group in the
-     * Global Datastore.</p>
+     * <p>The name of the Global datastore and role of this replication group in the
+     * Global datastore.</p>
      */
     inline ReplicationGroup& WithGlobalReplicationGroupInfo(GlobalReplicationGroupInfo&& value) { SetGlobalReplicationGroupInfo(std::move(value)); return *this;}
 

@@ -679,73 +679,161 @@ namespace Model
 
 
     /**
-     * <p>Refresh cache information.</p>
+     * <p>Refresh cache information for the file share.</p>
      */
     inline const CacheAttributes& GetCacheAttributes() const{ return m_cacheAttributes; }
 
     /**
-     * <p>Refresh cache information.</p>
+     * <p>Refresh cache information for the file share.</p>
      */
     inline bool CacheAttributesHasBeenSet() const { return m_cacheAttributesHasBeenSet; }
 
     /**
-     * <p>Refresh cache information.</p>
+     * <p>Refresh cache information for the file share.</p>
      */
     inline void SetCacheAttributes(const CacheAttributes& value) { m_cacheAttributesHasBeenSet = true; m_cacheAttributes = value; }
 
     /**
-     * <p>Refresh cache information.</p>
+     * <p>Refresh cache information for the file share.</p>
      */
     inline void SetCacheAttributes(CacheAttributes&& value) { m_cacheAttributesHasBeenSet = true; m_cacheAttributes = std::move(value); }
 
     /**
-     * <p>Refresh cache information.</p>
+     * <p>Refresh cache information for the file share.</p>
      */
     inline NFSFileShareInfo& WithCacheAttributes(const CacheAttributes& value) { SetCacheAttributes(value); return *this;}
 
     /**
-     * <p>Refresh cache information.</p>
+     * <p>Refresh cache information for the file share.</p>
      */
     inline NFSFileShareInfo& WithCacheAttributes(CacheAttributes&& value) { SetCacheAttributes(std::move(value)); return *this;}
 
 
     /**
-     * <p>The notification policy of the file share.</p>
+     * <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code>
+     * controls the number of seconds to wait after the last point in time a client
+     * wrote to a file before generating an <code>ObjectUploaded</code> notification.
+     * Because clients can make many small writes to files, it's best to set this
+     * parameter for as long as possible to avoid generating multiple notifications for
+     * the same file in a small time period.</p>  <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object
+     * uploading to Amazon S3, only the timing of the notification.</p>  <p>The
+     * following example sets <code>NotificationPolicy</code> on with
+     * <code>SettlingTimeInSeconds</code> set to 60.</p> <p> <code>{\"Upload\":
+     * {\"SettlingTimeInSeconds\": 60}}</code> </p> <p>The following example sets
+     * <code>NotificationPolicy</code> off.</p> <p> <code>{}</code> </p>
      */
     inline const Aws::String& GetNotificationPolicy() const{ return m_notificationPolicy; }
 
     /**
-     * <p>The notification policy of the file share.</p>
+     * <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code>
+     * controls the number of seconds to wait after the last point in time a client
+     * wrote to a file before generating an <code>ObjectUploaded</code> notification.
+     * Because clients can make many small writes to files, it's best to set this
+     * parameter for as long as possible to avoid generating multiple notifications for
+     * the same file in a small time period.</p>  <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object
+     * uploading to Amazon S3, only the timing of the notification.</p>  <p>The
+     * following example sets <code>NotificationPolicy</code> on with
+     * <code>SettlingTimeInSeconds</code> set to 60.</p> <p> <code>{\"Upload\":
+     * {\"SettlingTimeInSeconds\": 60}}</code> </p> <p>The following example sets
+     * <code>NotificationPolicy</code> off.</p> <p> <code>{}</code> </p>
      */
     inline bool NotificationPolicyHasBeenSet() const { return m_notificationPolicyHasBeenSet; }
 
     /**
-     * <p>The notification policy of the file share.</p>
+     * <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code>
+     * controls the number of seconds to wait after the last point in time a client
+     * wrote to a file before generating an <code>ObjectUploaded</code> notification.
+     * Because clients can make many small writes to files, it's best to set this
+     * parameter for as long as possible to avoid generating multiple notifications for
+     * the same file in a small time period.</p>  <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object
+     * uploading to Amazon S3, only the timing of the notification.</p>  <p>The
+     * following example sets <code>NotificationPolicy</code> on with
+     * <code>SettlingTimeInSeconds</code> set to 60.</p> <p> <code>{\"Upload\":
+     * {\"SettlingTimeInSeconds\": 60}}</code> </p> <p>The following example sets
+     * <code>NotificationPolicy</code> off.</p> <p> <code>{}</code> </p>
      */
     inline void SetNotificationPolicy(const Aws::String& value) { m_notificationPolicyHasBeenSet = true; m_notificationPolicy = value; }
 
     /**
-     * <p>The notification policy of the file share.</p>
+     * <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code>
+     * controls the number of seconds to wait after the last point in time a client
+     * wrote to a file before generating an <code>ObjectUploaded</code> notification.
+     * Because clients can make many small writes to files, it's best to set this
+     * parameter for as long as possible to avoid generating multiple notifications for
+     * the same file in a small time period.</p>  <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object
+     * uploading to Amazon S3, only the timing of the notification.</p>  <p>The
+     * following example sets <code>NotificationPolicy</code> on with
+     * <code>SettlingTimeInSeconds</code> set to 60.</p> <p> <code>{\"Upload\":
+     * {\"SettlingTimeInSeconds\": 60}}</code> </p> <p>The following example sets
+     * <code>NotificationPolicy</code> off.</p> <p> <code>{}</code> </p>
      */
     inline void SetNotificationPolicy(Aws::String&& value) { m_notificationPolicyHasBeenSet = true; m_notificationPolicy = std::move(value); }
 
     /**
-     * <p>The notification policy of the file share.</p>
+     * <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code>
+     * controls the number of seconds to wait after the last point in time a client
+     * wrote to a file before generating an <code>ObjectUploaded</code> notification.
+     * Because clients can make many small writes to files, it's best to set this
+     * parameter for as long as possible to avoid generating multiple notifications for
+     * the same file in a small time period.</p>  <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object
+     * uploading to Amazon S3, only the timing of the notification.</p>  <p>The
+     * following example sets <code>NotificationPolicy</code> on with
+     * <code>SettlingTimeInSeconds</code> set to 60.</p> <p> <code>{\"Upload\":
+     * {\"SettlingTimeInSeconds\": 60}}</code> </p> <p>The following example sets
+     * <code>NotificationPolicy</code> off.</p> <p> <code>{}</code> </p>
      */
     inline void SetNotificationPolicy(const char* value) { m_notificationPolicyHasBeenSet = true; m_notificationPolicy.assign(value); }
 
     /**
-     * <p>The notification policy of the file share.</p>
+     * <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code>
+     * controls the number of seconds to wait after the last point in time a client
+     * wrote to a file before generating an <code>ObjectUploaded</code> notification.
+     * Because clients can make many small writes to files, it's best to set this
+     * parameter for as long as possible to avoid generating multiple notifications for
+     * the same file in a small time period.</p>  <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object
+     * uploading to Amazon S3, only the timing of the notification.</p>  <p>The
+     * following example sets <code>NotificationPolicy</code> on with
+     * <code>SettlingTimeInSeconds</code> set to 60.</p> <p> <code>{\"Upload\":
+     * {\"SettlingTimeInSeconds\": 60}}</code> </p> <p>The following example sets
+     * <code>NotificationPolicy</code> off.</p> <p> <code>{}</code> </p>
      */
     inline NFSFileShareInfo& WithNotificationPolicy(const Aws::String& value) { SetNotificationPolicy(value); return *this;}
 
     /**
-     * <p>The notification policy of the file share.</p>
+     * <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code>
+     * controls the number of seconds to wait after the last point in time a client
+     * wrote to a file before generating an <code>ObjectUploaded</code> notification.
+     * Because clients can make many small writes to files, it's best to set this
+     * parameter for as long as possible to avoid generating multiple notifications for
+     * the same file in a small time period.</p>  <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object
+     * uploading to Amazon S3, only the timing of the notification.</p>  <p>The
+     * following example sets <code>NotificationPolicy</code> on with
+     * <code>SettlingTimeInSeconds</code> set to 60.</p> <p> <code>{\"Upload\":
+     * {\"SettlingTimeInSeconds\": 60}}</code> </p> <p>The following example sets
+     * <code>NotificationPolicy</code> off.</p> <p> <code>{}</code> </p>
      */
     inline NFSFileShareInfo& WithNotificationPolicy(Aws::String&& value) { SetNotificationPolicy(std::move(value)); return *this;}
 
     /**
-     * <p>The notification policy of the file share.</p>
+     * <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code>
+     * controls the number of seconds to wait after the last point in time a client
+     * wrote to a file before generating an <code>ObjectUploaded</code> notification.
+     * Because clients can make many small writes to files, it's best to set this
+     * parameter for as long as possible to avoid generating multiple notifications for
+     * the same file in a small time period.</p>  <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object
+     * uploading to Amazon S3, only the timing of the notification.</p>  <p>The
+     * following example sets <code>NotificationPolicy</code> on with
+     * <code>SettlingTimeInSeconds</code> set to 60.</p> <p> <code>{\"Upload\":
+     * {\"SettlingTimeInSeconds\": 60}}</code> </p> <p>The following example sets
+     * <code>NotificationPolicy</code> off.</p> <p> <code>{}</code> </p>
      */
     inline NFSFileShareInfo& WithNotificationPolicy(const char* value) { SetNotificationPolicy(value); return *this;}
 

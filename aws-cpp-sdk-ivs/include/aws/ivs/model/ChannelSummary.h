@@ -122,55 +122,140 @@ namespace Model
 
 
     /**
-     * <p>Channel latency mode. Default: <code>LOW</code>.</p>
+     * <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live
+     * video up to Full HD. Use <code>LOW</code> for near-real-time interaction with
+     * viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS console,
+     * <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard,
+     * respectively.)</p>
      */
     inline const ChannelLatencyMode& GetLatencyMode() const{ return m_latencyMode; }
 
     /**
-     * <p>Channel latency mode. Default: <code>LOW</code>.</p>
+     * <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live
+     * video up to Full HD. Use <code>LOW</code> for near-real-time interaction with
+     * viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS console,
+     * <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard,
+     * respectively.)</p>
      */
     inline bool LatencyModeHasBeenSet() const { return m_latencyModeHasBeenSet; }
 
     /**
-     * <p>Channel latency mode. Default: <code>LOW</code>.</p>
+     * <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live
+     * video up to Full HD. Use <code>LOW</code> for near-real-time interaction with
+     * viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS console,
+     * <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard,
+     * respectively.)</p>
      */
     inline void SetLatencyMode(const ChannelLatencyMode& value) { m_latencyModeHasBeenSet = true; m_latencyMode = value; }
 
     /**
-     * <p>Channel latency mode. Default: <code>LOW</code>.</p>
+     * <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live
+     * video up to Full HD. Use <code>LOW</code> for near-real-time interaction with
+     * viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS console,
+     * <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard,
+     * respectively.)</p>
      */
     inline void SetLatencyMode(ChannelLatencyMode&& value) { m_latencyModeHasBeenSet = true; m_latencyMode = std::move(value); }
 
     /**
-     * <p>Channel latency mode. Default: <code>LOW</code>.</p>
+     * <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live
+     * video up to Full HD. Use <code>LOW</code> for near-real-time interaction with
+     * viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS console,
+     * <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard,
+     * respectively.)</p>
      */
     inline ChannelSummary& WithLatencyMode(const ChannelLatencyMode& value) { SetLatencyMode(value); return *this;}
 
     /**
-     * <p>Channel latency mode. Default: <code>LOW</code>.</p>
+     * <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live
+     * video up to Full HD. Use <code>LOW</code> for near-real-time interaction with
+     * viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS console,
+     * <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard,
+     * respectively.)</p>
      */
     inline ChannelSummary& WithLatencyMode(ChannelLatencyMode&& value) { SetLatencyMode(std::move(value)); return *this;}
 
 
     /**
-     * <p>Whether the channel is authorized.</p>
+     * <p>Whether the channel is private (enabled for playback authorization). Default:
+     * <code>false</code>.</p>
      */
     inline bool GetAuthorized() const{ return m_authorized; }
 
     /**
-     * <p>Whether the channel is authorized.</p>
+     * <p>Whether the channel is private (enabled for playback authorization). Default:
+     * <code>false</code>.</p>
      */
     inline bool AuthorizedHasBeenSet() const { return m_authorizedHasBeenSet; }
 
     /**
-     * <p>Whether the channel is authorized.</p>
+     * <p>Whether the channel is private (enabled for playback authorization). Default:
+     * <code>false</code>.</p>
      */
     inline void SetAuthorized(bool value) { m_authorizedHasBeenSet = true; m_authorized = value; }
 
     /**
-     * <p>Whether the channel is authorized.</p>
+     * <p>Whether the channel is private (enabled for playback authorization). Default:
+     * <code>false</code>.</p>
      */
     inline ChannelSummary& WithAuthorized(bool value) { SetAuthorized(value); return *this;}
+
+
+    /**
+     * <p>Recording-configuration ARN. A value other than an empty string indicates
+     * that recording is enabled. Default: "" (empty string, recording is
+     * disabled).</p>
+     */
+    inline const Aws::String& GetRecordingConfigurationArn() const{ return m_recordingConfigurationArn; }
+
+    /**
+     * <p>Recording-configuration ARN. A value other than an empty string indicates
+     * that recording is enabled. Default: "" (empty string, recording is
+     * disabled).</p>
+     */
+    inline bool RecordingConfigurationArnHasBeenSet() const { return m_recordingConfigurationArnHasBeenSet; }
+
+    /**
+     * <p>Recording-configuration ARN. A value other than an empty string indicates
+     * that recording is enabled. Default: "" (empty string, recording is
+     * disabled).</p>
+     */
+    inline void SetRecordingConfigurationArn(const Aws::String& value) { m_recordingConfigurationArnHasBeenSet = true; m_recordingConfigurationArn = value; }
+
+    /**
+     * <p>Recording-configuration ARN. A value other than an empty string indicates
+     * that recording is enabled. Default: "" (empty string, recording is
+     * disabled).</p>
+     */
+    inline void SetRecordingConfigurationArn(Aws::String&& value) { m_recordingConfigurationArnHasBeenSet = true; m_recordingConfigurationArn = std::move(value); }
+
+    /**
+     * <p>Recording-configuration ARN. A value other than an empty string indicates
+     * that recording is enabled. Default: "" (empty string, recording is
+     * disabled).</p>
+     */
+    inline void SetRecordingConfigurationArn(const char* value) { m_recordingConfigurationArnHasBeenSet = true; m_recordingConfigurationArn.assign(value); }
+
+    /**
+     * <p>Recording-configuration ARN. A value other than an empty string indicates
+     * that recording is enabled. Default: "" (empty string, recording is
+     * disabled).</p>
+     */
+    inline ChannelSummary& WithRecordingConfigurationArn(const Aws::String& value) { SetRecordingConfigurationArn(value); return *this;}
+
+    /**
+     * <p>Recording-configuration ARN. A value other than an empty string indicates
+     * that recording is enabled. Default: "" (empty string, recording is
+     * disabled).</p>
+     */
+    inline ChannelSummary& WithRecordingConfigurationArn(Aws::String&& value) { SetRecordingConfigurationArn(std::move(value)); return *this;}
+
+    /**
+     * <p>Recording-configuration ARN. A value other than an empty string indicates
+     * that recording is enabled. Default: "" (empty string, recording is
+     * disabled).</p>
+     */
+    inline ChannelSummary& WithRecordingConfigurationArn(const char* value) { SetRecordingConfigurationArn(value); return *this;}
 
 
     /**
@@ -264,6 +349,9 @@ namespace Model
 
     bool m_authorized;
     bool m_authorizedHasBeenSet;
+
+    Aws::String m_recordingConfigurationArn;
+    bool m_recordingConfigurationArnHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

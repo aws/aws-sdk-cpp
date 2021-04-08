@@ -21,6 +21,7 @@
 #include <aws/accessanalyzer/AccessAnalyzerEndpoint.h>
 #include <aws/accessanalyzer/AccessAnalyzerErrorMarshaller.h>
 #include <aws/accessanalyzer/model/ApplyArchiveRuleRequest.h>
+#include <aws/accessanalyzer/model/CancelPolicyGenerationRequest.h>
 #include <aws/accessanalyzer/model/CreateAccessPreviewRequest.h>
 #include <aws/accessanalyzer/model/CreateAnalyzerRequest.h>
 #include <aws/accessanalyzer/model/CreateArchiveRuleRequest.h>
@@ -31,13 +32,16 @@
 #include <aws/accessanalyzer/model/GetAnalyzerRequest.h>
 #include <aws/accessanalyzer/model/GetArchiveRuleRequest.h>
 #include <aws/accessanalyzer/model/GetFindingRequest.h>
+#include <aws/accessanalyzer/model/GetGeneratedPolicyRequest.h>
 #include <aws/accessanalyzer/model/ListAccessPreviewFindingsRequest.h>
 #include <aws/accessanalyzer/model/ListAccessPreviewsRequest.h>
 #include <aws/accessanalyzer/model/ListAnalyzedResourcesRequest.h>
 #include <aws/accessanalyzer/model/ListAnalyzersRequest.h>
 #include <aws/accessanalyzer/model/ListArchiveRulesRequest.h>
 #include <aws/accessanalyzer/model/ListFindingsRequest.h>
+#include <aws/accessanalyzer/model/ListPolicyGenerationsRequest.h>
 #include <aws/accessanalyzer/model/ListTagsForResourceRequest.h>
+#include <aws/accessanalyzer/model/StartPolicyGenerationRequest.h>
 #include <aws/accessanalyzer/model/StartResourceScanRequest.h>
 #include <aws/accessanalyzer/model/TagResourceRequest.h>
 #include <aws/accessanalyzer/model/UntagResourceRequest.h>
@@ -143,6 +147,39 @@ void AccessAnalyzerClient::ApplyArchiveRuleAsync(const ApplyArchiveRuleRequest& 
 void AccessAnalyzerClient::ApplyArchiveRuleAsyncHelper(const ApplyArchiveRuleRequest& request, const ApplyArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ApplyArchiveRule(request), context);
+}
+
+CancelPolicyGenerationOutcome AccessAnalyzerClient::CancelPolicyGeneration(const CancelPolicyGenerationRequest& request) const
+{
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CancelPolicyGeneration", "Required field: JobId, is not set");
+    return CancelPolicyGenerationOutcome(Aws::Client::AWSError<AccessAnalyzerErrors>(AccessAnalyzerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/policy/generation/";
+  ss << request.GetJobId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CancelPolicyGenerationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+CancelPolicyGenerationOutcomeCallable AccessAnalyzerClient::CancelPolicyGenerationCallable(const CancelPolicyGenerationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CancelPolicyGenerationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelPolicyGeneration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AccessAnalyzerClient::CancelPolicyGenerationAsync(const CancelPolicyGenerationRequest& request, const CancelPolicyGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CancelPolicyGenerationAsyncHelper( request, handler, context ); } );
+}
+
+void AccessAnalyzerClient::CancelPolicyGenerationAsyncHelper(const CancelPolicyGenerationRequest& request, const CancelPolicyGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CancelPolicyGeneration(request), context);
 }
 
 CreateAccessPreviewOutcome AccessAnalyzerClient::CreateAccessPreview(const CreateAccessPreviewRequest& request) const
@@ -492,6 +529,39 @@ void AccessAnalyzerClient::GetFindingAsyncHelper(const GetFindingRequest& reques
   handler(this, request, GetFinding(request), context);
 }
 
+GetGeneratedPolicyOutcome AccessAnalyzerClient::GetGeneratedPolicy(const GetGeneratedPolicyRequest& request) const
+{
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetGeneratedPolicy", "Required field: JobId, is not set");
+    return GetGeneratedPolicyOutcome(Aws::Client::AWSError<AccessAnalyzerErrors>(AccessAnalyzerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/policy/generation/";
+  ss << request.GetJobId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetGeneratedPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetGeneratedPolicyOutcomeCallable AccessAnalyzerClient::GetGeneratedPolicyCallable(const GetGeneratedPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetGeneratedPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetGeneratedPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AccessAnalyzerClient::GetGeneratedPolicyAsync(const GetGeneratedPolicyRequest& request, const GetGeneratedPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetGeneratedPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void AccessAnalyzerClient::GetGeneratedPolicyAsyncHelper(const GetGeneratedPolicyRequest& request, const GetGeneratedPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetGeneratedPolicy(request), context);
+}
+
 ListAccessPreviewFindingsOutcome AccessAnalyzerClient::ListAccessPreviewFindings(const ListAccessPreviewFindingsRequest& request) const
 {
   if (!request.AccessPreviewIdHasBeenSet())
@@ -672,6 +742,33 @@ void AccessAnalyzerClient::ListFindingsAsyncHelper(const ListFindingsRequest& re
   handler(this, request, ListFindings(request), context);
 }
 
+ListPolicyGenerationsOutcome AccessAnalyzerClient::ListPolicyGenerations(const ListPolicyGenerationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/policy/generation";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListPolicyGenerationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListPolicyGenerationsOutcomeCallable AccessAnalyzerClient::ListPolicyGenerationsCallable(const ListPolicyGenerationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListPolicyGenerationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPolicyGenerations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AccessAnalyzerClient::ListPolicyGenerationsAsync(const ListPolicyGenerationsRequest& request, const ListPolicyGenerationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListPolicyGenerationsAsyncHelper( request, handler, context ); } );
+}
+
+void AccessAnalyzerClient::ListPolicyGenerationsAsyncHelper(const ListPolicyGenerationsRequest& request, const ListPolicyGenerationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListPolicyGenerations(request), context);
+}
+
 ListTagsForResourceOutcome AccessAnalyzerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   if (!request.ResourceArnHasBeenSet())
@@ -703,6 +800,33 @@ void AccessAnalyzerClient::ListTagsForResourceAsync(const ListTagsForResourceReq
 void AccessAnalyzerClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+StartPolicyGenerationOutcome AccessAnalyzerClient::StartPolicyGeneration(const StartPolicyGenerationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/policy/generation";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return StartPolicyGenerationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartPolicyGenerationOutcomeCallable AccessAnalyzerClient::StartPolicyGenerationCallable(const StartPolicyGenerationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartPolicyGenerationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartPolicyGeneration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AccessAnalyzerClient::StartPolicyGenerationAsync(const StartPolicyGenerationRequest& request, const StartPolicyGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartPolicyGenerationAsyncHelper( request, handler, context ); } );
+}
+
+void AccessAnalyzerClient::StartPolicyGenerationAsyncHelper(const StartPolicyGenerationRequest& request, const StartPolicyGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartPolicyGeneration(request), context);
 }
 
 StartResourceScanOutcome AccessAnalyzerClient::StartResourceScan(const StartResourceScanRequest& request) const

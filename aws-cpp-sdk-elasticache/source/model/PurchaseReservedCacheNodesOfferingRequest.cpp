@@ -14,7 +14,8 @@ PurchaseReservedCacheNodesOfferingRequest::PurchaseReservedCacheNodesOfferingReq
     m_reservedCacheNodesOfferingIdHasBeenSet(false),
     m_reservedCacheNodeIdHasBeenSet(false),
     m_cacheNodeCount(0),
-    m_cacheNodeCountHasBeenSet(false)
+    m_cacheNodeCountHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -35,6 +36,16 @@ Aws::String PurchaseReservedCacheNodesOfferingRequest::SerializePayload() const
   if(m_cacheNodeCountHasBeenSet)
   {
     ss << "CacheNodeCount=" << m_cacheNodeCount << "&";
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      tagsCount++;
+    }
   }
 
   ss << "Version=2015-02-02";

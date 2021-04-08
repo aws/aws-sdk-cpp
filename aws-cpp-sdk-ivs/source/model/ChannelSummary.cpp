@@ -25,6 +25,7 @@ ChannelSummary::ChannelSummary() :
     m_latencyModeHasBeenSet(false),
     m_authorized(false),
     m_authorizedHasBeenSet(false),
+    m_recordingConfigurationArnHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -36,6 +37,7 @@ ChannelSummary::ChannelSummary(JsonView jsonValue) :
     m_latencyModeHasBeenSet(false),
     m_authorized(false),
     m_authorizedHasBeenSet(false),
+    m_recordingConfigurationArnHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -69,6 +71,13 @@ ChannelSummary& ChannelSummary::operator =(JsonView jsonValue)
     m_authorized = jsonValue.GetBool("authorized");
 
     m_authorizedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("recordingConfigurationArn"))
+  {
+    m_recordingConfigurationArn = jsonValue.GetString("recordingConfigurationArn");
+
+    m_recordingConfigurationArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -108,6 +117,12 @@ JsonValue ChannelSummary::Jsonize() const
   if(m_authorizedHasBeenSet)
   {
    payload.WithBool("authorized", m_authorized);
+
+  }
+
+  if(m_recordingConfigurationArnHasBeenSet)
+  {
+   payload.WithString("recordingConfigurationArn", m_recordingConfigurationArn);
 
   }
 

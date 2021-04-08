@@ -20,6 +20,7 @@ CreateChannelRequest::CreateChannelRequest() :
     m_typeHasBeenSet(false),
     m_authorized(false),
     m_authorizedHasBeenSet(false),
+    m_recordingConfigurationArnHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -47,6 +48,12 @@ Aws::String CreateChannelRequest::SerializePayload() const
   if(m_authorizedHasBeenSet)
   {
    payload.WithBool("authorized", m_authorized);
+
+  }
+
+  if(m_recordingConfigurationArnHasBeenSet)
+  {
+   payload.WithString("recordingConfigurationArn", m_recordingConfigurationArn);
 
   }
 

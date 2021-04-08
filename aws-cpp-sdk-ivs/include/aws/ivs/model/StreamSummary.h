@@ -144,22 +144,26 @@ namespace Model
 
 
     /**
-     * <p>Number of current viewers of the stream.</p>
+     * <p>Number of current viewers of the stream. A value of -1 indicates that the
+     * request timed out; in this case, retry.</p>
      */
     inline long long GetViewerCount() const{ return m_viewerCount; }
 
     /**
-     * <p>Number of current viewers of the stream.</p>
+     * <p>Number of current viewers of the stream. A value of -1 indicates that the
+     * request timed out; in this case, retry.</p>
      */
     inline bool ViewerCountHasBeenSet() const { return m_viewerCountHasBeenSet; }
 
     /**
-     * <p>Number of current viewers of the stream.</p>
+     * <p>Number of current viewers of the stream. A value of -1 indicates that the
+     * request timed out; in this case, retry.</p>
      */
     inline void SetViewerCount(long long value) { m_viewerCountHasBeenSet = true; m_viewerCount = value; }
 
     /**
-     * <p>Number of current viewers of the stream.</p>
+     * <p>Number of current viewers of the stream. A value of -1 indicates that the
+     * request timed out; in this case, retry.</p>
      */
     inline StreamSummary& WithViewerCount(long long value) { SetViewerCount(value); return *this;}
 
