@@ -37,6 +37,7 @@
 #include <aws/autoscaling/model/DeletePolicyRequest.h>
 #include <aws/autoscaling/model/DeleteScheduledActionRequest.h>
 #include <aws/autoscaling/model/DeleteTagsRequest.h>
+#include <aws/autoscaling/model/DeleteWarmPoolRequest.h>
 #include <aws/autoscaling/model/DescribeAccountLimitsRequest.h>
 #include <aws/autoscaling/model/DescribeAdjustmentTypesRequest.h>
 #include <aws/autoscaling/model/DescribeAutoScalingGroupsRequest.h>
@@ -56,6 +57,7 @@
 #include <aws/autoscaling/model/DescribeScheduledActionsRequest.h>
 #include <aws/autoscaling/model/DescribeTagsRequest.h>
 #include <aws/autoscaling/model/DescribeTerminationPolicyTypesRequest.h>
+#include <aws/autoscaling/model/DescribeWarmPoolRequest.h>
 #include <aws/autoscaling/model/DetachInstancesRequest.h>
 #include <aws/autoscaling/model/DetachLoadBalancerTargetGroupsRequest.h>
 #include <aws/autoscaling/model/DetachLoadBalancersRequest.h>
@@ -68,6 +70,7 @@
 #include <aws/autoscaling/model/PutNotificationConfigurationRequest.h>
 #include <aws/autoscaling/model/PutScalingPolicyRequest.h>
 #include <aws/autoscaling/model/PutScheduledUpdateGroupActionRequest.h>
+#include <aws/autoscaling/model/PutWarmPoolRequest.h>
 #include <aws/autoscaling/model/RecordLifecycleActionHeartbeatRequest.h>
 #include <aws/autoscaling/model/ResumeProcessesRequest.h>
 #include <aws/autoscaling/model/SetDesiredCapacityRequest.h>
@@ -621,6 +624,33 @@ void AutoScalingClient::DeleteTagsAsyncHelper(const DeleteTagsRequest& request, 
   handler(this, request, DeleteTags(request), context);
 }
 
+DeleteWarmPoolOutcome AutoScalingClient::DeleteWarmPool(const DeleteWarmPoolRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteWarmPoolOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeleteWarmPoolOutcomeCallable AutoScalingClient::DeleteWarmPoolCallable(const DeleteWarmPoolRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteWarmPoolOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWarmPool(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AutoScalingClient::DeleteWarmPoolAsync(const DeleteWarmPoolRequest& request, const DeleteWarmPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteWarmPoolAsyncHelper( request, handler, context ); } );
+}
+
+void AutoScalingClient::DeleteWarmPoolAsyncHelper(const DeleteWarmPoolRequest& request, const DeleteWarmPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteWarmPool(request), context);
+}
+
 DescribeAccountLimitsOutcome AutoScalingClient::DescribeAccountLimits(const DescribeAccountLimitsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1134,6 +1164,33 @@ void AutoScalingClient::DescribeTerminationPolicyTypesAsyncHelper(const Describe
   handler(this, request, DescribeTerminationPolicyTypes(request), context);
 }
 
+DescribeWarmPoolOutcome AutoScalingClient::DescribeWarmPool(const DescribeWarmPoolRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeWarmPoolOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeWarmPoolOutcomeCallable AutoScalingClient::DescribeWarmPoolCallable(const DescribeWarmPoolRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeWarmPoolOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeWarmPool(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AutoScalingClient::DescribeWarmPoolAsync(const DescribeWarmPoolRequest& request, const DescribeWarmPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeWarmPoolAsyncHelper( request, handler, context ); } );
+}
+
+void AutoScalingClient::DescribeWarmPoolAsyncHelper(const DescribeWarmPoolRequest& request, const DescribeWarmPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeWarmPool(request), context);
+}
+
 DetachInstancesOutcome AutoScalingClient::DetachInstances(const DetachInstancesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1456,6 +1513,33 @@ void AutoScalingClient::PutScheduledUpdateGroupActionAsync(const PutScheduledUpd
 void AutoScalingClient::PutScheduledUpdateGroupActionAsyncHelper(const PutScheduledUpdateGroupActionRequest& request, const PutScheduledUpdateGroupActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutScheduledUpdateGroupAction(request), context);
+}
+
+PutWarmPoolOutcome AutoScalingClient::PutWarmPool(const PutWarmPoolRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return PutWarmPoolOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+PutWarmPoolOutcomeCallable AutoScalingClient::PutWarmPoolCallable(const PutWarmPoolRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutWarmPoolOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutWarmPool(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AutoScalingClient::PutWarmPoolAsync(const PutWarmPoolRequest& request, const PutWarmPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutWarmPoolAsyncHelper( request, handler, context ); } );
+}
+
+void AutoScalingClient::PutWarmPoolAsyncHelper(const PutWarmPoolRequest& request, const PutWarmPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutWarmPool(request), context);
 }
 
 RecordLifecycleActionHeartbeatOutcome AutoScalingClient::RecordLifecycleActionHeartbeat(const RecordLifecycleActionHeartbeatRequest& request) const

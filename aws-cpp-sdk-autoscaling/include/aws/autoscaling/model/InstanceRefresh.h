@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/autoscaling/model/InstanceRefreshStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/autoscaling/model/InstanceRefreshProgressDetails.h>
 #include <utility>
 
 namespace Aws
@@ -379,6 +380,43 @@ namespace Model
      */
     inline InstanceRefresh& WithInstancesToUpdate(int value) { SetInstancesToUpdate(value); return *this;}
 
+
+    /**
+     * <p>Additional progress details for an Auto Scaling group that has a warm
+     * pool.</p>
+     */
+    inline const InstanceRefreshProgressDetails& GetProgressDetails() const{ return m_progressDetails; }
+
+    /**
+     * <p>Additional progress details for an Auto Scaling group that has a warm
+     * pool.</p>
+     */
+    inline bool ProgressDetailsHasBeenSet() const { return m_progressDetailsHasBeenSet; }
+
+    /**
+     * <p>Additional progress details for an Auto Scaling group that has a warm
+     * pool.</p>
+     */
+    inline void SetProgressDetails(const InstanceRefreshProgressDetails& value) { m_progressDetailsHasBeenSet = true; m_progressDetails = value; }
+
+    /**
+     * <p>Additional progress details for an Auto Scaling group that has a warm
+     * pool.</p>
+     */
+    inline void SetProgressDetails(InstanceRefreshProgressDetails&& value) { m_progressDetailsHasBeenSet = true; m_progressDetails = std::move(value); }
+
+    /**
+     * <p>Additional progress details for an Auto Scaling group that has a warm
+     * pool.</p>
+     */
+    inline InstanceRefresh& WithProgressDetails(const InstanceRefreshProgressDetails& value) { SetProgressDetails(value); return *this;}
+
+    /**
+     * <p>Additional progress details for an Auto Scaling group that has a warm
+     * pool.</p>
+     */
+    inline InstanceRefresh& WithProgressDetails(InstanceRefreshProgressDetails&& value) { SetProgressDetails(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_instanceRefreshId;
@@ -404,6 +442,9 @@ namespace Model
 
     int m_instancesToUpdate;
     bool m_instancesToUpdateHasBeenSet;
+
+    InstanceRefreshProgressDetails m_progressDetails;
+    bool m_progressDetailsHasBeenSet;
   };
 
 } // namespace Model

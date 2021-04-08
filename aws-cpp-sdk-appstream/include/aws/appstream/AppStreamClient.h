@@ -21,6 +21,7 @@
 #include <aws/appstream/model/CreateImageBuilderStreamingURLResult.h>
 #include <aws/appstream/model/CreateStackResult.h>
 #include <aws/appstream/model/CreateStreamingURLResult.h>
+#include <aws/appstream/model/CreateUpdatedImageResult.h>
 #include <aws/appstream/model/CreateUsageReportSubscriptionResult.h>
 #include <aws/appstream/model/CreateUserResult.h>
 #include <aws/appstream/model/DeleteDirectoryConfigResult.h>
@@ -107,6 +108,7 @@ namespace Model
         class CreateImageBuilderStreamingURLRequest;
         class CreateStackRequest;
         class CreateStreamingURLRequest;
+        class CreateUpdatedImageRequest;
         class CreateUsageReportSubscriptionRequest;
         class CreateUserRequest;
         class DeleteDirectoryConfigRequest;
@@ -155,6 +157,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateImageBuilderStreamingURLResult, AppStreamError> CreateImageBuilderStreamingURLOutcome;
         typedef Aws::Utils::Outcome<CreateStackResult, AppStreamError> CreateStackOutcome;
         typedef Aws::Utils::Outcome<CreateStreamingURLResult, AppStreamError> CreateStreamingURLOutcome;
+        typedef Aws::Utils::Outcome<CreateUpdatedImageResult, AppStreamError> CreateUpdatedImageOutcome;
         typedef Aws::Utils::Outcome<CreateUsageReportSubscriptionResult, AppStreamError> CreateUsageReportSubscriptionOutcome;
         typedef Aws::Utils::Outcome<CreateUserResult, AppStreamError> CreateUserOutcome;
         typedef Aws::Utils::Outcome<DeleteDirectoryConfigResult, AppStreamError> DeleteDirectoryConfigOutcome;
@@ -203,6 +206,7 @@ namespace Model
         typedef std::future<CreateImageBuilderStreamingURLOutcome> CreateImageBuilderStreamingURLOutcomeCallable;
         typedef std::future<CreateStackOutcome> CreateStackOutcomeCallable;
         typedef std::future<CreateStreamingURLOutcome> CreateStreamingURLOutcomeCallable;
+        typedef std::future<CreateUpdatedImageOutcome> CreateUpdatedImageOutcomeCallable;
         typedef std::future<CreateUsageReportSubscriptionOutcome> CreateUsageReportSubscriptionOutcomeCallable;
         typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
         typedef std::future<DeleteDirectoryConfigOutcome> DeleteDirectoryConfigOutcomeCallable;
@@ -254,6 +258,7 @@ namespace Model
     typedef std::function<void(const AppStreamClient*, const Model::CreateImageBuilderStreamingURLRequest&, const Model::CreateImageBuilderStreamingURLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImageBuilderStreamingURLResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::CreateStackRequest&, const Model::CreateStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStackResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::CreateStreamingURLRequest&, const Model::CreateStreamingURLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStreamingURLResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::CreateUpdatedImageRequest&, const Model::CreateUpdatedImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUpdatedImageResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::CreateUsageReportSubscriptionRequest&, const Model::CreateUsageReportSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUsageReportSubscriptionResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::CreateUserRequest&, const Model::CreateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DeleteDirectoryConfigRequest&, const Model::DeleteDirectoryConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDirectoryConfigResponseReceivedHandler;
@@ -638,6 +643,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateStreamingURLAsync(const Model::CreateStreamingURLRequest& request, const CreateStreamingURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new image with the latest Windows operating system updates, driver
+         * updates, and AppStream 2.0 agent software.</p> <p>For more information, see the
+         * "Update an Image by Using Managed AppStream 2.0 Image Updates" section in <a
+         * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/administer-images.html">Administer
+         * Your AppStream 2.0 Images</a>, in the <i>Amazon AppStream 2.0 Administration
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateUpdatedImage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateUpdatedImageOutcome CreateUpdatedImage(const Model::CreateUpdatedImageRequest& request) const;
+
+        /**
+         * <p>Creates a new image with the latest Windows operating system updates, driver
+         * updates, and AppStream 2.0 agent software.</p> <p>For more information, see the
+         * "Update an Image by Using Managed AppStream 2.0 Image Updates" section in <a
+         * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/administer-images.html">Administer
+         * Your AppStream 2.0 Images</a>, in the <i>Amazon AppStream 2.0 Administration
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateUpdatedImage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateUpdatedImageOutcomeCallable CreateUpdatedImageCallable(const Model::CreateUpdatedImageRequest& request) const;
+
+        /**
+         * <p>Creates a new image with the latest Windows operating system updates, driver
+         * updates, and AppStream 2.0 agent software.</p> <p>For more information, see the
+         * "Update an Image by Using Managed AppStream 2.0 Image Updates" section in <a
+         * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/administer-images.html">Administer
+         * Your AppStream 2.0 Images</a>, in the <i>Amazon AppStream 2.0 Administration
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateUpdatedImage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateUpdatedImageAsync(const Model::CreateUpdatedImageRequest& request, const CreateUpdatedImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a usage report subscription. Usage reports are generated
@@ -1800,6 +1845,7 @@ namespace Model
         void CreateImageBuilderStreamingURLAsyncHelper(const Model::CreateImageBuilderStreamingURLRequest& request, const CreateImageBuilderStreamingURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateStackAsyncHelper(const Model::CreateStackRequest& request, const CreateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateStreamingURLAsyncHelper(const Model::CreateStreamingURLRequest& request, const CreateStreamingURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateUpdatedImageAsyncHelper(const Model::CreateUpdatedImageRequest& request, const CreateUpdatedImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUsageReportSubscriptionAsyncHelper(const Model::CreateUsageReportSubscriptionRequest& request, const CreateUsageReportSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUserAsyncHelper(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDirectoryConfigAsyncHelper(const Model::DeleteDirectoryConfigRequest& request, const DeleteDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

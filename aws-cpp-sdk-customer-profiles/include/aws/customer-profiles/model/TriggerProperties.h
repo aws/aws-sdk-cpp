@@ -23,6 +23,13 @@ namespace CustomerProfiles
 namespace Model
 {
 
+  /**
+   * <p>Specifies the configuration details that control the trigger for a flow.
+   * Currently, these settings only apply to the Scheduled trigger
+   * type.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/TriggerProperties">AWS
+   * API Reference</a></p>
+   */
   class AWS_CUSTOMERPROFILES_API TriggerProperties
   {
   public:
@@ -32,22 +39,40 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>Specifies the configuration details of a schedule-triggered flow that you
+     * define.</p>
+     */
     inline const ScheduledTriggerProperties& GetScheduled() const{ return m_scheduled; }
 
-    
+    /**
+     * <p>Specifies the configuration details of a schedule-triggered flow that you
+     * define.</p>
+     */
     inline bool ScheduledHasBeenSet() const { return m_scheduledHasBeenSet; }
 
-    
+    /**
+     * <p>Specifies the configuration details of a schedule-triggered flow that you
+     * define.</p>
+     */
     inline void SetScheduled(const ScheduledTriggerProperties& value) { m_scheduledHasBeenSet = true; m_scheduled = value; }
 
-    
+    /**
+     * <p>Specifies the configuration details of a schedule-triggered flow that you
+     * define.</p>
+     */
     inline void SetScheduled(ScheduledTriggerProperties&& value) { m_scheduledHasBeenSet = true; m_scheduled = std::move(value); }
 
-    
+    /**
+     * <p>Specifies the configuration details of a schedule-triggered flow that you
+     * define.</p>
+     */
     inline TriggerProperties& WithScheduled(const ScheduledTriggerProperties& value) { SetScheduled(value); return *this;}
 
-    
+    /**
+     * <p>Specifies the configuration details of a schedule-triggered flow that you
+     * define.</p>
+     */
     inline TriggerProperties& WithScheduled(ScheduledTriggerProperties&& value) { SetScheduled(std::move(value)); return *this;}
 
   private:

@@ -194,8 +194,8 @@ namespace Model
 
 
     /**
-     * <p>Specifies how to upload the files:</p> <dl> <dt>UPLOAD_ON_TERMINATE</dt> <dd>
-     * <p>Matching files are uploaded once the simulation enters the
+     * <p>Specifies when to upload the files:</p> <dl> <dt>UPLOAD_ON_TERMINATE</dt>
+     * <dd> <p>Matching files are uploaded once the simulation enters the
      * <code>TERMINATING</code> state. Matching files are not uploaded until all of
      * your code (including tools) have stopped. </p> <p>If there is a problem
      * uploading a file, the upload is retried. If problems persist, no further upload
@@ -207,8 +207,8 @@ namespace Model
     inline const UploadBehavior& GetUploadBehavior() const{ return m_uploadBehavior; }
 
     /**
-     * <p>Specifies how to upload the files:</p> <dl> <dt>UPLOAD_ON_TERMINATE</dt> <dd>
-     * <p>Matching files are uploaded once the simulation enters the
+     * <p>Specifies when to upload the files:</p> <dl> <dt>UPLOAD_ON_TERMINATE</dt>
+     * <dd> <p>Matching files are uploaded once the simulation enters the
      * <code>TERMINATING</code> state. Matching files are not uploaded until all of
      * your code (including tools) have stopped. </p> <p>If there is a problem
      * uploading a file, the upload is retried. If problems persist, no further upload
@@ -220,8 +220,8 @@ namespace Model
     inline bool UploadBehaviorHasBeenSet() const { return m_uploadBehaviorHasBeenSet; }
 
     /**
-     * <p>Specifies how to upload the files:</p> <dl> <dt>UPLOAD_ON_TERMINATE</dt> <dd>
-     * <p>Matching files are uploaded once the simulation enters the
+     * <p>Specifies when to upload the files:</p> <dl> <dt>UPLOAD_ON_TERMINATE</dt>
+     * <dd> <p>Matching files are uploaded once the simulation enters the
      * <code>TERMINATING</code> state. Matching files are not uploaded until all of
      * your code (including tools) have stopped. </p> <p>If there is a problem
      * uploading a file, the upload is retried. If problems persist, no further upload
@@ -233,8 +233,8 @@ namespace Model
     inline void SetUploadBehavior(const UploadBehavior& value) { m_uploadBehaviorHasBeenSet = true; m_uploadBehavior = value; }
 
     /**
-     * <p>Specifies how to upload the files:</p> <dl> <dt>UPLOAD_ON_TERMINATE</dt> <dd>
-     * <p>Matching files are uploaded once the simulation enters the
+     * <p>Specifies when to upload the files:</p> <dl> <dt>UPLOAD_ON_TERMINATE</dt>
+     * <dd> <p>Matching files are uploaded once the simulation enters the
      * <code>TERMINATING</code> state. Matching files are not uploaded until all of
      * your code (including tools) have stopped. </p> <p>If there is a problem
      * uploading a file, the upload is retried. If problems persist, no further upload
@@ -246,8 +246,8 @@ namespace Model
     inline void SetUploadBehavior(UploadBehavior&& value) { m_uploadBehaviorHasBeenSet = true; m_uploadBehavior = std::move(value); }
 
     /**
-     * <p>Specifies how to upload the files:</p> <dl> <dt>UPLOAD_ON_TERMINATE</dt> <dd>
-     * <p>Matching files are uploaded once the simulation enters the
+     * <p>Specifies when to upload the files:</p> <dl> <dt>UPLOAD_ON_TERMINATE</dt>
+     * <dd> <p>Matching files are uploaded once the simulation enters the
      * <code>TERMINATING</code> state. Matching files are not uploaded until all of
      * your code (including tools) have stopped. </p> <p>If there is a problem
      * uploading a file, the upload is retried. If problems persist, no further upload
@@ -259,8 +259,8 @@ namespace Model
     inline UploadConfiguration& WithUploadBehavior(const UploadBehavior& value) { SetUploadBehavior(value); return *this;}
 
     /**
-     * <p>Specifies how to upload the files:</p> <dl> <dt>UPLOAD_ON_TERMINATE</dt> <dd>
-     * <p>Matching files are uploaded once the simulation enters the
+     * <p>Specifies when to upload the files:</p> <dl> <dt>UPLOAD_ON_TERMINATE</dt>
+     * <dd> <p>Matching files are uploaded once the simulation enters the
      * <code>TERMINATING</code> state. Matching files are not uploaded until all of
      * your code (including tools) have stopped. </p> <p>If there is a problem
      * uploading a file, the upload is retried. If problems persist, no further upload

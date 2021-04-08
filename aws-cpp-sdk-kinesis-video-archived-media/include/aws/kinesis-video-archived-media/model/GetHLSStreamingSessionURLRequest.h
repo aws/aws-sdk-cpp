@@ -592,7 +592,7 @@ namespace Model
      * <p> <code>NEVER</code>: no discontinuity markers are placed anywhere. It is
      * recommended to use a value of <code>NEVER</code> to ensure the media player
      * timeline most accurately maps to the producer timestamps. </p> </li> <li> <p>
-     * <code>ON_DISCONTIUNITY</code>: a discontinuity marker is placed between
+     * <code>ON_DISCONTINUITY</code>: a discontinuity marker is placed between
      * fragments that have a gap or overlap of more than 50 milliseconds. For most
      * playback scenarios, it is recommended to use a value of
      * <code>ON_DISCONTINUITY</code> so that the media player timeline is only reset
@@ -621,7 +621,7 @@ namespace Model
      * <p> <code>NEVER</code>: no discontinuity markers are placed anywhere. It is
      * recommended to use a value of <code>NEVER</code> to ensure the media player
      * timeline most accurately maps to the producer timestamps. </p> </li> <li> <p>
-     * <code>ON_DISCONTIUNITY</code>: a discontinuity marker is placed between
+     * <code>ON_DISCONTINUITY</code>: a discontinuity marker is placed between
      * fragments that have a gap or overlap of more than 50 milliseconds. For most
      * playback scenarios, it is recommended to use a value of
      * <code>ON_DISCONTINUITY</code> so that the media player timeline is only reset
@@ -650,7 +650,7 @@ namespace Model
      * <p> <code>NEVER</code>: no discontinuity markers are placed anywhere. It is
      * recommended to use a value of <code>NEVER</code> to ensure the media player
      * timeline most accurately maps to the producer timestamps. </p> </li> <li> <p>
-     * <code>ON_DISCONTIUNITY</code>: a discontinuity marker is placed between
+     * <code>ON_DISCONTINUITY</code>: a discontinuity marker is placed between
      * fragments that have a gap or overlap of more than 50 milliseconds. For most
      * playback scenarios, it is recommended to use a value of
      * <code>ON_DISCONTINUITY</code> so that the media player timeline is only reset
@@ -679,7 +679,7 @@ namespace Model
      * <p> <code>NEVER</code>: no discontinuity markers are placed anywhere. It is
      * recommended to use a value of <code>NEVER</code> to ensure the media player
      * timeline most accurately maps to the producer timestamps. </p> </li> <li> <p>
-     * <code>ON_DISCONTIUNITY</code>: a discontinuity marker is placed between
+     * <code>ON_DISCONTINUITY</code>: a discontinuity marker is placed between
      * fragments that have a gap or overlap of more than 50 milliseconds. For most
      * playback scenarios, it is recommended to use a value of
      * <code>ON_DISCONTINUITY</code> so that the media player timeline is only reset
@@ -708,7 +708,7 @@ namespace Model
      * <p> <code>NEVER</code>: no discontinuity markers are placed anywhere. It is
      * recommended to use a value of <code>NEVER</code> to ensure the media player
      * timeline most accurately maps to the producer timestamps. </p> </li> <li> <p>
-     * <code>ON_DISCONTIUNITY</code>: a discontinuity marker is placed between
+     * <code>ON_DISCONTINUITY</code>: a discontinuity marker is placed between
      * fragments that have a gap or overlap of more than 50 milliseconds. For most
      * playback scenarios, it is recommended to use a value of
      * <code>ON_DISCONTINUITY</code> so that the media player timeline is only reset
@@ -737,7 +737,7 @@ namespace Model
      * <p> <code>NEVER</code>: no discontinuity markers are placed anywhere. It is
      * recommended to use a value of <code>NEVER</code> to ensure the media player
      * timeline most accurately maps to the producer timestamps. </p> </li> <li> <p>
-     * <code>ON_DISCONTIUNITY</code>: a discontinuity marker is placed between
+     * <code>ON_DISCONTINUITY</code>: a discontinuity marker is placed between
      * fragments that have a gap or overlap of more than 50 milliseconds. For most
      * playback scenarios, it is recommended to use a value of
      * <code>ON_DISCONTINUITY</code> so that the media player timeline is only reset

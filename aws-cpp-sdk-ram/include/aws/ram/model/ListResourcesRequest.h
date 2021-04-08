@@ -107,105 +107,177 @@ namespace Model
 
 
     /**
-     * <p>The resource type.</p> <p>Valid values: <code>codebuild:Project</code> |
-     * <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> |
-     * <code>ec2:DedicatedHost</code> | <code>ec2:Subnet</code> |
-     * <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> |
-     * <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> |
-     * <code>imagebuilder:ImageRecipe</code> |
+     * <p>The resource type.</p> <p>Valid values:
+     * <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> |
+     * <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> |
+     * <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> |
+     * <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> |
+     * <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> |
+     * <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> |
+     * <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> |
+     * <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> |
+     * <code>glue:Database</code> | <code>glue:Table</code> |
      * <code>license-manager:LicenseConfiguration</code> I
-     * <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
+     * <code>network-firewall:FirewallPolicy</code> |
+     * <code>network-firewall:StatefulRuleGroup</code> |
+     * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code>
+     * | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
+     * <code>route53resolver:FirewallRuleGroup</code>
+     * |<code>route53resolver:ResolverQueryLogConfig</code> |
      * <code>route53resolver:ResolverRule</code> </p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The resource type.</p> <p>Valid values: <code>codebuild:Project</code> |
-     * <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> |
-     * <code>ec2:DedicatedHost</code> | <code>ec2:Subnet</code> |
-     * <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> |
-     * <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> |
-     * <code>imagebuilder:ImageRecipe</code> |
+     * <p>The resource type.</p> <p>Valid values:
+     * <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> |
+     * <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> |
+     * <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> |
+     * <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> |
+     * <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> |
+     * <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> |
+     * <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> |
+     * <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> |
+     * <code>glue:Database</code> | <code>glue:Table</code> |
      * <code>license-manager:LicenseConfiguration</code> I
-     * <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
+     * <code>network-firewall:FirewallPolicy</code> |
+     * <code>network-firewall:StatefulRuleGroup</code> |
+     * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code>
+     * | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
+     * <code>route53resolver:FirewallRuleGroup</code>
+     * |<code>route53resolver:ResolverQueryLogConfig</code> |
      * <code>route53resolver:ResolverRule</code> </p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The resource type.</p> <p>Valid values: <code>codebuild:Project</code> |
-     * <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> |
-     * <code>ec2:DedicatedHost</code> | <code>ec2:Subnet</code> |
-     * <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> |
-     * <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> |
-     * <code>imagebuilder:ImageRecipe</code> |
+     * <p>The resource type.</p> <p>Valid values:
+     * <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> |
+     * <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> |
+     * <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> |
+     * <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> |
+     * <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> |
+     * <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> |
+     * <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> |
+     * <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> |
+     * <code>glue:Database</code> | <code>glue:Table</code> |
      * <code>license-manager:LicenseConfiguration</code> I
-     * <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
+     * <code>network-firewall:FirewallPolicy</code> |
+     * <code>network-firewall:StatefulRuleGroup</code> |
+     * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code>
+     * | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
+     * <code>route53resolver:FirewallRuleGroup</code>
+     * |<code>route53resolver:ResolverQueryLogConfig</code> |
      * <code>route53resolver:ResolverRule</code> </p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The resource type.</p> <p>Valid values: <code>codebuild:Project</code> |
-     * <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> |
-     * <code>ec2:DedicatedHost</code> | <code>ec2:Subnet</code> |
-     * <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> |
-     * <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> |
-     * <code>imagebuilder:ImageRecipe</code> |
+     * <p>The resource type.</p> <p>Valid values:
+     * <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> |
+     * <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> |
+     * <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> |
+     * <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> |
+     * <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> |
+     * <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> |
+     * <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> |
+     * <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> |
+     * <code>glue:Database</code> | <code>glue:Table</code> |
      * <code>license-manager:LicenseConfiguration</code> I
-     * <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
+     * <code>network-firewall:FirewallPolicy</code> |
+     * <code>network-firewall:StatefulRuleGroup</code> |
+     * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code>
+     * | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
+     * <code>route53resolver:FirewallRuleGroup</code>
+     * |<code>route53resolver:ResolverQueryLogConfig</code> |
      * <code>route53resolver:ResolverRule</code> </p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The resource type.</p> <p>Valid values: <code>codebuild:Project</code> |
-     * <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> |
-     * <code>ec2:DedicatedHost</code> | <code>ec2:Subnet</code> |
-     * <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> |
-     * <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> |
-     * <code>imagebuilder:ImageRecipe</code> |
+     * <p>The resource type.</p> <p>Valid values:
+     * <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> |
+     * <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> |
+     * <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> |
+     * <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> |
+     * <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> |
+     * <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> |
+     * <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> |
+     * <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> |
+     * <code>glue:Database</code> | <code>glue:Table</code> |
      * <code>license-manager:LicenseConfiguration</code> I
-     * <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
+     * <code>network-firewall:FirewallPolicy</code> |
+     * <code>network-firewall:StatefulRuleGroup</code> |
+     * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code>
+     * | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
+     * <code>route53resolver:FirewallRuleGroup</code>
+     * |<code>route53resolver:ResolverQueryLogConfig</code> |
      * <code>route53resolver:ResolverRule</code> </p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>The resource type.</p> <p>Valid values: <code>codebuild:Project</code> |
-     * <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> |
-     * <code>ec2:DedicatedHost</code> | <code>ec2:Subnet</code> |
-     * <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> |
-     * <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> |
-     * <code>imagebuilder:ImageRecipe</code> |
+     * <p>The resource type.</p> <p>Valid values:
+     * <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> |
+     * <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> |
+     * <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> |
+     * <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> |
+     * <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> |
+     * <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> |
+     * <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> |
+     * <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> |
+     * <code>glue:Database</code> | <code>glue:Table</code> |
      * <code>license-manager:LicenseConfiguration</code> I
-     * <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
+     * <code>network-firewall:FirewallPolicy</code> |
+     * <code>network-firewall:StatefulRuleGroup</code> |
+     * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code>
+     * | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
+     * <code>route53resolver:FirewallRuleGroup</code>
+     * |<code>route53resolver:ResolverQueryLogConfig</code> |
      * <code>route53resolver:ResolverRule</code> </p>
      */
     inline ListResourcesRequest& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The resource type.</p> <p>Valid values: <code>codebuild:Project</code> |
-     * <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> |
-     * <code>ec2:DedicatedHost</code> | <code>ec2:Subnet</code> |
-     * <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> |
-     * <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> |
-     * <code>imagebuilder:ImageRecipe</code> |
+     * <p>The resource type.</p> <p>Valid values:
+     * <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> |
+     * <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> |
+     * <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> |
+     * <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> |
+     * <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> |
+     * <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> |
+     * <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> |
+     * <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> |
+     * <code>glue:Database</code> | <code>glue:Table</code> |
      * <code>license-manager:LicenseConfiguration</code> I
-     * <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
+     * <code>network-firewall:FirewallPolicy</code> |
+     * <code>network-firewall:StatefulRuleGroup</code> |
+     * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code>
+     * | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
+     * <code>route53resolver:FirewallRuleGroup</code>
+     * |<code>route53resolver:ResolverQueryLogConfig</code> |
      * <code>route53resolver:ResolverRule</code> </p>
      */
     inline ListResourcesRequest& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The resource type.</p> <p>Valid values: <code>codebuild:Project</code> |
-     * <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> |
-     * <code>ec2:DedicatedHost</code> | <code>ec2:Subnet</code> |
-     * <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> |
-     * <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> |
-     * <code>imagebuilder:ImageRecipe</code> |
+     * <p>The resource type.</p> <p>Valid values:
+     * <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> |
+     * <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> |
+     * <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> |
+     * <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> |
+     * <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> |
+     * <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> |
+     * <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> |
+     * <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> |
+     * <code>glue:Database</code> | <code>glue:Table</code> |
      * <code>license-manager:LicenseConfiguration</code> I
-     * <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
+     * <code>network-firewall:FirewallPolicy</code> |
+     * <code>network-firewall:StatefulRuleGroup</code> |
+     * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code>
+     * | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
+     * <code>route53resolver:FirewallRuleGroup</code>
+     * |<code>route53resolver:ResolverQueryLogConfig</code> |
      * <code>route53resolver:ResolverRule</code> </p>
      */
     inline ListResourcesRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}

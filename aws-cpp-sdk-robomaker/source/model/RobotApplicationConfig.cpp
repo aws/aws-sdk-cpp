@@ -24,7 +24,10 @@ RobotApplicationConfig::RobotApplicationConfig() :
     m_launchConfigHasBeenSet(false),
     m_uploadConfigurationsHasBeenSet(false),
     m_useDefaultUploadConfigurations(false),
-    m_useDefaultUploadConfigurationsHasBeenSet(false)
+    m_useDefaultUploadConfigurationsHasBeenSet(false),
+    m_toolsHasBeenSet(false),
+    m_useDefaultTools(false),
+    m_useDefaultToolsHasBeenSet(false)
 {
 }
 
@@ -34,7 +37,10 @@ RobotApplicationConfig::RobotApplicationConfig(JsonView jsonValue) :
     m_launchConfigHasBeenSet(false),
     m_uploadConfigurationsHasBeenSet(false),
     m_useDefaultUploadConfigurations(false),
-    m_useDefaultUploadConfigurationsHasBeenSet(false)
+    m_useDefaultUploadConfigurationsHasBeenSet(false),
+    m_toolsHasBeenSet(false),
+    m_useDefaultTools(false),
+    m_useDefaultToolsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -79,6 +85,23 @@ RobotApplicationConfig& RobotApplicationConfig::operator =(JsonView jsonValue)
     m_useDefaultUploadConfigurationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tools"))
+  {
+    Array<JsonView> toolsJsonList = jsonValue.GetArray("tools");
+    for(unsigned toolsIndex = 0; toolsIndex < toolsJsonList.GetLength(); ++toolsIndex)
+    {
+      m_tools.push_back(toolsJsonList[toolsIndex].AsObject());
+    }
+    m_toolsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("useDefaultTools"))
+  {
+    m_useDefaultTools = jsonValue.GetBool("useDefaultTools");
+
+    m_useDefaultToolsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -118,6 +141,23 @@ JsonValue RobotApplicationConfig::Jsonize() const
   if(m_useDefaultUploadConfigurationsHasBeenSet)
   {
    payload.WithBool("useDefaultUploadConfigurations", m_useDefaultUploadConfigurations);
+
+  }
+
+  if(m_toolsHasBeenSet)
+  {
+   Array<JsonValue> toolsJsonList(m_tools.size());
+   for(unsigned toolsIndex = 0; toolsIndex < toolsJsonList.GetLength(); ++toolsIndex)
+   {
+     toolsJsonList[toolsIndex].AsObject(m_tools[toolsIndex].Jsonize());
+   }
+   payload.WithArray("tools", std::move(toolsJsonList));
+
+  }
+
+  if(m_useDefaultToolsHasBeenSet)
+  {
+   payload.WithBool("useDefaultTools", m_useDefaultTools);
 
   }
 

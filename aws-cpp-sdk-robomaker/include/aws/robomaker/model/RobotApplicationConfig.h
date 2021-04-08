@@ -9,6 +9,7 @@
 #include <aws/robomaker/model/LaunchConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/robomaker/model/UploadConfiguration.h>
+#include <aws/robomaker/model/Tool.h>
 #include <utility>
 
 namespace Aws
@@ -227,6 +228,76 @@ namespace Model
      */
     inline RobotApplicationConfig& WithUseDefaultUploadConfigurations(bool value) { SetUseDefaultUploadConfigurations(value); return *this;}
 
+
+    /**
+     * <p>Information about tools configured for the robot application.</p>
+     */
+    inline const Aws::Vector<Tool>& GetTools() const{ return m_tools; }
+
+    /**
+     * <p>Information about tools configured for the robot application.</p>
+     */
+    inline bool ToolsHasBeenSet() const { return m_toolsHasBeenSet; }
+
+    /**
+     * <p>Information about tools configured for the robot application.</p>
+     */
+    inline void SetTools(const Aws::Vector<Tool>& value) { m_toolsHasBeenSet = true; m_tools = value; }
+
+    /**
+     * <p>Information about tools configured for the robot application.</p>
+     */
+    inline void SetTools(Aws::Vector<Tool>&& value) { m_toolsHasBeenSet = true; m_tools = std::move(value); }
+
+    /**
+     * <p>Information about tools configured for the robot application.</p>
+     */
+    inline RobotApplicationConfig& WithTools(const Aws::Vector<Tool>& value) { SetTools(value); return *this;}
+
+    /**
+     * <p>Information about tools configured for the robot application.</p>
+     */
+    inline RobotApplicationConfig& WithTools(Aws::Vector<Tool>&& value) { SetTools(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about tools configured for the robot application.</p>
+     */
+    inline RobotApplicationConfig& AddTools(const Tool& value) { m_toolsHasBeenSet = true; m_tools.push_back(value); return *this; }
+
+    /**
+     * <p>Information about tools configured for the robot application.</p>
+     */
+    inline RobotApplicationConfig& AddTools(Tool&& value) { m_toolsHasBeenSet = true; m_tools.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A Boolean indicating whether to use default robot application tools. The
+     * default tools are rviz, rqt, terminal and rosbag record. The default is
+     * <code>False</code>. </p>
+     */
+    inline bool GetUseDefaultTools() const{ return m_useDefaultTools; }
+
+    /**
+     * <p>A Boolean indicating whether to use default robot application tools. The
+     * default tools are rviz, rqt, terminal and rosbag record. The default is
+     * <code>False</code>. </p>
+     */
+    inline bool UseDefaultToolsHasBeenSet() const { return m_useDefaultToolsHasBeenSet; }
+
+    /**
+     * <p>A Boolean indicating whether to use default robot application tools. The
+     * default tools are rviz, rqt, terminal and rosbag record. The default is
+     * <code>False</code>. </p>
+     */
+    inline void SetUseDefaultTools(bool value) { m_useDefaultToolsHasBeenSet = true; m_useDefaultTools = value; }
+
+    /**
+     * <p>A Boolean indicating whether to use default robot application tools. The
+     * default tools are rviz, rqt, terminal and rosbag record. The default is
+     * <code>False</code>. </p>
+     */
+    inline RobotApplicationConfig& WithUseDefaultTools(bool value) { SetUseDefaultTools(value); return *this;}
+
   private:
 
     Aws::String m_application;
@@ -243,6 +314,12 @@ namespace Model
 
     bool m_useDefaultUploadConfigurations;
     bool m_useDefaultUploadConfigurationsHasBeenSet;
+
+    Aws::Vector<Tool> m_tools;
+    bool m_toolsHasBeenSet;
+
+    bool m_useDefaultTools;
+    bool m_useDefaultToolsHasBeenSet;
   };
 
 } // namespace Model

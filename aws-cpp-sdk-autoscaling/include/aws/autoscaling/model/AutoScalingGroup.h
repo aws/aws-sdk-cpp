@@ -11,6 +11,7 @@
 #include <aws/autoscaling/model/MixedInstancesPolicy.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/autoscaling/model/WarmPoolConfiguration.h>
 #include <aws/autoscaling/model/Instance.h>
 #include <aws/autoscaling/model/SuspendedProcess.h>
 #include <aws/autoscaling/model/EnabledMetric.h>
@@ -1052,6 +1053,58 @@ namespace Model
      */
     inline AutoScalingGroup& WithCapacityRebalance(bool value) { SetCapacityRebalance(value); return *this;}
 
+
+    /**
+     * <p>The warm pool for the group.</p>
+     */
+    inline const WarmPoolConfiguration& GetWarmPoolConfiguration() const{ return m_warmPoolConfiguration; }
+
+    /**
+     * <p>The warm pool for the group.</p>
+     */
+    inline bool WarmPoolConfigurationHasBeenSet() const { return m_warmPoolConfigurationHasBeenSet; }
+
+    /**
+     * <p>The warm pool for the group.</p>
+     */
+    inline void SetWarmPoolConfiguration(const WarmPoolConfiguration& value) { m_warmPoolConfigurationHasBeenSet = true; m_warmPoolConfiguration = value; }
+
+    /**
+     * <p>The warm pool for the group.</p>
+     */
+    inline void SetWarmPoolConfiguration(WarmPoolConfiguration&& value) { m_warmPoolConfigurationHasBeenSet = true; m_warmPoolConfiguration = std::move(value); }
+
+    /**
+     * <p>The warm pool for the group.</p>
+     */
+    inline AutoScalingGroup& WithWarmPoolConfiguration(const WarmPoolConfiguration& value) { SetWarmPoolConfiguration(value); return *this;}
+
+    /**
+     * <p>The warm pool for the group.</p>
+     */
+    inline AutoScalingGroup& WithWarmPoolConfiguration(WarmPoolConfiguration&& value) { SetWarmPoolConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The current size of the warm pool.</p>
+     */
+    inline int GetWarmPoolSize() const{ return m_warmPoolSize; }
+
+    /**
+     * <p>The current size of the warm pool.</p>
+     */
+    inline bool WarmPoolSizeHasBeenSet() const { return m_warmPoolSizeHasBeenSet; }
+
+    /**
+     * <p>The current size of the warm pool.</p>
+     */
+    inline void SetWarmPoolSize(int value) { m_warmPoolSizeHasBeenSet = true; m_warmPoolSize = value; }
+
+    /**
+     * <p>The current size of the warm pool.</p>
+     */
+    inline AutoScalingGroup& WithWarmPoolSize(int value) { SetWarmPoolSize(value); return *this;}
+
   private:
 
     Aws::String m_autoScalingGroupName;
@@ -1134,6 +1187,12 @@ namespace Model
 
     bool m_capacityRebalance;
     bool m_capacityRebalanceHasBeenSet;
+
+    WarmPoolConfiguration m_warmPoolConfiguration;
+    bool m_warmPoolConfigurationHasBeenSet;
+
+    int m_warmPoolSize;
+    bool m_warmPoolSizeHasBeenSet;
   };
 
 } // namespace Model

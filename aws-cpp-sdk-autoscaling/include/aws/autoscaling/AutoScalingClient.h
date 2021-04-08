@@ -19,6 +19,7 @@
 #include <aws/autoscaling/model/CancelInstanceRefreshResult.h>
 #include <aws/autoscaling/model/CompleteLifecycleActionResult.h>
 #include <aws/autoscaling/model/DeleteLifecycleHookResult.h>
+#include <aws/autoscaling/model/DeleteWarmPoolResult.h>
 #include <aws/autoscaling/model/DescribeAccountLimitsResult.h>
 #include <aws/autoscaling/model/DescribeAdjustmentTypesResult.h>
 #include <aws/autoscaling/model/DescribeAutoScalingGroupsResult.h>
@@ -38,6 +39,7 @@
 #include <aws/autoscaling/model/DescribeScheduledActionsResult.h>
 #include <aws/autoscaling/model/DescribeTagsResult.h>
 #include <aws/autoscaling/model/DescribeTerminationPolicyTypesResult.h>
+#include <aws/autoscaling/model/DescribeWarmPoolResult.h>
 #include <aws/autoscaling/model/DetachInstancesResult.h>
 #include <aws/autoscaling/model/DetachLoadBalancerTargetGroupsResult.h>
 #include <aws/autoscaling/model/DetachLoadBalancersResult.h>
@@ -45,6 +47,7 @@
 #include <aws/autoscaling/model/ExitStandbyResult.h>
 #include <aws/autoscaling/model/PutLifecycleHookResult.h>
 #include <aws/autoscaling/model/PutScalingPolicyResult.h>
+#include <aws/autoscaling/model/PutWarmPoolResult.h>
 #include <aws/autoscaling/model/RecordLifecycleActionHeartbeatResult.h>
 #include <aws/autoscaling/model/SetInstanceProtectionResult.h>
 #include <aws/autoscaling/model/StartInstanceRefreshResult.h>
@@ -112,6 +115,7 @@ namespace Model
         class DeletePolicyRequest;
         class DeleteScheduledActionRequest;
         class DeleteTagsRequest;
+        class DeleteWarmPoolRequest;
         class DescribeAccountLimitsRequest;
         class DescribeAdjustmentTypesRequest;
         class DescribeAutoScalingGroupsRequest;
@@ -131,6 +135,7 @@ namespace Model
         class DescribeScheduledActionsRequest;
         class DescribeTagsRequest;
         class DescribeTerminationPolicyTypesRequest;
+        class DescribeWarmPoolRequest;
         class DetachInstancesRequest;
         class DetachLoadBalancerTargetGroupsRequest;
         class DetachLoadBalancersRequest;
@@ -143,6 +148,7 @@ namespace Model
         class PutNotificationConfigurationRequest;
         class PutScalingPolicyRequest;
         class PutScheduledUpdateGroupActionRequest;
+        class PutWarmPoolRequest;
         class RecordLifecycleActionHeartbeatRequest;
         class ResumeProcessesRequest;
         class SetDesiredCapacityRequest;
@@ -170,6 +176,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> DeletePolicyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> DeleteScheduledActionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> DeleteTagsOutcome;
+        typedef Aws::Utils::Outcome<DeleteWarmPoolResult, AutoScalingError> DeleteWarmPoolOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountLimitsResult, AutoScalingError> DescribeAccountLimitsOutcome;
         typedef Aws::Utils::Outcome<DescribeAdjustmentTypesResult, AutoScalingError> DescribeAdjustmentTypesOutcome;
         typedef Aws::Utils::Outcome<DescribeAutoScalingGroupsResult, AutoScalingError> DescribeAutoScalingGroupsOutcome;
@@ -189,6 +196,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeScheduledActionsResult, AutoScalingError> DescribeScheduledActionsOutcome;
         typedef Aws::Utils::Outcome<DescribeTagsResult, AutoScalingError> DescribeTagsOutcome;
         typedef Aws::Utils::Outcome<DescribeTerminationPolicyTypesResult, AutoScalingError> DescribeTerminationPolicyTypesOutcome;
+        typedef Aws::Utils::Outcome<DescribeWarmPoolResult, AutoScalingError> DescribeWarmPoolOutcome;
         typedef Aws::Utils::Outcome<DetachInstancesResult, AutoScalingError> DetachInstancesOutcome;
         typedef Aws::Utils::Outcome<DetachLoadBalancerTargetGroupsResult, AutoScalingError> DetachLoadBalancerTargetGroupsOutcome;
         typedef Aws::Utils::Outcome<DetachLoadBalancersResult, AutoScalingError> DetachLoadBalancersOutcome;
@@ -201,6 +209,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> PutNotificationConfigurationOutcome;
         typedef Aws::Utils::Outcome<PutScalingPolicyResult, AutoScalingError> PutScalingPolicyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> PutScheduledUpdateGroupActionOutcome;
+        typedef Aws::Utils::Outcome<PutWarmPoolResult, AutoScalingError> PutWarmPoolOutcome;
         typedef Aws::Utils::Outcome<RecordLifecycleActionHeartbeatResult, AutoScalingError> RecordLifecycleActionHeartbeatOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> ResumeProcessesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> SetDesiredCapacityOutcome;
@@ -228,6 +237,7 @@ namespace Model
         typedef std::future<DeletePolicyOutcome> DeletePolicyOutcomeCallable;
         typedef std::future<DeleteScheduledActionOutcome> DeleteScheduledActionOutcomeCallable;
         typedef std::future<DeleteTagsOutcome> DeleteTagsOutcomeCallable;
+        typedef std::future<DeleteWarmPoolOutcome> DeleteWarmPoolOutcomeCallable;
         typedef std::future<DescribeAccountLimitsOutcome> DescribeAccountLimitsOutcomeCallable;
         typedef std::future<DescribeAdjustmentTypesOutcome> DescribeAdjustmentTypesOutcomeCallable;
         typedef std::future<DescribeAutoScalingGroupsOutcome> DescribeAutoScalingGroupsOutcomeCallable;
@@ -247,6 +257,7 @@ namespace Model
         typedef std::future<DescribeScheduledActionsOutcome> DescribeScheduledActionsOutcomeCallable;
         typedef std::future<DescribeTagsOutcome> DescribeTagsOutcomeCallable;
         typedef std::future<DescribeTerminationPolicyTypesOutcome> DescribeTerminationPolicyTypesOutcomeCallable;
+        typedef std::future<DescribeWarmPoolOutcome> DescribeWarmPoolOutcomeCallable;
         typedef std::future<DetachInstancesOutcome> DetachInstancesOutcomeCallable;
         typedef std::future<DetachLoadBalancerTargetGroupsOutcome> DetachLoadBalancerTargetGroupsOutcomeCallable;
         typedef std::future<DetachLoadBalancersOutcome> DetachLoadBalancersOutcomeCallable;
@@ -259,6 +270,7 @@ namespace Model
         typedef std::future<PutNotificationConfigurationOutcome> PutNotificationConfigurationOutcomeCallable;
         typedef std::future<PutScalingPolicyOutcome> PutScalingPolicyOutcomeCallable;
         typedef std::future<PutScheduledUpdateGroupActionOutcome> PutScheduledUpdateGroupActionOutcomeCallable;
+        typedef std::future<PutWarmPoolOutcome> PutWarmPoolOutcomeCallable;
         typedef std::future<RecordLifecycleActionHeartbeatOutcome> RecordLifecycleActionHeartbeatOutcomeCallable;
         typedef std::future<ResumeProcessesOutcome> ResumeProcessesOutcomeCallable;
         typedef std::future<SetDesiredCapacityOutcome> SetDesiredCapacityOutcomeCallable;
@@ -289,6 +301,7 @@ namespace Model
     typedef std::function<void(const AutoScalingClient*, const Model::DeletePolicyRequest&, const Model::DeletePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePolicyResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DeleteScheduledActionRequest&, const Model::DeleteScheduledActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteScheduledActionResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DeleteTagsRequest&, const Model::DeleteTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTagsResponseReceivedHandler;
+    typedef std::function<void(const AutoScalingClient*, const Model::DeleteWarmPoolRequest&, const Model::DeleteWarmPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWarmPoolResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DescribeAccountLimitsRequest&, const Model::DescribeAccountLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountLimitsResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DescribeAdjustmentTypesRequest&, const Model::DescribeAdjustmentTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAdjustmentTypesResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DescribeAutoScalingGroupsRequest&, const Model::DescribeAutoScalingGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAutoScalingGroupsResponseReceivedHandler;
@@ -308,6 +321,7 @@ namespace Model
     typedef std::function<void(const AutoScalingClient*, const Model::DescribeScheduledActionsRequest&, const Model::DescribeScheduledActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScheduledActionsResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DescribeTagsRequest&, const Model::DescribeTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTagsResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DescribeTerminationPolicyTypesRequest&, const Model::DescribeTerminationPolicyTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTerminationPolicyTypesResponseReceivedHandler;
+    typedef std::function<void(const AutoScalingClient*, const Model::DescribeWarmPoolRequest&, const Model::DescribeWarmPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWarmPoolResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DetachInstancesRequest&, const Model::DetachInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachInstancesResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DetachLoadBalancerTargetGroupsRequest&, const Model::DetachLoadBalancerTargetGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachLoadBalancerTargetGroupsResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DetachLoadBalancersRequest&, const Model::DetachLoadBalancersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachLoadBalancersResponseReceivedHandler;
@@ -320,6 +334,7 @@ namespace Model
     typedef std::function<void(const AutoScalingClient*, const Model::PutNotificationConfigurationRequest&, const Model::PutNotificationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutNotificationConfigurationResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::PutScalingPolicyRequest&, const Model::PutScalingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutScalingPolicyResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::PutScheduledUpdateGroupActionRequest&, const Model::PutScheduledUpdateGroupActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutScheduledUpdateGroupActionResponseReceivedHandler;
+    typedef std::function<void(const AutoScalingClient*, const Model::PutWarmPoolRequest&, const Model::PutWarmPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutWarmPoolResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::RecordLifecycleActionHeartbeatRequest&, const Model::RecordLifecycleActionHeartbeatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RecordLifecycleActionHeartbeatResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::ResumeProcessesRequest&, const Model::ResumeProcessesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResumeProcessesResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::SetDesiredCapacityRequest&, const Model::SetDesiredCapacityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetDesiredCapacityResponseReceivedHandler;
@@ -1144,6 +1159,34 @@ namespace Model
         virtual void DeleteTagsAsync(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes the warm pool for the specified Auto Scaling group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteWarmPool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteWarmPoolOutcome DeleteWarmPool(const Model::DeleteWarmPoolRequest& request) const;
+
+        /**
+         * <p>Deletes the warm pool for the specified Auto Scaling group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteWarmPool">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteWarmPoolOutcomeCallable DeleteWarmPoolCallable(const Model::DeleteWarmPoolRequest& request) const;
+
+        /**
+         * <p>Deletes the warm pool for the specified Auto Scaling group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteWarmPool">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteWarmPoolAsync(const Model::DeleteWarmPoolRequest& request, const DeleteWarmPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes the current Amazon EC2 Auto Scaling resource quotas for your AWS
          * account.</p> <p>For information about requesting an increase, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
@@ -1808,6 +1851,31 @@ namespace Model
         virtual void DescribeTerminationPolicyTypesAsync(const Model::DescribeTerminationPolicyTypesRequest& request, const DescribeTerminationPolicyTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes a warm pool and its instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeWarmPool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeWarmPoolOutcome DescribeWarmPool(const Model::DescribeWarmPoolRequest& request) const;
+
+        /**
+         * <p>Describes a warm pool and its instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeWarmPool">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeWarmPoolOutcomeCallable DescribeWarmPoolCallable(const Model::DescribeWarmPoolRequest& request) const;
+
+        /**
+         * <p>Describes a warm pool and its instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeWarmPool">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeWarmPoolAsync(const Model::DescribeWarmPoolRequest& request, const DescribeWarmPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Removes one or more instances from the specified Auto Scaling group.</p>
          * <p>After the instances are detached, you can manage them independent of the Auto
          * Scaling group.</p> <p>If you do not specify the option to decrement the desired
@@ -2360,6 +2428,67 @@ namespace Model
         virtual void PutScheduledUpdateGroupActionAsync(const Model::PutScheduledUpdateGroupActionRequest& request, const PutScheduledUpdateGroupActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Adds a warm pool to the specified Auto Scaling group. A warm pool is a pool
+         * of pre-initialized EC2 instances that sits alongside the Auto Scaling group.
+         * Whenever your application needs to scale out, the Auto Scaling group can draw on
+         * the warm pool to meet its new desired capacity. For more information, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm
+         * pools for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+         * Guide</i>.</p> <p>This operation must be called from the Region in which the
+         * Auto Scaling group was created. This operation cannot be called on an Auto
+         * Scaling group that has a mixed instances policy or a launch template or launch
+         * configuration that requests Spot Instances.</p> <p>You can view the instances in
+         * the warm pool using the <a>DescribeWarmPool</a> API call. If you are no longer
+         * using a warm pool, you can delete it by calling the <a>DeleteWarmPool</a>
+         * API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutWarmPool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutWarmPoolOutcome PutWarmPool(const Model::PutWarmPoolRequest& request) const;
+
+        /**
+         * <p>Adds a warm pool to the specified Auto Scaling group. A warm pool is a pool
+         * of pre-initialized EC2 instances that sits alongside the Auto Scaling group.
+         * Whenever your application needs to scale out, the Auto Scaling group can draw on
+         * the warm pool to meet its new desired capacity. For more information, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm
+         * pools for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+         * Guide</i>.</p> <p>This operation must be called from the Region in which the
+         * Auto Scaling group was created. This operation cannot be called on an Auto
+         * Scaling group that has a mixed instances policy or a launch template or launch
+         * configuration that requests Spot Instances.</p> <p>You can view the instances in
+         * the warm pool using the <a>DescribeWarmPool</a> API call. If you are no longer
+         * using a warm pool, you can delete it by calling the <a>DeleteWarmPool</a>
+         * API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutWarmPool">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutWarmPoolOutcomeCallable PutWarmPoolCallable(const Model::PutWarmPoolRequest& request) const;
+
+        /**
+         * <p>Adds a warm pool to the specified Auto Scaling group. A warm pool is a pool
+         * of pre-initialized EC2 instances that sits alongside the Auto Scaling group.
+         * Whenever your application needs to scale out, the Auto Scaling group can draw on
+         * the warm pool to meet its new desired capacity. For more information, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm
+         * pools for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+         * Guide</i>.</p> <p>This operation must be called from the Region in which the
+         * Auto Scaling group was created. This operation cannot be called on an Auto
+         * Scaling group that has a mixed instances policy or a launch template or launch
+         * configuration that requests Spot Instances.</p> <p>You can view the instances in
+         * the warm pool using the <a>DescribeWarmPool</a> API call. If you are no longer
+         * using a warm pool, you can delete it by calling the <a>DeleteWarmPool</a>
+         * API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutWarmPool">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutWarmPoolAsync(const Model::PutWarmPoolRequest& request, const PutWarmPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Records a heartbeat for the lifecycle action associated with the specified
          * token or instance. This extends the timeout by the length of time defined using
          * the <a>PutLifecycleHook</a> API call.</p> <p>This step is a part of the
@@ -2375,8 +2504,8 @@ namespace Model
          * to keep the instance in a pending state.</b> </p> </li> <li> <p>If you finish
          * before the timeout period ends, complete the lifecycle action.</p> </li> </ol>
          * <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto
-         * Scaling lifecycle</a> in the <i>Amazon EC2 Auto Scaling User
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
+         * EC2 Auto Scaling lifecycle hooks</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/RecordLifecycleActionHeartbeat">AWS
          * API Reference</a></p>
@@ -2399,8 +2528,8 @@ namespace Model
          * to keep the instance in a pending state.</b> </p> </li> <li> <p>If you finish
          * before the timeout period ends, complete the lifecycle action.</p> </li> </ol>
          * <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto
-         * Scaling lifecycle</a> in the <i>Amazon EC2 Auto Scaling User
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
+         * EC2 Auto Scaling lifecycle hooks</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/RecordLifecycleActionHeartbeat">AWS
          * API Reference</a></p>
@@ -2425,8 +2554,8 @@ namespace Model
          * to keep the instance in a pending state.</b> </p> </li> <li> <p>If you finish
          * before the timeout period ends, complete the lifecycle action.</p> </li> </ol>
          * <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto
-         * Scaling lifecycle</a> in the <i>Amazon EC2 Auto Scaling User
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
+         * EC2 Auto Scaling lifecycle hooks</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/RecordLifecycleActionHeartbeat">AWS
          * API Reference</a></p>
@@ -2559,9 +2688,10 @@ namespace Model
         virtual void SetInstanceHealthAsync(const Model::SetInstanceHealthRequest& request, const SetInstanceHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the instance protection settings of the specified instances.</p>
-         * <p>For more information about preventing instances that are part of an Auto
-         * Scaling group from terminating on scale in, see <a
+         * <p>Updates the instance protection settings of the specified instances. This
+         * operation cannot be called on instances in a warm pool.</p> <p>For more
+         * information about preventing instances that are part of an Auto Scaling group
+         * from terminating on scale in, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
          * scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
          * <p>If you exceed your maximum limit of instance IDs, which is 50 per Auto
@@ -2572,9 +2702,10 @@ namespace Model
         virtual Model::SetInstanceProtectionOutcome SetInstanceProtection(const Model::SetInstanceProtectionRequest& request) const;
 
         /**
-         * <p>Updates the instance protection settings of the specified instances.</p>
-         * <p>For more information about preventing instances that are part of an Auto
-         * Scaling group from terminating on scale in, see <a
+         * <p>Updates the instance protection settings of the specified instances. This
+         * operation cannot be called on instances in a warm pool.</p> <p>For more
+         * information about preventing instances that are part of an Auto Scaling group
+         * from terminating on scale in, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
          * scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
          * <p>If you exceed your maximum limit of instance IDs, which is 50 per Auto
@@ -2587,9 +2718,10 @@ namespace Model
         virtual Model::SetInstanceProtectionOutcomeCallable SetInstanceProtectionCallable(const Model::SetInstanceProtectionRequest& request) const;
 
         /**
-         * <p>Updates the instance protection settings of the specified instances.</p>
-         * <p>For more information about preventing instances that are part of an Auto
-         * Scaling group from terminating on scale in, see <a
+         * <p>Updates the instance protection settings of the specified instances. This
+         * operation cannot be called on instances in a warm pool.</p> <p>For more
+         * information about preventing instances that are part of an Auto Scaling group
+         * from terminating on scale in, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
          * scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
          * <p>If you exceed your maximum limit of instance IDs, which is 50 per Auto
@@ -2603,8 +2735,8 @@ namespace Model
 
         /**
          * <p>Starts a new instance refresh operation, which triggers a rolling replacement
-         * of all previously launched instances in the Auto Scaling group with a new group
-         * of instances.</p> <p>If successful, this call creates a new instance refresh
+         * of previously launched instances in the Auto Scaling group with a new group of
+         * instances.</p> <p>If successful, this call creates a new instance refresh
          * request with a unique ID that you can use to track its progress. To query its
          * status, call the <a>DescribeInstanceRefreshes</a> API. To describe the instance
          * refreshes that have already run, call the <a>DescribeInstanceRefreshes</a> API.
@@ -2620,8 +2752,8 @@ namespace Model
 
         /**
          * <p>Starts a new instance refresh operation, which triggers a rolling replacement
-         * of all previously launched instances in the Auto Scaling group with a new group
-         * of instances.</p> <p>If successful, this call creates a new instance refresh
+         * of previously launched instances in the Auto Scaling group with a new group of
+         * instances.</p> <p>If successful, this call creates a new instance refresh
          * request with a unique ID that you can use to track its progress. To query its
          * status, call the <a>DescribeInstanceRefreshes</a> API. To describe the instance
          * refreshes that have already run, call the <a>DescribeInstanceRefreshes</a> API.
@@ -2639,8 +2771,8 @@ namespace Model
 
         /**
          * <p>Starts a new instance refresh operation, which triggers a rolling replacement
-         * of all previously launched instances in the Auto Scaling group with a new group
-         * of instances.</p> <p>If successful, this call creates a new instance refresh
+         * of previously launched instances in the Auto Scaling group with a new group of
+         * instances.</p> <p>If successful, this call creates a new instance refresh
          * request with a unique ID that you can use to track its progress. To query its
          * status, call the <a>DescribeInstanceRefreshes</a> API. To describe the instance
          * refreshes that have already run, call the <a>DescribeInstanceRefreshes</a> API.
@@ -2704,16 +2836,17 @@ namespace Model
 
         /**
          * <p>Terminates the specified instance and optionally adjusts the desired group
-         * size. </p> <p>This call simply makes a termination request. The instance is not
-         * terminated immediately. When an instance is terminated, the instance status
-         * changes to <code>terminated</code>. You can't connect to or start an instance
-         * after you've terminated it.</p> <p>If you do not specify the option to decrement
-         * the desired capacity, Amazon EC2 Auto Scaling launches instances to replace the
-         * ones that are terminated. </p> <p>By default, Amazon EC2 Auto Scaling balances
-         * instances across all Availability Zones. If you decrement the desired capacity,
-         * your Auto Scaling group can become unbalanced between Availability Zones. Amazon
-         * EC2 Auto Scaling tries to rebalance the group, and rebalancing might terminate
-         * instances in other zones. For more information, see <a
+         * size. This operation cannot be called on instances in a warm pool.</p> <p>This
+         * call simply makes a termination request. The instance is not terminated
+         * immediately. When an instance is terminated, the instance status changes to
+         * <code>terminated</code>. You can't connect to or start an instance after you've
+         * terminated it.</p> <p>If you do not specify the option to decrement the desired
+         * capacity, Amazon EC2 Auto Scaling launches instances to replace the ones that
+         * are terminated. </p> <p>By default, Amazon EC2 Auto Scaling balances instances
+         * across all Availability Zones. If you decrement the desired capacity, your Auto
+         * Scaling group can become unbalanced between Availability Zones. Amazon EC2 Auto
+         * Scaling tries to rebalance the group, and rebalancing might terminate instances
+         * in other zones. For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-benefits.html#AutoScalingBehavior.InstanceUsage">Rebalancing
          * activities</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2724,16 +2857,17 @@ namespace Model
 
         /**
          * <p>Terminates the specified instance and optionally adjusts the desired group
-         * size. </p> <p>This call simply makes a termination request. The instance is not
-         * terminated immediately. When an instance is terminated, the instance status
-         * changes to <code>terminated</code>. You can't connect to or start an instance
-         * after you've terminated it.</p> <p>If you do not specify the option to decrement
-         * the desired capacity, Amazon EC2 Auto Scaling launches instances to replace the
-         * ones that are terminated. </p> <p>By default, Amazon EC2 Auto Scaling balances
-         * instances across all Availability Zones. If you decrement the desired capacity,
-         * your Auto Scaling group can become unbalanced between Availability Zones. Amazon
-         * EC2 Auto Scaling tries to rebalance the group, and rebalancing might terminate
-         * instances in other zones. For more information, see <a
+         * size. This operation cannot be called on instances in a warm pool.</p> <p>This
+         * call simply makes a termination request. The instance is not terminated
+         * immediately. When an instance is terminated, the instance status changes to
+         * <code>terminated</code>. You can't connect to or start an instance after you've
+         * terminated it.</p> <p>If you do not specify the option to decrement the desired
+         * capacity, Amazon EC2 Auto Scaling launches instances to replace the ones that
+         * are terminated. </p> <p>By default, Amazon EC2 Auto Scaling balances instances
+         * across all Availability Zones. If you decrement the desired capacity, your Auto
+         * Scaling group can become unbalanced between Availability Zones. Amazon EC2 Auto
+         * Scaling tries to rebalance the group, and rebalancing might terminate instances
+         * in other zones. For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-benefits.html#AutoScalingBehavior.InstanceUsage">Rebalancing
          * activities</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2746,16 +2880,17 @@ namespace Model
 
         /**
          * <p>Terminates the specified instance and optionally adjusts the desired group
-         * size. </p> <p>This call simply makes a termination request. The instance is not
-         * terminated immediately. When an instance is terminated, the instance status
-         * changes to <code>terminated</code>. You can't connect to or start an instance
-         * after you've terminated it.</p> <p>If you do not specify the option to decrement
-         * the desired capacity, Amazon EC2 Auto Scaling launches instances to replace the
-         * ones that are terminated. </p> <p>By default, Amazon EC2 Auto Scaling balances
-         * instances across all Availability Zones. If you decrement the desired capacity,
-         * your Auto Scaling group can become unbalanced between Availability Zones. Amazon
-         * EC2 Auto Scaling tries to rebalance the group, and rebalancing might terminate
-         * instances in other zones. For more information, see <a
+         * size. This operation cannot be called on instances in a warm pool.</p> <p>This
+         * call simply makes a termination request. The instance is not terminated
+         * immediately. When an instance is terminated, the instance status changes to
+         * <code>terminated</code>. You can't connect to or start an instance after you've
+         * terminated it.</p> <p>If you do not specify the option to decrement the desired
+         * capacity, Amazon EC2 Auto Scaling launches instances to replace the ones that
+         * are terminated. </p> <p>By default, Amazon EC2 Auto Scaling balances instances
+         * across all Availability Zones. If you decrement the desired capacity, your Auto
+         * Scaling group can become unbalanced between Availability Zones. Amazon EC2 Auto
+         * Scaling tries to rebalance the group, and rebalancing might terminate instances
+         * in other zones. For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-benefits.html#AutoScalingBehavior.InstanceUsage">Rebalancing
          * activities</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2917,6 +3052,7 @@ namespace Model
         void DeletePolicyAsyncHelper(const Model::DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteScheduledActionAsyncHelper(const Model::DeleteScheduledActionRequest& request, const DeleteScheduledActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTagsAsyncHelper(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteWarmPoolAsyncHelper(const Model::DeleteWarmPoolRequest& request, const DeleteWarmPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccountLimitsAsyncHelper(const Model::DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAdjustmentTypesAsyncHelper(const Model::DescribeAdjustmentTypesRequest& request, const DescribeAdjustmentTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAutoScalingGroupsAsyncHelper(const Model::DescribeAutoScalingGroupsRequest& request, const DescribeAutoScalingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2936,6 +3072,7 @@ namespace Model
         void DescribeScheduledActionsAsyncHelper(const Model::DescribeScheduledActionsRequest& request, const DescribeScheduledActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTagsAsyncHelper(const Model::DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTerminationPolicyTypesAsyncHelper(const Model::DescribeTerminationPolicyTypesRequest& request, const DescribeTerminationPolicyTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeWarmPoolAsyncHelper(const Model::DescribeWarmPoolRequest& request, const DescribeWarmPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetachInstancesAsyncHelper(const Model::DetachInstancesRequest& request, const DetachInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetachLoadBalancerTargetGroupsAsyncHelper(const Model::DetachLoadBalancerTargetGroupsRequest& request, const DetachLoadBalancerTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetachLoadBalancersAsyncHelper(const Model::DetachLoadBalancersRequest& request, const DetachLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2948,6 +3085,7 @@ namespace Model
         void PutNotificationConfigurationAsyncHelper(const Model::PutNotificationConfigurationRequest& request, const PutNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutScalingPolicyAsyncHelper(const Model::PutScalingPolicyRequest& request, const PutScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutScheduledUpdateGroupActionAsyncHelper(const Model::PutScheduledUpdateGroupActionRequest& request, const PutScheduledUpdateGroupActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutWarmPoolAsyncHelper(const Model::PutWarmPoolRequest& request, const PutWarmPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RecordLifecycleActionHeartbeatAsyncHelper(const Model::RecordLifecycleActionHeartbeatRequest& request, const RecordLifecycleActionHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResumeProcessesAsyncHelper(const Model::ResumeProcessesRequest& request, const ResumeProcessesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetDesiredCapacityAsyncHelper(const Model::SetDesiredCapacityRequest& request, const SetDesiredCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
