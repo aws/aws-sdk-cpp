@@ -484,26 +484,22 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether to validate network traffic to or from this network
-     * interface.</p>
+     * <p>Indicates whether source/destination checking is enabled.</p>
      */
     inline bool GetSourceDestCheck() const{ return m_sourceDestCheck; }
 
     /**
-     * <p>Indicates whether to validate network traffic to or from this network
-     * interface.</p>
+     * <p>Indicates whether source/destination checking is enabled.</p>
      */
     inline bool SourceDestCheckHasBeenSet() const { return m_sourceDestCheckHasBeenSet; }
 
     /**
-     * <p>Indicates whether to validate network traffic to or from this network
-     * interface.</p>
+     * <p>Indicates whether source/destination checking is enabled.</p>
      */
     inline void SetSourceDestCheck(bool value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = value; }
 
     /**
-     * <p>Indicates whether to validate network traffic to or from this network
-     * interface.</p>
+     * <p>Indicates whether source/destination checking is enabled.</p>
      */
     inline InstanceNetworkInterface& WithSourceDestCheck(bool value) { SetSourceDestCheck(value); return *this;}
 

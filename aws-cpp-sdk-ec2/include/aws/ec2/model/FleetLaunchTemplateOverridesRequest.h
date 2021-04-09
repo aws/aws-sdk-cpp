@@ -255,7 +255,7 @@ namespace Model
      * template override to use first in fulfilling On-Demand capacity.</p> <p>If the
      * Spot <code>AllocationStrategy</code> is set to
      * <code>capacity-optimized-prioritized</code>, EC2 Fleet uses priority on a
-     * best-effort basis to determine which launch template override to use first in
+     * best-effort basis to determine which launch template override to use in
      * fulfilling Spot capacity, but optimizes for capacity first.</p> <p>Valid values
      * are whole numbers starting at <code>0</code>. The lower the number, the higher
      * the priority. If no number is set, the launch template override has the lowest
@@ -271,7 +271,7 @@ namespace Model
      * template override to use first in fulfilling On-Demand capacity.</p> <p>If the
      * Spot <code>AllocationStrategy</code> is set to
      * <code>capacity-optimized-prioritized</code>, EC2 Fleet uses priority on a
-     * best-effort basis to determine which launch template override to use first in
+     * best-effort basis to determine which launch template override to use in
      * fulfilling Spot capacity, but optimizes for capacity first.</p> <p>Valid values
      * are whole numbers starting at <code>0</code>. The lower the number, the higher
      * the priority. If no number is set, the launch template override has the lowest
@@ -287,7 +287,7 @@ namespace Model
      * template override to use first in fulfilling On-Demand capacity.</p> <p>If the
      * Spot <code>AllocationStrategy</code> is set to
      * <code>capacity-optimized-prioritized</code>, EC2 Fleet uses priority on a
-     * best-effort basis to determine which launch template override to use first in
+     * best-effort basis to determine which launch template override to use in
      * fulfilling Spot capacity, but optimizes for capacity first.</p> <p>Valid values
      * are whole numbers starting at <code>0</code>. The lower the number, the higher
      * the priority. If no number is set, the launch template override has the lowest
@@ -303,7 +303,7 @@ namespace Model
      * template override to use first in fulfilling On-Demand capacity.</p> <p>If the
      * Spot <code>AllocationStrategy</code> is set to
      * <code>capacity-optimized-prioritized</code>, EC2 Fleet uses priority on a
-     * best-effort basis to determine which launch template override to use first in
+     * best-effort basis to determine which launch template override to use in
      * fulfilling Spot capacity, but optimizes for capacity first.</p> <p>Valid values
      * are whole numbers starting at <code>0</code>. The lower the number, the higher
      * the priority. If no number is set, the launch template override has the lowest

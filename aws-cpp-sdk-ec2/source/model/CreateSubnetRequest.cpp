@@ -14,12 +14,12 @@ CreateSubnetRequest::CreateSubnetRequest() :
     m_tagSpecificationsHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_availabilityZoneIdHasBeenSet(false),
-    m_cidrBlockHasBeenSet(false),
     m_ipv6CidrBlockHasBeenSet(false),
     m_outpostArnHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_cidrBlockHasBeenSet(false)
 {
 }
 
@@ -47,11 +47,6 @@ Aws::String CreateSubnetRequest::SerializePayload() const
     ss << "AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
   }
 
-  if(m_cidrBlockHasBeenSet)
-  {
-    ss << "CidrBlock=" << StringUtils::URLEncode(m_cidrBlock.c_str()) << "&";
-  }
-
   if(m_ipv6CidrBlockHasBeenSet)
   {
     ss << "Ipv6CidrBlock=" << StringUtils::URLEncode(m_ipv6CidrBlock.c_str()) << "&";
@@ -70,6 +65,11 @@ Aws::String CreateSubnetRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_cidrBlockHasBeenSet)
+  {
+    ss << "CidrBlock=" << StringUtils::URLEncode(m_cidrBlock.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

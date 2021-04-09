@@ -1245,9 +1245,9 @@ namespace Model
          * create an Amazon Redshift HSM configuration that provides a cluster the
          * information needed to store and use encryption keys in the HSM. For more
          * information, go to <a
-         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware
-         * Security Modules</a> in the Amazon Redshift Cluster Management
-         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html#working-with-HSM">Hardware
+         * Security Modules</a> in the <i>Amazon Redshift Cluster Management
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmClientCertificate">AWS
          * API Reference</a></p>
          */
@@ -1261,9 +1261,9 @@ namespace Model
          * create an Amazon Redshift HSM configuration that provides a cluster the
          * information needed to store and use encryption keys in the HSM. For more
          * information, go to <a
-         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware
-         * Security Modules</a> in the Amazon Redshift Cluster Management
-         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html#working-with-HSM">Hardware
+         * Security Modules</a> in the <i>Amazon Redshift Cluster Management
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmClientCertificate">AWS
          * API Reference</a></p>
          *
@@ -1279,9 +1279,9 @@ namespace Model
          * create an Amazon Redshift HSM configuration that provides a cluster the
          * information needed to store and use encryption keys in the HSM. For more
          * information, go to <a
-         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware
-         * Security Modules</a> in the Amazon Redshift Cluster Management
-         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html#working-with-HSM">Hardware
+         * Security Modules</a> in the <i>Amazon Redshift Cluster Management
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmClientCertificate">AWS
          * API Reference</a></p>
          *

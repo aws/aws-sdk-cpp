@@ -234,71 +234,6 @@ namespace Model
 
 
     /**
-     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
-     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
-     */
-    inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
-
-    /**
-     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
-     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
-     */
-    inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
-
-    /**
-     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
-     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
-     */
-    inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
-
-    /**
-     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
-     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
-     */
-    inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
-
-    /**
-     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
-     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
-     */
-    inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
-
-    /**
-     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
-     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
-     */
-    inline CreateSubnetRequest& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
-
-    /**
-     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
-     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
-     */
-    inline CreateSubnetRequest& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
-
-    /**
-     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
-     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
-     */
-    inline CreateSubnetRequest& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
-
-
-    /**
      * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
      * use a /64 prefix length.</p>
      */
@@ -469,6 +404,71 @@ namespace Model
      */
     inline CreateSubnetRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
+     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
+     */
+    inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
+
+    /**
+     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
+     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
+     */
+    inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
+
+    /**
+     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
+     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
+     */
+    inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
+
+    /**
+     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
+     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
+     */
+    inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
+
+    /**
+     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
+     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
+     */
+    inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
+
+    /**
+     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
+     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
+     */
+    inline CreateSubnetRequest& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
+
+    /**
+     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
+     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
+     */
+    inline CreateSubnetRequest& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
+     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
+     */
+    inline CreateSubnetRequest& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
+
   private:
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
@@ -479,9 +479,6 @@ namespace Model
 
     Aws::String m_availabilityZoneId;
     bool m_availabilityZoneIdHasBeenSet;
-
-    Aws::String m_cidrBlock;
-    bool m_cidrBlockHasBeenSet;
 
     Aws::String m_ipv6CidrBlock;
     bool m_ipv6CidrBlockHasBeenSet;
@@ -494,6 +491,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
+    Aws::String m_cidrBlock;
+    bool m_cidrBlockHasBeenSet;
   };
 
 } // namespace Model

@@ -5069,7 +5069,7 @@ namespace Model
          * information about the supported operating systems, image formats, and known
          * limitations for the types of instances you can export, see <a
          * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html">Exporting
-         * an Instance as a VM Using VM Import/Export</a> in the <i>VM Import/Export User
+         * an instance as a VM Using VM Import/Export</a> in the <i>VM Import/Export User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceExportTask">AWS
          * API Reference</a></p>
@@ -5081,7 +5081,7 @@ namespace Model
          * information about the supported operating systems, image formats, and known
          * limitations for the types of instances you can export, see <a
          * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html">Exporting
-         * an Instance as a VM Using VM Import/Export</a> in the <i>VM Import/Export User
+         * an instance as a VM Using VM Import/Export</a> in the <i>VM Import/Export User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceExportTask">AWS
          * API Reference</a></p>
@@ -5095,7 +5095,7 @@ namespace Model
          * information about the supported operating systems, image formats, and known
          * limitations for the types of instances you can export, see <a
          * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html">Exporting
-         * an Instance as a VM Using VM Import/Export</a> in the <i>VM Import/Export User
+         * an instance as a VM Using VM Import/Export</a> in the <i>VM Import/Export User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceExportTask">AWS
          * API Reference</a></p>
@@ -13017,11 +13017,10 @@ namespace Model
          * <p>Describes the Spot price history. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
          * Instance pricing history</a> in the <i>Amazon EC2 User Guide for Linux
-         * Instances</i>.</p> <p>When you specify a start and end time, this operation
-         * returns the prices of the instance types within the time range that you
-         * specified and the time when the price changed. The price is valid within the
-         * time period that you specified; the response merely indicates the last time that
-         * the price changed.</p><p><h3>See Also:</h3>   <a
+         * Instances</i>.</p> <p>When you specify a start and end time, the operation
+         * returns the prices of the instance types within that time range. It also returns
+         * the last price change before the start time, which is the effective price as of
+         * the start time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotPriceHistory">AWS
          * API Reference</a></p>
          */
@@ -13031,11 +13030,10 @@ namespace Model
          * <p>Describes the Spot price history. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
          * Instance pricing history</a> in the <i>Amazon EC2 User Guide for Linux
-         * Instances</i>.</p> <p>When you specify a start and end time, this operation
-         * returns the prices of the instance types within the time range that you
-         * specified and the time when the price changed. The price is valid within the
-         * time period that you specified; the response merely indicates the last time that
-         * the price changed.</p><p><h3>See Also:</h3>   <a
+         * Instances</i>.</p> <p>When you specify a start and end time, the operation
+         * returns the prices of the instance types within that time range. It also returns
+         * the last price change before the start time, which is the effective price as of
+         * the start time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotPriceHistory">AWS
          * API Reference</a></p>
          *
@@ -13047,11 +13045,10 @@ namespace Model
          * <p>Describes the Spot price history. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
          * Instance pricing history</a> in the <i>Amazon EC2 User Guide for Linux
-         * Instances</i>.</p> <p>When you specify a start and end time, this operation
-         * returns the prices of the instance types within the time range that you
-         * specified and the time when the price changed. The price is valid within the
-         * time period that you specified; the response merely indicates the last time that
-         * the price changed.</p><p><h3>See Also:</h3>   <a
+         * Instances</i>.</p> <p>When you specify a start and end time, the operation
+         * returns the prices of the instance types within that time range. It also returns
+         * the last price change before the start time, which is the effective price as of
+         * the start time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotPriceHistory">AWS
          * API Reference</a></p>
          *
@@ -15409,7 +15406,7 @@ namespace Model
          * <p>Exports an Amazon Machine Image (AMI) to a VM file. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport_image.html">Exporting
-         * a VM Directory from an Amazon Machine Image (AMI)</a> in the <i>VM Import/Export
+         * a VM directly from an Amazon Machine Image (AMI)</a> in the <i>VM Import/Export
          * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportImage">AWS API
          * Reference</a></p>
@@ -15420,7 +15417,7 @@ namespace Model
          * <p>Exports an Amazon Machine Image (AMI) to a VM file. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport_image.html">Exporting
-         * a VM Directory from an Amazon Machine Image (AMI)</a> in the <i>VM Import/Export
+         * a VM directly from an Amazon Machine Image (AMI)</a> in the <i>VM Import/Export
          * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportImage">AWS API
          * Reference</a></p>
@@ -15433,7 +15430,7 @@ namespace Model
          * <p>Exports an Amazon Machine Image (AMI) to a VM file. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport_image.html">Exporting
-         * a VM Directory from an Amazon Machine Image (AMI)</a> in the <i>VM Import/Export
+         * a VM directly from an Amazon Machine Image (AMI)</a> in the <i>VM Import/Export
          * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportImage">AWS API
          * Reference</a></p>
@@ -16378,9 +16375,9 @@ namespace Model
 
         /**
          * <p>Import single or multi-volume disk images or EBS snapshots into an Amazon
-         * Machine Image (AMI). For more information, see <a
+         * Machine Image (AMI).</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing
-         * a VM as an Image Using VM Import/Export</a> in the <i>VM Import/Export User
+         * a VM as an image using VM Import/Export</a> in the <i>VM Import/Export User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportImage">AWS API
          * Reference</a></p>
@@ -16389,9 +16386,9 @@ namespace Model
 
         /**
          * <p>Import single or multi-volume disk images or EBS snapshots into an Amazon
-         * Machine Image (AMI). For more information, see <a
+         * Machine Image (AMI).</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing
-         * a VM as an Image Using VM Import/Export</a> in the <i>VM Import/Export User
+         * a VM as an image using VM Import/Export</a> in the <i>VM Import/Export User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportImage">AWS API
          * Reference</a></p>
@@ -16402,9 +16399,9 @@ namespace Model
 
         /**
          * <p>Import single or multi-volume disk images or EBS snapshots into an Amazon
-         * Machine Image (AMI). For more information, see <a
+         * Machine Image (AMI).</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing
-         * a VM as an Image Using VM Import/Export</a> in the <i>VM Import/Export User
+         * a VM as an image using VM Import/Export</a> in the <i>VM Import/Export User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportImage">AWS API
          * Reference</a></p>
@@ -16414,12 +16411,15 @@ namespace Model
         virtual void ImportImageAsync(const Model::ImportImageRequest& request, const ImportImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an import instance task using metadata from the specified disk image.
-         * <code>ImportInstance</code> only supports single-volume VMs. To import
-         * multi-volume VMs, use <a>ImportImage</a>. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing
-         * a Virtual Machine Using the Amazon EC2 CLI</a>.</p> <p>For information about the
-         * import manifest referenced by this API action, see <a
+         * <p>Creates an import instance task using metadata from the specified disk
+         * image.</p> <p>This API action supports only single-volume VMs. To import
+         * multi-volume VMs, use <a>ImportImage</a> instead.</p> <p>This API action is not
+         * supported by the AWS Command Line Interface (AWS CLI). For information about
+         * using the Amazon EC2 CLI, which is deprecated, see <a
+         * href="https://awsdocs.s3.amazonaws.com/EC2/ec2-clt.pdf#UsingVirtualMachinesinAmazonEC2">Importing
+         * a VM to Amazon EC2</a> in the <i>Amazon EC2 CLI Reference</i> PDF file.</p>
+         * <p>For information about the import manifest referenced by this API action, see
+         * <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
          * Import Manifest</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportInstance">AWS
@@ -16428,12 +16428,15 @@ namespace Model
         virtual Model::ImportInstanceOutcome ImportInstance(const Model::ImportInstanceRequest& request) const;
 
         /**
-         * <p>Creates an import instance task using metadata from the specified disk image.
-         * <code>ImportInstance</code> only supports single-volume VMs. To import
-         * multi-volume VMs, use <a>ImportImage</a>. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing
-         * a Virtual Machine Using the Amazon EC2 CLI</a>.</p> <p>For information about the
-         * import manifest referenced by this API action, see <a
+         * <p>Creates an import instance task using metadata from the specified disk
+         * image.</p> <p>This API action supports only single-volume VMs. To import
+         * multi-volume VMs, use <a>ImportImage</a> instead.</p> <p>This API action is not
+         * supported by the AWS Command Line Interface (AWS CLI). For information about
+         * using the Amazon EC2 CLI, which is deprecated, see <a
+         * href="https://awsdocs.s3.amazonaws.com/EC2/ec2-clt.pdf#UsingVirtualMachinesinAmazonEC2">Importing
+         * a VM to Amazon EC2</a> in the <i>Amazon EC2 CLI Reference</i> PDF file.</p>
+         * <p>For information about the import manifest referenced by this API action, see
+         * <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
          * Import Manifest</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportInstance">AWS
@@ -16444,12 +16447,15 @@ namespace Model
         virtual Model::ImportInstanceOutcomeCallable ImportInstanceCallable(const Model::ImportInstanceRequest& request) const;
 
         /**
-         * <p>Creates an import instance task using metadata from the specified disk image.
-         * <code>ImportInstance</code> only supports single-volume VMs. To import
-         * multi-volume VMs, use <a>ImportImage</a>. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing
-         * a Virtual Machine Using the Amazon EC2 CLI</a>.</p> <p>For information about the
-         * import manifest referenced by this API action, see <a
+         * <p>Creates an import instance task using metadata from the specified disk
+         * image.</p> <p>This API action supports only single-volume VMs. To import
+         * multi-volume VMs, use <a>ImportImage</a> instead.</p> <p>This API action is not
+         * supported by the AWS Command Line Interface (AWS CLI). For information about
+         * using the Amazon EC2 CLI, which is deprecated, see <a
+         * href="https://awsdocs.s3.amazonaws.com/EC2/ec2-clt.pdf#UsingVirtualMachinesinAmazonEC2">Importing
+         * a VM to Amazon EC2</a> in the <i>Amazon EC2 CLI Reference</i> PDF file.</p>
+         * <p>For information about the import manifest referenced by this API action, see
+         * <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
          * Import Manifest</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportInstance">AWS
@@ -16509,14 +16515,20 @@ namespace Model
         virtual void ImportKeyPairAsync(const Model::ImportKeyPairRequest& request, const ImportKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Imports a disk into an EBS snapshot.</p><p><h3>See Also:</h3>   <a
+         * <p>Imports a disk into an EBS snapshot.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-import-snapshot.html">Importing
+         * a disk as a snapshot using VM Import/Export</a> in the <i>VM Import/Export User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportSnapshot">AWS
          * API Reference</a></p>
          */
         virtual Model::ImportSnapshotOutcome ImportSnapshot(const Model::ImportSnapshotRequest& request) const;
 
         /**
-         * <p>Imports a disk into an EBS snapshot.</p><p><h3>See Also:</h3>   <a
+         * <p>Imports a disk into an EBS snapshot.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-import-snapshot.html">Importing
+         * a disk as a snapshot using VM Import/Export</a> in the <i>VM Import/Export User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportSnapshot">AWS
          * API Reference</a></p>
          *
@@ -16525,7 +16537,10 @@ namespace Model
         virtual Model::ImportSnapshotOutcomeCallable ImportSnapshotCallable(const Model::ImportSnapshotRequest& request) const;
 
         /**
-         * <p>Imports a disk into an EBS snapshot.</p><p><h3>See Also:</h3>   <a
+         * <p>Imports a disk into an EBS snapshot.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-import-snapshot.html">Importing
+         * a disk as a snapshot using VM Import/Export</a> in the <i>VM Import/Export User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportSnapshot">AWS
          * API Reference</a></p>
          *
@@ -16535,10 +16550,15 @@ namespace Model
 
         /**
          * <p>Creates an import volume task using metadata from the specified disk
-         * image.For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/importing-your-volumes-into-amazon-ebs.html">Importing
-         * Disks to Amazon EBS</a>.</p> <p>For information about the import manifest
-         * referenced by this API action, see <a
+         * image.</p> <p>This API action supports only single-volume VMs. To import
+         * multi-volume VMs, use <a>ImportImage</a> instead. To import a disk to a
+         * snapshot, use <a>ImportSnapshot</a> instead.</p> <p>This API action is not
+         * supported by the AWS Command Line Interface (AWS CLI). For information about
+         * using the Amazon EC2 CLI, which is deprecated, see <a
+         * href="https://awsdocs.s3.amazonaws.com/EC2/ec2-clt.pdf#importing-your-volumes-into-amazon-ebs">Importing
+         * Disks to Amazon EBS</a> in the <i>Amazon EC2 CLI Reference</i> PDF file.</p>
+         * <p>For information about the import manifest referenced by this API action, see
+         * <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
          * Import Manifest</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportVolume">AWS
@@ -16548,10 +16568,15 @@ namespace Model
 
         /**
          * <p>Creates an import volume task using metadata from the specified disk
-         * image.For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/importing-your-volumes-into-amazon-ebs.html">Importing
-         * Disks to Amazon EBS</a>.</p> <p>For information about the import manifest
-         * referenced by this API action, see <a
+         * image.</p> <p>This API action supports only single-volume VMs. To import
+         * multi-volume VMs, use <a>ImportImage</a> instead. To import a disk to a
+         * snapshot, use <a>ImportSnapshot</a> instead.</p> <p>This API action is not
+         * supported by the AWS Command Line Interface (AWS CLI). For information about
+         * using the Amazon EC2 CLI, which is deprecated, see <a
+         * href="https://awsdocs.s3.amazonaws.com/EC2/ec2-clt.pdf#importing-your-volumes-into-amazon-ebs">Importing
+         * Disks to Amazon EBS</a> in the <i>Amazon EC2 CLI Reference</i> PDF file.</p>
+         * <p>For information about the import manifest referenced by this API action, see
+         * <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
          * Import Manifest</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportVolume">AWS
@@ -16563,10 +16588,15 @@ namespace Model
 
         /**
          * <p>Creates an import volume task using metadata from the specified disk
-         * image.For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/importing-your-volumes-into-amazon-ebs.html">Importing
-         * Disks to Amazon EBS</a>.</p> <p>For information about the import manifest
-         * referenced by this API action, see <a
+         * image.</p> <p>This API action supports only single-volume VMs. To import
+         * multi-volume VMs, use <a>ImportImage</a> instead. To import a disk to a
+         * snapshot, use <a>ImportSnapshot</a> instead.</p> <p>This API action is not
+         * supported by the AWS Command Line Interface (AWS CLI). For information about
+         * using the Amazon EC2 CLI, which is deprecated, see <a
+         * href="https://awsdocs.s3.amazonaws.com/EC2/ec2-clt.pdf#importing-your-volumes-into-amazon-ebs">Importing
+         * Disks to Amazon EBS</a> in the <i>Amazon EC2 CLI Reference</i> PDF file.</p>
+         * <p>For information about the import manifest referenced by this API action, see
+         * <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
          * Import Manifest</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportVolume">AWS
