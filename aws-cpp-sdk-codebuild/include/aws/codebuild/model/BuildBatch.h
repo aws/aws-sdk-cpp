@@ -1299,7 +1299,7 @@ namespace Model
 
 
     /**
-     * <p/> <p>Specifies if session debugging is enabled for this batch build. For more
+     * <p>Specifies if session debugging is enabled for this batch build. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing
      * a running build in Session Manager</a>. Batch session debugging is not supported
@@ -1308,7 +1308,7 @@ namespace Model
     inline bool GetDebugSessionEnabled() const{ return m_debugSessionEnabled; }
 
     /**
-     * <p/> <p>Specifies if session debugging is enabled for this batch build. For more
+     * <p>Specifies if session debugging is enabled for this batch build. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing
      * a running build in Session Manager</a>. Batch session debugging is not supported
@@ -1317,7 +1317,7 @@ namespace Model
     inline bool DebugSessionEnabledHasBeenSet() const { return m_debugSessionEnabledHasBeenSet; }
 
     /**
-     * <p/> <p>Specifies if session debugging is enabled for this batch build. For more
+     * <p>Specifies if session debugging is enabled for this batch build. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing
      * a running build in Session Manager</a>. Batch session debugging is not supported
@@ -1326,7 +1326,7 @@ namespace Model
     inline void SetDebugSessionEnabled(bool value) { m_debugSessionEnabledHasBeenSet = true; m_debugSessionEnabled = value; }
 
     /**
-     * <p/> <p>Specifies if session debugging is enabled for this batch build. For more
+     * <p>Specifies if session debugging is enabled for this batch build. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing
      * a running build in Session Manager</a>. Batch session debugging is not supported

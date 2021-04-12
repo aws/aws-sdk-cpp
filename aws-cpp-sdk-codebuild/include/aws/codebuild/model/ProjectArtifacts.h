@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codebuild/model/ArtifactNamespace.h>
 #include <aws/codebuild/model/ArtifactPackaging.h>
+#include <aws/codebuild/model/BucketOwnerAccess.h>
 #include <utility>
 
 namespace Aws
@@ -863,6 +864,25 @@ namespace Model
      */
     inline ProjectArtifacts& WithArtifactIdentifier(const char* value) { SetArtifactIdentifier(value); return *this;}
 
+
+    
+    inline const BucketOwnerAccess& GetBucketOwnerAccess() const{ return m_bucketOwnerAccess; }
+
+    
+    inline bool BucketOwnerAccessHasBeenSet() const { return m_bucketOwnerAccessHasBeenSet; }
+
+    
+    inline void SetBucketOwnerAccess(const BucketOwnerAccess& value) { m_bucketOwnerAccessHasBeenSet = true; m_bucketOwnerAccess = value; }
+
+    
+    inline void SetBucketOwnerAccess(BucketOwnerAccess&& value) { m_bucketOwnerAccessHasBeenSet = true; m_bucketOwnerAccess = std::move(value); }
+
+    
+    inline ProjectArtifacts& WithBucketOwnerAccess(const BucketOwnerAccess& value) { SetBucketOwnerAccess(value); return *this;}
+
+    
+    inline ProjectArtifacts& WithBucketOwnerAccess(BucketOwnerAccess&& value) { SetBucketOwnerAccess(std::move(value)); return *this;}
+
   private:
 
     ArtifactsType m_type;
@@ -891,6 +911,9 @@ namespace Model
 
     Aws::String m_artifactIdentifier;
     bool m_artifactIdentifierHasBeenSet;
+
+    BucketOwnerAccess m_bucketOwnerAccess;
+    bool m_bucketOwnerAccessHasBeenSet;
   };
 
 } // namespace Model

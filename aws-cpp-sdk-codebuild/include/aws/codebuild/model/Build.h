@@ -1320,42 +1320,82 @@ namespace Model
 
 
     /**
-     * <p> A list of exported environment variables for this build. </p>
+     * <p>A list of exported environment variables for this build.</p> <p>Exported
+     * environment variables are used in conjunction with AWS CodePipeline to export
+     * environment variables from the current build stage to subsequent stages in the
+     * pipeline. For more information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working
+     * with variables</a> in the <i>AWS CodePipeline User Guide</i>.</p>
      */
     inline const Aws::Vector<ExportedEnvironmentVariable>& GetExportedEnvironmentVariables() const{ return m_exportedEnvironmentVariables; }
 
     /**
-     * <p> A list of exported environment variables for this build. </p>
+     * <p>A list of exported environment variables for this build.</p> <p>Exported
+     * environment variables are used in conjunction with AWS CodePipeline to export
+     * environment variables from the current build stage to subsequent stages in the
+     * pipeline. For more information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working
+     * with variables</a> in the <i>AWS CodePipeline User Guide</i>.</p>
      */
     inline bool ExportedEnvironmentVariablesHasBeenSet() const { return m_exportedEnvironmentVariablesHasBeenSet; }
 
     /**
-     * <p> A list of exported environment variables for this build. </p>
+     * <p>A list of exported environment variables for this build.</p> <p>Exported
+     * environment variables are used in conjunction with AWS CodePipeline to export
+     * environment variables from the current build stage to subsequent stages in the
+     * pipeline. For more information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working
+     * with variables</a> in the <i>AWS CodePipeline User Guide</i>.</p>
      */
     inline void SetExportedEnvironmentVariables(const Aws::Vector<ExportedEnvironmentVariable>& value) { m_exportedEnvironmentVariablesHasBeenSet = true; m_exportedEnvironmentVariables = value; }
 
     /**
-     * <p> A list of exported environment variables for this build. </p>
+     * <p>A list of exported environment variables for this build.</p> <p>Exported
+     * environment variables are used in conjunction with AWS CodePipeline to export
+     * environment variables from the current build stage to subsequent stages in the
+     * pipeline. For more information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working
+     * with variables</a> in the <i>AWS CodePipeline User Guide</i>.</p>
      */
     inline void SetExportedEnvironmentVariables(Aws::Vector<ExportedEnvironmentVariable>&& value) { m_exportedEnvironmentVariablesHasBeenSet = true; m_exportedEnvironmentVariables = std::move(value); }
 
     /**
-     * <p> A list of exported environment variables for this build. </p>
+     * <p>A list of exported environment variables for this build.</p> <p>Exported
+     * environment variables are used in conjunction with AWS CodePipeline to export
+     * environment variables from the current build stage to subsequent stages in the
+     * pipeline. For more information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working
+     * with variables</a> in the <i>AWS CodePipeline User Guide</i>.</p>
      */
     inline Build& WithExportedEnvironmentVariables(const Aws::Vector<ExportedEnvironmentVariable>& value) { SetExportedEnvironmentVariables(value); return *this;}
 
     /**
-     * <p> A list of exported environment variables for this build. </p>
+     * <p>A list of exported environment variables for this build.</p> <p>Exported
+     * environment variables are used in conjunction with AWS CodePipeline to export
+     * environment variables from the current build stage to subsequent stages in the
+     * pipeline. For more information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working
+     * with variables</a> in the <i>AWS CodePipeline User Guide</i>.</p>
      */
     inline Build& WithExportedEnvironmentVariables(Aws::Vector<ExportedEnvironmentVariable>&& value) { SetExportedEnvironmentVariables(std::move(value)); return *this;}
 
     /**
-     * <p> A list of exported environment variables for this build. </p>
+     * <p>A list of exported environment variables for this build.</p> <p>Exported
+     * environment variables are used in conjunction with AWS CodePipeline to export
+     * environment variables from the current build stage to subsequent stages in the
+     * pipeline. For more information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working
+     * with variables</a> in the <i>AWS CodePipeline User Guide</i>.</p>
      */
     inline Build& AddExportedEnvironmentVariables(const ExportedEnvironmentVariable& value) { m_exportedEnvironmentVariablesHasBeenSet = true; m_exportedEnvironmentVariables.push_back(value); return *this; }
 
     /**
-     * <p> A list of exported environment variables for this build. </p>
+     * <p>A list of exported environment variables for this build.</p> <p>Exported
+     * environment variables are used in conjunction with AWS CodePipeline to export
+     * environment variables from the current build stage to subsequent stages in the
+     * pipeline. For more information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working
+     * with variables</a> in the <i>AWS CodePipeline User Guide</i>.</p>
      */
     inline Build& AddExportedEnvironmentVariables(ExportedEnvironmentVariable&& value) { m_exportedEnvironmentVariablesHasBeenSet = true; m_exportedEnvironmentVariables.push_back(std::move(value)); return *this; }
 

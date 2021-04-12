@@ -127,6 +127,31 @@ namespace Model
      */
     inline ActiveDirectoryBackupAttributes& WithActiveDirectoryId(const char* value) { SetActiveDirectoryId(value); return *this;}
 
+
+    
+    inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
+
+    
+    inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
+
+    
+    inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
+
+    
+    inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
+
+    
+    inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
+
+    
+    inline ActiveDirectoryBackupAttributes& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
+
+    
+    inline ActiveDirectoryBackupAttributes& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
+
+    
+    inline ActiveDirectoryBackupAttributes& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -134,6 +159,9 @@ namespace Model
 
     Aws::String m_activeDirectoryId;
     bool m_activeDirectoryIdHasBeenSet;
+
+    Aws::String m_resourceARN;
+    bool m_resourceARNHasBeenSet;
   };
 
 } // namespace Model

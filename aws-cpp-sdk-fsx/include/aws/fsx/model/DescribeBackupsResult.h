@@ -41,37 +41,37 @@ namespace Model
 
 
     /**
-     * <p>Any array of backups.</p>
+     * <p>An array of backups.</p>
      */
     inline const Aws::Vector<Backup>& GetBackups() const{ return m_backups; }
 
     /**
-     * <p>Any array of backups.</p>
+     * <p>An array of backups.</p>
      */
     inline void SetBackups(const Aws::Vector<Backup>& value) { m_backups = value; }
 
     /**
-     * <p>Any array of backups.</p>
+     * <p>An array of backups.</p>
      */
     inline void SetBackups(Aws::Vector<Backup>&& value) { m_backups = std::move(value); }
 
     /**
-     * <p>Any array of backups.</p>
+     * <p>An array of backups.</p>
      */
     inline DescribeBackupsResult& WithBackups(const Aws::Vector<Backup>& value) { SetBackups(value); return *this;}
 
     /**
-     * <p>Any array of backups.</p>
+     * <p>An array of backups.</p>
      */
     inline DescribeBackupsResult& WithBackups(Aws::Vector<Backup>&& value) { SetBackups(std::move(value)); return *this;}
 
     /**
-     * <p>Any array of backups.</p>
+     * <p>An array of backups.</p>
      */
     inline DescribeBackupsResult& AddBackups(const Backup& value) { m_backups.push_back(value); return *this; }
 
     /**
-     * <p>Any array of backups.</p>
+     * <p>An array of backups.</p>
      */
     inline DescribeBackupsResult& AddBackups(Backup&& value) { m_backups.push_back(std::move(value)); return *this; }
 

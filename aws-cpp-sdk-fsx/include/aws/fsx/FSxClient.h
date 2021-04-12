@@ -13,6 +13,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/fsx/model/AssociateFileSystemAliasesResult.h>
 #include <aws/fsx/model/CancelDataRepositoryTaskResult.h>
+#include <aws/fsx/model/CopyBackupResult.h>
 #include <aws/fsx/model/CreateBackupResult.h>
 #include <aws/fsx/model/CreateDataRepositoryTaskResult.h>
 #include <aws/fsx/model/CreateFileSystemResult.h>
@@ -69,6 +70,7 @@ namespace Model
 {
         class AssociateFileSystemAliasesRequest;
         class CancelDataRepositoryTaskRequest;
+        class CopyBackupRequest;
         class CreateBackupRequest;
         class CreateDataRepositoryTaskRequest;
         class CreateFileSystemRequest;
@@ -87,6 +89,7 @@ namespace Model
 
         typedef Aws::Utils::Outcome<AssociateFileSystemAliasesResult, FSxError> AssociateFileSystemAliasesOutcome;
         typedef Aws::Utils::Outcome<CancelDataRepositoryTaskResult, FSxError> CancelDataRepositoryTaskOutcome;
+        typedef Aws::Utils::Outcome<CopyBackupResult, FSxError> CopyBackupOutcome;
         typedef Aws::Utils::Outcome<CreateBackupResult, FSxError> CreateBackupOutcome;
         typedef Aws::Utils::Outcome<CreateDataRepositoryTaskResult, FSxError> CreateDataRepositoryTaskOutcome;
         typedef Aws::Utils::Outcome<CreateFileSystemResult, FSxError> CreateFileSystemOutcome;
@@ -105,6 +108,7 @@ namespace Model
 
         typedef std::future<AssociateFileSystemAliasesOutcome> AssociateFileSystemAliasesOutcomeCallable;
         typedef std::future<CancelDataRepositoryTaskOutcome> CancelDataRepositoryTaskOutcomeCallable;
+        typedef std::future<CopyBackupOutcome> CopyBackupOutcomeCallable;
         typedef std::future<CreateBackupOutcome> CreateBackupOutcomeCallable;
         typedef std::future<CreateDataRepositoryTaskOutcome> CreateDataRepositoryTaskOutcomeCallable;
         typedef std::future<CreateFileSystemOutcome> CreateFileSystemOutcomeCallable;
@@ -126,6 +130,7 @@ namespace Model
 
     typedef std::function<void(const FSxClient*, const Model::AssociateFileSystemAliasesRequest&, const Model::AssociateFileSystemAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateFileSystemAliasesResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::CancelDataRepositoryTaskRequest&, const Model::CancelDataRepositoryTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelDataRepositoryTaskResponseReceivedHandler;
+    typedef std::function<void(const FSxClient*, const Model::CopyBackupRequest&, const Model::CopyBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyBackupResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::CreateBackupRequest&, const Model::CreateBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBackupResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::CreateDataRepositoryTaskRequest&, const Model::CreateDataRepositoryTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataRepositoryTaskResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::CreateFileSystemRequest&, const Model::CreateFileSystemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFileSystemResponseReceivedHandler;
@@ -279,6 +284,94 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CancelDataRepositoryTaskAsync(const Model::CancelDataRepositoryTaskRequest& request, const CancelDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Copies an existing backup within the same AWS account to another Region
+         * (cross-Region copy) or within the same Region (in-Region copy). You can have up
+         * to five backup copy requests in progress to a single destination Region per
+         * account.</p> <p>You can use cross-Region backup copies for cross-region disaster
+         * recovery. You periodically take backups and copy them to another Region so that
+         * in the event of a disaster in the primary Region, you can restore from backup
+         * and recover availability quickly in the other Region. You can make cross-Region
+         * copies only within your AWS partition.</p> <p> You can also use backup copies to
+         * clone your file data set to another Region or within the same Region.</p> <p>You
+         * can use the <code>SourceRegion</code> parameter to specify the AWS Region from
+         * which the backup will be copied. For example, if you make the call from the
+         * <code>us-west-1</code> Region and want to copy a backup from the
+         * <code>us-east-2</code> Region, you specify <code>us-east-2</code> in the
+         * <code>SourceRegion</code> parameter to make a cross-Region copy. If you don't
+         * specify a Region, the backup copy is created in the same Region where the
+         * request is sent from (in-Region copy).</p> <p>For more information on creating
+         * backup copies, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/copy-backups.html">
+         * Copying backups</a> in the <i>Amazon FSx for Windows User Guide</i> and <a
+         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/copy-backups.html">Copying
+         * backups</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CopyBackup">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::CopyBackupOutcome CopyBackup(const Model::CopyBackupRequest& request) const;
+
+        /**
+         * <p>Copies an existing backup within the same AWS account to another Region
+         * (cross-Region copy) or within the same Region (in-Region copy). You can have up
+         * to five backup copy requests in progress to a single destination Region per
+         * account.</p> <p>You can use cross-Region backup copies for cross-region disaster
+         * recovery. You periodically take backups and copy them to another Region so that
+         * in the event of a disaster in the primary Region, you can restore from backup
+         * and recover availability quickly in the other Region. You can make cross-Region
+         * copies only within your AWS partition.</p> <p> You can also use backup copies to
+         * clone your file data set to another Region or within the same Region.</p> <p>You
+         * can use the <code>SourceRegion</code> parameter to specify the AWS Region from
+         * which the backup will be copied. For example, if you make the call from the
+         * <code>us-west-1</code> Region and want to copy a backup from the
+         * <code>us-east-2</code> Region, you specify <code>us-east-2</code> in the
+         * <code>SourceRegion</code> parameter to make a cross-Region copy. If you don't
+         * specify a Region, the backup copy is created in the same Region where the
+         * request is sent from (in-Region copy).</p> <p>For more information on creating
+         * backup copies, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/copy-backups.html">
+         * Copying backups</a> in the <i>Amazon FSx for Windows User Guide</i> and <a
+         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/copy-backups.html">Copying
+         * backups</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CopyBackup">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CopyBackupOutcomeCallable CopyBackupCallable(const Model::CopyBackupRequest& request) const;
+
+        /**
+         * <p>Copies an existing backup within the same AWS account to another Region
+         * (cross-Region copy) or within the same Region (in-Region copy). You can have up
+         * to five backup copy requests in progress to a single destination Region per
+         * account.</p> <p>You can use cross-Region backup copies for cross-region disaster
+         * recovery. You periodically take backups and copy them to another Region so that
+         * in the event of a disaster in the primary Region, you can restore from backup
+         * and recover availability quickly in the other Region. You can make cross-Region
+         * copies only within your AWS partition.</p> <p> You can also use backup copies to
+         * clone your file data set to another Region or within the same Region.</p> <p>You
+         * can use the <code>SourceRegion</code> parameter to specify the AWS Region from
+         * which the backup will be copied. For example, if you make the call from the
+         * <code>us-west-1</code> Region and want to copy a backup from the
+         * <code>us-east-2</code> Region, you specify <code>us-east-2</code> in the
+         * <code>SourceRegion</code> parameter to make a cross-Region copy. If you don't
+         * specify a Region, the backup copy is created in the same Region where the
+         * request is sent from (in-Region copy).</p> <p>For more information on creating
+         * backup copies, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/copy-backups.html">
+         * Copying backups</a> in the <i>Amazon FSx for Windows User Guide</i> and <a
+         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/copy-backups.html">Copying
+         * backups</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CopyBackup">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CopyBackupAsync(const Model::CopyBackupRequest& request, const CopyBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a backup of an existing Amazon FSx file system. Creating regular
@@ -1261,6 +1354,7 @@ namespace Model
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AssociateFileSystemAliasesAsyncHelper(const Model::AssociateFileSystemAliasesRequest& request, const AssociateFileSystemAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelDataRepositoryTaskAsyncHelper(const Model::CancelDataRepositoryTaskRequest& request, const CancelDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CopyBackupAsyncHelper(const Model::CopyBackupRequest& request, const CopyBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateBackupAsyncHelper(const Model::CreateBackupRequest& request, const CreateBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDataRepositoryTaskAsyncHelper(const Model::CreateDataRepositoryTaskRequest& request, const CreateDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateFileSystemAsyncHelper(const Model::CreateFileSystemRequest& request, const CreateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

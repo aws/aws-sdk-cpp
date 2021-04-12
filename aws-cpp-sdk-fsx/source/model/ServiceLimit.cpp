@@ -24,6 +24,8 @@ namespace Aws
         static const int TOTAL_THROUGHPUT_CAPACITY_HASH = HashingUtils::HashString("TOTAL_THROUGHPUT_CAPACITY");
         static const int TOTAL_STORAGE_HASH = HashingUtils::HashString("TOTAL_STORAGE");
         static const int TOTAL_USER_INITIATED_BACKUPS_HASH = HashingUtils::HashString("TOTAL_USER_INITIATED_BACKUPS");
+        static const int TOTAL_USER_TAGS_HASH = HashingUtils::HashString("TOTAL_USER_TAGS");
+        static const int TOTAL_IN_PROGRESS_COPY_BACKUPS_HASH = HashingUtils::HashString("TOTAL_IN_PROGRESS_COPY_BACKUPS");
 
 
         ServiceLimit GetServiceLimitForName(const Aws::String& name)
@@ -44,6 +46,14 @@ namespace Aws
           else if (hashCode == TOTAL_USER_INITIATED_BACKUPS_HASH)
           {
             return ServiceLimit::TOTAL_USER_INITIATED_BACKUPS;
+          }
+          else if (hashCode == TOTAL_USER_TAGS_HASH)
+          {
+            return ServiceLimit::TOTAL_USER_TAGS;
+          }
+          else if (hashCode == TOTAL_IN_PROGRESS_COPY_BACKUPS_HASH)
+          {
+            return ServiceLimit::TOTAL_IN_PROGRESS_COPY_BACKUPS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +77,10 @@ namespace Aws
             return "TOTAL_STORAGE";
           case ServiceLimit::TOTAL_USER_INITIATED_BACKUPS:
             return "TOTAL_USER_INITIATED_BACKUPS";
+          case ServiceLimit::TOTAL_USER_TAGS:
+            return "TOTAL_USER_TAGS";
+          case ServiceLimit::TOTAL_IN_PROGRESS_COPY_BACKUPS:
+            return "TOTAL_IN_PROGRESS_COPY_BACKUPS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

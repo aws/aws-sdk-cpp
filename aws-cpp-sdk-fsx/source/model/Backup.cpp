@@ -32,7 +32,10 @@ Backup::Backup() :
     m_resourceARNHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_fileSystemHasBeenSet(false),
-    m_directoryInformationHasBeenSet(false)
+    m_directoryInformationHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
+    m_sourceBackupIdHasBeenSet(false),
+    m_sourceBackupRegionHasBeenSet(false)
 {
 }
 
@@ -50,7 +53,10 @@ Backup::Backup(JsonView jsonValue) :
     m_resourceARNHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_fileSystemHasBeenSet(false),
-    m_directoryInformationHasBeenSet(false)
+    m_directoryInformationHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
+    m_sourceBackupIdHasBeenSet(false),
+    m_sourceBackupRegionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -137,6 +143,27 @@ Backup& Backup::operator =(JsonView jsonValue)
     m_directoryInformationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OwnerId"))
+  {
+    m_ownerId = jsonValue.GetString("OwnerId");
+
+    m_ownerIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SourceBackupId"))
+  {
+    m_sourceBackupId = jsonValue.GetString("SourceBackupId");
+
+    m_sourceBackupIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SourceBackupRegion"))
+  {
+    m_sourceBackupRegion = jsonValue.GetString("SourceBackupRegion");
+
+    m_sourceBackupRegionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -209,6 +236,24 @@ JsonValue Backup::Jsonize() const
   if(m_directoryInformationHasBeenSet)
   {
    payload.WithObject("DirectoryInformation", m_directoryInformation.Jsonize());
+
+  }
+
+  if(m_ownerIdHasBeenSet)
+  {
+   payload.WithString("OwnerId", m_ownerId);
+
+  }
+
+  if(m_sourceBackupIdHasBeenSet)
+  {
+   payload.WithString("SourceBackupId", m_sourceBackupId);
+
+  }
+
+  if(m_sourceBackupRegionHasBeenSet)
+  {
+   payload.WithString("SourceBackupRegion", m_sourceBackupRegion);
 
   }
 

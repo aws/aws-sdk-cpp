@@ -21,7 +21,8 @@ namespace Model
     TRANSFERRING,
     DELETED,
     FAILED,
-    PENDING
+    PENDING,
+    COPYING
   };
 
 namespace BackupLifecycleMapper

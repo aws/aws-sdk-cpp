@@ -22,6 +22,7 @@
 #include <aws/fsx/FSxErrorMarshaller.h>
 #include <aws/fsx/model/AssociateFileSystemAliasesRequest.h>
 #include <aws/fsx/model/CancelDataRepositoryTaskRequest.h>
+#include <aws/fsx/model/CopyBackupRequest.h>
 #include <aws/fsx/model/CreateBackupRequest.h>
 #include <aws/fsx/model/CreateDataRepositoryTaskRequest.h>
 #include <aws/fsx/model/CreateFileSystemRequest.h>
@@ -163,6 +164,33 @@ void FSxClient::CancelDataRepositoryTaskAsync(const CancelDataRepositoryTaskRequ
 void FSxClient::CancelDataRepositoryTaskAsyncHelper(const CancelDataRepositoryTaskRequest& request, const CancelDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CancelDataRepositoryTask(request), context);
+}
+
+CopyBackupOutcome FSxClient::CopyBackup(const CopyBackupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CopyBackupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CopyBackupOutcomeCallable FSxClient::CopyBackupCallable(const CopyBackupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CopyBackupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CopyBackup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FSxClient::CopyBackupAsync(const CopyBackupRequest& request, const CopyBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CopyBackupAsyncHelper( request, handler, context ); } );
+}
+
+void FSxClient::CopyBackupAsyncHelper(const CopyBackupRequest& request, const CopyBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CopyBackup(request), context);
 }
 
 CreateBackupOutcome FSxClient::CreateBackup(const CreateBackupRequest& request) const
