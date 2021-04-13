@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/comprehendmedical/model/ICD10CMEntityType.h>
+#include <aws/comprehendmedical/model/ICD10CMRelationshipType.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -17,42 +17,42 @@ namespace Aws
   {
     namespace Model
     {
-      namespace ICD10CMEntityTypeMapper
+      namespace ICD10CMRelationshipTypeMapper
       {
 
-        static const int DX_NAME_HASH = HashingUtils::HashString("DX_NAME");
-        static const int TIME_EXPRESSION_HASH = HashingUtils::HashString("TIME_EXPRESSION");
+        static const int OVERLAP_HASH = HashingUtils::HashString("OVERLAP");
+        static const int SYSTEM_ORGAN_SITE_HASH = HashingUtils::HashString("SYSTEM_ORGAN_SITE");
 
 
-        ICD10CMEntityType GetICD10CMEntityTypeForName(const Aws::String& name)
+        ICD10CMRelationshipType GetICD10CMRelationshipTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == DX_NAME_HASH)
+          if (hashCode == OVERLAP_HASH)
           {
-            return ICD10CMEntityType::DX_NAME;
+            return ICD10CMRelationshipType::OVERLAP;
           }
-          else if (hashCode == TIME_EXPRESSION_HASH)
+          else if (hashCode == SYSTEM_ORGAN_SITE_HASH)
           {
-            return ICD10CMEntityType::TIME_EXPRESSION;
+            return ICD10CMRelationshipType::SYSTEM_ORGAN_SITE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ICD10CMEntityType>(hashCode);
+            return static_cast<ICD10CMRelationshipType>(hashCode);
           }
 
-          return ICD10CMEntityType::NOT_SET;
+          return ICD10CMRelationshipType::NOT_SET;
         }
 
-        Aws::String GetNameForICD10CMEntityType(ICD10CMEntityType enumValue)
+        Aws::String GetNameForICD10CMRelationshipType(ICD10CMRelationshipType enumValue)
         {
           switch(enumValue)
           {
-          case ICD10CMEntityType::DX_NAME:
-            return "DX_NAME";
-          case ICD10CMEntityType::TIME_EXPRESSION:
-            return "TIME_EXPRESSION";
+          case ICD10CMRelationshipType::OVERLAP:
+            return "OVERLAP";
+          case ICD10CMRelationshipType::SYSTEM_ORGAN_SITE:
+            return "SYSTEM_ORGAN_SITE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -64,7 +64,7 @@ namespace Aws
           }
         }
 
-      } // namespace ICD10CMEntityTypeMapper
+      } // namespace ICD10CMRelationshipTypeMapper
     } // namespace Model
   } // namespace ComprehendMedical
 } // namespace Aws

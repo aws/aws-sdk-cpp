@@ -45,7 +45,9 @@ RestoreFromClusterSnapshotRequest::RestoreFromClusterSnapshotRequest() :
     m_numberOfNodes(0),
     m_numberOfNodesHasBeenSet(false),
     m_availabilityZoneRelocation(false),
-    m_availabilityZoneRelocationHasBeenSet(false)
+    m_availabilityZoneRelocationHasBeenSet(false),
+    m_aquaConfigurationStatus(AquaConfigurationStatus::NOT_SET),
+    m_aquaConfigurationStatusHasBeenSet(false)
 {
 }
 
@@ -204,6 +206,11 @@ Aws::String RestoreFromClusterSnapshotRequest::SerializePayload() const
   if(m_availabilityZoneRelocationHasBeenSet)
   {
     ss << "AvailabilityZoneRelocation=" << std::boolalpha << m_availabilityZoneRelocation << "&";
+  }
+
+  if(m_aquaConfigurationStatusHasBeenSet)
+  {
+    ss << "AquaConfigurationStatus=" << AquaConfigurationStatusMapper::GetNameForAquaConfigurationStatus(m_aquaConfigurationStatus) << "&";
   }
 
   ss << "Version=2012-12-01";

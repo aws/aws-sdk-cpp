@@ -13,19 +13,19 @@ namespace ComprehendMedical
 {
 namespace Model
 {
-  enum class ICD10CMEntityType
+  enum class ICD10CMRelationshipType
   {
     NOT_SET,
-    DX_NAME,
-    TIME_EXPRESSION
+    OVERLAP,
+    SYSTEM_ORGAN_SITE
   };
 
-namespace ICD10CMEntityTypeMapper
+namespace ICD10CMRelationshipTypeMapper
 {
-AWS_COMPREHENDMEDICAL_API ICD10CMEntityType GetICD10CMEntityTypeForName(const Aws::String& name);
+AWS_COMPREHENDMEDICAL_API ICD10CMRelationshipType GetICD10CMRelationshipTypeForName(const Aws::String& name);
 
-AWS_COMPREHENDMEDICAL_API Aws::String GetNameForICD10CMEntityType(ICD10CMEntityType value);
-} // namespace ICD10CMEntityTypeMapper
+AWS_COMPREHENDMEDICAL_API Aws::String GetNameForICD10CMRelationshipType(ICD10CMRelationshipType value);
+} // namespace ICD10CMRelationshipTypeMapper
 } // namespace Model
 } // namespace ComprehendMedical
 } // namespace Aws

@@ -4266,7 +4266,7 @@ namespace Aws
          * cluster are switched. The selected secondary DB cluster assumes full read/write
          * capabilities for the Aurora global database.</p> <p>For more information about
          * failing over an Amazon Aurora global database, see <a
-         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.managed-failover">Managed
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover">Managed
          * planned failover for Amazon Aurora global databases</a> in the <i>Amazon Aurora
          * User Guide.</i> </p>  <p>This action applies to <a>GlobalCluster</a>
          * (Aurora global databases) only. Use this action only on healthy Aurora global
@@ -4287,7 +4287,7 @@ namespace Aws
          * cluster are switched. The selected secondary DB cluster assumes full read/write
          * capabilities for the Aurora global database.</p> <p>For more information about
          * failing over an Amazon Aurora global database, see <a
-         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.managed-failover">Managed
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover">Managed
          * planned failover for Amazon Aurora global databases</a> in the <i>Amazon Aurora
          * User Guide.</i> </p>  <p>This action applies to <a>GlobalCluster</a>
          * (Aurora global databases) only. Use this action only on healthy Aurora global
@@ -4310,7 +4310,7 @@ namespace Aws
          * cluster are switched. The selected secondary DB cluster assumes full read/write
          * capabilities for the Aurora global database.</p> <p>For more information about
          * failing over an Amazon Aurora global database, see <a
-         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.managed-failover">Managed
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover">Managed
          * planned failover for Amazon Aurora global databases</a> in the <i>Amazon Aurora
          * User Guide.</i> </p>  <p>This action applies to <a>GlobalCluster</a>
          * (Aurora global databases) only. Use this action only on healthy Aurora global
@@ -6121,7 +6121,7 @@ namespace Aws
 
         /**
          * <p>Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or
-         * EC2 or VPC Security Groups. Required parameters for this API are one of CIDRIP,
+         * EC2 or VPC security groups. Required parameters for this API are one of CIDRIP,
          * EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either
          * EC2SecurityGroupName or EC2SecurityGroupId).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RevokeDBSecurityGroupIngress">AWS
@@ -6131,7 +6131,7 @@ namespace Aws
 
         /**
          * <p>Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or
-         * EC2 or VPC Security Groups. Required parameters for this API are one of CIDRIP,
+         * EC2 or VPC security groups. Required parameters for this API are one of CIDRIP,
          * EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either
          * EC2SecurityGroupName or EC2SecurityGroupId).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RevokeDBSecurityGroupIngress">AWS
@@ -6143,7 +6143,7 @@ namespace Aws
 
         /**
          * <p>Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or
-         * EC2 or VPC Security Groups. Required parameters for this API are one of CIDRIP,
+         * EC2 or VPC security groups. Required parameters for this API are one of CIDRIP,
          * EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either
          * EC2SecurityGroupName or EC2SecurityGroupId).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RevokeDBSecurityGroupIngress">AWS

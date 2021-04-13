@@ -18,6 +18,7 @@
 #include <aws/redshift/model/ElasticIpStatus.h>
 #include <aws/redshift/model/ScheduleState.h>
 #include <aws/redshift/model/ResizeInfo.h>
+#include <aws/redshift/model/AquaConfiguration.h>
 #include <aws/redshift/model/ClusterSecurityGroupMembership.h>
 #include <aws/redshift/model/VpcSecurityGroupMembership.h>
 #include <aws/redshift/model/ClusterParameterGroupStatus.h>
@@ -2234,6 +2235,37 @@ namespace Model
      */
     inline Cluster& WithTotalStorageCapacityInMegaBytes(long long value) { SetTotalStorageCapacityInMegaBytes(value); return *this;}
 
+
+    /**
+     * <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
+     */
+    inline const AquaConfiguration& GetAquaConfiguration() const{ return m_aquaConfiguration; }
+
+    /**
+     * <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
+     */
+    inline bool AquaConfigurationHasBeenSet() const { return m_aquaConfigurationHasBeenSet; }
+
+    /**
+     * <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
+     */
+    inline void SetAquaConfiguration(const AquaConfiguration& value) { m_aquaConfigurationHasBeenSet = true; m_aquaConfiguration = value; }
+
+    /**
+     * <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
+     */
+    inline void SetAquaConfiguration(AquaConfiguration&& value) { m_aquaConfigurationHasBeenSet = true; m_aquaConfiguration = std::move(value); }
+
+    /**
+     * <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
+     */
+    inline Cluster& WithAquaConfiguration(const AquaConfiguration& value) { SetAquaConfiguration(value); return *this;}
+
+    /**
+     * <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
+     */
+    inline Cluster& WithAquaConfiguration(AquaConfiguration&& value) { SetAquaConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -2382,6 +2414,9 @@ namespace Model
 
     long long m_totalStorageCapacityInMegaBytes;
     bool m_totalStorageCapacityInMegaBytesHasBeenSet;
+
+    AquaConfiguration m_aquaConfiguration;
+    bool m_aquaConfigurationHasBeenSet;
   };
 
 } // namespace Model

@@ -946,14 +946,13 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
-     * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
-     * Aurora User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
-     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
-     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
-     * </ul>
+     * time for each AWS Region. To view the time blocks available, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
+     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
 
@@ -961,14 +960,13 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
-     * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
-     * Aurora User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
-     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
-     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
-     * </ul>
+     * time for each AWS Region. To view the time blocks available, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
+     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
 
@@ -976,14 +974,13 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
-     * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
-     * Aurora User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
-     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
-     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
-     * </ul>
+     * time for each AWS Region. To view the time blocks available, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
+     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
 
@@ -991,14 +988,13 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
-     * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
-     * Aurora User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
-     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
-     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
-     * </ul>
+     * time for each AWS Region. To view the time blocks available, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
+     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
 
@@ -1006,14 +1002,13 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
-     * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
-     * Aurora User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
-     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
-     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
-     * </ul>
+     * time for each AWS Region. To view the time blocks available, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
+     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline void SetPreferredBackupWindow(const char* value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow.assign(value); }
 
@@ -1021,14 +1016,13 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
-     * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
-     * Aurora User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
-     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
-     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
-     * </ul>
+     * time for each AWS Region. To view the time blocks available, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
+     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline CreateDBClusterRequest& WithPreferredBackupWindow(const Aws::String& value) { SetPreferredBackupWindow(value); return *this;}
 
@@ -1036,14 +1030,13 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
-     * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
-     * Aurora User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
-     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
-     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
-     * </ul>
+     * time for each AWS Region. To view the time blocks available, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
+     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline CreateDBClusterRequest& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
 
@@ -1051,14 +1044,13 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
-     * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
-     * Aurora User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
-     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
-     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
-     * </ul>
+     * time for each AWS Region. To view the time blocks available, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
+     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline CreateDBClusterRequest& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
 

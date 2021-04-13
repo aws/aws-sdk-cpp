@@ -399,7 +399,7 @@ namespace Model
          * <p>InferICD10CM detects medical conditions as entities listed in a patient
          * record and links those entities to normalized concept identifiers in the
          * ICD-10-CM knowledge base from the Centers for Disease Control. Amazon Comprehend
-         * Medical only detects medical entities in English language texts.</p><p><h3>See
+         * Medical only detects medical entities in English language texts. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferICD10CM">AWS
          * API Reference</a></p>
@@ -410,7 +410,7 @@ namespace Model
          * <p>InferICD10CM detects medical conditions as entities listed in a patient
          * record and links those entities to normalized concept identifiers in the
          * ICD-10-CM knowledge base from the Centers for Disease Control. Amazon Comprehend
-         * Medical only detects medical entities in English language texts.</p><p><h3>See
+         * Medical only detects medical entities in English language texts. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferICD10CM">AWS
          * API Reference</a></p>
@@ -423,7 +423,7 @@ namespace Model
          * <p>InferICD10CM detects medical conditions as entities listed in a patient
          * record and links those entities to normalized concept identifiers in the
          * ICD-10-CM knowledge base from the Centers for Disease Control. Amazon Comprehend
-         * Medical only detects medical entities in English language texts.</p><p><h3>See
+         * Medical only detects medical entities in English language texts. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferICD10CM">AWS
          * API Reference</a></p>
@@ -436,7 +436,7 @@ namespace Model
          * <p>InferRxNorm detects medications as entities listed in a patient record and
          * links to the normalized concept identifiers in the RxNorm database from the
          * National Library of Medicine. Amazon Comprehend Medical only detects medical
-         * entities in English language texts.</p><p><h3>See Also:</h3>   <a
+         * entities in English language texts. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferRxNorm">AWS
          * API Reference</a></p>
          */
@@ -446,7 +446,7 @@ namespace Model
          * <p>InferRxNorm detects medications as entities listed in a patient record and
          * links to the normalized concept identifiers in the RxNorm database from the
          * National Library of Medicine. Amazon Comprehend Medical only detects medical
-         * entities in English language texts.</p><p><h3>See Also:</h3>   <a
+         * entities in English language texts. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferRxNorm">AWS
          * API Reference</a></p>
          *
@@ -458,7 +458,7 @@ namespace Model
          * <p>InferRxNorm detects medications as entities listed in a patient record and
          * links to the normalized concept identifiers in the RxNorm database from the
          * National Library of Medicine. Amazon Comprehend Medical only detects medical
-         * entities in English language texts.</p><p><h3>See Also:</h3>   <a
+         * entities in English language texts. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferRxNorm">AWS
          * API Reference</a></p>
          *
