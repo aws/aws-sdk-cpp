@@ -225,7 +225,7 @@ namespace Aws
         }
 
         void TransferHandle::GetAllPartsTransactional(PartStateMap& queuedParts, PartStateMap& pendingParts,
-            PartStateMap& failedParts, PartStateMap& completedParts)
+            PartStateMap& failedParts, PartStateMap& completedParts) const
         {
             std::lock_guard<std::mutex> locker(m_partsLock);
             queuedParts = m_queuedParts;

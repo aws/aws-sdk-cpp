@@ -218,7 +218,7 @@ namespace Aws
              * Get the parts transactionally, mostly for internal purposes.
              */
             void GetAllPartsTransactional(PartStateMap& queuedParts, PartStateMap& pendingParts,
-                    PartStateMap& failedParts, PartStateMap& completedParts);
+                    PartStateMap& failedParts, PartStateMap& completedParts) const;
             /**
              * Returns true or false if any parts have been created for this transfer
              */
