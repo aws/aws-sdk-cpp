@@ -865,7 +865,9 @@ namespace Model
          * <code>PENDING</code>. For public hosted zones, this means that the NS and SOA
          * records are not yet available on all Route 53 DNS servers. When the NS and SOA
          * records are available, the status of the zone changes to
-         * <code>INSYNC</code>.</p><p><h3>See Also:</h3>   <a
+         * <code>INSYNC</code>.</p> <p>The <code>CreateHostedZone</code> request requires
+         * the caller to have an <code>ec2:DescribeVpcs</code> permission.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHostedZone">AWS
          * API Reference</a></p>
          */
@@ -902,7 +904,9 @@ namespace Model
          * <code>PENDING</code>. For public hosted zones, this means that the NS and SOA
          * records are not yet available on all Route 53 DNS servers. When the NS and SOA
          * records are available, the status of the zone changes to
-         * <code>INSYNC</code>.</p><p><h3>See Also:</h3>   <a
+         * <code>INSYNC</code>.</p> <p>The <code>CreateHostedZone</code> request requires
+         * the caller to have an <code>ec2:DescribeVpcs</code> permission.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHostedZone">AWS
          * API Reference</a></p>
          *
@@ -941,7 +945,9 @@ namespace Model
          * <code>PENDING</code>. For public hosted zones, this means that the NS and SOA
          * records are not yet available on all Route 53 DNS servers. When the NS and SOA
          * records are available, the status of the zone changes to
-         * <code>INSYNC</code>.</p><p><h3>See Also:</h3>   <a
+         * <code>INSYNC</code>.</p> <p>The <code>CreateHostedZone</code> request requires
+         * the caller to have an <code>ec2:DescribeVpcs</code> permission.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHostedZone">AWS
          * API Reference</a></p>
          *
@@ -1729,9 +1735,9 @@ namespace Model
 
         /**
          * <p>Deletes a key-signing key (KSK). Before you can delete a KSK, you must
-         * deactivate it. The KSK must be deactived before you can delete it regardless of
-         * whether the hosted zone is enabled for DNSSEC signing.</p><p><h3>See Also:</h3> 
-         * <a
+         * deactivate it. The KSK must be deactivated before you can delete it regardless
+         * of whether the hosted zone is enabled for DNSSEC signing.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteKeySigningKey">AWS
          * API Reference</a></p>
          */
@@ -1739,9 +1745,9 @@ namespace Model
 
         /**
          * <p>Deletes a key-signing key (KSK). Before you can delete a KSK, you must
-         * deactivate it. The KSK must be deactived before you can delete it regardless of
-         * whether the hosted zone is enabled for DNSSEC signing.</p><p><h3>See Also:</h3> 
-         * <a
+         * deactivate it. The KSK must be deactivated before you can delete it regardless
+         * of whether the hosted zone is enabled for DNSSEC signing.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteKeySigningKey">AWS
          * API Reference</a></p>
          *
@@ -1751,9 +1757,9 @@ namespace Model
 
         /**
          * <p>Deletes a key-signing key (KSK). Before you can delete a KSK, you must
-         * deactivate it. The KSK must be deactived before you can delete it regardless of
-         * whether the hosted zone is enabled for DNSSEC signing.</p><p><h3>See Also:</h3> 
-         * <a
+         * deactivate it. The KSK must be deactivated before you can delete it regardless
+         * of whether the hosted zone is enabled for DNSSEC signing.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteKeySigningKey">AWS
          * API Reference</a></p>
          *
@@ -3651,8 +3657,8 @@ namespace Model
         /**
          * <p>Gets the value that Amazon Route 53 returns in response to a DNS request for
          * a specified record name and type. You can optionally specify the IP address of a
-         * DNS resolver, an EDNS0 client subnet IP address, and a subnet mask.
-         * </p><p><h3>See Also:</h3>   <a
+         * DNS resolver, an EDNS0 client subnet IP address, and a subnet mask. </p> <p>This
+         * call only supports querying public hosted zones.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/TestDNSAnswer">AWS
          * API Reference</a></p>
          */
@@ -3661,8 +3667,8 @@ namespace Model
         /**
          * <p>Gets the value that Amazon Route 53 returns in response to a DNS request for
          * a specified record name and type. You can optionally specify the IP address of a
-         * DNS resolver, an EDNS0 client subnet IP address, and a subnet mask.
-         * </p><p><h3>See Also:</h3>   <a
+         * DNS resolver, an EDNS0 client subnet IP address, and a subnet mask. </p> <p>This
+         * call only supports querying public hosted zones.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/TestDNSAnswer">AWS
          * API Reference</a></p>
          *
@@ -3673,8 +3679,8 @@ namespace Model
         /**
          * <p>Gets the value that Amazon Route 53 returns in response to a DNS request for
          * a specified record name and type. You can optionally specify the IP address of a
-         * DNS resolver, an EDNS0 client subnet IP address, and a subnet mask.
-         * </p><p><h3>See Also:</h3>   <a
+         * DNS resolver, an EDNS0 client subnet IP address, and a subnet mask. </p> <p>This
+         * call only supports querying public hosted zones.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/TestDNSAnswer">AWS
          * API Reference</a></p>
          *

@@ -27,13 +27,14 @@ namespace Model
   /**
    * <p>Provides aggregate compliance of the conformance pack. Indicates whether a
    * conformance pack is compliant based on the name of the conformance pack, account
-   * ID, and region.</p> <p>A conformance pack is compliant if all of the rules in
-   * that conformance packs are compliant. It is noncompliant if any of the rules are
-   * not compliant.</p>  <p>If a conformance pack has rules that return
-   * INSUFFICIENT_DATA, the conformance pack returns INSUFFICIENT_DATA only if all
-   * the rules within that conformance pack return INSUFFICIENT_DATA. If some of the
-   * rules in a conformance pack are compliant and others return INSUFFICIENT_DATA,
-   * the conformance pack shows compliant.</p> <p><h3>See Also:</h3>   <a
+   * ID, and region.</p> <p>A conformance pack is compliant if all of the rules in a
+   * conformance packs are compliant. It is noncompliant if any of the rules are not
+   * compliant. The compliance status of a conformance pack is INSUFFICIENT_DATA only
+   * if all rules within a conformance pack cannot be evaluated due to insufficient
+   * data. If some of the rules in a conformance pack are compliant but the
+   * compliance status of other rules in that same conformance pack is
+   * INSUFFICIENT_DATA, the conformance pack shows compliant.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/AggregateComplianceByConformancePack">AWS
    * API Reference</a></p>
    */

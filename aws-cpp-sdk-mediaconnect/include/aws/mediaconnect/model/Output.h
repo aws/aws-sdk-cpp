@@ -230,6 +230,79 @@ namespace Model
 
 
     /**
+     * The IP address that the receiver requires in order to establish a connection
+     * with the flow. For public networking, the ListenerAddress is represented by the
+     * elastic IP address of the flow. For private networking, the ListenerAddress is
+     * represented by the elastic network interface IP address of the VPC. This field
+     * applies only to outputs that use the Zixi pull or SRT listener protocol.
+     */
+    inline const Aws::String& GetListenerAddress() const{ return m_listenerAddress; }
+
+    /**
+     * The IP address that the receiver requires in order to establish a connection
+     * with the flow. For public networking, the ListenerAddress is represented by the
+     * elastic IP address of the flow. For private networking, the ListenerAddress is
+     * represented by the elastic network interface IP address of the VPC. This field
+     * applies only to outputs that use the Zixi pull or SRT listener protocol.
+     */
+    inline bool ListenerAddressHasBeenSet() const { return m_listenerAddressHasBeenSet; }
+
+    /**
+     * The IP address that the receiver requires in order to establish a connection
+     * with the flow. For public networking, the ListenerAddress is represented by the
+     * elastic IP address of the flow. For private networking, the ListenerAddress is
+     * represented by the elastic network interface IP address of the VPC. This field
+     * applies only to outputs that use the Zixi pull or SRT listener protocol.
+     */
+    inline void SetListenerAddress(const Aws::String& value) { m_listenerAddressHasBeenSet = true; m_listenerAddress = value; }
+
+    /**
+     * The IP address that the receiver requires in order to establish a connection
+     * with the flow. For public networking, the ListenerAddress is represented by the
+     * elastic IP address of the flow. For private networking, the ListenerAddress is
+     * represented by the elastic network interface IP address of the VPC. This field
+     * applies only to outputs that use the Zixi pull or SRT listener protocol.
+     */
+    inline void SetListenerAddress(Aws::String&& value) { m_listenerAddressHasBeenSet = true; m_listenerAddress = std::move(value); }
+
+    /**
+     * The IP address that the receiver requires in order to establish a connection
+     * with the flow. For public networking, the ListenerAddress is represented by the
+     * elastic IP address of the flow. For private networking, the ListenerAddress is
+     * represented by the elastic network interface IP address of the VPC. This field
+     * applies only to outputs that use the Zixi pull or SRT listener protocol.
+     */
+    inline void SetListenerAddress(const char* value) { m_listenerAddressHasBeenSet = true; m_listenerAddress.assign(value); }
+
+    /**
+     * The IP address that the receiver requires in order to establish a connection
+     * with the flow. For public networking, the ListenerAddress is represented by the
+     * elastic IP address of the flow. For private networking, the ListenerAddress is
+     * represented by the elastic network interface IP address of the VPC. This field
+     * applies only to outputs that use the Zixi pull or SRT listener protocol.
+     */
+    inline Output& WithListenerAddress(const Aws::String& value) { SetListenerAddress(value); return *this;}
+
+    /**
+     * The IP address that the receiver requires in order to establish a connection
+     * with the flow. For public networking, the ListenerAddress is represented by the
+     * elastic IP address of the flow. For private networking, the ListenerAddress is
+     * represented by the elastic network interface IP address of the VPC. This field
+     * applies only to outputs that use the Zixi pull or SRT listener protocol.
+     */
+    inline Output& WithListenerAddress(Aws::String&& value) { SetListenerAddress(std::move(value)); return *this;}
+
+    /**
+     * The IP address that the receiver requires in order to establish a connection
+     * with the flow. For public networking, the ListenerAddress is represented by the
+     * elastic IP address of the flow. For private networking, the ListenerAddress is
+     * represented by the elastic network interface IP address of the VPC. This field
+     * applies only to outputs that use the Zixi pull or SRT listener protocol.
+     */
+    inline Output& WithListenerAddress(const char* value) { SetListenerAddress(value); return *this;}
+
+
+    /**
      * The input ARN of the AWS Elemental MediaLive channel. This parameter is relevant
      * only for outputs that were added by creating a MediaLive input.
      */
@@ -458,6 +531,9 @@ namespace Model
 
     Aws::String m_entitlementArn;
     bool m_entitlementArnHasBeenSet;
+
+    Aws::String m_listenerAddress;
+    bool m_listenerAddressHasBeenSet;
 
     Aws::String m_mediaLiveInputArn;
     bool m_mediaLiveInputArnHasBeenSet;

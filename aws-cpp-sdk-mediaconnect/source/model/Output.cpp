@@ -25,6 +25,7 @@ Output::Output() :
     m_destinationHasBeenSet(false),
     m_encryptionHasBeenSet(false),
     m_entitlementArnHasBeenSet(false),
+    m_listenerAddressHasBeenSet(false),
     m_mediaLiveInputArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_outputArnHasBeenSet(false),
@@ -42,6 +43,7 @@ Output::Output(JsonView jsonValue) :
     m_destinationHasBeenSet(false),
     m_encryptionHasBeenSet(false),
     m_entitlementArnHasBeenSet(false),
+    m_listenerAddressHasBeenSet(false),
     m_mediaLiveInputArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_outputArnHasBeenSet(false),
@@ -88,6 +90,13 @@ Output& Output::operator =(JsonView jsonValue)
     m_entitlementArn = jsonValue.GetString("entitlementArn");
 
     m_entitlementArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("listenerAddress"))
+  {
+    m_listenerAddress = jsonValue.GetString("listenerAddress");
+
+    m_listenerAddressHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("mediaLiveInputArn"))
@@ -166,6 +175,12 @@ JsonValue Output::Jsonize() const
   if(m_entitlementArnHasBeenSet)
   {
    payload.WithString("entitlementArn", m_entitlementArn);
+
+  }
+
+  if(m_listenerAddressHasBeenSet)
+  {
+   payload.WithString("listenerAddress", m_listenerAddress);
 
   }
 

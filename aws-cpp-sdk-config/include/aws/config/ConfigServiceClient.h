@@ -1210,8 +1210,10 @@ namespace Model
         /**
          * <p>Returns a list of the conformance packs and their associated compliance
          * status with the count of compliant and noncompliant AWS Config rules within each
-         * conformance pack.</p>  <p>The results can return an empty result page, but
-         * if you have a <code>nextToken</code>, the results are displayed on the next
+         * conformance pack. Also returns the total rule count which includes compliant
+         * rules, noncompliant rules, and rules that cannot be evaluated due to
+         * insufficient data.</p>  <p>The results can return an empty result page,
+         * but if you have a <code>nextToken</code>, the results are displayed on the next
          * page.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConformancePacks">AWS
          * API Reference</a></p>
@@ -1221,8 +1223,10 @@ namespace Model
         /**
          * <p>Returns a list of the conformance packs and their associated compliance
          * status with the count of compliant and noncompliant AWS Config rules within each
-         * conformance pack.</p>  <p>The results can return an empty result page, but
-         * if you have a <code>nextToken</code>, the results are displayed on the next
+         * conformance pack. Also returns the total rule count which includes compliant
+         * rules, noncompliant rules, and rules that cannot be evaluated due to
+         * insufficient data.</p>  <p>The results can return an empty result page,
+         * but if you have a <code>nextToken</code>, the results are displayed on the next
          * page.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConformancePacks">AWS
          * API Reference</a></p>
@@ -1234,8 +1238,10 @@ namespace Model
         /**
          * <p>Returns a list of the conformance packs and their associated compliance
          * status with the count of compliant and noncompliant AWS Config rules within each
-         * conformance pack.</p>  <p>The results can return an empty result page, but
-         * if you have a <code>nextToken</code>, the results are displayed on the next
+         * conformance pack. Also returns the total rule count which includes compliant
+         * rules, noncompliant rules, and rules that cannot be evaluated due to
+         * insufficient data.</p>  <p>The results can return an empty result page,
+         * but if you have a <code>nextToken</code>, the results are displayed on the next
          * page.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConformancePacks">AWS
          * API Reference</a></p>
@@ -2222,10 +2228,10 @@ namespace Model
 
         /**
          * <p>Returns the count of compliant and noncompliant conformance packs across all
-         * AWS Accounts and AWS Regions. You can filter based on AWS Account ID or AWS
-         * Region.</p>  <p>The results can return an empty result page, but if you
-         * have a nextToken, the results are displayed on the next page.</p>
-         * <p><h3>See Also:</h3>   <a
+         * AWS Accounts and AWS Regions in an aggregator. You can filter based on AWS
+         * Account ID or AWS Region.</p>  <p>The results can return an empty result
+         * page, but if you have a nextToken, the results are displayed on the next
+         * page.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConformancePackComplianceSummary">AWS
          * API Reference</a></p>
          */
@@ -2233,10 +2239,10 @@ namespace Model
 
         /**
          * <p>Returns the count of compliant and noncompliant conformance packs across all
-         * AWS Accounts and AWS Regions. You can filter based on AWS Account ID or AWS
-         * Region.</p>  <p>The results can return an empty result page, but if you
-         * have a nextToken, the results are displayed on the next page.</p>
-         * <p><h3>See Also:</h3>   <a
+         * AWS Accounts and AWS Regions in an aggregator. You can filter based on AWS
+         * Account ID or AWS Region.</p>  <p>The results can return an empty result
+         * page, but if you have a nextToken, the results are displayed on the next
+         * page.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConformancePackComplianceSummary">AWS
          * API Reference</a></p>
          *
@@ -2246,10 +2252,10 @@ namespace Model
 
         /**
          * <p>Returns the count of compliant and noncompliant conformance packs across all
-         * AWS Accounts and AWS Regions. You can filter based on AWS Account ID or AWS
-         * Region.</p>  <p>The results can return an empty result page, but if you
-         * have a nextToken, the results are displayed on the next page.</p>
-         * <p><h3>See Also:</h3>   <a
+         * AWS Accounts and AWS Regions in an aggregator. You can filter based on AWS
+         * Account ID or AWS Region.</p>  <p>The results can return an empty result
+         * page, but if you have a nextToken, the results are displayed on the next
+         * page.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConformancePackComplianceSummary">AWS
          * API Reference</a></p>
          *

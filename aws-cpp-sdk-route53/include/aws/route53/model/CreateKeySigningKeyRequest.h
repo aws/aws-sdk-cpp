@@ -128,9 +128,8 @@ namespace Model
      * </li> <li> <p>GetPublicKey</p> </li> <li> <p>Sign</p> </li> </ul> <p>The key
      * policy must also include the Amazon Route 53 service in the principal for your
      * account. Specify the following:</p> <ul> <li> <p> <code>"Service":
-     * "api-service.dnssec.route53.aws.internal"</code> </p> </li> </ul> </dd> </dl>
-     * <p>For more information about working with a customer managed CMK in AWS KMS,
-     * see <a
+     * "dnssec.route53.aws.amazonaws.com"</code> </p> </li> </ul> </dd> </dl> <p>For
+     * more information about working with a customer managed CMK in AWS KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
      * Key Management Service concepts</a>.</p>
      */
@@ -150,9 +149,8 @@ namespace Model
      * </li> <li> <p>GetPublicKey</p> </li> <li> <p>Sign</p> </li> </ul> <p>The key
      * policy must also include the Amazon Route 53 service in the principal for your
      * account. Specify the following:</p> <ul> <li> <p> <code>"Service":
-     * "api-service.dnssec.route53.aws.internal"</code> </p> </li> </ul> </dd> </dl>
-     * <p>For more information about working with a customer managed CMK in AWS KMS,
-     * see <a
+     * "dnssec.route53.aws.amazonaws.com"</code> </p> </li> </ul> </dd> </dl> <p>For
+     * more information about working with a customer managed CMK in AWS KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
      * Key Management Service concepts</a>.</p>
      */
@@ -172,9 +170,8 @@ namespace Model
      * </li> <li> <p>GetPublicKey</p> </li> <li> <p>Sign</p> </li> </ul> <p>The key
      * policy must also include the Amazon Route 53 service in the principal for your
      * account. Specify the following:</p> <ul> <li> <p> <code>"Service":
-     * "api-service.dnssec.route53.aws.internal"</code> </p> </li> </ul> </dd> </dl>
-     * <p>For more information about working with a customer managed CMK in AWS KMS,
-     * see <a
+     * "dnssec.route53.aws.amazonaws.com"</code> </p> </li> </ul> </dd> </dl> <p>For
+     * more information about working with a customer managed CMK in AWS KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
      * Key Management Service concepts</a>.</p>
      */
@@ -194,9 +191,8 @@ namespace Model
      * </li> <li> <p>GetPublicKey</p> </li> <li> <p>Sign</p> </li> </ul> <p>The key
      * policy must also include the Amazon Route 53 service in the principal for your
      * account. Specify the following:</p> <ul> <li> <p> <code>"Service":
-     * "api-service.dnssec.route53.aws.internal"</code> </p> </li> </ul> </dd> </dl>
-     * <p>For more information about working with a customer managed CMK in AWS KMS,
-     * see <a
+     * "dnssec.route53.aws.amazonaws.com"</code> </p> </li> </ul> </dd> </dl> <p>For
+     * more information about working with a customer managed CMK in AWS KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
      * Key Management Service concepts</a>.</p>
      */
@@ -216,9 +212,8 @@ namespace Model
      * </li> <li> <p>GetPublicKey</p> </li> <li> <p>Sign</p> </li> </ul> <p>The key
      * policy must also include the Amazon Route 53 service in the principal for your
      * account. Specify the following:</p> <ul> <li> <p> <code>"Service":
-     * "api-service.dnssec.route53.aws.internal"</code> </p> </li> </ul> </dd> </dl>
-     * <p>For more information about working with a customer managed CMK in AWS KMS,
-     * see <a
+     * "dnssec.route53.aws.amazonaws.com"</code> </p> </li> </ul> </dd> </dl> <p>For
+     * more information about working with a customer managed CMK in AWS KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
      * Key Management Service concepts</a>.</p>
      */
@@ -238,9 +233,8 @@ namespace Model
      * </li> <li> <p>GetPublicKey</p> </li> <li> <p>Sign</p> </li> </ul> <p>The key
      * policy must also include the Amazon Route 53 service in the principal for your
      * account. Specify the following:</p> <ul> <li> <p> <code>"Service":
-     * "api-service.dnssec.route53.aws.internal"</code> </p> </li> </ul> </dd> </dl>
-     * <p>For more information about working with a customer managed CMK in AWS KMS,
-     * see <a
+     * "dnssec.route53.aws.amazonaws.com"</code> </p> </li> </ul> </dd> </dl> <p>For
+     * more information about working with a customer managed CMK in AWS KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
      * Key Management Service concepts</a>.</p>
      */
@@ -260,9 +254,8 @@ namespace Model
      * </li> <li> <p>GetPublicKey</p> </li> <li> <p>Sign</p> </li> </ul> <p>The key
      * policy must also include the Amazon Route 53 service in the principal for your
      * account. Specify the following:</p> <ul> <li> <p> <code>"Service":
-     * "api-service.dnssec.route53.aws.internal"</code> </p> </li> </ul> </dd> </dl>
-     * <p>For more information about working with a customer managed CMK in AWS KMS,
-     * see <a
+     * "dnssec.route53.aws.amazonaws.com"</code> </p> </li> </ul> </dd> </dl> <p>For
+     * more information about working with a customer managed CMK in AWS KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
      * Key Management Service concepts</a>.</p>
      */
@@ -282,9 +275,8 @@ namespace Model
      * </li> <li> <p>GetPublicKey</p> </li> <li> <p>Sign</p> </li> </ul> <p>The key
      * policy must also include the Amazon Route 53 service in the principal for your
      * account. Specify the following:</p> <ul> <li> <p> <code>"Service":
-     * "api-service.dnssec.route53.aws.internal"</code> </p> </li> </ul> </dd> </dl>
-     * <p>For more information about working with a customer managed CMK in AWS KMS,
-     * see <a
+     * "dnssec.route53.aws.amazonaws.com"</code> </p> </li> </ul> </dd> </dl> <p>For
+     * more information about working with a customer managed CMK in AWS KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
      * Key Management Service concepts</a>.</p>
      */
